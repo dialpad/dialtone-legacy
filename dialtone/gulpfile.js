@@ -5,6 +5,7 @@ const cssorder = require('postcss-ordered-values');
 const utility = require('postcss-utilities');
 const browserSync = require('browser-sync').create();
 const postcssPresentEnv = require('postcss-preset-env');
+const postcssNormalize = require('postcss-normalize');
 
 gulp.task('browserSync', function() {
     browserSync.init({
@@ -15,7 +16,8 @@ gulp.task('browserSync', function() {
 });
 gulp.task('sass', function() {
     var plugins = [
-        postcssPresentEnv,
+        postcssNormalize(),
+        postcssPresentEnv(),
         cssorder,
         utility
     ]
