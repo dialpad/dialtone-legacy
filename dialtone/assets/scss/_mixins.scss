@@ -1,0 +1,60 @@
+//
+//  DIALPAD
+//  Mixins
+//
+//  ============================================================================
+//  $   MEDIA QUERY MIXIN
+//  ----------------------------------------------------------------------------
+//  --  First we declare our various breakpoints and min/max widths.
+//
+$breakpoint-max: (
+    sm:  320px,
+    md:  480px,
+    lg:  728px,
+    xl:  960px
+);
+$breakpoint-min: (
+    md:  321px,
+    lg:  481px,
+    xl:  729px,
+    xxl: 961px
+);
+$breakpoints: (sm, md, lg, xl, xxl);
+
+//
+//  --  Now we pull them into the mixin
+//
+@mixin rwd($breakpoints) {
+    @content;
+
+    @each $bp in $breakpoints {
+        $bp-max: map-get($breakpoint-max, $bp);
+        $bp-min: map-get($breakpoint-min, $bp);
+
+        @if $bp == sm {
+            @at-root {
+                &:#{$bp} {
+                    @media screen and (max-width: $bp-max) {
+                        @content;
+                    }
+                }
+            }
+        } @else if $bp == xxl {
+            @at-root {
+                &:#{$bp} {
+                    @media screen and (min-width: $bp-min) {
+                        @content;
+                    }
+                }
+            }
+        } @else {
+            @at-root {
+                &:#{$bp} {
+                    @media screen and (min-width: $bp-min) and (max-width: $bp-max) {
+                        @content;
+                    }
+                }
+            }
+        }
+    }
+}

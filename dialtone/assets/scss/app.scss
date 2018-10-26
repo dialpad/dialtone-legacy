@@ -1,9 +1,33 @@
-@import "_colors.scss";
-@import "_grid.scss";
+@import "_mixins";
+@import "_utilities";
+@import "_colors";
+@import "_type-variables";
+@import "_type-sizes";
+@import "_fonts";
+@import "_grid";
+@import "_buttons";
 
+
+html, body {
+    *,
+    *:before,
+    *:after {
+        box-sizing: inherit;
+    }
+
+    font-size: $base-font-size;
+}
+
+html {
+    *,
+    *:before,
+    *:after {
+        box-sizing: border-box;
+    }
+}
 
 body {
-    background-color: var(--white);
-    color: var(--fc-dark);
-    font-size: 16px;
+    background-color: $white;
+    color: $fc-dark;
+    @extend %ff-mark-400;
 }
