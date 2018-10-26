@@ -5,7 +5,7 @@ $grid-columns: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
         $cell-width: $col * 100% / $col;
 
         > .grid--cell#{$col} {
-            margin: $value / 2;
+            margin: $value/2;
         }
 
         //  ------------------------------------------------------------------------
@@ -20,7 +20,7 @@ $grid-columns: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
         > .grid--cell#{$col},                                  // [1]
         &.grid__allcells#{$col} > .grid,                       // [2]
         &.grid__allcells#{$col} > .grid--cell {                // [2]
-            flex-basis: calc(#{$col} - #{$value});
+            flex-basis: calc(#{$cell-width} - #{$value});
         }
     }
 }
@@ -36,17 +36,17 @@ $grid-columns: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
 //          left and right margins and add in top and bottom margins.
 //  ----------------------------------------------------------------------------
 @mixin gutter-spacing($values) {
-    @each $var in $values {
-        .gs#{$var} {
-            margin: -(#{$var} / 2);
+    @each $key, $val in $values {
+        .gs#{$key} {
+            margin: -$val / 2;
 
             //  --  FLUID CELLS
             > .grid,
             > .grid--cell {
-                margin: #{$var} / 2;
+                margin: $val / 2;
             }
 
-            @include grid-fixed-cell-spacing(#{$var});
+            @include grid-fixed-cell-spacing($val);
         }
     }
 }
@@ -84,7 +84,20 @@ $grid-columns: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
 //  $   GRID SPACING
 //      Insert spaces or gutters in between grid cells
 //  ----------------------------------------------------------------------------
-@include gutter-spacing("2" "4" "6" "8" "12" "16" "24" "32" "48" "64");
+$gutter-spacing-values: (
+    2:  2px,
+    4:  4px,
+    6:  6px,
+    8:  8px,
+    12: 12px,
+    16: 16px,
+    24: 24px,
+    32: 32px,
+    48: 48px,
+    64: 64px
+);
+
+@include gutter-spacing($gutter-spacing-values);
 
 //  On rows, remove top and bottom margins
 .gsx {
