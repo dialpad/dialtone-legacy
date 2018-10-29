@@ -1,0 +1,106 @@
+//
+//  DIALPAD
+//  Layout variables and mixins
+//
+//  ============================================================================
+//  $   Layout Variables
+//  ============================================================================
+//  --  Spacing units
+//  ----------------------------------------------------------------------------
+$spacing-base: 8px !default;
+
+//  --  Spacing aliases
+$sp0:   0 !default;                         // 0
+$sp2:   round($spacing-base / 4) !default;  // 2px
+$sp4:   round($spacing-base / 2) !default;  // 4px
+$sp8:   $spacing-base !default;             // 8px
+$sp12:  $spacing-base * 1.5 !default;       // 12px
+$sp16:  $spacing-base * 2 !default;         // 16px
+$sp24:  $spacing-base * 3 !default;         // 24px
+$sp32:  $spacing-base * 4 !default;         // 32px
+$sp48:  $spacing-base * 6 !default;         // 48px
+$sp64:  $spacing-base * 8 !default;         // 64px
+
+$spacing-units: (
+    0:  $sp0,
+    2:  $sp2,
+    4:  $sp4,
+    8:  $sp8,
+    12: $sp12,
+    16: $sp16,
+    24: $sp24,
+    32: $sp32,
+    48: $sp48,
+    64: $sp64
+) !default;
+
+
+//  ============================================================================
+//  --  Breakpoints
+//  ----------------------------------------------------------------------------
+$width-xs: 0;
+$width-sm: 480px;
+$width-md: 768px;
+$width-lg: 1024px;
+$width-xl: 1280px;
+
+$breakpoints: (
+    //  Small screen (i.e. phone)
+    sm: $width-sm,
+    //  Medium screen (ie. tablet)
+    md: $width-md,
+    //  Large screen (i.e. normal desktop)
+    lg: $width-lg,
+    //  Extra large screen (i.e. wide desktop)
+    xl: $width-xl
+) !default;
+
+//  ============================================================================
+//  --  Create responsive class names
+//  ----------------------------------------------------------------------------
+$rwd-variants: ("": "");
+@each $key in map-keys($breakpoints) {
+    $rwd-variants: map-merge($rwd-variants, ($key: ":#{$key}"));
+}
+
+//  ============================================================================
+//  --  Now we pull them into the mixin
+//  ----------------------------------------------------------------------------
+@mixin rwd($breakpoint) {
+    @if $breakpoint == "" {
+        @content;
+    }
+
+    @else {
+        $value: map-get($breakpoints, $breakpoint);
+
+        //  If the value exists
+        @if $value != null {
+            //  Prints a media query based on the value
+            @media (min-width: $value) {
+                @content;
+            }
+        }
+        //  If the value doesn't exist
+        @else {
+            @warn "Unfortunately that isn't a defined breakpoint. "
+             + "Please make sure it's defined in the `$breakpoints` map.";
+        }
+    }
+}
+
+//  ============================================================================
+//  --  Retina media query
+//  ----------------------------------------------------------------------------
+@mixin rwd-retina {
+    @media
+        only screen and (-webkit-min-device-pixel-ration: 2),
+        only screen and (min--moz-device-pixel-ratio: 2),
+        only screen and (-moz-min-device-pixel-ratio: 2),
+        only screen and (-o-min-device-pixel-ratio: 2/1),
+        only screen and (min-device-pixel-ratio: 2),
+        only screen and (min-resolution: 192dpi),
+        only screen and (min-resolution: 2dppx) {
+        @content;
+    }
+}

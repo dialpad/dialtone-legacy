@@ -1,0 +1,122 @@
+//
+//  DIALPAD
+//  Buttons
+//
+//  ============================================================================
+//  $   VARIABLES
+//  ----------------------------------------------------------------------------
+$button-primary:            $blue-060;
+$button-primary-hover:      #3F5FBF;
+$button-secondary:          #F1F1F2;
+$button-secondary-hover:    #E0E0E0;
+$button-destruct:           #E84B28;
+$button-destruct-hover:     #C53F22;
+$button-teal:               $teal-060;
+$button-teal-hover:         #00CAC6;
+$button-white:              $white;
+$button-white-hover:        $white;
+
+$button-border-radius:  $br-sm;
+
+
+//  ============================================================================
+//  $   BASE STYLE
+//  ----------------------------------------------------------------------------
+%btn-base {
+    position: relative;
+    padding: 1.167em 1.667em;
+    border: 1px solid transparent;
+    border-radius: $button-border-radius;
+    outline: none;
+    font-family: inherit;
+    font-size: $fs-caption;
+    font-weight: $fw-medium;
+    line-height: 1;
+    text-transform: $tt-uppercase;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    @extend %btn-base;
+    background-color: $button-primary;
+    color: $white;
+
+    &:hover {
+        background-color: $button-primary-hover;
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 4px transparentize($button-primary,.85);
+    }
+}
+
+.btn-secondary {
+    @extend %btn-base;
+    background-color: $button-secondary;
+    color: $gray-100;
+
+    &:hover {
+        background-color: $button-secondary-hover;
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 4px transparentize($button-primary,.85);
+    }
+}
+
+.btn-destruct {
+    @extend %btn-base;
+    background-color: $button-destruct;
+    color: $white;
+
+    &:hover {
+        background-color: $button-destruct-hover;
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 4px transparentize($button-destruct,.85);
+    }
+}
+
+.btn-teal {
+    @extend %btn-base;
+    background-color: $button-teal;
+    color: $white;
+
+    &:hover {
+        background-color: $button-teal-hover;
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 4px transparentize($button-teal,.85);
+    }
+}
+
+.btn-clear {
+    @extend %btn-base;
+    background-color: transparentize($button-white,0);
+    color: $gray-100;
+
+    &:hover {
+        background-color: transparentize($gray-100,.9);
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 4px transparentize($button-primary,.85);
+    }
+}
+
+.btn-inverted {
+    @extend %btn-base;
+    background-color: $button-white;
+    color: $gray-100;
+
+    &:hover {
+        background-color: $button-white-hover;
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 4px transparentize($button-primary,.85);
+    }
+}

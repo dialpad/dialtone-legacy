@@ -1,0 +1,221 @@
+$grid-columns: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
+
+@mixin grid-fixed-cell-spacing($value) {
+    @each $col in $grid-columns {
+        $cell-width: $col * 100% / $col;
+
+        > .grid--cell#{$col} {
+            margin: $value/2;
+        }
+
+        //  ------------------------------------------------------------------------
+        //  [1] FIXED WIDTH CELLS
+        //      This makes the fixed width cells to account for gutters.
+        //
+        //  [2] UNIFORM CHILD GRID CELLS
+        //      This class allows you to uniformly state the width of `.grid--cell`
+        //      divs within a `.grid` element. In particular we adjust the flex-basis
+        //      and max-width here to account for gutters.
+        //  ------------------------------------------------------------------------
+        > .grid--cell#{$col},                                  // [1]
+        &.grid__allcells#{$col} > .grid,                       // [2]
+        &.grid__allcells#{$col} > .grid--cell {                // [2]
+            flex-basis: calc(#{$cell-width} - #{$value});
+        }
+    }
+}
+
+//  ----------------------------------------------------------------------------
+//      2.  Generate the desired gutters
+//          We halve the spacing value because the spacing value should be the
+//          total space between cells--not the total applied to each cell,
+//          which would effectively double the desired total.
+//
+//          The "when" statements here refer to when we declare it's for a
+//          row (default) or a column. When a column we need to reset the
+//          left and right margins and add in top and bottom margins.
+//  ----------------------------------------------------------------------------
+@mixin gutter-spacing($values) {
+    @each $spacer, $value in $spacing-units {
+        .gs#{$spacer} {
+            margin: -$value / 2;
+
+            //  --  FLUID CELLS
+            > .grid,
+            > .grid--cell {
+                margin: $value / 2;
+            }
+
+            @include grid-fixed-cell-spacing($value);
+        }
+    }
+}
+
+//  ============================================================================
+//  $   GRID ELEMENTS
+//  ============================================================================
+//      To help simplify our CSS, we create a generic box container. By default
+//      this is a row container, but we can modify the box to become a column.
+//  ----------------------------------------------------------------------------
+.grid {
+    display: flex;
+}
+
+//  --  UNIVERSAL FLEX WIDTHS
+//      This applies a flex value it to all of a grid's direct children.
+//  --------------------------------------------------------------------------
+.grid__fl0 {
+    &,
+    > .grid,
+    > .grid--cell {
+        flex: 0 auto;
+    }
+}
+.grid__fl1 {
+    &,
+    > .grid,
+    > .grid--cell {
+        flex: 1 auto;
+    }
+}
+
+//  ============================================================================
+//  $   GRID SPACING
+//      Insert spaces or gutters in between grid cells
+//  ----------------------------------------------------------------------------
+@include gutter-spacing($spacing-units);
+
+//  On rows, remove top and bottom margins
+.gsx {
+    &,
+    > .grid,
+    > [class*="grid--cell"] {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
+
+//  On columns, remove left and right margins
+.gsy {
+    &,
+    > .grid,
+    > [class*="grid--cell"] {
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+
+//  ============================================================================
+//  $   GRID UTILITIES
+//  ----------------------------------------------------------------------------
+@each $breakpoint, $variant in $rwd-variants {
+    @include rwd($breakpoint) {
+        //  --  FLEX DIRECTION
+        //
+        .fd-row#{$variant}                  { flex-direction: row; }
+        .fd-row-reverse#{$variant}          { flex-direction: row-reverse; }
+        .fd-column#{$variant}               { flex-direction: column; }
+        .fd-column-reverse#{$variant}       { flex-direction: column-reverse; }
+
+        //  --  FLEX WRAP
+        //      This determines if a parent's child items will wrap or not.
+        //  ----------------------------------------------------------------------------
+        .fw-wrap#{$variant}                 { flex-wrap: wrap; }
+        .fw-wrap-reverse#{$variant}         { flex-wrap: wrap-reverse; }
+        .fw-nowrap#{$variant}               { flex-wrap: nowrap; }
+
+        //  --  FLEX FLOW
+        //      This is another shorthand property for flex-direction and flex-wrap.
+        //      Default value is "row nowrap".
+        //  ----------------------------------------------------------------------------
+        .ff-row-wrap#{$variant}             { flex-flow: row wrap; }
+        .ff-row-nowrap#{$variant}           { flex-flow: row nowrap; }
+        .ff-row-reverse-wrap#{$variant}     { flex-flow: row-reverse wrap; }
+        .ff-row-reverse-nowrap#{$variant}   { flex-flow: row-reverse nowrap; }
+        .ff-column-wrap#{$variant}          { flex-flow: column wrap; }
+        .ff-column-nowrap#{$variant}        { flex-flow: column nowrap; }
+        .ff-column-reverse-wrap#{$variant}  { flex-flow: column-reverse wrap; }
+        .ff-column-reverse-nowrap#{$variant}{ flex-flow: column-reverse nowrap; }
+
+        //  --  JUSTIFY CONTENT
+        //      Defines the child alignment along the parent's main axis
+        //  ----------------------------------------------------------------------------
+        .jc-center#{$variant}               { justify-content: center; }
+        .jc-end#{$variant}                  { justify-content: flex-end; }
+        .jc-space-around#{$variant}         { justify-content: space-around; }
+        .jc-space-between#{$variant}        { justify-content: space-between; }
+        .jc-space-evenly#{$variant}         { justify-content: space-evenly; }
+        .jc-start#{$variant}                { justify-content: flex-start; }
+
+        //  --  ALIGN CONTENT
+        //      Aligns the container's lines when there is extra space in the
+        //      cross-axis. Note that this only works when a parent container
+        //      has more than one line.
+        //  ----------------------------------------------------------------------------
+        .ac-center#{$variant}               { align-content: center; }
+        .ac-end#{$variant}                  { align-content: flex-end; }
+        .ac-space-around#{$variant}         { align-content: space-around; }
+        .ac-space-between#{$variant}        { align-content: space-between; }
+        .ac-start#{$variant}                { align-content: flex-start; }
+        .ac-stretch#{$variant}              { align-content: stretch; }
+
+        //  --  ALIGN ITEMS
+        //      Defines the default behavior for how child items align along
+        //      the parent's cross axis. Think of it the cross-axis for
+        //      justify-content.
+        //  ----------------------------------------------------------------------------
+        .ai-center#{$variant}               { align-itmes: center; }
+        .ai-end#{$variant}                  { align-itmes: flex-end; }
+        .ai-baseline#{$variant}             { align-itmes: baseline; }
+        .ai-start#{$variant}                { align-itmes: flex-start; }
+        .ai-stretch#{$variant}              { align-itmes: stretch; }
+
+        //  --  CENTER ITEMS
+        //      A common combination of classes is .jc-center and .ai-center.
+        //      Use this class when you want both.
+        //  ----------------------------------------------------------------------------
+        .grid__center #{$variant}           { justify-content: center; align-itmes: center; }
+
+        //  --  ALIGN SELF
+        //      Allows child containers to re-align themselves irregardless
+        //      of the parent's main axis direction.
+        //  ----------------------------------------------------------------------------
+        .as-auto#{$variant}                 { align-itmes: auto; }
+        .as-center#{$variant}               { align-itmes: center; }
+        .as-end#{$variant}                  { align-itmes: flex-end; }
+        .as-baseline#{$variant}             { align-itmes: baseline; }
+        .as-start#{$variant}                { align-itmes: flex-start; }
+        .as-stretch#{$variant}              { align-itmes: stretch; }
+
+        //  --  FLEX
+        //      Graduating scale of flex-grow and flex-shrink values
+        //  ----------------------------------------------------------------------------
+        .fl0#{$variant}                     { flex: 0 auto; }
+        .fl1#{$variant}                     { flex: 1 auto; }
+        .fl2#{$variant}                     { flex: 2 auto; }
+
+        //  --  FLEX SHRINK
+        //      Specifies the flex-shrink factor, which states how much an item will
+        //      shrink relative to other flex items in the container when there isn't
+        //      enough space in the row. Default value is 1.
+        //  ----------------------------------------------------------------------------
+        .fl-shrink0#{$variant}              { flex-shrink: 0; }
+        .fl-shrink1#{$variant}              { flex-shrink: 1; }
+        .fl-shrink2#{$variant}              { flex-shrink: 2; }
+
+        //  --  FLEX GROW
+        //      Specifies the flex-shrink grow, which states how much an item will
+        //      grow relative to other flex items in the container when there isn't
+        //      enough space in the row. Default value is 1.
+        //  ----------------------------------------------------------------------------
+        .fl-grow0#{$variant}               { flex-grow: 0; }
+        .fl-grow1#{$variant}               { flex-grow: 1; }
+        .fl-grow2#{$variant}               { flex-grow: 2; }
+
+        //  --  Ordering
+        //      Designate a child container's position.
+        //  ----------------------------------------------------------------------------
+        .order-first#{$variant}            { order: -1; }
+        .order-last#{$variant}             { order: 1; }
+    }
+}

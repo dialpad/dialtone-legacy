@@ -29,11 +29,15 @@ $tt-unset:         unset;
 //  ============================================================================
 //  $$  TEXT ALIGN
 //  ----------------------------------------------------------------------------
-.ta-left        { @include rwd($breakpoints) { text-align: left; } }
-.ta-center      { @include rwd($breakpoints) { text-align: center; } }
-.ta-right       { @include rwd($breakpoints) { text-align: right; } }
-.ta-justify     { @include rwd($breakpoints) { text-align: justify; } }
-.ta-unset       { @include rwd($breakpoints) { text-align: unset; } }
+@each $breakpoint, $variant in $rwd-variants {
+    @include rwd($breakpoint) {
+        .ta-left#{$variant}     { text-align: left; }
+        .ta-center#{$variant}   { text-align: center; }
+        .ta-right#{$variant}    { text-align: right; }
+        .ta-justify#{$variant}  { text-align: justify; }
+        .ta-unset#{$variant}    { text-align: unset; }
+    }
+}
 
 //  ============================================================================
 //  $$  FONT WEIGHT

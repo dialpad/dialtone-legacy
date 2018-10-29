@@ -1,0 +1,53 @@
+//
+//  DIALPAD
+//  Margins
+//
+//  ============================================================================
+@each $breakpoint, $variant in $rwd-variants {
+    @include rwd($breakpoint) {
+        // Create the spacing units
+        @each $spacer, $value in $spacing-units {
+            //  Margin -- All sides
+            .m#{$spacer}#{$variant} { margin: $value !important; }
+            //  Margin -- Top
+            .mt#{$spacer}#{$variant} { margin-top: $value !important; }
+            //  Margin -- Right
+            .mr#{$spacer}#{$variant} { margin-right: $value !important; }
+            //  Margin -- Bottom
+            .mb#{$spacer}#{$variant} { margin-bottom: $value !important; }
+            //  Margin -- Left
+            .ml#{$spacer}#{$variant} { margin-left: $value !important; }
+
+            @if ($spacer != 0) {
+                //  Negative Margin -- Top
+                .mtn#{$spacer}#{$variant} { margin-top: -$value !important; }
+                //  Negative Margin -- Right
+                .mrn#{$spacer}#{$variant} { margin-right: -$value !important; }
+                //  Negative Margin -- Bottom
+                .mbn#{$spacer}#{$variant} { margin-bottom: -$value !important; }
+                //  Negative Margin -- Left
+                .mln#{$spacer}#{$variant} { margin-left: -$value !important; }
+            }
+
+            //  X-Axis Margin
+            .mx#{$spacer}#{$variant} {
+                margin-left: -$value !important;
+                margin-right: -$value !important;
+            }
+            //  Y-Axis Margin
+            .my#{$spacer}#{$variant} {
+                margin-top: -$value !important;
+                margin-bottom: -$value !important;
+            }
+        }
+
+        .mx-auto#{$variant} {
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+        .my-auto#{$variant} {
+            margin-top: auto !important;
+            margin-bottom: auto !important;
+        }
+    }
+}
