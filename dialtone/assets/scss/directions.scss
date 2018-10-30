@@ -1,0 +1,59 @@
+//
+//  DIALPAD
+//  Directions
+//
+//  ============================================================================
+//  $   DIRECTIONS
+//  ----------------------------------------------------------------------------
+@each $breakpoint, $variant in $rwd-variants {
+    @include rwd($breakpoint) {
+        @each $spacer, $value in $spacing-units {
+            .#{$variant}t#{$spacer}  { top: $value !important; }
+            .#{$variant}r#{$spacer}  { right: $value !important; }
+            .#{$variant}b#{$spacer}  { bottom: $value !important; }
+            .#{$variant}l#{$spacer}  { left: $value !important; }
+
+            .#{$variant}tn#{$spacer} { top: -$value !important; }
+            .#{$variant}rn#{$spacer} { right: -$value !important; }
+            .#{$variant}bn#{$spacer} { bottom: -$value !important; }
+            .#{$variant}ln#{$spacer} { left: -$value !important; }
+        }
+
+        .#{$variant}t100 { top: 100% !important; }
+        .#{$variant}r100 { right: 100% !important; }
+        .#{$variant}b100 { bottom: 100% !important; }
+        .#{$variant}b100 { left: 100% !important; }
+    }
+}
+
+
+//  ============================================================================
+//  $   WIDTHS & HEIGHTS
+//  ----------------------------------------------------------------------------
+$width-height: (
+    0: none,
+    1:  (1 / length($grid-columns)) * 100,
+    2:  (2 / length($grid-columns)) * 100,
+    3:  (3 / length($grid-columns)) * 100,
+    4:  (4 / length($grid-columns)) * 100,
+    5:  (5 / length($grid-columns)) * 100,
+    6:  (6 / length($grid-columns)) * 100,
+    7:  (7 / length($grid-columns)) * 100,
+    8:  (8 / length($grid-columns)) * 100,
+    9:  (9 / length($grid-columns)) * 100,
+    10: (10 / length($grid-columns)) * 100,
+    11: (11 / length($grid-columns)) * 100,
+    12: (12 / length($grid-columns)) * 100
+);
+
+@each $breakpoint, $variant in $rwd-variants {
+    @include rwd($breakpoint) {
+        @each $value in $width-height {
+            .#{$variant}w#{$value} { width: $value !important; }
+            .#{$variant}h#{$value} { height: $value !important; }
+        }
+
+        .#{$variant}w-auto { width: auto !important; }
+        .#{$variant}h-auto { height: auto !important; }
+    }
+}
