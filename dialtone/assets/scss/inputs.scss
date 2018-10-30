@@ -1,0 +1,94 @@
+//
+//  DIALPAD
+//  Inputs
+//
+//  ============================================================================
+//  $   VARIABLES
+//  ----------------------------------------------------------------------------
+$input-padding:         ($spacing-base / 1px) * 0.0625em;
+
+//  ============================================================================
+//  $   BASE STYLE
+//  ----------------------------------------------------------------------------
+.d-input {
+    padding: $input-padding;
+    width: 100%;
+    border: 1px solid $gray-010;
+    border-radius: $br-sm;
+    box-shadow: inset 0 0 1px transparentize($gray-040, 0.8), 0 0 0 transparentize($white, 1);
+    font-family: inherit;
+    font-size: $fs-body1;
+    line-height: $lh-lg;
+    outline: none;
+
+    //  --  PLACEHOLDER
+    //  ------------------------------------------------------------------------
+    &::-webkit-input-placeholder {
+        color: $gray-020;
+    }
+    // IE
+    &:-ms-input-placeholder {
+        color: $gray-020;
+    }
+    // Edge
+    &::-ms-input-placeholder {
+        color: $gray-020;
+    }
+    &::placeholder {
+        color: $gray-020;
+    }
+
+    //  --  REMOVE EDGE ADDITIONS
+    //  ------------------------------------------------------------------------
+    &::-ms-clear { display: none; }
+
+    //  --  FOCUS
+    //  ------------------------------------------------------------------------
+    &:focus {
+        position: relative;
+        border-color: $blue-060;
+        box-shadow: inset 0 0 $sp2 $gray-010, 0 0 0 $sp4 transparentize($blue-060,0.85);
+        outline: 0;
+    }
+
+    //  --  DISABLED
+    //  ------------------------------------------------------------------------
+    &[disabled],
+    &[read-only] {
+        border-color: transparent;
+        background-color: $gray-005;
+        box-shadow: none;
+        color: $gray-040;
+    }
+
+    //  Disabled
+    &[disabled] {
+        cursor: not-allowed;
+    }
+}
+
+
+//  ============================================================================
+//  $  FIELDSET
+//  ----------------------------------------------------------------------------
+fieldset {
+    min-width: 0;
+    padding: 0;
+    border: 0;
+}
+
+
+//  ============================================================================
+//  $  LABELS
+//  ============================================================================
+.d-label {
+    padding: 0 $sp2; // Helps the label visually line up with inputs
+    color: $fc-dark;
+    font-family: inherit;
+    font-size: $fs-body1;
+    font-weight: $fw-bold;
+    cursor: pointer;
+}
+legend.d-label {
+    cursor: default; // Reset cursor when it's a legend
+}

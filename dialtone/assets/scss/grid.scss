@@ -1,3 +1,10 @@
+//
+//  DIALPAD
+//  Grid
+//
+//  ============================================================================
+//  $   VARIABLES & MIXINS
+//  ----------------------------------------------------------------------------
 $grid-columns:      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
 
 @mixin grid-fixed-cells($value) {
@@ -38,14 +45,10 @@ $grid-columns:      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
 }
 
 //  ----------------------------------------------------------------------------
-//      2.  Generate the desired gutters
+//      --  GUTTERS
 //          We halve the spacing value because the spacing value should be the
 //          total space between cells--not the total applied to each cell,
 //          which would effectively double the desired total.
-//
-//          The "when" statements here refer to when we declare it's for a
-//          row (default) or a column. When a column we need to reset the
-//          left and right margins and add in top and bottom margins.
 //  ----------------------------------------------------------------------------
 @mixin gutter-spacing($values) {
     @each $spacer, $value in $spacing-units {
@@ -101,23 +104,27 @@ $grid-columns:      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
 //  ----------------------------------------------------------------------------
 @include gutter-spacing($spacing-units);
 
-//  On rows, remove top and bottom margins
-.gsx {
-    &,
-    > .grid,
-    > [class*="grid--cell"] {
-        margin-top: 0;
-        margin-bottom: 0;
-    }
-}
+@each $breakpoint, $variant in $rwd-variants {
+    @include rwd($breakpoint) {
+        //  On rows, remove top and bottom margins
+        .#{$variant}gsx {
+            &,
+            > .grid,
+            > [class*="grid--cell"] {
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+        }
 
-//  On columns, remove left and right margins
-.gsy {
-    &,
-    > .grid,
-    > [class*="grid--cell"] {
-        margin-right: 0;
-        margin-left: 0;
+        //  On columns, remove left and right margins
+        .#{$variant}gsy {
+            &,
+            > .grid,
+            > [class*="grid--cell"] {
+                margin-right: 0;
+                margin-left: 0;
+            }
+        }
     }
 }
 
