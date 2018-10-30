@@ -6,6 +6,7 @@ const utility = require('postcss-utilities');
 const browserSync = require('browser-sync').create();
 const postcssPresentEnv = require('postcss-preset-env');
 const postcssNormalize = require('postcss-normalize');
+const cssnano = require('cssnano');
 
 gulp.task('browserSync', function() {
     browserSync.init({
@@ -19,7 +20,8 @@ gulp.task('sass', function() {
         postcssNormalize(),
         postcssPresentEnv(),
         cssorder,
-        utility
+        utility,
+        cssnano
     ]
     return gulp.src('assets/scss/app.scss')
         .pipe(sass().on('error', sass.logError))
