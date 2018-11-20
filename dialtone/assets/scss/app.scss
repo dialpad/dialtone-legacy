@@ -4,6 +4,7 @@
 @import "layout";
 @import "utilities";
 @import "colors";
+@import "backgrounds";
 @import "margin";
 @import "padding";
 @import "grid";
@@ -15,6 +16,7 @@
 //  Dialtone Core Components
 @import "buttons";
 @import "inputs";
+@import "list-groups";
 
 
 html,
@@ -37,7 +39,56 @@ html {
 }
 
 body {
+    margin: 0;
     background-color: $white;
     color: $fc-dark;
     @extend %ff-mark-400;
+}
+
+
+
+//  --  GRID COLUMNS
+.dds-app-shell {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    width: 100%;
+}
+
+.dds-app-left-rail {
+    position: static;
+    width: 100vw;
+    z-index: $z-base;
+    grid-column: 1/span 1;
+    grid-row: 1/span 1;
+
+    background-color: $gray-005;
+
+    @media (max-width: $width-md - 1) {
+        display: none;
+        visibility: hidden;
+    }
+    @media (min-width: $width-md) {
+        display: block;
+        visibility: visible;
+        max-width: 15rem;
+    }
+}
+
+.dds-app-content-area {
+    padding: $sp32;
+    grid-column: 2/span 1;
+    grid-row: 1/span 1;
+}
+
+
+//  --  LOGO
+.dds-logo-image {
+    width: auto;
+    max-width: 8rem;
+    height: auto;
+}
+
+//  --  NAVIGATION
+.dds-app-nav {
+    height: 100vh;
 }
