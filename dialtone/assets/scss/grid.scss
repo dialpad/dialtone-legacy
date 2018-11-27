@@ -21,7 +21,7 @@ $grid-columns:      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
 
 @mixin grid-fixed-cell-spacing($value) {
     @each $col in $grid-columns {
-        $cell-width: $col * 100% / $col;
+        $cell-width: (#{$col} * 100%) / 12;
 
         > .grid--cell#{$col} {
             margin: $value/2;

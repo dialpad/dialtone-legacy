@@ -1,0 +1,24 @@
+---
+layout: page
+title: Colors
+description: Dialpad uses specific color choices to help communicate user interface functionality, states, and actions within the product. These colors have been selected for on-screen use.
+---
+<section class="dds-docs--section">
+    <h2 class="dds-docs--header">Palette</h2>
+    <div class="grid fw-wrap grid__allcells4 gs32">
+        {% for color in site.data.color-stops %}
+            <div class="grid--cell">
+                <div class="grid fd-column">
+                    {% for stop in color.stops %}
+                        <div class="grid--cell p16{% if stop.primary %} py32{% endif %}" style="background-color: {{ stop.hex }};">
+                            <div class="grid ff-mono fs-body1">
+                                <div class="grid--cell">${{ stop.stop }}</div>
+                                <div class="grid--cell ml-auto">{{ stop.hex }}</div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</section>

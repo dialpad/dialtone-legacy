@@ -10,6 +10,43 @@ $br-md:         5px;
 $br-lg:         7px;
 $br-xl:         11px;
 
+$br-units: (
+    sm: $br-sm,
+    md: $br-md,
+    lg: $br-lg,
+    xl: $br-xl
+) !default;
+
+@each $breakpoint, $variant in $rwd-variants {
+    @include rwd($breakpoint) {
+        // Create border-radius classes
+        @each $step, $value in $br-units {
+            //  Border Radius -- All sides
+            .#{$variant}br-#{$step} { border-radius: $value !important; }
+            //  Border Radius -- Top
+            .#{$variant}btr-#{$step} {
+                border-top-left-radius: $value !important;
+                border-top-right-radius: $value !important;
+            }
+            //  Border Radius -- Bottom
+            .#{$variant}bbr-#{$step} {
+                border-bottom-left-radius: $value !important;
+                border-bottom-right-radius: $value !important;
+            }
+            //  Border Radius -- Left
+            .#{$variant}bbl-#{$step} {
+                border-top-left-radius: $value !important;
+                border-bottom-left-radius: $value !important;
+            }
+            //  Border Radius -- Right
+            .#{$variant}brr-#{$step} {
+                border-top-right-radius: $value !important;
+                border-bottom-right-radius: $value !important;
+            }
+        }
+    }
+}
+
 
 //  ============================================================================
 //  $   Z-INDEX
