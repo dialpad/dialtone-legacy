@@ -6,7 +6,7 @@ const sass = require('gulp-sass');
 const postcss = require('gulp-postcss');
 const gutil = require('gulp-util');
 
-const siteRoot = "./_site";
+const siteRoot = "./docs/_site";
 const cssSource = "./lib/scss/**/*.scss";
 const htmlSource = "./docs/**/*.html";
 const dataSource = "./docs/**/*.yml";
@@ -34,12 +34,8 @@ gulp.task('jekyll', () => {
         './docs/_site',
         '--config',
         './docs/_config.yml'
-    ], {
-        stderr: false,
-        execOptions: {
-            cwd: 'docs'
-        }
-    });
+    ], { stderr: "initial" }
+    );
     const jekyllLogger = (buffer) => {
         buffer.toString()
             .split(/\n/)
