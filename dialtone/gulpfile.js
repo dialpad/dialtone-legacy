@@ -4,53 +4,37 @@ const browserSync = require('browser-sync').create();
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const postcss = require('gulp-postcss');
-const cssorder = require('postcss-ordered-values');
-const utility = require('postcss-utilities');
-const postcssPresentEnv = require('postcss-preset-env');
-const postcssNormalize = require('postcss-normalize');
-const cssnano = require('cssnano');
 const gutil = require('gulp-util');
 
-const siteRoot = "_site";
-const cssSource = "**/*.scss";
-const cssAppFile = "assets/scss/dialtone.scss"
-const htmlSource = "*.html";
-const dataSource = "*.yml";
-const jsSource = "**/*.js"
-const cssDest = "assets/css/";
+const siteRoot = "./docs/_site";
+const cssSource = "./lib/scss/**/*.scss";
+const htmlSource = "./docs/**/*.html";
+const dataSource = "./docs/**/*.yml";
+const jsSource = "./docs/assets/js/**/*.js"
+const cssDest = "./docs/assets/css/";
 
 
 gulp.task('css', function() {
-    var plugins = [
-        postcssNormalize(),
-        postcssPresentEnv(),
-        cssorder,
-        utility,
-        cssnano
-    ]
-    return gulp.src(cssAppFile)
+    return gulp.src(cssSource)
         .pipe(sass().on('error', sass.logError))
-        .pipe(postcss(plugins))
+        .pipe(postcss())
         .pipe(gulp.dest(cssDest))
         .pipe(browserSync.stream());
 });
-
-gulp.task('js', function() {
-    return gulp.src(jsSource)
-        .pipe(browserify())
-        .pipe(gulp.dest("assets/dist/js/"));
-})
-
-gulp.task('css-minify', function() {
-
-})
 
 gulp.task('jekyll', () => {
     const jekyll = child.spawn('jekyll', ['build',
         '--watch',
         '--incremental',
-        '--drafts'
-    ]);
+        '--drafts',
+        '--config',
+        './docs/_config.yml'
+    ], {
+        stderr: false,
+        execOptions: {
+            cwd: 'docs'
+        }
+    });
     const jekyllLogger = (buffer) => {
         buffer.toString()
             .split(/\n/)
