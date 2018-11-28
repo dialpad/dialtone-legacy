@@ -6,7 +6,7 @@ const sass = require('gulp-sass');
 const postcss = require('gulp-postcss');
 const gutil = require('gulp-util');
 
-const siteRoot = "./docs/_site";
+const siteRoot = "./_site";
 const cssSource = "./lib/scss/**/*.scss";
 const htmlSource = "./docs/**/*.html";
 const dataSource = "./docs/**/*.yml";
@@ -23,10 +23,15 @@ gulp.task('css', function() {
 });
 
 gulp.task('jekyll', () => {
-    const jekyll = child.spawn('jekyll', ['build',
+    const jekyll = child.spawn('jekyll', [
+        'build',
         '--watch',
         '--incremental',
         '--drafts',
+        '--source',
+        './docs',
+        '--destination',
+        './docs/_site',
         '--config',
         './docs/_config.yml'
     ], {
