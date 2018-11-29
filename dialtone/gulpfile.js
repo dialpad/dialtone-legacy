@@ -1,8 +1,12 @@
+'use strict';
+
 const child = require('child_process');
 const browserSync = require('browser-sync').create();
 
 const gulp = require('gulp');
 const sass = require('gulp-sass');
+const rename = require('gulp-rename');
+const cssnano = require('cssnano');
 const postcss = require('gulp-postcss');
 const gutil = require('gulp-util');
 
@@ -18,6 +22,13 @@ gulp.task('css', function() {
     return gulp.src(cssSource)
         .pipe(sass().on('error', sass.logError))
         .pipe(postcss())
+        .pipe(gulp.dest(cssDest))
+        .pipe(postcss([
+            cssnano()
+        ]))
+        .pipe(rename({
+            suffix: '.min'
+        }))
         .pipe(gulp.dest(cssDest))
         .pipe(browserSync.stream());
 });

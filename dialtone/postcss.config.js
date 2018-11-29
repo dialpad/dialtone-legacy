@@ -177,9 +177,5 @@ module.exports = {
         require('postcss-normalize')({
             forceImport: true
         }),
-        // Minify the CSS
-        require('cssnano')({
-            preset: 'default',
-        }),
     ],
 };
