@@ -35,7 +35,7 @@ gulp.task('css', function() {
 
 gulp.task('jekyll', () => {
     const jekyll = child.spawn('jekyll', [
-        'build',
+        'serve',
         '--watch',
         '--incremental',
         '--drafts',
