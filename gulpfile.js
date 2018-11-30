@@ -26,6 +26,7 @@ gulp.task('lib-css', function() {
         .pipe(sass().on('error', sass.logError))
         .pipe(postcss())
         .pipe(gulp.dest(cssLib))
+        .pipe(gulp.dest(cssDocs))
         .pipe(postcss([
             normalize({ forceImport: true }),
             cssnano()
@@ -34,6 +35,7 @@ gulp.task('lib-css', function() {
             suffix: '.min'
         }))
         .pipe(gulp.dest(cssLib))
+        .pipe(gulp.dest(cssDocs))
         .pipe(browserSync.stream());
 });
 
