@@ -87,8 +87,8 @@ gulp.task('serve', function() {
         }
     });
 
-    gulp.watch(scssSource, ['lib-css']);
-    gulp.watch(scssDocs, ['docs-css']);
+    gulp.watch(scssSource, ['lib-css', 'docs-css']);
+    gulp.watch(scssDocs, ['lib-css', 'docs-css']);
     gulp.watch(htmlSource).on('change', function() {
         gulp.task('jekyll');
     });

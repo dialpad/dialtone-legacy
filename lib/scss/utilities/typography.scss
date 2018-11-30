@@ -16,6 +16,35 @@
 //  • Line height
 //
 //  ============================================================================
+//  $   FONT FACE
+//  ----------------------------------------------------------------------------
+$ff-styles: (
+    200: MarkWeb-Light,
+    400: MarkWeb,
+    500: MarkWeb-Medium,
+    700: MarkWeb-Bold,
+);
+@each $key, $name in $ff-styles {
+    @font-face {
+        font-family: "#{$name}", $ff-sans;
+        src: url("../fonts/#{$name}.woff");
+        font-weight: $key;
+        font-style: normal;
+    }
+}
+
+//  ============================================================================
+//  $$  FONT STYLE CLASSES
+//  ----------------------------------------------------------------------------
+.ff-mark-light      { font-family: $ff-mark-light; font-weight: 200; }
+.ff-mark            { font-family: $ff-mark; }
+.ff-mark-medium     { font-family: $ff-mark-medium; font-weight: 500; }
+.ff-mark-bold       { font-family: $ff-mark-bold; font-weight: 700; }
+.ff-sans            { font-family: $ff-sans; }
+.ff-mono            { font-family: $ff-mono; }
+
+
+//  ============================================================================
 //  $   HEADER RESETS
 //  ----------------------------------------------------------------------------
 h1, h2, h3, h4, h5, h6 {
