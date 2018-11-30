@@ -1,0 +1,88 @@
+//
+//  DIALTONE
+//  CONSTANTS: BREAKPOINTS
+//
+//  These are breakpoint constants and mixins for Dialpad's design system Dialtone.
+//  For further documentation of these and other classes,
+//  visit https://dialpad.design/constants/breakpoints
+//
+//  TABLE OF CONTENTS
+//  • Breakpoints
+//  • Responsive name mixin
+//  • Media query mixin
+//  • Retina media query
+//
+//  ============================================================================
+//  $   BREAKPOINTS
+//  ----------------------------------------------------------------------------
+$width-xs: 0;
+$width-sm: 480px;
+$width-md: 768px;
+$width-lg: 1024px;
+$width-xl: 1280px;
+
+$breakpoints: (
+    //  Small screen (i.e. phone)
+    sm: $width-sm,
+    //  Medium screen (ie. tablet)
+    md: $width-md,
+    //  Large screen (i.e. normal desktop)
+    lg: $width-lg,
+    //  Extra large screen (i.e. wide desktop)
+    xl: $width-xl
+) !default;
+
+
+//  ============================================================================
+//  $   RESPONSIVE NAME MIXIN
+//      Used for creating responsive utility class names
+//  ----------------------------------------------------------------------------
+$rwd-variants: ("": "");
+@each $key in map-keys($breakpoints) {
+    $rwd-variants: map-merge($rwd-variants, ($key: "#{$key}\\:"));
+}
+
+
+//  ============================================================================
+//  $   MEDIA QUERY MIXINS
+//      Generates the media queries for the responsive utility classes
+//  ----------------------------------------------------------------------------
+@mixin rwd($breakpoint) {
+    @if $breakpoint == "" {
+        @content;
+    }
+
+    @else {
+        $value: map-get($breakpoints, $breakpoint);
+
+        //  If the value exists
+        @if $value != null {
+            //  Prints a media query based on the value
+            @media (max-width: $value) {
+                @content;
+            }
+        }
+        //  If the value doesn't exist
+        @else {
+            @warn "Unfortunately that isn't a defined breakpoint. "
+             + "Please make sure it's defined in the `$breakpoints` map.";
+        }
+    }
+}
+
+
+//  ============================================================================
+//  $   RETINA MEDIA QUERY
+//  ----------------------------------------------------------------------------
+@mixin rwd-retina {
+    @media
+        only screen and (-webkit-min-device-pixel-ration: 2),
+        only screen and (min--moz-device-pixel-ratio: 2),
+        only screen and (-moz-min-device-pixel-ratio: 2),
+        only screen and (-o-min-device-pixel-ratio: 2/1),
+        only screen and (min-device-pixel-ratio: 2),
+        only screen and (min-resolution: 192dpi),
+        only screen and (min-resolution: 2dppx) {
+        @content;
+    }
+}

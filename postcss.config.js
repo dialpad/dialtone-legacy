@@ -173,9 +173,5 @@ module.exports = {
                 "user-select",
             ]
         }),
-        // Add in Normalize.css reset
-        require('postcss-normalize')({
-            forceImport: true
-        }),
     ],
 };

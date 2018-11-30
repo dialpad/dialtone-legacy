@@ -14,7 +14,7 @@
                         <ul class="dds-list-group">
                             {% for sublink in item.sublinks %}
                                 {% assign pageURL = page.url | remove_first:"/" | remove: ".html" %}
-                                {% assign url = sublink.url %}
+                                {% assign url = sublink.url | append: ".html" %}
                                 <li><a class="dds-list-group__link{% if pageURL == sublink.url %} dds-list-group__link-selected{% endif %}" href="{{ url | relative_url }}">{{ sublink.title }}</a></li>
                             {% endfor %}
                         </ul>

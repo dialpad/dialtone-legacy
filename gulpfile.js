@@ -7,29 +7,48 @@ const gulp = require('gulp');
 const sass = require('gulp-sass');
 const rename = require('gulp-rename');
 const cssnano = require('cssnano');
+const normalize = require('postcss-normalize');
 const postcss = require('gulp-postcss');
 const gutil = require('gulp-util');
 
 const siteRoot = "./docs/_site";
-const cssSource = "./lib/scss/**/*.scss";
+const scssSource = "./lib/scss/**/*.scss";
+const scssDocs = "./assets/scss/**/*.scss";
 const htmlSource = "./docs/**/*.html";
 const dataSource = "./docs/**/*.yml";
 const jsSource = "./docs/assets/js/**/*.js"
-const cssDest = "./docs/assets/css/";
+const cssDocs = "./docs/assets/css/";
+const cssLib = "./lib/css/";
 
 
-gulp.task('css', function() {
-    return gulp.src(cssSource)
+gulp.task('lib-css', function() {
+    return gulp.src("./lib/scss/dialtone.scss")
         .pipe(sass().on('error', sass.logError))
         .pipe(postcss())
-        .pipe(gulp.dest(cssDest))
+        .pipe(gulp.dest(cssLib))
+        .pipe(postcss([
+            normalize({ forceImport: true }),
+            cssnano()
+        ]))
+        .pipe(rename({
+            suffix: '.min'
+        }))
+        .pipe(gulp.dest(cssLib))
+        .pipe(browserSync.stream());
+});
+
+gulp.task('docs-css', function() {
+    return gulp.src("./docs/assets/scss/dialtone--docs.scss")
+        .pipe(sass().on('error', sass.logError))
+        .pipe(postcss())
+        .pipe(gulp.dest(cssDocs))
         .pipe(postcss([
             cssnano()
         ]))
         .pipe(rename({
             suffix: '.min'
         }))
-        .pipe(gulp.dest(cssDest))
+        .pipe(gulp.dest(cssDocs))
         .pipe(browserSync.stream());
 });
 
@@ -68,7 +87,8 @@ gulp.task('serve', function() {
         }
     });
 
-    gulp.watch(cssSource, ['css']);
+    gulp.watch(scssSource, ['lib-css']);
+    gulp.watch(scssDocs, ['docs-css']);
     gulp.watch(htmlSource).on('change', function() {
         gulp.task('jekyll');
     });
@@ -77,4 +97,4 @@ gulp.task('serve', function() {
     });
 });
 
-gulp.task('default', ['css', 'jekyll', 'serve']);
+gulp.task('default', ['lib-css', 'docs-css', 'jekyll', 'serve']);

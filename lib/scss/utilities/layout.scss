@@ -1,0 +1,165 @@
+//
+//  DIALTONE
+//  UTILITIES: LAYOUT
+//
+//  These are layout utility classes for Dialpad's design system Dialtone.
+//  For further documentation of these and other classes,
+//  visit https://dialpad.design/utilities/layout
+//
+//  TABLE OF CONTENTS
+//  • Display
+//  • Visibility
+//  • Overflow
+//  • Position
+//  • Floats
+//  • Box sizing
+//  • Width
+//  • Height
+//  • Alignment
+//  • Z-index
+//
+//  ============================================================================
+//  $  DISPLAY
+//  ----------------------------------------------------------------------------
+@each $breakpoint, $variant in $rwd-variants {
+    @include rwd($breakpoint) {
+        .#{$variant}d-block                { display: block; }
+        .#{$variant}d-inline               { display: inline; }
+        .#{$variant}d-inline-block         { display: inline-block; }
+        .#{$variant}d-flex                 { display: flex; }
+        .#{$variant}d-inline-flex          { display: inline-flex; }
+        .#{$variant}d-grid                 { display: grid; }
+        .#{$variant}d-inline-grid          { display: inline-grid; }
+        .#{$variant}d-table                { display: table; }
+        .#{$variant}d-table-cell           { display: table-cell; }
+        .#{$variant}d-none                 { display: none; }
+        .#{$variant}d-inherit              { display: inherit; }
+        .#{$variant}d-initial              { display: initial; }
+    }
+}
+
+//  ============================================================================
+//  $  VISIBILITY
+//  ----------------------------------------------------------------------------
+@each $breakpoint, $variant in $rwd-variants {
+    @include rwd($breakpoint) {
+        .#{$variant}v-visible              { visibility: visible; }
+        .#{$variant}v-hidden               { visibility: hidden; }
+        .#{$variant}v-collapse             { visibility: collapse; }
+        .#{$variant}v-inherit              { visibility: inherit; }
+    }
+}
+
+//  ============================================================================
+//  $  OVERFLOW
+//  ----------------------------------------------------------------------------
+@each $breakpoint, $variant in $rwd-variants {
+    @include rwd($breakpoint) {
+        .#{$variant}overflow-auto          { overflow: auto; }
+        .#{$variant}overflow-x-auto        { overflow-x: auto; }
+        .#{$variant}overflow-y-auto        { overflow-y: auto; }
+        .#{$variant}overflow-hidden        { overflow: hidden; }
+        .#{$variant}overflow-x-hidden      { overflow-x: hidden; }
+        .#{$variant}overflow-y-hidden      { overflow-y: hidden; }
+        .#{$variant}overflow-scroll        { overflow: scroll; }
+        .#{$variant}overflow-x-scroll      { overflow-x: scroll; }
+        .#{$variant}overflow-y-scroll      { overflow-y: scroll; }
+        .#{$variant}overflow-visible       { overflow: visible; }
+    }
+}
+
+//  ============================================================================
+//  $  POSITION
+//  ----------------------------------------------------------------------------
+@each $breakpoint, $variant in $rwd-variants {
+    @include rwd($breakpoint) {
+        .#{$variant}ps-absolute            { position: absolute; }
+        .#{$variant}ps-fixed               { position: fixed; }
+        .#{$variant}ps-relative            { position: relative; }
+        .#{$variant}ps-static              { position: static; }
+        .#{$variant}ps-sticky              { position: sticky; }
+        .#{$variant}ps-initial             { position: initial; }
+        .#{$variant}ps-unset               { position: unset; }
+    }
+}
+
+//  ============================================================================
+//  $  FLOATS
+//  ----------------------------------------------------------------------------
+@each $breakpoint, $variant in $rwd-variants {
+    @include rwd($breakpoint) {
+        .#{$variant}fl-left                { float: left; }
+        .#{$variant}fl-right               { float: right; }
+        .#{$variant}fl-none                { float: none; }
+        .#{$variant}fl-initial             { float: initial; }
+        .#{$variant}clearfix               { }
+        .#{$variant}clear-left             { clear: left; }
+        .#{$variant}clear-right            { clear: right; }
+        .#{$variant}clear-both             { clear: both; }
+        .#{$variant}clear-none             { clear: none; }
+        .#{$variant}clear-initial          { clear: initial; }
+    }
+}
+
+//  ============================================================================
+//  $  BOX SIZING
+//  ----------------------------------------------------------------------------
+@each $breakpoint, $variant in $rwd-variants {
+    @include rwd($breakpoint) {
+        .#{$variant}bs-content             { box-sizing: content-box; }
+        .#{$variant}bs-border              { box-sizing: border-box; }
+        .#{$variant}bs-initial             { box-sizing: initial; }
+        .#{$variant}bs-unset               { box-sizing: unset; }
+    }
+}
+
+//  ============================================================================
+//  $  WIDTHS
+//  ----------------------------------------------------------------------------
+$width-percentages: auto, 0, 10, 20, 25, 30, 40, 50, 60, 70, 75, 80, 90, 100;
+
+$width-min-sizes: (
+    1: (( 1 / 12 ) * 100) * #{$base-font-size},
+    2: (( 2 / 12 ) * 100) * #{$base-font-size},
+    3: (( 3 / 12 ) * 100) * #{$base-font-size},
+    4: (( 4 / 12 ) * 100) * #{$base-font-size},
+    5: (( 5 / 12 ) * 100) * #{$base-font-size},
+    6: (( 6 / 12 ) * 100) * #{$base-font-size},
+    7: (( 7 / 12 ) * 100) * #{$base-font-size},
+    8: (( 8 / 12 ) * 100) * #{$base-font-size},
+    9: (( 9 / 12 ) * 100) * #{$base-font-size},
+    10: (( 10 / 12 ) * 100) * #{$base-font-size},
+    11: (( 11 / 12 ) * 100) * #{$base-font-size},
+    12: (( 12 / 12 ) * 100) * #{$base-font-size},
+);
+
+@each $breakpoint, $variant in $rwd-variants {
+    @include rwd($breakpoint) {
+        @each $value in $width-percentages {
+            @if $value == "auto" {
+                .#{$variant}w-auto         { width: auto; }
+            }
+            @else {
+                .#{$variant}w#{$value}     { width: #{$value} * 1%; }
+            }
+        }
+
+        @each $key, $value in $width-min-sizes {
+            .#{$variant}ws#{$key}          { width: #{$value} * 1rem; }
+        }
+    }
+}
+
+
+//  ============================================================================
+//  $  VERTICAL ALIGNMENT
+//  ----------------------------------------------------------------------------
+.va-baseline	        { vertical-align: baseline !important; }
+.va-bottom	            { vertical-align: bottom !important; }
+.va-middle	            { vertical-align: middle !important; }
+.va-sub	                { vertical-align: sub !important; }
+.va-super	            { vertical-align: super !important; }
+.va-text-bottom	        { vertical-align: text-bottom !important; }
+.va-text-top	        { vertical-align: text-top !important; }
+.va-top	                { vertical-align: top !important; }
+.va-unset	            { vertical-align: unset !important; }

@@ -1,0 +1,88 @@
+//
+//  DIALTONE
+//  UTILTIES: TYPOGRAPHY
+//
+//  These are utility typography classes for Dialpad's design system Dialtone.
+//  For further documentation of these and other classes,
+//  visit https://dialpad.design/utilties/typography
+//
+//  TABLE OF CONTENTS
+//  • Header resets
+//  • Font sizes
+//  • Font weight
+//  • Font styles
+//  • Text transform
+//  • Text alignment
+//  • Line height
+//
+//  ============================================================================
+//  $   HEADER RESETS
+//  ----------------------------------------------------------------------------
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+}
+
+//  ============================================================================
+//  $   SIZES
+//  ----------------------------------------------------------------------------
+.fs-display     { font-size: $fs-display; }
+.fs-title       { font-size: $fs-title; }
+.fs-headline    { font-size: $fs-headline; }
+.fs-subheading  { font-size: $fs-subheading; }
+.fs-body2       { font-size: $fs-body2; }
+.fs-body1       { font-size: $fs-body1; }
+.fs-caption     { font-size: $fs-caption; }
+.fs-fine        { font-size: $fs-fine; }
+.fs-caps        { font-size: $fs-caps; text-transform: $tt-uppercase; }
+
+
+//  ============================================================================
+//  $$  FONT WEIGHT
+//  ----------------------------------------------------------------------------
+.fw-light       { font-weight: $fw-light; }
+.fw-normal      { font-weight: $fw-normal; }
+.fw-medium      { font-weight: $fw-medium; }
+.fw-bold        { font-weight: $fw-bold; }
+
+
+//  ============================================================================
+//  $$  FONT STYLES
+//  ----------------------------------------------------------------------------
+.fs-normal      { font-style: normal; }
+.fs-italic      { font-style: italic; }
+.fs-unset       { font-style: unset; }
+
+
+//  ============================================================================
+//  $   TEXT TRANSFORM
+//  ----------------------------------------------------------------------------
+.tt-capitalize  { text-transform: $tt-capitalize; }
+.tt-lowercase   { text-transform: $tt-lowercase; }
+.tt-uppercase   { text-transform: $tt-uppercase; }
+.tt-none        { text-transform: $tt-none; }
+.tt-unset       { text-transform: $tt-unset; }
+
+
+//  ============================================================================
+//  $$  TEXT ALIGN
+//  ----------------------------------------------------------------------------
+@each $breakpoint, $variant in $rwd-variants {
+    @include rwd($breakpoint) {
+        .#{$variant}ta-left     { text-align: left; }
+        .#{$variant}ta-center   { text-align: center; }
+        .#{$variant}ta-right    { text-align: right; }
+        .#{$variant}ta-justify  { text-align: justify; }
+        .#{$variant}ta-unset    { text-align: unset; }
+    }
+}
+
+
+//  ============================================================================
+//  $$  LINE HEIGHTS
+//  ----------------------------------------------------------------------------
+.lh-xs          { line-height: $lh-xs; }
+.lh-sm          { line-height: $lh-sm; }
+.lh-md          { line-height: $lh-md; }
+.lh-lg          { line-height: $lh-lg; }
+.lh-xl          { line-height: $lh-xl; }
+.lh-lg          { line-height: $lh-lg; }
