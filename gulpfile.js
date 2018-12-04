@@ -19,6 +19,7 @@ const dataSource = "./docs/**/*.yml";
 const jsSource = "./docs/assets/js/**/*.js"
 const cssDocs = "./docs/assets/css/";
 const cssLib = "./lib/css/";
+const cssSite = "./docs/_site/assets/css/";
 
 
 gulp.task('lib-css', function() {
@@ -59,7 +60,6 @@ gulp.task('jekyll', () => {
         'serve',
         '--watch',
         '--incremental',
-        '--drafts',
         '--source',
         './docs',
         '--destination',

@@ -1,4 +1,5 @@
-@import "./lib/scss/constants/dialtone--constants.scss";
+@import "./lib/scss/constants/dialtone--constants";
+@import "dialtone--syntax";
 
 body {
     margin: 0;
@@ -66,4 +67,66 @@ body {
 .dds-docs--p__lg {
     font-size: $fs-subheading;
     color: $fc-medium;
+}
+
+//  --  PREVIEW
+.dds-docs--example {
+    margin: $sp16 0 $sp32;
+    border-radius: $br-md;
+    border: 1px solid $gray-010;
+
+    //  CODE
+    .highlight {
+        position: relative;
+
+        // Reset margins
+        &,
+        pre {
+            margin: 0;
+            font-size: $fs-caption;
+            font-family: $ff-mono;
+            line-height: $lh-lg;
+            color: #C5C8C6;
+        }
+
+        > pre {
+            margin: -1px;
+            max-height: 24rem;
+            overflow: auto;
+            background-color: $gray-100;
+            border-radius: $br-md $br-md 0 0;
+            overflow: auto;
+        }
+
+        .gutter.gl {
+            margin: -1px 0 -1px -1px;
+            padding: $sp8;
+            min-width: $sp24;
+            background: lighten($gray-100, 5%);
+            text-align: right;
+
+            pre {
+                color: #7A7D80;
+            }
+        }
+
+        .code {
+            padding-left: $sp12;
+        }
+    }
+
+    //  EXAMPLE AREA
+    .dds-docs--example__preview {
+        padding: $sp24;
+    }
+
+    //  GRID BLOCKS
+    .dds-docs--example-cell {
+        padding: $sp8;
+        border: 1px solid lighten($blue-060,10%);
+        background-color: transparentize($blue-060, 0.85);
+        font-family: $ff-mono;
+        font-size: $fs-caption;
+        text-align: center;
+    }
 }
