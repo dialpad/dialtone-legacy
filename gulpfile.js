@@ -14,8 +14,8 @@ const gutil = require('gulp-util');
 const siteRoot = "./docs/_site";
 const scssSource = "./lib/scss/**/*.scss";
 const scssDocs = "./assets/scss/**/*.scss";
-const htmlSource = "./docs/**/*.html";
-const dataSource = "./docs/**/*.yml";
+const htmlSource = "'!_site/**/*.html', './docs/**/*.html'";
+const dataSource = "'!_site/**/*.yml', ''./docs/**/*.yml'";
 const jsSource = "./docs/assets/js/**/*.js"
 const cssDocs = "./docs/assets/css/";
 const cssLib = "./lib/css/";
@@ -66,7 +66,7 @@ gulp.task('jekyll', () => {
         './docs/_site',
         '--config',
         './docs/_config.yml'
-    ], { stderr: "initial" }
+    ], { stderr: "inherit" }
     );
     const jekyllLogger = (buffer) => {
         buffer.toString()
@@ -76,6 +76,10 @@ gulp.task('jekyll', () => {
 
     jekyll.stdout.on('data', jekyllLogger);
     jekyll.stderr.on('data', jekyllLogger);
+});
+
+gulp.task('jekyll-rebuild', ['jekyll'], function() {
+    browserSync.reload();
 });
 
 gulp.task('serve', function() {
@@ -92,11 +96,11 @@ gulp.task('serve', function() {
     gulp.watch(scssSource, ['lib-css', 'docs-css']);
     gulp.watch(scssDocs, ['lib-css', 'docs-css']);
     gulp.watch(htmlSource).on('change', function() {
-        gulp.task('jekyll');
+        gulp.task('jekyll-rebuild');
     });
     gulp.watch(dataSource).on('change', function() {
-        gulp.task('jekyll');
+        gulp.task('jekyll-rebuild');
     });
 });
 
-gulp.task('default', ['lib-css', 'docs-css', 'jekyll', 'serve']);
+gulp.task('default', ['jekyll', 'serve']);
