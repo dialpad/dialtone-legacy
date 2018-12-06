@@ -14,11 +14,12 @@ const gutil = require('gulp-util');
 const siteRoot = "./docs/_site";
 const scssSource = "./lib/scss/**/*.scss";
 const scssDocs = "./assets/scss/**/*.scss";
-const htmlSource = "./docs/**/*.html";
-const dataSource = "./docs/**/*.yml";
+const htmlSource = "'!_site/**/*.html', './docs/**/*.html'";
+const dataSource = "'!_site/**/*.yml', ''./docs/**/*.yml'";
 const jsSource = "./docs/assets/js/**/*.js"
 const cssDocs = "./docs/assets/css/";
 const cssLib = "./lib/css/";
+const cssSite = "./docs/_site/assets/css/";
 
 
 gulp.task('lib-css', function() {
@@ -35,8 +36,7 @@ gulp.task('lib-css', function() {
             suffix: '.min'
         }))
         .pipe(gulp.dest(cssLib))
-        .pipe(gulp.dest(cssDocs))
-        .pipe(browserSync.stream());
+        .pipe(gulp.dest(cssDocs));
 });
 
 gulp.task('docs-css', function() {
@@ -50,8 +50,13 @@ gulp.task('docs-css', function() {
         .pipe(rename({
             suffix: '.min'
         }))
-        .pipe(gulp.dest(cssDocs))
-        .pipe(browserSync.stream());
+        .pipe(gulp.dest(cssDocs));
+});
+
+gulp.task('css', function() {
+    gulp.start('lib-css');
+    gulp.start('docs-css');
+    browserSync.stream();
 });
 
 gulp.task('jekyll', () => {
@@ -59,14 +64,13 @@ gulp.task('jekyll', () => {
         'serve',
         '--watch',
         '--incremental',
-        '--drafts',
         '--source',
         './docs',
         '--destination',
         './docs/_site',
         '--config',
         './docs/_config.yml'
-    ], { stderr: "initial" }
+    ], { stderr: "inherit" }
     );
     const jekyllLogger = (buffer) => {
         buffer.toString()
@@ -78,7 +82,11 @@ gulp.task('jekyll', () => {
     jekyll.stderr.on('data', jekyllLogger);
 });
 
-gulp.task('serve', function() {
+gulp.task('jekyll-rebuild', ['jekyll'], function() {
+    browserSync.reload();
+});
+
+gulp.task('watch', function() {
     browserSync.init({
         files: [siteRoot + '/**'],
         watch: true,
@@ -89,14 +97,14 @@ gulp.task('serve', function() {
         }
     });
 
-    gulp.watch(scssSource, ['lib-css', 'docs-css']);
-    gulp.watch(scssDocs, ['lib-css', 'docs-css']);
+    gulp.watch(scssSource, ['css']);
+    gulp.watch(scssDocs, ['css']);
     gulp.watch(htmlSource).on('change', function() {
-        gulp.task('jekyll');
+        gulp.task('jekyll-rebuild');
     });
     gulp.watch(dataSource).on('change', function() {
-        gulp.task('jekyll');
+        gulp.task('jekyll-rebuild');
     });
 });
 
-gulp.task('default', ['lib-css', 'docs-css', 'jekyll', 'serve']);
+gulp.task('default', ['lib-css', 'docs-css', 'jekyll', 'watch']);

@@ -2,19 +2,25 @@
 <html lang="en">
     {% include head.html %}
     <body>
-        <div class="dds-app-shell">
+        <div class="grid--col1:2">
             {% include nav.html %}
 
-            <main class="dds-app-content-area">
-                {% if page.title %}
-                    <h1 class="dds-docs--title">{{ page.title }}</h1>
-                {% endif %}
-                {% if page.description %}
-                    <p class="dds-docs--p__lg">{{ page.description }}</p>
-                {% endif %}
-
-                {{ content }}
+            <main class="grid--row1:2 p32">
+                <header>
+                    {% if page.title %}
+                        <h1 class="dds-docs--title">{{ page.title }}</h1>
+                    {% endif %}
+                    {% if page.description %}
+                        <p class="dds-docs--p__lg">{{ page.description }}</p>
+                    {% endif %}
+                </header>
+                <div>
+                    {{ content }}
+                </div>
             </main>
+            <div class="grid--right">
+                Right
+            </div>
         </div>
     </body>
 </html>
