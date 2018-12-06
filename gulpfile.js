@@ -56,7 +56,7 @@ gulp.task('docs-css', function() {
 gulp.task('css', function() {
     gulp.start('lib-css');
     gulp.start('docs-css');
-    browserSync.reload();
+    browserSync.stream();
 });
 
 gulp.task('jekyll', () => {
@@ -86,7 +86,7 @@ gulp.task('jekyll-rebuild', ['jekyll'], function() {
     browserSync.reload();
 });
 
-gulp.task('serve', function() {
+gulp.task('watch', function() {
     browserSync.init({
         files: [siteRoot + '/**'],
         watch: true,
@@ -107,4 +107,4 @@ gulp.task('serve', function() {
     });
 });
 
-gulp.task('default', ['css', 'jekyll', 'serve']);
+gulp.task('default', ['lib-css', 'docs-css', 'jekyll', 'watch']);

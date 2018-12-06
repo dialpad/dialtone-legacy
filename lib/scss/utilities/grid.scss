@@ -1,8 +1,25 @@
+//
+//  DIALTONE
+//  UTILITIES: GRID
+//
+//  These are the CSS grid utility classes for Dialpad's design system Dialtone.
+//  For further documentation of these and other classes,
+//  visit https://dialpad.design/utilities/grid
+//
+//  TABLE OF CONTENTS
+//  • Variables / Constants
+//  • Container
+//  • Layouts
+//  • Areas
+//  • Spans
+//  • Gutters
+//
+//  ============================================================================
 :root {
     --nav-sidebar-min-width:    auto;
     --nav-sidebar-max-width:    15rem;
     --content-min-width:        auto;
-    --content-max-width:        52rem;
+    --content-max-width:        50rem;
 }
 
 $grid-columns:      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 !default;
@@ -12,15 +29,17 @@ $grid-columns:      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 !default;
 //  ----------------------------------------------------------------------------
 .grid {
     display: grid;
-    grid-template-columns:
-        [full-start]
-            minmax(auto, var(--sidebar-width, 8rem)) 600px
-        [full-end];
-    grid-auto-columns: minmax(5rem, 1fr);
+    grid-template-columns: [full-start] repeat(auto-fit, [col-start] minmax(5rem, 1fr) [col-end]) [full-end];
 }
 
 //  ============================================================================
 //  $   GRID LAYOUTS
+//  ============================================================================
+//  $$  ROWS & COLUMNS
+//  ----------------------------------------------------------------------------
+//  TBD
+
+//  $$  COLUMNS
 //  ----------------------------------------------------------------------------
 .grid--col {
     display: grid;
@@ -28,6 +47,7 @@ $grid-columns:      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 !default;
         [full-start]
             repeat(var(--cols, 12), [col-start] minmax(5rem, 1fr) [col-end])
         [full-end];
+    grid-auto-columns: minmax(5rem, 1fr);
 }
 
 .grid--col1\:2 {
@@ -40,6 +60,8 @@ $grid-columns:      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 !default;
         [content-end full-end];
 }
 
+//  $$  ROWS
+//  ----------------------------------------------------------------------------
 .grid--row {
     display: grid;
     grid-auto-rows: [row-start] 1fr [row-end];
@@ -58,6 +80,17 @@ $grid-columns:      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 !default;
         "content";
 }
 
+
+//  ============================================================================
+//  $   GRID AREAS
+//  ----------------------------------------------------------------------------
+.grid__full     { grid-area: full; }
+.grid__content  { grid-area: content;}
+
+
+//  ============================================================================
+//  $   GRID SPANS
+//  ----------------------------------------------------------------------------
 .grid-colspan {
     grid-column: span var(--col-span, 1);
 }
@@ -66,26 +99,6 @@ $grid-columns:      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 !default;
     grid-row: span var(--row-span, 1);
 }
 
-
-//  ============================================================================
-//  $   GRID AREAS
-//  ----------------------------------------------------------------------------
-.grid__full     { grid-area: full; }
-.grid__content  { grid-area: content;}
-
-//  ============================================================================
-//  $   ROW SIZES
-//  ----------------------------------------------------------------------------
-$grid-row-min-height-base:  6.25rem !default;
-
-.grid__rmh1         { grid-template-rows: repeat(auto-fit, minmax($grid-row-min-height-base, auto)); }
-.grid__rmh2         { grid-template-rows: repeat(auto-fit, minmax(($grid-row-min-height-base * 2.5), auto)); }
-.grid__rmh3         { grid-template-rows: repeat(auto-fit, minmax(($grid-row-min-height-base * 3.5), auto)); }
-
-
-//  ============================================================================
-//  $   GRID COLUMNS
-//  ----------------------------------------------------------------------------
 @each $value in $grid-columns {
     .grid__col-span#{$value} { grid-column: span $value; }
 }
@@ -114,7 +127,7 @@ $grid-row-min-height-base:  6.25rem !default;
 //  ----------------------------------------------------------------------------
 @each $breakpoint, $variant in $rwd-variants {
     @include rwd($breakpoint) {
-        .#{$variant}grid                    { display: grid; }
+        // .#{$variant}grid                    { display: grid; }
         .#{$variant}grid-inline             { display: grid-inline; }
     }
 }
