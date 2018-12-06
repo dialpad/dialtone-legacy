@@ -1,3 +1,10 @@
+:root {
+    --nav-sidebar-min-width:    auto;
+    --nav-sidebar-max-width:    15rem;
+    --content-min-width:        auto;
+    --content-max-width:        52rem;
+}
+
 $grid-columns:      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 !default;
 
 //  ============================================================================
@@ -5,42 +12,85 @@ $grid-columns:      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 !default;
 //  ----------------------------------------------------------------------------
 .grid {
     display: grid;
-    grid-template-columns: [full-start] repeat(auto-fit, [cell-start] minmax(5rem, auto) [cell-end]) [full-end];
+    grid-template-columns:
+        [full-start]
+            minmax(auto, var(--sidebar-width, 8rem)) 600px
+        [full-end];
+    grid-auto-columns: minmax(5rem, 1fr);
 }
 
 //  ============================================================================
 //  $   GRID LAYOUTS
 //  ----------------------------------------------------------------------------
-//  Layouts
-.grid__1\:2         { grid-template-columns: [left-start] minmax(auto, 13rem) [left-end content-start] 2fr [content-end]; }
-.grid__1\:3         { grid-template-columns: [left-start] 1fr [left-end content-start] 3fr [content-end]; }
-.grid__2\:1         { grid-template-columns: [content-start] 2fr [content-end right-start] 1fr [right-end]; }
-.grid__3\:1         { grid-template-columns: [content-start] 3fr [content-end right-start] 1fr [right-end]; }
-.grid__1\:2\:1      { grid-template-columns: [left-start] minmax(7.5rem, 15rem) [left-end content-start] minmax(30rem, 50rem) [content-end right-start] minmax(5rem, 1fr) [right-end] ; }
+.grid--col {
+    display: grid;
+    grid-template-columns:
+        [full-start]
+            repeat(var(--cols, 12), [col-start] minmax(5rem, 1fr) [col-end])
+        [full-end];
+}
 
-//  Named areas
-.grid--content      { grid-area: content; }
-.grid--footer       { grid-area: footer; }
-.grid--header       { grid-area: header; }
-.grid--left         { grid-area: left; }
-.grid--main         { grid-area: main; }
-.grid--right        { grid-area: right; }
-.grid--sidebar      { grid-area: sidebar; }
+.grid--col1\:2 {
+    display: grid;
+    grid-template-columns:
+        [full-start left-start]
+            minmax(var(--nav-sidebar-min-width, auto), var(--nav-sidebar-max-width, 1fr))
+        [left-end content-start]
+            minmax(var(--content-min-width, 3fr), var(--content-max-width, max-content))
+        [content-end full-end];
+}
 
+.grid--row {
+    display: grid;
+    grid-auto-rows: [row-start] 1fr [row-end];
+}
+.grid--row1\:2 {
+    display: grid;
+    grid-template-rows:
+        [header-start]
+            var(--header-height, min-content)
+        [header-end content-start]
+            var(--content-height, auto)
+        [content-end];
+    grid-auto-rows: 1fr;
+    grid-template-areas:
+        "header"
+        "content";
+}
+
+.grid-colspan {
+    grid-column: span var(--col-span, 1);
+}
+
+.grid-rowspan {
+    grid-row: span var(--row-span, 1);
+}
+
+
+//  ============================================================================
+//  $   GRID AREAS
+//  ----------------------------------------------------------------------------
+.grid__full     { grid-area: full; }
+.grid__content  { grid-area: content;}
 
 //  ============================================================================
 //  $   ROW SIZES
 //  ----------------------------------------------------------------------------
-.grid__rmh1         { grid-template-rows: minmax(6.25rem, auto); }
-.grid__rmh2         { grid-template-rows: minmax(15rem, auto); }
-.grid__rmh3         { grid-template-rows: minmax(22.5rem, auto); }
+$grid-row-min-height-base:  6.25rem !default;
+
+.grid__rmh1         { grid-template-rows: repeat(auto-fit, minmax($grid-row-min-height-base, auto)); }
+.grid__rmh2         { grid-template-rows: repeat(auto-fit, minmax(($grid-row-min-height-base * 2.5), auto)); }
+.grid__rmh3         { grid-template-rows: repeat(auto-fit, minmax(($grid-row-min-height-base * 3.5), auto)); }
 
 
 //  ============================================================================
 //  $   GRID COLUMNS
 //  ----------------------------------------------------------------------------
-@each $col in $grid-columns {
-    .grid__span#{$col} { grid-column: span $col; }
+@each $value in $grid-columns {
+    .grid__col-span#{$value} { grid-column: span $value; }
+}
+@each $value in $grid-columns {
+    .grid__row-span#{$value} { grid-row: span $value; }
 }
 
 
@@ -50,11 +100,11 @@ $grid-columns:      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 !default;
 @each $breakpoint, $variant in $rwd-variants {
     @include rwd($breakpoint) {
         @each $key, $space in $spacing-units {
-            .#{$variant}gs#{$key} { grid-gap: $space; }
+            .#{$variant}gg#{$key} { grid-gap: $space; }
         }
 
-        .#{$variant}gsx { grid-row-gap: 0; }
-        .#{$variant}gsy { grid-column-gap: 0; }
+        .#{$variant}ggx { grid-row-gap: 0; }
+        .#{$variant}ggy { grid-column-gap: 0; }
     }
 }
 

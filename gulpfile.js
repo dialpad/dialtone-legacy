@@ -36,8 +36,7 @@ gulp.task('lib-css', function() {
             suffix: '.min'
         }))
         .pipe(gulp.dest(cssLib))
-        .pipe(gulp.dest(cssDocs))
-        .pipe(browserSync.stream());
+        .pipe(gulp.dest(cssDocs));
 });
 
 gulp.task('docs-css', function() {
@@ -51,8 +50,13 @@ gulp.task('docs-css', function() {
         .pipe(rename({
             suffix: '.min'
         }))
-        .pipe(gulp.dest(cssDocs))
-        .pipe(browserSync.stream());
+        .pipe(gulp.dest(cssDocs));
+});
+
+gulp.task('css', function() {
+    gulp.start('lib-css');
+    gulp.start('docs-css');
+    browserSync.reload();
 });
 
 gulp.task('jekyll', () => {
@@ -93,8 +97,8 @@ gulp.task('serve', function() {
         }
     });
 
-    gulp.watch(scssSource, ['lib-css', 'docs-css']);
-    gulp.watch(scssDocs, ['lib-css', 'docs-css']);
+    gulp.watch(scssSource, ['css']);
+    gulp.watch(scssDocs, ['css']);
     gulp.watch(htmlSource).on('change', function() {
         gulp.task('jekyll-rebuild');
     });
@@ -103,4 +107,4 @@ gulp.task('serve', function() {
     });
 });
 
-gulp.task('default', ['jekyll', 'serve']);
+gulp.task('default', ['css', 'jekyll', 'serve']);
