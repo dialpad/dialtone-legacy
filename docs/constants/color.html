@@ -5,20 +5,27 @@ description: Dialpad uses specific color choices to help communicate user interf
 ---
 <section class="dds-docs--section">
     <h2 class="dds-docs--header">Palette</h2>
-    <div class="grid fw-wrap grid__allcells4 gs32">
+    <div class="grid gg32" style="--grid-col-min-width: calc(50% - 16px);">
         {% for color in site.data.color-stops %}
-            <div class="grid--cell">
-                <div class="grid fd-column">
-                    {% for stop in color.stops %}
-                        <div class="grid--cell p16{% if stop.primary %} py32{% endif %}" style="background-color: {{ stop.hex }};">
-                            <div class="grid ff-mono fs-body1">
-                                <div class="grid--cell">${{ stop.stop }}</div>
-                                <div class="grid--cell ml-auto">{{ stop.hex }}</div>
-                            </div>
+        <div>
+            <h3 class="dds-docs--subheader">{{ color.color }}</h3>
+            <div class="flex fd-column ff-mono fs-caption">
+                {% for stop in color.stops %}
+                    <div class="flex--cell p16 bgc-{{ stop.stop }}{% if stop.primary %} py32{% endif %}{% if forloop.first %} btr-md{% endif %}">
+                        <div class="flex">
+                            <div class="flex--cell"><span class="dds-docs--code bgc-white-o85">${{ stop.stop }}</span></div>
+                            <div class="flex--cell ml-auto"><span class="dds-docs--code bgc-white-o85">{{ stop.hex }}</span></div>
                         </div>
-                    {% endfor %}
+                    </div>
+                {% endfor %}
+                <div class="flex--cell p16 bbr-md bgc-white ba btw0 bc-gray-light">
+                    <div class="flex">
+                        <div class="flex--cell"><span class="dds-docs--code">$white</span></div>
+                        <div class="flex--cell ml-auto"><span class="dds-docs--code">#FFFFFF</span></div>
+                    </div>
                 </div>
             </div>
+        </div>
         {% endfor %}
     </div>
 </section>

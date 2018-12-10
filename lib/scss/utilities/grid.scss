@@ -16,7 +16,7 @@
 //
 //  ============================================================================
 //  $   VARIABLES & CONSTANTS
-//  ============================================================================
+//  ----------------------------------------------------------------------------
 $grid-columns:      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 !default;
 
 :root {
@@ -30,6 +30,7 @@ $grid-columns:      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 !default;
 
     --grid-col:             12;
     --grid-col-width:       1fr;
+    --grid-col-min-width:   5rem;
     --grid-col-auto:        1fr;
     --grid-row:             3;
     --grid-row-width:       min-content;
@@ -41,7 +42,7 @@ $grid-columns:      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 !default;
 //  ----------------------------------------------------------------------------
 .grid {
     display: grid;
-    grid-template-columns: [full-start] repeat(auto-fit, [col-start] minmax(5rem, 1fr) [col-end]) [full-end];
+    grid-template-columns: [full-start] repeat(auto-fit, [col-start] minmax(var(--grid-col-min-width), max-content) [col-end]) [full-end];
     grid-auto-rows: min-content;
 }
 
