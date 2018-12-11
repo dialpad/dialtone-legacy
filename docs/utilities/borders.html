@@ -1,27 +1,311 @@
 ---
 layout: page
 title: Borders
-description: TBD
+description: Utility classes for borders and border radiuses.
 ---
 <section class="dds-docs--section">
-    <h2 class="dds-docs--header">Naming convention</h2>
-    <p>To do</p>
-</section>
-<section class="dds-docs--section">
     <h2 class="dds-docs--header">Default border</h2>
-    <p>To do</p>
-</section>
-<section class="dds-docs--section">
-    <h2 class="dds-docs--header">Border colors</h2>
-    <p>To do</p>
+    <p class="dds-docs--copy">The default border utility class applies a 1px, solid border using the current text color as it's color.</p>
+    <div class="dds-docs--example">
+{% highlight html linenos %}
+<div class="ba">
+    .ba object
+</div>
+{% endhighlight %}
+        <div class="dds-docs--example__preview">
+            <div class="ba p8 w100">
+                .ba object
+            </div>
+        </div>
+    </div>
 </section>
 <section class="dds-docs--section">
     <h2 class="dds-docs--header">Directional borders</h2>
-    <p>To do</p>
+    <p class="dds-docs--copy">Borders can be applied directionally to a specific edge or along the X or Y axis.</p>
+    <div class="dds-docs--example">
+{% highlight html linenos %}
+<div class="bt">.bt</div>
+<div class="br">.br</div>
+<div class="bb">.bb</div>
+<div class="bl">.bl</div>
+<div class="bx">.bx</div>
+<div class="by">.by</div>
+{% endhighlight %}
+        <div class="dds-docs--example__preview">
+            <div class="flex fw-wrap fl1__all">
+                <div class="flex--cell2 m8 p8 bt">.bt</div>
+                <div class="flex--cell2 m8 p8 br">.br</div>
+                <div class="flex--cell2 m8 p8 bb">.bb</div>
+                <div class="flex--cell2 m8 p8 bl">.bl</div>
+                <div class="flex--cell2 m8 p8 bx">.bx</div>
+                <div class="flex--cell2 m8 p8 by">.by</div>
+            </div>
+        </div>
+    </div>
+    <h3 class="dds-docs--subheader">Classes</h3>
+    <p class="dds-docs--copy">The border utility classes use an abbreviated syntax. The abbreviations are based on the CSS property name and a direction that border or border-radius should be applied. Below is a table outlining the classes and their meanings:</p>
+    <table class="dt-table dt-table__striped">
+        <thead>
+            <tr>
+                <th>Class</th>
+                <th>Full name</th>
+                <th style="width: 50%;">Output</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for name in site.data.borders.directions %}
+            <tr>
+                <td><code class="dds-docs--code">{{ name.class }}</code></td>
+                <td>{{ name.name }}</td>
+                <td><code class="dds-docs--code">{{ name.output }}</code></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+<section class="dds-docs--section">
+    <h2 class="dds-docs--header">Border widths</h2>
+    <p class="dds-docs--copy">Set a border's width by using a border style utility class. This allows you to not only increase a border width from it's default 1px value, but also remove borders by setting them to 0.</p>
+    <div class="dds-docs--example">
+{% highlight html linenos %}
+<div class="ba baw2">.ba .baw2</div>
+<div class="ba baw2 btw0">.ba .baw2 .btw0</div>
+<div class="bt btw2">.bt .btw2</div>
+<div class="br brw2">.br .brw2</div>
+<div class="bb bbw4">.bb .bbw4</div>
+<div class="bl blw4">.bl .blw4</div>
+<div class="bx bxw6">.bx .bxw6</div>
+<div class="by byw6">.by .byw6</div>
+{% endhighlight %}
+        <div class="dds-docs--example__preview">
+            <div class="flex fw-wrap fl1__all">
+                <div class="flex--cell2 m8 p8 ba baw2">.ba .baw2</div>
+                <div class="flex--cell2 m8 p8 ba baw2 btw0">.ba .baw2 .btw0</div>
+                <div class="flex--cell2 m8 p8 bt btw2">.bt .btw2</div>
+                <div class="flex--cell2 m8 p8 br brw2">.br .brw2</div>
+                <div class="flex--cell2 m8 p8 bb bbw4">.bb .bbw4</div>
+                <div class="flex--cell2 m8 p8 bl blw4">.bl .blw4</div>
+                <div class="flex--cell2 m8 p8 bx bxw6">.bx .bxw6</div>
+                <div class="flex--cell2 m8 p8 by byw6">.by .byw6</div>
+            </div>
+        </div>
+    </div>
+    <h3 class="dds-docs--subheader">Classes</h3>
+    <p class="dds-docs--copy">The border utility classes use an abbreviated syntax. The abbreviations are based on the CSS property name, the desired direction, and the property being applied.</p>
+    <table class="dt-table dt-table__striped">
+        <thead>
+            <tr>
+                <th>Class</th>
+                <th>Full name</th>
+                <th style="width: 50%;">Output</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for name in site.data.borders.widths %}
+            <tr>
+                <td><code class="dds-docs--code">{{ name.class }}</code></td>
+                <td>{{ name.name }}</td>
+                <td><code class="dds-docs--code">{{ name.output }}</code></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+<section class="dds-docs--section">
+    <h2 class="dds-docs--header">Border colors</h2>
+    <p class="dds-docs--copy">To change a border's color, use a border color utility class.</p>
+    <h3 class="dds-docs--subheader">White / Transparent</h3>
+    <div class="dds-docs--example">
+{% highlight html linenos %}
+<div class="ba bc-white">.ba .bc-white</div>
+<div class="ba bc-current">.ba .bc-current</div>
+<div class="ba bc-transparent">.ba .bc-transparent</div>
+{% endhighlight %}
+        <div class="dds-docs--example__preview">
+            <div class="bgc-gray-darker fc-white br-md px8 py2">
+                <div class="my8 w100 p8 br-sm ba bc-white">.ba .bc-white</div>
+                <div class="my8 w100 p8 br-sm ba bc-current fc-yellow">.ba .bc-current</div>
+                <div class="my8 w100 p8 br-sm ba bc-transparent">.ba .bc-transparent</div>
+            </div>
+        </div>
+    </div>
+    <h3 class="dds-docs--subheader">Gray</h3>
+    <div class="dds-docs--example">
+{% highlight html linenos %}
+<div class="ba bc-gray-darker">.ba .bc-gray-darker</div>
+<div class="ba bc-gray-dark">.ba .bc-gray-dark</div>
+<div class="ba bc-gray">.ba .bc-gray</div>
+<div class="ba bc-gray-light">.ba .bc-gray-light</div>
+{% endhighlight %}
+        <div class="dds-docs--example__preview">
+            <div class="px8 py2">
+                <div class="my8 w100 p8 br-sm ba bc-gray-darker">.ba .bc-gray-darker</div>
+                <div class="my8 w100 p8 br-sm ba bc-gray-dark">.ba .bc-gray-dark</div>
+                <div class="my8 w100 p8 br-sm ba bc-gray">.ba .bc-gray</div>
+                <div class="my8 w100 p8 br-sm ba bc-gray-light">.ba .bc-gray-light</div>
+            </div>
+        </div>
+    </div>
+    <h3 class="dds-docs--subheader">Blue</h3>
+    <div class="dds-docs--example">
+{% highlight html linenos %}
+<div class="ba bc-blue-darker">.ba .bc-blue-darker</div>
+<div class="ba bc-blue-dark">.ba .bc-blue-dark</div>
+<div class="ba bc-blue">.ba .bc-blue</div>
+<div class="ba bc-blue-light">.ba .bc-blue-light</div>
+{% endhighlight %}
+        <div class="dds-docs--example__preview">
+            <div class="px8 py2">
+                <div class="my8 w100 p8 br-sm ba bc-blue-darker">.ba .bc-blue-darker</div>
+                <div class="my8 w100 p8 br-sm ba bc-blue-dark">.ba .bc-blue-dark</div>
+                <div class="my8 w100 p8 br-sm ba bc-blue">.ba .bc-blue</div>
+                <div class="my8 w100 p8 br-sm ba bc-blue-light">.ba .bc-blue-light</div>
+            </div>
+        </div>
+    </div>
+    <h3 class="dds-docs--subheader">Navy</h3>
+    <div class="dds-docs--example">
+{% highlight html linenos %}
+<div class="ba bc-navy-darker">.ba .bc-navy-darker</div>
+<div class="ba bc-navy-dark">.ba .bc-navy-dark</div>
+<div class="ba bc-navy">.ba .bc-navy</div>
+<div class="ba bc-navy-light">.ba .bc-navy-light</div>
+{% endhighlight %}
+        <div class="dds-docs--example__preview">
+            <div class="px8 py2">
+                <div class="my8 w100 p8 br-sm ba bc-navy-darker">.ba .bc-navy-darker</div>
+                <div class="my8 w100 p8 br-sm ba bc-navy-dark">.ba .bc-navy-dark</div>
+                <div class="my8 w100 p8 br-sm ba bc-navy">.ba .bc-navy</div>
+                <div class="my8 w100 p8 br-sm ba bc-navy-light">.ba .bc-navy-light</div>
+            </div>
+        </div>
+    </div>
+    <h3 class="dds-docs--subheader">Teal</h3>
+    <div class="dds-docs--example">
+{% highlight html linenos %}
+<div class="ba bc-teal-darker">.ba .bc-teal-darker</div>
+<div class="ba bc-teal-dark">.ba .bc-teal-dark</div>
+<div class="ba bc-teal">.ba .bc-teal</div>
+<div class="ba bc-teal-light">.ba .bc-teal-light</div>
+{% endhighlight %}
+        <div class="dds-docs--example__preview">
+            <div class="px8 py2">
+                <div class="my8 w100 p8 br-sm ba bc-teal-darker">.ba .bc-teal-darker</div>
+                <div class="my8 w100 p8 br-sm ba bc-teal-dark">.ba .bc-teal-dark</div>
+                <div class="my8 w100 p8 br-sm ba bc-teal">.ba .bc-teal</div>
+                <div class="my8 w100 p8 br-sm ba bc-teal-light">.ba .bc-teal-light</div>
+            </div>
+        </div>
+    </div>
+    <h3 class="dds-docs--subheader">Yellow</h3>
+    <div class="dds-docs--example">
+{% highlight html linenos %}
+<div class="ba bc-yellow-darker">.ba .bc-yellow-darker</div>
+<div class="ba bc-yellow-dark">.ba .bc-yellow-dark</div>
+<div class="ba bc-yellow">.ba .bc-yellow</div>
+<div class="ba bc-yellow-light">.ba .bc-yellow-light</div>
+{% endhighlight %}
+        <div class="dds-docs--example__preview">
+            <div class="px8 py2">
+                <div class="my8 w100 p8 br-sm ba bc-yellow-darker">.ba .bc-yellow-darker</div>
+                <div class="my8 w100 p8 br-sm ba bc-yellow-dark">.ba .bc-yellow-dark</div>
+                <div class="my8 w100 p8 br-sm ba bc-yellow">.ba .bc-yellow</div>
+                <div class="my8 w100 p8 br-sm ba bc-yellow-light">.ba .bc-yellow-light</div>
+            </div>
+        </div>
+    </div>
+    <h3 class="dds-docs--subheader">Green</h3>
+    <div class="dds-docs--example">
+{% highlight html linenos %}
+<div class="ba bc-green-darker">.ba .bc-green-darker</div>
+<div class="ba bc-green-dark">.ba .bc-green-dark</div>
+<div class="ba bc-green">.ba .bc-green</div>
+<div class="ba bc-green-light">.ba .bc-green-light</div>
+{% endhighlight %}
+        <div class="dds-docs--example__preview">
+            <div class="px8 py2">
+                <div class="my8 w100 p8 br-sm ba bc-green-darker">.ba .bc-green-darker</div>
+                <div class="my8 w100 p8 br-sm ba bc-green-dark">.ba .bc-green-dark</div>
+                <div class="my8 w100 p8 br-sm ba bc-green">.ba .bc-green</div>
+                <div class="my8 w100 p8 br-sm ba bc-green-light">.ba .bc-green-light</div>
+            </div>
+        </div>
+    </div>
+    <h3 class="dds-docs--subheader">Red</h3>
+    <div class="dds-docs--example">
+{% highlight html linenos %}
+<div class="ba bc-red-darker">.ba .bc-red-darker</div>
+<div class="ba bc-red-dark">.ba .bc-red-dark</div>
+<div class="ba bc-red">.ba .bc-red</div>
+<div class="ba bc-red-light">.ba .bc-red-light</div>
+{% endhighlight %}
+        <div class="dds-docs--example__preview">
+            <div class="px8 py2">
+                <div class="my8 w100 p8 br-sm ba bc-red-darker">.ba .bc-red-darker</div>
+                <div class="my8 w100 p8 br-sm ba bc-red-dark">.ba .bc-red-dark</div>
+                <div class="my8 w100 p8 br-sm ba bc-red">.ba .bc-red</div>
+                <div class="my8 w100 p8 br-sm ba bc-red-light">.ba .bc-red-light</div>
+            </div>
+        </div>
+    </div>
+    <h3 class="dds-docs--subheader">Pink</h3>
+    <div class="dds-docs--example">
+{% highlight html linenos %}
+<div class="ba bc-pink-darker">.ba .bc-pink-darker</div>
+<div class="ba bc-pink-dark">.ba .bc-pink-dark</div>
+<div class="ba bc-pink">.ba .bc-pink</div>
+<div class="ba bc-pink-light">.ba .bc-pink-light</div>
+{% endhighlight %}
+        <div class="dds-docs--example__preview">
+            <div class="px8 py2">
+                <div class="my8 w100 p8 br-sm ba bc-pink-darker">.ba .bc-pink-darker</div>
+                <div class="my8 w100 p8 br-sm ba bc-pink-dark">.ba .bc-pink-dark</div>
+                <div class="my8 w100 p8 br-sm ba bc-pink">.ba .bc-pink</div>
+                <div class="my8 w100 p8 br-sm ba bc-pink-light">.ba .bc-pink-light</div>
+            </div>
+        </div>
+    </div>
 </section>
 <section class="dds-docs--section">
     <h2 class="dds-docs--header">Border radius</h2>
-    <p>To do</p>
+    <p class="dds-docs--copy">Add or change the border radius of elements with the following border radius utility classes.</p>
+    <div class="dds-docs--example">
+{% highlight html linenos %}
+<div class="ba br-sm">.br-sm</div>
+<div class="ba br-md">.br-md</div>
+<div class="ba br-lg">.br-lg</div>
+<div class="ba br-xl">.br-xl</div>
+<div class="ba br-circle">.br-circle</div>
+{% endhighlight %}
+        <div class="dds-docs--example__preview">
+            <div class="flex fw-wrap fl1__all p8">
+                <div class="flex--cell2 m8 p8 ba br-sm">.br-sm</div>
+                <div class="flex--cell2 m8 p8 ba br-md">.br-md</div>
+                <div class="flex--cell2 m8 p8 ba br-lg">.br-lg</div>
+                <div class="flex--cell2 m8 p8 ba br-xl">.br-xl</div>
+                <div class="flex--cell2 m8 p8 ba br-circle">.br-circle</div>
+            </div>
+        </div>
+    </div>
+
+    <h3 class="dds-docs--subheader">Directional border radius</h3>
+    <p class="dds-docs--copy">Sometimes you want to alter the border radius for a specific side only. In those cases, use these directional border radius utility classes.</p>
+    <div class="dds-docs--example">
+{% highlight html linenos %}
+<div class="ba btr-sm">.btr-sm</div>
+<div class="ba brr-md">.brr-md</div>
+<div class="ba bbr-lg">.bbr-lg</div>
+<div class="ba blr-xl">.blr-xl</div>
+{% endhighlight %}
+        <div class="dds-docs--example__preview">
+            <div class="flex fw-wrap fl1__all p8">
+                <div class="flex--cell2 m8 p8 ba btr-sm">.btr-sm</div>
+                <div class="flex--cell2 m8 p8 ba brr-md">.brr-md</div>
+                <div class="flex--cell2 m8 p8 ba bbr-lg">.bbr-lg</div>
+                <div class="flex--cell2 m8 p8 ba blr-xl">.blr-xl</div>
+            </div>
+        </div>
+    </div>
 </section>
 <section class="dds-docs--section">
     <h2 class="dds-docs--header">Responsive borders</h2>

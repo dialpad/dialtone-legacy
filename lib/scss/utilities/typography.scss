@@ -93,7 +93,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
 //  ============================================================================
-//  $$  TEXT ALIGN
+//  $   TEXT ALIGN
 //  ----------------------------------------------------------------------------
 @each $breakpoint, $variant in $rwd-variants {
     @include rwd($breakpoint) {
@@ -103,6 +103,14 @@ h1, h2, h3, h4, h5, h6 {
         .#{$variant}ta-justify  { text-align: justify; }
         .#{$variant}ta-unset    { text-align: unset; }
     }
+}
+
+
+//  ============================================================================
+//  $   FONT COLOR
+//  ----------------------------------------------------------------------------
+@each $key, $value in $color-steps {
+    .fc-#{$key} { color: $value !important; }
 }
 
 
