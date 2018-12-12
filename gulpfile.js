@@ -69,7 +69,7 @@ gulp.task('jekyll', () => {
         '--destination',
         './docs/_site',
         '--config',
-        './docs/_config.yml'
+        './docs/_config.yml,./docs/_config-dev.yml'
     ], { stderr: "inherit" }
     );
     const jekyllLogger = (buffer) => {
