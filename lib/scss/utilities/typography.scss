@@ -26,10 +26,9 @@ $ff-styles: (
 );
 @each $key, $name in $ff-styles {
     @font-face {
-        font-family: "#{$name}", $ff-sans;
-        src: url("../fonts/#{$name}.woff");
-        font-weight: $key;
-        font-style: normal;
+        font-family: "#{$name}";
+        src: url("../fonts/#{$name}.eot") format("eof"),
+             url("../fonts/#{$name}.woff") format("woff");
     }
 }
 

@@ -56,7 +56,7 @@ gulp.task('docs-css', function() {
 gulp.task('css', function() {
     gulp.start('lib-css');
     gulp.start('docs-css');
-    browserSync.stream({ once: true });
+    browserSync.reload({ reloadDelay: 1000 });
 });
 
 gulp.task('jekyll', () => {
@@ -90,8 +90,6 @@ gulp.task('jekyll-rebuild', ['jekyll'], function() {
 
 gulp.task('watch', function() {
     browserSync.init({
-        files: [siteRoot + '/**'],
-        watch: true,
         port: 4000,
         open: false,
         server: {
