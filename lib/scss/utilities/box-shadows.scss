@@ -1,0 +1,34 @@
+//
+//  DIALTONE
+//  UTILITIES: BOX SHADOWS
+//
+//  These are the box shadows classes for Dialpad's design system Dialtone.
+//  For further documentation of these and other classes,
+//  visit https://dialpad.design/utilities/box-shadows
+//
+//  TABLE OF CONTENTS
+//  • Constants
+//  • Box Shadows
+//
+//  ============================================================================
+//  $   CONSTANTS
+//  ----------------------------------------------------------------------------
+$box-shadows: (
+    none: none,
+    sm: 0 2px 4px 0 transparentize($gray-100, 0.85),
+    md: 0 2px 8px 0 transparentize($gray-100, 0.75),
+    lg: 0 2px 12px 0 transparentize($gray-100, 0.70),
+    xl: 0 2px 16px 0 transparentize($gray-100, 0.70),
+);
+
+
+//  ============================================================================
+//  $   BOX SHADOWS
+//  ----------------------------------------------------------------------------
+@each $breakpoint, $variant in $rwd-variants {
+    @include rwd($breakpoint) {
+        @each $key, $value in $box-shadows {
+            .#{$variant}bs-#{$key} { box-shadow: $value !important; }
+        }
+    }
+}
