@@ -11,7 +11,7 @@ description: Dialpad uses specific color choices to help communicate user interf
             <h3 class="dds-docs--subheader">{{ color.color }}</h3>
             <div class="flex fd-column ff-mono fs-caption">
                 {% for stop in color.stops %}
-                    <div class="flex--cell p16 bgc-{{ stop.stop }}{% if stop.primary %} py32{% endif %}{% if forloop.first %} btr-md{% endif %}">
+                    <div class="flex--cell p16 {% if stop.primary %} py32{% endif %}{% if forloop.first %} btr-md{% endif %}" style="background-color: {{ stop.hex }};">
                         <div class="flex">
                             <div class="flex--cell"><span class="dds-docs--code bgc-white-o85">${{ stop.stop }}</span></div>
                             <div class="flex--cell ml-auto"><span class="dds-docs--code bgc-white-o85">{{ stop.hex }}</span></div>
