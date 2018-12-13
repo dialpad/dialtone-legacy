@@ -1,5 +1,5 @@
 <div class="grid--left">
-    <div class="ps-fixed t0 l0 b0 overflow-x-hidden" style="width: var(--sidebar-max-width);">
+    <div class="ps-fixed t0 l0 b0 of-y-scroll of-x-hidden w100" style="min-width: var(--sidebar-min-width); max-width: var(--sidebar-max-width)">
         <div class="p16 pt32">
             <div class="dds-logo"><a href="{{ / | relative_url }}">{% include logo.html %}</a></div>
         </div>
@@ -15,7 +15,6 @@
                             <ul class="dds-list-group">
                                 {% for sublink in item.sublinks %}
                                     {% assign pageURL = page.url | remove_first:"/" | remove: ".html" %}
-                                    <!-- {% assign url = sublink.url | append: ".html" %} -->
                                     <li><a class="dds-list-group__link{% if pageURL == sublink.url %} dds-list-group__link-selected{% endif %}" href="{{ sublink.url | relative_url }}">{{ sublink.title }}</a></li>
                                 {% endfor %}
                             </ul>
