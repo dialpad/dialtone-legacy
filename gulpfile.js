@@ -90,6 +90,7 @@ gulp.task('jekyll-rebuild', ['jekyll'], function() {
 
 gulp.task('watch', function() {
     browserSync.init({
+        watch: true,
         port: 4000,
         open: false,
         server: {
