@@ -88,16 +88,22 @@
 //  ----------------------------------------------------------------------------
 @each $breakpoint, $variant in $rwd-variants {
     @include rwd($breakpoint) {
+        .#{$variant}fl-inline-start        { float: inline-start; }
+        .#{$variant}fl-inline-end          { float: inline-end; }
         .#{$variant}fl-left                { float: left; }
         .#{$variant}fl-right               { float: right; }
         .#{$variant}fl-none                { float: none; }
         .#{$variant}fl-initial             { float: initial; }
-        .#{$variant}clearfix               { }
-        .#{$variant}clear-left             { clear: left; }
-        .#{$variant}clear-right            { clear: right; }
-        .#{$variant}clear-both             { clear: both; }
-        .#{$variant}clear-none             { clear: none; }
-        .#{$variant}clear-initial          { clear: initial; }
+        .#{$variant}fl-unset               { float: unset; }
+        .#{$variant}cl-fix                 { &:before, &:after { content: ""; clear: both; display: table; } }
+        .#{$variant}cl-inline-start        { clear: inline-start; }
+        .#{$variant}cl-inline-end          { clear: inline-end; }
+        .#{$variant}cl-left                { clear: left; }
+        .#{$variant}cl-right               { clear: right; }
+        .#{$variant}cl-both                { clear: both; }
+        .#{$variant}cl-none                { clear: none; }
+        .#{$variant}cl-initial             { clear: initial; }
+        .#{$variant}cl-unset               { clear: unset; }
     }
 }
 
