@@ -68,6 +68,27 @@ description: Utility classes for borders and border radiuses.
 <section class="dds-docs--section">
     <h2 class="dds-docs--header">Border widths</h2>
     <p class="dds-docs--copy">Set a border's width by using a border style utility class. This allows you to not only increase a border width from it's default 1px value, but also remove borders by setting them to 0.</p>
+    <h3 class="dds-docs--subheader">Classes</h3>
+    <p class="dds-docs--copy">The border utility classes use an abbreviated syntax. The abbreviations are based on the CSS property name, the desired direction, and the property being applied.</p>
+    <table class="dt-table dt-table__striped">
+        <thead>
+            <tr>
+                <th>Class</th>
+                <th>Full name</th>
+                <th style="width: 50%;">Output</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for name in site.data.borders.widths %}
+            <tr>
+                <td><code class="dds-docs--code">{{ name.class }}</code></td>
+                <td>{{ name.name }}</td>
+                <td><code class="dds-docs--code">{{ name.output }}</code></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <h3 class="dds-docs--subheader">Examples</h3>
     <div class="dds-docs--example">
 {% highlight html linenos %}
 <div class="ba baw2">.ba .baw2</div>
@@ -92,26 +113,6 @@ description: Utility classes for borders and border radiuses.
             </div>
         </div>
     </div>
-    <h3 class="dds-docs--subheader">Classes</h3>
-    <p class="dds-docs--copy">The border utility classes use an abbreviated syntax. The abbreviations are based on the CSS property name, the desired direction, and the property being applied.</p>
-    <table class="dt-table dt-table__striped">
-        <thead>
-            <tr>
-                <th>Class</th>
-                <th>Full name</th>
-                <th style="width: 50%;">Output</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for name in site.data.borders.widths %}
-            <tr>
-                <td><code class="dds-docs--code">{{ name.class }}</code></td>
-                <td>{{ name.name }}</td>
-                <td><code class="dds-docs--code">{{ name.output }}</code></td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
 </section>
 <section class="dds-docs--section">
     <h2 class="dds-docs--header">Responsive Borders</h2>

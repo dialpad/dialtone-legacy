@@ -56,7 +56,8 @@ gulp.task('docs-css', function() {
 gulp.task('css', function() {
     gulp.start('lib-css');
     gulp.start('docs-css');
-    browserSync.reload({ reloadDelay: 1000 });
+    browserSync.reload();
+    done();
 });
 
 gulp.task('jekyll', () => {
@@ -84,8 +85,9 @@ gulp.task('jekyll', () => {
     jekyll.stderr.on('data', jekyllLogger);
 });
 
-gulp.task('jekyll-rebuild', ['jekyll'], function() {
-    browserSync.reload({ reloadDelay: 1000 });
+gulp.task('jekyll-rebuild', ['jekyll'], function (done) {
+    browserSync.reload();
+    done();
 });
 
 gulp.task('watch', function() {
