@@ -4,6 +4,28 @@ title: Borders
 description: Utility classes for borders and border radiuses.
 ---
 <section class="dds-docs--section">
+    <h2 class="dds-docs--header">Classes</h2>
+    <p class="dds-docs--copy">The border utility classes use an abbreviated syntax. The abbreviations are based on the CSS property name and the desired direction(s) the border should be applied. Below is a table outlining the classes and their meanings:</p>
+    <table class="dt-table dt-table__striped">
+        <thead>
+            <tr>
+                <th>Class</th>
+                <th>Full name</th>
+                <th style="width: 50%;">Output</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for name in site.data.borders.directions %}
+            <tr>
+                <td class="ff-mono">{{ name.class }}</td>
+                <td>{{ name.name }}</td>
+                <td class="ff-mono">{{ name.output }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+<section class="dds-docs--section">
     <h2 class="dds-docs--header">Default border</h2>
     <p class="dds-docs--copy">The default border utility class applies a 1px, solid border using the current text color as it's color.</p>
     <div class="dds-docs--example">
@@ -42,26 +64,6 @@ description: Utility classes for borders and border radiuses.
             </div>
         </div>
     </div>
-    <h3 class="dds-docs--subheader">Classes</h3>
-    <p class="dds-docs--copy">The border utility classes use an abbreviated syntax. The abbreviations are based on the CSS property name and a direction that border or border-radius should be applied. Below is a table outlining the classes and their meanings:</p>
-    <table class="dt-table dt-table__striped">
-        <thead>
-            <tr>
-                <th>Class</th>
-                <th>Full name</th>
-                <th style="width: 50%;">Output</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for name in site.data.borders.directions %}
-            <tr>
-                <td><code class="dds-docs--code">{{ name.class }}</code></td>
-                <td>{{ name.name }}</td>
-                <td><code class="dds-docs--code">{{ name.output }}</code></td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
 </section>
 <section class="dds-docs--section">
     <h2 class="dds-docs--header">Border widths</h2>
@@ -112,161 +114,27 @@ description: Utility classes for borders and border radiuses.
     </table>
 </section>
 <section class="dds-docs--section">
-    <h2 class="dds-docs--header">Border colors</h2>
-    <p class="dds-docs--copy">To change a border's color, use a border color utility class.</p>
-    <h3 class="dds-docs--subheader">White / Transparent</h3>
-    <div class="dds-docs--example">
+    <h2 class="dds-docs--header">Responsive Borders</h2>
+    <p class="dds-docs--copy">Sometimes you will want to alter a border depending on the viewport size. In that case, use a responsive class which will add, change, or remove a border. For more information about breakpoints, please visit the <a href="/constants/breakpoints">breakpoint documentation</a>.</p>
+    <div class="dds-docs--example dds-docs--example__responsive">
+        <div class="dds-docs--example-header">
+            <div class="flex jc-center fs-fine ff-sans">
+                <div class="flex--cell p8 m4 dds-docs--example-btn dds-docs--example-btn__selected js-example-rwd-btn" data-class="ba">All</div>
+                <div class="flex--cell p8 m4 dds-docs--example-btn js-example-rwd-btn" data-class="bt">sm</div>
+                <div class="flex--cell p8 m4 dds-docs--example-btn js-example-rwd-btn" data-class="bb">md</div>
+                <div class="flex--cell p8 m4 dds-docs--example-btn js-example-rwd-btn" data-class="br">lg</div>
+                <div class="flex--cell p8 m4 dds-docs--example-btn js-example-rwd-btn" data-class="bl">xl</div>
+            </div>
+        </div>
 {% highlight html linenos %}
-<div class="ba bc-white">.ba .bc-white</div>
-<div class="ba bc-current">.ba .bc-current</div>
-<div class="ba bc-transparent">.ba .bc-transparent</div>
+<div class="ba sm:bt md:bb lg:br xl:bl">
+    …
+</div>
 {% endhighlight %}
         <div class="dds-docs--example__preview">
-            <div class="bgc-gray-darker fc-white br-md px8 py2">
-                <div class="my8 w100 p8 br-sm ba bc-white">.ba .bc-white</div>
-                <div class="my8 w100 p8 br-sm ba bc-current fc-yellow">.ba .bc-current</div>
-                <div class="my8 w100 p8 br-sm ba bc-transparent">.ba .bc-transparent</div>
+            <div class="flex flex__center">
+                <div class="ba baw2 p64 js-example-rwd-object bgc-gray-light"></div>
             </div>
         </div>
     </div>
-    <h3 class="dds-docs--subheader">Gray</h3>
-    <div class="dds-docs--example">
-{% highlight html linenos %}
-<div class="ba bc-gray-darker">.ba .bc-gray-darker</div>
-<div class="ba bc-gray-dark">.ba .bc-gray-dark</div>
-<div class="ba bc-gray">.ba .bc-gray</div>
-<div class="ba bc-gray-light">.ba .bc-gray-light</div>
-{% endhighlight %}
-        <div class="dds-docs--example__preview">
-            <div class="px8 py2">
-                <div class="my8 w100 p8 br-sm ba bc-gray-darker">.ba .bc-gray-darker</div>
-                <div class="my8 w100 p8 br-sm ba bc-gray-dark">.ba .bc-gray-dark</div>
-                <div class="my8 w100 p8 br-sm ba bc-gray">.ba .bc-gray</div>
-                <div class="my8 w100 p8 br-sm ba bc-gray-light">.ba .bc-gray-light</div>
-            </div>
-        </div>
-    </div>
-    <h3 class="dds-docs--subheader">Blue</h3>
-    <div class="dds-docs--example">
-{% highlight html linenos %}
-<div class="ba bc-blue-darker">.ba .bc-blue-darker</div>
-<div class="ba bc-blue-dark">.ba .bc-blue-dark</div>
-<div class="ba bc-blue">.ba .bc-blue</div>
-<div class="ba bc-blue-light">.ba .bc-blue-light</div>
-{% endhighlight %}
-        <div class="dds-docs--example__preview">
-            <div class="px8 py2">
-                <div class="my8 w100 p8 br-sm ba bc-blue-darker">.ba .bc-blue-darker</div>
-                <div class="my8 w100 p8 br-sm ba bc-blue-dark">.ba .bc-blue-dark</div>
-                <div class="my8 w100 p8 br-sm ba bc-blue">.ba .bc-blue</div>
-                <div class="my8 w100 p8 br-sm ba bc-blue-light">.ba .bc-blue-light</div>
-            </div>
-        </div>
-    </div>
-    <h3 class="dds-docs--subheader">Navy</h3>
-    <div class="dds-docs--example">
-{% highlight html linenos %}
-<div class="ba bc-navy-darker">.ba .bc-navy-darker</div>
-<div class="ba bc-navy-dark">.ba .bc-navy-dark</div>
-<div class="ba bc-navy">.ba .bc-navy</div>
-<div class="ba bc-navy-light">.ba .bc-navy-light</div>
-{% endhighlight %}
-        <div class="dds-docs--example__preview">
-            <div class="px8 py2">
-                <div class="my8 w100 p8 br-sm ba bc-navy-darker">.ba .bc-navy-darker</div>
-                <div class="my8 w100 p8 br-sm ba bc-navy-dark">.ba .bc-navy-dark</div>
-                <div class="my8 w100 p8 br-sm ba bc-navy">.ba .bc-navy</div>
-                <div class="my8 w100 p8 br-sm ba bc-navy-light">.ba .bc-navy-light</div>
-            </div>
-        </div>
-    </div>
-    <h3 class="dds-docs--subheader">Teal</h3>
-    <div class="dds-docs--example">
-{% highlight html linenos %}
-<div class="ba bc-teal-darker">.ba .bc-teal-darker</div>
-<div class="ba bc-teal-dark">.ba .bc-teal-dark</div>
-<div class="ba bc-teal">.ba .bc-teal</div>
-<div class="ba bc-teal-light">.ba .bc-teal-light</div>
-{% endhighlight %}
-        <div class="dds-docs--example__preview">
-            <div class="px8 py2">
-                <div class="my8 w100 p8 br-sm ba bc-teal-darker">.ba .bc-teal-darker</div>
-                <div class="my8 w100 p8 br-sm ba bc-teal-dark">.ba .bc-teal-dark</div>
-                <div class="my8 w100 p8 br-sm ba bc-teal">.ba .bc-teal</div>
-                <div class="my8 w100 p8 br-sm ba bc-teal-light">.ba .bc-teal-light</div>
-            </div>
-        </div>
-    </div>
-    <h3 class="dds-docs--subheader">Yellow</h3>
-    <div class="dds-docs--example">
-{% highlight html linenos %}
-<div class="ba bc-yellow-darker">.ba .bc-yellow-darker</div>
-<div class="ba bc-yellow-dark">.ba .bc-yellow-dark</div>
-<div class="ba bc-yellow">.ba .bc-yellow</div>
-<div class="ba bc-yellow-light">.ba .bc-yellow-light</div>
-{% endhighlight %}
-        <div class="dds-docs--example__preview">
-            <div class="px8 py2">
-                <div class="my8 w100 p8 br-sm ba bc-yellow-darker">.ba .bc-yellow-darker</div>
-                <div class="my8 w100 p8 br-sm ba bc-yellow-dark">.ba .bc-yellow-dark</div>
-                <div class="my8 w100 p8 br-sm ba bc-yellow">.ba .bc-yellow</div>
-                <div class="my8 w100 p8 br-sm ba bc-yellow-light">.ba .bc-yellow-light</div>
-            </div>
-        </div>
-    </div>
-    <h3 class="dds-docs--subheader">Green</h3>
-    <div class="dds-docs--example">
-{% highlight html linenos %}
-<div class="ba bc-green-darker">.ba .bc-green-darker</div>
-<div class="ba bc-green-dark">.ba .bc-green-dark</div>
-<div class="ba bc-green">.ba .bc-green</div>
-<div class="ba bc-green-light">.ba .bc-green-light</div>
-{% endhighlight %}
-        <div class="dds-docs--example__preview">
-            <div class="px8 py2">
-                <div class="my8 w100 p8 br-sm ba bc-green-darker">.ba .bc-green-darker</div>
-                <div class="my8 w100 p8 br-sm ba bc-green-dark">.ba .bc-green-dark</div>
-                <div class="my8 w100 p8 br-sm ba bc-green">.ba .bc-green</div>
-                <div class="my8 w100 p8 br-sm ba bc-green-light">.ba .bc-green-light</div>
-            </div>
-        </div>
-    </div>
-    <h3 class="dds-docs--subheader">Red</h3>
-    <div class="dds-docs--example">
-{% highlight html linenos %}
-<div class="ba bc-red-darker">.ba .bc-red-darker</div>
-<div class="ba bc-red-dark">.ba .bc-red-dark</div>
-<div class="ba bc-red">.ba .bc-red</div>
-<div class="ba bc-red-light">.ba .bc-red-light</div>
-{% endhighlight %}
-        <div class="dds-docs--example__preview">
-            <div class="px8 py2">
-                <div class="my8 w100 p8 br-sm ba bc-red-darker">.ba .bc-red-darker</div>
-                <div class="my8 w100 p8 br-sm ba bc-red-dark">.ba .bc-red-dark</div>
-                <div class="my8 w100 p8 br-sm ba bc-red">.ba .bc-red</div>
-                <div class="my8 w100 p8 br-sm ba bc-red-light">.ba .bc-red-light</div>
-            </div>
-        </div>
-    </div>
-    <h3 class="dds-docs--subheader">Pink</h3>
-    <div class="dds-docs--example">
-{% highlight html linenos %}
-<div class="ba bc-pink-darker">.ba .bc-pink-darker</div>
-<div class="ba bc-pink-dark">.ba .bc-pink-dark</div>
-<div class="ba bc-pink">.ba .bc-pink</div>
-<div class="ba bc-pink-light">.ba .bc-pink-light</div>
-{% endhighlight %}
-        <div class="dds-docs--example__preview">
-            <div class="px8 py2">
-                <div class="my8 w100 p8 br-sm ba bc-pink-darker">.ba .bc-pink-darker</div>
-                <div class="my8 w100 p8 br-sm ba bc-pink-dark">.ba .bc-pink-dark</div>
-                <div class="my8 w100 p8 br-sm ba bc-pink">.ba .bc-pink</div>
-                <div class="my8 w100 p8 br-sm ba bc-pink-light">.ba .bc-pink-light</div>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="dds-docs--section">
-    <h2 class="dds-docs--header">Responsive borders</h2>
-    <p>To do</p>
 </section>

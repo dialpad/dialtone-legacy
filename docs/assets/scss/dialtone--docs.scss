@@ -11,23 +11,23 @@ body {
 
 //  --  LOGO
 .dds-logo-image {
-    width: auto;
     max-width: 8rem;
+    width: auto;
     height: auto;
 }
 
 //  --  TYPE STYLES
 .dds-docs--title {
+    letter-spacing: -0.5px;
+    font-weight: 700;
     font-size: $fs-display;
     font-family: $ff-mark-bold;
-    font-weight: 700;
-    letter-spacing: -0.5px;
 }
 .dds-docs--header {
     margin-bottom: $sp4;
+    font-weight: 700;
     font-size: $fs-headline;
     font-family: $ff-mark-bold;
-    font-weight: 700;
 }
 .dds-docs--subheader {
     margin-bottom: $sp4;
@@ -35,29 +35,29 @@ body {
 }
 .dds-docs--copy__lg {
     margin-top: 0;
+    color: $fc-dark;
     font-size: $fs-subheading;
     line-height: $lh-lg;
-    color: $fc-dark;
 }
 .dds-docs--copy {
     margin-top: 0;
+    color: $fc-dark;
     font-size: $fs-body2;
     line-height: $lh-lg;
-    color: $fc-dark;
 }
 .dds-docs--code {
     padding: $sp4;
-    font-size: $fs-caption;
-    font-family: $ff-mono;
     border-radius: $br-sm;
     background-color: $gray-005;
+    font-size: $fs-caption;
+    font-family: $ff-mono;
 }
 
 //  --  PREVIEW
 .dds-docs--example {
     margin: $sp16 0 $sp32;
-    border-radius: $br-md;
     border: 1px solid $gray-010;
+    border-radius: $br-md;
 
     //  CODE
     .highlight {
@@ -74,8 +74,8 @@ body {
         }
 
         > pre {
-            max-height: 24rem;
             overflow: auto;
+            max-height: 24rem;
 
         }
 
@@ -105,9 +105,9 @@ body {
         padding: $sp8;
         border: 1px solid lighten($blue-060,10%);
         background-color: transparentize($blue-060, 0.85);
-        font-family: $ff-mono;
-        font-size: $fs-caption;
         text-align: center;
+        font-size: $fs-caption;
+        font-family: $ff-mono;
     }
 
     //  CODE ONLY
@@ -118,6 +118,32 @@ body {
         .highlight,
         .higlight pre {
             border-radius: $br-md;
+        }
+    }
+
+    //  WITH RWD EXAMPLE
+    &.dds-docs--example__responsive {
+        .dds-docs--example-header {
+            border-radius: $br-md $br-md 0 0;
+            background-color: $gray-100;
+            color: $white;
+        }
+
+        .highlight,
+        .highlight pre {
+            border-radius: 0;
+        }
+
+        .dds-docs--example-btn {
+            margin: $sp4;
+            padding: $sp8;
+            opacity: 0.5;
+            cursor: pointer;
+
+            &:hover,
+            &.dds-docs--example-btn__selected {
+                opacity: 1;
+            }
         }
     }
 }
