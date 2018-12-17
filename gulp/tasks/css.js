@@ -44,16 +44,13 @@ gulp.task('docs-css', function() {
         .pipe(postcss())
         .pipe(gulp.dest(config.cssdocs))
         .pipe(postcss([
-            normalize({ forceImport: true }),
             cssnano()
         ]))
         .pipe(rename({ suffix: '.min' }))
         .pipe(gulp.dest(config.cssdocs));
 });
 
-gulp.task('css', function() {
-    browsersync.notify('Compiling CSS...');
-    gulp.task('lib-css');
-    gulp.task('docs-css');
+gulp.task('css', ['lib-css', 'docs-css'], function() {
+    browsersync.notify('Compiling Dialtone CSS...');
     browsersync.reload();
 });
