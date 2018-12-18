@@ -27,18 +27,14 @@ gulp.task('lib-css', function() {
         .pipe(sass().on('error', sass.logError))
         .pipe(postcss())
         .pipe(gulp.dest(config.csslib))
-        .pipe(gulp.dest(config.siteLib))
         .pipe(gulp.dest(config.cssdocs))
-        .pipe(gulp.dest(config.siteDocs))
         .pipe(postcss([
             normalize({ forceImport: true }),
             cssnano()
         ]))
         .pipe(rename({ suffix: '.min' }))
         .pipe(gulp.dest(config.csslib))
-        .pipe(gulp.dest(config.siteLib))
-        .pipe(gulp.dest(config.cssdocs))
-        .pipe(gulp.dest(config.siteDocs));
+        .pipe(gulp.dest(config.cssdocs));
 });
 
 gulp.task('docs-css', function() {
@@ -48,13 +44,11 @@ gulp.task('docs-css', function() {
         .pipe(sass().on('error', sass.logError))
         .pipe(postcss())
         .pipe(gulp.dest(config.cssdocs))
-        .pipe(gulp.dest(config.siteDocs))
         .pipe(postcss([
             cssnano()
         ]))
         .pipe(rename({ suffix: '.min' }))
-        .pipe(gulp.dest(config.cssdocs))
-        .pipe(gulp.dest(config.siteDocs));
+        .pipe(gulp.dest(config.cssdocs));
 });
 
 gulp.task('css', function(callback) {

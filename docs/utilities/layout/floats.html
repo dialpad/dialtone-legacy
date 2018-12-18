@@ -1,10 +1,12 @@
 ---
 layout: page
-title: Floats
-description: A CSS property that allows copy to flow around an element, typically an image.
+title: Floats & Clears
+description: CSS properties that floats objects within the document or clears objects past previously floated objects.
 ---
 <section class="dds-docs--section">
-    <h2 class="dds-docs--header">Classes</h2>
+    <h2 class="dds-docs--header ff-mono">float</h2>
+    <p class="dds-docs--copy">Created primarily as a way to float images within copy blocks, the <code class="dds-docs--code">float</code> property allows you to remove an object out of the document flow and place it elsewhere within the document. While floating an object gives you more layout abilities, it also removes it from the document flow and so the parent loses it's ability to make sure it correctly encapsulates it. To fix this you must use the "clearfix" hack.</p>
+    <h3 class="dds-docs--header">Classes</h3>
     <table class="dt-table">
         <thead>
             <tr>
@@ -15,91 +17,131 @@ description: A CSS property that allows copy to flow around an element, typicall
         </thead>
         <tbody>
             <tr>
-                <td><code class="dds-docs--code">.fl-inline-start</code></td>
-                <td><code class="dds-docs--code">float: inline-start;</code></td>
-                <td>An element must float on the start side of its containing block. That is the left side with left-to-right (LTR) scripts and the right side with right-to-left (RTL) scripts.</td>
-            </tr>
-            <tr>
-                <td><code class="dds-docs--code">.fl-inline-end</code></td>
-                <td><code class="dds-docs--code">float: inline-end;</code></td>
-                <td>An element must float on the end side of its containing block. That is the left side with LTR scripts and the right side with RTL scripts.</td>
-            </tr>
-            <tr>
-                <td><code class="dds-docs--code">.fl-left</code></td>
-                <td><code class="dds-docs--code">float: left;</code></td>
+                <td class="ff-mono fs-caption">.fl-left</td>
+                <td class="ff-mono fs-caption">float: left;</td>
                 <td>Floats an element to the left.</td>
             </tr>
             <tr>
-                <td><code class="dds-docs--code">.fl-right</code></td>
-                <td><code class="dds-docs--code">float: right;</code></td>
+                <td class="ff-mono fs-caption">.fl-right</td>
+                <td class="ff-mono fs-caption">float: right;</td>
                 <td>Floats an element to the right.</td>
             </tr>
             <tr>
-                <td><code class="dds-docs--code">.fl-none</code></td>
-                <td><code class="dds-docs--code">float: none;</code></td>
+                <td class="ff-mono fs-caption">.fl-none</td>
+                <td class="ff-mono fs-caption">float: none;</td>
                 <td>Removes the ability for the element to float.</td>
             </tr>
             <tr>
-                <td><code class="dds-docs--code">.fl-initial</code></td>
-                <td><code class="dds-docs--code">float: initial;</code></td>
+                <td class="ff-mono fs-caption">.fl-initial</td>
+                <td class="ff-mono fs-caption">float: initial;</td>
                 <td>Restores an element's initial float value (unset).</td>
             </tr>
             <tr>
-                <td><code class="dds-docs--code">.fl-unset</code></td>
-                <td><code class="dds-docs--code">float: unset;</code></td>
+                <td class="ff-mono fs-caption">.fl-unset</td>
+                <td class="ff-mono fs-caption">float: unset;</td>
                 <td>Resets the elements float value to its initial value.</td>
             </tr>
-        </tbody>
-        <tbody>
             <tr>
-                <td><code class="dds-docs--code">.cl-inline-start</code></td>
-                <td><code class="dds-docs--code">clear: inline-start;</code></td>
-                <td>An element is moved down to clear floats on the start side of its containing block. That is the left side with left-to-right (LTR) scripts and the right side with right-to-left (RTL) scripts.</td>
-            </tr>
-            <tr>
-                <td><code class="dds-docs--code">.cl-inline-end</code></td>
-                <td><code class="dds-docs--code">clear: inline-end;</code></td>
-                <td>An element is moved down to clear floats on the end side of its containing block. That is the left side with LTR scripts and the right side with RTL scripts.</td>
-            </tr>
-            <tr>
-                <td><code class="dds-docs--code">.cl-left</code></td>
-                <td><code class="dds-docs--code">clear: left;</code></td>
-                <td>An element is moved down to clear past left floats.</td>
-            </tr>
-            <tr>
-                <td><code class="dds-docs--code">.cl-right</code></td>
-                <td><code class="dds-docs--code">clear: right;</code></td>
-                <td>An element is moved down to clear past right floats.</td>
-            </tr>
-            <tr>
-                <td><code class="dds-docs--code">.cl-both</code></td>
-                <td><code class="dds-docs--code">clear: both;</code></td>
-                <td>An element is moved down to clear past left <em>and</em> right floats.</td>
-            </tr>
-            <tr>
-                <td><code class="dds-docs--code">.cl-none</code></td>
-                <td><code class="dds-docs--code">clear: none;</code></td>
-                <td>An element is not moved down to clear past floating elements.</td>
-            </tr>
-            <tr>
-                <td><code class="dds-docs--code">.cl-initial</code></td>
-                <td><code class="dds-docs--code">clear: initial;</code></td>
-                <td>Restores an element's initial cleared float value.</td>
-            </tr>
-            <tr>
-                <td><code class="dds-docs--code">.cl-unset</code></td>
-                <td><code class="dds-docs--code">clear: unset;</code></td>
-                <td>Unsets any cleared float values.</td>
-            </tr>
-            <tr>
-                <td><code class="dds-docs--code">.cl-fix</code></td>
-                <td><code class="dds-docs--code">.cl-fix:before, .cl-fix:after { content: ""; clear: both; display: table; }</code></td>
-                <td>A CSS hack for when all an element's children are floated and the parent's height isn't correctly calculated. This helps visually restore an elements height.</td>
+                <td class="ff-mono fs-caption">.clearfix</td>
+                <td class="ff-mono fs-caption">
+                    .clearfix:before,<br/>
+                    .clearfix:after {<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;display: table;<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;clear: both;<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;content: "";<br/>
+                    }</td>
+                <td>A CSS hack restores a parent's height when a floated child is larger than rest of its sibling elements and "sticks out" beyond the parent wrapper.</td>
             </tr>
         </tbody>
     </table>
+    <h3 class="dds-docs--header mt16">Examples</h3>
+    <div class="dds-docs--example">
+{% highlight html linenos %}
+<div class="ps-relative w100 clearfix">
+    <div class="fl-none">…</div>
+    <div class="fl-left">…</div>
+    <div class="fl-right">…</div>
+</div>
+{% endhighlight %}
+        <div class="dds-docs--example__preview">
+            <div class="ps-relative w100 clearfix">
+                <div class="dds-docs--example-cell my8 w50 fl-none">.fl-none</div>
+                <div class="dds-docs--example-cell my8 w25 fl-left">.fl-left</div>
+                <div class="dds-docs--example-cell my8 w25 fl-right">.fl-right</div>
+            </div>
+        </div>
+    </div>
 </section>
 <section class="dds-docs--section">
-    <h2 class="dds-docs--header">Examples</h2>
-    <p class="dds-docs--copy">To-do</p>
+    <h2 class="dds-docs--header ff-mono">clear</h2>
+    <p class="dds-docs--copy">The <code class="dds-docs--code">clear</code> CSS property allows an object to escape floated objects on the left, right, or both sides. This is used to make sure floated objects don't float on top of each other or create odd layouts.</p>
+    <h3 class="dds-docs--header">Classes</h3>
+    <table class="dt-table">
+        <thead>
+            <tr>
+                <th width="22%;">Class</th>
+                <th width="22%;">Output</th>
+                <th width="56%;">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="ff-mono fs-caption">.cl-left</td>
+                <td class="ff-mono fs-caption">clear: left;</td>
+                <td>An element is moved down to clear past left floats.</td>
+            </tr>
+            <tr>
+                <td class="ff-mono fs-caption">.cl-right</td>
+                <td class="ff-mono fs-caption">clear: right;</td>
+                <td>An element is moved down to clear past right floats.</td>
+            </tr>
+            <tr>
+                <td class="ff-mono fs-caption">.cl-both</td>
+                <td class="ff-mono fs-caption">clear: both;</td>
+                <td>An element is moved down to clear past left <em>and</em> right floats.</td>
+            </tr>
+            <tr>
+                <td class="ff-mono fs-caption">.cl-none</td>
+                <td class="ff-mono fs-caption">clear: none;</td>
+                <td>An element is not moved down to clear past floating elements.</td>
+            </tr>
+            <tr>
+                <td class="ff-mono fs-caption">.cl-initial</td>
+                <td class="ff-mono fs-caption">clear: initial;</td>
+                <td>Restores an element's initial cleared float value.</td>
+            </tr>
+            <tr>
+                <td class="ff-mono fs-caption">.cl-unset</td>
+                <td class="ff-mono fs-caption">clear: unset;</td>
+                <td>Unsets any cleared float values.</td>
+            </tr>
+        </tbody>
+    </table>
+    <h3 class="dds-docs--header mt16">Examples</h3>
+    <div class="dds-docs--example">
+{% highlight html linenos %}
+<div class="ps-relative w100 clearfix">
+    <div class="cl-left">…</div>
+    <div class="cl-right">…</div>
+    <div class="cl-both">…</div>
+</div>
+{% endhighlight %}
+        <div class="dds-docs--example__preview">
+            <div class="ps-relative mb16 w100 clearfix">
+                <div class="dds-docs--example-cell-clear m4 w25 fl-left" style="height: 5rem;">.fl-left</div>
+                <div class="dds-docs--example-cell-clear m4 w25 fl-right" style="height: 8rem;">.fl-right</div>
+                <div class="dds-docs--example-cell m4 cl-left ta-left"><strong class="ff-mono">.cl-left:</strong> A sample sentence that helps illustrate how an object will clear all floated left objects.</div>
+            </div>
+            <div class="ps-relative my16 w100 clearfix">
+                <div class="dds-docs--example-cell-clear m4 w25 fl-left" style="height: 5rem;">.fl-left</div>
+                <div class="dds-docs--example-cell-clear m4 w25 fl-right" style="height: 8rem;">.fl-right</div>
+                <div class="dds-docs--example-cell m4 cl-right ta-left"><strong class="ff-mono">.cl-right:</strong> A sample sentence that helps illustrate how an object will clear all floated right objects.</div>
+            </div>
+            <div class="ps-relative mt16 w100 clearfix">
+                <div class="dds-docs--example-cell-clear m4 w25 fl-left" style="height: 5rem;">.fl-left</div>
+                <div class="dds-docs--example-cell-clear m4 w25 fl-right" style="height: 8rem;">.fl-right</div>
+                <div class="dds-docs--example-cell m4 cl-both ta-left"><strong class="ff-mono">.cl-both:</strong> A sample sentence that helps illustrate how an object will clear all floated objects.</div>
+            </div>
+        </div>
+    </div>
 </section>

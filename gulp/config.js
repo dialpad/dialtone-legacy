@@ -26,9 +26,7 @@ module.exports = {
         scsslib: source + '/scss/dialtone.scss',
         scssdocs: assets + '/scss/dialtone--docs.scss',
         csslib: source + '/css',
-        siteLib: dev + '/assets/css',
         cssdocs: assets + '/css',
-        siteDocs: dev + '/assets/css',
     },
 
     watch: {

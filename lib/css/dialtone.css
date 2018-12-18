@@ -5697,7 +5697,7 @@
 .fl-unset {
   float: unset; }
 
-.cl-fix:before, .cl-fix:after {
+.clearfix:before, .clearfix:after {
   content: "";
   display: table;
   clear: both; }
@@ -5753,7 +5753,7 @@
     float: initial; }
   .sm\:fl-unset {
     float: unset; }
-  .sm\:cl-fix:before, .sm\:cl-fix:after {
+  .sm\:clearfix:before, .sm\:clearfix:after {
     content: "";
     display: table;
     clear: both; }
@@ -5799,7 +5799,7 @@
     float: initial; }
   .md\:fl-unset {
     float: unset; }
-  .md\:cl-fix:before, .md\:cl-fix:after {
+  .md\:clearfix:before, .md\:clearfix:after {
     content: "";
     display: table;
     clear: both; }
@@ -5845,7 +5845,7 @@
     float: initial; }
   .lg\:fl-unset {
     float: unset; }
-  .lg\:cl-fix:before, .lg\:cl-fix:after {
+  .lg\:clearfix:before, .lg\:clearfix:after {
     content: "";
     display: table;
     clear: both; }
@@ -5891,7 +5891,7 @@
     float: initial; }
   .xl\:fl-unset {
     float: unset; }
-  .xl\:cl-fix:before, .xl\:cl-fix:after {
+  .xl\:clearfix:before, .xl\:clearfix:after {
     content: "";
     display: table;
     clear: both; }
@@ -6152,67 +6152,67 @@ table th {
   text-transform: unset; }
 
 .ta-left {
-  text-align: left; }
+  text-align: left !important; }
 
 .ta-center {
-  text-align: center; }
+  text-align: center !important; }
 
 .ta-right {
-  text-align: right; }
+  text-align: right !important; }
 
 .ta-justify {
-  text-align: justify; }
+  text-align: justify !important; }
 
 .ta-unset {
-  text-align: unset; }
+  text-align: unset !important; }
 
 @media (max-width: 480px) {
   .sm\:ta-left {
-    text-align: left; }
+    text-align: left !important; }
   .sm\:ta-center {
-    text-align: center; }
+    text-align: center !important; }
   .sm\:ta-right {
-    text-align: right; }
+    text-align: right !important; }
   .sm\:ta-justify {
-    text-align: justify; }
+    text-align: justify !important; }
   .sm\:ta-unset {
-    text-align: unset; } }
+    text-align: unset !important; } }
 
 @media (max-width: 768px) {
   .md\:ta-left {
-    text-align: left; }
+    text-align: left !important; }
   .md\:ta-center {
-    text-align: center; }
+    text-align: center !important; }
   .md\:ta-right {
-    text-align: right; }
+    text-align: right !important; }
   .md\:ta-justify {
-    text-align: justify; }
+    text-align: justify !important; }
   .md\:ta-unset {
-    text-align: unset; } }
+    text-align: unset !important; } }
 
 @media (max-width: 1024px) {
   .lg\:ta-left {
-    text-align: left; }
+    text-align: left !important; }
   .lg\:ta-center {
-    text-align: center; }
+    text-align: center !important; }
   .lg\:ta-right {
-    text-align: right; }
+    text-align: right !important; }
   .lg\:ta-justify {
-    text-align: justify; }
+    text-align: justify !important; }
   .lg\:ta-unset {
-    text-align: unset; } }
+    text-align: unset !important; } }
 
 @media (max-width: 1280px) {
   .xl\:ta-left {
-    text-align: left; }
+    text-align: left !important; }
   .xl\:ta-center {
-    text-align: center; }
+    text-align: center !important; }
   .xl\:ta-right {
-    text-align: right; }
+    text-align: right !important; }
   .xl\:ta-justify {
-    text-align: justify; }
+    text-align: justify !important; }
   .xl\:ta-unset {
-    text-align: unset; } }
+    text-align: unset !important; } }
 
 .fc-white {
   color: #FFF !important; }
@@ -9284,7 +9284,8 @@ legend.d-label {
   margin-bottom: 16px;
   border-collapse: collapse;
   border-spacing: 0;
-  font-size: 0.875rem; }
+  font-size: 0.875rem;
+  line-height: 1.25; }
   .dt-table th,
   .dt-table td {
     padding: 8px;
@@ -9305,6 +9306,9 @@ legend.d-label {
   .dt-table tbody tr:last-of-type td,
   .dt-table tbody tr:last-of-type th {
     border-bottom: 1px solid #DDD; }
+  .dt-table tbody + tbody tr:first-of-type td,
+  .dt-table tbody + tbody tr:first-of-type th {
+    border-top: 4px solid #DDD; }
 
 .dt-table__striped tr:nth-child(even) {
   background-color: #fafafa; }
