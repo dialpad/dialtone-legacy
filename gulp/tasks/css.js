@@ -11,6 +11,7 @@ var browsersync = require('browser-sync');
 var sorting = require('postcss-sorting');
 var sass = require('gulp-sass');
 var config = require('../config').css;
+var runSequence = require('run-sequence');
 
 function onError(err) {
     gutil.beep();
@@ -26,14 +27,18 @@ gulp.task('lib-css', function() {
         .pipe(sass().on('error', sass.logError))
         .pipe(postcss())
         .pipe(gulp.dest(config.csslib))
+        .pipe(gulp.dest(config.siteLib))
         .pipe(gulp.dest(config.cssdocs))
+        .pipe(gulp.dest(config.siteDocs))
         .pipe(postcss([
             normalize({ forceImport: true }),
             cssnano()
         ]))
         .pipe(rename({ suffix: '.min' }))
         .pipe(gulp.dest(config.csslib))
-        .pipe(gulp.dest(config.cssdocs));
+        .pipe(gulp.dest(config.siteLib))
+        .pipe(gulp.dest(config.cssdocs))
+        .pipe(gulp.dest(config.siteDocs));
 });
 
 gulp.task('docs-css', function() {
@@ -43,14 +48,20 @@ gulp.task('docs-css', function() {
         .pipe(sass().on('error', sass.logError))
         .pipe(postcss())
         .pipe(gulp.dest(config.cssdocs))
+        .pipe(gulp.dest(config.siteDocs))
         .pipe(postcss([
             cssnano()
         ]))
         .pipe(rename({ suffix: '.min' }))
-        .pipe(gulp.dest(config.cssdocs));
+        .pipe(gulp.dest(config.cssdocs))
+        .pipe(gulp.dest(config.siteDocs));
 });
 
-gulp.task('css', ['lib-css', 'docs-css'], function() {
-    browsersync.notify('Compiling Dialtone CSS...');
-    browsersync.reload();
+gulp.task('css', function(callback) {
+    browsersync.notify('Refreshing...');
+    runSequence(
+        ['lib-css', 'docs-css'],
+        ['jekyll-rebuild'],
+        callback
+    );
 });

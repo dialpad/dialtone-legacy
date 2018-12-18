@@ -1,6 +1,8 @@
 var src = './docs';
-var dev = './docs/_site';
+var dev = src + '/_site';
 var build = 'build';
+var source = './lib';
+var assets = src + '/assets';
 
 module.exports = {
     browsersync: {
@@ -21,10 +23,12 @@ module.exports = {
     },
 
     css: {
-        scsslib: './lib/scss/dialtone.scss',
-        scssdocs: './docs/assets/scss/dialtone--docs.scss',
-        csslib: './lib/css',
-        cssdocs: './docs/assets/css'
+        scsslib: source + '/scss/dialtone.scss',
+        scssdocs: assets + '/scss/dialtone--docs.scss',
+        csslib: source + '/css',
+        siteLib: dev + '/assets/css',
+        cssdocs: assets + '/css',
+        siteDocs: dev + '/assets/css',
     },
 
     watch: {
@@ -33,10 +37,10 @@ module.exports = {
             src + '/**/*.{html,md,markdown,yml,json,txt,xml}',
             '!./docs/_site/**/*'
         ],
-        libcss:  './lib/scss/**/*.{scss,sass}',
-        doccss:  './docs/assets/scss/**/*.{scss,sass}',
-        js:      './docs/assets/js/**/*.js',
-        images:  './docs/assets/images/**/*',
-        fonts:   './docs/assets/fonts'
+        libcss:  source + '/scss/**/*.{scss,sass}',
+        doccss:  assets + '/scss/**/*.{scss,sass}',
+        js:      assets + '/js/**/*.js',
+        images:  assets + '/images/**/*',
+        fonts:   assets + '/fonts'
     }
 };
