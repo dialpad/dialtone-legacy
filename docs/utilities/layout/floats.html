@@ -1,12 +1,12 @@
 ---
 layout: page
 title: Floats & Clears
-description: CSS properties that floats objects within the document or clears objects past previously floated objects.
+description: CSS properties that float objects within the document or clears objects past previously floated objects.
 ---
 <section class="dds-docs--section">
     <h2 class="dds-docs--header ff-mono">float</h2>
     <p class="dds-docs--copy">Created primarily as a way to float images within copy blocks, the <code class="dds-docs--code">float</code> property allows you to remove an object out of the document flow and place it elsewhere within the document. While floating an object gives you more layout abilities, it also removes it from the document flow and so the parent loses it's ability to make sure it correctly encapsulates it. To fix this you must use the "clearfix" hack.</p>
-    <h3 class="dds-docs--header">Classes</h3>
+    <h3 class="dds-docs--subheader">Classes</h3>
     <table class="dt-table">
         <thead>
             <tr>
@@ -16,31 +16,13 @@ description: CSS properties that floats objects within the document or clears ob
             </tr>
         </thead>
         <tbody>
+            {% for item in site.data.float-clear.floats %}
             <tr>
-                <td class="ff-mono fs-caption">.fl-left</td>
-                <td class="ff-mono fs-caption">float: left;</td>
-                <td>Floats an element to the left.</td>
+                <td class="ff-mono fs-caption">{{ item.class }}</td>
+                <td class="ff-mono fs-caption">{{ item.output }}</td>
+                <td>{{ item.description }}</td>
             </tr>
-            <tr>
-                <td class="ff-mono fs-caption">.fl-right</td>
-                <td class="ff-mono fs-caption">float: right;</td>
-                <td>Floats an element to the right.</td>
-            </tr>
-            <tr>
-                <td class="ff-mono fs-caption">.fl-none</td>
-                <td class="ff-mono fs-caption">float: none;</td>
-                <td>Removes the ability for the element to float.</td>
-            </tr>
-            <tr>
-                <td class="ff-mono fs-caption">.fl-initial</td>
-                <td class="ff-mono fs-caption">float: initial;</td>
-                <td>Restores an element's initial float value (unset).</td>
-            </tr>
-            <tr>
-                <td class="ff-mono fs-caption">.fl-unset</td>
-                <td class="ff-mono fs-caption">float: unset;</td>
-                <td>Resets the elements float value to its initial value.</td>
-            </tr>
+            {% endfor %}
             <tr>
                 <td class="ff-mono fs-caption">.clearfix</td>
                 <td class="ff-mono fs-caption">
@@ -54,8 +36,8 @@ description: CSS properties that floats objects within the document or clears ob
             </tr>
         </tbody>
     </table>
-    <h3 class="dds-docs--header mt16">Examples</h3>
-    <div class="dds-docs--example">
+    <h3 class="dds-docs--subheader mt16">Examples</h3>
+    <div class="dtd-example">
 {% highlight html linenos %}
 <div class="ps-relative w100 clearfix">
     <div class="fl-none">…</div>
@@ -63,11 +45,11 @@ description: CSS properties that floats objects within the document or clears ob
     <div class="fl-right">…</div>
 </div>
 {% endhighlight %}
-        <div class="dds-docs--example__preview">
+        <div class="dtd-example--preview">
             <div class="ps-relative w100 clearfix">
-                <div class="dds-docs--example-cell my8 w50 fl-none">.fl-none</div>
-                <div class="dds-docs--example-cell my8 w25 fl-left">.fl-left</div>
-                <div class="dds-docs--example-cell my8 w25 fl-right">.fl-right</div>
+                <div class="dtd-cell my8 w50 fl-none">.fl-none</div>
+                <div class="dtd-cell my8 w25 fl-left">.fl-left</div>
+                <div class="dtd-cell my8 w25 fl-right">.fl-right</div>
             </div>
         </div>
     </div>
@@ -75,7 +57,7 @@ description: CSS properties that floats objects within the document or clears ob
 <section class="dds-docs--section">
     <h2 class="dds-docs--header ff-mono">clear</h2>
     <p class="dds-docs--copy">The <code class="dds-docs--code">clear</code> CSS property allows an object to escape floated objects on the left, right, or both sides. This is used to make sure floated objects don't float on top of each other or create odd layouts.</p>
-    <h3 class="dds-docs--header">Classes</h3>
+    <h3 class="dds-docs--subheader">Classes</h3>
     <table class="dt-table">
         <thead>
             <tr>
@@ -85,40 +67,17 @@ description: CSS properties that floats objects within the document or clears ob
             </tr>
         </thead>
         <tbody>
+            {% for item in site.data.float-clear.clears %}
             <tr>
-                <td class="ff-mono fs-caption">.cl-left</td>
-                <td class="ff-mono fs-caption">clear: left;</td>
-                <td>An element is moved down to clear past left floats.</td>
+                <td class="ff-mono fs-caption">{{ item.class }}</td>
+                <td class="ff-mono fs-caption">{{ item.output }}</td>
+                <td>{{ item.description }}</td>
             </tr>
-            <tr>
-                <td class="ff-mono fs-caption">.cl-right</td>
-                <td class="ff-mono fs-caption">clear: right;</td>
-                <td>An element is moved down to clear past right floats.</td>
-            </tr>
-            <tr>
-                <td class="ff-mono fs-caption">.cl-both</td>
-                <td class="ff-mono fs-caption">clear: both;</td>
-                <td>An element is moved down to clear past left <em>and</em> right floats.</td>
-            </tr>
-            <tr>
-                <td class="ff-mono fs-caption">.cl-none</td>
-                <td class="ff-mono fs-caption">clear: none;</td>
-                <td>An element is not moved down to clear past floating elements.</td>
-            </tr>
-            <tr>
-                <td class="ff-mono fs-caption">.cl-initial</td>
-                <td class="ff-mono fs-caption">clear: initial;</td>
-                <td>Restores an element's initial cleared float value.</td>
-            </tr>
-            <tr>
-                <td class="ff-mono fs-caption">.cl-unset</td>
-                <td class="ff-mono fs-caption">clear: unset;</td>
-                <td>Unsets any cleared float values.</td>
-            </tr>
+            {% endfor %}
         </tbody>
     </table>
-    <h3 class="dds-docs--header mt16">Examples</h3>
-    <div class="dds-docs--example">
+    <h3 class="dds-docs--subheader mt16">Examples</h3>
+    <div class="dtd-example">
 {% highlight html linenos %}
 <div class="ps-relative w100 clearfix">
     <div class="cl-left">…</div>
@@ -126,21 +85,21 @@ description: CSS properties that floats objects within the document or clears ob
     <div class="cl-both">…</div>
 </div>
 {% endhighlight %}
-        <div class="dds-docs--example__preview">
+        <div class="dtd-example--preview">
             <div class="ps-relative mb16 w100 clearfix">
-                <div class="dds-docs--example-cell-clear m4 w25 fl-left" style="height: 5rem;">.fl-left</div>
-                <div class="dds-docs--example-cell-clear m4 w25 fl-right" style="height: 8rem;">.fl-right</div>
-                <div class="dds-docs--example-cell m4 cl-left ta-left"><strong class="ff-mono">.cl-left:</strong> A sample sentence that helps illustrate how an object will clear all floated left objects.</div>
+                <div class="dtd-cell__outline m4 w25 flex flex__center fl-left" style="height: 5rem;">.fl-left</div>
+                <div class="dtd-cell__outline m4 w25 flex flex__center fl-right" style="height: 8rem;">.fl-right</div>
+                <div class="dtd-cell m4 cl-left ta-left"><strong class="ff-mono">.cl-left:</strong> A sample sentence that helps illustrate how an object will clear all floated left objects.</div>
             </div>
             <div class="ps-relative my16 w100 clearfix">
-                <div class="dds-docs--example-cell-clear m4 w25 fl-left" style="height: 5rem;">.fl-left</div>
-                <div class="dds-docs--example-cell-clear m4 w25 fl-right" style="height: 8rem;">.fl-right</div>
-                <div class="dds-docs--example-cell m4 cl-right ta-left"><strong class="ff-mono">.cl-right:</strong> A sample sentence that helps illustrate how an object will clear all floated right objects.</div>
+                <div class="dtd-cell__outline m4 w25 flex flex__center fl-left" style="height: 5rem;">.fl-left</div>
+                <div class="dtd-cell__outline m4 w25 flex flex__center fl-right" style="height: 8rem;">.fl-right</div>
+                <div class="dtd-cell m4 cl-right ta-left"><strong class="ff-mono">.cl-right:</strong> A sample sentence that helps illustrate how an object will clear all floated right objects.</div>
             </div>
             <div class="ps-relative mt16 w100 clearfix">
-                <div class="dds-docs--example-cell-clear m4 w25 fl-left" style="height: 5rem;">.fl-left</div>
-                <div class="dds-docs--example-cell-clear m4 w25 fl-right" style="height: 8rem;">.fl-right</div>
-                <div class="dds-docs--example-cell m4 cl-both ta-left"><strong class="ff-mono">.cl-both:</strong> A sample sentence that helps illustrate how an object will clear all floated objects.</div>
+                <div class="dtd-cell__outline m4 w25 flex flex__center fl-left" style="height: 8rem;">.fl-left</div>
+                <div class="dtd-cell__outline m4 w25 flex flex__center fl-right" style="height: 8rem;">.fl-right</div>
+                <div class="dtd-cell m4 cl-both ta-left"><strong class="ff-mono">.cl-both:</strong> A sample sentence that helps illustrate how an object will clear all floated objects.</div>
             </div>
         </div>
     </div>

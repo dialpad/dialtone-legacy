@@ -1,0 +1,67 @@
+<section class="dds-docs--section">
+    <h2 class="dds-docs--header">Directional margins</h2>
+    <p class="dds-docs--copy">To apply spacing to only one side or multiple sides of an element, use the following margin CSS utility classes.</p>
+    <h3 class="dds-docs--subheader">Classes</h3>
+    <table class="dt-table ff-mono fs-caption">
+        <thead>
+            <tr>
+                <th></th>
+                <th scope="col" class="ta-center">0px</th>
+                <th scope="col" class="ta-center">2px</th>
+                <th scope="col" class="ta-center">4px</th>
+                <th scope="col" class="ta-center">6px</th>
+                <th scope="col" class="ta-center">8px</th>
+                <th scope="col" class="ta-center">12px</th>
+                <th scope="col" class="ta-center">16px</th>
+                <th scope="col" class="ta-center">24px</th>
+                <th scope="col" class="ta-center">32px</th>
+                <th scope="col" class="ta-center">48px</th>
+                <th scope="col" class="ta-center">64px</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for class in site.data.spacing.margin-dir %}
+            {% assign prefix-value = class.values | split: ", " %}
+            <tr>
+                <th scope="row">{{ class.prefix }}</th>
+                {% for value in prefix-value %}
+                <td class="ta-center">.{{ class.prefix }}{{ value }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <h3 class="dds-docs--subheader">Examples</h3>
+    <div class="dtd-example">
+{% highlight html linenos %}
+<div class="mt8">.mt8</div>
+<div class="mr8">.mr8</div>
+<div class="mb8">.mb8</div>
+<div class="ml8">.ml8</div>
+<div class="mx8">.mx8</div>
+<div class="my8">.my8</div>
+{% endhighlight %}
+        <div class="dtd-example--preview">
+            <div class="flex fw-wrap fl1__all">
+                <div class="flex--cell as-start m4 dtd-cell dtd-cell__clear">
+                    <div class="mt24 dtd-cell--inner">.mt24</div>
+                </div>
+                <div class="flex--cell as-start m4 dtd-cell dtd-cell__clear">
+                    <div class="mr24 dtd-cell--inner">.mr24</div>
+                </div>
+                <div class="flex--cell as-start m4 dtd-cell dtd-cell__clear">
+                    <div class="mb24 dtd-cell--inner">.mb24</div>
+                </div>
+                <div class="flex--cell as-start m4 dtd-cell dtd-cell__clear">
+                    <div class="ml24 dtd-cell--inner">.ml24</div>
+                </div>
+                <div class="flex--cell as-start m4 dtd-cell dtd-cell__clear">
+                    <div class="mx24 dtd-cell--inner">.mx24</div>
+                </div>
+                <div class="flex--cell as-start m4 dtd-cell dtd-cell__clear">
+                    <div class="my24 dtd-cell--inner">.my24</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

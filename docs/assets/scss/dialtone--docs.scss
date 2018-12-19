@@ -54,7 +54,7 @@ body {
 }
 
 //  --  PREVIEW
-.dds-docs--example {
+.dtd-example {
     margin: $sp16 0 $sp32;
     border: 1px solid $gray-010;
     border-radius: $br-md;
@@ -96,28 +96,53 @@ body {
     }
 
     //  EXAMPLE AREA
-    .dds-docs--example__preview {
+    .dtd-example--preview {
         padding: $sp24;
     }
 
     //  GRID BLOCKS
-    .dds-docs--example-cell,
-    .dds-docs--example-cell-clear {
+    .dtd-cell,
+    .dtd-cell__outline,
+    .dtd-cell--inner {
         padding: $sp8;
         border: 1px solid lighten($blue-060,10%);
         background-color: transparentize($blue-060, 0.85);
+        color: darken($blue-100, 20%);
         text-align: center;
         font-size: $fs-caption;
         font-family: $ff-mono;
     }
 
-    .dds-docs--example-cell-clear {
+    .dtd-cell--inner {
+        padding: $sp8;
+        border: 1px solid lighten($blue-060,10%);
+        background-color: transparentize($blue-060, 0.5);
+    }
+
+    .dtd-cell__clear {
+        padding: $sp0;
+        border: none;
+
+        .dtd-cell__outline {
+            border: 1px solid lighten($blue-060,10%);
+            background-color: transparentize($blue-060, 0.25);
+        }
+    }
+
+    .dtd-cell__outline {
         border-color: $border-gray-light;
         background-color: $white;
+        color: $gray-100;
+
+        .dtd-cell--inner {
+            border-color: transparent;
+            background-color: transparentize($blue-100, 0.5);
+            color: $fc-white;
+        }
     }
 
     //  CODE ONLY
-    &.dds-docs--example__code-only {
+    &.dtd-example-code-only {
         margin-bottom: $sp16;
         border: none;
 
@@ -128,8 +153,8 @@ body {
     }
 
     //  WITH RWD EXAMPLE
-    &.dds-docs--example__responsive {
-        .dds-docs--example-header {
+    &.dtd-example__responsive {
+        .dtd-example-header {
             border-radius: $br-md $br-md 0 0;
             background-color: $gray-100;
             color: $white;
@@ -140,14 +165,14 @@ body {
             border-radius: 0;
         }
 
-        .dds-docs--example-btn {
+        .dtd-example-btn {
             margin: $sp4;
             padding: $sp8;
             opacity: 0.5;
             cursor: pointer;
 
             &:hover,
-            &.dds-docs--example-btn__selected {
+            &.dtd-example-btn__selected {
                 opacity: 1;
             }
         }

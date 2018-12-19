@@ -1,0 +1,35 @@
+<section class="dds-docs--section">
+    <h2 class="dds-docs--header">Auto Margins</h2>
+    <p class="dds-docs--copy">Automatic margin properties allow you to quickly position objects, especially within flex layouts.</p>
+    <h3 class="dds-docs--subheader">Classes</h3>
+    <table class="dt-table">
+        <thead>
+            <tr>
+                <th scope="col">Direction</th>
+                <th scope="col" class="ff-mono fs-caption">Class</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in site.data.spacing.margin %}
+            {% assign auto = item.auto %}
+                {% for i in auto %}
+                <tr>
+                    <th scope="row" class="ff-mark fw-normal">{{ i.dir }}</th>
+                    <td class="w50 ff-mono fs-caption">{{ i.class }}</td>
+                </tr>
+                {% endfor %}
+            {% endfor %}
+        </tbody>
+    </table>
+    <h3 class="dds-docs--subheader">Example</h3>
+    <div class="dtd-example">
+{% highlight html linenos %}
+<div class="m-auto">.m-auto</div>
+{% endhighlight %}
+        <div class="dtd-example--preview">
+            <div class="flex flex__center dtd-cell p0 baw0">
+                <div class="dtd-cell--inner m-auto">.m-auto</div>
+            </div>
+        </div>
+    </div>
+</section>

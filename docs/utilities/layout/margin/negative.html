@@ -1,0 +1,84 @@
+<section class="dds-docs--section">
+    <h2 class="dds-docs--header">Negative margins</h2>
+    <p class="dds-docs--copy">To pull an object back, use the following negative margin CSS utility classes.</p>
+    <h3 class="dds-docs--subheader">Classes</h3>
+    <table class="dt-table ff-mono fs-caption">
+        <thead>
+            <tr>
+                <th></th>
+                <th scope="col" class="ta-center">-1px</th>
+                <th scope="col" class="ta-center">-2px</th>
+                <th scope="col" class="ta-center">-4px</th>
+                <th scope="col" class="ta-center">-6px</th>
+                <th scope="col" class="ta-center">-8px</th>
+                <th scope="col" class="ta-center">-12px</th>
+                <th scope="col" class="ta-center">-16px</th>
+                <th scope="col" class="ta-center">-24px</th>
+                <th scope="col" class="ta-center">-32px</th>
+                <th scope="col" class="ta-center">-48px</th>
+                <th scope="col" class="ta-center">-64px</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for class in site.data.spacing.margin-dir-negative %}
+            {% assign prefix-value = class.values | split: ", " %}
+            <tr>
+                <th scope="row">{{ class.prefix }}</th>
+                {% for value in prefix-value %}
+                <td class="ta-center">.{{ class.prefix }}{{ value }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <h3 class="dds-docs--subheader">Examples</h3>
+    <div class="dtd-example">
+{% highlight html linenos %}
+<div class="mtn8">.mtn8</div>
+<div class="mrn8">.mrn8</div>
+<div class="mbn8">.mbn8</div>
+<div class="mln8">.mln8</div>
+<div class="mxn8">.mxn8</div>
+<div class="myn8">.myn8</div>
+{% endhighlight %}
+        <div class="dtd-example--preview">
+            <div class="grid gg16" style="--grid-col-min-width: calc(25% - 12px);">
+                <div class="flex flex__center p24 dtd-cell dtd-cell__clear" style="height: 8rem;">
+                    <div class="w100 h100 p0 baw0 dtd-cell__outline">
+                        <div class="mn24" style="height: calc(100% + 48px);"><div class="flex flex__center h100 dtd-cell--inner">.mn24</div></div>
+                    </div>
+                </div>
+                <div class="flex flex__center p24 dtd-cell dtd-cell__clear" style="height: 8rem;">
+                    <div class="w100 h100 p0 baw0 dtd-cell__outline">
+                        <div class="mtn24" style="height: calc(100% + 24px);"><div class="flex flex__center h100 dtd-cell--inner">.mtn24</div></div>
+                    </div>
+                </div>
+                <div class="flex flex__center p24 dtd-cell dtd-cell__clear" style="height: 8rem;">
+                    <div class="w100 h100 p0 baw0 dtd-cell__outline">
+                        <div class="h100 mrn24"><div class="flex flex__center h100 dtd-cell--inner">.mrn24</div></div>
+                    </div>
+                </div>
+                <div class="flex flex__center p24 dtd-cell dtd-cell__clear" style="height: 8rem;">
+                    <div class="w100 h100 p0 baw0 dtd-cell__outline">
+                        <div class="mbn24" style="height: calc(100% + 24px);"><div class="flex flex__center h100 dtd-cell--inner">.mbn24</div></div>
+                    </div>
+                </div>
+                <div class="flex flex__center p24 dtd-cell dtd-cell__clear" style="height: 8rem;">
+                    <div class="w100 h100 p0 baw0 dtd-cell__outline">
+                        <div class="h100 mln24" style=""><div class="flex flex__center h100 dtd-cell--inner">.mln24</div></div>
+                    </div>
+                </div>
+                <div class="flex flex__center p24 dtd-cell dtd-cell__clear" style="height: 8rem;">
+                    <div class="w100 h100 p0 baw0 dtd-cell__outline">
+                        <div class="h100 mxn24" style=""><div class="flex flex__center h100 dtd-cell--inner">.mxn24</div></div>
+                    </div>
+                </div>
+                <div class="flex flex__center p24 dtd-cell dtd-cell__clear" style="height: 8rem;">
+                    <div class="w100 h100 p0 baw0 dtd-cell__outline">
+                        <div class="myn24" style="height: calc(100% + 48px);"><div class="flex flex__center h100 dtd-cell--inner">.myn24</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
