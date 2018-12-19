@@ -5,31 +5,45 @@
 //  ============================================================================
 @each $breakpoint, $variant in $rwd-variants {
     @include rwd($breakpoint) {
-        // Create the spacing units
-        @each $spacer, $value in $spacing-units {
-            @if ($spacer != 0) {
-                //  Negative Margin
-                .#{$variant}mn#{$spacer} { margin: -$value !important; }
-                //  Negative Margin -- Top
-                .#{$variant}mtn#{$spacer} { margin-top: -$value !important; }
-                //  Negative Margin -- Right
-                .#{$variant}mrn#{$spacer} { margin-right: -$value !important; }
-                //  Negative Margin -- Bottom
-                .#{$variant}mbn#{$spacer} { margin-bottom: -$value !important; }
-                //  Negative Margin -- Left
-                .#{$variant}mln#{$spacer} { margin-left: -$value !important; }
-                //  Negative Margin -- X-Axis
-                .#{$variant}mxn#{$spacer} {
-                    margin-right: -$value !important;
-                    margin-left: -$value !important;
-                }
-                //  Negative Margin -- Y-Axis
-                .#{$variant}myn#{$spacer} {
-                    margin-top: -$value !important;
-                    margin-bottom: -$value !important;
-                }
-            }
+        // Create negative margin units
+        $negative-margins: (
+            1:  1px,
+            2:  $sp2,
+            4:  $sp4,
+            6:  $sp6,
+            8:  $sp8,
+            12: $sp12,
+            16: $sp16,
+            24: $sp24,
+            32: $sp32,
+            48: $sp48,
+            64: $sp64
+        );
 
+        @each $spacer, $value in $negative-margins {
+            //  Negative Margin
+            .#{$variant}mn#{$spacer} { margin: -$value !important; }
+            //  Negative Margin -- Top
+            .#{$variant}mtn#{$spacer} { margin-top: -$value !important; }
+            //  Negative Margin -- Right
+            .#{$variant}mrn#{$spacer} { margin-right: -$value !important; }
+            //  Negative Margin -- Bottom
+            .#{$variant}mbn#{$spacer} { margin-bottom: -$value !important; }
+            //  Negative Margin -- Left
+            .#{$variant}mln#{$spacer} { margin-left: -$value !important; }
+            //  Negative Margin -- X-Axis
+            .#{$variant}mxn#{$spacer} {
+                margin-right: -$value !important;
+                margin-left: -$value !important;
+            }
+            //  Negative Margin -- Y-Axis
+            .#{$variant}myn#{$spacer} {
+                margin-top: -$value !important;
+                margin-bottom: -$value !important;
+            }
+        }
+        // Create the other units
+        @each $spacer, $value in $spacing-units {
             //  Margin -- All sides
             .#{$variant}m#{$spacer} { margin: $value !important; }
             //  Margin -- Top
