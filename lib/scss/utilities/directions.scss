@@ -28,7 +28,7 @@
 
 
 //  ============================================================================
-//  $   WIDTHS & HEIGHTS
+//  $   FLUID WIDTHS & HEIGHTS
 //  ----------------------------------------------------------------------------
 $grid-columns:      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
 $width-percentages: (
@@ -55,11 +55,40 @@ $width-percentages: (
         }
 
         //  --  Auto widths / heights
-        .#{$variant}w-auto { width: auto !important; }
-        .#{$variant}h-auto { height: auto !important; }
+        .#{$variant}w-auto   { width: auto !important; }
+        .#{$variant}wmn-auto { min-width: auto !important; }
+        .#{$variant}wmx-auto { max-width: auto !important; }
+        .#{$variant}h-auto   { height: auto !important; }
+        .#{$variant}hmn-auto { min-height: auto !important; }
+        .#{$variant}hmx-auto { max-height: auto !important; }
 
         //  --  Full viewport widths / heights
         .#{$variant}w100v  { width: 100vw !important; }
         .#{$variant}h100v  { height: 100vh !important; }
+    }
+}
+
+//  ============================================================================
+//  $   FIXED WIDTHS
+//  ----------------------------------------------------------------------------
+$width-pixels: (
+    1: 6.75rem,
+    2: 13.5rem,
+    3: 20.75rem,
+    4: 29rem,
+    5: 39.25rem,
+    6: 47.25rem,
+    7: 57rem,
+    8: 64rem,
+    100: 100%
+);
+
+@each $breakpoint, $variant in $rwd-variants {
+    @include rwd($breakpoint) {
+        @each $step, $value in $width-pixels {
+            .#{$variant}w#{$step} { width: $value !important; }
+            .#{$variant}wmn#{$step} { min-width: $value !important; }
+            .#{$variant}wmx#{$step} { max-width: $value !important; }
+        }
     }
 }
