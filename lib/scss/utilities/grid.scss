@@ -84,6 +84,19 @@ $grid-columns:      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 !default;
 //  ----------------------------------------------------------------------------
 @each $breakpoint, $variant in $rwd-variants {
     @include rwd($breakpoint) {
+
+        //  --  GRID GAP
+        //      Defines the size of grid "gaps" (lines). We generate a gap for
+        //      each defined spacing unit.
+        //  --------------------------------------------------------------------
+        @each $key, $space in $spacing-units {
+            .#{$variant}gcg#{$key}           { grid-column-gap: $space; }
+            .#{$variant}grg#{$key}           { grid-row-gap: $space; }
+            .#{$variant}gg#{$key}            { grid-gap: $space; }
+        }
+        @each $value in $grid-columns {
+            .#{$variant}grs-span#{$value}    { grid-column-start: span var(--grs-span, $value); }
+        }
         //  ====================================================================
         //  $$  GRID PARENT PROPERTIES
         //  ====================================================================
@@ -110,16 +123,6 @@ $grid-columns:      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 !default;
         .#{$variant}gaf-column               { grid-auto-flow: column; }
         .#{$variant}gaf-dense                { grid-auto-flow: dense; }
         .#{$variant}gaf-row                  { grid-auto-flow: row; }
-
-        //  --  GRID GAP
-        //      Defines the size of grid "gaps" (lines). We generate a gap for
-        //      each defined spacing unit.
-        //  --------------------------------------------------------------------
-        @each $key, $space in $spacing-units {
-            .#{$variant}gcg#{$key}           { grid-column-gap: $space; }
-            .#{$variant}grg#{$key}           { grid-row-gap: $space; }
-            .#{$variant}gg#{$key}            { grid-gap: $space; }
-        }
         .#{$variant}ggx                      { grid-row-gap: 0; }
         .#{$variant}ggy                      { grid-column-gap: 0; }
 
@@ -212,9 +215,6 @@ $grid-columns:      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 !default;
         //  Grid Column
         .#{$variant}gcs-line                 { grid-column-start: var(--gcs-start, 1); }
         .#{$variant}gcs-span                 { grid-column-start: span var(--gcs-span, 2); }
-        @each $value in $grid-columns {
-            .#{$variant}grs-span#{$value}    { grid-column-start: span var(--grs-span, $value); }
-        }
         .#{$variant}gcs-auto                 { grid-column-start: auto; }
         .#{$variant}gcs-initial              { grid-column-start: initial; }
         .#{$variant}gce-line                 { grid-column-end: var(--gce-start, 1); }
@@ -235,6 +235,7 @@ $grid-columns:      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 !default;
         //  Grid Column & Row
         .#{$variant}ga-full                  { grid-area: 1 / -1; }
         .#{$variant}ga-name                  { grid-area: var(--grid-area-name, col); }
+        .#{$variant}ga-span                  { grid-area: var(--grid-area-row-start, 1) / var(--grid-area-col-start, 1) / span var(--grid-area-row-end, 2) / span var(--grid-area-col-end, 2); }
 
 
         //  --  JUSTIFY SELF
