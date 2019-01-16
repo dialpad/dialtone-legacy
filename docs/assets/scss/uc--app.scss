@@ -1,13 +1,5 @@
 @import "./lib/scss/constants/dialtone--constants";
 
-.example {
-    position: relative;
-    min-height: inherit;
-    height: 100%;
-    border-radius: 5px;
-    background-color: #444648;
-    color: #FFFFFF;
-}
 .grid--cell {
     min-height: 9rem;
 }
@@ -24,8 +16,9 @@
     left: 0;
     padding: $sp24 $sp12;
     min-width: 5rem;
-    border-radius: 0 $br-md $br-md 0;
+    border-radius: 0 $br-lg $br-lg 0;
     background-color: $navy-100;
+    box-shadow: 0 0 $sp12 0 transparentize(#141416, 0.75);
 }
 .uc-nav--item {
     color: $white;
@@ -34,8 +27,22 @@
 .uc-grid {
     display: grid;
     align-content: center;
-    padding-left: 5rem;
+    padding: $sp24;
+    padding-left: calc(24px + 5rem);
     height: 100vh;
+    background-image: linear-gradient(to bottom, $white 0%, $gray-005 100%);
+}
+
+.uc-user {
+    width: $sp48;
+    height: $sp48;
+    border-radius: $br-circle;
+    background-color: $blue-060;
+    color: $white;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: $ff-mark-medium;
+    line-height: $lh-xs;
 }
 
 .uc-icon {
@@ -44,4 +51,102 @@
 
 .fc-red-080 {
     color: $red-080;
+}
+
+.uc-card {
+    position: relative;
+    min-height: 9rem;
+    height: 100%;
+    border-radius: $br-md;
+    background-color: $white;
+    background-image: linear-gradient(to bottom, rgba(255,255,255,0) 30%, rgba(255,255,255,.9) 100%),url("../images/uc-card-pattern@2x.png");
+    background-position: 50% 50%;
+    background-size: 200%;
+    box-shadow: 0 2px 8px 0 transparentize(#1E1F20,.9);
+    color: #2C2D2F;
+}
+
+.uc-card__video {
+    background-color: #2B2C2E;
+    color: $white;
+
+    &:after,
+    &:before {
+        position: absolute;
+        right: 0;
+        left: 0;
+        content: "";
+    }
+
+    &:after {
+        bottom: 0;
+        height: 50%;
+        background-image: linear-gradient(to bottom, transparentize(#111111, 0.6) 0%, transparentize(#111111, 0) 100%);
+    }
+
+    &:before {
+        top: 0;
+        height: 25%;
+        background-image: linear-gradient(to top, transparentize(#111111, 0.25) 0%, transparentize(#111111, 0) 100%);
+    }
+}
+
+.uc-card--avatar img,
+.uc-card--initials {
+    width: 6rem;
+    height: 6rem;
+    border-radius: $br-circle;
+}
+
+.uc-card--avatar,
+.uc-card--initials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: $sp16;
+}
+
+.uc-card--initials > span {
+    margin-top: $sp6;
+    color: $white;
+    font-size: 3rem;
+    font-family: $ff-mark-bold;
+    line-height: 1;
+}
+
+.uc-card__bg-blue { background-color: transparentize($blue-100,0.2); }
+.uc-card__bg-teal { background-color: transparentize($teal-100,0.25); }
+.uc-card__bg-pink { background-color: transparentize($pink-080,0.05); }
+
+.uc-card--connection {
+    position: absolute;
+    top: $sp12;
+    left: $sp16;
+}
+
+.uc-card--organizer {
+    margin-top: -($sp12);
+    padding: 0 $sp8 0 $sp16;
+    min-height: $sp24;
+    border: 3px solid $white;
+    border-left-width: 0;
+    border-radius: 1px $br-md $br-md 0;
+    background-color: $blue-080;
+    color: $white;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: $fs-caps;
+    font-family: $ff-mark-bold;
+    line-height: $sp24 - 2;
+}
+
+.uc-card--footer {
+    padding: $sp8 $sp16;
+    font-size: $fs-body1;
+    line-height: $lh-md;
+}
+
+.uc-icon {
+    width: 18px;
+    height: 18px;
 }
