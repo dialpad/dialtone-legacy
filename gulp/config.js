@@ -24,7 +24,7 @@ module.exports = {
 
     css: {
         scsslib: source + '/scss/dialtone.scss',
-        scssdocs: assets + '/scss/dialtone--docs.scss',
+        scssdocs: assets + '/scss/*.scss',
         csslib: source + '/css',
         cssdocs: assets + '/css',
     },
