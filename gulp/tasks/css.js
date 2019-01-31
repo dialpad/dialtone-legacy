@@ -51,11 +51,11 @@ gulp.task('docs-css', function() {
         .pipe(gulp.dest(config.cssdocs));
 });
 
-gulp.task('css', function(callback) {
+gulp.task('css', function(done) {
     browsersync.notify('Refreshing...');
     runSequence(
         ['lib-css', 'docs-css'],
         ['jekyll-rebuild'],
-        callback
+        done
     );
 });

@@ -11,7 +11,7 @@ gulp.task('jekyll', function(done) {
         .spawn(
             'jekyll',
             [
-                'build',
+                'serve',
                 '--source=' + config.src,
                 '--destination=' + config.dest,
                 '--config=' + config.config,
@@ -22,6 +22,7 @@ gulp.task('jekyll', function(done) {
         .on('close', done);
 });
 
-gulp.task('jekyll-rebuild', ['jekyll'], function() {
-    browsersync.reload();
+gulp.task('jekyll-rebuild', ['jekyll'], function(done) {
+    browsersync.stream();
+    done();
 });
