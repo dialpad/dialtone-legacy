@@ -25,8 +25,8 @@
             }
             //  Border Radius -- Bottom
             .#{$variant}bbr-#{$step} {
-                border-bottom-left-radius: $value !important;
                 border-bottom-right-radius: $value !important;
+                border-bottom-left-radius: $value !important;
             }
             //  Border Radius -- Left
             .#{$variant}blr-#{$step} {
@@ -64,36 +64,72 @@
 //  ----------------------------------------------------------------------------
 @each $breakpoint, $variant in $rwd-variants {
     @include rwd($breakpoint) {
-        @each $step, $value in $border-widths {
-            .#{$variant}baw#{$step} { border-width: $value !important; }
-            .#{$variant}btw#{$step} { border-top-width: $value !important; }
-            .#{$variant}brw#{$step} { border-right-width: $value !important; }
-            .#{$variant}bbw#{$step} { border-bottom-width: $value !important; }
-            .#{$variant}blw#{$step} { border-left-width: $value !important; }
-            .#{$variant}bxw#{$step} { border-right-width: $value !important; border-left-width: $value !important; }
-            .#{$variant}byw#{$step} { border-top-width: $value !important; border-bottom-width: $value !important; }
-        }
+        .#{$variant}baw0 { border-width: $bw0 !important; }
+        .#{$variant}baw1 { border-width: $bw1 !important; }
+        .#{$variant}baw2 { border-width: $bw2 !important; }
+        .#{$variant}baw4 { border-width: $bw4 !important; }
+        .#{$variant}baw6 { border-width: $bw6 !important; }
+
+        .#{$variant}btw0 { border-top-width: $bw0 !important; }
+        .#{$variant}btw1 { border-top-width: $bw1 !important; }
+        .#{$variant}btw2 { border-top-width: $bw2 !important; }
+        .#{$variant}btw4 { border-top-width: $bw4 !important; }
+        .#{$variant}btw6 { border-top-width: $bw6 !important; }
+
+        .#{$variant}brw0 { border-right-width: $bw0 !important; }
+        .#{$variant}brw1 { border-right-width: $bw1 !important; }
+        .#{$variant}brw2 { border-right-width: $bw2 !important; }
+        .#{$variant}brw4 { border-right-width: $bw4 !important; }
+        .#{$variant}brw6 { border-right-width: $bw6 !important; }
+
+        .#{$variant}bbw0 { border-bottom-width: $bw0 !important; }
+        .#{$variant}bbw1 { border-bottom-width: $bw1 !important; }
+        .#{$variant}bbw2 { border-bottom-width: $bw2 !important; }
+        .#{$variant}bbw4 { border-bottom-width: $bw4 !important; }
+        .#{$variant}bbw6 { border-bottom-width: $bw6 !important; }
+
+        .#{$variant}blw0 { border-left-width: $bw0 !important; }
+        .#{$variant}blw1 { border-left-width: $bw1 !important; }
+        .#{$variant}blw2 { border-left-width: $bw2 !important; }
+        .#{$variant}blw4 { border-left-width: $bw4 !important; }
+        .#{$variant}blw6 { border-left-width: $bw6 !important; }
+
+        .#{$variant}bxw0 { border-right-width: $bw0 !important; border-left-width: $bw0 !important; }
+        .#{$variant}bxw1 { border-right-width: $bw1 !important; border-left-width: $bw1 !important; }
+        .#{$variant}bxw2 { border-right-width: $bw2 !important; border-left-width: $bw2 !important; }
+        .#{$variant}bxw4 { border-right-width: $bw4 !important; border-left-width: $bw4 !important; }
+        .#{$variant}bxw6 { border-right-width: $bw6 !important; border-left-width: $bw6 !important; }
+
+        .#{$variant}byw0 { border-top-width: $bw0 !important; border-bottom-width: $bw0 !important; }
+        .#{$variant}byw1 { border-top-width: $bw1 !important; border-bottom-width: $bw1 !important; }
+        .#{$variant}byw2 { border-top-width: $bw2 !important; border-bottom-width: $bw2 !important; }
+        .#{$variant}byw4 { border-top-width: $bw4 !important; border-bottom-width: $bw4 !important; }
+        .#{$variant}byw6 { border-top-width: $bw6 !important; border-bottom-width: $bw6 !important; }
     }
 }
 
 //  $$  BORDER STYLES
 //  ----------------------------------------------------------------------------
-.bas-solid              { border-style: solid; }
-.bts-solid              { border-top-style: solid; }
-.brs-solid              { border-right-style: solid; }
-.bbs-solid              { border-bottom-style: solid; }
-.bls-solid              { border-left-style: solid; }
+@each $breakpoint, $variant in $rwd-variants {
+    @include rwd($breakpoint) {
+        .#{$variant}bas-solid              { border-style: solid !important; }
+        .#{$variant}bts-solid              { border-top-style: solid !important; }
+        .#{$variant}brs-solid              { border-right-style: solid !important; }
+        .#{$variant}bbs-solid              { border-bottom-style: solid !important; }
+        .#{$variant}bls-solid              { border-left-style: solid !important; }
 
-.bas-dashed             { border-style: dashed; }
-.bts-dashed             { border-top-style: dashed; }
-.brs-dashed             { border-right-style: dashed; }
-.bbs-dashed             { border-bottom-style: dashed; }
-.bls-dashed             { border-left-style: dashed; }
+        .#{$variant}bas-dashed             { border-style: dashed !important; }
+        .#{$variant}bts-dashed             { border-top-style: dashed !important; }
+        .#{$variant}brs-dashed             { border-right-style: dashed !important; }
+        .#{$variant}bbs-dashed             { border-bottom-style: dashed !important; }
+        .#{$variant}bls-dashed             { border-left-style: dashed !important; }
+    }
+}
 
 //  $$  BORDER COLORS
 //  ----------------------------------------------------------------------------
 @each $step, $value in $color-steps {
-    .bc-#{$step} { border-color: $value; }
+    .bc-#{$step} { border-color: $value !important; }
 }
-.bc-current             { border-color: currentColor; }
-.bc-transparent         { border-color: transparent; }
+.bc-current             { border-color: currentColor !important; }
+.bc-transparent         { border-color: transparent !important; }

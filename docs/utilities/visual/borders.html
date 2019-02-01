@@ -4,28 +4,6 @@ title: Borders
 description: Utility classes for borders and border radiuses.
 ---
 <section class="dds-docs--section">
-    <h2 class="dds-docs--header">Classes</h2>
-    <p class="dds-docs--copy">The border utility classes use an abbreviated syntax. The abbreviations are based on the CSS property name and the desired direction(s) the border should be applied. Below is a table outlining the classes and their meanings:</p>
-    <table class="dt-table fs-caption">
-        <thead>
-            <tr>
-                <th>Class</th>
-                <th>Full name</th>
-                <th style="width: 50%;">Output</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for name in site.data.borders.directions %}
-            <tr>
-                <td class="ff-mono">{{ name.class }}</td>
-                <td class="fs-body1">{{ name.name }}</td>
-                <td class="ff-mono">{{ name.output }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-</section>
-<section class="dds-docs--section">
     <h2 class="dds-docs--header">Default border</h2>
     <p class="dds-docs--copy">The default border utility class applies a 1px, solid border using the current text color as it's color.</p>
     <div class="dtd-example">
@@ -43,7 +21,28 @@ description: Utility classes for borders and border radiuses.
 </section>
 <section class="dds-docs--section">
     <h2 class="dds-docs--header">Directional borders</h2>
-    <p class="dds-docs--copy">Borders can be applied directionally to a specific edge or along the X or Y axis.</p>
+    <p class="dds-docs--copy">Borders can be applied directionally to a specific side, horizontally, and vertically.</p>
+    <h3 class="dds-docs--subheader">Classes</h3>
+    <p class="dds-docs--copy">The border utility classes use an abbreviated syntax. The abbreviations are based on the CSS property name and the desired direction(s) the border should be applied. Below is a table outlining the classes and their meanings:</p>
+    <table class="dt-table">
+        <thead>
+            <tr>
+                <th scope="col" style="width: 20;">Class</th>
+                <th scope="col" style="width: 30;">Output</th>
+                <th scope="col">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for name in site.data.borders.directions %}
+            <tr>
+                <th scope="row" class="ff-mono fs-fine">{{ name.class }}</th>
+                <td class="ff-mono fs-fine">{{ name.output }}</td>
+                <td>{{ name.name }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <h3 class="dds-docs--subheader">Examples</h3>
     <div class="dtd-example">
 {% highlight html linenos %}
 <div class="bt">.bt</div>
@@ -70,20 +69,20 @@ description: Utility classes for borders and border radiuses.
     <p class="dds-docs--copy">Set a border's width by using a border style utility class. This allows you to not only increase a border width from it's default 1px value, but also remove borders by setting them to 0.</p>
     <h3 class="dds-docs--subheader">Classes</h3>
     <p class="dds-docs--copy">The border utility classes use an abbreviated syntax. The abbreviations are based on the CSS property name, the desired direction, and the property being applied.</p>
-    <table class="dt-table dt-table__striped">
+    <table class="dt-table">
         <thead>
             <tr>
-                <th>Class</th>
-                <th>Full name</th>
-                <th style="width: 50%;">Output</th>
+                <th scope="col" style="width: 20;">Class</th>
+                <th scope="col" style="width: 30;">Output</th>
+                <th scope="col">Description</th>
             </tr>
         </thead>
         <tbody>
             {% for name in site.data.borders.widths %}
             <tr>
-                <td><code class="dds-docs--code">{{ name.class }}</code></td>
-                <td>{{ name.name }}</td>
-                <td><code class="dds-docs--code">{{ name.output }}</code></td>
+                <th scope="row" class="ff-mono fs-fine">{{ name.class }}</th>
+                <td class="ff-mono fs-fine">{{ name.output }}</td>
+                <td>{{ name.description }}</td>
             </tr>
             {% endfor %}
         </tbody>
@@ -91,25 +90,25 @@ description: Utility classes for borders and border radiuses.
     <h3 class="dds-docs--subheader">Examples</h3>
     <div class="dtd-example">
 {% highlight html linenos %}
-<div class="ba baw2">.ba .baw2</div>
-<div class="ba baw2 btw0">.ba .baw2 .btw0</div>
-<div class="bt btw2">.bt .btw2</div>
-<div class="br brw2">.br .brw2</div>
-<div class="bb bbw4">.bb .bbw4</div>
-<div class="bl blw4">.bl .blw4</div>
-<div class="bx bxw6">.bx .bxw6</div>
-<div class="by byw6">.by .byw6</div>
+<div class="ba baw2">…</div>
+<div class="ba baw2 btw0">…</div>
+<div class="bt btw2">…</div>
+<div class="br brw2">…</div>
+<div class="bb bbw4">…</div>
+<div class="bl blw4">…</div>
+<div class="bx bxw6">…</div>
+<div class="by byw6">…</div>
 {% endhighlight %}
         <div class="dtd-example--preview">
             <div class="flex fw-wrap fl1__all">
-                <div class="flex--cell2 m8 p8 ba baw2">.ba .baw2</div>
-                <div class="flex--cell2 m8 p8 ba baw2 btw0">.ba .baw2 .btw0</div>
-                <div class="flex--cell2 m8 p8 bt btw2">.bt .btw2</div>
-                <div class="flex--cell2 m8 p8 br brw2">.br .brw2</div>
-                <div class="flex--cell2 m8 p8 bb bbw4">.bb .bbw4</div>
-                <div class="flex--cell2 m8 p8 bl blw4">.bl .blw4</div>
-                <div class="flex--cell2 m8 p8 bx bxw6">.bx .bxw6</div>
-                <div class="flex--cell2 m8 p8 by byw6">.by .byw6</div>
+                <div class="flex--cell2 m8 dtd-cell ba baw2">.ba .baw2</div>
+                <div class="flex--cell2 m8 dtd-cell ba baw2 btw0">.ba .baw2 .btw0</div>
+                <div class="flex--cell2 m8 dtd-cell bt btw2">.bt .btw2</div>
+                <div class="flex--cell2 m8 dtd-cell br brw2">.br .brw2</div>
+                <div class="flex--cell2 m8 dtd-cell bb bbw4">.bb .bbw4</div>
+                <div class="flex--cell2 m8 dtd-cell bl blw4">.bl .blw4</div>
+                <div class="flex--cell2 m8 dtd-cell bx bxw6">.bx .bxw6</div>
+                <div class="flex--cell2 m8 dtd-cell by byw6">.by .byw6</div>
             </div>
         </div>
     </div>
