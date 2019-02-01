@@ -7,7 +7,7 @@ var assets = src + '/assets';
 module.exports = {
     browsersync: {
         server: {
-            baseDir: [dev, build, src]
+            baseDir: dev
         },
         open: false,
         port: 4000,
