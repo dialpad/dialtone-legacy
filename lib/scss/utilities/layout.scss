@@ -140,15 +140,26 @@
 //  ============================================================================
 //  $   Z-INDEX
 //  ----------------------------------------------------------------------------
-.z-hide             { z-index: $z-hide; }
-.z-base             { z-index: $z-base; }
-.z-selected         { z-index: $z-selected; }
-.z-active           { z-index: $z-active; }
-.z-navigation       { z-index: $z-navigation; }
-.z-navigation-fixed { z-index: $z-navigation-fixed; }
-.z-dropdown         { z-index: $z-dropdown; }
-.z-popover          { z-index: $z-popover; }
-.z-tooltip          { z-index: $z-tooltip; }
-.z-snackbar         { z-index: $z-snackbar; }
-.z-drawer           { z-index: $z-drawer; }
-.z-modal            { z-index: $z-modal; }
+@each $breakpoint, $variant in $rwd-variants {
+    @include rwd($breakpoint) {
+        // Create negative margin units
+        $zindex-stops: (
+            hide:       $z-hide,
+            base:       $z-base,
+            selected:   $z-selected,
+            active:     $z-active,
+            nav:        $z-navigation,
+            nav-fixed:  $z-navigation-fixed,
+            dropdown:   $z-dropdown,
+            tooltip:    $z-tooltip,
+            snackbar:   $z-snackbar,
+            drawer:     $z-drawer,
+            modal-bg:   $z-modal-bg,
+            modal:      $z-modal,
+        );
+
+        @each $stop, $value in $zindex-stops {
+            .#{$variant}z-#{$stop} { z-index: $value !important; }
+        }
+    }
+}
