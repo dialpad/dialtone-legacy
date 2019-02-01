@@ -11,8 +11,7 @@ module.exports = {
         },
         open: false,
         port: 4000,
-        watch: false,
-        reloadDelay: 1500
+        watch: false
     },
 
     jekyll: {

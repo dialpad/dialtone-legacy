@@ -23,6 +23,6 @@ gulp.task('jekyll', function(done) {
 });
 
 gulp.task('jekyll-rebuild', ['jekyll'], function(done) {
-    browsersync.stream();
+    browsersync.reload();
     done();
 });
