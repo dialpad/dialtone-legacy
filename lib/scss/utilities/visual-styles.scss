@@ -1,0 +1,154 @@
+//
+//  DIALTONE
+//  UTILITIES: BACKGROUNDS
+//
+//  These are the background classes for Dialpad's design system Dialtone.
+//  For further documentation of these and other classes,
+//  visit https://dialpad.design/utilities/backgrounds
+//
+//  TABLE OF CONTENTS
+//  • BACKGROUND FILLS
+//  • BACKGROUND GRADIENTS
+//  • BORDERS
+//  • BOX SHADOWS
+//  • OPACITY
+//
+//  ============================================================================
+//  $   BACKGROUND FILLS
+//  ----------------------------------------------------------------------------
+@each $breakpoint, $variant in $rwd-variants {
+    @include rwd($breakpoint) {
+        @each $stop, $color in $color-steps {
+            .#{$variant}bgc-#{$stop} { background-color: $color !important; }
+        }
+    }
+}
+
+
+//  ============================================================================
+//  $   BACKGROUND GRADIENTS
+//  ----------------------------------------------------------------------------
+//  Constants
+$background-directions: ( top, right, bottom, left );
+
+//  Gradient Mixin
+@mixin gradients($name, $color1, $color2, $start: 0%, $end: 100%) {
+    @each $direction in $background-directions {
+        .blg-#{$name}-to#{$direction} { background-image: linear-gradient(to #{$direction}, $color1 $start, $color2 $end) !important; }
+    }
+}
+
+//  Generate dark backgrounds
+@include gradients(dark, darken($gray-100,5%), lighten($gray-100,5%));
+
+//  Generate light backgrounds
+@include gradients(light, #E3F1FE, $white);
+
+
+//  ============================================================================
+//  $   BORDERS
+//  ============================================================================
+@import "borders";
+
+
+//  ============================================================================
+//  $   BOX SHADOWS
+//  ============================================================================
+//  Constants
+$box-shadows: (
+    none: none,
+    sm: 0 2px 4px 0 transparentize($gray-100, 0.85),
+    md: 0 2px 8px 0 transparentize($gray-100, 0.75),
+    lg: 0 2px 12px 0 transparentize($gray-100, 0.70),
+    xl: 0 2px 16px 0 transparentize($gray-100, 0.70),
+);
+
+//  Generate classes
+@each $breakpoint, $variant in $rwd-variants {
+    @include rwd($breakpoint) {
+        @each $key, $value in $box-shadows {
+            .#{$variant}bs-#{$key} { box-shadow: $value !important; }
+        }
+    }
+}
+
+
+//  ============================================================================
+//  $   OPACITY
+//      For times that you want a fill background, but not at 100% opacity. We
+//      currently only offer these for $white and $gray-100.
+//  ----------------------------------------------------------------------------
+//  Constants
+$opacity-colors: (
+    white: $white,
+    gray: $gray-100,
+);
+$bgc-opacity-stops: (
+    95: 0.05,
+    90: 0.1,
+    85: 0.15,
+    75: 0.25,
+    50: 0.5,
+    25: 0.75,
+    15: 0.85,
+    10: 0.9,
+    5: 0.95,
+);
+$opacity-stops: (
+    0: 0,
+    5: 0.05,
+    10: 0.1,
+    20: 0.2,
+    25: 0.25,
+    30: 0.3,
+    40: 0.4,
+    50: 0.5,
+    60: 0.6,
+    70: 0.7,
+    75: 0.75,
+    80: 0.8,
+    90: 0.9,
+    95: 0.95,
+    100: 1,
+);
+
+//  Generate background opacity classes
+@each $breakpoint, $variant in $rwd-variants {
+    @include rwd($breakpoint) {
+        @each $name, $color in $opacity-colors {
+            @each $key, $stop in $bgc-opacity-stops {
+                .#{$variant}bgc-#{$name}-o#{$key} { background-color: transparentize($color, $stop) !important; }
+            }
+        }
+    }
+}
+
+//  Generate opacity classes
+@each $breakpoint, $variant in $rwd-variants {
+    @include rwd($breakpoint) {
+        @each $key, $stop in $opacity-stops {
+            .#{$variant}o#{$key} { opacity: $stop !important; }
+        }
+    }
+}
+
+
+//  ============================================================================
+//  $   OUTLINE
+//  ============================================================================
+@each $breakpoint, $variant in $rwd-variants {
+    @include rwd($breakpoint) {
+        .#{$variant}os-solid      { outline-style: solid !important; }
+        .#{$variant}os-dashed     { outline-style: dashed !important; }
+        .#{$variant}os-dotted     { outline-style: dotted !important; }
+        .#{$variant}os-double     { outline-style: double !important; }
+        .#{$variant}os-groove     { outline-style: groove !important; }
+        .#{$variant}os-ridge      { outline-style: ridge !important; }
+        .#{$variant}os-inset      { outline-style: inset !important; }
+        .#{$variant}os-outset     { outline-style: outset !important; }
+        .#{$variant}os-none       { outline-style: none !important; }
+        .#{$variant}os-inherit    { outline-style: inherit !important; }
+        .#{$variant}os-initial    { outline-style: initial !important; }
+        .#{$variant}os-unset      { outline-style: unset !important; }
+    }
+}

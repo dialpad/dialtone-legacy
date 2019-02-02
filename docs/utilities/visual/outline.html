@@ -1,0 +1,62 @@
+---
+layout: page
+title: Outline
+description: CSS utility classes that set or alter an element's outline style.
+---
+<section class="dds-docs--section">
+    <h2 class="dds-docs--header">Classes</h2>
+    <p class="dds-docs--copy">The outline style utility classes use an abbreviated syntax. The abbreviations are based on the CSS property name (<strong>o</strong>utline-<strong>s</strong>tyle) and the desired style. Below is a table outlining the classes and their meanings:</p>
+    <table class="dt-table">
+        <thead>
+            <tr>
+                <th scope="col" width="20%;">Class</th>
+                <th scope="col">Output</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for name in site.data.visual-styles.outline %}
+            <tr>
+                <th scope="row" class="ff-mono fs-fine">.os-{{ name.class }}</th>
+                <td class="ff-mono fs-fine">outline-style: {{ name.class }};</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+<section class="dds-docs--section">
+    <h2 class="dds-docs--header">Examples</h2>
+    <div class="dtd-example">
+{% highlight html linenos %}
+<div class="os-solid">…</div>
+<div class="os-dashed">…</div>
+<div class="os-dotted">…</div>
+<div class="os-double">…</div>
+<div class="os-groove">…</div>
+<div class="os-ridge">…</div>
+<div class="os-inset">…</div>
+<div class="os-outset">…</div>
+<div class="os-none">…</div>
+<div class="os-initial">…</div>
+<div class="os-inherit">…</div>
+<div class="os-unset">…</div>
+{% endhighlight %}
+        <div class="dtd-example--preview">
+            <div class="flex fd-column fl1">
+                <div class="flex--cell my8 dtd-cell os-solid">.os-solid</div>
+                <div class="flex--cell my8 dtd-cell os-dashed">.os-dashed</div>
+                <div class="flex--cell my8 dtd-cell os-dotted">.os-dotted</div>
+                <div class="flex--cell my8 dtd-cell os-double">.os-double</div>
+                <div class="flex--cell my8 dtd-cell os-groove">.os-groove</div>
+                <div class="flex--cell my8 dtd-cell os-ridge">.os-ridge</div>
+                <div class="flex--cell my8 dtd-cell os-inset">.os-inset</div>
+                <div class="flex--cell my8 dtd-cell os-outset">.os-outset</div>
+                <div class="flex fl1__all my8 mxn8">
+                    <div class="flex--cell mx8 dtd-cell os-none">.os-none</div>
+                    <div class="flex--cell mx8 dtd-cell os-initial">.os-initial</div>
+                    <div class="flex--cell mx8 dtd-cell os-inherit">.os-inherit</div>
+                    <div class="flex--cell mx8 dtd-cell os-unset">.os-unset</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
