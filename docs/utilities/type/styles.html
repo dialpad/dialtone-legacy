@@ -1,0 +1,48 @@
+---
+layout: page
+title: Styles
+description: Utility classes for controlling various font styles. The font style utility classes use an abbreviated syntax, based on the CSS property name and the desired option.
+---
+<section class="dds-docs--section">
+    <h2 class="dds-docs--header">Font Family</h2>
+    <h3 class="dds-docs--subheader">Classes</h3>
+    <table class="dt-table">
+        <thead>
+            <tr>
+                <th scope="col" width="20%">Class</th>
+                <th scope="col">Output</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in site.data.type.style-family %}
+            <tr>
+                <th scope="row" class="ff-mono fs-fine">{{ item.class }}</th>
+                <td class="ff-mono fs-fine">{{ item.output }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <h3 class="dds-docs--subheader">Examples</h3>
+    <div class="dtd-example">
+{% highlight html linenos %}
+<div class="ff-mark-light">…</div>
+<div class="ff-mark">…</div>
+<div class="ff-mark-bold">…</div>
+<div class="ff-mark-medium">…</div>
+<div class="ff-mono">…</div>
+<div class="ff-initial">…</div>
+<div class="ff-inherit">…</div>
+<div class="ff-unset">…</div>
+{% endhighlight %}
+        <div class="dtd-example--preview">
+            <div class="flex fd-column fl1__all">
+                <div class="flex--cell p8 ws-nowrap wmx5 of-hidden"><strong class="ff-mono fs-fine">.ff-mark-light</strong><br/><span class="fs-display ff-mark-light">The quick brown fox jumps over the lazy dog.</span></div>
+                <div class="flex--cell p8 ws-nowrap wmx5 of-hidden"><strong class="ff-mono fs-fine">.ff-mark</strong><br/><span class="fs-display ff-mark">The quick brown fox jumps over the lazy dog.</span></div>
+                <div class="flex--cell p8 ws-nowrap wmx5 of-hidden"><strong class="ff-mono fs-fine">.ff-mark-bold</strong><br/><span class="fs-display ff-mark-bold">The quick brown fox jumps over the lazy dog.</span></div>
+                <div class="flex--cell p8 ws-nowrap wmx5 of-hidden"><strong class="ff-mono fs-fine">.ff-mark-medium</strong><br/><span class="fs-display ff-mark-medium">The quick brown fox jumps over the lazy dog.</span></div>
+                <div class="flex--cell p8 ws-nowrap wmx5 of-hidden"><strong class="ff-mono fs-fine">.ff-mark-mono</strong><br/><span class="fs-display ff-mark-mono">The quick brown fox jumps over the lazy dog.</span></div>
+                <div class="flex--cell p8 ws-nowrap wmx5 of-hidden"><strong class="ff-mono fs-fine">.ff-unset</strong><br/><span class="fs-display ff-unset">The quick brown fox jumps over the lazy dog.</span></div>
+            </div>
+        </div>
+    </div>
+</section>

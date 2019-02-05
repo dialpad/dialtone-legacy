@@ -44,6 +44,9 @@ $ff-styles: (
         .#{$variant}ff-mark-bold       { font-weight: 700; font-family: $ff-mark-bold !important; }
         .#{$variant}ff-sans            { font-family: $ff-sans !important; }
         .#{$variant}ff-mono            { font-family: $ff-mono !important; }
+        .#{$variant}ff-initial         { font-family: initial !important; }
+        .#{$variant}ff-inherit         { font-family: inherit !important; }
+        .#{$variant}ff-unset           { font-family: unset !important; }
     }
 }
 
@@ -85,6 +88,9 @@ h1, h2, h3, h4, h5, h6, p {
         .#{$variant}fw-normal      { font-weight: $fw-normal !important; }
         .#{$variant}fw-medium      { font-weight: $fw-medium !important; }
         .#{$variant}fw-bold        { font-weight: $fw-bold !important; }
+        .#{$variant}fw-initial     { font-weight: initial !important; }
+        .#{$variant}fw-inherit     { font-weight: inherit !important; }
+        .#{$variant}fw-unset       { font-weight: unset !important; }
     }
 }
 
@@ -104,6 +110,8 @@ table th {
     @include rwd($breakpoint) {
         .#{$variant}fs-normal      { font-style: normal !important; }
         .#{$variant}fs-italic      { font-style: italic !important; }
+        .#{$variant}fs-initial     { font-style: initial !important; }
+        .#{$variant}fs-inherit     { font-style: inherit !important; }
         .#{$variant}fs-unset       { font-style: unset !important; }
     }
 }
@@ -118,7 +126,31 @@ table th {
         .#{$variant}tt-lowercase   { text-transform: $tt-lowercase !important; }
         .#{$variant}tt-uppercase   { text-transform: $tt-uppercase !important; }
         .#{$variant}tt-none        { text-transform: $tt-none !important; }
-        .#{$variant}tt-unset       { text-transform: $tt-unset !important; }
+        .#{$variant}tt-initial     { text-transform: initial !important; }
+        .#{$variant}tt-inherit     { text-transform: inherit !important; }
+        .#{$variant}tt-unset       { text-transform: unset !important; }
+    }
+}
+
+//  ============================================================================
+//  $   TEXT TRANSFORM
+//  ----------------------------------------------------------------------------
+@each $breakpoint, $variant in $rwd-variants {
+    @include rwd($breakpoint) {
+        .#{$variant}td-underline   { text-decoration: underline !important; }
+        .#{$variant}td-overline    { text-decoration: overline !important; }
+        .#{$variant}td-line-through{ text-decoration: line-through !important; }
+        .#{$variant}td-initial     { text-decoration: initial !important; }
+        .#{$variant}td-inherit     { text-decoration: inherit !important; }
+        .#{$variant}td-unset       { text-decoration: unset !important; }
+        .#{$variant}tds-solid      { text-decoration-style: solid !important; }
+        .#{$variant}tds-double     { text-decoration-style: double !important; }
+        .#{$variant}tds-dotted     { text-decoration-style: dotted !important; }
+        .#{$variant}tds-dashed     { text-decoration-style: dashed !important; }
+        .#{$variant}tds-wavy       { text-decoration-style: wavy !important; }
+        .#{$variant}tds-initial    { text-decoration-style: initial !important; }
+        .#{$variant}tds-inherit    { text-decoration-style: inherit !important; }
+        .#{$variant}tds-unset      { text-decoration-style: unset !important; }
     }
 }
 
