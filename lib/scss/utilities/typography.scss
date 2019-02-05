@@ -36,12 +36,16 @@ $ff-styles: (
 //  ============================================================================
 //  $$  FONT STYLE CLASSES
 //  ----------------------------------------------------------------------------
-.ff-mark-light      { font-weight: 200; font-family: $ff-mark-light !important; }
-.ff-mark            { font-family: $ff-mark !important; }
-.ff-mark-medium     { font-weight: 500; font-family: $ff-mark-medium !important; }
-.ff-mark-bold       { font-weight: 700; font-family: $ff-mark-bold !important; }
-.ff-sans            { font-family: $ff-sans !important; }
-.ff-mono            { font-family: $ff-mono !important; }
+@each $breakpoint, $variant in $rwd-variants {
+    @include rwd($breakpoint) {
+        .#{$variant}ff-mark-light      { font-weight: 200; font-family: $ff-mark-light !important; }
+        .#{$variant}ff-mark            { font-family: $ff-mark !important; }
+        .#{$variant}ff-mark-medium     { font-weight: 500; font-family: $ff-mark-medium !important; }
+        .#{$variant}ff-mark-bold       { font-weight: 700; font-family: $ff-mark-bold !important; }
+        .#{$variant}ff-sans            { font-family: $ff-sans !important; }
+        .#{$variant}ff-mono            { font-family: $ff-mono !important; }
+    }
+}
 
 
 //  ============================================================================
@@ -75,10 +79,14 @@ h1, h2, h3, h4, h5, h6, p {
 //  ============================================================================
 //  $$  FONT WEIGHT
 //  ----------------------------------------------------------------------------
-.fw-light       { font-weight: $fw-light; }
-.fw-normal      { font-weight: $fw-normal; }
-.fw-medium      { font-weight: $fw-medium; }
-.fw-bold        { font-weight: $fw-bold; }
+@each $breakpoint, $variant in $rwd-variants {
+    @include rwd($breakpoint) {
+        .#{$variant}fw-light       { font-weight: $fw-light !important; }
+        .#{$variant}fw-normal      { font-weight: $fw-normal !important; }
+        .#{$variant}fw-medium      { font-weight: $fw-medium !important; }
+        .#{$variant}fw-bold        { font-weight: $fw-bold !important; }
+    }
+}
 
 //  Correctly assign the font-face for HTML tags that are bold by default
 h1, h2, h3, h4, h5, h6,
@@ -92,19 +100,27 @@ table th {
 //  ============================================================================
 //  $$  FONT STYLES
 //  ----------------------------------------------------------------------------
-.fs-normal      { font-style: normal; }
-.fs-italic      { font-style: italic; }
-.fs-unset       { font-style: unset; }
+@each $breakpoint, $variant in $rwd-variants {
+    @include rwd($breakpoint) {
+        .#{$variant}fs-normal      { font-style: normal !important; }
+        .#{$variant}fs-italic      { font-style: italic !important; }
+        .#{$variant}fs-unset       { font-style: unset !important; }
+    }
+}
 
 
 //  ============================================================================
 //  $   TEXT TRANSFORM
 //  ----------------------------------------------------------------------------
-.tt-capitalize  { text-transform: $tt-capitalize; }
-.tt-lowercase   { text-transform: $tt-lowercase; }
-.tt-uppercase   { text-transform: $tt-uppercase; }
-.tt-none        { text-transform: $tt-none; }
-.tt-unset       { text-transform: $tt-unset; }
+@each $breakpoint, $variant in $rwd-variants {
+    @include rwd($breakpoint) {
+        .#{$variant}tt-capitalize  { text-transform: $tt-capitalize !important; }
+        .#{$variant}tt-lowercase   { text-transform: $tt-lowercase !important; }
+        .#{$variant}tt-uppercase   { text-transform: $tt-uppercase !important; }
+        .#{$variant}tt-none        { text-transform: $tt-none !important; }
+        .#{$variant}tt-unset       { text-transform: $tt-unset !important; }
+    }
+}
 
 
 //  ============================================================================
@@ -124,18 +140,22 @@ table th {
 //  ============================================================================
 //  $   FONT COLOR
 //  ----------------------------------------------------------------------------
-@each $key, $value in $color-steps {
-    .fc-#{$key} { color: $value !important; }
+@each $breakpoint, $variant in $rwd-variants {
+    @include rwd($breakpoint) {
+        @each $key, $value in $color-steps {
+            .#{$variant}fc-#{$key} { color: $value !important; }
 
-    // Gray text colors
-    .fc-dark    { color: $gray-100 !important; }
-    .fc-medium  { color: $gray-080 !important; }
-    .fc-light   { color: $gray-060 !important; }
+            // Gray text colors
+            .#{$variant}fc-dark    { color: $gray-100 !important; }
+            .#{$variant}fc-medium  { color: $gray-080 !important; }
+            .#{$variant}fc-light   { color: $gray-060 !important; }
+        }
+    }
 }
 
 
 //  ============================================================================
-//  $$  LINE HEIGHTS
+//  $   LINE HEIGHTS
 //  ----------------------------------------------------------------------------
 @each $breakpoint, $variant in $rwd-variants {
     @include rwd($breakpoint) {
@@ -153,7 +173,7 @@ table th {
 
 
 //  ============================================================================
-//  $$  WHITE SPACE
+//  $   WHITE SPACE
 //  ----------------------------------------------------------------------------
 @each $breakpoint, $variant in $rwd-variants {
     @include rwd($breakpoint) {
@@ -169,7 +189,7 @@ table th {
 }
 
 //  ============================================================================
-//  $$  OVERFLOW WORD
+//  $   OVERFLOW WORD
 //  ----------------------------------------------------------------------------
 @each $breakpoint, $variant in $rwd-variants {
     @include rwd($breakpoint) {
@@ -184,7 +204,7 @@ table th {
 
 
 //  ============================================================================
-//  $$  WORD BREAK
+//  $   WORD BREAK
 //  ----------------------------------------------------------------------------
 @each $breakpoint, $variant in $rwd-variants {
     @include rwd($breakpoint) {
@@ -200,5 +220,32 @@ table th {
             text-overflow: ellipsis;
             white-space: nowrap;
         }
+    }
+}
+
+
+//  ============================================================================
+//  $   LISTS
+//  ----------------------------------------------------------------------------
+@each $breakpoint, $variant in $rwd-variants {
+    @include rwd($breakpoint) {
+        .#{$variant}ls-reset {
+            margin: $sp0;
+            padding: $sp0;
+            list-style: none;
+        }
+
+        .#{$variant}lst-none        { list-style-type: none !important; }
+        .#{$variant}lst-disc        { list-style-type: disc !important; }
+        .#{$variant}lst-circle      { list-style-type: circle !important; }
+        .#{$variant}lst-square      { list-style-type: square !important; }
+        .#{$variant}lst-decimal     { list-style-type: decimal !important; }
+        .#{$variant}lst-unset       { list-style-type: unset !important; }
+
+        .#{$variant}lsp-inside      { list-style-position: inside !important; }
+        .#{$variant}lsp-outside     { list-style-position: outside !important; }
+        .#{$variant}lsp-unset       { list-style-position: unset !important; }
+
+        .#{$variant}lsi-none        { list-style-image: none !important; }
     }
 }
