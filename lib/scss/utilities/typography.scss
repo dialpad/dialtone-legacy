@@ -54,15 +54,22 @@ h1, h2, h3, h4, h5, h6, p {
 //  ============================================================================
 //  $   SIZES
 //  ----------------------------------------------------------------------------
-.fs-display     { font-size: $fs-display !important; }
-.fs-title       { font-size: $fs-title !important; }
-.fs-headline    { font-size: $fs-headline !important; }
-.fs-subheading  { font-size: $fs-subheading !important; }
-.fs-body2       { font-size: $fs-body2 !important; }
-.fs-body1       { font-size: $fs-body1 !important; }
-.fs-caption     { font-size: $fs-caption !important; }
-.fs-fine        { font-size: $fs-fine !important; }
-.fs-caps        { text-transform: $tt-uppercase; font-size: $fs-caps !important; }
+@each $breakpoint, $variant in $rwd-variants {
+    @include rwd($breakpoint) {
+        .#{$variant}fs-display     { font-size: $fs-display !important; }
+        .#{$variant}fs-title       { font-size: $fs-title !important; }
+        .#{$variant}fs-headline    { font-size: $fs-headline !important; }
+        .#{$variant}fs-subheading  { font-size: $fs-subheading !important; }
+        .#{$variant}fs-body2       { font-size: $fs-body2 !important; }
+        .#{$variant}fs-body1       { font-size: $fs-body1 !important; }
+        .#{$variant}fs-caption     { font-size: $fs-caption !important; }
+        .#{$variant}fs-fine        { font-size: $fs-fine !important; }
+        .#{$variant}fs-caps        { text-transform: $tt-uppercase; font-size: $fs-caps !important; }
+        .#{$variant}fs-initial     { font-size: initial !important; }
+        .#{$variant}fs-inherit     { font-size: inherit !important; }
+        .#{$variant}fs-unset       { font-size: unset !important; }
+    }
+}
 
 
 //  ============================================================================
@@ -130,12 +137,19 @@ table th {
 //  ============================================================================
 //  $$  LINE HEIGHTS
 //  ----------------------------------------------------------------------------
-.lh-xs          { line-height: $lh-xs; }
-.lh-sm          { line-height: $lh-sm; }
-.lh-md          { line-height: $lh-md; }
-.lh-lg          { line-height: $lh-lg; }
-.lh-xl          { line-height: $lh-xl; }
-.lh-lg          { line-height: $lh-lg; }
+@each $breakpoint, $variant in $rwd-variants {
+    @include rwd($breakpoint) {
+        .#{$variant}lh-xs          { line-height: $lh-xs; }
+        .#{$variant}lh-sm          { line-height: $lh-sm; }
+        .#{$variant}lh-md          { line-height: $lh-md; }
+        .#{$variant}lh-lg          { line-height: $lh-lg; }
+        .#{$variant}lh-xl          { line-height: $lh-xl; }
+        .#{$variant}lh-xxl         { line-height: $lh-xxl; }
+        .#{$variant}lh-inherit     { line-height: inherit; }
+        .#{$variant}lh-initial     { line-height: initial; }
+        .#{$variant}lh-unset       { line-height: unset; }
+    }
+}
 
 
 //  ============================================================================
