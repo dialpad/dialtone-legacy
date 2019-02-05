@@ -141,9 +141,50 @@ table th {
 //  ============================================================================
 //  $$  WHITE SPACE
 //  ----------------------------------------------------------------------------
-.ws-normal      { white-space: normal; }
-.ws-nowrap      { white-space: nowrap; }
-.ws-pre         { white-space: pre; }
-.ws-pre-wrap    { white-space: pre-wrap; }
-.ws-pre-line    { white-space: pre-line; }
-.ws-initial     { white-space: initial; }
+@each $breakpoint, $variant in $rwd-variants {
+    @include rwd($breakpoint) {
+        .#{$variant}ws-normal      { white-space: normal; }
+        .#{$variant}ws-nowrap      { white-space: nowrap; }
+        .#{$variant}ws-pre         { white-space: pre; }
+        .#{$variant}ws-pre-wrap    { white-space: pre-wrap; }
+        .#{$variant}ws-pre-line    { white-space: pre-line; }
+        .#{$variant}ws-inherit     { white-space: inherit; }
+        .#{$variant}ws-initial     { white-space: initial; }
+        .#{$variant}ws-unset       { white-space: unset; }
+    }
+}
+
+//  ============================================================================
+//  $$  OVERFLOW WORD
+//  ----------------------------------------------------------------------------
+@each $breakpoint, $variant in $rwd-variants {
+    @include rwd($breakpoint) {
+        .#{$variant}ow-normal      { overflow-wrap: normal; }
+        .#{$variant}ow-break-word  { overflow-wrap: break-word; }
+        .#{$variant}ow-anywhere    { overflow-wrap: anywhere; }
+        .#{$variant}ow-inherit     { overflow-wrap: inherit; }
+        .#{$variant}ow-initial     { overflow-wrap: initial; }
+        .#{$variant}ow-unset       { overflow-wrap: unset; }
+    }
+}
+
+
+//  ============================================================================
+//  $$  WORD BREAK
+//  ----------------------------------------------------------------------------
+@each $breakpoint, $variant in $rwd-variants {
+    @include rwd($breakpoint) {
+        .#{$variant}wb-normal      { word-break: normal; }
+        .#{$variant}wb-break-all   { word-break: break-all; }
+        .#{$variant}wb-break-word  { word-break: break-word; }
+        .#{$variant}wb-keep-all    { word-break: keep-all; }
+        .#{$variant}wb-inherit     { word-break: inherit; }
+        .#{$variant}wb-initial     { word-break: initial; }
+        .#{$variant}wb-unset       { word-break: unset; }
+        .#{$variant}truncate {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    }
+}
