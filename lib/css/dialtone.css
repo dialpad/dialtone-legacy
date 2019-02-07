@@ -6,23 +6,18 @@
   --header-height:        min-content;
   --content-height:       max-content;
   --grid-col:             auto-fill;
+  --grid-col-num:         12;
   --grid-col-width:       1fr;
   --grid-col-min-width:   5rem;
+  --grid-col-fixed:       [col-start] 5rem;
   --grid-col-auto:        1fr;
   --grid-row:             3;
-  --grid-row-width:       min-content;
-  --grid-row-auto:        min-content; }
+  --grid-row-height:      min-content;
+  --grid-row-auto:        min-content;
+  --grid-row-fixed:       [row-start] min-content; }
 
 .grid {
-  display: grid;
-  grid-auto-rows: -webkit-min-content;
-  grid-auto-rows: min-content;
-  grid-template-columns: [full-start] repeat(auto-fit, [col-start] minmax(5rem, -webkit-max-content) [col-end]) [full-end];
-  grid-template-columns: [full-start] repeat(auto-fit, [col-start] minmax(5rem, max-content) [col-end]) [full-end];
-  grid-template-columns: [full-start] repeat(auto-fit, [col-start] minmax(5rem, -webkit-max-content) [col-end]) [full-end];
-  grid-template-columns: [full-start] repeat(auto-fit, [col-start] minmax(var(--grid-col-min-width), -webkit-max-content) [col-end]) [full-end];
-  grid-template-columns: [full-start] repeat(auto-fit, [col-start] minmax(5rem, max-content) [col-end]) [full-end];
-  grid-template-columns: [full-start] repeat(auto-fit, [col-start] minmax(var(--grid-col-min-width), max-content) [col-end]) [full-end]; }
+  display: grid; }
 
 .gl__col {
   grid-auto-columns: minmax(5rem, 1fr);
@@ -213,31 +208,136 @@
   display: grid-inline; }
 
 .gtc-auto {
-  grid-template-columns: auto; }
+  grid-template-columns: auto !important; }
+
+.gtc-auto-fill {
+  grid-template-columns: repeat(auto-fill, [col-start] minmax(5rem, -webkit-max-content) [col-end]) !important;
+  grid-template-columns: repeat(auto-fill, [col-start] minmax(5rem, max-content) [col-end]) !important;
+  grid-template-columns: repeat(auto-fill, [col-start] minmax(5rem, -webkit-max-content) [col-end]) !important;
+  grid-template-columns: repeat(auto-fill, [col-start] minmax(var(--grid-col-min-width), -webkit-max-content) [col-end]) !important;
+  grid-template-columns: repeat(auto-fill, [col-start] minmax(5rem, max-content) [col-end]) !important;
+  grid-template-columns: repeat(auto-fill, [col-start] minmax(var(--grid-col-min-width), max-content) [col-end]) !important; }
+
+.gtc-auto-fit {
+  grid-template-columns: repeat(auto-fit, [col-start] minmax(5rem, -webkit-max-content) [col-end]) !important;
+  grid-template-columns: repeat(auto-fit, [col-start] minmax(5rem, max-content) [col-end]) !important;
+  grid-template-columns: repeat(auto-fit, [col-start] minmax(5rem, -webkit-max-content) [col-end]) !important;
+  grid-template-columns: repeat(auto-fit, [col-start] minmax(var(--grid-col-min-width), -webkit-max-content) [col-end]) !important;
+  grid-template-columns: repeat(auto-fit, [col-start] minmax(5rem, max-content) [col-end]) !important;
+  grid-template-columns: repeat(auto-fit, [col-start] minmax(var(--grid-col-min-width), max-content) [col-end]) !important; }
+
+.gtc-fixed {
+  grid-template-columns: [col-start] 5rem !important;
+  grid-template-columns: [col-start] 5rem !important;
+  grid-template-columns: var(--grid-col-fixed) !important; }
 
 .gtc-repeat {
-  grid-template-columns: repeat(auto-fill, [col-start] 1fr [col-end]);
-  grid-template-columns: repeat(auto-fill, [col-start] 1fr [col-end]);
-  grid-template-columns: repeat(var(--grid-col), [col-start] var(--grid-col-width) [col-end]); }
+  grid-template-columns: repeat(12, [col-start] 1fr [col-end]) !important;
+  grid-template-columns: repeat(12, [col-start] 1fr [col-end]) !important;
+  grid-template-columns: repeat(var(--grid-col-num), [col-start] var(--grid-col-width) [col-end]) !important; }
+
+.gtc-unset {
+  grid-template-columns: unset !important; }
 
 .gtr-auto {
-  grid-template-rows: auto; }
+  grid-template-rows: auto !important; }
+
+.gtr-auto-fill {
+  grid-template-rows: repeat(auto-fill, [row-start] minmax(-webkit-min-content, -webkit-max-content) [row-end]) !important;
+  grid-template-rows: repeat(auto-fill, [row-start] minmax(min-content, max-content) [row-end]) !important;
+  grid-template-rows: repeat(auto-fill, [row-start] minmax(min-content, -webkit-max-content) [row-end]) !important;
+  grid-template-rows: repeat(auto-fill, [row-start] minmax(var(--grid-row-height), -webkit-max-content) [row-end]) !important;
+  grid-template-rows: repeat(auto-fill, [row-start] minmax(min-content, max-content) [row-end]) !important;
+  grid-template-rows: repeat(auto-fill, [row-start] minmax(var(--grid-row-height), max-content) [row-end]) !important; }
+
+.gtr-auto-fit {
+  grid-template-rows: repeat(auto-fit, [row-start] minmax(-webkit-min-content, -webkit-max-content) [row-end]) !important;
+  grid-template-rows: repeat(auto-fit, [row-start] minmax(min-content, max-content) [row-end]) !important;
+  grid-template-rows: repeat(auto-fit, [row-start] minmax(min-content, -webkit-max-content) [row-end]) !important;
+  grid-template-rows: repeat(auto-fit, [row-start] minmax(var(--grid-row-height), -webkit-max-content) [row-end]) !important;
+  grid-template-rows: repeat(auto-fit, [row-start] minmax(min-content, max-content) [row-end]) !important;
+  grid-template-rows: repeat(auto-fit, [row-start] minmax(var(--grid-row-height), max-content) [row-end]) !important; }
+
+.gtr-fixed {
+  grid-template-rows: [row-start] -webkit-min-content !important;
+  grid-template-rows: [row-start] min-content !important;
+  grid-template-rows: [row-start] min-content !important;
+  grid-template-rows: var(--grid-row-fixed) !important; }
 
 .gtr-repeat {
-  grid-template-rows: repeat(3, [row-start] var(--grid-row-height) [row-end]);
-  grid-template-rows: repeat(3, [row-start] var(--grid-row-height) [row-end]);
-  grid-template-rows: repeat(var(--grid-row), [row-start] var(--grid-row-height) [row-end]); }
+  grid-template-rows: repeat(3, [row-start] -webkit-min-content [row-end]) !important;
+  grid-template-rows: repeat(3, [row-start] min-content [row-end]) !important;
+  grid-template-rows: repeat(3, [row-start] min-content [row-end]) !important;
+  grid-template-rows: repeat(var(--grid-row), [row-start] var(--grid-row-height) [row-end]) !important; }
 
-.ga-col {
-  grid-auto-columns: 1fr;
-  grid-auto-columns: 1fr;
-  grid-auto-columns: var(--grid-col-auto); }
+.gtr-unset {
+  grid-template-rows: unset !important; }
 
-.ga-row {
-  grid-auto-rows: -webkit-min-content;
-  grid-auto-rows: min-content;
-  grid-auto-rows: min-content;
-  grid-auto-rows: var(--grid-row-auto); }
+.gac-auto {
+  grid-auto-columns: auto !important; }
+
+.gac-auto-fill {
+  grid-auto-columns: repeat(auto-fill, [col-start] minmax(5rem, -webkit-max-content) [col-end]) !important;
+  grid-auto-columns: repeat(auto-fill, [col-start] minmax(5rem, max-content) [col-end]) !important;
+  grid-auto-columns: repeat(auto-fill, [col-start] minmax(5rem, -webkit-max-content) [col-end]) !important;
+  grid-auto-columns: repeat(auto-fill, [col-start] minmax(var(--grid-col-min-width), -webkit-max-content) [col-end]) !important;
+  grid-auto-columns: repeat(auto-fill, [col-start] minmax(5rem, max-content) [col-end]) !important;
+  grid-auto-columns: repeat(auto-fill, [col-start] minmax(var(--grid-col-min-width), max-content) [col-end]) !important; }
+
+.gac-auto-fit {
+  grid-auto-columns: repeat(auto-fit, [col-start] minmax(5rem, -webkit-max-content) [col-end]) !important;
+  grid-auto-columns: repeat(auto-fit, [col-start] minmax(5rem, max-content) [col-end]) !important;
+  grid-auto-columns: repeat(auto-fit, [col-start] minmax(5rem, -webkit-max-content) [col-end]) !important;
+  grid-auto-columns: repeat(auto-fit, [col-start] minmax(var(--grid-col-min-width), -webkit-max-content) [col-end]) !important;
+  grid-auto-columns: repeat(auto-fit, [col-start] minmax(5rem, max-content) [col-end]) !important;
+  grid-auto-columns: repeat(auto-fit, [col-start] minmax(var(--grid-col-min-width), max-content) [col-end]) !important; }
+
+.gac-fixed {
+  grid-auto-columns: [col-start] 5rem !important;
+  grid-auto-columns: [col-start] 5rem !important;
+  grid-auto-columns: var(--grid-col-fixed) !important; }
+
+.gac-repeat {
+  grid-auto-columns: repeat(12, [col-start] 1fr [col-end]) !important;
+  grid-auto-columns: repeat(12, [col-start] 1fr [col-end]) !important;
+  grid-auto-columns: repeat(var(--grid-col-num), [col-start] var(--grid-col-width) [col-end]) !important; }
+
+.gac-unset {
+  grid-auto-columns: unset !important; }
+
+.gar-auto {
+  grid-auto-rows: auto !important; }
+
+.gar-auto-fill {
+  grid-auto-rows: repeat(auto-fill, [row-start] minmax(-webkit-min-content, -webkit-max-content) [row-end]) !important;
+  grid-auto-rows: repeat(auto-fill, [row-start] minmax(min-content, max-content) [row-end]) !important;
+  grid-auto-rows: repeat(auto-fill, [row-start] minmax(min-content, -webkit-max-content) [row-end]) !important;
+  grid-auto-rows: repeat(auto-fill, [row-start] minmax(var(--grid-row-height), -webkit-max-content) [row-end]) !important;
+  grid-auto-rows: repeat(auto-fill, [row-start] minmax(min-content, max-content) [row-end]) !important;
+  grid-auto-rows: repeat(auto-fill, [row-start] minmax(var(--grid-row-height), max-content) [row-end]) !important; }
+
+.gar-auto-fit {
+  grid-auto-rows: repeat(auto-fit, [row-start] minmax(-webkit-min-content, -webkit-max-content) [row-end]) !important;
+  grid-auto-rows: repeat(auto-fit, [row-start] minmax(min-content, max-content) [row-end]) !important;
+  grid-auto-rows: repeat(auto-fit, [row-start] minmax(min-content, -webkit-max-content) [row-end]) !important;
+  grid-auto-rows: repeat(auto-fit, [row-start] minmax(var(--grid-row-height), -webkit-max-content) [row-end]) !important;
+  grid-auto-rows: repeat(auto-fit, [row-start] minmax(min-content, max-content) [row-end]) !important;
+  grid-auto-rows: repeat(auto-fit, [row-start] minmax(var(--grid-row-height), max-content) [row-end]) !important; }
+
+.gar-fixed {
+  grid-auto-rows: [row-start] -webkit-min-content !important;
+  grid-auto-rows: [row-start] min-content !important;
+  grid-auto-rows: [row-start] min-content !important;
+  grid-auto-rows: var(--grid-row-fixed) !important; }
+
+.gar-repeat {
+  grid-auto-rows: repeat(3, [row-start] -webkit-min-content [row-end]) !important;
+  grid-auto-rows: repeat(3, [row-start] min-content [row-end]) !important;
+  grid-auto-rows: repeat(3, [row-start] min-content [row-end]) !important;
+  grid-auto-rows: repeat(var(--grid-row), [row-start] var(--grid-row-height) [row-end]) !important; }
+
+.gar-unset {
+  grid-auto-rows: unset !important; }
 
 .gaf-column {
   grid-auto-flow: column; }
@@ -682,26 +782,113 @@
   .sm\:d-grid-inline {
     display: grid-inline; }
   .sm\:gtc-auto {
-    grid-template-columns: auto; }
+    grid-template-columns: auto !important; }
+  .sm\:gtc-auto-fill {
+    grid-template-columns: repeat(auto-fill, [col-start] minmax(5rem, -webkit-max-content) [col-end]) !important;
+    grid-template-columns: repeat(auto-fill, [col-start] minmax(5rem, max-content) [col-end]) !important;
+    grid-template-columns: repeat(auto-fill, [col-start] minmax(5rem, -webkit-max-content) [col-end]) !important;
+    grid-template-columns: repeat(auto-fill, [col-start] minmax(var(--grid-col-min-width), -webkit-max-content) [col-end]) !important;
+    grid-template-columns: repeat(auto-fill, [col-start] minmax(5rem, max-content) [col-end]) !important;
+    grid-template-columns: repeat(auto-fill, [col-start] minmax(var(--grid-col-min-width), max-content) [col-end]) !important; }
+  .sm\:gtc-auto-fit {
+    grid-template-columns: repeat(auto-fit, [col-start] minmax(5rem, -webkit-max-content) [col-end]) !important;
+    grid-template-columns: repeat(auto-fit, [col-start] minmax(5rem, max-content) [col-end]) !important;
+    grid-template-columns: repeat(auto-fit, [col-start] minmax(5rem, -webkit-max-content) [col-end]) !important;
+    grid-template-columns: repeat(auto-fit, [col-start] minmax(var(--grid-col-min-width), -webkit-max-content) [col-end]) !important;
+    grid-template-columns: repeat(auto-fit, [col-start] minmax(5rem, max-content) [col-end]) !important;
+    grid-template-columns: repeat(auto-fit, [col-start] minmax(var(--grid-col-min-width), max-content) [col-end]) !important; }
+  .sm\:gtc-fixed {
+    grid-template-columns: [col-start] 5rem !important;
+    grid-template-columns: [col-start] 5rem !important;
+    grid-template-columns: var(--grid-col-fixed) !important; }
   .sm\:gtc-repeat {
-    grid-template-columns: repeat(auto-fill, [col-start] 1fr [col-end]);
-    grid-template-columns: repeat(auto-fill, [col-start] 1fr [col-end]);
-    grid-template-columns: repeat(var(--grid-col), [col-start] var(--grid-col-width) [col-end]); }
+    grid-template-columns: repeat(12, [col-start] 1fr [col-end]) !important;
+    grid-template-columns: repeat(12, [col-start] 1fr [col-end]) !important;
+    grid-template-columns: repeat(var(--grid-col-num), [col-start] var(--grid-col-width) [col-end]) !important; }
+  .sm\:gtc-unset {
+    grid-template-columns: unset !important; }
   .sm\:gtr-auto {
-    grid-template-rows: auto; }
+    grid-template-rows: auto !important; }
+  .sm\:gtr-auto-fill {
+    grid-template-rows: repeat(auto-fill, [row-start] minmax(-webkit-min-content, -webkit-max-content) [row-end]) !important;
+    grid-template-rows: repeat(auto-fill, [row-start] minmax(min-content, max-content) [row-end]) !important;
+    grid-template-rows: repeat(auto-fill, [row-start] minmax(min-content, -webkit-max-content) [row-end]) !important;
+    grid-template-rows: repeat(auto-fill, [row-start] minmax(var(--grid-row-height), -webkit-max-content) [row-end]) !important;
+    grid-template-rows: repeat(auto-fill, [row-start] minmax(min-content, max-content) [row-end]) !important;
+    grid-template-rows: repeat(auto-fill, [row-start] minmax(var(--grid-row-height), max-content) [row-end]) !important; }
+  .sm\:gtr-auto-fit {
+    grid-template-rows: repeat(auto-fit, [row-start] minmax(-webkit-min-content, -webkit-max-content) [row-end]) !important;
+    grid-template-rows: repeat(auto-fit, [row-start] minmax(min-content, max-content) [row-end]) !important;
+    grid-template-rows: repeat(auto-fit, [row-start] minmax(min-content, -webkit-max-content) [row-end]) !important;
+    grid-template-rows: repeat(auto-fit, [row-start] minmax(var(--grid-row-height), -webkit-max-content) [row-end]) !important;
+    grid-template-rows: repeat(auto-fit, [row-start] minmax(min-content, max-content) [row-end]) !important;
+    grid-template-rows: repeat(auto-fit, [row-start] minmax(var(--grid-row-height), max-content) [row-end]) !important; }
+  .sm\:gtr-fixed {
+    grid-template-rows: [row-start] -webkit-min-content !important;
+    grid-template-rows: [row-start] min-content !important;
+    grid-template-rows: [row-start] min-content !important;
+    grid-template-rows: var(--grid-row-fixed) !important; }
   .sm\:gtr-repeat {
-    grid-template-rows: repeat(3, [row-start] var(--grid-row-height) [row-end]);
-    grid-template-rows: repeat(3, [row-start] var(--grid-row-height) [row-end]);
-    grid-template-rows: repeat(var(--grid-row), [row-start] var(--grid-row-height) [row-end]); }
-  .sm\:ga-col {
-    grid-auto-columns: 1fr;
-    grid-auto-columns: 1fr;
-    grid-auto-columns: var(--grid-col-auto); }
-  .sm\:ga-row {
-    grid-auto-rows: -webkit-min-content;
-    grid-auto-rows: min-content;
-    grid-auto-rows: min-content;
-    grid-auto-rows: var(--grid-row-auto); }
+    grid-template-rows: repeat(3, [row-start] -webkit-min-content [row-end]) !important;
+    grid-template-rows: repeat(3, [row-start] min-content [row-end]) !important;
+    grid-template-rows: repeat(3, [row-start] min-content [row-end]) !important;
+    grid-template-rows: repeat(var(--grid-row), [row-start] var(--grid-row-height) [row-end]) !important; }
+  .sm\:gtr-unset {
+    grid-template-rows: unset !important; }
+  .sm\:gac-auto {
+    grid-auto-columns: auto !important; }
+  .sm\:gac-auto-fill {
+    grid-auto-columns: repeat(auto-fill, [col-start] minmax(5rem, -webkit-max-content) [col-end]) !important;
+    grid-auto-columns: repeat(auto-fill, [col-start] minmax(5rem, max-content) [col-end]) !important;
+    grid-auto-columns: repeat(auto-fill, [col-start] minmax(5rem, -webkit-max-content) [col-end]) !important;
+    grid-auto-columns: repeat(auto-fill, [col-start] minmax(var(--grid-col-min-width), -webkit-max-content) [col-end]) !important;
+    grid-auto-columns: repeat(auto-fill, [col-start] minmax(5rem, max-content) [col-end]) !important;
+    grid-auto-columns: repeat(auto-fill, [col-start] minmax(var(--grid-col-min-width), max-content) [col-end]) !important; }
+  .sm\:gac-auto-fit {
+    grid-auto-columns: repeat(auto-fit, [col-start] minmax(5rem, -webkit-max-content) [col-end]) !important;
+    grid-auto-columns: repeat(auto-fit, [col-start] minmax(5rem, max-content) [col-end]) !important;
+    grid-auto-columns: repeat(auto-fit, [col-start] minmax(5rem, -webkit-max-content) [col-end]) !important;
+    grid-auto-columns: repeat(auto-fit, [col-start] minmax(var(--grid-col-min-width), -webkit-max-content) [col-end]) !important;
+    grid-auto-columns: repeat(auto-fit, [col-start] minmax(5rem, max-content) [col-end]) !important;
+    grid-auto-columns: repeat(auto-fit, [col-start] minmax(var(--grid-col-min-width), max-content) [col-end]) !important; }
+  .sm\:gac-fixed {
+    grid-auto-columns: [col-start] 5rem !important;
+    grid-auto-columns: [col-start] 5rem !important;
+    grid-auto-columns: var(--grid-col-fixed) !important; }
+  .sm\:gac-repeat {
+    grid-auto-columns: repeat(12, [col-start] 1fr [col-end]) !important;
+    grid-auto-columns: repeat(12, [col-start] 1fr [col-end]) !important;
+    grid-auto-columns: repeat(var(--grid-col-num), [col-start] var(--grid-col-width) [col-end]) !important; }
+  .sm\:gac-unset {
+    grid-auto-columns: unset !important; }
+  .sm\:gar-auto {
+    grid-auto-rows: auto !important; }
+  .sm\:gar-auto-fill {
+    grid-auto-rows: repeat(auto-fill, [row-start] minmax(-webkit-min-content, -webkit-max-content) [row-end]) !important;
+    grid-auto-rows: repeat(auto-fill, [row-start] minmax(min-content, max-content) [row-end]) !important;
+    grid-auto-rows: repeat(auto-fill, [row-start] minmax(min-content, -webkit-max-content) [row-end]) !important;
+    grid-auto-rows: repeat(auto-fill, [row-start] minmax(var(--grid-row-height), -webkit-max-content) [row-end]) !important;
+    grid-auto-rows: repeat(auto-fill, [row-start] minmax(min-content, max-content) [row-end]) !important;
+    grid-auto-rows: repeat(auto-fill, [row-start] minmax(var(--grid-row-height), max-content) [row-end]) !important; }
+  .sm\:gar-auto-fit {
+    grid-auto-rows: repeat(auto-fit, [row-start] minmax(-webkit-min-content, -webkit-max-content) [row-end]) !important;
+    grid-auto-rows: repeat(auto-fit, [row-start] minmax(min-content, max-content) [row-end]) !important;
+    grid-auto-rows: repeat(auto-fit, [row-start] minmax(min-content, -webkit-max-content) [row-end]) !important;
+    grid-auto-rows: repeat(auto-fit, [row-start] minmax(var(--grid-row-height), -webkit-max-content) [row-end]) !important;
+    grid-auto-rows: repeat(auto-fit, [row-start] minmax(min-content, max-content) [row-end]) !important;
+    grid-auto-rows: repeat(auto-fit, [row-start] minmax(var(--grid-row-height), max-content) [row-end]) !important; }
+  .sm\:gar-fixed {
+    grid-auto-rows: [row-start] -webkit-min-content !important;
+    grid-auto-rows: [row-start] min-content !important;
+    grid-auto-rows: [row-start] min-content !important;
+    grid-auto-rows: var(--grid-row-fixed) !important; }
+  .sm\:gar-repeat {
+    grid-auto-rows: repeat(3, [row-start] -webkit-min-content [row-end]) !important;
+    grid-auto-rows: repeat(3, [row-start] min-content [row-end]) !important;
+    grid-auto-rows: repeat(3, [row-start] min-content [row-end]) !important;
+    grid-auto-rows: repeat(var(--grid-row), [row-start] var(--grid-row-height) [row-end]) !important; }
+  .sm\:gar-unset {
+    grid-auto-rows: unset !important; }
   .sm\:gaf-column {
     grid-auto-flow: column; }
   .sm\:gaf-dense {
@@ -1059,26 +1246,113 @@
   .md\:d-grid-inline {
     display: grid-inline; }
   .md\:gtc-auto {
-    grid-template-columns: auto; }
+    grid-template-columns: auto !important; }
+  .md\:gtc-auto-fill {
+    grid-template-columns: repeat(auto-fill, [col-start] minmax(5rem, -webkit-max-content) [col-end]) !important;
+    grid-template-columns: repeat(auto-fill, [col-start] minmax(5rem, max-content) [col-end]) !important;
+    grid-template-columns: repeat(auto-fill, [col-start] minmax(5rem, -webkit-max-content) [col-end]) !important;
+    grid-template-columns: repeat(auto-fill, [col-start] minmax(var(--grid-col-min-width), -webkit-max-content) [col-end]) !important;
+    grid-template-columns: repeat(auto-fill, [col-start] minmax(5rem, max-content) [col-end]) !important;
+    grid-template-columns: repeat(auto-fill, [col-start] minmax(var(--grid-col-min-width), max-content) [col-end]) !important; }
+  .md\:gtc-auto-fit {
+    grid-template-columns: repeat(auto-fit, [col-start] minmax(5rem, -webkit-max-content) [col-end]) !important;
+    grid-template-columns: repeat(auto-fit, [col-start] minmax(5rem, max-content) [col-end]) !important;
+    grid-template-columns: repeat(auto-fit, [col-start] minmax(5rem, -webkit-max-content) [col-end]) !important;
+    grid-template-columns: repeat(auto-fit, [col-start] minmax(var(--grid-col-min-width), -webkit-max-content) [col-end]) !important;
+    grid-template-columns: repeat(auto-fit, [col-start] minmax(5rem, max-content) [col-end]) !important;
+    grid-template-columns: repeat(auto-fit, [col-start] minmax(var(--grid-col-min-width), max-content) [col-end]) !important; }
+  .md\:gtc-fixed {
+    grid-template-columns: [col-start] 5rem !important;
+    grid-template-columns: [col-start] 5rem !important;
+    grid-template-columns: var(--grid-col-fixed) !important; }
   .md\:gtc-repeat {
-    grid-template-columns: repeat(auto-fill, [col-start] 1fr [col-end]);
-    grid-template-columns: repeat(auto-fill, [col-start] 1fr [col-end]);
-    grid-template-columns: repeat(var(--grid-col), [col-start] var(--grid-col-width) [col-end]); }
+    grid-template-columns: repeat(12, [col-start] 1fr [col-end]) !important;
+    grid-template-columns: repeat(12, [col-start] 1fr [col-end]) !important;
+    grid-template-columns: repeat(var(--grid-col-num), [col-start] var(--grid-col-width) [col-end]) !important; }
+  .md\:gtc-unset {
+    grid-template-columns: unset !important; }
   .md\:gtr-auto {
-    grid-template-rows: auto; }
+    grid-template-rows: auto !important; }
+  .md\:gtr-auto-fill {
+    grid-template-rows: repeat(auto-fill, [row-start] minmax(-webkit-min-content, -webkit-max-content) [row-end]) !important;
+    grid-template-rows: repeat(auto-fill, [row-start] minmax(min-content, max-content) [row-end]) !important;
+    grid-template-rows: repeat(auto-fill, [row-start] minmax(min-content, -webkit-max-content) [row-end]) !important;
+    grid-template-rows: repeat(auto-fill, [row-start] minmax(var(--grid-row-height), -webkit-max-content) [row-end]) !important;
+    grid-template-rows: repeat(auto-fill, [row-start] minmax(min-content, max-content) [row-end]) !important;
+    grid-template-rows: repeat(auto-fill, [row-start] minmax(var(--grid-row-height), max-content) [row-end]) !important; }
+  .md\:gtr-auto-fit {
+    grid-template-rows: repeat(auto-fit, [row-start] minmax(-webkit-min-content, -webkit-max-content) [row-end]) !important;
+    grid-template-rows: repeat(auto-fit, [row-start] minmax(min-content, max-content) [row-end]) !important;
+    grid-template-rows: repeat(auto-fit, [row-start] minmax(min-content, -webkit-max-content) [row-end]) !important;
+    grid-template-rows: repeat(auto-fit, [row-start] minmax(var(--grid-row-height), -webkit-max-content) [row-end]) !important;
+    grid-template-rows: repeat(auto-fit, [row-start] minmax(min-content, max-content) [row-end]) !important;
+    grid-template-rows: repeat(auto-fit, [row-start] minmax(var(--grid-row-height), max-content) [row-end]) !important; }
+  .md\:gtr-fixed {
+    grid-template-rows: [row-start] -webkit-min-content !important;
+    grid-template-rows: [row-start] min-content !important;
+    grid-template-rows: [row-start] min-content !important;
+    grid-template-rows: var(--grid-row-fixed) !important; }
   .md\:gtr-repeat {
-    grid-template-rows: repeat(3, [row-start] var(--grid-row-height) [row-end]);
-    grid-template-rows: repeat(3, [row-start] var(--grid-row-height) [row-end]);
-    grid-template-rows: repeat(var(--grid-row), [row-start] var(--grid-row-height) [row-end]); }
-  .md\:ga-col {
-    grid-auto-columns: 1fr;
-    grid-auto-columns: 1fr;
-    grid-auto-columns: var(--grid-col-auto); }
-  .md\:ga-row {
-    grid-auto-rows: -webkit-min-content;
-    grid-auto-rows: min-content;
-    grid-auto-rows: min-content;
-    grid-auto-rows: var(--grid-row-auto); }
+    grid-template-rows: repeat(3, [row-start] -webkit-min-content [row-end]) !important;
+    grid-template-rows: repeat(3, [row-start] min-content [row-end]) !important;
+    grid-template-rows: repeat(3, [row-start] min-content [row-end]) !important;
+    grid-template-rows: repeat(var(--grid-row), [row-start] var(--grid-row-height) [row-end]) !important; }
+  .md\:gtr-unset {
+    grid-template-rows: unset !important; }
+  .md\:gac-auto {
+    grid-auto-columns: auto !important; }
+  .md\:gac-auto-fill {
+    grid-auto-columns: repeat(auto-fill, [col-start] minmax(5rem, -webkit-max-content) [col-end]) !important;
+    grid-auto-columns: repeat(auto-fill, [col-start] minmax(5rem, max-content) [col-end]) !important;
+    grid-auto-columns: repeat(auto-fill, [col-start] minmax(5rem, -webkit-max-content) [col-end]) !important;
+    grid-auto-columns: repeat(auto-fill, [col-start] minmax(var(--grid-col-min-width), -webkit-max-content) [col-end]) !important;
+    grid-auto-columns: repeat(auto-fill, [col-start] minmax(5rem, max-content) [col-end]) !important;
+    grid-auto-columns: repeat(auto-fill, [col-start] minmax(var(--grid-col-min-width), max-content) [col-end]) !important; }
+  .md\:gac-auto-fit {
+    grid-auto-columns: repeat(auto-fit, [col-start] minmax(5rem, -webkit-max-content) [col-end]) !important;
+    grid-auto-columns: repeat(auto-fit, [col-start] minmax(5rem, max-content) [col-end]) !important;
+    grid-auto-columns: repeat(auto-fit, [col-start] minmax(5rem, -webkit-max-content) [col-end]) !important;
+    grid-auto-columns: repeat(auto-fit, [col-start] minmax(var(--grid-col-min-width), -webkit-max-content) [col-end]) !important;
+    grid-auto-columns: repeat(auto-fit, [col-start] minmax(5rem, max-content) [col-end]) !important;
+    grid-auto-columns: repeat(auto-fit, [col-start] minmax(var(--grid-col-min-width), max-content) [col-end]) !important; }
+  .md\:gac-fixed {
+    grid-auto-columns: [col-start] 5rem !important;
+    grid-auto-columns: [col-start] 5rem !important;
+    grid-auto-columns: var(--grid-col-fixed) !important; }
+  .md\:gac-repeat {
+    grid-auto-columns: repeat(12, [col-start] 1fr [col-end]) !important;
+    grid-auto-columns: repeat(12, [col-start] 1fr [col-end]) !important;
+    grid-auto-columns: repeat(var(--grid-col-num), [col-start] var(--grid-col-width) [col-end]) !important; }
+  .md\:gac-unset {
+    grid-auto-columns: unset !important; }
+  .md\:gar-auto {
+    grid-auto-rows: auto !important; }
+  .md\:gar-auto-fill {
+    grid-auto-rows: repeat(auto-fill, [row-start] minmax(-webkit-min-content, -webkit-max-content) [row-end]) !important;
+    grid-auto-rows: repeat(auto-fill, [row-start] minmax(min-content, max-content) [row-end]) !important;
+    grid-auto-rows: repeat(auto-fill, [row-start] minmax(min-content, -webkit-max-content) [row-end]) !important;
+    grid-auto-rows: repeat(auto-fill, [row-start] minmax(var(--grid-row-height), -webkit-max-content) [row-end]) !important;
+    grid-auto-rows: repeat(auto-fill, [row-start] minmax(min-content, max-content) [row-end]) !important;
+    grid-auto-rows: repeat(auto-fill, [row-start] minmax(var(--grid-row-height), max-content) [row-end]) !important; }
+  .md\:gar-auto-fit {
+    grid-auto-rows: repeat(auto-fit, [row-start] minmax(-webkit-min-content, -webkit-max-content) [row-end]) !important;
+    grid-auto-rows: repeat(auto-fit, [row-start] minmax(min-content, max-content) [row-end]) !important;
+    grid-auto-rows: repeat(auto-fit, [row-start] minmax(min-content, -webkit-max-content) [row-end]) !important;
+    grid-auto-rows: repeat(auto-fit, [row-start] minmax(var(--grid-row-height), -webkit-max-content) [row-end]) !important;
+    grid-auto-rows: repeat(auto-fit, [row-start] minmax(min-content, max-content) [row-end]) !important;
+    grid-auto-rows: repeat(auto-fit, [row-start] minmax(var(--grid-row-height), max-content) [row-end]) !important; }
+  .md\:gar-fixed {
+    grid-auto-rows: [row-start] -webkit-min-content !important;
+    grid-auto-rows: [row-start] min-content !important;
+    grid-auto-rows: [row-start] min-content !important;
+    grid-auto-rows: var(--grid-row-fixed) !important; }
+  .md\:gar-repeat {
+    grid-auto-rows: repeat(3, [row-start] -webkit-min-content [row-end]) !important;
+    grid-auto-rows: repeat(3, [row-start] min-content [row-end]) !important;
+    grid-auto-rows: repeat(3, [row-start] min-content [row-end]) !important;
+    grid-auto-rows: repeat(var(--grid-row), [row-start] var(--grid-row-height) [row-end]) !important; }
+  .md\:gar-unset {
+    grid-auto-rows: unset !important; }
   .md\:gaf-column {
     grid-auto-flow: column; }
   .md\:gaf-dense {
@@ -1436,26 +1710,113 @@
   .lg\:d-grid-inline {
     display: grid-inline; }
   .lg\:gtc-auto {
-    grid-template-columns: auto; }
+    grid-template-columns: auto !important; }
+  .lg\:gtc-auto-fill {
+    grid-template-columns: repeat(auto-fill, [col-start] minmax(5rem, -webkit-max-content) [col-end]) !important;
+    grid-template-columns: repeat(auto-fill, [col-start] minmax(5rem, max-content) [col-end]) !important;
+    grid-template-columns: repeat(auto-fill, [col-start] minmax(5rem, -webkit-max-content) [col-end]) !important;
+    grid-template-columns: repeat(auto-fill, [col-start] minmax(var(--grid-col-min-width), -webkit-max-content) [col-end]) !important;
+    grid-template-columns: repeat(auto-fill, [col-start] minmax(5rem, max-content) [col-end]) !important;
+    grid-template-columns: repeat(auto-fill, [col-start] minmax(var(--grid-col-min-width), max-content) [col-end]) !important; }
+  .lg\:gtc-auto-fit {
+    grid-template-columns: repeat(auto-fit, [col-start] minmax(5rem, -webkit-max-content) [col-end]) !important;
+    grid-template-columns: repeat(auto-fit, [col-start] minmax(5rem, max-content) [col-end]) !important;
+    grid-template-columns: repeat(auto-fit, [col-start] minmax(5rem, -webkit-max-content) [col-end]) !important;
+    grid-template-columns: repeat(auto-fit, [col-start] minmax(var(--grid-col-min-width), -webkit-max-content) [col-end]) !important;
+    grid-template-columns: repeat(auto-fit, [col-start] minmax(5rem, max-content) [col-end]) !important;
+    grid-template-columns: repeat(auto-fit, [col-start] minmax(var(--grid-col-min-width), max-content) [col-end]) !important; }
+  .lg\:gtc-fixed {
+    grid-template-columns: [col-start] 5rem !important;
+    grid-template-columns: [col-start] 5rem !important;
+    grid-template-columns: var(--grid-col-fixed) !important; }
   .lg\:gtc-repeat {
-    grid-template-columns: repeat(auto-fill, [col-start] 1fr [col-end]);
-    grid-template-columns: repeat(auto-fill, [col-start] 1fr [col-end]);
-    grid-template-columns: repeat(var(--grid-col), [col-start] var(--grid-col-width) [col-end]); }
+    grid-template-columns: repeat(12, [col-start] 1fr [col-end]) !important;
+    grid-template-columns: repeat(12, [col-start] 1fr [col-end]) !important;
+    grid-template-columns: repeat(var(--grid-col-num), [col-start] var(--grid-col-width) [col-end]) !important; }
+  .lg\:gtc-unset {
+    grid-template-columns: unset !important; }
   .lg\:gtr-auto {
-    grid-template-rows: auto; }
+    grid-template-rows: auto !important; }
+  .lg\:gtr-auto-fill {
+    grid-template-rows: repeat(auto-fill, [row-start] minmax(-webkit-min-content, -webkit-max-content) [row-end]) !important;
+    grid-template-rows: repeat(auto-fill, [row-start] minmax(min-content, max-content) [row-end]) !important;
+    grid-template-rows: repeat(auto-fill, [row-start] minmax(min-content, -webkit-max-content) [row-end]) !important;
+    grid-template-rows: repeat(auto-fill, [row-start] minmax(var(--grid-row-height), -webkit-max-content) [row-end]) !important;
+    grid-template-rows: repeat(auto-fill, [row-start] minmax(min-content, max-content) [row-end]) !important;
+    grid-template-rows: repeat(auto-fill, [row-start] minmax(var(--grid-row-height), max-content) [row-end]) !important; }
+  .lg\:gtr-auto-fit {
+    grid-template-rows: repeat(auto-fit, [row-start] minmax(-webkit-min-content, -webkit-max-content) [row-end]) !important;
+    grid-template-rows: repeat(auto-fit, [row-start] minmax(min-content, max-content) [row-end]) !important;
+    grid-template-rows: repeat(auto-fit, [row-start] minmax(min-content, -webkit-max-content) [row-end]) !important;
+    grid-template-rows: repeat(auto-fit, [row-start] minmax(var(--grid-row-height), -webkit-max-content) [row-end]) !important;
+    grid-template-rows: repeat(auto-fit, [row-start] minmax(min-content, max-content) [row-end]) !important;
+    grid-template-rows: repeat(auto-fit, [row-start] minmax(var(--grid-row-height), max-content) [row-end]) !important; }
+  .lg\:gtr-fixed {
+    grid-template-rows: [row-start] -webkit-min-content !important;
+    grid-template-rows: [row-start] min-content !important;
+    grid-template-rows: [row-start] min-content !important;
+    grid-template-rows: var(--grid-row-fixed) !important; }
   .lg\:gtr-repeat {
-    grid-template-rows: repeat(3, [row-start] var(--grid-row-height) [row-end]);
-    grid-template-rows: repeat(3, [row-start] var(--grid-row-height) [row-end]);
-    grid-template-rows: repeat(var(--grid-row), [row-start] var(--grid-row-height) [row-end]); }
-  .lg\:ga-col {
-    grid-auto-columns: 1fr;
-    grid-auto-columns: 1fr;
-    grid-auto-columns: var(--grid-col-auto); }
-  .lg\:ga-row {
-    grid-auto-rows: -webkit-min-content;
-    grid-auto-rows: min-content;
-    grid-auto-rows: min-content;
-    grid-auto-rows: var(--grid-row-auto); }
+    grid-template-rows: repeat(3, [row-start] -webkit-min-content [row-end]) !important;
+    grid-template-rows: repeat(3, [row-start] min-content [row-end]) !important;
+    grid-template-rows: repeat(3, [row-start] min-content [row-end]) !important;
+    grid-template-rows: repeat(var(--grid-row), [row-start] var(--grid-row-height) [row-end]) !important; }
+  .lg\:gtr-unset {
+    grid-template-rows: unset !important; }
+  .lg\:gac-auto {
+    grid-auto-columns: auto !important; }
+  .lg\:gac-auto-fill {
+    grid-auto-columns: repeat(auto-fill, [col-start] minmax(5rem, -webkit-max-content) [col-end]) !important;
+    grid-auto-columns: repeat(auto-fill, [col-start] minmax(5rem, max-content) [col-end]) !important;
+    grid-auto-columns: repeat(auto-fill, [col-start] minmax(5rem, -webkit-max-content) [col-end]) !important;
+    grid-auto-columns: repeat(auto-fill, [col-start] minmax(var(--grid-col-min-width), -webkit-max-content) [col-end]) !important;
+    grid-auto-columns: repeat(auto-fill, [col-start] minmax(5rem, max-content) [col-end]) !important;
+    grid-auto-columns: repeat(auto-fill, [col-start] minmax(var(--grid-col-min-width), max-content) [col-end]) !important; }
+  .lg\:gac-auto-fit {
+    grid-auto-columns: repeat(auto-fit, [col-start] minmax(5rem, -webkit-max-content) [col-end]) !important;
+    grid-auto-columns: repeat(auto-fit, [col-start] minmax(5rem, max-content) [col-end]) !important;
+    grid-auto-columns: repeat(auto-fit, [col-start] minmax(5rem, -webkit-max-content) [col-end]) !important;
+    grid-auto-columns: repeat(auto-fit, [col-start] minmax(var(--grid-col-min-width), -webkit-max-content) [col-end]) !important;
+    grid-auto-columns: repeat(auto-fit, [col-start] minmax(5rem, max-content) [col-end]) !important;
+    grid-auto-columns: repeat(auto-fit, [col-start] minmax(var(--grid-col-min-width), max-content) [col-end]) !important; }
+  .lg\:gac-fixed {
+    grid-auto-columns: [col-start] 5rem !important;
+    grid-auto-columns: [col-start] 5rem !important;
+    grid-auto-columns: var(--grid-col-fixed) !important; }
+  .lg\:gac-repeat {
+    grid-auto-columns: repeat(12, [col-start] 1fr [col-end]) !important;
+    grid-auto-columns: repeat(12, [col-start] 1fr [col-end]) !important;
+    grid-auto-columns: repeat(var(--grid-col-num), [col-start] var(--grid-col-width) [col-end]) !important; }
+  .lg\:gac-unset {
+    grid-auto-columns: unset !important; }
+  .lg\:gar-auto {
+    grid-auto-rows: auto !important; }
+  .lg\:gar-auto-fill {
+    grid-auto-rows: repeat(auto-fill, [row-start] minmax(-webkit-min-content, -webkit-max-content) [row-end]) !important;
+    grid-auto-rows: repeat(auto-fill, [row-start] minmax(min-content, max-content) [row-end]) !important;
+    grid-auto-rows: repeat(auto-fill, [row-start] minmax(min-content, -webkit-max-content) [row-end]) !important;
+    grid-auto-rows: repeat(auto-fill, [row-start] minmax(var(--grid-row-height), -webkit-max-content) [row-end]) !important;
+    grid-auto-rows: repeat(auto-fill, [row-start] minmax(min-content, max-content) [row-end]) !important;
+    grid-auto-rows: repeat(auto-fill, [row-start] minmax(var(--grid-row-height), max-content) [row-end]) !important; }
+  .lg\:gar-auto-fit {
+    grid-auto-rows: repeat(auto-fit, [row-start] minmax(-webkit-min-content, -webkit-max-content) [row-end]) !important;
+    grid-auto-rows: repeat(auto-fit, [row-start] minmax(min-content, max-content) [row-end]) !important;
+    grid-auto-rows: repeat(auto-fit, [row-start] minmax(min-content, -webkit-max-content) [row-end]) !important;
+    grid-auto-rows: repeat(auto-fit, [row-start] minmax(var(--grid-row-height), -webkit-max-content) [row-end]) !important;
+    grid-auto-rows: repeat(auto-fit, [row-start] minmax(min-content, max-content) [row-end]) !important;
+    grid-auto-rows: repeat(auto-fit, [row-start] minmax(var(--grid-row-height), max-content) [row-end]) !important; }
+  .lg\:gar-fixed {
+    grid-auto-rows: [row-start] -webkit-min-content !important;
+    grid-auto-rows: [row-start] min-content !important;
+    grid-auto-rows: [row-start] min-content !important;
+    grid-auto-rows: var(--grid-row-fixed) !important; }
+  .lg\:gar-repeat {
+    grid-auto-rows: repeat(3, [row-start] -webkit-min-content [row-end]) !important;
+    grid-auto-rows: repeat(3, [row-start] min-content [row-end]) !important;
+    grid-auto-rows: repeat(3, [row-start] min-content [row-end]) !important;
+    grid-auto-rows: repeat(var(--grid-row), [row-start] var(--grid-row-height) [row-end]) !important; }
+  .lg\:gar-unset {
+    grid-auto-rows: unset !important; }
   .lg\:gaf-column {
     grid-auto-flow: column; }
   .lg\:gaf-dense {
@@ -1813,26 +2174,113 @@
   .xl\:d-grid-inline {
     display: grid-inline; }
   .xl\:gtc-auto {
-    grid-template-columns: auto; }
+    grid-template-columns: auto !important; }
+  .xl\:gtc-auto-fill {
+    grid-template-columns: repeat(auto-fill, [col-start] minmax(5rem, -webkit-max-content) [col-end]) !important;
+    grid-template-columns: repeat(auto-fill, [col-start] minmax(5rem, max-content) [col-end]) !important;
+    grid-template-columns: repeat(auto-fill, [col-start] minmax(5rem, -webkit-max-content) [col-end]) !important;
+    grid-template-columns: repeat(auto-fill, [col-start] minmax(var(--grid-col-min-width), -webkit-max-content) [col-end]) !important;
+    grid-template-columns: repeat(auto-fill, [col-start] minmax(5rem, max-content) [col-end]) !important;
+    grid-template-columns: repeat(auto-fill, [col-start] minmax(var(--grid-col-min-width), max-content) [col-end]) !important; }
+  .xl\:gtc-auto-fit {
+    grid-template-columns: repeat(auto-fit, [col-start] minmax(5rem, -webkit-max-content) [col-end]) !important;
+    grid-template-columns: repeat(auto-fit, [col-start] minmax(5rem, max-content) [col-end]) !important;
+    grid-template-columns: repeat(auto-fit, [col-start] minmax(5rem, -webkit-max-content) [col-end]) !important;
+    grid-template-columns: repeat(auto-fit, [col-start] minmax(var(--grid-col-min-width), -webkit-max-content) [col-end]) !important;
+    grid-template-columns: repeat(auto-fit, [col-start] minmax(5rem, max-content) [col-end]) !important;
+    grid-template-columns: repeat(auto-fit, [col-start] minmax(var(--grid-col-min-width), max-content) [col-end]) !important; }
+  .xl\:gtc-fixed {
+    grid-template-columns: [col-start] 5rem !important;
+    grid-template-columns: [col-start] 5rem !important;
+    grid-template-columns: var(--grid-col-fixed) !important; }
   .xl\:gtc-repeat {
-    grid-template-columns: repeat(auto-fill, [col-start] 1fr [col-end]);
-    grid-template-columns: repeat(auto-fill, [col-start] 1fr [col-end]);
-    grid-template-columns: repeat(var(--grid-col), [col-start] var(--grid-col-width) [col-end]); }
+    grid-template-columns: repeat(12, [col-start] 1fr [col-end]) !important;
+    grid-template-columns: repeat(12, [col-start] 1fr [col-end]) !important;
+    grid-template-columns: repeat(var(--grid-col-num), [col-start] var(--grid-col-width) [col-end]) !important; }
+  .xl\:gtc-unset {
+    grid-template-columns: unset !important; }
   .xl\:gtr-auto {
-    grid-template-rows: auto; }
+    grid-template-rows: auto !important; }
+  .xl\:gtr-auto-fill {
+    grid-template-rows: repeat(auto-fill, [row-start] minmax(-webkit-min-content, -webkit-max-content) [row-end]) !important;
+    grid-template-rows: repeat(auto-fill, [row-start] minmax(min-content, max-content) [row-end]) !important;
+    grid-template-rows: repeat(auto-fill, [row-start] minmax(min-content, -webkit-max-content) [row-end]) !important;
+    grid-template-rows: repeat(auto-fill, [row-start] minmax(var(--grid-row-height), -webkit-max-content) [row-end]) !important;
+    grid-template-rows: repeat(auto-fill, [row-start] minmax(min-content, max-content) [row-end]) !important;
+    grid-template-rows: repeat(auto-fill, [row-start] minmax(var(--grid-row-height), max-content) [row-end]) !important; }
+  .xl\:gtr-auto-fit {
+    grid-template-rows: repeat(auto-fit, [row-start] minmax(-webkit-min-content, -webkit-max-content) [row-end]) !important;
+    grid-template-rows: repeat(auto-fit, [row-start] minmax(min-content, max-content) [row-end]) !important;
+    grid-template-rows: repeat(auto-fit, [row-start] minmax(min-content, -webkit-max-content) [row-end]) !important;
+    grid-template-rows: repeat(auto-fit, [row-start] minmax(var(--grid-row-height), -webkit-max-content) [row-end]) !important;
+    grid-template-rows: repeat(auto-fit, [row-start] minmax(min-content, max-content) [row-end]) !important;
+    grid-template-rows: repeat(auto-fit, [row-start] minmax(var(--grid-row-height), max-content) [row-end]) !important; }
+  .xl\:gtr-fixed {
+    grid-template-rows: [row-start] -webkit-min-content !important;
+    grid-template-rows: [row-start] min-content !important;
+    grid-template-rows: [row-start] min-content !important;
+    grid-template-rows: var(--grid-row-fixed) !important; }
   .xl\:gtr-repeat {
-    grid-template-rows: repeat(3, [row-start] var(--grid-row-height) [row-end]);
-    grid-template-rows: repeat(3, [row-start] var(--grid-row-height) [row-end]);
-    grid-template-rows: repeat(var(--grid-row), [row-start] var(--grid-row-height) [row-end]); }
-  .xl\:ga-col {
-    grid-auto-columns: 1fr;
-    grid-auto-columns: 1fr;
-    grid-auto-columns: var(--grid-col-auto); }
-  .xl\:ga-row {
-    grid-auto-rows: -webkit-min-content;
-    grid-auto-rows: min-content;
-    grid-auto-rows: min-content;
-    grid-auto-rows: var(--grid-row-auto); }
+    grid-template-rows: repeat(3, [row-start] -webkit-min-content [row-end]) !important;
+    grid-template-rows: repeat(3, [row-start] min-content [row-end]) !important;
+    grid-template-rows: repeat(3, [row-start] min-content [row-end]) !important;
+    grid-template-rows: repeat(var(--grid-row), [row-start] var(--grid-row-height) [row-end]) !important; }
+  .xl\:gtr-unset {
+    grid-template-rows: unset !important; }
+  .xl\:gac-auto {
+    grid-auto-columns: auto !important; }
+  .xl\:gac-auto-fill {
+    grid-auto-columns: repeat(auto-fill, [col-start] minmax(5rem, -webkit-max-content) [col-end]) !important;
+    grid-auto-columns: repeat(auto-fill, [col-start] minmax(5rem, max-content) [col-end]) !important;
+    grid-auto-columns: repeat(auto-fill, [col-start] minmax(5rem, -webkit-max-content) [col-end]) !important;
+    grid-auto-columns: repeat(auto-fill, [col-start] minmax(var(--grid-col-min-width), -webkit-max-content) [col-end]) !important;
+    grid-auto-columns: repeat(auto-fill, [col-start] minmax(5rem, max-content) [col-end]) !important;
+    grid-auto-columns: repeat(auto-fill, [col-start] minmax(var(--grid-col-min-width), max-content) [col-end]) !important; }
+  .xl\:gac-auto-fit {
+    grid-auto-columns: repeat(auto-fit, [col-start] minmax(5rem, -webkit-max-content) [col-end]) !important;
+    grid-auto-columns: repeat(auto-fit, [col-start] minmax(5rem, max-content) [col-end]) !important;
+    grid-auto-columns: repeat(auto-fit, [col-start] minmax(5rem, -webkit-max-content) [col-end]) !important;
+    grid-auto-columns: repeat(auto-fit, [col-start] minmax(var(--grid-col-min-width), -webkit-max-content) [col-end]) !important;
+    grid-auto-columns: repeat(auto-fit, [col-start] minmax(5rem, max-content) [col-end]) !important;
+    grid-auto-columns: repeat(auto-fit, [col-start] minmax(var(--grid-col-min-width), max-content) [col-end]) !important; }
+  .xl\:gac-fixed {
+    grid-auto-columns: [col-start] 5rem !important;
+    grid-auto-columns: [col-start] 5rem !important;
+    grid-auto-columns: var(--grid-col-fixed) !important; }
+  .xl\:gac-repeat {
+    grid-auto-columns: repeat(12, [col-start] 1fr [col-end]) !important;
+    grid-auto-columns: repeat(12, [col-start] 1fr [col-end]) !important;
+    grid-auto-columns: repeat(var(--grid-col-num), [col-start] var(--grid-col-width) [col-end]) !important; }
+  .xl\:gac-unset {
+    grid-auto-columns: unset !important; }
+  .xl\:gar-auto {
+    grid-auto-rows: auto !important; }
+  .xl\:gar-auto-fill {
+    grid-auto-rows: repeat(auto-fill, [row-start] minmax(-webkit-min-content, -webkit-max-content) [row-end]) !important;
+    grid-auto-rows: repeat(auto-fill, [row-start] minmax(min-content, max-content) [row-end]) !important;
+    grid-auto-rows: repeat(auto-fill, [row-start] minmax(min-content, -webkit-max-content) [row-end]) !important;
+    grid-auto-rows: repeat(auto-fill, [row-start] minmax(var(--grid-row-height), -webkit-max-content) [row-end]) !important;
+    grid-auto-rows: repeat(auto-fill, [row-start] minmax(min-content, max-content) [row-end]) !important;
+    grid-auto-rows: repeat(auto-fill, [row-start] minmax(var(--grid-row-height), max-content) [row-end]) !important; }
+  .xl\:gar-auto-fit {
+    grid-auto-rows: repeat(auto-fit, [row-start] minmax(-webkit-min-content, -webkit-max-content) [row-end]) !important;
+    grid-auto-rows: repeat(auto-fit, [row-start] minmax(min-content, max-content) [row-end]) !important;
+    grid-auto-rows: repeat(auto-fit, [row-start] minmax(min-content, -webkit-max-content) [row-end]) !important;
+    grid-auto-rows: repeat(auto-fit, [row-start] minmax(var(--grid-row-height), -webkit-max-content) [row-end]) !important;
+    grid-auto-rows: repeat(auto-fit, [row-start] minmax(min-content, max-content) [row-end]) !important;
+    grid-auto-rows: repeat(auto-fit, [row-start] minmax(var(--grid-row-height), max-content) [row-end]) !important; }
+  .xl\:gar-fixed {
+    grid-auto-rows: [row-start] -webkit-min-content !important;
+    grid-auto-rows: [row-start] min-content !important;
+    grid-auto-rows: [row-start] min-content !important;
+    grid-auto-rows: var(--grid-row-fixed) !important; }
+  .xl\:gar-repeat {
+    grid-auto-rows: repeat(3, [row-start] -webkit-min-content [row-end]) !important;
+    grid-auto-rows: repeat(3, [row-start] min-content [row-end]) !important;
+    grid-auto-rows: repeat(3, [row-start] min-content [row-end]) !important;
+    grid-auto-rows: repeat(var(--grid-row), [row-start] var(--grid-row-height) [row-end]) !important; }
+  .xl\:gar-unset {
+    grid-auto-rows: unset !important; }
   .xl\:gaf-column {
     grid-auto-flow: column; }
   .xl\:gaf-dense {

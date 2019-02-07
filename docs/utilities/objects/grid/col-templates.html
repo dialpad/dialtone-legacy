@@ -1,0 +1,61 @@
+<h3 class="dds-docs--subheader">Template Columms</h3>
+<h4 class="dds-docs--subtitle">Classes</h4>
+<table class="dt-table">
+    <thead>
+        <tr>
+            <th scope="col" width="15%">Class</th>
+            <th scope="col" width="40%">Output</th>
+            <th scope="col">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in site.data.objects.grid-col-template %}
+        <tr>
+            <th scope="row" class="ff-mono fs-fine">{{ item.class }}</th>
+            <td class="ff-mono fs-fine">{{ item.output }}</td>
+            <td class="fs-caption">{{ item.description }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<div class="dtd-example">
+{% highlight html linenos %}
+<div class="grid gtc-auto">…</div>
+<div class="grid gtc-auto-fill">…</div>
+<div class="grid gtc-auto-fit">…</div>
+<div class="grid gtc-fixed">…</div>
+<div class="grid gtc-repeat">…</div>
+{% endhighlight %}
+    <div class="dtd-example--preview grid gg16 gtc-auto">
+        <strong class="mbn12">Auto Column Widths:</strong>
+        <div class="grid gg8 gtc-auto">
+            <div class="dtd-cell flex flex__center">A short column.</div>
+            <div class="dtd-cell flex flex__center">A longer column with copy.</div>
+            <div class="dtd-cell flex flex__center">Bye.</div>
+        </div>
+        <strong class="mbn12">Auto-Fill Column Widths:</strong>
+        <div class="grid gg8 gtc-auto-fill">
+            <div class="dtd-cell flex flex__center">A short column.</div>
+            <div class="dtd-cell flex flex__center">A longer column with copy.</div>
+            <div class="dtd-cell flex flex__center">Bye.</div>
+        </div>
+        <strong class="mbn12">Auto-Fit Column Widths:</strong>
+        <div class="grid gg8 gtc-auto-fit">
+            <div class="dtd-cell flex flex__center">A short column.</div>
+            <div class="dtd-cell flex flex__center">A longer column with copy.</div>
+            <div class="dtd-cell flex flex__center">Bye.</div>
+        </div>
+        <strong class="mbn12">Fixed Column Widths:</strong>
+        <div class="grid gg8 gtc-fixed">
+            <div class="dtd-cell flex flex__center">A short column.</div>
+            <div class="dtd-cell flex flex__center">A longer column with copy.</div>
+            <div class="dtd-cell flex flex__center">Bye.</div>
+        </div>
+        <strong class="mbn12">Repeat Column Widths:</strong>
+        <div class="grid gg8 gtc-repeat">
+            <div class="dtd-cell flex flex__center">A short column.</div>
+            <div class="dtd-cell flex flex__center">A longer column with copy.</div>
+            <div class="dtd-cell flex flex__center">Bye.</div>
+        </div>
+    </div>
+</div>

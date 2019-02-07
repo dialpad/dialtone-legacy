@@ -3,263 +3,32 @@ layout: page
 title: Grids
 description: CSS grids are a two-dimensional layout tool that allow you to place items within columns and rows at the same time.
 ---
+{% include_relative grid/resources.html %}
+{% include_relative grid/default.html %}
+{% include_relative grid/spans.html %}
+{% include_relative grid/layouts.html %}
+{% include_relative grid/nested-grids.html %}
+{% include_relative grid/gutters.html %}
 <section class="dds-docs--section">
-    <h2 class="dds-docs--header">Resources</h2>
-    <p class="dds-docs--copy">CSS Grids are a powerful layout tool, though albeit a different way of approaching layout. Unlike previous one-dimensional methods, CSS grids allow us to place content two-dimensionally (across rows <strong>and</strong> columns). To better understand grid, the following resources are a great help:</p>
-    <ul>
-        <li><a href="https://youtu.be/N5Lt1SLqBmQ">CSS Grid Layout - Rachel Andrew</a> (<strong>Video</strong>, Frontend NE, Feb 2017)</li>
-        <li><a href="https://gridbyexample.com/">Grid by Example</a> by Rachel Andrew (<strong>Resource</strong>)</li>
-        <li><a href="https://css-tricks.com/snippets/css/complete-guide-grid/">CSS Tricks: A Complete Guide to Grid</a> (<strong>Article</strong>)</li>
-        <li><a href="https://www.youtube.com/watch?v=T-slCsOrLcc&list=PLu8EoSxDXHP5CIFvt9-ze3IngcdAc2xKG">CSS Grid Course (25 videos)</a> by Wes Bos (<strong>Video</strong>)</li>
-        <li><a href="https://24ways.org/2017/design-systems-and-css-grid/">24 Ways: Design Systems and CSS Grid</a> by Stuart Robson (<strong>Article</strong>, Dec 12 2017)</li>
-    </ul>
-</section>
-<section class="dds-docs--section">
-    <h2 class="dds-docs--header">Default grid</h2>
-    <p class="dds-docs--copy">The default grid is initiated with the <code class="dds-docs--code">.grid</code> class. This starts a two-dimensional CSS grid. The number of columns within the grid are determined by the number of direct children. Grid cells widths have a default <code class="ff-mono fs-fine">minmax()</code> value of <code class="ff-mono fs-fine">var(--grid-col-min-width)</code> (5rem) and <code class="ff-mono fs-fine">max-content</code> respectively. You can change the <strong>minimum value</strong> by updating the min-width variable inline.</p>
-    <div class="dtd-example">
-{% highlight html linenos %}
-<div class="grid">
-    <div>…</div>
-    <div>…</div>
-</div>
-<div class="grid" style="--grid-col-min-width: 10rem;">
-    <div>…</div>
-    <div>…</div>
-</div>
-{% endhighlight %}
-        <div class="dtd-example--preview">
-            <strong class="d-block mb4">Grid with 2 children:</strong>
-            <div class="grid">
-                <div class="dtd-cell flex flex__center">[cell]</div>
-                <div class="dtd-cell flex flex__center">[cell]</div>
-            </div>
-            <strong class="d-block mt16 mb4">Grid with 4 children:</strong>
-            <div class="grid" style="--grid-col-min-width: 10rem;">
-                <div class="dtd-cell flex flex__center">[cell]</div>
-                <div class="dtd-cell flex flex__center">[cell]</div>
-                <div class="dtd-cell flex flex__center">[cell]</div>
-                <div class="dtd-cell flex flex__center">[cell]</div>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="dds-docs--section">
-    <h2 class="dds-docs--header">Layouts</h2>
-    <p class="dds-docs--copy">Dialtone provides a few pre-defined layouts have been provided to assist the layout process. These layouts are common layouts throughout Dialpad.</p>
-    <h3 class="dds-docs--subheader">Multi-column</h3>
-    <p class="dds-docs--copy">This is a multi-column layout. Below are the grid variables that can be modified with this layout:</p>
-    <table class="dt-table">
-        <thead>
-            <tr>
-                <th scope="col" width="25%">Variable</th>
-                <th scope="col">Output</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for item in site.data.objects.grid-multi-col %}
-            <tr>
-                <th scope="row" class="ff-mono fs-fine">{{ item.var }}</th>
-                <td class="ff-mono fs-fine">{{ item.output }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    <div class="dtd-example">
-{% highlight html linenos %}
-<div class="gl__col">
-    <div>…</div>
-    <div>…</div>
-</div>
-{% endhighlight %}
-        <div class="dtd-example--preview">
-            <div class="grid gl__col wmx5">
-                <div class="dtd-cell flex flex__center">[col1]</div>
-                <div class="dtd-cell flex flex__center">[col2]</div>
-                <div class="dtd-cell flex flex__center">[col3]</div>
-                <div class="dtd-cell flex flex__center">[col4]</div>
-                <div class="dtd-cell flex flex__center">[col5]</div>
-                <div class="dtd-cell flex flex__center">[col6]</div>
-                <div class="dtd-cell flex flex__center">[col7]</div>
-                <div class="dtd-cell flex flex__center">[col8]</div>
-                <div class="dtd-cell flex flex__center">[col9]</div>
-                <div class="dtd-cell flex flex__center">[col10]</div>
-                <div class="dtd-cell flex flex__center">[col11]</div>
-                <div class="dtd-cell flex flex__center">[col12]</div>
-            </div>
-        </div>
-    </div>
-    <h3 class="dds-docs--subheader">Header + Content Row</h3>
-    <p class="dds-docs--copy">This is a simple two row layout with a header bar and a content area. Below are the grid variables that can be modified with this layout:</p>
-    <table class="dt-table">
-        <thead>
-            <tr>
-                <th scope="col" width="25%">Variable</th>
-                <th scope="col">Output</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for item in site.data.objects.grid-header-content %}
-            <tr>
-                <th scope="row" class="ff-mono fs-fine">{{ item.var }}</th>
-                <td class="ff-mono fs-fine">{{ item.output }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    <div class="dtd-example">
-{% highlight html linenos %}
-<div class="gl__row1:2">
-    <div>…</div>
-    <div>…</div>
-</div>
-{% endhighlight %}
-        <div class="dtd-example--preview">
-            <div class="grid gl__row1:2">
-                <div class="dtd-cell flex flex__center">[Header]</div>
-                <div class="dtd-cell flex flex__center">[Content]</div>
-            </div>
-        </div>
-    </div>
-    <h3 class="dds-docs--subheader">Sidebar + Content Column</h3>
-    <p class="dds-docs--copy">This is a simple two-column layout with a smaller left sidebar and a larger content area. Below are the grid variables that can be modified with this layout:</p>
-    <table class="dt-table">
-        <thead>
-            <tr>
-                <th scope="col" width="25%">Variable</th>
-                <th scope="col">Output</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for item in site.data.objects.grid-left-sidebar %}
-            <tr>
-                <th scope="row" class="ff-mono fs-fine">{{ item.var }}</th>
-                <td class="ff-mono fs-fine">{{ item.output }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    <div class="dtd-example">
-{% highlight html linenos %}
-<div class="gl__col1:2">
-    <div>…</div>
-    <div>…</div>
-</div>
-{% endhighlight %}
-        <div class="dtd-example--preview">
-            <div class="grid gl__col1:2">
-                <div class="dtd-cell flex flex__center">[Sidebar]</div>
-                <div class="dtd-cell flex flex__center">[Content]</div>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="dds-docs--section">
-    <h2 class="dds-docs--header">Nested grids</h2>
-    <p class="dds-docs--copy">Since grids are only concerned about itself and their direct children, you are able to nest grids within each other without ill effects. Please note that any adjusted CSS variables will not cascade into child grids.</p>
-    <div class="dtd-example">
-{% highlight html linenos %}
-<div class="grid" style="--grid-col-min-width: 20rem;">
-    <div class="grid">
-        <div>…</div>
-        <div>…</div>
-    </div>
-    <div>…</div>
-</div>
-{% endhighlight %}
-        <div class="dtd-example--preview">
-            <div class="grid" style="--grid-col-min-width: 20rem;">
-                <div class="dtd-cell flex flex__center grid">
-                    <div class="dtd-cell flex flex__center">[Column]</div>
-                    <div class="dtd-cell flex flex__center">[Column]</div>
-                </div>
-                <div class="dtd-cell flex flex__center">[Column]</div>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="dds-docs--section">
-    <h2 class="dds-docs--header">Gutters</h2>
-    <p class="dds-docs--copy">Applied with the parent <code class="dds-docs--code-inline">.grid</code> class, these provide gutters in-between all grid cells.</p>
-    <div class="dtd-example">
-{% highlight html linenos %}
-<div class="grid gg2">…</div>
-<div class="grid gg4">…</div>
-<div class="grid gg6">…</div>
-<div class="grid gg8">…</div>
-<div class="grid gg12">…</div>
-<div class="grid gg16">…</div>
-<div class="grid gg24">…</div>
-<div class="grid gg32">…</div>
-<div class="grid gg48">…</div>
-<div class="grid gg64">…</div>
-{% endhighlight %}
-        <div class="dtd-example--preview grid gg6 gtc-auto ga-row">
-            <div class="dtd-cell grid gg2">
-                <div class="dtd-cell--inner flex flex__center">.gg2</div>
-                <div class="dtd-cell--inner flex flex__center">.gg2</div>
-                <div class="dtd-cell--inner flex flex__center">.gg2</div>
-                <div class="dtd-cell--inner flex flex__center">.gg2</div>
-            </div>
-            <div class="dtd-cell grid gg4">
-                <div class="dtd-cell--inner flex flex__center">.gg4</div>
-                <div class="dtd-cell--inner flex flex__center">.gg4</div>
-                <div class="dtd-cell--inner flex flex__center">.gg4</div>
-                <div class="dtd-cell--inner flex flex__center">.gg4</div>
-            </div>
-            <div class="dtd-cell grid gg6">
-                <div class="dtd-cell--inner flex flex__center">.gg6</div>
-                <div class="dtd-cell--inner flex flex__center">.gg6</div>
-                <div class="dtd-cell--inner flex flex__center">.gg6</div>
-                <div class="dtd-cell--inner flex flex__center">.gg6</div>
-            </div>
-            <div class="dtd-cell grid gg8">
-                <div class="dtd-cell--inner flex flex__center">.gg8</div>
-                <div class="dtd-cell--inner flex flex__center">.gg8</div>
-                <div class="dtd-cell--inner flex flex__center">.gg8</div>
-                <div class="dtd-cell--inner flex flex__center">.gg8</div>
-            </div>
-            <div class="dtd-cell grid gg12">
-                <div class="dtd-cell--inner flex flex__center">.gg12</div>
-                <div class="dtd-cell--inner flex flex__center">.gg12</div>
-                <div class="dtd-cell--inner flex flex__center">.gg12</div>
-                <div class="dtd-cell--inner flex flex__center">.gg12</div>
-            </div>
-            <div class="dtd-cell grid gg16">
-                <div class="dtd-cell--inner flex flex__center">.gg16</div>
-                <div class="dtd-cell--inner flex flex__center">.gg16</div>
-                <div class="dtd-cell--inner flex flex__center">.gg16</div>
-                <div class="dtd-cell--inner flex flex__center">.gg16</div>
-            </div>
-            <div class="dtd-cell grid gg24">
-                <div class="dtd-cell--inner flex flex__center">.gg24</div>
-                <div class="dtd-cell--inner flex flex__center">.gg24</div>
-                <div class="dtd-cell--inner flex flex__center">.gg24</div>
-                <div class="dtd-cell--inner flex flex__center">.gg24</div>
-            </div>
-            <div class="dtd-cell grid gg32">
-                <div class="dtd-cell--inner flex flex__center">.gg32</div>
-                <div class="dtd-cell--inner flex flex__center">.gg32</div>
-                <div class="dtd-cell--inner flex flex__center">.gg32</div>
-                <div class="dtd-cell--inner flex flex__center">.gg32</div>
-            </div>
-            <div class="dtd-cell grid gg48">
-                <div class="dtd-cell--inner flex flex__center">.gg48</div>
-                <div class="dtd-cell--inner flex flex__center">.gg48</div>
-                <div class="dtd-cell--inner flex flex__center">.gg48</div>
-                <div class="dtd-cell--inner flex flex__center">.gg48</div>
-            </div>
-            <div class="dtd-cell grid gg64">
-                <div class="dtd-cell--inner flex flex__center">.gg64</div>
-                <div class="dtd-cell--inner flex flex__center">.gg64</div>
-                <div class="dtd-cell--inner flex flex__center">.gg64</div>
-                <div class="dtd-cell--inner flex flex__center">.gg64</div>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="dds-docs--section">
-    <h2 class="dds-docs--header">Utility Classes</h2>
+    <h2 class="dds-docs--header">Column & Rows</h2>
     <p>The following classes are provided to allow you to control various aspects of the grid, its layout, and how content is aligned within a grid.</p>
-
+    <h3 class="dds-docs--subheader mb0">Variables</h3>
+    <table class="dt-table mb32">
+        <thead>
+            <tr>
+                <th scope="col" width="20%">Variables</th>
+                <th scope="col">Output</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in site.data.objects.grid-column-row-vars %}
+            <tr>
+                <th scope="row" class="ff-mono fs-fine">{{ item.var }}</th>
+                <td class="ff-mono fs-fine">{{ item.output }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% include_relative grid/col-templates.html %}
+    {% include_relative grid/col-auto.html %}
 </section>

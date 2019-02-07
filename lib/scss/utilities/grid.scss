@@ -29,12 +29,15 @@ $grid-columns:      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 !default;
     --content-height:       max-content;
 
     --grid-col:             auto-fill;
+    --grid-col-num:         12;
     --grid-col-width:       1fr;
     --grid-col-min-width:   5rem;
+    --grid-col-fixed:       [col-start] 5rem;
     --grid-col-auto:        1fr;
     --grid-row:             3;
-    --grid-row-width:       min-content;
+    --grid-row-height:      min-content;
     --grid-row-auto:        min-content;
+    --grid-row-fixed:       [row-start] min-content;
 }
 
 //  ============================================================================
@@ -42,8 +45,8 @@ $grid-columns:      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 !default;
 //  ----------------------------------------------------------------------------
 .grid {
     display: grid;
-    grid-template-columns: [full-start] repeat(auto-fit, [col-start] minmax(var(--grid-col-min-width), max-content) [col-end]) [full-end];
-    grid-auto-rows: min-content;
+    // grid-template-columns: [full-start] repeat(auto-fit, [col-start] minmax(var(--grid-col-min-width), max-content) [col-end]) [full-end];
+    // grid-auto-rows: min-content;
 }
 
 //  ============================================================================
@@ -107,16 +110,36 @@ $grid-columns:      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 !default;
         //  --  TEMPLATE COLUMNS / ROWS
         //      Defines the size of (explicit) grid tracks.
         //  --------------------------------------------------------------------
-        .#{$variant}gtc-auto                 { grid-template-columns: auto; }
-        .#{$variant}gtc-repeat               { grid-template-columns: repeat(var(--grid-col), [col-start] var(--grid-col-width) [col-end]); }
-        .#{$variant}gtr-auto                 { grid-template-rows: auto; }
-        .#{$variant}gtr-repeat               { grid-template-rows: repeat(var(--grid-row), [row-start] var(--grid-row-height) [row-end]); }
+        .#{$variant}gtc-auto                 { grid-template-columns: auto !important; }
+        .#{$variant}gtc-auto-fill            { grid-template-columns: repeat(auto-fill, [col-start] minmax(var(--grid-col-min-width), max-content) [col-end]) !important; }
+        .#{$variant}gtc-auto-fit             { grid-template-columns: repeat(auto-fit, [col-start] minmax(var(--grid-col-min-width), max-content) [col-end]) !important; }
+        .#{$variant}gtc-fixed                { grid-template-columns: var(--grid-col-fixed) !important; }
+        .#{$variant}gtc-repeat               { grid-template-columns: repeat(var(--grid-col-num), [col-start] var(--grid-col-width) [col-end]) !important; }
+        .#{$variant}gtc-unset                { grid-template-columns: unset !important; }
+
+        .#{$variant}gtr-auto                 { grid-template-rows: auto !important; }
+        .#{$variant}gtr-auto-fill            { grid-template-rows: repeat(auto-fill, [row-start] minmax(var(--grid-row-height), max-content) [row-end]) !important; }
+        .#{$variant}gtr-auto-fit             { grid-template-rows: repeat(auto-fit, [row-start] minmax(var(--grid-row-height), max-content) [row-end]) !important; }
+        .#{$variant}gtr-fixed                { grid-template-rows: var(--grid-row-fixed) !important; }
+        .#{$variant}gtr-repeat               { grid-template-rows: repeat(var(--grid-row), [row-start] var(--grid-row-height) [row-end]) !important; }
+        .#{$variant}gtr-unset                { grid-template-rows: unset !important; }
 
         //  --  AUTO COLUMNS / ROWS
         //      Defines size of any auto-generated (implicit) grid tracks.
         //  --------------------------------------------------------------------
-        .#{$variant}ga-col                   { grid-auto-columns: var(--grid-col-auto); }
-        .#{$variant}ga-row                   { grid-auto-rows: var(--grid-row-auto); }
+        .#{$variant}gac-auto                 { grid-auto-columns: auto !important; }
+        .#{$variant}gac-auto-fill            { grid-auto-columns: repeat(auto-fill, [col-start] minmax(var(--grid-col-min-width), max-content) [col-end]) !important; }
+        .#{$variant}gac-auto-fit             { grid-auto-columns: repeat(auto-fit, [col-start] minmax(var(--grid-col-min-width), max-content) [col-end]) !important; }
+        .#{$variant}gac-fixed                { grid-auto-columns: var(--grid-col-fixed) !important; }
+        .#{$variant}gac-repeat               { grid-auto-columns: repeat(var(--grid-col-num), [col-start] var(--grid-col-width) [col-end]) !important; }
+        .#{$variant}gac-unset                { grid-auto-columns: unset !important; }
+
+        .#{$variant}gar-auto                 { grid-auto-rows: auto !important; }
+        .#{$variant}gar-auto-fill            { grid-auto-rows: repeat(auto-fill, [row-start] minmax(var(--grid-row-height), max-content) [row-end]) !important; }
+        .#{$variant}gar-auto-fit             { grid-auto-rows: repeat(auto-fit, [row-start] minmax(var(--grid-row-height), max-content) [row-end]) !important; }
+        .#{$variant}gar-fixed                { grid-auto-rows: var(--grid-row-fixed) !important; }
+        .#{$variant}gar-repeat               { grid-auto-rows: repeat(var(--grid-row), [row-start] var(--grid-row-height) [row-end]) !important; }
+        .#{$variant}gar-unset                { grid-auto-rows: unset !important; }
 
         //  --  AUTO FLOW
         //      States how the auto grid placement should work
