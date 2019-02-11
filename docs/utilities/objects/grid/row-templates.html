@@ -1,0 +1,48 @@
+<h3 class="dds-docs--subheader">Template Rows</h3>
+<p class="dds-docs--copy">The <span class="dds-docs--code">grid-template-rows</span> CSS property allows you to define the line names and track sizing of grid rows. For example, say we want to create 4 rows, the first row is 80px tall, the second row is 160px tall, the last row is 240px, and the third column we want to be at least 240px but take up any remaining space if more exists. We would do this by using <span class="dds-docs--code">.gtr-value</span> class and and passing the following CSS variable: <span class="dds-docs--code">--grid-template-row: 5rem minmax(15rem, 1fr) 2.5rem;</span>.</p>
+<h4 class="dds-docs--subtitle">Classes</h4>
+<table class="dt-table">
+    <thead>
+        <tr>
+            <th scope="col" width="15%">Class</th>
+            <th scope="col" width="35%">Output</th>
+            <th scope="col">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in site.data.objects.grid-row-template %}
+        <tr>
+            <th scope="row" class="ff-mono fs-fine">{{ item.class }}</th>
+            <td class="ff-mono fs-fine">{{ item.output }}</td>
+            <td class="fs-body1">{{ item.description }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<div class="dtd-example">
+{% highlight html linenos %}
+<div class="grid gtr-auto">…</div>
+<div class="grid gtr-value">…</div>
+<div class="grid gtr-value" style="--grid-template-row: 5rem minmax(15rem, 1fr) 2.5rem">…</div>
+{% endhighlight %}
+    <div class="dtd-example--preview grid gg16 gaf-row">
+        <strong class="mbn8 fs-caption ff-mono">grid-template-rows: auto;</strong>
+        <div class="grid gg8 gtr-auto">
+            <div class="dtd-cell flex flex__center">A short row.</div>
+            <div class="dtd-cell flex flex__center">A longer row with more copy.</div>
+            <div class="dtd-cell flex flex__center">The end.</div>
+        </div>
+        <strong class="mbn8 fs-caption ff-mono">grid-template-rows: (default value);</strong>
+        <div class="grid gg8 gtr-value">
+            <div class="dtd-cell flex flex__center">A short row.</div>
+            <div class="dtd-cell flex flex__center">A longer row with more copy.</div>
+            <div class="dtd-cell flex flex__center">The end.</div>
+        </div>
+        <strong class="mbn8 fs-caption ff-mono">grid-template-rows: (inline style);</strong>
+        <div class="grid gg8 gtr-value" style="--grid-template-row: 5rem minmax(15rem, 1fr) 2.5rem">
+            <div class="dtd-cell flex flex__center">A short row.</div>
+            <div class="dtd-cell flex flex__center">A longer row with more copy.</div>
+            <div class="dtd-cell flex flex__center">The end.</div>
+        </div>
+    </div>
+</div>

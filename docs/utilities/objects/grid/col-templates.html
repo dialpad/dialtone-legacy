@@ -1,10 +1,11 @@
 <h3 class="dds-docs--subheader">Template Columms</h3>
+<p class="dds-docs--copy">The <span class="dds-docs--code">grid-template-columns</span> CSS property allows you to define the line names and track sizing of grid columns. For example, say we want to create 3 columns, the first 208px, the third one 120px, and the middle column to take up all the remaining space. We would do this by using <span class="dds-docs--code">.gtc-value</span> class and and passing the following CSS variable: <span class="dds-docs--code">--grid-template-col: 13rem 1fr 7.5rem;</span>.</p>
 <h4 class="dds-docs--subtitle">Classes</h4>
 <table class="dt-table">
     <thead>
         <tr>
             <th scope="col" width="15%">Class</th>
-            <th scope="col" width="40%">Output</th>
+            <th scope="col" width="35%">Output</th>
             <th scope="col">Description</th>
         </tr>
     </thead>
@@ -13,7 +14,7 @@
         <tr>
             <th scope="row" class="ff-mono fs-fine">{{ item.class }}</th>
             <td class="ff-mono fs-fine">{{ item.output }}</td>
-            <td class="fs-caption">{{ item.description }}</td>
+            <td class="fs-body1">{{ item.description }}</td>
         </tr>
         {% endfor %}
     </tbody>
@@ -21,38 +22,24 @@
 <div class="dtd-example">
 {% highlight html linenos %}
 <div class="grid gtc-auto">…</div>
-<div class="grid gtc-auto-fill">…</div>
-<div class="grid gtc-auto-fit">…</div>
-<div class="grid gtc-fixed">…</div>
-<div class="grid gtc-repeat">…</div>
+<div class="grid gtc-value">…</div>
+<div class="grid gtc-value" style="--grid-template-col: 13rem 1fr 7.5rem">…</div>
 {% endhighlight %}
     <div class="dtd-example--preview grid gg16 gtc-auto">
-        <strong class="mbn12">Auto Column Widths:</strong>
+        <strong class="mbn8 fs-caption ff-mono">grid-template-columns: auto;</strong>
         <div class="grid gg8 gtc-auto">
             <div class="dtd-cell flex flex__center">A short column.</div>
             <div class="dtd-cell flex flex__center">A longer column with copy.</div>
             <div class="dtd-cell flex flex__center">Bye.</div>
         </div>
-        <strong class="mbn12">Auto-Fill Column Widths:</strong>
-        <div class="grid gg8 gtc-auto-fill">
+        <strong class="mbn8 fs-caption ff-mono">grid-template-columns: (default value);</strong>
+        <div class="grid gg8 gtc-value">
             <div class="dtd-cell flex flex__center">A short column.</div>
             <div class="dtd-cell flex flex__center">A longer column with copy.</div>
             <div class="dtd-cell flex flex__center">Bye.</div>
         </div>
-        <strong class="mbn12">Auto-Fit Column Widths:</strong>
-        <div class="grid gg8 gtc-auto-fit">
-            <div class="dtd-cell flex flex__center">A short column.</div>
-            <div class="dtd-cell flex flex__center">A longer column with copy.</div>
-            <div class="dtd-cell flex flex__center">Bye.</div>
-        </div>
-        <strong class="mbn12">Fixed Column Widths:</strong>
-        <div class="grid gg8 gtc-fixed">
-            <div class="dtd-cell flex flex__center">A short column.</div>
-            <div class="dtd-cell flex flex__center">A longer column with copy.</div>
-            <div class="dtd-cell flex flex__center">Bye.</div>
-        </div>
-        <strong class="mbn12">Repeat Column Widths:</strong>
-        <div class="grid gg8 gtc-repeat">
+        <strong class="mbn8 fs-caption ff-mono">grid-template-columns: (inline style);</strong>
+        <div class="grid gg8 gtc-value" style="--grid-template-col: 13rem 1fr 7.5rem">
             <div class="dtd-cell flex flex__center">A short column.</div>
             <div class="dtd-cell flex flex__center">A longer column with copy.</div>
             <div class="dtd-cell flex flex__center">Bye.</div>

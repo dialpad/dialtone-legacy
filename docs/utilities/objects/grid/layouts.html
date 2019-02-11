@@ -1,33 +1,36 @@
 <section class="dds-docs--section">
     <h2 class="dds-docs--header">Layouts</h2>
     <p class="dds-docs--copy">Dialtone provides a few pre-defined layouts have been provided to assist the layout process. These layouts are common layouts throughout Dialpad.</p>
-    <h3 class="dds-docs--subheader">Multi-column</h3>
-    <p class="dds-docs--copy">This is a multi-column layout. Below are the grid variables that can be modified with this layout:</p>
+    <h3 class="dds-docs--subheader">Variables</h3>
     <table class="dt-table">
         <thead>
             <tr>
                 <th scope="col" width="25%">Variable</th>
                 <th scope="col">Output</th>
+                <th scope="col">Description</th>
             </tr>
         </thead>
         <tbody>
-            {% for item in site.data.objects.grid-multi-col %}
+            {% for item in site.data.objects.grid-layout-vars %}
             <tr>
                 <th scope="row" class="ff-mono fs-fine">{{ item.var }}</th>
                 <td class="ff-mono fs-fine">{{ item.output }}</td>
+                <td class="fs-body1">{{ item.description }}</td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
+    <h3 class="dds-docs--subheader">Multi-column</h3>
+    <p class="dds-docs--copy">For when you want to generate a specific number of columns.</p>
     <div class="dtd-example">
 {% highlight html linenos %}
-<div class="gl__col">
+<div class="grid gl__col">
     <div>…</div>
     <div>…</div>
 </div>
 {% endhighlight %}
         <div class="dtd-example--preview">
-            <div class="grid gl__col wmx5">
+            <div class="grid gl__col">
                 <div class="dtd-cell flex flex__center">[col1]</div>
                 <div class="dtd-cell flex flex__center">[col2]</div>
                 <div class="dtd-cell flex flex__center">[col3]</div>
@@ -44,66 +47,34 @@
         </div>
     </div>
     <h3 class="dds-docs--subheader">Header + Content Row</h3>
-    <p class="dds-docs--copy">This is a simple two row layout with a header bar and a content area. Below are the grid variables that can be modified with this layout:</p>
-    <table class="dt-table">
-        <thead>
-            <tr>
-                <th scope="col" width="25%">Variable</th>
-                <th scope="col">Output</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for item in site.data.objects.grid-header-content %}
-            <tr>
-                <th scope="row" class="ff-mono fs-fine">{{ item.var }}</th>
-                <td class="ff-mono fs-fine">{{ item.output }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <p class="dds-docs--copy">A two-row layout with designated header and content areas.</p>
     <div class="dtd-example">
 {% highlight html linenos %}
-<div class="gl__row1:2">
-    <div>…</div>
-    <div>…</div>
+<div class="grid gl__row1:2">
+    <div class="grs-value" style="--grid-row-start: header;">…</div>
+    <div class="grs-value" style="--grid-row-start: content;">…</div>
 </div>
 {% endhighlight %}
         <div class="dtd-example--preview">
             <div class="grid gl__row1:2">
-                <div class="dtd-cell flex flex__center">[Header]</div>
-                <div class="dtd-cell flex flex__center">[Content]</div>
+                <div class="dtd-cell flex flex__center grs-value" style="--grid-row-start: header;">[Header]</div>
+                <div class="dtd-cell flex flex__center grs-value" style="--grid-row-start: content;">[Content]</div>
             </div>
         </div>
     </div>
     <h3 class="dds-docs--subheader">Sidebar + Content Column</h3>
-    <p class="dds-docs--copy">This is a simple two-column layout with a smaller left sidebar and a larger content area. Below are the grid variables that can be modified with this layout:</p>
-    <table class="dt-table">
-        <thead>
-            <tr>
-                <th scope="col" width="25%">Variable</th>
-                <th scope="col">Output</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for item in site.data.objects.grid-left-sidebar %}
-            <tr>
-                <th scope="row" class="ff-mono fs-fine">{{ item.var }}</th>
-                <td class="ff-mono fs-fine">{{ item.output }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <p class="dds-docs--copy">A two-column layout with designated sidebar and content areas.</p>
     <div class="dtd-example">
 {% highlight html linenos %}
-<div class="gl__col1:2">
-    <div>…</div>
-    <div>…</div>
+<div class="grid gl__col1:2">
+    <div class="gcs-value" style="--grid-col-start: sidebar;">…</div>
+    <div class="gcs-value" style="--grid-col-start: content;">…</div>
 </div>
 {% endhighlight %}
         <div class="dtd-example--preview">
-            <div class="grid gl__col1:2">
-                <div class="dtd-cell flex flex__center">[Sidebar]</div>
-                <div class="dtd-cell flex flex__center">[Content]</div>
+            <div class="grid gl__col1:2 hmn1">
+                <div class="dtd-cell flex flex__center gcs-value" style="--grid-col-start: sidebar;">[Sidebar]</div>
+                <div class="dtd-cell flex flex__center gcs-value" style="--grid-col-start: content;">[Content]</div>
             </div>
         </div>
     </div>

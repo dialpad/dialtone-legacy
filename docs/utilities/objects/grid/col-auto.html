@@ -1,4 +1,5 @@
 <h3 class="dds-docs--subheader">Auto Columns</h3>
+<p class="dds-docs--copy">The <span class="dds-docs--code">grid-template-auto</span> CSS property defines how items which fall outside of the grid (i.e. the implicit grid) should lay out. For example, say we have 2 defined columns (explicit grid) and we want to position an element in a third column. To do this we would state our explicit grid (<span class="dds-docs--code">.gtc-value</span>) and our <span class="dds-docs--code">.gac-value</span> class, passing the following CSS variable: <span class="dds-docs--code">--grid-auto-col: 320px;</span>. We would also assign the column to our element using the <span class="dds-docs--code">.ga-value</span> class, passing the following CSS variable: <span class="dds-docs--code">--grid-area: 1 / 3 / 2;</span></p>
 <h4 class="dds-docs--subtitle">Classes</h4>
 <table class="dt-table">
     <thead>
@@ -21,41 +22,29 @@
 <div class="dtd-example">
 {% highlight html linenos %}
 <div class="grid gac-auto">…</div>
-<div class="grid gac-auto-fill">…</div>
-<div class="grid gac-auto-fit">…</div>
-<div class="grid gac-fixed">…</div>
-<div class="grid gac-repeat">…</div>
+<div class="grid gac-value">…</div>
+<div class="grid gtc-value gac-value" style="--grid-auto-col: 20rem;">…</div>
+<div class="grid gac-unset">…</div>
 {% endhighlight %}
     <div class="dtd-example--preview grid gg16 gtc-auto">
-        <strong class="mbn12">Auto Column Widths:</strong>
+        <strong class="mbn8 fs-caption ff-mono">grid-auto-columns: auto;</strong>
         <div class="grid gg8 gac-auto">
             <div class="dtd-cell flex flex__center">A short column.</div>
             <div class="dtd-cell flex flex__center">A longer column with copy.</div>
             <div class="dtd-cell flex flex__center">Bye.</div>
         </div>
-        <strong class="mbn12">Auto-Fill Column Widths:</strong>
-        <div class="grid gg8 gac-auto-fill">
+        <strong class="mbn8 fs-caption ff-mono">grid-auto-columns: (default value);</strong>
+        <div class="grid gg8 gtc-value gac-value">
             <div class="dtd-cell flex flex__center">A short column.</div>
             <div class="dtd-cell flex flex__center">A longer column with copy.</div>
-            <div class="dtd-cell flex flex__center">Bye.</div>
+            <div class="dtd-cell flex flex__center">Another short column.</div>
+            <div class="dtd-cell flex flex__center ga-value" style="--grid-area: 1 / 3 / 2 / 4">A column taking up 2 columns</div>
         </div>
-        <strong class="mbn12">Auto-Fit Column Widths:</strong>
-        <div class="grid gg8 gac-auto-fit">
+        <strong class="mbn8 fs-caption ff-mono">grid-auto-columns: (inline value);</strong>
+        <div class="grid gg8 gtc-value gac-value" style="--grid-auto-col: 10rem;">
             <div class="dtd-cell flex flex__center">A short column.</div>
             <div class="dtd-cell flex flex__center">A longer column with copy.</div>
-            <div class="dtd-cell flex flex__center">Bye.</div>
-        </div>
-        <strong class="mbn12">Fixed Column Widths:</strong>
-        <div class="grid gg8 gac-fixed">
-            <div class="dtd-cell flex flex__center">A short column.</div>
-            <div class="dtd-cell flex flex__center">A longer column with copy.</div>
-            <div class="dtd-cell flex flex__center">Bye.</div>
-        </div>
-        <strong class="mbn12">Repeat Column Widths:</strong>
-        <div class="grid gg8 gac-repeat">
-            <div class="dtd-cell flex flex__center">A short column.</div>
-            <div class="dtd-cell flex flex__center">A longer column with copy.</div>
-            <div class="dtd-cell flex flex__center">Bye.</div>
+            <div class="dtd-cell flex flex__center ga-value" style="--grid-area: 1 / 3">Bye.</div>
         </div>
     </div>
 </div>
