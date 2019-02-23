@@ -61,15 +61,18 @@ $grid-columns:      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 !default;
 }
 
 .gl__col1\:2 {
+    grid-template-areas: "sidebar content";
     grid-template-columns: [sidebar-start] var(--sidebar-col) [sidebar-end content-start] var(--content-col) [content-end];
 }
 
 .gl__row1\:2 {
-    grid-template-columns: 1fr;
+    grid-template-areas: "header"
+                         "content";
     grid-template-rows: [header-start] var(--header-row) [header-end content-start] var(--content-row) [content-end];
-    grid-auto-columns: 1fr;
     grid-auto-rows: 1fr;
+    grid-auto-columns: minmax(min-content, auto);
 }
+
 
 //  ============================================================================
 //  $   GRID UTILITIES
@@ -149,18 +152,18 @@ $grid-columns:      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 !default;
         .#{$variant}gji-center               { justify-items: center !important; }
         .#{$variant}gji-start                { justify-items: start !important; }
         .#{$variant}gji-stretch              { justify-items: stretch !important; }
-        .#{$variant}gji-initial              { justify-items: initial !important; }
+        .#{$variant}gji-unset                { justify-items: unset !important; }
 
         //  --  ALIGN ITEMS
         //      Aligns grid items along the column (block) axis. This applies to
         //      all grid items within a container.
         //  --------------------------------------------------------------------
-        .#{$variant}gai-auto                 { align-items: auto !important; }
+        .#{$variant}gai-normal               { align-items: normal !important; }
         .#{$variant}gai-end                  { align-items: end !important; }
         .#{$variant}gai-center               { align-items: center !important; }
         .#{$variant}gai-start                { align-items: start !important; }
         .#{$variant}gai-stretch              { align-items: stretch !important; }
-        .#{$variant}gai-initial              { align-items: initial !important; }
+        .#{$variant}gai-unset                { align-items: unset !important; }
 
         //  --  PLACE ITEMS
         //      Aligns grid items along the row (inline) AND column (block) axis.
@@ -171,14 +174,15 @@ $grid-columns:      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 !default;
         .#{$variant}gpi-center               { place-items: center !important; }
         .#{$variant}gpi-start                { place-items: start !important; }
         .#{$variant}gpi-stretch              { place-items: stretch !important; }
-        .#{$variant}gpi-initial              { place-items: initial !important; }
+        .#{$variant}gpi-value                { place-items: var(--gpi, auto) !important; }
+        .#{$variant}gpi-unset                { place-items: unset !important; }
 
         //  --  JUSTIFY CONTENT
         //      Aligns the entire grid along the row (inline) axis within
         //      another grid container. This applies to all grid items within
         //      a container.
         //  --------------------------------------------------------------------
-        .#{$variant}gjc-auto                 { justify-content: auto !important; }
+        .#{$variant}gjc-normal               { justify-content: normal !important; }
         .#{$variant}gjc-end                  { justify-content: end !important; }
         .#{$variant}gjc-center               { justify-content: center !important; }
         .#{$variant}gjc-space-around         { justify-content: space-around !important; }
@@ -186,14 +190,14 @@ $grid-columns:      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 !default;
         .#{$variant}gjc-space-evenly         { justify-content: space-evenly !important; }
         .#{$variant}gjc-start                { justify-content: start !important; }
         .#{$variant}gjc-stretch              { justify-content: stretch !important; }
-        .#{$variant}gjc-initial              { justify-content: initial !important; }
+        .#{$variant}gjc-unset                { justify-content: unset !important; }
 
         //  --  ALIGN CONTENT
         //      Aligns the entire grid along the column (block) axis within
         //      another grid container. This applies to all grid items within
         //      a container.
         //  --------------------------------------------------------------------
-        .#{$variant}gal-auto                 { align-content: auto !important; }
+        .#{$variant}gal-normal               { align-content: normal !important; }
         .#{$variant}gal-end                  { align-content: end !important; }
         .#{$variant}gal-center               { align-content: center !important; }
         .#{$variant}gal-space-around         { align-content: space-around !important; }
@@ -201,14 +205,13 @@ $grid-columns:      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 !default;
         .#{$variant}gal-space-evenly         { align-content: space-evenly !important; }
         .#{$variant}gal-start                { align-content: start !important; }
         .#{$variant}gal-stretch              { align-content: stretch !important; }
-        .#{$variant}gal-initial              { align-content: initial !important; }
+        .#{$variant}gal-unset                { align-content: unset !important; }
 
         //  --  PLACE CONTENT
         //      Aligns the entire grid along the row (inline) AND column (block)
         //      axis within another grid container. This applies to all grid
         //      items within a container.
         //  --------------------------------------------------------------------
-        .#{$variant}gpc-auto                 { place-content: auto !important; }
         .#{$variant}gpc-end                  { place-content: end !important; }
         .#{$variant}gpc-center               { place-content: center !important; }
         .#{$variant}gpc-space-around         { place-content: space-around !important; }
@@ -216,7 +219,8 @@ $grid-columns:      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 !default;
         .#{$variant}gpc-space-evenly         { place-content: space-evenly !important; }
         .#{$variant}gpc-start                { place-content: start !important; }
         .#{$variant}gpc-stretch              { place-content: stretch !important; }
-        .#{$variant}gpc-initial              { place-content: initial !important; }
+        .#{$variant}gpc-value                { place-content: var(--gpc, stretch) !important; }
+        .#{$variant}gpc-unset                { place-content: unset !important; }
 
 
         //  ====================================================================
@@ -273,7 +277,7 @@ $grid-columns:      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 !default;
         .#{$variant}gjs-center               { justify-self: center !important; }
         .#{$variant}gjs-start                { justify-self: start !important; }
         .#{$variant}gjs-stretch              { justify-self: stretch !important; }
-        .#{$variant}gjs-initial              { justify-self: initial !important; }
+        .#{$variant}gjs-unset                { justify-self: unset !important; }
 
         //  --  ALIGN SELF
         //      Aligns a grid items inside a cell along the column (block) axis.
@@ -283,7 +287,7 @@ $grid-columns:      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 !default;
         .#{$variant}gas-center               { align-self: center !important; }
         .#{$variant}gas-start                { align-self: start !important; }
         .#{$variant}gas-stretch              { align-self: stretch !important; }
-        .#{$variant}gas-initial              { align-self: initial !important; }
+        .#{$variant}gas-unset                { align-self: unset !important; }
 
         //  --  PLACE SELF
         //      Sets both align-self and justify-self properties in single declaration.
@@ -293,6 +297,7 @@ $grid-columns:      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 !default;
         .#{$variant}gps-center               { place-self: center !important; }
         .#{$variant}gps-start                { place-self: start !important; }
         .#{$variant}gps-stretch              { place-self: stretch !important; }
-        .#{$variant}gps-initial              { place-self: initial !important; }
+        .#{$variant}gps-value                { place-self: var(--gps, stretch) !important; }
+        .#{$variant}gps-unset                { place-self: unset !important; }
     }
 }

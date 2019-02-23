@@ -32,15 +32,17 @@
   grid-template-columns: var(--grid-template-col); }
 
 .gl__col1\:2 {
+  grid-template-areas: "sidebar content";
   grid-template-columns: [sidebar-start] minmax(7.5rem, 15rem) [sidebar-end content-start] minmax(-webkit-min-content, 50rem) [content-end];
   grid-template-columns: [sidebar-start] minmax(7.5rem, 15rem) [sidebar-end content-start] minmax(min-content, 50rem) [content-end];
   grid-template-columns: [sidebar-start] minmax(7.5rem, 15rem) [sidebar-end content-start] minmax(min-content, 50rem) [content-end];
   grid-template-columns: [sidebar-start] var(--sidebar-col) [sidebar-end content-start] var(--content-col) [content-end]; }
 
 .gl__row1\:2 {
-  grid-auto-columns: 1fr;
+  grid-auto-columns: minmax(-webkit-min-content, auto);
+  grid-auto-columns: minmax(min-content, auto);
   grid-auto-rows: 1fr;
-  grid-template-columns: 1fr;
+  grid-template-areas: "header" "content";
   grid-template-rows: [header-start] minmax(5rem, -webkit-min-content) [header-end content-start] minmax(20rem, -webkit-max-content) [content-end];
   grid-template-rows: [header-start] minmax(5rem, min-content) [header-end content-start] minmax(20rem, max-content) [content-end];
   grid-template-rows: [header-start] minmax(5rem, min-content) [header-end content-start] minmax(20rem, max-content) [content-end];
@@ -381,11 +383,11 @@
 .gji-stretch {
   justify-items: stretch !important; }
 
-.gji-initial {
-  justify-items: initial !important; }
+.gji-unset {
+  justify-items: unset !important; }
 
-.gai-auto {
-  align-items: auto !important; }
+.gai-normal {
+  align-items: normal !important; }
 
 .gai-end {
   align-items: end !important; }
@@ -399,8 +401,8 @@
 .gai-stretch {
   align-items: stretch !important; }
 
-.gai-initial {
-  align-items: initial !important; }
+.gai-unset {
+  align-items: unset !important; }
 
 .gpi-auto {
   align-items: auto !important;
@@ -427,13 +429,24 @@
   justify-items: stretch !important;
   place-items: stretch !important; }
 
-.gpi-initial {
-  align-items: initial !important;
-  justify-items: initial !important;
-  place-items: initial !important; }
+.gpi-value {
+  align-items: auto !important;
+  align-items: auto !important;
+  align-items: var(--gpi, auto) !important;
+  justify-items: auto !important;
+  place-items: auto !important;
+  justify-items: auto !important;
+  justify-items: var(--gpi, auto) !important;
+  place-items: auto !important;
+  place-items: var(--gpi, auto) !important; }
 
-.gjc-auto {
-  justify-content: auto !important; }
+.gpi-unset {
+  align-items: unset !important;
+  justify-items: unset !important;
+  place-items: unset !important; }
+
+.gjc-normal {
+  justify-content: normal !important; }
 
 .gjc-end {
   justify-content: end !important; }
@@ -456,11 +469,11 @@
 .gjc-stretch {
   justify-content: stretch !important; }
 
-.gjc-initial {
-  justify-content: initial !important; }
+.gjc-unset {
+  justify-content: unset !important; }
 
-.gal-auto {
-  align-content: auto !important; }
+.gal-normal {
+  align-content: normal !important; }
 
 .gal-end {
   align-content: end !important; }
@@ -483,13 +496,8 @@
 .gal-stretch {
   align-content: stretch !important; }
 
-.gal-initial {
-  align-content: initial !important; }
-
-.gpc-auto {
-  align-content: auto !important;
-  justify-content: auto !important;
-  place-content: auto !important; }
+.gal-unset {
+  align-content: unset !important; }
 
 .gpc-end {
   align-content: end !important;
@@ -526,10 +534,21 @@
   justify-content: stretch !important;
   place-content: stretch !important; }
 
-.gpc-initial {
-  align-content: initial !important;
-  justify-content: initial !important;
-  place-content: initial !important; }
+.gpc-value {
+  align-content: stretch !important;
+  align-content: stretch !important;
+  align-content: var(--gpc, stretch) !important;
+  justify-content: stretch !important;
+  justify-content: stretch !important;
+  justify-content: var(--gpc, stretch) !important;
+  place-content: stretch !important;
+  place-content: stretch !important;
+  place-content: var(--gpc, stretch) !important; }
+
+.gpc-unset {
+  align-content: unset !important;
+  justify-content: unset !important;
+  place-content: unset !important; }
 
 .gc-value {
   grid-column: 1 !important;
@@ -644,8 +663,8 @@
 .gjs-stretch {
   justify-self: stretch !important; }
 
-.gjs-initial {
-  justify-self: initial !important; }
+.gjs-unset {
+  justify-self: unset !important; }
 
 .gas-auto {
   align-self: auto !important; }
@@ -662,8 +681,8 @@
 .gas-stretch {
   align-self: stretch !important; }
 
-.gas-initial {
-  align-self: initial !important; }
+.gas-unset {
+  align-self: unset !important; }
 
 .gps-auto {
   align-self: auto !important;
@@ -690,10 +709,21 @@
   justify-self: stretch !important;
   place-self: stretch !important; }
 
-.gps-initial {
-  align-self: initial !important;
-  justify-self: initial !important;
-  place-self: initial !important; }
+.gps-value {
+  align-self: stretch !important;
+  align-self: stretch !important;
+  align-self: var(--gps, stretch) !important;
+  justify-self: stretch !important;
+  place-self: stretch !important;
+  justify-self: stretch !important;
+  justify-self: var(--gps, stretch) !important;
+  place-self: stretch !important;
+  place-self: var(--gps, stretch) !important; }
+
+.gps-unset {
+  align-self: unset !important;
+  justify-self: unset !important;
+  place-self: unset !important; }
 
 @media (max-width: 480px) {
   .sm\:gcg0 {
@@ -931,10 +961,10 @@
     justify-items: start !important; }
   .sm\:gji-stretch {
     justify-items: stretch !important; }
-  .sm\:gji-initial {
-    justify-items: initial !important; }
-  .sm\:gai-auto {
-    align-items: auto !important; }
+  .sm\:gji-unset {
+    justify-items: unset !important; }
+  .sm\:gai-normal {
+    align-items: normal !important; }
   .sm\:gai-end {
     align-items: end !important; }
   .sm\:gai-center {
@@ -943,8 +973,8 @@
     align-items: start !important; }
   .sm\:gai-stretch {
     align-items: stretch !important; }
-  .sm\:gai-initial {
-    align-items: initial !important; }
+  .sm\:gai-unset {
+    align-items: unset !important; }
   .sm\:gpi-auto {
     align-items: auto !important;
     justify-items: auto !important;
@@ -965,12 +995,22 @@
     align-items: stretch !important;
     justify-items: stretch !important;
     place-items: stretch !important; }
-  .sm\:gpi-initial {
-    align-items: initial !important;
-    justify-items: initial !important;
-    place-items: initial !important; }
-  .sm\:gjc-auto {
-    justify-content: auto !important; }
+  .sm\:gpi-value {
+    align-items: auto !important;
+    align-items: auto !important;
+    align-items: var(--gpi, auto) !important;
+    justify-items: auto !important;
+    place-items: auto !important;
+    justify-items: auto !important;
+    justify-items: var(--gpi, auto) !important;
+    place-items: auto !important;
+    place-items: var(--gpi, auto) !important; }
+  .sm\:gpi-unset {
+    align-items: unset !important;
+    justify-items: unset !important;
+    place-items: unset !important; }
+  .sm\:gjc-normal {
+    justify-content: normal !important; }
   .sm\:gjc-end {
     justify-content: end !important; }
   .sm\:gjc-center {
@@ -985,10 +1025,10 @@
     justify-content: start !important; }
   .sm\:gjc-stretch {
     justify-content: stretch !important; }
-  .sm\:gjc-initial {
-    justify-content: initial !important; }
-  .sm\:gal-auto {
-    align-content: auto !important; }
+  .sm\:gjc-unset {
+    justify-content: unset !important; }
+  .sm\:gal-normal {
+    align-content: normal !important; }
   .sm\:gal-end {
     align-content: end !important; }
   .sm\:gal-center {
@@ -1003,12 +1043,8 @@
     align-content: start !important; }
   .sm\:gal-stretch {
     align-content: stretch !important; }
-  .sm\:gal-initial {
-    align-content: initial !important; }
-  .sm\:gpc-auto {
-    align-content: auto !important;
-    justify-content: auto !important;
-    place-content: auto !important; }
+  .sm\:gal-unset {
+    align-content: unset !important; }
   .sm\:gpc-end {
     align-content: end !important;
     justify-content: end !important;
@@ -1037,10 +1073,20 @@
     align-content: stretch !important;
     justify-content: stretch !important;
     place-content: stretch !important; }
-  .sm\:gpc-initial {
-    align-content: initial !important;
-    justify-content: initial !important;
-    place-content: initial !important; }
+  .sm\:gpc-value {
+    align-content: stretch !important;
+    align-content: stretch !important;
+    align-content: var(--gpc, stretch) !important;
+    justify-content: stretch !important;
+    justify-content: stretch !important;
+    justify-content: var(--gpc, stretch) !important;
+    place-content: stretch !important;
+    place-content: stretch !important;
+    place-content: var(--gpc, stretch) !important; }
+  .sm\:gpc-unset {
+    align-content: unset !important;
+    justify-content: unset !important;
+    place-content: unset !important; }
   .sm\:gc-value {
     grid-column: 1 !important;
     grid-column: 1 !important;
@@ -1121,8 +1167,8 @@
     justify-self: start !important; }
   .sm\:gjs-stretch {
     justify-self: stretch !important; }
-  .sm\:gjs-initial {
-    justify-self: initial !important; }
+  .sm\:gjs-unset {
+    justify-self: unset !important; }
   .sm\:gas-auto {
     align-self: auto !important; }
   .sm\:gas-end {
@@ -1133,8 +1179,8 @@
     align-self: start !important; }
   .sm\:gas-stretch {
     align-self: stretch !important; }
-  .sm\:gas-initial {
-    align-self: initial !important; }
+  .sm\:gas-unset {
+    align-self: unset !important; }
   .sm\:gps-auto {
     align-self: auto !important;
     justify-self: auto !important;
@@ -1155,10 +1201,20 @@
     align-self: stretch !important;
     justify-self: stretch !important;
     place-self: stretch !important; }
-  .sm\:gps-initial {
-    align-self: initial !important;
-    justify-self: initial !important;
-    place-self: initial !important; } }
+  .sm\:gps-value {
+    align-self: stretch !important;
+    align-self: stretch !important;
+    align-self: var(--gps, stretch) !important;
+    justify-self: stretch !important;
+    place-self: stretch !important;
+    justify-self: stretch !important;
+    justify-self: var(--gps, stretch) !important;
+    place-self: stretch !important;
+    place-self: var(--gps, stretch) !important; }
+  .sm\:gps-unset {
+    align-self: unset !important;
+    justify-self: unset !important;
+    place-self: unset !important; } }
 
 @media (max-width: 768px) {
   .md\:gcg0 {
@@ -1396,10 +1452,10 @@
     justify-items: start !important; }
   .md\:gji-stretch {
     justify-items: stretch !important; }
-  .md\:gji-initial {
-    justify-items: initial !important; }
-  .md\:gai-auto {
-    align-items: auto !important; }
+  .md\:gji-unset {
+    justify-items: unset !important; }
+  .md\:gai-normal {
+    align-items: normal !important; }
   .md\:gai-end {
     align-items: end !important; }
   .md\:gai-center {
@@ -1408,8 +1464,8 @@
     align-items: start !important; }
   .md\:gai-stretch {
     align-items: stretch !important; }
-  .md\:gai-initial {
-    align-items: initial !important; }
+  .md\:gai-unset {
+    align-items: unset !important; }
   .md\:gpi-auto {
     align-items: auto !important;
     justify-items: auto !important;
@@ -1430,12 +1486,22 @@
     align-items: stretch !important;
     justify-items: stretch !important;
     place-items: stretch !important; }
-  .md\:gpi-initial {
-    align-items: initial !important;
-    justify-items: initial !important;
-    place-items: initial !important; }
-  .md\:gjc-auto {
-    justify-content: auto !important; }
+  .md\:gpi-value {
+    align-items: auto !important;
+    align-items: auto !important;
+    align-items: var(--gpi, auto) !important;
+    justify-items: auto !important;
+    place-items: auto !important;
+    justify-items: auto !important;
+    justify-items: var(--gpi, auto) !important;
+    place-items: auto !important;
+    place-items: var(--gpi, auto) !important; }
+  .md\:gpi-unset {
+    align-items: unset !important;
+    justify-items: unset !important;
+    place-items: unset !important; }
+  .md\:gjc-normal {
+    justify-content: normal !important; }
   .md\:gjc-end {
     justify-content: end !important; }
   .md\:gjc-center {
@@ -1450,10 +1516,10 @@
     justify-content: start !important; }
   .md\:gjc-stretch {
     justify-content: stretch !important; }
-  .md\:gjc-initial {
-    justify-content: initial !important; }
-  .md\:gal-auto {
-    align-content: auto !important; }
+  .md\:gjc-unset {
+    justify-content: unset !important; }
+  .md\:gal-normal {
+    align-content: normal !important; }
   .md\:gal-end {
     align-content: end !important; }
   .md\:gal-center {
@@ -1468,12 +1534,8 @@
     align-content: start !important; }
   .md\:gal-stretch {
     align-content: stretch !important; }
-  .md\:gal-initial {
-    align-content: initial !important; }
-  .md\:gpc-auto {
-    align-content: auto !important;
-    justify-content: auto !important;
-    place-content: auto !important; }
+  .md\:gal-unset {
+    align-content: unset !important; }
   .md\:gpc-end {
     align-content: end !important;
     justify-content: end !important;
@@ -1502,10 +1564,20 @@
     align-content: stretch !important;
     justify-content: stretch !important;
     place-content: stretch !important; }
-  .md\:gpc-initial {
-    align-content: initial !important;
-    justify-content: initial !important;
-    place-content: initial !important; }
+  .md\:gpc-value {
+    align-content: stretch !important;
+    align-content: stretch !important;
+    align-content: var(--gpc, stretch) !important;
+    justify-content: stretch !important;
+    justify-content: stretch !important;
+    justify-content: var(--gpc, stretch) !important;
+    place-content: stretch !important;
+    place-content: stretch !important;
+    place-content: var(--gpc, stretch) !important; }
+  .md\:gpc-unset {
+    align-content: unset !important;
+    justify-content: unset !important;
+    place-content: unset !important; }
   .md\:gc-value {
     grid-column: 1 !important;
     grid-column: 1 !important;
@@ -1586,8 +1658,8 @@
     justify-self: start !important; }
   .md\:gjs-stretch {
     justify-self: stretch !important; }
-  .md\:gjs-initial {
-    justify-self: initial !important; }
+  .md\:gjs-unset {
+    justify-self: unset !important; }
   .md\:gas-auto {
     align-self: auto !important; }
   .md\:gas-end {
@@ -1598,8 +1670,8 @@
     align-self: start !important; }
   .md\:gas-stretch {
     align-self: stretch !important; }
-  .md\:gas-initial {
-    align-self: initial !important; }
+  .md\:gas-unset {
+    align-self: unset !important; }
   .md\:gps-auto {
     align-self: auto !important;
     justify-self: auto !important;
@@ -1620,10 +1692,20 @@
     align-self: stretch !important;
     justify-self: stretch !important;
     place-self: stretch !important; }
-  .md\:gps-initial {
-    align-self: initial !important;
-    justify-self: initial !important;
-    place-self: initial !important; } }
+  .md\:gps-value {
+    align-self: stretch !important;
+    align-self: stretch !important;
+    align-self: var(--gps, stretch) !important;
+    justify-self: stretch !important;
+    place-self: stretch !important;
+    justify-self: stretch !important;
+    justify-self: var(--gps, stretch) !important;
+    place-self: stretch !important;
+    place-self: var(--gps, stretch) !important; }
+  .md\:gps-unset {
+    align-self: unset !important;
+    justify-self: unset !important;
+    place-self: unset !important; } }
 
 @media (max-width: 1024px) {
   .lg\:gcg0 {
@@ -1861,10 +1943,10 @@
     justify-items: start !important; }
   .lg\:gji-stretch {
     justify-items: stretch !important; }
-  .lg\:gji-initial {
-    justify-items: initial !important; }
-  .lg\:gai-auto {
-    align-items: auto !important; }
+  .lg\:gji-unset {
+    justify-items: unset !important; }
+  .lg\:gai-normal {
+    align-items: normal !important; }
   .lg\:gai-end {
     align-items: end !important; }
   .lg\:gai-center {
@@ -1873,8 +1955,8 @@
     align-items: start !important; }
   .lg\:gai-stretch {
     align-items: stretch !important; }
-  .lg\:gai-initial {
-    align-items: initial !important; }
+  .lg\:gai-unset {
+    align-items: unset !important; }
   .lg\:gpi-auto {
     align-items: auto !important;
     justify-items: auto !important;
@@ -1895,12 +1977,22 @@
     align-items: stretch !important;
     justify-items: stretch !important;
     place-items: stretch !important; }
-  .lg\:gpi-initial {
-    align-items: initial !important;
-    justify-items: initial !important;
-    place-items: initial !important; }
-  .lg\:gjc-auto {
-    justify-content: auto !important; }
+  .lg\:gpi-value {
+    align-items: auto !important;
+    align-items: auto !important;
+    align-items: var(--gpi, auto) !important;
+    justify-items: auto !important;
+    place-items: auto !important;
+    justify-items: auto !important;
+    justify-items: var(--gpi, auto) !important;
+    place-items: auto !important;
+    place-items: var(--gpi, auto) !important; }
+  .lg\:gpi-unset {
+    align-items: unset !important;
+    justify-items: unset !important;
+    place-items: unset !important; }
+  .lg\:gjc-normal {
+    justify-content: normal !important; }
   .lg\:gjc-end {
     justify-content: end !important; }
   .lg\:gjc-center {
@@ -1915,10 +2007,10 @@
     justify-content: start !important; }
   .lg\:gjc-stretch {
     justify-content: stretch !important; }
-  .lg\:gjc-initial {
-    justify-content: initial !important; }
-  .lg\:gal-auto {
-    align-content: auto !important; }
+  .lg\:gjc-unset {
+    justify-content: unset !important; }
+  .lg\:gal-normal {
+    align-content: normal !important; }
   .lg\:gal-end {
     align-content: end !important; }
   .lg\:gal-center {
@@ -1933,12 +2025,8 @@
     align-content: start !important; }
   .lg\:gal-stretch {
     align-content: stretch !important; }
-  .lg\:gal-initial {
-    align-content: initial !important; }
-  .lg\:gpc-auto {
-    align-content: auto !important;
-    justify-content: auto !important;
-    place-content: auto !important; }
+  .lg\:gal-unset {
+    align-content: unset !important; }
   .lg\:gpc-end {
     align-content: end !important;
     justify-content: end !important;
@@ -1967,10 +2055,20 @@
     align-content: stretch !important;
     justify-content: stretch !important;
     place-content: stretch !important; }
-  .lg\:gpc-initial {
-    align-content: initial !important;
-    justify-content: initial !important;
-    place-content: initial !important; }
+  .lg\:gpc-value {
+    align-content: stretch !important;
+    align-content: stretch !important;
+    align-content: var(--gpc, stretch) !important;
+    justify-content: stretch !important;
+    justify-content: stretch !important;
+    justify-content: var(--gpc, stretch) !important;
+    place-content: stretch !important;
+    place-content: stretch !important;
+    place-content: var(--gpc, stretch) !important; }
+  .lg\:gpc-unset {
+    align-content: unset !important;
+    justify-content: unset !important;
+    place-content: unset !important; }
   .lg\:gc-value {
     grid-column: 1 !important;
     grid-column: 1 !important;
@@ -2051,8 +2149,8 @@
     justify-self: start !important; }
   .lg\:gjs-stretch {
     justify-self: stretch !important; }
-  .lg\:gjs-initial {
-    justify-self: initial !important; }
+  .lg\:gjs-unset {
+    justify-self: unset !important; }
   .lg\:gas-auto {
     align-self: auto !important; }
   .lg\:gas-end {
@@ -2063,8 +2161,8 @@
     align-self: start !important; }
   .lg\:gas-stretch {
     align-self: stretch !important; }
-  .lg\:gas-initial {
-    align-self: initial !important; }
+  .lg\:gas-unset {
+    align-self: unset !important; }
   .lg\:gps-auto {
     align-self: auto !important;
     justify-self: auto !important;
@@ -2085,10 +2183,20 @@
     align-self: stretch !important;
     justify-self: stretch !important;
     place-self: stretch !important; }
-  .lg\:gps-initial {
-    align-self: initial !important;
-    justify-self: initial !important;
-    place-self: initial !important; } }
+  .lg\:gps-value {
+    align-self: stretch !important;
+    align-self: stretch !important;
+    align-self: var(--gps, stretch) !important;
+    justify-self: stretch !important;
+    place-self: stretch !important;
+    justify-self: stretch !important;
+    justify-self: var(--gps, stretch) !important;
+    place-self: stretch !important;
+    place-self: var(--gps, stretch) !important; }
+  .lg\:gps-unset {
+    align-self: unset !important;
+    justify-self: unset !important;
+    place-self: unset !important; } }
 
 @media (max-width: 1280px) {
   .xl\:gcg0 {
@@ -2326,10 +2434,10 @@
     justify-items: start !important; }
   .xl\:gji-stretch {
     justify-items: stretch !important; }
-  .xl\:gji-initial {
-    justify-items: initial !important; }
-  .xl\:gai-auto {
-    align-items: auto !important; }
+  .xl\:gji-unset {
+    justify-items: unset !important; }
+  .xl\:gai-normal {
+    align-items: normal !important; }
   .xl\:gai-end {
     align-items: end !important; }
   .xl\:gai-center {
@@ -2338,8 +2446,8 @@
     align-items: start !important; }
   .xl\:gai-stretch {
     align-items: stretch !important; }
-  .xl\:gai-initial {
-    align-items: initial !important; }
+  .xl\:gai-unset {
+    align-items: unset !important; }
   .xl\:gpi-auto {
     align-items: auto !important;
     justify-items: auto !important;
@@ -2360,12 +2468,22 @@
     align-items: stretch !important;
     justify-items: stretch !important;
     place-items: stretch !important; }
-  .xl\:gpi-initial {
-    align-items: initial !important;
-    justify-items: initial !important;
-    place-items: initial !important; }
-  .xl\:gjc-auto {
-    justify-content: auto !important; }
+  .xl\:gpi-value {
+    align-items: auto !important;
+    align-items: auto !important;
+    align-items: var(--gpi, auto) !important;
+    justify-items: auto !important;
+    place-items: auto !important;
+    justify-items: auto !important;
+    justify-items: var(--gpi, auto) !important;
+    place-items: auto !important;
+    place-items: var(--gpi, auto) !important; }
+  .xl\:gpi-unset {
+    align-items: unset !important;
+    justify-items: unset !important;
+    place-items: unset !important; }
+  .xl\:gjc-normal {
+    justify-content: normal !important; }
   .xl\:gjc-end {
     justify-content: end !important; }
   .xl\:gjc-center {
@@ -2380,10 +2498,10 @@
     justify-content: start !important; }
   .xl\:gjc-stretch {
     justify-content: stretch !important; }
-  .xl\:gjc-initial {
-    justify-content: initial !important; }
-  .xl\:gal-auto {
-    align-content: auto !important; }
+  .xl\:gjc-unset {
+    justify-content: unset !important; }
+  .xl\:gal-normal {
+    align-content: normal !important; }
   .xl\:gal-end {
     align-content: end !important; }
   .xl\:gal-center {
@@ -2398,12 +2516,8 @@
     align-content: start !important; }
   .xl\:gal-stretch {
     align-content: stretch !important; }
-  .xl\:gal-initial {
-    align-content: initial !important; }
-  .xl\:gpc-auto {
-    align-content: auto !important;
-    justify-content: auto !important;
-    place-content: auto !important; }
+  .xl\:gal-unset {
+    align-content: unset !important; }
   .xl\:gpc-end {
     align-content: end !important;
     justify-content: end !important;
@@ -2432,10 +2546,20 @@
     align-content: stretch !important;
     justify-content: stretch !important;
     place-content: stretch !important; }
-  .xl\:gpc-initial {
-    align-content: initial !important;
-    justify-content: initial !important;
-    place-content: initial !important; }
+  .xl\:gpc-value {
+    align-content: stretch !important;
+    align-content: stretch !important;
+    align-content: var(--gpc, stretch) !important;
+    justify-content: stretch !important;
+    justify-content: stretch !important;
+    justify-content: var(--gpc, stretch) !important;
+    place-content: stretch !important;
+    place-content: stretch !important;
+    place-content: var(--gpc, stretch) !important; }
+  .xl\:gpc-unset {
+    align-content: unset !important;
+    justify-content: unset !important;
+    place-content: unset !important; }
   .xl\:gc-value {
     grid-column: 1 !important;
     grid-column: 1 !important;
@@ -2516,8 +2640,8 @@
     justify-self: start !important; }
   .xl\:gjs-stretch {
     justify-self: stretch !important; }
-  .xl\:gjs-initial {
-    justify-self: initial !important; }
+  .xl\:gjs-unset {
+    justify-self: unset !important; }
   .xl\:gas-auto {
     align-self: auto !important; }
   .xl\:gas-end {
@@ -2528,8 +2652,8 @@
     align-self: start !important; }
   .xl\:gas-stretch {
     align-self: stretch !important; }
-  .xl\:gas-initial {
-    align-self: initial !important; }
+  .xl\:gas-unset {
+    align-self: unset !important; }
   .xl\:gps-auto {
     align-self: auto !important;
     justify-self: auto !important;
@@ -2550,10 +2674,20 @@
     align-self: stretch !important;
     justify-self: stretch !important;
     place-self: stretch !important; }
-  .xl\:gps-initial {
-    align-self: initial !important;
-    justify-self: initial !important;
-    place-self: initial !important; } }
+  .xl\:gps-value {
+    align-self: stretch !important;
+    align-self: stretch !important;
+    align-self: var(--gps, stretch) !important;
+    justify-self: stretch !important;
+    place-self: stretch !important;
+    justify-self: stretch !important;
+    justify-self: var(--gps, stretch) !important;
+    place-self: stretch !important;
+    place-self: var(--gps, stretch) !important; }
+  .xl\:gps-unset {
+    align-self: unset !important;
+    justify-self: unset !important;
+    place-self: unset !important; } }
 
 .flex--cell1 {
   flex-basis: 8.33333%; }
