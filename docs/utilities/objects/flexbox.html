@@ -1,0 +1,353 @@
+---
+layout: page
+title: Flexbox
+description: The following flexbox utility classes should be used for one-dimensional layouts, meaning only in one direction unlike CSS Grids which allow for two-dimensional layouts.
+---
+<section class="dds-docs--section">
+    <h2 class="dds-docs--header">Display</h2>
+    <p class="dds-docs--copy">To set a flex display value, use the following classes.</p>
+    <div class="dtd-example">
+{% highlight html linenos %}
+<div class="flex">…</div>
+<div class="flex-inline">…</div>
+{% endhighlight %}
+        <div class="dtd-example--preview">
+            <strong class="d-block mb4">Flex with 2 children:</strong>
+            <div class="flex">
+                <div class="dtd-cell flex--cell6">.flex--cell6</div>
+                <div class="dtd-cell flex--cell6">.flex--cell6</div>
+            </div>
+            <strong class="d-block mt16 mb4">Inline Flex with 4 children:</strong>
+            <div class="flex-inline">
+                <div class="dtd-cell flex--cell6">.flex--cell6</div>
+                <div class="dtd-cell flex--cell6">.flex--cell6</div>
+                <div class="dtd-cell flex--cell6">.flex--cell6</div>
+                <div class="dtd-cell flex--cell6">.flex--cell6</div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="dds-docs--section">
+    <h2 class="dds-docs--header">Fixed Cells Widths</h2>
+    <p class="dds-docs--copy">By default children cells within a parent flex container will only take up the room needed for their content. To help quickly set a child cell width, use the following fixed cell widths. These are based on a 12 column system.</p>
+    <div class="dtd-example">
+{% highlight html linenos %}
+<div class="flex">
+    <div class="flex--cell1">…</div>
+    <div class="flex--cell2">…</div>
+    <div class="flex--cell3">…</div>
+    <div class="flex--cell4">…</div>
+    <div class="flex--cell5">…</div>
+    <div class="flex--cell6">…</div>
+    <div class="flex--cell7">…</div>
+    <div class="flex--cell8">…</div>
+    <div class="flex--cell9">…</div>
+    <div class="flex--cell10">…</div>
+    <div class="flex--cell11">…</div>
+    <div class="flex--cell12">…</div>
+</div>
+{% endhighlight %}
+        <div class="dtd-example--preview">
+            <div class="flex">
+                <div class="dtd-cell flex--cell1">[col1]</div>
+                <div class="dtd-cell flex--cell11">[cell11]</div>
+            </div>
+            <div class="flex">
+                <div class="dtd-cell flex--cell2">[cell2]</div>
+                <div class="dtd-cell flex--cell10">[cell10]</div>
+            </div>
+            <div class="flex">
+                <div class="dtd-cell flex--cell3">[cell3]</div>
+                <div class="dtd-cell flex--cell9">[cell9]</div>
+            </div>
+            <div class="flex">
+                <div class="dtd-cell flex--cell4">[cell4]</div>
+                <div class="dtd-cell flex--cell8">[cell8]</div>
+            </div>
+            <div class="flex">
+                <div class="dtd-cell flex--cell5">[cell5]</div>
+                <div class="dtd-cell flex--cell7">[cell7]</div>
+            </div>
+            <div class="flex">
+                <div class="dtd-cell flex--cell6">[cell6]</div>
+                <div class="dtd-cell flex--cell6">[cell6]</div>
+            </div>
+            <div class="flex">
+                <div class="dtd-cell flex--cell12">[cell12]</div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="dds-docs--section">
+    <h2 class="dds-docs--header">Flexbox Parent Classes</h2>
+    <p class="dds-docs--copy">The following utility classes affect flexbox parent containers only.</p>
+    <h3 class="dds-docs--subheader">Flex Direction</h3>
+    <p>This property controls how flex items are placed within a flex container along the main axis and direction. The default value is row and normal direction.</p>
+    <table class="dt-table">
+        <thead>
+            <tr>
+                <th scope="col" width="20%">Class</th>
+                <th scope="col" width="30%">Output</th>
+                <th scope="col">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in site.data.objects-flex.fd %}
+            <tr>
+                <th scope="row" class="ff-mono fs-fine">{{ item.class }}</th>
+                <td class="ff-mono fs-fine">{{ item.output }}</td>
+                <td class="fs-body1 lh-md">{{ item.description }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="dtd-example">
+{% highlight html linenos %}
+<div class="flex fd-row">…</div>
+<div class="flex fd-row-reverse">…</div>
+<div class="flex fd-column">…</div>
+<div class="flex fd-column-reverse">…</div>
+{% endhighlight %}
+        <div class="dtd-example--preview">
+            <strong class="d-block mb8 fs-caption ff-mono">flex-direction: row;</strong>
+            <div class="flex fd-row mb16 dtd-cell">
+                <div class="dtd-cell">[col1]</div>
+                <div class="dtd-cell">[col2]</div>
+                <div class="dtd-cell">[col3]</div>
+                <div class="dtd-cell">[col4]</div>
+            </div>
+            <strong class="d-block mt16 mb8 fs-caption ff-mono">flex-direction: row-reverse;</strong>
+            <div class="flex fd-row-reverse mb16 dtd-cell">
+                <div class="dtd-cell">[col1]</div>
+                <div class="dtd-cell">[col2]</div>
+                <div class="dtd-cell">[col3]</div>
+                <div class="dtd-cell">[col4]</div>
+            </div>
+            <strong class="d-block mt16 mb8 fs-caption ff-mono">flex-direction: column;</strong>
+            <div class="flex fd-column mb16 dtd-cell">
+                <div class="dtd-cell">[col1]</div>
+                <div class="dtd-cell">[col2]</div>
+                <div class="dtd-cell">[col3]</div>
+                <div class="dtd-cell">[col4]</div>
+            </div>
+            <strong class="d-block mt16 mb8 fs-caption ff-mono">flex-direction: column-reverse;</strong>
+            <div class="flex fd-column-reverse dtd-cell">
+                <div class="dtd-cell">[col1]</div>
+                <div class="dtd-cell">[col2]</div>
+                <div class="dtd-cell">[col3]</div>
+                <div class="dtd-cell">[col4]</div>
+            </div>
+        </div>
+    </div>
+
+    <h3 class="dds-docs--subheader">Flex Wrap</h3>
+    <p>This property controls how flex items wrap within a flex container. The default value is to wrap.</p>
+    <table class="dt-table">
+        <thead>
+            <tr>
+                <th scope="col" width="20%">Class</th>
+                <th scope="col" width="30%">Output</th>
+                <th scope="col">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in site.data.objects-flex.fw %}
+            <tr>
+                <th scope="row" class="ff-mono fs-fine">{{ item.class }}</th>
+                <td class="ff-mono fs-fine">{{ item.output }}</td>
+                <td class="fs-body1 lh-md">{{ item.description }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="dtd-example">
+{% highlight html linenos %}
+<div class="flex fw-wrap">…</div>
+<div class="flex fw-wrap-reverse">…</div>
+<div class="flex fw-nowrap">…</div>
+{% endhighlight %}
+        <div class="dtd-example--preview">
+            <strong class="d-block mb8 fs-caption ff-mono">flex-wrap: wrap;</strong>
+            <div class="flex fw-wrap mb16 dtd-cell">
+                <div class="dtd-cell flex--cell4">[col1]</div>
+                <div class="dtd-cell flex--cell4">[col2]</div>
+                <div class="dtd-cell flex--cell4">[col3]</div>
+                <div class="dtd-cell flex--cell4">[col4]</div>
+            </div>
+            <strong class="d-block mt16 mb8 fs-caption ff-mono">flex-wrap: wrap-reverse;</strong>
+            <div class="flex fw-wrap-reverse mb16 dtd-cell">
+                <div class="dtd-cell flex--cell4">[col1]</div>
+                <div class="dtd-cell flex--cell4">[col2]</div>
+                <div class="dtd-cell flex--cell4">[col3]</div>
+                <div class="dtd-cell flex--cell4">[col4]</div>
+            </div>
+            <strong class="d-block mt16 mb8 fs-caption ff-mono">flex-wrap: nowrap;</strong>
+            <div class="flex fw-nowrap dtd-cell">
+                <div class="dtd-cell flex--cell4">[col1]</div>
+                <div class="dtd-cell flex--cell4">[col2]</div>
+                <div class="dtd-cell flex--cell4">[col3]</div>
+                <div class="dtd-cell flex--cell4">[col4]</div>
+            </div>
+        </div>
+    </div>
+
+    <h3 class="dds-docs--subheader">Flex Flow</h3>
+    <p>This property controls how flex items flow within a flex container. The default flex direction is set to a row and wrap flex items.</p>
+    <table class="dt-table">
+        <thead>
+            <tr>
+                <th scope="col" width="25%">Class</th>
+                <th scope="col" width="30%">Output</th>
+                <th scope="col">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in site.data.objects-flex.ff %}
+            <tr>
+                <th scope="row" class="ff-mono fs-fine">{{ item.class }}</th>
+                <td class="ff-mono fs-fine">{{ item.output }}</td>
+                <td class="fs-body1 lh-md">{{ item.description }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="dtd-example">
+{% highlight html linenos %}
+<div class="flex ff-row-wrap">…</div>
+<div class="flex ff-row-nowrap">…</div>
+<div class="flex ff-row-reverse-wrap">…</div>
+<div class="flex ff-row-reverse-nowrap">…</div>
+<div class="flex ff-column-wrap">…</div>
+<div class="flex ff-column-nowrap">…</div>
+<div class="flex ff-column-reverse-wrap">…</div>
+<div class="flex ff-column-reverse-nowrap">…</div>
+{% endhighlight %}
+        <div class="dtd-example--preview">
+            <strong class="d-block mb8 fs-caption ff-mono">flex-flow: row wrap;</strong>
+            <div class="flex ff-row-wrap mb16 dtd-cell">
+                <div class="dtd-cell flex--cell4">[col1]</div>
+                <div class="dtd-cell flex--cell4">[col2]</div>
+                <div class="dtd-cell flex--cell4">[col3]</div>
+                <div class="dtd-cell flex--cell4">[col4]</div>
+            </div>
+            <strong class="d-block mt16 mb8 fs-caption ff-mono">flex-flow: row nowrap;</strong>
+            <div class="flex ff-row-nowrap mb16 dtd-cell">
+                <div class="dtd-cell flex--cell4">[col1]</div>
+                <div class="dtd-cell flex--cell4">[col2]</div>
+                <div class="dtd-cell flex--cell4">[col3]</div>
+                <div class="dtd-cell flex--cell4">[col4]</div>
+            </div>
+            <strong class="d-block mt16 mb8 fs-caption ff-mono">flex-flow: row-reverse wrap;</strong>
+            <div class="flex ff-row-reverse-wrap mb16 dtd-cell">
+                <div class="dtd-cell flex--cell4">[col1]</div>
+                <div class="dtd-cell flex--cell4">[col2]</div>
+                <div class="dtd-cell flex--cell4">[col3]</div>
+                <div class="dtd-cell flex--cell4">[col4]</div>
+            </div>
+            <strong class="d-block mt16 mb8 fs-caption ff-mono">flex-flow: row-reverse nowrap;</strong>
+            <div class="flex ff-row-reverse-nowrap mb16 dtd-cell">
+                <div class="dtd-cell flex--cell4">[col1]</div>
+                <div class="dtd-cell flex--cell4">[col2]</div>
+                <div class="dtd-cell flex--cell4">[col3]</div>
+                <div class="dtd-cell flex--cell4">[col4]</div>
+            </div>
+            <strong class="d-block mt16 mb8 fs-caption ff-mono">flex-flow: column wrap;</strong>
+            <div class="flex ff-column-wrap mb16 dtd-cell h1">
+                <div class="dtd-cell flex--cell4">[col1]</div>
+                <div class="dtd-cell flex--cell4">[col2]</div>
+                <div class="dtd-cell flex--cell4">[col3]</div>
+                <div class="dtd-cell flex--cell4">[col4]</div>
+            </div>
+            <strong class="d-block mt16 mb8 fs-caption ff-mono">flex-flow: column nowrap;</strong>
+            <div class="flex ff-column-nowrap mb16 dtd-cell">
+                <div class="dtd-cell flex--cell4">[col1]</div>
+                <div class="dtd-cell flex--cell4">[col2]</div>
+                <div class="dtd-cell flex--cell4">[col3]</div>
+                <div class="dtd-cell flex--cell4">[col4]</div>
+            </div>
+            <strong class="d-block mt16 mb8 fs-caption ff-mono">flex-flow: column-reverse wrap;</strong>
+            <div class="flex ff-column-reverse-wrap mb16 dtd-cell h1">
+                <div class="dtd-cell flex--cell4">[col1]</div>
+                <div class="dtd-cell flex--cell4">[col2]</div>
+                <div class="dtd-cell flex--cell4">[col3]</div>
+                <div class="dtd-cell flex--cell4">[col4]</div>
+            </div>
+            <strong class="d-block mt16 mb8 fs-caption ff-mono">flex-flow: column-reverse nowrap;</strong>
+            <div class="flex ff-column-reverse-nowrap dtd-cell">
+                <div class="dtd-cell flex--cell4">[col1]</div>
+                <div class="dtd-cell flex--cell4">[col2]</div>
+                <div class="dtd-cell flex--cell4">[col3]</div>
+                <div class="dtd-cell flex--cell4">[col4]</div>
+            </div>
+        </div>
+    </div>
+
+    <h3 class="dds-docs--subheader">Justify Content</h3>
+    <p>This property controls how flex items are distributed along a flex container's main axis.</p>
+    <table class="dt-table">
+        <thead>
+            <tr>
+                <th scope="col" width="25%">Class</th>
+                <th scope="col" width="30%">Output</th>
+                <th scope="col">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in site.data.objects-flex.ff %}
+            <tr>
+                <th scope="row" class="ff-mono fs-fine">{{ item.class }}</th>
+                <td class="ff-mono fs-fine">{{ item.output }}</td>
+                <td class="fs-body1 lh-md">{{ item.description }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="dtd-example">
+{% highlight html linenos %}
+<div class="flex jc-center">…</div>
+<div class="flex jc-end">…</div>
+<div class="flex jc-space-around">…</div>
+<div class="flex jc-space-between">…</div>
+<div class="flex jc-space-evenly">…</div>
+<div class="flex jc-start">…</div>
+{% endhighlight %}
+        <div class="dtd-example--preview">
+            <strong class="d-block mb8 fs-caption ff-mono">justify-content: center;</strong>
+            <div class="flex w100 jc-center mb16 dtd-cell">
+                <div class="dtd-cell">.jc-center</div>
+                <div class="dtd-cell">.jc-center</div>
+                <div class="dtd-cell">.jc-center</div>
+            </div>
+            <strong class="d-block mt16 mb8 fs-caption ff-mono">justify-content: flex-end;</strong>
+            <div class="flex jc-end mb16 dtd-cell">
+                <div class="dtd-cell">.jc-end</div>
+                <div class="dtd-cell">.jc-end</div>
+                <div class="dtd-cell">.jc-end</div>
+            </div>
+            <strong class="d-block mt16 mb8 fs-caption ff-mono">justify-content: space-around;</strong>
+            <div class="flex jc-space-around mb16 dtd-cell">
+                <div class="dtd-cell">.jc-space-around</div>
+                <div class="dtd-cell">.jc-space-around</div>
+                <div class="dtd-cell">.jc-space-around</div>
+            </div>
+            <strong class="d-block mt16 mb8 fs-caption ff-mono">justify-content: space-between;</strong>
+            <div class="flex jc-space-between mb16 dtd-cell">
+                <div class="dtd-cell">.jc-space-between</div>
+                <div class="dtd-cell">.jc-space-between</div>
+                <div class="dtd-cell">.jc-space-between</div>
+            </div>
+            <strong class="d-block mt16 mb8 fs-caption ff-mono">justify-content: space-evenly;</strong>
+            <div class="flex jc-space-evenly mb16 dtd-cell">
+                <div class="dtd-cell">.jc-space-evenly</div>
+                <div class="dtd-cell">.jc-space-evenly</div>
+                <div class="dtd-cell">.jc-space-evenly</div>
+            </div>
+            <strong class="d-block mt16 mb8 fs-caption ff-mono">justify-content: flex-start;</strong>
+            <div class="flex jc-start dtd-cell">
+                <div class="dtd-cell">.jc-start</div>
+                <div class="dtd-cell">.jc-start</div>
+                <div class="dtd-cell">.jc-start</div>
+            </div>
+        </div>
+    </div>
+</section>

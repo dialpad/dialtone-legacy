@@ -1,9 +1,30 @@
 //
-//  DIALPAD
-//  Grid
+//  DIALTONE
+//  UTILITIES: FLEXBOX
+//
+//  These are the flexbox utility classes for Dialpad's design system Dialtone.
+//  For further documentation of these and other classes,
+//  visit https://dialpad.design/utilities/flexbox
+//
+//  TABLE OF CONTENTS
+//  • Fixed Width Cells
+//  • Utilities
+//    - Display
+//    - Direction
+//    - Wrap
+//    - Flow
+//    - Justify Content
+//    - Align Content
+//    - Align Items
+//    - Center Items
+//    - Align Self
+//    - Flex
+//    - Flex Shrink
+//    - Flex Grow
+//    - Order
 //
 //  ============================================================================
-//  $   VARIABLES & MIXINS
+//  $   FIXED WIDTH CELLS
 //  ----------------------------------------------------------------------------
 $grid-columns:      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
 
@@ -19,88 +40,7 @@ $grid-columns:      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
     }
 }
 
-@mixin grid-fixed-cell-spacing($value) {
-    @each $col in $grid-columns {
-        $cell-width: (#{$col} * 100%) / 12;
-
-        > .flex--cell#{$col} {
-            margin: $value/2;
-        }
-
-        //  ------------------------------------------------------------------------
-        //  [1] FIXED WIDTH CELLS
-        //      This makes the fixed width cells to account for gutters.
-        //
-        //  [2] UNIFORM CHILD GRID CELLS
-        //      This class allows you to uniformly state the width of `.grid--cell`
-        //      divs within a `.grid` element. In particular we adjust the flex-basis
-        //      and max-width here to account for gutters.
-        //  ------------------------------------------------------------------------
-        // > .flex--cell#{$col},                                  // [1]
-        // &.grid__allcells#{$col} > .grid,                       // [2]
-        // &.grid__allcells#{$col} > .grid--cell {                // [2]
-        //     flex-basis: calc(#{$cell-width} - #{$value});
-        // }
-    }
-}
-
-//  ----------------------------------------------------------------------------
-//      --  GUTTERS
-//          We halve the spacing value because the spacing value should be the
-//          total space between cells--not the total applied to each cell,
-//          which would effectively double the desired total.
-//  ----------------------------------------------------------------------------
-// @mixin gutter-spacing($values) {
-//     @each $spacer, $value in $spacing-units {
-//         .gs#{$spacer} {
-//             margin: -$value / 2;
-//
-//             //  --  FLUID CELLS
-//             > .grid,
-//             > .grid--cell {
-//                 margin: $value / 2;
-//             }
-//
-//             @include grid-fixed-cell-spacing($value);
-//         }
-//     }
-// }
-
-
-
-//  --  FIXED WIDTH CELLS
-//  --------------------------------------------------------------------------
 @include grid-fixed-cells($grid-columns);
-
-//  ============================================================================
-//  $   GRID SPACING
-//      Insert spaces or gutters in between grid cells
-//  ----------------------------------------------------------------------------
-// @include gutter-spacing($spacing-units);
-//
-// @each $breakpoint, $variant in $rwd-variants {
-//     @include rwd($breakpoint) {
-//         //  On rows, remove top and bottom margins
-//         .#{$variant}gsx {
-//             &,
-//             > .grid,
-//             > [class*="grid--cell"] {
-//                 margin-top: 0;
-//                 margin-bottom: 0;
-//             }
-//         }
-//
-//         //  On columns, remove left and right margins
-//         .#{$variant}gsy {
-//             &,
-//             > .grid,
-//             > [class*="grid--cell"] {
-//                 margin-right: 0;
-//                 margin-left: 0;
-//             }
-//         }
-//     }
-// }
 
 //  ============================================================================
 //  $   FLEXBOX UTILITIES
@@ -109,8 +49,8 @@ $grid-columns:      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
     @include rwd($breakpoint) {
         //  --  FLEXBOX
         //  --------------------------------------------------------------------
-        .#{$variant}flex                       { display: flex; }
-        .#{$variant}flex-inline                { display: inline-flex; }
+        .#{$variant}flex                    { display: flex; }
+        .#{$variant}flex-inline             { display: inline-flex; }
 
         //  --  FLEX DIRECTION
         //  --------------------------------------------------------------------
@@ -118,6 +58,7 @@ $grid-columns:      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
         .#{$variant}fd-row-reverse          { flex-direction: row-reverse; }
         .#{$variant}fd-column               { flex-direction: column; }
         .#{$variant}fd-column-reverse       { flex-direction: column-reverse; }
+        .#{$variant}fd-unset                { flex-direction: unset; }
 
         //  --  FLEX WRAP
         //      This determines if a parent's child items will wrap or not.
@@ -125,6 +66,7 @@ $grid-columns:      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
         .#{$variant}fw-wrap                 { flex-wrap: wrap; }
         .#{$variant}fw-wrap-reverse         { flex-wrap: wrap-reverse; }
         .#{$variant}fw-nowrap               { flex-wrap: nowrap; }
+        .#{$variant}fw-unset                { flex-wrap: unset; }
 
         //  --  FLEX FLOW
         //      This is another shorthand property for flex-direction and flex-wrap.
@@ -138,6 +80,7 @@ $grid-columns:      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
         .#{$variant}ff-column-nowrap        { flex-flow: column nowrap; }
         .#{$variant}ff-column-reverse-wrap  { flex-flow: column-reverse wrap; }
         .#{$variant}ff-column-reverse-nowrap{ flex-flow: column-reverse nowrap; }
+        .#{$variant}ff-unset                { flex-flow: unset; }
 
         //  --  JUSTIFY CONTENT
         //      Defines the child alignment along the parent's main axis
@@ -148,6 +91,7 @@ $grid-columns:      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
         .#{$variant}jc-space-between        { justify-content: space-between; }
         .#{$variant}jc-space-evenly         { justify-content: space-evenly; }
         .#{$variant}jc-start                { justify-content: flex-start; }
+        .#{$variant}jc-unset                { justify-content: unset; }
 
         //  --  ALIGN CONTENT
         //      Aligns the container's lines when there is extra space in the
@@ -160,6 +104,7 @@ $grid-columns:      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
         .#{$variant}ac-space-between        { align-content: space-between; }
         .#{$variant}ac-start                { align-content: flex-start; }
         .#{$variant}ac-stretch              { align-content: stretch; }
+        .#{$variant}ac-unset                { align-content: unset; }
 
         //  --  ALIGN ITEMS
         //      Defines the default behavior for how child items align along
@@ -176,7 +121,7 @@ $grid-columns:      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
         //      A common combination of classes is .jc-center and .ai-center.
         //      Use this class when you want both.
         //  --------------------------------------------------------------------
-        .#{$variant}flex__center            { justify-content: center; align-items: center; }
+        .#{$variant}flex__center            { align-items: center; justify-content: center; }
 
         //  --  ALIGN SELF
         //      Allows child containers to re-align themselves irregardless
@@ -235,7 +180,7 @@ $grid-columns:      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
         //  --  Ordering
         //      Designate a child container's position.
         //  --------------------------------------------------------------------
-        .#{$variant}order-first            { order: -1; }
-        .#{$variant}order-last             { order: 1; }
+        .#{$variant}fo-first               { order: -1; }
+        .#{$variant}fo-last                { order: 1; }
     }
 }
