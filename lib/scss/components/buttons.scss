@@ -9,12 +9,10 @@ $button-primary:            $blue-060;
 $button-primary-hover:      #3F5FBF;
 $button-secondary:          #F1F1F2;
 $button-secondary-hover:    #E0E0E0;
-$button-destruct:           #E84B28;
-$button-destruct-hover:     #C53F22;
+$button-danger:             #E84B28;
+$button-danger-hover:       #C53F22;
 $button-teal:               $teal-060;
 $button-teal-hover:         #00CAC6;
-$button-white:              $white;
-$button-white-hover:        $white;
 
 $button-border-radius:      $br-sm;
 
@@ -22,101 +20,111 @@ $button-border-radius:      $br-sm;
 //  ============================================================================
 //  $   BASE STYLE
 //  ----------------------------------------------------------------------------
-%btn-base {
-    position: relative;
-    padding: 1.167em 1.667em;
-    border: 1px solid transparent;
-    border-radius: $button-border-radius;
-    outline: none;
-    font-family: inherit;
-    font-size: $fs-caption;
-    font-weight: $fw-medium;
-    line-height: 1;
-    text-transform: $tt-uppercase;
-    text-decoration: none;
-    cursor: pointer;
-}
+@mixin btn-base($name, $bgc, $bgc-hover, $fc, $bs: $bgc) {
+    @each $breakpoint, $variant in $rwd-variants {
+        @include rwd($breakpoint) {
+            .#{$variant}dt-btn-#{$name} {
+                position: relative;
+                padding: 1.167em 1.667em 1em;
+                outline: none;
+                border: 1px solid transparent;
+                border-radius: $button-border-radius;
+                background-color: $bgc;
+                box-shadow: 0 0 0 0 transparentize($bs,1);
+                color: $fc;
+                text-decoration: none;
+                text-transform: $tt-uppercase;
+                letter-spacing: 0.042em;
+                font-weight: $fw-medium;
+                font-size: $fs-caption;
+                font-family: $ff-mark-medium;
+                line-height: $lh-xs;
+                cursor: pointer;
 
-.btn-primary {
-    @extend %btn-base;
-    background-color: $button-primary;
-    color: $white;
+                &:hover,
+                &:focus {
+                    text-decoration: none;
+                }
 
-    &:hover {
-        background-color: $button-primary-hover;
-    }
+                &:focus {
+                    outline: none;
+                }
 
-    &:focus {
-        box-shadow: 0 0 0 4px transparentize($button-primary,.85);
-    }
-}
+                &:hover {
+                    background-color: $bgc-hover;
+                }
 
-.btn-secondary {
-    @extend %btn-base;
-    background-color: $button-secondary;
-    color: $gray-100;
+                &:active {
+                    background-color: darken($bgc-hover,7.5%);
+                    box-shadow: 0 0 0 4px transparentize($bs,.7);
+                }
 
-    &:hover {
-        background-color: $button-secondary-hover;
-    }
+                &.is-selected {
+                    background-color: darken($bgc-hover,10%);
+                    box-shadow: 0 $sp2 $sp8 0 transparentize(darken($bs,25%),.75);
+                }
 
-    &:focus {
-        box-shadow: 0 0 0 4px transparentize($button-primary,.85);
-    }
-}
-
-.btn-destruct {
-    @extend %btn-base;
-    background-color: $button-destruct;
-    color: $white;
-
-    &:hover {
-        background-color: $button-destruct-hover;
-    }
-
-    &:focus {
-        box-shadow: 0 0 0 4px transparentize($button-destruct,.85);
-    }
-}
-
-.btn-teal {
-    @extend %btn-base;
-    background-color: $button-teal;
-    color: $white;
-
-    &:hover {
-        background-color: $button-teal-hover;
-    }
-
-    &:focus {
-        box-shadow: 0 0 0 4px transparentize($button-teal,.85);
+                &[disabled] {
+                    background-color: transparentize(desaturate($bgc-hover,75%),.6);
+                    color: transparentize($fc,.4);
+                    opacity: 1;
+                    cursor: default;
+                    pointer-events: none;
+                }
+            }
+        }
     }
 }
 
-.btn-clear {
-    @extend %btn-base;
-    background-color: transparentize($button-white,0);
-    color: $gray-100;
+@include btn-base(primary, $button-primary, $button-primary-hover, $white);
+@include btn-base(secondary, $button-secondary, $button-secondary-hover, $gray-100);
+@include btn-base(danger, $button-danger, $button-danger-hover, $white);
+@include btn-base(teal, $button-teal, $button-teal-hover, $white);
+// @include btn-base(inverted, $button-inverted, $button-inverted-hover, $white, $button-primary);
 
-    &:hover {
-        background-color: transparentize($gray-100,.9);
-    }
+@each $breakpoint, $variant in $rwd-variants {
+    @include rwd($breakpoint) {
+        .#{$variant}dt-btn__outlined {
+            border-color: $gray-040;
+            background-color: $white;
 
-    &:focus {
-        box-shadow: 0 0 0 4px transparentize($button-primary,.85);
-    }
-}
+            &:hover {
+                border-color: $gray-080;
+                background-color: mix($white, transparentize($button-secondary,.9),25%);
+            }
 
-.btn-inverted {
-    @extend %btn-base;
-    background-color: $button-white;
-    color: $gray-100;
+            &:active {
+                background-color: mix($white, transparentize($button-secondary,.9),25%);
+                box-shadow: 0 0 0 4px transparentize($gray-080,.9);
+            }
 
-    &:hover {
-        background-color: $button-white-hover;
-    }
+            &.is-selected {
+                border-color: $gray-080;
+                background-color: mix($white, transparentize($button-secondary,.5),75%);
+                box-shadow: 0 $sp2 $sp8 0 transparentize(darken($button-secondary,25%),.75);
+            }
 
-    &:focus {
-        box-shadow: 0 0 0 4px transparentize($button-primary,.85);
+            &[disabled] {
+                border-color: transparent;
+            }
+        }
+
+        .#{$variant}dt-btn__clear {
+            background-color: $white;
+
+            &:hover {
+                background-color: mix($white, transparentize($button-secondary,.9),25%);
+            }
+
+            &:active {
+                background-color: mix($white, transparentize($button-secondary,.9),25%);
+                box-shadow: 0 0 0 4px transparentize($gray-080,.9);
+            }
+
+            &.is-selected {
+                background-color: mix($white, transparentize($button-secondary,.5),10%);
+                box-shadow: none;
+            }
+        }
     }
 }
