@@ -1,0 +1,50 @@
+<h3 class="dds-docs--subheader">Flex Wrap</h3>
+<p>This property controls how flex items wrap within a flex container. The default value is to wrap.</p>
+<table class="dt-table">
+    <thead>
+        <tr>
+            <th scope="col" width="20%">Class</th>
+            <th scope="col" width="30%">Output</th>
+            <th scope="col">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in site.data.objects-flex.fw %}
+        <tr>
+            <th scope="row" class="ff-mono fs-fine">{{ item.class }}</th>
+            <td class="ff-mono fs-fine">{{ item.output }}</td>
+            <td class="fs-body1 lh-md">{{ item.description }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<div class="dtd-example">
+{% highlight html linenos %}
+<div class="flex fw-wrap">…</div>
+<div class="flex fw-wrap-reverse">…</div>
+<div class="flex fw-nowrap">…</div>
+{% endhighlight %}
+    <div class="dtd-example--preview">
+        <strong class="d-block mb8 fs-caption ff-mono">flex-wrap: wrap;</strong>
+        <div class="flex fw-wrap mb16 dtd-cell">
+            <div class="dtd-cell flex--cell4">[col1]</div>
+            <div class="dtd-cell flex--cell4">[col2]</div>
+            <div class="dtd-cell flex--cell4">[col3]</div>
+            <div class="dtd-cell flex--cell4">[col4]</div>
+        </div>
+        <strong class="d-block mt16 mb8 fs-caption ff-mono">flex-wrap: wrap-reverse;</strong>
+        <div class="flex fw-wrap-reverse mb16 dtd-cell">
+            <div class="dtd-cell flex--cell4">[col1]</div>
+            <div class="dtd-cell flex--cell4">[col2]</div>
+            <div class="dtd-cell flex--cell4">[col3]</div>
+            <div class="dtd-cell flex--cell4">[col4]</div>
+        </div>
+        <strong class="d-block mt16 mb8 fs-caption ff-mono">flex-wrap: nowrap;</strong>
+        <div class="flex fw-nowrap dtd-cell">
+            <div class="dtd-cell flex--cell4">[col1]</div>
+            <div class="dtd-cell flex--cell4">[col2]</div>
+            <div class="dtd-cell flex--cell4">[col3]</div>
+            <div class="dtd-cell flex--cell4">[col4]</div>
+        </div>
+    </div>
+</div>

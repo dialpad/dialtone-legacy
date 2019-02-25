@@ -1,0 +1,52 @@
+<h3 class="dds-docs--subheader">Flex</h3>
+<p>The <span class="dds-docs--code">flex</span> CSS property is shorthand for <span class="dds-docs--code">flex-grow</span>, <span class="dds-docs--code">flex-shrink</span>, and <span class="dds-docs--code">flex-basis</span>. If only two values are provided, the <span class="dds-docs--code">flex-grow</span> value is assumed for <span class="dds-docs--code">flex-shrink</span>. You can also control the grow and shrink flex values by using the classes provided.</p>
+<table class="dt-table">
+    <thead>
+        <tr>
+            <th scope="col" width="25%">Class</th>
+            <th scope="col" width="30%">Output</th>
+            <th scope="col">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in site.data.objects-flex.fl %}
+        <tr>
+            <th scope="row" class="ff-mono fs-fine">{{ item.class }}</th>
+            <td class="ff-mono fs-fine">{{ item.output }}</td>
+            <td class="fs-body1 lh-md">{{ item.description }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<div class="dtd-example">
+{% highlight html linenos %}
+<div class="flex ac-auto">…</div>
+<div class="flex ac-start">…</div>
+<div class="flex ac-center">…</div>
+<div class="flex ac-end">…</div>
+<div class="flex ac-baseline">…</div>
+<div class="flex ac-stretch">…</div>
+{% endhighlight %}
+    <div class="dtd-example--preview">
+        <strong class="d-block mb6 fs-caption ff-mono">.fl#</strong>
+        <div class="flex dtd-cell">
+            <div class="dtd-cell fl0">.fl0</div>
+            <div class="dtd-cell fl1">.fl1</div>
+            <div class="dtd-cell fl0">.fl0</div>
+            <div class="dtd-cell fl2">.fl2</div>
+        </div>
+        <strong class="d-block mt16 mb6 fs-caption ff-mono">.fl-grow#</strong>
+        <div class="flex dtd-cell">
+            <div class="dtd-cell fl-grow0">.fl-grow0</div>
+            <div class="dtd-cell fl-grow1">.fl-grow1</div>
+            <div class="dtd-cell fl-grow0">.fl-grow0</div>
+            <div class="dtd-cell fl-grow2">.fl-grow2</div>
+        </div>
+        <strong class="d-block mt16 mb6 fs-caption ff-mono">.fl-shrink#</strong>
+        <div class="flex dtd-cell w2">
+            <div class="dtd-cell fl-shrink0 fl1">.fl-shrink0</div>
+            <div class="dtd-cell fl-shrink1 fl1">.fl-shrink1</div>
+            <div class="dtd-cell fl-shrink2 fl1">.fl-shrink2</div>
+        </div>
+    </div>
+</div>

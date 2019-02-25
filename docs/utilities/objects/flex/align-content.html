@@ -1,0 +1,91 @@
+<h3 class="dds-docs--subheader">Align Content</h3>
+<p>This property controls how flex items are distributed along a flex container's cross axis. <strong>Note:</strong> This property only works when a parent container has more than one line.</p>
+<table class="dt-table">
+    <thead>
+        <tr>
+            <th scope="col" width="25%">Class</th>
+            <th scope="col" width="30%">Output</th>
+            <th scope="col">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in site.data.objects-flex.ac %}
+        <tr>
+            <th scope="row" class="ff-mono fs-fine">{{ item.class }}</th>
+            <td class="ff-mono fs-fine">{{ item.output }}</td>
+            <td class="fs-body1 lh-md">{{ item.description }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<div class="dtd-example">
+{% highlight html linenos %}
+<div class="flex ac-start">…</div>
+<div class="flex ac-center">…</div>
+<div class="flex ac-end">…</div>
+<div class="flex ac-space-around">…</div>
+<div class="flex ac-space-between">…</div>
+<div class="flex ac-space-evenly">…</div>
+<div class="flex ac-stretch">…</div>
+{% endhighlight %}
+    <div class="dtd-example--preview">
+        <div class="flex fw-wrap mn16">
+            <div class="m8" style="flex-basis: calc(33% - 16px);">
+                <strong class="d-block mb8 fs-caption ff-mono">align-content: flex-start;</strong>
+                <div class="flex ac-start fw-wrap h2 dtd-cell">
+                    <div class="dtd-cell">.ac-start</div>
+                    <div class="dtd-cell">.ac-start</div>
+                    <div class="dtd-cell">.ac-start</div>
+                </div>
+            </div>
+            <div class="m8" style="flex-basis: calc(33% - 16px);">
+                <strong class="d-block mb8 fs-caption ff-mono">align-content: center;</strong>
+                <div class="flex ac-center fw-wrap h2 dtd-cell">
+                    <div class="dtd-cell">.ac-center</div>
+                    <div class="dtd-cell">.ac-center</div>
+                    <div class="dtd-cell">.ac-center</div>
+                </div>
+            </div>
+            <div class="m8" style="flex-basis: calc(33% - 16px);">
+                <strong class="d-block mb8 fs-caption ff-mono">align-content: flex-end;</strong>
+                <div class="flex ac-end fw-wrap h2 dtd-cell">
+                    <div class="dtd-cell">.ac-end</div>
+                    <div class="dtd-cell">.ac-end</div>
+                    <div class="dtd-cell">.ac-end</div>
+                </div>
+            </div>
+            <div class="m8" style="flex-basis: calc(33% - 16px);">
+                <strong class="d-block mb8 fs-caption ff-mono">align-content: space-around;</strong>
+                <div class="flex ac-space-around fw-wrap h2 dtd-cell">
+                    <div class="dtd-cell">.ac-space-around</div>
+                    <div class="dtd-cell">.ac-space-around</div>
+                    <div class="dtd-cell">.ac-space-around</div>
+                </div>
+            </div>
+            <div class="m8" style="flex-basis: calc(33% - 16px);">
+                <strong class="d-block mb8 fs-caption ff-mono">align-content: space-between;</strong>
+                <div class="flex ac-space-between fw-wrap h2 dtd-cell">
+                    <div class="dtd-cell">.ac-space-between</div>
+                    <div class="dtd-cell">.ac-space-between</div>
+                    <div class="dtd-cell">.ac-space-between</div>
+                </div>
+            </div>
+            <div class="m8" style="flex-basis: calc(33% - 16px);">
+                <strong class="d-block mb8 fs-caption ff-mono">align-content: space-evenly;</strong>
+                <div class="flex ac-space-evenly fw-wrap h2 dtd-cell">
+                    <div class="dtd-cell">.ac-space-evenly</div>
+                    <div class="dtd-cell">.ac-space-evenly</div>
+                    <div class="dtd-cell">.ac-space-evenly</div>
+                </div>
+            </div>
+            <div class="m8" style="flex-basis: calc(33% - 16px);">
+                <strong class="d-block mb8 fs-caption ff-mono">align-content: stretch;</strong>
+                <div class="flex ac-stretch fw-wrap h2 dtd-cell">
+                    <div class="dtd-cell">.ac-stretch</div>
+                    <div class="dtd-cell">.ac-stretch</div>
+                    <div class="dtd-cell">.ac-stretch</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,72 @@
+<h3 class="dds-docs--subheader">Align Items</h3>
+<p>This property controls how flex items are distributed along a flex container's cross axis.</p>
+<table class="dt-table">
+    <thead>
+        <tr>
+            <th scope="col" width="25%">Class</th>
+            <th scope="col" width="30%">Output</th>
+            <th scope="col">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in site.data.objects-flex.ai %}
+        <tr>
+            <th scope="row" class="ff-mono fs-fine">{{ item.class }}</th>
+            <td class="ff-mono fs-fine">{{ item.output }}</td>
+            <td class="fs-body1 lh-md">{{ item.description }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<div class="dtd-example">
+{% highlight html linenos %}
+<div class="flex ai-start">…</div>
+<div class="flex ai-center">…</div>
+<div class="flex ai-end">…</div>
+<div class="flex ai-stretch">…</div>
+{% endhighlight %}
+    <div class="dtd-example--preview">
+        <div class="flex fw-wrap mn16">
+            <div class="m8" style="flex-basis: calc(50% - 16px);">
+                <strong class="d-block mb8 fs-caption ff-mono">align-items: flex-start;</strong>
+                <div class="flex ai-start h1 dtd-cell">
+                    <div class="dtd-cell">.ai-start</div>
+                    <div class="dtd-cell">.ai-start</div>
+                    <div class="dtd-cell">.ai-start</div>
+                </div>
+            </div>
+            <div class="m8" style="flex-basis: calc(50% - 16px);">
+                <strong class="d-block mb8 fs-caption ff-mono">align-items: center;</strong>
+                <div class="flex ai-center h1 dtd-cell">
+                    <div class="dtd-cell">.ai-center</div>
+                    <div class="dtd-cell">.ai-center</div>
+                    <div class="dtd-cell">.ai-center</div>
+                </div>
+            </div>
+            <div class="m8" style="flex-basis: calc(50% - 16px);">
+                <strong class="d-block mb8 fs-caption ff-mono">align-items: flex-end;</strong>
+                <div class="flex ai-end h1 dtd-cell">
+                    <div class="dtd-cell">.ai-end</div>
+                    <div class="dtd-cell">.ai-end</div>
+                    <div class="dtd-cell">.ai-end</div>
+                </div>
+            </div>
+            <div class="m8" style="flex-basis: calc(50% - 16px);">
+                <strong class="d-block mb8 fs-caption ff-mono">align-items: baseline;</strong>
+                <div class="flex ai-baseline h1 dtd-cell">
+                    <div class="dtd-cell fs-fine">.ai-baseline</div>
+                    <div class="dtd-cell fs-body2">.ai-baseline</div>
+                    <div class="dtd-cell">.ai-baseline</div>
+                </div>
+            </div>
+            <div class="m8" style="flex-basis: calc(50% - 16px);">
+                <strong class="d-block mb8 fs-caption ff-mono">align-items: stretch;</strong>
+                <div class="flex ai-stretch h1 dtd-cell">
+                    <div class="dtd-cell">.ai-stretch</div>
+                    <div class="dtd-cell">.ai-stretch</div>
+                    <div class="dtd-cell">.ai-stretch</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
