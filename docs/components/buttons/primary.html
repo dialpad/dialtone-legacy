@@ -1,0 +1,36 @@
+<h3 class="dds-docs--subheader">Primary</h3>
+<p>The primary button style highlights the most important action(s). To help provide clarity to users, it is recommended that only <em>one</em> button have this style within a section or page.</p>
+<div class="dtd-example">
+{% highlight html linenos %}
+<button class="dt-btn dt-button__primary" type="button" aria-pressed="false">…</button>
+<button class="dt-btn dt-button__outlined" type="button" aria-pressed="false">…</button>
+<button class="dt-btn" type="button" aria-pressed="false">…</button>
+{% endhighlight %}
+    <div class="dtd-example--preview">
+        <table class="dt-table m0">
+            <thead>
+                <tr>
+                    <th scope="col" width="15%">Name</th>
+                    <th scope="col" width="25%">Class</th>
+                    <th scope="col" width="20%" class="ta-center">Default</th>
+                    <th scope="col" width="20%" class="ta-center">Selected</th>
+                    <th scope="col" width="20%" class="ta-center">Disabled</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in site.data.buttons.primary %}
+                    {% assign types = item.classes %}
+                    {% for class in types %}
+                    <tr>
+                        <th scope="row" class="va-middle fs-body1">{{ class.title }}</th>
+                        <td class="va-middle ff-mono fs-fine">.dt-btn {% if class.class != nil %}.{{ class.class }}{% endif %}</td>
+                        <td class="va-middle px4 ta-center"><button class="dt-btn {{ class.class }} w100 ws-nowrap" type="button" aria-pressed="false">Place call</button></td>
+                        <td class="va-middle px4 ta-center"><button class="dt-btn {{ class.class }} is-selected w100 ws-nowrap" type="button" aria-pressed="false">Place call</button></td>
+                        <td class="va-middle px4 ta-center"><button class="dt-btn {{ class.class }} w100 ws-nowrap" type="button" aria-pressed="false" disabled>Place call</button></td>
+                    </tr>
+                    {% endfor %}
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>

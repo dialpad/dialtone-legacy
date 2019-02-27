@@ -1,130 +1,285 @@
 //
-//  DIALPAD
-//  Buttons
+//  DIALTONE
+//  COMPONENTS: BUTTONS
+//
+//  These are border utility classes for Dialpad's design system Dialtone.
+//  For further documentation of these and other classes,
+//  visit https://dialpad.design/components/buttons
+//
+//  TABLE OF CONTENTS
+//  • VARIABLES
+//  • BUTTON STYLES
+//  • SIZES
 //
 //  ============================================================================
 //  $   VARIABLES
 //  ----------------------------------------------------------------------------
-$button-primary:            $blue-060;
-$button-primary-hover:      #3F5FBF;
-$button-secondary:          #F1F1F2;
-$button-secondary-hover:    #E0E0E0;
-$button-danger:             #E84B28;
-$button-danger-hover:       #C53F22;
-$button-teal:               $teal-060;
-$button-teal-hover:         #00CAC6;
+$button-primary:                $blue-060;
+$button-primary-hover:          saturate($button-primary,15%);
+$button-danger:                 $red-080;
+$button-danger-hover:           $red-100;
 
-$button-border-radius:      $br-sm;
+$button-font-color:             $blue-080;
+$button-background-color:       $button-primary;
+$button-border-color:           $button-primary;
+$button-border-radius:          $br-sm;
+$button-line-height:            $lh-md;
 
 
 //  ============================================================================
-//  $   BASE STYLE
+//  $   BUTTON STYLES
 //  ----------------------------------------------------------------------------
-@mixin btn-base($name, $bgc, $bgc-hover, $fc, $bs: $bgc) {
-    @each $breakpoint, $variant in $rwd-variants {
-        @include rwd($breakpoint) {
-            .#{$variant}dt-btn-#{$name} {
-                position: relative;
-                padding: 1.167em 1.667em 1em;
+@each $breakpoint, $variant in $rwd-variants {
+    @include rwd($breakpoint) {
+        //
+        //  $   BASE BUTTON
+        //      This class applies the core button properties. You must couple
+        //      this with a modifying class.
+        //  --------------------------------------------------------------------
+        .#{$variant}dt-btn {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 0.7rem 1rem 0.75rem;
+            border: 1px solid transparent;
+            border-radius: $button-border-radius;
+            background-color: transparentize($button-background-color,1);
+            box-shadow: inset 0 0 0 0 transparentize($button-background-color,1);
+            color: $button-font-color;
+            text-align: center;
+            text-decoration: none;
+            // text-transform: $tt-uppercase;
+            // letter-spacing: 0.042em;
+            // font-weight: $fw-medium;
+            font-size: $fs-body1;
+            // font-family: $ff-mark-medium;
+            line-height: $button-line-height;
+            cursor: pointer;
+            transition-timing-function: cubic-bezier(.64,0,.35,1);
+            transition-duration: 100ms;
+            transition-property: background-color, border, box-shadow;
+            user-select: none;
+            fill: $button-font-color;
+
+            &:hover {
+                background-color: transparentize($button-background-color,.95);
+            }
+            &:focus {
                 outline: none;
-                border: 1px solid transparent;
-                border-radius: $button-border-radius;
-                background-color: $bgc;
-                box-shadow: 0 0 0 0 transparentize($bs,1);
-                color: $fc;
-                text-decoration: none;
-                text-transform: $tt-uppercase;
-                letter-spacing: 0.042em;
-                font-weight: $fw-medium;
-                font-size: $fs-caption;
-                font-family: $ff-mark-medium;
-                line-height: $lh-xs;
-                cursor: pointer;
+                box-shadow: 0 0 0 $sp4 transparentize($button-background-color,.75);
+            }
+            &:active,
+            &.is-selected {
+                border-color: transparentize($button-background-color,.5);
+                background-color: transparentize($button-background-color,.9);
+                box-shadow: inset 0 0 $sp8 0 transparentize($button-background-color,.7);
+            }
+            &[disabled] {
+                background-color: $gray-010;
+                color: $gray-060;
+                opacity: 0.75;
+                transition: none;
+            }
+        }
 
-                &:hover,
-                &:focus {
-                    text-decoration: none;
-                }
+        //
+        //  $   OUTLINED BUTTON
+        //  --------------------------------------------------------------------
+        .#{$variant}dt-btn__outlined {
+            border-color: $button-border-color;
+            box-shadow: none;
+            color: $button-font-color;
+            fill: $button-font-color;
 
-                &:focus {
-                    outline: none;
-                }
+            &:active,
+            &.is-selected {
+                border-color: darken($button-border-color,5%);
+                background-color: transparentize($button-background-color,.85);
+                box-shadow: none;
+            }
+            &[disabled] {
+                border-color: $gray-040;
+            }
+        }
+
+        //
+        //  $   PRIMARY BUTTON
+        //  --------------------------------------------------------------------
+        .#{$variant}dt-btn__primary {
+            background-color: $button-primary;
+            color: $white;
+            fill: $white;
+
+            &:hover {
+                background-color: $button-primary-hover;
+            }
+            &:focus {
+                box-shadow: 0 0 0 $sp4 transparentize($button-primary,.75);
+            }
+            &:active,
+            &.is-selected {
+                border-color: darken($button-primary-hover,20%);
+                background-color: saturate($button-primary,15%);
+                box-shadow: inset 0 0 $sp8 0 darken($blue-100,10%);
+            }
+        }
+
+        //
+        //  $   DANGER BUTTON
+        //  --------------------------------------------------------------------
+        .#{$variant}dt-btn__danger {
+            background-color: $button-danger;
+            color: $white;
+            fill: $white;
+
+            &:hover {
+                background-color: $button-danger-hover;
+            }
+            &:focus {
+                box-shadow: 0 0 0 $sp4 transparentize($button-danger,.75);
+            }
+            &:active,
+            &.is-selected {
+                border-color: darken($button-danger-hover,20%);
+                background-color: saturate($button-danger-hover,10%);
+                box-shadow: inset 0 0 $sp8 0 darken($button-danger-hover,10%);
+            }
+
+            //  --  OUTLINED BUTTON
+            //  ----------------------------------------------------------------
+            &.#{$variant}dt-btn__outlined {
+                border-color: $button-danger-hover;
+                background-color: transparentize($button-danger,1);
+                box-shadow: none;
+                color: $button-danger-hover;
+                fill: $button-danger-hover;
 
                 &:hover {
-                    background-color: $bgc-hover;
+                    background-color: transparentize($button-danger-hover,.95);
                 }
-
-                &:active {
-                    background-color: darken($bgc-hover,7.5%);
-                    box-shadow: 0 0 0 4px transparentize($bs,.7);
+                &:focus {
+                    box-shadow: 0 0 0 $sp4 transparentize($button-danger,.75);
                 }
-
+                &:active,
                 &.is-selected {
-                    background-color: darken($bgc-hover,10%);
-                    box-shadow: 0 $sp2 $sp8 0 transparentize(darken($bs,25%),.75);
+                    border-color: darken($button-danger-hover,5%);
+                    background-color: transparentize($button-danger-hover,.85);
+                    box-shadow: none;
                 }
-
                 &[disabled] {
-                    background-color: transparentize(desaturate($bgc-hover,75%),.6);
-                    color: transparentize($fc,.4);
-                    opacity: 1;
-                    cursor: default;
-                    pointer-events: none;
+                    border-color: $gray-040;
+                    background-color: $gray-010;
+                    color: $gray-060;
+                }
+            }
+
+            //  --  CLEAR BUTTON
+            //  ----------------------------------------------------------------
+            &.#{$variant}dt-btn__clear {
+                background-color: transparentize($button-danger,1);
+                box-shadow: none;
+                color: $button-danger-hover;
+                fill: $button-danger-hover;
+
+                &:hover {
+                    background-color: transparentize($button-danger-hover,.95);
+                }
+                &:focus {
+                    box-shadow: 0 0 0 $sp4 transparentize($button-danger,.75);
+                }
+                &:active,
+                &.is-selected {
+                    border-color: transparent;
+                    background-color: transparentize($button-danger-hover,.85);
+                    box-shadow: none;
+                }
+                &[disabled] {
+                    background-color: $gray-010;
+                    color: $gray-060;
+                }
+            }
+        }
+
+        //
+        //  $   INVERTED BUTTON
+        //  --------------------------------------------------------------------
+        .#{$variant}dt-btn__inverted {
+            background-color: $white;
+
+            &:hover {
+                background-color: mix($white, $button-background-color, 90%);
+            }
+            &:focus {
+                box-shadow: 0 0 0 $sp4 transparentize(mix($white, $button-background-color, 50%),.5);
+            }
+            &:active,
+            &.is-selected {
+                border-color: transparentize($button-background-color,.5);
+                background-color: mix($white, $button-background-color, 85%);
+                box-shadow: inset 0 0 $sp8 0 transparentize($button-background-color,.7);
+            }
+
+            &.#{$variant}dt-btn__outlined {
+                border-color: lighten($blue-020,10%);
+                background-color: transparentize($white,1);
+                color: $white;
+
+                &:active,
+                &.is-selected {
+                    border-color: transparentize($white,.1);
+                    background-color: transparentize(mix($white, $button-background-color, 50%),.9);
+                    box-shadow: none;
+                }
+            }
+
+            &.#{$variant}dt-btn__clear {
+                background-color: transparent;
+                color: $white;
+
+                &:hover {
+                    background-color: transparentize(mix($white, $button-background-color, 90%),.95);
+                }
+                &:focus {
+                    box-shadow: 0 0 0 $sp4 transparentize(mix($white, $button-background-color, 50%),.75);
+                }
+                &:active,
+                &.is-selected {
+                    border-color: transparent;
+                    background-color: transparentize(mix($white, $button-background-color, 50%),.9);
+                    box-shadow: none;
+                }
+                &[disabled] {
+                    background-color: $gray-010;
+                    color: $gray-060;
                 }
             }
         }
     }
 }
 
-@include btn-base(primary, $button-primary, $button-primary-hover, $white);
-@include btn-base(secondary, $button-secondary, $button-secondary-hover, $gray-100);
-@include btn-base(danger, $button-danger, $button-danger-hover, $white);
-@include btn-base(teal, $button-teal, $button-teal-hover, $white);
-// @include btn-base(inverted, $button-inverted, $button-inverted-hover, $white, $button-primary);
 
+//  ============================================================================
+//  $   SIZES
+//  ----------------------------------------------------------------------------
 @each $breakpoint, $variant in $rwd-variants {
     @include rwd($breakpoint) {
-        .#{$variant}dt-btn__outlined {
-            border-color: $gray-040;
-            background-color: $white;
-
-            &:hover {
-                border-color: $gray-080;
-                background-color: mix($white, transparentize($button-secondary,.9),25%);
-            }
-
-            &:active {
-                background-color: mix($white, transparentize($button-secondary,.9),25%);
-                box-shadow: 0 0 0 4px transparentize($gray-080,.9);
-            }
-
-            &.is-selected {
-                border-color: $gray-080;
-                background-color: mix($white, transparentize($button-secondary,.5),75%);
-                box-shadow: 0 $sp2 $sp8 0 transparentize(darken($button-secondary,25%),.75);
-            }
-
-            &[disabled] {
-                border-color: transparent;
-            }
+        .#{$variant}dt-btn__sm {
+            padding: 0.6rem 0.8rem 0.65rem;
+            font-size: $fs-caption;
         }
-
-        .#{$variant}dt-btn__clear {
-            background-color: $white;
-
-            &:hover {
-                background-color: mix($white, transparentize($button-secondary,.9),25%);
-            }
-
-            &:active {
-                background-color: mix($white, transparentize($button-secondary,.9),25%);
-                box-shadow: 0 0 0 4px transparentize($gray-080,.9);
-            }
-
-            &.is-selected {
-                background-color: mix($white, transparentize($button-secondary,.5),10%);
-                box-shadow: none;
-            }
+        .#{$variant}dt-btn__md {
+            padding: 0.7rem 1.1rem 0.75rem;
+            font-size: $fs-body2;
+        }
+        .#{$variant}dt-btn__lg {
+            padding: 0.7rem 1.25rem 0.75rem;
+            font-size: $fs-subheading;
+        }
+        .#{$variant}dt-btn__xl {
+            padding: 0.7rem 1.5rem 0.8rem;
+            font-size: $fs-headline;
         }
     }
 }

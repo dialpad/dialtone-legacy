@@ -14,161 +14,31 @@ description: Buttons are UI elements which allow users to take actions throughou
         <li>Inverted</li>
     </ol>
 
-    <h3 class="dds-docs--subheader">Primary</h3>
-    <p>The primary button style highlights the most important action(s). To help provide clarity to users, it is recommended that only <em>one</em> button have this style within a section or page.</p>
-    <div class="dtd-example">
-{% highlight html linenos %}
-<button class="dt-btn-primary" type="button" aria-pressed="false">…</button>
-<button class="dt-btn-primary is-selected" type="button" aria-pressed="false">…</button>
-<button class="dt-btn-primary" type="button" aria-pressed="false" disabled>…</button>
-{% endhighlight %}
-        <div class="dtd-example--preview">
-            <table class="dt-table m0">
-                <thead>
-                    <tr>
-                        <th scope="col" width="15%">Name</th>
-                        <th scope="col" width="25%">Class</th>
-                        <th scope="col" width="20%" class="ta-center">Default</th>
-                        <th scope="col" width="20%" class="ta-center">Selected</th>
-                        <th scope="col" width="20%" class="ta-center">Disabled</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row" class="va-middle fs-body1">Primary</th>
-                        <td class="va-middle ff-mono fs-fine">.dt-btn-primary</td>
-                        <td class="va-middle px4"><button class="dt-btn-primary" type="button" aria-pressed="false">Place Call</button></td>
-                        <td class="va-middle px4"><button class="dt-btn-primary is-selected" type="button" aria-pressed="false">Place Call</button></td>
-                        <td class="va-middle px4"><button class="dt-btn-primary" type="button" aria-pressed="false" disabled>Place Call</button></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <h3 class="dds-docs--subheader">Secondary</h3>
-    <p>The secondary button styles are provided to help communicate possible, alternate actions the user could take. These are provided in three, graduating styles: clear (default), outlined, and filled. The button style selected is contextually dependent. The more important the action, the heavier the button's visual style should be.</p>
-    <div class="dtd-example">
-{% highlight html linenos %}
-<button class="dt-btn-secondary" type="button" aria-pressed="false">…</button>
-<button class="dt-btn-secondary is-selected" type="button" aria-pressed="false">…</button>
-<button class="dt-btn-secondary" type="button" aria-pressed="false" disabled>…</button>
-{% endhighlight %}
-        <div class="dtd-example--preview">
-            <table class="dt-table m0">
-                <thead>
-                    <tr>
-                        <th scope="col" width="15%">Name</th>
-                        <th scope="col" width="25%">Class</th>
-                        <th scope="col" width="20%" class="ta-center">Default</th>
-                        <th scope="col" width="20%" class="ta-center">Selected</th>
-                        <th scope="col" width="20%" class="ta-center">Disabled</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for item in site.data.buttons.secondary %}
-                        {% assign types = item.classes %}
-                        {% for class in types %}
-                        <tr>
-                            <th scope="row" class="va-middle fs-body1">{{ class.type }}</th>
-                            <td class="va-middle ff-mono fs-fine">.{{ item.class }} {% if class.class != nil %}.{{ class.class }}{% endif %}</td>
-                            <td class="va-middle px4"><button class="{{ item.class }} {{ class.class }} w100 ws-nowrap" type="button" aria-pressed="false">Place Call</button></td>
-                            <td class="va-middle px4"><button class="{{ item.class }} {{ class.class }} is-selected w100 ws-nowrap" type="button" aria-pressed="false">Place Call</button></td>
-                            <td class="va-middle px4"><button class="{{ item.class }} {{ class.class }} w100 ws-nowrap" type="button" aria-pressed="false" disabled>Place Call</button></td>
-                        </tr>
-                        {% endfor %}
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <h3 class="dds-docs--subheader">Danger</h3>
-    <p>The secondary button styles are provided to help communicate possible, alternate actions the user could take. These are provided in three, graduating styles: clear (default), outlined, and filled. The button style selected is contextually dependent. The more important the action, the heavier the button's visual style should be.</p>
-    <div class="dtd-example">
-{% highlight html linenos %}
-<button class="dt-btn-secondary dt-btn__clear" type="button" aria-pressed="false">…</button>
-<button class="dt-btn-secondary dt-btn__outlined" type="button" aria-pressed="false">…</button>
-<button class="dt-btn-secondary" type="button" aria-pressed="false">…</button>
-{% endhighlight %}
-        <div class="dtd-example--preview">
-            <table class="dt-table m0">
-                <thead>
-                    <tr>
-                        <th scope="col" width="15%">Name</th>
-                        <th scope="col" width="25%">Class</th>
-                        <th scope="col" width="20%" class="ta-center">Default</th>
-                        <th scope="col" width="20%" class="ta-center">Selected</th>
-                        <th scope="col" width="20%" class="ta-center">Disabled</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for item in site.data.buttons.danger %}
-                        {% assign types = item.classes %}
-                        {% for class in types %}
-                        <tr>
-                            <th scope="row" class="va-middle fs-body1">{{ class.title }}</th>
-                            <td class="va-middle ff-mono fs-fine">.{{ item.class }} {% if class.class != nil %}.{{ class.class }}{% endif %}</td>
-                            <td class="va-middle px4"><button class="{{ item.class }} {{ class.class }} w100 ws-nowrap" type="button" aria-pressed="false">Place Call</button></td>
-                            <td class="va-middle px4"><button class="{{ item.class }} {{ class.class }} is-selected w100 ws-nowrap" type="button" aria-pressed="false">Place Call</button></td>
-                            <td class="va-middle px4"><button class="{{ item.class }} {{ class.class }} w100 ws-nowrap" type="button" aria-pressed="false" disabled>Place Call</button></td>
-                        </tr>
-                        {% endfor %}
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
-    </div>
+    {% include_relative buttons/primary.html %}
+    {% include_relative buttons/danger.html %}
+    {% include_relative buttons/inverted.html %}
 </section>
 <section class="dds-docs--section">
-    <h2 class="dds-docs--header">Secondary buttons</h2>
-    <p>To do</p>
-</section>
-<section class="dds-docs--section">
-    <h2 class="dds-docs--header">Danger buttons</h2>
-    <p>To do</p>
-</section>
-<section class="dds-docs--section">
-    <h2 class="dds-docs--header">Outlined buttons</h2>
-    <p>To do</p>
-</section>
-<section class="dds-docs--section">
-    <h2 class="dds-docs--header">Link buttons</h2>
-    <p>To do</p>
-</section>
-<section class="dds-docs--section">
-    <h2 class="dds-docs--header">Dropdown buttons</h2>
-    <p>To do</p>
-</section>
-<section class="dds-docs--section">
-    <h2 class="dds-docs--header">Icon buttons</h2>
-    <p>To do</p>
-</section>
-<section class="dds-docs--section">
-    <h2 class="dds-docs--header">Hidden button</h2>
-    <p>To do</p>
-</section>
-<section class="dds-docs--section">
-    <h2 class="dds-docs--header">Guidelines</h2>
-    <p>To do</p>
-    <h3 class="dds-docs--header">Layout</h3>
-    <p>To do</p>
-    <h3 class="dds-docs--header">Editorial</h3>
-    <p>To do</p>
-    <h3 class="dds-docs--header">Accessibility</h3>
-    <p>To do</p>
-    <h3 class="dds-docs--header">Related components</h3>
-    <p>To do</p>
-    <h3 class="dds-docs--header">Related patterns</h3>
-    <p>To do</p>
-</section>
-<section class="dds-docs--section">
-    <h2 class="dds-docs--header">Reference</h2>
-    <p>To do</p>
-    <h3 class="dds-docs--header">Types</h3>
-    <p>To do</p>
-    <h3 class="dds-docs--header">Attributes</h3>
-    <p>To do</p>
-    <h3 class="dds-docs--header">Further reading</h3>
-    <p>To do</p>
+    <h2 class="dds-docs--header">Sizes</h2>
+    <p>A button’s default font-size is determined by the body font-size. To change the button’s font-size, use the following classes:</p>
+    <table class="dt-table">
+        <thead>
+            <tr>
+                <th scope="col" width="15%">Name</th>
+                <th scope="col" width="25%">Class</th>
+                <th scope="col" width="10%">Size</th>
+                <th scope="col">Example</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in site.data.buttons.sizes %}
+                <tr>
+                    <th scope="row" class="va-middle fs-body1">{{ item.name }}</th>
+                    <td class="va-middle ff-mono fs-fine">{% if item.class != "N" %}.{{ item.class }}{% else %}<em class="fc-gray fs-body1 ff-mark">N/A</em>{% endif %}</td>
+                    <td class="va-middle">{{ item.size }}</td>
+                    <td class="va-middle"><button class="dt-btn dt-btn__primary {% if item.class != "N" %}{{ item.class }}{% endif %} ws-nowrap" type="button" aria-pressed="false">Place call</button></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </section>

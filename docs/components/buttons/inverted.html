@@ -1,0 +1,36 @@
+<h3 class="dds-docs--subheader">Inverted</h3>
+<p>The inverted button style is used to visually separate buttons set on darker backgrounds.</p>
+<div class="dtd-example">
+{% highlight html linenos %}
+<button class="dt-btn dt-button__primary" type="button" aria-pressed="false">…</button>
+<button class="dt-btn dt-button__outlined" type="button" aria-pressed="false">…</button>
+<button class="dt-btn" type="button" aria-pressed="false">…</button>
+{% endhighlight %}
+    <div class="dtd-example--preview bgc-gray-darker mn1 bbr-sm">
+        <table class="dt-table dt-table__inverted m0">
+            <thead>
+                <tr>
+                    <th scope="col" width="15%">Name</th>
+                    <th scope="col" width="25%">Class</th>
+                    <th scope="col" width="20%" class="ta-center">Default</th>
+                    <th scope="col" width="20%" class="ta-center">Selected</th>
+                    <th scope="col" width="20%" class="ta-center">Disabled</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in site.data.buttons.inverted %}
+                    {% assign types = item.classes %}
+                    {% for class in types %}
+                    <tr>
+                        <th scope="row" class="va-middle fs-body1">{{ class.title }}</th>
+                        <td class="va-middle ff-mono fs-fine">.dt-btn {% if class.class != nil %}.{{ class.class }}{% endif %}</td>
+                        <td class="va-middle px4 ta-center"><button class="dt-btn {{ item.class }} {{ class.class }} w100 ws-nowrap" type="button" aria-pressed="false">Place call</button></td>
+                        <td class="va-middle px4 ta-center"><button class="dt-btn {{ item.class }} {{ class.class }} is-selected w100 ws-nowrap" type="button" aria-pressed="false">Place call</button></td>
+                        <td class="va-middle px4 ta-center"><button class="dt-btn {{ item.class }} {{ class.class }} w100 ws-nowrap" type="button" aria-pressed="false" disabled>Place call</button></td>
+                    </tr>
+                    {% endfor %}
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
