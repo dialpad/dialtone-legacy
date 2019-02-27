@@ -1,41 +1,45 @@
 //
-//  DIALPAD
-//  Inputs
+//  DIALTONE
+//  COMPONENTS: INPUTS
 //
-//  ============================================================================
-//  $   VARIABLES
-//  ----------------------------------------------------------------------------
-$input-padding:         ($spacing-base / 1px) * 0.0625em;
-
+//  These are input classes for Dialpad's design system Dialtone.
+//  For further documentation of these and other classes,
+//  visit https://dialpad.design/components/inputs
+//
+//  TABLE OF CONTENTS
+//  • BASE STYLE
+//  • VALIDATION STATES
+//  • SIZES
+//
 //  ============================================================================
 //  $   BASE STYLE
 //  ----------------------------------------------------------------------------
-.d-input {
-    padding: $input-padding;
+.dt-input {
+    padding: 0.75rem 1rem;
     width: 100%;
-    border: 1px solid $gray-010;
-    border-radius: $br-sm;
-    box-shadow: inset 0 0 1px transparentize($gray-040, 0.8), 0 0 0 transparentize($white, 1);
-    font-family: inherit;
-    font-size: $fs-body1;
-    line-height: $lh-lg;
     outline: none;
+    border: 1px solid $gray-020;
+    border-radius: $br-md;
+    box-shadow: inset 0 0 1px transparentize($gray-040, 0.8), 0 0 0 transparentize($white, 1);
+    font-size: $fs-body1;
+    font-family: inherit;
+    //line-height: $lh-lg;
 
     //  --  PLACEHOLDER
     //  ------------------------------------------------------------------------
     &::-webkit-input-placeholder {
-        color: $gray-020;
+        color: $gray-040;
     }
     // IE
     &:-ms-input-placeholder {
-        color: $gray-020;
+        color: $gray-040;
     }
     // Edge
     &::-ms-input-placeholder {
-        color: $gray-020;
+        color: $gray-040;
     }
     &::placeholder {
-        color: $gray-020;
+        color: $gray-040;
     }
 
     //  --  REMOVE EDGE ADDITIONS
@@ -46,9 +50,9 @@ $input-padding:         ($spacing-base / 1px) * 0.0625em;
     //  ------------------------------------------------------------------------
     &:focus {
         position: relative;
+        outline: 0;
         border-color: $blue-060;
         box-shadow: inset 0 0 $sp2 $gray-010, 0 0 0 $sp4 transparentize($blue-060,0.85);
-        outline: 0;
     }
 
     //  --  DISABLED
@@ -72,8 +76,8 @@ $input-padding:         ($spacing-base / 1px) * 0.0625em;
 //  $  FIELDSET
 //  ----------------------------------------------------------------------------
 fieldset {
-    min-width: 0;
     padding: 0;
+    min-width: 0;
     border: 0;
 }
 
@@ -84,9 +88,9 @@ fieldset {
 .d-label {
     padding: 0 $sp2; // Helps the label visually line up with inputs
     color: $fc-dark;
-    font-family: inherit;
-    font-size: $fs-body1;
     font-weight: $fw-bold;
+    font-size: $fs-body1;
+    font-family: inherit;
     cursor: pointer;
 }
 legend.d-label {
