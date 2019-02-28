@@ -1,39 +1,106 @@
 ---
 layout: page
 title: Textareas
-description: TBD
+description: Multi-line inputs are used to enter longer text portions.
 ---
 <section class="dds-docs--section">
-    <h2 class="dds-docs--header">Default style</h2>
-    <p>To do</p>
+    <h2 class="dds-docs--header">Base Style</h2>
+    <p>Textareas are normally paired with a label, but there are times when they can be used without a label. Placeholder text should primarily be used as a content prompt and only provided when needed.</p>
+    <div class="dtd-example">
+{% highlight html linenos %}
+<label class="dt-label" for="Dialtone--TextareaExample1">…</label>
+<textarea class="dt-textarea" id="Dialtone--TextareaExample1" type="text" placeholder="" />
+<span class="dt-description">…</span>
+{% endhighlight %}
+        <div class="dtd-example--preview">
+            <div class="mb12">
+                <label class="dt-label" for="Dialtone--TextareaExample1">Who would you like to invite?</label>
+                <span class="dt-description">Provide an email address or phone number.</span>
+                <textarea class="dt-textarea" id="Dialtone--TextareaExample1" type="text" placeholder=""></textarea>
+            </div>
+            <div class="mt12">
+                <label class="dt-label" for="Dialtone--TextareaExample2">Who would you like to invite?</label>
+                <span class="dt-description">Provide an email address or phone number.</span>
+                <textarea class="dt-textarea" id="Dialtone--TextareaExample2" type="text" placeholder="" disabled></textarea>
+            </div>
+        </div>
+    </div>
 </section>
 <section class="dds-docs--section">
-    <h2 class="dds-docs--header">Validation states</h2>
-    <p>To do</p>
+    <h2 class="dds-docs--header">Validation States</h2>
+    <p>Provides feedback to the user based on their interction, or lack thereof, with an input.</p>
+
+    <h3 class="dds-docs--subheader">Warning</h3>
+    <p>Warns the user that the value(s) they've entered has a potential problem, but it doesn't block them from proceeding with input submission.</p>
+    <div class="dtd-example">
+{% highlight html linenos %}
+<label class="dt-label" for="Dialtone--TextareaExample-Warning">…</label>
+<span class="dt-description has-warning">…</span>
+<textarea class="dt-textarea has-warning" id="Dialtone--TextareaExample-Warning" type="text" placeholder=""></textarea>
+<span class="dt-input-message has-warning">…</span>
+{% endhighlight %}
+        <div class="dtd-example--preview">
+            <label class="dt-label" for="Dialtone--TextareaExample1">Who would you like to invite?</label>
+            <span class="dt-description has-warning">Provide an email address or phone number.</span>
+            <textarea class="dt-textarea has-warning" id="Dialtone--TextareaExample-Warning" type="text" placeholder=""></textarea>
+            <span class="dt-input-message has-warning">Enter an email address to send invite someone.</span>
+        </div>
+    </div>
+
+    <h3 class="dds-docs--subheader">Error</h3>
+    <p>Alerts the user that the value(s) they've entered is incorrect, not provided, or has some issue that will block them from proceeding with input submission.</p>
+    <div class="dtd-example">
+{% highlight html linenos %}
+<label class="dt-label" for="Dialtone--TextareaExample-Error">…</label>
+<span class="dt-description has-error">…</span>
+<textarea class="dt-textarea has-error" id="Dialtone--TextareaExample-Error" type="text" placeholder=""></textarea>
+<span class="dt-input-message has-error">…</span>
+{% endhighlight %}
+        <div class="dtd-example--preview">
+            <label class="dt-label" for="Dialtone--TextareaExample1">Who would you like to invite?</label>
+            <span class="dt-description has-error">Provide an email address or phone number.</span>
+            <textarea class="dt-textarea has-error" id="Dialtone--TextareaExample-Error" type="text" placeholder=""></textarea>
+            <span class="dt-input-message has-error">You must enter an email address to send an invite.</span>
+        </div>
+    </div>
+
+    <h3 class="dds-docs--subheader">Success</h3>
+    <p>Notifies the user that the value(s) they've entered is correct.</p>
+    <div class="dtd-example">
+{% highlight html linenos %}
+<label class="dt-label" for="Dialtone--TextareaExample-Success">…</label>
+<span class="dt-description has-success">…</span>
+<textarea class="dt-textarea has-success" id="Dialtone--TextareaExample-Success" type="text" placeholder=""></textarea>
+<span class="dt-input-message has-success">…</span>
+{% endhighlight %}
+        <div class="dtd-example--preview">
+            <label class="dt-label" for="Dialtone--TextareaExample1">Who would you like to invite?</label>
+            <span class="dt-description has-success">Provide an email address or phone number.</span>
+            <textarea class="dt-textarea has-success" id="Dialtone--TextareaExample-Success" type="text" placeholder="">shane.holmes@example.com, amy.woods@example.com</textarea>
+            <span class="dt-input-message has-success">You've entered an email!</span>
+        </div>
+    </div>
 </section>
 <section class="dds-docs--section">
     <h2 class="dds-docs--header">Sizes</h2>
-    <p>To do</p>
-</section>
-<section class="dds-docs--section">
-    <h2 class="dds-docs--header">Guidelines</h2>
-    <p>To do</p>
-    <h3 class="dds-docs--header">Behaviors</h3>
-    <p>To do</p>
-    <h3 class="dds-docs--header">Editorial</h3>
-    <p>To do</p>
-    <h3 class="dds-docs--header">Accessibility</h3>
-    <p>To do</p>
-    <h3 class="dds-docs--header">Related components</h3>
-    <p>To do</p>
-    <h3 class="dds-docs--header">Related patterns</h3>
-    <p>To do</p>
-</section>
-<section class="dds-docs--section">
-    <h2 class="dds-docs--header">Reference</h2>
-    <p>To do</p>
-    <h3 class="dds-docs--header">Attributes</h3>
-    <p>To do</p>
-    <h3 class="dds-docs--header">Further reading</h3>
-    <p>To do</p>
+    <table class="dt-table">
+        <thead>
+            <tr>
+                <th scope="col" width="15%">Name</th>
+                <th scope="col" width="15%">Class</th>
+                <th scope="col" width="10%">Size</th>
+                <th scope="col">Example</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in site.data.inputs.textarea-sizes %}
+                <tr>
+                    <th scope="row" class="va-middle fs-body1">{{ item.name }}</th>
+                    <td class="va-middle ff-mono fs-fine">{% if item.class != "N" %}.{{ item.class }}{% else %}<em class="fc-gray fs-body1 ff-mark">N/A</em>{% endif %}</td>
+                    <td class="va-middle">{{ item.size }}</td>
+                    <td class="va-middle"><textarea class="dt-textarea {% if item.class != "N" %}{{ item.class }}{% endif %}" id="Dialtone--TextareaExample-{{ item.name }}" placeholder="e.g. Can you hear me?"></textarea></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </section>
