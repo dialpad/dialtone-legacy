@@ -1,0 +1,100 @@
+---
+layout: page
+title: Tables
+description: Used to organize and list data set information. While data visualization helps quickly summarize a data set, data tables allows customers to compare and data individual data rows.
+---
+<section class="dds-docs--section">
+    <h2 class="dds-docs--header">Base Style</h2>
+    <div class="dtd-example">
+{% highlight html linenos %}
+<table class="dt-table">
+    <thead>
+        <tr>
+            <th scope="col">…</th>
+            <th scope="col">…</th>
+            <th scope="col" width="10%">…</th>
+            <th scope="col">…</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">…</th>
+            <td>…</td>
+            <td>…</td>
+            <td>…</td>
+        </tr>
+    </tbody>
+</table>
+{% endhighlight %}
+        <div class="dtd-example--preview">
+            <table class="dt-table m0">
+                <thead>
+                    <tr>
+                        <th scope="col">Office</th>
+                        <th scope="col">Country</th>
+                        <th scope="col" width="10%">Employees</th>
+                        <th scope="col">Contact</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in site.data.tables.table-example %}
+                    <tr>
+                        <th scope="row">{{ i.office }}</th>
+                        <td>{{ i.country }}</td>
+                        <td>{{ i.size }}</td>
+                        <td>{{ i.contact }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+<section class="dds-docs--section">
+    <h2 class="dds-docs--header">Inverted Style</h2>
+    <p>Used when you want to display a data table on a darker background</p>
+    <div class="dtd-example">
+{% highlight html linenos %}
+<table class="dt-table dt-table__inverted">
+    <thead>
+        <tr>
+            <th scope="col">…</th>
+            <th scope="col">…</th>
+            <th scope="col" width="10%">…</th>
+            <th scope="col">…</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">…</th>
+            <td>…</td>
+            <td>…</td>
+            <td>…</td>
+        </tr>
+    </tbody>
+</table>
+{% endhighlight %}
+        <div class="dtd-example--preview bgc-gray-darker mn1 mt0 bbr-md">
+            <table class="dt-table dt-table__inverted m0">
+                <thead>
+                    <tr>
+                        <th scope="col">Office</th>
+                        <th scope="col">Country</th>
+                        <th scope="col" width="10%">Employees</th>
+                        <th scope="col">Contact</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in site.data.tables.table-example %}
+                    <tr>
+                        <th scope="row">{{ i.office }}</th>
+                        <td>{{ i.country }}</td>
+                        <td>{{ i.size }}</td>
+                        <td>{{ i.contact }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
