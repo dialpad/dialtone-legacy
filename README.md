@@ -6,4 +6,4 @@ Dialpad Design is the home for Dialtone, Dialpad's design system. It includes th
 
 ## Have a question?
 
-If you have a question, please feel free to [open an issue](https://github.com/dialpad/design/issues/new) or [pop into our Slack channel](https://dialpad.slack.com/messages/CEDUKPKC1).
+If you have a question, please feel free to [open an issue](https://github.com/dialpad/design/issues/new).
