@@ -24,8 +24,14 @@
         %#{$variant}br { border-right: $bw1 $bs-solid $bc-current !important; }
         %#{$variant}bb { border-bottom: $bw1 $bs-solid $bc-current !important; }
         %#{$variant}bl { border-left: $bw1 $bs-solid $bc-current !important; }
-        %#{$variant}bx { @extend %#{$variant}br; @extend %#{$variant}bl; }
-        %#{$variant}by { @extend %#{$variant}bt; @extend %#{$variant}bb; }
+        %#{$variant}bx {
+            border-right: $bw1 $bs-solid $bc-current !important;
+            border-left: $bw1 $bs-solid $bc-current !important;
+        }
+        %#{$variant}by {
+            border-top: $bw1 $bs-solid $bc-current !important;
+            border-bottom: $bw1 $bs-solid $bc-current !important;
+        }
 
         //
         //  $   WIDTHS
@@ -35,8 +41,18 @@
         @each $step, $value in $border-widths { %#{$variant}brw#{$step} { border-right-width: $value !important; } }
         @each $step, $value in $border-widths { %#{$variant}bbw#{$step} { border-bottom-width: $value !important; } }
         @each $step, $value in $border-widths { %#{$variant}blw#{$step} { border-left-width: $value !important; } }
-        @each $step, $value in $border-widths { %#{$variant}bxw#{$step} { @extend %#{$variant}brw#{$step}; @extend %#{$variant}blw#{$step}; } }
-        @each $step, $value in $border-widths { %#{$variant}byw#{$step} { @extend %#{$variant}btw#{$step}; @extend %#{$variant}bbw#{$step}; } }
+        @each $step, $value in $border-widths {
+            %#{$variant}bxw#{$step} {
+                border-right-width: $value !important;
+                border-left-width: $value !important;
+            }
+        }
+        @each $step, $value in $border-widths {
+            %#{$variant}byw#{$step} {
+                border-top-width: $value !important;
+                border-bottom-width: $value !important;
+            }
+        }
 
         //
         //  $   STYLES
