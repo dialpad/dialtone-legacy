@@ -1,0 +1,94 @@
+//
+//  DIALTONE
+//  DEFINITIONS > UTIITIES > BORDERS
+//
+//  These are the base border definitions, which are used by classes or can be
+//  used within Vue components. For further documentation of these values,
+//  please visit https://dialpad.design/definitions/utilities/borders
+//
+//  TABLE OF CONTENTS
+//  • DIRECTIONS
+//  • WIDTHS
+//  • STYLES
+//  • COLORS
+//  • BORDER RADIUS
+//
+//  ============================================================================
+@each $breakpoint, $variant in $rwd-variants {
+    @include rwd($breakpoint) {
+        //
+        //  $   DIRECTIONS
+        //  --------------------------------------------------------------------
+        %#{$variant}ba { border: $bw1 $bs-solid $bc-current !important; }
+        %#{$variant}bt { border-top: $bw1 $bs-solid $bc-current !important; }
+        %#{$variant}br { border-right: $bw1 $bs-solid $bc-current !important; }
+        %#{$variant}bb { border-bottom: $bw1 $bs-solid $bc-current !important; }
+        %#{$variant}bl { border-left: $bw1 $bs-solid $bc-current !important; }
+        %#{$variant}bx { @extend %#{$variant}br; @extend %#{$variant}bl; }
+        %#{$variant}by { @extend %#{$variant}bt; @extend %#{$variant}bb; }
+
+        //
+        //  $   WIDTHS
+        //  --------------------------------------------------------------------
+        @each $step, $value in $border-widths { %#{$variant}baw#{$step} { border-width: $value !important; } }
+        @each $step, $value in $border-widths { %#{$variant}btw#{$step} { border-top-width: $value !important; } }
+        @each $step, $value in $border-widths { %#{$variant}brw#{$step} { border-right-width: $value !important; } }
+        @each $step, $value in $border-widths { %#{$variant}bbw#{$step} { border-bottom-width: $value !important; } }
+        @each $step, $value in $border-widths { %#{$variant}blw#{$step} { border-left-width: $value !important; } }
+        @each $step, $value in $border-widths { %#{$variant}bxw#{$step} { @extend %#{$variant}brw#{$step}; @extend %#{$variant}blw#{$step}; } }
+        @each $step, $value in $border-widths { %#{$variant}byw#{$step} { @extend %#{$variant}btw#{$step}; @extend %#{$variant}bbw#{$step}; } }
+
+        //
+        //  $   STYLES
+        //  --------------------------------------------------------------------
+        %#{$variant}bas-solid   { border-style: $bs-solid !important; }
+        %#{$variant}bts-solid   { border-top-style: $bs-solid !important; }
+        %#{$variant}brs-solid   { border-right-style: $bs-solid !important; }
+        %#{$variant}bbs-solid   { border-bottom-style: $bs-solid !important; }
+        %#{$variant}bls-solid   { border-left-style: $bs-solid !important; }
+
+        %#{$variant}bas-dashed  { border-style: $bs-dashed !important; }
+        %#{$variant}bts-dashed  { border-top-style: $bs-dashed !important; }
+        %#{$variant}brs-dashed  { border-right-style: $bs-dashed !important; }
+        %#{$variant}bbs-dashed  { border-bottom-style: $bs-dashed !important; }
+        %#{$variant}bls-dashed  { border-left-style: $bs-dashed !important; }
+
+        //
+        //  $   COLORS
+        //  --------------------------------------------------------------------
+        @each $step, $value in $border-colors {
+            %#{$variant}bc-#{$step} { border-color: $value !important; }
+        }
+
+        //
+        //  $   RADIUS
+        //  --------------------------------------------------------------------
+        @each $step, $value in $border-radius {
+            %#{$variant}br-#{$step} { border-radius: $value !important; }
+        }
+        @each $step, $value in $border-radius {
+            %#{$variant}btr-#{$step} {
+                border-top-left-radius: $value !important;
+                border-top-right-radius: $value !important;
+            }
+        }
+        @each $step, $value in $border-radius {
+            %#{$variant}bbr-#{$step} {
+                border-bottom-right-radius: $value !important;
+                border-bottom-left-radius: $value !important;
+            }
+        }
+        @each $step, $value in $border-radius {
+            %#{$variant}blr-#{$step} {
+                border-top-left-radius: $value !important;
+                border-bottom-left-radius: $value !important;
+            }
+        }
+        @each $step, $value in $border-radius {
+            %#{$variant}brr-#{$step} {
+                border-top-right-radius: $value !important;
+                border-bottom-right-radius: $value !important;
+            }
+        }
+    }
+}

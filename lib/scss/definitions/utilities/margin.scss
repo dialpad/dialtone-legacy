@@ -1,0 +1,45 @@
+//
+//  DIALTONE
+//  DEFINITIONS > UTILITIES > MARGIN
+//
+//  These are the base margin values, which are used by classes or can be used
+//  within Vue components. For further documentation of these values,
+//  visit https://dialpad.design/utilities/margin
+//
+//  ============================================================================
+@each $breakpoint, $variant in $rwd-variants {
+    @include rwd($breakpoint) {
+        //
+        //  $$   MARGINS
+        //  --------------------------------------------------------------------
+        @each $step, $value in $spacing-units { %#{$variant}m#{$step}  { margin: $value !important; } }
+        @each $step, $value in $spacing-units { %#{$variant}mt#{$step} { margin-top: $value !important; } }
+        @each $step, $value in $spacing-units { %#{$variant}mr#{$step} { margin-right: $value !important; } }
+        @each $step, $value in $spacing-units { %#{$variant}mb#{$step} { margin-bottom: $value !important; } }
+        @each $step, $value in $spacing-units { %#{$variant}ml#{$step} { margin-left: $value !important; } }
+        @each $step, $value in $spacing-units { %#{$variant}mx#{$step} { @extend %#{$variant}ml#{$step}; @extend %#{$variant}mr#{$step}; } }
+        @each $step, $value in $spacing-units { %#{$variant}my#{$step} { @extend %#{$variant}mt#{$step}; @extend %#{$variant}mb#{$step}; } }
+
+        //
+        //  $$   NEGATIVE MARGINS
+        //  --------------------------------------------------------------------
+        @each $step, $value in $negative-margins { %#{$variant}mn#{$step} { margin: -$value !important; } }
+        @each $step, $value in $negative-margins { %#{$variant}mnt#{$step} { margin-top: -$value !important; } }
+        @each $step, $value in $negative-margins { %#{$variant}mnr#{$step} { margin-right: -$value !important; } }
+        @each $step, $value in $negative-margins { %#{$variant}mnb#{$step} { margin-bottom: -$value !important; } }
+        @each $step, $value in $negative-margins { %#{$variant}mnl#{$step} { margin-left: -$value !important; } }
+        @each $step, $value in $negative-margins { %#{$variant}mnx#{$step} { @extend %#{$variant}mnl#{$step}; @extend %#{$variant}mnr#{$step}; } }
+        @each $step, $value in $negative-margins { %#{$variant}mny#{$step} { @extend %#{$variant}mnt#{$step}; @extend %#{$variant}mnb#{$step}; } }
+
+        //
+        //  $   AUTO MARGINS
+        //  --------------------------------------------------------------------
+        %#{$variant}m-auto  { margin: auto !important; }
+        %#{$variant}mt-auto { margin-top: auto !important; }
+        %#{$variant}mr-auto { margin-right: auto !important; }
+        %#{$variant}mb-auto { margin-bottom: auto !important; }
+        %#{$variant}ml-auto { margin-left: auto !important; }
+        %#{$variant}mx-auto { @extend %#{$variant}mr-auto; @extend %#{$variant}ml-auto; }
+        %#{$variant}my-auto { @extend %#{$variant}mt-auto; @extend %#{$variant}mb-auto; }
+    }
+}

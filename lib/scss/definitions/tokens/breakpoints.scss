@@ -1,10 +1,10 @@
 //
 //  DIALTONE
-//  CONSTANTS: BREAKPOINTS
+//  TOKENS: BREAKPOINTS
 //
-//  These are breakpoint constants and mixins for Dialpad's design system Dialtone.
-//  For further documentation of these and other classes,
-//  visit https://dialpad.design/constants/breakpoints
+//  These are breakpoint tokens and mixins for Dialpad's design system Dialtone.
+//  For further documentation of these values, please visit:
+//  https://dialpad.design/tokens/breakpoints
 //
 //  TABLE OF CONTENTS
 //  • Breakpoints
@@ -34,12 +34,23 @@ $breakpoints: (
 
 
 //  ============================================================================
+//  $   DIRECTIONS
+//  ----------------------------------------------------------------------------
+$directions: (
+    a: all,
+    t: top,
+    r: right,
+    b: bottom,
+    l: left,
+);
+
+//  ============================================================================
 //  $   RESPONSIVE NAME MIXIN
 //      Used for creating responsive utility class names
 //  ----------------------------------------------------------------------------
 $rwd-variants: ("": "");
 @each $key in map-keys($breakpoints) {
-    $rwd-variants: map-merge($rwd-variants, ($key: "#{$key}\\:"));
+    $rwd-variants: map-merge($rwd-variants, ($key: "#{$key}__"));
 }
 
 
@@ -58,7 +69,7 @@ $rwd-variants: ("": "");
         //  If the value exists
         @if $value != null {
             //  Prints a media query based on the value
-            @media (max-width: $value) {
+            @media screen and (max-width: $value) {
                 @content;
             }
         }
