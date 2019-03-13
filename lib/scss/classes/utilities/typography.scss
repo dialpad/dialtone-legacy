@@ -18,13 +18,7 @@
 //  ============================================================================
 //  $   FONT FACE
 //  ----------------------------------------------------------------------------
-$ff-styles: (
-    200: MarkWeb-Light,
-    400: MarkWeb,
-    500: MarkWeb-Medium,
-    700: MarkWeb-Bold,
-);
-@each $key, $name in $ff-styles {
+@each $key, $name in $font-face {
     @font-face {
         font-weight: $key;
         font-family: "#{$name}";
@@ -33,251 +27,153 @@ $ff-styles: (
     }
 }
 
-//  ============================================================================
-//  $$  FONT STYLE CLASSES
-//  ----------------------------------------------------------------------------
 @each $breakpoint, $variant in $rwd-variants {
-    @include rwd($breakpoint) {
-        .#{$variant}ff-mark-light      { font-weight: 200; font-family: $ff-mark-light !important; }
-        .#{$variant}ff-mark            { font-family: $ff-mark !important; }
-        .#{$variant}ff-mark-medium     { font-weight: 500; font-family: $ff-mark-medium !important; }
-        .#{$variant}ff-mark-bold       { font-weight: 700; font-family: $ff-mark-bold !important; }
-        .#{$variant}ff-sans            { font-family: $ff-sans !important; }
-        .#{$variant}ff-mono            { font-family: $ff-mono !important; }
-        .#{$variant}ff-initial         { font-family: initial !important; }
-        .#{$variant}ff-inherit         { font-family: inherit !important; }
-        .#{$variant}ff-unset           { font-family: unset !important; }
+    //
+    //  $$   FONT STYLES
+    //  ------------------------------------------------------------------------
+    .#{$variant}ff-mark-light      { @extend %#{$variant}ff-mark-light; }
+    .#{$variant}ff-mark            { @extend %#{$variant}ff-mark; }
+    .#{$variant}ff-mark-medium     { @extend %#{$variant}ff-mark-medium; }
+    .#{$variant}ff-mark-bold       { @extend %#{$variant}ff-mark-bold; }
+    .#{$variant}ff-sans            { @extend %#{$variant}ff-sans; }
+    .#{$variant}ff-mono            { @extend %#{$variant}ff-mono; }
+    .#{$variant}ff-initial         { @extend %#{$variant}ff-initial; }
+    .#{$variant}ff-inherit         { @extend %#{$variant}ff-inherit; }
+    .#{$variant}ff-unset           { @extend %#{$variant}ff-unset; }
+
+    //
+    //  $$   FONT SIZES
+    //  ------------------------------------------------------------------------
+    //  --   Resets
+    h1, h2, h3, h4, h5, h6, p {
+        margin-top: $sp0;
     }
-}
 
-
-//  ============================================================================
-//  $   HEADER RESETS
-//  ----------------------------------------------------------------------------
-h1, h2, h3, h4, h5, h6, p {
-    margin-top: 0;
-}
-
-//  ============================================================================
-//  $   SIZES
-//  ----------------------------------------------------------------------------
-@each $breakpoint, $variant in $rwd-variants {
-    @include rwd($breakpoint) {
-        .#{$variant}fs-display     { font-size: $fs-display !important; }
-        .#{$variant}fs-title       { font-size: $fs-title !important; }
-        .#{$variant}fs-headline    { font-size: $fs-headline !important; }
-        .#{$variant}fs-subheading  { font-size: $fs-subheading !important; }
-        .#{$variant}fs-body2       { font-size: $fs-body2 !important; }
-        .#{$variant}fs-body1       { font-size: $fs-body1 !important; }
-        .#{$variant}fs-caption     { font-size: $fs-caption !important; }
-        .#{$variant}fs-fine        { font-size: $fs-fine !important; }
-        .#{$variant}fs-caps        { text-transform: $tt-uppercase; font-size: $fs-caps !important; }
-        .#{$variant}fs-initial     { font-size: initial !important; }
-        .#{$variant}fs-inherit     { font-size: inherit !important; }
-        .#{$variant}fs-unset       { font-size: unset !important; }
+    //  Correctly assign the font-face for HTML tags that are bold by default
+    h1, h2, h3, h4, h5, h6,
+    strong,
+    table th {
+        font-weight: $fw-bold;
+        font-family: $ff-mark-bold;
     }
-}
 
+    .#{$variant}fs-caps              { @extend %#{$variant}fs-caps; }
+    @each $key, $value in $font-size { .#{$variant}fs-#{$key} { @extend %#{$variant}fs-#{$key}; } }
 
-//  ============================================================================
-//  $$  FONT WEIGHT
-//  ----------------------------------------------------------------------------
-@each $breakpoint, $variant in $rwd-variants {
-    @include rwd($breakpoint) {
-        .#{$variant}fw-light       { font-weight: $fw-light !important; }
-        .#{$variant}fw-normal      { font-weight: $fw-normal !important; }
-        .#{$variant}fw-medium      { font-weight: $fw-medium !important; }
-        .#{$variant}fw-bold        { font-weight: $fw-bold !important; }
-        .#{$variant}fw-initial     { font-weight: initial !important; }
-        .#{$variant}fw-inherit     { font-weight: inherit !important; }
-        .#{$variant}fw-unset       { font-weight: unset !important; }
-    }
-}
+    //
+    //  $$   FONT WEIGHT
+    //  ------------------------------------------------------------------------
+    @each $key, $value in $font-weight { .#{$variant}fw-#{$key} { @extend %#{$variant}fw-#{$key}; } }
 
-//  Correctly assign the font-face for HTML tags that are bold by default
-h1, h2, h3, h4, h5, h6,
-strong,
-table th {
-    font-weight: 700;
-    font-family: $ff-mark-bold;
-}
+    //
+    //  $$   FONT STYLES
+    //  ------------------------------------------------------------------------
+    .#{$variant}ft-normal      { @extend %#{$variant}ft-normal; }
+    .#{$variant}ft-italic      { @extend %#{$variant}ft-italic; }
+    .#{$variant}ft-initial     { @extend %#{$variant}ft-initial; }
+    .#{$variant}ft-inherit     { @extend %#{$variant}ft-inherit; }
+    .#{$variant}ft-unset       { @extend %#{$variant}ft-unset; }
 
+    //
+    //  $$   TEXT TRANSFORM
+    //  ------------------------------------------------------------------------
+    .#{$variant}tt-capitalize  { @extend %#{$variant}tt-capitalize; }
+    .#{$variant}tt-lowercase   { @extend %#{$variant}tt-lowercase; }
+    .#{$variant}tt-uppercase   { @extend %#{$variant}tt-uppercase; }
+    .#{$variant}tt-none        { @extend %#{$variant}tt-none; }
+    .#{$variant}tt-initial     { @extend %#{$variant}tt-initial; }
+    .#{$variant}tt-inherit     { @extend %#{$variant}tt-inherit; }
+    .#{$variant}tt-unset       { @extend %#{$variant}tt-unset; }
 
-//  ============================================================================
-//  $$  FONT STYLES
-//  ----------------------------------------------------------------------------
-@each $breakpoint, $variant in $rwd-variants {
-    @include rwd($breakpoint) {
-        .#{$variant}ft-normal      { font-style: normal !important; }
-        .#{$variant}ft-italic      { font-style: italic !important; }
-        .#{$variant}ft-initial     { font-style: initial !important; }
-        .#{$variant}ft-inherit     { font-style: inherit !important; }
-        .#{$variant}ft-unset       { font-style: unset !important; }
-    }
-}
+    //
+    //  $$   TEXT DECORATION
+    //  ------------------------------------------------------------------------
+    .#{$variant}td-underline   { @extend %#{$variant}td-underline; }
+    .#{$variant}td-overline    { @extend %#{$variant}td-overline; }
+    .#{$variant}td-line-through{ @extend %#{$variant}td-line-through; }
+    .#{$variant}td-initial     { @extend %#{$variant}td-initial; }
+    .#{$variant}td-inherit     { @extend %#{$variant}td-inherit; }
+    .#{$variant}td-unset       { @extend %#{$variant}td-unset; }
+    .#{$variant}tds-solid      { @extend %#{$variant}tds-solid; }
+    .#{$variant}tds-double     { @extend %#{$variant}tds-double; }
+    .#{$variant}tds-dotted     { @extend %#{$variant}tds-dotted; }
+    .#{$variant}tds-dashed     { @extend %#{$variant}tds-dashed; }
+    .#{$variant}tds-wavy       { @extend %#{$variant}tds-wavy; }
+    .#{$variant}tds-initial    { @extend %#{$variant}tds-initial; }
+    .#{$variant}tds-inherit    { @extend %#{$variant}tds-inherit; }
+    .#{$variant}tds-unset      { @extend %#{$variant}tds-unset; }
 
+    //
+    //  $$   TEXT ALIGN
+    //  ------------------------------------------------------------------------
+    .#{$variant}ta-left        { @extend %#{$variant}ta-left; }
+    .#{$variant}ta-center      { @extend %#{$variant}ta-center; }
+    .#{$variant}ta-right       { @extend %#{$variant}ta-right; }
+    .#{$variant}ta-justify     { @extend %#{$variant}ta-justify; }
+    .#{$variant}ta-unset       { @extend %#{$variant}ta-unset; }
 
-//  ============================================================================
-//  $   TEXT TRANSFORM
-//  ----------------------------------------------------------------------------
-@each $breakpoint, $variant in $rwd-variants {
-    @include rwd($breakpoint) {
-        .#{$variant}tt-capitalize  { text-transform: $tt-capitalize !important; }
-        .#{$variant}tt-lowercase   { text-transform: $tt-lowercase !important; }
-        .#{$variant}tt-uppercase   { text-transform: $tt-uppercase !important; }
-        .#{$variant}tt-none        { text-transform: $tt-none !important; }
-        .#{$variant}tt-initial     { text-transform: initial !important; }
-        .#{$variant}tt-inherit     { text-transform: inherit !important; }
-        .#{$variant}tt-unset       { text-transform: unset !important; }
-    }
-}
+    //
+    //  $$   TEXT COLOR
+    //  ------------------------------------------------------------------------
+    //  --   All the colors
+    @each $key, $value in $color-steps { .#{$variant}fc-#{$key} { @extend %#{$variant}fc-#{$key}; } }
 
-//  ============================================================================
-//  $   TEXT TRANSFORM
-//  ----------------------------------------------------------------------------
-@each $breakpoint, $variant in $rwd-variants {
-    @include rwd($breakpoint) {
-        .#{$variant}td-underline   { text-decoration: underline !important; }
-        .#{$variant}td-overline    { text-decoration: overline !important; }
-        .#{$variant}td-line-through{ text-decoration: line-through !important; }
-        .#{$variant}td-initial     { text-decoration: initial !important; }
-        .#{$variant}td-inherit     { text-decoration: inherit !important; }
-        .#{$variant}td-unset       { text-decoration: unset !important; }
-        .#{$variant}tds-solid      { text-decoration-style: solid !important; }
-        .#{$variant}tds-double     { text-decoration-style: double !important; }
-        .#{$variant}tds-dotted     { text-decoration-style: dotted !important; }
-        .#{$variant}tds-dashed     { text-decoration-style: dashed !important; }
-        .#{$variant}tds-wavy       { text-decoration-style: wavy !important; }
-        .#{$variant}tds-initial    { text-decoration-style: initial !important; }
-        .#{$variant}tds-inherit    { text-decoration-style: inherit !important; }
-        .#{$variant}tds-unset      { text-decoration-style: unset !important; }
-    }
-}
+    //  --   Just the grays
+    .#{$variant}fc-dark        { @extend %#{$variant}fc-dark; }
+    .#{$variant}fc-medium      { @extend %#{$variant}fc-medium; }
+    .#{$variant}fc-light       { @extend %#{$variant}fc-light; }
 
+    //
+    //  $$   LINE HEIGHT
+    //  ------------------------------------------------------------------------
+    @each $key, $value in $line-heights { .#{$variant}lh-#{$key} { @extend %#{$variant}lh-#{$key}; } }
 
-//  ============================================================================
-//  $   TEXT ALIGN
-//  ----------------------------------------------------------------------------
-@each $breakpoint, $variant in $rwd-variants {
-    @include rwd($breakpoint) {
-        .#{$variant}ta-left     { text-align: left !important; }
-        .#{$variant}ta-center   { text-align: center !important; }
-        .#{$variant}ta-right    { text-align: right !important; }
-        .#{$variant}ta-justify  { text-align: justify !important; }
-        .#{$variant}ta-unset    { text-align: unset !important; }
-    }
-}
+    //
+    //  $$   WHITE SPACE
+    //  ------------------------------------------------------------------------
+    .#{$variant}ws-normal      { @extend %#{$variant}ws-normal; }
+    .#{$variant}ws-nowrap      { @extend %#{$variant}ws-nowrap; }
+    .#{$variant}ws-pre         { @extend %#{$variant}ws-pre; }
+    .#{$variant}ws-pre-wrap    { @extend %#{$variant}ws-pre-wrap; }
+    .#{$variant}ws-pre-line    { @extend %#{$variant}ws-pre-line; }
+    .#{$variant}ws-inherit     { @extend %#{$variant}ws-inherit; }
+    .#{$variant}ws-initial     { @extend %#{$variant}ws-initial; }
+    .#{$variant}ws-unset       { @extend %#{$variant}ws-unset; }
 
+    //
+    //  $$   OVERFLOW WRAP
+    //  ------------------------------------------------------------------------
+    .#{$variant}ow-normal      { @extend %#{$variant}ow-normal; }
+    .#{$variant}ow-break-word  { @extend %#{$variant}ow-break-word; }
+    .#{$variant}ow-anywhere    { @extend %#{$variant}ow-anywhere; }
+    .#{$variant}ow-inherit     { @extend %#{$variant}ow-inherit; }
+    .#{$variant}ow-initial     { @extend %#{$variant}ow-initial; }
+    .#{$variant}ow-unset       { @extend %#{$variant}ow-unset; }
 
-//  ============================================================================
-//  $   FONT COLOR
-//  ----------------------------------------------------------------------------
-@each $breakpoint, $variant in $rwd-variants {
-    @include rwd($breakpoint) {
-        @each $key, $value in $color-steps {
-            .#{$variant}fc-#{$key} { color: $value !important; }
+    //
+    //  $$   WORD BREAK
+    //  ------------------------------------------------------------------------
+    .#{$variant}wb-normal      { @extend %#{$variant}wb-normal; }
+    .#{$variant}wb-break-all   { @extend %#{$variant}wb-break-all; }
+    .#{$variant}wb-break-word  { @extend %#{$variant}wb-break-word; }
+    .#{$variant}wb-keep-all    { @extend %#{$variant}wb-keep-all; }
+    .#{$variant}wb-inherit     { @extend %#{$variant}wb-inherit; }
+    .#{$variant}wb-initial     { @extend %#{$variant}wb-initial; }
+    .#{$variant}wb-unset       { @extend %#{$variant}wb-unset; }
+    .#{$variant}truncate       { @extend %#{$variant}truncate; }
 
-            // Gray text colors
-            .#{$variant}fc-dark    { color: $gray-100 !important; }
-            .#{$variant}fc-medium  { color: $gray-080 !important; }
-            .#{$variant}fc-light   { color: $gray-060 !important; }
-        }
-    }
-}
-
-
-//  ============================================================================
-//  $   LINE HEIGHTS
-//  ----------------------------------------------------------------------------
-@each $breakpoint, $variant in $rwd-variants {
-    @include rwd($breakpoint) {
-        .#{$variant}lh-xs          { line-height: $lh-xs; }
-        .#{$variant}lh-sm          { line-height: $lh-sm; }
-        .#{$variant}lh-md          { line-height: $lh-md; }
-        .#{$variant}lh-lg          { line-height: $lh-lg; }
-        .#{$variant}lh-xl          { line-height: $lh-xl; }
-        .#{$variant}lh-xxl         { line-height: $lh-xxl; }
-        .#{$variant}lh-inherit     { line-height: inherit; }
-        .#{$variant}lh-initial     { line-height: initial; }
-        .#{$variant}lh-unset       { line-height: unset; }
-    }
-}
-
-
-//  ============================================================================
-//  $   WHITE SPACE
-//  ----------------------------------------------------------------------------
-@each $breakpoint, $variant in $rwd-variants {
-    @include rwd($breakpoint) {
-        .#{$variant}ws-normal      { white-space: normal; }
-        .#{$variant}ws-nowrap      { white-space: nowrap; }
-        .#{$variant}ws-pre         { white-space: pre; }
-        .#{$variant}ws-pre-wrap    { white-space: pre-wrap; }
-        .#{$variant}ws-pre-line    { white-space: pre-line; }
-        .#{$variant}ws-inherit     { white-space: inherit; }
-        .#{$variant}ws-initial     { white-space: initial; }
-        .#{$variant}ws-unset       { white-space: unset; }
-    }
-}
-
-//  ============================================================================
-//  $   OVERFLOW WORD
-//  ----------------------------------------------------------------------------
-@each $breakpoint, $variant in $rwd-variants {
-    @include rwd($breakpoint) {
-        .#{$variant}ow-normal      { overflow-wrap: normal; }
-        .#{$variant}ow-break-word  { overflow-wrap: break-word; }
-        .#{$variant}ow-anywhere    { overflow-wrap: anywhere; }
-        .#{$variant}ow-inherit     { overflow-wrap: inherit; }
-        .#{$variant}ow-initial     { overflow-wrap: initial; }
-        .#{$variant}ow-unset       { overflow-wrap: unset; }
-    }
-}
-
-
-//  ============================================================================
-//  $   WORD BREAK
-//  ----------------------------------------------------------------------------
-@each $breakpoint, $variant in $rwd-variants {
-    @include rwd($breakpoint) {
-        .#{$variant}wb-normal      { word-break: normal; }
-        .#{$variant}wb-break-all   { word-break: break-all; }
-        .#{$variant}wb-break-word  { word-break: break-word; }
-        .#{$variant}wb-keep-all    { word-break: keep-all; }
-        .#{$variant}wb-inherit     { word-break: inherit; }
-        .#{$variant}wb-initial     { word-break: initial; }
-        .#{$variant}wb-unset       { word-break: unset; }
-        .#{$variant}truncate {
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
-    }
-}
-
-
-//  ============================================================================
-//  $   LISTS
-//  ----------------------------------------------------------------------------
-@each $breakpoint, $variant in $rwd-variants {
-    @include rwd($breakpoint) {
-        .#{$variant}ls-reset {
-            margin: $sp0;
-            padding: $sp0;
-            list-style: none;
-        }
-
-        .#{$variant}lst-none        { list-style-type: none !important; }
-        .#{$variant}lst-disc        { list-style-type: disc !important; }
-        .#{$variant}lst-circle      { list-style-type: circle !important; }
-        .#{$variant}lst-square      { list-style-type: square !important; }
-        .#{$variant}lst-decimal     { list-style-type: decimal !important; }
-        .#{$variant}lst-unset       { list-style-type: unset !important; }
-
-        .#{$variant}lsp-inside      { list-style-position: inside !important; }
-        .#{$variant}lsp-outside     { list-style-position: outside !important; }
-        .#{$variant}lsp-unset       { list-style-position: unset !important; }
-
-        .#{$variant}lsi-none        { list-style-image: none !important; }
-    }
+    //
+    //  $$   LISTS
+    //  ------------------------------------------------------------------------
+    .#{$variant}ls-reset       { @extend %#{$variant}ls-reset; }
+    .#{$variant}lst-none       { @extend %#{$variant}lst-none; }
+    .#{$variant}lst-disc       { @extend %#{$variant}lst-disc; }
+    .#{$variant}lst-circle     { @extend %#{$variant}lst-circle; }
+    .#{$variant}lst-square     { @extend %#{$variant}lst-square; }
+    .#{$variant}lst-decimal    { @extend %#{$variant}lst-decimal; }
+    .#{$variant}lst-unset      { @extend %#{$variant}lst-unset; }
+    .#{$variant}lsp-inside     { @extend %#{$variant}lsp-inside; }
+    .#{$variant}lsp-outside    { @extend %#{$variant}lsp-outside; }
+    .#{$variant}lsp-unset      { @extend %#{$variant}lsp-unset; }
+    .#{$variant}lsi-none       { @extend %#{$variant}lsi-none; }
 }
