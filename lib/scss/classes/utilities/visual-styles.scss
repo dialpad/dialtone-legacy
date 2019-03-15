@@ -14,143 +14,59 @@
 //  • OPACITY
 //
 //  ============================================================================
-//  $   BACKGROUND FILLS
-//  ----------------------------------------------------------------------------
 @each $breakpoint, $variant in $rwd-variants {
-    @include rwd($breakpoint) {
-        @each $stop, $color in $color-steps {
-            .#{$variant}bgc-#{$stop} { background-color: $color !important; }
+    //  ========================================================================
+    //  $   BACKGROUND FILLS
+    //  ------------------------------------------------------------------------
+    @each $stop, $color in $color-steps { .#{$variant}bgc-#{$stop} { @extend %#{$variant}bgc-#{$stop}; } }
+    .#{$variant}bgc-transparent { @extend %#{$variant}bgc-transparent; }
+
+
+    //  ========================================================================
+    //  $   BACKGROUND GRADIENTS
+    //  ------------------------------------------------------------------------
+    //  --  Dark background gradients
+    @each $direction in $bgg-directions {
+        .#{$variant}blg-dark-to-#{$direction} { @extend %#{$variant}blg-dark-to-#{$direction}; }
+    }
+    //  --  Light background gradients
+    @each $direction in $bgg-directions {
+        .#{$variant}blg-light-to-#{$direction} { @extend %#{$variant}blg-light-to-#{$direction}; }
+    }
+
+    //  ====================================================================
+    //  $   BOX SHADOWS
+    //  --------------------------------------------------------------------
+    @each $key, $value in $box-shadows { .#{$variant}bs-#{$key} { @extend %#{$variant}bs-#{$key}; } }
+
+
+    //  ====================================================================
+    //  $   OPACITY
+    //      For times that you want a fill background, but not at 100% opacity.
+    //      These are only offered for $white and gray.
+    //  --------------------------------------------------------------------
+    //  --  BACKGROUND OPACITY FILLS
+    @each $name, $color in $opacity-colors {
+        @each $key, $stop in $bgc-opacity-stops {
+            .#{$variant}bgc-#{$name}-o#{$key} { @extend %#{$variant}bgc-#{$name}-o#{$key}; }
         }
     }
-}
 
-.bgc-transparent { background-color: transparent !important; }
-
-
-//  ============================================================================
-//  $   BACKGROUND GRADIENTS
-//  ----------------------------------------------------------------------------
-//  Constants
-$background-directions: ( top, right, bottom, left );
-
-//  Gradient Mixin
-@mixin gradients($name, $color1, $color2, $start: 0%, $end: 100%) {
-    @each $direction in $background-directions {
-        .blg-#{$name}-to#{$direction} { background-image: linear-gradient(to #{$direction}, $color1 $start, $color2 $end) !important; }
-    }
-}
-
-//  Generate dark backgrounds
-@include gradients(dark, darken($gray-100,5%), lighten($gray-100,5%));
-
-//  Generate light backgrounds
-@include gradients(light, #E3F1FE, $white);
+    //  --  GENERIC OPACITY CLASSES
+    @each $key, $stop in $opacity-stops { %#{$variant}o#{$key} { opacity: $stop; } }
 
 
-//  ============================================================================
-//  $   BORDERS
-//  ============================================================================
-@import "borders";
-
-
-//  ============================================================================
-//  $   BOX SHADOWS
-//  ============================================================================
-//  Constants
-$box-shadows: (
-    none: $bs-none,
-    sm: $bs-sm,
-    md: $bs-md,
-    lg: $bs-lg,
-    xl: $bs-xl,
-);
-
-//  Generate classes
-@each $breakpoint, $variant in $rwd-variants {
-    @include rwd($breakpoint) {
-        @each $key, $value in $box-shadows {
-            .#{$variant}bs-#{$key} { box-shadow: $value !important; }
-        }
-    }
-}
-
-
-//  ============================================================================
-//  $   OPACITY
-//      For times that you want a fill background, but not at 100% opacity. We
-//      currently only offer these for $white and $gray-100.
-//  ----------------------------------------------------------------------------
-//  Constants
-$opacity-colors: (
-    white: $white,
-    gray: $gray-100,
-);
-$bgc-opacity-stops: (
-    95: 0.05,
-    90: 0.1,
-    85: 0.15,
-    75: 0.25,
-    50: 0.5,
-    25: 0.75,
-    15: 0.85,
-    10: 0.9,
-    5: 0.95,
-);
-$opacity-stops: (
-    0: 0,
-    5: 0.05,
-    10: 0.1,
-    20: 0.2,
-    25: 0.25,
-    30: 0.3,
-    40: 0.4,
-    50: 0.5,
-    60: 0.6,
-    70: 0.7,
-    75: 0.75,
-    80: 0.8,
-    90: 0.9,
-    95: 0.95,
-    100: 1,
-);
-
-//  Generate background opacity classes
-@each $breakpoint, $variant in $rwd-variants {
-    @include rwd($breakpoint) {
-        @each $name, $color in $opacity-colors {
-            @each $key, $stop in $bgc-opacity-stops {
-                .#{$variant}bgc-#{$name}-o#{$key} { background-color: transparentize($color, $stop) !important; }
-            }
-        }
-    }
-}
-
-//  Generate opacity classes
-@each $breakpoint, $variant in $rwd-variants {
-    @include rwd($breakpoint) {
-        @each $key, $stop in $opacity-stops {
-            .#{$variant}o#{$key} { opacity: $stop !important; }
-        }
-    }
-}
-
-
-//  ============================================================================
-//  $   OUTLINE
-//  ============================================================================
-@each $breakpoint, $variant in $rwd-variants {
-    @include rwd($breakpoint) {
-        .#{$variant}os-solid      { outline-style: solid !important; }
-        .#{$variant}os-dashed     { outline-style: dashed !important; }
-        .#{$variant}os-dotted     { outline-style: dotted !important; }
-        .#{$variant}os-double     { outline-style: double !important; }
-        .#{$variant}os-groove     { outline-style: groove !important; }
-        .#{$variant}os-ridge      { outline-style: ridge !important; }
-        .#{$variant}os-inset      { outline-style: inset !important; }
-        .#{$variant}os-outset     { outline-style: outset !important; }
-        .#{$variant}os-none       { outline-style: none !important; }
-        .#{$variant}os-inherit    { outline-style: inherit !important; }
-        .#{$variant}os-initial    { outline-style: initial !important; }
-        .#{$variant}os-unset      { outline-style: unset !important; }
-    }
+    //  ====================================================================
+    //  $   OUTLINE
+    //  --------------------------------------------------------------------
+    .#{$variant}os-solid      { @extend %#{$variant}os-solid; }
+    .#{$variant}os-dashed     { @extend %#{$variant}os-dashed; }
+    .#{$variant}os-dotted     { @extend %#{$variant}os-dotted; }
+    .#{$variant}os-double     { @extend %#{$variant}os-double; }
+    .#{$variant}os-groove     { @extend %#{$variant}os-groove; }
+    .#{$variant}os-ridge      { @extend %#{$variant}os-ridge; }
+    .#{$variant}os-inset      { @extend %#{$variant}os-inset; }
+    .#{$variant}os-outset     { @extend %#{$variant}os-outset; }
+    .#{$variant}os-none       { @extend %#{$variant}os-none; }
+    .#{$variant}os-unset      { @extend %#{$variant}os-unset; }
 }

@@ -9,9 +9,9 @@
 //  ============================================================================
 @each $breakpoint, $variant in $rwd-variants {
     @include rwd($breakpoint) {
-        //
-        //  $$   MARGINS
-        //  --------------------------------------------------------------------
+        //  ===================================================================
+        //  $  MARGINS
+        //  -------------------------------------------------------------------
         @each $step, $value in $spacing-units { %#{$variant}m#{$step}  { margin: $value; } }
         @each $step, $value in $spacing-units { %#{$variant}mt#{$step} { margin-top: $value; } }
         @each $step, $value in $spacing-units { %#{$variant}mr#{$step} { margin-right: $value; } }
@@ -30,9 +30,9 @@
             }
         }
 
-        //
-        //  $$   NEGATIVE MARGINS
-        //  --------------------------------------------------------------------
+        //  ===================================================================
+        //  $  NEGATIVE MARGINS
+        //  -------------------------------------------------------------------
         @each $step, $value in $negative-margins { %#{$variant}mn#{$step} { margin: -$value; } }
         @each $step, $value in $negative-margins { %#{$variant}mnt#{$step} { margin-top: -$value; } }
         @each $step, $value in $negative-margins { %#{$variant}mnr#{$step} { margin-right: -$value; } }
@@ -51,9 +51,9 @@
             }
         }
 
-        //
-        //  $   AUTO MARGINS
-        //  --------------------------------------------------------------------
+        //  ===================================================================
+        //  $  AUTO MARGINS
+        //  -------------------------------------------------------------------
         %#{$variant}m-auto  { margin: auto; }
         %#{$variant}mt-auto { margin-top: auto; }
         %#{$variant}mr-auto { margin-right: auto; }
@@ -66,6 +66,27 @@
         %#{$variant}my-auto {
             margin-top: auto;
             margin-bottom: auto;
+        }
+
+        //  ===================================================================
+        //  $  PADDING
+        //  -------------------------------------------------------------------
+        @each $step, $value in $spacing-units { %#{$variant}p#{$step}  { padding: $value; } }
+        @each $step, $value in $spacing-units { %#{$variant}pt#{$step} { padding-top: $value; } }
+        @each $step, $value in $spacing-units { %#{$variant}pr#{$step} { padding-right: $value; } }
+        @each $step, $value in $spacing-units { %#{$variant}pb#{$step} { padding-bottom: $value; } }
+        @each $step, $value in $spacing-units { %#{$variant}pl#{$step} { padding-left: $value; } }
+        @each $step, $value in $spacing-units {
+            %#{$variant}px#{$step} {
+                padding-right: $value;
+                padding-left: $value;
+            }
+        }
+        @each $step, $value in $spacing-units {
+            %#{$variant}py#{$step} {
+                padding-top: $value;
+                padding-bottom: $value;
+            }
         }
     }
 }
