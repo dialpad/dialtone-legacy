@@ -9,21 +9,21 @@
 //  ============================================================================
 @each $breakpoint, $variant in $rwd-variants {
     @include rwd($breakpoint) {
-        @each $step, $value in $spacing-units { %#{$variant}p#{$step}  { padding: $value !important; } }
-        @each $step, $value in $spacing-units { %#{$variant}pt#{$step} { padding-top: $value !important; } }
-        @each $step, $value in $spacing-units { %#{$variant}pr#{$step} { padding-right: $value !important; } }
-        @each $step, $value in $spacing-units { %#{$variant}pb#{$step} { padding-bottom: $value !important; } }
-        @each $step, $value in $spacing-units { %#{$variant}pl#{$step} { padding-left: $value !important; } }
+        @each $step, $value in $spacing-units { %#{$variant}p#{$step}  { padding: $value; } }
+        @each $step, $value in $spacing-units { %#{$variant}pt#{$step} { padding-top: $value; } }
+        @each $step, $value in $spacing-units { %#{$variant}pr#{$step} { padding-right: $value; } }
+        @each $step, $value in $spacing-units { %#{$variant}pb#{$step} { padding-bottom: $value; } }
+        @each $step, $value in $spacing-units { %#{$variant}pl#{$step} { padding-left: $value; } }
         @each $step, $value in $spacing-units {
             %#{$variant}px#{$step} {
-                padding-right: $value !important;
-                padding-left: $value !important;
+                padding-right: $value;
+                padding-left: $value;
             }
         }
         @each $step, $value in $spacing-units {
             %#{$variant}py#{$step} {
-                padding-top: $value !important;
-                padding-bottom: $value !important;
+                padding-top: $value;
+                padding-bottom: $value;
             }
         }
     }
