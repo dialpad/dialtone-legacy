@@ -24,125 +24,112 @@
 //    - Order
 //
 //  ============================================================================
-//  $   FIXED WIDTH CELLS
-//  ----------------------------------------------------------------------------
-$grid-columns:      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
-
-@mixin grid-fixed-cells($value) {
-    @each $breakpoint, $variant in $rwd-variants {
-        @include rwd($breakpoint) {
-            @each $col in $value {
-                .#{$variant}flex--cell#{$col} {
-                    flex-basis: ($col / length($value)) * 100%;
-                }
-            }
-        }
-    }
-}
-
-@include grid-fixed-cells($grid-columns);
-
-//  ============================================================================
 //  $   FLEXBOX UTILITIES
 //  ----------------------------------------------------------------------------
 @each $breakpoint, $variant in $rwd-variants {
     @include rwd($breakpoint) {
         //  --  FLEXBOX
         //  --------------------------------------------------------------------
-        .#{$variant}flex                    { display: flex !important; }
-        .#{$variant}flex-inline             { display: inline-flex !important; }
+        .#{$variant}flex                    { @extend %#{$variant}flex; }
+        .#{$variant}flex-inline             { @extend %#{$variant}flex-inline; }
+
+        //  --  FIXED CELL WIDTHS
+        //  --------------------------------------------------------------------
+        @each $col in $grid-columns {
+            .#{$variant}flex--cell#{$col}   { @extend %#{$variant}flex--cell#{$col}; }
+        }
 
         //  --  FLEX DIRECTION
         //  --------------------------------------------------------------------
-        .#{$variant}fd-row                  { flex-direction: row !important; }
-        .#{$variant}fd-row-reverse          { flex-direction: row-reverse !important; }
-        .#{$variant}fd-column               { flex-direction: column !important; }
-        .#{$variant}fd-column-reverse       { flex-direction: column-reverse !important; }
-        .#{$variant}fd-unset                { flex-direction: unset !important; }
+        .#{$variant}fd-row                  { @extend %#{$variant}fd-row; }
+        .#{$variant}fd-row-reverse          { @extend %#{$variant}fd-row-reverse; }
+        .#{$variant}fd-column               { @extend %#{$variant}fd-column; }
+        .#{$variant}fd-column-reverse       { @extend %#{$variant}fd-column-reverse; }
+        .#{$variant}fd-unset                { @extend %#{$variant}fd-unset; }
 
         //  --  FLEX WRAP
         //      This determines if a parent's child items will wrap or not.
         //  --------------------------------------------------------------------
-        .#{$variant}fw-wrap                 { flex-wrap: wrap !important; }
-        .#{$variant}fw-wrap-reverse         { flex-wrap: wrap-reverse !important; }
-        .#{$variant}fw-nowrap               { flex-wrap: nowrap !important; }
-        .#{$variant}fw-unset                { flex-wrap: unset !important; }
+        .#{$variant}fw-wrap                 { @extend %#{$variant}fw-wrap; }
+        .#{$variant}fw-wrap-reverse         { @extend %#{$variant}fw-wrap-reverse; }
+        .#{$variant}fw-nowrap               { @extend %#{$variant}fw-nowrap; }
+        .#{$variant}fw-unset                { @extend %#{$variant}fw-unset; }
 
         //  --  FLEX FLOW
         //      This is another shorthand property for flex-direction and flex-wrap.
         //      Default value is "row nowrap".
         //  --------------------------------------------------------------------
-        .#{$variant}ff-row-wrap             { flex-flow: row wrap !important; }
-        .#{$variant}ff-row-nowrap           { flex-flow: row nowrap !important; }
-        .#{$variant}ff-row-reverse-wrap     { flex-flow: row-reverse wrap !important; }
-        .#{$variant}ff-row-reverse-nowrap   { flex-flow: row-reverse nowrap !important; }
-        .#{$variant}ff-column-wrap          { flex-flow: column wrap !important; }
-        .#{$variant}ff-column-nowrap        { flex-flow: column nowrap !important; }
-        .#{$variant}ff-column-reverse-wrap  { flex-flow: column-reverse wrap !important; }
-        .#{$variant}ff-column-reverse-nowrap{ flex-flow: column-reverse nowrap !important; }
-        .#{$variant}ff-unset                { flex-flow: unset !important; }
+        .#{$variant}ff-row-wrap             { @extend %#{$variant}ff-row-wrap; }
+        .#{$variant}ff-row-nowrap           { @extend %#{$variant}ff-row-nowrap; }
+        .#{$variant}ff-row-reverse-wrap     { @extend %#{$variant}ff-row-reverse-wrap; }
+        .#{$variant}ff-row-reverse-nowrap   { @extend %#{$variant}ff-row-reverse-nowrap; }
+        .#{$variant}ff-column-wrap          { @extend %#{$variant}ff-column-wrap; }
+        .#{$variant}ff-column-nowrap        { @extend %#{$variant}ff-column-nowrap; }
+        .#{$variant}ff-column-reverse-wrap  { @extend %#{$variant}ff-column-reverse-wrap; }
+        .#{$variant}ff-column-reverse-nowrap{ @extend %#{$variant}ff-column-reverse-nowrap; }
+        .#{$variant}ff-unset                { @extend %#{$variant}ff-unset; }
 
         //  --  JUSTIFY CONTENT
         //      Defines the child alignment along the parent's main axis
         //  --------------------------------------------------------------------
-        .#{$variant}jc-center               { justify-content: center !important; }
-        .#{$variant}jc-end                  { justify-content: flex-end !important; }
-        .#{$variant}jc-space-around         { justify-content: space-around !important; }
-        .#{$variant}jc-space-between        { justify-content: space-between !important; }
-        .#{$variant}jc-space-evenly         { justify-content: space-evenly !important; }
-        .#{$variant}jc-start                { justify-content: flex-start !important; }
-        .#{$variant}jc-unset                { justify-content: unset !important; }
+        .#{$variant}jc-center               { @extend %#{$variant}jc-center; }
+        .#{$variant}jc-end                  { @extend %#{$variant}jc-end; }
+        .#{$variant}jc-space-around         { @extend %#{$variant}jc-space-around; }
+        .#{$variant}jc-space-between        { @extend %#{$variant}jc-space-between; }
+        .#{$variant}jc-space-evenly         { @extend %#{$variant}jc-space-evenly; }
+        .#{$variant}jc-start                { @extend %#{$variant}jc-start; }
+        .#{$variant}jc-unset                { @extend %#{$variant}jc-unset; }
 
         //  --  ALIGN CONTENT
         //      Aligns the container's lines when there is extra space in the
         //      cross-axis. Note that this only works when a parent container
         //      has more than one line.
         //  --------------------------------------------------------------------
-        .#{$variant}ac-center               { align-content: center !important; }
-        .#{$variant}ac-end                  { align-content: flex-end !important; }
-        .#{$variant}ac-space-around         { align-content: space-around !important; }
-        .#{$variant}ac-space-between        { align-content: space-between !important; }
-        .#{$variant}ac-space-evenly         { align-content: space-evenly !important; }
-        .#{$variant}ac-start                { align-content: flex-start !important; }
-        .#{$variant}ac-stretch              { align-content: stretch !important; }
-        .#{$variant}ac-unset                { align-content: unset !important; }
+        .#{$variant}ac-center               { @extend %#{$variant}ac-center; }
+        .#{$variant}ac-end                  { @extend %#{$variant}ac-end; }
+        .#{$variant}ac-space-around         { @extend %#{$variant}ac-space-around; }
+        .#{$variant}ac-space-between        { @extend %#{$variant}ac-space-between; }
+        .#{$variant}ac-space-evenly         { @extend %#{$variant}ac-space-evenly; }
+        .#{$variant}ac-start                { @extend %#{$variant}ac-start; }
+        .#{$variant}ac-stretch              { @extend %#{$variant}ac-stretch; }
+        .#{$variant}ac-unset                { @extend %#{$variant}ac-unset; }
 
         //  --  ALIGN ITEMS
         //      Defines the default behavior for how child items align along
         //      the parent's cross axis. Think of it the cross-axis for
         //      justify-content.
         //  --------------------------------------------------------------------
-        .#{$variant}ai-center               { align-items: center !important; }
-        .#{$variant}ai-end                  { align-items: flex-end !important; }
-        .#{$variant}ai-baseline             { align-items: baseline !important; }
-        .#{$variant}ai-start                { align-items: flex-start !important; }
-        .#{$variant}ai-stretch              { align-items: stretch !important; }
-        .#{$variant}ai-unset                { align-items: unset !important; }
+        .#{$variant}ai-center               { @extend %#{$variant}ai-center; }
+        .#{$variant}ai-end                  { @extend %#{$variant}ai-end; }
+        .#{$variant}ai-baseline             { @extend %#{$variant}ai-baseline; }
+        .#{$variant}ai-start                { @extend %#{$variant}ai-start; }
+        .#{$variant}ai-stretch              { @extend %#{$variant}ai-stretch; }
+        .#{$variant}ai-unset                { @extend %#{$variant}ai-unset; }
 
         //  --  CENTER ITEMS
         //      A common combination of classes is .jc-center and .ai-center.
         //      Use this class when you want both.
         //  --------------------------------------------------------------------
-        .#{$variant}flex__center            { align-items: center; justify-content: center !important; }
+        .#{$variant}flex__center            { @extend %#{$variant}ai-center; @extend %#{$variant}jc-center; }
 
         //  --  ALIGN SELF
         //      Allows child containers to re-align themselves irregardless
         //      of the parent's main axis direction.
         //  --------------------------------------------------------------------
-        .#{$variant}as-auto                 { align-self: auto !important; }
-        .#{$variant}as-center               { align-self: center !important; }
-        .#{$variant}as-end                  { align-self: flex-end !important; }
-        .#{$variant}as-baseline             { align-self: baseline !important; }
-        .#{$variant}as-start                { align-self: flex-start !important; }
-        .#{$variant}as-stretch              { align-self: stretch !important; }
-        .#{$variant}as-unset                { align-self: unset !important; }
+        .#{$variant}as-auto                 { @extend %#{$variant}as-auto; }
+        .#{$variant}as-center               { @extend %#{$variant}as-center; }
+        .#{$variant}as-end                  { @extend %#{$variant}as-end; }
+        .#{$variant}as-baseline             { @extend %#{$variant}as-baseline; }
+        .#{$variant}as-start                { @extend %#{$variant}as-start; }
+        .#{$variant}as-stretch              { @extend %#{$variant}as-stretch; }
+        .#{$variant}as-unset                { @extend %#{$variant}as-unset; }
 
         //  --  FLEX
         //      Graduating scale of flex-grow and flex-shrink values
         //  --------------------------------------------------------------------
-        .#{$variant}fl0                     { flex: 0 auto !important; }
-        .#{$variant}fl1                     { flex: 1 auto !important; }
-        .#{$variant}fl2                     { flex: 2 auto !important; }
+        .#{$variant}fl0                     { @extend %#{$variant}fl0; }
+        .#{$variant}fl1                     { @extend %#{$variant}fl1; }
+        .#{$variant}fl2                     { @extend %#{$variant}fl2; }
 
 
         //  --  FLEX SHRINK
@@ -150,23 +137,23 @@ $grid-columns:      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
         //      shrink relative to other flex items in the container when there isn't
         //      enough space in the row. Default value is 1.
         //  --------------------------------------------------------------------
-        .#{$variant}fl-shrink0              { flex-shrink: 0 !important; }
-        .#{$variant}fl-shrink1              { flex-shrink: 1 !important; }
-        .#{$variant}fl-shrink2              { flex-shrink: 2 !important; }
+        .#{$variant}fl-shrink0              { @extend %#{$variant}fl-shrink0; }
+        .#{$variant}fl-shrink1              { @extend %#{$variant}fl-shrink1; }
+        .#{$variant}fl-shrink2              { @extend %#{$variant}fl-shrink2; }
 
         //  --  FLEX GROW
         //      Specifies the flex-grow value, which states how much an item will
         //      grow relative to other flex items in the container when there isn't
         //      enough space in the row. Default value is 1.
         //  --------------------------------------------------------------------
-        .#{$variant}fl-grow0               { flex-grow: 0 !important; }
-        .#{$variant}fl-grow1               { flex-grow: 1 !important; }
-        .#{$variant}fl-grow2               { flex-grow: 2 !important; }
+        .#{$variant}fl-grow0               { @extend %#{$variant}fl-grow0; }
+        .#{$variant}fl-grow1               { @extend %#{$variant}fl-grow1; }
+        .#{$variant}fl-grow2               { @extend %#{$variant}fl-grow2; }
 
         //  --  Ordering
         //      Designate a child container's position.
         //  --------------------------------------------------------------------
-        .#{$variant}fo-first               { order: -1 !important; }
-        .#{$variant}fo-last                { order: 1 !important; }
+        .#{$variant}fo-first               { @extend %#{$variant}fo-first; }
+        .#{$variant}fo-last                { @extend %#{$variant}fo-last; }
     }
 }
