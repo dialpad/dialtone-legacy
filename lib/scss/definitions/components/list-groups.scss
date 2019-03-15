@@ -1,0 +1,53 @@
+//
+//  DIALTONE
+//  COMPONENTS: LIST GROUPS
+//
+//  These are the list group definitions, which are used by classes or can be
+//  used within Vue components. For further documentation of these values,
+//  please visit https://dialpad.design/components/list-groups
+//
+//  ============================================================================
+@each $breakpoint, $variant in $rwd-variants {
+    @include rwd($breakpoint) {
+        %#{$variant}dt-list-group,
+        %#{$variant}dt-list-group--item {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        %#{$variant}dt-list-group__header,
+        %#{$variant}dt-list-group__link {
+            display: block;
+            padding: $sp4 $sp24;
+        }
+
+        %#{$variant}dt-list-group__header {
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: $fs-fine;
+            font-family: $ff-mark-bold;
+        }
+
+        %#{$variant}dt-list-group__link {
+            color: $gray-080;
+            text-decoration: none;
+            font-size: $fs-body1;
+
+            &:hover {
+                background-color: fade-out($blue-060,0.85);
+                color: $gray-100;
+            }
+
+            &-selected {
+                background-color: $blue-080;
+                color: $white;
+
+                &:hover {
+                    background-color: $blue-100;
+                    color: $white;
+                }
+            }
+        }
+    }
+}
