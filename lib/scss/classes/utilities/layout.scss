@@ -19,147 +19,97 @@
 //  • Z-index
 //
 //  ============================================================================
-//  $  DISPLAY
-//  ----------------------------------------------------------------------------
 @each $breakpoint, $variant in $rwd-variants {
-    @include rwd($breakpoint) {
-        .#{$variant}d-block                { display: block !important; }
-        .#{$variant}d-inline               { display: inline !important; }
-        .#{$variant}d-inline-block         { display: inline-block !important; }
-        .#{$variant}d-flex                 { display: flex !important; }
-        .#{$variant}d-inline-flex          { display: inline-flex !important; }
-        .#{$variant}d-grid                 { display: grid !important; }
-        .#{$variant}d-inline-grid          { display: inline-grid !important; }
-        .#{$variant}d-table                { display: table !important; }
-        .#{$variant}d-table-cell           { display: table-cell !important; }
-        .#{$variant}d-none                 { display: none !important; }
-        .#{$variant}d-inherit              { display: inherit !important; }
-        .#{$variant}d-initial              { display: initial !important; }
-    }
-}
+    //  ========================================================================
+    //  $  DISPLAY
+    //  ------------------------------------------------------------------------
+    .#{$variant}d-block                { @extend %#{$variant}d-block; }
+    .#{$variant}d-inline               { @extend %#{$variant}d-inline; }
+    .#{$variant}d-inline-block         { @extend %#{$variant}d-inline-block; }
+    .#{$variant}d-table                { @extend %#{$variant}d-table; }
+    .#{$variant}d-table-cell           { @extend %#{$variant}d-table-cell; }
+    .#{$variant}d-none                 { @extend %#{$variant}d-none; }
+    .#{$variant}d-unset                { @extend %#{$variant}d-unset; }
 
-//  ============================================================================
-//  $  VISIBILITY
-//  ----------------------------------------------------------------------------
-@each $breakpoint, $variant in $rwd-variants {
-    @include rwd($breakpoint) {
-        .#{$variant}v-visible              { visibility: visible !important; }
-        .#{$variant}v-hidden               { visibility: hidden !important; }
-        .#{$variant}v-collapse             { visibility: collapse !important; }
-        .#{$variant}v-inherit              { visibility: inherit !important; }
-    }
-}
+    //  ========================================================================
+    //  $  VISIBILITY
+    //  ------------------------------------------------------------------------
+    .#{$variant}v-visible              { @extend %#{$variant}v-visible; }
+    .#{$variant}v-hidden               { @extend %#{$variant}v-hidden; }
+    .#{$variant}v-collapse             { @extend %#{$variant}v-collapse; }
+    .#{$variant}v-unset                { @extend %#{$variant}v-unset; }
 
-//  ============================================================================
-//  $  OVERFLOW
-//  ----------------------------------------------------------------------------
-@each $breakpoint, $variant in $rwd-variants {
-    @include rwd($breakpoint) {
-        .#{$variant}of-auto                { overflow: auto !important; }
-        .#{$variant}of-x-auto              { overflow-x: auto !important; }
-        .#{$variant}of-y-auto              { overflow-y: auto !important; }
-        .#{$variant}of-hidden              { overflow: hidden !important; }
-        .#{$variant}of-x-hidden            { overflow-x: hidden !important; }
-        .#{$variant}of-y-hidden            { overflow-y: hidden !important; }
-        .#{$variant}of-scroll              { overflow: scroll !important; }
-        .#{$variant}of-x-scroll            { overflow-x: scroll !important; }
-        .#{$variant}of-y-scroll            { overflow-y: scroll !important; }
-        .#{$variant}of-visible             { overflow: visible !important; }
-    }
-}
+    //  ========================================================================
+    //  $  OVERFLOW
+    //  ------------------------------------------------------------------------
+    .#{$variant}of-auto                { @extend %#{$variant}of-auto; }
+    .#{$variant}of-x-auto              { @extend %#{$variant}of-x-auto; }
+    .#{$variant}of-y-auto              { @extend %#{$variant}of-y-auto; }
+    .#{$variant}of-hidden              { @extend %#{$variant}of-hidden; }
+    .#{$variant}of-x-hidden            { @extend %#{$variant}of-x-hidden; }
+    .#{$variant}of-y-hidden            { @extend %#{$variant}of-y-hidden; }
+    .#{$variant}of-scroll              { @extend %#{$variant}of-scroll; }
+    .#{$variant}of-x-scroll            { @extend %#{$variant}of-x-scroll; }
+    .#{$variant}of-y-scroll            { @extend %#{$variant}of-y-scroll; }
+    .#{$variant}of-visible             { @extend %#{$variant}of-visible; }
 
-//  ============================================================================
-//  $  POSITION
-//  ----------------------------------------------------------------------------
-@each $breakpoint, $variant in $rwd-variants {
-    @include rwd($breakpoint) {
-        .#{$variant}ps-absolute            { position: absolute !important; }
-        .#{$variant}ps-fixed               { position: fixed !important; }
-        .#{$variant}ps-relative            { position: relative !important; }
-        .#{$variant}ps-static              { position: static !important; }
-        .#{$variant}ps-sticky              { position: sticky !important; }
-        .#{$variant}ps-initial             { position: initial !important; }
-        .#{$variant}ps-unset               { position: unset !important; }
-    }
-}
+    //  ========================================================================
+    //  $  POSITION
+    //  ------------------------------------------------------------------------
+    .#{$variant}ps-absolute            { @extend %#{$variant}ps-absolute; }
+    .#{$variant}ps-fixed               { @extend %#{$variant}ps-fixed; }
+    .#{$variant}ps-relative            { @extend %#{$variant}ps-relative; }
+    .#{$variant}ps-static              { @extend %#{$variant}ps-static; }
+    .#{$variant}ps-sticky              { @extend %#{$variant}ps-sticky; }
+    .#{$variant}ps-unset               { @extend %#{$variant}ps-unset; }
 
-//  ============================================================================
-//  $  FLOATS
-//  ----------------------------------------------------------------------------
-@each $breakpoint, $variant in $rwd-variants {
-    @include rwd($breakpoint) {
-        .#{$variant}fl-inline-start        { float: inline-start !important; }
-        .#{$variant}fl-inline-end          { float: inline-end !important; }
-        .#{$variant}fl-left                { float: left !important; }
-        .#{$variant}fl-right               { float: right !important; }
-        .#{$variant}fl-none                { float: none !important; }
-        .#{$variant}fl-initial             { float: initial !important; }
-        .#{$variant}fl-unset               { float: unset !important; }
-        .#{$variant}clearfix               { &:before, &:after { display: table; clear: both; content: ""; } }
-        .#{$variant}cl-inline-start        { clear: inline-start !important; }
-        .#{$variant}cl-inline-end          { clear: inline-end !important; }
-        .#{$variant}cl-left                { clear: left !important; }
-        .#{$variant}cl-right               { clear: right !important; }
-        .#{$variant}cl-both                { clear: both !important; }
-        .#{$variant}cl-none                { clear: none !important; }
-        .#{$variant}cl-initial             { clear: initial !important; }
-        .#{$variant}cl-unset               { clear: unset !important; }
-    }
-}
-
-//  ============================================================================
-//  $  BOX SIZING
-//  ----------------------------------------------------------------------------
-@each $breakpoint, $variant in $rwd-variants {
-    @include rwd($breakpoint) {
-        .#{$variant}bs-content             { box-sizing: content-box !important; }
-        .#{$variant}bs-border              { box-sizing: border-box !important; }
-        .#{$variant}bs-initial             { box-sizing: initial !important; }
-        .#{$variant}bs-unset               { box-sizing: unset !important; }
-    }
-}
-
-//  ============================================================================
-//  $  VERTICAL ALIGNMENT
-//  ----------------------------------------------------------------------------
-@each $breakpoint, $variant in $rwd-variants {
-    @include rwd($breakpoint) {
-        .#{$variant}va-baseline	            { vertical-align: baseline !important; }
-        .#{$variant}va-bottom	            { vertical-align: bottom !important; }
-        .#{$variant}va-middle	            { vertical-align: middle !important; }
-        .#{$variant}va-sub	                { vertical-align: sub !important; }
-        .#{$variant}va-super	            { vertical-align: super !important; }
-        .#{$variant}va-text-bottom	        { vertical-align: text-bottom !important; }
-        .#{$variant}va-text-top	            { vertical-align: text-top !important; }
-        .#{$variant}va-top	                { vertical-align: top !important; }
-        .#{$variant}va-unset	            { vertical-align: unset !important; }
-    }
-}
-
-
-//  ============================================================================
-//  $   Z-INDEX
-//  ----------------------------------------------------------------------------
-@each $breakpoint, $variant in $rwd-variants {
-    @include rwd($breakpoint) {
-        // Create negative margin units
-        $zindex-stops: (
-            hide:       $z-hide,
-            base:       $z-base,
-            selected:   $z-selected,
-            active:     $z-active,
-            nav:        $z-navigation,
-            nav-fixed:  $z-navigation-fixed,
-            dropdown:   $z-dropdown,
-            tooltip:    $z-tooltip,
-            snackbar:   $z-snackbar,
-            drawer:     $z-drawer,
-            modal-bg:   $z-modal-bg,
-            modal:      $z-modal,
-        );
-
-        @each $stop, $value in $zindex-stops {
-            .#{$variant}z-#{$stop} { z-index: $value !important; }
+    //  ========================================================================
+    //  $  FLOATS
+    //  ------------------------------------------------------------------------
+    .#{$variant}fl-inline-start        { @extend %#{$variant}fl-inline-start; }
+    .#{$variant}fl-inline-end          { @extend %#{$variant}fl-inline-end; }
+    .#{$variant}fl-left                { @extend %#{$variant}fl-left; }
+    .#{$variant}fl-right               { @extend %#{$variant}fl-right; }
+    .#{$variant}fl-none                { @extend %#{$variant}fl-none; }
+    .#{$variant}fl-unset               { @extend %#{$variant}fl-unset; }
+    .#{$variant}cl-inline-start        { @extend %#{$variant}cl-inline-start; }
+    .#{$variant}cl-inline-end          { @extend %#{$variant}cl-inline-end; }
+    .#{$variant}cl-left                { @extend %#{$variant}cl-left; }
+    .#{$variant}cl-right               { @extend %#{$variant}cl-right; }
+    .#{$variant}cl-both                { @extend %#{$variant}cl-both; }
+    .#{$variant}cl-none                { @extend %#{$variant}cl-none; }
+    .#{$variant}cl-unset               { @extend %#{$variant}cl-unset; }
+    .#{$variant}clearfix {
+        &:before,
+        &:after {
+            @extend %#{$variant}d-table;
+            @extend %#{$variant}cl-both;
+            content: "";
         }
     }
+
+    //  ========================================================================
+    //  $  BOX SIZING
+    //  ------------------------------------------------------------------------
+    .#{$variant}bs-content             { @extend %#{$variant}bs-content; }
+    .#{$variant}bs-border              { @extend %#{$variant}bs-border; }
+    .#{$variant}bs-unset               { @extend %#{$variant}bs-unset; }
+
+    //  ========================================================================
+    //  $  VERTICAL ALIGNMENT
+    //  ------------------------------------------------------------------------
+    .#{$variant}va-baseline	           { @extend %#{$variant}va-baseline; }
+    .#{$variant}va-bottom	           { @extend %#{$variant}va-bottom; }
+    .#{$variant}va-middle	           { @extend %#{$variant}va-middle; }
+    .#{$variant}va-sub	               { @extend %#{$variant}va-sub; }
+    .#{$variant}va-super	           { @extend %#{$variant}va-super; }
+    .#{$variant}va-text-bottom	       { @extend %#{$variant}va-text-bottom; }
+    .#{$variant}va-text-top	           { @extend %#{$variant}va-text-top; }
+    .#{$variant}va-top	               { @extend %#{$variant}va-top; }
+    .#{$variant}va-unset	           { @extend %#{$variant}va-unset; }
+
+    //  ========================================================================
+    //  $   Z-INDEX
+    //  ------------------------------------------------------------------------
+    @each $stop, $value in $zindex-stops { .#{$variant}z-#{$stop} { @extend %#{$variant}z-#{$stop}; } }
 }
