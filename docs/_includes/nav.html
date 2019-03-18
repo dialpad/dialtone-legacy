@@ -7,15 +7,15 @@
         <nav class="dds-app-nav">
             {% for item in site.data.navigation %}
                 {% if item.sublinks %}
-                    <ul class="dds-list-group my16" id="nav" role="navigation">
+                    <ul class="dt-list-group my16" id="nav" role="navigation">
                         <li>
-                            <div class="dds-list-group__header">
+                            <div class="dt-list-group__header">
                                 {{ item.title }}
                             </div>
-                            <ul class="dds-list-group">
+                            <ul class="dt-list-group">
                                 {% for sublink in item.sublinks %}
                                     {% assign pageURL = page.url | remove_first:"/" | remove: ".html" %}
-                                    <li><a class="dds-list-group__link{% if pageURL == sublink.url %} dds-list-group__link-selected{% endif %}" href="{{ sublink.url | relative_url }}">{{ sublink.title }}</a></li>
+                                    <li><a class="dt-list-group__link{% if pageURL == sublink.url %} dt-list-group__link-selected{% endif %}" href="{{ sublink.url | relative_url }}">{{ sublink.title }}</a></li>
                                 {% endfor %}
                             </ul>
                         </li>

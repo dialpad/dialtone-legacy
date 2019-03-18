@@ -1,0 +1,104 @@
+//
+//  DIALTONE
+//  TOKENS: INPUTS
+//
+//  These are input constants for Dialpad's design system Dialtone.
+//  For further documentation of these and other classes, please visit:
+//  visit https://dialpad.design/components/inputs
+//
+//  ============================================================================
+//  $   INPUT STYLES
+//  ----------------------------------------------------------------------------
+$input-border:              $border-gray-light;
+$input-warning-border:      #FFBB34;
+$input-warning-text:        #965E00;
+$input-warning-link:        #4E3100;
+$input-error-border:        $red-100;
+$input-error-text:          #D32603;
+$input-error-link:          #7B1500;
+$input-success-border:      $green-100;
+$input-success-text:        #00671F;
+$input-success-link:        #00310F;
+
+
+//  ============================================================================
+//  $   BASE INPUT STYLE MIXIN
+//  ----------------------------------------------------------------------------
+@mixin input-base-style {
+    position: relative;
+    flex: 1 0%;
+    padding: $sp8 $sp16;
+    min-width: 0;
+    min-height: 2.5rem;
+    width: 100%;
+    outline: none;
+    border: $sp1 solid $input-border;
+    border-radius: $br-sm;
+    box-shadow: inset 0 0 $sp1 transparentize($gray-040,.8), 0 0 0 transparentize($white,1);
+    font-weight: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    transition-timing-function: $transition-cubic-inOut;
+    transition-duration: 100ms;
+    transition-property: border, box-shadow, background-color;
+
+    &::placeholder  { color: $gray-020; }   //  Placeholder copy
+    &::-ms-clear    { display: none; }      //  Remove input EDGE additions
+
+    //  $$  INTERACTIVE STATES
+    //  ========================================================================
+    //  --  FOCUS
+    &:focus {
+        position: relative;
+        outline: 0;
+        border-color: $blue-060;
+        box-shadow: inset 0 0 $sp2 $gray-010, 0 0 0 $sp4 transparentize($blue-060,0.85);
+    }
+
+    //  --  DISABLED / READ-ONLY
+    &[disabled],
+    &[read-only] {
+        border-color: $border-gray-lighter;
+        background-color: $gray-005;
+        box-shadow: none;
+        color: $gray-040;
+    }
+
+    //  Disabled
+    &[disabled] {
+        cursor: not-allowed;
+    }
+
+    //  ========================================================================
+    //  $   VALIDATION STATES
+    //  ========================================================================
+    //  $$  WARNING
+    //  ------------------------------------------------------------------------
+    &%has-warning {
+        border-color: $input-warning-border;
+
+        &:focus {
+            box-shadow: inset 0 0 $sp2 $gray-010, 0 0 0 $sp4 transparentize($input-warning-border,.75);
+        }
+    }
+
+    //  $$  ERROR
+    //  ------------------------------------------------------------------------
+    &%has-error {
+        border-color: $input-error-border;
+
+        &:focus {
+            box-shadow: inset 0 0 $sp2 $gray-010, 0 0 0 $sp4 transparentize($input-error-border,.75);
+        }
+    }
+
+    //  $$  SUCCESS
+    //  ------------------------------------------------------------------------
+    &%has-success {
+        border-color: $input-success-border;
+
+        &:focus {
+            box-shadow: inset 0 0 $sp2 $gray-010, 0 0 0 $sp4 transparentize($input-success-border,.75);
+        }
+    }
+}

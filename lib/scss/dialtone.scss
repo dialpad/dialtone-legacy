@@ -1,15 +1,16 @@
 //
 //  DIALTONE
+//  v0.2.0
 //
-//  This is the unifying file for Dialpad's design system Dialtone. For further
-//  documentation of these and other classes, visit https://dialpad.design
+//  This file provides CSS classes for Dialtone, the Dialpad design system.
+//  For further information about these classes, please visit:
+//  https://dialpad.design
 //
 //  ============================================================================
-//  $   IMPORTS
+//  $$  CSS RESET & DEFINITIONS
 //  ----------------------------------------------------------------------------
-@import "constants/dialtone--constants";        //  Constants
-@import "utilities/dialtone--utilities";        //  Utility Classes
-@import "components/dialtone--components";       //  Components
+@import "dialtone--reset";
+@import "dialtone--definitions";
 
 
 //  ============================================================================
@@ -24,7 +25,6 @@ body {
     }
 
     font-size: $base-font-size;
-    background-color: $white;
 }
 
 html {
@@ -34,3 +34,26 @@ html {
         box-sizing: border-box;
     }
 }
+
+//  ============================================================================
+//  $   CLASSES
+//  ============================================================================
+//  $$  COMPONENTS
+//      Placed first so the utilities below can override elements as needed.
+//  ----------------------------------------------------------------------------
+@import "classes/components/inputs";
+@import "classes/components/buttons";
+@import "classes/components/tables";
+@import "classes/components/list-groups";
+
+//  $$  UTILITIES
+//  ----------------------------------------------------------------------------
+@import "classes/utilities/margin";
+@import "classes/utilities/padding";
+@import "classes/utilities/typography";
+@import "classes/utilities/visual-styles";
+@import "classes/utilities/borders";
+@import "classes/utilities/directions";
+@import "classes/utilities/grid";
+@import "classes/utilities/flex";
+@import "classes/utilities/layout";

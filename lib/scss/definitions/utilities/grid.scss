@@ -1,0 +1,241 @@
+//
+//  DIALTONE
+//  UTILITIES: GRID
+//
+//  These are the CSS grid utility classes for Dialpad's design system Dialtone.
+//  For further documentation of these and other classes,
+//  visit https://dialpad.design/utilities/grid
+//
+//  TABLE OF CONTENTS
+//  • Container
+//  • Layouts
+//  • Areas
+//  • Spans
+//  • Gutters
+//
+//  ============================================================================
+@each $breakpoint, $variant in $rwd-variants {
+    @include rwd($breakpoint) {
+        //  ====================================================================
+        //  $   GRID CONTAINER
+        //  --------------------------------------------------------------------
+        %#{$variant}grid           { display: grid; }
+        %#{$variant}grid-inline    { display: inline-grid; }
+
+        //  ====================================================================
+        //  $   GRID LAYOUTS
+        //  --------------------------------------------------------------------
+        %#{$variant}gl__col {
+            grid-template-columns: var(--grid-template-col);
+            grid-auto-columns: var(--grid-auto-col);
+        }
+
+        %#{$variant}gl__sidebar-content {
+            grid-template-areas: "sidebar content";
+            grid-template-columns: [sidebar-start] var(--sidebar-col) [sidebar-end content-start] var(--content-col) [content-end];
+        }
+
+        %#{$variant}gl__header-content {
+            grid-template-areas: "header"
+                                 "content";
+            grid-template-rows: [header-start] var(--header-row) [header-end content-start] var(--content-row) [content-end];
+            grid-auto-rows: 1fr;
+            grid-auto-columns: minmax(min-content, auto);
+        }
+
+        //  ====================================================================
+        //  --  GRID GAP
+        //      Defines the size of grid "gaps" (lines). We generate a gap for
+        //      each defined spacing unit.
+        //  --------------------------------------------------------------------
+        @each $key, $space in $spacing-units { %#{$variant}gcg#{$key} { grid-column-gap: $space; } }
+        @each $key, $space in $spacing-units { %#{$variant}grg#{$key} { grid-row-gap: $space; } }
+        @each $key, $space in $spacing-units { %#{$variant}gg#{$key}  { grid-gap: $space; } }
+
+        @each $value in $grid-columns {
+            %#{$variant}gcs-span#{$value} { grid-column-start: span var(--gcs-span, $value); }
+        }
+
+        //  ====================================================================
+        //  $$  GRID PARENT PROPERTIES
+        //  ====================================================================
+        //  --  GRID TEMPLATE
+        //      Defines the size of (explicit) grid tracks.
+        //  --------------------------------------------------------------------
+        //  Areas
+        %#{$variant}gta-value                { grid-template-areas: var(--grid-template-area); }
+        %#{$variant}gta-none                 { grid-template-areas: none; }
+        %#{$variant}gta-unset                { grid-template-areas: unset; }
+
+        //  Columns
+        %#{$variant}gtc-auto                 { grid-template-columns: auto; }
+        %#{$variant}gtc-value                { grid-template-columns: var(--grid-template-col); }
+        %#{$variant}gtc-unset                { grid-template-columns: unset; }
+
+        //  Rows
+        %#{$variant}gtr-auto                 { grid-template-rows: auto; }
+        %#{$variant}gtr-value                { grid-template-rows: var(--grid-template-row); }
+        %#{$variant}gtr-unset                { grid-template-rows: unset; }
+
+        //  --  AUTO COLUMNS / ROWS
+        //      Defines size of any auto-generated (implicit) grid tracks.
+        //  --------------------------------------------------------------------
+        %#{$variant}gac-auto                 { grid-auto-columns: auto; }
+        %#{$variant}gac-value                { grid-auto-columns: var(--grid-auto-col); }
+        %#{$variant}gac-unset                { grid-auto-columns: unset; }
+
+        %#{$variant}gar-auto                 { grid-auto-rows: auto; }
+        %#{$variant}gar-value                { grid-auto-rows: var(--grid-auto-row); }
+        %#{$variant}gar-unset                { grid-auto-rows: unset; }
+
+        //  --  AUTO FLOW
+        //      States how the auto grid placement should work
+        //  --------------------------------------------------------------------
+        %#{$variant}gaf-column               { grid-auto-flow: column; }
+        %#{$variant}gaf-dense                { grid-auto-flow: dense; }
+        %#{$variant}gaf-row                  { grid-auto-flow: row; }
+
+        //  --  JUSTIFY ITEMS
+        //      Aligns grid items along the row (inline) axis. This applies to
+        //      all grid items within a container.
+        //  --------------------------------------------------------------------
+        %#{$variant}gji-auto                 { justify-items: auto; }
+        %#{$variant}gji-end                  { justify-items: end; }
+        %#{$variant}gji-center               { justify-items: center; }
+        %#{$variant}gji-start                { justify-items: start; }
+        %#{$variant}gji-stretch              { justify-items: stretch; }
+        %#{$variant}gji-unset                { justify-items: unset; }
+
+        //  --  ALIGN ITEMS
+        //      Aligns grid items along the column (block) axis. This applies to
+        //      all grid items within a container.
+        //  --------------------------------------------------------------------
+        %#{$variant}gai-normal               { align-items: normal; }
+        %#{$variant}gai-end                  { align-items: end; }
+        %#{$variant}gai-center               { align-items: center; }
+        %#{$variant}gai-start                { align-items: start; }
+        %#{$variant}gai-stretch              { align-items: stretch; }
+        %#{$variant}gai-unset                { align-items: unset; }
+
+        //  --  PLACE ITEMS
+        //      Aligns grid items along the row (inline) AND column (block) axis.
+        //      This applies to all grid items within a container.
+        //  --------------------------------------------------------------------
+        %#{$variant}gpi-auto                 { place-items: auto; }
+        %#{$variant}gpi-end                  { place-items: end; }
+        %#{$variant}gpi-center               { place-items: center; }
+        %#{$variant}gpi-start                { place-items: start; }
+        %#{$variant}gpi-stretch              { place-items: stretch; }
+        %#{$variant}gpi-value                { place-items: var(--gpi, auto); }
+        %#{$variant}gpi-unset                { place-items: unset; }
+
+        //  --  JUSTIFY CONTENT
+        //      Aligns the entire grid along the row (inline) axis within
+        //      another grid container. This applies to all grid items within
+        //      a container.
+        //  --------------------------------------------------------------------
+        %#{$variant}gjc-normal               { justify-content: normal; }
+        %#{$variant}gjc-end                  { justify-content: end; }
+        %#{$variant}gjc-center               { justify-content: center; }
+        %#{$variant}gjc-space-around         { justify-content: space-around; }
+        %#{$variant}gjc-space-between        { justify-content: space-between; }
+        %#{$variant}gjc-space-evenly         { justify-content: space-evenly; }
+        %#{$variant}gjc-start                { justify-content: start; }
+        %#{$variant}gjc-stretch              { justify-content: stretch; }
+        %#{$variant}gjc-unset                { justify-content: unset; }
+
+        //  --  ALIGN CONTENT
+        //      Aligns the entire grid along the column (block) axis within
+        //      another grid container. This applies to all grid items within
+        //      a container.
+        //  --------------------------------------------------------------------
+        %#{$variant}gal-normal               { align-content: normal; }
+        %#{$variant}gal-end                  { align-content: end; }
+        %#{$variant}gal-center               { align-content: center; }
+        %#{$variant}gal-space-around         { align-content: space-around; }
+        %#{$variant}gal-space-between        { align-content: space-between; }
+        %#{$variant}gal-space-evenly         { align-content: space-evenly; }
+        %#{$variant}gal-start                { align-content: start; }
+        %#{$variant}gal-stretch              { align-content: stretch; }
+        %#{$variant}gal-unset                { align-content: unset; }
+
+        //  --  PLACE CONTENT
+        //      Aligns the entire grid along the row (inline) AND column (block)
+        //      axis within another grid container. This applies to all grid
+        //      items within a container.
+        //  --------------------------------------------------------------------
+        %#{$variant}gpc-end                  { place-content: end; }
+        %#{$variant}gpc-center               { place-content: center; }
+        %#{$variant}gpc-space-around         { place-content: space-around; }
+        %#{$variant}gpc-space-between        { place-content: space-between; }
+        %#{$variant}gpc-space-evenly         { place-content: space-evenly; }
+        %#{$variant}gpc-start                { place-content: start; }
+        %#{$variant}gpc-stretch              { place-content: stretch; }
+        %#{$variant}gpc-value                { place-content: var(--gpc, stretch); }
+        %#{$variant}gpc-unset                { place-content: unset; }
+
+
+        //  ====================================================================
+        //  $$  GRID CHILD PROPERTIES
+        //  ====================================================================
+        //  --  GRID START / END
+        //      Determine a grid item's location within the grid by referring
+        //      to specific grid lines
+        //  --------------------------------------------------------------------
+        //  Grid Column
+        %#{$variant}gc-value                 { grid-column: var(--grid-col); }
+        %#{$variant}gc-unset                 { grid-column: unset; }
+
+        %#{$variant}gcs-value                { grid-column-start: var(--grid-col-start); }
+        %#{$variant}gcs-unset                { grid-column-start: unset; }
+
+        %#{$variant}gce-value                { grid-column-end: var(--grid-col-end); }
+        %#{$variant}gce-unset                { grid-column-end: unset; }
+
+        //  Grid Row
+        %#{$variant}gr-value                 { grid-row: var(--grid-row); }
+        %#{$variant}gr-unset                 { grid-row: unset; }
+
+        %#{$variant}grs-value                { grid-row-start: var(--grid-row-start); }
+        %#{$variant}grs-unset                { grid-row-start: unset; }
+
+        %#{$variant}gre-value                { grid-row-end: var(--grid-row-end); }
+        %#{$variant}gre-unset                { grid-row-end: unset; }
+
+        //  Grid Column & Row
+        %#{$variant}ga-value                 { grid-area: var(--grid-area); }
+        %#{$variant}ga-unset                 { grid-area: unset; }
+
+
+        //  --  JUSTIFY SELF
+        //      Aligns a grid items inside a cell along the row (inline) axis.
+        //  --------------------------------------------------------------------
+        %#{$variant}gjs-auto                 { justify-self: auto; }
+        %#{$variant}gjs-end                  { justify-self: end; }
+        %#{$variant}gjs-center               { justify-self: center; }
+        %#{$variant}gjs-start                { justify-self: start; }
+        %#{$variant}gjs-stretch              { justify-self: stretch; }
+        %#{$variant}gjs-unset                { justify-self: unset; }
+
+        //  --  ALIGN SELF
+        //      Aligns a grid items inside a cell along the column (block) axis.
+        //  --------------------------------------------------------------------
+        %#{$variant}gas-auto                 { align-self: auto; }
+        %#{$variant}gas-end                  { align-self: end; }
+        %#{$variant}gas-center               { align-self: center; }
+        %#{$variant}gas-start                { align-self: start; }
+        %#{$variant}gas-stretch              { align-self: stretch; }
+        %#{$variant}gas-unset                { align-self: unset; }
+
+        //  --  PLACE SELF
+        //      Sets both align-self and justify-self properties in single declaration.
+        //  --------------------------------------------------------------------
+        %#{$variant}gps-auto                 { place-self: auto; }
+        %#{$variant}gps-end                  { place-self: end; }
+        %#{$variant}gps-center               { place-self: center; }
+        %#{$variant}gps-start                { place-self: start; }
+        %#{$variant}gps-stretch              { place-self: stretch; }
+        %#{$variant}gps-value                { place-self: var(--gps, stretch); }
+        %#{$variant}gps-unset                { place-self: unset; }
+    }
+}

@@ -1,0 +1,51 @@
+//
+//  DIALTONE
+//  CLASSES > UTILITIES > MARGINS
+//
+//  These are the margin utility classes for Dialpad's design system Dialtone.
+//  For further documentation of these classes, please visit:
+//  https://dialpad.design/utilities/margins
+//
+//  TABLE OF CONTENTS
+//  • BORDERS
+//    - Directional borders
+//    - Border widths
+//    - Border styles
+//    - Border colors
+//  • BORDER RADIUS
+//
+//  ============================================================================
+@each $breakpoint, $variant in $rwd-variants {
+    //
+    //  $$   MARGINS
+    //  ------------------------------------------------------------------------
+    @each $step, $value in $spacing-units { .#{$variant}m#{$step}  { @extend %#{$variant}m#{$step}; } }
+    @each $step, $value in $spacing-units { .#{$variant}mt#{$step} { @extend %#{$variant}mt#{$step}; } }
+    @each $step, $value in $spacing-units { .#{$variant}mr#{$step} { @extend %#{$variant}mr#{$step}; } }
+    @each $step, $value in $spacing-units { .#{$variant}mb#{$step} { @extend %#{$variant}mb#{$step}; } }
+    @each $step, $value in $spacing-units { .#{$variant}ml#{$step} { @extend %#{$variant}ml#{$step}; } }
+    @each $step, $value in $spacing-units { .#{$variant}mx#{$step} { @extend %#{$variant}mx#{$step}; } }
+    @each $step, $value in $spacing-units { .#{$variant}my#{$step} { @extend %#{$variant}my#{$step}; } }
+
+    //
+    //  $$   NEGATIVE MARGINS
+    //  ------------------------------------------------------------------------
+    @each $step, $value in $negative-margins { .#{$variant}mn#{$step}  { @extend %#{$variant}mn#{$step}; } }
+    @each $step, $value in $negative-margins { .#{$variant}mnt#{$step} { @extend %#{$variant}mnt#{$step}; } }
+    @each $step, $value in $negative-margins { .#{$variant}mnr#{$step} { @extend %#{$variant}mnr#{$step}; } }
+    @each $step, $value in $negative-margins { .#{$variant}mnb#{$step} { @extend %#{$variant}mnb#{$step}; } }
+    @each $step, $value in $negative-margins { .#{$variant}mnl#{$step} { @extend %#{$variant}mnl#{$step}; } }
+    @each $step, $value in $negative-margins { .#{$variant}mnx#{$step} { @extend %#{$variant}mnx#{$step}; } }
+    @each $step, $value in $negative-margins { .#{$variant}mny#{$step} { @extend %#{$variant}mny#{$step}; } }
+
+    //
+    //  $$   AUTO MARGINS
+    //  ------------------------------------------------------------------------
+    .#{$variant}m-auto  { @extend %#{$variant}m-auto; }
+    .#{$variant}mt-auto { @extend %#{$variant}mt-auto; }
+    .#{$variant}mr-auto { @extend %#{$variant}mr-auto; }
+    .#{$variant}mb-auto { @extend %#{$variant}mb-auto; }
+    .#{$variant}ml-auto { @extend %#{$variant}ml-auto; }
+    .#{$variant}mx-auto { @extend %#{$variant}mx-auto; }
+    .#{$variant}my-auto { @extend %#{$variant}my-auto; }
+}

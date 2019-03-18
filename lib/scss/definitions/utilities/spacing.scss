@@ -1,0 +1,92 @@
+//
+//  DIALTONE
+//  DEFINITIONS > UTILITIES > MARGIN
+//
+//  These are the base margin values, which are used by classes or can be used
+//  within Vue components. For further documentation of these values,
+//  visit https://dialpad.design/utilities/margin
+//
+//  ============================================================================
+@each $breakpoint, $variant in $rwd-variants {
+    @include rwd($breakpoint) {
+        //  ===================================================================
+        //  $  MARGINS
+        //  -------------------------------------------------------------------
+        @each $step, $value in $spacing-units { %#{$variant}m#{$step}  { margin: $value; } }
+        @each $step, $value in $spacing-units { %#{$variant}mt#{$step} { margin-top: $value; } }
+        @each $step, $value in $spacing-units { %#{$variant}mr#{$step} { margin-right: $value; } }
+        @each $step, $value in $spacing-units { %#{$variant}mb#{$step} { margin-bottom: $value; } }
+        @each $step, $value in $spacing-units { %#{$variant}ml#{$step} { margin-left: $value; } }
+        @each $step, $value in $spacing-units {
+            %#{$variant}mx#{$step} {
+                margin-right: $value;
+                margin-left: $value;
+            }
+        }
+        @each $step, $value in $spacing-units {
+            %#{$variant}my#{$step} {
+                margin-top: $value;
+                margin-bottom: $value;
+            }
+        }
+
+        //  ===================================================================
+        //  $  NEGATIVE MARGINS
+        //  -------------------------------------------------------------------
+        @each $step, $value in $negative-margins { %#{$variant}mn#{$step} { margin: -$value; } }
+        @each $step, $value in $negative-margins { %#{$variant}mnt#{$step} { margin-top: -$value; } }
+        @each $step, $value in $negative-margins { %#{$variant}mnr#{$step} { margin-right: -$value; } }
+        @each $step, $value in $negative-margins { %#{$variant}mnb#{$step} { margin-bottom: -$value; } }
+        @each $step, $value in $negative-margins { %#{$variant}mnl#{$step} { margin-left: -$value; } }
+        @each $step, $value in $negative-margins {
+            %#{$variant}mnx#{$step} {
+                margin-right: -$value;
+                margin-left: -$value;
+            }
+        }
+        @each $step, $value in $negative-margins {
+            %#{$variant}mny#{$step} {
+                margin-top: -$value;
+                margin-bottom: -$value;
+            }
+        }
+
+        //  ===================================================================
+        //  $  AUTO MARGINS
+        //  -------------------------------------------------------------------
+        %#{$variant}m-auto  { margin: auto; }
+        %#{$variant}mt-auto { margin-top: auto; }
+        %#{$variant}mr-auto { margin-right: auto; }
+        %#{$variant}mb-auto { margin-bottom: auto; }
+        %#{$variant}ml-auto { margin-left: auto; }
+        %#{$variant}mx-auto {
+            margin-right: auto;
+            margin-left: auto;
+        }
+        %#{$variant}my-auto {
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+
+        //  ===================================================================
+        //  $  PADDING
+        //  -------------------------------------------------------------------
+        @each $step, $value in $spacing-units { %#{$variant}p#{$step}  { padding: $value; } }
+        @each $step, $value in $spacing-units { %#{$variant}pt#{$step} { padding-top: $value; } }
+        @each $step, $value in $spacing-units { %#{$variant}pr#{$step} { padding-right: $value; } }
+        @each $step, $value in $spacing-units { %#{$variant}pb#{$step} { padding-bottom: $value; } }
+        @each $step, $value in $spacing-units { %#{$variant}pl#{$step} { padding-left: $value; } }
+        @each $step, $value in $spacing-units {
+            %#{$variant}px#{$step} {
+                padding-right: $value;
+                padding-left: $value;
+            }
+        }
+        @each $step, $value in $spacing-units {
+            %#{$variant}py#{$step} {
+                padding-top: $value;
+                padding-bottom: $value;
+            }
+        }
+    }
+}

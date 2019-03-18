@@ -1,0 +1,72 @@
+//
+//  DIALTONE
+//  UTILITIES: BACKGROUNDS
+//
+//  These are the background classes for Dialpad's design system Dialtone.
+//  For further documentation of these and other classes,
+//  visit https://dialpad.design/utilities/backgrounds
+//
+//  TABLE OF CONTENTS
+//  • BACKGROUND FILLS
+//  • BACKGROUND GRADIENTS
+//  • BORDERS
+//  • BOX SHADOWS
+//  • OPACITY
+//
+//  ============================================================================
+@each $breakpoint, $variant in $rwd-variants {
+    //  ========================================================================
+    //  $   BACKGROUND FILLS
+    //  ------------------------------------------------------------------------
+    @each $stop, $color in $color-steps { .#{$variant}bgc-#{$stop} { @extend %#{$variant}bgc-#{$stop}; } }
+    .#{$variant}bgc-transparent { @extend %#{$variant}bgc-transparent; }
+
+
+    //  ========================================================================
+    //  $   BACKGROUND GRADIENTS
+    //  ------------------------------------------------------------------------
+    //  --  Dark background gradients
+    @each $direction in $bgg-directions {
+        .#{$variant}blg-dark-to-#{$direction} { @extend %#{$variant}blg-dark-to-#{$direction}; }
+    }
+    //  --  Light background gradients
+    @each $direction in $bgg-directions {
+        .#{$variant}blg-light-to-#{$direction} { @extend %#{$variant}blg-light-to-#{$direction}; }
+    }
+
+    //  ====================================================================
+    //  $   BOX SHADOWS
+    //  --------------------------------------------------------------------
+    @each $key, $value in $box-shadows { .#{$variant}bs-#{$key} { @extend %#{$variant}bs-#{$key}; } }
+
+
+    //  ====================================================================
+    //  $   OPACITY
+    //      For times that you want a fill background, but not at 100% opacity.
+    //      These are only offered for $white and gray.
+    //  --------------------------------------------------------------------
+    //  --  BACKGROUND OPACITY FILLS
+    @each $name, $color in $opacity-colors {
+        @each $key, $stop in $bgc-opacity-stops {
+            .#{$variant}bgc-#{$name}-o#{$key} { @extend %#{$variant}bgc-#{$name}-o#{$key}; }
+        }
+    }
+
+    //  --  GENERIC OPACITY CLASSES
+    @each $key, $stop in $opacity-stops { %#{$variant}o#{$key} { opacity: $stop; } }
+
+
+    //  ====================================================================
+    //  $   OUTLINE
+    //  --------------------------------------------------------------------
+    .#{$variant}os-solid      { @extend %#{$variant}os-solid; }
+    .#{$variant}os-dashed     { @extend %#{$variant}os-dashed; }
+    .#{$variant}os-dotted     { @extend %#{$variant}os-dotted; }
+    .#{$variant}os-double     { @extend %#{$variant}os-double; }
+    .#{$variant}os-groove     { @extend %#{$variant}os-groove; }
+    .#{$variant}os-ridge      { @extend %#{$variant}os-ridge; }
+    .#{$variant}os-inset      { @extend %#{$variant}os-inset; }
+    .#{$variant}os-outset     { @extend %#{$variant}os-outset; }
+    .#{$variant}os-none       { @extend %#{$variant}os-none; }
+    .#{$variant}os-unset      { @extend %#{$variant}os-unset; }
+}

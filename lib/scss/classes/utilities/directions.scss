@@ -1,0 +1,90 @@
+//
+//  DIALTONE
+//  UTILITIES: DIRECTIONS
+//
+//  These are the direction utility classes for Dialpad's design system Dialtone.
+//  For further documentation of these and other classes, please visit:
+//  https://dialpad.design/
+//
+//  TABLE OF CONTENTS
+//  • DIRECTIONS
+//    - Top
+//    - Right
+//    - Bottom
+//    - Left
+//  • WIDTHS
+//    - Fluid Widths
+//    - Fixed Widths
+//    - Min-widths
+//    - Max-widths
+//  • HEIGHTS
+//    - Fluid Heights
+//    - Fixed Heights
+//    - Min-heights
+//    - Max-heights
+//
+//  ============================================================================
+@each $breakpoint, $variant in $rwd-variants {
+    //  ========================================================================
+    //  $   DIRECTIONS
+    //  ------------------------------------------------------------------------
+    //  --  Top
+    @each $spacer, $value in $spacing-units { .#{$variant}t#{$spacer}   { @extend %#{$variant}t#{$spacer}; } }
+    @each $spacer, $value in $spacing-units { .#{$variant}tn#{$spacer}  { @extend %#{$variant}tn#{$spacer}; } }
+    .#{$variant}t100 { @extend %#{$variant}t100; }
+
+    //  --  Right
+    @each $spacer, $value in $spacing-units { .#{$variant}r#{$spacer}   { @extend %#{$variant}r#{$spacer}; } }
+    @each $spacer, $value in $spacing-units { .#{$variant}rn#{$spacer}  { @extend %#{$variant}rn#{$spacer}; } }
+    .#{$variant}r100 { @extend %#{$variant}r100; }
+
+    //  --  Bottom
+    @each $spacer, $value in $spacing-units { .#{$variant}b#{$spacer}   { @extend %#{$variant}b#{$spacer}; } }
+    @each $spacer, $value in $spacing-units { .#{$variant}bn#{$spacer}  { @extend %#{$variant}bn#{$spacer}; } }
+    .#{$variant}b100 { @extend %#{$variant}b100; }
+
+    //  --  Left
+    @each $spacer, $value in $spacing-units { .#{$variant}l#{$spacer}   { @extend %#{$variant}l#{$spacer}; } }
+    @each $spacer, $value in $spacing-units { .#{$variant}ln#{$spacer}  { @extend %#{$variant}ln#{$spacer}; } }
+    .#{$variant}l100 { @extend %#{$variant}l100; }
+
+
+    //  ========================================================================
+    //  $   WIDTHS
+    //  ------------------------------------------------------------------------
+    //  --  Fluid
+    @each $key, $value in $width-percentages { .#{$variant}w#{$key} { @extend %#{$variant}w#{$key}; } }
+
+    //  --  Fixed
+    @each $step, $value in $fixed-sizes { .#{$variant}w#{$step}   { @extend %#{$variant}w#{$step}; } }
+    @each $step, $value in $fixed-sizes { .#{$variant}wmn#{$step} { @extend %#{$variant}wmn#{$step}; } }
+    @each $step, $value in $fixed-sizes { .#{$variant}wmx#{$step} { @extend %#{$variant}wmx#{$step}; } }
+
+    //  --  Full Viewport
+    .#{$variant}w100v    { @extend %#{$variant}w100v; }
+
+    //  --  Auto Widths
+    .#{$variant}w-auto   { @extend %#{$variant}w-auto; }
+    .#{$variant}wmn-auto { @extend %#{$variant}wmn-auto; }
+    .#{$variant}wmx-auto { @extend %#{$variant}wmx-auto; }
+
+
+    //  ========================================================================
+    //  $   HEIGHT
+    //  ------------------------------------------------------------------------
+    //  --  Fluid
+    @each $key, $value in $width-percentages { .#{$variant}h#{$key} { @extend %#{$variant}h#{$key}; } }
+
+    //  --  Fixed
+    @each $step, $value in $fixed-sizes { .#{$variant}h#{$step}   { @extend %#{$variant}h#{$step}; } }
+    @each $step, $value in $fixed-sizes { .#{$variant}hmn#{$step} { @extend %#{$variant}hmn#{$step}; } }
+    @each $step, $value in $fixed-sizes { .#{$variant}hmx#{$step} { @extend %#{$variant}hmx#{$step}; } }
+
+    //  --  Full Viewport
+    .#{$variant}h100v    { @extend %#{$variant}h100v; }
+
+    //  --  Auto Heights
+    .#{$variant}h-auto   { @extend %#{$variant}h-auto; }
+    .#{$variant}hmn-auto { @extend %#{$variant}hmn-auto; }
+    .#{$variant}hmx-auto { @extend %#{$variant}hmx-auto; }
+}

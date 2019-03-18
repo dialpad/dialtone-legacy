@@ -29,7 +29,6 @@ gulp.task('lib-css', function() {
         .pipe(gulp.dest(config.csslib))
         .pipe(gulp.dest(config.cssdocs))
         .pipe(postcss([
-            normalize({ forceImport: true }),
             cssnano()
         ]))
         .pipe(rename({ suffix: '.min' }))

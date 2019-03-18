@@ -1,0 +1,149 @@
+//
+//  DIALTONE
+//  DEFINITIONS: INPUTS
+//
+//  These are input definitions for Dialpad's design system Dialtone.
+//  For further documentation of these and other classes, please visit:
+//  https://dialpad.design/components/inputs
+//
+//  TABLE OF CONTENTS
+//  • INPUTS & TEXTAREAS
+//    - Base Style
+//    - Validation States
+//    - Sizes
+//  • SELECT MENUS
+//  • CHECKBOXES
+//  • RADIOS
+//  • TOGGLES
+//  • LABELS
+//
+//  ============================================================================
+@each $breakpoint, $variant in $rwd-variants {
+    @include rwd($breakpoint) {
+        //  ====================================================================
+        //  $   INPUTS
+        //  --------------------------------------------------------------------
+        %#{$variant}dt-input {
+            @include input-base-style;
+        }
+
+        //  ====================================================================
+        //  $   TEXTAREA
+        //  --------------------------------------------------------------------
+        %#{$variant}dt-textarea {
+            @include input-base-style;
+            padding: $sp12;
+            min-height: 5rem;
+        }
+
+        //  ====================================================================
+        //  $   SIZES
+        //  --------------------------------------------------------------------
+        %#{$variant}dt-input-sizes__sm { font-size: $fs-caption; }
+        %#{$variant}dt-input-sizes__md { font-size: $fs-body2; }
+        %#{$variant}dt-input-sizes__lg { font-size: $fs-subheading; }
+        %#{$variant}dt-input-sizes__xl { font-size: $fs-headline; }
+
+        //  --  INPUT-ONLY SIZE PROPERTIES
+        %#{$variant}dt-input__sm {
+            padding: $sp4 $sp12;
+            min-height: 2.2rem;
+        }
+        %#{$variant}dt-input__md { min-height: 2.75rem; }
+        %#{$variant}dt-input__lg { min-height: 3rem; }
+        %#{$variant}dt-input__xl { min-height: 3.5rem; }
+
+        //  --  TEXTAREA-ONLY SIZE PROPERTIES
+        %#{$variant}dt-textarea__sm { min-height: 3rem; }
+        %#{$variant}dt-textarea__md { min-height: 5.25rem; }
+        %#{$variant}dt-textarea__lg { min-height: 5.75rem; }
+        %#{$variant}dt-textarea__xl {
+            padding: $sp16;
+            min-height: 6.25rem;
+        }
+
+        //  ====================================================================
+        //  $   FIELDSET
+        //      Reset values
+        //  --------------------------------------------------------------------
+        %fieldset {
+            padding: $sp0;
+            min-width: $sp0;
+            border: $sp0;
+        }
+
+        //  ====================================================================
+        //  $   LABELS
+        //  --------------------------------------------------------------------
+        %#{$variant}dt-label {
+            display: flex;
+            flex: 1 auto;
+            align-items: baseline;
+            justify-content: space-between;
+            margin: 0 $sp2;
+            color: currentColor;
+            word-break: break-word;
+            font-weight: inherit;
+            font-size: $fs-body2;
+            font-family: inherit;
+            line-height: $lh-lg;
+            cursor: pointer;
+            fill: currentColor;
+            overflow-wrap: break-word;
+        }
+
+        //  ====================================================================
+        //  $   LABEL DESCRIPTION COPY
+        //  --------------------------------------------------------------------
+        %#{$variant}dt-description {
+            display: block;
+            margin: 0 $sp2 $sp4;
+            color: $fc-light;
+            font-weight: $fw-normal;
+            font-size: $fs-caption;
+            font-family: $ff-sans;
+            line-height: $lh-lg;
+            fill: currentColor;
+        }
+
+        //  ====================================================================
+        //  $   INPUT MESSAGE COPY
+        //  --------------------------------------------------------------------
+        %#{$variant}dt-input-message {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            margin: $sp4 $sp2;
+            font-weight: inherit;
+            font-size: $fs-caption;
+            font-family: $ff-sans;
+            line-height: inherit;
+
+            //  --  Validation States
+            &%has-warning {
+                color: $input-warning-text;
+
+                %#{$variant}dt-input-message--link {
+                    color: $input-warning-link;
+                    &:hover { color: darken($input-warning-link,10%); }
+                }
+            }
+            &%has-error {
+                color: $input-error-text;
+
+                %#{$variant}dt-input-message--link {
+                    color: $input-error-link;
+                    &:hover { color: darken($input-error-link,10%); }
+                }
+            }
+            &%has-success {
+                color: $input-success-text;
+
+                %#{$variant}dt-input-message--link {
+                    color: $input-success-link;
+                    &:hover { color: darken($input-success-link,10%); }
+                }
+            }
+        }
+    }
+}
