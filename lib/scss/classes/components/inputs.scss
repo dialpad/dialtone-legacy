@@ -18,231 +18,74 @@
 //  • LABELS
 //
 //  ============================================================================
-//  $   VARIABLES
-//  ----------------------------------------------------------------------------
-$input-border:              $border-gray-light;
-$input-warning-border:      #FFBB34;
-$input-warning-text:        #965E00;
-$input-warning-link:        #4E3100;
-$input-error-border:        $red-100;
-$input-error-text:          #D32603;
-$input-error-link:          #7B1500;
-$input-success-border:      $green-100;
-$input-success-text:        #00671F;
-$input-success-link:        #00310F;
-
-
-//  ============================================================================
-//  $   INPUTS & TEXTAREAS
-//  ============================================================================
-//  $$  INPUTS
-//  ----------------------------------------------------------------------------
-.dt-input,
-.dt-textarea {
-    position: relative;
-    flex: 1 0%;
-    padding: $sp8 $sp16;
-    min-width: 0;
-    min-height: 2.5rem;
-    width: 100%;
-    outline: none;
-    border: $sp1 solid $input-border;
-    border-radius: $br-sm;
-    box-shadow: inset 0 0 $sp1 transparentize($gray-040,.8), 0 0 0 transparentize($white,1);
-    font-weight: inherit;
-    font-size: inherit;
-    font-family: inherit;
-    transition-timing-function: $transition-cubic-inOut;
-    transition-duration: 100ms;
-    transition-property: border, box-shadow, background-color;
-
-    &::placeholder  { color: $gray-020; }   //  Placeholder copy
-    &::-ms-clear    { display: none; }      //  Remove input EDGE additions
-
-    //  $$  INTERACTIVE STATES
-    //  ========================================================================
-    //  --  FOCUS
-    &:focus {
-        position: relative;
-        outline: 0;
-        border-color: $blue-060;
-        box-shadow: inset 0 0 $sp2 $gray-010, 0 0 0 $sp4 transparentize($blue-060,0.85);
-    }
-
-    //  --  DISABLED / READ-ONLY
-    &[disabled],
-    &[read-only] {
-        border-color: $border-gray-lighter;
-        background-color: $gray-005;
-        box-shadow: none;
-        color: $gray-040;
-    }
-
-    //  Disabled
-    &[disabled] {
-        cursor: not-allowed;
-    }
-}
-
-//  $$  TEXTAREA
-//  ----------------------------------------------------------------------------
-.dt-textarea {
-    padding: $sp12;
-    min-height: 5rem;
-}
-
-.dt-input,
-.dt-textarea {
-    //  ========================================================================
-    //  $   VALIDATION STATES
-    //  ========================================================================
-    //  $$  WARNING
-    //  ------------------------------------------------------------------------
-    &.has-warning {
-        border-color: $input-warning-border;
-
-        &:focus {
-            box-shadow: inset 0 0 $sp2 $gray-010, 0 0 0 $sp4 transparentize($input-warning-border,.75);
-        }
-    }
-
-    //  $$  ERROR
-    //  ------------------------------------------------------------------------
-    &.has-error {
-        border-color: $input-error-border;
-
-        &:focus {
-            box-shadow: inset 0 0 $sp2 $gray-010, 0 0 0 $sp4 transparentize($input-error-border,.75);
-        }
-    }
-
-    //  $$  SUCCESS
-    //  ------------------------------------------------------------------------
-    &.has-success {
-        border-color: $input-success-border;
-
-        &:focus {
-            box-shadow: inset 0 0 $sp2 $gray-010, 0 0 0 $sp4 transparentize($input-success-border,.75);
-        }
-    }
-}
-
-//  ============================================================================
-//  $  INPUT SIZES
-//  ----------------------------------------------------------------------------
 @each $breakpoint, $variant in $rwd-variants {
-    @include rwd($breakpoint) {
-        .dt-input__sm,
-        .dt-textarea__sm    { font-size: $fs-caption; }
+    //  ========================================================================
+    //  $  INPUTS
+    //  ------------------------------------------------------------------------
+    .#{$variant}dt-input    { @extend %#{$variant}dt-input; }
 
-        .dt-input__md,
-        .dt-textarea__md    { font-size: $fs-body2; }
-
-        .dt-input__lg,
-        .dt-textarea__lg    { font-size: $fs-subheading; }
-
-        .dt-input__xl,
-        .dt-textarea__xl    { font-size: $fs-headline; }
-
-        //  --  Input only size properties
-        .dt-input__sm {
-            padding: $sp4 $sp12;
-            min-height: 2.2rem;
-        }
-        .dt-input__md   { min-height: 2.75rem; }
-        .dt-input__lg   { min-height: 3rem; }
-        .dt-input__xl   { min-height: 3.5rem; }
-
-        //  --  Textarea only size properties
-        .dt-textarea__sm   { min-height: 3rem; }
-        .dt-textarea__md   { min-height: 5.25rem; }
-        .dt-textarea__lg   { min-height: 5.75rem; }
-        .dt-textarea__xl {
-            padding: $sp16;
-            min-height: 6.25rem;
-        }
+    //  --  SIZES
+    .#{$variant}dt-input__sm {
+        @extend %#{$variant}dt-input-sizes__sm;
+        @extend %#{$variant}dt-input__sm;
     }
-}
-
-
-//  ============================================================================
-//  $  FIELDSET
-//  ----------------------------------------------------------------------------
-fieldset {
-    padding: 0;
-    min-width: 0;
-    border: 0;
-}
-
-
-//  ============================================================================
-//  $  LABELS
-//  ============================================================================
-.dt-label {
-    display: flex;
-    flex: 1 auto;
-    align-items: baseline;
-    justify-content: space-between;
-    margin: 0 $sp2;
-    color: currentColor;
-    word-break: break-word;
-    font-weight: inherit;
-    font-size: $fs-body2;
-    font-family: inherit;
-    line-height: $lh-lg;
-    cursor: pointer;
-    fill: currentColor;
-    overflow-wrap: break-word;
-}
-
-// Reset cursor when it's a legend
-legend.dt-label { cursor: default; }
-
-//  --  Description copy placed next to inputs
-.dt-description {
-    display: block;
-    margin: 0 $sp2 $sp4;
-    color: $fc-light;
-    font-weight: $fw-normal;
-    font-size: $fs-caption;
-    font-family: $ff-sans;
-    line-height: $lh-lg;
-    fill: currentColor;
-}
-
-.dt-input-message {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    margin: $sp4 $sp2;
-    font-weight: inherit;
-    font-size: $fs-caption;
-    font-family: $ff-sans;
-    line-height: inherit;
-
-    //  --  Validation States
-    &.has-warning {
-        color: $input-warning-text;
-
-        .dt-input-message--link {
-            color: $input-warning-link;
-            &:hover { color: darken($input-warning-link,10%); }
-        }
+    .#{$variant}dt-input__md {
+        @extend %#{$variant}dt-input-sizes__md;
+        @extend %#{$variant}dt-input__md;
     }
-    &.has-error {
-        color: $input-error-text;
-
-        .dt-input-message--link {
-            color: $input-error-link;
-            &:hover { color: darken($input-error-link,10%); }
-        }
+    .#{$variant}dt-input__lg {
+        @extend %#{$variant}dt-input-sizes__lg;
+        @extend %#{$variant}dt-input__lg;
     }
-    &.has-success {
-        color: $input-success-text;
-
-        .dt-input-message--link {
-            color: $input-success-link;
-            &:hover { color: darken($input-success-link,10%); }
-        }
+    .#{$variant}dt-input__xl {
+        @extend %#{$variant}dt-input-sizes__xl;
+        @extend %#{$variant}dt-input__xl;
     }
+
+    //  ========================================================================
+    //  $  TEXTAREAS
+    //  ------------------------------------------------------------------------
+    .#{$variant}dt-textarea { @extend %#{$variant}dt-textarea; }
+
+    //  --  SIZES
+    .#{$variant}dt-textarea__sm {
+        @extend %#{$variant}dt-input-sizes__sm;
+        @extend %#{$variant}dt-textarea__sm;
+    }
+    .#{$variant}dt-textarea__md {
+        @extend %#{$variant}dt-input-sizes__md;
+        @extend %#{$variant}dt-textarea__md;
+    }
+    .#{$variant}dt-textarea__lg {
+        @extend %#{$variant}dt-input-sizes__lg;
+        @extend %#{$variant}dt-textarea__lg;
+    }
+    .#{$variant}dt-textarea__xl {
+        @extend %#{$variant}dt-input-sizes__xl;
+        @extend %#{$variant}dt-textarea__xl;
+    }
+
+    //  ========================================================================
+    //  $  FIELDSET
+    //     Reset values
+    //  ------------------------------------------------------------------------
+    fieldset { @extend %fieldset; }
+
+    //  ========================================================================
+    //  $  LABELS
+    //  ------------------------------------------------------------------------
+    .#{$variant}dt-label { @extend %#{$variant}dt-label; }
+
+    // Reset cursor when it's a legend
+    legend.dt-label { cursor: default; }
+
+    //  ========================================================================
+    //  $  LABEL DESCRIPTION COPY
+    //  ------------------------------------------------------------------------
+    .#{$variant}dt-description { @extend %#{$variant}dt-description; }
+
+    //  ========================================================================
+    //  $  INPUT MESSAGE COPY
+    //  ------------------------------------------------------------------------
+    .#{$variant}dt-input-message { @extend %#{$variant}dt-input-message; }
 }
