@@ -14,50 +14,13 @@ description: Utility classes for changing the border radius of an element.
             </tr>
         </thead>
         <tbody>
+            {% for item in site.data.borders.radius %}
             <tr>
-                <td class="ff-mono fs-fine">.br-sm</td>
-                <td class="ff-mono fs-fine">border-radius: 3px;</td>
-                <td>Adds a 3px border radius.</td>
+                <th scope="row" class="ff-mono fs-fine">{{ item.class }}</th>
+                <td class="ff-mono fs-fine">{{ item.output }}</td>
+                <td>{{ item.description }}</td>
             </tr>
-            <tr>
-                <td class="ff-mono fs-fine">.br-md</td>
-                <td class="ff-mono fs-fine">border-radius: 5px;</td>
-                <td>Adds a 5px border radius.</td>
-            </tr>
-            <tr>
-                <td class="ff-mono fs-fine">.br-lg</td>
-                <td class="ff-mono fs-fine">border-radius: 7px;</td>
-                <td>Adds a 7px border radius.</td>
-            </tr>
-            <tr>
-                <td class="ff-mono fs-fine">.br-xl</td>
-                <td class="ff-mono fs-fine">border-radius: 11px;</td>
-                <td>Adds an 11px border radius.</td>
-            </tr>
-            <tr>
-                <td class="ff-mono fs-fine">.btr-[size]</td>
-                <td class="ff-mono fs-fine">border-top-left-radius: [size];<br/>border-top-right-radius: [size];
-                </td>
-                <td>Adds a border radius to both <strong>top</strong> corners.</td>
-            </tr>
-            <tr>
-                <td class="ff-mono fs-fine">.brr-[size]</td>
-                <td class="ff-mono fs-fine">border-top-right-radius: [size];<br/>border-bottom-right-radius: [size];
-                </td>
-                <td>Adds a border radius to both <strong>right</strong> corners.</td>
-            </tr>
-            <tr>
-                <td class="ff-mono fs-fine">.bbr-[size]</td>
-                <td class="ff-mono fs-fine">border-bottom-left-radius: [size];<br/>border-bottom-right-radius: [size];
-                </td>
-                <td>Adds a border radius to both <strong>bottom</strong> corners.</td>
-            </tr>
-            <tr>
-                <td class="ff-mono fs-fine">.blr-[size]</td>
-                <td class="ff-mono fs-fine">border-top-left-radius: [size];<br/>border-bottom-left-radius: [size];
-                </td>
-                <td>Adds a border radius to both <strong>left</strong> corners.</td>
-            </tr>
+            {% endfor %}
         </tbody>
     </table>
 </section>
