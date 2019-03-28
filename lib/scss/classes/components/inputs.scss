@@ -22,7 +22,19 @@
     //  ========================================================================
     //  $  INPUTS
     //  ------------------------------------------------------------------------
-    .#{$variant}dt-input    { @extend %#{$variant}dt-input; }
+    .#{$variant}dt-input {
+        @extend %#{$variant}dt-input;
+
+        &.#{$variant}has-warning {
+            @extend %#{$variant}has-warning;
+        }
+        &.#{$variant}has-error {
+            @extend %#{$variant}has-error;
+        }
+        &.#{$variant}has-success {
+            @extend %#{$variant}has-success;
+        }
+    }
 
     //  --  SIZES
     .#{$variant}dt-input__sm {
@@ -45,7 +57,19 @@
     //  ========================================================================
     //  $  TEXTAREAS
     //  ------------------------------------------------------------------------
-    .#{$variant}dt-textarea { @extend %#{$variant}dt-textarea; }
+    .#{$variant}dt-textarea {
+        @extend %#{$variant}dt-textarea;
+
+        &.#{$variant}has-warning {
+            @extend %#{$variant}has-warning;
+        }
+        &.#{$variant}has-error {
+            @extend %#{$variant}has-error;
+        }
+        &.#{$variant}has-success {
+            @extend %#{$variant}has-success;
+        }
+    }
 
     //  --  SIZES
     .#{$variant}dt-textarea__sm {
@@ -74,10 +98,12 @@
     //  ========================================================================
     //  $  LABELS
     //  ------------------------------------------------------------------------
-    .#{$variant}dt-label { @extend %#{$variant}dt-label; }
+    .#{$variant}dt-label {
+        @extend %#{$variant}dt-label;
+    }
 
     // Reset cursor when it's a legend
-    legend.dt-label { cursor: default; }
+    legend.#{$variant}dt-label { cursor: default; }
 
     //  ========================================================================
     //  $  LABEL DESCRIPTION COPY
@@ -87,5 +113,49 @@
     //  ========================================================================
     //  $  INPUT MESSAGE COPY
     //  ------------------------------------------------------------------------
-    .#{$variant}dt-input-message { @extend %#{$variant}dt-input-message; }
+    .#{$variant}dt-input-message {
+        @extend %#{$variant}dt-input-message;
+
+        &.#{$variant}has-warning {
+            color: $input-warning-text;
+
+            .#{$variant}dt-input-message--link {
+                color: $input-warning-link;
+                &:hover { color: darken($input-warning-link,10%); }
+            }
+        }
+        &.#{$variant}has-error {
+            color: $input-error-text;
+
+            .#{$variant}dt-input-message--link {
+                color: $input-error-link;
+                &:hover { color: darken($input-error-link,10%); }
+            }
+        }
+        &.#{$variant}has-success {
+            color: $input-success-text;
+
+            .#{$variant}dt-input-message--link {
+                color: $input-success-link;
+                &:hover { color: darken($input-success-link,10%); }
+            }
+        }
+    }
+
+    //  ========================================================================
+    //  $  SELECT MENU
+    //  ------------------------------------------------------------------------
+    .#{$variant}dt-select {
+        @extend %#{$variant}dt-select;
+
+        &.#{$variant}has-warning > select {
+            @extend %#{$variant}has-warning;
+        }
+        &.#{$variant}has-error > select {
+            @extend %#{$variant}has-error;
+        }
+        &.#{$variant}has-success > select {
+            @extend %#{$variant}has-success;
+        }
+    }
 }
