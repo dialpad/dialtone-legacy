@@ -45,13 +45,11 @@
             }
             &:before {
                 top: calc(50% - #{$bw4});
-                border-top-width: 0;
-                border-bottom-width: $bw4;
+                border-top-width: 0 !important;
             }
             &:after {
                 top: calc(50% + #{$bw2});
-                border-top-width: $bw4;
-                border-bottom-width: 0;
+                border-bottom-width: 0 !important;
             }
 
             > select {
@@ -112,6 +110,34 @@
         %#{$variant}dt-textarea__xl {
             padding: $sp16;
             min-height: 6.25rem;
+        }
+
+        //  --  SELECT MENU SIZE PROPERTIES
+        %#{$variant}dt-select__sm {
+            &:before { top: calc(50% - #{$sp6}); }
+            &:after  { top: calc(50% + 1px); }
+            > select {
+                padding: $sp6 1.875rem $sp2 $sp12;
+                min-height: 2.2rem;
+            }
+        }
+        %#{$variant}dt-select__md {
+            &:before,
+            &:after  { border-width: 0.3125rem; }
+            &:before { top: calc(50% - 0.3125rem); }
+            > select { min-height: 2.75rem; }
+        }
+        %#{$variant}dt-select__lg {
+            &:before,
+            &:after  { border-width: 0.3125rem; }
+            &:before { top: calc(50% - 0.3125rem); }
+            > select { min-height: 3rem; }
+        }
+        %#{$variant}dt-select__xl {
+            &:before,
+            &:after  { border-width: $sp6; }
+            &:before { top: calc(50% - #{$sp6}); }
+            > select { min-height: 3.5rem; }
         }
 
         //  ====================================================================

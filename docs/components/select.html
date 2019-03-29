@@ -128,12 +128,23 @@ description: Select menus are menus used to provide choices to users.
             </tr>
         </thead>
         <tbody>
-            {% for item in site.data.inputs.input-sizes %}
+            {% for item in site.data.inputs.select-sizes %}
                 <tr>
                     <th scope="row" class="va-middle fs-body1">{{ item.name }}</th>
                     <td class="va-middle ff-mono fs-fine">{% if item.class != "N" %}.{{ item.class }}{% else %}<em class="fc-gray fs-body1 ff-mark">N/A</em>{% endif %}</td>
                     <td class="va-middle">{{ item.size }}</td>
-                    <td class="va-middle"><input class="dt-input {% if item.class != "N" %}{{ item.class }}{% endif %}" id="Dialtone--InputExample6" type="email" placeholder="e.g. Can you hear me?" /></td>
+                    <td class="va-middle">
+                        <div class="dt-select{% if item.class != "N" %} {{ item.class }}{% endif %}">
+                            <select id="Dialtone--SelectSizeExample--{{ item.name }}">
+                                <option value="" selected>Please select an option…</option>
+                                <option value="train">Train</option>
+                                <option value="plane">Plane</option>
+                                <option value="boat">Boat</option>
+                                <option value="car">Automobile</option>
+                                <option value="walking">Walking</option>
+                            </select>
+                        </div>
+                    </td>
                 </tr>
             {% endfor %}
         </tbody>

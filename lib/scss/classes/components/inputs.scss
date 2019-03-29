@@ -90,6 +90,41 @@
     }
 
     //  ========================================================================
+    //  $  SELECT MENU
+    //  ------------------------------------------------------------------------
+    .#{$variant}dt-select {
+        @extend %#{$variant}dt-select;
+
+        &.#{$variant}has-warning > select {
+            @extend %#{$variant}has-warning;
+        }
+        &.#{$variant}has-error > select {
+            @extend %#{$variant}has-error;
+        }
+        &.#{$variant}has-success > select {
+            @extend %#{$variant}has-success;
+        }
+    }
+
+    //  --  SIZES
+    .#{$variant}dt-select__sm {
+        @extend %#{$variant}dt-input-sizes__sm;
+        @extend %#{$variant}dt-select__sm;
+    }
+    .#{$variant}dt-select__md {
+        @extend %#{$variant}dt-input-sizes__md;
+        @extend %#{$variant}dt-select__md;
+    }
+    .#{$variant}dt-select__lg {
+        @extend %#{$variant}dt-input-sizes__lg;
+        @extend %#{$variant}dt-select__lg;
+    }
+    .#{$variant}dt-select__xl {
+        @extend %#{$variant}dt-input-sizes__xl;
+        @extend %#{$variant}dt-select__xl;
+    }
+
+    //  ========================================================================
     //  $  FIELDSET
     //     Reset values
     //  ------------------------------------------------------------------------
@@ -139,23 +174,6 @@
                 color: $input-success-link;
                 &:hover { color: darken($input-success-link,10%); }
             }
-        }
-    }
-
-    //  ========================================================================
-    //  $  SELECT MENU
-    //  ------------------------------------------------------------------------
-    .#{$variant}dt-select {
-        @extend %#{$variant}dt-select;
-
-        &.#{$variant}has-warning > select {
-            @extend %#{$variant}has-warning;
-        }
-        &.#{$variant}has-error > select {
-            @extend %#{$variant}has-error;
-        }
-        &.#{$variant}has-success > select {
-            @extend %#{$variant}has-success;
         }
     }
 }
