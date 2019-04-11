@@ -20,8 +20,8 @@ title: Grid Prototype 4x3
         right: 12px;
     }
 </style>
-<div class="d-grid ac-center h100v">
-    <main class="grid gg16 gjc-center gaf-dense" style="--grid-col-min-width: 12rem;">
+<div class="grid ac-center h100v">
+    <main class="grid gl__col gg16 gjc-center gaf-dense" style="--grid-col-min-width: 12rem;">
         <div class="grid--cell js-video-wrapper"><div class="flex flex__center example">
             <div class="mxn4 video-controls">
                 <span class="mx4 ff-mark-bold fs-caps video-controls--item js-video-size-sm">Sm</span>
@@ -60,22 +60,24 @@ title: Grid Prototype 4x3
 
         videoSm.on("click", function(e) {
             var videoWrapper = $(this).closest(".js-video-wrapper");
-            videoWrapper.removeClass("ga-span")
+            videoWrapper.removeClass("gre-value gce-value")
                         .attr("style", "");
         });
 
         videoMd.on("click", function(e) {
             var videoWrapper = $(this).closest(".js-video-wrapper");
-            videoWrapper.addClass("ga-span")
-                        .attr("style", "")
+            var gridSize = "--grid-row-end: span 2; --grid-col-end: span 2;";
+
+            videoWrapper.addClass("gre-value gce-value")
+                        .attr("style", gridSize)
                         .css("min-height", "18.75rem");
         });
 
         videoLg.on("click", function(e) {
             var videoWrapper = $(this).closest(".js-video-wrapper");
-            var gridSize = "--grid-area-row-end: 3; --grid-area-col-end: 3;";
+            var gridSize = "--grid-row-end: span 3; --grid-col-end: span 3;"
 
-            videoWrapper.addClass("ga-span")
+            videoWrapper.addClass("gre-value gce-value")
                         .attr("style", gridSize)
                         .css("min-height", "28.5rem");
         });
