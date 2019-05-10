@@ -14,12 +14,12 @@
 //  ============================================================================
 //  $   TOKENS
 //  ----------------------------------------------------------------------------
-$button-primary:                $blue-060;
-$button-primary-hover:          saturate($button-primary,15%);
-$button-danger:                 $red-080;
-$button-danger-hover:           $red-100;
+$button-primary:                $blue;
+$button-primary-hover:          $blue-dark;
+$button-danger:                 $red-dark;
+$button-danger-hover:           darken($button-danger,10%);
 
-$button-font-color:             $blue-080;
+$button-font-color:             $blue-dark;
 $button-background-color:       $button-primary;
 $button-border-color:           $button-primary;
 $button-border-radius:          $br-sm;
@@ -27,6 +27,10 @@ $button-line-height:            $lh-md;
 
 $button-padding:                $sp12 $sp16 ($sp12 - $sp1);
 
+@mixin disabled-input-style {
+    background-color: $ash-dark;
+    color: $slate-lightest;
+}
 
 @each $breakpoint, $variant in $rwd-variants {
     @include rwd($breakpoint) {
@@ -78,8 +82,7 @@ $button-padding:                $sp12 $sp16 ($sp12 - $sp1);
                 box-shadow: inset 0 0 $sp8 0 transparentize($button-background-color,.7);
             }
             &[disabled] {
-                background-color: $gray-010;
-                color: $gray-060;
+                @include disabled-input-style;
                 opacity: 0.75;
                 transition: none;
             }
@@ -101,7 +104,7 @@ $button-padding:                $sp12 $sp16 ($sp12 - $sp1);
                 box-shadow: none;
             }
             &[disabled] {
-                border-color: $gray-040;
+                border-color: $ash-darkest;
             }
         }
 
@@ -123,7 +126,7 @@ $button-padding:                $sp12 $sp16 ($sp12 - $sp1);
             &.is-selected {
                 border-color: darken($button-primary-hover,20%);
                 background-color: saturate($button-primary,15%);
-                box-shadow: inset 0 0 $sp8 0 darken($blue-100,10%);
+                box-shadow: inset 0 0 $sp8 0 darken($blue-darker,10%);
             }
         }
 
@@ -170,9 +173,8 @@ $button-padding:                $sp12 $sp16 ($sp12 - $sp1);
                     box-shadow: none;
                 }
                 &[disabled] {
-                    border-color: $gray-040;
-                    background-color: $gray-010;
-                    color: $gray-060;
+                    @include disabled-input-style;
+                    border-color: $ash-darkest;
                 }
             }
 
@@ -197,8 +199,7 @@ $button-padding:                $sp12 $sp16 ($sp12 - $sp1);
                     box-shadow: none;
                 }
                 &[disabled] {
-                    background-color: $gray-010;
-                    color: $gray-060;
+                    @include disabled-input-style;
                 }
             }
         }
@@ -223,7 +224,7 @@ $button-padding:                $sp12 $sp16 ($sp12 - $sp1);
             }
 
             &%#{$variant}dt-btn__outlined {
-                border-color: lighten($blue-020,10%);
+                border-color: lighten($blue-light,10%);
                 background-color: transparentize($white,1);
                 color: $white;
 
@@ -252,8 +253,7 @@ $button-padding:                $sp12 $sp16 ($sp12 - $sp1);
                     box-shadow: none;
                 }
                 &[disabled] {
-                    background-color: $gray-010;
-                    color: $gray-060;
+                    @include disabled-input-style;
                 }
             }
         }

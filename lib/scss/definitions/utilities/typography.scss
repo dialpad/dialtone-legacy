@@ -87,17 +87,16 @@
         //  $$   TEXT COLOR
         //  ------------------------------------------------------------------------
         //  --   All the colors
-        @each $key, $value in $color-steps { %#{$variant}fc-#{$key} { color: $value; } }
-
-        //  --   Just the grays
-        %#{$variant}fc-dark        { color: $gray-100; }
-        %#{$variant}fc-medium      { color: $gray-080; }
-        %#{$variant}fc-light       { color: $gray-060; }
+        @each $key, $value in $text-colors {
+            %#{$variant}fc-#{$key} { color: $value; }
+        }
 
         //
         //  $$   LINE HEIGHTS
         //  ------------------------------------------------------------------------
-        @each $key, $value in $line-heights { %#{$variant}lh-#{$key} { line-height: $value; } }
+        @each $key, $value in $line-heights {
+            %#{$variant}lh-#{$key} { line-height: $value; }
+        }
 
         //
         //  $$   WHITE SPACE
