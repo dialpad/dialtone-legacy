@@ -22,10 +22,7 @@
         //
         //  $$   FONT FAMILY
         //  ------------------------------------------------------------------------
-        %#{$variant}ff-mark-light      { font-weight: $fw-light; font-family: $ff-mark-light; }
         %#{$variant}ff-mark            { font-family: $ff-mark; }
-        %#{$variant}ff-mark-medium     { font-weight: $fw-medium; font-family: $ff-mark-medium; }
-        %#{$variant}ff-mark-bold       { font-weight: $fw-bold; font-family: $ff-mark-bold; }
         %#{$variant}ff-sans            { font-family: $ff-sans; }
         %#{$variant}ff-mono            { font-family: $ff-mono; }
         %#{$variant}ff-unset           { font-family: unset; }
@@ -33,13 +30,28 @@
         //
         //  $$   FONT SIZES
         //  ------------------------------------------------------------------------
-        %#{$variant}fs-caps              { text-transform: $tt-uppercase; font-size: $fs-caps; }
-        @each $key, $value in $font-size { %#{$variant}fs-#{$key} { font-size: $value; } }
+        //  --  HEADLINES
+        @each $key, $value in $headline-sizes {
+            %#{$variant}headline-#{$key} {
+                font-size: $value;
+                font-weight: 700;
+                @if $key == "xs" {
+                    text-transform: $tt-uppercase;
+                }
+            }
+        }
+
+        //  --  TEXT SIZES
+        @each $key, $value in $text-sizes {
+            %#{$variant}text-#{$key} { font-size: $value; }
+        }
 
         //
         //  $$   FONT WEIGHT
         //  ------------------------------------------------------------------------
-        @each $key, $value in $font-weight { %#{$variant}fw-#{$key} { font-weight: $value; } }
+        @each $key, $value in $font-weight {
+            %#{$variant}fw-#{$key} { font-weight: $value; }
+        }
 
         //
         //  $$   FONT STYLES
