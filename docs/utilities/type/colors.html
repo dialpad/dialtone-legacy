@@ -11,13 +11,13 @@ description: Dialtone provides a limited set of text color classes. These colors
         {% if item.color == "Gray" %}
             {% assign stop = item.stops %}
             {% for s in stop %}
-                <div class="ps-relative my8 p16 w100 br-md fs-subheading ba {% if s.bg == 'bgc-slate' %}bc-slate {% else %}bc-ash-dark {% endif %} {{ s.bg }} {{ s.class }}">
-                  This is {{ s.stop | downcase }} copy.
-                  <span class="ps-absolute flex ai-center h100 t0 r16 ff-mono fs-caption lh-md">
+                <div class="ps-relative my8 p16 w100 br-md fs-body1 ff-mono ba {% if s.bg == 'bgc-slate' %}bc-slate {% else %}bc-ash-dark {% endif %} {{ s.bg }} {{ s.class }}">
+                  .{{ s.class }}
+                  <span class="ps-absolute flex ai-center h100 t0 r16 fs-caption lh-md">
                       {% if s.ratio > "07.00" %}
-                      <strong class="py4 px6 br-md lh-xs fs-fine fc-white bgc-green">AAA</strong>
+                        <strong class="py4 px6 br-md lh-xs fs-fine fc-green-text ba bc-transparent bgc-green {% if s.bg == 'bgc-green' %}bc-green-dark{% endif %}">AAA</strong>
                       {% elsif s.ratio < "07.00" %}
-                      <strong class="py4 px6 br-md lh-xs fs-fine fc-yellow-text bgc-yellow">AA</strong>
+                        <strong class="py4 px6 br-md lh-xs fs-fine fc-yellow-text bgc-yellow">AA</strong>
                       {% endif %}
                       <span class="ml4 px6" style="min-width: 3rem">{{ s.ratio }}</span>
                   </span>
@@ -29,7 +29,6 @@ description: Dialtone provides a limited set of text color classes. These colors
 <section class="dds-docs--section">
     <h2 class="dds-docs--header">Colors</h2>
     <p class="dds-docs--copy">All text colors meet the minimum contrast ratio for WCAG 2.1 Level AA, which is 4.5:1.</p>
-
     <div class="flex fw-wrap">
         {% for item in site.data.type.font-colors %}
             {% if item.color != "Gray" %}
@@ -37,13 +36,13 @@ description: Dialtone provides a limited set of text color classes. These colors
                 <div class="w50 p4">
                     <h3 class="dds-docs--header">{{ item.color }}</h3>
                     {% for s in stop %}
-                        <div class="ps-relative my8 p16 w100 br-md fs-body2 {{ s.bg }} {{ s.class }}">
-                          This is {{ s.stop | downcase }} copy.
-                          <span class="ps-absolute flex ai-center h100 t0 r16 ff-mono fs-caption lh-lg">
+                        <div class="ps-relative my8 p16 w100 br-md fs-body1 ff-mono {{ s.bg }} {{ s.class }}">
+                          .{{ s.class }}
+                          <span class="ps-absolute flex ai-center h100 t0 r16 fs-caption lh-lg">
                               {% if s.ratio >= "07.00" %}
-                              <strong class="py4 px6 br-md lh-xs fs-fine fc-white bgc-green">AAA</strong>
+                                <strong class="py4 px6 br-md lh-xs fs-fine fc-green-text ba bc-transparent bgc-green {% if s.bg == 'bgc-green' %}bc-green-dark{% endif %}">AAA</strong>
                               {% elsif s.ratio < "07.00" %}
-                              <strong class="py4 px6 br-md lh-xs fs-fine fc-yellow-text bgc-yellow">AA</strong>
+                                <strong class="py4 px6 br-md lh-xs fs-fine fc-yellow-text bgc-yellow">AA</strong>
                               {% endif %}
                               <span class="ml4 px6" style="min-width: 3rem">{{ s.ratio }}</span>
                           </span>
