@@ -19,7 +19,9 @@
         //  ====================================================================
         //  $   BACKGROUND FILLS
         //  --------------------------------------------------------------------
-        @each $stop, $color in $color-steps { %#{$variant}bgc-#{$stop} { background-color: $color; } }
+        @each $stop, $color in $colors {
+            %#{$variant}bgc-#{$stop} { background-color: $color; }
+        }
         %#{$variant}bgc-transparent { background-color: transparent; }
 
         //  ====================================================================
@@ -28,7 +30,7 @@
         //  --  Dark background gradients
         @each $direction in $bgg-directions {
             %#{$variant}blg-dark-to-#{$direction} {
-                background-image: linear-gradient(to #{$direction}, darken($gray-100,5%) 0%, lighten($gray-100,5%) 100%);
+                background-image: linear-gradient(to #{$direction}, darken($slate,5%) 0%, lighten($slate,5%) 100%);
             }
         }
         //  --  Light background gradients
