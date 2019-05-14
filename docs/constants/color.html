@@ -7,22 +7,24 @@ description: Dialpad uses specific color choices to help communicate user interf
     <div class="flex fw-wrap mn8">
         {% for color in site.data.color-stops %}
         <div class="flex--cell {% if color.color == 'Gray' %}w100{% else %}w50{% endif %} p8">
-            <h3 class="dds-docs--subheader">{{ color.color }}</h3>
+            <h2 class="dds-docs--header">{{ color.color }}</h2>
             <div class="flex fd-column ff-mono fs-caption br-md">
                 {% for stop in color.stops %}
-                    <div class="flex--cell p16 {% if stop.primary %} py32{% endif %} bx bc-{{ stop.stop }}{% if forloop.first %} bt btr-md{% endif %} bgc-{{ stop.stop }} {{ stop.copy }}">
+                    <div class="flex--cell p16 {% if stop.primary %} py32{% endif %} bx bc-{{ stop.stop }}{% if forloop.first %} bt btr-md{% elsif color.color != 'Gray' and forloop.last %} bb bbr-md{% endif %} bgc-{{ stop.stop }} {{ stop.copy }}">
                         <div class="flex">
                             <div class="flex--cell"><strong class="ff-mono">${{ stop.stop }}</strong></div>
                             <div class="flex--cell ml-auto">{{ stop.hex }}</div>
                         </div>
                     </div>
                 {% endfor %}
-                <div class="flex--cell p16 bx bb bc-ash-dark bbr-md bgc-white fc-dark">
-                    <div class="flex">
-                        <div class="flex--cell"><strong class="ff-mono">$white</strong></div>
-                        <div class="flex--cell ml-auto">#FFFFFF</div>
+                {% if color.color == 'Gray' %}
+                    <div class="flex--cell p16 bx bb bc-ash-dark bbr-md bgc-white fc-dark">
+                        <div class="flex">
+                            <div class="flex--cell"><strong class="ff-mono">$white</strong></div>
+                            <div class="flex--cell ml-auto">#FFFFFF</div>
+                        </div>
                     </div>
-                </div>
+                {% endif %}
             </div>
         </div>
         {% endfor %}
