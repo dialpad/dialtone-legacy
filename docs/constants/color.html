@@ -4,48 +4,29 @@ title: Colors
 description: Dialpad uses specific color choices to help communicate user interface functionality, states, and actions within the product. These colors have been selected for on-screen use.
 ---
 <section class="dds-docs--section">
-    <h2 class="dds-docs--header">Palette</h2>
-    <div class="grid gg32" style="--grid-col-min-width: calc(50% - 16px);">
+    <div class="flex fw-wrap mn8">
         {% for color in site.data.color-stops %}
-        <div>
-            <h3 class="dds-docs--subheader">{{ color.color }}</h3>
-            <div class="flex fd-column ff-mono fs-caption">
+        <div class="flex--cell {% if color.color == 'Gray' %}w100{% else %}w50{% endif %} p8">
+            <h2 class="dds-docs--header">{{ color.color }}</h2>
+            <div class="flex fd-column ff-mono fs-caption br-md">
                 {% for stop in color.stops %}
-                    <div class="flex--cell p16 {% if stop.primary %} py32{% endif %}{% if forloop.first %} btr-md{% endif %}" style="background-color: {{ stop.hex }};">
+                    <div class="flex--cell p16 {% if stop.primary %} py32{% endif %} bx bc-{{ stop.stop }}{% if forloop.first %} bt btr-md{% elsif color.color != 'Gray' and forloop.last %} bb bbr-md{% endif %} bgc-{{ stop.stop }} {{ stop.copy }}">
                         <div class="flex">
-                            <div class="flex--cell"><span class="dds-docs--code bgc-white-o85">${{ stop.stop }}</span></div>
-                            <div class="flex--cell ml-auto"><span class="dds-docs--code bgc-white-o85">{{ stop.hex }}</span></div>
+                            <div class="flex--cell"><strong class="ff-mono">${{ stop.stop }}</strong></div>
+                            <div class="flex--cell ml-auto">{{ stop.hex }}</div>
                         </div>
                     </div>
                 {% endfor %}
-                <div class="flex--cell p16 bbr-md bgc-white ba btw0 bc-gray-light">
-                    <div class="flex">
-                        <div class="flex--cell"><span class="dds-docs--code">$white</span></div>
-                        <div class="flex--cell ml-auto"><span class="dds-docs--code">#FFFFFF</span></div>
+                {% if color.color == 'Gray' %}
+                    <div class="flex--cell p16 bx bb bc-ash-dark bbr-md bgc-white fc-dark">
+                        <div class="flex">
+                            <div class="flex--cell"><strong class="ff-mono">$white</strong></div>
+                            <div class="flex--cell ml-auto">#FFFFFF</div>
+                        </div>
                     </div>
-                </div>
+                {% endif %}
             </div>
         </div>
         {% endfor %}
     </div>
-</section>
-<section class="dds-docs--section">
-    <h2 class="dds-docs--header">Typography</h2>
-    <p>To do</p>
-</section>
-<section class="dds-docs--section">
-    <h2 class="dds-docs--header">Borders</h2>
-    <p>To do</p>
-</section>
-<section class="dds-docs--section">
-    <h2 class="dds-docs--header">Backgrounds</h2>
-    <p>To do</p>
-</section>
-<section class="dds-docs--section">
-    <h2 class="dds-docs--header">Gradients</h2>
-    <p>To do</p>
-</section>
-<section class="dds-docs--section">
-    <h2 class="dds-docs--header">Resources</h2>
-    <p>To do</p>
 </section>
