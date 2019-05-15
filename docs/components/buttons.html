@@ -17,6 +17,7 @@ description: Buttons are UI elements which allow users to take actions throughou
     {% include_relative buttons/primary.html %}
     {% include_relative buttons/danger.html %}
     {% include_relative buttons/inverted.html %}
+    {% include_relative buttons/loading.html %}
 </section>
 <section class="dds-docs--section">
     <h2 class="dds-docs--header">Sizes</h2>
@@ -36,7 +37,11 @@ description: Buttons are UI elements which allow users to take actions throughou
                     <th scope="row" class="va-middle text-sm">{{ item.name }}</th>
                     <td class="va-middle ff-mono text-xxs">{% if item.class != "N" %}.{{ item.class }}{% else %}<em class="fc-gray text-sm ff-mark">N/A</em>{% endif %}</td>
                     <td class="va-middle">{{ item.size }}</td>
-                    <td class="va-middle"><button class="dt-btn dt-btn__primary {% if item.class != "N" %}{{ item.class }}{% endif %} ws-nowrap" type="button" aria-pressed="false">Place call</button></td>
+                    <td class="va-middle">
+                        <button class="dt-btn dt-btn__primary {% if item.class != nil %}{{ item.class }}{% endif %} ws-nowrap" type="button" aria-pressed="false">
+                            <span class="dt-btn--label">Place call</span>
+                        </button>
+                    </td>
                 </tr>
             {% endfor %}
         </tbody>

@@ -7,24 +7,32 @@
 //  visit https://dialpad.design/components/buttons
 //
 //  TABLE OF CONTENTS
-//  • STYLES
+//  • BASE STYLE
+//  • VISUAL STYLES
+//  • ALTERNATE STYLES
 //  • SIZES
 //
 //  ============================================================================
 @each $breakpoint, $variant in $rwd-variants {
     //  ========================================================================
-    //  $   STYLES
-    //  ------------------------------------------------------------------------
     //  $   BASE STYLE
     //      This class applies the core button properties. You must couple
     //      this with a modifying class.
     //  ------------------------------------------------------------------------
     .#{$variant}dt-btn              { @extend %#{$variant}dt-btn; }
+
+    //  ========================================================================
+    //  $   VISUAL STYLES
+    //  ------------------------------------------------------------------------
     .#{$variant}dt-btn__outlined    { @extend %#{$variant}dt-btn__outlined; }
     .#{$variant}dt-btn__primary     { @extend %#{$variant}dt-btn__primary; }
     .#{$variant}dt-btn__danger      { @extend %#{$variant}dt-btn__danger; }
     .#{$variant}dt-btn__inverted    { @extend %#{$variant}dt-btn__inverted; }
 
+    //  ========================================================================
+    //  $   ALTERNATE STYLES
+    //  ------------------------------------------------------------------------
+    .#{$variant}dt-btn.is-loading   { @extend %#{$variant}dt-btn.is-loading; }
 
     //  ========================================================================
     //  $   SIZES

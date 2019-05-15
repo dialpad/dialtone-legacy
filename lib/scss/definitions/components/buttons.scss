@@ -8,7 +8,9 @@
 //
 //  TABLE OF CONTENTS
 //  • TOKENS
-//  • STYLES
+//  • BASE STYLE
+//  • VISUAL STYLES
+//  • ALTERNATE STYLES
 //  • SIZES
 //
 //  ============================================================================
@@ -26,6 +28,9 @@ $button-font-color:             $blue-dark;
 $button-background-color:       $button-primary;
 $button-border-color:           $button-primary;
 $button-border-radius:          $br-sm;
+$button-border-loading:         $button-border-color;
+$button-border-loading-white:   $white;
+$button-border-loading-danger:  $button-danger;
 $button-line-height:            $lh-md;
 
 $button-padding:                $sp12 $sp16 ($sp12 - $sp1);
@@ -38,8 +43,6 @@ $button-padding:                $sp12 $sp16 ($sp12 - $sp1);
 @each $breakpoint, $variant in $rwd-variants {
     @include rwd($breakpoint) {
         //  ====================================================================
-        //  $   STYLES
-        //  --------------------------------------------------------------------
         //  $   BASE STYLE
         //      This class applies the core button properties. You must couple
         //      this with a modifying class.
@@ -95,8 +98,50 @@ $button-padding:                $sp12 $sp16 ($sp12 - $sp1);
             }
         }
 
-        //
-        //  $   OUTLINED BUTTON
+
+        //  ====================================================================
+        //  $   ALTERNATE STYLES
+        //  --------------------------------------------------------------------
+        %#{$variant}dt-btn {
+
+            //  $$  LOADING ANIMATION
+            //  ----------------------------------------------------------------
+            &.is-loading {
+                //  Disable clicking while the loader is in place
+                pointer-events: none;
+
+                //  Hide anything that was there before
+                .dt-btn--icon,
+                .dt-btn--label {
+                    opacity: 0;
+                    transition: opacity 50ms $transition-cubic-inOut;
+                }
+
+                //  Show the loading animation
+                &:before {
+                    content: "";
+                    position: absolute;
+                    top: calc(50% - #{$sp8});
+                    left: calc(50% - #{$sp8});
+
+                    width: $sp16;
+                    height: $sp16;
+                    border-radius: $br-circle;
+                    border-width: $bw2;
+                    border-style: solid;
+                    border-color: $button-border-loading;
+                    border-left-color: transparent !important;
+
+                    animation: dt-loading-circle .9s infinite linear;
+                }
+            }
+        }
+
+
+        //  ====================================================================
+        //  $   VISUAL STYLES
+        //  --------------------------------------------------------------------
+        //  $$  OUTLINED BUTTON
         //  --------------------------------------------------------------------
         %#{$variant}dt-btn__outlined {
             border-color: $button-border-color;
@@ -115,7 +160,7 @@ $button-padding:                $sp12 $sp16 ($sp12 - $sp1);
         }
 
         //
-        //  $   PRIMARY BUTTON
+        //  $$  PRIMARY BUTTON
         //  --------------------------------------------------------------------
         %#{$variant}dt-btn__primary {
             background-color: $button-primary;
@@ -133,10 +178,15 @@ $button-padding:                $sp12 $sp16 ($sp12 - $sp1);
                 background-color: saturate($button-primary,15%);
                 box-shadow: inset 0 0 $sp8 0 darken($blue-darker,10%);
             }
+
+            //  Re-color loading animation
+            &.is-loading:before {
+                border-color: $button-border-loading-white;
+            }
         }
 
         //
-        //  $   DANGER BUTTON
+        //  $$  DANGER BUTTON
         //  --------------------------------------------------------------------
         %#{$variant}dt-btn__danger {
             background-color: transparentize($button-danger,1);
@@ -154,6 +204,12 @@ $button-padding:                $sp12 $sp16 ($sp12 - $sp1);
                 background-color: transparentize($button-danger,.9);
                 box-shadow: inset 0 0 $sp8 0 transparentize($button-danger,.7);
             }
+
+            //  Re-color loading animation
+            &.is-loading:before {
+                border-color: $button-border-loading-danger;
+            }
+
 
             //  --  OUTLINED BUTTON
             //  ----------------------------------------------------------------
@@ -198,11 +254,16 @@ $button-padding:                $sp12 $sp16 ($sp12 - $sp1);
                 &[disabled] {
                     @include disabled-input-style;
                 }
+
+                //  Re-color loading animation
+                &.is-loading:before {
+                    border-color: $button-border-loading-white;
+                }
             }
         }
 
         //
-        //  $   INVERTED BUTTON
+        //  $$  INVERTED BUTTON
         //  --------------------------------------------------------------------
         %#{$variant}dt-btn__inverted {
             background-color: transparent;
@@ -219,6 +280,11 @@ $button-padding:                $sp12 $sp16 ($sp12 - $sp1);
                 border-color: transparent;
                 background-color: transparentize($button-invert-hover,.5);
                 box-shadow: none;
+            }
+
+            //  Re-color loading animation
+            &.is-loading:before {
+                border-color: $button-border-loading-white;
             }
 
             &%#{$variant}dt-btn__outlined {
@@ -256,6 +322,11 @@ $button-padding:                $sp12 $sp16 ($sp12 - $sp1);
                 }
                 &[disabled] {
                     @include disabled-input-style;
+                }
+
+                //  Re-color loading animation
+                &.is-loading:before {
+                    border-color: $button-border-loading;
                 }
             }
         }

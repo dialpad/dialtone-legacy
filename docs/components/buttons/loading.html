@@ -1,0 +1,38 @@
+<h3 class="dds-docs--subheader">Loading Buttons</h3>
+<p>If there is a delay between the user clicking a button and the action taking place, apply a loader to communicate that something is happening.</p>
+<div class="dtd-example">
+{% highlight html linenos %}
+<button class="dt-btn is-loading" type="button" aria-pressed="false">…</button>
+{% endhighlight %}
+    <div class="dtd-example--preview">
+        <table class="dt-table m0">
+            <thead>
+                <tr>
+                    <th scope="col" width="15%">Name</th>
+                    <th scope="col" width="25%">Class</th>
+                    <th scope="col" width="20%" class="ta-center">Default</th>
+                    <th scope="col" width="20%" class="ta-center">Outlined</th>
+                    <th scope="col" width="20%" class="ta-center">Primary</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in site.data.buttons.styles %}
+                    {% assign types = item.classes %}
+                    <tr>
+                        <th scope="row" class="va-middle text-sm {% if item.style == 'Inverted' %}bgc-slate fc-white blr-lg{% endif %}" {% if item.style == 'Inverted' %}style="padding-left: 0.75rem;"{% elsif item.style == 'Danger' %}style="border-bottom-width: 0;"{% endif %}>{{ item.style }}</th>
+                        <td class="va-middle ff-mono text-xxs {% if item.style == 'Inverted' %}bgc-slate fc-white btw0{% endif %}" {% if item.style == 'Danger' %}style="border-bottom-width: 0;"{% endif %}>
+                            .dt-btn .{{ item.class }} {% if class.class != nil %}.{{ class.class }}{% endif %}
+                        </td>
+                        {% for class in types %}
+                        <td class="va-middle px4 ta-center {% if item.style == 'Inverted' %}bgc-slate fc-white {% if forloop.last %}brr-lg{% endif %}{% endif %}" {% if item.style == 'Danger' %}style="border-bottom-width: 0;"{% endif %}>
+                            <button class="dt-btn {{ item.class }} {{ class.class }} is-loading w100 ws-nowrap" type="button" aria-pressed="false">
+                                <span class="dt-btn--label">Place call</span>
+                            </button>
+                        </td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
