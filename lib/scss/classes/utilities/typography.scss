@@ -20,9 +20,11 @@
 //  ----------------------------------------------------------------------------
 @each $key, $name in $font-face {
     @font-face {
+        font-style: "normal";
         font-weight: $key;
-        font-family: "#{$name}";
+        font-family: "MarkWeb";
         src: url("../fonts/#{$name}.eot") format("eof"),
+             url("../fonts/#{$name}.eot?#iefix") format("embedded-opentype"),
              url("../fonts/#{$name}.woff") format("woff");
     }
 }
@@ -31,10 +33,7 @@
     //
     //  $$   FONT STYLES
     //  ------------------------------------------------------------------------
-    .#{$variant}ff-mark-light      { @extend %#{$variant}ff-mark-light; }
     .#{$variant}ff-mark            { @extend %#{$variant}ff-mark; }
-    .#{$variant}ff-mark-medium     { @extend %#{$variant}ff-mark-medium; }
-    .#{$variant}ff-mark-bold       { @extend %#{$variant}ff-mark-bold; }
     .#{$variant}ff-sans            { @extend %#{$variant}ff-sans; }
     .#{$variant}ff-mono            { @extend %#{$variant}ff-mono; }
     .#{$variant}ff-unset           { @extend %#{$variant}ff-unset; }
@@ -42,21 +41,32 @@
     //
     //  $$   FONT SIZES
     //  ------------------------------------------------------------------------
-    //  --   Resets
+    //  Reset margins
     h1, h2, h3, h4, h5, h6, p {
         margin-top: $sp0;
     }
 
+    //  --  HEADLINES
+    //  ------------------------------------------------------------------------
     //  Correctly assign the font-face for HTML tags that are bold by default
     h1, h2, h3, h4, h5, h6,
     strong,
     table th {
         font-weight: $fw-bold;
-        font-family: $ff-mark-bold;
     }
 
-    .#{$variant}fs-caps              { @extend %#{$variant}fs-caps; }
-    @each $key, $value in $font-size { .#{$variant}fs-#{$key} { @extend %#{$variant}fs-#{$key}; } }
+    @each $key, $value in $headline-sizes {
+        .#{$variant}headline-#{$key} {
+            @extend %#{$variant}headline-#{$key};
+        }
+    }
+
+    //  --  TEXT SIZES
+    @each $key, $value in $text-sizes {
+        .#{$variant}text-#{$key} {
+            @extend %#{$variant}text-#{$key};
+        }
+    }
 
     //
     //  $$   FONT WEIGHT

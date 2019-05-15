@@ -9,7 +9,7 @@ description: Dialtone provides a limited set of text color classes. These colors
 
     {% for item in site.data.type.font-colors %}
         {% if item.color == "Gray" %}
-            <div class="flex fd-column ff-mono fs-body1 br-md">
+            <div class="flex fd-column ff-mono text-sm br-md">
                 {% assign stop = item.stops %}
                 {% for s in stop %}
                 <div class="flex--cell p16 bx bb {% if forloop.first %}bt btr-md{% elsif forloop.last %}bbr-md{% endif %} {% if s.bg == 'bgc-slate' %}bc-slate-lightest {% else %}bc-ash-dark {% endif %} {{ s.bg }} {{ s.class }}">
@@ -17,12 +17,12 @@ description: Dialtone provides a limited set of text color classes. These colors
                         <div class="flex--cell">.{{ s.class }}</div>
                         <div class="flex--cell ml-auto">
                             {% if s.ratio > "07.00" %}
-                              <strong class="py4 px6 br-md lh-xs fs-caps fc-green-text ba bc-transparent bgc-green {% if s.bg == 'bgc-green' %}bc-green-dark{% endif %}">AAA</strong>
+                              <strong class="py4 px6 br-md lh-xs headline-xs fc-green-text ba bc-transparent bgc-green {% if s.bg == 'bgc-green' %}bc-green-dark{% endif %}">AAA</strong>
                             {% elsif s.ratio < "07.00" %}
-                              <strong class="py4 px6 br-md lh-xs fs-fine fc-yellow-text bgc-yellow">AA</strong>
+                              <strong class="py4 px6 br-md lh-xs text-xxs fc-yellow-text bgc-yellow">AA</strong>
                             {% endif %}
                         </div>
-                        <div class="flex--cell fs-caption px6" style="min-width: 3rem">{{ s.ratio }}</div>
+                        <div class="flex--cell text-xs px6" style="min-width: 3rem">{{ s.ratio }}</div>
                     </div>
                 </div>
                 {% endfor %}
@@ -38,7 +38,7 @@ description: Dialtone provides a limited set of text color classes. These colors
             {% if item.color != "Gray" %}
                 <div class="flex--cell w50 p8">
                     <h2 class="dds-docs--header">{{ item.color }}</h2>
-                    <div class="flex fd-column ff-mono fs-body1 br-md">
+                    <div class="flex fd-column ff-mono text-sm br-md">
                         {% assign stop = item.stops %}
                         {% for s in stop %}
                             <div class="flex--cell p16 {% if forloop.first %}btr-md{% elsif forloop.last %}bbr-md{% endif %} {{ s.bg }} {{ s.class }}">
@@ -46,12 +46,12 @@ description: Dialtone provides a limited set of text color classes. These colors
                                     <div class="flex--cell">.{{ s.class }}</div>
                                     <div class="flex--cell ml-auto">
                                         {% if s.ratio > "07.00" %}
-                                          <strong class="py4 px6 br-md lh-xs fs-caps fc-green-text ba bc-transparent bgc-green {% if s.bg == 'bgc-green' %}bc-green-dark{% endif %}">AAA</strong>
+                                          <strong class="py4 px6 br-md lh-xs headline-xs fc-green-text ba bc-transparent bgc-green {% if s.bg == 'bgc-green' %}bc-green-dark{% endif %}">AAA</strong>
                                         {% elsif s.ratio < "07.00" %}
-                                          <strong class="py4 px6 br-md lh-xs fs-fine fc-yellow-text bgc-yellow">AA</strong>
+                                          <strong class="py4 px6 br-md lh-xs text-xxs fc-yellow-text bgc-yellow">AA</strong>
                                         {% endif %}
                                     </div>
-                                    <div class="flex--cell fs-caption px6" style="min-width: 3rem">{{ s.ratio }}</div>
+                                    <div class="flex--cell text-xs px6" style="min-width: 3rem">{{ s.ratio }}</div>
                                 </div>
                             </div>
                         {% endfor %}

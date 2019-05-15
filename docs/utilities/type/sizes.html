@@ -5,7 +5,7 @@ description: Utility classes for controlling font size.
 ---
 <section class="dds-docs--section">
     <h2 class="dds-docs--header">Classes</h2>
-    <p class="dds-docs--copy">The font size utility classes use an abbreviated syntax. Based on the CSS property name <span class="ws-nowrap">(<strong>f</strong>ont-<strong>s</strong>ize)</span> and the desired font size. Below is a table outlining the classes and their meanings:</p>
+    <p class="dds-docs--copy">The font size classes use t-shirt sizing for either text or headline sizes. Below is a table outlining the classes and their meanings:</p>
     <table class="dt-table">
         <thead>
             <tr>
@@ -17,9 +17,9 @@ description: Utility classes for controlling font size.
         <tbody>
             {% for item in site.data.type.font-size %}
             <tr>
-                <th scope="row" class="ff-mono fs-fine">{{ item.class }}</th>
-                <td class="ff-mono fs-fine">{{ item.output }}</td>
-                <td class="ff-mono fs-caption">{{ item.pixel }}</td>
+                <th scope="row" class="ff-mono text-xxs">{{ item.class }}</th>
+                <td class="ff-mono text-xxs">{{ item.output }}</td>
+                <td class="ff-mono text-xs">{{ item.pixel }}</td>
             </tr>
             {% endfor %}
         </tbody>
@@ -27,30 +27,26 @@ description: Utility classes for controlling font size.
     <h2 class="dds-docs--header">Examples</h2>
     <div class="dtd-example">
 {% highlight html linenos %}
-<div class="fs-caps">…</div>
-<div class="fs-fine">…</div>
-<div class="fs-caption">…</div>
-<div class="fs-body1">…</div>
-<div class="fs-body2">…</div>
-<div class="fs-subheading">…</div>
-<div class="fs-headline">…</div>
-<div class="fs-display">…</div>
-<div class="fs-inherit">…</div>
-<div class="fs-initial">…</div>
-<div class="fs-unset">…</div>
+<div class="headline-xl">…</div>
+<div class="headline-lg">…</div>
+<div class="headline-md">…</div>
+<div class="headline-sm">…</div>
+<div class="headline-xs">…</div>
+<div class="text-xl">…</div>
+<div class="text-lg">…</div>
+<div class="text-md">…</div>
+<div class="text-sm">…</div>
+<div class="text-xs">…</div>
+<div class="text-xxs">…</div>
 {% endhighlight %}
         <div class="dtd-example--preview">
             <div class="flex fd-column fl1__all">
-                <div class="flex--cell p8 ws-nowrap of-hidden"><strong class="ff-mono fs-fine">.fs-caps</strong><br/><span class="fs-caps">The quick brown fox jumps over the lazy dog.</span></div>
-                <div class="flex--cell p8 ws-nowrap of-hidden"><strong class="ff-mono fs-fine">.fs-fine</strong><br/><span class="fs-fine">The quick brown fox jumps over the lazy dog.</span></div>
-                <div class="flex--cell p8 ws-nowrap of-hidden"><strong class="ff-mono fs-fine">.fs-caption</strong><br/><span class="fs-caption">The quick brown fox jumps over the lazy dog.</span></div>
-                <div class="flex--cell p8 ws-nowrap of-hidden"><strong class="ff-mono fs-fine">.fs-body1</strong><br/><span class="fs-body1">The quick brown fox jumps over the lazy dog.</span></div>
-                <div class="flex--cell p8 ws-nowrap of-hidden"><strong class="ff-mono fs-fine">.fs-body2</strong><br/><span class="fs-body2">The quick brown fox jumps over the lazy dog.</span></div>
-                <div class="flex--cell p8 ws-nowrap of-hidden"><strong class="ff-mono fs-fine">.fs-subheading</strong><br/><span class="fs-subheading">The quick brown fox jumps over the lazy dog.</span></div>
-                <div class="flex--cell p8 ws-nowrap of-hidden"><strong class="ff-mono fs-fine">.fs-headline</strong><br/><span class="fs-headline">The quick brown fox jumps over the lazy dog.</span></div>
-                <div class="flex--cell p8 ws-nowrap of-hidden"><strong class="ff-mono fs-fine">.fs-title</strong><br/><span class="fs-title">The quick brown fox jumps over the lazy dog.</span></div>
-                <div class="flex--cell p8 ws-nowrap of-hidden"><strong class="ff-mono fs-fine">.fs-display</strong><br/><span class="fs-display">The quick brown fox jumps over the lazy dog.</span></div>
-                <div class="flex--cell p8 ws-nowrap of-hidden"><strong class="ff-mono fs-fine">.fs-unset</strong><br/><span class="fs-unset">The quick brown fox jumps over the lazy dog.</span></div>
+                {% for item in site.data.type.font-size %}
+                    <div class="flex--cell p8 ws-nowrap of-hidden">
+                        <strong class="ff-mono text-xxs">{{ item.class }}</strong><br/>
+                        <span class="{{ item.class | remove: '.' }}">The quick brown fox jumps over the lazy dog.</span>
+                    </div>
+                {% endfor %}
             </div>
         </div>
     </div>
