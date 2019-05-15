@@ -101,38 +101,106 @@ $button-padding:                $sp12 $sp16 ($sp12 - $sp1);
 
         //  ====================================================================
         //  $   ALTERNATE STYLES
+        //  ====================================================================
+        //  $$  LOADING ANIMATION
         //  --------------------------------------------------------------------
-        %#{$variant}dt-btn {
+        %#{$variant}dt-btn.is-loading {
+            //  Disable clicking while the loader is in place
+            pointer-events: none;
 
-            //  $$  LOADING ANIMATION
-            //  ----------------------------------------------------------------
-            &.is-loading {
-                //  Disable clicking while the loader is in place
-                pointer-events: none;
+            //  Hide anything that was there before
+            .dt-btn--icon,
+            .dt-btn--label {
+                opacity: 0;
+                transition: opacity 50ms $transition-cubic-inOut;
+            }
 
-                //  Hide anything that was there before
-                .dt-btn--icon,
-                .dt-btn--label {
-                    opacity: 0;
-                    transition: opacity 50ms $transition-cubic-inOut;
+            //  Show the loading animation
+            &:before {
+                content: "";
+                position: absolute;
+                top: calc(50% - #{$sp8});
+                left: calc(50% - #{$sp8});
+
+                width: $sp16;
+                height: $sp16;
+                border-radius: $br-circle;
+                border-width: $bw2;
+                border-style: solid;
+                border-color: $button-border-loading;
+                border-left-color: transparent !important;
+
+                animation: dt-loading-circle .9s infinite linear;
+            }
+        }
+
+        //
+        //  $$  CIRCLE BUTTON
+        //  --------------------------------------------------------------------
+        %#{$variant}dt-btn-circle {
+            justify-content: center;
+            align-items: center;
+            padding: ($sp12 - $sp1);
+            border-radius: $br-circle;
+            background-color: transparentize($slate-lighter,1);
+            color: $fc-medium;
+
+            &:hover {
+                background-color: transparentize($slate-lighter,0.9);
+                color: $fc-dark;
+            }
+            &:focus {
+                box-shadow: 0 0 0 $sp4 transparentize($slate-lightest,0.75);
+            }
+            &:active,
+            .is-selected {
+                border-color: transparentize($slate-lighter,0.5);
+                background-color: transparentize($slate-lighter,0.9);
+                box-shadow: 0 0 $sp8 0 transparentize($slate-lighter,0.7);
+            }
+
+            .dt-btn--icon {
+                width: $sp24;
+                height: $sp24;
+            }
+
+            //  --  Close button
+            &.dt-btn__close {
+                color: $fc-light;
+
+                &:hover {
+                    background-color: transparentize($button-danger-hover,.9);
+                    color: $button-danger-hover;
                 }
+                &:focus {
+                    box-shadow: 0 0 0 $sp4 transparentize($button-danger,.75);
+                    color: $button-danger;
+                }
+                &:active,
+                .is-selected {
+                    border-color: transparentize($button-danger-hover,.5);
+                    background-color: transparentize($button-danger-hover,.9);
+                    box-shadow: inset 0 0 $sp8 0 transparentize($button-danger-hover,.7);
+                }
+            }
 
-                //  Show the loading animation
-                &:before {
-                    content: "";
-                    position: absolute;
-                    top: calc(50% - #{$sp8});
-                    left: calc(50% - #{$sp8});
+            //  --  Filled close button
+            &.dt-btn__close-filled {
+                border-color: transparent;
+                background-color: $button-danger;
+                color: $fc-white;
 
-                    width: $sp16;
-                    height: $sp16;
-                    border-radius: $br-circle;
-                    border-width: $bw2;
-                    border-style: solid;
-                    border-color: $button-border-loading;
-                    border-left-color: transparent !important;
-
-                    animation: dt-loading-circle .9s infinite linear;
+                &:hover {
+                    background-color: $button-danger-hover;
+                    color: transparentize($fc-white,.1);
+                }
+                &:focus {
+                    box-shadow: 0 0 0 $sp4 transparentize($button-danger,.7);
+                }
+                &:active {
+                    background-color: $button-danger;
+                    box-shadow: 0 0 $sp8 0 transparentize($button-danger-hover,.7);
+                    color: $fc-white;
                 }
             }
         }
