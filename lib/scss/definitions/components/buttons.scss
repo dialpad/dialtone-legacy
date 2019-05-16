@@ -33,9 +33,9 @@ $button-border-radius:          $br-sm;
 $button-border-loading:         $button-border-color;
 $button-border-loading-white:   $white;
 $button-border-loading-danger:  $button-danger;
-$button-line-height:            $lh-md;
+$button-line-height:            $lh-xs;
 
-$button-padding:                $sp12 $sp16 ($sp12 - $sp1);
+$button-padding:                $sp8 $sp16;
 
 //  Re-used patterns
 @mixin disabled-input-style {
@@ -72,6 +72,7 @@ $button-padding:                $sp12 $sp16 ($sp12 - $sp1);
             justify-content: center;
             margin: 0;
             padding: $button-padding;
+            min-height: $sp48;
 
             border: 1px solid transparent;
             border-radius: $button-border-radius;
@@ -113,6 +114,23 @@ $button-padding:                $sp12 $sp16 ($sp12 - $sp1);
                 opacity: 0.75;
                 transition: none;
                 pointer-events: none;
+            }
+
+            //  Icon button styling
+            .dt-btn--icon {
+                display: flex;
+                margin-top: -(#{$sp4});
+                margin-bottom: -(#{$sp4});
+                margin-left: -(#{$sp8});    // Offset button left/right padding
+                width: $sp24;
+                height: $sp24;
+
+                //  If the icon is last, unset the left margin and apply it
+                //  to the right side instead.
+                &.fo-last {
+                    margin-left: unset;
+                    margin-right: -(#{$sp8});    // Offset button left/right padding
+                }
             }
         }
 
@@ -164,10 +182,9 @@ $button-padding:                $sp12 $sp16 ($sp12 - $sp1);
             color: $fc-medium;
             transition: all 150ms $transition-cubic-inOut;
 
-            //  Icon
+            //  Reset all the margins
             .dt-btn--icon {
-                width: $sp24;
-                height: $sp24;
+                margin: unset;
             }
 
             //  States
