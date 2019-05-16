@@ -22,6 +22,8 @@ $button-danger:                 $red;
 $button-danger-hover:           darken(saturate($button-danger,5%),5%);
 $button-invert:                 $white;
 $button-invert-hover:           $blue-lighter;
+$button-muted:                  $slate-lighter;
+$button-muted-hover:            $slate-light;
 
 $button-font-size:              $text-md;
 $button-font-color:             $blue-dark;
@@ -142,69 +144,52 @@ $button-padding:                $sp12 $sp16 ($sp12 - $sp1);
             align-items: center;
             padding: ($sp12 - $sp1);
             border-radius: $br-circle;
-            background-color: transparentize($slate-lighter,1);
+            background-color: transparentize($button-muted,1);
             color: $fc-medium;
+            transition: all 150ms $transition-cubic-inOut;
 
-            &:hover {
-                background-color: transparentize($slate-lighter,0.9);
-                color: $fc-dark;
-            }
-            &:focus {
-                box-shadow: 0 0 0 $sp4 transparentize($slate-lightest,0.75);
-            }
-            &:active,
-            .is-selected {
-                border-color: transparentize($slate-lighter,0.5);
-                background-color: transparentize($slate-lighter,0.9);
-                box-shadow: 0 0 $sp8 0 transparentize($slate-lighter,0.7);
-            }
-
+            //  Icon
             .dt-btn--icon {
                 width: $sp24;
                 height: $sp24;
             }
 
-            //  --  Close button
-            &.dt-btn__close {
-                color: $fc-light;
+            //  States
+            &:hover {
+                background-color: transparentize($button-muted-hover,0.925);
+                color: $fc-dark;
+            }
+            &:focus {
+                box-shadow: 0 0 0 $sp4 transparentize($button-muted-hover,0.75);
+            }
+            &:active,
+            .is-selected {
+                border-color: transparentize($button-muted,0.5);
+                background-color: transparentize($button-muted,0.9);
+                box-shadow: 0 0 $sp8 0 transparentize($button-muted,0.7);
+            }
+
+            //  --  OUTLINED
+            //  ----------------------------------------------------------------
+            &.dt-btn__outlined {
+                border-color: $button-muted;
+                color: $fc-medium;
 
                 &:hover {
-                    background-color: transparentize($button-danger-hover,.9);
-                    color: $button-danger-hover;
-                }
-                &:focus {
-                    box-shadow: 0 0 0 $sp4 transparentize($button-danger,.75);
-                    color: $button-danger;
-                }
-                &:active,
-                .is-selected {
-                    border-color: transparentize($button-danger-hover,.5);
-                    background-color: transparentize($button-danger-hover,.9);
-                    box-shadow: inset 0 0 $sp8 0 transparentize($button-danger-hover,.7);
+                    border-color: $button-muted-hover;
+                    color: $fc-dark;
                 }
             }
 
-            //  --  Filled close button
-            &.dt-btn__close-filled {
-                border-color: transparent;
-                background-color: $button-danger;
-                color: $fc-white;
+            //  --  DANGER
+            //  ----------------------------------------------------------------
+            &.dt-btn__danger {
 
                 &:hover {
-                    background-color: $button-danger-hover;
-                    color: transparentize($fc-white,.1);
-                }
-                &:focus {
-                    box-shadow: 0 0 0 $sp4 transparentize($button-danger,.7);
-                }
-                &:active {
-                    background-color: $button-danger;
-                    box-shadow: 0 0 $sp8 0 transparentize($button-danger-hover,.7);
-                    color: $fc-white;
+                    border-color: $button-muted-hover;
                 }
             }
         }
-
 
         //  ====================================================================
         //  $   VISUAL STYLES
