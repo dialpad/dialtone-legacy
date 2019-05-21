@@ -37,7 +37,14 @@ $button-line-height:            $lh-xs;
 
 $button-padding:                ($sp16 - $sp1);     // Minus out 1px for the border
 
-//  Re-used patterns
+$button-brand-google:           #4285F4;
+$button-brand-o365:             #EB3C01;
+$button-brand-linkedin:         #006087;
+
+
+//  ============================================================================
+//  $   MIXINS
+//  ----------------------------------------------------------------------------
 @mixin disabled-input-style {
     background-color: $ash-dark;
     color: $slate-lightest;
@@ -58,6 +65,43 @@ $button-padding:                ($sp16 - $sp1);     // Minus out 1px for the bor
     }
 }
 
+@mixin brand-buttons($color) {
+    display: flex;
+    color: $fc-white;
+    background-color: $color;
+
+    &:hover {
+        background-color: darken(saturate($color,2.5%),5%);
+    }
+    &:focus {
+        box-shadow: 0 0 0 $sp4 transparentize($color,0.75);
+    }
+    &:active,
+    .is-selected {
+        background-color: darken(saturate($color,5%),10%);
+        box-shadow: 0 0 $sp8 0 transparentize(darken($color,10%),0.75);
+    }
+
+    .dt-btn--icon {
+        margin-top: -($sp16 - $sp2);
+        margin-right: $sp8;
+        margin-bottom: -($sp16 - $sp2);
+        margin-left: -($sp16 - $sp2);
+        width: $sp48;
+        height: $sp48;
+    }
+    .dt-svg {
+        border-radius: $sp2 0 0 $sp2;
+    }
+    .dt-btn--label {
+        flex: 1 auto;
+    }
+}
+
+
+//  ============================================================================
+//  $   DEFINITIONS
+//  ----------------------------------------------------------------------------
 @each $breakpoint, $variant in $rwd-variants {
     @include rwd($breakpoint) {
         //  ====================================================================
@@ -502,6 +546,27 @@ $button-padding:                ($sp16 - $sp1);     // Minus out 1px for the bor
                     border-color: $button-border-loading;
                 }
             }
+        }
+
+        //  ====================================================================
+        //  $   BRAND BUTTONS
+        //  ====================================================================
+        //  $$  GOOGLE LOGIN
+        //  --------------------------------------------------------------------
+        %#{$variant}dt-btn__google {
+            @include brand-buttons($button-brand-google);
+        }
+        //
+        //  $$  OFFICE 365 LOGIN
+        //  --------------------------------------------------------------------
+        %#{$variant}dt-btn__o365 {
+            @include brand-buttons($button-brand-o365);
+        }
+        //
+        //  $$  LINKEDIN LOGIN
+        //  --------------------------------------------------------------------
+        %#{$variant}dt-btn__linkedin {
+            @include brand-buttons($button-brand-linkedin);
         }
     }
 }
