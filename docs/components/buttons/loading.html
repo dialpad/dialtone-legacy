@@ -21,7 +21,7 @@
                     <tr>
                         <th scope="row" class="va-middle text-sm {% if item.style == 'Inverted' %}bgc-slate fc-white blr-lg{% endif %}" {% if item.style == 'Inverted' %}style="padding-left: 0.75rem;"{% elsif item.style == 'Danger' %}style="border-bottom-width: 0;"{% endif %}>{{ item.style }}</th>
                         <td class="va-middle ff-mono text-xxs {% if item.style == 'Inverted' %}bgc-slate fc-white btw0{% endif %}" {% if item.style == 'Danger' %}style="border-bottom-width: 0;"{% endif %}>
-                            .dt-btn .{{ item.class }} {% if class.class != nil %}.{{ class.class }}{% endif %}
+                            .dt-btn {% if item.class != nil %}.{{ item.class }}{% endif %} {% if class.class != nil %}.{{ class.class }}{% endif %}
                         </td>
                         {% for class in types %}
                         <td class="va-middle px4 ta-center {% if item.style == 'Inverted' %}bgc-slate fc-white {% if forloop.last %}brr-lg{% endif %}{% endif %}" {% if item.style == 'Danger' %}style="border-bottom-width: 0;"{% endif %}>
