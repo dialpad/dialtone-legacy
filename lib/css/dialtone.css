@@ -491,9 +491,8 @@ template {
   position: relative;
   align-items: center;
   justify-content: center;
-  min-height: 3rem;
   margin: 0;
-  padding: 0.5rem 1rem;
+  padding: 0.9375rem;
   border: 1px solid transparent;
   border-radius: 0.25rem;
   background-color: rgba(80, 120, 238, 0);
@@ -530,16 +529,56 @@ template {
     color: #6C6E75;
     transition: none;
     pointer-events: none; }
-  .dt-btn .dt-btn--icon {
-    display: flex;
-    width: 1.5rem;
-    height: 1.5rem;
+
+.dt-btn--label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center; }
+
+.dt-btn--icon {
+  display: flex;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-top: -0.3125rem;
+  margin-right: 0.25rem;
+  margin-bottom: -0.25rem;
+  margin-left: -0.25rem; }
+  .fo-last.dt-btn--icon {
+    margin-right: -0.5rem;
+    margin-left: unset; }
+
+.dt-btn__xs {
+  padding: 0.375rem 0.5rem 0.25rem;
+  font-size: 0.75rem; }
+  .dt-btn__xs .dt-btn--icon,
+  .dt-btn__xs .dt-svg {
+    width: 0.875rem;
+    height: 0.875rem; }
+  .dt-btn__xs .dt-btn--icon {
     margin-top: -0.25rem;
-    margin-bottom: -0.25rem;
-    margin-left: -0.5rem; }
-    .dt-btn .dt-btn--icon.fo-last {
-      margin-right: -0.5rem;
-      margin-left: unset; }
+    margin-right: 0.125rem;
+    margin-bottom: -0.125rem;
+    margin-left: -0.125rem; }
+
+.dt-btn__sm {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem; }
+  .dt-btn__sm .dt-btn--icon,
+  .dt-btn__sm .dt-svg {
+    width: 1.125rem;
+    height: 1.125rem; }
+
+.dt-btn__lg {
+  padding: 0.8125rem 1.125rem;
+  font-size: 1.25rem; }
+
+.dt-btn__xl {
+  padding: 0.9375rem 1.375rem;
+  font-size: 1.5rem; }
+  .dt-btn__xl .dt-btn--icon,
+  .dt-btn__xl .dt-svg {
+    width: 1.75rem;
+    height: 1.75rem; }
 
 .is-loading.dt-btn {
   pointer-events: none; }
@@ -572,6 +611,8 @@ template {
   transition: all 150ms cubic-bezier(0.645, 0.045, 0.355, 1); }
   .dt-btn-circle .dt-btn--icon {
     margin: unset; }
+  .dt-btn-circle .dt-btn--label {
+    display: none; }
   .dt-btn-circle:hover {
     background-color: rgba(41, 44, 51, 0.075);
     color: #141721; }
@@ -610,6 +651,14 @@ template {
     color: #cb0138; }
   .dt-btn__inverted.dt-btn-circle:hover {
     color: #FFF; }
+  .dt-btn__xs.dt-btn-circle {
+    padding: 0.3125rem; }
+  .dt-btn__sm.dt-btn-circle {
+    padding: 0.5rem; }
+  .dt-btn__lg.dt-btn-circle {
+    padding: 0.8125rem; }
+  .dt-btn__xl.dt-btn-circle {
+    padding: 0.9375rem; }
 
 .dt-btn__outlined {
   border-color: #5078EE;
@@ -720,31 +769,14 @@ template {
     .is-loading.dt-btn__primary.dt-btn__inverted:before {
       border-color: #5078EE; }
 
-.dt-btn__xs {
-  padding: 0.5rem 0.625rem;
-  font-size: 0.75rem; }
-
-.dt-btn__sm {
-  padding: 0.5rem 0.75rem 0.4375rem;
-  font-size: 0.875rem; }
-
-.dt-btn__lg {
-  padding: 0.75rem 1.5rem;
-  font-size: 1.125rem; }
-
-.dt-btn__xl {
-  padding: 1rem 2rem;
-  font-size: 1.5rem; }
-
 @media screen and (max-width: 480px) {
   .sm__dt-btn {
     display: inline-flex;
     position: relative;
     align-items: center;
     justify-content: center;
-    min-height: 3rem;
     margin: 0;
-    padding: 0.5rem 1rem;
+    padding: 0.9375rem;
     border: 1px solid transparent;
     border-radius: 0.25rem;
     background-color: rgba(80, 120, 238, 0);
@@ -781,16 +813,50 @@ template {
       color: #6C6E75;
       transition: none;
       pointer-events: none; }
-    .sm__dt-btn .dt-btn--icon {
-      display: flex;
-      width: 1.5rem;
-      height: 1.5rem;
+  .sm__dt-btn--label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center; }
+  .sm__dt-btn--icon {
+    display: flex;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-top: -0.3125rem;
+    margin-right: 0.25rem;
+    margin-bottom: -0.25rem;
+    margin-left: -0.25rem; }
+    .fo-last.sm__dt-btn--icon {
+      margin-right: -0.5rem;
+      margin-left: unset; }
+  .sm__dt-btn__xs {
+    padding: 0.375rem 0.5rem 0.25rem;
+    font-size: 0.75rem; }
+    .sm__dt-btn__xs .dt-btn--icon,
+    .sm__dt-btn__xs .dt-svg {
+      width: 0.875rem;
+      height: 0.875rem; }
+    .sm__dt-btn__xs .dt-btn--icon {
       margin-top: -0.25rem;
-      margin-bottom: -0.25rem;
-      margin-left: -0.5rem; }
-      .sm__dt-btn .dt-btn--icon.fo-last {
-        margin-right: -0.5rem;
-        margin-left: unset; }
+      margin-right: 0.125rem;
+      margin-bottom: -0.125rem;
+      margin-left: -0.125rem; }
+  .sm__dt-btn__sm {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem; }
+    .sm__dt-btn__sm .dt-btn--icon,
+    .sm__dt-btn__sm .dt-svg {
+      width: 1.125rem;
+      height: 1.125rem; }
+  .sm__dt-btn__lg {
+    padding: 0.8125rem 1.125rem;
+    font-size: 1.25rem; }
+  .sm__dt-btn__xl {
+    padding: 0.9375rem 1.375rem;
+    font-size: 1.5rem; }
+    .sm__dt-btn__xl .dt-btn--icon,
+    .sm__dt-btn__xl .dt-svg {
+      width: 1.75rem;
+      height: 1.75rem; }
   .is-loading.sm__dt-btn {
     pointer-events: none; }
     .is-loading.sm__dt-btn .dt-btn--icon,
@@ -821,6 +887,8 @@ template {
     transition: all 150ms cubic-bezier(0.645, 0.045, 0.355, 1); }
     .sm__dt-btn-circle .dt-btn--icon {
       margin: unset; }
+    .sm__dt-btn-circle .dt-btn--label {
+      display: none; }
     .sm__dt-btn-circle:hover {
       background-color: rgba(41, 44, 51, 0.075);
       color: #141721; }
@@ -859,6 +927,14 @@ template {
       color: #cb0138; }
     .dt-btn__inverted.sm__dt-btn-circle:hover {
       color: #FFF; }
+    .sm__dt-btn__xs.sm__dt-btn-circle {
+      padding: 0.3125rem; }
+    .sm__dt-btn__sm.sm__dt-btn-circle {
+      padding: 0.5rem; }
+    .sm__dt-btn__lg.sm__dt-btn-circle {
+      padding: 0.8125rem; }
+    .sm__dt-btn__xl.sm__dt-btn-circle {
+      padding: 0.9375rem; }
   .sm__dt-btn__outlined {
     border-color: #5078EE;
     box-shadow: none;
@@ -963,19 +1039,7 @@ template {
         background-color: #E3E5E8;
         color: #6C6E75; }
       .is-loading.sm__dt-btn__primary.sm__dt-btn__inverted:before {
-        border-color: #5078EE; }
-  .sm__dt-btn__xs {
-    padding: 0.5rem 0.625rem;
-    font-size: 0.75rem; }
-  .sm__dt-btn__sm {
-    padding: 0.5rem 0.75rem 0.4375rem;
-    font-size: 0.875rem; }
-  .sm__dt-btn__lg {
-    padding: 0.75rem 1.5rem;
-    font-size: 1.125rem; }
-  .sm__dt-btn__xl {
-    padding: 1rem 2rem;
-    font-size: 1.5rem; } }
+        border-color: #5078EE; } }
 
 @media screen and (max-width: 768px) {
   .md__dt-btn {
@@ -983,9 +1047,8 @@ template {
     position: relative;
     align-items: center;
     justify-content: center;
-    min-height: 3rem;
     margin: 0;
-    padding: 0.5rem 1rem;
+    padding: 0.9375rem;
     border: 1px solid transparent;
     border-radius: 0.25rem;
     background-color: rgba(80, 120, 238, 0);
@@ -1022,16 +1085,50 @@ template {
       color: #6C6E75;
       transition: none;
       pointer-events: none; }
-    .md__dt-btn .dt-btn--icon {
-      display: flex;
-      width: 1.5rem;
-      height: 1.5rem;
+  .md__dt-btn--label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center; }
+  .md__dt-btn--icon {
+    display: flex;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-top: -0.3125rem;
+    margin-right: 0.25rem;
+    margin-bottom: -0.25rem;
+    margin-left: -0.25rem; }
+    .fo-last.md__dt-btn--icon {
+      margin-right: -0.5rem;
+      margin-left: unset; }
+  .md__dt-btn__xs {
+    padding: 0.375rem 0.5rem 0.25rem;
+    font-size: 0.75rem; }
+    .md__dt-btn__xs .dt-btn--icon,
+    .md__dt-btn__xs .dt-svg {
+      width: 0.875rem;
+      height: 0.875rem; }
+    .md__dt-btn__xs .dt-btn--icon {
       margin-top: -0.25rem;
-      margin-bottom: -0.25rem;
-      margin-left: -0.5rem; }
-      .md__dt-btn .dt-btn--icon.fo-last {
-        margin-right: -0.5rem;
-        margin-left: unset; }
+      margin-right: 0.125rem;
+      margin-bottom: -0.125rem;
+      margin-left: -0.125rem; }
+  .md__dt-btn__sm {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem; }
+    .md__dt-btn__sm .dt-btn--icon,
+    .md__dt-btn__sm .dt-svg {
+      width: 1.125rem;
+      height: 1.125rem; }
+  .md__dt-btn__lg {
+    padding: 0.8125rem 1.125rem;
+    font-size: 1.25rem; }
+  .md__dt-btn__xl {
+    padding: 0.9375rem 1.375rem;
+    font-size: 1.5rem; }
+    .md__dt-btn__xl .dt-btn--icon,
+    .md__dt-btn__xl .dt-svg {
+      width: 1.75rem;
+      height: 1.75rem; }
   .is-loading.md__dt-btn {
     pointer-events: none; }
     .is-loading.md__dt-btn .dt-btn--icon,
@@ -1062,6 +1159,8 @@ template {
     transition: all 150ms cubic-bezier(0.645, 0.045, 0.355, 1); }
     .md__dt-btn-circle .dt-btn--icon {
       margin: unset; }
+    .md__dt-btn-circle .dt-btn--label {
+      display: none; }
     .md__dt-btn-circle:hover {
       background-color: rgba(41, 44, 51, 0.075);
       color: #141721; }
@@ -1100,6 +1199,14 @@ template {
       color: #cb0138; }
     .dt-btn__inverted.md__dt-btn-circle:hover {
       color: #FFF; }
+    .md__dt-btn__xs.md__dt-btn-circle {
+      padding: 0.3125rem; }
+    .md__dt-btn__sm.md__dt-btn-circle {
+      padding: 0.5rem; }
+    .md__dt-btn__lg.md__dt-btn-circle {
+      padding: 0.8125rem; }
+    .md__dt-btn__xl.md__dt-btn-circle {
+      padding: 0.9375rem; }
   .md__dt-btn__outlined {
     border-color: #5078EE;
     box-shadow: none;
@@ -1204,19 +1311,7 @@ template {
         background-color: #E3E5E8;
         color: #6C6E75; }
       .is-loading.md__dt-btn__primary.md__dt-btn__inverted:before {
-        border-color: #5078EE; }
-  .md__dt-btn__xs {
-    padding: 0.5rem 0.625rem;
-    font-size: 0.75rem; }
-  .md__dt-btn__sm {
-    padding: 0.5rem 0.75rem 0.4375rem;
-    font-size: 0.875rem; }
-  .md__dt-btn__lg {
-    padding: 0.75rem 1.5rem;
-    font-size: 1.125rem; }
-  .md__dt-btn__xl {
-    padding: 1rem 2rem;
-    font-size: 1.5rem; } }
+        border-color: #5078EE; } }
 
 @media screen and (max-width: 1024px) {
   .lg__dt-btn {
@@ -1224,9 +1319,8 @@ template {
     position: relative;
     align-items: center;
     justify-content: center;
-    min-height: 3rem;
     margin: 0;
-    padding: 0.5rem 1rem;
+    padding: 0.9375rem;
     border: 1px solid transparent;
     border-radius: 0.25rem;
     background-color: rgba(80, 120, 238, 0);
@@ -1263,16 +1357,50 @@ template {
       color: #6C6E75;
       transition: none;
       pointer-events: none; }
-    .lg__dt-btn .dt-btn--icon {
-      display: flex;
-      width: 1.5rem;
-      height: 1.5rem;
+  .lg__dt-btn--label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center; }
+  .lg__dt-btn--icon {
+    display: flex;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-top: -0.3125rem;
+    margin-right: 0.25rem;
+    margin-bottom: -0.25rem;
+    margin-left: -0.25rem; }
+    .fo-last.lg__dt-btn--icon {
+      margin-right: -0.5rem;
+      margin-left: unset; }
+  .lg__dt-btn__xs {
+    padding: 0.375rem 0.5rem 0.25rem;
+    font-size: 0.75rem; }
+    .lg__dt-btn__xs .dt-btn--icon,
+    .lg__dt-btn__xs .dt-svg {
+      width: 0.875rem;
+      height: 0.875rem; }
+    .lg__dt-btn__xs .dt-btn--icon {
       margin-top: -0.25rem;
-      margin-bottom: -0.25rem;
-      margin-left: -0.5rem; }
-      .lg__dt-btn .dt-btn--icon.fo-last {
-        margin-right: -0.5rem;
-        margin-left: unset; }
+      margin-right: 0.125rem;
+      margin-bottom: -0.125rem;
+      margin-left: -0.125rem; }
+  .lg__dt-btn__sm {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem; }
+    .lg__dt-btn__sm .dt-btn--icon,
+    .lg__dt-btn__sm .dt-svg {
+      width: 1.125rem;
+      height: 1.125rem; }
+  .lg__dt-btn__lg {
+    padding: 0.8125rem 1.125rem;
+    font-size: 1.25rem; }
+  .lg__dt-btn__xl {
+    padding: 0.9375rem 1.375rem;
+    font-size: 1.5rem; }
+    .lg__dt-btn__xl .dt-btn--icon,
+    .lg__dt-btn__xl .dt-svg {
+      width: 1.75rem;
+      height: 1.75rem; }
   .is-loading.lg__dt-btn {
     pointer-events: none; }
     .is-loading.lg__dt-btn .dt-btn--icon,
@@ -1303,6 +1431,8 @@ template {
     transition: all 150ms cubic-bezier(0.645, 0.045, 0.355, 1); }
     .lg__dt-btn-circle .dt-btn--icon {
       margin: unset; }
+    .lg__dt-btn-circle .dt-btn--label {
+      display: none; }
     .lg__dt-btn-circle:hover {
       background-color: rgba(41, 44, 51, 0.075);
       color: #141721; }
@@ -1341,6 +1471,14 @@ template {
       color: #cb0138; }
     .dt-btn__inverted.lg__dt-btn-circle:hover {
       color: #FFF; }
+    .lg__dt-btn__xs.lg__dt-btn-circle {
+      padding: 0.3125rem; }
+    .lg__dt-btn__sm.lg__dt-btn-circle {
+      padding: 0.5rem; }
+    .lg__dt-btn__lg.lg__dt-btn-circle {
+      padding: 0.8125rem; }
+    .lg__dt-btn__xl.lg__dt-btn-circle {
+      padding: 0.9375rem; }
   .lg__dt-btn__outlined {
     border-color: #5078EE;
     box-shadow: none;
@@ -1445,19 +1583,7 @@ template {
         background-color: #E3E5E8;
         color: #6C6E75; }
       .is-loading.lg__dt-btn__primary.lg__dt-btn__inverted:before {
-        border-color: #5078EE; }
-  .lg__dt-btn__xs {
-    padding: 0.5rem 0.625rem;
-    font-size: 0.75rem; }
-  .lg__dt-btn__sm {
-    padding: 0.5rem 0.75rem 0.4375rem;
-    font-size: 0.875rem; }
-  .lg__dt-btn__lg {
-    padding: 0.75rem 1.5rem;
-    font-size: 1.125rem; }
-  .lg__dt-btn__xl {
-    padding: 1rem 2rem;
-    font-size: 1.5rem; } }
+        border-color: #5078EE; } }
 
 @media screen and (max-width: 1280px) {
   .xl__dt-btn {
@@ -1465,9 +1591,8 @@ template {
     position: relative;
     align-items: center;
     justify-content: center;
-    min-height: 3rem;
     margin: 0;
-    padding: 0.5rem 1rem;
+    padding: 0.9375rem;
     border: 1px solid transparent;
     border-radius: 0.25rem;
     background-color: rgba(80, 120, 238, 0);
@@ -1504,16 +1629,50 @@ template {
       color: #6C6E75;
       transition: none;
       pointer-events: none; }
-    .xl__dt-btn .dt-btn--icon {
-      display: flex;
-      width: 1.5rem;
-      height: 1.5rem;
+  .xl__dt-btn--label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center; }
+  .xl__dt-btn--icon {
+    display: flex;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-top: -0.3125rem;
+    margin-right: 0.25rem;
+    margin-bottom: -0.25rem;
+    margin-left: -0.25rem; }
+    .fo-last.xl__dt-btn--icon {
+      margin-right: -0.5rem;
+      margin-left: unset; }
+  .xl__dt-btn__xs {
+    padding: 0.375rem 0.5rem 0.25rem;
+    font-size: 0.75rem; }
+    .xl__dt-btn__xs .dt-btn--icon,
+    .xl__dt-btn__xs .dt-svg {
+      width: 0.875rem;
+      height: 0.875rem; }
+    .xl__dt-btn__xs .dt-btn--icon {
       margin-top: -0.25rem;
-      margin-bottom: -0.25rem;
-      margin-left: -0.5rem; }
-      .xl__dt-btn .dt-btn--icon.fo-last {
-        margin-right: -0.5rem;
-        margin-left: unset; }
+      margin-right: 0.125rem;
+      margin-bottom: -0.125rem;
+      margin-left: -0.125rem; }
+  .xl__dt-btn__sm {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem; }
+    .xl__dt-btn__sm .dt-btn--icon,
+    .xl__dt-btn__sm .dt-svg {
+      width: 1.125rem;
+      height: 1.125rem; }
+  .xl__dt-btn__lg {
+    padding: 0.8125rem 1.125rem;
+    font-size: 1.25rem; }
+  .xl__dt-btn__xl {
+    padding: 0.9375rem 1.375rem;
+    font-size: 1.5rem; }
+    .xl__dt-btn__xl .dt-btn--icon,
+    .xl__dt-btn__xl .dt-svg {
+      width: 1.75rem;
+      height: 1.75rem; }
   .is-loading.xl__dt-btn {
     pointer-events: none; }
     .is-loading.xl__dt-btn .dt-btn--icon,
@@ -1544,6 +1703,8 @@ template {
     transition: all 150ms cubic-bezier(0.645, 0.045, 0.355, 1); }
     .xl__dt-btn-circle .dt-btn--icon {
       margin: unset; }
+    .xl__dt-btn-circle .dt-btn--label {
+      display: none; }
     .xl__dt-btn-circle:hover {
       background-color: rgba(41, 44, 51, 0.075);
       color: #141721; }
@@ -1582,6 +1743,14 @@ template {
       color: #cb0138; }
     .dt-btn__inverted.xl__dt-btn-circle:hover {
       color: #FFF; }
+    .xl__dt-btn__xs.xl__dt-btn-circle {
+      padding: 0.3125rem; }
+    .xl__dt-btn__sm.xl__dt-btn-circle {
+      padding: 0.5rem; }
+    .xl__dt-btn__lg.xl__dt-btn-circle {
+      padding: 0.8125rem; }
+    .xl__dt-btn__xl.xl__dt-btn-circle {
+      padding: 0.9375rem; }
   .xl__dt-btn__outlined {
     border-color: #5078EE;
     box-shadow: none;
@@ -1686,19 +1855,7 @@ template {
         background-color: #E3E5E8;
         color: #6C6E75; }
       .is-loading.xl__dt-btn__primary.xl__dt-btn__inverted:before {
-        border-color: #5078EE; }
-  .xl__dt-btn__xs {
-    padding: 0.5rem 0.625rem;
-    font-size: 0.75rem; }
-  .xl__dt-btn__sm {
-    padding: 0.5rem 0.75rem 0.4375rem;
-    font-size: 0.875rem; }
-  .xl__dt-btn__lg {
-    padding: 0.75rem 1.5rem;
-    font-size: 1.125rem; }
-  .xl__dt-btn__xl {
-    padding: 1rem 2rem;
-    font-size: 1.5rem; } }
+        border-color: #5078EE; } }
 
 .dt-input {
   position: relative;

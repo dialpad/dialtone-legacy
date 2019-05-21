@@ -35,7 +35,7 @@ $button-border-loading-white:   $white;
 $button-border-loading-danger:  $button-danger;
 $button-line-height:            $lh-xs;
 
-$button-padding:                $sp8 $sp16;
+$button-padding:                ($sp16 - $sp1);     // Minus out 1px for the border
 
 //  Re-used patterns
 @mixin disabled-input-style {
@@ -72,7 +72,6 @@ $button-padding:                $sp8 $sp16;
             justify-content: center;
             margin: 0;
             padding: $button-padding;
-            min-height: $sp48;
 
             border: 1px solid transparent;
             border-radius: $button-border-radius;
@@ -115,25 +114,77 @@ $button-padding:                $sp8 $sp16;
                 transition: none;
                 pointer-events: none;
             }
+        }
+        //  Button label styling
+        %#{$variant}dt-btn--label {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-            //  Icon button styling
-            .dt-btn--icon {
-                display: flex;
-                margin-top: -(#{$sp4});
-                margin-bottom: -(#{$sp4});
-                margin-left: -(#{$sp8});    // Offset button left/right padding
-                width: $sp24;
-                height: $sp24;
+        //  Icon button styling
+        %#{$variant}dt-btn--icon {
+            display: flex;
+            margin-top: -($sp4 + $sp1);
+            margin-right: $sp4;
+            margin-bottom: -($sp4);
+            margin-left: -($sp4);
+            width: $sp24;
+            height: $sp24;
 
-                //  If the icon is last, unset the left margin and apply it
-                //  to the right side instead.
-                &.fo-last {
-                    margin-left: unset;
-                    margin-right: -(#{$sp8});    // Offset button left/right padding
-                }
+            //  If the icon is last, unset the left margin and apply it
+            //  to the right side instead.
+            &.fo-last {
+                margin-left: unset;
+                margin-right: -(#{$sp8});    // Offset button left/right padding
             }
         }
 
+        //  ====================================================================
+        //  $   SIZES
+        //  --------------------------------------------------------------------
+        %#{$variant}dt-btn__xs {
+            padding: $sp6 $sp8 $sp4;
+            font-size: $text-xs;
+
+            .dt-btn--icon,
+            .dt-svg {
+                width: 0.875rem;    // 14px
+                height: 0.875rem;   // 14px
+            }
+            .dt-btn--icon {
+                margin-top: -($sp4);
+                margin-right: $sp2;
+                margin-bottom: -($sp2);
+                margin-left: -($sp2);
+            }
+        }
+        %#{$variant}dt-btn__sm {
+            padding: $sp8 $sp12;
+            font-size: $text-sm;
+
+            //  Icon adjustments
+            .dt-btn--icon,
+            .dt-svg {
+                width: 1.125rem;    // 18px
+                height: 1.125rem;   // 18px
+            }
+        }
+        %#{$variant}dt-btn__lg {
+            padding: ($sp12 + $sp1) ($sp16 + $sp2);
+            font-size: $text-xl;
+        }
+        %#{$variant}dt-btn__xl {
+            padding: ($sp16 - $sp1) ($sp24 - $sp2);
+            font-size: $headline-sm;
+
+            //  Icon adjustments
+            .dt-btn--icon,
+            .dt-svg {
+                width: 1.75rem;     // 28px
+                height: 1.75rem;    // 28px
+            }
+        }
 
         //  ====================================================================
         //  $   ALTERNATE STYLES
@@ -170,7 +221,7 @@ $button-padding:                $sp8 $sp16;
             }
         }
 
-        //
+        //  ====================================================================
         //  $$  CIRCLE BUTTON
         //  --------------------------------------------------------------------
         %#{$variant}dt-btn-circle {
@@ -185,6 +236,10 @@ $button-padding:                $sp8 $sp16;
             //  Reset all the margins
             .dt-btn--icon {
                 margin: unset;
+            }
+            //  If there's a label, hide it
+            .dt-btn--label {
+                display: none;
             }
 
             //  States
@@ -206,7 +261,10 @@ $button-padding:                $sp8 $sp16;
                 border-color: $button-muted-hover;
             }
 
-            //  --  OUTLINED
+            //  ================================================================
+            //  $$$  VISUAL STYLES
+            //  ================================================================
+            //  --   OUTLINED
             //  ----------------------------------------------------------------
             &.dt-btn__outlined {
                 border-color: $button-muted;
@@ -244,11 +302,29 @@ $button-padding:                $sp8 $sp16;
             &.dt-btn__inverted:hover {
                 color: $fc-white;
             }
+
+            //  ================================================================
+            //  $$$  SIZES
+            //  ================================================================
+            //  --   Extra Small
+            //  ----------------------------------------------------------------
+            &.#{$variant}dt-btn__xs {
+                padding: ($sp6 - $sp1);     // Minus out 1px for the border
+            }
+            &.#{$variant}dt-btn__sm {
+                padding: $sp8;
+            }
+            &.#{$variant}dt-btn__lg {
+                padding: ($sp12 + $sp1);
+            }
+            &.#{$variant}dt-btn__xl {
+                padding: ($sp16 - $sp1);    // Minus out 1px for the border
+            }
         }
 
         //  ====================================================================
         //  $   VISUAL STYLES
-        //  --------------------------------------------------------------------
+        //  ====================================================================
         //  $$  OUTLINED BUTTON
         //  --------------------------------------------------------------------
         %#{$variant}dt-btn__outlined {
@@ -426,27 +502,6 @@ $button-padding:                $sp8 $sp16;
                     border-color: $button-border-loading;
                 }
             }
-        }
-
-
-        //  ====================================================================
-        //  $   SIZES
-        //  --------------------------------------------------------------------
-        %#{$variant}dt-btn__xs {
-            padding: $sp8 ($sp12 - $sp2);
-            font-size: $text-xs;
-        }
-        %#{$variant}dt-btn__sm {
-            padding: $sp8 $sp12 ($sp8 - $sp1);
-            font-size: $text-sm;
-        }
-        %#{$variant}dt-btn__lg {
-            padding: $sp12 $sp24;
-            font-size: $text-lg;
-        }
-        %#{$variant}dt-btn__xl {
-            padding: $sp16 $sp32;
-            font-size: $headline-sm;
         }
     }
 }
