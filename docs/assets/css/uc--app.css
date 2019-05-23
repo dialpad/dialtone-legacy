@@ -2241,19 +2241,20 @@ template {
       flex: 1 auto; } }
 
 .dt-input {
+  display: inline-flex;
   position: relative;
   flex: 1 0%;
   width: 100%;
   min-width: 0;
-  min-height: 2.625rem;
-  padding: 0.5rem 1rem;
-  border: 0.0625rem solid #E3E5E8;
-  border-radius: 0.25rem;
-  box-shadow: inset 0 0 0.0625rem rgba(198, 200, 206, 0.2), 0 0 0 rgba(255, 255, 255, 0);
+  padding: 0.6875rem 0.9375rem;
+  border: 0.0625rem solid #9699A0;
+  border-radius: 0.25em;
+  box-shadow: inset 0 0 0.125rem 0 rgba(198, 200, 206, 0.2), 0 0 0 rgba(255, 255, 255, 0);
   outline: none;
   font-family: inherit;
   font-size: 1rem;
   font-weight: inherit;
+  line-height: 1;
   transition-duration: 100ms;
   transition-property: border, box-shadow, background-color;
   transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1); }
@@ -2268,9 +2269,8 @@ template {
   .dt-input::-ms-clear {
     display: none; }
   .dt-input:focus {
-    position: relative;
     border-color: #5078EE;
-    box-shadow: inset 0 0 0.125rem #E3E5E8, 0 0 0 0.25rem rgba(80, 120, 238, 0.15);
+    box-shadow: inset 0 0 0.125rem 0 #E3E5E8, 0 0 0 0.25rem rgba(80, 120, 238, 0.15);
     outline: 0; }
   .dt-input[disabled], .dt-input[read-only] {
     border-color: #E3E5E8;
@@ -2281,41 +2281,41 @@ template {
     cursor: not-allowed; }
 
 .dt-select {
-  position: relative; }
+  position: relative;
+  font-size: 1rem; }
   .dt-select:before, .dt-select:after {
     content: "";
     position: absolute;
     z-index: 25;
-    right: 0.75rem;
+    right: 0.75em;
     border-color: #141721 transparent;
     border-style: solid;
-    border-width: 0.25rem;
+    border-width: 0.25em;
     pointer-events: none; }
   .dt-select:before {
-    top: calc(50% - 0.25rem);
-    border-top-width: 0 !important; }
+    top: calc(50% - 0.25em);
+    border-top-width: 0; }
   .dt-select:after {
-    top: calc(50% + 0.125rem);
-    border-bottom-width: 0 !important; }
+    top: calc(50% + 0.125em);
+    border-bottom-width: 0; }
   .dt-select > select {
+    display: inline-flex;
     position: relative;
     flex: 1 0%;
     width: 100%;
     min-width: 0;
     height: 100%;
-    min-height: 2.625rem;
-    padding: 0.5rem 1rem;
-    padding-right: 2rem;
-    padding-left: 0.75rem;
-    border: 0.0625rem solid #E3E5E8;
-    border-radius: 0.25rem;
+    padding: 0.6875rem 0.9375rem;
+    padding-right: 2em;
+    border: 0.0625rem solid #9699A0;
+    border-radius: 0.25em;
     background-color: #FFF;
-    box-shadow: inset 0 0 0.0625rem rgba(198, 200, 206, 0.2), 0 0 0 rgba(255, 255, 255, 0);
+    box-shadow: inset 0 0 0.125rem 0 rgba(198, 200, 206, 0.2), 0 0 0 rgba(255, 255, 255, 0);
     outline: none;
     font-family: inherit;
     font-size: 1rem;
     font-weight: inherit;
-    line-height: 1.125;
+    line-height: 1;
     transition-duration: 100ms;
     transition-property: border, box-shadow, background-color;
     transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -2333,9 +2333,8 @@ template {
     .dt-select > select::-ms-clear {
       display: none; }
     .dt-select > select:focus {
-      position: relative;
       border-color: #5078EE;
-      box-shadow: inset 0 0 0.125rem #E3E5E8, 0 0 0 0.25rem rgba(80, 120, 238, 0.15);
+      box-shadow: inset 0 0 0.125rem 0 #E3E5E8, 0 0 0 0.25rem rgba(80, 120, 238, 0.15);
       outline: 0; }
     .dt-select > select[disabled], .dt-select > select[read-only] {
       border-color: #E3E5E8;
@@ -2353,21 +2352,23 @@ template {
       display: none; }
 
 .dt-textarea {
+  display: inline-flex;
   position: relative;
   flex: 1 0%;
   width: 100%;
   min-width: 0;
-  min-height: 2.625rem;
   min-height: 5rem;
-  padding: 0.5rem 1rem;
-  padding: 0.75rem;
-  border: 0.0625rem solid #E3E5E8;
-  border-radius: 0.25rem;
-  box-shadow: inset 0 0 0.0625rem rgba(198, 200, 206, 0.2), 0 0 0 rgba(255, 255, 255, 0);
+  padding: 0.6875rem 0.9375rem;
+  padding-right: 0.6875rem;
+  padding-left: 0.6875rem;
+  border: 0.0625rem solid #9699A0;
+  border-radius: 0.25em;
+  box-shadow: inset 0 0 0.125rem 0 rgba(198, 200, 206, 0.2), 0 0 0 rgba(255, 255, 255, 0);
   outline: none;
   font-family: inherit;
   font-size: 1rem;
   font-weight: inherit;
+  line-height: 1;
   transition-duration: 100ms;
   transition-property: border, box-shadow, background-color;
   transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1); }
@@ -2382,9 +2383,8 @@ template {
   .dt-textarea::-ms-clear {
     display: none; }
   .dt-textarea:focus {
-    position: relative;
     border-color: #5078EE;
-    box-shadow: inset 0 0 0.125rem #E3E5E8, 0 0 0 0.25rem rgba(80, 120, 238, 0.15);
+    box-shadow: inset 0 0 0.125rem 0 #E3E5E8, 0 0 0 0.25rem rgba(80, 120, 238, 0.15);
     outline: 0; }
   .dt-textarea[disabled], .dt-textarea[read-only] {
     border-color: #E3E5E8;
@@ -2394,62 +2394,120 @@ template {
   .dt-textarea[disabled] {
     cursor: not-allowed; }
 
-.dt-input__sm, .dt-textarea__sm, .dt-select__sm {
-  font-size: 0.875rem; }
-
-.dt-input__lg, .dt-textarea__lg, .dt-select__lg {
-  font-size: 1.25rem; }
-
-.dt-input__xl, .dt-textarea__xl, .dt-select__xl {
-  font-size: 1.5rem; }
+.dt-input__xs {
+  padding: 0.375rem 0.5rem 0.25rem;
+  font-size: 0.75rem; }
+  .dt-input__xs .dt-btn--icon,
+  .dt-input__xs .dt-svg {
+    width: 0.875rem;
+    height: 0.875rem; }
+  .dt-input__xs .dt-btn--icon {
+    margin-top: -0.25rem;
+    margin-right: 0.125rem;
+    margin-bottom: -0.125rem;
+    margin-left: -0.125rem; }
 
 .dt-input__sm {
-  min-height: 2.2rem;
-  padding: 0.25rem 0.75rem; }
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem; }
+  .dt-input__sm .dt-btn--icon,
+  .dt-input__sm .dt-svg {
+    width: 1.125rem;
+    height: 1.125rem; }
 
 .dt-input__lg {
-  min-height: 3rem; }
+  padding: 0.8125rem 1.125rem;
+  font-size: 1.25rem; }
 
 .dt-input__xl {
-  min-height: 3.5rem; }
+  padding: 0.9375rem 1.375rem;
+  font-size: 1.5rem; }
+  .dt-input__xl .dt-btn--icon,
+  .dt-input__xl .dt-svg {
+    width: 1.75rem;
+    height: 1.75rem; }
+
+.dt-textarea__xs {
+  min-height: 2.5rem;
+  padding: 0.375rem 0.5rem 0.25rem;
+  font-size: 0.75rem; }
+  .dt-textarea__xs .dt-btn--icon,
+  .dt-textarea__xs .dt-svg {
+    width: 0.875rem;
+    height: 0.875rem; }
+  .dt-textarea__xs .dt-btn--icon {
+    margin-top: -0.25rem;
+    margin-right: 0.125rem;
+    margin-bottom: -0.125rem;
+    margin-left: -0.125rem; }
 
 .dt-textarea__sm {
-  min-height: 3rem; }
+  min-height: 3rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem; }
+  .dt-textarea__sm .dt-btn--icon,
+  .dt-textarea__sm .dt-svg {
+    width: 1.125rem;
+    height: 1.125rem; }
 
 .dt-textarea__lg {
-  min-height: 5.75rem; }
+  min-height: 5.75rem;
+  padding: 0.8125rem 1.125rem;
+  font-size: 1.25rem; }
 
 .dt-textarea__xl {
   min-height: 6.25rem;
-  padding: 1rem; }
+  padding: 0.9375rem 1.375rem;
+  font-size: 1.5rem; }
+  .dt-textarea__xl .dt-btn--icon,
+  .dt-textarea__xl .dt-svg {
+    width: 1.75rem;
+    height: 1.75rem; }
 
-.dt-select__sm:before {
-  top: calc(50% - 0.375rem); }
+.dt-select__xs {
+  font-size: 0.75rem; }
+  .dt-select__xs > select {
+    padding: 0.375rem 0.5rem 0.25rem;
+    padding-right: 2em;
+    font-size: 0.75rem; }
+    .dt-select__xs > select .dt-btn--icon,
+    .dt-select__xs > select .dt-svg {
+      width: 0.875rem;
+      height: 0.875rem; }
+    .dt-select__xs > select .dt-btn--icon {
+      margin-top: -0.25rem;
+      margin-right: 0.125rem;
+      margin-bottom: -0.125rem;
+      margin-left: -0.125rem; }
 
-.dt-select__sm:after {
-  top: calc(50% + 1px); }
+.dt-select__sm {
+  font-size: 0.875rem; }
+  .dt-select__sm > select {
+    padding: 0.5rem 0.75rem;
+    padding-right: 2em;
+    font-size: 0.875rem; }
+    .dt-select__sm > select .dt-btn--icon,
+    .dt-select__sm > select .dt-svg {
+      width: 1.125rem;
+      height: 1.125rem; }
 
-.dt-select__sm > select {
-  min-height: 2.2rem;
-  padding: 0.375rem 1.875rem 0.125rem 0.75rem; }
+.dt-select__lg {
+  font-size: 1.125rem; }
+  .dt-select__lg > select {
+    padding: 0.8125rem 1.125rem;
+    padding-right: 2em;
+    font-size: 1.25rem; }
 
-.dt-select__lg:before, .dt-select__lg:after {
-  border-width: 0.3125rem; }
-
-.dt-select__lg:before {
-  top: calc(50% - 0.3125rem); }
-
-.dt-select__lg > select {
-  min-height: 3rem; }
-
-.dt-select__xl:before, .dt-select__xl:after {
-  border-width: 0.375rem; }
-
-.dt-select__xl:before {
-  top: calc(50% - 0.375rem); }
-
-.dt-select__xl > select {
-  min-height: 3.5rem; }
+.dt-select__xl {
+  font-size: 1.125rem; }
+  .dt-select__xl > select {
+    padding: 0.9375rem 1.375rem;
+    padding-right: 2em;
+    font-size: 1.5rem; }
+    .dt-select__xl > select .dt-btn--icon,
+    .dt-select__xl > select .dt-svg {
+      width: 1.75rem;
+      height: 1.75rem; }
 
 fieldset {
   min-width: 0;
@@ -2508,19 +2566,20 @@ fieldset {
 
 @media screen and (max-width: 480px) {
   .sm__dt-input {
+    display: inline-flex;
     position: relative;
     flex: 1 0%;
     width: 100%;
     min-width: 0;
-    min-height: 2.625rem;
-    padding: 0.5rem 1rem;
-    border: 0.0625rem solid #E3E5E8;
-    border-radius: 0.25rem;
-    box-shadow: inset 0 0 0.0625rem rgba(198, 200, 206, 0.2), 0 0 0 rgba(255, 255, 255, 0);
+    padding: 0.6875rem 0.9375rem;
+    border: 0.0625rem solid #9699A0;
+    border-radius: 0.25em;
+    box-shadow: inset 0 0 0.125rem 0 rgba(198, 200, 206, 0.2), 0 0 0 rgba(255, 255, 255, 0);
     outline: none;
     font-family: inherit;
     font-size: 1rem;
     font-weight: inherit;
+    line-height: 1;
     transition-duration: 100ms;
     transition-property: border, box-shadow, background-color;
     transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1); }
@@ -2535,9 +2594,8 @@ fieldset {
     .sm__dt-input::-ms-clear {
       display: none; }
     .sm__dt-input:focus {
-      position: relative;
       border-color: #5078EE;
-      box-shadow: inset 0 0 0.125rem #E3E5E8, 0 0 0 0.25rem rgba(80, 120, 238, 0.15);
+      box-shadow: inset 0 0 0.125rem 0 #E3E5E8, 0 0 0 0.25rem rgba(80, 120, 238, 0.15);
       outline: 0; }
     .sm__dt-input[disabled], .sm__dt-input[read-only] {
       border-color: #E3E5E8;
@@ -2547,41 +2605,41 @@ fieldset {
     .sm__dt-input[disabled] {
       cursor: not-allowed; }
   .sm__dt-select {
-    position: relative; }
+    position: relative;
+    font-size: 1rem; }
     .sm__dt-select:before, .sm__dt-select:after {
       content: "";
       position: absolute;
       z-index: 25;
-      right: 0.75rem;
+      right: 0.75em;
       border-color: #141721 transparent;
       border-style: solid;
-      border-width: 0.25rem;
+      border-width: 0.25em;
       pointer-events: none; }
     .sm__dt-select:before {
-      top: calc(50% - 0.25rem);
-      border-top-width: 0 !important; }
+      top: calc(50% - 0.25em);
+      border-top-width: 0; }
     .sm__dt-select:after {
-      top: calc(50% + 0.125rem);
-      border-bottom-width: 0 !important; }
+      top: calc(50% + 0.125em);
+      border-bottom-width: 0; }
     .sm__dt-select > select {
+      display: inline-flex;
       position: relative;
       flex: 1 0%;
       width: 100%;
       min-width: 0;
       height: 100%;
-      min-height: 2.625rem;
-      padding: 0.5rem 1rem;
-      padding-right: 2rem;
-      padding-left: 0.75rem;
-      border: 0.0625rem solid #E3E5E8;
-      border-radius: 0.25rem;
+      padding: 0.6875rem 0.9375rem;
+      padding-right: 2em;
+      border: 0.0625rem solid #9699A0;
+      border-radius: 0.25em;
       background-color: #FFF;
-      box-shadow: inset 0 0 0.0625rem rgba(198, 200, 206, 0.2), 0 0 0 rgba(255, 255, 255, 0);
+      box-shadow: inset 0 0 0.125rem 0 rgba(198, 200, 206, 0.2), 0 0 0 rgba(255, 255, 255, 0);
       outline: none;
       font-family: inherit;
       font-size: 1rem;
       font-weight: inherit;
-      line-height: 1.125;
+      line-height: 1;
       transition-duration: 100ms;
       transition-property: border, box-shadow, background-color;
       transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -2599,9 +2657,8 @@ fieldset {
       .sm__dt-select > select::-ms-clear {
         display: none; }
       .sm__dt-select > select:focus {
-        position: relative;
         border-color: #5078EE;
-        box-shadow: inset 0 0 0.125rem #E3E5E8, 0 0 0 0.25rem rgba(80, 120, 238, 0.15);
+        box-shadow: inset 0 0 0.125rem 0 #E3E5E8, 0 0 0 0.25rem rgba(80, 120, 238, 0.15);
         outline: 0; }
       .sm__dt-select > select[disabled], .sm__dt-select > select[read-only] {
         border-color: #E3E5E8;
@@ -2618,21 +2675,23 @@ fieldset {
       .sm__dt-select > select::-ms-expand {
         display: none; }
   .sm__dt-textarea {
+    display: inline-flex;
     position: relative;
     flex: 1 0%;
     width: 100%;
     min-width: 0;
-    min-height: 2.625rem;
     min-height: 5rem;
-    padding: 0.5rem 1rem;
-    padding: 0.75rem;
-    border: 0.0625rem solid #E3E5E8;
-    border-radius: 0.25rem;
-    box-shadow: inset 0 0 0.0625rem rgba(198, 200, 206, 0.2), 0 0 0 rgba(255, 255, 255, 0);
+    padding: 0.6875rem 0.9375rem;
+    padding-right: 0.6875rem;
+    padding-left: 0.6875rem;
+    border: 0.0625rem solid #9699A0;
+    border-radius: 0.25em;
+    box-shadow: inset 0 0 0.125rem 0 rgba(198, 200, 206, 0.2), 0 0 0 rgba(255, 255, 255, 0);
     outline: none;
     font-family: inherit;
     font-size: 1rem;
     font-weight: inherit;
+    line-height: 1;
     transition-duration: 100ms;
     transition-property: border, box-shadow, background-color;
     transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1); }
@@ -2647,9 +2706,8 @@ fieldset {
     .sm__dt-textarea::-ms-clear {
       display: none; }
     .sm__dt-textarea:focus {
-      position: relative;
       border-color: #5078EE;
-      box-shadow: inset 0 0 0.125rem #E3E5E8, 0 0 0 0.25rem rgba(80, 120, 238, 0.15);
+      box-shadow: inset 0 0 0.125rem 0 #E3E5E8, 0 0 0 0.25rem rgba(80, 120, 238, 0.15);
       outline: 0; }
     .sm__dt-textarea[disabled], .sm__dt-textarea[read-only] {
       border-color: #E3E5E8;
@@ -2658,45 +2716,109 @@ fieldset {
       color: #4C4E56; }
     .sm__dt-textarea[disabled] {
       cursor: not-allowed; }
-  .sm__dt-input__sm, .sm__dt-textarea__sm, .sm__dt-select__sm {
-    font-size: 0.875rem; }
-  .sm__dt-input__lg, .sm__dt-textarea__lg, .sm__dt-select__lg {
-    font-size: 1.25rem; }
-  .sm__dt-input__xl, .sm__dt-textarea__xl, .sm__dt-select__xl {
-    font-size: 1.5rem; }
+  .sm__dt-input__xs {
+    padding: 0.375rem 0.5rem 0.25rem;
+    font-size: 0.75rem; }
+    .sm__dt-input__xs .dt-btn--icon,
+    .sm__dt-input__xs .dt-svg {
+      width: 0.875rem;
+      height: 0.875rem; }
+    .sm__dt-input__xs .dt-btn--icon {
+      margin-top: -0.25rem;
+      margin-right: 0.125rem;
+      margin-bottom: -0.125rem;
+      margin-left: -0.125rem; }
   .sm__dt-input__sm {
-    min-height: 2.2rem;
-    padding: 0.25rem 0.75rem; }
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem; }
+    .sm__dt-input__sm .dt-btn--icon,
+    .sm__dt-input__sm .dt-svg {
+      width: 1.125rem;
+      height: 1.125rem; }
   .sm__dt-input__lg {
-    min-height: 3rem; }
+    padding: 0.8125rem 1.125rem;
+    font-size: 1.25rem; }
   .sm__dt-input__xl {
-    min-height: 3.5rem; }
+    padding: 0.9375rem 1.375rem;
+    font-size: 1.5rem; }
+    .sm__dt-input__xl .dt-btn--icon,
+    .sm__dt-input__xl .dt-svg {
+      width: 1.75rem;
+      height: 1.75rem; }
+  .sm__dt-textarea__xs {
+    min-height: 2.5rem;
+    padding: 0.375rem 0.5rem 0.25rem;
+    font-size: 0.75rem; }
+    .sm__dt-textarea__xs .dt-btn--icon,
+    .sm__dt-textarea__xs .dt-svg {
+      width: 0.875rem;
+      height: 0.875rem; }
+    .sm__dt-textarea__xs .dt-btn--icon {
+      margin-top: -0.25rem;
+      margin-right: 0.125rem;
+      margin-bottom: -0.125rem;
+      margin-left: -0.125rem; }
   .sm__dt-textarea__sm {
-    min-height: 3rem; }
+    min-height: 3rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem; }
+    .sm__dt-textarea__sm .dt-btn--icon,
+    .sm__dt-textarea__sm .dt-svg {
+      width: 1.125rem;
+      height: 1.125rem; }
   .sm__dt-textarea__lg {
-    min-height: 5.75rem; }
+    min-height: 5.75rem;
+    padding: 0.8125rem 1.125rem;
+    font-size: 1.25rem; }
   .sm__dt-textarea__xl {
     min-height: 6.25rem;
-    padding: 1rem; }
-  .sm__dt-select__sm:before {
-    top: calc(50% - 0.375rem); }
-  .sm__dt-select__sm:after {
-    top: calc(50% + 1px); }
-  .sm__dt-select__sm > select {
-    min-height: 2.2rem;
-    padding: 0.375rem 1.875rem 0.125rem 0.75rem; }
-  .sm__dt-select__lg:before, .sm__dt-select__lg:after {
-    border-width: 0.3125rem; }
-  .sm__dt-select__lg:before {
-    top: calc(50% - 0.3125rem); }
-  .sm__dt-select__lg > select {
-    min-height: 3rem; }
-  .sm__dt-select__xl:before, .sm__dt-select__xl:after {
-    border-width: 0.375rem; }
-  .sm__dt-select__xl:before {
-    top: calc(50% - 0.375rem); }
-  .sm__dt-select__xl > select {
-    min-height: 3.5rem; }
+    padding: 0.9375rem 1.375rem;
+    font-size: 1.5rem; }
+    .sm__dt-textarea__xl .dt-btn--icon,
+    .sm__dt-textarea__xl .dt-svg {
+      width: 1.75rem;
+      height: 1.75rem; }
+  .sm__dt-select__xs {
+    font-size: 0.75rem; }
+    .sm__dt-select__xs > select {
+      padding: 0.375rem 0.5rem 0.25rem;
+      padding-right: 2em;
+      font-size: 0.75rem; }
+      .sm__dt-select__xs > select .dt-btn--icon,
+      .sm__dt-select__xs > select .dt-svg {
+        width: 0.875rem;
+        height: 0.875rem; }
+      .sm__dt-select__xs > select .dt-btn--icon {
+        margin-top: -0.25rem;
+        margin-right: 0.125rem;
+        margin-bottom: -0.125rem;
+        margin-left: -0.125rem; }
+  .sm__dt-select__sm {
+    font-size: 0.875rem; }
+    .sm__dt-select__sm > select {
+      padding: 0.5rem 0.75rem;
+      padding-right: 2em;
+      font-size: 0.875rem; }
+      .sm__dt-select__sm > select .dt-btn--icon,
+      .sm__dt-select__sm > select .dt-svg {
+        width: 1.125rem;
+        height: 1.125rem; }
+  .sm__dt-select__lg {
+    font-size: 1.125rem; }
+    .sm__dt-select__lg > select {
+      padding: 0.8125rem 1.125rem;
+      padding-right: 2em;
+      font-size: 1.25rem; }
+  .sm__dt-select__xl {
+    font-size: 1.125rem; }
+    .sm__dt-select__xl > select {
+      padding: 0.9375rem 1.375rem;
+      padding-right: 2em;
+      font-size: 1.5rem; }
+      .sm__dt-select__xl > select .dt-btn--icon,
+      .sm__dt-select__xl > select .dt-svg {
+        width: 1.75rem;
+        height: 1.75rem; }
   fieldset {
     min-width: 0;
     padding: 0;
@@ -2748,19 +2870,20 @@ fieldset {
 
 @media screen and (max-width: 768px) {
   .md__dt-input {
+    display: inline-flex;
     position: relative;
     flex: 1 0%;
     width: 100%;
     min-width: 0;
-    min-height: 2.625rem;
-    padding: 0.5rem 1rem;
-    border: 0.0625rem solid #E3E5E8;
-    border-radius: 0.25rem;
-    box-shadow: inset 0 0 0.0625rem rgba(198, 200, 206, 0.2), 0 0 0 rgba(255, 255, 255, 0);
+    padding: 0.6875rem 0.9375rem;
+    border: 0.0625rem solid #9699A0;
+    border-radius: 0.25em;
+    box-shadow: inset 0 0 0.125rem 0 rgba(198, 200, 206, 0.2), 0 0 0 rgba(255, 255, 255, 0);
     outline: none;
     font-family: inherit;
     font-size: 1rem;
     font-weight: inherit;
+    line-height: 1;
     transition-duration: 100ms;
     transition-property: border, box-shadow, background-color;
     transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1); }
@@ -2775,9 +2898,8 @@ fieldset {
     .md__dt-input::-ms-clear {
       display: none; }
     .md__dt-input:focus {
-      position: relative;
       border-color: #5078EE;
-      box-shadow: inset 0 0 0.125rem #E3E5E8, 0 0 0 0.25rem rgba(80, 120, 238, 0.15);
+      box-shadow: inset 0 0 0.125rem 0 #E3E5E8, 0 0 0 0.25rem rgba(80, 120, 238, 0.15);
       outline: 0; }
     .md__dt-input[disabled], .md__dt-input[read-only] {
       border-color: #E3E5E8;
@@ -2787,41 +2909,41 @@ fieldset {
     .md__dt-input[disabled] {
       cursor: not-allowed; }
   .md__dt-select {
-    position: relative; }
+    position: relative;
+    font-size: 1rem; }
     .md__dt-select:before, .md__dt-select:after {
       content: "";
       position: absolute;
       z-index: 25;
-      right: 0.75rem;
+      right: 0.75em;
       border-color: #141721 transparent;
       border-style: solid;
-      border-width: 0.25rem;
+      border-width: 0.25em;
       pointer-events: none; }
     .md__dt-select:before {
-      top: calc(50% - 0.25rem);
-      border-top-width: 0 !important; }
+      top: calc(50% - 0.25em);
+      border-top-width: 0; }
     .md__dt-select:after {
-      top: calc(50% + 0.125rem);
-      border-bottom-width: 0 !important; }
+      top: calc(50% + 0.125em);
+      border-bottom-width: 0; }
     .md__dt-select > select {
+      display: inline-flex;
       position: relative;
       flex: 1 0%;
       width: 100%;
       min-width: 0;
       height: 100%;
-      min-height: 2.625rem;
-      padding: 0.5rem 1rem;
-      padding-right: 2rem;
-      padding-left: 0.75rem;
-      border: 0.0625rem solid #E3E5E8;
-      border-radius: 0.25rem;
+      padding: 0.6875rem 0.9375rem;
+      padding-right: 2em;
+      border: 0.0625rem solid #9699A0;
+      border-radius: 0.25em;
       background-color: #FFF;
-      box-shadow: inset 0 0 0.0625rem rgba(198, 200, 206, 0.2), 0 0 0 rgba(255, 255, 255, 0);
+      box-shadow: inset 0 0 0.125rem 0 rgba(198, 200, 206, 0.2), 0 0 0 rgba(255, 255, 255, 0);
       outline: none;
       font-family: inherit;
       font-size: 1rem;
       font-weight: inherit;
-      line-height: 1.125;
+      line-height: 1;
       transition-duration: 100ms;
       transition-property: border, box-shadow, background-color;
       transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -2839,9 +2961,8 @@ fieldset {
       .md__dt-select > select::-ms-clear {
         display: none; }
       .md__dt-select > select:focus {
-        position: relative;
         border-color: #5078EE;
-        box-shadow: inset 0 0 0.125rem #E3E5E8, 0 0 0 0.25rem rgba(80, 120, 238, 0.15);
+        box-shadow: inset 0 0 0.125rem 0 #E3E5E8, 0 0 0 0.25rem rgba(80, 120, 238, 0.15);
         outline: 0; }
       .md__dt-select > select[disabled], .md__dt-select > select[read-only] {
         border-color: #E3E5E8;
@@ -2858,21 +2979,23 @@ fieldset {
       .md__dt-select > select::-ms-expand {
         display: none; }
   .md__dt-textarea {
+    display: inline-flex;
     position: relative;
     flex: 1 0%;
     width: 100%;
     min-width: 0;
-    min-height: 2.625rem;
     min-height: 5rem;
-    padding: 0.5rem 1rem;
-    padding: 0.75rem;
-    border: 0.0625rem solid #E3E5E8;
-    border-radius: 0.25rem;
-    box-shadow: inset 0 0 0.0625rem rgba(198, 200, 206, 0.2), 0 0 0 rgba(255, 255, 255, 0);
+    padding: 0.6875rem 0.9375rem;
+    padding-right: 0.6875rem;
+    padding-left: 0.6875rem;
+    border: 0.0625rem solid #9699A0;
+    border-radius: 0.25em;
+    box-shadow: inset 0 0 0.125rem 0 rgba(198, 200, 206, 0.2), 0 0 0 rgba(255, 255, 255, 0);
     outline: none;
     font-family: inherit;
     font-size: 1rem;
     font-weight: inherit;
+    line-height: 1;
     transition-duration: 100ms;
     transition-property: border, box-shadow, background-color;
     transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1); }
@@ -2887,9 +3010,8 @@ fieldset {
     .md__dt-textarea::-ms-clear {
       display: none; }
     .md__dt-textarea:focus {
-      position: relative;
       border-color: #5078EE;
-      box-shadow: inset 0 0 0.125rem #E3E5E8, 0 0 0 0.25rem rgba(80, 120, 238, 0.15);
+      box-shadow: inset 0 0 0.125rem 0 #E3E5E8, 0 0 0 0.25rem rgba(80, 120, 238, 0.15);
       outline: 0; }
     .md__dt-textarea[disabled], .md__dt-textarea[read-only] {
       border-color: #E3E5E8;
@@ -2898,45 +3020,109 @@ fieldset {
       color: #4C4E56; }
     .md__dt-textarea[disabled] {
       cursor: not-allowed; }
-  .md__dt-input__sm, .md__dt-textarea__sm, .md__dt-select__sm {
-    font-size: 0.875rem; }
-  .md__dt-input__lg, .md__dt-textarea__lg, .md__dt-select__lg {
-    font-size: 1.25rem; }
-  .md__dt-input__xl, .md__dt-textarea__xl, .md__dt-select__xl {
-    font-size: 1.5rem; }
+  .md__dt-input__xs {
+    padding: 0.375rem 0.5rem 0.25rem;
+    font-size: 0.75rem; }
+    .md__dt-input__xs .dt-btn--icon,
+    .md__dt-input__xs .dt-svg {
+      width: 0.875rem;
+      height: 0.875rem; }
+    .md__dt-input__xs .dt-btn--icon {
+      margin-top: -0.25rem;
+      margin-right: 0.125rem;
+      margin-bottom: -0.125rem;
+      margin-left: -0.125rem; }
   .md__dt-input__sm {
-    min-height: 2.2rem;
-    padding: 0.25rem 0.75rem; }
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem; }
+    .md__dt-input__sm .dt-btn--icon,
+    .md__dt-input__sm .dt-svg {
+      width: 1.125rem;
+      height: 1.125rem; }
   .md__dt-input__lg {
-    min-height: 3rem; }
+    padding: 0.8125rem 1.125rem;
+    font-size: 1.25rem; }
   .md__dt-input__xl {
-    min-height: 3.5rem; }
+    padding: 0.9375rem 1.375rem;
+    font-size: 1.5rem; }
+    .md__dt-input__xl .dt-btn--icon,
+    .md__dt-input__xl .dt-svg {
+      width: 1.75rem;
+      height: 1.75rem; }
+  .md__dt-textarea__xs {
+    min-height: 2.5rem;
+    padding: 0.375rem 0.5rem 0.25rem;
+    font-size: 0.75rem; }
+    .md__dt-textarea__xs .dt-btn--icon,
+    .md__dt-textarea__xs .dt-svg {
+      width: 0.875rem;
+      height: 0.875rem; }
+    .md__dt-textarea__xs .dt-btn--icon {
+      margin-top: -0.25rem;
+      margin-right: 0.125rem;
+      margin-bottom: -0.125rem;
+      margin-left: -0.125rem; }
   .md__dt-textarea__sm {
-    min-height: 3rem; }
+    min-height: 3rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem; }
+    .md__dt-textarea__sm .dt-btn--icon,
+    .md__dt-textarea__sm .dt-svg {
+      width: 1.125rem;
+      height: 1.125rem; }
   .md__dt-textarea__lg {
-    min-height: 5.75rem; }
+    min-height: 5.75rem;
+    padding: 0.8125rem 1.125rem;
+    font-size: 1.25rem; }
   .md__dt-textarea__xl {
     min-height: 6.25rem;
-    padding: 1rem; }
-  .md__dt-select__sm:before {
-    top: calc(50% - 0.375rem); }
-  .md__dt-select__sm:after {
-    top: calc(50% + 1px); }
-  .md__dt-select__sm > select {
-    min-height: 2.2rem;
-    padding: 0.375rem 1.875rem 0.125rem 0.75rem; }
-  .md__dt-select__lg:before, .md__dt-select__lg:after {
-    border-width: 0.3125rem; }
-  .md__dt-select__lg:before {
-    top: calc(50% - 0.3125rem); }
-  .md__dt-select__lg > select {
-    min-height: 3rem; }
-  .md__dt-select__xl:before, .md__dt-select__xl:after {
-    border-width: 0.375rem; }
-  .md__dt-select__xl:before {
-    top: calc(50% - 0.375rem); }
-  .md__dt-select__xl > select {
-    min-height: 3.5rem; }
+    padding: 0.9375rem 1.375rem;
+    font-size: 1.5rem; }
+    .md__dt-textarea__xl .dt-btn--icon,
+    .md__dt-textarea__xl .dt-svg {
+      width: 1.75rem;
+      height: 1.75rem; }
+  .md__dt-select__xs {
+    font-size: 0.75rem; }
+    .md__dt-select__xs > select {
+      padding: 0.375rem 0.5rem 0.25rem;
+      padding-right: 2em;
+      font-size: 0.75rem; }
+      .md__dt-select__xs > select .dt-btn--icon,
+      .md__dt-select__xs > select .dt-svg {
+        width: 0.875rem;
+        height: 0.875rem; }
+      .md__dt-select__xs > select .dt-btn--icon {
+        margin-top: -0.25rem;
+        margin-right: 0.125rem;
+        margin-bottom: -0.125rem;
+        margin-left: -0.125rem; }
+  .md__dt-select__sm {
+    font-size: 0.875rem; }
+    .md__dt-select__sm > select {
+      padding: 0.5rem 0.75rem;
+      padding-right: 2em;
+      font-size: 0.875rem; }
+      .md__dt-select__sm > select .dt-btn--icon,
+      .md__dt-select__sm > select .dt-svg {
+        width: 1.125rem;
+        height: 1.125rem; }
+  .md__dt-select__lg {
+    font-size: 1.125rem; }
+    .md__dt-select__lg > select {
+      padding: 0.8125rem 1.125rem;
+      padding-right: 2em;
+      font-size: 1.25rem; }
+  .md__dt-select__xl {
+    font-size: 1.125rem; }
+    .md__dt-select__xl > select {
+      padding: 0.9375rem 1.375rem;
+      padding-right: 2em;
+      font-size: 1.5rem; }
+      .md__dt-select__xl > select .dt-btn--icon,
+      .md__dt-select__xl > select .dt-svg {
+        width: 1.75rem;
+        height: 1.75rem; }
   fieldset {
     min-width: 0;
     padding: 0;
@@ -2988,19 +3174,20 @@ fieldset {
 
 @media screen and (max-width: 1024px) {
   .lg__dt-input {
+    display: inline-flex;
     position: relative;
     flex: 1 0%;
     width: 100%;
     min-width: 0;
-    min-height: 2.625rem;
-    padding: 0.5rem 1rem;
-    border: 0.0625rem solid #E3E5E8;
-    border-radius: 0.25rem;
-    box-shadow: inset 0 0 0.0625rem rgba(198, 200, 206, 0.2), 0 0 0 rgba(255, 255, 255, 0);
+    padding: 0.6875rem 0.9375rem;
+    border: 0.0625rem solid #9699A0;
+    border-radius: 0.25em;
+    box-shadow: inset 0 0 0.125rem 0 rgba(198, 200, 206, 0.2), 0 0 0 rgba(255, 255, 255, 0);
     outline: none;
     font-family: inherit;
     font-size: 1rem;
     font-weight: inherit;
+    line-height: 1;
     transition-duration: 100ms;
     transition-property: border, box-shadow, background-color;
     transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1); }
@@ -3015,9 +3202,8 @@ fieldset {
     .lg__dt-input::-ms-clear {
       display: none; }
     .lg__dt-input:focus {
-      position: relative;
       border-color: #5078EE;
-      box-shadow: inset 0 0 0.125rem #E3E5E8, 0 0 0 0.25rem rgba(80, 120, 238, 0.15);
+      box-shadow: inset 0 0 0.125rem 0 #E3E5E8, 0 0 0 0.25rem rgba(80, 120, 238, 0.15);
       outline: 0; }
     .lg__dt-input[disabled], .lg__dt-input[read-only] {
       border-color: #E3E5E8;
@@ -3027,41 +3213,41 @@ fieldset {
     .lg__dt-input[disabled] {
       cursor: not-allowed; }
   .lg__dt-select {
-    position: relative; }
+    position: relative;
+    font-size: 1rem; }
     .lg__dt-select:before, .lg__dt-select:after {
       content: "";
       position: absolute;
       z-index: 25;
-      right: 0.75rem;
+      right: 0.75em;
       border-color: #141721 transparent;
       border-style: solid;
-      border-width: 0.25rem;
+      border-width: 0.25em;
       pointer-events: none; }
     .lg__dt-select:before {
-      top: calc(50% - 0.25rem);
-      border-top-width: 0 !important; }
+      top: calc(50% - 0.25em);
+      border-top-width: 0; }
     .lg__dt-select:after {
-      top: calc(50% + 0.125rem);
-      border-bottom-width: 0 !important; }
+      top: calc(50% + 0.125em);
+      border-bottom-width: 0; }
     .lg__dt-select > select {
+      display: inline-flex;
       position: relative;
       flex: 1 0%;
       width: 100%;
       min-width: 0;
       height: 100%;
-      min-height: 2.625rem;
-      padding: 0.5rem 1rem;
-      padding-right: 2rem;
-      padding-left: 0.75rem;
-      border: 0.0625rem solid #E3E5E8;
-      border-radius: 0.25rem;
+      padding: 0.6875rem 0.9375rem;
+      padding-right: 2em;
+      border: 0.0625rem solid #9699A0;
+      border-radius: 0.25em;
       background-color: #FFF;
-      box-shadow: inset 0 0 0.0625rem rgba(198, 200, 206, 0.2), 0 0 0 rgba(255, 255, 255, 0);
+      box-shadow: inset 0 0 0.125rem 0 rgba(198, 200, 206, 0.2), 0 0 0 rgba(255, 255, 255, 0);
       outline: none;
       font-family: inherit;
       font-size: 1rem;
       font-weight: inherit;
-      line-height: 1.125;
+      line-height: 1;
       transition-duration: 100ms;
       transition-property: border, box-shadow, background-color;
       transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -3079,9 +3265,8 @@ fieldset {
       .lg__dt-select > select::-ms-clear {
         display: none; }
       .lg__dt-select > select:focus {
-        position: relative;
         border-color: #5078EE;
-        box-shadow: inset 0 0 0.125rem #E3E5E8, 0 0 0 0.25rem rgba(80, 120, 238, 0.15);
+        box-shadow: inset 0 0 0.125rem 0 #E3E5E8, 0 0 0 0.25rem rgba(80, 120, 238, 0.15);
         outline: 0; }
       .lg__dt-select > select[disabled], .lg__dt-select > select[read-only] {
         border-color: #E3E5E8;
@@ -3098,21 +3283,23 @@ fieldset {
       .lg__dt-select > select::-ms-expand {
         display: none; }
   .lg__dt-textarea {
+    display: inline-flex;
     position: relative;
     flex: 1 0%;
     width: 100%;
     min-width: 0;
-    min-height: 2.625rem;
     min-height: 5rem;
-    padding: 0.5rem 1rem;
-    padding: 0.75rem;
-    border: 0.0625rem solid #E3E5E8;
-    border-radius: 0.25rem;
-    box-shadow: inset 0 0 0.0625rem rgba(198, 200, 206, 0.2), 0 0 0 rgba(255, 255, 255, 0);
+    padding: 0.6875rem 0.9375rem;
+    padding-right: 0.6875rem;
+    padding-left: 0.6875rem;
+    border: 0.0625rem solid #9699A0;
+    border-radius: 0.25em;
+    box-shadow: inset 0 0 0.125rem 0 rgba(198, 200, 206, 0.2), 0 0 0 rgba(255, 255, 255, 0);
     outline: none;
     font-family: inherit;
     font-size: 1rem;
     font-weight: inherit;
+    line-height: 1;
     transition-duration: 100ms;
     transition-property: border, box-shadow, background-color;
     transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1); }
@@ -3127,9 +3314,8 @@ fieldset {
     .lg__dt-textarea::-ms-clear {
       display: none; }
     .lg__dt-textarea:focus {
-      position: relative;
       border-color: #5078EE;
-      box-shadow: inset 0 0 0.125rem #E3E5E8, 0 0 0 0.25rem rgba(80, 120, 238, 0.15);
+      box-shadow: inset 0 0 0.125rem 0 #E3E5E8, 0 0 0 0.25rem rgba(80, 120, 238, 0.15);
       outline: 0; }
     .lg__dt-textarea[disabled], .lg__dt-textarea[read-only] {
       border-color: #E3E5E8;
@@ -3138,45 +3324,109 @@ fieldset {
       color: #4C4E56; }
     .lg__dt-textarea[disabled] {
       cursor: not-allowed; }
-  .lg__dt-input__sm, .lg__dt-textarea__sm, .lg__dt-select__sm {
-    font-size: 0.875rem; }
-  .lg__dt-input__lg, .lg__dt-textarea__lg, .lg__dt-select__lg {
-    font-size: 1.25rem; }
-  .lg__dt-input__xl, .lg__dt-textarea__xl, .lg__dt-select__xl {
-    font-size: 1.5rem; }
+  .lg__dt-input__xs {
+    padding: 0.375rem 0.5rem 0.25rem;
+    font-size: 0.75rem; }
+    .lg__dt-input__xs .dt-btn--icon,
+    .lg__dt-input__xs .dt-svg {
+      width: 0.875rem;
+      height: 0.875rem; }
+    .lg__dt-input__xs .dt-btn--icon {
+      margin-top: -0.25rem;
+      margin-right: 0.125rem;
+      margin-bottom: -0.125rem;
+      margin-left: -0.125rem; }
   .lg__dt-input__sm {
-    min-height: 2.2rem;
-    padding: 0.25rem 0.75rem; }
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem; }
+    .lg__dt-input__sm .dt-btn--icon,
+    .lg__dt-input__sm .dt-svg {
+      width: 1.125rem;
+      height: 1.125rem; }
   .lg__dt-input__lg {
-    min-height: 3rem; }
+    padding: 0.8125rem 1.125rem;
+    font-size: 1.25rem; }
   .lg__dt-input__xl {
-    min-height: 3.5rem; }
+    padding: 0.9375rem 1.375rem;
+    font-size: 1.5rem; }
+    .lg__dt-input__xl .dt-btn--icon,
+    .lg__dt-input__xl .dt-svg {
+      width: 1.75rem;
+      height: 1.75rem; }
+  .lg__dt-textarea__xs {
+    min-height: 2.5rem;
+    padding: 0.375rem 0.5rem 0.25rem;
+    font-size: 0.75rem; }
+    .lg__dt-textarea__xs .dt-btn--icon,
+    .lg__dt-textarea__xs .dt-svg {
+      width: 0.875rem;
+      height: 0.875rem; }
+    .lg__dt-textarea__xs .dt-btn--icon {
+      margin-top: -0.25rem;
+      margin-right: 0.125rem;
+      margin-bottom: -0.125rem;
+      margin-left: -0.125rem; }
   .lg__dt-textarea__sm {
-    min-height: 3rem; }
+    min-height: 3rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem; }
+    .lg__dt-textarea__sm .dt-btn--icon,
+    .lg__dt-textarea__sm .dt-svg {
+      width: 1.125rem;
+      height: 1.125rem; }
   .lg__dt-textarea__lg {
-    min-height: 5.75rem; }
+    min-height: 5.75rem;
+    padding: 0.8125rem 1.125rem;
+    font-size: 1.25rem; }
   .lg__dt-textarea__xl {
     min-height: 6.25rem;
-    padding: 1rem; }
-  .lg__dt-select__sm:before {
-    top: calc(50% - 0.375rem); }
-  .lg__dt-select__sm:after {
-    top: calc(50% + 1px); }
-  .lg__dt-select__sm > select {
-    min-height: 2.2rem;
-    padding: 0.375rem 1.875rem 0.125rem 0.75rem; }
-  .lg__dt-select__lg:before, .lg__dt-select__lg:after {
-    border-width: 0.3125rem; }
-  .lg__dt-select__lg:before {
-    top: calc(50% - 0.3125rem); }
-  .lg__dt-select__lg > select {
-    min-height: 3rem; }
-  .lg__dt-select__xl:before, .lg__dt-select__xl:after {
-    border-width: 0.375rem; }
-  .lg__dt-select__xl:before {
-    top: calc(50% - 0.375rem); }
-  .lg__dt-select__xl > select {
-    min-height: 3.5rem; }
+    padding: 0.9375rem 1.375rem;
+    font-size: 1.5rem; }
+    .lg__dt-textarea__xl .dt-btn--icon,
+    .lg__dt-textarea__xl .dt-svg {
+      width: 1.75rem;
+      height: 1.75rem; }
+  .lg__dt-select__xs {
+    font-size: 0.75rem; }
+    .lg__dt-select__xs > select {
+      padding: 0.375rem 0.5rem 0.25rem;
+      padding-right: 2em;
+      font-size: 0.75rem; }
+      .lg__dt-select__xs > select .dt-btn--icon,
+      .lg__dt-select__xs > select .dt-svg {
+        width: 0.875rem;
+        height: 0.875rem; }
+      .lg__dt-select__xs > select .dt-btn--icon {
+        margin-top: -0.25rem;
+        margin-right: 0.125rem;
+        margin-bottom: -0.125rem;
+        margin-left: -0.125rem; }
+  .lg__dt-select__sm {
+    font-size: 0.875rem; }
+    .lg__dt-select__sm > select {
+      padding: 0.5rem 0.75rem;
+      padding-right: 2em;
+      font-size: 0.875rem; }
+      .lg__dt-select__sm > select .dt-btn--icon,
+      .lg__dt-select__sm > select .dt-svg {
+        width: 1.125rem;
+        height: 1.125rem; }
+  .lg__dt-select__lg {
+    font-size: 1.125rem; }
+    .lg__dt-select__lg > select {
+      padding: 0.8125rem 1.125rem;
+      padding-right: 2em;
+      font-size: 1.25rem; }
+  .lg__dt-select__xl {
+    font-size: 1.125rem; }
+    .lg__dt-select__xl > select {
+      padding: 0.9375rem 1.375rem;
+      padding-right: 2em;
+      font-size: 1.5rem; }
+      .lg__dt-select__xl > select .dt-btn--icon,
+      .lg__dt-select__xl > select .dt-svg {
+        width: 1.75rem;
+        height: 1.75rem; }
   fieldset {
     min-width: 0;
     padding: 0;
@@ -3228,19 +3478,20 @@ fieldset {
 
 @media screen and (max-width: 1280px) {
   .xl__dt-input {
+    display: inline-flex;
     position: relative;
     flex: 1 0%;
     width: 100%;
     min-width: 0;
-    min-height: 2.625rem;
-    padding: 0.5rem 1rem;
-    border: 0.0625rem solid #E3E5E8;
-    border-radius: 0.25rem;
-    box-shadow: inset 0 0 0.0625rem rgba(198, 200, 206, 0.2), 0 0 0 rgba(255, 255, 255, 0);
+    padding: 0.6875rem 0.9375rem;
+    border: 0.0625rem solid #9699A0;
+    border-radius: 0.25em;
+    box-shadow: inset 0 0 0.125rem 0 rgba(198, 200, 206, 0.2), 0 0 0 rgba(255, 255, 255, 0);
     outline: none;
     font-family: inherit;
     font-size: 1rem;
     font-weight: inherit;
+    line-height: 1;
     transition-duration: 100ms;
     transition-property: border, box-shadow, background-color;
     transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1); }
@@ -3255,9 +3506,8 @@ fieldset {
     .xl__dt-input::-ms-clear {
       display: none; }
     .xl__dt-input:focus {
-      position: relative;
       border-color: #5078EE;
-      box-shadow: inset 0 0 0.125rem #E3E5E8, 0 0 0 0.25rem rgba(80, 120, 238, 0.15);
+      box-shadow: inset 0 0 0.125rem 0 #E3E5E8, 0 0 0 0.25rem rgba(80, 120, 238, 0.15);
       outline: 0; }
     .xl__dt-input[disabled], .xl__dt-input[read-only] {
       border-color: #E3E5E8;
@@ -3267,41 +3517,41 @@ fieldset {
     .xl__dt-input[disabled] {
       cursor: not-allowed; }
   .xl__dt-select {
-    position: relative; }
+    position: relative;
+    font-size: 1rem; }
     .xl__dt-select:before, .xl__dt-select:after {
       content: "";
       position: absolute;
       z-index: 25;
-      right: 0.75rem;
+      right: 0.75em;
       border-color: #141721 transparent;
       border-style: solid;
-      border-width: 0.25rem;
+      border-width: 0.25em;
       pointer-events: none; }
     .xl__dt-select:before {
-      top: calc(50% - 0.25rem);
-      border-top-width: 0 !important; }
+      top: calc(50% - 0.25em);
+      border-top-width: 0; }
     .xl__dt-select:after {
-      top: calc(50% + 0.125rem);
-      border-bottom-width: 0 !important; }
+      top: calc(50% + 0.125em);
+      border-bottom-width: 0; }
     .xl__dt-select > select {
+      display: inline-flex;
       position: relative;
       flex: 1 0%;
       width: 100%;
       min-width: 0;
       height: 100%;
-      min-height: 2.625rem;
-      padding: 0.5rem 1rem;
-      padding-right: 2rem;
-      padding-left: 0.75rem;
-      border: 0.0625rem solid #E3E5E8;
-      border-radius: 0.25rem;
+      padding: 0.6875rem 0.9375rem;
+      padding-right: 2em;
+      border: 0.0625rem solid #9699A0;
+      border-radius: 0.25em;
       background-color: #FFF;
-      box-shadow: inset 0 0 0.0625rem rgba(198, 200, 206, 0.2), 0 0 0 rgba(255, 255, 255, 0);
+      box-shadow: inset 0 0 0.125rem 0 rgba(198, 200, 206, 0.2), 0 0 0 rgba(255, 255, 255, 0);
       outline: none;
       font-family: inherit;
       font-size: 1rem;
       font-weight: inherit;
-      line-height: 1.125;
+      line-height: 1;
       transition-duration: 100ms;
       transition-property: border, box-shadow, background-color;
       transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -3319,9 +3569,8 @@ fieldset {
       .xl__dt-select > select::-ms-clear {
         display: none; }
       .xl__dt-select > select:focus {
-        position: relative;
         border-color: #5078EE;
-        box-shadow: inset 0 0 0.125rem #E3E5E8, 0 0 0 0.25rem rgba(80, 120, 238, 0.15);
+        box-shadow: inset 0 0 0.125rem 0 #E3E5E8, 0 0 0 0.25rem rgba(80, 120, 238, 0.15);
         outline: 0; }
       .xl__dt-select > select[disabled], .xl__dt-select > select[read-only] {
         border-color: #E3E5E8;
@@ -3338,21 +3587,23 @@ fieldset {
       .xl__dt-select > select::-ms-expand {
         display: none; }
   .xl__dt-textarea {
+    display: inline-flex;
     position: relative;
     flex: 1 0%;
     width: 100%;
     min-width: 0;
-    min-height: 2.625rem;
     min-height: 5rem;
-    padding: 0.5rem 1rem;
-    padding: 0.75rem;
-    border: 0.0625rem solid #E3E5E8;
-    border-radius: 0.25rem;
-    box-shadow: inset 0 0 0.0625rem rgba(198, 200, 206, 0.2), 0 0 0 rgba(255, 255, 255, 0);
+    padding: 0.6875rem 0.9375rem;
+    padding-right: 0.6875rem;
+    padding-left: 0.6875rem;
+    border: 0.0625rem solid #9699A0;
+    border-radius: 0.25em;
+    box-shadow: inset 0 0 0.125rem 0 rgba(198, 200, 206, 0.2), 0 0 0 rgba(255, 255, 255, 0);
     outline: none;
     font-family: inherit;
     font-size: 1rem;
     font-weight: inherit;
+    line-height: 1;
     transition-duration: 100ms;
     transition-property: border, box-shadow, background-color;
     transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1); }
@@ -3367,9 +3618,8 @@ fieldset {
     .xl__dt-textarea::-ms-clear {
       display: none; }
     .xl__dt-textarea:focus {
-      position: relative;
       border-color: #5078EE;
-      box-shadow: inset 0 0 0.125rem #E3E5E8, 0 0 0 0.25rem rgba(80, 120, 238, 0.15);
+      box-shadow: inset 0 0 0.125rem 0 #E3E5E8, 0 0 0 0.25rem rgba(80, 120, 238, 0.15);
       outline: 0; }
     .xl__dt-textarea[disabled], .xl__dt-textarea[read-only] {
       border-color: #E3E5E8;
@@ -3378,45 +3628,109 @@ fieldset {
       color: #4C4E56; }
     .xl__dt-textarea[disabled] {
       cursor: not-allowed; }
-  .xl__dt-input__sm, .xl__dt-textarea__sm, .xl__dt-select__sm {
-    font-size: 0.875rem; }
-  .xl__dt-input__lg, .xl__dt-textarea__lg, .xl__dt-select__lg {
-    font-size: 1.25rem; }
-  .xl__dt-input__xl, .xl__dt-textarea__xl, .xl__dt-select__xl {
-    font-size: 1.5rem; }
+  .xl__dt-input__xs {
+    padding: 0.375rem 0.5rem 0.25rem;
+    font-size: 0.75rem; }
+    .xl__dt-input__xs .dt-btn--icon,
+    .xl__dt-input__xs .dt-svg {
+      width: 0.875rem;
+      height: 0.875rem; }
+    .xl__dt-input__xs .dt-btn--icon {
+      margin-top: -0.25rem;
+      margin-right: 0.125rem;
+      margin-bottom: -0.125rem;
+      margin-left: -0.125rem; }
   .xl__dt-input__sm {
-    min-height: 2.2rem;
-    padding: 0.25rem 0.75rem; }
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem; }
+    .xl__dt-input__sm .dt-btn--icon,
+    .xl__dt-input__sm .dt-svg {
+      width: 1.125rem;
+      height: 1.125rem; }
   .xl__dt-input__lg {
-    min-height: 3rem; }
+    padding: 0.8125rem 1.125rem;
+    font-size: 1.25rem; }
   .xl__dt-input__xl {
-    min-height: 3.5rem; }
+    padding: 0.9375rem 1.375rem;
+    font-size: 1.5rem; }
+    .xl__dt-input__xl .dt-btn--icon,
+    .xl__dt-input__xl .dt-svg {
+      width: 1.75rem;
+      height: 1.75rem; }
+  .xl__dt-textarea__xs {
+    min-height: 2.5rem;
+    padding: 0.375rem 0.5rem 0.25rem;
+    font-size: 0.75rem; }
+    .xl__dt-textarea__xs .dt-btn--icon,
+    .xl__dt-textarea__xs .dt-svg {
+      width: 0.875rem;
+      height: 0.875rem; }
+    .xl__dt-textarea__xs .dt-btn--icon {
+      margin-top: -0.25rem;
+      margin-right: 0.125rem;
+      margin-bottom: -0.125rem;
+      margin-left: -0.125rem; }
   .xl__dt-textarea__sm {
-    min-height: 3rem; }
+    min-height: 3rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem; }
+    .xl__dt-textarea__sm .dt-btn--icon,
+    .xl__dt-textarea__sm .dt-svg {
+      width: 1.125rem;
+      height: 1.125rem; }
   .xl__dt-textarea__lg {
-    min-height: 5.75rem; }
+    min-height: 5.75rem;
+    padding: 0.8125rem 1.125rem;
+    font-size: 1.25rem; }
   .xl__dt-textarea__xl {
     min-height: 6.25rem;
-    padding: 1rem; }
-  .xl__dt-select__sm:before {
-    top: calc(50% - 0.375rem); }
-  .xl__dt-select__sm:after {
-    top: calc(50% + 1px); }
-  .xl__dt-select__sm > select {
-    min-height: 2.2rem;
-    padding: 0.375rem 1.875rem 0.125rem 0.75rem; }
-  .xl__dt-select__lg:before, .xl__dt-select__lg:after {
-    border-width: 0.3125rem; }
-  .xl__dt-select__lg:before {
-    top: calc(50% - 0.3125rem); }
-  .xl__dt-select__lg > select {
-    min-height: 3rem; }
-  .xl__dt-select__xl:before, .xl__dt-select__xl:after {
-    border-width: 0.375rem; }
-  .xl__dt-select__xl:before {
-    top: calc(50% - 0.375rem); }
-  .xl__dt-select__xl > select {
-    min-height: 3.5rem; }
+    padding: 0.9375rem 1.375rem;
+    font-size: 1.5rem; }
+    .xl__dt-textarea__xl .dt-btn--icon,
+    .xl__dt-textarea__xl .dt-svg {
+      width: 1.75rem;
+      height: 1.75rem; }
+  .xl__dt-select__xs {
+    font-size: 0.75rem; }
+    .xl__dt-select__xs > select {
+      padding: 0.375rem 0.5rem 0.25rem;
+      padding-right: 2em;
+      font-size: 0.75rem; }
+      .xl__dt-select__xs > select .dt-btn--icon,
+      .xl__dt-select__xs > select .dt-svg {
+        width: 0.875rem;
+        height: 0.875rem; }
+      .xl__dt-select__xs > select .dt-btn--icon {
+        margin-top: -0.25rem;
+        margin-right: 0.125rem;
+        margin-bottom: -0.125rem;
+        margin-left: -0.125rem; }
+  .xl__dt-select__sm {
+    font-size: 0.875rem; }
+    .xl__dt-select__sm > select {
+      padding: 0.5rem 0.75rem;
+      padding-right: 2em;
+      font-size: 0.875rem; }
+      .xl__dt-select__sm > select .dt-btn--icon,
+      .xl__dt-select__sm > select .dt-svg {
+        width: 1.125rem;
+        height: 1.125rem; }
+  .xl__dt-select__lg {
+    font-size: 1.125rem; }
+    .xl__dt-select__lg > select {
+      padding: 0.8125rem 1.125rem;
+      padding-right: 2em;
+      font-size: 1.25rem; }
+  .xl__dt-select__xl {
+    font-size: 1.125rem; }
+    .xl__dt-select__xl > select {
+      padding: 0.9375rem 1.375rem;
+      padding-right: 2em;
+      font-size: 1.5rem; }
+      .xl__dt-select__xl > select .dt-btn--icon,
+      .xl__dt-select__xl > select .dt-svg {
+        width: 1.75rem;
+        height: 1.75rem; }
   fieldset {
     min-width: 0;
     padding: 0;
