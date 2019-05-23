@@ -613,7 +613,7 @@ template {
     margin: unset; }
   .dt-btn-circle .dt-btn--label {
     display: none; }
-  .dt-btn-circle:hover:not(.dt-btn__danger) {
+  .dt-btn-circle:hover {
     background-color: rgba(41, 44, 51, 0.075);
     color: #141721; }
   .dt-btn-circle:focus {
@@ -622,7 +622,7 @@ template {
   .dt-btn-circle .is-selected {
     border-color: rgba(76, 78, 86, 0.5);
     background-color: rgba(76, 78, 86, 0.1);
-    box-shadow: 0 0 0.5rem 0 rgba(76, 78, 86, 0.3); }
+    box-shadow: inset 0 0 0.5rem 0 rgba(76, 78, 86, 0.3); }
   .is-loading.dt-btn-circle:before {
     border-color: #292C33; }
   .dt-btn__outlined.dt-btn-circle {
@@ -635,23 +635,31 @@ template {
     .dt-btn__outlined.dt-btn-circle .is-selected {
       border-color: rgba(76, 78, 86, 0.5);
       background-color: rgba(76, 78, 86, 0.1);
-      box-shadow: 0 0 0.5rem 0 rgba(76, 78, 86, 0.3); }
-  .dt-btn__danger-hover.dt-btn-circle:hover {
-    background-color: rgba(203, 1, 56, 0.05); }
-  .dt-btn__danger-hover.dt-btn-circle:focus {
-    box-shadow: 0 0 0 0.25rem rgba(223, 7, 66, 0.25); }
-  .dt-btn__danger-hover.dt-btn-circle:active, .dt-btn__danger-hover.is-selected.dt-btn-circle {
-    border-color: rgba(223, 7, 66, 0.5);
-    background-color: rgba(223, 7, 66, 0.1);
-    box-shadow: inset 0 0 0.5rem 0 rgba(223, 7, 66, 0.3); }
-  .dt-btn__danger-hover.dt-btn-circle:hover {
-    color: #DF0742; }
-  .dt-btn__danger-hover.dt-btn-circle:focus, .dt-btn__danger-hover.dt-btn-circle:active,
-  .dt-btn__danger-hover.dt-btn-circle .is-selected {
-    color: #cb0138; }
+      box-shadow: inset 0 0 0.5rem 0 rgba(76, 78, 86, 0.3); }
+  .dt-btn__danger-hover.dt-btn-circle {
+    color: #DF0742;
+    color: #292C33; }
+    .dt-btn__danger-hover.dt-btn-circle:hover {
+      background-color: rgba(203, 1, 56, 0.05);
+      color: #cb0138; }
+    .dt-btn__danger-hover.dt-btn-circle:focus {
+      box-shadow: 0 0 0 0.25rem rgba(223, 7, 66, 0.25); }
+    .dt-btn__danger-hover.dt-btn-circle:active, .dt-btn__danger-hover.is-selected.dt-btn-circle {
+      border-color: rgba(223, 7, 66, 0.5);
+      background-color: rgba(223, 7, 66, 0.1);
+      box-shadow: inset 0 0 0.5rem 0 rgba(223, 7, 66, 0.3); }
+    .dt-btn__danger-hover.dt-btn-circle:hover {
+      color: #DF0742; }
+    .dt-btn__danger-hover.dt-btn-circle:focus, .dt-btn__danger-hover.dt-btn-circle:active,
+    .dt-btn__danger-hover.dt-btn-circle .is-selected {
+      color: #cb0138; }
   .dt-btn__inverted.dt-btn-circle:hover {
     background-color: rgba(255, 255, 255, 0.1);
     color: #FFF; }
+  .dt-btn__inverted.dt-btn-circle:active, .dt-btn__inverted.is-selected.dt-btn-circle {
+    border-color: rgba(20, 23, 33, 0.15);
+    background-color: rgba(215, 233, 255, 0.35);
+    box-shadow: inset 0 0 0.5rem 0 rgba(20, 23, 33, 0.35); }
   .dt-btn__xs.dt-btn-circle {
     padding: 0.3125rem; }
   .dt-btn__sm.dt-btn-circle {
@@ -667,8 +675,7 @@ template {
   color: #214DCF; }
   .dt-btn__outlined:active, .is-selected.dt-btn__outlined {
     border-color: #3966ec;
-    background-color: rgba(80, 120, 238, 0.15);
-    box-shadow: none; }
+    background-color: rgba(80, 120, 238, 0.15); }
   .dt-btn__outlined[disabled] {
     border-color: transparent; }
 
@@ -690,7 +697,8 @@ template {
   background-color: rgba(223, 7, 66, 0);
   color: #DF0742; }
   .dt-btn__danger:hover {
-    background-color: rgba(203, 1, 56, 0.05); }
+    background-color: rgba(203, 1, 56, 0.05);
+    color: #cb0138; }
   .dt-btn__danger:focus {
     box-shadow: 0 0 0 0.25rem rgba(223, 7, 66, 0.25); }
   .dt-btn__danger:active, .is-selected.dt-btn__danger {
@@ -700,15 +708,9 @@ template {
   .is-loading.dt-btn__danger:before {
     border-color: #DF0742; }
   .dt-btn__outlined.dt-btn__danger {
-    border-color: #DF0742;
-    background-color: rgba(223, 7, 66, 0);
-    color: #DF0742; }
-    .dt-btn__outlined.dt-btn__danger:hover {
-      background-color: rgba(203, 1, 56, 0.05); }
+    border-color: #DF0742; }
     .dt-btn__outlined.dt-btn__danger:active, .is-selected.dt-btn__outlined.dt-btn__danger {
-      border-color: #c6063b;
-      background-color: rgba(223, 7, 66, 0.15);
-      box-shadow: none; }
+      border-color: #c6063b; }
     .dt-btn__outlined.dt-btn__danger[disabled] {
       border-color: transparent;
       background-color: #E3E5E8;
@@ -739,8 +741,7 @@ template {
     box-shadow: 0 0 0 0.25rem rgba(215, 233, 255, 0.25); }
   .dt-btn__inverted:active, .is-selected.dt-btn__inverted {
     border-color: transparent;
-    background-color: rgba(215, 233, 255, 0.5);
-    box-shadow: none; }
+    background-color: rgba(215, 233, 255, 0.5); }
   .is-loading.dt-btn__inverted:before {
     border-color: #FFF; }
   .dt-btn__outlined.dt-btn__inverted {
@@ -751,8 +752,7 @@ template {
       background-color: rgba(215, 233, 255, 0.15); }
     .dt-btn__outlined.dt-btn__inverted:active, .is-selected.dt-btn__outlined.dt-btn__inverted {
       border-color: rgba(215, 233, 255, 0.9);
-      background-color: rgba(215, 233, 255, 0.25);
-      box-shadow: none; }
+      background-color: rgba(215, 233, 255, 0.25); }
     .dt-btn__outlined.dt-btn__inverted[disabled] {
       background-color: #E3E5E8;
       color: #6C6E75; }
@@ -784,7 +784,7 @@ template {
   .dt-btn__google:active,
   .dt-btn__google .is-selected {
     background-color: #0c64f7;
-    box-shadow: 0 0 0.5rem 0 rgba(18, 102, 241, 0.25); }
+    box-shadow: inset 0 0 0.5rem 0 rgba(18, 102, 241, 0.25); }
   .dt-btn__google .dt-btn--icon {
     margin-top: -0.5rem;
     margin-right: 1rem;
@@ -809,7 +809,7 @@ template {
   .dt-btn__o365:active,
   .dt-btn__o365 .is-selected {
     background-color: #b92f00;
-    box-shadow: 0 0 0.5rem 0 rgba(184, 47, 1, 0.25); }
+    box-shadow: inset 0 0 0.5rem 0 rgba(184, 47, 1, 0.25); }
   .dt-btn__o365 .dt-btn--icon {
     margin-top: -0.5rem;
     margin-right: 1rem;
@@ -834,7 +834,7 @@ template {
   .dt-btn__linkedin:active,
   .dt-btn__linkedin .is-selected {
     background-color: #003c54;
-    box-shadow: 0 0 0.5rem 0 rgba(0, 60, 84, 0.25); }
+    box-shadow: inset 0 0 0.5rem 0 rgba(0, 60, 84, 0.25); }
   .dt-btn__linkedin .dt-btn--icon {
     margin-top: -0.5rem;
     margin-right: 1rem;
@@ -968,7 +968,7 @@ template {
       margin: unset; }
     .sm__dt-btn-circle .dt-btn--label {
       display: none; }
-    .sm__dt-btn-circle:hover:not(.dt-btn__danger) {
+    .sm__dt-btn-circle:hover {
       background-color: rgba(41, 44, 51, 0.075);
       color: #141721; }
     .sm__dt-btn-circle:focus {
@@ -977,7 +977,7 @@ template {
     .sm__dt-btn-circle .is-selected {
       border-color: rgba(76, 78, 86, 0.5);
       background-color: rgba(76, 78, 86, 0.1);
-      box-shadow: 0 0 0.5rem 0 rgba(76, 78, 86, 0.3); }
+      box-shadow: inset 0 0 0.5rem 0 rgba(76, 78, 86, 0.3); }
     .is-loading.sm__dt-btn-circle:before {
       border-color: #292C33; }
     .dt-btn__outlined.sm__dt-btn-circle {
@@ -990,23 +990,31 @@ template {
       .dt-btn__outlined.sm__dt-btn-circle .is-selected {
         border-color: rgba(76, 78, 86, 0.5);
         background-color: rgba(76, 78, 86, 0.1);
-        box-shadow: 0 0 0.5rem 0 rgba(76, 78, 86, 0.3); }
-    .dt-btn__danger-hover.sm__dt-btn-circle:hover {
-      background-color: rgba(203, 1, 56, 0.05); }
-    .dt-btn__danger-hover.sm__dt-btn-circle:focus {
-      box-shadow: 0 0 0 0.25rem rgba(223, 7, 66, 0.25); }
-    .dt-btn__danger-hover.sm__dt-btn-circle:active, .dt-btn__danger-hover.is-selected.sm__dt-btn-circle {
-      border-color: rgba(223, 7, 66, 0.5);
-      background-color: rgba(223, 7, 66, 0.1);
-      box-shadow: inset 0 0 0.5rem 0 rgba(223, 7, 66, 0.3); }
-    .dt-btn__danger-hover.sm__dt-btn-circle:hover {
-      color: #DF0742; }
-    .dt-btn__danger-hover.sm__dt-btn-circle:focus, .dt-btn__danger-hover.sm__dt-btn-circle:active,
-    .dt-btn__danger-hover.sm__dt-btn-circle .is-selected {
-      color: #cb0138; }
+        box-shadow: inset 0 0 0.5rem 0 rgba(76, 78, 86, 0.3); }
+    .dt-btn__danger-hover.sm__dt-btn-circle {
+      color: #DF0742;
+      color: #292C33; }
+      .dt-btn__danger-hover.sm__dt-btn-circle:hover {
+        background-color: rgba(203, 1, 56, 0.05);
+        color: #cb0138; }
+      .dt-btn__danger-hover.sm__dt-btn-circle:focus {
+        box-shadow: 0 0 0 0.25rem rgba(223, 7, 66, 0.25); }
+      .dt-btn__danger-hover.sm__dt-btn-circle:active, .dt-btn__danger-hover.is-selected.sm__dt-btn-circle {
+        border-color: rgba(223, 7, 66, 0.5);
+        background-color: rgba(223, 7, 66, 0.1);
+        box-shadow: inset 0 0 0.5rem 0 rgba(223, 7, 66, 0.3); }
+      .dt-btn__danger-hover.sm__dt-btn-circle:hover {
+        color: #DF0742; }
+      .dt-btn__danger-hover.sm__dt-btn-circle:focus, .dt-btn__danger-hover.sm__dt-btn-circle:active,
+      .dt-btn__danger-hover.sm__dt-btn-circle .is-selected {
+        color: #cb0138; }
     .dt-btn__inverted.sm__dt-btn-circle:hover {
       background-color: rgba(255, 255, 255, 0.1);
       color: #FFF; }
+    .dt-btn__inverted.sm__dt-btn-circle:active, .dt-btn__inverted.is-selected.sm__dt-btn-circle {
+      border-color: rgba(20, 23, 33, 0.15);
+      background-color: rgba(215, 233, 255, 0.35);
+      box-shadow: inset 0 0 0.5rem 0 rgba(20, 23, 33, 0.35); }
     .sm__dt-btn__xs.sm__dt-btn-circle {
       padding: 0.3125rem; }
     .sm__dt-btn__sm.sm__dt-btn-circle {
@@ -1021,8 +1029,7 @@ template {
     color: #214DCF; }
     .sm__dt-btn__outlined:active, .is-selected.sm__dt-btn__outlined {
       border-color: #3966ec;
-      background-color: rgba(80, 120, 238, 0.15);
-      box-shadow: none; }
+      background-color: rgba(80, 120, 238, 0.15); }
     .sm__dt-btn__outlined[disabled] {
       border-color: transparent; }
   .sm__dt-btn__primary {
@@ -1042,7 +1049,8 @@ template {
     background-color: rgba(223, 7, 66, 0);
     color: #DF0742; }
     .sm__dt-btn__danger:hover {
-      background-color: rgba(203, 1, 56, 0.05); }
+      background-color: rgba(203, 1, 56, 0.05);
+      color: #cb0138; }
     .sm__dt-btn__danger:focus {
       box-shadow: 0 0 0 0.25rem rgba(223, 7, 66, 0.25); }
     .sm__dt-btn__danger:active, .is-selected.sm__dt-btn__danger {
@@ -1052,15 +1060,9 @@ template {
     .is-loading.sm__dt-btn__danger:before {
       border-color: #DF0742; }
     .sm__dt-btn__outlined.sm__dt-btn__danger {
-      border-color: #DF0742;
-      background-color: rgba(223, 7, 66, 0);
-      color: #DF0742; }
-      .sm__dt-btn__outlined.sm__dt-btn__danger:hover {
-        background-color: rgba(203, 1, 56, 0.05); }
+      border-color: #DF0742; }
       .sm__dt-btn__outlined.sm__dt-btn__danger:active, .is-selected.sm__dt-btn__outlined.sm__dt-btn__danger {
-        border-color: #c6063b;
-        background-color: rgba(223, 7, 66, 0.15);
-        box-shadow: none; }
+        border-color: #c6063b; }
       .sm__dt-btn__outlined.sm__dt-btn__danger[disabled] {
         border-color: transparent;
         background-color: #E3E5E8;
@@ -1090,8 +1092,7 @@ template {
       box-shadow: 0 0 0 0.25rem rgba(215, 233, 255, 0.25); }
     .sm__dt-btn__inverted:active, .is-selected.sm__dt-btn__inverted {
       border-color: transparent;
-      background-color: rgba(215, 233, 255, 0.5);
-      box-shadow: none; }
+      background-color: rgba(215, 233, 255, 0.5); }
     .is-loading.sm__dt-btn__inverted:before {
       border-color: #FFF; }
     .sm__dt-btn__outlined.sm__dt-btn__inverted {
@@ -1102,8 +1103,7 @@ template {
         background-color: rgba(215, 233, 255, 0.15); }
       .sm__dt-btn__outlined.sm__dt-btn__inverted:active, .is-selected.sm__dt-btn__outlined.sm__dt-btn__inverted {
         border-color: rgba(215, 233, 255, 0.9);
-        background-color: rgba(215, 233, 255, 0.25);
-        box-shadow: none; }
+        background-color: rgba(215, 233, 255, 0.25); }
       .sm__dt-btn__outlined.sm__dt-btn__inverted[disabled] {
         background-color: #E3E5E8;
         color: #6C6E75; }
@@ -1134,7 +1134,7 @@ template {
     .sm__dt-btn__google:active,
     .sm__dt-btn__google .is-selected {
       background-color: #0c64f7;
-      box-shadow: 0 0 0.5rem 0 rgba(18, 102, 241, 0.25); }
+      box-shadow: inset 0 0 0.5rem 0 rgba(18, 102, 241, 0.25); }
     .sm__dt-btn__google .dt-btn--icon {
       margin-top: -0.5rem;
       margin-right: 1rem;
@@ -1158,7 +1158,7 @@ template {
     .sm__dt-btn__o365:active,
     .sm__dt-btn__o365 .is-selected {
       background-color: #b92f00;
-      box-shadow: 0 0 0.5rem 0 rgba(184, 47, 1, 0.25); }
+      box-shadow: inset 0 0 0.5rem 0 rgba(184, 47, 1, 0.25); }
     .sm__dt-btn__o365 .dt-btn--icon {
       margin-top: -0.5rem;
       margin-right: 1rem;
@@ -1182,7 +1182,7 @@ template {
     .sm__dt-btn__linkedin:active,
     .sm__dt-btn__linkedin .is-selected {
       background-color: #003c54;
-      box-shadow: 0 0 0.5rem 0 rgba(0, 60, 84, 0.25); }
+      box-shadow: inset 0 0 0.5rem 0 rgba(0, 60, 84, 0.25); }
     .sm__dt-btn__linkedin .dt-btn--icon {
       margin-top: -0.5rem;
       margin-right: 1rem;
@@ -1316,7 +1316,7 @@ template {
       margin: unset; }
     .md__dt-btn-circle .dt-btn--label {
       display: none; }
-    .md__dt-btn-circle:hover:not(.dt-btn__danger) {
+    .md__dt-btn-circle:hover {
       background-color: rgba(41, 44, 51, 0.075);
       color: #141721; }
     .md__dt-btn-circle:focus {
@@ -1325,7 +1325,7 @@ template {
     .md__dt-btn-circle .is-selected {
       border-color: rgba(76, 78, 86, 0.5);
       background-color: rgba(76, 78, 86, 0.1);
-      box-shadow: 0 0 0.5rem 0 rgba(76, 78, 86, 0.3); }
+      box-shadow: inset 0 0 0.5rem 0 rgba(76, 78, 86, 0.3); }
     .is-loading.md__dt-btn-circle:before {
       border-color: #292C33; }
     .dt-btn__outlined.md__dt-btn-circle {
@@ -1338,23 +1338,31 @@ template {
       .dt-btn__outlined.md__dt-btn-circle .is-selected {
         border-color: rgba(76, 78, 86, 0.5);
         background-color: rgba(76, 78, 86, 0.1);
-        box-shadow: 0 0 0.5rem 0 rgba(76, 78, 86, 0.3); }
-    .dt-btn__danger-hover.md__dt-btn-circle:hover {
-      background-color: rgba(203, 1, 56, 0.05); }
-    .dt-btn__danger-hover.md__dt-btn-circle:focus {
-      box-shadow: 0 0 0 0.25rem rgba(223, 7, 66, 0.25); }
-    .dt-btn__danger-hover.md__dt-btn-circle:active, .dt-btn__danger-hover.is-selected.md__dt-btn-circle {
-      border-color: rgba(223, 7, 66, 0.5);
-      background-color: rgba(223, 7, 66, 0.1);
-      box-shadow: inset 0 0 0.5rem 0 rgba(223, 7, 66, 0.3); }
-    .dt-btn__danger-hover.md__dt-btn-circle:hover {
-      color: #DF0742; }
-    .dt-btn__danger-hover.md__dt-btn-circle:focus, .dt-btn__danger-hover.md__dt-btn-circle:active,
-    .dt-btn__danger-hover.md__dt-btn-circle .is-selected {
-      color: #cb0138; }
+        box-shadow: inset 0 0 0.5rem 0 rgba(76, 78, 86, 0.3); }
+    .dt-btn__danger-hover.md__dt-btn-circle {
+      color: #DF0742;
+      color: #292C33; }
+      .dt-btn__danger-hover.md__dt-btn-circle:hover {
+        background-color: rgba(203, 1, 56, 0.05);
+        color: #cb0138; }
+      .dt-btn__danger-hover.md__dt-btn-circle:focus {
+        box-shadow: 0 0 0 0.25rem rgba(223, 7, 66, 0.25); }
+      .dt-btn__danger-hover.md__dt-btn-circle:active, .dt-btn__danger-hover.is-selected.md__dt-btn-circle {
+        border-color: rgba(223, 7, 66, 0.5);
+        background-color: rgba(223, 7, 66, 0.1);
+        box-shadow: inset 0 0 0.5rem 0 rgba(223, 7, 66, 0.3); }
+      .dt-btn__danger-hover.md__dt-btn-circle:hover {
+        color: #DF0742; }
+      .dt-btn__danger-hover.md__dt-btn-circle:focus, .dt-btn__danger-hover.md__dt-btn-circle:active,
+      .dt-btn__danger-hover.md__dt-btn-circle .is-selected {
+        color: #cb0138; }
     .dt-btn__inverted.md__dt-btn-circle:hover {
       background-color: rgba(255, 255, 255, 0.1);
       color: #FFF; }
+    .dt-btn__inverted.md__dt-btn-circle:active, .dt-btn__inverted.is-selected.md__dt-btn-circle {
+      border-color: rgba(20, 23, 33, 0.15);
+      background-color: rgba(215, 233, 255, 0.35);
+      box-shadow: inset 0 0 0.5rem 0 rgba(20, 23, 33, 0.35); }
     .md__dt-btn__xs.md__dt-btn-circle {
       padding: 0.3125rem; }
     .md__dt-btn__sm.md__dt-btn-circle {
@@ -1369,8 +1377,7 @@ template {
     color: #214DCF; }
     .md__dt-btn__outlined:active, .is-selected.md__dt-btn__outlined {
       border-color: #3966ec;
-      background-color: rgba(80, 120, 238, 0.15);
-      box-shadow: none; }
+      background-color: rgba(80, 120, 238, 0.15); }
     .md__dt-btn__outlined[disabled] {
       border-color: transparent; }
   .md__dt-btn__primary {
@@ -1390,7 +1397,8 @@ template {
     background-color: rgba(223, 7, 66, 0);
     color: #DF0742; }
     .md__dt-btn__danger:hover {
-      background-color: rgba(203, 1, 56, 0.05); }
+      background-color: rgba(203, 1, 56, 0.05);
+      color: #cb0138; }
     .md__dt-btn__danger:focus {
       box-shadow: 0 0 0 0.25rem rgba(223, 7, 66, 0.25); }
     .md__dt-btn__danger:active, .is-selected.md__dt-btn__danger {
@@ -1400,15 +1408,9 @@ template {
     .is-loading.md__dt-btn__danger:before {
       border-color: #DF0742; }
     .md__dt-btn__outlined.md__dt-btn__danger {
-      border-color: #DF0742;
-      background-color: rgba(223, 7, 66, 0);
-      color: #DF0742; }
-      .md__dt-btn__outlined.md__dt-btn__danger:hover {
-        background-color: rgba(203, 1, 56, 0.05); }
+      border-color: #DF0742; }
       .md__dt-btn__outlined.md__dt-btn__danger:active, .is-selected.md__dt-btn__outlined.md__dt-btn__danger {
-        border-color: #c6063b;
-        background-color: rgba(223, 7, 66, 0.15);
-        box-shadow: none; }
+        border-color: #c6063b; }
       .md__dt-btn__outlined.md__dt-btn__danger[disabled] {
         border-color: transparent;
         background-color: #E3E5E8;
@@ -1438,8 +1440,7 @@ template {
       box-shadow: 0 0 0 0.25rem rgba(215, 233, 255, 0.25); }
     .md__dt-btn__inverted:active, .is-selected.md__dt-btn__inverted {
       border-color: transparent;
-      background-color: rgba(215, 233, 255, 0.5);
-      box-shadow: none; }
+      background-color: rgba(215, 233, 255, 0.5); }
     .is-loading.md__dt-btn__inverted:before {
       border-color: #FFF; }
     .md__dt-btn__outlined.md__dt-btn__inverted {
@@ -1450,8 +1451,7 @@ template {
         background-color: rgba(215, 233, 255, 0.15); }
       .md__dt-btn__outlined.md__dt-btn__inverted:active, .is-selected.md__dt-btn__outlined.md__dt-btn__inverted {
         border-color: rgba(215, 233, 255, 0.9);
-        background-color: rgba(215, 233, 255, 0.25);
-        box-shadow: none; }
+        background-color: rgba(215, 233, 255, 0.25); }
       .md__dt-btn__outlined.md__dt-btn__inverted[disabled] {
         background-color: #E3E5E8;
         color: #6C6E75; }
@@ -1482,7 +1482,7 @@ template {
     .md__dt-btn__google:active,
     .md__dt-btn__google .is-selected {
       background-color: #0c64f7;
-      box-shadow: 0 0 0.5rem 0 rgba(18, 102, 241, 0.25); }
+      box-shadow: inset 0 0 0.5rem 0 rgba(18, 102, 241, 0.25); }
     .md__dt-btn__google .dt-btn--icon {
       margin-top: -0.5rem;
       margin-right: 1rem;
@@ -1506,7 +1506,7 @@ template {
     .md__dt-btn__o365:active,
     .md__dt-btn__o365 .is-selected {
       background-color: #b92f00;
-      box-shadow: 0 0 0.5rem 0 rgba(184, 47, 1, 0.25); }
+      box-shadow: inset 0 0 0.5rem 0 rgba(184, 47, 1, 0.25); }
     .md__dt-btn__o365 .dt-btn--icon {
       margin-top: -0.5rem;
       margin-right: 1rem;
@@ -1530,7 +1530,7 @@ template {
     .md__dt-btn__linkedin:active,
     .md__dt-btn__linkedin .is-selected {
       background-color: #003c54;
-      box-shadow: 0 0 0.5rem 0 rgba(0, 60, 84, 0.25); }
+      box-shadow: inset 0 0 0.5rem 0 rgba(0, 60, 84, 0.25); }
     .md__dt-btn__linkedin .dt-btn--icon {
       margin-top: -0.5rem;
       margin-right: 1rem;
@@ -1664,7 +1664,7 @@ template {
       margin: unset; }
     .lg__dt-btn-circle .dt-btn--label {
       display: none; }
-    .lg__dt-btn-circle:hover:not(.dt-btn__danger) {
+    .lg__dt-btn-circle:hover {
       background-color: rgba(41, 44, 51, 0.075);
       color: #141721; }
     .lg__dt-btn-circle:focus {
@@ -1673,7 +1673,7 @@ template {
     .lg__dt-btn-circle .is-selected {
       border-color: rgba(76, 78, 86, 0.5);
       background-color: rgba(76, 78, 86, 0.1);
-      box-shadow: 0 0 0.5rem 0 rgba(76, 78, 86, 0.3); }
+      box-shadow: inset 0 0 0.5rem 0 rgba(76, 78, 86, 0.3); }
     .is-loading.lg__dt-btn-circle:before {
       border-color: #292C33; }
     .dt-btn__outlined.lg__dt-btn-circle {
@@ -1686,23 +1686,31 @@ template {
       .dt-btn__outlined.lg__dt-btn-circle .is-selected {
         border-color: rgba(76, 78, 86, 0.5);
         background-color: rgba(76, 78, 86, 0.1);
-        box-shadow: 0 0 0.5rem 0 rgba(76, 78, 86, 0.3); }
-    .dt-btn__danger-hover.lg__dt-btn-circle:hover {
-      background-color: rgba(203, 1, 56, 0.05); }
-    .dt-btn__danger-hover.lg__dt-btn-circle:focus {
-      box-shadow: 0 0 0 0.25rem rgba(223, 7, 66, 0.25); }
-    .dt-btn__danger-hover.lg__dt-btn-circle:active, .dt-btn__danger-hover.is-selected.lg__dt-btn-circle {
-      border-color: rgba(223, 7, 66, 0.5);
-      background-color: rgba(223, 7, 66, 0.1);
-      box-shadow: inset 0 0 0.5rem 0 rgba(223, 7, 66, 0.3); }
-    .dt-btn__danger-hover.lg__dt-btn-circle:hover {
-      color: #DF0742; }
-    .dt-btn__danger-hover.lg__dt-btn-circle:focus, .dt-btn__danger-hover.lg__dt-btn-circle:active,
-    .dt-btn__danger-hover.lg__dt-btn-circle .is-selected {
-      color: #cb0138; }
+        box-shadow: inset 0 0 0.5rem 0 rgba(76, 78, 86, 0.3); }
+    .dt-btn__danger-hover.lg__dt-btn-circle {
+      color: #DF0742;
+      color: #292C33; }
+      .dt-btn__danger-hover.lg__dt-btn-circle:hover {
+        background-color: rgba(203, 1, 56, 0.05);
+        color: #cb0138; }
+      .dt-btn__danger-hover.lg__dt-btn-circle:focus {
+        box-shadow: 0 0 0 0.25rem rgba(223, 7, 66, 0.25); }
+      .dt-btn__danger-hover.lg__dt-btn-circle:active, .dt-btn__danger-hover.is-selected.lg__dt-btn-circle {
+        border-color: rgba(223, 7, 66, 0.5);
+        background-color: rgba(223, 7, 66, 0.1);
+        box-shadow: inset 0 0 0.5rem 0 rgba(223, 7, 66, 0.3); }
+      .dt-btn__danger-hover.lg__dt-btn-circle:hover {
+        color: #DF0742; }
+      .dt-btn__danger-hover.lg__dt-btn-circle:focus, .dt-btn__danger-hover.lg__dt-btn-circle:active,
+      .dt-btn__danger-hover.lg__dt-btn-circle .is-selected {
+        color: #cb0138; }
     .dt-btn__inverted.lg__dt-btn-circle:hover {
       background-color: rgba(255, 255, 255, 0.1);
       color: #FFF; }
+    .dt-btn__inverted.lg__dt-btn-circle:active, .dt-btn__inverted.is-selected.lg__dt-btn-circle {
+      border-color: rgba(20, 23, 33, 0.15);
+      background-color: rgba(215, 233, 255, 0.35);
+      box-shadow: inset 0 0 0.5rem 0 rgba(20, 23, 33, 0.35); }
     .lg__dt-btn__xs.lg__dt-btn-circle {
       padding: 0.3125rem; }
     .lg__dt-btn__sm.lg__dt-btn-circle {
@@ -1717,8 +1725,7 @@ template {
     color: #214DCF; }
     .lg__dt-btn__outlined:active, .is-selected.lg__dt-btn__outlined {
       border-color: #3966ec;
-      background-color: rgba(80, 120, 238, 0.15);
-      box-shadow: none; }
+      background-color: rgba(80, 120, 238, 0.15); }
     .lg__dt-btn__outlined[disabled] {
       border-color: transparent; }
   .lg__dt-btn__primary {
@@ -1738,7 +1745,8 @@ template {
     background-color: rgba(223, 7, 66, 0);
     color: #DF0742; }
     .lg__dt-btn__danger:hover {
-      background-color: rgba(203, 1, 56, 0.05); }
+      background-color: rgba(203, 1, 56, 0.05);
+      color: #cb0138; }
     .lg__dt-btn__danger:focus {
       box-shadow: 0 0 0 0.25rem rgba(223, 7, 66, 0.25); }
     .lg__dt-btn__danger:active, .is-selected.lg__dt-btn__danger {
@@ -1748,15 +1756,9 @@ template {
     .is-loading.lg__dt-btn__danger:before {
       border-color: #DF0742; }
     .lg__dt-btn__outlined.lg__dt-btn__danger {
-      border-color: #DF0742;
-      background-color: rgba(223, 7, 66, 0);
-      color: #DF0742; }
-      .lg__dt-btn__outlined.lg__dt-btn__danger:hover {
-        background-color: rgba(203, 1, 56, 0.05); }
+      border-color: #DF0742; }
       .lg__dt-btn__outlined.lg__dt-btn__danger:active, .is-selected.lg__dt-btn__outlined.lg__dt-btn__danger {
-        border-color: #c6063b;
-        background-color: rgba(223, 7, 66, 0.15);
-        box-shadow: none; }
+        border-color: #c6063b; }
       .lg__dt-btn__outlined.lg__dt-btn__danger[disabled] {
         border-color: transparent;
         background-color: #E3E5E8;
@@ -1786,8 +1788,7 @@ template {
       box-shadow: 0 0 0 0.25rem rgba(215, 233, 255, 0.25); }
     .lg__dt-btn__inverted:active, .is-selected.lg__dt-btn__inverted {
       border-color: transparent;
-      background-color: rgba(215, 233, 255, 0.5);
-      box-shadow: none; }
+      background-color: rgba(215, 233, 255, 0.5); }
     .is-loading.lg__dt-btn__inverted:before {
       border-color: #FFF; }
     .lg__dt-btn__outlined.lg__dt-btn__inverted {
@@ -1798,8 +1799,7 @@ template {
         background-color: rgba(215, 233, 255, 0.15); }
       .lg__dt-btn__outlined.lg__dt-btn__inverted:active, .is-selected.lg__dt-btn__outlined.lg__dt-btn__inverted {
         border-color: rgba(215, 233, 255, 0.9);
-        background-color: rgba(215, 233, 255, 0.25);
-        box-shadow: none; }
+        background-color: rgba(215, 233, 255, 0.25); }
       .lg__dt-btn__outlined.lg__dt-btn__inverted[disabled] {
         background-color: #E3E5E8;
         color: #6C6E75; }
@@ -1830,7 +1830,7 @@ template {
     .lg__dt-btn__google:active,
     .lg__dt-btn__google .is-selected {
       background-color: #0c64f7;
-      box-shadow: 0 0 0.5rem 0 rgba(18, 102, 241, 0.25); }
+      box-shadow: inset 0 0 0.5rem 0 rgba(18, 102, 241, 0.25); }
     .lg__dt-btn__google .dt-btn--icon {
       margin-top: -0.5rem;
       margin-right: 1rem;
@@ -1854,7 +1854,7 @@ template {
     .lg__dt-btn__o365:active,
     .lg__dt-btn__o365 .is-selected {
       background-color: #b92f00;
-      box-shadow: 0 0 0.5rem 0 rgba(184, 47, 1, 0.25); }
+      box-shadow: inset 0 0 0.5rem 0 rgba(184, 47, 1, 0.25); }
     .lg__dt-btn__o365 .dt-btn--icon {
       margin-top: -0.5rem;
       margin-right: 1rem;
@@ -1878,7 +1878,7 @@ template {
     .lg__dt-btn__linkedin:active,
     .lg__dt-btn__linkedin .is-selected {
       background-color: #003c54;
-      box-shadow: 0 0 0.5rem 0 rgba(0, 60, 84, 0.25); }
+      box-shadow: inset 0 0 0.5rem 0 rgba(0, 60, 84, 0.25); }
     .lg__dt-btn__linkedin .dt-btn--icon {
       margin-top: -0.5rem;
       margin-right: 1rem;
@@ -2012,7 +2012,7 @@ template {
       margin: unset; }
     .xl__dt-btn-circle .dt-btn--label {
       display: none; }
-    .xl__dt-btn-circle:hover:not(.dt-btn__danger) {
+    .xl__dt-btn-circle:hover {
       background-color: rgba(41, 44, 51, 0.075);
       color: #141721; }
     .xl__dt-btn-circle:focus {
@@ -2021,7 +2021,7 @@ template {
     .xl__dt-btn-circle .is-selected {
       border-color: rgba(76, 78, 86, 0.5);
       background-color: rgba(76, 78, 86, 0.1);
-      box-shadow: 0 0 0.5rem 0 rgba(76, 78, 86, 0.3); }
+      box-shadow: inset 0 0 0.5rem 0 rgba(76, 78, 86, 0.3); }
     .is-loading.xl__dt-btn-circle:before {
       border-color: #292C33; }
     .dt-btn__outlined.xl__dt-btn-circle {
@@ -2034,23 +2034,31 @@ template {
       .dt-btn__outlined.xl__dt-btn-circle .is-selected {
         border-color: rgba(76, 78, 86, 0.5);
         background-color: rgba(76, 78, 86, 0.1);
-        box-shadow: 0 0 0.5rem 0 rgba(76, 78, 86, 0.3); }
-    .dt-btn__danger-hover.xl__dt-btn-circle:hover {
-      background-color: rgba(203, 1, 56, 0.05); }
-    .dt-btn__danger-hover.xl__dt-btn-circle:focus {
-      box-shadow: 0 0 0 0.25rem rgba(223, 7, 66, 0.25); }
-    .dt-btn__danger-hover.xl__dt-btn-circle:active, .dt-btn__danger-hover.is-selected.xl__dt-btn-circle {
-      border-color: rgba(223, 7, 66, 0.5);
-      background-color: rgba(223, 7, 66, 0.1);
-      box-shadow: inset 0 0 0.5rem 0 rgba(223, 7, 66, 0.3); }
-    .dt-btn__danger-hover.xl__dt-btn-circle:hover {
-      color: #DF0742; }
-    .dt-btn__danger-hover.xl__dt-btn-circle:focus, .dt-btn__danger-hover.xl__dt-btn-circle:active,
-    .dt-btn__danger-hover.xl__dt-btn-circle .is-selected {
-      color: #cb0138; }
+        box-shadow: inset 0 0 0.5rem 0 rgba(76, 78, 86, 0.3); }
+    .dt-btn__danger-hover.xl__dt-btn-circle {
+      color: #DF0742;
+      color: #292C33; }
+      .dt-btn__danger-hover.xl__dt-btn-circle:hover {
+        background-color: rgba(203, 1, 56, 0.05);
+        color: #cb0138; }
+      .dt-btn__danger-hover.xl__dt-btn-circle:focus {
+        box-shadow: 0 0 0 0.25rem rgba(223, 7, 66, 0.25); }
+      .dt-btn__danger-hover.xl__dt-btn-circle:active, .dt-btn__danger-hover.is-selected.xl__dt-btn-circle {
+        border-color: rgba(223, 7, 66, 0.5);
+        background-color: rgba(223, 7, 66, 0.1);
+        box-shadow: inset 0 0 0.5rem 0 rgba(223, 7, 66, 0.3); }
+      .dt-btn__danger-hover.xl__dt-btn-circle:hover {
+        color: #DF0742; }
+      .dt-btn__danger-hover.xl__dt-btn-circle:focus, .dt-btn__danger-hover.xl__dt-btn-circle:active,
+      .dt-btn__danger-hover.xl__dt-btn-circle .is-selected {
+        color: #cb0138; }
     .dt-btn__inverted.xl__dt-btn-circle:hover {
       background-color: rgba(255, 255, 255, 0.1);
       color: #FFF; }
+    .dt-btn__inverted.xl__dt-btn-circle:active, .dt-btn__inverted.is-selected.xl__dt-btn-circle {
+      border-color: rgba(20, 23, 33, 0.15);
+      background-color: rgba(215, 233, 255, 0.35);
+      box-shadow: inset 0 0 0.5rem 0 rgba(20, 23, 33, 0.35); }
     .xl__dt-btn__xs.xl__dt-btn-circle {
       padding: 0.3125rem; }
     .xl__dt-btn__sm.xl__dt-btn-circle {
@@ -2065,8 +2073,7 @@ template {
     color: #214DCF; }
     .xl__dt-btn__outlined:active, .is-selected.xl__dt-btn__outlined {
       border-color: #3966ec;
-      background-color: rgba(80, 120, 238, 0.15);
-      box-shadow: none; }
+      background-color: rgba(80, 120, 238, 0.15); }
     .xl__dt-btn__outlined[disabled] {
       border-color: transparent; }
   .xl__dt-btn__primary {
@@ -2086,7 +2093,8 @@ template {
     background-color: rgba(223, 7, 66, 0);
     color: #DF0742; }
     .xl__dt-btn__danger:hover {
-      background-color: rgba(203, 1, 56, 0.05); }
+      background-color: rgba(203, 1, 56, 0.05);
+      color: #cb0138; }
     .xl__dt-btn__danger:focus {
       box-shadow: 0 0 0 0.25rem rgba(223, 7, 66, 0.25); }
     .xl__dt-btn__danger:active, .is-selected.xl__dt-btn__danger {
@@ -2096,15 +2104,9 @@ template {
     .is-loading.xl__dt-btn__danger:before {
       border-color: #DF0742; }
     .xl__dt-btn__outlined.xl__dt-btn__danger {
-      border-color: #DF0742;
-      background-color: rgba(223, 7, 66, 0);
-      color: #DF0742; }
-      .xl__dt-btn__outlined.xl__dt-btn__danger:hover {
-        background-color: rgba(203, 1, 56, 0.05); }
+      border-color: #DF0742; }
       .xl__dt-btn__outlined.xl__dt-btn__danger:active, .is-selected.xl__dt-btn__outlined.xl__dt-btn__danger {
-        border-color: #c6063b;
-        background-color: rgba(223, 7, 66, 0.15);
-        box-shadow: none; }
+        border-color: #c6063b; }
       .xl__dt-btn__outlined.xl__dt-btn__danger[disabled] {
         border-color: transparent;
         background-color: #E3E5E8;
@@ -2134,8 +2136,7 @@ template {
       box-shadow: 0 0 0 0.25rem rgba(215, 233, 255, 0.25); }
     .xl__dt-btn__inverted:active, .is-selected.xl__dt-btn__inverted {
       border-color: transparent;
-      background-color: rgba(215, 233, 255, 0.5);
-      box-shadow: none; }
+      background-color: rgba(215, 233, 255, 0.5); }
     .is-loading.xl__dt-btn__inverted:before {
       border-color: #FFF; }
     .xl__dt-btn__outlined.xl__dt-btn__inverted {
@@ -2146,8 +2147,7 @@ template {
         background-color: rgba(215, 233, 255, 0.15); }
       .xl__dt-btn__outlined.xl__dt-btn__inverted:active, .is-selected.xl__dt-btn__outlined.xl__dt-btn__inverted {
         border-color: rgba(215, 233, 255, 0.9);
-        background-color: rgba(215, 233, 255, 0.25);
-        box-shadow: none; }
+        background-color: rgba(215, 233, 255, 0.25); }
       .xl__dt-btn__outlined.xl__dt-btn__inverted[disabled] {
         background-color: #E3E5E8;
         color: #6C6E75; }
@@ -2178,7 +2178,7 @@ template {
     .xl__dt-btn__google:active,
     .xl__dt-btn__google .is-selected {
       background-color: #0c64f7;
-      box-shadow: 0 0 0.5rem 0 rgba(18, 102, 241, 0.25); }
+      box-shadow: inset 0 0 0.5rem 0 rgba(18, 102, 241, 0.25); }
     .xl__dt-btn__google .dt-btn--icon {
       margin-top: -0.5rem;
       margin-right: 1rem;
@@ -2202,7 +2202,7 @@ template {
     .xl__dt-btn__o365:active,
     .xl__dt-btn__o365 .is-selected {
       background-color: #b92f00;
-      box-shadow: 0 0 0.5rem 0 rgba(184, 47, 1, 0.25); }
+      box-shadow: inset 0 0 0.5rem 0 rgba(184, 47, 1, 0.25); }
     .xl__dt-btn__o365 .dt-btn--icon {
       margin-top: -0.5rem;
       margin-right: 1rem;
@@ -2226,7 +2226,7 @@ template {
     .xl__dt-btn__linkedin:active,
     .xl__dt-btn__linkedin .is-selected {
       background-color: #003c54;
-      box-shadow: 0 0 0.5rem 0 rgba(0, 60, 84, 0.25); }
+      box-shadow: inset 0 0 0.5rem 0 rgba(0, 60, 84, 0.25); }
     .xl__dt-btn__linkedin .dt-btn--icon {
       margin-top: -0.5rem;
       margin-right: 1rem;

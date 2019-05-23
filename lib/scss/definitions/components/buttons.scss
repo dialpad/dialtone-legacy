@@ -51,7 +51,10 @@ $button-brand-linkedin:         #006087;
 }
 
 @mixin btn-danger-clear-states {
+    color: $button-danger;
+
     &:hover {
+        color: $button-danger-hover;
         background-color: transparentize($button-danger-hover,.95);
     }
     &:focus {
@@ -79,7 +82,7 @@ $button-brand-linkedin:         #006087;
     &:active,
     .is-selected {
         background-color: darken(saturate($color,5%),10%);
-        box-shadow: 0 0 $sp8 0 transparentize(darken($color,10%),0.75);
+        box-shadow: inset 0 0 $sp8 0 transparentize(darken($color,10%),0.75);
     }
 
     .dt-btn--icon {
@@ -290,7 +293,7 @@ $button-brand-linkedin:         #006087;
             }
 
             //  States
-            &:hover:not(.dt-btn__danger) {
+            &:hover {
                 background-color: transparentize($button-muted-hover,0.925);
                 color: $fc-dark;
             }
@@ -301,7 +304,7 @@ $button-brand-linkedin:         #006087;
             .is-selected {
                 border-color: transparentize($button-muted,0.5);
                 background-color: transparentize($button-muted,0.9);
-                box-shadow: 0 0 $sp8 0 transparentize($button-muted,0.7);
+                box-shadow: inset 0 0 $sp8 0 transparentize($button-muted,0.7);
             }
 
             &.is-loading:before {
@@ -325,7 +328,7 @@ $button-brand-linkedin:         #006087;
                 .is-selected {
                     border-color: transparentize($button-muted,0.5);
                     background-color: transparentize($button-muted,0.9);
-                    box-shadow: 0 0 $sp8 0 transparentize($button-muted,0.7);
+                    box-shadow: inset 0 0 $sp8 0 transparentize($button-muted,0.7);
                 }
             }
 
@@ -333,6 +336,7 @@ $button-brand-linkedin:         #006087;
             //  ----------------------------------------------------------------
             &.dt-btn__danger-hover {
                 @include btn-danger-clear-states;
+                color: $fc-medium;
 
                 &:hover {
                     color: $button-danger;
@@ -346,9 +350,17 @@ $button-brand-linkedin:         #006087;
 
             //  --  INVERTED
             //  ----------------------------------------------------------------
-            &.dt-btn__inverted:hover {
-                background-color: transparentize($white,.9);
-                color: $fc-white;
+            &.dt-btn__inverted {
+                 &:hover {
+                    background-color: transparentize($white,.9);
+                    color: $fc-white;
+                }
+                &:active,
+                &.is-selected {
+                    border-color: transparentize($slate,.85);
+                    background-color: transparentize($button-invert-hover,.65);
+                    box-shadow: inset 0 0 $sp8 0 transparentize($slate,.65);
+                }
             }
 
             //  ================================================================
@@ -384,7 +396,6 @@ $button-brand-linkedin:         #006087;
             &.is-selected {
                 border-color: darken($button-border-color,5%);
                 background-color: transparentize($button-background-color,.85);
-                box-shadow: none;
             }
             &[disabled] {
                 border-color: transparent;
@@ -422,7 +433,6 @@ $button-brand-linkedin:         #006087;
         //  --------------------------------------------------------------------
         %#{$variant}dt-btn__danger {
             background-color: transparentize($button-danger,1);
-            color: $button-danger;
 
             @include btn-danger-clear-states;
 
@@ -431,22 +441,14 @@ $button-brand-linkedin:         #006087;
                 border-color: $button-border-loading-danger;
             }
 
-
             //  --  OUTLINED BUTTON
             //  ----------------------------------------------------------------
             &%#{$variant}dt-btn__outlined {
                 border-color: $button-danger;
-                background-color: transparentize($button-danger,1);
-                color: $button-danger;
 
-                &:hover {
-                    background-color: transparentize($button-danger-hover,.95);
-                }
                 &:active,
                 &.is-selected {
                     border-color: darken($button-danger,5%);
-                    background-color: transparentize($button-danger,.85);
-                    box-shadow: none;
                 }
                 &[disabled] {
                     @include disabled-input-style;
@@ -454,7 +456,7 @@ $button-brand-linkedin:         #006087;
                 }
             }
 
-            //  --  CLEAR BUTTON
+            //  --  FILLED BUTTON
             //  ----------------------------------------------------------------
             &%#{$variant}dt-btn__primary {
                 background-color: $button-danger;
@@ -500,7 +502,6 @@ $button-brand-linkedin:         #006087;
             &.is-selected {
                 border-color: transparent;
                 background-color: transparentize($button-invert-hover,.5);
-                box-shadow: none;
             }
 
             //  Re-color loading animation
@@ -521,7 +522,6 @@ $button-brand-linkedin:         #006087;
                 &.is-selected {
                     border-color: transparentize($button-invert-hover,.1);
                     background-color: transparentize($button-invert-hover,.75);
-                    box-shadow: none;
                 }
                 &[disabled] {
                     @include disabled-input-style;
