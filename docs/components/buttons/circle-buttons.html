@@ -1,0 +1,51 @@
+<h3 class="dds-docs--subheader">Circle Buttons</h3>
+<p>Sometimes an icon-only, circle button is desired. These buttons are used for toggling actions, navigation, or closing UI elements.</p>
+<div class="dtd-example">
+{% highlight html linenos %}
+<button class="dt-btn dt-btn-circle" type="button" aria-pressed="false">…</button>
+<button class="dt-btn dt-btn-circle dt-btn__close" type="button" aria-pressed="false">…</button>
+<button class="dt-btn dt-btn-circle dt-btn__close-filled" type="button" aria-pressed="false">…</button>
+{% endhighlight %}
+    <div class="dtd-example--preview">
+        <table class="dt-table m0">
+            <thead>
+                <tr>
+                    <th scope="col" width="50%">Name</th>
+                    <th scope="col" width="25%">Class</th>
+                    <th scope="col" style="text-align: center">Examples</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in site.data.buttons.circle %}
+                    <tr>
+                        <th scope="row" class="text-sm {% if item.name == 'inverted' %}bgc-slate fc-white blr-lg{% endif %}" style="{% if item.name == 'inverted' %}padding-left: 0.75rem;{% elsif item.name == 'danger-primary' %} border-bottom-width: 0;{% endif %}">
+                            <span class="d-block my4">{{ item.title }}</span>
+                            <span class="d-block fw-normal text-xs my4">{{ item.description }}</span>
+                        </th>
+                        <td class="ff-mono text-xxs {% if item.name == 'inverted' %}bgc-slate fc-white{% endif %}" style="{% if item.name == 'danger-primary' %}border-bottom-width: 0;{% endif %}">
+                            .dt-btn {% if item.class != nil %}.{{ item.class }}{% endif %}
+                        </td>
+                        <td {% if item.name == 'inverted' %}class="bgc-slate fc-white brr-lg"{% endif %} {% if item.name == 'danger-primary' %} style="border-bottom-width: 0;"{% endif %}>
+                            <div class="flex jc-end mn4">
+                                {% assign buttons = "default, loading, disabled" | split: ", " %}
+                                {% for btn in buttons %}
+                                    <button class="mx4 dt-btn dt-btn-circle {{ item.class }} {% if btn == 'loading' %}is-loading{% endif %}" type="button" aria-pressed="false" {% if btn == 'disabled' %}disabled{% endif %}>
+                                        <span class="dt-btn--icon">
+                                        {% if item.name == "default" %}
+                                            <svg aria-hidden="true" class="dt-svg dt-svg--person" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><title>Account</title><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+                                        {% elsif item.name == "outlined" %}
+                                            <svg aria-hidden="true" class="dt-svg dt-svg--mic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+                                        {% elsif item.name == "danger-hover" or "danger-primary" %}
+                                            <svg aria-hidden="true" class="dt-svg dt-svg--close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+                                        {% endif %}
+                                        </span>
+                                    </button>
+                                {% endfor %}
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>

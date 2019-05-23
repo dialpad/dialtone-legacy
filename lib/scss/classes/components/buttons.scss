@@ -7,29 +7,48 @@
 //  visit https://dialpad.design/components/buttons
 //
 //  TABLE OF CONTENTS
-//  • STYLES
+//  • BASE STYLE
+//  • VISUAL STYLES
+//  • ALTERNATE STYLES
 //  • SIZES
 //
 //  ============================================================================
 @each $breakpoint, $variant in $rwd-variants {
     //  ========================================================================
-    //  $   STYLES
-    //  ------------------------------------------------------------------------
     //  $   BASE STYLE
     //      This class applies the core button properties. You must couple
     //      this with a modifying class.
     //  ------------------------------------------------------------------------
     .#{$variant}dt-btn              { @extend %#{$variant}dt-btn; }
+    .#{$variant}dt-btn--label       { @extend %#{$variant}dt-btn--label; }
+    .#{$variant}dt-btn--icon        { @extend %#{$variant}dt-btn--icon; }
+
+    //  ========================================================================
+    //  $   SIZES
+    //  ------------------------------------------------------------------------
+    .#{$variant}dt-btn__xs          { @extend %#{$variant}dt-btn__xs; }
+    .#{$variant}dt-btn__sm          { @extend %#{$variant}dt-btn__sm; }
+    .#{$variant}dt-btn__lg          { @extend %#{$variant}dt-btn__lg; }
+    .#{$variant}dt-btn__xl          { @extend %#{$variant}dt-btn__xl; }
+
+    //  ========================================================================
+    //  $   ALTERNATE STYLES
+    //  ------------------------------------------------------------------------
+    .#{$variant}dt-btn.is-loading   { @extend %#{$variant}dt-btn.is-loading; }
+    .#{$variant}dt-btn-circle       { @extend %#{$variant}dt-btn-circle; }
+
+    //  ========================================================================
+    //  $   VISUAL STYLES
+    //  ------------------------------------------------------------------------
     .#{$variant}dt-btn__outlined    { @extend %#{$variant}dt-btn__outlined; }
     .#{$variant}dt-btn__primary     { @extend %#{$variant}dt-btn__primary; }
     .#{$variant}dt-btn__danger      { @extend %#{$variant}dt-btn__danger; }
     .#{$variant}dt-btn__inverted    { @extend %#{$variant}dt-btn__inverted; }
 
-
     //  ========================================================================
-    //  $   SIZES
+    //  $   BRAND BUTTONS
     //  ------------------------------------------------------------------------
-    .#{$variant}dt-btn__sm          { @extend %#{$variant}dt-btn__sm; }
-    .#{$variant}dt-btn__lg          { @extend %#{$variant}dt-btn__lg; }
-    .#{$variant}dt-btn__xl          { @extend %#{$variant}dt-btn__xl; }
+    .#{$variant}dt-btn__google      { @extend %#{$variant}dt-btn__google; }
+    .#{$variant}dt-btn__o365        { @extend %#{$variant}dt-btn__o365; }
+    .#{$variant}dt-btn__linkedin    { @extend %#{$variant}dt-btn__linkedin; }
 }

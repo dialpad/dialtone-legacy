@@ -1,0 +1,44 @@
+<h3 class="dds-docs--subheader">Icon Buttons</h3>
+<p>Occassionally buttons may have icons placed next to the button label. In those instances, use the following layout examples as a guide.</p>
+<div class="dtd-example">
+{% highlight html linenos %}
+<button class="dt-btn mnx2" type="button" aria-pressed="false">
+    <div class="dt-btn--icon mx2">…</div>
+    <div class="dt-btn--label mx2">…</div>
+</button>
+{% endhighlight %}
+    <div class="dtd-example--preview">
+        <table class="dt-table m0">
+            <thead>
+                <tr>
+                    <th scope="col" width="60%">Name</th>
+                    <th scope="col">Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in site.data.buttons.icons %}
+                    <tr>
+                        <th scope="row" class="text-sm">
+                            <span class="d-block my4">{{ item.title }}</span>
+                            <span class="d-block fw-normal text-xs my4">{{ item.description }}</span>
+                        </th>
+                        <td style="text-align: right;">
+                            <button class="w100{% if item.name == 'center'%} mnx4{% else %} mnx2{% endif %} dt-btn{% if item.name != 'center' %} dt-btn__primary{% else %} dt-btn__danger{% endif %}{% if item.name == 'left' %} jc-start{% endif %}" type="button" aria-pressed="false">
+                                <span class="dt-btn--icon{% if item.name == 'center'%} mx4{% else %} mx2{% endif %}{% if item.name == 'right' %} fo-last{% endif %}">
+                                {% if item.name == "center" %}
+                                    <svg aria-hidden="true" class="dt-svg dt-svg--phoneEnd" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 9c-1.6 0-3.15.25-4.6.72v3.1c0 .39-.23.74-.56.9-.98.49-1.87 1.12-2.66 1.85-.18.18-.43.28-.7.28-.28 0-.53-.11-.71-.29L.29 13.08c-.18-.17-.29-.42-.29-.7 0-.28.11-.53.29-.71C3.34 8.78 7.46 7 12 7s8.66 1.78 11.71 4.67c.18.18.29.43.29.71 0 .28-.11.53-.29.71l-2.48 2.48c-.18.18-.43.29-.71.29-.27 0-.52-.11-.7-.28-.79-.74-1.69-1.36-2.67-1.85-.33-.16-.56-.5-.56-.9v-3.1C15.15 9.25 13.6 9 12 9z"/></svg>
+                                {% elsif item.name == "right" %}
+                                    <svg aria-hidden="true" class="dt-svg dt-svg--arrowRight" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M16.01 11H4v2h12.01v3L20 12l-3.99-4z"/></svg>
+                                {% else %}
+                                    <svg aria-hidden="true" class="dt-svg dt-svg--search" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+                                {% endif %}
+                                </span>
+                                <span class="dt-btn--label{% if item.name == 'center'%} mx4{% else %} mx2{% endif %}{% if item.name == 'split' %} fl1{% elsif item.name == 'right' %} fl1 jc-start{% endif %}">{{ item.label }}</span>
+                            </button>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>

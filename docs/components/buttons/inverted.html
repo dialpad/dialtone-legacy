@@ -6,7 +6,7 @@
 <button class="dt-btn dt-button__outlined" type="button" aria-pressed="false">…</button>
 <button class="dt-btn" type="button" aria-pressed="false">…</button>
 {% endhighlight %}
-    <div class="dtd-example--preview bgc-gray-darker mn1 bbr-sm">
+    <div class="dtd-example--preview bgc-slate mn1 bbr-sm">
         <table class="dt-table dt-table__inverted m0">
             <thead>
                 <tr>
@@ -18,17 +18,31 @@
                 </tr>
             </thead>
             <tbody>
-                {% for item in site.data.buttons.inverted %}
-                    {% assign types = item.classes %}
-                    {% for class in types %}
-                    <tr>
-                        <th scope="row" class="va-middle text-sm">{{ class.title }}</th>
-                        <td class="va-middle ff-mono text-xxs">.dt-btn {% if class.class != nil %}.{{ class.class }}{% endif %}</td>
-                        <td class="va-middle px4 ta-center"><button class="dt-btn {{ item.class }} {{ class.class }} w100 ws-nowrap" type="button" aria-pressed="false">Place call</button></td>
-                        <td class="va-middle px4 ta-center"><button class="dt-btn {{ item.class }} {{ class.class }} is-selected w100 ws-nowrap" type="button" aria-pressed="false">Place call</button></td>
-                        <td class="va-middle px4 ta-center"><button class="dt-btn {{ item.class }} {{ class.class }} w100 ws-nowrap" type="button" aria-pressed="false" disabled>Place call</button></td>
-                    </tr>
-                    {% endfor %}
+                {% for item in site.data.buttons.styles %}
+                    {% if item.style == "Inverted" %}
+                        {% assign types = item.classes %}
+                        {% for class in types %}
+                        <tr>
+                            <th scope="row" class="va-middle text-sm">{{ class.title }}</th>
+                            <td class="va-middle ff-mono text-xxs">.dt-btn .{{ item.class }} {% if class.class != nil %}.{{ class.class }}{% endif %}</td>
+                            <td class="va-middle px4 ta-center">
+                                <button class="dt-btn {{ item.class }} {{ class.class }} w100 ws-nowrap" type="button" aria-pressed="false">
+                                    <span class="dt-btn--label">Place call</span>
+                                </button>
+                            </td>
+                            <td class="va-middle px4 ta-center">
+                                <button class="dt-btn {{ item.class }} {{ class.class }} is-selected w100 ws-nowrap" type="button" aria-pressed="false">
+                                    <span class="dt-btn--label">Place call</span>
+                                </button>
+                            </td>
+                            <td class="va-middle px4 ta-center">
+                                <button class="dt-btn {{ item.class }} {{ class.class }} w100 ws-nowrap" type="button" aria-pressed="false" disabled>
+                                    <span class="dt-btn--label">Place call</span>
+                                </button>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    {% endif %}
                 {% endfor %}
             </tbody>
         </table>
