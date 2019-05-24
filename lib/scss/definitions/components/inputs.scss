@@ -21,35 +21,38 @@
 @each $breakpoint, $variant in $rwd-variants {
     @include rwd($breakpoint) {
         //  ====================================================================
-        //  $   INPUTS
+        //  $   INPUT
         //  --------------------------------------------------------------------
         %#{$variant}dt-input {
             @include input-base-style;
         }
 
         //  ====================================================================
-        //  $   SELECT MENU
+        //  $   SELECT MENU (NATIVE)
         //  --------------------------------------------------------------------
         %#{$variant}dt-select {
             position: relative;
+            font-size: $input-font-size;
+
+            //  --  Creat some arrows
             &:before,
             &:after {
                 content: "";
                 position: absolute;
                 z-index: $z-selected;
-                right: $sp12;
+                right: 0.75em;
                 border-color: $slate transparent;
                 border-style: solid;
-                border-width: $bw4;
+                border-width: 0.25em;
                 pointer-events: none;
             }
             &:before {
-                top: calc(50% - #{$bw4});
-                border-top-width: 0 !important;
+                top: calc(50% - 0.25em);
+                border-top-width: 0;
             }
             &:after {
-                top: calc(50% + #{$bw2});
-                border-bottom-width: 0 !important;
+                top: calc(50% + 0.125em);
+                border-bottom-width: 0;
             }
 
             > select {
@@ -60,11 +63,9 @@
 
                 //  [2] Update the styles
                 @include input-base-style;
-                padding-left: $sp12;
-                padding-right: $sp32;
+                padding-right: 2em;
                 height: 100%; // Fill the height of its parent
                 background-color: $white;
-                line-height: $lh-sm;
 
                 &::-moz-focus-inner {
                     outline: none !important;
@@ -84,61 +85,74 @@
         //  --------------------------------------------------------------------
         %#{$variant}dt-textarea {
             @include input-base-style;
-            padding: $sp12;
+            padding-left: ($sp12 - $sp1);  // Minus out the border
+            padding-right: ($sp12 - $sp1);  // Minus out the border
             min-height: 5rem;
         }
 
         //  ====================================================================
         //  $   SIZES
+        //  ====================================================================
+        //  $$  INPUTS
         //  --------------------------------------------------------------------
-        %#{$variant}dt-input-sizes__sm { font-size: $text-sm; }
-        %#{$variant}dt-input-sizes__lg { font-size: $text-xl; }
-        %#{$variant}dt-input-sizes__xl { font-size: $headline-sm; }
+        %#{$variant}dt-input__xs { @include input-button-xs; }
+        %#{$variant}dt-input__sm { @include input-button-sm; }
+        %#{$variant}dt-input__lg { @include input-button-lg; }
+        %#{$variant}dt-input__xl { @include input-button-xl; }
 
-        //  --  INPUT-ONLY SIZE PROPERTIES
-        %#{$variant}dt-input__sm {
-            padding: $sp4 $sp12;
-            min-height: 2.2rem;
+        //
+        //  $$  TEXTAREAS
+        //  --------------------------------------------------------------------
+        %#{$variant}dt-textarea__xs {
+            @include input-button-xs;
+            min-height: 2.5rem;
         }
-        %#{$variant}dt-input__md { min-height: 2.75rem; }
-        %#{$variant}dt-input__lg { min-height: 3rem; }
-        %#{$variant}dt-input__xl { min-height: 3.5rem; }
-
-        //  --  TEXTAREA-ONLY SIZE PROPERTIES
-        %#{$variant}dt-textarea__sm { min-height: 3rem; }
-        %#{$variant}dt-textarea__md { min-height: 5.25rem; }
-        %#{$variant}dt-textarea__lg { min-height: 5.75rem; }
+        %#{$variant}dt-textarea__sm {
+            @include input-button-sm;
+            min-height: 3rem;
+        }
+        %#{$variant}dt-textarea__lg {
+            @include input-button-lg;
+            min-height: 5.75rem;
+        }
         %#{$variant}dt-textarea__xl {
-            padding: $sp16;
+            @include input-button-xl;
             min-height: 6.25rem;
         }
 
-        //  --  SELECT MENU SIZE PROPERTIES
-        %#{$variant}dt-select__sm {
-            &:before { top: calc(50% - #{$sp6}); }
-            &:after  { top: calc(50% + 1px); }
+        //  $$  SELECT MENUS (NATIVE)
+        //  --------------------------------------------------------------------
+        %#{$variant}dt-select__xs {
+            font-size: $text-xs;
+
             > select {
-                padding: $sp6 1.875rem $sp2 $sp12;
-                min-height: 2.2rem;
+                @include input-button-xs;
+                padding-right: 2em;
             }
         }
-        %#{$variant}dt-select__md {
-            &:before,
-            &:after  { border-width: 0.3125rem; }
-            &:before { top: calc(50% - 0.3125rem); }
-            > select { min-height: 2.75rem; }
+        %#{$variant}dt-select__sm {
+            font-size: $text-sm;
+
+            > select {
+                @include input-button-sm;
+                padding-right: 2em;
+            }
         }
         %#{$variant}dt-select__lg {
-            &:before,
-            &:after  { border-width: 0.3125rem; }
-            &:before { top: calc(50% - 0.3125rem); }
-            > select { min-height: 3rem; }
+            font-size: $text-lg;
+
+            > select {
+                @include input-button-lg;
+                padding-right: 2em;
+            }
         }
         %#{$variant}dt-select__xl {
-            &:before,
-            &:after  { border-width: $sp6; }
-            &:before { top: calc(50% - #{$sp6}); }
-            > select { min-height: 3.5rem; }
+            font-size: $text-lg;
+
+            > select {
+                @include input-button-xl;
+                padding-right: 2em;
+            }
         }
 
         //  ====================================================================
@@ -155,18 +169,20 @@
         //  $   LABELS
         //  --------------------------------------------------------------------
         %#{$variant}dt-label {
-            display: flex;
-            flex: 1 auto;
+            display: inline-flex;
+            flex: 1 0%;
             align-items: baseline;
             justify-content: space-between;
             margin: 0 $sp2;
+
             color: currentColor;
-            word-break: break-word;
-            font-weight: $fw-bold;
-            font-size: $text-md;
-            line-height: $lh-lg;
-            cursor: pointer;
             fill: currentColor;
+            font-size: $text-md;
+            font-weight: $fw-bold;
+            line-height: $lh-lg;
+
+            cursor: pointer;
+            word-break: break-word;
             overflow-wrap: break-word;
         }
 
@@ -175,13 +191,12 @@
         //  --------------------------------------------------------------------
         %#{$variant}dt-description {
             display: block;
-            margin: 0 $sp2 $sp4;
+            margin: 0 $sp2 $sp8;
             color: $fc-light;
-            font-weight: $fw-normal;
+            fill: currentColor;
             font-size: $text-sm;
             font-family: $ff-sans;
-            line-height: $lh-lg;
-            fill: currentColor;
+            line-height: $lh-md;
         }
 
         //  ====================================================================
