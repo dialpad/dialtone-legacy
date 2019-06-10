@@ -16,20 +16,19 @@
 //  $   BASE STYLE
 //  ----------------------------------------------------------------------------
 .dt-btn {
-    .ps-relative;
-    .flex-inline;
-    .flex__center;
-    .m0;
-    .ba;
-    border-color: @bc-transparent;
-    .td-none;
-    .tt-inherit;
-    .ff-inherit;
-
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: @sp0;
     padding: @button-padding;
+    border: @baw1 solid @bc-transparent;
     border-radius: @button-border-radius;
     background-color: fade(@button-background-color,0%);
     box-shadow: inset 0 0 0 0 fade(@button-background-color,0%);
+    text-decoration: none;
+    text-transform: inherit;
+    font-family: inherit;
     color: @button-font-color;
     font-size: @button-font-size;
     line-height: @button-line-height;
@@ -162,10 +161,12 @@
     //  --  FILLED BUTTON
     //  ----------------------------------------------------------------
     &.dt-btn__primary {
+        border-color: @button-danger;
         background-color: @button-danger;
         color: @fc-white;
 
         &:hover {
+            border-color: @button-danger-hover;
             background-color: @button-danger-hover;
         }
         &:focus {
