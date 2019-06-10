@@ -22,8 +22,8 @@ module.exports = {
     },
 
     css: {
-        scsslib: source + '/scss/dialtone.scss',
-        scssdocs: assets + '/scss/*.scss',
+        lesslib: source + '/less/dialtone.less',
+        lessdocs: assets + '/less/*.less',
         csslib: source + '/css',
         cssdocs: assets + '/css',
     },
@@ -34,8 +34,8 @@ module.exports = {
             src + '/**/*.{html,md,markdown,yml,json,txt,xml}',
             '!./docs/_site/**/*'
         ],
-        libcss:  source + '/scss/**/*.{scss,sass}',
-        doccss:  assets + '/scss/**/*.{scss,sass}',
+        libcss:  source + '/less/**/*.{less}',
+        doccss:  assets + '/less/**/*.{less}',
         js:      assets + '/js/**/*.js',
         images:  assets + '/images/**/*',
         fonts:   assets + '/fonts'

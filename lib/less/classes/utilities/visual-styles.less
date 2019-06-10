@@ -1,0 +1,91 @@
+//
+//  DIALTONE
+//  UTILITIES: BACKGROUNDS
+//
+//  These are the background classes for Dialpad's design system Dialtone.
+//  For further documentation of these and other classes,
+//  visit https://dialpad.design/utilities/backgrounds
+//
+//  TABLE OF CONTENTS
+//  • BACKGROUND FILLS
+//  • BACKGROUND GRADIENTS
+//  • BORDERS
+//  • BOX SHADOWS
+//  • OPACITY
+//
+//  ============================================================================
+//  $   BACKGROUND FILLS
+//  ----------------------------------------------------------------------------
+each(@colors, {
+    .bgc-@{key} { background-color: @value; }
+});
+
+.bgc-transparent    { background-color: transparent; }
+.bgc-unset          { background-color: unset; }
+
+
+//  ============================================================================
+//  $   BACKGROUND GRADIENTS
+//  ----------------------------------------------------------------------------
+//  --  Dark background gradients
+each(@bgg-directions, {
+    .blg-dark-to-@{value} {
+        background-image: linear-gradient(to @value, darken(@slate,5%) 0%, lighten(@slate,5%) 100%);
+    }
+});
+
+//  --  Light background gradients
+each(@bgg-directions, {
+    .blg-light-to-@{value} {
+        background-image: linear-gradient(to @value, #E3F1FE 0%, @white 100%);
+    }
+});
+
+
+//  ============================================================================
+//  $   BOX SHADOWS
+//  ----------------------------------------------------------------------------
+each(@box-shadows, {
+    .bs-@{key} {
+        box-shadow: @value;
+    }
+});
+
+
+//  ============================================================================
+//  $   OPACITY
+//      For times that you want a fill background, but not at 100% opacity.
+//      These are only offered for $white and gray.
+//  ============================================================================
+//  $$  BACKGROUND OPACITY FILLS
+//  ----------------------------------------------------------------------------
+//  --  WHITE
+each(@bgc-opacity-stops, {
+    .bgc-white-o@{key} { background-color: fade(@white,@value); }
+});
+
+//  --  SLATE
+each(@bgc-opacity-stops, {
+    .bgc-slate-o@{key} { background-color: fade(@slate,@value); }
+});
+
+//  $$  GENERIC OPACITY CLASSES
+//  ----------------------------------------------------------------------------
+each(@opacity-stops, {
+    .o@{key} { opacity: @value; }
+});
+
+
+//  ============================================================================
+//  $   OUTLINE
+//  ----------------------------------------------------------------------------
+.os-solid          { outline-style: solid; }
+.os-dashed         { outline-style: dashed; }
+.os-dotted         { outline-style: dotted; }
+.os-double         { outline-style: double; }
+.os-groove         { outline-style: groove; }
+.os-ridge          { outline-style: ridge; }
+.os-inset          { outline-style: inset; }
+.os-outset         { outline-style: outset; }
+.os-none           { outline-style: none; }
+.os-unset          { outline-style: unset; }

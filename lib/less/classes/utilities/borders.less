@@ -1,0 +1,120 @@
+//
+//  DIALTONE
+//  CLASSES > UTILITIES > BORDERS
+//
+//  These are border utility classes for Dialpad's design system Dialtone.
+//  For further documentation of these and other classes,
+//  visit https://dialpad.design/utilities/borders
+//
+//  TABLE OF CONTENTS
+//  • BORDERS
+//    - Directions
+//    - Widths
+//    - Styles
+//    - Colors
+//  • BORDER RADIUS
+//
+//  ============================================================================
+//  $  BORDERS
+//  ============================================================================
+//  $$ DIRECTIONS
+//  ----------------------------------------------------------------------------
+.ba                 { border: @bw1 @bs-solid @bc-current; }
+.bt                 { border-top: @bw1 @bs-solid @bc-current; }
+.br                 { border-right: @bw1 @bs-solid @bc-current; }
+.bb                 { border-bottom: @bw1 @bs-solid @bc-current; }
+.bl                 { border-left: @bw1 @bs-solid @bc-current; }
+.bx                 { .br; .bl; }
+.by                 { .bt; .bb; }
+
+//  $$ WIDTHS
+//  ----------------------------------------------------------------------------
+each(@border-widths, {
+    .baw@{key} { border-width: @value; }
+});
+
+each(@border-widths, {
+    .btw@{key} { border-top-width: @value; }
+});
+
+each(@border-widths, {
+    .brw@{key} { border-right-width: @value; }
+});
+
+each(@border-widths, {
+    .bbw@{key} { border-bottom-width: @value; }
+});
+
+each(@border-widths, {
+    .blw@{key} { border-left-width: @value; }
+});
+
+each(@border-widths, {
+    .bxw@{key} {
+        border-right-width: @value;
+        border-left-width: @value;
+    }
+});
+
+each(@border-widths, {
+    .byw@{key} {
+        border-top-width: @value;
+        border-bottom-width: @value;
+    }
+});
+
+//  $$ STYLES
+//  ----------------------------------------------------------------------------
+.bas-solid          { border-style: @bs-solid; }
+.bts-solid          { border-top-style: @bs-solid; }
+.brs-solid          { border-right-style: @bs-solid; }
+.bbs-solid          { border-bottom-style: @bs-solid; }
+.bls-solid          { border-left-style: @bs-solid; }
+
+.bas-dashed         { border-style: @bs-dashed; }
+.bts-dashed         { border-top-style: @bs-dashed; }
+.brs-dashed         { border-right-style: @bs-dashed; }
+.bbs-dashed         { border-bottom-style: @bs-dashed; }
+.bls-dashed         { border-left-style: @bs-dashed; }
+
+//  $$ COLORS
+//  ----------------------------------------------------------------------------
+each(@border-colors, {
+    .bc-@{key} { border-color: @value; }
+});
+
+
+//  ============================================================================
+//  $  BORDER RADIUS
+//  ----------------------------------------------------------------------------
+each(@border-radius, {
+    .br-@{key} { border-radius: @value; }
+});
+
+each(@border-radius, {
+    .btr-@{key} {
+        border-top-left-radius: @value;
+        border-top-right-radius: @value;
+    }
+});
+
+each(@border-radius, {
+    .brr-@{key} {
+        border-top-right-radius: @value;
+        border-bottom-right-radius: @value;
+    }
+});
+
+each(@border-radius, {
+    .bbr-@{key} {
+        border-bottom-right-radius: @value;
+        border-bottom-left-radius: @value;
+    }
+});
+
+each(@border-radius, {
+    .blr-@{key} {
+        border-top-left-radius: @value;
+        border-bottom-left-radius: @value;
+    }
+});

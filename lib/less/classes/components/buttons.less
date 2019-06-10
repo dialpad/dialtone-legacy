@@ -1,0 +1,436 @@
+//
+//  DIALTONE
+//  COMPONENTS: BUTTONS
+//
+//  These are button classes for Dialpad's design system Dialtone.
+//  For further documentation of these and other classes,
+//  visit https://dialpad.design/components/buttons
+//
+//  TABLE OF CONTENTS
+//  • BASE STYLE
+//  • VISUAL STYLES
+//  • ALTERNATE STYLES
+//  • SIZES
+//
+//  ============================================================================
+//  $   BASE STYLE
+//  ----------------------------------------------------------------------------
+.dt-btn {
+    .ps-relative;
+    .flex-inline;
+    .flex__center;
+    .m0;
+    .ba;
+    border-color: @bc-transparent;
+    .td-none;
+    .tt-inherit;
+    .ff-inherit;
+
+    padding: @button-padding;
+    border-radius: @button-border-radius;
+    background-color: fade(@button-background-color,0%);
+    box-shadow: inset 0 0 0 0 fade(@button-background-color,0%);
+    color: @button-font-color;
+    font-size: @button-font-size;
+    line-height: @button-line-height;
+
+    cursor: pointer;
+    transition-timing-function: @transition-cubic-inOut;
+    transition-duration: 100ms;
+    transition-property: background-color, border, box-shadow;
+
+    user-select: none;
+    fill: currentColor;
+
+    &:hover {
+        background-color: fade(@button-background-color,5%);
+    }
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 0 @sp4 fade(@button-background-color,25%);
+    }
+    &:active,
+    &.is-selected {
+        border-color: fade(@button-background-color,50%);
+        background-color: fade(@button-background-color,10%);
+        box-shadow: inset 0 0 @sp8 0 fade(@button-background-color,30%);
+    }
+    &[disabled] {
+        .disabled-input-style();
+        opacity: 0.75;
+        transition: none;
+        pointer-events: none;
+    }
+}
+
+//  Button label styling
+.dt-btn--label {
+    .flex-inline;
+    .flex__center;
+}
+
+//  Icon button styling
+.dt-btn--icon {
+    .flex;
+    margin-top: -(@sp4 + @sp1);
+    margin-right: @sp4;
+    margin-bottom: -(@sp4);
+    margin-left: -(@sp4);
+    width: @sp24;
+    height: @sp24;
+
+    //  If the icon is last, unset the left margin and apply it
+    //  to the right side instead.
+    &.fo-last {
+        margin-left: unset;
+        margin-right: -(@sp8);    // Offset button left/right padding
+    }
+}
+
+//  ============================================================================
+//  $   VISUAL STYLES
+//  ============================================================================
+//  $$  OUTLINED BUTTON
+//  ----------------------------------------------------------------------------
+.dt-btn__outlined {
+    box-shadow: none;
+    border-color: @button-border-color;
+    color: @button-font-color;
+
+    &:active,
+    &.is-selected {
+        border-color: darken(@button-border-color,5%);
+        background-color: fade(@button-background-color,15%);
+    }
+    &[disabled] {
+        border-color: @bc-transparent;
+    }
+}
+
+//  $$  PRIMARY BUTTON
+//  ----------------------------------------------------------------------------
+.dt-btn__primary {
+    background-color: @button-primary;
+    color: @fc-white;
+
+    &:hover {
+        background-color: @button-primary-hover;
+    }
+    &:focus {
+        box-shadow: 0 0 0 @sp4 fade(@button-primary,25%);
+    }
+    &:active,
+    &.is-selected {
+        border-color: darken(@button-primary-hover,20%);
+        background-color: saturate(@button-primary,15%);
+        box-shadow: inset 0 0 @sp8 0 darken(@blue-darker,10%);
+    }
+
+    //  Re-color loading animation
+    &.is-loading:before {
+        border-color: @button-border-loading-white;
+    }
+}
+
+//  $$  DANGER BUTTON
+//  ----------------------------------------------------------------------------
+.dt-btn__danger {
+    background-color: fade(@button-danger,0%);
+
+    .btn-danger-clear-states();
+
+    //  Re-color loading animation
+    &.is-loading:before {
+        border-color: @button-border-loading-danger;
+    }
+
+    //  --  OUTLINED BUTTON
+    //  ----------------------------------------------------------------
+    &.dt-btn__outlined {
+        border-color: @button-danger;
+
+        &:active,
+        &.is-selected {
+            border-color: darken(@button-danger,5%);
+        }
+        &[disabled] {
+            .disabled-input-style();
+            border-color: transparent;
+        }
+    }
+
+    //  --  FILLED BUTTON
+    //  ----------------------------------------------------------------
+    &.dt-btn__primary {
+        background-color: @button-danger;
+        color: @fc-white;
+
+        &:hover {
+            background-color: @button-danger-hover;
+        }
+        &:focus {
+            box-shadow: 0 0 0 @sp4 fade(@button-danger,25%);
+        }
+        &:active,
+        &.is-selected {
+            border-color: darken(@button-danger,20%);
+            background-color: saturate(@button-danger,10%);
+            box-shadow: inset 0 0 @sp8 0 darken(@button-danger,10%);
+        }
+        &[disabled] {
+            .disabled-input-style();
+        }
+
+        //  Re-color loading animation
+        &.is-loading:before {
+            border-color: @button-border-loading-white;
+        }
+    }
+}
+
+//  $$  INVERTED BUTTON
+//  ----------------------------------------------------------------------------
+.dt-btn__inverted {
+    .bgc-transparent;
+    color: @button-invert;
+
+    &:hover {
+        background-color: fade(@button-invert-hover,25%);
+    }
+    &:focus {
+        box-shadow: 0 0 0 @sp4 fade(@button-invert-hover,25%);
+    }
+    &:active,
+    &.is-selected {
+        border-color: @bc-transparent;
+        background-color: fade(@button-invert-hover,50%);
+    }
+
+    //  Re-color loading animation
+    &.is-loading:before {
+        border-color: @button-border-loading-white;
+    }
+
+    &.dt-btn__outlined {
+        border-color: fade(@button-invert,50%);
+        background-color: fade(@button-invert,0%);
+        color: @button-invert;
+
+        &:hover {
+            border-color: fade(@button-invert,70%);
+            background-color: fade(@button-invert-hover,15%);
+        }
+
+        &:active,
+        &.is-selected {
+            border-color: fade(@button-invert-hover,90%);
+            background-color: fade(@button-invert-hover,25%);
+        }
+        &[disabled] {
+            .disabled-input-style();
+        }
+    }
+
+    &.dt-btn__primary {
+        color: @button-font-color;
+        background-color: @white;
+
+        &:hover {
+            background-color: @button-invert-hover;
+        }
+        &:focus {
+            box-shadow: 0 0 0 @sp4 fade(mix(@white, @button-background-color, 50%),50%);
+        }
+        &:active,
+        &.is-selected {
+            border-color: darken(@button-invert-hover,5%);
+            background-color: fade(@button-invert-hover,90%);
+            box-shadow: inset 0 0 @sp8 0 fade(@button-invert-hover,30%);
+        }
+        &[disabled] {
+            .disabled-input-style();
+        }
+
+        //  Re-color loading animation
+        &.is-loading:before {
+            border-color: @button-border-loading;
+        }
+    }
+}
+
+//  $$  BRAND BUTTONS
+//  ----------------------------------------------------------------------------
+//  --  GOOGLE
+.dt-btn__google {
+    .brand-buttons(@button-brand-google);
+}
+//
+//  --  OFFICE 365
+.dt-btn__o365 {
+    .brand-buttons(@button-brand-o365);
+}
+//
+//  --  LINKEDIN
+.dt-btn__linkedin {
+    .brand-buttons(@button-brand-linkedin);
+}
+
+
+//  ============================================================================
+//  $   ALTERNATE BUTTON TYPES
+//  ============================================================================
+//  $$  LOADING BUTTON
+//  ----------------------------------------------------------------------------
+.dt-btn.is-loading {
+    //  Disable clicking while the loader is in place
+    pointer-events: none;
+
+    //  Hide anything that was there before
+    .dt-btn--icon,
+    .dt-btn--label {
+        opacity: 0;
+        transition: opacity 50ms @transition-cubic-inOut;
+    }
+
+    //  Show the loading animation
+    &:before {
+        content: "";
+        position: absolute;
+        top: calc(~"50% - @{sp8}");
+        left: calc(~"50% - @{sp8}");
+
+        width: @sp16;
+        height: @sp16;
+        border-radius: @br-circle;
+        border-width: @bw2;
+        border-style: solid;
+        border-color: @button-border-loading;
+        border-left-color: transparent !important;
+
+        animation: dt-loading-circle .9s infinite linear;
+    }
+}
+
+//  $$  CIRCLE BUTTON
+//  ----------------------------------------------------------------------------
+.dt-btn-circle {
+    .flex__center;
+    color: @fc-medium;
+    padding: @sp12 - @sp1;
+    border-radius: @br-circle;
+    background-color: fade(@button-muted,0%);
+    transition: all 150ms @transition-cubic-inOut;
+
+    //  Reset all the margins
+    .dt-btn--icon {
+        margin: unset;
+    }
+    //  If there's a label, hide it
+    .dt-btn--label {
+        .d-none;
+    }
+
+    //  States
+    &:hover {
+        background-color: fade(@button-muted-hover,7.5%);
+        color: @fc-dark;
+    }
+    &:focus {
+        box-shadow: 0 0 0 @sp4 fade(@button-muted-hover,25%);
+    }
+    &:active,
+    &.is-selected {
+        border-color: fade(@button-muted,50%);
+        background-color: fade(@button-muted,10%);
+        box-shadow: inset 0 0 @sp8 0 fade(@button-muted,30%);
+    }
+
+    &.is-loading:before {
+        border-color: @button-muted-hover;
+    }
+
+    //  ========================================================================
+    //  $$   VISUAL STYLES
+    //  ========================================================================
+    //  --   OUTLINED
+    //  ------------------------------------------------------------------------
+    &.dt-btn__outlined {
+        border-color: @button-muted;
+        color: @fc-medium;
+
+        &:hover {
+            border-color: @button-muted-hover;
+            color: @fc-dark;
+        }
+        &:active,
+        &.is-selected {
+            border-color: fade(@button-muted,50%);
+            background-color: fade(@button-muted,10%);
+            box-shadow: inset 0 0 @sp8 0 fade(@button-muted,30%);
+        }
+    }
+
+    //  --  DANGER
+    //  ------------------------------------------------------------------------
+    &.dt-btn__danger-hover {
+        .btn-danger-clear-states();
+        color: @fc-medium;
+
+        &:hover {
+            color: @button-danger;
+        }
+        &:focus,
+        &:active,
+        &.is-selected {
+            color: @button-danger-hover;
+        }
+    }
+
+    //  --  INVERTED
+    //  ------------------------------------------------------------------------
+    &.dt-btn__inverted {
+         &:hover {
+            background-color: fade(@white,10%);
+            color: @fc-white;
+        }
+        &:active,
+        &.is-selected {
+            border-color: fade(@slate,15%);
+            background-color: fade(@button-invert-hover,35%);
+            box-shadow: inset 0 0 @sp8 0 fade(@slate,35%);
+        }
+    }
+
+    //  ========================================================================
+    //  $$   SIZES
+    //  ========================================================================
+    //  --   Extra Small
+    //  ------------------------------------------------------------------------
+    &.dt-btn__xs {
+        padding: @sp6 - @sp1;     // Minus out 1px for the border
+    }
+    &.dt-btn__sm {
+        padding: @sp8;
+    }
+    &.dt-btn__lg {
+        padding: @sp12 + @sp1;
+    }
+    &.dt-btn__xl {
+        padding: @sp16 - @sp1;    // Minus out 1px for the border
+    }
+}
+
+
+//  ============================================================================
+//  $$  SIZES
+//  ----------------------------------------------------------------------------
+.dt-btn__xs { .input-button-xs(); }
+.dt-btn__sm { .input-button-sm(); }
+.dt-btn__lg {
+    .input-button-lg();
+    padding: (@sp12 + @sp1) (@sp16 + @sp2);
+}
+.dt-btn__xl {
+    .input-button-xl();
+    padding: (@sp16 - @sp1) (@sp24 - @sp2);
+}

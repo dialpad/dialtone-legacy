@@ -1,0 +1,23 @@
+#build-class(@prefix, @rules, @start-index, @values) when (@start-index <= length(@values)) {
+    @val: extract(@values, @start-index);
+
+    & when (isnumber(@val)) {
+        @unitless: unit(@val);
+        & when (@unitless < 0) {
+            @abs: abs(@unitless);
+            @class-name: ~"@{prefix}@{abs}";
+            @{class-name} { @rules(); .template(@val); }
+        }
+        & when (@unitless >= 0) {
+            @class-name: ~"@{prefix}@{unitless}";
+            @{class-name} { @rules(); .template(@val); }
+        }
+    }
+
+    & when not (isnumber(@val)) {
+        @class-name: ~"@{prefix}-@{val}";
+        @{class-name} { @rules(); .template(@val); }
+    }
+
+    #build-class(@prefix, @rules, @start-index + 1, @values);
+}
