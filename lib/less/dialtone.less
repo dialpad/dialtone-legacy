@@ -12,21 +12,22 @@
 @import "dialtone-reset";
 @import "dialtone-variables";
 
-//  --  UTILITY CLASSES
-@import "classes/utilities/flex";
-@import "classes/utilities/margin";
-@import "classes/utilities/padding";
-@import "classes/utilities/directions";
-@import "classes/utilities/layout";
-@import "classes/utilities/borders";
-@import "classes/utilities/typography";
-@import "classes/utilities/visual-styles";
-
 //  --  COMPONENT CLASSES
 @import "classes/components/buttons";
 @import "classes/components/inputs";
 @import "classes/components/list-groups";
 @import "classes/components/tables";
+
+//  --  UTILITY CLASSES
+@import "classes/utilities/margin";
+@import "classes/utilities/padding";
+@import "classes/utilities/directions";
+@import "classes/utilities/layout";
+@import "classes/utilities/flex";
+@import "classes/utilities/grid";
+@import "classes/utilities/borders";
+@import "classes/utilities/typography";
+@import "classes/utilities/visual-styles";
 
 
 //  ============================================================================
@@ -47,4 +48,12 @@ html {
     *:after {
         box-sizing: border-box;
     }
+
+    //  Font size made 10px to make rem values easier to calculate
+    font-size: 10px;
+}
+
+body {
+    //  We don't 10px to be the default size though, so set it to the desired 16px size;
+    font-size: @base-font-size;
 }
