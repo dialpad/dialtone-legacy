@@ -4,12 +4,10 @@ var preset = require ('postcss-preset-env');
 var precess = require('precss');
 var cssnano = require('cssnano');
 var rename = require('gulp-rename');
-var normalize = require('postcss-normalize');
 var gutil = require('gulp-util');
 var sass = require('gulp-sass');
 var browsersync = require('browser-sync').create();
 var sorting = require('postcss-sorting');
-var sass = require('gulp-sass');
 var config = require('../config').css;
 var runSequence = require('run-sequence');
 
