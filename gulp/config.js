@@ -1,7 +1,7 @@
 var src = './docs';
 var dev = src + '/_site';
 var build = 'build';
-var source = './lib';
+var source = '/lib';
 var assets = src + '/assets';
 
 module.exports = {

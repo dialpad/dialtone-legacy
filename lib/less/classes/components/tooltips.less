@@ -1,0 +1,245 @@
+//
+//  DIALTONE
+//  COMPONENTS: BUTTONS
+//
+//  These are button classes for Dialpad's design system Dialtone.
+//  For further documentation of these and other classes,
+//  visit https://dialpad.design/components/buttons
+//
+//  TABLE OF CONTENTS
+//  • VARIABLES
+//  • BASE STYLE
+//  • ALTERNATE STYLES
+//  • ARROW DIRECTIONS
+//    - BOTTOM CENTER
+//    - LEFT CENTER
+//
+//  ============================================================================
+//  $   TOKENS
+//  ----------------------------------------------------------------------------
+@tooltip-bg:              fade(@slate,97%);
+@tooltip-fc:              @ash;
+@tooltip-bg__inverted:    fade(@ash,97%);
+@tooltip-fc__inverted:    @fc-medium;
+
+//  ============================================================================
+//  $   MIXINS
+//  ============================================================================
+//  --  If the button doesn't have a dt-btn class, you will need to re-apply the
+//      hover state within your CSS. This hover mixin allows you to easily do so.
+//  ----------------------------------------------------------------------------
+.tooltip-hover() {
+    transform: translate(0,0);
+    opacity: 1;
+    visibility: visible;
+    transition:
+        visibility 0s 0s,
+        transform 200ms @transition-cubic-inOut 10ms,
+        opacity 200ms @transition-cubic-inOut 10ms;
+}
+
+//  ============================================================================
+//  $   BASE STYLE
+//  ----------------------------------------------------------------------------
+.dt-tooltip {
+    position: absolute;
+    padding: @sp12;
+    width: 100%;
+    max-width: @fixed-size-2;
+    z-index: @z-tooltip;
+
+    border-radius: @br-sm;
+    background-color: @tooltip-bg;
+    color: @tooltip-fc;
+    font-size: @text-xs;
+    line-height: @lh-md;
+
+    opacity: 0;
+    visibility: hidden;
+    transition:
+        visibility 0s 200ms,
+        transform 200ms @transition-cubic-inOut 0s,
+        opacity 200ms @transition-cubic-inOut 0s;
+
+    &:before {
+        content: "";
+        position: absolute;
+        border-width: @sp6;
+        border-color: transparent;
+        border-style: solid;
+    }
+
+    //  For now all tooltips are shown in conjunction with a button,
+    //  so show the tooltip on a button hover.
+    &.is-visible,
+    .dt-btn:hover & {
+        .tooltip-hover();
+    }
+}
+
+
+//  ============================================================================
+//  $   ALTERNATE STYLES
+//  ============================================================================
+//  $$  INVERTED (WHITE BACKGROUND)
+//  ----------------------------------------------------------------------------
+.dt-tooltip__inverted {
+    background-color: @tooltip-bg__inverted;
+    color: @tooltip-fc__inverted;
+
+    //  $$  ARROW DIRECTION UPDATES
+    //  ========================================================================
+    //  --  TOP
+    //  ------------------------------------------------------------------------
+    &.dt-tooltip__tl:before,
+    &.dt-tooltip__tc:before,
+    &.dt-tooltip__tr:before {
+        border-bottom-color: @tooltip-bg__inverted;
+    }
+
+    //  --  RIGHT
+    //  ------------------------------------------------------------------------
+    &.dt-tooltip__rt:before,
+    &.dt-tooltip__rc:before,
+    &.dt-tooltip__rb:before {
+        border-left-color: @tooltip-bg__inverted;
+    }
+
+    //  --  BOTTOM
+    //  ------------------------------------------------------------------------
+    &.dt-tooltip__bl:before,
+    &.dt-tooltip__bc:before,
+    &.dt-tooltip__br:before {
+        border-top-color: @tooltip-bg__inverted;
+    }
+
+    //  --  LEFT
+    //  ------------------------------------------------------------------------
+    &.dt-tooltip__lt:before,
+    &.dt-tooltip__lc:before,
+    &.dt-tooltip__lb:before {
+        border-right-color: @tooltip-bg__inverted;
+    }
+}
+
+//  ============================================================================
+//  $   ARROW DIRECTIONS
+//  ============================================================================
+//  $$  TOP
+//  ----------------------------------------------------------------------------
+.dt-tooltip__tl,
+.dt-tooltip__tc,
+.dt-tooltip__tr {
+    top: calc(~"100% + @{sp12}");
+    transform: translateY(@sp16);
+
+    &:before {
+        top: -@sp6;
+        border-top-width: 0;
+        border-bottom-color: @tooltip-bg;
+    }
+}
+
+//  $$  BOTTOM
+//  ----------------------------------------------------------------------------
+.dt-tooltip__bl,
+.dt-tooltip__bc,
+.dt-tooltip__br {
+    bottom: calc(~"100% + @{sp12}");
+    transform: translateY(-@sp16);
+
+    &:before {
+        bottom: -@sp6;
+        border-bottom-width: 0;
+        border-top-color: @tooltip-bg;
+    }
+}
+
+//  --  TOP & BOTTOM LEFT
+.dt-tooltip__tl,
+.dt-tooltip__bl {
+    left: -@sp1;
+
+    &:before {
+        left: @sp8;
+    }
+}
+
+//  --  TOP & BOTTOM CENTER
+.dt-tooltip__tc,
+.dt-tooltip__bc {
+    &:before {
+        left: 50%;
+        margin-left: -@sp6;
+    }
+}
+
+//  --  TOP & BOTTOM RIGHT
+.dt-tooltip__tr,
+.dt-tooltip__br {
+    right: -@sp1;
+
+    &:before {
+        right: @sp8;
+    }
+}
+
+
+//  $$  RIGHT
+//  ----------------------------------------------------------------------------
+.dt-tooltip__rt,
+.dt-tooltip__rc,
+.dt-tooltip__rb {
+    right: calc(~"100% + @{sp12}");
+    transform: translateX(-@sp16);
+
+    &:before {
+        right: -@sp6;
+        border-right-width: 0;
+        border-left-color: @tooltip-bg;
+    }
+}
+
+//  $$  LEFT
+//  ----------------------------------------------------------------------------
+.dt-tooltip__lt,
+.dt-tooltip__lc,
+.dt-tooltip__lb {
+    left: calc(~"100% + @{sp12}");
+    transform: translateX(@sp16);
+
+    &:before {
+        left: -@sp6;
+        border-left-width: 0;
+        border-right-color: @tooltip-bg;
+    }
+}
+
+//  --  RIGHT & LEFT TOP
+.dt-tooltip__rt,
+.dt-tooltip__lt {
+    top: -@sp1;
+
+    &:before {
+        top: @sp8;
+    }
+}
+
+//  --  RIGHT & LEFT CENTER
+.dt-tooltip__rc,
+.dt-tooltip__lc {
+    &:before {
+        top: 50%;
+        margin-top: -@sp6;
+    }
+}
+
+//  --  RIGHT & LEFT BOTTOM
+.dt-tooltip__rb,
+.dt-tooltip__lb {
+    bottom: -@sp1;
+
+    &:before {
+        bottom: @sp8;
+    }
+}
