@@ -1514,6 +1514,94 @@ legend.dt-label {
 .dt-table__striped tr:nth-child(even) {
   background-color: #eaebee;
 }
+.dt-toast {
+  position: relative;
+  z-index: 500;
+  width: 100%;
+  max-width: 33.2rem;
+  margin: 0.6rem 0;
+  padding: 1.2rem 0.8rem 0.8rem;
+  border: 0.1rem solid #E3E5E8;
+  border-radius: 0.4rem;
+  background-color: #FFF;
+  box-shadow: 0 0.2rem 0.4rem 0 rgba(20, 23, 33, 0.15);
+  color: #292C33;
+  font-size: 1.4rem;
+  line-height: 1.125;
+}
+.dt-toast:before {
+  content: "";
+  position: absolute;
+  top: -0.1rem;
+  right: -0.1rem;
+  left: -0.1rem;
+  height: 0.6rem;
+  border-radius: 0.4rem 0.4rem 0 0;
+}
+.dt-toast .dt-toast--content {
+  display: flex;
+  align-items: center;
+}
+.dt-toast .dt-toast--icon {
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  margin-right: 0.4rem;
+  border-radius: 50%;
+  color: #FFF;
+}
+.dt-toast .dt-toast--icon .dt-svg {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+.dt-toast .dt-toast--meta {
+  margin-bottom: 0.4rem;
+  color: #6C6E75;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 1.1rem;
+}
+.dt-toast .dt-toast--message {
+  margin-left: 0.4rem;
+  font-size: 1.2rem;
+}
+.dt-toast__viewing:before,
+.dt-toast__viewing .dt-toast--icon {
+  background-color: #00CAC6;
+}
+.dt-toast__chat:before,
+.dt-toast__chat .dt-toast--icon {
+  background-color: #203476;
+}
+.dt-toast__success:before,
+.dt-toast__success .dt-toast--icon {
+  background-color: #22CE80;
+}
+.dt-toast__error:before,
+.dt-toast__error .dt-toast--icon {
+  background-color: #DF0742;
+}
+.dt-toast__info:before,
+.dt-toast__info .dt-toast--icon {
+  background-color: #5078EE;
+}
+.dt-toast-wrapper {
+  position: absolute;
+  top: 3.2rem;
+  left: 3.2rem;
+}
+.dt-toast-wrapper .dt-toast:first-of-type {
+  margin-top: 0;
+}
+.dt-toast-wrapper .dt-toast:last-of-type {
+  margin-bottom: 0;
+}
+.dt-toast-wrapper .dt-toast:first-of-type:last-of-type {
+  margin: 0;
+}
 .m0 {
   margin: 0;
 }
@@ -5274,6 +5362,9 @@ html *:after {
 }
 body {
   font-size: 1.6rem;
+}
+.dt-svg {
+  fill: currentColor;
 }
 .highlight {
   background-color: #F4F4F4;

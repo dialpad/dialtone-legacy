@@ -1,0 +1,71 @@
+---
+layout: page
+title: Toast
+description: Toast notices, sometimes called snackbars, are non-disruptive messages that appear in the top left corner of the user interface. They contain at-a-glance information about action outcomes, sometimes paired with alternate actions.
+---
+
+<section class="dds-docs--section">
+    <h2 class="dds-docs--header">Styles</h2>
+    <p class="dds-docs--copy">There is no default toast style. You must pair one of the following styles with the base <code class="dds-docs--code">.dt-toast</code> class.</p>
+    <p class="dds-docs--copy">It is important to note that there are different areas within a toast message. Each toast message has a content area, icon area, and message area. These messages are loaded within an overall wrapper, which we use to position the toast messages.</p>
+    <div class="dtd-example">
+{% highlight html linenos %}
+<div class="dt-toast-wrapper">
+    <div class="dt-toast" aria-hidden="true">
+        <div class="dt-toast--content" aria-describedby="notice-message">
+            <div class="dt-toast--icon">…</div>
+            <div class="dt-toast--message" aria-label="notice-message">
+                <div class="dt-toast--meta">…</div>
+                <div class="dt-toast--copy">…</div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endhighlight %}
+        <div class="dtd-example--preview ps-relative hmn3">
+            <div class="dt-toast-wrapper">
+                <div class="dt-toast dt-toast__chat" aria-hidden="true">
+                    <div class="dt-toast--content" aria-describedby="notice-message">
+                        <div class="dt-toast--icon">{% svg "{{ site.svg }}/chat.svg" %}</div>
+                        <div class="dt-toast--message" aria-label="notice-message">
+                            <div class="dt-toast--meta">Shane Holmes, 12:26pm</div>
+                            <div class="dt-toast--copy">Hey everyone, how was your weekend?</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dt-toast dt-toast__viewing" aria-hidden="true">
+                    <div class="dt-toast--content" aria-describedby="notice-message">
+                        <div class="dt-toast--icon">{% svg "{{ site.svg }}/visibility.svg" %}</div>
+                        <div class="dt-toast--message" aria-label="notice-message">
+                            <div class="dt-toast--copy"><strong>Annie Wu</strong> is viewing this call.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dt-toast dt-toast__info" aria-hidden="true">
+                    <div class="dt-toast--content" aria-describedby="notice-message">
+                        <div class="dt-toast--icon">{% svg "{{ site.svg }}/info.svg" %}</div>
+                        <div class="dt-toast--message" aria-label="notice-message">
+                            <div class="dt-toast--copy">Voice Intelligence has been turned on for this call.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dt-toast dt-toast__error" aria-hidden="true">
+                    <div class="dt-toast--content" aria-describedby="notice-message">
+                        <div class="dt-toast--icon">{% svg "{{ site.svg }}/error.svg" %}</div>
+                        <div class="dt-toast--message" aria-label="notice-message">
+                            <div class="dt-toast--copy">We were unable to send invites. Please try again.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dt-toast dt-toast__success" aria-hidden="true">
+                    <div class="dt-toast--content" aria-describedby="notice-message">
+                        <div class="dt-toast--icon">{% svg "{{ site.svg }}/checkmark.svg" %}</div>
+                        <div class="dt-toast--message" aria-label="notice-message">
+                            <div class="dt-toast--copy">Invites sent to <strong>Fred Schmidt</strong>, <strong>Freda Clarkson</strong>, and <strong>1</strong> other.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
