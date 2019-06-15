@@ -45,13 +45,13 @@ description: Buttons are UI elements which allow users to take actions throughou
             {% for item in site.data.buttons.sizes %}
                 <tr>
                     <th scope="row" class="text-sm">{{ item.name }}</th>
-                    <td class="ff-mono text-xxs">{% if item.class != nil %}.{{ item.class }}{% else %}<em class="fc-gray text-sm">N/A</em>{% endif %}</td>
+                    <td class="dt-ff-mono dt-text-xxs">{% if item.class != nil %}.{{ item.class }}{% else %}<em class="dt-fc-gray dt-text-sm">N/A</em>{% endif %}</td>
                     <td>{{ item.size }}</td>
                     <td>
-                        <div class="flex ai-center mnx2">
+                        <div class="dt-flex dt-ai-center dt-mnx2">
                             {% assign examples = "normal, circle, icon" | split: ", "%}
                             {% for e in examples %}
-                                <button class="flex--cell mx2 dt-btn{% if e == 'circle' %} dt-btn-circle{% elsif e == 'normal' %} dt-btn__primary{% endif %}{% if item.class != nil %} {{ item.class }}{% endif %}" type="button" aria-pressed="false">
+                                <button class="dt-flex--cell dt-mx2 dt-btn{% if e == 'circle' %} dt-btn-circle{% elsif e == 'normal' %} dt-btn__primary{% endif %}{% if item.class != nil %} {{ item.class }}{% endif %}" type="button" aria-pressed="false">
                                     {% if e != 'normal' %}
                                         <span class="dt-btn--icon">
                                             {% if e == 'circle' %}

@@ -29,16 +29,15 @@
 //  $   BASE INPUT STYLE MIXIN
 //  ----------------------------------------------------------------------------
 .input-base-style() {
-    .ps-relative;
-    .flex-inline;
+    position: relative;
+    display: inline-flex;
     flex: 1 0%;
     padding: @input-padding;
     min-width: 0;
-    .w100;
+    width: 100%;
     outline: none;
 
-    .ba;
-    border-color: @input-border;
+    border: 1px solid @input-border;
     border-radius: @input-button-radius;
     box-shadow:
         inset 0 0 @sp2 0 fade(@ash-darker,20%),
@@ -59,7 +58,7 @@
     }
     //  --  Remove input EDGE additions
     &::-ms-clear {
-        .d-none;
+        display: none;
     }
 
     &:focus {

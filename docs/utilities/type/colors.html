@@ -9,7 +9,7 @@ description: Dialtone provides a limited set of text color classes. These colors
 
     {% for item in site.data.type.font-colors %}
         {% if item.color == "Gray" %}
-            <div class="flex fd-column ff-mono text-sm br-md">
+            <div class="dt-flex dt-fd-column ff-mono text-sm br-md">
                 {% assign stop = item.stops %}
                 {% for s in stop %}
                 <div class="flex--cell p16 bx bb {% if forloop.first %}bt btr-md{% elsif forloop.last %}bbr-md{% endif %} {% if s.bg == 'bgc-slate' %}bc-slate-lightest {% else %}bc-ash-dark {% endif %} {{ s.bg }} {{ s.class }}">
@@ -38,7 +38,7 @@ description: Dialtone provides a limited set of text color classes. These colors
             {% if item.color != "Gray" %}
                 <div class="flex--cell w50 p8">
                     <h2 class="dds-docs--header">{{ item.color }}</h2>
-                    <div class="flex fd-column ff-mono text-sm br-md">
+                    <div class="dt-flex dt-fd-column ff-mono text-sm br-md">
                         {% assign stop = item.stops %}
                         {% for s in stop %}
                             <div class="flex--cell p16 {% if forloop.first %}btr-md{% elsif forloop.last %}bbr-md{% endif %} {{ s.bg }} {{ s.class }}">

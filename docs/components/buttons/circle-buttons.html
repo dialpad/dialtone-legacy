@@ -18,15 +18,15 @@
             <tbody>
                 {% for item in site.data.buttons.circle %}
                     <tr>
-                        <th scope="row" class="text-sm {% if item.name == 'inverted' %}bgc-slate fc-white blr-lg{% endif %}" style="{% if item.name == 'inverted' %}padding-left: 0.75rem;{% elsif item.name == 'danger-primary' %} border-bottom-width: 0;{% endif %}">
-                            <span class="d-block my4">{{ item.title }}</span>
-                            <span class="d-block fw-normal text-xs my4">{{ item.description }}</span>
+                        <th scope="row" class="dt-text-sm {% if item.name == 'inverted' %}dt-bgc-slate dt-fc-white dt-blr-lg{% endif %}" style="{% if item.name == 'inverted' %}padding-left: 0.75rem;{% elsif item.name == 'danger-primary' %} border-bottom-width: 0;{% endif %}">
+                            <span class="dt-d-block dt-my4">{{ item.title }}</span>
+                            <span class="dt-d-block dt-fw-normal dt-text-xs dt-my4">{{ item.description }}</span>
                         </th>
-                        <td class="ff-mono text-xxs {% if item.name == 'inverted' %}bgc-slate fc-white{% endif %}" style="{% if item.name == 'danger-primary' %}border-bottom-width: 0;{% endif %}">
+                        <td class="dt-ff-mono dt-text-xxs {% if item.name == 'inverted' %}bgc-slate fc-white{% endif %}" style="{% if item.name == 'danger-primary' %}border-bottom-width: 0;{% endif %}">
                             .dt-btn {% if item.class != nil %}.{{ item.class }}{% endif %}
                         </td>
-                        <td {% if item.name == 'inverted' %}class="bgc-slate fc-white brr-lg"{% endif %} {% if item.name == 'danger-primary' %} style="border-bottom-width: 0;"{% endif %}>
-                            <div class="flex jc-end mn4">
+                        <td {% if item.name == 'inverted' %}class="dt-bgc-slate dt-fc-white dt-brr-lg"{% endif %} {% if item.name == 'danger-primary' %} style="border-bottom-width: 0;"{% endif %}>
+                            <div class="dt-flex dt-jc-end dt-mn4">
                                 {% assign buttons = "default, loading, disabled" | split: ", " %}
                                 {% for btn in buttons %}
                                     <button class="mx4 dt-btn dt-btn-circle {{ item.class }} {% if btn == 'loading' %}is-loading{% endif %}" type="button" aria-pressed="false" {% if btn == 'disabled' %}disabled{% endif %}>
