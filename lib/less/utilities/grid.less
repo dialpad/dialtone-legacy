@@ -83,7 +83,15 @@ each(@spacing-units, { .dt-gcg@{key} { grid-column-gap: @value; } });
 //  ============================================================================
 //  $   GRID COLUMN SPANS
 //  ----------------------------------------------------------------------------
-each(@grid-columns, { .dt-gcs-span@{value} { grid-column-start: span var(--gcs-span, @value); } });
+#build-grid-columns(@num, @count: 1) when (@count =< @num) {
+    .dt-gcs-span@{count} {
+        grid-column-start: span var(--gcs-span, @count);
+    }
+
+    #build-grid-columns(@num, @count + 1);
+}
+@grid-columns: 12;
+#build-grid-columns(@grid-columns);
 
 
 //  ============================================================================

@@ -4,24 +4,24 @@ title: Colors
 description: Dialpad uses specific color choices to help communicate user interface functionality, states, and actions within the product. These colors have been selected for on-screen use.
 ---
 <section class="dds-docs--section">
-    <div class="flex fw-wrap mn8">
+    <div class="dt-flex dt-fw-wrap dt-mn8">
         {% for color in site.data.color-stops %}
-        <div class="flex--cell {% if color.color == 'Gray' %}w100{% else %}w50{% endif %} p8">
+        <div class="dt-flex--cell {% if color.color == 'Gray' %}dt-w100{% else %}dt-w50{% endif %} dt-p8">
             <h2 class="dds-docs--header">{{ color.color }}</h2>
-            <div class="dt-flex dt-fd-column dt-ff-mono dt-text-xs br-md">
+            <div class="dt-dt-flex dt-fd-column dt-ff-mono dt-text-xs dt-br-md">
                 {% for stop in color.stops %}
-                    <div class="flex--cell p16 {% if stop.primary %} py32{% endif %} bx bc-{{ stop.stop }}{% if forloop.first %} bt btr-md{% elsif color.color != 'Gray' and forloop.last %} bb bbr-md{% endif %} bgc-{{ stop.stop }} {{ stop.copy }}">
-                        <div class="flex">
-                            <div class="flex--cell"><strong class="ff-mono">${{ stop.stop }}</strong></div>
-                            <div class="flex--cell ml-auto">{{ stop.hex }}</div>
+                    <div class="dt-flex--cell dt-p16 {% if stop.primary %} dt-py32{% endif %} dt-bx dt-bc-{{ stop.stop }}{% if forloop.first %} dt-bt dt-btr-md{% elsif color.color != 'Gray' and forloop.last %} dt-bb dt-bbr-md{% endif %} dt-bgc-{{ stop.stop }} {{ stop.copy }}">
+                        <div class="dt-flex">
+                            <div class="dt-flex--cell"><strong class="dt-ff-mono">${{ stop.stop }}</strong></div>
+                            <div class="dt-flex--cell dt-ml-auto">{{ stop.hex }}</div>
                         </div>
                     </div>
                 {% endfor %}
                 {% if color.color == 'Gray' %}
-                    <div class="flex--cell p16 bx bb bc-ash-dark bbr-md bgc-white fc-dark">
-                        <div class="flex">
-                            <div class="flex--cell"><strong class="ff-mono">$white</strong></div>
-                            <div class="flex--cell ml-auto">#FFFFFF</div>
+                    <div class="dt-flex--cell dt-p16 dt-bx dt-bb dt-bc-ash-dark dt-bbr-md dt-bgc-white dt-fc-dark">
+                        <div class="dt-flex">
+                            <div class="dt-flex--cell"><strong class="dt-ff-mono">$white</strong></div>
+                            <div class="dt-flex--cell dt-ml-auto">#FFFFFF</div>
                         </div>
                     </div>
                 {% endif %}

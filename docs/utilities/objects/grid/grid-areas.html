@@ -1,6 +1,6 @@
 <h3 class="dds-docs--subheader">Grid Areas</h3>
-<p class="dds-docs--copy">As you create a grid, you can specify where items should be placed in the grid. This can be done two ways. First, you can assign names to grid cells. This is done using the <span class="dds-docs--code">grid-template-areas</span> CSS property. For example, we can create a grid with a sidebar and content areas by using the <span class="dds-docs--code">.gta-value</span> and passing the following CSS variable: <span class="dds-docs--code">--grid-template-area: 'sidebar content';</span>. To assign child elements to these template areas, use the <span class="dds-docs--code">.ga-value</span> class (<span class="dds-docs--code">grid-area</span>).</p>
-<p class="dds-docs--copy">Sometimes though you might not be able to assign grid areas. In these cases you can still declare how an element should lay out in the grid by telling it what line number it should start, stop, or span. For example, to have an element start on the 2 cell and span 2 cells, we would use the <span class="dds-docs--code">.ga-value</span> class, passing the following CSS var: <span class="dds-docs--code">--grid-area: 2 / span 2;</span>.</p>
+<p class="dds-docs--copy">As you create a grid, you can specify where items should be placed in the grid. This can be done two ways. First, you can assign names to grid cells. This is done using the <span class="dds-docs--code">grid-template-areas</span> CSS property. For example, we can create a grid with a sidebar and content areas by using the <span class="dds-docs--code">.dt-gta-value</span> and passing the following CSS variable: <span class="dds-docs--code">--grid-template-area: 'sidebar content';</span>. To assign child elements to these template areas, use the <span class="dds-docs--code">.dt-ga-value</span> class (<span class="dds-docs--code">grid-area</span>).</p>
+<p class="dds-docs--copy">Sometimes though you might not be able to assign grid areas. In these cases you can still declare how an element should lay out in the grid by telling it what line number it should start, stop, or span. For example, to have an element start on the 2 cell and span 2 cells, we would use the <span class="dds-docs--code">.dt-ga-value</span> class, passing the following CSS var: <span class="dds-docs--code">--grid-area: 2 / span 2;</span>.</p>
 <h4 class="dds-docs--subtitle">Classes</h4>
 <table class="dt-table">
     <thead>
@@ -13,9 +13,9 @@
     <tbody>
         {% for item in site.data.objects.grid-areas %}
         <tr>
-            <th scope="row" class="ff-mono text-xxs">{{ item.class }}</th>
-            <td class="ff-mono text-xxs">{{ item.output }}</td>
-            <td class="text-sm">{{ item.description }}</td>
+            <th scope="row" class="dt-ff-mono dt-text-xxs">{{ item.class }}</th>
+            <td class="dt-ff-mono dt-text-xxs">{{ item.output }}</td>
+            <td class="dt-text-sm">{{ item.description }}</td>
         </tr>
         {% endfor %}
     </tbody>
@@ -23,40 +23,40 @@
 <div class="dtd-example">
 {% highlight html linenos %}
 <!-- Named areas -->
-<div class="grid gta-value">
-    <div class="ga-value" style="--grid-area: header;">…</div>
-    <div class="ga-value" style="--grid-area: content;">…</div>
-    <div class="ga-value" style="--grid-area: footer;">…</div>
+<div class="dt-grid dt-gta-value">
+    <div class="dt-ga-value" style="--grid-area: header;">…</div>
+    <div class="dt-ga-value" style="--grid-area: content;">…</div>
+    <div class="dt-ga-value" style="--grid-area: footer;">…</div>
 </div>
 
 <!-- Numbers & Spans -->
-<div class="grid gta-value" style="--grid-temp: 'a a' 10rem / auto;">
+<div class="dt-grid dt-gta-value" style="--grid-temp: 'a a' 10rem / auto;">
     <div>…</div>
-    <div class="ga-value" style="--grid-area: 2 / span 2">…</div>
+    <div class="dt-ga-value" style="--grid-area: 2 / span 2">…</div>
     <div>…</div>
 </div>
 
 <!-- No template areas -->
-<div class="grid gta-none">…</div>
+<div class="dt-grid dt-gta-none">…</div>
 {% endhighlight %}
-    <div class="dtd-example--preview grid gg16">
-        <strong class="mbn8 text-xs ff-mono">grid-template-areas: (default value);</strong>
-        <div class="grid gg8 gta-value">
-            <div class="dtd-cell flex flex__center ga-value" style="--grid-area: header;">[Header]</div>
-            <div class="dtd-cell flex flex__center ga-value" style="--grid-area: content;">[Content]</div>
-            <div class="dtd-cell flex flex__center ga-value" style="--grid-area: footer;">[Footer]</div>
+    <div class="dtd-example--preview dt-grid dt-gg16">
+        <strong class="dt-mbn8 dt-text-xs dt-ff-mono">grid-template-areas: (default value);</strong>
+        <div class="dt-grid dt-gg8 dt-gta-value">
+            <div class="dtd-cell dt-flex dt-flex__center dt-ga-value" style="--grid-area: header;">[Header]</div>
+            <div class="dtd-cell dt-flex dt-flex__center dt-ga-value" style="--grid-area: content;">[Content]</div>
+            <div class="dtd-cell dt-flex dt-flex__center dt-ga-value" style="--grid-area: footer;">[Footer]</div>
         </div>
-        <strong class="mbn8 text-xs ff-mono">grid-template-areas: (inline style);</strong>
-        <div class="grid gg8 gta-value" style="--grid-temp: 'a a' 10rem / auto;">
-            <div class="dtd-cell flex flex__center">A short column.</div>
-            <div class="dtd-cell flex flex__center ga-value" style="--grid-area: 2 / span 2">A longer column with copy.</div>
-            <div class="dtd-cell flex flex__center">Bye.</div>
+        <strong class="dt-mbn8 dt-text-xs dt-ff-mono">grid-template-areas: (inline style);</strong>
+        <div class="dt-grid dt-gg8 dt-gta-value" style="--grid-temp: 'a a' 10rem / auto;">
+            <div class="dtd-cell dt-flex dt-flex__center">A short column.</div>
+            <div class="dtd-cell dt-flex dt-flex__center dt-ga-value" style="--grid-area: 2 / span 2">A longer column with copy.</div>
+            <div class="dtd-cell dt-flex dt-flex__center">Bye.</div>
         </div>
-        <strong class="mbn8 text-xs ff-mono">grid-template-areas: none;</strong>
-        <div class="grid gg8 gta-none">
-            <div class="dtd-cell flex flex__center">A short column.</div>
-            <div class="dtd-cell flex flex__center">A longer column with copy.</div>
-            <div class="dtd-cell flex flex__center">Bye.</div>
+        <strong class="dt-mbn8 dt-text-xs dt-ff-mono">grid-template-areas: none;</strong>
+        <div class="dt-grid dt-gg8 dt-gta-none">
+            <div class="dtd-cell dt-flex dt-flex__center">A short column.</div>
+            <div class="dtd-cell dt-flex dt-flex__center">A longer column with copy.</div>
+            <div class="dtd-cell dt-flex dt-flex__center">Bye.</div>
         </div>
     </div>
 </div>
