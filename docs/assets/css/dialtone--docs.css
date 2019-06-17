@@ -1527,6 +1527,94 @@ legend.d-label {
 .d-table__striped tr:nth-child(even) {
   background-color: #eaebee;
 }
+.d-toast {
+  position: relative;
+  z-index: 500;
+  width: 100%;
+  max-width: 33.2rem;
+  margin: 0.6rem 0;
+  padding: 1.2rem 0.8rem 0.8rem;
+  border: 0.1rem solid #E3E5E8;
+  border-radius: 0.4rem;
+  background-color: #FFF;
+  box-shadow: 0 0.2rem 0.4rem 0 rgba(20, 23, 33, 0.15);
+  color: #292C33;
+  font-size: 1.4rem;
+  line-height: 1.125;
+}
+.d-toast:before {
+  content: "";
+  position: absolute;
+  top: -0.1rem;
+  right: -0.1rem;
+  left: -0.1rem;
+  height: 0.6rem;
+  border-radius: 0.4rem 0.4rem 0 0;
+}
+.d-toast .d-toast--content {
+  display: flex;
+  align-items: center;
+}
+.d-toast .d-toast--icon {
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  margin-right: 0.4rem;
+  border-radius: 50%;
+  color: #FFF;
+}
+.d-toast .d-toast--icon .d-svg {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+.d-toast .d-toast--meta {
+  margin-bottom: 0.4rem;
+  color: #6C6E75;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 1.1rem;
+}
+.d-toast .d-toast--message {
+  margin-left: 0.4rem;
+  font-size: 1.2rem;
+}
+.d-toast__viewing:before,
+.d-toast__viewing .d-toast--icon {
+  background-color: #00CAC6;
+}
+.d-toast__chat:before,
+.d-toast__chat .d-toast--icon {
+  background-color: #203476;
+}
+.d-toast__success:before,
+.d-toast__success .d-toast--icon {
+  background-color: #22CE80;
+}
+.d-toast__error:before,
+.d-toast__error .d-toast--icon {
+  background-color: #DF0742;
+}
+.d-toast__info:before,
+.d-toast__info .d-toast--icon {
+  background-color: #5078EE;
+}
+.d-toast-wrapper {
+  position: absolute;
+  top: 3.2rem;
+  left: 3.2rem;
+}
+.d-toast-wrapper .d-toast:first-of-type {
+  margin-top: 0;
+}
+.d-toast-wrapper .d-toast:last-of-type {
+  margin-bottom: 0;
+}
+.d-toast-wrapper .d-toast:first-of-type:last-of-type {
+  margin: 0;
+}
 .d-tooltip {
   visibility: hidden;
   position: absolute;
@@ -5498,6 +5586,9 @@ html *:after {
 }
 body {
   font-size: 1.6rem;
+}
+.d-svg {
+  fill: currentColor;
 }
 .highlight {
   background-color: #F4F4F4;
