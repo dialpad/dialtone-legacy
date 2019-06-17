@@ -46,23 +46,23 @@
 //  ============================================================================
 //  $   GRID UTILITY CLASSES
 //  ----------------------------------------------------------------------------
-.dt-grid                       { display: grid; }
-.dt-grid-inline                { display: inline-grid; }
+.d-grid                       { display: grid; }
+.d-grid-inline                { display: inline-grid; }
 
 //  ============================================================================
 //  $   GRID LAYOUTS
 //  ----------------------------------------------------------------------------
-.dt-gl__col {
+.d-gl__col {
     grid-template-columns: var(--grid-template-col);
     grid-auto-columns: var(--grid-auto-col);
 }
 
-.dt-gl__sidebar-content {
+.d-gl__sidebar-content {
     grid-template-areas: "sidebar content";
     grid-template-columns: [sidebar-start] var(--grid-sidebar-col) [sidebar-end content-start] var(--grid-content-col) [content-end];
 }
 
-.dt-gl__header-content {
+.d-gl__header-content {
     grid-template-areas: "header"
                          "content";
     grid-template-rows: [header-start] var(--grid-header-row) [header-end content-start] var(--grid-content-row) [content-end];
@@ -76,15 +76,15 @@
 //      Defines the size of grid "gaps" (lines). We generate a gap for
 //      each defined spacing unit.
 //  ----------------------------------------------------------------------------
-each(@spacing-units, { .dt-gg@{key}  { grid-gap: @value; } });
-each(@spacing-units, { .dt-grg@{key} { grid-row-gap: @value; } });
-each(@spacing-units, { .dt-gcg@{key} { grid-column-gap: @value; } });
+each(@spacing-units, { .d-gg@{key}  { grid-gap: @value; } });
+each(@spacing-units, { .d-grg@{key} { grid-row-gap: @value; } });
+each(@spacing-units, { .d-gcg@{key} { grid-column-gap: @value; } });
 
 //  ============================================================================
 //  $   GRID COLUMN SPANS
 //  ----------------------------------------------------------------------------
 #build-grid-columns(@num, @count: 1) when (@count =< @num) {
-    .dt-gcs-span@{count} {
+    .d-gcs-span@{count} {
         grid-column-start: span var(--gcs-span, @count);
     }
 
@@ -101,116 +101,116 @@ each(@spacing-units, { .dt-gcg@{key} { grid-column-gap: @value; } });
 //      Defines the size of (explicit) grid tracks.
 //  ----------------------------------------------------------------------------
 //  Areas
-.dt-gta-value                { grid-template-areas: var(--grid-template-area); }
-.dt-gta-none                 { grid-template-areas: none; }
-.dt-gta-unset                { grid-template-areas: unset; }
+.d-gta-value                { grid-template-areas: var(--grid-template-area); }
+.d-gta-none                 { grid-template-areas: none; }
+.d-gta-unset                { grid-template-areas: unset; }
 
 //  Columns
-.dt-gtc-auto                 { grid-template-columns: auto; }
-.dt-gtc-value                { grid-template-columns: var(--grid-template-col); }
-.dt-gtc-unset                { grid-template-columns: unset; }
+.d-gtc-auto                 { grid-template-columns: auto; }
+.d-gtc-value                { grid-template-columns: var(--grid-template-col); }
+.d-gtc-unset                { grid-template-columns: unset; }
 
 //  Rows
-.dt-gtr-auto                 { grid-template-rows: auto; }
-.dt-gtr-value                { grid-template-rows: var(--grid-template-row); }
-.dt-gtr-unset                { grid-template-rows: unset; }
+.d-gtr-auto                 { grid-template-rows: auto; }
+.d-gtr-value                { grid-template-rows: var(--grid-template-row); }
+.d-gtr-unset                { grid-template-rows: unset; }
 
 //  --  AUTO COLUMNS / ROWS
 //      Defines size of any auto-generated (implicit) grid tracks.
 //  ----------------------------------------------------------------------------
-.dt-gac-auto                 { grid-auto-columns: auto; }
-.dt-gac-value                { grid-auto-columns: var(--grid-auto-col); }
-.dt-gac-unset                { grid-auto-columns: unset; }
+.d-gac-auto                 { grid-auto-columns: auto; }
+.d-gac-value                { grid-auto-columns: var(--grid-auto-col); }
+.d-gac-unset                { grid-auto-columns: unset; }
 
-.dt-gar-auto                 { grid-auto-rows: auto; }
-.dt-gar-value                { grid-auto-rows: var(--grid-auto-row); }
-.dt-gar-unset                { grid-auto-rows: unset; }
+.d-gar-auto                 { grid-auto-rows: auto; }
+.d-gar-value                { grid-auto-rows: var(--grid-auto-row); }
+.d-gar-unset                { grid-auto-rows: unset; }
 
 //  --  AUTO FLOW
 //      States how the auto grid placement should work
 //  ----------------------------------------------------------------------------
-.dt-gaf-column               { grid-auto-flow: column; }
-.dt-gaf-dense                { grid-auto-flow: dense; }
-.dt-gaf-row                  { grid-auto-flow: row; }
+.d-gaf-column               { grid-auto-flow: column; }
+.d-gaf-dense                { grid-auto-flow: dense; }
+.d-gaf-row                  { grid-auto-flow: row; }
 
 //  --  JUSTIFY ITEMS
 //      Aligns grid items along the row (inline) axis. This applies to
 //      all grid items within a container.
 //  ----------------------------------------------------------------------------
-.dt-gji-auto                 { justify-items: auto; }
-.dt-gji-end                  { justify-items: end; }
-.dt-gji-center               { justify-items: center; }
-.dt-gji-start                { justify-items: start; }
-.dt-gji-stretch              { justify-items: stretch; }
-.dt-gji-unset                { justify-items: unset; }
+.d-gji-auto                 { justify-items: auto; }
+.d-gji-end                  { justify-items: end; }
+.d-gji-center               { justify-items: center; }
+.d-gji-start                { justify-items: start; }
+.d-gji-stretch              { justify-items: stretch; }
+.d-gji-unset                { justify-items: unset; }
 
 //  --  ALIGN ITEMS
 //      Aligns grid items along the column (block) axis. This applies to
 //      all grid items within a container.
 //  ----------------------------------------------------------------------------
-.dt-gai-normal               { align-items: normal; }
-.dt-gai-end                  { align-items: end; }
-.dt-gai-center               { align-items: center; }
-.dt-gai-start                { align-items: start; }
-.dt-gai-stretch              { align-items: stretch; }
-.dt-gai-unset                { align-items: unset; }
+.d-gai-normal               { align-items: normal; }
+.d-gai-end                  { align-items: end; }
+.d-gai-center               { align-items: center; }
+.d-gai-start                { align-items: start; }
+.d-gai-stretch              { align-items: stretch; }
+.d-gai-unset                { align-items: unset; }
 
 //  --  PLACE ITEMS
 //      Aligns grid items along the row (inline) AND column (block) axis.
 //      This applies to all grid items within a container.
 //  ----------------------------------------------------------------------------
-.dt-gpi-auto                 { place-items: auto; }
-.dt-gpi-end                  { place-items: end; }
-.dt-gpi-center               { place-items: center; }
-.dt-gpi-start                { place-items: start; }
-.dt-gpi-stretch              { place-items: stretch; }
-.dt-gpi-value                { place-items: var(--gpi, auto); }
-.dt-gpi-unset                { place-items: unset; }
+.d-gpi-auto                 { place-items: auto; }
+.d-gpi-end                  { place-items: end; }
+.d-gpi-center               { place-items: center; }
+.d-gpi-start                { place-items: start; }
+.d-gpi-stretch              { place-items: stretch; }
+.d-gpi-value                { place-items: var(--gpi, auto); }
+.d-gpi-unset                { place-items: unset; }
 
 //  --  JUSTIFY CONTENT
 //      Aligns the entire grid along the row (inline) axis within
 //      another grid container. This applies to all grid items within
 //      a container.
 //  ----------------------------------------------------------------------------
-.dt-gjc-normal               { justify-content: normal; }
-.dt-gjc-end                  { justify-content: end; }
-.dt-gjc-center               { justify-content: center; }
-.dt-gjc-space-around         { justify-content: space-around; }
-.dt-gjc-space-between        { justify-content: space-between; }
-.dt-gjc-space-evenly         { justify-content: space-evenly; }
-.dt-gjc-start                { justify-content: start; }
-.dt-gjc-stretch              { justify-content: stretch; }
-.dt-gjc-unset                { justify-content: unset; }
+.d-gjc-normal               { justify-content: normal; }
+.d-gjc-end                  { justify-content: end; }
+.d-gjc-center               { justify-content: center; }
+.d-gjc-space-around         { justify-content: space-around; }
+.d-gjc-space-between        { justify-content: space-between; }
+.d-gjc-space-evenly         { justify-content: space-evenly; }
+.d-gjc-start                { justify-content: start; }
+.d-gjc-stretch              { justify-content: stretch; }
+.d-gjc-unset                { justify-content: unset; }
 
 //  --  ALIGN CONTENT
 //      Aligns the entire grid along the column (block) axis within
 //      another grid container. This applies to all grid items within
 //      a container.
 //  ----------------------------------------------------------------------------
-.dt-gal-normal               { align-content: normal; }
-.dt-gal-end                  { align-content: end; }
-.dt-gal-center               { align-content: center; }
-.dt-gal-space-around         { align-content: space-around; }
-.dt-gal-space-between        { align-content: space-between; }
-.dt-gal-space-evenly         { align-content: space-evenly; }
-.dt-gal-start                { align-content: start; }
-.dt-gal-stretch              { align-content: stretch; }
-.dt-gal-unset                { align-content: unset; }
+.d-gal-normal               { align-content: normal; }
+.d-gal-end                  { align-content: end; }
+.d-gal-center               { align-content: center; }
+.d-gal-space-around         { align-content: space-around; }
+.d-gal-space-between        { align-content: space-between; }
+.d-gal-space-evenly         { align-content: space-evenly; }
+.d-gal-start                { align-content: start; }
+.d-gal-stretch              { align-content: stretch; }
+.d-gal-unset                { align-content: unset; }
 
 //  --  PLACE CONTENT
 //      Aligns the entire grid along the row (inline) AND column (block)
 //      axis within another grid container. This applies to all grid
 //      items within a container.
 //  ----------------------------------------------------------------------------
-.dt-gpc-end                  { place-content: end; }
-.dt-gpc-center               { place-content: center; }
-.dt-gpc-space-around         { place-content: space-around; }
-.dt-gpc-space-between        { place-content: space-between; }
-.dt-gpc-space-evenly         { place-content: space-evenly; }
-.dt-gpc-start                { place-content: start; }
-.dt-gpc-stretch              { place-content: stretch; }
-.dt-gpc-value                { place-content: var(--gpc, stretch); }
-.dt-gpc-unset                { place-content: unset; }
+.d-gpc-end                  { place-content: end; }
+.d-gpc-center               { place-content: center; }
+.d-gpc-space-around         { place-content: space-around; }
+.d-gpc-space-between        { place-content: space-between; }
+.d-gpc-space-evenly         { place-content: space-evenly; }
+.d-gpc-start                { place-content: start; }
+.d-gpc-stretch              { place-content: stretch; }
+.d-gpc-value                { place-content: var(--gpc, stretch); }
+.d-gpc-unset                { place-content: unset; }
 
 
 //  ============================================================================
@@ -221,56 +221,56 @@ each(@spacing-units, { .dt-gcg@{key} { grid-column-gap: @value; } });
 //      to specific grid lines
 //  ----------------------------------------------------------------------------
 //  Grid Column
-.dt-gc-value                 { grid-column: var(--grid-col); }
-.dt-gc-unset                 { grid-column: unset; }
+.d-gc-value                 { grid-column: var(--grid-col); }
+.d-gc-unset                 { grid-column: unset; }
 
-.dt-gcs-value                { grid-column-start: var(--grid-col-start); }
-.dt-gcs-unset                { grid-column-start: unset; }
+.d-gcs-value                { grid-column-start: var(--grid-col-start); }
+.d-gcs-unset                { grid-column-start: unset; }
 
-.dt-gce-value                { grid-column-end: var(--grid-col-end); }
-.dt-gce-unset                { grid-column-end: unset; }
+.d-gce-value                { grid-column-end: var(--grid-col-end); }
+.d-gce-unset                { grid-column-end: unset; }
 
 //  Grid Row
-.dt-gr-value                 { grid-row: var(--grid-row); }
-.dt-gr-unset                 { grid-row: unset; }
+.d-gr-value                 { grid-row: var(--grid-row); }
+.d-gr-unset                 { grid-row: unset; }
 
-.dt-grs-value                { grid-row-start: var(--grid-row-start); }
-.dt-grs-unset                { grid-row-start: unset; }
+.d-grs-value                { grid-row-start: var(--grid-row-start); }
+.d-grs-unset                { grid-row-start: unset; }
 
-.dt-gre-value                { grid-row-end: var(--grid-row-end); }
-.dt-gre-unset                { grid-row-end: unset; }
+.d-gre-value                { grid-row-end: var(--grid-row-end); }
+.d-gre-unset                { grid-row-end: unset; }
 
 //  Grid Column & Row
-.dt-ga-value                 { grid-area: var(--grid-area); }
-.dt-ga-unset                 { grid-area: unset; }
+.d-ga-value                 { grid-area: var(--grid-area); }
+.d-ga-unset                 { grid-area: unset; }
 
 //  --  JUSTIFY SELF
 //      Aligns a grid items inside a cell along the row (inline) axis.
 //  ----------------------------------------------------------------------------
-.dt-gjs-auto                 { justify-self: auto; }
-.dt-gjs-end                  { justify-self: end; }
-.dt-gjs-center               { justify-self: center; }
-.dt-gjs-start                { justify-self: start; }
-.dt-gjs-stretch              { justify-self: stretch; }
-.dt-gjs-unset                { justify-self: unset; }
+.d-gjs-auto                 { justify-self: auto; }
+.d-gjs-end                  { justify-self: end; }
+.d-gjs-center               { justify-self: center; }
+.d-gjs-start                { justify-self: start; }
+.d-gjs-stretch              { justify-self: stretch; }
+.d-gjs-unset                { justify-self: unset; }
 
 //  --  ALIGN SELF
 //      Aligns a grid items inside a cell along the column (block) axis.
 //  ----------------------------------------------------------------------------
-.dt-gas-auto                 { align-self: auto; }
-.dt-gas-end                  { align-self: end; }
-.dt-gas-center               { align-self: center; }
-.dt-gas-start                { align-self: start; }
-.dt-gas-stretch              { align-self: stretch; }
-.dt-gas-unset                { align-self: unset; }
+.d-gas-auto                 { align-self: auto; }
+.d-gas-end                  { align-self: end; }
+.d-gas-center               { align-self: center; }
+.d-gas-start                { align-self: start; }
+.d-gas-stretch              { align-self: stretch; }
+.d-gas-unset                { align-self: unset; }
 
 //  --  PLACE SELF
 //      Sets both align-self and justify-self properties in single declaration.
 //  ----------------------------------------------------------------------------
-.dt-gps-auto                 { place-self: auto; }
-.dt-gps-end                  { place-self: end; }
-.dt-gps-center               { place-self: center; }
-.dt-gps-start                { place-self: start; }
-.dt-gps-stretch              { place-self: stretch; }
-.dt-gps-value                { place-self: var(--gps, stretch); }
-.dt-gps-unset                { place-self: unset; }
+.d-gps-auto                 { place-self: auto; }
+.d-gps-end                  { place-self: end; }
+.d-gps-center               { place-self: center; }
+.d-gps-start                { place-self: start; }
+.d-gps-stretch              { place-self: stretch; }
+.d-gps-value                { place-self: var(--gps, stretch); }
+.d-gps-unset                { place-self: unset; }

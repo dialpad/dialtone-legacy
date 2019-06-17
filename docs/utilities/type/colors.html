@@ -9,20 +9,20 @@ description: Dialtone provides a limited set of text color classes. These colors
 
     {% for item in site.data.type.font-colors %}
         {% if item.color == "Gray" %}
-            <div class="dt-flex dt-fd-column dt-ff-mono dt-text-sm dt-br-md">
+            <div class="d-flex d-fd-column d-ff-mono d-text-sm d-br-md">
                 {% assign stop = item.stops %}
                 {% for s in stop %}
-                <div class="dt-flex--cell dt-p16 dt-bx dt-bb {% if forloop.first %}dt-bt dt-btr-md{% elsif forloop.last %}dt-bbr-md{% endif %} {% if s.bg == 'dt-bgc-slate' %}dt-bc-slate-lightest {% else %}dt-bc-ash-dark {% endif %} {{ s.bg }} {{ s.class }}">
-                    <div class="dt-flex dt-ai-center">
-                        <div class="dt-flex--cell">.{{ s.class }}</div>
-                        <div class="dt-flex--cell dt-ml-auto">
+                <div class="d-flex--cell d-p16 d-bx d-bb {% if forloop.first %}d-bt d-btr-md{% elsif forloop.last %}d-bbr-md{% endif %} {% if s.bg == 'd-bgc-slate' %}d-bc-slate-lightest {% else %}d-bc-ash-dark {% endif %} {{ s.bg }} {{ s.class }}">
+                    <div class="d-flex d-ai-center">
+                        <div class="d-flex--cell">.{{ s.class }}</div>
+                        <div class="d-flex--cell d-ml-auto">
                             {% if s.ratio > "07.00" %}
-                              <strong class="dt-py4 dt-px6 dt-br-md dt-lh-xs dt-headline-xs dt-fc-green-text dt-ba dt-bc-transparent dt-bgc-green {% if s.bg == 'dt-bgc-green' %}dt-bc-green-dark{% endif %}">AAA</strong>
+                              <strong class="d-py4 d-px6 d-br-md d-lh-xs d-headline-xs d-fc-green-text d-ba d-bc-transparent d-bgc-green {% if s.bg == 'd-bgc-green' %}d-bc-green-dark{% endif %}">AAA</strong>
                             {% elsif s.ratio < "07.00" %}
-                              <strong class="dt-py4 dt-px6 dt-br-md dt-lh-xs dt-text-xxs dt-fc-yellow-text dt-bgc-yellow">AA</strong>
+                              <strong class="d-py4 d-px6 d-br-md d-lh-xs d-text-xxs d-fc-yellow-text d-bgc-yellow">AA</strong>
                             {% endif %}
                         </div>
-                        <div class="dt-flex--cell dt-text-xs dt-px6" style="min-width: 3rem">{{ s.ratio }}</div>
+                        <div class="d-flex--cell d-text-xs d-px6" style="min-width: 3rem">{{ s.ratio }}</div>
                     </div>
                 </div>
                 {% endfor %}
@@ -33,25 +33,25 @@ description: Dialtone provides a limited set of text color classes. These colors
 <section class="dds-docs--section">
     <h2 class="dds-docs--header">Colors</h2>
     <p class="dds-docs--copy">All text colors meet the minimum contrast ratio for WCAG 2.1 Level AA, which is 4.5:1.</p>
-    <div class="dt-flex dt-fw-wrap dt-mn8">
+    <div class="d-flex d-fw-wrap d-mn8">
         {% for item in site.data.type.font-colors %}
             {% if item.color != "Gray" %}
-                <div class="dt-flex--cell dt-w50 dt-p8">
+                <div class="d-flex--cell d-w50 d-p8">
                     <h2 class="dds-docs--header">{{ item.color }}</h2>
-                    <div class="dt-flex dt-fd-column dt-ff-mono dt-text-sm dt-br-md">
+                    <div class="d-flex d-fd-column d-ff-mono d-text-sm d-br-md">
                         {% assign stop = item.stops %}
                         {% for s in stop %}
-                            <div class="dt-flex--cell dt-p16 {% if forloop.first %}dt-btr-md{% elsif forloop.last %}dt-bbr-md{% endif %} {{ s.bg }} {{ s.class }}">
-                                <div class="dt-flex dt-ai-center">
-                                    <div class="dt-flex--cell">.{{ s.class }}</div>
-                                    <div class="dt-flex--cell dt-ml-auto">
+                            <div class="d-flex--cell d-p16 {% if forloop.first %}d-btr-md{% elsif forloop.last %}d-bbr-md{% endif %} {{ s.bg }} {{ s.class }}">
+                                <div class="d-flex d-ai-center">
+                                    <div class="d-flex--cell">.{{ s.class }}</div>
+                                    <div class="d-flex--cell d-ml-auto">
                                         {% if s.ratio > "07.00" %}
-                                          <strong class="dt-py4 dt-dt-px6 dt-br-md dt-lh-xs dt-headline-xs dt-fc-green-text dt-ba dt-bc-transparent dt-bgc-green {% if s.bg == 'dt-bgc-green' %}dt-bc-green-dark{% endif %}">AAA</strong>
+                                          <strong class="d-py4 d-d-px6 d-br-md d-lh-xs d-headline-xs d-fc-green-text d-ba d-bc-transparent d-bgc-green {% if s.bg == 'd-bgc-green' %}d-bc-green-dark{% endif %}">AAA</strong>
                                         {% elsif s.ratio < "07.00" %}
-                                          <strong class="dt-py4 dt-px6 dt-br-md dt-lh-xs dt-text-xxs dt-fc-yellow-text dt-bgc-yellow">AA</strong>
+                                          <strong class="d-py4 d-px6 d-br-md d-lh-xs d-text-xxs d-fc-yellow-text d-bgc-yellow">AA</strong>
                                         {% endif %}
                                     </div>
-                                    <div class="dt-flex--cell dt-text-xs dt-px6" style="min-width: 3rem">{{ s.ratio }}</div>
+                                    <div class="d-flex--cell d-text-xs d-px6" style="min-width: 3rem">{{ s.ratio }}</div>
                                 </div>
                             </div>
                         {% endfor %}

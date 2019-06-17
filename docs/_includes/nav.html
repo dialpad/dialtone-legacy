@@ -1,21 +1,21 @@
-<div class="dt-ps-relative dt-ga-value" style="--grid-area: sidebar;">
-    <div class="dt-ps-fixed dt-tb0 dt-l0 dt-of-y-scroll dt-of-x-hidden dt-w100" style="min-width: 12rem; max-width: 24rem;">
-        <div class="dt-p16 dt-pt32">
+<div class="d-ps-relative d-ga-value" style="--grid-area: sidebar;">
+    <div class="d-ps-fixed d-tb0 d-l0 d-of-y-scroll d-of-x-hidden d-w100" style="min-width: 12rem; max-width: 24rem;">
+        <div class="d-p16 d-pt32">
             <div class="dds-logo"><a href="{{ / | relative_url }}">{% include logo.html %}</a></div>
         </div>
 
-        <nav class="dds-app-nav dt-pb48">
+        <nav class="dds-app-nav d-pb48">
             {% for item in site.data.navigation %}
                 {% if item.sublinks %}
-                    <ul class="dt-list-group dt-my16" id="nav" role="navigation">
+                    <ul class="d-list-group d-my16" id="nav" role="navigation">
                         <li>
-                            <div class="dt-list-group__header">
+                            <div class="d-list-group__header">
                                 {{ item.title }}
                             </div>
-                            <ul class="dt-list-group">
+                            <ul class="d-list-group">
                                 {% for sublink in item.sublinks %}
                                     {% assign pageURL = page.url | remove_first:"/" | remove: ".html" %}
-                                    <li><a class="dt-list-group__link{% if pageURL == sublink.url %} dt-list-group__link-selected{% endif %}" href="{{ sublink.url | relative_url }}">{{ sublink.title }}</a></li>
+                                    <li><a class="d-list-group__link{% if pageURL == sublink.url %} d-list-group__link-selected{% endif %}" href="{{ sublink.url | relative_url }}">{{ sublink.title }}</a></li>
                                 {% endfor %}
                             </ul>
                         </li>

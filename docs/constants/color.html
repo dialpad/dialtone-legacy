@@ -4,24 +4,24 @@ title: Colors
 description: Dialpad uses specific color choices to help communicate user interface functionality, states, and actions within the product. These colors have been selected for on-screen use.
 ---
 <section class="dds-docs--section">
-    <div class="dt-flex dt-fw-wrap dt-mn8">
+    <div class="d-flex d-fw-wrap d-mn8">
         {% for color in site.data.color-stops %}
-        <div class="dt-flex--cell {% if color.color == 'Gray' %}dt-w100{% else %}dt-w50{% endif %} dt-p8">
+        <div class="d-flex--cell {% if color.color == 'Gray' %}d-w100{% else %}d-w50{% endif %} d-p8">
             <h2 class="dds-docs--header">{{ color.color }}</h2>
-            <div class="dt-dt-flex dt-fd-column dt-ff-mono dt-text-xs dt-br-md">
+            <div class="d-d-flex d-fd-column d-ff-mono d-text-xs d-br-md">
                 {% for stop in color.stops %}
-                    <div class="dt-flex--cell dt-p16 {% if stop.primary %} dt-py32{% endif %} dt-bx dt-bc-{{ stop.stop }}{% if forloop.first %} dt-bt dt-btr-md{% elsif color.color != 'Gray' and forloop.last %} dt-bb dt-bbr-md{% endif %} dt-bgc-{{ stop.stop }} {{ stop.copy }}">
-                        <div class="dt-flex">
-                            <div class="dt-flex--cell"><strong class="dt-ff-mono">${{ stop.stop }}</strong></div>
-                            <div class="dt-flex--cell dt-ml-auto">{{ stop.hex }}</div>
+                    <div class="d-flex--cell d-p16 {% if stop.primary %} d-py32{% endif %} d-bx d-bc-{{ stop.stop }}{% if forloop.first %} d-bt d-btr-md{% elsif color.color != 'Gray' and forloop.last %} d-bb d-bbr-md{% endif %} d-bgc-{{ stop.stop }} {{ stop.copy }}">
+                        <div class="d-flex">
+                            <div class="d-flex--cell"><strong class="d-ff-mono">${{ stop.stop }}</strong></div>
+                            <div class="d-flex--cell d-ml-auto">{{ stop.hex }}</div>
                         </div>
                     </div>
                 {% endfor %}
                 {% if color.color == 'Gray' %}
-                    <div class="dt-flex--cell dt-p16 dt-bx dt-bb dt-bc-ash-dark dt-bbr-md dt-bgc-white dt-fc-dark">
-                        <div class="dt-flex">
-                            <div class="dt-flex--cell"><strong class="dt-ff-mono">$white</strong></div>
-                            <div class="dt-flex--cell dt-ml-auto">#FFFFFF</div>
+                    <div class="d-flex--cell d-p16 d-bx d-bb d-bc-ash-dark d-bbr-md d-bgc-white d-fc-dark">
+                        <div class="d-flex">
+                            <div class="d-flex--cell"><strong class="d-ff-mono">$white</strong></div>
+                            <div class="d-flex--cell d-ml-auto">#FFFFFF</div>
                         </div>
                     </div>
                 {% endif %}

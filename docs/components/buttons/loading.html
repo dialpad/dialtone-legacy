@@ -2,31 +2,31 @@
 <p>If there is a delay between the user clicking a button and the action taking place, apply a loader to communicate that something is happening.</p>
 <div class="dtd-example">
 {% highlight html linenos %}
-<button class="dt-btn is-loading" type="button" aria-pressed="false">…</button>
+<button class="d-btn is-loading" type="button" aria-pressed="false">…</button>
 {% endhighlight %}
     <div class="dtd-example--preview">
-        <table class="dt-table dt-m0">
+        <table class="d-table d-m0">
             <thead>
                 <tr>
                     <th scope="col" width="15%">Name</th>
                     <th scope="col" width="25%">Class</th>
-                    <th scope="col" width="20%" class="dt-ta-center">Default</th>
-                    <th scope="col" width="20%" class="dt-ta-center">Outlined</th>
-                    <th scope="col" width="20%" class="dt-ta-center">Primary</th>
+                    <th scope="col" width="20%" class="d-ta-center">Default</th>
+                    <th scope="col" width="20%" class="d-ta-center">Outlined</th>
+                    <th scope="col" width="20%" class="d-ta-center">Primary</th>
                 </tr>
             </thead>
             <tbody>
                 {% for item in site.data.buttons.styles %}
                     {% assign types = item.classes %}
                     <tr>
-                        <th scope="row" class="dt-text-sm {% if item.style == 'Inverted' %}dt-bgc-slate dt-fc-white dt-blr-lg{% endif %}" {% if item.style == 'Inverted' %}style="padding-left: 0.75rem;"{% elsif item.style == 'Danger' %}style="border-bottom-width: 0;"{% endif %}>{{ item.style }}</th>
-                        <td class="dt-ff-mono dt-text-xxs {% if item.style == 'Inverted' %}dt-bgc-slate dt-fc-white dt-btw0{% endif %}" {% if item.style == 'Danger' %}style="border-bottom-width: 0;"{% endif %}>
-                            .dt-btn {% if item.class != nil %}.{{ item.class }}{% endif %} {% if class.class != nil %}.{{ class.class }}{% endif %}
+                        <th scope="row" class="d-text-sm {% if item.style == 'Inverted' %}d-bgc-slate d-fc-white d-blr-lg{% endif %}" {% if item.style == 'Inverted' %}style="padding-left: 0.75rem;"{% elsif item.style == 'Danger' %}style="border-bottom-width: 0;"{% endif %}>{{ item.style }}</th>
+                        <td class="d-ff-mono d-text-xxs {% if item.style == 'Inverted' %}d-bgc-slate d-fc-white d-btw0{% endif %}" {% if item.style == 'Danger' %}style="border-bottom-width: 0;"{% endif %}>
+                            .d-btn {% if item.class != nil %}.{{ item.class }}{% endif %} {% if class.class != nil %}.{{ class.class }}{% endif %}
                         </td>
                         {% for class in types %}
-                        <td class="dt-px4 dt-ta-center {% if item.style == 'Inverted' %}dt-bgc-slate dt-fc-white {% if forloop.last %}dt-brr-lg{% endif %}{% endif %}" {% if item.style == 'Danger' %}style="border-bottom-width: 0;"{% endif %}>
-                            <button class="dt-btn {{ item.class }} {{ class.class }} is-loading dt-w100 dt-ws-nowrap" type="button" aria-pressed="false">
-                                <span class="dt-btn--label">Place call</span>
+                        <td class="d-px4 d-ta-center {% if item.style == 'Inverted' %}d-bgc-slate d-fc-white {% if forloop.last %}d-brr-lg{% endif %}{% endif %}" {% if item.style == 'Danger' %}style="border-bottom-width: 0;"{% endif %}>
+                            <button class="d-btn {{ item.class }} {{ class.class }} is-loading d-w100 d-ws-nowrap" type="button" aria-pressed="false">
+                                <span class="d-btn--label">Place call</span>
                             </button>
                         </td>
                         {% endfor %}
