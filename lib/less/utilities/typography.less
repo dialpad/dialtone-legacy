@@ -1,0 +1,198 @@
+//
+//  DIALTONE
+//  UTILTIES: TYPOGRAPHY
+//
+//  These are utility typography classes for Dialpad's design system Dialtone.
+//  For further documentation of these and other classes,
+//  visit https://dialpad.design/utilties/typography
+//
+//  TABLE OF CONTENTS
+//  • Header resets
+//  • Font sizes
+//  • Font weight
+//  • Font styles
+//  • Text transform
+//  • Text alignment
+//  • Line height
+//
+//  ============================================================================
+//  $   FONT FACE
+//  ----------------------------------------------------------------------------
+each(@ff-weights, {
+    @font-face {
+        font-style: "normal";
+        font-weight: @key;
+        font-family: "MarkWeb";
+        src: url("@{font-path}@{value}.eot") format("eof"),
+             url("@{font-path}@{value}.eot?#iefix") format("embedded-opentype"),
+             url("@{font-path}@{value}.woff") format("woff");
+    };
+});
+
+//  ============================================================================
+//  $   FONT FAMILY
+//  ----------------------------------------------------------------------------
+.d-ff-mark            { font-family: @ff-mark; }
+.d-ff-sans            { font-family: @ff-sans; }
+.d-ff-mono            { font-family: @ff-mono; }
+.d-ff-inherit         { font-family: inherit; }
+.d-ff-unset           { font-family: unset; }
+
+//  ============================================================================
+//  $   FONT SIZES
+//  ----------------------------------------------------------------------------
+//  Reset margins
+h1, h2, h3, h4, h5, h6, p {
+    margin-top: 0;
+}
+
+//  $$  HEADLINES
+//  ----------------------------------------------------------------------------
+//  Correctly assign the font-face for HTML tags that are bold by default
+h1, h2, h3, h4, h5, h6,
+strong,
+table th {
+    font-weight: @fw-bold;
+}
+
+each(@headline-sizes, {
+    .d-headline-@{key} {
+        font-size: @value;
+        font-weight: @fw-bold;
+
+        & when (@key = xs) {
+            text-transform: @tt-uppercase;
+        }
+    }
+});
+
+//  $$  TEXT SIZES
+//  ----------------------------------------------------------------------------
+each(@text-sizes, {
+    .d-text-@{key} {
+        font-size: @value;
+    }
+});
+
+//  ============================================================================
+//  $   FONT STYLES
+//  ============================================================================
+//  $$  FONT WEIGHT
+//  ----------------------------------------------------------------------------
+each(@font-weight, {
+    .d-fw-@{key} {
+        font-weight: @value;
+    }
+});
+
+//  $$  FONT STYLES
+//  ----------------------------------------------------------------------------
+.d-ft-normal       { font-style: normal; }
+.d-ft-italic       { font-style: italic; }
+.d-ft-unset        { font-style: unset; }
+
+//  $$  TEXT TRANSFORM
+//  ----------------------------------------------------------------------------
+.d-tt-capitalize   { text-transform: capitalize; }
+.d-tt-lowercase    { text-transform: lowercase; }
+.d-tt-uppercase    { text-transform: uppercase; }
+.d-tt-none         { text-transform: none; }
+.d-tt-inherit      { text-transform: inherit; }
+.d-tt-unset        { text-transform: unset; }
+
+//  $$  TEXT DECORATION
+//  ----------------------------------------------------------------------------
+.d-td-underline    { text-decoration: underline; }
+.d-td-overline     { text-decoration: overline; }
+.d-td-line-through { text-decoration: line-through; }
+.d-td-initial      { text-decoration: initial; }
+.d-td-inherit      { text-decoration: inherit; }
+.d-td-unset        { text-decoration: unset; }
+.d-td-none         { text-decoration: none; }
+.d-tds-solid       { text-decoration-style: solid; }
+.d-tds-double      { text-decoration-style: double; }
+.d-tds-dotted      { text-decoration-style: dotted; }
+.d-tds-dashed      { text-decoration-style: dashed; }
+.d-tds-wavy        { text-decoration-style: wavy; }
+.d-tds-unset       { text-decoration-style: unset; }
+
+//  $$  TEXT ALIGN
+//  ----------------------------------------------------------------------------
+.d-ta-left         { text-align: left; }
+.d-ta-center       { text-align: center; }
+.d-ta-right        { text-align: right; }
+.d-ta-justify      { text-align: justify; }
+.d-ta-unset        { text-align: unset; }
+
+//  $$  TEXT COLOR
+//  ----------------------------------------------------------------------------
+each(@text-colors, {
+    .d-fc-@{key} {
+        color: @value;
+    }
+});
+
+
+//  ============================================================================
+//  $  LINE HEIGHTS
+//  ----------------------------------------------------------------------------
+each(@line-heights, {
+    .d-lh-@{key} {
+        line-height: @value;
+    }
+});
+
+
+//  ============================================================================
+//  $   WHITE SPACE
+//  ----------------------------------------------------------------------------
+.d-ws-normal       { white-space: normal; }
+.d-ws-nowrap       { white-space: nowrap; }
+.d-ws-pre          { white-space: pre; }
+.d-ws-pre-wrap     { white-space: pre-wrap; }
+.d-ws-pre-line     { white-space: pre-line; }
+.d-ws-unset        { white-space: unset; }
+
+
+//  ============================================================================
+//  $   OVERFLOW WRAP
+//  ----------------------------------------------------------------------------
+.d-ow-normal       { overflow-wrap: normal; }
+.d-ow-break-word   { overflow-wrap: break-word; }
+.d-ow-anywhere     { overflow-wrap: anywhere; }
+.d-ow-unset        { overflow-wrap: unset; }
+
+
+//  ============================================================================
+//  $   WORD BREAK
+//  ----------------------------------------------------------------------------
+.d-wb-normal       { word-break: normal; }
+.d-wb-break-all    { word-break: break-all; }
+.d-wb-break-word   { word-break: break-word; }
+.d-wb-keep-all     { word-break: keep-all; }
+.d-wb-unset        { word-break: unset; }
+.d-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+//  ============================================================================
+//  $   LISTS
+//  ----------------------------------------------------------------------------
+.d-ls-reset {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.d-lst-none        { list-style-type: none; }
+.d-lst-disc        { list-style-type: disc; }
+.d-lst-circle      { list-style-type: circle; }
+.d-lst-square      { list-style-type: square; }
+.d-lst-decimal     { list-style-type: decimal; }
+.d-lst-unset       { list-style-type: unset; }
+.d-lsp-inside      { list-style-position: inside; }
+.d-lsp-outside     { list-style-position: outside; }
+.d-lsp-unset       { list-style-position: unset; }
+.d-lsi-none        { list-style-image: none; }

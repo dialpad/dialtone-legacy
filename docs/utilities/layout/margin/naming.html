@@ -1,8 +1,8 @@
 <section class="dds-docs--section">
     <h2 class="dds-docs--header">Naming convention</h2>
-    <p class="dds-docs--copy">Margin classes are formed by combining a class, direction, negative designation (if desired), and the desired spacing unit. For example, if you want a 64px negative bottom margin, you would construct your class like so: <code class="dds-docs--code">.{class}{dir}{negative}{value}</code>, or <code class="dds-docs--code">.mbn64</code>.</p>
-    <div class="grid gg16" style="--grid-col-min-width: calc(50% - 12px);">
-        <table class="dt-table">
+    <p class="dds-docs--copy">Margin classes are formed by combining a class, direction, negative designation (if desired), and the desired spacing unit. For example, if you want a 64px negative bottom margin, you would construct your class like so: <code class="dds-docs--code">.d-{class}{dir}{negative}{value}</code>, or <code class="dds-docs--code">.d-mbn64</code>.</p>
+    <div class="d-grid d-gg16" style="--grid-col-min-width: calc(50% - 12px);">
+        <table class="d-table">
             <thead>
                 <tr>
                     <th scope="col" width="20%">Class</th>
@@ -14,14 +14,14 @@
                 {% assign dir = item.directions %}
                     {% for i in dir %}
                     <tr>
-                        <th scope="row" class="ff-mono text-xs">.{{ i.abbr }}</th>
+                        <th scope="row" class="d-ff-mono d-text-xs">.{{ i.abbr }}</th>
                         <td>{{ i.description }}</td>
                     </tr>
                     {% endfor %}
                 {% endfor %}
             </tbody>
         </table>
-        <table class="dt-table">
+        <table class="d-table">
             <thead>
                 <tr>
                     <th scope="col" width="20%">Space</th>
@@ -33,7 +33,7 @@
                 {% assign space = item.values %}
                     {% for i in space %}
                     <tr>
-                        <th scope="row" class="ff-mono text-xs">{{ i.value }}</th>
+                        <th scope="row" class="d-ff-mono d-text-xs">{{ i.value }}</th>
                         <td>{{ i.description }}</td>
                     </tr>
                     {% endfor %}

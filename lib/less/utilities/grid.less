@@ -1,0 +1,276 @@
+//
+//  DIALTONE
+//  UTILITIES: GRID
+//
+//  These are the CSS grid utility classes for Dialpad's design system Dialtone.
+//  For further documentation of these and other classes,
+//  visit https://dialpad.design/utilities/grid
+//
+//  TABLE OF CONTENTS
+//  • Container
+//  • Layouts
+//  • Areas
+//  • Spans
+//  • Gutters
+//
+//  ============================================================================
+//  $   GRID CSS VARIABLES
+//  ----------------------------------------------------------------------------
+:root {
+    //  Grid Layout Variables
+    --grid-sidebar-col:     minmax(19.2rem, 38.4rem);
+    --grid-content-col:     minmax(min-content, 128rem);
+    --grid-header-row:      minmax(12.8rem, min-content);
+    --grid-content-row:     minmax(51.2rem, max-content);
+
+    //  Grid Area
+    --grid-area:            col;
+    --grid-template-area:   "header" "content" "footer";
+
+    //  Grid Columns
+    --grid-col:             1;
+    --grid-col-start:       1;
+    --grid-col-end:         1;
+    --grid-col-num:         auto-fill;
+    --grid-template-col:    [full-start] repeat(var(--grid-col-num, 1), [col-start] minmax(25.6rem, auto) [col-end]) [full-end];
+    --grid-auto-col:        1fr;
+
+    //  Grid Rows
+    --grid-row:             1;
+    --grid-row-start:       1;
+    --grid-row-end:         1;
+    --grid-template-row:    repeat(auto-fit, [row-start] minmax(12.8rem, auto));
+    --grid-auto-row:        [row-start] minmax(25.6rem, max-content) [row-end];
+}
+
+//  ============================================================================
+//  $   GRID UTILITY CLASSES
+//  ----------------------------------------------------------------------------
+.d-grid                       { display: grid; }
+.d-grid-inline                { display: inline-grid; }
+
+//  ============================================================================
+//  $   GRID LAYOUTS
+//  ----------------------------------------------------------------------------
+.d-gl__col {
+    grid-template-columns: var(--grid-template-col);
+    grid-auto-columns: var(--grid-auto-col);
+}
+
+.d-gl__sidebar-content {
+    grid-template-areas: "sidebar content";
+    grid-template-columns: [sidebar-start] var(--grid-sidebar-col) [sidebar-end content-start] var(--grid-content-col) [content-end];
+}
+
+.d-gl__header-content {
+    grid-template-areas: "header"
+                         "content";
+    grid-template-rows: [header-start] var(--grid-header-row) [header-end content-start] var(--grid-content-row) [content-end];
+    grid-auto-rows: 1fr;
+    grid-auto-columns: minmax(min-content, auto);
+}
+
+//  ============================================================================
+//  $   GRID GAP
+//  ============================================================================
+//      Defines the size of grid "gaps" (lines). We generate a gap for
+//      each defined spacing unit.
+//  ----------------------------------------------------------------------------
+each(@spacing-units, { .d-gg@{key}  { grid-gap: @value; } });
+each(@spacing-units, { .d-grg@{key} { grid-row-gap: @value; } });
+each(@spacing-units, { .d-gcg@{key} { grid-column-gap: @value; } });
+
+//  ============================================================================
+//  $   GRID COLUMN SPANS
+//  ----------------------------------------------------------------------------
+#build-grid-columns(@num, @count: 1) when (@count =< @num) {
+    .d-gcs-span@{count} {
+        grid-column-start: span var(--gcs-span, @count);
+    }
+
+    #build-grid-columns(@num, @count + 1);
+}
+@grid-columns: 12;
+#build-grid-columns(@grid-columns);
+
+
+//  ============================================================================
+//  $   GRID PARENT PROPERTIES
+//  ============================================================================
+//  --  GRID TEMPLATE
+//      Defines the size of (explicit) grid tracks.
+//  ----------------------------------------------------------------------------
+//  Areas
+.d-gta-value                { grid-template-areas: var(--grid-template-area); }
+.d-gta-none                 { grid-template-areas: none; }
+.d-gta-unset                { grid-template-areas: unset; }
+
+//  Columns
+.d-gtc-auto                 { grid-template-columns: auto; }
+.d-gtc-value                { grid-template-columns: var(--grid-template-col); }
+.d-gtc-unset                { grid-template-columns: unset; }
+
+//  Rows
+.d-gtr-auto                 { grid-template-rows: auto; }
+.d-gtr-value                { grid-template-rows: var(--grid-template-row); }
+.d-gtr-unset                { grid-template-rows: unset; }
+
+//  --  AUTO COLUMNS / ROWS
+//      Defines size of any auto-generated (implicit) grid tracks.
+//  ----------------------------------------------------------------------------
+.d-gac-auto                 { grid-auto-columns: auto; }
+.d-gac-value                { grid-auto-columns: var(--grid-auto-col); }
+.d-gac-unset                { grid-auto-columns: unset; }
+
+.d-gar-auto                 { grid-auto-rows: auto; }
+.d-gar-value                { grid-auto-rows: var(--grid-auto-row); }
+.d-gar-unset                { grid-auto-rows: unset; }
+
+//  --  AUTO FLOW
+//      States how the auto grid placement should work
+//  ----------------------------------------------------------------------------
+.d-gaf-column               { grid-auto-flow: column; }
+.d-gaf-dense                { grid-auto-flow: dense; }
+.d-gaf-row                  { grid-auto-flow: row; }
+
+//  --  JUSTIFY ITEMS
+//      Aligns grid items along the row (inline) axis. This applies to
+//      all grid items within a container.
+//  ----------------------------------------------------------------------------
+.d-gji-auto                 { justify-items: auto; }
+.d-gji-end                  { justify-items: end; }
+.d-gji-center               { justify-items: center; }
+.d-gji-start                { justify-items: start; }
+.d-gji-stretch              { justify-items: stretch; }
+.d-gji-unset                { justify-items: unset; }
+
+//  --  ALIGN ITEMS
+//      Aligns grid items along the column (block) axis. This applies to
+//      all grid items within a container.
+//  ----------------------------------------------------------------------------
+.d-gai-normal               { align-items: normal; }
+.d-gai-end                  { align-items: end; }
+.d-gai-center               { align-items: center; }
+.d-gai-start                { align-items: start; }
+.d-gai-stretch              { align-items: stretch; }
+.d-gai-unset                { align-items: unset; }
+
+//  --  PLACE ITEMS
+//      Aligns grid items along the row (inline) AND column (block) axis.
+//      This applies to all grid items within a container.
+//  ----------------------------------------------------------------------------
+.d-gpi-auto                 { place-items: auto; }
+.d-gpi-end                  { place-items: end; }
+.d-gpi-center               { place-items: center; }
+.d-gpi-start                { place-items: start; }
+.d-gpi-stretch              { place-items: stretch; }
+.d-gpi-value                { place-items: var(--gpi, auto); }
+.d-gpi-unset                { place-items: unset; }
+
+//  --  JUSTIFY CONTENT
+//      Aligns the entire grid along the row (inline) axis within
+//      another grid container. This applies to all grid items within
+//      a container.
+//  ----------------------------------------------------------------------------
+.d-gjc-normal               { justify-content: normal; }
+.d-gjc-end                  { justify-content: end; }
+.d-gjc-center               { justify-content: center; }
+.d-gjc-space-around         { justify-content: space-around; }
+.d-gjc-space-between        { justify-content: space-between; }
+.d-gjc-space-evenly         { justify-content: space-evenly; }
+.d-gjc-start                { justify-content: start; }
+.d-gjc-stretch              { justify-content: stretch; }
+.d-gjc-unset                { justify-content: unset; }
+
+//  --  ALIGN CONTENT
+//      Aligns the entire grid along the column (block) axis within
+//      another grid container. This applies to all grid items within
+//      a container.
+//  ----------------------------------------------------------------------------
+.d-gal-normal               { align-content: normal; }
+.d-gal-end                  { align-content: end; }
+.d-gal-center               { align-content: center; }
+.d-gal-space-around         { align-content: space-around; }
+.d-gal-space-between        { align-content: space-between; }
+.d-gal-space-evenly         { align-content: space-evenly; }
+.d-gal-start                { align-content: start; }
+.d-gal-stretch              { align-content: stretch; }
+.d-gal-unset                { align-content: unset; }
+
+//  --  PLACE CONTENT
+//      Aligns the entire grid along the row (inline) AND column (block)
+//      axis within another grid container. This applies to all grid
+//      items within a container.
+//  ----------------------------------------------------------------------------
+.d-gpc-end                  { place-content: end; }
+.d-gpc-center               { place-content: center; }
+.d-gpc-space-around         { place-content: space-around; }
+.d-gpc-space-between        { place-content: space-between; }
+.d-gpc-space-evenly         { place-content: space-evenly; }
+.d-gpc-start                { place-content: start; }
+.d-gpc-stretch              { place-content: stretch; }
+.d-gpc-value                { place-content: var(--gpc, stretch); }
+.d-gpc-unset                { place-content: unset; }
+
+
+//  ============================================================================
+//  $$  GRID CHILD PROPERTIES
+//  ============================================================================
+//  --  GRID START / END
+//      Determine a grid item's location within the grid by referring
+//      to specific grid lines
+//  ----------------------------------------------------------------------------
+//  Grid Column
+.d-gc-value                 { grid-column: var(--grid-col); }
+.d-gc-unset                 { grid-column: unset; }
+
+.d-gcs-value                { grid-column-start: var(--grid-col-start); }
+.d-gcs-unset                { grid-column-start: unset; }
+
+.d-gce-value                { grid-column-end: var(--grid-col-end); }
+.d-gce-unset                { grid-column-end: unset; }
+
+//  Grid Row
+.d-gr-value                 { grid-row: var(--grid-row); }
+.d-gr-unset                 { grid-row: unset; }
+
+.d-grs-value                { grid-row-start: var(--grid-row-start); }
+.d-grs-unset                { grid-row-start: unset; }
+
+.d-gre-value                { grid-row-end: var(--grid-row-end); }
+.d-gre-unset                { grid-row-end: unset; }
+
+//  Grid Column & Row
+.d-ga-value                 { grid-area: var(--grid-area); }
+.d-ga-unset                 { grid-area: unset; }
+
+//  --  JUSTIFY SELF
+//      Aligns a grid items inside a cell along the row (inline) axis.
+//  ----------------------------------------------------------------------------
+.d-gjs-auto                 { justify-self: auto; }
+.d-gjs-end                  { justify-self: end; }
+.d-gjs-center               { justify-self: center; }
+.d-gjs-start                { justify-self: start; }
+.d-gjs-stretch              { justify-self: stretch; }
+.d-gjs-unset                { justify-self: unset; }
+
+//  --  ALIGN SELF
+//      Aligns a grid items inside a cell along the column (block) axis.
+//  ----------------------------------------------------------------------------
+.d-gas-auto                 { align-self: auto; }
+.d-gas-end                  { align-self: end; }
+.d-gas-center               { align-self: center; }
+.d-gas-start                { align-self: start; }
+.d-gas-stretch              { align-self: stretch; }
+.d-gas-unset                { align-self: unset; }
+
+//  --  PLACE SELF
+//      Sets both align-self and justify-self properties in single declaration.
+//  ----------------------------------------------------------------------------
+.d-gps-auto                 { place-self: auto; }
+.d-gps-end                  { place-self: end; }
+.d-gps-center               { place-self: center; }
+.d-gps-start                { place-self: start; }
+.d-gps-stretch              { place-self: stretch; }
+.d-gps-value                { place-self: var(--gps, stretch); }
+.d-gps-unset                { place-self: unset; }

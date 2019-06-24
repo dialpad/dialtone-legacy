@@ -5,24 +5,17 @@ var precess = require('precss');
 var cssnano = require('cssnano');
 var rename = require('gulp-rename');
 var gutil = require('gulp-util');
-var sass = require('gulp-sass');
+var less = require('gulp-less');
 var browsersync = require('browser-sync').create();
 var sorting = require('postcss-sorting');
 var config = require('../config').css;
 var runSequence = require('run-sequence');
 
-function onError(err) {
-    gutil.beep();
-    console.log(err);
-    this.emit('end');
-}
-
-
 gulp.task('lib-css', function() {
     browsersync.notify('Compiling Dialtone CSS...');
 
-    return gulp.src(config.scsslib)
-        .pipe(sass().on('error', sass.logError))
+    return gulp.src(config.lesslib)
+        .pipe(less())
         .pipe(postcss())
         .pipe(gulp.dest(config.csslib))
         .pipe(gulp.dest(config.cssdocs))
@@ -37,8 +30,8 @@ gulp.task('lib-css', function() {
 gulp.task('docs-css', function() {
     browsersync.notify('Compiling Dialtone Documentation CSS...');
 
-    return gulp.src(config.scssdocs)
-        .pipe(sass().on('error', sass.logError))
+    return gulp.src(config.lessdocs)
+        .pipe(less())
         .pipe(postcss())
         .pipe(gulp.dest(config.cssdocs))
         .pipe(postcss([

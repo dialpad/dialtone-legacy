@@ -1,0 +1,106 @@
+//
+//  DIALTONE
+//  COMPONENTS: BUTTONS
+//
+//  These are the base border definitions, which are used by classes or can be
+//  used within Vue components. For further documentation of these values,
+//  please visit https://dialpad.design/definitions/utilities/borders
+//
+//  TABLE OF CONTENTS
+//  • TOKENS
+//  • BASE STYLE
+//  • VISUAL STYLES
+//  • ALTERNATE STYLES
+//  • SIZES
+//
+//  ============================================================================
+//  $   TOKENS
+//  ----------------------------------------------------------------------------
+@button-primary:                @blue;
+@button-primary-hover:          darken(saturate(@button-primary,5%),5%);
+@button-danger:                 @red;
+@button-danger-hover:           darken(saturate(@button-danger,5%),5%);
+@button-invert:                 @white;
+@button-invert-hover:           @blue-lighter;
+@button-muted:                  @slate-lighter;
+@button-muted-hover:            @slate-light;
+
+@button-font-size:              @text-md;
+@button-font-color:             @blue-dark;
+@button-background-color:       @button-primary;
+@button-border-color:           @button-primary;
+@button-border-radius:          0.25em;
+@button-border-loading:         @button-border-color;
+@button-border-loading-white:   @white;
+@button-border-loading-danger:  @button-danger;
+@button-line-height:            @lh-xs;
+
+@button-padding:                (@sp12 - @sp1) (@sp16 - @sp1);     // Minus out 1px for the border
+
+@button-brand-google:           #4285F4;
+@button-brand-o365:             #EB3C01;
+@button-brand-linkedin:         #006087;
+
+
+//  ============================================================================
+//  $   MIXINS
+//  ----------------------------------------------------------------------------
+.disabled-input-style() {
+    border-color: @ash-dark;
+    background-color: @ash-dark;
+    color: @slate-lightest;
+}
+
+.btn-danger-clear-states() {
+    color: @button-danger;
+
+    &:hover {
+        color: @button-danger-hover;
+        background-color: fade(@button-danger-hover,5%);
+    }
+    &:focus {
+        box-shadow: 0 0 0 @sp4 fade(@button-danger,25%);
+    }
+    &:active,
+    &.is-selected {
+        border-color: fade(@button-danger,5%);
+        background-color: fade(@button-danger,10%);
+        box-shadow: inset 0 0 @sp8 0 fade(@button-danger,70%);
+    }
+}
+
+.brand-buttons(@color) {
+    display: flex;
+    color: @fc-white;
+    background-color: @color;
+
+    &:hover {
+        background-color: darken(saturate(@color,2.5%),5%);
+    }
+    &:focus {
+        box-shadow: 0 0 0 @sp4 fade(@color,25%);
+    }
+    &:active,
+    .is-selected {
+        background-color: darken(saturate(@color,5%),10%);
+        box-shadow: inset 0 0 @sp8 0 fade(darken(@color,10%),25%);
+    }
+
+    .d-btn--icon {
+        margin-top: -@sp8;
+        margin-right: @sp16;
+        margin-bottom: -@sp8;
+        margin-left: -@sp12;
+    }
+    .d-svg {
+        border-radius: @sp2;
+    }
+    .d-btn--icon,
+    .d-svg {
+        width: (@sp48 - @sp8);
+        height: (@sp48 - @sp8);
+    }
+    .d-btn--label {
+        flex: 1 auto;
+    }
+}

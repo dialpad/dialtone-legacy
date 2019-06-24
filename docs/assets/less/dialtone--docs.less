@@ -1,0 +1,194 @@
+@import "../../../lib/less/dialtone";
+@import "dialtone--syntax";
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    min-height: 100%;
+    background-color: @white;
+    color: @fc-dark;
+    font-family: @ff-mark;
+    line-height: @lh-lg;
+}
+
+//  --  LOGO
+.dds-logo-image {
+    width: auto;
+    height: auto;
+    max-width: 12.8rem;
+}
+
+//  --  TYPE STYLES
+.dds-docs--title {
+    letter-spacing: -0.5px;
+    font-weight: @fw-bold;
+    font-size: @headline-lg;
+}
+.dds-docs--header {
+    margin-bottom: @sp4;
+    margin-bottom: @sp4;
+    font-weight: 700;
+    font-size: @headline-md;
+    font-family: @ff-mark;
+}
+.dds-docs--subheader {
+    margin-bottom: @sp4;
+    font-size: @headline-sm;
+}
+.dds-docs--copy__lg {
+    margin-top: 0;
+    color: @fc-dark;
+    font-size: @text-xl;
+    line-height: @lh-lg;
+}
+.dds-docs--subtitle {
+    margin-bottom: @sp4;
+    font-size: @text-xl;
+    line-height: @lh-md;
+}
+.dds-docs--copy {
+    margin-top: 0;
+    color: @fc-dark;
+    font-size: @text-md;
+    line-height: @lh-lg;
+}
+.dds-docs--code {
+    padding: @sp2 @sp4;
+    border-radius: @br-sm;
+    background-color: @ash-dark;
+    color: @red-dark;
+    font-size: @text-xxs;
+    font-family: @ff-mono;
+    line-height: @lh-xl;
+}
+
+//  --  PREVIEW
+.dtd-example {
+    margin: @sp16 0 @sp32;
+    max-width: 73.6rem;
+    border: @bw1 solid @ash-dark;
+    border-radius: @br-md;
+
+    //  CODE
+    .highlight {
+        position: relative;
+
+        // Reset margins
+        &,
+        pre {
+            margin: 0;
+            border-radius: @br-md @br-md 0 0;
+            font-size: @text-xs;
+            font-family: @ff-mono;
+            line-height: @lh-lg;
+        }
+
+        > pre {
+            overflow: auto;
+            max-height: 24rem;
+
+        }
+
+        .gutter.gl {
+            margin: -@sp1 0 -@sp1 -@sp1;
+            padding: @sp8;
+            min-width: @sp24;
+            text-align: right;
+
+            pre {
+                color: #7A7D80;
+            }
+        }
+
+        .code {
+            padding-left: @sp12;
+        }
+    }
+
+    //  EXAMPLE AREA
+    .dtd-example--preview {
+        padding: @sp24;
+    }
+
+    //  GRID BLOCKS
+    .dtd-cell,
+    .dtd-cell__outline,
+    .dtd-cell--inner {
+        padding: @sp8;
+        border: 1px solid lighten(@blue,10%);
+        background-color: fade(@blue, 15%);
+        color: @blue-text;
+        text-align: center;
+        font-size: @text-xs;
+        font-family: @ff-mono;
+    }
+
+    .dtd-cell--inner {
+        padding: @sp8;
+        border: 1px solid lighten(@blue,10%);
+        background-color: fade(@blue, 50%);
+    }
+
+    .dtd-cell__clear {
+        padding: @sp0;
+        border: none;
+
+        .dtd-cell__outline {
+            border: 1px solid lighten(@blue,10%);
+            background-color: fade(@blue, 75%);
+        }
+    }
+
+    .dtd-cell__outline {
+        border-color: @ash-dark;
+        background-color: @white;
+        color: @slate;
+
+        .dtd-cell--inner {
+            border-color: transparent;
+            background-color: fade(@blue-darker, 50%);
+            color: @fc-white;
+        }
+    }
+
+    //  CODE ONLY
+    &.dtd-example-code-only {
+        margin-bottom: @sp16;
+        border: none;
+
+        .highlight,
+        .higlight pre {
+            border-radius: @br-md;
+        }
+    }
+
+    //  WITH RWD EXAMPLE
+    &.dtd-example__responsive {
+        .dtd-example-header {
+            border-radius: @br-md @br-md 0 0;
+            background-color: @slate;
+            color: @white;
+        }
+
+        .highlight,
+        .highlight pre {
+            border-radius: 0;
+        }
+
+        .dtd-example-btn {
+            margin: @sp4;
+            padding: @sp8;
+            opacity: 0.5;
+            cursor: pointer;
+
+            &:hover,
+            &.dtd-example-btn__selected {
+                opacity: 1;
+            }
+        }
+    }
+}

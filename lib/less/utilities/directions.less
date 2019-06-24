@@ -1,0 +1,208 @@
+//
+//  DIALTONE
+//  UTILITIES: DIRECTIONS
+//
+//  These are the direction utility classes for Dialpad's design system Dialtone.
+//  For further documentation of these and other classes, please visit:
+//  https://dialpad.design/
+//
+//  TABLE OF CONTENTS
+//  • DIRECTIONS
+//    - Top
+//    - Right
+//    - Bottom
+//    - Left
+//  • WIDTHS
+//    - Fluid Widths
+//    - Fixed Widths
+//    - Min-widths
+//    - Max-widths
+//  • HEIGHTS
+//    - Fluid Heights
+//    - Fixed Heights
+//    - Min-heights
+//    - Max-heights
+//
+//  ============================================================================
+//  $   DIRECTIONS
+//  ============================================================================
+//  --  TOP
+//  ----------------------------------------------------------------------------
+each(@spacing-units, {
+    .d-t@{key} { top: @value; }
+});
+
+//  --  Negative Directions
+each(@spacing-units, {
+    & when not (@key = 0) {
+        .d-tn@{key} { top: -@value; }
+    }
+});
+
+
+//  --  RIGHT
+//  ----------------------------------------------------------------------------
+each(@spacing-units, {
+    .d-r@{key} { right: @value; }
+});
+
+//  --  Negative Directions
+each(@spacing-units, {
+    & when not (@key = 0) {
+        .d-rn@{key} { right: -@value; }
+    }
+});
+
+
+//  --  BOTTOM
+//  ----------------------------------------------------------------------------
+each(@spacing-units, {
+    .d-b@{key} { bottom: @value; }
+});
+
+//  --  Negative Directions
+each(@spacing-units, {
+    & when not (@key = 0) {
+        .d-bn@{key} { bottom: -@value; }
+    }
+});
+
+
+//  --  LEFT
+//  ----------------------------------------------------------------------------
+each(@spacing-units, {
+    .d-l@{key} { left: @value; }
+});
+
+//  --  Negative Directions
+each(@spacing-units, {
+    & when not (@key = 0) {
+        .d-ln@{key} { left: -@value; }
+    }
+});
+
+
+//  --  X-AXIS (TOP & BOTTOM)
+//  ----------------------------------------------------------------------------
+each(@spacing-units, {
+    .d-tb@{key} {
+        top: @value;
+        bottom: @value;
+    }
+});
+
+//  --  Negative Directions
+each(@spacing-units, {
+    & when not (@key = 0) {
+        .d-tbn@{key} {
+            top: -@value;
+            bottom: -@value;
+        }
+    }
+});
+
+
+//  --  Y-AXIS (RIGHT & LEFT)
+//  ----------------------------------------------------------------------------
+each(@spacing-units, {
+    .d-rl@{key} {
+        right: @value;
+        left: @value;
+    }
+});
+
+//  --  Negative Directions
+each(@spacing-units, {
+    & when not (@key = 0) {
+        .d-rln@{key} {
+            right: -@value;
+            left: -@value;
+        }
+    }
+});
+
+
+//  --  ALL DIRECTIONS
+//  ----------------------------------------------------------------------------
+each(@spacing-units, {
+    .d-trlb@{key} {
+        top: @value;
+        right: @value;
+        bottom: @value;
+        left: @value;
+    }
+});
+
+//  --  Negative Directions
+each(@spacing-units, {
+    & when not (@key = 0) {
+        .d-trlbn@{key} {
+            top: -@value;
+            right: -@value;
+            bottom: -@value;
+            left: -@value;
+        }
+    }
+});
+
+
+//  ============================================================================
+//  $   WIDTH
+//  ============================================================================
+//  --  FLUID
+//  ----------------------------------------------------------------------------
+each(@width-percentages, {
+    .d-w@{key} { width: @value; }
+});
+
+
+//  --  FIXED
+//  ----------------------------------------------------------------------------
+each(@fixed-sizes, {
+    .d-w@{key} { width: @value; }
+});
+.d-w-auto    { width: auto; }
+
+each(@fixed-sizes, {
+    .d-wmn@{key} { min-width: @value; }
+});
+.d-wmn-auto  { min-width: auto; }
+
+each(@fixed-sizes, {
+    .d-wmx@{key} { max-width: @value; }
+});
+.d-wmx-auto { max-width: auto; }
+
+.d-w100v    { width: 100vw; }
+.d-w-unset  { width: unset; }
+
+
+//  ============================================================================
+//  $   HEIGHT
+//  ============================================================================
+//  --  FLUID
+//  ----------------------------------------------------------------------------
+each(@width-percentages, {
+    .d-h@{key} { height: @value; }
+});
+
+
+//  --  FIXED
+//  ----------------------------------------------------------------------------
+each(@fixed-sizes, {
+    .d-h@{key} { height: @value; }
+});
+.d-h-auto      { height: auto; }
+
+each(@fixed-sizes, {
+    .d-hmn@{key} { min-height: @value; }
+});
+.d-hmn-auto    { min-height: auto; }
+
+each(@fixed-sizes, {
+    .d-hmx@{key} { max-height: @value; }
+});
+.d-hmx-auto    { max-height: auto; }
+
+.d-h100v       { height: 100vh; }
+.d-h-unset     { height: unset; }

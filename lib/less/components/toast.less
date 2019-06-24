@@ -1,0 +1,133 @@
+//
+//  DIALTONE
+//  COMPONENTS: TOAST
+//
+//  These are the styles for toast notices, which are used by alert users to
+//  information they might need. For further documentation of these styles,
+//  please visit https://dialpad.design/components/toast
+//
+//  ============================================================================
+//  $   BASE STYLE
+//  ----------------------------------------------------------------------------
+.d-toast {
+    position: relative;
+    padding: @sp12 @sp8 @sp8;
+    margin: @sp6 0;
+    width: 100%;
+    max-width: @fixed-size-3;
+    z-index: @z-snackbar;
+    border-radius: @br-sm;
+    border: @bw1 solid @ash-dark;
+    background-color: @white;
+    box-shadow: @bs-sm;
+
+    font-size: @text-sm;
+    line-height: @lh-sm;
+    color: @fc-medium;
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: -@sp1;
+        left: -@sp1;
+        right: -@sp1;
+
+        height: @sp6;
+        border-radius: @br-sm @br-sm 0 0;
+    }
+
+    .d-toast--content {
+        display: flex;
+        align-items: center;
+    }
+
+    .d-toast--icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-grow: 0;
+        flex-shrink: 0;
+
+        width: @sp24;
+        height: @sp24;
+        margin-right: @sp4;
+        border-radius: @br-circle;
+        color: @white;
+
+        .d-svg {
+            width: 1.4rem;
+            height: 1.4rem;
+        }
+    }
+
+    .d-toast--meta {
+        margin-bottom: @sp4;
+        font-size: @text-xxs;
+        font-family: @ff-sans;
+        color: @slate-lightest;
+    }
+
+    .d-toast--message {
+        margin-left: @sp4;
+        font-size: @text-xs;
+    }
+}
+
+//  ============================================================================
+//  $   ALTERNATE STYLES
+//  ----------------------------------------------------------------------------
+.d-toast__viewing {
+    &:before,
+    .d-toast--icon {
+        background-color: #00CAC6;  // Teal, we should replace this at some point
+    }
+}
+
+.d-toast__chat {
+    &:before,
+    .d-toast--icon {
+        background-color: @navy-dark;
+    }
+}
+
+.d-toast__success {
+    &:before,
+    .d-toast--icon {
+        background-color: @green;
+    }
+}
+
+.d-toast__error {
+    &:before,
+    .d-toast--icon {
+        background-color: @red;
+    }
+}
+
+.d-toast__info {
+    &:before,
+    .d-toast--icon {
+        background-color: @blue;
+    }
+}
+
+//  ============================================================================
+//  $   TOAST WRAPPER
+//  ----------------------------------------------------------------------------
+.d-toast-wrapper {
+    position: absolute;
+    top: @sp32;
+    left: @sp32;
+
+    .d-toast {
+        &:first-of-type {
+            margin-top: 0;
+        }
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+        &:first-of-type:last-of-type {
+            margin: 0;
+        }
+    }
+}
