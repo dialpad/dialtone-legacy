@@ -19,8 +19,8 @@
 //  ----------------------------------------------------------------------------
 @tooltip-bg:              fade(@slate,97%);
 @tooltip-fc:              @ash;
-@tooltip-bg__inverted:    fade(@ash,97%);
-@tooltip-fc__inverted:    @fc-medium;
+@tooltip-bg--inverted:    fade(@ash,97%);
+@tooltip-fc--inverted:    @fc-medium;
 
 //  ============================================================================
 //  $   MIXINS
@@ -83,42 +83,42 @@
 //  ============================================================================
 //  $$  INVERTED (WHITE BACKGROUND)
 //  ----------------------------------------------------------------------------
-.d-tooltip__inverted {
-    background-color: @tooltip-bg__inverted;
-    color: @tooltip-fc__inverted;
+.d-tooltip--inverted {
+    background-color: @tooltip-bg--inverted;
+    color: @tooltip-fc--inverted;
 
     //  $$  ARROW DIRECTION UPDATES
     //  ========================================================================
     //  --  TOP
     //  ------------------------------------------------------------------------
-    &.d-tooltip__tl:before,
-    &.d-tooltip__tc:before,
-    &.d-tooltip__tr:before {
-        border-bottom-color: @tooltip-bg__inverted;
+    &.d-tooltip--tl:before,
+    &.d-tooltip--tc:before,
+    &.d-tooltip--tr:before {
+        border-bottom-color: @tooltip-bg--inverted;
     }
 
     //  --  RIGHT
     //  ------------------------------------------------------------------------
-    &.d-tooltip__rt:before,
-    &.d-tooltip__rc:before,
-    &.d-tooltip__rb:before {
-        border-left-color: @tooltip-bg__inverted;
+    &.d-tooltip--rt:before,
+    &.d-tooltip--rc:before,
+    &.d-tooltip--rb:before {
+        border-left-color: @tooltip-bg--inverted;
     }
 
     //  --  BOTTOM
     //  ------------------------------------------------------------------------
-    &.d-tooltip__bl:before,
-    &.d-tooltip__bc:before,
-    &.d-tooltip__br:before {
-        border-top-color: @tooltip-bg__inverted;
+    &.d-tooltip--bl:before,
+    &.d-tooltip--bc:before,
+    &.d-tooltip--br:before {
+        border-top-color: @tooltip-bg--inverted;
     }
 
     //  --  LEFT
     //  ------------------------------------------------------------------------
-    &.d-tooltip__lt:before,
-    &.d-tooltip__lc:before,
-    &.d-tooltip__lb:before {
-        border-right-color: @tooltip-bg__inverted;
+    &.d-tooltip--lt:before,
+    &.d-tooltip--lc:before,
+    &.d-tooltip--lb:before {
+        border-right-color: @tooltip-bg--inverted;
     }
 }
 
@@ -127,9 +127,9 @@
 //  ============================================================================
 //  $$  TOP
 //  ----------------------------------------------------------------------------
-.d-tooltip__tl,
-.d-tooltip__tc,
-.d-tooltip__tr {
+.d-tooltip--tl,
+.d-tooltip--tc,
+.d-tooltip--tr {
     top: calc(~"100% + @{sp12}");
     transform: translateY(@sp16);
 
@@ -142,9 +142,9 @@
 
 //  $$  BOTTOM
 //  ----------------------------------------------------------------------------
-.d-tooltip__bl,
-.d-tooltip__bc,
-.d-tooltip__br {
+.d-tooltip--bl,
+.d-tooltip--bc,
+.d-tooltip--br {
     bottom: calc(~"100% + @{sp12}");
     transform: translateY(-@sp16);
 
@@ -156,8 +156,8 @@
 }
 
 //  --  TOP & BOTTOM LEFT
-.d-tooltip__tl,
-.d-tooltip__bl {
+.d-tooltip--tl,
+.d-tooltip--bl {
     left: -@sp1;
 
     &:before {
@@ -166,8 +166,8 @@
 }
 
 //  --  TOP & BOTTOM CENTER
-.d-tooltip__tc,
-.d-tooltip__bc {
+.d-tooltip--tc,
+.d-tooltip--bc {
     &:before {
         left: 50%;
         margin-left: -@sp6;
@@ -175,8 +175,8 @@
 }
 
 //  --  TOP & BOTTOM RIGHT
-.d-tooltip__tr,
-.d-tooltip__br {
+.d-tooltip--tr,
+.d-tooltip--br {
     right: -@sp1;
 
     &:before {
@@ -187,9 +187,9 @@
 
 //  $$  RIGHT
 //  ----------------------------------------------------------------------------
-.d-tooltip__rt,
-.d-tooltip__rc,
-.d-tooltip__rb {
+.d-tooltip--rt,
+.d-tooltip--rc,
+.d-tooltip--rb {
     right: calc(~"100% + @{sp12}");
     transform: translateX(-@sp16);
 
@@ -202,9 +202,9 @@
 
 //  $$  LEFT
 //  ----------------------------------------------------------------------------
-.d-tooltip__lt,
-.d-tooltip__lc,
-.d-tooltip__lb {
+.d-tooltip--lt,
+.d-tooltip--lc,
+.d-tooltip--lb {
     left: calc(~"100% + @{sp12}");
     transform: translateX(@sp16);
 
@@ -216,8 +216,8 @@
 }
 
 //  --  RIGHT & LEFT TOP
-.d-tooltip__rt,
-.d-tooltip__lt {
+.d-tooltip--rt,
+.d-tooltip--lt {
     top: -@sp1;
 
     &:before {
@@ -226,8 +226,8 @@
 }
 
 //  --  RIGHT & LEFT CENTER
-.d-tooltip__rc,
-.d-tooltip__lc {
+.d-tooltip--rc,
+.d-tooltip--lc {
     &:before {
         top: 50%;
         margin-top: -@sp6;
@@ -235,8 +235,8 @@
 }
 
 //  --  RIGHT & LEFT BOTTOM
-.d-tooltip__rb,
-.d-tooltip__lb {
+.d-tooltip--rb,
+.d-tooltip--lb {
     bottom: -@sp1;
 
     &:before {

@@ -65,14 +65,14 @@
 }
 
 //  Button label styling
-.d-btn--label {
+.d-btn__label {
     display: inline-flex;
     justify-content: center;
     align-items: center;
 }
 
 //  Icon button styling
-.d-btn--icon {
+.d-btn__icon {
     display: flex;
     margin-top: -(@sp4 + @sp1);
     margin-right: @sp4;
@@ -94,7 +94,7 @@
 //  ============================================================================
 //  $$  OUTLINED BUTTON
 //  ----------------------------------------------------------------------------
-.d-btn__outlined {
+.d-btn--outlined {
     box-shadow: none;
     border-color: @button-border-color;
     color: @button-font-color;
@@ -111,7 +111,7 @@
 
 //  $$  PRIMARY BUTTON
 //  ----------------------------------------------------------------------------
-.d-btn__primary {
+.d-btn--primary {
     background-color: @button-primary;
     color: @fc-white;
 
@@ -136,7 +136,7 @@
 
 //  $$  DANGER BUTTON
 //  ----------------------------------------------------------------------------
-.d-btn__danger {
+.d-btn--danger {
     background-color: fade(@button-danger,0%);
 
     .btn-danger-clear-states();
@@ -150,7 +150,7 @@
 
     //  --  OUTLINED BUTTON
     //  ----------------------------------------------------------------
-    &.d-btn__outlined {
+    &.d-btn--outlined {
         border-color: @button-danger;
 
         &:active,
@@ -165,7 +165,7 @@
 
     //  --  FILLED BUTTON
     //  ----------------------------------------------------------------
-    &.d-btn__primary {
+    &.d-btn--primary {
         border-color: @button-danger;
         background-color: @button-danger;
         color: @fc-white;
@@ -198,7 +198,7 @@
 
 //  $$  INVERTED BUTTON
 //  ----------------------------------------------------------------------------
-.d-btn__inverted {
+.d-btn--inverted {
     background-color: fade(@button-invert-hover,0%);
     color: @button-invert;
 
@@ -221,7 +221,7 @@
         border-bottom-color: @button-border-loading-white !important;
     }
 
-    &.d-btn__outlined {
+    &.d-btn--outlined {
         border-color: fade(@button-invert,50%);
         background-color: fade(@button-invert,0%);
         color: @button-invert;
@@ -241,7 +241,7 @@
         }
     }
 
-    &.d-btn__primary {
+    &.d-btn--primary {
         color: @button-font-color;
         background-color: @white;
 
@@ -273,17 +273,17 @@
 //  $$  BRAND BUTTONS
 //  ----------------------------------------------------------------------------
 //  --  GOOGLE
-.d-btn__google {
+.d-btn--google {
     .brand-buttons(@button-brand-google);
 }
 //
 //  --  OFFICE 365
-.d-btn__o365 {
+.d-btn--o365 {
     .brand-buttons(@button-brand-o365);
 }
 //
 //  --  LINKEDIN
-.d-btn__linkedin {
+.d-btn--linkedin {
     .brand-buttons(@button-brand-linkedin);
 }
 
@@ -298,8 +298,8 @@
     pointer-events: none;
 
     //  Hide anything that was there before
-    .d-btn--icon,
-    .d-btn--label {
+    .d-btn__icon,
+    .d-btn__label {
         opacity: 0;
         transition: opacity 50ms @transition-cubic-inOut;
     }
@@ -335,11 +335,11 @@
     transition: all 150ms @transition-cubic-inOut;
 
     //  Reset all the margins
-    .d-btn--icon {
+    .d-btn__icon {
         margin: unset;
     }
     //  If there's a label, hide it
-    .d-btn--label {
+    .d-btn__label {
         display: none;
     }
 
@@ -367,7 +367,7 @@
     //  ========================================================================
     //  --   OUTLINED
     //  ------------------------------------------------------------------------
-    &.d-btn__outlined {
+    &.d-btn--outlined {
         border-color: @button-muted;
         color: @fc-medium;
 
@@ -385,7 +385,7 @@
 
     //  --  DANGER HOVER
     //  ------------------------------------------------------------------------
-    &.d-btn__danger-hover {
+    &.d-btn--danger-hover {
         .btn-danger-clear-states();
         color: @fc-medium;
 
@@ -401,7 +401,7 @@
 
     //  --  INVERTED
     //  ------------------------------------------------------------------------
-    &.d-btn__inverted {
+    &.d-btn--inverted {
         color: @fc-white;
 
          &:hover {
@@ -421,16 +421,16 @@
     //  ========================================================================
     //  --   Extra Small
     //  ------------------------------------------------------------------------
-    &.d-btn__xs {
+    &.d-btn--xs {
         padding: @sp6 - @sp1;     // Minus out 1px for the border
     }
-    &.d-btn__sm {
+    &.d-btn--sm {
         padding: @sp8;
     }
-    &.d-btn__lg {
+    &.d-btn--lg {
         padding: @sp12 + @sp1;
     }
-    &.d-btn__xl {
+    &.d-btn--xl {
         padding: @sp16 - @sp1;    // Minus out 1px for the border
     }
 }
@@ -439,13 +439,13 @@
 //  ============================================================================
 //  $$  SIZES
 //  ----------------------------------------------------------------------------
-.d-btn__xs { .input-button-xs(); }
-.d-btn__sm { .input-button-sm(); }
-.d-btn__lg {
+.d-btn--xs { .input-button-xs(); }
+.d-btn--sm { .input-button-sm(); }
+.d-btn--lg {
     .input-button-lg();
     padding: (@sp12 + @sp1) (@sp16 + @sp2);
 }
-.d-btn__xl {
+.d-btn--xl {
     .input-button-xl();
     padding: (@sp16 - @sp1) (@sp24 - @sp2);
 }
