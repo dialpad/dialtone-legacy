@@ -3,10 +3,131 @@ layout: page
 title: Padding
 description: A CSS property which allows you to adjust an element's interior spacing between its child elements and the element's box edge.
 ---
-<section class="dds-docs--section">
-    <p class="dds-docs--copy">These CSS utility classes are based on Dialtone's <a href="/constants/spacing">spacing units</a>. Components will typically set a default padding, which is preferred. However components should not create extranenous modifying classes for increasing padding when these utility classes can achieve the same goal. For that reason it is recommended any padding modifications should be done <strong>using these classes</strong>.</p>
+<section class="dialtone-section">
+    <p class="copy__normal">These utility classes are based on Dialtone's <a class="d-link" href="/constants/spacing">spacing units</a>. Components will typically set their own padding, which is preferred. However components should not create extranenous modifying classes for increasing padding when these utility classes can achieve the same goal. For that reason it is recommended padding modifications should be done using these classes.</p>
+    <p class="copy__normal">All element and component spacing is based on a base-4 pixel base. To apply spacing from Dialtone's Less library, include the desired class name within your semantic class.</p>
+    <div class="dialtone-example" data-example="no" data-code="yes">
+{% highlight css linenos %}
+.semantic-class {
+    .d-padding16;
+}
+{% endhighlight %}
+    </div>
+    <p class="copy__normal">This will output:</p>
+    <div class="dialtone-example" data-example="no" data-code="yes">
+{% highlight css linenos %}
+.semantic-class {
+    padding: 1.6rem;
+}
+{% endhighlight %}
+    </div>
 </section>
-{% include_relative padding/naming.html %}
-{% include_relative padding/uniform.html %}
-{% include_relative padding/directional.html %}
-{% include_relative padding/responsive.html %}
+<section class="dialtone-section">
+    <h2 class="title__section">Classes</h2>
+    <div class="dialtone-table-wrapper">
+        <table class="dialtone-table dialtone-table--code">
+            <thead>
+                <tr>
+                    <th scope="col" class="dialtone-table__column--md">Class</th>
+                    <th scope="col">Output</th>
+                </tr>
+            </thead>
+            {% assign dir = site.data.spacing.spacing-directions | split: ", "  %}
+            {% for i in dir %}
+                <tbody>
+                    {% for value in site.data.spacing.spacing-values %}
+                    {% assign val = value.value %}
+                    {% assign output = value.output %}
+                    <tr>
+                        <th scope="row">.d-padding{% if i != "All" %}-{{ i }}{% endif %}{{ val }}</th>
+                        <td>
+                            {% if i == "y" %}
+                                padding-top: {{ output }};<br/>
+                                padding-bottom: {{ output }};
+                            {% elsif i == "x" %}
+                                padding-right: {{ output }};<br/>
+                                padding-left: {{ output }};
+                            {% else %}
+                                padding{% if i != "All" %}-{{ i }}{% endif %}: {{ output }};
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            {% endfor %}
+        </table>
+    </div>
+</section>
+<section class="dialtone-section">
+    <h2 class="title__subsection">Adding directional padding</h2>
+    <p class="copy__normal">You can add padding to an element by using a universal padding class (i.e. <span class="code-example--inline">.d-padding4</span>) or by using a directional padding class (i.e. <span class="code-example--inline">.d-padding-{top|right|bottom|left|y|x}4</span>).</p>
+    <div class="dialtone-example" data-example="yes" data-code="yes">
+        <div class="dialtone-example__example">
+            <div style="display: flex; justify-content: space-evenly;">
+                <div class="layout-block" style="flex-direction: column; align-self: center;">
+                    <div class="layout-block__bar" style="
+                        --layout-example-height: .9rem;
+                        border-bottom-width: 0;
+                        flex: 0 0 8px;
+                    "></div>
+                    <div class="layout-block" style="
+                        height: 100%;
+                        border-width: 0;
+                    ">
+                        <div class="layout-block__bar" style="
+                            --layout-example-width: .9rem;
+                            border-width: 0;
+                        "></div>
+                        <span class="layout-block__label">8px</span>
+                        <div class="layout-block__bar" style="
+                            --layout-example-width: .9rem;
+                            border-width: 0;
+                        "></div>
+                    </div>
+                    <div class="layout-block__bar" style="
+                        --layout-example-height: .9rem;
+                        border-top-width: 0;
+                        flex: 0 0 8px;
+                    "></div>
+                </div>
+                <div class="layout-block" style="flex-direction: column; align-self: center;">
+                    <div class="layout-block__bar" style="--layout-example-height: .8rem;"></div>
+                    <span class="layout-block__label">8px</span>
+                </div>
+                <div class="layout-block" style="align-self: center;">
+                    <span class="layout-block__label">8px</span>
+                    <div class="layout-block__bar" style="--layout-example-width: .8rem;"></div>
+                </div>
+                <div class="layout-block" style="flex-direction: column; align-self: center;">
+                    <span class="layout-block__label">8px</span>
+                    <div class="layout-block__bar" style="--layout-example-height: .8rem;"></div>
+                </div>
+                <div class="layout-block" style="align-self: center;">
+                    <div class="layout-block__bar" style="--layout-example-width: .8rem;"></div>
+                    <span class="layout-block__label">8px</span>
+                </div>
+                <div class="layout-block" style="align-self: center; width: 7.6rem;">
+                    <div class="layout-block__bar" style="--layout-example-width: .8rem; flex: 0 0 .8rem;"></div>
+                    <span class="layout-block__label">8px</span>
+                    <div class="layout-block__bar" style="--layout-example-width: .8rem; flex: 0 0 .8rem;"></div>
+                </div>
+                <div class="layout-block" style="flex-direction: column; height: 7.6rem">
+                    <div class="layout-block__bar" style="--layout-example-height: .8rem; flex: 0 0 .8rem;"></div>
+                    <span class="layout-block__label">8px</span>
+                    <div class="layout-block__bar" style="--layout-example-height: .8rem; flex: 0 0 .8rem;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="dialtone-example__code">
+{% highlight html linenos %}
+<div class=".d-padding8">...</div>
+<div class=".d-padding-top8">...</div>
+<div class=".d-padding-right8">...</div>
+<div class=".d-padding-bottom8">...</div>
+<div class=".d-padding-left8">...</div>
+<div class=".d-padding-x8">...</div>
+<div class=".d-padding-y8">...</div>
+{% endhighlight %}
+        </div>
+    </div>
+</section>

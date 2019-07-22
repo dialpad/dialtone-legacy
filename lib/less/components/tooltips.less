@@ -17,10 +17,10 @@
 //  ============================================================================
 //  $   TOKENS
 //  ----------------------------------------------------------------------------
-@tooltip-bg:              fade(@slate,97%);
-@tooltip-fc:              @ash;
-@tooltip-bg--inverted:    fade(@ash,97%);
-@tooltip-fc--inverted:    @fc-medium;
+@tooltip-background:            fade(@slate,97%);
+@tooltip-color:                 @ash;
+@tooltip-background--inverted:  fade(@ash,97%);
+@tooltip-color--inverted:       @color--medium;
 
 //  ============================================================================
 //  $   MIXINS
@@ -34,8 +34,8 @@
     visibility: visible;
     transition:
         visibility 0s 0s,
-        transform 200ms @transition-cubic-inOut 10ms,
-        opacity 200ms @transition-cubic-inOut 10ms;
+        transform 200ms @transition--cubic-inOut 10ms,
+        opacity 200ms @transition--cubic-inOut 10ms;
 }
 
 //  ============================================================================
@@ -43,28 +43,28 @@
 //  ----------------------------------------------------------------------------
 .d-tooltip {
     position: absolute;
-    padding: @sp12;
+    padding: @spacing12;
     width: 100%;
-    max-width: @fixed-size-2;
-    z-index: @z-tooltip;
+    max-width: @fixed-size2;
+    z-index: @z-index--tooltip;
 
-    border-radius: @br-sm;
-    background-color: @tooltip-bg;
-    color: @tooltip-fc;
-    font-size: @text-xs;
-    line-height: @lh-md;
+    border-radius: @border-radius--sm;
+    background-color: @tooltip-background;
+    color: @tooltip-color;
+    font-size: @text--xs;
+    line-height: @line-height--md;
 
     opacity: 0;
     visibility: hidden;
     transition:
         visibility 0s 200ms,
-        transform 200ms @transition-cubic-inOut 0s,
-        opacity 200ms @transition-cubic-inOut 0s;
+        transform 200ms @transition--cubic-inOut 0s,
+        opacity 200ms @transition--cubic-inOut 0s;
 
     &:before {
         content: "";
         position: absolute;
-        border-width: @sp6;
+        border-width: @spacing6;
         border-color: transparent;
         border-style: solid;
     }
@@ -84,8 +84,8 @@
 //  $$  INVERTED (WHITE BACKGROUND)
 //  ----------------------------------------------------------------------------
 .d-tooltip--inverted {
-    background-color: @tooltip-bg--inverted;
-    color: @tooltip-fc--inverted;
+    background-color: @tooltip-background--inverted;
+    color: @tooltip-color--inverted;
 
     //  $$  ARROW DIRECTION UPDATES
     //  ========================================================================
@@ -94,7 +94,7 @@
     &.d-tooltip--tl:before,
     &.d-tooltip--tc:before,
     &.d-tooltip--tr:before {
-        border-bottom-color: @tooltip-bg--inverted;
+        border-bottom-color: @tooltip-background--inverted;
     }
 
     //  --  RIGHT
@@ -102,7 +102,7 @@
     &.d-tooltip--rt:before,
     &.d-tooltip--rc:before,
     &.d-tooltip--rb:before {
-        border-left-color: @tooltip-bg--inverted;
+        border-left-color: @tooltip-background--inverted;
     }
 
     //  --  BOTTOM
@@ -110,7 +110,7 @@
     &.d-tooltip--bl:before,
     &.d-tooltip--bc:before,
     &.d-tooltip--br:before {
-        border-top-color: @tooltip-bg--inverted;
+        border-top-color: @tooltip-background--inverted;
     }
 
     //  --  LEFT
@@ -118,7 +118,7 @@
     &.d-tooltip--lt:before,
     &.d-tooltip--lc:before,
     &.d-tooltip--lb:before {
-        border-right-color: @tooltip-bg--inverted;
+        border-right-color: @tooltip-background--inverted;
     }
 }
 
@@ -130,13 +130,13 @@
 .d-tooltip--tl,
 .d-tooltip--tc,
 .d-tooltip--tr {
-    top: calc(~"100% + @{sp12}");
-    transform: translateY(@sp16);
+    top: calc(~"100% + @{spacing12}");
+    transform: translateY(@spacing16);
 
     &:before {
-        top: -@sp6;
+        top: -@spacing6;
         border-top-width: 0;
-        border-bottom-color: @tooltip-bg;
+        border-bottom-color: @tooltip-background;
     }
 }
 
@@ -145,23 +145,23 @@
 .d-tooltip--bl,
 .d-tooltip--bc,
 .d-tooltip--br {
-    bottom: calc(~"100% + @{sp12}");
-    transform: translateY(-@sp16);
+    bottom: calc(~"100% + @{spacing12}");
+    transform: translateY(-@spacing16);
 
     &:before {
-        bottom: -@sp6;
+        bottom: -@spacing6;
         border-bottom-width: 0;
-        border-top-color: @tooltip-bg;
+        border-top-color: @tooltip-background;
     }
 }
 
 //  --  TOP & BOTTOM LEFT
 .d-tooltip--tl,
 .d-tooltip--bl {
-    left: -@sp1;
+    left: -@spacing1;
 
     &:before {
-        left: @sp8;
+        left: @spacing8;
     }
 }
 
@@ -170,17 +170,17 @@
 .d-tooltip--bc {
     &:before {
         left: 50%;
-        margin-left: -@sp6;
+        margin-left: -@spacing6;
     }
 }
 
 //  --  TOP & BOTTOM RIGHT
 .d-tooltip--tr,
 .d-tooltip--br {
-    right: -@sp1;
+    right: -@spacing1;
 
     &:before {
-        right: @sp8;
+        right: @spacing8;
     }
 }
 
@@ -190,13 +190,13 @@
 .d-tooltip--rt,
 .d-tooltip--rc,
 .d-tooltip--rb {
-    right: calc(~"100% + @{sp12}");
-    transform: translateX(-@sp16);
+    right: calc(~"100% + @{spacing12}");
+    transform: translateX(-@spacing16);
 
     &:before {
-        right: -@sp6;
+        right: -@spacing6;
         border-right-width: 0;
-        border-left-color: @tooltip-bg;
+        border-left-color: @tooltip-background;
     }
 }
 
@@ -205,23 +205,23 @@
 .d-tooltip--lt,
 .d-tooltip--lc,
 .d-tooltip--lb {
-    left: calc(~"100% + @{sp12}");
-    transform: translateX(@sp16);
+    left: calc(~"100% + @{spacing12}");
+    transform: translateX(@spacing16);
 
     &:before {
-        left: -@sp6;
+        left: -@spacing6;
         border-left-width: 0;
-        border-right-color: @tooltip-bg;
+        border-right-color: @tooltip-background;
     }
 }
 
 //  --  RIGHT & LEFT TOP
 .d-tooltip--rt,
 .d-tooltip--lt {
-    top: -@sp1;
+    top: -@spacing1;
 
     &:before {
-        top: @sp8;
+        top: @spacing8;
     }
 }
 
@@ -230,16 +230,16 @@
 .d-tooltip--lc {
     &:before {
         top: 50%;
-        margin-top: -@sp6;
+        margin-top: -@spacing6;
     }
 }
 
 //  --  RIGHT & LEFT BOTTOM
 .d-tooltip--rb,
 .d-tooltip--lb {
-    bottom: -@sp1;
+    bottom: -@spacing1;
 
     &:before {
-        bottom: @sp8;
+        bottom: @spacing8;
     }
 }

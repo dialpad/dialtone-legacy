@@ -25,7 +25,7 @@
 @button-muted:                  @slate-lighter;
 @button-muted-hover:            @slate-light;
 
-@button-font-size:              @text-md;
+@button-font-size:              @text--md;
 @button-font-color:             @blue-dark;
 @button-background-color:       @button-primary;
 @button-border-color:           @button-primary;
@@ -33,9 +33,9 @@
 @button-border-loading:         @button-border-color;
 @button-border-loading-white:   @white;
 @button-border-loading-danger:  @button-danger;
-@button-line-height:            @lh-xs;
+@button-line-height:            @line-height--xs;
 
-@button-padding:                (@sp12 - @sp1) (@sp16 - @sp1);     // Minus out 1px for the border
+@button-padding:                (@spacing12 - @spacing1) (@spacing16 - @spacing1);     // Minus out 1px for the border
 
 @button-brand-google:           #4285F4;
 @button-brand-o365:             #EB3C01;
@@ -59,48 +59,47 @@
         background-color: fade(@button-danger-hover,5%);
     }
     &:focus {
-        box-shadow: 0 0 0 @sp4 fade(@button-danger,25%);
+        box-shadow: 0 0 0 @spacing4 fade(@button-danger,25%);
     }
     &:active,
     &.is-selected {
         border-color: fade(@button-danger,5%);
         background-color: fade(@button-danger,10%);
-        box-shadow: inset 0 0 @sp8 0 fade(@button-danger,70%);
+        box-shadow: inset 0 0 @spacing8 0 fade(@button-danger,70%);
     }
 }
 
 .brand-buttons(@color) {
     display: flex;
-    color: @fc-white;
+    color: @white;
     background-color: @color;
 
     &:hover {
         background-color: darken(saturate(@color,2.5%),5%);
     }
     &:focus {
-        box-shadow: 0 0 0 @sp4 fade(@color,25%);
+        box-shadow: 0 0 0 @spacing4 fade(@color,25%);
     }
     &:active,
     .is-selected {
         background-color: darken(saturate(@color,5%),10%);
-        box-shadow: inset 0 0 @sp8 0 fade(darken(@color,10%),25%);
+        box-shadow: inset 0 0 @spacing8 0 fade(darken(@color,10%),25%);
     }
 
     .d-bt__icon {
-        margin-top: -@sp8;
-        margin-right: @sp16;
-        margin-bottom: -@sp8;
-        margin-left: -@sp12;
+        .d-margin-y8--negative;
+        .d-margin-right16;
+        .d-margin-left12--negative;
     }
     .d-svg {
-        border-radius: @sp2;
+        border-radius: @spacing2;
     }
     .d-btn__icon,
     .d-svg {
-        width: (@sp48 - @sp8);
-        height: (@sp48 - @sp8);
+        width: (@spacing48 - @spacing8);
+        height: (@spacing48 - @spacing8);
     }
     .d-btn__label {
-        flex: 1 auto;
+        .d-flex1;
     }
 }
