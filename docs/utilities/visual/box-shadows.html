@@ -20,85 +20,58 @@ description: Box shadows are used to help layer and elevate content. Shadows are
             {% assign class = i.class %}
             {% assign output = i.output %}
             <tr>
-                <th scope="row">@border-radius--{{ var }}</th>
-                <td>{{ rem }}</td>
+                <th scope="row">@box-shadow--{{ class }}</th>
+                <td>{{ output }}</td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
 </section>
-<section class="dds-docs--section">
-    <h2 class="dds-docs--header">Classes</h2>
-    <p class="dds-docs--copy">The box shadow utility classes use an abbreviated syntax. The abbreviations are based on the CSS property name (<strong>b</strong>ox-<strong>s</strong>hadow) and the desired size. Below is a table outlining the classes and their meanings:</p>
-    <table class="d-table">
+<section class="dialtone-section">
+    <header class="dialtone-section dialtone-section--xxs">
+        <h2 class="title__section">Classes</h2>
+        <p class="copy__normal">Set an element's box-shadow by using the <span class="code-example--inline">.d-box-shadow--{type}</span> classes. The table below lists the available classes and their CSS output.</p>
+    </header>
+    <table class="dialtone-table dialtone-table--code">
         <thead>
             <tr>
-                <th scope="col" width="15%;">Class</th>
-                <th scope="col" width="50%;">Output</th>
-                <th scope="col">Size</th>
+                <th scope="col" class="dialtone-table__column--md">Class</th>
+                <th scope="col">Output</th>
             </tr>
         </thead>
         <tbody>
-            {% for name in site.data.visual-styles.box-shadows %}
+            {% for i in site.data.visual-styles.box-shadows %}
+            {% assign class = i.class %}
+            {% assign output = i.output %}
             <tr>
-                <th scope="row" class="d-ff-mono d-text-xxs">{{ name.class }}</th>
-                <td class="d-ff-mono d-text-xxs">{{ name.output }}</td>
-                <td>{{ name.name }}</td>
+                <th scope="row">.d-box-shadow--{{ class }}</th>
+                <td>box-shadow: {{ output }};</td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
 </section>
-<section class="dds-docs--section">
-    <h2 class="dds-docs--header">Examples</h2>
-    <h3 class="dds-docs--subheader">Small</h3>
-    <p class="dds-docs--copy">The small box shadow option is the default option. It slightly elevates and separates content from its surrounding elements. This box shadow option is typically used with a light gray border.</p>
-    <div class="dtd-example">
-{% highlight html linenos %}
-<div class="d-bs-sm">…</div>
-{% endhighlight %}
-        <div class="dtd-example--preview">
-            <div class="d-flex d-flex__center d-ff-mono d-text-xs d-p12 d-ba d-bc-gray-light d-br-md d-w50 d-bs-sm">.d-bs-sm</div>
+<section class="dialtone-section">
+    <h2 class="title__section">Examples</h2>
+    <div class="dialtone-example" data-example="yes" data-code="yes">
+        <div class="dialtone-example__example">
+            <div class="d-grid-layout--with-columns d-grid-gap16" style="--grid-col: 4; --grid-col-width: 23%;">
+                {% for i in site.data.visual-styles.box-shadows %}
+                {% assign class = i.class %}
+                {% assign output = i.output %}
+                <div class="d-border d-border-color--ash-darker d-background-color--white d-box-shadow--{{ class }}"><div class="d-flex--center d-font-family--mono d-text--xs d-height1">{{ class }}</div></div>
+                {% endfor %}
+            </div>
         </div>
-    </div>
-    <h3 class="dds-docs--subheader">Medium</h3>
-    <p class="dds-docs--copy">The medium box shadow option is more diffused.</p>
-    <div class="dtd-example">
+        <div class="dialtone-example__code">
 {% highlight html linenos %}
-<div class="d-bs-md">…</div>
+<div class="d-box-shadow--none">…</div>
+<div class="d-box-shadow--sm">…</div>
+<div class="d-box-shadow--md">…</div>
+<div class="d-box-shadow--lg">…</div>
+<div class="d-box-shadow--xl">…</div>
+<div class="d-box-shadow--card">…</div>
 {% endhighlight %}
-        <div class="dtd-example--preview">
-            <div class="d-flex d-flex__center d-ff-mono d-text-xs d-p12 d-ba d-bc-gray-light d-br-md d-w50 d-bs-md">.d-bs-md</div>
-        </div>
-    </div>
-    <h3 class="dds-docs--subheader">Large</h3>
-    <p class="dds-docs--copy">The large box shadow option has a large shadow and used mainly on modals.</p>
-    <div class="dtd-example">
-{% highlight html linenos %}
-<div class="d-bs-lg">…</div>
-{% endhighlight %}
-        <div class="dtd-example--preview">
-            <div class="d-flex d-flex__center d-ff-mono d-text-xs d-p12 d-ba d-bc-gray-light d-br-md d-w50 d-bs-lg">.d-bs-lg</div>
-        </div>
-    </div>
-    <h3 class="dds-docs--subheader">Extra Large</h3>
-    <p class="dds-docs--copy">The extra large shadow is the largest shadow option. This is used mainly for marketing purposes.</p>
-    <div class="dtd-example">
-{% highlight html linenos %}
-<div class="d-bs-xl">…</div>
-{% endhighlight %}
-        <div class="dtd-example--preview">
-            <div class="d-flex d-flex__center d-ff-mono d-text-xs d-p12 d-ba d-bc-gray-light d-br-md d-w50 d-bs-xl">.d-bs-xl</div>
-        </div>
-    </div>
-    <h3 class="dds-docs--subheader">None</h3>
-    <p class="dds-docs--copy">This removes the box shadow from a component.</p>
-    <div class="dtd-example">
-{% highlight html linenos %}
-<div class="bs-none">…</div>
-{% endhighlight %}
-        <div class="dtd-example--preview">
-            <div class="d-flex d-flex__center d-ff-mono d-text-xs d-p12 d-ba d-bc-gray-light d-br-md d-w50 bs-none">.bs-none</div>
         </div>
     </div>
 </section>
