@@ -1,48 +1,60 @@
 ---
 layout: page
 title: Line Height
-description: Utility classes for controlling line height.
+description: Utility classes for controlling an element's line height.
 ---
-<section class="dds-docs--section">
-    <h2 class="dds-docs--header">Classes</h2>
-    <p class="dds-docs--copy">The line height utility classes use an abbreviated syntax. Based on the CSS property name (<strong>l</strong>ine-<strong>h</strong>eight) and the desired t-shirt size. Below is a table outlining the classes and their meanings:</p>
-    <table class="d-table">
+<section class="dialtone-section">
+    <header class="dialtone-section dialtone-section--xxs">
+        <h2 class="title__section">Variables</h2>
+        <p class="copy__normal">When writing Less, you can set an element's line-height by using a <span class="code-example--inline">@line-height--{size}</span> variable. The table below lists the available variables and its output.</p>
+    </header>
+    <table class="dialtone-table dialtone-table--code">
         <thead>
             <tr>
-                <th scope="col" width="20%">Class</th>
+                <th scope="col" class="dialtone-table__column--md">Variable</th>
                 <th scope="col">Output</th>
             </tr>
         </thead>
         <tbody>
-            {% for item in site.data.type.line-height %}
+            {% for i in site.data.type.line-height %}
+            {% assign class = i.class %}
+            {% assign output = i.output %}
             <tr>
-                <th scope="row" class="d-ff-mono d-text-xxs">{{ item.class }}</th>
-                <td class="d-ff-mono d-text-xxs">{{ item.output }}</td>
+                <th scope="row">@line-height--{{ class }}</th>
+                <td>{{ output }}</td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
-    <h2 class="dds-docs--header">Examples</h2>
-    <div class="dtd-example">
-{% highlight html linenos %}
-<div class="d-lh-xs">…</div>
-<div class="d-lh-sm">…</div>
-<div class="d-lh-md">…</div>
-<div class="d-lh-lg">…</div>
-<div class="d-lh-xl">…</div>
-<div class="d-lh-xxl">…</div>
-<div class="d-lh-unset">…</div>
-{% endhighlight %}
-        <div class="dtd-example--preview">
-            <div class="d-flex d-fw-wrap d-fl1__all">
-                <div class="d-flex--cell d-my8 d-p8 d-lh-xs"><strong class="d-ff-mono d-text-xs">.d-lh-xs</strong> — The weather had changed overnight, when a backing wind brought a granite sky and a mizzling rain with it, and although it was now only a little after two o'clock in the afternoon the pallor of a winter evening seemed to have closed upon the hills, cloaking them in mist.</div>
-                <div class="d-flex--cell d-my8 d-p8 d-lh-sm"><strong class="d-ff-mono d-text-xs">.d-lh-sm</strong> — The weather had changed overnight, when a backing wind brought a granite sky and a mizzling rain with it, and although it was now only a little after two o'clock in the afternoon the pallor of a winter evening seemed to have closed upon the hills, cloaking them in mist.</div>
-                <div class="d-flex--cell d-my8 d-p8 d-lh-md"><strong class="d-ff-mono d-text-xs">.d-lh-md</strong> — The weather had changed overnight, when a backing wind brought a granite sky and a mizzling rain with it, and although it was now only a little after two o'clock in the afternoon the pallor of a winter evening seemed to have closed upon the hills, cloaking them in mist.</div>
-                <div class="d-flex--cell d-my8 d-p8 d-lh-lg"><strong class="d-ff-mono d-text-xs">.d-lh-lg</strong> — The weather had changed overnight, when a backing wind brought a granite sky and a mizzling rain with it, and although it was now only a little after two o'clock in the afternoon the pallor of a winter evening seemed to have closed upon the hills, cloaking them in mist.</div>
-                <div class="d-flex--cell d-my8 d-p8 d-lh-xl"><strong class="d-ff-mono d-text-xs">.d-lh-xl</strong> — The weather had changed overnight, when a backing wind brought a granite sky and a mizzling rain with it, and although it was now only a little after two o'clock in the afternoon the pallor of a winter evening seemed to have closed upon the hills, cloaking them in mist.</div>
-                <div class="d-flex--cell d-my8 d-p8 d-lh-xxl"><strong class="d-ff-mono d-text-xs">.d-lh-xxl</strong> — The weather had changed overnight, when a backing wind brought a granite sky and a mizzling rain with it, and although it was now only a little after two o'clock in the afternoon the pallor of a winter evening seemed to have closed upon the hills, cloaking them in mist.</div>
-                <div class="d-flex--cell d-my8 d-p8 d-lh-unset"><strong class="d-ff-mono d-text-xs">.d-lh-unset</strong> — The weather had changed overnight, when a backing wind brought a granite sky and a mizzling rain with it, and although it was now only a little after two o'clock in the afternoon the pallor of a winter evening seemed to have closed upon the hills, cloaking them in mist.</div>
-            </div>
-        </div>
-    </div>
+</section>
+<section class="dialtone-section">
+    <header class="dialtone-section dialtone-section--xxs">
+        <h2 class="title__section">Classes</h2>
+        <p class="copy__normal">Set an element's line-height by using the <span class="code-example--inline">.d-line-height--{size}</span> classes. The table below lists the available classes and their CSS output.</p>
+    </header>
+    <table class="dialtone-table dialtone-table--code">
+        <thead>
+            <tr>
+                <th scope="col" class="dialtone-table__column--md">Class</th>
+                <th scope="col">Output</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in site.data.type.line-height %}
+            {% assign class = i.class %}
+            {% assign output = i.output %}
+            <tr>
+                <th scope="row">.d-line-height--{{ class }}</th>
+                <td>line-height: {{ output }};</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+<section class="dialtone-section">
+    <h2 class="title__section">Examples</h2>
+    {% for i in site.data.type.line-height %}
+        {% assign class = i.class %}
+        <p class="d-text--lg d-line-height--{{ class }}"><span class="code-example--inline" style="font-size: 1.4rem; background-color: transparent;">.d-line-height--{{ class }}</span> – The weather had changed overnight, when a backing wind brought a granite sky and a mizzling rain with it, and although it was now only a little after two o'clock in the afternoon the pallor of a winter evening seemed to have closed upon the hills, cloaking them in mist.</p>
+    {% endfor %}
 </section>

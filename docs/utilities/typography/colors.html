@@ -1,63 +1,93 @@
 ---
 layout: page
 title: Colors
-description: Dialtone provides a limited set of text color classes. These colors all meet the minimum contrast ratios specified by the WCAG 2.1 Level AA for text, icons, indicators, and background colors. Please use these colors only to help ensure we are meeting web accessibility standards.
+description: Dialtone provides a limited set of text-color utility variables and classes.
 ---
-<section class="dds-docs--section">
-    <h2 class="dds-docs--header">Gray</h2>
-    <p class="dds-docs--copy">All grays meet the minimum contrast ratio for WCAG 2.1 Level AAA, which is 7:1.</p>
-
-    {% for item in site.data.type.font-colors %}
-        {% if item.color == "Gray" %}
-            <div class="d-flex d-fd-column d-ff-mono d-text-sm d-br-md">
-                {% assign stop = item.stops %}
-                {% for s in stop %}
-                <div class="d-flex--cell d-p16 d-bx d-bb {% if forloop.first %}d-bt d-btr-md{% elsif forloop.last %}d-bbr-md{% endif %} {% if s.bg == 'd-bgc-slate' %}d-bc-slate-lightest {% else %}d-bc-ash-dark {% endif %} {{ s.bg }} {{ s.class }}">
-                    <div class="d-flex d-ai-center">
-                        <div class="d-flex--cell">.{{ s.class }}</div>
-                        <div class="d-flex--cell d-ml-auto">
-                            {% if s.ratio > "07.00" %}
-                              <strong class="d-py4 d-px6 d-br-md d-lh-xs d-headline-xs d-fc-green-text d-ba d-bc-transparent d-bgc-green {% if s.bg == 'd-bgc-green' %}d-bc-green-dark{% endif %}">AAA</strong>
-                            {% elsif s.ratio < "07.00" %}
-                              <strong class="d-py4 d-px6 d-br-md d-lh-xs d-text-xxs d-fc-yellow-text d-bgc-yellow">AA</strong>
-                            {% endif %}
-                        </div>
-                        <div class="d-flex--cell d-text-xs d-px6" style="min-width: 3rem">{{ s.ratio }}</div>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        {% endif %}
-    {% endfor %}
+<section class="dialtone-section">
+    <p class="copy__normal">Along with these colors, we've provided text and background color pairings. Most of these pairings pass the WCAG 2.1 Level AAA contrast ratios; however some only pass WCAG 2.1 Level AA. These are noted with the colors below. Please use <strong>only</strong> these colors. Using these colors helps ensure we are meeting web accessibility standards.</p>
 </section>
-<section class="dds-docs--section">
-    <h2 class="dds-docs--header">Colors</h2>
-    <p class="dds-docs--copy">All text colors meet the minimum contrast ratio for WCAG 2.1 Level AA, which is 4.5:1.</p>
-    <div class="d-flex d-fw-wrap d-mn8">
-        {% for item in site.data.type.font-colors %}
-            {% if item.color != "Gray" %}
-                <div class="d-flex--cell d-w50 d-p8">
-                    <h2 class="dds-docs--header">{{ item.color }}</h2>
-                    <div class="d-flex d-fd-column d-ff-mono d-text-sm d-br-md">
-                        {% assign stop = item.stops %}
-                        {% for s in stop %}
-                            <div class="d-flex--cell d-p16 {% if forloop.first %}d-btr-md{% elsif forloop.last %}d-bbr-md{% endif %} {{ s.bg }} {{ s.class }}">
-                                <div class="d-flex d-ai-center">
-                                    <div class="d-flex--cell">.{{ s.class }}</div>
-                                    <div class="d-flex--cell d-ml-auto">
-                                        {% if s.ratio > "07.00" %}
-                                          <strong class="d-py4 d-d-px6 d-br-md d-lh-xs d-headline-xs d-fc-green-text d-ba d-bc-transparent d-bgc-green {% if s.bg == 'd-bgc-green' %}d-bc-green-dark{% endif %}">AAA</strong>
-                                        {% elsif s.ratio < "07.00" %}
-                                          <strong class="d-py4 d-px6 d-br-md d-lh-xs d-text-xxs d-fc-yellow-text d-bgc-yellow">AA</strong>
-                                        {% endif %}
-                                    </div>
-                                    <div class="d-flex--cell d-text-xs d-px6" style="min-width: 3rem">{{ s.ratio }}</div>
-                                </div>
+<section class="dialtone-section">
+    <header class="dialtone-section dialtone-section--xxs">
+        <h2 class="title__section">Variables</h2>
+        <p class="copy__normal">When writing Less, you can set an element's text color by using a <span class="code-example--inline">@color--{color}</span> variable. The table below lists the available variables and its output.</p>
+    </header>
+    <table class="dialtone-table dialtone-table--code">
+        <thead>
+            <tr>
+                <th scope="col" class="dialtone-table__column--md">Variable</th>
+                <th scope="col">Output</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in site.data.type.color-vars %}
+            {% assign color = i.color %}
+            {% assign hex = i.hex %}
+            <tr>
+                <th scope="row">@color--{{ color }}</th>
+                <td>{{ hex }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+<section class="dialtone-section">
+    <h2 class="title__section">Classes</h2>
+    <div class="dialtone-section dialtone-section--sm">
+        <header class="dialtone-section dialtone-section--xxs">
+            <h3 class="title__subsection">Grays</h3>
+            <p class="copy__normal">All grays meet the minimum contrast ratio for WCAG 2.1 Level AAA, which is 7:1.</p>
+        </header>
+        <div class="dialtone-color-grid__group" style="--color-grid-columns: 1">
+            {% for i in site.data.type.font-colors %}
+            {% assign color = i.color %}
+            {% assign stops = i.stops %}
+                {% if color == "Gray" %}
+                    {% for s in stops %}
+                        {% assign name = s.stop %}
+                        {% assign bg = s.bg %}
+                        {% assign ratio = s.ratio %}
+                        <div class="dialtone-color-grid__item d-background-color--{{ bg }} d-color--{{ name }} d-border d-border-bottom-width0 d-border-color--{% if bg == 'white' %}ash-dark{% elsif bg == 'slate' %}slate-lighter{% endif %}">
+                            <div class="dialtone-color-grid__label">.d-color--{{ name }}</div>
+                            <div class="dialtone-color-grid__ratio">
+                                <div class="dialtone-color-badge d-background-color--{% if ratio > '07.00' %}green{% elsif ratio < '07.00' %}yellow{% endif %} d-color--{% if ratio > '07.00' %}green-text{% elsif ratio < '07.00' %}yellow-text{% endif %}">AA{% if ratio > "07.00" %}A{% endif %}</div>
+                                <div>{{ ratio }}</div>
                             </div>
-                        {% endfor %}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    <div class="dialtone-section dialtone-section--sm">
+        <header class="dialtone-section dialtone-section--xxs">
+            <h3 class="title__subsection">Colors</h3>
+            <p class="copy__normal">All text colors meet the minimum contrast ratio for WCAG 2.1 Level AA, which is 4.5:1.</p>
+        </header>
+        <div class="d-grid-layout--with-columns d-grid-column-gap12 d-grid-row-gap24" style="--grid-col: 2; --grid-col-width: 50%;">
+            {% for i in site.data.type.font-colors %}
+            {% assign color = i.color %}
+            {% assign stops = i.stops %}
+                {% if color != "Gray" %}
+                <div class="dialtone-section dialtone-section--xxs">
+                    <h4 class="title__small">{{ i.color }}</h4>
+                    <div class="dialtone-color-grid__group" style="--color-grid-columns: 1">
+                    {% for s in stops %}
+                        {% assign name = s.stop %}
+                        {% assign bg = s.bg %}
+                        {% assign text = s.color %}
+                        {% assign ratio = s.ratio %}
+                        <div class="dialtone-color-grid__item d-background-color--{{ bg }} d-color--{{ text }}">
+                            <div class="dialtone-color-grid__label">.d-color--{{ text }}</div>
+                            <div class="dialtone-color-grid__ratio">
+                                <div class="dialtone-color-badge d-background-color--{% if ratio > '07.00' %}green{% elsif ratio < '07.00' %}yellow{% endif %} d-color--{% if ratio > '07.00' %}green-text{% elsif ratio < '07.00' %}yellow-text{% endif %}">AA{% if ratio > "07.00" %}A{% endif %}</div>
+                                <div>{{ ratio }}</div>
+                            </div>
+                        </div>
+                    {% endfor %}
                     </div>
                 </div>
-            {% endif %}
-        {% endfor %}
+                {% endif %}
+            {% endfor %}
+        </div>
     </div>
 </section>
