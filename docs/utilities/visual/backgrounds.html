@@ -71,3 +71,29 @@ description: Dialtone provides both fill and gradient background classes. Most c
         </div>
     </div>
 </section>
+<section class="dialtone-section">
+    <h2 class="title__section">Background Opacity</h2>
+    <div class="dialtone-section dialtone-section--xxs">
+        <h3 class="title__subsection">White</h3>
+        <p class="copy__normal">Change a white background opacity by using a <span class="code-example--inline">.d-background-opacity--white{#}</span> class. The table below lists the available classes, border radius size, and the CSS output.</p>
+        <div class="dialtone-color-grid__group d-background-color--slate d-border-radius--lg">
+            {% assign opacity = "95, 90, 85, 80, 75, 50, 25, 15, 10, 5, 0" | split: ", " %}
+            {% for o in opacity %}
+            <div class="dialtone-color-grid__item d-background-opacity--white{{ o }} {% if o <= '50' %}d-color--white{% else %}d-color--light{% endif %}">
+                <span class="dialtone-color-grid__label">.d-background-opacity--white{{ o }}</span>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="dialtone-section dialtone-section--xxs">
+        <h3 class="title__subsection">Slate</h3>
+        <p class="copy__normal">Change a white background opacity by using a <span class="code-example--inline">.d-background-opacity--slate{#}</span> class. The table below lists the available classes, border radius size, and the CSS output.</p>
+        <div class="dialtone-color-grid__group d-border-radius--lg">
+            {% for o in opacity %}
+            <div class="dialtone-color-grid__item d-background-opacity--slate{{ o }} {% if o >= '50' %}d-color--white{% else %}d-color--light{% endif %}">
+                <span class="dialtone-color-grid__label">.d-background-opacity--slate{{ o }}</span>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

@@ -1,66 +1,42 @@
 ---
 layout: page
 title: Opacity
-description: Utility classes to help quickly set or change the opacity of an element.
+description: Utility classes for changing an element's opacity.
 ---
-<section class="dds-docs--section">
-    <h2 class="dds-docs--header">Classes</h2>
-    <p class="dds-docs--copy">The opacity utility classes use an abbreviated syntax. Based on the CSS property name (<strong>o</strong>pacity) and the desired opacity percentage. Below is a table outlining the classes and their meanings:</p>
-    <table class="d-table">
-        <thead>
-            <tr>
-                <th scope="col" width="20%;">Class</th>
-                <th scope="col">Output</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for name in site.data.visual-styles.opacity %}
-            <tr>
-                <th scope="row" class="d-ff-mono d-text-xxs">.d-o{{ name.class }}</th>
-                <td class="d-ff-mono d-text-xxs">{{ name.output }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+<section class="dialtone-section">
+    <header class="dialtone-section dialtone-section--xxs">
+        <h2 class="title__section">Classes</h2>
+        <p class="copy__normal">Change an element's opacity by using a <span class="code-example--inline">.d-opacity{#}</span> class. The table below lists the available classes and its CSS output.</p>
+    </header>
+    <div class="dialtone-table-wrapper">
+        <table class="dialtone-table dialtone-table--code">
+            <thead>
+                <tr>
+                    <th scope="col" class="dialtone-table__column--md">Class</th>
+                    <th scope="col">Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for o in site.data.visual-styles.opacity %}
+                {% assign value = o.class %}
+                {% assign output = o.output %}
+                <tr>
+                    <th scope="row">.d-opacity{{ value }}</th>
+                    <td>opacity: {{ output }};</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </section>
-<section class="dds-docs--section">
-    <h2 class="dds-docs--header">Examples</h2>
-    <div class="dtd-example">
-{% highlight html linenos %}
-<div class="d-o0">…</div>
-<div class="d-o5">…</div>
-<div class="d-o10">…</div>
-<div class="d-o20">…</div>
-<div class="d-o25">…</div>
-<div class="d-o30">…</div>
-<div class="d-o40">…</div>
-<div class="d-o50">…</div>
-<div class="d-o60">…</div>
-<div class="d-o70">…</div>
-<div class="d-o75">…</div>
-<div class="d-o80">…</div>
-<div class="d-o90">…</div>
-<div class="d-o95">…</div>
-<div class="d-o100">…</div>
-{% endhighlight %}
-        <div class="dtd-example--preview">
-            <div class="d-flex d-fd-column d-fl1">
-                <div class="d-flex--cell d-my2 dtd-cell d-o0">.d-o0</div>
-                <div class="d-flex--cell d-my2 dtd-cell d-o5">.d-o5</div>
-                <div class="d-flex--cell d-my2 dtd-cell d-o10">.d-o10</div>
-                <div class="d-flex--cell d-my2 dtd-cell d-o20">.d-o20</div>
-                <div class="d-flex--cell d-my2 dtd-cell d-o25">.d-o25</div>
-                <div class="d-flex--cell d-my2 dtd-cell d-o30">.d-o30</div>
-                <div class="d-flex--cell d-my2 dtd-cell d-o40">.d-o40</div>
-                <div class="d-flex--cell d-my2 dtd-cell d-o50">.d-o50</div>
-                <div class="d-flex--cell d-my2 dtd-cell d-o60">.d-o60</div>
-                <div class="d-flex--cell d-my2 dtd-cell d-o70">.d-o70</div>
-                <div class="d-flex--cell d-my2 dtd-cell d-o75">.d-o75</div>
-                <div class="d-flex--cell d-my2 dtd-cell d-o80">.d-o80</div>
-                <div class="d-flex--cell d-my2 dtd-cell d-o90">.d-o90</div>
-                <div class="d-flex--cell d-my2 dtd-cell d-o95">.d-o95</div>
-                <div class="d-flex--cell d-my2 dtd-cell d-o100">.d-o100</div>
-            </div>
+<section class="dialtone-section">
+    <h2 class="title__section">Examples</h2>
+    <div class="dialtone-color-grid__group d-border-radius--lg">
+        {% for o in site.data.visual-styles.opacity %}
+        {% assign value = o.class %}
+        <div class="dialtone-color-grid__item d-background-color--slate d-color--white d-opacity{{ value }}">
+            <span class="dialtone-color-grid__label}">.d-opacity{{ value }}</span>
         </div>
+        {% endfor %}
     </div>
 </section>
