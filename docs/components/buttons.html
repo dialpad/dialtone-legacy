@@ -3,71 +3,49 @@ layout: page
 title: Buttons
 description: Buttons are UI elements which allow users to take actions throughout the app. It is important they are identifiable, consistent, communicate their actions clearly, and are appropriately sized to their action.
 ---
-<section class="dds-docs--section">
-    <h2 class="dds-docs--header">Styles</h2>
-    <p class="dds-docs--copy">Dialtone provides three levels of visual importance for buttons within three different visual styles. The three levels of visual importance are:</p>
-    <ol class="dds-docs--copy">
-        <li><strong>Clear:</strong> This button communicates the least importance. It offers no background or border color. It appears as a link with matching padding. This is typically used for secondary or minimally important actions. This is the default importance level of all buttons.</li>
-        <li><strong>Outlined:</strong> This button communicates slightly more importance than clear. It provides a border color, but no background color.</li>
-        <li><strong>Primary:</strong> This is the highest visual importance a button can have. It provides a border and a background color.</li>
-    </ol>
-    <p class="dds-docs--copy">These button styles are provided in three visual styles are:</p>
-    <ol class="dds-docs--copy">
-        <li><strong>Default / Blue:</strong> Our normal blue button colors.</li>
-        <li><strong>Danger:</strong> Buttons associated with potentially destructive actions. Appears as red.</li>
-        <li><strong>Inverted:</strong> For scenarios when you want to place a button on a non-white.</li>
-    </ol>
+<section class="dialtone-section dialtone-section--lg">
+    <section class="dialtone-section dialtone-section--sm">
+        <h2 class="title__section">Styles</h2>
+        <p class="copy__normal">Dialtone provides three levels of visual importance for buttons within three different visual styles. The three levels of visual importance are:</p>
+        <ol class="copy__normal">
+            <li><strong>Clear:</strong> This button communicates the least importance. It offers no background or border color. It appears as a link with matching padding. This is typically used for secondary or minimally important actions. This is the default importance level of all buttons.</li>
+            <li><strong>Outlined:</strong> This button communicates slightly more importance than clear. It provides a border color, but no background color.</li>
+            <li><strong>Primary:</strong> This is the highest visual importance a button can have. It provides a border and a background color.</li>
+        </ol>
+        <p class="copy__normal">These button styles are provided in three visual styles are:</p>
+        <ol class="copy__normal">
+            <li><strong>Default / Blue:</strong> Our normal blue button colors.</li>
+            <li><strong>Danger:</strong> Buttons associated with potentially destructive actions. Appears as red.</li>
+            <li><strong>Inverted:</strong> For scenarios when you want to place a button on a non-white.</li>
+        </ol>
+    </section>
+    <div class="dialtone-section">
+        {% include_relative buttons/primary.html %}
+    </div>
+    <div class="dialtone-section">
+        {% include_relative buttons/danger.html %}
+    </div>
+    <div class="dialtone-section">
+        {% include_relative buttons/inverted.html %}
+    </div>
+</section>
 
-    {% include_relative buttons/primary.html %}
-    {% include_relative buttons/danger.html %}
-    {% include_relative buttons/inverted.html %}
+<section class="dialtone-section dialtone-section--sm">
+    <h2 class="title__section">Variations</h2>
+    <div class="dialtone-section dialtone-section--lg">
+        <div class="dialtone-section">
+            {% include_relative buttons/loading.html %}
+        </div>
+        <div class="dialtone-section">
+            {% include_relative buttons/circle-buttons.html %}
+        </div>
+        <div class="dialtone-section">
+            {% include_relative buttons/icons.html %}
+        </div>
+        <div class="dialtone-section">
+            {% include_relative buttons/brand.html %}
+        </div>
+    </div>
 </section>
-<section class="dds-docs--section">
-    <h2 class="dds-docs--header">Variations</h2>
-    {% include_relative buttons/loading.html %}
-    {% include_relative buttons/circle-buttons.html %}
-    {% include_relative buttons/icons.html %}
-    {% include_relative buttons/brand.html %}
-</section>
-<section class="dds-docs--section">
-    <h2 class="dds-docs--header">Sizes</h2>
-    <p>The default button font-size is 16px. To change the button’s font-size, use the following classes:</p>
-    <table class="d-table">
-        <thead>
-            <tr>
-                <th scope="col" width="15%">Name</th>
-                <th scope="col" width="20%">Class</th>
-                <th scope="col">Font-size</th>
-                <th scope="col">Examples</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for item in site.data.buttons.sizes %}
-                <tr>
-                    <th scope="row" class="text-sm">{{ item.name }}</th>
-                    <td class="d-ff-mono d-text-xxs">{% if item.class != nil %}.{{ item.class }}{% else %}<em class="d-fc-gray d-text-sm">N/A</em>{% endif %}</td>
-                    <td>{{ item.size }}</td>
-                    <td>
-                        <div class="d-flex d-ai-center d-mnx2">
-                            {% assign examples = "normal, circle, icon" | split: ", "%}
-                            {% for e in examples %}
-                                <button class="d-flex--cell d-mx2 d-btn{% if e == 'circle' %} d-btn-circle{% elsif e == 'normal' %} d-btn__primary{% endif %}{% if item.class != nil %} {{ item.class }}{% endif %}" type="button" aria-pressed="false">
-                                    {% if e != 'normal' %}
-                                        <span class="d-btn--icon">
-                                            {% if e == 'circle' %}
-                                                <svg aria-hidden="true" class="d-svg d-svg--mic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
-                                            {% elsif e == 'icon' %}
-                                                <svg aria-hidden="true" class="d-svg d-svg--search" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
-                                            {% endif %}
-                                        </span>
-                                    {% endif %}
-                                    <span class="d-btn--label">Label</span>
-                                </button>
-                            {% endfor %}
-                        </div>
-                    </td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-</section>
+
+{% include_relative buttons/sizes.html %}
