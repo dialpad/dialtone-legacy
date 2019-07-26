@@ -14,20 +14,6 @@
 //  • Text transform
 //  • Text alignment
 //  • Line height
-//
-//  ============================================================================
-//  $   FONT FACE
-//  ----------------------------------------------------------------------------
-each(@font-family-weights, {
-    @font-face {
-        font-style: "normal";
-        font-weight: @key;
-        font-family: "MarkWeb";
-        src: url("@{font-path}@{value}.eot") format("eof"),
-             url("@{font-path}@{value}.eot?#iefix") format("embedded-opentype"),
-             url("@{font-path}@{value}.woff") format("woff");
-    };
-});
 
 //  ============================================================================
 //  $   FONT FAMILY
@@ -41,20 +27,6 @@ each(@font-family-weights, {
 //  ============================================================================
 //  $   FONT SIZES
 //  ----------------------------------------------------------------------------
-//  Reset margins
-h1, h2, h3, h4, h5, h6, p {
-    margin: 0;
-}
-
-//  $$  HEADLINES
-//  ----------------------------------------------------------------------------
-//  Correctly assign the font-face for HTML tags that are bold by default
-h1, h2, h3, h4, h5, h6,
-strong,
-table th {
-    font-weight: @font-weight--bold;
-}
-
 .d-headline--xl {
     font-size: @headline--xl;
     font-weight: @font-weight--bold;
