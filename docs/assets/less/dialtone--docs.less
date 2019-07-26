@@ -1,194 +1,581 @@
-@import "../../../lib/less/dialtone";
-@import "dialtone--syntax";
+//
+//  DIALTONE DOCUMENTATION
+//  UNIVERSAL FILE
+//
+//  These are various visual styles for Dialtone's documentation.
+//  For more information, please visit:
+//  https://dialpad.design/
+//
+//
+//  TABLE OF CONTENTS
+//  • VARIABLES
+//  • IMPORTS
+//  • WRAPPERS
+//  • TYPOGRAPHY
+//  • LISTS
+//  • EXAMPLES
+//
+//  ============================================================================
+//  $   VARIABLES
+//  ----------------------------------------------------------------------------
+@sidebar-min-width:     24rem;          //  240px
+@sidebar-max-width:     32.8rem;        //  328px
+@content-min-width:     min-content;
+@content-max-width:     74rem;        //  740px
 
+
+//  ============================================================================
+//  $   IMPORTS
+//  ----------------------------------------------------------------------------
+@import "../../../lib/less/dialtone";
+
+
+//  ============================================================================
+//  $   STYLE MIXINS
+//  ----------------------------------------------------------------------------
+//  $$  SCROLLBAR
+// ::-webkit-scrollbar {
+//     -webkit-appearance: none;
+//     width: @spacing8;
+// }
+//
+// ::-webkit-scrollbar-thumb {
+//     border-radius: @border-radius--sm;
+//     background-color: fade(@slate,50%);
+//     -webkit-box-shadow: 0 0 @spacing1 fade(@white,50%);
+// }
+//  ============================================================================
+//  $   WRAPPERS
+//  ============================================================================
+//  $$  UNIVERSAL RESETS
+//  ----------------------------------------------------------------------------
+//      [1]     Universally set border-box
+//      [2]     Font size set to 10px to make REM values easier to calculate
+//      [3]     We don't want 10px to be the default size, so we reset it to
+//              the desired 16px size;
+//      [4]     Prevent adjustments of font size after orientation changes in iOS.
+//  ----------------------------------------------------------------------------
 html,
 body {
+    *,
+    *:before,
+    *:after {
+        box-sizing: inherit;    // [1]
+    }
+
     height: 100%;
+    font-size: 10px;    // [2]
+}
+
+html {
+    *,
+    *:before,
+    *:after {
+        box-sizing: border-box;
+    }
 }
 
 body {
     margin: 0;
     min-height: 100%;
     background-color: @white;
-    color: @fc-dark;
-    font-family: @ff-mark;
-    line-height: @lh-lg;
+
+    color: @color--dark;
+    font-size: @base-font-size; // [3]
+    font-family: @font-family--mark;
+    line-height: @line-height--lg;
+    -webkit-text-size-adjust: 100%; // [4]
+}
+
+//  $$  LAYOUT
+//  ----------------------------------------------------------------------------
+//  Overall wrapper
+.dialtone-wrapper {
+    display: grid;
+    grid-template-columns:
+        [sidebar-start]
+            minmax(@sidebar-min-width,@sidebar-max-width)
+        [sidebar-end content-start]
+            minmax(@content-min-width,@content-max-width)
+        [content-end];
+    height: 100%;
+}
+
+//  Sidebar navigation
+.dialtone-sidebar {
+    grid-area: "sidebar";
+    position: relative;
+}
+
+//  --  NAVIGATION
+//  ----------------------------------------------------------------------------
+//  The overall sidebar wrapper
+.dialtone-navbar {
+    .d-top-bottom1;
+    .d-left1;
+    .d-border-right-radius--lg;
+    .d-background-color--ash;
+    .d-color--light;
+
+    position: fixed;
+    width: 100%;
+    min-width: @sidebar-min-width;
+    max-width: @sidebar-max-width;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+//  The sidebar navigation
+.dialtone-navigation__list {
+    .d-list-reset;
+
+    &[data-open="false"] & {
+        display: none;
+    }
+
+    //  Sub lists
+    .dialtone-navigation__item > & {
+        .d-padding12;
+    }
+
+    &[data-open="true"] & {
+        .d-padding-top0;
+    }
+
+    .dialtone-navigation__item {
+        .d-margin-y1;
+
+        &:last-of-type {
+            .d-margin-bottom0;
+        }
+    }
+}
+
+.dialtone-navigation {
+    .d-padding-bottom24;
+
+    > .dialtone-navigation__list {
+        .d-border-top;
+        .d-border-color--ash-darker;
+
+        &:first-of-type {
+            .d-border-top-width0;
+        }
+    }
+}
+
+.dialtone-navigation__header {
+    .d-padding24;
+    .d-text--xl;
+    .d-color--light;
+    .d-line-height--sm;
+
+    display: flex;
+    justify-content: space-between;
+    background-color: fade(@ash-dark,0%);
+    text-decoration: none;
+    transition: all 100ms @transition--cubic-inOut;
+
+    &:hover {
+        .d-color--medium;
+        .d-background-color--ash-dark;
+    }
+
+    .dialtone-navigation__list[data-open="true"] & {
+        .d-padding-y12;
+        .d-color--dark;
+    }
+
+    //  Show the right icon...
+    .icon__add,
+    .icon__remove {
+        display: block;
+    }
+    //  ... if it's open
+    .dialtone-navigation__list[data-open="true"] & .icon__add {
+        display: none;
+    }
+    //  ... if it's closed
+    .dialtone-navigation__list[data-open="false"] & .icon__remove {
+        display: none;
+    }
+}
+
+.dialtone-navigation__link {
+    .d-padding-y4;
+    .d-padding-x12;
+    .d-border-radius--sm;
+    .d-text--md;
+    .d-color--dark;
+    .d-line-height--lg;
+
+    display: block;
+    background-color: fade(@ash-dark,0%);
+    text-decoration: none;
+    transition: background-color 100ms @transition--cubic-inOut;
+
+    &:hover {
+        background-color: @ash-dark;
+    }
+
+    &.is-selected {
+        .d-background-color--blue-dark;
+        .d-color--white;
+        .d-font-weight--bold;
+
+        &:hover {
+            .d-background-color--blue-darker;
+        }
+    }
 }
 
 //  --  LOGO
-.dds-logo-image {
-    width: auto;
-    height: auto;
-    max-width: 12.8rem;
+//  ----------------------------------------------------------------------------
+.dialtone-logo {
+    .d-padding-y32;
+    .d-padding-x24;
+}
+.dialtone-logo__svg {
+    width: 12rem;
+    height: @icon-size--lg;
 }
 
-//  --  TYPE STYLES
-.dds-docs--title {
-    letter-spacing: -0.5px;
-    font-weight: @fw-bold;
-    font-size: @headline-lg;
+//  --  MAIN CONTENT AREA
+//  ----------------------------------------------------------------------------
+.dialtone-main {
+    .d-grid-layout--with-header-content;
+    .d-grid-row-gap32;
+    .d-padding32;
+
+    --grid-content-col: minmax(@content-min-width,@content-max-width);
+    --grid-header-row: min-content;
+    --grid-content-row: min-content;
+
+    display: grid;
+    grid-area: "content";
+
+    .dialtone-main__header {
+        grid-area: header;
+    }
+
+    .dialtone-main__content {
+        .d-grid-gap32;
+
+        display: grid;
+        grid-area: content;
+        grid-auto-flow: row;
+    }
 }
-.dds-docs--header {
-    margin-bottom: @sp4;
-    margin-bottom: @sp4;
+
+.dialtone-section       { .d-layout__stack; }
+.dialtone-section--xxs  { .d-layout__stack--xxs; }
+.dialtone-section--xs   { .d-layout__stack--xs; }
+.dialtone-section--sm   { .d-layout__stack--sm; }
+.dialtone-section--md   { .d-layout__stack--md; }
+.dialtone-section--lg   { .d-layout__stack--lg; }
+.dialtone-section--xl   { .d-layout__stack--xl; }
+.dialtone-section--xxl  { .d-layout__stack--xxl; }
+
+//  --  DIALTONE COLOR GRID
+//      Show the various color swatches of Dialpad
+//  ----------------------------------------------------------------------------
+.dialtone-color-grid {
+    .d-grid-column-gap16;
+    .d-grid-row-gap24;
+
+    display: grid;
+    grid-template-columns: repeat(var(--color-grid-columns,3), [col] 1fr);
+}
+.dialtone-color-grid__group {
+    display: flex;
+    flex-direction: column;
+}
+.dialtone-color-grid__item {
+    .d-padding16;
+    .d-font-family--mono;
+    .d-text--xs;
+
+    display: flex;
+    justify-content: space-between;
+
+    &[data-primary="true"] {
+        .d-padding-y32;
+    }
+
+    &:first-of-type {
+        .d-border-top-radius--md;
+    }
+    &:last-of-type {
+        .d-border-bottom-radius--md;
+    }
+}
+
+.dialtone-color-grid__label,
+.dialtone-color-grid__ratio {
+    display: flex;
+    align-items: center;
+}
+
+.dialtone-color-badge {
+    .d-margin-right6;
+    .d-padding4;
+    .d-border-radius--sm;
+    .d-font-family--sans;
+    .d-line-height--xs;
+
+    font-size: 1rem;
     font-weight: 700;
-    font-size: @headline-md;
-    font-family: @ff-mark;
-}
-.dds-docs--subheader {
-    margin-bottom: @sp4;
-    font-size: @headline-sm;
-}
-.dds-docs--copy__lg {
-    margin-top: 0;
-    color: @fc-dark;
-    font-size: @text-xl;
-    line-height: @lh-lg;
-}
-.dds-docs--subtitle {
-    margin-bottom: @sp4;
-    font-size: @text-xl;
-    line-height: @lh-md;
-}
-.dds-docs--copy {
-    margin-top: 0;
-    color: @fc-dark;
-    font-size: @text-md;
-    line-height: @lh-lg;
-}
-.dds-docs--code {
-    padding: @sp2 @sp4;
-    border-radius: @br-sm;
-    background-color: @ash-dark;
-    color: @red-dark;
-    font-size: @text-xxs;
-    font-family: @ff-mono;
-    line-height: @lh-xl;
+    text-transform: uppercase;
 }
 
-//  --  PREVIEW
-.dtd-example {
-    margin: @sp16 0 @sp32;
-    max-width: 73.6rem;
-    border: @bw1 solid @ash-dark;
-    border-radius: @br-md;
+//  ============================================================================
+//  $   TYPOGRAPHY
+//  ----------------------------------------------------------------------------
+.title__page {
+    .d-margin-bottom0;
+    .d-headline--xl;
+    letter-spacing: -.5px;
+}
+.title__section {
+    .d-margin-bottom0;
+    .d-headline--md;
+}
+.title__subsection {
+    .d-margin-bottom0;
+    .d-headline--sm;
+}
+.title__small {
+    .d-margin-bottom0;
+    .d-font-weight--normal;
+    .d-text--lg;
+}
 
-    //  CODE
-    .highlight {
-        position: relative;
+.copy__lead {
+    .d-margin-bottom0;
+    .d-headline--sm;
+    .d-font-weight--normal;
+    .d-line-height--lg;
+}
 
-        // Reset margins
+.copy__normal {
+    .d-margin-bottom0;
+    .d-text--md;
+    .d-line-height--lg;
+}
+
+
+//  ============================================================================
+//  $   TABLES
+//  ----------------------------------------------------------------------------
+.dialtone-table-wrapper {
+    .d-border-bottom;
+    .d-border-color--ash-dark;
+
+    max-height: 40rem;
+    overflow-y: scroll;
+}
+.dialtone-table {
+    .d-table;
+
+    //  Center a table cell
+    .dialtone-table__th--centered {
+        text-align: center;
+    }
+
+    //  Table Column Widths
+    .dialtone-table__column--md {
+        width: 30%;
+    }
+
+    //  Code Table
+    &.dialtone-table--code tbody {
+        th {
+            .d-font-weight--normal;
+            .code-example;
+            .code-example.code-example--class;
+        }
+        td {
+            .code-example;
+            .code-example.code-example--css;
+
+            &.dialtone-table--sans {
+                .d-font-family--sans;
+                .d-color--dark;
+                .d-text--xs;
+            }
+        }
+    }
+}
+
+//  ============================================================================
+//  $   EXAMPLES
+//  ----------------------------------------------------------------------------
+@import "dialtone--syntax";
+
+.code-example {
+    .d-text--xxs;
+    .d-font-family--mono;
+    .d-line-height--xl;
+
+    &.code-example--class {
+        color: #6303FF;         //  Purple
+    }
+    &.code-example--css {
+        color: @blue-dark;
+    }
+}
+
+//  $$  INLINE CODE
+//  ----------------------------------------------------------------------------
+.code-example--inline {
+    .d-padding-y2;
+    .d-padding-x4;
+    .d-border-radius--sm;
+    .d-background-color--ash-dark;
+    .code-example;
+    .code-example.code-example--class;
+
+    white-space: nowrap;
+}
+
+//  $$  CODE BLOCK
+//  ----------------------------------------------------------------------------
+.code__block,
+.highlight {
+    .d-background-color--ash;
+    position: relative;
+
+    &,
+    pre {
+        .d-margin0;
+        .d-border-radius--md;
+        .d-text--xs;
+        .d-font-family--mono;
+        .d-line-height--lg;
+    }
+
+    > pre {
+        overflow: auto;
+    }
+}
+
+.dialtone-example {
+    .d-border-radius--md;
+    .d-border;
+    .d-border-color--ash-dark;
+    max-width: @content-max-width;
+
+    //  Make correct border radii appear
+    //  If both elements are true, the code block top radii
+    //  should be flattened.
+    &[data-example="yes"][data-code="yes"] .highlight {
+        .d-padding-top1;
+
         &,
         pre {
-            margin: 0;
-            border-radius: @br-md @br-md 0 0;
-            font-size: @text-xs;
-            font-family: @ff-mono;
-            line-height: @lh-lg;
+            .d-border-top-radius--none;
         }
-
-        > pre {
-            overflow: auto;
-            max-height: 24rem;
-
-        }
-
         .gutter.gl {
-            margin: -@sp1 0 -@sp1 -@sp1;
-            padding: @sp8;
-            min-width: @sp24;
-            text-align: right;
-
-            pre {
-                color: #7A7D80;
-            }
-        }
-
-        .code {
-            padding-left: @sp12;
+            border-top-left-radius: @spacing0;
         }
     }
 
-    //  EXAMPLE AREA
-    .dtd-example--preview {
-        padding: @sp24;
+    //  Example container
+    .dialtone-example__example {
+        .d-padding24;
     }
 
-    //  GRID BLOCKS
-    .dtd-cell,
-    .dtd-cell__outline,
-    .dtd-cell--inner {
-        padding: @sp8;
-        border: 1px solid lighten(@blue,10%);
-        background-color: fade(@blue, 15%);
-        color: @blue-text;
-        text-align: center;
-        font-size: @text-xs;
-        font-family: @ff-mono;
+    //  Code styles
+    .gutter.gl {
+        .d-padding-right6;
+        .d-border-left-radius--sm;
+        .d-background-color--ash-dark;
+        .d-color--light;
+
+        min-width: @spacing24;
+        text-align: right;
+    }
+    .code {
+        .d-padding-left6;
+    }
+}
+
+.layout-block {
+    .example-block;
+    .example-block--clear;
+
+    position: relative;
+    display: flex;
+
+    .layout-block__label {
+        .d-flex--center;
+        .d-padding8;
+
+        display: flex;
+        flex: 1 auto;
+        width: @spacing48;
+        height: @spacing48;
     }
 
-    .dtd-cell--inner {
-        padding: @sp8;
-        border: 1px solid lighten(@blue,10%);
-        background-color: fade(@blue, 50%);
+    .layout-block__bar {
+        .example-block__inner;
+
+        flex-grow: 0;
+        width: var(--layout-example-width, auto);
+        height: var(--layout-example-height, auto);
     }
 
-    .dtd-cell__clear {
-        padding: @sp0;
-        border: none;
-
-        .dtd-cell__outline {
-            border: 1px solid lighten(@blue,10%);
-            background-color: fade(@blue, 75%);
-        }
+    &.layout-block--outlined {
+        .example-block--outlined;
     }
+}
 
-    .dtd-cell__outline {
-        border-color: @ash-dark;
-        background-color: @white;
-        color: @slate;
+.layout-block__inner {
+    .example-block__inner;
+}
 
-        .dtd-cell--inner {
-            border-color: transparent;
-            background-color: fade(@blue-darker, 50%);
-            color: @fc-white;
-        }
+//  $$  EXAMPLE BLOCKS
+//      This are colored blocks used to illustrate space such as with grids,
+//      padding, or widths.
+//  ----------------------------------------------------------------------------
+.example-block {
+    .d-border;
+    .d-border-color--blue-light;
+    .d-text--xs;
+    .d-font-family--mono;
+    .d-line-height--sm;
+    .d-color--blue-text;
+    background-color: fade(@blue, 15%);
+}
+
+.example-block__inner {
+    .d-border;
+    .d-border-color--blue-light;
+    background-color: fade(@blue, 50%);
+}
+
+//  --  MODIFYING STYLES
+//  ----------------------------------------------------------------------------
+//      CLEAR BLOCK
+.example-block--clear {
+    .d-padding0;
+    border: none;
+
+    .example-block--outlined {
+        border: @border-width1 solid @blue-light;
+        background-color: fade(@blue, 75%);
     }
+}
 
-    //  CODE ONLY
-    &.dtd-example-code-only {
-        margin-bottom: @sp16;
-        border: none;
+//      OUTLINED BLOCK
+.example-block--outlined {
+    .d-border-color--ash-dark;
+    .d-background-color--white;
+    .d-color--dark;
 
-        .highlight,
-        .higlight pre {
-            border-radius: @br-md;
-        }
-    }
-
-    //  WITH RWD EXAMPLE
-    &.dtd-example__responsive {
-        .dtd-example-header {
-            border-radius: @br-md @br-md 0 0;
-            background-color: @slate;
-            color: @white;
-        }
-
-        .highlight,
-        .highlight pre {
-            border-radius: 0;
-        }
-
-        .dtd-example-btn {
-            margin: @sp4;
-            padding: @sp8;
-            opacity: 0.5;
-            cursor: pointer;
-
-            &:hover,
-            &.dtd-example-btn__selected {
-                opacity: 1;
-            }
-        }
+    .example-block__inner {
+        .d-border-color--transparent;
+        .d-color--white;
+        background-color: fade(@blue-darker, 50%);
     }
 }

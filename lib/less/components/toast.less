@@ -10,48 +10,50 @@
 //  $   BASE STYLE
 //  ----------------------------------------------------------------------------
 .d-toast {
-    position: relative;
-    padding: @sp12 @sp8 @sp8;
-    margin: @sp6 0;
-    width: 100%;
-    max-width: @fixed-size-3;
-    z-index: @z-snackbar;
-    border-radius: @br-sm;
-    border: @bw1 solid @ash-dark;
-    background-color: @white;
-    box-shadow: @bs-sm;
+    box-sizing: border-box;
 
-    font-size: @text-sm;
-    line-height: @lh-sm;
-    color: @fc-medium;
+    position: relative;
+    padding: @spacing12 @spacing8 @spacing8;
+    margin: @spacing6 0;
+    width: 100%;
+    max-width: @fixed-size3;
+    z-index: @z-index--toast;
+    border-radius: @border-radius--sm;
+    border: @border-width1 solid @ash-dark;
+    background-color: @white;
+    box-shadow: @box-shadow--sm;
+
+    font-size: @text--sm;
+    line-height: @line-height--sm;
+    color: @color--medium;
 
     &:before {
         content: "";
         position: absolute;
-        top: -@sp1;
-        left: -@sp1;
-        right: -@sp1;
+        top: -@spacing1;
+        left: -@spacing1;
+        right: -@spacing1;
 
-        height: @sp6;
-        border-radius: @br-sm @br-sm 0 0;
+        height: @spacing6;
+        border-radius: @border-radius--sm @border-radius--sm 0 0;
     }
 
-    .d-toast--content {
+    .d-toast__content {
         display: flex;
         align-items: center;
     }
 
-    .d-toast--icon {
+    .d-toast__icon {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-grow: 0;
         flex-shrink: 0;
 
-        width: @sp24;
-        height: @sp24;
-        margin-right: @sp4;
-        border-radius: @br-circle;
+        width: @spacing24;
+        height: @spacing24;
+        margin-right: @spacing4;
+        border-radius: @border-radius--circle;
         color: @white;
 
         .d-svg {
@@ -60,53 +62,53 @@
         }
     }
 
-    .d-toast--meta {
-        margin-bottom: @sp4;
-        font-size: @text-xxs;
-        font-family: @ff-sans;
+    .d-toast__meta {
+        margin-bottom: @spacing4;
+        font-size: @text--xxs;
+        font-family: @font-family--sans;
         color: @slate-lightest;
     }
 
-    .d-toast--message {
-        margin-left: @sp4;
-        font-size: @text-xs;
+    .d-toast__message {
+        margin-left: @spacing4;
+        font-size: @text--xs;
     }
 }
 
 //  ============================================================================
 //  $   ALTERNATE STYLES
 //  ----------------------------------------------------------------------------
-.d-toast__viewing {
+.d-toast--viewing {
     &:before,
-    .d-toast--icon {
+    .d-toast__icon {
         background-color: #00CAC6;  // Teal, we should replace this at some point
     }
 }
 
-.d-toast__chat {
+.d-toast--chat {
     &:before,
-    .d-toast--icon {
+    .d-toast__icon {
         background-color: @navy-dark;
     }
 }
 
-.d-toast__success {
+.d-toast--success {
     &:before,
-    .d-toast--icon {
+    .d-toast__icon {
         background-color: @green;
     }
 }
 
-.d-toast__error {
+.d-toast--error {
     &:before,
-    .d-toast--icon {
+    .d-toast__icon {
         background-color: @red;
     }
 }
 
-.d-toast__info {
+.d-toast--info {
     &:before,
-    .d-toast--icon {
+    .d-toast__icon {
         background-color: @blue;
     }
 }
@@ -115,9 +117,11 @@
 //  $   TOAST WRAPPER
 //  ----------------------------------------------------------------------------
 .d-toast-wrapper {
+    box-sizing: border-box;
+
     position: absolute;
-    top: @sp32;
-    left: @sp32;
+    top: @spacing32;
+    left: @spacing32;
 
     .d-toast {
         &:first-of-type {

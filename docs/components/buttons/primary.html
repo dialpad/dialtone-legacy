@@ -1,50 +1,50 @@
-<h3 class="dds-docs--subheader">Default</h3>
-<p>The default button offers three button styles. To help provide clarity to users, it is recommended that only <em>one</em> button have the primary button style within a section or page.</p>
-<div class="dtd-example">
-{% highlight html linenos %}
-<button class="d-btn" type="button" aria-pressed="false">…</button>
-<button class="d-btn d-button__outlined" type="button" aria-pressed="false">…</button>
-<button class="d-btn d-button__primary" type="button" aria-pressed="false">…</button>
-{% endhighlight %}
-    <div class="dtd-example--preview">
-        <table class="d-table d-m0">
+<header class="dialtone-section--xxs">
+    <h3 class="title__subsection">Default</h3>
+    <p class="copy__normal">The default button offers three button styles. To help provide clarity to users, it is recommended that only <em>one</em> button have the primary button style within a section or page.</p>
+</header>
+<div class="dialtone-example" data-example="yes" data-code="yes">
+    <div class="dialtone-example__example">
+        <table class="dialtone-table">
             <thead>
                 <tr>
-                    <th scope="col" width="15%">Name</th>
-                    <th scope="col" width="25%">Class</th>
-                    <th scope="col" width="20%" class="d-ta-center">Default</th>
-                    <th scope="col" width="20%" class="d-ta-center">Selected</th>
-                    <th scope="col" width="20%" class="d-ta-center">Disabled</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Class</th>
+                    <th scope="col" style="text-align: center;">Default</th>
+                    <th scope="col" style="text-align: center;">Selected</th>
+                    <th scope="col" style="text-align: center;">Disabled</th>
                 </tr>
             </thead>
             <tbody>
-                {% for item in site.data.buttons.styles %}
-                    {% if item.style == "Default" %}
-                        {% assign types = item.classes %}
-                        {% for class in types %}
-                        <tr>
-                            <th scope="row" class="d-text-sm">{{ class.title }}</th>
-                            <td class="d-ff-mono d-text-xxs">.d-btn {% if class.class != nil %}.{{ class.class }}{% endif %}</td>
-                            <td class="d-px4 d-ta-center">
-                                <button class="d-btn {{ class.class }} d-w100 d-ws-nowrap" type="button" aria-pressed="false">
-                                    <span class="d-btn--label">Place call</span>
-                                </button>
-                            </td>
-                            <td class="d-px4 d-ta-center">
-                                <button class="d-btn {{ class.class }} is-selected d-w100 d-ws-nowrap" type="button" aria-pressed="false">
-                                    <span class="d-btn--label">Place call</span>
-                                </button>
-                            </td>
-                            <td class="d-px4 d-ta-center">
-                                <button class="d-btn {{ class.class }} d-w100 d-ws-nowrap" type="button" aria-pressed="false" disabled>
-                                    <span class="d-btn--label">Place call</span>
-                                </button>
-                            </td>
-                        </tr>
-                        {% endfor %}
-                    {% endif %}
+                {% assign classes = site.data.buttons.styles | split: ", "%}
+                {% for s in classes %}
+                <tr>
+                    <th scope="row">{{ s | capitalize }}</th>
+                    <td class="code-example">.d-btn {% if s != "default" %}.d-btn--{% if s == "outlined" %}outlined{% elsif s == "filled"%}primary{% endif %}{% endif %}</td>
+                    <td>
+                        <button class="d-btn d-width100{% if s != 'default' %} d-btn--{% if s == 'outlined' %}outlined{% elsif s == 'filled'%}primary{% endif %}{% endif %}" type="button" aria-pressed="false" style="white-space: nowrap;">
+                            <span class="d-btn__label">Place call</span>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="d-btn d-width100{% if s != 'default' %} d-btn--{% if s == 'outlined' %}outlined{% elsif s == 'filled'%}primary{% endif %}{% endif %} is-selected" type="button" aria-pressed="false" style="white-space: nowrap;">
+                            <span class="d-btn__label">Place call</span>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="d-btn d-width100{% if s != 'default' %} d-btn--{% if s == 'outlined' %}outlined{% elsif s == 'filled'%}primary{% endif %}{% endif %}" type="button" aria-pressed="false" style="white-space: nowrap;" disabled>
+                            <span class="d-btn__label">Place call</span>
+                        </button>
+                    </td>
+                </tr>
                 {% endfor %}
             </tbody>
         </table>
+    </div>
+    <div class="dialtone-example__code">
+{% highlight html linenos %}
+<button class="d-btn" type="button" aria-pressed="false">…</button>
+<button class="d-btn d-btn--outlined" type="button" aria-pressed="false">…</button>
+<button class="d-btn d-btn--primary" type="button" aria-pressed="false">…</button>
+{% endhighlight %}
     </div>
 </div>

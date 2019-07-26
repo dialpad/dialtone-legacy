@@ -1,114 +1,140 @@
 ---
 layout: page
 title: Borders
-description: Utility classes for borders and border radiuses.
+description: Utility classes for borders.
 ---
-<section class="dds-docs--section">
-    <h2 class="dds-docs--header">Default border</h2>
-    <p class="dds-docs--copy">The default border utility class applies a 1px, solid border using the current text color as it's color.</p>
-    <div class="dtd-example">
+<section class="dialtone-section">
+    <header class="dialtone-section--xxs">
+        <h2 class="title__section">Borders</h2>
+        <p class="copy__normal">Borders can be applied directionally to all sides, a specific side, horizontally, or vertically. The table below lists the class names, directions, and the CSS output.</p>
+    </header>
+    <div class="dialtone-section--xxs">
+        <h2 class="title__subsection">Classes</h2>
+        <table class="dialtone-table dialtone-table--code">
+            <thead>
+                <tr>
+                    <th scope="col" class="dialtone-table__column--md">Class</th>
+                    <th scope="col">Direction</th>
+                    <th scope="col">Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% assign directions = site.data.borders.directions | split: ", " %}
+                {% for i in directions %}
+                <tr>
+                    <th scope="row">.d-border{% if i != "all" %}-{{ i }}{% endif %}</th>
+                    <td>{{ i | capitalize}}{% if i == "y" or i == "x" %}-Axis{% endif %}</td>
+                    <td>
+                        {% if i == "y" %}
+                            border-top: 1px solid currentColor;<br/>
+                            border-bottom: 1px solid currentColor;
+                        {% elsif i == "x" %}
+                            border-right: 1px solid currentColor;<br/>
+                            border-left: 1px solid currentColor;
+                        {% elsif i != "all" %}
+                            border-{{ i }}: 1px solid currentColor;
+                        {% else %}
+                            border: 1px solid currentColor;
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="dialtone-section">
+        <h2 class="title__subsection">Examples</h2>
+        <div class="dialtone-example" data-example="yes" data-code="yes">
+            <div class="dialtone-example__example">
+                <div class="d-grid-layout--with-columns d-grid-gap16" style="--grid-col: 4; --grid-col-width: 23%;">
+                    {% for i in directions %}
+                        <div class="layout-block d-grid-column{% if i == 'all' %}--span4{% elsif i == 'y' or i == 'x' %}--span2{% endif %}"><div class="layout-block__label d-border{% if i != 'all' %}-{{ i }}{% endif %} d-border-color--navy">.d-border{% if i != 'all' %}-{{ i }}{% endif %}</div></div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="dialtone-example__code">
 {% highlight html linenos %}
-<div class="d-ba">
-    .d-ba object
-</div>
+<div class="d-border">…</div>
+<div class="d-border-top">…</div>
+<div class="d-border-right">…</div>
+<div class="d-border-bottom">…</div>
+<div class="d-border-left">…</div>
+<div class="d-border-y">…</div>
+<div class="d-border-x">…</div>
 {% endhighlight %}
-        <div class="dtd-example--preview">
-            <div class="d-ba d-p8 d-w100 dtd-cell">
-                .d-ba
             </div>
         </div>
     </div>
 </section>
-<section class="dds-docs--section">
-    <h2 class="dds-docs--header">Directional borders</h2>
-    <p class="dds-docs--copy">Borders can be applied directionally to a specific side, horizontally, and vertically.</p>
-    <h3 class="dds-docs--subheader">Classes</h3>
-    <p class="dds-docs--copy">The border utility classes use an abbreviated syntax. The abbreviations are based on the CSS property name and the desired direction(s) the border should be applied. Below is a table outlining the classes and their meanings:</p>
-    <table class="d-table">
-        <thead>
-            <tr>
-                <th scope="col" style="width: 20;">Class</th>
-                <th scope="col" style="width: 30;">Output</th>
-                <th scope="col">Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for name in site.data.borders.directions %}
-            <tr>
-                <th scope="row" class="d-ff-mono d-text-xxs">{{ name.class }}</th>
-                <td class="d-ff-mono d-text-xxs">{{ name.output }}</td>
-                <td>{{ name.name }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    <h3 class="dds-docs--subheader">Examples</h3>
-    <div class="dtd-example">
-{% highlight html linenos %}
-<div class="d-bt">.d-bt</div>
-<div class="d-br">.d-br</div>
-<div class="d-bb">.d-bb</div>
-<div class="d-bl">.d-bl</div>
-<div class="d-bx">.d-bx</div>
-<div class="d-by">.d-by</div>
-{% endhighlight %}
-        <div class="dtd-example--preview">
-            <div class="d-flex d-fw-wrap d-fl1__all">
-                <div class="d-flex--cell2 d-m8 dtd-cell d-baw0 d-bt d-btw1">.d-bt</div>
-                <div class="d-flex--cell2 d-m8 dtd-cell d-baw0 d-br d-brw1">.d-br</div>
-                <div class="d-flex--cell2 d-m8 dtd-cell d-baw0 d-bb d-bbw1">.d-bb</div>
-                <div class="d-flex--cell2 d-m8 dtd-cell d-baw0 d-bl d-blw1">.d-bl</div>
-                <div class="d-flex--cell2 d-m8 dtd-cell d-baw0 d-bx d-bxw1">.d-bx</div>
-                <div class="d-flex--cell2 d-m8 dtd-cell d-baw0 d-by d-byw1">.d-by</div>
-            </div>
+<section class="dialtone-section">
+    <header class="dialtone-section--xxs">
+        <h2 class="title__section">Widths</h2>
+        <p class="copy__normal">By default all <span class="code-example--inline">.d-border{-direction}</span> classes have a 1px border width. This can be changed using a <span class="code-example--inline">.d-border-width{#}</span> utility class. Like the directional border classes above, border widths can be applied to all sides, a specific side, horizontally, or vertically. The table below lists the class names, directions, and the CSS output.</p>
+    </header>
+    <div class="dialtone-section--xxs">
+        <h2 class="title__subsection">Classes</h2>
+        <div class="dialtone-table-wrapper">
+            <table class="dialtone-table dialtone-table--code">
+                <thead>
+                    <tr>
+                        <th scope="col" class="dialtone-table__column--md">Class</th>
+                        <th scope="col">Direction</th>
+                        <th scope="col">Output</th>
+                    </tr>
+                </thead>
+                {% assign widths = site.data.borders.widths | split: ", " %}
+                {% for i in directions %}
+                <tbody>
+                    {% for w in widths %}
+                    <tr>
+                        <th scope="row">.d-border{% if i != "all" %}-{{ i }}{% endif %}-width{{ w }}</th>
+                        <td>{{ i | capitalize}}{% if i == "y" or i == "x" %}-Axis{% endif %}</td>
+                        <td>
+                            {% if i == "y" %}
+                                border-top-width: {{ w }}px;<br/>
+                                border-bottom-width: {{ w }}px;
+                            {% elsif i == "x" %}
+                                border-right-width: {{ w }}px;<br/>
+                                border-left-width: {{ w }}px;
+                            {% elsif i != "all" %}
+                                border-{{ i }}-width: {{ w }}px;
+                            {% else %}
+                                border-width: {{ w }}px;
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                {% endfor %}
+            </table>
         </div>
     </div>
-</section>
-<section class="dds-docs--section">
-    <h2 class="dds-docs--header">Border widths</h2>
-    <p class="dds-docs--copy">Set a border's width by using a border style utility class. This allows you to not only increase a border width from it's default 1px value, but also remove borders by setting them to 0.</p>
-    <h3 class="dds-docs--subheader">Classes</h3>
-    <p class="dds-docs--copy">The border utility classes use an abbreviated syntax. The abbreviations are based on the CSS property name, the desired direction, and the property being applied.</p>
-    <table class="d-table">
-        <thead>
-            <tr>
-                <th scope="col" style="width: 20;">Class</th>
-                <th scope="col" style="width: 30;">Output</th>
-                <th scope="col">Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for name in site.data.borders.widths %}
-            <tr>
-                <th scope="row" class="d-ff-mono d-text-xxs">{{ name.class }}</th>
-                <td class="d-ff-mono d-text-xxs">{{ name.output }}</td>
-                <td>{{ name.description }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    <h3 class="dds-docs--subheader">Examples</h3>
-    <div class="dtd-example">
+    <div class="dialtone-section--xxs">
+        <h2 class="title__subsection">Examples</h2>
+        <div class="dialtone-example" data-example="yes" data-code="yes">
+            <div class="dialtone-example__example">
+                <div class="d-grid-layout--with-columns d-grid-gap16" style="--grid-col: 4; --grid-col-width: 23%;">
+                    <div class="layout-block"><div class="layout-block__label d-border-color--navy d-border d-border-width2">width2</div></div>
+                    <div class="layout-block"><div class="layout-block__label d-border-color--navy d-border d-border-width2 d-border-top-width0">width2 top-width0</div></div>
+                    <div class="layout-block"><div class="layout-block__label d-border-color--navy d-border-top d-border-top-width2">top-width2</div></div>
+                    <div class="layout-block"><div class="layout-block__label d-border-color--navy d-border-right d-border-right-width2">right-width2</div></div>
+                    <div class="layout-block"><div class="layout-block__label d-border-color--navy d-border-bottom d-border-bottom-width4">bottom-width4</div></div>
+                    <div class="layout-block"><div class="layout-block__label d-border-color--navy d-border-left d-border-left-width4">left-width4</div></div>
+                    <div class="layout-block"><div class="layout-block__label d-border-color--navy d-border-x d-border-x-width6">x-width6</div></div>
+                    <div class="layout-block"><div class="layout-block__label d-border-color--navy d-border-y d-border-y-width6">y-width6</div></div>
+                </div>
+            </div>
+            <div class="dialtone-example__code">
 {% highlight html linenos %}
-<div class="d-ba d-baw2">…</div>
-<div class="d-ba d-baw2 d-btw0">…</div>
-<div class="d-bt d-btw2">…</div>
-<div class="d-br d-brw2">…</div>
-<div class="d-bb d-bbw4">…</div>
-<div class="d-bl d-blw4">…</div>
-<div class="d-bx d-bxw6">…</div>
-<div class="d-by d-byw6">…</div>
+<div class="d-border d-border-width2">width2</div>
+<div class="d-border d-border-width2 d-border-top-width0">width2 top-width0</div>
+<div class="d-border-top d-border-top-width2">top-width2</div>
+<div class="d-border-right d-border-right-width2">right-width2</div>
+<div class="d-border-bottom d-border-bottom-width4">bottom-width4</div>
+<div class="d-border-left d-border-left-width4">left-width4</div>
+<div class="d-border-x d-border-x-width6">x-width6</div>
+<div class="d-border-y d-border-y-width6">y-width6</div>
 {% endhighlight %}
-        <div class="dtd-example--preview">
-            <div class="d-flex d-fw-wrap">
-                <div class="d-flex--cell d-m8 dtd-cell d-ba d-baw2" style="flex-basis: calc(33% - 16px)">.d-ba .d-baw2</div>
-                <div class="d-flex--cell d-m8 dtd-cell d-ba d-baw2 d-btw0" style="flex-basis: calc(33% - 16px)">.d-ba .d-baw2 .d-btw0</div>
-                <div class="d-flex--cell d-m8 dtd-cell d-bt d-btw2" style="flex-basis: calc(33% - 16px)">.d-bt .d-btw2</div>
-                <div class="d-flex--cell d-m8 dtd-cell d-br d-brw2" style="flex-basis: calc(33% - 16px)">.d-br .d-brw2</div>
-                <div class="d-flex--cell d-m8 dtd-cell d-bb d-bbw4" style="flex-basis: calc(33% - 16px)">.d-bb .d-bbw4</div>
-                <div class="d-flex--cell d-m8 dtd-cell d-bl d-blw4" style="flex-basis: calc(33% - 16px)">.d-bl .d-blw4</div>
-                <div class="d-flex--cell d-m8 dtd-cell d-bx d-bxw6" style="flex-basis: calc(33% - 16px)">.d-bx .d-bxw6</div>
-                <div class="d-flex--cell d-m8 dtd-cell d-by d-byw6" style="flex-basis: calc(33% - 16px)">.d-by .d-byw6</div>
             </div>
         </div>
     </div>

@@ -1,0 +1,17 @@
+---
+layout: page
+title: Colors
+description: Dialpad uses specific color choices to help communicate user interface functionality, states, and actions within the product. These colors have been selected for on-screen use.
+---
+<section class="dialtone-color-grid">
+    {% for color in site.data.color-stops %}
+    <div class="dialtone-color-grid__group">
+        {% for stop in color.stops %}
+            <div class="dialtone-color-grid__item d-background-color--{{ stop.stop }} {{ stop.copy }}" data-primary="{% if stop.primary %}true{% else %}false{% endif %}">
+                <strong class="dialtone-color-grid__label">{{ stop.stop }}</strong>
+                <span class="dialtone-color-grid__hex">{{ stop.hex }}</span>
+            </div>
+        {% endfor %}
+    </div>
+    {% endfor %}
+</section>

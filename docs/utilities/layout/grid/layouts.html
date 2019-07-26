@@ -1,0 +1,117 @@
+<section class="dialtone-section">
+    <header class="dialtone-section--xxs">
+        <h2 class="title__section">Grid Layouts</h2>
+        <p class="copy__normal">These layout classes cover many of the common layouts seen throughout Dialpad and UberConference. Instead of using Less variables (<span class="code-example--inline">@variable</span>) within these classes (which locks the value into the CSS), these layouts use CSS variables (<span class="code-example--inline">var(--variable)</span>). Using CSS variables allows items to change dynamically on a page without needing to add or remove a class name. This is especially helpful with responsive designs, allowing us to adjust column totals, widths, heights, etc based on viewport height or width without needing to write more CSS.</p>
+    </header>
+    <div class="dialtone-section--xxs">
+        <h2 class="title__subsection">CSS Variables</h2>
+        <table class="dialtone-table dialtone-table--code">
+            <thead>
+                <tr>
+                    <th scope="col" class="dialtone-table__column--md">CSS Variable</th>
+                    <th scope="col">Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in site.data.grid.grid-layout %}
+                {% assign var = i.var %}
+                {% assign output = i.output %}
+                <tr>
+                    <th scope="row">--grid-{{ var }}</th>
+                    <td>{{ output }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="dialtone-section--xxs">
+        <h2 class="title__subsection">Classes</h2>
+        <table class="dialtone-table dialtone-table--code">
+            <thead>
+                <tr>
+                    <th scope="col" class="dialtone-table__column--md">Class</th>
+                    <th scope="col">Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">.d-grid-layout--with-columns</th>
+                    <td>
+                        grid-template-columns: var(--grid-template-col);<br/>
+                        grid-auto-columns: var(--grid-auto-col);
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">.d-grid-layout--with-sidebar-content</th>
+                    <td>
+                        grid-template-areas: "sidebar content";<br/>
+                        grid-template-columns: [sidebar-start] var(--grid-sidebar-col) [sidebar-end content-start] var(--grid-content-col) [content-end];
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">.d-grid-layout--with-header-content</th>
+                    <td>
+                        grid-template-areas: "header content";<br/>
+                        grid-template-rows: [header-start] var(--grid-header-row) [header-end content-start] var(--grid-content-row) [content-end];<br/>
+                        grid-auto-rows: 1fr;<br/>
+                        grid-auto-columns: minmax(min-content, auto);
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="dialtone-section">
+        <h2 class="title__subsection">Examples</h2>
+        <div class="dialtone-section--xxs">
+            <h3 class="title__small">With columns</h3>
+            <div class="dialtone-example" data-example="yes" data-code="yes">
+                <div class="dialtone-example__example">
+                    <div class="d-grid-layout--with-columns d-grid-gap8" style="--grid-col: 5;">
+                        <div class="layout-block"><div class="layout-block__label">[col]</div></div>
+                        <div class="layout-block"><div class="layout-block__label">[col]</div></div>
+                        <div class="layout-block"><div class="layout-block__label">[col]</div></div>
+                        <div class="layout-block"><div class="layout-block__label">[col]</div></div>
+                        <div class="layout-block"><div class="layout-block__label">[col]</div></div>
+                    </div>
+                </div>
+                <div class="dialtone-example__code">
+{% highlight html linenos %}
+<div class=".d-grid-layout--with-columns" style="--grid-col: 5;">...</div>
+{% endhighlight %}
+                </div>
+            </div>
+        </div>
+        <div class="dialtone-section--xxs">
+            <h3 class="title__small">With sidebar</h3>
+            <div class="dialtone-example" data-example="yes" data-code="yes">
+                <div class="dialtone-example__example">
+                    <div class="d-grid-layout--with-sidebar-content d-grid-gap8">
+                        <div class="layout-block"><div class="layout-block__label">[sidebar]</div></div>
+                        <div class="layout-block"><div class="layout-block__label">[content]</div></div>
+                    </div>
+                </div>
+                <div class="dialtone-example__code">
+{% highlight html linenos %}
+<div class=".d-grid-layout--with-sidebar-content">...</div>
+{% endhighlight %}
+                </div>
+            </div>
+        </div>
+        <div class="dialtone-section--xxs">
+            <h3 class="title__small">With header</h3>
+            <div class="dialtone-example" data-example="yes" data-code="yes">
+                <div class="dialtone-example__example">
+                    <div class="d-grid-layout--with-header-content d-grid-gap8">
+                        <div class="layout-block"><div class="layout-block__label">[header]</div></div>
+                        <div class="layout-block"><div class="layout-block__label">[content]</div></div>
+                    </div>
+                </div>
+                <div class="dialtone-example__code">
+{% highlight html linenos %}
+<div class=".d-grid-layout--with-header-content">...</div>
+{% endhighlight %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,81 @@
+---
+layout: page
+title: Font Size
+description: Utility classes for setting an element's font size.
+---
+<section class="dialtone-section">
+    <header class="dialtone-section--xxs">
+        <h2 class="title__section">Variables</h2>
+        <p class="copy__normal">When writing Less, you can set an element's font-size by using a <span class="code-example--inline">@{headline/text}--{size}</span> variable. The table below lists the font-size variables, size, and their output.</p>
+    </header>
+    <table class="dialtone-table dialtone-table--code">
+        <thead>
+            <tr>
+                <th scope="col" class="dialtone-table__column--md">Variable</th>
+                <th scope="col">Size</th>
+                <th scope="col">Output</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in site.data.type.font-size %}
+            {% assign class = i.class %}
+            {% assign px = i.pixel %}
+            {% assign output = i.output %}
+            <tr>
+                <th scope="row">@{{ class }}</th>
+                <td>{{ px }}px</td>
+                <td>{{ output }}rem</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+<section class="dialtone-section">
+    <header class="dialtone-section--xxs">
+        <h2 class="title__section">Classes</h2>
+        <p class="copy__normal">Set an element's font-size by using the <span class="code-example--inline">.d-{headline/text}--{size}</span> classes. The table below lists the available classes, size, and their CSS output.</p>
+    </header>
+    <table class="dialtone-table dialtone-table--code">
+        <thead>
+            <tr>
+                <th scope="col" class="dialtone-table__column--md">Variable</th>
+                <th scope="col">Size</th>
+                <th scope="col">Output</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in site.data.type.font-size %}
+            {% assign class = i.class %}
+            {% assign px = i.pixel %}
+            {% assign output = i.output %}
+            <tr>
+                <th scope="row">@{{ class }}</th>
+                <td>{{ px }}px</td>
+                <td>
+                    {% if class contains "headline" %}
+                        font-size: {{ output }}rem;<br/>
+                        font-weight: 600;
+                        {% if class == "headline--xs" %}
+                            <br/>text-transform: uppercase;
+                        {% endif %}
+                    {% elsif class contains "text" %}
+                        font-size: {{ output }}rem;
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+<section class="dialtone-section">
+    <h2 class="title__section">Examples</h2>
+    <div class="dialtone-section" style="max-width: 67.6rem;">
+        {% for i in site.data.type.font-size %}
+            {% assign class = i.class %}
+            <div class="dialtone-section--xxs" style="white-space: nowrap; overflow: hidden;">
+                <span class="code-example--inline" style="background-color: transparent; color: var(--color--light)">.d-{{ class }}</span>
+                <p class="d-{{ class }} d-line-height--sm">The quick brown fox jumps over the lazy dog.</p>
+            </div>
+        {% endfor %}
+    </div>
+</section>

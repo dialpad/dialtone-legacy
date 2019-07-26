@@ -1,38 +1,50 @@
-<h3 class="dds-docs--subheader">Loading Buttons</h3>
-<p>If there is a delay between the user clicking a button and the action taking place, apply a loader to communicate that something is happening.</p>
-<div class="dtd-example">
-{% highlight html linenos %}
-<button class="d-btn is-loading" type="button" aria-pressed="false">…</button>
-{% endhighlight %}
-    <div class="dtd-example--preview">
-        <table class="d-table d-m0">
+<header class="dialtone-section--xxs">
+    <h3 class="title__subsection">Loading Buttons</h3>
+    <p class="copy__normal">If there is a delay between the user clicking a button and the action taking place, apply a loader to communicate that something is happening.</p>
+</header>
+<div class="dialtone-example" data-example="yes" data-code="yes">
+    <div class="dialtone-example__example">
+        <table class="dialtone-table">
             <thead>
                 <tr>
-                    <th scope="col" width="15%">Name</th>
-                    <th scope="col" width="25%">Class</th>
-                    <th scope="col" width="20%" class="d-ta-center">Default</th>
-                    <th scope="col" width="20%" class="d-ta-center">Outlined</th>
-                    <th scope="col" width="20%" class="d-ta-center">Primary</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Class</th>
+                    <th scope="col" style="text-align: center;">Default</th>
+                    <th scope="col" style="text-align: center;">Outlined</th>
+                    <th scope="col" style="text-align: center;">Primary</th>
                 </tr>
             </thead>
             <tbody>
-                {% for item in site.data.buttons.styles %}
-                    {% assign types = item.classes %}
-                    <tr>
-                        <th scope="row" class="d-text-sm {% if item.style == 'Inverted' %}d-bgc-slate d-fc-white d-blr-lg{% endif %}" {% if item.style == 'Inverted' %}style="padding-left: 0.75rem;"{% elsif item.style == 'Danger' %}style="border-bottom-width: 0;"{% endif %}>{{ item.style }}</th>
-                        <td class="d-ff-mono d-text-xxs {% if item.style == 'Inverted' %}d-bgc-slate d-fc-white d-btw0{% endif %}" {% if item.style == 'Danger' %}style="border-bottom-width: 0;"{% endif %}>
-                            .d-btn {% if item.class != nil %}.{{ item.class }}{% endif %} {% if class.class != nil %}.{{ class.class }}{% endif %}
-                        </td>
-                        {% for class in types %}
-                        <td class="d-px4 d-ta-center {% if item.style == 'Inverted' %}d-bgc-slate d-fc-white {% if forloop.last %}d-brr-lg{% endif %}{% endif %}" {% if item.style == 'Danger' %}style="border-bottom-width: 0;"{% endif %}>
-                            <button class="d-btn {{ item.class }} {{ class.class }} is-loading d-w100 d-ws-nowrap" type="button" aria-pressed="false">
-                                <span class="d-btn--label">Place call</span>
-                            </button>
-                        </td>
-                        {% endfor %}
-                    </tr>
+                {% assign classes = site.data.buttons.loading | split: ", "%}
+                {% for s in classes %}
+                <tr class="{% if s == 'inverted'%}d-background-color--slate d-color--white{% endif %}">
+                    <th scope="row">{{ s | capitalize }}</th>
+                    <td class="code-example">.d-btn {% if s != "default" %}.d-btn--{% if s == "danger" %}danger{% elsif s == "inverted"%}inverted{% endif %}{% endif %}</td>
+                    <td>
+                        <button class="d-btn d-width100{% if s != 'default' %} d-btn--{% if s == 'danger' %}danger{% elsif s == 'inverted'%}inverted{% endif %}{% endif %} is-loading" type="button" aria-pressed="false" style="white-space: nowrap;">
+                            <span class="d-btn__label">Place call</span>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="d-btn d-btn--outlined d-width100{% if s != 'default' %} d-btn--{% if s == 'danger' %}danger{% elsif s == 'inverted'%}inverted{% endif %}{% endif %} is-loading" type="button" aria-pressed="false" style="white-space: nowrap;">
+                            <span class="d-btn__label">Place call</span>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="d-btn d-btn--primary d-width100{% if s != 'default' %} d-btn--{% if s == 'danger' %}danger{% elsif s == 'inverted'%}inverted{% endif %}{% endif %} is-loading" type="button" aria-pressed="false" style="white-space: nowrap;">
+                            <span class="d-btn__label">Place call</span>
+                        </button>
+                    </td>
+                </tr>
                 {% endfor %}
             </tbody>
         </table>
+    </div>
+    <div class="dialtone-example__code">
+{% highlight html linenos %}
+<button class="d-btn is-loading" type="button" aria-pressed="false">…</button>
+<button class="d-btn d-btn--outlined is-loading" type="button" aria-pressed="false">…</button>
+<button class="d-btn d-btn--primary is-loading" type="button" aria-pressed="false">…</button>
+{% endhighlight %}
     </div>
 </div>

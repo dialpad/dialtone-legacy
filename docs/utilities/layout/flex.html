@@ -1,0 +1,203 @@
+---
+layout: page
+title: Flexbox
+description: The following flexbox helper classes are provided to help generate common layouts.
+---
+<section class="dialtone-section">
+    <header class="dialtone-section--xxs">
+        <h2 class="title__section">Flex Columns</h2>
+        <p class="copy__normal">By default children cells within a parent flex container will only take up the room needed for their content. To force a flex child cell span multiple "columns", use the following flex column <span class="code-example--inline">.d-flex__cell{#}</span> classes. These columns are based on a 12-column grid, meaning each column will take up 1/12th of all available space.</p>
+    </header>
+    <div class="dialtone-section--xxs">
+        <h2 class="title__subsection">Classes</h2>
+        <table class="dialtone-table dialtone-table--code">
+            <thead>
+                <tr>
+                    <th scope="col" class="dialtone-table__column--md">Class</th>
+                    <th scope="col" class="dialtone-table__column--sm">Span</th>
+                    <th scope="col">Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in site.data.flex.columns %}
+                {% assign span = i.span %}
+                {% assign output = i.output %}
+                <tr>
+                    <th scope="row">.d-flex__cell{{ span }}</th>
+                    <td>{{ span }}</td>
+                    <td>flex-basis: {{ output }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="dialtone-section">
+        <h2 class="title__subsection">Examples</h2>
+        <div class="dialtone-example" data-example="yes" data-code="yes">
+            <div class="dialtone-example__example">
+                <div class="d-flex-columns" style="flex-wrap: wrap;">
+                    {% for i in site.data.flex.columns %}
+                    {% assign span = i.span %}
+                    <div class="layout-block d-flex__cell{{ span }} d-margin4"><div class="layout-block__label">[cell{{ span }}]</div></div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="dialtone-example__code">
+{% highlight html linenos %}
+<div class="d-flex-columns">
+    <div class="d-flex__cell1">…</div>
+    <div class="d-flex__cell2">…</div>
+    <div class="d-flex__cell3">…</div>
+    <div class="d-flex__cell4">…</div>
+    <div class="d-flex__cell5">…</div>
+    <div class="d-flex__cell6">…</div>
+    <div class="d-flex__cell7">…</div>
+    <div class="d-flex__cell8">…</div>
+    <div class="d-flex__cell9">…</div>
+    <div class="d-flex__cell10">…</div>
+    <div class="d-flex__cell11">…</div>
+    <div class="d-flex__cell12">…</div>
+</div>
+{% endhighlight %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="dialtone-section">
+    <header class="dialtone-section--xxs">
+        <h2 class="title__section">Centering Content</h2>
+        <p class="copy__normal">To quickly center items within a container, use the <span class="code-example--inline">.d-flex__center</span> class.</p>
+    </header>
+    <div class="dialtone-example" data-example="yes" data-code="yes">
+        <div class="dialtone-example__example">
+            <div class="d-flex__center">
+                <div class="layout-block w100"><div class="layout-block__label">[center,center]</div></div>
+            </div>
+        </div>
+        <div class="dialtone-example__code">
+{% highlight html linenos %}
+<div class="d-flex__center">
+    …
+</div>
+{% endhighlight %}
+        </div>
+    </div>
+</section>
+
+<section class="dialtone-section">
+    <header class="dialtone-section--xxs">
+        <h2 class="title__section">Flex, Grow, and Shrink</h2>
+        <p class="copy__normal">The <span class="code-example--inline">flex</span> CSS property is shorthand for <span class="code-example--inline">flex-grow</span>, <span class="code-example--inline">flex-shrink</span>, and <span class="code-example--inline">flex-basis</span>. If only two values are provided, the <span class="code-example--inline">flex-grow</span> value is assumed for <span class="code-example--inline">flex-shrink</span>. You can also control the grow and shrink flex values by using the classes provided.</p>
+    </header>
+    <div class="dialtone-section--xxs">
+        <h2 class="title__subsection">Classes</h2>
+        <table class="dialtone-table dialtone-table--code">
+            <thead>
+                <tr>
+                    <th scope="col" class="dialtone-table__column--md">Class</th>
+                    <th scope="col">Output</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            {% for i in site.data.flex.flex-properties %}
+            {% assign class = i.class %}
+            {% assign value = i.values | split: "," %}
+            {% assign desc = i.description %}
+            <tbody>
+                {% for v in value %}
+                    <tr>
+                        <th scope="row">.d-{{ class }}{{ v }}</th>
+                        {% if class contains "grow" or "shrink "%}
+                            <td>{{ class }}: {{ v }};</td>
+                        {% else %}
+                            <td>{{ class }}: {{ v }} auto;</td>
+                        {% endif %}
+                        {% if forloop.first %}
+                            <td class="dialtone-table--sans" rowspan="3" style="padding: 1.6rem; border-bottom: none;">{{ desc }}</td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+            {% endfor %}
+        </table>
+    </div>
+    <div class="dialtone-section">
+        <h2 class="title__subsection">Examples</h2>
+        <div class="dialtone-section--xxs">
+            <h3 class="title__small">Flex</h3>
+            <div class="dialtone-example" data-example="yes" data-code="yes">
+                <div class="dialtone-example__example">
+                    <div style="display: flex; flex-direction: column;">
+                        <div class="layout-block">
+                            <div class="layout-block__inner d-flex0"><div class="layout-block__label">[flex0]</div></div>
+                            <div class="layout-block__inner d-flex1"><div class="layout-block__label">[flex1]</div></div>
+                            <div class="layout-block__inner d-flex2"><div class="layout-block__label">[flex2]</div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dialtone-example__code">
+{% highlight html linenos %}
+<div>
+    <div>
+        <div class="d-flex0">…</div>
+        <div class="d-flex1">…</div>
+        <div class="d-flex2">…</div>
+    </div>
+</div>
+{% endhighlight %}
+                </div>
+            </div>
+        </div>
+        <div class="dialtone-section--xxs">
+            <h3 class="title__small">Flex-grow</h3>
+            <div class="dialtone-example" data-example="yes" data-code="yes">
+                <div class="dialtone-example__example">
+                    <div style="display: flex; flex-direction: column;">
+                        <div class="layout-block">
+                            <div class="layout-block__inner d-flex-grow0"><div class="layout-block__label">[grow0]</div></div>
+                            <div class="layout-block__inner d-flex-grow1"><div class="layout-block__label">[grow1]</div></div>
+                            <div class="layout-block__inner d-flex-grow2"><div class="layout-block__label">[grow2]</div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dialtone-example__code">
+{% highlight html linenos %}
+<div>
+    <div>
+        <div class="d-flex-grow0">…</div>
+        <div class="d-flex-grow1">…</div>
+        <div class="d-flex-grow2">…</div>
+    </div>
+</div>
+{% endhighlight %}
+                </div>
+            </div>
+        </div>
+        <div class="dialtone-section--xxs">
+            <h3 class="title__small">Flex-shrink</h3>
+            <div class="dialtone-example" data-example="yes" data-code="yes">
+                <div class="dialtone-example__example">
+                    <div style="display: flex; flex-direction: column;">
+                        <div class="layout-block">
+                            <div class="layout-block__inner d-flex-shrink0"><div class="layout-block__label">[shrink0]</div></div>
+                            <div class="layout-block__inner d-flex-shrink1"><div class="layout-block__label">[shrink1]</div></div>
+                            <div class="layout-block__inner d-flex-shrink2"><div class="layout-block__label">[shrink2]</div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dialtone-example__code">
+{% highlight html linenos %}
+<div>
+    <div>
+        <div class="d-flex-shrink0">…</div>
+        <div class="d-flex-shrink1">…</div>
+        <div class="d-flex-shrink2">…</div>
+    </div>
+</div>
+{% endhighlight %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -7,76 +7,66 @@
 //  visit https://dialpad.design/utilities/layout
 //
 //  TABLE OF CONTENTS
-//  • Display
-//  • Visibility
-//  • Overflow
-//  • Position
-//  • Floats
-//  • Box sizing
+//  • Layouts
+//  • Clearfiz
+//  • Z-index
 //  • Width
 //  • Height
-//  • Alignment
-//  • Z-index
 //
 //  ============================================================================
-//  $  DISPLAY
+//  $   LAYOUTS
+//  ============================================================================
+//  $$  THE STACK
+//      Instead of stlying specific elements when we're unaware of their context,
+//      this applies margin to context. The margin is only applied when an
+//      element is proceeded by another element.
 //  ----------------------------------------------------------------------------
-.d-d-block                { display: block; }
-.d-d-inline               { display: inline; }
-.d-d-inline-block         { display: inline-block; }
-.d-d-table                { display: table; }
-.d-d-table-cell           { display: table-cell; }
-.d-d-none                 { display: none; }
-.d-d-unset                { display: unset; }
+.d-layout__stack {
+    > * + * {
+        margin-top: @spacing16;
+    }
+}
+
+//  Alternate Sizes
+.d-layout__stack--xxs {
+    > * + * {
+        margin-top: @spacing2;
+    }
+}
+.d-layout__stack--xs {
+    > * + * {
+        margin-top: @spacing4;
+    }
+}
+.d-layout__stack--sm {
+    > * + * {
+        margin-top: @spacing8;
+    }
+}
+.d-layout__stack--md {
+    > * + * {
+        margin-top: @spacing24;
+    }
+}
+.d-layout__stack--lg {
+    > * + * {
+        margin-top: @spacing32;
+    }
+}
+.d-layout__stack--xl {
+    > * + * {
+        margin-top: @spacing48;
+    }
+}
+.d-layout__stack--xxl {
+    > * + * {
+        margin-top: @spacing64;
+    }
+}
 
 //  ============================================================================
-//  $  VISIBILITY
+//  $   CLEARFIX
 //  ----------------------------------------------------------------------------
-.d-v-visible              { visibility: visible; }
-.d-v-hidden               { visibility: hidden; }
-.d-v-collapse             { visibility: collapse; }
-.d-v-unset                { visibility: unset; }
-
-//  ============================================================================
-//  $  OVERFLOW
-//  ----------------------------------------------------------------------------
-.d-of-auto                { overflow: auto; }
-.d-of-x-auto              { overflow-x: auto; }
-.d-of-y-auto              { overflow-y: auto; }
-.d-of-hidden              { overflow: hidden; }
-.d-of-x-hidden            { overflow-x: hidden; }
-.d-of-y-hidden            { overflow-y: hidden; }
-.d-of-scroll              { overflow: scroll; }
-.d-of-x-scroll            { overflow-x: scroll; }
-.d-of-y-scroll            { overflow-y: scroll; }
-.d-of-visible             { overflow: visible; }
-
-//  ============================================================================
-//  $  POSITION
-//  ----------------------------------------------------------------------------
-.d-ps-absolute            { position: absolute; }
-.d-ps-fixed               { position: fixed; }
-.d-ps-relative            { position: relative; }
-.d-ps-static              { position: static; }
-.d-ps-sticky              { position: sticky; }
-.d-ps-unset               { position: unset; }
-
-//  ============================================================================
-//  $  FLOATS
-//  ----------------------------------------------------------------------------
-.d-fl-inline-start        { float: inline-start; }
-.d-fl-inline-end          { float: inline-end; }
-.d-fl-left                { float: left; }
-.d-fl-right               { float: right; }
-.d-fl-none                { float: none; }
-.d-fl-unset               { float: unset; }
-.d-cl-inline-start        { clear: inline-start; }
-.d-cl-inline-end          { clear: inline-end; }
-.d-cl-left                { clear: left; }
-.d-cl-right               { clear: right; }
-.d-cl-both                { clear: both; }
-.d-cl-none                { clear: none; }
-.d-cl-unset               { clear: unset; }
 .d-clearfix {
     &:before,
     &:after {
@@ -87,38 +77,129 @@
 }
 
 //  ============================================================================
-//  $  BOX SIZING
-//  ----------------------------------------------------------------------------
-.d-bs-content             { box-sizing: content; }
-.d-bs-border              { box-sizing: border; }
-.d-bs-unset               { box-sizing: unset; }
-
-//  ============================================================================
-//  $  VERTICAL ALIGNMENT
-//  ----------------------------------------------------------------------------
-.d-va-baseline	       { vertical-align: baseline; }
-.d-va-bottom	           { vertical-align: bottom; }
-.d-va-middle	           { vertical-align: middle; }
-.d-va-sub	               { vertical-align: sub; }
-.d-va-super	           { vertical-align: super; }
-.d-va-text-bottom	       { vertical-align: text-bottom; }
-.d-va-text-top	       { vertical-align: text-top; }
-.d-va-top	               { vertical-align: top; }
-.d-va-unset	           { vertical-align: unset; }
-
-//  ============================================================================
 //  $   Z-INDEX
 //  ----------------------------------------------------------------------------
-.d-z-hide                { z-index: @z-hide; }
-.d-z-base                { z-index: @z-base; }
-.d-z-selected            { z-index: @z-selected; }
-.d-z-active              { z-index: @z-active; }
-.d-z-navigation          { z-index: @z-navigation; }
-.d-z-navigation-fixed    { z-index: @z-navigation-fixed; }
-.d-z-dropdown            { z-index: @z-dropdown; }
-.d-z-popover             { z-index: @z-popover; }
-.d-z-tooltip             { z-index: @z-tooltip; }
-.d-z-snackbar            { z-index: @z-snackbar; }
-.d-z-drawer              { z-index: @z-drawer; }
-.d-z-modal-bg            { z-index: @z-modal-bg; }
-.d-z-modal               { z-index: @z-modal; }
+.d-z-index--hide                 { z-index: @z-index--hide; }
+.d-z-index--base                 { z-index: @z-index--base; }
+.d-z-index--base1                { z-index: @z-index--base1; }
+.d-z-index--selected             { z-index: @z-index--selected; }
+.d-z-index--active               { z-index: @z-index--active; }
+.d-z-index--navigation           { z-index: @z-index--navigation; }
+.d-z-index--navigation-fixed     { z-index: @z-index--navigation-fixed; }
+.d-z-index--dropdown             { z-index: @z-index--dropdown; }
+.d-z-index--popover              { z-index: @z-index--popover; }
+.d-z-index--tooltip              { z-index: @z-index--tooltip; }
+.d-z-index--toast                { z-index: @z-index--toast; }
+.d-z-index--drawer               { z-index: @z-index--drawer; }
+.d-z-index--modal-bg             { z-index: @z-index--modal-bg; }
+.d-z-index--modal                { z-index: @z-index--modal; }
+
+
+//  ============================================================================
+//  $   WIDTH
+//  ============================================================================
+//  --  FLUID
+//  ----------------------------------------------------------------------------
+.d-width0       { width: 0; }
+.d-width10      { width: 10%; }
+.d-width20      { width: 20%; }
+.d-width25      { width: 25%; }
+.d-width30      { width: 30%; }
+.d-width40      { width: 40%; }
+.d-width50      { width: 50%; }
+.d-width60      { width: 60%; }
+.d-width70      { width: 70%; }
+.d-width75      { width: 75%; }
+.d-width80      { width: 80%; }
+.d-width90      { width: 90%; }
+.d-width100     { width: 100%; }
+
+//  --  FIXED
+//  ----------------------------------------------------------------------------
+.d-width1       { width: @fixed-size1; }
+.d-width2       { width: @fixed-size2; }
+.d-width3       { width: @fixed-size3; }
+.d-width4       { width: @fixed-size4; }
+.d-width5       { width: @fixed-size5; }
+.d-width6       { width: @fixed-size6; }
+.d-width7       { width: @fixed-size7; }
+.d-width8       { width: @fixed-size8; }
+.d-width-auto   { width: auto; }
+
+.d-min-width1   { min-width: @fixed-size1; }
+.d-min-width2   { min-width: @fixed-size2; }
+.d-min-width3   { min-width: @fixed-size3; }
+.d-min-width4   { min-width: @fixed-size4; }
+.d-min-width5   { min-width: @fixed-size5; }
+.d-min-width6   { min-width: @fixed-size6; }
+.d-min-width7   { min-width: @fixed-size7; }
+.d-min-width8   { min-width: @fixed-size8; }
+.d-min-width-auto  { min-width: auto; }
+
+.d-max-width1   { max-width: @fixed-size1; }
+.d-max-width2   { max-width: @fixed-size2; }
+.d-max-width3   { max-width: @fixed-size3; }
+.d-max-width4   { max-width: @fixed-size4; }
+.d-max-width5   { max-width: @fixed-size5; }
+.d-max-width6   { max-width: @fixed-size6; }
+.d-max-width7   { max-width: @fixed-size7; }
+.d-max-width8   { max-width: @fixed-size8; }
+.d-max-width-auto { max-width: auto; }
+
+.d-width100v    { width: 100vw; }
+.d-width-unset  { width: unset; }
+
+
+//  ============================================================================
+//  $   HEIGHT
+//  ============================================================================
+//  --  FLUID
+//  ----------------------------------------------------------------------------
+.d-height0       { height: 0; }
+.d-height10      { height: 10%; }
+.d-height20      { height: 20%; }
+.d-height25      { height: 25%; }
+.d-height30      { height: 30%; }
+.d-height40      { height: 40%; }
+.d-height50      { height: 50%; }
+.d-height60      { height: 60%; }
+.d-height70      { height: 70%; }
+.d-height75      { height: 75%; }
+.d-height80      { height: 80%; }
+.d-height90      { height: 90%; }
+.d-height100     { height: 100%; }
+
+//  --  FIXED
+//  ----------------------------------------------------------------------------
+.d-height1       { height: @fixed-size1; }
+.d-height2       { height: @fixed-size2; }
+.d-height3       { height: @fixed-size3; }
+.d-height4       { height: @fixed-size4; }
+.d-height5       { height: @fixed-size5; }
+.d-height6       { height: @fixed-size6; }
+.d-height7       { height: @fixed-size7; }
+.d-height8       { height: @fixed-size8; }
+.d-height-auto   { height: auto; }
+
+.d-min-height1   { min-height: @fixed-size1; }
+.d-min-height2   { min-height: @fixed-size2; }
+.d-min-height3   { min-height: @fixed-size3; }
+.d-min-height4   { min-height: @fixed-size4; }
+.d-min-height5   { min-height: @fixed-size5; }
+.d-min-height6   { min-height: @fixed-size6; }
+.d-min-height7   { min-height: @fixed-size7; }
+.d-min-height8   { min-height: @fixed-size8; }
+.d-min-height-auto  { min-height: auto; }
+
+.d-max-height1   { max-height: @fixed-size1; }
+.d-max-height2   { max-height: @fixed-size2; }
+.d-max-height3   { max-height: @fixed-size3; }
+.d-max-height4   { max-height: @fixed-size4; }
+.d-max-height5   { max-height: @fixed-size5; }
+.d-max-height6   { max-height: @fixed-size6; }
+.d-max-height7   { max-height: @fixed-size7; }
+.d-max-height8   { max-height: @fixed-size8; }
+.d-max-height-auto { max-height: auto; }
+
+.d-height100v    { height: 100vh; }
+.d-height-unset  { height: unset; }
