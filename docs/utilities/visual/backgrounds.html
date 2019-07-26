@@ -3,221 +3,97 @@ layout: page
 title: Backgrounds
 description: Dialtone provides both fill and gradient background classes. Most components have a background color set. These are to be used to override a component or for one-off designs.
 ---
-<section class="dds-docs--section">
-    <h2 class="dds-docs--header">Fills</h2>
-    <h3 class="dds-docs--subheader">White / Transparent</h3>
-    <div class="dtd-example">
-{% highlight html linenos %}
-<div class="d-bgc-white">…</div>
-<div class="d-bgc-transparent">…</div>
-{% endhighlight %}
-        <div class="dtd-example--preview">
-            <div class="d-bgc-slate d-br-md d-px8 d-py2">
-                <div class="d-my8 d-w100 d-py12 d-px8 d-br-md d-ff-mono d-text-xs d-bgc-white d-fc-dark">.d-bgc-white</div>
-                <div class="d-my8 d-w100 d-py12 d-px8 d-br-md d-ff-mono d-text-xs d-bgc-transparent d-fc-white">.d-bgc-transparent</div>
+<section class="dialtone-section">
+    <h2 class="title__section">Fills</h2>
+    <div class="d-grid-layout--with-columns d-grid-column-gap12 d-grid-row-gap24" style="--grid-col: 2; --grid-col-width: 50%;">
+    {% for color in site.data.color-stops %}
+        <div class="dialtone-section--xxs">
+            <h3 class="title__subsection">{{ color.color }}</h3>
+            <div class="dialtone-color-grid__group" style="--color-grid-columns: 1">
+                {% for stop in color.stops %}
+                    <div class="dialtone-color-grid__item d-background-color--{{ stop.stop }} {{ stop.copy }}">
+                        <span class="dialtone-color-grid__label">.d-background-color--{{ stop.stop }}</span>
+                    </div>
+                {% endfor %}
             </div>
         </div>
-    </div>
-    <h3 class="dds-docs--header">Gray</h3>
-    <div class="dtd-example">
-{% highlight html linenos %}
-<div class="d-bgc-slate">…</div>
-<div class="d-bgc-slate-light">…</div>
-<div class="d-bgc-slate-lighter">…</div>
-<div class="d-bgc-slate-lightest">…</div>
-<div class="d-bgc-ash-darkest">…</div>
-<div class="d-bgc-ash-darker">…</div>
-<div class="d-bgc-ash-dark">…</div>
-<div class="d-bgc-ash">…</div>
-{% endhighlight %}
-        <div class="dtd-example--preview">
-            <div class="d-px8 d-py2">
-                <div class="d-my8 d-w100 d-py12 d-px8 d-br-md d-bgc-slate d-ff-mono d-text-xs d-fc-white">.d-bgc-slate</div>
-                <div class="d-my8 d-w100 d-py12 d-px8 d-br-md d-bgc-slate-light d-ff-mono d-text-xs d-fc-white">.d-bgc-slate-light</div>
-                <div class="d-my8 d-w100 d-py12 d-px8 d-br-md d-bgc-slate-lighter d-ff-mono d-text-xs d-fc-white">.d-bgc-slate-lighter</div>
-                <div class="d-my8 d-w100 d-py12 d-px8 d-br-md d-bgc-slate-lightest d-ff-mono d-text-xs d-fc-white">.d-bgc-slate-lightest</div>
-                <div class="d-my8 d-w100 d-py12 d-px8 d-br-md d-bgc-ash-darkest d-ff-mono d-text-xs">.d-bgc-ash-darkest</div>
-                <div class="d-my8 d-w100 d-py12 d-px8 d-br-md d-bgc-ash-darker d-ff-mono d-text-xs">.d-bgc-ash-darker</div>
-                <div class="d-my8 d-w100 d-py12 d-px8 d-br-md d-bgc-ash-dark d-ff-mono d-text-xs">.d-bgc-ash-dark</div>
-                <div class="d-my8 d-w100 d-py12 d-px8 d-br-md d-bgc-ash d-ff-mono d-text-xs">.d-bgc-ash</div>
-            </div>
-        </div>
-    </div>
-    <h3 class="dds-docs--header">Blue</h3>
-    <div class="dtd-example">
-{% highlight html linenos %}
-<div class="d-bgc-blue-darker">…</div>
-<div class="d-bgc-blue-dark">…</div>
-<div class="d-bgc-blue">…</div>
-<div class="d-bgc-blue-light">…</div>
-<div class="d-bgc-blue-lighter">…</div>
-{% endhighlight %}
-        <div class="dtd-example--preview">
-            <div class="d-px8 d-py2">
-                <div class="d-my8 d-w100 d-py12 d-px8 d-br-md d-bgc-blue-darker d-ff-mono d-text-xs d-fc-white">.d-bgc-blue-darker</div>
-                <div class="d-my8 d-w100 d-py12 d-px8 d-br-md d-bgc-blue-dark d-ff-mono d-text-xs d-fc-white">.d-bgc-blue-dark</div>
-                <div class="d-my8 d-w100 d-py12 d-px8 d-br-md d-bgc-blue d-ff-mono d-text-xs d-fc-blue-text">.d-bgc-blue</div>
-                <div class="d-my8 d-w100 d-py12 d-px8 d-br-md d-bgc-blue-light d-ff-mono d-text-xs d-fc-blue-text">.d-bgc-blue-light</div>
-                <div class="d-my8 d-w100 d-py12 d-px8 d-br-md d-bgc-blue-lighter d-ff-mono d-text-xs d-fc-blue-text">.d-bgc-blue-lighter</div>
-            </div>
-        </div>
-    </div>
-    <h3 class="dds-docs--header">Navy</h3>
-    <div class="dtd-example">
-{% highlight html linenos %}
-<div class="d-bgc-navy-darker">…</div>
-<div class="d-bgc-navy-dark">…</div>
-<div class="d-bgc-navy">…</div>
-<div class="d-bgc-navy-light">…</div>
-<div class="d-bgc-navy-lighter">…</div>
-{% endhighlight %}
-        <div class="dtd-example--preview">
-            <div class="d-px8 d-py2">
-                <div class="d-my8 d-w100 d-py12 d-px8 d-br-md d-bgc-navy-darker d-ff-mono d-text-xs d-fc-white">.d-bgc-navy-darker</div>
-                <div class="d-my8 d-w100 d-py12 d-px8 d-br-md d-bgc-navy-dark d-ff-mono d-text-xs d-fc-white">.d-bgc-navy-dark</div>
-                <div class="d-my8 d-w100 d-py12 d-px8 d-br-md d-bgc-navy d-ff-mono d-text-xs d-fc-white">.d-bgc-navy</div>
-                <div class="d-my8 d-w100 d-py12 d-px8 d-br-md d-bgc-navy-light d-ff-mono d-text-xs d-fc-navy-text">.d-bgc-navy-light</div>
-                <div class="d-my8 d-w100 d-py12 d-px8 d-br-md d-bgc-navy-lighter d-ff-mono d-text-xs d-fc-navy-text">.d-bgc-navy-lighter</div>
-            </div>
-        </div>
-    </div>
-    <h3 class="dds-docs--header">Yellow</h3>
-    <div class="dtd-example">
-{% highlight html linenos %}
-<div class="d-bgc-yellow-dark">…</div>
-<div class="d-bgc-yellow">…</div>
-<div class="d-bgc-yellow-light">…</div>
-<div class="d-bgc-yellow-lighter">…</div>
-{% endhighlight %}
-        <div class="dtd-example--preview">
-            <div class="d-px8 d-py2">
-                <div class="d-my8 d-w100 d-py12 d-px8 d-br-md d-bgc-yellow-dark d-ff-mono d-text-xs d-fc-yellow-text">.d-bgc-yellow-dark</div>
-                <div class="d-my8 d-w100 d-py12 d-px8 d-br-md d-bgc-yellow d-ff-mono d-text-xs d-fc-yellow-text">.d-bgc-yellow</div>
-                <div class="d-my8 d-w100 d-py12 d-px8 d-br-md d-bgc-yellow-light d-ff-mono d-text-xs d-fc-yellow-text">.d-bgc-yellow-light</div>
-                <div class="d-my8 d-w100 d-py12 d-px8 d-br-md d-bgc-yellow-lighter d-ff-mono d-text-xs d-fc-yellow-text">.d-bgc-yellow-lighter</div>
-            </div>
-        </div>
-    </div>
-    <h3 class="dds-docs--header">Green</h3>
-    <div class="dtd-example">
-{% highlight html linenos %}
-<div class="d-bgc-green-dark">…</div>
-<div class="d-bgc-green">…</div>
-<div class="d-bgc-green-light">…</div>
-<div class="d-bgc-green-lighter">…</div>
-{% endhighlight %}
-        <div class="dtd-example--preview">
-            <div class="d-px8 d-py2">
-                <div class="d-my8 d-w100 d-py12 d-px8 d-br-md d-bgc-green-dark d-ff-mono d-text-xs d-fc-white">.d-bgc-green-dark</div>
-                <div class="d-my8 d-w100 d-py12 d-px8 d-br-md d-bgc-green d-ff-mono d-text-xs d-fc-green">.d-bgc-green</div>
-                <div class="d-my8 d-w100 d-py12 d-px8 d-br-md d-bgc-green-light d-ff-mono d-text-xs d-fc-green-text">.d-bgc-green-light</div>
-                <div class="d-my8 d-w100 d-py12 d-px8 d-br-md d-bgc-green-lighter d-ff-mono d-text-xs d-fc-green-text">.d-bgc-green-lighter</div>
-            </div>
-        </div>
-    </div>
-    <h3 class="dds-docs--header">Red</h3>
-    <div class="dtd-example">
-{% highlight html linenos %}
-<div class="d-bgc-red-dark">…</div>
-<div class="d-bgc-red">…</div>
-<div class="d-bgc-red-light">…</div>
-<div class="d-bgc-red-lighter">…</div>
-{% endhighlight %}
-        <div class="dtd-example--preview">
-            <div class="d-px8 d-py2">
-                <div class="d-my8 d-w100 d-py12 d-px8 d-br-md d-bgc-red-dark d-ff-mono d-text-xs d-fc-white">.d-bgc-red-dark</div>
-                <div class="d-my8 d-w100 d-py12 d-px8 d-br-md d-bgc-red d-ff-mono d-text-xs d-fc-white">.d-bgc-red</div>
-                <div class="d-my8 d-w100 d-py12 d-px8 d-br-md d-bgc-red-light d-ff-mono d-text-xs d-fc-red-text">.d-bgc-red-light</div>
-                <div class="d-my8 d-w100 d-py12 d-px8 d-br-md d-bgc-red-lighter d-ff-mono d-text-xs d-fc-red-text">.d-bgc-red-lighter</div>
-            </div>
-        </div>
-    </div>
-    <!-- <h3 class="dds-docs--header">Teal</h3>
-    <div class="dtd-example">
-{% highlight html linenos %}
-<div class="d-bgc-teal-dark">…</div>
-<div class="d-bgc-teal">…</div>
-<div class="d-bgc-teal-light">…</div>
-<div class="d-bgc-teal-lighter">…</div>
-{% endhighlight %}
-        <div class="dtd-example--preview">
-            <div class="d-px8 d-py2">
-                <div class="d-my8 d-w100 d-py12 d-px8 d-br-md d-bgc-teal-dark d-ff-mono d-text-xs d-fc-white">.d-bgc-teal-dark</div>
-                <div class="d-my8 d-w100 d-py12 d-px8 d-br-md d-bgc-teal d-ff-mono d-text-xs d-fc-teal">.d-bgc-teal</div>
-                <div class="d-my8 d-w100 d-py12 d-px8 d-br-md d-bgc-teal-light d-ff-mono d-text-xs d-fc-teal">.d-bgc-teal-light</div>
-                <div class="d-my8 d-w100 d-py12 d-px8 d-br-md d-bgc-teal-lighter d-ff-mono d-text-xs d-fc-teal">.d-bgc-teal-lighter</div>
-            </div>
-        </div>
-    </div> -->
-    <h3 class="dds-docs--header">Purple</h3>
-    <div class="dtd-example">
-{% highlight html linenos %}
-<div class="d-bgc-purple-dark">…</div>
-<div class="d-bgc-purple">…</div>
-<div class="d-bgc-purple-light">…</div>
-<div class="d-bgc-purple-lighter">…</div>
-{% endhighlight %}
-        <div class="dtd-example--preview">
-            <div class="d-px8 d-py2">
-                <div class="d-my8 d-w100 d-py12 d-px8 d-br-md d-bgc-purple-dark d-ff-mono d-text-xs d-fc-white">.d-bgc-purple-dark</div>
-                <div class="d-my8 d-w100 d-py12 d-px8 d-br-md d-bgc-purple d-ff-mono d-text-xs d-fc-white">.d-bgc-purple</div>
-                <div class="d-my8 d-w100 d-py12 d-px8 d-br-md d-bgc-purple-light d-ff-mono d-text-xs d-fc-purple-text">.d-bgc-purple-light</div>
-                <div class="d-my8 d-w100 d-py12 d-px8 d-br-md d-bgc-purple-lighter d-ff-mono d-text-xs d-fc-purple-text">.d-bgc-teal-lighter</div>
-            </div>
-        </div>
-    </div>
-    <h3 class="dds-docs--header">Pink</h3>
-    <div class="dtd-example">
-{% highlight html linenos %}
-<div class="d-bgc-pink-dark">…</div>
-<div class="d-bgc-pink">…</div>
-<div class="d-bgc-pink-light">…</div>
-<div class="d-bgc-pink-lighter">…</div>
-{% endhighlight %}
-        <div class="dtd-example--preview">
-            <div class="d-px8 d-py2">
-                <div class="d-my8 d-w100 d-py12 d-px8 d-br-md d-bgc-pink-dark d-ff-mono d-text-xs d-fc-pink-text">.d-bgc-pink-dark</div>
-                <div class="d-my8 d-w100 d-py12 d-px8 d-br-md d-bgc-pink d-ff-mono d-text-xs d-fc-pink-text">.d-bgc-pink</div>
-                <div class="d-my8 d-w100 d-py12 d-px8 d-br-md d-bgc-pink-light d-ff-mono d-text-xs d-fc-pink-text">.d-bgc-pink-light</div>
-                <div class="d-my8 d-w100 d-py12 d-px8 d-br-md d-bgc-pink-lighter d-ff-mono d-text-xs d-fc-pink-text">.d-bgc-pink-lighter</div>
+    {% endfor %}
+        <div class="dialtone-section--xxs">
+            <h3 class="title__subsection">White / Transparent</h3>
+            <div class="dialtone-color-grid__group d-background-color--slate d-padding16 d-border-radius--md" style="--color-grid-columns: 1">
+                <div class="dialtone-color-grid__item d-background-color--white d-color--dark d-border d-border-color--slate-lightest">
+                    <span class="dialtone-color-grid__label">.d-background-color--white</span>
+                </div>
+                <div class="dialtone-color-grid__item d-background-color--transparent d-color--ash d-border d-border-color--slate-lightest d-border-top-width0">
+                    <span class="dialtone-color-grid__label">.d-background-color--transparent</span>
+                </div>
+                <div class="dialtone-color-grid__item d-background-color--unset d-color--ash d-border d-border-color--slate-lightest d-border-top-width0">
+                    <span class="dialtone-color-grid__label">.d-background-color--unset</span>
+                </div>
             </div>
         </div>
     </div>
 </section>
-<section class="dds-docs--section">
-    <h2 class="dds-docs--header">Gradients</h2>
-    <h3 class="dds-docs--subheader">Dark</h3>
-    <div class="dtd-example">
-{% highlight html linenos %}
-<div class="d-blg-dark-to-top">…</div>
-<div class="d-blg-dark-to-right">…</div>
-<div class="d-blg-dark-to-bottom">…</div>
-<div class="d-blg-dark-to-left">…</div>
-{% endhighlight %}
-        <div class="dtd-example--preview">
-            <div class="d-px8 d-py2 d-fc-white">
-                <div class="d-my8 d-w100 d-py32 d-px8 d-br-md d-ff-mono d-text-xs d-blg-dark-to-top">.d-blg-dark-to-top</div>
-                <div class="d-my8 d-w100 d-py32 d-px8 d-br-md d-ff-mono d-text-xs d-blg-dark-to-right">.d-blg-dark-to-right</div>
-                <div class="d-my8 d-w100 d-py32 d-px8 d-br-md d-ff-mono d-text-xs d-blg-dark-to-bottom">.d-blg-dark-to-bottom</div>
-                <div class="d-my8 d-w100 d-py32 d-px8 d-br-md d-ff-mono d-text-xs d-blg-dark-to-left">.d-blg-dark-to-left</div>
+<section class="dialtone-section">
+    <h2 class="title__section">Gradients</h2>
+    <div class="dialtone-section--xxs">
+        <h3 class="title__subsection">Dark</h3>
+        <div class="dialtone-color-grid__group" style="--color-grid-columns: 1">
+            <div class="dialtone-color-grid__item d-linear-gradient--dark-to-top d-color--white">
+                <span class="dialtone-color-grid__label">.d-linear-gradient--dark-to-top</span>
+            </div>
+            <div class="dialtone-color-grid__item d-linear-gradient--dark-to-right d-color--white">
+                <span class="dialtone-color-grid__label">.d-linear-gradient--dark-to-right</span>
+            </div>
+            <div class="dialtone-color-grid__item d-linear-gradient--dark-to-bottom d-color--white">
+                <span class="dialtone-color-grid__label">.d-linear-gradient--dark-to-bottom</span>
+            </div>
+            <div class="dialtone-color-grid__item d-linear-gradient--dark-to-left d-color--white">
+                <span class="dialtone-color-grid__label">.d-linear-gradient--dark-to-left</span>
             </div>
         </div>
     </div>
-    <h3 class="dds-docs--subheader">Light</h3>
-    <div class="dtd-example">
-{% highlight html linenos %}
-<div class="d-blg-light-to-top">…</div>
-<div class="d-blg-light-to-right">…</div>
-<div class="d-blg-light-to-bottom">…</div>
-<div class="d-blg-light-to-left">…</div>
-{% endhighlight %}
-        <div class="dtd-example--preview">
-            <div class="d-px8 d-py2 d-fc-light">
-                <div class="d-my8 d-w100 d-py32 d-px8 d-br-md d-ff-mono d-text-xs d-blg-light-to-top">.d-blg-light-to-top</div>
-                <div class="d-my8 d-w100 d-py32 d-px8 d-br-md d-ff-mono d-text-xs d-blg-light-to-right">.d-blg-light-to-right</div>
-                <div class="d-my8 d-w100 d-py32 d-px8 d-br-md d-ff-mono d-text-xs d-blg-light-to-bottom">.d-blg-light-to-bottom</div>
-                <div class="d-my8 d-w100 d-py32 d-px8 d-br-md d-ff-mono d-text-xs d-blg-light-to-left">.d-blg-light-to-left</div>
+    <div class="dialtone-section--xxs">
+        <h3 class="title__subsection">Light</h3>
+        <div class="dialtone-color-grid__group" style="--color-grid-columns: 1">
+            <div class="dialtone-color-grid__item d-linear-gradient--light-to-top d-color--dark">
+                <span class="dialtone-color-grid__label">.d-linear-gradient--light-to-top</span>
             </div>
+            <div class="dialtone-color-grid__item d-linear-gradient--light-to-right d-color--dark">
+                <span class="dialtone-color-grid__label">.d-linear-gradient--light-to-right</span>
+            </div>
+            <div class="dialtone-color-grid__item d-linear-gradient--light-to-bottom d-color--dark">
+                <span class="dialtone-color-grid__label">.d-linear-gradient--light-to-bottom</span>
+            </div>
+            <div class="dialtone-color-grid__item d-linear-gradient--light-to-left d-color--dark">
+                <span class="dialtone-color-grid__label">.d-linear-gradient--light-to-left</span>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="dialtone-section">
+    <h2 class="title__section">Background Opacity</h2>
+    <div class="dialtone-section--xxs">
+        <h3 class="title__subsection">White</h3>
+        <p class="copy__normal">Change a white background opacity by using a <span class="code-example--inline">.d-background-opacity--white{#}</span> class. The table below lists the available classes, border radius size, and the CSS output.</p>
+        <div class="dialtone-color-grid__group d-background-color--slate d-border-radius--lg">
+            {% assign opacity = "95, 90, 85, 80, 75, 50, 25, 15, 10, 5, 0" | split: ", " %}
+            {% for o in opacity %}
+            <div class="dialtone-color-grid__item d-background-opacity--white{{ o }} {% if o <= '50' %}d-color--white{% else %}d-color--light{% endif %}">
+                <span class="dialtone-color-grid__label">.d-background-opacity--white{{ o }}</span>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="dialtone-section--xxs">
+        <h3 class="title__subsection">Slate</h3>
+        <p class="copy__normal">Change a white background opacity by using a <span class="code-example--inline">.d-background-opacity--slate{#}</span> class. The table below lists the available classes, border radius size, and the CSS output.</p>
+        <div class="dialtone-color-grid__group d-border-radius--lg">
+            {% for o in opacity %}
+            <div class="dialtone-color-grid__item d-background-opacity--slate{{ o }} {% if o >= '50' %}d-color--white{% else %}d-color--light{% endif %}">
+                <span class="dialtone-color-grid__label">.d-background-opacity--slate{{ o }}</span>
+            </div>
+            {% endfor %}
         </div>
     </div>
 </section>

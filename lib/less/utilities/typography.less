@@ -18,7 +18,7 @@
 //  ============================================================================
 //  $   FONT FACE
 //  ----------------------------------------------------------------------------
-each(@ff-weights, {
+each(@font-family-weights, {
     @font-face {
         font-style: "normal";
         font-weight: @key;
@@ -32,18 +32,18 @@ each(@ff-weights, {
 //  ============================================================================
 //  $   FONT FAMILY
 //  ----------------------------------------------------------------------------
-.d-ff-mark            { font-family: @ff-mark; }
-.d-ff-sans            { font-family: @ff-sans; }
-.d-ff-mono            { font-family: @ff-mono; }
-.d-ff-inherit         { font-family: inherit; }
-.d-ff-unset           { font-family: unset; }
+.d-font-family--mark            { font-family: @font-family--mark; }
+.d-font-family--sans            { font-family: @font-family--sans; }
+.d-font-family--mono            { font-family: @font-family--mono; }
+.d-font-family--inherit         { font-family: inherit; }
+.d-font-family--unset           { font-family: unset; }
 
 //  ============================================================================
 //  $   FONT SIZES
 //  ----------------------------------------------------------------------------
 //  Reset margins
 h1, h2, h3, h4, h5, h6, p {
-    margin-top: 0;
+    margin: 0;
 }
 
 //  $$  HEADLINES
@@ -52,125 +52,84 @@ h1, h2, h3, h4, h5, h6, p {
 h1, h2, h3, h4, h5, h6,
 strong,
 table th {
-    font-weight: @fw-bold;
+    font-weight: @font-weight--bold;
 }
 
-each(@headline-sizes, {
-    .d-headline-@{key} {
-        font-size: @value;
-        font-weight: @fw-bold;
-
-        & when (@key = xs) {
-            text-transform: @tt-uppercase;
-        }
-    }
-});
+.d-headline--xl {
+    font-size: @headline--xl;
+    font-weight: @font-weight--bold;
+}
+.d-headline--lg {
+    font-size: @headline--lg;
+    font-weight: @font-weight--bold;
+}
+.d-headline--md {
+    font-size: @headline--md;
+    font-weight: @font-weight--bold;
+}
+.d-headline--sm {
+    font-size: @headline--sm;
+    font-weight: @font-weight--bold;
+}
+.d-headline--xs {
+    font-size: @headline--xs;
+    font-weight: @font-weight--bold;
+    text-transform: uppercase;
+}
 
 //  $$  TEXT SIZES
 //  ----------------------------------------------------------------------------
-each(@text-sizes, {
-    .d-text-@{key} {
-        font-size: @value;
-    }
-});
+.d-text--xl     { font-size: @text--xl; }
+.d-text--lg     { font-size: @text--lg; }
+.d-text--md     { font-size: @text--md; }
+.d-text--sm     { font-size: @text--sm; }
+.d-text--xs     { font-size: @text--xs; }
+.d-text--xxs    { font-size: @text--xxs; }
+
 
 //  ============================================================================
 //  $   FONT STYLES
 //  ============================================================================
 //  $$  FONT WEIGHT
 //  ----------------------------------------------------------------------------
-each(@font-weight, {
-    .d-fw-@{key} {
-        font-weight: @value;
-    }
-});
-
-//  $$  FONT STYLES
-//  ----------------------------------------------------------------------------
-.d-ft-normal       { font-style: normal; }
-.d-ft-italic       { font-style: italic; }
-.d-ft-unset        { font-style: unset; }
-
-//  $$  TEXT TRANSFORM
-//  ----------------------------------------------------------------------------
-.d-tt-capitalize   { text-transform: capitalize; }
-.d-tt-lowercase    { text-transform: lowercase; }
-.d-tt-uppercase    { text-transform: uppercase; }
-.d-tt-none         { text-transform: none; }
-.d-tt-inherit      { text-transform: inherit; }
-.d-tt-unset        { text-transform: unset; }
-
-//  $$  TEXT DECORATION
-//  ----------------------------------------------------------------------------
-.d-td-underline    { text-decoration: underline; }
-.d-td-overline     { text-decoration: overline; }
-.d-td-line-through { text-decoration: line-through; }
-.d-td-initial      { text-decoration: initial; }
-.d-td-inherit      { text-decoration: inherit; }
-.d-td-unset        { text-decoration: unset; }
-.d-td-none         { text-decoration: none; }
-.d-tds-solid       { text-decoration-style: solid; }
-.d-tds-double      { text-decoration-style: double; }
-.d-tds-dotted      { text-decoration-style: dotted; }
-.d-tds-dashed      { text-decoration-style: dashed; }
-.d-tds-wavy        { text-decoration-style: wavy; }
-.d-tds-unset       { text-decoration-style: unset; }
-
-//  $$  TEXT ALIGN
-//  ----------------------------------------------------------------------------
-.d-ta-left         { text-align: left; }
-.d-ta-center       { text-align: center; }
-.d-ta-right        { text-align: right; }
-.d-ta-justify      { text-align: justify; }
-.d-ta-unset        { text-align: unset; }
+.d-font-weight--light       { font-weight: @font-weight--light; }
+.d-font-weight--normal      { font-weight: @font-weight--normal; }
+.d-font-weight--medium      { font-weight: @font-weight--medium; }
+.d-font-weight--bold        { font-weight: @font-weight--bold; }
 
 //  $$  TEXT COLOR
 //  ----------------------------------------------------------------------------
-each(@text-colors, {
-    .d-fc-@{key} {
-        color: @value;
-    }
-});
+.d-color--white             { color: @white; }
+.d-color--dark              { color: @color--dark; }
+.d-color--medium            { color: @color--medium; }
+.d-color--light             { color: @color--light; }
+.d-color--ash               { color: @ash; }
+.d-color--ash-dark          { color: @ash-dark; }
+.d-color--ash-darker        { color: @ash-darker; }
+.d-color--ash-darkest       { color: @ash-darkest; }
+.d-color--blue-text         { color: @color--blue-text; }
+.d-color--navy-text         { color: @color--navy-text; }
+.d-color--green-text        { color: @color--green-text; }
+.d-color--yellow-text       { color: @color--yellow-text; }
+.d-color--red-text          { color: @color--red-text; }
+.d-color--purple-text       { color: @color--purple-text; }
+.d-color--pink-text         { color: @color--pink-text; }
 
 
 //  ============================================================================
 //  $  LINE HEIGHTS
 //  ----------------------------------------------------------------------------
-each(@line-heights, {
-    .d-lh-@{key} {
-        line-height: @value;
-    }
-});
-
-
-//  ============================================================================
-//  $   WHITE SPACE
-//  ----------------------------------------------------------------------------
-.d-ws-normal       { white-space: normal; }
-.d-ws-nowrap       { white-space: nowrap; }
-.d-ws-pre          { white-space: pre; }
-.d-ws-pre-wrap     { white-space: pre-wrap; }
-.d-ws-pre-line     { white-space: pre-line; }
-.d-ws-unset        { white-space: unset; }
-
-
-//  ============================================================================
-//  $   OVERFLOW WRAP
-//  ----------------------------------------------------------------------------
-.d-ow-normal       { overflow-wrap: normal; }
-.d-ow-break-word   { overflow-wrap: break-word; }
-.d-ow-anywhere     { overflow-wrap: anywhere; }
-.d-ow-unset        { overflow-wrap: unset; }
+.d-line-height--xs          { line-height: @line-height--xs; }
+.d-line-height--sm          { line-height: @line-height--sm; }
+.d-line-height--md          { line-height: @line-height--md; }
+.d-line-height--lg          { line-height: @line-height--lg; }
+.d-line-height--xl          { line-height: @line-height--xl; }
+.d-line-height--xxl         { line-height: @line-height--xxl; }
 
 
 //  ============================================================================
 //  $   WORD BREAK
 //  ----------------------------------------------------------------------------
-.d-wb-normal       { word-break: normal; }
-.d-wb-break-all    { word-break: break-all; }
-.d-wb-break-word   { word-break: break-word; }
-.d-wb-keep-all     { word-break: keep-all; }
-.d-wb-unset        { word-break: unset; }
 .d-truncate {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -181,18 +140,8 @@ each(@line-heights, {
 //  ============================================================================
 //  $   LISTS
 //  ----------------------------------------------------------------------------
-.d-ls-reset {
+.d-list-reset {
     margin: 0;
     padding: 0;
     list-style: none;
 }
-.d-lst-none        { list-style-type: none; }
-.d-lst-disc        { list-style-type: disc; }
-.d-lst-circle      { list-style-type: circle; }
-.d-lst-square      { list-style-type: square; }
-.d-lst-decimal     { list-style-type: decimal; }
-.d-lst-unset       { list-style-type: unset; }
-.d-lsp-inside      { list-style-position: inside; }
-.d-lsp-outside     { list-style-position: outside; }
-.d-lsp-unset       { list-style-position: unset; }
-.d-lsi-none        { list-style-image: none; }

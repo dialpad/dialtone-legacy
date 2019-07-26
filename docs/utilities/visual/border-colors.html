@@ -1,166 +1,34 @@
 ---
 layout: page
 title: Border Colors
-description: By default a border's color inherits the current text color. To change a border color, use the following border color utility class. We do not provide directional border colors.
+description: By default a <span class="code-example--inline">.d-border-{direction}</span> border color is set to inherit the current text color. To change a border color, use the following border color utility class. We <strong>do not</strong> provide directional border colors.
 ---
-<section class="dds-docs--section">
-    <h2 class="dds-docs--header">White / Transparent</h2>
-    <div class="dtd-example">
-{% highlight html linenos %}
-<div class="d-ba d-bc-white">.d-ba .d-bc-white</div>
-<div class="d-ba d-bc-current">.d-ba .d-bc-current</div>
-<div class="d-ba d-bc-transparent">.d-ba .d-bc-transparent</div>
-{% endhighlight %}
-        <div class="dtd-example--preview">
-            <div class="d-bgc-slate d-fc-white d-br-md d-px8 d-py2">
-                <div class="d-my8 d-w100 d-p8 d-br-sm d-ba d-bc-white d-ff-mono d-text-xs">.d-ba .d-bc-white</div>
-                <div class="d-my8 d-w100 d-p8 d-br-sm d-ba d-bc-current d-fc-white d-ff-mono d-text-xs">.d-ba .d-bc-current .d-fc-white</div>
-                <div class="d-my8 d-w100 d-p8 d-br-sm d-ba d-bc-transparent d-ff-mono d-text-xs">.d-ba .d-bc-transparent</div>
+<section class="dialtone-section">
+    <div class="d-grid-layout--with-columns d-grid-column-gap12 d-grid-row-gap24" style="--grid-col: 2; --grid-col-width: 50%;">
+    {% for color in site.data.color-stops %}
+        <div class="dialtone-section">
+            <h3 class="title__subsection">{{ color.color }}</h3>
+            <div style="display: grid; grid-template-columns: 100%;">
+                {% for stop in color.stops %}
+                    <div class="d-padding12 d-font-family--mono d-text--xs d-border-top d-border-top-width2 d-border-color--{{ stop.stop }} d-color--dark {% if forloop.first or forloop.last %}d-border-radius--none{% endif %}">
+                        <span class="dialtone-color-grid__label">.d-border-color--{{ stop.stop }}</span>
+                    </div>
+                {% endfor %}
             </div>
         </div>
-    </div>
-    <h2 class="dds-docs--header">Gray</h2>
-    <div class="dtd-example">
-{% highlight html linenos %}
-<div class="d-bc-slate">…</div>
-<div class="d-bc-slate-light">…</div>
-<div class="d-bc-slate-lighter">…</div>
-<div class="d-bc-slate-lightest">…</div>
-<div class="d-bc-ash-darkest">…</div>
-<div class="d-bc-ash-darker">…</div>
-<div class="d-bc-ash-dark">…</div>
-<div class="d-bc-ash">…</div>
-{% endhighlight %}
-        <div class="dtd-example--preview">
-            <div class="d-px8 d-py2">
-                <div class="d-my8 d-w100 d-p8 d-br-sm d-ba d-bc-slate d-ff-mono d-text-xs">.d-bc-slate</div>
-                <div class="d-my8 d-w100 d-p8 d-br-sm d-ba d-bc-slate-light d-ff-mono d-text-xs">.d-bc-slate-light</div>
-                <div class="d-my8 d-w100 d-p8 d-br-sm d-ba d-bc-slate-lighter d-ff-mono d-text-xs">.d-bc-slate-lighter</div>
-                <div class="d-my8 d-w100 d-p8 d-br-sm d-ba d-bc-slate-lightest d-ff-mono d-text-xs">.d-bc-slate-lightest</div>
-                <div class="d-my8 d-w100 d-p8 d-br-sm d-ba d-bc-ash-darkest d-ff-mono d-text-xs">.d-bc-ash-darkest</div>
-                <div class="d-my8 d-w100 d-p8 d-br-sm d-ba d-bc-ash-darker d-ff-mono d-text-xs">.d-bc-ash-darker</div>
-                <div class="d-my8 d-w100 d-p8 d-br-sm d-ba d-bc-ash-dark d-ff-mono d-text-xs">.d-bc-ash-dark</div>
-                <div class="d-my8 d-w100 d-p8 d-br-sm d-ba d-bc-ash d-ff-mono d-text-xs">.d-bc-ash</div>
-            </div>
-        </div>
-    </div>
-    <h2 class="dds-docs--header">Blue</h2>
-    <div class="dtd-example">
-{% highlight html linenos %}
-<div class="d-ba d-bc-blue-dark">…</div>
-<div class="d-ba d-bc-blue">…</div>
-<div class="d-ba d-bc-blue-light">…</div>
-{% endhighlight %}
-        <div class="dtd-example--preview">
-            <div class="d-px8 d-py2">
-                <div class="d-my8 d-w100 d-p8 d-br-sm d-ba d-bc-blue-dark d-ff-mono d-text-xs">.d-bc-blue-dark</div>
-                <div class="d-my8 d-w100 d-p8 d-br-sm d-ba d-bc-blue d-ff-mono d-text-xs">.d-bc-blue</div>
-                <div class="d-my8 d-w100 d-p8 d-br-sm d-ba d-bc-blue-light d-ff-mono d-text-xs">.d-bc-blue-light</div>
-            </div>
-        </div>
-    </div>
-    <h2 class="dds-docs--header">Navy</h2>
-    <div class="dtd-example">
-{% highlight html linenos %}
-<div class="d-ba d-bc-navy-dark">…</div>
-<div class="d-ba d-bc-navy">…</div>
-<div class="d-ba d-bc-navy-light">…</div>
-{% endhighlight %}
-        <div class="dtd-example--preview">
-            <div class="d-px8 d-py2">
-                <div class="d-my8 d-w100 d-p8 d-br-sm d-ba d-bc-navy-dark d-ff-mono d-text-xs">.d-bc-navy-dark</div>
-                <div class="d-my8 d-w100 d-p8 d-br-sm d-ba d-bc-navy d-ff-mono d-text-xs">.d-bc-navy</div>
-                <div class="d-my8 d-w100 d-p8 d-br-sm d-ba d-bc-navy-light d-ff-mono d-text-xs">.d-bc-navy-light</div>
-            </div>
-        </div>
-    </div>
-    <h2 class="dds-docs--header">Yellow</h2>
-    <div class="dtd-example">
-{% highlight html linenos %}
-<div class="d-ba d-bc-yellow-dark">…</div>
-<div class="d-ba d-bc-yellow">…</div>
-<div class="d-ba d-bc-yellow-light">…</div>
-{% endhighlight %}
-        <div class="dtd-example--preview">
-            <div class="d-px8 d-py2">
-                <div class="d-my8 d-w100 d-p8 d-br-sm d-ba d-bc-yellow-dark d-ff-mono d-text-xs">.d-bc-yellow-dark</div>
-                <div class="d-my8 d-w100 d-p8 d-br-sm d-ba d-bc-yellow d-ff-mono d-text-xs">.d-bc-yellow</div>
-                <div class="d-my8 d-w100 d-p8 d-br-sm d-ba d-bc-yellow-light d-ff-mono d-text-xs">.d-bc-yellow-light</div>
-            </div>
-        </div>
-    </div>
-    <h2 class="dds-docs--header">Green</h2>
-    <div class="dtd-example">
-{% highlight html linenos %}
-<div class="d-ba d-bc-green-dark">…</div>
-<div class="d-ba d-bc-green">…</div>
-<div class="d-ba d-bc-green-light">…</div>
-{% endhighlight %}
-        <div class="dtd-example--preview">
-            <div class="d-px8 d-py2">
-                <div class="d-my8 d-w100 d-p8 d-br-sm d-ba d-bc-green-dark d-ff-mono d-text-xs">.d-bc-green-dark</div>
-                <div class="d-my8 d-w100 d-p8 d-br-sm d-ba d-bc-green d-ff-mono d-text-xs">.d-bc-green</div>
-                <div class="d-my8 d-w100 d-p8 d-br-sm d-ba d-bc-green-light d-ff-mono d-text-xs">.d-bc-green-light</div>
-            </div>
-        </div>
-    </div>
-    <h2 class="dds-docs--header">Red</h2>
-    <div class="dtd-example">
-{% highlight html linenos %}
-<div class="d-ba d-bc-red-dark">…</div>
-<div class="d-ba d-bc-red">…</div>
-<div class="d-ba d-bc-red-light">…</div>
-{% endhighlight %}
-        <div class="dtd-example--preview">
-            <div class="d-px8 d-py2">
-                <div class="d-my8 d-w100 d-p8 d-br-sm d-ba d-bc-red-dark d-ff-mono d-text-xs">.d-bc-red-dark</div>
-                <div class="d-my8 d-w100 d-p8 d-br-sm d-ba d-bc-red d-ff-mono d-text-xs">.d-bc-red</div>
-                <div class="d-my8 d-w100 d-p8 d-br-sm d-ba d-bc-red-light d-ff-mono d-text-xs">.d-bc-red-light</div>
-            </div>
-        </div>
-    </div>
-    <h2 class="dds-docs--header">Purple</h2>
-    <div class="dtd-example">
-{% highlight html linenos %}
-<div class="d-ba d-bc-purple-dark">…</div>
-<div class="d-ba d-bc-purple">…</div>
-<div class="d-ba d-bc-purple-light">…</div>
-{% endhighlight %}
-        <div class="dtd-example--preview">
-            <div class="d-px8 d-py2">
-                <div class="d-my8 d-w100 d-p8 d-br-sm d-ba d-bc-purple-dark d-ff-mono d-text-xs">.d-bc-purple-dark</div>
-                <div class="d-my8 d-w100 d-p8 d-br-sm d-ba d-bc-purple d-ff-mono d-text-xs">.d-bc-purple</div>
-                <div class="d-my8 d-w100 d-p8 d-br-sm d-ba d-bc-purple-light d-ff-mono d-text-xs">.d-bc-purple-light</div>
-            </div>
-        </div>
-    </div>
-    <!-- <h2 class="dds-docs--header">Teal</h2>
-    <div class="dtd-example">
-{% highlight html linenos %}
-<div class="d-ba d-bc-teal-dark">…</div>
-<div class="d-ba d-bc-teal">…</div>
-<div class="d-ba d-bc-teal-light">…</div>
-{% endhighlight %}
-        <div class="dtd-example--preview">
-            <div class="d-px8 d-py2">
-                <div class="d-my8 d-w100 d-p8 d-br-sm d-ba d-bc-teal-dark d-ff-mono d-text-xs">.d-bc-teal-dark</div>
-                <div class="d-my8 d-w100 d-p8 d-br-sm d-ba d-bc-teal d-ff-mono d-text-xs">.d-bc-teal</div>
-                <div class="d-my8 d-w100 d-p8 d-br-sm d-ba d-bc-teal-light d-ff-mono d-text-xs">.d-bc-teal-light</div>
-            </div>
-        </div>
-    </div> -->
-    <h2 class="dds-docs--header">Pink</h2>
-    <div class="dtd-example">
-{% highlight html linenos %}
-<div class="d-ba d-bc-pink-dark">…</div>
-<div class="d-ba d-bc-pink">…</div>
-<div class="d-ba d-bc-pink-light">…</div>
-{% endhighlight %}
-        <div class="dtd-example--preview">
-            <div class="d-px8 d-py2">
-                <div class="d-my8 d-w100 d-p8 d-br-sm d-ba d-bc-pink-dark d-ff-mono d-text-xs">.d-bc-pink-dark</div>
-                <div class="d-my8 d-w100 d-p8 d-br-sm d-ba d-bc-pink d-ff-mono d-text-xs">.d-bc-pink</div>
-                <div class="d-my8 d-w100 d-p8 d-br-sm d-ba d-bc-pink-light d-ff-mono d-text-xs">.d-bc-pink-light</div>
+    {% endfor %}
+        <div class="dialtone-section">
+            <h3 class="title__subsection">White / Transparent</h3>
+            <div class="d-background-color--slate d-padding16 d-border-radius--md" style="display: grid; grid-template-columns: 100%;">
+                <div class="d-padding12 d-font-family--mono d-text--xs d-border-top d-border-top-width2 d-border-color--white d-color--white">
+                    <span class="dialtone-color-grid__label">.d-border-color--white</span>
+                </div>
+                <div class="d-padding12 d-font-family--mono d-text--xs d-border-top d-border-top-width2 d-border-color--transparent d-color--white">
+                    <span class="dialtone-color-grid__label">.d-border-color--transparent</span>
+                </div>
+                <div class="d-padding12 d-font-family--mono d-text--xs d-border-top d-border-top-width2 d-border-color--current d-color--ash-darker">
+                    <span class="dialtone-color-grid__label">.d-border-color--current</span>
+                </div>
             </div>
         </div>
     </div>

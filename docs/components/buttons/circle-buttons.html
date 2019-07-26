@@ -1,51 +1,54 @@
-<h3 class="dds-docs--subheader">Circle Buttons</h3>
-<p>Sometimes an icon-only, circle button is desired. These buttons are used for toggling actions, navigation, or closing UI elements.</p>
-<div class="dtd-example">
-{% highlight html linenos %}
-<button class="d-btn d-btn-circle" type="button" aria-pressed="false">…</button>
-<button class="d-btn d-btn-circle d-btn__close" type="button" aria-pressed="false">…</button>
-<button class="d-btn d-btn-circle d-btn__close-filled" type="button" aria-pressed="false">…</button>
-{% endhighlight %}
-    <div class="dtd-example--preview">
-        <table class="d-table m0">
+<header class="dialtone-section--xxs">
+    <h3 class="title__subsection">Circle Buttons</h3>
+    <p class="copy__normal">Sometimes an icon-only, circle button is desired. These buttons are used for toggling actions, navigation, or closing UI elements.</p>
+</header>
+<div class="dialtone-example" data-example="yes" data-code="yes">
+    <div class="dialtone-example__example">
+        <table class="dialtone-table">
             <thead>
                 <tr>
-                    <th scope="col" width="50%">Name</th>
-                    <th scope="col" width="25%">Class</th>
-                    <th scope="col" style="text-align: center">Examples</th>
+                    <th scope="col" width="45%">Name</th>
+                    <th scope="col">Class</th>
+                    <th scope="col" width="30%" style="text-align: center;">Examples</th>
                 </tr>
             </thead>
             <tbody>
-                {% for item in site.data.buttons.circle %}
-                    <tr>
-                        <th scope="row" class="d-text-sm {% if item.name == 'inverted' %}d-bgc-slate d-fc-white d-blr-lg{% endif %}" style="{% if item.name == 'inverted' %}padding-left: 0.75rem;{% elsif item.name == 'danger-primary' %} border-bottom-width: 0;{% endif %}">
-                            <span class="d-d-block d-my4">{{ item.title }}</span>
-                            <span class="d-d-block d-fw-normal d-text-xs d-my4">{{ item.description }}</span>
-                        </th>
-                        <td class="d-ff-mono d-text-xxs {% if item.name == 'inverted' %}d-bgc-slate fc-white{% endif %}" style="{% if item.name == 'danger-primary' %}border-bottom-width: 0;{% endif %}">
-                            .d-btn {% if item.class != nil %}.{{ item.class }}{% endif %}
-                        </td>
-                        <td {% if item.name == 'inverted' %}class="d-bgc-slate d-fc-white d-brr-lg"{% endif %} {% if item.name == 'danger-primary' %} style="border-bottom-width: 0;"{% endif %}>
-                            <div class="d-flex d-jc-end d-mn4">
-                                {% assign buttons = "default, loading, disabled" | split: ", " %}
-                                {% for btn in buttons %}
-                                    <button class="d-mx4 d-btn d-btn-circle {{ item.class }} {% if btn == 'loading' %}is-loading{% endif %}" type="button" aria-pressed="false" {% if btn == 'disabled' %}disabled{% endif %}>
-                                        <span class="d-btn--icon">
-                                        {% if item.name == "default" %}
-                                            <svg aria-hidden="true" class="d-svg d-svg--person" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><title>Account</title><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
-                                        {% elsif item.name == "outlined" %}
-                                            <svg aria-hidden="true" class="d-svg d-svg--mic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
-                                        {% elsif item.name == "danger-hover" or "danger-primary" %}
-                                            <svg aria-hidden="true" class="d-svg d-svg--close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
-                                        {% endif %}
-                                        </span>
-                                    </button>
-                                {% endfor %}
-                            </div>
-                        </td>
-                    </tr>
+                {% for i in site.data.buttons.circle %}
+                {% assign name = i.name %}
+                {% assign title = i.title %}
+                {% assign desc = i.description %}
+                <tr class="{% if name == 'inverted'%}d-background-color--slate d-color--white{% endif %}">
+                    <th scope="row">
+                        <span class="d-text--sm">{{ title }}</span><br/>
+                        <span class="d-font-weight--normal d-text--xs">{{ desc }}</span>
+                    </th>
+                    <td class="code-example">.d-btn .d-btn-circle {% if name != "default" %}.d-btn--{% if name == "danger-primary" %}danger .d-btn--primary{% elsif name == "inverted"%}inverted{% else %}{{ name }}{% endif %}{% endif %}</td>
+                    <td style="text-align: center;" {% if name == 'inverted' %}class="d-padding-left16"{% endif %}>
+                        {% assign buttons = "normal, loading, disabled" | split: ", " %}
+                        {% for btn in buttons %}
+                            <button class="d-margin-x4 d-btn d-btn-circle {% if name != 'default' %}d-btn--{% if name == 'danger-primary' %}danger d-btn--primary{% elsif name == 'inverted'%}inverted{% else %}{{ name }}{% endif %}{% endif %}{% if btn == 'loading' %} is-loading{% endif %}" type="button" aria-pressed="false" {% if btn == 'disabled' %}disabled{% endif %}>
+                                <span class="d-btn__icon">
+                                {% if item.name == "normal" %}
+                                    <svg aria-hidden="true" class="d-svg d-svg__person" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><title>Account</title><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+                                {% elsif item.name == "outlined" %}
+                                    <svg aria-hidden="true" class="d-svg d-svg__mic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+                                {% elsif item.name == "danger-hover" or "danger-primary" %}
+                                    <svg aria-hidden="true" class="d-svg d-svg__close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+                                {% endif %}
+                                </span>
+                            </button>
+                        {% endfor %}
+                    </td>
+                </tr>
                 {% endfor %}
             </tbody>
         </table>
+    </div>
+    <div class="dialtone-example__code">
+{% highlight html linenos %}
+<button class="d-btn d-btn-circle is-loading" type="button" aria-pressed="false">…</button>
+<button class="d-btn d-btn-circle d-btn--outlined is-loading" type="button" aria-pressed="false">…</button>
+<button class="d-btn d-btn-circle d-btn--primary is-loading" type="button" aria-pressed="false" disabled>…</button>
+{% endhighlight %}
     </div>
 </div>

@@ -17,10 +17,10 @@
 //  ============================================================================
 //  $   TOKENS
 //  ----------------------------------------------------------------------------
-@tooltip-bg:              fade(@slate,97%);
-@tooltip-fc:              @ash;
-@tooltip-bg__inverted:    fade(@ash,97%);
-@tooltip-fc__inverted:    @fc-medium;
+@tooltip-background:            fade(@slate,97%);
+@tooltip-color:                 @ash;
+@tooltip-background--inverted:  fade(@ash,97%);
+@tooltip-color--inverted:       @color--medium;
 
 //  ============================================================================
 //  $   MIXINS
@@ -34,8 +34,8 @@
     visibility: visible;
     transition:
         visibility 0s 0s,
-        transform 200ms @transition-cubic-inOut 10ms,
-        opacity 200ms @transition-cubic-inOut 10ms;
+        transform 200ms @transition--cubic-inOut 10ms,
+        opacity 200ms @transition--cubic-inOut 10ms;
 }
 
 //  ============================================================================
@@ -43,28 +43,28 @@
 //  ----------------------------------------------------------------------------
 .d-tooltip {
     position: absolute;
-    padding: @sp12;
+    padding: @spacing12;
     width: 100%;
-    max-width: @fixed-size-2;
-    z-index: @z-tooltip;
+    max-width: @fixed-size2;
+    z-index: @z-index--tooltip;
 
-    border-radius: @br-sm;
-    background-color: @tooltip-bg;
-    color: @tooltip-fc;
-    font-size: @text-xs;
-    line-height: @lh-md;
+    border-radius: @border-radius--sm;
+    background-color: @tooltip-background;
+    color: @tooltip-color;
+    font-size: @text--xs;
+    line-height: @line-height--md;
 
     opacity: 0;
     visibility: hidden;
     transition:
         visibility 0s 200ms,
-        transform 200ms @transition-cubic-inOut 0s,
-        opacity 200ms @transition-cubic-inOut 0s;
+        transform 200ms @transition--cubic-inOut 0s,
+        opacity 200ms @transition--cubic-inOut 0s;
 
     &:before {
         content: "";
         position: absolute;
-        border-width: @sp6;
+        border-width: @spacing6;
         border-color: transparent;
         border-style: solid;
     }
@@ -83,42 +83,42 @@
 //  ============================================================================
 //  $$  INVERTED (WHITE BACKGROUND)
 //  ----------------------------------------------------------------------------
-.d-tooltip__inverted {
-    background-color: @tooltip-bg__inverted;
-    color: @tooltip-fc__inverted;
+.d-tooltip--inverted {
+    background-color: @tooltip-background--inverted;
+    color: @tooltip-color--inverted;
 
     //  $$  ARROW DIRECTION UPDATES
     //  ========================================================================
     //  --  TOP
     //  ------------------------------------------------------------------------
-    &.d-tooltip__tl:before,
-    &.d-tooltip__tc:before,
-    &.d-tooltip__tr:before {
-        border-bottom-color: @tooltip-bg__inverted;
+    &.d-tooltip--top-left:before,
+    &.d-tooltip--top-center:before,
+    &.d-tooltip--top-right:before {
+        border-bottom-color: @tooltip-background--inverted;
     }
 
     //  --  RIGHT
     //  ------------------------------------------------------------------------
-    &.d-tooltip__rt:before,
-    &.d-tooltip__rc:before,
-    &.d-tooltip__rb:before {
-        border-left-color: @tooltip-bg__inverted;
+    &.d-tooltip--right-top:before,
+    &.d-tooltip--right-center:before,
+    &.d-tooltip--right-bottom:before {
+        border-left-color: @tooltip-background--inverted;
     }
 
     //  --  BOTTOM
     //  ------------------------------------------------------------------------
-    &.d-tooltip__bl:before,
-    &.d-tooltip__bc:before,
-    &.d-tooltip__br:before {
-        border-top-color: @tooltip-bg__inverted;
+    &.d-tooltip--bottom-left:before,
+    &.d-tooltip--bottom-center:before,
+    &.d-tooltip--bottom-right:before {
+        border-top-color: @tooltip-background--inverted;
     }
 
     //  --  LEFT
     //  ------------------------------------------------------------------------
-    &.d-tooltip__lt:before,
-    &.d-tooltip__lc:before,
-    &.d-tooltip__lb:before {
-        border-right-color: @tooltip-bg__inverted;
+    &.d-tooltip--left-top:before,
+    &.d-tooltip--left-center:before,
+    &.d-tooltip--left-bottom:before {
+        border-right-color: @tooltip-background--inverted;
     }
 }
 
@@ -127,119 +127,119 @@
 //  ============================================================================
 //  $$  TOP
 //  ----------------------------------------------------------------------------
-.d-tooltip__tl,
-.d-tooltip__tc,
-.d-tooltip__tr {
-    top: calc(~"100% + @{sp12}");
-    transform: translateY(@sp16);
+.d-tooltip--top-left,
+.d-tooltip--top-center,
+.d-tooltip--top-right {
+    top: calc(~"100% + @{spacing12}");
+    transform: translateY(@spacing16);
 
     &:before {
-        top: -@sp6;
+        top: -@spacing6;
         border-top-width: 0;
-        border-bottom-color: @tooltip-bg;
+        border-bottom-color: @tooltip-background;
     }
 }
 
 //  $$  BOTTOM
 //  ----------------------------------------------------------------------------
-.d-tooltip__bl,
-.d-tooltip__bc,
-.d-tooltip__br {
-    bottom: calc(~"100% + @{sp12}");
-    transform: translateY(-@sp16);
+.d-tooltip--bottom-left,
+.d-tooltip--bottom-center,
+.d-tooltip--bottom-right {
+    bottom: calc(~"100% + @{spacing12}");
+    transform: translateY(-@spacing16);
 
     &:before {
-        bottom: -@sp6;
+        bottom: -@spacing6;
         border-bottom-width: 0;
-        border-top-color: @tooltip-bg;
+        border-top-color: @tooltip-background;
     }
 }
 
 //  --  TOP & BOTTOM LEFT
-.d-tooltip__tl,
-.d-tooltip__bl {
-    left: -@sp1;
+.d-tooltip--top-left,
+.d-tooltip--bottom-left {
+    left: -@spacing1;
 
     &:before {
-        left: @sp8;
+        left: @spacing8;
     }
 }
 
 //  --  TOP & BOTTOM CENTER
-.d-tooltip__tc,
-.d-tooltip__bc {
+.d-tooltip--top-center,
+.d-tooltip--bottom-center {
     &:before {
         left: 50%;
-        margin-left: -@sp6;
+        margin-left: -@spacing6;
     }
 }
 
 //  --  TOP & BOTTOM RIGHT
-.d-tooltip__tr,
-.d-tooltip__br {
-    right: -@sp1;
+.d-tooltip--top-right,
+.d-tooltip--bottom-right {
+    right: -@spacing1;
 
     &:before {
-        right: @sp8;
+        right: @spacing8;
     }
 }
 
 
 //  $$  RIGHT
 //  ----------------------------------------------------------------------------
-.d-tooltip__rt,
-.d-tooltip__rc,
-.d-tooltip__rb {
-    right: calc(~"100% + @{sp12}");
-    transform: translateX(-@sp16);
+.d-tooltip--right-top,
+.d-tooltip--right-center,
+.d-tooltip--right-bottom {
+    right: calc(~"100% + @{spacing12}");
+    transform: translateX(-@spacing16);
 
     &:before {
-        right: -@sp6;
+        right: -@spacing6;
         border-right-width: 0;
-        border-left-color: @tooltip-bg;
+        border-left-color: @tooltip-background;
     }
 }
 
 //  $$  LEFT
 //  ----------------------------------------------------------------------------
-.d-tooltip__lt,
-.d-tooltip__lc,
-.d-tooltip__lb {
-    left: calc(~"100% + @{sp12}");
-    transform: translateX(@sp16);
+.d-tooltip--left-top,
+.d-tooltip--left-center,
+.d-tooltip--left-bottom {
+    left: calc(~"100% + @{spacing12}");
+    transform: translateX(@spacing16);
 
     &:before {
-        left: -@sp6;
+        left: -@spacing6;
         border-left-width: 0;
-        border-right-color: @tooltip-bg;
+        border-right-color: @tooltip-background;
     }
 }
 
 //  --  RIGHT & LEFT TOP
-.d-tooltip__rt,
-.d-tooltip__lt {
-    top: -@sp1;
+.d-tooltip--right-top,
+.d-tooltip--left-top {
+    top: -@spacing1;
 
     &:before {
-        top: @sp8;
+        top: @spacing8;
     }
 }
 
 //  --  RIGHT & LEFT CENTER
-.d-tooltip__rc,
-.d-tooltip__lc {
+.d-tooltip--right-center,
+.d-tooltip--left-center {
     &:before {
         top: 50%;
-        margin-top: -@sp6;
+        margin-top: -@spacing6;
     }
 }
 
 //  --  RIGHT & LEFT BOTTOM
-.d-tooltip__rb,
-.d-tooltip__lb {
-    bottom: -@sp1;
+.d-tooltip--right-bottom,
+.d-tooltip--left-bottom {
+    bottom: -@spacing1;
 
     &:before {
-        bottom: @sp8;
+        bottom: @spacing8;
     }
 }
