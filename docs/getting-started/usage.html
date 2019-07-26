@@ -4,6 +4,59 @@ title: Usage
 description: Dialtone is available in both <a href="#dialpad">Dialpad</a> and <a href="#uberconference">UberConference</a>. Listed below are general examples of how to use Dialtone. Specific information on the styles and components available can be found in the left-hand navigation.
 ---
 <div class="dialtone-section">
+    <h2 id="uberconference" class="title__section">Writing CSS</h2>
+    <p class="copy__normal">At Dialpad we've adopted the <a href="http://getbem.com/" target="_blank">BEM (Block Element Modifier) methodology</a> for writing CSS. This is a simple, common naming convention that helps make our CSS easier to read and understand.</p>
+    <p class="copy__normal">If you aren't familiar with the approach, here's a quick synposis of the approach (definitions taken from <a href="http://getbem.com/introduction/" target="_blank">BEM's introduction page</a>):</p>
+    <ul class="copy__normal">
+        <li><strong>Block:</strong> A parent entity that is meaningful on its own. For example: <span class="code-example--inline">.d-input</span>, <span class="code-example--inline">.d-table</span>, or <span class="code-example--inline">.d-tooltip</span>.</li>
+        <li><strong>Element:</strong> A child that is meaningful only in relation to its parent. For example: <span class="code-example--inline">.d-input__label</span>, <span class="code-example--inline">.d-table__cell</span>, or <span class="code-example--inline">.d-tooltip__icon</span>.</li>
+        <li><strong>Modifier:</strong> A modifying flag on a Block or Element. This changes appearance or behavior. For example: <span class="code-example--inline">.d-input--lg</span>, <span class="code-example--inline">.d-table--inverted</span>, or <span class="code-example--inline">.d-tooltip--top-left</span>.</li>
+    </ul>
+</div>
+<div class="dialtone-section">
+    <h2 id="uberconference" class="title__section">Using Dialtone in Less</h2>
+    <p class="copy__normal">The preferred method of incorporating Dialtone into Dialpad and UberConference is by using it within a semantic CSS class, written in Less. <a href="http://lesscss.org/" target="_blank">Less</a> is a powerful CSS pre-processor much like SCSS or SASS. It allows you to create and modify variables, utilize mixins, create functions, and incorporate styles within other classes easily.</p>
+    <p class="copy__normal">Given that we prefer semantic classes as compared to utility or atomic classes, this means that Dialtone <em>only provides classes and styles for items which reflect design decisions.</em> For example, Dialtone provides set spacing sizes (e.g. <span class="code-example--inline">.d-margin16</span> == <span class="code-example--inline">margin: 16px;</span>), but it does not provide common CSS properties in single-purpose classes (e.g. <span class="code-example--inline">.d-float--left</span> == <span class="code-example--inline">float: left;</span>).</p>
+    <p class="copy__normal">Here's an example of how you include Dialtone in your Less:</p>
+{% highlight css linenos %}
+/* Dialtone documentation navigation bar */
+.dialtone-navbar {
+    .d-top-bottom1;
+    .d-left1;
+    .d-border-right-radius--lg;
+    .d-background-color--ash;
+    .d-color--light;
+
+    position: fixed;
+    width: 100%;
+    min-width: @sidebar-min-width;
+    max-width: @sidebar-max-width;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+{% endhighlight %}
+    <p class="copy__normal">This compiles to:</p>
+{% highlight css linenos %}
+.dialtone-navbar {
+    position: fixed;
+    top: 0.1rem;
+    bottom: 0.1rem;
+    left: 0.1rem;
+    width: 100%;
+    max-width: 32.8rem;
+    min-width: 24rem;
+    border-top-right-radius: 1.2rem;
+    border-bottom-right-radius: 1.2rem;
+    background-color: #F1F2F4;
+    color: #4C4E56;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+{% endhighlight %}
+    <p class="copy__normal">The first portion of <span class="code-example--inline">.dialtone-navbar</span> includes various preset design style classes from Dialtone. Then the rest of the necessary CSS is provided afterwards.</p>
+</div>
+
+<div class="dialtone-section">
     <h2 id="dialpad" class="title__section">Using Dialtone in Dialpad</h2>
 
     <div class="dialtone-section--xxs">
