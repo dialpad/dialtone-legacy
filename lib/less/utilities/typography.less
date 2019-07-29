@@ -18,7 +18,14 @@
 //  ============================================================================
 //  $   FONT FACE
 //  ----------------------------------------------------------------------------
-each(@font-family-weights, {
+
+// Can override @define-font-face to false to prevent font definitions below.
+// TODO(dbecher): this is only needed because the font-face definitions in dialpad
+// are currently wrong, and this conflicts with the "correct" font-face definitions
+// below. Can remove once we fix the font issues in dialpad.
+@define-font-face: true;
+
+if((@define-font-face = true), each(@font-family-weights, {
     @font-face {
         font-style: "normal";
         font-weight: @key;
@@ -27,7 +34,7 @@ each(@font-family-weights, {
              url("@{font-path}@{value}.eot?#iefix") format("embedded-opentype"),
              url("@{font-path}@{value}.woff") format("woff");
     };
-});
+}));
 
 //  ============================================================================
 //  $   FONT FAMILY
@@ -41,20 +48,6 @@ each(@font-family-weights, {
 //  ============================================================================
 //  $   FONT SIZES
 //  ----------------------------------------------------------------------------
-//  Reset margins
-h1, h2, h3, h4, h5, h6, p {
-    margin: 0;
-}
-
-//  $$  HEADLINES
-//  ----------------------------------------------------------------------------
-//  Correctly assign the font-face for HTML tags that are bold by default
-h1, h2, h3, h4, h5, h6,
-strong,
-table th {
-    font-weight: @font-weight--bold;
-}
-
 .d-headline--xl {
     font-size: @headline--xl;
     font-weight: @font-weight--bold;
