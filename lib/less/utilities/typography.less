@@ -14,6 +14,23 @@
 //  • Text transform
 //  • Text alignment
 //  • Line height
+//
+//  ============================================================================
+//  $   FONT FACE
+//  ----------------------------------------------------------------------------
+// Can override @define-font-face to false to prevent font definitions below.
+@define-font-face: true;
+
+if((@define-font-face = true), each(@font-family-weights, {
+    @font-face {
+        font-style: "normal";
+        font-weight: @key;
+        font-family: "MarkWeb";
+        src: url("@{font-path}@{value}.eot") format("eof"),
+                url("@{font-path}@{value}.eot?#iefix") format("embedded-opentype"),
+                url("@{font-path}@{value}.woff") format("woff");
+    };
+}));
 
 //  ============================================================================
 //  $   FONT FAMILY
