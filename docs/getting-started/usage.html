@@ -19,6 +19,9 @@ description: Dialtone is available in both <a href="#dialpad">Dialpad</a> and <a
     <p class="copy__normal">Given that we prefer semantic classes as compared to utility or atomic classes, this means that Dialtone <em>only provides classes and styles for items which reflect design decisions.</em> For example, Dialtone provides set spacing sizes (e.g. <span class="code-example--inline">.d-margin16</span> == <span class="code-example--inline">margin: 16px;</span>), but it does not provide common CSS properties in single-purpose classes (e.g. <span class="code-example--inline">.d-float--left</span> == <span class="code-example--inline">float: left;</span>).</p>
     <p class="copy__normal">Here's an example of how you include Dialtone in your Less:</p>
 {% highlight css linenos %}
+/* Import Dialtone definitions. Ensure the relative path is correct. */
+@import "../../css/dialtone.less";
+
 /* Dialtone documentation navigation bar */
 .dialtone-navbar {
     .d-top-bottom1;
@@ -61,11 +64,41 @@ description: Dialtone is available in both <a href="#dialpad">Dialpad</a> and <a
 
     <div class="dialtone-section--xxs">
         <h3 class="title__subsection">Vue</h3>
-        <p class="copy__normal">To-do: Example coming</p>
+        <p class="copy__normal">Using Dialtone in Vue requires setting your style lang to less, importing Dialtone with the correct relative path to your component and then composing semantic classes with Dialtone styles, like shown above.</p>
+
+{% highlight css linenos %}
+/* Import Dialtone definitions. Ensure the relative path is correct. */
+<style lang="less">
+  @import "../../css/dialtone.less";
+
+  .vue-select-menu-option {
+    .d-padding8;
+    .d-color--dark;
+    .d-text--sm;
+    display: block;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .vue-select-menu-option.highlight {
+    .d-background-color--ash;
+  }
+
+  .vue-select-menu-option.selected {
+    .d-background-color--blue-lighter;
+  }
+</style>
+{% endhighlight %}
+
     </div>
     <div class="dialtone-section--xxs">
         <h3 class="title__subsection">Backbone</h3>
-        <p class="copy__normal">To-do: Example coming</p>
+        <p class="copy__normal">Using Dialtone in Backbone should be rare, since most frontend changes are now being implemented using Vue. Regardless, if you find yourself needing to use Dialtone in Backbone, there are a few steps:</p>
+        <ol>
+            <li>Create a <span class="code-example--inline">.less</span> file for your feature, if one does not yet exist.</li>
+            <li>Import this <span class="code-example--inline">.less</span> file into the relevant base less file e.g. <span class="code-example--inline">single.less</span>, <span class="code-example--inline">web.less</span> etc.</li>
+            <li>Import Dialtone into your <span class="code-example--inline">.less</span> file and compose your styles like shown in the example above.</li>
+        </ol>
     </div>
     <div class="dialtone-section--xxs">
         <h3 class="title__subsection"><span class="code-example--inline">box-sizing: border-box;</span> Consideration</h3>
@@ -76,5 +109,5 @@ description: Dialtone is available in both <a href="#dialpad">Dialpad</a> and <a
 </div>
 <div class="dialtone-section">
     <h2 id="uberconference" class="title__section">Using Dialtone in UberConference</h2>
-    <p class="copy__normal">Coming soon</p>
+    <p class="copy__normal">Coming soon.</p>
 </div>
