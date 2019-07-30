@@ -8,9 +8,9 @@
             {% for item in site.data.navigation %}
                 {% assign pageURL = page.url | remove_first: "/" | remove: ".html" %}
                 {% if item.sublinks %}
-                    <ul class="dialtone-navigation__list" id="nav" role="navigation" data-open="{% if pageURL contains item.url %}true{% else %}false{% endif %}">
+                    <ul class="dialtone-navigation__list" id="nav" role="navigation" data-open="{% if pageURL contains item.dir %}true{% else %}false{% endif %}">
                         <li class="dialtone-navigation__item">
-                            <a href="{{ item.url | relative_url }}" class="dialtone-navigation__header">
+                            <a href="{{ item.dir | append: item.sublinks.first.url | relative_url }}" class="dialtone-navigation__header">
                                 <span class="dialtone-navigation__header-label">{{ item.title }}</span>
                                 <span class="dialtone-navigation__header-icon">
                                     <svg aria-hidden="true" class="icon__add d-svg d-svg--add" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
@@ -19,7 +19,7 @@
                             </a>
                             <ul class="dialtone-navigation__list">
                                 {% for sublink in item.sublinks %}
-                                    <li class="dialtone-navigation__item"><a class="dialtone-navigation__link{% if pageURL contains sublink.url %} is-selected{% endif %}" href="{{ item.url | relative_url }}{{ sublink.url  }}">{{ sublink.title }}</a></li>
+                                    <li class="dialtone-navigation__item"><a class="dialtone-navigation__link{% if pageURL contains sublink.url %} is-selected{% endif %}" href="{{ item.dir | relative_url }}{{ sublink.url  }}">{{ sublink.title }}</a></li>
                                 {% endfor %}
                             </ul>
                         </li>
