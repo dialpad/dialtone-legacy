@@ -19,19 +19,19 @@
                 {% for s in classes %}
                 <tr class="{% if s == 'inverted'%}d-background-color--slate d-color--white{% endif %}">
                     <th scope="row">{{ s | capitalize }}</th>
-                    <td class="code-example">.d-btn {% if s != "default" %}.d-btn--{% if s == "danger" %}danger{% elsif s == "inverted"%}inverted{% endif %}{% endif %}</td>
+                    <td class="code-example">{% if s == "default" %}.d-btn{% elsif s == "danger" %}.d-btn--danger{% elsif s == "inverted"%}.d-btn--inverted{% endif %}</td>
                     <td>
-                        <button class="d-btn d-width100{% if s != 'default' %} d-btn--{% if s == 'danger' %}danger{% elsif s == 'inverted'%}inverted{% endif %}{% endif %} is-loading" type="button" aria-pressed="false" style="white-space: nowrap;">
+                        <button class="d-width100 {% if s == 'default' %}d-btn{% elsif s == 'danger' %}d-btn--danger{% elsif s == 'inverted'%}d-btn--inverted{% endif %}" data-loading="true" type="button" aria-pressed="false" style="white-space: nowrap;">
                             <span class="d-btn__label">Place call</span>
                         </button>
                     </td>
                     <td>
-                        <button class="d-btn d-btn--outlined d-width100{% if s != 'default' %} d-btn--{% if s == 'danger' %}danger{% elsif s == 'inverted'%}inverted{% endif %}{% endif %} is-loading" type="button" aria-pressed="false" style="white-space: nowrap;">
+                        <button class="d-width100 {% if s == 'default' %}d-btn{% elsif s == 'danger' %}d-btn--danger{% elsif s == 'inverted'%}d-btn--inverted{% endif %}--outlined" data-loading="true" type="button" aria-pressed="false" style="white-space: nowrap;">
                             <span class="d-btn__label">Place call</span>
                         </button>
                     </td>
                     <td>
-                        <button class="d-btn d-btn--primary d-width100{% if s != 'default' %} d-btn--{% if s == 'danger' %}danger{% elsif s == 'inverted'%}inverted{% endif %}{% endif %} is-loading" type="button" aria-pressed="false" style="white-space: nowrap;">
+                        <button class="d-width100 {% if s == 'default' %}d-btn{% elsif s == 'danger' %}d-btn--danger{% elsif s == 'inverted'%}d-btn--inverted{% endif %}--primary" data-loading="true" type="button" aria-pressed="false" style="white-space: nowrap;">
                             <span class="d-btn__label">Place call</span>
                         </button>
                     </td>
@@ -42,9 +42,9 @@
     </div>
     <div class="dialtone-example__code">
 {% highlight html linenos %}
-<button class="d-btn is-loading" type="button" aria-pressed="false">…</button>
-<button class="d-btn d-btn--outlined is-loading" type="button" aria-pressed="false">…</button>
-<button class="d-btn d-btn--primary is-loading" type="button" aria-pressed="false">…</button>
+<button class="d-btn" data-loading="true" type="button" aria-pressed="false">…</button>
+<button class="d-btn--outlined" data-loading="true" type="button" aria-pressed="false">…</button>
+<button class="d-btn--primary" data-loading="true" type="button" aria-pressed="false">…</button>
 {% endhighlight %}
     </div>
 </div>

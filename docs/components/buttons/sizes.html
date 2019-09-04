@@ -25,7 +25,7 @@
                     <div class="d-margin-x2--negative" style="display: flex; align-items: center;">
                         {% assign examples = "normal, circle, icon" | split: ", "%}
                         {% for e in examples %}
-                            <button class="d-margin-x2 d-btn{% if e == 'circle' %} d-btn-circle{% elsif e == 'normal' %} d-btn--primary{% endif %}{% if class != nil %} d-btn--{{ class }}{% endif %}" type="button" aria-pressed="false">
+                            <button class="d-margin-x2 d-btn{% if e == 'circle' %}--circle{% elsif e == 'normal' %}--primary{% endif %}{% if class != nil %} d-btn--{{ class }} {% if e == 'circle'%}d-btn--circle--{{ class }}{% endif %}{% endif %}" type="button" aria-pressed="false">
                                 {% if e != 'normal' %}
                                     <span class="d-btn__icon">
                                         {% if e == 'circle' %}

@@ -19,19 +19,19 @@
                 {% for s in classes %}
                 <tr>
                     <th scope="row">{{ s | capitalize }}</th>
-                    <td class="code-example">.d-btn {% if s != "default" %}.d-btn--{% if s == "outlined" %}outlined{% elsif s == "filled"%}primary{% endif %}{% endif %}</td>
+                    <td class="code-example">.d-btn{% if s == "outlined" %}--outlined{% elsif s == "filled"%}--primary{% endif %}</td>
                     <td>
-                        <button class="d-btn d-width100{% if s != 'default' %} d-btn--{% if s == 'outlined' %}outlined{% elsif s == 'filled'%}primary{% endif %}{% endif %}" type="button" aria-pressed="false" style="white-space: nowrap;">
+                        <button class="d-width100 d-btn{% if s == 'outlined' %}--outlined{% elsif s == 'filled'%}--primary{% endif %}" type="button" aria-pressed="false" style="white-space: nowrap;">
                             <span class="d-btn__label">Place call</span>
                         </button>
                     </td>
                     <td>
-                        <button class="d-btn d-width100{% if s != 'default' %} d-btn--{% if s == 'outlined' %}outlined{% elsif s == 'filled'%}primary{% endif %}{% endif %} is-selected" type="button" aria-pressed="false" style="white-space: nowrap;">
+                        <button class="d-width100 d-btn{% if s == 'outlined' %}--outlined{% elsif s == 'filled'%}--primary{% endif %} d-btn{% if s == 'outlined' %}--outlined{% elsif s == 'filled'%}--primary{% endif %}--selected" type="button" aria-pressed="false" style="white-space: nowrap;">
                             <span class="d-btn__label">Place call</span>
                         </button>
                     </td>
                     <td>
-                        <button class="d-btn d-width100{% if s != 'default' %} d-btn--{% if s == 'outlined' %}outlined{% elsif s == 'filled'%}primary{% endif %}{% endif %}" type="button" aria-pressed="false" style="white-space: nowrap;" disabled>
+                        <button class="d-width100 d-btn{% if s == 'outlined' %}--outlined{% elsif s == 'filled'%}--primary{% endif %}" type="button" aria-pressed="false" style="white-space: nowrap;" disabled>
                             <span class="d-btn__label">Place call</span>
                         </button>
                     </td>
@@ -43,8 +43,8 @@
     <div class="dialtone-example__code">
 {% highlight html linenos %}
 <button class="d-btn" type="button" aria-pressed="false">…</button>
-<button class="d-btn d-btn--outlined" type="button" aria-pressed="false">…</button>
-<button class="d-btn d-btn--primary" type="button" aria-pressed="false">…</button>
+<button class="d-btn--outlined" type="button" aria-pressed="false">…</button>
+<button class="d-btn--primary" type="button" aria-pressed="false">…</button>
 {% endhighlight %}
     </div>
 </div>

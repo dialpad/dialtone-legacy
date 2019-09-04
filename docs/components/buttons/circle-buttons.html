@@ -17,16 +17,17 @@
                 {% assign name = i.name %}
                 {% assign title = i.title %}
                 {% assign desc = i.description %}
-                <tr class="{% if name == 'inverted'%}d-background-color--slate d-color--white{% endif %}">
+                {% assign class = i.class %}
+                <tr class="{% if name == 'inverted'%}d-background-color--slate d-color--ash{% endif %}">
                     <th scope="row">
                         <span class="d-text--sm">{{ title }}</span><br/>
                         <span class="d-font-weight--normal d-text--xs">{{ desc }}</span>
                     </th>
-                    <td class="code-example">.d-btn .d-btn-circle {% if name != "default" %}.d-btn--{% if name == "danger-primary" %}danger .d-btn--primary{% elsif name == "inverted"%}inverted{% else %}{{ name }}{% endif %}{% endif %}</td>
+                    <td class="code-example">.{{ class }}</td>
                     <td style="text-align: center;" {% if name == 'inverted' %}class="d-padding-left16"{% endif %}>
                         {% assign buttons = "normal, loading, disabled" | split: ", " %}
                         {% for btn in buttons %}
-                            <button class="d-margin-x4 d-btn d-btn-circle {% if name != 'default' %}d-btn--{% if name == 'danger-primary' %}danger d-btn--primary{% elsif name == 'inverted'%}inverted{% else %}{{ name }}{% endif %}{% endif %}{% if btn == 'loading' %} is-loading{% endif %}" type="button" aria-pressed="false" {% if btn == 'disabled' %}disabled{% endif %}>
+                            <button class="d-margin-x4 {{ class }}" data-loading="{% if btn == 'loading' %}true{% else %}false{% endif %}" type="button" aria-pressed="false" {% if btn == 'disabled' %}disabled{% endif %}>
                                 <span class="d-btn__icon">
                                 {% if item.name == "normal" %}
                                     <svg aria-hidden="true" class="d-svg d-svg__person" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><title>Account</title><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
@@ -46,9 +47,9 @@
     </div>
     <div class="dialtone-example__code">
 {% highlight html linenos %}
-<button class="d-btn d-btn-circle is-loading" type="button" aria-pressed="false">…</button>
-<button class="d-btn d-btn-circle d-btn--outlined is-loading" type="button" aria-pressed="false">…</button>
-<button class="d-btn d-btn-circle d-btn--primary is-loading" type="button" aria-pressed="false" disabled>…</button>
+<button class="d-btn--circle" type="button" aria-pressed="false">…</button>
+<button class="d-btn--circle--outlined" type="button" aria-pressed="false">…</button>
+<button class="d-btn--circle--primary" type="button" aria-pressed="false" disabled>…</button>
 {% endhighlight %}
     </div>
 </div>
