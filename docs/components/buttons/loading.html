@@ -21,17 +21,17 @@
                     <th scope="row">{{ s | capitalize }}</th>
                     <td class="code-example">{% if s == "default" %}.d-btn{% elsif s == "danger" %}.d-btn--danger{% elsif s == "inverted"%}.d-btn--inverted{% endif %}</td>
                     <td>
-                        <button class="d-width100 {% if s == 'default' %}d-btn{% elsif s == 'danger' %}d-btn--danger{% elsif s == 'inverted'%}d-btn--inverted{% endif %}" data-loading="true" type="button" aria-pressed="false" style="white-space: nowrap;">
+                        <button class="d-width100 {% if s == 'default' %}d-btn{% elsif s == 'danger' %}d-btn--danger{% elsif s == 'inverted'%}d-btn--inverted{% endif %}" type="button" aria-pressed="false" style="white-space: nowrap;">
                             <span class="d-btn__label">Place call</span>
                         </button>
                     </td>
                     <td>
-                        <button class="d-width100 {% if s == 'default' %}d-btn{% elsif s == 'danger' %}d-btn--danger{% elsif s == 'inverted'%}d-btn--inverted{% endif %}--outlined" data-loading="true" type="button" aria-pressed="false" style="white-space: nowrap;">
+                        <button class="d-width100 {% if s == 'default' %}d-btn{% elsif s == 'danger' %}d-btn--danger{% elsif s == 'inverted'%}d-btn--inverted{% endif %}--outlined" type="button" aria-pressed="false" style="white-space: nowrap;">
                             <span class="d-btn__label">Place call</span>
                         </button>
                     </td>
                     <td>
-                        <button class="d-width100 {% if s == 'default' %}d-btn{% elsif s == 'danger' %}d-btn--danger{% elsif s == 'inverted'%}d-btn--inverted{% endif %}--primary" data-loading="true" type="button" aria-pressed="false" style="white-space: nowrap;">
+                        <button class="d-width100 {% if s == 'default' %}d-btn{% elsif s == 'danger' %}d-btn--danger{% elsif s == 'inverted'%}d-btn--inverted{% endif %}--primary" type="button" aria-pressed="false" style="white-space: nowrap;">
                             <span class="d-btn__label">Place call</span>
                         </button>
                     </td>
@@ -41,10 +41,19 @@
         </table>
     </div>
     <div class="dialtone-example__code">
-{% highlight html linenos %}
-<button class="d-btn" data-loading="true" type="button" aria-pressed="false">…</button>
-<button class="d-btn--outlined" data-loading="true" type="button" aria-pressed="false">…</button>
-<button class="d-btn--primary" data-loading="true" type="button" aria-pressed="false">…</button>
+{% highlight css linenos %}
+.example-btn--loading {
+    .d-btn-loading;
+}
+.example-call-btn--loading {
+    .d-btn-loading--primary;
+}
+.example-circle-btn--loading {
+    .d-btn-loading--circle;
+}
+.example-circle-danger-btn--loading {
+    .d-btn-loading--danger-hover;
+}
 {% endhighlight %}
     </div>
 </div>

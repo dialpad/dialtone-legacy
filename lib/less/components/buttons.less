@@ -67,41 +67,10 @@
         transition: none;
         pointer-events: none;
     }
-
-    //  --  BUTTON LOADER
-    //      This only appears if the data-loading is true
-    //  ------------------------------------------------------------------------
-    &[data-loading="true"] {
-        //  Disable clicking while the loader is in place
-        pointer-events: none;
-
-        //  Hide anything that was there before
-        .d-btn__icon,
-        .d-btn__label {
-            opacity: 0;
-            transition: opacity 50ms @transition--cubic-inOut;
-        }
-
-        //  Show the loading animation
-        &:before {
-            content: "";
-            position: absolute;
-            top: calc(~"50% - @{spacing8}");
-            left: calc(~"50% - @{spacing8}");
-
-            width: @spacing16;
-            height: @spacing16;
-            .d-border-radius--circle;
-            .d-border-width2;
-            .d-border--solid;
-            border-color: @button-border-loading;
-            border-left-color: transparent !important;
-
-            animation: d-loading-circle 900ms infinite linear;
-        }
-    }
 }
 
+
+//  ============================================================================
 //  @   BUTTON LABEL
 //  ----------------------------------------------------------------------------
 .d-btn__label {
@@ -192,12 +161,6 @@
         border-color: darken(@button-primary-hover,20%);
         background-color: saturate(@button-primary,15%);
         box-shadow: inset 0 0 @spacing8 0 darken(@blue-darker,10%);
-    }
-
-    //  --  BUTTON LOADER
-    //  ------------------------------------------------------------------------
-    &[data-loading="true"]:before {
-        border-color: @button-border-loading-white;
     }
 }
 
@@ -333,12 +296,6 @@
         background-color: fade(@button-muted,10%);
         box-shadow: inset 0 0 @spacing8 0 fade(@button-muted,30%);
     }
-
-    //  --  BUTTON LOADER
-    //  ------------------------------------------------------------------------
-    &[data-loading="true"]:before {
-        border-color: @button-muted-hover;
-    }
 }
 
 //  @@  OUTLINED CIRCLE
@@ -390,10 +347,6 @@
     &--selected {
         color: @button-danger-hover;
     }
-
-    &[data-loading="true"]:before {
-        border-color: @color--medium;
-    }
 }
 
 //  --  Default, clear danger circle
@@ -441,4 +394,75 @@
 }
 .d-btn--circle--xl {
     padding: @spacing16 - @spacing1;    // Minus out 1px for the border
+}
+
+
+//  ============================================================================
+//  @   BUTTON LOADER
+//      Changes the button
+//  ============================================================================
+//  @@  BASE STYLE
+//  ----------------------------------------------------------------------------
+.d-btn-loading {
+    //  Disable clicking while the loader is in place
+    pointer-events: none;
+
+    //  Hide anything that was there before
+    .d-btn__icon,
+    .d-btn__label {
+        opacity: 0;
+        transition: opacity 50ms @transition--cubic-inOut;
+    }
+
+    //  Show the loading animation
+    &:before {
+        content: "";
+        position: absolute;
+        top: calc(~"50% - @{spacing8}");
+        left: calc(~"50% - @{spacing8}");
+
+        width: @spacing16;
+        height: @spacing16;
+        .d-border-radius--circle;
+        .d-border-width2;
+        .d-border--solid;
+        border-color: @button-border-loading;
+        border-left-color: transparent !important;
+
+        animation: d-loading-circle 900ms infinite linear;
+    }
+}
+
+//  @@  ALTERNATE STYLES
+//  ----------------------------------------------------------------------------
+.d-btn-loading--primary {
+    .d-btn-loading;
+
+    &:before {
+        border-color: @button-border-loading-white;
+    }
+}
+
+.d-btn-loading--circle {
+    .d-btn-loading;
+
+    &:before {
+        border-color: @button-muted-hover;
+    }
+}
+
+.d-btn-loading--danger {
+    .d-btn-loading;
+
+    &:before {
+        border-color: @button-danger;
+    }
+}
+
+.d-btn-loading--danger-hover {
+    .d-btn-loading;
+
+    &:before {
+        border-color: @color--medium;
+    }
 }
