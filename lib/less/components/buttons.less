@@ -22,7 +22,7 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    .d-margin0;
+    .d-margin0();
     padding: @button-padding;
 
     border: @border-width1 solid transparent;
@@ -120,7 +120,7 @@
 //  ----------------------------------------------------------------------------
 .d-btn--outlined {
     //  Incorporate prior styles
-    .d-btn;
+    .d-btn();
 
     //  Now change them
     box-shadow: none;
@@ -142,11 +142,11 @@
 //  ----------------------------------------------------------------------------
 .d-btn--primary {
     //  Incorporate prior styles
-    .d-btn;
+    .d-btn();
 
     //  Now change them
     background-color: @button-primary;
-    .d-color--white;
+    .d-color--white();
 
     //  --  STATES
     //  ------------------------------------------------------------------------
@@ -160,7 +160,7 @@
     &--selected {
         border-color: darken(@button-primary-hover,20%);
         background-color: saturate(@button-primary,15%);
-        box-shadow: inset 0 0 @spacing8 0 darken(@blue-darker,10%);
+        box-shadow: inset 0 0 @spacing8 0 darken(@blue-dark,10%);
     }
 }
 
@@ -169,7 +169,7 @@
 //  --  Base, clear danger button
 .d-btn--danger {
     //  Incorporate prior styles
-    .d-btn;
+    .d-btn();
 
     //  Now change them
     .btn-danger-clear-states();
@@ -178,7 +178,7 @@
 //  --  Outlined danger button
 .d-btn--danger--outlined {
     //  Incorporate prior styles
-    .d-btn--danger;
+    .d-btn--danger();
 
     //  Now change them
     border-color: @button-danger;
@@ -199,10 +199,10 @@
 //  --  Filled (primary) danger button
 .d-btn--danger--primary {
     //  Incorporate prior styles
-    .d-btn--danger;
+    .d-btn--danger();
 
     //  Now change them
-    .btn-danger-primary-states;
+    .btn-danger-primary-states();
 }
 
 
@@ -211,7 +211,7 @@
 //  --  Base, clear inverted button
 .d-btn--inverted {
     //  Incorporate prior styles
-    .d-btn;
+    .d-btn();
 
     //  Now change them
     .btn-inverted-clear-states();
@@ -220,7 +220,7 @@
 //  --  Outlined inverted button
 .d-btn--inverted--outlined {
     //  Incorporate prior styles
-    .d-btn--inverted;
+    .d-btn--inverted();
 
     //  Now change them
     .btn-inverted-outlined-states();
@@ -229,7 +229,7 @@
 //  --  Filled (primary) inverted button
 .d-btn--inverted--primary {
     //  Incorporate prior styles
-    .d-btn--inverted;
+    .d-btn--inverted();
 
     //  Now change them
     .btn-inverted-primary-states();
@@ -240,19 +240,19 @@
 //  ----------------------------------------------------------------------------
 //  --  GOOGLE
 .d-btn--google {
-    .d-btn;
+    .d-btn();
     .brand-buttons(@button-brand-google);
 }
 //
 //  --  OFFICE 365
 .d-btn--o365 {
-    .d-btn;
+    .d-btn();
     .brand-buttons(@button-brand-o365);
 }
 //
 //  --  LINKEDIN
 .d-btn--linkedin {
-    .d-btn;
+    .d-btn();
     .brand-buttons(@button-brand-linkedin);
 }
 
@@ -263,12 +263,12 @@
 //  ----------------------------------------------------------------------------
 .d-btn--circle {
     //  Incorporate base styles
-    .d-btn;
+    .d-btn();
 
     //  Now change them
-    .d-color--medium;
+    .d-color--dark-light();
     padding: (@spacing12 - @spacing1);
-    .d-border-radius--circle;
+    .d-border-radius--circle();
     background-color: fade(@button-muted,0%);
     transition: all 150ms @transition--cubic-inOut;
 
@@ -285,7 +285,7 @@
     //  ------------------------------------------------------------------------
     &:hover {
         background-color: fade(@button-muted-hover,7.5%);
-        .d-color--dark;
+        .d-color--dark();
     }
     &:focus {
         box-shadow: 0 0 0 @spacing4 fade(@button-muted-hover,25%);
@@ -302,12 +302,12 @@
 //  ----------------------------------------------------------------------------
 .d-btn--circle--outlined {
     //  Incorporate base styles
-    .d-btn--outlined;
-    .d-btn--circle;
+    .d-btn--outlined();
+    .d-btn--circle();
 
     //  Now modify those styles
     border-color: @button-muted;
-    color: @color--medium;
+    color: @color--dark-light;
 
     //  --  STATES
     //  ------------------------------------------------------------------------
@@ -331,11 +331,11 @@
 //  ----------------------------------------------------------------------------
 .d-btn--circle--danger-hover {
     //  First incorporate base styles
-    .d-btn--circle;
+    .d-btn--circle();
 
     //  Now modify those styles
     .btn-danger-clear-states();
-    .d-color--medium;
+    .d-color--dark-light();
 
     //  --  STATES
     //  ------------------------------------------------------------------------
@@ -351,13 +351,13 @@
 
 //  --  Default, clear danger circle
 .d-btn--circle--danger {
-    .d-btn--circle;
+    .d-btn--circle();
     .btn-danger-clear-states();
 }
 
 //  --  Default, clear danger circle
 .d-btn--circle--danger--primary {
-    .d-btn--circle;
+    .d-btn--circle();
     .btn-danger-primary-states();
 }
 
@@ -365,19 +365,19 @@
 //  ----------------------------------------------------------------------------
 //  --  Base inverted style
 .d-btn--circle--inverted {
-    .d-btn--circle;
+    .d-btn--circle();
     .btn-inverted-clear-states()
 }
 
 //  --  Outlined inverted style
 .d-btn--circle--inverted--outlined {
-    .d-btn--circle--inverted;
+    .d-btn--circle--inverted();
     .btn-inverted-outlined-states()
 }
 
 //  --  Inverted Primary style
 .d-btn--circle--inverted--primary {
-    .d-btn--circle--inverted;
+    .d-btn--circle--inverted();
     .btn-inverted-primary-states()
 }
 
@@ -423,9 +423,9 @@
 
         width: @spacing16;
         height: @spacing16;
-        .d-border-radius--circle;
-        .d-border-width2;
-        .d-border--solid;
+        .d-border-radius--circle();
+        .d-border-width2();
+        .d-border--solid();
         border-color: @button-border-loading;
         border-left-color: transparent !important;
 
@@ -436,7 +436,7 @@
 //  @@  ALTERNATE STYLES
 //  ----------------------------------------------------------------------------
 .d-btn-loading--white {
-    .d-btn-loading;
+    .d-btn-loading();
 
     &:before {
         border-color: @button-border-loading-white;
@@ -444,7 +444,7 @@
 }
 
 .d-btn-loading--dark {
-    .d-btn-loading;
+    .d-btn-loading();
 
     &:before {
         border-color: @button-muted-hover;
@@ -452,7 +452,7 @@
 }
 
 .d-btn-loading--danger {
-    .d-btn-loading;
+    .d-btn-loading();
 
     &:before {
         border-color: @button-danger;

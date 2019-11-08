@@ -17,10 +17,10 @@
 //  ============================================================================
 //  $   TOKENS
 //  ----------------------------------------------------------------------------
-@tooltip-background:            fade(@slate,97%);
+@tooltip-background:            fade(@slate,95%);
 @tooltip-color:                 @ash;
-@tooltip-background--inverted:  fade(@ash,97%);
-@tooltip-color--inverted:       @color--medium;
+@tooltip-background--inverted:  fade(@ash,95%);
+@tooltip-color--inverted:       @color--dark-light;
 
 //  ============================================================================
 //  $   BASE STYLE
@@ -29,19 +29,19 @@
     box-sizing: border-box;
 
     position: absolute;
-    .d-padding8;
-    .d-padding-bottom6;
-    .d-max-width2;
-    .d-z-index--tooltip;
+    .d-padding8();
+    .d-padding-bottom6();
+    .d-width100();
+    .d-max-width2();
+    .d-z-index--tooltip();
 
-    .d-border-radius--sm;
+    .d-border-radius--sm();
     background-color: @tooltip-background;
     color: @tooltip-color;
-    .d-text--xs;
-    .d-line-height--md;
-    white-space: nowrap;
+    .d-text--xs();
+    .d-line-height--md();
 
-    .d-opacity0;
+    .d-opacity0();
     visibility: hidden;
     transition:
         visibility 0s 200ms,
@@ -260,4 +260,8 @@
         visibility 0s 0s,
         transform 200ms @transition--cubic-inOut 10ms,
         opacity 200ms @transition--cubic-inOut 10ms;
+}
+
+.d-tooltip--hover:hover .d-tooltip {
+    .tooltip-hover();
 }
