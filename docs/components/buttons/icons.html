@@ -2,51 +2,39 @@
     <h3 class="title__subsection">Icon Buttons</h3>
     <p class="copy__normal">Occassionally buttons may have icons placed next to the button label. In those instances, use the following layout examples as a guide.</p>
 </header>
-<div class="dialtone-example" data-example="yes" data-code="yes">
-    <div class="dialtone-example__example">
-        <table class="dialtone-table">
-            <thead>
-                <tr>
-                    <th scope="col" width="65%">Name</th>
-                    <th scope="col" style="text-align: center;">Example</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for i in site.data.buttons.icons %}
-                {% assign name = i.name %}
-                {% assign title = i.title %}
-                {% assign desc = i.description %}
-                {% assign label = i.label %}
-                <tr>
-                    <th scope="row" class="d-padding-left16">
-                        <span class="d-text--sm">{{ title }}</span><br/>
-                        <span class="d-font-weight--normal d-text--xs">{{ desc }}</span>
-                    </th>
-                    <td>
-                        <button class="d-width100{% if name == 'center'%} d-margin-x4--negative{% else %} d-margin-x2--negative{% endif %} d-btn{% if name != 'center' %} d-btn--primary{% else %} d-btn--danger{% endif %}" {% if name == 'left' %}style="justify-content: flex-start"{% endif %} type="button" aria-pressed="false">
-                            <span class="d-btn__icon{% if name == 'center'%} d-margin-x4{% else %} d-margin-x2{% endif %}{% if name == 'right' %} d-order--last{% endif %}">
-                            {% if name == "center" %}
-                                <svg aria-hidden="true" class="d-svg d-svg__phoneEnd" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 9c-1.6 0-3.15.25-4.6.72v3.1c0 .39-.23.74-.56.9-.98.49-1.87 1.12-2.66 1.85-.18.18-.43.28-.7.28-.28 0-.53-.11-.71-.29L.29 13.08c-.18-.17-.29-.42-.29-.7 0-.28.11-.53.29-.71C3.34 8.78 7.46 7 12 7s8.66 1.78 11.71 4.67c.18.18.29.43.29.71 0 .28-.11.53-.29.71l-2.48 2.48c-.18.18-.43.29-.71.29-.27 0-.52-.11-.7-.28-.79-.74-1.69-1.36-2.67-1.85-.33-.16-.56-.5-.56-.9v-3.1C15.15 9.25 13.6 9 12 9z"/></svg>
-                            {% elsif name == "right" %}
-                                <svg aria-hidden="true" class="d-svg d-svg__arrowRight" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M16.01 11H4v2h12.01v3L20 12l-3.99-4z"/></svg>
-                            {% else %}
-                                <svg aria-hidden="true" class="d-svg d-svg__search" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
-                            {% endif %}
-                            </span>
-                            <span class="d-btn__label{% if name == 'center'%} d-margin-x4{% else %} d-margin-x2{% endif %}{% if name == 'split' or name == 'right' %} d-flex1{% endif %}" {% if name == 'right' %}style="justify-content: flex-start"{% endif %}>{{ label }}</span>
-                        </button>
-                    </td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
-    <div class="dialtone-example__code">
-{% highlight html linenos %}
-<button class="d-btn d-margin-x2--negative" type="button" aria-pressed="false">
-    <div class="d-btn__icon d-margin-x2">…</div>
-    <div class="d-btn__label d-margin-x2">…</div>
-</button>
-{% endhighlight %}
-    </div>
-</div>
+<table class="dialtone-table">
+    <thead>
+        <tr>
+            <th scope="col" width="65%">Name</th>
+            <th scope="col" style="text-align: center;">Example</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in site.data.buttons.icons %}
+        {% assign name = i.name %}
+        {% assign title = i.title %}
+        {% assign desc = i.description %}
+        {% assign label = i.label %}
+        <tr>
+            <th scope="row" class="d-padding-left16">
+                <span class="d-text--sm">{{ title }}</span><br/>
+                <span class="d-font-weight--normal d-text--xs">{{ desc }}</span>
+            </th>
+            <td>
+                <button class="d-width100{% if name == 'center'%} d-margin-x4--negative{% else %} d-margin-x2--negative{% endif %}{% if name != 'center' %} d-btn--primary{% else %} d-btn--danger{% endif %}" {% if name == 'left' %}style="justify-content: flex-start"{% endif %} type="button" aria-pressed="false">
+                    <span class="d-btn__icon{% if name == 'center'%} d-margin-x4{% else %} d-margin-x2{% endif %}{% if name == 'right' %} d-order--last{% endif %}">
+                    {% if name == "center" %}
+                        <svg aria-hidden="true" class="d-svg d-svg__phoneEnd" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 9c-1.6 0-3.15.25-4.6.72v3.1c0 .39-.23.74-.56.9-.98.49-1.87 1.12-2.66 1.85-.18.18-.43.28-.7.28-.28 0-.53-.11-.71-.29L.29 13.08c-.18-.17-.29-.42-.29-.7 0-.28.11-.53.29-.71C3.34 8.78 7.46 7 12 7s8.66 1.78 11.71 4.67c.18.18.29.43.29.71 0 .28-.11.53-.29.71l-2.48 2.48c-.18.18-.43.29-.71.29-.27 0-.52-.11-.7-.28-.79-.74-1.69-1.36-2.67-1.85-.33-.16-.56-.5-.56-.9v-3.1C15.15 9.25 13.6 9 12 9z"/></svg>
+                    {% elsif name == "right" %}
+                        <svg aria-hidden="true" class="d-svg d-svg__arrowRight" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M16.01 11H4v2h12.01v3L20 12l-3.99-4z"/></svg>
+                    {% else %}
+                        <svg aria-hidden="true" class="d-svg d-svg__search" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+                    {% endif %}
+                    </span>
+                    <span class="d-btn__label{% if name == 'center'%} d-margin-x4{% else %} d-margin-x2{% endif %}{% if name == 'split' or name == 'right' %} d-flex1{% endif %}" {% if name == 'right' %}style="justify-content: flex-start"{% endif %}>{{ label }}</span>
+                </button>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
