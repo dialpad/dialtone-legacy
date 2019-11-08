@@ -2742,15 +2742,16 @@ legend.d-label {
   position: absolute;
   z-index: 400;
   box-sizing: border-box;
-  width: 100%;
   max-width: 21.6rem;
-  padding: 1.2rem;
+  padding: 0.8rem;
+  padding-bottom: 0.6rem;
   border-radius: 0.4rem;
   background-color: rgba(20, 23, 33, 0.97);
   opacity: 0;
   color: #F1F2F4;
   font-size: 1.2rem;
   line-height: 1.25;
+  white-space: nowrap;
   transition: visibility 0s 200ms, opacity 200ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, -webkit-transform 200ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
   transition: visibility 0s 200ms, transform 200ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, opacity 200ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
   transition: visibility 0s 200ms, transform 200ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, opacity 200ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, -webkit-transform 200ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
@@ -2758,19 +2759,7 @@ legend.d-label {
 .d-tooltip:before {
   content: "";
   position: absolute;
-  border-color: transparent;
-  border-style: solid;
-  border-width: 0.6rem;
-}
-.d-tooltip.is-visible,
-.d-btn:hover .d-tooltip {
-  visibility: visible;
-  opacity: 1;
-  -webkit-transform: translate(0, 0);
-          transform: translate(0, 0);
-  transition: visibility 0s 0s, opacity 200ms cubic-bezier(0.645, 0.045, 0.355, 1) 10ms, -webkit-transform 200ms cubic-bezier(0.645, 0.045, 0.355, 1) 10ms;
-  transition: visibility 0s 0s, transform 200ms cubic-bezier(0.645, 0.045, 0.355, 1) 10ms, opacity 200ms cubic-bezier(0.645, 0.045, 0.355, 1) 10ms;
-  transition: visibility 0s 0s, transform 200ms cubic-bezier(0.645, 0.045, 0.355, 1) 10ms, opacity 200ms cubic-bezier(0.645, 0.045, 0.355, 1) 10ms, -webkit-transform 200ms cubic-bezier(0.645, 0.045, 0.355, 1) 10ms;
+  border: 0.6rem solid transparent;
 }
 .d-tooltip--inverted {
   background-color: rgba(241, 242, 244, 0.97);
@@ -2800,6 +2789,8 @@ legend.d-label {
 .d-tooltip--top-center,
 .d-tooltip--top-right {
   top: calc(100% + 1.2rem);
+  right: unset;
+  left: unset;
   -webkit-transform: translateY(1.6rem);
           transform: translateY(1.6rem);
 }
@@ -2813,7 +2804,9 @@ legend.d-label {
 .d-tooltip--bottom-left,
 .d-tooltip--bottom-center,
 .d-tooltip--bottom-right {
+  right: unset;
   bottom: calc(100% + 1.2rem);
+  left: unset;
   -webkit-transform: translateY(-1.6rem);
           transform: translateY(-1.6rem);
 }
@@ -2826,11 +2819,11 @@ legend.d-label {
 }
 .d-tooltip--top-left,
 .d-tooltip--bottom-left {
-  left: -0.1rem;
+  left: -0.2rem;
 }
 .d-tooltip--top-left:before,
 .d-tooltip--bottom-left:before {
-  left: 0.8rem;
+  left: 1.6rem;
 }
 .d-tooltip--top-center:before,
 .d-tooltip--bottom-center:before {
@@ -2839,16 +2832,18 @@ legend.d-label {
 }
 .d-tooltip--top-right,
 .d-tooltip--bottom-right {
-  right: -0.1rem;
+  right: -0.2rem;
 }
 .d-tooltip--top-right:before,
 .d-tooltip--bottom-right:before {
-  right: 0.8rem;
+  right: 1.6rem;
 }
 .d-tooltip--right-top,
 .d-tooltip--right-center,
 .d-tooltip--right-bottom {
+  top: unset;
   right: calc(100% + 1.2rem);
+  bottom: unset;
   -webkit-transform: translateX(-1.6rem);
           transform: translateX(-1.6rem);
 }
@@ -2862,6 +2857,8 @@ legend.d-label {
 .d-tooltip--left-top,
 .d-tooltip--left-center,
 .d-tooltip--left-bottom {
+  top: unset;
+  bottom: unset;
   left: calc(100% + 1.2rem);
   -webkit-transform: translateX(1.6rem);
           transform: translateX(1.6rem);
