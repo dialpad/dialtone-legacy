@@ -5,7 +5,7 @@ var config = require('../config').jekyll;
 
 //  Build Jekyll site
 gulp.task('jekyll', function(done) {
-    browsersync.notify('Compiling Jekyll site. Hold on...');
+    // browsersync.notify('Compiling Jekyll site. Hold on...');
 
     return cp
         .spawn(

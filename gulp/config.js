@@ -1,6 +1,7 @@
 var src = './docs';
 var dev = src + '/_site';
-var build = 'build';
+var build = '/build';
+var dist = '/dist';
 var source = './lib';
 var assets = src + '/assets';
 
@@ -22,22 +23,29 @@ module.exports = {
     },
 
     css: {
-        lesslib: source + '/less/dialtone.less',
+        lesslib: source + build + '/less/dialtone.less',
         lessdocs: assets + '/less/*.less',
-        csslib: source + '/css',
+        csslib: source + dist + '/css',
         cssdocs: assets + '/css',
+    },
+
+    svg: {
+        svgBuild: source + build + '/svg',
+        svgCompile: source + dist + '/svg',
+        svgDocs: assets + '/svg',
     },
 
     watch: {
         jekyll: [
             '_config.yml',
-            src + '/**/*.{html,md,markdown,yml,json,txt,xml}',
+            src + '/**/*.{html,md,markdown,yml,json,txt,xml,less,svg}',
             '!./docs/_site/**/*'
         ],
-        libcss:  source + '/less/**/*.{less}',
-        doccss:  assets + '/less/**/*.{less}',
+        libcss:  source + build + '/less/**/*.less',
+        doccss:  assets + '/less/**/*.less',
         js:      assets + '/js/**/*.js',
-        images:  assets + '/images/**/*',
-        fonts:   assets + '/fonts'
+        images:  assets + '/images/**/*.{jpg,jpeg,png,gif,bmp,svg}',
+        svg:     source + build + '/svg/**/*.svg',
+        fonts:   assets + '/fonts/**/*'
     }
 };
