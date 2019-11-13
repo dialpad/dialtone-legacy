@@ -66,7 +66,7 @@ var paths = {
     svgs: {
         input: './lib/build/svg/**/*.svg',
         outputLib: './lib/dist/svg/',
-        outputDocs: './docs/assets/svg/'
+        outputDocs: './docs/_includes/svg/'
     },
     build: {
         input: './docs/',
@@ -80,7 +80,7 @@ var paths = {
         docs: './docs/**/*',
         docsExcludeSite: '!./docs/_site/**/*',
         docsExcludeCSS: '!./docs/assets/css/**/*',
-        docsExcludeSVG: '!./docs/assets/svg/**/*'
+        docsExcludeSVG: '!./docs/_includes/svg/**/*'
     }
 }
 
@@ -121,7 +121,7 @@ var cleanDist = function(done) {
 // var jsTasks = lazypipe();
 
 //  --  Lint, minify, and concatenate style files
-var styleScripts = function (done) {
+var libStyles = function (done) {
 
     //  Make sure this feature is activated before running
     if (!settings.styles) return done();
@@ -138,6 +138,13 @@ var styleScripts = function (done) {
         .pipe(rename({ suffix: '.min' }))
         .pipe(dest(paths.styles.outputLib))
         .pipe(dest(paths.styles.outputDocs));
+};
+
+//  --  Lint, minify, and concatenate style files
+var docStyles = function (done) {
+
+    //  Make sure this feature is activated before running
+    if (!settings.styles) return done();
 
     //  Compile documentation files
     return src(paths.styles.inputDocs)
@@ -276,7 +283,8 @@ var watchFiles = function(done) {
 exports.default = series(
     cleanDist,
     parallel(
-        styleScripts,
+        libStyles,
+        docStyles,
         buildSVGs,
     ),
     buildDocs
