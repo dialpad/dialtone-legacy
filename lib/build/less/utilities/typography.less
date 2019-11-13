@@ -1,0 +1,143 @@
+//
+//  DIALTONE
+//  UTILTIES: TYPOGRAPHY
+//
+//  These are utility typography classes for Dialpad's design system Dialtone.
+//  For further documentation of these and other classes,
+//  visit https://dialpad.design/utilties/typography
+//
+//  TABLE OF CONTENTS
+//  • Header resets
+//  • Font sizes
+//  • Font weight
+//  • Font styles
+//  • Text transform
+//  • Text alignment
+//  • Line height
+//
+//  ============================================================================
+//  $   FONT FACE
+//  ----------------------------------------------------------------------------
+
+// Can override @define-font-face to false to prevent font definitions below.
+// TODO(dbecher): this is only needed because the font-face definitions in dialpad
+// are currently wrong, and this conflicts with the "correct" font-face definitions
+// below. Can remove once we fix the font issues in dialpad.
+@define-font-face: true;
+
+if((@define-font-face = true), each(@font-family-weights, {
+    @font-face {
+        font-style: "normal";
+        font-weight: @key;
+        font-family: "MarkWeb";
+        src: url("@{font-path}@{value}.eot") format("eof"),
+             url("@{font-path}@{value}.eot?#iefix") format("embedded-opentype"),
+             url("@{font-path}@{value}.woff") format("woff");
+    };
+}));
+
+//  ============================================================================
+//  $   FONT FAMILY
+//  ----------------------------------------------------------------------------
+.d-font-family--mark            { font-family: @font-family--mark; }
+.d-font-family--sans            { font-family: @font-family--sans; }
+.d-font-family--mono            { font-family: @font-family--mono; }
+.d-font-family--inherit         { font-family: inherit; }
+.d-font-family--unset           { font-family: unset; }
+
+//  ============================================================================
+//  $   FONT SIZES
+//  ----------------------------------------------------------------------------
+.d-headline--xl {
+    font-size: @headline--xl;
+    font-weight: @font-weight--bold;
+}
+.d-headline--lg {
+    font-size: @headline--lg;
+    font-weight: @font-weight--bold;
+}
+.d-headline--md {
+    font-size: @headline--md;
+    font-weight: @font-weight--bold;
+}
+.d-headline--sm {
+    font-size: @headline--sm;
+    font-weight: @font-weight--bold;
+}
+.d-headline--xs {
+    font-size: @headline--xs;
+    font-weight: @font-weight--bold;
+    text-transform: uppercase;
+}
+
+//  $$  TEXT SIZES
+//  ----------------------------------------------------------------------------
+.d-text--xl     { font-size: @text--xl; }
+.d-text--lg     { font-size: @text--lg; }
+.d-text--md     { font-size: @text--md; }
+.d-text--sm     { font-size: @text--sm; }
+.d-text--xs     { font-size: @text--xs; }
+.d-text--xxs    { font-size: @text--xxs; }
+
+
+//  ============================================================================
+//  $   FONT STYLES
+//  ============================================================================
+//  $$  FONT WEIGHT
+//  ----------------------------------------------------------------------------
+.d-font-weight--light       { font-weight: @font-weight--light; }
+.d-font-weight--normal      { font-weight: @font-weight--normal; }
+.d-font-weight--medium      { font-weight: @font-weight--medium; }
+.d-font-weight--bold        { font-weight: @font-weight--bold; }
+
+//  $$  TEXT COLOR
+//  ----------------------------------------------------------------------------
+.d-color--white                 { color: @white; }
+.d-color--dark                  { color: @color--dark; }
+.d-color--dark-light            { color: @color--dark-light; }
+.d-color--dark-lighter          { color: @color--dark-lighter; }
+.d-color--dark-lightest         { color: @color--dark-lightest; }
+.d-color--light                 { color: @color--light; }
+.d-color--light-dark            { color: @color--light-dark; }
+.d-color--light-darker          { color: @color--light-darker; }
+.d-color--light-darkest         { color: @color--light-darkest; }
+.d-color--blue-text             { color: @color--blue-text; }
+.d-color--navy-text             { color: @color--navy-text; }
+.d-color--emerald-text          { color: @color--emerald-text; }
+.d-color--bright-emerald-text   { color: @color--bright-emerald-text; }
+.d-color--sunflower-text        { color: @color--sunflower-text; }
+.d-color--wildberry-text        { color: @color--wildberry-text; }
+.d-color--crimson-text          { color: @color--crimson-text; }
+.d-color--berry-text            { color: @color--berry-text; }
+.d-color--rose-text             { color: @color--rose-text; }
+
+
+//  ============================================================================
+//  $  LINE HEIGHTS
+//  ----------------------------------------------------------------------------
+.d-line-height--xs          { line-height: @line-height--xs; }
+.d-line-height--sm          { line-height: @line-height--sm; }
+.d-line-height--md          { line-height: @line-height--md; }
+.d-line-height--lg          { line-height: @line-height--lg; }
+.d-line-height--xl          { line-height: @line-height--xl; }
+.d-line-height--xxl         { line-height: @line-height--xxl; }
+
+
+//  ============================================================================
+//  $   WORD BREAK
+//  ----------------------------------------------------------------------------
+.d-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+//  ============================================================================
+//  $   LISTS
+//  ----------------------------------------------------------------------------
+.d-list-reset {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}

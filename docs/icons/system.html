@@ -1,0 +1,21 @@
+---
+layout: page
+title: Icons
+description: Dialtone provides the following system icons. We use <a href="https://material.io/resources/icons/?style=baseline" target="_blank">Material</a> as the base for our icon set, modifying or creating new icons as needed.
+---
+<div class="dialtone-icon-grid">
+    {% assign icon-list = site.data.icons | sort: "file" %}
+    {% for icon in icon-list %}
+        <aside class="dialtone-icon-card">
+            <header class="dialtone-icon-card__header">
+                <div class="dialtone-icon-card__icon">
+                    {% include {{ icon.file | prepend: 'svg/' | append: '.svg' }} %}
+                </div>
+            </header>
+            <footer class="dialtone-icon-card__footer">
+                <h1 class="dialtone-icon-card__title">{{ icon.icon }}</h1>
+                <code class="code-example">{{ icon.file | append: '.svg' }}</code>
+            </footer>
+        </aside>
+    {% endfor %}
+</div>

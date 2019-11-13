@@ -1,0 +1,256 @@
+//
+//  DIALTONE
+//  COMPONENTS: INPUTS
+//
+//  These are input classes for Dialpad's design system Dialtone.
+//  For further documentation of these and other classes,
+//  visit https://dialpad.design/components/inputs
+//
+//  TABLE OF CONTENTS
+//  • INPUTS & TEXTAREAS
+//    - Base Style
+//    - Validation States
+//    - Sizes
+//  • SELECT MENUS
+//  • CHECKBOXES
+//  • RADIOS
+//  • TOGGLES
+//  • LABELS
+//
+//  ============================================================================
+//  $  INPUTS
+//  ----------------------------------------------------------------------------
+.d-input {
+    .input-base-style();
+
+    //  --  VALIDATION STATES
+    &.has-warning { .input-has-warning(); }
+    &.has-error   { .input-has-error(); }
+    &.has-success { .input-has-success(); }
+}
+
+//  --  SIZES
+.d-input--xs  { .input-button-xs(); }
+.d-input--sm  { .input-button-sm(); }
+.d-input--lg  { .input-button-lg(); }
+.d-input--xl  { .input-button-xl(); }
+
+
+//  ============================================================================
+//  $  TEXTAREAS
+//  ----------------------------------------------------------------------------
+.d-textarea {
+    .input-base-style();
+    padding-left: @spacing12 - @spacing1;  // Minus out the border
+    padding-right: @spacing12 - @spacing1;  // Minus out the border
+    min-height: 8rem;
+
+    //  --  VALIDATION STATES
+    &.has-warning { .input-has-warning(); }
+    &.has-error   { .input-has-error(); }
+    &.has-success { .input-has-success(); }
+}
+
+//  --  SIZES
+.d-textarea--xs {
+    .input-button-xs();
+    min-height: 4rem;
+}
+.d-textarea--sm {
+    .input-button-sm();
+    min-height: 4.8rem;
+}
+.d-textarea--lg {
+    .input-button-lg();
+    min-height: 9.2rem;
+}
+.d-textarea--xl {
+    .input-button-xl();
+    min-height: 10rem;
+}
+
+
+//  ============================================================================
+//  $  SELECT MENU (NATIVE)
+//  ----------------------------------------------------------------------------
+.d-select {
+    box-sizing: border-box;
+
+    position: relative;
+    font-size: @input-font-size;
+
+    //  --  Creat some arrows
+    &:before,
+    &:after {
+        content: "";
+        position: absolute;
+        z-index: @z-index--selected;
+        right: 0.75em;
+        border-color: @slate transparent;
+        border-style: solid;
+        border-width: 0.25em;
+        pointer-events: none;
+    }
+    &:before {
+        top: calc(~"50% - 0.25em");
+        border-top-width: 0;
+    }
+    &:after {
+        top: calc(~"50% + 0.125em");
+        border-bottom-width: 0;
+    }
+
+    > select {
+        //  [1] Reset the appearance
+        -webkit-appearance: none;
+           -moz-appearance: none;
+                appearance: none;
+
+        //  [2] Update the styles
+        .input-base-style();
+        padding-right: 2em;
+        height: 100%; // Fill the height of its parent
+        background-color: @white;
+
+        &::-moz-focus-inner {
+            outline: none !important;
+        }
+        &:-moz-focusring {
+            color: transparent;
+            text-shadow: 0 0 0 #000;
+        }
+        &::-ms-expand {
+            display: none;
+        }
+    }
+
+    //  --  VALIDATION STATES
+    &.has-warning > select { .input-has-warning(); }
+    &.has-error > select   { .input-has-error(); }
+    &.has-success > select { .input-has-success(); }
+}
+
+//  --  SIZES
+.d-select--xs {
+    font-size: @text--xs;
+
+    > select {
+        .input-button-xs();
+        padding-right: 2em;
+    }
+}
+.d-select--sm {
+    font-size: @text--sm;
+
+    > select {
+        .input-button-sm();
+        padding-right: 2em;
+    }
+}
+.d-select--lg {
+    font-size: @text--lg;
+
+    > select {
+        .input-button-lg();
+        padding-right: 2em;
+    }
+}
+.d-select--xl {
+    font-size: @text--lg;
+
+    > select {
+        .input-button-xl();
+        padding-right: 2em;
+    }
+}
+
+
+//  ============================================================================
+//  $  FIELDSET
+//  ----------------------------------------------------------------------------
+fieldset {
+    padding: @spacing0;
+    min-width: @spacing0;
+    border: none;
+}
+
+
+//  ============================================================================
+//  $  LABELS
+//  ----------------------------------------------------------------------------
+.d-label {
+    box-sizing: border-box;
+
+    display: flex;
+    flex: 1 0%;
+    align-items: baseline;
+    justify-content: space-between;
+
+    color: currentColor;
+    fill: currentColor;
+    font-size: @text--md;
+    font-weight: @font-weight--bold;
+    line-height: @line-height--md;
+
+    cursor: pointer;
+    word-break: break-word;
+    overflow-wrap: break-word;
+
+    legend& { cursor: default; }
+}
+
+
+//  ============================================================================
+//  $  COPY STYLES
+//  ============================================================================
+//  $$ LABEL DESCRIPTION
+//  ----------------------------------------------------------------------------
+.d-description {
+    box-sizing: border-box;
+
+    display: block;
+    color: @color--dark-light;
+    fill: currentColor;
+    font-size: @text--sm;
+    font-family: @font-family--sans;
+    line-height: @line-height--md;
+}
+
+//  $$ INPUT MESSAGE
+//  ----------------------------------------------------------------------------
+.d-input-message {
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    font-weight: inherit;
+    font-size: @text--sm;
+    font-family: @font-family--sans;
+    line-height: inherit;
+
+    &.has-warning {
+        color: @input-warning-text;
+
+        .d-input-message__link {
+            color: @input-warning-link;
+            &:hover { color: darken(@input-warning-link,10%); }
+        }
+    }
+    &.has-error {
+        color: @input-error-text;
+
+        .d-input-message__link {
+            color: @input-error-link;
+            &:hover { color: darken(@input-error-link,10%); }
+        }
+    }
+    &.has-success {
+        color: @input-success-text;
+
+        .d-input-message__link {
+            color: @input-success-link;
+            &:hover { color: darken(@input-success-link,10%); }
+        }
+    }
+}
