@@ -48,11 +48,11 @@ var cp = settings.build ? require('child_process') : null;
 //     Where everything is in this project
 //  ------------------------------------------------------------
 var paths = {
-    input: './lib/build/',
-    output: './lib/dist/',
-    docs: './docs/',
-    docsNoSite: '!_site/*',
-
+    clean: {
+        lib: './lib/dist/**/*',
+        docs: './docs/_site/**/*',
+        docsCache: './docs/.jekyll-cache/**/*'
+    },
     scripts: {
         input: './lib/build/js/',
         output: './lib/dist/js/'
@@ -73,6 +73,14 @@ var paths = {
         dest: './docs/_site/',
         config: './docs/_config.yml',
         baseurl: ''
+    },
+    watch: {
+        lib: './lib/**/*',
+        libExclude: '!./lib/dist/**/*',
+        docs: './docs/**/*',
+        docsExcludeSite: '!./docs/_site/**/*',
+        docsExcludeCSS: '!./docs/assets/css/**/*',
+        docsExcludeSVG: '!./docs/assets/svg/**/*'
     }
 }
 
@@ -100,7 +108,9 @@ var cleanDist = function(done) {
 
     // Clean dist folders
     del.sync([
-        paths.output
+        paths.clean.lib,
+        paths.clean.docs,
+        paths.clean.docsCache
     ]);
 
     // Signal completion
@@ -249,7 +259,14 @@ var watchFiles = function(done) {
     if (!settings.watch) return done();
 
     //  Watch files
-    watch([paths.input, paths.docsNoSite], series(exports.default, reloadBrowser));
+    watch([
+        paths.watch.lib,
+        paths.watch.libExclude,
+        paths.watch.docs,
+        paths.watch.docsExcludeSite,
+        paths.watch.docsExcludeCSS,
+        paths.watch.docsExcludeSVG
+    ], series(exports.default, reloadBrowser));
     done();
 };
 
