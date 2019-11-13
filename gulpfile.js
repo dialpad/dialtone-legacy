@@ -190,6 +190,10 @@ var buildSVGs = function(done) {
                     floatPrecision: 2,
                 }
             }, {
+                collapseGroups: true,
+            }, {
+                removeTitle: true,
+            }, {
                 removeViewBox: false,
             }, {
                 removeUselessStrokeAndFill: true,
