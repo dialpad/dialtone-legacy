@@ -1,0 +1,3 @@
+<template>
+  <svg aria-hidden="true" aria-label="Time" class="d-svg d-svg__time" viewBox="0 0 24 24"><path d="M11 7h1.5v5.25l4.5 2.67-.75 1.23L11 13V7z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M2 12a10 10 0 1 1 19.99-.01A10 10 0 0 1 2 12zm2 0a8 8 0 1 0 16 0 8 8 0 0 0-16 0z"/></svg>
+</template>

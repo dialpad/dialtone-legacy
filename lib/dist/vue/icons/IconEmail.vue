@@ -1,0 +1,3 @@
+<template>
+  <svg aria-hidden="true" aria-label="Email" class="d-svg d-svg__email" viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-1.99 2L2 18c0 1.1.9 2 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+</template>

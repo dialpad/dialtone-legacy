@@ -1,0 +1,3 @@
+<template>
+  <svg aria-hidden="true" aria-label="Attach File" class="d-svg d-svg__attachFile" viewBox="0 0 24 24"><path d="M16.5 6v11.5a4 4 0 1 1-8 0V5a2.5 2.5 0 0 1 5 0v10.5a1 1 0 0 1-1 1 1 1 0 0 1-1-1V6H10v9.5a2.5 2.5 0 0 0 5 0V5a4 4 0 1 0-8 0v12.5a5.5 5.5 0 1 0 11 0V6h-1.5z"/></svg>
+</template>
