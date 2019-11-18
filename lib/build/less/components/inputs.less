@@ -22,12 +22,11 @@
 //  ----------------------------------------------------------------------------
 .d-input {
     .input-base-style();
-
-    //  --  VALIDATION STATES
-    &.has-warning { .input-has-warning(); }
-    &.has-error   { .input-has-error(); }
-    &.has-success { .input-has-success(); }
 }
+//  --  VALIDATION STATES
+.d-input--warning { .input-has-warning(); }
+.d-input--error   { .input-has-error(); }
+.d-input--success { .input-has-success(); }
 
 //  --  SIZES
 .d-input--xs  { .input-button-xs(); }
@@ -44,12 +43,12 @@
     padding-left: @spacing12 - @spacing1;  // Minus out the border
     padding-right: @spacing12 - @spacing1;  // Minus out the border
     min-height: 8rem;
-
-    //  --  VALIDATION STATES
-    &.has-warning { .input-has-warning(); }
-    &.has-error   { .input-has-error(); }
-    &.has-success { .input-has-success(); }
 }
+
+//  --  VALIDATION STATES
+.d-textarea--warning { .input-has-warning(); }
+.d-textarea--error   { .input-has-error(); }
+.d-textarea--success { .input-has-success(); }
 
 //  --  SIZES
 .d-textarea--xs {
@@ -123,12 +122,12 @@
             display: none;
         }
     }
-
-    //  --  VALIDATION STATES
-    &.has-warning > select { .input-has-warning(); }
-    &.has-error > select   { .input-has-error(); }
-    &.has-success > select { .input-has-success(); }
 }
+
+//  --  VALIDATION STATES
+.d-select--warning > select { .input-has-warning(); }
+.d-select--error > select   { .input-has-error(); }
+.d-select--success > select { .input-has-success(); }
 
 //  --  SIZES
 .d-select--xs {
@@ -228,29 +227,29 @@ fieldset {
     font-size: @text--sm;
     font-family: @font-family--sans;
     line-height: inherit;
+}
 
-    &.has-warning {
-        color: @input-warning-text;
+.d-input-message--warning {
+    color: @input-warning-text;
 
-        .d-input-message__link {
-            color: @input-warning-link;
-            &:hover { color: darken(@input-warning-link,10%); }
-        }
+    > a[href] {
+        color: @input-warning-link;
+        &:hover { color: darken(@input-warning-link,10%); }
     }
-    &.has-error {
-        color: @input-error-text;
+}
+.d-input-message--error {
+    color: @input-error-text;
 
-        .d-input-message__link {
-            color: @input-error-link;
-            &:hover { color: darken(@input-error-link,10%); }
-        }
+    > a[href] {
+        color: @input-error-link;
+        &:hover { color: darken(@input-error-link,10%); }
     }
-    &.has-success {
-        color: @input-success-text;
+}
+.d-input-message--success {
+    color: @input-success-text;
 
-        .d-input-message__link {
-            color: @input-success-link;
-            &:hover { color: darken(@input-success-link,10%); }
-        }
+    > a[href] {
+        color: @input-success-link;
+        &:hover { color: darken(@input-success-link,10%); }
     }
 }
