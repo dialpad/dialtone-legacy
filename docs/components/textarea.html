@@ -3,27 +3,28 @@ layout: page
 title: Textareas
 description: Multi-line inputs are used to enter longer text portions.
 ---
-<section class="dialtone-section">
-    <header class="dialtone-section--xs">
+<section class="dialtone-section16">
+    <header class="dialtone-section4">
         <h2 class="title__section">Base Style</h2>
         <p class="copy__normal">Textareas are normally paired with a label, but there are times when they can be used without a label. Placeholder text should primarily be used as a content prompt and only provided when needed.</p>
     </header>
     <div class="dialtone-example" data-example="yes" data-code="yes">
         <div class="dialtone-example__example">
-            <div class="dialtone-section">
-                <div class="dialtone-section">
-                    <div class="dialtone-section--xs">
+            <div class="dialtone-section16">
+                <div class="dialtone-section8">
+                    <div>
+                        <div></div>
                         <label class="d-label" for="Dialtone--TextareaExample1">Who would you like to invite?</label>
                         <span class="d-description">Provide an email address or phone number.</span>
                     </div>
-                    <textarea class="d-textarea" id="Dialtone--TextareaExample1" type="text" placeholder=""></textarea>
+                    <textarea class="d-textarea" id="Dialtone--TextareaExample1" type="text" placeholder="e.g. Shane, Annie, Vickie"></textarea>
                 </div>
-                <div class="dialtone-section">
-                    <div class="dialtone-section--xs">
+                <div class="dialtone-section8">
+                    <div>
                         <label class="d-label" for="Dialtone--TextareaExample2">Who would you like to invite?</label>
                         <span class="d-description">Provide an email address or phone number.</span>
                     </div>
-                    <textarea class="d-textarea" id="Dialtone--TextareaExample2" type="text" placeholder="" disabled></textarea>
+                    <textarea class="d-textarea" id="Dialtone--TextareaExample2" type="text" placeholder="e.g. Shane, Annie, Vickie" disabled></textarea>
                 </div>
             </div>
         </div>
@@ -36,97 +37,109 @@ description: Multi-line inputs are used to enter longer text portions.
         </div>
     </div>
 </section>
-<section class="dialtone-section--lg">
-    <header class="dialtone-section--sm">
+<section class="dialtone-section32">
+    <header class="dialtone-section8">
         <h2 class="title__section">Validation States</h2>
         <p class="copy__normal">Provides feedback to the user based on their interction, or lack thereof, with an input.</p>
     </header>
-    <div class="dialtone-section">
-        <header class="dialtone-section--sm">
+    <div class="dialtone-section16">
+        <header class="dialtone-section8">
             <h3 class="title__subsection">Warning</h3>
             <p class="copy__normal">Warns the user that the value(s) they've entered has a potential problem, but it doesn't block them from proceeding with input submission.</p>
         </header>
         <div class="dialtone-example" data-example="yes" data-code="yes">
             <div class="dialtone-example__example">
-                <div class="dialtone-section">
-                    <div class="dialtone-section--xs">
+                <div class="dialtone-section8">
+                    <div>
                         <label class="d-label" for="Dialtone--TextareaExample-Warning">Who would you like to invite?</label>
-                        <span class="d-description has-warning">Provide an email address or phone number.</span>
+                        <span class="d-description">Provide an email address or phone number.</span>
                     </div>
-                    <div class="dialtone-section--xs">
-                        <textarea class="d-textarea has-warning" id="Dialtone--TextareaExample-Warning" type="text" placeholder=""></textarea>
-                        <span class="d-input-message has-warning">Enter an email address to send invite someone.</span>
+                    <div>
+                        <textarea class="d-textarea d-textarea--warning" id="Dialtone--TextareaExample-Warning" type="text" placeholder="e.g. Shane, Annie, Vickie"></textarea>
+                        <span class="d-input-message d-input-message--warning">Enter an email address to send invite someone.</span>
                     </div>
                 </div>
             </div>
             <div class="dialtone-example__code">
-{% highlight html linenos %}
-<label class="d-label" for="Dialtone--TextareaExample-Warning">…</label>
-<span class="d-description has-warning">…</span>
-<textarea class="d-textarea has-warning" id="Dialtone--TextareaExample-Warning" type="text" placeholder=""></textarea>
-<span class="d-input-message has-warning">…</span>
+{% highlight css linenos %}
+.textarea-example {
+  .d-textarea();
+  .d-textarea--warning();
+}
+.textarea-message-example {
+  .d-input-message();
+  .d-input-message--warning();
+}
 {% endhighlight %}
             </div>
         </div>
     </div>
-    <div class="dialtone-section">
-        <header class="dialtone-section--sm">
+    <div class="dialtone-section16">
+        <header class="dialtone-section8">
             <h3 class="title__subsection">Error</h3>
             <p class="copy__normal">Alerts the user that the value(s) they've entered is incorrect, not provided, or has some issue that will block them from proceeding with input submission.</p>
         </header>
         <div class="dialtone-example" data-example="yes" data-code="yes">
             <div class="dialtone-example__example">
-                <div class="dialtone-section">
-                    <div class="dialtone-section--xs">
+                <div class="dialtone-section8">
+                    <div>
                         <label class="d-label" for="Dialtone--TextareaExample-Error">Who would you like to invite?</label>
-                        <span class="d-description has-error">Provide an email address or phone number.</span>
+                        <span class="d-description">Provide an email address or phone number.</span>
                     </div>
-                    <div class="dialtone-section--xs">
-                        <textarea class="d-textarea has-error" id="Dialtone--TextareaExample-Error" type="text" placeholder=""></textarea>
-                        <span class="d-input-message has-error">You must enter an email address to send an invite.</span>
+                    <div>
+                        <textarea class="d-textarea d-textarea--error" id="Dialtone--TextareaExample-Error" type="text" placeholder="e.g. Shane, Annie, Vickie"></textarea>
+                        <span class="d-input-message d-input-message--error">You must enter an email address to send an invite.</span>
                     </div>
                 </div>
             </div>
             <div class="dialtone-example__code">
-{% highlight html linenos %}
-<label class="d-label" for="Dialtone--TextareaExample-Error">…</label>
-<span class="d-description has-error">…</span>
-<textarea class="d-textarea has-error" id="Dialtone--TextareaExample-Error" type="text" placeholder=""></textarea>
-<span class="d-input-message has-error">…</span>
+{% highlight css linenos %}
+.textarea-example {
+  .d-textarea();
+  .d-textarea--error();
+}
+.textarea-message-example {
+  .d-input-message();
+  .d-input-message--error();
+}
 {% endhighlight %}
             </div>
         </div>
     </div>
-    <div class="dialtone-section">
-        <header class="dialtone-section--sm">
+    <div class="dialtone-section16">
+        <header class="dialtone-section8">
             <h3 class="title__subsection">Success</h3>
             <p class="copy__normal">Notifies the user that the value(s) they've entered is correct.</p>
         </header>
         <div class="dialtone-example" data-example="yes" data-code="yes">
             <div class="dialtone-example__example">
-                <div class="dialtone-section">
-                    <div class="dialtone-section--xs">
+                <div class="dialtone-section8">
+                    <div>
                         <label class="d-label" for="Dialtone--TextareaExample-Success">Who would you like to invite?</label>
-                        <span class="d-description has-success">Provide an email address or phone number.</span>
+                        <span class="d-description">Provide an email address or phone number.</span>
                     </div>
-                    <div class="dialtone-section--xs">
-                        <textarea class="d-textarea has-success" id="Dialtone--TextareaExample-Success" type="text" placeholder="">shane.holmes@example.com, amy.woods@example.com</textarea>
-                        <span class="d-input-message has-success">You've entered an email!</span>
+                    <div>
+                        <textarea class="d-textarea d-textarea--success" id="Dialtone--TextareaExample-Success" type="text" placeholder="e.g. Shane, Annie, Vickie">shane.holmes@example.com, amy.woods@example.com</textarea>
+                        <span class="d-input-message d-input-message--success">You've entered an email!</span>
                     </div>
                 </div>
             </div>
             <div class="dialtone-example__code">
-{% highlight html linenos %}
-<label class="d-label" for="Dialtone--TextareaExample-Success">…</label>
-<span class="d-description has-success">…</span>
-<textarea class="d-textarea has-success" id="Dialtone--TextareaExample-Success" type="text" placeholder=""></textarea>
-<span class="d-input-message has-success">…</span>
+{% highlight css linenos %}
+.textarea-example {
+  .d-textarea();
+  .d-textarea--success();
+}
+.textarea-message-example {
+  .d-input-message();
+  .d-input-message--success();
+}
 {% endhighlight %}
             </div>
         </div>
     </div>
 </section>
-<section class="dialtone-section">
+<section class="dialtone-section16">
     <h2 class="title__section">Sizes</h2>
     <table class="dialtone-table">
         <thead>
@@ -146,7 +159,7 @@ description: Multi-line inputs are used to enter longer text portions.
                     <th scope="row" class="d-text--sm">{{ name }}</th>
                     <td class="code-example">{% if class != nil %}.d-textarea--{{ class }}{% else %}N/A{% endif %}</td>
                     <td>{{ size }}</td>
-                    <td><textarea class="d-textarea{% if class != nil %} d-textarea--{{ class }}{% endif %}" id="Dialtone--TextareaExample-{{ name }}" placeholder="e.g. Can you hear me?"></textarea></td>
+                    <td><textarea class="d-textarea{% if class != nil %} d-textarea--{{ class }}{% endif %}" id="Dialtone--TextareaExample-{{ name }}" placeholder="e.g. Shane, Annie, Vickie"></textarea></td>
                 </tr>
             {% endfor %}
         </tbody>
