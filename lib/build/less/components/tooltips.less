@@ -15,17 +15,17 @@
 //    - LEFT CENTER
 //
 //  ============================================================================
-//  $   TOKENS
+//  @   TOKENS
 //  ----------------------------------------------------------------------------
 @tooltip-background:            fade(@slate,95%);
 @tooltip-color:                 @ash;
-@tooltip-background--inverted:  fade(@ash,95%);
+@tooltip-background--inverted:  fade(@ash,98%);
 @tooltip-color--inverted:       @color--dark-light;
 
 //  ============================================================================
-//  $   BASE STYLE
+//  @   BASE STYLE
 //  ----------------------------------------------------------------------------
-.d-tooltip {
+.d-tooltip() {
     box-sizing: border-box;
 
     position: absolute;
@@ -48,211 +48,28 @@
         transform 200ms @transition--cubic-inOut 0s,
         opacity 200ms @transition--cubic-inOut 0s;
 
-    &:before {
+    &::before {
         content: "";
         position: absolute;
         border: 0.6rem solid transparent;
     }
 }
 
-
 //  ============================================================================
-//  $   ALTERNATE STYLES
-//  ============================================================================
-//  $$  INVERTED (WHITE BACKGROUND)
+//  @   INVERTED STYLE
 //  ----------------------------------------------------------------------------
-.d-tooltip--inverted {
+.d-tooltip--inverted() {
     background-color: @tooltip-background--inverted;
     color: @tooltip-color--inverted;
-
-    //  $$  ARROW DIRECTION UPDATES
-    //  ========================================================================
-    //  --  TOP
-    //  ------------------------------------------------------------------------
-    &.d-tooltip--top-left,
-    &.d-tooltip--top-center,
-    &.d-tooltip--top-right {
-        &:before {
-          border-bottom-color: @tooltip-background--inverted;
-        }
-    }
-
-    //  --  RIGHT
-    //  ------------------------------------------------------------------------
-    &.d-tooltip--right-top,
-    &.d-tooltip--right-center,
-    &.d-tooltip--right-bottom {
-        &:before {
-          border-left-color: @tooltip-background--inverted;
-        }
-    }
-
-    //  --  BOTTOM
-    //  ------------------------------------------------------------------------
-    &.d-tooltip--bottom-left,
-    &.d-tooltip--bottom-center,
-    &.d-tooltip--bottom-right {
-        &:before {
-          border-top-color: @tooltip-background--inverted;
-        }
-    }
-
-    //  --  LEFT
-    //  ------------------------------------------------------------------------
-    &.d-tooltip--left-top,
-    &.d-tooltip--left-center,
-    &.d-tooltip--left-bottom {
-        &:before {
-          border-right-color: @tooltip-background--inverted;
-        }
-    }
 }
 
 //  ============================================================================
-//  $   ARROW DIRECTIONS
-//  ============================================================================
-//  $$  TOP
-//  ----------------------------------------------------------------------------
-.d-tooltip--top-left,
-.d-tooltip--top-center,
-.d-tooltip--top-right {
-    // Reset any left or right properties that have been set
-    left: unset;
-    right: unset;
-
-    top: calc(~"100% + @{spacing12}");
-    transform: translateY(@spacing16);
-
-    &:before {
-        top: -(@spacing6);
-        border-top-width: 0;
-        border-bottom-color: @tooltip-background;
-    }
-}
-
-//  $$  BOTTOM
-//  ----------------------------------------------------------------------------
-.d-tooltip--bottom-left,
-.d-tooltip--bottom-center,
-.d-tooltip--bottom-right {
-    // Reset any left or right properties that have been set
-    left: unset;
-    right: unset;
-
-    bottom: calc(~"100% + @{spacing12}");
-    transform: translateY(-(@spacing16));
-
-    &:before {
-        bottom: -(@spacing6);
-        border-bottom-width: 0;
-        border-top-color: @tooltip-background;
-    }
-}
-
-//  --  TOP & BOTTOM LEFT
-.d-tooltip--top-left,
-.d-tooltip--bottom-left {
-    left: -(@spacing2);
-
-    &:before {
-        left: @spacing16;
-    }
-}
-
-//  --  TOP & BOTTOM CENTER
-.d-tooltip--top-center,
-.d-tooltip--bottom-center {
-    &:before {
-        left: 50%;
-        margin-left: -(@spacing6);
-    }
-}
-
-//  --  TOP & BOTTOM RIGHT
-.d-tooltip--top-right,
-.d-tooltip--bottom-right {
-    right: -(@spacing2);
-
-    &:before {
-        right: @spacing16;
-    }
-}
-
-
-//  $$  RIGHT
-//  ----------------------------------------------------------------------------
-.d-tooltip--right-top,
-.d-tooltip--right-center,
-.d-tooltip--right-bottom {
-    // Reset any top or bottom properties that have been set
-    top: unset;
-    bottom: unset;
-
-    right: calc(~"100% + @{spacing12}");
-    transform: translateX(-(@spacing16));
-
-    &:before {
-        right: -(@spacing6);
-        border-right-width: 0;
-        border-left-color: @tooltip-background;
-    }
-}
-
-//  $$  LEFT
-//  ----------------------------------------------------------------------------
-.d-tooltip--left-top,
-.d-tooltip--left-center,
-.d-tooltip--left-bottom {
-    // Reset any top or bottom properties that have been set
-    top: unset;
-    bottom: unset;
-
-    left: calc(~"100% + @{spacing12}");
-    transform: translateX(@spacing16);
-
-    &:before {
-        left: -(@spacing6);
-        border-left-width: 0;
-        border-right-color: @tooltip-background;
-    }
-}
-
-//  --  RIGHT & LEFT TOP
-.d-tooltip--right-top,
-.d-tooltip--left-top {
-    top: -(@spacing1);
-
-    &:before {
-        top: @spacing8;
-    }
-}
-
-//  --  RIGHT & LEFT CENTER
-.d-tooltip--right-center,
-.d-tooltip--left-center {
-    &:before {
-        top: 50%;
-        margin-top: -(@spacing6);
-    }
-}
-
-//  --  RIGHT & LEFT BOTTOM
-.d-tooltip--right-bottom,
-.d-tooltip--left-bottom {
-    bottom: -(@spacing1);
-
-    &:before {
-        bottom: @spacing8;
-    }
-}
-
-//  ============================================================================
-//  $   HOVER MIXIN
+//  @   HOVER MIXIN
 //  ============================================================================
 //  --  If the button doesn't have a d-btn class, you will need to re-apply the
 //      hover state within your CSS. This hover mixin allows you to easily do so.
 //  ----------------------------------------------------------------------------
-.tooltip-hover() {
+.d-tooltip-hover() {
     transform: translate(0,0);
     .d-opacity100;
     visibility: visible;
@@ -262,6 +79,211 @@
         opacity 200ms @transition--cubic-inOut 10ms;
 }
 
-.d-tooltip--hover:hover .d-tooltip {
-    .tooltip-hover();
+.d-tooltip--hover:hover [class^="d-tooltip__"] {
+    .d-tooltip-hover();
+}
+
+
+//  ============================================================================
+//  @   TOOLTIP DIRECTIONS
+//  ============================================================================
+//  @@  TOP
+//  ----------------------------------------------------------------------------
+.d-tooltip__top-left,
+.d-tooltip__top-center,
+.d-tooltip__top-right,
+.d-tooltip__top-left--inverted,
+.d-tooltip__top-center--inverted,
+.d-tooltip__top-right--inverted {
+    .d-tooltip();
+
+    top: calc(~"100% + @{spacing12}");
+    transform: translateY(@spacing16);
+
+    &::before {
+        top: -(@spacing6);
+        border-top-width: 0;
+        border-bottom-color: @tooltip-background;
+    }
+}
+
+//  @@  INVERTED
+.d-tooltip__top-left--inverted,
+.d-tooltip__top-center--inverted,
+.d-tooltip__top-right--inverted {
+    .d-tooltip--inverted();
+
+    &::before {
+        border-bottom-color: @tooltip-background--inverted;
+    }
+}
+
+//  @@  BOTTOM
+//  ----------------------------------------------------------------------------
+.d-tooltip__bottom-left,
+.d-tooltip__bottom-center,
+.d-tooltip__bottom-right,
+.d-tooltip__bottom-left--inverted,
+.d-tooltip__bottom-center--inverted,
+.d-tooltip__bottom-right--inverted {
+    .d-tooltip();
+
+    bottom: calc(~"100% + @{spacing12}");
+    transform: translateY(-(@spacing16));
+
+    &::before {
+        bottom: -(@spacing6);
+        border-bottom-width: 0;
+        border-top-color: @tooltip-background;
+    }
+}
+
+//  @@  INVERTED
+.d-tooltip__bottom-left--inverted,
+.d-tooltip__bottom-center--inverted,
+.d-tooltip__bottom-right--inverted {
+    .d-tooltip--inverted();
+
+    &::before {
+        border-top-color: @tooltip-background--inverted;
+    }
+}
+
+
+//  @@  TOP / BOTTOM LEFT
+//  ----------------------------------------------------------------------------
+.d-tooltip__top-left,
+.d-tooltip__bottom-left,
+.d-tooltip__top-left--inverted,
+.d-tooltip__bottom-left--inverted {
+    left: -(@spacing2);
+
+    &::before {
+        left: @spacing16;
+    }
+}
+
+//  @@  TOP / BOTTOM CENTER
+//  ----------------------------------------------------------------------------
+.d-tooltip__top-center,
+.d-tooltip__bottom-center
+.d-tooltip__top-center--inverted,
+.d-tooltip__bottom-center--inverted {
+    &::before {
+        left: 50%;
+        margin-left: -(@spacing6);
+    }
+}
+
+//  @@  TOP / BOTTOM RIGHT
+//  ----------------------------------------------------------------------------
+.d-tooltip__top-right,
+.d-tooltip__bottom-right,
+.d-tooltip__top-right--inverted,
+.d-tooltip__bottom-right--inverted {
+    right: -(@spacing2);
+
+    &::before {
+        right: @spacing16;
+    }
+}
+
+//  @@  RIGHT
+//  ----------------------------------------------------------------------------
+.d-tooltip__right-top,
+.d-tooltip__right-center,
+.d-tooltip__right-bottom,
+.d-tooltip__right-top--inverted,
+.d-tooltip__right-center--inverted,
+.d-tooltip__right-bottom--inverted {
+    .d-tooltip();
+
+    right: calc(~"100% + @{spacing12}");
+    transform: translateX(-(@spacing16));
+
+    &::before {
+        right: -(@spacing6);
+        border-right-width: 0;
+        border-left-color: @tooltip-background;
+    }
+}
+
+//  @@  INVERTED
+.d-tooltip__right-top--inverted,
+.d-tooltip__right-center--inverted,
+.d-tooltip__right-bottom--inverted {
+    .d-tooltip--inverted();
+
+    &::before {
+        border-left-color: @tooltip-background--inverted;
+    }
+}
+
+//  @@  LEFT
+//  ----------------------------------------------------------------------------
+.d-tooltip__left-top,
+.d-tooltip__left-center,
+.d-tooltip__left-bottom,
+.d-tooltip__left-top--inverted,
+.d-tooltip__left-center--inverted,
+.d-tooltip__left-bottom--inverted {
+    .d-tooltip();
+
+    left: calc(~"100% + @{spacing12}");
+    transform: translateX(@spacing16);
+
+    &::before {
+        left: -(@spacing6);
+        border-left-width: 0;
+        border-right-color: @tooltip-background;
+    }
+}
+
+//  @@  INVERTED
+.d-tooltip__left-top--inverted,
+.d-tooltip__left-center--inverted,
+.d-tooltip__left-bottom--inverted {
+    .d-tooltip--inverted();
+
+    &::before {
+        border-right-color: @tooltip-background--inverted;
+    }
+}
+
+//  @@  RIGHT / LEFT TOP
+//  ----------------------------------------------------------------------------
+.d-tooltip__right-top,
+.d-tooltip__left-top,
+.d-tooltip__right-top--inverted,
+.d-tooltip__left-top--inverted {
+    top: -(@spacing1);
+
+    &::before {
+        top: @spacing8;
+    }
+}
+
+//  @@  RIGHT / LEFT CENTER
+//  ----------------------------------------------------------------------------
+.d-tooltip__right-center,
+.d-tooltip__left-center
+.d-tooltip__right-center--inverted,
+.d-tooltip__left-center--inverted {
+    &::before {
+        top: 50%;
+        margin-top: -(@spacing6);
+    }
+}
+
+//  @@  RIGHT / LEFT BOTTOM
+//  ----------------------------------------------------------------------------
+.d-tooltip__right-bottom,
+.d-tooltip__left-bottom,
+.d-tooltip__right-bottom--inverted,
+.d-tooltip__left-bottom--inverted {
+    bottom: -(@spacing1);
+
+    &::before {
+        bottom: @spacing8;
+    }
 }
