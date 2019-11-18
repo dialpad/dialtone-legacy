@@ -1,8 +1,48 @@
 ---
 layout: page
 title: Stacks
-description: Stacks are preset layouts which inject margins between sibling elements within a parent element. This method is favored over applying margins to an element as it allows for greater modularity and flexibility with layouts.
+description: Stacks are preset layouts which inject margins between sibling elements within a parent element. This method is favored over applying margins to an element, as it allows for greater modularity and flexibility with layouts.
 ---
-<section class="d-layout__stack">
-  TBD
+<section class="dialtone-section16">
+    <p class="copy__normal">The stack layout works by using the adjacent sibling combinator (+) to apply a top margin when an element is preceded by another element. Furthermore, to allow for nesting stacks and controlling the cascade, these margins are scoped to only apply to children of the parent wrapper (e.g. <code class="code-example">.stack-layout > * + *</code>).</p>
+    <div class="dialtone-section2">
+        <h2 class="title__subsection">Classes</h2>
+        <table class="dialtone-table dialtone-table--code">
+            <thead>
+                <tr>
+                    <th scope="col" class="dialtone-table__column--sm">Pixel</th>
+                    <th scope="col">Class</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in site.data.layout.stacks %}
+                {% assign size = i.size %}
+                <tr>
+                    <th scope="row">{{ size }}px</th>
+                    <td>.d-layout__stack{{ size }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="dialtone-section16">
+        <h2 class="title__subsection">Examples</h2>
+        <div class="dialtone-example" data-example="yes" data-code="no">
+            <div class="dialtone-example__example d-grid-layout--with-columns" style="--grid-col: 2; --grid-col-width: 1fr;">
+                {% for i in site.data.layout.stacks %}
+                {% assign size = i.size %}
+                <div class="layout-block d-width100">
+                    <div class="d-layout__stack{{ size }} d-padding16 d-width100">
+                        <div class="layout-block__inner d-flex--center">
+                            <div class="layout-block__label">{{ size }}px</div>
+                        </div>
+                        <div class="layout-block__inner d-flex--center">
+                            <div class="layout-block__label">{{ size }}px</div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 </section>
