@@ -1,0 +1,3 @@
+<template>
+  <svg aria-hidden="true" aria-label="Case Status" class="d-svg d-svg__caseStatus" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2H4C3 7 2 8 2 9v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9c0-1-1-2-2-2h-4zm-6-2h4v2h-4V5zm-4 5.5c0-.28.22-.5.5-.5h11c.28 0 .5.22.5.5v1a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-1zm0 3c0-.28.22-.5.5-.5h11c.28 0 .5.22.5.5v1a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-1zm.5 2.5a.5.5 0 0 0-.5.5v1c0 .28.22.5.5.5h8a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-8z"/></svg>
+</template>
