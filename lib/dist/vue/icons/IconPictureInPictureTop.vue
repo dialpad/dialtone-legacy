@@ -1,0 +1,3 @@
+<template>
+  <svg aria-hidden="true" aria-label="Picture In Picture Top" class="d-svg d-svg__pictureInPictureTop" viewBox="0 0 24 24"><path d="M19 7h-8v6h8V7zm2-4H3a2 2 0 0 0-2 2v14c0 1.1.9 1.98 2 1.98h18c1.1 0 2-.88 2-1.98V5a2 2 0 0 0-2-2zm0 16.01H3V4.98h18v14.03z"/></svg>
+</template>

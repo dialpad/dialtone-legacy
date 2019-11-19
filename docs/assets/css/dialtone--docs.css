@@ -2658,17 +2658,21 @@ legend.d-label {
   position: relative;
   z-index: 500;
   box-sizing: border-box;
-  width: 100%;
-  max-width: 33.2rem;
-  margin: 0.6rem 0;
-  padding: 1.2rem 0.8rem 0.8rem;
-  border: 0.1rem solid #E3E5E8;
+  width: 26.4rem;
+  padding: 0.8rem;
+  padding-top: 1.2rem;
+  border: 0.1rem solid currentColor;
+  border-color: #E3E5E8 !important;
   border-radius: 0.4rem;
   background-color: #FFF;
   box-shadow: 0 0.2rem 0.4rem 0 rgba(20, 23, 33, 0.15);
   color: #292C33;
   font-size: 1.4rem;
   line-height: 1.125;
+  word-break: normal;
+}
+.d-toast > a {
+  word-break: break-all;
 }
 .d-toast:before {
   content: "";
@@ -2677,13 +2681,13 @@ legend.d-label {
   right: -0.1rem;
   left: -0.1rem;
   height: 0.6rem;
-  border-radius: 0.4rem 0.4rem 0 0;
+  border-top-left-radius: 0.4rem;
+  border-top-right-radius: 0.4rem;
 }
-.d-toast .d-toast__content {
+.d-toast__content {
   display: flex;
-  align-items: center;
 }
-.d-toast .d-toast__icon {
+.d-toast__icon {
   display: flex;
   flex-grow: 0;
   flex-shrink: 0;
@@ -2695,54 +2699,288 @@ legend.d-label {
   border-radius: 50%;
   color: #FFF;
 }
-.d-toast .d-toast__icon .d-svg {
-  width: 1.4rem;
-  height: 1.4rem;
+.d-toast__icon .d-svg {
+  width: 1.8rem;
+  height: 1.8rem;
 }
-.d-toast .d-toast__meta {
+.d-toast__meta {
   margin-bottom: 0.4rem;
   color: #6C6E75;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 1.1rem;
 }
-.d-toast .d-toast__message {
+.d-toast__message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   margin-left: 0.4rem;
   font-size: 1.2rem;
+  line-height: 1.33333333;
 }
-.d-toast--viewing:before,
-.d-toast--viewing .d-toast__icon {
-  background-color: #00CAC6;
+.d-toast--viewing {
+  position: relative;
+  z-index: 500;
+  box-sizing: border-box;
+  width: 26.4rem;
+  padding: 0.8rem;
+  padding-top: 1.2rem;
+  border: 0.1rem solid currentColor;
+  border-color: #E3E5E8 !important;
+  border-radius: 0.4rem;
+  background-color: #FFF;
+  box-shadow: 0 0.2rem 0.4rem 0 rgba(20, 23, 33, 0.15);
+  color: #292C33;
+  font-size: 1.4rem;
+  line-height: 1.125;
+  word-break: normal;
 }
-.d-toast--chat:before,
-.d-toast--chat .d-toast__icon {
-  background-color: #000061;
+.d-toast--viewing > a {
+  word-break: break-all;
 }
-.d-toast--success:before,
-.d-toast--success .d-toast__icon {
-  background-color: #04C29D;
+.d-toast--viewing:before {
+  content: "";
+  position: absolute;
+  top: -0.1rem;
+  right: -0.1rem;
+  left: -0.1rem;
+  height: 0.6rem;
+  border-top-left-radius: 0.4rem;
+  border-top-right-radius: 0.4rem;
 }
-.d-toast--error:before,
-.d-toast--error .d-toast__icon {
-  background-color: #D2103E;
+.d-toast--viewing:before {
+  background-color: #FF8FA8 !important;
 }
-.d-toast--info:before,
-.d-toast--info .d-toast__icon {
-  background-color: #1738FA;
+.d-toast__icon--viewing {
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  margin-right: 0.4rem;
+  border-radius: 50%;
+  background-color: #FF8FA8 !important;
+  color: #FFF;
+  color: #421620;
+}
+.d-toast__icon--viewing .d-svg {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+.d-toast--chat {
+  position: relative;
+  z-index: 500;
+  box-sizing: border-box;
+  width: 26.4rem;
+  padding: 0.8rem;
+  padding-top: 1.2rem;
+  border: 0.1rem solid currentColor;
+  border-color: #E3E5E8 !important;
+  border-radius: 0.4rem;
+  background-color: #FFF;
+  box-shadow: 0 0.2rem 0.4rem 0 rgba(20, 23, 33, 0.15);
+  color: #292C33;
+  font-size: 1.4rem;
+  line-height: 1.125;
+  word-break: normal;
+}
+.d-toast--chat > a {
+  word-break: break-all;
+}
+.d-toast--chat:before {
+  content: "";
+  position: absolute;
+  top: -0.1rem;
+  right: -0.1rem;
+  left: -0.1rem;
+  height: 0.6rem;
+  border-top-left-radius: 0.4rem;
+  border-top-right-radius: 0.4rem;
+}
+.d-toast--chat:before {
+  background-color: #000061 !important;
+}
+.d-toast__icon--chat {
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  margin-right: 0.4rem;
+  border-radius: 50%;
+  background-color: #000061 !important;
+  color: #FFF;
+}
+.d-toast__icon--chat .d-svg {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+.d-toast__icon--chat .d-svg {
+  width: 1.6rem;
+  height: 1.6rem;
+  margin-top: 0.1rem;
+}
+.d-toast--success {
+  position: relative;
+  z-index: 500;
+  box-sizing: border-box;
+  width: 26.4rem;
+  padding: 0.8rem;
+  padding-top: 1.2rem;
+  border: 0.1rem solid currentColor;
+  border-color: #E3E5E8 !important;
+  border-radius: 0.4rem;
+  background-color: #FFF;
+  box-shadow: 0 0.2rem 0.4rem 0 rgba(20, 23, 33, 0.15);
+  color: #292C33;
+  font-size: 1.4rem;
+  line-height: 1.125;
+  word-break: normal;
+}
+.d-toast--success > a {
+  word-break: break-all;
+}
+.d-toast--success:before {
+  content: "";
+  position: absolute;
+  top: -0.1rem;
+  right: -0.1rem;
+  left: -0.1rem;
+  height: 0.6rem;
+  border-top-left-radius: 0.4rem;
+  border-top-right-radius: 0.4rem;
+}
+.d-toast--success:before {
+  background-color: #04C29D !important;
+}
+.d-toast__icon--success {
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  margin-right: 0.4rem;
+  border-radius: 50%;
+  background-color: #04C29D !important;
+  color: #FFF;
+}
+.d-toast__icon--success .d-svg {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+.d-toast--error {
+  position: relative;
+  z-index: 500;
+  box-sizing: border-box;
+  width: 26.4rem;
+  padding: 0.8rem;
+  padding-top: 1.2rem;
+  border: 0.1rem solid currentColor;
+  border-color: #E3E5E8 !important;
+  border-radius: 0.4rem;
+  background-color: #FFF;
+  box-shadow: 0 0.2rem 0.4rem 0 rgba(20, 23, 33, 0.15);
+  color: #292C33;
+  font-size: 1.4rem;
+  line-height: 1.125;
+  word-break: normal;
+}
+.d-toast--error > a {
+  word-break: break-all;
+}
+.d-toast--error:before {
+  content: "";
+  position: absolute;
+  top: -0.1rem;
+  right: -0.1rem;
+  left: -0.1rem;
+  height: 0.6rem;
+  border-top-left-radius: 0.4rem;
+  border-top-right-radius: 0.4rem;
+}
+.d-toast--error:before {
+  background-color: #D2103E !important;
+}
+.d-toast__icon--error {
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  margin-right: 0.4rem;
+  border-radius: 50%;
+  background-color: #D2103E !important;
+  color: #FFF;
+}
+.d-toast__icon--error .d-svg {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+.d-toast--info {
+  position: relative;
+  z-index: 500;
+  box-sizing: border-box;
+  width: 26.4rem;
+  padding: 0.8rem;
+  padding-top: 1.2rem;
+  border: 0.1rem solid currentColor;
+  border-color: #E3E5E8 !important;
+  border-radius: 0.4rem;
+  background-color: #FFF;
+  box-shadow: 0 0.2rem 0.4rem 0 rgba(20, 23, 33, 0.15);
+  color: #292C33;
+  font-size: 1.4rem;
+  line-height: 1.125;
+  word-break: normal;
+}
+.d-toast--info > a {
+  word-break: break-all;
+}
+.d-toast--info:before {
+  content: "";
+  position: absolute;
+  top: -0.1rem;
+  right: -0.1rem;
+  left: -0.1rem;
+  height: 0.6rem;
+  border-top-left-radius: 0.4rem;
+  border-top-right-radius: 0.4rem;
+}
+.d-toast--info:before {
+  background-color: #1738FA !important;
+}
+.d-toast__icon--info {
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  margin-right: 0.4rem;
+  border-radius: 50%;
+  background-color: #1738FA !important;
+  color: #FFF;
+}
+.d-toast__icon--info .d-svg {
+  width: 1.8rem;
+  height: 1.8rem;
 }
 .d-toast-wrapper {
   position: absolute;
   top: 3.2rem;
-  left: 3.2rem;
+  right: 3.2rem;
   box-sizing: border-box;
 }
-.d-toast-wrapper .d-toast:first-of-type {
-  margin-top: 0;
-}
-.d-toast-wrapper .d-toast:last-of-type {
-  margin-bottom: 0;
-}
-.d-toast-wrapper .d-toast:first-of-type:last-of-type {
-  margin: 0;
+.d-toast-wrapper > * + * {
+  margin-top: 0.6rem;
 }
 .d-tooltip--hover:hover [class^="d-tooltip__"] {
   visibility: visible;
@@ -6612,6 +6850,12 @@ body {
 }
 .dialtone-example .code {
   padding-left: 0.6rem;
+}
+.dialtone-breakdown {
+  position: relative;
+}
+.dialtone-breakdown > img {
+  width: 100%;
 }
 .layout-block {
   display: flex;

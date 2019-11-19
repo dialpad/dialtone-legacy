@@ -1,61 +1,65 @@
 ---
 layout: page
 title: Toast
-description: Toast notices, sometimes called snackbars, are non-disruptive messages that appear in the top left corner of the user interface. They contain at-a-glance information about action outcomes, sometimes paired with alternate actions.
+description: Toast notices, sometimes called snackbars, are time-based messages that appear based on the user or other users actions. They contain at-a-glance information about outcomes. Sometimes they are paired with actions.
 ---
+<section class="dialtone-section8">
+    <h2 class="title__section">Breakdown</h2>
+    <p class="copy__normal">Toast messages have a content area, icon, message, and possibly metadata. They are placed within a wrapper.</p>
+    <div class="dialtone-breakdown">
+        <img src="{{ 'assets/images/toast-breakdown@2x.png' | relative_url }}" />
+    </div>
+</section>
 <section class="dialtone-section16">
-    <header class="dialtone-section8">
-        <h2 class="title__section">Styles</h2>
-        <p class="copy__normal">There is no default toast style. You must pair one of the following styles with the base <span class="code-example--inline">.d-toast</span> class.</p>
-        <p class="copy__normal">It is important to note that there are different areas within a toast message. Each toast message has a content area, icon area, and message area. These messages are loaded within an overall wrapper, which we use to position the toast messages.</p>
-    </header>
-    <div class="dialtone-example" data-example="yes" data-code="yes">
-        <div class="dialtone-example__example">
-            <div class="d-min-height3" style="position: relative;">
-                <div class="d-toast-wrapper">
-                    {% for i in site.data.toasts.toast-example %}
-                    {% assign name = i.name %}
-                    {% assign meta = i.meta %}
-                    {% assign copy = i.copy %}
-                    <div class="d-toast d-toast--{{ name }}" aria-hidden="true">
-                        <div class="d-toast__content" aria-describedby="notice-message">
-                            <div class="d-toast__icon">
-                            {% if name == "chat" %}
-                                <svg aria-hidden="true" class="d-svg d-svg__chat" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
-                            {% elsif name == "viewing" %}
-                                <svg aria-hidden="true" class="d-svg d-svg__visibility" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
-                            {% elsif name == "info" %}
-                                <svg aria-hidden="true" class="d-svg d-svg__info" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
-                            {% elsif name == "error" %}
-                                <svg aria-hidden="true" class="d-svg d-svg__error" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
-                            {% elsif name == "success" %}
-                                <svg aria-hidden="true" class="d-svg d-svg--checkmark" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
-                            {% endif %}
-                            </div>
-                            <div class="d-toast__message" aria-label="notice-message">
-                                {% if meta != nil %}<div class="d-toast__meta">{{ meta }}</div>{% endif %}
-                                <div class="d-toast__copy">{{ copy }}</div>
+    <h2 class="title__section">Styles</h2>
+    {% for i in site.data.toasts.toast-example %}
+    {% assign name = i.name %}
+    {% assign meta = i.meta %}
+    {% assign copy = i.copy %}
+        <aside class="dialtone-section8">
+            <h3 class="title__subsection">{{ name | capitalize }}</h3>
+            <div class="dialtone-example" data-example="yes" data-code="yes">
+                <div class="dialtone-example__example">
+                    <div class="d-min-height1 d-margin-top32--negative d-margin-x24--negative d-margin-bottom24--negative" style="position: relative;">
+                        <div class="d-toast-wrapper">
+                            <div class="d-toast--{{ name }}" aria-hidden="true">
+                                <div class="d-toast__content" aria-describedby="notice-message">
+                                    <div class="d-toast__icon--{{ name }}">
+                                    {% if name == "chat" %}
+                                        <svg aria-hidden="true" class="d-svg d-svg__chat" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+                                    {% elsif name == "viewing" %}
+                                        <svg aria-hidden="true" class="d-svg d-svg__visibility" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+                                    {% elsif name == "info" %}
+                                        <svg aria-hidden="true" class="d-svg d-svg__info" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                                    {% elsif name == "error" %}
+                                        <svg aria-hidden="true" class="d-svg d-svg__error" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                                    {% elsif name == "success" %}
+                                        <svg aria-hidden="true" class="d-svg d-svg--checkmark" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+                                    {% endif %}
+                                    </div>
+                                    <div class="d-toast__message" aria-label="notice-message">
+                                        {% if meta != nil %}<div class="d-toast__meta">{{ meta }}</div>{% endif %}
+                                        <div class="d-toast__copy">{{ copy }}</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    {% endfor %}
+                </div>
+                <div class="dialtone-example__code">
+{% highlight css linenos %}
+.example-toast-wrapper {
+    .d-toast-wrapper();
+}
+.example-toast--{{ name }} {
+    .d-toast--{{ name }}();
+}
+.example-toast__icon--{{ name }} {
+    .d-toast__icon--{{ name }}();
+}
+{% endhighlight %}
                 </div>
             </div>
-        </div>
-        <div class="dialtone-example__code">
-{% highlight html linenos %}
-<div class="d-toast-wrapper">
-    <div class="d-toast" aria-hidden="true">
-        <div class="d-toast__content" aria-describedby="notice-message">
-            <div class="d-toast__icon">…</div>
-            <div class="d-toast__message" aria-label="notice-message">
-                <div class="d-toast__meta">…</div>
-                <div class="d-toast__copy">…</div>
-            </div>
-        </div>
-    </div>
-</div>
-{% endhighlight %}
-        </div>
-    </div>
+        </aside>
+    {% endfor %}
 </section>
