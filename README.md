@@ -56,6 +56,12 @@ Dialtone currently uses Jekyll, a static HTML generator, to build its documentat
 Once everything is installed, navigate back out of the `docs` folder (`cd ../`) and start your server by typing the following command:
 
 ```
+gulp watch
+```
+
+If you only want to build Dialtone, but don't want to start the server, type;
+
+```
 gulp
 ```
 
