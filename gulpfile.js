@@ -183,7 +183,6 @@ var buildSVGs = function(done) {
         .pipe(svgmin({
             plugins: [{
                 convertPathData: {
-                    floatPrecision: 2,
                     transformPrecision: 4,
                 }
             }, {

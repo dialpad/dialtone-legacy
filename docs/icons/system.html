@@ -6,16 +6,31 @@ description: Dialtone provides the following system icons. We use <a href="https
 <div class="dialtone-icon-grid">
     {% assign icon-list = site.data.icons | sort: "file" %}
     {% for icon in icon-list %}
-        <aside class="dialtone-icon-card">
+    {% assign name = icon.icon %}
+    {% assign svg = icon.file %}
+    {% assign vue = icon.vue %}
+    {% assign desc = icon.description %}
+        <aside class="dialtone-icon-card js-dialtone-icon-card" data-selected="no">
             <header class="dialtone-icon-card__header">
                 <div class="dialtone-icon-card__icon">
-                    {% include {{ icon.file | prepend: 'svg/' | append: '.svg' }} %}
+                    {% include {{ svg | prepend: 'svg/' | append: '.svg' }} %}
                 </div>
+                <p class="dialtone-icon-card__subtitle">{{ name }}</p>
             </header>
-            <footer class="dialtone-icon-card__footer">
-                <h1 class="dialtone-icon-card__title">{{ icon.icon }}</h1>
-                <code class="code-example">{{ icon.file | append: '.svg' }}</code>
+            <footer class="dialtone-icon-card__footer js-dialtone-icon-card-footer">
+                <h1 class="dialtone-icon-card__title">{{ name }}</h1>
+                <div class="dialtone-icon-card__list">
+                    <span class="dialtone-icon-card__list__item">
+                        <strong>SVG:</strong> {{ svg | append: '.svg' }}
+                    </span>
+                    <span class="dialtone-icon-card__list__item">
+                        <strong>Vue:</strong> {{ vue }}
+                    </span>
+                </div>
+                <p class="dialtone-icon-card__description">{{ desc }}</p>
             </footer>
         </aside>
     {% endfor %}
 </div>
+
+<script src="{{ site.baseurl }}/{{ site.js }}/icons.js"></script>

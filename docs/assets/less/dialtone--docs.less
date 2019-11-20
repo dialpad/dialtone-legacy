@@ -332,49 +332,107 @@ body {
 //  --  DIALTONE ICON GRID
 //      Show Dialtone's icons
 //  ----------------------------------------------------------------------------
+@icon-card-width: 12rem;
+
 .dialtone-icon-grid {
-    --icon-grid-columns: 2;
+    --icon-grid-columns: 5;
 
     display: grid;
-    grid-template-columns: repeat(var(--icon-grid-columns), [col] 1fr);
-    .d-grid-gap16;
+    grid-template-columns: repeat(var(--icon-grid-columns), [col] @icon-card-width);
+    grid-auto-rows: 12rem;
+    .d-grid-gap2;
 }
 
 .dialtone-icon-card {
     position: relative;
     display: flex;
-    //flex-direction: column;
-    box-shadow: 0 0 0 0 fade(@slate, 0%);
-    .d-border-radius--xl();
-    .d-border();
-    .d-border-color--ash();
-    .d-background-color--white();
-    .d-text--xs();
-    .d-color--dark-light();
-    transition: all 150ms @transition--cubic-inOut;
-    user-select: none;
-
-    &:hover {
-        box-shadow: 0 @spacing2 @spacing8 0 fade(@slate, 15%);
-    }
 }
 
 .dialtone-icon-card__header {
-    display: flex;
     .d-flex--center();
-    .d-padding16();
-    .d-border-left-radius--xl();
-    background-color: fade(@ash,50%);
+    flex-direction: column;
+    .d-padding8();
+    .d-width100();
+    .d-height100();
+    .d-border-radius--md();
+    background-color: fade(@ash,0%);
+    transition: all 150ms @transition--cubic-inOut;
+    cursor: pointer;
+
+    .dialtone-section8();
+
+    &:hover {
+        background-color: fade(@ash,40%);
+    }
+
+    .dialtone-icon-card[data-selected="yes"] & {
+        border-radius: 0 @border-radius--md @border-radius--md 0;
+        border: 1px solid @blue;
+        box-shadow: 0 @spacing2 @spacing8 0 fade(@slate, 15%);
+    }
+    .dialtone-icon-card[data-selected="yes"]:nth-child(5n+1) &,
+    .dialtone-icon-card[data-selected="yes"]:nth-child(5n+2) & {
+        border-radius: @border-radius--md 0 0 @border-radius--md;
+    }
 }
 
 .dialtone-icon-card__footer {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    .d-width2();
+    height: @icon-card-width;
     .d-padding-y12();
     .d-padding-x16();
+
+    .d-z-index--popover();
+    .d-background-color--blue();
+    .d-text--sm();
+    .d-color--light();
+    box-shadow: 0 @spacing2 @spacing8 0 fade(@slate, 15%);
+
+    .dialtone-icon-card[data-selected="yes"] & {
+        border-radius: @border-radius--md 0 0 @border-radius--md;
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-(@icon-card-width));
+        transition:
+            opacity 50ms @transition--quint-easeOut 0s,
+            transform 50ms @transition--quint-easeOut 0s,
+            visibility 0s 50ms;
+    }
+
+    //  If it's in the first two columns, show the footer on the right
+    .dialtone-icon-card[data-selected="yes"]:nth-child(5n+1) &,
+    .dialtone-icon-card[data-selected="yes"]:nth-child(5n+2) & {
+        border-radius: 0 @border-radius--md @border-radius--md 0;
+        transform: translateX(100%);
+    }
+
+    .dialtone-icon-card[data-selected="no"] & {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(0);
+        transition:
+            opacity 100ms @transition--quint-easeOut 0s,
+            transform 100ms @transition--quint-easeOut 0s,
+            visibility 0s 0s;
+    }
 }
 
-.dialtone-icon-card__icon {
-    width: 2.4rem;
-    height: 2.4rem;
+.dialtone-icon-card__list {
+    display: flex;
+    flex-direction: column;
+}
+
+.dialtone-icon-card__list__term {
+    .d-font-weight--bold();
+}
+
+.dialtone-icon-card__icon > svg {
+    .d-svg--lg();
 }
 
 .dialtone-icon-card__title {
@@ -383,6 +441,14 @@ body {
     .d-text--xs();
     .d-font-weight--bold();
     .d-line-height--md();
+}
+.dialtone-icon-card__subtitle {
+    .d-margin-bottom0();
+    .d-width100();
+    .d-text--xs();
+    text-align: center;
+    .d-line-height--xs();
+    .d-truncate();
 }
 
 //  ============================================================================
