@@ -21,33 +21,42 @@ body {
 //  ============================================================================
 //  --  Set the icon fill color to the current text color
 //  ----------------------------------------------------------------------------
-.d-svg {
-    fill: currentColor;
-    width: 2.4rem;
-    height: 2.4rem;
+.d-svg-fill() {
+    &:not(".d-svg--native") {
+        fill: currentColor;
+    }
 }
 
 //  --  SIZES
 .d-svg--xs {
-    .d-svg();
+    .d-svg-fill();
 
     width: 1.4rem;
     height: 1.4rem;
 }
+
 .d-svg--sm {
-    .d-svg();
+    .d-svg-fill();
 
     width: 1.8rem;
     height: 1.8rem;
 }
+
+.d-svg {
+    .d-svg-fill();
+    width: 2.4rem;
+    height: 2.4rem;
+}
+
 .d-svg--lg {
-    .d-svg();
+    .d-svg-fill();
 
     width: 3.6rem;
     height: 3.6rem;
 }
+
 .d-svg--xl {
-    .d-svg();
+    .d-svg-fill();
 
     width: 4.8rem;
     height: 4.8rem;

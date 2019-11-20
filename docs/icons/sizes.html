@@ -1,0 +1,37 @@
+---
+layout: page
+title: Sizes
+description: Dialtone provides different icon sizes. By default all icons are set to a 24px by 24px size.
+---
+<div class="dialtone-section16">
+    <table class="dialtone-table">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col" width="20%">Class</th>
+                <th scope="col">Size</th>
+                <th scope="col" width="50%">Examples</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% assign icon-sizes = site.data.icons.sizes | sort: "number" %}
+            {% for size in icon-sizes %}
+            {% assign name = size.size %}
+            {% assign class = size.class %}
+            {% assign px = size.number %}
+            <tr>
+                <th scope="row">{{ name }}</th>
+                <td class="code-example">{% if name == "Default" %}Default size{% else %}.{{ class }}();{% endif %}</td>
+                <td>{{ px | append: 'px' }}</td>
+                <td>
+                    <div class="d-margin-x2--negative" style="display: flex; align-items: center;">
+                        <svg aria-hidden="true" aria-label="Phone" class="{{ class }} d-svg__phone" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        <svg aria-hidden="true" aria-label="Headset Mic" class="{{ class }} d-svg__headsetMic" viewBox="0 0 24 24"><path d="M12 1a9 9 0 0 0-9 9v7c0 1.66 1.34 3 3 3h3v-8H5v-2c0-3.87 3.13-7 7-7s7 3.13 7 7v2h-4v8h4v1h-7v2h6c1.66 0 3-1.34 3-3V10a9 9 0 0 0-9-9z"/></svg>
+                        <svg aria-hidden="true" aria-label="Emoticon Smile" class="{{ class }} d-svg__emoticonSmile" viewBox="0 0 24 24"><path d="M15.5 11a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM8.5 11a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm0-2.5c2.33 0 4.32-1.45 5.12-3.5h-1.67c-.69 1.19-1.97 2-3.45 2-1.48 0-2.75-.81-3.45-2H6.88c.8 2.05 2.79 3.5 5.12 3.5z"/></svg>
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
