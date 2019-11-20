@@ -1,3 +1,36 @@
+//
+//  DIALTONE
+//  GLOBALS
+//
+//  This file provides global CSS styles for Dialtone. For more Information
+//  about Dialtone and these classes, please visit:
+//  https://dialpad.design
+//
+//  ============================================================================
+//  @   COLORS
+//      Set CSS Variables for text colors
+//  ============================================================================
+:root {
+    --color--white:                 @white;
+    --color--dark:                  @slate;
+    --color--dark-light:            @slate-light;
+    --color--dark-lighter:          @slate-lighter;
+    --color--dark-lightest:         @slate-lightest;
+    --color--light:                 @ash;
+    --color--light-dark:            @ash-dark;
+    --color--light-darker:          @ash-darker;
+    --color--light-darkest:         @ash-darkest;
+    --color--blue-text:             @blue-dark;
+    --color--navy-text:             @navy;
+    --color--bright-emerald-text:   @bright-emerald-dark;
+    --color--emerald-text:          @emerald-dark;
+    --color--sunflower-text:        #AF5A00;
+    --color--wildberry-text:        @wildberry-dark;
+    --color--crimson-text:          @crimson-dark;
+    --color--berry-text:            @berry-dark;
+    --color--rose-text:             @rose-dark;
+}
+
 //  ============================================================================
 //  @   RESETS
 //  ============================================================================
@@ -27,37 +60,141 @@ body {
     }
 }
 
-//  --  SIZES
+//  @@  SIZES
+//  ----------------------------------------------------------------------------
+//  --  Extra Small
 .d-svg--xs {
     .d-svg-fill();
 
     width: 1.4rem;
     height: 1.4rem;
 }
-
+//  --  Small
 .d-svg--sm {
     .d-svg-fill();
 
     width: 1.8rem;
     height: 1.8rem;
 }
-
+//  --  Default size
 .d-svg {
     .d-svg-fill();
     width: 2.4rem;
     height: 2.4rem;
 }
-
+//  --  Large
 .d-svg--lg {
     .d-svg-fill();
 
     width: 3.6rem;
     height: 3.6rem;
 }
-
+//  --  Extra Large
 .d-svg--xl {
     .d-svg-fill();
 
     width: 4.8rem;
     height: 4.8rem;
+}
+
+//  ============================================================================
+//  @   ANIMATIONS
+//      Various loading animations that can be re-used.
+//  ============================================================================
+//  @@  GENERIC LOADING
+//      This could be applied to an empty div or a psuedo element (ie ::before)
+//  ----------------------------------------------------------------------------
+@keyframes d-loading-circle {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+//  @@  DIALPAD BAR ANIMATION
+//  ----------------------------------------------------------------------------
+@keyframes d-loading-bars__short {
+  0% {
+    min-height: @spacing4;
+    opacity: 0;
+    transform: translateY(-@spacing16);
+  }
+  5% {
+    min-height: @spacing4;
+    opacity: 0.5;
+    transform: translateY(@spacing16);
+  }
+  10% {
+    opacity: 1;
+    min-height: 1rem;
+    transform: translateY(-@spacing2);
+  }
+  15% {
+    opacity: 1;
+    transform: translateY(@spacing1);
+  }
+  20%, 70% {
+    opacity: 1;
+    min-height: 1rem;
+    transform: translateY(0);
+  }
+  75% {
+    opacity: 1;
+    min-height: 0.75rem;
+    transform: translateY(1rem);
+  }
+  80% {
+    opacity: 0.5;
+    min-height: @spacing4;
+    transform: translateY(-@spacing4);
+  }
+  85%, 100% {
+    opacity: 0;
+    min-height: @spacing4;
+    transform: translateY(@spacing16);
+  }
+}
+@keyframes d-loading-bars__tall {
+  0% {
+    min-height: @spacing4;
+    opacity: 0;
+    transform: translateY(-@spacing16);
+  }
+  5% {
+    min-height: @spacing4;
+    opacity: 0.5;
+    transform: translateY(@spacing16);
+  }
+  10% {
+    opacity: 1;
+    min-height: 1rem;
+    transform: translateY(-@spacing2);
+  }
+  15% {
+    opacity: 1;
+    min-height: 2.2rem;
+    transform: translateY(@spacing1);
+  }
+  20%, 70% {
+    opacity: 1;
+    min-height: 2.2rem;
+    transform: translateY(0);
+  }
+  75% {
+    opacity: 1;
+    min-height: @spacing16;
+    transform: translateY(1rem);
+  }
+  80% {
+    opacity: 1;
+    min-height: 1rem;
+    transform: translateY(-@spacing4);
+  }
+  85%, 100% {
+    opacity: 0;
+    min-height: @spacing4;
+    transform: translateY(@spacing16);
+  }
 }
