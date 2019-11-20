@@ -6425,9 +6425,10 @@ body {
   padding-right: 2.4rem;
   padding-bottom: 2.4rem;
   padding-left: 2.4rem;
+  color: #1738FA;
 }
 .dialtone-logo__svg {
-  color: #1738FA;
+  fill: #1738FA;
 }
 .dialtone-main {
   display: grid;
@@ -6538,9 +6539,14 @@ body {
   grid-gap: 0.2rem;
   grid-template-columns: repeat(var(--icon-grid-columns), [col] 12rem);
 }
+.dialtone-icon-grid__item {
+  position: relative;
+}
 .dialtone-icon-card {
   display: flex;
   position: relative;
+  width: 100%;
+  height: 100%;
 }
 .dialtone-icon-card__header {
   display: flex;
@@ -6562,13 +6568,8 @@ body {
   background-color: rgba(241, 242, 244, 0.4);
 }
 .dialtone-icon-card[data-selected="yes"] .dialtone-icon-card__header {
-  border: 1px solid #1738FA;
-  border-radius: 0 0.8rem 0.8rem 0;
+  border: 1px solid #292C33;
   box-shadow: 0 0.2rem 0.8rem 0 rgba(20, 23, 33, 0.15);
-}
-.dialtone-icon-card[data-selected="yes"]:nth-child(5n+1) .dialtone-icon-card__header,
-.dialtone-icon-card[data-selected="yes"]:nth-child(5n+2) .dialtone-icon-card__header {
-  border-radius: 0.8rem 0 0 0.8rem;
 }
 .dialtone-icon-card__footer {
   display: flex;
@@ -6577,20 +6578,22 @@ body {
   top: 0;
   right: 0;
   flex-direction: column;
-  width: 21.6rem;
-  height: 12rem;
+  width: 27.2rem;
+  min-height: 12rem;
+  margin-right: -0.1rem;
   padding-top: 1.2rem;
   padding-right: 1.6rem;
   padding-bottom: 1.2rem;
   padding-left: 1.6rem;
-  background-color: #1738FA !important;
+  border-radius: 0.8rem;
+  background-color: #292C33;
   box-shadow: 0 0.2rem 0.8rem 0 rgba(20, 23, 33, 0.15);
   color: #F1F2F4;
   font-size: 1.4rem;
 }
 .dialtone-icon-card[data-selected="yes"] .dialtone-icon-card__footer {
   visibility: visible;
-  border-radius: 0.8rem 0 0 0.8rem;
+  margin-right: -0.1rem;
   opacity: 1;
   -webkit-transform: translateX(-12rem);
           transform: translateX(-12rem);
@@ -6598,9 +6601,10 @@ body {
   transition: opacity 50ms cubic-bezier(0.23, 1, 0.32, 1) 0s, transform 50ms cubic-bezier(0.23, 1, 0.32, 1) 0s, visibility 0s 50ms;
   transition: opacity 50ms cubic-bezier(0.23, 1, 0.32, 1) 0s, transform 50ms cubic-bezier(0.23, 1, 0.32, 1) 0s, visibility 0s 50ms, -webkit-transform 50ms cubic-bezier(0.23, 1, 0.32, 1) 0s;
 }
-.dialtone-icon-card[data-selected="yes"]:nth-child(5n+1) .dialtone-icon-card__footer,
-.dialtone-icon-card[data-selected="yes"]:nth-child(5n+2) .dialtone-icon-card__footer {
-  border-radius: 0 0.8rem 0.8rem 0;
+.dialtone-icon-grid__item:nth-child(5n+1) .dialtone-icon-card[data-selected="yes"] .dialtone-icon-card__footer,
+.dialtone-icon-grid__item:nth-child(5n+2) .dialtone-icon-card[data-selected="yes"] .dialtone-icon-card__footer {
+  right: 0.1rem;
+  margin-right: unset;
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
 }
@@ -6617,8 +6621,12 @@ body {
   display: flex;
   flex-direction: column;
 }
-.dialtone-icon-card__list__term {
-  font-weight: 600;
+.dialtone-icon-card__list__item {
+  font-size: 1.2rem;
+}
+.dialtone-icon-card__list__item strong {
+  display: inline-block;
+  width: 20%;
 }
 .dialtone-icon-card__icon > svg {
   width: 2.4rem;
@@ -6630,7 +6638,7 @@ body {
 .dialtone-icon-card__title {
   margin-top: 0;
   margin-bottom: 0.4rem;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   font-weight: 600;
   line-height: 1.25;
 }
@@ -6643,6 +6651,10 @@ body {
   text-align: center;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+.dialtone-icon-card__description {
+  color: #FFF;
+  font-size: 1.2rem;
 }
 .title__page {
   margin-bottom: 0;
