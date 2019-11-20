@@ -234,9 +234,10 @@ body {
 .dialtone-logo {
     .d-padding-y24;
     .d-padding-x24;
+    color: @blue;
 }
 .dialtone-logo__svg {
-    color: @blue;
+    fill: @blue;
 }
 
 //  --  MAIN CONTENT AREA
@@ -332,57 +333,138 @@ body {
 //  --  DIALTONE ICON GRID
 //      Show Dialtone's icons
 //  ----------------------------------------------------------------------------
+@icon-card-width: 12rem;
+
 .dialtone-icon-grid {
-    --icon-grid-columns: 2;
+    --icon-grid-columns: 5;
 
     display: grid;
-    grid-template-columns: repeat(var(--icon-grid-columns), [col] 1fr);
-    .d-grid-gap16;
+    grid-template-columns: repeat(var(--icon-grid-columns), [col] @icon-card-width);
+    grid-auto-rows: 12rem;
+    .d-grid-gap2;
+}
+
+.dialtone-icon-grid__item {
+    position: relative;
 }
 
 .dialtone-icon-card {
     position: relative;
     display: flex;
-    //flex-direction: column;
-    box-shadow: 0 0 0 0 fade(@slate, 0%);
-    .d-border-radius--xl();
-    .d-border();
-    .d-border-color--ash();
-    .d-background-color--white();
-    .d-text--xs();
-    .d-color--dark-light();
+    width: 100%;
+    height: 100%;
+}
+
+.dialtone-icon-card__header {
+    .d-flex--center();
+    flex-direction: column;
+    .d-padding8();
+    .d-width100();
+    .d-height100();
+    .d-border-radius--md();
+    background-color: fade(@ash,0%);
     transition: all 150ms @transition--cubic-inOut;
-    user-select: none;
+    cursor: pointer;
+
+    .dialtone-section8();
 
     &:hover {
+        background-color: fade(@ash,40%);
+    }
+
+    .dialtone-icon-card[data-selected="yes"] & {
+        border: 1px solid @slate-light;
         box-shadow: 0 @spacing2 @spacing8 0 fade(@slate, 15%);
     }
 }
 
-.dialtone-icon-card__header {
-    display: flex;
-    .d-flex--center();
-    .d-padding16();
-    .d-border-left-radius--xl();
-    background-color: fade(@ash,50%);
-}
-
 .dialtone-icon-card__footer {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    width: (@icon-card-width * 2) + @spacing32;
+    min-height: @icon-card-width;
+    .d-margin-right1--negative();
     .d-padding-y12();
     .d-padding-x16();
+
+    .d-z-index--popover();
+    .d-border-radius--md();
+    .d-background-color--slate-light();
+    .d-text--sm();
+    .d-color--light();
+    box-shadow: 0 @spacing2 @spacing8 0 fade(@slate, 15%);
+
+    .dialtone-icon-card[data-selected="yes"] & {
+        .d-margin-right1--negative();
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-(@icon-card-width));
+        transition:
+            opacity 50ms @transition--quint-easeOut 0s,
+            transform 50ms @transition--quint-easeOut 0s,
+            visibility 0s 50ms;
+    }
+
+    //  If it's in the first two columns, show the footer on the right
+    .dialtone-icon-grid__item:nth-child(5n+1) .dialtone-icon-card[data-selected="yes"] &,
+    .dialtone-icon-grid__item:nth-child(5n+2) .dialtone-icon-card[data-selected="yes"] & {
+        margin-right: unset;
+        right: @spacing1;
+        transform: translateX(100%);
+    }
+
+    .dialtone-icon-card[data-selected="no"] & {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(0);
+        transition:
+            opacity 100ms @transition--quint-easeOut 0s,
+            transform 100ms @transition--quint-easeOut 0s,
+            visibility 0s 0s;
+    }
 }
 
-.dialtone-icon-card__icon {
-    width: 2.4rem;
-    height: 2.4rem;
+.dialtone-icon-card__list {
+    display: flex;
+    flex-direction: column;
+}
+
+.dialtone-icon-card__list__item {
+    .d-text--xs();
+
+    strong {
+        display: inline-block;
+        width: 20%;
+    }
+}
+
+.dialtone-icon-card__icon > svg {
+    .d-svg--lg();
 }
 
 .dialtone-icon-card__title {
     .d-margin-top0();
     .d-margin-bottom4();
-    .d-text--xs();
+    .d-text--md();
     .d-font-weight--bold();
     .d-line-height--md();
+}
+
+.dialtone-icon-card__subtitle {
+    .d-margin-bottom0();
+    .d-width100();
+    .d-text--xs();
+    text-align: center;
+    .d-line-height--xs();
+    .d-truncate();
+}
+
+.dialtone-icon-card__description {
+    .d-text--xs();
+    .d-color--white();
 }
 
 //  ============================================================================

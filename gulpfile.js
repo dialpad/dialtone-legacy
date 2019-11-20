@@ -66,7 +66,8 @@ var paths = {
     svgs: {
         input: './lib/build/svg/**/*.svg',
         outputLib: './lib/dist/svg/',
-        outputDocs: './docs/_includes/svg/'
+        outputDocs: './docs/_includes/svg/',
+        outputVue: './lib/dist/vue/icons/'
     },
     build: {
         input: './docs/',
@@ -182,7 +183,6 @@ var buildSVGs = function(done) {
         .pipe(svgmin({
             plugins: [{
                 convertPathData: {
-                    floatPrecision: 2,
                     transformPrecision: 4,
                 }
             }, {
@@ -204,7 +204,16 @@ var buildSVGs = function(done) {
             }]
         }))
         .pipe(dest(paths.svgs.outputLib))
-        .pipe(dest(paths.svgs.outputDocs));
+        .pipe(dest(paths.svgs.outputDocs))
+        .pipe(replace('<svg', '<template>\n  <svg'))
+        .pipe(replace('</svg>', '</svg>\n</template>'))
+        .pipe(rename(function(file) {
+            var converted = file.basename.replace(/\b\S/g, t => t.toUpperCase()).replace(/[-]+/g, '');
+
+            file.basename = 'Icon' + converted;
+            file.extname = '.vue';
+        }))
+        .pipe(dest(paths.svgs.outputVue));
 };
 
 //  --  Build the documentation website
