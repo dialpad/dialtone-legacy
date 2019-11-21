@@ -4,41 +4,38 @@ title: Usage
 description: Dialtone is available in both <a href="#dialpad">Dialpad</a> and <a href="#uberconference">UberConference</a>. Listed below are general examples of how to use Dialtone. Specific information on the styles and components available can be found in the left-hand navigation.
 ---
 <div class="dialtone-section16">
-    <h2 id="uberconference" class="title__section">Writing CSS</h2>
-    <p class="copy__normal">At Dialpad we've adopted the <a href="http://getbem.com/" target="_blank">BEM (Block Element Modifier) methodology</a> for writing CSS. This is a simple, common naming convention that helps make our CSS easier to read and understand.</p>
-    <p class="copy__normal">If you aren't familiar with the approach, here's a quick synposis of the approach (definitions taken from <a href="http://getbem.com/introduction/" target="_blank">BEM's introduction page</a>):</p>
-    <ul class="copy__normal">
+    <h2 id="uberconference" class="dialtone-title__section">Writing CSS</h2>
+    <p class="dialtone-copy__normal">At Dialpad we've adopted the <a href="http://getbem.com/" target="_blank">BEM (Block Element Modifier) methodology</a> for writing CSS. This is a simple, common naming convention that helps make our CSS easier to read and understand.</p>
+    <p class="dialtone-copy__normal">If you aren't familiar with the approach, here's a quick synposis of the approach (definitions taken from <a href="http://getbem.com/introduction/" target="_blank">BEM's introduction page</a>):</p>
+    <ul class="dialtone-copy__normal">
         <li><strong>Block:</strong> A parent entity that is meaningful on its own. For example: <span class="code-example--inline">.d-input</span>, <span class="code-example--inline">.d-table</span>, or <span class="code-example--inline">.d-tooltip</span>.</li>
         <li><strong>Element:</strong> A child that is meaningful only in relation to its parent. For example: <span class="code-example--inline">.d-input__label</span>, <span class="code-example--inline">.d-table__cell</span>, or <span class="code-example--inline">.d-tooltip__icon</span>.</li>
         <li><strong>Modifier:</strong> A modifying flag on a Block or Element. This changes appearance or behavior. For example: <span class="code-example--inline">.d-input--lg</span>, <span class="code-example--inline">.d-table--inverted</span>, or <span class="code-example--inline">.d-tooltip--top-left</span>.</li>
     </ul>
 </div>
 <div class="dialtone-section16">
-    <h2 id="uberconference" class="title__section">Using Dialtone in Less</h2>
-    <p class="copy__normal">The preferred method of incorporating Dialtone into Dialpad and UberConference is by using it within a semantic CSS class, written in Less. <a href="http://lesscss.org/" target="_blank">Less</a> is a powerful CSS pre-processor much like SCSS or SASS. It allows you to create and modify variables, utilize mixins, create functions, and incorporate styles within other classes easily.</p>
-    <p class="copy__normal">Given that we prefer semantic classes as compared to utility or atomic classes, this means that Dialtone <em>only provides classes and styles for items which reflect design decisions.</em> For example, Dialtone provides set spacing sizes (e.g. <span class="code-example--inline">.d-margin16</span> == <span class="code-example--inline">margin: 16px;</span>), but it does not provide common CSS properties in single-purpose classes (e.g. <span class="code-example--inline">.d-float--left</span> == <span class="code-example--inline">float: left;</span>).</p>
-    <p class="copy__normal">Here's an example of how you include Dialtone in your Less:</p>
+    <h2 id="uberconference" class="dialtone-title__section">Using Dialtone in Less</h2>
+    <p class="dialtone-copy__normal">The preferred method of incorporating Dialtone into Dialpad and UberConference is by using it within a semantic CSS class, written in Less. <a href="http://lesscss.org/" target="_blank">Less</a> is a powerful CSS pre-processor much like SCSS or SASS. It allows you to create and modify variables, utilize mixins, create functions, and incorporate styles within other classes easily.</p>
+    <p class="dialtone-copy__normal">Given that we prefer semantic classes as compared to utility or atomic classes, this means that Dialtone <em>only provides classes and styles for items which reflect design decisions.</em> For example, Dialtone provides set spacing sizes (e.g. <span class="code-example--inline">.d-margin16</span> == <span class="code-example--inline">margin: 16px;</span>), but it does not provide common CSS properties in single-purpose classes (e.g. <span class="code-example--inline">.d-float--left</span> == <span class="code-example--inline">float: left;</span>).</p>
+    <p class="dialtone-copy__normal">Here's an example of how you include Dialtone in your Less:</p>
 {% highlight css linenos %}
 /* Import Dialtone definitions. Ensure the relative path is correct. */
-@import "../../css/dialtone.less";
+@import (reference) "../../css/dialtone.less";
 
 /* Dialtone documentation navigation bar */
 .dialtone-navbar {
-  .d-top-bottom1;
-  .d-left1;
-  .d-border-right-radius--lg;
-  .d-background-color--ash;
-  .d-color--light;
-
   position: fixed;
-  width: 100%;
-  min-width: @sidebar-min-width;
-  max-width: @sidebar-max-width;
+  .d-top-bottom1();
+  .d-left1();
+  .d-width100();
+  .d-border-right-radius--lg();
+  .d-background-color--ash();
+  .d-color--light();
   overflow-y: scroll;
   overflow-x: hidden;
 }
 {% endhighlight %}
-    <p class="copy__normal">This compiles to:</p>
+    <p class="dialtone-copy__normal">This compiles to:</p>
 {% highlight css linenos %}
 .dialtone-navbar {
   position: fixed;
@@ -46,8 +43,6 @@ description: Dialtone is available in both <a href="#dialpad">Dialpad</a> and <a
   bottom: 0.1rem;
   left: 0.1rem;
   width: 100%;
-  max-width: 32.8rem;
-  min-width: 24rem;
   border-top-right-radius: 1.2rem;
   border-bottom-right-radius: 1.2rem;
   background-color: #F1F2F4;
@@ -56,15 +51,14 @@ description: Dialtone is available in both <a href="#dialpad">Dialpad</a> and <a
   overflow-x: hidden;
 }
 {% endhighlight %}
-    <p class="copy__normal">The first portion of <span class="code-example--inline">.dialtone-navbar</span> includes various preset design style classes from Dialtone. Then the rest of the necessary CSS is provided afterwards.</p>
 </div>
 
 <div class="dialtone-section16">
-    <h2 id="dialpad" class="title__section">Using Dialtone in Dialpad</h2>
+    <h2 id="dialpad" class="dialtone-title__section">Using Dialtone in Dialpad</h2>
 
     <div class="dialtone-section2">
-        <h3 class="title__subsection">Vue</h3>
-        <p class="copy__normal">Using Dialtone in Vue requires setting your style lang to less, importing Dialtone with the correct relative path to your component and then composing semantic classes with Dialtone styles, like shown above.</p>
+        <h3 class="dialtone-title__subsection">Vue</h3>
+        <p class="dialtone-copy__normal">Using Dialtone in Vue requires setting your style lang to less, importing Dialtone with the correct relative path to your component and then composing semantic classes with Dialtone styles, like shown above.</p>
 
 {% highlight css linenos %}
 <style lang="less">
@@ -72,42 +66,42 @@ description: Dialtone is available in both <a href="#dialpad">Dialpad</a> and <a
 @import "../../css/dialtone.less";
 
 .vue-select-menu-option {
-  .d-padding8;
-  .d-color--dark;
-  .d-text--sm;
   display: block;
+  .d-padding8();
+  .d-color--dark();
+  .d-text--sm();
   text-align: left;
   cursor: pointer;
 }
 
 .vue-select-menu-option.highlight {
-  .d-background-color--ash;
+  .d-background-color--ash();
 }
 
 .vue-select-menu-option.selected {
-  .d-background-color--blue-lighter;
+  .d-background-color--blue-lighter();
 }
 </style>
 {% endhighlight %}
 
     </div>
-    <div class="dialtone-section2">
-        <h3 class="title__subsection">Backbone</h3>
-        <p class="copy__normal">Using Dialtone in Backbone should be rare, since most frontend changes are now being implemented using Vue. Regardless, if you find yourself needing to use Dialtone in Backbone, there are a few steps:</p>
+    <div class="dialtone-section8">
+        <h3 class="dialtone-title__subsection">Backbone</h3>
+        <p class="dialtone-copy__normal">Using Dialtone in Backbone should be rare, since most frontend changes are now being implemented using Vue. Regardless, if you find yourself needing to use Dialtone in Backbone, there are a few steps:</p>
         <ol>
             <li>Create a <span class="code-example--inline">.less</span> file for your feature, if one does not yet exist.</li>
             <li>Import this <span class="code-example--inline">.less</span> file into the relevant base less file e.g. <span class="code-example--inline">single.less</span>, <span class="code-example--inline">web.less</span> etc.</li>
             <li>Import Dialtone into your <span class="code-example--inline">.less</span> file and compose your styles like shown in the example above.</li>
         </ol>
     </div>
-    <div class="dialtone-section2">
-        <h3 class="title__subsection"><span class="code-example--inline">box-sizing: border-box;</span> Consideration</h3>
-        <p class="copy__normal">All Dialtone components are implemented with <span class="code-example--inline">box-sizing: border-box;</span> applied. To understand why we prefer <span class="code-example--inline">border-box</span> over <span class="code-example--inline">content-box</span>, please visit this <a target="_blank" href="https://stackoverflow.com/c/dialpad/questions/121">Stack Overflow Teams question</a>.</p>
-        <p class="copy__normal">In <span class="code-example--inline">Vue</span>, we apply <span class="code-example--inline">border-box</span> globally at the <span class="code-example--inline">VueView</span> level, ensuring all child elements use this style. As such, Dialtone styles will work correctly in Vue with respect to element sizing.</p>
-        <p class="copy__normal">In <span class="code-example--inline">Backbone</span>  we are not using <span class="code-example--inline">border-box</span> by default. Because Dialtone expects this, anytime we wish to use Dialtone styles in Backbone we must ensure to apply the <span class="code-example--inline">border-box</span> style to all affected elements.</p>
+    <div class="dialtone-section8">
+        <h3 class="dialtone-title__subsection"><span class="code-example" style="font-size: inherit;">box-sizing: border-box;</span> Consideration</h3>
+        <p class="dialtone-copy__normal">All Dialtone components are implemented with <span class="code-example--inline">box-sizing: border-box;</span> applied. To understand why we prefer <span class="code-example--inline">border-box</span> over <span class="code-example--inline">content-box</span>, please visit this <a target="_blank" href="https://stackoverflow.com/c/dialpad/questions/121">Stack Overflow Teams question</a>.</p>
+        <p class="dialtone-copy__normal">In <span class="code-example--inline">Vue</span>, we apply <span class="code-example--inline">border-box</span> globally at the <span class="code-example--inline">VueView</span> level, ensuring all child elements use this style. As such, Dialtone styles will work correctly in Vue with respect to element sizing.</p>
+        <p class="dialtone-copy__normal">In <span class="code-example--inline">Backbone</span>  we are not using <span class="code-example--inline">border-box</span> by default. Because Dialtone expects this, anytime we wish to use Dialtone styles in Backbone we must ensure to apply the <span class="code-example--inline">border-box</span> style to all affected elements.</p>
     </div>
 </div>
-<div class="dialtone-section16">
-    <h2 id="uberconference" class="title__section">Using Dialtone in UberConference</h2>
-    <p class="copy__normal">Coming soon.</p>
-</div>
+<!-- <div class="dialtone-section16">
+    <h2 id="uberconference" class="dialtone-title__section">Using Dialtone in UberConference</h2>
+    <p class="dialtone-copy__normal">Coming soon.</p>
+</div> -->

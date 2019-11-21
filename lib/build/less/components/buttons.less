@@ -54,19 +54,19 @@
         outline: none;
         box-shadow: 0 0 0 @spacing4 fade(@button-background-color,25%);
     }
-    &:active,
-    &--selected {
-        border-color: fade(@button-background-color,50%);
-        background-color: fade(@button-background-color,10%);
-        box-shadow: inset 0 0 @spacing8 0 fade(@button-background-color,30%);
-    }
-    &[disabled],
-    &--disabled {
-        .disabled-input-style();
-        opacity: 0.75;
-        transition: none;
-        pointer-events: none;
-    }
+}
+.d-btn:active,
+.d-btn--selected {
+    border-color: fade(@button-background-color,50%);
+    background-color: fade(@button-background-color,10%);
+    box-shadow: inset 0 0 @spacing8 0 fade(@button-background-color,30%);
+}
+.d-btn[disabled],
+.d-btn--disabled {
+    .disabled-input-style();
+    opacity: 0.75;
+    transition: none;
+    pointer-events: none;
 }
 
 
@@ -126,16 +126,15 @@
     box-shadow: none;
     border-color: @button-border-color;
     color: @button-font-color;
-
-    &:active,
-    &--selected {
-        border-color: darken(@button-border-color,5%);
-        background-color: fade(@button-background-color,15%);
-    }
-    &[disabled],
-    &--disabled {
-        border-color: transparent;
-    }
+}
+.d-btn:active,
+.d-btn--selected {
+    border-color: darken(@button-border-color,5%);
+    background-color: fade(@button-background-color,15%);
+}
+.d-btn[disabled],
+.d-btn--disabled {
+    border-color: transparent;
 }
 
 //  @@  PRIMARY BUTTON
@@ -156,12 +155,12 @@
     &:focus {
         box-shadow: 0 0 0 @spacing4 fade(@button-primary,25%);
     }
-    &:active,
-    &--selected {
-        border-color: darken(@button-primary-hover,20%);
-        background-color: saturate(@button-primary,15%);
-        box-shadow: inset 0 0 @spacing8 0 darken(@blue-dark,10%);
-    }
+}
+.d-btn--primary:active,
+.d-btn--primary--selected {
+    border-color: darken(@button-primary-hover,20%);
+    background-color: saturate(@button-primary,15%);
+    box-shadow: inset 0 0 @spacing8 0 darken(@blue-dark,10%);
 }
 
 //  @@  DANGER BUTTON
@@ -182,19 +181,19 @@
 
     //  Now change them
     border-color: @button-danger;
-
-    //  --  STATES
-    //  ------------------------------------------------------------------------
-    &:active,
-    &--selected {
-        border-color: darken(@button-danger,5%);
-    }
-    &[disabled],
-    &--disabled {
-        .disabled-input-style();
-        border-color: transparent;
-    }
 }
+//  --  STATES
+//  ----------------------------------------------------------------------------
+.d-btn--danger--outlined:active,
+.d-btn--danger--outlined--selected {
+    border-color: darken(@button-danger,5%);
+}
+.d-btn--danger--outlined[disabled],
+.d-btn--danger--outlined--disabled {
+        .disabled-input-style();
+    border-color: transparent;
+}
+
 
 //  --  Filled (primary) danger button
 .d-btn--danger--primary {
@@ -290,13 +289,14 @@
     &:focus {
         box-shadow: 0 0 0 @spacing4 fade(@button-muted-hover,25%);
     }
-    &:active,
-    &--selected {
-        border-color: fade(@button-muted,50%);
-        background-color: fade(@button-muted,10%);
-        box-shadow: inset 0 0 @spacing8 0 fade(@button-muted,30%);
-    }
 }
+.d-btn--circle:active,
+.d-btn--circle--selected {
+    border-color: fade(@button-muted,50%);
+    background-color: fade(@button-muted,10%);
+    box-shadow: inset 0 0 @spacing8 0 fade(@button-muted,30%);
+}
+
 
 //  @@  OUTLINED CIRCLE
 //  ----------------------------------------------------------------------------
@@ -315,13 +315,14 @@
         border-color: @button-muted-hover;
         color: @color--dark;
     }
-    &:active,
-    &--selected {
-        border-color: fade(@button-muted,50%);
-        background-color: fade(@button-muted,10%);
-        box-shadow: inset 0 0 @spacing8 0 fade(@button-muted,30%);
-    }
 }
+.d-btn--circle--outlined:active,
+.d-btn--circle--outlined--selected {
+    border-color: fade(@button-muted,50%);
+    background-color: fade(@button-muted,10%);
+    box-shadow: inset 0 0 @spacing8 0 fade(@button-muted,30%);
+}
+
 
 //  @@  DANGER CIRCLE STYLES
 //  ----------------------------------------------------------------------------
@@ -342,12 +343,13 @@
     &:hover {
         color: @button-danger;
     }
-    &:focus,
-    &:active,
-    &--selected {
-        color: @button-danger-hover;
-    }
 }
+.d-btn--circle--danger-hover:focus,
+.d-btn--circle--danger-hover:active,
+.d-btn--circle--danger-hover--selected {
+    color: @button-danger-hover;
+}
+
 
 //  --  Default, clear danger circle
 .d-btn--circle--danger {

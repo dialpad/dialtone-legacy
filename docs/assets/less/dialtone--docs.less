@@ -18,10 +18,16 @@
 //  ============================================================================
 //  $   VARIABLES
 //  ----------------------------------------------------------------------------
-@sidebar-min-width:     24rem;          //  240px
-@sidebar-max-width:     32.8rem;        //  328px
-@content-min-width:     min-content;
-@content-max-width:     74rem;        //  740px
+:root {
+    --nav-width:             30rem;
+    --nav-height:            7.2rem;
+    --content-width:         1fr;
+    --content-max-width:     74rem;        //  740px
+
+    @media screen and (min-width: 920px) {
+        --nav-width:     32.0rem;
+    }
+}
 
 
 //  ============================================================================
@@ -50,28 +56,13 @@
 //  $$  UNIVERSAL RESETS
 //  ----------------------------------------------------------------------------
 //      [1]     Universally set border-box
-//      [2]     Font size set to 10px to make REM values easier to calculate
-//      [3]     We don't want 10px to be the default size, so we reset it to
-//              the desired 16px size;
-//      [4]     Prevent adjustments of font size after orientation changes in iOS.
+//      [2]     Prevent adjustments of font size after orientation changes in iOS.
 //  ----------------------------------------------------------------------------
-html,
-body {
-    *,
-    *:before,
-    *:after {
-        box-sizing: inherit;    // [1]
-    }
-
-    height: 100%;
-    font-size: 10px;    // [2]
-}
-
 html {
     *,
     *:before,
     *:after {
-        box-sizing: border-box;
+        box-sizing: border-box; // [1]
     }
 }
 
@@ -81,10 +72,9 @@ body {
     background-color: @white;
 
     color: @color--dark;
-    font-size: @base-font-size; // [3]
     font-family: @font-family--mark;
     line-height: @line-height--lg;
-    -webkit-text-size-adjust: 100%; // [4]
+    -webkit-text-size-adjust: 100%; // [21]
 }
 
 //  $$  LAYOUT
@@ -92,40 +82,120 @@ body {
 //  Overall wrapper
 .dialtone-wrapper {
     display: grid;
-    grid-template-columns:
-        [sidebar-start]
-            minmax(@sidebar-min-width,@sidebar-max-width)
-        [sidebar-end content-start]
-            minmax(@content-min-width,@content-max-width)
-        [content-end];
-    height: 100%;
+
+    @media screen and (max-width: 723.9px) {
+        grid-template-rows:
+            [nav-start]
+                var(--nav-height)
+            [nav-end content-start]
+                var(--content-width)
+            [content-end];
+    }
+    @media screen and (min-width: 724px) and (max-width: 920px) {
+        grid-template-columns:
+            [nav-start]
+                var(--nav-width)
+            [nav-end content-start]
+                var(--content-width)
+            [content-end];
+        height: 100%;
+    }
+    @media screen and (min-width: 920px) {
+        grid-template-columns:
+            [nav-start]
+                var(--nav-width)
+            [nav-end content-start]
+                var(--content-width)
+            [content-end];
+        height: 100%;
+    }
 }
 
 //  Sidebar navigation
-.dialtone-sidebar {
-    grid-area: "sidebar";
-    position: relative;
+.dialtone-nav {
+    grid-area: "nav";
+
+    @media screen and (max-width: 723.9px) {
+        position: fixed;
+        .d-top0();
+        .d-left-right0();
+        .d-z-index--navigation-fixed();
+    }
+    @media screen and (min-width: 724px) {
+        position: relative;
+    }
 }
 
 //  --  NAVIGATION
 //  ----------------------------------------------------------------------------
-//  The overall sidebar wrapper
+//  Menu button
+.dialtone-menu-button {
+    .d-btn--circle();
+    .d-btn--circle--lg();
+    .d-color--dark-lighter();
+    .d-margin-left--auto();
+
+    .d-svg__menu,
+    .d-svg__close {
+        display: none;
+    }
+
+    //  Selected state is set on blue
+    &[data-state="selected"] {
+        .d-btn--circle--inverted();
+        .d-margin-left--auto();
+        .d-border-color--transparent;
+        .d-box-shadow--none();
+    }
+
+    //  Open or close the menu
+    &[data-menu="closed"] {
+        .d-svg__menu {
+            display: block;
+        }
+    }
+    &[data-menu="open"] {
+        .d-svg__close {
+            display: block;
+        }
+    }
+
+    @media screen and (min-width: 724px) {
+        display: none !important;
+    }
+}
+//  The overall nav wrapper
 .dialtone-navbar {
-    .d-top-bottom1();
-    .d-left1();
-    .d-border-right-radius--lg();
     .d-background-color--ash();
     .d-color--dark-lighter();
 
-    position: fixed;
-    width: 100%;
-    min-width: @sidebar-min-width;
-    max-width: @sidebar-max-width;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    @media screen and (max-width: 723.9px) {
+        display: flex;
+        align-items: center;
+        .d-top0();
+        .d-left-right0();
+        .d-padding-y16();
+        .d-padding-left24();
+        .d-padding-right12();
+        height: var(--nav-height);
+
+        &[data-state="open"] {
+            .d-background-color--blue();
+            .d-color--white();
+        }
+    }
+    @media screen and (min-width: 724px) {
+        position: fixed;
+        .d-top-bottom0();
+        .d-left0();
+        width: var(--nav-width);
+        .d-border-right-radius--lg();
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
 }
 
-//  The sidebar navigation
+//  The nav navigation
 .dialtone-navigation__list {
     .d-list-reset();
 
@@ -152,7 +222,25 @@ body {
 }
 
 .dialtone-navigation {
-    .d-padding-bottom24();
+    @media screen and (max-width: 723.9px) {
+        position: fixed;
+        top: var(--nav-height);
+        .d-left-right0();
+        .d-height100();
+        .d-background-color--ash();
+        .d-z-index--navigation();
+        overflow-y: scroll;
+
+        &[data-state="closed"] {
+            display: none;
+        }
+        &[data-state="open"] {
+            display: block;
+        }
+    }
+    @media screen and (min-width: 724px) {
+        .d-padding-bottom24();
+    }
 
     > .dialtone-navigation__list {
         .d-border-top();
@@ -165,14 +253,15 @@ body {
 }
 
 .dialtone-navigation__header {
-    .d-padding24();
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .d-padding12();
+    .d-padding-left24();
+    background-color: fade(@ash-dark,0%);
     .d-text--xl();
     .d-color--dark-lighter();
     .d-line-height--sm();
-
-    display: flex;
-    justify-content: space-between;
-    background-color: fade(@ash-dark,0%);
     text-decoration: none;
     transition: all 100ms @transition--cubic-inOut;
 
@@ -185,19 +274,22 @@ body {
         .d-padding-y12();
         .d-color--dark();
     }
+}
+.dialtone-navigation__header-icon {
+    .d-btn--circle();
 
     //  Show the right icon...
     .icon__add,
     .icon__remove {
-        display: block;
+        display: none;
     }
     //  ... if it's open
-    .dialtone-navigation__list[data-open="true"] & .icon__add {
-        display: none;
+    .dialtone-navigation__list[data-open="true"] & .icon__remove {
+        display: block;
     }
     //  ... if it's closed
-    .dialtone-navigation__list[data-open="false"] & .icon__remove {
-        display: none;
+    .dialtone-navigation__list[data-open="false"] & .icon__add {
+        display: block;
     }
 }
 
@@ -232,12 +324,31 @@ body {
 //  --  LOGO
 //  ----------------------------------------------------------------------------
 .dialtone-logo {
-    .d-padding-y24;
-    .d-padding-x24;
     color: @blue;
-}
-.dialtone-logo__svg {
-    fill: @blue;
+
+    .dialtone-logo__svg,
+    .dialtone-glyph__svg {
+        fill: @blue;
+        display: none;
+    }
+
+    @media screen and (max-width: 723.9px) {
+        .dialtone-navbar[data-state="open"] & .dialtone-glyph__svg {
+            fill: @white;
+        }
+
+        .dialtone-glyph__svg {
+            display: block;
+            .d-svg--lg();
+        }
+    }
+    @media screen and (min-width: 724px) {
+        .d-padding24();
+
+        .dialtone-logo__svg {
+            display: block;
+        }
+    }
 }
 
 //  --  MAIN CONTENT AREA
@@ -245,9 +356,15 @@ body {
 .dialtone-main {
     .d-grid-layout--with-header-content;
     .d-grid-row-gap32;
-    .d-padding32;
 
-    --grid-content-col: minmax(@content-min-width,@content-max-width);
+    @media screen and (max-width: 723.9px) {
+        .d-padding24();
+    }
+    @media screen and (min-width: 724px) {
+        .d-padding32();
+    }
+
+    --grid-content-col: var(--content-max-width);
     --grid-header-row: min-content;
     --grid-content-row: min-content;
 
@@ -336,7 +453,7 @@ body {
 @icon-card-width: 12rem;
 
 .dialtone-icon-grid {
-    --icon-grid-columns: 5;
+    --icon-grid-columns: auto-fit;
 
     display: grid;
     grid-template-columns: repeat(var(--icon-grid-columns), [col] @icon-card-width);
@@ -470,33 +587,38 @@ body {
 //  ============================================================================
 //  $   TYPOGRAPHY
 //  ----------------------------------------------------------------------------
-.title__page {
-    .d-margin-bottom0();
+[class^="dialtone-title__"],
+[class^="dialtone-copy__"] {
+    max-width: var(--content-max-width);
+}
+
+.dialtone-title__page {
+    .d-margin-y0();
     .d-headline--xl();
     letter-spacing: -.5px;
 }
-.title__section {
+.dialtone-title__section {
     .d-margin-bottom0();
     .d-headline--md();
 }
-.title__subsection {
+.dialtone-title__subsection {
     .d-margin-bottom0();
     .d-headline--sm();
 }
-.title__small {
+.dialtone-title__small {
     .d-margin-bottom0();
     .d-font-weight--normal();
     .d-text--lg();
 }
 
-.copy__lead {
+.dialtone-copy__lead {
     .d-margin-bottom0();
     .d-headline--sm();
     .d-font-weight--normal();
     .d-line-height--lg();
 }
 
-.copy__normal {
+.dialtone-copy__normal {
     .d-margin-bottom0();
     .d-text--md();
     .d-line-height--lg();
@@ -515,6 +637,7 @@ body {
 }
 .dialtone-table {
     .d-table();
+    max-width: var(--content-max-width);
 
     //  Center a table cell
     .dialtone-table__th--centered {
@@ -602,7 +725,7 @@ body {
     .d-border-radius--md();
     .d-border();
     .d-border-color--ash-dark();
-    max-width: @content-max-width;
+    max-width: var(--content-max-width);
 
     //  Make correct border radii appear
     //  If both elements are true, the code block top radii
