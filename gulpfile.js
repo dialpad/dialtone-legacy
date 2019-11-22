@@ -178,7 +178,7 @@ var buildSVGs = function(done) {
             });
             var title = name.replace(/\b\S/g, t => t.toUpperCase()).replace(/[-]+/g, " ");
 
-            return match + ' aria-hidden="true" focusable="false" aria-label="' + title + '" class="d-svg d-svg__' + converted + '"';
+            return match + ' aria-hidden="true" focusable="false" aria-label="' + title + '" class="d-svg d-svg--system d-svg__' + converted + '"';
         }))
         .pipe(svgmin({
             plugins: [{
