@@ -17,6 +17,7 @@ var settings = {
 //  ------------------------------------------------------------
 //  @@ GENERAL
 var {gulp, src, dest, watch, series, parallel} = require('gulp');
+var fs = require('fs');
 var del = require('del');
 var lazypipe = require('lazypipe');
 var rename = require('gulp-rename');
@@ -48,6 +49,7 @@ var cp = settings.build ? require('child_process') : null;
 //     Where everything is in this project
 //  ------------------------------------------------------------
 var paths = {
+    versionFile: './docs/_includes/version.html',
     clean: {
         lib: './lib/dist/**/*',
         docs: './docs/_site/**/*',
@@ -286,6 +288,12 @@ var watchFiles = function(done) {
     done();
 };
 
+var updateVersion = function(done) {
+    fs.writeFileSync(paths.versionFile, 'v' + package.version);
+
+    done();
+}
+
 //  @  EXPORT TASKS
 //  ------------------------------------------------------------
 //  --  DEFAULT TASK
@@ -296,7 +304,8 @@ exports.default = series(
         docStyles,
         buildSVGs,
     ),
-    buildDocs
+    buildDocs,
+    updateVersion
 );
 
 exports.watch = series(
