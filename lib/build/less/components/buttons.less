@@ -54,15 +54,26 @@
         outline: none;
         box-shadow: 0 0 0 @spacing4 fade(@button-background-color,25%);
     }
+    &:active {
+        border-color: fade(@button-background-color,50%);
+        background-color: fade(@button-background-color,10%);
+        box-shadow: inset 0 0 @spacing8 0 fade(@button-background-color,30%);
+    }
+    &[disabled] {
+        .disabled-input-style();
+        opacity: 0.75;
+        transition: none;
+        pointer-events: none;
+    }
 }
-.d-btn:active,
-.d-btn--selected {
-    border-color: fade(@button-background-color,50%);
-    background-color: fade(@button-background-color,10%);
-    box-shadow: inset 0 0 @spacing8 0 fade(@button-background-color,30%);
+//  Loading class
+.d-btn--loading {
+    .d-btn();
+    .d-btn-loading();
 }
-.d-btn[disabled],
+//  Disabled class
 .d-btn--disabled {
+    .d-btn();
     .disabled-input-style();
     opacity: 0.75;
     transition: none;
@@ -112,14 +123,24 @@
     box-shadow: none;
     border-color: @button-border-color;
     color: @button-font-color;
+
+    &:active {
+        border-color: darken(@button-border-color,5%);
+        background-color: fade(@button-background-color,15%);
+    }
+    &[disabled] {
+        border-color: transparent;
+    }
 }
-.d-btn:active,
-.d-btn--selected {
-    border-color: darken(@button-border-color,5%);
-    background-color: fade(@button-background-color,15%);
+.d-btn--outlined--loading {
+    .d-btn--outlined();
+    .d-btn-loading();
 }
-.d-btn[disabled],
-.d-btn--disabled {
+.d-btn--outlined--disabled {
+    //  Incorporate prior styles
+    .d-btn--disabled();
+
+    //  Now change it
     border-color: transparent;
 }
 
@@ -141,12 +162,19 @@
     &:focus {
         box-shadow: 0 0 0 @spacing4 fade(@button-primary,25%);
     }
+    &:active {
+        border-color: darken(@button-primary-hover,20%);
+        background-color: saturate(@button-primary,15%);
+        box-shadow: inset 0 0 @spacing8 0 darken(@blue-dark,10%);
+    }
 }
-.d-btn--primary:active,
-.d-btn--primary--selected {
-    border-color: darken(@button-primary-hover,20%);
-    background-color: saturate(@button-primary,15%);
-    box-shadow: inset 0 0 @spacing8 0 darken(@blue-dark,10%);
+.d-btn--primary--loading {
+    .d-btn--primary();
+    .d-btn-loading--white();
+}
+.d-btn--primary--disabled {
+    //  Incorporate prior styles
+    .d-btn--disabled();
 }
 
 //  @@  DANGER BUTTON
@@ -159,29 +187,42 @@
     //  Now change them
     .btn-danger-clear-states();
 }
+.d-btn--danger--loading {
+    .d-btn--danger();
+    .d-btn-loading--danger();
+}
+.d-btn--danger--disabled {
+    //  Incorporate prior styles
+    .d-btn--disabled();
 
-//  --  Outlined danger button
+    //  Now change it
+    border-color: transparent;
+}
+
+//  @@  OUTLINED DANGER BUTTON
+//  ----------------------------------------------------------------------------
 .d-btn--danger--outlined {
     //  Incorporate prior styles
     .d-btn--danger();
 
     //  Now change them
     border-color: @button-danger;
+
+    &:active {
+        border-color: darken(@button-danger,5%);
+    }
 }
-//  --  STATES
-//  ----------------------------------------------------------------------------
-.d-btn--danger--outlined:active,
-.d-btn--danger--outlined--selected {
-    border-color: darken(@button-danger,5%);
+.d-btn--danger--outlined--loading {
+    .d-btn--danger--outlined();
+    .d-btn-loading--danger();
 }
-.d-btn--danger--outlined[disabled],
 .d-btn--danger--outlined--disabled {
-        .disabled-input-style();
-    border-color: transparent;
+    //  Incorporate prior styles
+    .d-btn--danger--disabled();
 }
 
-
-//  --  Filled (primary) danger button
+//  @@  FILLED DANGER BUTTON
+//  ----------------------------------------------------------------------------
 .d-btn--danger--primary {
     //  Incorporate prior styles
     .d-btn--danger();
@@ -189,7 +230,14 @@
     //  Now change them
     .btn-danger-primary-states();
 }
-
+.d-btn--danger--primary--loading {
+    .d-btn--danger--primary();
+    .d-btn-loading--white();
+}
+.d-btn--danger--primary--disabled {
+    //  Incorporate prior styles
+    .d-btn--danger--disabled();
+}
 
 //  @@  INVERTED BUTTON
 //  ----------------------------------------------------------------------------
@@ -201,6 +249,14 @@
     //  Now change them
     .btn-inverted-clear-states();
 }
+.d-btn--inverted--loading {
+    .d-btn--inverted();
+    .d-btn-loading--white();
+}
+.d-btn--inverted--disabled {
+    //  Incorporate prior styles
+    .d-btn--disabled();
+}
 
 //  --  Outlined inverted button
 .d-btn--inverted--outlined {
@@ -209,6 +265,14 @@
 
     //  Now change them
     .btn-inverted-outlined-states();
+}
+.d-btn--inverted--outlined--loading {
+    .d-btn--inverted--outlined();
+    .d-btn-loading--white();
+}
+.d-btn--inverted--outlined--disabled {
+    //  Incorporate prior styles
+    .d-btn--disabled();
 }
 
 //  --  Filled (primary) inverted button
@@ -219,6 +283,14 @@
     //  Now change them
     .btn-inverted-primary-states();
 }
+.d-btn--inverted--primary--loading {
+    .d-btn--inverted--primary();
+    .d-btn-loading();
+}
+.d-btn--inverted--primary--disabled {
+    //  Incorporate prior styles
+    .d-btn--disabled();
+}
 
 
 //  @@  BRAND BUTTONS
@@ -228,17 +300,29 @@
     .d-btn();
     .brand-buttons(@button-brand-google);
 }
+.d-btn--google--disabled {
+    .d-btn--google();
+    .d-btn--disabled();
+}
 //
 //  --  OFFICE 365
 .d-btn--o365 {
     .d-btn();
     .brand-buttons(@button-brand-o365);
 }
+.d-btn--o365--disabled {
+    .d-btn--o365();
+    .d-btn--disabled();
+}
 //
 //  --  LINKEDIN
 .d-btn--linkedin {
     .d-btn();
     .brand-buttons(@button-brand-linkedin);
+}
+.d-btn--linkedin--disabled {
+    .d-btn--linkedin();
+    .d-btn--disabled();
 }
 
 //  ============================================================================
@@ -290,12 +374,22 @@
     &:focus {
         box-shadow: 0 0 0 @spacing4 fade(@button-muted-hover,25%);
     }
+    &:active {
+        border-color: fade(@button-muted,50%);
+        background-color: fade(@button-muted,10%);
+        box-shadow: inset 0 0 @spacing8 0 fade(@button-muted,30%);
+    }
 }
-.d-btn--circle:active,
-.d-btn--circle--selected {
-    border-color: fade(@button-muted,50%);
-    background-color: fade(@button-muted,10%);
-    box-shadow: inset 0 0 @spacing8 0 fade(@button-muted,30%);
+.d-btn--circle--loading {
+    .d-btn--circle();
+    .d-btn-loading--dark();
+}
+.d-btn--circle--disabled {
+    .d-btn--circle();
+    .disabled-input-style();
+    opacity: 0.75;
+    transition: none;
+    pointer-events: none;
 }
 
 
@@ -316,14 +410,20 @@
         border-color: @button-muted-hover;
         color: @color--dark;
     }
+    &:active {
+        border-color: fade(@button-muted,50%);
+        background-color: fade(@button-muted,10%);
+        box-shadow: inset 0 0 @spacing8 0 fade(@button-muted,30%);
+    }
 }
-.d-btn--circle--outlined:active,
-.d-btn--circle--outlined--selected {
-    border-color: fade(@button-muted,50%);
-    background-color: fade(@button-muted,10%);
-    box-shadow: inset 0 0 @spacing8 0 fade(@button-muted,30%);
+.d-btn--circle--outlined--loading {
+    .d-btn--circle--outlined();
+    .d-btn-loading--dark();
 }
-
+.d-btn--circle--outlined--disabled {
+    .d-btn--circle();
+    .d-btn--disabled();
+}
 
 //  @@  DANGER CIRCLE STYLES
 //  ----------------------------------------------------------------------------
@@ -344,11 +444,19 @@
     &:hover {
         color: @button-danger;
     }
+    &:focus,
+    &:active {
+        color: @button-danger-hover;
+    }
 }
-.d-btn--circle--danger-hover:focus,
-.d-btn--circle--danger-hover:active,
-.d-btn--circle--danger-hover--selected {
-    color: @button-danger-hover;
+.d-btn--circle--danger-hover--loading {
+    .d-btn--circle--danger-hover();
+    .d-btn-loading--dark();
+}
+.d-btn--circle--danger-hover--disabled {
+    .d-btn--circle();
+    .d-btn--disabled();
+    border-color: transparent;
 }
 
 
@@ -357,11 +465,28 @@
     .d-btn--circle();
     .btn-danger-clear-states();
 }
+.d-btn--circle--danger--loading {
+    .d-btn--circle--danger();
+    .d-btn-loading--danger();
+}
+.d-btn--circle--danger--disabled {
+    .d-btn--circle();
+    .d-btn--disabled();
+    border-color: transparent;
+}
 
 //  --  Default, clear danger circle
 .d-btn--circle--danger--primary {
     .d-btn--circle();
     .btn-danger-primary-states();
+}
+.d-btn--circle--danger--primary--loading {
+    .d-btn--circle--danger--primary();
+    .d-btn-loading--white();
+}
+.d-btn--circle--danger--primary--disabled {
+    .d-btn--circle();
+    .d-btn--disabled();
 }
 
 //  @@  INVERTED CIRCLE STYLES
@@ -371,17 +496,41 @@
     .d-btn--circle();
     .btn-inverted-clear-states()
 }
+.d-btn--circle--inverted--loading {
+    .d-btn--circle--inverted();
+    .d-btn-loading--white();
+}
+.d-btn--circle--inverted--disabled {
+    .d-btn--circle();
+    .d-btn--disabled();
+}
 
 //  --  Outlined inverted style
 .d-btn--circle--inverted--outlined {
     .d-btn--circle--inverted();
     .btn-inverted-outlined-states()
 }
+.d-btn--circle--inverted--outlined--loading {
+    .d-btn--circle--inverted--outlined();
+    .d-btn-loading--white();
+}
+.d-btn--circle--inverted--outlined--disabled {
+    .d-btn--circle();
+    .d-btn--disabled();
+}
 
 //  --  Inverted Primary style
 .d-btn--circle--inverted--primary {
     .d-btn--circle--inverted();
     .btn-inverted-primary-states()
+}
+.d-btn--circle--inverted--primary--loading {
+    .d-btn--circle--inverted--primary();
+    .d-btn-loading();
+}
+.d-btn--circle--inverted--primary--disabled {
+    .d-btn--circle();
+    .d-btn--disabled();
 }
 
 //  @@  CIRCLE SIZES

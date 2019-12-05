@@ -304,8 +304,7 @@ exports.default = series(
         docStyles,
         buildSVGs,
     ),
-    buildDocs,
-    updateVersion
+    buildDocs
 );
 
 exports.watch = series(
@@ -313,3 +312,7 @@ exports.watch = series(
     startServer,
     watchFiles
 );
+
+exports.version = series(
+    updateVersion
+)
