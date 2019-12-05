@@ -21,26 +21,12 @@
                 <span class="d-text--sm">{{ title }}</span><br/>
                 <span class="d-font-weight--normal d-text--xs">{{ desc }}</span>
             </th>
-            <td class="code-example">.{{ class }}</td>
+            <td class="code-example">.{{ class }}<br/>.{{ class }}--disabled</td>
             <td style="text-align: center;" {% if name == 'inverted' %}class="d-padding-left16"{% endif %}>
                 {% assign buttons = "normal, loading, disabled" | split: ", " %}
                 {% for btn in buttons %}
-                    <button class="d-margin-x4 {{ class }}
-                        {% if btn == 'loading' %}
-                            {% if class == 'd-btn--circle--danger' %}
-                                d-btn-loading--danger
-                            {% elsif class == 'd-btn--circle--danger--primary' %}
-                                d-btn-loading--white
-                            {% elsif class == 'd-btn--circle--inverted' %}
-                                d-btn-loading--white
-                            {% elsif class == 'd-btn--circle--inverted--outlined' %}
-                                d-btn-loading--white
-                            {% elsif class == 'd-btn--circle--inverted--primary' %}
-                                d-btn-loading
-                            {% else %}
-                                d-btn-loading--dark
-                            {% endif %}
-                        {% endif %}"
+                    <button
+                        class="d-margin-x4 {{ class }}{% if btn == 'loading' %}--loading{% endif %}"
                         type="button"
                         aria-pressed="false"
                         {% if btn == 'disabled' %}disabled{% endif %}>
