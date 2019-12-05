@@ -303,9 +303,9 @@ exports.default = series(
         libStyles,
         docStyles,
         buildSVGs,
+        updateVersion,
     ),
-    buildDocs,
-    updateVersion
+    buildDocs
 );
 
 exports.watch = series(
