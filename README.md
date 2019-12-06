@@ -69,7 +69,7 @@ npm install gulp
 The Dialtone documentation website is built using Jekyll, a static HTML generator. To install Jekyll and its dependencies, do the following steps:
 
 - Switch to the `docs` folder in the Dialtone directory. `cd docs`
-- Install Bundler and Jekyll: `gem install jekyll bundler`
+- Install Bundler and Jekyll locally: `gem install --user-install bundler jekyll`
 - Install the Bundle: `bundle install`
 
 ### Building Dialtone
