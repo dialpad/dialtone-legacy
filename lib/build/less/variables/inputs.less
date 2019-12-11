@@ -7,7 +7,7 @@
 //  visit https://dialpad.design/components/inputs
 //
 //  ============================================================================
-//  $   INPUT STYLES
+//  @   INPUT STYLES
 //  ----------------------------------------------------------------------------
 @input-border:              @ash-darkest;
 @input-warning-border:      @sunflower-dark;
@@ -19,22 +19,21 @@
 @input-success-border:      @emerald;
 @input-success-text:        @color--emerald-text;
 @input-success-link:        darken(@input-success-text,15%);
-@input-padding:             (@spacing12 - @spacing1) (@spacing16 - @spacing1);     // Minus out 1px for the border
 @input-font-size:           @text--md;
-@input-line-height:         @line-height--xs;
 @input-button-radius:       0.25em;
 
 
 //  ============================================================================
-//  $   BASE INPUT STYLE MIXIN
+//  @   INPUTS (TEXT FIELDS & TEXTAREAS)
+//      Used to generate various text field and textarea sizes
 //  ----------------------------------------------------------------------------
-.input-base-style() {
+.input(@text, @padding, @line-height) {
     box-sizing: border-box;
 
     position: relative;
     display: inline-flex;
     flex: 1 0%;
-    padding: @input-padding;
+    padding: @padding;
     min-width: 0;
     width: 100%;
     outline: none;
@@ -46,9 +45,9 @@
               0 0 0 fade(@white,0%);
 
     font-weight: inherit;
-    font-size: @input-font-size;
+    font-size: @text;
     font-family: inherit;
-    line-height: @input-line-height;
+    line-height: @line-height;
 
     transition-timing-function: @transition--cubic-inOut;
     transition-duration: 100ms;
@@ -86,42 +85,77 @@
     }
 }
 
-//  ============================================================================
-//  $   STATE: WARNING
-//  ----------------------------------------------------------------------------
-.input-has-warning() {
-    border-color: @input-warning-border;
+//  Mixin to generate our various input validation states
+.input-validation(@border, @type) {
+    border-color: @border !important;
 
-    &:focus {
-        box-shadow: inset 0 0 @spacing2 @ash-dark, 0 0 0 @spacing4 fade(@input-warning-border,25%);
+    & when (@type = "input") {
+        &:focus {
+            box-shadow:
+                inset 0 0 @spacing2 @ash-dark,      // Inner gray shadow
+                0 0 0 @spacing4 fade(@border,25%);  // Validation box shadow
+        }
     }
-}
 
-//  ============================================================================
-//  $   STATE: ERROR
-//  ----------------------------------------------------------------------------
-.input-has-error() {
-    border-color: @input-error-border;
-
-    &:focus {
-        box-shadow: inset 0 0 @spacing2 @ash-dark, 0 0 0 @spacing4 fade(@input-error-border,25%);
+    & when (@type = "checkbox") {
+        &:focus,
+        &:checked:focus {
+            box-shadow: 0 0 0 @spacing4 fade(@border, 25%);
+        }
     }
-}
 
-//  ============================================================================
-//  $   STATE: SUCCESS
-//  ----------------------------------------------------------------------------
-.input-has-success() {
-    border-color: @input-success-border;
-
-    &:focus {
-        box-shadow: inset 0 0 @spacing2 @ash-dark, 0 0 0 @spacing4 fade(@input-success-border,25%);
+    & when (@type = "radio") {
+        &:focus,
+        &:checked:focus {
+            box-shadow:
+                inset 0 0 @spacing2 @white,
+                0 0 0 @spacing4 fade(@border, 25%);
+        }
     }
 }
 
 
+
 //  ============================================================================
-//  $   RADIO & CHECKBOX WRAPPER STYLES
+//  @   SELECT MENUS
+//      Used to generate various label sizes
+//  ----------------------------------------------------------------------------
+
+
+//  ============================================================================
+//  @   LABELS
+//      Used to generate various label sizes
+//  ----------------------------------------------------------------------------
+.label(@size, @weight: bold, @line-height: @line-height--md) {
+    box-sizing: border-box;
+
+    display: flex;
+    flex: 1 0%;
+    align-items: baseline;
+    justify-content: space-between;
+
+    font-size: @size;
+    color: currentColor;
+    fill: currentColor;
+    line-height: @line-height;
+
+    cursor: pointer;
+    word-break: break-word;
+    overflow-wrap: break-word;
+
+    legend& { cursor: default; }
+
+    & when (@weight = bold) {
+        font-weight: @font-weight--bold;
+    }
+    & when (@weight = normal) {
+        font-weight: @font-weight--normal;
+    }
+}
+
+
+//  ============================================================================
+//  @   RADIO & CHECKBOX WRAPPER STYLES
 //  ----------------------------------------------------------------------------
 .checkbox-radio-group() {
     display: flex;

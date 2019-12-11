@@ -18,59 +18,54 @@
 //  • LABELS
 //
 //  ============================================================================
-//  $  INPUTS
+//  @  INPUTS
 //  ----------------------------------------------------------------------------
-.d-input {
-    .input-base-style();
-}
-//  --  VALIDATION STATES
-.d-input--warning { .input-has-warning(); }
-.d-input--error   { .input-has-error(); }
-.d-input--success { .input-has-success(); }
+.d-input            { .input(@text--md, @input-button-padding, @input-button-line-height); }
+.d-input--xs        { .input(@text--xs, @input-button-padding--xs, @input-button-line-height--xs); }
+.d-input--sm        { .input(@text--sm, @input-button-padding--sm, @input-button-line-height--sm); }
+.d-input--lg        { .input(@text--lg, @input-button-padding--lg, @input-button-line-height--lg); }
+.d-input--xl        { .input(@text--xl, @input-button-padding--xl, @input-button-line-height--xl); }
 
-//  --  SIZES
-.d-input--xs  { .input-button-xs(); }
-.d-input--sm  { .input-button-sm(); }
-.d-input--lg  { .input-button-lg(); }
-.d-input--xl  { .input-button-xl(); }
+//  @@  VALIDATION STATES
+.d-input--warning   { .input-validation(@input-warning-border, input); }
+.d-input--error     { .input-validation(@input-error-border, input); }
+.d-input--success   { .input-validation(@input-success-border, input); }
 
 
 //  ============================================================================
-//  $  TEXTAREAS
+//  @  TEXTAREAS
 //  ----------------------------------------------------------------------------
 .d-textarea {
-    .input-base-style();
-    padding-left: @spacing12 - @spacing1;  // Minus out the border
-    padding-right: @spacing12 - @spacing1;  // Minus out the border
+    .input(@text--md, @textarea-padding, @input-button-line-height);
     min-height: 8rem;
 }
-
-//  --  VALIDATION STATES
-.d-textarea--warning { .input-has-warning(); }
-.d-textarea--error   { .input-has-error(); }
-.d-textarea--success { .input-has-success(); }
-
 //  --  SIZES
 .d-textarea--xs {
-    .input-button-xs();
+    .input(@text--xs, @textarea-padding, @input-button-line-height--xs);
     min-height: 4rem;
 }
 .d-textarea--sm {
-    .input-button-sm();
+    .input(@text--sm, @textarea-padding, @input-button-line-height--sm);
     min-height: 4.8rem;
 }
 .d-textarea--lg {
-    .input-button-lg();
+    .input(@text--lg, @textarea-padding, @input-button-line-height--lg);
     min-height: 9.2rem;
 }
 .d-textarea--xl {
-    .input-button-xl();
+    .input(@text--xl, @textarea-padding, @input-button-line-height--xl);
     min-height: 10rem;
 }
 
+//  @@  VALIDATION STATES
+.d-textarea--warning   { .input-validation(@input-warning-border, input); }
+.d-textarea--error     { .input-validation(@input-error-border, input); }
+.d-textarea--success   { .input-validation(@input-success-border, input); }
+
+
 
 //  ============================================================================
-//  $  SELECT MENU (NATIVE)
+//  @  SELECT MENU (NATIVE)
 //  ----------------------------------------------------------------------------
 .d-select {
     box-sizing: border-box;
@@ -106,8 +101,7 @@
                 appearance: none;
 
         //  [2] Update the styles
-        .input-base-style();
-        padding-right: 2em;
+        .input(@text--md, @input-button-padding, @input-button-line-height);
         height: 100%; // Fill the height of its parent
         background-color: @white;
 
@@ -124,12 +118,12 @@
     }
 }
 
-//  --  VALIDATION STATES
-.d-select--warning > select { .input-has-warning(); }
-.d-select--error > select   { .input-has-error(); }
-.d-select--success > select { .input-has-success(); }
+//  @@  VALIDATION STATES
+.d-select--warning > select { .input-validation(@input-warning-border,input); }
+.d-select--error > select   { .input-validation(@input-error-border,input); }
+.d-select--success > select { .input-validation(@input-success-border,input); }
 
-//  --  SIZES
+//  @@  SIZES
 .d-select--xs {
     font-size: @text--xs;
 
@@ -165,7 +159,7 @@
 
 
 //  ============================================================================
-//  $  FIELDSET
+//  @  FIELDSET
 //  ----------------------------------------------------------------------------
 fieldset {
     padding: @spacing0;
@@ -175,34 +169,19 @@ fieldset {
 
 
 //  ============================================================================
-//  $  LABELS
+//  @  LABELS
 //  ----------------------------------------------------------------------------
-.d-label {
-    box-sizing: border-box;
-
-    display: flex;
-    flex: 1 0%;
-    align-items: baseline;
-    justify-content: space-between;
-
-    color: currentColor;
-    fill: currentColor;
-    font-size: @text--md;
-    font-weight: @font-weight--bold;
-    line-height: @line-height--md;
-
-    cursor: pointer;
-    word-break: break-word;
-    overflow-wrap: break-word;
-
-    legend& { cursor: default; }
-}
+.d-label        { .label(@text--md); }      // Default
+.d-label--xs    { .label(@text--xs); }      // Extra Small
+.d-label--sm    { .label(@text--sm); }      // Small
+.d-label--lg    { .label(@text--lg); }      // Large
+.d-label--xl    { .label(@text--xl); }      // Extra Large
 
 
 //  ============================================================================
-//  $  COPY STYLES
+//  @  COPY STYLES
 //  ============================================================================
-//  $$ LABEL DESCRIPTION
+//  @$ LABEL DESCRIPTION
 //  ----------------------------------------------------------------------------
 .d-description {
     box-sizing: border-box;
@@ -215,7 +194,7 @@ fieldset {
     line-height: @line-height--md;
 }
 
-//  $$ INPUT MESSAGE
+//  @$ INPUT MESSAGE
 //  ----------------------------------------------------------------------------
 .d-input-message {
     box-sizing: border-box;
