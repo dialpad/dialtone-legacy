@@ -224,7 +224,6 @@ var buildDocs = function(done) {
     //  Make sure this feature is activated before running
     if (!settings.build) return done();
 
-    //  Build Jekyll
     return cp
         .spawn(
             'jekyll',
