@@ -107,7 +107,7 @@
 //  ============================================================================
 //  @@  STRIPED ROWS
 //  ----------------------------------------------------------------------------
-.d-table--striped-rows {
+.d-table--striped-rows tbody {
     tr:nth-child(even) th,
     tr:nth-child(even) td {
         background-color: fade(@ash, 50%);
@@ -115,7 +115,14 @@
 }
 //  @@  STRIPED COLUMNS
 //  ----------------------------------------------------------------------------
-.d-table--striped-columns {
+.d-table--striped-columns tbody {
+    //  Add borders
+    th,
+    td:not(:last-of-type) {
+        .d-border-right();
+    }
+
+    //  Background color
     td:nth-child(even) {
         background-color: fade(@ash, 50%);
     }
