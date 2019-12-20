@@ -8,74 +8,182 @@
 //
 //  TABLE OF CONTENTS
 //  • DEFAULT STYLE
+//  • STYLES
+//      - INVERTED STYLE
+//      - STRIPED COLUMNS
+//  • SIZES
+//      - COMPACT
+//      - SUPER COMPACT
+//  • HEADER ITEMS
+//      - SORT BUTTON
 //
 //  ============================================================================
-//  $   BASE STYLE
+//  @   DEFAULT STYLE
 //  ----------------------------------------------------------------------------
 .d-table {
     box-sizing: border-box;
 
     display: table;
-    margin: @spacing0;
+    .d-margin0();
     max-width: 100%;
-    width: 100%;
+    .d-width100();
     border-spacing: 0;
     border-collapse: collapse;
-    font-size: @text--xs;
-    line-height: @line-height--md;
+    .d-text--sm();
+    line-height: 1.428571429;
 
     th,
     td {
-        padding: @spacing8;
-        border-bottom: @border-width1 solid @ash-dark;
+        .d-padding16();
+        .d-border-bottom();
+        .d-border-color--ash-darker();
+        .d-color--dark-light();
         text-align: left;
-    }
+        transition: all 150ms @transition--cubic-inOut;
 
-    thead th {
-        padding-top: @spacing12;
-        padding-bottom: @spacing12;
-        border-bottom-color: @ash-darker;
-        text-transform: uppercase;
-        font-weight: 500;
-        font-size: @text--xxs;
-        line-height: @line-height--xs;
-    }
-
-    tbody tr:last-of-type {
-        td,
-        th {
-            border-bottom-width: 0;
+        //  --  Column Styles
+        //  --------------------------------------------------------------------------
+        //      Menu Column
+        //      Typically the last column for further table row actions
+        //  --------------------------------------------------------------------------
+        &.d-table__menu-col {
+            width: 4rem;
+            .d-padding-x8();
+            text-align: right;
         }
     }
 
-    tbody + tbody tr:first-of-type {
-        td,
-        th {
-            border-top: @border-width4 solid @ash-dark;
+    th {
+        .d-font-weight--bold();
+    }
+
+    //  @@  TABLE HEADER
+    //  --------------------------------------------------------------------------
+    thead th {
+        .d-padding-y6();
+        .d-border-bottom-width2();
+        .d-border-color--ash-darkest();
+        .d-text--xxs();
+        line-height: 1.818181818;
+        text-transform: uppercase;
+    }
+
+    //  @@  TABLE BODY
+    //  --------------------------------------------------------------------------
+    tbody tr {
+        &:last-of-type {
+            td,
+            th {
+                .d-border-bottom-width2();
+                .d-border-color--ash-darkest();
+            }
         }
     }
 }
 
+
 //  ============================================================================
-//  $   INVERTED STYLE
+//  @   STYLES
+//      These are additive modifying classes. You must include the base .d-table
+//      class in order for these various style classes to work.
+//  ============================================================================
+//  @@  INVERTED STYLE
 //  ----------------------------------------------------------------------------
 .d-table--inverted {
     th,
     td {
-        border-bottom-color: @ash-dark;
-        color: @white;
+        border-bottom-color: @ash-darker;
+        .d-color--light-dark();
     }
-    thead th {
-        border-bottom-color: @white;
+}
+
+//  @   STRIPES
+//  ============================================================================
+//  @@  STRIPED ROWS
+//  ----------------------------------------------------------------------------
+.d-table--striped-rows {
+    tr:nth-child(even) th,
+    tr:nth-child(even) td {
+        background-color: fade(@ash, 50%);
     }
-    tbody + tbody tr:first-of-type {
-        border-top-color: @white;
+}
+//  @@  STRIPED COLUMNS
+//  ----------------------------------------------------------------------------
+.d-table--striped-columns {
+    td:nth-child(even) {
+        background-color: fade(@ash, 50%);
+    }
+}
+
+//  @   ROW HOVER STYLES
+//  ----------------------------------------------------------------------------
+.d-table--row-hover {
+    //  Apply the hover only to items in the body?
+    tbody tr:hover {
+        td,
+        tr {
+            .d-background-color--ash();
+        }
     }
 }
 
 //  ============================================================================
-//  $   STRIPED ROW BACKGROUNDS
+//  @   SIZES
+//  ============================================================================
+//  @@  COMPACT SIZE
 //  ----------------------------------------------------------------------------
-.d-table--striped {
-    tr:nth-child(even) { background-color: lighten(@ash-dark,2.5%); }
+.d-table--compact {
+    th,
+    td {
+        .d-padding-y12();
+    }
+}
+
+//  @@  SUPER COMPACT SIZE
+//  ----------------------------------------------------------------------------
+.d-table--super-compact {
+    th,
+    td {
+        .d-padding-y8();
+    }
+}
+
+
+//  ============================================================================
+//  @   BUTTONS
+//  ============================================================================
+//  @@  SHARED STYLES
+//  ----------------------------------------------------------------------------
+.table-btn-styles() {
+    .d-btn--circle();
+    .d-padding2();
+    width: @spacing24;
+    height: @spacing24;
+
+    .d-svg.d-svg--system {
+        width: @icon-size--sm;
+        height: @icon-size--sm;
+    }
+}
+
+//  @@  SORT BUTTON
+//      Icon used: <IconArrowDownward />
+//  ----------------------------------------------------------------------------
+.d-table__btn-sort {
+    .table-btn-styles();
+
+    display: inline-block;
+    .d-bottom4--negative();
+    .d-margin-top12--negative();
+
+    &:hover {
+        color: @blue;
+    }
+}
+
+//  @@  MENU BUTTON
+//      Icon used: <IconMenuVertical />
+//  ----------------------------------------------------------------------------
+.d-table__btn-menu {
+    .table-btn-styles();
 }

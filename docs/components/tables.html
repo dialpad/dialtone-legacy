@@ -4,16 +4,20 @@ title: Tables
 description: Used to organize and list data set information. While data visualization helps quickly summarize a data set, data tables allows customers to compare and data individual data rows.
 ---
 <section class="dialtone-section16">
-    <h2 class="dialtone-title__section">Base Style</h2>
+    <header class="dialtone-section4">
+        <h2 class="dialtone-title__section">Default Style</h2>
+        <p class="dialtone-copy__normal">The default table style has comfortable padding of 16px within the table cells.</p>
+    </header>
     <div class="dialtone-example" data-example="yes" data-code="yes">
         <div class="dialtone-example__example">
             <table class="d-table">
                 <thead>
                     <tr>
-                        <th scope="col">Office</th>
+                        <th scope="col">Office <span class="d-table__btn-sort">{% include svg/arrow-downward.svg %}</span></th>
                         <th scope="col">Country</th>
                         <th scope="col" width="10%">Employees</th>
                         <th scope="col">Contact</th>
+                        <th scope="col" class="d-table__menu-col"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -23,6 +27,7 @@ description: Used to organize and list data set information. While data visualiz
                         <td>{{ i.country }}</td>
                         <td>{{ i.size }}</td>
                         <td>{{ i.contact }}</td>
+                        <td class="d-table__menu-col"><button class="d-table__btn-menu" role="button">{% include svg/menu-vertical.svg %}</button></td>
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -52,55 +57,5 @@ description: Used to organize and list data set information. While data visualiz
         </div>
     </div>
 </section>
-<section class="dialtone-section16">
-    <header class="dialtone-section4">
-        <h2 class="dialtone-title__section">Inverted Style</h2>
-        <p class="dialtone-copy__normal">Used when you want to display a data table on a darker background</p>
-    </header>
-    <div class="dialtone-example" data-example="yes" data-code="yes">
-        <div class="dialtone-example__example d-background-color--slate d-margin1--negative d-border-top-radius--md">
-            <table class="d-table d-table--inverted">
-                <thead>
-                    <tr>
-                        <th scope="col">Office</th>
-                        <th scope="col">Country</th>
-                        <th scope="col" width="10%">Employees</th>
-                        <th scope="col">Contact</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for i in site.data.tables.table-example %}
-                    <tr>
-                        <th scope="row">{{ i.office }}</th>
-                        <td>{{ i.country }}</td>
-                        <td>{{ i.size }}</td>
-                        <td>{{ i.contact }}</td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
-        <div class="dialtone-example__code">
-{% highlight html linenos %}
-<table class="d-table d-table--inverted">
-    <thead>
-        <tr>
-            <th scope="col">…</th>
-            <th scope="col">…</th>
-            <th scope="col" width="10%">…</th>
-            <th scope="col">…</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th scope="row">…</th>
-            <td>…</td>
-            <td>…</td>
-            <td>…</td>
-        </tr>
-    </tbody>
-</table>
-{% endhighlight %}
-        </div>
-    </div>
-</section>
+{% include_relative tables/stripes.html %}
+{% include_relative tables/inverted-tables.html %}
