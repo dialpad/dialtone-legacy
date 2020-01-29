@@ -68,10 +68,10 @@ var paths = {
     svgs: {
         sysInput: './lib/build/svg/system/**/*.svg',
         sysOutputLib: './lib/dist/svg/system/',
-        sysOutputDocs: './docs/_includes/svg/system/',
+        sysOutputDocs: './docs/_includes/icons/system/',
         brandInput: './lib/build/svg/brand/**/*.svg',
         brandOutputLib: './lib/dist/svg/brand/',
-        brandOutputDocs: './docs/_includes/svg/brand/',
+        brandOutputDocs: './docs/_includes/icons/brand/',
         outputVue: './lib/dist/vue/icons/',
     },
     build: {
