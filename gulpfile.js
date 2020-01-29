@@ -63,13 +63,16 @@ var paths = {
         inputLib: './lib/build/less/dialtone.less',
         outputLib: './lib/dist/css/',
         inputDocs: './docs/assets/less/*.less',
-        outputDocs: './docs/assets/css/'
+        outputDocs: './docs/assets/css/',
     },
     svgs: {
-        input: './lib/build/svg/**/*.svg',
-        outputLib: './lib/dist/svg/',
-        outputDocs: './docs/_includes/svg/',
-        outputVue: './lib/dist/vue/icons/'
+        sysInput: './lib/build/svg/system/**/*.svg',
+        sysOutputLib: './lib/dist/svg/system/',
+        sysOutputDocs: './docs/_includes/icons/system/',
+        brandInput: './lib/build/svg/brand/**/*.svg',
+        brandOutputLib: './lib/dist/svg/brand/',
+        brandOutputDocs: './docs/_includes/icons/brand/',
+        outputVue: './lib/dist/vue/icons/',
     },
     build: {
         input: './docs/',
@@ -162,13 +165,13 @@ var docStyles = function (done) {
 };
 
 //  --  Lint and optimize SVG files
-var buildSVGs = function(done) {
+var buildSystemSVGs = function(done) {
 
     //  Make sure this feature is activated before running
     if (!settings.svgs) return done();
 
-    //  Compile library files
-    return src(paths.svgs.input)
+    //  Compile system icons
+    return src(paths.svgs.sysInput)
         .pipe(replace(' fill="none"', ''))
         .pipe(replace(' fill="#000"', ''))
         .pipe(replace(' width="24"', ''))
@@ -205,8 +208,55 @@ var buildSVGs = function(done) {
                 }
             }]
         }))
-        .pipe(dest(paths.svgs.outputLib))
-        .pipe(dest(paths.svgs.outputDocs))
+        .pipe(dest(paths.svgs.sysOutputLib))
+        .pipe(dest(paths.svgs.sysOutputDocs))
+        .pipe(replace('<svg', '<template>\n  <svg'))
+        .pipe(replace('</svg>', '</svg>\n</template>'))
+        .pipe(rename(function(file) {
+            var converted = file.basename.replace(/\b\S/g, t => t.toUpperCase()).replace(/[-]+/g, '');
+
+            file.basename = 'Icon' + converted;
+            file.extname = '.vue';
+        }))
+        .pipe(dest(paths.svgs.outputVue));
+};
+
+var buildBrandSVGs = function(done) {
+
+    //  Make sure this feature is activated before running
+    if (!settings.svgs) return done();
+    //  Compile brand icons
+    return src(paths.svgs.brandInput)
+        .pipe(replace('<svg', function(match) {
+            var name = path.parse(this.file.path).name;
+            var converted = name.toLowerCase().replace(/-(.)/g, function(match,group1) {
+                return group1.toUpperCase();
+            });
+            var title = name.replace(/\b\S/g, t => t.toUpperCase()).replace(/[-]+/g, " ");
+
+            return match + ' aria-hidden="true" focusable="false" aria-label="' + title + '" class="d-svg d-svg--native d-svg__' + converted + '"';
+        }))
+        .pipe(svgmin({
+            plugins: [{
+                convertPathData: {
+                    transformPrecision: 4,
+                }
+            }, {
+                cleanupNumericValues: {
+                    floatPrecision: 2,
+                }
+            }, {
+                collapseGroups: true,
+            }, {
+                removeTitle: true,
+            }, {
+                removeViewBox: false,
+            }, {
+                removeUselessStrokeAndFill: true,
+            }]
+        }))
+        .pipe(dest(paths.svgs.brandOutputLib))
+        .pipe(dest(paths.svgs.brandOutputDocs))
         .pipe(replace('<svg', '<template>\n  <svg'))
         .pipe(replace('</svg>', '</svg>\n</template>'))
         .pipe(rename(function(file) {
@@ -301,7 +351,8 @@ exports.default = series(
     parallel(
         libStyles,
         docStyles,
-        buildSVGs,
+        buildSystemSVGs,
+        buildBrandSVGs
     ),
     buildDocs
 );
