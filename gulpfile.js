@@ -1,20 +1,23 @@
 //
+//  ================================================================================
 //  @  SETTINGS
 //     Turn different build features on/off
-//  ------------------------------------------------------------
+//  ================================================================================
 var settings = {
     clean: true,        // Turn on/off clean tasks
     scripts: false,     // Turn on/off script tasks
     styles: true,       // Turn on/off style tasks
     svgs: true,         // Turn on/off SVG tasks
+    favicons: true,     // Turn on/off Favicons tasks
     sync: true,         // Turn on/off sync tasks
     build: true,        // Turn on/off build tasks
     watch: true         // Turn on/off watch tasks
 };
 
+//  ================================================================================
 //  @  PACKAGES
 //     What makes everything go
-//  ------------------------------------------------------------
+//  ================================================================================
 //  @@ GENERAL
 var {gulp, src, dest, watch, series, parallel} = require('gulp');
 var fs = require('fs');
@@ -23,6 +26,7 @@ var lazypipe = require('lazypipe');
 var rename = require('gulp-rename');
 var header = require('gulp-header');
 var browsersync = require('browser-sync').create();
+// var atoms = require('gulp-atoms')(gulp,cfg);
 var package = require('./package.json');
 
 //  @@ STYLES
@@ -41,19 +45,27 @@ var svgmin = settings.svgs ? require('gulp-svgmin') : null;
 var replace = settings.svgs ? require('gulp-replace') : null;
 var tap = settings.svgs ? require('gulp-tap') : null;
 
+//  @@ FAVICONS
+var favicon = settings.favicons ? require('gulp-favicons') : null;
+
 //  @@ BUILD
 var cp = settings.build ? require('child_process') : null;
 
 
+//  ================================================================================
 //  @  PATHS
 //     Where everything is in this project
-//  ------------------------------------------------------------
+//  ================================================================================
 var paths = {
     versionFile: './docs/_includes/version.html',
     clean: {
-        lib: './lib/dist/**/*',
+        libCss: './lib/dist/css/**/*',
+        libSvg: './lib/dist/svg/**/*',
+        libVue: './lib/dist/vue/**/*',
+        libFavicons: './lib/dist/favicons/**/*',
         docs: './docs/_site/**/*',
-        docsCache: './docs/.jekyll-cache/**/*'
+        docsCache: './docs/.jekyll-cache/**/*',
+        docsFavicons: './docs/assets/images/favicons/**/*'
     },
     scripts: {
         input: './lib/build/js/',
@@ -74,6 +86,28 @@ var paths = {
         brandOutputDocs: './docs/_includes/icons/brand/',
         outputVue: './lib/dist/vue/icons/',
     },
+    favicons: {
+        dpName: 'Dialpad',
+        dpBgColor: '#FFFFFF',
+        dpInput: './lib/build/favicons/dialpad/',
+        dpOutput: './lib/dist/favicons/dialpad/',
+        ucInput: './lib/build/favicons/uberconference/',
+        ucOutput: './lib/dist/favicons/uberconference/',
+        docsInput: './lib/build/favicons/',
+        docsOutput: './docs/assets/images/favicons/',
+        docsIcon: 'favicon-dialtone__512.png',
+        dp: 'favicon__512.png',
+        dpNotify: 'favicon-notification__512.png',
+        dpBeta: 'favicon-beta__512.png',
+        dpBetaNotify: 'favicon-beta-notification__512.png',
+        dpCsr: 'favicon-csr__512.png',
+        dpStaging: 'favicon-staging__512.png',
+        dpStagingNotify: 'favicon-staging-notification__512.png',
+        uc: 'favicon-uberconference__512.png',
+    },
+    mobile: {
+        output: './lib/dist/ios/'
+    },
     build: {
         input: './docs/',
         dest: './docs/_site/',
@@ -86,13 +120,14 @@ var paths = {
         docs: './docs/**/*',
         docsExcludeSite: '!./docs/_site/**/*',
         docsExcludeCSS: '!./docs/assets/css/**/*',
-        docsExcludeSVG: '!./docs/_includes/svg/**/*'
+        docsExcludeSVG: '!./docs/_includes/icons/**/*'
     }
 }
 
+//  ================================================================================
 //  @  BANNER
 //     This is inserted into all non-compiled files.
-//  ------------------------------------------------------------
+//  ================================================================================
 var banner = {
     main:
         '//\n' +
@@ -105,30 +140,48 @@ var banner = {
         '// ============================================================================\n'
 };
 
-//  @  TASKS
-//  ------------------------------------------------------------
-//  -- Remove pre-existing content from output folders
-var cleanDist = function(done) {
+//  ================================================================================
+//  @   TASKS
+//      Where everything happens
+//  ================================================================================
+//  @@  CLEAN UP
+//  ================================================================================
+//  --  Function to clean out folders / files
+const cleanUp = (items) => {
     // Make sure the feature is active before running
     if(!settings.clean) return done();
 
     // Clean dist folders
-    del.sync([
-        paths.clean.lib,
+    return Promise.all([
+        del.sync(items)
+    ]);
+};
+
+//  --  Clean out doc and library files
+const cleanSite = () => {
+    return cleanUp([
+        paths.clean.libCss,
+        paths.clean.libSvg,
+        paths.clean.libVue,
         paths.clean.docs,
         paths.clean.docsCache
     ]);
+}
 
-    // Signal completion
-    return done();
-};
+//  --  Clean out Favicons
+const cleanFavicons = () => {
+    return cleanUp([
+        paths.clean.libFavicons,
+        paths.clean.docsFavicons
+    ]);
+}
 
-//  --  JS tasks
-// var jsTasks = lazypipe();
-
-//  --  Lint, minify, and concatenate style files
-var libStyles = function (done) {
-
+//  ================================================================================
+//  @@  COMPILE CSS
+//      Lint, minify, and concatenate style files
+//  ================================================================================
+//  --  LIBRARY FILES
+var libStyles = function(done) {
     //  Make sure this feature is activated before running
     if (!settings.styles) return done();
 
@@ -144,10 +197,12 @@ var libStyles = function (done) {
         .pipe(rename({ suffix: '.min' }))
         .pipe(dest(paths.styles.outputLib))
         .pipe(dest(paths.styles.outputDocs));
+
+    done();
 };
 
-//  --  Lint, minify, and concatenate style files
-var docStyles = function (done) {
+//  --  DOCUMENTATION FILES
+var docStyles = function(done) {
 
     //  Make sure this feature is activated before running
     if (!settings.styles) return done();
@@ -162,9 +217,14 @@ var docStyles = function (done) {
         ]))
         .pipe(rename({ suffix: '.min' }))
         .pipe(dest(paths.styles.outputDocs));
+
+    done();
 };
 
-//  --  Lint and optimize SVG files
+//  ================================================================================
+//  @@  COMPILE SVGS
+//      Lint and optimize SVG files
+//  ================================================================================
 var buildSystemSVGs = function(done) {
 
     //  Make sure this feature is activated before running
@@ -219,6 +279,8 @@ var buildSystemSVGs = function(done) {
             file.extname = '.vue';
         }))
         .pipe(dest(paths.svgs.outputVue));
+
+    done();
 };
 
 var buildBrandSVGs = function(done) {
@@ -266,9 +328,91 @@ var buildBrandSVGs = function(done) {
             file.extname = '.vue';
         }))
         .pipe(dest(paths.svgs.outputVue));
+
+    done();
 };
 
-//  --  Build the documentation website
+//  ================================================================================
+//  @@  FAVICONS
+//  ================================================================================
+//  --  Build Favicon Task
+const generateFavicons = (type, input, output) => {
+    //  Make sure this feature is activated before running
+    if (!settings.favicons) return done();
+
+    if (type === 'dp') {
+        var favInput = paths.favicons.dpInput + input;
+        var favOutput = paths.favicons.dpOutput + output;
+    }
+    else if (type === 'uc') {
+        var favInput = paths.favicons.ucInput + input;
+        var favOutput = output;
+    }
+    else if (type === 'docs') {
+        var favInput = paths.favicons.docsInput + input;
+        var favOutput = output;
+    }
+
+    return src(favInput)
+        .pipe(favicon({
+            appName: 'Dialpad',
+            appShortName: null,
+            appDescription: null,
+            developerName: 'Dialpad',
+            developerURL: 'https://dialpad.com/',
+            background: '#FFFFFF',
+            url: 'https://dialpad.com/',
+            display: 'standalone',
+            orientation: 'portrait',
+            scope: '/',
+            start_url: '/',
+            version: null,
+            logging: false,
+            html: '/',
+            pipeHTML: false,
+            replace: true,
+            icons: {
+                appleStartup: false,
+                firefox: false,
+                yandex: false
+            }
+        }))
+        .pipe(dest(favOutput));
+};
+
+//  --  ALL THE FAVICONS TO CREATE
+//  --------------------------------------------------------------------------------
+//      DIALPAD
+//  --------------------------------------------------------------------------------
+const faviconDp = () => { return generateFavicons('dp', paths.favicons.dp, 'default/'); }
+const faviconDpNotify = () => { return generateFavicons('dp', paths.favicons.dpNotify, 'default-notify/'); }
+
+//      DIALPAD BETA
+//  --------------------------------------------------------------------------------
+const faviconDpBeta = () => { return generateFavicons('dp', paths.favicons.dpBeta, 'beta/'); }
+const faviconDpBetaNotify = () => { return generateFavicons('dp', paths.favicons.dpBetaNotify, 'beta/'); }
+
+//      DIALPAD CSR
+//  --------------------------------------------------------------------------------
+const faviconDpCsr = () => { return generateFavicons('dp', paths.favicons.dpCsr, 'csr/'); }
+
+//      DIALPAD STAGING
+//  --------------------------------------------------------------------------------
+const faviconDpStaging = () => { return generateFavicons('dp', paths.favicons.dpStaging, 'staging/'); }
+const faviconDpStagingNotify = () => { return generateFavicons('dp', paths.favicons.dpStagingNotify, 'staging-notify/'); }
+
+//      UBERCONFERENCE
+//  --------------------------------------------------------------------------------
+const faviconUberConference = () => { return generateFavicons('uc', paths.favicons.uc, paths.favicons.ucOutput); }
+
+//      DIALTONE
+//  --------------------------------------------------------------------------------
+const faviconDialtone = () => { return generateFavicons('docs', paths.favicons.docsIcon, paths.favicons.docsOutput); }
+
+
+//  ================================================================================
+//  @@  BUILD SITE
+//  ================================================================================
 var buildDocs = function(done) {
 
     //  Make sure this feature is activated before running
@@ -289,7 +433,10 @@ var buildDocs = function(done) {
     done();
 };
 
-//  --  Start the server
+
+//  ================================================================================
+//  @@  START SERVER
+//  ================================================================================
 var startServer = function(done) {
 
     //  Make sure this feature is activated before running
@@ -308,6 +455,10 @@ var startServer = function(done) {
     done();
 };
 
+
+//  ================================================================================
+//  @@  RELOAD THE BROWSER
+//  ================================================================================
 //  --  Reload the browser when files change
 var reloadBrowser = function(done) {
 
@@ -319,7 +470,10 @@ var reloadBrowser = function(done) {
     done();
 };
 
-//  --  Watch for changes
+
+//  ================================================================================
+//  @@  WATCH CHANGES
+//  ================================================================================
 var watchFiles = function(done) {
 
     //  Make sure this feature is activated before running
@@ -343,11 +497,12 @@ var updateVersion = function(done) {
     done();
 }
 
-//  @  EXPORT TASKS
-//  ------------------------------------------------------------
-//  --  DEFAULT TASK
+//  ================================================================================
+//  @   EXPORT TASKS
+//  ================================================================================
+//  --  BUILD OUT THE SITE BUT DON'T START THE SERVER
 exports.default = series(
-    cleanDist,
+    cleanSite,
     parallel(
         libStyles,
         docStyles,
@@ -363,6 +518,21 @@ exports.watch = series(
     watchFiles
 );
 
+//  --  UPDATES DIALTONE VERSION
 exports.version = series(
     updateVersion
-)
+);
+
+//  --  GENERATES ALL DIALPAD / UC FAVICONS
+exports.favicons = series(
+    cleanFavicons,
+    faviconDp,
+    faviconDpNotify,
+    faviconDpBeta,
+    faviconDpBetaNotify,
+    faviconDpCsr,
+    faviconDpStaging,
+    faviconDpStagingNotify,
+    faviconDialtone,
+    faviconUberConference,
+);
