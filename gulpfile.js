@@ -360,7 +360,8 @@ const generateFavicons = (type, input, output) => {
             appDescription: null,
             developerName: 'Dialpad',
             developerURL: 'https://dialpad.com/',
-            background: '#FFFFFF',
+            background: null,
+            theme_color: "#fff",
             url: 'https://dialpad.com/',
             display: 'standalone',
             orientation: 'portrait',
@@ -371,6 +372,7 @@ const generateFavicons = (type, input, output) => {
             html: '/',
             pipeHTML: false,
             replace: true,
+            pixel_art: true,
             icons: {
                 appleStartup: false,
                 firefox: false,
