@@ -91,6 +91,8 @@ var paths = {
         dpBgColor: '#FFFFFF',
         dpInput: './lib/build/favicons/dialpad/',
         dpOutput: './lib/dist/favicons/dialpad/',
+        ucInput: './lib/build/favicons/uberconference/',
+        ucOutput: './lib/dist/favicons/uberconference/',
         docsInput: './lib/build/favicons/',
         docsOutput: './docs/assets/images/favicons/',
         docsIcon: 'favicon-dialtone__512.png',
@@ -101,6 +103,7 @@ var paths = {
         dpCsr: 'favicon-csr__512.png',
         dpStaging: 'favicon-staging__512.png',
         dpStagingNotify: 'favicon-staging-notification__512.png',
+        uc: 'favicon-uberconference__512.png',
     },
     mobile: {
         output: './lib/dist/ios/'
@@ -333,13 +336,17 @@ var buildBrandSVGs = function(done) {
 //  @@  FAVICONS
 //  ================================================================================
 //  --  Build Favicon Task
-const generateFavicons = (type, input, output, docs) => {
+const generateFavicons = (type, input, output) => {
     //  Make sure this feature is activated before running
     if (!settings.favicons) return done();
 
     if (type === 'dp') {
         var favInput = paths.favicons.dpInput + input;
         var favOutput = paths.favicons.dpOutput + output;
+    }
+    else if (type === 'uc') {
+        var favInput = paths.favicons.ucInput + input;
+        var favOutput = output;
     }
     else if (type === 'docs') {
         var favInput = paths.favicons.docsInput + input;
@@ -393,6 +400,10 @@ const faviconDpCsr = () => { return generateFavicons('dp', paths.favicons.dpCsr,
 //  --------------------------------------------------------------------------------
 const faviconDpStaging = () => { return generateFavicons('dp', paths.favicons.dpStaging, 'staging/'); }
 const faviconDpStagingNotify = () => { return generateFavicons('dp', paths.favicons.dpStagingNotify, 'staging-notify/'); }
+
+//      UBERCONFERENCE
+//  --------------------------------------------------------------------------------
+const faviconUberConference = () => { return generateFavicons('uc', paths.favicons.uc, paths.favicons.ucOutput); }
 
 //      DIALTONE
 //  --------------------------------------------------------------------------------
@@ -523,4 +534,5 @@ exports.favicons = series(
     faviconDpStaging,
     faviconDpStagingNotify,
     faviconDialtone,
+    faviconUberConference,
 );
