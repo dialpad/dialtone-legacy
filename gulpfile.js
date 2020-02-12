@@ -59,11 +59,13 @@ var cp = settings.build ? require('child_process') : null;
 var paths = {
     versionFile: './docs/_includes/version.html',
     clean: {
-        lib: './lib/dist/**/*',
+        libCss: './lib/dist/css/**/*',
+        libSvg: './lib/dist/svg/**/*',
+        libVue: './lib/dist/vue/**/*',
+        libFavicons: './lib/dist/favicons/**/*',
         docs: './docs/_site/**/*',
         docsCache: './docs/.jekyll-cache/**/*',
-        favicons: './lib/dist/favicons/**/*',
-        docsFavicons: './docs/assets/images/favicons/**/*',
+        docsFavicons: './docs/assets/images/favicons/**/*'
     },
     scripts: {
         input: './lib/build/js/',
@@ -115,7 +117,7 @@ var paths = {
         docs: './docs/**/*',
         docsExcludeSite: '!./docs/_site/**/*',
         docsExcludeCSS: '!./docs/assets/css/**/*',
-        docsExcludeSVG: '!./docs/_includes/svg/**/*'
+        docsExcludeSVG: '!./docs/_includes/icons/**/*'
     }
 }
 
@@ -155,7 +157,9 @@ const cleanUp = (items) => {
 //  --  Clean out doc and library files
 const cleanSite = () => {
     return cleanUp([
-        paths.clean.lib,
+        paths.clean.libCss,
+        paths.clean.libSvg,
+        paths.clean.libVue,
         paths.clean.docs,
         paths.clean.docsCache
     ]);
@@ -164,7 +168,7 @@ const cleanSite = () => {
 //  --  Clean out Favicons
 const cleanFavicons = () => {
     return cleanUp([
-        paths.clean.favicons,
+        paths.clean.libFavicons,
         paths.clean.docsFavicons
     ]);
 }
@@ -190,6 +194,8 @@ var libStyles = function(done) {
         .pipe(rename({ suffix: '.min' }))
         .pipe(dest(paths.styles.outputLib))
         .pipe(dest(paths.styles.outputDocs));
+
+    done();
 };
 
 //  --  DOCUMENTATION FILES
@@ -208,6 +214,8 @@ var docStyles = function(done) {
         ]))
         .pipe(rename({ suffix: '.min' }))
         .pipe(dest(paths.styles.outputDocs));
+
+    done();
 };
 
 //  ================================================================================
@@ -268,6 +276,8 @@ var buildSystemSVGs = function(done) {
             file.extname = '.vue';
         }))
         .pipe(dest(paths.svgs.outputVue));
+
+    done();
 };
 
 var buildBrandSVGs = function(done) {
@@ -315,6 +325,8 @@ var buildBrandSVGs = function(done) {
             file.extname = '.vue';
         }))
         .pipe(dest(paths.svgs.outputVue));
+
+    done();
 };
 
 //  ================================================================================
@@ -478,7 +490,7 @@ var updateVersion = function(done) {
 //  @   EXPORT TASKS
 //  ================================================================================
 //  --  BUILD OUT THE SITE BUT DON'T START THE SERVER
-exports.build = series(
+exports.default = series(
     cleanSite,
     parallel(
         libStyles,
@@ -489,9 +501,8 @@ exports.build = series(
     buildDocs
 );
 
-//  --  BUILD SITE + START SERVER
-exports.default = series(
-    exports.build,
+exports.watch = series(
+    exports.default,
     startServer,
     watchFiles
 );

@@ -1,0 +1,102 @@
+---
+layout: page
+title: Favicons
+description: Dialtone provides various favicons that can be used by our various products and states.
+---
+<section class="dialtone-section16">
+    <header class="dialtone-section2">
+        <h2 class="dialtone-title__section">Favicon Sizes</h2>
+        <p class="dialtone-copy__normal">It used to be that a 16x16 <code class="code-example">favicon.ico</code> file was enough. With the explosion of smart devices the last 15 years, its a bit more confusing about what favicon to provide to which device. Compounding this problem is the seemingly lack of firm documentation about favicons and their sizes and formats. Below represents our attempt to compile a full list of favicons. Much thanks goes to the <a href="https://github.com/audreyr/favicon-cheat-sheet" target="_blank">Favicon Cheat Sheet</a>, <a href="https://realfavicongenerator.net/" target="_blank">RealFaviconGenerator.net</a> and its author <strong>Philippe Bernard</strong>, and <a href="https://www.emergeinteractive.com/insights/detail/The-Essentials-of-FavIcons/">"The 2020 Guide to Favicons for Nearly Everyone and Every Browser"</a> by Greg Gant.</p>
+        <p class="dialtone-copy__normal">Each project can choose which sizes they will support, but Dialtone's goal is to at least provide all the Favicon sizes. Legacy favicons icons are grayed out and can be skipped if desired.</p>
+    </header>
+    <table class="dialtone-table">
+        <thead>
+            <tr>
+                <th scope="col" width="15%">Size</th>
+                <th scope="col" width="10%">Type</th>
+                <th scope="col">Purpose</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in site.data.favicons.sizes %}
+            {% assign size = i.size %}
+            {% assign type = i.type %}
+            {% assign desc = i.desc %}
+            <tr{% if i.active == "no" %} class='dialtone-table__disabled'{% endif %}>
+                <th scope="row" class="d-font-family--mono">{{ size }}</th>
+                <td class="d-font-family--mono">{{ type }}</td>
+                <td>{{ desc }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+<section class="dialtone-section16">
+    <header class="dialtone-section2">
+        <h2 class="dialtone-title__section">HTML</h2>
+        <p class="dialtone-copy__normal">Taking the above information into consideration, here's the recommended HTML to be placed within the <code class="code-example"><head></head></code> tags. <strong>Note:</strong> the <code class="code-example">favicon.ico</code> should be listed only if the file isn't located in the root folder. If it is stored anywhere else, you need to specify the path to it.</p>
+    </header>
+    <div class="dialtone-example" data-example="no" data-code="yes">
+        <div class="dialtone-example__code">
+{% highlight html linenos %}
+<!-- Generic -->
+<link rel="icon" href="/path/to/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" href="/path/to/favicon-32.png" sizes="32x32">
+<link rel="icon" href="/path/to/favicon-57.png" sizes="57x57">
+<link rel="icon" href="/path/to/favicon-76.png" sizes="76x76">
+<link rel="icon" href="/path/to/favicon-96.png" sizes="96x96">
+<link rel="icon" href="/path/to/favicon-128.png" sizes="128x128">
+<link rel="icon" href="/path/to/favicon-192.png" sizes="192x192">
+<link rel="icon" href="/path/to/favicon-228.png" sizes="228x228">
+
+<!-- Android -->
+<link rel="shortcut icon" sizes="192x192" href=“/path/to/favicon-192.png">
+
+<!-- iOS -->
+<link rel="apple-touch-icon" href="/path/to/favicon-120.png" sizes="120x120">
+<link rel="apple-touch-icon" href="path/to/favicon-152.png" sizes="152x152">
+<link rel="apple-touch-icon" href="path/to/favicon-180.png" sizes="180x180">
+
+<!-- Windows 8 IE 10 -->
+<meta name="msapplication-TileColor" content="#FFFFFF">
+<meta name="msapplication-TileImage" content="/path/to/favicon-144.png">
+
+<!-- Windows 8.1 and IE11 and above -->
+<meta name="msapplication-config" content="/path/to/browserconfig.xml" />
+{% endhighlight %}
+        </div>
+    </div>
+</section>
+<section class="dialtone-section16">
+    <header class="dialtone-section2">
+        <h2 class="dialtone-title__section">Browser Config File</h2>
+        <p class="dialtone-copy__normal">Here's an example of the browserconfig.xml file:</p>
+    </header>
+    <div class="dialtone-example" data-example="no" data-code="yes">
+        <div class="dialtone-example__code">
+{% highlight xml linenos %}
+<?xml version="1.0" encoding="utf-8"?>
+<browserconfig>
+    <msapplication>
+        <tile>
+            <square70x70logo src="/path/to/mstile-70x70.png"/>
+            <square150x150logo src="/path/to/mstile-150x150.png"/>
+            <wide310x150logo src="/path/to/mstile-310x150.png"/>
+            <square310x310logo src="/path/to/mstile-310x310.png"/>
+            <TileColor>#FFFFFF</TileColor>
+        </tile>
+    </msapplication>
+</browserconfig>
+{% endhighlight %}
+        </div>
+    </div>
+</section>
+<section class="dialtone-section16">
+    <header class="dialtone-section2">
+        <h2 class="dialtone-title__section">Upcoming Changes</h2>
+        <p class="dialtone-copy__normal">Dialtone is exploring the following items for future release:</p>
+        <ul class="dialtone-copy__normal">
+            <li>"Dark mode" favicons</li>
+            <li>SVG support</li>
+        </ul>
+</section>
