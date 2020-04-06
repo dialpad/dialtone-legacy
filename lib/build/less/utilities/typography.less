@@ -25,14 +25,12 @@
 // below. Can remove once we fix the font issues in dialpad.
 @define-font-face: true;
 
-if((@define-font-face = true), each(@font-family-weights, {
+if((@define-font-face = true), each(@font-family, {
     @font-face {
         font-style: "normal";
         font-weight: @key;
-        font-family: "MarkWeb";
-        src: url("@{font-path}@{value}.eot") format("eof"),
-             url("@{font-path}@{value}.eot?#iefix") format("embedded-opentype"),
-             url("@{font-path}@{value}.woff") format("woff");
+        font-family: "TTNorms";
+        src: url("@{font-path}@{value}.ttf") format("truetype");
     };
 }));
 
@@ -40,6 +38,7 @@ if((@define-font-face = true), each(@font-family-weights, {
 //  $   FONT FAMILY
 //  ----------------------------------------------------------------------------
 .d-font-family--mark            { font-family: @font-family--mark; }
+.d-font-family--ttnorm          { font-family: @font-family--ttnorms; }
 .d-font-family--sans            { font-family: @font-family--sans; }
 .d-font-family--mono            { font-family: @font-family--mono; }
 .d-font-family--inherit         { font-family: inherit; }
