@@ -35,7 +35,7 @@
     font-family: inherit;
     color: @button-font-color;
     font-size: @button-font-size;
-    line-height: @button-line-height;
+    line-height: @input-button-line-height;
 
     cursor: pointer;
     transition-timing-function: @transition--cubic-inOut;
@@ -44,6 +44,9 @@
 
     user-select: none;
     fill: currentColor;
+
+    //  Set base icon size
+    .d-svg();
 
     //  --  STATES
     //  ------------------------------------------------------------------------
@@ -94,18 +97,12 @@
 //  ----------------------------------------------------------------------------
 .d-btn__icon {
     display: flex;
-    margin-top: -(@spacing4 + @spacing1);
-    margin-right: @spacing4;
-    margin-bottom: -(@spacing4);
-    margin-left: -(@spacing4);
-    width: @icon-size--md;
-    height: @icon-size--md;
+    margin: -.4rem .4rem -.4rem -.2rem;
 
-    //  If the icon is last, unset the left margin and apply it
-    //  to the right side instead.
-    &.d-order--last {
-        margin-left: unset;
-        margin-right: -(@spacing8);    // Offset button left/right padding
+    &.d-btn__icon--last {
+        order: 1;
+        margin-left: .4rem;
+        margin-right: -.2rem;
     }
 }
 
@@ -329,15 +326,29 @@
 //  ============================================================================
 //  @   BUTTON SIZES
 //  ----------------------------------------------------------------------------
-.d-btn--xs { .input-button-xs(); }
-.d-btn--sm { .input-button-sm(); }
+.d-btn--xs {
+    .input-button-xs();
+    .d-svg {
+        .d-svg--xs();
+    }
+}
+.d-btn--sm {
+    .input-button-sm();
+    .d-svg {
+        .d-svg--sm();
+    }
+}
 .d-btn--lg {
     .input-button-lg();
-    padding: (@spacing12 + @spacing1) (@spacing16 + @spacing2);
+    .d-svg {
+        .d-svg--lg();
+    }
 }
 .d-btn--xl {
     .input-button-xl();
-    padding: (@spacing16 - @spacing1) (@spacing24 - @spacing2);
+    .d-svg {
+        .d-svg--xl();
+    }
 }
 
 
@@ -352,7 +363,7 @@
 
     //  Now change them
     .d-color--dark-light();
-    padding: (@spacing12 - @spacing1);
+    padding: @spacing8;
     .d-border-radius--circle();
     background-color: fade(@button-muted,0%);
     transition: all 150ms @transition--cubic-inOut;
@@ -361,6 +372,9 @@
     .d-btn__icon {
         margin: unset;
     }
+    //  Re-size the icon. Base size is 18px
+    .d-svg--sm();
+
     //  If there's a label, hide it
     .d-btn__label {
         display: none;
@@ -537,16 +551,20 @@
 //  @@  CIRCLE SIZES
 //  ----------------------------------------------------------------------------
 .d-btn--circle--xs {
-    padding: @spacing6 - @spacing1;     // Minus out 1px for the border
+    .d-btn--xs();
+    padding: @spacing4;
 }
 .d-btn--circle--sm {
-    padding: @spacing8;
+    .d-btn--sm();
+    padding: @spacing6;
 }
 .d-btn--circle--lg {
+    .d-btn--lg();
     padding: @spacing12 + @spacing1;
 }
 .d-btn--circle--xl {
-    padding: @spacing16 - @spacing1;    // Minus out 1px for the border
+    .d-btn--xl();
+    padding: @spacing16 - @spacing1;
 }
 
 

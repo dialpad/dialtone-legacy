@@ -23,8 +23,8 @@
 .d-input            { .input(@text--md, @input-button-padding, @input-button-line-height); }
 .d-input--xs        { .input(@text--xs, @input-button-padding--xs, @input-button-line-height--xs); }
 .d-input--sm        { .input(@text--sm, @input-button-padding--sm, @input-button-line-height--sm); }
-.d-input--lg        { .input(@text--lg, @input-button-padding--lg, @input-button-line-height--lg); }
-.d-input--xl        { .input(@text--xl, @input-button-padding--xl, @input-button-line-height--xl); }
+.d-input--lg        { .input(@text--xl, @input-button-padding--lg, @input-button-line-height--lg); }
+.d-input--xl        { .input(@headline--sm, @input-button-padding--xl, @input-button-line-height--xl); }
 
 //  @@  VALIDATION STATES
 .d-input--warning   { .input-validation(@input-warning-border, input); }
@@ -49,11 +49,11 @@
     min-height: 4.8rem;
 }
 .d-textarea--lg {
-    .input(@text--lg, @textarea-padding, @input-button-line-height--lg);
+    .input(@text--xl, @textarea-padding, @input-button-line-height--lg);
     min-height: 9.2rem;
 }
 .d-textarea--xl {
-    .input(@text--xl, @textarea-padding, @input-button-line-height--xl);
+    .input(@headline--sm, @textarea-padding, @input-button-line-height--xl);
     min-height: 10rem;
 }
 
@@ -71,7 +71,8 @@
     box-sizing: border-box;
 
     position: relative;
-    font-size: @input-font-size;
+    font-size: @text--md;
+    line-height: @input-button-line-height;
 
     //  --  Creat some arrows
     &:before,
@@ -126,6 +127,7 @@
 //  @@  SIZES
 .d-select--xs {
     font-size: @text--xs;
+    line-height: @input-button-line-height--xs;
 
     > select {
         .input-button-xs();
@@ -134,6 +136,7 @@
 }
 .d-select--sm {
     font-size: @text--sm;
+    line-height: @input-button-line-height--sm;
 
     > select {
         .input-button-sm();
@@ -141,7 +144,8 @@
     }
 }
 .d-select--lg {
-    font-size: @text--lg;
+    font-size: @text--xl;
+    line-height: @input-button-line-height--lg;
 
     > select {
         .input-button-lg();
@@ -149,7 +153,8 @@
     }
 }
 .d-select--xl {
-    font-size: @text--lg;
+    font-size: @headline--sm;
+    line-height: @input-button-line-height--xl;
 
     > select {
         .input-button-xl();
