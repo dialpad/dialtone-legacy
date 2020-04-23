@@ -1,0 +1,89 @@
+//
+//  DIALTONE
+//  COMPONENTS: LINKS
+//
+//  These are link classes for Dialpad's design system Dialtone.
+//  For further documentation of these and other classes,
+//  visit https://dialpad.design/components/links
+//
+//  TABLE OF CONTENTS
+//  • BASE STYLE
+//  • ALTERNATE STYLES
+//
+//  ============================================================================
+//  @   BASE STYLE
+//  ----------------------------------------------------------------------------
+.d-link {
+    //  Set component CSS vars
+    --link-color--default:          var(--color--blue);
+    --link-color--hover:            var(--color--blue-dark);
+    --link-background--color:       fade(@white,0%);
+    --link-transition--duration:    @transition--duration30;
+
+    box-sizing: border-box;
+    position: relative;
+    .d-flex--center();
+    display: inline-flex;
+    .d-margin0();
+    .d-padding0();
+
+    border: 0;
+    background-color: var(--link-background--color);
+    font: inherit;
+    color: var(--link-color--default);
+    text-decoration: underline;
+
+    transition: all var(--link-transition--duration) @transition--cubic-inOut;
+    cursor: pointer;
+    fill: currentColor;
+
+    //  Reset button appearance
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+
+    &:hover {
+        color: var(--link-color--hover);
+        text-decoration: underline;
+    }
+}
+
+
+//  ============================================================================
+//  @   ALTERNATE STYLES
+//  ============================================================================
+//  @@  DANGER
+//  ----------------------------------------------------------------------------
+.d-link--danger {
+    .d-link();
+
+    --link-color--default:          var(--color--wildberry);
+    --link-color--hover:            @button-danger-hover;
+}
+
+//  @@  DARK
+//  ----------------------------------------------------------------------------
+.d-link--dark {
+    .d-link();
+
+    --link-color--default:          var(--color--dark-light);
+    --link-color--hover:            #000;
+}
+
+//  @@  INVERTED
+//  ----------------------------------------------------------------------------
+.d-link--inverted {
+    .d-link();
+
+    --link-color--default:          var(--color--light);
+    --link-color--hover:            var(--color--white);
+}
+
+//  @@  INVERTED DANGER
+//  ----------------------------------------------------------------------------
+.d-link--inverted--danger {
+    .d-link();
+
+    --link-color--default:          var(--color--wildberry-light);
+    --link-color--hover:            var(--color--wildberry-lighter);
+}
