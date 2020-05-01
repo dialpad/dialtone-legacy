@@ -319,25 +319,32 @@ body {
 //  --  LOGO
 //  ----------------------------------------------------------------------------
 .dialtone-logo {
-    color: @blue;
+    display: block;
+    color: var(--color--blue);
+
+    &:hover {
+        color: var(--color--blue-dark);
+    }
 
     .dialtone-logo__svg,
     .dialtone-glyph__svg {
-        fill: @blue;
         display: none;
+        color: inherit;
+        fill: currentColor;
     }
 
     @media screen and (max-width: 723.9px) {
         .dialtone-navbar[data-state="open"] & .dialtone-glyph__svg {
-            fill: @white;
+            color: var(--color--white);
+
+            &:hover {
+                color: var(--color--ash);
+            }
         }
 
         .dialtone-glyph__svg {
             display: block;
-            .d-svg--lg();
-            width: @icon-size--md;
-            height: @icon-size--md;
-            fill: @blue !important;
+            .d-svg--size48();
         }
     }
     @media screen and (min-width: 724px) {
@@ -556,8 +563,8 @@ body {
     }
 }
 
-.dialtone-icon-card__icon > svg {
-    .d-svg--lg();
+.dialtone-icon-card__icon {
+    .d-svg--size48();
 }
 
 .dialtone-icon-card__title {
