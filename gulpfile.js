@@ -234,8 +234,7 @@ var buildSystemSVGs = function(done) {
     return src(paths.svgs.sysInput)
         .pipe(replace(' fill="none"', ''))
         .pipe(replace(' fill="#000"', ''))
-        .pipe(replace(' width="24"', ''))
-        .pipe(replace(' height="24"', ''))
+        .pipe(replace('<svg width="24" height="24"', '<svg '))
         .pipe(replace('<svg', function(match) {
             var name = path.parse(this.file.path).name;
             var converted = name.toLowerCase().replace(/-(.)/g, function(match,group1) {
@@ -289,6 +288,7 @@ var buildBrandSVGs = function(done) {
     if (!settings.svgs) return done();
     //  Compile brand icons
     return src(paths.svgs.brandInput)
+        .pipe(replace('<svg width="24" height="24"', '<svg '))
         .pipe(replace('<svg', function(match) {
             var name = path.parse(this.file.path).name;
             var converted = name.toLowerCase().replace(/-(.)/g, function(match,group1) {

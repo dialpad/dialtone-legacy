@@ -90,48 +90,54 @@ body {
 //  ============================================================================
 //  @   ICON CLASSES
 //  ============================================================================
-//  --  Set the icon fill color to the current text color
+//  --  Universal SVG class settings
 //  ----------------------------------------------------------------------------
-.d-svg-fill() {
-    &:not(.d-svg--native) {
-        fill: currentColor;
-    }
-}
-.d-svg-size(@size) {
-    //  Apply size only if it has a system icon class
+.d-svg {
+    //  Universally make all icons fill their containers
+    //  Icon sizes can now be set on the icon container or icons themselves
+    width: 100%;
+    height: auto;
+
+    //  All system SVGs should inherit the current text color
     &.d-svg--system {
-        width: @size;
-        height: @size;
+        fill: currentColor;
     }
 }
 
 //  @@  SIZES
 //  ----------------------------------------------------------------------------
-//  --  Default size
-.d-svg {
-    .d-svg-fill();
-    .d-svg-size(@icon-size--md);
+//  --  First, the mixin
+.d-svg-size(@size) {
+    width: @size;
+    height: @size;
 }
-//  --  Extra Small
-.d-svg--xs {
-    .d-svg-fill();
-    .d-svg-size(@icon-size--xs);
+
+//  --  Now, the size classes
+.d-svg--size14 {
+    .d-svg-size(@icon-size14);
 }
-//  --  Small
-.d-svg--sm {
-    .d-svg-fill();
-    .d-svg-size(@icon-size--sm);
+.d-svg--size16 {
+    .d-svg-size(@icon-size16);
 }
-//  --  Large
-.d-svg--lg {
-    .d-svg-fill();
-    .d-svg-size(@icon-size--lg);
+.d-svg--size18 {
+    .d-svg-size(@icon-size18);
 }
-//  --  Extra Large
-.d-svg--xl {
-    .d-svg-fill();
-    .d-svg-size(@icon-size--xl);
+.d-svg--size20 {
+    .d-svg-size(@icon-size20);
 }
+.d-svg--size24 {
+    .d-svg-size(@icon-size24);
+}
+.d-svg--size32 {
+    .d-svg-size(@icon-size32);
+}
+.d-svg--size48 {
+    .d-svg-size(@icon-size48);
+}
+.d-svg--size64 {
+    .d-svg-size(@icon-size64);
+}
+
 
 //  ============================================================================
 //  @   ANIMATIONS

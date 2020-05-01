@@ -1,11 +1,14 @@
 <div class="dialtone-nav">
     <div class="dialtone-navbar js-dialtone-menubar" data-state="normal">
-        <div class="dialtone-logo">
-            <a href="/">{% include logo.html %}</a>
-        </div>
+        <a class="dialtone-logo" href="/">{% include logo.html %}</a>
         <a class="dialtone-menu-button js-dialtone-menu-button" role="button" href="#" data-state="unselected" data-menu="closed">
-            {% include icons/system/menu.svg %}
-            {% include icons/system/close.svg %}
+            <span class="d-btn__icon">
+                {% include icons/system/menu.svg %}
+                {% include icons/system/close.svg %}
+            </span>
+            <span class="d-btn__label">
+                Menu
+            </span>
         </a>
         <nav class="dialtone-navigation js-dialtone-menu" role="navigation" data-state="closed">
             {% for item in site.data.navigation %}
