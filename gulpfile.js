@@ -234,6 +234,7 @@ var buildSystemSVGs = function(done) {
     return src(paths.svgs.sysInput)
         .pipe(replace(' fill="none"', ''))
         .pipe(replace(' fill="#000"', ''))
+        .pipe(replace(' fill="#141721"', ''))
         .pipe(replace('<svg width="24" height="24"', '<svg '))
         .pipe(replace('<svg', function(match) {
             var name = path.parse(this.file.path).name;
