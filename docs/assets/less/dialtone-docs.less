@@ -16,6 +16,11 @@
 //  • EXAMPLES
 //
 //  ============================================================================
+//  $   IMPORTS
+//  ----------------------------------------------------------------------------
+@import "../../../lib/build/less/themes/default";
+
+//  ============================================================================
 //  $   VARIABLES
 //  ----------------------------------------------------------------------------
 :root {
@@ -29,27 +34,12 @@
     }
 }
 
+@dialtone-nav--background-color:        @ash;
+@dialtone-nav--border-color:            @ash-darker;
+@dialtone-nav--header-color:            @slate-light;
+@dialtone-nav--link-color:              @slate;
 
-//  ============================================================================
-//  $   IMPORTS
-//  ----------------------------------------------------------------------------
-@import "../../../lib/build/less/dialtone";
 
-
-//  ============================================================================
-//  $   STYLE MIXINS
-//  ----------------------------------------------------------------------------
-//  $$  SCROLLBAR
-// ::-webkit-scrollbar {
-//     -webkit-appearance: none;
-//     width: @spacing8;
-// }
-//
-// ::-webkit-scrollbar-thumb {
-//     border-radius: @border-radius--sm;
-//     background-color: fade(@slate,50%);
-//     -webkit-box-shadow: 0 0 @spacing1 fade(@white,50%);
-// }
 //  ============================================================================
 //  $   WRAPPERS
 //  ============================================================================
@@ -69,12 +59,11 @@ html {
 body {
     margin: 0;
     min-height: 100%;
-    background-color: @white;
+    background-color: @base-background-color;
 
-    color: @color--dark;
-    font-family: @font-family--mark;
-    line-height: @line-height--lg;
-    -webkit-text-size-adjust: 100%; // [21]
+    color: @base-font-color;
+    line-height: @base-line-height;
+    -webkit-text-size-adjust: 100%; // [2]
 }
 
 //  $$  LAYOUT
@@ -161,8 +150,7 @@ body {
 }
 //  The overall nav wrapper
 .dialtone-navbar {
-    .d-background-color--ash();
-    .d-color--dark-lighter();
+    background-color: @dialtone-nav--background-color;
 
     @media screen and (max-width: 723.9px) {
         display: flex;
@@ -239,6 +227,7 @@ body {
 
     > .dialtone-navigation__list {
         .d-border-top();
+        border-color: @dialtone-nav--border-color;
         .d-border-color--ash-darker();
 
         &:first-of-type {
@@ -253,21 +242,21 @@ body {
     align-items: center;
     .d-padding12();
     .d-padding-left24();
-    background-color: fade(@ash-dark,0%);
+    background-color: fade(@dialtone-nav--background-color,0%);
     .d-text--xl();
-    .d-color--dark-lighter();
+    color: @dialtone-nav--header-color;
     .d-line-height--sm();
     text-decoration: none;
     transition: all 100ms @transition--cubic-inOut;
 
     &:hover {
-        .d-color--dark-light();
-        .d-background-color--ash-dark();
+        color: lighten(@dialtone-nav--header-color,10%);
+        background-color: lighten(saturate(@dialtone-nav--background-color,2%),10%);
     }
 
     .dialtone-navigation__list[data-open="true"] & {
         .d-padding-y12();
-        .d-color--dark();
+        color: @primary-color--text;
     }
 }
 .dialtone-navigation__header-icon {
@@ -289,29 +278,30 @@ body {
 }
 
 .dialtone-navigation__link {
+    display: block;
     .d-padding-y4();
     .d-padding-x12();
-    .d-border-radius--sm();
+    background-color: fade(@ash-dark,0%);
+    border-radius: @base-corner-radius;
     .d-text--md();
+    color: @dialtone-nav--link-color;
     .d-color--dark();
     .d-line-height--lg();
-
-    display: block;
-    background-color: fade(@ash-dark,0%);
     text-decoration: none;
     transition: background-color 100ms @transition--cubic-inOut;
 
     &:hover {
-        background-color: @ash-dark;
+        background-color: lighten(saturate(@dialtone-nav--background-color,2%),10%);
     }
 
     &.is-selected {
-        .d-background-color--blue-dark();
+        background-color: @primary-color;
+
         .d-color--white();
         .d-font-weight--bold();
 
         &:hover {
-            background-color: darken(@blue-dark,10%);
+            background-color: @primary-color--hover;
         }
     }
 }
@@ -320,10 +310,10 @@ body {
 //  ----------------------------------------------------------------------------
 .dialtone-logo {
     display: block;
-    color: var(--color--blue);
+    color: @primary-color;
 
     &:hover {
-        color: var(--color--blue-dark);
+        color: @primary-color--hover;
     }
 
     .dialtone-logo__svg,
@@ -331,6 +321,10 @@ body {
         display: none;
         color: inherit;
         fill: currentColor;
+    }
+
+    .dialtone-logo__svg {
+        max-width: 14.8rem;
     }
 
     @media screen and (max-width: 723.9px) {
@@ -353,6 +347,59 @@ body {
         .dialtone-logo__svg {
             display: block;
         }
+    }
+}
+
+
+//  --  THEME SWITCHER
+//  ----------------------------------------------------------------------------
+.dialtone-theme-switcher {
+    .d-btn--circle();
+
+    position: absolute;
+    .d-top32();
+    .d-right16();
+}
+.dialtone-theme-switcher__menu {
+    position: absolute;
+    top: calc(~"100% + @{spacing4}");
+    display: flex;
+    flex-direction: column;
+    .d-right0();
+    .d-width1();
+    .d-margin0();
+    .d-padding0();
+    list-style: none;
+    .d-box-shadow--card();
+    background-color: @white;
+    .d-border-radius--sm();
+
+    &[data-open="true"] {
+        display: block;
+        z-index: @z-index--popover;
+    }
+    &[data-open="false"] {
+        display: none;
+        z-index: @z-index--hide;
+    }
+}
+.dialtone-theme-switcher__link {
+    display: block;
+    .d-width100();
+    .d-margin0();
+    .d-padding-x12();
+    .d-padding-y4();
+    list-style: none;
+
+    border-bottom: 1px solid @ash-darkest;
+    color: @dialtone-nav--link-color;
+
+    &:hover {
+        color: darken(@dialtone-nav--link-color,10%);
+        background-color: fade(@ash,50%);
+    }
+    &:last-of-type {
+        .d-border-bottom-width0();
     }
 }
 

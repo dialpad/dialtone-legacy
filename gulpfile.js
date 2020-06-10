@@ -72,7 +72,7 @@ var paths = {
         output: './lib/dist/js/'
     },
     styles: {
-        inputLib: './lib/build/less/dialtone.less',
+        inputLib: './lib/build/less/themes/*.less',
         outputLib: './lib/dist/css/',
         inputDocs: './docs/assets/less/*.less',
         outputDocs: './docs/assets/css/',

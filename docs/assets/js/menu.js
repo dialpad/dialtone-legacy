@@ -47,4 +47,43 @@ $(document).ready(function() {
             header.attr('data-open', 'false');
         };
     })
+
+    //  Theme Switcher
+    var themeIcon = $(".js-theme-switcher");
+    var themeMenu = $(".js-theme__menu");
+    var themeLink = $(".js-theme__link");
+    var themeCSS = $("#css-theme");
+
+    themeIcon.click("on", function(e) {
+        e.stopPropagation();
+        e.preventDefault();
+
+        var menuState = themeMenu.attr('data-open');
+
+        //  Update the icon and show the submenu
+        if (menuState === "false") {
+            themeMenu.attr('data-open', 'true');
+        }
+        else if (menuState === "true") {
+            themeMenu.attr('data-open', 'false');
+        };
+    })
+
+    themeLink.click("on", function(e) {
+        var linkTheme = $(".js-theme__link").attr('data-theme');
+
+        //  Close the menu
+        themeMenu.attr('data-open', 'false');
+
+        //  Update the theme CSS file
+        if (linkTheme === "default") {
+            themeCSS.attr('pathname','dialtone-docs.min.css');
+        }
+        else if (linkTheme === "dark") {
+            themeCSS.attr('pathname','dialtone-docs--dark.min.css');
+        }
+        else if (linkTheme === "tmo") {
+            themeCSS.attr('pathname','dialtone-docs--tmo.min.css');
+        };
+    })
 });

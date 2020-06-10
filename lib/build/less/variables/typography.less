@@ -15,18 +15,47 @@
 //  • Font family
 //
 //  ============================================================================
-//  $   FONT SIZES
+//  $   FONT FAMILY
+//      To turn on custom webfonts, set @define-font-face to true.
 //  ----------------------------------------------------------------------------
-@base-font-size:   @text--md;
+if((@define-font-face = true), each(@define-font-family, {
+    @font-face {
+        font-style: "normal";
+        font-weight: @key;
+        font-family: @define-font-name;
+        src: url("@{define-font-path}@{value}.eot") format("eof"),
+             url("@{define-font-path}@{value}.eot?#iefix") format("embedded-opentype"),
+             url("@{define-font-path}@{value}.woff") format("woff");
+    };
+}));
 
-//  --  HEADLINES
+@font-family--custom:            @define-font-name, @font-family--sans;
+@font-family--sans:              -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+@font-family--mono:              "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+
+
+//  ============================================================================
+//  $   FONT WEIGHTS
+//  ----------------------------------------------------------------------------
+@font-weight--light:            200;
+@font-weight--normal:           400;
+@font-weight--medium:           500;
+@font-weight--bold:             700;
+@font-weight--ultra:            800;
+
+//  ============================================================================
+//  $   FONT SIZES
+//  ============================================================================
+//  $$  HEADLINES
+//  ----------------------------------------------------------------------------
 @headline--xl:      4.2rem;      // 42px
 @headline--lg:      3.6rem;      // 36px
 @headline--md:      3.2rem;      // 32px
 @headline--sm:      2.4rem;      // 24px
 @headline--xs:      1.1rem;      // 11px - Eyebrow
 
-//  --  TEXT SIZES
+//  $$  TEXT SIZES
+//  ----------------------------------------------------------------------------
 @text--xl:          2rem;        // 20px
 @text--lg:          1.8rem;      // 18px
 @text--md:          1.6rem;      // 16px - Base font size
@@ -43,32 +72,3 @@
 @line-height--lg:         1.5;
 @line-height--xl:         1.75;
 @line-height--xxl:        2;
-
-//  ============================================================================
-//  $   FONT WEIGHT
-//  ----------------------------------------------------------------------------
-@font-weight--light:          200;
-@font-weight--normal:         400;
-@font-weight--medium:         500;
-@font-weight--bold:           600;
-
-
-//  ============================================================================
-//  $   FONT FAMILY
-//  ----------------------------------------------------------------------------
-@font-family-weights: {
-    200: MarkWeb-Light;
-    400: MarkWeb;
-    500: MarkWeb-Medium;
-    700: MarkWeb-Bold;
-};
-
-@font-family--mark:           "MarkWeb", @font-family--sans;
-@font-family--sans:           -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-@font-family--mono:           "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-
-
-//  ============================================================================
-//  $   FONT ASSETS
-//  ----------------------------------------------------------------------------
-@font-path:   "../fonts/";
