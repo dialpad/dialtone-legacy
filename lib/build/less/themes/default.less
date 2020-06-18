@@ -7,11 +7,6 @@
 //  https://dialpad.design/themes
 //
 //  ============================================================================
-//  $   IMPORT DIALTONE
-//  ============================================================================
-@import "../dialtone";
-
-//  ============================================================================
 //  THEME VARIABLES
 //  The following items are themeable items that will update the imported
 //  Dialtone styles and components accordingly.
@@ -37,64 +32,20 @@
 
 //  $$  All selected states and primary styles use this variable
 //  ----------------------------------------------------------------------------
-@primary-color:                 @blue;
-@primary-color--hover:          #0020DA;
-@primary-color--text:           @blue-dark;
+@primary-color:                 var(--primary-color);
+@primary-color--hover:          var(--primary-color--hover);
+@primary-color__text:           var(--primary-color__text);
 @error-color:                   @wildberry;
 @error-color--hover:            #A60329;
 
 
 //  ============================================================================
-//  $   FONTS
-//  ============================================================================
-//  $$  FONT-FAMILY: MARK PRO
+//  $   THEME VARIABLES
 //  ----------------------------------------------------------------------------
-@font-family--mark-pro: {
-    200: MarkWeb-Light;
-    400: MarkWeb;
-    500: MarkWeb-Medium;
-    700: MarkWeb-Bold;
-};
+:root {
+    --primary-color:                @blue;
+    --primary-color--hover:         #0020DA;
+    --primary-color__text:          @blue-dark;
 
-@define-font-face:               true;
-@define-font-family:             @font-family--mark-pro;
-@define-font-name:               "MarkPro";
-@define-font-path:               "../fonts/";
-@headline-weight:                @font-weight--bold;
-
-
-//  ============================================================================
-//  $   BUTTONS
-//  ----------------------------------------------------------------------------
-@button-primary:                 @primary-color;
-@button-primary-hover:           @primary-color--hover;
-@button-danger:                  @error-color;
-@button-danger-hover:            @error-color--hover;
-@button-invert:                  @white;
-@button-invert-hover:            @blue-lighter;
-@button-muted:                   @slate-lighter;
-@button-muted-hover:             @slate-light;
-
-@button-font-color:              @blue-dark;
-@button-background-color:        @button-primary;
-@button-border-color:            @button-primary;
-@button-border-radius:           @base-corner-radius;
-@button-border-loading:          @button-border-color;
-@button-border-loading-white:    @white;
-@button-border-loading-danger:   @button-danger;
-
-
-//  ============================================================================
-//  $   INPUTS
-//  ----------------------------------------------------------------------------
-@input-border:                   @ash-darkest;
-@input-warning-border:           @sunflower-dark;
-@input-warning-text:             @color--sunflower-text;
-@input-warning-link:             darken(@input-warning-text,15%);
-@input-error-border:             @error-color;
-@input-error-text:               darken(@error-color,40%);
-@input-error-link:               darken(@input-error-text,15%);
-@input-success-border:           @emerald;
-@input-success-text:             @color--emerald-text;
-@input-success-link:             darken(@input-success-text,15%);
-@input-button-radius:            @base-corner-radius;
+    --nav-background-color:         @navy;
+}
