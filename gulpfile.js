@@ -20,7 +20,7 @@ var settings = {
 //  ================================================================================
 //  @@ GENERAL
 var {gulp, src, dest, watch, series, parallel} = require('gulp');
-var fs = require('fs');
+var fs = require('fs-extra');
 var del = require('del');
 var lazypipe = require('lazypipe');
 var rename = require('gulp-rename');
