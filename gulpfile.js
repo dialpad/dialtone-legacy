@@ -20,7 +20,7 @@ var settings = {
 //  ================================================================================
 //  @@ GENERAL
 var {gulp, src, dest, watch, series, parallel} = require('gulp');
-var fs = require('fs');
+var fs = require('fs-extra');
 var del = require('del');
 var lazypipe = require('lazypipe');
 var rename = require('gulp-rename');
@@ -46,7 +46,7 @@ var replace = settings.svgs ? require('gulp-replace') : null;
 var tap = settings.svgs ? require('gulp-tap') : null;
 
 //  @@ FAVICONS
-var favicon = settings.favicons ? require('gulp-favicons') : null;
+// var favicon = settings.favicons ? require('gulp-favicons') : null;
 
 //  @@ BUILD
 var cp = settings.build ? require('child_process') : null;
@@ -383,34 +383,34 @@ const generateFavicons = (type, input, output) => {
         .pipe(dest(favOutput));
 };
 
-//  --  ALL THE FAVICONS TO CREATE
-//  --------------------------------------------------------------------------------
-//      DIALPAD
-//  --------------------------------------------------------------------------------
-const faviconDp = () => { return generateFavicons('dp', paths.favicons.dp, 'default/'); }
-const faviconDpNotify = () => { return generateFavicons('dp', paths.favicons.dpNotify, 'default-notify/'); }
-
-//      DIALPAD BETA
-//  --------------------------------------------------------------------------------
-const faviconDpBeta = () => { return generateFavicons('dp', paths.favicons.dpBeta, 'beta/'); }
-const faviconDpBetaNotify = () => { return generateFavicons('dp', paths.favicons.dpBetaNotify, 'beta/'); }
-
-//      DIALPAD CSR
-//  --------------------------------------------------------------------------------
-const faviconDpCsr = () => { return generateFavicons('dp', paths.favicons.dpCsr, 'csr/'); }
-
-//      DIALPAD STAGING
-//  --------------------------------------------------------------------------------
-const faviconDpStaging = () => { return generateFavicons('dp', paths.favicons.dpStaging, 'staging/'); }
-const faviconDpStagingNotify = () => { return generateFavicons('dp', paths.favicons.dpStagingNotify, 'staging-notify/'); }
-
-//      UBERCONFERENCE
-//  --------------------------------------------------------------------------------
-const faviconUberConference = () => { return generateFavicons('uc', paths.favicons.uc, paths.favicons.ucOutput); }
-
-//      DIALTONE
-//  --------------------------------------------------------------------------------
-const faviconDialtone = () => { return generateFavicons('docs', paths.favicons.docsIcon, paths.favicons.docsOutput); }
+// //  --  ALL THE FAVICONS TO CREATE
+// //  --------------------------------------------------------------------------------
+// //      DIALPAD
+// //  --------------------------------------------------------------------------------
+// const faviconDp = () => { return generateFavicons('dp', paths.favicons.dp, 'default/'); }
+// const faviconDpNotify = () => { return generateFavicons('dp', paths.favicons.dpNotify, 'default-notify/'); }
+//
+// //      DIALPAD BETA
+// //  --------------------------------------------------------------------------------
+// const faviconDpBeta = () => { return generateFavicons('dp', paths.favicons.dpBeta, 'beta/'); }
+// const faviconDpBetaNotify = () => { return generateFavicons('dp', paths.favicons.dpBetaNotify, 'beta/'); }
+//
+// //      DIALPAD CSR
+// //  --------------------------------------------------------------------------------
+// const faviconDpCsr = () => { return generateFavicons('dp', paths.favicons.dpCsr, 'csr/'); }
+//
+// //      DIALPAD STAGING
+// //  --------------------------------------------------------------------------------
+// const faviconDpStaging = () => { return generateFavicons('dp', paths.favicons.dpStaging, 'staging/'); }
+// const faviconDpStagingNotify = () => { return generateFavicons('dp', paths.favicons.dpStagingNotify, 'staging-notify/'); }
+//
+// //      UBERCONFERENCE
+// //  --------------------------------------------------------------------------------
+// const faviconUberConference = () => { return generateFavicons('uc', paths.favicons.uc, paths.favicons.ucOutput); }
+//
+// //      DIALTONE
+// //  --------------------------------------------------------------------------------
+// const faviconDialtone = () => { return generateFavicons('docs', paths.favicons.docsIcon, paths.favicons.docsOutput); }
 
 
 //  ================================================================================
@@ -527,15 +527,15 @@ exports.version = series(
 );
 
 //  --  GENERATES ALL DIALPAD / UC FAVICONS
-exports.favicons = series(
-    cleanFavicons,
-    faviconDp,
-    faviconDpNotify,
-    faviconDpBeta,
-    faviconDpBetaNotify,
-    faviconDpCsr,
-    faviconDpStaging,
-    faviconDpStagingNotify,
-    faviconDialtone,
-    faviconUberConference,
-);
+// exports.favicons = series(
+//     cleanFavicons,
+//     faviconDp,
+//     faviconDpNotify,
+//     faviconDpBeta,
+//     faviconDpBetaNotify,
+//     faviconDpCsr,
+//     faviconDpStaging,
+//     faviconDpStagingNotify,
+//     faviconDialtone,
+//     faviconUberConference,
+// );
