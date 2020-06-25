@@ -1,0 +1,3 @@
+<template>
+  <svg aria-hidden="true" aria-label="Brand Dialpad" class="d-svg d-svg--system d-svg__brandDialpad" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.025 11.197V4.18a.077.077 0 0 0-.132-.053L8.91 7.204a5.095 5.095 0 0 0-7.081 4.693 5.095 5.095 0 0 0 5.098 5.094 5.096 5.096 0 0 0 5.048-4.394v7.019c0 .069.083.102.131.053l2.982-3.079c.61.258 1.28.4 1.984.4a5.095 5.095 0 0 0 5.096-5.093 5.095 5.095 0 0 0-5.096-5.093 5.096 5.096 0 0 0-5.048 4.393z" fill="#1738FA"/></svg>
+</template>
