@@ -39,7 +39,7 @@ if((@define-font-face = true), each(@define-font-family, {
     200: MarkWeb-Light;
     400: MarkWeb;
     500: MarkWeb-Medium;
-    700: MarkWeb-Bold;
+    600: MarkWeb-Bold;
 };
 
 @define-font-face:               true;
@@ -59,8 +59,8 @@ if((@define-font-face = true), each(@define-font-family, {
 @font-weight--light:            200;
 @font-weight--normal:           400;
 @font-weight--medium:           500;
-@font-weight--bold:             700;
-@font-weight--ultra:            800;
+@font-weight--bold:             600;
+@font-weight--ultra:            700;
 
 //  ============================================================================
 //  $   FONT SIZES
@@ -91,3 +91,8 @@ if((@define-font-face = true), each(@define-font-family, {
 @line-height--lg:         1.5;
 @line-height--xl:         1.75;
 @line-height--xxl:        2;
+
+//  Enter numbers sans unit declarations. Assumed pixels.
+.line-height(@target,@size) {
+    line-height: (@target / @size);
+}

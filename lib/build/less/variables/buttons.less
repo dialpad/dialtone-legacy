@@ -1,172 +1,165 @@
 //
 //  DIALTONE
-//  COMPONENTS: BUTTONS
+//  VARIABLES: BUTTON MIXINS
 //
-//  These are the base border definitions, which are used by classes or can be
-//  used within Vue components. For further documentation of these values,
-//  please visit https://dialpad.design/definitions/utilities/borders
+//  These are shared button style mixins used primarily in components/buttons.less
 //
 //  TABLE OF CONTENTS
-//  • TOKENS
-//  • BASE STYLE
-//  • VISUAL STYLES
-//  • ALTERNATE STYLES
-//  • SIZES
+//  • DISABLED
+//  • DANGER
+//  • INVERTED
+//  • BRAND
 //
 //  ============================================================================
-//  $   TOKENS
-//  ----------------------------------------------------------------------------
-@button-font-size:              @text--md;
-@button-line-height:            @line-height--xs;
-
-@button-brand-google:           #4285F4;
-@button-brand-o365:             #EB3C01;
-@button-brand-linkedin:         #006087;
-
-
-//  ============================================================================
-//  @   MIXINS
-//  ============================================================================
-//  @@  DISABLED STYLE
+//  @   DISABLED
 //  ----------------------------------------------------------------------------
 .disabled-input-style() {
-    border-color: @ash-dark;
-    background-color: @ash-dark;
-    color: @slate-lightest;
+    --button__border:               @ash-dark;
+    --button__background-color:     @ash-dark;
+    --button__text-color:           @slate-lightest;
 }
 
-//  @@  CLEAR DANGER STYLES
+//  ============================================================================
+//  @   DANGER BUTTON STYLES
+//  ============================================================================
+//  @@  CLEAR (DEFAULT)
 //  ----------------------------------------------------------------------------
 .btn-danger-clear-states() {
-    background-color: fade(@button-danger,0%);
-    color: @button-danger;
+    --button__text-color:               @error-color;
+    --button__background-color:         fade(@error-color,0%);
+    --button__border:                   fade(@error-color,0%);
 
+    //  --  STATES
+    //  ------------------------------------------------------------------------
     &:hover {
-        color: @button-danger-hover;
-        background-color: fade(@button-danger-hover,5%);
+        --button__background-color:     fade(@error-color--hover,5%);
+        --button__text-color:           @error-color--hover;
     }
     &:focus {
-        box-shadow: 0 0 0 @spacing4 fade(@button-danger,25%);
+        --button__box-shadow:           fade(@error-color,25%);
     }
     &:active {
-        border-color: fade(@button-danger,5%);
-        background-color: fade(@button-danger,10%);
-        box-shadow: inset 0 0 @spacing8 0 fade(@button-danger,70%);
-    }
-    &[disabled] {
-        border-color: transparent;
+        --button__border:               fade(@error-color,50%);
+        --button__background-color:     fade(@error-color,10%);
+        --button__box-shadow:           fade(@error-color,30%);
     }
 }
 
-//  @@  PRIMARY DANGER STYLES
+//  @@  PRIMARY
 //  ----------------------------------------------------------------------------
 .btn-danger-primary-states() {
-    border-color: @button-danger;
-    background-color: @button-danger;
-    .d-color--white;
+    --button__text-color:               @white;
+    --button__background-color:         @error-color;
+    --button__border:                   @error-color;
 
     //  --  STATES
     //  ------------------------------------------------------------------------
     &:hover {
-        border-color: @button-danger-hover;
-        background-color: @button-danger-hover;
-        .d-color--white;
+        --button__text-color:           @white;
+        --button__background-color:     @error-color--hover;
+        --button__border:               @error-color--hover;
     }
     &:focus {
-        box-shadow: 0 0 0 @spacing4 fade(@button-danger,25%);
+        --button__box-shadow:           fade(@error-color,25%);
     }
     &:active {
-        border-color: darken(@button-danger,20%);
-        background-color: saturate(@button-danger,10%);
-        box-shadow: inset 0 0 @spacing8 0 darken(@button-danger,10%);
+        --button__background-color:     saturate(@error-color--hover,15%);
+        --button__border:               darken(@error-color,10%);
+        --button__box-shadow:           @error-color--hover;
     }
 }
 
-//  @@  INVERTED CLEAR STYLES
+//  ============================================================================
+//  @   INVERTED BUTTON STYLES
+//  ============================================================================
+//  @@  CLEAR (DEFAULT)
 //  ----------------------------------------------------------------------------
 .btn-inverted-clear-states() {
-    background-color: fade(@button-invert-hover,0%);
-    color: @button-invert;
+    --button__text-color:               @white;
+    --button__background-color:         fade(mix(@white, @primary-color, 50%),0%);
+    --button__border:                   fade(@white,0%);
 
     //  --  STATES
     //  ------------------------------------------------------------------------
     &:hover {
-        background-color: fade(@button-invert-hover,25%);
-        color: fadeout(@button-invert,10%);
+        --button__text-color:           fadeout(@white,10%);
+        --button__background-color:     fade(mix(@white, @primary-color, 25%),25%);
     }
     &:focus {
-        box-shadow: 0 0 0 @spacing4 fade(@button-invert-hover,25%);
+        --button__box-shadow:           fade(@primary-color,25%);
     }
     &:active {
-        border-color: transparent;
-        background-color: fade(@button-invert-hover,50%);
+        --button__background-color:     fade(@primary-color,50%);
+        --button__border:               fade(@primary-color,50%);
     }
 }
 
-//  @@  INVERTED OUTLINED STYLES
+//  @@  OUTLINED
 //  ----------------------------------------------------------------------------
 .btn-inverted-outlined-states() {
     .btn-inverted-clear-states();
-    border-color: fade(@button-invert,50%);
+
+    --button__border:                   fade(@white,50%);
 
     //  --  STATES
     //  ------------------------------------------------------------------------
     &:hover {
-        border-color: fade(@button-invert,70%);
-        background-color: fade(@button-invert-hover,15%);
+        --button__border:               fade(@white,75%);
     }
     &:active {
-        border-color: fade(@button-invert-hover,90%);
-        background-color: fade(@button-invert-hover,25%);
+        --button__border:               fade(@primary-color,90%);
     }
 }
 
-//  @@  INVERTED PRIMARY STYLES
+//  @@  PRIMARY
 //  ----------------------------------------------------------------------------
 .btn-inverted-primary-states() {
     .btn-inverted-clear-states();
-    color: @button-font-color;
-    .d-background-color--white;
+
+    --button__text-color:               @primary-color;
+    --button__background-color:         @white;
 
     //  --  STATES
     //  ------------------------------------------------------------------------
     &:hover {
-        color: darken(@button-font-color,10%);
-        background-color: @button-invert-hover;
+        --button__text-color:           darken(@primary-color,10%);
+        --button__background-color:     mix(@white, @primary-color, 90%);
     }
     &:focus {
-        box-shadow: 0 0 0 @spacing4 fade(mix(@white, @button-background-color, 50%),50%);
+        --button__box-shadow:           fade(mix(@white, @primary-color, 50%),25%);
     }
     &:active {
-        border-color: darken(@button-invert-hover,5%);
-        background-color: fade(@button-invert-hover,90%);
-        box-shadow: inset 0 0 @spacing8 0 fade(@button-invert-hover,30%);
+        --button__text-color:           fadeout(@primary-color,10%);
+        --button__background-color:     mix(@white, @primary-color, 95%);
+        --button__border:               @white;
     }
 }
 
-//  @@  BRAND BUTTON STYLE
+//  ============================================================================
+//  @   BRAND
 //  ----------------------------------------------------------------------------
 .brand-buttons(@color) {
+    --button__background-color:     @color;
+
     display: flex;
-    color: @white;
-    background-color: @color;
 
     //  --  STATES
     &:hover {
-        background-color: darken(saturate(@color,2.5%),5%);
+        --button__background-color: darken(saturate(@color,2.5%),5%);
     }
     &:focus {
-        box-shadow: 0 0 0 @spacing4 fade(@color,25%);
+        --button__box-shadow:       fade(@color,25%);
     }
     &:active {
-        background-color: darken(saturate(@color,5%),10%);
-        box-shadow: inset 0 0 @spacing8 0 fade(darken(@color,10%),25%);
+        --button__background-color: darken(saturate(@color,5%),10%);
+        --button__box-shadow:       fade(darken(@color,10%),25%);
     }
 
     //  --  ICON ADJUSTMENTS
     .d-btn__icon {
         .d-svg--size32();
-        margin: -.4rem .4rem -.4rem -.8rem;
+        .d-margin4--negative();
+        .d-margin-right4();
         border-radius: @spacing2;
     }
 

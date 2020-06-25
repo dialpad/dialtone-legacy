@@ -72,7 +72,7 @@ var paths = {
         output: './lib/dist/js/'
     },
     styles: {
-        inputLib: './lib/build/less/themes/*.less',
+        inputLib: './lib/build/less/dialtone.less',
         outputLib: './lib/dist/css/',
         inputDocs: './docs/assets/less/*.less',
         outputDocs: './docs/assets/css/',
@@ -337,51 +337,51 @@ var buildBrandSVGs = function(done) {
 //  @@  FAVICONS
 //  ================================================================================
 //  --  Build Favicon Task
-const generateFavicons = (type, input, output) => {
-    //  Make sure this feature is activated before running
-    if (!settings.favicons) return done();
-
-    if (type === 'dp') {
-        var favInput = paths.favicons.dpInput + input;
-        var favOutput = paths.favicons.dpOutput + output;
-    }
-    else if (type === 'uc') {
-        var favInput = paths.favicons.ucInput + input;
-        var favOutput = output;
-    }
-    else if (type === 'docs') {
-        var favInput = paths.favicons.docsInput + input;
-        var favOutput = output;
-    }
-
-    return src(favInput)
-        .pipe(favicon({
-            appName: 'Dialpad',
-            appShortName: null,
-            appDescription: null,
-            developerName: 'Dialpad',
-            developerURL: 'https://dialpad.com/',
-            background: null,
-            theme_color: "#fff",
-            url: 'https://dialpad.com/',
-            display: 'standalone',
-            orientation: 'portrait',
-            scope: '/',
-            start_url: '/',
-            version: null,
-            logging: false,
-            html: '/',
-            pipeHTML: false,
-            replace: true,
-            pixel_art: true,
-            icons: {
-                appleStartup: false,
-                firefox: false,
-                yandex: false
-            }
-        }))
-        .pipe(dest(favOutput));
-};
+// const generateFavicons = (type, input, output) => {
+//     //  Make sure this feature is activated before running
+//     if (!settings.favicons) return done();
+//
+//     if (type === 'dp') {
+//         var favInput = paths.favicons.dpInput + input;
+//         var favOutput = paths.favicons.dpOutput + output;
+//     }
+//     else if (type === 'uc') {
+//         var favInput = paths.favicons.ucInput + input;
+//         var favOutput = output;
+//     }
+//     else if (type === 'docs') {
+//         var favInput = paths.favicons.docsInput + input;
+//         var favOutput = output;
+//     }
+//
+//     return src(favInput)
+//         .pipe(favicon({
+//             appName: 'Dialpad',
+//             appShortName: null,
+//             appDescription: null,
+//             developerName: 'Dialpad',
+//             developerURL: 'https://dialpad.com/',
+//             background: null,
+//             theme_color: "#fff",
+//             url: 'https://dialpad.com/',
+//             display: 'standalone',
+//             orientation: 'portrait',
+//             scope: '/',
+//             start_url: '/',
+//             version: null,
+//             logging: false,
+//             html: '/',
+//             pipeHTML: false,
+//             replace: true,
+//             pixel_art: true,
+//             icons: {
+//                 appleStartup: false,
+//                 firefox: false,
+//                 yandex: false
+//             }
+//         }))
+//         .pipe(dest(favOutput));
+// };
 
 // //  --  ALL THE FAVICONS TO CREATE
 // //  --------------------------------------------------------------------------------

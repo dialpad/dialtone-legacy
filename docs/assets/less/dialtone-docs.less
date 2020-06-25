@@ -18,7 +18,13 @@
 //  ============================================================================
 //  $   IMPORTS
 //  ----------------------------------------------------------------------------
-@import "../../../lib/build/less/themes/tmo";
+@import "../../../lib/build/less/dialtone";
+
+@primary-color:                                 #E20074;
+@primary-color--hover:                          #F41A8A;
+@nav__background-color:                         #000;
+
+@define-font-path:                              "../fonts/MarkPro/";
 
 //  ============================================================================
 //  $   VARIABLES
@@ -34,7 +40,7 @@
     }
 }
 
-@dialtone-nav--background-color:        @ash;
+@nav__background-color:                 @ash;
 @dialtone-nav--border-color:            @ash-darker;
 @dialtone-nav--header-color:            @slate-light;
 @dialtone-nav--link-color:              @slate;
@@ -126,7 +132,7 @@ body {
 
     //  Selected state is set on blue
     &[data-state="selected"] {
-        .d-btn--circle--inverted();
+        // .d-btn--circle--inverted();
         .d-margin-left--auto();
         .d-border-color--transparent;
         .d-box-shadow--none();
@@ -150,7 +156,7 @@ body {
 }
 //  The overall nav wrapper
 .dialtone-navbar {
-    background-color: @dialtone-nav--background-color;
+    background-color: @nav__background-color;
 
     @media screen and (max-width: 723.9px) {
         display: flex;
@@ -242,7 +248,7 @@ body {
     align-items: center;
     .d-padding12();
     .d-padding-left24();
-    background-color: fade(@dialtone-nav--background-color,0%);
+    background-color: fade(@nav__background-color,0%);
     .d-text--xl();
     color: @dialtone-nav--header-color;
     .d-line-height--sm();
@@ -251,12 +257,12 @@ body {
 
     &:hover {
         color: lighten(@dialtone-nav--header-color,10%);
-        background-color: lighten(saturate(@dialtone-nav--background-color,2%),10%);
+        background-color: lighten(saturate(@nav__background-color,2%),10%);
     }
 
     .dialtone-navigation__list[data-open="true"] & {
         .d-padding-y12();
-        color: @primary-color--text;
+        color: var(--primary-color__text);
     }
 }
 .dialtone-navigation__header-icon {
@@ -291,7 +297,7 @@ body {
     transition: background-color 100ms @transition--cubic-inOut;
 
     &:hover {
-        background-color: lighten(saturate(@dialtone-nav--background-color,2%),10%);
+        background-color: lighten(saturate(@nav__background-color,2%),10%);
     }
 
     &.is-selected {
@@ -301,7 +307,7 @@ body {
         .d-font-weight--bold();
 
         &:hover {
-            background-color: @primary-color--hover;
+            background-color: var(--primary-color--hover);
         }
     }
 }
@@ -313,7 +319,7 @@ body {
     color: @primary-color;
 
     &:hover {
-        color: @primary-color--hover;
+        color: var(--primary-color--hover);
     }
 
     .dialtone-logo__svg,
@@ -362,7 +368,7 @@ body {
     color: @primary-color;
 
     &:hover{
-        color: @primary-color--hover;
+        color: var(--primary-color--hover);
     }
 }
 .dialtone-theme-switcher__menu {

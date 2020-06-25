@@ -18,34 +18,180 @@
 //    - Inputs
 //
 //  ////////////////////////////////////////////////////////////////////////////
-//  ============================================================================
 //  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+//  ============================================================================
 //  $   UNIVERSAL
 //  ============================================================================
-//  $$  These are the universal styles set on the body tags
+//  $   CORE THEME VARIABLES
 //  ----------------------------------------------------------------------------
-@base-font-color:               @color--dark;
-@base-font-size:                @text--md;
-@base-line-height:              @line-height--lg;
-@base-background-color:         @white;
-@base-corner-radius:            0.25em;
+//  Used for all selected and primary styles
+@primary-color:                                 @blue;
+@primary-color--hover:                          #0020DA;
 
-//  $$  All selected states and primary styles use this variable
+//  Used for navigation areas
+@nav__background-color:                         @navy;
+
+//  User state colors
+@error-color:                                   @wildberry;
+@error-color--hover:                            #A60329;
+@error-color--text:                             @error-color--hover;
+@warning-color:                                 @sunflower-dark;
+@warning-color--hover:                          darken(@warning-color,10%);
+@warning-color--text:                           #AF5A00;
+@success-color:                                 @emerald;
+@success-color--hover:                          @emerald-dark;
+@success-color--text:                           #02663C;
+
+//  These are the universal styles set on the body tags
 //  ----------------------------------------------------------------------------
-@primary-color:                 var(--primary-color);
-@primary-color--hover:          var(--primary-color--hover);
-@primary-color__text:           var(--primary-color__text);
-@error-color:                   @wildberry;
-@error-color--hover:            #A60329;
+@base-font-color:                               @color--dark;
+@base-font-size:                                @text--md;
+@base-font-family:                              @font-family--custom;
+@base-line-height:                              1.25;
+@base-background-color:                         @white;
+@base-corner-radius:                            0.25em;
 
 
-//  ============================================================================
-//  $   THEME VARIABLES
+//  $   DO WE WANT CSS VARIABLES?
+//      Defaults to true. To turn off, set to "false".
+//  ----------------------------------------------------------------------------
+@define-css-variables:                          true;
+
+//  CSS VARIABLE MIXIN
+.css-vars(@var, @class) {
+    & when (@define-css-variables = true) {
+        @var();
+    }
+    & when (@define-css-variables = false) {
+        @class();
+    }
+}
+// #css-varrules(@var, @class, @rules) {
+//     & when (@define-css-variables = true) {
+//         --@{var}: @rules();
+//     }
+//     & when (@define-css-variables = false) {
+//         @class: @rules();
+//     }
+// }
+
+
+//  $$  DEFINE CSS VARIABLES
+//  ----------------------------------------------------------------------------
+@theme-variables: {
+    primary-color:                              @primary-color;
+    primary-color--hover:                       @primary-color--hover;
+    nav__background-color:                      @nav__background-color;
+
+    white:                                      @white;
+    slate:                                      @slate;
+    slate-light:                                @slate-light;
+    slate-lighter:                              @slate-lighter;
+    slate-lightest:                             @slate-lightest;
+    ash:                                        @ash;
+    ash-dark:                                   @ash-dark;
+    ash-darker:                                 @ash-darker;
+    ash-darkest:                                @ash-darkest;
+    blue-dark:                                  @blue-dark;
+    blue:                                       @blue;
+    blue-light:                                 @blue-light;
+    blue-lighter:                               @blue-lighter;
+    navy:                                       @navy;
+    navy-light:                                 @navy-light;
+    navy-lighter:                               @navy-lighter;
+    navy-lightest:                              @navy-lightest;
+    bright-emerald-dark:                        @bright-emerald-dark;
+    bright-emerald:                             @bright-emerald;
+    bright-emerald-light:                       @bright-emerald-light;
+    bright-emerald-lighter:                     @bright-emerald-lighter;
+    emerald-darker:                             @emerald-darker;
+    emerald-dark:                               @emerald-dark;
+    emerald:                                    @emerald;
+    emerald-light:                              @emerald-light;
+    emerald-lighter:                            @emerald-lighter;
+    berry-dark:                                 @berry-dark;
+    berry:                                      @berry;
+    berry-light:                                @berry-light;
+    berry-lighter:                              @berry-lighter;
+    rose-darker:                                @rose-darker;
+    rose-dark:                                  @rose-dark;
+    rose:                                       @rose;
+    rose-light:                                 @rose-light;
+    sunflower-dark:                             @sunflower-dark;
+    sunflower:                                  @sunflower;
+    sunflower-light:                            @sunflower-light;
+    sunflower-lighter:                          @sunflower-lighter;
+    crimson-dark:                               @crimson-dark;
+    crimson:                                    @crimson;
+    crimson-light:                              @crimson-light;
+    crimson-lighter:                            @crimson-lighter;
+    wildberry-dark:                             @wildberry-dark;
+    wildberry:                                  @wildberry;
+    wildberry-light:                            @wildberry-light;
+    wildberry-lighter:                          @wildberry-lighter;
+
+    text-color--dark:                           @slate;
+    text-color--medium:                         @slate-light;
+    text-color--light:                          @slate-lighter;
+    text-color--blue:                           @blue-dark;
+    text-color--navy:                           @navy;
+    text-color--bright-emerald:                 @bright-emerald-dark;
+    text-color--emerald:                        @emerald-dark;
+    text-color--sunflower:                      #AF5A00;
+    text-color--wildberry:                      @wildberry-dark;
+    text-color--crimson:                        @crimson-dark;
+    text-color--berry:                          @berry-dark;
+    text-color--rose:                           @rose-dark;
+
+    base--text-color:                           var(--text-color--dark);
+    base--font-size:                            var(--text-size--medium);
+    base--line-height:                          var(--line-height--large);
+    base--background-color:                     @white;
+    base--corner-radius:                        0.25em;
+
+    button__text-color:                         @primary-color;
+    button__text-size:                          @text--md;
+    button__background-color:                   fade(@white,0%);
+    button__border:                             fade(@primary-color,0%);
+    button__border--loading:                    @primary-color;
+    button__border-radius:                      0.25em;
+    button__box-shadow--size:                   0 0 0 0;
+    button__box-shadow:                         fade(@primary-color,25%);
+
+    input-button__padding:                      0.7rem;
+    input-button__text-size:                    @text--md;
+    input-button__line-height:                  1.25;
+    input-button__icon-size:                    @icon-size18;
+
+    input__text-color:                          var(--text-color--dark);
+    input__background-color:                    @white;
+    input__border:                              @ash-darkest;
+    input__box-shadow--inset:                   fade(@ash-darker,20%);
+    input__box-shadow:                          fade(@white,0%);
+    input__box-shadow-size:                     0 0 0 0;
+
+    radio-checkbox__background-color:           @white;
+    radio-checkbox__border:                     @slate-lightest;
+    radio-checkbox__box-shadow:                 fade(@primary-color,15%);
+
+    label__text-color:                          currentColor;
+    label__text-size:                           @text--md;
+    label__text-weight:                         @font-weight--bold;
+    label__line-height:                         1.25;
+
+    input-copy__text-color:                     @slate-lighter;
+    input-copy__text-size:                      @text--xs;
+    input-copy__line-height:                    1.333333333;
+    input-copy__link-color:                     @slate;
+
+    link__text-color:                           @primary-color;
+    link__background-color:                     fade(@white,0%);
+}
+
+//  $$  OUTPUT CSS VARIABLES
 //  ----------------------------------------------------------------------------
 :root {
-    --primary-color:                @blue;
-    --primary-color--hover:         #0020DA;
-    --primary-color__text:          @blue-dark;
-
-    --nav-background-color:         @navy;
+    if((@define-css-variables = true), each(@theme-variables, {
+        --@{key}: @value;
+    }));
 }

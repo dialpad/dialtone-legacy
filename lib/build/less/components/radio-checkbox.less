@@ -19,7 +19,7 @@
 //    - Validation States
 //
 //  ============================================================================
-//  @   RADIOS & CHECKBOXES
+//  $   RADIOS & CHECKBOXES
 //  ----------------------------------------------------------------------------
 .d-checkbox,
 .d-radio {
@@ -39,20 +39,21 @@
         margin: 0;
         width: 1.4rem;
         height: 1.4rem;
-        border: 0.1rem solid @slate-lightest;
-        .d-background-color--white();
+        border: 0.1rem solid var(--radio-checkbox__border);
+        background-color: var(--radio-checkbox__background-color);
         outline: 0;
         font-size: inherit;
         cursor: pointer;
 
         &:focus {
-            .d-border-color--blue();
-            box-shadow: 0 0 0 @spacing4 fade(@blue,15%);
+            --radio-checkbox__border:           @primary-color;
+
+            box-shadow: 0 0 0 @spacing4 var(--radio-checkbox__box-shadow);
             outline: 0;
         }
         &:checked,
         &:checked:focus {
-            .d-border-color--blue();
+            --radio-checkbox__border:           @primary-color;
         }
     }
 
@@ -61,31 +62,39 @@
 
     //  --  DISABLED
     &[disabled] {
-        opacity: 0.5;
+        --radio-checkbox__border:               @ash-dark;
+        --radio-checkbox__background-color:     @ash-dark;
+
+        opacity: 0.75;
         cursor: not-allowed;
     }
 }
 
 
 //  ============================================================================
-//  @   RADIO / CHECKBOX WRAPPERS
+//  $   RADIO / CHECKBOX WRAPPERS
 //  ----------------------------------------------------------------------------
 .d-checkbox-group,
 .d-radio-group {
-    .checkbox-radio-group();
+    display: flex;
+    .d-padding-x1();
 }
 
 //  --  Wrapper Disabled State
 .d-checkbox-group--disabled,
 .d-radio-group--disabled {
-    .checkbox-radio-group();
-    .d-color--light-darkest();
+    --label__text-color:    @ash-darkest;
+
+    display: flex;
+    .d-padding-x1();
+    .d-opacity75();
     cursor: not-allowed;
 }
 
 
+
 //  ============================================================================
-//  @   INPUT BLOCKS
+//  $   INPUT BLOCKS
 //      This holds the radio or checkbox input
 //  ----------------------------------------------------------------------------
 .d-checkbox__input,
@@ -97,56 +106,26 @@
 
 
 //  ============================================================================
-//  @   COPY BLOCKS
+//  $   COPY BLOCKS
 //      This holds the label and description copy
 //  ----------------------------------------------------------------------------
 .d-checkbox__copy,
 .d-radio__copy {
-    display: inline-flex;
-    flex-direction: column;
-    .d-flex1();
     .d-max-width4();
     .d-margin-left8();
+
+    &,
+    > .d-label,
+    > .d-label--normal {
+        display: inline-flex;
+        flex-direction: column;
+        .d-flex1();
+    }
 }
 
 
 //  ============================================================================
-//  @   LABELS, LEGENDS, DESCRIPTIONS, OH MY!
-//      Radio and checkbox labels typically have a normal font-weight applied.
-//  ----------------------------------------------------------------------------
-.d-checkbox__label,
-.d-radio__label {
-    .label(@text--sm, normal, 1.428571429);
-}
-
-//  @@  ...but legends _do_ have the normal label styling
-.d-checkbox__legend,
-.d-radio__legend {
-    .label(@text--md, bold);
-}
-
-.d-checkbox__description,
-.d-radio__description {
-    .d-input-message();
-    .d-font-family--custom();
-    .d-color--dark-lighter();
-    .d-text--xs();
-    line-height: 1.333333333;
-
-    //  --  Validation States
-    &--warning {
-        .d-input-message--warning();
-    }
-    &--error {
-        .d-input-message--error();
-    }
-    &--success {
-        .d-input-message--success();
-    }
-}
-
-//  ============================================================================
-//  @   CHECKBOXES
+//  $   CHECKBOXES
 //  ----------------------------------------------------------------------------
 .d-checkbox {
     @supports ((-webkit-appearance: none) or (-moz-appearance: none) or (appearance: none)) {
@@ -157,55 +136,76 @@
 
         //  Disabled
         &[disabled] {
-            .d-border-color--ash-darker();
-            .d-background-color--ash();
+            --radio-checkbox__border:               @ash-darker;
+            --radio-checkbox__background-color:     @ash;
         }
 
         &:checked {
-            .d-background-color--blue();
+            --radio-checkbox__background-color:     @primary-color;
+
             background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z' fill='%23fff'/%3E%3C/svg%3E");
 
             //  Disabled
             &[disabled] {
-                border-color: @ash-dark;
-                background-color: @ash;
+                --radio-checkbox__border:           @ash-dark;
+                --radio-checkbox__background-color: @ash;
             }
 
             &:focus {
-                box-shadow: 0 0 0 @spacing4 fade(@blue,15%);
+                --radio-checkbox__box-shadow:       fade(@primary-color,25%);
             }
         }
     }
 }
 
-//  @@  VALIDATION STATES
-//  ----------------------------------------------------------------------------
-//  @@  VALIDATION STATES
-.d-checkbox--warning   { .input-validation(@input-warning-border, checkbox) };
-.d-checkbox--error     { .input-validation(@input-error-border,checkbox) };
-.d-checkbox--success   { .input-validation(@input-success-border,checkbox) };
-
-
 //  ============================================================================
-//  @   RADIOS
+//  $   RADIOS
 //  ----------------------------------------------------------------------------
 .d-radio {
     @supports ((-webkit-appearance: none) or (-moz-appearance: none) or (appearance: none)) {
         .d-border-radius--circle();
 
-        &:checked {
-            border-width: .1rem;
-            box-shadow: inset 0 0 0 0.2rem @white;
-            .d-background-color--blue();
+        &:focus,
+        &:checked:focus {
+            --radio-checkbox__background-color:      @primary-color;
 
-            &:focus {
-                box-shadow: inset 0 0 0 0.2rem @white;
-            }
+            box-shadow: inset 0 0 0 @spacing2 @white,
+                              0 0 0 @spacing4 var(--radio-checkbox__box-shadow);
+        }
+        &:checked {
+            --radio-checkbox__background-color:     @primary-color;
+
+            box-shadow: inset 0 0 0 @spacing2 @white;
         }
     }
 }
 
-//  @@  VALIDATION STATES
-.d-radio--warning   { .input-validation(@input-warning-border,radio) };
-.d-radio--error     { .input-validation(@input-error-border,radio) };
-.d-radio--success   { .input-validation(@input-success-border,radio) };
+//  $$  RADIO & CHECKBOX VALIDATION STATES
+//  ----------------------------------------------------------------------------
+.d-radio--warning,
+.d-checkbox--warning {
+    --radio-checkbox__border:                       @warning-color;
+
+    &:focus,
+    &:checked:focus {
+        --radio-checkbox__box-shadow:               fade(@warning-color,25%);
+    }
+}
+.d-radio--error,
+.d-checkbox--error {
+    --radio-checkbox__border:                       @error-color;
+
+    &:focus,
+    &:checked:focus {
+        --radio-checkbox__box-shadow:               fade(@error-color,25%);
+    }
+}
+.d-radio--success,
+.d-checkbox--success {
+    --radio-checkbox__border:                       @success-color;
+
+    &:focus,
+    &:checked:focus {
+        --radio-checkbox__box-shadow:               fade(@success-color,25%);
+    }
+}
