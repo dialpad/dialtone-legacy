@@ -20,25 +20,45 @@
 //  ----------------------------------------------------------------------------
 @import "../../../lib/build/less/dialtone";
 
-@define-font-path:                              "../fonts/MarkPro/";
-
 //  ============================================================================
-//  $   VARIABLES
+//  $   THEME VARIABLES
+//  ============================================================================
+//  $$  SET THESE
+//      Currently only the following items are themeable in Dialtone.
+//
+//      @primary-color:         This is used for all selected and primary states
+//                              in elements and components (i.e. buttons, inputs,
+//                              links, etc).
+//
+//      @primary-color--hover:  Hover state color for @primary-color.
+//
+//      @nav__background-color: This sets the navigation background color.
 //  ----------------------------------------------------------------------------
+@nav__background-color:         @ash;
+@nav__background-color--h:      hue(@nav__background-color);
+@nav__background-color--s:      saturation(@nav__background-color);
+@nav__background-color--l:      lightness(@nav__background-color);
+
+@define-font-path:              "../fonts/MarkPro/";
+
+@dialtone-nav--border-color:    @ash-darker;
+@dialtone-nav--header-color:    @slate-light;
+
 :root {
-    --nav-width:             30rem;
-    --nav-height:            7.2rem;
-    --content-width:         1fr;
-    --content-max-width:     74rem;        //  740px
+    --nav__background-color:    @nav__background-color;
+    --nav__background-color--h: @nav__background-color--h;
+    --nav__background-color--s: @nav__background-color--s;
+    --nav__background-color--l: @nav__background-color--l;
+
+    --nav-width:                30rem;
+    --nav-height:               7.2rem;
+    --content-width:            1fr;
+    --content-max-width:        74rem;        //  740px
 
     @media screen and (min-width: 920px) {
-        --nav-width:     32.0rem;
+        --nav-width:            32.0rem;
     }
 }
-
-@dialtone-nav--border-color:  @ash-darker;
-@dialtone-nav--header-color:  @slate-light;
-
 
 
 //  ============================================================================
