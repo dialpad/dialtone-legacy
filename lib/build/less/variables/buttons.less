@@ -14,9 +14,9 @@
 //  @   DISABLED
 //  ----------------------------------------------------------------------------
 .disabled-input-style() {
-    --button__border:               @ash-dark;
-    --button__background-color:     @ash-dark;
-    --button__text-color:           @slate-lightest;
+    --button__border:                   var(--ash-dark);
+    --button__background-color:         var(--ash-dark);
+    --button__text-color:               var(--slate-lightest);
 }
 
 //  ============================================================================
@@ -26,45 +26,45 @@
 //  ----------------------------------------------------------------------------
 .btn-danger-clear-states() {
     --button__text-color:               @error-color;
-    --button__background-color:         fade(@error-color,0%);
-    --button__border:                   fade(@error-color,0%);
+    --button__background-color:         fade(@error-color, 0%);
+    --button__border:                   fade(@error-color, 0%);
 
     //  --  STATES
     //  ------------------------------------------------------------------------
     &:hover {
-        --button__background-color:     fade(@error-color--hover,5%);
+        --button__background-color:     fade(@error-color--hover, 5%);
         --button__text-color:           @error-color--hover;
     }
     &:focus {
-        --button__box-shadow:           fade(@error-color,25%);
+        --button__box-shadow:           fade(@error-color, 25%);
     }
     &:active {
-        --button__border:               fade(@error-color,50%);
-        --button__background-color:     fade(@error-color,10%);
-        --button__box-shadow:           fade(@error-color,30%);
+        --button__border:               fade(@error-color, 50%);
+        --button__background-color:     fade(@error-color, 10%);
+        --button__box-shadow:           fade(@error-color, 30%);
     }
 }
 
 //  @@  PRIMARY
 //  ----------------------------------------------------------------------------
 .btn-danger-primary-states() {
-    --button__text-color:               @white;
+    --button__text-color:               var(--white);
     --button__background-color:         @error-color;
     --button__border:                   @error-color;
 
     //  --  STATES
     //  ------------------------------------------------------------------------
     &:hover {
-        --button__text-color:           @white;
+        --button__text-color:           var(--white);
         --button__background-color:     @error-color--hover;
         --button__border:               @error-color--hover;
     }
     &:focus {
-        --button__box-shadow:           fade(@error-color,25%);
+        --button__box-shadow:           fade(@error-color, 25%);
     }
     &:active {
-        --button__background-color:     saturate(@error-color--hover,15%);
-        --button__border:               darken(@error-color,10%);
+        --button__background-color:     saturate(@error-color,15%);
+        --button__border:               darken(@error-color, 10%);
         --button__box-shadow:           @error-color--hover;
     }
 }
@@ -75,22 +75,22 @@
 //  @@  CLEAR (DEFAULT)
 //  ----------------------------------------------------------------------------
 .btn-inverted-clear-states() {
-    --button__text-color:               @white;
-    --button__background-color:         fade(mix(@white, @primary-color, 50%),0%);
-    --button__border:                   fade(@white,0%);
+    --button__text-color:               var(--white);
+    --button__background-color:         hsla(~"@{primary-color--hsl} / 0%");
+    --button__border:                   fade(@white, 0%);
 
     //  --  STATES
     //  ------------------------------------------------------------------------
     &:hover {
-        --button__text-color:           fadeout(@white,10%);
-        --button__background-color:     fade(mix(@white, @primary-color, 25%),25%);
+        --button__text-color:           fade(@white, 90%);
+        --button__background-color:     var(--btn--inverted__bg--hover);
     }
     &:focus {
-        --button__box-shadow:           fade(@primary-color,25%);
+        --button__box-shadow:           hsla(~"@{primary-color--hsl} / 25%");
     }
     &:active {
-        --button__background-color:     fade(@primary-color,50%);
-        --button__border:               fade(@primary-color,50%);
+        --button__background-color:     hsla(~"@{primary-color--hsl} / 50%");
+        --button__border:               hsla(~"@{primary-color--hsl} / 50%");
     }
 }
 
@@ -99,15 +99,15 @@
 .btn-inverted-outlined-states() {
     .btn-inverted-clear-states();
 
-    --button__border:                   fade(@white,50%);
+    --button__border:                   fade(@white, 50%);
 
     //  --  STATES
     //  ------------------------------------------------------------------------
     &:hover {
-        --button__border:               fade(@white,75%);
+        --button__border:               fade(@white, 75%);
     }
     &:active {
-        --button__border:               fade(@primary-color,90%);
+        --button__border:               hsla(~"@{primary-color--hsl} / 90%");
     }
 }
 
@@ -116,22 +116,22 @@
 .btn-inverted-primary-states() {
     .btn-inverted-clear-states();
 
-    --button__text-color:               @primary-color;
-    --button__background-color:         @white;
+    --button__text-color:               var(--primary-color);
+    --button__background-color:         var(--white);
 
     //  --  STATES
     //  ------------------------------------------------------------------------
     &:hover {
-        --button__text-color:           darken(@primary-color,10%);
-        --button__background-color:     mix(@white, @primary-color, 90%);
+        --button__text-color:           hsl(var(--primary-color--h) var(--primary-color--s) calc(var(--primary-color--l) - 10%));
+        --button__background-color:     var(--btn--inverted--primary__bg--hover);
     }
     &:focus {
-        --button__box-shadow:           fade(mix(@white, @primary-color, 50%),25%);
+        --button__box-shadow:           hsla(~"@{primary-color--hsl} / 25%");
     }
     &:active {
-        --button__text-color:           fadeout(@primary-color,10%);
-        --button__background-color:     mix(@white, @primary-color, 95%);
-        --button__border:               @white;
+        --primary-color-l:              65%;
+        --button__text-color:           hsla(~"@{primary-color--hsl} / 10%");
+        --button__border:               var(--white);
     }
 }
 
@@ -139,20 +139,20 @@
 //  @   BRAND
 //  ----------------------------------------------------------------------------
 .brand-buttons(@color) {
-    --button__background-color:     @color;
+    --button__background-color:         @color;
 
     display: flex;
 
     //  --  STATES
     &:hover {
-        --button__background-color: darken(saturate(@color,2.5%),5%);
+        --button__background-color:     darken(saturate(@color,2.5%),5%);
     }
     &:focus {
-        --button__box-shadow:       fade(@color,25%);
+        --button__box-shadow:           fade(@color,25%);
     }
     &:active {
-        --button__background-color: darken(saturate(@color,5%),10%);
-        --button__box-shadow:       fade(darken(@color,10%),25%);
+        --button__background-color:     darken(saturate(@color,5%),10%);
+        --button__box-shadow:           fade(darken(@color,10%),25%);
     }
 
     //  --  ICON ADJUSTMENTS

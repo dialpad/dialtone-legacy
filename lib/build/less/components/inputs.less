@@ -19,22 +19,6 @@
 //  • LABELS
 //
 //  ============================================================================
-//  $  VARIABLES
-//  ----------------------------------------------------------------------------
-@input-border:                   @ash-darkest;
-@input-warning-border:           @sunflower-dark;
-@input-warning-text:             @color--sunflower-text;
-@input-warning-link:             darken(@input-warning-text,15%);
-@input-error-border:             @error-color;
-@input-error-text:               darken(@error-color,40%);
-@input-error-link:               darken(@input-error-text,15%);
-@input-success-border:           @emerald;
-@input-success-text:             @color--emerald-text;
-@input-success-link:             darken(@input-success-text,15%);
-@input-button-radius:            @base-corner-radius;
-
-
-//  ============================================================================
 //  $  INPUTS
 //  ----------------------------------------------------------------------------
 .d-input {
@@ -67,16 +51,16 @@
 
     //  --  Placeholder copy
     &::placeholder {
-        --input__text-color:            @ash-darker;
+        --input__text-color:            var(--ash-darker);
     }
     //  --  Remove input EDGE additions
     &::-ms-clear {
         display: none;
     }
     &:focus {
-        --input__border:                @primary-color;
-        --input__box-shadow--inset:     @ash-dark;
-        --input__box-shadow:            fade(@primary-color,15%);
+        --input__border:                var(--primary-color);
+        --input__box-shadow--inset:     var(--ash-dark);
+        --input__box-shadow:            hsla(~"@{primary-color--hsl} / 15%");
         --input__box-shadow-size:       0 0 0 0.25em;
 
         outline: 0;
@@ -84,9 +68,9 @@
     //  --  DISABLED / READ-ONLY
     &[disabled],
     &[read-only] {
-        --input__border:                @ash-dark;
-        --input__background-color:      @ash;
-        --input__text-color:            @slate-lighter;
+        --input__border:                var(--ash-dark);
+        --input__background-color:      var(--ash);
+        --input__text-color:            var(--slate-lighter);
 
         box-shadow: none;
     }
@@ -122,7 +106,7 @@
 
     &:focus {
         --input__border:                @warning-color;
-        --input__box-shadow:            fade(@warning-color,25%);
+        --input__box-shadow:            fade(@warning-color, 25%);
     }
 }
 .d-input--error {
@@ -130,7 +114,7 @@
 
     &:focus {
         --input__border:                @error-color;
-        --input__box-shadow:            fade(@error-color,25%);
+        --input__box-shadow:            fade(@error-color, 25%);
     }
 }
 .d-input--success {
@@ -138,7 +122,7 @@
 
     &:focus {
         --input__border:                @success-color;
-        --input__box-shadow:            fade(@success-color,25%);
+        --input__box-shadow:            fade(@success-color, 25%);
     }
 }
 
@@ -147,7 +131,7 @@
 //  ----------------------------------------------------------------------------
 .d-textarea {
     .d-input();
-    min-height: var(--textarea--min-height, 8rem);
+    min-height:                         var(--textarea--min-height, 8rem);
 
     --input-button__padding:            1.1rem;
 }
@@ -309,25 +293,25 @@ fieldset {
 .d-label--xs {
     .d-label();
 
-    --label__text-size:         @text--xs;
+    --label__text-size:         var(--text-size--xs);
     --label__line-height:       1.333333333;
 }
 .d-label--sm {
     .d-label();
 
-    --label__text-size:         @text--sm;
+    --label__text-size:         var(--text-size--sm);
     --label__line-height:       1.142857143;
 }
 .d-label--lg {
     .d-label();
 
-    --label__text-size:         @text--lg;
+    --label__text-size:         var(--text-size--lg);
     --label__line-height:       1.111111111;
 }
 .d-label--xl {
     .d-label();
 
-    --label__text-size:         @text--xl;
+    --label__text-size:         var(--text-size--xl);
     --label__line-height:       1.2;
 }
 
@@ -361,7 +345,7 @@ fieldset {
 .d-description--lg {
     .d-description();
 
-    --input-copy__text-size:         @text--sm;
+    --input-copy__text-size:         var(--text-size--sm);
     --input-copy__line-height:       1.428571429;
 }
 
@@ -392,7 +376,7 @@ fieldset {
 .d-input-message--lg {
     .d-input-message();
 
-    --input-copy__text-size:         @text--sm;
+    --input-copy__text-size:         var(--text-size--sm);
     --input-copy__line-height:       1.428571429;
 }
 

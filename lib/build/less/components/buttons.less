@@ -20,6 +20,7 @@
 @button-brand-o365:             #EB3C01;
 @button-brand-linkedin:         #006087;
 
+
 //  ============================================================================
 //  $   BASE STYLE
 //  ----------------------------------------------------------------------------
@@ -56,7 +57,7 @@
     //  --  STATES
     //  ------------------------------------------------------------------------
     &:hover {
-        --button__background-color:   fade(@primary-color,5%);
+        --button__background-color:   hsla(~"@{primary-color--hsl} / 5%");
     }
     &:focus {
         --button__box-shadow--size:   0 0 0 @spacing4;
@@ -65,10 +66,10 @@
         box-shadow: var(--button__box-shadow--size) var(--button__box-shadow);
     }
     &:active {
-        --button__border:             fade(@primary-color,50%);
-        --button__background-color:   fade(@primary-color,10%);
+        --button__border:             hsla(~"@{primary-color--hsl} / 50%");
+        --button__background-color:   hsla(~"@{primary-color--hsl} / 10%");
         --button__box-shadow--size:   0 0 @spacing8 0;
-        --button__box-shadow:         fade(@primary-color,30%);
+        --button__box-shadow:         hsla(~"@{primary-color--hsl} / 30%");
     }
     &[disabled] {
         .disabled-input-style();
@@ -127,11 +128,11 @@
     .d-btn();
 
     //  Now change them
-    --button__border:               @primary-color;
-    --button__text-color:           darken(@primary-color,5%);
+    --button__border:                   var(--primary-color);
+    --button__text-color:               hsl(var(--primary-color--h) var(--primary-color--s) calc(var(--primary-color--l) + 5%));
 
     &:active {
-        --button__border:           darken(@primary-color,5%);
+        --button__border:               hsl(var(--primary-color--h) var(--primary-color--s) calc(var(--primary-color--l) + 5%));
     }
 }
 .d-btn--outlined--loading {
@@ -146,25 +147,25 @@
     .d-btn();
 
     //  Now change them
-    --button__text-color:           @white;
-    --button__background-color:     @primary-color;
+    --button__text-color:               var(--white);
+    --button__background-color:         var(--primary-color);
 
     //  --  STATES
     //  ------------------------------------------------------------------------
     &:hover {
-        --button__background-color:     @primary-color--hover;
+        --button__background-color:     var(--primary-color--hover);
     }
     &:active {
-        --button__border:               darken(@primary-color,10%);
-        --button__background-color:     saturate(@primary-color--hover,15%);
-        --button__box-shadow:           darken(@primary-color--hover,10%);
+        --button__border:               hsl(var(--primary-color--h) var(--primary-color--s) calc(var(--primary-color--l) + 10%));
+        --button__background-color:     hsl(var(--primary-color--h) calc(var(--primary-color--s) + 15%) var(--primary-color--l));
+        --button__box-shadow:           hsl(var(--primary-color--h) var(--primary-color--s) calc(var(--primary-color--l) + 10%));
     }
 }
 .d-btn--primary--loading {
     .d-btn--primary();
     .d-btn-loading();
 
-    --button__border--loading:          @white;
+    --button__border--loading:          var(--white);
 
 }
 
@@ -191,10 +192,10 @@
 
     //  Now change them
     .btn-danger-clear-states();
-    --button__border:   @error-color;
+    --button__border:                   @error-color;
 
     &:active {
-        --button__border:   @error-color--hover;
+        --button__border:               @error-color--hover;
     }
 }
 .d-btn--danger--outlined--loading {
@@ -300,8 +301,8 @@
     .d-btn();
 
     //  Now change them
-    --button__text-color:           var(--text-color--medium);
-    --button__background-color:     fade(@slate-lighter,0%);
+    --button__text-color:               var(--text-color--medium);
+    --button__background-color:         fade(@slate-lighter, 0%);
 
     .d-padding8();
     .d-border-radius--circle();
@@ -321,15 +322,15 @@
     //  ------------------------------------------------------------------------
     &:hover {
         --button__text-color:           var(--text-color--dark);
-        --button__background-color:     fade(@slate-light,7.5%);
+        --button__background-color:     fade(@slate-light, 7.5%);
     }
     &:focus {
-        --button__box-shadow:           fade(@slate-light,25%);
+        --button__box-shadow:           fade(@slate-lighter, 25%);
     }
     &:active {
-        --button__border:               fade(@slate-lighter,50%);
-        --button__background-color:     fade(@slate-lighter,10%);
-        --button__box-shadow:           fade(@slate-lighter,30%);
+        --button__border:               fade(@slate-lighter, 50%);
+        --button__background-color:     fade(@slate-lighter, 10%);
+        --button__box-shadow:           fade(@slate-lighter, 30%);
     }
 }
 .d-btn--circle--loading {
@@ -345,14 +346,14 @@
     .d-btn--circle();
 
     //  Now modify those styles
-    --button__border:               @slate-lighter;
-    --button__text-color:           var(--text-color--medium);
+    --button__border:                   var(--slate-lighter);
+    --button__text-color:               var(--text-color--medium);
 
     //  --  STATES
     //  ------------------------------------------------------------------------
     &:hover {
         --button__text-color:           var(--text-color--dark);
-        --button__border:               @slate-light;
+        --button__border:               var(--slate-light);
     }
 }
 .d-btn--circle--outlined--loading {
@@ -374,13 +375,13 @@
     //  Now modify those styles
     .btn-danger-clear-states();
 
-    --button__text-color:           var(--text-color--medium);
+    --button__text-color:               var(--text-color--medium);
 
     //  --  STATES
     //  ------------------------------------------------------------------------
     &:focus,
     &:active {
-        --button__text-color:       @error-color--hover;
+        --button__text-color:           @error-color--hover;
     }
 }
 .d-btn--circle--danger-hover--loading {
@@ -501,13 +502,13 @@
 .d-btn-loading--white {
     .d-btn-loading();
 
-    --button__border--loading:  @white;
+    --button__border--loading:  var(--white);
 }
 
 .d-btn-loading--dark {
     .d-btn-loading();
 
-    --button__border--loading:  @slate-light;
+    --button__border--loading:  var(--slate-light);
 }
 
 .d-btn-loading--danger {

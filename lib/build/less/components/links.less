@@ -38,7 +38,7 @@
             appearance: none;
 
     &:hover {
-        --link__text-color:         darken(@primary-color--hover,5%);
+        --link__text-color:         hsl(var(--primary-color--hover--h) var(--primary-color--hover--s) calc(~"var(--primary-color--hover--l) - 5%"));
 
         text-decoration: underline;
     }
@@ -80,7 +80,7 @@
     --link__text-color:              @success-color--text;
 
     &:hover {
-        --link__text-color:          darken(@success-color--text,10%);
+        --link__text-color:          darken(@success-color--text,40%);
     }
 }
 
@@ -89,7 +89,7 @@
 .d-link--dark {
     .d-link();
 
-    --link__text-color:              @slate;
+    --link__text-color:              var(--slate);
 
     &:hover {
         --link__text-color:          #000;
@@ -101,10 +101,10 @@
 .d-link--inverted {
     .d-link();
 
-    --link__text-color:              @ash;
+    --link__text-color:              var(--ash);
 
     &:hover {
-        --link__text-color:          @ash-darker;
+        --link__text-color:          var(--ash-darker);
     }
 }
 
@@ -113,9 +113,9 @@
 .d-link--inverted--danger {
     .d-link();
 
-    --link__text-color:              @wildberry-light;
+    --link__text-color:              var(--wildberry-light);
 
     &:hover {
-        --link__text-color:          darken(@wildberry-light,5%);
+        --link__text-color:          hsl(var(--wildberry-light--h) var(--wildberry-light--s) calc(var(--wildberry-light--l) + 5%));
     }
 }
