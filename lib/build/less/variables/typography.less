@@ -16,37 +16,19 @@
 //
 //  ============================================================================
 //  $   FONT FAMILY
-//      To turn on custom webfonts, set @define-font-face to true.
 //  ----------------------------------------------------------------------------
-if((@define-font-face = true), each(@define-font-family, {
-    @font-face {
-        font-style: "normal";
-        font-weight: @key;
-        font-family: @define-font-name;
-        src: url("@{define-font-path}@{value}.woff") format("woff");
-        // url("@{define-font-path}@{value}.eot") format("eot"),
-        //      url("@{define-font-path}@{value}.eot?#iefix") format("embedded-opentype"),
+@define-font-face:               true;
+@define-font-family:             @font-family--mark-pro;
+@define-font-name:               "MarkPro";
+@define-font-path:               "../fonts/";
+@headline-weight:                @font-weight--bold;
 
-    };
-}));
-
-//  ============================================================================
-//  $   FONTS
-//  ============================================================================
-//  $$  FONT-FAMILY: MARK PRO
-//  ----------------------------------------------------------------------------
 @font-family--mark-pro: {
     200: MarkWeb-Light;
     400: MarkWeb;
     500: MarkWeb-Medium;
     600: MarkWeb-Bold;
 };
-
-@define-font-face:               true;
-@define-font-family:             @font-family--mark-pro;
-@define-font-name:               "MarkPro";
-@define-font-path:               "../fonts/";
-@headline-weight:                @font-weight--bold;
 
 @font-family--custom:            @define-font-name, @font-family--sans;
 @font-family--sans:              -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";

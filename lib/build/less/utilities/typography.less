@@ -7,6 +7,7 @@
 //  visit https://dialpad.design/utilties/typography
 //
 //  TABLE OF CONTENTS
+//  • Font face
 //  • Font family
 //  • Font sizes
 //  • Font weight
@@ -15,6 +16,22 @@
 //  • Text alignment
 //  • Line height
 //
+//  ============================================================================
+//  $   FONT FACE
+//      To turn on custom webfonts, set @define-font-face to true.
+//  ----------------------------------------------------------------------------
+if((@define-font-face = true), each(@define-font-family, {
+    @font-face {
+        font-style: "normal";
+        font-weight: @key;
+        font-family: @define-font-name;
+        src: url("@{define-font-path}@{value}.woff") format("woff");
+        // url("@{define-font-path}@{value}.eot") format("eot"),
+        //      url("@{define-font-path}@{value}.eot?#iefix") format("embedded-opentype"),
+
+    };
+}));
+
 //  ============================================================================
 //  $   FONT FAMILY
 //  ----------------------------------------------------------------------------
