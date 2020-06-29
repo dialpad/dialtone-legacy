@@ -65,6 +65,7 @@ var paths = {
         libFavicons: './lib/dist/favicons/**/*',
         docs: './docs/_site/**/*',
         docsCache: './docs/.jekyll-cache/**/*',
+        docsIcons: './docs/_includes/icons/**/*',
         docsFavicons: './docs/assets/images/favicons/**/*'
     },
     scripts: {
@@ -115,8 +116,7 @@ var paths = {
         baseurl: ''
     },
     watch: {
-        lib: './lib/**/*',
-        libExclude: '!./lib/dist/**/*',
+        lib: './lib/build/less/**/*',
         docs: './docs/**/*',
         docsExcludeSite: '!./docs/_site/**/*',
         docsExcludeCSS: '!./docs/assets/css/**/*',
@@ -161,10 +161,17 @@ const cleanUp = (items) => {
 const cleanSite = () => {
     return cleanUp([
         paths.clean.libCss,
-        paths.clean.libSvg,
-        paths.clean.libVue,
         paths.clean.docs,
         paths.clean.docsCache
+    ]);
+}
+
+//  --  Clean out icon files
+const cleanIcons = () => {
+    return cleanUp([
+        paths.clean.libSvg,
+        paths.clean.libVue,
+        paths.clean.docsIcons
     ]);
 }
 
@@ -485,7 +492,6 @@ var watchFiles = function(done) {
     //  Watch files
     watch([
         paths.watch.lib,
-        paths.watch.libExclude,
         paths.watch.docs,
         paths.watch.docsExcludeSite,
         paths.watch.docsExcludeCSS,
@@ -509,8 +515,6 @@ exports.default = series(
     parallel(
         libStyles,
         docStyles,
-        buildSystemSVGs,
-        buildBrandSVGs
     ),
     buildDocs
 );
@@ -519,6 +523,12 @@ exports.watch = series(
     exports.default,
     startServer,
     watchFiles
+);
+
+exports.icons = series(
+    cleanIcons,
+    buildSystemSVGs,
+    buildBrandSVGs
 );
 
 //  --  UPDATES DIALTONE VERSION
