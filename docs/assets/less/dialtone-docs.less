@@ -16,40 +16,51 @@
 //  • EXAMPLES
 //
 //  ============================================================================
-//  $   VARIABLES
-//  ----------------------------------------------------------------------------
-:root {
-    --nav-width:             30rem;
-    --nav-height:            7.2rem;
-    --content-width:         1fr;
-    --content-max-width:     74rem;        //  740px
-
-    @media screen and (min-width: 920px) {
-        --nav-width:     32.0rem;
-    }
-}
-
-
-//  ============================================================================
 //  $   IMPORTS
 //  ----------------------------------------------------------------------------
 @import "../../../lib/build/less/dialtone";
 
-
 //  ============================================================================
-//  $   STYLE MIXINS
-//  ----------------------------------------------------------------------------
-//  $$  SCROLLBAR
-// ::-webkit-scrollbar {
-//     -webkit-appearance: none;
-//     width: @spacing8;
-// }
+//  $   THEME VARIABLES
+//  ============================================================================
+//  $$  SET THESE
+//      Currently only the following items are themeable in Dialtone.
 //
-// ::-webkit-scrollbar-thumb {
-//     border-radius: @border-radius--sm;
-//     background-color: fade(@slate,50%);
-//     -webkit-box-shadow: 0 0 @spacing1 fade(@white,50%);
-// }
+//      @primary-color:         This is used for all selected and primary states
+//                              in elements and components (i.e. buttons, inputs,
+//                              links, etc).
+//
+//      @primary-color--hover:  Hover state color for @primary-color.
+//
+//      @nav__background-color: This sets the navigation background color.
+//  ----------------------------------------------------------------------------
+@nav__background-color:         @ash;
+@nav__background-color--h:      hue(@nav__background-color);
+@nav__background-color--s:      saturation(@nav__background-color);
+@nav__background-color--l:      lightness(@nav__background-color);
+
+@define-font-path:              "../fonts/MarkPro/";
+
+@dialtone-nav--border-color:    @ash-darker;
+@dialtone-nav--header-color:    @slate-light;
+
+:root {
+    --nav__background-color:    @nav__background-color;
+    --nav__background-color--h: @nav__background-color--h;
+    --nav__background-color--s: @nav__background-color--s;
+    --nav__background-color--l: @nav__background-color--l;
+
+    --nav-width:                30rem;
+    --nav-height:               7.2rem;
+    --content-width:            1fr;
+    --content-max-width:        74rem;        //  740px
+
+    @media screen and (min-width: 920px) {
+        --nav-width:            32.0rem;
+    }
+}
+
+
 //  ============================================================================
 //  $   WRAPPERS
 //  ============================================================================
@@ -69,12 +80,11 @@ html {
 body {
     margin: 0;
     min-height: 100%;
-    background-color: @white;
+    background-color: var(--base--background-color);
 
-    color: @color--dark;
-    font-family: @font-family--mark;
-    line-height: @line-height--lg;
-    -webkit-text-size-adjust: 100%; // [21]
+    color: var(--base--font-color);
+    line-height: var(--base--line-height);
+    -webkit-text-size-adjust: 100%; // [2]
 }
 
 //  $$  LAYOUT
@@ -137,7 +147,7 @@ body {
 
     //  Selected state is set on blue
     &[data-state="selected"] {
-        .d-btn--circle--inverted();
+        // .d-btn--circle--inverted();
         .d-margin-left--auto();
         .d-border-color--transparent;
         .d-box-shadow--none();
@@ -161,8 +171,9 @@ body {
 }
 //  The overall nav wrapper
 .dialtone-navbar {
-    .d-background-color--ash();
-    .d-color--dark-lighter();
+    display: flex;
+    flex-direction: column;
+    background-color: var(--nav__background-color);
 
     @media screen and (max-width: 723.9px) {
         display: flex;
@@ -239,6 +250,7 @@ body {
 
     > .dialtone-navigation__list {
         .d-border-top();
+        border-color: @dialtone-nav--border-color;
         .d-border-color--ash-darker();
 
         &:first-of-type {
@@ -253,21 +265,21 @@ body {
     align-items: center;
     .d-padding12();
     .d-padding-left24();
-    background-color: fade(@ash-dark,0%);
+    background-color: hsla(~"@{nav__background-color--hsl} / 0%");
     .d-text--xl();
-    .d-color--dark-lighter();
+    color: @dialtone-nav--header-color;
     .d-line-height--sm();
     text-decoration: none;
     transition: all 100ms @transition--cubic-inOut;
 
     &:hover {
-        .d-color--dark-light();
-        .d-background-color--ash-dark();
+        color: hsl(var(--slate-light--h) var(--slate-light--s) calc(var(--slate-light--l) - 10%));
+        background-color: hsl(var(--nav__background-color--h) calc(~"var(--nav__background-color--s) - 2%") calc(~"var(--nav__background-color--l) - 5%"));
     }
 
     .dialtone-navigation__list[data-open="true"] & {
         .d-padding-y12();
-        .d-color--dark();
+        color: var(--primary-color);
     }
 }
 .dialtone-navigation__header-icon {
@@ -289,29 +301,30 @@ body {
 }
 
 .dialtone-navigation__link {
+    display: block;
     .d-padding-y4();
     .d-padding-x12();
-    .d-border-radius--sm();
+    background-color: fade(@ash-dark, 0%);
+    border-radius: var(--base--corner-radius);
     .d-text--md();
+    color: var(--slate);
     .d-color--dark();
     .d-line-height--lg();
-
-    display: block;
-    background-color: fade(@ash-dark,0%);
     text-decoration: none;
     transition: background-color 100ms @transition--cubic-inOut;
 
     &:hover {
-        background-color: @ash-dark;
+        background-color: hsl(var(--nav__background-color--h) calc(~"var(--nav__background-color--s) - 2%") calc(~"var(--nav__background-color--l) - 10%"));
     }
 
     &.is-selected {
-        .d-background-color--blue-dark();
+        background-color: var(--primary-color);
+
         .d-color--white();
         .d-font-weight--bold();
 
         &:hover {
-            background-color: darken(@blue-dark,10%);
+            background-color: var(--primary-color--hover);
         }
     }
 }
@@ -320,10 +333,10 @@ body {
 //  ----------------------------------------------------------------------------
 .dialtone-logo {
     display: block;
-    color: var(--color--blue);
+    color: var(--primary-color);
 
     &:hover {
-        color: var(--color--blue-dark);
+        color: var(--primary-color--hover);
     }
 
     .dialtone-logo__svg,
@@ -331,6 +344,10 @@ body {
         display: none;
         color: inherit;
         fill: currentColor;
+    }
+
+    .dialtone-logo__svg {
+        max-width: 14.8rem;
     }
 
     @media screen and (max-width: 723.9px) {
@@ -353,6 +370,64 @@ body {
         .dialtone-logo__svg {
             display: block;
         }
+    }
+}
+
+
+//  --  THEME SWITCHER
+//  ----------------------------------------------------------------------------
+.dialtone-theme-switcher {
+    .d-btn--circle();
+
+    position: absolute;
+    .d-top32();
+    .d-right16();
+    color: var(--primary-color);
+
+    &:hover{
+        color: var(--primary-color--hover);
+    }
+}
+.dialtone-theme-switcher__menu {
+    position: absolute;
+    top: calc(~"100% + @{spacing4}");
+    display: flex;
+    flex-direction: column;
+    .d-right0();
+    .d-width1();
+    .d-margin0();
+    .d-padding0();
+    list-style: none;
+    .d-box-shadow--card();
+    background-color: var(--white);
+    .d-border-radius--sm();
+
+    &[data-open="true"] {
+        display: block;
+        z-index: @z-index--popover;
+    }
+    &[data-open="false"] {
+        display: none;
+        z-index: @z-index--hide;
+    }
+}
+.dialtone-theme-switcher__link {
+    display: block;
+    .d-width100();
+    .d-margin0();
+    .d-padding-x12();
+    .d-padding-y4();
+    list-style: none;
+
+    border-bottom: 1px solid var(--ash-darkest);
+    color: var(--slate);
+
+    &:hover {
+        color: darken(@slate,10%);
+        background-color: fade(@ash, 50%);
+    }
+    &:last-of-type {
+        .d-border-bottom-width0();
     }
 }
 
@@ -496,7 +571,7 @@ body {
 
     .dialtone-icon-card[data-selected="yes"] & {
         border: 1px solid @slate-light;
-        box-shadow: 0 @spacing2 @spacing8 0 fade(@slate, 15%);
+        box-shadow: 0 @spacing2 @spacing8 0 fade(@slate,15%);
     }
 }
 
@@ -679,7 +754,7 @@ body {
         th, td {
             .d-font-weight--normal();
             .d-color--light-darkest();
-            background-color: fade(@ash,50%);
+            background-color: fade(@ash, 50%);
         }
     }
 }
@@ -868,7 +943,7 @@ body {
     border: none;
 
     .example-block--outlined {
-        border: @border-width1 solid @blue-light;
+        border: @border-width1 solid var(--blue-light);
         background-color: fade(@blue, 75%);
     }
 }

@@ -6,82 +6,44 @@
 //  and textareas.
 //
 //  ============================================================================
-//  @   VARIABLES
-//  ----------------------------------------------------------------------------
-//  @@  SHARED INPUT & BUTTON PADDING
-@input-button-padding:          0.5rem 0.9rem;     // Minus out borders
-@input-button-padding--xs:      @spacing4 @spacing8 @spacing2;
-@input-button-padding--sm:      0.5rem @spacing8;
-@input-button-padding--lg:      0.9rem @spacing12;
-@input-button-padding--xl:      0.9rem @spacing12;
-
-//  @@  SHARED INPUT & BUTTON LINE-HEIGHTS
-@input-button-line-height:      1.5;            // 24px / 16px
-@input-button-line-height--xs:  1.333333333;    // 16px / 12px
-@input-button-line-height--sm:  1.428571429;    // 20px / 14px
-@input-button-line-height--lg:  1.4;            // 28px / 20px
-@input-button-line-height--xl:  1.5;            // 36px / 24px
-
-//  @@  BUTTON ICON MARGINS
-@button-icon-margin:            (@spacing12 - @spacing1) (@spacing16 - @spacing1);     // Minus out 1px for the border
-@button-icon-margin--xs:        -(@spacing4) @spacing2 -(@spacing2) -(@spacing2);
-@button-icon-margin--sm:        @spacing8 @spacing12;
-@button-icon-margin--lg:        (@spacing12 + @spacing1) (@spacing16 + @spacing2);
-@button-icon-margin--xl:        (@spacing16 - @spacing1) (@spacing24 - @spacing2);
-
-//  @@ TEXTAREA PADDING
-@textarea-padding:              (@spacing12 - @spacing1);   // Minus out the 1px border
-//  ============================================================================
-//  $   MIXIN SIZES
+//  $   SHARED INPUT & BUTTON SIZES
 //  ============================================================================
 //  $$  EXTRA SMALL
 //      Target height: 24px
 //  ----------------------------------------------------------------------------
 .input-button-xs() {
-    padding: @input-button-padding--xs;
-    font-size: @text--xs;
-    line-height: @input-button-line-height--xs;
-
-    .d-btn__icon {
-        .d-svg--size14();
-    }
+    --input-button__padding:        0.5rem 0.7rem;
+    --input-button__text-size:      @text--xs;
+    --input-button__line-height:    1.333333333;
+    --input-button__icon-size:      @icon-size14;
 }
 
 //  $$  SMALL
 //      Target height: 32px
 //  ----------------------------------------------------------------------------
 .input-button-sm() {
-    padding: @input-button-padding--sm;
-    font-size: @text--sm;
-    line-height: @input-button-line-height--sm;
-
-    .d-btn__icon {
-        .d-svg--size16();
-    }
+    --input-button__padding:        0.5rem 0.7rem;
+    --input-button__text-size:      @text--sm;
+    --input-button__line-height:    1.428571429;
+    --input-button__icon-size:      @icon-size16;
 }
 
 //  $$  LARGE
 //      Target height: 48px
 //  ----------------------------------------------------------------------------
 .input-button-lg() {
-    padding: @input-button-padding--lg;
-    font-size: @text--xl;
-    line-height: @input-button-line-height--lg;
-
-    .d-btn__icon {
-        .d-svg--size20();
-    }
+    --input-button__padding:        1.1rem 1.5rem;
+    --input-button__text-size:      @text--xl;
+    --input-button__line-height:    1.2;
+    --input-button__icon-size:      @icon-size20;
 }
 
 //  $$  EXTRA LARGE
 //      Target height: 56px
 //  ----------------------------------------------------------------------------
 .input-button-xl() {
-    padding: @input-button-padding--xl;
-    font-size: @headline--sm;
-    line-height: @input-button-line-height--xl;
-
-    .d-btn__icon {
-        .d-svg--size24();
-    }
+    --input-button__padding:        1.1rem 1.5rem;
+    --input-button__text-size:      @headline--sm;
+    --input-button__line-height:    1.333333333;
+    --input-button__icon-size:      @icon-size24;
 }

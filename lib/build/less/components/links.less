@@ -11,16 +11,11 @@
 //  • ALTERNATE STYLES
 //
 //  ============================================================================
-//  @   BASE STYLE
+//  $   BASE STYLE
 //  ----------------------------------------------------------------------------
 .d-link {
-    //  Set component CSS vars
-    --link-color--default:          var(--color--blue);
-    --link-color--hover:            var(--color--blue-dark);
-    --link-background--color:       fade(@white,0%);
-    --link-transition--duration:    @transition--duration30;
-
     box-sizing: border-box;
+
     position: relative;
     .d-flex--center();
     display: inline-flex;
@@ -28,12 +23,12 @@
     .d-padding0();
 
     border: 0;
-    background-color: var(--link-background--color);
+    background-color: var(--link__background-color);
     font: inherit;
-    color: var(--link-color--default);
+    color: var(--link__text-color);
     text-decoration: underline;
 
-    transition: all var(--link-transition--duration) @transition--cubic-inOut;
+    transition: all @transition--duration30 @transition--cubic-inOut;
     cursor: pointer;
     fill: currentColor;
 
@@ -43,47 +38,84 @@
             appearance: none;
 
     &:hover {
-        color: var(--link-color--hover);
+        --link__text-color:         hsl(var(--primary-color--hover--h) var(--primary-color--hover--s) calc(~"var(--primary-color--hover--l) - 5%"));
+
         text-decoration: underline;
     }
 }
 
 
 //  ============================================================================
-//  @   ALTERNATE STYLES
+//  $   ALTERNATE STYLES
 //  ============================================================================
-//  @@  DANGER
+//  $$  WARNING
+//  ----------------------------------------------------------------------------
+.d-link--warning {
+    .d-link();
+
+    --link__text-color:              @warning-color--text;
+
+    &:hover {
+        --link__text-color:          darken(@warning-color--text,10%);
+    }
+}
+
+//  $$  DANGER
 //  ----------------------------------------------------------------------------
 .d-link--danger {
     .d-link();
 
-    --link-color--default:          var(--color--wildberry);
-    --link-color--hover:            @button-danger-hover;
+    --link__text-color:              @error-color--text;
+
+    &:hover {
+        --link__text-color:          darken(@error-color--text,10%);
+    }
 }
 
-//  @@  DARK
+//  $$  SUCCESS
+//  ----------------------------------------------------------------------------
+.d-link--success {
+    .d-link();
+
+    --link__text-color:              @success-color--text;
+
+    &:hover {
+        --link__text-color:          darken(@success-color--text,40%);
+    }
+}
+
+//  $$  DARK
 //  ----------------------------------------------------------------------------
 .d-link--dark {
     .d-link();
 
-    --link-color--default:          var(--color--dark-light);
-    --link-color--hover:            #000;
+    --link__text-color:              var(--slate);
+
+    &:hover {
+        --link__text-color:          #000;
+    }
 }
 
-//  @@  INVERTED
+//  $$  INVERTED
 //  ----------------------------------------------------------------------------
 .d-link--inverted {
     .d-link();
 
-    --link-color--default:          var(--color--light);
-    --link-color--hover:            var(--color--white);
+    --link__text-color:              var(--ash);
+
+    &:hover {
+        --link__text-color:          var(--ash-darker);
+    }
 }
 
-//  @@  INVERTED DANGER
+//  $$  INVERTED DANGER
 //  ----------------------------------------------------------------------------
 .d-link--inverted--danger {
     .d-link();
 
-    --link-color--default:          var(--color--wildberry-light);
-    --link-color--hover:            var(--color--wildberry-lighter);
+    --link__text-color:              var(--wildberry-light);
+
+    &:hover {
+        --link__text-color:          hsl(var(--wildberry-light--h) var(--wildberry-light--s) calc(var(--wildberry-light--l) + 5%));
+    }
 }

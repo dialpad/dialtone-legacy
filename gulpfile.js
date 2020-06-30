@@ -65,6 +65,7 @@ var paths = {
         libFavicons: './lib/dist/favicons/**/*',
         docs: './docs/_site/**/*',
         docsCache: './docs/.jekyll-cache/**/*',
+        docsIcons: './docs/_includes/icons/**/*',
         docsFavicons: './docs/assets/images/favicons/**/*'
     },
     scripts: {
@@ -115,8 +116,7 @@ var paths = {
         baseurl: ''
     },
     watch: {
-        lib: './lib/**/*',
-        libExclude: '!./lib/dist/**/*',
+        lib: './lib/build/less/**/*',
         docs: './docs/**/*',
         docsExcludeSite: '!./docs/_site/**/*',
         docsExcludeCSS: '!./docs/assets/css/**/*',
@@ -161,10 +161,17 @@ const cleanUp = (items) => {
 const cleanSite = () => {
     return cleanUp([
         paths.clean.libCss,
-        paths.clean.libSvg,
-        paths.clean.libVue,
         paths.clean.docs,
         paths.clean.docsCache
+    ]);
+}
+
+//  --  Clean out icon files
+const cleanIcons = () => {
+    return cleanUp([
+        paths.clean.libSvg,
+        paths.clean.libVue,
+        paths.clean.docsIcons
     ]);
 }
 
@@ -337,51 +344,51 @@ var buildBrandSVGs = function(done) {
 //  @@  FAVICONS
 //  ================================================================================
 //  --  Build Favicon Task
-const generateFavicons = (type, input, output) => {
-    //  Make sure this feature is activated before running
-    if (!settings.favicons) return done();
-
-    if (type === 'dp') {
-        var favInput = paths.favicons.dpInput + input;
-        var favOutput = paths.favicons.dpOutput + output;
-    }
-    else if (type === 'uc') {
-        var favInput = paths.favicons.ucInput + input;
-        var favOutput = output;
-    }
-    else if (type === 'docs') {
-        var favInput = paths.favicons.docsInput + input;
-        var favOutput = output;
-    }
-
-    return src(favInput)
-        .pipe(favicon({
-            appName: 'Dialpad',
-            appShortName: null,
-            appDescription: null,
-            developerName: 'Dialpad',
-            developerURL: 'https://dialpad.com/',
-            background: null,
-            theme_color: "#fff",
-            url: 'https://dialpad.com/',
-            display: 'standalone',
-            orientation: 'portrait',
-            scope: '/',
-            start_url: '/',
-            version: null,
-            logging: false,
-            html: '/',
-            pipeHTML: false,
-            replace: true,
-            pixel_art: true,
-            icons: {
-                appleStartup: false,
-                firefox: false,
-                yandex: false
-            }
-        }))
-        .pipe(dest(favOutput));
-};
+// const generateFavicons = (type, input, output) => {
+//     //  Make sure this feature is activated before running
+//     if (!settings.favicons) return done();
+//
+//     if (type === 'dp') {
+//         var favInput = paths.favicons.dpInput + input;
+//         var favOutput = paths.favicons.dpOutput + output;
+//     }
+//     else if (type === 'uc') {
+//         var favInput = paths.favicons.ucInput + input;
+//         var favOutput = output;
+//     }
+//     else if (type === 'docs') {
+//         var favInput = paths.favicons.docsInput + input;
+//         var favOutput = output;
+//     }
+//
+//     return src(favInput)
+//         .pipe(favicon({
+//             appName: 'Dialpad',
+//             appShortName: null,
+//             appDescription: null,
+//             developerName: 'Dialpad',
+//             developerURL: 'https://dialpad.com/',
+//             background: null,
+//             theme_color: "#fff",
+//             url: 'https://dialpad.com/',
+//             display: 'standalone',
+//             orientation: 'portrait',
+//             scope: '/',
+//             start_url: '/',
+//             version: null,
+//             logging: false,
+//             html: '/',
+//             pipeHTML: false,
+//             replace: true,
+//             pixel_art: true,
+//             icons: {
+//                 appleStartup: false,
+//                 firefox: false,
+//                 yandex: false
+//             }
+//         }))
+//         .pipe(dest(favOutput));
+// };
 
 // //  --  ALL THE FAVICONS TO CREATE
 // //  --------------------------------------------------------------------------------
@@ -485,7 +492,6 @@ var watchFiles = function(done) {
     //  Watch files
     watch([
         paths.watch.lib,
-        paths.watch.libExclude,
         paths.watch.docs,
         paths.watch.docsExcludeSite,
         paths.watch.docsExcludeCSS,
@@ -509,8 +515,6 @@ exports.default = series(
     parallel(
         libStyles,
         docStyles,
-        buildSystemSVGs,
-        buildBrandSVGs
     ),
     buildDocs
 );
@@ -519,6 +523,12 @@ exports.watch = series(
     exports.default,
     startServer,
     watchFiles
+);
+
+exports.icons = series(
+    cleanIcons,
+    buildSystemSVGs,
+    buildBrandSVGs
 );
 
 //  --  UPDATES DIALTONE VERSION
