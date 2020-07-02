@@ -34,15 +34,15 @@
     .d-margin0();
     padding: var(--input-button__padding);
 
-    border: @border-width1 solid var(--button__border);
-    border-radius: var(--button__border-radius);
-    background-color: var(--button__background-color);
-    box-shadow: inset var(--button__box-shadow--size) var(--button__box-shadow);
+    border: @border-width1 solid hsla(~"@{primary-color--hsl} / 0%");
+    border-radius: var(--base--corner-radius);
+    background-color: fade(@white, 0%);
+    box-shadow: inset 0 0 0 0 hsla(~"@{primary-color--hsl} / 25%");
 
     text-decoration: none;
     text-transform: inherit;
     font-family: inherit;
-    color: var(--button__text-color);
+    color: var(--primary-color);
     font-size: var(--input-button__text-size);
     line-height: var(--input-button__line-height);
 
@@ -57,19 +57,16 @@
     //  --  STATES
     //  ------------------------------------------------------------------------
     &:hover {
-        --button__background-color:   hsla(~"@{primary-color--hsl} / 5%");
+        background-color: hsla(~"@{primary-color--hsl} / 5%");
     }
     &:focus {
-        --button__box-shadow--size:   0 0 0 @spacing4;
-
         outline: none;
-        box-shadow: var(--button__box-shadow--size) var(--button__box-shadow);
+        box-shadow: 0 0 0 @spacing4 hsla(~"@{primary-color--hsl} / 25%");
     }
     &:active {
-        --button__border:             hsla(~"@{primary-color--hsl} / 50%");
-        --button__background-color:   hsla(~"@{primary-color--hsl} / 10%");
-        --button__box-shadow--size:   0 0 @spacing8 0;
-        --button__box-shadow:         hsla(~"@{primary-color--hsl} / 30%");
+        border-color: hsla(~"@{primary-color--hsl} / 50%");
+        background-color: hsla(~"@{primary-color--hsl} / 10%");
+        box-shadow--size: inset 0 0 @spacing8 0 hsla(~"@{primary-color--hsl} / 30%");
     }
     &[disabled] {
         .disabled-input-style();
@@ -128,11 +125,11 @@
     .d-btn();
 
     //  Now change them
-    --button__border:                   var(--primary-color);
-    --button__text-color:               hsl(var(--primary-color--h) var(--primary-color--s) calc(var(--primary-color--l) + 5%));
+    border-color: var(--primary-color);
+    color: hsl(var(--primary-color--h) var(--primary-color--s) calc(var(--primary-color--l) + 5%));
 
     &:active {
-        --button__border:               hsl(var(--primary-color--h) var(--primary-color--s) calc(var(--primary-color--l) + 5%));
+        border-color: hsl(var(--primary-color--h) var(--primary-color--s) calc(var(--primary-color--l) + 5%));
     }
 }
 .d-btn--outlined--loading {
@@ -147,18 +144,18 @@
     .d-btn();
 
     //  Now change them
-    --button__text-color:               var(--white);
-    --button__background-color:         var(--primary-color);
+    color: var(--white);
+    background-color: var(--primary-color);
 
     //  --  STATES
     //  ------------------------------------------------------------------------
     &:hover {
-        --button__background-color:     var(--primary-color--hover);
+        background-color: var(--primary-color--hover);
     }
     &:active {
-        --button__border:               hsl(var(--primary-color--h) var(--primary-color--s) calc(var(--primary-color--l) + 10%));
-        --button__background-color:     hsl(var(--primary-color--h) calc(var(--primary-color--s) + 15%) var(--primary-color--l));
-        --button__box-shadow:           hsl(var(--primary-color--h) var(--primary-color--s) calc(var(--primary-color--l) + 10%));
+        border-color: hsl(var(--primary-color--h) var(--primary-color--s) calc(var(--primary-color--l) + 10%));
+        background-color: hsl(var(--primary-color--h) calc(var(--primary-color--s) + 15%) var(--primary-color--l));
+        box-shadow: hsl(var(--primary-color--h) var(--primary-color--s) calc(var(--primary-color--l) + 10%));
     }
 }
 .d-btn--primary--disabled {
@@ -169,9 +166,7 @@
 }
 .d-btn--primary--loading {
     .d-btn--primary();
-    .d-btn-loading();
-
-    --button__border--loading:          var(--white);
+    .d-btn-loading--white();
 }
 
 //  $$  DANGER BUTTON
@@ -197,10 +192,10 @@
 
     //  Now change them
     .btn-danger-clear-states();
-    --button__border:                   @error-color;
+    border-color: @error-color;
 
     &:active {
-        --button__border:               @error-color--hover;
+        border-color: @error-color--hover;
     }
 }
 .d-btn--danger--outlined--loading {
@@ -306,8 +301,8 @@
     .d-btn();
 
     //  Now change them
-    --button__text-color:               var(--text-color--medium);
-    --button__background-color:         fade(@slate-lighter, 0%);
+    color: var(--text-color--medium);
+    background-color: fade(@slate-lighter, 0%);
 
     .d-padding8();
     .d-border-radius--circle();
@@ -326,16 +321,16 @@
     //  --  STATES
     //  ------------------------------------------------------------------------
     &:hover {
-        --button__text-color:           var(--text-color--dark);
-        --button__background-color:     fade(@slate-light, 7.5%);
+        color: var(--text-color--dark);
+        background-color: fade(@slate-light, 7.5%);
     }
     &:focus {
-        --button__box-shadow:           fade(@slate-lighter, 25%);
+        box-shadow: 0 0 0 @spacing4 fade(@slate-lighter, 25%);
     }
     &:active {
-        --button__border:               fade(@slate-lighter, 50%);
-        --button__background-color:     fade(@slate-lighter, 10%);
-        --button__box-shadow:           fade(@slate-lighter, 30%);
+        border-color: fade(@slate-lighter, 50%);
+        background-color: fade(@slate-lighter, 10%);
+        box-shadow: 0 0 0 @spacing4 fade(@slate-lighter, 30%);
     }
 }
 .d-btn--circle--loading {
@@ -351,14 +346,14 @@
     .d-btn--circle();
 
     //  Now modify those styles
-    --button__border:                   var(--slate-lighter);
-    --button__text-color:               var(--text-color--medium);
+    border-color: var(--slate-lighter);
+    color: var(--text-color--medium);
 
     //  --  STATES
     //  ------------------------------------------------------------------------
     &:hover {
-        --button__text-color:           var(--text-color--dark);
-        --button__border:               var(--slate-light);
+        color: var(--text-color--dark);
+        border-color: var(--slate-light);
     }
 }
 .d-btn--circle--outlined--loading {
@@ -380,13 +375,13 @@
     //  Now modify those styles
     .btn-danger-clear-states();
 
-    --button__text-color:               var(--text-color--medium);
+    color: var(--text-color--medium);
 
     //  --  STATES
     //  ------------------------------------------------------------------------
     &:focus,
     &:active {
-        --button__text-color:           @error-color--hover;
+        color: @error-color--hover;
     }
 }
 .d-btn--circle--danger-hover--loading {
@@ -450,19 +445,19 @@
 //  ----------------------------------------------------------------------------
 .d-btn--circle--xs {
     .d-btn--xs();
-    --input-button__padding: 0.5rem;
+    padding: 0.5rem;
 }
 .d-btn--circle--sm {
     .d-btn--sm();
-    --input-button__padding: @spacing6;
+    padding: @spacing6;
 }
 .d-btn--circle--lg {
     .d-btn--lg();
-    --input-button__padding: 1.1rem;
+    padding: 1.1rem;
 }
 .d-btn--circle--xl {
     .d-btn--xl();
-    --input-button__padding: 1.5rem;
+    padding: 1.5rem;
 }
 
 
@@ -507,17 +502,23 @@
 .d-btn-loading--white {
     .d-btn-loading();
 
-    --button__border--loading:  var(--white);
+    &:before {
+        border-color: var(--white);
+    }
 }
 
 .d-btn-loading--dark {
     .d-btn-loading();
 
-    --button__border--loading:  var(--slate-light);
+    &:before {
+        border-color: var(--slate-light);
+    }
 }
 
 .d-btn-loading--danger {
     .d-btn-loading();
 
-    --button__border--loading:  @error-color;
+    &:before {
+        border-color: @error-color;
+    }
 }

@@ -14,9 +14,9 @@
 //  @   DISABLED
 //  ----------------------------------------------------------------------------
 .disabled-input-style() {
-    --button__border:                   var(--ash-dark);
-    --button__background-color:         var(--ash-dark);
-    --button__text-color:               var(--slate-lightest);
+    border-color: var(--ash-dark);
+    background-color: var(--ash-dark);
+    color: var(--slate-lightest);
 }
 
 //  ============================================================================
@@ -25,47 +25,47 @@
 //  @@  CLEAR (DEFAULT)
 //  ----------------------------------------------------------------------------
 .btn-danger-clear-states() {
-    --button__text-color:               @error-color;
-    --button__background-color:         fade(@error-color, 0%);
-    --button__border:                   fade(@error-color, 0%);
+    color: @error-color;
+    background-color: fade(@error-color, 0%);
+    border-color: fade(@error-color, 0%);
 
     //  --  STATES
     //  ------------------------------------------------------------------------
     &:hover {
-        --button__background-color:     fade(@error-color--hover, 5%);
-        --button__text-color:           @error-color--hover;
+        background-color: fade(@error-color--hover, 5%);
+        color: @error-color--hover;
     }
     &:focus {
-        --button__box-shadow:           fade(@error-color, 25%);
+        box-shadow: 0 0 0 @spacing4 fade(@error-color, 25%);
     }
     &:active {
-        --button__border:               fade(@error-color, 50%);
-        --button__background-color:     fade(@error-color, 10%);
-        --button__box-shadow:           fade(@error-color, 30%);
+        border-color: fade(@error-color, 50%);
+        background-color: fade(@error-color, 10%);
+        box-shadow: inset 0 0 @spacing8 0 fade(@error-color, 30%);
     }
 }
 
 //  @@  PRIMARY
 //  ----------------------------------------------------------------------------
 .btn-danger-primary-states() {
-    --button__text-color:               var(--white);
-    --button__background-color:         @error-color;
-    --button__border:                   @error-color;
+    color: var(--white);
+    background-color: @error-color;
+    border-color: @error-color;
 
     //  --  STATES
     //  ------------------------------------------------------------------------
     &:hover {
-        --button__text-color:           var(--white);
-        --button__background-color:     @error-color--hover;
-        --button__border:               @error-color--hover;
+        color: var(--white);
+        background-color: @error-color--hover;
+        border-color: @error-color--hover;
     }
     &:focus {
-        --button__box-shadow:           fade(@error-color, 25%);
+        box-shadow: 0 0 0 @spacing4 fade(@error-color, 25%);
     }
     &:active {
-        --button__background-color:     saturate(@error-color,15%);
-        --button__border:               darken(@error-color, 10%);
-        --button__box-shadow:           @error-color--hover;
+        background-color: saturate(@error-color,15%);
+        border-color: darken(@error-color, 10%);
+        box-shadow: inset 0 0 @spacing8 0 @error-color--hover;
     }
 }
 
@@ -75,22 +75,22 @@
 //  @@  CLEAR (DEFAULT)
 //  ----------------------------------------------------------------------------
 .btn-inverted-clear-states() {
-    --button__text-color:               var(--white);
-    --button__background-color:         hsla(~"@{primary-color--hsl} / 0%");
-    --button__border:                   fade(@white, 0%);
+    color:               var(--white);
+    background-color:         hsla(~"@{primary-color--hsl} / 0%");
+    border-color:                   fade(@white, 0%);
 
     //  --  STATES
     //  ------------------------------------------------------------------------
     &:hover {
-        --button__text-color:           fade(@white, 90%);
-        --button__background-color:     var(--btn--inverted__bg--hover);
+        color: fade(@white, 90%);
+        background-color: var(--btn--inverted__bg--hover);
     }
     &:focus {
-        --button__box-shadow:           hsla(~"@{primary-color--hsl} / 25%");
+        box-shadow: 0 0 0 @spacing4 hsla(~"@{primary-color--hsl} / 25%");
     }
     &:active {
-        --button__background-color:     hsla(~"@{primary-color--hsl} / 50%");
-        --button__border:               hsla(~"@{primary-color--hsl} / 50%");
+        background-color: hsla(~"@{primary-color--hsl} / 50%");
+        border-color: hsla(~"@{primary-color--hsl} / 50%");
     }
 }
 
@@ -99,15 +99,15 @@
 .btn-inverted-outlined-states() {
     .btn-inverted-clear-states();
 
-    --button__border:                   fade(@white, 50%);
+    border-color: fade(@white, 50%);
 
     //  --  STATES
     //  ------------------------------------------------------------------------
     &:hover {
-        --button__border:               fade(@white, 75%);
+        border-color: fade(@white, 75%);
     }
     &:active {
-        --button__border:               hsla(~"@{primary-color--hsl} / 90%");
+        border-color: hsla(~"@{primary-color--hsl} / 90%");
     }
 }
 
@@ -116,22 +116,22 @@
 .btn-inverted-primary-states() {
     .btn-inverted-clear-states();
 
-    --button__text-color:               var(--primary-color);
-    --button__background-color:         var(--white);
+    color: var(--primary-color);
+    background-color: var(--white);
 
     //  --  STATES
     //  ------------------------------------------------------------------------
     &:hover {
-        --button__text-color:           hsl(var(--primary-color--h) var(--primary-color--s) calc(var(--primary-color--l) - 10%));
-        --button__background-color:     var(--btn--inverted--primary__bg--hover);
+        color: hsl(var(--primary-color--h) var(--primary-color--s) calc(var(--primary-color--l) - 10%));
+        background-color: var(--btn--inverted--primary__bg--hover);
     }
     &:focus {
-        --button__box-shadow:           hsla(~"@{primary-color--hsl} / 25%");
+        --button__box-shadow: hsla(~"@{primary-color--hsl} / 25%");
     }
     &:active {
-        --primary-color-l:              65%;
-        --button__text-color:           hsla(~"@{primary-color--hsl} / 10%");
-        --button__border:               var(--white);
+        color: hsl(var(--primary-color--h) var(--primary-color--s) calc(var(--primary-color--l) - 25%));
+        border-color: var(--white);
+        background-color: var(--btn--inverted--primary__bg--hover);
     }
 }
 
@@ -139,19 +139,19 @@
 //  @   BRAND
 //  ----------------------------------------------------------------------------
 .brand-buttons(@color) {
-    --button__background-color:         @color;
+    background-color:         @color;
 
     display: flex;
 
     //  --  STATES
     &:hover {
-        --button__background-color:     darken(saturate(@color,2.5%),5%);
+        background-color:     darken(saturate(@color,2.5%),5%);
     }
     &:focus {
         --button__box-shadow:           fade(@color,25%);
     }
     &:active {
-        --button__background-color:     darken(saturate(@color,5%),10%);
+        background-color:     darken(saturate(@color,5%),10%);
         --button__box-shadow:           fade(darken(@color,10%),25%);
     }
 
