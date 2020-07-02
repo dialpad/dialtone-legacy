@@ -23,9 +23,9 @@
     .d-padding0();
 
     border: 0;
-    background-color: var(--link__background-color);
+    background-color: fade(@white,0%);
     font: inherit;
-    color: var(--link__text-color);
+    color: var(--primary-color);
     text-decoration: underline;
 
     transition: all @transition--duration30 @transition--cubic-inOut;
@@ -38,8 +38,7 @@
             appearance: none;
 
     &:hover {
-        --link__text-color:         hsl(var(--primary-color--hover--h) var(--primary-color--hover--s) calc(~"var(--primary-color--hover--l) - 5%"));
-
+        color: hsl(var(--primary-color--hover--h) var(--primary-color--hover--s) calc(~"var(--primary-color--hover--l) - 5%"));
         text-decoration: underline;
     }
 }
@@ -53,10 +52,10 @@
 .d-link--warning {
     .d-link();
 
-    --link__text-color:              @warning-color--text;
+    color: @warning-color--text;
 
     &:hover {
-        --link__text-color:          darken(@warning-color--text,10%);
+        color: darken(@warning-color--text,10%);
     }
 }
 
@@ -65,10 +64,10 @@
 .d-link--danger {
     .d-link();
 
-    --link__text-color:              @error-color--text;
+    color: @error-color--text;
 
     &:hover {
-        --link__text-color:          darken(@error-color--text,10%);
+        color: darken(@error-color--text,10%);
     }
 }
 
@@ -77,10 +76,10 @@
 .d-link--success {
     .d-link();
 
-    --link__text-color:              @success-color--text;
+    color: @success-color--text;
 
     &:hover {
-        --link__text-color:          darken(@success-color--text,40%);
+        color: darken(@success-color--text,40%);
     }
 }
 
@@ -89,10 +88,10 @@
 .d-link--dark {
     .d-link();
 
-    --link__text-color:              var(--slate);
+    color: var(--slate);
 
     &:hover {
-        --link__text-color:          #000;
+        color: #000;
     }
 }
 
@@ -101,10 +100,10 @@
 .d-link--inverted {
     .d-link();
 
-    --link__text-color:              var(--ash);
+    color: var(--ash);
 
     &:hover {
-        --link__text-color:          var(--ash-darker);
+        color: var(--ash-darker);
     }
 }
 
@@ -113,9 +112,9 @@
 .d-link--inverted--danger {
     .d-link();
 
-    --link__text-color:              var(--wildberry-light);
+    color: var(--wildberry-light);
 
     &:hover {
-        --link__text-color:          hsl(var(--wildberry-light--h) var(--wildberry-light--s) calc(var(--wildberry-light--l) + 5%));
+        color: hsl(var(--wildberry-light--h) var(--wildberry-light--s) calc(var(--wildberry-light--l) + 5%));
     }
 }

@@ -32,18 +32,18 @@
     width: 100%;
     outline: none;
 
-    background-color: var(--input__background-color);
-    border: 1px solid var(--input__border);
+    background-color: var(--white);
+    border: 1px solid var(--ash-darkest);
     border-radius: var(--base--corner-radius);
     box-shadow:
-        inset 0 0 @spacing2 0 var(--input__box-shadow--inset),
-              var(--input__box-shadow-size) var(--input__box-shadow);
+        inset 0 0 @spacing2 0 hsla(~"@{primary-color--hsl} / 0%"),
+              0 0 0 0 fade(@white,0%);
 
     font-weight: inherit;
     font-size: var(--input-button__text-size);
     font-family: inherit;
     line-height: var(--input-button__line-height);
-    color: var(--input__text-color);
+    color: var(--text-color--dark);
 
     transition-timing-function: @transition--cubic-inOut;
     transition-duration: 100ms;
@@ -51,28 +51,25 @@
 
     //  --  Placeholder copy
     &::placeholder {
-        --input__text-color:            var(--ash-darker);
+        color: var(--ash-darker);
     }
     //  --  Remove input EDGE additions
     &::-ms-clear {
         display: none;
     }
     &:focus {
-        --input__border:                var(--primary-color);
-        --input__box-shadow--inset:     var(--ash-dark);
-        --input__box-shadow:            hsla(~"@{primary-color--hsl} / 15%");
-        --input__box-shadow-size:       0 0 0 0.25em;
-
+        border-color: var(--primary-color);
+        box-shadow: inset 0 0 @spacing2 0 var(--ash-dark),
+                          0 0 0 0.25em hsla(~"@{primary-color--hsl} / 15%");
         outline: 0;
     }
     //  --  DISABLED / READ-ONLY
     &[disabled],
     &[read-only] {
-        --input__border:                var(--ash-dark);
-        --input__background-color:      var(--ash);
-        --input__text-color:            var(--slate-lighter);
-
+        border-color: var(--ash-dark);
+        background-color: var(--ash);
         box-shadow: none;
+        color: var(--slate-lighter);
     }
     //  Disabled
     &[disabled] {
@@ -102,27 +99,30 @@
 //  $$  VALIDATION STATES
 //  ----------------------------------------------------------------------------
 .d-input--warning {
-    --input__border:                    @warning-color;
+    border-color: @warning-color;
 
     &:focus {
-        --input__border:                @warning-color;
-        --input__box-shadow:            fade(@warning-color, 25%);
+        border-color: @warning-color;
+        box-shadow: inset 0 0 @spacing2 0 var(--ash-dark),
+                          0 0 0 0.25em fade(@warning-color, 25%);
     }
 }
 .d-input--error {
-    --input__border:                    @error-color;
+    border-color: @error-color;
 
     &:focus {
-        --input__border:                @error-color;
-        --input__box-shadow:            fade(@error-color, 25%);
+        border-color: @error-color;
+        box-shadow: inset 0 0 @spacing2 0 var(--ash-dark),
+                          0 0 0 0.25em fade(@error-color, 25%);
     }
 }
 .d-input--success {
-    --input__border:                    @success-color;
+    border-color: @success-color;
 
     &:focus {
-        --input__border:                @success-color;
-        --input__box-shadow:            fade(@success-color, 25%);
+        border-color: @success-color;
+        box-shadow: inset 0 0 @spacing2 0 var(--ash-dark),
+                          0 0 0 0.25em fade(@success-color, 25%);
     }
 }
 
@@ -131,9 +131,8 @@
 //  ----------------------------------------------------------------------------
 .d-textarea {
     .d-input();
-    min-height:                         var(--textarea--min-height, 8rem);
-
-    --input-button__padding:            1.1rem;
+    min-height: 8rem;
+    padding: 1.1rem;
 }
 
 //  $$  SIZES
@@ -141,22 +140,22 @@
 .d-textarea--xs {
     .d-textarea();
     .input-button-xs();
-    --textarea--min-height: 4rem;
+    min-height: 4rem;
 }
 .d-textarea--sm {
     .d-textarea();
     .input-button-sm();
-    --textarea--min-height: 4.8rem;
+    min-height: 4.8rem;
 }
 .d-textarea--lg {
     .d-textarea();
     .input-button-lg();
-    --textarea--min-height: 9.2rem;
+    min-height: 9.2rem;
 }
 .d-textarea--xl {
     .d-input();
     .input-button-xl();
-    --textarea--min-height: 10rem;
+    min-height: 10rem;
 }
 
 //  $$  VALIDATION STATES
@@ -170,15 +169,14 @@
 //  $  SELECT MENU (NATIVE)
 //  ----------------------------------------------------------------------------
 .d-select {
-    --input-button__padding: 0.7rem 2em 0.7rem 0.7rem;
-
     box-sizing: border-box;
     position: relative;
+    padding: 0.7rem 2em 0.7rem 0.7rem;
     font-weight: inherit;
     font-size: var(--input-button__text-size);
     font-family: inherit;
     line-height: var(--input-button__line-height);
-    color: var(--input__text-color);
+    color: var(--text-color--dark);
 
     //  --  Creat some arrows
     &:before,
@@ -235,22 +233,22 @@
 .d-select--xs {
     .d-select();
     .input-button-xs();
-    --input-button__padding: 0.5rem 2em 0.5rem 0.7rem;
+    padding: 0.5rem 2em 0.5rem 0.7rem;
 }
 .d-select--sm {
     .d-select();
     .input-button-sm();
-    --input-button__padding: 0.5rem 2em 0.5rem 0.7rem;
+    padding: 0.5rem 2em 0.5rem 0.7rem;
 }
 .d-select--lg {
     .d-select();
     .input-button-lg();
-    --input-button__padding: 1.1rem 2em 1.1rem 1.5rem;
+    padding: 1.1rem 2em 1.1rem 1.5rem;
 }
 .d-select--xl {
     .d-select();
     .input-button-xl();
-    --input-button__padding: 1.1rem 2em 1.1rem 1.5rem;
+    padding: 1.1rem 2em 1.1rem 1.5rem;
 }
 
 
@@ -275,11 +273,11 @@ fieldset {
     align-items: baseline;
     justify-content: space-between;
 
-    font-weight: var(--label__text-weight);
-    font-size: var(--label__text-size);
+    font-weight: @font-weight--bold;
+    font-size: var(--text-size--md);
     font-family: inherit;
-    line-height: var(--label__line-height);
-    color: var(--input__text-color);
+    line-height: var(--line-height--md);
+    color: currentColor;
 
     cursor: pointer;
     word-break: break-word;
@@ -292,34 +290,30 @@ fieldset {
 //  ----------------------------------------------------------------------------
 .d-label--xs {
     .d-label();
-
-    --label__text-size:         var(--text-size--xs);
-    --label__line-height:       1.333333333;
+    font-size: var(--text-size--xs);
+    line-height: 1.333333333;
 }
 .d-label--sm {
     .d-label();
-
-    --label__text-size:         var(--text-size--sm);
-    --label__line-height:       1.142857143;
+    font-size: var(--text-size--sm);
+    line-height: 1.142857143;
 }
 .d-label--lg {
     .d-label();
-
-    --label__text-size:         var(--text-size--lg);
-    --label__line-height:       1.111111111;
+    font-size: var(--text-size--lg);
+    line-height: 1.111111111;
 }
 .d-label--xl {
     .d-label();
-
-    --label__text-size:         var(--text-size--xl);
-    --label__line-height:       1.2;
+    font-size: var(--text-size--xl);
+    line-height: 1.2;
 }
 
 //  $$  STYLES
 //  ----------------------------------------------------------------------------
 .d-label--normal {
     .d-label();
-    --label__text-weight:       @font-weight--normal;
+    font-weight: @font-weight--normal;
 }
 
 
@@ -333,11 +327,11 @@ fieldset {
 
     display: flex;
     .d-margin0();
-    color: var(--input-copy__text-color);
+    color: var(--slate-lighter);
     fill: currentColor;
-    font-size: var(--input-copy__text-size);
+    font-size: var(--text-size--xs);
     font-family: inherit;
-    line-height: var(--input-copy__line-height);
+    line-height: 1.333333333;
 }
 
 //  --  SIZES
@@ -345,8 +339,8 @@ fieldset {
 .d-description--lg {
     .d-description();
 
-    --input-copy__text-size:         var(--text-size--sm);
-    --input-copy__line-height:       1.428571429;
+    font-size: var(--text-size--sm);
+    line-height: 1.428571429;
 }
 
 
@@ -359,12 +353,12 @@ fieldset {
     align-items: baseline;
     justify-content: space-between;
 
-    color: var(--input-copy__text-color);
+    color: var(--slate-lighter);
     fill: currentColor;
-    font-size: var(--input-copy__text-size);
+    font-size: var(--text-size--xs);
     font-family: inherit;
     font-weight: inherit;
-    line-height: var(--input-copy__line-height);
+    line-height: 1.333333333;
 
     > a[href] {
         .d-link--dark();
@@ -376,24 +370,24 @@ fieldset {
 .d-input-message--lg {
     .d-input-message();
 
-    --input-copy__text-size:         var(--text-size--sm);
-    --input-copy__line-height:       1.428571429;
+    font-size: var(--text-size--sm);
+    line-height: 1.428571429;
 }
 
 //  $$  VALIDATION STATES
 //  ----------------------------------------------------------------------------
 .d-input-message--warning {
-    --input-copy__text-color:        @warning-color--text;
+    color: @warning-color--text;
 
     > a[href] { .d-link--warning(); }
 }
 .d-input-message--error {
-    --input-copy__text-color:        @error-color--text;
+    color: @error-color--text;
 
     > a[href] { .d-link--danger(); }
 }
 .d-input-message--success {
-    --input-copy__text-color:        @success-color--text;
+    color: @success-color--text;
 
     > a[href] { .d-link--success(); }
 }

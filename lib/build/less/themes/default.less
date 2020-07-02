@@ -106,7 +106,7 @@
 }
 
 //  $$  VISUAL STYLES
-//      Inputs, Buttons, Borders, etc.
+//      Base styles, colors, font-size, and line-heights
 //  ----------------------------------------------------------------------------
 @visual-styles-vars: {
     base--text-color:                       var(--text-color--dark);
@@ -143,48 +143,10 @@
     line-height--lg:                        @line-height--lg;
     line-height--xl:                        @line-height--xl;
     line-height--xxl:                       @line-height--xxl;
-
-    button__text-color:                     var(--primary-color);
-    button__text-size:                      var(--text-size--md);
-    button__background-color:               fade(@white, 0%);
-    button__border:                         hsla(~"@{primary-color--hsl} / 0%");
-    button__border--loading:                var(--primary-color);
-    button__border-radius:                  0.25em;
-    button__box-shadow--size:               0 0 0 0;
-    button__box-shadow:                     hsla(~"@{primary-color--hsl} / 25%");
-
-    input-button__padding:                  0.7rem;
-    input-button__text-size:                var(--text-size--md);
-    input-button__line-height:              1.25;
-    input-button__icon-size:                @icon-size18;
-
-    input__text-color:                      var(--text-color--dark);
-    input__background-color:                var(--white);
-    input__border:                          var(--ash-darkest);
-    input__box-shadow--inset:               hsla(~"@{primary-color--hsl} / 0%");
-    input__box-shadow:                      hsla(~"var(--white--hsl) / 0%");
-    input__box-shadow-size:                 0 0 0 0;
-
-    radio-checkbox__background-color:       var(--white);
-    radio-checkbox__border:                 var(--slate-lightest);
-    radio-checkbox__box-shadow:             hsla(~"@{primary-color--hsl} / 15%");
-
-    label__text-color:                      currentColor;
-    label__text-size:                       var(--text-size--md);
-    label__text-weight:                     @font-weight--bold;
-    label__line-height:                     var(--line-height--md);
-
-    input-copy__text-color:                 var(--slate-lighter);
-    input-copy__text-size:                  var(--text-size--xs);
-    input-copy__line-height:                1.333333333;
-    input-copy__link-color:                 var(--slate);
-
-    link__text-color:                       var(--primary-color);
-    link__background-color:                 hsla(~"var(--white--hsl) / 0%");
 }
 
 //  $$  THEME STYLES
-//      Inputs, Buttons, Borders, etc.
+//      Primary and Navigation Color
 //  ----------------------------------------------------------------------------
 @theme-vars: {
     primary-color:                 @primary-color;
@@ -217,6 +179,11 @@
 
     //  Visual Styles
     each(@visual-styles-vars, {
+        --@{key}: @value;
+    });
+
+    //  Visual Styles
+    each(@input-button-vars, {
         --@{key}: @value;
     });
 
