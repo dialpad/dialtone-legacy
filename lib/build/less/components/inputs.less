@@ -168,12 +168,10 @@
 .d-select {
     box-sizing: border-box;
     position: relative;
-    padding: 0.7rem 2em 0.7rem 0.7rem;
     font-weight: inherit;
     font-size: var(--input-button__text-size);
     font-family: inherit;
     line-height: var(--input-button__line-height);
-    color: var(--text-color--dark);
 
     //  --  Creat some arrows
     &:before,
@@ -204,6 +202,7 @@
 
         //  [2] Update the styles
         .d-input();
+        padding: 0.7rem 2em 0.7rem 0.7rem;
         height: 100%; // Fill the height of its parent
 
         &::-moz-focus-inner {
@@ -229,23 +228,35 @@
 //  ----------------------------------------------------------------------------
 .d-select--xs {
     .d-select();
-    .input-button-xs();
-    padding: 0.5rem 2em 0.5rem 0.7rem;
+
+    > select {
+        .input-button-xs();
+        padding-right: 2em;
+    }
 }
 .d-select--sm {
     .d-select();
-    .input-button-sm();
-    padding: 0.5rem 2em 0.5rem 0.7rem;
+
+    > select {
+        .input-button-sm();
+        padding-right: 2em;
+    }
 }
 .d-select--lg {
     .d-select();
-    .input-button-lg();
-    padding: 1.1rem 2em 1.1rem 1.5rem;
+
+    > select {
+        .input-button-lg();
+        padding-right: 2em;
+    }
 }
 .d-select--xl {
     .d-select();
-    .input-button-xl();
-    padding: 1.1rem 2em 1.1rem 1.5rem;
+
+    > select {
+        .input-button-xl();
+        padding-right: 2em;
+    }
 }
 
 
