@@ -1,0 +1,90 @@
+//
+//  DIALTONE
+//  COMPONENTS: BREADCRUMBS
+//
+//  These are breadcrumb classes for Dialpad's design system Dialtone.
+//  For further information, visit https://dialpad.design/components/breadcrumbs
+//
+//  TABLE OF CONTENTS
+//  • BASE STYLE
+//  • INVERTED STYLE
+//
+//  ============================================================================
+//  $  BASE STYLE
+//  ----------------------------------------------------------------------------
+.d-breadcrumb {
+    box-sizing: border-box;
+
+    display: inline-flex;
+    position: relative;
+    .d-padding1();
+    .d-padding-right12();
+
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: var(--text-size--sm);
+    line-height: 1.428571429;
+    color: var(--slate-lightest);
+    text-decoration: underline;
+
+    //  Provide a forward slash with each element except when it's the last one.
+    &:not(:last-of-type):before {
+        position: absolute;
+        right: 0;
+        .d-margin-top1();
+        content: "/";
+    }
+
+    a&:hover {
+        color: var(--primary-color);
+
+        //  Don't recolor the the forward slash.
+        &:not(:last-of-type):before {
+            color: var(--slate-lightest);
+        }
+    }
+}
+
+//  $$ SELECTED (CURRENT PAGE)
+//  ----------------------------------------------------------------------------
+.d-breadcrumb--selected {
+    .d-breadcrumb();
+    text-decoration: none;
+    color: var(--text-color--dark);
+
+    &:hover,
+    a&:hover {
+        color: inherit;
+    }
+}
+
+
+//  ============================================================================
+//  $  INVERTED STYLE
+//  ----------------------------------------------------------------------------
+.d-breadcrumb--inverted {
+    .d-breadcrumb();
+    color: var(--ash-darkest);
+
+    a&:hover {
+        color: hsl(var(--primary-color--h) var(--primary-color--s) calc(var(--primary-color--l) + 30%));
+
+        //  Don't recolor the the forward slash.
+        &:not(:last-of-type):before {
+            color: var(--ash-darkest);
+        }
+    }
+
+}
+
+//  $$ SELECTED (CURRENT PAGE)
+//  ----------------------------------------------------------------------------
+.d-breadcrumb--inverted--selected {
+    .d-breadcrumb--selected();
+    color: var(--ash);
+
+    &:hover,
+    a&:hover {
+        color: var(--ash);
+    }
+}
