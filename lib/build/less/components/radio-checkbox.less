@@ -19,7 +19,7 @@
 //    - Validation States
 //
 //  ============================================================================
-//  @   RADIOS & CHECKBOXES
+//  $   RADIOS & CHECKBOXES
 //  ----------------------------------------------------------------------------
 .d-checkbox,
 .d-radio {
@@ -39,20 +39,20 @@
         margin: 0;
         width: 1.4rem;
         height: 1.4rem;
-        border: 0.1rem solid @slate-lightest;
-        .d-background-color--white();
+        border: 0.1rem solid var(--slate-lightest);
+        background-color: var(--white);
         outline: 0;
         font-size: inherit;
         cursor: pointer;
 
         &:focus {
-            .d-border-color--blue();
-            box-shadow: 0 0 0 @spacing4 fade(@blue,15%);
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 @spacing4 hsla(~"@{primary-color--hsl} / 15%");
             outline: 0;
         }
         &:checked,
         &:checked:focus {
-            .d-border-color--blue();
+            border-color: var(--primary-color);
         }
     }
 
@@ -61,31 +61,37 @@
 
     //  --  DISABLED
     &[disabled] {
-        opacity: 0.5;
+        border-color: var(--ash-dark);
+        background-color: var(--ash-dark);
+        opacity: 0.75;
         cursor: not-allowed;
     }
 }
 
 
 //  ============================================================================
-//  @   RADIO / CHECKBOX WRAPPERS
+//  $   RADIO / CHECKBOX WRAPPERS
 //  ----------------------------------------------------------------------------
 .d-checkbox-group,
 .d-radio-group {
-    .checkbox-radio-group();
+    display: flex;
+    .d-padding-x1();
 }
 
 //  --  Wrapper Disabled State
 .d-checkbox-group--disabled,
 .d-radio-group--disabled {
-    .checkbox-radio-group();
-    .d-color--light-darkest();
+    display: flex;
+    .d-padding-x1();
+    .d-opacity75();
+    color: var(--ash-darkest);
     cursor: not-allowed;
 }
 
 
+
 //  ============================================================================
-//  @   INPUT BLOCKS
+//  $   INPUT BLOCKS
 //      This holds the radio or checkbox input
 //  ----------------------------------------------------------------------------
 .d-checkbox__input,
@@ -97,7 +103,7 @@
 
 
 //  ============================================================================
-//  @   COPY BLOCKS
+//  $   COPY BLOCKS
 //      This holds the label and description copy
 //  ----------------------------------------------------------------------------
 .d-checkbox__copy,
@@ -109,44 +115,59 @@
     .d-margin-left8();
 }
 
-
-//  ============================================================================
-//  @   LABELS, LEGENDS, DESCRIPTIONS, OH MY!
-//      Radio and checkbox labels typically have a normal font-weight applied.
-//  ----------------------------------------------------------------------------
 .d-checkbox__label,
 .d-radio__label {
-    .label(@text--sm, normal, 1.428571429);
-}
+    display: inline-flex;
+    flex-direction: column;
+    .d-flex1();
 
-//  @@  ...but legends _do_ have the normal label styling
-.d-checkbox__legend,
-.d-radio__legend {
-    .label(@text--md, bold);
+    font-size: var(--text-size--sm);
+    line-height: 1.428571429;
+    font-weight: @font-weight--normal;
 }
 
 .d-checkbox__description,
 .d-radio__description {
-    .d-input-message();
-    .d-font-family--mark();
-    .d-color--dark-lighter();
-    .d-text--xs();
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin: 0;
+
+    color: var(--slate-lighter);
+    fill: currentColor;
+    font-size: var(--text-size--xs);
+    font-family: inherit;
+    font-weight: inherit;
     line-height: 1.333333333;
 
-    //  --  Validation States
-    &--warning {
-        .d-input-message--warning();
-    }
-    &--error {
-        .d-input-message--error();
-    }
-    &--success {
-        .d-input-message--success();
+    > a[href] {
+        .d-link--dark();
     }
 }
+.d-checkbox__description--warning,
+.d-radio__description--warning {
+    color: @warning-color--text;
+
+    > a[href] { .d-link--warning(); }
+}
+.d-checkbox__description--error,
+.d-radio__description--error {
+    color: @error-color--text;
+
+    > a[href] { .d-link--danger(); }
+}
+.d-checkbox__description--success,
+.d-radio__description--success {
+    color: @success-color--text;
+
+    > a[href] { .d-link--success(); }
+}
+
 
 //  ============================================================================
-//  @   CHECKBOXES
+//  $   CHECKBOXES
 //  ----------------------------------------------------------------------------
 .d-checkbox {
     @supports ((-webkit-appearance: none) or (-moz-appearance: none) or (appearance: none)) {
@@ -157,55 +178,122 @@
 
         //  Disabled
         &[disabled] {
-            .d-border-color--ash-darker();
-            .d-background-color--ash();
+            border-color: var(--ash-darker);
+            background-color: var(--ash);
         }
 
         &:checked {
-            .d-background-color--blue();
+            background-color: var(--primary-color);
             background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z' fill='%23fff'/%3E%3C/svg%3E");
 
             //  Disabled
             &[disabled] {
-                border-color: @ash-dark;
-                background-color: @ash;
+                border-color: var(--ash-dark);
+                background-color: var(--ash);
             }
 
             &:focus {
-                box-shadow: 0 0 0 @spacing4 fade(@blue,15%);
+                box-shadow: 0 0 0 @spacing4 hsla(~"@{primary-color--hsl} / 25%");
             }
         }
     }
 }
 
-//  @@  VALIDATION STATES
+//  $$  CHECKBOX VALIDATION STATES
 //  ----------------------------------------------------------------------------
-//  @@  VALIDATION STATES
-.d-checkbox--warning   { .input-validation(@input-warning-border, checkbox) };
-.d-checkbox--error     { .input-validation(@input-error-border,checkbox) };
-.d-checkbox--success   { .input-validation(@input-success-border,checkbox) };
+.d-checkbox--warning {
+    border-color: @warning-color;
+
+    &:focus,
+    &:checked:focus {
+        box-shadow: 0 0 0 @spacing4 fade(@warning-color, 25%);
+    }
+}
+.d-checkbox--error {
+    border-color: @error-color;
+
+    &:focus,
+    &:checked:focus {
+        box-shadow: 0 0 0 @spacing4 fade(@error-color, 25%);
+    }
+}
+.d-checkbox--success {
+    border-color: @success-color;
+
+    &:focus,
+    &:checked:focus {
+        box-shadow: 0 0 0 @spacing4 fade(@success-color, 25%);
+    }
+}
 
 
 //  ============================================================================
-//  @   RADIOS
+//  $   RADIOS
 //  ----------------------------------------------------------------------------
 .d-radio {
     @supports ((-webkit-appearance: none) or (-moz-appearance: none) or (appearance: none)) {
         .d-border-radius--circle();
 
+        &:focus,
+        &:checked:focus {
+            background-color: var(--primary-color);
+            box-shadow: inset 0 0 0 @spacing2 @white,
+                              0 0 0 @spacing4 hsla(~"@{primary-color--hsl} / 15%");
+        }
         &:checked {
-            border-width: .1rem;
-            box-shadow: inset 0 0 0 0.2rem @white;
-            .d-background-color--blue();
-
-            &:focus {
-                box-shadow: inset 0 0 0 0.2rem @white;
-            }
+            background-color: var(--primary-color);
+            box-shadow: inset 0 0 0 @spacing2 @white;
         }
     }
 }
 
-//  @@  VALIDATION STATES
-.d-radio--warning   { .input-validation(@input-warning-border,radio) };
-.d-radio--error     { .input-validation(@input-error-border,radio) };
-.d-radio--success   { .input-validation(@input-success-border,radio) };
+//  $$  RADIO & CHECKBOX VALIDATION STATES
+//  ----------------------------------------------------------------------------
+.d-radio--warning {
+    border-color: @warning-color;
+
+    &:focus,
+    &:checked:focus {
+        border-color: darken(@warning-color,10%);
+        background-color: @warning-color;
+        box-shadow: inset 0 0 0 @spacing2 @white,
+                          0 0 0 @spacing4 fade(@warning-color,25%);
+    }
+    &:checked {
+        border-color: @warning-color;
+        background-color: @warning-color;
+        box-shadow: inset 0 0 0 @spacing2 @white;
+    }
+}
+.d-radio--error {
+    border-color: @error-color;
+
+    &:focus,
+    &:checked:focus {
+        border-color: darken(@error-color,10%);
+        background-color: @error-color;
+        box-shadow: inset 0 0 0 @spacing2 @white,
+                          0 0 0 @spacing4 fade(@error-color,25%);
+    }
+    &:checked {
+        border-color: @error-color;
+        background-color: @error-color;
+        box-shadow: inset 0 0 0 @spacing2 @white;
+    }
+}
+.d-radio--success {
+    border-color: @success-color;
+
+    &:focus,
+    &:checked:focus {
+        border-color: darken(@success-color,10%);
+        background-color: @success-color;
+        box-shadow: inset 0 0 0 @spacing2 @white,
+                          0 0 0 @spacing4 fade(@success-color,25%);
+    }
+    &:checked {
+        border-color: @success-color;
+        background-color: @success-color;
+        box-shadow: inset 0 0 0 @spacing2 @white;
+    }
+}

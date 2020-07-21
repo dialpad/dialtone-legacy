@@ -7,7 +7,8 @@
 //  visit https://dialpad.design/utilties/typography
 //
 //  TABLE OF CONTENTS
-//  • Header resets
+//  • Font face
+//  • Font family
 //  • Font sizes
 //  • Font weight
 //  • Font styles
@@ -17,29 +18,24 @@
 //
 //  ============================================================================
 //  $   FONT FACE
+//      To turn on custom webfonts, set @define-font-face to true.
 //  ----------------------------------------------------------------------------
-
-// Can override @define-font-face to false to prevent font definitions below.
-// TODO(dbecher): this is only needed because the font-face definitions in dialpad
-// are currently wrong, and this conflicts with the "correct" font-face definitions
-// below. Can remove once we fix the font issues in dialpad.
-@define-font-face: true;
-
-if((@define-font-face = true), each(@font-family-weights, {
+if((@define-font-face = true), each(@define-font-family, {
     @font-face {
         font-style: "normal";
         font-weight: @key;
-        font-family: "MarkWeb";
-        src: url("@{font-path}@{value}.eot") format("eof"),
-             url("@{font-path}@{value}.eot?#iefix") format("embedded-opentype"),
-             url("@{font-path}@{value}.woff") format("woff");
+        font-family: @define-font-name;
+        src: url("@{define-font-path}@{value}.woff") format("woff");
+        // url("@{define-font-path}@{value}.eot") format("eot"),
+        //      url("@{define-font-path}@{value}.eot?#iefix") format("embedded-opentype"),
+
     };
 }));
 
 //  ============================================================================
 //  $   FONT FAMILY
 //  ----------------------------------------------------------------------------
-.d-font-family--mark            { font-family: @font-family--mark; }
+.d-font-family--custom          { font-family: @font-family--custom; }
 .d-font-family--sans            { font-family: @font-family--sans; }
 .d-font-family--mono            { font-family: @font-family--mono; }
 .d-font-family--inherit         { font-family: inherit; }
@@ -50,23 +46,23 @@ if((@define-font-face = true), each(@font-family-weights, {
 //  ----------------------------------------------------------------------------
 .d-headline--xl {
     font-size: @headline--xl;
-    font-weight: @font-weight--bold;
+    font-weight: @headline-weight;
 }
 .d-headline--lg {
     font-size: @headline--lg;
-    font-weight: @font-weight--bold;
+    font-weight: @headline-weight;
 }
 .d-headline--md {
     font-size: @headline--md;
-    font-weight: @font-weight--bold;
+    font-weight: @headline-weight;
 }
 .d-headline--sm {
     font-size: @headline--sm;
-    font-weight: @font-weight--bold;
+    font-weight: @headline-weight;
 }
 .d-headline--xs {
     font-size: @headline--xs;
-    font-weight: @font-weight--bold;
+    font-weight: @headline-weight;
     text-transform: uppercase;
 }
 
@@ -85,10 +81,11 @@ if((@define-font-face = true), each(@font-family-weights, {
 //  ============================================================================
 //  $$  FONT WEIGHT
 //  ----------------------------------------------------------------------------
-.d-font-weight--light       { font-weight: @font-weight--light; }
-.d-font-weight--normal      { font-weight: @font-weight--normal; }
-.d-font-weight--medium      { font-weight: @font-weight--medium; }
-.d-font-weight--bold        { font-weight: @font-weight--bold; }
+.d-font-weight--light           { font-weight: @font-weight--light; }
+.d-font-weight--normal          { font-weight: @font-weight--normal; }
+.d-font-weight--medium          { font-weight: @font-weight--medium; }
+.d-font-weight--bold            { font-weight: @font-weight--bold; }
+.d-font-weight--ultra           { font-weight: @font-weight--ultra; }
 
 //  $$  TEXT COLOR
 //  ----------------------------------------------------------------------------
@@ -137,7 +134,9 @@ if((@define-font-face = true), each(@font-family-weights, {
 //  $   LISTS
 //  ----------------------------------------------------------------------------
 .d-list-reset {
-    margin: 0;
-    padding: 0;
+    .d-margin-x0;
+    .d-margin-y0;
+    .d-padding-x0;
+    .d-padding-y0;
     list-style: none;
 }

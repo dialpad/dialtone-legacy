@@ -1,0 +1,58 @@
+---
+layout: page
+title: Links
+description: Apply a link style to an <code class="code-example--inline-lead">&lt;a&gt;</code> or <code class="code-example--inline-lead">&lt;button&gt;</code> without needing to use a <code class="code-example--inline-lead">.d-btn</code> class.
+---
+<section class="dialtone-section16">
+    <header class="dialtone-section2">
+        <h2 class="dialtone-title__section">Classes</h2>
+    </header>
+    <div class="dialtone-table-wrapper">
+        <table class="dialtone-table dialtone-table--code">
+            <thead>
+                <tr>
+                    <th scope="col" class="dialtone-table__column--md">Class</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in site.data.links.classes %}
+                {% assign class = i.class %}
+                {% assign desc = i.desc %}
+                <tr>
+                    <th scope="row">{{ class }}</th>
+                    <td>{{ desc }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+<section class="dialtone-section8">
+    <header>
+        <h2 class="dialtone-title__section">Styles</h2>
+    </header>
+    <div class="dialtone-example" data-example="yes" data-code="yes">
+        <div class="dialtone-example__example dialtone-section16">
+            <div class="d-padding16">
+                <a href="#" class="d-link">Default link</a>
+                <button type="button" class="d-link d-margin-left16">Default button link</button>
+                <a href="#" class="d-link--warning d-margin-left16">Warning link</a>
+                <a href="#" class="d-link--danger d-margin-left16">Danger link</a>
+                <a href="#" class="d-link--success d-margin-left16">Success link</a>
+                <a href="#" class="d-link--dark d-margin-left16">Dark link</a>
+            </div>
+            <div class="d-background-color--slate-light d-border-radius--md d-padding16">
+                <a href="#" class="d-link--inverted">Inverted link</a>
+                <a href="#" class="d-link--inverted--danger d-margin-left16">Inverted Danger link</a>
+            </div>
+        </div>
+        <div class="dialtone-example__code">
+{% highlight css linenos %}
+.example-link {
+    .d-link();
+}
+{% endhighlight %}
+        </div>
+    </div>
+</section>

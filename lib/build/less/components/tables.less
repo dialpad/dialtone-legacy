@@ -21,23 +21,23 @@
     width: 100%;
     border-spacing: 0;
     border-collapse: collapse;
-    font-size: @text--xs;
+    font-size: var(--text-size--xs);
     line-height: @line-height--md;
 
     th,
     td {
         padding: @spacing8;
-        border-bottom: @border-width1 solid @ash-dark;
+        border-bottom: @border-width1 solid var(--ash-dark);
         text-align: left;
     }
 
     thead th {
         padding-top: @spacing12;
         padding-bottom: @spacing12;
-        border-bottom-color: @ash-darker;
+        border-bottom-color: var(--ash-darker);
         text-transform: uppercase;
         font-weight: 500;
-        font-size: @text--xxs;
+        font-size: var(--text-size--xxs);
         line-height: @line-height--xs;
     }
 
@@ -51,7 +51,7 @@
     tbody + tbody tr:first-of-type {
         td,
         th {
-            border-top: @border-width4 solid @ash-dark;
+            border-top: @border-width4 solid var(--ash-dark);
         }
     }
 }
@@ -62,14 +62,14 @@
 .d-table--inverted {
     th,
     td {
-        border-bottom-color: @ash-dark;
-        color: @white;
+        border-bottom-color: var(--ash-dark);
+        color: var(--white);
     }
     thead th {
-        border-bottom-color: @white;
+        border-bottom-color: var(--white);
     }
     tbody + tbody tr:first-of-type {
-        border-top-color: @white;
+        border-top-color: var(--white);
     }
 }
 
@@ -77,5 +77,5 @@
 //  $   STRIPED ROW BACKGROUNDS
 //  ----------------------------------------------------------------------------
 .d-table--striped {
-    tr:nth-child(even) { background-color: lighten(@ash-dark,2.5%); }
+    tr:nth-child(even) { background-color: hsl(var(--ash-dark-h),var(--ash-dark-s),calc(var(--ash-dark-l) + 2.5)); }
 }

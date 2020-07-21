@@ -6,79 +6,43 @@
 //  and textareas.
 //
 //  ============================================================================
-//  @   VARIABLES
-//  ----------------------------------------------------------------------------
-//  @@  SHARED INPUT & BUTTON PADDING
-@input-button-padding:          0.9rem 1.5rem;     // Minus out borders
-@input-button-padding--xs:      @spacing4 @spacing8 @spacing2;
-@input-button-padding--sm:      0.7rem @spacing12 @spacing6;
-@input-button-padding--lg:      (@spacing12 + @spacing1) (@spacing16 + @spacing2);
-@input-button-padding--xl:      (@spacing16 - @spacing1) (@spacing24 - @spacing2);
-
-//  @@  SHARED INPUT & BUTTON LINE-HEIGHTS
-@input-button-line-height:      1.25;           // 20px / 16px
-@input-button-line-height--xs:  1.333333333;    // 16px / 12px
-@input-button-line-height--sm:  1.142857143;    // 16px / 14px
-@input-button-line-height--lg:  1.111111111;    // 20px / 18px
-@input-button-line-height--xl:  1.2;            // 24px / 20px
-
-//  @@  BUTTON ICON MARGINS
-@button-icon-margin:            (@spacing12 - @spacing1) (@spacing16 - @spacing1);     // Minus out 1px for the border
-@button-icon-margin--xs:        -(@spacing4) @spacing2 -(@spacing2) -(@spacing2);
-@button-icon-margin--sm:        @spacing8 @spacing12;
-@button-icon-margin--lg:        (@spacing12 + @spacing1) (@spacing16 + @spacing2);
-@button-icon-margin--xl:        (@spacing16 - @spacing1) (@spacing24 - @spacing2);
-
-//  @@ TEXTAREA PADDING
-@textarea-padding:              (@spacing12 - @spacing1);   // Minus out the 1px border
+//  $   CSS VARS
 //  ============================================================================
-//  $   MIXINS
-//  ============================================================================
-//  @@  SIZE MIXIN
-//      Used to properly set the font-size and padding for inputs and buttons.
-//      We do this so they look the same size when placed next to each other.
-//  ----------------------------------------------------------------------------
-.input-button-size(@text, @padding, @button, @icon, @icon-margin) {
-    padding: @padding;
-    font-size: @text;
-
-    //  If this is a button, add in icon/svg items
-    & when (@button) {
-        .d-btn__icon,
-        .d-svg {
-            width: @icon;
-            height: @icon;
-        }
-
-        //  If we're adjusting the margins
-        & when (@icon-margin) {
-            .d-btn__icon { margin: @icon-margin; }
-        }
-    }
+@input-button-vars: {
+    input-button__padding:                  0.7rem;
+    input-button__text-size:                var(--text-size--md);
+    input-button__line-height:              1.25;
+    input-button__icon-size:                @icon-size18;
 }
 
+//  ============================================================================
+//  $   SHARED INPUT & BUTTON SIZES
+//  ============================================================================
 //  $$  EXTRA SMALL
 //      Target height: 24px
 //  ----------------------------------------------------------------------------
 .input-button-xs() {
-    padding: @spacing6 @spacing8 @spacing4;
+    padding: 0.5rem 0.7rem;
     font-size: @text--xs;
+    line-height: 1.333333333;
 
-
+    .d-btn__icon {
+        width: @icon-size14;
+        height: @icon-size14;
+    }
 }
 
 //  $$  SMALL
 //      Target height: 32px
 //  ----------------------------------------------------------------------------
 .input-button-sm() {
-    padding: @spacing8 @spacing12;
+    padding: 0.5rem 0.7rem;
     font-size: @text--sm;
+    line-height: 1.428571429;
 
-    //  Icon adjustments
-    .d-btn__icon,
-    .d-svg {
-        width: @icon-size--sm;    // 18px
-        height: @icon-size--sm;   // 18px
+    .d-btn__icon {
+        width: @icon-size16;
+        height: @icon-size16;
     }
 }
 
@@ -86,19 +50,26 @@
 //      Target height: 48px
 //  ----------------------------------------------------------------------------
 .input-button-lg() {
+    padding: 1.1rem 1.5rem;
     font-size: @text--xl;
+    line-height: 1.2;
+
+    .d-btn__icon {
+        width: @icon-size20;
+        height: @icon-size20;
+    }
 }
 
 //  $$  EXTRA LARGE
 //      Target height: 56px
 //  ----------------------------------------------------------------------------
 .input-button-xl() {
+    padding: 1.1rem 1.5rem;
     font-size: @headline--sm;
+    line-height: 1.333333333;
 
-    //  Icon adjustments
-    .d-btn__icon,
-    .d-svg {
-        width: 2.8rem;     // 28px
-        height: 2.8rem;    // 28px
+    .d-btn__icon {
+        width: @icon-size24;
+        height: @icon-size24;
     }
 }

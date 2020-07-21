@@ -1,197 +1,166 @@
 //
 //  DIALTONE
-//  COMPONENTS: BUTTONS
+//  VARIABLES: BUTTON MIXINS
 //
-//  These are the base border definitions, which are used by classes or can be
-//  used within Vue components. For further documentation of these values,
-//  please visit https://dialpad.design/definitions/utilities/borders
+//  These are shared button style mixins used primarily in components/buttons.less
 //
 //  TABLE OF CONTENTS
-//  • TOKENS
-//  • BASE STYLE
-//  • VISUAL STYLES
-//  • ALTERNATE STYLES
-//  • SIZES
+//  • DISABLED
+//  • DANGER
+//  • INVERTED
+//  • BRAND
 //
 //  ============================================================================
-//  $   TOKENS
-//  ----------------------------------------------------------------------------
-@button-primary:                @blue;
-@button-primary-hover:          #0020DA;
-@button-danger:                 @wildberry;
-@button-danger-hover:           #A60329;
-@button-invert:                 @white;
-@button-invert-hover:           @blue-lighter;
-@button-muted:                  @slate-lighter;
-@button-muted-hover:            @slate-light;
-
-@button-font-size:              @text--md;
-@button-font-color:             @blue-dark;
-@button-background-color:       @button-primary;
-@button-border-color:           @button-primary;
-@button-border-radius:          0.25em;
-@button-border-loading:         @button-border-color;
-@button-border-loading-white:   @white;
-@button-border-loading-danger:  @button-danger;
-@button-line-height:            @line-height--xs;
-
-@button-brand-google:           #4285F4;
-@button-brand-o365:             #EB3C01;
-@button-brand-linkedin:         #006087;
-
-
-//  ============================================================================
-//  @   MIXINS
-//  ============================================================================
-//  @@  DISABLED STYLE
+//  @   DISABLED
 //  ----------------------------------------------------------------------------
 .disabled-input-style() {
-    border-color: @ash-dark;
-    background-color: @ash-dark;
-    color: @slate-lightest;
+    border-color: var(--ash-dark);
+    background-color: var(--ash-dark);
+    color: var(--slate-lightest);
 }
 
-//  @@  CLEAR DANGER STYLES
+//  ============================================================================
+//  @   DANGER BUTTON STYLES
+//  ============================================================================
+//  @@  CLEAR (DEFAULT)
 //  ----------------------------------------------------------------------------
 .btn-danger-clear-states() {
-    background-color: fade(@button-danger,0%);
-    color: @button-danger;
+    color: @error-color;
+    background-color: fade(@error-color, 0%);
+    border-color: fade(@error-color, 0%);
 
+    //  --  STATES
+    //  ------------------------------------------------------------------------
     &:hover {
-        color: @button-danger-hover;
-        background-color: fade(@button-danger-hover,5%);
+        background-color: fade(@error-color--hover, 5%);
+        color: @error-color--hover;
     }
     &:focus {
-        box-shadow: 0 0 0 @spacing4 fade(@button-danger,25%);
+        box-shadow: 0 0 0 @spacing4 fade(@error-color, 25%);
     }
     &:active {
-        border-color: fade(@button-danger,5%);
-        background-color: fade(@button-danger,10%);
-        box-shadow: inset 0 0 @spacing8 0 fade(@button-danger,70%);
-    }
-    &[disabled] {
-        border-color: transparent;
+        border-color: fade(@error-color, 50%);
+        background-color: fade(@error-color, 10%);
+        box-shadow: inset 0 0 @spacing8 0 fade(@error-color, 30%);
     }
 }
 
-//  @@  PRIMARY DANGER STYLES
+//  @@  PRIMARY
 //  ----------------------------------------------------------------------------
 .btn-danger-primary-states() {
-    border-color: @button-danger;
-    background-color: @button-danger;
-    .d-color--white;
+    color: var(--white);
+    background-color: @error-color;
+    border-color: @error-color;
 
     //  --  STATES
     //  ------------------------------------------------------------------------
     &:hover {
-        border-color: @button-danger-hover;
-        background-color: @button-danger-hover;
-        .d-color--white;
+        color: var(--white);
+        background-color: @error-color--hover;
+        border-color: @error-color--hover;
     }
     &:focus {
-        box-shadow: 0 0 0 @spacing4 fade(@button-danger,25%);
+        box-shadow: 0 0 0 @spacing4 fade(@error-color, 25%);
     }
     &:active {
-        border-color: darken(@button-danger,20%);
-        background-color: saturate(@button-danger,10%);
-        box-shadow: inset 0 0 @spacing8 0 darken(@button-danger,10%);
+        background-color: saturate(@error-color,15%);
+        border-color: darken(@error-color, 10%);
+        box-shadow: inset 0 0 @spacing8 0 @error-color--hover;
     }
 }
 
-//  @@  INVERTED CLEAR STYLES
+//  ============================================================================
+//  @   INVERTED BUTTON STYLES
+//  ============================================================================
+//  @@  CLEAR (DEFAULT)
 //  ----------------------------------------------------------------------------
 .btn-inverted-clear-states() {
-    background-color: fade(@button-invert-hover,0%);
-    color: @button-invert;
+    color:               var(--white);
+    background-color:         hsla(~"@{primary-color--hsl} / 0%");
+    border-color:                   fade(@white, 0%);
 
     //  --  STATES
     //  ------------------------------------------------------------------------
     &:hover {
-        background-color: fade(@button-invert-hover,25%);
-        color: fadeout(@button-invert,10%);
+        color: fade(@white, 90%);
+        background-color: var(--btn--inverted__bg--hover);
     }
     &:focus {
-        box-shadow: 0 0 0 @spacing4 fade(@button-invert-hover,25%);
+        box-shadow: 0 0 0 @spacing4 hsla(~"@{primary-color--hsl} / 25%");
     }
     &:active {
-        border-color: transparent;
-        background-color: fade(@button-invert-hover,50%);
+        background-color: hsla(~"@{primary-color--hsl} / 50%");
+        border-color: hsla(~"@{primary-color--hsl} / 50%");
     }
 }
 
-//  @@  INVERTED OUTLINED STYLES
+//  @@  OUTLINED
 //  ----------------------------------------------------------------------------
 .btn-inverted-outlined-states() {
     .btn-inverted-clear-states();
-    border-color: fade(@button-invert,50%);
+
+    border-color: fade(@white, 50%);
 
     //  --  STATES
     //  ------------------------------------------------------------------------
     &:hover {
-        border-color: fade(@button-invert,70%);
-        background-color: fade(@button-invert-hover,15%);
+        border-color: fade(@white, 75%);
     }
     &:active {
-        border-color: fade(@button-invert-hover,90%);
-        background-color: fade(@button-invert-hover,25%);
+        border-color: hsla(~"@{primary-color--hsl} / 90%");
     }
 }
 
-//  @@  INVERTED PRIMARY STYLES
+//  @@  PRIMARY
 //  ----------------------------------------------------------------------------
 .btn-inverted-primary-states() {
     .btn-inverted-clear-states();
-    color: @button-font-color;
-    .d-background-color--white;
+
+    color: var(--primary-color);
+    background-color: var(--white);
 
     //  --  STATES
     //  ------------------------------------------------------------------------
     &:hover {
-        color: darken(@button-font-color,10%);
-        background-color: @button-invert-hover;
+        color: hsl(var(--primary-color--h) var(--primary-color--s) calc(var(--primary-color--l) - 10%));
+        background-color: var(--btn--inverted--primary__bg--hover);
     }
     &:focus {
-        box-shadow: 0 0 0 @spacing4 fade(mix(@white, @button-background-color, 50%),50%);
+        --button__box-shadow: hsla(~"@{primary-color--hsl} / 25%");
     }
     &:active {
-        border-color: darken(@button-invert-hover,5%);
-        background-color: fade(@button-invert-hover,90%);
-        box-shadow: inset 0 0 @spacing8 0 fade(@button-invert-hover,30%);
+        color: hsl(var(--primary-color--h) var(--primary-color--s) calc(var(--primary-color--l) - 25%));
+        border-color: var(--white);
+        background-color: var(--btn--inverted--primary__bg--hover);
     }
 }
 
-//  @@  BRAND BUTTON STYLE
+//  ============================================================================
+//  @   BRAND
 //  ----------------------------------------------------------------------------
 .brand-buttons(@color) {
+    background-color:         @color;
+
     display: flex;
-    color: @white;
-    background-color: @color;
 
     //  --  STATES
     &:hover {
-        background-color: darken(saturate(@color,2.5%),5%);
+        background-color:     darken(saturate(@color,2.5%),5%);
     }
     &:focus {
-        box-shadow: 0 0 0 @spacing4 fade(@color,25%);
+        --button__box-shadow:           fade(@color,25%);
     }
     &:active {
-        background-color: darken(saturate(@color,5%),10%);
-        box-shadow: inset 0 0 @spacing8 0 fade(darken(@color,10%),25%);
+        background-color:     darken(saturate(@color,5%),10%);
+        --button__box-shadow:           fade(darken(@color,10%),25%);
     }
 
     //  --  ICON ADJUSTMENTS
     .d-btn__icon {
-        .d-margin-y8--negative;
-        .d-margin-right16;
-        .d-margin-left12--negative;
-    }
-    .d-svg {
+        .d-svg--size32();
+        .d-margin4--negative();
+        .d-margin-right4();
         border-radius: @spacing2;
-    }
-    .d-btn__icon,
-    .d-svg {
-        width: (@spacing48 - @spacing8);
-        height: (@spacing48 - @spacing8);
     }
 
     //  --  LABEL ADJUSTMENTS

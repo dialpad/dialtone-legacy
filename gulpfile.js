@@ -20,7 +20,7 @@ var settings = {
 //  ================================================================================
 //  @@ GENERAL
 var {gulp, src, dest, watch, series, parallel} = require('gulp');
-var fs = require('fs');
+var fs = require('fs-extra');
 var del = require('del');
 var lazypipe = require('lazypipe');
 var rename = require('gulp-rename');
@@ -46,7 +46,7 @@ var replace = settings.svgs ? require('gulp-replace') : null;
 var tap = settings.svgs ? require('gulp-tap') : null;
 
 //  @@ FAVICONS
-var favicon = settings.favicons ? require('gulp-favicons') : null;
+// var favicon = settings.favicons ? require('gulp-favicons') : null;
 
 //  @@ BUILD
 var cp = settings.build ? require('child_process') : null;
@@ -65,6 +65,7 @@ var paths = {
         libFavicons: './lib/dist/favicons/**/*',
         docs: './docs/_site/**/*',
         docsCache: './docs/.jekyll-cache/**/*',
+        docsIcons: './docs/_includes/icons/**/*',
         docsFavicons: './docs/assets/images/favicons/**/*'
     },
     scripts: {
@@ -115,8 +116,7 @@ var paths = {
         baseurl: ''
     },
     watch: {
-        lib: './lib/**/*',
-        libExclude: '!./lib/dist/**/*',
+        lib: './lib/build/less/**/*',
         docs: './docs/**/*',
         docsExcludeSite: '!./docs/_site/**/*',
         docsExcludeCSS: '!./docs/assets/css/**/*',
@@ -161,10 +161,17 @@ const cleanUp = (items) => {
 const cleanSite = () => {
     return cleanUp([
         paths.clean.libCss,
-        paths.clean.libSvg,
-        paths.clean.libVue,
         paths.clean.docs,
         paths.clean.docsCache
+    ]);
+}
+
+//  --  Clean out icon files
+const cleanIcons = () => {
+    return cleanUp([
+        paths.clean.libSvg,
+        paths.clean.libVue,
+        paths.clean.docsIcons
     ]);
 }
 
@@ -234,8 +241,8 @@ var buildSystemSVGs = function(done) {
     return src(paths.svgs.sysInput)
         .pipe(replace(' fill="none"', ''))
         .pipe(replace(' fill="#000"', ''))
-        .pipe(replace(' width="24"', ''))
-        .pipe(replace(' height="24"', ''))
+        .pipe(replace(' fill="#141721"', ''))
+        .pipe(replace('<svg width="24" height="24"', '<svg '))
         .pipe(replace('<svg', function(match) {
             var name = path.parse(this.file.path).name;
             var converted = name.toLowerCase().replace(/-(.)/g, function(match,group1) {
@@ -289,6 +296,7 @@ var buildBrandSVGs = function(done) {
     if (!settings.svgs) return done();
     //  Compile brand icons
     return src(paths.svgs.brandInput)
+        .pipe(replace('<svg width="24" height="24"', '<svg '))
         .pipe(replace('<svg', function(match) {
             var name = path.parse(this.file.path).name;
             var converted = name.toLowerCase().replace(/-(.)/g, function(match,group1) {
@@ -336,80 +344,80 @@ var buildBrandSVGs = function(done) {
 //  @@  FAVICONS
 //  ================================================================================
 //  --  Build Favicon Task
-const generateFavicons = (type, input, output) => {
-    //  Make sure this feature is activated before running
-    if (!settings.favicons) return done();
+// const generateFavicons = (type, input, output) => {
+//     //  Make sure this feature is activated before running
+//     if (!settings.favicons) return done();
+//
+//     if (type === 'dp') {
+//         var favInput = paths.favicons.dpInput + input;
+//         var favOutput = paths.favicons.dpOutput + output;
+//     }
+//     else if (type === 'uc') {
+//         var favInput = paths.favicons.ucInput + input;
+//         var favOutput = output;
+//     }
+//     else if (type === 'docs') {
+//         var favInput = paths.favicons.docsInput + input;
+//         var favOutput = output;
+//     }
+//
+//     return src(favInput)
+//         .pipe(favicon({
+//             appName: 'Dialpad',
+//             appShortName: null,
+//             appDescription: null,
+//             developerName: 'Dialpad',
+//             developerURL: 'https://dialpad.com/',
+//             background: null,
+//             theme_color: "#fff",
+//             url: 'https://dialpad.com/',
+//             display: 'standalone',
+//             orientation: 'portrait',
+//             scope: '/',
+//             start_url: '/',
+//             version: null,
+//             logging: false,
+//             html: '/',
+//             pipeHTML: false,
+//             replace: true,
+//             pixel_art: true,
+//             icons: {
+//                 appleStartup: false,
+//                 firefox: false,
+//                 yandex: false
+//             }
+//         }))
+//         .pipe(dest(favOutput));
+// };
 
-    if (type === 'dp') {
-        var favInput = paths.favicons.dpInput + input;
-        var favOutput = paths.favicons.dpOutput + output;
-    }
-    else if (type === 'uc') {
-        var favInput = paths.favicons.ucInput + input;
-        var favOutput = output;
-    }
-    else if (type === 'docs') {
-        var favInput = paths.favicons.docsInput + input;
-        var favOutput = output;
-    }
-
-    return src(favInput)
-        .pipe(favicon({
-            appName: 'Dialpad',
-            appShortName: null,
-            appDescription: null,
-            developerName: 'Dialpad',
-            developerURL: 'https://dialpad.com/',
-            background: null,
-            theme_color: "#fff",
-            url: 'https://dialpad.com/',
-            display: 'standalone',
-            orientation: 'portrait',
-            scope: '/',
-            start_url: '/',
-            version: null,
-            logging: false,
-            html: '/',
-            pipeHTML: false,
-            replace: true,
-            pixel_art: true,
-            icons: {
-                appleStartup: false,
-                firefox: false,
-                yandex: false
-            }
-        }))
-        .pipe(dest(favOutput));
-};
-
-//  --  ALL THE FAVICONS TO CREATE
-//  --------------------------------------------------------------------------------
-//      DIALPAD
-//  --------------------------------------------------------------------------------
-const faviconDp = () => { return generateFavicons('dp', paths.favicons.dp, 'default/'); }
-const faviconDpNotify = () => { return generateFavicons('dp', paths.favicons.dpNotify, 'default-notify/'); }
-
-//      DIALPAD BETA
-//  --------------------------------------------------------------------------------
-const faviconDpBeta = () => { return generateFavicons('dp', paths.favicons.dpBeta, 'beta/'); }
-const faviconDpBetaNotify = () => { return generateFavicons('dp', paths.favicons.dpBetaNotify, 'beta/'); }
-
-//      DIALPAD CSR
-//  --------------------------------------------------------------------------------
-const faviconDpCsr = () => { return generateFavicons('dp', paths.favicons.dpCsr, 'csr/'); }
-
-//      DIALPAD STAGING
-//  --------------------------------------------------------------------------------
-const faviconDpStaging = () => { return generateFavicons('dp', paths.favicons.dpStaging, 'staging/'); }
-const faviconDpStagingNotify = () => { return generateFavicons('dp', paths.favicons.dpStagingNotify, 'staging-notify/'); }
-
-//      UBERCONFERENCE
-//  --------------------------------------------------------------------------------
-const faviconUberConference = () => { return generateFavicons('uc', paths.favicons.uc, paths.favicons.ucOutput); }
-
-//      DIALTONE
-//  --------------------------------------------------------------------------------
-const faviconDialtone = () => { return generateFavicons('docs', paths.favicons.docsIcon, paths.favicons.docsOutput); }
+// //  --  ALL THE FAVICONS TO CREATE
+// //  --------------------------------------------------------------------------------
+// //      DIALPAD
+// //  --------------------------------------------------------------------------------
+// const faviconDp = () => { return generateFavicons('dp', paths.favicons.dp, 'default/'); }
+// const faviconDpNotify = () => { return generateFavicons('dp', paths.favicons.dpNotify, 'default-notify/'); }
+//
+// //      DIALPAD BETA
+// //  --------------------------------------------------------------------------------
+// const faviconDpBeta = () => { return generateFavicons('dp', paths.favicons.dpBeta, 'beta/'); }
+// const faviconDpBetaNotify = () => { return generateFavicons('dp', paths.favicons.dpBetaNotify, 'beta/'); }
+//
+// //      DIALPAD CSR
+// //  --------------------------------------------------------------------------------
+// const faviconDpCsr = () => { return generateFavicons('dp', paths.favicons.dpCsr, 'csr/'); }
+//
+// //      DIALPAD STAGING
+// //  --------------------------------------------------------------------------------
+// const faviconDpStaging = () => { return generateFavicons('dp', paths.favicons.dpStaging, 'staging/'); }
+// const faviconDpStagingNotify = () => { return generateFavicons('dp', paths.favicons.dpStagingNotify, 'staging-notify/'); }
+//
+// //      UBERCONFERENCE
+// //  --------------------------------------------------------------------------------
+// const faviconUberConference = () => { return generateFavicons('uc', paths.favicons.uc, paths.favicons.ucOutput); }
+//
+// //      DIALTONE
+// //  --------------------------------------------------------------------------------
+// const faviconDialtone = () => { return generateFavicons('docs', paths.favicons.docsIcon, paths.favicons.docsOutput); }
 
 
 //  ================================================================================
@@ -484,7 +492,6 @@ var watchFiles = function(done) {
     //  Watch files
     watch([
         paths.watch.lib,
-        paths.watch.libExclude,
         paths.watch.docs,
         paths.watch.docsExcludeSite,
         paths.watch.docsExcludeCSS,
@@ -508,8 +515,6 @@ exports.default = series(
     parallel(
         libStyles,
         docStyles,
-        buildSystemSVGs,
-        buildBrandSVGs
     ),
     buildDocs
 );
@@ -520,21 +525,27 @@ exports.watch = series(
     watchFiles
 );
 
+exports.icons = series(
+    cleanIcons,
+    buildSystemSVGs,
+    buildBrandSVGs
+);
+
 //  --  UPDATES DIALTONE VERSION
 exports.version = series(
     updateVersion
 );
 
 //  --  GENERATES ALL DIALPAD / UC FAVICONS
-exports.favicons = series(
-    cleanFavicons,
-    faviconDp,
-    faviconDpNotify,
-    faviconDpBeta,
-    faviconDpBetaNotify,
-    faviconDpCsr,
-    faviconDpStaging,
-    faviconDpStagingNotify,
-    faviconDialtone,
-    faviconUberConference,
-);
+// exports.favicons = series(
+//     cleanFavicons,
+//     faviconDp,
+//     faviconDpNotify,
+//     faviconDpBeta,
+//     faviconDpBetaNotify,
+//     faviconDpCsr,
+//     faviconDpStaging,
+//     faviconDpStagingNotify,
+//     faviconDialtone,
+//     faviconUberConference,
+// );
