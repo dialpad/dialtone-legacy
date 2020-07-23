@@ -5,4 +5,10 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPlugin(syntaxHighlight);
 
     eleventyConfig.addLayoutAlias('page', 'layouts/page.html');
+
+    return {
+        dir: {
+            css: "assets/css"
+        }
+    }
 };
