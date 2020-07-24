@@ -25,6 +25,7 @@ var del = require('del');
 var lazypipe = require('lazypipe');
 var rename = require('gulp-rename');
 var header = require('gulp-header');
+var browsersync = require('browser-sync').create();
 var package = require('./package.json');
 
 //  @@ STYLES
@@ -429,15 +430,69 @@ var buildDocs = function(done) {
 
     return cp.spawn(
         'npx', [
-            '@11ty/eleventy',
-            '--serve',
-            '--port=4000'
+            '@11ty/eleventy'
         ], {
             cwd: paths.build.input,
             stdio: 'inherit'
         }
     );
 
+    done();
+};
+
+//  ================================================================================
+//  @@  START SERVER
+//  ================================================================================
+var startServer = function(done) {
+
+    //  Make sure this feature is activated before running
+    if (!settings.watch) return done();
+
+    //  Start the server
+    browsersync.init({
+        server: {
+            baseDir: paths.build.dest
+        },
+        open: false,
+        port: 4000
+    });
+
+    //  Signal completion
+    done();
+};
+
+
+//  ================================================================================
+//  @@  RELOAD THE BROWSER
+//  ================================================================================
+//  --  Reload the browser when files change
+var reloadBrowser = function(done) {
+
+    //  Make sure this feature is activated before running
+    if (!settings.watch) return done();
+
+    //  Reload the browser
+    browsersync.reload();
+    done();
+};
+
+
+//  ================================================================================
+//  @@  WATCH CHANGES
+//  ================================================================================
+var watchFiles = function(done) {
+
+    //  Make sure this feature is activated before running
+    if (!settings.watch) return done();
+
+    //  Watch files
+    watch([
+        paths.watch.lib,
+        paths.watch.docs,
+        paths.watch.docsExcludeSite,
+        paths.watch.docsExcludeCSS,
+        paths.watch.docsExcludeSVG
+    ], series(exports.default, reloadBrowser));
     done();
 };
 
@@ -472,6 +527,12 @@ exports.default = series(
     ),
     buildDocs
 );
+
+exports.watch = series(
+    exports.default,
+    startServer,
+    watchFiles
+)
 
 exports.icons = series(
     cleanIcons,
