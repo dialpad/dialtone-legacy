@@ -14,7 +14,20 @@ description: Dialtone provides different icon sizes. By default all icons have a
             </tr>
         </thead>
         <tbody>
-
+            {% for size in icons-sizes %}
+            <tr>
+                <th scope="row">{{ size.size }}px</th>
+                <td class="code-example">{{ size.variable }}</td>
+                <td class="code-example">.{{ size.class }}</td>
+                <td>
+                    <div class="d-margin-x2--negative" style="display: flex; align-items: center;">
+                        {% icon "phone", "system", size.class %}
+                        {% icon "chat", "system", size.class %}
+                        {% icon "video", "system", size.class %}
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
         </tbody>
     </table>
 </div>
