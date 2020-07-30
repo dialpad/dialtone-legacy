@@ -40,10 +40,10 @@ description: A CSS property which allows you to adjust an element's exterior spa
                             <th scope="col">Output</th>
                         </tr>
                     </thead>
-                    {% assign dir = site.data.spacing.spacing-directions | split: ", "  %}
+                    {% assign dir = spacing.directions | split: ", "  %}
                     {% for i in dir %}
                         <tbody>
-                            {% for value in site.data.spacing.spacing-values %}
+                            {% for value in spacing.values %}
                             {% assign val = value.value %}
                             {% assign output = value.output %}
                             <tr>
@@ -154,10 +154,10 @@ description: A CSS property which allows you to adjust an element's exterior spa
                         <th scope="col">Output</th>
                     </tr>
                 </thead>
-                {% assign dir = site.data.spacing.spacing-directions | split: ", "  %}
+                {% assign dir = spacing.directions | split: ", "  %}
                 {% for i in dir %}
                     <tbody>
-                        {% for value in site.data.spacing.spacing-values %}
+                        {% for value in spacing.values %}
                         {% assign val = value.value %}
                         {% assign output = value.output %}
                         <tr>
@@ -197,7 +197,7 @@ description: A CSS property which allows you to adjust an element's exterior spa
                     </tr>
                 </thead>
                 <tbody>
-                    {% assign dir = site.data.spacing.spacing-directions | split: ", "  %}
+                    {% assign dir = spacing.directions | split: ", "  %}
                     {% for i in dir %}
                     <tr>
                         <th scope="row">.d-margin{% if i != "All" %}-{{ i }}{% endif %}--auto</th>

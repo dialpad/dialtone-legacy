@@ -19,8 +19,8 @@ description: The following flexbox helper classes are provided to help generate 
                 </tr>
             </thead>
             <tbody>
-                {% for i in site.data.flex.columns %}
-                {% assign span = i.span %}
+                {% for i in flex.columns %}
+                {% assign span = i.col %}
                 {% assign output = i.output %}
                 <tr>
                     <th scope="row">.d-flex__cell{{ span }}</th>
@@ -36,8 +36,8 @@ description: The following flexbox helper classes are provided to help generate 
         <div class="dialtone-example" data-example="yes" data-code="yes">
             <div class="dialtone-example__example">
                 <div class="d-flex-columns" style="flex-wrap: wrap;">
-                    {% for i in site.data.flex.columns %}
-                    {% assign span = i.span %}
+                    {% for i in flex.columns %}
+                    {% assign span = i.col %}
                     <div class="layout-block d-flex__cell{{ span }} d-margin4"><div class="layout-block__label">[cell{{ span }}]</div></div>
                     {% endfor %}
                 </div>
@@ -100,7 +100,7 @@ description: The following flexbox helper classes are provided to help generate 
                     <th scope="col">Description</th>
                 </tr>
             </thead>
-            {% for i in site.data.flex.flex-properties %}
+            {% for i in flex.properties %}
             {% assign class = i.class %}
             {% assign value = i.values | split: "," %}
             {% assign desc = i.description %}
