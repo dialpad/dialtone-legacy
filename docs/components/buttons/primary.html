@@ -16,8 +16,8 @@
                 </tr>
             </thead>
             <tbody>
-                {% assign classes = site.data.buttons.styles | split: ", "%}
-                {% for s in classes %}
+                {% for i in buttons.styles %}
+                {% assign s = i.style %}
                 <tr>
                     <th scope="row">{{ s | capitalize }}</th>
                     <td class="code-example">.d-btn{% if s == "outlined" %}--outlined{% elsif s == "filled"%}--primary{% endif %}</td>
