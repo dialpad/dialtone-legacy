@@ -5,29 +5,7 @@ description: A more thorough guide for installing Dialtone locally.
 ---
 <section class="d-layout__stack16">
     <p class="dialtone-copy__normal">First things first: we're excited you want to install Dialtone locally as this most likely means you'll be contributing soon! Before you get to get started though, <strong>please make sure you've <a href="https://github.com/dialpad/dialtone/blob/master/.github/CONTRIBUTING.md">read our contributing docs</a></strong>.</p>
-    <p class="dialtone-copy__normal">The below instructions assumes a brand new build. If you've installed Ruby, Node and NPM for other projects, please skip ahead.</p>
-</section>
-<section class="d-layout__stack16">
-    <h2 class="dialtone-title__section">Install Ruby via Homebrew</h2>
-    <p class="dialtone-copy__normal">In order to run Jekyll, you will need a full Ruby development environment. If you already have a Ruby environment installed, move on to the next step.</p>
-    <p class="dialtone-copy__normal">If you don't have Ruby installed, it's recommended you use Homebrew to install Ruby. First you must <a href="https://brew.sh/" class="d-link">install Homebrew</a>. Enter the following command from a Terminal window:</p>
-    <div class="dialtone-example" data-example="no" data-code="yes">
-        <div class="dialtone-example__code">
-{% highlight ruby linenos %}
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-{% endhighlight %}
-        </div>
-    </div>
-    <p class="dialtone-copy__normal">This will take a few minutes to install. Once Homebrew has installed, run the following commands to install Ruby:</p>
-    <div class="dialtone-example" data-example="no" data-code="yes">
-        <div class="dialtone-example__code">
-{% highlight ruby linenos %}
-brew install ruby
-brew install brew-gem
-brew gem install bundler
-{% endhighlight %}
-        </div>
-    </div>
+    <p class="dialtone-copy__normal">The below instructions assumes a brand new build. If you've Node.js and NPM for other projects, please skip ahead.</p>
 </section>
 <section class="d-layout__stack16">
     <h2 class="dialtone-title__section">Install Node & NPM</h2>
@@ -73,91 +51,17 @@ cd ./path/to/dialtone
     </div>
 </section>
 <section class="d-layout__stack16">
-    <h2 class="dialtone-title__section">Install Gulp</h2>
-    <p class="dialtone-copy__normal">Dialtone uses <a href="https://gulpjs.com/" class="d-link">Gulp</a> to automate its various workflows.</p>
+    <h2 class="dialtone-title__section">Install Gulp & project dependencies</h2>
+    <p class="dialtone-copy__normal">Dialtone uses <a href="https://gulpjs.com/" class="d-link">Gulp</a> to automate its various workflows. Run the following command to install Gulp and all other project dependencies:</p>
     <div class="dialtone-example" data-example="no" data-code="yes">
         <div class="dialtone-example__code">
 {% highlight ruby linenos %}
-npm install --global gulp-cli
-{% endhighlight %}
-        </div>
-    </div>
-</section>
-<section class="d-layout__stack16">
-    <h2 class="dialtone-title__section">Install Bundler & Jekyll</h2>
-    <p class="dialtone-copy__normal">The Dialtone documentation website is built using Jekyll, a static HTML generator. To install Jekyll and its dependencies, do the following steps:</p>
-    <ol class="dialtone-copy__normal">
-        <li>Switch to the <code class="code-example--inline">docs</code> folder in the Dialtone directory. <code class="code-example--inline">cd docs</code></li>
-        <li>Install Bundler and Jekyll locally: <code class="code-example--inline">gem install bundler jekyll</code></li>
-        <li>Install the Bundle: <code class="code-example--inline">bundle install</code></li>
-    </ol>
-</section>
-<section class="d-layout__stack16">
-    <h2 class="dialtone-title__section">Install project dependencies</h2>
-    <p class="dialtone-copy__normal">Navigate out of the <code class="code-example--inline">docs</code> folder to root project folder. Run the following command to install all other project dependencies:</p>
-    <div class="dialtone-example" data-example="no" data-code="yes">
-        <div class="dialtone-example__code">
-{% highlight ruby linenos %}
-npm install
+npm run install
 {% endhighlight %}
         </div>
     </div>
 </section>
 <section class="d-layout__stack16">
     <h2 class="dialtone-title__section">Building Dialtone</h2>
-    <p class="dialtone-copy__normal">You're now ready to build Dialtone! To build build, run the following command:</p>
-    <div class="dialtone-example" data-example="no" data-code="yes">
-        <div class="dialtone-example__code">
-{% highlight ruby linenos %}
-gulp watch
-{% endhighlight %}
-        </div>
-    </div>
-    <p class="dialtone-copy__normal">You should see a respone similar to this example:</p>
-    <div class="dialtone-example" data-example="no" data-code="yes">
-        <div class="dialtone-example__code">
-{% highlight ruby linenos %}
-[11:10:21] Using gulpfile ~/Sites/Dialpad/dialtone/gulpfile.js
-[11:10:21] Starting 'watch'...
-[11:10:21] Starting 'cleanSite'...
-[11:10:21] Finished 'cleanSite' after 347 ms
-[11:10:21] Starting 'libStyles'...
-[11:10:21] Starting 'docStyles'...
-[11:10:27] Finished 'libStyles' after 5.57 s
-[11:10:27] Finished 'docStyles' after 6.41 s
-[11:10:27] Starting 'buildDocs'...
-Configuration file: /path/to/dialtone/docs/_config.yml
-            Source: /path/to/dialtone/docs
-       Destination: /path/to/dialtone/docs/_site
- Incremental build: disabled. Enable with --incremental
-      Generating...
-                    done in 0.648 seconds.
- Auto-regeneration: disabled. Use --watch to enable.
-[11:10:29] Finished 'buildDocs' after 1.77 s
-[11:10:29] Starting 'startServer'...
-[11:10:29] Finished 'startServer' after 11 ms
-[11:10:29] Starting 'watchFiles'...
-[11:10:29] Finished 'watchFiles' after 17 ms
-[11:10:29] Finished 'watch' after 8.56 s
-[Browsersync] Access URLs:
- ---------------------------------------
-       Local: http://localhost:4000
-    External: http://169.254.189.26:4000
- ---------------------------------------
-          UI: http://localhost:3001
- UI External: http://localhost:3001
- ---------------------------------------
-[Browsersync] Serving files from: ./docs/_site/
-{% endhighlight %}
-        </div>
-    </div>
-    <p class="dialtone-copy__normal">Once completed, view the doc site by visiting <a href="http://localhost:4000" class="d-link">http://localhost:4000</a>.</p>
-    <p class="dialtone-copy__normal">Dialtone provides the following commands:</p>
-    <ul class="dialtone-copy__normal">
-        <li><strong class="code-example--inline">gulp</strong> — This compiles Dialtone (CSS and Docs) <em>only</em>. It will <em>not</em> run the website locally.</li>
-        <li><strong class="code-example--inline">gulp watch</strong> — This compiles Dialtone (CSS and Docs), serves the website locally, and dynamically rebuilds the site once any changes are saved.</li>
-        <li><strong class="code-example--inline">gulp icons</strong> — This compiles icons <em>only</em>.</li>
-        <li><strong class="code-example--inline">gulp version</strong> — This updates the version number on the documentation website.</li>
-    </ul>
-    <p class="dialtone-copy__normal">Dialtone uses <a href="https://www.browsersync.io/" class="d-link">Browsersync</a> to serve the compiled Jekyll website locally. This means you can have multiple browser windows open that sync actions together. This allows you to test media queries quickly from different window sizes.</p>
+    <p class="dialtone-copy__normal">You're now ready to build Dialtone! To build build, run <code class="code-example--inline">npm start</code>. Once finished, visit <code class="code-example--inline">https://localhost:4000/</code>.</p>
 </section>

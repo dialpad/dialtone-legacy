@@ -7,12 +7,12 @@ description: Toast notices, sometimes called snackbars, are time-based messages 
     <h2 class="dialtone-title__section">Breakdown</h2>
     <p class="dialtone-copy__normal">Toast messages have a content area, icon, message, and possibly metadata. They are placed within a wrapper.</p>
     <div class="dialtone-breakdown">
-        <img src="{{ 'assets/images/toast-breakdown@2x.png' | relative_url }}" />
+        <img src="/{{ site.paths.img }}/toast-breakdown@2x.png" alt="A breakdown of a toast message" />
     </div>
 </section>
 <section class="dialtone-section16">
     <h2 class="dialtone-title__section">Styles</h2>
-    {% for i in site.data.toasts.toast-example %}
+    {% for i in toasts.toast-example %}
     {% assign name = i.name %}
     {% assign meta = i.meta %}
     {% assign copy = i.copy %}
@@ -26,15 +26,15 @@ description: Toast notices, sometimes called snackbars, are time-based messages 
                                 <div class="d-toast__content" aria-describedby="notice-message">
                                     <div class="d-toast__icon--{{ name }}">
                                     {% if name == "chat" %}
-                                        {% include icons/system/chat.svg %}
+                                        {% icon "chat", "system", "js-svg" %}
                                     {% elsif name == "viewing" %}
-                                        {% include icons/system/visibility.svg %}
+                                        {% icon "visibility", "system", "js-svg" %}
                                     {% elsif name == "info" %}
-                                        {% include icons/system/info.svg %}
+                                        {% icon "info", "system", "js-svg" %}
                                     {% elsif name == "error" %}
-                                        {% include icons/system/error.svg %}
+                                        {% icon "error", "system", "js-svg" %}
                                     {% elsif name == "success" %}
-                                        {% include icons/system/checkmark.svg %}
+                                        {% icon "checkmark", "system", "js-svg" %}
                                     {% endif %}
                                     </div>
                                     <div class="d-toast__message" aria-label="notice-message">
