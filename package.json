@@ -11,8 +11,10 @@
   },
   "unpkg": "lib/dist/css/dialtone.min.css",
   "scripts": {
-    "compile": "gulp",
-    "start": "gulp watch"
+    "setup": "npm install && gulp icons",
+    "build": "gulp",
+    "start": "gulp watch",
+    "debug": "DEBUG=Elventy* npx @11ty/eleventy --serve --input=docs"
   },
   "license": "MIT",
   "browserslist": [
@@ -24,19 +26,21 @@
     "url": "https://github.com/dialpad/dialtone.git"
   },
   "devDependencies": {
-    "browser-sync": "^2.26.7",
+    "@11ty/eleventy": "^0.10.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
+    "browser-sync": "^2.26.10",
     "child_process": "^1.0.2",
     "cssnano": "^4.1.10",
     "del": "^5.1.0",
     "fs-extra": "^9.0.1",
     "gulp": "^4.0.2",
     "gulp-atoms": "^1.0.3",
+    "gulp-git": "^2.10.1",
     "gulp-header": "^2.0.9",
     "gulp-less": "^4.0.1",
     "gulp-postcss": "^8.0.0",
     "gulp-rename": "^1.4.0",
     "gulp-replace": "^1.0.0",
-    "gulp-run-command": "0.0.9",
     "gulp-svgmin": "^2.2.0",
     "gulp-tap": "^2.0.0",
     "gulp-util": "^3.0.8",

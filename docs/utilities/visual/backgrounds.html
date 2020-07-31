@@ -6,7 +6,7 @@ description: Dialtone provides both fill and gradient background classes. Most c
 <section class="dialtone-section16">
     <h2 class="dialtone-title__section">Fills</h2>
     <div class="d-grid-layout--with-columns d-grid-column-gap12 d-grid-row-gap24" style="--grid-col: 2; --grid-col-width: 50%;">
-    {% for color in site.data.color-stops %}
+    {% for color in colors %}
         <div class="dialtone-section2">
             <h3 class="dialtone-title__subsection">{{ color.color }}</h3>
             <div class="dialtone-color-grid__group" style="--color-grid-columns: 1">
@@ -24,10 +24,10 @@ description: Dialtone provides both fill and gradient background classes. Most c
                 <div class="dialtone-color-grid__item d-background-color--white d-color--dark d-border d-border-color--slate-lightest">
                     <span class="dialtone-color-grid__label">.d-background-color--white</span>
                 </div>
-                <div class="dialtone-color-grid__item d-background-color--transparent d-color--ash d-border d-border-color--slate-lightest d-border-top-width0">
+                <div class="dialtone-color-grid__item d-background-color--transparent d-color--light d-border d-border-color--slate-lightest d-border-top-width0">
                     <span class="dialtone-color-grid__label">.d-background-color--transparent</span>
                 </div>
-                <div class="dialtone-color-grid__item d-background-color--unset d-color--ash d-border d-border-color--slate-lightest d-border-top-width0">
+                <div class="dialtone-color-grid__item d-background-color--unset d-color--light d-border d-border-color--slate-lightest d-border-top-width0">
                     <span class="dialtone-color-grid__label">.d-background-color--unset</span>
                 </div>
             </div>
@@ -79,7 +79,7 @@ description: Dialtone provides both fill and gradient background classes. Most c
         <div class="dialtone-color-grid__group d-background-color--slate d-border-radius--lg">
             {% assign opacity = "95, 90, 85, 80, 75, 50, 25, 15, 10, 5, 0" | split: ", " %}
             {% for o in opacity %}
-            <div class="dialtone-color-grid__item d-background-opacity--white{{ o }} {% if o <= '50' %}d-color--white{% else %}d-color--light{% endif %}">
+            <div class="dialtone-color-grid__item d-background-opacity--white{{ o }} {% if o <= '50' %}d-color--white{% else %}d-color--dark{% endif %}">
                 <span class="dialtone-color-grid__label">.d-background-opacity--white{{ o }}</span>
             </div>
             {% endfor %}
@@ -90,7 +90,7 @@ description: Dialtone provides both fill and gradient background classes. Most c
         <p class="dialtone-copy__normal">Change a white background opacity by using a <span class="code-example--inline">.d-background-opacity--slate{#}</span> class. The table below lists the available classes, border radius size, and the CSS output.</p>
         <div class="dialtone-color-grid__group d-border-radius--lg">
             {% for o in opacity %}
-            <div class="dialtone-color-grid__item d-background-opacity--slate{{ o }} {% if o >= '50' %}d-color--white{% else %}d-color--light{% endif %}">
+            <div class="dialtone-color-grid__item d-background-opacity--slate{{ o }} {% if o >= '50' %}d-color--white{% else %}d-color--dark{% endif %}">
                 <span class="dialtone-color-grid__label">.d-background-opacity--slate{{ o }}</span>
             </div>
             {% endfor %}

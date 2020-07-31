@@ -840,63 +840,30 @@ body {
 
 //  $$  CODE BLOCK
 //  ----------------------------------------------------------------------------
-.code__block,
-.highlight {
-    .d-background-color--ash();
-    position: relative;
+.token.tag                              { color: #536bce; }
+.token.attr-name,
+.token.attr-value .token.punctuation    { color: #da35ea; }
+.token.attr-value                       { color: #2fa95c; }
 
-    &,
-    pre {
-        .d-margin0();
-        .d-border-radius--md();
-        .d-text--xs();
-        .d-font-family--mono();
-        .d-line-height--lg();
-    }
-
-    > pre {
-        overflow: auto;
-    }
-}
 
 .dialtone-example {
-    .d-border-radius--md();
+    border-radius: @border-radius--md;
     .d-border();
     .d-border-color--ash-dark();
     max-width: var(--content-max-width);
 
+
     //  Make correct border radii appear
     //  If both elements are true, the code block top radii
     //  should be flattened.
-    &[data-example="yes"][data-code="yes"] .highlight {
-        .d-padding-top1;
-
-        &,
-        pre {
-            .d-border-top-radius--none;
-        }
-        .gutter.gl {
-            border-top-left-radius: @spacing0;
-        }
+    &[data-example="yes"][data-code="yes"] .dialtone-example__code > pre {
+        .d-border-top-radius--none;
     }
+
 
     //  Example container
     .dialtone-example__example {
         .d-padding24;
-    }
-
-    //  Code styles
-    .gutter.gl {
-        .d-padding-right6();
-        .d-border-left-radius--sm();
-        .d-background-color--ash-dark();
-        .d-color--dark-lighter();
-
-        min-width: @spacing24;
-        text-align: right;
-    }
-    .code {
-        .d-padding-left6;
     }
 }
 

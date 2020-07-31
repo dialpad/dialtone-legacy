@@ -2,7 +2,6 @@
     <h3 class="dialtone-title__subsection">Loading Buttons</h3>
     <p class="dialtone-copy__normal">If there is a delay between the user clicking a button and the action taking place, apply a loader to communicate that something is happening.</p>
 </header>
-{% assign types = site.data.buttons.loading-types | split: ", " %}
 <table class="dialtone-table">
     <thead>
         <tr>
@@ -14,8 +13,8 @@
         </tr>
     </thead>
     <tbody>
-        {% assign styles = site.data.buttons.loading-styles | split: ", "%}
-        {% for s in styles %}
+        {% for i in buttons.loading-styles %}
+        {% assign s = i.style %}
         <tr class="{% if s == 'inverted'%}d-background-color--slate d-color--white{% endif %}">
             <th scope="row">{{ s | capitalize }}</th>
             <td class="code-example">
