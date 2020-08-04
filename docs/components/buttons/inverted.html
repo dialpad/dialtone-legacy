@@ -15,8 +15,8 @@
                 </tr>
             </thead>
             <tbody>
-                {% assign classes = buttons.button-styles | split: ", "%}
-                {% for s in classes %}
+                {% for i in buttons.styles %}
+                {% assign s = i.style %}
                 <tr>
                     <th scope="row">{{ s | capitalize }}</th>
                     <td class="code-example">.d-btn--inverted{%if s == "outlined" %}--outlined{% elsif s == "filled"%}--primary{% endif %}</td>
