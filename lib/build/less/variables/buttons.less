@@ -76,8 +76,8 @@
 //  ----------------------------------------------------------------------------
 .btn-inverted-clear-states() {
     color:               var(--white);
-    background-color:         hsla(~"@{primary-color--hsl} / 0%");
-    border-color:                   fade(@white, 0%);
+    background-color:    hsla(~"@{primary-color--hsl} / 0%");
+    border-color:        fade(@white, 0%);
 
     //  --  STATES
     //  ------------------------------------------------------------------------
@@ -86,11 +86,11 @@
         background-color: var(--btn--inverted__bg--hover);
     }
     &:focus {
-        box-shadow: 0 0 0 @spacing4 hsla(~"@{primary-color--hsl} / 25%");
+        box-shadow: 0 0 0 @spacing4 var(--btn--inverted__bs--focus);
     }
     &:active {
-        background-color: hsla(~"@{primary-color--hsl} / 50%");
-        border-color: hsla(~"@{primary-color--hsl} / 50%");
+        background-color: var(--btn--inverted__bg--active);
+        border-color: fade(@white, 50%);
     }
 }
 
@@ -107,7 +107,7 @@
         border-color: fade(@white, 75%);
     }
     &:active {
-        border-color: hsla(~"@{primary-color--hsl} / 90%");
+        border-color: var(--white);
     }
 }
 
@@ -126,7 +126,7 @@
         background-color: var(--btn--inverted--primary__bg--hover);
     }
     &:focus {
-        --button__box-shadow: hsla(~"@{primary-color--hsl} / 25%");
+        box-shadow: 0 0 0 @spacing4 var(--btn--inverted--primary__bs--focus);
     }
     &:active {
         color: hsl(var(--primary-color--h) var(--primary-color--s) calc(var(--primary-color--l) - 25%));
