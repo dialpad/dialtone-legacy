@@ -26,7 +26,6 @@ var lazypipe = require('lazypipe');
 var rename = require('gulp-rename');
 var header = require('gulp-header');
 var browsersync = require('browser-sync').create();
-// var atoms = require('gulp-atoms')(gulp,cfg);
 var package = require('./package.json');
 
 //  @@ STYLES
@@ -50,6 +49,7 @@ var tap = settings.svgs ? require('gulp-tap') : null;
 
 //  @@ BUILD
 var cp = settings.build ? require('child_process') : null;
+var git = settings.build ? require('gulp-git') : null;
 
 
 //  ================================================================================
@@ -428,21 +428,17 @@ var buildDocs = function(done) {
     //  Make sure this feature is activated before running
     if (!settings.build) return done();
 
-    return cp
-        .spawn(
-            'jekyll',
-            [
-                'build',
-                '--source=' + paths.build.input,
-                '--destination=' + paths.build.dest,
-                '--config=' + paths.build.config,
-                '--baseurl=' + paths.build.baseurl
-            ],
-            { stdio: 'inherit' }
-        );
+    return cp.spawn(
+        'npx', [
+            '@11ty/eleventy'
+        ], {
+            cwd: paths.build.input,
+            stdio: 'inherit'
+        }
+    );
+
     done();
 };
-
 
 //  ================================================================================
 //  @@  START SERVER
@@ -500,8 +496,21 @@ var watchFiles = function(done) {
     done();
 };
 
-var updateVersion = function(done) {
+//  ================================================================================
+//  @@  UPDATE VERSION
+//  ================================================================================
+var docVersion = function(done) {
     fs.writeFileSync(paths.versionFile, 'v' + package.version);
+
+    done();
+}
+
+var commitDocVersion = function(done) {
+    return src(package.version, { allowEmpty: true })
+        .pipe(git.add({
+            args: '-A'
+        }))
+        .pipe(git.commit(() => 'Bump Dialtone to v' + package.version));
 
     done();
 }
@@ -523,7 +532,7 @@ exports.watch = series(
     exports.default,
     startServer,
     watchFiles
-);
+)
 
 exports.icons = series(
     cleanIcons,
@@ -533,7 +542,8 @@ exports.icons = series(
 
 //  --  UPDATES DIALTONE VERSION
 exports.version = series(
-    updateVersion
+    docVersion,
+    commitDocVersion
 );
 
 //  --  GENERATES ALL DIALPAD / UC FAVICONS

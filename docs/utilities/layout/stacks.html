@@ -15,11 +15,11 @@ description: Stacks are preset layouts which inject margins between sibling elem
                 </tr>
             </thead>
             <tbody>
-                {% for i in site.data.layout.stacks %}
-                {% assign size = i.size %}
+                {% assign val = auto-spacing.sizes | split: ","  %}
+                {% for i in val %}
                 <tr>
-                    <th scope="row">{{ size }}px</th>
-                    <td>.d-layout__stack{{ size }}</td>
+                    <th scope="row">{{ i }}px</th>
+                    <td>.d-layout__stack{{ i }}</td>
                 </tr>
                 {% endfor %}
             </tbody>
@@ -29,15 +29,15 @@ description: Stacks are preset layouts which inject margins between sibling elem
         <h2 class="dialtone-title__subsection">Examples</h2>
         <div class="dialtone-example" data-example="yes" data-code="no">
             <div class="dialtone-example__example d-grid-layout--with-columns" style="--grid-col: 2; --grid-col-width: 1fr;">
-                {% for i in site.data.layout.stacks %}
-                {% assign size = i.size %}
+                {% assign val = auto-spacing.sizes | split: ","  %}
+                {% for i in val %}
                 <div class="layout-block d-width100">
                     <div class="d-layout__stack{{ size }} d-padding16 d-width100">
                         <div class="layout-block__inner d-flex--center">
-                            <div class="layout-block__label">{{ size }}px</div>
+                            <div class="layout-block__label">{{ i }}px</div>
                         </div>
                         <div class="layout-block__inner d-flex--center">
-                            <div class="layout-block__label">{{ size }}px</div>
+                            <div class="layout-block__label">{{ i }}px</div>
                         </div>
                     </div>
                 </div>

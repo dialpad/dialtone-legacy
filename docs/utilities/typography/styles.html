@@ -18,18 +18,13 @@ description: Utility classes for setting various element font styles.
                 </tr>
             </thead>
             <tbody>
-                {% for i in site.data.type.style %}
-                {% assign type = i.type %}
-                {% if type == "family" %}
-                    {% for item in i.items %}
-                    {% assign class = item.class %}
-                    {% assign output = item.output %}
+                {% for i in type.family %}
+                {% assign class = i.class %}
+                {% assign output = i.output %}
                     <tr>
                         <th scope="row">@font-family--{{ class }}</th>
                         <td>{{ output }}</td>
                     </tr>
-                    {% endfor %}
-                {% endif %}
                 {% endfor %}
             </tbody>
         </table>
@@ -47,18 +42,13 @@ description: Utility classes for setting various element font styles.
                 </tr>
             </thead>
             <tbody>
-                {% for i in site.data.type.style %}
-                {% assign type = i.type %}
-                {% if type == "family" %}
-                    {% for item in i.items %}
-                    {% assign class = item.class %}
-                    {% assign output = item.output %}
+                {% for i in type.family %}
+                {% assign class = i.class %}
+                {% assign output = i.output %}
                     <tr>
                         <th scope="row">.d-font-family--{{ class }}</th>
                         <td>font-family: {{ output }}</td>
                     </tr>
-                    {% endfor %}
-                {% endif %}
                 {% endfor %}
             </tbody>
         </table>
@@ -79,18 +69,13 @@ description: Utility classes for setting various element font styles.
                 </tr>
             </thead>
             <tbody>
-                {% for i in site.data.type.style %}
-                {% assign type = i.type %}
-                {% if type == "weight" %}
-                    {% for item in i.items %}
-                    {% assign class = item.class %}
-                    {% assign output = item.output %}
+                {% for i in type.weight %}
+                {% assign class = i.class %}
+                {% assign output = i.output %}
                     <tr>
                         <th scope="row">@font-weight--{{ class }}</th>
                         <td>{{ output }}</td>
                     </tr>
-                    {% endfor %}
-                {% endif %}
                 {% endfor %}
             </tbody>
         </table>
@@ -108,18 +93,13 @@ description: Utility classes for setting various element font styles.
                 </tr>
             </thead>
             <tbody>
-                {% for i in site.data.type.style %}
-                {% assign type = i.type %}
-                {% if type == "weight" %}
-                    {% for item in i.items %}
-                    {% assign class = item.class %}
-                    {% assign output = item.output %}
+                {% for i in type.weight %}
+                {% assign class = i.class %}
+                {% assign output = i.output %}
                     <tr>
                         <th scope="row">.d-font-weight--{{ class }}</th>
                         <td>font-weight: {{ output }}</td>
                     </tr>
-                    {% endfor %}
-                {% endif %}
                 {% endfor %}
             </tbody>
         </table>
@@ -127,15 +107,10 @@ description: Utility classes for setting various element font styles.
     <div class="dialtone-section16">
         <h3 class="dialtone-title__subsection">Examples</h3>
         <div class="dialtone-section16">
-            {% for i in site.data.type.style %}
-            {% assign type = i.type %}
-            {% if type == "weight" %}
-                {% for item in i.items %}
-                {% assign class = item.class %}
-                {% assign output = item.output %}
+            {% for i in type.weight %}
+            {% assign class = i.class %}
+            {% assign output = i.output %}
                 <p class="dialtone-copy__normal d-font-weight--{{ class }}">The quick brown fox jumps over the lazy dog.</p>
-                {% endfor %}
-            {% endif %}
             {% endfor %}
         </div>
     </div>

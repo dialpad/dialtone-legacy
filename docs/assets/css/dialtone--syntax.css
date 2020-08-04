@@ -1,109 +1,185 @@
-.highlight {
-  background-color: #F4F4F4;
+/* PrismJS 1.20.0
+https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript+less&plugins=line-numbers+command-line */
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  margin: 0;
+  border-radius: 0.7rem;
+  background: none;
+  color: var(--slate-light);
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-size: var(--text-size--xs);
+  line-height: 1.66666667;
+  text-align: left;
+  text-shadow: 0 1px white;
+  white-space: pre;
+  word-break: normal;
+  word-spacing: normal;
+  word-wrap: normal;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
 }
-.highlight .gutter.gl {
-  background-color: #EEE;
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection, code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
 }
-.highlight .c {
-  color: #969896;
+pre[class*="language-"]::selection,
+pre[class*="language-"] ::selection,
+code[class*="language-"]::selection,
+code[class*="language-"] ::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+@media print {
+  code[class*="language-"],
+  pre[class*="language-"] {
+    text-shadow: none;
+  }
+}
+/* Code blocks */
+pre[class*="language-"] {
+  overflow: auto;
+  padding: 1em;
+}
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  background: var(--ash);
+}
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: 0.1em;
+  white-space: normal;
+}
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: slategray;
+}
+.token.punctuation {
+  color: var(--slate-lightest);
+}
+.token.namespace {
+  opacity: 0.7;
+}
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #905;
+}
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #690;
+}
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  /* This background color was intended by the author of this theme. */
+  background: hsla(0, 0%, 100%, 0.5);
+  color: #9a6e3a;
+}
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #07a;
+}
+.token.function,
+.token.class-name {
+  color: #DD4A68;
+}
+.token.regex,
+.token.important,
+.token.variable {
+  color: #e90;
+}
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
   font-style: italic;
 }
-/* Comment */
-.highlight .err {
-  color: #52555d;
+.token.entity {
+  cursor: help;
 }
-/* Error */
-.highlight .k {
-  color: #f15191;
-  font-weight: bold;
+pre[class*="language-"].line-numbers {
+  counter-reset: linenumber;
+  position: relative;
+  padding-left: 3.8em;
 }
-/* Keyword */
-.highlight .o {
-  color: #52555d;
-  font-weight: bold;
+pre[class*="language-"].line-numbers > code {
+  position: relative;
+  white-space: inherit;
 }
-/* Operator */
-.highlight .cp {
-  color: #969896;
+.line-numbers .line-numbers-rows {
+  position: absolute;
+  top: 0;
+  left: -3.8em;
+  width: 3em;
+  border-right: 1px solid var(--slate-lightest);
+  font-size: 100%;
+  /* works for line-numbers below 1000 lines */
+  letter-spacing: -1px;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
-/* Comment.Preproc */
-.highlight .kt {
-  color: #cc6666;
+.line-numbers-rows > span {
+  counter-increment: linenumber;
+  display: block;
 }
-/* Keyword.Type */
-.highlight .m {
-  color: #c75049;
+.line-numbers-rows > span:before {
+  content: counter(linenumber);
+  display: block;
+  padding-right: 0.8em;
+  color: var(--slate-lightest);
+  text-align: right;
 }
-/* Literal.Number */
-.highlight .s {
-  color: #2fa95c;
+.command-line-prompt {
+  display: block;
+  float: left;
+  margin-right: 1em;
+  border-right: 1px solid var(--slate-lightest);
+  font-size: 100%;
+  letter-spacing: -1px;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
-/* Literal.String */
-.highlight .n {
-  color: #616773;
+.command-line-prompt > span:before {
+  content: ' ';
+  display: block;
+  padding-right: 0.8em;
+  color: var(--slate-lightest);
 }
-.highlight .na {
-  color: #da35ea;
+.command-line-prompt > span[data-user]:before {
+  content: "[" attr(data-user) "@" attr(data-host) "] $";
 }
-/* Name.Attribute */
-.highlight .nb {
-  color: #f11462;
+.command-line-prompt > span[data-user="root"]:before {
+  content: "[" attr(data-user) "@" attr(data-host) "] #";
 }
-/* Name.Builtin */
-.highlight .nc {
-  color: #1256EA;
+.command-line-prompt > span[data-prompt]:before {
+  content: attr(data-prompt);
 }
-/* Name.Class */
-.highlight .no {
-  color: #de935f;
-}
-/* Name.Constant */
-.highlight .nd {
-  color: #007ddc;
-}
-.highlight .nf {
-  color: #81a2be;
-}
-/* Name.Function */
-.highlight .nl {
-  color: #747175;
-}
-.highlight .nn {
-  color: #81a2be;
-}
-/* Name.Namespace */
-.highlight .nt {
-  color: #536bce;
-}
-/* Name.Tag */
-.highlight .nv {
-  color: #01a994;
-}
-/* Name.Variable */
-.highlight .ow {
-  color: #b294bb;
-}
-/* Operator.Word */
-.highlight .p {
-  color: #747175;
-}
-.highlight .sr {
-  color: #8abeb7;
-}
-/* Literal.String.Regex */
-.highlight .si {
-  color: #a3685a;
-}
-/* Literal.String.Interpol */
-.highlight .sx {
-  color: #b5bd68;
-}
-/* Literal.String.Other */
-.highlight .ss {
-  color: #8abeb7;
-}
-/* Literal.String.Symbol */
-.highlight .bp {
-  color: #cc6666;
-}
-/* Name.Builtin.Pseudo */
