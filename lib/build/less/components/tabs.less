@@ -53,7 +53,12 @@
     line-height: 1;
     color: inherit;
     fill: currentColor;
-    transition: all @transition--duration60 @transition--cubic-inOut;
+
+    cursor: pointer;
+    transition-timing-function: @transition--cubic-inOut;
+    transition-duration: @transition--duration60;
+    transition-property: background-color, color;
+
 
     &:first-of-type {
         margin-left: 0;
@@ -68,13 +73,12 @@
         right: 0;
         bottom: 0;
         left: 0;
-        height: @spacing4;
-        border-radius: @spacing4 @spacing4 0 0;
+        height: @spacing2;
         background-color: fade(@white,0%);
     }
 
     &:focus {
-        outline: fade(@color--dark-lighter,75%) auto 1px;
+        outline: @spacing4 auto hsla(~"@{primary-color--hsl} / 25%");
         z-index: 2;
     }
 
@@ -161,11 +165,6 @@
 
     .d-tab {
         padding: @spacing12;
-
-        &:after {
-            height: 0.3rem;
-            border-radius: 0.3rem 0.3rem 0 0;
-        }
     }
 }
 
