@@ -1,0 +1,178 @@
+//
+//  DIALTONE
+//  COMPONENTS: Tabs
+//
+//  These are tab classes for Dialpad's design system Dialtone.
+//  For further documentation of these and other classes,
+//  visit https://dialpad.design/components/tabs
+//
+//  TABLE OF CONTENTS
+//  • BASE STYLE
+//  • ALTERNATE STYLES
+//
+//  ============================================================================
+//  $   WRAPPERS
+//  ----------------------------------------------------------------------------
+.d-tablist {
+    position: relative;
+    display: flex;
+
+    font-size: var(--text-size--sm);
+    color: var(--text-color--light);
+
+    &:after {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 0.1rem;
+        background-color: var(--ash-darker);
+        z-index: @z-index--base1;
+    }
+}
+
+
+//  ============================================================================
+//  $   BASE STYLE
+//  ----------------------------------------------------------------------------
+.d-tab {
+    box-sizing: border-box;
+
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 @spacing2;
+    padding: @spacing12 @spacing16;
+
+    border: 0;
+    border-radius: @spacing4 @spacing4 0 0;
+    background-color: fade(@white,0%);
+    font: inherit;
+    line-height: 1;
+    color: inherit;
+    fill: currentColor;
+    transition: all @transition--duration60 @transition--cubic-inOut;
+
+    &:first-of-type {
+        margin-left: 0;
+    }
+    &:last-of-type {
+        margin-right: 0;
+    }
+
+    &:after {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: @spacing4;
+        border-radius: @spacing4 @spacing4 0 0;
+        background-color: fade(@white,0%);
+    }
+
+    &:focus {
+        outline: fade(@color--dark-lighter,75%) auto 1px;
+        z-index: 2;
+    }
+
+    &:hover {
+        color: var(--text-color--dark);
+        background-color: @ash;
+    }
+
+    //  Turn off animations if someone doesn't want them.
+    @media (prefers-reduced-motion) {
+        transition: none;
+    }
+}
+
+
+//  ============================================================================
+//  $   SELECTED STYLE
+//  ----------------------------------------------------------------------------
+.d-tab--selected {
+    color: var(--primary-color);
+    z-index: @z-index--selected;
+
+    &:focus {
+        outline-color: fade(@primary-color,50%);
+    }
+
+    &:hover {
+        color: var(--primary-color--hover);
+        background-color: var(--btn--inverted__bg--hover);
+    }
+
+    &:after,
+    &:hover:after {
+        background-color: var(--primary-color);
+    }
+}
+
+
+//  ============================================================================
+//  $   INVERTED STYLE
+//  ----------------------------------------------------------------------------
+.d-tablist--inverted {
+    color: var(--ash-dark);
+
+    &:after {
+        background-color: fade(@ash-dark,50%);
+    }
+
+    .d-tab {
+        &:focus {
+            outline-color: fade(@ash-dark,50%);
+        }
+
+        &:hover {
+            color: inherit;
+            background-color: fade(@ash,10%);
+        }
+    }
+
+    .d-tab--selected {
+        color: var(--white);
+
+        &:after {
+            background-color: currentColor;
+        }
+
+        &:focus {
+            outline-color: fade(@white,50%);
+        }
+
+        &:hover {
+            color: var(--blue-lighter);
+        }
+    }
+}
+
+
+
+//  ============================================================================
+//  $   SIZES
+//  ----------------------------------------------------------------------------
+.d-tablist--sm {
+    font-size: var(--text-size--xs);
+
+    .d-tab {
+        padding: @spacing12;
+
+        &:after {
+            height: 0.3rem;
+            border-radius: 0.3rem 0.3rem 0 0;
+        }
+    }
+}
+
+.d-tablist--lg {
+    font-size: var(--text-size--md);
+
+    .d-tab {
+        padding: @spacing16;
+    }
+}
