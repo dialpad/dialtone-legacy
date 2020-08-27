@@ -1,0 +1,62 @@
+---
+layout: page
+title: Display
+description: Utilities for controlling the display box type of an element.
+
+---
+<section class="dialtone-section16">
+    <header class="dialtone-section2">
+        <h2 class="dialtone-title__section">Variables and Classes</h2>
+    </header>
+    <table class="dialtone-table dialtone-table--code">
+        <thead>
+            <tr>
+                <th scope="col">Variable</th>
+                <th scope="col">Class</th>
+                <th scope="col">Output</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in display %}
+            {% assign variable = i.variable %}
+            {% assign name = i.name %}
+            {% assign output = i.output %}
+            <tr>
+                <th scope="row">{{ variable }}</th>
+                <th>{{ name }}</th>
+                <td>{{ output }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+<section class="dialtone-section16">
+    <header class="dialtone-section2">
+        <h2 class="dialtone-title__section">Examples</h2>
+    </header>
+    <div class="dialtone-example" data-example="yes" data-code="yes">
+        <div class="dialtone-example__example">
+            <div class="layout-block d-block d-margin-bottom12"><div class="d-padding12">.d-block</div></div>
+            <div class="d-margin-bottom12">
+                <div class="d-inline-block layout-block"><div class="d-padding12">.d-inline-block</div></div>
+                <div class="d-inline-block layout-block"><div class="d-padding12">.d-inline-block</div></div>
+                <div class="d-inline-block layout-block"><div class="d-padding12">.d-inline-block</div></div>
+            </div>
+            <div>
+                <div class="d-inline layout-block">.d-inline</div>
+                <div class="d-inline layout-block">.d-inline</div>
+                <div class="d-inline layout-block">.d-inline</div>
+            </div>
+        </div>
+        <div class="dialtone-example__code">
+{% highlight html linenos %}
+<div class="d-block">…</div>
+<div class="d-inline-block">…</div>
+<div class="d-inline">…</div>
+<div class="d-table">…</div>
+<div class="d-none">…</div>
+<div class="d-unset">…</div>
+{% endhighlight %}
+        </div>
+    </div>
+</section>
