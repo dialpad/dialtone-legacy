@@ -439,3 +439,34 @@ description: The following flexbox helper classes are provided to help generate 
         </div>
     </div>
 </section>
+
+<section class="dialtone-section16">
+    <header class="dialtone-section2">
+        <h2 class="dialtone-title__section">Flex Flow</h2>
+        <p class="dialtone-copy__normal">Flex flow is a shorthand for the <span class="code-example--inline">flex-direction</span> and <span class="code-example--inline">flex-wrap</span> properties, which together define the flex container’s main and cross axes. The default value is <span class="code-example--inline">flex-flow: row wrap</span>.</p>
+    </header>
+    <div class="dialtone-section2">
+        <h2 class="dialtone-title__subsection">Classes</h2>
+        <table class="dialtone-table dialtone-table--code">
+            <thead>
+                <tr>
+                    <th scope="col" class="dialtone-table__column--md">Class</th>
+                    <th scope="col" class="dialtone-table__column--md">Span</th>
+                    <th scope="col">Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in flex.flow %}
+                {% assign class = i.class %}
+                {% assign output = i.output %}
+                {% assign description = i.description %}
+                <tr>
+                    <th scope="row">{{ class }}</th>
+                    <td>{{ output }}</td>
+                    <td class="dialtone-table--sans d-line-height--md">{{ description }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
