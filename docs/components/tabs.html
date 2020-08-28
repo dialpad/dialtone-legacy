@@ -5,7 +5,7 @@ description: Used to group similar content.
 ---
 <section class="dialtone-section8">
     <header>
-        <h2 class="dialtone-title__section">Examples</h2>
+        <h2 class="dialtone-title__section">Base Style</h2>
     </header>
     <div class="dialtone-example" data-example="yes" data-code="yes">
         <div class="dialtone-example__example dialtone-section16">
@@ -23,22 +23,6 @@ description: Used to group similar content.
                 </div>
                 <div id="panel-3" class="js-tab-panel" role="tabpanel" tabindex="0" aria-labelledby="tab-3" hidden>
                     <p>Third tab content panel</p>
-                </div>
-            </div>
-            <div class="d-background-color--slate-light d-border-radius--md d-padding16 d-margin-x16--negative">
-                <div class="d-tablist d-tablist--inverted js-tablist" role="tablist" aria-label="Label Example Group">
-                    <button class="d-tab d-tab--selected js-tab" role="tab" aria-selected="true" aria-controls="panel-1-inverted" id="tab-1" tabindex="0">First tab</button>
-                    <button class="d-tab js-tab" role="tab" aria-selected="false" aria-controls="panel-2-inverted" id="tab-2" tabindex="-1">Second tab</button>
-                    <button class="d-tab js-tab" role="tab" aria-selected="false" aria-controls="panel-3-inverted" id="tab-3" tabindex="-1">Third tab</button>
-                </div>
-                <div id="panel-1-inverted" class="js-tab-panel" role="tabpanel" tabindex="0" aria-labelledby="tab-1">
-                    <p class="d-color--white">First tab content panel</p>
-                </div>
-                <div id="panel-2-inverted" class="js-tab-panel" role="tabpanel" tabindex="0" aria-labelledby="tab-2" hidden>
-                    <p class="d-color--white">Second tab content panel</p>
-                </div>
-                <div id="panel-3-inverted" class="js-tab-panel" role="tabpanel" tabindex="0" aria-labelledby="tab-3" hidden>
-                    <p class="d-color--white">Third tab content panel</p>
                 </div>
             </div>
         </div>
@@ -59,6 +43,57 @@ description: Used to group similar content.
     <p>Third tab content panel</p>
 </div>
 {% endhighlight %}
+        </div>
+    </div>
+</section>
+<section class="dialtone-section8">
+    <header>
+        <h2 class="dialtone-title__section">Accessibility</h2>
+        <p class="dialtone-copy__normal">To create accessible tabs, utilize the following ARIA roles to properly declare element roles, content relationships, and current status:</p>
+    </header>
+    <dl class="dialtone-list dialtone-copy__normal">
+        <dt class="code-example--inline">role="tablist"</dt>
+        <dd>A container for all <span class="code-example--inline">tab</span> role elements.</dd>
+        <dt class="code-example--inline">aria-label="Tab Title"</dt>
+        <dd>Assigned on the <span class="code-example--inline">tablist</span> element, this provides a common, readable title for what content the tab group provides.</dd>
+        <dt class="code-example--inline">role="tab"</dt>
+        <dd>Indicates an interactive element within a <span class="code-example--inline">tablist</span>. Elements with a <span class="code-example--inline">tab</span> role <strong>must either</strong> be a child of a <span class="code-example--inline">tablist</span> or have an <span class="code-example--inline">id</span> part of the <span class="code-example--inline">aria-owns</span> property of a <span class="code-example--inline">tablist</span>.</dd>
+        <dt class="code-example--inline">aria-controls="[tabpanel-id]"</dt>
+        <dd>Assigned on the <span class="code-example--inline">tab</span> element, this communicates a connection between a tab and a tabpanel.</dd>
+        <dt class="code-example--inline">aria-selected="[true/false]"</dt>
+        <dd>Assigned on the <span class="code-example--inline">tab</span> element, this is set to <span class="code-example--inline">true</span> when it is the selected element. It is set to <span class="code-example--inline">false</span> when it is not selected.</dd>
+        <dt class="code-example--inline">id="[unique-id]"</dt>
+        <dd>Assigned on the <span class="code-example--inline">tab</span> element, this provides a unique identifier that the <span class="code-example--inline">tabpanel</span> can reference with the <span class="code-example--inline">aria-labelledby</span> attribute.</dd>
+        <dt class="code-example--inline">aria-controls="[tabpanel-id]"</dt>
+        <dd>Assigned on the <span class="code-example--inline">tab</span> element, this communicates a connection between a tab and a tabpanel.</dd>
+        <dt class="code-example--inline">role="tabpanel"</dt>
+        <dd>A container for content associated with a <span class="code-example--inline">tab</span>.</dd>
+        <dt class="code-example--inline">id="[unique-id]"</dt>
+        <dd>Assigned on the <span class="code-example--inline">tabpanel</span> element, this provides a unique identifier that the <span class="code-example--inline">tab</span> can reference with the <span class="code-example--inline">aria-controls</span> attribute.</dd>
+        <dt class="code-example--inline">aria-labelledby="[tab-id]"</dt>
+        <dd>Assigned on the <span class="code-example--inline">tabpanel</span> element, this communicates a connection between a tabpanel and a tab.</dd>
+        <dt class="code-example--inline">hidden</dt>
+        <dd>Assigned on the <span class="code-example--inline">tabpanel</span> element, use this to hide tabpanels that are not currently selected.</dd>
+    </dl>
+</section>
+<section>
+    <header>
+        <h2 class="dialtone-title__section">Inverted Example</h2>
+    </header>
+    <div class="dialtone-example d-background-color--slate-light d-border-radius--md d-padding16" data-example="yes" data-code="no">
+        <div class="d-tablist d-tablist--inverted js-tablist" role="tablist" aria-label="Label Example Group">
+            <button class="d-tab d-tab--selected js-tab" role="tab" aria-selected="true" aria-controls="panel-1-inverted" id="tab-1" tabindex="0">First tab</button>
+            <button class="d-tab js-tab" role="tab" aria-selected="false" aria-controls="panel-2-inverted" id="tab-2" tabindex="-1">Second tab</button>
+            <button class="d-tab js-tab" role="tab" aria-selected="false" aria-controls="panel-3-inverted" id="tab-3" tabindex="-1">Third tab</button>
+        </div>
+        <div id="panel-1-inverted" class="js-tab-panel" role="tabpanel" tabindex="0" aria-labelledby="tab-1">
+            <p class="d-color--white">First tab content panel</p>
+        </div>
+        <div id="panel-2-inverted" class="js-tab-panel" role="tabpanel" tabindex="0" aria-labelledby="tab-2" hidden>
+            <p class="d-color--white">Second tab content panel</p>
+        </div>
+        <div id="panel-3-inverted" class="js-tab-panel" role="tabpanel" tabindex="0" aria-labelledby="tab-3" hidden>
+            <p class="d-color--white">Third tab content panel</p>
         </div>
     </div>
 </section>
