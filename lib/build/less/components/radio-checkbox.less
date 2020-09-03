@@ -63,7 +63,6 @@
     &[disabled] {
         border-color: var(--ash-dark);
         background-color: var(--ash-dark);
-        opacity: 0.75;
         cursor: not-allowed;
     }
 }
@@ -83,7 +82,6 @@
 .d-radio-group--disabled {
     display: flex;
     .d-padding-x1();
-    .d-opacity75();
     color: var(--ash-darkest);
     cursor: not-allowed;
 }
@@ -188,8 +186,8 @@
 
             //  Disabled
             &[disabled] {
-                border-color: var(--ash-dark);
-                background-color: var(--ash);
+                border-color: var(--ash-darkest);
+                background-color: var(--ash-darkest);
             }
 
             &:focus {
@@ -243,6 +241,12 @@
         &:checked {
             background-color: var(--primary-color);
             box-shadow: inset 0 0 0 @spacing2 @white;
+
+            //  Disabled
+            &[disabled] {
+                border-color: var(--ash-darkest);
+                background-color: var(--ash-darkest);
+            }            
         }
     }
 }
