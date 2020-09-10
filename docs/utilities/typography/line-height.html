@@ -6,7 +6,7 @@ description: Utility classes for controlling an element's line height.
 <section class="dialtone-section16">
     <header class="dialtone-section2">
         <h2 class="dialtone-title__section">Variables</h2>
-        <p class="dialtone-copy__normal">When writing Less, you can set an element's line-height by using a <span class="code-example--inline">@line-height--{size}</span> variable. The table below lists the available variables and its output.</p>
+        <p class="dialtone-copy__normal">When writing Less, you can set an element's text color by using a <span class="code-example--inline">@line-height--{size}</span> variable (ex. <span class="code-example--inline">p {line-height: @line-height--md;}</span>). Useful when writing scoped Less where an immutable class with <span class="code-example--inline">!important</span> isn't required.</p>
     </header>
     <table class="dialtone-table dialtone-table--code">
         <thead>
@@ -30,7 +30,7 @@ description: Utility classes for controlling an element's line height.
 <section class="dialtone-section16">
     <header class="dialtone-section2">
         <h2 class="dialtone-title__section">Classes</h2>
-        <p class="dialtone-copy__normal">Set an element's line-height by using the <span class="code-example--inline">.d-line-height--{size}</span> classes. The table below lists the available classes and their CSS output.</p>
+        <p class="dialtone-copy__normal">Classes are immutable, meaning they include <span class="code-example--inline">!important</span> to override CSS specificity. Useful when styling HTML by including CSS classes in markup.</p>
     </header>
     <table class="dialtone-table dialtone-table--code">
         <thead>
@@ -44,8 +44,8 @@ description: Utility classes for controlling an element's line height.
             {% assign class = i.class %}
             {% assign output = i.output %}
             <tr>
-                <th scope="row">.d-line-height--{{ class }}</th>
-                <td>line-height: {{ output }};</td>
+                <th scope="row">.d-line-height-{{ class }}</th>
+                <td>line-height: {{ output }} !important;</td>
             </tr>
             {% endfor %}
         </tbody>
@@ -53,8 +53,22 @@ description: Utility classes for controlling an element's line height.
 </section>
 <section class="dialtone-section16">
     <h2 class="dialtone-title__section">Examples</h2>
-    {% for i in type.line-height %}
-        {% assign class = i.class %}
-        <p class="d-text--lg d-line-height--{{ class }}"><span class="code-example--inline" style="font-size: 1.4rem; background-color: transparent;">.d-line-height--{{ class }}</span> – The weather had changed overnight, when a backing wind brought a granite sky and a mizzling rain with it, and although it was now only a little after two o'clock in the afternoon the pallor of a winter evening seemed to have closed upon the hills, cloaking them in mist.</p>
-    {% endfor %}
+    <div class="dialtone-example" data-example="yes" data-code="yes">
+        <div class="dialtone-example__example">
+            {% for i in type.line-height %}
+                {% assign class = i.class %}
+                <p class="d-text--md d-line-height-{{ class }}"><span class="code-example--inline">.d-line-height-{{ class }}</span><br>The weather had changed overnight, when a backing wind brought a granite sky and a mizzling rain with it, and although it was now only a little after two o'clock in the afternoon the pallor of a winter evening seemed to have closed upon the hills, cloaking them in mist.</p>
+            {% endfor %}
+        </div>
+        <div class="dialtone-example__code">
+            {% highlight html linenos %}
+<p class="d-line-height-xs">…</p>
+<p class="d-line-height-sm">…</p>
+<p class="d-line-height-md">…</p>
+<p class="d-line-height-lg">…</p>
+<p class="d-line-height-xl">…</p>
+<p class="d-line-height-xxl">…</p>
+            {% endhighlight %}
+        </div>
+    </div>
 </section>

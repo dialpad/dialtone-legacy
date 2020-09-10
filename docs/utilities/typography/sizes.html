@@ -6,7 +6,7 @@ description: Utility classes for setting an element's font size.
 <section class="dialtone-section16">
     <header class="dialtone-section2">
         <h2 class="dialtone-title__section">Variables</h2>
-        <p class="dialtone-copy__normal">When writing Less, you can set an element's font-size by using a <span class="code-example--inline">@{headline/text}--{size}</span> variable. The table below lists the font-size variables, size, and their output.</p>
+        <p class="dialtone-copy__normal">When writing Less, you can set an element's text color by using a <span class="code-example--inline">@{headline/text}--{size}</span> variable (ex. <span class="code-example--inline">p {font-size: @text--md;}</span>). Useful when writing scoped Less where an immutable class with <span class="code-example--inline">!important</span> isn't required.</p>
     </header>
     <table class="dialtone-table dialtone-table--code">
         <thead>
@@ -18,11 +18,11 @@ description: Utility classes for setting an element's font size.
         </thead>
         <tbody>
             {% for i in type.font-size %}
-            {% assign class = i.class %}
+            {% assign variable = i.variable %}
             {% assign px = i.pixel %}
             {% assign output = i.output %}
             <tr>
-                <th scope="row">@{{ class }}</th>
+                <th scope="row">@{{ variable }}</th>
                 <td>{{ px }}px</td>
                 <td>{{ output }}rem</td>
             </tr>
@@ -33,7 +33,7 @@ description: Utility classes for setting an element's font size.
 <section class="dialtone-section16">
     <header class="dialtone-section2">
         <h2 class="dialtone-title__section">Classes</h2>
-        <p class="dialtone-copy__normal">Set an element's font-size by using the <span class="code-example--inline">.d-{headline/text}--{size}</span> classes. The table below lists the available classes, size, and their CSS output.</p>
+        <p class="dialtone-copy__normal">Classes are immutable, meaning they include <span class="code-example--inline">!important</span> to override CSS specificity. Useful when styling HTML by including CSS classes in markup.</p>
     </header>
     <table class="dialtone-table dialtone-table--code">
         <thead>
@@ -53,13 +53,13 @@ description: Utility classes for setting an element's font size.
                 <td>{{ px }}px</td>
                 <td>
                     {% if class contains "headline" %}
-                        font-size: {{ output }}rem;<br/>
-                        font-weight: 600;
-                        {% if class == "headline--xs" %}
-                            <br/>text-transform: uppercase;
+                        font-size: {{ output }}rem; !important<br/>
+                        font-weight: 600 !important;
+                        {% if class == "headline-xs" %}
+                            <br/>text-transform: uppercase; !important
                         {% endif %}
                     {% elsif class contains "text" %}
-                        font-size: {{ output }}rem;
+                        font-size: {{ output }}rem; !important
                     {% endif %}
                 </td>
             </tr>
@@ -69,13 +69,30 @@ description: Utility classes for setting an element's font size.
 </section>
 <section class="dialtone-section16">
     <h2 class="dialtone-title__section">Examples</h2>
-    <div class="dialtone-section16" style="max-width: 67.6rem;">
-        {% for i in type.font-size %}
+    <div class="dialtone-example" data-example="yes" data-code="yes">
+        <div class="dialtone-example__example">
+            {% for i in type.font-size %}
             {% assign class = i.class %}
             <div class="dialtone-section2" style="white-space: nowrap; overflow: hidden;">
-                <span class="code-example--inline" style="background-color: transparent; color: var(--color--light)">.d-{{ class }}</span>
-                <p class="d-{{ class }} d-line-height--sm">The quick brown fox jumps over the lazy dog.</p>
+                <span class="code-example--inline">.d-{{ class }}</span>
+                <p class="d-{{ class }} d-line-height-sm">The quick brown fox jumps over the lazy dog.</p>
             </div>
-        {% endfor %}
+            {% endfor %}
+        </div>
+        <div class="dialtone-example__code">
+            {% highlight html linenos %}
+<p class="d-headline-xl">…</p>
+<p class="d-headline-lg">…</p>
+<p class="d-headline-md">…</p>
+<p class="d-headline-sm">…</p>
+<p class="d-headline-xs">…</p>
+<p class="d-text-xl">…</p>
+<p class="d-text-lg">…</p>
+<p class="d-text-md">…</p>
+<p class="d-text-sm">…</p>
+<p class="d-text-xs">…</p>
+<p class="d-text-xxs">…</p>
+            {% endhighlight %}
+        </div>
     </div>
 </section>

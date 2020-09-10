@@ -9,7 +9,7 @@ description: Dialtone provides a limited set of text-color utility variables and
 <section class="dialtone-section16">
     <header class="dialtone-section2">
         <h2 class="dialtone-title__section">Variables</h2>
-        <p class="dialtone-copy__normal">When writing Less, you can set an element's text color by using a <span class="code-example--inline">@color--{color}</span> variable. The table below lists the available variables and its output.</p>
+        <p class="dialtone-copy__normal">When writing Less, you can set an element's text color by using a <span class="code-example--inline">@color--{color}</span> variable (ex. <span class="code-example--inline">p {color: @color--dark;}</span>). Useful when writing scoped Less where an immutable class with <span class="code-example--inline">!important</span> isn't required.</p>
     </header>
     <table class="dialtone-table dialtone-table--code">
         <thead>
@@ -32,6 +32,7 @@ description: Dialtone provides a limited set of text-color utility variables and
 </section>
 <section class="dialtone-section16">
     <h2 class="dialtone-title__section">Classes</h2>
+    <p class="dialtone-copy__normal">Classes are immutable, meaning they include <span class="code-example--inline">!important</span> to override CSS specificity. Useful when styling HTML by including CSS classes in markup.</p>
     <div class="dialtone-section8">
         <header class="dialtone-section2">
             <h3 class="dialtone-title__subsection">Grays</h3>
@@ -47,7 +48,7 @@ description: Dialtone provides a limited set of text-color utility variables and
                         {% assign bg = s.bg %}
                         {% assign ratio = s.ratio %}
                         <div class="dialtone-color-grid__item d-background-color--{{ bg }} d-color--{{ name }} d-border d-border-bottom-width0 d-border-color--{% if bg == 'white' %}ash-dark{% elsif bg == 'slate' %}slate-lighter{% endif %}">
-                            <div class="dialtone-color-grid__label">.d-color--{{ name }}</div>
+                            <div class="dialtone-color-grid__label">.d-color-{{ name }}</div>
                             <div class="dialtone-color-grid__ratio">
                                 <div class="dialtone-color-badge d-background-color--{% if ratio > '07.00' %}bright-emerald{% elsif ratio < '07.00' %}sunflower{% endif %} d-color--{% if ratio > '07.00' %}bright-emerald-text{% elsif ratio < '07.00' %}sunflower-text{% endif %}">AA{% if ratio > "07.00" %}A{% endif %}</div>
                                 <div>{{ ratio }}</div>
@@ -77,7 +78,7 @@ description: Dialtone provides a limited set of text-color utility variables and
                         {% assign text = s.color %}
                         {% assign ratio = s.ratio %}
                         <div class="dialtone-color-grid__item d-background-color--{{ bg }} d-color--{{ text }}">
-                            <div class="dialtone-color-grid__label">.d-color--{{ bg }}</div>
+                            <div class="dialtone-color-grid__label">.d-color-{{ bg }}</div>
                             <div class="dialtone-color-grid__ratio">
                                 <div class="dialtone-color-badge d-background-color--{% if ratio > '07.00' %}green{% elsif ratio < '07.00' %}yellow{% endif %} d-color--{% if ratio > '07.00' %}green-text{% elsif ratio < '07.00' %}yellow-text{% endif %}">AA{% if ratio > "07.00" %}A{% endif %}</div>
                                 <div>{{ ratio }}</div>
