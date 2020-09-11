@@ -71,6 +71,14 @@ description: Utility classes for controlling typography layout.
                     <td>white-space: {{ output }} !important;</td>
                 </tr>
                 {% endfor %}
+                <tr>
+                    <th scope="row">.d-truncate</th>
+                    <td>
+                        overflow: hidden !important;<br>
+                        text-overflow: ellipsis !important;<br>
+                        white-space: nowrap !important;
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>
@@ -82,11 +90,13 @@ description: Utility classes for controlling typography layout.
                     {% assign class = i.class %}
                     <p class="d-max-width2 d-padding12 d-background-color--ash d-margin-x--auto d-margin-y-12 d-text--md d-ws-{{ class }}"><span class="code-example--inline">.d-ws-{{ class }}</span><br>The quick brown fox jumps over the lazy dog.</p>
                 {% endfor %}
+                <p class="d-max-width2 d-padding12 d-background-color--ash d-margin-x--auto d-margin-y-12 d-text--md d-truncate"><span class="code-example--inline">.d-truncate</span><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
             </div>
             <div class="dialtone-example__code">
                 {% highlight html linenos %}
 <p class="d-ws-normal">…</p>
 <p class="d-ws-nowrap">…</p>
+<p class="d-truncate">…</p>
                 {% endhighlight %}
             </div>
         </div>
@@ -126,14 +136,6 @@ description: Utility classes for controlling typography layout.
                         word-break: break-all !important;
                     </td>
                 </tr>
-                <tr>
-                    <th scope="row">.d-truncate</th>
-                    <td>
-                        overflow: hidden !important;<br>
-                        text-overflow: ellipsis !important;<br>
-                        white-space: nowrap !important;
-                    </td>
-                </tr>
             </tbody>
         </table>
     </div>
@@ -153,17 +155,12 @@ description: Utility classes for controlling typography layout.
                     <span class="code-example--inline">.d-wb-break-all</span><br>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiisitaquequodpraesentiumexplicaboincidunt? Dolores beatae nam at sed dolorum ratione dolorem nisi velit cum.
                 </div>
-                <div class="d-max-width3 d-padding12 d-background-color--ash d-margin-x--auto d-margin-bottom24 d-truncate">
-                    <span class="code-example--inline">.d-truncate</span><br>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                </div>
             </div>
             <div class="dialtone-example__code">
                 {% highlight html linenos %}
 <p class="d-wb-normal">…</p>
 <p class="d-wb-break-words">…</p>
 <p class="d-wb-wb-break-all">…</p>
-<p class="d-truncate">…</p>
                 {% endhighlight %}
             </div>
         </div>
