@@ -4,118 +4,124 @@ title: Layout
 description: Utility classes for controlling typography layout.
 ---
 <section class="dialtone-section16">
-    <header class="dialtone-section2">
-        <h2 class="dialtone-title__section">Text Align</h2>
-        <p class="dialtone-copy__normal">Classes are immutable, meaning they include <span class="code-example--inline">!important</span> to override CSS specificity. Useful when styling HTML by including CSS classes in markup.</p>
-    </header>
-    <table class="dialtone-table dialtone-table--code">
-        <thead>
-            <tr>
-                <th scope="col" class="dialtone-table__column--md">Class</th>
-                <th scope="col">Output</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for i in type.align %}
-            {% assign class = i.class %}
-            {% assign output = i.output %}
-            <tr>
-                <th scope="row">.d-ta-{{ class }}</th>
-                <td>text-align: {{ output }} !important;</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-</section>
-<section class="dialtone-section16">
-    <h2 class="dialtone-title__section">Examples</h2>
-    <div class="dialtone-example" data-example="yes" data-code="yes">
-        <div class="dialtone-example__example">
-            {% for i in type.align %}
+    <h2 class="dialtone-title__section">Text Align</h2>
+    <div class="dialtone-section16">
+        <header class="dialtone-section2">
+            <h3 class="dialtone-title__subsection">Classes</h3>
+            <p class="dialtone-copy__normal">Classes are immutable, meaning they include <span class="code-example--inline">!important</span> to override CSS specificity. Useful when styling HTML by including CSS classes in markup.</p>
+        </header>
+        <table class="dialtone-table dialtone-table--code">
+            <thead>
+                <tr>
+                    <th scope="col" class="dialtone-table__column--md">Class</th>
+                    <th scope="col">Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in type.align %}
                 {% assign class = i.class %}
-                <p class="d-text--md d-ta-{{ class }}"><span class="code-example--inline">.d-ta-{{ class }}</span><br>The quick brown fox jumps over the lazy dog.</p>
-            {% endfor %}
-        </div>
-        <div class="dialtone-example__code">
-            {% highlight html linenos %}
+                {% assign output = i.output %}
+                <tr>
+                    <th scope="row">.d-ta-{{ class }}</th>
+                    <td>text-align: {{ output }} !important;</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="dialtone-section16">
+        <h3 class="dialtone-title__subsection">Examples</h3>
+        <div class="dialtone-example" data-example="yes" data-code="yes">
+            <div class="dialtone-example__example">
+                {% for i in type.align %}
+                    {% assign class = i.class %}
+                    <p class="d-text--md d-ta-{{ class }}"><span class="code-example--inline">.d-ta-{{ class }}</span><br>The quick brown fox jumps over the lazy dog.</p>
+                {% endfor %}
+            </div>
+            <div class="dialtone-example__code">
+                {% highlight html linenos %}
 <p class="d-ta-left">…</p>
 <p class="d-ta-right">…</p>
 <p class="d-ta-center">…</p>
-            {% endhighlight %}
+                {% endhighlight %}
+            </div>
         </div>
     </div>
 </section>
 <section class="dialtone-section16">
-    <header class="dialtone-section2">
-        <h2 class="dialtone-title__section">Word Break</h2>
-        <p class="dialtone-copy__normal">Classes are immutable, meaning they include <span class="code-example--inline">!important</span> to override CSS specificity. Useful when styling HTML by including CSS classes in markup.</p>
-    </header>
-    <table class="dialtone-table dialtone-table--code">
-        <thead>
-            <tr>
-                <th scope="col" class="dialtone-table__column--md">Class</th>
-                <th scope="col">Output</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th scope="row">.d-wb-normal</th>
-                <td>
-                    overflow-wrap: normal !important;<br>
-                    word-break: normal !important;
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">.d-wb-break-words</th>
-                <td>
-                    overflow-wrap: break-word !important;
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">.d-wb-break-all</th>
-                <td>
-                    word-break: break-all !important;
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">.d-truncate</th>
-                <td>
-                    overflow: hidden !important;<br>
-                    text-overflow: ellipsis !important;<br>
-                    white-space: nowrap !important;
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</section>
-<section class="dialtone-section16">
-    <h2 class="dialtone-title__section">Examples</h2>
-    <div class="dialtone-example" data-example="yes" data-code="yes">
-        <div class="dialtone-example__example">
-            <div class="d-max-width3 d-padding12 d-background-color--ash d-margin-x--auto d-margin-bottom24 d-wb-normal">
-                <span class="code-example--inline">.d-wb-normal</span><br>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiisitaquequodpraesentiumexplicaboincidunt? Dolores beatae nam at sed dolorum ratione dolorem nisi velit cum.
+    <h2 class="dialtone-title__section">Word Break</h2>
+    <div class="dialtone-section16">
+        <header class="dialtone-section2">
+            <h3 class="dialtone-title__subsection">Classes</h3>
+            <p class="dialtone-copy__normal">Classes are immutable, meaning they include <span class="code-example--inline">!important</span> to override CSS specificity. Useful when styling HTML by including CSS classes in markup.</p>
+        </header>
+        <table class="dialtone-table dialtone-table--code">
+            <thead>
+                <tr>
+                    <th scope="col" class="dialtone-table__column--md">Class</th>
+                    <th scope="col">Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">.d-wb-normal</th>
+                    <td>
+                        overflow-wrap: normal !important;<br>
+                        word-break: normal !important;
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">.d-wb-break-words</th>
+                    <td>
+                        overflow-wrap: break-word !important;
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">.d-wb-break-all</th>
+                    <td>
+                        word-break: break-all !important;
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">.d-truncate</th>
+                    <td>
+                        overflow: hidden !important;<br>
+                        text-overflow: ellipsis !important;<br>
+                        white-space: nowrap !important;
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="dialtone-section16">
+        <h3 class="dialtone-title__subsection">Examples</h3>
+        <div class="dialtone-example" data-example="yes" data-code="yes">
+            <div class="dialtone-example__example">
+                <div class="d-max-width3 d-padding12 d-background-color--ash d-margin-x--auto d-margin-bottom24 d-wb-normal">
+                    <span class="code-example--inline">.d-wb-normal</span><br>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiisitaquequodpraesentiumexplicaboincidunt? Dolores beatae nam at sed dolorum ratione dolorem nisi velit cum.
+                </div>
+                <div class="d-max-width3 d-padding12 d-background-color--ash d-margin-x--auto d-margin-bottom24 d-wb-break-words">
+                    <span class="code-example--inline">.d-wb-break-words</span><br>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiisitaquequodpraesentiumexplicaboincidunt? Dolores beatae nam at sed dolorum ratione dolorem nisi velit cum.
+                </div>
+                <div class="d-max-width3 d-padding12 d-background-color--ash d-margin-x--auto d-margin-bottom24 d-wb-break-all">
+                    <span class="code-example--inline">.d-wb-break-all</span><br>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiisitaquequodpraesentiumexplicaboincidunt? Dolores beatae nam at sed dolorum ratione dolorem nisi velit cum.
+                </div>
+                <div class="d-max-width3 d-padding12 d-background-color--ash d-margin-x--auto d-margin-bottom24 d-truncate">
+                    <span class="code-example--inline">.d-truncate</span><br>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                </div>
             </div>
-            <div class="d-max-width3 d-padding12 d-background-color--ash d-margin-x--auto d-margin-bottom24 d-wb-break-words">
-                <span class="code-example--inline">.d-wb-break-words</span><br>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiisitaquequodpraesentiumexplicaboincidunt? Dolores beatae nam at sed dolorum ratione dolorem nisi velit cum.
-            </div>
-            <div class="d-max-width3 d-padding12 d-background-color--ash d-margin-x--auto d-margin-bottom24 d-wb-break-all">
-                <span class="code-example--inline">.d-wb-break-all</span><br>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiisitaquequodpraesentiumexplicaboincidunt? Dolores beatae nam at sed dolorum ratione dolorem nisi velit cum.
-            </div>
-            <div class="d-max-width3 d-padding12 d-background-color--ash d-margin-x--auto d-margin-bottom24 d-truncate">
-                <span class="code-example--inline">.d-truncate</span><br>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            </div>
-        </div>
-        <div class="dialtone-example__code">
-            {% highlight html linenos %}
+            <div class="dialtone-example__code">
+                {% highlight html linenos %}
 <p class="d-wb-normal">…</p>
 <p class="d-wb-break-words">…</p>
 <p class="d-wb-wb-break-all">…</p>
 <p class="d-truncate">…</p>
-            {% endhighlight %}
+                {% endhighlight %}
+            </div>
         </div>
     </div>
 </section>
