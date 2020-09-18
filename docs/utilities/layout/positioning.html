@@ -1,0 +1,104 @@
+---
+layout: page
+title: Positioning
+description: Use these utility classes to quickly change an element’s position in the DOM.
+---
+<section class="dialtone-section16">
+    <h2 class="dialtone-title__section">Position</h2>
+    <div class="dialtone-section16">
+        <header class="dialtone-section2">
+            <h3 class="dialtone-title__subsection">Classes</h3>
+            <p class="dialtone-copy__normal">Set an element’s position by using the <span class="code-example--inline">.d-position--{type}</span> classes. The table below lists the available classes and their CSS output.</p>
+        </header>
+        <table class="dialtone-table dialtone-table--code">
+            <thead>
+                <tr>
+                    <th scope="col" class="dialtone-table__column--md">Class</th>
+                    <th scope="col">Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in position.position %}
+                {% assign class = i.class %}
+                {% assign output = i.output %}
+                    <tr>
+                        <th scope="row">.d-position--{{ class }}</th>
+                        <td>position: {{ output }} !important;</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="dialtone-section16">
+        <h3 class="dialtone-title__subsection">Examples</h3>
+        <div class="dialtone-section16">
+            {% for i in position.position %}
+            {% assign class = i.class %}
+            {% assign output = i.output %}
+                <!--<p class="dialtone-copy__normal d-position--{{ class }}">The quick brown fox jumps over the lazy dog.</p>-->
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<section class="dialtone-section16">
+    <header class="dialtone-section2">
+        <h2 class="dialtone-title__section">Coordinates</h2>
+        <p class="dialtone-copy__normal">Dialtone's spacing units can be combined with the position utilities above to position elements. Set an element’s position by using the <span class="code-example--inline">.d-position--{type}</span> classes. The table below lists the available classes and their CSS output.</p>
+    </header>
+    <div class="dialtone-section16">
+        <header class="dialtone-section2">
+            <h3 class="dialtone-title__subsection">Positive Classes</h3>
+        <table class="dialtone-table dialtone-table--code">
+            <thead>
+                <tr>
+                    <th scope="col">Value</th>
+                    <th scope="col">Top</th>
+                    <th scope="col">Right</th>
+                    <th scope="col">Bottom</th>
+                    <th scope="col">Left</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in spacing.values %}
+                {% assign value = i.value %}
+                {% assign output = i.output %}
+                    <tr>
+                        <th scope="row">{{ i.output }}</th>
+                        <td>.d-top--{{ i.value }}</td>
+                        <td>.d-right--{{ i.value }}</td>
+                        <td>.d-bottom--{{ i.value }}</td>
+                        <td>.d-left--{{ i.value }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="dialtone-section16">
+        <header class="dialtone-section2">
+            <h3 class="dialtone-title__subsection">Negative Classes</h3>
+        <table class="dialtone-table dialtone-table--code">
+            <thead>
+                <tr>
+                    <th scope="col">Value</th>
+                    <th scope="col">Top</th>
+                    <th scope="col">Right</th>
+                    <th scope="col">Bottom</th>
+                    <th scope="col">Left</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in spacing.values %}
+                {% assign value = i.value %}
+                {% assign output = i.output %}
+                    <tr>
+                        <th scope="row">-{{ i.output }}</th>
+                        <td>.d-top--n{{ i.value }}</td>
+                        <td>.d-right--n{{ i.value }}</td>
+                        <td>.d-bottom--n{{ i.value }}</td>
+                        <td>.d-left--n{{ i.value }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
