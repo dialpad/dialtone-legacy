@@ -3,96 +3,201 @@ layout: page
 title: Font Size
 description: Utility classes for setting an element's font size.
 ---
-<section class="dialtone-section16">
-    <header class="dialtone-section2">
+<aside class="d-padding16 d-border-radius--sm d-w-75ch d-background-color--blue-lighter d-color--dark d-fs16 d-lh4 d-stack8">
+    <p class="d-margin0"><strong>Note:</strong> New variables and classes were introduced with Dialtone v5.8.0. Whereas previous class names and variables used a "t-shirt" sizing method (sm, md, lg, etc), the new classes and variables explicitly state the desired size in the name.</p>
+    <p class="d-margin0">The older classes and variables are still available, but they will no longer be supported and will be removed in a future version of Dialtone.</p>
+</aside>
+<section class="d-stack16">
+    <header class="d-stack2">
         <h2 class="dialtone-title__section">Variables</h2>
-        <p class="dialtone-copy__normal">When writing Less, you can set an element's text color by using a <span class="code-example--inline">@{headline/text}--{size}</span> variable (ex. <span class="code-example--inline">p {font-size: @text--md;}</span>). Useful when writing scoped Less where an immutable class with <span class="code-example--inline">!important</span> isn't required.</p>
+        <p class="dialtone-copy__normal">Dialtone provides Less and CSS variables for each font-size. This is useful if you're writing custom CSS and an immutable class isn't required or desired.</p>
     </header>
     <table class="dialtone-table dialtone-table--code">
         <thead>
             <tr>
-                <th scope="col" class="dialtone-table__column--md">Variable</th>
                 <th scope="col">Size</th>
+                <th scope="col">CSS Var</th>
+                <th scope="col" class="d-opacity50 d-background-color--ash">Deprecated CSS Var</th>
+                <th scope="col">Less Var</th>
+                <th scope="col" class="d-opacity50 d-background-color--ash">Deprecated Less Var</th>
                 <th scope="col">Output</th>
             </tr>
         </thead>
         <tbody>
             {% for i in type.font-size %}
-            {% assign variable = i.variable %}
-            {% assign px = i.pixel %}
+            {% assign size = i.size %}
+            {% assign var = i.variable-old %}
             {% assign output = i.output %}
             <tr>
-                <th scope="row">@{{ variable }}</th>
-                <td>{{ px }}px</td>
+                <th scope="row">{{ size }}px</th>
+                <td>var(--fs{{ size }})</td>
+                {% if var == "N/A" %}
+                    <td class="d-opacity50 d-background-color--ash d-color--dark-lightest d-fs-italic">N/A</td>
+                {% else %}
+                    <td class="d-opacity50 d-background-color--ash">var(--{{ var }})</td>
+                {% endif %}
+                <td>@fs{{ size }}</td>
+                {% if var == "N/A" %}
+                    <td class="d-opacity50 d-background-color--ash d-color--dark-lightest d-fs-italic">N/A</td>
+                {% else %}
+                    <td class="d-opacity50 d-background-color--ash">@{{ var }}</td>
+                {% endif %}
                 <td>{{ output }}rem</td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
 </section>
-<section class="dialtone-section16">
-    <header class="dialtone-section2">
-        <h2 class="dialtone-title__section">Classes</h2>
-        <p class="dialtone-copy__normal">Classes are immutable, meaning they include <span class="code-example--inline">!important</span> to override CSS specificity. Useful when styling HTML by including CSS classes in markup.</p>
+<section class="d-stack16">
+    <header class="d-stack2">
+        <h2 class="dialtone-title__section">Size Classes</h2>
+        <p class="dialtone-copy__normal">Starting in v5.8.0, Dialtone began providing immutable type classes, meaning they include an <span class="code-example--inline">!important</span> to override CSS specificity. These new classes abandon the previous "t-shirt" sizing metaphor in favor of explicitly stating the font-size. All previous class names still exist, but are considered deprecated and should not be used moving forward. They will be removed in a future version.</p>
     </header>
     <table class="dialtone-table dialtone-table--code">
         <thead>
             <tr>
-                <th scope="col" class="dialtone-table__column--md">Variable</th>
                 <th scope="col">Size</th>
+                <th scope="col">Class</th>
+                <th scope="col" class="d-opacity50 d-background-color--ash">Deprecated Class</th>
                 <th scope="col">Output</th>
             </tr>
         </thead>
         <tbody>
             {% for i in type.font-size %}
-            {% assign class = i.class %}
-            {% assign px = i.pixel %}
-            {% assign output = i.output %}
+            {% assign size = i.size %}
+            {% assign class = i.class-old %}
             <tr>
-                <th scope="row">.d-{{ class }}</th>
-                <td>{{ px }}px</td>
-                <td>
-                    {% if class contains "headline" %}
-                        font-size: {{ output }}rem; !important<br/>
-                        font-weight: 600 !important;
-                        {% if class == "headline-xs" %}
-                            <br/>text-transform: uppercase; !important
-                        {% endif %}
-                    {% elsif class contains "text" %}
-                        font-size: {{ output }}rem; !important
-                    {% endif %}
-                </td>
+                <th scope="row">{{ size }}px</th>
+                <td>.d-fs{{ size }}</td>
+                {% if class == "N/A" %}
+                    <td class="d-opacity50 d-background-color--ash d-color--dark-lightest d-fs-italic">N/A</td>
+                {% else %}
+                    <td class="d-opacity50 d-background-color--ash">.d-{{ class }}</td>
+                {% endif %}
+                <td>font-size: var(--fs{{ size }}) !important;</td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
-</section>
-<section class="dialtone-section16">
-    <h2 class="dialtone-title__section">Examples</h2>
     <div class="dialtone-example" data-example="yes" data-code="yes">
-        <div class="dialtone-example__example">
+        <div class="dialtone-example__example d-stack12">
             {% for i in type.font-size %}
-            {% assign class = i.class %}
-            <div class="dialtone-section2" style="white-space: nowrap; overflow: hidden;">
-                <span class="code-example--inline">.d-{{ class }}</span>
-                <p class="d-{{ class }} d-line-height-sm">The quick brown fox jumps over the lazy dog.</p>
+            {% assign size = i.size %}
+            <div class="d-stack2 d-ws-nowrap" style="overflow: hidden;">
+                <span class="code-example--inline">.d-fs{{ size }}</span>
+                <p class="d-fs{{ size }} d-lh4 d-margin0">The quick brown fox jumps over the lazy dog.</p>
             </div>
             {% endfor %}
         </div>
         <div class="dialtone-example__code">
-            {% highlight html linenos %}
-<p class="d-headline-xl">…</p>
-<p class="d-headline-lg">…</p>
-<p class="d-headline-md">…</p>
-<p class="d-headline-sm">…</p>
-<p class="d-headline-xs">…</p>
-<p class="d-text-xl">…</p>
-<p class="d-text-lg">…</p>
-<p class="d-text-md">…</p>
-<p class="d-text-sm">…</p>
-<p class="d-text-xs">…</p>
-<p class="d-text-xxs">…</p>
-            {% endhighlight %}
+{% highlight html linenos %}
+<p class="d-fs10">…</p>
+<p class="d-fs11">…</p>
+<p class="d-fs12">…</p>
+<p class="d-fs14">…</p>
+<p class="d-fs16">…</p>
+<p class="d-fs18">…</p>
+<p class="d-fs20">…</p>
+<p class="d-fs24">…</p>
+<p class="d-fs28">…</p>
+<p class="d-fs32">…</p>
+<p class="d-fs36">…</p>
+<p class="d-fs42">…</p>
+<p class="d-fs48">…</p>
+<p class="d-fs54">…</p>
+{% endhighlight %}
+        </div>
+    </div>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        <h2 class="dialtone-title__section">Headline Classes</h2>
+        <p class="dialtone-copy__normal">Starting in v5.8.0, Dialtone abandoned the previous "t-shirt" sizing metaphor in favor of explicitly stating the font-size. While these single-purpose classes provide a better idea of the font-size you will see, they didn't include all CSS properties that the previous <span class="code-example--inline">.d-headline--{size}</span> classes provided. The following classes do provide those properties.</p>
+    </header>
+    <table class="dialtone-table dialtone-table--code">
+        <thead>
+            <tr>
+                <th scope="col">Size</th>
+                <th scope="col">Class</th>
+                <th scope="col" class="d-opacity50 d-background-color--ash">Deprecated Class</th>
+                <th scope="col">Output</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">10px</th>
+                <td>.d-fs10-bold</td>
+                <td class="d-opacity50 d-background-color--ash">.d-headline--xs</td>
+                <td>font-size: var(--fs10) !important;<br />font-weight: bold !important;<br />text-transform: uppercase !important;</td>
+            </tr>
+            <tr>
+                <th scope="row">24px</th>
+                <td>.d-fs24-bold</td>
+                <td class="d-opacity50 d-background-color--ash">.d-headline--sm</td>
+                <td>font-size: var(--fs24) !important;<br />font-weight: bold !important;</td>
+            </tr>
+            <tr>
+                <th scope="row">28px</th>
+                <td>.d-fs28-bold</td>
+                <td class="d-opacity50 d-background-color--ash d-color--dark-lightest d-fs-italic">N/A</td>
+                <td>font-size: var(--fs28) !important;<br />font-weight: bold !important;</td>
+            </tr>
+            <tr>
+                <th scope="row">32px</th>
+                <td>.d-fs32-bold</td>
+                <td class="d-opacity50 d-background-color--ash">.d-headline--md</td>
+                <td>font-size: var(--fs32) !important;<br />font-weight: bold !important;</td>
+            </tr>
+            <tr>
+                <th scope="row">36px</th>
+                <td>.d-fs36-bold</td>
+                <td class="d-opacity50 d-background-color--ash">.d-headline--lg</td>
+                <td>font-size: var(--fs36) !important;<br />font-weight: bold !important;</td>
+            </tr>
+            <tr>
+                <th scope="row">42px</th>
+                <td>.d-fs42-bold</td>
+                <td class="d-opacity50 d-background-color--ash">.d-headline--xl</td>
+                <td>font-size: var(--fs42) !important;<br />font-weight: bold !important;</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="dialtone-example" data-example="yes" data-code="yes">
+        <div class="dialtone-example__example d-stack12">
+            <div class="d-stack2 d-ws-nowrap" style="overflow: hidden;">
+                <span class="code-example--inline">.d-fs10-bold</span>
+                <p class="d-fs10-bold d-margin0">The quick brown fox jumps over the lazy dog.</p>
+            </div>
+            <div class="d-stack2 d-ws-nowrap" style="overflow: hidden;">
+                <span class="code-example--inline">.d-fs24-bold</span>
+                <p class="d-fs24-bold d-margin0">The quick brown fox jumps over the lazy dog.</p>
+            </div>
+            <div class="d-stack2 d-ws-nowrap" style="overflow: hidden;">
+                <span class="code-example--inline">.d-fs28-bold</span>
+                <p class="d-fs28-bold d-margin0">The quick brown fox jumps over the lazy dog.</p>
+            </div>
+            <div class="d-stack2 d-ws-nowrap" style="overflow: hidden;">
+                <span class="code-example--inline">.d-fs32-bold</span>
+                <p class="d-fs32-bold d-margin0">The quick brown fox jumps over the lazy dog.</p>
+            </div>
+            <div class="d-stack2 d-ws-nowrap" style="overflow: hidden;">
+                <span class="code-example--inline">.d-fs36-bold</span>
+                <p class="d-fs36-bold d-margin0">The quick brown fox jumps over the lazy dog.</p>
+            </div>
+            <div class="d-stack2 d-ws-nowrap" style="overflow: hidden;">
+                <span class="code-example--inline">.d-fs42-bold</span>
+                <p class="d-fs42-bold d-margin0">The quick brown fox jumps over the lazy dog.</p>
+            </div>
+        </div>
+        <div class="dialtone-example__code">
+{% highlight html linenos %}
+<p class="d-fs10-bold">…</p>
+<p class="d-fs24-bold">…</p>
+<p class="d-fs28-bold">…</p>
+<p class="d-fs32-bold">…</p>
+<p class="d-fs36-bold">…</p>
+<p class="d-fs42-bold">…</p>
+{% endhighlight %}
         </div>
     </div>
 </section>

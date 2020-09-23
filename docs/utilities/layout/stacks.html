@@ -15,11 +15,11 @@ description: Stacks are preset layouts which inject margins between sibling elem
                 </tr>
             </thead>
             <tbody>
-                {% assign val = auto-spacing.sizes | split: ","  %}
-                {% for i in val %}
+                {% for i in spacing.values %}
+                {% assign val = i.value %}
                 <tr>
-                    <th scope="row">{{ i }}px</th>
-                    <td>.d-layout__stack{{ i }}</td>
+                    <th scope="row">{{ val }}px</th>
+                    <td>.d-layout__stack{{ val }}</td>
                 </tr>
                 {% endfor %}
             </tbody>
@@ -27,22 +27,12 @@ description: Stacks are preset layouts which inject margins between sibling elem
     </div>
     <div class="dialtone-section16">
         <h2 class="dialtone-title__subsection">Examples</h2>
-        <div class="dialtone-example" data-example="yes" data-code="no">
-            <div class="dialtone-example__example d-grid-layout--with-columns" style="--grid-col: 2; --grid-col-width: 1fr;">
-                {% assign val = auto-spacing.sizes | split: ","  %}
-                {% for i in val %}
-                <div class="layout-block d-width100">
-                    <div class="d-layout__stack{{ size }} d-padding16 d-width100">
-                        <div class="layout-block__inner d-flex--center">
-                            <div class="layout-block__label">{{ i }}px</div>
-                        </div>
-                        <div class="layout-block__inner d-flex--center">
-                            <div class="layout-block__label">{{ i }}px</div>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
+        {% for i in spacing.values %}
+        {% assign val = i.value %}
+            <div class="d-d-flex d-fd-column d-border d-border-color--navy-lighter d-padding8 d-layout__stack{{ val }}">
+                <div class="d-fl-center d-padding16 d-color--navy-text d-text--xxs d-font-weight--bold d-line-height--sm d-background-color--navy-lightest" style="position: relative;">{{ val }}px</div>
+                <div class="d-fl-center d-padding16 d-color--navy-text d-text--xxs d-font-weight--bold d-line-height--sm d-background-color--navy-lightest" style="position: relative;">{{ val }}px</div>
             </div>
-        </div>
+        {% endfor %}
     </div>
 </section>

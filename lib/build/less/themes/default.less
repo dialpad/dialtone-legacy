@@ -145,6 +145,43 @@
     line-height--xxl:                       @line-height--xxl;
 }
 
+//  NEW TYPE CSS VARS
+//  These should be used moving forward
+@type-styles-vars: {
+    fs10:                                   @fs10;
+    fs11:                                   @fs11;
+    fs12:                                   @fs12;
+    fs14:                                   @fs14;
+    fs16:                                   @fs16;
+    fs18:                                   @fs18;
+    fs20:                                   @fs20;
+    fs24:                                   @fs24;
+    fs28:                                   @fs28;
+    fs32:                                   @fs32;
+    fs36:                                   @fs36;
+    fs42:                                   @fs42;
+    fs48:                                   @fs48;
+    fs54:                                   @fs54;
+
+    lh0:                                    @lh0;
+    lh1:                                    @lh1;
+    lh2:                                    @lh2;
+    lh4:                                    @lh4;
+    lh6:                                    @lh6;
+    lh8:                                    @lh8;
+    lh12:                                   @lh12;
+    lh16:                                   @lh16;
+    lh20:                                   @lh20;
+    lh24:                                   @lh24;
+
+    lh-none:                                @lh-none;
+    lh-tighter:                             @lh-tighter;
+    lh-tight:                               @lh-tight;
+    lh-normal:                              @lh-normal;
+    lh-loose:                               @lh-loose;
+    lh-looser:                              @lh-looser;
+}
+
 //  $$  THEME STYLES
 //      Primary and Navigation Color
 //  ----------------------------------------------------------------------------
@@ -182,6 +219,11 @@
 
     //  Visual Styles
     each(@visual-styles-vars, {
+        --@{key}: @value;
+    });
+
+    //  Type Styles
+    each(@type-styles-vars, {
         --@{key}: @value;
     });
 

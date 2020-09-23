@@ -35,22 +35,24 @@ if((@define-font-face = true), each(@define-font-family, {
 //  ============================================================================
 //  $   FONT FAMILY
 //  ----------------------------------------------------------------------------
+//  Older classes. Will be deprecated in a future version
 .d-font-family--custom          { font-family: @font-family--custom; }
 .d-font-family--sans            { font-family: @font-family--sans; }
 .d-font-family--mono            { font-family: @font-family--mono; }
 .d-font-family--inherit         { font-family: inherit; }
 .d-font-family--unset           { font-family: unset; }
 
-// Utility classes
-.d-font-family-custom          { .d-font-family--custom() !important; }
-.d-font-family-sans            { .d-font-family--sans() !important; }
-.d-font-family-mono            { .d-font-family--mono() !important; }
-.d-font-family-inherit         { .d-font-family--inherit() !important; }
-.d-font-family-unset           { .d-font-family--unset() !important; }
+//  New classes. Use these moving forward
+.d-ff-custom                    { .d-font-family--custom() !important; }
+.d-ff-sans                      { .d-font-family--sans() !important; }
+.d-ff-mono                      { .d-font-family--mono() !important; }
+.d-ff-inherit                   { .d-font-family--inherit() !important; }
+.d-ff-unset                     { .d-font-family--unset() !important; }
 
 //  ============================================================================
 //  $   FONT SIZES
 //  ----------------------------------------------------------------------------
+//  Older classes. Will be deprecated in a future version
 .d-headline--xl {
     font-size: @headline--xl;
     font-weight: @headline-weight;
@@ -73,29 +75,70 @@ if((@define-font-face = true), each(@define-font-family, {
     text-transform: uppercase;
 }
 
-// Utlity classes
-.d-headline-xl      { .d-headline--xl() !important; }
-.d-headline-lg      { .d-headline--lg() !important; }
-.d-headline-md      { .d-headline--md() !important; }
-.d-headline-sm      { .d-headline--sm() !important; }
-.d-headline-xs      { .d-headline--xs() !important; }
+.d-text--xl                     { font-size: @text--xl; }
+.d-text--lg                     { font-size: @text--lg; }
+.d-text--md                     { font-size: @text--md; }
+.d-text--sm                     { font-size: @text--sm; }
+.d-text--xs                     { font-size: @text--xs; }
+.d-text--xxs                    { font-size: @text--xxs; }
 
-//  $$  TEXT SIZES
+//  New classes. Use these moving forward
+.d-fs10                         { font-size: var(--fs10) !important; }
+.d-fs11                         { font-size: var(--fs11) !important; }
+.d-fs12                         { font-size: var(--fs12) !important; }
+.d-fs14                         { font-size: var(--fs14) !important; }
+.d-fs16                         { font-size: var(--fs16) !important; }
+.d-fs18                         { font-size: var(--fs18) !important; }
+.d-fs20                         { font-size: var(--fs20) !important; }
+.d-fs24                         { font-size: var(--fs24) !important; }
+.d-fs28                         { font-size: var(--fs28) !important; }
+.d-fs32                         { font-size: var(--fs32) !important; }
+.d-fs36                         { font-size: var(--fs36) !important; }
+.d-fs42                         { font-size: var(--fs42) !important; }
+.d-fs48                         { font-size: var(--fs48) !important; }
+.d-fs54                         { font-size: var(--fs54) !important; }
+
+.d-fs10-bold                    { .d-fs10(); font-weight: @headline-weight; .d-tt-uppercase(); }
+.d-fs24-bold                    { .d-fs24(); font-weight: @headline-weight; }
+.d-fs28-bold                    { .d-fs28(); font-weight: @headline-weight; }
+.d-fs32-bold                    { .d-fs32(); font-weight: @headline-weight; }
+.d-fs36-bold                    { .d-fs36(); font-weight: @headline-weight; }
+.d-fs42-bold                    { .d-fs42(); font-weight: @headline-weight; }
+
+.d-fs-unset                     { font-size: unset !important; }
+
+
+//  ============================================================================
+//  $  LINE HEIGHTS
 //  ----------------------------------------------------------------------------
-.d-text--xl     { font-size: @text--xl; }
-.d-text--lg     { font-size: @text--lg; }
-.d-text--md     { font-size: @text--md; }
-.d-text--sm     { font-size: @text--sm; }
-.d-text--xs     { font-size: @text--xs; }
-.d-text--xxs    { font-size: @text--xxs; }
+//  Older classes. Will be deprecated in a future version
+.d-line-height--xs              { line-height: @line-height--xs; }
+.d-line-height--sm              { line-height: @line-height--sm; }
+.d-line-height--md              { line-height: @line-height--md; }
+.d-line-height--lg              { line-height: @line-height--lg; }
+.d-line-height--xl              { line-height: @line-height--xl; }
+.d-line-height--xxl             { line-height: @line-height--xxl; }
 
-// Utility classes
-.d-text-xl     { .d-text--xl() !important; }
-.d-text-lg     { .d-text--lg() !important; }
-.d-text-md     { .d-text--md() !important; }
-.d-text-sm     { .d-text--sm() !important; }
-.d-text-xs     { .d-text--xs() !important; }
-.d-text-xxs    { .d-text--xxs() !important; }
+//  New classes. Use these moving forward
+.d-lh0                          { line-height: var(--lh0) !important; }
+.d-lh1                          { line-height: var(--lh1) !important; }
+.d-lh2                          { line-height: var(--lh2) !important; }
+.d-lh4                          { line-height: var(--lh4) !important; }
+.d-lh6                          { line-height: var(--lh6) !important; }
+.d-lh8                          { line-height: var(--lh8) !important; }
+.d-lh12                         { line-height: var(--lh12) !important; }
+.d-lh16                         { line-height: var(--lh16) !important; }
+.d-lh20                         { line-height: var(--lh20) !important; }
+.d-lh24                         { line-height: var(--lh24) !important; }
+
+.d-lh-none                      { line-height: var(--lh-none) !important; }
+.d-lh-tighter                   { line-height: var(--lh-tighter) !important; }
+.d-lh-tight                     { line-height: var(--lh-tight) !important; }
+.d-lh-normal                    { line-height: var(--lh-normal) !important; }
+.d-lh-loose                     { line-height: var(--lh-loose) !important; }
+.d-lh-looser                    { line-height: var(--lh-looser) !important; }
+
+.d-lh-unset                     { line-height: unset !important; }
 
 
 //  ============================================================================
@@ -103,6 +146,7 @@ if((@define-font-face = true), each(@define-font-family, {
 //  ============================================================================
 //  $$  FONT WEIGHT
 //  ----------------------------------------------------------------------------
+//  Older classes. Will be deprecated in a future version
 .d-font-weight--light           { font-weight: @font-weight--light; }
 .d-font-weight--normal          { font-weight: @font-weight--normal; }
 .d-font-weight--medium          { font-weight: @font-weight--medium; }
@@ -110,14 +154,17 @@ if((@define-font-face = true), each(@define-font-family, {
 .d-font-weight--ultra           { font-weight: @font-weight--ultra; }
 
 // Utility classes
-.d-font-weight-light        { .d-font-weight--light() !important; }
-.d-font-weight-normal       { .d-font-weight--normal() !important; }
-.d-font-weight-medium       { .d-font-weight--medium() !important; }
-.d-font-weight-bold         { .d-font-weight--bold() !important; }
-.d-font-weight-ultra        { .d-font-weight--ultra() !important; }
+.d-fw-thin                      { font-weight: @fw-thin !important; }
+.d-fw-light                     { font-weight: @fw-light !important; }
+.d-fw-normal                    { font-weight: @fw-normal !important; }
+.d-fw-medium                    { font-weight: @fw-medium !important; }
+.d-fw-bold                      { font-weight: @fw-bold !important; }
+.d-fw-black                     { font-weight: @fw-black !important; }
+.d-fw-unset                     { font-weight: unset !important; }
 
 //  $$  TEXT COLOR
 //  ----------------------------------------------------------------------------
+//  Older classes. Will be deprecated in a future version
 .d-color--white                 { color: @white; }
 .d-color--dark                  { color: @color--dark; }
 .d-color--dark-light            { color: @color--dark-light; }
@@ -137,105 +184,160 @@ if((@define-font-face = true), each(@define-font-family, {
 .d-color--berry-text            { color: @color--berry-text; }
 .d-color--rose-text             { color: @color--rose-text; }
 
-// Utility classes
-.d-color-white                  { .d-color--white() !important; }
-.d-color-dark                   { .d-color--dark() !important; }
-.d-color-dark-light             { .d-color--dark-light () !important; }
-.d-color-dark-lighter           { .d-color--dark-lighter() !important; }
-.d-color-dark-lightest          { .d-color--dark-lightest() !important; }
-.d-color-light                  { .d-color--light() !important; }
-.d-color-light-dark             { .d-color--light-dark() !important; }
-.d-color-light-darker           { .d-color--light-darker() !important; }
-.d-color-light-darkest          { .d-color--light-darkest() !important; }
-.d-color-blue-text              { .d-color--blue-text () !important; }
-.d-color-navy-text              { .d-color--navy-text() !important; }
-.d-color-emerald-text           { .d-color--emerald-text() !important; }
-.d-color-bright-emerald-text    { .d-color--bright-emerald-text() !important; }
-.d-color-sunflower-text         { .d-color--sunflower-text() !important; }
-.d-color-wildberry-text         { .d-color--wildberry-text() !important; }
-.d-color-crimson-text           { .d-color--crimson-text() !important; }
-.d-color-berry-text             { .d-color--berry-text () !important; }
-.d-color-rose-text              { .d-color--rose-text() !important; }
+//  New Utility classes
+//  --  Grays & White
+.d-fc-white                     { color: var(--white) !important; }
+.d-fc-slate                     { color: var(--slate) !important; }
+.d-fc-slate-light               { color: var(--slate-light) !important; }
+.d-fc-slate-lighter             { color: var(--slate-lighter) !important; }
+.d-fc-slate-lightest            { color: var(--slate-lightest) !important; }
+.d-fc-ash                       { color: var(--ash) !important; }
+.d-fc-ash-dark                  { color: var(--ash-dark) !important; }
+.d-fc-ash-darker                { color: var(--ash-darker) !important; }
+.d-fc-ash-darkest               { color: var(--ash-darkest) !important; }
 
-//  ============================================================================
-//  $  LINE HEIGHTS
-//  ----------------------------------------------------------------------------
-.d-line-height--xs          { line-height: @line-height--xs; }
-.d-line-height--sm          { line-height: @line-height--sm; }
-.d-line-height--md          { line-height: @line-height--md; }
-.d-line-height--lg          { line-height: @line-height--lg; }
-.d-line-height--xl          { line-height: @line-height--xl; }
-.d-line-height--xxl         { line-height: @line-height--xxl; }
+//  --  Bright Blue
+.d-fc-blue-dark                 { color: var(--blue-dark) !important; }
+.d-fc-blue                      { color: var(--blue) !important; }
+.d-fc-blue-light                { color: var(--blue-light) !important; }
+.d-fc-blue-lighter              { color: var(--blue-lighter) !important; }
+.d-fc-blue-text                 { color: var(--blue-text) !important; }
 
-// Utility classes
-.d-line-height-xs          { .d-line-height--xs() !important; }
-.d-line-height-sm          { .d-line-height--sm() !important; }
-.d-line-height-md          { .d-line-height--md() !important; }
-.d-line-height-lg          { .d-line-height--lg() !important; }
-.d-line-height-xl          { .d-line-height--xl() !important; }
-.d-line-height-xxl         { .d-line-height--xxl() !important; }
+//  --  Navy
+.d-fc-navy                      { color: var(--navy) !important; }
+.d-fc-navy-light                { color: var(--navy-light) !important; }
+.d-fc-navy-lighter              { color: var(--navy-lighter) !important; }
+.d-fc-navy-lightest             { color: var(--navy-lightest) !important; }
+.d-fc-navy-text                 { color: var(--navy-text) !important; }
+
+//  --  Bright Emerald
+.d-fc-bright-emerald-dark       { color: var(--bright-emerald-dark) !important; }
+.d-fc-bright-emerald            { color: var(--bright-emerald) !important; }
+.d-fc-bright-emerald-light      { color: var(--bright-emerald-light) !important; }
+.d-fc-bright-emerald-lighter    { color: var(--bright-emerald-lighter) !important; }
+.d-fc-bright-emerald-text       { color: var(--bright-emerald-text) !important; }
+
+//  --  Emerald
+.d-fc-emerald-darker            { color: var(--emerald-darker) !important; }
+.d-fc-emerald-dark              { color: var(--emerald-dark) !important; }
+.d-fc-emerald                   { color: var(--emerald) !important; }
+.d-fc-emerald-light             { color: var(--emerald-light) !important; }
+.d-fc-emerald-lighter           { color: var(--emerald-lighter) !important; }
+.d-fc-emerald-text              { color: var(--emerald-text) !important; }
+
+//  --  Crimson
+.d-fc-crimson-dark              { color: var(--crimson-dark) !important; }
+.d-fc-crimson                   { color: var(--crimson) !important; }
+.d-fc-crimson-light             { color: var(--crimson-light) !important; }
+.d-fc-crimson-lighter           { color: var(--crimson-lighter) !important; }
+.d-fc-crimson-text              { color: var(--crimson-text) !important; }
+
+//  --  Wildberry
+.d-fc-wildberry-dark            { color: var(--wildberry-dark) !important; }
+.d-fc-wildberry                 { color: var(--wildberry) !important; }
+.d-fc-wildberry-light           { color: var(--wildberry-light) !important; }
+.d-fc-wildberry-lighter         { color: var(--wildberry-lighter) !important; }
+.d-fc-wildberry-text            { color: var(--wildberry-text) !important; }
+
+//  --  Sunflower
+.d-fc-sunflower-dark            { color: var(--sunflower-dark) !important; }
+.d-fc-sunflower                 { color: var(--sunflower) !important; }
+.d-fc-sunflower-light           { color: var(--sunflower-light) !important; }
+.d-fc-sunflower-lighter         { color: var(--sunflower-lighter) !important; }
+.d-fc-sunflower-text            { color: var(--sunflower-text) !important; }
+
+//  --  Berry
+.d-fc-berry-dark                { color: var(--berry-dark) !important; }
+.d-fc-berry                     { color: var(--berry) !important; }
+.d-fc-berry-light               { color: var(--berry-light) !important; }
+.d-fc-berry-lighter             { color: var(--berry-lighter) !important; }
+.d-fc-berry-text                { color: var(--berry-text ) !important; }
+
+//  --  Rose
+.d-fc-rose-darker               { color: var(--rose-darker) !important; }
+.d-fc-rose-dark                 { color: var(--rose-dark) !important; }
+.d-fc-rose                      { color: var(--rose) !important; }
+.d-fc-rose-light                { color: var(--rose-light) !important; }
+.d-fc-rose-text                 { color: var(--rose-text) !important; }
 
 //  ============================================================================
 //  $   FONT STYLE
 //  ----------------------------------------------------------------------------
-.d-fs-normal    { font-style: normal !important; }
-.d-fs-italic    { font-style: italic !important; }
+.d-fs-normal                    { font-style: normal !important; }
+.d-fs-italic                    { font-style: italic !important; }
+.d-fs-unset                     { font-style: unset !important; }
 
 //  ============================================================================
 //  $   TEXT DECORATION
 //  ----------------------------------------------------------------------------
-.d-td-none          { text-decoration: none !important; }
-.d-td-underline     { text-decoration: underline !important; }
+.d-td-none                      { text-decoration: none !important; }
+.d-td-underline                 { text-decoration: underline !important; }
+.d-td-unset                     { text-decoration: unset !important; }
 
 //  ============================================================================
 //  $   TEXT TRANSFORM
 //  ----------------------------------------------------------------------------
-.d-tt-none          { text-transform: none !important; }
-.d-tt-uppercase     { text-transform: uppercase !important; }
-.d-tt-lowercase     { text-transform: lowercase !important; }
-.d-tt-capitalize    { text-transform: capitalize !important; }
+.d-tt-none                      { text-transform: none !important; }
+.d-tt-uppercase                 { text-transform: uppercase !important; }
+.d-tt-lowercase                 { text-transform: lowercase !important; }
+.d-tt-capitalize                { text-transform: capitalize !important; }
+.d-tt-full-width                { text-transform: full-width !important; }
+.d-tt-unset                     { text-transform: unset !important; }
 
 //  ============================================================================
 //  $   LISTS
 //  ----------------------------------------------------------------------------
-.d-list-reset {
-    margin: 0 !important;
-    padding: 0 !important;
-    list-style: none !important;
-}
-.d-list-none	{ list-style-type: none !important; }
-.d-list-disc	{ list-style-type: disc !important; }
-.d-list-decimal	{ list-style-type: decimal !important; }
+.d-list-reset                   { .d-margin0(); .d-padding0(); .d-ls-none(); }
+
+.d-ls-reset                     { .d-margin0() !important; .d-padding0() !important; .d-ls-none(); }
+.d-ls-none                      { list-style: none !important; }
+.d-lst-none                     { list-style-type: none !important; }
+.d-lst-disc                     { list-style-type: disc !important; }
+.d-lst-decimal                  { list-style-type: decimal !important; }
 
 //  ============================================================================
 //  $   TEXT ALIGN
 //  ----------------------------------------------------------------------------
-.d-ta-left      { text-align: left !important; }
-.d-ta-right     { text-align: right !important; }
-.d-ta-center    { text-align: center !important; }
+.d-ta-left                      { text-align: left !important; }
+.d-ta-right                     { text-align: right !important; }
+.d-ta-center                    { text-align: center !important; }
+.d-ta-justify                   { text-align: justify !important; }
+.d-ta-unset                     { text-align: unset !important; }
 
 //  ============================================================================
 //  $   WHITESPACE
 //  ----------------------------------------------------------------------------
-.d-ws-normal      { white-space: normal !important; }
-.d-ws-nowrap      { white-space: nowrap !important; }
+.d-ws-normal                    { white-space: normal !important; }
+.d-ws-nowrap                    { white-space: nowrap !important; }
+.d-ws-pre                       { white-space: pre !important; }
+.d-ws-pre-line                  { white-space: pre-line !important; }
+.d-ws-pre-wrap                  { white-space: pre-wrap !important; }
+.d-ws-break-spaces              { white-space: break-spaces !important; }
+.d-ws-unset                     { white-space: unset !important; }
+
 
 //  ============================================================================
-//  $   WORD BREAK
+//  $   TRUNCATEE
 //  ----------------------------------------------------------------------------
-.d-wb-normal {
-    overflow-wrap: normal !important;
-    word-break: normal !important;
-}
-.d-wb-break-words {
-    overflow-wrap: break-word !important;
-}
-.d-wb-break-all {
-    word-break: break-all !important;
-}
-
 .d-truncate {
     overflow: hidden !important;
     text-overflow: ellipsis !important;
     white-space: nowrap !important;
 }
+
+//  ============================================================================
+//  $   WORD BREAK
+//  ----------------------------------------------------------------------------
+.d-wb-normal                    { word-break: normal !important; }
+.d-wb-break-all                 { word-break: break-all !important; }
+.d-wb-keep-all                  { word-break: keep-all !important; }
+.d-wb-unset                     { word-break: unset !important; }
+
+
+//  ============================================================================
+//  $   OVERFLOW WRAP
+//  ----------------------------------------------------------------------------
+.d-ow-normal                    { overflow-wrap: normal !important; }
+.d-ow-anywhere                  { overflow-wrap: anywhere !important; }
+.d-ow-break-word                { overflow-wrap: break-word !important; }
+.d-ow-unset                     { overflow-wrap: unset !important; }
