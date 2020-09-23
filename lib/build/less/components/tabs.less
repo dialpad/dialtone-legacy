@@ -17,10 +17,11 @@
     position: relative;
     display: flex;
 
-    font-size: var(--text-size--sm);
+    font-size: var(--text-size--md);
     color: var(--text-color--light);
 
-    &:after {
+    // Add a bottom border unless no border is requested
+    &:not(.d-tablist--no-border):after {
         content: "";
         position: absolute;
         right: 0;
@@ -44,7 +45,7 @@
     align-items: center;
     justify-content: center;
     margin: 0 @spacing2;
-    padding: @spacing12 @spacing16;
+    padding: @spacing12;
 
     border: 0;
     border-radius: @spacing4 @spacing4 0 0;
@@ -156,7 +157,6 @@
 }
 
 
-
 //  ============================================================================
 //  $   SIZES
 //  ----------------------------------------------------------------------------
@@ -165,13 +165,5 @@
 
     .d-tab {
         padding: @spacing12;
-    }
-}
-
-.d-tablist--lg {
-    font-size: var(--text-size--md);
-
-    .d-tab {
-        padding: @spacing16;
     }
 }
