@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Overflow
-description: Use these utility classes to change an element’s overflow properties.
+description: Utilities for controlling how an element handles content that is too large for the container.
 ---
 <section class="dialtone-section16">
     <header class="dialtone-section2">
@@ -12,15 +12,18 @@ description: Use these utility classes to change an element’s overflow propert
             <tr>
                 <th scope="col" class="dialtone-table__column--md">Class</th>
                 <th scope="col">Output</th>
+                <th scope="col">Description</th>
             </tr>
         </thead>
         <tbody>
             {% for i in overflow %}
             {% assign class = i.class %}
             {% assign output = i.output %}
+            {% assign description = i.description %}
             <tr>
                 <th scope="row">.d-overflow-{{ class }}</th>
                 <td>{{ output }};</td>
+                <td class="d-width40"><span class="d-d-block d-color--dark d-font-family--sans d-line-height--md">{{ description }}</span></td>
             </tr>
             {% endfor %}
         </tbody>
@@ -33,17 +36,16 @@ description: Use these utility classes to change an element’s overflow propert
     <div class="dialtone-example" data-example="yes" data-code="yes">
         <div class="dialtone-example__example">
 
-            <div class="layout-block d-fl-center">
-                <div class="layout-block__label d-fl1 d-margin8 d-background-color--navy-lighter">.d-fl-center</div>
+            <div class="d-d-flex d-fd-row d-fw-wrap d-padding-bottom48">
+                {% for i in overflow %}
+                {% assign class = i.class %}
+                <div class="d-width2 d-height2 d-margin6 d-padding12 d-background-color--ash d-overflow-{{ class }}">
+                    <span class="code-example--inline">.d-overflow-{{ class }}</span>
+                    <p class="d-width2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eleifend rutrum auctor. Phasellus convallis sagittis augue ut ornare. Vestibulum et gravida lectus, sed ultrices sapien. Nullam aliquet elit dui, vitae hendrerit lectus volutpat eget.</p>
+                </div>
+                {% endfor %}
             </div>
 
-        </div>
-        <div class="dialtone-example__code">
-{% highlight html linenos %}
-<div class="d-fl-center">
-…
-</div>
-{% endhighlight %}
         </div>
     </div>
 </section>        
