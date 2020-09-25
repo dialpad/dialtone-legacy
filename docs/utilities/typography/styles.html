@@ -3,108 +3,15 @@ layout: page
 title: Styles
 description: Utility classes for setting various element font styles.
 ---
-<section class="dialtone-section16">
-    <h2 class="dialtone-title__section">Font Family</h2>
-    <div class="dialtone-section16">
-        <header class="dialtone-section2">
-            <h3 class="dialtone-title__subsection">Variables</h3>
-            <p class="dialtone-copy__normal">When writing Less, you can set an element's text color by using a <span class="code-example--inline">@font-family--{family}</span> variable (ex. <span class="code-example--inline">p {font-family: @font-family--sans;}</span>). Useful when writing scoped Less where an immutable class with <span class="code-example--inline">!important</span> isn't required.</p>
-        </header>
-        <table class="dialtone-table dialtone-table--code">
-            <thead>
-                <tr>
-                    <th scope="col" class="dialtone-table__column--md">Variable</th>
-                    <th scope="col">Output</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for i in type.family %}
-                {% assign class = i.class %}
-                {% assign output = i.output %}
-                    <tr>
-                        <th scope="row">@font-family--{{ class }}</th>
-                        <td>{{ output }}</td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
-    <div class="dialtone-section16">
-        <header class="dialtone-section2">
-            <h3 class="dialtone-title__subsection">Classes</h3>
-            <p class="dialtone-copy__normal">Classes are immutable, meaning they include <span class="code-example--inline">!important</span> to override CSS specificity. Useful when styling HTML by including CSS classes in markup.</p>
-        </header>
-        <table class="dialtone-table dialtone-table--code">
-            <thead>
-                <tr>
-                    <th scope="col" class="dialtone-table__column--md">Class</th>
-                    <th scope="col">Output</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for i in type.family %}
-                {% assign class = i.class %}
-                {% assign output = i.output %}
-                    <tr>
-                        <th scope="row">.d-font-family-{{ class }}</th>
-                        <td>font-family: {{ output }} !important;</td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
-    <div class="dialtone-section16">
-        <header class="dialtone-section2">
-            <h3 class="dialtone-title__subsection">Examples</h3>
-        </header>
-        <div class="dialtone-example" data-example="yes" data-code="yes">
-            <div class="dialtone-example__example">
-                {% for i in type.family %}
-                    {% assign class = i.class %}
-                    <p class="d-text--md d-font-family-{{ class }}"><span class="code-example--inline">.d-font-family-{{ class }}</span><br>The weather had changed overnight, when a backing wind brought a granite sky and a mizzling rain with it.</p>
-                {% endfor %}
-            </div>
-            <div class="dialtone-example__code">
-                {% highlight html linenos %}
-<p class="d-font-family-custom">…</p>
-<p class="d-font-family-sans">…</p>
-<p class="d-line-height-mono">…</p>
-                {% endhighlight %}
-            </div>
+<section class="d-stack16">
+    <header class="d-stack2">
+        <h2 class="dialtone-title__section">Text Decoration</h2>
+        <div class="d-stack12">
+            <p class="dialtone-copy__normal">Text-decoration is a shorthand CSS property that sets the appearance of text decorative lines. It is shorthand for <span class="code-example--inline">text-decoration-line</span>, <span class="code-example--inline">text-decoration-color</span>, <span class="code-example--inline">text-decoration-style</span>, and the <span class="code-example--inline">text-decoration-thickness</span> properties.</p>
+            <p class="dialtone-copy__normal">Starting in v5.8.0, Dialtone began providing immutable type classes, meaning they include an <span class="code-example--inline">!important</span> to override CSS specificity.</p>
         </div>
-    </div>
-</section>
-<section class="dialtone-section16">
-    <h2 class="dialtone-title__section">Font Weight</h2>
-    <div class="dialtone-section16">
-        <header class="dialtone-section2">
-            <h3 class="dialtone-title__subsection">Variables</h3>
-            <p class="dialtone-copy__normal">When writing Less, you can set an element's text color by using a <span class="code-example--inline">@font-weight--{weight}</span> variable (ex. <span class="code-example--inline">p {font-weight: @font-weight--normal;}</span>). Useful when writing scoped Less where an immutable class with <span class="code-example--inline">!important</span> isn't required.</p>
-        </header>
-        <table class="dialtone-table dialtone-table--code">
-            <thead>
-                <tr>
-                    <th scope="col" class="dialtone-table__column--md">Variable</th>
-                    <th scope="col">Output</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for i in type.weight %}
-                {% assign class = i.class %}
-                {% assign output = i.output %}
-                    <tr>
-                        <th scope="row">@font-weight--{{ class }}</th>
-                        <td>{{ output }}</td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
-    <div class="dialtone-section16">
-        <header class="dialtone-section2">
-            <h3 class="dialtone-title__subsection">Classes</h3>
-            <p class="dialtone-copy__normal">Classes are immutable, meaning they include <span class="code-example--inline">!important</span> to override CSS specificity. Useful when styling HTML by including CSS classes in markup.</p>
-        </header>
+    </header>
+    <div class="d-stack16">
         <table class="dialtone-table dialtone-table--code">
             <thead>
                 <tr>
@@ -113,94 +20,44 @@ description: Utility classes for setting various element font styles.
                 </tr>
             </thead>
             <tbody>
-                {% for i in type.weight %}
-                {% assign class = i.class %}
-                {% assign output = i.output %}
+                {% assign decoration = type.decoration | split: ", " %}
+                {% for i in decoration %}
                     <tr>
-                        <th scope="row">.d-font-weight-{{ class }}</th>
-                        <td>font-weight: {{ output }} !important;</td>
+                        <th scope="row">.d-td-{{ i }}</th>
+                        <td>text-decoration: {{ i }} !important;</td>
                     </tr>
                 {% endfor %}
             </tbody>
         </table>
-    </div>
-    <div class="dialtone-section16">
-        <header class="dialtone-section2">
-            <h3 class="dialtone-title__subsection">Examples</h3>
-        </header>
         <div class="dialtone-example" data-example="yes" data-code="yes">
-            <div class="dialtone-example__example">
-                {% for i in type.weight %}
-                {% assign class = i.class %}
-                {% assign output = i.output %}
-                    <p class="dialtone-copy__normal d-font-weight-{{ class }}">The quick brown fox jumps over the lazy dog.</p>
-                {% endfor %}
+            <div class="dialtone-example__example d-stack8">
+                {% assign decoration = type.decoration | split: ", " %}
+                {% for i in decoration %}
+                <div class="d-stack2">
+                    <span class="code-example--inline">.d-td-{{ i }}</span>
+                    <p class="d-lh6 d-fs18 d-margin0 d-td-{{ i }}">{% if i == "unset" %}This sentence's text-decoration has been {{ i }}{% else %}This sentence has {% if i == "none" %}no{% else %}{{ i }}{% endif %} text-decoration.{% endif %}</p>
                 </div>
-            <div class="dialtone-example__code">
-                {% highlight html linenos %}
-<p class="d-font-weight-light">…</p>
-<p class="d-font-weight-normal">…</p>
-<p class="d-font-weight-medium">…</p>
-<p class="d-font-weight-bold">…</p>
-                {% endhighlight %}
+                {% endfor %}
             </div>
-        </div>
-    </div>
-</section>
-<section class="dialtone-section16">
-    <h2 class="dialtone-title__section">Text Decoration</h2>
-    <div class="dialtone-section16">
-        <header class="dialtone-section2">
-            <h3 class="dialtone-title__subsection">Classes</h3>
-            <p class="dialtone-copy__normal">Classes are immutable, meaning they include <span class="code-example--inline">!important</span> to override CSS specificity. Useful when styling HTML by including CSS classes in markup.</p>
-        </header>
-        <table class="dialtone-table dialtone-table--code">
-            <thead>
-                <tr>
-                    <th scope="col" class="dialtone-table__column--md">Class</th>
-                    <th scope="col">Output</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for i in type.decoration %}
-                {% assign class = i.class %}
-                {% assign output = i.output %}
-                    <tr>
-                        <th scope="row">.d-td-{{ class }}</th>
-                        <td>text-decoration: {{ output }} !important;</td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
-    <div class="dialtone-section16">
-        <header class="dialtone-section2">
-            <h3 class="dialtone-title__subsection">Examples</h3>
-        </header>
-        <div class="dialtone-example" data-example="yes" data-code="yes">
-            <div class="dialtone-example__example">
-                {% for i in type.decoration %}
-                {% assign class = i.class %}
-                {% assign output = i.output %}
-                    <p class="dialtone-copy__normal d-td-{{ class }}">The quick brown fox jumps over the lazy dog.</p>
-                {% endfor %}
-                </div>
             <div class="dialtone-example__code">
                 {% highlight html linenos %}
 <p class="d-td-none">…</p>
 <p class="d-td-underline">…</p>
+<p class="d-td-dotted">…</p>
+<p class="d-td-unset">…</p>
                 {% endhighlight %}
             </div>
         </div>
     </div>
 </section>
-<section class="dialtone-section16">
-    <h2 class="dialtone-title__section">Text Transform</h2>
-    <div class="dialtone-section16">
-        <header class="dialtone-section2">
-            <h3 class="dialtone-title__subsection">Classes</h3>
-            <p class="dialtone-copy__normal">Classes are immutable, meaning they include <span class="code-example--inline">!important</span> to override CSS specificity. Useful when styling HTML by including CSS classes in markup.</p>
-        </header>
+<section class="d-stack16">
+    <header class="d-stack2">
+        <h2 class="dialtone-title__section">Text Transform</h2>
+        <div class="d-stack12">
+            <p class="dialtone-copy__normal">The <span class="code-example--inline">text-transform</span> CSS property tells how text should be visually treated. Starting in v5.8.0, Dialtone began providing immutable type classes, meaning they include an <span class="code-example--inline">!important</span> to override CSS specificity.</p>
+        </div>
+    </header>
+    <div class="d-stack16">
         <table class="dialtone-table dialtone-table--code">
             <thead>
                 <tr>
@@ -209,47 +66,45 @@ description: Utility classes for setting various element font styles.
                 </tr>
             </thead>
             <tbody>
-                {% for i in type.transform %}
-                {% assign class = i.class %}
-                {% assign output = i.output %}
+                {% assign transform = type.transform | split: ", " %}
+                {% for i in transform %}
                     <tr>
-                        <th scope="row">.d-tt-{{ class }}</th>
-                        <td>text-transform: {{ output }} !important;</td>
+                        <th scope="row">.d-tt-{{ i }}</th>
+                        <td>text-transform: {{ i }} !important;</td>
                     </tr>
                 {% endfor %}
             </tbody>
         </table>
-    </div>
-    <div class="dialtone-section16">
-        <header class="dialtone-section2">
-            <h3 class="dialtone-title__subsection">Examples</h3>
-        </header>
         <div class="dialtone-example" data-example="yes" data-code="yes">
-            <div class="dialtone-example__example">
-                {% for i in type.transform %}
-                {% assign class = i.class %}
-                {% assign output = i.output %}
-                    <p class="dialtone-copy__normal d-tt-{{ class }}">The quick brown fox jumps over the lazy dog.</p>
-                {% endfor %}
+            <div class="dialtone-example__example d-stack8">
+                {% assign transform = type.transform | split: ", " %}
+                {% for i in transform %}
+                <div class="d-stack2">
+                    <span class="code-example--inline">.d-tt-{{ i }}</span>
+                    <p class="d-lh6 d-fs18 d-margin0 d-tt-{{ i }}">{% if i == "unset" %}This sentence text-transform value is {{ i }}.{% else %}This sentence has {% if i == "none" %}no{% else %}a {{ i }}{% endif %} text-transform.{% endif %}</p>
                 </div>
+                {% endfor %}
+            </div>
             <div class="dialtone-example__code">
                 {% highlight html linenos %}
 <p class="d-tt-none">…</p>
 <p class="d-tt-uppercase">…</p>
 <p class="d-tt-lowercase">…</p>
 <p class="d-tt-capitalize">…</p>
+<p class="d-tt-unset">…</p>
                 {% endhighlight %}
             </div>
         </div>
     </div>
 </section>
-<section class="dialtone-section16">
-    <h2 class="dialtone-title__section">Font Style</h2>
-    <div class="dialtone-section16">
-        <header class="dialtone-section2">
-            <h3 class="dialtone-title__subsection">Classes</h3>
-            <p class="dialtone-copy__normal">Classes are immutable, meaning they include <span class="code-example--inline">!important</span> to override CSS specificity. Useful when styling HTML by including CSS classes in markup.</p>
-        </header>
+<section class="d-stack16">
+    <header class="d-stack2">
+        <h2 class="dialtone-title__section">Font Style</h2>
+        <div class="d-stack12">
+            <p class="dialtone-copy__normal">The <span class="code-example--inline">font-style</span> CSS property tells how text should be visually styled between normal or italic.</p>
+        </div>
+    </header>
+    <div class="d-stack16">
         <table class="dialtone-table dialtone-table--code">
             <thead>
                 <tr>
@@ -258,33 +113,30 @@ description: Utility classes for setting various element font styles.
                 </tr>
             </thead>
             <tbody>
-                {% for i in type.style %}
-                {% assign class = i.class %}
-                {% assign output = i.output %}
+                {% assign style = type.style | split: ", " %}
+                {% for i in style %}
                     <tr>
-                        <th scope="row">.d-fs-{{ class }}</th>
-                        <td>font-style: {{ output }} !important;</td>
+                        <th scope="row">.d-td-{{ i }}</th>
+                        <td>font-style: {{ i }} !important;</td>
                     </tr>
                 {% endfor %}
             </tbody>
         </table>
-    </div>
-    <div class="dialtone-section16">
-        <header class="dialtone-section2">
-            <h3 class="dialtone-title__subsection">Examples</h3>
-        </header>
         <div class="dialtone-example" data-example="yes" data-code="yes">
-            <div class="dialtone-example__example">
-                {% for i in type.style %}
-                {% assign class = i.class %}
-                {% assign output = i.output %}
-                    <p class="dialtone-copy__normal d-fs-{{ class }}">The quick brown fox jumps over the lazy dog.</p>
-                {% endfor %}
+            <div class="dialtone-example__example d-stack8">
+                {% assign style = type.style | split: ", " %}
+                {% for i in style %}
+                <div class="d-stack2">
+                    <span class="code-example--inline">.d-fs-{{ i }}</span>
+                    <p class="d-lh6 d-fs18 d-margin0 d-fs-{{ i }}">{% if i == "unset" %}This sentence's  text-decoration has been {{ i }}{% else %}This sentence has a {{ i }} font-style.{% endif %}</p>
                 </div>
+                {% endfor %}
+            </div>
             <div class="dialtone-example__code">
                 {% highlight html linenos %}
 <p class="d-fs-normal">…</p>
 <p class="d-fs-italic">…</p>
+<p class="d-fs-unset">…</p>
                 {% endhighlight %}
             </div>
         </div>

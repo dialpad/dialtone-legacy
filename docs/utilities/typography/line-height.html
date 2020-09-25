@@ -3,7 +3,7 @@ layout: page
 title: Line Height
 description: Utility classes for controlling an element's line height.
 ---
-<aside class="d-padding16 d-border-radius--sm d-w-75ch d-background-color--blue-lighter d-color--dark d-fs16 d-lh4 d-stack8">
+<aside class="d-padding16 d-border-radius--sm d-w-75ch d-background-color--blue-lighter d-fc-slate d-fs16 d-lh4 d-stack8">
     <p class="d-margin0"><strong>Note:</strong> New variables and classes were introduced with Dialtone v5.8.0. Whereas previous class names and variables used a "t-shirt" sizing method (sm, md, lg, etc), the new classes and variables either provide fixed or relative values.</p>
     <p class="d-margin0">The older classes and variables are still available, but they will no longer be supported and will be removed in a future version of Dialtone.</p>
 </aside>
@@ -49,9 +49,9 @@ description: Utility classes for controlling an element's line height.
                         <th scope="row" rowspan="{{ forloop.length }}" style="border-bottom: none;">Fixed</th>
                     {% endif %}
                     <td>var(--lh{{ c }})</td>
-                    <td class="d-opacity50 d-background-color--ash d-color--dark-lightest d-fs-italic">N/A</td>
+                    <td class="d-opacity50 d-background-color--ash d-fc-slate-lightest d-fs-italic">N/A</td>
                     <td>@lh{{ c }}</td>
-                    <td class="d-opacity50 d-background-color--ash d-color--dark-lightest d-fs-italic">N/A</td>
+                    <td class="d-opacity50 d-background-color--ash d-fc-slate-lightest d-fs-italic">N/A</td>
                     <td>{{ v }}</td>
                 </tr>
             {% endfor %}
@@ -79,7 +79,7 @@ description: Utility classes for controlling an element's line height.
             <tr>
                 <td>.d-lh-{{ c }}</td>
                 <td class="d-opacity50 d-background-color--ash">.d-line-height--{{ old }}</td>
-                <td>line-height: {{ v }};</td>
+                <td>line-height: {{ v }} !important;</td>
             </tr>
             {% endfor %}
         </tbody>
@@ -124,7 +124,7 @@ description: Utility classes for controlling an element's line height.
             {% assign v = i.output %}
             <tr>
                 <td>.d-lh{{ c }}</td>
-                <td>line-height: {{ v }};</td>
+                <td>line-height: {{ v }} !important;</td>
             </tr>
             {% endfor %}
         </tbody>
