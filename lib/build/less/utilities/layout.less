@@ -7,13 +7,218 @@
 //  visit https://dialpad.design/utilities/layout
 //
 //  TABLE OF CONTENTS
-//  • Layouts
-//  • Clearfiz
-//  • Z-index
-//  • Width
-//  • Height
-//  • Overflow
+//  • POSITION
+//  • CLEARFIX
+//  • Z-INDEX
+//  • OVERFLOW
+//  • WIDTH
+//  • HEIGHT
+//  • LAYOUTS
+//      - Stacks
+//      - Flow
 //
+//  ============================================================================
+//  $   POSITION
+//  ----------------------------------------------------------------------------
+.d-p-static                     { position: static !important; }
+.d-p-relative                   { position: relative !important; }
+.d-p-absolute                   { position: absolute !important; }
+.d-p-fixed                      { position: fixed !important; }
+.d-p-sticky                     { position: sticky !important; }
+.d-p-unset                      { position: unset !important; }
+
+//  ============================================================================
+//  $   CLEARFIX
+//  ----------------------------------------------------------------------------
+.d-clearfix {
+    &:before,
+    &:after {
+        display: table;
+        clear: both;
+        content: "";
+    }
+}
+
+//  ============================================================================
+//  $   Z-INDEX
+//  ----------------------------------------------------------------------------
+//  Older classes. Will be deprecated in a future version
+.d-z-index--hide                { z-index: @z-index--hide; }
+.d-z-index--base                { z-index: @z-index--base; }
+.d-z-index--base1               { z-index: @z-index--base1; }
+.d-z-index--selected            { z-index: @z-index--selected; }
+.d-z-index--active              { z-index: @z-index--active; }
+.d-z-index--navigation          { z-index: @z-index--navigation; }
+.d-z-index--navigation-fixed    { z-index: @z-index--navigation-fixed; }
+.d-z-index--dropdown            { z-index: @z-index--dropdown; }
+.d-z-index--popover             { z-index: @z-index--popover; }
+.d-z-index--tooltip             { z-index: @z-index--tooltip; }
+.d-z-index--toast               { z-index: @z-index--toast; }
+.d-z-index--drawer              { z-index: @z-index--drawer; }
+.d-z-index--modal-bg            { z-index: @z-index--modal-bg; }
+.d-z-index--modal               { z-index: @z-index--modal; }
+
+//  New classes. Use these moving forward
+.d-zi-hide                      { z-index: @zi-hide !important; }
+.d-zi-base                      { z-index: @zi-base !important; }
+.d-zi-base1                     { z-index: @zi-base1 !important; }
+.d-zi-selected                  { z-index: @zi-selected !important; }
+.d-zi-active                    { z-index: @zi-active !important; }
+.d-zi-navigation                { z-index: @zi-navigation !important; }
+.d-zi-navigation-fixed          { z-index: @zi-navigation-fixed !important; }
+.d-zi-dropdown                  { z-index: @zi-dropdown !important; }
+.d-zi-popover                   { z-index: @zi-popover !important; }
+.d-zi-tooltip                   { z-index: @zi-tooltip !important; }
+.d-zi-toast                     { z-index: @zi-toast !important; }
+.d-zi-drawer                    { z-index: @zi-drawer !important; }
+.d-zi-modal-bg                  { z-index: @zi-modal-bg !important; }
+.d-zi-modal                     { z-index: @zi-modal !important; }
+.d-zi-unset                     { z-index: unset !important; }
+
+
+//  ============================================================================
+//  $   OVERFLOW
+//  ============================================================================
+.d-of-auto                      { overflow: auto !important; }
+.d-of-x-auto                    { overflow-x: auto !important; }
+.d-of-y-auto                    { overflow-y: auto !important; }
+.d-of-hidden                    { overflow: hidden !important; }
+.d-of-x-hidden                  { overflow-x: hidden !important; }
+.d-of-y-hidden                  { overflow-y: hidden !important; }
+.d-of-scroll                    { overflow: scroll !important; }
+.d-of-x-scroll                  { overflow-x: scroll !important; }
+.d-of-y-scroll                  { overflow-y: scroll !important; }
+.d-of-visible                   { overflow: visible !important; }
+.d-of-x-visible                 { overflow-x: visible !important; }
+.d-of-y-visible                 { overflow-y: visible !important; }
+.d-of-unset                     { overflow: unset !important; }
+
+
+//  ============================================================================
+//  $   WIDTH
+//  ============================================================================
+//  --  FLUID
+//  ----------------------------------------------------------------------------
+.d-width0                       { width: 0; }
+.d-width10                      { width: 10%; }
+.d-width20                      { width: 20%; }
+.d-width25                      { width: 25%; }
+.d-width30                      { width: 30%; }
+.d-width40                      { width: 40%; }
+.d-width50                      { width: 50%; }
+.d-width60                      { width: 60%; }
+.d-width70                      { width: 70%; }
+.d-width75                      { width: 75%; }
+.d-width80                      { width: 80%; }
+.d-width90                      { width: 90%; }
+.d-width100                     { width: 100%; }
+
+//  --  FIXED
+//  ----------------------------------------------------------------------------
+.d-width1                       { width: @fixed-size1; }
+.d-width2                       { width: @fixed-size2; }
+.d-width3                       { width: @fixed-size3; }
+.d-width4                       { width: @fixed-size4; }
+.d-width5                       { width: @fixed-size5; }
+.d-width6                       { width: @fixed-size6; }
+.d-width7                       { width: @fixed-size7; }
+.d-width8                       { width: @fixed-size8; }
+.d-width-auto                   { width: auto; }
+
+.d-min-width1                   { min-width: @fixed-size1; }
+.d-min-width2                   { min-width: @fixed-size2; }
+.d-min-width3                   { min-width: @fixed-size3; }
+.d-min-width4                   { min-width: @fixed-size4; }
+.d-min-width5                   { min-width: @fixed-size5; }
+.d-min-width6                   { min-width: @fixed-size6; }
+.d-min-width7                   { min-width: @fixed-size7; }
+.d-min-width8                   { min-width: @fixed-size8; }
+.d-min-width-auto               { min-width: auto; }
+
+.d-max-width1                   { max-width: @fixed-size1; }
+.d-max-width2                   { max-width: @fixed-size2; }
+.d-max-width3                   { max-width: @fixed-size3; }
+.d-max-width4                   { max-width: @fixed-size4; }
+.d-max-width5                   { max-width: @fixed-size5; }
+.d-max-width6                   { max-width: @fixed-size6; }
+.d-max-width7                   { max-width: @fixed-size7; }
+.d-max-width8                   { max-width: @fixed-size8; }
+.d-max-width-auto               { max-width: auto; }
+
+.d-width100v                    { width: 100vw; }
+.d-width-unset                  { width: unset; }
+
+//  ============================================================================
+//  $  LINE LENGTHS
+//  ----------------------------------------------------------------------------
+.d-w-60ch                       { width: 60ch !important; }
+.d-w-75ch                       { width: 75ch !important; }
+.d-w-90ch                       { width: 90ch !important; }
+
+.d-wmn-60ch                     { min-width: 60ch !important; }
+.d-wmn-75ch                     { min-width: 75ch !important; }
+.d-wmn-90ch                     { min-width: 90ch !important; }
+
+.d-wmx-60ch                     { max-width: 60ch !important; }
+.d-wmx-75ch                     { max-width: 75ch !important; }
+.d-wmx-90ch                     { max-width: 90ch !important; }
+
+
+//  ============================================================================
+//  $   HEIGHT
+//  ============================================================================
+//  --  FLUID
+//  ----------------------------------------------------------------------------
+.d-height0                      { height: 0; }
+.d-height10                     { height: 10%; }
+.d-height20                     { height: 20%; }
+.d-height25                     { height: 25%; }
+.d-height30                     { height: 30%; }
+.d-height40                     { height: 40%; }
+.d-height50                     { height: 50%; }
+.d-height60                     { height: 60%; }
+.d-height70                     { height: 70%; }
+.d-height75                     { height: 75%; }
+.d-height80                     { height: 80%; }
+.d-height90                     { height: 90%; }
+.d-height100                    { height: 100%; }
+
+//  --  FIXED
+//  ----------------------------------------------------------------------------
+.d-height1                      { height: @fixed-size1; }
+.d-height2                      { height: @fixed-size2; }
+.d-height3                      { height: @fixed-size3; }
+.d-height4                      { height: @fixed-size4; }
+.d-height5                      { height: @fixed-size5; }
+.d-height6                      { height: @fixed-size6; }
+.d-height7                      { height: @fixed-size7; }
+.d-height8                      { height: @fixed-size8; }
+.d-height-auto                  { height: auto; }
+
+.d-min-height1                  { min-height: @fixed-size1; }
+.d-min-height2                  { min-height: @fixed-size2; }
+.d-min-height3                  { min-height: @fixed-size3; }
+.d-min-height4                  { min-height: @fixed-size4; }
+.d-min-height5                  { min-height: @fixed-size5; }
+.d-min-height6                  { min-height: @fixed-size6; }
+.d-min-height7                  { min-height: @fixed-size7; }
+.d-min-height8                  { min-height: @fixed-size8; }
+.d-min-height-auto              { min-height: auto; }
+
+.d-max-height1                  { max-height: @fixed-size1; }
+.d-max-height2                  { max-height: @fixed-size2; }
+.d-max-height3                  { max-height: @fixed-size3; }
+.d-max-height4                  { max-height: @fixed-size4; }
+.d-max-height5                  { max-height: @fixed-size5; }
+.d-max-height6                  { max-height: @fixed-size6; }
+.d-max-height7                  { max-height: @fixed-size7; }
+.d-max-height8                  { max-height: @fixed-size8; }
+.d-max-height-auto              { max-height: auto; }
+
+.d-height100v                   { height: 100vh; }
+.d-height-unset                 { height: unset; }
+
+
 //  ============================================================================
 //  $   LAYOUTS
 //  ============================================================================
@@ -78,158 +283,27 @@
     }
 }
 
-//  ============================================================================
-//  $   CLEARFIX
-//  ----------------------------------------------------------------------------
-.d-clearfix {
-    &:before,
-    &:after {
-        display: table;
-        clear: both;
-        content: "";
-    }
-}
+//  New classes. Use these moving forward.
+.d-stack1                       { > * + * { margin-top: @spacing1 !important; } }
+.d-stack2                       { > * + * { margin-top: @spacing2 !important; } }
+.d-stack4                       { > * + * { margin-top: @spacing4 !important; } }
+.d-stack6                       { > * + * { margin-top: @spacing6 !important; } }
+.d-stack8                       { > * + * { margin-top: @spacing8 !important; } }
+.d-stack12                      { > * + * { margin-top: @spacing12 !important; } }
+.d-stack16                      { > * + * { margin-top: @spacing16 !important; } }
+.d-stack24                      { > * + * { margin-top: @spacing24 !important; } }
+.d-stack32                      { > * + * { margin-top: @spacing32 !important; } }
+.d-stack48                      { > * + * { margin-top: @spacing48 !important; } }
+.d-stack64                      { > * + * { margin-top: @spacing64 !important; } }
 
-//  ============================================================================
-//  $   Z-INDEX
-//  ----------------------------------------------------------------------------
-.d-z-index--hide                 { z-index: @z-index--hide; }
-.d-z-index--base                 { z-index: @z-index--base; }
-.d-z-index--base1                { z-index: @z-index--base1; }
-.d-z-index--selected             { z-index: @z-index--selected; }
-.d-z-index--active               { z-index: @z-index--active; }
-.d-z-index--navigation           { z-index: @z-index--navigation; }
-.d-z-index--navigation-fixed     { z-index: @z-index--navigation-fixed; }
-.d-z-index--dropdown             { z-index: @z-index--dropdown; }
-.d-z-index--popover              { z-index: @z-index--popover; }
-.d-z-index--tooltip              { z-index: @z-index--tooltip; }
-.d-z-index--toast                { z-index: @z-index--toast; }
-.d-z-index--drawer               { z-index: @z-index--drawer; }
-.d-z-index--modal-bg             { z-index: @z-index--modal-bg; }
-.d-z-index--modal                { z-index: @z-index--modal; }
-
-
-//  ============================================================================
-//  $   WIDTH
-//  ============================================================================
-//  --  FLUID
-//  ----------------------------------------------------------------------------
-.d-width0       { width: 0; }
-.d-width10      { width: 10%; }
-.d-width20      { width: 20%; }
-.d-width25      { width: 25%; }
-.d-width30      { width: 30%; }
-.d-width40      { width: 40%; }
-.d-width50      { width: 50%; }
-.d-width60      { width: 60%; }
-.d-width70      { width: 70%; }
-.d-width75      { width: 75%; }
-.d-width80      { width: 80%; }
-.d-width90      { width: 90%; }
-.d-width100     { width: 100%; }
-
-//  --  FIXED
-//  ----------------------------------------------------------------------------
-.d-width1       { width: @fixed-size1; }
-.d-width2       { width: @fixed-size2; }
-.d-width3       { width: @fixed-size3; }
-.d-width4       { width: @fixed-size4; }
-.d-width5       { width: @fixed-size5; }
-.d-width6       { width: @fixed-size6; }
-.d-width7       { width: @fixed-size7; }
-.d-width8       { width: @fixed-size8; }
-.d-width-auto   { width: auto; }
-
-.d-min-width1   { min-width: @fixed-size1; }
-.d-min-width2   { min-width: @fixed-size2; }
-.d-min-width3   { min-width: @fixed-size3; }
-.d-min-width4   { min-width: @fixed-size4; }
-.d-min-width5   { min-width: @fixed-size5; }
-.d-min-width6   { min-width: @fixed-size6; }
-.d-min-width7   { min-width: @fixed-size7; }
-.d-min-width8   { min-width: @fixed-size8; }
-.d-min-width-auto  { min-width: auto; }
-
-.d-max-width1   { max-width: @fixed-size1; }
-.d-max-width2   { max-width: @fixed-size2; }
-.d-max-width3   { max-width: @fixed-size3; }
-.d-max-width4   { max-width: @fixed-size4; }
-.d-max-width5   { max-width: @fixed-size5; }
-.d-max-width6   { max-width: @fixed-size6; }
-.d-max-width7   { max-width: @fixed-size7; }
-.d-max-width8   { max-width: @fixed-size8; }
-.d-max-width-auto { max-width: auto; }
-
-.d-width100v    { width: 100vw; }
-.d-width-unset  { width: unset; }
-
-
-//  ============================================================================
-//  $   HEIGHT
-//  ============================================================================
-//  --  FLUID
-//  ----------------------------------------------------------------------------
-.d-height0       { height: 0; }
-.d-height10      { height: 10%; }
-.d-height20      { height: 20%; }
-.d-height25      { height: 25%; }
-.d-height30      { height: 30%; }
-.d-height40      { height: 40%; }
-.d-height50      { height: 50%; }
-.d-height60      { height: 60%; }
-.d-height70      { height: 70%; }
-.d-height75      { height: 75%; }
-.d-height80      { height: 80%; }
-.d-height90      { height: 90%; }
-.d-height100     { height: 100%; }
-
-//  --  FIXED
-//  ----------------------------------------------------------------------------
-.d-height1       { height: @fixed-size1; }
-.d-height2       { height: @fixed-size2; }
-.d-height3       { height: @fixed-size3; }
-.d-height4       { height: @fixed-size4; }
-.d-height5       { height: @fixed-size5; }
-.d-height6       { height: @fixed-size6; }
-.d-height7       { height: @fixed-size7; }
-.d-height8       { height: @fixed-size8; }
-.d-height-auto   { height: auto; }
-
-.d-min-height1   { min-height: @fixed-size1; }
-.d-min-height2   { min-height: @fixed-size2; }
-.d-min-height3   { min-height: @fixed-size3; }
-.d-min-height4   { min-height: @fixed-size4; }
-.d-min-height5   { min-height: @fixed-size5; }
-.d-min-height6   { min-height: @fixed-size6; }
-.d-min-height7   { min-height: @fixed-size7; }
-.d-min-height8   { min-height: @fixed-size8; }
-.d-min-height-auto  { min-height: auto; }
-
-.d-max-height1   { max-height: @fixed-size1; }
-.d-max-height2   { max-height: @fixed-size2; }
-.d-max-height3   { max-height: @fixed-size3; }
-.d-max-height4   { max-height: @fixed-size4; }
-.d-max-height5   { max-height: @fixed-size5; }
-.d-max-height6   { max-height: @fixed-size6; }
-.d-max-height7   { max-height: @fixed-size7; }
-.d-max-height8   { max-height: @fixed-size8; }
-.d-max-height-auto { max-height: auto; }
-
-.d-height100v    { height: 100vh; }
-.d-height-unset  { height: unset; }
-
-//  ============================================================================
-//  $   OVERFLOW
-//  ============================================================================
-.d-overflow-auto        { overflow: auto !important; }
-.d-overflow-x-auto      { overflow-x: auto !important; }
-.d-overflow-y-auto      { overflow-y: auto !important; }
-.d-overflow-hidden      { overflow: hidden !important; }
-.d-overflow-x-hidden    { overflow-x: hidden !important; }
-.d-overflow-y-hidden    { overflow-y: hidden !important; }
-.d-overflow-scroll      { overflow: scroll !important; }
-.d-overflow-x-scroll    { overflow-x: scroll !important; }
-.d-overflow-y-scroll    { overflow-y: scroll !important; }
-.d-overflow-visible     { overflow: visible !important; }
-.d-overflow-x-visible   { overflow-x: visible !important; }
-.d-overflow-y-visible   { overflow-y: visible !important; }
+.d-flow1                        { > * + * { margin-left: @spacing1 !important; } }
+.d-flow2                        { > * + * { margin-left: @spacing2 !important; } }
+.d-flow4                        { > * + * { margin-left: @spacing4 !important; } }
+.d-flow6                        { > * + * { margin-left: @spacing6 !important; } }
+.d-flow8                        { > * + * { margin-left: @spacing8 !important; } }
+.d-flow12                       { > * + * { margin-left: @spacing12 !important; } }
+.d-flow16                       { > * + * { margin-left: @spacing16 !important; } }
+.d-flow24                       { > * + * { margin-left: @spacing24 !important; } }
+.d-flow32                       { > * + * { margin-left: @spacing32 !important; } }
+.d-flow48                       { > * + * { margin-left: @spacing48 !important; } }
+.d-flow64                       { > * + * { margin-left: @spacing64 !important; } }

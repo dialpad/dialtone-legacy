@@ -1,0 +1,88 @@
+---
+layout: page
+title: Font Weight
+description: Utility classes for controlling an element's font-weight.
+---
+<section class="d-stack16">
+    <div class="d-stack16">
+        <header class="d-stack2">
+            <h3 class="dialtone-title__subsection">Variables</h3>
+            <p class="dialtone-copy__normal">When writing Less, you can set an element's font-weight by using a <span class="code-example--inline">@fw-[weight]</span> variable (ex. <span class="code-example--inline">p { font-weight: @fw-normal; }</span>). Variables are useful when writing scoped Less where an immutable class with <span class="code-example--inline">!important</span> isn't required or desired.</p>
+        </header>
+        <table class="dialtone-table dialtone-table--code">
+            <thead>
+                <tr>
+                    <th scope="col" class="d-width10">Type</th>
+                    <th scope="col" class="d-width20">CSS Var</th>
+                    <th scope="col" class="d-width20">Less Var</th>
+                    <th scope="col" class="d-width25 d-opacity50 d-background-color--ash">Deprecated Less Var</th>
+                    <th scope="col">Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in type.weight %}
+                {% assign n = i.name %}
+                {% assign o = i.output %}
+                    {% if n != "unset "%}
+                    <tr>
+                        <th scope="row">{{ n | capitalize }}</th>
+                        <td>var(--fw-{{ n }})</td>
+                        <td>@fw-{{ n }}</td>
+                        <td class="d-opacity50 d-background-color--ash">@font-weight--{{ n }}</td>
+                        <td>{{ o }}</td>
+                    </tr>
+                    {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="d-stack16">
+        <header class="d-stack2">
+            <h3 class="dialtone-title__subsection">Classes</h3>
+            <p class="dialtone-copy__normal">Starting in v5.8.0, Dialtone began providing immutable type classes, meaning they include an <span class="code-example--inline">!important</span> to override CSS specificity. All previous class names still exist, but are considered deprecated and should not be used moving forward. They will be removed in a future version.</p>
+        </header>
+        <table class="dialtone-table dialtone-table--code">
+            <thead>
+                <tr>
+                    <th scope="col">Class</th>
+                    <th scope="col" class="d-opacity50 d-background-color--ash">Deprecated Class</th>
+                    <th scope="col">Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in type.weight %}
+                {% assign n = i.name %}
+                {% assign o = i.output %}
+                    <tr>
+                        <th scope="row">.d-fw-{{ n }}</th>
+                        <td class="d-opacity50 d-background-color--ash">.d-font-weight--{{ n }}</td>
+                        <td>font-weight: {{ o }} !important;</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="dialtone-example" data-example="yes" data-code="yes">
+            <div class="dialtone-example__example d-stack8">
+                {% for i in type.weight %}
+                {% assign n = i.name %}
+                {% assign o = i.output %}
+                <div class="d-stack2">
+                    <span class="code-example--inline">.d-fw-{{ n }}</span>
+                    <p class="d-lh6 d-fs18 d-margin0 d-fw-{{ n }}">This paragraph's font weight {% if n == "unset" %}has been reset using {{ n }}.{% else %} is {{ n }}.{% endif %}</p>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="dialtone-example__code">
+                {% highlight html linenos %}
+<p class="d-fw-thin">…</p>
+<p class="d-fw-light">…</p>
+<p class="d-fw-normal">…</p>
+<p class="d-fw-medium">…</p>
+<p class="d-fw-bold">…</p>
+<p class="d-fw-black">…</p>
+<p class="d-fw-unset">…</p>
+                {% endhighlight %}
+            </div>
+        </div>
+    </div>
+</section>

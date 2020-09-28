@@ -137,7 +137,7 @@ body {
 .dialtone-menu-button {
     .d-btn--circle();
     .d-btn--circle--lg();
-    .d-color--dark-lighter();
+    color: @slate-lightest;
     .d-margin-left--auto();
 
     .d-svg__menu,
@@ -187,7 +187,7 @@ body {
 
         &[data-state="open"] {
             .d-background-color--blue();
-            .d-color--white();
+            color: @white;
         }
     }
     @media screen and (min-width: 724px) {
@@ -266,9 +266,9 @@ body {
     .d-padding12();
     .d-padding-left24();
     background-color: hsla(~"@{nav__background-color--hsl} / 0%");
-    .d-text--xl();
+    font-size: @fs20;
     color: @dialtone-nav--header-color;
-    .d-line-height--sm();
+    line-height: @lh-tight;
     text-decoration: none;
     transition: all 100ms @transition--cubic-inOut;
 
@@ -306,10 +306,9 @@ body {
     .d-padding-x12();
     background-color: fade(@ash-dark, 0%);
     border-radius: var(--base--corner-radius);
-    .d-text--md();
+    font-size: @fs16;
     color: var(--slate);
-    .d-color--dark();
-    .d-line-height--lg();
+    line-height: @lh-loose;
     text-decoration: none;
     transition: background-color 100ms @transition--cubic-inOut;
 
@@ -319,9 +318,8 @@ body {
 
     &.is-selected {
         background-color: var(--primary-color);
-
-        .d-color--white();
-        .d-font-weight--bold();
+        color: @white;
+        font-weight: @fw-bold;
 
         &:hover {
             background-color: var(--primary-color--hover);
@@ -520,8 +518,8 @@ body {
 }
 .dialtone-color-grid__item {
     .d-padding16();
-    .d-font-family--mono();
-    .d-text--xs();
+    font-family: @ff-mono;
+    font-size: @fs12;
 
     display: flex;
     justify-content: space-between;
@@ -548,9 +546,8 @@ body {
     .d-margin-right6();
     .d-padding4();
     .d-border-radius--sm();
-    .d-font-family--sans();
-    .d-line-height--xs();
-
+    font-family: @ff-sans;
+    line-height: @lh-none;
     font-size: 1rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -619,8 +616,8 @@ body {
     .d-z-index--popover();
     .d-border-radius--md();
     .d-background-color--slate-light();
-    .d-text--sm();
-    .d-color--light();
+    font-size: @fs14;
+    color: @ash;
     box-shadow: 0 @spacing2 @spacing8 0 fade(@slate, 15%);
 
     .dialtone-icon-card[data-selected="yes"] & {
@@ -659,7 +656,7 @@ body {
 }
 
 .dialtone-icon-card__list__item {
-    .d-text--xs();
+    font-size: @fs12;
 
     strong {
         display: inline-block;
@@ -674,23 +671,23 @@ body {
 .dialtone-icon-card__title {
     .d-margin-top0();
     .d-margin-bottom4();
-    .d-text--md();
-    .d-font-weight--bold();
-    .d-line-height--md();
+    font-size: @fs16;
+    font-weight: @fw-bold;
+    line-height: @lh-tight;
 }
 
 .dialtone-icon-card__subtitle {
     .d-margin-bottom0();
     .d-width100();
-    .d-text--xs();
+    font-size: @fs12;
     text-align: center;
-    .d-line-height--xs();
+    line-height: @lh-none;
     .d-truncate();
 }
 
 .dialtone-icon-card__description {
-    .d-text--xs();
-    .d-color--white();
+    font-size: @fs12;
+    color: @white;
 }
 
 //  ============================================================================
@@ -703,34 +700,35 @@ body {
 
 .dialtone-title__page {
     .d-margin-y0();
-    .d-headline--xl();
+    font-size: @fs42;
+    font-weight: @fw-bold;
     letter-spacing: -.5px;
 }
 .dialtone-title__section {
     .d-margin-bottom0();
-    .d-headline--md();
+    font-size: @fs32;
+    font-weight: @fw-bold;
 }
 .dialtone-title__subsection {
     .d-margin-bottom0();
-    .d-headline--sm();
+    font-size: @fs24;
+    font-weight: @fw-bold;
 }
 .dialtone-title__small {
     .d-margin-bottom0();
-    .d-font-weight--normal();
-    .d-text--lg();
+    font-size: @fs18;
 }
 
 .dialtone-copy__lead {
     .d-margin-bottom0();
-    .d-headline--sm();
-    .d-font-weight--normal();
-    .d-line-height--lg();
+    font-size: @fs18;
+    line-height: @lh-loose;
 }
 
 .dialtone-copy__normal {
     .d-margin-bottom0();
-    .d-text--md();
-    .d-line-height--lg();
+    font-size: @fs16;
+    line-height: @lh-loose;
 }
 
 
@@ -771,9 +769,9 @@ body {
             .code-example.code-example--css();
 
             &.dialtone-table--sans {
-                .d-font-family--sans();
-                .d-color--dark();
-                .d-text--xs();
+                font-family: @ff-sans;
+                color: @slate;
+                font-size: @fs12;
             }
         }
     }
@@ -782,7 +780,7 @@ body {
     .dialtone-table__disabled {
         th, td {
             .d-font-weight--normal();
-            .d-color--light-darkest();
+            color: @ash-darkest;
             background-color: fade(@ash, 50%);
         }
     }
@@ -808,9 +806,9 @@ body {
 @import "dialtone--syntax";
 
 .code-example {
-    .d-text--xxs();
-    .d-font-family--mono();
-    .d-line-height--xl;
+    font-size: @fs11;
+    font-family: @ff-mono;
+    line-height: @lh-loose;
 
     &.code-example--class {
         color: #6303FF;         //  Purple
@@ -835,7 +833,7 @@ body {
 }
 
 .code-example--inline-lead {
-    .d-text--xl();
+    font-size: @fs20;
 }
 
 //  $$  CODE BLOCK
@@ -918,10 +916,10 @@ body {
 .example-block {
     .d-border();
     .d-border-color--blue-light();
-    .d-text--xs();
-    .d-font-family--mono();
-    .d-line-height--sm();
-    .d-color--blue-text();
+    font-size: @fs12;
+    font-family: @ff-mono;
+    line-height: @lh-tight;
+    color: @fc-blue-text;
     background-color: fade(@blue, 15%);
 }
 
@@ -948,11 +946,11 @@ body {
 .example-block--outlined {
     .d-border-color--ash-dark();
     .d-background-color--white();
-    .d-color--dark();
+    color: @slate;
 
     .example-block__inner {
         .d-border-color--transparent();
-        .d-color--white();
+        color: @white;
         background-color: fade(@blue-dark, 50%);
     }
 }

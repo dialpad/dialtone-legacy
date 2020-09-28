@@ -1,0 +1,64 @@
+---
+layout: page
+title: Lists
+description: Utility classes for styling lists.
+---
+<section class="dialtone-section16">
+    <header class="dialtone-section2">
+        <h2 class="dialtone-title__section">Classes</h2>
+        <p class="dialtone-copy__normal">Classes are immutable, meaning they include <span class="code-example--inline">!important</span> to override CSS specificity. Useful when styling HTML by including CSS classes in markup.</p>
+    </header>
+    <table class="dialtone-table dialtone-table--code">
+        <thead>
+            <tr>
+                <th scope="col" class="dialtone-table__column--md">Class</th>
+                <th scope="col">Output</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">.d-list-reset</th>
+                <td>margin: 0 !important;<br>
+                    padding: 0 !important;<br>
+                    list-style: none !important;
+                </td>
+            </tr>
+            {% for i in type.lists %}
+            {% assign class = i.class %}
+            {% assign output = i.output %}
+            <tr>
+                <th scope="row">.d-list-{{ class }}</th>
+                <td>list-style: {{ output }} !important;</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+<section class="dialtone-section16">
+    <h2 class="dialtone-title__section">Examples</h2>
+    <div class="dialtone-example" data-example="yes" data-code="yes">
+        <div class="dialtone-example__example">
+            <ul class="d-fs14 d-list-reset">
+                <li><span class="code-example--inline">.d-list-reset</span></li>
+                <li>The weather had changed overnight.</li>
+                <li>A backing wind brought a granite sky and a mizzling rain with it.</li>
+            </ul>
+            {% for i in type.lists %}
+            {% assign class = i.class %}
+            <ul class="d-fs14 d-list-{{ class }}">
+                <li><span class="code-example--inline">.d-list-{{ class }}</span></li>
+                <li>The weather had changed overnight.</li>
+                <li>A backing wind brought a granite sky and a mizzling rain with it.</li>
+            </ul>
+            {% endfor %}
+        </div>
+        <div class="dialtone-example__code">
+            {% highlight html linenos %}
+<ul class="d-list-reset">…</ul>>
+<ul class="d-list-none">…</ul>>
+<ul class="d-list-disc">…</ul>>
+<ul class="d-list-decimal">…</ul>>
+            {% endhighlight %}
+        </div>
+    </div>
+</section>

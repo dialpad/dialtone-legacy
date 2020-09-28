@@ -4,9 +4,7 @@ title: Overflow
 description: Utilities for controlling how an element handles content that is too large for the container.
 ---
 <section class="dialtone-section16">
-    <header class="dialtone-section2">
-        <h2 class="dialtone-title__section">Classes</h2>
-    </header>
+    <p class="dialtone-copy__normal">The <span class="code-example--inline">overflow</span> CSS shorthand property sets the desired behavior for how content is handled when it exceeds the wrapper's bounds in both directions (x-axis and then y-axis).</p>
     <table class="dialtone-table dialtone-table--code">
         <thead>
             <tr>
@@ -21,31 +19,47 @@ description: Utilities for controlling how an element handles content that is to
             {% assign output = i.output %}
             {% assign description = i.description %}
             <tr>
-                <th scope="row">.d-overflow-{{ class }}</th>
+                <th scope="row">.d-of-{{ class }}</th>
                 <td>{{ output }} !important;</td>
-                <td class="d-width40"><span class="d-d-block d-color--dark d-font-family--sans d-line-height--md">{{ description }}</span></td>
+                <td class="d-width40"><span class="d-d-block d-fc-slate d-ff-sans d-fs12 d-lh-md">{{ description }}</span></td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
+    <div class="dialtone-example" data-example="yes" data-code="yes">
+        <div class="dialtone-example__example">
+            <div class="d-d-flex d-fd-row d-fw-wrap d-padding-bottom48">
+                {% for i in overflow %}
+                {% assign class = i.class %}
+                <div class="d-width2 d-height2 d-margin6 d-padding12 d-background-color--ash d-of-{{ class }}">
+                    <span class="code-example--inline">.d-of-{{ class }}</span>
+                    <p class="d-width2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eleifend rutrum auctor. Phasellus convallis sagittis augue ut ornare. Vestibulum et gravida lectus, sed ultrices sapien. Nullam aliquet elit dui, vitae hendrerit lectus volutpat eget.</p>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="dialtone-example__code">
+{% highlight html linenos %}
+<p class="d-of-auto">…</p>
+<p class="d-of-x-auto">…</p>
+<p class="d-of-y-auto">…</p>
+<p class="d-of-hidden">…</p>
+<p class="d-of-x-hidden">…</p>
+<p class="d-of-y-hidden">…</p>
+<p class="d-of-scroll">…</p>
+<p class="d-of-x-scroll">…</p>
+<p class="d-of-y-scroll">…</p>
+<p class="d-of-visible">…</p>
+<p class="d-of-x-visible">…</p>
+<p class="d-of-y-visible">…</p>
+<p class="d-of-unset">…</p>
+{% endhighlight %}
+            </div>
+        </div>
+    </div>
 </section>
 <section class="dialtone-section16">
     <header class="dialtone-section2">
         <h2 class="dialtone-title__section">Examples</h2>
     </header>
-    <div class="dialtone-example" data-example="yes" data-code="yes">
-        <div class="dialtone-example__example">
 
-            <div class="d-d-flex d-fd-row d-fw-wrap d-padding-bottom48">
-                {% for i in overflow %}
-                {% assign class = i.class %}
-                <div class="d-width2 d-height2 d-margin6 d-padding12 d-background-color--ash d-overflow-{{ class }}">
-                    <span class="code-example--inline">.d-overflow-{{ class }}</span>
-                    <p class="d-width2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eleifend rutrum auctor. Phasellus convallis sagittis augue ut ornare. Vestibulum et gravida lectus, sed ultrices sapien. Nullam aliquet elit dui, vitae hendrerit lectus volutpat eget.</p>
-                </div>
-                {% endfor %}
-            </div>
-
-        </div>
-    </div>
-</section>        
+</section>
