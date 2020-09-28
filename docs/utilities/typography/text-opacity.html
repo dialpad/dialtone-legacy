@@ -16,105 +16,37 @@ description: Utility classes for controlling an element's font color opacity.
             </tr>
         </thead>
         <tbody>
-            {% assign o = type.font-opacity | split: ", " %}
-            {% for i in o %}
+            {% for i in type.font-opacity %}
+            {% assign stop = i.stop %}
             <tr>
-                <td>.d-fo{{ i }}</td>
-                <td>--fo: {{ i }};</td>
+                <td>.d-fo{{ stop }}</td>
+                <td>--fo: {{ stop }};</td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
     <div class="dialtone-example" data-example="yes" data-code="yes">
         <div class="dialtone-example__example d-stack12">
+            {% for i in type.font-opacity %}
+            {% assign stop = i.stop %}
+            {% assign color = i.color %}
             <div class="d-stack2">
                 <span class="code-example--inline">.d-fo0</span>
-                <p class="d-lh6 d-fs18 d-margin0 d-fc-blue d-fo0">The quick brown fox jumped over the lazy dog.</p>
+                <p class="d-lh6 d-fs18 d-margin0 d-fc-{{ color }} d-fo{{ stop }}">The quick brown fox jumped over the lazy dog.</p>
             </div>
-            <div class="d-stack2">
-                <span class="code-example--inline">.d-fo10</span>
-                <p class="d-lh6 d-fs18 d-margin0 d-fc-navy d-fo10">The quick brown fox jumped over the lazy dog.</p>
-            </div>
-            <div class="d-stack2">
-                <span class="code-example--inline">.d-fo15</span>
-                <p class="d-lh6 d-fs18 d-margin0 d-fc-bright-emerald d-fo15">The quick brown fox jumped over the lazy dog.</p>
-            </div>
-            <div class="d-stack2">
-                <span class="code-example--inline">.d-fo20</span>
-                <p class="d-lh6 d-fs18 d-margin0 d-fc-emerald d-fo20">The quick brown fox jumped over the lazy dog.</p>
-            </div>
-            <div class="d-stack2">
-                <span class="code-example--inline">.d-fo25</span>
-                <p class="d-lh6 d-fs18 d-margin0 d-fc-crimson d-fo25">The quick brown fox jumped over the lazy dog.</p>
-            </div>
-            <div class="d-stack2">
-                <span class="code-example--inline">.d-fo30</span>
-                <p class="d-lh6 d-fs18 d-margin0 d-fc-wildberry d-fo30">The quick brown fox jumped over the lazy dog.</p>
-            </div>
-            <div class="d-stack2">
-                <span class="code-example--inline">.d-fo40</span>
-                <p class="d-lh6 d-fs18 d-margin0 d-fc-sunflower d-fo40">The quick brown fox jumped over the lazy dog.</p>
-            </div>
-            <div class="d-stack2">
-                <span class="code-example--inline">.d-fo50</span>
-                <p class="d-lh6 d-fs18 d-margin0 d-fc-berry d-fo50">The quick brown fox jumped over the lazy dog.</p>
-            </div>
-            <div class="d-stack2">
-                <span class="code-example--inline">.d-fo60</span>
-                <p class="d-lh6 d-fs18 d-margin0 d-fc-blue d-fo60">The quick brown fox jumped over the lazy dog.</p>
-            </div>
-            <div class="d-stack2">
-                <span class="code-example--inline">.d-fo70</span>
-                <p class="d-lh6 d-fs18 d-margin0 d-fc-navy d-fo70">The quick brown fox jumped over the lazy dog.</p>
-            </div>
-            <div class="d-stack2">
-                <span class="code-example--inline">.d-fo75</span>
-                <p class="d-lh6 d-fs18 d-margin0 d-fc-bright-emerald d-fo75">The quick brown fox jumped over the lazy dog.</p>
-            </div>
-            <div class="d-stack2">
-                <span class="code-example--inline">.d-fo80</span>
-                <p class="d-lh6 d-fs18 d-margin0 d-fc-emerald d-fo80">The quick brown fox jumped over the lazy dog.</p>
-            </div>
-            <div class="d-stack2">
-                <span class="code-example--inline">.d-fo85</span>
-                <p class="d-lh6 d-fs18 d-margin0 d-fc-crimson d-fo85">The quick brown fox jumped over the lazy dog.</p>
-            </div>
-            <div class="d-stack2">
-                <span class="code-example--inline">.d-fo90</span>
-                <p class="d-lh6 d-fs18 d-margin0 d-fc-wildberry d-fo90">The quick brown fox jumped over the lazy dog.</p>
-            </div>
-            <div class="d-stack2">
-                <span class="code-example--inline">.d-fo95</span>
-                <p class="d-lh6 d-fs18 d-margin0 d-fc-sunflower d-fo95">The quick brown fox jumped over the lazy dog.</p>
-            </div>
-            <div class="d-stack2">
-                <span class="code-example--inline">.d-fo99</span>
-                <p class="d-lh6 d-fs18 d-margin0 d-fc-berry d-fo99">The quick brown fox jumped over the lazy dog.</p>
-            </div>
-            <div class="d-stack2">
-                <span class="code-example--inline">.d-fo100</span>
-                <p class="d-lh6 d-fs18 d-margin0 d-fc-blue d-fo100">The quick brown fox jumped over the lazy dog.</p>
-            </div>
+            {% endfor %}
         </div>
         <div class="dialtone-example__code">
 {% highlight html linenos %}
 <p class="d-fc-blue d-fo0">…</p>
 <p class="d-fc-navy d-fo10">…</p>
-<p class="d-fc-bright-emerald d-fo15">…</p>
-<p class="d-fc-emerald d-fo20">…</p>
-<p class="d-fc-crimson d-fo25">…</p>
-<p class="d-fc-wildberry d-fo30">…</p>
-<p class="d-fc-sunflower d-fo40">…</p>
-<p class="d-fc-berry d-fo50">…</p>
-<p class="d-fc-slate d-fo60">…</p>
-<p class="d-fc-slate-light d-fo70">…</p>
-<p class="d-fc-slate-lighter d-fo75">…</p>
-<p class="d-fc-slate-lightest d-fo80">…</p>
-<p class="d-fc-ash d-fo85">…</p>
-<p class="d-fc-ash-dark d-fo90">…</p>
-<p class="d-fc-ash-darker d-fo95">…</p>
-<p class="d-fc-ash-darkest d-fo99">…</p>
-<p class="d-fc-blue-dark d-fo100">…</p>
+<p class="d-fc-bright-emerald d-fo25">…</p>
+<p class="d-fc-emerald d-fo50">…</p>
+<p class="d-fc-crimson d-fo75">…</p>
+<p class="d-fc-wildberry d-fo90">…</p>
+<p class="d-fc-sunflower d-fo95">…</p>
+<p class="d-fc-berry d-fo99">…</p>
+<p class="d-fc-blue d-fo100">…</p>
 {% endhighlight %}
         </div>
     </div>
