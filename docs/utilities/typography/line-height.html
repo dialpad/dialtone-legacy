@@ -3,58 +3,155 @@ layout: page
 title: Line Height
 description: Utility classes for controlling an element's line height.
 ---
+<aside class="d-padding16 d-border-radius--sm d-w-75ch d-background-color--blue-lighter d-fc-slate d-fs16 d-lh4 d-stack8">
+    <p class="d-margin0"><strong>Note:</strong> New variables and classes were introduced with Dialtone v5.8.0. Whereas previous class names and variables used a "t-shirt" sizing method (sm, md, lg, etc), the new classes and variables either provide fixed or relative values.</p>
+    <p class="d-margin0">The older classes and variables are still available, but they will no longer be supported and will be removed in a future version of Dialtone.</p>
+</aside>
 <section class="dialtone-section16">
     <header class="dialtone-section2">
         <h2 class="dialtone-title__section">Variables</h2>
-        <p class="dialtone-copy__normal">When writing Less, you can set an element's line-height by using a <span class="code-example--inline">@line-height--{size}</span> variable. The table below lists the available variables and its output.</p>
+        <p class="dialtone-copy__normal">Dialtone provides Less and CSS variables for all line-heights. This is useful if you're writing custom CSS and an immutable class isn't required or desired.</p>
     </header>
     <table class="dialtone-table dialtone-table--code">
         <thead>
             <tr>
-                <th scope="col" class="dialtone-table__column--md">Variable</th>
+                <th scope="col">Type</th>
+                <th scope="col">CSS Var</th>
+                <th scope="col" class="d-opacity50 d-background-color--ash">Deprecated CSS Var</th>
+                <th scope="col">Less Var</th>
+                <th scope="col" class="d-opacity50 d-background-color--ash">Deprecated Less Var</th>
                 <th scope="col">Output</th>
             </tr>
         </thead>
         <tbody>
-            {% for i in type.line-height %}
-            {% assign class = i.class %}
-            {% assign output = i.output %}
-            <tr>
-                <th scope="row">@line-height--{{ class }}</th>
-                <td>{{ output }}</td>
-            </tr>
+            {% for i in type.line-height-relative %}
+            {% assign c = i.class %}
+            {% assign old = i.class-old %}
+            {% assign v = i.output %}
+                <tr>
+                    {% if forloop.first %}
+                        <th scope="row" rowspan="{{ forloop.length }}" style="border-bottom: none;">Relative</th>
+                    {% endif %}
+                    <td>var(--lh-{{ c }})</td>
+                    <td class="d-opacity50 d-background-color--ash">var(--line-height--{{ old }})</td>
+                    <td>@lh-{{ c }}</td>
+                    <td class="d-opacity50 d-background-color--ash">@line-height--{{ old }}</td>
+                    <td>{{ v }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        <tbody>
+            {% for i in type.line-height-fixed %}
+            {% assign c = i.class %}
+            {% assign v = i.output %}
+                <tr>
+                    {% if forloop.first %}
+                        <th scope="row" rowspan="{{ forloop.length }}" style="border-bottom: none;">Fixed</th>
+                    {% endif %}
+                    <td>var(--lh{{ c }})</td>
+                    <td class="d-opacity50 d-background-color--ash d-fc-slate-lightest d-fs-italic">N/A</td>
+                    <td>@lh{{ c }}</td>
+                    <td class="d-opacity50 d-background-color--ash d-fc-slate-lightest d-fs-italic">N/A</td>
+                    <td>{{ v }}</td>
+                </tr>
             {% endfor %}
         </tbody>
     </table>
 </section>
 <section class="dialtone-section16">
     <header class="dialtone-section2">
-        <h2 class="dialtone-title__section">Classes</h2>
-        <p class="dialtone-copy__normal">Set an element's line-height by using the <span class="code-example--inline">.d-line-height--{size}</span> classes. The table below lists the available classes and their CSS output.</p>
+        <h2 class="dialtone-title__section">Relative Classes</h2>
+        <p class="dialtone-copy__normal">Starting in v5.8.0, Dialtone began providing immutable type classes, meaning they include an <span class="code-example--inline">!important</span> to override CSS specificity. These new classes abandon the previous "t-shirt" sizing metaphor in favor of more descriptive classes. All previous class names still exist, but are considered deprecated and should not be used moving forward. They will be removed in a future version.</p>
     </header>
     <table class="dialtone-table dialtone-table--code">
         <thead>
             <tr>
-                <th scope="col" class="dialtone-table__column--md">Class</th>
+                <th scope="col">Class</th>
+                <th scope="col" class="d-opacity50 d-background-color--ash">Deprecated Class</th>
                 <th scope="col">Output</th>
             </tr>
         </thead>
         <tbody>
-            {% for i in type.line-height %}
-            {% assign class = i.class %}
-            {% assign output = i.output %}
+            {% for i in type.line-height-relative %}
+            {% assign c = i.class %}
+            {% assign old = i.class-old %}
+            {% assign v = i.output %}
             <tr>
-                <th scope="row">.d-line-height--{{ class }}</th>
-                <td>line-height: {{ output }};</td>
+                <td>.d-lh-{{ c }}</td>
+                <td class="d-opacity50 d-background-color--ash">.d-line-height--{{ old }}</td>
+                <td>line-height: {{ v }} !important;</td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
+    <div class="dialtone-example" data-example="yes" data-code="yes">
+        <div class="dialtone-example__example d-stack12">
+            {% for i in type.line-height-relative %}
+            {% assign c = i.class %}
+            <div class="d-stack2 d-ws-nowrap" style="overflow: hidden;">
+                <span class="code-example--inline">.d-lh-{{ c }}</span>
+                <p class="d-lh-{{ c }} d-fs18 d-margin0 d-background-color--blue-lighter">The quick brown fox jumps over the lazy dog.</p>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="dialtone-example__code">
+{% highlight html linenos %}
+<p class="d-lh-none">…</p>
+<p class="d-lh-tighter">…</p>
+<p class="d-lh-tight">…</p>
+<p class="d-lh-normal">…</p>
+<p class="d-lh-loose">…</p>
+<p class="d-lh-looser">…</p>
+{% endhighlight %}
+        </div>
+    </div>
 </section>
 <section class="dialtone-section16">
-    <h2 class="dialtone-title__section">Examples</h2>
-    {% for i in type.line-height %}
-        {% assign class = i.class %}
-        <p class="d-text--lg d-line-height--{{ class }}"><span class="code-example--inline" style="font-size: 1.4rem; background-color: transparent;">.d-line-height--{{ class }}</span> – The weather had changed overnight, when a backing wind brought a granite sky and a mizzling rain with it, and although it was now only a little after two o'clock in the afternoon the pallor of a winter evening seemed to have closed upon the hills, cloaking them in mist.</p>
-    {% endfor %}
+    <header class="dialtone-section2">
+        <h2 class="dialtone-title__section">Fixed Classes</h2>
+        <p class="dialtone-copy__normal">Starting in v5.8.0, Dialtone provides immutable, fixed line-height classes, meaning they include an <span class="code-example--inline">!important</span> to override CSS specificity. Unlike relative line-height classes which are unitless and don't target specific heights, these fixed classes allow finer control over the targeted line-height. For example, an item with font-size of 14px (1.4rem) and a <span class="code-example--inline">.lh6</span> class would create a line-height of 20px (14px + 6px = 20px). If the same <span class="code-example--inline">.lh6</span> class was applied to an item with a 16px font-size, it would create a 22px line-height (16px + 6px = 22px).</p>
+    </header>
+    <table class="dialtone-table dialtone-table--code">
+        <thead>
+            <tr>
+                <th scope="col">Class</th>
+                <th scope="col">Output</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in type.line-height-fixed %}
+            {% assign c = i.class %}
+            {% assign v = i.output %}
+            <tr>
+                <td>.d-lh{{ c }}</td>
+                <td>line-height: {{ v }} !important;</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="dialtone-example" data-example="yes" data-code="yes">
+        <div class="dialtone-example__example d-stack12">
+            {% for i in type.line-height-fixed %}
+            {% assign c = i.class %}
+            <div class="d-stack2 d-ws-nowrap" style="overflow: hidden;">
+                <span class="code-example--inline">.d-lh{{ c }} .d-fs18</span>
+                <p class="d-lh{{ c }} d-fs18 d-margin0 d-background-color--blue-lighter">The quick brown fox jumps over the lazy dog.</p>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="dialtone-example__code">
+{% highlight html linenos %}
+<p class="d-lh0">…</p>
+<p class="d-lh1">…</p>
+<p class="d-lh2">…</p>
+<p class="d-lh4">…</p>
+<p class="d-lh6">…</p>
+<p class="d-lh8">…</p>
+<p class="d-lh12">…</p>
+<p class="d-lh16">…</p>
+<p class="d-lh20">…</p>
+<p class="d-lh24">…</p>
+{% endhighlight %}
+        </div>
+    </div>
 </section>
