@@ -1,0 +1,208 @@
+---
+layout: page
+title: Layout
+description: Utility classes for controlling typography layout.
+---
+<section class="d-stack16">
+    <h2 class="dialtone-title__section">Text Align</h2>
+    <div class="d-stack16">
+        <header class="d-stack2">
+            <p class="dialtone-copy__normal">Starting in v5.8.0, Dialtone provides immutable type utility classes, meaning they include <span class="code-example--inline">!important</span> to override CSS specificity.</p>
+        </header>
+        <table class="dialtone-table dialtone-table--code">
+            <thead>
+                <tr>
+                    <th scope="col" class="dialtone-table__column--md">Class</th>
+                    <th scope="col">Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% assign align = type.align | split: ", " %}
+                {% for i in align %}
+                <tr>
+                    <th scope="row">.d-ta-{{ i }}</th>
+                    <td>text-align: {{ i }} !important;</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="dialtone-example" data-example="yes" data-code="yes">
+            <div class="dialtone-example__example">
+                {% assign align = type.align | split: ", " %}
+                {% for i in align %}
+                    <p class="d-fs16 d-ta-{{ i }}"><span class="code-example--inline">.d-ta-{{ i }}</span><br>The quick brown fox jumps over the lazy dog.{% if i == "justify" %} And here's another a sentence to help illustrate a justified line.{% endif %}</p>
+                {% endfor %}
+            </div>
+            <div class="dialtone-example__code">
+                {% highlight html linenos %}
+<p class="d-ta-left">…</p>
+<p class="d-ta-right">…</p>
+<p class="d-ta-center">…</p>
+<p class="d-ta-justify">…</p>
+<p class="d-ta-unset">…</p>
+                {% endhighlight %}
+            </div>
+        </div>
+    </div>
+</section>
+<section class="d-stack16">
+    <h2 class="dialtone-title__section">Whitespace</h2>
+    <div class="d-stack16">
+        <header class="d-stack2">
+            <p class="dialtone-copy__normal">Starting in v5.8.0, Dialtone provides immutable type utility classes, meaning they include <span class="code-example--inline">!important</span> to override CSS specificity.</p>
+        </header>
+        <table class="dialtone-table dialtone-table--code">
+            <thead>
+                <tr>
+                    <th scope="col">Class</th>
+                    <th scope="col">Output</th>
+                    <th scope="col" class="d-width50">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in type.whitespace %}
+                {% assign cl =  i.class %}
+                {% assign desc =  i.description %}
+                <tr>
+                    <th scope="row">.d-ws-{{ cl }}</th>
+                    <td>white-space: {{ cl }} !important;</td>
+                    <td class="d-fs14 d-lh6 d-ff-custom d-fc-slate">{{ desc }}</td>
+                </tr>
+                {% endfor %}
+                <tr>
+                    <th scope="row">.d-truncate</th>
+                    <td>
+                        overflow: hidden !important;<br/>
+                        text-overflow: ellipsis !important;<br/>
+                        white-space: nowrap !important;
+                    </td>
+                    <td class="d-fs14 d-lh6 d-ff-custom d-fc-slate">Combination class that adds an ellipsis for copy which is limited to one line that exceeds the box bounds.</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="dialtone-example" data-example="yes" data-code="yes">
+            <div class="dialtone-example__example d-d-flex d-fw-wrap">
+                {% for i in type.whitespace %}
+                {% assign cl =  i.class %}
+                <div class="d-margin4 d-padding16 d-background-color--ash d-fs16 d-lh4" style="max-width: calc(50% - 8px); overflow: hidden;">
+                    <p class="d-margin0"><span class="code-example--inline">.d-ws-{{ cl }}</span></p>
+                    <p class="d-margin0 d-ws-{{ cl }}"> Vivamus ullamcorper at dui a ultrices.
+ Duis sed magna scelerisque odio ultrices volutpat.
+ Ut condimentum finibus iaculis. Ut id porttitor orci.
+ Aliquam non euismod justo, et molestie ex.
+ Nullam eu lobortis nulla, sed vulputate orci.</p>
+                </div>
+                {% endfor %}
+                <div class="d-margin4 d-padding16 d-background-color--ash d-fs16 d-lh4" style="max-width: calc(50% - 8px); overflow: hidden;">
+                    <p class="d-margin0"><span class="code-example--inline">.d-truncate</span></p>
+                    <p class="d-margin0 d-truncate"> Vivamus ullamcorper at dui a ultrices. Duis sed magna scelerisque odio ultrices volutpat. Ut condimentum finibus iaculis. Ut id porttitor orci. Aliquam non euismod justo, et molestie ex. Nullam eu lobortis nulla, sed vulputate orci.</p>
+                </div>
+            </div>
+            <div class="dialtone-example__code">
+                {% highlight html linenos %}
+<p class="d-ws-normal">…</p>
+<p class="d-ws-nowrap">…</p>
+<p class="d-ws-pre">…</p>
+<p class="d-ws-pre-line">…</p>
+<p class="d-ws-pre-wrap">…</p>
+<p class="d-ws-break-spaces">…</p>
+<p class="d-truncate">…</p>
+                {% endhighlight %}
+            </div>
+        </div>
+    </div>
+</section>
+<section class="d-stack16">
+    <h2 class="dialtone-title__section">Word Break</h2>
+    <div class="d-stack16">
+        <header class="d-stack2">
+            <p class="dialtone-copy__normal">The <span class="code-example--inline">word-break</span> CSS property set where line breaks appear for text within its content box.</p>
+        </header>
+        <table class="dialtone-table dialtone-table--code">
+            <thead>
+                <tr>
+                    <th scope="col">Class</th>
+                    <th scope="col">Output</th>
+                    <th scope="col" class="d-width50">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in type.word-break %}
+                {% assign cl =  i.class %}
+                {% assign desc =  i.description %}
+                <tr>
+                    <th scope="row">.d-wb-{{ cl }}</th>
+                    <td>word-break: {{ cl }} !important;</td>
+                    <td class="d-fs14 d-lh6 d-ff-custom d-fc-slate">{{ desc }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="dialtone-example" data-example="yes" data-code="yes">
+            <div class="dialtone-example__example d-d-flex d-fw-wrap">
+                {% for i in type.word-break %}
+                {% assign cl =  i.class %}
+                <div class="d-margin4 d-padding16 d-background-color--ash d-fs16 d-lh4" style="max-width: calc(50% - 8px); overflow: hidden;">
+                    <p class="d-margin0"><span class="code-example--inline">.d-wb-{{ cl }}</span></p>
+                    <p class="d-margin0 d-wb-{{ cl }}">Here's an example sentence to show how word-break works. Vivamus ullamcorperatduiaultrices eu lobortis nulla, sed vulputate orci. 这是一个中文例句，以举例说明断字的工作方式。単語分割の動作の例を示す日本語のサンプル文は次のとおりです。다음은 단어 분리 작동 방식의 예를 제공하는 한국어 샘플 문장입니다.</p>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="dialtone-example__code">
+                {% highlight html linenos %}
+<p class="d-wb-normal">…</p>
+<p class="d-wb-break-all">…</p>
+<p class="d-wb-keep-all">…</p>
+<p class="d-wb-unset">…</p>
+                {% endhighlight %}
+            </div>
+        </div>
+    </div>
+</section>
+<section class="d-stack16">
+    <h2 class="dialtone-title__section">Overflow Wrap</h2>
+    <div class="d-stack16">
+        <header class="d-stack2">
+            <p class="dialtone-copy__normal">The <span class="code-example--inline">overflow-wrap</span> CSS property applies to inline elements, helping the browser to determine where line breaks should be inserted within an otherwise unbreakable string to prevent copy from overflowing its bounds.</p>
+        </header>
+        <table class="dialtone-table dialtone-table--code">
+            <thead>
+                <tr>
+                    <th scope="col">Class</th>
+                    <th scope="col">Output</th>
+                    <th scope="col" class="d-width50">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in type.overflow-wrap %}
+                {% assign cl =  i.class %}
+                {% assign desc =  i.description %}
+                <tr>
+                    <th scope="row">.d-ow-{{ cl }}</th>
+                    <td>overflow-wrap: {{ cl }} !important;</td>
+                    <td class="d-fs14 d-lh6 d-ff-custom d-fc-slate">{{ desc }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="dialtone-example" data-example="yes" data-code="yes">
+            <div class="dialtone-example__example d-d-flex d-fw-wrap">
+                {% for i in type.overflow-wrap %}
+                {% assign cl =  i.class %}
+                <div class="d-margin4 d-padding16 d-background-color--ash d-fs16 d-lh4" style="max-width: calc(50% - 8px); overflow: hidden;">
+                    <p class="d-margin0"><span class="code-example--inline">.d-ow-{{ cl }}</span></p>
+                    <p class="d-margin0 d-ow-{{ cl }}">Here's an example sentence to show how overflow-wrap works. Vivamusullamcorperatduiaultriceseulobortisnulla, sed vulputate orci.</p>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="dialtone-example__code">
+                {% highlight html linenos %}
+<p class="d-ow-normal">…</p>
+<p class="d-ow-anywhere">…</p>
+<p class="d-ow-break-word">…</p>
+<p class="d-ow-unset">…</p>
+                {% endhighlight %}
+            </div>
+        </div>
+    </div>
+</section>

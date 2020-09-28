@@ -1,0 +1,53 @@
+---
+layout: page
+title: Text Opacity
+description: Utility classes for controlling an element's font color opacity.
+---
+<section class="d-stack16">
+    <header class="d-stack12">
+        <p class="dialtone-copy__normal">The ability to control an element's color is <em>only</em> provided as a class. We do not provide variables to control this. <strong>This class must be paired with a <span class="code-example--inline">.d-fc-[color]</span> class to work properly.</strong> The text opacity class resets the font color's alpha channel CSS variable value.</p>
+        <p class="dialtone-copy__normal">Starting in v5.8.0, Dialtone began providing immutable type classes, meaning they include an <span class="code-example--inline">!important</span> to override CSS specificity. All previous class names still exist, but are considered deprecated and should not be used moving forward. They will be removed in a future version.</p>
+    </header>
+    <table class="dialtone-table dialtone-table--code">
+        <thead>
+            <tr>
+                <th scope="col" class="d-width20">Class</th>
+                <th scope="col">Output</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in type.font-opacity %}
+            {% assign stop = i.stop %}
+            <tr>
+                <td>.d-fo{{ stop }}</td>
+                <td>--fo: {{ stop }};</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="dialtone-example" data-example="yes" data-code="yes">
+        <div class="dialtone-example__example d-stack12">
+            {% for i in type.font-opacity %}
+            {% assign stop = i.stop %}
+            {% assign color = i.color %}
+            <div class="d-stack2">
+                <span class="code-example--inline">.d-fo0</span>
+                <p class="d-lh6 d-fs18 d-margin0 d-fc-{{ color }} d-fo{{ stop }}">The quick brown fox jumped over the lazy dog.</p>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="dialtone-example__code">
+{% highlight html linenos %}
+<p class="d-fc-blue d-fo0">…</p>
+<p class="d-fc-navy d-fo10">…</p>
+<p class="d-fc-bright-emerald d-fo25">…</p>
+<p class="d-fc-emerald d-fo50">…</p>
+<p class="d-fc-crimson d-fo75">…</p>
+<p class="d-fc-wildberry d-fo90">…</p>
+<p class="d-fc-sunflower d-fo95">…</p>
+<p class="d-fc-berry d-fo99">…</p>
+<p class="d-fc-blue d-fo100">…</p>
+{% endhighlight %}
+        </div>
+    </div>
+</section>

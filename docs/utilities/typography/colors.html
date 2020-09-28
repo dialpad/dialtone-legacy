@@ -3,91 +3,114 @@ layout: page
 title: Colors
 description: Dialtone provides a limited set of text-color utility variables and classes.
 ---
-<section class="dialtone-section16">
-    <p class="dialtone-copy__normal">Along with these colors, we've provided text and background color pairings. Most of these pairings pass the WCAG 2.1 Level AAA contrast ratios; however some only pass WCAG 2.1 Level AA. These are noted with the colors below. Please use <strong>only</strong> these colors. Using these colors helps ensure we are meeting web accessibility standards.</p>
+<aside class="d-padding16 d-border-radius--sm d-w-75ch d-background-color--blue-lighter d-fc-dark d-fs16 d-lh4 d-stack8">
+    <p class="d-margin0"><strong>Note:</strong> New variables and classes were introduced with Dialtone v5.8.0. Whereas previous class names and variables used a "t-shirt" sizing method (sm, md, lg, etc), the new classes and variables explicitly state the desired size in the name.</p>
+    <p class="d-margin0">The older classes and variables are still available, but they will no longer be supported and will be removed in a future version of Dialtone.</p>
+</aside>
+<section class="d-stack16">
+    <p class="dialtone-copy__normal">Most colors pass the WCAG 2.1 Level AAA contrast ratio requirements (ratio >= 7:1) and all pass WCAG 2.1 Level AA contrast ratio requirments (ratio >= 4.5:1). The contrast ratio value is noted with the colors below. Please use <strong>only</strong> these colors or variations of these colors which pass WCAG 2.1 Level AA contrast ratio requirments.</p>
 </section>
-<section class="dialtone-section16">
-    <header class="dialtone-section2">
+<section class="d-stack16">
+    <header class="d-stack2">
         <h2 class="dialtone-title__section">Variables</h2>
-        <p class="dialtone-copy__normal">When writing Less, you can set an element's text color by using a <span class="code-example--inline">@color--{color}</span> variable. The table below lists the available variables and its output.</p>
+        <p class="dialtone-copy__normal">Most colors can be applied using the <a href="/variables/colors/" class="d-link">universal color variables</a>. Dialtone does provide a few specific font-color Less and CSS variables for <span class="code-example--inline">color</span> though, which are noted below.</p>
     </header>
     <table class="dialtone-table dialtone-table--code">
         <thead>
             <tr>
-                <th scope="col" class="dialtone-table__column--md">Variable</th>
+                <th scope="col">Color</th>
+                <th scope="col">CSS Var</th>
+                <th scope="col">Less Var</th>
+                <th scope="col" class="d-opacity50 d-background-color--ash">Deprecated Less Var</th>
                 <th scope="col">Output</th>
             </tr>
         </thead>
         <tbody>
-            {% for i in type.color-vars %}
-            {% assign color = i.color %}
-            {% assign hex = i.hex %}
-            <tr>
-                <th scope="row">@color--{{ color }}</th>
-                <td>{{ hex }}</td>
-            </tr>
+            {% for i in type.font-colors %}
+                {% assign color = i.color %}
+                {% assign stops = i.stops %}
+                {% for s in stops %}
+                    {% assign stop = s.stop %}
+                    {% assign hex = s.hex %}
+                    {% if stop contains "text" %}
+                    <tr>
+                        <th scope="row">{{ color | capitalize }}</th>
+                        <td>var(--fc-{{ stop }})</td>
+                        <td>@fc-{{ stop }}</td>
+                        <td class="d-opacity50 d-background-color--ash">@color--{{ stop }}</td>
+                        <td>{{ hex }}</td>
+                    </tr>
+                    {% endif %}
+                {% endfor %}
             {% endfor %}
         </tbody>
     </table>
 </section>
-<section class="dialtone-section16">
-    <h2 class="dialtone-title__section">Classes</h2>
-    <div class="dialtone-section8">
-        <header class="dialtone-section2">
-            <h3 class="dialtone-title__subsection">Grays</h3>
-            <p class="dialtone-copy__normal">All grays meet the minimum contrast ratio for WCAG 2.1 Level AAA, which is 7:1.</p>
-        </header>
-        <div class="dialtone-color-grid__group" style="--color-grid-columns: 1">
-            {% for i in type.font-colors %}
+<section class="d-stack16">
+    <header class="d-stack2">
+        <h2 class="dialtone-title__section">Classes</h2>
+        <p class="dialtone-copy__normal">Starting in v5.8.0, Dialtone began providing immutable type classes, meaning they include an <span class="code-example--inline">!important</span> to override CSS specificity. All previous class names still exist, but are considered deprecated and should not be used moving forward. They will be removed in a future version.</p>
+    </header>
+    <table class="dialtone-table dialtone-table--code">
+        <thead>
+            <tr>
+                <th scope="col">Color</th>
+                <th scope="col">Class</th>
+                <th scope="col" class="d-opacity50 d-background-color--ash">Deprecated Class</th>
+                <th scope="col">Output</th>
+            </tr>
+        </thead>
+        {% for i in type.font-colors %}
             {% assign color = i.color %}
             {% assign stops = i.stops %}
-                {% if color == "Gray" %}
-                    {% for s in stops %}
-                        {% assign name = s.stop %}
-                        {% assign bg = s.bg %}
-                        {% assign ratio = s.ratio %}
-                        <div class="dialtone-color-grid__item d-background-color--{{ bg }} d-color--{{ name }} d-border d-border-bottom-width0 d-border-color--{% if bg == 'white' %}ash-dark{% elsif bg == 'slate' %}slate-lighter{% endif %}">
-                            <div class="dialtone-color-grid__label">.d-color--{{ name }}</div>
-                            <div class="dialtone-color-grid__ratio">
-                                <div class="dialtone-color-badge d-background-color--{% if ratio > '07.00' %}bright-emerald{% elsif ratio < '07.00' %}sunflower{% endif %} d-color--{% if ratio > '07.00' %}bright-emerald-text{% elsif ratio < '07.00' %}sunflower-text{% endif %}">AA{% if ratio > "07.00" %}A{% endif %}</div>
-                                <div>{{ ratio }}</div>
-                            </div>
-                        </div>
-                    {% endfor %}
-                {% endif %}
+            <tbody>
+                {% for s in stops %}
+                    {% assign stop = s.stop %}
+                    {% assign old = s.old %}
+                    <tr>
+                        {% if forloop.first %}
+                            <th scope="row" rowspan="{{ forloop.length }}">{{ color | capitalize }}</th>
+                        {% endif %}
+                        <td>.d-fc-{{ stop }}</td>
+                        {% if stop contains "text" %}
+                            <td class="d-opacity50 d-background-color--ash">.d-color--{{ stop }}</td>
+                        {% elsif color contains "ash" %}
+                            <td class="d-opacity50 d-background-color--ash">.d-color--{{ old }}</td>
+                        {% elsif color contains "slate" %}
+                            <td class="d-opacity50 d-background-color--ash">.d-color--{{ old }}</td>
+                        {% else %}
+                            <td class="d-opacity50 d-background-color--ash d-fc-slate-lightest d-fs-italic">N/A</td>
+                        {% endif %}
+                        <td>color: var(--{% if stop contains "text" %}fc-{% endif %}{{ stop }}) !important;</td>
+                    </tr>
             {% endfor %}
-        </div>
-    </div>
-    <div class="dialtone-section8">
-        <header class="dialtone-section2">
-            <h3 class="dialtone-title__subsection">Color Contrast</h3>
-            <p class="dialtone-copy__normal">All text colors meet the minimum contrast ratio for WCAG 2.1 Level AA, which is 4.5:1.</p>
-        </header>
+            </tbody>
+        {% endfor %}
+    </table>
+    <div class="d-stack8">
         <div class="d-grid-layout--with-columns d-grid-column-gap12 d-grid-row-gap24" style="--grid-col: 2; --grid-col-width: 50%;">
-            {% for i in type.font-colors %}
+        {% for i in type.font-colors %}
             {% assign color = i.color %}
             {% assign stops = i.stops %}
-                {% if color != "Gray" %}
-                <div class="dialtone-section2">
-                    <h4 class="dialtone-title__small">{{ i.color }}</h4>
-                    <div class="dialtone-color-grid__group" style="--color-grid-columns: 1">
-                    {% for s in stops %}
-                        {% assign name = s.stop %}
-                        {% assign bg = s.bg %}
-                        {% assign text = s.color %}
-                        {% assign ratio = s.ratio %}
-                        <div class="dialtone-color-grid__item d-background-color--{{ bg }} d-color--{{ text }}">
-                            <div class="dialtone-color-grid__label">.d-color--{{ bg }}</div>
-                            <div class="dialtone-color-grid__ratio">
-                                <div class="dialtone-color-badge d-background-color--{% if ratio > '07.00' %}green{% elsif ratio < '07.00' %}yellow{% endif %} d-color--{% if ratio > '07.00' %}green-text{% elsif ratio < '07.00' %}yellow-text{% endif %}">AA{% if ratio > "07.00" %}A{% endif %}</div>
-                                <div>{{ ratio }}</div>
-                            </div>
+            <div class="d-stack2">
+                <h4 class="dialtone-title__small">{{ color | capitalize }}</h4>
+                <div class="dialtone-color-grid__group" style="--color-grid-columns: 1">
+                {% for s in stops %}
+                    {% assign stop = s.stop %}
+                    {% assign bg = s.bg %}
+                    {% assign ratio = s.ratio %}
+                    {% assign hex = s.hex %}
+                    <div class="dialtone-color-grid__item d-background-color--{{ bg }} d-fc-{{ stop }}">
+                        <div class="dialtone-color-grid__label">.d-fc-{{ stop }}</div>
+                        <div class="dialtone-color-grid__ratio">
+                            <div class="dialtone-color-badge d-background-color--{% if ratio >= '07.00' %}green{% else %}yellow{% endif %} d-fc-{% if ratio >= '07.00' %}green-text{% else %}yellow-text{% endif %}">AA{% if ratio >= "07.00" %}A{% endif %}</div>
+                            <div>{{ ratio }}</div>
                         </div>
-                    {% endfor %}
                     </div>
+                {% endfor %}
                 </div>
-                {% endif %}
-            {% endfor %}
+            </div>
+        {% endfor %}
         </div>
     </div>
 </section>

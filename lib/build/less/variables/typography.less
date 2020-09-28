@@ -30,43 +30,74 @@
     600: MarkWeb-Bold;
 };
 
-@font-family--custom:            @define-font-name, @font-family--sans;
-@font-family--sans:              -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-@font-family--mono:              "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+//  Older variables. Will be deprecated in a future version.
+@font-family--custom:           @define-font-name, @font-family--sans;
+@font-family--sans:             -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+@font-family--mono:             "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+
+//  New variables. Use these moving forward.
+@ff-custom:                     @font-family--custom;
+@ff-sans:                       @font-family--sans;
+@ff-mono:                       @font-family--mono;
 
 
 //  ============================================================================
 //  $   FONT WEIGHTS
 //  ----------------------------------------------------------------------------
+//  Older variables. Will be deprecated in a future version.
 @font-weight--light:            200;
 @font-weight--normal:           400;
 @font-weight--medium:           500;
 @font-weight--bold:             600;
 @font-weight--ultra:            700;
 
+//  New variables. Use these moving forward.
+@fw-thin:                       100;
+@fw-light:                      200;
+@fw-normal:                     400;
+@fw-medium:                     500;
+@fw-bold:                       700;
+@fw-black:                      900;
+
+
 //  ============================================================================
 //  $   FONT SIZES
 //  ============================================================================
 //  $$  HEADLINES
 //  ----------------------------------------------------------------------------
+//  Older variables. Will be deprecated in a future version.
 @headline--xl:      4.2rem;      // 42px
 @headline--lg:      3.6rem;      // 36px
 @headline--md:      3.2rem;      // 32px
 @headline--sm:      2.4rem;      // 24px
 @headline--xs:      1.1rem;      // 11px - Eyebrow
-
-//  $$  TEXT SIZES
-//  ----------------------------------------------------------------------------
 @text--xl:          2rem;        // 20px
 @text--lg:          1.8rem;      // 18px
-@text--md:          1.6rem;      // 16px - Base font size
+@text--md:          1.6rem;      // 28px - Base font size
 @text--sm:          1.4rem;      // 14px
 @text--xs:          1.2rem;      // 12px
 @text--xxs:         1.1rem;      // 11px
 
+//  New variables. Use these moving forward.
+@fs10:              1rem;
+@fs11:              1.1rem;
+@fs12:              1.2rem;
+@fs14:              1.4rem;
+@fs16:              1.6rem;
+@fs18:              1.8rem;
+@fs20:              2rem;
+@fs24:              2.4rem;
+@fs28:              2.8rem;
+@fs32:              3.2rem;
+@fs36:              3.6rem;
+@fs42:              4.2rem;
+@fs48:              4.8rem;
+@fs54:              5.4rem;
+
 //  ============================================================================
 //  $   LINE HEIGHTS
 //  ----------------------------------------------------------------------------
+//  Older variables. Will be deprecated in a future version.
 @line-height--xs:         1;
 @line-height--sm:         1.125;
 @line-height--md:         1.25;
@@ -74,7 +105,21 @@
 @line-height--xl:         1.75;
 @line-height--xxl:        2;
 
-//  Enter numbers sans unit declarations. Assumed pixels.
-.line-height(@target,@size) {
-    line-height: (@target / @size);
-}
+//  New variables. Use these moving forward.
+@lh0:               1em;
+@lh1:               calc(@lh0 + 1px);
+@lh2:               calc(@lh0 + 2px);
+@lh4:               calc(@lh0 + 4px);
+@lh6:               calc(@lh0 + 6px);
+@lh8:               calc(@lh0 + 8px);
+@lh12:              calc(@lh0 + 12px);
+@lh16:              calc(@lh0 + 16px);
+@lh20:              calc(@lh0 + 20px);
+@lh24:              calc(@lh0 + 24px);
+
+@lh-none:           1;
+@lh-tighter:        1.125;
+@lh-tight:          1.25;
+@lh-normal:         1.5;
+@lh-loose:          1.75;
+@lh-looser:         2;

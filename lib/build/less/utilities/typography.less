@@ -35,15 +35,24 @@ if((@define-font-face = true), each(@define-font-family, {
 //  ============================================================================
 //  $   FONT FAMILY
 //  ----------------------------------------------------------------------------
+//  Older classes. Will be deprecated in a future version
 .d-font-family--custom          { font-family: @font-family--custom; }
 .d-font-family--sans            { font-family: @font-family--sans; }
 .d-font-family--mono            { font-family: @font-family--mono; }
 .d-font-family--inherit         { font-family: inherit; }
 .d-font-family--unset           { font-family: unset; }
 
+//  New classes. Use these moving forward
+.d-ff-custom                    { .d-font-family--custom() !important; }
+.d-ff-sans                      { .d-font-family--sans() !important; }
+.d-ff-mono                      { .d-font-family--mono() !important; }
+.d-ff-inherit                   { .d-font-family--inherit() !important; }
+.d-ff-unset                     { .d-font-family--unset() !important; }
+
 //  ============================================================================
 //  $   FONT SIZES
 //  ----------------------------------------------------------------------------
+//  Older classes. Will be deprecated in a future version
 .d-headline--xl {
     font-size: @headline--xl;
     font-weight: @headline-weight;
@@ -66,14 +75,70 @@ if((@define-font-face = true), each(@define-font-family, {
     text-transform: uppercase;
 }
 
-//  $$  TEXT SIZES
+.d-text--xl                     { font-size: @text--xl; }
+.d-text--lg                     { font-size: @text--lg; }
+.d-text--md                     { font-size: @text--md; }
+.d-text--sm                     { font-size: @text--sm; }
+.d-text--xs                     { font-size: @text--xs; }
+.d-text--xxs                    { font-size: @text--xxs; }
+
+//  New classes. Use these moving forward
+.d-fs10                         { font-size: var(--fs10) !important; }
+.d-fs11                         { font-size: var(--fs11) !important; }
+.d-fs12                         { font-size: var(--fs12) !important; }
+.d-fs14                         { font-size: var(--fs14) !important; }
+.d-fs16                         { font-size: var(--fs16) !important; }
+.d-fs18                         { font-size: var(--fs18) !important; }
+.d-fs20                         { font-size: var(--fs20) !important; }
+.d-fs24                         { font-size: var(--fs24) !important; }
+.d-fs28                         { font-size: var(--fs28) !important; }
+.d-fs32                         { font-size: var(--fs32) !important; }
+.d-fs36                         { font-size: var(--fs36) !important; }
+.d-fs42                         { font-size: var(--fs42) !important; }
+.d-fs48                         { font-size: var(--fs48) !important; }
+.d-fs54                         { font-size: var(--fs54) !important; }
+
+.d-headline10                   { .d-fs10(); font-weight: @headline-weight; .d-tt-uppercase(); }
+.d-headline24                   { .d-fs24(); font-weight: @headline-weight; }
+.d-headline28                   { .d-fs28(); font-weight: @headline-weight; }
+.d-headline32                   { .d-fs32(); font-weight: @headline-weight; }
+.d-headline36                   { .d-fs36(); font-weight: @headline-weight; }
+.d-headline42                   { .d-fs42(); font-weight: @headline-weight; }
+
+.d-fs-unset                     { font-size: unset !important; }
+
+
+//  ============================================================================
+//  $  LINE HEIGHTS
 //  ----------------------------------------------------------------------------
-.d-text--xl     { font-size: @text--xl; }
-.d-text--lg     { font-size: @text--lg; }
-.d-text--md     { font-size: @text--md; }
-.d-text--sm     { font-size: @text--sm; }
-.d-text--xs     { font-size: @text--xs; }
-.d-text--xxs    { font-size: @text--xxs; }
+//  Older classes. Will be deprecated in a future version
+.d-line-height--xs              { line-height: @line-height--xs; }
+.d-line-height--sm              { line-height: @line-height--sm; }
+.d-line-height--md              { line-height: @line-height--md; }
+.d-line-height--lg              { line-height: @line-height--lg; }
+.d-line-height--xl              { line-height: @line-height--xl; }
+.d-line-height--xxl             { line-height: @line-height--xxl; }
+
+//  New classes. Use these moving forward
+.d-lh0                          { line-height: var(--lh0) !important; }
+.d-lh1                          { line-height: var(--lh1) !important; }
+.d-lh2                          { line-height: var(--lh2) !important; }
+.d-lh4                          { line-height: var(--lh4) !important; }
+.d-lh6                          { line-height: var(--lh6) !important; }
+.d-lh8                          { line-height: var(--lh8) !important; }
+.d-lh12                         { line-height: var(--lh12) !important; }
+.d-lh16                         { line-height: var(--lh16) !important; }
+.d-lh20                         { line-height: var(--lh20) !important; }
+.d-lh24                         { line-height: var(--lh24) !important; }
+
+.d-lh-none                      { line-height: var(--lh-none) !important; }
+.d-lh-tighter                   { line-height: var(--lh-tighter) !important; }
+.d-lh-tight                     { line-height: var(--lh-tight) !important; }
+.d-lh-normal                    { line-height: var(--lh-normal) !important; }
+.d-lh-loose                     { line-height: var(--lh-loose) !important; }
+.d-lh-looser                    { line-height: var(--lh-looser) !important; }
+
+.d-lh-unset                     { line-height: unset !important; }
 
 
 //  ============================================================================
@@ -81,14 +146,105 @@ if((@define-font-face = true), each(@define-font-family, {
 //  ============================================================================
 //  $$  FONT WEIGHT
 //  ----------------------------------------------------------------------------
+//  Older classes. Will be deprecated in a future version
 .d-font-weight--light           { font-weight: @font-weight--light; }
 .d-font-weight--normal          { font-weight: @font-weight--normal; }
 .d-font-weight--medium          { font-weight: @font-weight--medium; }
 .d-font-weight--bold            { font-weight: @font-weight--bold; }
 .d-font-weight--ultra           { font-weight: @font-weight--ultra; }
 
-//  $$  TEXT COLOR
+// Utility classes
+.d-fw-thin                      { font-weight: @fw-thin !important; }
+.d-fw-light                     { font-weight: @fw-light !important; }
+.d-fw-normal                    { font-weight: @fw-normal !important; }
+.d-fw-medium                    { font-weight: @fw-medium !important; }
+.d-fw-bold                      { font-weight: @fw-bold !important; }
+.d-fw-black                     { font-weight: @fw-black !important; }
+.d-fw-unset                     { font-weight: unset !important; }
+
+//  $$  FONT STYLE
 //  ----------------------------------------------------------------------------
+.d-fs-normal                    { font-style: normal !important; }
+.d-fs-italic                    { font-style: italic !important; }
+.d-fs-unset                     { font-style: unset !important; }
+
+//  $$  TEXT DECORATION
+//  ----------------------------------------------------------------------------
+.d-td-none                      { text-decoration: none !important; }
+.d-td-underline                 { text-decoration: underline !important; }
+.d-td-dotted                    { text-decoration: underline dotted !important; }
+.d-td-unset                     { text-decoration: unset !important; }
+
+//  $$  TEXT TRANSFORM
+//  ----------------------------------------------------------------------------
+.d-tt-none                      { text-transform: none !important; }
+.d-tt-uppercase                 { text-transform: uppercase !important; }
+.d-tt-lowercase                 { text-transform: lowercase !important; }
+.d-tt-capitalize                { text-transform: capitalize !important; }
+.d-tt-full-width                { text-transform: full-width !important; }
+.d-tt-unset                     { text-transform: unset !important; }
+
+
+//  ============================================================================
+//  $   LISTS
+//  ----------------------------------------------------------------------------
+.d-list-reset                   { .d-margin0(); .d-padding0(); .d-ls-none(); }
+
+.d-ls-reset                     { .d-margin0() !important; .d-padding0() !important; .d-ls-none(); }
+.d-ls-none                      { list-style: none !important; }
+.d-lst-none                     { list-style-type: none !important; }
+.d-lst-disc                     { list-style-type: disc !important; }
+.d-lst-decimal                  { list-style-type: decimal !important; }
+
+
+//  ============================================================================
+//  $   LAYOUT
+//  ============================================================================
+//  $$  TEXT ALIGN
+//  ----------------------------------------------------------------------------
+.d-ta-left                      { text-align: left !important; }
+.d-ta-right                     { text-align: right !important; }
+.d-ta-center                    { text-align: center !important; }
+.d-ta-justify                   { text-align: justify !important; }
+.d-ta-unset                     { text-align: unset !important; }
+
+//  $$  WHITESPACE
+//  ----------------------------------------------------------------------------
+.d-ws-normal                    { white-space: normal !important; }
+.d-ws-nowrap                    { white-space: nowrap !important; }
+.d-ws-pre                       { white-space: pre !important; }
+.d-ws-pre-line                  { white-space: pre-line !important; }
+.d-ws-pre-wrap                  { white-space: pre-wrap !important; }
+.d-ws-break-spaces              { white-space: break-spaces !important; }
+.d-ws-unset                     { white-space: unset !important; }
+
+//  $$  TRUNCATE
+//  ----------------------------------------------------------------------------
+.d-truncate {
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+}
+
+//  $$  WORD BREAK
+//  ----------------------------------------------------------------------------
+.d-wb-normal                    { word-break: normal !important; }
+.d-wb-break-all                 { word-break: break-all !important; }
+.d-wb-keep-all                  { word-break: keep-all !important; }
+.d-wb-unset                     { word-break: unset !important; }
+
+//  $$  OVERFLOW WRAP
+//  ----------------------------------------------------------------------------
+.d-ow-normal                    { overflow-wrap: normal !important; }
+.d-ow-anywhere                  { overflow-wrap: anywhere !important; }
+.d-ow-break-word                { overflow-wrap: break-word !important; }
+.d-ow-unset                     { overflow-wrap: unset !important; }
+
+
+//  ============================================================================
+//  $   TEXT COLOR
+//  ----------------------------------------------------------------------------
+//  Older classes. Will be deprecated in a future version
 .d-color--white                 { color: @white; }
 .d-color--dark                  { color: @color--dark; }
 .d-color--dark-light            { color: @color--dark-light; }
@@ -108,35 +264,92 @@ if((@define-font-face = true), each(@define-font-family, {
 .d-color--berry-text            { color: @color--berry-text; }
 .d-color--rose-text             { color: @color--rose-text; }
 
+//  New Utility classes
+//  --  Grays & White
+.d-fc-white                     { color: hsla(hue(@white) saturation(@white) lightness(@white)~" / " var(--fo)) !important; }
+.d-fc-slate                     { color: hsla(hue(@slate) saturation(@slate) lightness(@slate)~" / " var(--fo)) !important; }
+.d-fc-slate-light               { color: hsla(hue(@slate-light) saturation(@slate-light) lightness(@slate-light)~" / " var(--fo)) !important; }
+.d-fc-slate-lighter             { color: hsla(hue(@slate-lighter) saturation(@slate-lighter) lightness(@slate-lighter)~" / " var(--fo)) !important; }
+.d-fc-slate-lightest            { color: hsla(hue(@slate-lightest) saturation(@slate-lightest) lightness(@slate-lightest)~" / " var(--fo)) !important; }
+.d-fc-ash                       { color: hsla(hue(@ash) saturation(@ash) lightness(@ash)~" / " var(--fo)) !important; }
+.d-fc-ash-dark                  { color: hsla(hue(@ash-dark) saturation(@ash-dark) lightness(@ash-dark)~" / " var(--fo)) !important; }
+.d-fc-ash-darker                { color: hsla(hue(@ash-darker) saturation(@ash-darker) lightness(@ash-darker)~" / " var(--fo)) !important; }
+.d-fc-ash-darkest               { color: hsla(hue(@ash-darkest) saturation(@ash-darkest) lightness(@ash-darkest)~" / " var(--fo)) !important; }
+
+//  --  Bright Blue
+.d-fc-blue-dark                 { color: hsla(hue(@blue-dark) saturation(@blue-dark) lightness(@blue-dark)~" / " var(--fo)) !important; }
+.d-fc-blue                      { color: hsla(hue(@blue) saturation(@blue) lightness(@blue)~" / " var(--fo)) !important; }
+.d-fc-blue-light                { color: hsla(hue(@blue-light) saturation(@blue-light) lightness(@blue-light)~" / " var(--fo)) !important; }
+.d-fc-blue-lighter              { color: hsla(hue(@blue-lighter) saturation(@blue-lighter) lightness(@blue-lighter)~" / " var(--fo)) !important; }
+.d-fc-blue-text                 { color: hsla(hue(@fc-blue-text) saturation(@fc-blue-text) lightness(@fc-blue-text)~" / " var(--fo)) !important; }
+
+//  --  Navy
+.d-fc-navy                      { color: hsla(hue(@navy) saturation(@navy) lightness(@navy)~" / " var(--fo)) !important; }
+.d-fc-navy-light                { color: hsla(hue(@navy-light) saturation(@navy-light) lightness(@navy-light)~" / " var(--fo)) !important; }
+.d-fc-navy-lighter              { color: hsla(hue(@navy-lighter) saturation(@navy-lighter) lightness(@navy-lighter)~" / " var(--fo)) !important; }
+.d-fc-navy-lightest             { color: hsla(hue(@navy-lightest) saturation(@navy-lightest) lightness(@navy-lightest)~" / " var(--fo)) !important; }
+.d-fc-navy-text                 { color: hsla(hue(@fc-navy-text) saturation(@fc-navy-text) lightness(@fc-navy-text)~" / " var(--fo)) !important; }
+
+//  --  Bright Emerald
+.d-fc-bright-emerald-dark       { color: hsla(hue(@bright-emerald-dark) saturation(@bright-emerald-dark) lightness(@bright-emerald-dark)~" / " var(--fo)) !important; }
+.d-fc-bright-emerald            { color: hsla(hue(@bright-emerald) saturation(@bright-emerald) lightness(@bright-emerald)~" / " var(--fo)) !important; }
+.d-fc-bright-emerald-light      { color: hsla(hue(@bright-emerald-light) saturation(@bright-emerald-light) lightness(@bright-emerald-light)~" / " var(--fo)) !important; }
+.d-fc-bright-emerald-lighter    { color: hsla(hue(@bright-emerald-lighter) saturation(@bright-emerald-lighter) lightness(@bright-emerald-lighter)~" / " var(--fo)) !important; }
+.d-fc-bright-emerald-text       { color: hsla(hue(@fc-bright-emerald-text) saturation(@fc-bright-emerald-text) lightness(@fc-bright-emerald-text)~" / " var(--fo)) !important; }
+
+//  --  Emerald
+.d-fc-emerald-darker            { color: hsla(hue(@emerald-darker) saturation(@emerald-darker) lightness(@emerald-darker)~" / " var(--fo)) !important; }
+.d-fc-emerald-dark              { color: hsla(hue(@emerald-dark) saturation(@emerald-dark) lightness(@emerald-dark)~" / " var(--fo)) !important; }
+.d-fc-emerald                   { color: hsla(hue(@emerald) saturation(@emerald) lightness(@emerald)~" / " var(--fo)) !important; }
+.d-fc-emerald-light             { color: hsla(hue(@emerald-light) saturation(@emerald-light) lightness(@emerald-light)~" / " var(--fo)) !important; }
+.d-fc-emerald-lighter           { color: hsla(hue(@emerald-lighter) saturation(@emerald-lighter) lightness(@emerald-lighter)~" / " var(--fo)) !important; }
+.d-fc-emerald-text              { color: hsla(hue(@fc-emerald-text) saturation(@fc-emerald-text) lightness(@fc-emerald-text)~" / " var(--fo)) !important; }
+
+//  --  Crimson
+.d-fc-crimson-dark              { color: hsla(hue(@crimson-dark) saturation(@crimson-dark) lightness(@crimson-dark)~" / " var(--fo)) !important; }
+.d-fc-crimson                   { color: hsla(hue(@crimson) saturation(@crimson) lightness(@crimson)~" / " var(--fo)) !important; }
+.d-fc-crimson-light             { color: hsla(hue(@crimson-light) saturation(@crimson-light) lightness(@crimson-light)~" / " var(--fo)) !important; }
+.d-fc-crimson-lighter           { color: hsla(hue(@crimson-lighter) saturation(@crimson-lighter) lightness(@crimson-lighter)~" / " var(--fo)) !important; }
+.d-fc-crimson-text              { color: hsla(hue(@fc-crimson-text) saturation(@fc-crimson-text) lightness(@fc-crimson-text)~" / " var(--fo)) !important; }
+
+//  --  Wildberry
+.d-fc-wildberry-dark            { color: hsla(hue(@wildberry-dark) saturation(@wildberry-dark) lightness(@wildberry-dark)~" / " var(--fo)) !important; }
+.d-fc-wildberry                 { color: hsla(hue(@wildberry) saturation(@wildberry) lightness(@wildberry)~" / " var(--fo)) !important; }
+.d-fc-wildberry-light           { color: hsla(hue(@wildberry-light) saturation(@wildberry-light) lightness(@wildberry-light)~" / " var(--fo)) !important; }
+.d-fc-wildberry-lighter         { color: hsla(hue(@wildberry-lighter) saturation(@wildberry-lighter) lightness(@wildberry-lighter)~" / " var(--fo)) !important; }
+.d-fc-wildberry-text            { color: hsla(hue(@fc-wildberry-text) saturation(@fc-wildberry-text) lightness(@fc-wildberry-text)~" / " var(--fo)) !important; }
+
+//  --  Sunflower
+.d-fc-sunflower-dark            { color: hsla(hue(@sunflower-dark) saturation(@sunflower-dark) lightness(@sunflower-dark)~" / " var(--fo)) !important; }
+.d-fc-sunflower                 { color: hsla(hue(@sunflower) saturation(@sunflower) lightness(@sunflower)~" / " var(--fo)) !important; }
+.d-fc-sunflower-light           { color: hsla(hue(@sunflower-light) saturation(@sunflower-light) lightness(@sunflower-light)~" / " var(--fo)) !important; }
+.d-fc-sunflower-lighter         { color: hsla(hue(@sunflower-lighter) saturation(@sunflower-lighter) lightness(@sunflower-lighter)~" / " var(--fo)) !important; }
+.d-fc-sunflower-text            { color: hsla(hue(@fc-sunflower-text) saturation(@fc-sunflower-text) lightness(@fc-sunflower-text)~" / " var(--fo)) !important; }
+
+//  --  Berry
+.d-fc-berry-dark                { color: hsla(hue(@berry-dark) saturation(@berry-dark) lightness(@berry-dark)~" / " var(--fo)) !important; }
+.d-fc-berry                     { color: hsla(hue(@berry) saturation(@berry) lightness(@berry)~" / " var(--fo)) !important; }
+.d-fc-berry-light               { color: hsla(hue(@berry-light) saturation(@berry-light) lightness(@berry-light)~" / " var(--fo)) !important; }
+.d-fc-berry-lighter             { color: hsla(hue(@berry-lighter) saturation(@berry-lighter) lightness(@berry-lighter)~" / " var(--fo)) !important; }
+.d-fc-berry-text                { color: hsla(hue(@fc-berry-text) saturation(@fc-berry-text) lightness(@fc-berry-text)~" / " var(--fo)) !important; }
+
+//  --  Rose
+.d-fc-rose-darker               { color: hsla(hue(@rose-darker) saturation(@rose-darker) lightness(@rose-darker)~" / " var(--fo)) !important; }
+.d-fc-rose-dark                 { color: hsla(hue(@rose-dark) saturation(@rose-dark) lightness(@rose-dark)~" / " var(--fo)) !important; }
+.d-fc-rose                      { color: hsla(hue(@rose) saturation(@rose) lightness(@rose)~" / " var(--fo)) !important; }
+.d-fc-rose-light                { color: hsla(hue(@rose-light) saturation(@rose-light) lightness(@rose-light)~" / " var(--fo)) !important; }
+.d-fc-rose-text                 { color: hsla(hue(@fc-rose-text) saturation(@fc-rose-text) lightness(@fc-rose-text)~" / " var(--fo)) !important; }
+
 
 //  ============================================================================
-//  $  LINE HEIGHTS
+//  $   TEXT OPACITY
 //  ----------------------------------------------------------------------------
-.d-line-height--xs          { line-height: @line-height--xs; }
-.d-line-height--sm          { line-height: @line-height--sm; }
-.d-line-height--md          { line-height: @line-height--md; }
-.d-line-height--lg          { line-height: @line-height--lg; }
-.d-line-height--xl          { line-height: @line-height--xl; }
-.d-line-height--xxl         { line-height: @line-height--xxl; }
-
-
-//  ============================================================================
-//  $   WORD BREAK
-//  ----------------------------------------------------------------------------
-.d-truncate {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-
-//  ============================================================================
-//  $   LISTS
-//  ----------------------------------------------------------------------------
-.d-list-reset {
-    .d-margin-x0;
-    .d-margin-y0;
-    .d-padding-x0;
-    .d-padding-y0;
-    list-style: none;
-}
+.d-fo0                          { --fo: 0% !important; }
+.d-fo10                         { --fo: 10% !important; }
+.d-fo25                         { --fo: 25% !important; }
+.d-fo50                         { --fo: 50% !important; }
+.d-fo75                         { --fo: 75% !important; }
+.d-fo90                         { --fo: 90% !important; }
+.d-fo95                         { --fo: 95% !important; }
+.d-fo99                         { --fo: 99% !important; }
+.d-fo100                        { --fo: 100% !important; }
