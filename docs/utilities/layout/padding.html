@@ -1,35 +1,25 @@
 ---
 layout: page
 title: Padding
-description: A CSS property which allows you to adjust an element's interior spacing between its child elements and the element's box edge.
+description: CSS property which allows you to adjust an element's interior spacing between its child elements and the element's box edge.
 ---
-<section class="d-stack16">
-    <p class="dialtone-copy__normal">These utility classes are based on Dialtone's <a class="d-link" href="/constants/spacing">spacing units</a>. Components will typically set their own padding, which is preferred. However components should not create extranenous modifying classes for increasing padding when these utility classes can achieve the same goal. For that reason it is recommended padding modifications should be done using these classes.</p>
-    <p class="dialtone-copy__normal">All element and component spacing is based on a base-4 pixel base. To apply spacing from Dialtone's Less library, include the desired class name within your semantic class.</p>
-    <div class="dialtone-example" data-example="no" data-code="yes">
-{% highlight css %}
-.semantic-class {
-    .d-padding16;
-}
-{% endhighlight %}
-    </div>
-    <p class="dialtone-copy__normal">This will output:</p>
-    <div class="dialtone-example" data-example="no" data-code="yes">
-{% highlight css %}
-.semantic-class {
-    padding: 1.6rem;
-}
-{% endhighlight %}
-    </div>
+<section class="d-stack8">
+    <p class="dialtone-copy__normal">Starting in v5.9.0, Dialtone began providing immutable margin classes, meaning they include an <span class="code-example--inline">!important</span> to override CSS specificity. If this level of specificity isn't desired, it is recommended to use <a href="/variables/spacing/" class="d-link">the spacing variables</a> in your CSS.</p>
+    <p class="dialtone-copy__normal">Components will typically set their own padding, which is preferred. However components should not create extranenous modifying classes for increasing padding when these utility classes can achieve the same goal. For this reason it is recommended to use the following padding classes as overrides for default spacing layouts.</p>
 </section>
 <section class="d-stack16">
-    <h2 class="dialtone-title__section">Classes</h2>
+    <header class="d-stack2">
+        <h2 class="dialtone-title__section">Classes</h2>
+        <p class="dialtone-copy__normal">Padding can be added to an element by using a universal class (i.e. <span class="code-example--inline">.d-p[#]</span>) or by using a directional class (i.e. <span class="code-example--inline">.d-p{t|r|b|l|y|x}[#]</span>).</p>
+    </header>
     <div class="dialtone-table-wrapper">
         <table class="dialtone-table dialtone-table--code">
             <thead>
                 <tr>
-                    <th scope="col" class="dialtone-table__column--md">Class</th>
-                    <th scope="col">Output</th>
+                    <th scope="col" class="d-width10">Direction</th>
+                    <th scope="col">Class</th>
+                    <th scope="col" class="d-opacity50 d-background-color--ash">Deprecated Class</th>
+                    <th scope="col" class="d-width40">Output</th>
                 </tr>
             </thead>
             {% assign dir = spacing.directions | split: ", "  %}
@@ -39,16 +29,20 @@ description: A CSS property which allows you to adjust an element's interior spa
                     {% assign val = value.value %}
                     {% assign output = value.output %}
                     <tr>
-                        <th scope="row">.d-padding{% if i != "All" %}-{{ i }}{% endif %}{{ val }}</th>
+                        {% if forloop.first %}
+                            <th scope="row" rowspan="{{ forloop.length }}">{% if i == "y" %}Y-Axis{% elsif i == "x" %}X-Axis{% else %}{{ i | capitalize }}{% endif %}</th>
+                        {% endif %}
+                        <td>.d-p{% if i != "All" %}{{ i | slice: 0 }}{% endif %}{{ val }}</td>
+                        <td class="d-opacity50 d-background-color--ash">.d-padding{% if i != "All" %}-{{ i }}{% endif %}{{ val }}</td>
                         <td>
                             {% if i == "y" %}
-                                padding-top: {{ output }};<br/>
-                                padding-bottom: {{ output }};
+                                padding-top: {{ output }} !important;<br/>
+                                padding-bottom: {{ output }} !important;
                             {% elsif i == "x" %}
-                                padding-right: {{ output }};<br/>
-                                padding-left: {{ output }};
+                                padding-right: {{ output }} !important;<br/>
+                                padding-left: {{ output }} !important;
                             {% else %}
-                                padding{% if i != "All" %}-{{ i }}{% endif %}: {{ output }};
+                                padding{% if i != "All" %}-{{ i }}{% endif %}: {{ output }} !important;
                             {% endif %}
                         </td>
                     </tr>
@@ -57,77 +51,61 @@ description: A CSS property which allows you to adjust an element's interior spa
             {% endfor %}
         </table>
     </div>
-</section>
-<section class="d-stack16">
-    <h2 class="dialtone-title__subsection">Adding directional padding</h2>
-    <p class="dialtone-copy__normal">You can add padding to an element by using a universal padding class (i.e. <span class="code-example--inline">.d-padding4</span>) or by using a directional padding class (i.e. <span class="code-example--inline">.d-padding-{top|right|bottom|left|y|x}4</span>).</p>
-    <div class="dialtone-example" data-example="yes" data-code="yes">
-        <div class="dialtone-example__example">
-            <div style="display: flex; justify-content: space-evenly;">
-                <div class="layout-block" style="flex-direction: column; align-self: center;">
-                    <div class="layout-block__bar" style="
-                        --layout-example-height: .9rem;
-                        border-bottom-width: 0;
-                        flex: 0 0 8px;
-                    "></div>
-                    <div class="layout-block" style="
-                        height: 100%;
-                        border-width: 0;
-                    ">
-                        <div class="layout-block__bar" style="
-                            --layout-example-width: .9rem;
-                            border-width: 0;
-                        "></div>
-                        <span class="layout-block__label">8px</span>
-                        <div class="layout-block__bar" style="
-                            --layout-example-width: .9rem;
-                            border-width: 0;
-                        "></div>
+    <div class="d-stack8">
+        <h3 class="dialtone-title__subsection">Examples</h3>
+        <div class="dialtone-example" data-example="yes" data-code="yes">
+            <div class="dialtone-example__example d-d-flex d-fw-wrap d-mn8">
+                {% assign dir = spacing.directions | split: ", "  %}
+                {% for i in dir %}
+                    <div class="d-d-flex d-background-color--rose-light d-m16 d-p{% if i != 'All' %}{{ i | slice: 0 }}{% endif %}16 d-min-height1" style="flex-basis: calc(33.3333333% - 3.2rem);">
+                        <div class="d-fl-center d-width100 d-border d-border-color--navy-lighter d-fc-navy-text d-fs11 d-fw-bold d-ff-mono d-lh-tight d-background-color--navy-lightest">.d-p{% if i != 'All' %}{{ i | slice: 0 }}{% endif %}8</div>
                     </div>
-                    <div class="layout-block__bar" style="
-                        --layout-example-height: .9rem;
-                        border-top-width: 0;
-                        flex: 0 0 8px;
-                    "></div>
-                </div>
-                <div class="layout-block" style="flex-direction: column; align-self: center;">
-                    <div class="layout-block__bar" style="--layout-example-height: .8rem;"></div>
-                    <span class="layout-block__label">8px</span>
-                </div>
-                <div class="layout-block" style="align-self: center;">
-                    <span class="layout-block__label">8px</span>
-                    <div class="layout-block__bar" style="--layout-example-width: .8rem;"></div>
-                </div>
-                <div class="layout-block" style="flex-direction: column; align-self: center;">
-                    <span class="layout-block__label">8px</span>
-                    <div class="layout-block__bar" style="--layout-example-height: .8rem;"></div>
-                </div>
-                <div class="layout-block" style="align-self: center;">
-                    <div class="layout-block__bar" style="--layout-example-width: .8rem;"></div>
-                    <span class="layout-block__label">8px</span>
-                </div>
-                <div class="layout-block" style="align-self: center; width: 7.6rem;">
-                    <div class="layout-block__bar" style="--layout-example-width: .8rem; flex: 0 0 .8rem;"></div>
-                    <span class="layout-block__label">8px</span>
-                    <div class="layout-block__bar" style="--layout-example-width: .8rem; flex: 0 0 .8rem;"></div>
-                </div>
-                <div class="layout-block" style="flex-direction: column; height: 7.6rem">
-                    <div class="layout-block__bar" style="--layout-example-height: .8rem; flex: 0 0 .8rem;"></div>
-                    <span class="layout-block__label">8px</span>
-                    <div class="layout-block__bar" style="--layout-example-height: .8rem; flex: 0 0 .8rem;"></div>
-                </div>
+                {% endfor %}
+            </div>
+            <div class="dialtone-example__code">
+{% highlight html linenos %}
+<div class="d-p8">...</div>
+<div class="d-pt8">...</div>
+<div class="d-pr8">...</div>
+<div class="d-pb8">...</div>
+<div class="d-pl8">...</div>
+<div class="d-px8">...</div>
+<div class="d-py8">...</div>
+{% endhighlight %}
             </div>
         </div>
-        <div class="dialtone-example__code">
-{% highlight html linenos %}
-<div class=".d-padding8">...</div>
-<div class=".d-padding-top8">...</div>
-<div class=".d-padding-right8">...</div>
-<div class=".d-padding-bottom8">...</div>
-<div class=".d-padding-left8">...</div>
-<div class=".d-padding-x8">...</div>
-<div class=".d-padding-y8">...</div>
-{% endhighlight %}
-        </div>
     </div>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        <h2 class="dialtone-title__section">Reset Padding</h2>
+        <p class="dialtone-copy__normal">Allows you to reset an element's padding to its initial value.</p>
+    </header>
+    <table class="dialtone-table dialtone-table--code">
+        <thead>
+            <tr>
+                <th scope="col">Class</th>
+                <th scope="col" class="d-width50">Output</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% assign dir = spacing.directions | split: ", "  %}
+            {% for i in dir %}
+            <tr>
+                <th scope="row">.d-p{% if i != 'All' %}{{ i | slice: 0 }}{% endif %}-unset</th>
+                <td>
+                    {% if i == "y" %}
+                        padding-top: unset !important;<br/>
+                        padding-bottom: unset !important;
+                    {% elsif i == "x" %}
+                        padding-right: unset !important;<br/>
+                        padding-left: unset !important;
+                    {% else %}
+                        padding{% if i != "All" %}-{{ i }}{% endif %}: unset !important;
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </section>
