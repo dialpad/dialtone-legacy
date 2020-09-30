@@ -25,9 +25,19 @@ description: Utility classes for controlling an element's font-family.
             {% assign o = i.output %}
                 <tr>
                     <th scope="row">{{ t }}</th>
-                    <td>var(--ff-{{ v }})</td>
-                    <td>@ff-{{ v }}</td>
-                    <td class="d-opacity50 d-background-color--ash">@font-family--{{ v }}</td>
+                    {% if v == "inherit" %}
+                        <td class="d-fc-slate-lightest d-fs-italic">N/A</td>
+                        <td class="d-fc-slate-lightest d-fs-italic">N/A</td>
+                        <td class="d-opacity50 d-background-color--ash d-fc-slate-lightest d-fs-italic">N/A</td>
+                    {% elsif v == "unset" %}
+                        <td class="d-fc-slate-lightest d-fs-italic">N/A</td>
+                        <td class="d-fc-slate-lightest d-fs-italic">N/A</td>
+                        <td class="d-opacity50 d-background-color--ash d-fc-slate-lightest d-fs-italic">N/A</td>
+                    {% else %}
+                        <td>var(--ff-{{ v }})</td>
+                        <td>@ff-{{ v }}</td>
+                        <td class="d-opacity50 d-background-color--ash">@font-family--{{ v }}</td>
+                    {% endif %}
                     <td>{{ o }}</td>
                 </tr>
             {% endfor %}
@@ -54,7 +64,11 @@ description: Utility classes for controlling an element's font-family.
             {% assign o = i.output %}
             <tr>
                 <td>.d-ff-{{ v }}</td>
-                <td class="d-opacity50 d-background-color--ash">.d-font-family--{{ v }}</td>
+                {% if v == "unset" %}
+                    <td class="d-opacity50 d-background-color--ash d-fc-slate-lightest d-fs-italic">N/A</td>
+                {% else %}
+                    <td class="d-opacity50 d-background-color--ash">.d-font-family--{{ v }}</td>
+                {% endif %}
                 <td>font-family: {{ o }} !important;</td>
             </tr>
             {% endfor %}
