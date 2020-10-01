@@ -32,6 +32,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    padding: @spacing32;
     background-color: fade(@slate, 85%);
 
     z-index: @zi-hide;
@@ -73,7 +75,7 @@
     visibility: hidden;
     opacity: 0;
     backface-visibility: hidden;
-    transform: translate3d(0,30%,0) scale3d(.6,.6,.6);
+    transform: translate3d(0,30%,0) scale3d(.75,.75,.75);
 
     transition:
         opacity 200ms @transition--cubic-inOut 0s,
@@ -122,7 +124,7 @@
 //  $$  TITLE
 //  ----------------------------------------------------------------------------
 .d-modal__title {
-    margin: 0;
+    margin: 0 !important;
     font-size: var(--fs24);
     font-weight: var(--fw-bold);
     line-height: var(--lh4);
@@ -132,11 +134,12 @@
 //  ----------------------------------------------------------------------------
 .d-modal__copy {
     margin: 0;
+    max-width: 75ch;
 }
 
 
 //  ============================================================================
-//  $   BUTTON ADJUSTMENTS
+//  $   BUTTONS
 //  ----------------------------------------------------------------------------
 .d-modal__close {
     position: absolute;
@@ -145,6 +148,67 @@
     margin: 0 !important;
 }
 
+
+//  ============================================================================
+//  $   BANNERS
+//  ----------------------------------------------------------------------------
+.d-modal__banner {
+    position: relative;
+    width: 100%;
+    max-width: @fixed-size5; // 628px
+    padding: 1.1rem @spacing24 1rem;
+    background-color: var(--sunflower-lighter);
+    border-radius: @border-radius--md @border-radius--md 0 0;
+    font-size: var(--fs14);
+    line-height: var(--lh6);
+
+    &:not(.d-d-none) + .d-modal__dialog {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+}
+
+
+//  ============================================================================
+//  $   MODIFYING STYLES
+//  ============================================================================
+//  $$  FULL WIDTH
+//  ----------------------------------------------------------------------------
+.d-modal--full {
+    padding: 0;
+    overflow: hidden scroll;
+    transform: unset !important;
+
+    .d-modal__dialog {
+        display: flex;
+        flex-direction: column;
+        padding: @spacing32;
+        max-width: unset;
+        height: 100%;
+        border-radius: 0;
+        transform: unset !important;
+    }
+
+    &,
+    .d-modal__dialog {
+        transition:
+            opacity 200ms @transition--cubic-inOut 0s,
+            z-index 0s 200ms,
+            visibility 0s 200ms;
+    }
+
+    .d-modal__footer {
+        margin: -@spacing16 -@spacing12;
+        margin-top: auto !important;
+    }
+
+    .d-modal__banner {
+        max-width: unset;
+        border-radius: 0;
+        padding-left: @spacing24;
+        padding-right: @spacing24;
+    }
+}
 
 //  @@  TYPE STYLES
 //  ----------------------------------------------------------------------------
