@@ -1,11 +1,11 @@
 ---
 layout: page
 title: Padding
-description: CSS property which allows you to adjust an element's interior spacing between its child elements and the element's box edge.
+description: Utilities to adjust an element's interior spacing between its child elements and the element's box edge.
 ---
 <section class="d-stack8">
-    <p class="dialtone-copy__normal">Starting in v5.9.0, Dialtone began providing immutable margin classes, meaning they include an <span class="code-example--inline">!important</span> to override CSS specificity. If this level of specificity isn't desired, it is recommended to use <a href="/variables/spacing/" class="d-link">the spacing variables</a> in your CSS.</p>
-    <p class="dialtone-copy__normal">Components will typically set their own padding, which is preferred. However components should not create extranenous modifying classes for increasing padding when these utility classes can achieve the same goal. For this reason it is recommended to use the following padding classes as overrides for default spacing layouts.</p>
+    <p class="dialtone-copy__normal">Starting in v5.9.0, Dialtone offers immutable padding classes, meaning they include an <span class="code-example--inline">!important</span> to override CSS specificity. If this level of specificity isn't desired, it is recommended to use <a href="/variables/spacing/" class="d-link">the spacing variables</a> in your CSS.</p>
+    <p class="dialtone-copy__normal">Components typically set their own padding defaults. However these padding utilities can be used to override these defaults in one-off situations..</p>
 </section>
 <section class="d-stack16">
     <header class="d-stack2">
@@ -16,10 +16,9 @@ description: CSS property which allows you to adjust an element's interior spaci
         <table class="dialtone-table dialtone-table--code">
             <thead>
                 <tr>
-                    <th scope="col" class="d-width10">Direction</th>
-                    <th scope="col">Class</th>
-                    <th scope="col" class="d-opacity50 d-background-color--ash">Deprecated Class</th>
-                    <th scope="col" class="d-width40">Output</th>
+                    <th scope="col" class="d-width25">Class</th>
+                    <th scope="col" class="d-width25 d-opacity50 d-background-color--ash">Deprecated Class</th>
+                    <th scope="col">Output</th>
                 </tr>
             </thead>
             {% assign dir = spacing.directions | split: ", "  %}
@@ -29,9 +28,6 @@ description: CSS property which allows you to adjust an element's interior spaci
                     {% assign val = value.value %}
                     {% assign output = value.output %}
                     <tr>
-                        {% if forloop.first %}
-                            <th scope="row" rowspan="{{ forloop.length }}">{% if i == "y" %}Y-Axis{% elsif i == "x" %}X-Axis{% else %}{{ i | capitalize }}{% endif %}</th>
-                        {% endif %}
                         <td>.d-p{% if i != "All" %}{{ i | slice: 0 }}{% endif %}{{ val }}</td>
                         <td class="d-opacity50 d-background-color--ash">.d-padding{% if i != "All" %}-{{ i }}{% endif %}{{ val }}</td>
                         <td>
@@ -57,20 +53,20 @@ description: CSS property which allows you to adjust an element's interior spaci
             <div class="dialtone-example__example d-d-flex d-fw-wrap d-mn8">
                 {% assign dir = spacing.directions | split: ", "  %}
                 {% for i in dir %}
-                    <div class="d-d-flex d-background-color--rose-light d-m16 d-p{% if i != 'All' %}{{ i | slice: 0 }}{% endif %}16 d-min-height1" style="flex-basis: calc(33.3333333% - 3.2rem);">
-                        <div class="d-fl-center d-width100 d-border d-border-color--navy-lighter d-fc-navy-text d-fs11 d-fw-bold d-ff-mono d-lh-tight d-background-color--navy-lightest">.d-p{% if i != 'All' %}{{ i | slice: 0 }}{% endif %}8</div>
+                    <div class="d-d-flex d-border d-border-color--navy-lighter d-m16 d-p{% if i != 'All' %}{{ i | slice: 0 }}{% endif %}16 d-min-height1" style="flex-basis: calc(33.3333333% - 3.2rem); background-color: rgba(178,191,255,.75);">
+                        <div class="d-fl-center d-width100  d-fc-navy-text d-fs11 d-fw-bold d-ff-mono d-lh-tight" style="background-color: rgba(224,229,253,1);">.d-p{% if i != 'All' %}{{ i | slice: 0 }}{% endif %}8</div>
                     </div>
                 {% endfor %}
             </div>
             <div class="dialtone-example__code">
 {% highlight html linenos %}
-<div class="d-p8">...</div>
-<div class="d-pt8">...</div>
-<div class="d-pr8">...</div>
-<div class="d-pb8">...</div>
-<div class="d-pl8">...</div>
-<div class="d-px8">...</div>
-<div class="d-py8">...</div>
+<div class="d-p8">…</div>
+<div class="d-pt8">…</div>
+<div class="d-pr8">…</div>
+<div class="d-pb8">…</div>
+<div class="d-pl8">…</div>
+<div class="d-px8">…</div>
+<div class="d-py8">…</div>
 {% endhighlight %}
             </div>
         </div>
@@ -79,13 +75,13 @@ description: CSS property which allows you to adjust an element's interior spaci
 <section class="d-stack16">
     <header class="d-stack2">
         <h2 class="dialtone-title__section">Reset Padding</h2>
-        <p class="dialtone-copy__normal">Allows you to reset an element's padding to its initial value.</p>
+        <p class="dialtone-copy__normal">Unsetting padding resets an element's padding to its initial value.</p>
     </header>
     <table class="dialtone-table dialtone-table--code">
         <thead>
             <tr>
-                <th scope="col">Class</th>
-                <th scope="col" class="d-width50">Output</th>
+                <th scope="col" class="d-width25">Class</th>
+                <th scope="col">Output</th>
             </tr>
         </thead>
         <tbody>
