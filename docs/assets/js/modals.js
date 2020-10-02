@@ -40,7 +40,7 @@ $(document).ready(function() {
         e.stopPropagation();
         e.preventDefault();
 
-        $(banner).toggleClass('d-d-none');
+        $(banner).removeClass('d-d-none');
     });
 
     $(close).on('click', function(e) {
@@ -54,11 +54,11 @@ $(document).ready(function() {
         if ($('.js-example-modal.d-modal--full')) {
             window.setTimeout(function() {
                 $(modal).removeClass('d-modal--full');
-            }, 100);
+            }, 200);
         }
 
         $(body).removeClass('d-of-hidden');
-        $(banner).removeClass('d-d-none').addClass('d-d-none');
+        $(banner).addClass('d-d-none');
 
         if ($('.js-example-modal-btn-cancel.d-btn--danger')) {
             $(btnCancel).removeClass('d-btn--danger').addClass('d-btn');
