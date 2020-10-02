@@ -7433,6 +7433,174 @@ legend.d-label--normal {
   color: #FFF;
   color: var(--white);
 }
+.d-modal {
+  display: flex;
+  visibility: hidden;
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3.2rem;
+  background-color: rgba(20, 23, 33, 0.85);
+  opacity: 0;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  transition: opacity 100ms cubic-bezier(0.645, 0.045, 0.355, 1) 10ms, z-index 0s 200ms, visibility 0s 200ms, -webkit-transform 100ms cubic-bezier(0.645, 0.045, 0.355, 1) 10ms;
+  transition: opacity 100ms cubic-bezier(0.645, 0.045, 0.355, 1) 10ms, z-index 0s 200ms, visibility 0s 200ms, transform 100ms cubic-bezier(0.645, 0.045, 0.355, 1) 10ms;
+  transition: opacity 100ms cubic-bezier(0.645, 0.045, 0.355, 1) 10ms, z-index 0s 200ms, visibility 0s 200ms, transform 100ms cubic-bezier(0.645, 0.045, 0.355, 1) 10ms, -webkit-transform 100ms cubic-bezier(0.645, 0.045, 0.355, 1) 10ms;
+  will-change: visibility, z-index, opacity;
+}
+@media (prefers-reduced-motion) {
+  .d-modal {
+    transition: none;
+  }
+}
+.d-modal__dialog {
+  visibility: hidden;
+  position: relative;
+  z-index: -1;
+  width: 100%;
+  max-width: 62.8rem;
+  max-height: 100%;
+  padding: 2.4rem;
+  border-radius: 0.8rem;
+  background-color: #FFF;
+  background-color: #FFF;
+  background-color: var(--white);
+  box-shadow: 0 0.2rem 1.6rem 0 rgba(20, 23, 33, 0.08), 0 0.2rem 0.4rem 0 rgba(20, 23, 33, 0.04), 0 0.1rem 0.2rem 0 rgba(20, 23, 33, 0.03);
+  opacity: 0;
+  color: #141721;
+  color: #141721;
+  color: var(--slate);
+  font-size: 1.6rem;
+  font-size: 1.6rem;
+  font-size: var(--fs16);
+  line-height: calc(1em + 8px);
+  line-height: calc(1em + 8px);
+  line-height: var(--lh8);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 30%, 0) scale3d(0.75, 0.75, 0.75);
+          transform: translate3d(0, 30%, 0) scale3d(0.75, 0.75, 0.75);
+  transition: opacity 200ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, z-index 0s 200ms, visibility 0s 200ms, -webkit-transform 100ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+  transition: opacity 200ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, z-index 0s 200ms, visibility 0s 200ms, transform 100ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+  transition: opacity 200ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, z-index 0s 200ms, visibility 0s 200ms, transform 100ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, -webkit-transform 100ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+  will-change: visibility, z-index, opacity, tranform;
+  overflow-y: auto;
+}
+.d-modal__dialog > * + * {
+  margin-top: 1.6rem !important;
+}
+.d-modal[aria-hidden="false"],
+.d-modal[aria-hidden="false"] .d-modal__dialog {
+  visibility: visible;
+  z-index: 701;
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+          transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+  transition: opacity 100ms cubic-bezier(0.645, 0.045, 0.355, 1) 10ms, z-index 0s 0s, visibility 0s 0s, -webkit-transform 100ms cubic-bezier(0.645, 0.045, 0.355, 1) 10ms;
+  transition: opacity 100ms cubic-bezier(0.645, 0.045, 0.355, 1) 10ms, z-index 0s 0s, visibility 0s 0s, transform 100ms cubic-bezier(0.645, 0.045, 0.355, 1) 10ms;
+  transition: opacity 100ms cubic-bezier(0.645, 0.045, 0.355, 1) 10ms, z-index 0s 0s, visibility 0s 0s, transform 100ms cubic-bezier(0.645, 0.045, 0.355, 1) 10ms, -webkit-transform 100ms cubic-bezier(0.645, 0.045, 0.355, 1) 10ms;
+}
+.d-modal__footer {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  margin: -0.4rem;
+}
+.d-modal__footer > * {
+  margin: 0.4rem;
+}
+.d-modal__title {
+  margin: 0 !important;
+  font-size: 2.4rem;
+  font-size: 2.4rem;
+  font-size: var(--fs24);
+  font-weight: 700;
+  font-weight: 700;
+  font-weight: var(--fw-bold);
+  line-height: calc(1em + 4px);
+  line-height: calc(1em + 4px);
+  line-height: var(--lh4);
+}
+.d-modal__copy {
+  max-width: 75ch;
+  margin: 0;
+}
+.d-modal__close {
+  position: absolute;
+  top: 0.8rem;
+  right: 0.8rem;
+  margin: 0 !important;
+}
+.d-modal__banner {
+  position: relative;
+  width: 100%;
+  max-width: 62.8rem;
+  padding: 1.1rem 2.4rem 1rem;
+  border-radius: 0.8rem 0.8rem 0 0;
+  background-color: #FFF2C1;
+  background-color: #FFF2C1;
+  background-color: var(--sunflower-lighter);
+  font-size: 1.4rem;
+  font-size: 1.4rem;
+  font-size: var(--fs14);
+  line-height: calc(1em + 6px);
+  line-height: calc(1em + 6px);
+  line-height: var(--lh6);
+}
+.d-modal__banner:not(.d-d-none) + .d-modal__dialog {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.d-modal--full {
+  overflow: hidden scroll;
+  padding: 0;
+  background-color: #FFF;
+  background-color: #FFF;
+  background-color: var(--white);
+  -webkit-transform: unset !important;
+          transform: unset !important;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.d-modal--full .d-modal__dialog {
+  display: flex;
+  flex-direction: column;
+  max-width: unset;
+  height: 100%;
+  padding: 3.2rem;
+  border-radius: 0;
+  -webkit-transform: unset !important;
+          transform: unset !important;
+}
+.d-modal--full,
+.d-modal--full .d-modal__dialog {
+  transition: opacity 200ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, z-index 0s 200ms, visibility 0s 200ms;
+}
+.d-modal--full .d-modal__footer {
+  margin: -1.6rem -1.2rem;
+  margin-top: auto !important;
+}
+.d-modal--full .d-modal__banner {
+  max-width: unset;
+  padding-right: 2.4rem;
+  padding-left: 2.4rem;
+  border-radius: 0;
+}
+.d-modal--danger {
+  background-color: rgba(66, 22, 32, 0.95);
+}
+.d-modal--danger .d-modal__title {
+  color: #7A0D20;
+  color: #7A0D20;
+  color: var(--fc-wildberry-text);
+}
 .d-checkbox,
 .d-radio {
   flex: 0 auto;
@@ -15692,6 +15860,12 @@ body {
   margin-bottom: 0;
   font-size: 1.6rem;
   line-height: 1.75;
+}
+.dialtone-copy__normal li {
+  margin: 0.8rem 0;
+}
+.dialtone-copy__normal li:last-child {
+  margin-bottom: 0;
 }
 .dialtone-table-wrapper {
   max-width: 74rem;

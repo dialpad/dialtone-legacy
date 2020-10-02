@@ -1,0 +1,222 @@
+//
+//  DIALTONE
+//  COMPONENTS: MODALS
+//
+//  These are modal classes for Dialpad's design system Dialtone.
+//  For further documentation of these and other classes,
+//  visit https://dialpad.design/components/modals
+//
+//  TABLE OF CONTENTS
+//  • BASE STYLES
+//    - Wrapper
+//    - Dialog
+//    - Make them appear
+//  • MODAL BACKGROUND
+//  • HEADER
+//  • CONTENT
+//  • FOOTER
+//  • TRANSITIONS
+//
+//  ============================================================================
+//  $   BASE STYLES
+//  ============================================================================
+//  $$  WRAPPER
+//  ----------------------------------------------------------------------------
+.d-modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: @spacing32;
+    background-color: fade(@slate, 85%);
+
+    z-index: @zi-hide;
+    visibility: hidden;
+    opacity: 0;
+    backface-visibility: hidden;
+
+    transition:
+        opacity 100ms @transition--cubic-inOut 10ms,
+        z-index 0s 200ms,
+        visibility 0s 200ms,
+        transform 100ms @transition--cubic-inOut 10ms;
+    will-change: visibility, z-index, opacity;
+
+    @media (prefers-reduced-motion) {
+        transition: none;
+    }
+}
+
+//  $$  MODAL DIALOG
+//  ----------------------------------------------------------------------------
+.d-modal__dialog {
+    position: relative;
+    overflow-y: auto;
+    padding: @spacing24;
+    width: 100%;
+    max-width: @fixed-size5; // 628px
+    max-height: 100%;
+
+    border-radius: @border-radius--md;
+    background-color: var(--white);
+    box-shadow: @box-shadow--card;
+
+    font-size: var(--fs16);
+    line-height: var(--lh8);
+    color: var(--slate);
+
+    z-index: @zi-hide;
+    visibility: hidden;
+    opacity: 0;
+    backface-visibility: hidden;
+    transform: translate3d(0,30%,0) scale3d(.75,.75,.75);
+
+    transition:
+        opacity 200ms @transition--cubic-inOut 0s,
+        z-index 0s 200ms,
+        visibility 0s 200ms,
+        transform 100ms @transition--cubic-inOut 0s;
+    will-change: visibility, z-index, opacity, tranform;
+
+    .d-stack16();
+}
+
+//  $$   MAKE THEM APPEAR
+//  ----------------------------------------------------------------------------
+.d-modal[aria-hidden="false"],
+.d-modal[aria-hidden="false"] .d-modal__dialog {
+    visibility: visible;
+    opacity: 1;
+    z-index: @zi-modal;
+    transform: translate3d(0,0,0) scale3d(1,1,1);
+    transition:
+        opacity 100ms @transition--cubic-inOut 10ms,
+        z-index 0s 0s,
+        visibility 0s 0s,
+        transform 100ms @transition--cubic-inOut 10ms;
+}
+
+
+//  ============================================================================
+//  $   MODAL AREAS
+//  ----------------------------------------------------------------------------
+.d-modal__footer {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    margin: -@spacing4;
+
+    > * {
+        margin: @spacing4;
+    }
+}
+
+
+//  ============================================================================
+//  $   TYPE STYLES
+//  ============================================================================
+//  $$  TITLE
+//  ----------------------------------------------------------------------------
+.d-modal__title {
+    margin: 0 !important;
+    font-size: var(--fs24);
+    font-weight: var(--fw-bold);
+    line-height: var(--lh4);
+}
+
+//  $$  COPY
+//  ----------------------------------------------------------------------------
+.d-modal__copy {
+    margin: 0;
+    max-width: 75ch;
+}
+
+
+//  ============================================================================
+//  $   BUTTONS
+//  ----------------------------------------------------------------------------
+.d-modal__close {
+    position: absolute;
+    top: @spacing8;
+    right: @spacing8;
+    margin: 0 !important;
+}
+
+
+//  ============================================================================
+//  $   BANNERS
+//  ----------------------------------------------------------------------------
+.d-modal__banner {
+    position: relative;
+    width: 100%;
+    max-width: @fixed-size5; // 628px
+    padding: 1.1rem @spacing24 1rem;
+    background-color: var(--sunflower-lighter);
+    border-radius: @border-radius--md @border-radius--md 0 0;
+    font-size: var(--fs14);
+    line-height: var(--lh6);
+
+    &:not(.d-d-none) + .d-modal__dialog {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+}
+
+
+//  ============================================================================
+//  $   MODIFYING STYLES
+//  ============================================================================
+//  $$  FULL WIDTH
+//  ----------------------------------------------------------------------------
+.d-modal--full {
+    padding: 0;
+    overflow: hidden scroll;
+    transform: unset !important;
+    background-color: var(--white);
+
+    .d-modal__dialog {
+        display: flex;
+        flex-direction: column;
+        padding: @spacing32;
+        max-width: unset;
+        height: 100%;
+        border-radius: 0;
+        transform: unset !important;
+    }
+
+    &,
+    .d-modal__dialog {
+        transition:
+            opacity 200ms @transition--cubic-inOut 0s,
+            z-index 0s 200ms,
+            visibility 0s 200ms;
+    }
+
+    .d-modal__footer {
+        margin: -@spacing16 -@spacing12;
+        margin-top: auto !important;
+    }
+
+    .d-modal__banner {
+        max-width: unset;
+        border-radius: 0;
+        padding-left: @spacing24;
+        padding-right: @spacing24;
+    }
+}
+
+//  $$  DANGER
+//  ----------------------------------------------------------------------------
+.d-modal--danger {
+    background-color: fade(@rose-darker, 95%);
+
+    .d-modal__title {
+        color: var(--fc-wildberry-text);
+    }
+}
