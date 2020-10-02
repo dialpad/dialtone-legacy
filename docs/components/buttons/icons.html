@@ -16,12 +16,12 @@
         {% assign desc = icon.description %}
         {% assign label = icon.label %}
         <tr>
-            <th scope="row" class="d-padding-left16">
+            <th scope="row" class="d-pl16">
                 <span class="d-fs14">{{ title }}</span><br/>
                 <span class="d-fw-normal d-fs12">{{ desc }}</span>
             </th>
             <td>
-                <button class="d-width100{% if name == 'center'%} d-margin-x4--negative{% else %} d-margin-x2--negative{% endif %}{% if name != 'center' %} d-btn--primary{% else %} d-btn--danger{% endif %}" {% if name == 'left' %}style="justify-content: flex-start"{% endif %} type="button" aria-pressed="false">
+                <button class="d-width100{% if name == 'center'%} d-mxn4{% else %} d-mxn2{% endif %}{% if name != 'center' %} d-btn--primary{% else %} d-btn--danger{% endif %}" {% if name == 'left' %}style="justify-content: flex-start"{% endif %} type="button" aria-pressed="false">
                     <span class="d-btn__icon {% if name == 'right' %} d-btn__icon--last{% endif %}">
                     {% if name == "center" %}
                         {% icon-system "call-end", "js-svg" %}
@@ -31,7 +31,7 @@
                         {% icon-system "search", "js-svg" %}
                     {% endif %}
                     </span>
-                    <span class="d-btn__label{% if name == 'center'%} d-margin-x4{% else %} d-margin-x2{% endif %}{% if name == 'split' or name == 'right' %} d-flex1{% endif %}" {% if name == 'right' %}style="justify-content: flex-start"{% endif %}>{{ label }}</span>
+                    <span class="d-btn__label{% if name == 'center'%} d-mx4{% else %} d-mx2{% endif %}{% if name == 'split' or name == 'right' %} d-flex1{% endif %}" {% if name == 'right' %}style="justify-content: flex-start"{% endif %}>{{ label }}</span>
                 </button>
             </td>
         </tr>

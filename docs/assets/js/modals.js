@@ -74,7 +74,7 @@ $(document).ready(function() {
             $.fn.closeModal(e);
         }
     })
-    $(document).on('click', function(e) {
+    $(modal).on('click', function(e) {
         var target = $(e.target);
 
         if(!target.closest(dialog).length && dialog.is(":visible")) {
