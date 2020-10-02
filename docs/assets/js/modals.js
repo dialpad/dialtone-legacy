@@ -2,13 +2,36 @@ $(document).ready(function() {
     var body = $('body');
     var launchBtn = $('.js-launch-example-modal');
     var launchFull = $('.js-launch-example-modal-full');
+    var launchDanger = $('.js-launch-example-modal-danger');
     var launchBanner = $('.js-launch-example-modal-banner');
-    var launchBannerFull = $('.js-launch-example-modal-banner-full');
     var modal = $('.js-example-modal');
-    var modalFull = $('.js-example-modal-full');
     var banner = $('.js-example-modal-banner');
-    var bannerFull = $('.js-example-modal-banner-full');
+    var btnSave = $('.js-example-modal-btn-save');
+    var btnCancel = $('.js-example-modal-btn-cancel');
     var close = $('.js-example-modal-close');
+
+    function closeModal(e) {
+        e.stopPropagation();
+        e.preventDefault();
+
+        $(modal).attr('aria-hidden','true');
+        if ($('.js-example-modal.d-modal--danger')) {
+            $(modal).removeClass('d-modal--danger');
+        }
+        if ($('.js-example-modal.d-modal--full')) {
+            $(modal).removeClass('d-modal--full');
+        }
+
+        $(body).removeClass('d-of-hidden');
+        $(banner).removeClass('d-d-none').addClass('d-d-none');
+
+        if ($('.js-example-modal-btn-cancel.d-btn--danger')) {
+            $(btnCancel).removeClass('d-btn--danger').addClass('d-btn');
+        }
+        if ($('.js-example-modal-btn-save.d-btn--danger--primary')) {
+            $(btnSave).removeClass('d-btn--danger--primary').addClass('d-btn--primary');
+        }
+    }
 
     $(launchBtn).on('click', function(e) {
         e.stopPropagation();
@@ -22,7 +45,17 @@ $(document).ready(function() {
         e.stopPropagation();
         e.preventDefault();
 
-        $(modalFull).attr('aria-hidden','false');
+        $(modal).attr('aria-hidden','false').addClass('d-modal--full');
+        $(body).addClass('d-of-hidden');
+    });
+
+    $(launchDanger).on('click', function(e) {
+        e.stopPropagation();
+        e.preventDefault();
+
+        $(modal).attr('aria-hidden','false').addClass('d-modal--danger');
+        $(btnCancel).removeClass('d-btn').addClass('d-btn--danger');
+        $(btnSave).removeClass('d-btn--primary').addClass('d-btn--danger--primary');
         $(body).addClass('d-of-hidden');
     });
 
@@ -33,21 +66,11 @@ $(document).ready(function() {
         $(banner).toggleClass('d-d-none');
     });
 
-    $(launchBannerFull).on('click', function(e) {
-        e.stopPropagation();
-        e.preventDefault();
-
-        $(bannerFull).toggleClass('d-d-none');
+    $(btnCancel).on('click', function(e) {
+        closeModal(e);
     });
 
     $(close).on('click', function(e) {
-        e.stopPropagation();
-        e.preventDefault();
-
-        $(modal).attr('aria-hidden','true');
-        $(modalFull).attr('aria-hidden','true');
-        $(body).removeClass('d-of-hidden');
-        $(banner).removeClass('d-d-none').addClass('d-d-none');
-        $(bannerFull).removeClass('d-d-none').addClass('d-d-none');
+        closeModal(e);
     });
 });
