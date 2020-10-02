@@ -8,30 +8,7 @@ $(document).ready(function() {
     var banner = $('.js-example-modal-banner');
     var btnSave = $('.js-example-modal-btn-save');
     var btnCancel = $('.js-example-modal-btn-cancel');
-    var close = $('.js-example-modal-close');
-
-    function closeModal(e) {
-        e.stopPropagation();
-        e.preventDefault();
-
-        $(modal).attr('aria-hidden','true');
-        if ($('.js-example-modal.d-modal--danger')) {
-            $(modal).removeClass('d-modal--danger');
-        }
-        if ($('.js-example-modal.d-modal--full')) {
-            $(modal).removeClass('d-modal--full');
-        }
-
-        $(body).removeClass('d-of-hidden');
-        $(banner).removeClass('d-d-none').addClass('d-d-none');
-
-        if ($('.js-example-modal-btn-cancel.d-btn--danger')) {
-            $(btnCancel).removeClass('d-btn--danger').addClass('d-btn');
-        }
-        if ($('.js-example-modal-btn-save.d-btn--danger--primary')) {
-            $(btnSave).removeClass('d-btn--danger--primary').addClass('d-btn--primary');
-        }
-    }
+    var close = $('.js-example-modal-btn-cancel, .js-example-modal-close');
 
     $(launchBtn).on('click', function(e) {
         e.stopPropagation();
@@ -66,11 +43,28 @@ $(document).ready(function() {
         $(banner).toggleClass('d-d-none');
     });
 
-    $(btnCancel).on('click', function(e) {
-        closeModal(e);
-    });
-
     $(close).on('click', function(e) {
-        closeModal(e);
+        e.stopPropagation();
+        e.preventDefault();
+
+        $(modal).attr('aria-hidden','true');
+        if ($('.js-example-modal.d-modal--danger')) {
+            $(modal).removeClass('d-modal--danger');
+        }
+        if ($('.js-example-modal.d-modal--full')) {
+            window.setTimeout(function() {
+                $(modal).removeClass('d-modal--full');
+            }, 100);
+        }
+
+        $(body).removeClass('d-of-hidden');
+        $(banner).removeClass('d-d-none').addClass('d-d-none');
+
+        if ($('.js-example-modal-btn-cancel.d-btn--danger')) {
+            $(btnCancel).removeClass('d-btn--danger').addClass('d-btn');
+        }
+        if ($('.js-example-modal-btn-save.d-btn--danger--primary')) {
+            $(btnSave).removeClass('d-btn--danger--primary').addClass('d-btn--primary');
+        }
     });
 });
