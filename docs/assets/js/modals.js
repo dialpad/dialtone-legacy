@@ -8,7 +8,6 @@ $(document).ready(function() {
     var modalFull = $('.js-example-modal-full');
     var banner = $('.js-example-modal-banner');
     var bannerFull = $('.js-example-modal-banner-full');
-    var close = $('.js-example-modal-close');
 
     $(launchBtn).on('click', function(e) {
         e.stopPropagation();
@@ -40,7 +39,7 @@ $(document).ready(function() {
         $(bannerFull).toggleClass('d-d-none');
     });
 
-    $(close).on('click', function(e) {
+    $('.js-example-modal-close, .js-example-modal-cancel').on('click', function(e) {
         e.stopPropagation();
         e.preventDefault();
 
