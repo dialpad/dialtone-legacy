@@ -16,7 +16,7 @@ description: Dialtone is available in both <a href="#dialpad">Dialpad</a> and <a
 <div class="d-stack16">
     <h2 id="uberconference" class="dialtone-title__section">Using Dialtone in Less</h2>
     <p class="dialtone-copy__normal">The preferred method of incorporating Dialtone into Dialpad and UberConference is by using it within a semantic CSS class, written in Less. <a href="http://lesscss.org/" target="_blank">Less</a> is a powerful CSS pre-processor much like SCSS or SASS. It allows you to create and modify variables, utilize mixins, create functions, and incorporate styles within other classes easily.</p>
-    <p class="dialtone-copy__normal">Given that we prefer semantic classes as compared to utility or atomic classes, this means that Dialtone <em>only provides classes and styles for items which reflect design decisions.</em> For example, Dialtone provides set spacing sizes (e.g. <span class="code-example--inline">.d-margin16</span> == <span class="code-example--inline">margin: 16px;</span>), but it does not provide common CSS properties in single-purpose classes (e.g. <span class="code-example--inline">.d-float--left</span> == <span class="code-example--inline">float: left;</span>).</p>
+    <p class="dialtone-copy__normal">Given that we prefer semantic classes as compared to utility or atomic classes, this means that Dialtone <em>only provides classes and styles for items which reflect design decisions.</em> For example, Dialtone provides set spacing sizes (e.g. <span class="code-example--inline">.d-m16</span> == <span class="code-example--inline">margin: 16px;</span>), but it does not provide common CSS properties in single-purpose classes (e.g. <span class="code-example--inline">.d-float--left</span> == <span class="code-example--inline">float: left;</span>).</p>
     <p class="dialtone-copy__normal">Here's an example of how you include Dialtone in your Less:</p>
 {% highlight css %}
 /* Import Dialtone definitions. Ensure the relative path is correct. */
@@ -67,9 +67,9 @@ description: Dialtone is available in both <a href="#dialpad">Dialpad</a> and <a
 
 .vue-select-menu-option {
   display: block;
-  .d-padding8();
+  padding: @spacing8;
   color: @slate;
-  font-size: @fs12;
+  font-size: var(--fs12);
   text-align: left;
   cursor: pointer;
 }

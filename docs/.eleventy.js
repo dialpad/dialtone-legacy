@@ -14,9 +14,27 @@ module.exports = function(eleventyConfig) {
 
     //  Icon shortcode
     //  Re-used (with love) from Stack Overflow's Stacks. Extended for our purposes
-    eleventyConfig.addLiquidShortcode("icon", function(name, folder, classes, dimension) {
+    eleventyConfig.addLiquidShortcode("icon-system", function(name, classes, dimension) {
         var fs = require("fs");
-        var path = "_includes/icons/" + folder + "/" + name + ".svg";
+        var path = "_includes/icons/system/" + name + ".svg";
+        var svg = fs.readFileSync(path).toString("utf-8");
+        var defaultClasses = "d-svg__" + name;
+
+        // If we have classes, add them
+        if (classes != null) {
+            svg = svg.replace(defaultClasses, defaultClasses + " " + classes);
+        }
+
+        // If we need to change the size, do that too
+        if (dimension != null) {
+            svg = svg.replace('viewBox="0 0 24 24"', 'viewBox="0 0' + dimension + dimension + '"');
+        }
+
+        return svg;
+    });
+    eleventyConfig.addLiquidShortcode("icon-brand", function(name, classes, dimension) {
+        var fs = require("fs");
+        var path = "_includes/icons/brand/" + name + ".svg";
         var svg = fs.readFileSync(path).toString("utf-8");
         var defaultClasses = "d-svg__" + name;
 
