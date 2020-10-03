@@ -31,7 +31,7 @@
 .d-background-color--blue-dark               { background-color: @blue-dark !important; }
 .d-background-color--blue                    { background-color: @blue !important; }
 .d-background-color--blue-light              { background-color: @blue-light !important; }
-.d-background-color--blue-lighter            { background-color: @blue-lighter !important; }\
+.d-background-color--blue-lighter            { background-color: @blue-lighter !important; }
 .d-background-color--navy                    { background-color: @navy !important; }
 .d-background-color--navy-light              { background-color: @navy-light !important; }
 .d-background-color--navy-lighter            { background-color: @navy-lighter !important; }
@@ -149,39 +149,54 @@
 @light-background--stop2:   @white;
 
 //  --  Dark background gradients
-.d-linear-gradient--dark-to-top {
-    background-image: linear-gradient(to top, @dark-background--stop1 0%, @dark-background--stop2 100%);
-}
-.d-linear-gradient--dark-to-right {
-    background-image: linear-gradient(to right, @dark-background--stop1 0%, @dark-background--stop2 100%);
-}
-.d-linear-gradient--dark-to-bottom {
-    background-image: linear-gradient(to bottom, @dark-background--stop1 0%, @dark-background--stop2 100%);
-}
-.d-linear-gradient--dark-to-left {
-    background-image: linear-gradient(to left, @dark-background--stop1 0%, @dark-background--stop2 100%);
-}
+.d-linear-gradient--dark-to-top     { background-image: linear-gradient(to top, @dark-background--stop1 0%, @dark-background--stop2 100%); }
+.d-linear-gradient--dark-to-right   { background-image: linear-gradient(to right, @dark-background--stop1 0%, @dark-background--stop2 100%); }
+.d-linear-gradient--dark-to-bottom  { background-image: linear-gradient(to bottom, @dark-background--stop1 0%, @dark-background--stop2 100%); }
+.d-linear-gradient--dark-to-left    { background-image: linear-gradient(to left, @dark-background--stop1 0%, @dark-background--stop2 100%); }
 
 //  --  Light background gradients
-.d-linear-gradient--light-to-top {
-    background-image: linear-gradient(to top, @light-background--stop1 0%, @light-background--stop2 100%);
-}
-.d-linear-gradient--light-to-right {
-    background-image: linear-gradient(to right, @light-background--stop1 0%, @light-background--stop2 100%);
-}
-.d-linear-gradient--light-to-bottom {
-    background-image: linear-gradient(to bottom, @light-background--stop1 0%, @light-background--stop2 100%);
-}
-.d-linear-gradient--light-to-left {
-    background-image: linear-gradient(to left, @light-background--stop1 0%, @light-background--stop2 100%);
-}
+.d-linear-gradient--light-to-top    { background-image: linear-gradient(to top, @light-background--stop1 0%, @light-background--stop2 100%); }
+.d-linear-gradient--light-to-right  { background-image: linear-gradient(to right, @light-background--stop1 0%, @light-background--stop2 100%); }
+.d-linear-gradient--light-to-bottom { background-image: linear-gradient(to bottom, @light-background--stop1 0%, @light-background--stop2 100%); }
+.d-linear-gradient--light-to-left   { background-image: linear-gradient(to left, @light-background--stop1 0%, @light-background--stop2 100%); }
 
 //  New classes. Use these moving forward
-.d-bgg-slate                     { background-image: linear-gradient(var(--bgd), hsl(hue(@slate) saturation(@slate) calc(lightness(@slate) - 5%)) 0%, hsl(hue(@slate) saturation(@slate) calc(lightness(@slate) + 5%)) 100%); }
+.mixin-bgg(@color) {
+    background-image: linear-gradient(var(--bgg-direction), hsl(hue(@color) saturation(@color) calc(lightness(@color) - var(--bgg-percentage))) 0%, hsl(hue(@color) saturation(@color) calc(lightness(@color) + var(--bgg-percentage))) 100%) !important;
+}
+
+.d-bgg-slate                    { .mixin-bgg(@slate); }
+.d-bgg-slate-light              { .mixin-bgg(@slate-light); }
+.d-bgg-slate-lighter            { .mixin-bgg(@slate-lighter); }
+.d-bgg-ash                      { .mixin-bgg(@ash); }
+.d-bgg-ash-dark                 { .mixin-bgg(@ash-dark); }
+.d-bgg-ash-darker               { .mixin-bgg(@ash-darker); }
+.d-bgg-blue                     { .mixin-bgg(@blue); }
+.d-bgg-blue-light               { .mixin-bgg(@blue-light); }
+.d-bgg-blue-lighter             { .mixin-bgg(@blue-lighter); }
+.d-bgg-navy                     { .mixin-bgg(@navy); }
+.d-bgg-navy-light               { .mixin-bgg(@navy-light); }
+.d-bgg-navy-lighter             { .mixin-bgg(@navy-lighter); }
+.d-bgg-emerald                  { .mixin-bgg(@emerald); }
+.d-bgg-emerald-light            { .mixin-bgg(@emerald-light); }
+.d-bgg-emerald-dark             { .mixin-bgg(@emerald-dark); }
+.d-bgg-bright-emerald           { .mixin-bgg(@bright-emerald); }
+.d-bgg-crimson                  { .mixin-bgg(@crimson); }
+.d-bgg-wildberry                { .mixin-bgg(@wildberry); }
+.d-bgg-sunflower                { .mixin-bgg(@sunflower); }
+.d-bgg-sunflower-light          { .mixin-bgg(@sunflower-light); }
+.d-bgg-berry                    { .mixin-bgg(@berry); }
+.d-bgg-berry-light              { .mixin-bgg(@berry-light); }
+.d-bgg-berry-lighter            { .mixin-bgg(@berry-lighter); }
+.d-bgg-berry-dark               { .mixin-bgg(@berry-dark); }
+.d-bgg-rose                     { .mixin-bgg(@rose); }
+.d-bgg-white                    { .mixin-bgg(@white); }
 
 
 //  ============================================================================
-//  $   BACKGROUND OPACITY
+//  $   BACKGROUND CSS VAR CLASSES
+//  ============================================================================
+//  $$  OPACITY
 //  ----------------------------------------------------------------------------
 .d-bgo0                         { --bgo: 0% !important; }
 .d-bgo10                        { --bgo: 10% !important; }
@@ -193,29 +208,22 @@
 .d-bgo99                        { --bgo: 99% !important; }
 .d-bgo100                       { --bgo: 100% !important; }
 
-
-//  ============================================================================
-//  $   BACKGROUND DIRECTION
+//  $$  DIRECTION
 //  ----------------------------------------------------------------------------
-.d-bgd-top                      { --bgd: to top !important; }
-.d-bgd-top-left                 { --bgd: to top left !important; }
-.d-bgd-top-right                { --bgd: to top right !important; }
-.d-bgd-right                    { --bgd: to right !important; }
-.d-bgd-bottom                   { --bgd: to bottom !important; }
-.d-bgd-bottom-left              { --bgd: to bottom left !important; }
-.d-bgd-bottom-right             { --bgd: to bottom right !important; }
-.d-bgd-left                     { --bgd: to left !important; }
+.d-bgd-top                      { --bgg-direction: to top !important; }
+.d-bgd-top-left                 { --bgg-direction: to top left !important; }
+.d-bgd-top-right                { --bgg-direction: to top right !important; }
+.d-bgd-right                    { --bgg-direction: to right !important; }
+.d-bgd-bottom                   { --bgg-direction: to bottom !important; }
+.d-bgd-bottom-left              { --bgg-direction: to bottom left !important; }
+.d-bgd-bottom-right             { --bgg-direction: to bottom right !important; }
+.d-bgd-left                     { --bgg-direction: to left !important; }
 
-
-//  ============================================================================
-//  $   BOX SHADOWS
+//  $$  PERCENTAGE
 //  ----------------------------------------------------------------------------
-.d-box-shadow--none     { box-shadow: @box-shadow--none; }
-.d-box-shadow--sm       { box-shadow: @box-shadow--sm; }
-.d-box-shadow--md       { box-shadow: @box-shadow--md; }
-.d-box-shadow--lg       { box-shadow: @box-shadow--lg; }
-.d-box-shadow--xl       { box-shadow: @box-shadow--xl; }
-.d-box-shadow--card     { box-shadow: @box-shadow--card; }
+.d-bgp-sm                       { --bgg-percentage: 2.5% !important; }
+.d-bgp-lg                       { --bgg-percentage: 12.5% !important; }
+.d-bgp-xl                       { --bgg-percentage: 17.5% !important; }
 
 
 //  ============================================================================
@@ -225,46 +233,85 @@
 //  ============================================================================
 //  $$  BACKGROUND OPACITY FILLS
 //  ----------------------------------------------------------------------------
+//  Older variables and classes. Will be deprecated in a future version
 //  --  WHITE
-.d-background-opacity--white95      { background-color: fade(@white, 95%); }
-.d-background-opacity--white90      { background-color: fade(@white, 90%); }
-.d-background-opacity--white85      { background-color: fade(@white, 85%); }
-.d-background-opacity--white80      { background-color: fade(@white, 80%); }
-.d-background-opacity--white75      { background-color: fade(@white, 75%); }
-.d-background-opacity--white50      { background-color: fade(@white, 50%); }
-.d-background-opacity--white25      { background-color: fade(@white, 25%); }
-.d-background-opacity--white15      { background-color: fade(@white, 15%); }
-.d-background-opacity--white10      { background-color: fade(@white, 10%); }
-.d-background-opacity--white5       { background-color: fade(@white, 5%); }
-.d-background-opacity--white0       { background-color: fade(@white, 0%); }
+.d-background-opacity--white95  { background-color: fade(@white, 95%); }
+.d-background-opacity--white90  { background-color: fade(@white, 90%); }
+.d-background-opacity--white85  { background-color: fade(@white, 85%); }
+.d-background-opacity--white80  { background-color: fade(@white, 80%); }
+.d-background-opacity--white75  { background-color: fade(@white, 75%); }
+.d-background-opacity--white50  { background-color: fade(@white, 50%); }
+.d-background-opacity--white25  { background-color: fade(@white, 25%); }
+.d-background-opacity--white15  { background-color: fade(@white, 15%); }
+.d-background-opacity--white10  { background-color: fade(@white, 10%); }
+.d-background-opacity--white5   { background-color: fade(@white, 5%); }
+.d-background-opacity--white0   { background-color: fade(@white, 0%); }
 
 //  --  SLATE
-.d-background-opacity--slate95      { background-color: fade(@slate, 95%); }
-.d-background-opacity--slate90      { background-color: fade(@slate, 90%); }
-.d-background-opacity--slate85      { background-color: fade(@slate, 85%); }
-.d-background-opacity--slate80      { background-color: fade(@slate, 80%); }
-.d-background-opacity--slate75      { background-color: fade(@slate, 75%); }
-.d-background-opacity--slate50      { background-color: fade(@slate, 50%); }
-.d-background-opacity--slate25      { background-color: fade(@slate, 25%); }
-.d-background-opacity--slate15      { background-color: fade(@slate, 15%); }
-.d-background-opacity--slate10      { background-color: fade(@slate, 10%); }
-.d-background-opacity--slate5       { background-color: fade(@slate, 5%); }
-.d-background-opacity--slate0       { background-color: fade(@slate, 0%); }
+.d-background-opacity--slate95  { background-color: fade(@slate, 95%); }
+.d-background-opacity--slate90  { background-color: fade(@slate, 90%); }
+.d-background-opacity--slate85  { background-color: fade(@slate, 85%); }
+.d-background-opacity--slate80  { background-color: fade(@slate, 80%); }
+.d-background-opacity--slate75  { background-color: fade(@slate, 75%); }
+.d-background-opacity--slate50  { background-color: fade(@slate, 50%); }
+.d-background-opacity--slate25  { background-color: fade(@slate, 25%); }
+.d-background-opacity--slate15  { background-color: fade(@slate, 15%); }
+.d-background-opacity--slate10  { background-color: fade(@slate, 10%); }
+.d-background-opacity--slate5   { background-color: fade(@slate, 5%); }
+.d-background-opacity--slate0   { background-color: fade(@slate, 0%); }
 
 
 //  $$  GENERIC OPACITY CLASSES
 //  ----------------------------------------------------------------------------
-.d-opacity0     { opacity: 0; }
-.d-opacity5     { opacity: .05; }
-.d-opacity10    { opacity: .1; }
-.d-opacity20    { opacity: .2; }
-.d-opacity25    { opacity: .25; }
-.d-opacity30    { opacity: .3; }
-.d-opacity40    { opacity: .4; }
-.d-opacity50    { opacity: .5; }
-.d-opacity60    { opacity: .6; }
-.d-opacity70    { opacity: .7; }
-.d-opacity75    { opacity: .75; }
-.d-opacity80    { opacity: .8; }
-.d-opacity90    { opacity: .9; }
-.d-opacity100   { opacity: 1; }
+//  Older variables and classes. Will be deprecated in a future version
+.d-opacity0                     { opacity: 0; }
+.d-opacity5                     { opacity: .05; }
+.d-opacity10                    { opacity: .1; }
+.d-opacity20                    { opacity: .2; }
+.d-opacity25                    { opacity: .25; }
+.d-opacity30                    { opacity: .3; }
+.d-opacity40                    { opacity: .4; }
+.d-opacity50                    { opacity: .5; }
+.d-opacity60                    { opacity: .6; }
+.d-opacity70                    { opacity: .7; }
+.d-opacity75                    { opacity: .75; }
+.d-opacity80                    { opacity: .8; }
+.d-opacity90                    { opacity: .9; }
+.d-opacity100                   { opacity: 1; }
+
+//  New classes. Use these moving forward
+.d-o0                           { opacity: 0 !important; }
+.d-o5                           { opacity: .05 !important; }
+.d-o10                          { opacity: .1 !important; }
+.d-o20                          { opacity: .2 !important; }
+.d-o25                          { opacity: .25 !important; }
+.d-o30                          { opacity: .3 !important; }
+.d-o40                          { opacity: .4 !important; }
+.d-o50                          { opacity: .5 !important; }
+.d-o60                          { opacity: .6 !important; }
+.d-o70                          { opacity: .7 !important; }
+.d-o75                          { opacity: .75 !important; }
+.d-o80                          { opacity: .8 !important; }
+.d-o90                          { opacity: .9 !important; }
+.d-o100                         { opacity: 1 !important; }
+.d-o-unset                      { opacity: unset !important; }
+
+
+//  ============================================================================
+//  $   BOX SHADOWS
+//  ----------------------------------------------------------------------------
+//  Older variables and classes. Will be deprecated in a future version
+.d-box-shadow--none             { box-shadow: @box-shadow--none; }
+.d-box-shadow--sm               { box-shadow: @box-shadow--sm; }
+.d-box-shadow--md               { box-shadow: @box-shadow--md; }
+.d-box-shadow--lg               { box-shadow: @box-shadow--lg; }
+.d-box-shadow--xl               { box-shadow: @box-shadow--xl; }
+.d-box-shadow--card             { box-shadow: @box-shadow--card; }
+
+//  New classes. Use these moving forward
+.d-bs-sm                        { box-shadow: @box-shadow--sm !important; }
+.d-bs-md                        { box-shadow: @box-shadow--md !important; }
+.d-bs-lg                        { box-shadow: @box-shadow--lg !important; }
+.d-bs-xl                        { box-shadow: @box-shadow--xl !important; }
+.d-bs-card                      { box-shadow: @box-shadow--card !important; }
+.d-bs-unset                     { box-shadow: unset !important; }

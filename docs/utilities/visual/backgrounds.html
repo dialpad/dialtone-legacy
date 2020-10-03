@@ -11,8 +11,8 @@ description: Dialtone provides both fill and gradient background classes. Most c
             <h3 class="dialtone-title__subsection">{{ color.color }}</h3>
             <div class="dialtone-color-grid__group" style="--color-grid-columns: 1">
                 {% for stop in color.stops %}
-                    <div class="dialtone-color-grid__item d-background-color--{{ stop.stop }} {{ stop.copy }}">
-                        <span class="dialtone-color-grid__label">.d-background-color--{{ stop.stop }}</span>
+                    <div class="dialtone-color-grid__item d-bgc-{{ stop.stop }} {{ stop.copy }}">
+                        <span class="dialtone-color-grid__label">.d-bgc-{{ stop.stop }}</span>
                     </div>
                 {% endfor %}
             </div>
@@ -20,15 +20,15 @@ description: Dialtone provides both fill and gradient background classes. Most c
     {% endfor %}
         <div class="d-stack2">
             <h3 class="dialtone-title__subsection">White / Transparent</h3>
-            <div class="dialtone-color-grid__group d-background-color--slate d-p16 d-border-radius--md" style="--color-grid-columns: 1">
-                <div class="dialtone-color-grid__item d-background-color--white d-fc-slate d-border d-border-color--slate-lightest">
-                    <span class="dialtone-color-grid__label">.d-background-color--white</span>
+            <div class="dialtone-color-grid__group d-bgc-slate d-p16 d-border-radius--md" style="--color-grid-columns: 1">
+                <div class="dialtone-color-grid__item d-bgc-white d-fc-slate d-border d-border-color--slate-lightest">
+                    <span class="dialtone-color-grid__label">.d-bgc-white</span>
                 </div>
-                <div class="dialtone-color-grid__item d-background-color--transparent d-color--light d-border d-border-color--slate-lightest d-border-top-width0">
-                    <span class="dialtone-color-grid__label">.d-background-color--transparent</span>
+                <div class="dialtone-color-grid__item d-bgc-transparent d-color--light d-border d-border-color--slate-lightest d-border-top-width0">
+                    <span class="dialtone-color-grid__label">.d-bgc-transparent</span>
                 </div>
-                <div class="dialtone-color-grid__item d-background-color--unset d-color--light d-border d-border-color--slate-lightest d-border-top-width0">
-                    <span class="dialtone-color-grid__label">.d-background-color--unset</span>
+                <div class="dialtone-color-grid__item d-bgc-unset d-color--light d-border d-border-color--slate-lightest d-border-top-width0">
+                    <span class="dialtone-color-grid__label">.d-bgc-unset</span>
                 </div>
             </div>
         </div>
@@ -36,39 +36,14 @@ description: Dialtone provides both fill and gradient background classes. Most c
 </section>
 <section class="d-stack16">
     <h2 class="dialtone-title__section">Gradients</h2>
-    <div class="d-stack2">
-        <h3 class="dialtone-title__subsection">Dark</h3>
-        <div class="dialtone-color-grid__group" style="--color-grid-columns: 1">
-            <div class="dialtone-color-grid__item d-bgg-slate d-fc-white">
-                <span class="dialtone-color-grid__label">.d-linear-gradient--dark-to-top</span>
+    <div class="dialtone-color-grid__group" style="--color-grid-columns: 1">
+        {% for i in visual-styles.bgg-colors %}
+        {% assign color == i.color %}
+        {% assign copy == i.copy %}
+            <div class="dialtone-color-grid__item d-bgg-{{ color }} d-fc-{{ copy }}">
+                <span class="dialtone-color-grid__label">.d-bgg-{{ color }}</span>
             </div>
-            <div class="dialtone-color-grid__item d-linear-gradient--dark-to-right d-fc-white">
-                <span class="dialtone-color-grid__label">.d-linear-gradient--dark-to-right</span>
-            </div>
-            <div class="dialtone-color-grid__item d-linear-gradient--dark-to-bottom d-fc-white">
-                <span class="dialtone-color-grid__label">.d-linear-gradient--dark-to-bottom</span>
-            </div>
-            <div class="dialtone-color-grid__item d-linear-gradient--dark-to-left d-fc-white">
-                <span class="dialtone-color-grid__label">.d-linear-gradient--dark-to-left</span>
-            </div>
-        </div>
-    </div>
-    <div class="d-stack2">
-        <h3 class="dialtone-title__subsection">Light</h3>
-        <div class="dialtone-color-grid__group" style="--color-grid-columns: 1">
-            <div class="dialtone-color-grid__item d-linear-gradient--light-to-top d-fc-slate">
-                <span class="dialtone-color-grid__label">.d-linear-gradient--light-to-top</span>
-            </div>
-            <div class="dialtone-color-grid__item d-linear-gradient--light-to-right d-fc-slate">
-                <span class="dialtone-color-grid__label">.d-linear-gradient--light-to-right</span>
-            </div>
-            <div class="dialtone-color-grid__item d-linear-gradient--light-to-bottom d-fc-slate">
-                <span class="dialtone-color-grid__label">.d-linear-gradient--light-to-bottom</span>
-            </div>
-            <div class="dialtone-color-grid__item d-linear-gradient--light-to-left d-fc-slate">
-                <span class="dialtone-color-grid__label">.d-linear-gradient--light-to-left</span>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 </section>
 <section class="d-stack16">
