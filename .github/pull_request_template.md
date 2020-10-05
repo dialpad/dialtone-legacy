@@ -6,8 +6,8 @@
 
 ## Before submitting a pull request
 
- - [ ] Have you asked the contributors if a similar effort is already in process or has been solved?
- - [ ] You've reviewed the [contribution guidelines](https://github.com/dialpad/dialtone/blob/staging/.github/CONTRIBUTING.md)?
+ - [ ] Ask the contributors if a similar effort is already in process or has been solved.
+ - [ ] Review the [contribution guidelines](https://github.com/dialpad/dialtone/blob/staging/.github/CONTRIBUTING.md).
  
 ## Checklist for completing a pull request
 
@@ -18,6 +18,7 @@ To ensure your pull request is approved, please make sure the following items ar
  - [ ] Any affected documentation has been updated, removed, or extended.
  - [ ] Provide a description what is being changed, extended, or removed.
  - [ ] Link to any issue(s) this request is resolving.
+ - [ ] Ensure no private Dialpad links or info are in the code or pull request description (Dialtone is a public repo!).
  - [ ] Request a review from Joshua Hynes, Ted Goas, or David Becher.
 
 ### Description
