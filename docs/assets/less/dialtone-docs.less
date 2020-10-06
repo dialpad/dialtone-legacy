@@ -137,8 +137,9 @@ body {
 .dialtone-menu-button {
     .d-btn--circle();
     .d-btn--circle--lg();
-    color: @slate-lightest;
-    .d-margin-left--auto();
+    color: var(--slate-lightest);
+    order: 2;
+    margin: auto -1rem auto @spacing16;
 
     .d-svg__menu,
     .d-svg__close {
@@ -147,10 +148,10 @@ body {
 
     //  Selected state is set on blue
     &[data-state="selected"] {
-        // .d-btn--circle--inverted();
-        .d-margin-left--auto();
+        .d-btn--circle--inverted();
         .d-border-color--transparent;
         .d-box-shadow--none();
+        margin: auto -1rem auto @spacing16;
     }
 
     //  Open or close the menu
@@ -175,19 +176,25 @@ body {
     flex-direction: column;
     background-color: var(--nav__background-color);
 
+    .dialtone-menu-title { display: none !important; }
+
     @media screen and (max-width: 723.9px) {
-        display: flex;
         align-items: center;
-        .d-top0();
-        .d-left-right0();
-        .d-padding-y16();
-        .d-padding-left24();
-        .d-padding-right12();
+        flex-direction: row;
+        padding: @spacing16 @spacing24;
         height: var(--nav-height);
 
         &[data-state="open"] {
-            .d-background-color--blue();
-            color: @white;
+            background-color: var(--blue);
+            color: var(--white);
+
+            .dialtone-links {
+                display: none !important;
+            }
+            .dialtone-menu-title { display: inline-flex !important; }
+            .dialtone-logo {
+                color: var(--white);
+            }
         }
     }
     @media screen and (min-width: 724px) {
@@ -330,6 +337,11 @@ body {
 //  DOCSEARCH
 .dialtone-search {
     position: relative;
+
+    @media screen and (max-width: 723.9px) {
+        margin: 0 0 0 auto !important;
+        order: 1;
+    }
 }
 .dialtone-search__icon {
     position: absolute;
@@ -397,6 +409,21 @@ body {
         .dialtone-logo__svg {
             display: block;
         }
+    }
+}
+
+.dialtone-tooltip {
+    @media screen and (max-width: 723.9px) {
+        .d-tooltip__top-center();
+    }
+    @media screen and (min-width: 724px) {
+        .d-tooltip__bottom-center();
+    }
+    width: unset !important;
+    white-space: nowrap !important;
+
+    .d-link:hover & {
+        .d-tooltip-hover();
     }
 }
 
