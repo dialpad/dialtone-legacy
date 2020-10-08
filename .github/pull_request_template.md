@@ -13,9 +13,9 @@
 
 To ensure your pull request is approved, please make sure the following items are completed: 
 
- - [ ] Your pull request uses `staging` as its base branch. (All PRs using `production` as its base branch will be declined).
- - [ ] All `gulp` scripts successfully compile.
- - [ ] Any affected documentation has been updated, removed, or extended.
+ - [ ] Use `staging` as your pull request's base branch. (All PRs using `production` as its base branch will be declined).
+ - [ ] Ensure all `gulp` scripts successfully compile.
+ - [ ] Update, remove, or extend all affected documentation.
  - [ ] Provide a description what is being changed, extended, or removed.
  - [ ] Link to any issue(s) this request is resolving.
  - [ ] Ensure no private Dialpad links or info are in the code or pull request description (Dialtone is a public repo!).
