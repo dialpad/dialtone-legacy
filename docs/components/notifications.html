@@ -1,0 +1,116 @@
+---
+layout: page
+title: Notifications
+description: Notifications are nondisruptive messages that are a response to users’ actions or inputs.
+---
+<section class="d-stack16">
+    <header class="d-stack8">
+        <h2 class="dialtone-title__section">Guidelines</h2>
+    </header>
+    <p class="dialtone-copy__normal">Notifications are informational and assistive messages that appear inline with content. A notification can suggest an action, though it's not required. A notification can be time based (see <a href="{{ '/components/toast/' | relative_url }}" class="d-link">toast</a>) or dismissed by the user.</p>
+</section>
+<section class="d-stack16">
+    <header class="d-stack8">
+        <h2 class="dialtone-title__section">Classes</h2>
+        <p class="dialtone-copy__normal">Text</p>
+    </header>
+    <table class="dialtone-table dialtone-table--code">
+        <thead>
+            <tr>
+                <th scope="col" class="d-width20">Class</th>
+                <th scope="col">Applies to</th>
+                <th scope="col" class="d-width50">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in notifications.classes %}
+            {% assign class = i.class %}
+            {% assign apply = i.applies %}
+            {% assign desc = i.description %}
+            <tr>
+                <td><span class="code-example--inline">{{ class }}</span></td>
+                <td class="d-ff-custom d-fs12 d-lh-tight d-fc-slate d-ws-nowrap">{{ apply }}</td>
+                <td class="d-ff-custom d-fs12 d-lh-tight d-fc-slate">{{ desc }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+<section class="d-stack16">
+    <header class="d-stack8">
+        <h2 class="dialtone-title__section">Accessibility</h2>
+        <p class="dialtone-copy__normal">Text</p>
+    </header>
+    <table class="dialtone-table dialtone-table--code">
+        <thead>
+            <tr>
+                <th scope="col" class="d-width20">Class</th>
+                <th scope="col">Applies to</th>
+                <th scope="col" class="d-width50">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in notifications.accessible %}
+            {% assign item = i.item %}
+            {% assign apply = i.applies %}
+            {% assign desc = i.description %}
+            <tr>
+                <td><span class="code-example--inline">{{ item }}</span></td>
+                <td class="d-ff-custom d-fs12 d-lh-tight d-fc-slate">{{ apply }}</td>
+                <td class="d-ff-custom d-fs12 d-lh-tight d-fc-slate">{{ desc }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+<section class="d-stack16">
+    <header class="d-stack8">
+        <h2 class="dialtone-title__section">Examples</h2>
+    </header>
+    <div class="d-stack8">
+        <h3 class="dialtone-title__subsection">Default</h3>
+        <div class="dialtone-example" data-example="yes" data-code="yes">
+            <div class="dialtone-example__example">
+                
+                <aside class="d-notification d-notification--info" role="status" aria-hidden="false">
+                    {% icon-system "info", "d-notification__icon d-svg--size24" %}
+                    <p class="d-notification__message"><strong>Upgrade to the new interface.</strong> Here is where you put more detailed info.</p>
+                    <a href="#" class="d-notification__action d-btn d-btn--sm">Action</a>
+                    <a href="#" class="d-notification__close d-btn--circle--danger-hover d-btn--circle--lg js-example-modal-close" aria-label="Close">
+                        <span class="d-btn__label">Close</span>
+                        <span class="d-btn__icon">{% icon-system "close" %}</span>
+                    </a>
+                </aside>
+                
+            </div>
+            <div class="dialtone-example__code">
+{% highlight html linenos %}
+<aside class="d-notification d-notification--info" role="status" aria-hidden="false">
+    <div class="d-grid">
+        <IconClose class="" \>
+        <p class="d-notification__message">…</p>
+    </div>
+    <a href="#" class="d-notification__close d-btn--cirlce" aria-label="Close"><IconClose \></a>
+</aside>
+<aside class="d-notification d-notification--success" role="status" aria-hidden="false">…</aside>
+<aside class="d-notification d-notification--warning" role="status" aria-hidden="false">…</aside>
+<aside class="d-notification d-notification--danger" role="status" aria-hidden="false">…</aside>
+{% endhighlight %}
+            </div>
+        </div>
+    </div>
+    <div class="d-stack8">
+        <h3 class="dialtone-title__subsection">Important</h3>
+        <div class="dialtone-example" data-example="yes" data-code="yes">
+            <div class="dialtone-example__example">
+                
+                
+            </div>
+            <div class="dialtone-example__code">
+{% highlight html linenos %}
+code
+{% endhighlight %}
+            </div>
+        </div>
+    </div>
+</section>
