@@ -24,6 +24,10 @@
     flex-grow: 1;
     margin: @spacing2 0 0; // Visually vertically align text.
     font-size: var(--fs14);
+
+    a {
+        .d-link--dark();
+    }
 }
 .d-notice__action {
     margin-left: @spacing12 !important;
@@ -44,6 +48,14 @@
     .d-notice__icon {
         fill: var(--blue-light);
     }
+
+    &.d-notice--important {
+        background: var(--blue-light);
+
+        .d-notice__icon {
+            fill: var(--slate);
+        }
+    }
 }
 .d-notice--warning {
     background: var(--sunflower-lighter);
@@ -51,6 +63,14 @@
 
     .d-notice__icon {
         fill: var(--sunflower-dark);
+    }
+
+    &.d-notice--important {
+        background: var(--sunflower);
+
+        .d-notice__icon {
+            fill: var(--slate);
+        }
     }
 }
 .d-notice--error {
@@ -60,12 +80,36 @@
     .d-notice__icon {
         fill: var(--wildberry);
     }
+
+    &.d-notice--important {
+        background: var(--wildberry);
+        color: var(--white);
+
+        .d-notice__icon {
+            fill: var(--white);
+        }
+        .d-notice__message a {
+            .d-link--inverted();
+        }
+    }
 }
 .d-notice--success {
     background: var(--bright-emerald-lighter);
     color: var(--slate);
 
     .d-notice__icon {
-        fill: var(--emerald-dark);
+        fill: var(--bright-emerald-dark);
+    }
+
+    &.d-notice--important {
+        background: var(--bright-emerald-dark);
+        color: var(--white);
+
+        .d-notice__icon {
+            fill: var(--white);
+        }
+        .d-notice__message a {
+            .d-link--inverted();
+        }
     }
 }
