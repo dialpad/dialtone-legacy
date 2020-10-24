@@ -1,0 +1,56 @@
+---
+layout: page
+title: Background Patterns
+description: Dialtone provides background patterns. These are provided as background images and used with Departments or Call Centers only.
+---
+<section class="d-stack16">
+    <h2 class="dialtone-title__section">Classes</h2>
+    <table class="dialtone-table dialtone-table--code">
+        <thead>
+            <tr>
+                <th scope="col" class="d-width10"></th>
+                <th scope="col">Dark</th>
+                <th scope="col" class="d-width10 d-bgc-navy d-fc-white"></th>
+                <th scope="col" class="d-bgc-navy d-fc-white">Light</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% assign pattern = visual-styles.bgg-patterns | split: ", " %}
+            {% for i in pattern %}
+            <tr>
+                <td class="d-p-relative"><div class="d-bgg-pattern d-bgg-pattern-{{ i }}--dark" aria-hidden="true"></div></td>
+                <td>.d-bgg-pattern-{{ i }}--dark</td>
+                <td class="d-p-relative d-bgc-navy d-fc-white"><div class="d-bgg-pattern d-bgg-pattern-{{ i }}--light" aria-hidden="true"></div></td>
+                <td class="d-bgc-navy d-fc-white">.d-bgg-pattern-{{ i }}--light</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+<section class="d-stack16">
+    <h2 class="dialtone-title__section">Examples</h2>
+    <div class="dialtone-example" data-example="yes" data-code="yes">
+        <div class="dialtone-example__example d-stack8">
+            <div class="d-p-relative d-d-flex d-ai-center d-pl24 d-border-top-radius--sm d-fs12 d-lh8 d-fw-bold d-fc-white d-bgg-navy">
+                <div class="d-bgg-pattern d-bgg-pattern-crosshatch--light d-border-bottom-radius--none" aria-hidden="true"></div>
+                <div class="d-p2">Incoming Call</div>
+            </div>
+            <div class="d-p-relative d-d-flex d-ai-center d-pl24 d-border-top-radius--sm d-fs12 d-lh8 d-fw-bold d-bgg-berry-light">
+                <div class="d-bgg-pattern d-bgg-pattern-dot-dash--dark d-border-bottom-radius--none" aria-hidden="true"></div>
+                <div class="d-p2">Sales Support</div>
+            </div>
+        </div>
+        <div class="dialtone-example__code">
+{% highlight html linenos %}
+<div class="d-p-relative d-d-flex d-ai-center d-pl24 d-border-top-radius--sm d-fs12 d-lh8 d-fw-bold d-fc-white d-bgg-navy">
+    <div class="d-bgg-pattern d-bgg-pattern-crosshatch--light d-border-bottom-radius--none" aria-hidden="true"></div>
+    <div class="d-p2">Incoming Call</div>
+</div>
+<div class="d-p-relative d-d-flex d-ai-center d-pl24 d-border-top-radius--sm d-fs12 d-lh8 d-fw-bold d-bgg-berry-light">
+    <div class="d-bgg-pattern d-bgg-pattern-dot-dash--dark d-border-bottom-radius--none" aria-hidden="true"></div>
+    <div class="d-p2">Sales Support</div>
+</div>
+{% endhighlight %}
+        </div>
+    </div>
+</section>
