@@ -1,0 +1,67 @@
+---
+layout: page
+title: Weather Icons
+description: The following weather icons are provided by Dialtone, used to communicate a user's local weather on an UberConference call.
+---
+<section class="d-stack16">
+    <h2 class="dialtone-title__section">Icons</h2>
+    <div class="dialtone-icon-grid">
+        {% for icon in icons-weather.icons %}
+            {% assign name = icon.name %}
+            {% assign file = icon.file %}
+            {% assign vue = icon.vue %}
+
+            <div id="{{ file }}" class="dialtone-icon-grid__item">
+                <aside class="dialtone-icon-card js-dialtone-icon-card" data-selected="no">
+                    <header class="dialtone-icon-card__header js-dialtone-icon-card-copy-area">
+                        <div class="dialtone-icon-card__icon">
+                            {% iconSystem file, "js-svg" %}
+                        </div>
+                        <p class="dialtone-icon-card__subtitle">{{ name }}</p>
+                    </header>
+                    <footer class="dialtone-icon-card__footer js-dialtone-icon-card-footer">
+                        <div class="dialtone-icon-card__content">
+                            <h1 class="dialtone-icon-card__title">{{ name }}</h1>
+                            <div class="dialtone-icon-card__list">
+                                <span class="dialtone-icon-card__list__item">
+                                    <strong>SVG:</strong> <span class="code-example">{{ file | append: '.svg' }}</span>
+                                </span>
+                                <span class="dialtone-icon-card__list__item">
+                                    <strong>Vue:</strong> <span class="code-example js-vue-file">{{ vue }}</span>
+                                </span>
+                            </div>
+                            <p class="dialtone-icon-card__description">{{ icon.desc }}</p>
+                        </div>
+                    </footer>
+                </aside>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+<section class="d-stack16">
+    <h2 class="dialtone-title__section">Weather Codes</h2>
+    <table class="dialtone-table">
+        <thead>
+            <tr>
+                <th scope="col" class="d-width10">Code</th>
+                <th scope="col" class="d-width10 d-ta-center">Day</th>
+                <th scope="col" class="d-width10 d-ta-center">Night</th>
+                <th scope="col">Definition</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for code in icons-weather.codes %}
+            {% assign day = code.day %}
+            {% assign night = code.night %}
+            <tr>
+                <th scope="row">{{ code.code }}</th>
+                <td class="d-ta-center d-py4">{% iconSystem code.day, "d-svg--size32 js-svg" %}</td>
+                <td class="d-ta-center d-py4">{% iconSystem code.night, "d-svg--size32 js-svg" %}</td>
+                <td class="d-fs14">{{ code.name }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+
+<script src="/{{ site.paths.js }}/icons.js"></script>
