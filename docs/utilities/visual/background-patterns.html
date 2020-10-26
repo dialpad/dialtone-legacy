@@ -1,27 +1,27 @@
 ---
 layout: page
 title: Background Patterns
-description: Dialtone provides background patterns. These are provided as background images and used with Departments or Call Centers only.
+description: Dialtone provides <a href="/icons/patterns/">various patterns</a> to be used for Department and Call Centers. Unlike most SVG icons, we are unable to inline these patterns in order to have them repeat vertically correctly. To apply these patterns, Dialtone provides the following background pattern classes. These classes apply the pattern SVGs as base64 background-images.
 ---
 <section class="d-stack16">
     <h2 class="dialtone-title__section">Classes</h2>
     <table class="dialtone-table dialtone-table--code">
         <thead>
             <tr>
-                <th scope="col" class="d-width10"></th>
+                <th scope="col" style="width: 3.2rem;"></th>
                 <th scope="col">Dark</th>
-                <th scope="col" class="d-width10 d-bgc-navy d-fc-white"></th>
+                <th scope="col" class="d-bgc-navy d-fc-white" style="width: 3.2rem;"></th>
                 <th scope="col" class="d-bgc-navy d-fc-white">Light</th>
             </tr>
         </thead>
         <tbody>
-            {% assign pattern = visual-styles.bgg-patterns | split: ", " %}
-            {% for i in pattern %}
+            {% for i in svg-patterns %}
+            {% assign file = i.file %}
             <tr>
-                <td class="d-p-relative"><div class="d-bgg-pattern d-bgg-pattern-{{ i }}--dark" aria-hidden="true"></div></td>
-                <td>.d-bgg-pattern-{{ i }}--dark</td>
-                <td class="d-p-relative d-bgc-navy d-fc-white"><div class="d-bgg-pattern d-bgg-pattern-{{ i }}--light" aria-hidden="true"></div></td>
-                <td class="d-bgc-navy d-fc-white">.d-bgg-pattern-{{ i }}--light</td>
+                <td class="d-p-relative"><div class="d-bgg-pattern d-bgg-pattern-{{ file }}--dark" aria-hidden="true"></div></td>
+                <td>.d-bgg-pattern-{{ file }}--dark</td>
+                <td class="d-p-relative d-bgc-navy d-fc-white"><div class="d-bgg-pattern d-bgg-pattern-{{ file }}--light" aria-hidden="true"></div></td>
+                <td class="d-bgc-navy d-fc-white">.d-bgg-pattern-{{ file }}--light</td>
             </tr>
             {% endfor %}
         </tbody>
