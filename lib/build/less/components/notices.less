@@ -1,120 +1,328 @@
 //
 //  DIALTONE
-//  COMPONENTS: ALERT
+//  COMPONENTS: NOTICES
 //
-//  These are the styles for alerts, which are used by alert users to
+//  These are the styles for notices, which are used by alert users to
 //  information they might need. For further documentation of these styles,
-//  please visit https://dialpad.design/components/alerts
+//  please visit https://dialpad.design/components/notices
 //
 //  ============================================================================
-//  @   BASE STYLE
+//  $   BASE WRAPPER
 //  ----------------------------------------------------------------------------
 .d-notice {
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
     align-items: center;
-    padding: @spacing8 @spacing12;
-    border-radius: @border-radius--sm;
-    font-size: var(--fs14);
+    padding: @spacing16;
+    width: 100%;
     max-width: @fixed-size5;
-}
-.d-notice__icon {
-    margin-right: @spacing12;
-}
-.d-notice__message {
-    flex-grow: 1;
-    margin: @spacing2 0 0; // Visually vertically align text.
 
-    a {
-        .d-link--dark(); // Links in the message should always be dark and underlined.
+    border-radius: @border-radius--sm;
+    background-color: var(--ash);
+    font-size: var(--fs14);
+    line-height: var(--lh6);
+    color: var(--slate);
+
+    .d-toast & {
+        max-width: @fixed-size4;
+        box-shadow: @box-shadow--sm;
+        pointer-events: all;
+    }
+
+    .d-flow16();
+}
+
+.d-notice.d-notice--important,
+.d-notice.d-banner--important {
+    background-color: fade(@slate,90%);
+    color: var(--ash);
+
+    a:hover {
+        color: var(--ash-dark);
+    }
+
+    .d-notice__btn {
+        &:hover,
+        &:active {
+            background-color: fade(@ash, 10%);
+        }
+        &:active {
+            border-color: fade(@ash, 40%);
+        }
+        &:focus {
+            box-shadow: 0 0 0 @spacing4 fade(@ash, 20%);
+        }
     }
 }
+
+//  ============================================================================
+//  $   NOTICE AREAS
+//  ============================================================================
+//  $$  ICON
+//  ----------------------------------------------------------------------------
+.d-notice__icon {
+    display: flex;
+    flex: 0 auto;
+
+    .d-svg--system {
+        width: @icon-size24;
+        height: @icon-size24;
+    }
+}
+
+//  $$  CONTENT
+//  ----------------------------------------------------------------------------
+.d-notice__content {
+    display: flex;
+    flex-direction: column;
+    flex: 1 auto;
+}
+
+//  $$  ACTIONS
+//  ----------------------------------------------------------------------------
 .d-notice__actions {
     display: flex;
     align-items: center;
+    flex: 0 auto;
 
-    > * {
-        margin-left: @spacing8;
+    .d-flow4();
+}
+
+//  --  Button
+.d-notice__btn {
+    padding: (@spacing8 - @spacing1);
+    color: inherit;
+    font-size: var(--fs14);
+    line-height: var(--lh6);
+    text-decoration: underline;
+
+    &[class^="d-btn--circle"] {
+        padding: @spacing8;
     }
-    .d-notice__close {
-        margin: -@spacing8 -@spacing8 -@spacing8 @spacing8;
+
+    &:hover,
+    &:active {
+        background-color: fade(@slate, 5%);
+        color: inherit;
+    }
+    &:active {
+        border-color: var(--slate-lightest);
+    }
+    &:focus {
+        box-shadow: 0 0 0 @spacing4 fade(@slate, 10%);
+    }
+}
+
+//  ============================================================================
+//  $   COPY STYLES
+//  ============================================================================
+//  $$  TITLE
+//  ----------------------------------------------------------------------------
+.d-notice__title {
+    margin: @spacing0;
+    font-weight: var(--fw-bold);
+    font-size: inherit;
+}
+
+//  $$  MESSAGE
+//      Links in the message should always be underlined. Each modifying style
+//      will have to recolor the links.
+//  ----------------------------------------------------------------------------
+.d-notice__message {
+    margin: @spacing0;
+
+    a {
+        .d-link--dark();
+        color: inherit;
     }
 }
 
 
 //  ============================================================================
-//  @   STYLES
+//  $   STYLES
+//  ============================================================================
+//  $$  INFO
 //  ----------------------------------------------------------------------------
-.d-notice--info {
-    background: var(--blue-lighter);
-    color: var(--slate);
+.d-notice--info,
+.d-banner--info {
+    background-color: var(--blue-lighter);
+    color: var(--navy);
 
-    .d-notice__icon {
-        fill: var(--blue-light);
+    a:hover {
+        color: darken(@navy,10%);
     }
 
-    &.d-notice--important {
-        background: var(--blue-light);
+    .d-notice__btn {
+        &:hover,
+        &:active {
+            background-color: fade(@blue-light, 15%);
+            color: inherit;
+        }
+        &:active {
+            border-color: var(--blue);
+        }
+        &:focus {
+            box-shadow: 0 0 0 @spacing4 fade(@blue, 25%);
+        }
+    }
 
-        .d-notice__icon {
-            fill: var(--slate);
+    &.d-notice--important,
+    &.d-banner--important {
+        background-color: var(--blue-light);
+        color: darken(@navy,5%);
+
+        a:hover {
+            color: darken(@navy,15%);
+        }
+
+        .d-notice__btn {
+            &:hover,
+            &:active {
+                background-color: fade(@blue-dark, 10%);
+            }
+            &:active {
+                border-color: fade(@blue-dark, 40%);
+            }
+            &:focus {
+                box-shadow: 0 0 0 @spacing4 fade(@blue-dark, 25%);
+            }
         }
     }
 }
-.d-notice--warning {
-    background: var(--sunflower-lighter);
-    color: var(--slate);
 
-    .d-notice__icon {
-        fill: var(--sunflower-dark);
+//  $$  WARNING
+//  ----------------------------------------------------------------------------
+.d-notice--warning,
+.d-banner--warning {
+    background-color: var(--sunflower-lighter);
+
+    .d-notice__btn {
+        &:hover,
+        &:active {
+            background-color: fade(@sunflower-light, 25%);
+            color: inherit;
+        }
+        &:active {
+            border-color: var(--sunflower-dark);
+        }
+        &:focus {
+            box-shadow: 0 0 0 @spacing4 fade(@sunflower-dark, 25%);
+        }
     }
 
-    &.d-notice--important {
-        background: var(--sunflower);
+    &.d-notice--important,
+    &.d-banner--important {
+        background-color: var(--sunflower);
+        color: var(--slate);
 
-        .d-notice__icon {
-            fill: var(--slate);
+        .d-notice__btn {
+            &:hover,
+            &:active {
+                background-color: fade(@color--sunflower-text, 15%);
+            }
+            &:active {
+                border-color: @color--sunflower-text;
+            }
+            &:focus {
+                box-shadow: 0 0 0 @spacing4 fade(@color--sunflower-text,40%);
+            }
         }
     }
 }
-.d-notice--error {
-    background: var(--wildberry-lighter);
-    color: var(--slate);
 
-    .d-notice__icon {
-        fill: var(--wildberry);
+//  $$  ERROR
+//  ----------------------------------------------------------------------------
+.d-notice--error,
+.d-banner--error {
+    background-color: var(--wildberry-lighter);
+    color: var(--wildberry-dark);
+
+    a:hover {
+        color: darken(@wildberry-dark,10%);
     }
 
-    &.d-notice--important {
-        background: var(--wildberry);
+    .d-notice__btn {
+        &:hover,
+        &:active {
+            background-color: fade(@wildberry-light, 15%);
+            color: inherit;
+        }
+        &:active {
+            border-color: var(--wildberry);
+        }
+        &:focus {
+            box-shadow: 0 0 0 @spacing4 fade(@wildberry, 25%);
+        }
+    }
+
+    &.d-notice--important,
+    &.d-banner--important {
+        background-color: var(--wildberry);
         color: var(--white);
 
-        .d-notice__icon {
-            fill: var(--white);
+        a:hover {
+            color: var(--wildberry-lighter);
         }
-        .d-notice__message a {
-            .d-link--inverted();
+
+        .d-notice__btn {
+            &:hover,
+            &:active {
+                background-color: fade(@rose-light, 20%);
+            }
+            &:active {
+                border-color: fade(@rose-light, 75%);
+            }
+            &:focus {
+                box-shadow: 0 0 0 @spacing4 fade(@rose-light, 40%);
+            }
         }
     }
 }
-.d-notice--success {
-    background: var(--bright-emerald-lighter);
-    color: var(--slate);
 
-    .d-notice__icon {
-        fill: var(--bright-emerald-dark);
+//  $$  SUCCESS
+//  ----------------------------------------------------------------------------
+.d-notice--success,
+.d-banner--success {
+    background-color: var(--bright-emerald-lighter);
+    color: var(--emerald-darker);
+
+    a:hover {
+        color: darken(@emerald-darker,10%);
     }
 
-    &.d-notice--important {
-        background: var(--bright-emerald-dark);
+    .d-notice__btn {
+        &:hover,
+        &:active {
+            background-color: fade(@bright-emerald-light, 25%);
+            color: inherit;
+        }
+        &:active {
+            border-color: fade(@bright-emerald-dark,75%);
+        }
+        &:focus {
+            box-shadow: 0 0 0 @spacing4 fade(@bright-emerald, 25%);
+        }
+    }
+
+    &.d-notice--important,
+    &.d-banner--important {
+        background-color: var(--bright-emerald-dark);
         color: var(--white);
 
-        .d-notice__icon {
-            fill: var(--white);
+        a:hover {
+            color: var(--bright-emerald-lighter);
         }
-        .d-notice__message a {
-            .d-link--inverted();
+
+        .d-notice__btn {
+            &:hover,
+            &:active {
+                background-color: fade(@emerald-lighter, 15%);
+            }
+            &:active {
+                border-color: fade(@emerald-lighter, 75%);
+            }
+            &:focus {
+                box-shadow: 0 0 0 @spacing4 fade(@emerald-lighter, 25%);
+            }
         }
     }
 }

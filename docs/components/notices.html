@@ -71,67 +71,53 @@ description: Notices are informational and assistive messages that appear inline
         <h3 class="dialtone-title__subsection">Default</h3>
         <p class="dialtone-copy__normal">Used in most scenarios when the message should be noticeable but not dominate.</p>
         <div class="dialtone-example" data-example="yes" data-code="yes">
-            <div class="dialtone-example__example">
-                
-                <aside class="d-notice d-notice--info d-mb12" role="status" aria-hidden="false">
-                    {% icon-system "info", "d-notice__icon d-svg--size24" %}
-                    <p class="d-notice__message"><strong>Info title (optional).</strong><br>Info message body with <a href="#">a link.</a></p>
+            <div class="dialtone-example__example d-stack12">
+                {% assign styles = "info, warning, error, success, default" | split: ", "%}
+                {% for i in styles %}
+                <aside class="d-notice d-notice--{{ i }}" role="status" aria-hidden="false">
+                    {% if i != "default" %}
+                        <div class="d-notice__icon">
+                            {% if i == "info" %}
+                                {% icon-system "info" %}
+                            {% elsif i == "warning" %}
+                                {% icon-system "warning" %}
+                            {% elsif i == "error" %}
+                                {% icon-system "error" %}
+                            {% elsif i == "success" %}
+                                {% icon-system "check-circle" %}
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                    <div class="d-notice__content">
+                        <h1 class="d-notice__title">{{ i | capitalize }} title (optional)</h1>
+                        <p class="d-notice__message">Message body with <a href="#">a link.</a></p>
+                    </div>
                     <div class="d-notice__actions">
-                        <a href="#" class="d-link--dark">Action</a>
-                        <a href="#" class="d-notice__close d-btn--circle--danger-hover js-example-modal-close" aria-label="Close">
+                        <button type="button" class="d-btn d-notice__btn">Action</button>
+                        <button type="button" class="d-btn--circle d-notice__btn d-notice__close js-example-notice-close" aria-label="Close">
                             <span class="d-btn__label">Close</span>
                             <span class="d-btn__icon">{% icon-system "close" %}</span>
-                        </a>
+                        </button>
                     </div>
                 </aside>
-                <aside class="d-notice d-notice--warning d-mb12" role="status" aria-hidden="false">
-                    {% icon-system "warning", "d-notice__icon d-svg--size24" %}
-                    <p class="d-notice__message"><strong>Warning title (optional).</strong><br>Warning message body with <a href="#">a link.</a></p>
-                    <div class="d-notice__actions">
-                        <a href="#" class="d-link--dark">Action</a>
-                        <a href="#" class="d-notice__close d-btn--circle--danger-hover js-example-modal-close" aria-label="Close">
-                            <span class="d-btn__label">Close</span>
-                            <span class="d-btn__icon">{% icon-system "close" %}</span>
-                        </a>
-                    </div>
-                </aside>
-                <aside class="d-notice d-notice--error d-mb12" role="status" aria-hidden="false">
-                    {% icon-system "error", "d-notice__icon d-svg--size24" %}
-                    <p class="d-notice__message"><strong>Error title (optional).</strong><br>Error message body with <a href="#">a link.</a></p>
-                    <div class="d-notice__actions">
-                        <a href="#" class="d-link--dark">Action</a>
-                        <a href="#" class="d-notice__close d-btn--circle--danger-hover js-example-modal-close" aria-label="Close">
-                            <span class="d-btn__label">Close</span>
-                            <span class="d-btn__icon">{% icon-system "close" %}</span>
-                        </a>
-                    </div>
-                </aside>
-                <aside class="d-notice d-notice--success" role="status" aria-hidden="false">
-                    {% icon-system "checkmark", "d-notice__icon d-svg--size24" %}
-                    <p class="d-notice__message"><strong>Success title (optional).</strong><br>Success message body with <a href="#">a link.</a></p>
-                    <div class="d-notice__actions">
-                        <a href="#" class="d-link--dark">Action</a>
-                        <a href="#" class="d-notice__close d-btn--circle--danger-hover js-example-modal-close" aria-label="Close">
-                            <span class="d-btn__label">Close</span>
-                            <span class="d-btn__icon">{% icon-system "close" %}</span>
-                        </a>
-                    </div>
-                </aside>
-                
+                {% endfor %}
             </div>
             <div class="dialtone-example__code">
 {% highlight html linenos %}
 <aside class="d-notice d-notice--info" role="status" aria-hidden="false">
-    <div class="d-grid">
-        <IconInfo class="" \>
-        <p class="d-notice__message">
-            <strong>…</strong><br>
-            …
-        </p>
+    <div class="d-notice__icon">
+        <IconInfo />
+    </div>
+    <div class="d-notice__content">
+        <h1 class="d-notice__title">Optional title</h1>
+        <p class="d-notice__message">Message body with <a href="#">a link.</a></p>
     </div>
     <div class="d-notice__actions">
-        <a href="#" class="d-link--dark">…</a>
-        <a href="#" class="d-notice__close d-btn--circle--danger-hover js-example-modal-close" aria-label="Close">…</a>
+        <button type="button" class="d-btn d-notice__btn">Action</button>
+        <button type="button" class="d-btn--circle d-notice__btn d-notice__close js-example-notice-close" aria-label="Close">
+            <span class="d-btn__icon"><IconClose /></span>
+            <span class="d-btn__label">Close</span>
+        </button>
     </div>
 </aside>
 <aside class="d-notice d-notice--success" role="status" aria-hidden="false">…</aside>
@@ -145,72 +131,58 @@ description: Notices are informational and assistive messages that appear inline
         <h3 class="dialtone-title__subsection">Important</h3>
         <p class="dialtone-copy__normal">Used occasionally in scenarios when the message needs to dominate.</p>
         <div class="dialtone-example" data-example="yes" data-code="yes">
-            <div class="dialtone-example__example">
-                
-                <aside class="d-notice d-notice--important d-notice--info d-mb12" role="status" aria-hidden="false">
-                    {% icon-system "info", "d-notice__icon d-svg--size24" %}
-                    <p class="d-notice__message"><strong>Info title (optional).</strong><br>Info message body with <a href="#">a link.</a></p>
+            <div class="dialtone-example__example d-stack12">
+                {% assign styles = "info, warning, error, success, default" | split: ", "%}
+                {% for i in styles %}
+                <aside class="d-notice d-notice--{{ i }} d-notice--important" role="status" aria-hidden="false">
+                    {% if i != "default" %}
+                        <div class="d-notice__icon">
+                            {% if i == "info" %}
+                                {% icon-system "info" %}
+                            {% elsif i == "warning" %}
+                                {% icon-system "warning" %}
+                            {% elsif i == "error" %}
+                                {% icon-system "error" %}
+                            {% elsif i == "success" %}
+                                {% icon-system "check-circle" %}
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                    <div class="d-notice__content">
+                        <h1 class="d-notice__title">{{ i | capitalize }} title (optional)</h1>
+                        <p class="d-notice__message">Message body with <a href="#">a link.</a></p>
+                    </div>
                     <div class="d-notice__actions">
-                        <a href="#" class="d-link--dark">Action</a>
-                        <a href="#" class="d-notice__close d-btn--circle--danger-hover js-example-modal-close" aria-label="Close">
+                        <button type="button" class="d-btn d-notice__btn">Action</button>
+                        <button type="button" class="d-btn--circle d-notice__btn d-notice__close js-example-notice-close" aria-label="Close">
                             <span class="d-btn__label">Close</span>
                             <span class="d-btn__icon">{% icon-system "close" %}</span>
-                        </a>
+                        </button>
                     </div>
                 </aside>
-                <aside class="d-notice d-notice--important d-notice--warning d-mb12" role="status" aria-hidden="false">
-                    {% icon-system "warning", "d-notice__icon d-svg--size24" %}
-                    <p class="d-notice__message"><strong>Warning title (optional).</strong><br>Warning message body with <a href="#">a link.</a></p>
-                    <div class="d-notice__actions">
-                        <a href="#" class="d-link--dark">Action</a>
-                        <a href="#" class="d-notice__close d-btn--circle--danger-hover js-example-modal-close" aria-label="Close">
-                            <span class="d-btn__label">Close</span>
-                            <span class="d-btn__icon">{% icon-system "close" %}</span>
-                        </a>
-                    </div>
-                </aside>
-                <aside class="d-notice d-notice--important d-notice--error d-mb12" role="status" aria-hidden="false">
-                    {% icon-system "error", "d-notice__icon d-svg--size24" %}
-                    <p class="d-notice__message"><strong>Error title (optional).</strong><br>Error message body with <a href="#">a link.</a></p>
-                    <div class="d-notice__actions">
-                        <a href="#" class="d-link--inverted">Action</a>
-                        <a href="#" class="d-notice__close d-btn--circle--inverted js-example-modal-close" aria-label="Close">
-                            <span class="d-btn__label">Close</span>
-                            <span class="d-btn__icon">{% icon-system "close" %}</span>
-                        </a>
-                    </div>
-                </aside>
-                <aside class="d-notice d-notice--important d-notice--success" role="status" aria-hidden="false">
-                    {% icon-system "checkmark", "d-notice__icon d-svg--size24" %}
-                    <p class="d-notice__message"><strong>Success title (optional).</strong><br>Success message body with <a href="#">a link.</a></p>
-                    <div class="d-notice__actions">
-                        <a href="#" class="d-link--inverted">Action</a>
-                        <a href="#" class="d-notice__close d-btn--circle--inverted js-example-modal-close" aria-label="Close">
-                            <span class="d-btn__label">Close</span>
-                            <span class="d-btn__icon">{% icon-system "close" %}</span>
-                        </a>
-                    </div>
-                </aside>
-                
+                {% endfor %}
             </div>
             <div class="dialtone-example__code">
 {% highlight html linenos %}
-<aside class="d-notice d-notice--important d-notice--info" role="status" aria-hidden="false">
-    <div class="d-grid">
-        <IconInfo class="" \>
-        <p class="d-notice__message">…</p>
+<aside class="d-notice d-notice--info d-notice--important" role="status" aria-hidden="false">
+    <div class="d-notice__icon">
+        <IconInfo />
+    </div>
+    <div class="d-notice__content">
+        <h1 class="d-notice__title">Optional title</h1>
+        <p class="d-notice__message">Message body with <a href="#">a link.</a></p>
     </div>
     <div class="d-notice__actions">
-        <p class="d-notice__message">
-            <strong>…</strong><br>
-            …
-        </p>
-        <a href="#" class="d-notice__close d-btn--circle--danger-hover js-example-modal-close" aria-label="Close">…</a>
+        <button type="button" class="d-btn d-notice__btn">Action</button>
+        <button type="button" class="d-btn--circle d-notice__btn d-notice__close js-example-notice-close" aria-label="Close">
+            <span class="d-btn__icon"><IconClose /></span>
+            <span class="d-btn__label">Close</span>
+        </button>
     </div>
 </aside>
-<aside class="d-notice d-notice--important d-notice--success" role="status" aria-hidden="false">…</aside>
-<aside class="d-notice d-notice--important d-notice--warning" role="status" aria-hidden="false">…</aside>
-<aside class="d-notice d-notice--important d-notice--danger" role="status" aria-hidden="false">…</aside>
+<aside class="d-notice d-notice--success d-notice--important" role="status" aria-hidden="false">…</aside>
+<aside class="d-notice d-notice--warning d-notice--important" role="status" aria-hidden="false">…</aside>
+<aside class="d-notice d-notice--danger d-notice--important" role="status" aria-hidden="false">…</aside>
 {% endhighlight %}
             </div>
         </div>
