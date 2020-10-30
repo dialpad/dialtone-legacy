@@ -1,23 +1,28 @@
 ---
 layout: page
 title: Background Patterns
-description: Dialtone provides <a href="/icons/patterns/">various patterns</a> to be used for Department and Call Centers. Unlike most SVG icons, we are unable to inline these patterns in order to have them repeat vertically correctly. To apply these patterns, Dialtone provides the following background pattern classes. These classes apply the pattern SVGs as base64 background-images.
+description: CSS background-image patterns to help make Department and Call Center color blocks more visibly distinct.
 ---
+<section class="d-stack8">
+    <h2 class="dialtone-title__section">Usage</h2>
+    <p class="dialtone-copy__normal">These <a href="/icons/patterns/" class="d-link">patterns</a> are to be used for Department and Call Centers. They were created to help visually distinguish Department and Call Center color blocks for individuals who suffer from color blindness or poor vision.</p>
+    <p class="dialtone-copy__normal">Unlike our <a href="/icons/system" class="d-link">icons</a> which are inlined directly into the document, we apply these patterns within a <span class="code-example--inline d-fs14">::after</span> pseudo element using the CSS <span class="code-example--inline">background-image</span> property as base64 images.</p>
+</section>
 <section class="d-stack16">
     <header class="d-stack2">
         <h2 class="dialtone-title__section">Variables</h2>
-        <p class="dialtone-copy__normal">Dialtone provides Less and CSS variables for each background-image pattern. Each variable provides <strong>the full url declaration</strong> for each pattern (<span class="code-example--inline">url("data:image/svg+xml;base64,…")</span>). To apply either variable, do the following:</p>
+        <p class="dialtone-copy__normal">Dialtone provides Less and CSS variables for each background-image pattern. These variables provide <strong>the full url declaration</strong> for each pattern (<span class="code-example--inline">url("data:image/svg+xml;base64,…")</span>). These variables are provided for reference. Since these patterns are applied via a pseduo <span class="code-example--inline d-fs14">::after</span> element, <strong>it is strongly recommended that you apply these patterns using a class attribute.</strong></p>
+    </header>
 {% highlight css linenos %}
 //  --  CSS Variable
-.example-class {
+.example-class::after {
     background-image: var(--bgg-pattern-[name]--[dark|light]);
 }
 //  --  Less Variable
-.example-class {
+.example-class::after {
     background-image: @bgg-pattern-[name]--[dark|light];
 }
 {% endhighlight %}
-    </header>
     <table class="dialtone-table dialtone-table--code">
         <thead>
             <tr>
