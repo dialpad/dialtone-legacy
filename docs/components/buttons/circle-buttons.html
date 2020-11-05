@@ -1,4 +1,4 @@
-<header class="dialtone-section2">
+<header class="d-stack2">
     <h3 class="dialtone-title__subsection">Circle Buttons</h3>
     <p class="dialtone-copy__normal">Sometimes an icon-only, circle button is desired. These buttons are used for toggling actions, navigation, or closing UI elements.</p>
 </header>
@@ -16,23 +16,23 @@
         {% assign title = i.title %}
         {% assign desc = i.description %}
         {% assign class = i.class %}
-        <tr class="{% if name == 'inverted'%}d-background-color--slate d-color--light{% endif %}">
+        <tr class="{% if name == 'inverted'%}d-background-color--slate d-fc-ash{% endif %}">
             <th scope="row">
-                <span class="d-text--sm">{{ title }}</span><br/>
-                <span class="d-font-weight--normal d-text--xs">{{ desc }}</span>
+                <span class="d-fs14">{{ title }}</span><br/>
+                <span class="d-fw-normal d-fs12">{{ desc }}</span>
             </th>
             <td class="code-example">.{{ class }}<br/>.{{ class }}--disabled</td>
-            <td style="text-align: center;" class="{% if name == 'inverted' %}d-padding-left16{% endif %}">
+            <td style="text-align: center;" class="{% if name == 'inverted' %}d-pl16{% endif %}">
                 {% assign circle-styles = "normal, loading, disabled" | split: ", " %}
                 {% for btn in circle-styles %}
-                    <button class="d-margin-x4 {{ class }}{% if btn == 'loading' %}--loading{% endif %}" type="button" aria-pressed="false" {% if btn == 'disabled' %}disabled{% endif %}>
+                    <button class="d-mx4 {{ class }}{% if btn == 'loading' %}--loading{% endif %}" type="button" aria-pressed="false" {% if btn == 'disabled' %}disabled{% endif %}>
                         <span class="d-btn__icon">
                         {% if name == "normal" %}
-                            {% icon "person", "system", "js-svg" %}
+                            {% iconSystem "person", "js-svg" %}
                         {% elsif name == "outlined" %}
-                            {% icon "mic-on", "system", "js-svg" %}
+                            {% iconSystem "mic-on", "js-svg" %}
                         {% elsif name == "danger-hover" or "danger-primary" %}
-                            {% icon "close", "system", "js-svg" %}
+                            {% iconSystem "close", "js-svg" %}
                         {% endif %}
                         </span>
                     </button>

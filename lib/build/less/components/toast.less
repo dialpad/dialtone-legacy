@@ -13,19 +13,18 @@
     box-sizing: border-box;
 
     position: relative;
-    .d-padding8();
-    .d-padding-top12();
+    padding: @spacing12 @spacing8 @spacing8;
     max-width: (@fixed-size2 + @spacing48);
-    .d-z-index--toast();
-    .d-border-radius--sm();
-    .d-border();
-    .d-border-color--ash-dark();
-    .d-background-color--white();
-    .d-box-shadow--sm();
+    z-index: @z-index--toast;
 
-    .d-text--sm();
-    .d-line-height--sm();
-    .d-color--dark-light();
+    border-radius: @border-radius--sm;
+    border: @border-width1 solid var(--ash-dark);
+    background-color: var(--white);
+    box-shadow: @box-shadow--sm;
+
+    font-size: var(--text-size--sm);
+    line-height: var(--line-height--sm);
+    color: var(--text-color--medium);
     word-break: normal;
 
     //  If there's a link in a toast, break the url so it wraps
@@ -37,12 +36,12 @@
     &:before {
         content: "";
         position: absolute;
-        .d-top1--negative();
-        .d-left1--negative();
-        .d-right1--negative();
+        top: -(@spacing1);
+        right: -(@spacing1);
+        left: -(@spacing1);
 
         height: @spacing6;
-        .d-border-top-radius--sm();
+        border-radius: @border-radius--sm @border-radius--sm 0 0;
     }
 }
 
@@ -63,7 +62,7 @@
     height: @spacing24;
     .d-margin-right4;
     .d-border-radius--circle();
-    .d-color--white;
+    color: @white;
 
     .d-svg {
         width: 1.8rem;
@@ -77,9 +76,9 @@
 //  ----------------------------------------------------------------------------
 .d-toast__meta {
     .d-margin-bottom4();
-    .d-text--xxs();
-    .d-font-family--sans();
-    .d-color--dark-lightest();
+    font-size: @fs11;
+    font-family: @ff-sans;
+    color: @slate-lightest;
 }
 
 //  @@  MESSAGE STYLE
@@ -90,8 +89,8 @@
     flex-direction: column;
 
     .d-margin-left4();
-    .d-text--xs();
-    line-height: 1.333333333; //  16/12
+    font-size: @fs12;
+    line-height: @lh4;
 }
 
 //  ============================================================================
@@ -172,6 +171,20 @@
 .d-toast__icon--info {
     .d-toast__icon();
     .d-background-color--blue();
+}
+
+//  @@  ORGANIZER
+//  ----------------------------------------------------------------------------
+.d-toast--organizer {
+    .d-toast();
+
+    &:before {
+        .d-background-color--berry();
+    }
+}
+.d-toast__icon--organizer {
+    .d-toast__icon();
+    .d-background-color--berry();
 }
 
 

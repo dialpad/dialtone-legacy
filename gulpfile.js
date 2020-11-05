@@ -8,6 +8,7 @@ var settings = {
     scripts: false,     // Turn on/off script tasks
     styles: true,       // Turn on/off style tasks
     svgs: true,         // Turn on/off SVG tasks
+    patterns: true,     // Turn on/off SVG Pattern tasks
     favicons: true,     // Turn on/off Favicons tasks
     sync: true,         // Turn on/off sync tasks
     build: true,        // Turn on/off build tasks
@@ -86,6 +87,12 @@ var paths = {
         brandOutputLib: './lib/dist/svg/brand/',
         brandOutputDocs: './docs/_includes/icons/brand/',
         outputVue: './lib/dist/vue/icons/',
+    },
+    patterns: {
+        input: './lib/build/svg/patterns/**/*.svg',
+        outputLib: './lib/dist/svg/patterns/',
+        outputDocs: './docs/_includes/patterns/',
+        outputVue: './lib/dist/vue/patterns/',
     },
     favicons: {
         dpName: 'Dialpad',
@@ -340,6 +347,56 @@ var buildBrandSVGs = function(done) {
     done();
 };
 
+var buildPatternSVGs = function(done) {
+
+    //  Make sure this feature is activated before running
+    if (!settings.patterns) return done();
+
+    //  Compile system icons
+    return src(paths.patterns.input)
+        .pipe(replace('<svg', function(match) {
+            var name = path.parse(this.file.path).name;
+            var converted = name.toLowerCase().replace(/-(.)/g, function(match,group1) {
+                return group1.toUpperCase();
+            });
+            var title = name.replace(/\b\S/g, t => t.toUpperCase()).replace(/[-]+/g, " ");
+
+            return match + ' aria-hidden="true" focusable="false" aria-label="' + title + '" class="d-svg d-svg--pattern d-svg__' + converted + '" xmlns="http://www.w3.org/2000/svg"';
+        }))
+        .pipe(svgmin({
+            plugins: [{
+                convertPathData: {
+                    transformPrecision: 4,
+                }
+            }, {
+                cleanupNumericValues: {
+                    floatPrecision: 2,
+                }
+            }, {
+                collapseGroups: true,
+            }, {
+                removeTitle: true,
+            }, {
+                removeViewBox: false,
+            }, {
+                removeUselessStrokeAndFill: true,
+            }]
+        }))
+        .pipe(dest(paths.patterns.outputLib))
+        .pipe(dest(paths.patterns.outputDocs))
+        .pipe(replace('<svg', '<template>\n  <svg'))
+        .pipe(replace('</svg>', '</svg>\n</template>'))
+        .pipe(rename(function(file) {
+            var converted = file.basename.replace(/\b\S/g, t => t.toUpperCase()).replace(/[-]+/g, '');
+
+            file.basename = 'Pattern' + converted;
+            file.extname = '.vue';
+        }))
+        .pipe(dest(paths.patterns.outputVue));
+
+    done();
+};
+
 //  ================================================================================
 //  @@  FAVICONS
 //  ================================================================================
@@ -534,10 +591,11 @@ exports.watch = series(
     watchFiles
 )
 
-exports.icons = series(
+exports.svg = series(
     cleanIcons,
     buildSystemSVGs,
-    buildBrandSVGs
+    buildBrandSVGs,
+    buildPatternSVGs
 );
 
 //  --  UPDATES DIALTONE VERSION

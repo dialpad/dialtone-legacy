@@ -1,4 +1,4 @@
-<header class="dialtone-section2">
+<header class="d-stack2">
     <h3 class="dialtone-title__subsection">Loading Buttons</h3>
     <p class="dialtone-copy__normal">If there is a delay between the user clicking a button and the action taking place, apply a loader to communicate that something is happening.</p>
 </header>
@@ -15,7 +15,7 @@
     <tbody>
         {% for i in buttons.loading-styles %}
         {% assign s = i.style %}
-        <tr class="{% if s == 'inverted'%}d-background-color--slate d-color--white{% endif %}">
+        <tr class="{% if s == 'inverted'%}d-background-color--slate d-fc-white{% endif %}">
             <th scope="row">{{ s | capitalize }}</th>
             <td class="code-example">
                 {% if s == "default" %}.d-btn-loading
@@ -24,7 +24,7 @@
                 {% elsif s == "inverted"%}.d-btn-loading--white{% endif %}</td>
             <td style="text-align: center;">
                 <button class="{% if s != 'circle' %}d-width100{% endif %}
-                    {% if s == 'circle' %}d-padding16{% endif %}
+                    {% if s == 'circle' %}d-p16{% endif %}
 
                     d-btn{% if s == 'inverted'%}--inverted{% elsif s == 'circle'%}--circle{% elsif s == 'danger'%}--danger{% endif %}--loading" type="button" aria-pressed="false" style="white-space: nowrap;">
                     <span class="d-btn__label">Place call</span>
@@ -32,7 +32,7 @@
             </td>
             <td style="text-align: center;">
                 <button class="{% if s != 'circle' %}d-width100{% endif %}
-                    {% if s == 'circle' %}d-padding16{% endif %}
+                    {% if s == 'circle' %}d-p16{% endif %}
 
                     d-btn{% if s == 'inverted'%}--inverted{% elsif s == 'circle'%}--circle{% elsif s == 'danger'%}--danger{% endif %}--outlined--loading" type="button" aria-pressed="false" style="white-space: nowrap;">
                     <span class="d-btn__label">Place call</span>
@@ -40,7 +40,7 @@
             </td>
             <td style="text-align: center;">
                 <button class="{% if s != 'circle' %}d-width100{% endif %}
-                    {% if s == 'circle' %}d-padding16{% endif %}
+                    {% if s == 'circle' %}d-p16{% endif %}
 
                     d-btn{% if s == 'inverted'%}--inverted--primary{% elsif s == 'circle'%}--circle--danger--primary{% elsif s == 'danger'%}--danger--primary{% else %}--primary{% endif %}--loading" type="button" aria-pressed="false" style="white-space: nowrap;">
                     <span class="d-btn__label">Place call</span>

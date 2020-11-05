@@ -1,0 +1,102 @@
+---
+layout: page
+title: Background Patterns
+description: CSS background-image patterns to help make Department and Call Center color blocks more visibly distinct.
+---
+<section class="d-stack8">
+    <h2 class="dialtone-title__section">Usage</h2>
+    <p class="dialtone-copy__normal">These <a href="/icons/patterns/" class="d-link">patterns</a> are to be used for Department and Call Centers. They were created to help visually distinguish Department and Call Center color blocks for individuals who suffer from color blindness or poor vision.</p>
+    <p class="dialtone-copy__normal">Unlike our <a href="/icons/system" class="d-link">icons</a> which are inlined directly into the document, we apply these patterns within a <span class="code-example--inline d-fs14">::after</span> pseudo element using the CSS <span class="code-example--inline">background-image</span> property as base64 images.</p>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        <h2 class="dialtone-title__section">Variables</h2>
+        <p class="dialtone-copy__normal">Dialtone provides Less and CSS variables for each background-image pattern. These variables provide <strong>the full url declaration</strong> for each pattern (<span class="code-example--inline">url("data:image/svg+xml;base64,…")</span>). These variables are provided for reference. Since these patterns are applied via a pseduo <span class="code-example--inline d-fs14">::after</span> element, <strong>it is strongly recommended that you apply these patterns using a class attribute.</strong></p>
+    </header>
+{% highlight css linenos %}
+//  --  CSS Variable
+.example-class::after {
+    background-image: var(--bgg-pattern-[name]--[dark|light]);
+}
+//  --  Less Variable
+.example-class::after {
+    background-image: @bgg-pattern-[name]--[dark|light];
+}
+{% endhighlight %}
+    <table class="dialtone-table dialtone-table--code">
+        <thead>
+            <tr>
+                <th scope="col" class="d-width30">Pattern</th>
+                <th scope="col">CSS Var</th>
+                <th scope="col">Less Var</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in svg-patterns %}
+            {% assign name = i.name %}
+            {% assign file = i.file %}
+                <tr>
+                    <th scope="row" class="d-bgg-pattern d-bgg-pattern-{{ file }}--dark d-ff-custom d-fc-slate d-fs14"><div class=""></div> {{ name }} (Dark)</th>
+                    <td>var(--bgg-pattern-{{ file }}--dark)</td>
+                    <td>@bgg-pattern-{{ file }}--dark</td>
+                </tr>
+            {% endfor %}
+            {% for i in svg-patterns %}
+            {% assign name = i.name %}
+            {% assign file = i.file %}
+                <tr>
+                    <th scope="row" class="d-bgg-pattern d-bgg-pattern-{{ file }}--light d-ff-custom d-fc-white d-fs14 d-bgc-navy">{{ name }} (Light)</th>
+                    <td class="d-fc-white d-bgc-navy">var(--bgg-pattern-{{ file }}--light)</td>
+                    <td class="d-fc-white d-bgc-navy">@bgg-pattern-{{ file }}--light</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+<section class="d-stack16">
+    <h2 class="dialtone-title__section">Classes</h2>
+    <table class="dialtone-table dialtone-table--code">
+        <thead>
+            <tr>
+                <th scope="col" style="width: 3.2rem;"></th>
+                <th scope="col">Dark</th>
+                <th scope="col" class="d-bgc-navy d-fc-white" style="width: 3.2rem;"></th>
+                <th scope="col" class="d-bgc-navy d-fc-white">Light</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in svg-patterns %}
+            {% assign file = i.file %}
+            <tr>
+                <td class="d-bgg-pattern d-bgg-pattern-{{ file }}--dark"></td>
+                <td>.d-bgg-pattern-{{ file }}--dark</td>
+                <td class="d-bgg-pattern d-bgg-pattern-{{ file }}--light d-bgc-navy"></td>
+                <td class="d-bgc-navy d-fc-white">.d-bgg-pattern-{{ file }}--light</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+<section class="d-stack16">
+    <h2 class="dialtone-title__section">Examples</h2>
+    <div class="dialtone-example" data-example="yes" data-code="yes">
+        <div class="dialtone-example__example d-stack8">
+            <div class="d-bgg-pattern d-bgg-pattern-crosshatch--light d-d-flex d-ai-center d-border-radius--sm d-border-bottom-radius--none d-fs12 d-lh8 d-fw-bold d-fc-white d-bgg-navy">
+                <div class="d-p2">Incoming Call</div>
+            </div>
+            <div class="d-bgg-pattern d-bgg-pattern-dot-dash--dark d-d-flex d-ai-center d-border-radius--sm d-border-bottom-radius--none d-fs12 d-lh8 d-fw-bold d-bgg-berry-light">
+                <div class="d-p2">Sales Support</div>
+            </div>
+        </div>
+        <div class="dialtone-example__code">
+{% highlight html linenos %}
+<div class="d-bgg-pattern d-bgg-pattern-crosshatch--light d-d-flex d-ai-center d-border-radius--sm d-border-bottom-radius--none d-fs12 d-lh8 d-fw-bold d-fc-white d-bgg-navy">
+    <div class="d-p2">Incoming Call</div>
+</div>
+<div class="d-bgg-pattern d-bgg-pattern-dot-dash--dark d-d-flex d-ai-center d-border-radius--sm d-border-bottom-radius--none d-fs12 d-lh8 d-fw-bold d-bgg-berry-light">
+    <div class="d-p2">Sales Support</div>
+</div>
+{% endhighlight %}
+        </div>
+    </div>
+</section>

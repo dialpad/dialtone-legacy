@@ -3,38 +3,40 @@ layout: page
 title: Toast
 description: Toast notices, sometimes called snackbars, are time-based messages that appear based on the user or other users actions. They contain at-a-glance information about outcomes. Sometimes they are paired with actions.
 ---
-<section class="dialtone-section8">
+<section class="d-stack8">
     <h2 class="dialtone-title__section">Breakdown</h2>
     <p class="dialtone-copy__normal">Toast messages have a content area, icon, message, and possibly metadata. They are placed within a wrapper.</p>
     <div class="dialtone-breakdown">
         <img src="/{{ site.paths.img }}/toast-breakdown@2x.png" alt="A breakdown of a toast message" />
     </div>
 </section>
-<section class="dialtone-section16">
+<section class="d-stack16">
     <h2 class="dialtone-title__section">Styles</h2>
     {% for i in toasts.toast-example %}
     {% assign name = i.name %}
     {% assign meta = i.meta %}
     {% assign copy = i.copy %}
-        <aside class="dialtone-section8">
+        <aside class="d-stack8">
             <h3 class="dialtone-title__subsection">{{ name | capitalize }}</h3>
             <div class="dialtone-example" data-example="yes" data-code="yes">
                 <div class="dialtone-example__example">
-                    <div class="d-min-height1 d-margin-top32--negative d-margin-x24--negative d-margin-bottom24--negative" style="position: relative;">
+                    <div class="d-p-relative d-min-height1 d-mtn32 d-mxn24 d-mbn24">
                         <div class="d-toast-wrapper">
                             <div class="d-toast--{{ name }}" aria-hidden="true">
                                 <div class="d-toast__content" aria-describedby="notice-message">
                                     <div class="d-toast__icon--{{ name }}">
                                     {% if name == "chat" %}
-                                        {% icon "chat", "system", "js-svg" %}
+                                        {% iconSystem "chat", "js-svg" %}
                                     {% elsif name == "viewing" %}
-                                        {% icon "visibility", "system", "js-svg" %}
+                                        {% iconSystem "visibility", "js-svg" %}
                                     {% elsif name == "info" %}
-                                        {% icon "info", "system", "js-svg" %}
+                                        {% iconSystem "info", "js-svg" %}
                                     {% elsif name == "error" %}
-                                        {% icon "error", "system", "js-svg" %}
+                                        {% iconSystem "error", "js-svg" %}
                                     {% elsif name == "success" %}
-                                        {% icon "checkmark", "system", "js-svg" %}
+                                        {% iconSystem "checkmark", "js-svg" %}
+                                    {% elsif name == "organizer" %}
+                                        {% iconSystem "group", "js-svg" %}
                                     {% endif %}
                                     </div>
                                     <div class="d-toast__message" aria-label="notice-message">

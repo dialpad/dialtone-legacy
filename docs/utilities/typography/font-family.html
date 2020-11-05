@@ -1,0 +1,98 @@
+---
+layout: page
+title: Font Family
+description: Utility classes for controlling an element's font-family.
+---
+<section class="d-stack16">
+    <header class="d-stack2">
+        <h2 class="dialtone-title__section">Variables</h2>
+        <p class="dialtone-copy__normal">Dialtone provides Less and CSS variables for <span class="code-example--inline">font-family</span>. These are useful if you're writing custom CSS and an immutable class isn't required or desired.</p>
+    </header>
+    <table class="dialtone-table dialtone-table--code">
+        <thead>
+            <tr>
+                <th scope="col" class="d-width10">Type</th>
+                <th scope="col" class="d-width20">CSS Var</th>
+                <th scope="col" class="d-width20">Less Var</th>
+                <th scope="col" class="d-width25 d-opacity50 d-background-color--ash">Deprecated Less Var</th>
+                <th scope="col">Output</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in type.font-family %}
+            {% assign t = i.type %}
+            {% assign v = i.var %}
+            {% assign o = i.output %}
+                <tr>
+                    <th scope="row">{{ t }}</th>
+                    {% if v == "inherit" %}
+                        <td class="d-fc-slate-lightest d-fs-italic">N/A</td>
+                        <td class="d-fc-slate-lightest d-fs-italic">N/A</td>
+                        <td class="d-opacity50 d-background-color--ash d-fc-slate-lightest d-fs-italic">N/A</td>
+                    {% elsif v == "unset" %}
+                        <td class="d-fc-slate-lightest d-fs-italic">N/A</td>
+                        <td class="d-fc-slate-lightest d-fs-italic">N/A</td>
+                        <td class="d-opacity50 d-background-color--ash d-fc-slate-lightest d-fs-italic">N/A</td>
+                    {% else %}
+                        <td>var(--ff-{{ v }})</td>
+                        <td>@ff-{{ v }}</td>
+                        <td class="d-opacity50 d-background-color--ash">@font-family--{{ v }}</td>
+                    {% endif %}
+                    <td>{{ o }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        <h2 class="dialtone-title__section">Classes</h2>
+        <p class="dialtone-copy__normal">Starting in v5.8.0, Dialtone began providing immutable type classes, meaning they include an <span class="code-example--inline">!important</span> to override CSS specificity. All previous class names still exist, but are considered deprecated and should not be used moving forward. They will be removed in a future version.</p>
+    </header>
+    <table class="dialtone-table dialtone-table--code">
+        <thead>
+            <tr>
+                <th scope="col" class="d-width20">Class</th>
+                <th scope="col" class="d-width25 d-opacity50 d-background-color--ash">Deprecated Class</th>
+                <th scope="col">Output</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in type.font-family %}
+            {% assign t = i.type %}
+            {% assign v = i.var %}
+            {% assign o = i.output %}
+            <tr>
+                <td>.d-ff-{{ v }}</td>
+                {% if v == "unset" %}
+                    <td class="d-opacity50 d-background-color--ash d-fc-slate-lightest d-fs-italic">N/A</td>
+                {% else %}
+                    <td class="d-opacity50 d-background-color--ash">.d-font-family--{{ v }}</td>
+                {% endif %}
+                <td>font-family: {{ o }} !important;</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="dialtone-example" data-example="yes" data-code="yes">
+        <div class="dialtone-example__example d-stack12">
+            {% for i in type.font-family %}
+            {% assign t = i.type %}
+            {% assign v = i.var %}
+            <div class="d-stack2">
+                <span class="code-example--inline">.d-ff-{{ v }}</span>
+                <p class="d-lh6 d-fs18 d-m0 d-ff-{{ v }}">{% if v == "inherit" %}This paragraph's font-family has been reset using <strong>{{ t }}</strong>.{% elsif v == "unset" %}This paragraph's font-family has been reset using <strong>{{ t }}</strong>.{% else %}This is a paragraph using a <strong>{{ t }}</strong> font-family.{% endif %}</p>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="dialtone-example__code">
+{% highlight html linenos %}
+<p class="d-ff-custom">…</p>
+<p class="d-ff-sans">…</p>
+<p class="d-ff-mono">…</p>
+<p class="d-ff-inherit">…</p>
+<p class="d-ff-unset">…</p>
+{% endhighlight %}
+        </div>
+    </div>
+</section>

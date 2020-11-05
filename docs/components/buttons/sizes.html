@@ -1,5 +1,5 @@
-<section class="dialtone-section16">
-    <header class="dialtone-section2">
+<section class="d-stack16">
+    <header class="d-stack2">
         <h2 class="dialtone-title__section">Sizes</h2>
         <p class="dialtone-copy__normal">The default button font-size is 16px. To change the button’s font-size, use the following classes:</p>
     </header>
@@ -22,16 +22,16 @@
                 <td class="code-example">{% if name == "Default"%}N/A{% else %}.d-btn--{{ class }}{% endif %}</td>
                 <td>{{ size }}</td>
                 <td>
-                    <div class="d-margin-x2--negative" style="display: flex; align-items: center;">
+                    <div class="d-d-flex d-ai-center d-mxn2">
                         {% assign examples = "normal, circle, icon" | split: ", "%}
                         {% for e in examples %}
-                            <button class="d-margin-x2 d-btn{% if e == 'circle' %}--circle{% elsif e == 'normal' %}--primary{% endif %}{% if class != nil %} d-btn--{% if e == 'circle'%}circle--{% endif %}{{ class }}{% endif %}" type="button" aria-pressed="false">
+                            <button class="d-mx2 d-btn{% if e == 'circle' %}--circle{% elsif e == 'normal' %}--primary{% endif %}{% if class != nil %} d-btn--{% if e == 'circle'%}circle--{% endif %}{{ class }}{% endif %}" type="button" aria-pressed="false">
                                 {% if e != 'normal' %}
                                     <span class="d-btn__icon">
                                         {% if e == 'circle' %}
-                                            {% icon "mic-on", "system", "js-svg" %}
+                                            {% iconSystem "mic-on", "js-svg" %}
                                         {% elsif e == 'icon' %}
-                                            {% icon "search", "system", "js-svg" %}
+                                            {% iconSystem "search", "js-svg" %}
                                         {% endif %}
                                     </span>
                                 {% endif %}
