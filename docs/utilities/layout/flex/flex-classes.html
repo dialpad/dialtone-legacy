@@ -1,0 +1,349 @@
+<section class="d-stack16">
+    <header class="d-stack2">
+        <h2 class="dialtone-title__section">Flex Grow</h2>
+        <p class="dialtone-copy__normal">The <span class="code-example--inline">flex-grow</span> sets the flex container’s grow factor relative to the parent's main size. Default value is 0.</p>
+    </header>
+    <div class="d-layout__stack12">
+        <table class="dialtone-table dialtone-table--code">
+            <thead>
+                <tr>
+                    <th scope="col" class="dialtone-table__column--md">Class</th>
+                    <th scope="col" class="dialtone-table__column--md">Output</th>
+                    <th scope="col" style="width: 50%">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in flex.properties %}
+                {% assign class = i.class %}
+                {% assign value = i.values | split: "," %}
+                {% assign desc = i.description %}
+                    {% if class contains "grow" %}
+                        {% for v in value %}
+                        <tr>
+                            <th scope="row">.d-{{ class }}{{ v }}</th>
+                            <td>flex-grow: {{ v }};</td>
+                            <td class="dialtone-table--sans d-lh-tight">{{ desc }} {{ v }}.</td>
+                        </tr>
+                        {% endfor %}
+                    {% endif %}
+                {% endfor %}
+                <tr>
+                    <th scope="row">.d-fl-grow-unset</th>
+                    <td>flex-grow: unset;</td>
+                    <td class="dialtone-table--sans d-lh-tight">Resets the flex-grow value to the initial value (0).</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="dialtone-example" data-example="yes" data-code="yes">
+            <div class="dialtone-example__example">
+                <div class="d-d-flex d-m4">
+                    <div class="d-fl-none d-m1 d-p16 d-fc-navy-text d-fs14 d-lh-tight d-background-color--navy-lightest d-p-relative" style="background-color: rgba(23, 56, 250, 0.15)">Content cannot flex</div>
+                    <div class="d-fl-grow1 d-m1 d-p16 d-fc-navy-text d-fs14 d-lh-tight d-background-color--navy-lighter d-p-relative" style="background-color: rgba(23, 56, 250, 0.15)">Text that will grow</div>
+                    <div class="d-fl-none d-m1 d-p16 d-fc-navy-text d-fs14 d-lh-tight d-background-color--navy-lightest d-p-relative" style="background-color: rgba(23, 56, 250, 0.15)">Content cannot flex</div>
+                </div>
+            </div>
+            <div class="dialtone-example__code">
+{% highlight html linenos %}
+<div class="d-d-flex">
+    <div>…</div>
+    <div class="d-fl-grow1">…</div>
+    <div>…</div>
+</div>
+{% endhighlight %}
+            </div>
+        </div>
+    </div>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        <h2 class="dialtone-title__section">Flex Shrink</h2>
+        <p class="dialtone-copy__normal">The <span class="code-example--inline">flex-shrink</span> sets the flex container’s shrink factor relative to the parent's main size. Default value is 1.</p>
+    </header>
+    <div class="d-layout__stack12">
+        <table class="dialtone-table dialtone-table--code">
+            <thead>
+                <tr>
+                    <th scope="col" class="dialtone-table__column--md">Class</th>
+                    <th scope="col" class="dialtone-table__column--md">Output</th>
+                    <th scope="col" style="width: 50%">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in flex.properties %}
+                {% assign class = i.class %}
+                {% assign value = i.values | split: "," %}
+                {% assign desc = i.description %}
+                    {% if class contains "shrink" %}
+                        {% for v in value %}
+                        <tr>
+                            <th scope="row">.d-{{ class }}{{ v }}</th>
+                            <td>flex-shrink: {{ v }};</td>
+                            <td class="dialtone-table--sans d-lh-tight">{{ desc }} {{ v }}.</td>
+                        </tr>
+                        {% endfor %}
+                    {% endif %}
+                {% endfor %}
+                <tr>
+                    <th scope="row">.d-fl-shrink-unset</th>
+                    <td>flex-shrink: unset;</td>
+                    <td class="dialtone-table--sans d-lh-tight">Resets the flex-shrink value to the initial value (1).</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="dialtone-example" data-example="yes" data-code="yes">
+            <div class="dialtone-example__example">
+                <div class="d-d-flex d-m4">
+                    <div class="d-fl-none d-m1 d-p16 d-fc-navy-text d-fs14 d-lh-tight d-background-color--navy-lightest d-p-relative" style="background-color: rgba(23, 56, 250, 0.15)">Longer text that cannot flex</div>
+                    <div class="d-fl-shrink1 d-m1 d-p16 d-fc-navy-text d-fs14 d-lh-tight d-background-color--navy-lighter d-p-relative" style="background-color: rgba(23, 56, 250, 0.15)">Text that will shrink even if it causes text to wrap</div>
+                    <div class="d-fl-none d-m1 d-p16 d-fc-navy-text d-fs14 d-lh-tight d-background-color--navy-lightest d-p-relative" style="background-color: rgba(23, 56, 250, 0.15)">Longer text that cannot flex</div>
+                </div>
+            </div>
+            <div class="dialtone-example__code">
+{% highlight html linenos %}
+<div class="d-d-flex">
+    <div>…</div>
+    <div class="d-fl-shrink1">…</div>
+    <div>…</div>
+</div>
+{% endhighlight %}
+            </div>
+        </div>
+    </div>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        <h2 class="dialtone-title__section">Flex</h2>
+        <p class="dialtone-copy__normal">The <span class="code-example--inline">flex</span> CSS property is shorthand for <span class="code-example--inline">flex-grow</span>, <span class="code-example--inline">flex-shrink</span>, and <span class="code-example--inline">flex-basis</span>. If only two values are provided, the <span class="code-example--inline">flex-grow</span> value is assumed for <span class="code-example--inline">flex-shrink</span>. You can also control the grow and shrink flex values by using the classes provided.</p>
+    </header>
+    <div class="d-layout__stack12">
+        <table class="dialtone-table dialtone-table--code">
+            <thead>
+                <tr>
+                    <th scope="col" class="dialtone-table__column--md">Class</th>
+                    <th scope="col" class="dialtone-table__column--md">Output</th>
+                    <th scope="col" style="width: 50%">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in flex.properties %}
+                {% assign class = i.class %}
+                {% assign value = i.values | split: "," %}
+                {% assign desc = i.description %}
+                    {% if class contains "flex" %}
+                        {% for v in value %}
+                        <tr>
+                            <th scope="row">.d-fl{{ v }}</th>
+                            <td>flex: {{ v }} auto;</td>
+                            <td class="dialtone-table--sans d-lh-tight">{{ desc }} {{ v }}.</td>
+                        </tr>
+                        {% endfor %}
+                    {% endif %}
+                {% endfor %}
+                <tr>
+                    <th scope="row">.d-fl-unset</th>
+                    <td>flex: unset;</td>
+                    <td class="dialtone-table--sans d-lh-tight">Resets the flex value to the initial value (0 1 auto).</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="dialtone-example" data-example="yes" data-code="yes">
+            <div class="dialtone-example__example">
+                <div class="d-d-flex d-m4">
+                    <div class="d-fl-none d-m1 d-p16 d-fc-navy-text d-fs14 d-lh-tight d-background-color--navy-lightest d-p-relative" style="background-color: rgba(23, 56, 250, 0.15)">Content cannot flex</div>
+                    <div class="d-fl1 d-m1 d-p16 d-fc-navy-text d-fs14 d-lh-tight d-background-color--navy-lighter d-p-relative" style="background-color: rgba(23, 56, 250, 0.15)">Text that will flex</div>
+                    <div class="d-fl-none d-m1 d-p16 d-fc-navy-text d-fs14 d-lh-tight d-background-color--navy-lightest d-p-relative" style="background-color: rgba(23, 56, 250, 0.15)">Content cannot flex</div>
+                </div>
+            </div>
+            <div class="dialtone-example__code">
+{% highlight html linenos %}
+<div class="d-d-flex">
+    <div>…</div>
+    <div class="d-fl1">…</div>
+    <div>…</div>
+</div>
+{% endhighlight %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="d-stack16">
+    <header class="d-stack2">
+        <h2 class="dialtone-title__section">Flex Direction</h2>
+        <p class="dialtone-copy__normal">The <span class="code-example--inline">flex-direction</span> sets the flex container’s main axis direction. Default value is row.</p>
+    </header>
+    <div class="d-stack2">
+        <table class="dialtone-table dialtone-table--code">
+            <thead>
+                <tr>
+                    <th scope="col" class="dialtone-table__column--md">Class</th>
+                    <th scope="col" class="dialtone-table__column--md">Output</th>
+                    <th scope="col" style="width: 50%">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for i in flex.direction %}
+            {% assign class = i.class %}
+            {% assign output = i.output %}
+            {% assign description = i.description %}
+                <tr>
+                    <th scope="row">.d-{{ class }}</th>
+                    <td>{{ output }}</td>
+                    <td class="dialtone-table--sans d-lh-tight">{{ description }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <div class="dialtone-example" data-example="yes" data-code="yes">
+            <div class="dialtone-example__example d-layout__stack12">
+                <div class="d-d-flex d-fd-row">
+                    <div class="layout-block d-mx1"><div class="layout-block__label">1</div></div>
+                    <div class="layout-block d-mx1"><div class="layout-block__label">2</div></div>
+                    <div class="layout-block d-mx1"><div class="layout-block__label">3</div></div>
+                    <div class="d-ff-mono d-mx8 d-fs11 d-fl-center" style="white-space:nowrap; color:#6303FF">.d-fd-row</div>
+                </div>
+                <div class="d-d-flex d-fd-row-reverse">
+                    <div class="layout-block d-mx1"><div class="layout-block__label">1</div></div>
+                    <div class="layout-block d-mx1"><div class="layout-block__label">2</div></div>
+                    <div class="layout-block d-mx1"><div class="layout-block__label">3</div></div>
+                    <div class="d-ff-mono d-mx8 d-fs11 d-fl-center" style="white-space:nowrap; color:#6303FF">.d-fd-row-reverse</div>
+                </div>
+                <div class="d-d-flex d-fd-column">
+                    <div class="layout-block d-my1 d-fl-shrink0"><div class="layout-block__label">1</div></div>
+                    <div class="layout-block d-my1 d-fl-shrink0"><div class="layout-block__label">2</div></div>
+                    <div class="layout-block d-my1 d-fl-shrink0"><div class="layout-block__label">3</div></div>
+                    <div class="d-ff-mono d-mx8 d-fs11 d-fl-center" style="white-space:nowrap; color:#6303FF">.d-fd-column</div>
+                </div>
+                <div class="d-d-flex d-fd-column-reverse">
+                    <div class="layout-block d-my1 d-fl-shrink0"><div class="layout-block__label">1</div></div>
+                    <div class="layout-block d-my1 d-fl-shrink0"><div class="layout-block__label">2</div></div>
+                    <div class="layout-block d-my1 d-fl-shrink0"><div class="layout-block__label">3</div></div>
+                    <div class="d-ff-mono d-mx8 d-fs11 d-fl-center" style="white-space:nowrap; color:#6303FF">.d-fd-column-reverse</div>
+                </div>
+            </div>
+            <div class="dialtone-example__code">
+{% highlight html linenos %}
+<div class="d-d-flex d-fd-row">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+</div>
+<div class="d-d-flex d-fd-row-reverse">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+</div>
+<div class="d-d-flex d-fd-column">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+</div>
+<div class="d-d-flex d-fd-column-reverse">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+</div>
+{% endhighlight %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="d-stack16">
+    <header class="d-stack2">
+        <h2 class="dialtone-title__section">Flex Wrap</h2>
+        <p class="dialtone-copy__normal">The <span class="code-example--inline">flex-wrap</span> sets the flex container’s wrapping status. Default value is nowrap.</p>
+    </header>
+    <div class="d-stack2">
+        <table class="dialtone-table dialtone-table--code">
+            <thead>
+                <tr>
+                    <th scope="col" class="dialtone-table__column--md">Class</th>
+                    <th scope="col" class="dialtone-table__column--md">Output</th>
+                    <th scope="col" style="width: 50%">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for i in flex.wrap %}
+            {% assign class = i.class %}
+            {% assign output = i.output %}
+            {% assign description = i.description %}
+                <tr>
+                    <th scope="row">.d-{{ class }}</th>
+                    <td>{{ output }}</td>
+                    <td class="dialtone-table--sans d-lh-tight">{{ description }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <div class="dialtone-example" data-example="yes" data-code="yes">
+            <div class="dialtone-example__example d-layout__stack12">
+                <div class="d-d-flex d-fw-nowrap d-flex-columns">
+                    <div class="layout-block d-m1 d-flex__cell5"><div class="layout-block__label">1 - [.d-flex__cell5]</div></div>
+                    <div class="layout-block d-m1 d-flex__cell5"><div class="layout-block__label">2 - [.d-flex__cell5]</div></div>
+                    <div class="layout-block d-m1 d-flex__cell5"><div class="layout-block__label">3 - [.d-flex__cell5]</div></div>
+                    <div class="d-ff-mono d-mx8 d-fs11 d-fl-center" style="white-space:nowrap; color:#6303FF">.d-fw-nowrap</div>
+                </div>
+                <div class="d-d-flex d-fw-wrap d-flex-columns">
+                    <div class="layout-block d-m1 d-flex__cell5"><div class="layout-block__label">1 - [.d-flex__cell5]</div></div>
+                    <div class="layout-block d-m1 d-flex__cell5"><div class="layout-block__label">2 - [.d-flex__cell5]</div></div>
+                    <div class="layout-block d-m1 d-flex__cell5"><div class="layout-block__label">3 - [.d-flex__cell5]</div></div>
+                    <div class="d-ff-mono d-mx8 d-fs11 d-fl-center" style="white-space:nowrap; color:#6303FF">.d-fw-wrap</div>
+                </div>
+                <div class="d-d-flex d-fw-wrap-reverse d-flex-columns">
+                    <div class="layout-block d-m1 d-flex__cell5"><div class="layout-block__label">1 - [.d-flex__cell5]</div></div>
+                    <div class="layout-block d-m1 d-flex__cell5"><div class="layout-block__label">2 - [.d-flex__cell5]</div></div>
+                    <div class="layout-block d-m1 d-flex__cell5"><div class="layout-block__label">3 - [.d-flex__cell5]</div></div>
+                    <div class="d-ff-mono d-mx8 d-fs11 d-fl-center" style="white-space:nowrap; color:#6303FF">.d-fw-wrap-reverse</div>
+                </div>
+            </div>
+            <div class="dialtone-example__code">
+{% highlight html linenos %}
+<div class="d-d-flex d-fw-nowrap">
+    <div class="d-flex__cell5">1</div>
+    <div class="d-flex__cell5">2</div>
+    <div class="d-flex__cell5">3</div>
+</div>
+<div class="d-d-flex d-fw-wrap">
+    <div class="d-flex__cell5">1</div>
+    <div class="d-flex__cell5">2</div>
+    <div class="d-flex__cell5">3</div>
+</div>
+<div class="d-d-flex d-fw-wrap-reverse">
+    <div class="d-flex__cell5">1</div>
+    <div class="d-flex__cell5">2</div>
+    <div class="d-flex__cell5">3</div>
+</div>
+{% endhighlight %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="d-stack16">
+    <header class="d-stack2">
+        <h2 class="dialtone-title__section">Flex Flow</h2>
+        <p class="dialtone-copy__normal">The <span class="code-example--inline">flex-flow</span> CSS property is a shorthand property that sets allows you to quickly set the above <span class="code-example--inline">flex-direction</span> and <span class="code-example--inline">flex-wrap</span> properties. By default all flex containers are set to <span class="code-example--inline">row</span> and <span class="code-example--inline">nowrap</span>.</p>
+    </header>
+    <table class="dialtone-table dialtone-table--code">
+        <thead>
+            <tr>
+                <th scope="col" class="dialtone-table__column--md">Class</th>
+                <th scope="col" class="dialtone-table__column--md">Output</th>
+                <th scope="col" style="width: 50%">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for i in flex.flow %}
+        {% assign class = i.class %}
+        {% assign output = i.output %}
+        {% assign description = i.description %}
+            <tr>
+                <th scope="row">.d-{{ class }}</th>
+                <td>{{ output }}</td>
+                <td class="dialtone-table--sans d-lh-tight">{{ description }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</section>

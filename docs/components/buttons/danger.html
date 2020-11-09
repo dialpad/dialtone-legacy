@@ -1,4 +1,4 @@
-<header class="dialtone-section2">
+<header class="d-stack2">
     <h3 class="dialtone-title__subsection">Danger</h3>
     <p class="dialtone-copy__normal">The danger button style is used to communicate destructive actions such as deleting content, accounts, or canceling services.</p>
 </header>
@@ -15,8 +15,8 @@
                 </tr>
             </thead>
             <tbody>
-                {% assign classes = site.data.buttons.styles | split: ", "%}
-                {% for s in classes %}
+                {% for i in buttons.styles %}
+                {% assign s = i.style %}
                 <tr>
                     <th scope="row">{{ s | capitalize }}</th>
                     <td class="code-example">.d-btn--danger{% if s == 'outlined' %}--outlined{% elsif s == 'filled'%}--primary{% endif %}</td>
@@ -37,7 +37,7 @@
         </table>
     </div>
     <div class="dialtone-example__code">
-{% highlight css linenos %}
+{% highlight css %}
 .danger-clear-btn {
     .d-btn--danger;
 }

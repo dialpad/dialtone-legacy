@@ -3,79 +3,168 @@ layout: page
 title: Font Size
 description: Utility classes for setting an element's font size.
 ---
-<section class="dialtone-section16">
-    <header class="dialtone-section2">
+<aside class="d-p16 d-border-radius--sm d-w-75ch d-background-color--blue-lighter d-fc-slate d-fs16 d-lh4 d-stack8">
+    <p class="d-m0"><strong>Note:</strong> New variables and classes were introduced with Dialtone v5.8.0. Whereas previous class names and variables used a "t-shirt" sizing method (sm, md, lg, etc), the new classes and variables explicitly state the desired size in the name.</p>
+    <p class="d-m0">The older classes and variables are still available, but they will no longer be supported and will be removed in a future version of Dialtone.</p>
+</aside>
+<section class="d-stack16">
+    <header class="d-stack2">
         <h2 class="dialtone-title__section">Variables</h2>
-        <p class="dialtone-copy__normal">When writing Less, you can set an element's font-size by using a <span class="code-example--inline">@{headline/text}--{size}</span> variable. The table below lists the font-size variables, size, and their output.</p>
+        <p class="dialtone-copy__normal">Dialtone provides Less and CSS variables for each font-size. This is useful if you're writing custom CSS and an immutable class isn't required or desired.</p>
     </header>
     <table class="dialtone-table dialtone-table--code">
         <thead>
             <tr>
-                <th scope="col" class="dialtone-table__column--md">Variable</th>
                 <th scope="col">Size</th>
+                <th scope="col">CSS Var</th>
+                <th scope="col" class="d-opacity50 d-background-color--ash">Deprecated CSS Var</th>
+                <th scope="col">Less Var</th>
+                <th scope="col" class="d-opacity50 d-background-color--ash">Deprecated Less Var</th>
                 <th scope="col">Output</th>
             </tr>
         </thead>
         <tbody>
-            {% for i in site.data.type.font-size %}
-            {% assign class = i.class %}
-            {% assign px = i.pixel %}
+            {% for i in type.font-size %}
+            {% assign size = i.size %}
+            {% assign var = i.variable-old %}
             {% assign output = i.output %}
             <tr>
-                <th scope="row">@{{ class }}</th>
-                <td>{{ px }}px</td>
+                <th scope="row">{{ size }}px</th>
+                <td>var(--fs{{ size }})</td>
+                {% if var == "N/A" %}
+                    <td class="d-opacity50 d-background-color--ash d-fc-slate-lightest d-fs-italic">N/A</td>
+                {% else %}
+                    <td class="d-opacity50 d-background-color--ash">var(--{{ var }})</td>
+                {% endif %}
+                <td>@fs{{ size }}</td>
+                {% if var == "N/A" %}
+                    <td class="d-opacity50 d-background-color--ash d-fc-slate-lightest d-fs-italic">N/A</td>
+                {% else %}
+                    <td class="d-opacity50 d-background-color--ash">@{{ var }}</td>
+                {% endif %}
                 <td>{{ output }}rem</td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
 </section>
-<section class="dialtone-section16">
-    <header class="dialtone-section2">
-        <h2 class="dialtone-title__section">Classes</h2>
-        <p class="dialtone-copy__normal">Set an element's font-size by using the <span class="code-example--inline">.d-{headline/text}--{size}</span> classes. The table below lists the available classes, size, and their CSS output.</p>
+<section class="d-stack16">
+    <header class="d-stack2">
+        <h2 class="dialtone-title__section">Size Classes</h2>
+        <p class="dialtone-copy__normal">Starting in v5.8.0, Dialtone began providing immutable type classes, meaning they include an <span class="code-example--inline">!important</span> to override CSS specificity. These new classes abandon the previous "t-shirt" sizing metaphor in favor of explicitly stating the font-size. All previous class names still exist, but are considered deprecated and should not be used moving forward. They will be removed in a future version.</p>
     </header>
     <table class="dialtone-table dialtone-table--code">
         <thead>
             <tr>
-                <th scope="col" class="dialtone-table__column--md">Variable</th>
                 <th scope="col">Size</th>
+                <th scope="col">Class</th>
+                <th scope="col" class="d-opacity50 d-background-color--ash">Deprecated Class</th>
                 <th scope="col">Output</th>
             </tr>
         </thead>
         <tbody>
-            {% for i in site.data.type.font-size %}
-            {% assign class = i.class %}
-            {% assign px = i.pixel %}
-            {% assign output = i.output %}
+            {% for i in type.font-size %}
+            {% assign size = i.size %}
+            {% assign class = i.class-old %}
             <tr>
-                <th scope="row">.d-{{ class }}</th>
-                <td>{{ px }}px</td>
-                <td>
-                    {% if class contains "headline" %}
-                        font-size: {{ output }}rem;<br/>
-                        font-weight: 600;
-                        {% if class == "headline--xs" %}
-                            <br/>text-transform: uppercase;
-                        {% endif %}
-                    {% elsif class contains "text" %}
-                        font-size: {{ output }}rem;
-                    {% endif %}
-                </td>
+                <th scope="row">{{ size }}px</th>
+                <td>.d-fs{{ size }}</td>
+                {% if class == "N/A" %}
+                    <td class="d-opacity50 d-background-color--ash d-fc-slate-lightest d-fs-italic">N/A</td>
+                {% else %}
+                    <td class="d-opacity50 d-background-color--ash">.d-{{ class }}</td>
+                {% endif %}
+                <td>font-size: var(--fs{{ size }}) !important;</td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
-</section>
-<section class="dialtone-section16">
-    <h2 class="dialtone-title__section">Examples</h2>
-    <div class="dialtone-section16" style="max-width: 67.6rem;">
-        {% for i in site.data.type.font-size %}
-            {% assign class = i.class %}
-            <div class="dialtone-section2" style="white-space: nowrap; overflow: hidden;">
-                <span class="code-example--inline" style="background-color: transparent; color: var(--color--light)">.d-{{ class }}</span>
-                <p class="d-{{ class }} d-line-height--sm">The quick brown fox jumps over the lazy dog.</p>
+    <div class="dialtone-example" data-example="yes" data-code="yes">
+        <div class="dialtone-example__example d-stack12">
+            {% for i in type.font-size %}
+            {% assign size = i.size %}
+            <div class="d-stack2 d-ws-nowrap d-of-hidden">
+                <span class="code-example--inline">.d-fs{{ size }}</span>
+                <p class="d-fs{{ size }} d-lh4 d-m0">The quick brown fox jumps over the lazy dog.</p>
             </div>
-        {% endfor %}
+            {% endfor %}
+        </div>
+        <div class="dialtone-example__code">
+{% highlight html linenos %}
+<p class="d-fs10">…</p>
+<p class="d-fs11">…</p>
+<p class="d-fs12">…</p>
+<p class="d-fs14">…</p>
+<p class="d-fs16">…</p>
+<p class="d-fs18">…</p>
+<p class="d-fs20">…</p>
+<p class="d-fs24">…</p>
+<p class="d-fs28">…</p>
+<p class="d-fs32">…</p>
+<p class="d-fs36">…</p>
+<p class="d-fs42">…</p>
+<p class="d-fs48">…</p>
+<p class="d-fs54">…</p>
+{% endhighlight %}
+        </div>
+    </div>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        <h2 class="dialtone-title__section">Headline Classes</h2>
+        <p class="dialtone-copy__normal">Starting in v5.8.0, Dialtone abandoned the previous "t-shirt" sizing metaphor in favor of explicitly stating the font-size. While these single-purpose classes provide a better idea of the font-size you will see, they didn't include all CSS properties that the previous <span class="code-example--inline">.d-headline--{size}</span> classes provided. The following classes do provide those properties.</p>
+    </header>
+    <table class="dialtone-table dialtone-table--code">
+        <thead>
+            <tr>
+                <th scope="col">Size</th>
+                <th scope="col">Class</th>
+                <th scope="col" class="d-opacity50 d-background-color--ash">Deprecated Class</th>
+                <th scope="col">Output</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in type.font-size %}
+            {% assign size = i.size %}
+            {% assign class = i.class-old %}
+            {% assign hl = i.headline %}
+                {% if hl == "yes" %}
+                <tr>
+                    <th scope="row">{{ size }}px</th>
+                    <td>.d-headline{{ size }}</td>
+                    {% if class == "N/A" %}
+                        <td class="d-opacity50 d-background-color--ash d-fc-slate-lightest d-fs-italic">N/A</td>
+                    {% else %}
+                        <td class="d-opacity50 d-background-color--ash">.d-{{ class }}</td>
+                    {% endif %}
+                    <td>font-size: var(--fs{{ size }}) !important;<br />font-weight: bold !important;{% if size == "10" %}<br />text-transform: uppercase !important;{% endif %}</td>
+                </tr>
+                {% endif %}
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="dialtone-example" data-example="yes" data-code="yes">
+        <div class="dialtone-example__example d-stack12">
+            {% for i in type.font-size %}
+            {% assign size = i.size %}
+            {% assign hl = i.headline %}
+                {% if hl == "yes" %}
+                <div class="d-stack2 d-ws-nowrap d-of-hidden">
+                    <span class="code-example--inline">.d-headline{{ size }}</span>
+                    <p class="d-headline{{ size }} d-m0">The quick brown fox jumps over the lazy dog.</p>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="dialtone-example__code">
+{% highlight html linenos %}
+<p class="d-headline10">…</p>
+<p class="d-headline24">…</p>
+<p class="d-headline28">…</p>
+<p class="d-headline32">…</p>
+<p class="d-headline36">…</p>
+<p class="d-headline42">…</p>
+{% endhighlight %}
+        </div>
     </div>
 </section>

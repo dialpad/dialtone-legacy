@@ -3,22 +3,22 @@ layout: page
 title: Inputs
 description: Input fields are text areas used to gather information from users. It can have a range of options and supports several text formats including numbers.
 ---
-<div class="dialtone-section16">
-    <header class="dialtone-section8">
+<div class="d-stack16">
+    <header class="d-stack8">
         <h2 class="dialtone-title__section">Base Style</h2>
         <p class="dialtone-copy__normal">Inputs are normally paired with a label, but there are times when they can be used without a label. Placeholder text should primarily be used as a content prompt and only provided when needed.</p>
     </header>
     <div class="dialtone-example" data-example="yes" data-code="yes">
         <div class="dialtone-example__example">
-            <div class="dialtone-section16">
-                <div class="dialtone-section4">
+            <div class="d-stack16">
+                <div class="d-stack4">
                     <div>
                         <label class="d-label" for="Dialtone--InputExample1">Full name</label>
                         <span class="d-description">This is something you can change later.</span>
                     </div>
                     <input class="d-input" id="Dialtone--InputExample1" type="text" placeholder="e.g. John Doe, Jane Doe" />
                 </div>
-                <div class="dialtone-section4">
+                <div class="d-stack4">
                     <div>
                         <label class="d-label" for="Dialtone--InputExample2">Full name</label>
                         <span class="d-description">This is something you can change later.</span>
@@ -36,26 +36,26 @@ description: Input fields are text areas used to gather information from users. 
         </div>
     </div>
 </div>
-<div class="dialtone-section32">
-    <header class="dialtone-section8">
+<div class="d-stack32">
+    <header class="d-stack8">
         <h2 class="dialtone-title__section">Validation States</h2>
         <p class="dialtone-copy__normal">Provides feedback to the user based on their interction, or lack thereof, with an input.</p>
     </header>
-    <div class="dialtone-section16">
-        <header class="dialtone-section8">
+    <div class="d-stack16">
+        <header class="d-stack8">
             <h3 class="dialtone-title__subsection">Warning</h3>
             <p class="dialtone-copy__normal">Warns the user that the value(s) they've entered has a potential problem, but it doesn't block them from proceeding with input submission.</p>
         </header>
         <div class="dialtone-example" data-example="yes" data-code="yes">
             <div class="dialtone-example__example">
-                <div class="dialtone-section8">
+                <div class="d-stack8">
                     <label class="d-label" for="Dialtone--InputExample3">Email address</label>
                     <input class="d-input d-input--warning" id="Dialtone--InputExample3" type="email" placeholder="" value="SHANE" />
                     <span class="d-input-message d-input-message--warning">Caps lock is on. <a href="#">Having trouble with your email address?</a></span>
                 </div>
             </div>
             <div class="dialtone-example__code">
-{% highlight css linenos %}
+{% highlight css %}
 .input-example {
   .d-input();
   .d-input--warning();
@@ -68,21 +68,21 @@ description: Input fields are text areas used to gather information from users. 
             </div>
         </div>
     </div>
-    <div class="dialtone-section16">
-        <header class="dialtone-section8">
+    <div class="d-stack16">
+        <header class="d-stack8">
             <h3 class="dialtone-title__subsection">Error</h3>
             <p class="dialtone-copy__normal">Alerts the user that the value(s) they've entered is incorrect, not provided, or has some issue that will block them from proceeding with input submission.</p>
         </header>
         <div class="dialtone-example" data-example="yes" data-code="yes">
             <div class="dialtone-example__example">
-                <div class="dialtone-section8">
+                <div class="d-stack8">
                     <label class="d-label" for="Dialtone--InputExample4">Email address</label>
                     <input class="d-input d-input--error" id="Dialtone--InputExample4" type="email" placeholder="" value="SHANE" />
                     <span class="d-input-message d-input-message--error">You must provide an email address to proceed. <a href="#">Forgot email address?</a></span>
                 </div>
             </div>
             <div class="dialtone-example__code">
-{% highlight css linenos %}
+{% highlight css %}
 .input-example {
   .d-input();
   .d-input--error();
@@ -95,21 +95,21 @@ description: Input fields are text areas used to gather information from users. 
             </div>
         </div>
     </div>
-    <div class="dialtone-section16">
-        <header class="dialtone-section8">
+    <div class="d-stack16">
+        <header class="d-stack8">
             <h3 class="dialtone-title__subsection">Success</h3>
             <p class="dialtone-copy__normal">Notifies the user that the value(s) they've entered is correct.</p>
         </header>
         <div class="dialtone-example" data-example="yes" data-code="yes">
             <div class="dialtone-example__example">
-                <div class="dialtone-section8">
+                <div class="d-stack8">
                     <label class="d-label" for="Dialtone--InputExample5">Email address</label>
                     <input class="d-input d-input--success" id="Dialtone--InputExample5" type="email" placeholder="" value="shane.holmes@example.com" />
                     <span class="d-input-message d-input-message--success">That email address hasn't been used. <a href="#">Why do we require an email address?</a></span>
                 </div>
             </div>
             <div class="dialtone-example__code">
-{% highlight css linenos %}
+{% highlight css %}
 .input-example {
   .d-input();
   .d-input--success();
@@ -123,7 +123,7 @@ description: Input fields are text areas used to gather information from users. 
         </div>
     </div>
 </div>
-<section class="dialtone-section16">
+<section class="d-stack16">
     <h2 class="dialtone-title__section">Sizes</h2>
     <table class="dialtone-table">
         <thead>
@@ -135,12 +135,12 @@ description: Input fields are text areas used to gather information from users. 
             </tr>
         </thead>
         <tbody>
-            {% for i in site.data.inputs.input-sizes %}
+            {% for i in inputs.input-sizes %}
             {% assign name = i.name %}
             {% assign class = i.class %}
             {% assign size = i.size %}
                 <tr>
-                    <th scope="row" class="d-text--sm">{{ name }}</th>
+                    <th scope="row" class="d-fs14">{{ name }}</th>
                     <td class="code-example">{% if class != nil %}.d-input--{{ class }}{% else %}N/A{% endif %}</td>
                     <td>{{ size }}</td>
                     <td><input class="d-input {% if class != nil %}d-input--{{ class }}{% endif %}" id="Dialtone--InputExample6" type="email" placeholder="e.g. Can you hear me?" /></td>

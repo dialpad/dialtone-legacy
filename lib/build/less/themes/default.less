@@ -54,6 +54,12 @@
 @success-color--text:           @color--emerald-text;
 
 //  ============================================================================
+//  $$  HEIGHTS & WIDTHS
+//  ----------------------------------------------------------------------------
+@topbar-height:                             @spacing64;
+
+
+//  ============================================================================
 //  $$  COLORS
 //  ----------------------------------------------------------------------------
 @color-vars: {
@@ -143,6 +149,90 @@
     line-height--lg:                        @line-height--lg;
     line-height--xl:                        @line-height--xl;
     line-height--xxl:                       @line-height--xxl;
+
+    bgo:                                    100%;
+    bgg-direction:                          to right;
+    bgg-percentage:                         7.5%;
+
+    bgg-pattern-blob--dark:                 @bgg-pattern-blob--dark;
+    bgg-pattern-chevrons--dark:             @bgg-pattern-chevrons--dark;
+    bgg-pattern-crosses--dark:              @bgg-pattern-crosses--dark;
+    bgg-pattern-crosshatch--dark:           @bgg-pattern-crosshatch--dark;
+    bgg-pattern-dot-dash--dark:             @bgg-pattern-dot-dash--dark;
+    bgg-pattern-dots-circles--dark:         @bgg-pattern-dots-circles--dark;
+    bgg-pattern-horz-stripes--dark:         @bgg-pattern-horz-stripes--dark;
+    bgg-pattern-slanted-stripes--dark:      @bgg-pattern-slanted-stripes--dark;
+    bgg-pattern-steps--dark:                @bgg-pattern-steps--dark;
+    bgg-pattern-stripe--dark:               @bgg-pattern-stripe--dark;
+    bgg-pattern-blob--light:                @bgg-pattern-blob--light;
+    bgg-pattern-chevrons--light:            @bgg-pattern-chevrons--light;
+    bgg-pattern-crosses--light:             @bgg-pattern-crosses--light;
+    bgg-pattern-crosshatch--light:          @bgg-pattern-crosshatch--light;
+    bgg-pattern-dot-dash--light:            @bgg-pattern-dot-dash--light;
+    bgg-pattern-dots-circles--light:        @bgg-pattern-dots-circles--light;
+    bgg-pattern-horz-stripes--light:        @bgg-pattern-horz-stripes--light;
+    bgg-pattern-slanted-stripes--light:     @bgg-pattern-slanted-stripes--light;
+    bgg-pattern-steps--light:               @bgg-pattern-steps--light;
+    bgg-pattern-stripe--light:              @bgg-pattern-stripe--light;
+}
+
+//  NEW TYPE CSS VARS
+//  These should be used moving forward
+@type-styles-vars: {
+    ff-custom:                              @ff-custom;
+    ff-sans:                                @ff-sans;
+    ff-mono:                                @ff-mono;
+
+    fs10:                                   @fs10;
+    fs11:                                   @fs11;
+    fs12:                                   @fs12;
+    fs14:                                   @fs14;
+    fs16:                                   @fs16;
+    fs18:                                   @fs18;
+    fs20:                                   @fs20;
+    fs24:                                   @fs24;
+    fs28:                                   @fs28;
+    fs32:                                   @fs32;
+    fs36:                                   @fs36;
+    fs42:                                   @fs42;
+    fs48:                                   @fs48;
+    fs54:                                   @fs54;
+
+    lh0:                                    @lh0;
+    lh1:                                    @lh1;
+    lh2:                                    @lh2;
+    lh4:                                    @lh4;
+    lh6:                                    @lh6;
+    lh8:                                    @lh8;
+    lh12:                                   @lh12;
+    lh16:                                   @lh16;
+    lh20:                                   @lh20;
+    lh24:                                   @lh24;
+
+    lh-none:                                @lh-none;
+    lh-tighter:                             @lh-tighter;
+    lh-tight:                               @lh-tight;
+    lh-normal:                              @lh-normal;
+    lh-loose:                               @lh-loose;
+    lh-looser:                              @lh-looser;
+
+    fw-thin:                                @fw-thin;
+    fw-light:                               @fw-light;
+    fw-normal:                              @fw-normal;
+    fw-medium:                              @fw-medium;
+    fw-bold:                                @fw-bold;
+    fw-black:                               @fw-black;
+
+    fo:                                     100%;
+    fc-blue-text:                           @fc-blue-text;
+    fc-navy-text:                           @fc-navy-text;
+    fc-bright-emerald-text:                 @fc-bright-emerald-text;
+    fc-emerald-text:                        @fc-emerald-text;
+    fc-sunflower-text:                      @fc-sunflower-text;
+    fc-wildberry-text:                      @fc-wildberry-text;
+    fc-crimson-text:                        @fc-crimson-text;
+    fc-berry-text:                          @fc-berry-text;
+    fc-rose-text:                           @fc-rose-text;
 }
 
 //  $$  THEME STYLES
@@ -164,8 +254,11 @@
     nav__background-color--s:      @nav__background-color--s;
     nav__background-color--l:      @nav__background-color--l;
 
-    btn--inverted__bg--hover:           fade(mix(#FFF, @primary-color, 90%),25%);
-    btn--inverted--primary__bg--hover:  mix(#FFF, @primary-color, 90%)
+    btn--inverted__bg--hover:           fade(mix(#FFF, @primary-color, 75%),25%);
+    btn--inverted__bs--focus:           fade(mix(#FFF, @primary-color, 50%),25%);
+    btn--inverted__bg--active:          fade(mix(#FFF, @primary-color, 50%),25%);
+    btn--inverted--primary__bg--hover:  mix(#FFF, @primary-color, 90%);
+    btn--inverted--primary__bs--focus:  fade(mix(#FFF, @primary-color, 50%),50%);
 }
 
 //  ============================================================================
@@ -179,6 +272,11 @@
 
     //  Visual Styles
     each(@visual-styles-vars, {
+        --@{key}: @value;
+    });
+
+    //  Type Styles
+    each(@type-styles-vars, {
         --@{key}: @value;
     });
 

@@ -3,8 +3,8 @@ layout: page
 title: Breadcrumbs
 description: Element used to provide context for the currently-viewed page and where it is located within the overall site structure.
 ---
-<section class="dialtone-section8">
-    <section class="dialtone-section8">
+<section class="d-stack8">
+    <section class="d-stack8">
         <p class="dialtone-copy__normal">Breadcrumbs show users where they are within a site’s hierarchy. Breadcrumbs help orient the user and allow for navigation to previous page levels. It can be appropriate to use a breadcrumb when:</p>
         <ul class="dialtone-copy__normal">
             <li>The user is many levels of navigation deep</li>
@@ -13,49 +13,130 @@ description: Element used to provide context for the currently-viewed page and w
         </ul>
         <p class="dialtone-copy__normal">Breadcrumbs should be the first page element—placed directly above the page’s title. All pages that appear in the breadcrumb should link to their respective page. The page the user is on should always be the last page listed and not linked.</p>
     </section>
-    <section class="dialtone-section8">
+    <section class="d-stack8">
         <h3 class="dialtone-title__subsection">When not to use</h3>
         <p class="dialtone-copy__normal">Breadcrumbs are always treated as secondary and should not entirely replace the primary navigation. They shouldn’t be used for products that have single level navigation because they create unnecessary clutter.</p>
     </section>
 </section>
-<section class="dialtone-section16">
-    <header class="dialtone-section2">
-        <h2 class="dialtone-title__section">Examples</h2>
-    </header>
+<section class="d-stack8">
+    <h2 class="dialtone-title__section">Classes</h2>
+    <table class="dialtone-table dialtone-table--code">
+        <thead>
+            <tr>
+                <th scope="col" class="d-width20">Class</th>
+                <th scope="col">Applies to</th>
+                <th scope="col" class="d-width50">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in breadcrumbs.classes %}
+            {% assign class = i.class %}
+            {% assign apply = i.applies %}
+            {% assign desc = i.description %}
+            <tr>
+                <td><span class="code-example--inline">.{{ class }}</span></td>
+                <td class="d-ff-custom d-fs12 d-lh-tight d-fc-slate">{% if apply != "N/A" %}<span class="code-example--inline">.{% endif %}{{ apply }}{% if apply != "N/A" %}</span>{% endif %}</td>
+                <td class="d-ff-custom d-fs12 d-lh-tight d-fc-slate">{{ desc }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+<section class="d-stack16">
+    <h2 class="dialtone-title__section">Examples</h2>
     <div class="dialtone-example" data-example="yes" data-code="yes">
-        <div class="dialtone-example__example dialtone-section16">
-            <div class="d-padding16">
-                <a href="#" class="d-breadcrumb">Root</a>
-                <a href="#" class="d-breadcrumb">Section</a>
-                <a href="#" class="d-breadcrumb">Section</a>
-                <a href="#" class="d-breadcrumb">Section</a>
-                <a href="#" class="d-breadcrumb--selected">Current Page</a>
-            </div>
-            <div class="d-background-color--slate-light d-border-radius--md d-padding16">
-                <a href="#" class="d-breadcrumb--inverted">Root</a>
-                <a href="#" class="d-breadcrumb--inverted">Section</a>
-                <a href="#" class="d-breadcrumb--inverted">Section</a>
-                <a href="#" class="d-breadcrumb--inverted">Section</a>
-                <a href="#" class="d-breadcrumb--inverted--selected">Current Page</a>
-            </div>
+        <div class="dialtone-example__example d-stack16">
+            <nav class="d-breadcrumbs" aria-label="breadcrumb">
+                <ol>
+                    <li class="d-breadcrumbs__item">
+                        <a href="#" class="d-breadcrumbs__link">Root</a>
+                    </li>
+                    <li class="d-breadcrumbs__item">
+                        <a href="#" class="d-breadcrumbs__link">Section</a>
+                    </li>
+                    <li class="d-breadcrumbs__item">
+                        <a href="#" class="d-breadcrumbs__link">Section</a>
+                    </li>
+                    <li class="d-breadcrumbs__item">
+                        <a href="#" class="d-breadcrumbs__link">Section</a>
+                    </li>
+                    <li class="d-breadcrumbs__item d-breadcrumbs__item--selected">
+                        <a href="#" class="d-breadcrumbs__link" aria-current="location">Current Page</a>
+                    </li>
+                </ol>
+            </nav>
+            <nav class="d-breadcrumbs d-breadcrumbs--inverted d-bgc-slate-light d-border-radius--md d-py16 d-px12 d-mxn12" aria-label="breadcrumb">
+                <ol>
+                    <li class="d-breadcrumbs__item">
+                        <a href="#" class="d-breadcrumbs__link">Root</a>
+                    </li>
+                    <li class="d-breadcrumbs__item">
+                        <a href="#" class="d-breadcrumbs__link">Section</a>
+                    </li>
+                    <li class="d-breadcrumbs__item">
+                        <a href="#" class="d-breadcrumbs__link">Section</a>
+                    </li>
+                    <li class="d-breadcrumbs__item">
+                        <a href="#" class="d-breadcrumbs__link">Section</a>
+                    </li>
+                    <li class="d-breadcrumbs__item d-breadcrumbs__item--selected">
+                        <a href="#" class="d-breadcrumbs__link" aria-current="location">Current Page</a>
+                    </li>
+                </ol>
+            </nav>
         </div>
         <div class="dialtone-example__code">
 {% highlight html linenos %}
-<div>
-    <a href="#" class="d-breadcrumb">Root</a>
-    <a href="#" class="d-breadcrumb">Section</a>
-    <a href="#" class="d-breadcrumb">Section</a>
-    <a href="#" class="d-breadcrumb">Section</a>
-    <a href="#" class="d-breadcrumb--selected">Current Page</a>
-</div>
-<div>
-    <a href="#" class="d-breadcrumb--inverted">Root</a>
-    <a href="#" class="d-breadcrumb--inverted">Section</a>
-    <a href="#" class="d-breadcrumb--inverted">Section</a>
-    <a href="#" class="d-breadcrumb--inverted">Section</a>
-    <a href="#" class="d-breadcrumb--inverted--selected">Current Page</a>
-</div>
+<nav class="d-breadcrumbs" aria-label="breadcrumb">
+    <ol>
+        <li class="d-breadcrumbs__item">
+            <a href="#" class="d-breadcrumbs__link">Root</a>
+        </li>
+        <li class="d-breadcrumbs__item">
+            <a href="#" class="d-breadcrumbs__link">Section</a>
+        </li>
+        <li class="d-breadcrumbs__item">
+            <a href="#" class="d-breadcrumbs__link">Section</a>
+        </li>
+        <li class="d-breadcrumbs__item">
+            <a href="#" class="d-breadcrumbs__link">Section</a>
+        </li>
+        <li class="d-breadcrumbs__item d-breadcrumbs__item--selected">
+            <a href="#" class="d-breadcrumbs__link" aria-current="location">Current Page</a>
+        </li>
+    </ol>
+</nav>
+<nav class="d-breadcrumbs d-breadcrumbs--inverted" aria-label="breadcrumb">
+    …
+</nav>
 {% endhighlight %}
         </div>
     </div>
+</section>
+<section class="d-stack8">
+    <header class="d-stack4">
+        <h2 class="dialtone-title__section">Accessibility</h2>
+        <p class="dialtone-copy__normal">HTML doesn't provide dedicated semantic elements for breadcrumbs, so we need to add a few ARIA attributes to make them accessible.</p>
+    </header>
+    <table class="dialtone-table dialtone-table--code">
+        <thead>
+            <tr>
+                <th scope="col" class="d-width20">Item</th>
+                <th scope="col">Applies to</th>
+                <th scope="col" class="d-width50">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in breadcrumbs.accessible %}
+            {% assign item = i.item %}
+            {% assign apply = i.applies %}
+            {% assign desc = i.description %}
+            <tr>
+                <td><span class="code-example--inline">{{ item }}</span></td>
+                <td class="d-ff-custom d-fs12 d-lh-tight d-fc-slate">{{ apply }}</td>
+                <td class="d-ff-custom d-fs12 d-lh-tight d-fc-slate">{{ desc }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </section>

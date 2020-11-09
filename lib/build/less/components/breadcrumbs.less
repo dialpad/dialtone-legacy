@@ -6,55 +6,70 @@
 //  For further information, visit https://dialpad.design/components/breadcrumbs
 //
 //  TABLE OF CONTENTS
-//  • BASE STYLE
+//  • WRAPPER
+//  • ITEMS & LINKS
 //  • INVERTED STYLE
 //
 //  ============================================================================
-//  $  BASE STYLE
+//  $  WRAPPER
 //  ----------------------------------------------------------------------------
-.d-breadcrumb {
+.d-breadcrumbs > ol {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 
-    display: inline-flex;
-    position: relative;
-    .d-padding1();
-    .d-padding-right12();
-
-    font-family: inherit;
-    font-weight: inherit;
-    font-size: var(--text-size--sm);
-    line-height: 1.428571429;
-    color: var(--slate-lightest);
-    text-decoration: underline;
-
-    //  Provide a forward slash with each element except when it's the last one.
-    &:not(:last-of-type):before {
-        position: absolute;
-        right: 0;
-        .d-margin-top1();
-        content: "/";
-    }
-
-    a&:hover {
-        color: var(--primary-color);
-
-        //  Don't recolor the the forward slash.
-        &:not(:last-of-type):before {
-            color: var(--slate-lightest);
-        }
-    }
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    font-size: var(--fs14);
+    line-height: var(--lh6);
 }
 
-//  $$ SELECTED (CURRENT PAGE)
+//  ============================================================================
+//  $  ITEMS & LINKS
 //  ----------------------------------------------------------------------------
-.d-breadcrumb--selected {
-    .d-breadcrumb();
-    text-decoration: none;
-    color: var(--text-color--dark);
+.d-breadcrumbs {
+    //  --  INDIVIDUAL ITEMS
+    .d-breadcrumbs__item {
+        position: relative;
+        margin: 0;
+        padding: 0;
+        list-style: none;
 
-    &:hover,
-    a&:hover {
-        color: inherit;
+        //  Provide a forward slash with each element except when it's the last one.
+        &:not(:last-of-type):before {
+            position: absolute;
+            right: 0;
+            margin-top: @spacing1;
+            content: "/";
+        }
+    }
+
+    //  --  BREADCRUMB LINKS
+    .d-breadcrumbs__link {
+        padding: @spacing1 @spacing12 @spacing1 @spacing6;
+
+        font-family: inherit;
+        font-weight: inherit;
+        font-size: inherit;
+        line-height: inherit;
+        color: var(--slate-lightest);
+        text-decoration: underline;
+
+        &:hover {
+            color: var(--primary-color);
+        }
+    }
+
+    //  --  SELECTED STATE (CURRENT PAGE)
+    .d-breadcrumbs__item--selected .d-breadcrumbs__link {
+        text-decoration: none;
+        color: var(--slate);
+
+        &:hover {
+            color: inherit;
+        }
     }
 }
 
@@ -62,29 +77,23 @@
 //  ============================================================================
 //  $  INVERTED STYLE
 //  ----------------------------------------------------------------------------
-.d-breadcrumb--inverted {
-    .d-breadcrumb();
-    color: var(--ash-darkest);
+.d-breadcrumbs.d-breadcrumbs--inverted {
+    //  --  ITEM
+    .d-breadcrumbs__item:not(:last-of-type):before {
+        color: var(--ash-darkest);
+    }
 
-    a&:hover {
-        color: hsl(var(--primary-color--h) var(--primary-color--s) calc(var(--primary-color--l) + 30%));
+    //  --  LINK
+    .d-breadcrumbs__link {
+        color: var(--ash-darkest);
 
-        //  Don't recolor the the forward slash.
-        &:not(:last-of-type):before {
-            color: var(--ash-darkest);
+        &:hover {
+            color: hsl(var(--primary-color--h) var(--primary-color--s) calc(var(--primary-color--l) + 30%));
         }
     }
 
-}
-
-//  $$ SELECTED (CURRENT PAGE)
-//  ----------------------------------------------------------------------------
-.d-breadcrumb--inverted--selected {
-    .d-breadcrumb--selected();
-    color: var(--ash);
-
-    &:hover,
-    a&:hover {
+    //  --  SELECTED STATE (CURRENT PAGE)
+    .d-breadcrumbs__item--selected .d-breadcrumbs__link {
         color: var(--ash);
     }
 }

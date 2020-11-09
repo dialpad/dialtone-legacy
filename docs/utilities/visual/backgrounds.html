@@ -1,99 +1,84 @@
 ---
 layout: page
-title: Backgrounds
+title: Background Colors
 description: Dialtone provides both fill and gradient background classes. Most components have a background color set. These are to be used to override a component or for one-off designs.
 ---
-<section class="dialtone-section16">
+<section class="d-stack16">
     <h2 class="dialtone-title__section">Fills</h2>
-    <div class="d-grid-layout--with-columns d-grid-column-gap12 d-grid-row-gap24" style="--grid-col: 2; --grid-col-width: 50%;">
-    {% for color in site.data.color-stops %}
-        <div class="dialtone-section2">
+    <div class="dialtone-color-grid">
+    {% for color in colors %}
+        <div class="d-stack2">
             <h3 class="dialtone-title__subsection">{{ color.color }}</h3>
             <div class="dialtone-color-grid__group" style="--color-grid-columns: 1">
                 {% for stop in color.stops %}
-                    <div class="dialtone-color-grid__item d-background-color--{{ stop.stop }} {{ stop.copy }}">
-                        <span class="dialtone-color-grid__label">.d-background-color--{{ stop.stop }}</span>
+                    <div class="dialtone-color-grid__item d-bgc-{{ stop.stop }} d-fc-{{ stop.copy }}">
+                        <span class="dialtone-color-grid__label">.d-bgc-{{ stop.stop }}</span>
                     </div>
                 {% endfor %}
             </div>
         </div>
     {% endfor %}
-        <div class="dialtone-section2">
+        <div class="d-stack2">
             <h3 class="dialtone-title__subsection">White / Transparent</h3>
-            <div class="dialtone-color-grid__group d-background-color--slate d-padding16 d-border-radius--md" style="--color-grid-columns: 1">
-                <div class="dialtone-color-grid__item d-background-color--white d-color--dark d-border d-border-color--slate-lightest">
-                    <span class="dialtone-color-grid__label">.d-background-color--white</span>
+            <div class="dialtone-color-grid__group d-bgc-slate d-p16 d-border-radius--md" style="--color-grid-columns: 1">
+                <div class="dialtone-color-grid__item d-bgc-white d-fc-slate d-border d-border-color--slate-lightest">
+                    <span class="dialtone-color-grid__label">.d-bgc-white</span>
                 </div>
-                <div class="dialtone-color-grid__item d-background-color--transparent d-color--ash d-border d-border-color--slate-lightest d-border-top-width0">
-                    <span class="dialtone-color-grid__label">.d-background-color--transparent</span>
+                <div class="dialtone-color-grid__item d-bgc-transparent d-color--light d-border d-border-color--slate-lightest d-border-top-width0">
+                    <span class="dialtone-color-grid__label">.d-bgc-transparent</span>
                 </div>
-                <div class="dialtone-color-grid__item d-background-color--unset d-color--ash d-border d-border-color--slate-lightest d-border-top-width0">
-                    <span class="dialtone-color-grid__label">.d-background-color--unset</span>
+                <div class="dialtone-color-grid__item d-bgc-unset d-color--light d-border d-border-color--slate-lightest d-border-top-width0">
+                    <span class="dialtone-color-grid__label">.d-bgc-unset</span>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<section class="dialtone-section16">
-    <h2 class="dialtone-title__section">Gradients</h2>
-    <div class="dialtone-section2">
-        <h3 class="dialtone-title__subsection">Dark</h3>
-        <div class="dialtone-color-grid__group" style="--color-grid-columns: 1">
-            <div class="dialtone-color-grid__item d-linear-gradient--dark-to-top d-color--white">
-                <span class="dialtone-color-grid__label">.d-linear-gradient--dark-to-top</span>
-            </div>
-            <div class="dialtone-color-grid__item d-linear-gradient--dark-to-right d-color--white">
-                <span class="dialtone-color-grid__label">.d-linear-gradient--dark-to-right</span>
-            </div>
-            <div class="dialtone-color-grid__item d-linear-gradient--dark-to-bottom d-color--white">
-                <span class="dialtone-color-grid__label">.d-linear-gradient--dark-to-bottom</span>
-            </div>
-            <div class="dialtone-color-grid__item d-linear-gradient--dark-to-left d-color--white">
-                <span class="dialtone-color-grid__label">.d-linear-gradient--dark-to-left</span>
-            </div>
-        </div>
-    </div>
-    <div class="dialtone-section2">
-        <h3 class="dialtone-title__subsection">Light</h3>
-        <div class="dialtone-color-grid__group" style="--color-grid-columns: 1">
-            <div class="dialtone-color-grid__item d-linear-gradient--light-to-top d-color--dark">
-                <span class="dialtone-color-grid__label">.d-linear-gradient--light-to-top</span>
-            </div>
-            <div class="dialtone-color-grid__item d-linear-gradient--light-to-right d-color--dark">
-                <span class="dialtone-color-grid__label">.d-linear-gradient--light-to-right</span>
-            </div>
-            <div class="dialtone-color-grid__item d-linear-gradient--light-to-bottom d-color--dark">
-                <span class="dialtone-color-grid__label">.d-linear-gradient--light-to-bottom</span>
-            </div>
-            <div class="dialtone-color-grid__item d-linear-gradient--light-to-left d-color--dark">
-                <span class="dialtone-color-grid__label">.d-linear-gradient--light-to-left</span>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="dialtone-section16">
-    <h2 class="dialtone-title__section">Background Opacity</h2>
-    <div class="dialtone-section2">
-        <h3 class="dialtone-title__subsection">White</h3>
-        <p class="dialtone-copy__normal">Change a white background opacity by using a <span class="code-example--inline">.d-background-opacity--white{#}</span> class. The table below lists the available classes, border radius size, and the CSS output.</p>
-        <div class="dialtone-color-grid__group d-background-color--slate d-border-radius--lg">
-            {% assign opacity = "95, 90, 85, 80, 75, 50, 25, 15, 10, 5, 0" | split: ", " %}
-            {% for o in opacity %}
-            <div class="dialtone-color-grid__item d-background-opacity--white{{ o }} {% if o <= '50' %}d-color--white{% else %}d-color--light{% endif %}">
-                <span class="dialtone-color-grid__label">.d-background-opacity--white{{ o }}</span>
+<section class="d-stack16">
+    <header class="d-stack12">
+        <h2 class="dialtone-title__section">Background Opacity</h2>
+        <p class="dialtone-copy__normal">The ability to control a background color is <em>only</em> provided as a class. We do not provide variables to control this. <strong>This class must be paired with a <span class="code-example--inline">.d-bgc-[color]</span> class to work properly.</strong> The background-color opacity class resets the background color's alpha channel CSS variable value.</p>
+        <p class="dialtone-copy__normal">Starting in v5.9.0, Dialtone began providing immutable background-color classes, meaning they include an <span class="code-example--inline">!important</span> to override CSS specificity. All previous class names still exist, but are considered deprecated and should not be used moving forward. They will be removed in a future version.</p>
+    </header>
+    <table class="dialtone-table dialtone-table--code">
+        <thead>
+            <tr>
+                <th scope="col" class="d-width20">Class</th>
+                <th scope="col">Output</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in visual-styles.bgc-opacity %}
+            {% assign stop = i.stop %}
+            <tr>
+                <td>.d-bgo{{ stop }}</td>
+                <td>--bgo: {{ stop }} !important;</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="dialtone-example" data-example="yes" data-code="yes">
+        <div class="dialtone-example__example d-stack12">
+            {% for i in visual-styles.bgc-opacity %}
+            {% assign stop = i.stop %}
+            <div class="d-stack2">
+                <span class="code-example--inline">.d-bgc-blue .d-bgo{{ stop }}</span>
+                <p class="d-lh8 d-fs20 d-fc-slate d-m0 d-bgc-blue d-bgo{{ stop }}">The quick brown fox jumped over the lazy dog.</p>
             </div>
             {% endfor %}
         </div>
-    </div>
-    <div class="dialtone-section2">
-        <h3 class="dialtone-title__subsection">Slate</h3>
-        <p class="dialtone-copy__normal">Change a white background opacity by using a <span class="code-example--inline">.d-background-opacity--slate{#}</span> class. The table below lists the available classes, border radius size, and the CSS output.</p>
-        <div class="dialtone-color-grid__group d-border-radius--lg">
-            {% for o in opacity %}
-            <div class="dialtone-color-grid__item d-background-opacity--slate{{ o }} {% if o >= '50' %}d-color--white{% else %}d-color--light{% endif %}">
-                <span class="dialtone-color-grid__label">.d-background-opacity--slate{{ o }}</span>
-            </div>
-            {% endfor %}
+        <div class="dialtone-example__code">
+{% highlight html linenos %}
+<p class="d-bgc-blue d-bgo0">…</p>
+<p class="d-bgc-blue d-bgo10">…</p>
+<p class="d-bgc-blue d-bgo25">…</p>
+<p class="d-bgc-blue d-bgo50">…</p>
+<p class="d-bgc-blue d-bgo75">…</p>
+<p class="d-bgc-blue d-bgo90">…</p>
+<p class="d-bgc-blue d-bgo95">…</p>
+<p class="d-bgc-blue d-bgo99">…</p>
+<p class="d-bgc-blue d-bgo100">…</p>
+{% endhighlight %}
         </div>
     </div>
 </section>

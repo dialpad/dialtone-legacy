@@ -1,0 +1,59 @@
+---
+layout: page
+title: Display
+description: Utilities for controlling the display box type of an element.
+
+---
+<section class="d-stack16">
+    <header class="d-stack2">
+        <h2 class="dialtone-title__section">Variables and Classes</h2>
+    </header>
+    <table class="dialtone-table dialtone-table--code">
+        <thead>
+            <tr>
+                <th scope="col">Class</th>
+                <th scope="col">Output</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in display %}
+            {% assign variable = i.variable %}
+            {% assign name = i.name %}
+            {% assign output = i.output %}
+            <tr>
+                <th>{{ name }}</th>
+                <td>{{ output }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        <h2 class="dialtone-title__section">Examples</h2>
+    </header>
+    <div class="dialtone-example" data-example="yes" data-code="yes">
+        <div class="dialtone-example__example">
+            <div class="layout-block d-block d-mb12"><div class="d-p12">.d-d-block</div></div>
+            <div class="d-mb12">
+                <div class="d-d-inline-block layout-block"><div class="d-p12">.d-d-inline-block</div></div>
+                <div class="d-d-inline-block layout-block"><div class="d-p12">.d-d-inline-block</div></div>
+                <div class="d-d-inline-block layout-block"><div class="d-p12">.d-d-inline-block</div></div>
+            </div>
+            <div>
+                <div class="d-d-inline layout-block">.d-d-inline</div>
+                <div class="d-d-inline layout-block">.d-d-inline</div>
+                <div class="d-d-inline layout-block">.d-d-inline</div>
+            </div>
+        </div>
+        <div class="dialtone-example__code">
+{% highlight html linenos %}
+<div class="d-d-block">…</div>
+<div class="d-d-inline-block">…</div>
+<div class="d-d-inline">…</div>
+<div class="d-d-none">…</div>
+<div class="d-d-unset">…</div>
+{% endhighlight %}
+        </div>
+    </div>
+</section>

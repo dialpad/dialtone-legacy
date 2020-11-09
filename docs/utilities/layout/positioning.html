@@ -1,0 +1,143 @@
+---
+layout: page
+title: Positioning
+description: Use these utility classes to quickly change an element’s position in the DOM.
+---
+<section class="d-stack16">
+    <h2 class="dialtone-title__section">Position</h2>
+    <div class="d-stack16">
+        <header class="d-stack2">
+            <h3 class="dialtone-title__subsection">Classes</h3>
+            <p class="dialtone-copy__normal">Set an element’s position by using the position classes listed in the table below. Starting in v5.8.0, Dialtone began providing immutable type classes, meaning they include an <span class="code-example--inline">!important</span> to override CSS specificity.</p>
+        </header>
+        <table class="dialtone-table dialtone-table--code">
+            <thead>
+                <tr>
+                    <th scope="col" class="d-width40">Class</th>
+                    <th scope="col">Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% assign pos = "static, relative, absolute, fixed, sticky, unset" | split: ", "%}
+                {% for i in pos %}
+                    <tr>
+                        <th scope="row">.d-p-{{ i }}</th>
+                        <td>position: {{ i }} !important;</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="dialtone-example" data-example="yes" data-code="yes">
+            <div class="dialtone-example__example d-fs12 d-height2" style="overflow-y: auto;">
+                <div class="d-p-relative d-background-color--ash">Relative parent
+
+                    <div class="d-p-static d-background-color--ash-dark d-m24 d-height4">Static parent
+
+                        <div class="d-width2 d-p-absolute d-t0 d-r12"><div class="layout-block"><div class="layout-block__label d-width-auto d-height-auto">.d-p-absolute<br>.d-t0<br>.d-r12</div></div></div>
+
+                        <div class="d-width2 d-p-absolute d-b0 d-rn12"><div class="layout-block"><div class="layout-block__label d-width-auto d-height-auto">.d-p-absolute<br>.d-b0<br>.d-rn12</div></div></div>
+
+                        <div class="d-width2 d-p-sticky d-t0"><div class="layout-block"><div class="layout-block__label d-width-auto d-height-auto">.d-p-sticky<br>.d-t0</div></div></div>
+
+                        <div class="d-width2 d-p-relative d-t32 d-l64"><div class="layout-block"><div class="layout-block__label d-width-auto d-height-auto">.d-p-relative<br>.d-t32<br>.d-l64</div></div></div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="dialtone-example__code">
+{% highlight html linenos %}
+<div class="d-p-static">…</div>
+<div class="d-p-relative">…</div>
+<div class="d-p-absolute">…</div>
+<div class="d-p-fixed">…</div>
+<div class="d-p-sticky">…</div>
+{% endhighlight %}
+            </div>
+        </div>
+    </div>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        <h2 class="dialtone-title__section">Coordinates</h2>
+        <p class="dialtone-copy__normal">Dialtone's spacing units can be combined with the position utilities above to position elements. Set an element’s position by using the <span class="code-example--inline">.d-p-{type}</span> classes. The table below lists the available classes and their CSS output. Starting in v5.8.0, Dialtone began providing immutable type classes, meaning they include an <span class="code-example--inline">!important</span> to override CSS specificity. All previous class names still exist, but are considered deprecated and should not be used moving forward. They will be removed in a future version.</p>
+    </header>
+    <div class="d-stack8">
+        <h3 class="dialtone-title__subsection">Positive Classes</h3>
+        <table class="dialtone-table dialtone-table--code">
+            <thead>
+                <tr>
+                    <th scope="col">Value</th>
+                    {% for i in spacing.coordinate-directions %}
+                    {% assign dir = i.direction %}
+                        <th scope="col">{{ dir }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for c in spacing.coordinates %}
+                {% assign coordinate = c.coordinate %}
+                {% assign suffix = c.suffix %}
+                {% assign combo = c.combo %}
+                <tr>
+                    <th scope="row">{{ coordinate }}{{ suffix }}</th>
+                    {% for i in spacing.coordinate-directions %}
+                    {% assign dir = i.direction %}
+                    {% assign pre = i.prefix %}
+                    {% assign percent = i.percent %}
+                        {% if percent == "no" %}
+                            {% if combo == "no" %}
+                                <td class="d-opacity50 d-background-color--ash d-fc-slate-lightest d-fs-italic">N/A</td>
+                            {% else %}
+                                <td>.d-{{ pre }}{{ coordinate }}{% if suffix == "-calc" %}{{ suffix }}{% endif %}</td>
+                            {% endif %}
+                        {% else %}
+                            <td>.d-{{ pre }}{{ coordinate }}{% if suffix == "-calc" %}{{ suffix }}{% endif %}</td>
+                        {% endif %}
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="d-stack8">
+        <h3 class="dialtone-title__subsection">Negative Classes</h3>
+        <table class="dialtone-table dialtone-table--code">
+            <thead>
+                <tr>
+                    <th scope="col">Value</th>
+                    {% for i in spacing.coordinate-directions %}
+                    {% assign dir = i.direction %}
+                        <th scope="col">{{ dir }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for c in spacing.coordinates %}
+                {% assign coordinate = c.coordinate %}
+                {% assign suffix = c.suffix %}
+                {% assign combo = c.combo %}
+                {% assign negative = c.negative %}
+                <tr>
+                    {% if negative != "no" %}
+                        <th scope="row">{{ coordinate }}{{ suffix }}</th>
+                        {% for i in spacing.coordinate-directions %}
+                        {% assign dir = i.direction %}
+                        {% assign pre = i.prefix %}
+                        {% assign percent = i.percent %}
+                            {% if percent == "no" %}
+                                {% if combo == "no" %}
+                                    <td class="d-opacity50 d-background-color--ash d-fc-slate-lightest d-fs-italic">N/A</td>
+                                {% else %}
+                                    <td>.d-{{ pre }}n{{ coordinate }}{% if suffix == "-calc" %}{{ suffix }}{% endif %}</td>
+                                {% endif %}
+                            {% else %}
+                                <td>.d-{{ pre }}n{{ coordinate }}{% if suffix == "-calc" %}{{ suffix }}{% endif %}</td>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>

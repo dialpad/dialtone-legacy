@@ -1,9 +1,9 @@
-<header class="dialtone-section2">
+<header class="d-stack2">
     <h3 class="dialtone-title__subsection">Inverted</h3>
     <p class="dialtone-copy__normal">The inverted button style is used to visually separate buttons set on darker backgrounds.</p>
 </header>
 <div class="dialtone-example" data-example="yes" data-code="yes">
-    <div class="dialtone-example__example d-background-color--slate d-margin1--negative d-border-top-radius--lg d-color--white">
+    <div class="dialtone-example__example d-background-color--slate d-mn1 d-border-top-radius--lg d-fc-white">
         <table class="dialtone-table">
             <thead>
                 <tr>
@@ -15,8 +15,8 @@
                 </tr>
             </thead>
             <tbody>
-                {% assign classes = site.data.buttons.styles | split: ", "%}
-                {% for s in classes %}
+                {% for i in buttons.styles %}
+                {% assign s = i.style %}
                 <tr>
                     <th scope="row">{{ s | capitalize }}</th>
                     <td class="code-example">.d-btn--inverted{%if s == "outlined" %}--outlined{% elsif s == "filled"%}--primary{% endif %}</td>
@@ -37,7 +37,7 @@
         </table>
     </div>
     <div class="dialtone-example__code d-border-top-radius--none">
-{% highlight css linenos %}
+{% highlight css %}
 .inverted-clear-btn {
     .d-btn--inverted;
 }

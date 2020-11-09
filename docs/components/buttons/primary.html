@@ -1,4 +1,4 @@
-<header class="dialtone-section2">
+<header class="d-stack2">
     <h3 class="dialtone-title__subsection">Default</h3>
     <p class="dialtone-copy__normal">The default button offers three button styles. To help provide clarity to users, it is recommended that only <em>one</em> button have the primary button style within a section or page.</p>
     <div class="dialtone-notice"><strong>Please note</strong> that all button classes have hover, active, focus, and disabled states within them. Specific classes are provided for the disabled state so this can be applied to objects that aren't buttons (or can't use the disabled attribute).</div>
@@ -16,8 +16,8 @@
                 </tr>
             </thead>
             <tbody>
-                {% assign classes = site.data.buttons.styles | split: ", "%}
-                {% for s in classes %}
+                {% for i in buttons.styles %}
+                {% assign s = i.style %}
                 <tr>
                     <th scope="row">{{ s | capitalize }}</th>
                     <td class="code-example">.d-btn{% if s == "outlined" %}--outlined{% elsif s == "filled"%}--primary{% endif %}</td>
@@ -38,7 +38,7 @@
         </table>
     </div>
     <div class="dialtone-example__code">
-{% highlight css linenos %}
+{% highlight css %}
 .example-clear-btn {
     .d-btn;
 }

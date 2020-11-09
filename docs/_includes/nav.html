@@ -1,56 +1,62 @@
 <div class="dialtone-nav">
     <div class="dialtone-navbar js-dialtone-menubar" data-state="normal">
-        <a class="dialtone-logo" href="/">{% include logo.html %}</a>
+        <a class="dialtone-logo" href="{{ site.url }}">{% include logo.html %}</a>
+        <span class="dialtone-menu-title d-mr8 d-fs18 d-fs-loose">Menu</span>
         <a class="dialtone-menu-button js-dialtone-menu-button" role="button" href="#" data-state="unselected" data-menu="closed">
             <span class="d-btn__icon">
-                {% include icons/system/menu.svg %}
-                {% include icons/system/close.svg %}
+                {% iconSystem "menu" %}
+                {% iconSystem "close" %}
             </span>
             <span class="d-btn__label">
                 Menu
             </span>
         </a>
 
-        <div class="dialtone-search d-margin16 d-margin-top0">
-            <input type="search" class="d-input d-padding-left32 js-dialtone-search" placeholder="Search Dialtone" />
-            <div class="dialtone-search__icon d-top6 d-left6 d-svg--size24 d-color--dark-light">
-                {% include icons/system/search.svg %}
+        <div class="dialtone-search d-m16 d-mt0">
+            <input type="search" class="d-input d-pl32 js-dialtone-search" placeholder="Search Dialtone" />
+            <div class="dialtone-search__icon d-top6 d-left6 d-svg--size24 d-fc-slate-light">
+                {% iconSystem "search" %}
             </div>
         </div>
         <nav class="dialtone-navigation d-flex1 js-dialtone-menu" role="navigation" data-state="closed">
-            {% for item in site.data.navigation %}
-                {% assign pageURL = page.url | remove_first: "/" | remove: ".html" %}
-                {% if item.sublinks %}
-                    <ul class="dialtone-navigation__list js-dialtone-nav-header" id="nav" role="navigation" data-open="{% if pageURL contains item.dir %}true{% else %}false{% endif %}">
+            {% if nav.sections %}
+                {% for section in nav.sections %}
+                    {% assign slug = page.url | replace: '/',' ' | trunactewords: 2 | remove:'...' %}
+                    {% assign url = section.url | replace: '/',' ' | trunactewords: 2 | remove:'...' %}
+                    <ul class="dialtone-navigation__list js-dialtone-nav-header" id="nav" role="navigation" data-open="{% if slug contains url %}true{% else %}false{% endif %}">
                         <li class="dialtone-navigation__item">
-                            <a href="{{ item.dir | append: item.sublinks.first.url | relative_url }}" class="dialtone-navigation__header js-dailtone-nav-header-link">
-                                <span class="dialtone-navigation__header-label">{{ item.title }}</span>
+                            <a href="{{ section.url }}" class="dialtone-navigation__header js-dailtone-nav-header-link">
+                                <span class="dialtone-navigation__header-label">{{ section.title }}</span>
                                 <span class="dialtone-navigation__header-icon js-dialtone-nav-header-icon">
                                     <svg aria-hidden="true" class="icon__add d-svg d-svg--add" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
                                     <svg aria-hidden="true" class="icon__remove d-svg d-svg--add" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13H5v-2h14v2z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
                                 </span>
                             </a>
-                            <ul class="dialtone-navigation__list">
-                                {% for sublink in item.sublinks %}
-                                    <li class="dialtone-navigation__item"><a class="dialtone-navigation__link{% if pageURL contains sublink.url %} is-selected{% endif %}" href="{{ item.dir | relative_url }}{{ sublink.url  }}">{{ sublink.title }}</a></li>
-                                {% endfor %}
-                            </ul>
+                            {% if section.pages %}
+                                <ul class="dialtone-navigation__list">
+                                    {% for links in section.pages %}
+                                        <li class="dialtone-navigation__item">
+                                            <a class="dialtone-navigation__link{% if slug contains path %} is-selected{% endif %}" href="{{ links.url }}">{{ links.title }}</a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
                         </li>
                     </ul>
-                {% endif %}
-            {% endfor %}
+                {% endfor %}
+            {% endif %}
         </nav>
-        <div class="dialtone-links d-padding24" style="display: flex; align-items: center;">
-            <span class="d-background-color--blue-lighter d-border d-border-color--blue-light d-text--xs d-line-height--sm d-color--dark-lighter d-padding-y4 d-padding-x12 d-font-family--mono d-margin-right8" style="border-radius: 1.4rem;">{% include version.html %}</span>
+        <div class="dialtone-links d-d-flex d-ai-center d-p24">
+            <span class="d-background-color--blue-lighter d-border d-border-color--blue-light d-fs12 d-lh-sm d-fc-slate-lighter d-py4 d-px12 d-ff-mono d-mr8" style="border-radius: 1.4rem;">{% include version.html %}</span>
 
-            <a href="https://github.com/dialpad/dialtone" alt="GitHub repo" class="d-link d-margin-x4 d-tooltip--hover">
+            <a href="https://github.com/dialpad/dialtone" alt="GitHub repo" class="d-link d-mx4">
                 <svg aria-hidden="true" class="d-svg d-svg--system d-svg--Github" width="24" height="24" viewBox="0 0 18 18"><path d="M9 1a8 8 0 00-2.53 15.59c.4.07.55-.17.55-.38l-.01-1.49c-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.42 7.42 0 014 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48l-.01 2.2c0 .21.15.46.55.38A8.01 8.01 0 009 1z"></path></svg>
-                <span class="d-tooltip__bottom-center" style="width: unset;white-space:nowrap;">GitHub Repo</span>
+                <span class="dialtone-tooltip">GitHub Repo</span>
             </a>
 
-            <a href="https://codepen.io/pen/?template=BajJpwW" alt="Codepen Template" class="d-link d-margin-x4 d-tooltip--hover">
+            <a href="https://codepen.io/pen/?template=BajJpwW" alt="Codepen Template" class="d-link d-mx4">
                 <svg aria-hidden="true" class="d-svg d-svg--system d-svg--Codepen" width="24" height="24" viewBox="0 0 18 18"><path d="M12.67 8.17l-2.98-2v-3.2l5.38 3.6-2.4 1.6zM13.9 9l1.73-1.15v2.3L13.9 9zm-4.2 2.82l2.98-2 2.4 1.62-5.38 3.59v-3.2zm-4.36-2l2.98 2v3.2l-5.38-3.58 2.4-1.61zM4.1 9l-1.73 1.15v-2.3L4.1 9zm4.2-2.82l-2.98 2-2.4-1.62L8.3 2.97v3.2zm.7 4.45L6.57 9 9 7.37 11.43 9 9 10.63zm7.99-4.19l-.01-.05-.01-.04-.02-.05-.02-.03a.6.6 0 0 0-.02-.05l-.02-.03a.69.69 0 0 0-.15-.17L16.7 6h-.02L9.4 1.11a.69.69 0 0 0-.77 0L1.3 5.99h-.02c0 .02-.02.02-.03.03a.81.81 0 0 0-.12.13.69.69 0 0 0-.03.04l-.02.03-.02.05-.02.03-.02.05v.04L1 6.44v.03a.7.7 0 0 0-.01.1v4.87a.7.7 0 0 0 0 .09l.01.03.01.05.01.04.02.05.02.03a.51.51 0 0 0 .07.12.53.53 0 0 0 .08.1c.02 0 .03.02.04.03l.03.02h.02l7.3 4.88a.69.69 0 0 0 .77 0l7.31-4.87h.02c0-.02.02-.02.03-.03a.72.72 0 0 0 .04-.04l.02-.02a.62.62 0 0 0 .13-.19l.02-.03a.6.6 0 0 0 .02-.05v-.04l.02-.05v-.03a.7.7 0 0 0 .01-.1V6.57a.7.7 0 0 0 0-.09l-.01-.03z"></path></svg>
-                <span class="d-tooltip__bottom-center" style="width: unset;white-space:nowrap;">Codepen Template</span>
+                <span class="dialtone-tooltip">Codepen Template</span>
             </a>
         </div>
     </div>

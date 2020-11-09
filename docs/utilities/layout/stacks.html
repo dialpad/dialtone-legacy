@@ -1,48 +1,105 @@
 ---
 layout: page
-title: Stacks
-description: Stacks are preset layouts which inject margins between sibling elements within a parent element. This method is favored over applying margins to an element, as it allows for greater modularity and flexibility with layouts.
+title: Stacks & Flows
+description: Stacks and flows are preset layouts which inject margins between sibling elements within a parent element. This method is favored over applying margins to an element, as it allows for greater modularity and flexibility with layouts.
 ---
-<section class="dialtone-section16">
-    <p class="dialtone-copy__normal">The stack layout works by using the adjacent sibling combinator (+) to apply a top margin when an element is preceded by another element. Furthermore, to allow for nesting stacks and controlling the cascade, these margins are scoped to only apply to children of the parent wrapper (e.g. <code class="code-example">.stack-layout > * + *</code>).</p>
-    <div class="dialtone-section2">
-        <h2 class="dialtone-title__subsection">Classes</h2>
-        <table class="dialtone-table dialtone-table--code">
-            <thead>
-                <tr>
-                    <th scope="col" class="dialtone-table__column--sm">Pixel</th>
-                    <th scope="col">Class</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for i in site.data.layout.stacks %}
-                {% assign size = i.size %}
-                <tr>
-                    <th scope="row">{{ size }}px</th>
-                    <td>.d-layout__stack{{ size }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
-    <div class="dialtone-section16">
-        <h2 class="dialtone-title__subsection">Examples</h2>
-        <div class="dialtone-example" data-example="yes" data-code="no">
-            <div class="dialtone-example__example d-grid-layout--with-columns" style="--grid-col: 2; --grid-col-width: 1fr;">
-                {% for i in site.data.layout.stacks %}
-                {% assign size = i.size %}
-                <div class="layout-block d-width100">
-                    <div class="d-layout__stack{{ size }} d-padding16 d-width100">
-                        <div class="layout-block__inner d-flex--center">
-                            <div class="layout-block__label">{{ size }}px</div>
-                        </div>
-                        <div class="layout-block__inner d-flex--center">
-                            <div class="layout-block__label">{{ size }}px</div>
-                        </div>
-                    </div>
+<section class="d-stack16">
+    <header class="d-stack2">
+        <h2 class="dialtone-title__section">Stacks</h2>
+        <p class="dialtone-copy__normal">The Stack layout works by using the adjacent sibling combinator (<code class="code-example">+</code>) to apply a top margin only to subsequent elements, meaning it will only work on the second item. Furthermore, to allow for differing nesting Stack values, these margins are scoped to apply <strong>only</strong> to direct children of the parent (e.g. <code class="code-example">.d-stack[#] > * + *</code>).</p>
+    </header>"
+    <table class="dialtone-table dialtone-table--code">
+        <thead>
+            <tr>
+                <th scope="col" class="d-width20">Pixel</th>
+                <th scope="col">Class</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in spacing.values %}
+            {% assign val = i.value %}
+            <tr>
+                <th scope="row">{{ val }}px</th>
+                <td>.d-stack{{ val }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="dialtone-example" data-example="yes" data-code="yes">
+        <div class="dialtone-example__example d-d-flex d-fw-wrap d-ai-flex-start" style="margin: -6px;">
+            {% for i in spacing.values %}
+            {% assign val = i.value %}
+                <div class="d-d-flex d-fd-column d-background-color--rose-light d-stack{{ val }}" style="flex: 0 0 calc(50% - 1.2rem); margin: 6px;">
+                    <div class="d-p-relative d-fl-center d-p16 d-border d-border-color--navy-lighter d-fc-navy-text d-fs11 d-fw-bold d-ff-mono d-lh-tight d-background-color--navy-lightest">.d-stack{{ val }}</div>
+                    <div class="d-p-relative d-fl-center d-p16 d-border d-border-color--navy-lighter d-fc-navy-text d-fs11 d-fw-bold d-ff-mono d-lh-tight d-background-color--navy-lightest">.d-stack{{ val }}</div>
                 </div>
-                {% endfor %}
-            </div>
+            {% endfor %}
+        </div>
+        <div class="dialtone-example__code">
+{% highlight html linenos %}
+<div class="d-stack0">…</div>
+<div class="d-stack1">…</div>
+<div class="d-stack2">…</div>
+<div class="d-stack4">…</div>
+<div class="d-stack6">…</div>
+<div class="d-stack8">…</div>
+<div class="d-stack12">…</div>
+<div class="d-stack16">…</div>
+<div class="d-stack24">…</div>
+<div class="d-stack36">…</div>
+<div class="d-stack48">…</div>
+<div class="d-stack64">…</div>
+{% endhighlight %}
+        </div>
+    </div>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        <h2 class="dialtone-title__section">Flows</h2>
+        <p class="dialtone-copy__normal">The Flow layout is similar to the Stacks layout above, except instead of apply a <strong>top</strong> margin to adjacent children, it applies a <strong>left</strong> margin. This is useful for when you want to space our elements horizontally.</p>
+    </header>
+    <table class="dialtone-table dialtone-table--code">
+        <thead>
+            <tr>
+                <th scope="col" class="d-width20">Pixel</th>
+                <th scope="col">Class</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in spacing.values %}
+            {% assign val = i.value %}
+            <tr>
+                <th scope="row">{{ val }}px</th>
+                <td>.d-flow{{ val }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="dialtone-example" data-example="yes" data-code="yes">
+        <div class="dialtone-example__example d-stack12">
+            {% for i in spacing.values %}
+            {% assign val = i.value %}
+                <div class="d-d-flex d-background-color--rose-light d-flow{{ val }}">
+                    <div class="d-p-relative d-fl1 d-fl-center d-p16 d-border d-border-color--navy-lighter d-fc-navy-text d-fs11 d-fw-bold d-ff-mono d-lh-tight d-background-color--navy-lightest">.d-flow{{ val }}</div>
+                    <div class="d-p-relative d-fl1 d-fl-center d-p16 d-border d-border-color--navy-lighter d-fc-navy-text d-fs11 d-fw-bold d-ff-mono d-lh-tight d-background-color--navy-lightest">.d-flow{{ val }}</div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="dialtone-example__code">
+{% highlight html linenos %}
+<div class="d-flow0">…</div>
+<div class="d-flow1">…</div>
+<div class="d-flow2">…</div>
+<div class="d-flow4">…</div>
+<div class="d-flow6">…</div>
+<div class="d-flow8">…</div>
+<div class="d-flow12">…</div>
+<div class="d-flow16">…</div>
+<div class="d-flow24">…</div>
+<div class="d-flow36">…</div>
+<div class="d-flow48">…</div>
+<div class="d-flow64">…</div>
+{% endhighlight %}
         </div>
     </div>
 </section>

@@ -8,6 +8,7 @@ var settings = {
     scripts: false,     // Turn on/off script tasks
     styles: true,       // Turn on/off style tasks
     svgs: true,         // Turn on/off SVG tasks
+    patterns: true,     // Turn on/off SVG Pattern tasks
     favicons: true,     // Turn on/off Favicons tasks
     sync: true,         // Turn on/off sync tasks
     build: true,        // Turn on/off build tasks
@@ -26,7 +27,6 @@ var lazypipe = require('lazypipe');
 var rename = require('gulp-rename');
 var header = require('gulp-header');
 var browsersync = require('browser-sync').create();
-// var atoms = require('gulp-atoms')(gulp,cfg);
 var package = require('./package.json');
 
 //  @@ STYLES
@@ -50,6 +50,7 @@ var tap = settings.svgs ? require('gulp-tap') : null;
 
 //  @@ BUILD
 var cp = settings.build ? require('child_process') : null;
+var git = settings.build ? require('gulp-git') : null;
 
 
 //  ================================================================================
@@ -86,6 +87,12 @@ var paths = {
         brandOutputLib: './lib/dist/svg/brand/',
         brandOutputDocs: './docs/_includes/icons/brand/',
         outputVue: './lib/dist/vue/icons/',
+    },
+    patterns: {
+        input: './lib/build/svg/patterns/**/*.svg',
+        outputLib: './lib/dist/svg/patterns/',
+        outputDocs: './docs/_includes/patterns/',
+        outputVue: './lib/dist/vue/patterns/',
     },
     favicons: {
         dpName: 'Dialpad',
@@ -340,6 +347,56 @@ var buildBrandSVGs = function(done) {
     done();
 };
 
+var buildPatternSVGs = function(done) {
+
+    //  Make sure this feature is activated before running
+    if (!settings.patterns) return done();
+
+    //  Compile system icons
+    return src(paths.patterns.input)
+        .pipe(replace('<svg', function(match) {
+            var name = path.parse(this.file.path).name;
+            var converted = name.toLowerCase().replace(/-(.)/g, function(match,group1) {
+                return group1.toUpperCase();
+            });
+            var title = name.replace(/\b\S/g, t => t.toUpperCase()).replace(/[-]+/g, " ");
+
+            return match + ' aria-hidden="true" focusable="false" aria-label="' + title + '" class="d-svg d-svg--pattern d-svg__' + converted + '" xmlns="http://www.w3.org/2000/svg"';
+        }))
+        .pipe(svgmin({
+            plugins: [{
+                convertPathData: {
+                    transformPrecision: 4,
+                }
+            }, {
+                cleanupNumericValues: {
+                    floatPrecision: 2,
+                }
+            }, {
+                collapseGroups: true,
+            }, {
+                removeTitle: true,
+            }, {
+                removeViewBox: false,
+            }, {
+                removeUselessStrokeAndFill: true,
+            }]
+        }))
+        .pipe(dest(paths.patterns.outputLib))
+        .pipe(dest(paths.patterns.outputDocs))
+        .pipe(replace('<svg', '<template>\n  <svg'))
+        .pipe(replace('</svg>', '</svg>\n</template>'))
+        .pipe(rename(function(file) {
+            var converted = file.basename.replace(/\b\S/g, t => t.toUpperCase()).replace(/[-]+/g, '');
+
+            file.basename = 'Pattern' + converted;
+            file.extname = '.vue';
+        }))
+        .pipe(dest(paths.patterns.outputVue));
+
+    done();
+};
+
 //  ================================================================================
 //  @@  FAVICONS
 //  ================================================================================
@@ -428,21 +485,17 @@ var buildDocs = function(done) {
     //  Make sure this feature is activated before running
     if (!settings.build) return done();
 
-    return cp
-        .spawn(
-            'jekyll',
-            [
-                'build',
-                '--source=' + paths.build.input,
-                '--destination=' + paths.build.dest,
-                '--config=' + paths.build.config,
-                '--baseurl=' + paths.build.baseurl
-            ],
-            { stdio: 'inherit' }
-        );
+    return cp.spawn(
+        'npx', [
+            '@11ty/eleventy'
+        ], {
+            cwd: paths.build.input,
+            stdio: 'inherit'
+        }
+    );
+
     done();
 };
-
 
 //  ================================================================================
 //  @@  START SERVER
@@ -500,8 +553,21 @@ var watchFiles = function(done) {
     done();
 };
 
-var updateVersion = function(done) {
+//  ================================================================================
+//  @@  UPDATE VERSION
+//  ================================================================================
+var docVersion = function(done) {
     fs.writeFileSync(paths.versionFile, 'v' + package.version);
+
+    done();
+}
+
+var commitDocVersion = function(done) {
+    return src(package.version, { allowEmpty: true })
+        .pipe(git.add({
+            args: '-A'
+        }))
+        .pipe(git.commit(() => 'Bump Dialtone to v' + package.version));
 
     done();
 }
@@ -523,17 +589,19 @@ exports.watch = series(
     exports.default,
     startServer,
     watchFiles
-);
+)
 
-exports.icons = series(
+exports.svg = series(
     cleanIcons,
     buildSystemSVGs,
-    buildBrandSVGs
+    buildBrandSVGs,
+    buildPatternSVGs
 );
 
 //  --  UPDATES DIALTONE VERSION
 exports.version = series(
-    updateVersion
+    docVersion,
+    commitDocVersion
 );
 
 //  --  GENERATES ALL DIALPAD / UC FAVICONS
