@@ -34,21 +34,26 @@
     .d-breadcrumbs__item {
         position: relative;
         margin: 0;
+        margin-left: @spacing6;
         padding: 0;
         list-style: none;
 
         //  Provide a forward slash with each element except when it's the last one.
-        &:not(:last-of-type):before {
-            position: absolute;
-            right: 0;
-            margin-top: @spacing1;
-            content: "/";
+        &:not(:last-of-type) {
+            margin-right: @spacing12;
+
+            &:before {
+                position: absolute;
+                right: -(@spacing12);
+                margin-top: @spacing1;
+                content: "/";
+            }
         }
     }
 
     //  --  BREADCRUMB LINKS
     .d-breadcrumbs__link {
-        padding: @spacing1 @spacing12 @spacing1 @spacing6;
+        padding: @spacing1;
 
         font-family: inherit;
         font-weight: inherit;
