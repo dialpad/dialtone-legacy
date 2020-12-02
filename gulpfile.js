@@ -49,6 +49,9 @@ var tap = settings.svgs ? require('gulp-tap') : null;
 //  @@ FAVICONS
 // var favicon = settings.favicons ? require('gulp-favicons') : null;
 
+//  @@ FONTS
+var ttf2woff2 = settings.fonts ? require ('gulp-ttf2woff2') : null;
+
 //  @@ BUILD
 var cp = settings.build ? require('child_process') : null;
 var git = settings.build ? require('gulp-git') : null;
@@ -65,10 +68,12 @@ var paths = {
         libSvg: './dist/svg/**/*',
         libVue: './dist/vue/**/*',
         libFavicons: './dist/favicons/**/*',
+        libFonts: './dist/fonts/**/*',
         docs: './docs/_site/**/*',
         docsCache: './docs/.jekyll-cache/**/*',
         docsIcons: './docs/_includes/icons/**/*',
-        docsFavicons: './docs/assets/images/favicons/**/*'
+        docsFavicons: './docs/assets/images/favicons/**/*',
+        docsFonts: './docs/assets/fonts/**/*'
     },
     scripts: {
         input: './lib/js/',
@@ -115,7 +120,7 @@ var paths = {
         uc: 'favicon-uberconference__512.png',
     },
     fonts: {
-        input: './lib/fonts/**/*',
+        input: './lib/fonts/**/*.ttf',
         outputLib: './dist/fonts/',
         outputDocs: './docs/assets/fonts/'
     },
@@ -193,6 +198,14 @@ const cleanFavicons = () => {
     return cleanUp([
         paths.clean.libFavicons,
         paths.clean.docsFavicons
+    ]);
+}
+
+//  --  Clean out Fonts
+const cleanFonts = () => {
+    return cleanUp([
+        paths.clean.libFonts,
+        paths.clean.docsFonts
     ]);
 }
 
@@ -490,6 +503,7 @@ var webfonts = function(done) {
     if (!settings.fonts) return done();
 
     return src(paths.fonts.input)
+        .pipe(ttf2woff2())
         .pipe(dest(paths.fonts.outputLib))
         .pipe(dest(paths.fonts.outputDocs));
 
@@ -601,7 +615,6 @@ exports.default = series(
     parallel(
         libStyles,
         docStyles,
-        webfonts,
     ),
     buildDocs
 );
@@ -617,6 +630,12 @@ exports.svg = series(
     buildSystemSVGs,
     buildBrandSVGs,
     buildPatternSVGs
+);
+
+//  --  CONVERT WEBFONTS
+exports.fonts = series(
+    cleanFonts,
+    webfonts
 );
 
 //  --  UPDATES DIALTONE VERSION
