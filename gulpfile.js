@@ -9,7 +9,8 @@ var settings = {
     styles: true,       // Turn on/off style tasks
     svgs: true,         // Turn on/off SVG tasks
     patterns: true,     // Turn on/off SVG Pattern tasks
-    favicons: true,     // Turn on/off Favicons tasks
+    fonts: true,        // Turn on/off webfonts
+    favicons: false,    // Turn on/off Favicons tasks
     sync: true,         // Turn on/off sync tasks
     build: true,        // Turn on/off build tasks
     watch: true         // Turn on/off watch tasks
@@ -60,48 +61,48 @@ var git = settings.build ? require('gulp-git') : null;
 var paths = {
     versionFile: './docs/_includes/version.html',
     clean: {
-        libCss: './lib/dist/css/**/*',
-        libSvg: './lib/dist/svg/**/*',
-        libVue: './lib/dist/vue/**/*',
-        libFavicons: './lib/dist/favicons/**/*',
+        libCss: './dist/css/**/*',
+        libSvg: './dist/svg/**/*',
+        libVue: './dist/vue/**/*',
+        libFavicons: './dist/favicons/**/*',
         docs: './docs/_site/**/*',
         docsCache: './docs/.jekyll-cache/**/*',
         docsIcons: './docs/_includes/icons/**/*',
         docsFavicons: './docs/assets/images/favicons/**/*'
     },
     scripts: {
-        input: './lib/build/js/',
-        output: './lib/dist/js/'
+        input: './lib/js/',
+        output: './dist/js/'
     },
     styles: {
-        inputLib: './lib/build/less/dialtone.less',
-        outputLib: './lib/dist/css/',
+        inputLib: './lib/less/dialtone.less',
+        outputLib: './dist/css/',
         inputDocs: './docs/assets/less/*.less',
         outputDocs: './docs/assets/css/',
     },
     svgs: {
-        sysInput: './lib/build/svg/system/**/*.svg',
-        sysOutputLib: './lib/dist/svg/system/',
+        sysInput: './lib/svg/system/**/*.svg',
+        sysOutputLib: './dist/svg/system/',
         sysOutputDocs: './docs/_includes/icons/system/',
-        brandInput: './lib/build/svg/brand/**/*.svg',
-        brandOutputLib: './lib/dist/svg/brand/',
+        brandInput: './lib/svg/brand/**/*.svg',
+        brandOutputLib: './dist/svg/brand/',
         brandOutputDocs: './docs/_includes/icons/brand/',
-        outputVue: './lib/dist/vue/icons/',
+        outputVue: './dist/vue/icons/',
     },
     patterns: {
-        input: './lib/build/svg/patterns/**/*.svg',
-        outputLib: './lib/dist/svg/patterns/',
+        input: './lib/svg/patterns/**/*.svg',
+        outputLib: './dist/svg/patterns/',
         outputDocs: './docs/_includes/patterns/',
-        outputVue: './lib/dist/vue/patterns/',
+        outputVue: './dist/vue/patterns/',
     },
     favicons: {
         dpName: 'Dialpad',
         dpBgColor: '#FFFFFF',
-        dpInput: './lib/build/favicons/dialpad/',
-        dpOutput: './lib/dist/favicons/dialpad/',
-        ucInput: './lib/build/favicons/uberconference/',
-        ucOutput: './lib/dist/favicons/uberconference/',
-        docsInput: './lib/build/favicons/',
+        dpInput: './lib/favicons/dialpad/',
+        dpOutput: './dist/favicons/dialpad/',
+        ucInput: './lib/favicons/uberconference/',
+        ucOutput: './dist/favicons/uberconference/',
+        docsInput: './lib/favicons/',
         docsOutput: './docs/assets/images/favicons/',
         docsIcon: 'favicon-dialtone__512.png',
         dp: 'favicon__512.png',
@@ -113,8 +114,13 @@ var paths = {
         dpStagingNotify: 'favicon-staging-notification__512.png',
         uc: 'favicon-uberconference__512.png',
     },
+    fonts: {
+        input: './lib/fonts/**/*',
+        outputLib: './dist/fonts/',
+        outputDocs: './docs/assets/fonts/'
+    },
     mobile: {
-        output: './lib/dist/ios/'
+        output: './dist/ios/'
     },
     build: {
         input: './docs/',
@@ -123,7 +129,7 @@ var paths = {
         baseurl: ''
     },
     watch: {
-        lib: './lib/build/less/**/*',
+        lib: './lib/less/**/*',
         docs: './docs/**/*',
         docsExcludeSite: '!./docs/_site/**/*',
         docsExcludeCSS: '!./docs/assets/css/**/*',
@@ -476,6 +482,20 @@ var buildPatternSVGs = function(done) {
 // //  --------------------------------------------------------------------------------
 // const faviconDialtone = () => { return generateFavicons('docs', paths.favicons.docsIcon, paths.favicons.docsOutput); }
 
+//  ================================================================================
+//  @@  FONTS
+//  ================================================================================
+var webfonts = function(done) {
+    //  Make sure this feature is activated before running
+    if (!settings.fonts) return done();
+
+    return src(paths.fonts.input)
+        .pipe(dest(paths.fonts.outputLib))
+        .pipe(dest(paths.fonts.outputDocs));
+
+    done();
+}
+
 
 //  ================================================================================
 //  @@  BUILD SITE
@@ -581,6 +601,7 @@ exports.default = series(
     parallel(
         libStyles,
         docStyles,
+        webfonts,
     ),
     buildDocs
 );
