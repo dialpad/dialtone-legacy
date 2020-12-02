@@ -20,26 +20,31 @@
 //  $   FONT FACE
 //      To turn on custom webfonts, set @define-font-face to true.
 //  ----------------------------------------------------------------------------
-if((@define-font-face = true), each(@define-font-family, {
+if((@define-font-face-custom = true), each(@define-ff-custom, {
     @font-face {
         font-style: "normal";
         font-weight: @key;
-        font-family: @define-font-name;
-        src: url("@{define-font-path}@{value}.woff") format("woff");
-        // url("@{define-font-path}@{value}.eot") format("eot"),
-        //      url("@{define-font-path}@{value}.eot?#iefix") format("embedded-opentype"),
-
+        font-family: @define-ff-custom-name;
+        src: url("@{define-font-path}@{value}.woff2") format("woff2");
+    };
+}));
+if((@define-font-face-mono = true), each(@define-ff-mono, {
+    @font-face {
+        font-style: "normal";
+        font-weight: @key;
+        font-family: @define-ff-mono-name;
+        src: url("@{define-font-path}@{value}.woff2") format("woff2");
     };
 }));
 
 //  ============================================================================
 //  $   FONT FAMILY
 //  ----------------------------------------------------------------------------
-.d-ff-custom                    { .d-font-family--custom() !important; }
-.d-ff-sans                      { .d-font-family--sans() !important; }
-.d-ff-mono                      { .d-font-family--mono() !important; }
-.d-ff-inherit                   { .d-font-family--inherit() !important; }
-.d-ff-unset                     { .d-font-family--unset() !important; }
+.d-ff-custom                    { font-family: @ff-custom !important; }
+.d-ff-sans                      { font-family: @ff-sans !important; }
+.d-ff-mono                      { font-family: @ff-mono !important; }
+.d-ff-inherit                   { font-family: inherit !important; }
+.d-ff-unset                     { font-family: unset !important; }
 
 //  ============================================================================
 //  $   FONT SIZES

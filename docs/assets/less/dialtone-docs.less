@@ -39,7 +39,7 @@
 @nav__background-color--s:      saturation(@nav__background-color);
 @nav__background-color--l:      lightness(@nav__background-color);
 
-@define-font-path:              "../fonts/MarkPro/";
+@define-font-face-mono:         true;
 
 @dialtone-nav--border-color:    @ash-darker;
 @dialtone-nav--header-color:    @slate-light;
@@ -788,7 +788,7 @@ body {
     //  Code Table
     &.dialtone-table--code tbody {
         th {
-            .d-font-weight--normal();
+            line-height: var(--lh-normal);
             .code-example();
             .code-example.code-example--class();
         }
@@ -797,9 +797,9 @@ body {
             .code-example.code-example--css();
 
             &.dialtone-table--sans {
-                font-family: @ff-sans;
-                color: @slate;
-                font-size: @fs12;
+                font-family: var(--ff-sans);
+                color: var(--slate);
+                font-size: var(--fs12);
             }
         }
     }
@@ -807,8 +807,8 @@ body {
     //  Disabled Row
     .dialtone-table__disabled {
         th, td {
-            .d-font-weight--normal();
-            color: @ash-darkest;
+            line-height: var(--lh-normal);
+            color: var(--ash-darkest);
             background-color: fade(@ash, 50%);
         }
     }
