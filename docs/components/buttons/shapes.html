@@ -1,0 +1,49 @@
+<header class="d-stack2">
+    <h3 class="dialtone-title__subsection" id="loading">Button Shapes</h3>
+    <p class="dialtone-copy__normal">Most buttons have a rectangular shape with rounded corners, however there are times where a circle or pill style is required to help draw attention or maintain UI consistency across platforms. The circle or pill styles can be applied to any of the previously stated styles.</p>
+</header>
+<table class="dialtone-table">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col" width="30%">Class</th>
+            <th scope="col" style="text-align: center;">Clear</th>
+            <th scope="col" style="text-align: center;">Outlined</th>
+            <th scope="col" style="text-align: center;">Filled</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% assign i = buttons.loading-styles | split: ", " %}
+        {% for s in i %}
+            {% assign shapes = buttons.shape-styles | split: ", " %}
+            {% for shape in shapes %}
+            <tr class="{% if s == 'inverted'%}d-bgc-navy d-fc-white{% endif %}">
+                {% if shape == "circle" %}<th scope="row" rowspan="2">{{ s | capitalize }}</th>{% endif %}
+                <td class="code-example" {% if s == "inverted"%}style=" border-color: var(--navy-lighter);"{% endif %}>.d-btn {% if shape == "circle"%} .d-btn--circle{% elsif shape == "pill"%} .d-btn--pill{% endif %}{% if s == "muted" %} .d-btn--muted{% elsif s == "danger" %} .d-btn--danger{% elsif s == "inverted"%} .d-btn--inverted{% endif %}</td>
+                <td style="text-align: center;{% if s == 'inverted'%} border-color: var(--navy-lighter);{% endif %}">
+                    <button class="{% if shape == 'pill' %}d-width100{% endif %} d-btn{% if shape == 'circle'%} d-btn--circle{% elsif shape == 'pill'%} d-btn--pill{% endif %}{% if s == 'inverted'%} d-btn--inverted{% elsif s == 'muted'%} d-btn--muted{% elsif s == 'danger'%} d-btn--danger{% endif %}" type="button" aria-pressed="false" style="white-space: nowrap;">
+                        <span class="d-btn__icon">{% iconSystem "phone", "js-svg" %}</span>
+                        <span class="d-btn__label">Place call</span>
+                    </button>
+                </td>
+                <td style="text-align: center;{% if s == 'inverted'%} border-color: var(--navy-lighter);{% endif %}">
+                    <button class="{% if shape == 'pill' %}d-width100{% endif %} d-btn d-btn--outlined{% if shape == 'circle'%} d-btn--circle{% elsif shape == 'pill'%} d-btn--pill{% endif %}{% if s == 'inverted'%} d-btn--inverted{% elsif s == 'muted'%} d-btn--muted{% elsif s == 'danger'%} d-btn--danger{% endif %}" type="button" aria-pressed="false" style="white-space: nowrap;">
+                        <span class="d-btn__icon">{% iconSystem "phone", "js-svg" %}</span>
+                        <span class="d-btn__label">Place call</span>
+                    </button>
+                </td>
+                <td style="text-align: center;{% if s == 'inverted'%} border-color: var(--navy-lighter);{% endif %}">
+                    {% if s == "muted" %}
+                        <i class="d-fc-slate-lighter">N/A</i>
+                    {% else %}
+                        <button class="{% if shape == 'pill' %}d-width100{% endif %} d-btn d-btn--filled{% if shape == 'circle'%} d-btn--circle{% elsif shape == 'pill'%} d-btn--pill{% endif %}{% if s == 'inverted'%} d-btn--inverted{% elsif s == 'muted'%} d-btn--muted{% elsif s == 'danger'%} d-btn--danger{% endif %}" type="button" aria-pressed="false" style="white-space: nowrap;">
+                            <span class="d-btn__icon">{% iconSystem "phone", "js-svg" %}</span>
+                            <span class="d-btn__label">Place call</span>
+                        </button>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        {% endfor %}
+    </tbody>
+</table>

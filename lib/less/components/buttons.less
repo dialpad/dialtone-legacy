@@ -31,24 +31,22 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    .d-margin0();
-    padding: var(--input-button__padding);
+    padding: @button-padding;
 
-    border: @border-width1 solid hsla(~"@{primary-color--hsl} / 0%");
-    border-radius: var(--base--corner-radius);
-    background-color: fade(@white, 0%);
-    box-shadow: inset 0 0 0 0 hsla(~"@{primary-color--hsl} / 25%");
+    border: 0.1rem solid transparent;
+    border-radius: @border-radius--sm;
+    background-color: @button-bgc;
 
     text-decoration: none;
     text-transform: inherit;
     font-family: inherit;
-    color: var(--primary-color);
-    font-size: var(--input-button__text-size);
-    line-height: var(--input-button__line-height);
+    font-size: @button-fs;
+    line-height: @button-lh;
+    color: @button-fc;
 
     cursor: pointer;
     transition-timing-function: @transition--cubic-inOut;
-    transition-duration: 100ms;
+    transition-duration: 75ms;
     transition-property: background-color, border, box-shadow;
 
     user-select: none;
@@ -56,37 +54,51 @@
 
     //  --  STATES
     //  ------------------------------------------------------------------------
-    &:hover {
-        background-color: hsla(~"@{primary-color--hsl} / 5%");
+    &:hover,
+    &:focus,
+    &:active {
+        color: @button-fc--hover;
+        background-color: @button-bgc--hover;
     }
+
     &:focus {
         outline: none;
-        box-shadow: 0 0 0 @spacing4 hsla(~"@{primary-color--hsl} / 25%");
+        box-shadow: 0 0 0 @spacing4 var(--focus-ring);
     }
     &:active {
-        border-color: hsla(~"@{primary-color--hsl} / 50%");
-        background-color: hsla(~"@{primary-color--hsl} / 10%");
-        box-shadow--size: inset 0 0 @spacing8 0 hsla(~"@{primary-color--hsl} / 30%");
+        border-color: @button-bc--active;
+        background-color: @button-bgc--active;
     }
-    &[disabled] {
-        .disabled-input-style();
-        opacity: 0.75;
-        transition: none;
-        pointer-events: none;
+
+    //  --  SIZES
+    //  ------------------------------------------------------------------------
+    &.d-btn--xs {
+        padding: (@spacing4 - @spacing1) (@spacing8 - @spacing1); // Subtract border
+        font-size: var(--fs14);
+        line-height: calc(20/14);
     }
-}
-//  Loading class
-.d-btn--loading {
-    .d-btn();
-    .d-btn-loading();
-}
-//  Disabled class
-.d-btn--disabled {
-    .d-btn();
-    .disabled-input-style();
-    opacity: 0.75;
-    transition: none;
-    pointer-events: none;
+    &.d-btn--sm {
+        padding: (@spacing6 - @spacing1) (@spacing8 - @spacing1); // Subtract border
+        font-size: var(--fs14);
+        line-height: calc(20/14);
+    }
+    &.d-btn--lg {
+        padding: (@spacing12 - @spacing1) (@spacing16 - @spacing1); // Subtract border
+        font-size: var(--fs20);
+        line-height: calc(24/20);
+    }
+    &.d-btn--xl {
+        padding: (@spacing6 - @spacing1); // Subtract border;
+        border-radius: @border-radius--md;
+        font-size: var(--fs24);
+        line-height: calc(32/24);
+    }
+
+    //  --  LOADING
+    //  ------------------------------------------------------------------------
+    &.d-btn--loading {
+        .d-btn-loading();
+    }
 }
 
 
@@ -104,8 +116,8 @@
 .d-btn__icon {
     display: flex;
     margin: -.4rem .4rem -.4rem -.2rem;
-    width: var(--input-button__icon-size);
-    height: var(--input-button__icon-size);
+    width: 1em;
+    height: 1em;
 
     &.d-btn__icon--last {
         order: 1;
@@ -121,192 +133,177 @@
 //  $$  OUTLINED BUTTON
 //  ----------------------------------------------------------------------------
 .d-btn--outlined {
-    //  Incorporate prior styles
-    .d-btn();
+    border-color: @button-bc--outlined;
+    background-color: @button-bgc--outlined;
+    color: @button-fc--outlined;
 
-    //  Now change them
-    border-color: var(--primary-color);
-    color: hsl(var(--primary-color--h) var(--primary-color--s) calc(var(--primary-color--l) + 5%));
-
+    &:hover,
+    &:active,
+    &:focus {
+        border-color: @button-bc--outlined--hover;
+    }
     &:active {
-        border-color: hsl(var(--primary-color--h) var(--primary-color--s) calc(var(--primary-color--l) + 5%));
+        border-color: @button-bc--outlined--active;
     }
 }
-.d-btn--outlined--loading {
-    .d-btn--outlined();
-    .d-btn-loading();
-}
 
-//  $$  PRIMARY BUTTON
+//  $$  FILLED BUTTON
 //  ----------------------------------------------------------------------------
-.d-btn--primary {
-    //  Incorporate prior styles
-    .d-btn();
+.d-btn--filled {
+    color: @button-fc--filled;
+    background-color: @button-bgc--filled;
+    border-color: @button-bc--filled;
 
-    //  Now change them
-    color: var(--white);
-    background-color: var(--primary-color);
-
-    //  --  STATES
-    //  ------------------------------------------------------------------------
-    &:hover {
-        background-color: var(--primary-color--hover);
+    &:hover,
+    &:active,
+    &:focus {
+        color: @button-fc--filled--hover;
+        background-color: @button-bgc--filled--hover;
+        border-color: @button-bc--filled--hover;
     }
     &:active {
-        border-color: hsl(var(--primary-color--h) var(--primary-color--s) calc(var(--primary-color--l) + 10%));
-        background-color: hsl(var(--primary-color--h) calc(var(--primary-color--s) + 15%) var(--primary-color--l));
-        box-shadow: hsl(var(--primary-color--h) var(--primary-color--s) calc(var(--primary-color--l) + 10%));
+        border-color: @button-bc--filled--active;
+        background-color: @button-bgc--filled--active;
     }
 }
-.d-btn--primary--disabled {
-    .disabled-input-style();
-    opacity: 0.75;
-    transition: none;
-    pointer-events: none;
-}
-.d-btn--primary--loading {
-    .d-btn--primary();
-    .d-btn-loading--white();
+
+//  $$  MUTED BUTTON
+//  ----------------------------------------------------------------------------
+.d-btn--muted {
+    --focus-ring: fade(@slate-lighter, 25%);
+
+    color: @button-fc--muted;
+    background-color: @button-bgc--muted;
+
+    &:hover,
+    &:active,
+    &:focus {
+        color: @button-fc--muted--hover;
+        background-color: @button-bgc--muted--hover;
+    }
+    &:active {
+        border-color: @button-bc--muted--active;
+        background-color: @button-bgc--muted--active;
+    }
+
+    &.d-btn--outlined {
+        border-color: @button-bc--muted--outlined;
+
+        &:active {
+            border-color: @button-bc--muted--outlined--active;
+        }
+    }
 }
 
 //  $$  DANGER BUTTON
 //  ----------------------------------------------------------------------------
-//  --  Base, clear danger button
 .d-btn--danger {
-    //  Incorporate prior styles
-    .d-btn();
+    color: @button-fc--danger;
+    background-color: @button-bgc--danger;
+    border-color: @button-bc--danger;
 
-    //  Now change them
-    .btn-danger-clear-states();
-}
-.d-btn--danger--loading {
-    .d-btn--danger();
-    .d-btn-loading--danger();
-}
-
-//  $$  OUTLINED DANGER BUTTON
-//  ----------------------------------------------------------------------------
-.d-btn--danger--outlined {
-    //  Incorporate prior styles
-    .d-btn();
-
-    //  Now change them
-    .btn-danger-clear-states();
-    border-color: @error-color;
-
-    &:active {
-        border-color: @error-color--hover;
+    &:hover,
+    &:active,
+    &:focus {
+        color: @button-fc--danger--hover;
+        background-color: @button-bgc--danger--hover;
     }
-}
-.d-btn--danger--outlined--loading {
-    .d-btn--danger--outlined();
-    .d-btn-loading--danger();
-}
+    &:focus {
+        --focus-ring: fade(@error-color, 25%);
+    }
+    &:active {
+        border-color: @button-bc--filled--active;
+        background-color: @button-bgc--filled--active;
+    }
 
-//  $$  FILLED DANGER BUTTON
-//  ----------------------------------------------------------------------------
-.d-btn--danger--primary {
-    //  Incorporate prior styles
-    .d-btn();
+    &.d-btn--outlined {
+        border-color: @button-bc--danger--outlined;
 
-    //  Now change them
-    .btn-danger-primary-states();
-}
-.d-btn--danger--primary--loading {
-    .d-btn--danger--primary();
-    .d-btn-loading--white();
+        &:active {
+            border-color: @button-bc--danger--outlined--active;
+        }
+    }
+
+    &.d-btn--filled {
+        color: @button-fc--danger--filled;
+        background-color: @button-bgc--danger--filled;
+        border-color: @button-bc--danger--filled;
+
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: @button-bgc--danger--filled--hover;
+            border-color: @button-bc--danger--filled--hover;
+        }
+        &:active {
+            background-color: @button-bgc--danger--filled--active;
+            border-color: @button-bc--danger--filled--active;
+        }
+    }
 }
 
 //  $$  INVERTED BUTTON
 //  ----------------------------------------------------------------------------
 //  --  Base, clear inverted button
 .d-btn--inverted {
-    //  Incorporate prior styles
-    .d-btn();
+    border-color: @button-bc--inverted;
+    background-color: @button-bgc--inverted;
+    color: @button-fc--inverted;
 
-    //  Now change them
-    .btn-inverted-clear-states();
-}
-.d-btn--inverted--loading {
-    .d-btn--inverted();
-    .d-btn-loading--white();
-}
+    &:hover,
+    &:active,
+    &:focus {
+        color: @button-fc--inverted--hover;
+        background-color: @button-bgc--inverted--hover;
+    }
+    &:focus {
+        --focus-ring: var(--btn--inverted__bs--focus);
+    }
+    &:active {
+        background-color: @button-bgc--inverted--active;
+        border-color: @button-bc--inverted--active;
+    }
 
-//  --  Outlined inverted button
-.d-btn--inverted--outlined {
-    //  Incorporate prior styles
-    .d-btn();
+    //  --  OUTLINED
+    &.d-btn--outlined {
+        border-color: @button-bc--inverted--outlined;
 
-    //  Now change them
-    .btn-inverted-outlined-states();
-}
-.d-btn--inverted--outlined--loading {
-    .d-btn--inverted--outlined();
-    .d-btn-loading--white();
-}
+        &:hover {
+            border-color: @button-bc--inverted--outlined--hover;
+        }
+        &:active {
+            border-color: @button-bc--inverted--outlined--active;
+        }
+    }
 
-//  --  Filled (primary) inverted button
-.d-btn--inverted--primary {
-    //  Incorporate prior styles
-    .d-btn();
+    //  --  FILLED
+    &.d-btn--filled {
+        color: @button-fc--inverted--filled;
+        background-color: @button-bgc--inverted--filled;
 
-    //  Now change them
-    .btn-inverted-primary-states();
-}
-.d-btn--inverted--primary--loading {
-    .d-btn--inverted--primary();
-    .d-btn-loading();
-}
-
-
-//  $$  BRAND BUTTONS
-//  ----------------------------------------------------------------------------
-//  --  GOOGLE
-.d-btn--google {
-    .d-btn--primary();
-    .brand-buttons(@button-brand-google);
-}
-
-//
-//  --  OFFICE 365
-.d-btn--o365 {
-    .d-btn--primary();
-    .brand-buttons(@button-brand-o365);
-}
-
-//
-//  --  LINKEDIN
-.d-btn--linkedin {
-    .d-btn--primary();
-    .brand-buttons(@button-brand-linkedin);
+        &:hover,
+        &:active,
+        &:focus {
+            color: @button-fc--inverted--filled--hover;
+            background-color: @button-bgc--inverted--filled--hover;
+            border-color: @button-bc--inverted--filled--hover;
+        }
+        &:focus {
+            --focus-ring: var(--btn--inverted--primary__bs--focus);
+        }
+        &:active {
+            color: @button-fc--inverted--filled--active;
+            border-color: @button-bc--inverted--filled--active;
+        }
+    }
 }
 
-
-//  ============================================================================
-//  @   BUTTON SIZES
-//  ----------------------------------------------------------------------------
-.d-btn--xs { .input-button-xs(); }
-.d-btn--sm { .input-button-sm(); }
-.d-btn--lg { .input-button-lg(); }
-.d-btn--xl { .input-button-xl(); }
-
-
-//  ============================================================================
-//  @   CIRCLE BUTTONS
-//  ============================================================================
-//  @@  BASE CLEAR CIRCLE
+//  $$  CIRCLE BUTTONS
 //  ----------------------------------------------------------------------------
 .d-btn--circle {
-    //  Incorporate base styles
-    .d-btn();
-
-    //  Now change them
-    color: var(--text-color--medium);
-    background-color: fade(@slate-lighter, 0%);
-
-    .d-padding8();
-    .d-border-radius--circle();
-    transition: all 150ms @transition--cubic-inOut;
+    padding: @spacing8;
+    border-radius: @border-radius--circle;
+    transition-duration: 150ms;
 
     //  Reset icon margins
     .d-btn__icon {
@@ -318,146 +315,102 @@
         display: none;
     }
 
-    //  --  STATES
-    //  ------------------------------------------------------------------------
-    &:hover {
-        color: var(--text-color--dark);
-        background-color: fade(@slate-light, 7.5%);
+    //  Adjust padding based on sizes
+    &.d-btn--xs {
+        padding: (@spacing6 - @spacing1);   //  Minus border
     }
-    &:focus {
-        box-shadow: 0 0 0 @spacing4 fade(@slate-lighter, 25%);
+    &.d-btn--sm {
+        padding: @spacing6;
     }
-    &:active {
-        border-color: fade(@slate-lighter, 50%);
-        background-color: fade(@slate-lighter, 10%);
-        box-shadow: 0 0 0 @spacing4 fade(@slate-lighter, 30%);
+    &.d-btn--lg {
+        padding: (@spacing12 - @spacing1);   //  Minus border
     }
-}
-.d-btn--circle--loading {
-    .d-btn--circle();
-    .d-btn-loading--dark();
-}
-
-
-//  @@  OUTLINED CIRCLE
-//  ----------------------------------------------------------------------------
-.d-btn--circle--outlined {
-    //  Incorporate base styles
-    .d-btn--circle();
-
-    //  Now modify those styles
-    border-color: var(--slate-lighter);
-    color: var(--text-color--medium);
-
-    //  --  STATES
-    //  ------------------------------------------------------------------------
-    &:hover {
-        color: var(--text-color--dark);
-        border-color: var(--slate-light);
+    &.d-btn--xl {
+        padding: (@spacing16 - @spacing1);   //  Minus border;
     }
 }
-.d-btn--circle--outlined--loading {
-    .d-btn--circle--outlined();
-    .d-btn-loading--dark();
+
+//  $$  PILL BUTTONS
+//  ----------------------------------------------------------------------------
+.d-btn--pill {
+    border-radius: @br-pill;
 }
 
 
-//  @@  DANGER CIRCLE STYLES
+//  $$  DISABLED STATES
 //  ----------------------------------------------------------------------------
-//  --  Danger "Hover" style
-//      This looks like a normal circle button, but on hover applies the
-//      danger styles to it.
-//  ----------------------------------------------------------------------------
-.d-btn--circle--danger-hover {
-    //  First incorporate base styles
-    .d-btn--circle();
+.d-btn {
+    &[disabled],
+    &.d-btn--disabled {
+        opacity: 0.75;
+        cursor: default;
+        pointer-events: none;
+        border-color: @button-bc--disabled;
+        background-color: @button-bgc--disabled;
+        color: @button-fc--disabled;
+        transition: none;
+    }
 
-    //  Now modify those styles
-    .btn-danger-clear-states();
+    &.d-btn--outlined {
+        &[disabled],
+        &.d-btn--disabled {
+            border-color: @button-bc--outlined--disabled;
+            background-color: @button-bgc--outlined--disabled;
+        }
+    }
 
-    color: var(--text-color--medium);
+    &.d-btn--filled {
+        &[disabled],
+        &.d-btn--disabled {
+            border-color: @button-bc--filled--disabled;
+            background-color: @button-bgc--filled--disabled;
+            color: @button-fc--filled--disabled;
+        }
+    }
 
-    //  --  STATES
-    //  ------------------------------------------------------------------------
-    &:focus,
-    &:active {
-        color: @error-color--hover;
+    &.d-btn--inverted {
+        //  --  DISABLED
+        &[disabled],
+        &.d-btn--disabled {
+            border-color: @button-bc--inverted--disabled;
+            background-color: @button-bgc--inverted--disabled;
+        }
+
+        &.d-btn--outlined {
+            &[disabled],
+            &.d-btn--disabled {
+                border-color: @button-bc--inverted--outlined--disabled;
+                background-color: @button-bgc--inverted--outlined--disabled;
+            }
+        }
+
+        &.d-btn--filled {
+            &[disabled],
+            &.d-btn--disabled {
+                border-color: @button-bc--inverted--filled--disabled;
+                background-color: @button-bgc--inverted--filled--disabled;
+            }
+        }
     }
 }
-.d-btn--circle--danger-hover--loading {
-    .d-btn--circle--danger-hover();
-    .d-btn-loading--dark();
-}
 
-//  --  Default, clear danger circle
-.d-btn--circle--danger {
-    .d-btn--circle();
-    .btn-danger-clear-states();
-}
-.d-btn--circle--danger--loading {
-    .d-btn--circle--danger();
-    .d-btn-loading--danger();
-}
-
-//  --  Default, clear danger circle
-.d-btn--circle--danger--primary {
-    .d-btn--circle();
-    .btn-danger-primary-states();
-}
-.d-btn--circle--danger--primary--loading {
-    .d-btn--circle--danger--primary();
-    .d-btn-loading--white();
-}
-
-//  @@  INVERTED CIRCLE STYLES
+//  $$  BRAND BUTTONS
 //  ----------------------------------------------------------------------------
-//  --  Base inverted style
-.d-btn--circle--inverted {
-    .d-btn--circle();
-    .btn-inverted-clear-states()
-}
-.d-btn--circle--inverted--loading {
-    .d-btn--circle--inverted();
-    .d-btn-loading--white();
+//  --  GOOGLE
+.d-btn--google {
+    .brand-buttons(@button-brand-google);
 }
 
-//  --  Outlined inverted style
-.d-btn--circle--inverted--outlined {
-    .d-btn--circle--inverted();
-    .btn-inverted-outlined-states()
-}
-.d-btn--circle--inverted--outlined--loading {
-    .d-btn--circle--inverted--outlined();
-    .d-btn-loading--white();
+//
+//  --  OFFICE 365
+.d-btn--o365 {
+    .brand-buttons(@button-brand-o365);
 }
 
-//  --  Inverted Primary style
-.d-btn--circle--inverted--primary {
-    .d-btn--circle--inverted();
-    .btn-inverted-primary-states()
-}
-.d-btn--circle--inverted--primary--loading {
-    .d-btn--circle--inverted--primary();
-    .d-btn-loading();
-}
-
-//  @@  CIRCLE SIZES
-//  ----------------------------------------------------------------------------
-.d-btn--circle--xs {
-    .d-btn--xs();
-    padding: 0.5rem;
-}
-.d-btn--circle--sm {
-    .d-btn--sm();
-    padding: @spacing6;
-}
-.d-btn--circle--lg {
-    .d-btn--lg();
-    padding: 1.1rem;
-}
-.d-btn--circle--xl {
-    .d-btn--xl();
-    padding: 1.5rem;
+//
+//  --  LINKEDIN
+.d-btn--linkedin {
+    .brand-buttons(@button-brand-linkedin);
 }
 
 
