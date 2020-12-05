@@ -75,23 +75,24 @@
     &.d-btn--xs {
         padding: (@spacing4 - @spacing1) (@spacing8 - @spacing1); // Subtract border
         font-size: var(--fs14);
-        line-height: calc(20/14);
+        line-height: 20/14;
     }
     &.d-btn--sm {
         padding: (@spacing6 - @spacing1) (@spacing8 - @spacing1); // Subtract border
         font-size: var(--fs14);
-        line-height: calc(20/14);
+        line-height: 20/14;
     }
     &.d-btn--lg {
-        padding: (@spacing12 - @spacing1) (@spacing16 - @spacing1); // Subtract border
+        padding: (@spacing12 - @spacing1) @spacing12; // Subtract border
+        border-radius: @border-radius--md;
         font-size: var(--fs20);
-        line-height: calc(24/20);
+        line-height: 24/20;
     }
     &.d-btn--xl {
-        padding: (@spacing6 - @spacing1); // Subtract border;
-        border-radius: @border-radius--md;
+        padding: (@spacing12 - @spacing2) (@spacing16 - @spacing1); // Subtract border;
+        border-radius: @border-radius--lg;
         font-size: var(--fs24);
-        line-height: calc(32/24);
+        line-height: 32/24;
     }
 
     //  --  LOADING
@@ -301,8 +302,8 @@
 //  $$  CIRCLE BUTTONS
 //  ----------------------------------------------------------------------------
 .d-btn--circle {
-    padding: @spacing8;
-    border-radius: @border-radius--circle;
+    padding: (@spacing8 + @spacing1);
+    border-radius: @border-radius--circle !important;
     transition-duration: 150ms;
 
     //  Reset icon margins
@@ -317,25 +318,44 @@
 
     //  Adjust padding based on sizes
     &.d-btn--xs {
-        padding: (@spacing6 - @spacing1);   //  Minus border
-    }
-    &.d-btn--sm {
         padding: @spacing6;
     }
+    &.d-btn--sm {
+        padding: @spacing8;
+    }
     &.d-btn--lg {
-        padding: (@spacing12 - @spacing1);   //  Minus border
+        padding: (@spacing12 + @spacing1);
     }
     &.d-btn--xl {
-        padding: (@spacing16 - @spacing1);   //  Minus border;
+        padding: (@spacing16 - @spacing2);
     }
 }
 
 //  $$  PILL BUTTONS
 //  ----------------------------------------------------------------------------
 .d-btn--pill {
-    border-radius: @br-pill;
-}
+    padding-right: @spacing16;
+    padding-left: @spacing16;
+    border-radius: @br-pill !important;
 
+    //  Adjust padding based on sizes
+    &.d-btn--xs {
+        padding-right: @spacing8;
+        padding-left: @spacing8;
+    }
+    &.d-btn--sm {
+        padding-right: @spacing12;
+        padding-left: @spacing12;
+    }
+    &.d-btn--lg {
+        padding-right: @spacing16;
+        padding-left: @spacing16;
+    }
+    &.d-btn--xl {
+        padding-right: @spacing24;
+        padding-left: @spacing24;
+    }
+}
 
 //  $$  DISABLED STATES
 //  ----------------------------------------------------------------------------
@@ -396,23 +416,75 @@
 
 //  $$  BRAND BUTTONS
 //  ----------------------------------------------------------------------------
+.d-btn--google,
+.d-btn--o365,
+.d-btn--linkedin {
+    display: flex;
+    color: var(--white);
+
+    &:hover {
+        color: fade(@white,90%);
+    }
+
+    .d-btn__icon {
+        margin-left: -(@spacing4);
+        width: 2em;
+        height: 2em;
+        border-radius: (@border-radius--sm - .1);
+        background-color: var(--white;)
+    }
+    .d-btn__label {
+        flex: 1 auto;
+    }
+}
 //  --  GOOGLE
 .d-btn--google {
-    .brand-buttons(@button-brand-google);
-}
+    background-color: @button-brand-google;
 
-//
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: darken(saturate(@button-brand-google,2.5%),5%);
+    }
+    &:focus {
+        --focus-ring: fade(@button-brand-google,25%);
+    }
+    &:active {
+        background-color: darken(saturate(@button-brand-google,5%),10%);
+    }
+}
 //  --  OFFICE 365
 .d-btn--o365 {
-    .brand-buttons(@button-brand-o365);
-}
+    background-color: @button-brand-o365;
 
-//
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: darken(saturate(@button-brand-o365,2.5%),5%);
+    }
+    &:focus {
+        --focus-ring: fade(@button-brand-o365,25%);
+    }
+    &:active {
+        background-color: darken(saturate(@button-brand-o365,5%),10%);
+    }
+}
 //  --  LINKEDIN
 .d-btn--linkedin {
-    .brand-buttons(@button-brand-linkedin);
-}
+    background-color: @button-brand-linkedin;
 
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: darken(saturate(@button-brand-linkedin,2.5%),5%);
+    }
+    &:focus {
+        --focus-ring: fade(@button-brand-linkedin,25%);
+    }
+    &:active {
+        background-color: darken(saturate(@button-brand-linkedin,5%),10%);
+    }
+}
 
 //  ============================================================================
 //  @   BUTTON LOADER
@@ -447,31 +519,5 @@
         border-left-color: transparent !important;
 
         animation: d-loading-circle 900ms infinite linear;
-    }
-}
-
-//  @@  ALTERNATE STYLES
-//  ----------------------------------------------------------------------------
-.d-btn-loading--white {
-    .d-btn-loading();
-
-    &:before {
-        border-color: var(--white);
-    }
-}
-
-.d-btn-loading--dark {
-    .d-btn-loading();
-
-    &:before {
-        border-color: var(--slate-light);
-    }
-}
-
-.d-btn-loading--danger {
-    .d-btn-loading();
-
-    &:before {
-        border-color: @error-color;
     }
 }

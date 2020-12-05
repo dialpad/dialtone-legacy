@@ -1,6 +1,6 @@
 <section class="d-stack16">
     <header class="d-stack2">
-        <h2 class="dialtone-title__section">Sizes</h2>
+        <h3 class="dialtone-title__subsection" id="shapes">Sizes</h3>
         <p class="dialtone-copy__normal">The default button font-size is 16px. To change the button’s font-size, use the following classes:</p>
     </header>
     <table class="dialtone-table">
@@ -9,7 +9,7 @@
                 <th scope="col">Name</th>
                 <th scope="col">Class</th>
                 <th scope="col">Size</th>
-                <th scope="col" width="50%">Examples</th>
+                <th scope="col" width="60%">Examples</th>
             </tr>
         </thead>
         <tbody>
@@ -22,20 +22,20 @@
                 <td class="code-example">{% if name == "Default"%}N/A{% else %}.d-btn--{{ class }}{% endif %}</td>
                 <td>{{ size }}</td>
                 <td>
-                    <div class="d-d-flex d-ai-center d-mxn2">
-                        {% assign examples = "normal, circle, icon" | split: ", "%}
+                    <div class="d-d-flex d-ai-center d-flow8">
+                        {% assign examples = "default, circle, pill" | split: ", "%}
                         {% for e in examples %}
-                            <button class="d-mx2 d-btn{% if e == 'circle' %}--circle{% elsif e == 'normal' %}--primary{% endif %}{% if class != nil %} d-btn--{% if e == 'circle'%}circle--{% endif %}{{ class }}{% endif %}" type="button" aria-pressed="false">
-                                {% if e != 'normal' %}
+                            <button class="d-btn{% if e == 'circle' %} d-btn--muted d-btn--outlined d-btn--circle{% elsif e == 'pill' %} d-btn--filled d-btn--pill{% endif %} d-btn--{{ class }}" type="button" aria-pressed="false">
+                                {% if e != 'default' %}
                                     <span class="d-btn__icon">
                                         {% if e == 'circle' %}
                                             {% iconSystem "mic-on", "js-svg" %}
-                                        {% elsif e == 'icon' %}
+                                        {% elsif e == 'pill' %}
                                             {% iconSystem "search", "js-svg" %}
                                         {% endif %}
                                     </span>
                                 {% endif %}
-                                <span class="d-btn__label">Label</span>
+                                <span class="d-btn__label">{% if e == 'default' %}Place call{% elsif e == 'pill' %}Search{% endif %}</span>
                             </button>
                         {% endfor %}
                     </div>
