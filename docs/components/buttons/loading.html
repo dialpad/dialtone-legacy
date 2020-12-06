@@ -1,50 +1,41 @@
 <header class="d-stack2">
-    <h3 class="dialtone-title__subsection">Loading Buttons</h3>
+    <h3 class="dialtone-title__subsection" id="loading">Loading Buttons</h3>
     <p class="dialtone-copy__normal">If there is a delay between the user clicking a button and the action taking place, apply a loader to communicate that something is happening.</p>
 </header>
 <table class="dialtone-table">
     <thead>
         <tr>
             <th scope="col">Name</th>
-            <th scope="col">Class</th>
+            <th scope="col" width="30%">Class</th>
             <th scope="col" style="text-align: center;">Clear</th>
             <th scope="col" style="text-align: center;">Outlined</th>
             <th scope="col" style="text-align: center;">Filled</th>
         </tr>
     </thead>
     <tbody>
-        {% for i in buttons.loading-styles %}
-        {% assign s = i.style %}
-        <tr class="{% if s == 'inverted'%}d-background-color--slate d-fc-white{% endif %}">
+        {% assign i = buttons.loading-styles | split: ", " %}
+        {% for s in i %}
+        <tr class="{% if s == 'inverted'%}d-bgc-navy d-fc-white{% endif %}">
             <th scope="row">{{ s | capitalize }}</th>
-            <td class="code-example">
-                {% if s == "default" %}.d-btn-loading
-                {% elsif s == "circle" %}.d-btn-loading--dark
-                {% elsif s == "danger" %}.d-btn-loading--danger
-                {% elsif s == "inverted"%}.d-btn-loading--white{% endif %}</td>
+            <td class="code-example">.d-btn .d-btn--loading{% if s == "muted" %} .d-btn--muted{% elsif s == "danger" %} .d-btn--danger{% elsif s == "inverted"%} .d-btn--inverted{% endif %}</td>
             <td style="text-align: center;">
-                <button class="{% if s != 'circle' %}d-width100{% endif %}
-                    {% if s == 'circle' %}d-p16{% endif %}
-
-                    d-btn{% if s == 'inverted'%}--inverted{% elsif s == 'circle'%}--circle{% elsif s == 'danger'%}--danger{% endif %}--loading" type="button" aria-pressed="false" style="white-space: nowrap;">
+                <button class="d-width100 d-btn d-btn--loading {% if s == 'inverted'%} d-btn--inverted{% elsif s == 'muted'%} d-btn--muted{% elsif s == 'danger'%} d-btn--danger{% endif %}" type="button" aria-pressed="false" style="white-space: nowrap;">
                     <span class="d-btn__label">Place call</span>
                 </button>
             </td>
             <td style="text-align: center;">
-                <button class="{% if s != 'circle' %}d-width100{% endif %}
-                    {% if s == 'circle' %}d-p16{% endif %}
-
-                    d-btn{% if s == 'inverted'%}--inverted{% elsif s == 'circle'%}--circle{% elsif s == 'danger'%}--danger{% endif %}--outlined--loading" type="button" aria-pressed="false" style="white-space: nowrap;">
+                <button class="d-width100 d-btn d-btn--outlined d-btn--loading {% if s == 'inverted'%} d-btn--inverted{% elsif s == 'muted'%} d-btn--muted{% elsif s == 'danger'%} d-btn--danger{% endif %}" type="button" aria-pressed="false" style="white-space: nowrap;">
                     <span class="d-btn__label">Place call</span>
                 </button>
             </td>
             <td style="text-align: center;">
-                <button class="{% if s != 'circle' %}d-width100{% endif %}
-                    {% if s == 'circle' %}d-p16{% endif %}
-
-                    d-btn{% if s == 'inverted'%}--inverted--primary{% elsif s == 'circle'%}--circle--danger--primary{% elsif s == 'danger'%}--danger--primary{% else %}--primary{% endif %}--loading" type="button" aria-pressed="false" style="white-space: nowrap;">
-                    <span class="d-btn__label">Place call</span>
-                </button>
+                {% if s == "muted" %}
+                    <i class="d-fc-slate-lighter">N/A</i>
+                {% else %}
+                    <button class="d-width100 d-btn d-btn--filled d-btn--loading {% if s == 'inverted'%} d-btn--inverted{% elsif s == 'muted'%} d-btn--muted{% elsif s == 'danger'%} d-btn--danger{% endif %}" type="button" aria-pressed="false" style="white-space: nowrap;">
+                        <span class="d-btn__label">Place call</span>
+                    </button>
+                {% endif %}
             </td>
         </tr>
         {% endfor %}

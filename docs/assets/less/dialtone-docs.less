@@ -136,9 +136,6 @@ body {
 //  ----------------------------------------------------------------------------
 //  Menu button
 .dialtone-menu-button {
-    .d-btn--circle();
-    .d-btn--circle--lg();
-    color: var(--slate-lightest);
     order: 2;
     margin: auto -1rem auto @spacing16;
 
@@ -149,9 +146,7 @@ body {
 
     //  Selected state is set on blue
     &[data-state="selected"] {
-        .d-btn--circle--inverted();
-        .d-border-color--transparent;
-        .d-box-shadow--none();
+        box-shadow: none;
         margin: auto -1rem auto @spacing16;
     }
 
@@ -291,8 +286,6 @@ body {
     }
 }
 .dialtone-navigation__header-icon {
-    .d-btn--circle();
-
     //  Show the right icon...
     .icon__add,
     .icon__remove {
@@ -425,64 +418,6 @@ body {
 
     .d-link:hover & {
         .d-tooltip-hover();
-    }
-}
-
-
-//  --  THEME SWITCHER
-//  ----------------------------------------------------------------------------
-.dialtone-theme-switcher {
-    .d-btn--circle();
-
-    position: absolute;
-    .d-top32();
-    .d-right16();
-    color: var(--primary-color);
-
-    &:hover{
-        color: var(--primary-color--hover);
-    }
-}
-.dialtone-theme-switcher__menu {
-    position: absolute;
-    top: calc(~"100% + @{spacing4}");
-    display: flex;
-    flex-direction: column;
-    .d-right0();
-    .d-width1();
-    .d-margin0();
-    .d-padding0();
-    list-style: none;
-    .d-box-shadow--card();
-    background-color: var(--white);
-    .d-border-radius--sm();
-
-    &[data-open="true"] {
-        display: block;
-        z-index: @z-index--popover;
-    }
-    &[data-open="false"] {
-        display: none;
-        z-index: @z-index--hide;
-    }
-}
-.dialtone-theme-switcher__link {
-    display: block;
-    .d-width100();
-    .d-margin0();
-    .d-padding-x12();
-    .d-padding-y4();
-    list-style: none;
-
-    border-bottom: 1px solid var(--ash-darkest);
-    color: var(--slate);
-
-    &:hover {
-        color: darken(@slate,10%);
-        background-color: fade(@ash, 50%);
-    }
-    &:last-of-type {
-        .d-border-bottom-width0();
     }
 }
 
