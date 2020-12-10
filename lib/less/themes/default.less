@@ -21,120 +21,30 @@
 //  ============================================================================
 //  $   SET VARIABLES
 //  ----------------------------------------------------------------------------
-@primary-color:                 @blue;
-@primary-color--hsl:            var(--primary-color--h) var(--primary-color--s) var(--primary-color--l);
-@primary-color--h:              hue(@primary-color);
-@primary-color--s:              saturation(@primary-color);
-@primary-color--l:              lightness(@primary-color);
+@primary-color-hex:                         @blue-400-hex;
+@primary-color-hex--hover:                  @blue-500-hex;
+@nav-background-color-hex:                  @blue-700-hex;
 
-@primary-color--hover:          #0020DA;
-@primary-color--hover--hsl:     var(--primary-color--hover--h) var(--primary-color--hover--s) var(--primary-color--hover--l);
-@primary-color--hover--h:       hue(@primary-color--hover);
-@primary-color--hover--s:       saturation(@primary-color--hover);
-@primary-color--hover--l:       lightness(@primary-color--hover);
-
-@nav__background-color:         @navy;
-@nav__background-color--hsl:    var(--nav__background-color--h) var(--nav__background-color--s) var(--nav__background-color--l);
-@nav__background-color--h:      hue(@nav__background-color);
-@nav__background-color--s:      saturation(@nav__background-color);
-@nav__background-color--l:      lightness(@nav__background-color);
-
-
-//  ============================================================================
-//  $$  STATES
-//  ----------------------------------------------------------------------------
-@error-color:                   @wildberry;
-@error-color--hover:            #A60329;
-@error-color--text:             @error-color--hover;
-@warning-color:                 @sunflower-dark;
-@warning-color--hover:          darken(@warning-color, 10%);
-@warning-color--text:           @color--sunflower-text;
-@success-color:                 @emerald;
-@success-color--hover:          @emerald-dark;
-@success-color--text:           @color--emerald-text;
+@primary-color:                             hsl(var(--primary-color-h) var(--primary-color-s) var(--primary-color-l));
+@primary-color--hover:                      hsl(var(--primary-color--hover-h) var(--primary-color--hover-s) var(--primary-color--hover-l));
+@nav-background-color:                      hsl(var(--nav-background-color-h) var(--nav-background-color-s) var(--nav-background-color-l));
 
 //  ============================================================================
 //  $$  HEIGHTS & WIDTHS
 //  ----------------------------------------------------------------------------
-@topbar-height:                             @spacing64;
+@topbar-height:                             @su64;
 
-
-//  ============================================================================
-//  $$  COLORS
-//  ----------------------------------------------------------------------------
-@color-vars: {
-    white:                                  @white;
-    slate:                                  @slate;
-    slate-light:                            @slate-light;
-    slate-lighter:                          @slate-lighter;
-    slate-lightest:                         @slate-lightest;
-    ash-darkest:                            @ash-darkest;
-    ash-darker:                             @ash-darker;
-    ash-dark:                               @ash-dark;
-    ash:                                    @ash;
-    blue-dark:                              @blue-dark;
-    blue:                                   @blue;
-    blue-light:                             @blue-light;
-    blue-lighter:                           @blue-lighter;
-    navy:                                   @navy;
-    navy-light:                             @navy-light;
-    navy-lighter:                           @navy-lighter;
-    navy-lightest:                          @navy-lightest;
-    bright-emerald-dark:                    @bright-emerald-dark;
-    bright-emerald:                         @bright-emerald;
-    bright-emerald-light:                   @bright-emerald-light;
-    bright-emerald-lighter:                 @bright-emerald-lighter;
-    emerald-darker:                         @emerald-darker;
-    emerald-dark:                           @emerald-dark;
-    emerald:                                @emerald;
-    emerald-light:                          @emerald-light;
-    emerald-lighter:                        @emerald-lighter;
-    berry-dark:                             @berry-dark;
-    berry:                                  @berry;
-    berry-light:                            @berry-light;
-    berry-lighter:                          @berry-lighter;
-    rose-darker:                            @rose-darker;
-    rose-dark:                              @rose-dark;
-    rose:                                   @rose;
-    rose-light:                             @rose-light;
-    sunflower-dark:                         @sunflower-dark;
-    sunflower:                              @sunflower;
-    sunflower-light:                        @sunflower-light;
-    sunflower-lighter:                      @sunflower-lighter;
-    crimson-dark:                           @crimson-dark;
-    crimson:                                @crimson;
-    crimson-light:                          @crimson-light;
-    crimson-lighter:                        @crimson-lighter;
-    wildberry-dark:                         @wildberry-dark;
-    wildberry:                              @wildberry;
-    wildberry-light:                        @wildberry-light;
-    wildberry-lighter:                      @wildberry-lighter;
-}
 
 //  $$  VISUAL STYLES
 //      Base styles, colors, font-size, and line-heights
 //  ----------------------------------------------------------------------------
 @visual-styles-vars: {
-    base--text-color:                       var(--slate);
+    base--text-color:                       var(--black-900);
     base--font-size:                        var(--fs16);
     base--font-family:                      @ff-custom;
     base--line-height:                      var(--lh-normal);
-    base--background-color:                 @white;
+    base--background-color:                 var(--white);
     base--corner-radius:                    0.25em;
-
-    text-color--white:                      @color--white;
-    text-color--dark:                       @color--dark;
-    text-color--medium:                     @color--dark-light;
-    text-color--light:                      @color--dark-lighter;
-    text-color--blue:                       @color--blue-text;
-    text-color--navy:                       @color--navy-text;
-    text-color--bright-emerald:             @color--bright-emerald-text;
-    text-color--emerald:                    @color--emerald-text;
-    text-color--sunflower:                  @color--sunflower-text;
-    text-color--wildberry:                  @color--wildberry-text;
-    text-color--crimson:                    @color--crimson-text;
-    text-color--berry:                      @color--berry-text;
-    text-color--rose:                       @color--rose-text;
 
     bgo:                                    100%;
     bgg-direction:                          to right;
@@ -160,8 +70,6 @@
     bgg-pattern-slanted-stripes--light:     @bgg-pattern-slanted-stripes--light;
     bgg-pattern-steps--light:               @bgg-pattern-steps--light;
     bgg-pattern-stripe--light:              @bgg-pattern-stripe--light;
-
-    focus-ring:                             hsla(~"@{primary-color--hsl} / 25%");
 }
 
 //  NEW TYPE CSS VARS
@@ -210,57 +118,30 @@
     fw-medium:                              @fw-medium;
     fw-bold:                                @fw-bold;
     fw-black:                               @fw-black;
-
-    fo:                                     100%;
-    fc-blue-text:                           @fc-blue-text;
-    fc-navy-text:                           @fc-navy-text;
-    fc-bright-emerald-text:                 @fc-bright-emerald-text;
-    fc-emerald-text:                        @fc-emerald-text;
-    fc-sunflower-text:                      @fc-sunflower-text;
-    fc-wildberry-text:                      @fc-wildberry-text;
-    fc-crimson-text:                        @fc-crimson-text;
-    fc-berry-text:                          @fc-berry-text;
-    fc-rose-text:                           @fc-rose-text;
-}
-
-//  BUTTON VARS
-@button-vars: {
 }
 
 //  $$  THEME STYLES
 //      Primary and Navigation Color
 //  ----------------------------------------------------------------------------
 @theme-vars: {
-    primary-color:                 @primary-color;
-    primary-color--h:              @primary-color--h;
-    primary-color--s:              @primary-color--s;
-    primary-color--l:              @primary-color--l;
+    primary-color:                          hsla(@primary-color ~" / " var(--alpha));
+    primary-color--hover:                   hsla(@primary-color--hover ~" / " var(--alpha));
+    nav-background-color:                   hsla(@nav-background-color ~" / " var(--alpha));
 
-    primary-color--hover:          @primary-color--hover;
-    primary-color--hover--h:       @primary-color--hover--h;
-    primary-color--hover--s:       @primary-color--hover--s;
-    primary-color--hover--l:       @primary-color--l;
-
-    nav__background-color:         @nav__background-color;
-    nav__background-color--h:      @nav__background-color--h;
-    nav__background-color--s:      @nav__background-color--s;
-    nav__background-color--l:      @nav__background-color--l;
-
-    btn--inverted__bg--hover:           fade(mix(#FFF, @primary-color, 75%),25%);
-    btn--inverted__bs--focus:           fade(mix(#FFF, @primary-color, 50%),25%);
-    btn--inverted__bg--active:          fade(mix(#FFF, @primary-color, 50%),25%);
-    btn--inverted--primary__bg--hover:  mix(#FFF, @primary-color, 90%);
-    btn--inverted--primary__bs--focus:  fade(mix(#FFF, @primary-color, 50%),50%);
+    // btn--inverted__bg--hover:           fade(mix(#FFF, @primary-color, 75%),25%);
+    // btn--inverted__bs--focus:           fade(mix(#FFF, @primary-color, 50%),25%);
+    // btn--inverted__bg--active:          fade(mix(#FFF, @primary-color, 50%),25%);
+    // btn--inverted--primary__bg--hover:  mix(#FFF, @primary-color, 90%);
+    // btn--inverted--primary__bs--focus:  fade(mix(#FFF, @primary-color, 50%),50%);
 }
 
 //  ============================================================================
 //  $   OUTPUT VARIABLES
 //  ============================================================================
 :root {
-    //  Colors
-    each(@color-vars, {
-        --@{key}: @value;
-    });
+    #hsl-to-css-vars(primary-color, @primary-color-hex);
+    #hsl-to-css-vars(primary-color--hover, @primary-color-hex--hover);
+    #hsl-to-css-vars(nav-background-color, @nav-background-color-hex);
 
     //  Visual Styles
     each(@visual-styles-vars, {
@@ -274,6 +155,11 @@
 
     //  Inputs & Button Styles
     each(@input-button-vars, {
+        --@{key}: @value;
+    });
+
+    //  Z-Index
+    each(@zi-vars, {
         --@{key}: @value;
     });
 

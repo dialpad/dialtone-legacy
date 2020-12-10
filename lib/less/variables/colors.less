@@ -11,110 +11,316 @@
 //  • FONT COLORS
 //
 //  ============================================================================
-//  $   RGB COLOR STOPS
-//      We need to define color stops like this so they can be used with
-//      CSS Variables.
+//  $   COLOR STOPS
+//  $$  First define color stops using HEX colors
 //  ----------------------------------------------------------------------------
-//  $$  WHITE
-@white:                     #FFF;
+//  --  WHITE
+@white-hex:                     #FFF;
 
-//  --  SLATE (Dark Gray)
-@slate:                     #141721;
-@slate-light:               #292C33;
-@slate-lighter:             #4C4E56;
-@slate-lightest:            #6C6E75;
-
-//  --  ASH (Light Gray)
-@ash-darkest:               #A4A7AE;
-@ash-darker:                #C6C8CE;
-@ash-dark:                  #E3E5E8;
-@ash:                       #F1F2F4;
+//  --  BLACK
+@black-900-hex:                 #060610;
+@black-800-hex:                 #151526;
+@black-700-hex:                 #242437;
+@black-600-hex:                 #35354A;
+@black-500-hex:                 #47475C;
+@black-400-hex:                 #76768E;
+@black-300-hex:                 #9E9EB6;
+@black-200-hex:                 #CBCBD9;
+@black-100-hex:                 #E3E3ED;
+@black-050-hex:                 #F2F2F6;
 
 //  --  BLUE
-@blue-dark:                 #0009B0;
-@blue:                      #1738FA;
-@blue-light:                #72BBFF;
-@blue-lighter:              #DDF1FF;
+@blue-800-hex:                  #030857;
+@blue-700-hex:                  #070E78;
+@blue-600-hex:                  #12259C;
+@blue-500-hex:                  #1635E5;
+@blue-400-hex:                  #0066FF;
+@blue-300-hex:                  #448FFF;
+@blue-200-hex:                  #89B8FF;
+@blue-100-hex:                  #D6E6FF;
 
-//  --  NAVY
-@navy:                      #000061;
-@navy-light:                #242BA8;
-@navy-lighter:              #91A0F1;
-@navy-lightest:             #E0E5FD;
+//  --  PURPLE
+@purple-600-hex:                #2C0E58;
+@purple-500-hex:                #401E73;
+@purple-400-hex:                #6B3EAC;
+@purple-300-hex:                #9766E0;
+@purple-200-hex:                #C9A9F8;
+@purple-100-hex:                #EDE1FF;
 
-//  --  BRIGHT EMERALD
-@bright-emerald-dark:       #02663C;
-@bright-emerald:            #5CD672;
-@bright-emerald-light:      #B0ECAF;
-@bright-emerald-lighter:    #E9F5E9;
+//  --  TEAL
+@teal-600-hex:                  #005257;
+@teal-500-hex:                  #007A82;
+@teal-400-hex:                  #00A5AF;
+@teal-300-hex:                  #1CCDD8;
+@teal-200-hex:                  #63E5ED;
+@teal-100-hex:                  #CEF6FA;
 
-//  --  EMERALD
-@emerald-darker:            #005343;
-@emerald-dark:              #008067;
-@emerald:                   #04C29D;
-@emerald-light:             #6FE8D0;
-@emerald-lighter:           #D8FBF4;
+//  --  PINK
+@pink-600-hex:                  #7E2438;
+@pink-500-hex:                  #B43B56;
+@pink-400-hex:                  #E05776;
+@pink-300-hex:                  #FD7594;
+@pink-200-hex:                  #FCB2C3;
+@pink-100-hex:                  #FFE9EE;
 
-//  --  BERRY
-@berry-dark:                #3F113C;
-@berry:                     #852180;
-@berry-light:               #E48BE0;
-@berry-lighter:             #FDDEFB;
+//  --  YELLOW
+@yellow-600-hex:                #4F3400;
+@yellow-500-hex:                #A06A00;
+@yellow-400-hex:                #FFB800;
+@yellow-300-hex:                #FFCC48;
+@yellow-200-hex:                #FFE49D;
+@yellow-100-hex:                #FFF7DC;
 
-//  --  ROSE
-@rose-darker:               #421620;
-@rose-dark:                 #9E3149;
-@rose:                      #FF8FA8;
-@rose-light:                #FFE5EB;
+//  --  RED
+@red-600-hex:                   #660208;
+@red-500-hex:                   #AC0711;
+@red-400-hex:                   #E51D29;
+@red-300-hex:                   #F95760;
+@red-200-hex:                   #FFB0B5;
+@red-100-hex:                   #FFD9DB;
 
-//  --  SUNFLOWER
-@sunflower-dark:            #FFA800;
-@sunflower:                 #FFC635;
-@sunflower-light:           #FFDA7C;
-@sunflower-lighter:         #FFF2C1;
+//  --  GREEN
+@green-600-hex:                 #084533;
+@green-500-hex:                 #076549;
+@green-400-hex:                 #099F72;
+@green-300-hex:                 #1EC996;
+@green-200-hex:                 #87DEC4;
+@green-100-hex:                 #E6F6F2;
 
-//  --  CRIMSON
-@crimson-dark:              #622A2A;
-@crimson:                   #F55;
-@crimson-light:             #FF8585;
-@crimson-lighter:           #FDD;
-
-//  --  WILDBERRY
-@wildberry-dark:            #7A0D20;
-@wildberry:                 #D2103E;
-@wildberry-light:           #FF768F;
-@wildberry-lighter:         #FFDCE2;
-
-//  ============================================================================
-//  @   FONT COLORS
+//  $$  Second create Less variables that combine HSL CSS vars together.
 //  ----------------------------------------------------------------------------
-//  Older variables. Will be deprecated in a future version.
-@color--white:                 @white;
-@color--dark:                  @slate;
-@color--dark-light:            @slate-light;
-@color--dark-lighter:          @slate-lighter;
-@color--dark-lightest:         @slate-lightest;
-@color--light:                 @ash;
-@color--light-dark:            @ash-dark;
-@color--light-darker:          @ash-darker;
-@color--light-darkest:         @ash-darkest;
-@color--blue-text:             @blue-dark;
-@color--navy-text:             @navy;
-@color--bright-emerald-text:   @bright-emerald-dark;
-@color--emerald-text:          @emerald-darker;
-@color--sunflower-text:        #AF5A00;
-@color--wildberry-text:        @wildberry-dark;
-@color--crimson-text:          @crimson-dark;
-@color--berry-text:            @berry-dark;
-@color--rose-text:             @rose-darker;
+//  --  WHITE
+@white:         hsl(var(--white-h) var(--white-s) var(--white-l));
 
-//  New variables. Use these moving forward.
-@fc-blue-text:                 @blue-dark;
-@fc-navy-text:                 @navy;
-@fc-bright-emerald-text:       @bright-emerald-dark;
-@fc-emerald-text:              @emerald-darker;
-@fc-sunflower-text:            #AF5A00;
-@fc-wildberry-text:            @wildberry-dark;
-@fc-crimson-text:              @crimson-dark;
-@fc-berry-text:                @berry-dark;
-@fc-rose-text:                 @rose-darker;
+//  --  BLACK
+@black-900:     hsl(var(--black-900-h) var(--black-900-s) var(--black-900-l));
+@black-800:     hsl(var(--black-800-h) var(--black-800-s) var(--black-800-l));
+@black-700:     hsl(var(--black-700-h) var(--black-700-s) var(--black-700-l));
+@black-600:     hsl(var(--black-600-h) var(--black-600-s) var(--black-600-l));
+@black-500:     hsl(var(--black-500-h) var(--black-500-s) var(--black-500-l));
+@black-400:     hsl(var(--black-400-h) var(--black-400-s) var(--black-400-l));
+@black-300:     hsl(var(--black-300-h) var(--black-300-s) var(--black-300-l));
+@black-200:     hsl(var(--black-200-h) var(--black-200-s) var(--black-200-l));
+@black-100:     hsl(var(--black-100-h) var(--black-100-s) var(--black-100-l));
+@black-050:     hsl(var(--black-050-h) var(--black-050-s) var(--black-050-l));
+
+//  --  BLUE
+@blue-800:      hsl(var(--blue-800-h) var(--blue-800-s) var(--blue-800-l));
+@blue-700:      hsl(var(--blue-700-h) var(--blue-700-s) var(--blue-700-l));
+@blue-600:      hsl(var(--blue-600-h) var(--blue-600-s) var(--blue-600-l));
+@blue-500:      hsl(var(--blue-500-h) var(--blue-500-s) var(--blue-500-l));
+@blue-400:      hsl(var(--blue-400-h) var(--blue-400-s) var(--blue-400-l));
+@blue-300:      hsl(var(--blue-300-h) var(--blue-300-s) var(--blue-300-l));
+@blue-200:      hsl(var(--blue-200-h) var(--blue-200-s) var(--blue-200-l));
+@blue-100:      hsl(var(--blue-100-h) var(--blue-100-s) var(--blue-100-l));
+
+//  --  PURPLE
+@purple-600:    hsl(var(--purple-600-h) var(--purple-600-s) var(--purple-600-l));
+@purple-500:    hsl(var(--purple-500-h) var(--purple-500-s) var(--purple-500-l));
+@purple-400:    hsl(var(--purple-400-h) var(--purple-400-s) var(--purple-400-l));
+@purple-300:    hsl(var(--purple-300-h) var(--purple-300-s) var(--purple-300-l));
+@purple-200:    hsl(var(--purple-200-h) var(--purple-200-s) var(--purple-200-l));
+@purple-100:    hsl(var(--purple-100-h) var(--purple-100-s) var(--purple-100-l));
+
+//  --  TEAL
+@teal-600:      hsl(var(--teal-600-h) var(--teal-600-s) var(--teal-600-l));
+@teal-500:      hsl(var(--teal-500-h) var(--teal-500-s) var(--teal-500-l));
+@teal-400:      hsl(var(--teal-400-h) var(--teal-400-s) var(--teal-400-l));
+@teal-300:      hsl(var(--teal-300-h) var(--teal-300-s) var(--teal-300-l));
+@teal-200:      hsl(var(--teal-200-h) var(--teal-200-s) var(--teal-200-l));
+@teal-100:      hsl(var(--teal-100-h) var(--teal-100-s) var(--teal-100-l));
+
+//  --  PINK
+@pink-600:      hsl(var(--pink-600-h) var(--pink-600-s) var(--pink-600-l));
+@pink-500:      hsl(var(--pink-500-h) var(--pink-500-s) var(--pink-500-l));
+@pink-400:      hsl(var(--pink-400-h) var(--pink-400-s) var(--pink-400-l));
+@pink-300:      hsl(var(--pink-300-h) var(--pink-300-s) var(--pink-300-l));
+@pink-200:      hsl(var(--pink-200-h) var(--pink-200-s) var(--pink-200-l));
+@pink-100:      hsl(var(--pink-100-h) var(--pink-100-s) var(--pink-100-l));
+
+//  --  YELLOW
+@yellow-600:    hsl(var(--yellow-600-h) var(--yellow-600-s) var(--yellow-600-l));
+@yellow-500:    hsl(var(--yellow-500-h) var(--yellow-500-s) var(--yellow-500-l));
+@yellow-400:    hsl(var(--yellow-400-h) var(--yellow-400-s) var(--yellow-400-l));
+@yellow-300:    hsl(var(--yellow-300-h) var(--yellow-300-s) var(--yellow-300-l));
+@yellow-200:    hsl(var(--yellow-200-h) var(--yellow-200-s) var(--yellow-200-l));
+@yellow-100:    hsl(var(--yellow-100-h) var(--yellow-100-s) var(--yellow-100-l));
+
+//  --  RED
+@red-600:       hsl(var(--red-600-h) var(--red-600-s) var(--red-600-l));
+@red-500:       hsl(var(--red-500-h) var(--red-500-s) var(--red-500-l));
+@red-400:       hsl(var(--red-400-h) var(--red-400-s) var(--red-400-l));
+@red-300:       hsl(var(--red-300-h) var(--red-300-s) var(--red-300-l));
+@red-200:       hsl(var(--red-200-h) var(--red-200-s) var(--red-200-l));
+@red-100:       hsl(var(--red-100-h) var(--red-100-s) var(--red-100-l));
+
+//  --  GREEN
+@green-600:     hsl(var(--green-600-h) var(--green-600-s) var(--green-600-l));
+@green-500:     hsl(var(--green-500-h) var(--green-500-s) var(--green-500-l));
+@green-400:     hsl(var(--green-400-h) var(--green-400-s) var(--green-400-l));
+@green-300:     hsl(var(--green-300-h) var(--green-300-s) var(--green-300-l));
+@green-200:     hsl(var(--green-200-h) var(--green-200-s) var(--green-200-l));
+@green-100:     hsl(var(--green-100-h) var(--green-100-s) var(--green-100-l));
+
+//  $$  DECLARE THE CSS VARIABLES THAT WE WANT TO CREATE
+//  ----------------------------------------------------------------------------
+@color-vars: {
+    white:                      @white;
+    black-900:                  @black-900;
+    black-800:                  @black-800;
+    black-700:                  @black-700;
+    black-600:                  @black-600;
+    black-500:                  @black-500;
+    black-400:                  @black-400;
+    black-300:                  @black-300;
+    black-200:                  @black-200;
+    black-100:                  @black-100;
+    black-050:                  @black-050;
+    blue-800:                   @blue-800;
+    blue-700:                   @blue-700;
+    blue-600:                   @blue-600;
+    blue-500:                   @blue-500;
+    blue-400:                   @blue-400;
+    blue-300:                   @blue-300;
+    blue-200:                   @blue-200;
+    blue-100:                   @blue-100;
+    purple-600:                 @purple-600;
+    purple-500:                 @purple-500;
+    purple-400:                 @purple-400;
+    purple-300:                 @purple-300;
+    purple-200:                 @purple-200;
+    purple-100:                 @purple-100;
+    teal-600:                   @teal-600;
+    teal-500:                   @teal-500;
+    teal-400:                   @teal-400;
+    teal-300:                   @teal-300;
+    teal-200:                   @teal-200;
+    teal-100:                   @teal-100;
+    pink-600:                   @pink-600;
+    pink-500:                   @pink-500;
+    pink-400:                   @pink-400;
+    pink-300:                   @pink-300;
+    pink-200:                   @pink-200;
+    pink-100:                   @pink-100;
+    yellow-600:                 @yellow-600;
+    yellow-500:                 @yellow-500;
+    yellow-400:                 @yellow-400;
+    yellow-300:                 @yellow-300;
+    yellow-200:                 @yellow-200;
+    yellow-100:                 @yellow-100;
+    red-600:                    @red-600;
+    red-500:                    @red-500;
+    red-400:                    @red-400;
+    red-300:                    @red-300;
+    red-200:                    @red-200;
+    red-100:                    @red-100;
+    green-600:                  @green-600;
+    green-500:                  @green-500;
+    green-400:                  @green-400;
+    green-300:                  @green-300;
+    green-200:                  @green-200;
+    green-100:                  @green-100;
+
+    //  --  STATES
+    error-color:                @red-400;
+    error-color--hover:         @red-500;
+    error-color__text:          @red-600;
+    warning-color:              @yellow-400;
+    warning-color--hover:       @yellow-500;
+    warning-color__text:        @yellow-600;
+    success-color:              @green-400;
+    success-color--hover:       @green-500;
+    success-color__text:        @green-600;
+    muted-color:                @black-700;
+    muted-color--hover:         @black-800;
+    muted-color__text:          @black-900;
+
+    //  --  TEXT COLORS
+    fo:                         100%;
+    fc-dark:                    @black-900;
+    fc-medium:                  @black-800;
+    fc-light:                   @black-700;
+    fc-lighter:                 @black-600;
+    fc-blue:                    @blue-700;
+    fc-purple:                  @purple-600;
+    fc-teal:                    @teal-600;
+    fc-pink:                    @pink-600;
+    fc-green:                   @green-600;
+    fc-yellow:                  @yellow-600;
+    fc-red:                     @red-600;
+
+    //  --  FOCUS RINGS
+    focus-ring:                 hsla(var(--primary-color-hsl) ~" / " 25%);
+    focus-ring-success:         hsla(var(--success-color-hsl) ~" / " 25%);
+    focus-ring-warning:         hsla(var(--warning-color-hsl) ~" / " 25%);
+    focus-ring-error:           hsla(var(--error-color-hsl) ~" / " 25%);
+    focus-ring-muted:           hsla(var(--muted-color-hsl) ~" / " 25%);
+}
+
+:root {
+    --bgo: 100%;                // Background color opacity
+    --bco: 100%;                // Border color opacity
+    --fco: 100%;                // Font color opacity
+
+    //  CREATE HSL CSS VARS
+    #hsl-to-css-vars(white, @white-hex);
+    #hsl-to-css-vars(black-900, @black-900-hex);
+    #hsl-to-css-vars(black-800, @black-800-hex);
+    #hsl-to-css-vars(black-700, @black-700-hex);
+    #hsl-to-css-vars(black-600, @black-600-hex);
+    #hsl-to-css-vars(black-500, @black-500-hex);
+    #hsl-to-css-vars(black-400, @black-400-hex);
+    #hsl-to-css-vars(black-300, @black-300-hex);
+    #hsl-to-css-vars(black-200, @black-200-hex);
+    #hsl-to-css-vars(black-100, @black-100-hex);
+    #hsl-to-css-vars(black-050, @black-050-hex);
+    #hsl-to-css-vars(blue-800, @blue-800-hex);
+    #hsl-to-css-vars(blue-700, @blue-700-hex);
+    #hsl-to-css-vars(blue-600, @blue-600-hex);
+    #hsl-to-css-vars(blue-500, @blue-500-hex);
+    #hsl-to-css-vars(blue-400, @blue-400-hex);
+    #hsl-to-css-vars(blue-300, @blue-300-hex);
+    #hsl-to-css-vars(blue-200, @blue-200-hex);
+    #hsl-to-css-vars(blue-100, @blue-100-hex);
+    #hsl-to-css-vars(purple-600, @purple-600-hex);
+    #hsl-to-css-vars(purple-500, @purple-500-hex);
+    #hsl-to-css-vars(purple-400, @purple-400-hex);
+    #hsl-to-css-vars(purple-300, @purple-300-hex);
+    #hsl-to-css-vars(purple-200, @purple-200-hex);
+    #hsl-to-css-vars(purple-100, @purple-100-hex);
+    #hsl-to-css-vars(teal-600, @teal-600-hex);
+    #hsl-to-css-vars(teal-500, @teal-500-hex);
+    #hsl-to-css-vars(teal-400, @teal-400-hex);
+    #hsl-to-css-vars(teal-300, @teal-300-hex);
+    #hsl-to-css-vars(teal-200, @teal-200-hex);
+    #hsl-to-css-vars(teal-100, @teal-100-hex);
+    #hsl-to-css-vars(pink-600, @pink-600-hex);
+    #hsl-to-css-vars(pink-500, @pink-500-hex);
+    #hsl-to-css-vars(pink-400, @pink-400-hex);
+    #hsl-to-css-vars(pink-300, @pink-300-hex);
+    #hsl-to-css-vars(pink-200, @pink-200-hex);
+    #hsl-to-css-vars(pink-100, @pink-100-hex);
+    #hsl-to-css-vars(yellow-600, @yellow-600-hex);
+    #hsl-to-css-vars(yellow-500, @yellow-500-hex);
+    #hsl-to-css-vars(yellow-400, @yellow-400-hex);
+    #hsl-to-css-vars(yellow-300, @yellow-300-hex);
+    #hsl-to-css-vars(yellow-200, @yellow-200-hex);
+    #hsl-to-css-vars(yellow-100, @yellow-100-hex);
+    #hsl-to-css-vars(red-600, @red-600-hex);
+    #hsl-to-css-vars(red-500, @red-500-hex);
+    #hsl-to-css-vars(red-400, @red-400-hex);
+    #hsl-to-css-vars(red-300, @red-300-hex);
+    #hsl-to-css-vars(red-200, @red-200-hex);
+    #hsl-to-css-vars(red-100, @red-100-hex);
+    #hsl-to-css-vars(green-600, @green-600-hex);
+    #hsl-to-css-vars(green-500, @green-500-hex);
+    #hsl-to-css-vars(green-400, @green-400-hex);
+    #hsl-to-css-vars(green-300, @green-300-hex);
+    #hsl-to-css-vars(green-200, @green-200-hex);
+    #hsl-to-css-vars(green-100, @green-100-hex);
+
+    //  GENERATE ALL THE COLORS SPECIFICED IN @color-vars
+    each(@color-vars, {
+        --@{key}: @value;
+    });
+}

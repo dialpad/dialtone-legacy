@@ -14,16 +14,18 @@
 //  $   BASE STYLE
 //  ----------------------------------------------------------------------------
 .d-link {
+    --bgo: 0%;
+
     box-sizing: border-box;
 
     position: relative;
     .d-flex--center();
     display: inline-flex;
-    .d-margin0();
-    .d-padding0();
+    margin: var(--su0);
+    padding: var(--su0);
 
     border: 0;
-    background-color: fade(@white,0%);
+    background-color: var(--white);
     font: inherit;
     color: var(--primary-color);
     text-decoration: underline;
@@ -38,83 +40,71 @@
             appearance: none;
 
     &:hover {
-        color: hsl(var(--primary-color--hover--h) var(--primary-color--hover--s) calc(~"var(--primary-color--hover--l) - 5%"));
+        color: var(--primary-color--hover);
         text-decoration: underline;
     }
 }
 
 
-//  ============================================================================
-//  $   ALTERNATE STYLES
-//  ============================================================================
-//  $$  WARNING
-//  ----------------------------------------------------------------------------
-.d-link--warning {
-    .d-link();
-
-    color: @warning-color--text;
-
-    &:hover {
-        color: darken(@warning-color--text,10%);
-    }
-}
-
-//  $$  DANGER
-//  ----------------------------------------------------------------------------
-.d-link--danger {
-    .d-link();
-
-    color: @error-color--text;
-
-    &:hover {
-        color: darken(@error-color--text,10%);
-    }
-}
-
-//  $$  SUCCESS
-//  ----------------------------------------------------------------------------
-.d-link--success {
-    .d-link();
-
-    color: @success-color--text;
-
-    &:hover {
-        color: darken(@success-color--text,40%);
-    }
-}
+// //  ============================================================================
+// //  $   ALTERNATE STYLES
+// //  ============================================================================
+// //  $$  WARNING
+// //  ----------------------------------------------------------------------------
+// .d-link--warning {
+//     color: @warning-color--text;
+//
+//     &:hover {
+//         color: darken(@warning-color--text,10%);
+//     }
+// }
+//
+// //  $$  DANGER
+// //  ----------------------------------------------------------------------------
+// .d-link--danger {
+//     color: @error-color--text;
+//
+//     &:hover {
+//         color: darken(@error-color--text,10%);
+//     }
+// }
+//
+// //  $$  SUCCESS
+// //  ----------------------------------------------------------------------------
+// .d-link--success {
+//     color: @success-color--text;
+//
+//     &:hover {
+//         color: darken(@success-color--text,40%);
+//     }
+// }
 
 //  $$  DARK
 //  ----------------------------------------------------------------------------
 .d-link--dark {
-    .d-link();
-
-    color: var(--slate);
+    .d-fc-black-900();
 
     &:hover {
-        color: #000;
+        --light: 10%;
     }
 }
 
-//  $$  INVERTED
-//  ----------------------------------------------------------------------------
-.d-link--inverted {
-    .d-link();
-
-    color: var(--ash);
-
-    &:hover {
-        color: var(--ash-darker);
-    }
-}
-
-//  $$  INVERTED DANGER
-//  ----------------------------------------------------------------------------
-.d-link--inverted--danger {
-    .d-link();
-
-    color: var(--wildberry-light);
-
-    &:hover {
-        color: hsl(var(--wildberry-light--h) var(--wildberry-light--s) calc(var(--wildberry-light--l) + 5%));
-    }
-}
+// //  $$  INVERTED
+// //  ----------------------------------------------------------------------------
+// .d-link--inverted {
+//     color: var(--ash);
+//
+//     &:hover {
+//         color: var(--ash-darker);
+//     }
+// }
+//
+// //  $$  INVERTED DANGER
+// //  ----------------------------------------------------------------------------
+// .d-link--inverted--danger {
+//     color: var(--wildberry-light);
+//
+//     &:hover {
+//         color: hsl(var(--wildberry-light--h) var(--wildberry-light--s) calc(var(--wildberry-light--l) + 5%));
+//     }
+// }

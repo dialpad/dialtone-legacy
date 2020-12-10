@@ -13,18 +13,18 @@
     box-sizing: border-box;
 
     position: relative;
-    padding: @spacing12 @spacing8 @spacing8;
-    max-width: (@fixed-size2 + @spacing48);
-    z-index: @z-index--toast;
+    padding: var(--su12) var(--su8) var(--su8);
+    max-width: (@fixed-size2 + @su48);
+    z-index: var(--zi-notification);
 
     border-radius: @border-radius--sm;
-    border: @border-width1 solid var(--ash-dark);
+    border: @border-width1 solid var(--black-100);
     background-color: var(--white);
     box-shadow: @box-shadow--sm;
 
     font-size: var(--fs14);
     line-height: var(--lh-tight);
-    color: var(--text-color--medium);
+    color: var(--fc-medium);
     word-break: normal;
 
     //  If there's a link in a toast, break the url so it wraps
@@ -36,11 +36,11 @@
     &:before {
         content: "";
         position: absolute;
-        top: -(@spacing1);
-        right: -(@spacing1);
-        left: -(@spacing1);
+        top: -(@su1);
+        right: -(@su1);
+        left: -(@su1);
 
-        height: @spacing6;
+        height: @su6;
         border-radius: @border-radius--sm @border-radius--sm 0 0;
     }
 }
@@ -58,11 +58,11 @@
     flex-grow: 0;
     flex-shrink: 0;
 
-    width: @spacing24;
-    height: @spacing24;
-    .d-margin-right4;
-    .d-border-radius--circle();
-    color: @white;
+    width: var(--su24);
+    height: var(--su24);
+    margin-right: var(--su4);
+    border-radius: var(--br-circle);
+    color: var(--white);
 
     .d-svg {
         width: 1.8rem;
@@ -75,10 +75,10 @@
 //      was sent.
 //  ----------------------------------------------------------------------------
 .d-toast__meta {
-    .d-margin-bottom4();
-    font-size: @fs11;
-    font-family: @ff-sans;
-    color: @slate-lightest;
+    margin-bottom: var(--su4);
+    font-size: var(--fs11);
+    font-family: var(--ff-sans);
+    color: var(--black-600);
 }
 
 //  @@  MESSAGE STYLE
@@ -88,104 +88,104 @@
     justify-content: center;
     flex-direction: column;
 
-    .d-margin-left4();
-    font-size: @fs12;
-    line-height: @lh4;
+    margin-left: var(--su4);
+    font-size: var(--fs12);
+    line-height: var(--lh4);
 }
-
-//  ============================================================================
-//  @   TOAST STYLES
-//  ============================================================================
-//  @@  VIEWING (UC ONLY)
-//  ----------------------------------------------------------------------------
-.d-toast--viewing {
-    .d-toast();
-
-    &:before {
-        .d-background-color--rose();
-    }
-}
-.d-toast__icon--viewing {
-    .d-toast__icon();
-    .d-background-color--rose();
-    color: @rose-darker;
-}
-
-//  @@  CHAT MESSAGE (UC ONLY)
-//  ----------------------------------------------------------------------------
-.d-toast--chat {
-    .d-toast();
-
-    &:before {
-        .d-background-color--navy();
-    }
-}
-.d-toast__icon--chat {
-    .d-toast__icon();
-    .d-background-color--navy();
-
-    .d-svg {
-        .d-margin-top1();
-        width: 1.6rem;
-        height: 1.6rem;
-    }
-}
-
-//  @@  SUCCESS
-//  ----------------------------------------------------------------------------
-.d-toast--success {
-    .d-toast();
-
-    &:before {
-        .d-background-color--emerald();
-    }
-}
-.d-toast__icon--success {
-    .d-toast__icon();
-    .d-background-color--emerald();
-}
-
-//  @@  ERROR
-//  ----------------------------------------------------------------------------
-.d-toast--error {
-    .d-toast();
-
-    &:before {
-        .d-background-color--wildberry();
-    }
-}
-.d-toast__icon--error {
-    .d-toast__icon();
-    .d-background-color--wildberry();
-}
-
-//  @@  INFO
-//  ----------------------------------------------------------------------------
-.d-toast--info {
-    .d-toast();
-
-    &:before {
-        .d-background-color--blue();
-    }
-}
-.d-toast__icon--info {
-    .d-toast__icon();
-    .d-background-color--blue();
-}
-
-//  @@  ORGANIZER
-//  ----------------------------------------------------------------------------
-.d-toast--organizer {
-    .d-toast();
-
-    &:before {
-        .d-background-color--berry();
-    }
-}
-.d-toast__icon--organizer {
-    .d-toast__icon();
-    .d-background-color--berry();
-}
+//
+// //  ============================================================================
+// //  @   TOAST STYLES
+// //  ============================================================================
+// //  @@  VIEWING (UC ONLY)
+// //  ----------------------------------------------------------------------------
+// .d-toast--viewing {
+//     .d-toast();
+//
+//     &:before {
+//         .d-background-color--rose();
+//     }
+// }
+// .d-toast__icon--viewing {
+//     .d-toast__icon();
+//     .d-background-color--rose();
+//     color: @rose-darker;
+// }
+//
+// //  @@  CHAT MESSAGE (UC ONLY)
+// //  ----------------------------------------------------------------------------
+// .d-toast--chat {
+//     .d-toast();
+//
+//     &:before {
+//         .d-background-color--navy();
+//     }
+// }
+// .d-toast__icon--chat {
+//     .d-toast__icon();
+//     .d-background-color--navy();
+//
+//     .d-svg {
+//         .d-margin-top1();
+//         width: 1.6rem;
+//         height: 1.6rem;
+//     }
+// }
+//
+// //  @@  SUCCESS
+// //  ----------------------------------------------------------------------------
+// .d-toast--success {
+//     .d-toast();
+//
+//     &:before {
+//         .d-background-color--emerald();
+//     }
+// }
+// .d-toast__icon--success {
+//     .d-toast__icon();
+//     .d-background-color--emerald();
+// }
+//
+// //  @@  ERROR
+// //  ----------------------------------------------------------------------------
+// .d-toast--error {
+//     .d-toast();
+//
+//     &:before {
+//         .d-background-color--wildberry();
+//     }
+// }
+// .d-toast__icon--error {
+//     .d-toast__icon();
+//     .d-background-color--wildberry();
+// }
+//
+// //  @@  INFO
+// //  ----------------------------------------------------------------------------
+// .d-toast--info {
+//     .d-toast();
+//
+//     &:before {
+//         .d-background-color--blue();
+//     }
+// }
+// .d-toast__icon--info {
+//     .d-toast__icon();
+//     .d-background-color--blue();
+// }
+//
+// //  @@  ORGANIZER
+// //  ----------------------------------------------------------------------------
+// .d-toast--organizer {
+//     .d-toast();
+//
+//     &:before {
+//         .d-background-color--berry();
+//     }
+// }
+// .d-toast__icon--organizer {
+//     .d-toast__icon();
+//     .d-background-color--berry();
+// }
 
 
 //  ============================================================================
@@ -195,9 +195,9 @@
     box-sizing: border-box;
 
     position: absolute;
-    .d-top32();
-    .d-right32();
+    top: var(--su32);
+    right: var(--su32);
 
     //  Space all child elements
-    .d-layout__stack6();
+    .d-stack6();
 }

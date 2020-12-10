@@ -12,15 +12,20 @@
 .d-notice {
     display: flex;
     align-items: center;
-    padding: @spacing16;
+    padding: var(--su16);
     width: 100%;
     max-width: @fixed-size5;
 
+    border: 1px solid hsla(var(--black-700-hsl) ~" / " 40%);
     border-radius: @border-radius--sm;
-    background-color: var(--ash);
+    background-color: var(--black-050);
     font-size: var(--fs14);
     line-height: var(--lh6);
-    color: var(--slate);
+    color: var(--black-800);
+
+    a[href]:hover {
+        color: var(--black-900);
+    }
 
     .d-toast & {
         max-width: @fixed-size4;
@@ -33,24 +38,12 @@
 
 .d-notice.d-notice--important,
 .d-banner.d-banner--important {
-    background-color: var(--slate);
-    color: var(--ash);
+    border-color: transparent;
+    background-color: var(--black-700);
+    color: var(--white);
 
-    a:hover {
-        color: var(--ash-dark);
-    }
-
-    .d-notice__btn {
-        &:hover,
-        &:active {
-            background-color: fade(@ash, 10%);
-        }
-        &:active {
-            border-color: fade(@ash, 40%);
-        }
-        &:focus {
-            box-shadow: 0 0 0 @spacing4 fade(@ash, 20%);
-        }
+    .d-notice__icon {
+        color: inherit;
     }
 }
 
@@ -62,11 +55,6 @@
 .d-notice__icon {
     display: flex;
     flex: 0 auto;
-
-    .d-svg--system {
-        width: @icon-size24;
-        height: @icon-size24;
-    }
 }
 
 //  $$  CONTENT
@@ -87,55 +75,38 @@
     .d-flow4();
 }
 
-//  --  Button
+// --  Button
 .d-notice__btn {
-    padding: (@spacing8 - @spacing1);
+    padding: calc(var(--su8) - var(--su1));
     color: inherit;
     font-size: var(--fs14);
     line-height: var(--lh6);
     text-decoration: underline;
 
     &[class^="d-btn--circle"] {
-        padding: @spacing8;
+        padding: var(--su8);
     }
 
-    &:hover,
-    &:active {
-        background-color: fade(@slate, 5%);
-        color: inherit;
-    }
-    &:active {
-        border-color: var(--slate-lightest);
-    }
-    &:focus {
-        box-shadow: 0 0 0 @spacing4 fade(@slate, 10%);
-    }
+    // &:hover,
+    // &:active {
+    //     background-color: fade(@slate, 5%);
+    //     color: inherit;
+    // }
+    // &:active {
+    //     border-color: var(--slate-lightest);
+    // }
+    // &:focus {
+    //     box-shadow: 0 0 0 @spacing4 fade(@slate, 10%);
+    // }
 }
 
 //  ============================================================================
 //  $   COPY STYLES
 //  ============================================================================
-//  $$  TITLE
-//  ----------------------------------------------------------------------------
 .d-notice__title {
-    margin: @spacing0;
     font-weight: var(--fw-bold);
     font-size: inherit;
 }
-
-//  $$  MESSAGE
-//      Links in the message should always be underlined. Each modifying style
-//      will have to recolor the links.
-//  ----------------------------------------------------------------------------
-.d-notice__message {
-    margin: @spacing0;
-
-    a {
-        .d-link--dark();
-        color: inherit;
-    }
-}
-
 
 //  ============================================================================
 //  $   STYLES
@@ -144,48 +115,41 @@
 //  ----------------------------------------------------------------------------
 .d-notice--info,
 .d-banner--info {
-    background-color: var(--blue-lighter);
-    color: var(--navy);
+    background-color: var(--blue-100);
+    border-color: hsla(var(--blue-700-hsl) ~" / " 40%);
 
-    a:hover {
-        color: darken(@navy,10%);
-    }
+    // .d-notice__btn {
+    //     &:hover,
+    //     &:active {
+    //         background-color: hsla(var(--blue-100-hsl) ~" / " 15%);
+    //         color: inherit;
+    //     }
+    //     &:active {
+    //         border-color: var(--blue-400);
+    //     }
+    // }
 
-    .d-notice__btn {
-        &:hover,
-        &:active {
-            background-color: fade(@blue-light, 15%);
-            color: inherit;
-        }
-        &:active {
-            border-color: var(--blue);
-        }
-        &:focus {
-            box-shadow: 0 0 0 @spacing4 fade(@blue, 25%);
-        }
+    .d-notice__icon {
+        color: var(--blue-600);
     }
 
     &.d-notice--important,
     &.d-banner--important {
-        background-color: var(--blue-light);
-        color: darken(@navy,5%);
+        background-color: var(--blue-300);
+        color: var(--black-900);
 
-        a:hover {
-            color: darken(@navy,15%);
-        }
-
-        .d-notice__btn {
-            &:hover,
-            &:active {
-                background-color: fade(@blue-dark, 10%);
-            }
-            &:active {
-                border-color: fade(@blue-dark, 40%);
-            }
-            &:focus {
-                box-shadow: 0 0 0 @spacing4 fade(@blue-dark, 25%);
-            }
-        }
+        // .d-notice__btn {
+        //     &:hover,
+        //     &:active {
+        //         background-color: fade(@blue-dark, 10%);
+        //     }
+        //     &:active {
+        //         border-color: fade(@blue-dark, 40%);
+        //     }
+        //     &:focus {
+        //         box-shadow: 0 0 0 @spacing4 fade(@blue-dark, 25%);
+        //     }
+        // }
     }
 }
 
@@ -193,39 +157,45 @@
 //  ----------------------------------------------------------------------------
 .d-notice--warning,
 .d-banner--warning {
-    background-color: var(--sunflower-lighter);
+    background-color: var(--yellow-100);
+    border-color: hsla(var(--yellow-500-hsl) ~" / " 40%);
 
-    .d-notice__btn {
-        &:hover,
-        &:active {
-            background-color: fade(@sunflower-light, 25%);
-            color: inherit;
-        }
-        &:active {
-            border-color: var(--sunflower-dark);
-        }
-        &:focus {
-            box-shadow: 0 0 0 @spacing4 fade(@sunflower-dark, 25%);
-        }
+    // .d-notice__btn {
+    //     &:hover,
+    //     &:active {
+    //         background-color: fade(@sunflower-light, 25%);
+    //         color: inherit;
+    //     }
+    //     &:active {
+    //         border-color: var(--sunflower-dark);
+    //     }
+    //     &:focus {
+    //         box-shadow: 0 0 0 @spacing4 fade(@sunflower-dark, 25%);
+    //     }
+    // }
+
+    .d-notice__icon {
+        color: var(--yellow-400);
     }
+
 
     &.d-notice--important,
     &.d-banner--important {
-        background-color: var(--sunflower);
-        color: var(--slate);
+        background-color: var(--yellow-400);
+        color: var(--black-800);
 
-        .d-notice__btn {
-            &:hover,
-            &:active {
-                background-color: fade(@color--sunflower-text, 15%);
-            }
-            &:active {
-                border-color: @color--sunflower-text;
-            }
-            &:focus {
-                box-shadow: 0 0 0 @spacing4 fade(@color--sunflower-text,40%);
-            }
-        }
+        // .d-notice__btn {
+        //     &:hover,
+        //     &:active {
+        //         background-color: fade(@color--sunflower-text, 15%);
+        //     }
+        //     &:active {
+        //         border-color: @color--sunflower-text;
+        //     }
+        //     &:focus {
+        //         box-shadow: 0 0 0 @spacing4 fade(@color--sunflower-text,40%);
+        //     }
+        // }
     }
 }
 
@@ -233,48 +203,45 @@
 //  ----------------------------------------------------------------------------
 .d-notice--error,
 .d-banner--error {
-    background-color: var(--wildberry-lighter);
-    color: var(--wildberry-dark);
+    background-color: var(--red-100);
+    border-color: hsla(var(--red-500-hsl) ~" / " 40%);
 
-    a:hover {
-        color: darken(@wildberry-dark,10%);
+    // .d-notice__btn {
+    //     &:hover,
+    //     &:active {
+    //         background-color: fade(@wildberry-light, 15%);
+    //         color: inherit;
+    //     }
+    //     &:active {
+    //         border-color: var(--wildberry);
+    //     }
+    //     &:focus {
+    //         box-shadow: 0 0 0 @spacing4 fade(@wildberry, 25%);
+    //     }
+    // }
+
+    .d-notice__icon {
+        color: var(--red-400);
     }
 
-    .d-notice__btn {
-        &:hover,
-        &:active {
-            background-color: fade(@wildberry-light, 15%);
-            color: inherit;
-        }
-        &:active {
-            border-color: var(--wildberry);
-        }
-        &:focus {
-            box-shadow: 0 0 0 @spacing4 fade(@wildberry, 25%);
-        }
-    }
 
     &.d-notice--important,
     &.d-banner--important {
-        background-color: var(--wildberry);
-        color: var(--white);
+        background-color: var(--red-300);
+        color: var(--black-800);
 
-        a:hover {
-            color: var(--wildberry-lighter);
-        }
-
-        .d-notice__btn {
-            &:hover,
-            &:active {
-                background-color: fade(@rose-light, 20%);
-            }
-            &:active {
-                border-color: fade(@rose-light, 75%);
-            }
-            &:focus {
-                box-shadow: 0 0 0 @spacing4 fade(@rose-light, 40%);
-            }
-        }
+        // .d-notice__btn {
+        //     &:hover,
+        //     &:active {
+        //         background-color: fade(@rose-light, 20%);
+        //     }
+        //     &:active {
+        //         border-color: fade(@rose-light, 75%);
+        //     }
+        //     &:focus {
+        //         box-shadow: 0 0 0 @spacing4 fade(@rose-light, 40%);
+        //     }
+        // }
     }
 }
 
@@ -282,47 +249,48 @@
 //  ----------------------------------------------------------------------------
 .d-notice--success,
 .d-banner--success {
-    background-color: var(--bright-emerald-lighter);
-    color: var(--emerald-darker);
+    background-color: var(--green-100);
+    border-color: hsla(var(--green-500-hsl) ~" / " 40%);
 
-    a:hover {
-        color: darken(@emerald-darker,10%);
+    // .d-notice__btn {
+    //     &:hover,
+    //     &:active {
+    //         background-color: fade(@bright-emerald-light, 25%);
+    //         color: inherit;
+    //     }
+    //     &:active {
+    //         border-color: fade(@bright-emerald-dark,75%);
+    //     }
+    //     &:focus {
+    //         box-shadow: 0 0 0 @spacing4 fade(@bright-emerald, 25%);
+    //     }
+    // }
+
+    .d-notice__icon {
+        color: var(--green-400);
     }
 
-    .d-notice__btn {
-        &:hover,
-        &:active {
-            background-color: fade(@bright-emerald-light, 25%);
-            color: inherit;
-        }
-        &:active {
-            border-color: fade(@bright-emerald-dark,75%);
-        }
-        &:focus {
-            box-shadow: 0 0 0 @spacing4 fade(@bright-emerald, 25%);
-        }
-    }
 
     &.d-notice--important,
     &.d-banner--important {
-        background-color: var(--bright-emerald-dark);
-        color: var(--white);
+        background-color: var(--green-300);
+        color: var(--black-800);
 
-        a:hover {
-            color: var(--bright-emerald-lighter);
-        }
-
-        .d-notice__btn {
-            &:hover,
-            &:active {
-                background-color: fade(@emerald-lighter, 15%);
-            }
-            &:active {
-                border-color: fade(@emerald-lighter, 75%);
-            }
-            &:focus {
-                box-shadow: 0 0 0 @spacing4 fade(@emerald-lighter, 25%);
-            }
-        }
+        // a:hover {
+        //     color: var(--bright-emerald-lighter);
+        // }
+        //
+        // .d-notice__btn {
+        //     &:hover,
+        //     &:active {
+        //         background-color: fade(@emerald-lighter, 15%);
+        //     }
+        //     &:active {
+        //         border-color: fade(@emerald-lighter, 75%);
+        //     }
+        //     &:focus {
+        //         box-shadow: 0 0 0 @spacing4 fade(@emerald-lighter, 25%);
+        //     }
+        // }
     }
 }

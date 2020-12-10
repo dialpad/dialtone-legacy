@@ -1,0 +1,105 @@
+//
+//  DIALTONE
+//  UTILITIES: COLORS
+//
+//  These are all the color utility classes for Dialpad's design system Dialtone.
+//  For further information about these classes, please visit their respective
+//  documentation pages at https://dialpad.design
+//
+//  TABLE OF CONTENTS
+//  • MIXINS
+//  • UTILITY CLASSES
+//
+//  ============================================================================
+//  $   MIXINS
+//      Create a mixin to generate all the utility classes required. By doing it
+//      this way, we are disabling the ability to use Dialtone utility classes as
+//      a mixin. Previously we had allowed for utility classes to be used as
+//      mixins, but because our overall CSS bundle size is growing exponentially,
+//      Dialtone v6 removed this ability. It is now recommended to use CSS
+//      variables (var(--color)). Less variables (@color) are also available,
+//      but their use is discouraged.
+//  ============================================================================
+//  $$  MASTER COLOR CLASS GENERATOR
+//  ----------------------------------------------------------------------------
+#color-classes(@color-name) {
+    //  --  FONT STYLES
+    .d-fc-@{color-name},
+    .d-h\:fc-@{color-name}:hover,
+    .d-f\:fc-@{color-name}:focus {
+        color: hsla(@color-name ~" / " var(--fco)) !important;
+    }
+    .d-f\:fc-@{color-name}:focus-within {
+        color: hsla(@color-name ~" / " var(--fco)) !important;
+    }
+    // DARK MODE!
+
+    //  --  BORDER STYLES
+    .d-bc-@{color-name},
+    .d-h\:bc-@{color-name}:hover,
+    .d-f\:bc-@{color-name}:focus {
+        border-color: hsla(@color-name ~" / " var(--bco)) !important;
+    }
+    .d-f\:bc-@{color-name}:focus-within {
+        border-color: hsla(@color-name ~" / " var(--bco)) !important;
+    }
+    // DARK MODE!
+
+    //  --  BACKGROUND STYLES
+    .d-bgc-@{color-name},
+    .d-h\:bgc-@{color-name}:hover,
+    .d-f\:bgc-@{color-name}:focus {
+        background-color: hsla(@color-name ~" / " var(--bgo)) !important;
+    }
+    .d-f\:bgc-@{color-name}:focus-within {
+        background-color: hsla(@color-name ~" / " var(--bgo)) !important;
+    }
+    // DARK MODE!
+}
+
+//  $$  GENERATE STANDARD COLOR WEIGHTS
+//  ----------------------------------------------------------------------------
+#standard-weights(@color) {
+    #color-classes(~"@{color}-600");
+    #color-classes(~"@{color}-500");
+    #color-classes(~"@{color}-400");
+    #color-classes(~"@{color}-300");
+    #color-classes(~"@{color}-200");
+    #color-classes(~"@{color}-100");
+}
+
+
+//  ============================================================================
+//  $   UTILITY CLASSES
+//  ----------------------------------------------------------------------------
+//  --  Standard weights for most colors
+#standard-weights(black);
+#standard-weights(blue);
+#standard-weights(purple);
+#standard-weights(teal);
+#standard-weights(pink);
+#standard-weights(yellow);
+#standard-weights(red);
+#standard-weights(green);
+
+//  --  A few additional colors that the above mixin misses
+#color-classes(white);
+#color-classes(black-900);
+#color-classes(black-800);
+#color-classes(black-700);
+#color-classes(black-050);
+#color-classes(blue-700);
+
+.d-fc-success                   { &:extend(.d-fc-green-600); }
+.d-fc-warning                   { &:extend(.d-fc-yellow-600); }
+.d-fc-error,
+.d-fc-danger                    { &:extend(.d-fc-red-600); }
+.d-fc-transparent               { color: transparent !important; }
+.d-fc-unset                     { color: unset !important; }
+
+.d-bgc-success                  { &:extend(.d-bgc-green-500); }
+.d-bgc-warning                  { &:extend(.d-bgc-yellow-500); }
+.d-bgc-error,
+.d-bgc-danger                   { &:extend(.d-bgc-red-500); }
+.d-bgc-transparent              { background-color: transparent !important; background-image: none !important; }
+.d-bgc-unset                    { background-color: unset !important; background-image: unset !important; }
