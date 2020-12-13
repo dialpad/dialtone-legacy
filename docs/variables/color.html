@@ -4,14 +4,23 @@ title: Colors
 description: Dialpad uses specific color choices to help communicate user interface functionality, states, and actions within the product. These colors have been selected for on-screen use.
 ---
 <section class="dialtone-color-grid">
-    {% for color in colors %}
-    <div class="dialtone-color-grid__group">
-        {% for stop in color.stops %}
-            <div class="dialtone-color-grid__item d-bgc-{{ stop.stop }} d-fc-{{ stop.copy }}" data-primary="{% if stop.primary == 'yes'%}true{% else %}false{% endif %}">
-                <strong class="dialtone-color-grid__label">{{ stop.stop }}</strong>
-                <span class="dialtone-color-grid__hex">{{ stop.hex }}</span>
+    {% for color in colors.colors %}
+    {% assign c = color.color %}
+        <div class="d-stack2">
+            <h3 class="dialtone-title__subsection">{{ c | capitalize }}</h3>
+            <div class="dialtone-color-grid__group" style="--color-grid-columns: 1">
+                {% for s in color.stops %}
+                {% assign stop = s.stop %}
+                {% assign copy = s.copy %}
+                {% assign hex = s.hex %}
+                {% assign hsl = s.hsl %}
+                    <div class="dialtone-color-grid__item d-bgc-{{ c }}-{{ stop }} d-fc-{{ copy }}">
+                        <span class="dialtone-color-grid__label">CSS: var(--{{ c }}-{{ stop }})</span>
+                        <span class="dialtone-color-grid__label">HSL: {{ hsl }}</span>
+                        <span class="dialtone-color-grid__label">HEX: #{{ hex }}</span>
+                    </div>
+                {% endfor %}
             </div>
-        {% endfor %}
-    </div>
+        </div>
     {% endfor %}
 </section>

@@ -12,242 +12,213 @@
 //
 //  ============================================================================
 //  $   COLOR STOPS
-//  $$  First define color stops using HEX colors
+//  $$  LIGHT HSL BREAKDOWNS
 //  ----------------------------------------------------------------------------
-//  --  WHITE
-@white-hex:                     #FFF;
+@light-color-vars: {
+    white-h:                    0;
+    white-s:                    0%;
+    white-l:                    100%;
+    black-900-h:                240;
+    black-900-s:                49%;
+    black-900-l:                4%;
+    black-800-h:                240;
+    black-800-s:                29%;
+    black-800-l:                12%;
+    black-700-h:                240;
+    black-700-s:                22%;
+    black-700-l:                18%;
+    black-600-h:                240;
+    black-600-s:                17%;
+    black-600-l:                25%;
+    black-500-h:                240;
+    black-500-s:                13%;
+    black-500-l:                32%;
+    black-400-h:                240;
+    black-400-s:                10%;
+    black-400-l:                51%;
+    black-300-h:                240;
+    black-300-s:                14%;
+    black-300-l:                67%;
+    black-200-h:                240;
+    black-200-s:                15%;
+    black-200-l:                82%;
+    black-100-h:                240;
+    black-100-s:                21%;
+    black-100-l:                91%;
+    black-050-h:                240;
+    black-050-s:                19%;
+    black-050-l:                96%;
 
-//  --  BLACK
-@black-900-hex:                 #060610;
-@black-800-hex:                 #151526;
-@black-700-hex:                 #242437;
-@black-600-hex:                 #35354A;
-@black-500-hex:                 #47475C;
-@black-400-hex:                 #76768E;
-@black-300-hex:                 #9E9EB6;
-@black-200-hex:                 #CBCBD9;
-@black-100-hex:                 #E3E3ED;
-@black-050-hex:                 #F2F2F6;
+    blue-800-h:                 236;
+    blue-800-s:                 93%;
+    blue-800-l:                 18%;
+    blue-700-h:                 236;
+    blue-700-s:                 89%;
+    blue-700-l:                 25%;
+    blue-600-h:                 231;
+    blue-600-s:                 94%;
+    blue-600-l:                 36%;
+    blue-500-h:                 231;
+    blue-500-s:                 83%;
+    blue-500-l:                 49%;
+    blue-400-h:                 216;
+    blue-400-s:                 100%;
+    blue-400-l:                 50%;
+    blue-300-h:                 216;
+    blue-300-s:                 100%;
+    blue-300-l:                 63%;
+    blue-200-h:                 216;
+    blue-200-s:                 100%;
+    blue-200-l:                 77%;
+    blue-100-h:                 216;
+    blue-100-s:                 100%;
+    blue-100-l:                 92%;
 
-//  --  BLUE
-@blue-800-hex:                  #030857;
-@blue-700-hex:                  #070E78;
-@blue-600-hex:                  #12259C;
-@blue-500-hex:                  #1635E5;
-@blue-400-hex:                  #0066FF;
-@blue-300-hex:                  #448FFF;
-@blue-200-hex:                  #89B8FF;
-@blue-100-hex:                  #D6E6FF;
+    purple-600-h:               264;
+    purple-600-s:               73%;
+    purple-600-l:               20%;
+    purple-500-h:               264;
+    purple-500-s:               59%;
+    purple-500-l:               28%;
+    purple-400-h:               264;
+    purple-400-s:               47%;
+    purple-400-l:               46%;
+    purple-300-h:               264;
+    purple-300-s:               85%;
+    purple-300-l:               68%;
+    purple-200-h:               264;
+    purple-200-s:               84%;
+    purple-200-l:               82%;
+    purple-100-h:               264;
+    purple-100-s:               100%;
+    purple-100-l:               94%;
 
-//  --  PURPLE
-@purple-600-hex:                #2C0E58;
-@purple-500-hex:                #401E73;
-@purple-400-hex:                #6B3EAC;
-@purple-300-hex:                #9766E0;
-@purple-200-hex:                #C9A9F8;
-@purple-100-hex:                #EDE1FF;
+    teal-600-h:                 184;
+    teal-600-s:                 100%;
+    teal-600-l:                 17%;
+    teal-500-h:                 184;
+    teal-500-s:                 100%;
+    teal-500-l:                 25%;
+    teal-400-h:                 184;
+    teal-400-s:                 100%;
+    teal-400-l:                 34%;
+    teal-300-h:                 184;
+    teal-300-s:                 77%;
+    teal-300-l:                 48%;
+    teal-200-h:                 184;
+    teal-200-s:                 79%;
+    teal-200-l:                 66%;
+    teal-100-h:                 184;
+    teal-100-s:                 84%;
+    teal-100-l:                 87%;
 
-//  --  TEAL
-@teal-600-hex:                  #005257;
-@teal-500-hex:                  #007A82;
-@teal-400-hex:                  #00A5AF;
-@teal-300-hex:                  #1CCDD8;
-@teal-200-hex:                  #63E5ED;
-@teal-100-hex:                  #CEF6FA;
+    pink-600-h:                 347;
+    pink-600-s:                 56%;
+    pink-600-l:                 32%;
+    pink-500-h:                 347;
+    pink-500-s:                 51%;
+    pink-500-l:                 47%;
+    pink-400-h:                 346;
+    pink-400-s:                 69%;
+    pink-400-l:                 61%;
+    pink-300-h:                 346;
+    pink-300-s:                 97%;
+    pink-300-l:                 73%;
+    pink-200-h:                 346;
+    pink-200-s:                 92%;
+    pink-200-l:                 84%;
+    pink-100-h:                 346;
+    pink-100-s:                 100%;
+    pink-100-l:                 96%;
 
-//  --  PINK
-@pink-600-hex:                  #7E2438;
-@pink-500-hex:                  #B43B56;
-@pink-400-hex:                  #E05776;
-@pink-300-hex:                  #FD7594;
-@pink-200-hex:                  #FCB2C3;
-@pink-100-hex:                  #FFE9EE;
+    yellow-600-h:               40;
+    yellow-600-s:               99%;
+    yellow-600-l:               15%;
+    yellow-500-h:               40;
+    yellow-500-s:               100%;
+    yellow-500-l:               31%;
+    yellow-400-h:               43;
+    yellow-400-s:               100%;
+    yellow-400-l:               50%;
+    yellow-300-h:               43;
+    yellow-300-s:               100%;
+    yellow-300-l:               64%;
+    yellow-200-h:               43;
+    yellow-200-s:               100%;
+    yellow-200-l:               81%;
+    yellow-100-h:               43;
+    yellow-100-s:               100%;
+    yellow-100-l:               93%;
 
-//  --  YELLOW
-@yellow-600-hex:                #4F3400;
-@yellow-500-hex:                #A06A00;
-@yellow-400-hex:                #FFB800;
-@yellow-300-hex:                #FFCC48;
-@yellow-200-hex:                #FFE49D;
-@yellow-100-hex:                #FFF7DC;
+    green-600-h:                162;
+    green-600-s:                78%;
+    green-600-l:                15%;
+    green-500-h:                162;
+    green-500-s:                87%;
+    green-500-l:                21%;
+    green-400-h:                162;
+    green-400-s:                90%;
+    green-400-l:                33%;
+    green-300-h:                162;
+    green-300-s:                74%;
+    green-300-l:                45%;
+    green-200-h:                162;
+    green-200-s:                57%;
+    green-200-l:                70%;
+    green-100-h:                165;
+    green-100-s:                47%;
+    green-100-l:                93%;
 
-//  --  RED
-@red-600-hex:                   #660208;
-@red-500-hex:                   #AC0711;
-@red-400-hex:                   #E51D29;
-@red-300-hex:                   #F95760;
-@red-200-hex:                   #FFB0B5;
-@red-100-hex:                   #FFD9DB;
-
-//  --  GREEN
-@green-600-hex:                 #084533;
-@green-500-hex:                 #076549;
-@green-400-hex:                 #099F72;
-@green-300-hex:                 #1EC996;
-@green-200-hex:                 #87DEC4;
-@green-100-hex:                 #E6F6F2;
-
-//  $$  Second create Less variables that combine HSL CSS vars together.
-//  ----------------------------------------------------------------------------
-//  --  WHITE
-@white:         hsl(var(--white-h) var(--white-s) var(--white-l));
-
-//  --  BLACK
-@black-900:     hsl(var(--black-900-h) var(--black-900-s) var(--black-900-l));
-@black-800:     hsl(var(--black-800-h) var(--black-800-s) var(--black-800-l));
-@black-700:     hsl(var(--black-700-h) var(--black-700-s) var(--black-700-l));
-@black-600:     hsl(var(--black-600-h) var(--black-600-s) var(--black-600-l));
-@black-500:     hsl(var(--black-500-h) var(--black-500-s) var(--black-500-l));
-@black-400:     hsl(var(--black-400-h) var(--black-400-s) var(--black-400-l));
-@black-300:     hsl(var(--black-300-h) var(--black-300-s) var(--black-300-l));
-@black-200:     hsl(var(--black-200-h) var(--black-200-s) var(--black-200-l));
-@black-100:     hsl(var(--black-100-h) var(--black-100-s) var(--black-100-l));
-@black-050:     hsl(var(--black-050-h) var(--black-050-s) var(--black-050-l));
-
-//  --  BLUE
-@blue-800:      hsl(var(--blue-800-h) var(--blue-800-s) var(--blue-800-l));
-@blue-700:      hsl(var(--blue-700-h) var(--blue-700-s) var(--blue-700-l));
-@blue-600:      hsl(var(--blue-600-h) var(--blue-600-s) var(--blue-600-l));
-@blue-500:      hsl(var(--blue-500-h) var(--blue-500-s) var(--blue-500-l));
-@blue-400:      hsl(var(--blue-400-h) var(--blue-400-s) var(--blue-400-l));
-@blue-300:      hsl(var(--blue-300-h) var(--blue-300-s) var(--blue-300-l));
-@blue-200:      hsl(var(--blue-200-h) var(--blue-200-s) var(--blue-200-l));
-@blue-100:      hsl(var(--blue-100-h) var(--blue-100-s) var(--blue-100-l));
-
-//  --  PURPLE
-@purple-600:    hsl(var(--purple-600-h) var(--purple-600-s) var(--purple-600-l));
-@purple-500:    hsl(var(--purple-500-h) var(--purple-500-s) var(--purple-500-l));
-@purple-400:    hsl(var(--purple-400-h) var(--purple-400-s) var(--purple-400-l));
-@purple-300:    hsl(var(--purple-300-h) var(--purple-300-s) var(--purple-300-l));
-@purple-200:    hsl(var(--purple-200-h) var(--purple-200-s) var(--purple-200-l));
-@purple-100:    hsl(var(--purple-100-h) var(--purple-100-s) var(--purple-100-l));
-
-//  --  TEAL
-@teal-600:      hsl(var(--teal-600-h) var(--teal-600-s) var(--teal-600-l));
-@teal-500:      hsl(var(--teal-500-h) var(--teal-500-s) var(--teal-500-l));
-@teal-400:      hsl(var(--teal-400-h) var(--teal-400-s) var(--teal-400-l));
-@teal-300:      hsl(var(--teal-300-h) var(--teal-300-s) var(--teal-300-l));
-@teal-200:      hsl(var(--teal-200-h) var(--teal-200-s) var(--teal-200-l));
-@teal-100:      hsl(var(--teal-100-h) var(--teal-100-s) var(--teal-100-l));
-
-//  --  PINK
-@pink-600:      hsl(var(--pink-600-h) var(--pink-600-s) var(--pink-600-l));
-@pink-500:      hsl(var(--pink-500-h) var(--pink-500-s) var(--pink-500-l));
-@pink-400:      hsl(var(--pink-400-h) var(--pink-400-s) var(--pink-400-l));
-@pink-300:      hsl(var(--pink-300-h) var(--pink-300-s) var(--pink-300-l));
-@pink-200:      hsl(var(--pink-200-h) var(--pink-200-s) var(--pink-200-l));
-@pink-100:      hsl(var(--pink-100-h) var(--pink-100-s) var(--pink-100-l));
-
-//  --  YELLOW
-@yellow-600:    hsl(var(--yellow-600-h) var(--yellow-600-s) var(--yellow-600-l));
-@yellow-500:    hsl(var(--yellow-500-h) var(--yellow-500-s) var(--yellow-500-l));
-@yellow-400:    hsl(var(--yellow-400-h) var(--yellow-400-s) var(--yellow-400-l));
-@yellow-300:    hsl(var(--yellow-300-h) var(--yellow-300-s) var(--yellow-300-l));
-@yellow-200:    hsl(var(--yellow-200-h) var(--yellow-200-s) var(--yellow-200-l));
-@yellow-100:    hsl(var(--yellow-100-h) var(--yellow-100-s) var(--yellow-100-l));
-
-//  --  RED
-@red-600:       hsl(var(--red-600-h) var(--red-600-s) var(--red-600-l));
-@red-500:       hsl(var(--red-500-h) var(--red-500-s) var(--red-500-l));
-@red-400:       hsl(var(--red-400-h) var(--red-400-s) var(--red-400-l));
-@red-300:       hsl(var(--red-300-h) var(--red-300-s) var(--red-300-l));
-@red-200:       hsl(var(--red-200-h) var(--red-200-s) var(--red-200-l));
-@red-100:       hsl(var(--red-100-h) var(--red-100-s) var(--red-100-l));
-
-//  --  GREEN
-@green-600:     hsl(var(--green-600-h) var(--green-600-s) var(--green-600-l));
-@green-500:     hsl(var(--green-500-h) var(--green-500-s) var(--green-500-l));
-@green-400:     hsl(var(--green-400-h) var(--green-400-s) var(--green-400-l));
-@green-300:     hsl(var(--green-300-h) var(--green-300-s) var(--green-300-l));
-@green-200:     hsl(var(--green-200-h) var(--green-200-s) var(--green-200-l));
-@green-100:     hsl(var(--green-100-h) var(--green-100-s) var(--green-100-l));
-
-//  $$  DECLARE THE CSS VARIABLES THAT WE WANT TO CREATE
-//  ----------------------------------------------------------------------------
-@color-vars: {
-    white:                      @white;
-    black-900:                  @black-900;
-    black-800:                  @black-800;
-    black-700:                  @black-700;
-    black-600:                  @black-600;
-    black-500:                  @black-500;
-    black-400:                  @black-400;
-    black-300:                  @black-300;
-    black-200:                  @black-200;
-    black-100:                  @black-100;
-    black-050:                  @black-050;
-    blue-800:                   @blue-800;
-    blue-700:                   @blue-700;
-    blue-600:                   @blue-600;
-    blue-500:                   @blue-500;
-    blue-400:                   @blue-400;
-    blue-300:                   @blue-300;
-    blue-200:                   @blue-200;
-    blue-100:                   @blue-100;
-    purple-600:                 @purple-600;
-    purple-500:                 @purple-500;
-    purple-400:                 @purple-400;
-    purple-300:                 @purple-300;
-    purple-200:                 @purple-200;
-    purple-100:                 @purple-100;
-    teal-600:                   @teal-600;
-    teal-500:                   @teal-500;
-    teal-400:                   @teal-400;
-    teal-300:                   @teal-300;
-    teal-200:                   @teal-200;
-    teal-100:                   @teal-100;
-    pink-600:                   @pink-600;
-    pink-500:                   @pink-500;
-    pink-400:                   @pink-400;
-    pink-300:                   @pink-300;
-    pink-200:                   @pink-200;
-    pink-100:                   @pink-100;
-    yellow-600:                 @yellow-600;
-    yellow-500:                 @yellow-500;
-    yellow-400:                 @yellow-400;
-    yellow-300:                 @yellow-300;
-    yellow-200:                 @yellow-200;
-    yellow-100:                 @yellow-100;
-    red-600:                    @red-600;
-    red-500:                    @red-500;
-    red-400:                    @red-400;
-    red-300:                    @red-300;
-    red-200:                    @red-200;
-    red-100:                    @red-100;
-    green-600:                  @green-600;
-    green-500:                  @green-500;
-    green-400:                  @green-400;
-    green-300:                  @green-300;
-    green-200:                  @green-200;
-    green-100:                  @green-100;
+    red-600-h:                  356;
+    red-600-s:                  97%;
+    red-600-l:                  20%;
+    red-500-h:                  356;
+    red-500-s:                  92%;
+    red-500-l:                  35%;
+    red-400-h:                  356;
+    red-400-s:                  80%;
+    red-400-l:                  51%;
+    red-300-h:                  357;
+    red-300-s:                  93%;
+    red-300-l:                  66%;
+    red-200-h:                  356;
+    red-200-s:                  100%;
+    red-200-l:                  85%;
+    red-100-h:                  356;
+    red-100-s:                  100%;
+    red-100-l:                  93%;
 
     //  --  STATES
-    error-color:                @red-400;
-    error-color--hover:         @red-500;
-    error-color__text:          @red-600;
-    warning-color:              @yellow-400;
-    warning-color--hover:       @yellow-500;
-    warning-color__text:        @yellow-600;
-    success-color:              @green-400;
-    success-color--hover:       @green-500;
-    success-color__text:        @green-600;
-    muted-color:                @black-700;
-    muted-color--hover:         @black-800;
-    muted-color__text:          @black-900;
+    error-color:                var(--red-400);
+    error-color-hover:          var(--red-500);
+    error-color-text:           var(--red-600);
+    error-color-hsl:            var(--red-400-h) var(--red-400-s) var(--red-400-l);
+    warning-color:              var(--yellow-400);
+    warning-color-hover:        var(--yellow-500);
+    warning-color-text:         var(--yellow-600);
+    warning-color-hsl:          var(--yellow-400-h) var(--yellow-400-s) var(--yellow-400-l);
+    success-color:              var(--green-400);
+    success-color-hover:        var(--green-500);
+    success-color-text:         var(--green-600);
+    success-color-hsl:          var(--green-400-h) var(--green-400-s) var(--green-400-l);
+    muted-color:                var(--black-700);
+    muted-color-hover:          var(--black-800);
+    muted-color-text:           var(--black-900);
+    muted-color-hsl:            var(--black-700-h) var(--black-700-s) var(--black-700-l);
 
     //  --  TEXT COLORS
     fo:                         100%;
-    fc-dark:                    @black-900;
-    fc-medium:                  @black-800;
-    fc-light:                   @black-700;
-    fc-lighter:                 @black-600;
-    fc-blue:                    @blue-700;
-    fc-purple:                  @purple-600;
-    fc-teal:                    @teal-600;
-    fc-pink:                    @pink-600;
-    fc-green:                   @green-600;
-    fc-yellow:                  @yellow-600;
-    fc-red:                     @red-600;
+    fc-dark:                    var(--black-900);
+    fc-medium:                  var(--black-800);
+    fc-light:                   var(--black-700);
+    fc-lighter:                 var(--black-600);
+    fc-blue:                    var(--blue-700);
+    fc-purple:                  var(--purple-600);
+    fc-teal:                    var(--teal-600);
+    fc-pink:                    var(--pink-600);
+    fc-green:                   var(--green-600);
+    fc-yellow:                  var(--yellow-600);
+    fc-red:                     var(--red-600);
 
     //  --  FOCUS RINGS
     focus-ring:                 hsla(var(--primary-color-hsl) ~" / " 25%);
@@ -255,72 +226,264 @@
     focus-ring-warning:         hsla(var(--warning-color-hsl) ~" / " 25%);
     focus-ring-error:           hsla(var(--error-color-hsl) ~" / " 25%);
     focus-ring-muted:           hsla(var(--muted-color-hsl) ~" / " 25%);
+
+    //  --  BASE TEMPLATE
+    base--text-color:           var(--black-900);
+    base--background-color:     var(--white);
 }
 
-:root {
+//  $$  DARK HSL BREAKDOWNS
+//  ----------------------------------------------------------------------------
+@dark-color-vars: {
+    white-h:                    240;
+    white-s:                    49%;
+    white-l:                    4%;
+    black-050-h:                240;
+    black-050-s:                49%;
+    black-050-l:                4%;
+    black-100-h:                240;
+    black-100-s:                29%;
+    black-100-l:                12%;
+    black-200-h:                240;
+    black-200-s:                22%;
+    black-200-l:                18%;
+    black-300-h:                240;
+    black-300-s:                17%;
+    black-300-l:                25%;
+    black-400-h:                240;
+    black-400-s:                13%;
+    black-400-l:                32%;
+    black-500-h:                240;
+    black-500-s:                10%;
+    black-500-l:                51%;
+    black-600-h:                240;
+    black-600-s:                14%;
+    black-600-l:                67%;
+    black-700-h:                240;
+    black-700-s:                15%;
+    black-700-l:                82%;
+    black-800-h:                240;
+    black-800-s:                21%;
+    black-800-l:                91%;
+    black-900-h:                240;
+    black-900-s:                19%;
+    black-900-l:                96%;
+    blue-100-h:                 236;
+    blue-100-s:                 93%;
+    blue-100-l:                 18%;
+    blue-200-h:                 236;
+    blue-200-s:                 89%;
+    blue-200-l:                 25%;
+    blue-300-h:                 231;
+    blue-300-s:                 94%;
+    blue-300-l:                 36%;
+    blue-400-h:                 231;
+    blue-400-s:                 83%;
+    blue-400-l:                 49%;
+    blue-500-h:                 216;
+    blue-500-s:                 100%;
+    blue-500-l:                 50%;
+    blue-600-h:                 216;
+    blue-600-s:                 100%;
+    blue-600-l:                 63%;
+    blue-700-h:                 216;
+    blue-700-s:                 100%;
+    blue-700-l:                 77%;
+    blue-800-h:                 216;
+    blue-800-s:                 100%;
+    blue-800-l:                 92%;
+    purple-100-h:               264;
+    purple-100-s:               73%;
+    purple-100-l:               20%;
+    purple-200-h:               264;
+    purple-200-s:               59%;
+    purple-200-l:               28%;
+    purple-300-h:               264;
+    purple-300-s:               47%;
+    purple-300-l:               46%;
+    purple-400-h:               264;
+    purple-400-s:               85%;
+    purple-400-l:               68%;
+    purple-500-h:               264;
+    purple-500-s:               84%;
+    purple-500-l:               82%;
+    purple-600-h:               264;
+    purple-600-s:               100%;
+    purple-600-l:               94%;
+    teal-100-h:                 184;
+    teal-100-s:                 100%;
+    teal-100-l:                 17%;
+    teal-200-h:                 184;
+    teal-200-s:                 100%;
+    teal-200-l:                 25%;
+    teal-300-h:                 184;
+    teal-300-s:                 100%;
+    teal-300-l:                 34%;
+    teal-400-h:                 184;
+    teal-400-s:                 77%;
+    teal-400-l:                 48%;
+    teal-500-h:                 184;
+    teal-500-s:                 79%;
+    teal-500-l:                 66%;
+    teal-600-h:                 184;
+    teal-600-s:                 84%;
+    teal-600-l:                 87%;
+    pink-100-h:                 347;
+    pink-100-s:                 56%;
+    pink-100-l:                 32%;
+    pink-200-h:                 347;
+    pink-200-s:                 51%;
+    pink-200-l:                 47%;
+    pink-300-h:                 346;
+    pink-300-s:                 69%;
+    pink-300-l:                 61%;
+    pink-400-h:                 346;
+    pink-400-s:                 97%;
+    pink-400-l:                 73%;
+    pink-500-h:                 346;
+    pink-500-s:                 92%;
+    pink-500-l:                 84%;
+    pink-600-h:                 346;
+    pink-600-s:                 100%;
+    pink-600-l:                 96%;
+    yellow-100-h:               40;
+    yellow-100-s:               99%;
+    yellow-100-l:               15%;
+    yellow-200-h:               40;
+    yellow-200-s:               100%;
+    yellow-200-l:               31%;
+    yellow-300-h:               43;
+    yellow-300-s:               100%;
+    yellow-300-l:               50%;
+    yellow-400-h:               43;
+    yellow-400-s:               100%;
+    yellow-400-l:               64%;
+    yellow-500-h:               43;
+    yellow-500-s:               100%;
+    yellow-500-l:               81%;
+    yellow-600-h:               43;
+    yellow-600-s:               100%;
+    yellow-600-l:               93%;
+    green-100-h:                162;
+    green-100-s:                78%;
+    green-100-l:                15%;
+    green-200-h:                162;
+    green-200-s:                87%;
+    green-200-l:                21%;
+    green-300-h:                162;
+    green-300-s:                90%;
+    green-300-l:                33%;
+    green-400-h:                162;
+    green-400-s:                74%;
+    green-400-l:                45%;
+    green-500-h:                162;
+    green-500-s:                57%;
+    green-500-l:                70%;
+    green-600-h:                165;
+    green-600-s:                47%;
+    green-600-l:                93%;
+    red-100-h:                  356;
+    red-100-s:                  97%;
+    red-100-l:                  20%;
+    red-200-h:                  356;
+    red-200-s:                  92%;
+    red-200-l:                  35%;
+    red-300-h:                  356;
+    red-300-s:                  80%;
+    red-300-l:                  51%;
+    red-400-h:                  357;
+    red-400-s:                  93%;
+    red-400-l:                  66%;
+    red-500-h:                  356;
+    red-500-s:                  100%;
+    red-500-l:                  85%;
+    red-600-h:                  356;
+    red-600-s:                  100%;
+    red-600-l:                  93%;
+
+    base--background-color:     var(--black-100);
+}
+
+//  $$  COMBINED HSL
+//  ----------------------------------------------------------------------------
+@combined-hsl-vars: {
+    white:                      hsl(var(--white-h) var(--white-s) var(--white-l));
+    black-900:                  hsl(var(--black-900-h) var(--black-900-s) var(--black-900-l));
+    black-800:                  hsl(var(--black-800-h) var(--black-800-s) var(--black-800-l));
+    black-700:                  hsl(var(--black-700-h) var(--black-700-s) var(--black-700-l));
+    black-600:                  hsl(var(--black-600-h) var(--black-600-s) var(--black-600-l));
+    black-500:                  hsl(var(--black-500-h) var(--black-500-s) var(--black-500-l));
+    black-400:                  hsl(var(--black-400-h) var(--black-400-s) var(--black-400-l));
+    black-300:                  hsl(var(--black-300-h) var(--black-300-s) var(--black-300-l));
+    black-200:                  hsl(var(--black-200-h) var(--black-200-s) var(--black-200-l));
+    black-100:                  hsl(var(--black-100-h) var(--black-100-s) var(--black-100-l));
+    black-050:                  hsl(var(--black-050-h) var(--black-050-s) var(--black-050-l));
+    blue-800:                   hsl(var(--blue-800-h) var(--blue-800-s) var(--blue-800-l));
+    blue-700:                   hsl(var(--blue-700-h) var(--blue-700-s) var(--blue-700-l));
+    blue-600:                   hsl(var(--blue-600-h) var(--blue-600-s) var(--blue-600-l));
+    blue-500:                   hsl(var(--blue-500-h) var(--blue-500-s) var(--blue-500-l));
+    blue-400:                   hsl(var(--blue-400-h) var(--blue-400-s) var(--blue-400-l));
+    blue-300:                   hsl(var(--blue-300-h) var(--blue-300-s) var(--blue-300-l));
+    blue-200:                   hsl(var(--blue-200-h) var(--blue-200-s) var(--blue-200-l));
+    blue-100:                   hsl(var(--blue-100-h) var(--blue-100-s) var(--blue-100-l));
+    purple-600:                 hsl(var(--purple-600-h) var(--purple-600-s) var(--purple-600-l));
+    purple-500:                 hsl(var(--purple-500-h) var(--purple-500-s) var(--purple-500-l));
+    purple-400:                 hsl(var(--purple-400-h) var(--purple-400-s) var(--purple-400-l));
+    purple-300:                 hsl(var(--purple-300-h) var(--purple-300-s) var(--purple-300-l));
+    purple-200:                 hsl(var(--purple-200-h) var(--purple-200-s) var(--purple-200-l));
+    purple-100:                 hsl(var(--purple-100-h) var(--purple-100-s) var(--purple-100-l));
+    teal-600:                   hsl(var(--teal-600-h) var(--teal-600-s) var(--teal-600-l));
+    teal-500:                   hsl(var(--teal-500-h) var(--teal-500-s) var(--teal-500-l));
+    teal-400:                   hsl(var(--teal-400-h) var(--teal-400-s) var(--teal-400-l));
+    teal-300:                   hsl(var(--teal-300-h) var(--teal-300-s) var(--teal-300-l));
+    teal-200:                   hsl(var(--teal-200-h) var(--teal-200-s) var(--teal-200-l));
+    teal-100:                   hsl(var(--teal-100-h) var(--teal-100-s) var(--teal-100-l));
+    pink-600:                   hsl(var(--pink-600-h) var(--pink-600-s) var(--pink-600-l));
+    pink-500:                   hsl(var(--pink-500-h) var(--pink-500-s) var(--pink-500-l));
+    pink-400:                   hsl(var(--pink-400-h) var(--pink-400-s) var(--pink-400-l));
+    pink-300:                   hsl(var(--pink-300-h) var(--pink-300-s) var(--pink-300-l));
+    pink-200:                   hsl(var(--pink-200-h) var(--pink-200-s) var(--pink-200-l));
+    pink-100:                   hsl(var(--pink-100-h) var(--pink-100-s) var(--pink-100-l));
+    yellow-600:                 hsl(var(--yellow-600-h) var(--yellow-600-s) var(--yellow-600-l));
+    yellow-500:                 hsl(var(--yellow-500-h) var(--yellow-500-s) var(--yellow-500-l));
+    yellow-400:                 hsl(var(--yellow-400-h) var(--yellow-400-s) var(--yellow-400-l));
+    yellow-300:                 hsl(var(--yellow-300-h) var(--yellow-300-s) var(--yellow-300-l));
+    yellow-200:                 hsl(var(--yellow-200-h) var(--yellow-200-s) var(--yellow-200-l));
+    yellow-100:                 hsl(var(--yellow-100-h) var(--yellow-100-s) var(--yellow-100-l));
+    green-600:                  hsl(var(--green-600-h) var(--green-600-s) var(--green-600-l));
+    green-500:                  hsl(var(--green-500-h) var(--green-500-s) var(--green-500-l));
+    green-400:                  hsl(var(--green-400-h) var(--green-400-s) var(--green-400-l));
+    green-300:                  hsl(var(--green-300-h) var(--green-300-s) var(--green-300-l));
+    green-200:                  hsl(var(--green-200-h) var(--green-200-s) var(--green-200-l));
+    green-100:                  hsl(var(--green-100-h) var(--green-100-s) var(--green-100-l));
+    red-600:                    hsl(var(--red-600-h) var(--red-600-s) var(--red-600-l));
+    red-500:                    hsl(var(--red-500-h) var(--red-500-s) var(--red-500-l));
+    red-400:                    hsl(var(--red-400-h) var(--red-400-s) var(--red-400-l));
+    red-300:                    hsl(var(--red-300-h) var(--red-300-s) var(--red-300-l));
+    red-200:                    hsl(var(--red-200-h) var(--red-200-s) var(--red-200-l));
+    red-100:                    hsl(var(--red-100-h) var(--red-100-s) var(--red-100-l));
+}
+
+
+body {
     --bgo: 100%;                // Background color opacity
     --bco: 100%;                // Border color opacity
     --fco: 100%;                // Font color opacity
 
-    //  CREATE HSL CSS VARS
-    #hsl-to-css-vars(white, @white-hex);
-    #hsl-to-css-vars(black-900, @black-900-hex);
-    #hsl-to-css-vars(black-800, @black-800-hex);
-    #hsl-to-css-vars(black-700, @black-700-hex);
-    #hsl-to-css-vars(black-600, @black-600-hex);
-    #hsl-to-css-vars(black-500, @black-500-hex);
-    #hsl-to-css-vars(black-400, @black-400-hex);
-    #hsl-to-css-vars(black-300, @black-300-hex);
-    #hsl-to-css-vars(black-200, @black-200-hex);
-    #hsl-to-css-vars(black-100, @black-100-hex);
-    #hsl-to-css-vars(black-050, @black-050-hex);
-    #hsl-to-css-vars(blue-800, @blue-800-hex);
-    #hsl-to-css-vars(blue-700, @blue-700-hex);
-    #hsl-to-css-vars(blue-600, @blue-600-hex);
-    #hsl-to-css-vars(blue-500, @blue-500-hex);
-    #hsl-to-css-vars(blue-400, @blue-400-hex);
-    #hsl-to-css-vars(blue-300, @blue-300-hex);
-    #hsl-to-css-vars(blue-200, @blue-200-hex);
-    #hsl-to-css-vars(blue-100, @blue-100-hex);
-    #hsl-to-css-vars(purple-600, @purple-600-hex);
-    #hsl-to-css-vars(purple-500, @purple-500-hex);
-    #hsl-to-css-vars(purple-400, @purple-400-hex);
-    #hsl-to-css-vars(purple-300, @purple-300-hex);
-    #hsl-to-css-vars(purple-200, @purple-200-hex);
-    #hsl-to-css-vars(purple-100, @purple-100-hex);
-    #hsl-to-css-vars(teal-600, @teal-600-hex);
-    #hsl-to-css-vars(teal-500, @teal-500-hex);
-    #hsl-to-css-vars(teal-400, @teal-400-hex);
-    #hsl-to-css-vars(teal-300, @teal-300-hex);
-    #hsl-to-css-vars(teal-200, @teal-200-hex);
-    #hsl-to-css-vars(teal-100, @teal-100-hex);
-    #hsl-to-css-vars(pink-600, @pink-600-hex);
-    #hsl-to-css-vars(pink-500, @pink-500-hex);
-    #hsl-to-css-vars(pink-400, @pink-400-hex);
-    #hsl-to-css-vars(pink-300, @pink-300-hex);
-    #hsl-to-css-vars(pink-200, @pink-200-hex);
-    #hsl-to-css-vars(pink-100, @pink-100-hex);
-    #hsl-to-css-vars(yellow-600, @yellow-600-hex);
-    #hsl-to-css-vars(yellow-500, @yellow-500-hex);
-    #hsl-to-css-vars(yellow-400, @yellow-400-hex);
-    #hsl-to-css-vars(yellow-300, @yellow-300-hex);
-    #hsl-to-css-vars(yellow-200, @yellow-200-hex);
-    #hsl-to-css-vars(yellow-100, @yellow-100-hex);
-    #hsl-to-css-vars(red-600, @red-600-hex);
-    #hsl-to-css-vars(red-500, @red-500-hex);
-    #hsl-to-css-vars(red-400, @red-400-hex);
-    #hsl-to-css-vars(red-300, @red-300-hex);
-    #hsl-to-css-vars(red-200, @red-200-hex);
-    #hsl-to-css-vars(red-100, @red-100-hex);
-    #hsl-to-css-vars(green-600, @green-600-hex);
-    #hsl-to-css-vars(green-500, @green-500-hex);
-    #hsl-to-css-vars(green-400, @green-400-hex);
-    #hsl-to-css-vars(green-300, @green-300-hex);
-    #hsl-to-css-vars(green-200, @green-200-hex);
-    #hsl-to-css-vars(green-100, @green-100-hex);
+    //  All the light colored HSL vars
+    each(@light-color-vars, {
+        --@{key}: @value;
+    });
 
-    //  GENERATE ALL THE COLORS SPECIFICED IN @color-vars
-    each(@color-vars, {
+    //  All the dark colored HSL vars
+    &.theme-dark {
+        each(@dark-color-vars, {
+            --@{key}: @value;
+        });
+    }
+
+    //  Now all our color vars
+    each(@combined-hsl-vars, {
         --@{key}: @value;
     });
 }

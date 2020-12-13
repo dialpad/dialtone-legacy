@@ -6,32 +6,24 @@ description: Dialtone provides both fill and gradient background classes. Most c
 <section class="d-stack16">
     <h2 class="dialtone-title__section">Fills</h2>
     <div class="dialtone-color-grid">
-    {% for color in colors %}
+    {% for color in colors.colors %}
+    {% assign c = color.color %}
         <div class="d-stack2">
-            <h3 class="dialtone-title__subsection">{{ color.color }}</h3>
+            <h3 class="dialtone-title__subsection">{{ c | capitalize }}</h3>
             <div class="dialtone-color-grid__group" style="--color-grid-columns: 1">
-                {% for stop in color.stops %}
-                    <div class="dialtone-color-grid__item d-bgc-{{ stop.stop }} d-fc-{{ stop.copy }}">
-                        <span class="dialtone-color-grid__label">.d-bgc-{{ stop.stop }}</span>
+                {% for s in color.stops %}
+                {% assign stop = s.stop %}
+                {% assign copy = s.copy %}
+                    <div class="dialtone-color-grid__item d-bgc-{{ c }}-{{ stop }} d-fc-{{ copy }}">
+                        <span class="dialtone-color-grid__label">.d-bgc-{{ c }}-{{ stop }}</span>
                     </div>
                 {% endfor %}
+                <div class="dialtone-color-grid__item d-bgc-white d-fc-dark">
+                    <span class="dialtone-color-grid__label">.d-bgc-white</span>
+                </div>
             </div>
         </div>
     {% endfor %}
-        <div class="d-stack2">
-            <h3 class="dialtone-title__subsection">White / Transparent</h3>
-            <div class="dialtone-color-grid__group d-bgc-slate d-p16 d-border-radius--md" style="--color-grid-columns: 1">
-                <div class="dialtone-color-grid__item d-bgc-white d-fc-slate d-border d-border-color--slate-lightest">
-                    <span class="dialtone-color-grid__label">.d-bgc-white</span>
-                </div>
-                <div class="dialtone-color-grid__item d-bgc-transparent d-color--light d-border d-border-color--slate-lightest d-border-top-width0">
-                    <span class="dialtone-color-grid__label">.d-bgc-transparent</span>
-                </div>
-                <div class="dialtone-color-grid__item d-bgc-unset d-color--light d-border d-border-color--slate-lightest d-border-top-width0">
-                    <span class="dialtone-color-grid__label">.d-bgc-unset</span>
-                </div>
-            </div>
-        </div>
     </div>
 </section>
 <section class="d-stack16">

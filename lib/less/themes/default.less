@@ -21,29 +21,33 @@
 //  ============================================================================
 //  $   SET VARIABLES
 //  ----------------------------------------------------------------------------
-@primary-color-hex:                         @blue-400-hex;
-@primary-color-hex--hover:                  @blue-500-hex;
-@nav-background-color-hex:                  @blue-700-hex;
+@theme-vars: {
+    primary-color-h:                        var(--blue-400-h);
+    primary-color-s:                        var(--blue-400-s);
+    primary-color-l:                        var(--blue-400-l);
+    primary-color-hsl:                      var(--primary-color-h) var(--primary-color-s) var(--primary-color-l);
+    primary-color:                          hsl(var(--primary-color-h) var(--primary-color-s) var(--primary-color-l));
+    primary-color-hover-h:                  var(--blue-500-h);
+    primary-color-hover-s:                  var(--blue-500-s);
+    primary-color-hover-l:                  var(--blue-500-l);
+    primary-color-hsl:                      var(--primary-color-hover-h) var(--primary-color-hover-s) var(--primary-color-hover-l);
+    primary-color-hover:                    hsl(var(--primary-color-hover-h) var(--primary-color-hover-s) var(--primary-color-hover-l));
+    nav-background-color-h:                 var(--blue-700-h);
+    nav-background-color-s:                 var(--blue-700-s);
+    nav-background-color-l:                 var(--blue-700-l);
+    nav-background-color:                   hsl(var(--nav-background-color-h) var(--nav-background-color-s) var(--nav-background-color-l));
 
-@primary-color:                             hsl(var(--primary-color-h) var(--primary-color-s) var(--primary-color-l));
-@primary-color--hover:                      hsl(var(--primary-color--hover-h) var(--primary-color--hover-s) var(--primary-color--hover-l));
-@nav-background-color:                      hsl(var(--nav-background-color-h) var(--nav-background-color-s) var(--nav-background-color-l));
+    topbar-height:                          var(--su64);
+}
 
 //  ============================================================================
-//  $$  HEIGHTS & WIDTHS
-//  ----------------------------------------------------------------------------
-@topbar-height:                             @su64;
-
-
 //  $$  VISUAL STYLES
 //      Base styles, colors, font-size, and line-heights
 //  ----------------------------------------------------------------------------
 @visual-styles-vars: {
-    base--text-color:                       var(--black-900);
     base--font-size:                        var(--fs16);
     base--font-family:                      @ff-custom;
     base--line-height:                      var(--lh-normal);
-    base--background-color:                 var(--white);
     base--corner-radius:                    0.25em;
 
     bgo:                                    100%;
@@ -72,8 +76,6 @@
     bgg-pattern-stripe--light:              @bgg-pattern-stripe--light;
 }
 
-//  NEW TYPE CSS VARS
-//  These should be used moving forward
 @type-styles-vars: {
     ff-custom:                              @ff-custom;
     ff-sans:                                @ff-sans;
@@ -120,31 +122,17 @@
     fw-black:                               @fw-black;
 }
 
-//  $$  THEME STYLES
-//      Primary and Navigation Color
-//  ----------------------------------------------------------------------------
-@theme-vars: {
-    primary-color:                          hsla(@primary-color ~" / " var(--alpha));
-    primary-color--hover:                   hsla(@primary-color--hover ~" / " var(--alpha));
-    nav-background-color:                   hsla(@nav-background-color ~" / " var(--alpha));
-
-    // btn--inverted__bg--hover:           fade(mix(#FFF, @primary-color, 75%),25%);
-    // btn--inverted__bs--focus:           fade(mix(#FFF, @primary-color, 50%),25%);
-    // btn--inverted__bg--active:          fade(mix(#FFF, @primary-color, 50%),25%);
-    // btn--inverted--primary__bg--hover:  mix(#FFF, @primary-color, 90%);
-    // btn--inverted--primary__bs--focus:  fade(mix(#FFF, @primary-color, 50%),50%);
-}
-
 //  ============================================================================
 //  $   OUTPUT VARIABLES
 //  ============================================================================
-:root {
-    #hsl-to-css-vars(primary-color, @primary-color-hex);
-    #hsl-to-css-vars(primary-color--hover, @primary-color-hex--hover);
-    #hsl-to-css-vars(nav-background-color, @nav-background-color-hex);
-
+body {
     //  Visual Styles
     each(@visual-styles-vars, {
+        --@{key}: @value;
+    });
+
+    //  Border Styles
+    each(@border-vars, {
         --@{key}: @value;
     });
 

@@ -28,17 +28,17 @@
     font-size: var(--fs14);
     line-height: var(--lh6);
     color: inherit;
+    transform: translate3d(0,var(--topbar-height),0);
 
     // If you want to hide and reveal the banner
     &[aria-hidden="true"] {
+        --topbar-height: -(var(--sun64));
         visibility: hidden;
         opacity: 0;
-        transform: translate3d(0,-@topbar-height,0);
     }
     &[aria-hidden="false"] {
         visibility: visible;
         opacity: 1;
-        transform: translate3d(0,@topbar-height,0);
     }
 
     //  If you want to put the banner above the topbar
