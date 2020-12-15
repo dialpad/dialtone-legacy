@@ -14,8 +14,6 @@
 //  $   BASE STYLE
 //  ----------------------------------------------------------------------------
 .d-link {
-    --bgo: 0%;
-
     box-sizing: border-box;
 
     position: relative;
@@ -25,7 +23,7 @@
     padding: var(--su0);
 
     border: 0;
-    background-color: var(--white);
+    background-color: transparent;
     font: inherit;
     color: var(--primary-color);
     text-decoration: underline;
@@ -40,71 +38,80 @@
             appearance: none;
 
     &:hover {
-        color: var(--primary-color--hover);
+        color: var(--primary-color-hover);
         text-decoration: underline;
     }
 }
 
 
-// //  ============================================================================
-// //  $   ALTERNATE STYLES
-// //  ============================================================================
-// //  $$  WARNING
-// //  ----------------------------------------------------------------------------
-// .d-link--warning {
-//     color: @warning-color--text;
-//
-//     &:hover {
-//         color: darken(@warning-color--text,10%);
-//     }
-// }
-//
-// //  $$  DANGER
-// //  ----------------------------------------------------------------------------
-// .d-link--danger {
-//     color: @error-color--text;
-//
-//     &:hover {
-//         color: darken(@error-color--text,10%);
-//     }
-// }
-//
-// //  $$  SUCCESS
-// //  ----------------------------------------------------------------------------
-// .d-link--success {
-//     color: @success-color--text;
-//
-//     &:hover {
-//         color: darken(@success-color--text,40%);
-//     }
-// }
-
-//  $$  DARK
+//  ============================================================================
+//  $   ALTERNATE STYLES
+//  ============================================================================
+//  $$  WARNING
 //  ----------------------------------------------------------------------------
-.d-link--dark {
-    .d-fc-black-900();
+.d-link--warning {
+    --warning-color:            var(--yellow-500);
+    --warning-color-hover:      hsl(var(--yellow-500-h) var(--yellow-500-s) calc(var(--yellow-500-l) - 10%));
+
+    color: var(--warning-color);
 
     &:hover {
-        --light: 10%;
+        color: var(--warning-color-hover);
     }
 }
 
-// //  $$  INVERTED
-// //  ----------------------------------------------------------------------------
-// .d-link--inverted {
-//     color: var(--ash);
-//
-//     &:hover {
-//         color: var(--ash-darker);
-//     }
-// }
-//
-// //  $$  INVERTED DANGER
-// //  ----------------------------------------------------------------------------
-// .d-link--inverted--danger {
-//     color: var(--wildberry-light);
-//
-//     &:hover {
-//         color: hsl(var(--wildberry-light--h) var(--wildberry-light--s) calc(var(--wildberry-light--l) + 5%));
-//     }
-// }
+//  $$  DANGER
+//  ----------------------------------------------------------------------------
+.d-link--danger {
+    --error-color:              var(--red-500);
+    --error-color-hover:        hsl(var(--red-500-h) var(--red-500-s) calc(var(--red-500-l) - 10%));
+
+    color: var(--error-color);
+
+    &:hover {
+        color: var(--error-color-hover);
+    }
+}
+
+//  $$  SUCCESS
+//  ----------------------------------------------------------------------------
+.d-link--success {
+    color: var(--success-color);
+
+    &:hover {
+        color: var(--success-color-hover);
+    }
+}
+
+//  $$  DARK
+//  ----------------------------------------------------------------------------
+.d-link--muted {
+    color: var(--muted-color);
+
+    &:hover {
+        color: var(--muted-color-hover);
+    }
+}
+
+//  $$  INVERTED
+//  ----------------------------------------------------------------------------
+.d-link--inverted {
+    color: var(--white);
+
+    &:hover {
+        color: var(--black-100);
+    }
+}
+
+//  $$  INVERTED DANGER
+//  ----------------------------------------------------------------------------
+.d-link--inverted.d-link--danger {
+    --error-color:         var(--red-100);
+    --error-color-hover:   hsl(var(--red-100-h) var(--red-100-s) calc(var(--red-100-l) - 10%));
+
+    color: var(--error-color);
+
+    &:hover {
+        color: var(--error-color-hover);
+    }
+}
