@@ -11,6 +11,13 @@
 //  $   BASE WRAPPER
 //  ----------------------------------------------------------------------------
 .d-banner {
+    //  Component CSS Vars
+    //  ------------------------------------------------------------------------
+    --banner--bc:           hsla(var(--black-700-h) var(--black-700-s) var(--black-700-l) ~" / " 40%);
+    --banner--bgc:          var(--black-050);
+    --banner--fc:           var(--black-800);
+
+    box-sizing: border-box;
     position: fixed;
     z-index: var(--zi-navigation-fixed);
     top: 0;
@@ -20,19 +27,19 @@
     width: 100%;
     min-height: var(--su48);
 
-    border-top: 1px solid var(--black-100);
-    border-bottom: 1px solid var(--black-100);
+    border-top: 1px solid var(--banner--bc);
+    border-bottom: 1px solid var(--banner--bc);
     border-radius: 0;
-    background-color: var(--black-050);
+    background-color: var(--banner--bgc);
     box-shadow: none;
     font-size: var(--fs14);
     line-height: var(--lh6);
-    color: inherit;
+    color: var(--banner--fc);
     transform: translate3d(0,var(--topbar-height),0);
 
     // If you want to hide and reveal the banner
     &[aria-hidden="true"] {
-        --topbar-height: -(var(--sun64));
+        --topbar-height: var(--sun64);
         visibility: hidden;
         opacity: 0;
     }
@@ -62,7 +69,7 @@
     margin: 0 auto;
     display: flex;
     align-items: center;
-    padding: (@su6 - @su1) @su16;
+    padding: calc(var(--su6) - var(--su1)) var(--su16);
     width: 100%;
     max-width: 128rem;
     min-height: 100%;
@@ -75,20 +82,3 @@
         .d-flow4();
     }
 }
-
-
-//  ============================================================================
-//  $   STYLES
-//  ----------------------------------------------------------------------------
-// .d-banner--info {
-//     border-color: darken(@blue-lighter,10%);
-// }
-// .d-banner--warning {
-//     border-color: darken(@sunflower-lighter,10%);
-// }
-// .d-banner--error {
-//     border-color: darken(@wildberry-lighter,10%);
-// }
-// .d-banner--success {
-//     border-color: darken(@bright-emerald-lighter,10%);
-// }

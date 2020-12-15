@@ -10,21 +10,30 @@
 //  $   BASE WRAPPER
 //  ----------------------------------------------------------------------------
 .d-notice {
+    //  Component CSS Vars
+    //  ------------------------------------------------------------------------
+    --notice--bc:           hsla(var(--black-700-h) var(--black-700-s) var(--black-700-l) ~" / " 40%);
+    --notice--bgc:          var(--black-050);
+    --notice--fc:           var(--black-800);
+
+    //  Base Styles
+    //  ------------------------------------------------------------------------
+    box-sizing: border-box;
     display: flex;
     align-items: center;
     padding: var(--su16);
     width: 100%;
     max-width: @fixed-size5;
 
-    border: 1px solid hsla(var(--black-700-hsl) ~" / " 40%);
-    border-radius: @border-radius--sm;
-    background-color: var(--black-050);
+    border: 1px solid var(--notice--bc);
+    border-radius: var(--br4);
+    background-color: var(--notice--bgc);
     font-size: var(--fs14);
     line-height: var(--lh6);
-    color: var(--black-800);
+    color: var(--notice--fc);
 
     a[href]:hover {
-        color: var(--black-900);
+        --notice--fc: var(--black-900);
     }
 
     .d-toast & {
@@ -34,17 +43,6 @@
     }
 
     .d-flow16();
-}
-
-.d-notice.d-notice--important,
-.d-banner.d-banner--important {
-    border-color: transparent;
-    background-color: var(--black-700);
-    color: var(--white);
-
-    .d-notice__icon {
-        color: inherit;
-    }
 }
 
 //  ============================================================================
@@ -75,7 +73,7 @@
     .d-flow4();
 }
 
-// --  Button
+// --  Buttons
 .d-notice__btn {
     padding: calc(var(--su8) - var(--su1));
     color: inherit;
@@ -87,17 +85,36 @@
         padding: var(--su8);
     }
 
-    // &:hover,
-    // &:active {
-    //     background-color: fade(@slate, 5%);
-    //     color: inherit;
-    // }
-    // &:active {
-    //     border-color: var(--slate-lightest);
-    // }
-    // &:focus {
-    //     box-shadow: 0 0 0 @spacing4 fade(@slate, 10%);
-    // }
+    &:hover,
+    &:active {
+        background-color: hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l) ~" / " 5%);
+        color: inherit;
+    }
+    &:active {
+        border-color: var(--black-600);
+    }
+    &:focus {
+        box-shadow: 0 0 0 var(--su4) hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l) ~" / " 10%);
+    }
+
+    .d-btn__icon {
+        font-size: var(--fs10);     //  Set font-size 10px to make icon sizing easier
+
+        &,
+        .d-svg {
+            width: 1.8em;
+            height: 1.8em;
+        }
+    }
+}
+
+.d-notice__btn--close {
+    .d-btn__label {
+        display: none;
+    }
+    .d-btn__icon {
+        margin: unset;
+    }
 }
 
 //  ============================================================================
@@ -111,23 +128,51 @@
 //  ============================================================================
 //  $   STYLES
 //  ============================================================================
+//  $$  DEFAULT IMPORTANT
+//  ----------------------------------------------------------------------------
+.d-notice.d-notice--important,
+.d-banner.d-banner--important {
+    --notice--bc:           transparent;
+    --notice--bgc:          var(--black-700);
+    --notice--fc:           var(--white);
+    --banner--bc:           transparent;
+    --banner--bgc:          var(--black-700);
+    --banner--fc:           var(--white);
+
+    .d-notice__btn {
+        &:hover,
+        &:active {
+            background-color: hsla(var(--black-100-h) var(--black-100-s) var(--black-100-l) ~" / " 10%);
+        }
+        &:active {
+            border-color: hsla(var(--black-100-h) var(--black-100-s) var(--black-100-l) ~" / " 40%);
+        }
+        &:focus {
+            box-shadow: 0 0 0 var(--su4) hsla(var(--black-100-h) var(--black-100-s) var(--black-100-l) ~" / " 25%);
+        }
+    }
+
+    .d-notice__icon {
+        color: inherit;
+    }
+}
 //  $$  INFO
 //  ----------------------------------------------------------------------------
 .d-notice--info,
 .d-banner--info {
     background-color: var(--blue-100);
-    border-color: hsla(var(--blue-700-hsl) ~" / " 40%);
+    border-color: hsla(var(--blue-700-h) var(--blue-700-s) var(--blue-700-l) ~" / " 40%);
 
-    // .d-notice__btn {
-    //     &:hover,
-    //     &:active {
-    //         background-color: hsla(var(--blue-100-hsl) ~" / " 15%);
-    //         color: inherit;
-    //     }
-    //     &:active {
-    //         border-color: var(--blue-400);
-    //     }
-    // }
+    .d-notice__btn {
+        &:hover,
+        &:active {
+            background-color: hsla(var(-blue-100-h) var(-blue-100-s) var(-blue-100-l) ~" / " 15%);
+            color: inherit;
+        }
+        &:active {
+            border-color: var(--blue-400);
+        }
+    }
 
     .d-notice__icon {
         color: var(--blue-600);
@@ -138,18 +183,18 @@
         background-color: var(--blue-300);
         color: var(--black-900);
 
-        // .d-notice__btn {
-        //     &:hover,
-        //     &:active {
-        //         background-color: fade(@blue-dark, 10%);
-        //     }
-        //     &:active {
-        //         border-color: fade(@blue-dark, 40%);
-        //     }
-        //     &:focus {
-        //         box-shadow: 0 0 0 @spacing4 fade(@blue-dark, 25%);
-        //     }
-        // }
+        .d-notice__btn {
+            &:hover,
+            &:active {
+                background-color: hsla(var(--blue-500-h) var(--blue-500-s) var(--blue-500-l) ~" / " 10%);
+            }
+            &:active {
+                border-color: hsla(var(--blue-500-h) var(--blue-500-s) var(--blue-500-l) ~" / " 40%);
+            }
+            &:focus {
+                box-shadow: 0 0 0 var(--su4) hsla(var(--blue-500-h) var(--blue-500-s) var(--blue-500-l) ~" / " 25%);
+            }
+        }
     }
 }
 
@@ -158,21 +203,21 @@
 .d-notice--warning,
 .d-banner--warning {
     background-color: var(--yellow-100);
-    border-color: hsla(var(--yellow-500-hsl) ~" / " 40%);
+    border-color: hsla(var(--yellow-500-h) var(--yellow-500-s) var(--yellow-500-l) ~" / " 40%);
 
-    // .d-notice__btn {
-    //     &:hover,
-    //     &:active {
-    //         background-color: fade(@sunflower-light, 25%);
-    //         color: inherit;
-    //     }
-    //     &:active {
-    //         border-color: var(--sunflower-dark);
-    //     }
-    //     &:focus {
-    //         box-shadow: 0 0 0 @spacing4 fade(@sunflower-dark, 25%);
-    //     }
-    // }
+    .d-notice__btn {
+        &:hover,
+        &:active {
+            background-color: hsla(var(--yellow-200-h) var(--yellow-200-s) var(--yellow-200-l) ~" / " 25%);
+            color: inherit;
+        }
+        &:active {
+            border-color: var(--yellow-500);
+        }
+        &:focus {
+            box-shadow: 0 0 0 var(--su4) hsla(var(--yellow-500-h) var(--yellow-500-s) var(--yellow-500-l) ~" / " 25%);
+        }
+    }
 
     .d-notice__icon {
         color: var(--yellow-400);
@@ -184,18 +229,18 @@
         background-color: var(--yellow-300);
         color: var(--black-800);
 
-        // .d-notice__btn {
-        //     &:hover,
-        //     &:active {
-        //         background-color: fade(@color--sunflower-text, 15%);
-        //     }
-        //     &:active {
-        //         border-color: @color--sunflower-text;
-        //     }
-        //     &:focus {
-        //         box-shadow: 0 0 0 @spacing4 fade(@color--sunflower-text,40%);
-        //     }
-        // }
+        .d-notice__btn {
+            &:hover,
+            &:active {
+                background-color: hsla(var(--yellow-600-h) var(--yellow-600-s) var(--yellow-600-l) ~" / " 15%);
+            }
+            &:active {
+                border-color: var(--yellow-600);
+            }
+            &:focus {
+                box-shadow: 0 0 0 var(--su4) hsla(var(--yellow-600-h) var(--yellow-600-s) var(--yellow-600-l) ~" / " 40%);
+            }
+        }
     }
 }
 
@@ -204,21 +249,21 @@
 .d-notice--error,
 .d-banner--error {
     background-color: var(--red-100);
-    border-color: hsla(var(--red-500-hsl) ~" / " 40%);
+    border-color: hsla(var(--red-500-h) var(--red-500-s) var(--red-500-l) ~" / " 40%);
 
-    // .d-notice__btn {
-    //     &:hover,
-    //     &:active {
-    //         background-color: fade(@wildberry-light, 15%);
-    //         color: inherit;
-    //     }
-    //     &:active {
-    //         border-color: var(--wildberry);
-    //     }
-    //     &:focus {
-    //         box-shadow: 0 0 0 @spacing4 fade(@wildberry, 25%);
-    //     }
-    // }
+    .d-notice__btn {
+        &:hover,
+        &:active {
+            background-color: hsla(var(--red-100-h) var(--red-100-s) var(--red-100-l) ~" / " 15%);
+            color: inherit;
+        }
+        &:active {
+            border-color: var(--red-400);
+        }
+        &:focus {
+            box-shadow: 0 0 0 var(--su4) hsla(var(--red-500-h) var(--red-500-s) var(--red-500-l) ~" / " 25%);
+        }
+    }
 
     .d-notice__icon {
         color: var(--red-400);
@@ -230,18 +275,18 @@
         background-color: var(--red-300);
         color: var(--black-800);
 
-        // .d-notice__btn {
-        //     &:hover,
-        //     &:active {
-        //         background-color: fade(@rose-light, 20%);
-        //     }
-        //     &:active {
-        //         border-color: fade(@rose-light, 75%);
-        //     }
-        //     &:focus {
-        //         box-shadow: 0 0 0 @spacing4 fade(@rose-light, 40%);
-        //     }
-        // }
+        .d-notice__btn {
+            &:hover,
+            &:active {
+                background-color: hsla(var(--red-200-h) var(--red-200-s) var(--red-200-l) ~" / " 20%);
+            }
+            &:active {
+                border-color: hsla(var(--red-200-h) var(--red-200-s) var(--red-200-l) ~" / " 75%);
+            }
+            &:focus {
+                box-shadow: 0 0 0 var(--su4) hsla(var(--red-200-h) var(--red-200-s) var(--red-200-l) ~" / " 40%);
+            }
+        }
     }
 }
 
@@ -250,21 +295,21 @@
 .d-notice--success,
 .d-banner--success {
     background-color: var(--green-100);
-    border-color: hsla(var(--green-500-hsl) ~" / " 40%);
+    border-color: hsla(var(--green-500-h) var(--green-500-s) var(--green-500-l) ~" / " 40%);
 
-    // .d-notice__btn {
-    //     &:hover,
-    //     &:active {
-    //         background-color: fade(@bright-emerald-light, 25%);
-    //         color: inherit;
-    //     }
-    //     &:active {
-    //         border-color: fade(@bright-emerald-dark,75%);
-    //     }
-    //     &:focus {
-    //         box-shadow: 0 0 0 @spacing4 fade(@bright-emerald, 25%);
-    //     }
-    // }
+    .d-notice__btn {
+        &:hover,
+        &:active {
+            background-color: hsla(var(--green-200-h) var(--green-200-s) var(--green-200-l) ~" / " 25%);
+            color: inherit;
+        }
+        &:active {
+            border-color: hsla(var(--green-500-h) var(--green-500-s) var(--green-500-l) ~" / " 75%);
+        }
+        &:focus {
+            box-shadow: 0 0 0 var(--su4) hsla(var(--green-400-h) var(--green-400-s) var(--green-400-l) ~" / " 25%);
+        }
+    }
 
     .d-notice__icon {
         color: var(--green-400);
@@ -276,21 +321,21 @@
         background-color: var(--green-300);
         color: var(--black-800);
 
-        // a:hover {
-        //     color: var(--bright-emerald-lighter);
-        // }
-        //
-        // .d-notice__btn {
-        //     &:hover,
-        //     &:active {
-        //         background-color: fade(@emerald-lighter, 15%);
-        //     }
-        //     &:active {
-        //         border-color: fade(@emerald-lighter, 75%);
-        //     }
-        //     &:focus {
-        //         box-shadow: 0 0 0 @spacing4 fade(@emerald-lighter, 25%);
-        //     }
-        // }
+        a:hover {
+            color: var(--green-100);
+        }
+
+        .d-notice__btn {
+            &:hover,
+            &:active {
+                background-color: hsla(var(--green-200-h) var(--green-200-s) var(--green-200-l) ~" / " 15%);
+            }
+            &:active {
+                border-color: hsla(var(--green-300-h) var(--green-300-s) var(--green-300-l) ~" / " 75%);
+            }
+            &:focus {
+                box-shadow: 0 0 0 var(--su4) hsla(var(--green-300-h) var(--green-300-s) var(--green-300-l) ~" / " 25%);
+            }
+        }
     }
 }
