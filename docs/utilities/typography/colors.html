@@ -3,7 +3,7 @@ layout: page
 title: Colors
 description: Dialtone provides a limited set of text-color utility variables and classes.
 ---
-<aside class="d-p16 d-border-radius--sm d-w-75ch d-background-color--blue-lighter d-fc-dark d-fs16 d-lh4 d-stack8">
+<aside class="d-p16 d-border-radius--sm d-w-75ch d-bgc-blue-100 d-fc-dark d-fs16 d-lh4 d-stack8">
     <p class="d-m0"><strong>Note:</strong> New variables and classes were introduced with Dialtone v5.8.0. Whereas previous class names and variables used a "t-shirt" sizing method (sm, md, lg, etc), the new classes and variables explicitly state the desired size in the name.</p>
     <p class="d-m0">The older classes and variables are still available, but they will no longer be supported and will be removed in a future version of Dialtone.</p>
 </aside>
@@ -21,7 +21,7 @@ description: Dialtone provides a limited set of text-color utility variables and
                 <th scope="col">Color</th>
                 <th scope="col">CSS Var</th>
                 <th scope="col">Less Var</th>
-                <th scope="col" class="d-opacity50 d-background-color--ash">Deprecated Less Var</th>
+                <th scope="col" class="d-opacity50 d-bgc-black-050">Deprecated Less Var</th>
                 <th scope="col">Output</th>
             </tr>
         </thead>
@@ -37,7 +37,7 @@ description: Dialtone provides a limited set of text-color utility variables and
                         <th scope="row">{{ color | capitalize }}</th>
                         <td>var(--fc-{{ stop }})</td>
                         <td>@fc-{{ stop }}</td>
-                        <td class="d-opacity50 d-background-color--ash">@color--{{ stop }}</td>
+                        <td class="d-opacity50 d-bgc-black-050">@color--{{ stop }}</td>
                         <td>{{ hex }}</td>
                     </tr>
                     {% endif %}
@@ -56,7 +56,7 @@ description: Dialtone provides a limited set of text-color utility variables and
             <tr>
                 <th scope="col">Color</th>
                 <th scope="col">Class</th>
-                <th scope="col" class="d-opacity50 d-background-color--ash">Deprecated Class</th>
+                <th scope="col" class="d-opacity50 d-bgc-black-050">Deprecated Class</th>
                 <th scope="col">Output</th>
             </tr>
         </thead>
@@ -73,13 +73,13 @@ description: Dialtone provides a limited set of text-color utility variables and
                         {% endif %}
                         <td>.d-fc-{{ stop }}</td>
                         {% if stop contains "text" %}
-                            <td class="d-opacity50 d-background-color--ash">.d-color--{{ stop }}</td>
+                            <td class="d-opacity50 d-bgc-black-050">.d-color--{{ stop }}</td>
                         {% elsif color contains "ash" %}
-                            <td class="d-opacity50 d-background-color--ash">.d-color--{{ old }}</td>
+                            <td class="d-opacity50 d-bgc-black-050">.d-color--{{ old }}</td>
                         {% elsif color contains "slate" %}
-                            <td class="d-opacity50 d-background-color--ash">.d-color--{{ old }}</td>
+                            <td class="d-opacity50 d-bgc-black-050">.d-color--{{ old }}</td>
                         {% else %}
-                            <td class="d-opacity50 d-background-color--ash d-fc-slate-lightest d-fs-italic">N/A</td>
+                            <td class="d-opacity50 d-bgc-black-050 d-fc-black-600 d-fs-italic">N/A</td>
                         {% endif %}
                         <td>color: var(--{% if stop contains "text" %}fc-{% endif %}{{ stop }}) !important;</td>
                     </tr>
@@ -100,10 +100,10 @@ description: Dialtone provides a limited set of text-color utility variables and
                     {% assign bg = s.bg %}
                     {% assign ratio = s.ratio %}
                     {% assign hex = s.hex %}
-                    <div class="dialtone-color-grid__item d-background-color--{{ bg }} d-fc-{{ stop }}">
+                    <div class="dialtone-color-grid__item d-bgc-{{ bg }} d-fc-{{ stop }}">
                         <div class="dialtone-color-grid__label">.d-fc-{{ stop }}</div>
                         <div class="dialtone-color-grid__ratio">
-                            <div class="dialtone-color-badge d-background-color--{% if ratio >= '07.00' %}green{% else %}yellow{% endif %} d-fc-{% if ratio >= '07.00' %}green-text{% else %}yellow-text{% endif %}">AA{% if ratio >= "07.00" %}A{% endif %}</div>
+                            <div class="dialtone-color-badge d-bgc-{% if ratio >= '07.00' %}green-300{% else %}yellow-400{% endif %} d-fc-dark">AA{% if ratio >= "07.00" %}A{% endif %}</div>
                             <div>{{ ratio }}</div>
                         </div>
                     </div>
