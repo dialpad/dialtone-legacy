@@ -2386,6 +2386,142 @@ legend.d-label {
 .d-toast-wrapper > * + * {
   margin-top: 0.6rem !important;
 }
+.d-tooltip {
+  --tooltip--bgc: hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l)  /  95%);
+  --tooltip--fc: var(--black-050);
+  visibility: hidden;
+  position: absolute;
+  z-index: var(--zi-tooltip);
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 21.6rem;
+  padding: var(--su8) var(--su8) var(--su6);
+  border-radius: var(--br4);
+  background-color: var(--tooltip--bgc);
+  opacity: 0;
+  color: var(--tooltip--fc);
+  font-size: var(--fs12);
+  line-height: var(--lh-normal);
+  transition: visibility 0s 200ms, opacity 200ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, -webkit-transform 200ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+  transition: visibility 0s 200ms, transform 200ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, opacity 200ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+  transition: visibility 0s 200ms, transform 200ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, opacity 200ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, -webkit-transform 200ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+}
+.d-tooltip::before {
+  content: "";
+  position: absolute;
+  border: var(--su6) solid transparent;
+}
+.d-tooltip--inverted {
+  --tooltip--bgc: hsla(var(--black-050-h) var(--black-050-s) var(--black-050-l)  /  98%);
+  --tooltip--fc: var(--fc-medium);
+}
+.d-tooltip--hover:hover .d-tooltip {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+  transition: visibility 0s 0s, opacity 200ms cubic-bezier(0.645, 0.045, 0.355, 1) 10ms, -webkit-transform 200ms cubic-bezier(0.645, 0.045, 0.355, 1) 10ms;
+  transition: visibility 0s 0s, transform 200ms cubic-bezier(0.645, 0.045, 0.355, 1) 10ms, opacity 200ms cubic-bezier(0.645, 0.045, 0.355, 1) 10ms;
+  transition: visibility 0s 0s, transform 200ms cubic-bezier(0.645, 0.045, 0.355, 1) 10ms, opacity 200ms cubic-bezier(0.645, 0.045, 0.355, 1) 10ms, -webkit-transform 200ms cubic-bezier(0.645, 0.045, 0.355, 1) 10ms;
+}
+.d-tooltip__top-left,
+.d-tooltip__top-center,
+.d-tooltip__top-right {
+  top: calc(100% + var(--su12));
+  -webkit-transform: translateY(var(--su16));
+          transform: translateY(var(--su16));
+}
+.d-tooltip__top-left::before,
+.d-tooltip__top-center::before,
+.d-tooltip__top-right::before {
+  top: var(--sun6);
+  border-top-width: 0;
+  border-bottom-color: var(--tooltip--bgc);
+}
+.d-tooltip__bottom-left,
+.d-tooltip__bottom-center,
+.d-tooltip__bottom-right {
+  bottom: calc(100% + var(--su12));
+  -webkit-transform: translateY(var(--sun16));
+          transform: translateY(var(--sun16));
+}
+.d-tooltip__bottom-left::before,
+.d-tooltip__bottom-center::before,
+.d-tooltip__bottom-right::before {
+  bottom: var(--sun6);
+  border-top-color: var(--tooltip--bgc);
+  border-bottom-width: 0;
+}
+.d-tooltip__top-left,
+.d-tooltip__bottom-left {
+  left: var(--sun2);
+}
+.d-tooltip__top-left::before,
+.d-tooltip__bottom-left::before {
+  left: var(--su16);
+}
+.d-tooltip__top-center::before,
+.d-tooltip__bottom-center::before {
+  left: 50%;
+  margin-left: var(--sun6);
+}
+.d-tooltip__top-right,
+.d-tooltip__bottom-right {
+  right: var(--sun2);
+}
+.d-tooltip__top-right::before,
+.d-tooltip__bottom-right::before {
+  right: var(--su16);
+}
+.d-tooltip__right-top,
+.d-tooltip__right-center,
+.d-tooltip__right-bottom {
+  right: calc(100% + var(--su12));
+  -webkit-transform: translateX(var(--sun16));
+          transform: translateX(var(--sun16));
+}
+.d-tooltip__right-top::before,
+.d-tooltip__right-center::before,
+.d-tooltip__right-bottom::before {
+  right: var(--sun6);
+  border-right-width: 0;
+  border-left-color: var(--tooltip--bgc);
+}
+.d-tooltip__left-top,
+.d-tooltip__left-center,
+.d-tooltip__left-bottom {
+  left: calc(100% + var(--su12));
+  -webkit-transform: translateX(var(--su16));
+          transform: translateX(var(--su16));
+}
+.d-tooltip__left-top::before,
+.d-tooltip__left-center::before,
+.d-tooltip__left-bottom::before {
+  left: var(--sun6);
+  border-right-color: var(--tooltip--bgc);
+  border-left-width: 0;
+}
+.d-tooltip__right-top,
+.d-tooltip__left-top {
+  top: var(--sun1);
+}
+.d-tooltip__right-top::before,
+.d-tooltip__left-top::before {
+  top: var(--su8);
+}
+.d-tooltip__right-center::before,
+.d-tooltip__left-center::before {
+  top: 50%;
+  margin-top: var(--sun6);
+}
+.d-tooltip__right-bottom,
+.d-tooltip__left-bottom {
+  bottom: var(--sun1);
+}
+.d-tooltip__right-bottom::before,
+.d-tooltip__left-bottom::before {
+  bottom: var(--su8);
+}
 .d-breadcrumbs > ol {
   list-style: none;
   display: flex;
