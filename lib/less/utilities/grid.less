@@ -16,18 +16,19 @@
 //  ============================================================================
 //  $   GRID CSS VARIABLES
 //  ----------------------------------------------------------------------------
-:root {
+@grid-vars: {
     //  Grid Layout Variables
-    --grid-sidebar-col:     minmax(19.2rem, 38.4rem);
-    --grid-content-col:     minmax(min-content, 128rem);
-    --grid-header-row:      minmax(12.8rem, min-content);
-    --grid-content-row:     minmax(51.2rem, max-content);
+    sidebar--width:             minmax(26rem, 32rem);
+    content--width:             minmax(min-content, 128rem);
+    header--height:             minmax(6.4rem, min-content);
+    content--height:            minmax(64rem, max-content);
 
     //  Grid Columns
-    --grid-col:             12;
-    --grid-col-width:       minmax(min-content, 25.6rem);
-    --grid-auto-col:        1fr;
+    grid-columns:               12;
+    grid-column--width:         minmax(min-content, 24rem);
+    grid-column--auto:          1fr;
 }
+
 
 //  ============================================================================
 //  $   DISPLAY
@@ -37,23 +38,23 @@
 //  ============================================================================
 //  $   GRID LAYOUTS
 //  ----------------------------------------------------------------------------
-.d-grid-layout--with-columns {
+.d-g-columns {
     display: grid;
-    grid-template-columns: [full-start] repeat(var(--grid-col), [col-start] var(--grid-col-width) [col-end]) [full-end];
-    grid-auto-columns: var(--grid-auto-col);
+    grid-template-columns: [full-start] repeat(var(--grid-columns), [col-start] var(--grid-column--width) [col-end]) [full-end];
+    grid-auto-columns: var(--grid-column--auto);
 }
 
-.d-grid-layout--with-sidebar-content {
+.d-g-sidebar {
     display: grid;
     grid-template-areas: "sidebar content";
-    grid-template-columns: [sidebar-start] var(--grid-sidebar-col) [sidebar-end content-start] var(--grid-content-col) [content-end];
+    grid-template-columns: [sidebar-start] var(--sidebar--width) [sidebar-end content-start] var(--content--width) [content-end];
 }
 
-.d-grid-layout--with-header-content {
+.d-g-header {
     display: grid;
     grid-template-areas: "header"
                          "content";
-    grid-template-rows: [header-start] var(--grid-header-row) [header-end content-start] var(--grid-content-row) [content-end];
+    grid-template-rows: [header-start] var(--header--height) [header-end content-start] var(--content--height) [content-end];
     grid-auto-rows: 1fr;
     grid-auto-columns: minmax(min-content, auto);
 }
@@ -64,58 +65,69 @@
 //      Defines the size of grid "gaps" (lines). We generate a gap for
 //      each defined spacing unit.
 //  ----------------------------------------------------------------------------
-.d-grid-gap0          { grid-gap: @su0; }
-.d-grid-gap1          { grid-gap: @su1; }
-.d-grid-gap2          { grid-gap: @su2; }
-.d-grid-gap4          { grid-gap: @su4; }
-.d-grid-gap6          { grid-gap: @su6; }
-.d-grid-gap8          { grid-gap: @su8; }
-.d-grid-gap12         { grid-gap: @su12; }
-.d-grid-gap16         { grid-gap: @su16; }
-.d-grid-gap24         { grid-gap: @su24; }
-.d-grid-gap32         { grid-gap: @su32; }
-.d-grid-gap48         { grid-gap: @su48; }
-.d-grid-gap64         { grid-gap: @su64; }
+//  All Gaps
+.d-gg0                  { grid-gap: var(--su0) !important; }
+.d-gg1                  { grid-gap: var(--su1) !important; }
+.d-gg2                  { grid-gap: var(--su2) !important; }
+.d-gg4                  { grid-gap: var(--su4) !important; }
+.d-gg6                  { grid-gap: var(--su6) !important; }
+.d-gg8                  { grid-gap: var(--su8) !important; }
+.d-gg12                 { grid-gap: var(--su12) !important; }
+.d-gg16                 { grid-gap: var(--su16) !important; }
+.d-gg24                 { grid-gap: var(--su24) !important; }
+.d-gg32                 { grid-gap: var(--su32) !important; }
+.d-gg48                 { grid-gap: var(--su48) !important; }
+.d-gg64                 { grid-gap: var(--su64) !important; }
 
-.d-grid-row-gap0      { grid-row-gap: @su0; }
-.d-grid-row-gap1      { grid-row-gap: @su1; }
-.d-grid-row-gap2      { grid-row-gap: @su2; }
-.d-grid-row-gap4      { grid-row-gap: @su4; }
-.d-grid-row-gap6      { grid-row-gap: @su6; }
-.d-grid-row-gap8      { grid-row-gap: @su8; }
-.d-grid-row-gap12     { grid-row-gap: @su12; }
-.d-grid-row-gap16     { grid-row-gap: @su16; }
-.d-grid-row-gap24     { grid-row-gap: @su24; }
-.d-grid-row-gap32     { grid-row-gap: @su32; }
-.d-grid-row-gap48     { grid-row-gap: @su48; }
-.d-grid-row-gap64     { grid-row-gap: @su64; }
+//  Row Gaps
+.d-grg0                 { grid-row-gap: var(--su0) !important; }
+.d-grg1                 { grid-row-gap: var(--su1) !important; }
+.d-grg2                 { grid-row-gap: var(--su2) !important; }
+.d-grg4                 { grid-row-gap: var(--su4) !important; }
+.d-grg6                 { grid-row-gap: var(--su6) !important; }
+.d-grg8                 { grid-row-gap: var(--su8) !important; }
+.d-grg12                { grid-row-gap: var(--su12) !important; }
+.d-grg16                { grid-row-gap: var(--su16) !important; }
+.d-grg24                { grid-row-gap: var(--su24) !important; }
+.d-grg32                { grid-row-gap: var(--su32) !important; }
+.d-grg48                { grid-row-gap: var(--su48) !important; }
+.d-grg64                { grid-row-gap: var(--su64) !important; }
 
-.d-grid-column-gap0   { grid-column-gap: @su0; }
-.d-grid-column-gap1   { grid-column-gap: @su1; }
-.d-grid-column-gap2   { grid-column-gap: @su2; }
-.d-grid-column-gap4   { grid-column-gap: @su4; }
-.d-grid-column-gap6   { grid-column-gap: @su6; }
-.d-grid-column-gap8   { grid-column-gap: @su8; }
-.d-grid-column-gap12  { grid-column-gap: @su12; }
-.d-grid-column-gap16  { grid-column-gap: @su16; }
-.d-grid-column-gap24  { grid-column-gap: @su24; }
-.d-grid-column-gap32  { grid-column-gap: @su32; }
-.d-grid-column-gap48  { grid-column-gap: @su48; }
-.d-grid-column-gap64  { grid-column-gap: @su64; }
+//  Column Gaps
+.d-gcg0                 { grid-column-gap: var(--su0) !important; }
+.d-gcg1                 { grid-column-gap: var(--su1) !important; }
+.d-gcg2                 { grid-column-gap: var(--su2) !important; }
+.d-gcg4                 { grid-column-gap: var(--su4) !important; }
+.d-gcg6                 { grid-column-gap: var(--su6) !important; }
+.d-gcg8                 { grid-column-gap: var(--su8) !important; }
+.d-gcg12                { grid-column-gap: var(--su12) !important; }
+.d-gcg16                { grid-column-gap: var(--su16) !important; }
+.d-gcg24                { grid-column-gap: var(--su24) !important; }
+.d-gcg32                { grid-column-gap: var(--su32) !important; }
+.d-gcg48                { grid-column-gap: var(--su48) !important; }
+.d-gcg64                { grid-column-gap: var(--su64) !important; }
 
 
 //  ============================================================================
 //  $   GRID COLUMN SPANS
 //  ----------------------------------------------------------------------------
-.d-grid-column--span1  { grid-column-start: span var(--gcs-span, 1); }
-.d-grid-column--span2  { grid-column-start: span var(--gcs-span, 2); }
-.d-grid-column--span3  { grid-column-start: span var(--gcs-span, 3); }
-.d-grid-column--span4  { grid-column-start: span var(--gcs-span, 4); }
-.d-grid-column--span5  { grid-column-start: span var(--gcs-span, 5); }
-.d-grid-column--span6  { grid-column-start: span var(--gcs-span, 6); }
-.d-grid-column--span7  { grid-column-start: span var(--gcs-span, 7); }
-.d-grid-column--span8  { grid-column-start: span var(--gcs-span, 8); }
-.d-grid-column--span9  { grid-column-start: span var(--gcs-span, 9); }
-.d-grid-column--span10 { grid-column-start: span var(--gcs-span, 10); }
-.d-grid-column--span11 { grid-column-start: span var(--gcs-span, 11); }
-.d-grid-column--span12 { grid-column-start: span var(--gcs-span, 12); }
+.d-gc-span1             { grid-column-start: span 1 !important; }
+.d-gc-span2             { grid-column-start: span 2 !important; }
+.d-gc-span3             { grid-column-start: span 3 !important; }
+.d-gc-span4             { grid-column-start: span 4 !important; }
+.d-gc-span5             { grid-column-start: span 5 !important; }
+.d-gc-span6             { grid-column-start: span 6 !important; }
+.d-gc-span7             { grid-column-start: span 7 !important; }
+.d-gc-span8             { grid-column-start: span 8 !important; }
+.d-gc-span9             { grid-column-start: span 9 !important; }
+.d-gc-span10            { grid-column-start: span 10 !important; }
+.d-gc-span11            { grid-column-start: span 11 !important; }
+.d-gc-span12            { grid-column-start: span 12 !important; }
+
+
+//  ============================================================================
+//  $   GRID AREAS
+//  ----------------------------------------------------------------------------
+.g-ga--sidebar          { grid-area: sidebar !important; }
+.g-ga--content          { grid-area: content !important; }
+.g-ga--header           { grid-area: header !important; }

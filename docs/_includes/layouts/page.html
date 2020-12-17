@@ -2,23 +2,25 @@
 <html lang="en">
     {% include head.html %}
     <body>
-        {% include header.html %}
-        <div class="dialtone-wrapper">
-            {% include nav.html %}
+        <div class="d-stack16">
+            {% include header.html %}
 
-            <main class="dialtone-main">
-                <header class="dialtone-main__header">
-                    {% if title %}
-                        <h1 class="dialtone-title__page">{{ title }}</h1>
-                    {% endif %}
-                    {% if description %}
-                        <p class="dialtone-copy__lead">{{ description }}</p>
-                    {% endif %}
-                </header>
-                <div class="dialtone-main__content">
-                    {{ content }}
-                </div>
-            </main>
+            <div class="d-d-grid d-g-sidebar d-p16">
+                {% include nav.html %}
+                <main class="d-ga--content">
+                    <header class="dialtone-main__header">
+                        {% if title %}
+                            <h1 class="dialtone-title__page">{{ title }}</h1>
+                        {% endif %}
+                        {% if description %}
+                            <p class="dialtone-copy__lead">{{ description }}</p>
+                        {% endif %}
+                    </header>
+                    <div class="dialtone-main__content">
+                        {{ content }}
+                    </div>
+                </main>
+            </div>
         </div>
 
         {% include docsearch-js.html %}

@@ -146,9 +146,12 @@ h1, h2, h3, h4, h5, h6, p, ol, ul {
 //  $   LISTS
 //  ----------------------------------------------------------------------------
 .d-ls-reset {
-    margin: @su0 !important;
-    padding: @su0 !important;
-    .d-ls-none();
+    //  We want to reset everything when applied
+    &, li, ol, ul {
+        margin: @su0 !important;
+        padding: @su0 !important;
+        .d-ls-none();
+    }
 }
 .d-ls-none                      { list-style: none !important; }
 .d-lst-none                     { list-style-type: none !important; }
