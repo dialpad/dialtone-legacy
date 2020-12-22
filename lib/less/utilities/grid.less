@@ -18,15 +18,15 @@
 //  ----------------------------------------------------------------------------
 @grid-vars: {
     //  Grid Layout Variables
-    sidebar--width:             minmax(26rem, 32rem);
-    content--width:             minmax(min-content, 128rem);
-    header--height:             minmax(6.4rem, min-content);
-    content--height:            minmax(64rem, max-content);
+    sidebar-width:              minmax(20rem, 30rem);
+    content-width:              minmax(32rem, max-content);
+    header-height:              minmax(6.4rem, min-content);
+    content-height:             minmax(64rem, max-content);
 
     //  Grid Columns
     grid-columns:               12;
-    grid-column--width:         minmax(min-content, 24rem);
-    grid-column--auto:          1fr;
+    grid-column-width:          minmax(min-content, 24rem);
+    grid-column-auto:           1fr;
 }
 
 
@@ -40,24 +40,40 @@
 //  ----------------------------------------------------------------------------
 .d-g-columns {
     display: grid;
-    grid-template-columns: [full-start] repeat(var(--grid-columns), [col-start] var(--grid-column--width) [col-end]) [full-end];
-    grid-auto-columns: var(--grid-column--auto);
+    grid-template-columns: [full-start] repeat(var(--grid-columns), [col-start] var(--grid-column-width) [col-end]) [full-end];
+    grid-auto-columns: var(--grid-column-auto);
 }
 
 .d-g-sidebar {
     display: grid;
     grid-template-areas: "sidebar content";
-    grid-template-columns: [sidebar-start] var(--sidebar--width) [sidebar-end content-start] var(--content--width) [content-end];
+    grid-template-columns: [sidebar-start] var(--sidebar-width) [sidebar-end content-start] var(--content-width) [content-end];
 }
 
 .d-g-header {
     display: grid;
     grid-template-areas: "header"
                          "content";
-    grid-template-rows: [header-start] var(--header--height) [header-end content-start] var(--content--height) [content-end];
+    grid-template-rows: [header-start] var(--header-height) [header-end content-start] var(--content-height) [content-end];
     grid-auto-rows: 1fr;
     grid-auto-columns: minmax(min-content, auto);
 }
+
+//  ============================================================================
+//  $   GRID COLUMNS
+//  ----------------------------------------------------------------------------
+.d-g-columns1           { --grid-columns: 1; }
+.d-g-columns2           { --grid-columns: 2; }
+.d-g-columns3           { --grid-columns: 3; }
+.d-g-columns4           { --grid-columns: 4; }
+.d-g-columns5           { --grid-columns: 5; }
+.d-g-columns6           { --grid-columns: 6; }
+.d-g-columns7           { --grid-columns: 7; }
+.d-g-columns8           { --grid-columns: 8; }
+.d-g-columns9           { --grid-columns: 9; }
+.d-g-columns10          { --grid-columns: 10; }
+.d-g-columns11          { --grid-columns: 11; }
+
 
 //  ============================================================================
 //  $   GRID GAP
@@ -128,6 +144,6 @@
 //  ============================================================================
 //  $   GRID AREAS
 //  ----------------------------------------------------------------------------
-.g-ga--sidebar          { grid-area: sidebar !important; }
-.g-ga--content          { grid-area: content !important; }
-.g-ga--header           { grid-area: header !important; }
+.d-ga--sidebar          { grid-area: sidebar !important; }
+.d-ga--content          { grid-area: content !important; }
+.d-ga--header           { grid-area: header !important; }

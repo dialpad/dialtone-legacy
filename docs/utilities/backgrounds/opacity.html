@@ -1,38 +1,15 @@
 ---
 layout: page
-title: Background Colors
-description: Dialtone provides both fill and gradient background classes. Most components have a background color set. These are to be used to override a component or for one-off designs.
+title: Background Opacity
+description: TBD
 ---
-<section class="d-stack16">
-    <h2 class="dialtone-title__section">Fills</h2>
-    <div class="dialtone-color-grid">
-    {% for color in colors.colors %}
-    {% assign c = color.color %}
-        <div class="d-stack2">
-            <h3 class="dialtone-title__subsection">{{ c | capitalize }}</h3>
-            <div class="dialtone-color-grid__group" style="--color-grid-columns: 1">
-                {% for s in color.stops %}
-                {% assign stop = s.stop %}
-                {% assign copy = s.copy %}
-                    <div class="dialtone-color-grid__item d-bgc-{{ c }}-{{ stop }} d-fc-{{ copy }}">
-                        <span class="dialtone-color-grid__label">.d-bgc-{{ c }}-{{ stop }}</span>
-                    </div>
-                {% endfor %}
-                <div class="dialtone-color-grid__item d-bgc-white d-fc-dark">
-                    <span class="dialtone-color-grid__label">.d-bgc-white</span>
-                </div>
-            </div>
-        </div>
-    {% endfor %}
-    </div>
-</section>
 <section class="d-stack16">
     <header class="d-stack12">
         <h2 class="dialtone-title__section">Background Opacity</h2>
         <p class="dialtone-copy__normal">The ability to control a background color is <em>only</em> provided as a class. We do not provide variables to control this. <strong>This class must be paired with a <span class="code-example--inline">.d-bgc-[color]</span> class to work properly.</strong> The background-color opacity class resets the background color's alpha channel CSS variable value.</p>
         <p class="dialtone-copy__normal">Starting in v5.9.0, Dialtone began providing immutable background-color classes, meaning they include an <span class="code-example--inline">!important</span> to override CSS specificity. All previous class names still exist, but are considered deprecated and should not be used moving forward. They will be removed in a future version.</p>
     </header>
-    <table class="dialtone-table dialtone-table--code">
+    <table class="d-table">
         <thead>
             <tr>
                 <th scope="col" class="d-width20">Class</th>

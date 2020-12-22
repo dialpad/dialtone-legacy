@@ -1,0 +1,52 @@
+---
+layout: page
+title: Text Decoration
+description: TBD
+---
+<section class="d-stack16">
+    <header class="d-stack2">
+        <h2 class="dialtone-title__section">Text Decoration</h2>
+        <div class="d-stack12">
+            <p class="dialtone-copy__normal">Text-decoration is a shorthand CSS property that sets the appearance of text decorative lines. It is shorthand for <span class="code-example--inline">text-decoration-line</span>, <span class="code-example--inline">text-decoration-color</span>, <span class="code-example--inline">text-decoration-style</span>, and the <span class="code-example--inline">text-decoration-thickness</span> properties.</p>
+            <p class="dialtone-copy__normal">Starting in v5.8.0, Dialtone began providing immutable type classes, meaning they include an <span class="code-example--inline">!important</span> to override CSS specificity.</p>
+        </div>
+    </header>
+    <div class="d-stack16">
+        <table class="d-table">
+            <thead>
+                <tr>
+                    <th scope="col" class="dialtone-table__column--md">Class</th>
+                    <th scope="col">Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% assign decoration = type.decoration | split: ", " %}
+                {% for i in decoration %}
+                    <tr>
+                        <th scope="row">.d-td-{{ i }}</th>
+                        <td>text-decoration: {{ i }} !important;</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="dialtone-example" data-example="yes" data-code="yes">
+            <div class="dialtone-example__example d-stack8">
+                {% assign decoration = type.decoration | split: ", " %}
+                {% for i in decoration %}
+                <div class="d-stack2">
+                    <span class="code-example--inline">.d-td-{{ i }}</span>
+                    <p class="d-lh6 d-fs18 d-m0 d-td-{{ i }}">{% if i == "unset" %}This sentence's text-decoration has been {{ i }}{% else %}This sentence has {% if i == "none" %}no{% else %}{{ i }}{% endif %} text-decoration.{% endif %}</p>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="dialtone-example__code">
+                {% highlight html linenos %}
+<p class="d-td-none">…</p>
+<p class="d-td-underline">…</p>
+<p class="d-td-dotted">…</p>
+<p class="d-td-unset">…</p>
+                {% endhighlight %}
+            </div>
+        </div>
+    </div>
+</section>

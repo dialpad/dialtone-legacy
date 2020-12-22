@@ -95,115 +95,53 @@
 
 //  ============================================================================
 //  $  BORDER RADIUS
+//  ============================================================================
+//  $$ ALL
 //  ----------------------------------------------------------------------------
-.d-border-radius--none          { border-radius: var(--br0); }
-.d-border-radius--sm            { border-radius: var(--br4); }
-.d-border-radius--md            { border-radius: var(--br8); }
-.d-border-radius--lg            { border-radius: var(--br12); }
-.d-border-radius--xl            { border-radius: var(--br16); }
-.d-border-radius--circle        { border-radius: var(--br-circle); }
-.d-br-pill                      { border-radius: var(--br-pill) !important; }
+#auto-generate(
+    '.d-br',
+    { .template(@value) { border-radius: @value !important; } },
+    @su0 @su2 @su4 @su8 @su12 @su16 @su24 @su32 unset
+);
+.d-br-circle        { border-radius: @br-circle !important; }
+.d-br-pill          { border-radius: @br-pill !important; }
 
-//  --  Top
-.d-border-top-radius--none   {
-    border-top-left-radius: @border-radius--none;
-    border-top-right-radius: @border-radius--none;
-}
-.d-border-top-radius--sm     {
-    border-top-left-radius: @border-radius--sm;
-    border-top-right-radius: @border-radius--sm;
-}
-.d-border-top-radius--md     {
-    border-top-left-radius: @border-radius--md;
-    border-top-right-radius: @border-radius--md;
-}
-.d-border-top-radius--lg     {
-    border-top-left-radius: @border-radius--lg;
-    border-top-right-radius: @border-radius--lg;
-}
-.d-border-top-radius--xl     {
-    border-top-left-radius: @border-radius--xl;
-    border-top-right-radius: @border-radius--xl;
-}
-.d-border-top-radius--circle {
-    border-top-left-radius: @border-radius--circle;
-    border-top-right-radius: @border-radius--circle;
-}
+//  $$ TOP
+//  ----------------------------------------------------------------------------
+#auto-generate(
+    '.d-brt',
+    { .template(@value) { border-top-left-radius: @value !important; border-top-right-radius: @value !important; } },
+    @su0 @su2 @su4 @su8 @su12 @su16 @su24 @su32 unset
+);
+.d-brt-circle       { border-top-left-radius: @br-circle !important; border-top-right-radius: @br-circle !important; }
+.d-brt-pill         { border-top-left-radius: @br-pill !important;  border-top-right-radius: @br-pill !important; }
 
-//  --  Right
-.d-border-right-radius--none   {
-    border-bottom-right-radius: @border-radius--none;
-    border-top-right-radius: @border-radius--none;
-}
-.d-border-right-radius--sm     {
-    border-bottom-right-radius: @border-radius--sm;
-    border-top-right-radius: @border-radius--sm;
-}
-.d-border-right-radius--md     {
-    border-bottom-right-radius: @border-radius--md;
-    border-top-right-radius: @border-radius--md;
-}
-.d-border-right-radius--lg     {
-    border-bottom-right-radius: @border-radius--lg;
-    border-top-right-radius: @border-radius--lg;
-}
-.d-border-right-radius--xl     {
-    border-bottom-right-radius: @border-radius--xl;
-    border-top-right-radius: @border-radius--xl;
-}
-.d-border-right-radius--circle {
-    border-bottom-right-radius: @border-radius--circle;
-    border-top-right-radius: @border-radius--circle;
-}
+//  $$ RIGHT
+//  ----------------------------------------------------------------------------
+#auto-generate(
+    '.d-brr',
+    { .template(@value) { border-top-right-radius: @value !important; border-bottom-right-radius: @value !important; } },
+    @su0 @su2 @su4 @su8 @su12 @su16 @su24 @su32 unset
+);
+.d-brr-circle       { border-top-right-radius: @br-circle !important; border-bottom-right-radius: @br-circle !important; }
+.d-brr-pill         { border-top-right-radius: @br-pill !important;  border-bottom-right-radius: @br-pill !important; }
 
-//  --  Bottom
-.d-border-bottom-radius--none   {
-    border-bottom-left-radius: @border-radius--none;
-    border-bottom-right-radius: @border-radius--none;
-}
-.d-border-bottom-radius--sm     {
-    border-bottom-left-radius: @border-radius--sm;
-    border-bottom-right-radius: @border-radius--sm;
-}
-.d-border-bottom-radius--md     {
-    border-bottom-left-radius: @border-radius--md;
-    border-bottom-right-radius: @border-radius--md;
-}
-.d-border-bottom-radius--lg     {
-    border-bottom-left-radius: @border-radius--lg;
-    border-bottom-right-radius: @border-radius--lg;
-}
-.d-border-bottom-radius--xl     {
-    border-bottom-left-radius: @border-radius--xl;
-    border-bottom-right-radius: @border-radius--xl;
-}
-.d-border-bottom-radius--circle {
-    border-bottom-left-radius: @border-radius--circle;
-    border-bottom-right-radius: @border-radius--circle;
-}
+//  $$ TOP
+//  ----------------------------------------------------------------------------
+#auto-generate(
+    '.d-brb',
+    { .template(@value) { border-bottom-left-radius: @value !important; border-bottom-right-radius: @value !important; } },
+    @su0 @su2 @su4 @su8 @su12 @su16 @su24 @su32 unset
+);
+.d-brb-circle       { border-bottom-left-radius: @br-circle !important; border-bottom-right-radius: @br-circle !important; }
+.d-brb-pill         { border-bottom-left-radius: @br-pill !important;  border-bottom-right-radius: @br-pill !important; }
 
-//  --  Left
-.d-border-left-radius--none   {
-    border-top-left-radius: @border-radius--none;
-    border-bottom-left-radius: @border-radius--none;
-}
-.d-border-left-radius--sm     {
-    border-top-left-radius: @border-radius--sm;
-    border-bottom-left-radius: @border-radius--sm;
-}
-.d-border-left-radius--md     {
-    border-top-left-radius: @border-radius--md;
-    border-bottom-left-radius: @border-radius--md;
-}
-.d-border-left-radius--lg     {
-    border-top-left-radius: @border-radius--lg;
-    border-bottom-left-radius: @border-radius--lg;
-}
-.d-border-left-radius--xl     {
-    border-top-left-radius: @border-radius--xl;
-    border-bottom-left-radius: @border-radius--xl;
-}
-.d-border-left-radius--circle {
-    border-top-left-radius: @border-radius--circle;
-    border-bottom-left-radius: @border-radius--circle;
-}
+//  $$ RIGHT
+//  ----------------------------------------------------------------------------
+#auto-generate(
+    '.d-brl',
+    { .template(@value) { border-top-left-radius: @value !important; border-bottom-left-radius: @value !important; } },
+    @su0 @su2 @su4 @su8 @su12 @su16 @su24 @su32 unset
+);
+.d-brl-circle       { border-top-left-radius: @br-circle !important; border-bottom-left-radius: @br-circle !important; }
+.d-brl-pill         { border-top-left-radius: @br-pill !important;  border-bottom-left-radius: @br-pill !important; }

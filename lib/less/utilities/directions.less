@@ -21,243 +21,123 @@
 //  ============================================================================
 //  $$  TOP
 //  ----------------------------------------------------------------------------
-//  --  FIXED VALUES
-.d-t0                           { top: var(--su0) !important; }
-.d-t1                           { top: var(--su1) !important; }
-.d-t2                           { top: var(--su2) !important; }
-.d-t4                           { top: var(--su4) !important; }
-.d-t6                           { top: var(--su6) !important; }
-.d-t8                           { top: var(--su8) !important; }
-.d-t12                          { top: var(--su12) !important; }
-.d-t16                          { top: var(--su16) !important; }
-.d-t24                          { top: var(--su24) !important; }
-.d-t32                          { top: var(--su32) !important; }
-.d-t48                          { top: var(--su48) !important; }
-.d-t64                          { top: var(--su64) !important; }
+#auto-generate(
+    '.d-t',
+    { .template(@value) { top: @value !important; } },
+    @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64 @su72 @su84 @su96 @su102
+);
+#auto-generate(
+    '.d-tn',
+    { .template(@value) { top: @value !important; } },
+    -@su1 -@su2 -@su4 -@su6 -@su8 -@su12 -@su16 -@su24 -@su32 -@su48 -@su64 -@su72 -@su84 -@su96 -@su102
+);
 
-//  --  PERCENTAGE VALUES
 .d-t50                          { top: 50% !important; }
 .d-t100                         { top: 100% !important; }
 .d-t100-calc                    { top: calc(~"100% + var(--fixed-value, 8px)") !important; }
-
-//  --  NEGATIVE FIXED VALUES
-.d-tn1                          { top: var(--sun1) !important; }
-.d-tn2                          { top: var(--sun2) !important; }
-.d-tn4                          { top: var(--sun4) !important; }
-.d-tn6                          { top: var(--sun6) !important; }
-.d-tn8                          { top: var(--sun8) !important; }
-.d-tn12                         { top: var(--sun12) !important; }
-.d-tn16                         { top: var(--sun16) !important; }
-.d-tn24                         { top: var(--sun24) !important; }
-.d-tn32                         { top: var(--sun32) !important; }
-.d-tn48                         { top: var(--sun48) !important; }
-.d-tn64                         { top: var(--sun64) !important; }
-
-//  --  NEGATIVE PERCENTAGE VALUES
 .d-tn50                         { top: -50% !important; }
 .d-tn100                        { top: -100% !important; }
 .d-tn100-calc                   { top: calc(~"-100% + var(--fixed-value, 8px)") !important; }
 
 //  $$  RIGHT
 //  ----------------------------------------------------------------------------
-//  --  FIXED VALUES
-.d-r0                           { right: var(--su0) !important; }
-.d-r1                           { right: var(--su1) !important; }
-.d-r2                           { right: var(--su2) !important; }
-.d-r4                           { right: var(--su4) !important; }
-.d-r6                           { right: var(--su6) !important; }
-.d-r8                           { right: var(--su8) !important; }
-.d-r12                          { right: var(--su12) !important; }
-.d-r16                          { right: var(--su16) !important; }
-.d-r24                          { right: var(--su24) !important; }
-.d-r32                          { right: var(--su32) !important; }
-.d-r48                          { right: var(--su48) !important; }
-.d-r64                          { right: var(--su64) !important; }
+#auto-generate(
+    '.d-r',
+    { .template(@value) { right: @value !important; } },
+    @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64 @su72 @su84 @su96 @su102
+);
+#auto-generate(
+    '.d-rn',
+    { .template(@value) { right: @value !important; } },
+    -@su1 -@su2 -@su4 -@su6 -@su8 -@su12 -@su16 -@su24 -@su32 -@su48 -@su64 -@su72 -@su84 -@su96 -@su102
+);
 
 //  --  PERCENTAGE VALUES
 .d-r50                          { right: 50% !important; }
 .d-r100                         { right: 100% !important; }
 .d-r100-calc                    { right: calc(~"100% + var(--fixed-value, 8px)") !important; }
-
-//  --  NEGATIVE FIXED VALUES
-.d-rn1                          { right: var(--sun1) !important; }
-.d-rn2                          { right: var(--sun2) !important; }
-.d-rn4                          { right: var(--sun4) !important; }
-.d-rn6                          { right: var(--sun6) !important; }
-.d-rn8                          { right: var(--sun8) !important; }
-.d-rn12                         { right: var(--sun12) !important; }
-.d-rn16                         { right: var(--sun16) !important; }
-.d-rn24                         { right: var(--sun24) !important; }
-.d-rn32                         { right: var(--sun32) !important; }
-.d-rn48                         { right: var(--sun48) !important; }
-.d-rn64                         { right: var(--sun64) !important; }
-
-//  --  NEGATIVE PERCENTAGE VALUES
 .d-rn50                         { right: -50% !important; }
 .d-rn100                        { right: -100% !important; }
 .d-rn100-calc                   { right: calc(~"-100% + var(--fixed-value, 8px)") !important; }
 
 //  $$  BOTTOM
 //  ----------------------------------------------------------------------------
-//  --  FIXED VALUES
-.d-b0                           { bottom: var(--su0) !important; }
-.d-b1                           { bottom: var(--su1) !important; }
-.d-b2                           { bottom: var(--su2) !important; }
-.d-b4                           { bottom: var(--su4) !important; }
-.d-b6                           { bottom: var(--su6) !important; }
-.d-b8                           { bottom: var(--su8) !important; }
-.d-b12                          { bottom: var(--su12) !important; }
-.d-b16                          { bottom: var(--su16) !important; }
-.d-b24                          { bottom: var(--su24) !important; }
-.d-b32                          { bottom: var(--su32) !important; }
-.d-b48                          { bottom: var(--su48) !important; }
-.d-b64                          { bottom: var(--su64) !important; }
+#auto-generate(
+    '.d-b',
+    { .template(@value) { bottom: @value !important; } },
+    @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64 @su72 @su84 @su96 @su102
+);
+#auto-generate(
+    '.d-bn',
+    { .template(@value) { bottom: @value !important; } },
+    -@su1 -@su2 -@su4 -@su6 -@su8 -@su12 -@su16 -@su24 -@su32 -@su48 -@su64 -@su72 -@su84 -@su96 -@su102
+);
 
 //  --  PERCENTAGE VALUES
 .d-b50                          { bottom: 50% !important; }
 .d-b100                         { bottom: 100% !important; }
 .d-b100-calc                    { bottom: calc(~"100% + var(--fixed-value, 8px)") !important; }
-
-//  --  NEGATIVE FIXED VALUES
-.d-bn1                          { bottom: var(--sun1) !important; }
-.d-bn2                          { bottom: var(--sun2) !important; }
-.d-bn4                          { bottom: var(--sun4) !important; }
-.d-bn6                          { bottom: var(--sun6) !important; }
-.d-bn8                          { bottom: var(--sun8) !important; }
-.d-bn12                         { bottom: var(--sun12) !important; }
-.d-bn16                         { bottom: var(--sun16) !important; }
-.d-bn24                         { bottom: var(--sun24) !important; }
-.d-bn32                         { bottom: var(--sun32) !important; }
-.d-bn48                         { bottom: var(--sun48) !important; }
-.d-bn64                         { bottom: var(--sun64) !important; }
-
-//  --  NEGATIVE PERCENTAGE VALUES
 .d-bn50                         { bottom: -50% !important; }
 .d-bn100                        { bottom: -100% !important; }
 .d-bn100-calc                   { bottom: calc(~"-100% + var(--fixed-value, 8px)") !important; }
 
 //  $$  LEFT
 //  ----------------------------------------------------------------------------
-//  --  FIXED VALUES
-.d-l0                           { left: var(--su0) !important; }
-.d-l1                           { left: var(--su1) !important; }
-.d-l2                           { left: var(--su2) !important; }
-.d-l4                           { left: var(--su4) !important; }
-.d-l6                           { left: var(--su6) !important; }
-.d-l8                           { left: var(--su8) !important; }
-.d-l12                          { left: var(--su12) !important; }
-.d-l16                          { left: var(--su16) !important; }
-.d-l24                          { left: var(--su24) !important; }
-.d-l32                          { left: var(--su32) !important; }
-.d-l48                          { left: var(--su48) !important; }
-.d-l64                          { left: var(--su64) !important; }
+#auto-generate(
+    '.d-l',
+    { .template(@value) { left: @value !important; } },
+    @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64 @su72 @su84 @su96 @su102
+);
+#auto-generate(
+    '.d-ln',
+    { .template(@value) { left: @value !important; } },
+    -@su1 -@su2 -@su4 -@su6 -@su8 -@su12 -@su16 -@su24 -@su32 -@su48 -@su64 -@su72 -@su84 -@su96 -@su102
+);
 
 //  --  PERCENTAGE VALUES
 .d-l50                          { left: 50% !important; }
 .d-l100                         { left: 100% !important; }
 .d-l100-calc                    { left: calc(~"100% + var(--fixed-value, 8px)") !important; }
-
-//  --  NEGATIVE FIXED VALUES
-.d-ln1                          { left: var(--sun1) !important; }
-.d-ln2                          { left: var(--sun2) !important; }
-.d-ln4                          { left: var(--sun4) !important; }
-.d-ln6                          { left: var(--sun6) !important; }
-.d-ln8                          { left: var(--sun8) !important; }
-.d-ln12                         { left: var(--sun12) !important; }
-.d-ln16                         { left: var(--sun16) !important; }
-.d-ln24                         { left: var(--sun24) !important; }
-.d-ln32                         { left: var(--sun32) !important; }
-.d-ln48                         { left: var(--sun48) !important; }
-.d-ln64                         { left: var(--sun64) !important; }
-
-//  --  NEGATIVE PERCENTAGE VALUES
 .d-ln50                         { left: -50% !important; }
 .d-ln100                        { left: -100% !important; }
 .d-ln100-calc                   { left: calc(~"-100% + var(--fixed-value, 8px)") !important; }
 
 //  --  Y-AXIS (TOP & BOTTOM)
 //  ----------------------------------------------------------------------------
-//  --  FIXED VALUES
-.d-y0                           { .d-t0; .d-b0; }
-.d-y1                           { .d-t1; .d-b1; }
-.d-y2                           { .d-t2; .d-b2; }
-.d-y4                           { .d-t4; .d-b4; }
-.d-y6                           { .d-t6; .d-b6; }
-.d-y8                           { .d-t8; .d-b8; }
-.d-y12                          { .d-t12; .d-b12; }
-.d-y16                          { .d-t16; .d-b16; }
-.d-y24                          { .d-t24; .d-b24; }
-.d-y32                          { .d-t32; .d-b32; }
-.d-y48                          { .d-t48; .d-b48; }
-.d-y64                          { .d-t64; .d-b64; }
+#auto-generate(
+    '.d-y',
+    { .template(@value) { top: @value !important; bottom: @value !important; } },
+    @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64 @su72 @su84 @su96 @su102
+);
+#auto-generate(
+    '.d-yn',
+    { .template(@value) { top: @value !important; bottom: @value !important; } },
+    -@su1 -@su2 -@su4 -@su6 -@su8 -@su12 -@su16 -@su24 -@su32 -@su48 -@su64 -@su72 -@su84 -@su96 -@su102
+);
 
-//  --  NEGATIVE FIXED VALUES
-.d-yn1                          { .d-tn1; .d-bn1; }
-.d-yn2                          { .d-tn2; .d-bn2; }
-.d-yn4                          { .d-tn4; .d-bn4; }
-.d-yn6                          { .d-tn6; .d-bn6; }
-.d-yn8                          { .d-tn8; .d-bn8; }
-.d-yn12                         { .d-tn12; .d-bn12; }
-.d-yn16                         { .d-tn16; .d-bn16; }
-.d-yn24                         { .d-tn24; .d-bn24; }
-.d-yn32                         { .d-tn32; .d-bn32; }
-.d-yn48                         { .d-tn48; .d-bn48; }
-.d-yn64                         { .d-tn64; .d-bn64; }
 
 //  --  X-AXIS (RIGHT & LEFT)
 //  ----------------------------------------------------------------------------
-//  --  FIXED VALUES
-.d-x0                           { .d-l0; .d-r0; }
-.d-x1                           { .d-l1; .d-r1; }
-.d-x2                           { .d-l2; .d-r2; }
-.d-x4                           { .d-l4; .d-r4; }
-.d-x6                           { .d-l6; .d-r6; }
-.d-x8                           { .d-l8; .d-r8; }
-.d-x12                          { .d-l12; .d-r12; }
-.d-x16                          { .d-l16; .d-r16; }
-.d-x24                          { .d-l24; .d-r24; }
-.d-x32                          { .d-l32; .d-r32; }
-.d-x48                          { .d-l48; .d-r48; }
-.d-x64                          { .d-l64; .d-r64; }
-
-//  --  NEGATIVE FIXED VALUES
-.d-xn1                          { .d-ln1; .d-rn1; }
-.d-xn2                          { .d-ln2; .d-rn2; }
-.d-xn4                          { .d-ln4; .d-rn4; }
-.d-xn6                          { .d-ln6; .d-rn6; }
-.d-xn8                          { .d-ln8; .d-rn8; }
-.d-xn12                         { .d-ln12; .d-rn12; }
-.d-xn16                         { .d-ln16; .d-rn16; }
-.d-xn24                         { .d-ln24; .d-rn24; }
-.d-xn32                         { .d-ln32; .d-rn32; }
-.d-xn48                         { .d-ln48; .d-rn48; }
-.d-xn64                         { .d-ln64; .d-rn64; }
+#auto-generate(
+    '.d-x',
+    { .template(@value) { right: @value !important; left: @value !important; } },
+    @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64 @su72 @su84 @su96 @su102
+);
+#auto-generate(
+    '.d-xn',
+    { .template(@value) { right: @value !important; left: @value !important; } },
+    -@su1 -@su2 -@su4 -@su6 -@su8 -@su12 -@su16 -@su24 -@su32 -@su48 -@su64 -@su72 -@su84 -@su96 -@su102
+);
 
 //  --  ALL DIRECTIONS
 //  ----------------------------------------------------------------------------
-//  --  FIXED VALUES
-.d-all0                           { .d-x0; .d-y0; }
-.d-all1                           { .d-x1; .d-y1; }
-.d-all2                           { .d-x2; .d-y2; }
-.d-all4                           { .d-x4; .d-y4; }
-.d-all6                           { .d-x6; .d-y6; }
-.d-all8                           { .d-x8; .d-y8; }
-.d-all12                          { .d-x12; .d-y12; }
-.d-all16                          { .d-x16; .d-y16; }
-.d-all24                          { .d-x24; .d-y24; }
-.d-all32                          { .d-x32; .d-y32; }
-.d-all48                          { .d-x48; .d-y48; }
-.d-all64                          { .d-x64; .d-y64; }
-
-//  --  NEGATIVE FIXED VALUES
-.d-alln1                          { .d-xn1; .d-yn1; }
-.d-alln2                          { .d-xn2; .d-yn2; }
-.d-alln4                          { .d-xn4; .d-yn4; }
-.d-alln6                          { .d-xn6; .d-yn6; }
-.d-alln8                          { .d-xn8; .d-yn8; }
-.d-alln12                         { .d-xn12; .d-yn12; }
-.d-alln16                         { .d-xn16; .d-yn16; }
-.d-alln24                         { .d-xn24; .d-yn24; }
-.d-alln32                         { .d-xn32; .d-yn32; }
-.d-alln48                         { .d-xn48; .d-yn48; }
-.d-alln64                         { .d-xn64; .d-yn64; }
+#auto-generate(
+    '.d-all',
+    { .template(@value) { top: @value !important; right: @value !important; bottom: @value !important; left: @value !important; } },
+    @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64 @su72 @su84 @su96 @su102
+);
+#auto-generate(
+    '.d-alln',
+    { .template(@value) { top: @value !important; right: @value !important; bottom: @value !important; left: @value !important; } },
+    -@su1 -@su2 -@su4 -@su6 -@su8 -@su12 -@su16 -@su24 -@su32 -@su48 -@su64 -@su72 -@su84 -@su96 -@su102
+);

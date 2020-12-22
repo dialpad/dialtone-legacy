@@ -1,0 +1,52 @@
+---
+layout: page
+title: Word Break
+description: TBD
+---
+<section class="d-stack16">
+    <header class="d-stack2">
+        <h2 class="dialtone-title__section">Word Break</h2>
+        <div class="d-stack12">
+            <p class="dialtone-copy__normal">TBD</p>
+        </div>
+    </header>
+    <div class="d-stack16">
+        <table class="d-table">
+            <thead>
+                <tr>
+                    <th scope="col" class="dialtone-table__column--md">Class</th>
+                    <th scope="col">Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% assign transform = type.transform | split: ", " %}
+                {% for i in transform %}
+                    <tr>
+                        <th scope="row">.d-tt-{{ i }}</th>
+                        <td>text-transform: {{ i }} !important;</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="dialtone-example" data-example="yes" data-code="yes">
+            <div class="dialtone-example__example d-stack8">
+                {% assign transform = type.transform | split: ", " %}
+                {% for i in transform %}
+                <div class="d-stack2">
+                    <span class="code-example--inline">.d-tt-{{ i }}</span>
+                    <p class="d-lh6 d-fs18 d-m0 d-tt-{{ i }}">{% if i == "unset" %}This sentence text-transform value is {{ i }}.{% else %}This sentence has {% if i == "none" %}no{% else %}a {{ i }}{% endif %} text-transform.{% endif %}</p>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="dialtone-example__code">
+                {% highlight html linenos %}
+<p class="d-tt-none">…</p>
+<p class="d-tt-uppercase">…</p>
+<p class="d-tt-lowercase">…</p>
+<p class="d-tt-capitalize">…</p>
+<p class="d-tt-unset">…</p>
+                {% endhighlight %}
+            </div>
+        </div>
+    </div>
+</section>

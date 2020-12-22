@@ -1,0 +1,25 @@
+---
+layout: page
+title: Icons
+description: Dialtone icons provide visual aids to help users complete actions. Ideally paired with a label, they should be used strategically.
+---
+<section class="d-stack16">
+    <header class="d-flow8">
+        <input type="text" class="d-input" placeholder="Filter icons" />
+    </header>
+    <div class="d-g-columns d-g-columns4 d-gg8" style="--grid-column-width: calc(25% - 0.6rem);">
+        {% for icon in svg-system %}
+            <aside id="{{ icon.file }}" class="d-flex__cell4 d-border d-bc-black-100 d-br4 d-of-hidden h:d-bs-sm">
+                <header class="d-p16 d-bgc-white d-fc-dark d-fl-center">
+                    {% iconSystem icon.file %}
+                </header>
+                <footer class="d-d-flex d-jc-space-between d-ai-center d-pl12 d-pr8 d-py8 d-bgc-black-050 d-bgo50 d-fc-black-600 d-ff-mono d-fs12 d-lh-normal">
+                    <code class="d-ws-pre">&lt;{{ icon.vue }} /&gt;</code>
+                    <a class="d-btn d-btn--muted d-btn--xs d-px4 js-icon-link" href="#{{ icon.file }}">{% iconSystem "link", "" %}</a>
+                </footer>
+            </aside>
+        {% endfor %}
+    </div>
+</section>
+
+<script src="/{{ site.paths.js }}/icons.js"></script>

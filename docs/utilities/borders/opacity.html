@@ -1,0 +1,37 @@
+---
+layout: page
+title: Border Opacity
+description: TBD
+---
+<section class="d-stack16">
+    <div class="d-grid-layout--with-columns d-grid-column-gap12 d-grid-row-gap24" style="--grid-col: 2; --grid-col-width: 50%;">
+    {% for color in colors.colors %}
+    {% assign c = color.color %}
+        <div class="d-stack2">
+            <h3 class="dialtone-title__subsection">{{ c | capitalize }}</h3>
+            <div class="dialtone-color-grid__group" style="--color-grid-columns: 1">
+                {% for s in color.stops %}
+                {% assign stop = s.stop %}
+                {% assign copy = s.copy %}
+                    <div class="dialtone-color-grid__item d-p12 d-ff-mono d-fs12 d-border-top d-border-top-width2 d-bc-{{ c }}-{{ stop }} d-fc-dark">
+                        <span class="dialtone-color-grid__label">.d-bc-{{ c }}-{{ stop }}</span>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+    <div class="d-stack2">
+        <h3 class="dialtone-title__subsection">White / Transparent</h3>
+        <div class="d-bgc-black-900 d-p16 d-border-radius--md d-d-grid" style="grid-template-columns: 100%;">
+            <div class="d-p12 d-ff-mono d-fs12 d-border-top d-border-top-width2 d-bc-white d-fc-white">
+                <span class="dialtone-color-grid__label">.d-bc-white</span>
+            </div>
+            <div class="d-p12 d-ff-mono d-fs12 d-border-top d-border-top-width2 d-bc-transparent d-fc-white">
+                <span class="dialtone-color-grid__label">.d-bc-transparent</span>
+            </div>
+            <div class="d-p12 d-ff-mono d-fs12 d-border-top d-border-top-width2 d-bc-current d-fc-black-200">
+                <span class="dialtone-color-grid__label">.d-bc-current .d-fc-black-200</span>
+            </div>
+        </div>
+    </div>
+</section>

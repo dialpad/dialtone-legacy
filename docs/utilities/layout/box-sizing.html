@@ -1,0 +1,52 @@
+---
+layout: page
+title: Box Sizing
+description: Utilities for controlling how the browser should calculate an element's total size.
+---
+<section class="d-stack4">
+    <h2 class="d-headline24">Classes</h2>
+    <table class="d-table">
+        <thead>
+            <tr>
+                <th scope="col" class="d-width25">Class</th>
+                <th scope="col">Output</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% assign box-sizing = "border, content" | split: ", " %}
+            {% for i in box-sizing %}
+            <tr>
+                <th class="d-ff-mono d-fc-purple-400 d-fs12 d-fw-normal">d-box-{{ i }}</th>
+                <td class="d-ff-mono d-fc-teal-500 d-fs12">box-sizing: {{ i }}-box;</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+<section class="d-stack4">
+    <h2 class="d-headline24">Examples</h2>
+    <div class="dialtone-example" data-example="yes" data-code="yes">
+        <div class="d-brt8 d-bgc-blue-100 d-w100p">
+            <div class="layout-block d-block d-mb12"><div class="d-p12">.d-d-block</div></div>
+            <div class="d-mb12">
+                <div class="d-d-inline-block layout-block"><div class="d-p12">.d-d-inline-block</div></div>
+                <div class="d-d-inline-block layout-block"><div class="d-p12">.d-d-inline-block</div></div>
+                <div class="d-d-inline-block layout-block"><div class="d-p12">.d-d-inline-block</div></div>
+            </div>
+            <div>
+                <div class="d-d-inline layout-block">.d-d-inline</div>
+                <div class="d-d-inline layout-block">.d-d-inline</div>
+                <div class="d-d-inline layout-block">.d-d-inline</div>
+            </div>
+        </div>
+        <div class="d-p8 d-bgc-black-700 d-brb8 d-fs12">
+{% highlight html linenos %}
+<div class="d-d-block">…</div>
+<div class="d-d-inline-block">…</div>
+<div class="d-d-inline">…</div>
+<div class="d-d-none">…</div>
+<div class="d-d-unset">…</div>
+{% endhighlight %}
+        </div>
+    </div>
+</section>

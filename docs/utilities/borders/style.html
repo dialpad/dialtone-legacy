@@ -1,0 +1,78 @@
+---
+layout: page
+title: Border Style
+description: Utilities for controlling an element's border style.
+---
+<section class="d-stack16">
+    <header class="d-stack2">
+        <h2 class="dialtone-title__section">Styles</h2>
+        <p class="dialtone-copy__normal">TBD</p>
+    </header>
+    <div class="d-stack2">
+        <h2 class="dialtone-title__subsection">Classes</h2>
+        <div class="dialtone-table-wrapper">
+            <table class="d-table">
+                <thead>
+                    <tr>
+                        <th scope="col" class="dialtone-table__column--md">Class</th>
+                        <th scope="col">Direction</th>
+                        <th scope="col">Output</th>
+                    </tr>
+                </thead>
+                {% assign widths = borders.widths | split: ", " %}
+                {% for i in directions %}
+                <tbody>
+                    {% for w in widths %}
+                    <tr>
+                        <th scope="row">.d-border{% if i != "all" %}-{{ i }}{% endif %}-width{{ w }}</th>
+                        <td>{{ i | capitalize}}{% if i == "y" or i == "x" %}-Axis{% endif %}</td>
+                        <td>
+                            {% if i == "y" %}
+                                border-top-width: {{ w }}px;<br/>
+                                border-bottom-width: {{ w }}px;
+                            {% elsif i == "x" %}
+                                border-right-width: {{ w }}px;<br/>
+                                border-left-width: {{ w }}px;
+                            {% elsif i != "all" %}
+                                border-{{ i }}-width: {{ w }}px;
+                            {% else %}
+                                border-width: {{ w }}px;
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+    <div class="d-stack2">
+        <h2 class="dialtone-title__subsection">Examples</h2>
+        <div class="dialtone-example" data-example="yes" data-code="yes">
+            <div class="dialtone-example__example">
+                <div class="d-grid-layout--with-columns d-grid-gap16" style="--grid-col: 4; --grid-col-width: 23%;">
+                    <div class="layout-block"><div class="layout-block__label d-border-color--navy d-border d-border-width2">width2</div></div>
+                    <div class="layout-block"><div class="layout-block__label d-border-color--navy d-border d-border-width2 d-border-top-width0">width2 top-width0</div></div>
+                    <div class="layout-block"><div class="layout-block__label d-border-color--navy d-border-top d-border-top-width2">top-width2</div></div>
+                    <div class="layout-block"><div class="layout-block__label d-border-color--navy d-border-right d-border-right-width2">right-width2</div></div>
+                    <div class="layout-block"><div class="layout-block__label d-border-color--navy d-border-bottom d-border-bottom-width4">bottom-width4</div></div>
+                    <div class="layout-block"><div class="layout-block__label d-border-color--navy d-border-left d-border-left-width4">left-width4</div></div>
+                    <div class="layout-block"><div class="layout-block__label d-border-color--navy d-border-x d-border-x-width6">x-width6</div></div>
+                    <div class="layout-block"><div class="layout-block__label d-border-color--navy d-border-y d-border-y-width6">y-width6</div></div>
+                </div>
+            </div>
+            <div class="dialtone-example__code">
+{% highlight html linenos %}
+<div class="d-border d-border-width2">width2</div>
+<div class="d-border d-border-width2 d-border-top-width0">width2 top-width0</div>
+<div class="d-border-top d-border-top-width2">top-width2</div>
+<div class="d-border-right d-border-right-width2">right-width2</div>
+<div class="d-border-bottom d-border-bottom-width4">bottom-width4</div>
+<div class="d-border-left d-border-left-width4">left-width4</div>
+<div class="d-border-x d-border-x-width6">x-width6</div>
+<div class="d-border-y d-border-y-width6">y-width6</div>
+{% endhighlight %}
+            </div>
+        </div>
+    </div>
+</section>
