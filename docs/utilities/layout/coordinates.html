@@ -3,10 +3,10 @@ layout: page
 title: Coordinates
 description: Utility classes to assign an element’s top, right, bottom, or left position.
 ---
-<section class="d-stack16">
-    <p class="dialtone-copy__normal">Dialtone's spacing units can be combined with the position utilities above to position elements. Set an element’s position by using the <span class="code-example--inline">.d-ps-{type}</span> classes. The table below lists the available classes and their CSS output. Starting in v5.8.0, Dialtone began providing immutable type classes, meaning they include an <span class="code-example--inline">!important</span> to override CSS specificity. All previous class names still exist, but are considered deprecated and should not be used moving forward. They will be removed in a future version.</p>
-    <div class="d-stack8">
-        <h3 class="dialtone-title__subsection">Positive Classes</h3>
+<section class="d-stack24">
+    <h2 class="d-headline24">Classes</h2>
+    <div class="d-stack4">
+        <h3 class="d-headline20">Positive Classes</h3>
         <table class="d-table">
             <thead>
                 <tr>
@@ -30,12 +30,12 @@ description: Utility classes to assign an element’s top, right, bottom, or lef
                     {% assign percent = i.percent %}
                         {% if percent == "no" %}
                             {% if combo == "no" %}
-                                <td class="d-opacity50 d-bgc-black-050 d-fc-black-600 d-fs-italic">N/A</td>
+                                <td class="d-opacity50 d-bgc-black-050 d-fc-black-400 d-fs12 d-ta-center"><em>N/A</em></td>
                             {% else %}
-                                <td>.d-{{ pre }}{{ coordinate }}{% if suffix == "-calc" %}{{ suffix }}{% endif %}</td>
+                                <td class="d-ff-mono d-fc-purple-400 d-fs12">.d-{{ pre }}{{ coordinate }}{% if suffix == "-calc" %}{{ suffix }}{% endif %}</td>
                             {% endif %}
                         {% else %}
-                            <td>.d-{{ pre }}{{ coordinate }}{% if suffix == "-calc" %}{{ suffix }}{% endif %}</td>
+                            <td class="d-ff-mono d-fc-purple-400 d-fs12">.d-{{ pre }}{{ coordinate }}{% if suffix == "-calc" %}{{ suffix }}{% endif %}</td>
                         {% endif %}
                     {% endfor %}
                 </tr>
@@ -43,8 +43,8 @@ description: Utility classes to assign an element’s top, right, bottom, or lef
             </tbody>
         </table>
     </div>
-    <div class="d-stack8">
-        <h3 class="dialtone-title__subsection">Negative Classes</h3>
+    <div class="d-stack4">
+        <h3 class="d-headline20">Negative Classes</h3>
         <table class="d-table">
             <thead>
                 <tr>
@@ -70,12 +70,12 @@ description: Utility classes to assign an element’s top, right, bottom, or lef
                         {% assign percent = i.percent %}
                             {% if percent == "no" %}
                                 {% if combo == "no" %}
-                                    <td class="d-opacity50 d-bgc-black-050 d-fc-black-600 d-fs-italic">N/A</td>
+                                    <td class="d-opacity50 d-bgc-black-050 d-fc-black-400 d-fs12 d-ta-center"><em>N/A</em></td>
                                 {% else %}
-                                    <td>.d-{{ pre }}n{{ coordinate }}{% if suffix == "-calc" %}{{ suffix }}{% endif %}</td>
+                                    <td class="d-ff-mono d-fc-purple-400 d-fs12">.d-{{ pre }}n{{ coordinate }}{% if suffix == "-calc" %}{{ suffix }}{% endif %}</td>
                                 {% endif %}
                             {% else %}
-                                <td>.d-{{ pre }}n{{ coordinate }}{% if suffix == "-calc" %}{{ suffix }}{% endif %}</td>
+                                <td class="d-ff-mono d-fc-purple-400 d-fs12">.d-{{ pre }}n{{ coordinate }}{% if suffix == "-calc" %}{{ suffix }}{% endif %}</td>
                             {% endif %}
                         {% endfor %}
                     {% endif %}
@@ -84,4 +84,77 @@ description: Utility classes to assign an element’s top, right, bottom, or lef
             </tbody>
         </table>
     </div>
+</section>
+<section class="d-stack16">
+    <header class="d-w75ch d-wmx6">
+        <h2 class="d-headline24">Examples</h2>
+        <p class="d-fs18 d-lh6">Use the <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-fc-purple-400 d-fs14">top|right|bottom|left|x|y|all</code> utility classes to absolutely position elements within the nearest positioned element.</p>
+    </header>
+    <aside class="d-br8 d-of-hidden">
+        <header class="d-p24 d-bgc-blue-100 d-w100p d-hmn2 d-g-cols d-g-cols4 d-gg24 d-pi-center">
+            <div class="d-ps-relative d-h128 d-w128 d-p8 d-br8 d-bgc-purple-200 d-of-hidden"><div class="d-fl-center d-ps-absolute d-x0 d-t0 d-p8 d-bgc-purple-400 d-br4 d-fs24 d-fc-white d-fw-bold d-h50p">1</div></div>
+            <div class="d-ps-relative d-h128 d-w128 d-p8 d-br8 d-bgc-purple-200 d-of-hidden"><div class="d-fl-center d-ps-absolute d-y0 d-r0 d-p8 d-bgc-purple-400 d-br4 d-fs24 d-fc-white d-fw-bold d-w50p">2</div></div>
+            <div class="d-ps-relative d-h128 d-w128 d-p8 d-br8 d-bgc-purple-200 d-of-hidden"><div class="d-fl-center d-ps-absolute d-x0 d-b0 d-p8 d-bgc-purple-400 d-br4 d-fs24 d-fc-white d-fw-bold d-h50p">3</div></div>
+            <div class="d-ps-relative d-h128 d-w128 d-p8 d-br8 d-bgc-purple-200 d-of-hidden"><div class="d-fl-center d-ps-absolute d-y0 d-l0 d-p8 d-bgc-purple-400 d-br4 d-fs24 d-fc-white d-fw-bold d-w50p">4</div></div>
+            <div class="d-ps-relative d-h128 d-w128 d-p8 d-br8 d-bgc-purple-200 d-of-hidden"><div class="d-fl-center d-ps-absolute d-all0 d-p8 d-bgc-purple-400 d-br4 d-fs24 d-fc-white d-fw-bold">5</div></div>
+            <div class="d-ps-relative d-h128 d-w128 d-p8 d-br8 d-bgc-purple-200 d-of-hidden"><div class="d-fl-center d-ps-absolute d-l0 d-t0 d-p8 d-bgc-purple-400 d-br4 d-fs24 d-fc-white d-fw-bold d-w50p d-h50p">6</div></div>
+            <div class="d-ps-relative d-h128 d-w128 d-p8 d-br8 d-bgc-purple-200 d-of-hidden"><div class="d-fl-center d-ps-absolute d-r0 d-t0 d-p8 d-bgc-purple-400 d-br4 d-fs24 d-fc-white d-fw-bold d-w50p d-h50p">7</div></div>
+            <div class="d-ps-relative d-h128 d-w128 d-p8 d-br8 d-bgc-purple-200 d-of-hidden"><div class="d-fl-center d-ps-absolute d-r0 d-b0 d-p8 d-bgc-purple-400 d-br4 d-fs24 d-fc-white d-fw-bold d-w50p d-h50p">8</div></div>
+            <div class="d-ps-relative d-h128 d-w128 d-p8 d-br8 d-bgc-purple-200 d-of-hidden"><div class="d-fl-center d-ps-absolute d-l0 d-b0 d-p8 d-bgc-purple-400 d-br4 d-fs24 d-fc-white d-fw-bold d-w50p d-h50p">9</div></div>
+            <div class="d-ps-relative d-h128 d-w128 d-p8 d-br8 d-bgc-purple-200 d-of-hidden"><div class="d-fl-center d-ps-absolute d-all8 d-p8 d-bgc-purple-400 d-br4 d-fs24 d-fc-white d-fw-bold">10</div></div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-brb8 d-fs12 d-of-y-scroll d-hmx4">
+{% highlight html linenos %}
+<!-- Example 1 -->
+<div class="d-ps-relative d-h128 d-w128">
+    <div class="d-ps-absolute d-x0 d-t0 d-h50p">1</div>
+</div>
+
+<!-- Example 2 -->
+<div class="d-ps-relative d-h128 d-w128">
+    <div class="d-ps-absolute d-y0 d-r0 d-w50p">2</div>
+</div>
+
+<!-- Example 3 -->
+<div class="d-ps-relative d-h128 d-w128">
+    <div class="d-ps-absolute d-x0 d-b0 d-h50p">3</div>
+</div>
+
+<!-- Example 4 -->
+<div class="d-ps-relative d-h128 d-w128">
+    <div class="d-ps-absolute d-y0 d-l0 d-w50p">4</div>
+</div>
+
+<!-- Example 5 -->
+<div class="d-ps-relative d-h128 d-w128">
+    <div class="d-ps-absolute d-all0">5</div>
+</div>
+
+<!-- Example 6 -->
+<div class="d-ps-relative d-h128 d-w128">
+    <div class="d-ps-absolute d-t0 d-l0 d-w50p d-h50p">6</div>
+</div>
+
+<!-- Example 7 -->
+<div class="d-ps-relative d-h128 d-w128">
+    <div class="d-ps-absolute d-t0 d-r0 d-w50p d-h50p">7</div>
+</div>
+
+<!-- Example 8 -->
+<div class="d-ps-relative d-h128 d-w128">
+    <div class="d-ps-absolute d-b0 d-r0 d-w50p d-h50p">8</div>
+</div>
+
+<!-- Example 9 -->
+<div class="d-ps-relative d-h128 d-w128">
+    <div class="d-ps-absolute d-b0 d-l0 d-w50p d-h50p">9</div>
+</div>
+
+<!-- Example 10 -->
+<div class="d-ps-relative d-h128 d-w128">
+    <div class="d-ps-absolute d-all8">10</div>
+</div>
+{% endhighlight %}
+        </footer>
+    </aside>
 </section>
