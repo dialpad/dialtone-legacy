@@ -3,6 +3,9 @@ $(document).ready(function() {
     var menuOpenIcon = $(".js-menu-open-icon");
     var menuCloseIcon = $(".js-menu-close-icon");
 
+    var body = $("body");
+    var navHeader = $(".js-navigation-header");
+
     function regenerateMenu () {
         // Hide the navigation if we've opened it
         menuOpenIcon.removeClass("d-d-none");
@@ -75,4 +78,11 @@ $(document).ready(function() {
             }
         }
     });
+
+    //  Add box shadow to the header navigation on scroll
+    $(window).scroll( () => {
+        var windowTop = $(window).scrollTop();
+
+        windowTop > 64 ? navHeader.addClass('d-bs-lg d-bc-white').removeClass('d-bc-black-100') : navHeader.removeClass('d-bs-lg d-bc-white').addClass('d-bc-black-100');
+    })
 });
