@@ -5,9 +5,15 @@
         <div class="d-ps-relative d-stack16">
             {% include header.html %}
 
+            <aside class="d-ps-absolute d-t64 d-b0 d-r32 d-w2 d-pt24" id="subnav">
+                <div class="d-ps-sticky d-t96">
+                    <h4 class="d-mb8 d-py2 d-px8 d-fw-bold d-fs14 d-lh6 d-fc-black-600">On this Page</h5>
+                    {{ content | toc | safe }}
+                </div>
+            </aside>
             <div class="d-g-sidebar d-gg16 d-p16">
                 {% include nav.html %}
-                <main id="content" class="d-ga--content d-stack32">
+                <main id="content" class="d-ga--content d-stack32 d-ps-relative d-mb32">
                     <header class="d-stack2">
                         {% if title %}
                             <h1 class="d-headline42 d-lh6">{{ title }}</h1>
@@ -16,7 +22,7 @@
                             <p class="d-fs20 d-lh4">{{ description }}</p>
                         {% endif %}
                     </header>
-                    <div class="d-stack24">
+                    <div class="d-stack64">
                         {{ content }}
                     </div>
                 </main>

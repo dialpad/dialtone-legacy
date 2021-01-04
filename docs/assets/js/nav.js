@@ -21,7 +21,8 @@ $(document).ready(function() {
             'title': $('head').filter('title').text(),
             'nav': $(document).find('#nav').html(),
             'content': $(document).find('#content').html(),
-        }, '', window.location.href)
+            'subnav': $(document).find('#subnav').html(),
+        }, '', window.location.href),
 
         $('#nav').on('click', 'a', function (event) {
 
@@ -48,11 +49,13 @@ $(document).ready(function() {
                 var title = $(html).filter('title').text()
                 var nav = $(html).find('#nav').html()
                 var content = $(html).find('#content').html()
+                var subnav = $(html).find('#subnav').html()
 
                 // Update the page
                 $('head title').text(title)
                 $('#nav').html(nav)
                 $('#content').html(content)
+                $('#subnav').html(subnav)
 
                 // Scroll to the top of the page
                 $(document).scrollTop(0)
@@ -66,6 +69,9 @@ $(document).ready(function() {
                     'nav': $(html).find('#nav').html(),
                     'content': $(html).find('#content').html(),
                 }, '', href)
+
+                //  Re-initiate ScrollSpy
+                $('.js-scrollspy').scrollSpy();
             })
         })
 
@@ -75,9 +81,13 @@ $(document).ready(function() {
                 $('title').text(e.state.title)
                 $('#nav').html(e.state.nav)
                 $('#content').html(e.state.content)
+                $('#subnav').html(e.state.subnav)
             }
         }
     });
+
+    //  Initiate ScrollSpy
+    $('.js-scrollspy').scrollSpy();
 
     //  Add box shadow to the header navigation on scroll
     $(window).scroll( () => {
