@@ -14,12 +14,12 @@ description: Utilities for controlling how grid items are aligned along their bl
                 </tr>
             </thead>
             <tbody>
-                {% assign content = "center, end, start, stretch, space-around, space-evenly, space-between" | split: ", " %}
+                {% assign content = "center, end, start, stretch" | split: ", " %}
                 {% for c in content %}
-                    {% assign items = "center, end, start, stretch, space-around, space-evenly, space-between" | split: ", " %}
+                    {% assign items = "center, end, start, stretch" | split: ", " %}
                     {% for i in items %}
                     <tr>
-                        <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-pi-{{ c }}{% if i != c %}-{{ i }}{% endif %}</th>
+                        <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-pli-{{ c }}{% if i != c %}-{{ i }}{% endif %}</th>
                         <td class="d-ff-mono d-fc-teal-500 d-fs12">place-items: {{ c }}{% if i != c %} {{ i }}{% endif %} !important;</td>
                     </tr>
                     {% endfor %}
@@ -31,11 +31,11 @@ description: Utilities for controlling how grid items are aligned along their bl
 <section class="d-stack16">
     <header class="d-stack2">
         {% header "h2", "Stretch" %}
-        <p class="dd-w75ch d-wmx6 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-pi-stretch{-n}</code> to stretch grid items along the block and inline axis.</p>
+        <p class="dd-w75ch d-wmx6 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-pli-stretch{-n}</code> to stretch grid items along their block and inline axis.</p>
     </header>
     <aside class="d-br8 d-of-hidden">
         <header class="d-fl-center d-fd-column d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn1">
-            <div class="d-d-grid d-g-cols2 d-pi-stretch d-gg16 d-p16 d-w100p d-hmn2 d-br8 d-bgc-purple-100">
+            <div class="d-d-grid d-g-cols2 d-pli-stretch d-gg16 d-p16 d-w100p d-hmn2 d-br8 d-bgc-purple-100">
                 <div class="d-fl-center d-p16 d-bgc-purple-400 d-br4 d-fs24 d-fc-white d-fw-bold">1</div>
                 <div class="d-fl-center d-p16 d-bgc-purple-400 d-br4 d-fs24 d-fc-white d-fw-bold">2</div>
                 <div class="d-fl-center d-p16 d-bgc-purple-400 d-br4 d-fs24 d-fc-white d-fw-bold">3</div>
@@ -44,7 +44,7 @@ description: Utilities for controlling how grid items are aligned along their bl
         </header>
         <footer class="d-p8 d-bgc-black-700 d-brb8 d-fs12">
 {% highlight html linenos %}
-<div class="d-d-grid d-g-cols2 d-pi-stretch">
+<div class="d-d-grid d-g-cols2 d-pli-stretch">
     <div>1</div>
     <div>2</div>
     <div>3</div>
@@ -57,20 +57,20 @@ description: Utilities for controlling how grid items are aligned along their bl
 <section class="d-stack16">
     <header class="d-stack2">
         {% header "h2", "Start" %}
-        <p class="dd-w75ch d-wmx6 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-pi-start{-n}</code> to align grid items along the start of the block and/or inline axis.</p>
+        <p class="dd-w75ch d-wmx6 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-pli-start{-n}</code> to align grid items along the start of their block and/or inline axis.</p>
     </header>
     <aside class="d-br8 d-of-hidden">
         <header class="d-fl-center d-fd-column d-p24 d-bgc-green-100 d-bgo50 d-w100p d-hmn1">
-            <div class="d-d-grid d-g-cols2 d-pi-start-center d-gg16 d-p16 d-w100p d-h2 d-br8 d-bgc-green-100">
-                <div class="d-fl-center d-p16 d-bgc-green-400 d-br4 d-fs24 d-fc-white d-fw-bold">1</div>
-                <div class="d-fl-center d-p16 d-bgc-green-400 d-br4 d-fs24 d-fc-white d-fw-bold">2</div>
-                <div class="d-fl-center d-p16 d-bgc-green-400 d-br4 d-fs24 d-fc-white d-fw-bold">3</div>
-                <div class="d-fl-center d-p16 d-bgc-green-400 d-br4 d-fs24 d-fc-white d-fw-bold">4</div>
+            <div class="d-d-grid d-g-cols2 d-pli-start d-gg16 d-p16 d-w100p d-h2 d-br8 d-bgc-green-100">
+                <div class="d-fl-center d-p16 d-w64 d-h64 d-bgc-green-400 d-br4 d-fs24 d-fc-white d-fw-bold">1</div>
+                <div class="d-fl-center d-p16 d-w64 d-h64 d-bgc-green-400 d-br4 d-fs24 d-fc-white d-fw-bold">2</div>
+                <div class="d-fl-center d-p16 d-w64 d-h64 d-bgc-green-400 d-br4 d-fs24 d-fc-white d-fw-bold">3</div>
+                <div class="d-fl-center d-p16 d-w64 d-h64 d-bgc-green-400 d-br4 d-fs24 d-fc-white d-fw-bold">4</div>
             </div>
         </header>
         <footer class="d-p8 d-bgc-black-700 d-brb8 d-fs12">
 {% highlight html linenos %}
-<div class="d-d-grid d-g-cols3 d-pi-start-center">
+<div class="d-d-grid d-g-cols2 d-pli-start">
     <div>1</div>
     <div>2</div>
     <div>3</div>
@@ -83,20 +83,20 @@ description: Utilities for controlling how grid items are aligned along their bl
 <section class="d-stack16">
     <header class="d-stack2">
         {% header "h2", "End" %}
-        <p class="dd-w75ch d-wmx6 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-pi-end{-n}</code> to align grid items along the end of the block and/or inline axis.</p>
+        <p class="dd-w75ch d-wmx6 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-pli-end{-n}</code> to align grid items along the end of their block and/or inline axis.</p>
     </header>
     <aside class="d-br8 d-of-hidden">
         <header class="d-fl-center d-fd-column d-p24 d-bgc-green-100 d-bgo50 d-w100p d-hmn1">
-            <div class="d-d-grid d-g-cols2 d-pi-end-center d-gg16 d-p16 d-w100p d-h2 d-br8 d-bgc-blue-100">
-                <div class="d-fl-center d-p16 d-bgc-blue-400 d-br4 d-fs24 d-fc-white d-fw-bold">1</div>
-                <div class="d-fl-center d-p16 d-bgc-blue-400 d-br4 d-fs24 d-fc-white d-fw-bold">2</div>
-                <div class="d-fl-center d-p16 d-bgc-blue-400 d-br4 d-fs24 d-fc-white d-fw-bold">3</div>
-                <div class="d-fl-center d-p16 d-bgc-blue-400 d-br4 d-fs24 d-fc-white d-fw-bold">4</div>
+            <div class="d-d-grid d-g-cols2 d-pli-end d-gg16 d-p16 d-w100p d-h2 d-br8 d-bgc-blue-100">
+                <div class="d-fl-center d-p16 d-w64 d-h64 d-bgc-blue-400 d-br4 d-fs24 d-fc-white d-fw-bold">1</div>
+                <div class="d-fl-center d-p16 d-w64 d-h64 d-bgc-blue-400 d-br4 d-fs24 d-fc-white d-fw-bold">2</div>
+                <div class="d-fl-center d-p16 d-w64 d-h64 d-bgc-blue-400 d-br4 d-fs24 d-fc-white d-fw-bold">3</div>
+                <div class="d-fl-center d-p16 d-w64 d-h64 d-bgc-blue-400 d-br4 d-fs24 d-fc-white d-fw-bold">4</div>
             </div>
         </header>
         <footer class="d-p8 d-bgc-black-700 d-brb8 d-fs12">
 {% highlight html linenos %}
-<div class="d-d-grid d-g-cols3 d-pi-end-center">
+<div class="d-d-grid d-g-cols2 d-pli-end">
     <div>1</div>
     <div>2</div>
     <div>3</div>
@@ -109,98 +109,20 @@ description: Utilities for controlling how grid items are aligned along their bl
 <section class="d-stack16">
     <header class="d-stack2">
         {% header "h2", "Center" %}
-        <p class="dd-w75ch d-wmx6 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-pi-center{-n}</code> to align grid items along the center of the block and/or inline axis.</p>
+        <p class="dd-w75ch d-wmx6 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-pli-center{-n}</code> to align grid items along the center of their block and/or inline axis.</p>
     </header>
     <aside class="d-br8 d-of-hidden">
         <header class="d-fl-center d-fd-column d-p24 d-bgc-red-100 d-bgo50 d-w100p d-hmn1">
-            <div class="d-d-grid d-g-cols2 d-pi-center d-gg16 d-p16 d-w100p d-h2 d-br8 d-bgc-red-100">
-                <div class="d-fl-center d-p16 d-bgc-red-400 d-br4 d-fs24 d-fc-white d-fw-bold">1</div>
-                <div class="d-fl-center d-p16 d-bgc-red-400 d-br4 d-fs24 d-fc-white d-fw-bold">2</div>
-                <div class="d-fl-center d-p16 d-bgc-red-400 d-br4 d-fs24 d-fc-white d-fw-bold">3</div>
-                <div class="d-fl-center d-p16 d-bgc-red-400 d-br4 d-fs24 d-fc-white d-fw-bold">4</div>
+            <div class="d-d-grid d-g-cols2 d-pli-center d-gg16 d-p16 d-w100p d-h2 d-br8 d-bgc-red-100">
+                <div class="d-fl-center d-p16 d-w64 d-h64 d-bgc-red-400 d-br4 d-fs24 d-fc-white d-fw-bold">1</div>
+                <div class="d-fl-center d-p16 d-w64 d-h64 d-bgc-red-400 d-br4 d-fs24 d-fc-white d-fw-bold">2</div>
+                <div class="d-fl-center d-p16 d-w64 d-h64 d-bgc-red-400 d-br4 d-fs24 d-fc-white d-fw-bold">3</div>
+                <div class="d-fl-center d-p16 d-w64 d-h64 d-bgc-red-400 d-br4 d-fs24 d-fc-white d-fw-bold">4</div>
             </div>
         </header>
         <footer class="d-p8 d-bgc-black-700 d-brb8 d-fs12">
 {% highlight html linenos %}
-<div class="d-d-grid d-g-cols3 d-pi-center">
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-</div>
-{% endhighlight %}
-        </footer>
-    </aside>
-</section>
-<section class="d-stack16">
-    <header class="d-stack2">
-        {% header "h2", "Space Evenly" %}
-        <p class="dd-w75ch d-wmx6 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-pi-space-evenly{-n}</code> to distribute grid items evenly along the block axis.</p>
-    </header>
-    <aside class="d-br8 d-of-hidden">
-        <header class="d-fl-center d-fd-column d-p24 d-bgc-yellow-100 d-bgo50 d-w100p d-hmn1">
-            <div class="d-d-grid d-g-cols2 d-pi-space-evenly d-gg16 d-p16 d-w100p d-h2 d-br8 d-bgc-yellow-100">
-                <div class="d-fl-center d-p16 d-bgc-yellow-400 d-br4 d-fs24 d-fc-dark d-fw-bold">1</div>
-                <div class="d-fl-center d-p16 d-bgc-yellow-400 d-br4 d-fs24 d-fc-dark d-fw-bold">2</div>
-                <div class="d-fl-center d-p16 d-bgc-yellow-400 d-br4 d-fs24 d-fc-dark d-fw-bold">3</div>
-                <div class="d-fl-center d-p16 d-bgc-yellow-400 d-br4 d-fs24 d-fc-dark d-fw-bold">4</div>
-            </div>
-        </header>
-        <footer class="d-p8 d-bgc-black-700 d-brb8 d-fs12">
-{% highlight html linenos %}
-<div class="d-d-grid d-g-cols3 d-pi-space-evenly">
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-</div>
-{% endhighlight %}
-        </footer>
-    </aside>
-</section>
-<section class="d-stack16">
-    <header class="d-stack2">
-        {% header "h2", "Space Around" %}
-        <p class="dd-w75ch d-wmx6 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-pi-space-around{-n}</code> to distribute grid items so there is an equal amount of space around each row on the block axis.</p>
-    </header>
-    <aside class="d-br8 d-of-hidden">
-        <header class="d-fl-center d-fd-column d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmn1">
-            <div class="d-d-grid d-g-cols2 d-pi-space-around d-gg16 d-p16 d-w100p d-h2 d-br8 d-bgc-pink-100">
-                <div class="d-fl-center d-p16 d-bgc-pink-400 d-br4 d-fs24 d-fc-white d-fw-bold">1</div>
-                <div class="d-fl-center d-p16 d-bgc-pink-400 d-br4 d-fs24 d-fc-white d-fw-bold">2</div>
-                <div class="d-fl-center d-p16 d-bgc-pink-400 d-br4 d-fs24 d-fc-white d-fw-bold">3</div>
-                <div class="d-fl-center d-p16 d-bgc-pink-400 d-br4 d-fs24 d-fc-white d-fw-bold">4</div>
-            </div>
-        </header>
-        <footer class="d-p8 d-bgc-black-700 d-brb8 d-fs12">
-{% highlight html linenos %}
-<div class="d-d-grid d-g-cols3 d-space-around">
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-</div>
-{% endhighlight %}
-        </footer>
-    </aside>
-</section>
-<section class="d-stack16">
-    <header class="d-stack2">
-        {% header "h2", "Space Between" %}
-        <p class="dd-w75ch d-wmx6 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-pi-space-between{-n}</code> to distribute grid items along the block axis so that there is an equal space between each row.</p>
-    </header>
-    <aside class="d-br8 d-of-hidden">
-        <header class="d-fl-center d-fd-column d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn1">
-            <div class="d-d-grid d-g-cols2 d-pi-space-between d-gg16 d-p16 d-w100p d-h2 d-br8 d-bgc-purple-100">
-                <div class="d-fl-center d-p16 d-bgc-purple-400 d-br4 d-fs24 d-fc-white d-fw-bold">1</div>
-                <div class="d-fl-center d-p16 d-bgc-purple-400 d-br4 d-fs24 d-fc-white d-fw-bold">2</div>
-                <div class="d-fl-center d-p16 d-bgc-purple-400 d-br4 d-fs24 d-fc-white d-fw-bold">3</div>
-                <div class="d-fl-center d-p16 d-bgc-purple-400 d-br4 d-fs24 d-fc-white d-fw-bold">4</div>
-            </div>
-        </header>
-        <footer class="d-p8 d-bgc-black-700 d-brb8 d-fs12">
-{% highlight html linenos %}
-<div class="d-d-grid d-g-cols3 d-pi-space-between">
+<div class="d-d-grid d-g-cols2 d-pli-center">
     <div>1</div>
     <div>2</div>
     <div>3</div>
