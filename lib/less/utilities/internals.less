@@ -50,6 +50,30 @@
     #auto-generate-with-index(@class-prefix, @rules, @index + 1, @values);
 }
 
+#auto-generate-no-convert(@class-prefix, @rules, @values) {
+    #auto-generate-with-index-no-convert(@class-prefix, @rules, 1, @values);
+}
+#auto-generate-with-index-no-convert(@class-prefix, @rules, @index, @values) when (@index <= length(@values)) {
+    // Extract our values
+    @val: extract(@values, @index);
+
+    //  When our values are numeric...
+    & when (isnumber(@val)) {
+        @class-name: ~"@{class-prefix}@{val}";
+
+        @{class-name} { @rules(); .template(@val); }
+    }
+
+    //  When our values aren't numeric...
+    & when not (isnumber(@val)) {
+        @class-name: ~"@{class-prefix}-@{val}";
+
+        @{class-name} { @rules(); .template(@val); }
+    }
+
+    #auto-generate-with-index-no-convert(@class-prefix, @rules, @index + 1, @values);
+}
+
 //  ============================================================================
 //  $   GET HSL VALUES
 //  ----------------------------------------------------------------------------

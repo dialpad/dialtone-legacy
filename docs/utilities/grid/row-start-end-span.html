@@ -1,0 +1,96 @@
+---
+layout: page
+title: Row Start / End / Span
+description: Utilities for controlling how elements are placed across grid rows.
+---
+<section class="d-stack16">
+    {% header "h2", "Classes" %}
+    <div class="d-h4 d-of-y-scroll d-bb d-bc-black-200">
+        <table class="d-table">
+            <thead>
+                <tr>
+                    <th scope="col" class="d-w25p">Class</th>
+                    <th scope="col">Output</th>
+                </tr>
+            </thead>
+            {% assign cols = "start, end, span" | split: ", "%}
+            {% for g in cols %}
+            <tbody>
+                {% assign numbers = "1, 2, 3, 4, 5, 6, 7, 8, 0, 10, 11, 12" | split: ", "%}
+                {% for i in numbers %}
+                <tr>
+                    <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-gr{% if g == "start" %}s{% elsif g == "end" %}e{% endif %}{{ i }}</th>
+                    <td class="d-ff-mono d-fc-teal-500 d-fs12">grid-row{% if g == "start" %}-start{% elsif g == "end" %}-end{% endif %}: {% if g == "span" %}span {{ i }} / span {% endif %}{{ i }}</td>
+                </tr>
+                {% endfor %}
+                {% if g == "span" %}
+                <tr>
+                    <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-gr-full</th>
+                    <td class="d-ff-mono d-fc-teal-500 d-fs12">grid-row: 1 / -1 !important;</td>
+                </tr>
+                {% endif %}
+                <tr>
+                    <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-gr{% if g == "start" %}s{% elsif g == "end" %}e{% endif %}-auto</th>
+                    <td class="d-ff-mono d-fc-teal-500 d-fs12">grid-row{% if g == "start" %}-start{% elsif g == "end" %}-end{% endif %}: auto !important;</td>
+                </tr>
+                <tr>
+                    <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-gr{% if g == "start" %}s{% elsif g == "end" %}e{% endif %}-unset</th>
+                    <td class="d-ff-mono d-fc-teal-500 d-fs12">grid-row{% if g == "start" %}-start{% elsif g == "end" %}-end{% endif %}: unset !important;</td>
+                </tr>
+            </tbody>
+            {% endfor %}
+        </table>
+    </div>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Spanning rows" %}
+        <p class="dd-w75ch d-wmx6 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-gc{#}</code> to span an element across multiple This can be combined with <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-gc{#}</code> classes to span a set of columns.</p>
+    </header>
+    <aside class="d-br8 d-of-hidden">
+        <header class="d-fl-center d-fd-column d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn2">
+            <div class="d-d-grid d-gg16 d-g-cols3 d-g-rows3 d-p16 d-w100p d-hmn2 d-br8 d-bgc-purple-100">
+                <div class="d-gc2 d-gr2 d-fl-center d-p16 d-bgc-purple-400 d-br4 d-fs24 d-fc-white d-fw-bold">1</div>
+                <div class="d-fl-center d-p16 d-bgc-purple-400 d-br4 d-fs24 d-fc-white d-fw-bold d-o50">2</div>
+                <div class="d-gr2 d-fl-center d-p16 d-bgc-purple-400 d-br4 d-fs24 d-fc-white d-fw-bold">3</div>
+                <div class="d-gc2 d-fl-center d-p16 d-bgc-purple-400 d-br4 d-fs24 d-fc-white d-fw-bold d-o50">4</div>
+            </div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-brb8 d-fs12">
+{% highlight html linenos %}
+<div class="d-d-grid d-gg16 d-g-cols3 d-g-rows3">
+    <div class="d-gc2 d-gr2">1</div>
+    <div>2</div>
+    <div class="d-gr2">3</div>
+    <div class="d-gc2">4</div>
+</div>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Setting the starting and ending rows" %}
+        <p class="dd-w75ch d-wmx6 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-grs{#}</code> to set the starting point for an element. This can be combined with <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-gc{#}</code> classes to span a set of columns. Use <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-gre{#}</code> to set an element's ending point. A reminder that CSS grid rows start at 1 and end at the number of rows + 1. For example in a 4-row grid, the starting line would be 1 and the ending line would be 5.</p>
+    </header>
+    <aside class="d-br8 d-of-hidden">
+        <header class="d-fl-center d-fd-column d-p24 d-bgc-blue-100 d-bgo50 d-w100p d-hmn2">
+            <div class="d-d-grid d-gg16 d-g-cols3 d-g-rows4 d-p16 d-w100p d-hmn2 d-br8 d-bgc-blue-100">
+                <div class="d-gc2 d-grs1 d-gre3 d-fl-center d-p16 d-bgc-blue-400 d-br4 d-fs24 d-fc-white d-fw-bold">1</div>
+                <div class="d-fl-center d-p16 d-bgc-blue-400 d-br4 d-fs24 d-fc-white d-fw-bold d-o50">2</div>
+                <div class="d-grs2 d-gre5 d-fl-center d-p16 d-bgc-blue-400 d-br4 d-fs24 d-fc-white d-fw-bold">3</div>
+                <div class="d-gc2 d-gr2 d-fl-center d-p16 d-bgc-blue-400 d-br4 d-fs24 d-fc-white d-fw-bold d-o50">4</div>
+            </div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-brb8 d-fs12">
+{% highlight html linenos %}
+<div class="d-d-grid d-gg16 d-g-cols3 d-g-rows4">
+    <div class="d-gc2 d-grs1 d-gre3">1</div>
+    <div>2</div>
+    <div class="d-grs2 d-gre5">3</div>
+    <div class="d-gc2 d-gr2">4</div>
+</div>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>

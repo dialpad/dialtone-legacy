@@ -1,0 +1,150 @@
+---
+layout: page
+title: Direction, Wrap, & Flow
+description: Utilities for setting an object's flex direction, wrap, and flow directions.
+---
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Flex Direction" %}
+        <p class="dd-w75ch d-wmx6 d-fs18 d-lh6">The <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">flex-direction</code> property declares a flex container’s main axis direction. The default value is row.</p>
+    </header>
+    <table class="d-table">
+        <thead>
+            <tr>
+                <th scope="col" class="d-w20p">Class</th>
+                <th scope="col" class="d-w30p">Output</th>
+                <th scope="col">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in flex.direction %}
+            {% assign class = i.class %}
+            {% assign output = i.output %}
+            {% assign description = i.description %}
+                <tr>
+                    <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-{{ class }}</th>
+                    <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ output }}</td>
+                    <td>{{ description }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <aside class="d-br8 d-of-hidden">
+        <header class="d-fl-center d-fd-column d-p24 d-bgc-blue-100 d-bgo50 d-w100p d-hmn2">
+            <div class="d-d-flex d-fd-row-reverse d-w100p d-br8 d-bgc-blue-100">
+                <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-blue-400 d-br4 d-fs24 d-fc-white d-fw-bold">1</div>
+                <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-blue-400 d-br4 d-fs24 d-fc-white d-fw-bold">2</div>
+                <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-blue-400 d-br4 d-fs24 d-fc-white d-fw-bold">3</div>
+            </div>
+            <div class="d-d-flex d-fd-row d-w100p d-mt16 d-br8 d-bgc-blue-100">
+                <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-blue-400 d-br4 d-fs24 d-fc-white d-fw-bold">1</div>
+                <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-blue-400 d-br4 d-fs24 d-fc-white d-fw-bold">2</div>
+                <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-blue-400 d-br4 d-fs24 d-fc-white d-fw-bold">3</div>
+            </div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-brb8 d-fs12">
+{% highlight html linenos %}
+<div class="d-d-flex d-fd-row-reverse">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+</div>
+<div class="d-d-flex d-fd-row">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+</div>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Flex Wrap" %}
+        <p class="dd-w75ch d-wmx6 d-fs18 d-lh6">The <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">flex-wrap</code> property declares a flex container’s wrapping status. The default value is nowrap.</p>
+    </header>
+    <table class="d-table">
+        <thead>
+            <tr>
+                <th scope="col" class="d-w20p">Class</th>
+                <th scope="col" class="d-w30p">Output</th>
+                <th scope="col">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in flex.wrap %}
+            {% assign class = i.class %}
+            {% assign output = i.output %}
+            {% assign description = i.description %}
+                <tr>
+                    <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-{{ class }}</th>
+                    <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ output }}</td>
+                    <td>{{ description }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <aside class="d-br8 d-of-hidden">
+        <header class="d-fl-center d-fd-column d-p24 d-bgc-blue-100 d-bgo50 d-w100p d-hmn2">
+            <div class="d-d-flex d-fw-wrap d-w100p d-br8 d-bgc-blue-100">
+                <div class="d-fl-center d-m8 d-p16 d-w25p d-h64 d-bgc-blue-400 d-br4 d-fs24 d-fc-white d-fw-bold">1</div>
+                <div class="d-fl-center d-m8 d-p16 d-w50p d-h64 d-bgc-blue-400 d-br4 d-fs24 d-fc-white d-fw-bold">2</div>
+                <div class="d-fl-center d-m8 d-p16 d-w75p d-h64 d-bgc-blue-400 d-br4 d-fs24 d-fc-white d-fw-bold">3</div>
+            </div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-brb8 d-fs12">
+{% highlight html linenos %}
+<div class="d-d-flex d-fw-wrap">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+</div>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Flex Flow" %}
+        <p class="dd-w75ch d-wmx6 d-fs18 d-lh6">The <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">flex-flow</code> property is a shorthand property that sets allows you to quickly set the above <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">flex-direction</code> and <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">flex-wrap</code> properties. By default all flex containers are set to <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">row</code> and <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">nowrap</code>.</p>
+    </header>
+    <table class="d-table">
+        <thead>
+            <tr>
+                <th scope="col" class="d-w20p">Class</th>
+                <th scope="col" class="d-w30p">Output</th>
+                <th scope="col">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in flex.flow %}
+            {% assign class = i.class %}
+            {% assign output = i.output %}
+            {% assign description = i.description %}
+                <tr>
+                    <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-{{ class }}</th>
+                    <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ output }}</td>
+                    <td>{{ description }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <aside class="d-br8 d-of-hidden">
+        <header class="d-fl-center d-fd-column d-p24 d-bgc-blue-100 d-bgo50 d-w100p d-hmn2">
+            <div class="d-d-flex d-ff-row-reverse-wrap d-w100p d-br8 d-bgc-blue-100">
+                <div class="d-fl-center d-m8 d-p16 d-w25p d-h64 d-bgc-blue-400 d-br4 d-fs24 d-fc-white d-fw-bold">1</div>
+                <div class="d-fl-center d-m8 d-p16 d-w50p d-h64 d-bgc-blue-400 d-br4 d-fs24 d-fc-white d-fw-bold">2</div>
+                <div class="d-fl-center d-m8 d-p16 d-w75p d-h64 d-bgc-blue-400 d-br4 d-fs24 d-fc-white d-fw-bold">3</div>
+            </div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-brb8 d-fs12">
+{% highlight html linenos %}
+<div class="d-d-flex d-ff-row-reverse-wrap">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+</div>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>

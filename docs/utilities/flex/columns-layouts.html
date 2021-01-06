@@ -1,0 +1,75 @@
+---
+layout: page
+title: Columns & Layouts
+description: Utilities for flex columns and common flex layouts.
+---
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Flex Columns" %}
+        <p class="dd-w75ch d-wmx6 d-fs18 d-lh6">By default children cells within a parent flex container will only take up the room needed for their content. To have a flex child cell span multiple columns, use the flex column <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">.d-flex__cell{#}</code> classes. These columns are based on a 12-column grid, meaning each column will take up 1/12th of all available space.</p>
+    </header>
+    <div class="d-stack8">
+        {% header "h3", "Classes" %}
+        <table class="d-table">
+            <thead>
+                <tr>
+                    <th scope="col" class="d-w25p">Class</th>
+                    <th scope="col" class="d-w10p">Columns</th>
+                    <th scope="col">Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in flex.columns %}
+                {% assign span = i.col %}
+                {% assign output = i.output %}
+                <tr>
+                    <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-flex__cell{{ span }}</th>
+                    <td>{{ span }}</td>
+                    <td class="d-ff-mono d-fc-teal-500 d-fs12">flex-basis: {{ output }} !important;</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="d-stack8">
+        {% header "h3", "Examples" %}
+        <aside class="d-br8 d-of-hidden">
+            <header class="d-d-flex d-fw-wrap d-p24 d-bgc-blue-100 d-bgo50 d-w100p d-hmn2 d-flex-columns">
+                <div class="d-flex__cell4 d-fl-center d-m8 d-p16 d-bgc-blue-400 d-br4 d-fs14 d-fc-white d-ff-mono">d-flex__cell4</div>
+                <div class="d-flex__cell8 d-fl-center d-m8 d-p16 d-bgc-blue-400 d-br4 d-fs14 d-fc-white d-ff-mono">d-flex__cell8</div>
+                <div class="d-flex__cell12 d-fl-center d-m8 d-p16 d-bgc-blue-400 d-br4 d-fs14 d-fc-white d-ff-mono">d-flex__cell12</div>
+            </header>
+            <footer class="d-p8 d-bgc-black-700 d-brb8 d-fs12">
+{% highlight html linenos %}
+<div class="d-flex-columns">
+    <div class="d-flex__cell4">…</div>
+    <div class="d-flex__cell8">…</div>
+    <div class="d-flex__cell12">…</div>
+</div>
+{% endhighlight %}
+            </footer>
+        </aside>
+    </div>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Centering objects" %}
+        <p class="dd-w75ch d-wmx6 d-fs18 d-lh6">By default flexed items align to <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">flex-start</code> both horizontally and vertically (effectively top, left). This aligns child elements center-center. <strong>Note:</strong> This <em>only</em> applies for direct children and does not cascade to subsequent children.</p>
+    </header>
+    <aside class="d-br8 d-of-hidden">
+        <header class="d-fl-center d-p24 d-bgc-green-100 d-bgo50 d-w100p d-hmn2">
+            <div class="d-fl-center d-w2 d-m8 d-p16 d-bgc-green-400 d-br4 d-fs24 d-fc-white d-fw-bold">1</div>
+            <div class="d-fl-center d-w1 d-m8 d-p16 d-bgc-green-400 d-br4 d-fs24 d-fc-white d-fw-bold">2</div>
+            <div class="d-fl-center d-w1 d-m8 d-p16 d-bgc-green-400 d-br4 d-fs24 d-fc-white d-fw-bold">3</div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-brb8 d-fs12">
+{% highlight html linenos %}
+<div class="d-fl-center">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+</div>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>

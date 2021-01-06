@@ -71,20 +71,26 @@ module.exports = function(eleventyConfig) {
     });
 
     //  Generate header areas with anchor links
-    eleventyConfig.addLiquidShortcode("header", function(tag, text) {
+    eleventyConfig.addLiquidShortcode("header", function(tag, text, increment) {
         var slug = text.replace(/\s+/g, '-').toLowerCase();
+        var id = slug;
         var output = '';
+
+        //  If we have an increment
+        if (increment != null) {
+            id = slug + increment;
+        }
 
         output += '<div class="d-d-flex d-jc-space-between d-ai-end d-pe-none">';
         if (tag == 'h2') {
-            output +=   '<' + tag + ' class="d-fl1 d-headline24 js-scrollspy" id="'+ slug +'">';
+            output +=   '<' + tag + ' class="d-fl1 d-headline24 js-scrollspy" id="'+ id + '">';
         }
         if (tag == 'h3') {
-            output +=   '<' + tag + ' class="d-fl1 d-headline20 js-scrollspy" id="'+ slug +'">';
+            output +=   '<' + tag + ' class="d-fl1 d-headline20 js-scrollspy" id="'+ id + '">';
         }
         output +=       '<span class="d-pe-auto">' + text + '</span>';
         output +=   '</' + tag + '>';
-        output +=   '<a class="d-btn d-btn--muted d-pe-auto" href="#'+ slug +'">';
+        output +=   '<a class="d-btn d-btn--muted d-pe-auto" href="#'+ id + '">';
         output +=       '<span class="d-btn__icon d-m0 d-ai-center"><svg aria-hidden="true" aria-label="Link" class="d-svg d-svg--system d-svg__link" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1 0 1.71-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></span>';
         output +=   '</a>'
         output += '</div>';

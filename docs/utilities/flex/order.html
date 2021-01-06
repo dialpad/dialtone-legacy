@@ -1,0 +1,49 @@
+---
+layout: page
+title: Order
+description: Utilities for controlling an element's order within a parent container.
+---
+<section class="d-stack16">
+    {% header "h2", "Classes" %}
+    <table class="d-table">
+        <thead>
+            <tr>
+                <th scope="col" class="d-w25p">Class</th>
+                <th scope="col">Output</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% assign order = "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, -first, -last" | split: ", " %}
+            {% for i in order %}
+                <tr>
+                    <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-order{{ i }}</th>
+                    <td class="d-ff-mono d-fc-teal-500 d-fs12">order: {% if i == "-first" %}-9999{% elsif i == "-last" %}9999{% else %}{{ i }}{% endif %} !important;</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Example" %}
+        <p class="d-w75ch d-wmx6 d-fs18 d-lh6">By default items are ordered by their position in the DOM. To re-order an element, use <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14 d-ws-nowrap">d-order{#}</code>.</p>
+    </header>
+    <aside class="d-br8 d-of-hidden">
+        <header class="d-fl-center d-fd-column d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn1">
+            <div class="d-d-flex d-ai-center d-jc-space-between d-p8 d-w100p d-hmn1 d-br8 d-bgc-purple-100">
+                <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-o50 d-bgc-purple-400 d-br4 d-fs24 d-fc-white d-fw-bold">1</div>
+                <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-o50 d-bgc-purple-400 d-br4 d-fs24 d-fc-white d-fw-bold">2</div>
+                <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-order-first d-bgc-purple-400 d-br4 d-fs24 d-fc-white d-fw-bold">3</div>
+            </div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-brb8 d-fs12">
+{% highlight html linenos %}
+<div class="d-d-flex d-ai-center d-jc-space-between">
+    <div>1</div>
+    <div>2</div>
+    <div class="d-order-first">3</div>
+</div>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>

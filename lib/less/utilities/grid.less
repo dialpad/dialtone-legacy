@@ -38,20 +38,12 @@
 //  ============================================================================
 //  $   GRID LAYOUTS
 //  ----------------------------------------------------------------------------
-.d-g-cols {
-    display: grid;
-    grid-template-columns: [full-start] repeat(var(--grid-columns), [col-start] var(--grid-column-width) [col-end]) [full-end];
-    grid-auto-columns: var(--grid-column-auto);
-}
-
-.d-g-sidebar {
-    display: grid;
+.d-gl-sidebar {
     grid-template-areas: "sidebar content";
     grid-template-columns: [sidebar-start] var(--sidebar-width) [sidebar-end content-start] var(--content-width) [content-end];
 }
 
-.d-g-header {
-    display: grid;
+.d-gl-header {
     grid-template-areas: "header"
                          "content";
     grid-template-rows: [header-start] var(--header-height) [header-end content-start] var(--content-height) [content-end];
@@ -59,20 +51,13 @@
     grid-auto-columns: minmax(min-content, auto);
 }
 
+
 //  ============================================================================
-//  $   GRID COLUMNS
+//  $   GRID AREAS
 //  ----------------------------------------------------------------------------
-.d-g-cols1           { --grid-columns: 1; }
-.d-g-cols2           { --grid-columns: 2; }
-.d-g-cols3           { --grid-columns: 3; }
-.d-g-cols4           { --grid-columns: 4; }
-.d-g-cols5           { --grid-columns: 5; }
-.d-g-cols6           { --grid-columns: 6; }
-.d-g-cols7           { --grid-columns: 7; }
-.d-g-cols8           { --grid-columns: 8; }
-.d-g-cols9           { --grid-columns: 9; }
-.d-g-cols10          { --grid-columns: 10; }
-.d-g-cols11          { --grid-columns: 11; }
+.d-ga-sidebar          { grid-area: sidebar !important; }
+.d-ga-content          { grid-area: content !important; }
+.d-ga-header           { grid-area: header !important; }
 
 
 //  ============================================================================
@@ -82,76 +67,116 @@
 //      each defined spacing unit.
 //  ----------------------------------------------------------------------------
 //  All Gaps
-.d-gg0                  { grid-gap: var(--su0) !important; }
-.d-gg1                  { grid-gap: var(--su1) !important; }
-.d-gg2                  { grid-gap: var(--su2) !important; }
-.d-gg4                  { grid-gap: var(--su4) !important; }
-.d-gg6                  { grid-gap: var(--su6) !important; }
-.d-gg8                  { grid-gap: var(--su8) !important; }
-.d-gg12                 { grid-gap: var(--su12) !important; }
-.d-gg16                 { grid-gap: var(--su16) !important; }
-.d-gg24                 { grid-gap: var(--su24) !important; }
-.d-gg32                 { grid-gap: var(--su32) !important; }
-.d-gg48                 { grid-gap: var(--su48) !important; }
-.d-gg64                 { grid-gap: var(--su64) !important; }
+#auto-generate(
+    '.d-gg',
+    { .template(@value) { grid-gap: @value !important; } },
+    @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64
+);
 
 //  Row Gaps
-.d-grg0                 { grid-row-gap: var(--su0) !important; }
-.d-grg1                 { grid-row-gap: var(--su1) !important; }
-.d-grg2                 { grid-row-gap: var(--su2) !important; }
-.d-grg4                 { grid-row-gap: var(--su4) !important; }
-.d-grg6                 { grid-row-gap: var(--su6) !important; }
-.d-grg8                 { grid-row-gap: var(--su8) !important; }
-.d-grg12                { grid-row-gap: var(--su12) !important; }
-.d-grg16                { grid-row-gap: var(--su16) !important; }
-.d-grg24                { grid-row-gap: var(--su24) !important; }
-.d-grg32                { grid-row-gap: var(--su32) !important; }
-.d-grg48                { grid-row-gap: var(--su48) !important; }
-.d-grg64                { grid-row-gap: var(--su64) !important; }
+#auto-generate(
+    '.d-grg',
+    { .template(@value) { grid-row-gap: @value !important; } },
+    @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64
+);
 
 //  Column Gaps
-.d-gcg0                 { grid-column-gap: var(--su0) !important; }
-.d-gcg1                 { grid-column-gap: var(--su1) !important; }
-.d-gcg2                 { grid-column-gap: var(--su2) !important; }
-.d-gcg4                 { grid-column-gap: var(--su4) !important; }
-.d-gcg6                 { grid-column-gap: var(--su6) !important; }
-.d-gcg8                 { grid-column-gap: var(--su8) !important; }
-.d-gcg12                { grid-column-gap: var(--su12) !important; }
-.d-gcg16                { grid-column-gap: var(--su16) !important; }
-.d-gcg24                { grid-column-gap: var(--su24) !important; }
-.d-gcg32                { grid-column-gap: var(--su32) !important; }
-.d-gcg48                { grid-column-gap: var(--su48) !important; }
-.d-gcg64                { grid-column-gap: var(--su64) !important; }
+#auto-generate(
+    '.d-gcg',
+    { .template(@value) { grid-column-gap: @value !important; } },
+    @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64
+);
+
+.d-gcg-unset        { grid-column-gap: unset !important; }
+.d-grg-unset        { grid-row-gap: unset !important; }
+.d-gg-unset         { grid-gap: unset !important; }
 
 
 //  ============================================================================
-//  $   GRID COLUMN SPANS
+//  $   GRID COLUMNS
 //  ----------------------------------------------------------------------------
-.d-gc-span1             { grid-column-start: span 1 !important; }
-.d-gc-span2             { grid-column-start: span 2 !important; }
-.d-gc-span3             { grid-column-start: span 3 !important; }
-.d-gc-span4             { grid-column-start: span 4 !important; }
-.d-gc-span5             { grid-column-start: span 5 !important; }
-.d-gc-span6             { grid-column-start: span 6 !important; }
-.d-gc-span7             { grid-column-start: span 7 !important; }
-.d-gc-span8             { grid-column-start: span 8 !important; }
-.d-gc-span9             { grid-column-start: span 9 !important; }
-.d-gc-span10            { grid-column-start: span 10 !important; }
-.d-gc-span11            { grid-column-start: span 11 !important; }
-.d-gc-span12            { grid-column-start: span 12 !important; }
+#auto-generate-no-convert(
+    '.d-g-cols',
+    { .template(@value) { grid-template-columns: [full-start] repeat(@value, [col-start] var(--col-width, minmax(0,1fr)) [col-end]) [full-end] !important; } },
+    1 2 3 4 5 6 7 8 9 10 11 12
+);
+
+//  --  COLUMN START
+#auto-generate-no-convert(
+    '.d-gcs',
+    { .template(@value) { grid-column-start: @value !important; } },
+    1 2 3 4 5 6 7 8 9 10 11 12
+);
+
+//  --  COLUMN END
+#auto-generate-no-convert(
+    '.d-gce',
+    { .template(@value) { grid-column-end: @value !important; } },
+    1 2 3 4 5 6 7 8 9 10 11 12
+);
+
+//  --  COLUMN SPAN
+#auto-generate-no-convert(
+    '.d-gc',
+    { .template(@value) { grid-column: span @value ~" / " span @value !important; } },
+    1 2 3 4 5 6 7 8 9 10 11 12
+);
+
+.d-gc-full          { grid-column: 1 ~" / " -1 !important; }
+
+.d-gcs-auto         { grid-column-start: auto !important; }
+.d-gce-auto         { grid-column-end: auto !important; }
+.d-gc-auto          { grid-column: auto !important; }
+
+.d-gcs-unset        { grid-column-start: unset !important; }
+.d-gce-unset        { grid-column-end: unset !important; }
+.d-gc-unset         { grid-column: unset !important; }
 
 
 //  ============================================================================
-//  $   GRID AREAS
+//  $   GRID ROWS
 //  ----------------------------------------------------------------------------
-.d-ga--sidebar          { grid-area: sidebar !important; }
-.d-ga--content          { grid-area: content !important; }
-.d-ga--header           { grid-area: header !important; }
+#auto-generate-no-convert(
+    '.d-g-rows',
+    { .template(@value) { grid-template-rows: [full-start] repeat(@value, [col-start] minmax(0,1fr) [col-end]) [full-end] !important; } },
+    1 2 3 4 5 6 7 8 9 10 11 12
+);
+
+//  --  ROW START
+#auto-generate-no-convert(
+    '.d-grs',
+    { .template(@value) { grid-row-start: @value !important; } },
+    1 2 3 4 5 6 7 8 9 10 11 12
+);
+
+//  --  ROW END
+#auto-generate-no-convert(
+    '.d-gre',
+    { .template(@value) { grid-row-end: @value !important; } },
+    1 2 3 4 5 6 7 8 9 10 11 12
+);
+
+//  --  ROW SPAN
+#auto-generate-no-convert(
+    '.d-gr',
+    { .template(@value) { grid-row: span @value ~" / " span @value !important; } },
+    1 2 3 4 5 6 7 8 9 10 11 12
+);
+
+.d-gr-full          { grid-row: 1 ~" / " -1 !important; }
+
+.d-grs-auto         { grid-row-start: auto !important; }
+.d-gre-auto         { grid-row-end: auto !important; }
+.d-gr-auto          { grid-row: auto !important; }
+
+.d-grs-unset        { grid-row-start: unset !important; }
+.d-gre-unset        { grid-row-end: unset !important; }
+.d-gr-unset         { grid-row: unset !important; }
 
 
 //  ============================================================================
 //  $   JUSTIFY ITEMS
-//      Aligns grid items along the inline (x) axis.
+//      Aligns grid items along the main axis.
 //  ----------------------------------------------------------------------------
 .d-ji-center                 { justify-items: center !important; }
 .d-ji-end                    { justify-items: end !important; }
@@ -166,12 +191,151 @@
 .d-ji-unsafe                 { justify-items: unsafe !important; }
 .d-ji-normal                 { justify-items: normal !important; }
 .d-ji-legacy                 { justify-items: legacy !important; }
+.d-ji-auto                   { justify-items: auto !important; }
 .d-ji-unset                  { justify-items: unset !important; }
 
 
 //  ============================================================================
-//  $   JUSTIFY ITEMS
-//      Aligns grid items along the inline (x) axis.
+//  $   JUSTIFY SELF
+//      Aligns grid item along the main axis.
 //  ----------------------------------------------------------------------------
-.d-pi-center                 { place-items: center center !important; }
+.d-js-center                 { justify-self: center !important; }
+.d-js-end                    { justify-self: end !important; }
+.d-js-start                  { justify-self: start !important; }
+.d-js-left                   { justify-self: left !important; }
+.d-js-right                  { justify-self: right !important; }
+.d-js-baseline               { justify-self: baseline !important; }
+.d-js-first-baseline         { justify-self: first-baseline !important; }
+.d-js-last-baseline          { justify-self: last-baseline !important; }
+.d-js-stretch                { justify-self: stretch !important; }
+.d-js-safe                   { justify-self: safe !important; }
+.d-js-unsafe                 { justify-self: unsafe !important; }
+.d-js-normal                 { justify-self: normal !important; }
+.d-js-legacy                 { justify-self: legacy !important; }
+.d-js-auto                   { justify-self: auto !important; }
+.d-js-unset                  { justify-self: unset !important; }
+
+
+//  ============================================================================
+//  $   PLACE CONTENT
+//      Aligns grid items along the block and inline directions at once
+//  ----------------------------------------------------------------------------
+.d-pc-center                 { place-content: center !important; }
+.d-pc-center-end             { place-content: center end !important; }
+.d-pc-center-start           { place-content: center start !important; }
+.d-pc-center-stretch         { place-content: center stretch !important; }
+.d-pc-center-space-around    { place-content: center space-around !important; }
+.d-pc-center-space-evenly    { place-content: center space-evenly !important; }
+.d-pc-center-space-between   { place-content: center space-between !important; }
+
+.d-pc-end                    { place-content: end !important; }
+.d-pc-end-start              { place-content: end start !important; }
+.d-pc-end-stretch            { place-content: end stretch !important; }
+.d-pc-end-center             { place-content: end center !important; }
+.d-pc-end-space-around       { place-content: end space-around !important; }
+.d-pc-end-space-evenly       { place-content: end space-evenly !important; }
+.d-pc-end-space-between      { place-content: end space-between !important; }
+
+.d-pc-start                  { place-content: start !important; }
+.d-pc-start-end              { place-content: start end !important; }
+.d-pc-start-center           { place-content: start center !important; }
+.d-pc-start-stretch          { place-content: start stretch !important; }
+.d-pc-start-space-around     { place-content: start space-around !important; }
+.d-pc-start-space-evenly     { place-content: start space-evenly !important; }
+.d-pc-start-space-between    { place-content: start space-between !important; }
+
+.d-pc-stretch                { place-content: stretch !important; }
+.d-pc-stretch-end            { place-content: stretch end !important; }
+.d-pc-stretch-start          { place-content: stretch start !important; }
+.d-pc-stretch-center         { place-content: stretch center !important; }
+.d-pc-stretch-space-evenly   { place-content: stretch space-evenly !important; }
+.d-pc-stretch-space-around   { place-content: stretch space-around !important; }
+.d-pc-stretch-space-between  { place-content: stretch space-between !important; }
+
+.d-pc-space-around           { place-content: space-around !important; }
+.d-pc-space-around-end       { place-content: space-around end !important; }
+.d-pc-space-around-start     { place-content: space-around start !important; }
+.d-pc-space-around-center    { place-content: space-around center !important; }
+.d-pc-space-around-space-evenly { place-content: space-around space-evenly !important; }
+.d-pc-space-around-space-between { place-content: space-around space-between !important; }
+
+.d-pc-space-evenly           { place-content: space-evenly !important; }
+.d-pc-space-evenly-end       { place-content: space-evenly end !important; }
+.d-pc-space-evenly-start     { place-content: space-evenly start !important; }
+.d-pc-space-evenly-center    { place-content: space-evenly center !important; }
+.d-pc-space-evenly-space-around { place-content: space-evenly space-around !important; }
+.d-pc-space-evenly-space-between { place-content: space-evenly space-between !important; }
+
+.d-pc-space-between          { place-content: space-between !important; }
+.d-pc-space-between-end      { place-content: space-between end !important; }
+.d-pc-space-between-start    { place-content: space-between start !important; }
+.d-pc-space-between-center   { place-content: space-between center !important; }
+.d-pc-space-between-space-around { place-content: space-between space-around !important; }
+.d-pc-space-between-space-evenly { place-content: space-between space-evenly !important; }
+
+.d-pc-normal                 { place-content: normal !important; }
+.d-pc-legacy                 { place-content: legacy !important; }
+.d-pc-auto                   { place-content: auto !important; }
+.d-pc-unset                  { place-content: unset !important; }
+
+
+//  ============================================================================
+//  $   PLACE ITEMS
+//  ----------------------------------------------------------------------------
+.d-pi-center                 { place-items: center !important; }
+.d-pi-center-end             { place-items: center end !important; }
+.d-pi-center-start           { place-items: center start !important; }
+.d-pi-center-stretch         { place-items: center stretch !important; }
+.d-pi-center-space-around    { place-items: center space-around !important; }
+.d-pi-center-space-evenly    { place-items: center space-evenly !important; }
+.d-pi-center-space-between   { place-items: center space-between !important; }
+
+.d-pi-end                    { place-items: end !important; }
+.d-pi-end-start              { place-items: end start !important; }
+.d-pi-end-stretch            { place-items: end stretch !important; }
+.d-pi-end-center             { place-items: end center !important; }
+.d-pi-end-space-around       { place-items: end space-around !important; }
+.d-pi-end-space-evenly       { place-items: end space-evenly !important; }
+.d-pi-end-space-between      { place-items: end space-between !important; }
+
+.d-pi-start                  { place-items: start !important; }
+.d-pi-start-end              { place-items: start end !important; }
+.d-pi-start-center           { place-items: start center !important; }
+.d-pi-start-stretch          { place-items: start stretch !important; }
+.d-pi-start-space-around     { place-items: start space-around !important; }
+.d-pi-start-space-evenly     { place-items: start space-evenly !important; }
+.d-pi-start-space-between    { place-items: start space-between !important; }
+
+.d-pi-stretch                { place-items: stretch !important; }
+.d-pi-stretch-end            { place-items: stretch end !important; }
+.d-pi-stretch-start          { place-items: stretch start !important; }
+.d-pi-stretch-center         { place-items: stretch center !important; }
+.d-pi-stretch-space-evenly   { place-items: stretch space-evenly !important; }
+.d-pi-stretch-space-around   { place-items: stretch space-around !important; }
+.d-pi-stretch-space-between  { place-items: stretch space-between !important; }
+
+.d-pi-space-around           { place-items: space-around !important; }
+.d-pi-space-around-end       { place-items: space-around end !important; }
+.d-pi-space-around-start     { place-items: space-around start !important; }
+.d-pi-space-around-center    { place-items: space-around center !important; }
+.d-pi-space-around-space-evenly { place-items: space-around space-evenly !important; }
+.d-pi-space-around-space-between { place-items: space-around space-between !important; }
+
+.d-pi-space-evenly           { place-items: space-evenly !important; }
+.d-pi-space-evenly-end       { place-items: space-evenly end !important; }
+.d-pi-space-evenly-start     { place-items: space-evenly start !important; }
+.d-pi-space-evenly-center    { place-items: space-evenly center !important; }
+.d-pi-space-evenly-space-around { place-items: space-evenly space-around !important; }
+.d-pi-space-evenly-space-between { place-items: space-evenly space-between !important; }
+
+.d-pi-space-between          { place-items: space-between !important; }
+.d-pi-space-between-end      { place-items: space-between end !important; }
+.d-pi-space-between-start    { place-items: space-between start !important; }
+.d-pi-space-between-center   { place-items: space-between center !important; }
+.d-pi-space-between-space-around { place-items: space-between space-around !important; }
+.d-pi-space-between-space-evenly { place-items: space-between space-evenly !important; }
+
+.d-pi-normal                 { place-items: normal !important; }
+.d-pi-legacy                 { place-items: legacy !important; }
+.d-pi-auto                   { place-items: auto !important; }
 .d-pi-unset                  { place-items: unset !important; }
