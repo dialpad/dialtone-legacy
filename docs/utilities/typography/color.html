@@ -21,7 +21,7 @@ description: Dialtone provides a limited set of text-color utility variables and
                 <th scope="col">Color</th>
                 <th scope="col">CSS Var</th>
                 <th scope="col">Less Var</th>
-                <th scope="col" class="d-opacity50 d-bgc-black-050">Deprecated Less Var</th>
+                <th scope="col" class="d-o50 d-bgc-black-050">Deprecated Less Var</th>
                 <th scope="col">Output</th>
             </tr>
         </thead>
@@ -37,7 +37,7 @@ description: Dialtone provides a limited set of text-color utility variables and
                         <th scope="row">{{ color | capitalize }}</th>
                         <td>var(--fc-{{ stop }})</td>
                         <td>@fc-{{ stop }}</td>
-                        <td class="d-opacity50 d-bgc-black-050">@color--{{ stop }}</td>
+                        <td class="d-o50 d-bgc-black-050">@color--{{ stop }}</td>
                         <td>{{ hex }}</td>
                     </tr>
                     {% endif %}
@@ -56,7 +56,7 @@ description: Dialtone provides a limited set of text-color utility variables and
             <tr>
                 <th scope="col">Color</th>
                 <th scope="col">Class</th>
-                <th scope="col" class="d-opacity50 d-bgc-black-050">Deprecated Class</th>
+                <th scope="col" class="d-o50 d-bgc-black-050">Deprecated Class</th>
                 <th scope="col">Output</th>
             </tr>
         </thead>
@@ -73,13 +73,13 @@ description: Dialtone provides a limited set of text-color utility variables and
                         {% endif %}
                         <td>.d-fc-{{ stop }}</td>
                         {% if stop contains "text" %}
-                            <td class="d-opacity50 d-bgc-black-050">.d-color--{{ stop }}</td>
+                            <td class="d-o50 d-bgc-black-050">.d-color--{{ stop }}</td>
                         {% elsif color contains "ash" %}
-                            <td class="d-opacity50 d-bgc-black-050">.d-color--{{ old }}</td>
+                            <td class="d-o50 d-bgc-black-050">.d-color--{{ old }}</td>
                         {% elsif color contains "slate" %}
-                            <td class="d-opacity50 d-bgc-black-050">.d-color--{{ old }}</td>
+                            <td class="d-o50 d-bgc-black-050">.d-color--{{ old }}</td>
                         {% else %}
-                            <td class="d-opacity50 d-bgc-black-050 d-fc-black-600 d-fs-italic">N/A</td>
+                            <td class="d-o50 d-bgc-black-050 d-fc-black-600 d-fs-italic">N/A</td>
                         {% endif %}
                         <td>color: var(--{% if stop contains "text" %}fc-{% endif %}{{ stop }}) !important;</td>
                     </tr>
