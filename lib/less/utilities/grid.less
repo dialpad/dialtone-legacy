@@ -62,21 +62,21 @@
 //      each defined spacing unit.
 //  ----------------------------------------------------------------------------
 //  All Gaps
-#auto-generate(
+#d-internals #auto-generate(
     '.d-gg',
     { .template(@value) { grid-gap: @value !important; } },
     @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64
 );
 
 //  Row Gaps
-#auto-generate(
+#d-internals #auto-generate(
     '.d-grg',
     { .template(@value) { grid-row-gap: @value !important; } },
     @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64
 );
 
 //  Column Gaps
-#auto-generate(
+#d-internals #auto-generate(
     '.d-gcg',
     { .template(@value) { grid-column-gap: @value !important; } },
     @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64
@@ -90,28 +90,28 @@
 //  ============================================================================
 //  $   GRID COLUMNS
 //  ----------------------------------------------------------------------------
-#auto-generate-no-convert(
+#d-internals #auto-generate-no-convert(
     '.d-g-cols',
     { .template(@value) { grid-template-columns: [full-start] repeat(@value, [col-start] var(--col-width, minmax(0,1fr)) [col-end]) [full-end] !important; } },
     1 2 3 4 5 6 7 8 9 10 11 12
 );
 
 //  --  COLUMN START
-#auto-generate-no-convert(
+#d-internals #auto-generate-no-convert(
     '.d-gcs',
     { .template(@value) { grid-column-start: @value !important; } },
     1 2 3 4 5 6 7 8 9 10 11 12
 );
 
 //  --  COLUMN END
-#auto-generate-no-convert(
+#d-internals #auto-generate-no-convert(
     '.d-gce',
     { .template(@value) { grid-column-end: @value !important; } },
     1 2 3 4 5 6 7 8 9 10 11 12
 );
 
 //  --  COLUMN SPAN
-#auto-generate-no-convert(
+#d-internals #auto-generate-no-convert(
     '.d-gc',
     { .template(@value) { grid-column: span @value ~" / " span @value !important; } },
     1 2 3 4 5 6 7 8 9 10 11 12
@@ -131,28 +131,28 @@
 //  ============================================================================
 //  $   GRID ROWS
 //  ----------------------------------------------------------------------------
-#auto-generate-no-convert(
+#d-internals #auto-generate-no-convert(
     '.d-g-rows',
     { .template(@value) { grid-template-rows: [full-start] repeat(@value, [col-start] minmax(0,1fr) [col-end]) [full-end] !important; } },
     1 2 3 4 5 6 7 8 9 10 11 12
 );
 
 //  --  ROW START
-#auto-generate-no-convert(
+#d-internals #auto-generate-no-convert(
     '.d-grs',
     { .template(@value) { grid-row-start: @value !important; } },
     1 2 3 4 5 6 7 8 9 10 11 12
 );
 
 //  --  ROW END
-#auto-generate-no-convert(
+#d-internals #auto-generate-no-convert(
     '.d-gre',
     { .template(@value) { grid-row-end: @value !important; } },
     1 2 3 4 5 6 7 8 9 10 11 12
 );
 
 //  --  ROW SPAN
-#auto-generate-no-convert(
+#d-internals #auto-generate-no-convert(
     '.d-gr',
     { .template(@value) { grid-row: span @value ~" / " span @value !important; } },
     1 2 3 4 5 6 7 8 9 10 11 12

@@ -1,170 +1,100 @@
 ---
 layout: page
 title: Font Size
-description: Utility classes for setting an element's font size.
+description: Utilities to change an element's font-size.
 ---
-<aside class="d-p16 d-border-radius--sm d-w-75ch d-bgc-blue-100 d-fc-dark d-fs16 d-lh4 d-stack8">
-    <p class="d-m0"><strong>Note:</strong> New variables and classes were introduced with Dialtone v5.8.0. Whereas previous class names and variables used a "t-shirt" sizing method (sm, md, lg, etc), the new classes and variables explicitly state the desired size in the name.</p>
-    <p class="d-m0">The older classes and variables are still available, but they will no longer be supported and will be removed in a future version of Dialtone.</p>
-</aside>
 <section class="d-stack16">
-    <header class="d-stack2">
-        <h2 class="dialtone-title__section">Variables</h2>
-        <p class="dialtone-copy__normal">Dialtone provides Less and CSS variables for each font-size. This is useful if you're writing custom CSS and an immutable class isn't required or desired.</p>
-    </header>
-    <table class="d-table">
-        <thead>
-            <tr>
-                <th scope="col">Size</th>
-                <th scope="col">CSS Var</th>
-                <th scope="col" class="d-o50 d-bgc-black-050">Deprecated CSS Var</th>
-                <th scope="col">Less Var</th>
-                <th scope="col" class="d-o50 d-bgc-black-050">Deprecated Less Var</th>
-                <th scope="col">Output</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for i in type.font-size %}
-            {% assign size = i.size %}
-            {% assign var = i.variable-old %}
-            {% assign output = i.output %}
-            <tr>
-                <th scope="row">{{ size }}px</th>
-                <td>var(--fs{{ size }})</td>
-                {% if var == "N/A" %}
-                    <td class="d-o50 d-bgc-black-050 d-fc-black-600 d-fs-italic">N/A</td>
-                {% else %}
-                    <td class="d-o50 d-bgc-black-050">var(--{{ var }})</td>
-                {% endif %}
-                <td>@fs{{ size }}</td>
-                {% if var == "N/A" %}
-                    <td class="d-o50 d-bgc-black-050 d-fc-black-600 d-fs-italic">N/A</td>
-                {% else %}
-                    <td class="d-o50 d-bgc-black-050">@{{ var }}</td>
-                {% endif %}
-                <td>{{ output }}rem</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-</section>
-<section class="d-stack16">
-    <header class="d-stack2">
-        <h2 class="dialtone-title__section">Size Classes</h2>
-        <p class="dialtone-copy__normal">Starting in v5.8.0, Dialtone began providing immutable type classes, meaning they include an <span class="code-example--inline">!important</span> to override CSS specificity. These new classes abandon the previous "t-shirt" sizing metaphor in favor of explicitly stating the font-size. All previous class names still exist, but are considered deprecated and should not be used moving forward. They will be removed in a future version.</p>
-    </header>
-    <table class="d-table">
-        <thead>
-            <tr>
-                <th scope="col">Size</th>
-                <th scope="col">Class</th>
-                <th scope="col" class="d-o50 d-bgc-black-050">Deprecated Class</th>
-                <th scope="col">Output</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for i in type.font-size %}
-            {% assign size = i.size %}
-            {% assign class = i.class-old %}
-            <tr>
-                <th scope="row">{{ size }}px</th>
-                <td>.d-fs{{ size }}</td>
-                {% if class == "N/A" %}
-                    <td class="d-o50 d-bgc-black-050 d-fc-black-600 d-fs-italic">N/A</td>
-                {% else %}
-                    <td class="d-o50 d-bgc-black-050">.d-{{ class }}</td>
-                {% endif %}
-                <td>font-size: var(--fs{{ size }}) !important;</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    <div class="dialtone-example" data-example="yes" data-code="yes">
-        <div class="dialtone-example__example d-stack12">
-            {% for i in type.font-size %}
-            {% assign size = i.size %}
-            <div class="d-stack2 d-ws-nowrap d-of-hidden">
-                <span class="code-example--inline">.d-fs{{ size }}</span>
-                <p class="d-fs{{ size }} d-lh4 d-m0">The quick brown fox jumps over the lazy dog.</p>
-            </div>
-            {% endfor %}
-        </div>
-        <div class="dialtone-example__code">
-{% highlight html linenos %}
-<p class="d-fs10">…</p>
-<p class="d-fs11">…</p>
-<p class="d-fs12">…</p>
-<p class="d-fs14">…</p>
-<p class="d-fs16">…</p>
-<p class="d-fs18">…</p>
-<p class="d-fs20">…</p>
-<p class="d-fs24">…</p>
-<p class="d-fs28">…</p>
-<p class="d-fs32">…</p>
-<p class="d-fs36">…</p>
-<p class="d-fs42">…</p>
-<p class="d-fs48">…</p>
-<p class="d-fs54">…</p>
-{% endhighlight %}
-        </div>
-    </div>
-</section>
-<section class="d-stack16">
-    <header class="d-stack2">
-        <h2 class="dialtone-title__section">Headline Classes</h2>
-        <p class="dialtone-copy__normal">Starting in v5.8.0, Dialtone abandoned the previous "t-shirt" sizing metaphor in favor of explicitly stating the font-size. While these single-purpose classes provide a better idea of the font-size you will see, they didn't include all CSS properties that the previous <span class="code-example--inline">.d-headline--{size}</span> classes provided. The following classes do provide those properties.</p>
-    </header>
-    <table class="d-table">
-        <thead>
-            <tr>
-                <th scope="col">Size</th>
-                <th scope="col">Class</th>
-                <th scope="col" class="d-o50 d-bgc-black-050">Deprecated Class</th>
-                <th scope="col">Output</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for i in type.font-size %}
-            {% assign size = i.size %}
-            {% assign class = i.class-old %}
-            {% assign hl = i.headline %}
-                {% if hl == "yes" %}
+    {% header "h2", "Classes" %}
+    <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
+        <table class="d-table">
+            <thead>
                 <tr>
-                    <th scope="row">{{ size }}px</th>
-                    <td>.d-headline{{ size }}</td>
-                    {% if class == "N/A" %}
-                        <td class="d-o50 d-bgc-black-050 d-fc-black-600 d-fs-italic">N/A</td>
-                    {% else %}
-                        <td class="d-o50 d-bgc-black-050">.d-{{ class }}</td>
-                    {% endif %}
-                    <td>font-size: var(--fs{{ size }}) !important;<br />font-weight: bold !important;{% if size == "10" %}<br />text-transform: uppercase !important;{% endif %}</td>
+                    <th scope="col" class="d-w10p">Size</th>
+                    <th scope="col" class="d-w20p">Class</th>
+                    <th scope="col">Output</th>
                 </tr>
-                {% endif %}
-            {% endfor %}
-        </tbody>
-    </table>
-    <div class="dialtone-example" data-example="yes" data-code="yes">
-        <div class="dialtone-example__example d-stack12">
-            {% for i in type.font-size %}
-            {% assign size = i.size %}
-            {% assign hl = i.headline %}
-                {% if hl == "yes" %}
-                <div class="d-stack2 d-ws-nowrap d-of-hidden">
-                    <span class="code-example--inline">.d-headline{{ size }}</span>
-                    <p class="d-headline{{ size }} d-m0">The quick brown fox jumps over the lazy dog.</p>
-                </div>
-                {% endif %}
-            {% endfor %}
-        </div>
-        <div class="dialtone-example__code">
-{% highlight html linenos %}
-<p class="d-headline10">…</p>
-<p class="d-headline24">…</p>
-<p class="d-headline28">…</p>
-<p class="d-headline32">…</p>
-<p class="d-headline36">…</p>
-<p class="d-headline42">…</p>
-{% endhighlight %}
-        </div>
+            </thead>
+            <tbody>
+                {% for i in type.font-size %}
+                {% assign size = i.size %}
+                {% assign output = i.output %}
+                    <tr>
+                        <th scope="row">{{ size }}px</th>
+                        <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-fs{{ size }}</td>
+                        <td>
+                            <div class="d-d-flex d-jc-space-between d-ai-center">
+                                <div class="d-fl1 d-ff-mono d-fc-teal-500 d-fs12">
+                                    font-size: {{ output }}rem !important;
+                                </div>
+                                <div class="d-fl0 d-fs{{ size }} d-lh4">
+                                    Aa
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+                {% for i in type.font-size %}
+                {% assign size = i.size %}
+                {% assign output = i.output %}
+                {% assign headline = i.headline %}
+                    {% if headline == "yes" %}
+                    <tr>
+                        <th scope="row">{{ size }}px</th>
+                        <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-headline{{ size }}</td>
+                        <td>
+                            <div class="d-d-flex d-jc-space-between d-ai-center">
+                                <div class="d-fl1 d-ff-mono d-fc-teal-500 d-fs12">
+                                    font-size: {{ output }}rem !important;<br/>
+                                    font-weight: var(--fw-bold) !important;
+                                </div>
+                                <div class="d-fl0 d-headline{{ size }} d-lh4">
+                                    Aa
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Usage" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-{fs|headline}{n}</code> to change an element's font-size.</p>
+    </header>
+    <aside class="d-br8 d-of-hidden">
+        <header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-purple-100 d-w100p d-hmn102">
+            <div class="d-d-grid d-gg16 d-ai-center" style="grid-template-columns: 10rem 1fr">
+                <div class="d-fs12 d-ff-mono d-fc-purple-300">.d-fs14</div>
+                <div><p class="d-fs14 d-fc-purple-500">The quick brown fox jumps over the lazy dog.</p></div>
+                <div class="d-fs12 d-ff-mono d-fc-purple-300">.d-fs18</div>
+                <div><p class="d-fs18 d-fc-purple-500">The quick brown fox jumps over the lazy dog.</p></div>
+                <div class="d-fs12 d-ff-mono d-fc-purple-300">.d-fs24</div>
+                <div><p class="d-fs24 d-fc-purple-500">The quick brown fox jumps over the lazy dog.</p></div>
+                <div class="d-fs12 d-ff-mono d-fc-purple-300">.d-fs32</div>
+                <div><p class="d-fs32 d-fc-purple-500">The quick brown fox jumps over the lazy dog.</p></div>
+                <div class="d-fs12 d-ff-mono d-fc-purple-300">.d-fs42</div>
+                <div><p class="d-fs42 d-fc-purple-500">The quick brown fox jumps over the lazy dog.</p></div>
+                <div class="d-fs12 d-ff-mono d-fc-purple-300">.d-headline36</div>
+                <div><p class="d-headline36 d-lh1 d-fc-purple-500">The quick brown fox jumps over the lazy dog.</p></div>
+                <div class="d-fs12 d-ff-mono d-fc-purple-300">.d-headline48</div>
+                <div><p class="d-headline48 d-lh1 d-fc-purple-500">The quick brown fox jumps over the lazy dog.</p></div>
+                <div class="d-fs12 d-ff-mono d-fc-purple-300">.d-headline54</div>
+                <div><p class="d-headline54 d-lh1 d-fc-purple-500">The quick brown fox jumps over the lazy dog.</p></div>
+            </div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-brb8 d-fs12">
+{% highlight html linenos %}
+<p class="d-fs14">...</p>
+<p class="d-fs18">...</p>
+<p class="d-fs24">...</p>
+<p class="d-fs42">...</p>
+<p class="d-headline36 d-lh1">...</p>
+<p class="d-headline48 d-lh1">...</p>
+<p class="d-headline54 d-lh1">...</p>
+{% endhighlight %}
+        </footer>
+    </aside>
 </section>

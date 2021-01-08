@@ -1,52 +1,89 @@
 ---
 layout: page
 title: Text Decoration
-description: TBD
+description: Utilities to change an element's text decoration styles.
 ---
 <section class="d-stack16">
-    <header class="d-stack2">
-        <h2 class="dialtone-title__section">Text Decoration</h2>
-        <div class="d-stack12">
-            <p class="dialtone-copy__normal">Text-decoration is a shorthand CSS property that sets the appearance of text decorative lines. It is shorthand for <span class="code-example--inline">text-decoration-line</span>, <span class="code-example--inline">text-decoration-color</span>, <span class="code-example--inline">text-decoration-style</span>, and the <span class="code-example--inline">text-decoration-thickness</span> properties.</p>
-            <p class="dialtone-copy__normal">Starting in v5.8.0, Dialtone began providing immutable type classes, meaning they include an <span class="code-example--inline">!important</span> to override CSS specificity.</p>
-        </div>
-    </header>
-    <div class="d-stack16">
-        <table class="d-table">
-            <thead>
+    {% header "h2", "Classes" %}
+    <table class="d-table">
+        <thead>
+            <tr>
+                <th scope="col" class="d-w25p">Class</th>
+                <th scope="col">Output</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% assign style = type.decoration | split: ", " %}
+            {% for i in style %}
                 <tr>
-                    <th scope="col" class="dialtone-table__column--md">Class</th>
-                    <th scope="col">Output</th>
+                    <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-td-{{ i }}</th>
+                    <td class="d-ff-mono d-fc-teal-500 d-fs12">text-decoration: {% if i == "dotted" %}underline {% endif %}{{ i }} !important;</td>
                 </tr>
-            </thead>
-            <tbody>
-                {% assign decoration = type.decoration | split: ", " %}
-                {% for i in decoration %}
-                    <tr>
-                        <th scope="row">.d-td-{{ i }}</th>
-                        <td>text-decoration: {{ i }} !important;</td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-        <div class="dialtone-example" data-example="yes" data-code="yes">
-            <div class="dialtone-example__example d-stack8">
-                {% assign decoration = type.decoration | split: ", " %}
-                {% for i in decoration %}
-                <div class="d-stack2">
-                    <span class="code-example--inline">.d-td-{{ i }}</span>
-                    <p class="d-lh6 d-fs18 d-m0 d-td-{{ i }}">{% if i == "unset" %}This sentence's text-decoration has been {{ i }}{% else %}This sentence has {% if i == "none" %}no{% else %}{{ i }}{% endif %} text-decoration.{% endif %}</p>
-                </div>
-                {% endfor %}
-            </div>
-            <div class="dialtone-example__code">
-                {% highlight html linenos %}
-<p class="d-td-none">…</p>
-<p class="d-td-underline">…</p>
-<p class="d-td-dotted">…</p>
-<p class="d-td-unset">…</p>
-                {% endhighlight %}
-            </div>
-        </div>
-    </div>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Underline" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-td-underline</code> to underline text.</p>
+    </header>
+    <aside class="d-br8 d-of-hidden">
+        <header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-blue-100 d-w100p d-hmn102">
+            <p class="d-fs24 d-fc-blue-500 d-td-underline">The quick brown fox jumps over the lazy dog.</p>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-brb8 d-fs12">
+{% highlight html linenos %}
+<p class="d-td-underline">...</p>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Dotted" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-td-dotted</code> to apply a dotted underline style to the text.</p>
+    </header>
+    <aside class="d-br8 d-of-hidden">
+        <header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-purple-100 d-w100p d-hmn102">
+            <p class="d-fs24 d-fc-purple-500 d-td-dotted">The quick brown fox jumps over the lazy dog.</p>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-brb8 d-fs12">
+{% highlight html linenos %}
+<p class="d-td-dotted">...</p>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Line Through" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-td-line-through</code> to apply a line through the text.</p>
+    </header>
+    <aside class="d-br8 d-of-hidden">
+        <header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-green-100 d-w100p d-hmn102">
+            <p class="d-fs24 d-fc-green-500 d-td-line-through">The quick brown fox jumps over the lazy dog.</p>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-brb8 d-fs12">
+{% highlight html linenos %}
+<p class="d-td-line-through">...</p>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "No decorations" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-td-none</code> to remove text decorations.</p>
+    </header>
+    <aside class="d-br8 d-of-hidden">
+        <header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-red-100 d-w100p d-hmn102">
+            <p class="d-fs24 d-fc-red-500 d-td-none">The quick brown fox jumps over the lazy dog.</p>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-brb8 d-fs12">
+{% highlight html linenos %}
+<p class="d-td-none">...</p>
+{% endhighlight %}
+        </footer>
+    </aside>
 </section>

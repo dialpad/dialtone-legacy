@@ -1,52 +1,56 @@
 ---
 layout: page
 title: Text Align
-description: TBD
+description: Utilities for controlling an element's text alignment.
 ---
 <section class="d-stack16">
+    {% header "h2", "Classes" %}
+    <table class="d-table">
+        <thead>
+            <tr>
+                <th scope="col" class="d-w25p">Class</th>
+                <th scope="col">Output</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% assign align = type.align | split: ", " %}
+            {% for i in align %}
+            <tr>
+                <th class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-ta-{{ i }}</th>
+                <td class="d-ff-mono d-fc-teal-500 d-fs12">text-align: {{ i }} !important;</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+<section class="d-stack16">
     <header class="d-stack2">
-        <h2 class="dialtone-title__section">Text Align</h2>
-        <div class="d-stack12">
-            <p class="dialtone-copy__normal">TBD</p>
-        </div>
+        {% header "h2", "Usage" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-ta-{n}</code> to change an element's text alignment.</p>
     </header>
-    <div class="d-stack16">
-        <table class="d-table">
-            <thead>
-                <tr>
-                    <th scope="col" class="dialtone-table__column--md">Class</th>
-                    <th scope="col">Output</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% assign transform = type.transform | split: ", " %}
-                {% for i in transform %}
-                    <tr>
-                        <th scope="row">.d-tt-{{ i }}</th>
-                        <td>text-transform: {{ i }} !important;</td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-        <div class="dialtone-example" data-example="yes" data-code="yes">
-            <div class="dialtone-example__example d-stack8">
-                {% assign transform = type.transform | split: ", " %}
-                {% for i in transform %}
-                <div class="d-stack2">
-                    <span class="code-example--inline">.d-tt-{{ i }}</span>
-                    <p class="d-lh6 d-fs18 d-m0 d-tt-{{ i }}">{% if i == "unset" %}This sentence text-transform value is {{ i }}.{% else %}This sentence has {% if i == "none" %}no{% else %}a {{ i }}{% endif %} text-transform.{% endif %}</p>
-                </div>
-                {% endfor %}
+    <aside class="d-br8 d-of-hidden">
+        <header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn102">
+            <div class="d-d-grid d-gg16 d-ai-center" style="grid-template-columns: 10rem 1fr">
+                <div class="d-fs12 d-ff-mono d-fc-purple-300">.d-ta-left</div>
+                <div><p class="d-fs20 d-ta-left d-fc-purple-500">The quick brown fox jumps over the lazy dog.</p></div>
+                <div class="d-fs12 d-ff-mono d-fc-purple-300">.d-ta-center</div>
+                <div><p class="d-fs20 d-ta-center d-fc-purple-500">The quick brown fox jumps over the lazy dog.</p></div>
+                <div class="d-fs12 d-ff-mono d-fc-purple-300">.d-ta-right</div>
+                <div><p class="d-fs20 d-ta-right d-fc-purple-500">The quick brown fox jumps over the lazy dog.</p></div>
+                <div class="d-fs12 d-ff-mono d-fc-purple-300">.d-ta-justify</div>
+                <div><p class="d-fs20 d-ta-justify d-fc-purple-500 d-w332">The quick brown fox jumps over the lazy dog. This needs a width applied to it to work.</p></div>
+                <div class="d-fs12 d-ff-mono d-fc-purple-300">.d-ta-unset</div>
+                <div><p class="d-fs20 d-ta-unset d-fc-purple-500">The quick brown fox jumps over the lazy dog.</p></div>
             </div>
-            <div class="dialtone-example__code">
-                {% highlight html linenos %}
-<p class="d-tt-none">…</p>
-<p class="d-tt-uppercase">…</p>
-<p class="d-tt-lowercase">…</p>
-<p class="d-tt-capitalize">…</p>
-<p class="d-tt-unset">…</p>
-                {% endhighlight %}
-            </div>
-        </div>
-    </div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-brb8 d-fs12">
+{% highlight html linenos %}
+<p class="d-ta-left">...</p>
+<p class="d-ta-center">...</p>
+<p class="d-ta-right">...</p>
+<p class="d-ta-justify d-w332">...</p>
+<p class="d-ta-unset">...</p>
+{% endhighlight %}
+        </footer>
+    </aside>
 </section>

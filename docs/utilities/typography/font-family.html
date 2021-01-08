@@ -1,20 +1,40 @@
 ---
 layout: page
 title: Font Family
-description: Utility classes for controlling an element's font-family.
+description: Utilities to change an element's font-family.
 ---
-<section class="d-stack16">
-    <header class="d-stack2">
-        <h2 class="dialtone-title__section">Variables</h2>
-        <p class="dialtone-copy__normal">Dialtone provides Less and CSS variables for <span class="code-example--inline">font-family</span>. These are useful if you're writing custom CSS and an immutable class isn't required or desired.</p>
-    </header>
+<section class="d-stack8">
+    {% header "h2", "CSS Variables" %}
     <table class="d-table">
         <thead>
             <tr>
-                <th scope="col" class="d-w10">Type</th>
-                <th scope="col" class="d-w20">CSS Var</th>
-                <th scope="col" class="d-w20">Less Var</th>
-                <th scope="col" class="d-w25 d-o50 d-bgc-black-050">Deprecated Less Var</th>
+                <th scope="col" class="d-w20p">Type</th>
+                <th scope="col" class="d-w20p">Variable</th>
+                <th scope="col">Output</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in type.font-family %}
+            {% assign t = i.type %}
+            {% assign v = i.var %}
+            {% assign o = i.output %}
+            {% if v != "unset" %}
+                <tr>
+                    <th scope="row">{{ t }}</th>
+                    <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">var(--ff-{{ v }})</td>
+                    <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ o }}</td>
+                </tr>
+            {% endif %}
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+<section class="d-stack8">
+    {% header "h2", "Classes" %}
+    <table class="d-table">
+        <thead>
+            <tr>
+                <th scope="col" class="d-w25p">Class</th>
                 <th scope="col">Output</th>
             </tr>
         </thead>
@@ -25,20 +45,8 @@ description: Utility classes for controlling an element's font-family.
             {% assign o = i.output %}
                 <tr>
                     <th scope="row">{{ t }}</th>
-                    {% if v == "inherit" %}
-                        <td class="d-fc-black-600 d-fs-italic">N/A</td>
-                        <td class="d-fc-black-600 d-fs-italic">N/A</td>
-                        <td class="d-o50 d-bgc-black-050 d-fc-black-600 d-fs-italic">N/A</td>
-                    {% elsif v == "unset" %}
-                        <td class="d-fc-black-600 d-fs-italic">N/A</td>
-                        <td class="d-fc-black-600 d-fs-italic">N/A</td>
-                        <td class="d-o50 d-bgc-black-050 d-fc-black-600 d-fs-italic">N/A</td>
-                    {% else %}
-                        <td>var(--ff-{{ v }})</td>
-                        <td>@ff-{{ v }}</td>
-                        <td class="d-o50 d-bgc-black-050">@font-family--{{ v }}</td>
-                    {% endif %}
-                    <td>{{ o }}</td>
+                    <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-ff-{{ v }})</td>
+                    <td class="d-ff-mono d-fc-teal-500 d-fs12">font-family: {{ o }} !important;</td>
                 </tr>
             {% endfor %}
         </tbody>
@@ -46,53 +54,49 @@ description: Utility classes for controlling an element's font-family.
 </section>
 <section class="d-stack16">
     <header class="d-stack2">
-        <h2 class="dialtone-title__section">Classes</h2>
-        <p class="dialtone-copy__normal">Starting in v5.8.0, Dialtone began providing immutable type classes, meaning they include an <span class="code-example--inline">!important</span> to override CSS specificity. All previous class names still exist, but are considered deprecated and should not be used moving forward. They will be removed in a future version.</p>
+        {% header "h2", "Custom" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-ff-custom</code> to apply the theme's font-family.</p>
     </header>
-    <table class="d-table">
-        <thead>
-            <tr>
-                <th scope="col" class="d-w20">Class</th>
-                <th scope="col" class="d-w25 d-o50 d-bgc-black-050">Deprecated Class</th>
-                <th scope="col">Output</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for i in type.font-family %}
-            {% assign t = i.type %}
-            {% assign v = i.var %}
-            {% assign o = i.output %}
-            <tr>
-                <td>.d-ff-{{ v }}</td>
-                {% if v == "unset" %}
-                    <td class="d-o50 d-bgc-black-050 d-fc-black-600 d-fs-italic">N/A</td>
-                {% else %}
-                    <td class="d-o50 d-bgc-black-050">.d-font-family--{{ v }}</td>
-                {% endif %}
-                <td>font-family: {{ o }} !important;</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    <div class="dialtone-example" data-example="yes" data-code="yes">
-        <div class="dialtone-example__example d-stack12">
-            {% for i in type.font-family %}
-            {% assign t = i.type %}
-            {% assign v = i.var %}
-            <div class="d-stack2">
-                <span class="code-example--inline">.d-ff-{{ v }}</span>
-                <p class="d-lh6 d-fs18 d-m0 d-ff-{{ v }}">{% if v == "inherit" %}This paragraph's font-family has been reset using <strong>{{ t }}</strong>.{% elsif v == "unset" %}This paragraph's font-family has been reset using <strong>{{ t }}</strong>.{% else %}This is a paragraph using a <strong>{{ t }}</strong> font-family.{% endif %}</p>
-            </div>
-            {% endfor %}
-        </div>
-        <div class="dialtone-example__code">
+    <aside class="d-br8 d-of-hidden">
+        <header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-black-050 d-w100p d-hmn102">
+            <p class="d-fs24 d-ff-custom">The quick brown fox jumps over the lazy dog.</p>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-brb8 d-fs12">
 {% highlight html linenos %}
-<p class="d-ff-custom">…</p>
-<p class="d-ff-sans">…</p>
-<p class="d-ff-mono">…</p>
-<p class="d-ff-inherit">…</p>
-<p class="d-ff-unset">…</p>
+<p class="d-ff-custom">...</p>
 {% endhighlight %}
-        </div>
-    </div>
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Sans-serif" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-ff-sans</code> to apply a Sans-Serif font stack.</p>
+    </header>
+    <aside class="d-br8 d-of-hidden">
+        <header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-black-050 d-w100p d-hmn102">
+            <p class="d-fs24 d-ff-sans">The quick brown fox jumps over the lazy dog.</p>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-brb8 d-fs12">
+{% highlight html linenos %}
+<p class="d-ff-sans">...</p>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Mono" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-ff-mono</code> to apply a Sans-Serif font stack.</p>
+    </header>
+    <aside class="d-br8 d-of-hidden">
+        <header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-black-050 d-w100p d-hmn102">
+            <p class="d-fs24 d-ff-mono">The quick brown fox jumps over the lazy dog.</p>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-brb8 d-fs12">
+{% highlight html linenos %}
+<p class="d-ff-mono">...</p>
+{% endhighlight %}
+        </footer>
+    </aside>
 </section>

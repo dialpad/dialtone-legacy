@@ -17,16 +17,11 @@
 //  ============================================================================
 //  $   FONT FAMILY
 //  ----------------------------------------------------------------------------
-@define-font-face-custom:        true;
 @define-ff-custom:               @ff-roboto;
 @define-ff-custom-name:          "Roboto";
-
-@define-font-face-mono:          false;
 @define-ff-mono:                 @ff-roboto-mono;
 @define-ff-mono-name:            "RobotoMono";
-
-@define-font-path:               "../fonts/";
-@headline-weight:                @fw-bold;
+@headline-weight:                var(--fw-bold);
 
 @ff-roboto: {
     300: Roboto-Light;
@@ -39,9 +34,9 @@
     700: RobotoMono-Bold;
 };
 
-@ff-custom:                     @define-ff-custom-name, @ff-sans;
-@ff-sans:                       -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";;
-@ff-mono:                       @define-ff-mono-name, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+@ff-custom: @define-ff-custom-name, @ff-sans;
+@ff-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";;
+@ff-mono: @define-ff-mono-name, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
 
 
 //  ============================================================================
@@ -75,23 +70,73 @@
 @fs48:              4.8rem;
 @fs54:              5.4rem;
 
+
 //  ============================================================================
 //  $   LINE HEIGHTS
 //  ----------------------------------------------------------------------------
-@lh0:               1em;
-@lh1:               calc(@lh0 + 1px);
-@lh2:               calc(@lh0 + 2px);
-@lh4:               calc(@lh0 + 4px);
-@lh6:               calc(@lh0 + 6px);
-@lh8:               calc(@lh0 + 8px);
-@lh12:              calc(@lh0 + 12px);
-@lh16:              calc(@lh0 + 16px);
-@lh20:              calc(@lh0 + 20px);
-@lh24:              calc(@lh0 + 24px);
+@lh0:               1;
+@lh1:               calc(1em + 1px);
+@lh2:               calc(1em + 2px);
+@lh4:               calc(1em + 4px);
+@lh6:               calc(1em + 6px);
+@lh8:               calc(1em + 8px);
+@lh12:              calc(1em + 12px);
+@lh16:              calc(1em + 16px);
+@lh20:              calc(1em + 20px);
+@lh24:              calc(1em + 24px);
 
-@lh-none:           1;
 @lh-tighter:        1.125;
 @lh-tight:          1.25;
 @lh-normal:         1.5;
 @lh-loose:          1.75;
 @lh-looser:         2;
+
+
+//  ============================================================================
+//  $   CSS VARIABLES
+//  ----------------------------------------------------------------------------
+@type-styles-vars: {
+    ff-custom:                              @ff-custom;
+    ff-sans:                                @ff-sans;
+    ff-mono:                                @ff-mono;
+
+    fs10:                                   @fs10;
+    fs11:                                   @fs11;
+    fs12:                                   @fs12;
+    fs14:                                   @fs14;
+    fs16:                                   @fs16;
+    fs18:                                   @fs18;
+    fs20:                                   @fs20;
+    fs24:                                   @fs24;
+    fs28:                                   @fs28;
+    fs32:                                   @fs32;
+    fs36:                                   @fs36;
+    fs42:                                   @fs42;
+    fs48:                                   @fs48;
+    fs54:                                   @fs54;
+
+    lh0:                                    @lh0;
+    lh1:                                    @lh1;
+    lh2:                                    @lh2;
+    lh4:                                    @lh4;
+    lh6:                                    @lh6;
+    lh8:                                    @lh8;
+    lh12:                                   @lh12;
+    lh16:                                   @lh16;
+    lh20:                                   @lh20;
+    lh24:                                   @lh24;
+    lh-tighter:                             @lh-tighter;
+    lh-tight:                               @lh-tight;
+    lh-normal:                              @lh-normal;
+    lh-loose:                               @lh-loose;
+    lh-looser:                              @lh-looser;
+
+    fw-thin:                                @fw-thin;
+    fw-light:                               @fw-light;
+    fw-normal:                              @fw-normal;
+    fw-medium:                              @fw-medium;
+    fw-bold:                                @fw-bold;
+    fw-black:                               @fw-black;
+
+    ls-content:                             "\1F44D";
+}
