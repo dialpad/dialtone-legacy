@@ -122,42 +122,75 @@
 //  $   OUTPUT VARIABLES
 //  ============================================================================
 body {
+    //  $$  COLOR VARS
+    //  ------------------------------------------------------------------------
+    --bgo: 100%;                // Background color opacity
+    --bco: 100%;                // Border color opacity
+    --fco: 100%;                // Font color opacity
+
+    //  All the light colored HSL vars
+    each(@light-color-vars, {
+        --@{key}: @value;
+    });
+
+    //  All the dark colored HSL vars
+    &.theme-dark {
+        each(@dark-color-vars, {
+            --@{key}: @value;
+        });
+    }
+
+    //  Now all our color vars
+    each(@combined-hsl-vars, {
+        --@{key}: @value;
+    });
+
+    //  $$  WIDTH / HEIGHT SIZES
+    //  ------------------------------------------------------------------------
     //  Sizes, Fixed
     each(@sizes-fixed, {
         --@{key}: @value;
     });
 
-    //  Visual Styles
+    //  $$  VISUAL STYLES
+    //  ------------------------------------------------------------------------
     each(@visual-styles-vars, {
         --@{key}: @value;
     });
 
-    //  Border Styles
+    //  $$  BORDERS
+    //  ------------------------------------------------------------------------
     each(@border-vars, {
         --@{key}: @value;
     });
 
-    //  Grid Vars
+    //  $$  GRID
+    //  ------------------------------------------------------------------------
     each(@grid-vars, {
         --@{key}: @value;
     });
 
-    //  Type Styles
+    //  $$  TYPE
+    //  ------------------------------------------------------------------------
     each(@type-styles-vars, {
         --@{key}: @value;
     });
 
-    //  Inputs & Button Styles
-    each(@input-button-vars, {
-        --@{key}: @value;
-    });
-
-    //  Z-Index
+    //  $$  Z-INDEX
+    //  ------------------------------------------------------------------------
     each(@zi-vars, {
         --@{key}: @value;
     });
 
-    //  Theme Styles
+    //  $$  INPUTS & BUTTONS
+    //  ------------------------------------------------------------------------
+    each(@input-button-vars, {
+        --@{key}: @value;
+    });
+
+    //  $$  THEME VARS
+    //      These should always come last
+    //  ------------------------------------------------------------------------
     each(@theme-vars, {
         --@{key}: @value;
     });

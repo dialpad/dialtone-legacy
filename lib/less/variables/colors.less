@@ -191,19 +191,15 @@
     //  --  STATES
     error-color:                var(--red-400);
     error-color-hover:          var(--red-500);
-    error-color-text:           var(--red-600);
     error-color-hsl:            var(--red-400-h) var(--red-400-s) var(--red-400-l);
     warning-color:              var(--yellow-400);
     warning-color-hover:        var(--yellow-500);
     warning-color-hsl:          var(--yellow-400-h) var(--yellow-400-s) var(--yellow-400-l);
-    warning-color-text:         var(--yellow-600);
     success-color:              var(--green-400);
     success-color-hover:        var(--green-500);
-    success-color-text:         var(--green-600);
     success-color-hsl:          var(--green-400-h) var(--green-400-s) var(--green-400-l);
     muted-color:                var(--black-700);
     muted-color-hover:          var(--black-800);
-    muted-color-text:           var(--black-900);
     muted-color-hsl:            var(--black-700-h) var(--black-700-s) var(--black-700-l);
 
     //  --  TEXT COLORS
@@ -219,6 +215,12 @@
     fc-green:                   var(--green-600);
     fc-yellow:                  var(--yellow-600);
     fc-red:                     var(--red-600);
+    fc-success:                 var(--green-600);
+    fc-error:                   var(--red-600);
+    fc-danger:                  var(--red-600);
+    fc-warning:                 var(--yellow-600);
+    fc-muted:                   var(--black-900);
+    fc-primary:                 var(--primary-color);
 
     //  --  FOCUS RINGS
     focus-ring:                 hsla(var(--primary-color-hsl) ~" / " 25%);
@@ -462,28 +464,4 @@
     red-300:                    hsl(var(--red-300-h) var(--red-300-s) var(--red-300-l));
     red-200:                    hsl(var(--red-200-h) var(--red-200-s) var(--red-200-l));
     red-100:                    hsl(var(--red-100-h) var(--red-100-s) var(--red-100-l));
-}
-
-
-body {
-    --bgo: 100%;                // Background color opacity
-    --bco: 100%;                // Border color opacity
-    --fco: 100%;                // Font color opacity
-
-    //  All the light colored HSL vars
-    each(@light-color-vars, {
-        --@{key}: @value;
-    });
-
-    //  All the dark colored HSL vars
-    &.theme-dark {
-        each(@dark-color-vars, {
-            --@{key}: @value;
-        });
-    }
-
-    //  Now all our color vars
-    each(@combined-hsl-vars, {
-        --@{key}: @value;
-    });
 }

@@ -83,3 +83,161 @@
     --@{name}-l: lightness(@value);
     --@{name}-hsl: var(~"--@{name}-h") var(~"--@{name}-s") var(~"--@{name}-l");
 }
+
+#d-internal-config {
+    @breakpoints: 1264px, 980px, 640px, 480px;
+}
+
+#d-internals() {
+    //  ========================================================================
+    //  $   DARK MODE
+    //      #dark-mode creates a dark-mode override behind the
+    //      `prefers-color-scheme: dark` media query and `.theme-system` class.
+    //      It also renders the same rules outside of the media query with
+    //      `.theme-dark`.
+    //
+    //      USAGE:
+    //      #d-internals #dark-mode('.d-modal', { background-color: var(--black-200); })
+    //
+    //  ------------------------------------------------------------------------
+    #dark-mode(@class, @rules) {
+        @nodot-s: replace(@class, "^\.", "");
+        @nodot: ~"@{nodot-s}";
+        @classname: ~"@{class}";
+
+        body.theme-system @{classname} {
+            @media (prefers-color-scheme: dark) {
+                @rules();
+            }
+        }
+        body.theme-dark @{classname} {
+            @rules();
+        }
+
+        #d-internals-collect-dark() {
+            .d\:@{nodot} {
+                @rules();
+            }
+        }
+    }
+
+    //  ========================================================================
+    //  $   RESPONSIVENESS
+    //      #responsive renders a class and all responsive sizes.
+    //
+    //      USAGE:
+    //      #d-internals #responsive('.d-block', { display: block !important; })
+    //
+    //  ------------------------------------------------------------------------
+    #responsive(@class, @rules) {
+        @nodot-s: replace(@class, "^\.", "");
+        @nodot: ~"@{nodot-s}";
+
+        & when (@class = @nodot-s) {
+            error {
+                error: @CLASS-NAME-MUST-START-WITH-A-DOT;
+            }
+        }
+
+        .@{nodot} {
+            @rules();
+        }
+
+        #d-internals-collect-xl() {
+            .lg\:@{nodot} {
+                @rules();
+            };
+        }
+        #d-internals-collect-lg() {
+            .lg\:@{nodot} {
+                @rules();
+            };
+        }
+        #d-internals-collect-md() {
+            .md\:@{nodot} {
+                @rules();
+            };
+        }
+        #d-internals-collect-sm() {
+            .sm\:@{nodot} {
+                @rules();
+            };
+        }
+    }
+
+    #screen-xl(@rules, @force-selector: false) {
+        #d-internal-config();
+        #d-internals #responsive-generate(0, @rules, @breakpoints, 1, @force-selector);
+    }
+    #screen-lg(@rules, @force-selector: false) {
+        #d-internal-config();
+        #d-internals #responsive-generate(1, @rules, @breakpoints, 1, @force-selector);
+    }
+    #screen-md(@rules, @force-selector: false) {
+        #d-internal-config();
+        #d-internals #responsive-generate(2, @rules, @breakpoints, 1, @force-selector);
+    }
+    #screen-sm(@rules, @force-selector: false) {
+        #d-internal-config();
+        #d-internals #responsive-generate(3, @rules, @breakpoints, 1, @force-selector);
+    }
+
+    //  ------------------------------------------------------------------------
+    //  @bp-index values:
+    //      0 = large
+    //      1 = medium
+    //      2 = small
+    //
+    //  @start-index is the index number which is increases to exhaust the list.
+    //  ------------------------------------------------------------------------
+    #responsive-generate(@bp-index, @rules, @breakpoints, @start-index, @force-selector: false) when (@start-index < length(@breakpoints)) {
+
+        //  If the first list item is a string, it's a selector that is prepended to
+        //  the responsive class
+        & when (isstring(extract(@breakpoints, @start-index))) {
+
+            //  The actual breakpoint; "+1" to skip the (selector) string
+            @bp: extract(@breakpoints, @start-index + @bp-index + 1);
+
+            //  Convert the selector string into an identifier (i.e. remove the quotes)
+            @sel-s: extract(@breakpoints, @start-index);
+            @sel: ~"@{sel-s}";
+
+            @media (max-width: (@bp)) {
+                @{sel} & {
+                    @rules();
+                }
+            }
+
+            //  Recursively descend to handle the next breakpoint ("+5" for the
+            //  selector string and the four breakpoint values)
+            #d-internals #responsive-generate(@bp-index, @rules, @start-index + 5, @force-selector);
+        }
+
+        //  If the first list element is a number (i.e. pixel value), there is no
+        //  selector string
+        & when (isnumber(extract(@breakpoints, @start-index))) {
+
+            //  The actual breakpoint
+            @bp: extract(@breakpoints, @start-index + @bp-index);
+
+            & when not (@force-selector) {
+                @media (max-width: (@bp)) {
+                    @rules();
+                }
+            }
+
+            & when (force-selector) {
+                @media (max-width: (@bp)) {
+                    html & {
+                        @rules();
+                    }
+                }
+            }
+
+            //  Recursively descend to handle the next breakpoint ("+4" for the
+            //  four breakpoint values)
+            #d-internals #responsive-generate(@bp-index, @rules, @start-index + 4, @force-selector);
+        }
+    }
+}

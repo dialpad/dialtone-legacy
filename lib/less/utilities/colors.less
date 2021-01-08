@@ -25,37 +25,52 @@
 #color-classes(@color-name) {
     //  --  FONT STYLES
     .d-fc-@{color-name},
-    .d-h\:fc-@{color-name}:hover,
-    .d-f\:fc-@{color-name}:focus {
+    .h\:d-fc-@{color-name}:hover,
+    .f\:d-fc-@{color-name}:focus {
+        --fco: 100%;
         color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--fco)) !important;
     }
-    .d-f\:fc-@{color-name}:focus-within {
+    .f\:d-fc-@{color-name}:focus-within {
+        --fco: 100%;
         color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--fco)) !important;
     }
-    // DARK MODE!
+    #d-internals #dark-mode('.d\:d-fc-@{color-name}', {
+        --fco: 100%;
+        color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--fco)) !important;
+    });
+
 
     //  --  BORDER STYLES
     .d-bc-@{color-name},
-    .d-h\:bc-@{color-name}:hover,
-    .d-f\:bc-@{color-name}:focus {
+    .h\:d-bc-@{color-name}:hover,
+    .f\:d-bc-@{color-name}:focus {
+        --bco: 100%;
         border-color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--bco)) !important;
     }
-    .d-f\:bc-@{color-name}:focus-within {
+    .f\:d-bc-@{color-name}:focus-within {
+        --bco: 100%;
         border-color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--bco)) !important;
     }
-    // DARK MODE!
+    #d-internals #dark-mode('.d\:d-bc-@{color-name}', {
+        --bco: 100%;
+        border-color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--bco)) !important;
+    });
 
     //  --  BACKGROUND STYLES
     .d-bgc-@{color-name},
-    .d-h\:bgc-@{color-name}:hover,
-    .d-f\:bgc-@{color-name}:focus {
+    .h\:d-bgc-@{color-name}:hover,
+    .f\:d-bgc-@{color-name}:focus {
         --bgo: 100%;
         background-color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--bgo)) !important;
     }
-    .d-f\:bgc-@{color-name}:focus-within {
+    .f\:d-bgc-@{color-name}:focus-within {
+        --bgo: 100%;
         background-color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--bgo)) !important;
     }
-    // DARK MODE!
+    #d-internals #dark-mode('.d\:d-bgc-@{color-name}', {
+        --bgo: 100%;
+        background-color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--bgo)) !important;
+    });
 }
 
 //  $$  GENERATE STANDARD COLOR WEIGHTS
@@ -92,13 +107,52 @@
 #color-classes(blue-800);
 #color-classes(blue-700);
 
+//  --  We can't use the mixin for this one class :(
+.d-fc-primary,
+.h\:d-fc-primary:hover,
+.f\:d-fc-primary:focus {
+    color: hsla(var(--primary-color-h) var(--primary-color-s) var(--primary-color-l)  ~" / " var(--fco)) !important;
+}
+.f\:d-fc-primary:focus-within {
+    color: hsla(var(--primary-color-h) var(--primary-color-s) var(--primary-color-l) ~" / " var(--fco)) !important;
+}
+
+//  $$  TEXT COLORS
+//  ----------------------------------------------------------------------------
+.d-fc-dark                      { &:extend(.d-fc-black-900); }
+.d-fc-medium                    { &:extend(.d-fc-black-800); }
+.d-fc-light                     { &:extend(.d-fc-black-700); }
+.d-fc-lighter                   { &:extend(.d-fc-black-600); }
+.d-fc-blue                      { &:extend(.d-fc-blue-700); }
+.d-fc-purple                    { &:extend(.d-fc-purple-600); }
+.d-fc-teal                      { &:extend(.d-fc-teal-600); }
+.d-fc-pink                      { &:extend(.d-fc-pink-600); }
+
+.d-fc-green,
 .d-fc-success                   { &:extend(.d-fc-green-600); }
+.d-fc-yellow,
 .d-fc-warning                   { &:extend(.d-fc-yellow-600); }
+.d-fc-red,
 .d-fc-error,
 .d-fc-danger                    { &:extend(.d-fc-red-600); }
+
+.d-fc-current                   { color: currentColor !important; }
 .d-fc-transparent               { color: transparent !important; }
 .d-fc-unset                     { color: unset !important; }
 
+//  --  OPACITY
+.d-fco0                         { --fco: 0% !important; }
+.d-fco10                        { --fco: 10% !important; }
+.d-fco25                        { --fco: 25% !important; }
+.d-fco50                        { --fco: 50% !important; }
+.d-fco75                        { --fco: 75% !important; }
+.d-fco90                        { --fco: 90% !important; }
+.d-fco95                        { --fco: 95% !important; }
+.d-fco99                        { --fco: 99% !important; }
+
+
+//  $$  BACKGROUND COLORS
+//  ----------------------------------------------------------------------------
 .d-bgc-success                  { &:extend(.d-bgc-green-500); }
 .d-bgc-warning                  { &:extend(.d-bgc-yellow-500); }
 .d-bgc-error,
@@ -106,6 +160,29 @@
 .d-bgc-transparent              { background-color: transparent !important; background-image: none !important; }
 .d-bgc-unset                    { background-color: unset !important; background-image: unset !important; }
 
+//  --  OPACITY
+.d-bgo0                         { --bgo: 0% !important; }
+.d-bgo10                        { --bgo: 10% !important; }
+.d-bgo25                        { --bgo: 25% !important; }
+.d-bgo50                        { --bgo: 50% !important; }
+.d-bgo75                        { --bgo: 75% !important; }
+.d-bgo90                        { --bgo: 90% !important; }
+.d-bgo95                        { --bgo: 95% !important; }
+.d-bgo99                        { --bgo: 99% !important; }
+
+
+//  $$  BORDER COLORS
+//  ----------------------------------------------------------------------------
 .d-bc-transparent               { border-color: transparent !important; }
 .d-bc-current                   { border-color: currentColor !important; }
 .d-bc-unset                     { border-color: unset !important; }
+
+//  --  OPACITY
+.d-bco0                         { --bco: 0% !important; }
+.d-bco10                        { --bco: 10% !important; }
+.d-bco25                        { --bco: 25% !important; }
+.d-bco50                        { --bco: 50% !important; }
+.d-bco75                        { --bco: 75% !important; }
+.d-bco90                        { --bco: 90% !important; }
+.d-bco95                        { --bco: 95% !important; }
+.d-bco99                        { --bco: 99% !important; }

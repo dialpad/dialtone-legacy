@@ -1,116 +1,253 @@
 ---
 layout: page
 title: Colors
-description: Dialtone provides a limited set of text-color utility variables and classes.
+description: Utilities to change an element's font-color.
 ---
-<aside class="d-p16 d-border-radius--sm d-w-75ch d-bgc-blue-100 d-fc-dark d-fs16 d-lh4 d-stack8">
-    <p class="d-m0"><strong>Note:</strong> New variables and classes were introduced with Dialtone v5.8.0. Whereas previous class names and variables used a "t-shirt" sizing method (sm, md, lg, etc), the new classes and variables explicitly state the desired size in the name.</p>
-    <p class="d-m0">The older classes and variables are still available, but they will no longer be supported and will be removed in a future version of Dialtone.</p>
-</aside>
 <section class="d-stack16">
-    <p class="dialtone-copy__normal">Most colors pass the WCAG 2.1 Level AAA contrast ratio requirements (ratio >= 7:1) and all pass WCAG 2.1 Level AA contrast ratio requirments (ratio >= 4.5:1). The contrast ratio value is noted with the colors below. Please use <strong>only</strong> these colors or variations of these colors which pass WCAG 2.1 Level AA contrast ratio requirments.</p>
+    <p class="d-w90ch d-wmx764 d-fs18 d-lh6">All font colors pass the WCAG 2.1 Level AA contrast ratio requirements (ratio >= 4.5:1) and most pass WCAG 2.1 Level AAA requirements (ratio >= 7:1). The contrast ratio value is noted with the colors below. Please use <strong>only</strong> these colors or variations of these colors which pass WCAG 2.1 Level AA contrast ratio requirments.</p>
 </section>
 <section class="d-stack16">
     <header class="d-stack2">
-        <h2 class="dialtone-title__section">Variables</h2>
-        <p class="dialtone-copy__normal">Most colors can be applied using the <a href="/variables/colors/" class="d-link">universal color variables</a>. Dialtone does provide a few specific font-color Less and CSS variables for <span class="code-example--inline">color</span> though, which are noted below.</p>
+        {% header "h2", "CSS Variables" %}
+        <p class="d-w90ch d-wmx764 d-fs18 d-lh6">Dialtone provides a few abstracted colors CSS variables based on our <a href="/variables/colors/" class="d-link">color stops</a>.
     </header>
-    <table class="d-table">
-        <thead>
-            <tr>
-                <th scope="col">Color</th>
-                <th scope="col">CSS Var</th>
-                <th scope="col">Less Var</th>
-                <th scope="col" class="d-o50 d-bgc-black-050">Deprecated Less Var</th>
-                <th scope="col">Output</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for i in type.font-colors %}
-                {% assign color = i.color %}
-                {% assign stops = i.stops %}
-                {% for s in stops %}
-                    {% assign stop = s.stop %}
-                    {% assign hex = s.hex %}
-                    {% if stop contains "text" %}
-                    <tr>
-                        <th scope="row">{{ color | capitalize }}</th>
-                        <td>var(--fc-{{ stop }})</td>
-                        <td>@fc-{{ stop }}</td>
-                        <td class="d-o50 d-bgc-black-050">@color--{{ stop }}</td>
-                        <td>{{ hex }}</td>
-                    </tr>
-                    {% endif %}
-                {% endfor %}
-            {% endfor %}
-        </tbody>
-    </table>
-</section>
-<section class="d-stack16">
-    <header class="d-stack2">
-        <h2 class="dialtone-title__section">Classes</h2>
-        <p class="dialtone-copy__normal">Starting in v5.8.0, Dialtone began providing immutable type classes, meaning they include an <span class="code-example--inline">!important</span> to override CSS specificity. All previous class names still exist, but are considered deprecated and should not be used moving forward. They will be removed in a future version.</p>
-    </header>
-    <table class="d-table">
-        <thead>
-            <tr>
-                <th scope="col">Color</th>
-                <th scope="col">Class</th>
-                <th scope="col" class="d-o50 d-bgc-black-050">Deprecated Class</th>
-                <th scope="col">Output</th>
-            </tr>
-        </thead>
-        {% for i in type.font-colors %}
-            {% assign color = i.color %}
-            {% assign stops = i.stops %}
+    <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
+        <table class="d-table">
+            <thead>
+                <tr>
+                    <th scope="col" class="d-w30p">Variable</th>
+                    <th scope="col">Output</th>
+                </tr>
+            </thead>
             <tbody>
-                {% for s in stops %}
-                    {% assign stop = s.stop %}
-                    {% assign old = s.old %}
+                {% for i in type.font-color-vars %}
+                {% assign var = i.var %}
+                {% assign output = i.output %}
                     <tr>
-                        {% if forloop.first %}
-                            <th scope="row" rowspan="{{ forloop.length }}">{{ color | capitalize }}</th>
-                        {% endif %}
-                        <td>.d-fc-{{ stop }}</td>
-                        {% if stop contains "text" %}
-                            <td class="d-o50 d-bgc-black-050">.d-color--{{ stop }}</td>
-                        {% elsif color contains "ash" %}
-                            <td class="d-o50 d-bgc-black-050">.d-color--{{ old }}</td>
-                        {% elsif color contains "slate" %}
-                            <td class="d-o50 d-bgc-black-050">.d-color--{{ old }}</td>
-                        {% else %}
-                            <td class="d-o50 d-bgc-black-050 d-fc-black-600 d-fs-italic">N/A</td>
-                        {% endif %}
-                        <td>color: var(--{% if stop contains "text" %}fc-{% endif %}{{ stop }}) !important;</td>
+                        <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">var(--fc-{{ var }})</th>
+                        <td>
+                            <div class="d-d-flex d-jc-space-between d-ai-center">
+                                <div class="d-fl1 d-ff-mono d-fc-teal-500 d-fs12">
+                                    var(--{{ output }});
+                                </div>
+                                <div class="d-fl0 d-fc-{{ var }} d-fs16 d-lh4">
+                                    Aa
+                                </div>
+                            </div>
+                        </td>
                     </tr>
-            {% endfor %}
-            </tbody>
-        {% endfor %}
-    </table>
-    <div class="d-stack8">
-        <div class="d-grid-layout--with-columns d-grid-column-gap12 d-grid-row-gap24" style="--grid-col: 2; --grid-col-width: 50%;">
-        {% for i in type.font-colors %}
-            {% assign color = i.color %}
-            {% assign stops = i.stops %}
-            <div class="d-stack2">
-                <h4 class="dialtone-title__small">{{ color | capitalize }}</h4>
-                <div class="dialtone-color-grid__group" style="--color-grid-columns: 1">
-                {% for s in stops %}
-                    {% assign stop = s.stop %}
-                    {% assign bg = s.bg %}
-                    {% assign ratio = s.ratio %}
-                    {% assign hex = s.hex %}
-                    <div class="dialtone-color-grid__item d-bgc-{{ bg }} d-fc-{{ stop }}">
-                        <div class="dialtone-color-grid__label">.d-fc-{{ stop }}</div>
-                        <div class="dialtone-color-grid__ratio">
-                            <div class="dialtone-color-badge d-bgc-{% if ratio >= '07.00' %}green-300{% else %}yellow-400{% endif %} d-fc-dark">AA{% if ratio >= "07.00" %}A{% endif %}</div>
-                            <div>{{ ratio }}</div>
-                        </div>
-                    </div>
                 {% endfor %}
-                </div>
-            </div>
-        {% endfor %}
-        </div>
+            </tbody>
+        </table>
     </div>
+</section>
+<section class="d-stack16">
+    {% header "h2", "Classes" %}
+    <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
+        <table class="d-table">
+            <thead>
+                <tr>
+                    <th scope="col" class="d-w25p">Class</th>
+                    <th scope="col">Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-fc-current</th>
+                    <td>
+                        <div class="d-d-flex d-jc-space-between d-ai-center">
+                            <div class="d-fl1 d-ff-mono d-fc-teal-500 d-fs12">
+                                color: currentColor !important;
+                            </div>
+                            <div class="d-fl0 d-fc-current d-fs16 d-lh4">
+                                Aa
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-fc-transparent</th>
+                    <td>
+                        <div class="d-d-flex d-jc-space-between d-ai-center">
+                            <div class="d-fl1 d-ff-mono d-fc-teal-500 d-fs12">
+                                color: transparent !important;
+                            </div>
+                            <div class="d-fl0 d-fc-transparent d-fs16 d-lh4">
+                                Aa
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-fc-unset</th>
+                    <td>
+                        <div class="d-d-flex d-jc-space-between d-ai-center">
+                            <div class="d-fl1 d-ff-mono d-fc-teal-500 d-fs12">
+                                color: unset !important;
+                            </div>
+                            <div class="d-fl0 d-fc-unset d-fs16 d-lh4">
+                                Aa
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-fc-white</th>
+                    <td>
+                        <div class="d-d-flex d-jc-space-between d-ai-center">
+                            <div class="d-fl1 d-ff-mono d-fc-teal-500 d-fs12">
+                                --fco: 100%;<br/>
+                                color: hsla(var(--white-h) var(--white-s) var(--white-l) / var(--fco)) !important;
+                            </div>
+                            <div class="d-fl0 d-bgc-black-700 d-ml16 d-p4 d-br4 d-fc-white d-fs16 d-lh4">
+                                Aa
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                {% for i in type.font-color-vars %}
+                {% assign color = i.var %}
+                {% assign output = i.output %}
+                <tr>
+                    <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-fc-{{ color }}</th>
+                    <td>
+                        <div class="d-d-flex d-jc-space-between d-ai-center">
+                            <div class="d-fl1 d-ff-mono d-fc-teal-500 d-fs12">
+                                --fco: 100%;<br/>
+                                color: hsla(var(--{{ output }}-h) var(--{{ output }}-s) var(--{{ output }}-l) / var(--fco)) !important;
+                            </div>
+                            <div class="d-fl0 d-ml16 d-p4 d-fc-{{ color }} d-fs16 d-lh4">
+                                Aa
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            {% assign colors = "black, blue, purple, teal, pink, green, yellow, red" | split: ", " %}
+            {% for i in colors %}
+                {% if i == "black" %}
+                    {% assign stops = "900, 800, 700, 600, 500, 400, 300, 200, 100, 050" | split: ", " %}
+                {% elsif i == "blue" %}
+                    {% assign stops = "800, 700, 600, 500, 400, 300, 200, 100" | split: ", " %}
+                {% else %}
+                    {% assign stops = "600, 500, 400, 300, 200, 100" | split: ", " %}
+                {% endif %}
+                <tbody>
+                    {% for s in stops %}
+                    <tr>
+                        <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-fc-{{ i }}-{{ s }}</th>
+                        <td>
+                            <div class="d-d-flex d-jc-space-between d-ai-center">
+                                <div class="d-fl1 d-ff-mono d-fc-teal-500 d-fs12">
+                                    --fco: 100%;<br/>
+                                    color: hsla(var(--{{ i }}-{{ s }}-h) var(--{{ i }}-{{ s }}-s) var(--{{ i }}-{{ s }}-l) / var(--fco)) !important;
+                                </div>
+                                <div class="d-fl0 d-ml16 d-p4 d-fc-{{ i }}-{{ s }} d-fs16 d-lh4">
+                                    Aa
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            {% endfor %}
+        </table>
+    </div>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Examples" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-fc-{color}</code> to change an element's text color.</p>
+    </header>
+    <aside class="d-br8 d-of-hidden">
+        <header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-black-050 d-w100p d-hmn102">
+            <p class="d-fs18 d-fc-blue-600">The quick brown fox jumps over the lazy dog.</p>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-brb8 d-fs12">
+{% highlight html linenos %}
+<p class="d-fc-blue-600">...</p>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Changing opacity" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-fco-{n}</code> to change an element's text color opacity.</p>
+    </header>
+    <aside class="d-br8 d-of-hidden">
+        <header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-black-050 d-w100p d-hmn102 d-stack8">
+            <p class="d-fs18 d-fc-blue-600">The quick brown fox jumps over the lazy dog.</p>
+            <p class="d-fs18 d-fc-blue-600 d-fco99">The quick brown fox jumps over the lazy dog.</p>
+            <p class="d-fs18 d-fc-blue-600 d-fco95">The quick brown fox jumps over the lazy dog.</p>
+            <p class="d-fs18 d-fc-blue-600 d-fco90">The quick brown fox jumps over the lazy dog.</p>
+            <p class="d-fs18 d-fc-blue-600 d-fco75">The quick brown fox jumps over the lazy dog.</p>
+            <p class="d-fs18 d-fc-blue-600 d-fco50">The quick brown fox jumps over the lazy dog.</p>
+            <p class="d-fs18 d-fc-blue-600 d-fco25">The quick brown fox jumps over the lazy dog.</p>
+            <p class="d-fs18 d-fc-blue-600 d-fco10">The quick brown fox jumps over the lazy dog.</p>
+            <p class="d-fs18 d-fc-blue-600 d-fco0">The quick brown fox jumps over the lazy dog.</p>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-brb8 d-fs12">
+{% highlight html linenos %}
+<p class="d-fc-blue-600">...</p>
+<p class="d-fc-blue-600 d-fco99">...</p>
+<p class="d-fc-blue-600 d-fco95">...</p>
+<p class="d-fc-blue-600 d-fco90">...</p>
+<p class="d-fc-blue-600 d-fco75">...</p>
+<p class="d-fc-blue-600 d-fco50">...</p>
+<p class="d-fc-blue-600 d-fco25">...</p>
+<p class="d-fc-blue-600 d-fco10">...</p>
+<p class="d-fc-blue-600 d-fco0">...</p>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Hover" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">h:d-fc-{color}</code> to change an element's text color <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">:hover</code> state.</p>
+    </header>
+    <aside class="d-br8 d-of-hidden">
+        <header class="d-fl-center d-p24 d-bgc-black-050 d-w100p d-hmn102">
+            <button class="d-p16 d-br4 d-fs18 d-fc-blue-600 h:d-fc-white d-bgc-transparent h:d-bgc-blue-600 d-ba d-bc-transparent">Hover over me</button>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-brb8 d-fs12">
+{% highlight html linenos %}
+<button class="d-fc-blue-600 h:d-fc-white">...</button>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Focus" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">f:d-fc-{color}</code> to change an element's text color <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">:focus</code> and <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">:focus-within</code> state.</p>
+    </header>
+    <aside class="d-br8 d-of-hidden">
+        <header class="d-fl-center d-p24 d-bgc-black-050 d-w100p d-hmn102">
+            <button class="d-p16 d-br4 d-fs18 d-fc-blue-600 f:d-fc-white d-bgc-transparent f:d-bgc-blue-600 d-ba d-bc-transparent">Click on me</button>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-brb8 d-fs12">
+{% highlight html linenos %}
+<button class="d-fc-blue-600 f:d-fc-white">...</button>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Dark Mode" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d:d-fc-{color}</code> to set a different text color when the user prefers dark mode.</p>
+    </header>
+    <aside class="d-br8 d-of-hidden theme-dark">
+        <header class="d-fl-center d-fd-column d-p24 d-bgc-black-050 d-w100p d-hmn102 d-stack16">
+            <button class="d-p16 d-br4 d-fs18 d-fc-blue-600 d:d-fc-yellow-500 d-bgc-transparent d-ba d-bc-transparent js-theme-switcher">Click on me toggle dark mode</button>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-brb8 d-fs12">
+{% highlight html linenos %}
+<button class="d-fc-blue-600 d:d-fc-yellow-500">...</button>
+{% endhighlight %}
+        </footer>
+    </aside>
 </section>
