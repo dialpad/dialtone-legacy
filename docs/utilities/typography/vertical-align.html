@@ -1,52 +1,157 @@
 ---
 layout: page
 title: Vertical Align
-description: TBD
+description: Utilities for controlling an element's text transform.
 ---
 <section class="d-stack16">
-    <header class="d-stack2">
-        <h2 class="dialtone-title__section">Vertical Align</h2>
-        <div class="d-stack12">
-            <p class="dialtone-copy__normal">TBD</p>
-        </div>
-    </header>
-    <div class="d-stack16">
-        <table class="d-table">
-            <thead>
+    {% header "h2", "Classes" %}
+    <table class="d-table">
+        <thead>
+            <tr>
+                <th scope="col" class="d-w25p">Class</th>
+                <th scope="col">Output</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% assign valign = "baseline, top, bottom, text-top, text-bottom, middle, sub, super, unset" | split: ", " %}
+            {% for i in valign %}
                 <tr>
-                    <th scope="col" class="dialtone-table__column--md">Class</th>
-                    <th scope="col">Output</th>
+                    <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-va-{{ i }}</th>
+                    <td class="d-ff-mono d-fc-teal-500 d-fs12">vertical-align: {{ i }} !important;</td>
                 </tr>
-            </thead>
-            <tbody>
-                {% assign transform = type.transform | split: ", " %}
-                {% for i in transform %}
-                    <tr>
-                        <th scope="row">.d-tt-{{ i }}</th>
-                        <td>text-transform: {{ i }} !important;</td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-        <div class="dialtone-example" data-example="yes" data-code="yes">
-            <div class="dialtone-example__example d-stack8">
-                {% assign transform = type.transform | split: ", " %}
-                {% for i in transform %}
-                <div class="d-stack2">
-                    <span class="code-example--inline">.d-tt-{{ i }}</span>
-                    <p class="d-lh6 d-fs18 d-m0 d-tt-{{ i }}">{% if i == "unset" %}This sentence text-transform value is {{ i }}.{% else %}This sentence has {% if i == "none" %}no{% else %}a {{ i }}{% endif %} text-transform.{% endif %}</p>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Baseline" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-va-baseline</code> to vertically align an element to the baseline.</p>
+    </header>
+    <aside class="d-br8 d-of-hidden">
+        <header class="d-px64 d-py32 d-bgc-green-100 d-bgo50 d-w100p">
+            <div class="d-w100p d-ps-relative d-lh0">
+                <div class="d-w0 d-h32 d-d-inline-block d-va-baseline">
+                    <span class="d-ps-absolute d-t0 d-h32 d-w100p d-by d-bts-dashed d-bbs-dashed d-bc-green-200"></span>
+                    <span class="d-ps-absolute d-t0 d-h16 d-w100p d-by d-bts-dashed d-bbs-dashed d-bc-green-200"></span>
                 </div>
-                {% endfor %}
+                <p class="d-d-inline-block d-ps-relative d-zi-base1 d-fc-green-400 d-fs18">The quick brown fox jumps over the lazy dog.</p>
             </div>
-            <div class="dialtone-example__code">
-                {% highlight html linenos %}
-<p class="d-tt-none">…</p>
-<p class="d-tt-uppercase">…</p>
-<p class="d-tt-lowercase">…</p>
-<p class="d-tt-capitalize">…</p>
-<p class="d-tt-unset">…</p>
-                {% endhighlight %}
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-brb8 d-fs12">
+{% highlight html linenos %}
+<div class="d-d-inline-block d-va-baseline">...</div>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Top" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-va-top</code> to vertically align an element to the top.</p>
+    </header>
+    <aside class="d-br8 d-of-hidden">
+        <header class="d-px64 d-py32 d-bgc-purple-100 d-bgo50 d-w100p">
+            <div class="d-w100p d-ps-relative d-lh0">
+                <div class="d-w0 d-h32 d-d-inline-block d-va-top">
+                    <span class="d-ps-absolute d-t0 d-h32 d-w100p d-by d-bts-dashed d-bbs-dashed d-bc-purple-200"></span>
+                    <span class="d-ps-absolute d-t0 d-h16 d-w100p d-by d-bts-dashed d-bbs-dashed d-bc-purple-200"></span>
+                </div>
+                <p class="d-d-inline-block d-ps-relative d-zi-base1 d-fc-purple-400 d-fs18">The quick brown fox jumps over the lazy dog.</p>
             </div>
-        </div>
-    </div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-brb8 d-fs12">
+{% highlight html linenos %}
+<div class="d-d-inline-block d-va-top">...</div>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Middle" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-va-middle</code> to vertically align an element to middle.</p>
+    </header>
+    <aside class="d-br8 d-of-hidden">
+        <header class="d-px64 d-py32 d-bgc-pink-100 d-bgo50 d-w100p">
+            <div class="d-w100p d-ps-relative d-lh0">
+                <div class="d-w0 d-h32 d-d-inline-block d-va-middle">
+                    <span class="d-ps-absolute d-t0 d-h32 d-w100p d-by d-bts-dashed d-bbs-dashed d-bc-pink-200"></span>
+                    <span class="d-ps-absolute d-t0 d-h16 d-w100p d-by d-bts-dashed d-bbs-dashed d-bc-pink-200"></span>
+                </div>
+                <p class="d-d-inline-block d-ps-relative d-zi-base1 d-fc-pink-500 d-fs18">The quick brown fox jumps over the lazy dog.</p>
+            </div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-brb8 d-fs12">
+{% highlight html linenos %}
+<div class="d-d-inline-block d-va-middle">...</div>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Bottom" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-va-bottom</code> to vertically align an element to the bottom.</p>
+    </header>
+    <aside class="d-br8 d-of-hidden">
+        <header class="d-px64 d-py32 d-bgc-blue-100 d-bgo50 d-w100p">
+            <div class="d-w100p d-ps-relative d-lh0">
+                <div class="d-w0 d-h32 d-d-inline-block d-va-bottom" style="height: 3rem;">
+                    <span class="d-ps-absolute d-t0 d-h32 d-w100p d-by d-bts-dashed d-bbs-dashed d-bc-blue-200"></span>
+                    <span class="d-ps-absolute d-t0 d-h16 d-w100p d-by d-bts-dashed d-bbs-dashed d-bc-blue-200"></span>
+                </div>
+                <p class="d-d-inline-block d-ps-relative d-zi-base1 d-fc-blue-400 d-fs18">The quick brown fox jumps over the lazy dog.</p>
+            </div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-brb8 d-fs12">
+{% highlight html linenos %}
+<div class="d-d-inline-block d-va-bottom">...</div>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Text Top" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-va-text-top</code> to vertically align an element to text top.</p>
+    </header>
+    <aside class="d-br8 d-of-hidden">
+        <header class="d-px64 d-py32 d-bgc-yellow-100 d-bgo50 d-w100p">
+            <div class="d-ps-relative d-lh0">
+                <div class="d-w0 d-h32 d-d-inline-block d-va-text-top">
+                    <span class="d-ps-absolute d-t0 d-h32 d-w100p d-by d-bts-dashed d-bbs-dashed d-bc-yellow-300"></span>
+                    <span class="d-ps-absolute d-t0 d-h16 d-w100p d-by d-bts-dashed d-bbs-dashed d-bc-yellow-300"></span>
+                </div>
+                <p class="d-d-inline-block d-ps-relative d-zi-base1 d-fc-yellow-500 d-fs18">The quick brown fox jumps over the lazy dog.</p>
+            </div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-brb8 d-fs12">
+{% highlight html linenos %}
+<div class="d-d-inline-block d-va-text-top">...</div>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Text Bottom" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-va-text-bottom</code> to vertically align an element to text bottom.</p>
+    </header>
+    <aside class="d-br8 d-of-hidden">
+        <header class="d-px64 d-py32 d-bgc-red-100 d-bgo50 d-w100p">
+            <div class="d-w100p d-ps-relative d-lh0">
+                <div class="d-w0 d-h32 d-d-inline-block d-va-text-bottom">
+                    <span class="d-ps-absolute d-t0 d-h32 d-w100p d-by d-bts-dashed d-bbs-dashed d-bc-red-200"></span>
+                    <span class="d-ps-absolute d-t0 d-h16 d-w100p d-by d-bts-dashed d-bbs-dashed d-bc-red-200"></span>
+                </div>
+                <p class="d-d-inline-block d-ps-relative d-zi-base1 d-fc-red-400 d-fs18">The quick brown fox jumps over the lazy dog.</p>
+            </div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-brb8 d-fs12">
+{% highlight html linenos %}
+<div class="d-d-inline-block d-va-text-bottom">...</div>
+{% endhighlight %}
+        </footer>
+    </aside>
 </section>
