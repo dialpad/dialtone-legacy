@@ -1,210 +1,126 @@
 ---
 layout: page
 title: Border Radius
-description: Utility classes for changing an element's border radius.
+description: Utilities for controlling an element's border radius.
 ---
 <section class="d-stack16">
-    <header class="d-stack2">
-        <h2 class="dialtone-title__section">Variables</h2>
-        <p class="dialtone-copy__normal">When writing Less, you can set an element's border-radius by using a <span class="code-example--inline">@border-radius--{type}</span> variable. The table below lists the available variables and its output.</p>
-    </header>
-    <table class="d-table">
-        <thead>
-            <tr>
-                <th scope="col" class="dialtone-table__column--md">Variable</th>
-                <th scope="col">Output</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for i in borders.radius %}
-            {% assign var = i.class %}
-            {% assign rem = i.rem %}
-            <tr>
-                <th scope="row">@border-radius--{{ var }}</th>
-                <td>{{ rem }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-</section>
-<section class="d-stack16">
-    <header class="d-stack2">
-        <h2 class="dialtone-title__section">Classes</h2>
-        <p class="dialtone-copy__normal">Set an element's universal or directional border-radius by using a <span class="code-example--inline">.d-border-{direction}-radius--{size}</span> class. The table below lists the available classes, border radius size, and the CSS output.</p>
-    </header>
-    <div class="dialtone-table-wrapper">
+    {% header "h2", "Classes" %}
+    <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
         <table class="d-table">
             <thead>
                 <tr>
-                    <th scope="col">Class</th>
+                    <th scope="col" class="d-w25p">Class</th>
                     <th scope="col">Output</th>
                 </tr>
             </thead>
-            {% assign directions = borders.directions | split: ", " %}
-            {% for dir in directions %}
-                {% if dir == "all" or dir == "top" or dir == "right" or dir == "bottom" or dir == "left" %}
-                <tbody>
-                    {% for i in borders.radius %}
-                    {% assign var = i.class %}
-                    {% assign rem = i.rem %}
-                        {% if dir != "x" or dir != "y" %}
-                        <tr>
-                            <th scope="row">.d-border{% if dir == "all" %}{% else %}-{{ dir }}{% endif %}-radius--{{ var }}</th>
-                            <td>
-                                {% if dir == "all" %}
-                                    border-radius: {{ rem }};
-                                {% elsif dir == "top" or dir == "bottom" %}
-                                    border-{{ dir }}-left-radius: {{ rem }};<br/>
-                                    border-{{ dir }}-right-radius: {{ rem }};
-                                {% elsif dir == "right" or dir == "left" %}
-                                    border-top-{{ dir }}-radius: {{ rem }};<br/>
-                                    border-bottom-{{ dir }}-radius: {{ rem }};
-                                {% endif %}
-                            </td>
-                        </tr>
-                        {% endif %}
-                    {% endfor %}
-                </tbody>
+            {% assign border = "a, t, r, b, l" | split: ", "%}
+            {% for i in border %}
+            <tbody>
+                {% assign radii = "0, 2, 4, 8, 12, 16, 24, 32, -circle, -pill" | split: ", "%}
+                {% for r in radii %}
+                {% if i == "a" %}
+                    {% if forloop.first %}
+                    <tr>
+                        <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-b{{ i }}r-unset</th>
+                        <td class="d-ff-mono d-fc-teal-500 d-fs12">border-radius: unset !important;</td>
+                    </tr>
+                    {% endif %}
                 {% endif %}
+                <tr>
+                    <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-b{{ i }}r{{ r }}</th>
+                    <td>
+                        <div class="d-d-flex d-jc-space-between d-ai-center">
+                            <div class="d-fl-grow1 d-ff-mono d-fc-teal-500 d-fs12">
+                                border{% if i == "t" %}-top-left{% elsif i == "r" %}-top-right{% elsif i == "b" %}-bottom-left{% elsif i == "l" %}-bottom-left{% endif %}-radius: var(--br{{ r }}) !important;{% if i != "a" %}<br/>
+                                border{% if i == "t" %}-top-right{% elsif i == "r" %}-bottom-right{% elsif i == "b" %}-bottom-right{% elsif i == "l" %}-top-left{% endif %}-radius: var(--br{{ r }}) !important;{% endif %}
+                            </div>
+                            <div class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w{% if r == '-circle' %}32{% else %}64{% endif %} d-b{{ i }}r{{ r }} d-bgc-black-300"></div>
+                        </div>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
             {% endfor %}
         </table>
     </div>
 </section>
-<section class="d-stack32">
-    <h2 class="dialtone-title__section">Examples</h2>
-    <div class="d-stack16">
-        <header class="d-stack2">
-            <h3 class="dialtone-title__subsection">All corners</h3>
-            <p class="dialtone-copy__normal">Changes the border-radius for all corners.</p>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "All Corners" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-bar{n}</code> to change the border radius on all corners of your element.</p>
+    </header>
+    <aside class="d-bar8 d-of-hidden">
+        <header class="d-fl-col4 d-flg8 d-fw-wrap d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn102">
+            {% assign radii = "0, 2, 4, 8, 12, 16, 24, 32" | split: ", "%}
+            {% for r in radii %}
+            <div class="d-fl-center d-p16 d-hmn48 d-bar{{ r }} d-bgc-purple-400 d-fs18 d-fw-bold d-fc-white">.d-bar{{ r }}</div>
+            {% endfor %}
         </header>
-        <div class="dialtone-example" data-example="yes" data-code="yes">
-            <div class="dialtone-example__example">
-                <div class="d-grid-layout--with-columns d-grid-gap16" style="--grid-col: 4; --grid-col-width: 23%;">
-                    {% for i in borders.radius %}
-                    {% assign var = i.class %}
-                    {% assign rem = i.rem %}
-                    <div class="layout-block d-border-radius--{{ var }}"><div class="layout-block__label" style="height: 14rem;">{{ var }}</div></div>
-                    {% endfor %}
-                </div>
-            </div>
-            <div class="dialtone-example__code">
+        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
 {% highlight html linenos %}
-<div class="d-border-radius--none">…</div>
-<div class="d-border-radius--sm">…</div>
-<div class="d-border-radius--md">…</div>
-<div class="d-border-radius--lg">…</div>
-<div class="d-border-radius--xl">…</div>
-<div class="d-border-radius--circle">…</div>
+<div class="d-bar0">...</div>
+<div class="d-bar2">...</div>
+<div class="d-bar4">...</div>
+<div class="d-bar8">...</div>
+<div class="d-bar12">...</div>
+<div class="d-bar16">...</div>
+<div class="d-bar24">...</div>
+<div class="d-bar32">...</div>
 {% endhighlight %}
-            </div>
-        </div>
-    </div>
-    <div class="d-stack16">
-        <header class="d-stack2">
-            <h3 class="dialtone-title__subsection">Top</h3>
-            <p class="dialtone-copy__normal">Changes the border-radius for top corners.</p>
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Rounded Sides" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-b{t|r|b|l}r{n}</code> to change the border radius on a side of your element.</p>
+    </header>
+    <aside class="d-bar8 d-of-hidden">
+        <header class="d-fl-center d-flg8 d-fw-wrap d-p24 d-bgc-blue-100 d-bgo50 d-w100p d-hmn102 d-flow8">
+            <div class="d-fl-center d-p16 d-h48 d-btr4 d-bgc-blue-400 d-fs24 d-fw-bold d-fc-white">.d-btr4</div>
+            <div class="d-fl-center d-p16 d-h48 d-brr8 d-bgc-blue-400 d-fs24 d-fw-bold d-fc-white">.d-brr8</div>
+            <div class="d-fl-center d-p16 d-h48 d-bbr12 d-bgc-blue-400 d-fs24 d-fw-bold d-fc-white">.d-bbr12</div>
+            <div class="d-fl-center d-p16 d-h48 d-blr16 d-bgc-blue-400 d-fs24 d-fw-bold d-fc-white">.d-btr16</div>
         </header>
-        <div class="dialtone-example" data-example="yes" data-code="yes">
-            <div class="dialtone-example__example">
-                <div class="d-grid-layout--with-columns d-grid-gap16" style="--grid-col: 4; --grid-col-width: 23%;">
-                    {% for i in borders.radius %}
-                    {% assign var = i.class %}
-                    {% assign rem = i.rem %}
-                    <div class="layout-block d-border-top-radius--{{ var }}"><div class="layout-block__label" style="height: 14rem;">top--{{ var }}</div></div>
-                    {% endfor %}
-                </div>
-            </div>
-            <div class="dialtone-example__code">
+        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
 {% highlight html linenos %}
-<div class="d-border-top-radius--none">…</div>
-<div class="d-border-top-radius--sm">…</div>
-<div class="d-border-top-radius--md">…</div>
-<div class="d-border-top-radius--lg">…</div>
-<div class="d-border-top-radius--xl">…</div>
-<div class="d-border-top-radius--circle">…</div>
+<div class="d-btr4">...</div>
+<div class="d-brr8">...</div>
+<div class="d-bbr12">...</div>
+<div class="d-blr16">...</div>
 {% endhighlight %}
-            </div>
-        </div>
-    </div>
-    <div class="d-stack16">
-        <header class="d-stack2">
-            <h3 class="dialtone-title__subsection">Right</h3>
-            <p class="dialtone-copy__normal">Changes the border-radius for right corners.</p>
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Pills" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-b{a|t|r|b|l}r-pill</code> to change the border radius of your element to a pill shape.</p>
+    </header>
+    <aside class="d-bar8 d-of-hidden">
+        <header class="d-fl-center d-flg8 d-fw-wrap d-p24 d-bgc-green-100 d-bgo50 d-w100p d-hmn102">
+            <div class="d-fl-center d-p16 d-h64 d-wmn264 d-bar-pill d-bgc-green-400 d-fs24 d-fw-bold d-fc-white">.d-bar-pill</div>
         </header>
-        <div class="dialtone-example" data-example="yes" data-code="yes">
-            <div class="dialtone-example__example">
-                <div class="d-grid-layout--with-columns d-grid-gap16" style="--grid-col: 4; --grid-col-width: 23%;">
-                    {% for i in borders.radius %}
-                    {% assign var = i.class %}
-                    {% assign rem = i.rem %}
-                    <div class="layout-block d-border-right-radius--{{ var }}"><div class="layout-block__label" style="height: 14rem;">right--{{ var }}</div></div>
-                    {% endfor %}
-                </div>
-            </div>
-            <div class="dialtone-example__code">
+        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
 {% highlight html linenos %}
-<div class="d-border-right-radius--none">…</div>
-<div class="d-border-right-radius--sm">…</div>
-<div class="d-border-right-radius--md">…</div>
-<div class="d-border-right-radius--lg">…</div>
-<div class="d-border-right-radius--xl">…</div>
-<div class="d-border-right-radius--circle">…</div>
+<div class="d-bar-pill">...</div>
 {% endhighlight %}
-            </div>
-        </div>
-    </div>
-    <div class="d-stack16">
-        <header class="d-stack2">
-            <h3 class="dialtone-title__subsection">Bottom</h3>
-            <p class="dialtone-copy__normal">Changes the border-radius for bottom corners.</p>
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Circles" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-b{a|t|r|b|l}r-circle</code> to change the border radius of your element to a circle shape.</p>
+    </header>
+    <aside class="d-bar8 d-of-hidden">
+        <header class="d-fl-center d-flg8 d-fw-wrap d-p24 d-bgc-red-100 d-bgo50 d-w100p d-hmn102">
+            <div class="d-fl-center d-p16 d-h264 d-w264 d-bar-circle d-bgc-red-400 d-fs24 d-fw-bold d-fc-white">.d-bar-circle</div>
         </header>
-        <div class="dialtone-example" data-example="yes" data-code="yes">
-            <div class="dialtone-example__example">
-                <div class="d-grid-layout--with-columns d-grid-gap16" style="--grid-col: 4; --grid-col-width: 23%;">
-                    {% for i in borders.radius %}
-                    {% assign var = i.class %}
-                    {% assign rem = i.rem %}
-                    <div class="layout-block d-border-bottom-radius--{{ var }}"><div class="layout-block__label" style="height: 14rem;">bottom--{{ var }}</div></div>
-                    {% endfor %}
-                </div>
-            </div>
-            <div class="dialtone-example__code">
+        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
 {% highlight html linenos %}
-<div class="d-border-bottom-radius--none">…</div>
-<div class="d-border-bottom-radius--sm">…</div>
-<div class="d-border-bottom-radius--md">…</div>
-<div class="d-border-bottom-radius--lg">…</div>
-<div class="d-border-bottom-radius--xl">…</div>
-<div class="d-border-bottom-radius--circle">…</div>
+<div class="d-bar-circle">...</div>
 {% endhighlight %}
-            </div>
-        </div>
-    </div>
-    <div class="d-stack16">
-        <header class="d-stack2">
-            <h3 class="dialtone-title__subsection">Left</h3>
-            <p class="dialtone-copy__normal">Changes the border-radius for all corners.</p>
-        </header>
-        <div class="dialtone-example" data-example="yes" data-code="yes">
-            <div class="dialtone-example__example">
-                <div class="d-grid-layout--with-columns d-grid-gap16" style="--grid-col: 4; --grid-col-width: 23%;">
-                    {% for i in borders.radius %}
-                    {% assign var = i.class %}
-                    {% assign rem = i.rem %}
-                    <div class="layout-block d-border-left-radius--{{ var }}"><div class="layout-block__label" style="height: 14rem;">left--{{ var }}</div></div>
-                    {% endfor %}
-                </div>
-            </div>
-            <div class="dialtone-example__code">
-{% highlight html linenos %}
-<div class="d-border-left-radius--none">…</div>
-<div class="d-border-left-radius--sm">…</div>
-<div class="d-border-left-radius--md">…</div>
-<div class="d-border-left-radius--lg">…</div>
-<div class="d-border-left-radius--xl">…</div>
-<div class="d-border-left-radius--circle">…</div>
-{% endhighlight %}
-            </div>
-        </div>
-    </div>
+        </footer>
+    </aside>
 </section>

@@ -29,20 +29,45 @@
 //  ============================================================================
 //  --  FIXED CELL WIDTHS
 //  ----------------------------------------------------------------------------
-#build-flex-columns(@num, @count: 1) when (@count =< @num) {
-    .d-flex-col@{count} {
-        flex-basis: (@count * 100%) / @num;
+#d-internals() {
+    #build-flex-columns(@num, @count: 1) when (@count =< @num) {
+        .d-fl-col@{count} {
+            display: flex;
+
+            //  Automatically make all direct child to obey the parent class
+            > * {
+                --fl-gap: 0;
+                --fl-basis: calc(100% / @count);
+
+                display: inline-flex;
+                margin: var(--fl-gap);
+                flex: 1 auto;
+                flex-basis: calc(var(--fl-basis) - ((var(--fl-gap) * 2)));
+            }
+        }
+
+        //  Iterate our loop until we hit our grid column total
+        #d-internals #build-flex-columns(@num, @count + 1);
     }
-
-    #build-flex-columns(@num, @count + 1);
 }
-@grid-columns: 12;
+@flex-columns: 12;
 
-.d-flex-columns {
-    display: flex;
+//  Now let's generate the columns
+#d-internals #build-flex-columns(@flex-columns);
 
-    #build-flex-columns(@grid-columns);
-}
+//  Flex Gaps
+.d-flg0 > *     { --fl-gap: 0 !important; }
+.d-flg1 > *     { --fl-gap: 0.1rem !important; }
+.d-flg2 > *     { --fl-gap: 0.2rem !important; }
+.d-flg4 > *     { --fl-gap: 0.4rem !important; }
+.d-flg6 > *     { --fl-gap: 0.6rem !important; }
+.d-flg8 > *     { --fl-gap: 0.8rem !important; }
+.d-flg12 > *    { --fl-gap: 1.2rem !important; }
+.d-flg16 > *    { --fl-gap: 1.6rem !important; }
+.d-flg24 > *    { --fl-gap: 2.4rem !important; }
+.d-flg32 > *    { --fl-gap: 3.2rem !important; }
+.d-flg48 > *    { --fl-gap: 4.8rem !important; }
+.d-flg64 > *    { --fl-gap: 6.4rem !important; }
 
 
 //  --  CENTER ITEMS

@@ -1,0 +1,91 @@
+---
+layout: page
+title: Borders
+description: Utility classes for creating borders.
+---
+<section class="d-stack16">
+    {% header "h2", "Classes" %}
+    <table class="d-table">
+        <thead>
+            <tr>
+                <th scope="col" class="d-w25p">Class</th>
+                <th scope="col">Output</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% assign border = "a, t, r, b, l, x, y" | split: ", "%}
+            {% for i in border %}
+            <tr>
+                <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-b{{ i }}</th>
+                <td class="d-ff-mono d-fc-teal-500 d-fs12">
+                {% if i != "x" %}
+                {% if i != "y" %}
+                    border{% if i == "t" %}-top{% elsif i == "r" %}-right{% elsif i == "b" %}-bottom{% elsif i == "l" %}-left{% endif %}: var(--su1) solid currentColor !important;
+                {% endif %}
+                {% endif %}
+                {% if i == "x" %}
+                    border-right: var(--su1) solid currentColor !important;<br/>
+                    border-left: var(--su1) solid currentColor !important;
+                {% endif %}
+                {% if i == "y" %}
+                    border-top: var(--su1) solid currentColor !important;<br/>
+                    border-bottom: var(--su1) solid currentColor !important;
+                {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "All sides" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-ba</code> to add a border to all sides of your element.</p>
+    </header>
+    <aside class="d-bar8 d-of-hidden">
+        <header class="d-fl-col5 d-flg8 d-fw-wrap d-p24 d-bgc-blue-100 d-bgo50 d-w100p d-hmn102">
+            <div class="d-fl-center d-p16 d-ba d-bc-blue-400 d-baw0 d-bgc-blue-100 d-fs16 d-fw-bold">.d-baw0</div>
+            <div class="d-fl-center d-p16 d-ba d-bc-blue-400 d-baw1 d-bgc-blue-100 d-fs16 d-fw-bold">.d-baw1</div>
+            <div class="d-fl-center d-p16 d-ba d-bc-blue-400 d-baw2 d-bgc-blue-100 d-fs16 d-fw-bold">.d-baw2</div>
+            <div class="d-fl-center d-p16 d-ba d-bc-blue-400 d-baw4 d-bgc-blue-100 d-fs16 d-fw-bold">.d-baw4</div>
+            <div class="d-fl-center d-p16 d-ba d-bc-blue-400 d-baw6 d-bgc-blue-100 d-fs16 d-fw-bold">.d-baw6</div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+{% highlight html linenos %}
+<div class="d-ba d-bc-blue-400 d-baw0">...</div>
+<div class="d-ba d-bc-blue-400 d-baw1">...</div>
+<div class="d-ba d-bc-blue-400 d-baw2">...</div>
+<div class="d-ba d-bc-blue-400 d-baw4">...</div>
+<div class="d-ba d-bc-blue-400 d-baw6">...</div>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Individual sides" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-b{t|r|b|l|x|y}</code> to add a border to only specific sides of your element.</p>
+    </header>
+    <aside class="d-bar8 d-of-hidden">
+        <header class="d-fl-col4 d-flg8 d-fw-wrap d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn102">
+            <div class="d-fl-center d-p16 d-bt d-bc-purple-400 d-baw2 d-bgc-purple-100 d-fs16 d-fw-bold">.d-bt</div>
+            <div class="d-fl-center d-p16 d-br d-bc-purple-400 d-baw2 d-bgc-purple-100 d-fs16 d-fw-bold">.d-br</div>
+            <div class="d-fl-center d-p16 d-bb d-bc-purple-400 d-baw2 d-bgc-purple-100 d-fs16 d-fw-bold">.d-bb</div>
+            <div class="d-fl-center d-p16 d-bl d-bc-purple-400 d-baw2 d-bgc-purple-100 d-fs16 d-fw-bold">.d-bl</div>
+            <div class="d-fl-center d-p16 d-bx d-bc-purple-400 d-baw2 d-bgc-purple-100 d-fs16 d-fw-bold">.d-bx</div>
+            <div class="d-fl-center d-p16 d-by d-bc-purple-400 d-baw2 d-bgc-purple-100 d-fs16 d-fw-bold">.d-by</div>
+            <div class="d-fl-center d-p16 d-ba d-bc-purple-400 d-baw2 d-btw0 d-bgc-purple-100 d-fs16 d-fw-bold">.d-ba d-btw0</div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+{% highlight html linenos %}
+<div class="d-bt d-bc-blue-400 d-baw2 ">...</div>
+<div class="d-br d-bc-blue-400 d-baw2 ">...</div>
+<div class="d-bb d-bc-blue-400 d-baw2 ">...</div>
+<div class="d-bl d-bc-blue-400 d-baw2 ">...</div>
+<div class="d-bx d-bc-blue-400 d-baw2 ">...</div>
+<div class="d-by d-bc-blue-400 d-baw2 ">...</div>
+<div class="d-ba d-bc-blue-400 d-baw2 d-btw0 ">...</div>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>
