@@ -12,100 +12,190 @@
 //
 //  ============================================================================
 //  $   MIXINS
-//      Create a mixin to generate all the utility classes required. By doing it
-//      this way, we are disabling the ability to use Dialtone utility classes as
-//      a mixin. Previously we had allowed for utility classes to be used as
-//      mixins, but because our overall CSS bundle size is growing exponentially,
-//      Dialtone v6 removed this ability. It is now recommended to use CSS
-//      variables (var(--color)). Less variables (@color) are also available,
-//      but their use is discouraged.
-//  ============================================================================
-//  $$  MASTER COLOR CLASS GENERATOR
 //  ----------------------------------------------------------------------------
-#color-classes(@color-name) {
-    //  --  FONT STYLES
-    .d-fc-@{color-name},
-    .h\:d-fc-@{color-name}:hover,
-    .f\:d-fc-@{color-name}:focus {
-        --fco: 100%;
-        color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--fco)) !important;
-    }
-    .f\:d-fc-@{color-name}:focus-within {
-        --fco: 100%;
-        color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--fco)) !important;
-    }
-    #d-internals #dark-mode('.d\:d-fc-@{color-name}', {
-        --fco: 100%;
-        color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--fco)) !important;
-    });
+#d-internals() {
+    //  ========================================================================
+    //  $   COLOR CLASS GENERATOR
+    //      Create a mixin to generate all the utility classes required. By doing it
+    //      this way, we are disabling the ability to use Dialtone utility classes as
+    //      a mixin. Previously we had allowed for utility classes to be used as
+    //      mixins, but because our overall CSS bundle size is growing exponentially,
+    //      Dialtone v6 removed this ability. It is now recommended to use CSS
+    //      variables (var(--color)). Less variables (@color) are also available,
+    //      but their use is discouraged.
+    //
+    //      USAGE:
+    //      #d-internals #color-classes(blue-600);
+    //
+    //  ------------------------------------------------------------------------
+    #color-classes(@color-name) {
+        //  --  FONT STYLES
+        .d-fc-@{color-name},
+        .h\:d-fc-@{color-name}:hover,
+        .f\:d-fc-@{color-name}:focus {
+            --fco: 100%;
+            color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--fco)) !important;
+        }
+        .f\:d-fc-@{color-name}:focus-within {
+            --fco: 100%;
+            color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--fco)) !important;
+        }
+        #d-internals #dark-mode('.d\:d-fc-@{color-name}', {
+            --fco: 100%;
+            color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--fco)) !important;
+        });
 
 
-    //  --  BORDER STYLES
-    .d-bc-@{color-name},
-    .h\:d-bc-@{color-name}:hover,
-    .f\:d-bc-@{color-name}:focus {
-        --bco: 100%;
-        border-color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--bco)) !important;
-    }
-    .f\:d-bc-@{color-name}:focus-within {
-        --bco: 100%;
-        border-color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--bco)) !important;
-    }
-    #d-internals #dark-mode('.d\:d-bc-@{color-name}', {
-        --bco: 100%;
-        border-color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--bco)) !important;
-    });
+        //  --  BORDER STYLES
+        .d-bc-@{color-name},
+        .h\:d-bc-@{color-name}:hover,
+        .f\:d-bc-@{color-name}:focus {
+            --bco: 100%;
+            border-color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--bco)) !important;
+        }
+        .f\:d-bc-@{color-name}:focus-within {
+            --bco: 100%;
+            border-color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--bco)) !important;
+        }
+        #d-internals #dark-mode('.d\:d-bc-@{color-name}', {
+            --bco: 100%;
+            border-color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--bco)) !important;
+        });
 
-    //  --  BACKGROUND STYLES
-    .d-bgc-@{color-name},
-    .h\:d-bgc-@{color-name}:hover,
-    .f\:d-bgc-@{color-name}:focus {
-        --bgo: 100%;
-        background-color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--bgo)) !important;
+        //  --  BACKGROUND STYLES
+        .d-bgc-@{color-name},
+        .h\:d-bgc-@{color-name}:hover,
+        .f\:d-bgc-@{color-name}:focus {
+            --bgo: 100%;
+            background-color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--bgo)) !important;
+        }
+        .f\:d-bgc-@{color-name}:focus-within {
+            --bgo: 100%;
+            background-color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--bgo)) !important;
+        }
+        #d-internals #dark-mode('.d\:d-bgc-@{color-name}', {
+            --bgo: 100%;
+            background-color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--bgo)) !important;
+        });
     }
-    .f\:d-bgc-@{color-name}:focus-within {
-        --bgo: 100%;
-        background-color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--bgo)) !important;
+
+    //  ========================================================================
+    //  $   STANDARD WEIGHT LOOP GENERATOR
+    //      Since most of our colors have similar stops (100 - 600), we'll save
+    //      ourselves the need to call the mixin for each color and create a
+    //      loop that will create most of the colors for us.
+    //
+    //      USAGE:
+    //      #d-internals #standard-stops(blue);
+    //
+    //  ------------------------------------------------------------------------
+    #standard-stops(@color) {
+        #d-internals #color-classes(~"@{color}-600");
+        #d-internals #color-classes(~"@{color}-500");
+        #d-internals #color-classes(~"@{color}-400");
+        #d-internals #color-classes(~"@{color}-300");
+        #d-internals #color-classes(~"@{color}-200");
+        #d-internals #color-classes(~"@{color}-100");
     }
-    #d-internals #dark-mode('.d\:d-bgc-@{color-name}', {
-        --bgo: 100%;
-        background-color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--bgo)) !important;
-    });
+
+    //  ========================================================================
+    //  $   OPACITY CLASS GENERATOR
+    //      Creates opacity classes for font, background, and border colors.
+    //
+    //      USAGE:
+    //      #d-internals #opacity-classes(50);
+    //
+    //  ------------------------------------------------------------------------
+    #opacity-classes(@opacity) {
+        //  --  FONT OPACITY
+        .d-fco@{opacity},
+        .h\:d-fco@{opacity}:hover,
+        .f\:d-fco@{opacity}:focus {
+            --fco: ~"@{opacity}%" !important;
+        }
+        .f\:d-fco@{opacity}:focus-within {
+            --fco: ~"@{opacity}%" !important;
+        }
+        #d-internals #dark-mode('.d\:d-fco@{opacity}', {
+            --fco: ~"@{opacity}%" !important;
+        });
+
+
+        //  --  BORDER OPACITY
+        .d-bco@{opacity},
+        .h\:d-bco@{opacity}:hover,
+        .f\:d-bco@{opacity}:focus {
+            --bco: ~"@{opacity}%" !important;
+        }
+        .f\:d-bco@{opacity}:focus-within {
+            --bco: ~"@{opacity}%" !important;
+        }
+        #d-internals #dark-mode('.d\:d-bco@{opacity}', {
+            --bco: ~"@{opacity}%" !important;
+        });
+
+        //  --  BACKGROUND COLOR OPACITY
+        .d-bgo@{opacity},
+        .h\:d-bgo@{opacity}:hover,
+        .f\:d-bgo@{opacity}:focus {
+            --bgo: ~"@{opacity}%" !important;
+        }
+        .f\:d-bgo@{opacity}:focus-within {
+            --bgo: ~"@{opacity}%" !important;
+        }
+        #d-internals #dark-mode('.d\:d-bgo@{opacity}', {
+            --bgo: ~"@{opacity}%" !important;
+        });
+
+        //  --  BACKGROUND GRADIENT STARTING STOP
+        .d-bgg-from-o@{opacity},
+        .h\:d-bgg-from-@{opacity}:hover,
+        .f\:d-bgg-from-@{opacity}:focus {
+            --bgg-from-opacity: ~"@{opacity}%" !important;
+        }
+        .f\:d-bgg-from-@{opacity}:focus-within {
+            --bgg-from-opacity: ~"@{opacity}%" !important;
+        }
+        #d-internals #dark-mode('.d\:d-bgg-from-@{opacity}', {
+            --bgg-from-opacity: ~"@{opacity}%" !important;
+        });
+
+        //  --  BACKGROUND GRADIENT ENDING STOP
+        .d-bgg-to-o@{opacity},
+        .h\:d-bgg-to-@{opacity}:hover,
+        .f\:d-bgg-to-@{opacity}:focus {
+            --bgg-to-opacity: ~"@{opacity}%" !important;
+        }
+        .f\:d-bgg-to-@{opacity}:focus-within {
+            --bgg-to-opacity: ~"@{opacity}%" !important;
+        }
+        #d-internals #dark-mode('.d\:d-bgg-to-@{opacity}', {
+            --bgg-to-opacity: ~"@{opacity}%" !important;
+        });
+    }
 }
-
-//  $$  GENERATE STANDARD COLOR WEIGHTS
-//  ----------------------------------------------------------------------------
-#standard-weights(@color) {
-    #color-classes(~"@{color}-600");
-    #color-classes(~"@{color}-500");
-    #color-classes(~"@{color}-400");
-    #color-classes(~"@{color}-300");
-    #color-classes(~"@{color}-200");
-    #color-classes(~"@{color}-100");
-}
-
 
 //  ============================================================================
 //  $   UTILITY CLASSES
 //  ----------------------------------------------------------------------------
-//  --  Standard weights for most colors
-#standard-weights(black);
-#standard-weights(blue);
-#standard-weights(purple);
-#standard-weights(teal);
-#standard-weights(pink);
-#standard-weights(yellow);
-#standard-weights(red);
-#standard-weights(green);
+//  --  Create stops for most colors
+#d-internals #standard-stops(black);
+#d-internals #standard-stops(blue);
+#d-internals #standard-stops(purple);
+#d-internals #standard-stops(teal);
+#d-internals #standard-stops(pink);
+#d-internals #standard-stops(yellow);
+#d-internals #standard-stops(red);
+#d-internals #standard-stops(green);
 
-//  --  A few additional colors that the above mixin misses
-#color-classes(white);
-#color-classes(black-900);
-#color-classes(black-800);
-#color-classes(black-700);
-#color-classes(black-050);
-#color-classes(blue-800);
-#color-classes(blue-700);
+//  --  A few additional colors that the standard-stops mixin misses
+#d-internals #color-classes(white);
+#d-internals #color-classes(black-900);
+#d-internals #color-classes(black-800);
+#d-internals #color-classes(black-700);
+#d-internals #color-classes(black-050);
+#d-internals #color-classes(blue-800);
+#d-internals #color-classes(blue-700);
 
 //  --  We can't use the mixin for this one class :(
 .d-fc-primary,
@@ -140,16 +230,6 @@
 .d-fc-transparent               { color: transparent !important; }
 .d-fc-unset                     { color: unset !important; }
 
-//  --  OPACITY
-.d-fco0                         { --fco: 0% !important; }
-.d-fco10                        { --fco: 10% !important; }
-.d-fco25                        { --fco: 25% !important; }
-.d-fco50                        { --fco: 50% !important; }
-.d-fco75                        { --fco: 75% !important; }
-.d-fco90                        { --fco: 90% !important; }
-.d-fco95                        { --fco: 95% !important; }
-.d-fco99                        { --fco: 99% !important; }
-
 
 //  $$  BACKGROUND COLORS
 //  ----------------------------------------------------------------------------
@@ -160,16 +240,6 @@
 .d-bgc-transparent              { background-color: transparent !important; background-image: none !important; }
 .d-bgc-unset                    { background-color: unset !important; background-image: unset !important; }
 
-//  --  OPACITY
-.d-bgo0                         { --bgo: 0% !important; }
-.d-bgo10                        { --bgo: 10% !important; }
-.d-bgo25                        { --bgo: 25% !important; }
-.d-bgo50                        { --bgo: 50% !important; }
-.d-bgo75                        { --bgo: 75% !important; }
-.d-bgo90                        { --bgo: 90% !important; }
-.d-bgo95                        { --bgo: 95% !important; }
-.d-bgo99                        { --bgo: 99% !important; }
-
 
 //  $$  BORDER COLORS
 //  ----------------------------------------------------------------------------
@@ -177,12 +247,14 @@
 .d-bc-current                   { border-color: currentColor !important; }
 .d-bc-unset                     { border-color: unset !important; }
 
-//  --  OPACITY
-.d-bco0                         { --bco: 0% !important; }
-.d-bco10                        { --bco: 10% !important; }
-.d-bco25                        { --bco: 25% !important; }
-.d-bco50                        { --bco: 50% !important; }
-.d-bco75                        { --bco: 75% !important; }
-.d-bco90                        { --bco: 90% !important; }
-.d-bco95                        { --bco: 95% !important; }
-.d-bco99                        { --bco: 99% !important; }
+
+//  $   OPACITY CLASSES
+//  ----------------------------------------------------------------------------
+#d-internals #opacity-classes(99);
+#d-internals #opacity-classes(95);
+#d-internals #opacity-classes(90);
+#d-internals #opacity-classes(75);
+#d-internals #opacity-classes(50);
+#d-internals #opacity-classes(25);
+#d-internals #opacity-classes(10);
+#d-internals #opacity-classes(0);

@@ -1,146 +1,200 @@
 ---
 layout: page
-title: Background Gradients
-description: Dialtone provides background gradient classes, as well as the ability to control color distance and direction.
+title: Gradients
+description: Utilities for creating an background gradient and controlling its stops.
 ---
 <section class="d-stack16">
-    <h2 class="dialtone-title__section">Colors</h2>
-    <div class="dialtone-color-grid">
-        {% for color in colors %}
-        <div class="dialtone-color-grid__group">
-            {% for stop in color.stops %}
-                <div class="dialtone-color-grid__item d-bgg-{{ stop.stop }} d-fc-{{ stop.copy }}">
-                    <span class="dialtone-color-grid__label">.d-bgg-{{ stop.stop }}</span>
-                </div>
-            {% endfor %}
-        </div>
-        {% endfor %}
-    </div>
-</section>
-<section class="d-stack16">
-    <header class="d-stack12">
-        <h2 class="dialtone-title__section">Directions</h2>
-        <p class="dialtone-copy__normal">By default, all <span class="code-example--inline">.d-bgg-[color]</span> classes have a gradient direction of right to left. You can change this though by applying a <span class="code-example--inline">.d-bgd-[direction]</span> class, which overrides the default CSS var.</p>
+    <header class="d-stack2">
+        {% header "h2", "Directions" %}
+        <p class="d-w90ch d-wmx764 d-fs18 d-lh6">To create a background gradient, first declare the desired gradient and, if applicable, the direction. All classes with directions are linear gradients. Radial gradients start from the center and work out to the edge. Conic gradients progressively work around a circle.</p>
     </header>
     <table class="d-table">
         <thead>
             <tr>
-                <th scope="col" class="d-w20">Class</th>
+                <th scope="col" class="d-w25p">Class</th>
                 <th scope="col">Output</th>
             </tr>
         </thead>
         <tbody>
-            {% for i in visual-styles.bgg-directions %}
-            {% assign dir = i.direction %}
-            {% assign output = i.output %}
-            <tr>
-                <td>.d-bgd-{{ dir }}</td>
-                <td>--bgg-direction: {{ output }} !important;</td>
-            </tr>
+            {% assign initial = "to-tl, to-t, to-tr, to-r, to-br, to-b, to-bl, to-l, radial, conic, none, unset" | split: ", " %}
+            {% for i in initial %}
+                <tr>
+                    <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-bgg-{{ i }}</th>
+                    <td class="d-ff-mono d-fc-teal-500 d-fs12">background-image:
+                        {% if i != "none" %}
+                        {% if i != "unset" %}
+                            {% if i == "to-tl" %}linear-gradient(to top left,
+                            {% elsif i == "to-t" %}linear-gradient(to top,
+                            {% elsif i == "to-tr" %}linear-gradient(to top right,
+                            {% elsif i == "to-r" %}linear-gradient(to right,
+                            {% elsif i == "to-br" %}linear-gradient(to bottom right,
+                            {% elsif i == "to-b" %}linear-gradient(to bottom,
+                            {% elsif i == "to-bl" %}linear-gradient(to bottom left,
+                            {% elsif i == "to-l" %}linear-gradient(to left,
+                            {% elsif i == "radial" %}radial-gradient({% elsif i == "conic" %}conic-gradient({% endif %}var(--bgg-stops))
+                        {% endif %}
+                        {% endif %}
+                        {% if i == "none" %}{% if i == "unset" %}{{ i }}{% endif %}{% endif %}!important;
+                    </td>
+                </tr>
             {% endfor %}
         </tbody>
     </table>
-    <div class="dialtone-example" data-example="yes" data-code="yes">
-        <div class="dialtone-example__example d-stack12">
-            <div class="dialtone-color-grid__group">
-            {% for i in visual-styles.bgg-directions %}
-            {% assign dir = i.direction %}
-                <div class="dialtone-color-grid__item d-bgg-ash d-bgd-{{ dir }}">
-                    <span class="dialtone-color-grid__label">.d-bgg-ash .d-bgd-{{ dir }}</span>
-                </div>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Color Stops" %}
+        <p class="d-w90ch d-wmx764 d-fs18 d-lh6">The starting stop (<code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-bgg-from-{color}</code>) should be declared. Optionally an ending stop (<code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-bgg-to-{color}</code>) can also be declared.</p>
+    </header>
+    <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
+        <table class="d-table">
+            <thead>
+                <tr>
+                    <th scope="col" class="d-w25p">Class</th>
+                    <th scope="col">Output</th>
+                </tr>
+            </thead>
+            {% assign direction = "from, to" | split: ", " %}
+            {% for d in direction %}
+                {% for color in colors.colors %}
+                {% assign c = color.color %}
+                <tbody>
+                    {% for s in color.stops %}
+                    {% assign stop = s.stop %}
+                    <tr>
+                        <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-bgg-{{ d }}-{{ c }}-{{ stop }}</th>
+                        <td>
+                            <div class="d-d-flex d-jc-space-between d-ai-center">
+                                <div class="d-fl-grow1 d-ff-mono d-fc-teal-500 d-fs12">
+                                    {% if d == "from" %}
+                                        --bgg-from-opacity: 100%;<br/>
+                                        --bgg-from: hsla(var(--{{ c }}-{{ stop }}-h) var(--{{ c }}-{{ stop }}-s) var(--{{ c }}-{{ stop }}-l) / var(----bgg-from-opacity)) !important;<br/>
+                                        --bgg-to: hsla(var(--{{ c }}-{{ stop }}-h) var(--{{ c }}-{{ stop }}-s) var(--{{ c }}-{{ stop }}-l) / 0%) !important;
+                                    {% elsif d == "to" %}
+                                        --bgg-to-opacity: 100%;<br/>
+                                        --bgg-to: hsla(var(--{{ c }}-{{ stop }}-h) var(--{{ c }}-{{ stop }}-s) var(--{{ c }}-{{ stop }}-l) / var(--bgg-to-opacity)) !important;
+                                    {% endif %}
+                                </div>
+                                <div class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w64 d-br4 d-bgg-to-r d-bgg-{{ d }}-{{ c }}-{{ stop }}{% if d == 'to' %} d-bgg-from-black-100{% endif %}"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                {% endfor %}
             {% endfor %}
-            </div>
-        </div>
-        <div class="dialtone-example__code">
-{% highlight html linenos %}
-<div class="d-bgg-ash d-bgd-top">…</div>
-<div class="d-bgg-ash d-bgd-top-left">…</div>
-<div class="d-bgg-ash d-bgd-top-right">…</div>
-<div class="d-bgg-ash d-bgd-right">…</div>
-<div class="d-bgg-ash d-bgd-bottom-right">…</div>
-<div class="d-bgg-ash d-bgd-bottom">…</div>
-<div class="d-bgg-ash d-bgd-bottom-left">…</div>
-<div class="d-bgg-ash d-bgd-left">…</div>
-{% endhighlight %}
-        </div>
+        </table>
     </div>
 </section>
 <section class="d-stack16">
-    <header class="d-stack12">
-        <h2 class="dialtone-title__section">Percentage</h2>
-        <p class="dialtone-copy__normal">By default, all colors in the <span class="code-example--inline">.d-bgg-[color]</span> classes are determined by lightening and darkening the core color by 7.5%. You can reduce or increase this percentage by using a <span class="code-example--inline">.d-bgp-[sm|lg|xl]</span> class, which overrides the default CSS var.</p>
+    <header class="d-stack2">
+        {% header "h2", "Starting color" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-bgg-from-{color}</code> to declare the gradient starting color stop.</p>
     </header>
-    <table class="d-table">
-        <thead>
-            <tr>
-                <th scope="col" class="d-w20">Size</th>
-                <th scope="col" class="d-w30">Class</th>
-                <th scope="col">Output</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for i in visual-styles.bgg-percentage %}
-            {% assign value = i.value %}
-            {% assign class = i.class %}
-            {% assign output = i.output %}
-            <tr>
-                <td>{{ value }}</td>
-                <td {% if class == "N/A" %}class="d-fs-italic d-fc-slate-lightest d-ff-custom"{% endif %}>{% if class != "N/A" %}.d-bgp-{% endif %}{{ class }}</td>
-                <td>--bgg-percentage: {{ output }} !important;</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    <div class="dialtone-example" data-example="yes" data-code="yes">
-        <div class="dialtone-example__example d-stack12">
-            <div class="dialtone-color-grid__group">
-            {% for i in visual-styles.bgg-percentage %}
-            {% assign value = i.value %}
-            {% assign class = i.class %}
-                <div class="dialtone-color-grid__item d-bgg-blue-light {% if class != 'N/A' %}d-bgp-{{ class }}{% endif %}">
-                    <span class="dialtone-color-grid__label">.d-bgg-blue-light{% if class != "N/A" %} .d-bgp-{{ class }}{% endif %}</span>
-                </div>
-            {% endfor %}
-            </div>
-        </div>
-        <div class="dialtone-example__code">
+    <aside class="d-br8 d-of-hidden">
+        <header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-black-050 d-w100p d-hmn102">
+            <div class="d-w100p d-h128 d-br8 d-bgg-to-br d-bgg-from-blue-600"></div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-brb8 d-fs12">
 {% highlight html linenos %}
-<div class="d-bgg-blue-light d-bgp-sm">…</div>
-<div class="d-bgg-blue-light">…</div>
-<div class="d-bgg-blue-light d-bgp-lg">…</div>
-<div class="d-bgg-blue-light d-bgp-xl">…</div>
+<div class="d-bgg-to-br d-bgg-from-blue-600">...</div>
 {% endhighlight %}
-        </div>
-    </div>
+        </footer>
+    </aside>
 </section>
 <section class="d-stack16">
-    <header class="d-stack12">
-        <h2 class="dialtone-title__section">Opacity</h2>
-        <p class="dialtone-copy__normal">In addition to the percentage and direction controls above, Dialtone also provides the ability for you to control <strong>one</strong> background color's opacity using the <span class="code-example--inline">.d-bgo[#]</span> classes.</p>
+    <header class="d-stack2">
+        {% header "h2", "Ending color" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-bgg-to-{color}</code> to declare the gradient ending color stop.</p>
     </header>
-    <div class="dialtone-example" data-example="yes" data-code="yes">
-        <div class="dialtone-example__example">
-            <div class="dialtone-color-grid__group">
-            {% for i in visual-styles.bgc-opacity %}
-            {% assign stop = i.stop %}
-                <div class="dialtone-color-grid__item d-jc-flex-end d-bgg-{% if stop <= 50 %}slate{% else %}ash{% endif %} d-bgo{{ stop }} {% if forloop.first%}{% else %}d-border-top d-border-color--{% if stop <= 50 %}slate-lightest{% else %}ash-darkest{% endif %}{% endif %}">
-                    <span class="dialtone-color-grid__label d-fc-{% if stop <= 50 %}white{% else %}-slate{% endif %}">.d-bgg-{% if stop <= 50 %}slate{% else %}ash{% endif %} .d-bgo{{ stop }}</span>
-                </div>
-            {% endfor %}
-            </div>
-        </div>
-        <div class="dialtone-example__code">
+    <aside class="d-br8 d-of-hidden">
+        <header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-black-050 d-w100p d-hmn102">
+            <div class="d-w100p d-h128 d-br8 d-bgg-to-br d-bgg-from-blue-600 d-bgg-to-teal-300"></div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-brb8 d-fs12">
 {% highlight html linenos %}
-<p class="d-bgg-slate d-bgp-lg d-bgo0">…</p>
-<p class="d-bgg-slate d-bgp-lg d-bgo10">…</p>
-<p class="d-bgg-slate d-bgp-lg d-bgo25">…</p>
-<p class="d-bgg-slate d-bgp-lg d-bgo50">…</p>
-<p class="d-bgg-ash d-bgp-lg d-bgo75">…</p>
-<p class="d-bgg-ash d-bgp-lg d-bgo90">…</p>
-<p class="d-bgg-ash d-bgp-lg d-bgo95">…</p>
-<p class="d-bgg-ash d-bgp-lg d-bgo99">…</p>
-<p class="d-bgg-ash d-bgp-lg d-bgo100">…</p>
+<div class="d-bgg-to-br d-bgg-from-blue-600 d-bgg-to-teal-300">...</div>
 {% endhighlight %}
-        </div>
-    </div>
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Changing opacities" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-bgg-from-o{n}</code> or <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-bgg-to-o{n}</code> to change the opacity values of each gradient color stop.</p>
+    </header>
+    <aside class="d-br8 d-of-hidden">
+        <header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-black-050 d-w100p d-hmn102 d-stack8">
+            <div class="d-d-flex d-jc-space-between d-ai-center d-p8 d-w100p d-h48 d-br8 d-bgg-to-r d-bgg-from-purple-300 d-bgg-to-pink-300 d-bgg-to-o0 d-fs24 d-fw-black d-fc-white"><span>100%</span><span>0%</span></div>
+            <div class="d-d-flex d-jc-space-between d-ai-center d-p8 d-w100p d-h48 d-br8 d-bgg-to-r d-bgg-from-purple-300 d-bgg-from-o99 d-bgg-to-pink-300 d-bgg-to-o10 d-fs24 d-fw-black d-fc-white"><span>99%</span><span>10%</span></div>
+            <div class="d-d-flex d-jc-space-between d-ai-center d-p8 d-w100p d-h48 d-br8 d-bgg-to-r d-bgg-from-purple-300 d-bgg-from-o95 d-bgg-to-pink-300 d-bgg-to-o25 d-fs24 d-fw-black d-fc-white"><span>95%</span><span>25%</span></div>
+            <div class="d-d-flex d-jc-space-between d-ai-center d-p8 d-w100p d-h48 d-br8 d-bgg-to-r d-bgg-from-purple-300 d-bgg-from-o90 d-bgg-to-pink-300 d-bgg-to-o50 d-fs24 d-fw-black d-fc-white"><span>90%</span><span>50%</span></div>
+            <div class="d-d-flex d-jc-space-between d-ai-center d-p8 d-w100p d-h48 d-br8 d-bgg-to-r d-bgg-from-purple-300 d-bgg-from-o75 d-bgg-to-pink-300 d-bgg-to-o75 d-fs24 d-fw-black d-fc-white"><span>75%</span><span>75%</span></div>
+            <div class="d-d-flex d-jc-space-between d-ai-center d-p8 d-w100p d-h48 d-br8 d-bgg-to-r d-bgg-from-purple-300 d-bgg-from-o50 d-bgg-to-pink-300 d-bgg-to-o90 d-fs24 d-fw-black d-fc-white"><span>50%</span><span>90%</span></div>
+            <div class="d-d-flex d-jc-space-between d-ai-center d-p8 d-w100p d-h48 d-br8 d-bgg-to-r d-bgg-from-purple-300 d-bgg-from-o25 d-bgg-to-pink-300 d-bgg-to-o95 d-fs24 d-fw-black d-fc-white"><span>25%</span><span>95%</span></div>
+            <div class="d-d-flex d-jc-space-between d-ai-center d-p8 d-w100p d-h48 d-br8 d-bgg-to-r d-bgg-from-purple-300 d-bgg-from-o10 d-bgg-to-pink-300 d-bgg-to-o99 d-fs24 d-fw-black d-fc-white"><span>10%</span><span>99%</span></div>
+            <div class="d-d-flex d-jc-space-between d-ai-center d-p8 d-w100p d-h48 d-br8 d-bgg-to-r d-bgg-from-purple-300 d-bgg-from-o0 d-bgg-to-pink-300 d-fs24 d-fw-black d-fc-white"><span>0%</span><span>100%</span></div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-brb8 d-fs12">
+{% highlight html linenos %}
+<div class="d-bgg-from-purple-300 d-bgg-to-pink-300 d-bgg-to-o0">...</div>
+<div class="d-bgg-from-purple-300 d-bgg-from-o99 d-bgg-to-pink-300 d-bgg-to-o10">...</div>
+<div class="d-bgg-from-purple-300 d-bgg-from-o95 d-bgg-to-pink-300 d-bgg-to-o25">...</div>
+<div class="d-bgg-from-purple-300 d-bgg-from-o90 d-bgg-to-pink-300 d-bgg-to-o50">...</div>
+<div class="d-bgg-from-purple-300 d-bgg-from-o75 d-bgg-to-pink-300 d-bgg-to-o75">...</div>
+<div class="d-bgg-from-purple-300 d-bgg-from-o50 d-bgg-to-pink-300 d-bgg-to-o90">...</div>
+<div class="d-bgg-from-purple-300 d-bgg-from-o25 d-bgg-to-pink-300 d-bgg-to-o95">...</div>
+<div class="d-bgg-from-purple-300 d-bgg-from-o10 d-bgg-to-pink-300 d-bgg-to-o99">...</div>
+<div class="d-bgg-from-purple-300 d-bgg-from-o0 d-bgg-to-pink-300">...</div>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Hover" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">h:d-bgg-{from|to}-{color}</code> to change an element's background gradient color spot when in an <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">:hover</code> state.</p>
+    </header>
+    <aside class="d-br8 d-of-hidden">
+        <header class="d-fl-center d-p24 d-bgc-black-050 d-w100p d-hmn102">
+            <button class="d-p16 d-br4 d-fs18 d-fc-white d-bgg-to-r d-bgg-from-purple-300 h:d-bgg-from-purple-300 d-bgg-to-pink-300 h:d-bgg-to-blue-700 d-baw0">Hover over me</button>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-brb8 d-fs12">
+{% highlight html linenos %}
+<button class="d-bgg-from-purple-300 h:d-bgg-from-purple-300 d-bgg-to-pink-300 h:d-bgg-to-blue-700">...</button>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Focus" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">f:d-bgg-{from|to}-{color}</code> to change an element's background gradient starting and ending stops in <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">:focus</code> and <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">:focus-within</code> states.</p>
+    </header>
+    <aside class="d-br8 d-of-hidden">
+        <header class="d-fl-center d-p24 d-bgc-black-050 d-w100p d-hmn102">
+            <button class="d-p16 d-br4 d-fs18 d-fc-white d-bgg-to-r d-bgg-from-purple-300 f:d-bgg-from-purple-300 d-bgg-to-pink-300 f:d-bgg-to-blue-700 d-baw0">Click on me</button>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-brb8 d-fs12">
+{% highlight html linenos %}
+<button class="d-bgg-from-purple-300 f:d-bgg-from-purple-300 d-bgg-to-pink-300 f:d-bgg-to-blue-700">...</button>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Dark Mode" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d:d-bgg-{from|to}-{color}</code> to set different background gradient color steps when the user has dark mode enabled.</p>
+    </header>
+    <aside class="d-br8 d-of-hidden theme-dark">
+        <header class="d-fl-center d-fd-column d-p24 d-bgc-black-050 d-w100p d-hmn102 d-stack16">
+            <button class="d-p16 d-br4 d-fs18 d-fc-white d-bgg-to-r d-bgg-from-purple-300 d:d-bgg-from-purple-300 d-bgg-to-pink-300 d:d-bgg-to-yellow-400 d-baw0 js-theme-switcher">Click on me toggle dark mode</button>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-brb8 d-fs12">
+{% highlight html linenos %}
+<button class="d-bgg-from-purple-300 d:d-bgg-from-purple-300 d-bgg-to-pink-300 d:d-bgg-to-yellow-400">...</button>
+{% endhighlight %}
+        </footer>
+    </aside>
 </section>

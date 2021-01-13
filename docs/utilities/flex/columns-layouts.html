@@ -6,7 +6,7 @@ description: Utilities for flex columns and common flex layouts.
 <section class="d-stack16">
     <header class="d-stack2">
         {% header "h2", "Flex Columns" %}
-        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">By default children cells within a parent flex container will only take up the room needed for their content. To have a flex child cell span multiple columns, use the flex column <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">.d-flex__cell{#}</code> classes. These columns are based on a 12-column grid, meaning each column will take up 1/12th of all available space.</p>
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">By default children cells within a parent flex container will only take up the room needed for their content. To have a flex child cell span multiple columns, use the flex column <code class="d-py2 d-px4 d-br2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">.d-flex-col{#}</code> classes. These columns are based on a 12-column grid, meaning each column will take up 1/12th of all available space.</p>
     </header>
     <div class="d-stack8">
         {% header "h3", "Classes" %}
@@ -23,7 +23,7 @@ description: Utilities for flex columns and common flex layouts.
                 {% assign span = i.col %}
                 {% assign output = i.output %}
                 <tr>
-                    <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-flex__cell{{ span }}</th>
+                    <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-flex-col{{ span }}</th>
                     <td>{{ span }}</td>
                     <td class="d-ff-mono d-fc-teal-500 d-fs12">flex-basis: {{ output }} !important;</td>
                 </tr>
@@ -34,17 +34,17 @@ description: Utilities for flex columns and common flex layouts.
     <div class="d-stack8">
         {% header "h3", "Examples" %}
         <aside class="d-br8 d-of-hidden">
-            <header class="d-d-flex d-fw-wrap d-p24 d-bgc-blue-100 d-bgo50 d-w100p d-hmn216 d-flex-columns">
-                <div class="d-flex__cell4 d-fl-center d-m8 d-p16 d-bgc-blue-400 d-br4 d-fs14 d-fc-white d-ff-mono">d-flex__cell4</div>
-                <div class="d-flex__cell8 d-fl-center d-m8 d-p16 d-bgc-blue-400 d-br4 d-fs14 d-fc-white d-ff-mono">d-flex__cell8</div>
-                <div class="d-flex__cell12 d-fl-center d-m8 d-p16 d-bgc-blue-400 d-br4 d-fs14 d-fc-white d-ff-mono">d-flex__cell12</div>
+            <header class="d-flex-columns d-fw-wrap d-p24 d-bgc-blue-100 d-bgo50 d-w100p d-hmn216">
+                <div class="d-flex-col4 d-fl-center d-m8 d-p16 d-bgc-blue-400 d-br4 d-fs14 d-fc-white d-ff-mono">d-flex-col4</div>
+                <div class="d-flex-col8 d-fl-center d-m8 d-p16 d-bgc-blue-400 d-br4 d-fs14 d-fc-white d-ff-mono">d-flex-col8</div>
+                <div class="d-flex-col12 d-fl-center d-m8 d-p16 d-bgc-blue-400 d-br4 d-fs14 d-fc-white d-ff-mono">d-flex-col12</div>
             </header>
             <footer class="d-p8 d-bgc-black-700 d-brb8 d-fs12">
 {% highlight html linenos %}
 <div class="d-flex-columns">
-    <div class="d-flex__cell4">…</div>
-    <div class="d-flex__cell8">…</div>
-    <div class="d-flex__cell12">…</div>
+    <div class="d-flex-col4">…</div>
+    <div class="d-flex-col8">…</div>
+    <div class="d-flex-col12">…</div>
 </div>
 {% endhighlight %}
             </footer>

@@ -13,109 +13,10 @@
 //  • BOX SHADOWS
 //  • OPACITY
 //
-//  ============================================================================
-//  $   BACKGROUND GRADIENTS
-//  ----------------------------------------------------------------------------
-.gradient-classes(@color1,@color2) {
-    -bgg-direction: to top right;
-
-    background-image: linear-gradient(var(--bgg-direction), @color1 0%, @color2 100%) !important;
-}
-
-//  --  BLUE
-.d-bgg-blue100-blue200          { .gradient-classes(var(--blue-100), var(--blue-200)); }
-.d-bgg-blue300-blue400          { .gradient-classes(var(--blue-300), var(--blue-400)); }
-.d-bgg-blue600-blue400          { .gradient-classes(var(--blue-600), var(--blue-400)); }
-.d-bgg-blue400-teal300          { .gradient-classes(var(--blue-400), var(--teal-300)); }
-.d-bgg-blue400-pink300          { .gradient-classes(var(--blue-400), var(--pink-300)); }
-.d-bgg-blue400-purple400        { .gradient-classes(var(--blue-400), var(--purple-300)); }
-.d-bgg-blue400-pink300          { .gradient-classes(var(--blue-400), var(--pink-300)); }
-
-//  --  PURPLE
-.d-bgg-purple100-purple200      { .gradient-classes(var(--purple-100), var(--purple-200)); }
-.d-bgg-purple200-purple300      { .gradient-classes(var(--purple-200), var(--purple-300)); }
-.d-bgg-purple400-purple500      { .gradient-classes(var(--purple-400), var(--purple-500)); }
-.d-bgg-purple500-purple600      { .gradient-classes(var(--purple-500), var(--purple-600)); }
-.d-bgg-purple400-pink300        { .gradient-classes(var(--purple-400), var(--pink-300)); }
-
-//  --  TEAL
-.d-bgg-teal300-teal400          { .gradient-classes(var(--teal-300), var(--teal-400)); }
-.d-bgg-teal200-teal300          { .gradient-classes(var(--teal-200), var(--teal-300)); }
-.d-bgg-teal100-teal200          { .gradient-classes(var(--teal-100), var(--teal-200)); }
-
-//  --  PINK
-.d-bgg-pink200-pink300          { .gradient-classes(var(--pink-200), var(--pink-300)); }
-.d-bgg-pink300-purple200        { .gradient-classes(var(--pink-300), var(--purple-200)); }
-.d-bgg-pink100-purple100        { .gradient-classes(var(--pink-100), var(--purple-100)); }
-.d-bgg-pink100-teal100          { .gradient-classes(var(--pink-100), var(--teal-100)); }
-
-//  --  YELLOW
-.d-bgg-yellow300-yellow400      { .gradient-classes(var(--yellow-300), var(--yellow-400)); }
-.d-bgg-yellow300-pink300        { .gradient-classes(var(--yellow-300), var(--pink-300)); }
 
 
-//  ============================================================================
-//  $   BACKGROUND CSS VAR CLASSES
-//  ============================================================================
-//  $$  DIRECTION
-//  ----------------------------------------------------------------------------
-.d-bgd-top                      { --bgg-direction: to top !important; }
-.d-bgd-top-left                 { --bgg-direction: to top left !important; }
-.d-bgd-top-right                { --bgg-direction: to top right !important; }
-.d-bgd-right                    { --bgg-direction: to right !important; }
-.d-bgd-bottom                   { --bgg-direction: to bottom !important; }
-.d-bgd-bottom-left              { --bgg-direction: to bottom left !important; }
-.d-bgd-bottom-right             { --bgg-direction: to bottom right !important; }
-.d-bgd-left                     { --bgg-direction: to left !important; }
 
 
-//  ============================================================================
-//  $$  BACKGROUND PATTERNS
-//  ----------------------------------------------------------------------------
-//  --  BASE CLASS
-.d-bgg-pattern {
-    position: relative;
-    padding-left: var(--su24) !important;
-
-    &::after {
-        content: "";
-        position: absolute;
-        top: @su1;
-        bottom: @su1;
-        left: @su1;
-
-        min-width: 2rem;
-        min-height: 2rem;
-        border-radius: 0.3rem;
-        background-repeat: repeat-y;
-        background-position: top left;
-        background-clip: content-box;
-    }
-}
-
-//  --  EACH PATTERN
-//      DARK
-.d-bgg-pattern-blob--dark::after             { background-image: var(--bgg-pattern-blob--dark); }
-.d-bgg-pattern-chevrons--dark::after         { background-image: var(--bgg-pattern-chevrons--dark); }
-.d-bgg-pattern-crosses--dark::after          { background-image: var(--bgg-pattern-crosses--dark); }
-.d-bgg-pattern-crosshatch--dark::after       { background-image: var(--bgg-pattern-crosshatch--dark); }
-.d-bgg-pattern-dot-dash--dark::after         { background-image: var(--bgg-pattern-dot-dash--dark); }
-.d-bgg-pattern-dots-circles--dark::after     { background-image: var(--bgg-pattern-dots-circles--dark); }
-.d-bgg-pattern-horz-stripes--dark::after     { background-image: var(--bgg-pattern-horz-stripes--dark); }
-.d-bgg-pattern-slanted-stripes--dark::after  { background-image: var(--bgg-pattern-slanted-stripes--dark); }
-.d-bgg-pattern-steps--dark::after            { background-image: var(--bgg-pattern-steps--dark); }
-.d-bgg-pattern-stripe--dark::after           { background-image: var(--bgg-pattern-stripe--dark); }
-//      LIGHT
-.d-bgg-pattern-blob--light::after            { background-image: var(--bgg-pattern-blob--light); }
-.d-bgg-pattern-chevrons--light::after        { background-image: var(--bgg-pattern-chevrons--light); }
-.d-bgg-pattern-crosses--light::after         { background-image: var(--bgg-pattern-crosses--light); }
-.d-bgg-pattern-crosshatch--light::after      { background-image: var(--bgg-pattern-crosshatch--light); }
-.d-bgg-pattern-dot-dash--light::after        { background-image: var(--bgg-pattern-dot-dash--light); }
-.d-bgg-pattern-dots-circles--light::after    { background-image: var(--bgg-pattern-dots-circles--light); }
-.d-bgg-pattern-horz-stripes--light::after    { background-image: var(--bgg-pattern-horz-stripes--light); }
-.d-bgg-pattern-slanted-stripes--light::after { background-image: var(--bgg-pattern-slanted-stripes--light); }
-.d-bgg-pattern-steps--light::after           { background-image: var(--bgg-pattern-steps--light); }
-.d-bgg-pattern-stripe--light::after          { background-image: var(--bgg-pattern-stripe--light); }
 
 
 //  ============================================================================
