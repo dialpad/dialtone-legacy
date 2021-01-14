@@ -82,17 +82,17 @@
 
 //  $$ STYLES
 //  ----------------------------------------------------------------------------
-.d-bas-solid        { border-style: solid !important; }
-.d-bts-solid        { border-top-style: solid !important; }
-.d-brs-solid        { border-right-style: solid !important; }
-.d-bbs-solid        { border-bottom-style: solid !important; }
-.d-bls-solid        { border-left-style: solid !important; }
-
 .d-bas-dashed       { border-style: dashed !important; }
 .d-bts-dashed       { border-top-style: dashed !important; }
 .d-brs-dashed       { border-right-style: dashed !important; }
 .d-bbs-dashed       { border-bottom-style: dashed !important; }
 .d-bls-dashed       { border-left-style: dashed !important; }
+
+.d-bas-dotted       { border-style: dotted !important; }
+.d-bts-dotted       { border-top-style: dotted !important; }
+.d-brs-dotted       { border-right-style: dotted !important; }
+.d-bbs-dotted       { border-bottom-style: dotted !important; }
+.d-bls-dotted       { border-left-style: dotted !important; }
 
 .d-bas-unset        { border-style: unset !important; }
 
@@ -148,3 +148,55 @@
 );
 .d-blr-circle       { border-top-left-radius: @br-circle !important; border-bottom-left-radius: @br-circle !important; }
 .d-blr-pill         { border-top-left-radius: @br-pill !important;  border-bottom-left-radius: @br-pill !important; }
+
+
+//  ============================================================================
+//  $  DIVIDERS
+//  ============================================================================
+//  $$ VERTICAL DIVIDERS
+//  ----------------------------------------------------------------------------
+.d-divide-y > * + * {
+    --divide-y-reverse: 0;
+    border-top: calc(~"1px * (1 - var(--divide-y-reverse))") solid currentColor !important;
+    border-bottom: calc(~"1px * var(--divide-y-reverse)") solid currentColor !important;
+}
+.d-divide-y0 > * + * {
+    --divide-y-reverse: 0;
+    border-top: calc(~"0 * (1 - var(--divide-y-reverse))") solid currentColor !important;
+    border-bottom: calc(~"0 * var(--divide-y-reverse)") solid currentColor !important;
+}
+.d-divide-y2 > * + * {
+    --divide-y-reverse: 0;
+    border-top: calc(~"2px * (1 - var(--divide-y-reverse))") solid currentColor !important;
+    border-bottom: calc(~"2px * var(--divide-y-reverse)") solid currentColor !important;
+}
+.d-divide-y4 > * + * {
+    --divide-y-reverse: 0;
+    border-top: calc(~"4px * (1 - var(--divide-y-reverse))") solid currentColor !important;
+    border-bottom: calc(~"4px * var(--divide-y-reverse)") solid currentColor !important;
+}
+.d-divide-y-reverse > * + * { --divide-y-reverse: 1; }
+
+//  $$ HORIZONTAL DIVIDERS
+//  ----------------------------------------------------------------------------
+.d-divide-x > * + * {
+    --divide-x-reverse: 0;
+    border-left: calc(~"1px * (1 - var(--divide-x-reverse))") solid currentColor !important;
+    border-right: calc(~"1px * var(--divide-x-reverse)") solid currentColor !important;
+}
+.d-divide-x0 > * + * {
+    --divide-x-reverse: 0;
+    border-left: calc(~"0 * (1 - var(--divide-x-reverse))") solid currentColor !important;
+    border-right: calc(~"0 * var(--divide-x-reverse)") solid currentColor !important;
+}
+.d-divide-x2 > * + * {
+    --divide-x-reverse: 0;
+    border-left: calc(~"2px * (1 - var(--divide-x-reverse))") solid currentColor !important;
+    border-right: calc(~"2px * var(--divide-x-reverse)") solid currentColor !important;
+}
+.d-divide-x4 > * + * {
+    --divide-x-reverse: 0;
+    border-left: calc(~"4px * (1 - var(--divide-x-reverse))") solid currentColor !important;
+    border-right: calc(~"4px * var(--divide-x-reverse)") solid currentColor !important;
+}
+.d-divide-x-reverse > * + * { --divide-x-reverse: 1; }

@@ -4,75 +4,73 @@ title: Border Widths
 description: Utilities for controlling an element's border width.
 ---
 <section class="d-stack16">
-    <header class="d-stack2">
-        <h2 class="dialtone-title__section">Widths</h2>
-        <p class="dialtone-copy__normal">By default all <span class="code-example--inline">.d-border{-direction}</span> classes have a 1px border width. This can be changed using a <span class="code-example--inline">.d-border-width{#}</span> utility class. Like the directional border classes above, border widths can be applied to all sides, a specific side, horizontally, or vertically. The table below lists the class names, directions, and the CSS output.</p>
-    </header>
-    <div class="d-stack2">
-        <h2 class="dialtone-title__subsection">Classes</h2>
-        <div class="dialtone-table-wrapper">
-            <table class="d-table">
-                <thead>
-                    <tr>
-                        <th scope="col" class="dialtone-table__column--md">Class</th>
-                        <th scope="col">Direction</th>
-                        <th scope="col">Output</th>
-                    </tr>
-                </thead>
-                {% assign widths = borders.widths | split: ", " %}
-                {% for i in directions %}
-                <tbody>
-                    {% for w in widths %}
-                    <tr>
-                        <th scope="row">.d-border{% if i != "all" %}-{{ i }}{% endif %}-width{{ w }}</th>
-                        <td>{{ i | capitalize}}{% if i == "y" or i == "x" %}-Axis{% endif %}</td>
-                        <td>
-                            {% if i == "y" %}
-                                border-top-width: {{ w }}px;<br/>
-                                border-bottom-width: {{ w }}px;
-                            {% elsif i == "x" %}
-                                border-right-width: {{ w }}px;<br/>
-                                border-left-width: {{ w }}px;
-                            {% elsif i != "all" %}
-                                border-{{ i }}-width: {{ w }}px;
-                            {% else %}
-                                border-width: {{ w }}px;
-                            {% endif %}
-                        </td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
+    {% header "h2", "Classes" %}
+    <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
+        <table class="d-table">
+            <thead>
+                <tr>
+                    <th scope="col" class="d-w25p">Class</th>
+                    <th scope="col">Output</th>
+                </tr>
+            </thead>
+            {% assign direction = "a, t, r, b, l" | split: ", "%}
+            {% for i in direction %}
+            <tbody>
+                {% assign width = "0, 1, 2, 4, 6" | split: ", "%}
+                {% for w in width %}
+                <tr>
+                    <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-b{{ i }}w-{{ w }}</th>
+                    <td class="d-ff-mono d-fc-teal-500 d-fs12">border{% if i == "t" %}-top{% elsif i == "r" %}-right{% elsif i == "b" %}-bottom{% elsif i == "l" %}-left{% endif %}-width: var(--su{{ w }})  !important;</td>
+                </tr>
                 {% endfor %}
-            </table>
-        </div>
+            </tbody>
+            {% endfor %}
+        </table>
     </div>
-    <div class="d-stack2">
-        <h2 class="dialtone-title__subsection">Examples</h2>
-        <div class="dialtone-example" data-example="yes" data-code="yes">
-            <div class="dialtone-example__example">
-                <div class="d-grid-layout--with-columns d-grid-gap16" style="--grid-col: 4; --grid-col-width: 23%;">
-                    <div class="layout-block"><div class="layout-block__label d-border-color--navy d-border d-border-width2">width2</div></div>
-                    <div class="layout-block"><div class="layout-block__label d-border-color--navy d-border d-border-width2 d-border-top-width0">width2 top-width0</div></div>
-                    <div class="layout-block"><div class="layout-block__label d-border-color--navy d-border-top d-border-top-width2">top-width2</div></div>
-                    <div class="layout-block"><div class="layout-block__label d-border-color--navy d-border-right d-border-right-width2">right-width2</div></div>
-                    <div class="layout-block"><div class="layout-block__label d-border-color--navy d-border-bottom d-border-bottom-width4">bottom-width4</div></div>
-                    <div class="layout-block"><div class="layout-block__label d-border-color--navy d-border-left d-border-left-width4">left-width4</div></div>
-                    <div class="layout-block"><div class="layout-block__label d-border-color--navy d-border-x d-border-x-width6">x-width6</div></div>
-                    <div class="layout-block"><div class="layout-block__label d-border-color--navy d-border-y d-border-y-width6">y-width6</div></div>
-                </div>
-            </div>
-            <div class="dialtone-example__code">
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "All Sides" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-baw{n}</code> to change the border width on your element.</p>
+    </header>
+    <aside class="d-bar8 d-of-hidden">
+        <header class="d-fl-col5 d-flg8 d-fw-wrap d-p24 d-bgc-blue-100 d-bgo50 d-w100p d-hmn102">
+            <div class="d-fl-center d-p16 d-ba d-bc-blue-400 d-baw0 d-bgc-blue-100 d-fs16 d-ff-mono">.d-baw0</div>
+            <div class="d-fl-center d-p16 d-ba d-bc-blue-400 d-baw1 d-bgc-blue-100 d-fs16 d-ff-mono">.d-baw1</div>
+            <div class="d-fl-center d-p16 d-ba d-bc-blue-400 d-baw2 d-bgc-blue-100 d-fs16 d-ff-mono">.d-baw2</div>
+            <div class="d-fl-center d-p16 d-ba d-bc-blue-400 d-baw4 d-bgc-blue-100 d-fs16 d-ff-mono">.d-baw4</div>
+            <div class="d-fl-center d-p16 d-ba d-bc-blue-400 d-baw6 d-bgc-blue-100 d-fs16 d-ff-mono">.d-baw6</div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
 {% highlight html linenos %}
-<div class="d-border d-border-width2">width2</div>
-<div class="d-border d-border-width2 d-border-top-width0">width2 top-width0</div>
-<div class="d-border-top d-border-top-width2">top-width2</div>
-<div class="d-border-right d-border-right-width2">right-width2</div>
-<div class="d-border-bottom d-border-bottom-width4">bottom-width4</div>
-<div class="d-border-left d-border-left-width4">left-width4</div>
-<div class="d-border-x d-border-x-width6">x-width6</div>
-<div class="d-border-y d-border-y-width6">y-width6</div>
+<div class="d-ba d-baw0">...</div>
+<div class="d-ba d-baw1">...</div>
+<div class="d-ba d-baw2">...</div>
+<div class="d-ba d-baw4">...</div>
+<div class="d-ba d-baw6">...</div>
 {% endhighlight %}
-            </div>
-        </div>
-    </div>
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Individual Sides" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-b{a|t|r|b|l}w{n}</code> to change the border width of your direction on your element.</p>
+    </header>
+    <aside class="d-bar8 d-of-hidden">
+        <header class="d-fl-col5 d-flg8 d-fw-wrap d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn102">
+            <div class="d-fl-center d-p16 d-bt d-bc-purple-400 d-btw1 d-bgc-purple-100 d-fs16 d-ff-mono">.d-btw1</div>
+            <div class="d-fl-center d-p16 d-br d-bc-purple-400 d-brw2 d-bgc-purple-100 d-fs16 d-ff-mono">.d-brw2</div>
+            <div class="d-fl-center d-p16 d-bb d-bc-purple-400 d-bbw4 d-bgc-purple-100 d-fs16 d-ff-mono">.d-bbw4</div>
+            <div class="d-fl-center d-p16 d-bl d-bc-purple-400 d-blw6 d-bgc-purple-100 d-fs16 d-ff-mono">.d-blw6</div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+{% highlight html linenos %}
+<div class="d-bt d-btw1">...</div>
+<div class="d-br d-brw2">...</div>
+<div class="d-bb d-bbw4">...</div>
+<div class="d-bl d-blw6">...</div>
+{% endhighlight %}
+        </footer>
+    </aside>
 </section>
