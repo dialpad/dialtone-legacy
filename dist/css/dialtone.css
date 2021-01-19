@@ -410,7 +410,7 @@ body {
   text-transform: inherit;
   transition-duration: 75ms;
   transition-property: background-color, border, box-shadow;
-  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition-timing-function: var(--ttf-in-out);
   cursor: pointer;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -460,7 +460,7 @@ body {
 .d-btn.d-btn--loading .d-btn__icon,
 .d-btn.d-btn--loading .d-btn__label {
   opacity: 0;
-  transition: opacity 50ms cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: opacity 50ms var(--ttf-in-out);
 }
 .d-btn.d-btn--loading:before {
   content: "";
@@ -761,7 +761,7 @@ body {
   line-height: var(--lh-tight);
   transition-duration: 100ms;
   transition-property: border, box-shadow, background-color;
-  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition-timing-function: var(--ttf-in-out);
 }
 .d-input::-webkit-input-placeholder,
 .d-textarea::-webkit-input-placeholder {
@@ -943,7 +943,7 @@ body {
   line-height: var(--lh-tight);
   transition-duration: 100ms;
   transition-property: border, box-shadow, background-color;
-  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition-timing-function: var(--ttf-in-out);
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -1140,7 +1140,7 @@ legend.d-label {
   color: var(--muted-color);
   font: inherit;
   text-decoration: underline;
-  transition: all 30ms cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all var(--td25) var(--ttf-in-out);
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -1175,7 +1175,7 @@ legend.d-label {
   color: var(--warning-color);
   font: inherit;
   text-decoration: underline;
-  transition: all 30ms cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all var(--td25) var(--ttf-in-out);
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -1208,7 +1208,7 @@ legend.d-label {
   color: var(--error-color);
   font: inherit;
   text-decoration: underline;
-  transition: all 30ms cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all var(--td25) var(--ttf-in-out);
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -1241,7 +1241,7 @@ legend.d-label {
   color: var(--success-color);
   font: inherit;
   text-decoration: underline;
-  transition: all 30ms cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all var(--td25) var(--ttf-in-out);
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -1268,7 +1268,7 @@ legend.d-label {
   color: var(--primary-color);
   font: inherit;
   text-decoration: underline;
-  transition: all 30ms cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all var(--td25) var(--ttf-in-out);
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -1371,9 +1371,9 @@ legend.d-label {
   opacity: 0;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
-  transition: opacity 100ms cubic-bezier(0.645, 0.045, 0.355, 1) 10ms, z-index 0s 200ms, visibility 0s 200ms, -webkit-transform 100ms cubic-bezier(0.645, 0.045, 0.355, 1) 10ms;
-  transition: opacity 100ms cubic-bezier(0.645, 0.045, 0.355, 1) 10ms, z-index 0s 200ms, visibility 0s 200ms, transform 100ms cubic-bezier(0.645, 0.045, 0.355, 1) 10ms;
-  transition: opacity 100ms cubic-bezier(0.645, 0.045, 0.355, 1) 10ms, z-index 0s 200ms, visibility 0s 200ms, transform 100ms cubic-bezier(0.645, 0.045, 0.355, 1) 10ms, -webkit-transform 100ms cubic-bezier(0.645, 0.045, 0.355, 1) 10ms;
+  transition: opacity 100ms var(--ttf-in-out) 10ms, z-index 0s 200ms, visibility 0s 200ms, -webkit-transform 100ms var(--ttf-in-out) 10ms;
+  transition: opacity 100ms var(--ttf-in-out) 10ms, z-index 0s 200ms, visibility 0s 200ms, transform 100ms var(--ttf-in-out) 10ms;
+  transition: opacity 100ms var(--ttf-in-out) 10ms, z-index 0s 200ms, visibility 0s 200ms, transform 100ms var(--ttf-in-out) 10ms, -webkit-transform 100ms var(--ttf-in-out) 10ms;
   will-change: visibility, z-index, opacity;
 }
 @media (prefers-reduced-motion) {
@@ -1391,7 +1391,7 @@ legend.d-label {
   padding: var(--su24);
   border-radius: var(--br8);
   background-color: var(--white);
-  box-shadow: 0 var(--su2) var(--su16) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l)  /  8%), 0 var(--su2) var(--su4) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l)  /  4%), 0 var(--su1) var(--su2) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l)  /  3%);
+  box-shadow: var(--bs-card);
   opacity: 0;
   color: var(--black-900);
   font-size: var(--fs16);
@@ -1400,9 +1400,9 @@ legend.d-label {
           backface-visibility: hidden;
   -webkit-transform: translate3d(0, 30%, 0) scale3d(0.75, 0.75, 0.75);
           transform: translate3d(0, 30%, 0) scale3d(0.75, 0.75, 0.75);
-  transition: opacity 200ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, z-index 0s 200ms, visibility 0s 200ms, -webkit-transform 100ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
-  transition: opacity 200ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, z-index 0s 200ms, visibility 0s 200ms, transform 100ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
-  transition: opacity 200ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, z-index 0s 200ms, visibility 0s 200ms, transform 100ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, -webkit-transform 100ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+  transition: opacity 200ms var(--ttf-in-out) 0s, z-index 0s 200ms, visibility 0s 200ms, -webkit-transform 100ms var(--ttf-in-out) 0s;
+  transition: opacity 200ms var(--ttf-in-out) 0s, z-index 0s 200ms, visibility 0s 200ms, transform 100ms var(--ttf-in-out) 0s;
+  transition: opacity 200ms var(--ttf-in-out) 0s, z-index 0s 200ms, visibility 0s 200ms, transform 100ms var(--ttf-in-out) 0s, -webkit-transform 100ms var(--ttf-in-out) 0s;
   will-change: visibility, z-index, opacity, tranform;
   overflow-y: auto;
 }
@@ -1416,9 +1416,9 @@ legend.d-label {
   opacity: 1;
   -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
           transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
-  transition: opacity 100ms cubic-bezier(0.645, 0.045, 0.355, 1) 10ms, z-index 0s 0s, visibility 0s 0s, -webkit-transform 100ms cubic-bezier(0.645, 0.045, 0.355, 1) 10ms;
-  transition: opacity 100ms cubic-bezier(0.645, 0.045, 0.355, 1) 10ms, z-index 0s 0s, visibility 0s 0s, transform 100ms cubic-bezier(0.645, 0.045, 0.355, 1) 10ms;
-  transition: opacity 100ms cubic-bezier(0.645, 0.045, 0.355, 1) 10ms, z-index 0s 0s, visibility 0s 0s, transform 100ms cubic-bezier(0.645, 0.045, 0.355, 1) 10ms, -webkit-transform 100ms cubic-bezier(0.645, 0.045, 0.355, 1) 10ms;
+  transition: opacity 100ms var(--ttf-in-out) 10ms, z-index 0s 0s, visibility 0s 0s, -webkit-transform 100ms var(--ttf-in-out) 10ms;
+  transition: opacity 100ms var(--ttf-in-out) 10ms, z-index 0s 0s, visibility 0s 0s, transform 100ms var(--ttf-in-out) 10ms;
+  transition: opacity 100ms var(--ttf-in-out) 10ms, z-index 0s 0s, visibility 0s 0s, transform 100ms var(--ttf-in-out) 10ms, -webkit-transform 100ms var(--ttf-in-out) 10ms;
 }
 .d-modal__footer {
   display: flex;
@@ -1480,7 +1480,7 @@ legend.d-label {
 }
 .d-modal--full,
 .d-modal--full .d-modal__dialog {
-  transition: opacity 200ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, z-index 0s 200ms, visibility 0s 200ms;
+  transition: opacity 200ms var(--ttf-in-out) 0s, z-index 0s 200ms, visibility 0s 200ms;
 }
 .d-modal--full .d-modal__footer {
   margin: var(--sun16) var(--sun12);
@@ -1520,7 +1520,7 @@ legend.d-label {
 }
 .d-toast .d-notice {
   max-width: var(--size464);
-  box-shadow: 0 var(--su2) var(--su4) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l)  /  15%);
+  box-shadow: var(--bs-sm);
   pointer-events: all;
 }
 .d-notice > * + * {
@@ -1935,7 +1935,7 @@ legend.d-label {
   color: var(--muted-color);
   font: inherit;
   text-decoration: underline;
-  transition: all 30ms cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all var(--td25) var(--ttf-in-out);
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -1970,7 +1970,7 @@ legend.d-label {
   color: var(--warning-color);
   font: inherit;
   text-decoration: underline;
-  transition: all 30ms cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all var(--td25) var(--ttf-in-out);
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -2007,7 +2007,7 @@ legend.d-label {
   color: var(--error-color);
   font: inherit;
   text-decoration: underline;
-  transition: all 30ms cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all var(--td25) var(--ttf-in-out);
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -2044,7 +2044,7 @@ legend.d-label {
   color: var(--success-color);
   font: inherit;
   text-decoration: underline;
-  transition: all 30ms cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all var(--td25) var(--ttf-in-out);
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -2241,9 +2241,9 @@ legend.d-label {
   color: var(--tab--fc);
   font: inherit;
   line-height: 1;
-  transition-duration: 60ms;
+  transition-duration: var(--td50);
   transition-property: background-color, color;
-  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition-timing-function: var(--ttf-in-out);
   cursor: pointer;
   fill: currentColor;
 }
@@ -2331,7 +2331,7 @@ legend.d-label {
   border: var(--su1) solid var(--black-100);
   border-radius: var(--br4);
   background-color: var(--white);
-  box-shadow: 0 var(--su2) var(--su4) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l)  /  15%);
+  box-shadow: var(--bs-sm);
   color: var(--fc-medium);
   font-size: var(--fs14);
   line-height: var(--lh-tight);
@@ -2407,9 +2407,9 @@ legend.d-label {
   color: var(--tooltip--fc);
   font-size: var(--fs12);
   line-height: var(--lh-normal);
-  transition: visibility 0s 200ms, opacity 200ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, -webkit-transform 200ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
-  transition: visibility 0s 200ms, transform 200ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, opacity 200ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
-  transition: visibility 0s 200ms, transform 200ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, opacity 200ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, -webkit-transform 200ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+  transition: visibility 0s 200ms, opacity 200ms var(--ttf-in-out) 0s, -webkit-transform 200ms var(--ttf-in-out) 0s;
+  transition: visibility 0s 200ms, transform 200ms var(--ttf-in-out) 0s, opacity 200ms var(--ttf-in-out) 0s;
+  transition: visibility 0s 200ms, transform 200ms var(--ttf-in-out) 0s, opacity 200ms var(--ttf-in-out) 0s, -webkit-transform 200ms var(--ttf-in-out) 0s;
 }
 .d-tooltip::before {
   content: "";
@@ -2425,9 +2425,9 @@ legend.d-label {
   opacity: 1;
   -webkit-transform: translate(0, 0);
           transform: translate(0, 0);
-  transition: visibility 0s 0s, opacity 200ms cubic-bezier(0.645, 0.045, 0.355, 1) 10ms, -webkit-transform 200ms cubic-bezier(0.645, 0.045, 0.355, 1) 10ms;
-  transition: visibility 0s 0s, transform 200ms cubic-bezier(0.645, 0.045, 0.355, 1) 10ms, opacity 200ms cubic-bezier(0.645, 0.045, 0.355, 1) 10ms;
-  transition: visibility 0s 0s, transform 200ms cubic-bezier(0.645, 0.045, 0.355, 1) 10ms, opacity 200ms cubic-bezier(0.645, 0.045, 0.355, 1) 10ms, -webkit-transform 200ms cubic-bezier(0.645, 0.045, 0.355, 1) 10ms;
+  transition: visibility 0s 0s, opacity 200ms var(--ttf-in-out) 10ms, -webkit-transform 200ms var(--ttf-in-out) 10ms;
+  transition: visibility 0s 0s, transform 200ms var(--ttf-in-out) 10ms, opacity 200ms var(--ttf-in-out) 10ms;
+  transition: visibility 0s 0s, transform 200ms var(--ttf-in-out) 10ms, opacity 200ms var(--ttf-in-out) 10ms, -webkit-transform 200ms var(--ttf-in-out) 10ms;
 }
 .d-tooltip__top-left,
 .d-tooltip__top-center,
@@ -17921,6 +17921,86 @@ ul {
 .d-ow-unset {
   word-wrap: unset !important;
 }
+.d-bs-sm {
+  box-shadow: var(--bs-sm) !important;
+}
+.d-bs-md {
+  box-shadow: var(--bs-md) !important;
+}
+.d-bs-lg {
+  box-shadow: var(--bs-lg) !important;
+}
+.d-bs-xl {
+  box-shadow: var(--bs-xl) !important;
+}
+.d-bs-card {
+  box-shadow: var(--bs-card) !important;
+}
+.d-bs-none {
+  box-shadow: none !important;
+}
+.d-bs-unset {
+  box-shadow: unset !important;
+}
+.d-t {
+  transition-delay: 0s;
+  transition-duration: var(--td25);
+  transition-property: all;
+  transition-timing-function: var(--ttf-in-out);
+}
+.d-td0 {
+  transition-duration: var(--td0) !important;
+}
+.d-td25 {
+  transition-duration: var(--td25) !important;
+}
+.d-td50 {
+  transition-duration: var(--td50) !important;
+}
+.d-td100 {
+  transition-duration: var(--td100) !important;
+}
+.d-ttf-in-out {
+  transition-timing-function: var(--ttf-in-out) !important;
+}
+.d-ttf-out {
+  transition-timing-function: var(--ttf-out) !important;
+}
+.d-tp-all {
+  transition-property: all !important;
+}
+.d-tp-o {
+  transition-property: opacity !important;
+}
+.d-tp-bs {
+  transition-property: box-shadow !important;
+}
+.d-tp-bgc {
+  transition-property: background-color !important;
+}
+.d-tp-transform {
+  transition-property: -webkit-transform !important;
+  transition-property: transform !important;
+  transition-property: transform, -webkit-transform !important;
+}
+.d-tp-colors {
+  transition-property: background-color, border-color, color, fill, stroke !important;
+}
+.d-t-delay25 {
+  transition-property: var(--td25) !important;
+}
+.d-t-delay50 {
+  transition-property: var(--td50) !important;
+}
+.d-t-delay100 {
+  transition-property: var(--td100) !important;
+}
+.d-t-delay150 {
+  transition-property: var(--td150) !important;
+}
+.d-t-delay200 {
+  transition-property: var(--td200) !important;
+}
 .d-o0 {
   opacity: 0 !important;
 }
@@ -17965,24 +18045,6 @@ ul {
 }
 .d-o-unset {
   opacity: unset !important;
-}
-.d-bs-sm {
-  box-shadow: 0 var(--su2) var(--su4) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l)  /  15%) !important;
-}
-.d-bs-md {
-  box-shadow: 0 var(--su2) var(--su8) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l)  /  25%) !important;
-}
-.d-bs-lg {
-  box-shadow: 0 var(--su2) var(--su12) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l)  /  30%) !important;
-}
-.d-bs-xl {
-  box-shadow: 0 var(--su2) var(--su16) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l)  /  30%) !important;
-}
-.d-bs-card {
-  box-shadow: 0 var(--su2) var(--su16) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l)  /  8%), 0 var(--su2) var(--su4) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l)  /  4%), 0 var(--su1) var(--su2) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l)  /  3%) !important;
-}
-.d-bs-unset {
-  box-shadow: unset !important;
 }
 .d-d-block {
   display: block !important;
@@ -19393,6 +19455,17 @@ body {
   --base--font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --base--line-height: var(--lh-normal);
   --base--corner-radius: 0.25em;
+  --bs-sm: 0 var(--su2) var(--su4) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l)  /  15%);
+  --bs-md: 0 var(--su2) var(--su8) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l)  /  25%);
+  --bs-lg: 0 var(--su2) var(--su12) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l)  /  30%);
+  --bs-xl: 0 var(--su2) var(--su16) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l)  /  30%);
+  --bs-card: 0 var(--su2) var(--su16) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l)  /  8%), 0 var(--su2) var(--su4) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l)  /  4%), 0 var(--su1) var(--su2) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l)  /  3%);
+  --ttf-in-out: cubic-bezier(0.645, 0.045, 0.355, 1);
+  --ttf-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --td0: 0s;
+  --td25: 25ms;
+  --td50: 50ms;
+  --td100: 100ms;
   --bgg-pattern-blob-dark: url("data:image/svg+xml;base64,PHN2ZyBhcmlhLWhpZGRlbj0idHJ1ZSIgYXJpYS1sYWJlbD0iQmxvYiBEYXJrIiBjbGFzcz0iZC1zdmcgZC1zdmctLXN5c3RlbSBkLXN2Z19fYmxvYkRhcmsiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiB2aWV3Qm94PSIwIDAgMjAgMjAiIGZpbGw9Im5vbmUiPjxwYXRoIGQ9Ik0xIDBhMSAxIDAgMDAtMSAxdjIuM2ExIDEgMCAwMDEgMWg0LjAyYy0uMDEzLjA2NS0uMDIuMTMyLS4wMi4ydjIuM0gxYTEgMSAwIDAwLTEgMXYyLjNhMSAxIDAgMDAxIDFoNC4wMmMtLjAxMy4wNjUtLjAyLjEzMi0uMDIuMnYyLjNIMWExIDEgMCAwMC0xIDF2Mi4zYTEgMSAwIDAwMSAxaDQuMDJjLS4wMTMuMDY1LS4wMi4xMzItLjAyLjJWMjBoOHYtMS45YTEgMSAwIDAwLTEtMUg3Ljk4Yy4wMTMtLjA2NS4wMi0uMTMyLjAyLS4ydi0yLjNoNGExIDEgMCAwMDEtMXYtMi4zYTEgMSAwIDAwLTEtMUg3Ljk4Yy4wMTMtLjA2NS4wMi0uMTMyLjAyLS4yVjcuOGg0YTEgMSAwIDAwMS0xVjQuNWExIDEgMCAwMC0xLTFINy45OGMuMDEzLS4wNjUuMDItLjEzMi4wMi0uMnYtMmg0YTEgMSAwIDAwMS0xVjBIMXoiIGZpbGw9IiMxNDE3MjEiLz48L3N2Zz4=");
   --bgg-pattern-chevrons-dark: url("data:image/svg+xml;base64,PHN2ZyBhcmlhLWhpZGRlbj0idHJ1ZSIgYXJpYS1sYWJlbD0iQ2hldnJvbnMgRGFyayIgY2xhc3M9ImQtc3ZnIGQtc3ZnLS1zeXN0ZW0gZC1zdmdfX2NoZXZyb25zRGFyayIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSI+PHBhdGggZD0iTTExLjAyNyAxLjMyNEMxMS42IDEuMTM0IDExLjk4OS42MDIgMTIgMEgwdjFsNiAyIDUuMDI3LTEuNjc2ek0wIDN2M2w2IDIgNS4wMjctMS42NzZhMS40MjMgMS40MjMgMCAxMC0uOS0yLjdMNiA1IDAgM3pNMCA4djNsNiAyIDUuMDI3LTEuNjc2YTEuNDIzIDEuNDIzIDAgMTAtLjktMi43TDYgMTAgMCA4ek0wIDEzdjNsNiAyIDUuMDI3LTEuNjc2YTEuNDIzIDEuNDIzIDAgMTAtLjktMi43TDYgMTVsLTYtMnpNMCAxOHYyaDEydi0uMDI2YzAtLjk3MS0uOTUyLTEuNjU3LTEuODczLTEuMzVMNiAyMGwtNi0yeiIgZmlsbD0iIzE0MTcyMSIvPjwvc3ZnPg==");
   --bgg-pattern-crosses-dark: url("data:image/svg+xml;base64,PHN2ZyBhcmlhLWhpZGRlbj0idHJ1ZSIgYXJpYS1sYWJlbD0iQ3Jvc3NlcyBEYXJrIiBjbGFzcz0iZC1zdmcgZC1zdmctLXN5c3RlbSBkLXN2Z19fY3Jvc3Nlc0RhcmsiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiB2aWV3Qm94PSIwIDAgMjAgMjAiIGZpbGw9Im5vbmUiPjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMWExIDEgMCAwMC0xLTFIMHYyaDN2M0gwdjJoM3YzSDB2MmgzdjNIMHYyaDN2M2gydi0zaDJ2M2gydi0zaDJhMSAxIDAgMTAwLTJIOXYtM2gyYTEgMSAwIDEwMC0ySDlWN2gyYTEgMSAwIDEwMC0ySDlWMmgyYTEgMSAwIDAwMS0xek03IDJINXYzaDJWMnptMCA1SDV2M2gyVjd6bTAgNUg1djNoMnYtM3oiIGZpbGw9IiMxNDE3MjEiLz48L3N2Zz4=");

@@ -7,9 +7,44 @@
 //  https://dialpad.design/tokens/visual-styles
 //
 //  TABLE OF CONTENTS
-//  • BACKGROUND PATTERNS
 //  • BOX SHADOWS
+//  • BACKGROUND PATTERNS
 //
+//
+//  ============================================================================
+//  $   BOX SHADOWS
+//  ----------------------------------------------------------------------------
+@box-shadows: {
+    bs-sm:      @bs-sm;
+    bs-md:      @bs-md;
+    bs-lg:      @bs-lg;
+    bs-xl:      @bs-xl;
+    bs-card:    @bs-card;
+}
+
+@bs-sm:    0 var(--su2) var(--su4) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l) ~" / " 15%);
+@bs-md:    0 var(--su2) var(--su8) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l) ~" / " 25%);
+@bs-lg:    0 var(--su2) var(--su12) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l) ~" / " 30%);
+@bs-xl:    0 var(--su2) var(--su16) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l) ~" / " 30%);
+
+@bs-card:  0 var(--su2) var(--su16) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l) ~" / " 8%),
+           0 var(--su2) var(--su4) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l) ~" / " 4%),
+           0 var(--su1) var(--su2) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l) ~" / " 3%);
+
+
+//  ============================================================================
+//  $   TRANSITIONS
+//  ----------------------------------------------------------------------------
+@transition: {
+   ttf-in-out:      cubic-bezier(0.645, 0.045, 0.355, 1);
+   ttf-out:         cubic-bezier(0.23, 1, 0.32, 1);
+   td0:             0s;
+   td25:            25ms;
+   td50:            50ms;
+   td100:           100ms;
+}
+
+
 //  ============================================================================
 //  $   BACKGROUND PATTERNS
 //  ----------------------------------------------------------------------------
@@ -56,16 +91,3 @@
 @bgg-pattern-slanted-stripes-light: url("data:image/svg+xml;base64,PHN2ZyBhcmlhLWhpZGRlbj0idHJ1ZSIgYXJpYS1sYWJlbD0iU2xhbnRlZCBTdHJpcGVzIExpZ2h0IiBjbGFzcz0iZC1zdmcgZC1zdmctLXN5c3RlbSBkLXN2Z19fc2xhbnRlZFN0cmlwZXNMaWdodCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSI+PHBhdGggZD0iTTggMEgwdjRsOC00ek0wIDV2NGwxMi02VjBoLTJMMCA1ek0xMiAyMHYtMWwtMiAxaDJ6TTggMjBsNC0ydi00TDAgMjBoOHpNMCAxOWwxMi02VjlMMCAxNXY0ek0wIDE0bDEyLTZWNEwwIDEwdjR6IiBmaWxsPSIjZmZmIi8+PC9zdmc+");
 @bgg-pattern-steps-light: url("data:image/svg+xml;base64,PHN2ZyBhcmlhLWhpZGRlbj0idHJ1ZSIgYXJpYS1sYWJlbD0iU3RlcHMgTGlnaHQiIGNsYXNzPSJkLXN2ZyBkLXN2Zy0tc3lzdGVtIGQtc3ZnX19zdGVwc0xpZ2h0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIiBmaWxsPSJub25lIj48cGF0aCBkPSJNMCAwdi41YTEuNSAxLjUgMCAxMDMgMFYwSDB6TTEwIDIwYTIgMiAwIDAwMi0ydi0xLjVhMS41IDEuNSAwIDAwLTMgMHYuNUgyYTIgMiAwIDAwLTIgMnYxaDEwek0wIDEzLjVhMS41IDEuNSAwIDAwMyAwVjEzaDdhMiAyIDAgMDAyLTJWOS41YTEuNSAxLjUgMCAwMC0zIDB2LjVIMmEyIDIgMCAwMC0yIDJ2MS41ek0wIDYuNWExLjUgMS41IDAgMTAzIDBWNmg3YTIgMiAwIDAwMi0yVjIuNWExLjUgMS41IDAgMDAtMyAwVjNIMmEyIDIgMCAwMC0yIDJ2MS41eiIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg==");
 @bgg-pattern-stripe-light: url("data:image/svg+xml;base64,PHN2ZyBhcmlhLWhpZGRlbj0idHJ1ZSIgYXJpYS1sYWJlbD0iU3RyaXBlIExpZ2h0IiBjbGFzcz0iZC1zdmcgZC1zdmctLXN5c3RlbSBkLXN2Z19fc3RyaXBlTGlnaHQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiB2aWV3Qm94PSIwIDAgMjAgMjAiIGZpbGw9Im5vbmUiPjxwYXRoIGQ9Ik00IDIwSDJWMGgydjIwek05IDIwSDVWMGg0djIwek0xMiAyMGgtMlYwaDJ2MjB6IiBmaWxsPSIjZmZmIi8+PC9zdmc+");
-
-//  ============================================================================
-//  $   BOX SHADOWS
-//  ----------------------------------------------------------------------------
-@box-shadow--none:   none;
-@box-shadow--sm:     0 var(--su2) var(--su4) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l) ~" / " 15%);
-@box-shadow--md:     0 var(--su2) var(--su8) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l) ~" / " 25%);
-@box-shadow--lg:     0 var(--su2) var(--su12) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l) ~" / " 30%);
-@box-shadow--xl:     0 var(--su2) var(--su16) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l) ~" / " 30%);
-
-@box-shadow--card:  0 var(--su2) var(--su16) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l) ~" / " 8%),
-                    0 var(--su2) var(--su4) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l) ~" / " 4%),
-                    0 var(--su1) var(--su2) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l) ~" / " 3%);
