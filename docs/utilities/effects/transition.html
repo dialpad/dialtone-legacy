@@ -1,0 +1,94 @@
+---
+layout: page
+title: Transition
+description: Utilities for controlling how an element transitions in and out of states.
+---
+<section class="d-stack16">
+    {% header "h2", "Classes" %}
+    <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
+        <table class="d-table">
+            <thead>
+                <tr>
+                    <th scope="col" class="d-w25p">Class</th>
+                    <th scope="col">Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-t</th>
+                    <td class="d-ff-mono d-fc-teal-500 d-fs12">transition-duration: var(--td25);<br/>transition-property: all;<br/>transition-timing-function: var(--ttf-in-out);<br/>transition-delay: 0s;</td>
+                </tr>
+            </tbody>
+            {% assign transition = "td, ttf, tp, t-delay" | split: ", "%}
+            {% for i in transition %}
+            <tbody>
+                {% if i == "td" %}
+                    {% assign duration = "0, 25, 50, 100" | split: ", " %}
+                    {% for d in duration %}
+                    <tr>
+                        <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-{{ i }}{{ d }}</th>
+                        <td class="d-ff-mono d-fc-teal-500 d-fs12">transition-duration: var(--td{{ d }}) !important;</td>
+                    </tr>
+                    {% endfor %}
+                {% elsif i == "ttf" %}
+                    {% assign timing = "in-out, out" | split: ", " %}
+                    {% for t in timing %}
+                    <tr>
+                        <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-{{ i }}-{{ t }}</th>
+                        <td class="d-ff-mono d-fc-teal-500 d-fs12">transition-timing-function: var(--ttf-{{ t }}) !important;</td>
+                    </tr>
+                    {% endfor %}
+                {% elsif i == "tp" %}
+                    {% assign property = "all, o, bs, bgc, transform, colors" | split: ", " %}
+                    {% for p in property %}
+                    <tr>
+                        <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-{{ i }}-{{ p }}</th>
+                        <td class="d-ff-mono d-fc-teal-500 d-fs12">transition-property: {% if p == "o" %}opacity{% elsif p == "bs" %}box-shadow{% elsif p == "bgc" %}background-color{% elsif p == "colors" %}background-color, border-color, color, fill, stroke{% else %}{{ p }}{% endif %} !important;</td>
+                    </tr>
+                    {% endfor %}
+                {% elsif i == "t-delay" %}
+                    {% assign delay = "25, 50, 100, 150, 200" | split: ", " %}
+                    {% for d in delay %}
+                    <tr>
+                        <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-{{ i }}{{ d }}</th>
+                        <td class="d-ff-mono d-fc-teal-500 d-fs12">transition-delay: var(--td{{ d }}) !important;</td>
+                    </tr>
+                    {% endfor %}
+                {% endif %}
+            </tbody>
+            {% endfor %}
+        </table>
+    </div>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Adding a transition" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-t</code> to add a transition to an element.</p>
+    </header>
+    <aside class="d-bar8 d-of-hidden">
+        <header class="d-fl-center d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn102">
+            <div class="d-fl-center d-p24 d-bar8 d-bgc-purple-400 h:d-bgc-yellow-300 h:d-bs-lg d-fs18 d-fw-bold d-fc-white h:d-fc-dark d-t">Hover on me</div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+{% highlight html linenos %}
+<div class="d-bgc-purple-400 h:d-bgc-yellow-300 h:d-bs-lg d-fc-white h:d-fc-dark d-t">...</div>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "No shadow" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-bs-none</code> to remove a box shadow to an element.</p>
+    </header>
+    <aside class="d-bar8 d-of-hidden">
+        <header class="d-fl-center d-p24 d-bgc-blue-100 d-bgo50 d-w100p d-hmn102">
+            <div class="d-fl-center d-p16 d-bar8 d-bgc-white d-fs18 d-fw-bold d-bs-none">.d-bs-none</div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+{% highlight html linenos %}
+<div class="d-bs-none">...</div>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>
