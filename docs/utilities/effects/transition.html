@@ -23,7 +23,7 @@ description: Utilities for controlling how an element transitions in and out of 
             {% for i in transition %}
             <tbody>
                 {% if i == "td" %}
-                    {% assign duration = "0, 25, 50, 100" | split: ", " %}
+                    {% assign duration = "0, 50, 100, 150, 200" | split: ", " %}
                     {% for d in duration %}
                     <tr>
                         <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-{{ i }}{{ d }}</th>
@@ -67,7 +67,7 @@ description: Utilities for controlling how an element transitions in and out of 
     </header>
     <aside class="d-bar8 d-of-hidden">
         <header class="d-fl-center d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn102">
-            <div class="d-fl-center d-p24 d-bar8 d-bgc-purple-400 h:d-bgc-yellow-300 h:d-bs-lg d-fs18 d-fw-bold d-fc-white h:d-fc-dark d-t">Hover on me</div>
+            <div class="d-fl-center d-p24 d-bar8 d-bgc-purple-400 h:d-bgc-yellow-300 h:d-bs-lg d-fs18 d-fw-bold d-fc-white h:d-fc-dark d-t d-c-pointer">Hover on me</div>
         </header>
         <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
 {% highlight html linenos %}
@@ -78,16 +78,68 @@ description: Utilities for controlling how an element transitions in and out of 
 </section>
 <section class="d-stack16">
     <header class="d-stack2">
-        {% header "h2", "No shadow" %}
-        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-bs-none</code> to remove a box shadow to an element.</p>
+        {% header "h2", "Changing transition duration" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-td{n}</code> change an element's <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">transition-delay</code> from it's default <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">50ms</code> length.</p>
     </header>
     <aside class="d-bar8 d-of-hidden">
-        <header class="d-fl-center d-p24 d-bgc-blue-100 d-bgo50 d-w100p d-hmn102">
-            <div class="d-fl-center d-p16 d-bar8 d-bgc-white d-fs18 d-fw-bold d-bs-none">.d-bs-none</div>
+        <header class="d-fl-col3 d-flg8 d-p24 d-bgc-blue-100 d-bgo50 d-w100p d-hmn102">
+            <div class="d-fl-center d-p24 d-bar8 d-bgc-blue-400 h:d-bgc-yellow-300 h:d-bs-lg d-fs18 d-fw-bold d-fc-white h:d-fc-dark d-t d-td0 d-c-pointer">0ms</div>
+            <div class="d-fl-center d-p24 d-bar8 d-bgc-blue-400 h:d-bgc-yellow-300 h:d-bs-lg d-fs18 d-fw-bold d-fc-white h:d-fc-dark d-t d-c-pointer">50ms</div>
+            <div class="d-fl-center d-p24 d-bar8 d-bgc-blue-400 h:d-bgc-yellow-300 h:d-bs-lg d-fs18 d-fw-bold d-fc-white h:d-fc-dark d-t d-td100 d-c-pointer">100ms</div>
+            <div class="d-fl-center d-p24 d-bar8 d-bgc-blue-400 h:d-bgc-yellow-300 h:d-bs-lg d-fs18 d-fw-bold d-fc-white h:d-fc-dark d-t d-td150 d-c-pointer">150ms</div>
+            <div class="d-fl-center d-p24 d-bar8 d-bgc-blue-400 h:d-bgc-yellow-300 h:d-bs-lg d-fs18 d-fw-bold d-fc-white h:d-fc-dark d-t d-td200 d-c-pointer">200ms</div>
         </header>
         <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
 {% highlight html linenos %}
-<div class="d-bs-none">...</div>
+<div class="d-t d-td0">...</div>
+<div class="d-t">...</div>
+<div class="d-t d-td100">...</div>
+<div class="d-t d-td150">...</div>
+<div class="d-t d-td200">...</div>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Changing transition easing" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-ttf-{n}</code> change an element's <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">transition-timing-function</code> (aka easing) from it's default Quad Ease In, Ease Out value.</p>
+    </header>
+    <aside class="d-bar8 d-of-hidden">
+        <header class="d-fl-col2 d-flg8 d-p24 d-bgc-green-100 d-bgo50 d-w100p d-hmn102">
+            <div class="d-fl-center d-p24 d-bar8 d-bgc-green-400 h:d-bgc-purple-100 h:d-bs-lg d-fs18 d-fw-bold d-fc-white h:d-fc-dark d-t d-td100 d-c-pointer">Ease In, Ease Out</div>
+            <div class="d-fl-center d-p24 d-bar8 d-bgc-green-400 h:d-bgc-purple-100 h:d-bs-lg d-fs18 d-fw-bold d-fc-white h:d-fc-dark d-t d-td100 d-ttf-out d-c-pointer">Ease Out</div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+{% highlight html linenos %}
+<div class="d-t d-td100">...</div>
+<div class="d-t d-td100 d-ttf-out">...</div>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Changing transition property" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-tp-{n}</code> change an what items within an element are transitioned.</p>
+    </header>
+    <aside class="d-bar8 d-of-hidden">
+        <header class="d-fl-col3 d-flg8 d-p24 d-bgc-yellow-100 d-bgo50 d-w100p d-hmn102">
+            <div class="d-fl-center d-p24 d-bar8 d-bgc-yellow-400 h:d-bgc-purple-100 h:d-bs-lg d-fs18 d-fw-bold d-fc-dark h:d-fc-red-400 d-t d-td100 d-c-pointer">All</div>
+            <div class="d-fl-center d-p24 d-bar8 d-bgc-yellow-400 d-fs18 d-fw-bold d-fc-dark d-t d-td100 d-tp-o d-c-pointer h:d-o50">Opacity</div>
+            <div class="d-fl-center d-p24 d-bar8 d-bgc-yellow-400 d-fs18 d-fw-bold d-fc-dark d-t d-td100 d-tp-bs d-c-pointer d-bs-sm h:d-bs-lg">Box Shadow</div>
+            <div class="d-fl-center d-p24 d-bar8 d-bgc-yellow-400 h:d-bgc-purple-100 d-fs18 d-fw-bold d-fc-dark d-t d-td100 d-tp-bgc d-c-pointer">Background</div>
+            <div class="d-fl-center d-p24 d-bar8 d-bgc-yellow-400 d-fs18 d-fw-bold d-fc-dark d-t d-td100 d-tp-transform d-c-pointer">Transform</div>
+            <div class="d-fl-center d-p24 d-bar8 d-bgc-yellow-400 h:d-bgc-purple-100 d-fs18 d-fw-bold d-fc-dark h:d-fc-red-400 d-ba h:d-bc-yellow-500 d-t d-td100 d-tp-colors d-c-pointer">Colors</div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+{% highlight html linenos %}
+<div class="d-t">...</div>
+<div class="d-t d-tp-o">...</div>
+<div class="d-t d-tp-bs">...</div>
+<div class="d-t d-tp-bgc">...</div>
+<div class="d-t d-tp-transform">...</div>
+<div class="d-t d-tp-colors">...</div>
 {% endhighlight %}
         </footer>
     </aside>

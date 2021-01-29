@@ -40,9 +40,15 @@
                 --fl-basis: calc(100% / @count);
 
                 display: inline-flex;
-                margin: var(--fl-gap);
+                margin: 0 var(--fl-gap);
                 flex: 1 auto;
                 flex-basis: calc(var(--fl-basis) - ((var(--fl-gap) * 2)));
+            }
+
+            //  If flex column is in a column direction (and became rows),
+            //  change the margin direction.
+            &.d-fd-column {
+                margin: var(--fl-gap) 0;
             }
         }
 
