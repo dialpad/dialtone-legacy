@@ -1,0 +1,87 @@
+---
+layout: page
+title: Text Overflow
+description: Utilities for controlling an element's text overflow.
+---
+<section class="d-stack16">
+    {% header "h2", "Classes" %}
+    <table class="d-table">
+        <thead>
+            <tr>
+                <th scope="col" class="d-w25p">Class</th>
+                <th scope="col">Output</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-truncate</th>
+                <td class="d-ff-mono d-fc-teal-500 d-fs12">
+                    overflow: hidden !important;<br/>
+                    text-overflow: ellipsis !important;<br/>
+                    white-space: nowrap !important;
+                </td>
+            </tr>
+            {% assign overflow = "ellipsis, clip, unset" | split: ", " %}
+            {% for i in overflow %}
+                <tr>
+                    <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-to-{{ i }}</th>
+                    <td class="d-ff-mono d-fc-teal-500 d-fs12">text-overflow: {{ i }} !important;</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Truncate" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-truncate</code> to truncate an element's text.</p>
+    </header>
+    <aside class="d-bar8 d-of-hidden">
+        <header class="d-fl-center d-p24 d-bgc-green-100 d-bgo50 d-w100p d-hmn102">
+            <div class="d-bgc-green-200 d-py8 d-px16 d-bar8 d-w332">
+                <p class="d-fs18 d-truncate">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiisitaquequodpraesentiumexplicaboincidunt? Dolores beatae nam at sed dolorum ratione dolorem nisi velit cum.</p>
+            </div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+{% highlight html linenos %}
+<p class="d-truncate">...</p>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Ellipsis" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-to-ellipsis</code> to truncate an element's overflowing text with an ellipsis (<code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">...</code>) if needed.</p>
+    </header>
+    <aside class="d-bar8 d-of-hidden">
+        <header class="d-fl-center d-p24 d-bgc-blue-100 d-bgo50 d-w100p d-hmn102">
+            <div class="d-bgc-blue-200 d-py8 d-px16 d-bar8 d-w332">
+                <p class="d-fs18 d-of-hidden d-to-ellipsis">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiisitaquequodpraesentiumexplicaboincidunt? Dolores beatae nam at sed dolorum ratione dolorem nisi velit cum.</p>
+            </div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+{% highlight html linenos %}
+<p class="d-of-hidden d-to-ellipsis">...</p>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Clip" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-to-clip</code> to clip an element's overflowing text if needed.</p>
+    </header>
+    <aside class="d-bar8 d-of-hidden">
+        <header class="d-fl-center d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn102">
+            <div class="d-bgc-purple-200 d-py8 d-px16 d-bar8 d-w332">
+                <p class="d-fs18 d-of-hidden d-to-clip">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiisitaquequodpraesentiumexplicaboincidunt? Dolores beatae nam at sed dolorum ratione dolorem nisi velit cum.</p>
+            </div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+{% highlight html linenos %}
+<p class="d-of-hidden d-to-clip">...</p>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>

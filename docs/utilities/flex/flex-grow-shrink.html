@@ -1,0 +1,167 @@
+---
+layout: page
+title: Flex, Grow, & Shrink
+description: Utilities for setting an object's flex, grow, and shrink flex properties.
+---
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Flex" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">The <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">flex</code> property is a shorthand property for <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">flex-grow</code>, <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">flex-shrink</code>, and <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">flex-basis</code> properties. You can also control the grow and shrink flex values separately with their own utility classes.</p>
+    </header>
+    <table class="d-table">
+        <thead>
+            <tr>
+                <th scope="col" class="d-w20p">Class</th>
+                <th scope="col" class="d-w30p">Output</th>
+                <th scope="col">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in flex.properties %}
+            {% assign class = i.class %}
+            {% assign value = i.values | split: "," %}
+            {% assign desc = i.description %}
+                {% if class contains "flex" %}
+                    {% for v in value %}
+                    <tr>
+                        <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-fl{{ v }}</th>
+                        <td class="d-ff-mono d-fc-teal-500 d-fs12">flex: {{ v }} auto !important;</td>
+                        <td>{{ desc }} {{ v }}.</td>
+                    </tr>
+                    {% endfor %}
+                {% endif %}
+            {% endfor %}
+            <tr>
+                <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-fl-unset</th>
+                <td class="d-ff-mono d-fc-teal-500 d-fs12">flex: unset;</td>
+                <td>Resets the flex value to the initial value (0 1 auto).</td>
+            </tr>
+        </tbody>
+    </table>
+    <aside class="d-bar8 d-of-hidden">
+        <header class="d-fl-center d-fd-column d-p24 d-bgc-blue-100 d-bgo50 d-w100p d-hmn216">
+            <div class="d-d-flex d-w100p d-bar8 d-bgc-blue-100">
+                <div class="d-fl-none d-p16 d-fc-dark d-fs14 d-lh-tight d-bgc-blue-100 d-ps-relative">Content cannot flex</div>
+                <div class="d-fl1 d-p16 d-fc-dark d-fs14 d-lh-tight d-bgc-blue-200 d-ps-relative">Text that will flex</div>
+                <div class="d-fl-none d-p16 d-fc-dark d-fs14 d-lh-tight d-bgc-blue-100 d-ps-relative">Content cannot flex</div>
+            </div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+{% highlight html linenos %}
+<div class="d-d-flex">
+    <div>...</div>
+    <div class="d-fl1">...</div>
+    <div>...</div>
+</div>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Flex Grow" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">The <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">flex-grow</code> sets the flex container’s grow factor relative to the parent's main size. The default value is 0.</p>
+    </header>
+    <table class="d-table">
+        <thead>
+            <tr>
+                <th scope="col" class="d-w20p">Class</th>
+                <th scope="col" class="d-w30p">Output</th>
+                <th scope="col">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in flex.properties %}
+            {% assign class = i.class %}
+            {% assign value = i.values | split: "," %}
+            {% assign desc = i.description %}
+                {% if class contains "grow" %}
+                    {% for v in value %}
+                    <tr>
+                        <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-{{ class }}{{ v }}</th>
+                        <td class="d-ff-mono d-fc-teal-500 d-fs12">flex-grow: {{ v }} !important;</td>
+                        <td>{{ desc }} {{ v }}.</td>
+                    </tr>
+                    {% endfor %}
+                {% endif %}
+            {% endfor %}
+            <tr>
+                <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-fl-grow-unset</th>
+                <td class="d-ff-mono d-fc-teal-500 d-fs12">flex-grow: unset !important;</td>
+                <td>Resets the flex-grow value to the initial value (0).</td>
+            </tr>
+        </tbody>
+    </table>
+    <aside class="d-bar8 d-of-hidden">
+        <header class="d-fl-center d-fd-column d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn216">
+            <div class="d-d-flex d-w100p d-bar8 d-bgc-purple-100">
+                <div class="d-fl-none d-p16 d-fc-dark d-fs14 d-lh-tight d-bgc-purple-100">Content cannot flex</div>
+                <div class="d-fl-grow1 d-p16 d-fc-dark d-fs14 d-lh-tight d-bgc-purple-200">Text that will grow</div>
+                <div class="d-fl-none d-p16 d-fc-dark d-fs14 d-lh-tight d-bgc-purple-100">Content cannot flex</div>
+            </div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+{% highlight html linenos %}
+<div class="d-d-flex">
+    <div>...</div>
+    <div class="d-fl-grow1">...</div>
+    <div>...</div>
+</div>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Flex Shrink" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">The <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">flex-shrink</code> sets the flex container’s shrink factor relative to the parent's main size. The default value is 1.</p>
+    </header>
+    <table class="d-table">
+        <thead>
+            <tr>
+                <th scope="col" class="d-w20p">Class</th>
+                <th scope="col" class="d-w30p">Output</th>
+                <th scope="col">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in flex.properties %}
+            {% assign class = i.class %}
+            {% assign value = i.values | split: "," %}
+            {% assign desc = i.description %}
+                {% if class contains "shrink" %}
+                    {% for v in value %}
+                    <tr>
+                        <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-{{ class }}{{ v }}</th>
+                        <td class="d-ff-mono d-fc-teal-500 d-fs12">flex-shrink: {{ v }} !important;</td>
+                        <td>{{ desc }} {{ v }}.</td>
+                    </tr>
+                    {% endfor %}
+                {% endif %}
+            {% endfor %}
+            <tr>
+                <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-fl-shrink-unset</th>
+                <td class="d-ff-mono d-fc-teal-500 d-fs12">flex-shrink: unset !important;</td>
+                <td>Resets the flex-shrink value to the initial value (1).</td>
+            </tr>
+        </tbody>
+    </table>
+    <aside class="d-bar8 d-of-hidden">
+        <header class="d-fl-center d-fd-column d-p24 d-bgc-red-100 d-bgo50 d-w100p d-hmn216">
+            <div class="d-d-flex d-w5 d-bar8 d-bgc-red-100 d-of-hidden">
+                <div class="d-fl-none d-p16 d-fc-dark d-fs14 d-lh-tight d-bgc-red-100">Longer text that cannot flex</div>
+                <div class="d-fl-shrink1 d-p16 d-fc-dark d-fs14 d-lh-tight d-bgc-red-200">Text that will shrink even if it causes text to wrap</div>
+                <div class="d-fl-none d-p16 d-fc-dark d-fs14 d-lh-tight d-bgc-red-100">Longer text that cannot flex</div>
+            </div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+{% highlight html linenos %}
+<div class="d-d-flex">
+    <div>...</div>
+    <div class="d-fl-shrink1">...</div>
+    <div>...</div>
+</div>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>

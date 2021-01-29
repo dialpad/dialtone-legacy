@@ -1,0 +1,63 @@
+---
+layout: page
+title: Background Position
+description: Utilities for controlling the position of an element's background image.
+---
+<section class="d-stack16">
+    {% header "h2", "Classes" %}
+    <table class="d-table">
+        <thead>
+            <tr>
+                <th scope="col" class="d-w25p">Class</th>
+                <th scope="col">Output</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% assign initial = "tl, t, tr, r, br, b, bl, l, center, unset" | split: ", " %}
+            {% for i in initial %}
+                <tr>
+                    <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-bgp-{{ i }}</th>
+                    <td class="d-ff-mono d-fc-teal-500 d-fs12">background-position:
+                        {% if i == "tl" %}top left
+                        {% elsif i == "t" %}top
+                        {% elsif i == "tr" %}top right
+                        {% elsif i == "r" %}right
+                        {% elsif i == "br" %}bottom right
+                        {% elsif i == "b" %}bottom
+                        {% elsif i == "bl" %}bottom left
+                        {% elsif i == "l" %}left
+                        {% else %} {{ i }} {% endif %}!important;
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Usage" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-bgp-{position}</code> to control where an element's background image is placed.</p>
+    </header>
+    <aside class="d-bar8 d-of-hidden">
+        <header class="d-fl-col4 d-fw-wrap d-p16 d-bgc-purple-100 d-bgo50">
+            {% for i in initial %}
+            <div class="d-d-flex d-fd-column d-ai-center d-my12 d-stack4">
+                <div class="d-fl-center d-w128 d-h128 d-bgc-purple-300 d-bar8 d-bc-purple-200 d-of-hidden d-bgr-none d-bgp-{{ i }} d-bgs-var" style="--bgg-size: 65% 65%; background-image: url('https://cdn.jpegmini.com/user/images/slider_puffin_before_mobile.jpg');"></div>
+                <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">.d-bgp-{{ i }}</code>
+            </div>
+            {% endfor %}
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+{% highlight html linenos %}
+<div class="d-bgr-none d-bgs-var d-bgp-tl" style="--bgg-size: 65% 65%; background-image: url(...);">...</div>
+<div class="d-bgr-none d-bgs-var d-bgp-t" style="--bgg-size: 65% 65%; background-image: url(...);">...</div>
+<div class="d-bgr-none d-bgs-var d-bgp-tr" style="--bgg-size: 65% 65%; background-image: url(...);">...</div>
+<div class="d-bgr-none d-bgs-var d-bgp-r" style="--bgg-size: 65% 65%; background-image: url(...);">...</div>
+<div class="d-bgr-none d-bgs-var d-bgp-bl" style="--bgg-size: 65% 65%; background-image: url(...);">...</div>
+<div class="d-bgr-none d-bgs-var d-bgp-b" style="--bgg-size: 65% 65%; background-image: url(...);">...</div>
+<div class="d-bgr-none d-bgs-var d-bgp-br" style="--bgg-size: 65% 65%; background-image: url(...);">...</div>
+<div class="d-bgr-none d-bgs-var d-bgp-l" style="--bgg-size: 65% 65%; background-image: url(...);">...</div>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>

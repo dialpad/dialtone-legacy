@@ -1,0 +1,82 @@
+---
+layout: page
+title: Border Style
+description: Utilities for controlling an element's border style.
+---
+<section class="d-stack16">
+    {% header "h2", "Classes" %}
+    <table class="d-table">
+        <thead>
+            <tr>
+                <th scope="col" class="d-w25p">Class</th>
+                <th scope="col">Output</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-bas-unset</th>
+                <td class="d-ff-mono d-fc-teal-500 d-fs12">border-style: unset !important;</td>
+            </tr>
+        </tbody>
+        {% assign style = "dashed, dotted" | split: ", "%}
+        {% for s in style %}
+        <tbody>
+            {% assign direction = "a, t, r, b, l" | split: ", "%}
+            {% for i in direction %}
+            <tr>
+                <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-b{{ i }}s-{{ s }}</th>
+                <td class="d-ff-mono d-fc-teal-500 d-fs12">border{% if i == "t" %}-top{% elsif i == "r" %}-right{% elsif i == "b" %}-bottom{% elsif i == "l" %}-left{% endif %}-style: {{ s }} !important;</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        {% endfor %}
+    </table>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Dashed Borders" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-b{a|t|r|b|l}s-dashed</code> to change the border style to dashed on your element.</p>
+    </header>
+    <aside class="d-bar8 d-of-hidden">
+        <header class="d-fl-col5 d-flg8 d-fw-wrap d-p24 d-bgc-blue-100 d-bgo50 d-w100p d-hmn102">
+            <div class="d-fl-center d-p16 d-ba d-bc-blue-400 d-bas-dashed d-baw4 d-bgc-blue-100 d-fs12 d-ff-mono">.d-bas-dashed</div>
+            <div class="d-fl-center d-p16 d-ba d-bc-blue-400 d-bts-dashed d-baw4 d-bgc-blue-100 d-fs12 d-ff-mono">.d-bts-dashed</div>
+            <div class="d-fl-center d-p16 d-ba d-bc-blue-400 d-brs-dashed d-baw4 d-bgc-blue-100 d-fs12 d-ff-mono">.d-brs-dashed</div>
+            <div class="d-fl-center d-p16 d-ba d-bc-blue-400 d-bbs-dashed d-baw4 d-bgc-blue-100 d-fs12 d-ff-mono">.d-bbs-dashed</div>
+            <div class="d-fl-center d-p16 d-ba d-bc-blue-400 d-bls-dashed d-baw4 d-bgc-blue-100 d-fs12 d-ff-mono">.d-bls-dashed</div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+{% highlight html linenos %}
+<div class="d-ba d-bc-blue-400 d-bas-dashed d-baw4">...</div>
+<div class="d-ba d-bc-blue-400 d-bts-dashed d-baw4">...</div>
+<div class="d-ba d-bc-blue-400 d-brs-dashed d-baw4">...</div>
+<div class="d-ba d-bc-blue-400 d-bbs-dashed d-baw4">...</div>
+<div class="d-ba d-bc-blue-400 d-bls-dashed d-baw4">...</div>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Dotted Borders" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-b{a|t|r|b|l}s-dotted</code> to change the border style to dotted on your element.</p>
+    </header>
+    <aside class="d-bar8 d-of-hidden">
+        <header class="d-fl-col5 d-flg8 d-fw-wrap d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn102">
+            <div class="d-fl-center d-p16 d-ba d-bc-purple-400 d-bas-dotted d-baw4 d-bgc-purple-100 d-fs12 d-ff-mono">.d-bas-dotted</div>
+            <div class="d-fl-center d-p16 d-ba d-bc-purple-400 d-bts-dotted d-baw4 d-bgc-purple-100 d-fs12 d-ff-mono">.d-bts-dotted</div>
+            <div class="d-fl-center d-p16 d-ba d-bc-purple-400 d-brs-dotted d-baw4 d-bgc-purple-100 d-fs12 d-ff-mono">.d-brs-dotted</div>
+            <div class="d-fl-center d-p16 d-ba d-bc-purple-400 d-bbs-dotted d-baw4 d-bgc-purple-100 d-fs12 d-ff-mono">.d-bbs-dotted</div>
+            <div class="d-fl-center d-p16 d-ba d-bc-purple-400 d-bls-dotted d-baw4 d-bgc-purple-100 d-fs12 d-ff-mono">.d-bls-dotted</div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+{% highlight html linenos %}
+<div class="d-ba d-bc-blue-400 d-bas-dotted d-baw4">...</div>
+<div class="d-ba d-bc-blue-400 d-bts-dotted d-baw4">...</div>
+<div class="d-ba d-bc-blue-400 d-brs-dotted d-baw4">...</div>
+<div class="d-ba d-bc-blue-400 d-bbs-dotted d-baw4">...</div>
+<div class="d-ba d-bc-blue-400 d-bls-dotted d-baw4">...</div>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>

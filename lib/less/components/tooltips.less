@@ -15,275 +15,198 @@
 //    - LEFT CENTER
 //
 //  ============================================================================
-//  @   TOKENS
+//  $   BASE STYLE
 //  ----------------------------------------------------------------------------
-@tooltip-background:            fade(@slate, 95%);
-@tooltip-color:                 var(--ash);
-@tooltip-background--inverted:  fade(@ash, 98%);
-@tooltip-color--inverted:       var(--text-color--medium);
+.d-tooltip {
+    //  --  COMPONENT CSS VARS
+    //  ------------------------------------------------------------------------
+    --tooltip--bgc:     hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l) ~" / " 95%);
+    --tooltip--fc:      var(--black-050);
 
-//  ============================================================================
-//  @   BASE STYLE
-//  ----------------------------------------------------------------------------
-.d-tooltip() {
     box-sizing: border-box;
 
     position: absolute;
-    .d-padding8();
-    .d-padding-bottom6();
-    .d-width100();
-    .d-max-width2();
-    .d-z-index--tooltip();
+    padding: var(--su8) var(--su8) var(--su6);
+    width: 100%;
+    max-width: var(--size216);
+    z-index: var(--zi-tooltip);
 
-    .d-border-radius--sm();
-    background-color: @tooltip-background;
-    color: @tooltip-color;
-    font-size: @fs12;
-    line-height: @lh-normal;
+    border-radius: var(--br4);
+    background-color: var(--tooltip--bgc);
+    color: var(--tooltip--fc);
+    font-size: var(--fs12);
+    line-height: var(--lh-normal);
 
-    .d-opacity0();
+    opacity: 0;
     visibility: hidden;
     transition:
         visibility 0s 200ms,
-        transform 200ms @transition--cubic-inOut 0s,
-        opacity 200ms @transition--cubic-inOut 0s;
+        transform 200ms var(--ttf-in-out) 0s,
+        opacity 200ms var(--ttf-in-out) 0s;
 
     &::before {
         content: "";
         position: absolute;
-        border: 0.6rem solid transparent;
+        border: var(--su6) solid transparent;
     }
 }
 
 //  ============================================================================
-//  @   INVERTED STYLE
+//  $   INVERTED STYLE
 //  ----------------------------------------------------------------------------
-.d-tooltip--inverted() {
-    background-color: @tooltip-background--inverted;
-    color: @tooltip-color--inverted;
+.d-tooltip--inverted {
+    --tooltip--bgc:     hsla(var(--black-050-h) var(--black-050-s) var(--black-050-l) ~" / " 98%);
+    --tooltip--fc:      var(--fc-medium);
 }
 
 //  ============================================================================
-//  @   HOVER MIXIN
+//  $   HOVER MIXIN
 //  ============================================================================
 //  --  If the button doesn't have a d-btn class, you will need to re-apply the
 //      hover state within your CSS. This hover mixin allows you to easily do so.
 //  ----------------------------------------------------------------------------
 .d-tooltip-hover() {
     transform: translate(0,0);
-    .d-opacity100;
+    opacity: 1;
     visibility: visible;
     transition:
         visibility 0s 0s,
-        transform 200ms @transition--cubic-inOut 10ms,
-        opacity 200ms @transition--cubic-inOut 10ms;
+        transform 200ms var(--ttf-in-out) 10ms,
+        opacity 200ms var(--ttf-in-out) 10ms;
 }
 
-.d-tooltip--hover:hover [class^="d-tooltip__"] {
+.d-tooltip--hover:hover .d-tooltip {
     .d-tooltip-hover();
 }
 
 
 //  ============================================================================
-//  @   TOOLTIP DIRECTIONS
+//  $   TOOLTIP DIRECTIONS
 //  ============================================================================
-//  @@  TOP
+//  $$  TOP
 //  ----------------------------------------------------------------------------
 .d-tooltip__top-left,
 .d-tooltip__top-center,
-.d-tooltip__top-right,
-.d-tooltip__top-left--inverted,
-.d-tooltip__top-center--inverted,
-.d-tooltip__top-right--inverted {
-    .d-tooltip();
-
-    top: calc(~"100% + @{spacing12}");
-    transform: translateY(@spacing16);
+.d-tooltip__top-right {
+    top: calc(100% + var(--su12));
+    transform: translateY(var(--su16));
 
     &::before {
-        top: -(@spacing6);
+        top: var(--sun6);
         border-top-width: 0;
-        border-bottom-color: @tooltip-background;
+        border-bottom-color: var(--tooltip--bgc);
     }
 }
 
-//  @@  INVERTED
-.d-tooltip__top-left--inverted,
-.d-tooltip__top-center--inverted,
-.d-tooltip__top-right--inverted {
-    .d-tooltip--inverted();
 
-    &::before {
-        border-bottom-color: @tooltip-background--inverted;
-    }
-}
-
-//  @@  BOTTOM
+//  $$  BOTTOM
 //  ----------------------------------------------------------------------------
 .d-tooltip__bottom-left,
 .d-tooltip__bottom-center,
-.d-tooltip__bottom-right,
-.d-tooltip__bottom-left--inverted,
-.d-tooltip__bottom-center--inverted,
-.d-tooltip__bottom-right--inverted {
-    .d-tooltip();
-
-    bottom: calc(~"100% + @{spacing12}");
-    transform: translateY(-(@spacing16));
+.d-tooltip__bottom-right {
+    bottom: calc(100% + var(--su12));
+    transform: translateY(var(--sun16));
 
     &::before {
-        bottom: -(@spacing6);
+        bottom: var(--sun6);
         border-bottom-width: 0;
-        border-top-color: @tooltip-background;
-    }
-}
-
-//  @@  INVERTED
-.d-tooltip__bottom-left--inverted,
-.d-tooltip__bottom-center--inverted,
-.d-tooltip__bottom-right--inverted {
-    .d-tooltip--inverted();
-
-    &::before {
-        border-top-color: @tooltip-background--inverted;
+        border-top-color: var(--tooltip--bgc);
     }
 }
 
 
-//  @@  TOP / BOTTOM LEFT
+//  $$  TOP / BOTTOM LEFT
 //  ----------------------------------------------------------------------------
 .d-tooltip__top-left,
-.d-tooltip__bottom-left,
-.d-tooltip__top-left--inverted,
-.d-tooltip__bottom-left--inverted {
-    left: -(@spacing2);
+.d-tooltip__bottom-left {
+    left: var(--sun2);
 
     &::before {
-        left: @spacing16;
+        left: var(--su16);
     }
 }
 
-//  @@  TOP / BOTTOM CENTER
+//  $$  TOP / BOTTOM CENTER
 //  ----------------------------------------------------------------------------
 .d-tooltip__top-center,
-.d-tooltip__bottom-center,
-.d-tooltip__top-center--inverted,
-.d-tooltip__bottom-center--inverted {
+.d-tooltip__bottom-center {
     &::before {
         left: 50%;
-        margin-left: -(@spacing6);
+        margin-left: var(--sun6);
     }
 }
 
-//  @@  TOP / BOTTOM RIGHT
+//  $$  TOP / BOTTOM RIGHT
 //  ----------------------------------------------------------------------------
 .d-tooltip__top-right,
-.d-tooltip__bottom-right,
-.d-tooltip__top-right--inverted,
-.d-tooltip__bottom-right--inverted {
-    right: -(@spacing2);
+.d-tooltip__bottom-right {
+    right: var(--sun2);
 
     &::before {
-        right: @spacing16;
+        right: var(--su16);
     }
 }
 
-//  @@  RIGHT
+//  $$  RIGHT
 //  ----------------------------------------------------------------------------
 .d-tooltip__right-top,
 .d-tooltip__right-center,
-.d-tooltip__right-bottom,
-.d-tooltip__right-top--inverted,
-.d-tooltip__right-center--inverted,
-.d-tooltip__right-bottom--inverted {
-    .d-tooltip();
-
-    right: calc(~"100% + @{spacing12}");
-    transform: translateX(-(@spacing16));
+.d-tooltip__right-bottom {
+    right: calc(100% + var(--su12));
+    transform: translateX(var(--sun16));
 
     &::before {
-        right: -(@spacing6);
+        right: var(--sun6);
         border-right-width: 0;
-        border-left-color: @tooltip-background;
+        border-left-color: var(--tooltip--bgc);
     }
 }
 
-//  @@  INVERTED
-.d-tooltip__right-top--inverted,
-.d-tooltip__right-center--inverted,
-.d-tooltip__right-bottom--inverted {
-    .d-tooltip--inverted();
 
-    &::before {
-        border-left-color: @tooltip-background--inverted;
-    }
-}
-
-//  @@  LEFT
+//  $$  LEFT
 //  ----------------------------------------------------------------------------
 .d-tooltip__left-top,
 .d-tooltip__left-center,
-.d-tooltip__left-bottom,
-.d-tooltip__left-top--inverted,
-.d-tooltip__left-center--inverted,
-.d-tooltip__left-bottom--inverted {
-    .d-tooltip();
-
-    left: calc(~"100% + @{spacing12}");
-    transform: translateX(@spacing16);
+.d-tooltip__left-bottom {
+    left: calc(100% + var(--su12));
+    transform: translateX(var(--su16));
 
     &::before {
-        left: -(@spacing6);
+        left: var(--sun6);
         border-left-width: 0;
-        border-right-color: @tooltip-background;
+        border-right-color: var(--tooltip--bgc);
     }
 }
 
-//  @@  INVERTED
-.d-tooltip__left-top--inverted,
-.d-tooltip__left-center--inverted,
-.d-tooltip__left-bottom--inverted {
-    .d-tooltip--inverted();
 
-    &::before {
-        border-right-color: @tooltip-background--inverted;
-    }
-}
-
-//  @@  RIGHT / LEFT TOP
+//  $$  RIGHT / LEFT TOP
 //  ----------------------------------------------------------------------------
 .d-tooltip__right-top,
-.d-tooltip__left-top,
-.d-tooltip__right-top--inverted,
-.d-tooltip__left-top--inverted {
-    top: -(@spacing1);
+.d-tooltip__left-top {
+    top: var(--sun1);
 
     &::before {
-        top: @spacing8;
+        top: var(--su8);
     }
 }
 
-//  @@  RIGHT / LEFT CENTER
+//  $$  RIGHT / LEFT CENTER
 //  ----------------------------------------------------------------------------
 .d-tooltip__right-center,
-.d-tooltip__left-center,
-.d-tooltip__right-center--inverted,
-.d-tooltip__left-center--inverted {
+.d-tooltip__left-center {
     &::before {
         top: 50%;
-        margin-top: -(@spacing6);
+        margin-top: var(--sun6);
     }
 }
 
-//  @@  RIGHT / LEFT BOTTOM
+//  $$  RIGHT / LEFT BOTTOM
 //  ----------------------------------------------------------------------------
 .d-tooltip__right-bottom,
-.d-tooltip__left-bottom,
-.d-tooltip__right-bottom--inverted,
-.d-tooltip__left-bottom--inverted {
-    bottom: -(@spacing1);
+.d-tooltip__left-bottom {
+    bottom: var(--sun1);
 
     &::before {
-        bottom: @spacing8;
+        bottom: var(--su8);
     }
 }

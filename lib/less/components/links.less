@@ -14,21 +14,23 @@
 //  $   BASE STYLE
 //  ----------------------------------------------------------------------------
 .d-link {
+
     box-sizing: border-box;
 
     position: relative;
-    .d-flex--center();
     display: inline-flex;
-    .d-margin0();
-    .d-padding0();
+    align-items: center;
+    justify-content: center;
+    margin: var(--su0);
+    padding: var(--su0);
 
     border: 0;
-    background-color: fade(@white,0%);
+    background-color: transparent;
     font: inherit;
     color: var(--primary-color);
     text-decoration: underline;
 
-    transition: all @transition--duration30 @transition--cubic-inOut;
+    transition: all var(--td25) var(--ttf-in-out);
     cursor: pointer;
     fill: currentColor;
 
@@ -38,7 +40,7 @@
             appearance: none;
 
     &:hover {
-        color: hsl(var(--primary-color--hover--h) var(--primary-color--hover--s) calc(~"var(--primary-color--hover--l) - 5%"));
+        color: var(--primary-color-hover);
         text-decoration: underline;
     }
 }
@@ -50,71 +52,68 @@
 //  $$  WARNING
 //  ----------------------------------------------------------------------------
 .d-link--warning {
-    .d-link();
+    --warning-color:            var(--yellow-500);
+    --warning-color-hover:      hsl(var(--yellow-500-h) var(--yellow-500-s) calc(var(--yellow-500-l) - 10%));
 
-    color: @warning-color--text;
+    color: var(--warning-color);
 
     &:hover {
-        color: darken(@warning-color--text,10%);
+        color: var(--warning-color-hover);
     }
 }
 
 //  $$  DANGER
 //  ----------------------------------------------------------------------------
 .d-link--danger {
-    .d-link();
+    --error-color:              var(--red-500);
+    --error-color-hover:        hsl(var(--red-500-h) var(--red-500-s) calc(var(--red-500-l) - 10%));
 
-    color: @error-color--text;
+    color: var(--error-color);
 
     &:hover {
-        color: darken(@error-color--text,10%);
+        color: var(--error-color-hover);
     }
 }
 
 //  $$  SUCCESS
 //  ----------------------------------------------------------------------------
 .d-link--success {
-    .d-link();
-
-    color: @success-color--text;
+    color: var(--success-color);
 
     &:hover {
-        color: darken(@success-color--text,40%);
+        color: var(--success-color-hover);
     }
 }
 
 //  $$  DARK
 //  ----------------------------------------------------------------------------
-.d-link--dark {
-    .d-link();
-
-    color: var(--slate);
+.d-link--muted {
+    color: var(--muted-color);
 
     &:hover {
-        color: #000;
+        color: var(--muted-color-hover);
     }
 }
 
 //  $$  INVERTED
 //  ----------------------------------------------------------------------------
 .d-link--inverted {
-    .d-link();
-
-    color: var(--ash);
+    color: var(--white);
 
     &:hover {
-        color: var(--ash-darker);
+        color: var(--black-100);
     }
 }
 
 //  $$  INVERTED DANGER
 //  ----------------------------------------------------------------------------
-.d-link--inverted--danger {
-    .d-link();
+.d-link--inverted.d-link--danger {
+    --error-color:         var(--red-100);
+    --error-color-hover:   hsl(var(--red-100-h) var(--red-100-s) calc(var(--red-100-l) - 10%));
 
-    color: var(--wildberry-light);
+    color: var(--error-color);
 
     &:hover {
-        color: hsl(var(--wildberry-light--h) var(--wildberry-light--s) calc(var(--wildberry-light--l) + 5%));
+        color: var(--error-color-hover);
     }
 }

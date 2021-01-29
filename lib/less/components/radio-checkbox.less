@@ -23,6 +23,12 @@
 //  ----------------------------------------------------------------------------
 .d-checkbox,
 .d-radio {
+    //  Component specific CSS Vars
+    //  ------------------------------------------------------------------------
+    --check-radio--bc:      var(--black-600);
+    --check-radio--bgc:     var(--white);
+    --check-radio--bs:      none;
+
     //  [1] Check to see if we can use custom styles, if so reset the defaults
     //  ------------------------------------------------------------------------
     @supports ((-webkit-appearance: none) or (-moz-appearance: none) or (appearance: none)) {
@@ -37,22 +43,23 @@
         //  [2]  Now re-style the checkboxes and radios
         //  --------------------------------------------------------------------
         margin: 0;
-        width: 1.4rem;
-        height: 1.4rem;
-        border: 0.1rem solid var(--slate-lightest);
-        background-color: var(--white);
+        width: 1em;
+        height: 1em;
+        border: var(--su1) solid var(--check-radio--bc);
+        background-color: var(--check-radio--bgc);
+        box-shadow: var(--check-radio--bs);
         outline: 0;
         font-size: inherit;
         cursor: pointer;
 
         &:focus {
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 @spacing4 hsla(~"@{primary-color--hsl} / 15%");
+            --check-radio--bc: var(--primary-color);
+            --check-radio--bs: 0 0 0 var(--su4) hsla(var(--primary-color-hsl) ~" / " 15%);
             outline: 0;
         }
         &:checked,
         &:checked:focus {
-            border-color: var(--primary-color);
+            --check-radio--bc: var(--primary-color);
         }
     }
 
@@ -61,8 +68,8 @@
 
     //  --  DISABLED
     &[disabled] {
-        border-color: var(--ash-dark);
-        background-color: var(--ash-dark);
+        --check-radio--bc:  var(--black-200);
+        --check-radio--bgc: var(--black-100);
         cursor: not-allowed;
     }
 }
@@ -74,18 +81,16 @@
 .d-checkbox-group,
 .d-radio-group {
     display: flex;
-    .d-padding-x1();
-}
+    padding-right: var(--su1);
+    padding-left: var(--su1);
 
-//  --  Wrapper Disabled State
-.d-checkbox-group--disabled,
-.d-radio-group--disabled {
-    display: flex;
-    .d-padding-x1();
-    color: var(--ash-darkest);
-    cursor: not-allowed;
+    //  --  Wrapper Disabled State
+    &.d-checkbox-group--disabled,
+    &.d-radio-group--disabled {
+        color: var(--black-300);
+        cursor: not-allowed;
+    }
 }
-
 
 
 //  ============================================================================
@@ -96,7 +101,7 @@
 .d-radio__input {
     display: flex;
     align-self: flex-start;
-    .d-padding-top2();
+    padding-top: var(--su2);
 }
 
 
@@ -108,19 +113,19 @@
 .d-radio__copy {
     display: inline-flex;
     flex-direction: column;
-    .d-flex1();
-    .d-max-width4();
-    .d-margin-left8();
+    flex: 1 auto;
+    margin-left: var(--su8);
+    max-width: var(--size464);
 }
 
 .d-checkbox__label,
 .d-radio__label {
     display: inline-flex;
     flex-direction: column;
-    .d-flex1();
+    flex: 1 auto;
 
     font-size: var(--fs14);
-    line-height: 1.428571429;
+    line-height: calc(20/14);
     font-weight: var(--fw-normal);
 }
 
@@ -133,34 +138,44 @@
     justify-content: space-between;
     margin: 0;
 
-    color: var(--slate-lighter);
+    color: var(--black-700);
     fill: currentColor;
     font-size: var(--fs12);
     font-family: inherit;
     font-weight: inherit;
-    line-height: 1.333333333;
+    line-height: calc(16/12);
 
     > a[href] {
-        .d-link--dark();
+        .d-link();
+        .d-link--muted();
     }
 }
 .d-checkbox__description--warning,
 .d-radio__description--warning {
-    color: @warning-color--text;
+    color: var(--warning-color-text);
 
-    > a[href] { .d-link--warning(); }
+    > a[href] {
+        .d-link();
+        .d-link--warning();
+    }
 }
 .d-checkbox__description--error,
 .d-radio__description--error {
-    color: @error-color--text;
+    color: var(--error-color-text);
 
-    > a[href] { .d-link--danger(); }
+    > a[href] {
+        .d-link();
+        .d-link--danger();
+    }
 }
 .d-checkbox__description--success,
 .d-radio__description--success {
-    color: @success-color--text;
+    color: var(--success-color-text);
 
-    > a[href] { .d-link--success(); }
+    > a[href] {
+        .d-link();
+        .d-link--success();
+    }
 }
 
 
@@ -169,29 +184,29 @@
 //  ----------------------------------------------------------------------------
 .d-checkbox {
     @supports ((-webkit-appearance: none) or (-moz-appearance: none) or (appearance: none)) {
-        border-radius: 0.2rem;
+        border-radius: var(--br2);
         background-position: center center;
         background-repeat: no-repeat;
         background-size: contain;
 
         //  Disabled
         &[disabled] {
-            border-color: var(--ash-darker);
-            background-color: var(--ash);
+            --check-radio--bc:      var(--black-200);
+            --check-radio--bgc:     var(--black-050);
         }
 
         &:checked {
-            background-color: var(--primary-color);
+            --check-radio--bgc:     var(--primary-color);
             background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z' fill='%23fff'/%3E%3C/svg%3E");
 
             //  Disabled
             &[disabled] {
-                border-color: var(--ash-darkest);
-                background-color: var(--ash-darkest);
+                --check-radio--bc:      var(--black-300);
+                --check-radio--bgc:     var(--black-100);
             }
 
             &:focus {
-                box-shadow: 0 0 0 @spacing4 hsla(~"@{primary-color--hsl} / 25%");
+                --check-radio--bs:      0 0 0 var(--su4) hsla(var(--primary-color-hsl) ~" / " 25%);
             }
         }
     }
@@ -200,27 +215,27 @@
 //  $$  CHECKBOX VALIDATION STATES
 //  ----------------------------------------------------------------------------
 .d-checkbox--warning {
-    border-color: @warning-color;
+    --check-radio--bc:      var(--warning-color);
 
     &:focus,
     &:checked:focus {
-        box-shadow: 0 0 0 @spacing4 fade(@warning-color, 25%);
+        --check-radio--bs:  0 0 0 var(--su4) hsla(var(--warning-color-hsl) ~" / " 25%);
     }
 }
 .d-checkbox--error {
-    border-color: @error-color;
+    --check-radio--bc:      var(--error-color);
 
     &:focus,
     &:checked:focus {
-        box-shadow: 0 0 0 @spacing4 fade(@error-color, 25%);
+        --check-radio--bs:  0 0 0 var(--su4) hsla(var(--error-color-hsl) ~" / " 25%);
     }
 }
 .d-checkbox--success {
-    border-color: @success-color;
+    --check-radio--bc:      var(--success-color);
 
     &:focus,
     &:checked:focus {
-        box-shadow: 0 0 0 @spacing4 fade(@success-color, 25%);
+        --check-radio--bs:  0 0 0 var(--su4) hsla(var(--success-color-hsl) ~" / " 25%);
     }
 }
 
@@ -230,22 +245,21 @@
 //  ----------------------------------------------------------------------------
 .d-radio {
     @supports ((-webkit-appearance: none) or (-moz-appearance: none) or (appearance: none)) {
-        .d-border-radius--circle();
+        border-radius: var(--br-circle);
 
         &:focus,
         &:checked:focus {
-            background-color: var(--primary-color);
-            box-shadow: inset 0 0 0 @spacing2 @white,
-                              0 0 0 @spacing4 hsla(~"@{primary-color--hsl} / 15%");
+            --check-radio--bgc:     var(--primary-color);
+            --check-radio--bs:      inset 0 0 0 var(--su2) var(--white), 0 0 0 var(--su4) hsla(var(--primary-color-hsl) ~" / " 15%);
         }
         &:checked {
-            background-color: var(--primary-color);
-            box-shadow: inset 0 0 0 @spacing2 @white;
+            --check-radio--bgc:     var(--primary-color);
+            --check-radio--bs:      inset 0 0 0 var(--su2) var(--white);
 
             //  Disabled
             &[disabled] {
-                border-color: var(--ash-darkest);
-                background-color: var(--ash-darkest);
+                --check-radio--bc:      var(--black-300);
+                --check-radio--bgc:     var(--black-200);
             }
         }
     }
@@ -254,50 +268,47 @@
 //  $$  RADIO & CHECKBOX VALIDATION STATES
 //  ----------------------------------------------------------------------------
 .d-radio--warning {
-    border-color: @warning-color;
+    --check-radio--bc:      var(--warning-color);
 
     &:focus,
     &:checked:focus {
-        border-color: darken(@warning-color,10%);
-        background-color: @warning-color;
-        box-shadow: inset 0 0 0 @spacing2 @white,
-                          0 0 0 @spacing4 fade(@warning-color,25%);
+        --check-radio--bc:      hsl(var(--yellow-400-h) var(--yellow-400-s) calc(var(--yellow-400-l) - 10%));
+        --check-radio--bgc:     var(--warning-color);
+        --check-radio--bs:      inset 0 0 0 var(--su2) var(--white)~"," 0 0 0 var(--su4) hsla(var(--warning-color-hsl) ~" / " 25%);
     }
     &:checked {
-        border-color: @warning-color;
-        background-color: @warning-color;
-        box-shadow: inset 0 0 0 @spacing2 @white;
+        --check-radio--bc:      var(--warning-color);
+        --check-radio--bgc:     var(--warning-color);
+        --check-radio--bs:      inset 0 0 0 var(--su2) var(--white);
     }
 }
 .d-radio--error {
-    border-color: @error-color;
+    --check-radio--bc:      var(--error-color);
 
     &:focus,
     &:checked:focus {
-        border-color: darken(@error-color,10%);
-        background-color: @error-color;
-        box-shadow: inset 0 0 0 @spacing2 @white,
-                          0 0 0 @spacing4 fade(@error-color,25%);
+        --check-radio--bc:      hsl(var(--red-400-h) var(--red-400-s) calc(var(--red-400-l) - 10%));
+        --check-radio--bgc:     var(--error-color);
+        --check-radio--bs:      inset 0 0 0 var(--su2) var(--white)~"," 0 0 0 var(--su4) hsla(var(--error-color-hsl) ~" / " 25%);
     }
     &:checked {
-        border-color: @error-color;
-        background-color: @error-color;
-        box-shadow: inset 0 0 0 @spacing2 @white;
+        --check-radio--bc:      var(--error-color);
+        --check-radio--bgc:     var(--error-color);
+        --check-radio--bs:      inset 0 0 0 var(--su2) var(--white);
     }
 }
 .d-radio--success {
-    border-color: @success-color;
+    --check-radio--bc:      var(--success-color);
 
     &:focus,
     &:checked:focus {
-        border-color: darken(@success-color,10%);
-        background-color: @success-color;
-        box-shadow: inset 0 0 0 @spacing2 @white,
-                          0 0 0 @spacing4 fade(@success-color,25%);
+        --check-radio--bc:      hsl(var(--green-400-h) var(--green-400-s) calc(var(--green-400-l) - 10%));
+        --check-radio--bgc:     var(--success-color);
+        --check-radio--bs:      inset 0 0 0 var(--su2) var(--white)~"," 0 0 0 var(--su4) hsla(var(--success-color-hsl) ~" / " 25%);
     }
     &:checked {
-        border-color: @success-color;
-        background-color: @success-color;
-        box-shadow: inset 0 0 0 @spacing2 @white;
+        border-color: var(--success-color);
+        background-color: var(--success-color);
+        box-shadow: inset 0 0 0 var(--su2) var(--white);
     }
 }

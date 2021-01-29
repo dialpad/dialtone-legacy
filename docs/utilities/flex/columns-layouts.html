@@ -1,0 +1,132 @@
+---
+layout: page
+title: Columns & Layouts
+description: Utilities for flex columns and common flex layouts.
+---
+<section class="d-stack16">
+    {% header "h2", "Classes" %}
+    <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
+        <table class="d-table">
+            <thead>
+                <tr>
+                    <th scope="col" class="d-w25p">Class</th>
+                    <th scope="col">Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% assign columns = "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12" | split: ", " %}
+                {% for i in columns %}
+                <tr>
+                    <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-fl-col{{ i }}</th>
+                    <td class="d-ff-mono d-fc-teal-500 d-fs12 d-ws-pre">> * { flex-basis: calc({{ 100% | divided_by: i | round }}% - (var(--fl-gap) * 2)); }</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            <tbody>
+                {% assign gaps = "0, 1, 2, 4, 6, 8, 12, 16, 24, 32, 48, 64" | split: ", " %}
+                {% for i in gaps %}
+                <tr>
+                    <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-flg{{ i }}</th>
+                    <td class="d-ff-mono d-fc-teal-500 d-fs12 d-ws-pre">> * { --fl-gap: {% if i == "0" %}0{% elsif i == "12" %}1.2rem{% elsif i == "16" %}1.6rem{% elsif i == "24" %}2.4rem{% elsif i == "32" %}3.2rem{% elsif i == "48" %}4.8rem{% elsif i == "64" %}6.4rem{% else %}0.{{ i }}rem{% endif %} !important; }</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Creating flex columns" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-fl-col{n}</code> to create uniformly sized children within an element.</p>
+    </header>
+    <aside class="d-bar8 d-of-hidden">
+        <header class="d-d-flex d-fd-column d-p16 d-bgc-purple-100 d-bgo50 d-w100p d-hmx464 d-of-y-scroll d-stack8">
+            {% assign columns = "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12" | split: ", " %}
+            {% for i in columns %}
+            <div class="d-d-flex d-fd-column d-p8 d-bar8 d-bgc-purple-100">
+                <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">.d-fl-col{{i}}</code>
+                <div class="d-fl-col{{ i }} d-flg8">
+                    {% for col in columns limit: i %}
+                    <div class="d-fl-center d-p16 d-bar4 d-bgc-purple-400 d-fs18 d-fw-bold d-fc-white">{{ col }}</div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+{% highlight html linenos %}
+<div class="d-fl-col1">...</div>
+<div class="d-fl-col2">...</div>
+<div class="d-fl-col3">...</div>
+<div class="d-fl-col4">...</div>
+<div class="d-fl-col5">...</div>
+<div class="d-fl-col6">...</div>
+<div class="d-fl-col7">...</div>
+<div class="d-fl-col8">...</div>
+<div class="d-fl-col9">...</div>
+<div class="d-fl-col10">...</div>
+<div class="d-fl-col11">...</div>
+<div class="d-fl-col12">...</div>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Flex Column Gaps" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-flg{n}</code> to create uniform gaps between flex columns within an element.</p>
+    </header>
+    <aside class="d-bar8 d-of-hidden">
+        <header class="d-d-flex d-fd-column d-p16 d-bgc-purple-100 d-bgo50 d-w100p d-hmx464 d-of-y-scroll d-stack8">
+            {% assign gaps = "0, 1, 2, 4, 6, 8, 12, 16, 24, 32, 48, 64" | split: ", " %}
+            {% for i in gaps %}
+            <div class="d-d-flex d-fd-column d-p8 d-bar8 d-bgc-purple-100">
+                <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">.d-flg{{ i }}</code>
+                <div class="d-fl-col3 d-flg{{ i }}">
+                    <div class="d-fl-center d-p16 d-bar4 d-bgc-purple-400 d-fs18 d-fw-bold d-fc-white">1</div>
+                    <div class="d-fl-center d-p16 d-bar4 d-bgc-purple-400 d-fs18 d-fw-bold d-fc-white">2</div>
+                    <div class="d-fl-center d-p16 d-bar4 d-bgc-purple-400 d-fs18 d-fw-bold d-fc-white">3</div>
+                </div>
+            </div>
+            {% endfor %}
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+{% highlight html linenos %}
+<div class="d-fl-col3 d-flg0">...</div>
+<div class="d-fl-col3 d-flg1">...</div>
+<div class="d-fl-col3 d-flg2">...</div>
+<div class="d-fl-col3 d-flg4">...</div>
+<div class="d-fl-col3 d-flg6">...</div>
+<div class="d-fl-col3 d-flg8">...</div>
+<div class="d-fl-col3 d-flg12">...</div>
+<div class="d-fl-col3 d-flg16">...</div>
+<div class="d-fl-col3 d-flg24">...</div>
+<div class="d-fl-col3 d-flg32">...</div>
+<div class="d-fl-col3 d-flg48">...</div>
+<div class="d-fl-col3 d-flg64">...</div>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Centering objects" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">By default flexed items align to <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">flex-start</code> both horizontally and vertically (effectively top, left). Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-fl-center</code> to center-center child items within an element.</p>
+    </header>
+    <aside class="d-bar8 d-of-hidden">
+        <header class="d-fl-center d-p24 d-bgc-green-100 d-bgo50 d-w100p d-hmn216">
+            <div class="d-fl-center d-w48 d-h48 d-m8 d-p16 d-bgc-green-400 d-bar4 d-fs24 d-fc-white d-fw-bold">1</div>
+            <div class="d-fl-center d-w64 d-h64 d-m8 d-p16 d-bgc-green-400 d-bar4 d-fs24 d-fc-white d-fw-bold">2</div>
+            <div class="d-fl-center d-w48 d-h48 d-m8 d-p16 d-bgc-green-400 d-bar4 d-fs24 d-fc-white d-fw-bold">3</div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+{% highlight html linenos %}
+<div class="d-fl-center">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+</div>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>

@@ -27,59 +27,71 @@
 //  ============================================================================
 //  $   FLEXBOX UTILITIES
 //  ============================================================================
-//  --  DISPLAY
+//  --  FIXED CELL WIDTHS
 //  ----------------------------------------------------------------------------
-.d-d-flex             { display: flex !important; }
-.d-d-flex-inline      { display: inline-flex !important; }
+#d-internals() {
+    #build-flex-columns(@num, @count: 1) when (@count =< @num) {
+        .d-fl-col@{count} {
+            display: flex;
 
-///  --  FIXED CELL WIDTHS
-//  ----------------------------------------------------------------------------
-#build-flex-columns(@num, @count: 1) when (@count =< @num) {
-    .d-flex__cell@{count} {
-        flex-basis: (@count * 100%) / @num;
+            //  Automatically make all direct child to obey the parent class
+            > * {
+                --fl-gap: 0;
+                --fl-basis: calc(100% / @count);
+
+                display: inline-flex;
+                margin: 0 var(--fl-gap);
+                flex: 1 auto;
+                flex-basis: calc(var(--fl-basis) - ((var(--fl-gap) * 2)));
+            }
+
+            //  If flex column is in a column direction (and became rows),
+            //  change the margin direction.
+            &.d-fd-column {
+                margin: var(--fl-gap) 0;
+            }
+        }
+
+        //  Iterate our loop until we hit our grid column total
+        #d-internals #build-flex-columns(@num, @count + 1);
     }
-
-    #build-flex-columns(@num, @count + 1);
 }
-@grid-columns: 12;
+@flex-columns: 12;
 
-.d-flex-columns {
-    display: flex;
+//  Now let's generate the columns
+#d-internals #build-flex-columns(@flex-columns);
 
-    #build-flex-columns(@grid-columns);
-}
+//  Flex Gaps
+.d-flg0 > *     { --fl-gap: 0 !important; }
+.d-flg1 > *     { --fl-gap: 0.1rem !important; }
+.d-flg2 > *     { --fl-gap: 0.2rem !important; }
+.d-flg4 > *     { --fl-gap: 0.4rem !important; }
+.d-flg6 > *     { --fl-gap: 0.6rem !important; }
+.d-flg8 > *     { --fl-gap: 0.8rem !important; }
+.d-flg12 > *    { --fl-gap: 1.2rem !important; }
+.d-flg16 > *    { --fl-gap: 1.6rem !important; }
+.d-flg24 > *    { --fl-gap: 2.4rem !important; }
+.d-flg32 > *    { --fl-gap: 3.2rem !important; }
+.d-flg48 > *    { --fl-gap: 4.8rem !important; }
+.d-flg64 > *    { --fl-gap: 6.4rem !important; }
 
 
 //  --  CENTER ITEMS
 //      A common combination of classes is .d-jc-center and .ai-center.
 //      Use this class when you want both.
 //  ----------------------------------------------------------------------------
-//  Older class. Will be deprecated in a future version
-.d-flex--center {
+.d-fl-center {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-//  New class. Use this moving forward
-.d-fl-center {
-    .d-d-flex();
-    .d-ai-center();
-    .d-jc-center();
-}
-
 //  --  FLEX
 //      Graduating scale of flex-grow and flex-shrink values
 //  ----------------------------------------------------------------------------
-//  Older classes. Will be deprecated in a future version
-.d-flex0                     { flex: 0 auto; }
-.d-flex1                     { flex: 1 auto; }
-.d-flex2                     { flex: 2 auto; }
-
-//  New classes. Use these moving forward
-.d-fl0                       { .d-flex0() !important; }
-.d-fl1                       { .d-flex1() !important; }
-.d-fl2                       { .d-flex2() !important; }
+.d-fl0                       { flex: 0 auto !important; }
+.d-fl1                       { flex: 1 auto !important; }
+.d-fl2                       { flex: 2 auto !important; }
 .d-fl3                       { flex: 3 auto !important; }
 .d-fl4                       { flex: 4 auto !important; }
 .d-fl5                       { flex: 5 auto !important; }
@@ -96,8 +108,8 @@
 //      Equally distributes children out within a parent container
 //  ----------------------------------------------------------------------------
 .d-fl-equal {
-    .d-fl-grow1();
-    .d-fl-shrink1();
+    flex-grow: 1 !important;
+    flex-shrink: 1 !important;
     flex-basis: 0 !important;
 }
 
@@ -106,15 +118,9 @@
 //      shrink relative to other flex items in the container when there isn't
 //      enough space in the row. Default value is 1.
 //  ----------------------------------------------------------------------------
-//  Older classes. Will be deprecated in a future version
-.d-flex-shrink0              { flex-shrink: 0; }
-.d-flex-shrink1              { flex-shrink: 1; }
-.d-flex-shrink2              { flex-shrink: 2; }
-
-//  New classes. Use these moving forward
-.d-fl-shrink0                { .d-flex-shrink0() !important; }
-.d-fl-shrink1                { .d-flex-shrink1() !important; }
-.d-fl-shrink2                { .d-flex-shrink2() !important; }
+.d-fl-shrink0                { flex-shrink: 0 !important; }
+.d-fl-shrink1                { flex-shrink: 1 !important; }
+.d-fl-shrink2                { flex-shrink: 2 !important; }
 .d-fl-shrink3                { flex-shrink: 3 !important; }
 .d-fl-shrink4                { flex-shrink: 4 !important; }
 .d-fl-shrink5                { flex-shrink: 5 !important; }
@@ -125,15 +131,9 @@
 //      grow relative to other flex items in the container when there isn't
 //      enough space in the row. Default value is 1.
 //  ----------------------------------------------------------------------------
-//  Older classes. Will be deprecated in a future version
-.d-flex-grow0                { flex-grow: 0; }
-.d-flex-grow1                { flex-grow: 1; }
-.d-flex-grow2                { flex-grow: 2; }
-
-//  New classes. Use these moving forward
-.d-fl-grow0                  { .d-flex-grow0() !important; }
-.d-fl-grow1                  { .d-flex-grow1() !important; }
-.d-fl-grow2                  { .d-flex-grow2() !important; }
+.d-fl-grow0                  { flex-grow: 0 !important; }
+.d-fl-grow1                  { flex-grow: 1 !important; }
+.d-fl-grow2                  { flex-grow: 2 !important; }
 .d-fl-grow3                  { flex-grow: 3 !important; }
 .d-fl-grow4                  { flex-grow: 4 !important; }
 .d-fl-grow5                  { flex-grow: 5 !important; }
@@ -236,10 +236,17 @@
 //  --  ORDER
 //      Designate a child container's position.
 //  ----------------------------------------------------------------------------
-//  Older classes. Will be deprecated in a future version
-.d-order--first              { order: -1; }
-.d-order--last               { order: 1; }
-
-//  New classes. Use these moving forward
-.d-order-first               { .d-order--first() !important; }
-.d-order-last                { .d-order--last() !important; }
+.d-order1                    { order: 1 !important; }
+.d-order2                    { order: 2 !important; }
+.d-order3                    { order: 3 !important; }
+.d-order4                    { order: 4 !important; }
+.d-order5                    { order: 5 !important; }
+.d-order6                    { order: 6 !important; }
+.d-order7                    { order: 7 !important; }
+.d-order8                    { order: 8 !important; }
+.d-order9                    { order: 9 !important; }
+.d-order10                   { order: 10 !important; }
+.d-order11                   { order: 11 !important; }
+.d-order12                   { order: 12 !important; }
+.d-order-first               { order: -9999 !important; }
+.d-order-last                { order: 9999 !important; }

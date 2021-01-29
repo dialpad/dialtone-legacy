@@ -1,157 +1,136 @@
 ---
 layout: page
 title: Line Height
-description: Utility classes for controlling an element's line height.
+description: Utilities to change an element's line-height.
 ---
-<aside class="d-p16 d-border-radius--sm d-w-75ch d-background-color--blue-lighter d-fc-slate d-fs16 d-lh4 d-stack8">
-    <p class="d-m0"><strong>Note:</strong> New variables and classes were introduced with Dialtone v5.8.0. Whereas previous class names and variables used a "t-shirt" sizing method (sm, md, lg, etc), the new classes and variables either provide fixed or relative values.</p>
-    <p class="d-m0">The older classes and variables are still available, but they will no longer be supported and will be removed in a future version of Dialtone.</p>
-</aside>
-<section class="d-stack16">
-    <header class="d-stack2">
-        <h2 class="dialtone-title__section">Variables</h2>
-        <p class="dialtone-copy__normal">Dialtone provides Less and CSS variables for all line-heights. This is useful if you're writing custom CSS and an immutable class isn't required or desired.</p>
-    </header>
-    <table class="dialtone-table dialtone-table--code">
-        <thead>
-            <tr>
-                <th scope="col">Type</th>
-                <th scope="col">CSS Var</th>
-                <th scope="col" class="d-opacity50 d-background-color--ash">Deprecated CSS Var</th>
-                <th scope="col">Less Var</th>
-                <th scope="col" class="d-opacity50 d-background-color--ash">Deprecated Less Var</th>
-                <th scope="col">Output</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for i in type.line-height-relative %}
-            {% assign c = i.class %}
-            {% assign old = i.class-old %}
-            {% assign v = i.output %}
+<section class="d-stack8">
+    {% header "h2", "CSS Variables" %}
+    <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
+        <table class="d-table">
+            <thead>
                 <tr>
-                    {% if forloop.first %}
-                        <th scope="row" rowspan="{{ forloop.length }}" style="border-bottom: none;">Relative</th>
-                    {% endif %}
-                    <td>var(--lh-{{ c }})</td>
-                    <td class="d-opacity50 d-background-color--ash">var(--line-height--{{ old }})</td>
-                    <td>@lh-{{ c }}</td>
-                    <td class="d-opacity50 d-background-color--ash">@line-height--{{ old }}</td>
-                    <td>{{ v }}</td>
+                    <th scope="col" class="d-w25p">Variable</th>
+                    <th scope="col">Output</th>
                 </tr>
-            {% endfor %}
-        </tbody>
-        <tbody>
-            {% for i in type.line-height-fixed %}
-            {% assign c = i.class %}
-            {% assign v = i.output %}
-                <tr>
-                    {% if forloop.first %}
-                        <th scope="row" rowspan="{{ forloop.length }}" style="border-bottom: none;">Fixed</th>
-                    {% endif %}
-                    <td>var(--lh{{ c }})</td>
-                    <td class="d-opacity50 d-background-color--ash d-fc-slate-lightest d-fs-italic">N/A</td>
-                    <td>@lh{{ c }}</td>
-                    <td class="d-opacity50 d-background-color--ash d-fc-slate-lightest d-fs-italic">N/A</td>
-                    <td>{{ v }}</td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                {% for i in type.line-height %}
+                {% assign class = i.class %}
+                {% assign output = i.output %}
+                {% if class != "unset" %}
+                    {% assign addition = class | plus: 0 %}
+                    {% capture addition %}{{ addition }}{% endcapture %}
+                    <tr>
+                        <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">var(--lh{% if class != addition %}-{% endif %}{{ class }})</th>
+                        <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ output }}</td>
+                    </tr>
+                {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </section>
-<section class="d-stack16">
-    <header class="d-stack2">
-        <h2 class="dialtone-title__section">Relative Classes</h2>
-        <p class="dialtone-copy__normal">Starting in v5.8.0, Dialtone began providing immutable type classes, meaning they include an <span class="code-example--inline">!important</span> to override CSS specificity. These new classes abandon the previous "t-shirt" sizing metaphor in favor of more descriptive classes. All previous class names still exist, but are considered deprecated and should not be used moving forward. They will be removed in a future version.</p>
-    </header>
-    <table class="dialtone-table dialtone-table--code">
-        <thead>
-            <tr>
-                <th scope="col">Class</th>
-                <th scope="col" class="d-opacity50 d-background-color--ash">Deprecated Class</th>
-                <th scope="col">Output</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for i in type.line-height-relative %}
-            {% assign c = i.class %}
-            {% assign old = i.class-old %}
-            {% assign v = i.output %}
-            <tr>
-                <td>.d-lh-{{ c }}</td>
-                <td class="d-opacity50 d-background-color--ash">.d-line-height--{{ old }}</td>
-                <td>line-height: {{ v }} !important;</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    <div class="dialtone-example" data-example="yes" data-code="yes">
-        <div class="dialtone-example__example d-stack12">
-            {% for i in type.line-height-relative %}
-            {% assign c = i.class %}
-            <div class="d-stack2 d-ws-nowrap d-of-hidden">
-                <span class="code-example--inline">.d-lh-{{ c }}</span>
-                <p class="d-lh-{{ c }} d-fs18 d-m0 d-background-color--blue-lighter">The quick brown fox jumps over the lazy dog.</p>
-            </div>
-            {% endfor %}
-        </div>
-        <div class="dialtone-example__code">
-{% highlight html linenos %}
-<p class="d-lh-none">…</p>
-<p class="d-lh-tighter">…</p>
-<p class="d-lh-tight">…</p>
-<p class="d-lh-normal">…</p>
-<p class="d-lh-loose">…</p>
-<p class="d-lh-looser">…</p>
-{% endhighlight %}
-        </div>
+<section class="d-stack8">
+    {% header "h2", "Classes" %}
+    <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
+        <table class="d-table">
+            <thead>
+                <tr>
+                    <th scope="col" class="d-w25p">Class</th>
+                    <th scope="col">Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in type.line-height %}
+                {% assign class = i.class %}
+                {% assign output = i.output %}
+                {% if class != "unset" %}
+                    {% assign addition = class | plus: 0 %}
+                    {% capture addition %}{{ addition }}{% endcapture %}
+                    <tr>
+                        <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-lh{% if class != addition %}-{% endif %}{{ class }}</th>
+                        <td class="d-ff-mono d-fc-teal-500 d-fs12">line-height: var(--lh{% if class != addition %}-{% endif %}{{ class }}) !important;</td>
+                    </tr>
+                {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
 </section>
 <section class="d-stack16">
     <header class="d-stack2">
-        <h2 class="dialtone-title__section">Fixed Classes</h2>
-        <p class="dialtone-copy__normal">Starting in v5.8.0, Dialtone provides immutable, fixed line-height classes, meaning they include an <span class="code-example--inline">!important</span> to override CSS specificity. Unlike relative line-height classes which are unitless and don't target specific heights, these fixed classes allow finer control over the targeted line-height. For example, an item with font-size of 14px (1.4rem) and a <span class="code-example--inline">.lh6</span> class would create a line-height of 20px (14px + 6px = 20px). If the same <span class="code-example--inline">.lh6</span> class was applied to an item with a 16px font-size, it would create a 22px line-height (16px + 6px = 22px).</p>
+        {% header "h2", "Relative line-heights" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-lh-{n}</code> to change an element's line-height relatively. This means no unit is set with the line-height. Instead the line-height value is a multiple of the font-size.</p>
     </header>
-    <table class="dialtone-table dialtone-table--code">
-        <thead>
-            <tr>
-                <th scope="col">Class</th>
-                <th scope="col">Output</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for i in type.line-height-fixed %}
-            {% assign c = i.class %}
-            {% assign v = i.output %}
-            <tr>
-                <td>.d-lh{{ c }}</td>
-                <td>line-height: {{ v }} !important;</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    <div class="dialtone-example" data-example="yes" data-code="yes">
-        <div class="dialtone-example__example d-stack12">
-            {% for i in type.line-height-fixed %}
-            {% assign c = i.class %}
-            <div class="d-stack2 d-ws-nowrap d-of-hidden">
-                <span class="code-example--inline">.d-lh{{ c }} .d-fs18</span>
-                <p class="d-lh{{ c }} d-fs18 d-m0 d-background-color--blue-lighter">The quick brown fox jumps over the lazy dog.</p>
+    <aside class="d-bar8 d-of-hidden">
+        <header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-purple-100 d-w100p d-hmn102">
+            <div class="d-d-grid d-gg16 d-ai-center" style="grid-template-columns: 10rem 1fr">
+                <div class="d-fs12 d-ff-mono d-fc-purple-400 d-fco75">.d-lh-tighter</div>
+                <div><p class="d-fs24 d-lh-tighter d-fc-purple-500 d-bgc-purple-200 d-bgo25">The quick brown fox jumps over the lazy dog.</p></div>
+                <div class="d-fs12 d-ff-mono d-fc-purple-400 d-fco75">.d-lh-tight</div>
+                <div><p class="d-fs24 d-lh-tight d-fc-purple-500 d-bgc-purple-200 d-bgo25">The quick brown fox jumps over the lazy dog.</p></div>
+                <div class="d-fs12 d-ff-mono d-fc-purple-400 d-fco75">.d-lh-normal</div>
+                <div><p class="d-fs24 d-lh-normal d-fc-purple-500 d-bgc-purple-200 d-bgo25">The quick brown fox jumps over the lazy dog.</p></div>
+                <div class="d-fs12 d-ff-mono d-fc-purple-400 d-fco75">.d-lh-loose</div>
+                <div><p class="d-fs24 d-lh-loose d-fc-purple-500 d-bgc-purple-200 d-bgo25">The quick brown fox jumps over the lazy dog.</p></div>
+                <div class="d-fs12 d-ff-mono d-fc-purple-400 d-fco75">.d-lh-looser</div>
+                <div><p class="d-fs24 d-lh-looser d-fc-purple-500 d-bgc-purple-200 d-bgo25">The quick brown fox jumps over the lazy dog.</p></div>
             </div>
-            {% endfor %}
-        </div>
-        <div class="dialtone-example__code">
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
 {% highlight html linenos %}
-<p class="d-lh0">…</p>
-<p class="d-lh1">…</p>
-<p class="d-lh2">…</p>
-<p class="d-lh4">…</p>
-<p class="d-lh6">…</p>
-<p class="d-lh8">…</p>
-<p class="d-lh12">…</p>
-<p class="d-lh16">…</p>
-<p class="d-lh20">…</p>
-<p class="d-lh24">…</p>
+<p class="d-lh-tighter">...</p>
+<p class="d-lh-tight">...</p>
+<p class="d-lh-normal">...</p>
+<p class="d-lh-loose">...</p>
+<p class="d-lh-looser">...</p>
 {% endhighlight %}
-        </div>
-    </div>
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Fixed line-heights" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-lh{n}</code> to fix an element's line-height. This allows you to target a specific line-height based on the font-size. For example if a target 20px line-height is desired and the current font-size is 14px, apply <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">.d-lh6</code> to achieve this target (14px font-size + 6px = 20px target line-height).</p>
+    </header>
+    <aside class="d-bar8 d-of-hidden">
+        <header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-yellow-100 d-w100p d-hmn102">
+            <div class="d-d-grid d-gg16 d-ai-center" style="grid-template-columns: 10rem 1fr">
+                <div class="d-fs12 d-ff-mono d-fc-yellow-500">.d-lh0</div>
+                <div><p class="d-fs24 d-lh0 d-fc-yellow-600 d-bgc-yellow-200 d-bgo50">The quick brown fox jumps over the lazy dog.</p></div>
+                <div class="d-fs12 d-ff-mono d-fc-yellow-500">.d-lh1</div>
+                <div><p class="d-fs24 d-lh1 d-fc-yellow-600 d-bgc-yellow-200 d-bgo50">The quick brown fox jumps over the lazy dog.</p></div>
+                <div class="d-fs12 d-ff-mono d-fc-yellow-500">.d-lh2</div>
+                <div><p class="d-fs24 d-lh2 d-fc-yellow-600 d-bgc-yellow-200 d-bgo50">The quick brown fox jumps over the lazy dog.</p></div>
+                <div class="d-fs12 d-ff-mono d-fc-yellow-500">.d-lh4</div>
+                <div><p class="d-fs24 d-lh4 d-fc-yellow-600 d-bgc-yellow-200 d-bgo50">The quick brown fox jumps over the lazy dog.</p></div>
+                <div class="d-fs12 d-ff-mono d-fc-yellow-500">.d-lh6</div>
+                <div><p class="d-fs24 d-lh6 d-fc-yellow-600 d-bgc-yellow-200 d-bgo50">The quick brown fox jumps over the lazy dog.</p></div>
+                <div class="d-fs12 d-ff-mono d-fc-yellow-500">.d-lh8</div>
+                <div><p class="d-fs24 d-lh8 d-fc-yellow-600 d-bgc-yellow-200 d-bgo50">The quick brown fox jumps over the lazy dog.</p></div>
+                <div class="d-fs12 d-ff-mono d-fc-yellow-500">.d-lh12</div>
+                <div><p class="d-fs24 d-lh12 d-fc-yellow-600 d-bgc-yellow-200 d-bgo50">The quick brown fox jumps over the lazy dog.</p></div>
+                <div class="d-fs12 d-ff-mono d-fc-yellow-500">.d-lh16</div>
+                <div><p class="d-fs24 d-lh16 d-fc-yellow-600 d-bgc-yellow-200 d-bgo50">The quick brown fox jumps over the lazy dog.</p></div>
+                <div class="d-fs12 d-ff-mono d-fc-yellow-500">.d-lh20</div>
+                <div><p class="d-fs24 d-lh20 d-fc-yellow-600 d-bgc-yellow-200 d-bgo50">The quick brown fox jumps over the lazy dog.</p></div>
+                <div class="d-fs12 d-ff-mono d-fc-yellow-500">.d-lh24</div>
+                <div><p class="d-fs24 d-lh24 d-fc-yellow-600 d-bgc-yellow-200 d-bgo50">The quick brown fox jumps over the lazy dog.</p></div>
+            </div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+{% highlight html linenos %}
+<p class="d-lh0">...</p>
+<p class="d-lh1">...</p>
+<p class="d-lh2">...</p>
+<p class="d-lh4">...</p>
+<p class="d-lh6">...</p>
+<p class="d-lh8">...</p>
+<p class="d-lh12">...</p>
+<p class="d-lh16">...</p>
+<p class="d-lh20">...</p>
+<p class="d-lh24">...</p>
+{% endhighlight %}
+        </footer>
+    </aside>
 </section>

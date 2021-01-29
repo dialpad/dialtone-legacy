@@ -1,0 +1,269 @@
+//
+//  DIALTONE
+//  INTERNAL MIXINS
+//
+//  These are internal mixins to help generate various classes.
+//
+//  TABLE OF CONTENTS
+//  • AUTO GENERATING CLASSES
+//
+//  ============================================================================
+//  $   CONFIGURATION SETTINGS
+//      Various configuration settings to generate the classes desired.
+//  ----------------------------------------------------------------------------
+#d-internal-config {
+
+    //  Breakpoints for our responsive classes
+    @breakpoints: 1264px, 980px, 640px, 480px;
+
+    //  Do we want to generate font-face CSS?
+    @generate-font-face:             true;
+
+    //  What's the font-face file path?
+    @define-font-path:               "../fonts/";
+
+}
+
+//  ============================================================================
+//  $   INTERNAL MIXINS
+//      Various mixins used to build Dialtone
+//  ----------------------------------------------------------------------------
+#d-internals() {
+    //  ========================================================================
+    //  $   DARK MODE
+    //      #dark-mode creates a dark-mode override behind the
+    //      `prefers-color-scheme: dark` media query and `.theme-system` class.
+    //      It also renders the same rules outside of the media query with
+    //      `.theme-dark`.
+    //
+    //      USAGE:
+    //      #d-internals #dark-mode('.d-modal', { background-color: var(--black-200); })
+    //
+    //  ------------------------------------------------------------------------
+    #dark-mode(@class, @rules) {
+        @nodot-s: replace(@class, "^\.", "");
+        @nodot: ~"@{nodot-s}";
+        @classname: ~"@{class}";
+
+        body.theme-system @{classname} {
+            @media (prefers-color-scheme: dark) {
+                @rules();
+            }
+        }
+        body.theme-dark @{classname} {
+            @rules();
+        }
+
+        #d-internals-collect-dark() {
+            .d\:@{nodot} {
+                @rules();
+            }
+        }
+    }
+
+    //  ========================================================================
+    //  $   RESPONSIVENESS
+    //      #responsive renders a class and all responsive sizes.
+    //
+    //      USAGE:
+    //      #d-internals #responsive('.d-block', { display: block !important; })
+    //
+    //  ------------------------------------------------------------------------
+    #responsive(@class, @rules) {
+        @nodot-s: replace(@class, "^\.", "");
+        @nodot: ~"@{nodot-s}";
+
+        & when (@class = @nodot-s) {
+            error {
+                error: @CLASS-NAME-MUST-START-WITH-A-DOT;
+            }
+        }
+
+        .@{nodot} {
+            @rules();
+        }
+
+        #d-internals-collect-xl() {
+            .lg\:@{nodot} {
+                @rules();
+            };
+        }
+        #d-internals-collect-lg() {
+            .lg\:@{nodot} {
+                @rules();
+            };
+        }
+        #d-internals-collect-md() {
+            .md\:@{nodot} {
+                @rules();
+            };
+        }
+        #d-internals-collect-sm() {
+            .sm\:@{nodot} {
+                @rules();
+            };
+        }
+    }
+
+    #screen-xl(@rules, @force-selector: false) {
+        #d-internal-config();
+        #d-internals #responsive-generate(0, @rules, @breakpoints, 1, @force-selector);
+    }
+    #screen-lg(@rules, @force-selector: false) {
+        #d-internal-config();
+        #d-internals #responsive-generate(1, @rules, @breakpoints, 1, @force-selector);
+    }
+    #screen-md(@rules, @force-selector: false) {
+        #d-internal-config();
+        #d-internals #responsive-generate(2, @rules, @breakpoints, 1, @force-selector);
+    }
+    #screen-sm(@rules, @force-selector: false) {
+        #d-internal-config();
+        #d-internals #responsive-generate(3, @rules, @breakpoints, 1, @force-selector);
+    }
+
+
+    //  ------------------------------------------------------------------------
+    //  @bp-index values:
+    //      0 = large
+    //      1 = medium
+    //      2 = small
+    //
+    //  @start-index is the index number which is increases to exhaust the list.
+    //  ------------------------------------------------------------------------
+    #responsive-generate(@bp-index, @rules, @breakpoints, @start-index, @force-selector: false) when (@start-index < length(@breakpoints)) {
+
+        //  If the first list item is a string, it's a selector that is prepended to
+        //  the responsive class
+        & when (isstring(extract(@breakpoints, @start-index))) {
+
+            //  The actual breakpoint; "+1" to skip the (selector) string
+            @bp: extract(@breakpoints, @start-index + @bp-index + 1);
+
+            //  Convert the selector string into an identifier (i.e. remove the quotes)
+            @sel-s: extract(@breakpoints, @start-index);
+            @sel: ~"@{sel-s}";
+
+            @media (max-width: (@bp)) {
+                @{sel} & {
+                    @rules();
+                }
+            }
+
+            //  Recursively descend to handle the next breakpoint ("+5" for the
+            //  selector string and the four breakpoint values)
+            #d-internals #responsive-generate(@bp-index, @rules, @start-index + 5, @force-selector);
+        }
+
+        //  If the first list element is a number (i.e. pixel value), there is no
+        //  selector string
+        & when (isnumber(extract(@breakpoints, @start-index))) {
+
+            //  The actual breakpoint
+            @bp: extract(@breakpoints, @start-index + @bp-index);
+
+            & when not (@force-selector) {
+                @media (max-width: (@bp)) {
+                    @rules();
+                }
+            }
+
+            & when (force-selector) {
+                @media (max-width: (@bp)) {
+                    html & {
+                        @rules();
+                    }
+                }
+            }
+
+            //  Recursively descend to handle the next breakpoint ("+4" for the
+            //  four breakpoint values)
+            #d-internals #responsive-generate(@bp-index, @rules, @start-index + 4, @force-selector);
+        }
+    }
+
+
+    //  ========================================================================
+    //  $   AUTO GENERATE CLASSES
+    //      This mixin tool is used to help generate a bunch of related classes,
+    //      usually utility classes.
+    //  ------------------------------------------------------------------------
+    #auto-generate(@class-prefix, @rules, @values) {
+        #d-internals #auto-generate-with-index(@class-prefix, @rules, 1, @values);
+    }
+    #auto-generate-with-index(@class-prefix, @rules, @index, @values) when (@index <= length(@values)) {
+        // Extract our values
+        @val: extract(@values, @index);
+
+        //  When our values are numeric...
+        & when (isnumber(@val)) {
+            @px: (@val * 10); // Convert rem values to px equilavent
+            @unitless: unit(@px);
+
+            //  ...and less than 0
+            & when (@unitless < 0) {
+                @abs: abs(@unitless);
+                @class-name: ~"@{class-prefix}n@{abs}";
+
+                @{class-name} { @rules(); .template(@val); }
+            }
+
+            //  ...and equal to or greater than 0
+            & when (@unitless >= 0) {
+                @class-name: ~"@{class-prefix}@{unitless}";
+
+                @{class-name} { @rules(); .template(@val); }
+            }
+        }
+
+        //  When our values aren't numeric...
+        & when not (isnumber(@val)) {
+            @class-name: ~"@{class-prefix}-@{val}";
+
+            @{class-name} { @rules(); .template(@val); }
+        }
+
+        #d-internals #auto-generate-with-index(@class-prefix, @rules, @index + 1, @values);
+    }
+
+    #auto-generate-no-convert(@class-prefix, @rules, @values) {
+        #d-internals #auto-generate-with-index-no-convert(@class-prefix, @rules, 1, @values);
+    }
+    #auto-generate-with-index-no-convert(@class-prefix, @rules, @index, @values) when (@index <= length(@values)) {
+        // Extract our values
+        @val: extract(@values, @index);
+
+        //  When our values are numeric...
+        & when (isnumber(@val)) {
+            @class-name: ~"@{class-prefix}@{val}";
+
+            @{class-name} { @rules(); .template(@val); }
+        }
+
+        //  When our values aren't numeric...
+        & when not (isnumber(@val)) {
+            @class-name: ~"@{class-prefix}-@{val}";
+
+            @{class-name} { @rules(); .template(@val); }
+        }
+
+        #d-internals #auto-generate-with-index-no-convert(@class-prefix, @rules, @index + 1, @values);
+    }
+
+
+    //  ========================================================================
+    //  $   CREATE FONT FACE
+    //  ------------------------------------------------------------------------
+    #font-face(@type, @name) {
+        #d-internal-config();
+
+        if((@generate-font-face = true), each(@type, {
+            @font-face {
+                font-style: "normal";
+                font-weight: @key;
+                font-family: @name;
+                src: url("@{define-font-path}@{value}.woff2") format("woff2");
+            };
+        }));
+    }
+}

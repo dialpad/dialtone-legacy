@@ -1,0 +1,61 @@
+---
+layout: page
+title: Background Clip
+description: Utilities for controlling whether an element's background extends underneath its border, padding, or content box.
+---
+<section class="d-stack16">
+    {% header "h2", "Classes" %}
+    <table class="d-table">
+        <thead>
+            <tr>
+                <th scope="col" class="d-w25p">Class</th>
+                <th scope="col">Output</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% assign attachment = "unset, border-box, padding-box, content-box, text" | split: ", " %}
+            {% for i in attachment %}
+            <tr>
+                <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-bgc-{{ i }}</th>
+                <td class="d-ff-mono d-fc-teal-500 d-fs12">background-clip: {{ i }} !important;</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Usage" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-bgc-{name}</code> to control which box an element's background is clipped by.</p>
+    </header>
+    <aside class="d-bar8 d-of-hidden">
+        <header class="d-fl-col3 d-jc-center d-p24 d-bgc-purple-100 d-bgo50 d-flow16">
+            <div class="d-bgc-border-box d-fl-center d-p16 d-bgc-purple-400 d-ba d-baw4 d-bas-dashed d-bar8 d-bc-purple-200 d-fs18 d-fw-bold d-fc-white">border-box</div>
+            <div class="d-bgc-padding-box d-fl-center d-p16 d-bgc-purple-400 d-ba d-baw4 d-bas-dashed d-bar8 d-bc-purple-200 d-fs18 d-fw-bold d-fc-white">padding-box</div>
+            <div class="d-bgc-content-box d-fl-center d-p16 d-bgc-purple-400 d-ba d-baw4 d-bas-dashed d-bar8 d-bc-purple-200 d-fs18 d-fw-bold d-fc-white">content-box</div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+{% highlight html linenos %}
+<div class="d-bgc-border-box">...</div>
+<div class="d-bgc-padding-box">...</div>
+<div class="d-bgc-content-box">...</div>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Clipping text" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-bgc-text</code> to clip the background color(s) within the foreground text.</p>
+    </header>
+    <aside class="d-bar8 d-of-hidden">
+        <header class="d-jc-center d-p24 d-bgc-black-050 d-flow16">
+            <div class="d-bgc-text d-w100p d-fl-center d-p16 d-bc-black-100 d-ba d-baw4 d-bas-dashed d-bar8 d-bgg-to-r d-bgg-from-blue-600 d-bgg-to-teal-400 d-fs48 d-fw-black">Magic stuff happens.</div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+{% highlight html linenos %}
+<div class="d-bgc-text d-bgg-to-r d-bgg-from-blue-600 d-bgg-to-teal-400">...</div>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>

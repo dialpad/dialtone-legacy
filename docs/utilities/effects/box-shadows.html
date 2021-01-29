@@ -1,0 +1,98 @@
+---
+layout: page
+title: Box Shadows
+description: Utilities for controlling an element's box shadows.
+---
+<section class="d-stack16">
+    {% header "h2", "Variables" %}
+    <table class="d-table">
+        <thead>
+            <tr>
+                <th scope="col" class="d-w25p">CSS Variable</th>
+                <th scope="col">Output</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% assign bs = "sm, md, lg, xl, card" | split: ", "%}
+            {% for i in bs %}
+            <tr>
+                <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">var(--bs-{{ i }})</th>
+                <td class="d-ff-mono d-fc-teal-500 d-fs12">
+                {% if i != "card" %}
+                    0 var(--su2) var(--su{% if i == "sm" %}4{% elsif == "md" %}8{% elsif == "lg" %}12{% elsif == "xl" %}16{% endif %}) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l) / {% if i == "sm" %}15{% elsif == "md" %}25{% else %}30{% endif %}%);
+                {% elsif i == "card" %}
+                    0 var(--su2) var(--su16) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l) / 8%),<br/> 0 var(--su2) var(--su4) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l) / 4%),<br/> 0 var(--su1) var(--su2) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l) / 3%);
+                {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+<section class="d-stack16">
+    {% header "h2", "Classes" %}
+    <table class="d-table">
+        <thead>
+            <tr>
+                <th scope="col" class="d-w25p">Class</th>
+                <th scope="col">Output</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% assign bs = "sm, md, lg, xl, card" | split: ", "%}
+            {% for i in bs %}
+            <tr>
+                <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-bs-{{ i }}</th>
+                <td class="d-ff-mono d-fc-teal-500 d-fs12">box-shadow: var(--br-{{ i }}) !important;</td>
+            </tr>
+            {% endfor %}
+            <tr>
+                <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-bs-none</th>
+                <td class="d-ff-mono d-fc-teal-500 d-fs12">box-shadow: none !important;</td>
+            </tr>
+            <tr>
+                <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-bs-unset</th>
+                <td class="d-ff-mono d-fc-teal-500 d-fs12">box-shadow: unset !important;</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Outer shadow" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-bs-{n}</code> to add an outer box shadow to an element.</p>
+    </header>
+    <aside class="d-bar8 d-of-hidden">
+        <header class="d-fl-col4 d-fl-g16 d-fw-wrap d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn102">
+            {% assign bs = "sm, md, lg, xl, card" | split: ", "%}
+            {% for i in bs %}
+            <div class="d-fl-center d-p16 d-bar8 d-bgc-white d-fs18 d-fw-bold d-bs-{{ i }}">.d-bs-{{ i }}</div>
+            {% endfor %}
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+{% highlight html linenos %}
+<div class="d-bs-sm">...</div>
+<div class="d-bs-md">...</div>
+<div class="d-bs-lg">...</div>
+<div class="d-bs-xl">...</div>
+<div class="d-bs-card">...</div>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "No shadow" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-bs-none</code> to remove a box shadow to an element.</p>
+    </header>
+    <aside class="d-bar8 d-of-hidden">
+        <header class="d-fl-center d-p24 d-bgc-blue-100 d-bgo50 d-w100p d-hmn102">
+            <div class="d-fl-center d-p16 d-bar8 d-bgc-white d-fs18 d-fw-bold d-bs-none">.d-bs-none</div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+{% highlight html linenos %}
+<div class="d-bs-none">...</div>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>

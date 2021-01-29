@@ -1,0 +1,171 @@
+---
+layout: page
+title: Border Colors
+description: Utilities for controlling an element's border color.
+---
+<section class="d-stack16">
+    {% header "h2", "Classes" %}
+    <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
+        <table class="d-table">
+            <thead>
+                <tr>
+                    <th scope="col" class="d-w25p">Class</th>
+                    <th scope="col">Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-bc-transparent</th>
+                    <td>
+                        <div class="d-d-flex d-jc-space-between d-ai-center">
+                            <div class="d-fl-grow1 d-ff-mono d-fc-teal-500 d-fs12">
+                                border-color: transparent !important;
+                            </div>
+                            <div class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar4 d-bc-transparent d-ba"></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-bc-unset</th>
+                    <td>
+                        <div class="d-d-flex d-jc-space-between d-ai-center">
+                            <div class="d-fl-grow1 d-ff-mono d-fc-teal-500 d-fs12">
+                                border-color: unset !important;
+                            </div>
+                            <div class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar4 d-bc-unset d-ba"></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-bc-white</th>
+                    <td>
+                        <div class="d-d-flex d-jc-space-between d-ai-center">
+                            <div class="d-fl-grow1 d-ff-mono d-fc-teal-500 d-fs12">
+                                --bco: 100%;<br/>
+                                border-color: hsla(var(--white-h) var(--white-s) var(--white-l) / var(--bco)) !important;
+                            </div>
+                            <div class="d-fl-shrink0 d-d-flex d-m4 d-p4 d-ml16 d-h32 d-w32 d-bar4 d-bgc-black-700"><div class="d-w100p d-h100p d-bc-white d-ba d-bar4"></div></div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+            {% for color in colors.colors %}
+            {% assign c = color.color %}
+            <tbody>
+                {% for s in color.stops %}
+                {% assign stop = s.stop %}
+                {% assign copy = s.copy %}
+                <tr>
+                    <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-bc-{{ c }}-{{ stop }}</th>
+                    <td>
+                        <div class="d-d-flex d-jc-space-between d-ai-center">
+                            <div class="d-fl-grow1 d-ff-mono d-fc-teal-500 d-fs12">
+                                --bco: 100%;<br/>
+                                background-color: hsla(var(--{{ c }}-{{ stop }}-h) var(--{{ c }}-{{ stop }}-s) var(--{{ c }}-{{ stop }}-l) / var(--bco)) !important;
+                            </div>
+                            <div class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar4 d-ba d-bc-{{ c }}-{{ stop }}"></div>
+                        </div>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            {% endfor %}
+        </table>
+    </div>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Usage" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-bc-{color}</code> to set an element's border color.</p>
+    </header>
+    <aside class="d-bar8 d-of-hidden">
+        <header class="d-d-flex d-jc-center d-fd-column d-p32 d-bgc-purple-100 d-bgo50 d-w100p d-hmn102">
+            <div class="d-d-flex d-ai-center d-w100p d-h64 d-py8 d-px16 d-bar8 d-ba d-bc-purple-400 d-bgc-white d-bgo50 d-fc-black-700 d-fs18">A bordered element</div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+{% highlight html linenos %}
+<div class="... d-ba d-bc-purple-400">...</div>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Changing opacities" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-bco{n}</code> to change a border color opacity value.</p>
+    </header>
+    <aside class="d-bar8 d-of-hidden">
+        <header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-blue-100 d-bgo50 d-w100p d-hmn102 d-stack8">
+            <div class="d-w100p d-p4 d-bb d-bbw2 d-bc-blue-600 d-fs14 d-fw-black d-ff-mono">100%</div>
+            <div class="d-w100p d-p4 d-bb d-bbw2 d-bc-blue-600 d-bco99 d-fs14 d-fw-black">99%</div>
+            <div class="d-w100p d-p4 d-bb d-bbw2 d-bc-blue-600 d-bco95 d-fs14 d-fw-black">95%</div>
+            <div class="d-w100p d-p4 d-bb d-bbw2 d-bc-blue-600 d-bco90 d-fs14 d-fw-black">90%</div>
+            <div class="d-w100p d-p4 d-bb d-bbw2 d-bc-blue-600 d-bco75 d-fs14 d-fw-black">75%</div>
+            <div class="d-w100p d-p4 d-bb d-bbw2 d-bc-blue-600 d-bco50 d-fs14 d-fw-black">50%</div>
+            <div class="d-w100p d-p4 d-bb d-bbw2 d-bc-blue-600 d-bco25 d-fs14 d-fw-black">25%</div>
+            <div class="d-w100p d-p4 d-bb d-bbw2 d-bc-blue-600 d-bco10 d-fs14 d-fw-black">10%</div>
+            <div class="d-w100p d-p4 d-bb d-bbw2 d-bc-blue-600 d-bco0 d-fs14 d-fw-black">0%</div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+{% highlight html linenos %}
+<div class="d-bb d-bbw2 d-bc-blue-600">...</div>
+<div class="d-bb d-bbw2 d-bc-blue-600 d-bco99">...</div>
+<div class="d-bb d-bbw2 d-bc-blue-600 d-bco95">...</div>
+<div class="d-bb d-bbw2 d-bc-blue-600 d-bco90">...</div>
+<div class="d-bb d-bbw2 d-bc-blue-600 d-bco75">...</div>
+<div class="d-bb d-bbw2 d-bc-blue-600 d-bco50">...</div>
+<div class="d-bb d-bbw2 d-bc-blue-600 d-bco25">...</div>
+<div class="d-bb d-bbw2 d-bc-blue-600 d-bco10">...</div>
+<div class="d-bb d-bbw2 d-bc-blue-600 d-bco0">...</div>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Hover" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">h:d-bc-{color}</code> to change an element's border color spot on <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">:hover</code>.</p>
+    </header>
+    <aside class="d-bar8 d-of-hidden">
+        <header class="d-fl-center d-p24 d-bgc-green-100 d-bgo50 d-w100p d-hmn102">
+            <button class="d-p16 d-bar4 d-fs18 d-fc-green-600 d-ba d-baw2 d-bc-green-200 h:d-bc-green-500 d-bgc-green-100">Hover over me</button>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+{% highlight html linenos %}
+<button class="d-ba d-baw2 d-bc-green-200 h:d-bc-green-500">...</button>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Focus" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">f:d-bc-{color}</code> to change an element's border color when in <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">:focus</code> or <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">:focus-within</code> states.</p>
+    </header>
+    <aside class="d-bar8 d-of-hidden">
+        <header class="d-fl-center d-p24 d-bgc-red-100 d-bgo50 d-w100p d-hmn102">
+            <button class="d-p16 d-bar4 d-fs18 d-fc-white d-bgc-red-400 d-ba d-baw2 d-bc-red-500 f:d-bc-white">Click on me</button>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+{% highlight html linenos %}
+<button class="d-ba d-baw2 d-bc-red-500 f:d-bc-white">...</button>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Dark Mode" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d:d-bc-{color}</code> to set different border color when the user has dark mode enabled.</p>
+    </header>
+    <aside class="d-bar8 d-of-hidden theme-dark">
+        <header class="d-fl-center d-fd-column d-p24 d-bgc-yellow-100 d-bgo50 d-w100p d-hmn102 d-stack16">
+            <button class="d-p16 d-bar4 d-fs18 d-fc-dark d-bgc-yellow-200 d-ba d-baw2 d-bc-yellow-400 d:d-bc-blue-700 js-theme-switcher">Click on me</button>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+{% highlight html linenos %}
+<button class="d-ba d-baw2 d-bc-yellow-400 d:d-bc-blue-700">...</button>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>

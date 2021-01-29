@@ -7,348 +7,66 @@
 //  visit https://dialpad.design/utilities/backgrounds
 //
 //  TABLE OF CONTENTS
-//  • BACKGROUND FILLS
-//  • BACKGROUND GRADIENTS
-//  • BORDERS
 //  • BOX SHADOWS
 //  • OPACITY
+//  • TRANSITIONS
+//
 //
 //  ============================================================================
-//  $   BACKGROUND FILLS
+//  $   BOX SHADOWS
 //  ----------------------------------------------------------------------------
-//  Older classes. Will be deprecated in a future version
-.d-background-color--white                   { background-color: @white; }
-.d-background-color--transparent             { background-color: transparent; }
-.d-background-color--unset                   { background-color: unset; }
-.d-background-color--slate                   { background-color: @slate; }
-.d-background-color--slate-light             { background-color: @slate-light; }
-.d-background-color--slate-lighter           { background-color: @slate-lighter; }
-.d-background-color--slate-lightest          { background-color: @slate-lightest; }
-.d-background-color--ash                     { background-color: @ash; }
-.d-background-color--ash-dark                { background-color: @ash-dark; }
-.d-background-color--ash-darker              { background-color: @ash-darker; }
-.d-background-color--ash-darkest             { background-color: @ash-darkest; }
-.d-background-color--blue-dark               { background-color: @blue-dark !important; }
-.d-background-color--blue                    { background-color: @blue !important; }
-.d-background-color--blue-light              { background-color: @blue-light !important; }
-.d-background-color--blue-lighter            { background-color: @blue-lighter !important; }
-.d-background-color--navy                    { background-color: @navy !important; }
-.d-background-color--navy-light              { background-color: @navy-light !important; }
-.d-background-color--navy-lighter            { background-color: @navy-lighter !important; }
-.d-background-color--navy-lightest           { background-color: @navy-lightest !important; }
-.d-background-color--bright-emerald-dark     { background-color: @bright-emerald-dark !important; }
-.d-background-color--bright-emerald          { background-color: @bright-emerald !important; }
-.d-background-color--bright-emerald-light    { background-color: @bright-emerald-light !important; }
-.d-background-color--bright-emerald-lighter  { background-color: @bright-emerald-lighter !important; }
-.d-background-color--emerald-darker          { background-color: @emerald-darker !important; }
-.d-background-color--emerald-dark            { background-color: @emerald-dark !important; }
-.d-background-color--emerald                 { background-color: @emerald !important; }
-.d-background-color--emerald-light           { background-color: @emerald-light !important; }
-.d-background-color--emerald-lighter         { background-color: @emerald-lighter !important; }
-.d-background-color--sunflower-dark          { background-color: @sunflower-dark !important; }
-.d-background-color--sunflower               { background-color: @sunflower !important; }
-.d-background-color--sunflower-light         { background-color: @sunflower-light !important; }
-.d-background-color--sunflower-lighter       { background-color: @sunflower-lighter !important; }
-.d-background-color--berry-dark              { background-color: @berry-dark !important; }
-.d-background-color--berry                   { background-color: @berry !important; }
-.d-background-color--berry-light             { background-color: @berry-light !important; }
-.d-background-color--berry-lighter           { background-color: @berry-lighter !important; }
-.d-background-color--rose-darker             { background-color: @rose-darker !important; }
-.d-background-color--rose-dark               { background-color: @rose-dark !important; }
-.d-background-color--rose                    { background-color: @rose !important; }
-.d-background-color--rose-light              { background-color: @rose-light !important; }
-.d-background-color--crimson-dark            { background-color: @crimson-dark !important; }
-.d-background-color--crimson                 { background-color: @crimson !important; }
-.d-background-color--crimson-light           { background-color: @crimson-light !important; }
-.d-background-color--crimson-lighter         { background-color: @crimson-lighter !important; }
-.d-background-color--wildberry-dark          { background-color: @wildberry-dark !important; }
-.d-background-color--wildberry               { background-color: @wildberry !important; }
-.d-background-color--wildberry-light         { background-color: @wildberry-light !important; }
-.d-background-color--wildberry-lighter       { background-color: @wildberry-lighter !important; }
-
-
-//  New Utility classes
-//  --  Grays & White
-.d-bgc-white                    { background-color: hsla(hue(@white) saturation(@white) lightness(@white)~" / " var(--bgo)); }
-.d-bgc-slate                    { background-color: hsla(hue(@slate) saturation(@slate) lightness(@slate)~" / " var(--bgo)); }
-.d-bgc-slate-light              { background-color: hsla(hue(@slate-light) saturation(@slate-light) lightness(@slate-light)~" / " var(--bgo)); }
-.d-bgc-slate-lighter            { background-color: hsla(hue(@slate-lighter) saturation(@slate-lighter) lightness(@slate-lighter)~" / " var(--bgo)); }
-.d-bgc-slate-lightest           { background-color: hsla(hue(@slate-lightest) saturation(@slate-lightest) lightness(@slate-lightest)~" / " var(--bgo)); }
-.d-bgc-ash                      { background-color: hsla(hue(@ash) saturation(@ash) lightness(@ash)~" / " var(--bgo)); }
-.d-bgc-ash-dark                 { background-color: hsla(hue(@ash-dark) saturation(@ash-dark) lightness(@ash-dark)~" / " var(--bgo)); }
-.d-bgc-ash-darker               { background-color: hsla(hue(@ash-darker) saturation(@ash-darker) lightness(@ash-darker)~" / " var(--bgo)); }
-.d-bgc-ash-darkest              { background-color: hsla(hue(@ash-darkest) saturation(@ash-darkest) lightness(@ash-darkest)~" / " var(--bgo)); }
-
-//  --  Bright Blue
-.d-bgc-blue-dark                { background-color: hsla(hue(@blue-dark) saturation(@blue-dark) lightness(@blue-dark)~" / " var(--bgo)) !important; }
-.d-bgc-blue                     { background-color: hsla(hue(@blue) saturation(@blue) lightness(@blue)~" / " var(--bgo)) !important; }
-.d-bgc-blue-light               { background-color: hsla(hue(@blue-light) saturation(@blue-light) lightness(@blue-light)~" / " var(--bgo)) !important; }
-.d-bgc-blue-lighter             { background-color: hsla(hue(@blue-lighter) saturation(@blue-lighter) lightness(@blue-lighter)~" / " var(--bgo)) !important; }
-
-//  --  Navy
-.d-bgc-navy                     { background-color: hsla(hue(@navy) saturation(@navy) lightness(@navy)~" / " var(--bgo)) !important; }
-.d-bgc-navy-light               { background-color: hsla(hue(@navy-light) saturation(@navy-light) lightness(@navy-light)~" / " var(--bgo)) !important; }
-.d-bgc-navy-lighter             { background-color: hsla(hue(@navy-lighter) saturation(@navy-lighter) lightness(@navy-lighter)~" / " var(--bgo)) !important; }
-.d-bgc-navy-lightest            { background-color: hsla(hue(@navy-lightest) saturation(@navy-lightest) lightness(@navy-lightest)~" / " var(--bgo)) !important; }
-
-//  --  Bright Emerald
-.d-bgc-bright-emerald-dark      { background-color: hsla(hue(@bright-emerald-dark) saturation(@bright-emerald-dark) lightness(@bright-emerald-dark)~" / " var(--bgo)) !important; }
-.d-bgc-bright-emerald           { background-color: hsla(hue(@bright-emerald) saturation(@bright-emerald) lightness(@bright-emerald)~" / " var(--bgo)) !important; }
-.d-bgc-bright-emerald-light     { background-color: hsla(hue(@bright-emerald-light) saturation(@bright-emerald-light) lightness(@bright-emerald-light)~" / " var(--bgo)) !important; }
-.d-bgc-bright-emerald-lighter   { background-color: hsla(hue(@bright-emerald-lighter) saturation(@bright-emerald-lighter) lightness(@bright-emerald-lighter)~" / " var(--bgo)) !important; }
-
-//  --  Emerald
-.d-bgc-emerald-darker           { background-color: hsla(hue(@emerald-darker) saturation(@emerald-darker) lightness(@emerald-darker)~" / " var(--bgo)) !important; }
-.d-bgc-emerald-dark             { background-color: hsla(hue(@emerald-dark) saturation(@emerald-dark) lightness(@emerald-dark)~" / " var(--bgo)) !important; }
-.d-bgc-emerald                  { background-color: hsla(hue(@emerald) saturation(@emerald) lightness(@emerald)~" / " var(--bgo)) !important; }
-.d-bgc-emerald-light            { background-color: hsla(hue(@emerald-light) saturation(@emerald-light) lightness(@emerald-light)~" / " var(--bgo)) !important; }
-.d-bgc-emerald-lighter          { background-color: hsla(hue(@emerald-lighter) saturation(@emerald-lighter) lightness(@emerald-lighter)~" / " var(--bgo)) !important; }
-
-//  --  Crimson
-.d-bgc-crimson-dark             { background-color: hsla(hue(@crimson-dark) saturation(@crimson-dark) lightness(@crimson-dark)~" / " var(--bgo)) !important; }
-.d-bgc-crimson                  { background-color: hsla(hue(@crimson) saturation(@crimson) lightness(@crimson)~" / " var(--bgo)) !important; }
-.d-bgc-crimson-light            { background-color: hsla(hue(@crimson-light) saturation(@crimson-light) lightness(@crimson-light)~" / " var(--bgo)) !important; }
-.d-bgc-crimson-lighter          { background-color: hsla(hue(@crimson-lighter) saturation(@crimson-lighter) lightness(@crimson-lighter)~" / " var(--bgo)) !important; }
-
-//  --  Wildberry
-.d-bgc-wildberry-dark           { background-color: hsla(hue(@wildberry-dark) saturation(@wildberry-dark) lightness(@wildberry-dark)~" / " var(--bgo)) !important; }
-.d-bgc-wildberry                { background-color: hsla(hue(@wildberry) saturation(@wildberry) lightness(@wildberry)~" / " var(--bgo)) !important; }
-.d-bgc-wildberry-light          { background-color: hsla(hue(@wildberry-light) saturation(@wildberry-light) lightness(@wildberry-light)~" / " var(--bgo)) !important; }
-.d-bgc-wildberry-lighter        { background-color: hsla(hue(@wildberry-lighter) saturation(@wildberry-lighter) lightness(@wildberry-lighter)~" / " var(--bgo)) !important; }
-
-//  --  Sunflower
-.d-bgc-sunflower-dark           { background-color: hsla(hue(@sunflower-dark) saturation(@sunflower-dark) lightness(@sunflower-dark)~" / " var(--bgo)) !important; }
-.d-bgc-sunflower                { background-color: hsla(hue(@sunflower) saturation(@sunflower) lightness(@sunflower)~" / " var(--bgo)) !important; }
-.d-bgc-sunflower-light          { background-color: hsla(hue(@sunflower-light) saturation(@sunflower-light) lightness(@sunflower-light)~" / " var(--bgo)) !important; }
-.d-bgc-sunflower-lighter        { background-color: hsla(hue(@sunflower-lighter) saturation(@sunflower-lighter) lightness(@sunflower-lighter)~" / " var(--bgo)) !important; }
-
-//  --  Berry
-.d-bgc-berry-dark               { background-color: hsla(hue(@berry-dark) saturation(@berry-dark) lightness(@berry-dark)~" / " var(--bgo)) !important; }
-.d-bgc-berry                    { background-color: hsla(hue(@berry) saturation(@berry) lightness(@berry)~" / " var(--bgo)) !important; }
-.d-bgc-berry-light              { background-color: hsla(hue(@berry-light) saturation(@berry-light) lightness(@berry-light)~" / " var(--bgo)) !important; }
-.d-bgc-berry-lighter            { background-color: hsla(hue(@berry-lighter) saturation(@berry-lighter) lightness(@berry-lighter)~" / " var(--bgo)) !important; }
-
-//  --  Rose
-.d-bgc-rose-darker              { background-color: hsla(hue(@rose-darker) saturation(@rose-darker) lightness(@rose-darker)~" / " var(--bgo)) !important; }
-.d-bgc-rose-dark                { background-color: hsla(hue(@rose-dark) saturation(@rose-dark) lightness(@rose-dark)~" / " var(--bgo)) !important; }
-.d-bgc-rose                     { background-color: hsla(hue(@rose) saturation(@rose) lightness(@rose)~" / " var(--bgo)) !important; }
-.d-bgc-rose-light               { background-color: hsla(hue(@rose-light) saturation(@rose-light) lightness(@rose-light)~" / " var(--bgo)) !important; }
-
-//  --  Resets / Transparent
-.d-bgc-transparent              { background-color: transparent !important; }
-.d-bgc-unset                    { background-color: unset !important; }
+.d-bs-sm                        { box-shadow: var(--bs-sm) !important; }
+.d-bs-md                        { box-shadow: var(--bs-md) !important; }
+.d-bs-lg                        { box-shadow: var(--bs-lg) !important; }
+.d-bs-xl                        { box-shadow: var(--bs-xl) !important; }
+.d-bs-card                      { box-shadow: var(--bs-card) !important; }
+.d-bs-none                      { box-shadow: none !important; }
+.d-bs-unset                     { box-shadow: unset !important; }
 
 
 //  ============================================================================
-//  $   BACKGROUND GRADIENTS
+//  $   TRANSITIONS
 //  ----------------------------------------------------------------------------
-//  Older variables and classes. Will be deprecated in a future version
-@dark-background--stop1:    lighten(@slate, 5%);
-@dark-background--stop2:    darken(@slate, 5%);
-@light-background--stop1:   #E3F1FE;
-@light-background--stop2:   @white;
-
-//  --  Dark background gradients
-.d-linear-gradient--dark-to-top     { background-image: linear-gradient(to top, @dark-background--stop1 0%, @dark-background--stop2 100%); }
-.d-linear-gradient--dark-to-right   { background-image: linear-gradient(to right, @dark-background--stop1 0%, @dark-background--stop2 100%); }
-.d-linear-gradient--dark-to-bottom  { background-image: linear-gradient(to bottom, @dark-background--stop1 0%, @dark-background--stop2 100%); }
-.d-linear-gradient--dark-to-left    { background-image: linear-gradient(to left, @dark-background--stop1 0%, @dark-background--stop2 100%); }
-
-//  --  Light background gradients
-.d-linear-gradient--light-to-top    { background-image: linear-gradient(to top, @light-background--stop1 0%, @light-background--stop2 100%); }
-.d-linear-gradient--light-to-right  { background-image: linear-gradient(to right, @light-background--stop1 0%, @light-background--stop2 100%); }
-.d-linear-gradient--light-to-bottom { background-image: linear-gradient(to bottom, @light-background--stop1 0%, @light-background--stop2 100%); }
-.d-linear-gradient--light-to-left   { background-image: linear-gradient(to left, @light-background--stop1 0%, @light-background--stop2 100%); }
-
-//  New classes. Use these moving forward
-.mixin-bgg(@color) {
-    background-image: linear-gradient(var(--bgg-direction), hsla(hue(@color) saturation(@color) calc(lightness(@color) + var(--bgg-percentage))~" / " var(--bgo)) 0%, hsl(hue(@color) saturation(@color) lightness(@color)) 100%) !important;
+.d-t {
+    transition-duration: var(--td50);
+    transition-property: all;
+    transition-timing-function: var(--ttf-in-out);
+    transition-delay: 0s;
 }
 
-.d-bgg-white                    { .mixin-bgg(@white); }
-.d-bgg-slate                    { .mixin-bgg(@slate); }
-.d-bgg-slate-light              { .mixin-bgg(@slate-light); }
-.d-bgg-slate-lighter            { .mixin-bgg(@slate-lighter); }
-.d-bgg-slate-lightest           { .mixin-bgg(@slate-lightest); }
-.d-bgg-ash                      { .mixin-bgg(@ash); }
-.d-bgg-ash-dark                 { .mixin-bgg(@ash-dark); }
-.d-bgg-ash-darker               { .mixin-bgg(@ash-darker); }
-.d-bgg-ash-darkest              { .mixin-bgg(@ash-darkest); }
-.d-bgg-blue-dark                { .mixin-bgg(@blue-dark); }
-.d-bgg-blue                     { .mixin-bgg(@blue); }
-.d-bgg-blue-light               { .mixin-bgg(@blue-light); }
-.d-bgg-blue-lighter             { .mixin-bgg(@blue-lighter); }
-.d-bgg-navy                     { .mixin-bgg(@navy); }
-.d-bgg-navy-light               { .mixin-bgg(@navy-light); }
-.d-bgg-navy-lighter             { .mixin-bgg(@navy-lighter); }
-.d-bgg-navy-lightest            { .mixin-bgg(@navy-lightest); }
-.d-bgg-emerald-darker           { .mixin-bgg(@emerald-darker); }
-.d-bgg-emerald-dark             { .mixin-bgg(@emerald-dark); }
-.d-bgg-emerald                  { .mixin-bgg(@emerald); }
-.d-bgg-emerald-light            { .mixin-bgg(@emerald-light); }
-.d-bgg-emerald-lighter          { .mixin-bgg(@emerald-lighter); }
-.d-bgg-bright-emerald-dark      { .mixin-bgg(@bright-emerald-dark); }
-.d-bgg-bright-emerald           { .mixin-bgg(@bright-emerald); }
-.d-bgg-bright-emerald-light     { .mixin-bgg(@bright-emerald-light); }
-.d-bgg-bright-emerald-lighter   { .mixin-bgg(@bright-emerald-lighter); }
-.d-bgg-crimson-dark             { .mixin-bgg(@crimson-dark); }
-.d-bgg-crimson                  { .mixin-bgg(@crimson); }
-.d-bgg-crimson-light            { .mixin-bgg(@crimson-light); }
-.d-bgg-crimson-lighter          { .mixin-bgg(@crimson-lighter); }
-.d-bgg-wildberry-dark           { .mixin-bgg(@wildberry-dark); }
-.d-bgg-wildberry                { .mixin-bgg(@wildberry); }
-.d-bgg-wildberry-light          { .mixin-bgg(@wildberry-light); }
-.d-bgg-wildberry-lighter        { .mixin-bgg(@wildberry-lighter); }
-.d-bgg-sunflower-dark           { .mixin-bgg(@sunflower-dark); }
-.d-bgg-sunflower                { .mixin-bgg(@sunflower); }
-.d-bgg-sunflower-light          { .mixin-bgg(@sunflower-light); }
-.d-bgg-sunflower-lighter        { .mixin-bgg(@sunflower-lighter); }
-.d-bgg-berry                    { .mixin-bgg(@berry); }
-.d-bgg-berry-light              { .mixin-bgg(@berry-light); }
-.d-bgg-berry-lighter            { .mixin-bgg(@berry-lighter); }
-.d-bgg-berry-dark               { .mixin-bgg(@berry-dark); }
-.d-bgg-rose-darker              { .mixin-bgg(@rose-darker); }
-.d-bgg-rose-dark                { .mixin-bgg(@rose-dark); }
-.d-bgg-rose                     { .mixin-bgg(@rose); }
-.d-bgg-rose-light               { .mixin-bgg(@rose-light); }
+//  --  TRANSITION DURATION
+.d-td0                          { transition-duration: var(--td0) !important; }
+.d-td50                         { transition-duration: var(--td50) !important; }
+.d-td100                        { transition-duration: var(--td100) !important; }
+.d-td150                        { transition-duration: var(--td150) !important; }
+.d-td200                        { transition-duration: var(--td200) !important; }
 
+//  --  TRANSITION TIMING
+.d-ttf-in-out                   { transition-timing-function: var(--ttf-in-out) !important; }
+.d-ttf-out                      { transition-timing-function: var(--ttf-out) !important; }
 
-//  ============================================================================
-//  $   BACKGROUND CSS VAR CLASSES
-//  ============================================================================
-//  $$  OPACITY
-//  ----------------------------------------------------------------------------
-.d-bgo0                         { --bgo: 0% !important; }
-.d-bgo10                        { --bgo: 10% !important; }
-.d-bgo25                        { --bgo: 25% !important; }
-.d-bgo50                        { --bgo: 50% !important; }
-.d-bgo75                        { --bgo: 75% !important; }
-.d-bgo90                        { --bgo: 90% !important; }
-.d-bgo95                        { --bgo: 95% !important; }
-.d-bgo99                        { --bgo: 99% !important; }
-.d-bgo100                       { --bgo: 100% !important; }
+//  --  TRANSITION PROPERTY
+.d-tp-all                       { transition-property: all !important; }
+.d-tp-o                         { transition-property: opacity !important; }
+.d-tp-bs                        { transition-property: box-shadow !important; }
+.d-tp-bgc                       { transition-property: background-color !important; }
+.d-tp-transform                 { transition-property: transform !important; }
+.d-tp-colors                    { transition-property: background-color, border-color, color, fill, stroke !important; }
 
-//  $$  DIRECTION
-//  ----------------------------------------------------------------------------
-.d-bgd-top                      { --bgg-direction: to top !important; }
-.d-bgd-top-left                 { --bgg-direction: to top left !important; }
-.d-bgd-top-right                { --bgg-direction: to top right !important; }
-.d-bgd-right                    { --bgg-direction: to right !important; }
-.d-bgd-bottom                   { --bgg-direction: to bottom !important; }
-.d-bgd-bottom-left              { --bgg-direction: to bottom left !important; }
-.d-bgd-bottom-right             { --bgg-direction: to bottom right !important; }
-.d-bgd-left                     { --bgg-direction: to left !important; }
+//  --  TRANSITION DELAY
+.d-t-delay25                    { transition-delay: var(--td25) !important; }
+.d-t-delay50                    { transition-delay: var(--td50) !important; }
+.d-t-delay100                   { transition-delay: var(--td100) !important; }
+.d-t-delay150                   { transition-delay: var(--td150) !important; }
+.d-t-delay200                   { transition-delay: var(--td200) !important; }
 
-//  $$  PERCENTAGE
-//  ----------------------------------------------------------------------------
-.d-bgp-sm                       { --bgg-percentage: 4% !important; }
-.d-bgp-lg                       { --bgg-percentage: 12.5% !important; }
-.d-bgp-xl                       { --bgg-percentage: 17.5% !important; }
-
-
-//  ============================================================================
-//  $$  BACKGROUND PATTERNS
-//  ----------------------------------------------------------------------------
-//  --  BASE CLASS
-.d-bgg-pattern {
-    position: relative;
-    padding-left: @spacing24 !important;
-
-    &::after {
-        content: "";
-        position: absolute;
-        top: @spacing1;
-        bottom: @spacing1;
-        left: @spacing1;
-
-        min-width: 2rem;
-        min-height: 2rem;
-        border-radius: 0.3rem;
-        background-repeat: repeat-y;
-        background-position: top left;
-        background-clip: content-box;
-    }
-}
-
-//  --  EACH PATTERN
-//      DARK
-.d-bgg-pattern-blob--dark::after             { background-image: var(--bgg-pattern-blob--dark); }
-.d-bgg-pattern-chevrons--dark::after         { background-image: var(--bgg-pattern-chevrons--dark); }
-.d-bgg-pattern-crosses--dark::after          { background-image: var(--bgg-pattern-crosses--dark); }
-.d-bgg-pattern-crosshatch--dark::after       { background-image: var(--bgg-pattern-crosshatch--dark); }
-.d-bgg-pattern-dot-dash--dark::after         { background-image: var(--bgg-pattern-dot-dash--dark); }
-.d-bgg-pattern-dots-circles--dark::after     { background-image: var(--bgg-pattern-dots-circles--dark); }
-.d-bgg-pattern-horz-stripes--dark::after     { background-image: var(--bgg-pattern-horz-stripes--dark); }
-.d-bgg-pattern-slanted-stripes--dark::after  { background-image: var(--bgg-pattern-slanted-stripes--dark); }
-.d-bgg-pattern-steps--dark::after            { background-image: var(--bgg-pattern-steps--dark); }
-.d-bgg-pattern-stripe--dark::after           { background-image: var(--bgg-pattern-stripe--dark); }
-//      LIGHT
-.d-bgg-pattern-blob--light::after            { background-image: var(--bgg-pattern-blob--light); }
-.d-bgg-pattern-chevrons--light::after        { background-image: var(--bgg-pattern-chevrons--light); }
-.d-bgg-pattern-crosses--light::after         { background-image: var(--bgg-pattern-crosses--light); }
-.d-bgg-pattern-crosshatch--light::after      { background-image: var(--bgg-pattern-crosshatch--light); }
-.d-bgg-pattern-dot-dash--light::after        { background-image: var(--bgg-pattern-dot-dash--light); }
-.d-bgg-pattern-dots-circles--light::after    { background-image: var(--bgg-pattern-dots-circles--light); }
-.d-bgg-pattern-horz-stripes--light::after    { background-image: var(--bgg-pattern-horz-stripes--light); }
-.d-bgg-pattern-slanted-stripes--light::after { background-image: var(--bgg-pattern-slanted-stripes--light); }
-.d-bgg-pattern-steps--light::after           { background-image: var(--bgg-pattern-steps--light); }
-.d-bgg-pattern-stripe--light::after          { background-image: var(--bgg-pattern-stripe--light); }
 
 
 //  ============================================================================
 //  $   OPACITY
 //      For times that you want a fill background, but not at 100% opacity.
 //      These are only offered for $white and gray.
-//  ============================================================================
-//  $$  BACKGROUND OPACITY FILLS
 //  ----------------------------------------------------------------------------
-//  Older variables and classes. Will be deprecated in a future version
-//  --  WHITE
-.d-background-opacity--white95  { background-color: fade(@white, 95%); }
-.d-background-opacity--white90  { background-color: fade(@white, 90%); }
-.d-background-opacity--white85  { background-color: fade(@white, 85%); }
-.d-background-opacity--white80  { background-color: fade(@white, 80%); }
-.d-background-opacity--white75  { background-color: fade(@white, 75%); }
-.d-background-opacity--white50  { background-color: fade(@white, 50%); }
-.d-background-opacity--white25  { background-color: fade(@white, 25%); }
-.d-background-opacity--white15  { background-color: fade(@white, 15%); }
-.d-background-opacity--white10  { background-color: fade(@white, 10%); }
-.d-background-opacity--white5   { background-color: fade(@white, 5%); }
-.d-background-opacity--white0   { background-color: fade(@white, 0%); }
-
-//  --  SLATE
-.d-background-opacity--slate95  { background-color: fade(@slate, 95%); }
-.d-background-opacity--slate90  { background-color: fade(@slate, 90%); }
-.d-background-opacity--slate85  { background-color: fade(@slate, 85%); }
-.d-background-opacity--slate80  { background-color: fade(@slate, 80%); }
-.d-background-opacity--slate75  { background-color: fade(@slate, 75%); }
-.d-background-opacity--slate50  { background-color: fade(@slate, 50%); }
-.d-background-opacity--slate25  { background-color: fade(@slate, 25%); }
-.d-background-opacity--slate15  { background-color: fade(@slate, 15%); }
-.d-background-opacity--slate10  { background-color: fade(@slate, 10%); }
-.d-background-opacity--slate5   { background-color: fade(@slate, 5%); }
-.d-background-opacity--slate0   { background-color: fade(@slate, 0%); }
-
-
-//  $$  GENERIC OPACITY CLASSES
-//  ----------------------------------------------------------------------------
-//  Older variables and classes. Will be deprecated in a future version
-.d-opacity0                     { opacity: 0; }
-.d-opacity5                     { opacity: .05; }
-.d-opacity10                    { opacity: .1; }
-.d-opacity20                    { opacity: .2; }
-.d-opacity25                    { opacity: .25; }
-.d-opacity30                    { opacity: .3; }
-.d-opacity40                    { opacity: .4; }
-.d-opacity50                    { opacity: .5; }
-.d-opacity60                    { opacity: .6; }
-.d-opacity70                    { opacity: .7; }
-.d-opacity75                    { opacity: .75; }
-.d-opacity80                    { opacity: .8; }
-.d-opacity90                    { opacity: .9; }
-.d-opacity100                   { opacity: 1; }
-
-//  New classes. Use these moving forward
 .d-o0                           { opacity: 0 !important; }
 .d-o5                           { opacity: .05 !important; }
 .d-o10                          { opacity: .1 !important; }
@@ -367,20 +85,26 @@
 
 
 //  ============================================================================
-//  $   BOX SHADOWS
+//  $   CURSORS
 //  ----------------------------------------------------------------------------
-//  Older variables and classes. Will be deprecated in a future version
-.d-box-shadow--none             { box-shadow: @box-shadow--none; }
-.d-box-shadow--sm               { box-shadow: @box-shadow--sm; }
-.d-box-shadow--md               { box-shadow: @box-shadow--md; }
-.d-box-shadow--lg               { box-shadow: @box-shadow--lg; }
-.d-box-shadow--xl               { box-shadow: @box-shadow--xl; }
-.d-box-shadow--card             { box-shadow: @box-shadow--card; }
-
-//  New classes. Use these moving forward
-.d-bs-sm                        { box-shadow: @box-shadow--sm !important; }
-.d-bs-md                        { box-shadow: @box-shadow--md !important; }
-.d-bs-lg                        { box-shadow: @box-shadow--lg !important; }
-.d-bs-xl                        { box-shadow: @box-shadow--xl !important; }
-.d-bs-card                      { box-shadow: @box-shadow--card !important; }
-.d-bs-unset                     { box-shadow: unset !important; }
+.d-c-menu                       { cursor: context-menu !important; }
+.d-c-help                       { cursor: help !important; }
+.d-c-pointer                    { cursor: pointer !important; }
+.d-c-help                       { cursor: help !important; }
+.d-c-progress                   { cursor: progress !important; }
+.d-c-wait                       { cursor: wait !important; }
+.d-c-crosshair                  { cursor: crosshair !important; }
+.d-c-text                       { cursor: text !important; }
+.d-c-move                       { cursor: move !important; }
+.d-c-copy                       { cursor: copy !important; }
+.d-c-not-allowed                { cursor: not-allowed !important; }
+.d-c-grab                       { cursor: grab !important; }
+.d-c-grabbing                   { cursor: grabbing !important; }
+.d-c-all-scroll                 { cursor: all-scroll !important; }
+.d-c-col-resize                 { cursor: col-resize !important; }
+.d-c-row-resize                 { cursor: row-resize !important; }
+.d-c-zoom-in                    { cursor: zoom-in !important; }
+.d-c-zoom-out                   { cursor: zoom-out !important; }
+.d-c-auto                       { cursor: auto !important; }
+.d-c-default                    { cursor: default !important; }
+.d-c-none                       { cursor: none !important; }

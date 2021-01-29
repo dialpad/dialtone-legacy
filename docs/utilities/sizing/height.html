@@ -1,0 +1,127 @@
+---
+layout: page
+title: Height
+description: Utilities to control an element's height.
+---
+<section class="d-stack16">
+    {% header "h2", "Classes" %}
+    <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
+        <table class="d-table">
+            <thead>
+                <tr>
+                    <th scope="col" class="d-w30p">Class</th>
+                    <th scope="col">Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% assign percentages = width-height.percentage | split: ", " %}
+                {% for i in percentages %}
+                <tr>
+                    <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-h{{ i }}p</th>
+                    <td class="d-ff-mono d-fc-teal-500 d-fs12">height: {{ i }}% !important;</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            <tbody>
+                {% assign fixed = width-height.fixed | split: ", " %}
+                {% for i in fixed %}
+                <tr>
+                    <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-h{{ i }}</th>
+                    <td class="d-ff-mono d-fc-teal-500 d-fs12">height: {{ i }}px !important;</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            <tbody>
+                <tr>
+                    <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-h100vh</th>
+                    <td class="d-ff-mono d-fc-teal-500 d-fs12">height: 100vh !important;</td>
+                </tr>
+                {% assign fixed = width-height.other | split: ", " %}
+                {% for i in fixed %}
+                <tr>
+                    <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-h-{{ i }}</th>
+                    <td class="d-ff-mono d-fc-teal-500 d-fs12">height: {{ i }} !important;</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Percentages" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-h{n}p</code> to set a percentage height for an element.</p>
+    </header>
+    <aside class="d-bar8 d-of-hidden">
+        <header class="d-d-flex d-jc-center d-p24 d-bgc-green-100 d-bgo50 d-w100p d-h216 d-flow16">
+            <div class="d-fl-center d-py16 d-px8 d-w64 d-h40p d-bgc-green-400 d-bar4 d-fs24 d-fc-white d-fw-bold d-ta-center">1</div>
+            <div class="d-fl-center d-py16 d-px8 d-w64 d-h60p d-bgc-green-400 d-bar4 d-fs24 d-fc-white d-fw-bold d-ta-center">2</div>
+            <div class="d-fl-center d-py16 d-px8 d-w64 d-h80p d-bgc-green-400 d-bar4 d-fs24 d-fc-white d-fw-bold d-ta-center">3</div>
+            <div class="d-fl-center d-py16 d-px8 d-w64 d-h100p d-bgc-green-400 d-bar4 d-fs24 d-fc-white d-fw-bold d-ta-center">4</div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+{% highlight html linenos %}
+<div class="d-h216">
+    <div class="d-h40p">1</div>
+    <div class="d-h60p">2</div>
+    <div class="d-h80p">3</div>
+    <div class="d-h100p">4</div>
+</div>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Fixed" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-h{n}</code> to set a fixed height for an element.</p>
+    </header>
+    <aside class="d-bar8 d-of-hidden">
+        <header class="d-d-flex d-jc-center d-p24 d-bgc-blue-100 d-bgo50 d-w100p d-hmn264 d-flow16 d-of-y-scroll">
+            <div class="d-fl-center d-py16 d-px8 d-w64 d-h102 d-bgc-blue-400 d-bar4 d-fs24 d-fc-white d-fw-bold d-ta-center">1</div>
+            <div class="d-fl-center d-py16 d-px8 d-w64 d-h332 d-bgc-blue-400 d-bar4 d-fs24 d-fc-white d-fw-bold d-ta-center">2</div>
+            <div class="d-fl-center d-py16 d-px8 d-w64 d-h512 d-bgc-blue-400 d-bar4 d-fs24 d-fc-white d-fw-bold d-ta-center">3</div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+{% highlight html linenos %}
+<div class="d-hmn264">
+    <div class="d-h102">1</div>
+    <div class="d-h332">2</div>
+    <div class="d-h512">3</div>
+</div>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Screen" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-h100vh</code> to have an element cover the user's viewport.</p>
+    </header>
+    <aside class="d-bar8 d-of-hidden">
+        <header class="d-ps-relative d-d-flex d-jc-center d-p24 d-bgc-yellow-100 d-bgo50 d-w100p d-h3 d-flow16 d-of-y-scroll">
+            <div class="d-fl-center d-py16 d-px8 d-w100vw d-h100vh d-bgc-yellow-400 d-bar4 d-fs24 d-fc-dark d-fw-bold d-ta-center">Viewport</div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+{% highlight html linenos %}
+<div class="d-h100vh">...</div>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Auto" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-h-auto</code> have the browser calculate and select a height.</p>
+    </header>
+    <aside class="d-bar8 d-of-hidden">
+        <header class="d-ps-relative d-d-flex d-jc-center d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmn216 d-flow16">
+            <div class="d-fl-center d-py16 d-px8 d-w100p d-h-auto d-bgc-pink-400 d-bar4 d-fs24 d-fc-white d-fw-bold d-ta-center">Auto</div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+{% highlight html linenos %}
+<div class="d-h-auto">...</div>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>

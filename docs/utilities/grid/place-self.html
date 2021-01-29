@@ -1,0 +1,134 @@
+---
+layout: page
+title: Place Items
+description: Utilities for controlling a grid item's alignment along their block and inline axis directions.
+---
+<section class="d-stack16">
+    {% header "h2", "Classes" %}
+    <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
+        <table class="d-table">
+            <thead>
+                <tr>
+                    <th scope="col" class="d-w30p">Class</th>
+                    <th scope="col">Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% assign content = "center, end, start, stretch" | split: ", " %}
+                {% for c in content %}
+                    {% assign items = "center, end, start, stretch" | split: ", " %}
+                    {% for i in items %}
+                    <tr>
+                        <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-pls-{{ c }}{% if i != c %}-{{ i }}{% endif %}</th>
+                        <td class="d-ff-mono d-fc-teal-500 d-fs12">place-self: {{ c }}{% if i != c %} {{ i }}{% endif %} !important;</td>
+                    </tr>
+                    {% endfor %}
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Stretch" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-pls-stretch{-n}</code> to stretch grid items along their block and inline axis.</p>
+    </header>
+    <aside class="d-bar8 d-of-hidden">
+        <header class="d-fl-center d-fd-column d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn102">
+            <div class="d-d-grid d-g-cols2 d-gg16 d-p16 d-w100p d-hmn216 d-bar8 d-bgc-purple-100">
+                <div class="d-fl-center d-pls-stretch d-p16 d-bgc-purple-400 d-bar4 d-fs24 d-fc-white d-fw-bold">1</div>
+                <div class="d-fl-center d-p16 d-w64 d-h64 d-bgc-purple-400 d-bar4 d-fs24 d-fc-white d-fw-bold d-o50">2</div>
+                <div class="d-fl-center d-p16 d-w64 d-h64 d-bgc-purple-400 d-bar4 d-fs24 d-fc-white d-fw-bold d-o50">3</div>
+                <div class="d-fl-center d-p16 d-w64 d-h64 d-bgc-purple-400 d-bar4 d-fs24 d-fc-white d-fw-bold d-o50">4</div>
+            </div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+{% highlight html linenos %}
+<div class="d-d-grid d-g-cols2">
+    <div class="d-pls-stretch">1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+</div>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Start" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-pls-start{-n}</code> to align a grid item along the start of their block and/or inline axis.</p>
+    </header>
+    <aside class="d-bar8 d-of-hidden">
+        <header class="d-fl-center d-fd-column d-p24 d-bgc-green-100 d-bgo50 d-w100p d-hmn102">
+            <div class="d-d-grid d-g-cols2 d-gg16 d-p16 d-w100p d-h216d-bar8 d-bgc-green-100">
+                <div class="d-fl-center d-pls-start d-p16 d-w64 d-h64 d-bgc-green-400 d-bar4 d-fs24 d-fc-white d-fw-bold">1</div>
+                <div class="d-fl-center d-p16 d-bgc-green-400 d-bar4 d-fs24 d-fc-white d-fw-bold d-o50">2</div>
+                <div class="d-fl-center d-p16 d-bgc-green-400 d-bar4 d-fs24 d-fc-white d-fw-bold d-o50">3</div>
+                <div class="d-fl-center d-p16 d-bgc-green-400 d-bar4 d-fs24 d-fc-white d-fw-bold d-o50">4</div>
+            </div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+{% highlight html linenos %}
+<div class="d-d-grid d-g-cols2">
+    <div class="d-pls-start">1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+</div>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "End" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-pls-end{-n}</code> to align a grid item along the end of their block and/or inline axis.</p>
+    </header>
+    <aside class="d-bar8 d-of-hidden">
+        <header class="d-fl-center d-fd-column d-p24 d-bgc-green-100 d-bgo50 d-w100p d-hmn102">
+            <div class="d-d-grid d-g-cols2 d-gg16 d-p16 d-w100p d-h216d-bar8 d-bgc-blue-100">
+                <div class="d-fl-center d-pls-end d-p16 d-w64 d-h64 d-bgc-blue-400 d-bar4 d-fs24 d-fc-white d-fw-bold">1</div>
+                <div class="d-fl-center d-p16 d-bgc-blue-400 d-bar4 d-fs24 d-fc-white d-fw-bold d-o50">2</div>
+                <div class="d-fl-center d-p16 d-bgc-blue-400 d-bar4 d-fs24 d-fc-white d-fw-bold d-o50">3</div>
+                <div class="d-fl-center d-p16 d-bgc-blue-400 d-bar4 d-fs24 d-fc-white d-fw-bold d-o50">4</div>
+            </div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+{% highlight html linenos %}
+<div class="d-d-grid d-g-cols2">
+    <div class="d-pls-stretch">1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+</div>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Center" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-pls-center{-n}</code> to align a grid item along the center of their block and/or inline axis.</p>
+    </header>
+    <aside class="d-bar8 d-of-hidden">
+        <header class="d-fl-center d-fd-column d-p24 d-bgc-red-100 d-bgo50 d-w100p d-hmn102">
+            <div class="d-d-grid d-g-cols2 d-gg16 d-p16 d-w100p d-h216d-bar8 d-bgc-red-100">
+                <div class="d-fl-center d-pls-center d-p16 d-w64 d-h64 d-bgc-red-400 d-bar4 d-fs24 d-fc-white d-fw-bold">1</div>
+                <div class="d-fl-center d-p16 d-bgc-red-400 d-bar4 d-fs24 d-fc-white d-fw-bold d-o50">2</div>
+                <div class="d-fl-center d-p16 d-bgc-red-400 d-bar4 d-fs24 d-fc-white d-fw-bold d-o50">3</div>
+                <div class="d-fl-center d-p16 d-bgc-red-400 d-bar4 d-fs24 d-fc-white d-fw-bold d-o50">4</div>
+            </div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+{% highlight html linenos %}
+<div class="d-d-grid d-g-cols2">
+    <div class="d-pls-center">1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+</div>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>

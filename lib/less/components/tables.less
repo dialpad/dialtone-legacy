@@ -16,29 +16,24 @@
     box-sizing: border-box;
 
     display: table;
-    margin: @spacing0;
+    margin: var(--su0);
     max-width: 100%;
     width: 100%;
     border-spacing: 0;
     border-collapse: collapse;
-    font-size: var(--fs12);
+    font-size: var(--fs14);
     line-height: var(--lh-normal);
 
     th,
     td {
-        padding: @spacing8;
-        border-bottom: @border-width1 solid var(--ash-dark);
+        padding: var(--su8) var(--su4);
+        border-bottom: var(--su1) solid var(--black-200);
         text-align: left;
     }
 
     thead th {
-        padding-top: @spacing12;
-        padding-bottom: @spacing12;
-        border-bottom-color: var(--ash-darker);
-        text-transform: uppercase;
-        font-weight: 500;
-        font-size: var(--fs11);
-        line-height: var(--lh-tigher);
+        font-weight: var(--fw-bold);
+        line-height: var(--lh-tight);
     }
 
     tbody tr:last-of-type {
@@ -51,7 +46,7 @@
     tbody + tbody tr:first-of-type {
         td,
         th {
-            border-top: @border-width4 solid var(--ash-dark);
+            border-top: var(--su4) solid var(--black-200);
         }
     }
 }
@@ -62,7 +57,7 @@
 .d-table--inverted {
     th,
     td {
-        border-bottom-color: var(--ash-dark);
+        border-bottom-color: var(--black-100);
         color: var(--white);
     }
     thead th {
@@ -77,5 +72,7 @@
 //  $   STRIPED ROW BACKGROUNDS
 //  ----------------------------------------------------------------------------
 .d-table--striped {
-    tr:nth-child(even) { background-color: hsl(var(--ash-dark-h),var(--ash-dark-s),calc(var(--ash-dark-l) + 2.5)); }
+    tr:nth-child(even) {
+        background-color: hsl(var(--black-100-h) var(--black-100-s) calc(var(--black-100-l) + 2.5%));
+    }
 }

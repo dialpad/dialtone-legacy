@@ -1,0 +1,73 @@
+---
+layout: page
+title: Text Transform
+description: Utilities for controlling an element's text transform.
+---
+<section class="d-stack16">
+    {% header "h2", "Classes" %}
+    <table class="d-table">
+        <thead>
+            <tr>
+                <th scope="col" class="d-w25p">Class</th>
+                <th scope="col">Output</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% assign transform = type.transform | split: ", " %}
+            {% for i in transform %}
+                <tr>
+                    <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-tt-{{ i }}</th>
+                    <td class="d-ff-mono d-fc-teal-500 d-fs12">text-transform: {{ i }} !important;</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Uppercase" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-tt-uppercase</code> to uppercase an element's text.</p>
+    </header>
+    <aside class="d-bar8 d-of-hidden">
+        <header class="d-fl-center d-p24 d-bgc-green-100 d-bgo50 d-w100p d-hmn102">
+            <p class="d-fs24 d-fc-green-400 d-tt-uppercase">The quick brown fox jumps over the lazy dog.</p>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+{% highlight html linenos %}
+<p class="d-tt-uppercase">...</p>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Lowercase" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-tt-lowercase</code> to lowercase an element's text.</p>
+    </header>
+    <aside class="d-bar8 d-of-hidden">
+        <header class="d-fl-center d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn102">
+            <p class="d-fs24 d-fc-purple-400 d-tt-lowercase">The quick brown fox jumps over the lazy dog.</p>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+{% highlight html linenos %}
+<p class="d-tt-lowercase">...</p>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Capitalize" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-tt-capitalize</code> to capitalize an element's text.</p>
+    </header>
+    <aside class="d-bar8 d-of-hidden">
+        <header class="d-fl-center d-p24 d-bgc-blue-100 d-bgo50 d-w100p d-hmn102">
+            <p class="d-fs24 d-fc-blue-400 d-tt-capitalize">The quick brown fox jumps over the lazy dog.</p>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+{% highlight html linenos %}
+<p class="d-tt-capitalize">...</p>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>
