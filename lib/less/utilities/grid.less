@@ -20,6 +20,7 @@
     //  Grid Layout Variables
     sidebar-width:              minmax(20rem, 30rem);
     content-width:              minmax(32rem, 90ch);
+    toc-width:                  21.6rem;
     header-height:              minmax(6.4rem, min-content);
     content-height:             minmax(64rem, max-content);
 
@@ -46,6 +47,11 @@
     grid-auto-columns: minmax(min-content, auto);
 }
 
+.d-gl-toc {
+    grid-template-areas: "sidebar content toc";
+    grid-template-columns: [sidebar-start] var(--sidebar-width) [sidebar-end content-start] var(--content-width) [content-end toc-start] var(--toc-width) [toc-end];
+}
+
 
 //  ============================================================================
 //  $   GRID AREAS
@@ -53,6 +59,7 @@
 .d-ga-sidebar          { grid-area: sidebar !important; }
 .d-ga-content          { grid-area: content !important; }
 .d-ga-header           { grid-area: header !important; }
+.d-ga-toc              { grid-area: toc !important; }
 
 
 //  ============================================================================
