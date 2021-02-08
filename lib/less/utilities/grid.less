@@ -7,14 +7,20 @@
 //  visit https://dialpad.design/utilities/grid
 //
 //  TABLE OF CONTENTS
-//  • Container
-//  • Layouts
-//  • Areas
-//  • Spans
-//  • Gutters
+//  • GRID VARIABLES
+//  • COLUMNS
+//  • GAP
+//  • JUSTIFY ITEMS
+//  • JUSTIFY SELF
+//  • LAYOUTS
+//  • PLACE CONTENT
+//  • PLACE ITEMS
+//  • PLACE SELF
+//  • ROWS
+//  • AREAS
 //
 //  ============================================================================
-//  $   GRID CSS VARIABLES
+//  $   GRID VARIABLES
 //  ----------------------------------------------------------------------------
 @grid-vars: {
     //  Grid Layout Variables
@@ -31,64 +37,7 @@
 
 
 //  ============================================================================
-//  $   GRID LAYOUTS
-//  ----------------------------------------------------------------------------
-.d-gl-sidebar {
-    grid-template-areas: "sidebar content";
-    grid-template-columns: [sidebar-start] var(--sidebar-width) [sidebar-end content-start] var(--content-width) [content-end];
-}
-
-.d-gl-header {
-    grid-template-areas: "header"
-                         "content";
-    grid-template-rows: [header-start] var(--header-height) [header-end content-start] var(--content-height) [content-end];
-    grid-auto-rows: 1fr;
-    grid-auto-columns: minmax(min-content, auto);
-}
-
-
-//  ============================================================================
-//  $   GRID AREAS
-//  ----------------------------------------------------------------------------
-.d-ga-sidebar          { grid-area: sidebar !important; }
-.d-ga-content          { grid-area: content !important; }
-.d-ga-header           { grid-area: header !important; }
-
-
-//  ============================================================================
-//  $   GRID GAP
-//  ============================================================================
-//      Defines the size of grid "gaps" (lines). We generate a gap for
-//      each defined spacing unit.
-//  ----------------------------------------------------------------------------
-//  All Gaps
-#d-internals #auto-generate(
-    '.d-gg',
-    { .template(@value) { grid-gap: @value !important; } },
-    @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64
-);
-
-//  Row Gaps
-#d-internals #auto-generate(
-    '.d-grg',
-    { .template(@value) { grid-row-gap: @value !important; } },
-    @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64
-);
-
-//  Column Gaps
-#d-internals #auto-generate(
-    '.d-gcg',
-    { .template(@value) { grid-column-gap: @value !important; } },
-    @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64
-);
-
-.d-gcg-unset        { grid-column-gap: unset !important; }
-.d-grg-unset        { grid-row-gap: unset !important; }
-.d-gg-unset         { grid-gap: unset !important; }
-
-
-//  ============================================================================
-//  $   GRID COLUMNS
+//  $   COLUMNS
 //  ----------------------------------------------------------------------------
 #d-internals #auto-generate-no-convert(
     '.d-g-cols',
@@ -129,44 +78,35 @@
 
 
 //  ============================================================================
-//  $   GRID ROWS
+//  $   GAP
+//  ============================================================================
+//      Defines the size of grid "gaps" (lines). We generate a gap for
+//      each defined spacing unit.
 //  ----------------------------------------------------------------------------
-#d-internals #auto-generate-no-convert(
-    '.d-g-rows',
-    { .template(@value) { grid-template-rows: [full-start] repeat(@value, [col-start] minmax(0,1fr) [col-end]) [full-end] !important; } },
-    1 2 3 4 5 6 7 8 9 10 11 12
+//  All Gaps
+#d-internals #auto-generate(
+    '.d-gg',
+    { .template(@value) { grid-gap: @value !important; } },
+    @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64
 );
 
-//  --  ROW START
-#d-internals #auto-generate-no-convert(
-    '.d-grs',
-    { .template(@value) { grid-row-start: @value !important; } },
-    1 2 3 4 5 6 7 8 9 10 11 12
+//  Row Gaps
+#d-internals #auto-generate(
+    '.d-grg',
+    { .template(@value) { grid-row-gap: @value !important; } },
+    @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64
 );
 
-//  --  ROW END
-#d-internals #auto-generate-no-convert(
-    '.d-gre',
-    { .template(@value) { grid-row-end: @value !important; } },
-    1 2 3 4 5 6 7 8 9 10 11 12
+//  Column Gaps
+#d-internals #auto-generate(
+    '.d-gcg',
+    { .template(@value) { grid-column-gap: @value !important; } },
+    @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64
 );
 
-//  --  ROW SPAN
-#d-internals #auto-generate-no-convert(
-    '.d-gr',
-    { .template(@value) { grid-row: span @value ~" / " span @value !important; } },
-    1 2 3 4 5 6 7 8 9 10 11 12
-);
-
-.d-gr-full          { grid-row: 1 ~" / " -1 !important; }
-
-.d-grs-auto         { grid-row-start: auto !important; }
-.d-gre-auto         { grid-row-end: auto !important; }
-.d-gr-auto          { grid-row: auto !important; }
-
-.d-grs-unset        { grid-row-start: unset !important; }
-.d-gre-unset        { grid-row-end: unset !important; }
-.d-gr-unset         { grid-row: unset !important; }
+.d-gcg-unset        { grid-column-gap: unset !important; }
+.d-grg-unset        { grid-row-gap: unset !important; }
+.d-gg-unset         { grid-gap: unset !important; }
 
 
 //  ============================================================================
@@ -209,6 +149,29 @@
 .d-js-legacy                 { justify-self: legacy !important; }
 .d-js-auto                   { justify-self: auto !important; }
 .d-js-unset                  { justify-self: unset !important; }
+
+
+//  ============================================================================
+//  $   LAYOUTS
+//  ----------------------------------------------------------------------------
+.d-gl-sidebar {
+    grid-template-areas: "sidebar content";
+    grid-template-columns: [sidebar-start] var(--sidebar-width) [sidebar-end content-start] var(--content-width) [content-end];
+}
+
+.d-gl-header {
+    grid-template-areas: "header"
+                         "content";
+    grid-template-rows: [header-start] var(--header-height) [header-end content-start] var(--content-height) [content-end];
+    grid-auto-rows: 1fr;
+    grid-auto-columns: minmax(min-content, auto);
+}
+
+//  $   GRID AREAS
+//  ----------------------------------------------------------------------------
+.d-ga-sidebar          { grid-area: sidebar !important; }
+.d-ga-content          { grid-area: content !important; }
+.d-ga-header           { grid-area: header !important; }
 
 
 //  ============================================================================
@@ -330,3 +293,44 @@
 .d-pls-legacy                 { place-self: legacy !important; }
 .d-pls-auto                   { place-self: auto !important; }
 .d-pls-unset                  { place-self: unset !important; }
+
+
+//  ============================================================================
+//  $   GRID ROWS
+//  ----------------------------------------------------------------------------
+#d-internals #auto-generate-no-convert(
+    '.d-g-rows',
+    { .template(@value) { grid-template-rows: [full-start] repeat(@value, [col-start] minmax(0,1fr) [col-end]) [full-end] !important; } },
+    1 2 3 4 5 6 7 8 9 10 11 12
+);
+
+//  --  ROW START
+#d-internals #auto-generate-no-convert(
+    '.d-grs',
+    { .template(@value) { grid-row-start: @value !important; } },
+    1 2 3 4 5 6 7 8 9 10 11 12
+);
+
+//  --  ROW END
+#d-internals #auto-generate-no-convert(
+    '.d-gre',
+    { .template(@value) { grid-row-end: @value !important; } },
+    1 2 3 4 5 6 7 8 9 10 11 12
+);
+
+//  --  ROW SPAN
+#d-internals #auto-generate-no-convert(
+    '.d-gr',
+    { .template(@value) { grid-row: span @value ~" / " span @value !important; } },
+    1 2 3 4 5 6 7 8 9 10 11 12
+);
+
+.d-gr-full          { grid-row: 1 ~" / " -1 !important; }
+
+.d-grs-auto         { grid-row-start: auto !important; }
+.d-gre-auto         { grid-row-end: auto !important; }
+.d-gr-auto          { grid-row: auto !important; }
+
+.d-grs-unset        { grid-row-start: unset !important; }
+.d-gre-unset        { grid-row-end: unset !important; }
+.d-gr-unset         { grid-row: unset !important; }
