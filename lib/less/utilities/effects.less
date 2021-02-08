@@ -7,11 +7,116 @@
 //  visit https://dialpad.design/utilities/effects
 //
 //  TABLE OF CONTENTS
+//  • ANIMATIONS
+//      - GENERIC LOADING
+//      - DIALPAD BAR ANIMATION
 //  • BOX SHADOWS
 //  • OPACITY
 //  • TRANSITIONS
 //
 //
+//  ============================================================================
+//  $   ANIMATIONS
+//  ----------------------------------------------------------------------------
+//  $$  GENERIC LOADING
+//      This could be applied to an empty div or a psuedo element (ie ::before)
+//  ----------------------------------------------------------------------------
+@keyframes d-loading-circle {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+//  $$   DIALPAD BAR ANIMATION
+//  ----------------------------------------------------------------------------
+@keyframes d-loading-bars__short {
+  0% {
+    min-height: @su4;
+    opacity: 0;
+    transform: translateY(-@su16);
+  }
+  5% {
+    min-height: @su4;
+    opacity: 0.5;
+    transform: translateY(@su16);
+  }
+  10% {
+    opacity: 1;
+    min-height: 1rem;
+    transform: translateY(-@su2);
+  }
+  15% {
+    opacity: 1;
+    transform: translateY(@su1);
+  }
+  20%, 70% {
+    opacity: 1;
+    min-height: 1rem;
+    transform: translateY(0);
+  }
+  75% {
+    opacity: 1;
+    min-height: 0.75rem;
+    transform: translateY(1rem);
+  }
+  80% {
+    opacity: 0.5;
+    min-height: @su4;
+    transform: translateY(-@su4);
+  }
+  85%, 100% {
+    opacity: 0;
+    min-height: @su4;
+    transform: translateY(@su16);
+  }
+}
+@keyframes d-loading-bars__tall {
+  0% {
+    min-height: @su4;
+    opacity: 0;
+    transform: translateY(-@su16);
+  }
+  5% {
+    min-height: @su4;
+    opacity: 0.5;
+    transform: translateY(@su16);
+  }
+  10% {
+    opacity: 1;
+    min-height: 1rem;
+    transform: translateY(-@su2);
+  }
+  15% {
+    opacity: 1;
+    min-height: 2.2rem;
+    transform: translateY(@su1);
+  }
+  20%, 70% {
+    opacity: 1;
+    min-height: 2.2rem;
+    transform: translateY(0);
+  }
+  75% {
+    opacity: 1;
+    min-height: @su16;
+    transform: translateY(1rem);
+  }
+  80% {
+    opacity: 1;
+    min-height: 1rem;
+    transform: translateY(-@su4);
+  }
+  85%, 100% {
+    opacity: 0;
+    min-height: @su4;
+    transform: translateY(@su16);
+  }
+}
+
+
 //  ============================================================================
 //  $   BOX SHADOWS
 //  ----------------------------------------------------------------------------
