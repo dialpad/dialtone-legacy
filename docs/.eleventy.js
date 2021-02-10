@@ -123,6 +123,11 @@ module.exports = function(eleventyConfig) {
     ${content}</footer>`;
     });
 
+    // Add shortcode for basic paragraph
+    eleventyConfig.addPairedShortcode("paragraph", function(content) {
+        return `<p class="d-w75ch d-wmx764 d-fs18 d-lh6">${content}</p>`;
+    });
+
     //  Add submenu navigation
     eleventyConfig.addPlugin(pluginTOC, {tags: ['h2', 'h3']});
 
