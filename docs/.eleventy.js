@@ -98,6 +98,31 @@ module.exports = function(eleventyConfig) {
         return output;
     });
 
+    // Add shortcode for <code> tag
+    eleventyConfig.addPairedShortcode("code", function(content) {
+        return `<code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">${content}</code>`;
+    });
+
+    // Add shortcode for code well wrapper
+    eleventyConfig.addPairedShortcode("codeWell", function(content) {
+        return `<aside class="d-bar8 d-of-hidden">${content}</aside>`;
+    });
+
+    // Add shortcode for code well header
+    eleventyConfig.addPairedShortcode("codeWellHeader", function(content, color, minHeight) {
+        if (!color) {
+            return `<header class="d-fl-center d-fd-column d-p24 d-bgc-black-100 d-bgo50 d-w100p ${minHeight}">${content}</header>`;
+        } else {
+            return `<header class="d-fl-center d-fd-column d-p24 d-bgc-${color}-100 d-bgo50 d-w100p ${minHeight}">${content}</header>`;
+        }
+    });
+
+    // Add shortcode for code well footer
+    eleventyConfig.addPairedShortcode("codeWellFooter", function(content) {
+        return `<footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+    ${content}</footer>`;
+    });
+
     //  Add submenu navigation
     eleventyConfig.addPlugin(pluginTOC, {tags: ['h2', 'h3']});
 
