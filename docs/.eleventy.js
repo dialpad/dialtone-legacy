@@ -98,7 +98,7 @@ module.exports = function(eleventyConfig) {
         return output;
     });
 
-    // Add shortcode for <code> tag
+    // Add shortcode for inline <code> tag
     eleventyConfig.addPairedShortcode("code", function(content) {
         return `<code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">${content}</code>`;
     });
