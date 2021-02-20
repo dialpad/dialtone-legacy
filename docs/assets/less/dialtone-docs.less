@@ -9,7 +9,8 @@
 //
 //  TABLE OF CONTENTS
 //  • IMPORTS
-//  • SUB-NAVIGATION MENU
+//  • TOC
+//  • LAYOUT
 //
 //  ============================================================================
 //  $   IMPORTS
@@ -19,7 +20,7 @@
 
 
 //  ============================================================================
-//  $   SUB-NAVIGATION MENU
+//  $   TOC
 //      Because we're using a third-party plugin to generate the subnav menu,
 //      we can't add utility classes directly to the HTML. So we have to use
 //      custom CSS here instead.
@@ -71,4 +72,15 @@
             background-color: var(--primary-color);
         }
     }
+}
+
+//  ============================================================================
+//  $   LAYOUT
+//      Because the doc site needs layout specifications that aren't
+//      appropriate to ship as part of Dialtone.
+//  ----------------------------------------------------------------------------
+.d-ga-toc { grid-area: toc !important; }
+.d-gl-docsite {
+    grid-template-areas: "sidebar content toc";
+    grid-template-columns: [sidebar] minmax(min-content, 30rem) [content] minmax(min-content, 75rem) [toc] minmax(min-content, 21.6rem);
 }
