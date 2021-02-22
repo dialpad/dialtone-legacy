@@ -7,8 +7,7 @@
 //  visit https://dialpad.design/utilities/borders
 //
 //  TABLE OF CONTENTS
-//  • MIXINS
-//  • BACKGROUND GRADIENTS
+//  • INTERNALS/MIXINS
 //  • BACKGROUND ATTACHMENT
 //  • BACKGROUND CLIP
 //  • BACKGROUND POSITION
@@ -88,71 +87,6 @@
 #d-internals #gradient-classes(blue-800);
 #d-internals #gradient-classes(blue-700);
 
-//  ============================================================================
-//  $   BACKGROUND GRADIENTS
-//  ----------------------------------------------------------------------------
-.d-bgg-to-t         { background-image: linear-gradient(to top, var(--bgg-from) 0%, var(--bgg-to) 100%) !important; }
-.d-bgg-to-tr        { background-image: linear-gradient(to top right, var(--bgg-from) 0%, var(--bgg-to) 100%) !important; }
-.d-bgg-to-r         { background-image: linear-gradient(to right, var(--bgg-from) 0%, var(--bgg-to) 100%) !important; }
-.d-bgg-to-br        { background-image: linear-gradient(to bottom right, var(--bgg-from) 0%, var(--bgg-to) 100%) !important; }
-.d-bgg-to-b         { background-image: linear-gradient(to bottom, var(--bgg-from) 0%, var(--bgg-to) 100%) !important; }
-.d-bgg-to-bl        { background-image: linear-gradient(to bottom left, var(--bgg-from) 0%, var(--bgg-to) 100%) !important; }
-.d-bgg-to-l         { background-image: linear-gradient(to left, var(--bgg-from) 0%, var(--bgg-to) 100%) !important; }
-.d-bgg-to-tl        { background-image: linear-gradient(to top left, var(--bgg-from) 0%, var(--bgg-to) 100%) !important; }
-.d-bgg-radial       { background-image: radial-gradient(var(--bgg-from) 0%, var(--bgg-to) 100%) !important; }
-.d-bgg-conic        { background-image: conic-gradient(var(--bgg-from) 0%, var(--bgg-to) 100%) !important; }
-.d-bgg-none         { background-image: none !important; }
-.d-bgg-unset        { background-image: unset !important; }
-
-
-//  ============================================================================
-//  $   BACKGROUND PATTERNS
-//  ----------------------------------------------------------------------------
-//  --  BASE CLASS
-.d-bgg-pattern {
-    position: relative;
-    padding-left: var(--su24) !important;
-
-    &::after {
-        content: "";
-        position: absolute;
-        top: var(--su1);
-        bottom: var(--su1);
-        left: var(--su1);
-
-        min-width: 2rem;
-        min-height: 2rem;
-        border-radius: 0.3rem;
-        background-repeat: repeat-y;
-        background-position: top left;
-        background-clip: content-box;
-        background-image: var(--bgg-pattern);
-    }
-}
-
-//  --  EACH PATTERN
-.d-bgg-pattern-blob-dark              { --bgg-pattern: var(--bgg-pattern-blob-dark) !important; }
-.d-bgg-pattern-chevrons-dark          { --bgg-pattern: var(--bgg-pattern-chevrons-dark) !important; }
-.d-bgg-pattern-crosses-dark           { --bgg-pattern: var(--bgg-pattern-crosses-dark) !important; }
-.d-bgg-pattern-crosshatch-dark        { --bgg-pattern: var(--bgg-pattern-crosshatch-dark) !important; }
-.d-bgg-pattern-dot-dash-dark          { --bgg-pattern: var(--bgg-pattern-dot-dash-dark) !important; }
-.d-bgg-pattern-dots-circles-dark      { --bgg-pattern: var(--bgg-pattern-dots-circles-dark) !important; }
-.d-bgg-pattern-horz-stripes-dark      { --bgg-pattern: var(--bgg-pattern-horz-stripes-dark) !important; }
-.d-bgg-pattern-slanted-stripes-dark   { --bgg-pattern: var(--bgg-pattern-slanted-stripes-dark) !important; }
-.d-bgg-pattern-steps-dark             { --bgg-pattern: var(--bgg-pattern-steps-dark) !important; }
-.d-bgg-pattern-stripe-dark            { --bgg-pattern: var(--bgg-pattern-stripe-dark) !important; }
-
-.d-bgg-pattern-blob-light             { --bgg-pattern: var(--bgg-pattern-blob-light) !important; }
-.d-bgg-pattern-chevrons-light         { --bgg-pattern: var(--bgg-pattern-chevrons-light) !important; }
-.d-bgg-pattern-crosses-light          { --bgg-pattern: var(--bgg-pattern-crosses-light) !important; }
-.d-bgg-pattern-crosshatch-light       { --bgg-pattern: var(--bgg-pattern-crosshatch-light) !important; }
-.d-bgg-pattern-dot-dash-light         { --bgg-pattern: var(--bgg-pattern-dot-dash-light) !important; }
-.d-bgg-pattern-dots-circles-light     { --bgg-pattern: var(--bgg-pattern-dots-circles-light) !important; }
-.d-bgg-pattern-horz-stripes-light     { --bgg-pattern: var(--bgg-pattern-horz-stripes-light) !important; }
-.d-bgg-pattern-slanted-stripes-light  { --bgg-pattern: var(--bgg-pattern-slanted-stripes-light) !important; }
-.d-bgg-pattern-steps-light            { --bgg-pattern: var(--bgg-pattern-steps-light) !important; }
-.d-bgg-pattern-stripe-light           { --bgg-pattern: var(--bgg-pattern-stripe-light) !important; }
-
 
 //  ============================================================================
 //  $  BACKGROUND ATTACHMENT
@@ -207,3 +141,69 @@
 .d-bgs-var                      { background-size: var(--bgg-size, 100% 100%) !important; }
 .d-bgs-auto                     { background-size: auto !important; }
 .d-bgs-unset                    { background-size: unset !important; }
+
+
+//  ============================================================================
+//  $   GRADIENTS
+//  ----------------------------------------------------------------------------
+.d-bgg-to-t         { background-image: linear-gradient(to top, var(--bgg-from) 0%, var(--bgg-to) 100%) !important; }
+.d-bgg-to-tr        { background-image: linear-gradient(to top right, var(--bgg-from) 0%, var(--bgg-to) 100%) !important; }
+.d-bgg-to-r         { background-image: linear-gradient(to right, var(--bgg-from) 0%, var(--bgg-to) 100%) !important; }
+.d-bgg-to-br        { background-image: linear-gradient(to bottom right, var(--bgg-from) 0%, var(--bgg-to) 100%) !important; }
+.d-bgg-to-b         { background-image: linear-gradient(to bottom, var(--bgg-from) 0%, var(--bgg-to) 100%) !important; }
+.d-bgg-to-bl        { background-image: linear-gradient(to bottom left, var(--bgg-from) 0%, var(--bgg-to) 100%) !important; }
+.d-bgg-to-l         { background-image: linear-gradient(to left, var(--bgg-from) 0%, var(--bgg-to) 100%) !important; }
+.d-bgg-to-tl        { background-image: linear-gradient(to top left, var(--bgg-from) 0%, var(--bgg-to) 100%) !important; }
+.d-bgg-radial       { background-image: radial-gradient(var(--bgg-from) 0%, var(--bgg-to) 100%) !important; }
+.d-bgg-conic        { background-image: conic-gradient(var(--bgg-from) 0%, var(--bgg-to) 100%) !important; }
+.d-bgg-none         { background-image: none !important; }
+.d-bgg-unset        { background-image: unset !important; }
+
+
+//  ============================================================================
+//  $   PATTERNS
+//  ----------------------------------------------------------------------------
+//  --  BASE CLASS
+.d-bgg-pattern {
+    position: relative;
+    padding-left: var(--su24) !important;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: var(--su1);
+        bottom: var(--su1);
+        left: var(--su1);
+
+        min-width: 2rem;
+        min-height: 2rem;
+        border-radius: 0.3rem;
+        background-repeat: repeat-y;
+        background-position: top left;
+        background-clip: content-box;
+        background-image: var(--bgg-pattern);
+    }
+}
+
+//  --  EACH PATTERN
+.d-bgg-pattern-blob-dark              { --bgg-pattern: var(--bgg-pattern-blob-dark) !important; }
+.d-bgg-pattern-chevrons-dark          { --bgg-pattern: var(--bgg-pattern-chevrons-dark) !important; }
+.d-bgg-pattern-crosses-dark           { --bgg-pattern: var(--bgg-pattern-crosses-dark) !important; }
+.d-bgg-pattern-crosshatch-dark        { --bgg-pattern: var(--bgg-pattern-crosshatch-dark) !important; }
+.d-bgg-pattern-dot-dash-dark          { --bgg-pattern: var(--bgg-pattern-dot-dash-dark) !important; }
+.d-bgg-pattern-dots-circles-dark      { --bgg-pattern: var(--bgg-pattern-dots-circles-dark) !important; }
+.d-bgg-pattern-horz-stripes-dark      { --bgg-pattern: var(--bgg-pattern-horz-stripes-dark) !important; }
+.d-bgg-pattern-slanted-stripes-dark   { --bgg-pattern: var(--bgg-pattern-slanted-stripes-dark) !important; }
+.d-bgg-pattern-steps-dark             { --bgg-pattern: var(--bgg-pattern-steps-dark) !important; }
+.d-bgg-pattern-stripe-dark            { --bgg-pattern: var(--bgg-pattern-stripe-dark) !important; }
+
+.d-bgg-pattern-blob-light             { --bgg-pattern: var(--bgg-pattern-blob-light) !important; }
+.d-bgg-pattern-chevrons-light         { --bgg-pattern: var(--bgg-pattern-chevrons-light) !important; }
+.d-bgg-pattern-crosses-light          { --bgg-pattern: var(--bgg-pattern-crosses-light) !important; }
+.d-bgg-pattern-crosshatch-light       { --bgg-pattern: var(--bgg-pattern-crosshatch-light) !important; }
+.d-bgg-pattern-dot-dash-light         { --bgg-pattern: var(--bgg-pattern-dot-dash-light) !important; }
+.d-bgg-pattern-dots-circles-light     { --bgg-pattern: var(--bgg-pattern-dots-circles-light) !important; }
+.d-bgg-pattern-horz-stripes-light     { --bgg-pattern: var(--bgg-pattern-horz-stripes-light) !important; }
+.d-bgg-pattern-slanted-stripes-light  { --bgg-pattern: var(--bgg-pattern-slanted-stripes-light) !important; }
+.d-bgg-pattern-steps-light            { --bgg-pattern: var(--bgg-pattern-steps-light) !important; }
+.d-bgg-pattern-stripe-light           { --bgg-pattern: var(--bgg-pattern-stripe-light) !important; }

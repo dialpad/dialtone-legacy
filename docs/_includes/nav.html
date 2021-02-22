@@ -5,16 +5,27 @@
             {% assign slug = page.url | replace: '/',' ' | trunactewords: 2 | remove:'...' %}
             {% assign url = section.url | replace: '/',' ' | trunactewords: 2 | remove:'...' %}
             {% if slug contains url %}
-                {% if section.sections %}
-                <ul id="nav" class="d-ls-reset d-pr16 d-stack16">
-                    {% for section in section.sections %}
+                <!-- This is for navigation that doesn't categorize its nav items -->
+                {% if section.pages %}
+                    <ul id="nav" class="d-ls-reset d-pr16 d-stack4">
+                      {% for item in section.pages %}
+                          <li>
+                              <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4{% if page.url == item.url %} d-bgc-blue-100 d-bgo50{% endif %}" href="{{ item.url }}">{{ item.title }}</a>
+                          </li>
+                      {% endfor %}
+                    </ul>
+                {% endif %}
+                <!-- This is for navigation that DOES categorize its nav items -->
+                {% if section.subsections %}
+                <ul id="nav" class="d-ls-reset d-pr16 d-stack32">
+                    {% for subsection in section.subsections %}
                         <li>
-                            <div class="d-d-block d-px8 d-py2 d-fs14 d-lh6 d-fc-black-600 d-fw-bold">{{ section.title }}</div>
-                            {% if section.subpages %}
+                            <div class="d-d-block d-px8 d-py2 d-mb4 d-fs14 d-lh6 d-fc-black-600 d-fw-bold">{{ subsection.title }}</div>
+                            {% if subsection.pages %}
                                 <ul class="d-ls-reset d-stack4">
-                                    {% for link in section.subpages %}
+                                    {% for link in subsection.pages %}
                                         <li>
-                                            <a class="d-link d-td-none d-d-block d-px8 d-py2 d-fs14 d-lh6 d-bar4{% if page.url == link.url %} d-bgc-blue-100 d-bgo50{% endif %}" href="{{ link.url }}">{{ link.title }}</a>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4{% if page.url == link.url %} d-bgc-blue-100 d-bgo50{% endif %}" href="{{ link.url }}">{{ link.title }}</a>
                                         </li>
                                     {% endfor %}
                                 </ul>
