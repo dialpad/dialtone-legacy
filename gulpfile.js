@@ -82,7 +82,7 @@ var paths = {
     styles: {
         inputLib: './lib/less/dialtone.less',
         outputLib: './dist/css/',
-        inputDocs: './docs/assets/less/*.less',
+        inputDocs: './docs/assets/less/dialtone-docs.less',
         outputDocs: './docs/assets/css/',
     },
     svgs: {

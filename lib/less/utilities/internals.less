@@ -13,9 +13,6 @@
 //  ----------------------------------------------------------------------------
 #d-internal-config {
 
-    //  Breakpoints for our responsive classes
-    @breakpoints: 1264px, 980px, 640px, 480px;
-
     //  Do we want to generate font-face CSS?
     @generate-font-face:             true;
 
@@ -58,127 +55,6 @@
             .d\:@{nodot} {
                 @rules();
             }
-        }
-    }
-
-    //  ========================================================================
-    //  $   RESPONSIVENESS
-    //      #responsive renders a class and all responsive sizes.
-    //
-    //      USAGE:
-    //      #d-internals #responsive('.d-block', { display: block !important; })
-    //
-    //  ------------------------------------------------------------------------
-    #responsive(@class, @rules) {
-        @nodot-s: replace(@class, "^\.", "");
-        @nodot: ~"@{nodot-s}";
-
-        & when (@class = @nodot-s) {
-            error {
-                error: @CLASS-NAME-MUST-START-WITH-A-DOT;
-            }
-        }
-
-        .@{nodot} {
-            @rules();
-        }
-
-        #d-internals-collect-xl() {
-            .lg\:@{nodot} {
-                @rules();
-            };
-        }
-        #d-internals-collect-lg() {
-            .lg\:@{nodot} {
-                @rules();
-            };
-        }
-        #d-internals-collect-md() {
-            .md\:@{nodot} {
-                @rules();
-            };
-        }
-        #d-internals-collect-sm() {
-            .sm\:@{nodot} {
-                @rules();
-            };
-        }
-    }
-
-    #screen-xl(@rules, @force-selector: false) {
-        #d-internal-config();
-        #d-internals #responsive-generate(0, @rules, @breakpoints, 1, @force-selector);
-    }
-    #screen-lg(@rules, @force-selector: false) {
-        #d-internal-config();
-        #d-internals #responsive-generate(1, @rules, @breakpoints, 1, @force-selector);
-    }
-    #screen-md(@rules, @force-selector: false) {
-        #d-internal-config();
-        #d-internals #responsive-generate(2, @rules, @breakpoints, 1, @force-selector);
-    }
-    #screen-sm(@rules, @force-selector: false) {
-        #d-internal-config();
-        #d-internals #responsive-generate(3, @rules, @breakpoints, 1, @force-selector);
-    }
-
-
-    //  ------------------------------------------------------------------------
-    //  @bp-index values:
-    //      0 = large
-    //      1 = medium
-    //      2 = small
-    //
-    //  @start-index is the index number which is increases to exhaust the list.
-    //  ------------------------------------------------------------------------
-    #responsive-generate(@bp-index, @rules, @breakpoints, @start-index, @force-selector: false) when (@start-index < length(@breakpoints)) {
-
-        //  If the first list item is a string, it's a selector that is prepended to
-        //  the responsive class
-        & when (isstring(extract(@breakpoints, @start-index))) {
-
-            //  The actual breakpoint; "+1" to skip the (selector) string
-            @bp: extract(@breakpoints, @start-index + @bp-index + 1);
-
-            //  Convert the selector string into an identifier (i.e. remove the quotes)
-            @sel-s: extract(@breakpoints, @start-index);
-            @sel: ~"@{sel-s}";
-
-            @media (max-width: (@bp)) {
-                @{sel} & {
-                    @rules();
-                }
-            }
-
-            //  Recursively descend to handle the next breakpoint ("+5" for the
-            //  selector string and the four breakpoint values)
-            #d-internals #responsive-generate(@bp-index, @rules, @start-index + 5, @force-selector);
-        }
-
-        //  If the first list element is a number (i.e. pixel value), there is no
-        //  selector string
-        & when (isnumber(extract(@breakpoints, @start-index))) {
-
-            //  The actual breakpoint
-            @bp: extract(@breakpoints, @start-index + @bp-index);
-
-            & when not (@force-selector) {
-                @media (max-width: (@bp)) {
-                    @rules();
-                }
-            }
-
-            & when (force-selector) {
-                @media (max-width: (@bp)) {
-                    html & {
-                        @rules();
-                    }
-                }
-            }
-
-            //  Recursively descend to handle the next breakpoint ("+4" for the
-            //  four breakpoint values)
-            #d-internals #responsive-generate(@bp-index, @rules, @start-index + 4, @force-selector);
         }
     }
 
@@ -265,5 +141,184 @@
                 src: url("@{define-font-path}@{value}.woff2") format("woff2");
             };
         }));
+    }
+
+
+    //  ========================================================================
+    //  $   COLOR CLASS GENERATOR
+    //      Create a mixin to generate all the utility classes required. By doing it
+    //      this way, we are disabling the ability to use Dialtone utility classes as
+    //      a mixin. Previously we had allowed for utility classes to be used as
+    //      mixins, but because our overall CSS bundle size is growing exponentially,
+    //      Dialtone v6 removed this ability. It is now recommended to use CSS
+    //      variables (var(--color)). Less variables (@color) are also available,
+    //      but their use is discouraged.
+    //
+    //      USAGE:
+    //      #d-internals #color-classes(blue-600);
+    //
+    //  ------------------------------------------------------------------------
+    #color-classes(@color-name) {
+        //  --  FONT STYLES
+        .d-fc-@{color-name},
+        .h\:d-fc-@{color-name}:hover,
+        .f\:d-fc-@{color-name}:focus {
+            --fco: 100%;
+            color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--fco)) !important;
+        }
+        .f\:d-fc-@{color-name}:focus-within {
+            --fco: 100%;
+            color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--fco)) !important;
+        }
+        #d-internals #dark-mode('.d\:d-fc-@{color-name}', {
+            --fco: 100%;
+            color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--fco)) !important;
+        });
+
+
+        //  --  BORDER STYLES
+        .d-bc-@{color-name},
+        .h\:d-bc-@{color-name}:hover,
+        .f\:d-bc-@{color-name}:focus {
+            --bco: 100%;
+            border-color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--bco)) !important;
+        }
+        .f\:d-bc-@{color-name}:focus-within {
+            --bco: 100%;
+            border-color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--bco)) !important;
+        }
+        #d-internals #dark-mode('.d\:d-bc-@{color-name}', {
+            --bco: 100%;
+            border-color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--bco)) !important;
+        });
+
+        //  --  DIVIDER COLORS
+        .d-divide-@{color-name} > * + * {
+            --dco: 100%;
+            border-color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--dco)) !important;
+        }
+        #d-internals #dark-mode('.d\:d-divide-@{color-name} > * + *', {
+            --dco: 100%;
+            border-color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--dco)) !important;
+        });
+
+        //  --  BACKGROUND STYLES
+        .d-bgc-@{color-name},
+        .h\:d-bgc-@{color-name}:hover,
+        .f\:d-bgc-@{color-name}:focus {
+            --bgo: 100%;
+            background-color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--bgo)) !important;
+        }
+        .f\:d-bgc-@{color-name}:focus-within {
+            --bgo: 100%;
+            background-color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--bgo)) !important;
+        }
+        #d-internals #dark-mode('.d\:d-bgc-@{color-name}', {
+            --bgo: 100%;
+            background-color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--bgo)) !important;
+        });
+    }
+
+    //  ========================================================================
+    //  $   STANDARD WEIGHT LOOP GENERATOR
+    //      Since most of our colors have similar stops (100 - 600), we'll save
+    //      ourselves the need to call the mixin for each color and create a
+    //      loop that will create most of the colors for us.
+    //
+    //      USAGE:
+    //      #d-internals #standard-stops(blue);
+    //
+    //  ------------------------------------------------------------------------
+    #standard-stops(@color) {
+        #d-internals #color-classes(~"@{color}-600");
+        #d-internals #color-classes(~"@{color}-500");
+        #d-internals #color-classes(~"@{color}-400");
+        #d-internals #color-classes(~"@{color}-300");
+        #d-internals #color-classes(~"@{color}-200");
+        #d-internals #color-classes(~"@{color}-100");
+    }
+
+    //  ========================================================================
+    //  $   OPACITY CLASS GENERATOR
+    //      Creates opacity classes for font, background, and border colors.
+    //
+    //      USAGE:
+    //      #d-internals #opacity-classes(50);
+    //
+    //  ------------------------------------------------------------------------
+    #opacity-classes(@opacity) {
+        //  --  FONT OPACITY
+        .d-fco@{opacity},
+        .h\:d-fco@{opacity}:hover,
+        .f\:d-fco@{opacity}:focus {
+            --fco: ~"@{opacity}%" !important;
+        }
+        .f\:d-fco@{opacity}:focus-within {
+            --fco: ~"@{opacity}%" !important;
+        }
+        #d-internals #dark-mode('.d\:d-fco@{opacity}', {
+            --fco: ~"@{opacity}%" !important;
+        });
+
+
+        //  --  BORDER OPACITY
+        .d-bco@{opacity},
+        .h\:d-bco@{opacity}:hover,
+        .f\:d-bco@{opacity}:focus {
+            --bco: ~"@{opacity}%" !important;
+        }
+        .f\:d-bco@{opacity}:focus-within {
+            --bco: ~"@{opacity}%" !important;
+        }
+        #d-internals #dark-mode('.d\:d-bco@{opacity}', {
+            --bco: ~"@{opacity}%" !important;
+        });
+
+        //  --  DIVIDER OPACITY
+        .d-dco@{opacity} > * + * {
+            --dco: ~"@{opacity}%" !important;
+        }
+        #d-internals #dark-mode('.d\:d-dco@{opacity} > * + *', {
+            --dco: ~"@{opacity}%" !important;
+        });
+
+        //  --  BACKGROUND COLOR OPACITY
+        .d-bgo@{opacity},
+        .h\:d-bgo@{opacity}:hover,
+        .f\:d-bgo@{opacity}:focus {
+            --bgo: ~"@{opacity}%" !important;
+        }
+        .f\:d-bgo@{opacity}:focus-within {
+            --bgo: ~"@{opacity}%" !important;
+        }
+        #d-internals #dark-mode('.d\:d-bgo@{opacity}', {
+            --bgo: ~"@{opacity}%" !important;
+        });
+
+        //  --  BACKGROUND GRADIENT STARTING STOP
+        .d-bgg-from-o@{opacity},
+        .h\:d-bgg-from-@{opacity}:hover,
+        .f\:d-bgg-from-@{opacity}:focus {
+            --bgg-from-opacity: ~"@{opacity}%" !important;
+        }
+        .f\:d-bgg-from-@{opacity}:focus-within {
+            --bgg-from-opacity: ~"@{opacity}%" !important;
+        }
+        #d-internals #dark-mode('.d\:d-bgg-from-@{opacity}', {
+            --bgg-from-opacity: ~"@{opacity}%" !important;
+        });
+
+        //  --  BACKGROUND GRADIENT ENDING STOP
+        .d-bgg-to-o@{opacity},
+        .h\:d-bgg-to-@{opacity}:hover,
+        .f\:d-bgg-to-@{opacity}:focus {
+            --bgg-to-opacity: ~"@{opacity}%" !important;
+        }
+        .f\:d-bgg-to-@{opacity}:focus-within {
+            --bgg-to-opacity: ~"@{opacity}%" !important;
+        }
+        #d-internals #dark-mode('.d\:d-bgg-to-@{opacity}', {
+            --bgg-to-opacity: ~"@{opacity}%" !important;
+        });
     }
 }
