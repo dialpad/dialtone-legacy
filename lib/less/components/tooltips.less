@@ -32,7 +32,54 @@
     //  -----------------------
     --tooltip--bgc:     var(--black-800);
     --tooltip--fc:      var(--white);
+}
 
+//  ============================================================================
+//  $   INVERTED STYLE
+//  ----------------------------------------------------------------------------
+.d-tooltip--inverted {
+    //  --  COMPONENT CSS VARS
+    //  -----------------------
+    --tooltip--bgc:     var(--black-050);
+    --tooltip--fc:      var(--black-700);
+}
+
+//  ============================================================================
+//  $   HIDE STYLE
+//  ----------------------------------------------------------------------------
+.d-tooltip--hide {
+    opacity: 0;
+    visibility: hidden;
+    transition:
+        visibility 0s 200ms,
+        transform 200ms var(--ttf-in-out) 0s,
+        opacity 200ms var(--ttf-in-out) 0s;
+}
+
+//  ============================================================================
+//  $   SHOW STYLE
+//  ----------------------------------------------------------------------------
+.d-tooltip--show {
+    transform: translate(0,0);
+    opacity: 1;
+    visibility: visible;
+    transition:
+        visibility 0s 0s,
+        transform 200ms var(--ttf-in-out) 10ms,
+        opacity 200ms var(--ttf-in-out) 10ms;
+}
+
+//  ============================================================================
+//  $   HOVER STYLE
+//  ----------------------------------------------------------------------------
+.d-tooltip--hover:hover .d-tooltip__content {
+    &:extend(.d-tooltip--show);
+}
+
+//  ============================================================================
+//  $   CONTENT STYLE
+//  ----------------------------------------------------------------------------
+.d-tooltip__content {
     box-sizing: border-box;
 
     position: absolute;
@@ -47,43 +94,11 @@
     font-size: var(--fs12);
     line-height: var(--lh-normal);
 
-    //  --  HIDE TOOLTIP
-    //  ----------------
-    opacity: 0;
-    visibility: hidden;
-    transition:
-        visibility 0s 200ms,
-        transform 200ms var(--ttf-in-out) 0s,
-        opacity 200ms var(--ttf-in-out) 0s;
-
     &::before {
         content: "";
         position: absolute;
         border: var(--su6) solid transparent;
     }
-}
-
-//  ============================================================================
-//  $   INVERTED STYLE
-//  ----------------------------------------------------------------------------
-.d-tooltip--inverted {
-    --tooltip--bgc:     var(--black-050);
-    --tooltip--fc:      var(--black-700);
-}
-
-//  =======================================================================================
-//  $   HOVER STYLE
-//  ---------------------------------------------------------------------------------------
-.d-tooltip--hover:hover .d-tooltip {
-    //  --  SHOW TOOLTIP
-    //  ----------------
-    transform: translate(0,0);
-    opacity: 1;
-    visibility: visible;
-    transition:
-        visibility 0s 0s,
-        transform 200ms var(--ttf-in-out) 10ms,
-        opacity 200ms var(--ttf-in-out) 10ms;
 }
 
 //  ============================================================================
