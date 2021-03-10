@@ -20,8 +20,8 @@
 .d-tooltip {
     //  --  COMPONENT CSS VARS
     //  ------------------------------------------------------------------------
-    --tooltip--bgc:     hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l) ~" / " 95%);
-    --tooltip--fc:      var(--black-050);
+    --tooltip--bgc:     var(--black-800);
+    --tooltip--fc:      var(--white);
 
     box-sizing: border-box;
 
@@ -60,12 +60,9 @@
 }
 
 //  =======================================================================================
-//  $   HOVER MIXIN
-//  =======================================================================================
-//  --  If the tooltip doesn't have a d-tooltip-hover class, you will need to re-apply the
-//      hover state within your CSS. This hover mixin allows you to easily do so.
+//  $   HOVER STYLE
 //  ---------------------------------------------------------------------------------------
-.d-tooltip-hover() {
+.d-tooltip--hover:hover .d-tooltip {
     transform: translate(0,0);
     opacity: 1;
     visibility: visible;
@@ -74,11 +71,6 @@
         transform 200ms var(--ttf-in-out) 10ms,
         opacity 200ms var(--ttf-in-out) 10ms;
 }
-
-.d-tooltip--hover:hover .d-tooltip {
-    .d-tooltip-hover();
-}
-
 
 //  ============================================================================
 //  $   TOOLTIP DIRECTIONS
