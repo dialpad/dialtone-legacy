@@ -47,33 +47,32 @@
 //  ============================================================================
 //  $   HIDE STYLE
 //  ----------------------------------------------------------------------------
+.d-tooltip--hover,
 .d-tooltip--hide {
-    opacity: 0;
-    visibility: hidden;
-    transition:
-        visibility 0s 200ms,
-        transform 200ms var(--ttf-in-out) 0s,
-        opacity 200ms var(--ttf-in-out) 0s;
+    .d-tooltip__content {
+        opacity: 0;
+        visibility: hidden;
+        transition:
+            visibility 0s 200ms,
+            transform 200ms var(--ttf-in-out) 0s,
+            opacity 200ms var(--ttf-in-out) 0s;
+    }
 }
 
 //  ============================================================================
 //  $   SHOW STYLE
 //  ----------------------------------------------------------------------------
+.d-tooltip--hover:hover,
 .d-tooltip--show {
-    transform: translate(0,0);
-    opacity: 1;
-    visibility: visible;
-    transition:
-        visibility 0s 0s,
-        transform 200ms var(--ttf-in-out) 10ms,
-        opacity 200ms var(--ttf-in-out) 10ms;
-}
-
-//  ============================================================================
-//  $   HOVER STYLE
-//  ----------------------------------------------------------------------------
-.d-tooltip--hover:hover .d-tooltip__content {
-    &:extend(.d-tooltip--show);
+    .d-tooltip__content {
+        transform: translate(0,0);
+        opacity: 1;
+        visibility: visible;
+        transition:
+            visibility 0s 0s,
+            transform 200ms var(--ttf-in-out) 10ms,
+            opacity 200ms var(--ttf-in-out) 10ms;
+    }
 }
 
 //  ============================================================================
@@ -106,9 +105,9 @@
 //  ============================================================================
 //  $$  TOP
 //  ----------------------------------------------------------------------------
-.d-tooltip__top-left,
-.d-tooltip__top-center,
-.d-tooltip__top-right {
+.d-tooltip__arrow--top-left,
+.d-tooltip__arrow--top-center,
+.d-tooltip__arrow--top-right {
     top: calc(100% + var(--su12));
     transform: translateY(var(--su16));
 
@@ -122,9 +121,9 @@
 
 //  $$  BOTTOM
 //  ----------------------------------------------------------------------------
-.d-tooltip__bottom-left,
-.d-tooltip__bottom-center,
-.d-tooltip__bottom-right {
+.d-tooltip__arrow--bottom-left,
+.d-tooltip__arrow--bottom-center,
+.d-tooltip__arrow--bottom-right {
     bottom: calc(100% + var(--su12));
     transform: translateY(var(--sun16));
 
@@ -138,8 +137,8 @@
 
 //  $$  TOP / BOTTOM LEFT
 //  ----------------------------------------------------------------------------
-.d-tooltip__top-left,
-.d-tooltip__bottom-left {
+.d-tooltip__arrow--top-left,
+.d-tooltip__arrow--bottom-left {
     left: var(--sun2);
 
     &::before {
@@ -149,8 +148,8 @@
 
 //  $$  TOP / BOTTOM CENTER
 //  ----------------------------------------------------------------------------
-.d-tooltip__top-center,
-.d-tooltip__bottom-center {
+.d-tooltip__arrow--top-center,
+.d-tooltip__arrow--bottom-center {
     &::before {
         left: 50%;
         margin-left: var(--sun6);
@@ -159,8 +158,8 @@
 
 //  $$  TOP / BOTTOM RIGHT
 //  ----------------------------------------------------------------------------
-.d-tooltip__top-right,
-.d-tooltip__bottom-right {
+.d-tooltip__arrow--top-right,
+.d-tooltip__arrow--bottom-right {
     right: var(--sun2);
 
     &::before {
@@ -170,9 +169,9 @@
 
 //  $$  RIGHT
 //  ----------------------------------------------------------------------------
-.d-tooltip__right-top,
-.d-tooltip__right-center,
-.d-tooltip__right-bottom {
+.d-tooltip__arrow--right-top,
+.d-tooltip__arrow--right-center,
+.d-tooltip__arrow--right-bottom {
     right: calc(100% + var(--su12));
     transform: translateX(var(--sun16));
 
@@ -186,9 +185,9 @@
 
 //  $$  LEFT
 //  ----------------------------------------------------------------------------
-.d-tooltip__left-top,
-.d-tooltip__left-center,
-.d-tooltip__left-bottom {
+.d-tooltip__arrow--left-top,
+.d-tooltip__arrow--left-center,
+.d-tooltip__arrow--left-bottom {
     left: calc(100% + var(--su12));
     transform: translateX(var(--su16));
 
@@ -202,8 +201,8 @@
 
 //  $$  RIGHT / LEFT TOP
 //  ----------------------------------------------------------------------------
-.d-tooltip__right-top,
-.d-tooltip__left-top {
+.d-tooltip__arrow--right-top,
+.d-tooltip__arrow--left-top {
     top: var(--sun1);
 
     &::before {
@@ -213,8 +212,8 @@
 
 //  $$  RIGHT / LEFT CENTER
 //  ----------------------------------------------------------------------------
-.d-tooltip__right-center,
-.d-tooltip__left-center {
+.d-tooltip__arrow--right-center,
+.d-tooltip__arrow--left-center {
     &::before {
         top: 50%;
         margin-top: var(--sun6);
@@ -223,8 +222,8 @@
 
 //  $$  RIGHT / LEFT BOTTOM
 //  ----------------------------------------------------------------------------
-.d-tooltip__right-bottom,
-.d-tooltip__left-bottom {
+.d-tooltip__arrow--right-bottom,
+.d-tooltip__arrow--left-bottom {
     bottom: var(--sun1);
 
     &::before {
