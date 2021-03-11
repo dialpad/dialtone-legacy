@@ -48,14 +48,13 @@ description: Floating labels that briefly explain an action, function, or an ele
     </header>
     <div class="dialtone-example" data-example="yes" data-code="yes">
         <div class="dialtone-example__example">
-            <div class="d-flex-columns" style="flex-flow: row wrap;">
-                {% assign top-bottom = "left, center, right" | split: ", " %}
-                {% assign left-right = "top, center, bottom" | split: ", " %}
-                {% assign dir = "top, right, bottom, left" | split: ", " %}
-                {% for i in dir %}
-                    {% if i == "top" or i == "bottom" %}
-                        {% for d in top-bottom %}
-                        <div class="d-d-flex d-p24">
+            {% assign top-bottom = "left, center, right" | split: ", " %}
+            {% assign left-right = "top, center, bottom" | split: ", " %}
+            {% assign dir = "top, right, bottom, left" | split: ", " %}
+            {% for i in dir %}
+                {% if i == "top" or i == "bottom" %}
+                    {% for d in top-bottom %}
+                        <div class="d-w30p d-p24">
                             <div class="d-tooltip d-tooltip__arrow--{{ i }}-{{ d }} d-tooltip--show">
                                 <span class="d-ff-mono d-fs11 d-mb4">.d-tooltip__{{ i }}-{{ d }}</span>
                                 <div>
@@ -63,21 +62,20 @@ description: Floating labels that briefly explain an action, function, or an ele
                                 </div>
                             </div>
                         </div>
-                        {% endfor %}
-                    {% elsif i == "left" or i == "right" %}
-                        {% for d in left-right %}
-                        <div class="d-d-flex d-p24">
+                    {% endfor %}
+                {% elsif i == "left" or i == "right" %}
+                    {% for d in left-right %}
+                        <div class="d-w30p d-p24">
                             <div class="d-tooltip d-tooltip__arrow--{{ i }}-{{ d }} d-tooltip--show">
                                 <span class="d-ff-mono d-fs11 d-mb4">.d-tooltip--{{ i }}-{{ d }}</span>
                                 <div>
                                     <span>Arrow appears {{ i | capitalize }} {{ d | capitalize }}.</span>
                                 </div>
-                            </span>
+                            </div>
                         </div>
-                        {% endfor %}
-                    {% endif %}
-                {% endfor %}
-            </div>
+                    {% endfor %}
+                {% endif %}
+            {% endfor %}
         </div>
         <div class="dialtone-example__code">
 {% highlight html linenos %}
