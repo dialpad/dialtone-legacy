@@ -8,19 +8,17 @@ description: Floating labels that briefly explain an action, function, or an ele
     <div class="d-stack16">
         <h3 class="dialtone-title__subsection">Base Style</h3>
         <div class="dialtone-example" data-example="yes" data-code="yes">
-            <div class="dialtone-example__example d-tooltip d-tooltip--show">
-                <button class="d-btn d-btn--outlined" type="button">
-                    Example Button
-                    <span class="d-tooltip__content d-tooltip__arrow--bottom-center">
+            <div class="dialtone-example__example">
+                <div class="d-tooltip d-tooltip__arrow--bottom-center d-tooltip--show">
+                    <span class="d-tooltip__content">
                         This is a simple tooltip. The tooltip can be positioned in multiple areas too!
                     </span>
-                </button>
+                </div>
             </div>
             <div class="dialtone-example__code">
 {% highlight html linenos %}
-<div class="d-tooltip d-tooltip--show">
-    <button class="d-btn d-btn--outlined" type="button">Example Button</button>
-    <span class="d-tooltip__content d-tooltip__arrow--bottom-center">
+<div class="d-tooltip d-tooltip__arrow--bottom-center d-tooltip--show">
+    <span class="d-tooltip__content">
         Tooltip Description
     </span>
 </div>
@@ -33,22 +31,18 @@ description: Floating labels that briefly explain an action, function, or an ele
         <p class="dialtone-copy__normal">The default visual style is a black background. Sometimes though, a lighter background is desired.</p>
         <div class="dialtone-example" data-example="yes" data-code="yes">
             <div class="dialtone-example__example d-bgc-black-700 d-mn1 d-mt0 d-border-top-radius--md d-tooltip d-tooltip--show d-tooltip--inverted">
-                <button class="d-btn d-btn--outlined d-btn--inverted" type="button">
-                    <span class="d-btn__label">Example Button</span>
-                    <span class="d-tooltip__content d-tooltip__arrow--bottom-center">
+                <div class="d-tooltip d-tooltip__arrow--bottom-center d-tooltip--inverted d-tooltip--show">
+                    <span class="d-tooltip__content">
                         This is a simple tooltip. The tooltip can be positioned in multiple areas too!
                     </span>
-                </button>
+                </div>
             </div>
             <div class="dialtone-example__code">
 {% highlight html linenos %}
-<div class="d-tooltip d-tooltip--show d-tooltip--inverted">
-    <button class="d-btn d-btn--outlined d-btn--inverted" type="button">
-        <span class="d-btn__label">Example Button</span>
-        <span class="d-tooltip__content d-tooltip__arrow--bottom-center">
-            This is a simple tooltip. The tooltip can be positioned in multiple areas too!
-        </span>
-    </button>
+<div class="d-tooltip d-tooltip__arrow--bottom-center d-tooltip--inverted d-tooltip--show">
+    <span class="d-tooltip__content">
+        Tooltip Description
+    </span>
 </div>
 {% endhighlight %}
             </div>
@@ -69,26 +63,24 @@ description: Floating labels that briefly explain an action, function, or an ele
                 {% for i in dir %}
                     {% if i == "top" or i == "bottom" %}
                         {% for d in top-bottom %}
-                        <div class="d-flex__cell4 d-p12 d-tooltip d-tooltip--show">
-                            <button class="d-btn d-btn--outlined d-btn--sm d-w100" type="button" style="min-height: 3.6rem;">
-                                <span class="d-btn__label">{{ i | capitalize }} {{ d | capitalize }}</span>
-                                <span class="d-tooltip__content d-tooltip__arrow--{{ i }}-{{ d }}">
-                                    <span class="d-ff-mono d-fs11 d-mb4" style="display: block;">.d-tooltip__{{ i }}-{{ d }}</span>
-                                    Arrow appears {{ i | capitalize }} {{ d | capitalize }}.
-                                </span>
-                            </button>
+                        <div class="d-flex__cell4 d-p12 d-tooltip d-tooltip__arrow--{{ i }}-{{ d }} d-tooltip--show">
+                            <div class="d-tooltip__content">
+                                <span class="d-ff-mono d-fs11 d-mb4" style="display: block;">.d-tooltip__{{ i }}-{{ d }}</span>
+                                <div>
+                                    <span>Arrow appears {{ i | capitalize }} {{ d | capitalize }}.</span> 
+                                </div>
+                            </div>
                         </div>
                         {% endfor %}
                     {% elsif i == "left" or i == "right" %}
                         {% for d in left-right %}
-                        <div class="d-flex__cell4 d-p12 d-tooltip d-tooltip--show">
-                            <button class="d-btn d-btn--outlined d-btn--sm d-w100" type="button" style="min-height: 3.6rem;">
-                                <span class="d-btn__label">{{ i | capitalize }} {{ d | capitalize }}</span>
-                                <span class="d-tooltip__content d-tooltip__arrow--{{ i }}-{{ d }}">
-                                    <span class="d-ff-mono d-fs11 d-mb4" style="display: block;">.d-tooltip--{{ i }}-{{ d }}</span>
-                                    Arrow appears {{ i | capitalize }} {{ d | capitalize }}.
-                                </span>
-                            </button>
+                        <div class="d-flex__cell4 d-p12 d-tooltip__arrow--{{ i }}-{{ d }} d-tooltip d-tooltip--show">
+                            <div class="d-tooltip__content">
+                                <span class="d-ff-mono d-fs11 d-mb4" style="display: block;">.d-tooltip--{{ i }}-{{ d }}</span>
+                                <div>
+                                    <span>Arrow appears {{ i | capitalize }} {{ d | capitalize }}.</span>
+                                </div>
+                            </span>
                         </div>
                         {% endfor %}
                     {% endif %}
