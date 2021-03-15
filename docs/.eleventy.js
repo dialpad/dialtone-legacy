@@ -113,7 +113,7 @@ module.exports = function(eleventyConfig) {
         if (!color) {
             return `<header class="d-fl-center d-fd-column d-p24 d-bgc-black-100 d-bgo50 d-w100p ${minHeight}">${content}</header>`;
         } else {
-            return `<header class="d-fl-center d-fd-column d-p24 d-bgc-${color}-100 d-bgo50 d-w100p ${minHeight}">${content}</header>`;
+            return `<header class="d-fl-center d-fd-column d-p24 d-bgc-${color} d-bgo50 d-w100p ${minHeight}">${content}</header>`;
         }
     });
 
