@@ -8,21 +8,16 @@ description: Floating labels that briefly explain an action, function, or an ele
     <div class="d-stack16">
         <h3 class="dialtone-title__subsection">Base Style</h3>
         <div class="dialtone-example" data-example="yes" data-code="yes">
-            <div class="dialtone-example__example">
-                <button class="d-btn d-btn--outlined d-tooltip--hover" type="button">
-                    <span class="d-btn__label">Hover over me to see a tooltip</span>
-                    <span class="d-tooltip d-tooltip__bottom-center">This is a simple tooltip. The tooltip can be positioned in multiple areas too!</span>
-                </button>
+            <div class="dialtone-example__example d-d-flex">
+                <div class="d-tooltip d-tooltip__arrow--bottom-center d-tooltip--show">
+                    <span>This is a simple tooltip. The tooltip can be positioned in multiple areas too!</span>
+                </div>
             </div>
             <div class="dialtone-example__code">
-{% highlight css %}
-.example-button {
-    /* To make the tooltip appear */
-    .d-tooltip-hover();
-}
-.example-tooltip {
-    .d-tooltip__bottom-center();
-}
+{% highlight html linenos %}
+<div class="d-tooltip d-tooltip__arrow--bottom-center d-tooltip--show">
+    <span>Tooltip Description</span>
+</div>
 {% endhighlight %}
             </div>
         </div>
@@ -31,25 +26,44 @@ description: Floating labels that briefly explain an action, function, or an ele
         <h3 class="dialtone-title__subsection">Inverted Style</h3>
         <p class="dialtone-copy__normal">The default visual style is a black background. Sometimes though, a lighter background is desired.</p>
         <div class="dialtone-example" data-example="yes" data-code="yes">
-            <div class="dialtone-example__example d-bgc-black-700 d-mn1 d-mt0 d-border-top-radius--md">
-                <button class="d-btn d-btn--outlined d-btn--inverted d-tooltip--hover" type="button">
-                    <span class="d-btn__label">Hover over me to see a tooltip</span>
-                    <span class="d-tooltip d-tooltip--inverted d-tooltip__bottom-center">This is a simple tooltip. The tooltip can be positioned in multiple areas too!</span>
-                </button>
+            <div class="dialtone-example__example d-bgc-black-700 d-mn1 d-mt0 d-border-top-radius--md d-p12 d-d-flex">
+                <div class="d-tooltip d-tooltip__arrow--bottom-center d-tooltip--inverted d-tooltip--show">
+                    <span>This is a simple tooltip. The tooltip can be positioned in multiple areas too!</span>
+                </div>
             </div>
             <div class="dialtone-example__code">
-{% highlight css %}
-.example-button {
-    /* To make the tooltip appear */
-    .d-tooltip-hover();
-}
-.example-tooltip--inverted {
-    .d-tooltip__bottom-center--inverted();
-}
+{% highlight html linenos %}
+<div class="d-tooltip d-tooltip__arrow--bottom-center d-tooltip--inverted d-tooltip--show">
+    <span>Tooltip Description</span>
+</div>
 {% endhighlight %}
             </div>
         </div>
     </div>
+    <div class="d-stack16">
+        <h3 class="dialtone-title__subsection">Hover Style</h3>
+        <div class="dialtone-example" data-example="yes" data-code="yes">
+            <div class="dialtone-example__example">
+                <button class="d-btn d-btn--outlined d-tooltip--hover" type="button">
+                    <div class="d-tooltip d-tooltip__arrow--bottom-center d-ps-absolute">
+                        <span>This is a simple tooltip. The tooltip can be positioned in multiple areas too!</span>
+                    </div>
+                    <span>Hover over me to see a tooltip</span>
+                </button>
+            </div>
+            <div class="dialtone-example__code">
+{% highlight html linenos %}
+<button class="d-btn d-btn--outlined d-tooltip--hover" type="button">
+    <div class="d-tooltip d-tooltip__arrow--bottom-center d-ps-absolute">
+        <span>Tooltip Description</span>
+    </div>
+    <span>Button Label</span>
+</button>
+{% endhighlight %}
+            </div>
+        </div>
+    </div>
+</div>
 </section>
 <section class="d-stack16">
     <header class="d-stack4">
@@ -58,42 +72,38 @@ description: Floating labels that briefly explain an action, function, or an ele
     </header>
     <div class="dialtone-example" data-example="yes" data-code="yes">
         <div class="dialtone-example__example">
-            <div class="d-flex-columns" style="flex-flow: row wrap;">
-                {% assign top-bottom = "left, center, right" | split: ", " %}
-                {% assign left-right = "top, center, bottom" | split: ", " %}
-                {% assign dir = "top, right, bottom, left" | split: ", " %}
-                {% for i in dir %}
-                    {% if i == "top" or i == "bottom" %}
-                        {% for d in top-bottom %}
-                        <div class="d-flex__cell4 d-p12">
-                            <button class="d-btn d-btn--outlined d-btn--sm d-w100 d-tooltip--hover" type="button" style="min-height: 3.6rem;">
-                                <span class="d-btn__label">{{ i | capitalize }} {{ d | capitalize }}</span>
-                                <span class="d-tooltip d-tooltip__{{ i }}-{{ d }}">
-                                    <span class="d-ff-mono d-fs11 d-mb4" style="display: block;">.d-tooltip__{{ i }}-{{ d }}</span>
-                                    Arrow appears {{ i | capitalize }} {{ d | capitalize }}.
-                                </span>
-                            </button>
+            {% assign top-bottom = "left, center, right" | split: ", " %}
+            {% assign left-right = "top, center, bottom" | split: ", " %}
+            {% assign dir = "top, right, bottom, left" | split: ", " %}
+            {% for i in dir %}
+                {% if i == "top" or i == "bottom" %}
+                    {% for d in top-bottom %}
+                        <div class="d-w30p d-p12">
+                            <div class="d-tooltip d-tooltip__arrow--{{ i }}-{{ d }} d-tooltip--show">
+                                <span class="d-ff-mono d-fs11 d-mb4">.d-tooltip__{{ i }}-{{ d }}</span>
+                                <div>
+                                    <span>Arrow appears {{ i | capitalize }} {{ d | capitalize }}.</span> 
+                                </div>
+                            </div>
                         </div>
-                        {% endfor %}
-                    {% elsif i == "left" or i == "right" %}
-                        {% for d in left-right %}
-                        <div class="d-flex__cell4 d-p12">
-                            <button class="d-btn d-btn--outlined d-btn--sm d-w100 d-tooltip--hover" type="button" style="min-height: 3.6rem;">
-                                <span class="d-btn__label">{{ i | capitalize }} {{ d | capitalize }}</span>
-                                <span class="d-tooltip d-tooltip__{{ i }}-{{ d }}">
-                                    <span class="d-ff-mono d-fs11 d-mb4" style="display: block;">.d-tooltip--{{ i }}-{{ d }}</span>
-                                    Arrow appears {{ i | capitalize }} {{ d | capitalize }}.
-                                </span>
-                            </button>
+                    {% endfor %}
+                {% elsif i == "left" or i == "right" %}
+                    {% for d in left-right %}
+                        <div class="d-w30p d-p12">
+                            <div class="d-tooltip d-tooltip__arrow--{{ i }}-{{ d }} d-tooltip--show">
+                                <span class="d-ff-mono d-fs11 d-mb4">.d-tooltip--{{ i }}-{{ d }}</span>
+                                <div>
+                                    <span>Arrow appears {{ i | capitalize }} {{ d | capitalize }}.</span>
+                                </div>
+                            </div>
                         </div>
-                        {% endfor %}
-                    {% endif %}
-                {% endfor %}
-            </div>
+                    {% endfor %}
+                {% endif %}
+            {% endfor %}
         </div>
         <div class="dialtone-example__code">
 {% highlight html linenos %}
-<div class="d-tooltip__top-center">…</div>
+<div class="d-tooltip__arrow--top-center">…</div>
 {% endhighlight %}
         </div>
     </div>
