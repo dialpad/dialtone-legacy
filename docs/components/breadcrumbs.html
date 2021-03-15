@@ -3,29 +3,29 @@ layout: page
 title: Breadcrumbs
 description: Element used to provide context for the currently-viewed page and where it is located within the overall site structure.
 ---
-<section class="d-stack8">
-    <section class="d-stack8">
-        <p class="dialtone-copy__normal">Breadcrumbs show users where they are within a site’s hierarchy. Breadcrumbs help orient the user and allow for navigation to previous page levels. It can be appropriate to use a breadcrumb when:</p>
-        <ul class="dialtone-copy__normal">
+<section class="d-stack16">
+    <section class="d-stack16">
+        {% paragraph %}Breadcrumbs show users where they are within a site’s hierarchy. Breadcrumbs help orient the user and allow for navigation to previous page levels. It can be appropriate to use a breadcrumb when:{% endparagraph %}
+        <ul class="d-w75ch d-wmx764 d-fs18 d-lh6 d-stack8">
             <li>The user is many levels of navigation deep</li>
             <li>The current page does not have its own navigation</li>
             <li>The user needs to quickly go back to the previous parent page</li>
         </ul>
-        <p class="dialtone-copy__normal">Breadcrumbs should be the first page element—placed directly above the page’s title. All pages that appear in the breadcrumb should link to their respective page. The page the user is on should always be the last page listed and not linked.</p>
+        {% paragraph %}Breadcrumbs should be the first page element—placed directly above the page’s title. All pages that appear in the breadcrumb should link to their respective page. The page the user is on should always be the last page listed and not linked.{% endparagraph %}
     </section>
-    <section class="d-stack8">
-        <h3 class="dialtone-title__subsection">When not to use</h3>
-        <p class="dialtone-copy__normal">Breadcrumbs are always treated as secondary and should not entirely replace the primary navigation. They shouldn’t be used for products that have single level navigation because they create unnecessary clutter.</p>
+    <section class="d-stack16">
+        <h3 class="d-headline20">When not to use</h3>
+        {% paragraph %}Breadcrumbs are always treated as secondary and should not entirely replace the primary navigation. They shouldn’t be used for products that have single level navigation because they create unnecessary clutter.{% endparagraph %}
     </section>
 </section>
-<section class="d-stack8">
-    <h2 class="dialtone-title__section">Classes</h2>
+<section class="d-stack16">
+    {% header "h2", "Classes" %}
     <table class="d-table">
         <thead>
             <tr>
-                <th scope="col" class="d-w20">Class</th>
-                <th scope="col">Applies to</th>
-                <th scope="col" class="d-w50">Description</th>
+                <th scope="col" class="d-w25p">Class</th>
+                <th scope="col" class="d-w25p">Applies to</th>
+                <th scope="col">Description</th>
             </tr>
         </thead>
         <tbody>
@@ -34,18 +34,18 @@ description: Element used to provide context for the currently-viewed page and w
             {% assign apply = i.applies %}
             {% assign desc = i.description %}
             <tr>
-                <td><span class="code-example--inline">.{{ class }}</span></td>
-                <td class="d-ff-custom d-fs12 d-lh-tight d-fc-slate">{% if apply != "N/A" %}<span class="code-example--inline">.{% endif %}{{ apply }}{% if apply != "N/A" %}</span>{% endif %}</td>
-                <td class="d-ff-custom d-fs12 d-lh-tight d-fc-slate">{{ desc }}</td>
+                <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.{{ class }}</th>
+                <td class="d-ff-mono d-fc-teal-500 d-fs12">{% if apply != "N/A" %}<span class="code-example--inline">.{% endif %}{{ apply }}{% if apply != "N/A" %}</span>{% endif %}</td>
+                <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ desc }}</td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
 </section>
 <section class="d-stack16">
-    <h2 class="dialtone-title__section">Examples</h2>
-    <div class="dialtone-example" data-example="yes" data-code="yes">
-        <div class="dialtone-example__example d-stack16">
+    {% header "h2", "Examples" %}
+    {% codeWell %}
+        {% codeWellHeader %}
             <nav class="d-breadcrumbs" aria-label="breadcrumb">
                 <ol>
                     <li class="d-breadcrumbs__item">
@@ -84,9 +84,9 @@ description: Element used to provide context for the currently-viewed page and w
                     </li>
                 </ol>
             </nav>
-        </div>
-        <div class="dialtone-example__code">
-{% highlight html linenos %}
+        {% endcodeWellHeader %}
+        {% codeWellFooter %}
+            {% highlight html linenos %}
 <nav class="d-breadcrumbs" aria-label="breadcrumb">
     <ol>
         <li class="d-breadcrumbs__item">
@@ -109,21 +109,21 @@ description: Element used to provide context for the currently-viewed page and w
 <nav class="d-breadcrumbs d-breadcrumbs--inverted" aria-label="breadcrumb">
     …
 </nav>
-{% endhighlight %}
-        </div>
-    </div>
+            {% endhighlight %}
+        {% endcodeWellFooter %}
+    {% endcodeWell %}
 </section>
-<section class="d-stack8">
-    <header class="d-stack4">
-        <h2 class="dialtone-title__section">Accessibility</h2>
-        <p class="dialtone-copy__normal">HTML doesn't provide dedicated semantic elements for breadcrumbs, so we need to add a few ARIA attributes to make them accessible.</p>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Accessibility" %}
+        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">HTML doesn't provide dedicated semantic elements for breadcrumbs, so we need to add a few ARIA attributes to make them accessible.</p>
     </header>
     <table class="d-table">
         <thead>
             <tr>
-                <th scope="col" class="d-w20">Item</th>
-                <th scope="col">Applies to</th>
-                <th scope="col" class="d-w50">Description</th>
+                <th scope="col" class="d-w25p">Item</th>
+                <th scope="col" class="d-w25p">Applies to</th>
+                <th scope="col">Description</th>
             </tr>
         </thead>
         <tbody>
@@ -132,9 +132,9 @@ description: Element used to provide context for the currently-viewed page and w
             {% assign apply = i.applies %}
             {% assign desc = i.description %}
             <tr>
-                <td><span class="code-example--inline">{{ item }}</span></td>
-                <td class="d-ff-custom d-fs12 d-lh-tight d-fc-slate">{{ apply }}</td>
-                <td class="d-ff-custom d-fs12 d-lh-tight d-fc-slate">{{ desc }}</td>
+                <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">{{ item }}</th>
+                <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ apply }}</td>
+                <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ desc }}</td>
             </tr>
             {% endfor %}
         </tbody>

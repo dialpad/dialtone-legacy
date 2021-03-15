@@ -3,22 +3,23 @@ layout: page
 title: Banners
 description: Banners are a type of <a href="/components/notices">notice</a>, delivering system and engagement messaging. These are highly intrusive notices and should be used sparingly and appropriately.
 ---
-<section class="d-stack8">
-    <p class="dialtone-copy__normal">System banners are used for <strong>system</strong> messaging. They are full-width notices placed in one of two locations:</p>
-    <ol class="dialtone-copy__normal">
-        <li><strong>Above everything else:</strong> If the banner is related to the entire app (e.g. the user lost internet service), place the banner first. <em>These should not be dismissable until the issue is resolved.</em> To pin the banner to the top of the app, add the <span class="code-example--inline">.d-notice--pinned</span> class.</li>
+<section class="d-stack16">
+
+    <p class="d-w75ch d-wmx764 d-fs18 d-lh6">System banners are used for <strong>system</strong> messaging. They are full-width notices placed in one of two locations:</p>
+    <ol class="d-w75ch d-wmx764 d-fs18 d-lh6 d-stack8">
+        <li><strong>Above everything else:</strong> If the banner is related to the entire app (e.g. the user lost internet service), place the banner first. <em>These should not be dismissable until the issue is resolved.</em> To pin the banner to the top of the app, add the {% code %}.d-notice--pinned{% endcode %} class.</li>
         <li><strong>Below the top bar:</strong> This is the default location fo system banners. Use these when it affects only a particular area of the product (e.g. when the user is in Do Not Disturb mode).</li>
     </ol>
-    <p class="dialtone-copy__normal">Banners are a type of notice and so you can use the following <a href="/components/notice/">notice styles</a> in conjunction with <span class="code-example--inline">.d-banner</span>.
+    <p class="d-w75ch d-wmx764 d-fs18 d-lh6">Banners are a type of notice and so you can use the following <a href="/components/notice/">notice styles</a> in conjunction with {% code %}.d-banner{% endcode %}.
 </section>
-<section class="d-stack8">
-    <h2 class="dialtone-title__section">Classes</h2>
+<section class="d-stack16">
+    {% header "h2", "Classes" %}
     <table class="d-table">
         <thead>
             <tr>
-                <th scope="col" class="d-w20">Class</th>
-                <th scope="col">Applies to</th>
-                <th scope="col" class="d-w50">Description</th>
+                <th scope="col" class="d-w25p">Class</th>
+                <th scope="col" class="d-w25p">Applies to</th>
+                <th scope="col">Description</th>
             </tr>
         </thead>
         <tbody>
@@ -27,40 +28,16 @@ description: Banners are a type of <a href="/components/notices">notice</a>, del
             {% assign apply = i.applies %}
             {% assign desc = i.description %}
             <tr>
-                <td><span class="code-example--inline">{{ class }}</span></td>
-                <td class="d-ff-custom d-fs12 d-lh-tight d-fc-slate d-ws-nowrap">{{ apply }}</td>
-                <td class="d-ff-custom d-fs12 d-lh-tight d-fc-slate">{{ desc }}</td>
+                <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">{{ class }}</th>
+                <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ apply }}</td>
+                <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ desc }}</td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
 </section>
-<section class="d-stack8">
-    <h2 class="dialtone-title__section">Accessibility</h2>
-    <table class="d-table">
-        <thead>
-            <tr>
-                <th scope="col" class="d-w20">Item</th>
-                <th scope="col">Applies to</th>
-                <th scope="col" class="d-w50">Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for i in banners.accessible %}
-            {% assign item = i.item %}
-            {% assign apply = i.applies %}
-            {% assign desc = i.description %}
-            <tr>
-                <td><span class="code-example--inline">{{ item }}</span></td>
-                <td class="d-ff-custom d-fs12 d-lh-tight d-fc-slate">{{ apply }}</td>
-                <td class="d-ff-custom d-fs12 d-lh-tight d-fc-slate">{{ desc }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-</section>
-<section class="d-stack8">
-    <h2 class="dialtone-title__section">Examples</h2>
+<section class="d-stack16">
+    {% header "h2", "Examples" %}
     <div class="dialtone-example" data-example="yes" data-code="yes">
         <div class="dialtone-example__example d-p16">
             <div class="d-d-flex d-ai-center d-p16 d-bgc-ash d-ba d-bc-black-100 d-flow16">
@@ -91,7 +68,9 @@ description: Banners are a type of <a href="/components/notices">notice</a>, del
             </div>
         </div>
         <div class="dialtone-example__code">
-{% highlight html linenos %}
+            {% codeWell %}
+                {% codeWellFooter %}
+                    {% highlight html linenos %}
 <aside class="d-banner d-banner--info" role="alert" aria-hidden="false">
     <div class="d-banner__dialog" role="alertdialog" aria-labelledy="info-alert-title" aria-describedby="info-alert-desc">
         <div class="d-notice__icon">
@@ -113,10 +92,37 @@ description: Banners are a type of <a href="/components/notices">notice</a>, del
 <aside class="d-banner d-banner--success" role="alert" aria-hidden="false">…</aside>
 <aside class="d-banner d-banner--warning" role="alert" aria-hidden="false">…</aside>
 <aside class="d-banner d-banner--danger" role="alert" aria-hidden="false">…</aside>
-{% endhighlight %}
+                    {% endhighlight %}
+                {% endcodeWellFooter %}
+            {% endcodeWell %}
         </div>
     </div>
 </section>
+<section class="d-stack16">
+    {% header "h2", "Accessibility" %}
+    <table class="d-table">
+        <thead>
+            <tr>
+                <th scope="col" class="d-w25p">Item</th>
+                <th scope="col" class="d-w25p">Applies to</th>
+                <th scope="col">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in banners.accessible %}
+            {% assign item = i.item %}
+            {% assign apply = i.applies %}
+            {% assign desc = i.description %}
+            <tr>
+                <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">{{ item }}</th>
+                <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ apply }}</td>
+                <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ desc }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+
 <div class="d-ps-fixed d-x0 d-t0 d-ai-center d-jc-center d-p16 d-w100 d-bgc-blue-800 d-fc-white d-fo75 d-d-none js-topbar-example" style="height: 6.4rem;">Topbar example</div>
 <aside class="d-banner d-banner--info js-banner-example" role="alert" aria-hidden="true">
     <div class="d-banner__dialog js-banner-example-dialog" role="alertdialog" aria-labelledy="info-alert-title" aria-describedby="info-alert-desc">
