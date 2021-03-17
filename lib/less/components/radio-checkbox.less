@@ -191,8 +191,8 @@
 
         //  Disabled
         &[disabled] {
-            --check-radio--bc:      var(--black-200);
-            --check-radio--bgc:     var(--black-050);
+            --check-radio--bc:      var(--black-400);
+            --check-radio--bgc:     var(--black-200);
         }
 
         &:checked {
@@ -201,13 +201,14 @@
 
             //  Disabled
             &[disabled] {
-                --check-radio--bc:      var(--black-300);
-                --check-radio--bgc:     var(--black-100);
+                --check-radio--bc:      var(--black-400);
+                --check-radio--bgc:     var(--black-200);
             }
+        }
 
-            &:focus {
-                --check-radio--bs:      0 0 0 var(--su4) hsla(var(--primary-color-hsl) ~" / " 25%);
-            }
+        &:focus {
+            --check-radio--bs: 0 0 0 var(--su2) var(--blue-200);
+            border-radius: var(--br2);
         }
     }
 }
@@ -217,25 +218,34 @@
 .d-checkbox--warning {
     --check-radio--bc:      var(--warning-color);
 
-    &:focus,
-    &:checked:focus {
-        --check-radio--bs:  0 0 0 var(--su4) hsla(var(--warning-color-hsl) ~" / " 25%);
+    &:checked {
+        --check-radio--bgc:     var(--warning-color);
+    }
+
+    &:focus {
+        --check-radio--bs:  0 0 0 var(--su2) var(--warning-color-focus);
     }
 }
 .d-checkbox--error {
     --check-radio--bc:      var(--error-color);
 
-    &:focus,
-    &:checked:focus {
-        --check-radio--bs:  0 0 0 var(--su4) hsla(var(--error-color-hsl) ~" / " 25%);
+    &:checked {
+        --check-radio--bgc:     var(--error-color);
+    }
+
+    &:focus {
+        --check-radio--bs:  0 0 0 var(--su2) var(--error-color-focus);
     }
 }
 .d-checkbox--success {
     --check-radio--bc:      var(--success-color);
 
-    &:focus,
-    &:checked:focus {
-        --check-radio--bs:  0 0 0 var(--su4) hsla(var(--success-color-hsl) ~" / " 25%);
+    &:checked {
+        --check-radio--bgc:     var(--success-color);
+    }
+
+    &:focus {
+        --check-radio--bs:  0 0 0 var(--su2) var(--warning-success-focus);
     }
 }
 
