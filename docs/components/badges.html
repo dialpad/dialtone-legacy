@@ -1,0 +1,47 @@
+---
+layout: page
+title: Badges
+description: Badges are compact UI elements that provide brief, descriptive information about an element. They are terse, ideally one word. 
+---
+<section class="d-stack16">
+    <header class="d-stack2">
+        <h2 class="dialtone-title__section">Classes</h2>
+    </header>
+    <div class="dialtone-table-wrapper">
+        <table class="d-table">
+            <thead>
+                <tr>
+                    <th scope="col" class="dialtone-table__column--md">Class</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in badges.classes %}
+                {% assign class = i.class %}
+                {% assign desc = i.desc %}
+                <tr>
+                    <th scope="row">{{ class }}</th>
+                    <td>{{ desc }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+<section class="d-stack8">
+    <header>
+        <h2 class="dialtone-title__section">Styles</h2>
+    </header>
+    <div class="dialtone-example" data-example="yes" data-code="yes">
+        <div class="dialtone-example__example dialtone-section16">
+            <div class="d-p16 d-flow16">
+                <div class="d-badge">Default Badge</div>
+            </div>
+        </div>
+        <div class="dialtone-example__code">
+{% highlight html %}
+<div class="d-badge">...</div>
+{% endhighlight %}
+        </div>
+    </div>
+</section>
