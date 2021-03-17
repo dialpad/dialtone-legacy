@@ -52,13 +52,14 @@
 //  $$  WARNING
 //  ----------------------------------------------------------------------------
 .d-link--warning {
-    --warning-color:            var(--yellow-500);
-    --warning-color-hover:      hsl(var(--yellow-500-h) var(--yellow-500-s) calc(var(--yellow-500-l) - 10%));
-
     color: var(--warning-color);
 
     &:hover {
         color: var(--warning-color-hover);
+    }
+
+    &:focus {
+        box-shadow: 0px 0px 0px var(--su2) var(--warning-color-focus);
     }
 }
 
@@ -73,6 +74,10 @@
     &:hover {
         color: var(--error-color-hover);
     }
+
+    &:focus {
+        box-shadow: 0px 0px 0px var(--su2) var(--error-color-focus);
+    }
 }
 
 //  $$  SUCCESS
@@ -83,6 +88,10 @@
     &:hover {
         color: var(--success-color-hover);
     }
+
+    &:focus {
+        box-shadow: 0px 0px 0px var(--su2) var(--success-color-focus);
+    }
 }
 
 //  $$  DARK
@@ -92,6 +101,25 @@
 
     &:hover {
         color: var(--muted-color-hover);
+    }
+
+    &:focus {
+        box-shadow: 0px 0px 0px var(--su2) var(--muted-color-focus);
+    }
+}
+
+//  $$  DISABLED
+//  ----------------------------------------------------------------------------
+.d-link--disabled {
+    color: var(--black-400);
+
+    &:hover {
+        color: var(--black-400);
+        cursor: not-allowed;
+    }
+
+    &:focus {
+        box-shadow: none;
     }
 }
 
@@ -113,7 +141,7 @@
 
     color: var(--error-color);
 
-    &:hover {
-        color: var(--error-color-hover);
+    &:focus {
+        box-shadow: 0px 0px 0px var(--su2) var(--error-color-focus);
     }
 }
