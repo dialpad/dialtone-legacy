@@ -25,10 +25,11 @@
 .d-radio {
     //  Component specific CSS Vars
     //  ------------------------------------------------------------------------
-    // TODO add new variables to refactor
-    --check-radio--bc:      var(--black-600);
-    --check-radio--bgc:     var(--white);
-    --check-radio--bs:      none;
+    --check-radio--color:         var(--primary-color);
+    --check-radio--color-focus:   hsla(var(--primary-color-hsl) ~" / " 15%);
+    --check-radio--bc:            var(--black-600);
+    --check-radio--bgc:           var(--white);
+    --check-radio--bs:            none;
 
     //  [1] Check to see if we can use custom styles, if so reset the defaults
     //  ------------------------------------------------------------------------
@@ -53,15 +54,14 @@
         font-size: inherit;
         cursor: pointer;
 
-        // TODO: refactor
         &:focus {
-            --check-radio--bc: var(--primary-color);
-            --check-radio--bs: 0 0 0 var(--su4) hsla(var(--primary-color-hsl) ~" / " 15%);
+            --check-radio--bc: var(--check-radio--color);
+            --check-radio--bs: 0 0 0 var(--su2) var(--check-radio--color-focus);
             outline: 0;
         }
-        &:checked,
-        &:checked:focus {
-            --check-radio--bc: var(--primary-color);
+
+        &:checked {
+            --check-radio--bc: var(--check-radio--color);
         }
     }
 
@@ -185,6 +185,9 @@
 //  $   CHECKBOXES
 //  ----------------------------------------------------------------------------
 .d-checkbox {
+    --check-radio--color-focus:   var(--blue-200);
+    --check-radio--bc:            var(--check-radio--color);
+
     @supports ((-webkit-appearance: none) or (-moz-appearance: none) or (appearance: none)) {
         border-radius: var(--br2);
         background-position: center center;
@@ -198,7 +201,7 @@
         }
 
         &:checked {
-            --check-radio--bgc:     var(--primary-color);
+            --check-radio--bgc:     var(--check-radio--color);
             background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z' fill='%23fff'/%3E%3C/svg%3E");
 
             //  Disabled
@@ -209,7 +212,6 @@
         }
 
         &:focus {
-            --check-radio--bs: 0 0 0 var(--su2) var(--blue-200);
             border-radius: var(--br2);
         }
     }
@@ -218,37 +220,16 @@
 //  $$  CHECKBOX VALIDATION STATES
 //  ----------------------------------------------------------------------------
 .d-checkbox--warning {
-    --check-radio--bc:      var(--warning-color);
-
-    &:checked {
-        --check-radio--bgc:     var(--warning-color);
-    }
-
-    &:focus {
-        --check-radio--bs:  0 0 0 var(--su2) var(--warning-color-focus);
-    }
+    --check-radio--color:         var(--warning-color);
+    --check-radio--color-focus:   var(--warning-color-focus);
 }
 .d-checkbox--error {
-    --check-radio--bc:      var(--error-color);
-
-    &:checked {
-        --check-radio--bgc:     var(--error-color);
-    }
-
-    &:focus {
-        --check-radio--bs:  0 0 0 var(--su2) var(--error-color-focus);
-    }
+    --check-radio--color:         var(--error-color);
+    --check-radio--color-focus:   var(--error-color-focus);
 }
 .d-checkbox--success {
-    --check-radio--bc:      var(--success-color);
-
-    &:checked {
-        --check-radio--bgc:     var(--success-color);
-    }
-
-    &:focus {
-        --check-radio--bs:  0 0 0 var(--su2) var(--warning-success-focus);
-    }
+    --check-radio--color:         var(--success-color);
+    --check-radio--color-focus:   var(--success-color-focus);
 }
 
 
