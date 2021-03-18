@@ -113,13 +113,13 @@ module.exports = function(eleventyConfig) {
         if (!color) {
             return `<header class="d-fl-center d-fd-column d-p24 d-bgc-black-100 d-bgo50 d-w100p ${minHeight}">${content}</header>`;
         } else {
-            return `<header class="d-fl-center d-fd-column d-p24 d-bgc-${color} d-bgo50 d-w100p ${minHeight}">${content}</header>`;
+            return `<header class="d-fl-center d-fd-column d-p24 d-bgc-${color} d-w100p ${minHeight}">${content}</header>`;
         }
     });
 
     // Add shortcode for code well footer
     eleventyConfig.addPairedShortcode("codeWellFooter", function(content) {
-        return `<footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+        return `<footer class="d-p8 d-bgc-black-600 d-bbr8 d-fs12">
     ${content}</footer>`;
     });
 
