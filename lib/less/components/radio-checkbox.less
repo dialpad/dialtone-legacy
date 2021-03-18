@@ -224,6 +224,7 @@
             background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z' fill='%23fff'/%3E%3C/svg%3E");
 
             //  Disabled
+            //  TODO: check if we can remove this
             &[disabled] {
                 --check-radio--bc:      var(--black-400);
                 --check-radio--bgc:     var(--black-200);
@@ -252,21 +253,24 @@
 //  $   RADIOS
 //  ----------------------------------------------------------------------------
 .d-radio {
+    --check-radio--color-focus:   var(--blue-200);
+
     @supports ((-webkit-appearance: none) or (-moz-appearance: none) or (appearance: none)) {
         border-radius: var(--br-circle);
 
         &:focus,
         &:checked:focus {
-            --check-radio--bgc:     var(--primary-color);
-            --check-radio--bs:      inset 0 0 0 var(--su2) var(--white), 0 0 0 var(--su4) hsla(var(--primary-color-hsl) ~" / " 15%);
+            --check-radio--bgc:     var(--check-radio--color);
+            --check-radio--bs:      inset 0 0 0 var(--su2) var(--white), 0 0 0 var(--su2) var(--check-radio--color-focus);
         }
+
         &:checked {
-            --check-radio--bgc:     var(--primary-color);
+            --check-radio--bgc:     var(--check-radio--color);
             --check-radio--bs:      inset 0 0 0 var(--su2) var(--white);
 
             //  Disabled
             &[disabled] {
-                --check-radio--bc:      var(--black-300);
+                --check-radio--bc:      var(--black-400);
                 --check-radio--bgc:     var(--black-200);
             }
         }
@@ -276,47 +280,19 @@
 //  $$  RADIO & CHECKBOX VALIDATION STATES
 //  ----------------------------------------------------------------------------
 .d-radio--warning {
-    --check-radio--bc:      var(--warning-color);
-
-    &:focus,
-    &:checked:focus {
-        --check-radio--bc:      hsl(var(--yellow-400-h) var(--yellow-400-s) calc(var(--yellow-400-l) - 10%));
-        --check-radio--bgc:     var(--warning-color);
-        --check-radio--bs:      inset 0 0 0 var(--su2) var(--white)~"," 0 0 0 var(--su4) hsla(var(--warning-color-hsl) ~" / " 25%);
-    }
-    &:checked {
-        --check-radio--bc:      var(--warning-color);
-        --check-radio--bgc:     var(--warning-color);
-        --check-radio--bs:      inset 0 0 0 var(--su2) var(--white);
-    }
+    --check-radio--color:         var(--warning-color);
+    --check-radio--color-focus:   var(--warning-color-focus);
+    --check-radio--bc:            var(--check-radio--color);
 }
+
 .d-radio--error {
-    --check-radio--bc:      var(--error-color);
-
-    &:focus,
-    &:checked:focus {
-        --check-radio--bc:      hsl(var(--red-400-h) var(--red-400-s) calc(var(--red-400-l) - 10%));
-        --check-radio--bgc:     var(--error-color);
-        --check-radio--bs:      inset 0 0 0 var(--su2) var(--white)~"," 0 0 0 var(--su4) hsla(var(--error-color-hsl) ~" / " 25%);
-    }
-    &:checked {
-        --check-radio--bc:      var(--error-color);
-        --check-radio--bgc:     var(--error-color);
-        --check-radio--bs:      inset 0 0 0 var(--su2) var(--white);
-    }
+    --check-radio--color:         var(--error-color);
+    --check-radio--color-focus:   var(--error-color-focus);
+    --check-radio--bc:            var(--check-radio--color);
 }
-.d-radio--success {
-    --check-radio--bc:      var(--success-color);
 
-    &:focus,
-    &:checked:focus {
-        --check-radio--bc:      hsl(var(--green-400-h) var(--green-400-s) calc(var(--green-400-l) - 10%));
-        --check-radio--bgc:     var(--success-color);
-        --check-radio--bs:      inset 0 0 0 var(--su2) var(--white)~"," 0 0 0 var(--su4) hsla(var(--success-color-hsl) ~" / " 25%);
-    }
-    &:checked {
-        border-color: var(--success-color);
-        background-color: var(--success-color);
-        box-shadow: inset 0 0 0 var(--su2) var(--white);
-    }
+.d-radio--success {
+    --check-radio--color:         var(--success-color);
+    --check-radio--color-focus:   var(--success-color-focus);
+    --check-radio--bc:            var(--check-radio--color);
 }
