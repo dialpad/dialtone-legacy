@@ -30,13 +30,6 @@
 //  $  ITEMS & LINKS
 //  ----------------------------------------------------------------------------
 .d-breadcrumbs {
-    //  --  COMPONENT CSS VARS
-    //  -----------------------
-    --breadcrumbs--color:            var(--black-700);
-    --breadcrumbs--color-slash:      var(--black-500);
-    --breadcrumbs--color-hover:      var(--black-800);
-    --breadcrumbs--color-selected:   var(--black-800);
-
     //  --  INDIVIDUAL ITEMS
     .d-breadcrumbs__item {
         position: relative;
@@ -53,7 +46,7 @@
                 position: absolute;
                 right: var(--sun12);
                 margin-top: var(--su1);
-                color: var(--breadcrumbs--color-slash);
+                color: var(--muted-color);
                 content: "/";
             }
         }
@@ -61,28 +54,14 @@
 
     //  --  BREADCRUMB LINKS
     .d-breadcrumbs__link {
-        padding: var(--su1);
-
-        font-family: inherit;
-        font-weight: inherit;
-        font-size: inherit;
-        line-height: inherit;
-        color: var(--breadcrumbs--color);
-        text-decoration: underline;
-
-        &:hover {
-            color: var(--breadcrumbs--color-hover);
-        }
+        .d-link();
+        .d-link--muted();
     }
 
     //  --  SELECTED STATE (CURRENT PAGE)
     .d-breadcrumbs__item--selected .d-breadcrumbs__link {
         text-decoration: none;
-        color: var(--breadcrumbs--color-selected);
-
-        &:hover {
-            color: inherit;
-        }
+        cursor: default;
     }
 }
 
@@ -91,29 +70,20 @@
 //  $  INVERTED STYLE
 //  ----------------------------------------------------------------------------
 .d-breadcrumbs.d-breadcrumbs--inverted {
-    //  --  COMPONENT CSS VARS
-    //  -----------------------
-    --breadcrumbs--color:            var(--black-050);
-    --breadcrumbs--color-slash:      var(--black-100);
-    --breadcrumbs--color-hover:      var(--black-200);
-    --breadcrumbs--color-selected:   var(--white);
-
     //  --  ITEM
     .d-breadcrumbs__item:not(:last-of-type):before {
-        color: var(--breadcrumbs--color-slash);
+        color: var(--inverted-color);
     }
 
     //  --  LINK
     .d-breadcrumbs__link {
-        color: var(--breadcrumbs--color);
-
-        &:hover {
-            color: var(--breadcrumbs--color-hover);
-        }
+        .d-link--inverted();
     }
 
     //  --  SELECTED STATE (CURRENT PAGE)
     .d-breadcrumbs__item--selected .d-breadcrumbs__link {
-        color: var(--breadcrumbs--color-selected);
+        &:hover {
+            color: var(--inverted-color);
+        }
     }
 }
