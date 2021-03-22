@@ -4,9 +4,39 @@ title: Radios
 description: A selectable input group with multiple entries where only one item can be selected.
 ---
 <section class="d-stack16">
-    <header class="d-stack8">
-        <h2 class="dialtone-title__section">Base Style</h2>
-    </header>
+  {% header "h2", "Classes" %}
+  <table class="d-table">
+    <thead>
+      <tr>
+        <th scope="col" class="d-w25p">Class</th>
+        <th scope="col" class="d-w25p">Applies to</th>
+        <th scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in tooltips.classes %}
+        {% assign class = i.class %}
+        {% assign apply = i.applies %}
+        {% assign desc = i.description %}
+        <tr>
+          <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.{{ class }}</th>
+          <td class="d-ff-mono d-fc-teal-500 d-fs12">{% if apply != "N/A" %}<span class="code-example--inline">.{% endif %}{{ apply }}{% if apply != "N/A" %}</span>{% endif %}</td>
+          <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ desc }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</section>
+<section class="d-stack16">
+  {% header "h2", "Examples" %}
+  {% codeWell %}
+    {% codeWellHeader %}
+    {% endcodeWellHeader %}
+    {% codeWellFooter %}
+    {% endcodeWellFooter %}
+  {% endcodeWell %}
+</section>
+
     <div class="dialtone-example" data-example="yes" data-code="yes">
         <div class="dialtone-example__example">
             <div class="d-stack16">
