@@ -16,23 +16,25 @@
     --banner--bgc:          var(--black-050);
     --banner--fc:           var(--black-800);
 
-    box-sizing: border-box;
+    display: flex;
     position: fixed;
-    z-index: var(--zi-navigation-fixed);
     top: 0;
     right: 0;
     left: 0;
-    display: flex;
+    z-index: var(--zi-navigation-fixed);
     width: 100%;
     min-height: var(--su48);
+    transform: translate3d(0,var(--topbar-height),0);
 
-    border-radius: 0;
-    background-color: var(--banner--bgc);
+    box-sizing: border-box;
     box-shadow: none;
+    border-radius: 0;
+
+    color: var(--banner--fc);
+    background-color: var(--banner--bgc);
+
     font-size: var(--fs14);
     line-height: var(--lh6);
-    color: var(--banner--fc);
-    transform: translate3d(0,var(--topbar-height),0);
 
     // If you want to hide and reveal the banner
     &[aria-hidden="true"] {
@@ -62,14 +64,16 @@
 //  $   CONTENT CONTAINER
 //  ----------------------------------------------------------------------------
 .d-banner__dialog {
-    position: relative;
-    margin: 0 auto;
     display: flex;
     align-items: center;
-    padding: calc(var(--su6) - var(--su1)) var(--su16);
+    position: relative;
+
     width: 100%;
-    max-width: 128rem;
     min-height: 100%;
+    max-width: 128rem;
+
+    margin: 0 auto;
+    padding: calc(var(--su6) - var(--su1)) var(--su16);
 
     .d-flow8();
 
