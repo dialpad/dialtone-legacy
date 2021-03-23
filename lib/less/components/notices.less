@@ -132,11 +132,11 @@
 //  ----------------------------------------------------------------------------
 .d-notice.d-notice--important,
 .d-banner.d-banner--important {
-    --notice--bc:           transparent;
-    --notice--bgc:          var(--black-700);
+    --notice--bc:           var(--black-050);
+    --notice--bgc:          var(--black-800);
     --notice--fc:           var(--white);
-    --banner--bc:           transparent;
-    --banner--bgc:          var(--black-700);
+    --banner--bc:           var(--black-050);
+    --banner--bgc:          var(--black-800);
     --banner--fc:           var(--white);
 
     .d-notice__btn {
@@ -160,13 +160,17 @@
 //  ----------------------------------------------------------------------------
 .d-notice--info,
 .d-banner--info {
-    background-color: var(--blue-100);
-    border-color: hsla(var(--blue-700-h) var(--blue-700-s) var(--blue-700-l) ~" / " 40%);
+    --notice--bc:           transparent;
+    --notice--bgc:          var(--blue-100);
+    --notice--fc:           var(--blue-700);
+    --banner--bc:           transparent;
+    --banner--bgc:          var(--blue-100);
+    --banner--fc:           var(--blue-700);
 
     .d-notice__btn {
         &:hover,
         &:active {
-            background-color: hsla(var(-blue-100-h) var(-blue-100-s) var(-blue-100-l) ~" / " 15%);
+            background-color: hsla(var(--blue-100-h) var(--blue-100-s) var(--blue-100-l) ~" / " 15%);
             color: inherit;
         }
         &:active {
@@ -175,13 +179,17 @@
     }
 
     .d-notice__icon {
-        color: var(--blue-600);
+        color: var(--blue-700);
     }
 
     &.d-notice--important,
     &.d-banner--important {
-        background-color: var(--blue-300);
-        color: var(--black-900);
+        --notice--bc:           var(--blue-100);
+        --notice--bgc:          var(--blue-700);
+        --notice--fc:           var(--white);
+        --banner--bc:           var(--blue-100);
+        --banner--bgc:          var(--blue-700);
+        --banner--fc:           var(--white);
 
         .d-notice__btn {
             &:hover,
@@ -194,6 +202,10 @@
             &:focus {
                 box-shadow: 0 0 0 var(--su4) hsla(var(--blue-500-h) var(--blue-500-s) var(--blue-500-l) ~" / " 25%);
             }
+        }
+
+        .d-notice__icon {
+            color: var(--blue-100);
         }
     }
 }
