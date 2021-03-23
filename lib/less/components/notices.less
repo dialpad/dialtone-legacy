@@ -132,12 +132,12 @@
 //  ----------------------------------------------------------------------------
 .d-notice.d-notice--important,
 .d-banner.d-banner--important {
-    --notice--bc:           var(--black-050);
+    --notice--bc:           transparent;
     --notice--bgc:          var(--black-800);
-    --notice--fc:           var(--white);
-    --banner--bc:           var(--black-050);
+    --notice--fc:           var(--black-050);
+    --banner--bc:           transparent;
     --banner--bgc:          var(--black-800);
-    --banner--fc:           var(--white);
+    --banner--fc:           var(--black-050);
 
     .d-notice__btn {
         &:hover,
@@ -184,10 +184,10 @@
 
     &.d-notice--important,
     &.d-banner--important {
-        --notice--bc:           var(--blue-100);
+        --notice--bc:           transparent;
         --notice--bgc:          var(--blue-700);
         --notice--fc:           var(--white);
-        --banner--bc:           var(--blue-100);
+        --banner--bc:           transparent;
         --banner--bgc:          var(--blue-700);
         --banner--fc:           var(--white);
 
@@ -242,10 +242,10 @@
 
     &.d-notice--important,
     &.d-banner--important {
-        --notice--bc:           transparent; // TODO: TBD
+        --notice--bc:           transparent;
         --notice--bgc:          var(--yellow-400);
         --notice--fc:           var(--black-800);
-        --banner--bc:           transparent; // TODO: TBD
+        --banner--bc:           transparent;
         --banner--bgc:          var(--yellow-400);
         --banner--fc:           var(--black-800);
 
@@ -272,8 +272,12 @@
 //  ----------------------------------------------------------------------------
 .d-notice--error,
 .d-banner--error {
-    background-color: var(--red-100);
-    border-color: hsla(var(--red-500-h) var(--red-500-s) var(--red-500-l) ~" / " 40%);
+    --notice--bc:           transparent;
+    --notice--bgc:          var(--red-100);
+    --notice--fc:           var(--red-600);
+    --banner--bc:           transparent;
+    --banner--bgc:          var(--red-100);
+    --banner--fc:           var(--red-600);
 
     .d-notice__btn {
         &:hover,
@@ -290,14 +294,18 @@
     }
 
     .d-notice__icon {
-        color: var(--red-400);
+        color: var(--red-600);
     }
 
 
     &.d-notice--important,
     &.d-banner--important {
-        background-color: var(--red-300);
-        color: var(--black-800);
+        --notice--bc:           transparent;
+        --notice--bgc:          var(--red-500);
+        --notice--fc:           var(--red-100);
+        --banner--bc:           transparent;
+        --banner--bgc:          var(--red-500);
+        --banner--fc:           var(--red-100);
 
         .d-notice__btn {
             &:hover,
@@ -310,6 +318,10 @@
             &:focus {
                 box-shadow: 0 0 0 var(--su4) hsla(var(--red-200-h) var(--red-200-s) var(--red-200-l) ~" / " 40%);
             }
+        }
+
+        .d-notice__icon {
+            color: var(--red-100);
         }
     }
 }
