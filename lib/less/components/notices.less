@@ -53,6 +53,22 @@
 .d-notice__icon {
     display: flex;
     flex: 0 auto;
+    color: inherit;
+
+    .d-btn__label {
+        display: none;
+    }
+
+    .d-btn__icon {
+        margin: unset;
+        font-size: var(--fs10);     //  Set font-size 10px to make icon sizing easier
+
+        &,
+        .d-svg {
+            width: 1.8em;
+            height: 1.8em;
+        }
+    }
 }
 
 //  $$  CONTENT
@@ -71,10 +87,18 @@
     flex: 0 auto;
 
     .d-flow4();
+
+    // TODO: pending discussion: Should we modify the colors to fit the theme of the notice / banner
+    .d-btn {
+        color: inherit;
+    }
+
+    .d-btn--outlined {
+        border-color: inherit;
+    }
 }
 
-// --  Buttons
-.d-notice__btn {
+/*.d-notice__btn {
     padding: calc(var(--su8) - var(--su1));
     color: inherit;
     font-size: var(--fs14);
@@ -115,7 +139,7 @@
     .d-btn__icon {
         margin: unset;
     }
-}
+}*/
 
 //  ============================================================================
 //  $   COPY STYLES
@@ -151,10 +175,6 @@
             box-shadow: 0 0 0 var(--su4) hsla(var(--black-100-h) var(--black-100-s) var(--black-100-l) ~" / " 25%);
         }
     }
-
-    .d-notice__icon {
-        color: inherit;
-    }
 }
 //  $$  INFO
 //  ----------------------------------------------------------------------------
@@ -167,7 +187,7 @@
     --banner--bgc:          var(--blue-100);
     --banner--fc:           var(--blue-700);
 
-    .d-notice__btn {
+    /*.d-notice__btn {
         &:hover,
         &:active {
             background-color: hsla(var(--blue-100-h) var(--blue-100-s) var(--blue-100-l) ~" / " 15%);
@@ -176,7 +196,7 @@
         &:active {
             border-color: var(--blue-400);
         }
-    }
+    }*/
 
     .d-notice__icon {
         color: var(--blue-700);
@@ -191,7 +211,7 @@
         --banner--bgc:          var(--blue-700);
         --banner--fc:           var(--white);
 
-        .d-notice__btn {
+        /*.d-notice__btn {
             &:hover,
             &:active {
                 background-color: hsla(var(--blue-500-h) var(--blue-500-s) var(--blue-500-l) ~" / " 10%);
@@ -202,7 +222,7 @@
             &:focus {
                 box-shadow: 0 0 0 var(--su4) hsla(var(--blue-500-h) var(--blue-500-s) var(--blue-500-l) ~" / " 25%);
             }
-        }
+        }*/
 
         .d-notice__icon {
             color: var(--blue-100);
@@ -221,7 +241,7 @@
     --banner--bgc:          var(--yellow-100);
     --banner--fc:           var(--yellow-600);
 
-    .d-notice__btn {
+    /*.d-notice__btn {
         &:hover,
         &:active {
             background-color: hsla(var(--yellow-200-h) var(--yellow-200-s) var(--yellow-200-l) ~" / " 25%);
@@ -233,7 +253,7 @@
         &:focus {
             box-shadow: 0 0 0 var(--su4) hsla(var(--yellow-500-h) var(--yellow-500-s) var(--yellow-500-l) ~" / " 25%);
         }
-    }
+    }*/
 
     .d-notice__icon {
         color: var(--yellow-600);
@@ -249,7 +269,7 @@
         --banner--bgc:          var(--yellow-400);
         --banner--fc:           var(--black-800);
 
-        .d-notice__btn {
+        /*.d-notice__btn {
             &:hover,
             &:active {
                 background-color: hsla(var(--yellow-600-h) var(--yellow-600-s) var(--yellow-600-l) ~" / " 15%);
@@ -260,7 +280,7 @@
             &:focus {
                 box-shadow: 0 0 0 var(--su4) hsla(var(--yellow-600-h) var(--yellow-600-s) var(--yellow-600-l) ~" / " 40%);
             }
-        }
+        }*/
 
         .d-notice__icon {
             color: var(--black-800);
@@ -279,7 +299,7 @@
     --banner--bgc:          var(--red-100);
     --banner--fc:           var(--red-600);
 
-    .d-notice__btn {
+    /*.d-notice__btn {
         &:hover,
         &:active {
             background-color: hsla(var(--red-100-h) var(--red-100-s) var(--red-100-l) ~" / " 15%);
@@ -291,7 +311,7 @@
         &:focus {
             box-shadow: 0 0 0 var(--su4) hsla(var(--red-500-h) var(--red-500-s) var(--red-500-l) ~" / " 25%);
         }
-    }
+    }*/
 
     .d-notice__icon {
         color: var(--red-600);
@@ -307,7 +327,7 @@
         --banner--bgc:          var(--red-500);
         --banner--fc:           var(--red-100);
 
-        .d-notice__btn {
+        /*.d-notice__btn {
             &:hover,
             &:active {
                 background-color: hsla(var(--red-200-h) var(--red-200-s) var(--red-200-l) ~" / " 20%);
@@ -318,7 +338,7 @@
             &:focus {
                 box-shadow: 0 0 0 var(--su4) hsla(var(--red-200-h) var(--red-200-s) var(--red-200-l) ~" / " 40%);
             }
-        }
+        }*/
 
         .d-notice__icon {
             color: var(--red-100);
@@ -337,7 +357,7 @@
     --banner--bgc:          var(--green-100);
     --banner--fc:           var(--green-600);
 
-    .d-notice__btn {
+    /*.d-notice__btn {
         &:hover,
         &:active {
             background-color: hsla(var(--green-200-h) var(--green-200-s) var(--green-200-l) ~" / " 25%);
@@ -349,7 +369,7 @@
         &:focus {
             box-shadow: 0 0 0 var(--su4) hsla(var(--green-400-h) var(--green-400-s) var(--green-400-l) ~" / " 25%);
         }
-    }
+    }*/
 
     .d-notice__icon {
         color: var(--green-600);
@@ -369,7 +389,7 @@
             color: var(--green-100);
         }
 
-        .d-notice__btn {
+        /*.d-notice__btn {
             &:hover,
             &:active {
                 background-color: hsla(var(--green-200-h) var(--green-200-s) var(--green-200-l) ~" / " 15%);
@@ -380,7 +400,7 @@
             &:focus {
                 box-shadow: 0 0 0 var(--su4) hsla(var(--green-300-h) var(--green-300-s) var(--green-300-l) ~" / " 25%);
             }
-        }
+        }*/
 
         .d-notice__icon {
             color: var(--green-100);
