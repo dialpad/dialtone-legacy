@@ -214,8 +214,12 @@
 //  ----------------------------------------------------------------------------
 .d-notice--warning,
 .d-banner--warning {
-    background-color: var(--yellow-100);
-    border-color: hsla(var(--yellow-500-h) var(--yellow-500-s) var(--yellow-500-l) ~" / " 40%);
+    --notice--bc:           transparent;
+    --notice--bgc:          var(--yellow-100);
+    --notice--fc:           var(--yellow-600);
+    --banner--bc:           transparent;
+    --banner--bgc:          var(--yellow-100);
+    --banner--fc:           var(--yellow-600);
 
     .d-notice__btn {
         &:hover,
@@ -232,14 +236,18 @@
     }
 
     .d-notice__icon {
-        color: var(--yellow-400);
+        color: var(--yellow-600);
     }
 
 
     &.d-notice--important,
     &.d-banner--important {
-        background-color: var(--yellow-300);
-        color: var(--black-800);
+        --notice--bc:           transparent; // TODO: TBD
+        --notice--bgc:          var(--yellow-400);
+        --notice--fc:           var(--black-800);
+        --banner--bc:           transparent; // TODO: TBD
+        --banner--bgc:          var(--yellow-400);
+        --banner--fc:           var(--black-800);
 
         .d-notice__btn {
             &:hover,
@@ -252,6 +260,10 @@
             &:focus {
                 box-shadow: 0 0 0 var(--su4) hsla(var(--yellow-600-h) var(--yellow-600-s) var(--yellow-600-l) ~" / " 40%);
             }
+        }
+
+        .d-notice__icon {
+            color: var(--black-800);
         }
     }
 }
