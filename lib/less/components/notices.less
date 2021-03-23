@@ -330,8 +330,12 @@
 //  ----------------------------------------------------------------------------
 .d-notice--success,
 .d-banner--success {
-    background-color: var(--green-100);
-    border-color: hsla(var(--green-500-h) var(--green-500-s) var(--green-500-l) ~" / " 40%);
+    --notice--bc:           transparent;
+    --notice--bgc:          var(--green-100);
+    --notice--fc:           var(--green-600);
+    --banner--bc:           transparent;
+    --banner--bgc:          var(--green-100);
+    --banner--fc:           var(--green-600);
 
     .d-notice__btn {
         &:hover,
@@ -348,14 +352,18 @@
     }
 
     .d-notice__icon {
-        color: var(--green-400);
+        color: var(--green-600);
     }
 
 
     &.d-notice--important,
     &.d-banner--important {
-        background-color: var(--green-300);
-        color: var(--black-800);
+        --notice--bc:           transparent;
+        --notice--bgc:          var(--green-600);
+        --notice--fc:           var(--green-100);
+        --banner--bc:           transparent;
+        --banner--bgc:          var(--green-600);
+        --banner--fc:           var(--green-100);
 
         a:hover {
             color: var(--green-100);
@@ -372,6 +380,10 @@
             &:focus {
                 box-shadow: 0 0 0 var(--su4) hsla(var(--green-300-h) var(--green-300-s) var(--green-300-l) ~" / " 25%);
             }
+        }
+
+        .d-notice__icon {
+            color: var(--green-100);
         }
     }
 }
