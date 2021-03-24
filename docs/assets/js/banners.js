@@ -17,7 +17,7 @@ $(document).ready(function() {
     var selectMenu = $('.js-banner-style-menu');
     var important = $('.js-banner-important');
     var pinned = $('.js-banner-pinned');
-    var iconTypes = $('js-banner-example-icon-info, js-banner-example-icon-warning, js-banner-example-icon-error, js-banner-example-icon-success');
+    var iconTypes = $('.js-banner-example-icon-info, .js-banner-example-icon-warning, .js-banner-example-icon-error, .js-banner-example-icon-success');
     var classTypes = ("d-banner--info d-banner--warning d-banner--error d-banner--success d-banner--important d-banner--pinned");
 
     launchBtn.on('click', function(e) {
@@ -41,6 +41,11 @@ $(document).ready(function() {
         title.attr('id', bannerTitle);
         desc.attr('id', bannerDesc);
 
+        // Reset Classes
+        actionBtn.removeClass('d-btn--inverted');
+        closeBtn.removeClass('d-btn--inverted');
+        iconTypes.addClass('d-d-none');
+
         if (pinned.is(':checked')) {
             banner.addClass('d-banner--pinned');
             actions.addClass('d-d-none');
@@ -49,6 +54,11 @@ $(document).ready(function() {
 
         if (important.is(':checked')) {
             banner.addClass('d-banner--important');
+
+            if (style !== 'warning') {
+                actionBtn.addClass('d-btn--inverted');
+                closeBtn.addClass('d-btn--inverted');
+            }
         }
 
         if (style == 'none') {
@@ -56,13 +66,11 @@ $(document).ready(function() {
             title.text('');
             desc.text('Your meeting invite has been sent to Ted, Vicky, David, and Trinh.');
             actionBtn.text('Edit invite');
-            iconTypes.addClass('d-d-none');
         }
 
         if (style != 'none') {
             banner.addClass(bannerClass);
             actions.removeClass('d-d-none');
-            iconTypes.addClass('d-d-none');
             icon.removeClass('d-d-none');
             iconStyle.removeClass('d-d-none');
         }
@@ -75,7 +83,6 @@ $(document).ready(function() {
         else if (style == 'warning') {
             title.text('Poor connection.');
             desc.text('Your internet connection isn\'t very strong. Please switch to a more reliable connection soon.');
-            actionBtn.addClass('d-d-none');
         }
         else if (style == 'error') {
             title.text('Your subscription is about to expire.');
