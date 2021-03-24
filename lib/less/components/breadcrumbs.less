@@ -46,35 +46,16 @@
                 position: absolute;
                 right: var(--sun12);
                 margin-top: var(--su1);
+                color: var(--muted-color);
                 content: "/";
             }
         }
     }
 
-    //  --  BREADCRUMB LINKS
-    .d-breadcrumbs__link {
-        padding: var(--su1);
-
-        font-family: inherit;
-        font-weight: inherit;
-        font-size: inherit;
-        line-height: inherit;
-        color: var(--black-600);
-        text-decoration: underline;
-
-        &:hover {
-            color: var(--primary-color);
-        }
-    }
-
     //  --  SELECTED STATE (CURRENT PAGE)
-    .d-breadcrumbs__item--selected .d-breadcrumbs__link {
+    .d-breadcrumbs__item--selected .d-link {
         text-decoration: none;
-        color: var(--black-900);
-
-        &:hover {
-            color: inherit;
-        }
+        cursor: default;
     }
 }
 
@@ -85,20 +66,13 @@
 .d-breadcrumbs.d-breadcrumbs--inverted {
     //  --  ITEM
     .d-breadcrumbs__item:not(:last-of-type):before {
-        color: var(--black-300);
-    }
-
-    //  --  LINK
-    .d-breadcrumbs__link {
-        color: var(--black-300);
-
-        &:hover {
-            color: hsl(var(--primary-color-h) var(--primary-color-s) calc(var(--primary-color-l) + 30%));
-        }
+        color: var(--inverted-color);
     }
 
     //  --  SELECTED STATE (CURRENT PAGE)
-    .d-breadcrumbs__item--selected .d-breadcrumbs__link {
-        color: var(--black-050);
+    .d-breadcrumbs__item--selected .d-link {
+        &:hover {
+            color: var(--inverted-color);
+        }
     }
 }
