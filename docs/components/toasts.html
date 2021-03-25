@@ -14,51 +14,48 @@ description: Toast notices, sometimes called snackbars, are time-based messages 
     <h2 class="dialtone-title__section">Styles</h2>
     {% for i in toasts.toast-example %}
     {% assign name = i.name %}
-    {% assign meta = i.meta %}
-    {% assign copy = i.copy %}
         <aside class="d-stack8">
-            <h3 class="dialtone-title__subsection">{{ name | capitalize }}</h3>
+            <h3 class="dialtone-title__subsection d-mb24">{{ name | capitalize }}</h3>
             <div class="dialtone-example" data-example="yes" data-code="yes">
                 <div class="dialtone-example__example">
                     <div class="d-ps-relative d-min-height1 d-mtn32 d-mxn24 d-mbn24">
-                        <div class="d-toast-wrapper">
-                            <div class="d-toast--{{ name }}" aria-hidden="true">
-                                <div class="d-toast__content" aria-describedby="notice-message">
-                                    <div class="d-toast__icon--{{ name }}">
-                                    {% if name == "chat" %}
-                                        {% iconSystem "chat", "js-svg" %}
-                                    {% elsif name == "viewing" %}
-                                        {% iconSystem "visibility", "js-svg" %}
-                                    {% elsif name == "info" %}
-                                        {% iconSystem "info", "js-svg" %}
-                                    {% elsif name == "error" %}
-                                        {% iconSystem "error", "js-svg" %}
-                                    {% elsif name == "success" %}
-                                        {% iconSystem "checkmark", "js-svg" %}
-                                    {% elsif name == "organizer" %}
-                                        {% iconSystem "group", "js-svg" %}
-                                    {% endif %}
-                                    </div>
-                                    <div class="d-toast__message" aria-label="notice-message">
-                                        {% if meta != nil %}<div class="d-toast__meta">{{ meta }}</div>{% endif %}
-                                        <div class="d-toast__copy">{{ copy }}</div>
-                                    </div>
+                        <div class="d-toast d-toast--top-right d-toast--{{ name }}" aria-hidden="true">
+                            <div class="d-toast__dialog" aria-describedby="notice-content">
+                                <div class="d-notice__icon">
+                                {% if name == "info" %}
+                                    {% iconSystem "info", "js-svg" %}
+                                {% elsif name == "warning" %}
+                                    {% iconSystem "warning", "js-svg" %}
+                                {% elsif name == "error" %}
+                                    {% iconSystem "error", "js-svg" %}
+                                {% elsif name == "success" %}
+                                    {% iconSystem "checkmark", "js-svg" %}
+                                {% endif %}
+                                </div>
+                                <div class="d-notice__content" aria-label="notice-content">
+                                    <div class="d-notice__title">Optional title</div>
+                                    <div class="d-notice__message">Message body with <a href="#">a link.</a></div>
+                                </div>
+                                <div>
+                                    TODO: Add Action Items
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="dialtone-example__code">
-{% highlight css %}
-.example-toast-wrapper {
-    .d-toast-wrapper();
-}
-.example-toast--{{ name }} {
-    .d-toast--{{ name }}();
-}
-.example-toast__icon--{{ name }} {
-    .d-toast__icon--{{ name }}();
-}
+{% highlight html %}
+<div class="d-toast d-toast--top-right" aria-hidden="true">
+    <div class="d-toast__dialog" aria-describedby="notice-content">
+        <div class="d-notice__icon">
+            ...
+        </div>
+        <div class="d-notice__content" aria-label="notice-content">
+            <div class="d-notice__title">...</div>
+            <div class="d-notice__message">...</div>
+        </div>
+    </div>
+</div>
 {% endhighlight %}
                 </div>
             </div>
