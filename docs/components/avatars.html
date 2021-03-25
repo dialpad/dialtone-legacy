@@ -1,0 +1,46 @@
+---
+layout: page
+title: Avatars
+description: TBD
+---
+<section class="d-stack16">
+  {% header "h2", "Classes" %}
+  <div class="dialtone-table-wrapper">
+    <table class="d-table">
+      <thead>
+        <tr>
+          <th scope="col" class="d-w25p">Class</th>
+          <th scope="col" class="d-w25p">Applies to</th>
+          <th scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for i in avatars.classes %}
+          {% assign class = i.class %}
+          {% assign applies = i.applies %}
+          {% assign desc = i.desc %}
+          <tr>
+            <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">{{ class }}</th>
+            <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ applies }}</td>
+            <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ desc }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+<section class="d-stack8">
+  {% header "h2", "Examples" %}
+  {% codeWell %}
+    {% codeWellHeader %}
+      <div class="d-avatar">TODO</div>
+      <div class="d-avatar d-avatar--initials">JD</div>
+    {% endcodeWellHeader %}
+    {% codeWellFooter %}
+      {% highlight html linenos %}
+<div class="d-avatar">TODO</div>
+<div class="d-avatar d-avatar--initials">JD</div>
+      {% endhighlight %}
+    {% endcodeWellFooter %}
+  {% endcodeWell %}
+</section>
