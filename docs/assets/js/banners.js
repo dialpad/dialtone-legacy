@@ -9,6 +9,7 @@ $(document).ready(function() {
     var dialog = $('.js-banner-example-dialog');
     var title = $('.js-banner-example-title');
     var desc = $('.js-banner-example-desc');
+    const link = $('.js-banner-example-link');
     var icon = $('.js-banner-example-icon');
     var actions = $('.js-banner-example-actions');
     var actionBtn = $('.js-banner-example-action-btn');
@@ -44,6 +45,7 @@ $(document).ready(function() {
         // Reset Classes
         actionBtn.removeClass('d-btn--inverted');
         closeBtn.removeClass('d-btn--inverted');
+        link.removeClass('d-link--inverted');
         iconTypes.addClass('d-d-none');
 
         if (pinned.is(':checked')) {
@@ -58,6 +60,7 @@ $(document).ready(function() {
             if (style !== 'warning') {
                 actionBtn.addClass('d-btn--inverted');
                 closeBtn.addClass('d-btn--inverted');
+                link.addClass('d-link--inverted');
             }
         }
 
