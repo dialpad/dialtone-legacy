@@ -28,25 +28,69 @@ description: TBD
       </tbody>
     </table>
   </div>
+  {% header "h3", "Sizes" %}
+  <div class="dialtone-table-wrapper">
+    <table class="d-table">
+      <thead>
+        <tr>
+          <th scope="col" class="d-w25p">Class</th>
+          <th scope="col" class="d-w25p">Applies to</th>
+          <th scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for size in avatars.sizes %}
+          <tr>
+            <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">d-avatar--{{ size }}</th>
+            <td class="d-ff-mono d-fc-teal-500 d-fs12">d-avatar</td>
+            <td class="d-ff-mono d-fc-teal-500 d-fs12">Applies size style to the avatar.</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% header "h3", "Colors" %}
+  <div class="dialtone-table-wrapper">
+    <table class="d-table">
+      <thead>
+        <tr>
+          <th scope="col" class="d-w25p">Class</th>
+          <th scope="col" class="d-w25p">Applies to</th>
+          <th scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for color in avatars.colors %}
+          <tr>
+            <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">d-avatar--{{ color }}</th>
+            <td class="d-ff-mono d-fc-teal-500 d-fs12">d-avatar</td>
+            <td class="d-ff-mono d-fc-teal-500 d-fs12">Applies color style to the avatar.</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
 </section>
 <section class="d-stack8">
   {% header "h2", "Examples" %}
-  {% codeWell %}
-    {% codeWellHeader %}
-      <div class="d-avatar">TODO</div>
-      {% for size in avatars.sizes %}
-        <div class="d-d-flex d-fl-center d-flow8">
-          {% for color in avatars.colors %}
-            <div class="d-avatar d-avatar--{{ size }} d-avatar--{{ color }} d-avatar--initials">{{ size }}</div>
-          {% endfor %}
-        </div>
-      {% endfor %}
-    {% endcodeWellHeader %}
-    {% codeWellFooter %}
-      {% highlight html linenos %}
-<div class="d-avatar">TODO</div>
-<div class="d-avatar d-avatar--md d-avatar--blue-700 d-avatar--initials">JD</div>
-      {% endhighlight %}
-    {% endcodeWellFooter %}
-  {% endcodeWell %}
+  {% header "h3", "Initials" %}
+  {% for size in avatars.sizes %}
+    {% header "h4", size %}
+      {% codeWell %}
+        {% codeWellHeader %}
+          <div class="d-w100p d-fl-col4 d-flg4 d-fw-wrap d-jc-space-between d-mb32">
+            {% for color in avatars.colors %}
+              <div class="d-fl-grow0 d-mb8">
+                <div class="d-avatar d-avatar--{{ size }} d-avatar--{{ color }} d-avatar--initials">{{ size }}</div>
+              </div>
+            {% endfor %}
+          </div>
+        {% endcodeWellHeader %}
+        {% codeWellFooter %}
+          {% highlight html linenos %}
+<div class="d-avatar d-avatar--{{ size }} d-avatar--{{ color }} d-avatar--initials">{{ size }}</div>
+          {% endhighlight %}
+        {% endcodeWellFooter %}
+      {% endcodeWell %}
+  {% endfor %}
 </section>
