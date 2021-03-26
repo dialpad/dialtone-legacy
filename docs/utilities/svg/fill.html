@@ -1,0 +1,36 @@
+---
+layout: page
+title: Fill
+description: Utilities for controlling an SVG's fill.
+
+---
+
+<section class="d-stack16">
+  {% header "h2", "Classes" %}
+  <table class="d-table">
+    <thead>
+      <tr>
+        <th scope="col">Size</th>
+        <th scope="col" class="d-w20p">Variable</th>
+        <th scope="col" class="d-w20p">Class</th>
+        <th scope="col" class="d-w35p">Examples</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for size in icons-sizes %}
+        <tr>
+          <th scope="row">{{ size.size }}px</th>
+          <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">{{ size.variable }}</td>
+          <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.{{ size.class }}</td>
+          <td>
+            <div class="d-d-flex d-ai-center d-mxn2">
+              {% iconSystem "phone", size.class %}
+              {% iconSystem "chat", size.class %}
+              {% iconSystem "video", size.class %}
+            </div>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</section>
