@@ -66,9 +66,6 @@ $(document).ready(function() {
 
         if (style == 'none') {
             icon.addClass('d-d-none');
-            title.text('');
-            desc.text('Your meeting invite has been sent to Ted, Vicky, David, and Trinh.');
-            actionBtn.text('Edit invite');
         }
 
         if (style != 'none') {
@@ -76,26 +73,6 @@ $(document).ready(function() {
             actions.removeClass('d-d-none');
             icon.removeClass('d-d-none');
             iconStyle.removeClass('d-d-none');
-        }
-
-        if (style == 'info') {
-            title.text('Upgrade today!');
-            desc.text('Try out our new interface. You can switch back if you\'re not quite ready.');
-            actionBtn.text('Upgrade');
-        }
-        else if (style == 'warning') {
-            title.text('Poor connection.');
-            desc.text('Your internet connection isn\'t very strong. Please switch to a more reliable connection soon.');
-        }
-        else if (style == 'error') {
-            title.text('Your subscription is about to expire.');
-            desc.text('Update your payment details soon to avoid a disruption in your service.');
-            actionBtn.text('Update');
-        }
-        else if (style == 'success') {
-            title.text('New department added.');
-            desc.text('The Dialtone department has been created. Now invite some agents.');
-            actionBtn.text('Add agents');
         }
     });
 
@@ -115,9 +92,5 @@ $(document).ready(function() {
         banner.attr('aria-hidden', 'true').removeClass(classTypes);
         icon.addClass('d-d-none');
         iconStyle.addClass('d-d-none');
-
-        title.text('');
-        desc.text('');
-        actionBtn.text('');
     });
 });
