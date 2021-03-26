@@ -9,6 +9,7 @@ $(document).ready(function() {
     var dialog = $('.js-banner-example-dialog');
     var title = $('.js-banner-example-title');
     var desc = $('.js-banner-example-desc');
+    const link = $('.js-banner-example-link');
     var icon = $('.js-banner-example-icon');
     var actions = $('.js-banner-example-actions');
     var actionBtn = $('.js-banner-example-action-btn');
@@ -17,7 +18,7 @@ $(document).ready(function() {
     var selectMenu = $('.js-banner-style-menu');
     var important = $('.js-banner-important');
     var pinned = $('.js-banner-pinned');
-    var iconTypes = $('js-banner-example-icon-info, js-banner-example-icon-warning, js-banner-example-icon-error, js-banner-example-icon-success');
+    var iconTypes = $('.js-banner-example-icon-info, .js-banner-example-icon-warning, .js-banner-example-icon-error, .js-banner-example-icon-success');
     var classTypes = ("d-banner--info d-banner--warning d-banner--error d-banner--success d-banner--important d-banner--pinned");
 
     launchBtn.on('click', function(e) {
@@ -41,6 +42,12 @@ $(document).ready(function() {
         title.attr('id', bannerTitle);
         desc.attr('id', bannerDesc);
 
+        // Reset Classes
+        actionBtn.removeClass('d-btn--inverted');
+        closeBtn.removeClass('d-btn--inverted');
+        link.removeClass('d-link--inverted');
+        iconTypes.addClass('d-d-none');
+
         if (pinned.is(':checked')) {
             banner.addClass('d-banner--pinned');
             actions.addClass('d-d-none');
@@ -49,43 +56,23 @@ $(document).ready(function() {
 
         if (important.is(':checked')) {
             banner.addClass('d-banner--important');
+
+            if (style !== 'warning') {
+                actionBtn.addClass('d-btn--inverted');
+                closeBtn.addClass('d-btn--inverted');
+                link.addClass('d-link--inverted');
+            }
         }
 
         if (style == 'none') {
             icon.addClass('d-d-none');
-            title.text('');
-            desc.text('Your meeting invite has been sent to Ted, Vicky, David, and Trinh.');
-            actionBtn.text('Edit invite');
-            iconTypes.addClass('d-d-none');
         }
 
         if (style != 'none') {
             banner.addClass(bannerClass);
             actions.removeClass('d-d-none');
-            iconTypes.addClass('d-d-none');
             icon.removeClass('d-d-none');
             iconStyle.removeClass('d-d-none');
-        }
-
-        if (style == 'info') {
-            title.text('Upgrade today!');
-            desc.text('Try out our new interface. You can switch back if you\'re not quite ready.');
-            actionBtn.text('Upgrade');
-        }
-        else if (style == 'warning') {
-            title.text('Poor connection.');
-            desc.text('Your internet connection isn\'t very strong. Please switch to a more reliable connection soon.');
-            actionBtn.addClass('d-d-none');
-        }
-        else if (style == 'error') {
-            title.text('Your subscription is about to expire.');
-            desc.text('Update your payment details soon to avoid a disruption in your service.');
-            actionBtn.text('Update');
-        }
-        else if (style == 'success') {
-            title.text('New department added.');
-            desc.text('The Dialtone department has been created. Now invite some agents.');
-            actionBtn.text('Add agents');
         }
     });
 
@@ -105,9 +92,5 @@ $(document).ready(function() {
         banner.attr('aria-hidden', 'true').removeClass(classTypes);
         icon.addClass('d-d-none');
         iconStyle.addClass('d-d-none');
-
-        title.text('');
-        desc.text('');
-        actionBtn.text('');
     });
 });
