@@ -5,8 +5,7 @@ $(document).ready(function() {
   const actionBtn = importantWarningNotice.find('.d-btn--outlined');
   const closeBtn = importantWarningNotice.find('.d-btn--circle');
 
-
-  // Updated classes
+  // Update classes
   link.removeClass('d-link--inverted');
   actionBtn.removeClass('d-btn--inverted');
   closeBtn.removeClass('d-btn--inverted');
