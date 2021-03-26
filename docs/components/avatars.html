@@ -34,17 +34,18 @@ description: TBD
   {% codeWell %}
     {% codeWellHeader %}
       <div class="d-avatar">TODO</div>
-      <div class="d-d-flex d-fl-center d-flow8">
-        <div class="d-avatar d-avatar--xs d-avatar--initials">XS</div>
-        <div class="d-avatar d-avatar--sm d-avatar--initials">SM</div>
-        <div class="d-avatar d-avatar--md d-avatar--initials">MD</div>
-        <div class="d-avatar d-avatar--lg d-avatar--initials">LG</div>
-      </div>
+      {% for size in avatars.sizes %}
+        <div class="d-d-flex d-fl-center d-flow8">
+          {% for color in avatars.colors %}
+            <div class="d-avatar d-avatar--{{ size }} d-avatar--{{ color }} d-avatar--initials">{{ size }}</div>
+          {% endfor %}
+        </div>
+      {% endfor %}
     {% endcodeWellHeader %}
     {% codeWellFooter %}
       {% highlight html linenos %}
 <div class="d-avatar">TODO</div>
-<div class="d-avatar d-avatar--md d-avatar--initials">JD</div>
+<div class="d-avatar d-avatar--md d-avatar--blue-700 d-avatar--initials">JD</div>
       {% endhighlight %}
     {% endcodeWellFooter %}
   {% endcodeWell %}
