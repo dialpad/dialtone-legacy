@@ -4,69 +4,63 @@ title: Cursor
 description: Utilities for setting the type of mouse cursor, if any, to show when the mouse pointer is over an element.
 ---
 <section class="d-stack16">
-    <header class="d-stack2">
-        {% header "h2", "Classes" %}
-        <p class="d-wmx764 d-fs18 d-lh6">The Stack and Flow layouts work by using the adjacent sibling combinator (<code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">+</code>) to apply a top or left margin to sibling elements. This means it will only work when there are more than two sibling items. To allow for differing nesting spacing values, these margins are scoped to apply <strong>only</strong> to direct children of the parent (e.g. <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">.d-stack[#] > * + *</code>).</p>
-    </header>"
+  {% header "h2", "Classes" %}
+  <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
     <table class="d-table">
-        <thead>
-            <tr>
-                <th scope="col" class="d-w25p">Value</th>
-                <th scope="col">Vertical Class</th>
-                <th scope="col">Horizontal Class</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for i in spacing.values %}
-            {% assign val = i.value %}
-            <tr>
-                <th scope="row">{{ val }}px</th>
-                <td class="d-ff-mono d-fc-purple-400 d-fs12">.d-stack{{ val }}</td>
-                <td class="d-ff-mono d-fc-purple-400 d-fs12">.d-flow{{ val }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
+      <thead>
+        <tr>
+          <th scope="col" class="d-w25p">Class</th>
+          <th scope="col">Output</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for i in interactivity.cursor %}
+          {% assign class = i.class %}
+          {% assign output = i.output %}
+          <tr>
+            <th scope="row" class="d-ff-mono d-fc-purple-400 d-fs12">.{{ class }}</th>
+            <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ output }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
     </table>
+  </div>
 </section>
 <section class="d-stack8">
-    {% header "h2", "Adding space vertically" %}
-    <aside class="d-bar8 d-of-hidden">
-        <header class="d-fl-center d-p24 d-bgc-purple-100 d-w100p d-hmn216">
-            <div class="d-fl-center d-fd-column d-bgc-red-200 d-stack16 d-bar8">
-                <div class="d-w128 d-p16 d-bar8 d-bgc-purple-400 d-fs24 d-fc-white d-fw-bold d-ta-center">1</div>
-                <div class="d-w128 d-p16 d-bar8 d-bgc-purple-400 d-fs24 d-fc-white d-fw-bold d-ta-center">2</div>
-                <div class="d-w128 d-p16 d-bar8 d-bgc-purple-400 d-fs24 d-fc-white d-fw-bold d-ta-center">3</div>
-            </div>
-        </header>
-        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+  {% header "h2", "Usage" %}
+  <aside class="d-bar8 d-of-hidden">
+    <header class="d-fl-col5 d-ta-center d-flg8 d-fw-wrap d-p24 d-bgc-blue-100 d-bgo50 d-w100p d-hmn102">
+      <div class="d-d-flex d-fw-wrap d-ac-center d-p8 d-w100p d-hmn216 d-bar8">
+        {% for i in interactivity.cursor %}
+          {% assign class = i.class %}
+          {% assign output = i.output %}
+          <div class="d-fl-center d-m8 d-p16 d-ba d-bc-blue-400 d-bgc-blue-100 d-fs12 d-ff-mono {{ class }}">.{{ class }}</div>
+        {% endfor %}
+      </div>
+    </header>
+    <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
 {% highlight html linenos %}
-<div class="d-stack16">
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-</div>
+<div class="d-c-all-scroll">...</div>
+<div class="d-c-auto">...</div>
+<div class="d-c-col-resize">...</div>
+<div class="d-c-copy">...</div>
+<div class="d-c-crosshair">...</div>
+<div class="d-c-default">...</div>
+<div class="d-c-grab">...</div>
+<div class="d-c-grabbing">...</div>
+<div class="d-c-help">...</div>
+<div class="d-c-menu">...</div>
+<div class="d-c-move">...</div>
+<div class="d-c-none">...</div>
+<div class="d-c-not-allowed">...</div>
+<div class="d-c-pointer">...</div>
+<div class="d-c-progress">...</div>
+<div class="d-c-row-resize">...</div>
+<div class="d-c-text">...</div>
+<div class="d-c-wait">...</div>
+<div class="d-c-zoom-in">...</div>
+<div class="d-c-zoom-out">...</div>
 {% endhighlight %}
-        </footer>
-    </aside>
-</section>
-<section class="d-stack8">
-    {% header "h2", "Adding space horizontally" %}
-    <aside class="d-bar8 d-of-hidden">
-        <header class="d-fl-center d-p24 d-bgc-purple-100 d-w100p d-hmn216">
-            <div class="d-fl-center d-bgc-red-200 d-flow24 d-bar8">
-                <div class="d-w128 d-p16 d-bar8 d-bgc-purple-400 d-fs24 d-fc-white d-fw-bold d-ta-center">1</div>
-                <div class="d-w128 d-p16 d-bar8 d-bgc-purple-400 d-fs24 d-fc-white d-fw-bold d-ta-center">2</div>
-                <div class="d-w128 d-p16 d-bar8 d-bgc-purple-400 d-fs24 d-fc-white d-fw-bold d-ta-center">3</div>
-            </div>
-        </header>
-        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
-{% highlight html linenos %}
-<div class="d-flow24">
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-</div>
-{% endhighlight %}
-        </footer>
-    </aside>
+    </footer>
+  </aside>
 </section>
