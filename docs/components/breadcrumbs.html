@@ -4,139 +4,144 @@ title: Breadcrumbs
 description: Element used to provide context for the currently-viewed page and where it is located within the overall site structure.
 ---
 <section class="d-stack16">
-    <section class="d-stack16">
-        {% paragraph %}Breadcrumbs show users where they are within a site’s hierarchy. Breadcrumbs help orient the user and allow for navigation to previous page levels. It can be appropriate to use a breadcrumb when:{% endparagraph %}
-        <ul class="d-w75ch d-wmx764 d-fs18 d-lh6 d-stack8">
-            <li>The user is many levels of navigation deep</li>
-            <li>The current page does not have its own navigation</li>
-            <li>The user needs to quickly go back to the previous parent page</li>
-        </ul>
-        {% paragraph %}Breadcrumbs should be the first page element—placed directly above the page’s title. All pages that appear in the breadcrumb should link to their respective page. The page the user is on should always be the last page listed and not linked.{% endparagraph %}
-    </section>
-    <section class="d-stack16">
-        <h3 class="d-headline20">When not to use</h3>
-        {% paragraph %}Breadcrumbs are always treated as secondary and should not entirely replace the primary navigation. They shouldn’t be used for products that have single level navigation because they create unnecessary clutter.{% endparagraph %}
-    </section>
+  <section class="d-stack16">
+    {% paragraph %}Breadcrumbs show users where they are within a site’s hierarchy. Breadcrumbs help orient the user and allow for navigation to previous page levels. It can be appropriate to use a breadcrumb when:{% endparagraph %}
+    <ul class="d-w75ch d-wmx764 d-fs18 d-lh6 d-stack8">
+      <li>The user is many levels of navigation deep</li>
+      <li>The current page does not have its own navigation</li>
+      <li>The user needs to quickly go back to the previous parent page</li>
+    </ul>
+    {% paragraph %}Breadcrumbs should be the first page element—placed directly above the page’s title. All pages that appear in the breadcrumb should link to their respective page. The page the user is on should always be the last page listed and not linked.{% endparagraph %}
+  </section>
+  <section class="d-stack16">
+    <h3 class="d-headline20">When not to use</h3>
+    {% paragraph %}Breadcrumbs are always treated as secondary and should not entirely replace the primary navigation. They shouldn’t be used for products that have single level navigation because they create unnecessary clutter.{% endparagraph %}
+  </section>
 </section>
 <section class="d-stack16">
     {% header "h2", "Classes" %}
     <table class="d-table">
-        <thead>
-            <tr>
-                <th scope="col" class="d-w25p">Class</th>
-                <th scope="col" class="d-w25p">Applies to</th>
-                <th scope="col">Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for i in breadcrumbs.classes %}
-            {% assign class = i.class %}
-            {% assign apply = i.applies %}
-            {% assign desc = i.description %}
-            <tr>
-                <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.{{ class }}</th>
-                <td class="d-ff-mono d-fc-teal-500 d-fs12">{% if apply != "N/A" %}<span class="code-example--inline">.{% endif %}{{ apply }}{% if apply != "N/A" %}</span>{% endif %}</td>
-                <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ desc }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
+      <thead>
+        <tr>
+          <th scope="col" class="d-w25p">Class</th>
+          <th scope="col" class="d-w25p">Applies to</th>
+          <th scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for i in breadcrumbs.classes %}
+          {% assign class = i.class %}
+          {% assign apply = i.applies %}
+          {% assign desc = i.description %}
+          <tr>
+            <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.{{ class }}</th>
+            <td class="d-ff-mono d-fc-teal-500 d-fs12">{% if apply != "N/A" %}<span class="code-example--inline">.{% endif %}{{ apply }}{% if apply != "N/A" %}</span>{% endif %}</td>
+            <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ desc }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
     </table>
 </section>
 <section class="d-stack16">
-    {% header "h2", "Examples" %}
-    {% codeWell %}
-        {% codeWellHeader %}
-            <nav class="d-breadcrumbs" aria-label="breadcrumb">
-                <ol>
-                    <li class="d-breadcrumbs__item">
-                        <a href="#" class="d-breadcrumbs__link">Root</a>
-                    </li>
-                    <li class="d-breadcrumbs__item">
-                        <a href="#" class="d-breadcrumbs__link">Section</a>
-                    </li>
-                    <li class="d-breadcrumbs__item">
-                        <a href="#" class="d-breadcrumbs__link">Section</a>
-                    </li>
-                    <li class="d-breadcrumbs__item">
-                        <a href="#" class="d-breadcrumbs__link">Section</a>
-                    </li>
-                    <li class="d-breadcrumbs__item d-breadcrumbs__item--selected">
-                        <a href="#" class="d-breadcrumbs__link" aria-current="location">Current Page</a>
-                    </li>
-                </ol>
-            </nav>
-            <nav class="d-breadcrumbs d-breadcrumbs--inverted d-bgc-black-700 d-border-radius--md d-py16 d-px12 d-mxn12" aria-label="breadcrumb">
-                <ol>
-                    <li class="d-breadcrumbs__item">
-                        <a href="#" class="d-breadcrumbs__link">Root</a>
-                    </li>
-                    <li class="d-breadcrumbs__item">
-                        <a href="#" class="d-breadcrumbs__link">Section</a>
-                    </li>
-                    <li class="d-breadcrumbs__item">
-                        <a href="#" class="d-breadcrumbs__link">Section</a>
-                    </li>
-                    <li class="d-breadcrumbs__item">
-                        <a href="#" class="d-breadcrumbs__link">Section</a>
-                    </li>
-                    <li class="d-breadcrumbs__item d-breadcrumbs__item--selected">
-                        <a href="#" class="d-breadcrumbs__link" aria-current="location">Current Page</a>
-                    </li>
-                </ol>
-            </nav>
-        {% endcodeWellHeader %}
-        {% codeWellFooter %}
-            {% highlight html linenos %}
+  {% header "h2", "Examples" %}
+  {% codeWell %}
+    {% codeWellHeader %}
+      <nav class="d-breadcrumbs" aria-label="breadcrumb">
+        <ol>
+          <li class="d-breadcrumbs__item">
+            <a href="#" class="d-link d-link--muted">Root</a>
+          </li>
+          <li class="d-breadcrumbs__item">
+            <a href="#" class="d-link d-link--muted">Section</a>
+          </li>
+          <li class="d-breadcrumbs__item">
+            <a href="#" class="d-link d-link--muted">Section</a>
+          </li>
+          <li class="d-breadcrumbs__item">
+            <a href="#" class="d-link d-link--muted">Section</a>
+          </li>
+          <li class="d-breadcrumbs__item d-breadcrumbs__item--selected">
+            <a href="#" class="d-link d-link--muted" aria-current="location">Current Page</a>
+          </li>
+        </ol>
+      </nav>
+      <nav class="d-breadcrumbs d-breadcrumbs--inverted d-bgc-black-700 d-border-radius--md d-py16 d-px12 d-mxn12" aria-label="breadcrumb">
+        <ol>
+          <li class="d-breadcrumbs__item">
+            <a href="#" class="d-link d-link--inverted">Root</a>
+          </li>
+          <li class="d-breadcrumbs__item">
+            <a href="#" class="d-link d-link--inverted">Section</a>
+          </li>
+          <li class="d-breadcrumbs__item">
+            <a href="#" class="d-link d-link--inverted">Section</a>
+          </li>
+          <li class="d-breadcrumbs__item">
+            <a href="#" class="d-link d-link--inverted">Section</a>
+          </li>
+          <li class="d-breadcrumbs__item d-breadcrumbs__item--selected">
+            <a href="#" class="d-link d-link--inverted" aria-current="location">Current Page</a>
+          </li>
+        </ol>
+      </nav>
+    {% endcodeWellHeader %}
+    {% codeWellFooter %}
+      {% highlight html linenos %}
 <nav class="d-breadcrumbs" aria-label="breadcrumb">
-    <ol>
-        <li class="d-breadcrumbs__item">
-            <a href="#" class="d-breadcrumbs__link">Root</a>
-        </li>
-        <li class="d-breadcrumbs__item">
-            <a href="#" class="d-breadcrumbs__link">Section</a>
-        </li>
-        <li class="d-breadcrumbs__item">
-            <a href="#" class="d-breadcrumbs__link">Section</a>
-        </li>
-        <li class="d-breadcrumbs__item">
-            <a href="#" class="d-breadcrumbs__link">Section</a>
-        </li>
-        <li class="d-breadcrumbs__item d-breadcrumbs__item--selected">
-            <a href="#" class="d-breadcrumbs__link" aria-current="location">Current Page</a>
-        </li>
-    </ol>
+  <ol>
+    <li class="d-breadcrumbs__item">
+      <a href="#" class="d-link d-link--muted">Root</a>
+    </li>
+    <li class="d-breadcrumbs__item">
+      <a href="#" class="d-link d-link--muted">Section</a>
+    </li>
+    <li class="d-breadcrumbs__item">
+      <a href="#" class="d-link d-link--muted">Section</a>
+    </li>
+    <li class="d-breadcrumbs__item">
+      <a href="#" class="d-link d-link--muted">Section</a>
+    </li>
+    <li class="d-breadcrumbs__item d-breadcrumbs__item--selected">
+      <a href="#" class="d-link d-link--muted" aria-current="location">Current Page</a>
+    </li>
+  </ol>
 </nav>
 <nav class="d-breadcrumbs d-breadcrumbs--inverted" aria-label="breadcrumb">
-    …
+  <ol>
+    <li class="d-breadcrumbs__item">
+      <a href="#" class="d-link d-link--inverted">Root</a>
+    </li>
+      …
+  </ol>
 </nav>
             {% endhighlight %}
         {% endcodeWellFooter %}
     {% endcodeWell %}
 </section>
 <section class="d-stack16">
-    <header class="d-stack2">
-        {% header "h2", "Accessibility" %}
-        <p class="d-w75ch d-wmx764 d-fs18 d-lh6">HTML doesn't provide dedicated semantic elements for breadcrumbs, so we need to add a few ARIA attributes to make them accessible.</p>
-    </header>
-    <table class="d-table">
-        <thead>
-            <tr>
-                <th scope="col" class="d-w25p">Item</th>
-                <th scope="col" class="d-w25p">Applies to</th>
-                <th scope="col">Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for i in breadcrumbs.accessible %}
-            {% assign item = i.item %}
-            {% assign apply = i.applies %}
-            {% assign desc = i.description %}
-            <tr>
-                <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">{{ item }}</th>
-                <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ apply }}</td>
-                <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ desc }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+  <header class="d-stack2">
+    {% header "h2", "Accessibility" %}
+    {% paragraph %}HTML doesn't provide dedicated semantic elements for breadcrumbs, so we need to add a few ARIA attributes to make them accessible.{% endparagraph %}
+  </header>
+  <table class="d-table">
+    <thead>
+      <tr>
+        <th scope="col" class="d-w25p">Item</th>
+        <th scope="col" class="d-w25p">Applies to</th>
+        <th scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in breadcrumbs.accessible %}
+        {% assign item = i.item %}
+        {% assign apply = i.applies %}
+        {% assign desc = i.description %}
+        <tr>
+          <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">{{ item }}</th>
+          <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ apply }}</td>
+          <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ desc }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 </section>

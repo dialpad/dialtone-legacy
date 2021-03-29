@@ -26,6 +26,8 @@ $(document).ready(function() {
 
         $('#nav').on('click', 'a', function (event) {
 
+            $('.js-scrollspy').destroy();
+
             // Allow opening links in new tabs
             if (event.metaKey) {
               return
