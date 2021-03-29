@@ -4,9 +4,7 @@ title: Badges
 description: Badges are compact UI elements that provide brief, descriptive information about an element. They are terse, ideally one word. 
 ---
 <section class="d-stack16">
-    <header class="d-stack2">
-        <h2 class="dialtone-title__section">Classes</h2>
-    </header>
+    {% header "h3", "Classes" %}
     <div class="dialtone-table-wrapper">
         <table class="d-table">
             <thead>
@@ -27,21 +25,46 @@ description: Badges are compact UI elements that provide brief, descriptive info
             </tbody>
         </table>
     </div>
+    {% header "h3", "Colors" %}
+    <div class="dialtone-table-wrapper">
+        <table class="d-table">
+        <thead>
+            <tr>
+            <th scope="col" class="d-w25p">Class</th>
+            <th scope="col" class="d-w25p">Applies to</th>
+            <th scope="col">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for color in badges.colors %}
+            <tr>
+                <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">d-badge--{{ color }}</th>
+                <td class="d-ff-mono d-fc-teal-500 d-fs12">d-badge</td>
+                <td class="d-ff-mono d-fc-teal-500 d-fs12">Applies color style to the badge.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+    </div>
 </section>
 <section class="d-stack8">
-    <header>
-        <h2 class="dialtone-title__section">Styles</h2>
-    </header>
-    <div class="dialtone-example" data-example="yes" data-code="yes">
-        <div class="dialtone-example__example dialtone-section16">
-            <div class="d-p16 d-flow16">
-                <div class="d-badge">Default Badge</div>
+    {% header "h2", "Examples" %}
+    {% header "h3", "Colors" %}
+    {% codeWell %}
+      {% codeWellHeader %}
+        <div class="d-w100p d-fl-col4 d-flg4 d-fw-wrap d-jc-space-between d-mb32">
+          {% for color in badges.colors %}
+            <div class="d-fl-grow0 d-fd-column d-fl-center d-mb8">
+              <h4>{{ color }}</h4>
+              <span class="d-badge d-badge--{{ color }}">Badge</span>
             </div>
+          {% endfor %}
         </div>
-        <div class="dialtone-example__code">
-{% highlight html %}
-<div class="d-badge">...</div>
-{% endhighlight %}
-        </div>
-    </div>
+      {% endcodeWellHeader %}
+      {% codeWellFooter %}
+        {% highlight html linenos %}
+<span class="d-badge d-badge--{{ color }}">Badge</span>
+        {% endhighlight %}
+      {% endcodeWellFooter %}
+    {% endcodeWell %}
 </section>
