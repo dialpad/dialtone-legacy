@@ -1,7 +1,9 @@
 $(document).ready(function() {
     var body = $('body');
-    var topbar = $('.js-topbar-example');
-    var mainNav = $('.js-dialtone-menubar');
+    var topNav = $('.js-navigation-header');
+    var sideNav = $('.js-navigation-sidebar');
+    var tableOfContents = $('.js-navigation-toc');
+    var content = $('.js-content');
     var launchBtn = $('.js-style-select-show-btn');
     var removeBtn = $('.js-style-select-remove-btn');
 
@@ -13,7 +15,7 @@ $(document).ready(function() {
     var icon = $('.js-banner-example-icon');
     var actions = $('.js-banner-example-actions');
     var actionBtn = $('.js-banner-example-action-btn');
-    var closeBtn = $('.js-banner-example-close-btn, .js-style-select-remove-btn');
+    var closeBtn = $('.js-banner-example-close-btn');
 
     var selectMenu = $('.js-banner-style-menu');
     var important = $('.js-banner-important');
@@ -31,12 +33,13 @@ $(document).ready(function() {
         e.stopPropagation();
         e.preventDefault();
 
-        body.css('padding-top','11.2rem');
-        mainNav.css('transform', 'translate3d(0,11.2rem,0)');
+        content.css('padding-top','4.8rem');
+        sideNav.attr('style','top: 11.2rem!important');
+        tableOfContents.css('transform', 'translate3d(0,4.8rem,0)');
+        topNav.attr('style','');
 
         $(this).text('Update example');
         removeBtn.removeClass('d-d-none');
-        topbar.removeClass('d-d-none').addClass('d-d-flex').css('transform', 'translate3d(0,0,0)');
         banner.attr('aria-hidden', 'false').removeClass(classTypes);
         dialog.attr('aria-labelledby', bannerTitle).attr('aria-describedby', bannerDesc);
         title.attr('id', bannerTitle);
@@ -51,7 +54,7 @@ $(document).ready(function() {
         if (pinned.is(':checked')) {
             banner.addClass('d-banner--pinned');
             actions.addClass('d-d-none');
-            topbar.css('transform', 'translate3d(0,4.8rem,0)');
+            topNav.attr('style','height: 11.2rem !important; padding-top: 4.8rem; max-height: 11.2rem !important;');
         }
 
         if (important.is(':checked')) {
@@ -77,20 +80,24 @@ $(document).ready(function() {
     });
 
 
-    closeBtn.on('click', function(e) {
-        var style = selectMenu.find(':selected').data('class');
-        var iconStyle = "js-banner-example-icon-" + style;
+    function closeBanner() {
+      var style = selectMenu.find(':selected').data('class');
+      var iconStyle = "js-banner-example-icon-" + style;
 
-        e.stopPropagation();
-        e.preventDefault();
+      sideNav.attr('style','');
+      topNav.attr('style','');
+      tableOfContents.attr('style','');
+      content.attr('style','');
+      launchBtn.text('Show example');
+      removeBtn.addClass('d-d-none');
+      banner.attr('aria-hidden', 'true').removeClass(classTypes);
+      icon.addClass('d-d-none');
+      iconStyle.addClass('d-d-none');
+    }
+    closeBtn.add(removeBtn).on('click', function(e) {
+      e.stopPropagation();
+      e.preventDefault();
 
-        body.attr('style','');
-        mainNav.attr('style','');
-        launchBtn.text('Show example');
-        removeBtn.addClass('d-d-none');
-        topbar.removeClass('d-d-flex').addClass('d-d-none');
-        banner.attr('aria-hidden', 'true').removeClass(classTypes);
-        icon.addClass('d-d-none');
-        iconStyle.addClass('d-d-none');
+      closeBanner();
     });
 });
