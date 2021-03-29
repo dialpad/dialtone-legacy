@@ -113,4 +113,26 @@ description: TBD
         {% endhighlight %}
       {% endcodeWellFooter %}
     {% endcodeWell %}
+    {% header "h3", "People" %}
+    {% codeWell %}
+      {% codeWellHeader %}
+        <div class="d-w100p d-fl-col4 d-flg4 d-fw-wrap d-jc-space-between d-mb32">
+          {% for size in avatars.sizes %}
+            <div class="d-fl-grow0 d-fd-column d-fl-center d-mb8">
+              <h4>{{ size }}</h4>
+              <div class="d-avatar d-avatar--{{ size }}">
+                <img src="/{{ site.paths.img }}/person.png" alt="An avatar of a person" />
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      {% endcodeWellHeader %}
+      {% codeWellFooter %}
+        {% highlight html linenos %}
+<div class="d-avatar d-avatar--{{ size }}">
+  <img src="/{{ site.paths.img }}/person.png" alt="An avatar of a person" />
+</div>
+        {% endhighlight %}
+      {% endcodeWellFooter %}
+    {% endcodeWell %}
 </section>
