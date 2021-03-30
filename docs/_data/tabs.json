@@ -2,27 +2,90 @@
   "classes": [
     {
       "class": "d-tablist",
-      "desc": "Tab wrapper"
+      "applies": "N/A",
+      "description": "Tab wrapper"
     },
     {
       "class": "d-tablist--no-border",
-      "desc": "Removes the bottom border on the tablist"
-    },
-    {
-      "class": "d-tab",
-      "desc": "Default tab style"
+      "applies": "d-tablist",
+      "description": "Removes the bottom border on the tablist"
     },
     {
       "class": "d-tab--selected",
-      "desc": "Selected tab style"
+      "applies": "d-tablist",
+      "description": "Selected tab style"
     },
     {
       "class": "d-tablist--sm",
-      "desc": "Resizes the tablist to the smallest size (12px)"
+      "applies": "N/A",
+      "description": "Resizes the tablist to the smallest size (12px)"
     },
     {
       "class": "d-tablist--inverted",
-      "desc": "Inverts the tablist so it appears on dark backgrounds"
+      "applies": "N/A",
+      "description": "Inverts the tablist so it appears on dark backgrounds"
+    },
+    {
+      "class": "d-tab",
+      "applies": "N/A",
+      "description": "Default tab style"
+    }
+  ],
+  "accessible": [
+    {
+      "item": "role=\"tablist\"",
+      "applies":"d-tablist",
+      "description": "A container for all tab role elements."
+    },
+    {
+      "item": "aria-label=\"Tab Title\"",
+      "applies":"d-tablist",
+      "description": "Applied to the tablist element, this provides a common, readable title for what content the tab group provides."
+    },
+    {
+      "item": "role=\"tab\"",
+      "applies":"d-tab",
+      "description": "Indicates an interactive element within a tablist. Elements with a tab role must either be a child of a tablist or have an id part of the aria-owns property of a tablist."
+    },
+    {
+      "item": "aria-controls=\"[tabpanel-id]\"",
+      "applies":"d-tab",
+      "description": "Use on the tab element, this communicates a connection between a tab and a tabpanel."
+    },
+    {
+      "item": "aria-selected=\"[true/false]\"",
+      "applies":"d-tab--selected",
+      "description": "Use on the tab element, this is set to true when it is the selected element. It is set to false when it is not selected."
+    },
+    {
+      "item": "id=\"[unique-id]\"",
+      "applies":"d-tab",
+      "description": "Use on the tab element, this provides a unique identifier that the tabpanel can reference with the aria-labelledby attribute."
+    },
+    {
+      "item": "aria-controls=\"[tabpanel-id]\"",
+      "applies":"d-tab",
+      "description": "Use on the tab element, this communicates a connection between a tab and a tabpanel."
+    },
+    {
+      "item": "role=\"tabpanel\"",
+      "applies":"N/A",
+      "description": "Use on the container for content associated with a tab."
+    },
+    {
+      "item": "id=\"[unique-id]\"",
+      "applies":"N/A",
+      "description": "Use on the tabpanel element, this provides a unique identifier that the tab can reference with the aria-controls attribute."
+    },
+    {
+      "item": "aria-labelledby=\"[tab-id]\"",
+      "applies":"N/A",
+      "description": "Assigned on the tabpanel element, this communicates a connection between a tabpanel and a tab."
+    },
+    {
+      "item": "hidden",
+      "applies":"N/A",
+      "description": "Assigned on the tabpanel element, use this to hide tabpanels that are not currently selected."
     }
   ]
 }
