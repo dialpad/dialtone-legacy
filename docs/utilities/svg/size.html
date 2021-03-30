@@ -1,10 +1,54 @@
 ---
 layout: page
 title: Size
-description: SVG size lorem ipsum
+description: Utilities for controlling an SVG's size.
 
 ---
-<section class="d-stack4">
-    {% header "h2", "Classes" %}
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit eligendi esse error optio qui quisquam rem, totam, suscipit minus doloribus provident, expedita voluptatum, officia inventore debitis illum. Ducimus earum incidunt, corrupti non accusamus aliquid consectetur natus, nisi doloremque fugiat reprehenderit quae odit aut deleniti itaque iusto rerum recusandae, iste in iure dignissimos. Aut officiis vero, at deserunt ea culpa voluptatibus laborum eaque quis debitis autem voluptas porro voluptatum sunt non perspiciatis, enim illo reiciendis corrupti temporibus, beatae sapiente. Tempore facilis consectetur, sapiente dolorem veritatis suscipit atque mollitia, quo aut voluptates, ullam harum? Sed quidem neque itaque temporibus aliquam esse quod, nobis commodi unde quam blanditiis eligendi inventore cum tempora voluptate, quia alias laboriosam, molestias voluptates non. Vero eum, reprehenderit nam, rerum impedit esse expedita nihil numquam suscipit sequi at quibusdam repellat repellendus officiis possimus beatae ducimus quidem? Vero ratione distinctio praesentium ab, aperiam, veritatis libero autem, quod quis voluptatem tempore accusamus commodi et quos, architecto ea. Beatae qui incidunt mollitia repudiandae neque soluta dolores deserunt a. Rerum velit tempora earum deleniti veritatis ipsa enim alias? Neque dolorum ratione nobis delectus ab non debitis inventore beatae, omnis voluptas molestias dignissimos vel, atque porro. Aspernatur suscipit saepe perferendis illum, dolores vitae. Quis porro deserunt, veniam recusandae delectus eos expedita enim pariatur, iusto maxime, optio minus repudiandae illo eveniet ab eum voluptatibus. Similique asperiores dolores quidem reiciendis quaerat harum velit ex aliquid molestiae id, a atque accusamus maxime non ea sapiente impedit eos.</p>
+
+<section class="d-stack16">
+  {% header "h2", "Classes" %}
+  <table class="d-table">
+    <thead>
+      <tr>
+        <th scope="col" class="d-w25p">Class</th>
+        <th scope="col">Output</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for size in icons-sizes %}
+        <tr>
+          <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">{{ size.class }}</th>
+          <td class="d-ff-mono d-fc-teal-500 d-fs12">width: {{ size.size | divided_by: 10 }}rem !important; height: {{ size.size | divided_by: 10 }}rem !important;</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</section>
+<section class="d-stack16">
+  {% header "h2", "Usage" %}
+  <p class="d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-svg--size{n}</code> to control the size of an SVG.</p>
+  {% codeWell %}
+    {% codeWellHeader %}
+      {% iconSystem "phone", "d-svg--size14" %}
+      {% iconSystem "phone", "d-svg--size16" %}
+      {% iconSystem "phone", "d-svg--size18" %}
+      {% iconSystem "phone", "d-svg--size20" %}
+      {% iconSystem "phone", "d-svg--size24" %}
+      {% iconSystem "phone", "d-svg--size32" %}
+      {% iconSystem "phone", "d-svg--size48" %}
+      {% iconSystem "phone", "d-svg--size64" %}
+    {% endcodeWellHeader %}
+    {% codeWellFooter %}
+      {% highlight html linenos %}
+<svg class="d-svg d-svg--system d-svg--size14">...</svg>
+<svg class="d-svg d-svg--system d-svg--size16">...</svg>
+<svg class="d-svg d-svg--system d-svg--size18">...</svg>
+<svg class="d-svg d-svg--system d-svg--size20">...</svg>
+<svg class="d-svg d-svg--system d-svg--size24">...</svg>
+<svg class="d-svg d-svg--system d-svg--size32">...</svg>
+<svg class="d-svg d-svg--system d-svg--size48">...</svg>
+<svg class="d-svg d-svg--system d-svg--size64">...</svg>
+      {% endhighlight %}
+    {% endcodeWellFooter %}
+  {% endcodeWell %}
 </section>
