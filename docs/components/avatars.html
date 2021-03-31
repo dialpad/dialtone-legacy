@@ -1,0 +1,138 @@
+---
+layout: page
+title: Avatars
+description: TBD
+---
+<section class="d-stack16">
+  {% header "h2", "Classes" %}
+  <div class="dialtone-table-wrapper">
+    <table class="d-table">
+      <thead>
+        <tr>
+          <th scope="col" class="d-w25p">Class</th>
+          <th scope="col" class="d-w25p">Applies to</th>
+          <th scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for i in avatars.classes %}
+          {% assign class = i.class %}
+          {% assign applies = i.applies %}
+          {% assign desc = i.desc %}
+          <tr>
+            <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">{{ class }}</th>
+            <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ applies }}</td>
+            <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ desc }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% header "h3", "Sizes" %}
+  <div class="dialtone-table-wrapper">
+    <table class="d-table">
+      <thead>
+        <tr>
+          <th scope="col" class="d-w25p">Class</th>
+          <th scope="col" class="d-w25p">Applies to</th>
+          <th scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for size in avatars.sizes %}
+          <tr>
+            <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">d-avatar--{{ size }}</th>
+            <td class="d-ff-mono d-fc-teal-500 d-fs12">d-avatar</td>
+            <td class="d-ff-mono d-fc-teal-500 d-fs12">Applies size style to the avatar.</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% header "h3", "Colors" %}
+  <div class="dialtone-table-wrapper">
+    <table class="d-table">
+      <thead>
+        <tr>
+          <th scope="col" class="d-w25p">Class</th>
+          <th scope="col" class="d-w25p">Applies to</th>
+          <th scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for color in avatars.colors %}
+          <tr>
+            <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">d-avatar--{{ color }}</th>
+            <td class="d-ff-mono d-fc-teal-500 d-fs12">d-avatar</td>
+            <td class="d-ff-mono d-fc-teal-500 d-fs12">Applies color style to the avatar.</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+<section class="d-stack8">
+  {% header "h2", "Examples" %}
+  {% header "h3", "Initials" %}
+  {% for size in avatars.sizes %}
+    {% header "h4", size %}
+      {% codeWell %}
+        {% codeWellHeader %}
+          <div class="d-w100p d-fl-col4 d-flg4 d-fw-wrap d-jc-space-between d-mb32">
+            {% for color in avatars.colors %}
+              <div class="d-fl-grow0 d-mb8">
+                <div class="d-avatar d-avatar--{{ size }} d-avatar--{{ color }} d-avatar--initials">{{ size }}</div>
+              </div>
+            {% endfor %}
+          </div>
+        {% endcodeWellHeader %}
+        {% codeWellFooter %}
+          {% highlight html linenos %}
+<div class="d-avatar d-avatar--{{ size }} d-avatar--{{ color }} d-avatar--initials">{{ size }}</div>
+          {% endhighlight %}
+        {% endcodeWellFooter %}
+      {% endcodeWell %}
+  {% endfor %}
+  {% header "h3", "Icons" %}
+    {% codeWell %}
+      {% codeWellHeader %}
+        <div class="d-w100p d-fl-col4 d-flg4 d-fw-wrap d-jc-space-between d-mb32">
+          {% for size in avatars.sizes %}
+            <div class="d-fl-grow0 d-fd-column d-fl-center d-mb8">
+              <h4>{{ size }}</h4>
+              <div class="d-avatar d-avatar--icon d-avatar--{{ size }} d-avatar--blue-700">
+                {% iconSystem "group" %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      {% endcodeWellHeader %}
+      {% codeWellFooter %}
+        {% highlight html linenos %}
+<div class="d-avatar d-avatar--icon d-avatar--{{ size }} d-avatar--blue-700">{{ size }}</div>
+        {% endhighlight %}
+      {% endcodeWellFooter %}
+    {% endcodeWell %}
+    {% header "h3", "Images" %}
+    {% codeWell %}
+      {% codeWellHeader %}
+        <div class="d-w100p d-fl-col4 d-flg4 d-fw-wrap d-jc-space-between d-mb32">
+          {% for size in avatars.sizes %}
+            <div class="d-fl-grow0 d-fd-column d-fl-center d-mb8">
+              <h4>{{ size }}</h4>
+              <div class="d-avatar d-avatar--{{ size }}">
+                <img src="/{{ site.paths.img }}/person.png" alt="An avatar of a person" />
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      {% endcodeWellHeader %}
+      {% codeWellFooter %}
+        {% highlight html linenos %}
+<div class="d-avatar d-avatar--{{ size }}">
+  <img src="/{{ site.paths.img }}/person.png" alt="An avatar of a person" />
+</div>
+        {% endhighlight %}
+      {% endcodeWellFooter %}
+    {% endcodeWell %}
+</section>
