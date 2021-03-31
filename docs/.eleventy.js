@@ -112,6 +112,8 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPairedShortcode("codeWellHeader", function(content, color, minHeight) {
         if (!color) {
             return `<header class="d-fl-center d-fd-column d-p24 d-bgc-black-100 d-bgo50 d-w100p ${minHeight}">${content}</header>`;
+        } else if (color == "white") {
+            return `<header class="d-fl-center d-fd-column d-p24 d-bgc-white d-w100p d-ba d-bc-black-050 d-btr8 d-baw2 ${minHeight}">${content}</header>`;
         } else {
             return `<header class="d-fl-center d-fd-column d-p24 d-bgc-${color} d-w100p ${minHeight}">${content}</header>`;
         }
