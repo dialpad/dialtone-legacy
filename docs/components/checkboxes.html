@@ -1,321 +1,342 @@
 ---
 layout: page
 title: Checkboxes
-description: A selectable input field that allows a user to select items.
+description: An input control that allows users to select zero, one, or more options from a number of choices.
 ---
 <section class="d-stack16">
-    <header class="d-stack8">
-        <h2 class="dialtone-title__section">Base Style</h2>
-    </header>
-    <div class="dialtone-example" data-example="yes" data-code="yes">
-        <div class="dialtone-example__example">
-            <div class="d-stack16">
-                <fieldset class="d-layout__stack8">
-                    <div class="d-checkbox-group">
-                        <div class="d-checkbox__input">
-                            <input class="d-checkbox" type="checkbox" name="Dialtone-CheckExample1" id="Dialtone-CheckExample1" />
-                        </div>
-                        <div class="d-checkbox__copy">
-                            <label class="d-checkbox__label" for="Dialtone-CheckExample1">Checkbox label</label>
-                        </div>
-                    </div>
-                    <div class="d-checkbox-group">
-                        <div class="d-checkbox__input">
-                            <input class="d-checkbox" type="checkbox" name="Dialtone-CheckExample1" id="Dialtone-CheckExample1" checked />
-                        </div>
-                        <div class="d-checkbox__copy">
-                            <label class="d-checkbox__label" for="Dialtone-CheckExample1">Checkbox label</label>
-                        </div>
-                    </div>
-                    <div class="d-checkbox-group--disabled">
-                        <div class="d-checkbox__input">
-                            <input class="d-checkbox" type="checkbox" name="Dialtone-CheckExample2" id="Dialtone-CheckExample2" disabled />
-                        </div>
-                        <div class="d-checkbox__copy">
-                            <label class="d-checkbox__label" for="Dialtone-CheckExample2">Checkbox label that's been disabled</label>
-                        </div>
-                    </div>
-                    <div class="d-checkbox-group--disabled">
-                        <div class="d-checkbox__input">
-                            <input class="d-checkbox" type="checkbox" name="Dialtone-CheckExample2" id="Dialtone-CheckExample2" disabled checked />
-                        </div>
-                        <div class="d-checkbox__copy">
-                            <label class="d-checkbox__label" for="Dialtone-CheckExample2">Checkbox label that's been disabled</label>
-                        </div>
-                    </div>
-                </fieldset>
-            </div>
-        </div>
-        <div class="dialtone-example__code">
-{% highlight html linenos %}
-<fieldset class="d-layout__stack8">
-    <div class="d-checkbox-group">
-        <div class="d-checkbox__input">
-            <input class="d-checkbox" type="checkbox" name="Dialtone-CheckExample1" id="Dialtone-CheckExample1" />
-        </div>
-        <div class="d-checkbox__copy">
-            <label class="d-checkbox__label" for="Dialtone-CheckExample1">Checkbox label</label>
-        </div>
-    </div>
-    <div class="d-checkbox-group--disabled">
-        <div class="d-checkbox__input">
-            <input class="d-checkbox" type="checkbox" name="Dialtone-CheckExample2" id="Dialtone-CheckExample2" disabled />
-        </div>
-        <div class="d-checkbox__copy">
-            <label class="d-checkbox__label" for="Dialtone-CheckExample2">Checkbox label that's been disabled</label>
-        </div>
-    </div>
-</fieldset>
-{% endhighlight %}
-        </div>
-    </div>
-</section>
-<section class="d-stack8">
-    <h2 class="dialtone-title__section">Accessibility</h2>
-    <p class="dialtone-copy__normal">The best accessibility is semantic HTML. Most screen readers understand how to parse inputs if they’re correctly formatted. When it comes to checkboxes, there are a few things to keep in mind:</p>
-    <ul class="dialtone-copy__normal">
-        <li>All inputs should have an <span class="code-example--inline">id</span> attribute.</li>
-        <li>Associate checkbox labels with their inputs using the <span class="code-example--inline">for</span> attribute. This correlates with the checkbox's <span class="code-example--inline">id</span>.</li>
-        <li>If you have a group of related checkboxes, use a <span class="code-example--inline">fieldset</span> to group them and a <span class="code-example--inline">legend</span> to title the group.</li>
-    </ul>
-    <p class="dialtone-copy__normal">For further information, please visit Gov.UK’s article, <a href="https://accessibility.blog.gov.uk/2016/07/22/using-the-fieldset-and-legend-elements/">"Using the fieldset and legend elements"</a>.</p>
+  {% header "h2", "Classes" %}
+  <table class="d-table">
+    <thead>
+      <tr>
+        <th scope="col" class="d-w25p">Class</th>
+        <th scope="col" class="d-w25p">Applies to</th>
+        <th scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in checkboxes.classes %}
+        {% assign class = i.class %}
+        {% assign apply = i.applies %}
+        {% assign desc = i.description %}
+        <tr>
+          <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.{{ class }}</th>
+          <td class="d-ff-mono d-fc-teal-500 d-fs12">{% if apply != "N/A" %}<span class="code-example--inline">.{% endif %}{{ apply }}{% if apply != "N/A" %}</span>{% endif %}</td>
+          <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ desc }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 </section>
 <section class="d-stack16">
-    <header class="d-stack8">
-        <h2 class="dialtone-title__section">Examples</h2>
-    </header>
-    <div class="d-stack16">
-        <h3 class="dialtone-title__subsection">Stacked Group</h3>
-        <div class="dialtone-example" data-example="yes" data-code="yes">
-            <div class="dialtone-example__example">
-                <fieldset class="d-layout__stack8">
-                    <legend class="d-label">Call Blocking & Spam Protection</legend>
-                    <div class="d-checkbox-group">
-                        <div class="d-checkbox__input">
-                            <input class="d-checkbox" type="checkbox" name="Dialtone-CheckGroupAExample1" id="Dialtone-CheckGroupAExample1" />
-                        </div>
-                        <div class="d-checkbox__copy">
-                            <label class="d-checkbox__label" for="Dialtone-CheckGroupAExample1">Anonymous callers</label>
-                        </div>
-                    </div>
-                    <div class="d-checkbox-group">
-                        <div class="d-checkbox__input">
-                            <input class="d-checkbox" type="checkbox" name="Dialtone-CheckGroupAExample2" id="Dialtone-CheckGroupAExample2" />
-                        </div>
-                        <div class="d-checkbox__copy">
-                            <label class="d-checkbox__label" for="Dialtone-CheckGroupAExample2">Block callers not already in contacts list</label>
-                        </div>
-                    </div>
-                    <div class="d-checkbox-group">
-                        <div class="d-checkbox__input">
-                            <input class="d-checkbox" type="checkbox" name="Dialtone-CheckGroupAExample3" id="Dialtone-CheckGroupAExample3" />
-                        </div>
-                        <div class="d-checkbox__copy">
-                            <label class="d-checkbox__label" for="Dialtone-CheckGroupAExample3">Block callers with a high spam score</label>
-                        </div>
-                    </div>
-                </fieldset>
-            </div>
-            <div class="dialtone-example__code">
-{% highlight html linenos %}
+  {% header "h2", "Examples" %}
+  <div class="d-stack32">
+    <div class="sub-section">
+      {% header "h3", "Base Styles" %}
+      {% codeWell %}
+        {% codeWellHeader %}
+          <fieldset class="d-layout__stack8">
+              <div class="d-checkbox-group">
+                <div class="d-checkbox__input">
+                  <input class="d-checkbox" type="checkbox" name="Dialtone-CheckExample1" id="Dialtone-CheckExample1" />
+                </div>
+                <div class="d-checkbox__copy">
+                  <label class="d-checkbox__label" for="Dialtone-CheckExample1">Checkbox label</label>
+                </div>
+              </div>
+              <div class="d-checkbox-group">
+                <div class="d-checkbox__input">
+                  <input class="d-checkbox" type="checkbox" name="Dialtone-CheckExample2" id="Dialtone-CheckExample2" checked />
+                </div>
+                <div class="d-checkbox__copy">
+                  <label class="d-checkbox__label" for="Dialtone-CheckExample2">Checkbox label</label>
+                </div>
+              </div>
+              <div class="d-checkbox-group d-checkbox-group--disabled">
+                <div class="d-checkbox__input">
+                  <input class="d-checkbox" type="checkbox" name="Dialtone-CheckExample3" id="Dialtone-CheckExample3" disabled />
+                </div>
+                <div class="d-checkbox__copy">
+                  <label class="d-checkbox__label" for="Dialtone-CheckExample3">Checkbox label that's been disabled</label>
+                </div>
+              </div>
+              <div class="d-checkbox-group d-checkbox-group--disabled">
+                <div class="d-checkbox__input">
+                  <input class="d-checkbox" type="checkbox" name="Dialtone-CheckExample4" id="Dialtone-CheckExample4" disabled checked />
+                </div>
+                <div class="d-checkbox__copy">
+                  <label class="d-checkbox__label" for="Dialtone-CheckExample4">Checkbox label that's been disabled</label>
+                </div>
+              </div>
+          </fieldset>
+        {% endcodeWellHeader %}
+        {% codeWellFooter %}
+          {% highlight html linenos %}
 <fieldset class="d-layout__stack8">
-    <legend class="d-label">Call Blocking & Spam Protection</legend>
     <div class="d-checkbox-group">
-        <div class="d-checkbox__input">
-            <input class="d-checkbox" type="checkbox" name="Dialtone-CheckGroupAExample1" id="Dialtone-CheckGroupAExample1" />
-        </div>
-        <div class="d-checkbox__copy">
-            <label class="d-checkbox__label" for="Dialtone-CheckGroupAExample1">Anonymous callers</label>
-        </div>
+      <div class="d-checkbox__input">
+        <input class="d-checkbox" type="checkbox" name="Dialtone-CheckExample1" id="Dialtone-CheckExample1" />
+      </div>
+      <div class="d-checkbox__copy">
+        <label class="d-checkbox__label" for="Dialtone-CheckExample1">Checkbox label</label>
+      </div>
     </div>
     <div class="d-checkbox-group">
-        <div class="d-checkbox__input">
-            <input class="d-checkbox" type="checkbox" name="Dialtone-CheckGroupAExample2" id="Dialtone-CheckGroupAExample2" />
-        </div>
-        <div class="d-checkbox__copy">
-            <label class="d-checkbox__label" for="Dialtone-CheckGroupAExample2">Block callers not already in contacts list</label>
-        </div>
+      <div class="d-checkbox__input">
+        <input class="d-checkbox" type="checkbox" name="Dialtone-CheckExample2" id="Dialtone-CheckExample2" checked />
+      </div>
+      <div class="d-checkbox__copy">
+        <label class="d-checkbox__label" for="Dialtone-CheckExample2">Checkbox label</label>
+      </div>
     </div>
-    <div class="d-checkbox-group">
-        <div class="d-checkbox__input">
-            <input class="d-checkbox" type="checkbox" name="Dialtone-CheckGroupAExample3" id="Dialtone-CheckGroupAExample3" />
-        </div>
-        <div class="d-checkbox__copy">
-            <label class="d-checkbox__label" for="Dialtone-CheckGroupAExample3">Block callers with a high spam score</label>
-        </div>
+    <div class="d-checkbox-group d-checkbox-group--disabled">
+      <div class="d-checkbox__input">
+        <input class="d-checkbox" type="checkbox" name="Dialtone-CheckExample3" id="Dialtone-CheckExample3" disabled />
+      </div>
+      <div class="d-checkbox__copy">
+        <label class="d-checkbox__label" for="Dialtone-CheckExample3">Checkbox label that's been disabled</label>
+      </div>
+    </div>
+    <div class="d-checkbox-group d-checkbox-group--disabled">
+      <div class="d-checkbox__input">
+        <input class="d-checkbox" type="checkbox" name="Dialtone-CheckExample4" id="Dialtone-CheckExample4" disabled checked />
+      </div>
+      <div class="d-checkbox__copy">
+        <label class="d-checkbox__label" for="Dialtone-CheckExample4">Checkbox label that's been disabled</label>
+      </div>
     </div>
 </fieldset>
-{% endhighlight %}
-            </div>
-        </div>
+          {% endhighlight %}
+        {% endcodeWellFooter %}
+      {% endcodeWell %}
     </div>
-    <div class="d-stack16">
-        <h3 class="dialtone-title__subsection">With description copy</h3>
-        <div class="dialtone-example" data-example="yes" data-code="yes">
-            <div class="dialtone-example__example">
-                <fieldset class="d-layout__stack8">
-                    <legend class="d-label">Call Blocking & Spam Protection</legend>
-                    <div class="d-checkbox-group">
-                        <div class="d-checkbox__input">
-                            <input class="d-checkbox" type="checkbox" name="Dialtone-CheckGroupBExample1" id="Dialtone-CheckGroupBExample1" />
-                        </div>
-                        <div class="d-checkbox__copy">
-                            <label class="d-checkbox__label" for="Dialtone-CheckGroupBExample1">
-                                Anonymous callers
-                                <p class="d-checkbox__description">Select how phone numbers you don't know should be handled.</p>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="d-checkbox-group">
-                        <div class="d-checkbox__input">
-                            <input class="d-checkbox" type="checkbox" name="Dialtone-CheckGroupBExample2" id="Dialtone-CheckGroupBExample2" />
-                        </div>
-                        <div class="d-checkbox__copy">
-                            <label class="d-checkbox__label" for="Dialtone-CheckGroupBExample2">
-                                Block callers not already in contacts list
-                                <p class="d-checkbox__description">You get enough calls. Free up some of your time.</p>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="d-checkbox-group">
-                        <div class="d-checkbox__input">
-                            <input class="d-checkbox" type="checkbox" name="Dialtone-CheckGroupBExample3" id="Dialtone-CheckGroupBExample3" />
-                        </div>
-                        <div class="d-checkbox__copy">
-                            <label class="d-checkbox__label" for="Dialtone-CheckGroupBExample3">
-                                Block callers with a high spam score
-                                <p class="d-checkbox__description">We'll only let the legitimate callers through to bother you.</p>
-                            </label>
-                        </div>
-                    </div>
-                </fieldset>
+    <div class="sub-section">
+      {% header "h3", "Stacked Group" %}
+      {% codeWell %}
+        {% codeWellHeader %}
+          <fieldset class="d-layout__stack8">
+            <legend class="d-label">Call Blocking & Spam Protection</legend>
+            <div class="d-checkbox-group">
+              <div class="d-checkbox__input">
+                <input class="d-checkbox" type="checkbox" name="Dialtone-CheckGroupAExample1" id="Dialtone-CheckGroupAExample1" />
+              </div>
+              <div class="d-checkbox__copy">
+                <label class="d-checkbox__label" for="Dialtone-CheckGroupAExample1">Anonymous callers</label>
+              </div>
             </div>
-            <div class="dialtone-example__code">
-{% highlight html linenos %}
+            <div class="d-checkbox-group">
+              <div class="d-checkbox__input">
+                <input class="d-checkbox" type="checkbox" name="Dialtone-CheckGroupAExample2" id="Dialtone-CheckGroupAExample2" />
+              </div>
+              <div class="d-checkbox__copy">
+                <label class="d-checkbox__label" for="Dialtone-CheckGroupAExample2">Block callers not already in contacts list</label>
+              </div>
+            </div>
+            <div class="d-checkbox-group">
+              <div class="d-checkbox__input">
+                <input class="d-checkbox" type="checkbox" name="Dialtone-CheckGroupAExample3" id="Dialtone-CheckGroupAExample3" />
+              </div>
+              <div class="d-checkbox__copy">
+                <label class="d-checkbox__label" for="Dialtone-CheckGroupAExample3">Block callers with a high spam score</label>
+              </div>
+            </div>
+          </fieldset>
+        {% endcodeWellHeader %}
+        {% codeWellFooter %}
+          {% highlight html linenos %}
 <fieldset class="d-layout__stack8">
-    <legend class="d-label">Call Blocking & Spam Protection</legend>
-    <div class="d-checkbox-group">
-        <div class="d-checkbox__input">
-            <input class="d-checkbox" type="checkbox" name="Dialtone-CheckGroupBExample1" id="Dialtone-CheckGroupBExample1" />
-        </div>
-        <div class="d-checkbox__copy">
-            <label class="d-checkbox__label" for="Dialtone-CheckGroupBExample1">
-                Anonymous callers
-                <p class="d-checkbox__description">Select how phone numbers you don't know should be handled.</p>
-            </label>
-        </div>
+  <legend class="d-label">Call Blocking & Spam Protection</legend>
+  <div class="d-checkbox-group">
+    <div class="d-checkbox__input">
+      <input class="d-checkbox" type="checkbox" name="Dialtone-CheckGroupAExample1" id="Dialtone-CheckGroupAExample1" />
     </div>
-    <div class="d-checkbox-group">
-        <div class="d-checkbox__input">
-            <input class="d-checkbox" type="checkbox" name="Dialtone-CheckGroupBExample2" id="Dialtone-CheckGroupBExample2" />
-        </div>
-        <div class="d-checkbox__copy">
-            <label class="d-checkbox__label" for="Dialtone-CheckGroupBExample2">
-                Block callers not already in contacts list
-                <p class="d-checkbox__description">You get enough calls. Free up some of your time.</p>
-            </label>
-        </div>
+    <div class="d-checkbox__copy">
+      <label class="d-checkbox__label" for="Dialtone-CheckGroupAExample1">Anonymous callers</label>
     </div>
-    <div class="d-checkbox-group">
-        <div class="d-checkbox__input">
-            <input class="d-checkbox" type="checkbox" name="Dialtone-CheckGroupBExample3" id="Dialtone-CheckGroupBExample3" />
-        </div>
-        <div class="d-checkbox__copy">
-            <label class="d-checkbox__label" for="Dialtone-CheckGroupBExample3">
-                Block callers with a high spam score
-                <p class="d-checkbox__description">We'll only let the legitimate callers through to bother you.</p>
-            </label>
-        </div>
+  </div>
+  <div class="d-checkbox-group">
+    <div class="d-checkbox__input">
+      <input class="d-checkbox" type="checkbox" name="Dialtone-CheckGroupAExample2" id="Dialtone-CheckGroupAExample2" />
     </div>
+    <div class="d-checkbox__copy">
+      <label class="d-checkbox__label" for="Dialtone-CheckGroupAExample2">Block callers not already in contacts list</label>
+    </div>
+  </div>
+  <div class="d-checkbox-group">
+    <div class="d-checkbox__input">
+      <input class="d-checkbox" type="checkbox" name="Dialtone-CheckGroupAExample3" id="Dialtone-CheckGroupAExample3" />
+    </div>
+    <div class="d-checkbox__copy">
+      <label class="d-checkbox__label" for="Dialtone-CheckGroupAExample3">Block callers with a high spam score</label>
+    </div>
+  </div>
 </fieldset>
-{% endhighlight %}
-            </div>
-        </div>
+          {% endhighlight %}
+        {% endcodeWellFooter %}
+      {% endcodeWell %}
     </div>
+    <div class="sub-section">
+      {% header "h3", "With Description Text" %}
+      {% codeWell %}
+        {% codeWellHeader %}
+          <fieldset class="d-layout__stack8">
+            <legend class="d-label">Call Blocking & Spam Protection</legend>
+            <div class="d-checkbox-group">
+              <div class="d-checkbox__input">
+                <input class="d-checkbox" type="checkbox" name="Dialtone-CheckGroupBExample1" id="Dialtone-CheckGroupBExample1" />
+              </div>
+              <div class="d-checkbox__copy">
+                <label class="d-checkbox__label" for="Dialtone-CheckGroupBExample1">Anonymous callers
+                  <div class="d-checkbox__description">Select how phone numbers you don't know should be handled.</div>
+                </label>
+              </div>
+            </div>
+            <div class="d-checkbox-group">
+              <div class="d-checkbox__input">
+                <input class="d-checkbox" type="checkbox" name="Dialtone-CheckGroupBExample2" id="Dialtone-CheckGroupBExample2" />
+              </div>
+              <div class="d-checkbox__copy">
+                <label class="d-checkbox__label" for="Dialtone-CheckGroupBExample2">Block callers not already in contacts list
+                  <div class="d-checkbox__description">You get enough calls. Free up some of your time.</div>
+                </label>
+              </div>
+            </div>
+            <div class="d-checkbox-group">
+              <div class="d-checkbox__input">
+                <input class="d-checkbox" type="checkbox" name="Dialtone-CheckGroupBExample3" id="Dialtone-CheckGroupBExample3" />
+              </div>
+              <div class="d-checkbox__copy">
+                <label class="d-checkbox__label" for="Dialtone-CheckGroupBExample3">Block callers with a high spam score
+                  <div class="d-checkbox__description">We'll only let the legitimate callers through to bother you.</div>
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        {% endcodeWellHeader %}
+        {% codeWellFooter %}
+          {% highlight html linenos %}
+<fieldset class="d-layout__stack8">
+  <legend class="d-label">Call Blocking & Spam Protection</legend>
+  <div class="d-checkbox-group">
+    <div class="d-checkbox__input">
+      <input class="d-checkbox" type="checkbox" name="Dialtone-CheckGroupBExample1" id="Dialtone-CheckGroupBExample1" />
+    </div>
+    <div class="d-checkbox__copy">
+      <label class="d-checkbox__label" for="Dialtone-CheckGroupBExample1">Anonymous callers
+        <div class="d-checkbox__description">Select how phone numbers you don't know should be handled.</div>
+      </label>
+    </div>
+  </div>
+  <div class="d-checkbox-group">
+    <div class="d-checkbox__input">
+      <input class="d-checkbox" type="checkbox" name="Dialtone-CheckGroupBExample2" id="Dialtone-CheckGroupBExample2" />
+    </div>
+    <div class="d-checkbox__copy">
+      <label class="d-checkbox__label" for="Dialtone-CheckGroupBExample2">Block callers not already in contacts list
+        <div class="d-checkbox__description">You get enough calls. Free up some of your time.</div>
+      </label>
+    </div>
+  </div>
+  <div class="d-checkbox-group">
+    <div class="d-checkbox__input">
+      <input class="d-checkbox" type="checkbox" name="Dialtone-CheckGroupBExample3" id="Dialtone-CheckGroupBExample3" />
+    </div>
+    <div class="d-checkbox__copy">
+      <label class="d-checkbox__label" for="Dialtone-CheckGroupBExample3">Block callers with a high spam score
+        <div class="d-checkbox__description">We'll only let the legitimate callers through to bother you.</div>
+      </label>
+    </div>
+  </div>
+</fieldset>
+          {% endhighlight %}
+        {% endcodeWellFooter %}
+      {% endcodeWell %}
+    </div>
+    <div class="sub-section">
+      {% header "h3", "With Validation States" %}
+      {% codeWell %}
+        {% codeWellHeader %}
+          <fieldset class="d-layout__stack8">
+            <legend class="d-label">Call Blocking & Spam Protection</legend>
+            <div class="d-checkbox-group">
+              <div class="d-checkbox__input">
+                <input class="d-checkbox d-checkbox--warning" type="checkbox" name="Dialtone-CheckGroupBExample1" id="Dialtone-CheckGroupCExample1" />
+              </div>
+              <div class="d-checkbox__copy">
+                <label class="d-checkbox__label" for="Dialtone-CheckGroupCExample1">Anonymous callers
+                  <div class="d-validation-message d-validation-message--warning">Select how phone numbers you don't know should be handled.</div>
+                </label>
+              </div>
+            </div>
+            <div class="d-checkbox-group">
+              <div class="d-checkbox__input">
+                <input class="d-checkbox d-checkbox--error" type="checkbox" name="Dialtone-CheckGroupCExample2" id="Dialtone-CheckGroupCExample2" />
+              </div>
+              <div class="d-checkbox__copy">
+                <label class="d-checkbox__label" for="Dialtone-CheckGroupCExample2">Block callers not already in contacts list
+                  <div class="d-validation-message d-validation-message--error">You get enough calls. Free up some of your time.</div>
+                </label>
+              </div>
+            </div>
+            <div class="d-checkbox-group">
+              <div class="d-checkbox__input">
+                <input class="d-checkbox d-checkbox--success" type="checkbox" name="Dialtone-CheckGroupCExample3" id="Dialtone-CheckGroupCExample3" />
+              </div>
+              <div class="d-checkbox__copy">
+                <label class="d-checkbox__label" for="Dialtone-CheckGroupCExample3">Block callers with a high spam score
+                  <div class="d-validation-message d-validation-message--success">We'll only let the legitimate callers through to bother you.</div>
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        {% endcodeWellHeader %}
+        {% codeWellFooter %}
+          {% highlight html linenos %}
+<fieldset class="d-layout__stack8">
+  <legend class="d-label">Call Blocking & Spam Protection</legend>
+  <div class="d-checkbox-group">
+    <div class="d-checkbox__input">
+      <input class="d-checkbox d-checkbox--warning" type="checkbox" name="Dialtone-CheckGroupBExample1" id="Dialtone-CheckGroupCExample1" />
+    </div>
+    <div class="d-checkbox__copy">
+      <label class="d-checkbox__label" for="Dialtone-CheckGroupCExample1">Anonymous callers
+        <div class="d-validation-message d-validation-message--warning">Select how phone numbers you don't know should be handled.</div>
+      </label>
+    </div>
+  </div>
+  <div class="d-checkbox-group">
+    <div class="d-checkbox__input">
+      <input class="d-checkbox d-checkbox--error" type="checkbox" name="Dialtone-CheckGroupCExample2" id="Dialtone-CheckGroupCExample2" />
+    </div>
+    <div class="d-checkbox__copy">
+      <label class="d-checkbox__label" for="Dialtone-CheckGroupCExample2">Block callers not already in contacts list
+        <div class="d-validation-message d-validation-message--error">You get enough calls. Free up some of your time.</div>
+      </label>
+    </div>
+  </div>
+  <div class="d-checkbox-group">
+    <div class="d-checkbox__input">
+      <input class="d-checkbox d-checkbox--success" type="checkbox" name="Dialtone-CheckGroupCExample3" id="Dialtone-CheckGroupCExample3" />
+    </div>
+    <div class="d-checkbox__copy">
+      <label class="d-checkbox__label" for="Dialtone-CheckGroupCExample3">Block callers with a high spam score
+        <div class="d-validation-message d-validation-message--success">We'll only let the legitimate callers through to bother you.</div>
+      </label>
+    </div>
+  </div>
+</fieldset>
+          {% endhighlight %}
+        {% endcodeWellFooter %}
+      {% endcodeWell %}
+    </div>
+  </div>
 </section>
-<section class="d-stack32">
-    <header class="d-stack8">
-        <h2 class="dialtone-title__section">Validation States</h2>
-        <p class="dialtone-copy__normal">Checkboxes use the same validation states as inputs.</p>
-    </header>
-    <div class="dialtone-example" data-example="yes" data-code="yes">
-        <div class="dialtone-example__example">
-            <fieldset class="d-layout__stack8">
-                <legend class="d-label">Call Blocking & Spam Protection</legend>
-                <div class="d-checkbox-group">
-                    <div class="d-checkbox__input">
-                        <input class="d-checkbox d-checkbox--warning" type="checkbox" name="Dialtone-CheckGroupBExample1" id="Dialtone-CheckGroupCExample1" />
-                    </div>
-                    <div class="d-checkbox__copy">
-                        <label class="d-checkbox__label" for="Dialtone-CheckGroupCExample1">
-                            Anonymous callers
-                            <p class="d-validation-message d-validation-message--warning">Select how phone numbers you don't know should be handled.</p>
-                        </label>
-                    </div>
-                </div>
-                <div class="d-checkbox-group">
-                    <div class="d-checkbox__input">
-                        <input class="d-checkbox d-checkbox--error" type="checkbox" name="Dialtone-CheckGroupCExample2" id="Dialtone-CheckGroupCExample2" />
-                    </div>
-                    <div class="d-checkbox__copy">
-                        <label class="d-checkbox__label" for="Dialtone-CheckGroupCExample2">
-                            Block callers not already in contacts list
-                            <p class="d-validation-message d-validation-message--error">You get enough calls. Free up some of your time.</p>
-                        </label>
-                    </div>
-                </div>
-                <div class="d-checkbox-group">
-                    <div class="d-checkbox__input">
-                        <input class="d-checkbox d-checkbox--success" type="checkbox" name="Dialtone-CheckGroupCExample3" id="Dialtone-CheckGroupCExample3" />
-                    </div>
-                    <div class="d-checkbox__copy">
-                        <label class="d-checkbox__label" for="Dialtone-CheckGroupCExample3">
-                            Block callers with a high spam score
-                            <p class="d-validation-message d-validation-message--success">We'll only let the legitimate callers through to bother you.</p>
-                        </label>
-                    </div>
-                </div>
-            </fieldset>
-        </div>
-        <div class="dialtone-example__code">
-{% highlight html linenos %}
-<fieldset class="d-layout__stack8">
-    <legend class="d-label">Call Blocking & Spam Protection</legend>
-    <div class="d-checkbox-group">
-        <div class="d-checkbox__input">
-            <input class="d-checkbox d-checkbox--warning" type="checkbox" name="Dialtone-CheckGroupBExample1" id="Dialtone-CheckGroupCExample1" />
-        </div>
-        <div class="d-checkbox__copy">
-            <label class="d-checkbox__label" for="Dialtone-CheckGroupCExample1">
-                Anonymous callers
-                <p class="d-validation-message d-validation-message--warning">Select how phone numbers you don't know should be handled.</p>
-            </label>
-        </div>
-    </div>
-    <div class="d-checkbox-group">
-        <div class="d-checkbox__input">
-            <input class="d-checkbox d-checkbox--error" type="checkbox" name="Dialtone-CheckGroupCExample2" id="Dialtone-CheckGroupCExample2" />
-        </div>
-        <div class="d-checkbox__copy">
-            <label class="d-checkbox__label" for="Dialtone-CheckGroupCExample2">
-                Block callers not already in contacts list
-                <p class="d-validation-message d-validation-message--error">You get enough calls. Free up some of your time.</p>
-            </label>
-        </div>
-    </div>
-    <div class="d-checkbox-group">
-        <div class="d-checkbox__input">
-            <input class="d-checkbox d-checkbox--success" type="checkbox" name="Dialtone-CheckGroupCExample3" id="Dialtone-CheckGroupCExample3" />
-        </div>
-        <div class="d-checkbox__copy">
-            <label class="d-checkbox__label" for="Dialtone-CheckGroupCExample3">
-                Block callers with a high spam score
-                <p class="d-validation-message d-validation-message--success">We'll only let the legitimate callers through to bother you.</p>
-            </label>
-        </div>
-    </div>
-</fieldset>
-{% endhighlight %}
-        </div>
-    </div>
+<section class="d-stack16">
+    {% header "h2", "Accessibility" %}
+    {% paragraph %}The best accessibility is semantic HTML. Most screen readers understand how to parse inputs if they’re correctly formatted. When it comes to checkboxes, there are a few things to keep in mind:{% endparagraph %}
+    <ul class="d-w75ch d-wmx764 d-fs18 d-lh6 d-stack8">
+      <li>All inputs should have an {% code %}id{% endcode %} attribute.</li>
+      <li>Associate checkbox labels with their inputs using the {% code %}for{% endcode %} attribute. This correlates with the checkbox's {% code %}id{% endcode %}.</li>
+      <li>If you have a group of related checkboxes, use a {% code %}fieldset{% endcode %} to group them and a {% code %}legend{% endcode %} to title the group.</li>
+    </ul>
+    {% paragraph %}For further information, please visit Gov.UK’s article, <a href="https://accessibility.blog.gov.uk/2016/07/22/using-the-fieldset-and-legend-elements/">"Using the fieldset and legend elements"</a>.{% endparagraph %}
 </section>
