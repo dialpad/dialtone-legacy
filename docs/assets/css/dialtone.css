@@ -2129,7 +2129,7 @@ legend.d-label {
 .d-tab {
   --tab--bgc: hsla(var(--white-h) var(--white-s) var(--white-l)  /  0%);
   --tab--fc: inherit;
-  --tab--oc: hsla(var(--primary-color-hsl)  /  25%);
+  --tab--oc: var(--blue-200);
   display: inline-flex;
   position: relative;
   align-items: center;
@@ -2165,9 +2165,8 @@ legend.d-label {
   background-color: var(--tab--bgc);
 }
 .d-tab:focus {
-  z-index: 2;
-  outline: var(--su4) auto transparent;
-  outline-color: var(--tab--oc);
+  box-shadow: 0px 0px 0px var(--su2) var(--tab--oc);
+  outline: none;
 }
 .d-tab:hover {
   --tab--bgc: var(--black-050);
@@ -2179,11 +2178,8 @@ legend.d-label {
   }
 }
 .d-tab--selected {
-  --tab--fc: var(--primary-color-hover);
+  --tab--fc: var(--primary-color);
   z-index: var(--zi-selected);
-}
-.d-tab--selected:focus {
-  --tab--oc: hsla(var(--primary-color-hsl)  /  50%);
 }
 .d-tab--selected:hover {
   --tab--bgc: hsla(var(--primary-color-hsl)  /  10%);
@@ -2194,29 +2190,23 @@ legend.d-label {
   --tab--bgc: var(--primary-color);
 }
 .d-tablist--inverted {
-  --tab--fc: var(--black-100);
+  --tab--fc: var(--white);
 }
 .d-tablist--inverted:after {
-  --tab--bgc: hsla(var(--black-100-h) var(--black-100-s) var(--black-100-l)  /  50%);
+  --tab--bgc: hsla(var(--blue-800-h) var(--blue-800-s) var(--blue-800-l)  /  50%);
 }
-.d-tablist--inverted .d-tab:focus {
-  --tab--oc: hsla(var(--black-100-h) var(--black-100-s) var(--black-100-l)  /  50%);
+.d-tablist--inverted .d-tab {
+  --tab--fc: var(--white);
 }
 .d-tablist--inverted .d-tab:hover {
-  --tab--bgc: hsla(var(--black-050-h) var(--black-050-s) var(--black-050-l)  /  10%);
-  --tab--fc: inherit;
+  --tab--bgc: hsla(var(--white-h) var(--white-s) var(--white-l)  /  25%);
 }
 .d-tablist--inverted .d-tab--selected {
   --tab--fc: var(--white);
+  --tab--oc: var(--white);
 }
 .d-tablist--inverted .d-tab--selected:after {
   --tab--bgc: currentColor;
-}
-.d-tablist--inverted .d-tab--selected:focus {
-  --tab--oc: hsla(var(--white-h) var(--white-s) var(--white-l)  /  50%);
-}
-.d-tablist--inverted .d-tab--selected:hover {
-  --tab--fc: var(--blue-200);
 }
 .d-tablist--sm {
   font-size: var(--fs12);
