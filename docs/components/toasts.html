@@ -11,54 +11,78 @@ description: Toast notices, sometimes called snackbars, are time-based messages 
     </div>
 </section>
 <section class="d-stack16">
-    <h2 class="dialtone-title__section">Styles</h2>
-    {% for i in toasts.toast-example %}
-    {% assign name = i.name %}
-        <aside class="d-stack8">
-            <h3 class="dialtone-title__subsection d-mb24">{{ name | capitalize }}</h3>
-            <div class="dialtone-example" data-example="yes" data-code="yes">
-                <div class="dialtone-example__example">
-                    <div class="d-ps-relative d-min-height1 d-mtn32 d-mxn24 d-mbn24">
-                        <div class="d-toast d-toast--top-right d-toast--{{ name }}" aria-hidden="true">
-                            <div class="d-toast__dialog" aria-describedby="notice-content">
-                                <div class="d-notice__icon">
-                                {% if name == "info" %}
-                                    {% iconSystem "info", "js-svg" %}
-                                {% elsif name == "warning" %}
-                                    {% iconSystem "warning", "js-svg" %}
-                                {% elsif name == "error" %}
-                                    {% iconSystem "error", "js-svg" %}
-                                {% elsif name == "success" %}
-                                    {% iconSystem "checkmark", "js-svg" %}
-                                {% endif %}
-                                </div>
-                                <div class="d-notice__content" aria-label="notice-content">
-                                    <div class="d-notice__title">Optional title</div>
-                                    <div class="d-notice__message">Message body with <a href="#">a link.</a></div>
-                                </div>
-                                <div>
-                                    TODO: Add Action Items
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="dialtone-example__code">
-{% highlight html %}
-<div class="d-toast d-toast--top-right" aria-hidden="true">
-    <div class="d-toast__dialog" aria-describedby="notice-content">
-        <div class="d-notice__icon">
-            ...
-        </div>
-        <div class="d-notice__content" aria-label="notice-content">
-            <div class="d-notice__title">...</div>
-            <div class="d-notice__message">...</div>
-        </div>
+    {% header "h2", "Classes" %}
+    <div class="dialtone-table-wrapper">
+      <table class="d-table">
+        <thead>
+          <tr>
+            <th scope="col" class="d-w25p">Class</th>
+            <th scope="col" class="d-w25p">Applies to</th>
+            <th scope="col">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for i in toasts.classes %}
+            {% assign class = i.class %}
+            {% assign applies = i.applies %}
+            {% assign desc = i.description %}
+            <tr>
+              <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">{{ class }}</th>
+              <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ applies }}</td>
+              <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ desc }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
     </div>
-</div>
-{% endhighlight %}
-                </div>
-            </div>
-        </aside>
-    {% endfor %}
+    {% header "h3", "Variants" %}
+    <div class="dialtone-table-wrapper">
+      <table class="d-table">
+        <thead>
+          <tr>
+            <th scope="col" class="d-w25p">Class</th>
+            <th scope="col" class="d-w25p">Applies to</th>
+            <th scope="col">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for i in toasts.variants %}
+            {% assign class = i.class %}
+            {% assign applies = i.applies %}
+            {% assign desc = i.description %}
+            <tr>
+              <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">{{ class }}</th>
+              <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ applies }}</td>
+              <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ desc }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% header "h3", "Positions" %}
+    <div class="dialtone-table-wrapper">
+      <table class="d-table">
+        <thead>
+          <tr>
+            <th scope="col" class="d-w25p">Class</th>
+            <th scope="col" class="d-w25p">Applies to</th>
+            <th scope="col">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for position in toasts.positions %}
+            <tr>
+              <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">d-toast--{{ position }}</th>
+              <td class="d-ff-mono d-fc-teal-500 d-fs12">d-avatar</td>
+              <td class="d-ff-mono d-fc-teal-500 d-fs12">Applies position style to the toast.</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+</section>
+<section class="d-stack8">
+    {% header "h2", "Examples" %}
+    {% header "h3", "Variants" %}
+    {% header "h3", "Positions" %}
 </section>
