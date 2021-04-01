@@ -83,26 +83,68 @@ description: Toast notices, sometimes called snackbars, are time-based messages 
 </section>
 <section class="d-stack8">
     {% header "h2", "Examples" %}
+    <div class="dialtone-example" data-example="yes" data-code="yes">
+        <div class="dialtone-example__example">
+          <div class="d-d-flex d-ai-center d-p16 d-bgc-ash d-ba d-bc-black-100 d-flow16 d-mb8 d-bar4">
+            <div class="d-input-group d-d-flex d-fl-grow1 d-ai-center d-flow8">
+              <label for="style-select" class="d-label d-fs14 d-fl0">Style</label>
+              <div class="d-select d-select--sm d-fl1">
+                <select id="style-select" class="js-toast-style-menu">
+                  <option name="style-select" id="style-select-default" data-class="none" selected>Default</option>
+                  <option name="style-select" id="style-select-info" data-class="info">Info</option>
+                  <option name="style-select" id="style-select-warning" data-class="warning">Warning</option>
+                  <option name="style-select" id="style-select-error" data-class="error">Error</option>
+                  <option name="style-select" id="style-select-success" data-class="success">Success</option>
+                </select>
+              </div>
+            </div>
+            <div class="d-input-group d-d-flex d-fl-grow1 d-ai-center d-flow8">
+                <label for="position-select" class="d-label d-fs14 d-fl0">Position</label>
+                <div class="d-select d-select--sm d-fl1">
+                  <select id="position-select" class="js-toast-position-menu">
+                    <option name="position-select" id="position-select-top-right" data-class="top-right" selected>Top Right</option>
+                    <option name="position-select" id="position-select-top-left" data-class="top-left">Top Left</option>
+                    <option name="position-select" id="position-select-bottom-right" data-class="bottom-right">Bottom Right</option>
+                    <option name="position-select" id="position-select-bottom-left" data-class="bottom-left">Bottom Left</option>
+                  </select>
+                </div>
+              </div>
+            <div class="d-input-group d-d-flex d-ai-center d-fl0 d-flow6">
+              <input type="checkbox" id="style-select-important" class="d-checkbox d-mt1 js-toast-important" />
+              <label for="style-select-important" class="d-label d-fs14 d-lh2">Important?</label>
+            </div>
+            <div class="d-input-actions d-as-flex-end d-d-flex d-fl0 d-flow4">
+              <button class="d-btn d-btn--danger d-btn--sm js-style-select-remove-btn d-d-none" role="button">Remove example</button>
+              <button class="d-btn d-btn--outlined d-btn--sm js-style-select-show-btn" role="button">Show example</button>
+            </div>
+          </div>
+        </div>
+    </div>
     {% header "h3", "Variants" %}
     {% header "h3", "Positions" %}
 </section>
-<aside class="d-toast d-toast--top-right" role="alert" aria-hidden="false">
-    <div class="d-toast__dialog">
-        <div class="d-notice__icon">
-            {% iconSystem "info", "js-toast-example-icon-info" %}
+<aside class="d-toast d-toast--top-right js-toast-example" role="alert" aria-hidden="false">
+    <div class="d-toast__dialog js-toast-example-dialog">
+        <div class="d-notice__icon js-toast-example-icon">
+            {% iconSystem "info", "js-toast-example-icon-info d-d-none" %}
+            {% iconSystem "warning", "js-toast-example-icon-warning d-d-none" %}
+            {% iconSystem "error", "js-toast-example-icon-error d-d-none" %}
+            {% iconSystem "check-circle", "js-toast-example-icon-success d-d-none" %}
         </div>
-        <div class="d-notice__content">
-            <h2 class="d-notice__title">Title</h2>
-            <p class="d-notice__message">
-                Message body with <a href="#" class="d-link d-link--muted">a link.</a>
+        <div class="d-notice__content js-toast-example-content">
+            <h2 class="d-notice__title js-toast-example-title">Title</h2>
+            <p class="d-notice__message js-toast-example-message">
+                Message body with <a href="#" class="d-link d-link--muted js-toast-example-link">a link.</a>
             </p>
         </div>
-        <div class="d-notice__actions">
-            <button type="button" class="d-btn d-btn--sm d-btn--outlined d-btn--muted">Action</button>
-            <button type="button" class="d-btn d-btn--sm d-btn--circle d-btn--muted" aria-label="Close">
+        <div class="d-notice__actions js-toast-example-actions">
+            <button type="button" class="d-btn d-btn--sm d-btn--outlined d-btn--muted js-toast-example-action-btn">Action</button>
+            <button type="button" class="d-btn d-btn--sm d-btn--circle d-btn--muted js-toast-example-close-btn" aria-label="Close">
                 <span class="d-btn__label">Close</span>
                 <span class="d-btn__icon">{% iconSystem "close" %}</span>
             </button>
         </div>
     </div>
 </aside>
+
+<script src="/{{ site.paths.js }}/toasts.js"></script>
