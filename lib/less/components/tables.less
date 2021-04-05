@@ -13,27 +13,49 @@
 //  $   BASE STYLE
 //  ----------------------------------------------------------------------------
 .d-table {
+    //  Component CSS Vars
+    //  ------------------------------------------------------------------------
+    --table--fc:           var(--black-600);
+    --table--bc:           var(--black-200);
+    --table--bgc:          var(--white);
+
     box-sizing: border-box;
 
     display: table;
-    margin: var(--su0);
     max-width: 100%;
     width: 100%;
+    margin: var(--su0);
+
     border-spacing: 0;
     border-collapse: collapse;
+
     font-size: var(--fs14);
-    line-height: var(--lh-normal);
+    line-height: var(--lh-normal); // TODO maybe line height 16?
+
+    background-color: var(--table--bgc);
 
     th,
     td {
         padding: var(--su8) var(--su4);
         border-bottom: var(--su1) solid var(--black-200);
         text-align: left;
+
+        border-bottom-color: var(--table--bc);
+        color: var(--table--fc);
     }
 
     thead th {
         font-weight: var(--fw-bold);
-        line-height: var(--lh-tight);
+        line-height: var(--lh-tight); // TODO should this differ?
+
+        border-bottom-color: var(--table--bc);
+    }
+
+    tbody + tbody tr:first-of-type {
+        td,
+        th {
+            border-top: var(--su4) solid var(--table--bc);
+        }
     }
 
     tbody tr:last-of-type {
@@ -42,37 +64,15 @@
             border-bottom-width: 0;
         }
     }
-
-    tbody + tbody tr:first-of-type {
-        td,
-        th {
-            border-top: var(--su4) solid var(--black-200);
-        }
-    }
 }
 
 //  ============================================================================
 //  $   INVERTED STYLE
 //  ----------------------------------------------------------------------------
 .d-table--inverted {
-    th,
-    td {
-        border-bottom-color: var(--black-100);
-        color: var(--white);
-    }
-    thead th {
-        border-bottom-color: var(--white);
-    }
-    tbody + tbody tr:first-of-type {
-        border-top-color: var(--white);
-    }
-}
-
-//  ============================================================================
-//  $   STRIPED ROW BACKGROUNDS
-//  ----------------------------------------------------------------------------
-.d-table--striped {
-    tr:nth-child(even) {
-        background-color: hsl(var(--black-100-h) var(--black-100-s) calc(var(--black-100-l) + 2.5%));
-    }
+    //  Component CSS Vars
+    //  ------------------------------------------------------------------------
+    --table--fc:           var(--black-050);
+    --table--bc:           var(--black-050);
+    --table--bgc:          var(--black-800);
 }
