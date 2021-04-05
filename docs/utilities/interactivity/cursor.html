@@ -1,0 +1,66 @@
+---
+layout: page
+title: Cursor
+description: Utilities for setting the type of mouse cursor, if any, to show when the mouse pointer is over an element.
+---
+<section class="d-stack16">
+  {% header "h2", "Classes" %}
+  <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
+    <table class="d-table">
+      <thead>
+        <tr>
+          <th scope="col" class="d-w25p">Class</th>
+          <th scope="col">Output</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for i in interactivity.cursor %}
+          {% assign class = i.class %}
+          {% assign output = i.output %}
+          <tr>
+            <th scope="row" class="d-ff-mono d-fc-purple-400 d-fs12">.{{ class }}</th>
+            <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ output }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+<section class="d-stack16">
+  {% header "h2", "Usage" %}
+  <aside class="d-bar8 d-of-hidden">
+    <header class="d-fl-col5 d-ta-center d-flg8 d-fw-wrap d-p24 d-bgc-blue-100 d-bgo50 d-w100p d-hmn102">
+      <div class="d-d-flex d-fw-wrap d-ac-center d-p8 d-w100p d-hmn216 d-bar8">
+        {% for i in interactivity.cursor %}
+          {% assign class = i.class %}
+          {% assign output = i.output %}
+          <div class="d-fl-center d-m8 d-p16 d-bgc-blue-400 d-fs12 d-ff-mono d-fc-white d-bar4 {{ class }}">.{{ class }}</div>
+        {% endfor %}
+      </div>
+    </header>
+    <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+{% highlight html linenos %}
+<div class="d-c-all-scroll">...</div>
+<div class="d-c-auto">...</div>
+<div class="d-c-col-resize">...</div>
+<div class="d-c-copy">...</div>
+<div class="d-c-crosshair">...</div>
+<div class="d-c-default">...</div>
+<div class="d-c-grab">...</div>
+<div class="d-c-grabbing">...</div>
+<div class="d-c-help">...</div>
+<div class="d-c-menu">...</div>
+<div class="d-c-move">...</div>
+<div class="d-c-none">...</div>
+<div class="d-c-not-allowed">...</div>
+<div class="d-c-pointer">...</div>
+<div class="d-c-progress">...</div>
+<div class="d-c-row-resize">...</div>
+<div class="d-c-text">...</div>
+<div class="d-c-wait">...</div>
+<div class="d-c-zoom-in">...</div>
+<div class="d-c-zoom-out">...</div>
+{% endhighlight %}
+    </footer>
+  </aside>
+</section>
