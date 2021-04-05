@@ -43,7 +43,7 @@
     //  ------------------------------------------------------------------------
     --tab--bgc:         hsla(var(--white-h) var(--white-s) var(--white-l) ~" / " 0%);
     --tab--fc:          inherit;
-    --tab--oc:          hsla(var(--primary-color-hsl) ~" / " 25%);
+    --tab--oc:          var(--blue-200);
 
     box-sizing: border-box;
 
@@ -86,9 +86,8 @@
     }
 
     &:focus {
-        outline: var(--su4) auto transparent;
-        outline-color: var(--tab--oc);
-        z-index: 2;
+        outline: none;
+        box-shadow: 0px 0px 0px var(--su2) var(--tab--oc);
     }
 
     &:hover {
@@ -107,13 +106,9 @@
 //  $   SELECTED STYLE
 //  ----------------------------------------------------------------------------
 .d-tab--selected {
-    --tab--fc:          var(--primary-color-hover);
+    --tab--fc: var(--primary-color);
 
     z-index: var(--zi-selected);
-
-    &:focus {
-        --tab--oc:          hsla(var(--primary-color-hsl) ~" / " 50%);
-    }
 
     &:hover {
         --tab--bgc:         hsla(var(--primary-color-hsl) ~" / " 10%);
@@ -131,36 +126,24 @@
 //  $   INVERTED STYLE
 //  ----------------------------------------------------------------------------
 .d-tablist--inverted {
-    --tab--fc:          var(--black-100);
+    --tab--fc:           var(--white);
 
     &:after {
-        --tab--bgc:     hsla(var(--black-100-h) var(--black-100-s) var(--black-100-l) ~" / " 50%);
+        --tab--bgc:     hsla(var(--blue-800-h) var(--blue-800-s) var(--blue-800-l) ~" / " 50%);
     }
 
     .d-tab {
-        &:focus {
-            --tab--oc:  hsla(var(--black-100-h) var(--black-100-s) var(--black-100-l) ~" / " 50%);
-        }
-
+        --tab--fc:           var(--white);
         &:hover {
-            --tab--bgc: hsla(var(--black-050-h) var(--black-050-s) var(--black-050-l) ~" / " 10%);
-            --tab--fc:  inherit;
+            --tab--bgc: hsla(var(--white-h) var(--white-s) var(--white-l) ~" / " 25%);
         }
     }
 
     .d-tab--selected {
-        --tab--fc:      var(--white);
-
+        --tab--fc: var(--white);
+        --tab--oc: var(--white);
         &:after {
             --tab--bgc: currentColor;
-        }
-
-        &:focus {
-            --tab--oc:  hsla(var(--white-h) var(--white-s) var(--white-l) ~" / " 50%);
-        }
-
-        &:hover {
-            --tab--fc:  var(--blue-200);
         }
     }
 }
