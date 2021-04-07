@@ -13,40 +13,73 @@
 //  $   BASE STYLE
 //  ----------------------------------------------------------------------------
 .d-table {
+    //  Component CSS Vars
+    //  ------------------------------------------------------------------------
+    --table--th:           var(--black-700);
+    --table--td:           var(--black-600);
+    --table--bc:           var(--black-200);
+    --table--bgc:          var(--white);
+
     box-sizing: border-box;
 
     display: table;
-    margin: var(--su0);
     max-width: 100%;
     width: 100%;
+    margin: var(--su0);
+
     border-spacing: 0;
     border-collapse: collapse;
+
     font-size: var(--fs14);
-    line-height: var(--lh-normal);
+    line-height: var(--lh2); 
 
-    th,
-    td {
-        padding: var(--su8) var(--su4);
-        border-bottom: var(--su1) solid var(--black-200);
-        text-align: left;
-    }
+    background-color: var(--table--bgc);
 
-    thead th {
-        font-weight: var(--fw-bold);
-        line-height: var(--lh-tight);
-    }
+    // Table Head Styles
+    thead {
+        border-bottom: var(--su2) solid var(--table--bc);
 
-    tbody tr:last-of-type {
-        td,
+        // Column Header Styles
         th {
-            border-bottom-width: 0;
+            font-size: var(--fs12);
+            text-transform: uppercase;
         }
     }
 
+    // Header Styles
+    th {
+        color: var(--table--th);
+        font-weight: var(--fw-bold);
+    }
+
+    // Cell Styles
+    td {
+        color: var(--table--td);
+    }
+
+    // Header & Cell Styles
+    th,
+    td {
+        padding: var(--su16);
+        text-align: left;
+        border-bottom: var(--su1) solid var(--table--bc);
+    }
+
+    // Nested Table Body, First Row Styles, used internally on the Dialtone site
     tbody + tbody tr:first-of-type {
+        // Header & Cell Styles
         td,
         th {
-            border-top: var(--su4) solid var(--black-200);
+            border-top: var(--su2) solid var(--table--bc);
+        }
+    }
+
+    // Last Table Row Styles
+    tbody tr:last-of-type {
+        // Header & Cell Styles
+        td,
+        th {
+            border-bottom-width: 0;
         }
     }
 }
@@ -55,24 +88,25 @@
 //  $   INVERTED STYLE
 //  ----------------------------------------------------------------------------
 .d-table--inverted {
-    th,
-    td {
-        border-bottom-color: var(--black-100);
-        color: var(--white);
-    }
-    thead th {
-        border-bottom-color: var(--white);
-    }
-    tbody + tbody tr:first-of-type {
-        border-top-color: var(--white);
-    }
+    --table--th:           var(--black-050);
+    --table--td:           var(--black-100);
+    --table--bc:           var(--black-050);
+    --table--bgc:          var(--black-800);
 }
 
 //  ============================================================================
 //  $   STRIPED ROW BACKGROUNDS
 //  ----------------------------------------------------------------------------
 .d-table--striped {
+    // Row Styles
     tr:nth-child(even) {
-        background-color: hsl(var(--black-100-h) var(--black-100-s) calc(var(--black-100-l) + 2.5%));
+        background-color: var(--black-050);
+    }
+
+    &.d-table--inverted {
+        // Row Styles
+        tr:nth-child(even) {
+            background-color: var(--black-700);
+        }
     }
 }
