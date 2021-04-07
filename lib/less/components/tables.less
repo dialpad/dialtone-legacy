@@ -15,7 +15,8 @@
 .d-table {
     //  Component CSS Vars
     //  ------------------------------------------------------------------------
-    --table--fc:           var(--black-600);
+    --table--th:           var(--black-700);
+    --table--td:           var(--black-600);
     --table--bc:           var(--black-200);
     --table--bgc:          var(--white);
 
@@ -37,25 +38,36 @@
     // Table Head Styles
     thead {
         border-bottom: var(--su2) solid var(--table--bc);
+
+        // Column Header Styles
+        th {
+            font-size: var(--fs12);
+            text-transform: uppercase;
+        }
     }
 
-    // Table Header Styles
+    // Header Styles
     th {
+        color: var(--table--th);
         font-weight: var(--fw-bold);
     }
 
     // Cell Styles
+    td {
+        color: var(--table--td);
+    }
+
+    // Header & Cell Styles
     th,
     td {
-        padding: var(--su8) var(--su4);
+        padding: var(--su16);
         text-align: left;
-        color: var(--table--fc);
         border-bottom: var(--su1) solid var(--table--bc);
     }
 
     // Nested Table Body, First Row Styles - TODO: is this still required?
     tbody + tbody tr:first-of-type {
-        // Cell Styles
+        // Header & Cell Styles
         td,
         th {
             border-top: var(--su2) solid var(--table--bc);
@@ -64,7 +76,7 @@
 
     // Last Table Row Styles
     tbody tr:last-of-type {
-        // Cell Styles
+        // Header & Cell Styles
         td,
         th {
             border-bottom-width: 0;
@@ -76,7 +88,23 @@
 //  $   INVERTED STYLE
 //  ----------------------------------------------------------------------------
 .d-table--inverted {
-    --table--fc:           var(--black-050);
+    --table--th:           var(--black-050);
+    --table--td:           var(--black-100);
     --table--bc:           var(--black-050);
     --table--bgc:          var(--black-800);
+}
+
+//  ============================================================================
+//  $   STRIPED ROW BACKGROUNDS
+//  ----------------------------------------------------------------------------
+.d-table--striped {
+    tr:nth-child(even) {
+        background-color: var(--black-050);
+    }
+
+    &.d-table--inverted {
+        tr:nth-child(even) {
+            background-color: var(--black-700);
+        }
+    }
 }
