@@ -20,7 +20,7 @@ $(document).ready(function() {
 
   const iconTypes = $('.js-toast-example-icon-info, .js-toast-example-icon-warning, .js-toast-example-icon-error, .js-toast-example-icon-success');
   const styleClassTypes = ("d-toast--info d-toast--warning d-toast--error d-toast--success d-toast--important");
-  const positionClassTypes = ("d-toast--top-left d-toast--top-center d-toast--top-right d-toast--bottom-left d-toast--bottom-center d-toast--bottom-right");
+  const positionClassTypes = ("d-toast--top-center");
 
 
   function closeToast() {
