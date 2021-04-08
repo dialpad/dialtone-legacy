@@ -3,65 +3,138 @@ layout: page
 title: Toast
 description: Toast notices, sometimes called snackbars, are time-based messages that appear based on the user or other users actions. They contain at-a-glance information about outcomes. Sometimes they are paired with actions.
 ---
-<section class="d-stack8">
-    <h2 class="dialtone-title__section">Breakdown</h2>
-    <p class="dialtone-copy__normal">Toast messages have a content area, icon, message, and possibly metadata. They are placed within a wrapper.</p>
-    <div class="dialtone-breakdown">
-        <img src="/{{ site.paths.img }}/toast-breakdown@2x.png" alt="A breakdown of a toast message" />
+<section class="d-stack16">
+    {% header "h2", "Classes" %}
+    <div class="dialtone-table-wrapper">
+      <table class="d-table">
+        <thead>
+          <tr>
+            <th scope="col" class="d-w25p">Class</th>
+            <th scope="col" class="d-w25p">Applies to</th>
+            <th scope="col">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for i in toasts.classes %}
+            {% assign class = i.class %}
+            {% assign applies = i.applies %}
+            {% assign desc = i.description %}
+            <tr>
+              <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">{{ class }}</th>
+              <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ applies }}</td>
+              <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ desc }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% header "h3", "Variants" %}
+    <div class="dialtone-table-wrapper">
+      <table class="d-table">
+        <thead>
+          <tr>
+            <th scope="col" class="d-w25p">Class</th>
+            <th scope="col" class="d-w25p">Applies to</th>
+            <th scope="col">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for i in toasts.variants %}
+            {% assign class = i.class %}
+            {% assign applies = i.applies %}
+            {% assign desc = i.description %}
+            <tr>
+              <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">{{ class }}</th>
+              <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ applies }}</td>
+              <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ desc }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% header "h3", "Positions" %}
+    <div class="dialtone-table-wrapper">
+      <table class="d-table">
+        <thead>
+          <tr>
+            <th scope="col" class="d-w25p">Class</th>
+            <th scope="col" class="d-w25p">Applies to</th>
+            <th scope="col">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for position in toasts.positions %}
+            <tr>
+              <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">d-toast--{{ position }}</th>
+              <td class="d-ff-mono d-fc-teal-500 d-fs12">d-toast-wrapper</td>
+              <td class="d-ff-mono d-fc-teal-500 d-fs12">Applies position style to the toast wrapper.</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
     </div>
 </section>
-<section class="d-stack16">
-    <h2 class="dialtone-title__section">Styles</h2>
-    {% for i in toasts.toast-example %}
-    {% assign name = i.name %}
-    {% assign meta = i.meta %}
-    {% assign copy = i.copy %}
-        <aside class="d-stack8">
-            <h3 class="dialtone-title__subsection">{{ name | capitalize }}</h3>
-            <div class="dialtone-example" data-example="yes" data-code="yes">
-                <div class="dialtone-example__example">
-                    <div class="d-ps-relative d-min-height1 d-mtn32 d-mxn24 d-mbn24">
-                        <div class="d-toast-wrapper">
-                            <div class="d-toast--{{ name }}" aria-hidden="true">
-                                <div class="d-toast__content" aria-describedby="notice-message">
-                                    <div class="d-toast__icon--{{ name }}">
-                                    {% if name == "chat" %}
-                                        {% iconSystem "chat", "js-svg" %}
-                                    {% elsif name == "viewing" %}
-                                        {% iconSystem "visibility", "js-svg" %}
-                                    {% elsif name == "info" %}
-                                        {% iconSystem "info", "js-svg" %}
-                                    {% elsif name == "error" %}
-                                        {% iconSystem "error", "js-svg" %}
-                                    {% elsif name == "success" %}
-                                        {% iconSystem "checkmark", "js-svg" %}
-                                    {% elsif name == "organizer" %}
-                                        {% iconSystem "group", "js-svg" %}
-                                    {% endif %}
-                                    </div>
-                                    <div class="d-toast__message" aria-label="notice-message">
-                                        {% if meta != nil %}<div class="d-toast__meta">{{ meta }}</div>{% endif %}
-                                        <div class="d-toast__copy">{{ copy }}</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="dialtone-example__code">
-{% highlight css %}
-.example-toast-wrapper {
-    .d-toast-wrapper();
-}
-.example-toast--{{ name }} {
-    .d-toast--{{ name }}();
-}
-.example-toast__icon--{{ name }} {
-    .d-toast__icon--{{ name }}();
-}
-{% endhighlight %}
-                </div>
+<section class="d-stack8">
+    {% header "h2", "Examples" %}
+    <div class="dialtone-example" data-example="yes" data-code="yes">
+        <div class="dialtone-example__example">
+          <div class="d-d-flex d-ai-center d-p16 d-bgc-ash d-ba d-bc-black-100 d-flow16 d-mb8 d-bar4">
+            <div class="d-input-group d-d-flex d-fl-grow1 d-ai-center d-flow8">
+              <label for="style-select" class="d-label d-fs14 d-fl0">Style</label>
+              <div class="d-select d-select--sm d-fl1">
+                <select id="style-select" class="js-toast-style-menu">
+                  <option name="style-select" id="style-select-default" data-class="none" selected>Default</option>
+                  <option name="style-select" id="style-select-info" data-class="info">Info</option>
+                  <option name="style-select" id="style-select-warning" data-class="warning">Warning</option>
+                  <option name="style-select" id="style-select-error" data-class="error">Error</option>
+                  <option name="style-select" id="style-select-success" data-class="success">Success</option>
+                </select>
+              </div>
             </div>
-        </aside>
-    {% endfor %}
+            <div class="d-input-group d-d-flex d-fl-grow1 d-ai-center d-flow8">
+                <label for="position-select" class="d-label d-fs14 d-fl0">Position</label>
+                <div class="d-select d-select--sm d-fl1">
+                  <select id="position-select" class="js-toast-position-menu">
+                    <option name="position-select" id="position-select-top-center" data-class="top-center" selected>Top Center</option>
+                  </select>
+                </div>
+              </div>
+            <div class="d-input-group d-d-flex d-ai-center d-fl0 d-flow6">
+              <input type="checkbox" id="style-select-important" class="d-checkbox d-mt1 js-toast-important" />
+              <label for="style-select-important" class="d-label d-fs14 d-lh2">Important?</label>
+            </div>
+            <div class="d-input-actions d-as-flex-end d-d-flex d-fl0 d-flow4">
+              <button class="d-btn d-btn--danger d-btn--sm js-style-select-remove-btn d-d-none" role="button">Remove example</button>
+              <button class="d-btn d-btn--outlined d-btn--sm js-style-select-show-btn" role="button">Show example</button>
+            </div>
+          </div>
+        </div>
+    </div>
 </section>
+<aside class="d-toast-wrapper js-toast-example-wrapper">
+    <div class="d-toast js-toast-example-toast" role="alert" aria-hidden="true">
+        <div class="d-toast__dialog js-toast-example-dialog">
+            <div class="d-notice__icon js-toast-example-icon">
+                {% iconSystem "info", "js-toast-example-icon-info d-d-none" %}
+                {% iconSystem "warning", "js-toast-example-icon-warning d-d-none" %}
+                {% iconSystem "error", "js-toast-example-icon-error d-d-none" %}
+                {% iconSystem "check-circle", "js-toast-example-icon-success d-d-none" %}
+            </div>
+            <div class="d-notice__content js-toast-example-content">
+                <h2 class="d-notice__title js-toast-example-title">Title</h2>
+                <p class="d-notice__message js-toast-example-message">
+                    Message body with <a href="#" class="d-link d-link--muted js-toast-example-link">a link.</a>
+                </p>
+            </div>
+            <div class="d-notice__actions js-toast-example-actions">
+                <button type="button" class="d-btn d-btn--sm d-btn--outlined d-btn--muted js-toast-example-action-btn">Action</button>
+                <button type="button" class="d-btn d-btn--sm d-btn--circle d-btn--muted js-toast-example-close-btn" aria-label="Close">
+                    <span class="d-btn__label">Close</span>
+                    <span class="d-btn__icon">{% iconSystem "close" %}</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</aside>
+
+<script src="/{{ site.paths.js }}/toasts.js"></script>

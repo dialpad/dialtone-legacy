@@ -4,202 +4,144 @@
 //
 //  These are the styles for toast notices, which are used by alert users to
 //  information they might need. For further documentation of these styles,
-//  please visit https://dialpad.design/components/toast
-//
+//  please visit https://dialpad.design/components/toasts
+
+//  ============================================================================
+//  @   TOAST CONTAINER
+//  ----------------------------------------------------------------------------
+.d-toast-wrapper {
+    position: absolute;
+
+    .d-stack8();
+}
+
 //  ============================================================================
 //  @   BASE STYLE
 //  ----------------------------------------------------------------------------
 .d-toast {
+    //  Component CSS Vars
+    //  ------------------------------------------------------------------------
+    --toast--bgc:          var(--black-050);
+    --toast--fc:           var(--black-800);
+
     box-sizing: border-box;
 
-    position: relative;
-    padding: var(--su12) var(--su8) var(--su8);
-    max-width: var(--size264);
-    z-index: var(--zi-notification);
+    width:         100%;
+    max-width:     var(--size628);
+    padding:       var(--su12);
+    margin-bottom: var(--su8);
+    z-index:       var(--zi-notification);
+
+    color:            var(--toast--fc);
+    background-color: var(--toast--bgc);
 
     border-radius: var(--br4);
-    border: var(--su1) solid var(--black-100);
-    background-color: var(--white);
-    box-shadow: var(--bs-sm);
+    .d-bs-md();
 
-    font-size: var(--fs14);
-    line-height: var(--lh-tight);
-    color: var(--fc-medium);
-    word-break: normal;
+    font-size:   var(--fs14);
+    line-height: var(--lh6);
+    word-break:  normal;
 
     //  If there's a link in a toast, break the url so it wraps
     > a {
         word-break: break-all;
     }
 
-    //  Add a top border
-    &:before {
-        content: "";
-        position: absolute;
-        top: -(@su1);
-        right: -(@su1);
-        left: -(@su1);
-
-        height: @su6;
-        border-radius: var(--br4) var(--br4) 0 0;
+    // If you want to hide and reveal the toast
+    &[aria-hidden="true"] {
+        visibility: hidden;
+        opacity: 0;
+    }
+    &[aria-hidden="false"] {
+        visibility: visible;
+        opacity: 1;
     }
 }
 
-//  @@  CONTENT BLOCK
+//  ============================================================================
+//  $   CONTENT CONTAINER
 //  ----------------------------------------------------------------------------
-.d-toast__content {
-    display: flex;
-}
-
-//  @@  TOAST ICON (IF APPLICABLE)
-//  ----------------------------------------------------------------------------
-.d-toast__icon {
+.d-toast__dialog {
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-grow: 0;
-    flex-shrink: 0;
+    position: relative;
 
-    width: var(--su24);
-    height: var(--su24);
-    margin-right: var(--su4);
-    border-radius: var(--br-circle);
-    color: var(--white);
+    .d-notice__content {
+        margin-right: var(--su16);
+    }
 
-    .d-svg {
-        width: 1.8rem;
-        height: 1.8rem;
+    .d-notice__actions {
+        margin-left: var(--su32);
     }
 }
-
-//  @@  META CONTENT
-//      Currently only used with chat messages to denote who and when a message
-//      was sent.
-//  ----------------------------------------------------------------------------
-.d-toast__meta {
-    margin-bottom: var(--su4);
-    font-size: var(--fs11);
-    font-family: var(--ff-sans);
-    color: var(--black-600);
-}
-
-//  @@  MESSAGE STYLE
-//  ----------------------------------------------------------------------------
-.d-toast__message {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-
-    margin-left: var(--su4);
-    font-size: var(--fs12);
-    line-height: var(--lh4);
-}
-//
-// //  ============================================================================
-// //  @   TOAST STYLES
-// //  ============================================================================
-// //  @@  VIEWING (UC ONLY)
-// //  ----------------------------------------------------------------------------
-// .d-toast--viewing {
-//     .d-toast();
-//
-//     &:before {
-//         .d-background-color--rose();
-//     }
-// }
-// .d-toast__icon--viewing {
-//     .d-toast__icon();
-//     .d-background-color--rose();
-//     color: @rose-darker;
-// }
-//
-// //  @@  CHAT MESSAGE (UC ONLY)
-// //  ----------------------------------------------------------------------------
-// .d-toast--chat {
-//     .d-toast();
-//
-//     &:before {
-//         .d-background-color--navy();
-//     }
-// }
-// .d-toast__icon--chat {
-//     .d-toast__icon();
-//     .d-background-color--navy();
-//
-//     .d-svg {
-//         .d-margin-top1();
-//         width: 1.6rem;
-//         height: 1.6rem;
-//     }
-// }
-//
-// //  @@  SUCCESS
-// //  ----------------------------------------------------------------------------
-// .d-toast--success {
-//     .d-toast();
-//
-//     &:before {
-//         .d-background-color--emerald();
-//     }
-// }
-// .d-toast__icon--success {
-//     .d-toast__icon();
-//     .d-background-color--emerald();
-// }
-//
-// //  @@  ERROR
-// //  ----------------------------------------------------------------------------
-// .d-toast--error {
-//     .d-toast();
-//
-//     &:before {
-//         .d-background-color--wildberry();
-//     }
-// }
-// .d-toast__icon--error {
-//     .d-toast__icon();
-//     .d-background-color--wildberry();
-// }
-//
-// //  @@  INFO
-// //  ----------------------------------------------------------------------------
-// .d-toast--info {
-//     .d-toast();
-//
-//     &:before {
-//         .d-background-color--blue();
-//     }
-// }
-// .d-toast__icon--info {
-//     .d-toast__icon();
-//     .d-background-color--blue();
-// }
-//
-// //  @@  ORGANIZER
-// //  ----------------------------------------------------------------------------
-// .d-toast--organizer {
-//     .d-toast();
-//
-//     &:before {
-//         .d-background-color--berry();
-//     }
-// }
-// .d-toast__icon--organizer {
-//     .d-toast__icon();
-//     .d-background-color--berry();
-// }
 
 
 //  ============================================================================
-//  @   TOAST WRAPPER
+//  $   STYLES
+//  ============================================================================
+//  $$  DEFAULT IMPORTANT
 //  ----------------------------------------------------------------------------
-.d-toast-wrapper {
-    box-sizing: border-box;
+.d-toast.d-toast--important {
+    --toast--bgc:          var(--black-800);
+    --toast--fc:           var(--black-050);
+}
 
-    position: absolute;
-    top: var(--su32);
-    right: var(--su32);
+//  $$  INFO
+//  ----------------------------------------------------------------------------
+.d-toast--info {
+    --toast--bgc:          var(--blue-100);
+    --toast--fc:           var(--blue-700);
 
-    //  Space all child elements
-    .d-stack6();
+    &.d-toast--important {
+        --toast--bgc:      var(--blue-700);
+        --toast--fc:       var(--black-050);
+    }
+}
+
+//  $$  WARNING
+//  ----------------------------------------------------------------------------
+.d-toast--warning {
+    --toast--bgc:          var(--yellow-100);
+    --toast--fc:           var(--yellow-600);
+
+    &.d-toast--important {
+        --toast--bgc:      var(--yellow-400);
+        --toast--fc:       var(--black-800);
+    }
+}
+
+//  $$  ERROR
+//  ----------------------------------------------------------------------------
+.d-toast--error {
+    --toast--bgc:          var(--red-100);
+    --toast--fc:           var(--red-600);
+
+    &.d-toast--important {
+        --toast--bgc:      var(--red-500);
+        --toast--fc:       var(--black-050);
+    }
+}
+
+//  $$  SUCCESS
+//  ----------------------------------------------------------------------------
+.d-toast--success {
+    --toast--bgc:          var(--green-100);
+    --toast--fc:           var(--green-600);
+
+    &.d-toast--important {
+        --toast--bgc:      var(--green-600);
+        --toast--fc:       var(--black-050);
+    }
+}
+
+
+//  ============================================================================
+//  $   POSITION STYLES
+//  ============================================================================
+//  $$  TOP CENTER
+//  ----------------------------------------------------------------------------
+.d-toast--top-center {
+    top:       var(--su32);
+    left:      50%;
+    transform: translateX(-50%);
 }
