@@ -4,207 +4,226 @@ title: Tables
 description: Used to organize and list data set information. While data visualization helps quickly summarize a data set, data tables allows customers to compare and data individual data rows.
 ---
 <section class="d-stack16">
-    <h2 class="dialtone-title__section">Base Style</h2>
-    <div class="dialtone-example" data-example="yes" data-code="yes">
-        <div class="dialtone-example__example">
-            <table class="d-table">
-                <thead>
-                    <tr>
-                        <th scope="col">Office</th>
-                        <th scope="col">Country</th>
-                        <th scope="col" width="10%">Employees</th>
-                        <th scope="col">Contact</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for i in tables.table-example %}
-                    <tr>
-                        <th scope="row">{{ i.office }}</th>
-                        <td>{{ i.country }}</td>
-                        <td>{{ i.size }}</td>
-                        <td>{{ i.contact }}</td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
-        <div class="dialtone-example__code">
+  {% header "h2", "Classes" %}
+  <table class="d-table">
+    <thead>
+      <tr>
+        <th scope="col" class="d-w25p">Class</th>
+        <th scope="col" class="d-w25p">Applies to</th>
+        <th scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in tables.classes %}
+        {% assign class = i.class %}
+        {% assign apply = i.applies %}
+        {% assign desc = i.description %}
+        <tr>
+          <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.{{ class }}</th>
+          <td class="d-ff-mono d-fc-teal-500 d-fs12">{% if apply != "N/A" %}<span class="code-example--inline">.{% endif %}{{ apply }}{% if apply != "N/A" %}</span>{% endif %}</td>
+          <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ desc }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</section>
+<section class="d-stack16">
+  {% header "h2", "Examples" %}
+  <div class="d-stack48">
+    <div class="d-stack8">
+      {% header "h3", "Base Style" %}
+      {% codeWell %}
+        {% codeWellHeader "white" %}
+          <table class="d-table">
+            <thead>
+              <tr>
+                <th scope="col">Office</th>
+                <th scope="col">Country</th>
+                <th scope="col" width="10%">Employees</th>
+                <th scope="col">Contact</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for i in tables.table-example %}
+              <tr>
+                <th scope="row">{{ i.office }}</th>
+                <td>{{ i.country }}</td>
+                <td>{{ i.size }}</td>
+                <td>{{ i.contact }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        {% endcodeWellHeader %}
+        {% codeWellFooter %}
 {% highlight html linenos %}
 <table class="d-table">
-    <thead>
-        <tr>
-            <th scope="col">…</th>
-            <th scope="col">…</th>
-            <th scope="col" width="10%">…</th>
-            <th scope="col">…</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th scope="row">…</th>
-            <td>…</td>
-            <td>…</td>
-            <td>…</td>
-        </tr>
-    </tbody>
+  <thead>
+    <tr>
+      <th scope="col">...</th>
+      <th scope="col">...</th>
+      <th scope="col">...</th>
+      <th scope="col">...</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+  </tbody>
 </table>
 {% endhighlight %}
-        </div>
+        {% endcodeWellFooter %}
+      {% endcodeWell %}
     </div>
-</section>
-<section class="d-stack16">
-    <header class="d-stack4">
-        <h2 class="dialtone-title__section">Inverted Style</h2>
-        <p class="dialtone-copy__normal">Used when you want to display a data table on a darker background</p>
-    </header>
-    <div class="dialtone-example" data-example="yes" data-code="yes">
-        <div class="dialtone-example__example d-bgc-black-700 d-mn1 d-border-top-radius--md">
-            <table class="d-table d-table--inverted">
-                <thead>
-                    <tr>
-                        <th scope="col">Office</th>
-                        <th scope="col">Country</th>
-                        <th scope="col" width="10%">Employees</th>
-                        <th scope="col">Contact</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for i in tables.table-example %}
-                    <tr>
-                        <th scope="row">{{ i.office }}</th>
-                        <td>{{ i.country }}</td>
-                        <td>{{ i.size }}</td>
-                        <td>{{ i.contact }}</td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
-        <div class="dialtone-example__code">
+    <div class="d-stack8">
+      {% header "h3", "Inverted Style" %}
+      {% paragraph %}Used when you want to display a data table on a darker background.{% endparagraph %}
+      {% codeWell %}
+        {% codeWellHeader "black-700" %}
+          <table class="d-table d-table--inverted">
+            <thead>
+              <tr>
+                <th scope="col">Office</th>
+                <th scope="col">Country</th>
+                <th scope="col" width="10%">Employees</th>
+                <th scope="col">Contact</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for i in tables.table-example %}
+              <tr>
+                <th scope="row">{{ i.office }}</th>
+                <td>{{ i.country }}</td>
+                <td>{{ i.size }}</td>
+                <td>{{ i.contact }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        {% endcodeWellHeader %}
+        {% codeWellFooter %}
 {% highlight html linenos %}
 <table class="d-table d-table--inverted">
-    <thead>
-        <tr>
-            <th scope="col">…</th>
-            <th scope="col">…</th>
-            <th scope="col" width="10%">…</th>
-            <th scope="col">…</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th scope="row">…</th>
-            <td>…</td>
-            <td>…</td>
-            <td>…</td>
-        </tr>
-    </tbody>
+  <thead>
+    <tr>
+      <th scope="col">...</th>
+      <th scope="col">...</th>
+      <th scope="col">...</th>
+      <th scope="col">...</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+  </tbody>
 </table>
 {% endhighlight %}
-        </div>
+        {% endcodeWellFooter %}
+      {% endcodeWell %}
     </div>
-</section>
-<section class="d-stack16">
-    <header class="d-stack4">
-        <h2 class="dialtone-title__section">Striped Style</h2>
-        <p class="dialtone-copy__normal">Used when you want striped rows for larger tables</p>
-    </header>
-    <div class="dialtone-example" data-example="yes" data-code="yes">
-        <div class="dialtone-example__example d-bgc-black-700 d-mn1 d-border-top-radius--md">
-            <table class="d-table d-table--striped">
-                <thead>
-                    <tr>
-                        <th scope="col">Office</th>
-                        <th scope="col">Country</th>
-                        <th scope="col" width="10%">Employees</th>
-                        <th scope="col">Contact</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for i in tables.table-example %}
-                    <tr>
-                        <th scope="row">{{ i.office }}</th>
-                        <td>{{ i.country }}</td>
-                        <td>{{ i.size }}</td>
-                        <td>{{ i.contact }}</td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
-        <div class="dialtone-example__code">
+
+    <div class="d-stack8">
+      {% header "h3", "Striped" %}
+      {% codeWell %}
+        {% codeWellHeader "white" %}
+          <table class="d-table d-table--striped">
+            <thead>
+              <tr>
+                <th scope="col">Office</th>
+                <th scope="col">Country</th>
+                <th scope="col" width="10%">Employees</th>
+                <th scope="col">Contact</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for i in tables.table-example %}
+              <tr>
+                <th scope="row">{{ i.office }}</th>
+                <td>{{ i.country }}</td>
+                <td>{{ i.size }}</td>
+                <td>{{ i.contact }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        {% endcodeWellHeader %}
+        {% codeWellFooter %}
 {% highlight html linenos %}
 <table class="d-table d-table--striped">
-    <thead>
-        <tr>
-            <th scope="col">…</th>
-            <th scope="col">…</th>
-            <th scope="col" width="10%">…</th>
-            <th scope="col">…</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th scope="row">…</th>
-            <td>…</td>
-            <td>…</td>
-            <td>…</td>
-        </tr>
-    </tbody>
+  <thead>
+    <tr>
+      <th scope="col">...</th>
+      <th scope="col">...</th>
+      <th scope="col">...</th>
+      <th scope="col">...</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+  </tbody>
 </table>
 {% endhighlight %}
-        </div>
-    </div>
-</section>
-<section class="d-stack16">
-    <header class="d-stack4">
-        <h2 class="dialtone-title__section">Inverted Striped Style</h2>
-        <p class="dialtone-copy__normal">Used when you want striped rows for larger tables on a dark background</p>
-    </header>
-    <div class="dialtone-example" data-example="yes" data-code="yes">
-        <div class="dialtone-example__example d-bgc-black-700 d-mn1 d-border-top-radius--md">
-            <table class="d-table d-table--inverted d-table--striped">
-                <thead>
-                    <tr>
-                        <th scope="col">Office</th>
-                        <th scope="col">Country</th>
-                        <th scope="col" width="10%">Employees</th>
-                        <th scope="col">Contact</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for i in tables.table-example %}
-                    <tr>
-                        <th scope="row">{{ i.office }}</th>
-                        <td>{{ i.country }}</td>
-                        <td>{{ i.size }}</td>
-                        <td>{{ i.contact }}</td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
-        <div class="dialtone-example__code">
+        {% endcodeWellFooter %}
+      {% endcodeWell %}
+      {% codeWell %}
+        {% codeWellHeader "black-700" %}
+          <table class="d-table d-table--inverted d-table--striped">
+            <thead>
+              <tr>
+                <th scope="col">Office</th>
+                <th scope="col">Country</th>
+                <th scope="col" width="10%">Employees</th>
+                <th scope="col">Contact</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for i in tables.table-example %}
+              <tr>
+                <th scope="row">{{ i.office }}</th>
+                <td>{{ i.country }}</td>
+                <td>{{ i.size }}</td>
+                <td>{{ i.contact }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        {% endcodeWellHeader %}
+        {% codeWellFooter %}
 {% highlight html linenos %}
 <table class="d-table d-table--inverted d-table--striped">
-    <thead>
-        <tr>
-            <th scope="col">…</th>
-            <th scope="col">…</th>
-            <th scope="col" width="10%">…</th>
-            <th scope="col">…</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th scope="row">…</th>
-            <td>…</td>
-            <td>…</td>
-            <td>…</td>
-        </tr>
-    </tbody>
+  <thead>
+    <tr>
+      <th scope="col">...</th>
+      <th scope="col">...</th>
+      <th scope="col">...</th>
+      <th scope="col">...</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+  </tbody>
 </table>
 {% endhighlight %}
-        </div>
+        {% endcodeWellFooter %}
+      {% endcodeWell %}
     </div>
+  </div>
 </section>
