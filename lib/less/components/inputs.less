@@ -118,82 +118,6 @@
     min-height: 10rem;
 }
 
-
-//  ============================================================================
-//  $  SELECT MENU (NATIVE) TODO: Move this into it's own file?
-//  ----------------------------------------------------------------------------
-.d-select {
-    box-sizing: border-box;
-    position: relative;
-    font-weight: inherit;
-    font-size: var(--fs16);
-    font-family: inherit;
-    line-height: var(--lh-tight);
-
-    //  --  Creat some arrows
-    &:before,
-    &:after {
-        content: "";
-        position: absolute;
-        z-index: var(--zi-selected);
-        right: 0.75em;
-        border-color: var(--black-900) transparent;
-        border-style: solid;
-        border-width: 0.25em;
-        pointer-events: none;
-    }
-    &:before {
-        top: calc(~"50% - 0.25em");
-        border-top-width: 0;
-    }
-    &:after {
-        top: calc(~"50% + 0.125em");
-        border-bottom-width: 0;
-    }
-
-    > select {
-        //  [1] Reset the appearance
-        -webkit-appearance: none;
-           -moz-appearance: none;
-                appearance: none;
-
-        //  [2] Update the styles
-        .d-input();
-        padding: 0.7rem 2em 0.7rem 0.7rem;
-        height: 100%; // Fill the height of its parent
-
-        &::-moz-focus-inner {
-            outline: none !important;
-        }
-        &:-moz-focusring {
-            color: transparent;
-            text-shadow: 0 0 0 var(--black-900);
-        }
-        &::-ms-expand {
-            display: none;
-        }
-    }
-}
-
-//  $$  SIZES
-//  ----------------------------------------------------------------------------
-.d-select--xs > select {
-    .input-button-xs();
-    padding-right: 2em;
-}
-.d-select--sm > select {
-    .input-button-sm();
-    padding-right: 2em;
-}
-.d-select--lg > select {
-    .input-button-lg();
-    padding-right: 2em;
-}
-.d-select--xl > select {
-    .input-button-xl();
-    padding-right: 2em;
-}
-
 //  $$  VALIDATION STATES
 //  ----------------------------------------------------------------------------
 .d-input--warning,
@@ -304,4 +228,80 @@ fieldset {
 .d-description--lg {
     font-size: var(--fs14);
     line-height: 1.428571429;
+}
+
+
+//  ============================================================================
+//  $  SELECT MENU (NATIVE) TODO: Move this into it's own file?
+//  ----------------------------------------------------------------------------
+.d-select {
+    box-sizing: border-box;
+    position: relative;
+    font-weight: inherit;
+    font-size: var(--fs16);
+    font-family: inherit;
+    line-height: var(--lh-tight);
+
+    //  --  Creat some arrows
+    &:before,
+    &:after {
+        content: "";
+        position: absolute;
+        z-index: var(--zi-selected);
+        right: 0.75em;
+        border-color: var(--black-900) transparent;
+        border-style: solid;
+        border-width: 0.25em;
+        pointer-events: none;
+    }
+    &:before {
+        top: calc(~"50% - 0.25em");
+        border-top-width: 0;
+    }
+    &:after {
+        top: calc(~"50% + 0.125em");
+        border-bottom-width: 0;
+    }
+
+    > select {
+        //  [1] Reset the appearance
+        -webkit-appearance: none;
+           -moz-appearance: none;
+                appearance: none;
+
+        //  [2] Update the styles
+        .d-input();
+        padding: 0.7rem 2em 0.7rem 0.7rem;
+        height: 100%; // Fill the height of its parent
+
+        &::-moz-focus-inner {
+            outline: none !important;
+        }
+        &:-moz-focusring {
+            color: transparent;
+            text-shadow: 0 0 0 var(--black-900);
+        }
+        &::-ms-expand {
+            display: none;
+        }
+    }
+}
+
+//  $$  SIZES
+//  ----------------------------------------------------------------------------
+.d-select--xs > select {
+    .input-button-xs();
+    padding-right: 2em;
+}
+.d-select--sm > select {
+    .input-button-sm();
+    padding-right: 2em;
+}
+.d-select--lg > select {
+    .input-button-lg();
+    padding-right: 2em;
+}
+.d-select--xl > select {
+    .input-button-xl();
+    padding-right: 2em;
 }
