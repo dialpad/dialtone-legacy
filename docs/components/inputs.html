@@ -3,11 +3,63 @@ layout: page
 title: Inputs
 description: Input fields are text areas used to gather information from users. It can have a range of options and supports several text formats including numbers.
 ---
-<div class="d-stack16">
+<section class="d-stack16">
     <header class="d-stack8">
         <h2 class="dialtone-title__section">Base Style</h2>
         <p class="dialtone-copy__normal">Inputs are normally paired with a label, but there are times when they can be used without a label. Placeholder text should primarily be used as a content prompt and only provided when needed.</p>
     </header>
+</section>
+<section class="d-stack16">
+    {% header "h2", "Classes" %}
+    <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
+      <table class="d-table">
+        <thead>
+          <tr>
+            <th scope="col" class="d-w25p">Class</th>
+            <th scope="col" class="d-w25p">Applies</th>
+            <th scope="col">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for i in inputs.classes.base %}
+            {% assign class = i.class %}
+            {% assign applies = i.applies %}
+            {% assign desc = i.description %}
+            <tr>
+              <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">{{ class }}</th>
+              <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ applies }}</td>
+              <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ desc }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+        <tbody>
+          {% for i in inputs.classes.sizes %}
+            {% assign class = i.class %}
+            {% assign applies = i.applies %}
+            {% assign desc = i.description %}
+            <tr>
+              <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">{{ class }}</th>
+              <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ applies }}</td>
+              <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ desc }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+        <tbody>
+          {% for i in inputs.classes.validation %}
+            {% assign class = i.class %}
+            {% assign applies = i.applies %}
+            {% assign desc = i.description %}
+            <tr>
+              <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">{{ class }}</th>
+              <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ applies }}</td>
+              <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ desc }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+</section>
+<div class="d-stack16">
     <div class="dialtone-example" data-example="yes" data-code="yes">
         <div class="dialtone-example__example">
             <div class="d-stack16">
@@ -51,7 +103,9 @@ description: Input fields are text areas used to gather information from users. 
                 <div class="d-stack8">
                     <label class="d-label" for="Dialtone--InputExample3">Email address</label>
                     <input class="d-input d-input--warning" id="Dialtone--InputExample3" type="email" placeholder="" value="SHANE" />
-                    <span class="d-input-message d-input-message--warning">Caps lock is on. <a href="#">Having trouble with your email address?</a></span>
+                    <span class="d-validation-message d-validation-message--warning">
+                        Caps lock is on. <a href="#" class="d-link d-link--warning">Having trouble with your email address?</a>
+                    </span>
                 </div>
             </div>
             <div class="dialtone-example__code">
@@ -61,8 +115,8 @@ description: Input fields are text areas used to gather information from users. 
   .d-input--warning();
 }
 .input-message-example {
-  .d-input-message();
-  .d-input-message--warning();
+  .d-validation-message();
+  .d-validation-message--warning();
 }
 {% endhighlight %}
             </div>
@@ -78,7 +132,9 @@ description: Input fields are text areas used to gather information from users. 
                 <div class="d-stack8">
                     <label class="d-label" for="Dialtone--InputExample4">Email address</label>
                     <input class="d-input d-input--error" id="Dialtone--InputExample4" type="email" placeholder="" value="SHANE" />
-                    <span class="d-input-message d-input-message--error">You must provide an email address to proceed. <a href="#">Forgot email address?</a></span>
+                    <span class="d-validation-message d-validation-message--error">
+                        You must provide an email address to proceed. <a href="#" class="d-link d-link--danger">Forgot email address?</a>
+                    </span>
                 </div>
             </div>
             <div class="dialtone-example__code">
@@ -88,8 +144,8 @@ description: Input fields are text areas used to gather information from users. 
   .d-input--error();
 }
 .input-message-example {
-  .d-input-message();
-  .d-input-message--error();
+  .d-validation-message();
+  .d-validation-message--error();
 }
 {% endhighlight %}
             </div>
@@ -105,7 +161,9 @@ description: Input fields are text areas used to gather information from users. 
                 <div class="d-stack8">
                     <label class="d-label" for="Dialtone--InputExample5">Email address</label>
                     <input class="d-input d-input--success" id="Dialtone--InputExample5" type="email" placeholder="" value="shane.holmes@example.com" />
-                    <span class="d-input-message d-input-message--success">That email address hasn't been used. <a href="#">Why do we require an email address?</a></span>
+                    <span class="d-validation-message d-validation-message--success">
+                        That email address hasn't been used. <a href="#" class="d-link d-link--success">Why do we require an email address?</a>
+                    </span>
                 </div>
             </div>
             <div class="dialtone-example__code">
@@ -115,37 +173,11 @@ description: Input fields are text areas used to gather information from users. 
   .d-input--success();
 }
 .input-message-example {
-  .d-input-message();
-  .d-input-message--success();
+  .d-validation-message();
+  .d-validation-message--success();
 }
 {% endhighlight %}
             </div>
         </div>
     </div>
 </div>
-<section class="d-stack16">
-    <h2 class="dialtone-title__section">Sizes</h2>
-    <table class="dialtone-table">
-        <thead>
-            <tr>
-                <th scope="col" width="15%">Name</th>
-                <th scope="col" width="25%">Class</th>
-                <th scope="col" width="10%">Size</th>
-                <th scope="col">Example</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for i in inputs.input-sizes %}
-            {% assign name = i.name %}
-            {% assign class = i.class %}
-            {% assign size = i.size %}
-                <tr>
-                    <th scope="row" class="d-fs14">{{ name }}</th>
-                    <td class="code-example">{% if class != nil %}.d-input--{{ class }}{% else %}N/A{% endif %}</td>
-                    <td>{{ size }}</td>
-                    <td><input class="d-input {% if class != nil %}d-input--{{ class }}{% endif %}" id="Dialtone--InputExample6" type="email" placeholder="e.g. Can you hear me?" /></td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-</section>
