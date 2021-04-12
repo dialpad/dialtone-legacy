@@ -4,10 +4,62 @@ title: Textareas
 description: Multi-line inputs are used to enter longer text portions.
 ---
 <section class="d-stack16">
+    {% header "h2", "Classes" %}
+    <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
+      <table class="d-table">
+        <thead>
+          <tr>
+            <th scope="col" class="d-w25p">Class</th>
+            <th scope="col" class="d-w25p">Applies</th>
+            <th scope="col">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for i in textareas.classes.base %}
+            {% assign class = i.class %}
+            {% assign applies = i.applies %}
+            {% assign desc = i.description %}
+            <tr>
+              <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">{{ class }}</th>
+              <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ applies }}</td>
+              <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ desc }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+        <tbody>
+          {% for i in textareas.classes.sizes %}
+            {% assign class = i.class %}
+            {% assign applies = i.applies %}
+            {% assign desc = i.description %}
+            <tr>
+              <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">{{ class }}</th>
+              <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ applies }}</td>
+              <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ desc }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+        <tbody>
+          {% for i in textareas.classes.validation %}
+            {% assign class = i.class %}
+            {% assign applies = i.applies %}
+            {% assign desc = i.description %}
+            <tr>
+              <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">{{ class }}</th>
+              <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ applies }}</td>
+              <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ desc }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+</section>
+<section class="d-stack16">
     <header class="d-stack4">
         <h2 class="dialtone-title__section">Base Style</h2>
         <p class="dialtone-copy__normal">Textareas are normally paired with a label, but there are times when they can be used without a label. Placeholder text should primarily be used as a content prompt and only provided when needed.</p>
     </header>
+</section>
+<section class="d-stack16">
     <div class="dialtone-example" data-example="yes" data-code="yes">
         <div class="dialtone-example__example">
             <div class="d-stack16">
@@ -56,20 +108,20 @@ description: Multi-line inputs are used to enter longer text portions.
                     </div>
                     <div>
                         <textarea class="d-textarea d-textarea--warning" id="Dialtone--TextareaExample-Warning" type="text" placeholder="e.g. Shane, Annie, Vickie"></textarea>
-                        <span class="d-input-message d-input-message--warning">Enter an email address to send invite someone.</span>
+                        <span class="d-validation-message d-validation-message--warning">Enter an email address to send invite someone.</span>
                     </div>
                 </div>
             </div>
             <div class="dialtone-example__code">
-{% highlight css %}
-.textarea-example {
-  .d-textarea();
-  .d-textarea--warning();
-}
-.textarea-message-example {
-  .d-input-message();
-  .d-input-message--warning();
-}
+{% highlight html linenos %}
+<div>
+    <label class="d-label" for="my-textarea">...</label>
+    <span class="d-description">...</span>
+</div>
+<div>
+    <textarea class="d-textarea d-textarea--warning" id="my-textarea" type="text" placeholder="..."></textarea>
+    <span class="d-validation-message d-validation-message--warning">...</span>
+</div>
 {% endhighlight %}
             </div>
         </div>
@@ -88,20 +140,20 @@ description: Multi-line inputs are used to enter longer text portions.
                     </div>
                     <div>
                         <textarea class="d-textarea d-textarea--error" id="Dialtone--TextareaExample-Error" type="text" placeholder="e.g. Shane, Annie, Vickie"></textarea>
-                        <span class="d-input-message d-input-message--error">You must enter an email address to send an invite.</span>
+                        <span class="d-validation-message d-validation-message--error">You must enter an email address to send an invite.</span>
                     </div>
                 </div>
             </div>
             <div class="dialtone-example__code">
-{% highlight css %}
-.textarea-example {
-  .d-textarea();
-  .d-textarea--error();
-}
-.textarea-message-example {
-  .d-input-message();
-  .d-input-message--error();
-}
+{% highlight html linenos %}
+<div>
+    <label class="d-label" for="my-textarea">...</label>
+    <span class="d-description">...</span>
+</div>
+<div>
+    <textarea class="d-textarea d-textarea--error" id="my-textarea" type="text" placeholder="..."></textarea>
+    <span class="d-validation-message d-validation-message--error">...</span>
+</div>
 {% endhighlight %}
             </div>
         </div>
@@ -120,48 +172,22 @@ description: Multi-line inputs are used to enter longer text portions.
                     </div>
                     <div>
                         <textarea class="d-textarea d-textarea--success" id="Dialtone--TextareaExample-Success" type="text" placeholder="e.g. Shane, Annie, Vickie">shane.holmes@example.com, amy.woods@example.com</textarea>
-                        <span class="d-input-message d-input-message--success">You've entered an email!</span>
+                        <span class="d-validation-message d-validation-message--success">You've entered an email!</span>
                     </div>
                 </div>
             </div>
             <div class="dialtone-example__code">
-{% highlight css %}
-.textarea-example {
-  .d-textarea();
-  .d-textarea--success();
-}
-.textarea-message-example {
-  .d-input-message();
-  .d-input-message--success();
-}
+{% highlight html linenos %}
+<div>
+    <label class="d-label" for="my-textarea">...</label>
+    <span class="d-description">...</span>
+</div>
+<div>
+    <textarea class="d-textarea d-textarea--success" id="my-textarea" type="text" placeholder="..."></textarea>
+    <span class="d-validation-message d-validation-message--success">...</span>
+</div>
 {% endhighlight %}
             </div>
         </div>
     </div>
-</section>
-<section class="d-stack16">
-    <h2 class="dialtone-title__section">Sizes</h2>
-    <table class="dialtone-table">
-        <thead>
-            <tr>
-                <th scope="col" width="15%">Name</th>
-                <th scope="col" width="25%">Class</th>
-                <th scope="col" width="10%">Size</th>
-                <th scope="col">Example</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for i in inputs.input-sizes %}
-            {% assign name = i.name %}
-            {% assign class = i.class %}
-            {% assign size = i.size %}
-                <tr>
-                    <th scope="row" class="d-fs14">{{ name }}</th>
-                    <td class="code-example">{% if class != nil %}.d-textarea--{{ class }}{% else %}N/A{% endif %}</td>
-                    <td>{{ size }}</td>
-                    <td><textarea class="d-textarea{% if class != nil %} d-textarea--{{ class }}{% endif %}" id="Dialtone--TextareaExample-{{ name }}" placeholder="e.g. Shane, Annie, Vickie"></textarea></td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
 </section>

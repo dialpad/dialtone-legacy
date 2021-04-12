@@ -4,12 +4,6 @@ title: Inputs
 description: Input fields are text areas used to gather information from users. It can have a range of options and supports several text formats including numbers.
 ---
 <section class="d-stack16">
-    <header class="d-stack8">
-        <h2 class="dialtone-title__section">Base Style</h2>
-        <p class="dialtone-copy__normal">Inputs are normally paired with a label, but there are times when they can be used without a label. Placeholder text should primarily be used as a content prompt and only provided when needed.</p>
-    </header>
-</section>
-<section class="d-stack16">
     {% header "h2", "Classes" %}
     <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
       <table class="d-table">
@@ -33,7 +27,7 @@ description: Input fields are text areas used to gather information from users. 
           {% endfor %}
         </tbody>
         <tbody>
-          {% for i in inputs.classes.sizes.input %}
+          {% for i in inputs.classes.sizes %}
             {% assign class = i.class %}
             {% assign applies = i.applies %}
             {% assign desc = i.description %}
@@ -45,19 +39,7 @@ description: Input fields are text areas used to gather information from users. 
           {% endfor %}
         </tbody>
         <tbody>
-            {% for i in inputs.classes.sizes.textarea %}
-              {% assign class = i.class %}
-              {% assign applies = i.applies %}
-              {% assign desc = i.description %}
-              <tr>
-                <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">{{ class }}</th>
-                <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ applies }}</td>
-                <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ desc }}</td>
-              </tr>
-            {% endfor %}
-          </tbody>
-        <tbody>
-          {% for i in inputs.classes.validation.input %}
+          {% for i in inputs.classes.validation %}
             {% assign class = i.class %}
             {% assign applies = i.applies %}
             {% assign desc = i.description %}
@@ -68,21 +50,16 @@ description: Input fields are text areas used to gather information from users. 
             </tr>
           {% endfor %}
         </tbody>
-        <tbody>
-            {% for i in inputs.classes.validation.textarea %}
-              {% assign class = i.class %}
-              {% assign applies = i.applies %}
-              {% assign desc = i.description %}
-              <tr>
-                <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">{{ class }}</th>
-                <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ applies }}</td>
-                <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ desc }}</td>
-              </tr>
-            {% endfor %}
-          </tbody>
       </table>
     </div>
 </section>
+<section class="d-stack16">
+    <header class="d-stack8">
+        <h2 class="dialtone-title__section">Base Style</h2>
+        <p class="dialtone-copy__normal">Inputs are normally paired with a label, but there are times when they can be used without a label. Placeholder text should primarily be used as a content prompt and only provided when needed.</p>
+    </header>
+</section>
+<section class="d-stack16">
 <div class="d-stack16">
     <div class="dialtone-example" data-example="yes" data-code="yes">
         <div class="dialtone-example__example">
@@ -203,3 +180,4 @@ description: Input fields are text areas used to gather information from users. 
         </div>
     </div>
 </div>
+</section>
