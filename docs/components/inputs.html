@@ -33,7 +33,7 @@ description: Input fields are text areas used to gather information from users. 
           {% endfor %}
         </tbody>
         <tbody>
-          {% for i in inputs.classes.sizes %}
+          {% for i in inputs.classes.sizes.input %}
             {% assign class = i.class %}
             {% assign applies = i.applies %}
             {% assign desc = i.description %}
@@ -45,7 +45,19 @@ description: Input fields are text areas used to gather information from users. 
           {% endfor %}
         </tbody>
         <tbody>
-          {% for i in inputs.classes.validation %}
+            {% for i in inputs.classes.sizes.textarea %}
+              {% assign class = i.class %}
+              {% assign applies = i.applies %}
+              {% assign desc = i.description %}
+              <tr>
+                <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">{{ class }}</th>
+                <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ applies }}</td>
+                <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ desc }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        <tbody>
+          {% for i in inputs.classes.validation.input %}
             {% assign class = i.class %}
             {% assign applies = i.applies %}
             {% assign desc = i.description %}
@@ -56,6 +68,18 @@ description: Input fields are text areas used to gather information from users. 
             </tr>
           {% endfor %}
         </tbody>
+        <tbody>
+            {% for i in inputs.classes.validation.textarea %}
+              {% assign class = i.class %}
+              {% assign applies = i.applies %}
+              {% assign desc = i.description %}
+              <tr>
+                <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">{{ class }}</th>
+                <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ applies }}</td>
+                <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ desc }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
       </table>
     </div>
 </section>
@@ -116,15 +140,12 @@ description: Input fields are text areas used to gather information from users. 
                 </div>
             </div>
             <div class="dialtone-example__code">
-{% highlight css %}
-.input-example {
-  .d-input();
-  .d-input--warning();
-}
-.input-message-example {
-  .d-validation-message();
-  .d-validation-message--warning();
-}
+{% highlight html linenos %}
+<div>
+    <label class="d-label" for="my-input">...</label>
+    <input class="d-input d-input--warning" id="my-input" type="email" placeholder="" value="some value" />
+    <span class="d-validation-message d-validation-message--warning">...</span>
+</div>
 {% endhighlight %}
             </div>
         </div>
@@ -145,15 +166,12 @@ description: Input fields are text areas used to gather information from users. 
                 </div>
             </div>
             <div class="dialtone-example__code">
-{% highlight css %}
-.input-example {
-  .d-input();
-  .d-input--error();
-}
-.input-message-example {
-  .d-validation-message();
-  .d-validation-message--error();
-}
+{% highlight html linenos %}
+<div>
+    <label class="d-label" for="my-input">...</label>
+    <input class="d-input d-input--error" id="my-input" type="email" placeholder="" value="some value" />
+    <span class="d-validation-message d-validation-message--error">...</span>
+</div>
 {% endhighlight %}
             </div>
         </div>
@@ -174,15 +192,12 @@ description: Input fields are text areas used to gather information from users. 
                 </div>
             </div>
             <div class="dialtone-example__code">
-{% highlight css %}
-.input-example {
-  .d-input();
-  .d-input--success();
-}
-.input-message-example {
-  .d-validation-message();
-  .d-validation-message--success();
-}
+{% highlight html linenos %}
+<div>
+    <label class="d-label" for="my-input">...</label>
+    <input class="d-input d-input--success" id="my-input" type="email" placeholder="" value="some value" />
+    <span class="d-validation-message d-validation-message--success">...</span>
+</div>
 {% endhighlight %}
             </div>
         </div>
