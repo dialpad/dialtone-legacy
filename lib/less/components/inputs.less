@@ -23,6 +23,7 @@
 .d-textarea {
     //  Component CSS Vars
     //  ------------------------------------------------------------------------
+    --input--focus-bc:        var(--primary-color);
     --input--bc:           var(--black-400);
     --input--bgc:          var(--white);
     --input--fc:           var(--black-800);
@@ -62,7 +63,7 @@
     }
     //  --  FOCUS
     &:focus {
-        --input--bc: var(--primary-color);
+        --input--bc: var(--input--focus-bc);
 
         box-shadow: inset 0 0 var(--su2) 0 var(--primary-color),
                           0 0 0 0.25em var(--focus-ring);
@@ -134,8 +135,9 @@
 .d-input--warning,
 .d-textarea--warning,
 .d-select--warning > select {
-    --input--bc:  var(--warning-color);
-    --select--bc: var(--warning-color);
+    --input--bc:        var(--warning-color);
+    --input--focus-bc:  var(--warning-color);
+    --select--bc:       var(--warning-color);
 
     &:focus {
         box-shadow: inset 0 0 var(--su2) 0 var(--warning-color),
@@ -145,8 +147,9 @@
 .d-input--error,
 .d-textarea--error,
 .d-select--error > select {
-    --input--bc:  var(--error-color);
-    --select--bc: var(--error-color);
+    --input--bc:        var(--error-color);
+    --input--focus-bc:  var(--error-color);
+    --select--bc:       var(--error-color);
 
     &:focus {
         box-shadow: inset 0 0 var(--su2) 0 var(--error-color),
@@ -156,8 +159,9 @@
 .d-input--success,
 .d-textarea--success,
 .d-select--success > select {
-    --input--bc:  var(--success-color);
-    --select--bc: var(--success-color);
+    --input--bc:        var(--success-color);
+    --input--focus-bc:  var(--success-color);
+    --select--bc:       var(--success-color);
 
     &:focus {
         box-shadow: inset 0 0 var(--su2) 0 var(--success-color),
