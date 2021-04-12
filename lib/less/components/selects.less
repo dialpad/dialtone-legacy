@@ -95,3 +95,30 @@
   .input-button-xl();
   padding-right: 2em;
 }
+
+//  $$  VALIDATION STATES
+//  ----------------------------------------------------------------------------
+.d-select--warning > select {
+    --select--bc:       var(--warning-color);
+
+    &:focus {
+        box-shadow: inset 0 0 var(--su2) 0 var(--warning-color),
+                          0 0 0 0.25em var(--warning-color-focus);
+    }
+}
+.d-select--error > select {
+    --select--bc:       var(--error-color);
+
+    &:focus {
+        box-shadow: inset 0 0 var(--su2) 0 var(--error-color),
+                          0 0 0 0.25em var(--error-color-focus);
+    }
+}
+.d-select--success > select {
+    --select--bc:       var(--success-color);
+
+    &:focus {
+        box-shadow: inset 0 0 var(--su2) 0 var(--success-color),
+                          0 0 0 0.25em var(--success-color-focus);
+    }
+}
