@@ -44,14 +44,6 @@ description: Toast notices, sometimes called snackbars, are time-based messages 
             </select>
           </div>
         </div>
-        <div class="d-input-group d-d-flex d-fl-grow1 d-ai-center d-flow8">
-            <label for="position-select" class="d-label d-fs14 d-fl0">Position</label>
-            <div class="d-select d-select--sm d-fl1">
-              <select id="position-select" class="js-toast-position-menu">
-                <option name="position-select" id="position-select-top-center" data-class="top-center" selected>Top Center</option>
-              </select>
-            </div>
-          </div>
         <div class="d-input-group d-d-flex d-ai-center d-fl0 d-flow6">
           <input type="checkbox" id="style-select-important" class="d-checkbox d-mt1 js-toast-important" />
           <label for="style-select-important" class="d-label d-fs14 d-lh2">Important?</label>
@@ -61,6 +53,31 @@ description: Toast notices, sometimes called snackbars, are time-based messages 
           <button class="d-btn d-btn--outlined d-btn--sm js-style-select-show-btn" role="button">Show example</button>
         </div>
       </div>
+    </div>
+    <div class="dialtone-example__code">
+      {% codeWell %}
+        {% codeWellFooter %}
+          {% highlight html linenos %}
+<aside class="d-toast-wrapper">
+  <div class="d-toast" role="alert" aria-hidden="true">
+    <div class="d-toast__dialog">
+      <div class="d-notice__icon">...</div>
+      <div class="d-notice__content">
+        <h2 class="d-notice__title">...</h2>
+        <p class="d-notice__message">...</p>
+      </div>
+      <div class="d-notice__actions">
+        <button type="button" class="d-btn d-btn--sm d-btn--circle d-btn--muted" aria-label="Close">
+          <span class="d-btn__label">Close</span>
+          <span class="d-btn__icon">{% iconSystem "close" %}</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</aside>
+          {% endhighlight %}
+        {% endcodeWellFooter %}
+      {% endcodeWell %}
     </div>
   </div>
 </section>
@@ -87,5 +104,29 @@ description: Toast notices, sometimes called snackbars, are time-based messages 
     </div>
   </div>
 </aside>
+<section class="d-stack16">
+  {% header "h2", "Accessibility" %}
+  <table class="d-table">
+    <thead>
+      <tr>
+        <th scope="col" class="d-w25p">Item</th>
+        <th scope="col" class="d-w25p">Applies to</th>
+        <th scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in toasts.accessible %}
+        {% assign item = i.item %}
+        {% assign apply = i.applies %}
+        {% assign desc = i.description %}
+        <tr>
+          <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">{{ item }}</th>
+          <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ apply }}</td>
+          <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ desc }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</section>
 
 <script src="/{{ site.paths.js }}/toasts.js"></script>
