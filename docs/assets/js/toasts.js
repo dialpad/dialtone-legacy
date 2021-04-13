@@ -20,7 +20,6 @@ $(document).ready(function() {
 
   const iconTypes = $('.js-toast-example-icon-info, .js-toast-example-icon-warning, .js-toast-example-icon-error, .js-toast-example-icon-success');
   const styleClassTypes = ("d-toast--info d-toast--warning d-toast--error d-toast--success d-toast--important");
-  const positionClassTypes = ("d-toast--top-center");
 
 
   function closeToast() {
@@ -34,7 +33,6 @@ $(document).ready(function() {
     // Hide toast
     toast.attr('aria-hidden', 'true')
       .removeClass(styleClassTypes);
-    toastWrapper.removeClass(positionClassTypes);
     icon.addClass('d-d-none');
     iconStyle.addClass('d-d-none');
   }
@@ -46,7 +44,6 @@ $(document).ready(function() {
 
     // Configure toast classes
     const toastStyleClass = `d-toast--${style}`;
-    const toastPositionClass = `d-toast--${position}`;
     const toastTitle = `${style}-toast-title`;
     const toastDesc = `${style}-toast-desc`;
 
@@ -60,7 +57,6 @@ $(document).ready(function() {
     // Set toast example attrs
     toast.attr('aria-hidden', 'false')
       .removeClass(styleClassTypes);
-    toastWrapper.removeClass(positionClassTypes);
     dialog
       .attr('aria-labelledby', toastTitle)
       .attr('aria-describedby', toastDesc);
@@ -97,8 +93,6 @@ $(document).ready(function() {
       iconStyle.removeClass('d-d-none');
     }
 
-    // Add toast wrapper position class
-    toastWrapper.addClass(toastPositionClass);
   });
 
   closeBtn.add(removeBtn).on('click', function(e) {
