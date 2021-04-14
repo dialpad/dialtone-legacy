@@ -4,99 +4,94 @@ title: Font Family
 description: Utilities to change an element's font-family.
 ---
 <section class="d-stack8">
-    {% header "h2", "CSS Variables" %}
-    <table class="d-table">
-        <thead>
-            <tr>
-                <th scope="col" class="d-w20p">Type</th>
-                <th scope="col" class="d-w20p">Variable</th>
-                <th scope="col">Output</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for i in type.font-family %}
-            {% assign t = i.type %}
-            {% assign v = i.var %}
-            {% assign o = i.output %}
-            {% if v != "unset" %}
-                <tr>
-                    <th scope="row">{{ t }}</th>
-                    <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">var(--ff-{{ v }})</td>
-                    <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ o }}</td>
-                </tr>
-            {% endif %}
-            {% endfor %}
-        </tbody>
-    </table>
+  {% header "h2", "CSS Variables" %}
+  <table class="d-table">
+    <thead>
+      <tr>
+        <th scope="col" class="d-w20p">Variable</th>
+        <th scope="col">Output</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in type.font-family %}
+        {% assign v = i.var %}
+        {% assign o = i.output %}
+        {% if v != "unset" %}
+          <tr>
+            <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">var(--ff-{{ v }})</td>
+            <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ o }}</td>
+          </tr>
+        {% endif %}
+      {% endfor %}
+    </tbody>
+  </table>
 </section>
 <section class="d-stack8">
-    {% header "h2", "Classes" %}
-    <table class="d-table">
-        <thead>
-            <tr>
-                <th scope="col" class="d-w25p">Class</th>
-                <th scope="col">Output</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for i in type.font-family %}
-            {% assign t = i.type %}
-            {% assign v = i.var %}
-            {% assign o = i.output %}
-                <tr>
-                    <th scope="row">{{ t }}</th>
-                    <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-ff-{{ v }})</td>
-                    <td class="d-ff-mono d-fc-teal-500 d-fs12">font-family: {{ o }} !important;</td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+  {% header "h2", "Classes" %}
+  <table class="d-table">
+    <thead>
+      <tr>
+        <th scope="col" class="d-w20p">Class</th>
+        <th scope="col">Output</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in type.font-family %}
+        {% assign v = i.var %}
+        {% assign o = i.output %}
+        <tr>
+          <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-ff-{{ v }}</td>
+          <td class="d-ff-mono d-fc-teal-500 d-fs12">font-family: {{ o }} !important;</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 </section>
 <section class="d-stack16">
-    <header class="d-stack2">
-        {% header "h2", "Custom" %}
-        <p class="d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-ff-custom</code> to apply the theme's font-family.</p>
+  <header class="d-stack2">
+    {% header "h2", "Custom" %}
+    <p class="d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-ff-custom</code> to apply the theme's font-family.</p>
+  </header>
+  <aside class="d-bar8 d-of-hidden">
+    <header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-black-050 d-w100p d-hmn102">
+      <p class="d-fs24 d-ff-custom">The quick brown fox jumps over the lazy dog.</p>
     </header>
-    <aside class="d-bar8 d-of-hidden">
-        <header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-black-050 d-w100p d-hmn102">
-            <p class="d-fs24 d-ff-custom">The quick brown fox jumps over the lazy dog.</p>
-        </header>
-        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+    <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
 {% highlight html linenos %}
 <p class="d-ff-custom">...</p>
 {% endhighlight %}
-        </footer>
-    </aside>
+    </footer>
+  </aside>
 </section>
 <section class="d-stack16">
-    <header class="d-stack2">
-        {% header "h2", "Sans-serif" %}
-        <p class="d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-ff-sans</code> to apply a Sans-Serif font stack.</p>
+  <header class="d-stack2">
+    {% header "h2", "Sans-serif" %}
+    <p class="d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-ff-sans</code> to apply a Sans-Serif font stack.</p>
+  </header>
+  <aside class="d-bar8 d-of-hidden">
+    <header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-black-050 d-w100p d-hmn102">
+      <p class="d-fs24 d-ff-sans">The quick brown fox jumps over the lazy dog.</p>
     </header>
-    <aside class="d-bar8 d-of-hidden">
-        <header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-black-050 d-w100p d-hmn102">
-            <p class="d-fs24 d-ff-sans">The quick brown fox jumps over the lazy dog.</p>
-        </header>
-        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+    <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
 {% highlight html linenos %}
 <p class="d-ff-sans">...</p>
 {% endhighlight %}
-        </footer>
-    </aside>
+    </footer>
+  </aside>
 </section>
 <section class="d-stack16">
-    <header class="d-stack2">
-        {% header "h2", "Mono" %}
-        <p class="d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-ff-mono</code> to apply a Sans-Serif font stack.</p>
+  <header class="d-stack2">
+    {% header "h2", "Mono" %}
+    <p class="d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-ff-mono</code> to apply a Sans-Serif font stack.</p>
+  </header>
+  <aside class="d-bar8 d-of-hidden">
+    <header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-black-050 d-w100p d-hmn102">
+      <p class="d-fs24 d-ff-mono">The quick brown fox jumps over the lazy dog.</p>
     </header>
-    <aside class="d-bar8 d-of-hidden">
-        <header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-black-050 d-w100p d-hmn102">
-            <p class="d-fs24 d-ff-mono">The quick brown fox jumps over the lazy dog.</p>
-        </header>
-        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+    <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
 {% highlight html linenos %}
 <p class="d-ff-mono">...</p>
 {% endhighlight %}
-        </footer>
-    </aside>
+    </footer>
+  </aside>
 </section>
