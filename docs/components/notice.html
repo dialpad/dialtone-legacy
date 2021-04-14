@@ -34,15 +34,15 @@ description: A notice is an informational and assistive message that appears inl
 <section class="d-stack16">
   {% header "h2", "Examples" %}
   <div class="d-stack8">
-    {% header "h3", "Default" %}
+    {% header "h3", "Base Styles" %}
     {% paragraph %}Used in most scenarios when the message should be noticeable but not dominate.{% endparagraph %}
     <aside class="d-bar8 d-mt16">
       {% codeWellHeader "white" %}
         <div class="d-stack12 d-w60p">
-          {% assign styles = "info, warning, error, success, default" | split: ", "%}
+          {% assign styles = "info, warning, error, success, base" | split: ", "%}
           {% for i in styles %}
             <aside class="d-notice d-notice--{{ i }}" role="status" aria-hidden="false">
-              {% if i != "default" %}
+              {% if i != "base" %}
                 <div class="d-notice__icon">
                   {% if i == "info" %}
                     {% iconSystem "info" %}
@@ -102,10 +102,10 @@ description: A notice is an informational and assistive message that appears inl
     {% codeWell %}
       {% codeWellHeader %}
         <div class="d-stack12 d-w60p">
-          {% assign styles = "info, warning, error, success, default" | split: ", "%}
+          {% assign styles = "info, warning, error, success, base" | split: ", "%}
           {% for i in styles %}
             <aside class="d-notice d-notice--{{ i }} d-notice--important" role="alert" aria-hidden="false">
-              {% if i != "default" %}
+              {% if i != "base" %}
                 <div class="d-notice__icon">
                   {% if i == "info" %}
                     {% iconSystem "info" %}
