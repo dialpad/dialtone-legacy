@@ -6,6 +6,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPlugin(syntaxHighlight);
 
     eleventyConfig.addLayoutAlias('page', 'layouts/page.html');
+    eleventyConfig.addLayoutAlias('page-no-toc', 'layouts/page-no-toc.html');
 
     // Copy assets over
     eleventyConfig.addPassthroughCopy('assets/css');
