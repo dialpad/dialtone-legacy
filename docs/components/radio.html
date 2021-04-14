@@ -5,27 +5,29 @@ description: A radio is an input control that allows users to select only one op
 ---
 <section class="d-stack16">
   {% header "h2", "Classes" %}
-  <table class="d-table">
-    <thead>
-      <tr>
-        <th scope="col" class="d-w25p">Class</th>
-        <th scope="col" class="d-w25p">Applies to</th>
-        <th scope="col">Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for i in radio.classes %}
-        {% assign class = i.class %}
-        {% assign apply = i.applies %}
-        {% assign desc = i.description %}
+  <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
+    <table class="d-table">
+      <thead>
         <tr>
-          <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.{{ class }}</th>
-          <td class="d-ff-mono d-fc-teal-500 d-fs12">{% if apply != "N/A" %}<span class="code-example--inline">.{% endif %}{{ apply }}{% if apply != "N/A" %}</span>{% endif %}</td>
-          <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ desc }}</td>
+          <th scope="col" class="d-w40p">Class</th>
+          <th scope="col" class="d-w30p">Applies to</th>
+          <th scope="col">Description</th>
         </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        {% for i in radio.classes %}
+          {% assign class = i.class %}
+          {% assign apply = i.applies %}
+          {% assign desc = i.description %}
+          <tr>
+            <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.{{ class }}</th>
+            <td class="d-ff-mono d-fc-teal-500 d-fs12">{% if apply != "N/A" %}<span class="code-example--inline">.{% endif %}{{ apply }}{% if apply != "N/A" %}</span>{% endif %}</td>
+            <td class="d-fs12">{{ desc }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
 </section>
 <section class="d-stack16">
   {% header "h2", "Examples" %}

@@ -10,16 +10,19 @@ description: A link is a navigational element that can be found on its own, with
       <thead>
         <tr>
           <th scope="col" class="d-w40p">Class</th>
+          <th scope="col" class="d-w30p">Applies to</th>
           <th scope="col">Description</th>
         </tr>
       </thead>
       <tbody>
         {% for i in link.classes %}
           {% assign class = i.class %}
-          {% assign desc = i.desc %}
+          {% assign apply = i.applies %}
+          {% assign desc = i.description %}
           <tr>
             <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">{{ class }}</th>
-            <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ desc }}</td>
+            <td class="d-ff-mono d-fc-teal-500 d-fs12">{% if apply != "N/A" %}<span class="code-example--inline">.{% endif %}{{ apply }}{% if apply != "N/A" %}</span>{% endif %}</td>
+            <td class="d-fs12">{{ desc }}</td>
           </tr>
         {% endfor %}
       </tbody>
