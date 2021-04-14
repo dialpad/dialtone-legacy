@@ -26,8 +26,6 @@ $(document).ready(function() {
 
         $('#nav').on('click', 'a', function (event) {
 
-            $('.js-scrollspy').scrollSpy('destroy');
-
             // Allow opening links in new tabs
             if (event.metaKey) {
               return
@@ -52,6 +50,9 @@ $(document).ready(function() {
                 var nav = $(html).find('#nav').html()
                 var content = $(html).find('#content').html()
                 var subnav = $(html).find('#subnav').html()
+
+                // Destroy scrollSpy
+                $('.js-scrollspy').scrollSpy('destroy');
 
                 // Update the page
                 $('head title').text(title)
