@@ -12,9 +12,19 @@
 //    - Base Style
 //    - Validation States
 //    - Sizes
+//    - Has Left Icon
+//    - Has Right Icon
 //  • INPUT ICONS
 //
 //  ============================================================================
+//  Inputs CSS Vars
+//  ----------------------------------------------------------------------------
+@inputs-icon-spacing--xs: calc(var(--su4) + @icon12 + var(--su8));
+@inputs-icon-spacing--sm: calc(var(--su4) + @icon14 + var(--su8));
+@inputs-icon-spacing:     calc(var(--su4) + @icon16 + var(--su8));
+@inputs-icon-spacing--lg: calc(var(--su4) + @icon20 + var(--su12));
+@inputs-icon-spacing--xl: calc(var(--su4) + @icon24 + var(--su12));
+
 //  $  INPUTS
 //  ----------------------------------------------------------------------------
 .d-input,
@@ -100,6 +110,28 @@
 }
 .d-input--xl {
     .input-button-xl();
+}
+
+//  $$  HAS LEFT ICON
+//  ----------------------------------------------------------------------------
+.d-input--has-left-icon,
+.d-textarea--has-right-icon {
+    &.d-input--xs,&.d-textarea--xs { padding-left: @inputs-icon-spacing--xs; }
+    &.d-input--sm,&.d-textarea--sm { padding-left: @inputs-icon-spacing--sm; }
+    &.d-input,&.d-textarea         { padding-left: @inputs-icon-spacing; }
+    &.d-input--lg,&.d-textarea--lg { padding-left: @inputs-icon-spacing--lg; }
+    &.d-input--xl,&.d-textarea--xl { padding-left: @inputs-icon-spacing--xl; }
+}
+
+//  $$  HAS RIGHT ICON
+//  ----------------------------------------------------------------------------
+.d-input--has-right-icon,
+.d-textarea--has-right-icon {
+    &.d-input--xs,&.d-textarea--xs { padding-right: @inputs-icon-spacing--xs; }
+    &.d-input--sm,&.d-textarea--sm { padding-right: @inputs-icon-spacing--sm; }
+    &.d-input,&.d-textarea         { padding-right: @inputs-icon-spacing; }
+    &.d-input--lg,&.d-textarea--lg { padding-right: @inputs-icon-spacing--lg; }
+    &.d-input--xl,&.d-textarea--xl { padding-right: @inputs-icon-spacing--xl; }
 }
 
 //  ============================================================================
@@ -191,7 +223,7 @@
     // Update padding for d-input, d-textarea if d-input-icon--left is present
     & ~ .d-input,
     & ~ .d-textarea {
-        padding-left: calc(var(--su8) + @icon16 + var(--su4));
+        padding-left: @inputs-icon-spacing;
     }
 }
 
@@ -200,7 +232,7 @@
 
     // Update padding for d-input if d-input-icon--right is present
     & ~ .d-input {
-        padding-right: calc(var(--su4) + @icon16 + var(--su8));
+        padding-right: @inputs-icon-spacing;
     }
 }
 
@@ -213,12 +245,12 @@
     // Update padding for d-input, d-textarea if d-input-icon--left is present
     &.d-input-icon--left ~ .d-input,
     &.d-input-icon--left ~ .d-textarea {
-        padding-left: calc(var(--su8) + @icon12 + var(--su4));
+        padding-left: @inputs-icon-spacing--xs;
     }
 
     // Update padding for d-input if d-input-icon--right is present
     &.d-input-icon--right ~ .d-input {
-        padding-right: calc(var(--su4) + @icon12 + var(--su8));
+        padding-right: @inputs-icon-spacing--xs;
     }
 }
 
@@ -229,12 +261,12 @@
     // Update padding for d-input, d-textarea if d-input-icon--left is present
     &.d-input-icon--left ~ .d-input,
     &.d-input-icon--left ~ .d-textarea {
-        padding-left: calc(var(--su8) + @icon14 + var(--su4));
+        padding-left: @inputs-icon-spacing--sm;
     }
 
     // Update padding for d-input if d-input-icon--right is present
     &.d-input-icon--right ~ .d-input {
-        padding-right: calc(var(--su4) + @icon14 + var(--su8));
+        padding-right: @inputs-icon-spacing--sm;
     }
 }
 
@@ -245,12 +277,12 @@
     // Update padding for d-input, d-textarea if d-input-icon--left is present
     &.d-input-icon--left ~ .d-input,
     &.d-input-icon--left ~ .d-textarea {
-        padding-left: calc(var(--su12) + @icon20 + var(--su4));
+        padding-left: @inputs-icon-spacing--lg;
     }
 
     // Update padding for d-input if d-input-icon--right is present
     &.d-input-icon--right ~ .d-input {
-        padding-right: calc(var(--su4) + @icon20 + var(--su12));
+        padding-right: @inputs-icon-spacing--lg;
     }
 }
 
@@ -261,12 +293,12 @@
     // Update padding for d-input, d-textarea if d-input-icon--left is present
     &.d-input-icon--left ~ .d-input,
     &.d-input-icon--left ~ .d-textarea {
-        padding-left: calc(var(--su12) + @icon24 + var(--su4));
+        padding-left: @inputs-icon-spacing--xl;
     }
 
     // Update padding for d-input if d-input-icon--right is present
     &.d-input-icon--right ~ .d-input {
-        padding-right: calc(var(--su4) + @icon24 + var(--su12));
+        padding-right: @inputs-icon-spacing--xl;
     }
 }
 
