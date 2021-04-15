@@ -80,7 +80,7 @@ $(document).ready(function() {
         }
     }
 
-    // Hide icon for default example
+    // Hide icon for base example
     if (style == 'none') {
       icon.addClass('d-d-none');
     }

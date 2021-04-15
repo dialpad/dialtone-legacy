@@ -1,27 +1,27 @@
 ---
 layout: page
-title: Tooltips
-description: Floating labels that briefly explain an action, function, or an element. Their content is exclusively text. If richer media is desired, consider using a popover instead.
+title: Tooltip
+description: A tooltip is a floating label that briefly explains an action, function, or an element. Its content is exclusively text and shouldn't be vital information for users. If richer media is desired, consider using a popover instead.
 ---
 <section class="d-stack16">
   {% header "h2", "Classes" %}
   <table class="d-table">
     <thead>
       <tr>
-        <th scope="col" class="d-w25p">Class</th>
-        <th scope="col" class="d-w25p">Applies to</th>
+        <th scope="col" class="d-w40p">Class</th>
+        <th scope="col" class="d-w30p">Applies to</th>
         <th scope="col">Description</th>
       </tr>
     </thead>
     <tbody>
-      {% for i in tooltips.classes %}
+      {% for i in tooltip.classes %}
         {% assign class = i.class %}
         {% assign apply = i.applies %}
         {% assign desc = i.description %}
         <tr>
           <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.{{ class }}</th>
           <td class="d-ff-mono d-fc-teal-500 d-fs12">{% if apply != "N/A" %}<span class="code-example--inline">.{% endif %}{{ apply }}{% if apply != "N/A" %}</span>{% endif %}</td>
-          <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ desc }}</td>
+          <td class="d-fs12">{{ desc }}</td>
         </tr>
       {% endfor %}
     </tbody>
@@ -31,7 +31,7 @@ description: Floating labels that briefly explain an action, function, or an ele
   {% header "h2", "Examples" %}
   <div class="d-stack48">
     <div class="d-stack8">
-      {% header "h3", "Base" %}
+      {% header "h3", "Base Styles" %}
       {% codeWell %}
         {% codeWellHeader "black-100" "d-hmn264" %}
           <button class="d-btn d-btn--outlined d-tooltip--hover" type="button">
@@ -124,20 +124,20 @@ description: Floating labels that briefly explain an action, function, or an ele
   <table class="d-table">
     <thead>
       <tr>
-        <th scope="col" class="d-w25p">Item</th>
-        <th scope="col" class="d-w25p">Applies to</th>
+        <th scope="col" class="d-w40p">Item</th>
+        <th scope="col" class="d-w30p">Applies to</th>
         <th scope="col">Description</th>
       </tr>
     </thead>
     <tbody>
-      {% for i in tooltips.accessible %}
+      {% for i in tooltip.accessible %}
         {% assign item = i.item %}
         {% assign apply = i.applies %}
         {% assign desc = i.description %}
         <tr>
           <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">{{ item }}</th>
-          <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ apply }}</td>
-          <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ desc }}</td>
+          <td class="d-ff-mono d-fc-teal-500 d-fs12">{% if apply != "N/A" %}<span class="code-example--inline">.{% endif %}{{ apply }}{% if apply != "N/A" %}</span>{% endif %}</td>
+          <td class="d-fs12">{{ desc }}</td>
         </tr>
       {% endfor %}
     </tbody>
