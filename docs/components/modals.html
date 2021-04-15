@@ -4,317 +4,195 @@ title: Modals
 description: Modals focus the user’s attention exclusively on one task or piece of information via a window that sits on top of the page content.
 ---
 <section class="d-stack16">
-    <header class="d-stack8">
-        <h2 class="dialtone-title__section">Guidelines</h2>
-        <p class="dialtone-copy__normal">Modals are used to present a short-term task the user needs to perform without losing the context of the underlying page. Users won't be able to interact with the page until they close the modal.</p>
-        <p class="dialtone-copy__normal">Although highly versatile, this doesn't mean modal dialogs are fit for all purposes. Modals are purposefully disruptive and should be used thoughtfully and sparingly, specifically in moments where focus is required or an action must be taken.</p>
+  {% header "h2", "Overview" %}
+  {% paragraph %}Modals are used to present a short-term task the user needs to perform without losing the context of the underlying page. Users won't be able to interact with the page until they close the modal.{% endparagraph %}
+  {% paragraph %}Although highly versatile, this doesn't mean modal dialogs are fit for all purposes. Modals are purposefully disruptive and should be used thoughtfully and sparingly, specifically in moments where focus is required or an action must be taken.{% endparagraph %}
+  <table class="d-table">
+    <thead>
+      <th class="d-w50p d-border-bottom d-border-width2 d-bc-red-400 d-fc-red-600 d-fs16 d-fw-bold d-tt-unset"><div class="d-d-inline-block d-ps-relative d-t4">{% iconSystem "close", "d-svg--size18" %}</div>  Don't use for</th>
+      <th class="d-w50p d-border-bottom d-border-width2 d-bc-green-400 d-fc-green-600 d-fs16 d-fw-bold d-tt-unset"><div class="d-d-inline-block d-ps-relative d-t4">{% iconSystem "checkmark", "d-svg--size18" %}</div> Use for</th>
+    </thead>
+    <tbody class="d-fs14 d-lh-normal d-border-right d-border-bottom d-border-left d-bc-black-100">
+      <tr>
+        <td class="d-border-right d-bc-black-100">Confirming an action took place (instead: use a Toast)</td>
+        <td>Confirming a destructive action that is about to happen</td>
+      </tr>
+      <tr>
+        <td class="d-border-right d-bc-black-100">Revealing more information (instead: place content inline)</td>
+        <td>Entering the name and description of a new Call Center</td>
+      </tr>
+      <tr>
+        <td class="d-border-right d-bc-black-100">Displaying complex forms or large amounts of information (instead: place content inline)</td>
+        <td>Ask for a user’s consent for an action</td>
+      </tr>
+      <tr>
+        <td class="d-border-right d-bc-black-100">Displaying content unrelated to current task (instead: place content inline as link or banner)</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="d-stack16">
+    <header class="d-stack2">
+      <h3 class="dialtone-title__subsection">Best practices</h3>
+      <ul class="dialtone-copy__normal">
+        <li>Limit the number of interactions in a modal. Remove anything that does not support the task.</li>
+        <li>Avoid multiple steps that require navigation within the modal dialog.</li>
+        <li>Avoid complex decision making that requires additional sources of information unavailable in the modal.</li>
+        <li>Label links and buttons with a verb that indicates what happens when it’s selected.</li>
+        <li>The primary button should reflect the modal title.</li>
+        <li>Don’t surprise users by popping up a modal. Let a user’s action, such as a button click, trigger the modal. Uninvited modals may surprise the user and result in a quick dismissal of the window.</li>
+      </ul>
     </header>
-    <table class="dialtone-table">
-        <thead>
-            <th class="d-w50 d-border-bottom d-border-width2 d-bc-red-400 d-fc-red-600 d-fs16 d-fw-bold d-tt-unset"><div class="d-d-inline-block d-ps-relative d-t4">{% iconSystem "close", "d-svg--size18" %}</div>  Don't use for</th>
-            <th class="d-w50 d-border-bottom d-border-width2 d-bc-green-400 d-fc-green-600 d-fs16 d-fw-bold d-tt-unset"><div class="d-d-inline-block d-ps-relative d-t4">{% iconSystem "checkmark", "d-svg--size18" %}</div> Use for</th>
-        </thead>
-        <tbody class="d-fs14 d-lh-normal d-border-right d-border-bottom d-border-left d-bc-black-100">
-            <tr>
-                <td class="d-border-right d-bc-black-100">Confirming an action took place (instead: use a Toast)</td>
-                <td>Confirming a destructive action that is about to happen</td>
-            </tr>
-            <tr>
-                <td class="d-border-right d-bc-black-100">Revealing more information (instead: place content inline)</td>
-                <td>Entering the name and description of a new Call Center</td>
-            </tr>
-            <tr>
-                <td class="d-border-right d-bc-black-100">Displaying complex forms or large amounts of information (instead: place content inline)</td>
-                <td>Ask for a user’s consent for an action</td>
-            </tr>
-            <tr>
-                <td class="d-border-right d-bc-black-100">Displaying content unrelated to current task (instead: place content inline as link or banner)</td>
-                <td></td>
-            </tr>
-        </tbody>
-    </table>
-    <div class="d-stack16">
-        <header class="d-stack2">
-            <h3 class="dialtone-title__subsection">Best practices</h3>
-            <ul class="dialtone-copy__normal">
-                <li>Limit the number of interactions in a modal. Remove anything that does not support the task.</li>
-                <li>Avoid multiple steps that require navigation within the modal dialog.</li>
-                <li>Avoid complex decision making that requires additional sources of information unavailable in the modal.</li>
-                <li>Label links and buttons with a verb that indicates what happens when it’s selected.</li>
-                <li>The primary button should reflect the modal title.</li>
-                <li>Don’t surprise users by popping up a modal. Let a user’s action, such as a button click, trigger the modal. Uninvited modals may surprise the user and result in a quick dismissal of the window.</li>
-            </ul>
-        </header>
-    </div>
+  </div>
 </section>
 <section class="d-stack16">
-    <header class="d-stack8">
-        <h2 class="dialtone-title__section">Classes</h2>
-        <p class="dialtone-copy__normal">At minimum, modals contain a title and one button. They could also contain body text, brand illustrations, product wireframes, or multiple buttons.</p>
-    </header>
-    <table class="d-table">
-        <thead>
-            <tr>
-                <th scope="col" class="d-w20">Class</th>
-                <th scope="col">Applies to</th>
-                <th scope="col" class="d-w50">Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for i in modals.classes %}
-            {% assign class = i.class %}
-            {% assign apply = i.applies %}
-            {% assign desc = i.description %}
-            <tr>
-                <td><span class="code-example--inline">{{ class }}</span></td>
-                <td class="d-ff-custom d-fs12 d-lh-tight d-fc-slate">{{ apply }}</td>
-                <td class="d-ff-custom d-fs12 d-lh-tight d-fc-slate">{{ desc }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+  <header class="d-stack8">
+    {% header "h2", "Classes" %}
+    {% paragraph %}At minimum, modals contain a title and one button. They could also contain body text, brand illustrations, product wireframes, or multiple buttons.{% endparagraph %}
+  </header>
+  <table class="d-table">
+    <thead>
+      <tr>
+        <th scope="col" class="d-w25p">Class</th>
+        <th scope="col" class="d-w25p">Applies to</th>
+        <th scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in modals.classes %}
+        {% assign class = i.class %}
+        {% assign apply = i.applies %}
+        {% assign desc = i.description %}
+        <tr>
+          <td><span class="code-example--inline">{{ class }}</span></td>
+          <td class="d-ff-custom d-fs12 d-lh-tight d-fc-slate">{{ apply }}</td>
+          <td class="d-ff-custom d-fs12 d-lh-tight d-fc-slate">{{ desc }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 </section>
+
+
 <section class="d-stack16">
-    <header class="d-stack8">
-        <h2 class="dialtone-title__section">Accessibility</h2>
-        <p class="dialtone-copy__normal">When opened modals “trap focus,” meaning keyboard navigation controls are constrained to elements within the modal. Focus doesn't return to the underlying page until the user explicitly dismisses the modal.</p>
-        <p class="dialtone-copy__normal">To ensure maximum compatibility, all <span class="code-example--inline">a</span> tags must have an <span class="code-example--inline">href</span>attribute. Also any elements which you don't want to be focusable (but might be focusable by default) must have their <span class="code-example--inline">tabindex</span> set to <span class="code-example--inline">-1</span>.</p>
-    </header>
-    <table class="d-table">
-        <thead>
-            <tr>
-                <th scope="col" class="d-w30">Attribute</th>
-                <th scope="col">Applies to</th>
-                <th scope="col" class="d-w50">Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for i in modals.accessible %}
-            {% assign item = i.item %}
-            {% assign apply = i.applies %}
-            {% assign desc = i.description %}
-            <tr>
-                <td><span class="code-example--inline">{{ item }}</span></td>
-                <td class="d-ff-custom d-fs12 d-lh-tight d-fc-slate"><span class="code-example--inline">{{ apply }}</span></td>
-                <td class="d-ff-custom d-fs12 d-lh-tight d-fc-slate">{{ desc }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-</section>
-<section class="d-stack16">
-    <header class="d-stack8">
-        <h2 class="dialtone-title__section">Examples</h2>
-        <div class="d-p16 d-bgc-black-050 d-d-flex d-max-width6 d-br-sm d-flow8">
-            <button class="d-btn d-btn--primary d-btn--sm js-launch-example-modal" type="button">Launch modal</button>
-            <button class="d-btn d-btn--primary d-btn--sm js-launch-example-modal-full" type="button">Launch full-width modal</button>
-            <button class="d-btn d-btn--primary d-btn--sm js-launch-example-modal-danger" type="button">Launch danger modal</button>
-        </div>
-    </header>
-    <div class="d-stack8">
-        <h3 class="dialtone-title__subsection">Default</h3>
-        <div class="dialtone-example" data-example="yes" data-code="yes">
-            <div class="dialtone-example__example d-ps-relative d-h464">
-                <aside class="d-modal d-ps-absolute d-zi-base d-mn1" id="modal-base" tabindex="-1" role="dialog" aria-labelledby="modal-title" aria-describedby="modal-description" aria-hidden="false">
-                    <div class="d-modal__dialog" role="document">
-                        <h2 class="d-modal__title" id="modal-title">Example title</h2>
-                        <p class="d-modal__copy" id="modal-description">Sed at orci quis nunc finibus gravida eget vitae est. Praesent ac laoreet mi. Cras porttitor mauris ex. Integer convallis tellus a ex egestas, id laoreet elit mollis. Mauris ut elementum velit. Nam vel consectetur turpis. Aenean consequat purus non nunc tincidunt rutrum. In semper pretium dui vel tempus. Proin et mi id mi egestas iaculis. Sed lacinia libero non molestie consequat. Sed efficitur purus eget lacus viverra volutpat. Nam luctus ac eros eu iaculis. Fusce non condimentum lorem.</p>
-                        <footer class="d-modal__footer">
-                            <button class="d-btn d-btn--primary" type="button">Save changes</button>
-                            <button class="d-btn" type="button">Cancel</button>
-                        </footer>
-                        <a href="#" class="d-modal__close d-btn d-btn--circle d-btn--muted d-btn--lg" aria-label="Close">
-                            <span class="d-btn__label">Close</span>
-                            <span class="d-btn__icon">{% iconSystem "close" %}</span>
-                        </a>
-                    </div>
-                </aside>
-            </div>
-            <div class="dialtone-example__code">
+  {% header "h2", "Examples" %}
+  <div class="d-stack32">
+    <div class="sub-section">
+      {% header "h3", "Base Styles" %}
+      {% codeWell %}
+        {% codeWellHeader %}
+          <button class="d-btn d-btn--primary d-btn--sm js-launch-example-modal" type="button">Launch modal</button>
+        {% endcodeWellHeader %}
+        {% codeWellFooter %}
 {% highlight html linenos %}
 <aside class="d-modal" id="modal-base" tabindex="-1" role="dialog" aria-labelledby="modal-title" aria-describedby="modal-description" aria-hidden="true">
-    <div class="d-modal__dialog" role="document">
-        <h2 class="d-modal__header" id="modal-title">…</h2>
-        <p class="d-modal__content" id="modal-description">…</p>
-        <footer class="d-modal__footer">
-            <button class="d-btn d-btn--primary" type="button">…</button>
-            <button class="d-btn" type="button">…</button>
-        </footer>
-    </div>
-    <a href="#" class="d-modal__close d-btn d-btn--circle d-btn--muted d-btn--lg" aria-label="Close"><IconClose \></a>
+  <div class="d-modal__dialog" role="document">
+    <h2 class="d-modal__header" id="modal-title">…</h2>
+    <p class="d-modal__content" id="modal-description">…</p>
+    <footer class="d-modal__footer">
+      <button class="d-btn d-btn--primary" type="button">…</button>
+      <button class="d-btn" type="button">…</button>
+    </footer>
+  </div>
+  <a href="#" class="d-modal__close d-btn d-btn--circle d-btn--muted d-btn--lg" aria-label="Close"><IconClose \></a>
 </aside>
 {% endhighlight %}
-            </div>
-        </div>
+        {% endcodeWellFooter %}
+      {% endcodeWell %}
     </div>
-    <div class="d-stack8">
-        <h3 class="dialtone-title__subsection">Danger</h3>
-        <p class="dialtone-copy__normal">A modal style for destructive or irreversible actions.</p>
-        <div class="dialtone-example" data-example="yes" data-code="yes">
-            <div class="dialtone-example__example d-ps-relative d-h464">
-                <aside class="d-modal d-modal--danger d-ps-absolute d-zi-base d-mn1" id="modal-base" tabindex="-1" role="dialog" aria-labelledby="modal-title" aria-describedby="modal-description" aria-hidden="false">
-                    <div class="d-modal__dialog" role="document">
-                        <h2 class="d-modal__title" id="modal-title">Example title</h2>
-                        <p class="d-modal__copy" id="modal-description">Sed at orci quis nunc finibus gravida eget vitae est. Praesent ac laoreet mi. Cras porttitor mauris ex. Integer convallis tellus a ex egestas, id laoreet elit mollis. Mauris ut elementum velit. Nam vel consectetur turpis. Aenean consequat purus non nunc tincidunt rutrum. In semper pretium dui vel tempus. Proin et mi id mi egestas iaculis. Sed lacinia libero non molestie consequat. Sed efficitur purus eget lacus viverra volutpat. Nam luctus ac eros eu iaculis. Fusce non condimentum lorem.</p>
-                        <footer class="d-modal__footer">
-                            <button class="d-btn d-btn--danger d-btn--primary" type="button">Save changes</button>
-                            <button class="d-btn d-btn--danger" type="button">Cancel</button>
-                        </footer>
-                        <a href="#" class="d-modal__close d-btn d-btn--circle d-btn--muted d-btn--lg" aria-label="Close">
-                            <span class="d-btn__label">Close</span>
-                            <span class="d-btn__icon">{% iconSystem "close" %}</span>
-                        </a>
-                    </div>
-                </aside>
-            </div>
-            <div class="dialtone-example__code">
+    <div class="sub-section">
+      {% header "h3", "Danger" %}
+      {% codeWell %}
+        {% codeWellHeader %}
+          <button class="d-btn d-btn--primary d-btn--sm js-launch-example-modal-danger" type="button">Launch modal</button>
+        {% endcodeWellHeader %}
+        {% codeWellFooter %}
 {% highlight html linenos %}
 <aside class="d-modal d-modal--danger" id="modal-base" tabindex="-1" role="dialog" aria-labelledby="modal-title" aria-describedby="modal-description" aria-hidden="true">
-    <div class="d-modal__dialog" role="document">
-        <h2 class="d-modal__header" id="modal-title">…</h2>
-        <p class="d-modal__content" id="modal-description">…</p>
-        <footer class="d-modal__footer">
-            <button class="d-btn d-btn--danger d-btn--primary" type="button">…</button>
-            <button class="d-btn d-btn--danger" type="button">…</button>
-        </footer>
-    </div>
-    <a href="#" class="d-modal__close d-btn d-btn--circle d-btn--muted d-btn--lg" aria-label="Close"><IconClose \></a>
+  <div class="d-modal__dialog" role="document">
+    <h2 class="d-modal__header" id="modal-title">…</h2>
+    <p class="d-modal__content" id="modal-description">…</p>
+    <footer class="d-modal__footer">
+      <button class="d-btn d-btn--danger d-btn--primary" type="button">…</button>
+      <button class="d-btn d-btn--danger" type="button">…</button>
+    </footer>
+  </div>
+  <a href="#" class="d-modal__close d-btn d-btn--circle d-btn--muted d-btn--lg" aria-label="Close"><IconClose \></a>
 </aside>
 {% endhighlight %}
-            </div>
-        </div>
+        {% endcodeWellFooter %}
+      {% endcodeWell %}
     </div>
-    <div class="d-stack8">
-        <h3 class="dialtone-title__subsection">With Inline Banner</h3>
-        <p class="dialtone-copy__normal">Since modals are a small form factor, our inline banners are anchored to the top of the modal to save space.</p>
-        <div class="dialtone-example" data-example="yes" data-code="yes">
-            <div class="dialtone-example__example d-ps-relative d-h464">
-                <aside class="d-modal d-ps-absolute d-zi-base d-mn1" id="modal-base" tabindex="-1" role="dialog" aria-labelledby="modal-title" aria-describedby="modal-description" aria-hidden="false">
-                    <div class="d-modal__banner js-example-modal-banner-full">This example banner sits at the top of the modal.</div>
-                    <div class="d-modal__dialog" role="document">
-                        <h2 class="d-modal__title" id="modal-title">Example title</h2>
-                        <p class="d-modal__copy" id="modal-description">Sed at orci quis nunc finibus gravida eget vitae est. Praesent ac laoreet mi. Cras porttitor mauris ex. Integer convallis tellus a ex egestas, id laoreet elit mollis. Mauris ut elementum velit. Nam vel consectetur turpis. Aenean consequat purus non nunc tincidunt rutrum. In semper pretium dui vel tempus. Proin et mi id mi egestas iaculis. Sed lacinia libero non molestie consequat. Sed efficitur purus eget lacus viverra volutpat. Nam luctus ac eros eu iaculis. Fusce non condimentum lorem.</p>
-                        <footer class="d-modal__footer">
-                            <button class="d-btn d-btn--primary" type="button">Save changes</button>
-                            <button class="d-btn" type="button">Cancel</button>
-                        </footer>
-                        <a href="#" class="d-modal__close d-btn d-btn--circle d-btn--muted d-btn--lg" aria-label="Close">
-                            <span class="d-btn__label">Close</span>
-                            <span class="d-btn__icon">{% iconSystem "close" %}</span>
-                        </a>
-                    </div>
-                </aside>
-            </div>
-            <div class="dialtone-example__code">
-{% highlight html linenos %}
-<aside class="d-modal" id="modal-base" tabindex="-1" role="dialog" aria-labelledby="modal-title" aria-describedby="modal-description" aria-hidden="true">
-    <div class="d-modal__banner d-d-none js-example-modal-banner-full">…</div>
-    <div class="d-modal__dialog" role="document">
-        <h2 class="d-modal__header" id="modal-title">…</h2>
-        <p class="d-modal__content" id="modal-description">…</p>
-        <footer class="d-modal__footer">
-            <button class="d-btn d-btn--primary" type="button">…</button>
-            <button class="d-btn" type="button">…</button>
-        </footer>
-    </div>
-    <a href="#" class="d-modal__close d-btn d-btn--circle d-btn--muted d-btn--lg" aria-label="Close"><IconClose \></a>
-</aside>
-{% endhighlight %}
-            </div>
-        </div>
-    </div>
-    <div class="d-stack8">
-        <h3 class="dialtone-title__subsection">Full Width</h3>
-        <p class="dialtone-copy__normal">A modal style for destructive or irreversible actions.</p>
-        <div class="dialtone-example" data-example="yes" data-code="yes">
-            <div class="dialtone-example__example d-ps-relative d-h464">
-                <aside class="d-modal d-modal--full d-ps-absolute d-zi-base d-mn1" id="modal-base" tabindex="-1" role="dialog" aria-labelledby="modal-title" aria-describedby="modal-description" aria-hidden="false">
-                    <div class="d-modal__dialog" role="document">
-                        <h2 class="d-modal__title" id="modal-title">Example title</h2>
-                        <p class="d-modal__copy" id="modal-description">Sed at orci quis nunc finibus gravida eget vitae est. Praesent ac laoreet mi. Cras porttitor mauris ex. Integer convallis tellus a ex egestas, id laoreet elit mollis. Mauris ut elementum velit. Nam vel consectetur turpis. Aenean consequat purus non nunc tincidunt rutrum. In semper pretium dui vel tempus. Proin et mi id mi egestas iaculis. Sed lacinia libero non molestie consequat. Sed efficitur purus eget lacus viverra volutpat. Nam luctus ac eros eu iaculis. Fusce non condimentum lorem.</p>
-                        <footer class="d-modal__footer">
-                            <button class="d-btn d-btn--primary" type="button">Save changes</button>
-                            <button class="d-btn" type="button">Cancel</button>
-                        </footer>
-                        <a href="#" class="d-modal__close d-btn d-btn--circle d-btn--muted d-btn--lg" aria-label="Close">
-                            <span class="d-btn__label">Close</span>
-                            <span class="d-btn__icon">{% iconSystem "close" %}</span>
-                        </a>
-                    </div>
-                </aside>
-            </div>
-            <div class="dialtone-example__code">
+    <div class="sub-section">
+      {% header "h3", "Full Screen" %}
+      {% codeWell %}
+        {% codeWellHeader %}
+          <button class="d-btn d-btn--primary d-btn--sm js-launch-example-modal-full" type="button">Launch modal</button>
+        {% endcodeWellHeader %}
+        {% codeWellFooter %}
 {% highlight html linenos %}
 <aside class="d-modal d-modal--full" id="modal-base" tabindex="-1" role="dialog" aria-labelledby="modal-title" aria-describedby="modal-description" aria-hidden="true">
-    <div class="d-modal__dialog" role="document">
-        <h2 class="d-modal__header" id="modal-title">…</h2>
-        <p class="d-modal__content" id="modal-description">…</p>
-        <footer class="d-modal__footer">
-            <button class="d-btn d-btn--primary" type="button">…</button>
-            <button class="d-btn" type="button">…</button>
-        </footer>
-    </div>
-    <a href="#" class="d-modal__close d-btn d-btn--circle d-btn--muted d-btn--lg" aria-label="Close"><IconClose \></a>
+  <div class="d-modal__dialog" role="document">
+    <h2 class="d-modal__header" id="modal-title">…</h2>
+    <p class="d-modal__content" id="modal-description">…</p>
+    <footer class="d-modal__footer">
+      <button class="d-btn d-btn--primary" type="button">…</button>
+      <button class="d-btn" type="button">…</button>
+    </footer>
+  </div>
+  <a href="#" class="d-modal__close d-btn d-btn--circle d-btn--muted d-btn--lg" aria-label="Close"><IconClose \></a>
 </aside>
 {% endhighlight %}
-            </div>
-        </div>
+        {% endcodeWellFooter %}
+      {% endcodeWell %}
     </div>
-    <div class="d-stack8">
-        <h3 class="dialtone-title__subsection">Full Width With Inline Banner</h3>
-        <p class="dialtone-copy__normal">A modal style for destructive or irreversible actions.</p>
-        <div class="dialtone-example" data-example="yes" data-code="yes">
-            <div class="dialtone-example__example d-ps-relative d-h464">
-                <aside class="d-modal d-modal--full d-ps-absolute d-zi-base d-mn1" id="modal-base" tabindex="-1" role="dialog" aria-labelledby="modal-title" aria-describedby="modal-description" aria-hidden="false">
-                    <div class="d-modal__banner js-example-modal-banner-full">This example banner sits at the top of the modal.</div>
-                    <div class="d-modal__dialog" role="document">
-                        <h2 class="d-modal__title" id="modal-title">Example title</h2>
-                        <p class="d-modal__copy" id="modal-description">Sed at orci quis nunc finibus gravida eget vitae est. Praesent ac laoreet mi. Cras porttitor mauris ex. Integer convallis tellus a ex egestas, id laoreet elit mollis. Mauris ut elementum velit. Nam vel consectetur turpis. Aenean consequat purus non nunc tincidunt rutrum. In semper pretium dui vel tempus. Proin et mi id mi egestas iaculis. Sed lacinia libero non molestie consequat. Sed efficitur purus eget lacus viverra volutpat. Nam luctus ac eros eu iaculis. Fusce non condimentum lorem.</p>
-                        <footer class="d-modal__footer">
-                            <button class="d-btn d-btn--primary" type="button">Save changes</button>
-                            <button class="d-btn" type="button">Cancel</button>
-                        </footer>
-                        <a href="#" class="d-modal__close d-btn d-btn--circle d-btn--muted d-btn--lg" aria-label="Close">
-                            <span class="d-btn__label">Close</span>
-                            <span class="d-btn__icon">{% iconSystem "close" %}</span>
-                        </a>
-                    </div>
-                </aside>
-            </div>
-            <div class="dialtone-example__code">
-{% highlight html linenos %}
-<aside class="d-modal d-modal--full" id="modal-base" tabindex="-1" role="dialog" aria-labelledby="modal-title" aria-describedby="modal-description" aria-hidden="true">
-    <div class="d-modal__dialog" role="document">
-        <div class="d-modal__banner js-example-modal-banner-full">...</div>
-        <h2 class="d-modal__header" id="modal-title">…</h2>
-        <p class="d-modal__content" id="modal-description">…</p>
-        <footer class="d-modal__footer">
-            <button class="d-btn d-btn--primary" type="button">…</button>
-            <button class="d-btn" type="button">…</button>
-        </footer>
-    </div>
-    <a href="#" class="d-modal__close d-btn d-btn--circle d-btn--muted d-btn--lg" aria-label="Close"><IconClose \></a>
-</aside>
-{% endhighlight %}
-            </div>
-        </div>
-    </div>
+  </div>
 </section>
-<aside class="d-modal js-example-modal" id="example-modal-base" tabindex="-1" role="dialog" aria-labelledby="example-modal-title" aria-describedby="example-modal-description" aria-hidden="true">
-    <div class="d-modal__banner d-d-none js-example-modal-banner">This example banner sits at the top of the modal.</div>
-    <div class="d-modal__dialog js-example-modal-dialog" role="document">
-        <h2 class="d-modal__title" id="example-modal-title">Example title</h2>
-        <p class="d-modal__copy" id="example-modal-description">Sed at orci quis nunc finibus gravida eget vitae est. Praesent ac laoreet mi. Cras porttitor mauris ex. Integer convallis tellus a ex egestas, id laoreet elit mollis. Mauris ut elementum velit. Nam vel consectetur turpis. Aenean consequat purus non nunc tincidunt rutrum. In semper pretium dui vel tempus. Proin et mi id mi egestas iaculis. Sed lacinia libero non molestie consequat. Sed efficitur purus eget lacus viverra volutpat. Nam luctus ac eros eu iaculis. Fusce non condimentum lorem.</p>
-        <p class="d-modal__copy"><a href="#" class="d-link js-launch-example-modal-banner">Show me a modal banner</a></p>
-        <footer class="d-modal__footer">
-            <button class="d-btn d-btn--primary js-example-modal-btn-save" type="button">Save changes</button>
-            <button class="d-btn js-example-modal-btn-cancel" type="button">Cancel</button>
-        </footer>
-        <a href="#" class="d-modal__close d-btn d-btn--circle d-btn--muted d-btn--lg js-example-modal-close" aria-label="Close">
-            <span class="d-btn__label ">Close</span>
-            <span class="d-btn__icon">{% iconSystem "close" %}</span>
-        </a>
-    </div>
+<section class="d-stack16">
+  {% header "h2", "Accessibility" %}
+  {% paragraph %}When opened modals “trap focus,” meaning keyboard navigation controls are constrained to elements within the modal. Focus doesn't return to the underlying page until the user explicitly dismisses the modal.{% endparagraph %}
+  {% paragraph %}To ensure maximum compatibility, all {% code %}a{% endcode %} tags must have an {% code %}href{% endcode %}attribute. Also any elements which you don't want to be focusable (but might be focusable by default) must have their {% code %}tabindex{% endcode %} set to {% code %}-1{% endcode %}.{% endparagraph %}
+  <table class="d-table">
+    <thead>
+      <tr>
+        <th scope="col" class="d-w25p">Attribute</th>
+        <th scope="col" class="d-w25p">Applies to</th>
+        <th scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in modals.accessible %}
+        {% assign item = i.item %}
+        {% assign apply = i.applies %}
+        {% assign desc = i.description %}
+        <tr>
+          <td><span class="code-example--inline">{{ item }}</span></td>
+          <td class="d-ff-custom d-fs12 d-lh-tight d-fc-slate"><span class="code-example--inline">{{ apply }}</span></td>
+          <td class="d-ff-custom d-fs12 d-lh-tight d-fc-slate">{{ desc }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</section>
+
+
+
+<!-- EXAMPLE -->
+<aside class="d-modal js-example-modal d-mn1" id="modal-base" tabindex="-1" role="dialog" aria-labelledby="modal-title" aria-describedby="modal-description" aria-hidden="true">
+  <div class="d-modal__banner d-d-none js-example-modal-banner">This example banner sits at the top of the modal.</div>
+  <div class="d-modal__dialog js-example-modal-dialog" role="document">
+    <h2 class="d-modal__title">Example title</h2>
+    <p class="d-modal__copy" id="modal-description">Sed at orci quis nunc finibus gravida eget vitae est. Praesent ac laoreet mi. Cras porttitor mauris ex. Integer convallis tellus a ex egestas, id laoreet elit mollis. Mauris ut elementum velit. Nam vel consectetur turpis. Aenean consequat purus non nunc tincidunt rutrum. In semper pretium dui vel tempus. Proin et mi id mi egestas iaculis. Sed lacinia libero non molestie consequat. Sed efficitur purus eget lacus viverra volutpat. Nam luctus ac eros eu iaculis. Fusce non condimentum lorem.</p>
+    <p class="d-modal__copy"><a href="#" class="d-link js-launch-example-modal-banner">Show me a modal banner</a></p>
+    <footer class="d-modal__footer">
+      <button class="js-example-modal-btn-save d-btn d-btn--primary" type="button">Save changes</button>
+      <button class="js-example-modal-btn-cancel d-btn" type="button">Cancel</button>
+    </footer>
+    <a href="#" class="d-modal__close d-btn d-btn--circle d-btn--muted d-btn--lg js-example-modal-btn-cancel" aria-label="Close">
+      <span class="d-btn__label">Close</span>
+      <span class="d-btn__icon">{% iconSystem "close" %}</span>
+    </a>
+  </div>
 </aside>
 
 <script src="/{{ site.paths.js }}/modals.js"></script>
