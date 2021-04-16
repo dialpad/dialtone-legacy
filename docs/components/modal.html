@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Modals
-description: Modals focus the user’s attention exclusively on one task or piece of information via a window that sits on top of the page content.
+title: Modal
+description: A modal is an interstitial over page content that focuses the user’s attention exclusively on one task or piece of information.
 ---
 <section class="d-stack16">
     <header class="d-stack8">
@@ -61,12 +61,12 @@ description: Modals focus the user’s attention exclusively on one task or piec
             </tr>
         </thead>
         <tbody>
-            {% for i in modals.classes %}
+            {% for i in modal.classes %}
             {% assign class = i.class %}
             {% assign apply = i.applies %}
             {% assign desc = i.description %}
             <tr>
-                <td><span class="code-example--inline">{{ class }}</span></td>
+                <td><span class="code-example--inline">.{{ class }}</span></td>
                 <td class="d-ff-custom d-fs12 d-lh-tight d-fc-slate">{{ apply }}</td>
                 <td class="d-ff-custom d-fs12 d-lh-tight d-fc-slate">{{ desc }}</td>
             </tr>
@@ -89,7 +89,7 @@ description: Modals focus the user’s attention exclusively on one task or piec
             </tr>
         </thead>
         <tbody>
-            {% for i in modals.accessible %}
+            {% for i in modal.accessible %}
             {% assign item = i.item %}
             {% assign apply = i.applies %}
             {% assign desc = i.description %}
@@ -112,7 +112,7 @@ description: Modals focus the user’s attention exclusively on one task or piec
         </div>
     </header>
     <div class="d-stack8">
-        <h3 class="dialtone-title__subsection">Default</h3>
+        <h3 class="dialtone-title__subsection">Base</h3>
         <div class="dialtone-example" data-example="yes" data-code="yes">
             <div class="dialtone-example__example d-ps-relative d-h464">
                 <aside class="d-modal d-ps-absolute d-zi-base d-mn1" id="modal-base" tabindex="-1" role="dialog" aria-labelledby="modal-title" aria-describedby="modal-description" aria-hidden="false">
@@ -317,4 +317,4 @@ description: Modals focus the user’s attention exclusively on one task or piec
     </div>
 </aside>
 
-<script src="/{{ site.paths.js }}/modals.js"></script>
+<script src="/{{ site.paths.js }}/modal.js"></script>

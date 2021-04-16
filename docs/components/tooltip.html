@@ -1,0 +1,145 @@
+---
+layout: page
+title: Tooltip
+description: A tooltip is a floating label that briefly explains an action, function, or an element. Its content is exclusively text and shouldn't be vital information for users. If richer media is desired, consider using a popover instead.
+---
+<section class="d-stack16">
+  {% header "h2", "Classes" %}
+  <table class="d-table">
+    <thead>
+      <tr>
+        <th scope="col" class="d-w40p">Class</th>
+        <th scope="col" class="d-w30p">Applies to</th>
+        <th scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in tooltip.classes %}
+        {% assign class = i.class %}
+        {% assign apply = i.applies %}
+        {% assign desc = i.description %}
+        <tr>
+          <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.{{ class }}</th>
+          <td class="d-ff-mono d-fc-teal-500 d-fs12">{% if apply != "N/A" %}<span class="code-example--inline">.{% endif %}{{ apply }}{% if apply != "N/A" %}</span>{% endif %}</td>
+          <td class="d-fs12">{{ desc }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</section>
+<section class="d-stack16">
+  {% header "h2", "Examples" %}
+  <div class="d-stack48">
+    <div class="d-stack8">
+      {% header "h3", "Base Styles" %}
+      {% codeWell %}
+        {% codeWellHeader "black-100" "d-hmn264" %}
+          <button class="d-btn d-btn--outlined d-tooltip--hover" type="button">
+              <div class="d-tooltip d-tooltip__arrow--bottom-center d-ps-absolute">
+                  <span>This is a simple tooltip. The tooltip can be positioned in multiple areas too!</span>
+              </div>
+              <span>Hover over me to see a tooltip</span>
+          </button>
+        {% endcodeWellHeader %}
+        {% codeWellFooter %}
+{% highlight html linenos %}
+<button class="d-btn d-btn--outlined d-tooltip--hover" type="button">
+    <div class="d-tooltip d-tooltip__arrow--bottom-center d-ps-absolute">
+        <span>This is a simple tooltip. The tooltip can be positioned in multiple areas too!</span>
+    </div>
+    <span>Hover over me to see a tooltip</span>
+</button>
+{% endhighlight %}
+        {% endcodeWellFooter %}
+      {% endcodeWell %}
+      {% codeWell %}
+        {% codeWellHeader %}
+          <div class="d-tooltip d-tooltip__arrow--bottom-center d-tooltip--show">
+            <span>This is a simple tooltip. The tooltip can be positioned in multiple areas too!</span>
+          </div>
+        {% endcodeWellHeader %}
+        {% codeWellFooter %}
+{% highlight html linenos %}
+<div class="d-tooltip d-tooltip__arrow--bottom-center d-tooltip--show">
+  <span>This is a simple tooltip. The tooltip can be positioned in multiple areas too!</span>
+</div>
+{% endhighlight %}
+        {% endcodeWellFooter %}
+      {% endcodeWell %}
+      {% codeWell %}
+        {% codeWellHeader "black-900" %}
+          <div class="d-tooltip d-tooltip__arrow--bottom-center d-tooltip--inverted d-tooltip--show">
+              <span>This is a simple tooltip. The tooltip can be positioned in multiple areas too!</span>
+          </div>
+        {% endcodeWellHeader %}
+        {% codeWellFooter %}
+{% highlight html linenos %}
+<div class="d-tooltip d-tooltip__arrow--bottom-center d-tooltip--inverted d-tooltip--show">
+    <span>This is a simple tooltip. The tooltip can be positioned in multiple areas too!</span>
+</div>
+{% endhighlight %}
+        {% endcodeWellFooter %}
+      {% endcodeWell %}
+    </div>
+    <div class="d-stack8">
+      {% header "h3", "Arrow Directions" %}
+      {% paragraph %}No arrow direction is assigned by default. You must select a direction. Twelve directions are offered: three on each face of the tooltip.{% endparagraph %}
+      {% codeWell %}
+        {% codeWellHeader %}
+          {% assign top-bottom = "left, center, right" | split: ", " %}
+          {% assign left-right = "top, center, bottom" | split: ", " %}
+          {% assign dir = "top, right, bottom, left" | split: ", " %}
+          {% for i in dir %}
+            {% if i == "top" or i == "bottom" %}
+              {% for d in top-bottom %}
+                <div class="d-w30p d-p12">
+                  <div class="d-tooltip d-tooltip__arrow--{{ i }}-{{ d }} d-tooltip--show">
+                    <span class="d-ff-mono d-fs11 d-mb4">.d-tooltip__{{ i }}-{{ d }}</span>
+                    <div>
+                      <span>Arrow appears {{ i | capitalize }} {{ d | capitalize }}.</span>
+                    </div>
+                  </div>
+                </div>
+              {% endfor %}
+            {% elsif i == "left" or i == "right" %}
+              {% for d in left-right %}
+                <div class="d-w30p d-p12">
+                  <div class="d-tooltip d-tooltip__arrow--{{ i }}-{{ d }} d-tooltip--show">
+                    <span class="d-ff-mono d-fs11 d-mb4">.d-tooltip--{{ i }}-{{ d }}</span>
+                    <div>
+                      <span>Arrow appears {{ i | capitalize }} {{ d | capitalize }}.</span>
+                    </div>
+                  </div>
+                </div>
+              {% endfor %}
+            {% endif %}
+          {% endfor %}
+        {% endcodeWellHeader %}
+      {% endcodeWell %}
+    </div>
+  </div>
+</section>
+<section class="d-stack16">
+  {% header "h2", "Accessibility" %}
+  <table class="d-table">
+    <thead>
+      <tr>
+        <th scope="col" class="d-w40p">Item</th>
+        <th scope="col" class="d-w30p">Applies to</th>
+        <th scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in tooltip.accessible %}
+        {% assign item = i.item %}
+        {% assign apply = i.applies %}
+        {% assign desc = i.description %}
+        <tr>
+          <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">{{ item }}</th>
+          <td class="d-ff-mono d-fc-teal-500 d-fs12">{% if apply != "N/A" %}<span class="code-example--inline">.{% endif %}{{ apply }}{% if apply != "N/A" %}</span>{% endif %}</td>
+          <td class="d-fs12">{{ desc }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</section>
