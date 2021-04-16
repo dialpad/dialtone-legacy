@@ -7,7 +7,7 @@ description: Modals focus the user’s attention exclusively on one task or piec
   {% header "h2", "Overview" %}
   {% paragraph %}Modals are used to present a short-term task the user needs to perform without losing the context of the underlying page. Users won't be able to interact with the page until they close the modal.{% endparagraph %}
   {% paragraph %}Although highly versatile, this doesn't mean modal dialogs are fit for all purposes. Modals are purposefully disruptive and should be used thoughtfully and sparingly, specifically in moments where focus is required or an action must be taken.{% endparagraph %}
-  <div class="d-fl-col2 d-flg32 d-mt48 d-mb48">
+  <div class="d-fl-col2 d-flg32 d-mt32 d-mb32">
     <div class="d-d-block d-px16 d-py24 d-bgc-green-100 d-bar4">
       <h3 class="d-mb16">
         <span class="d-fc-green-600 d-ps-relative d-t6">
@@ -69,9 +69,9 @@ description: Modals focus the user’s attention exclusively on one task or piec
         {% assign apply = i.applies %}
         {% assign desc = i.description %}
         <tr>
-          <td><span class="code-example--inline">{{ class }}</span></td>
-          <td class="d-ff-custom d-fs12 d-lh-tight d-fc-slate">{{ apply }}</td>
-          <td class="d-ff-custom d-fs12 d-lh-tight d-fc-slate">{{ desc }}</td>
+          <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.{{ class }}</th>
+          <td class="d-ff-mono d-fc-teal-500 d-fs12">{% if apply != "N/A" %}<span class="code-example--inline">.{% endif %}{{ apply }}{% if apply != "N/A" %}</span>{% endif %}</td>
+          <td>{{ desc }}</td>
         </tr>
       {% endfor %}
     </tbody>
@@ -171,9 +171,9 @@ description: Modals focus the user’s attention exclusively on one task or piec
         {% assign apply = i.applies %}
         {% assign desc = i.description %}
         <tr>
-          <td><span class="code-example--inline">{{ item }}</span></td>
-          <td class="d-ff-custom d-fs12 d-lh-tight d-fc-slate"><span class="code-example--inline">{{ apply }}</span></td>
-          <td class="d-ff-custom d-fs12 d-lh-tight d-fc-slate">{{ desc }}</td>
+          <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">{{ item }}</th>
+          <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ apply }}</td>
+          <td>{{ desc }}</td>
         </tr>
       {% endfor %}
     </tbody>
