@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Modals
-description: Modals focus the user’s attention exclusively on one task or piece of information via a window that sits on top of the page content.
+title: Modal
+description: A modal is an interstitial over page content that focuses the user’s attention exclusively on one task or piece of information.
 ---
 <section class="d-stack16">
   {% header "h2", "Overview" %}
@@ -64,13 +64,13 @@ description: Modals focus the user’s attention exclusively on one task or piec
       </tr>
     </thead>
     <tbody>
-      {% for i in modals.classes %}
+      {% for i in modal.classes %}
         {% assign class = i.class %}
         {% assign apply = i.applies %}
         {% assign desc = i.description %}
         <tr>
-          <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.{{ class }}</th>
-          <td class="d-ff-mono d-fc-teal-500 d-fs12">{% if apply != "N/A" %}<span class="code-example--inline">.{% endif %}{{ apply }}{% if apply != "N/A" %}</span>{% endif %}</td>
+          <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">{{ class }}</th>
+          <td class="d-ff-mono d-fc-teal-500 d-fs12">{% if apply != "N/A" %}<span class="code-example--inline">{% endif %}{{ apply }}{% if apply != "N/A" %}</span>{% endif %}</td>
           <td>{{ desc }}</td>
         </tr>
       {% endfor %}
@@ -166,7 +166,7 @@ description: Modals focus the user’s attention exclusively on one task or piec
       </tr>
     </thead>
     <tbody>
-      {% for i in modals.accessible %}
+      {% for i in modal.accessible %}
         {% assign item = i.item %}
         {% assign apply = i.applies %}
         {% assign desc = i.description %}
@@ -200,4 +200,4 @@ description: Modals focus the user’s attention exclusively on one task or piec
   </div>
 </aside>
 
-<script src="/{{ site.paths.js }}/modals.js"></script>
+<script src="/{{ site.paths.js }}/modal.js"></script>
