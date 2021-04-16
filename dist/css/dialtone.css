@@ -425,27 +425,47 @@ body {
   --button--bs-color-inner: var(--white);
   --button--bs-color-outer: var(--blue-200);
 }
+.d-btn .d-svg {
+  width: 1.6rem !important;
+  height: 1.6rem !important;
+}
 .d-btn.d-btn--xs {
   padding: calc(var(--su4) - var(--su1)) calc(var(--su8) - var(--su1));
   font-size: var(--fs12);
   line-height: 1.66666667;
+}
+.d-btn.d-btn--xs .d-svg {
+  width: 1.2rem !important;
+  height: 1.2rem !important;
 }
 .d-btn.d-btn--sm {
   padding: calc(var(--su6) - var(--su1)) calc(var(--su8) - var(--su1));
   font-size: var(--fs14);
   line-height: 1.42857143;
 }
+.d-btn.d-btn--sm .d-svg {
+  width: 1.4rem !important;
+  height: 1.4rem !important;
+}
 .d-btn.d-btn--lg {
   padding: calc(var(--su12) - var(--su1)) var(--su12);
-  border-radius: var(--br8);
   font-size: var(--fs20);
   line-height: 1.2;
+  --button--br: var(--br8);
+}
+.d-btn.d-btn--lg .d-svg {
+  width: 2rem !important;
+  height: 2rem !important;
 }
 .d-btn.d-btn--xl {
   padding: calc(var(--su12) - var(--su2)) calc(var(--su16) - var(--su1));
-  border-radius: var(--br12);
   font-size: var(--fs24);
   line-height: 1.33333333;
+  --button--br: var(--br12);
+}
+.d-btn.d-btn--xl .d-svg {
+  width: 2.4rem !important;
+  height: 2.4rem !important;
 }
 .d-btn.d-btn--loading {
   pointer-events: none;
@@ -481,6 +501,13 @@ body {
 }
 .d-btn__icon.d-btn__icon--last {
   order: 1;
+  margin-right: var(--sun2);
+  margin-left: var(--su4);
+}
+.d-btn__icon.d-btn__icon--dropdown {
+  order: 1;
+  width: 1.4rem !important;
+  height: 1.4rem !important;
   margin-right: var(--sun2);
   margin-left: var(--su4);
 }
@@ -569,12 +596,8 @@ body {
 }
 .d-btn--circle {
   padding: calc(var(--su8) + var(--su1));
-  border-radius: var(--br-circle);
   transition-duration: 150ms;
-}
-.d-btn--circle .d-svg {
-  height: auto;
-  height: initial;
+  --button--br: var(--br-circle);
 }
 .d-btn--circle .d-btn__icon {
   margin: unset;
@@ -584,15 +607,19 @@ body {
 }
 .d-btn--circle.d-btn--xs {
   padding: var(--su6);
+  --button--br: var(--br-circle);
 }
 .d-btn--circle.d-btn--sm {
   padding: var(--su8);
+  --button--br: var(--br-circle);
 }
 .d-btn--circle.d-btn--lg {
   padding: calc(var(--su12) + var(--su1));
+  --button--br: var(--br-circle);
 }
 .d-btn--circle.d-btn--xl {
   padding: calc(var(--su16) - var(--su2));
+  --button--br: var(--br-circle);
 }
 .d-btn--pill {
   padding-right: var(--su16);
