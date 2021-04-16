@@ -66,8 +66,6 @@ $(document).ready(function() {
         e.stopPropagation();
         e.preventDefault();
 
-        $(modal).attr('aria-hidden','false');
-        $(body).addClass('d-of-hidden');
         $(banner).removeClass('d-d-none');
     });
 
