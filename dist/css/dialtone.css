@@ -394,7 +394,7 @@ body {
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  padding: calc(var(--su8) - var(--su1));
+  padding: calc(var(--su6) - var(--su1)) calc(var(--su8) - var(--su1));
   border: 0.1rem solid transparent;
   border-radius: var(--button--br);
   background-color: var(--button--bgc);
@@ -402,7 +402,7 @@ body {
   color: var(--button--fc);
   font-family: inherit;
   font-size: var(--fs16);
-  line-height: var(--lh-tight);
+  line-height: var(--lh4);
   text-decoration: none;
   text-transform: inherit;
   transition-duration: 75ms;
@@ -430,27 +430,22 @@ body {
   height: 1.6rem !important;
 }
 .d-btn.d-btn--xs {
-  padding: calc(var(--su4) - var(--su1)) calc(var(--su8) - var(--su1));
   font-size: var(--fs12);
-  line-height: 1.66666667;
 }
 .d-btn.d-btn--xs .d-svg {
   width: 1.2rem !important;
   height: 1.2rem !important;
 }
 .d-btn.d-btn--sm {
-  padding: calc(var(--su6) - var(--su1)) calc(var(--su8) - var(--su1));
   font-size: var(--fs14);
-  line-height: 1.42857143;
 }
 .d-btn.d-btn--sm .d-svg {
   width: 1.4rem !important;
   height: 1.4rem !important;
 }
 .d-btn.d-btn--lg {
-  padding: calc(var(--su12) - var(--su1)) var(--su12);
+  padding: calc(var(--su16) - var(--su1)) calc(var(--su12) - var(--su2) - var(--su1));
   font-size: var(--fs20);
-  line-height: 1.2;
   --button--br: var(--br8);
 }
 .d-btn.d-btn--lg .d-svg {
@@ -458,9 +453,8 @@ body {
   height: 2rem !important;
 }
 .d-btn.d-btn--xl {
-  padding: calc(var(--su12) - var(--su2)) calc(var(--su16) - var(--su1));
+  padding: calc(var(--su16) - var(--su1)) calc(var(--su12) - var(--su2) - var(--su1));
   font-size: var(--fs24);
-  line-height: 1.33333333;
   --button--br: var(--br12);
 }
 .d-btn.d-btn--xl .d-svg {
@@ -558,7 +552,6 @@ body {
 .d-btn--inverted {
   --button--fc: var(--white);
   --button--bgc: transparent;
-  z-index: var(--zi-base1);
   box-shadow: none;
 }
 .d-btn--inverted:hover {
@@ -579,7 +572,6 @@ body {
 .d-btn--inverted[focus-within]::before {
   content: '';
   position: absolute;
-  z-index: var(--zi-base);
   width: calc(100% + var(--su4));
   height: calc(100% + var(--su4));
   border-radius: inherit;
@@ -588,7 +580,6 @@ body {
 .d-btn--inverted:focus-within::before {
   content: '';
   position: absolute;
-  z-index: var(--zi-base);
   width: calc(100% + var(--su4));
   height: calc(100% + var(--su4));
   border-radius: inherit;
@@ -622,25 +613,23 @@ body {
   --button--br: var(--br-circle);
 }
 .d-btn--pill {
-  padding-right: var(--su16);
-  padding-left: var(--su16);
+  padding: calc(var(--su6) - var(--su1)) var(--su16);
   border-radius: 100em !important;
 }
 .d-btn--pill.d-btn--xs {
-  padding-right: var(--su8);
-  padding-left: var(--su8);
+  padding: calc(var(--su6) - var(--su1)) var(--su8);
 }
 .d-btn--pill.d-btn--sm {
-  padding-right: var(--su12);
-  padding-left: var(--su12);
+  padding: calc(var(--su6) - var(--su1)) var(--su12);
 }
 .d-btn--pill.d-btn--lg {
-  padding-right: var(--su16);
-  padding-left: var(--su16);
+  padding: calc(var(--su12) - var(--su2) - var(--su1)) var(--su16);
 }
 .d-btn--pill.d-btn--xl {
-  padding-right: var(--su24);
-  padding-left: var(--su24);
+  padding: calc(var(--su12) - var(--su2) - var(--su1)) var(--su24);
+}
+.d-btn.d-btn--disabled {
+  pointer-events: none;
 }
 .d-btn[disabled],
 .d-btn.d-btn--disabled {
@@ -648,8 +637,7 @@ body {
   background-color: var(--black-100);
   color: var(--black-400);
   transition: none;
-  cursor: default;
-  pointer-events: none;
+  cursor: not-allowed;
 }
 .d-btn--brand {
   display: flex;
