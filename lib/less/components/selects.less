@@ -12,10 +12,8 @@
 //
 
 .d-select-disable {
-    --select--fc: #151526; // https://htmlcolors.com/hex-to-hsl
-
-    background: #CBCBD9;
-    border: 1px solid #47475C;
+    background: var(--black-200);
+    border: 1px solid var(--black-500);
 }
 //  ============================================================================
 //  $  SELECT MENU (NATIVE)
@@ -64,8 +62,7 @@
 
       //  [2] Update the styles
       .d-input();
-      --select--bc: #47475C;
-      --select--fc: #151526;
+      --select--bc: var(--black-500);
       padding: 0.7rem 2em 0.7rem 0.7rem;
       height: 100%; // Fill the height of its parent
 
@@ -74,8 +71,8 @@
       border-color:     var(--select--bc);
 
       &:focus {
-        --select--bc: #1635E5;
-        box-shadow: 0 0 0 4px #89b8ff;
+        --select--bc: var(--blue-500);
+        box-shadow: 0 0 0 4px var(--blue-200);
       }
 
       &:disabled {
@@ -97,38 +94,35 @@
 
 //  $$  SIZES
 //  ----------------------------------------------------------------------------
+
 .d-select--xs > select {
   .input-button-xs();
-  font-size: var(--fs12);
-  padding-right: 2em;
+  padding-right: var(--su24);
 }
 .d-select--sm > select {
   .input-button-sm();
-  font-size: var(--fs14);
-  padding-right: 2em;
+  padding-right: var(--su24);
 }
 .d-select--lg > select {
   .input-button-lg();
-  font-size: var(--fs20);
-  padding-left: .7rem;
-  padding-right: 2em; // TODO Select CSS Vars
+  padding-left: var(--su8);
+  padding-right: var(--su24);
 }
 .d-select--xl > select {
   .input-button-xl();
-  font-size: var(--fs24);
-  padding-left: .7rem;
-  padding-right: 2em;
+  padding-left: var(--su8);
+  padding-right: var(--su24);
 }
 
 //  $$  VALIDATION STATES
 //  ----------------------------------------------------------------------------
 .d-select--warning {
     > select {
-        --select--bc: #A06A00;
+        --select--bc: var(--yellow-500);
 
         &:focus {
-            --select--bc: #A06A00;
-            box-shadow: 0 0 0 4px #FFB800;
+            --select--bc: var(--yellow-500);
+            box-shadow: 0 0 0 4px var(--yellow-400);
         }
 
         &:disabled {
@@ -137,7 +131,7 @@
     }
 
     & ~ .d-validation-message--warning {
-        --warning-color: #A06A00;
+        --warning-color: var(--yellow-500);
 
         &::before {
             background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z' fill='#A06A00'/%3E%3C/svg%3E");
@@ -146,11 +140,11 @@
 }
 .d-select--error {
     > select {
-        --select--bc: #E51D29;
+        --select--bc: var(--red-400);
 
         &:focus {
-            --select--bc: #E51D29;
-            box-shadow: 0 0 0 4px #FFB0B5;
+            --select--bc: var(--red-400);
+            box-shadow: 0 0 0 4px var(--red-200);
         }
 
         &:disabled {
@@ -160,7 +154,7 @@
 
 
     & ~ .d-validation-message--error {
-        --error-color: #E51D29;
+        --error-color: var(--red-400);
         &::before {
             background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z' fill='#E51D29'/%3E%3C/svg%3E");
         }
@@ -169,11 +163,11 @@
 
 .d-select--success {
     > select {
-        --select--bc: #08A072;
+        --select--bc: var(--green-400);
 
         &:focus {
-            --select--bc: #08A072;
-            box-shadow: 0 0 0 4px #87DEC4;
+            --select--bc: var(--green-400);
+            box-shadow: 0 0 0 4px var(--green-200);
         }
 
         &:disabled {
@@ -182,36 +176,9 @@
     }
 
     & ~ .d-validation-message--success {
-        --success-color: #076549;
+        --success-color: var(--green-500);
         &::before {
             background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z' fill='#076549'/%3E%3C/svg%3E");
         }
     }
 }
-
-//  ============================================================================
-//  $  LABEL FOR SELECT (NATIVE)
-//  ----------------------------------------------------------------------------
-.d-label label {
-    .d-label();
-    color: #151526;
-    margin-bottom: 0;
-
-    ~ .d-description {
-        margin-bottom: 0;
-        color: #47475C;
-    }
-}
-
-// .d-select__label--xs {
-//     .d-label--xs()
-// }
-// .d-select__label--sm {
-//     .d-label--sm()
-// }
-// .d-select__label--lg {
-//     .d-label--lg();
-// }
-// .d-select__label--xl {
-//     .d-label--xl();
-// }

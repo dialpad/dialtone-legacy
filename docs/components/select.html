@@ -50,18 +50,6 @@ description: Select menus are menus used to provide choices to users.
             </tr>
           {% endfor %}
         </tbody>
-        <tbody>
-          {% for i in select.classes.label %}
-            {% assign class = i.class %}
-            {% assign applies = i.applies %}
-            {% assign desc = i.description %}
-            <tr>
-              <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">{{ class }}</th>
-              <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ applies }}</td>
-              <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ desc }}</td>
-            </tr>
-          {% endfor %}
-        </tbody>
       </table>
     </div>
 </section>
@@ -73,16 +61,6 @@ description: Select menus are menus used to provide choices to users.
     </header>
     <div class="dialtone-example" data-example="yes" data-code="yes">
         <div class="dialtone-example__example dialtone-section8">
-            {% comment %} <label class="d-select__label" for="Dialtone--SelectExample1a">Travel Method</label>
-            <select class="d-select" id="Dialtone--SelectExample1a">
-                <option value="" selected>Please select one</option>
-                <option value="train">Train</option>
-                <option value="plane">Plane</option>
-                <option value="boat">Boat</option>
-                <option value="car">Automobile</option>
-                <option value="walking">Walking</option>
-            </select> {% endcomment %}
-
             <div class="d-label">
                 <label for="Dialtone--SelectExample1a">Travel Method</label>
             </div>
@@ -98,12 +76,6 @@ description: Select menus are menus used to provide choices to users.
             </div>
 <div class="dialtone-example__code">
 {% highlight html linenos %}
-{% comment %} <label class="d-select__label" for="Dialtone--SelectExample1">…</label>
-<div class="d-select">
-    <select id="Dialtone--SelectExample1">
-        <option>…</option>
-    </select>
-</div> {% endcomment %}
 <div class="d-label">
     <label for="Dialtone--SelectExample1">Travel Method</label>
 </div>
@@ -129,22 +101,10 @@ description: Select menus are menus used to provide choices to users.
         </header>
         <div class="dialtone-example" data-example="yes" data-code="yes">
             <div class="dialtone-example__example">
-                {% comment %} <label class="d-select__label" for="Dialtone--SelectExample2">Travel Method</label>
-                <div class="d-select d-select--warning">
-                    <select id="Dialtone--SelectExample2">
-                        <option value="" selected>Please select one</option>
-                        <option value="train">Train</option>
-                        <option value="plane">Plane</option>
-                        <option value="boat">Boat</option>
-                        <option value="car">Automobile</option>
-                        <option value="walking">Walking</option>
-                    </select>
-                </div>
-                <span class="d-validation-message d-validation-message--warning">Consider selecting an option?</span> {% endcomment %}
                 <div class="d-label">
                     <label for="Dialtone--SelectExample2">Travel Method</label>
                 </div>
-                <div class="d-select">
+                <div class="d-select d-select--warning">
                     <select class="d-select__input" id="Dialtone--SelectExample2">
                         <option value="" selected>Please select one</option>
                         <option value="train">Train</option>
@@ -160,13 +120,6 @@ description: Select menus are menus used to provide choices to users.
             </div>
         <div class="dialtone-example__code">
 {% highlight html linenos %}
-{% comment %} <label class="d-select__label" for="Dialtone--SelectExample2">Travel Method</label>
-<div class="d-select d-select--warning">
-    <select id="Dialtone--SelectExample2">
-        <option>…</option>
-    </select>
-</div>
-<span class="d-validation-message d-validation-message--warning">Consider selecting an option?</span> {% endcomment %}
 <div class="d-label">
     <label for="Dialtone--SelectExample2a">Travel Method</label>
 </div>
@@ -189,19 +142,6 @@ description: Select menus are menus used to provide choices to users.
         </header>
         <div class="dialtone-example" data-example="yes" data-code="yes">
             <div class="dialtone-example__example">
-                {% comment %} <label class="d-select__label" for="Dialtone--SelectExample3">Travel Method</label>
-                <div class="d-select d-select--error">
-                    <select id="Dialtone--SelectExample3">
-                        <option value="" selected>Please select one</option>
-                        <option value="train">Train</option>
-                        <option value="plane">Plane</option>
-                        <option value="boat">Boat</option>
-                        <option value="car">Automobile</option>
-                        <option value="walking">Walking</option>
-                    </select>
-                </div>
-                <span class="d-validation-message d-validation-message--error">You must select an option.</span> {% endcomment %}
-                
                 <div class="d-label">
                     <label for="Dialtone--SelectExample3">Travel Method</label>
                 </div>
@@ -220,14 +160,6 @@ description: Select menus are menus used to provide choices to users.
                 </div>
             </div>
 {% highlight html linenos %}
-{% comment %} <label class="d-select__label" for="Dialtone--SelectExample3">Travel Method</label>
-<div class="d-select d-select--error">
-    <select id="Dialtone--SelectExample3">
-        <option>…</option>
-    </select>
-</div>
-<span class="d-validation-message d-validation-message--error">You must select an option.</span> {% endcomment %}
-
 <div class="d-label">
     <label for="Dialtone--SelectExample3a">Travel Method</label>
 </div>
@@ -249,22 +181,10 @@ description: Select menus are menus used to provide choices to users.
         </header>
         <div class="dialtone-example" data-example="yes" data-code="yes">
             <div class="dialtone-example__example">
-                {% comment %} <label class="d-select__label" for="Dialtone--SelectExample4">Travel Method</label>
-                <div class="d-select d-select--success">
-                    <select id="Dialtone--SelectExample4">
-                        <option value="">Please select one</option>
-                        <option value="train">Train</option>
-                        <option value="plane">Plane</option>
-                        <option value="boat">Boat</option>
-                        <option value="car" selected>Automobile</option>
-                        <option value="walking">Walking</option>
-                    </select>
-                </div> {% endcomment %}
-
                 <div class="d-label">
                     <label for="Dialtone--SelectExample4">Travel Method</label>
                 </div>
-                <div class="d-select d-select--error">
+                <div class="d-select d-select--success">
                     <select id="Dialtone--SelectExample4">
                         <option value="" selected>Please select one</option>
                         <option value="train">Train</option>
@@ -279,14 +199,6 @@ description: Select menus are menus used to provide choices to users.
                 </div>
             </div>
 {% highlight html linenos %}
-{% comment %} <label class="d-select__label" for="Dialtone--SelectExample4">Travel Method</label>
-<div class="d-select d-select--success">
-    <select id="Dialtone--SelectExample4">
-        <option>…</option>
-    </select>
-</div>
-<span class="d-validation-message d-validation-message--success">Your selection has been saved.</span> {% endcomment %}
-
 <div class="d-label">
     <label for="Dialtone--SelectExample4a">Travel Method</label>
 </div>
@@ -309,18 +221,6 @@ description: Select menus are menus used to provide choices to users.
         </header>
         <div class="dialtone-example" data-example="yes" data-code="yes">
             <div class="dialtone-example__example">
-                {% comment %} <label class="d-select__label" for="Dialtone--SelectExample5">Travel Method</label>
-                <div class="d-select">
-                    <select id="Dialtone--SelectExample5" disabled>
-                        <option value="" selected>Please select one</option>
-                        <option value="train">Train</option>
-                        <option value="plane">Plane</option>
-                        <option value="boat">Boat</option>
-                        <option value="car">Automobile</option>
-                        <option value="walking">Walking</option>
-                    </select>
-                </div> {% endcomment %}
-
                 <div class="d-label">
                     <label for="Dialtone--SelectExample5">Travel Method</label>
                 </div>
@@ -336,13 +236,6 @@ description: Select menus are menus used to provide choices to users.
                 </div>
             </div>
 {% highlight html linenos %}
-{% comment %} <label class="d-select__label" for="Dialtone--SelectExample5a">Travel Method</label>
-<div class="d-select">
-    <select id="Dialtone--SelectExample5a" disabled>
-        <option>…</option>
-    </select>
-</div> {% endcomment %}
-
 <div class="d-label">
     <label for="Dialtone--SelectExample5a">Travel Method</label>
 </div>
@@ -369,19 +262,6 @@ description: Select menus are menus used to provide choices to users.
             <h3 class="dialtone-title__subsection">Default</h3>
         </header>
         <div class="d-mt16">
-            {% comment %} <label class="d-select__label d-select__label--xs" for="Dialtone--SelectExampleDefault1">Extra Small</label>
-            <span class="d-description">Optional description text</span>
-            <div class="d-select d-select--xs">
-                <select id="Dialtone--SelectExampleDefault1">
-                    <option value="" selected>Please select one</option>
-                    <option value="train">Train</option>
-                    <option value="plane">Plane</option>
-                    <option value="boat">Boat</option>
-                    <option value="car">Automobile</option>
-                    <option value="walking">Walking</option>
-                </select>
-            </div> {% endcomment %}
-
             <div>
                 <label class="d-label d-label--xs" for="Dialtone--SelectExampleDefault1">Extra Small</label>
             </div>
@@ -398,12 +278,10 @@ description: Select menus are menus used to provide choices to users.
                     <option value="walking">Walking</option>
                 </select>
             </div>
-
-            TODO ↓
         </div>
         <div class="d-mt16">
             <div>
-                <label class="d-label d-label--sm" for="Dialtone--SelectExampleDefault2">Small</label>        
+                <label class="d-label d-label--sm" for="Dialtone--SelectExampleDefault2">Small</label>
             </div>
             <div class="d-description">
                 <span>Optional description text</span>
