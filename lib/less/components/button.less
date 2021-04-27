@@ -95,7 +95,6 @@
     }
     &.d-btn--lg {
         padding: calc(var(--su16) - var(--su1)) calc(var(--su12) - var(--su2) - var(--su1)); // Subtract border, su10 doesn't exist so subtract 2 more
-        --button--br:   var(--br8);
         font-size: var(--fs20);
 
         .d-svg {
@@ -104,7 +103,6 @@
     }
     &.d-btn--xl {
         padding: calc(var(--su16) - var(--su1)) calc(var(--su12) - var(--su2) - var(--su1)); // Subtract border, su10 doesn't exist so subtract 2 more
-        --button--br:   var(--br12);
         font-size: var(--fs24);
 
         .d-svg {
@@ -142,13 +140,6 @@
         margin-left: var(--su4);
         margin-right: var(--sun2);
     }
-
-    &.d-btn__icon--dropdown {
-        order: 1;
-        margin-left: var(--su4);
-        margin-right: var(--sun2);
-        .d-svg--size14();
-    }
 }
 
 
@@ -165,9 +156,9 @@
     // }
 }
 
-//  $$  FILLED BUTTON
+//  $$  PRIMARY BUTTON
 //  ----------------------------------------------------------------------------
-.d-btn--filled {
+.d-btn--primary {
     --button--fc: var(--white);
     --button--bgc: var(--primary-color);
 
@@ -236,7 +227,7 @@
         // }
     }
 
-    &.d-btn--filled {
+    &.d-btn--primary {
         --button--fc: var(--white);
         --button--bgc: var(--red-400);
 
@@ -277,8 +268,8 @@
         // }
     }
 
-    //  --  FILLED
-    &.d-btn--filled {
+    //  --  PRIMARY
+    &.d-btn--primary {
         --button--fc: var(--blue-600);
         --button--bgc: var(--white);
 
@@ -294,7 +285,7 @@
 }
 
 // because the inner border of the box-shadow outline needs to be transparent
-// we have to create a pseudo element behind the original element which displays 
+// we have to create a pseudo element behind the original element which displays
 // only a border and grow it to the correct size.
 .d-btn--inverted:focus-within::before {
     content: '';
@@ -308,7 +299,7 @@
 //  $$  CIRCLE BUTTONS
 //  ----------------------------------------------------------------------------
 .d-btn--circle {
-    
+
     padding: calc(var(--su8) + var(--su1));
     --button--br:   var(--br-circle);
     transition-duration: 150ms;
@@ -407,6 +398,8 @@
         height: 2em;
         border-radius: var(--br2);
         background-color: var(--white);
+        justify-content: center;
+        align-items: center
     }
     .d-btn__label {
         flex: 1 auto;
