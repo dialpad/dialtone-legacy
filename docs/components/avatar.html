@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Avatars
-description: Avatars are a visual representation of a user or object.
+title: Avatar
+description: An avatar is a visual representation of a user or object.
 ---
 <section class="d-stack16">
   {% header "h2", "Classes" %}
@@ -9,44 +9,44 @@ description: Avatars are a visual representation of a user or object.
     <table class="d-table">
       <thead>
         <tr>
-          <th scope="col" class="d-w25p">Class</th>
-          <th scope="col" class="d-w25p">Applies</th>
+          <th scope="col" class="d-w40p">Class</th>
+          <th scope="col" class="d-w30p">Applies to</th>
           <th scope="col">Description</th>
         </tr>
       </thead>
       <tbody>
-        {% for i in avatars.classes.base %}
+        {% for i in avatar.classes.base %}
           {% assign class = i.class %}
-          {% assign applies = i.applies %}
+          {% assign apply = i.applies %}
           {% assign desc = i.description %}
           <tr>
-            <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">{{ class }}</th>
-            <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ applies }}</td>
-            <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ desc }}</td>
+            <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.{{ class }}</th>
+            <td class="d-ff-mono d-fc-teal-500 d-fs12">{% if apply != "N/A" %}<span class="code-example--inline">.{% endif %}{{ apply }}{% if apply != "N/A" %}</span>{% endif %}</td>
+            <td class="d-fs12">{{ desc }}</td>
           </tr>
         {% endfor %}
       </tbody>
       <tbody>
-        {% for i in avatars.classes.sizes %}
+        {% for i in avatar.classes.sizes %}
           {% assign class = i.class %}
-          {% assign applies = i.applies %}
+          {% assign apply = i.applies %}
           {% assign desc = i.description %}
           <tr>
-            <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">{{ class }}</th>
-            <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ applies }}</td>
-            <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ desc }}</td>
+            <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.{{ class }}</th>
+            <td class="d-ff-mono d-fc-teal-500 d-fs12">{% if apply != "N/A" %}<span class="code-example--inline">.{% endif %}{{ apply }}{% if apply != "N/A" %}</span>{% endif %}</td>
+            <td class="d-fs12">{{ desc }}</td>
           </tr>
         {% endfor %}
       </tbody>
       <tbody>
-        {% for i in avatars.classes.colors %}
+        {% for i in avatar.classes.colors %}
           {% assign class = i.class %}
-          {% assign applies = i.applies %}
+          {% assign apply = i.applies %}
           {% assign desc = i.description %}
           <tr>
-            <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">{{ class }}</th>
-            <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ applies }}</td>
-            <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ desc }}</td>
+            <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.{{ class }}</th>
+            <td class="d-ff-mono d-fc-teal-500 d-fs12">{% if apply != "N/A" %}<span class="code-example--inline">.{% endif %}{{ apply }}{% if apply != "N/A" %}</span>{% endif %}</td>
+            <td class="d-fs12">{{ desc }}</td>
           </tr>
         {% endfor %}
       </tbody>
@@ -91,7 +91,7 @@ description: Avatars are a visual representation of a user or object.
       {% codeWell %}
         {% codeWellHeader %}
           <div class="d-w100p d-fl-col4 d-flg4 d-fw-wrap d-jc-space-between">
-            {% for i in avatars.classes.colors %}
+            {% for i in avatar.classes.colors %}
               <div class="d-d-fl d-fl-center d-mb8">
                 <div class="d-avatar d-avatar--md {{ i.class }} d-avatar--initials">DP</div>
               </div>
@@ -110,7 +110,7 @@ description: Avatars are a visual representation of a user or object.
       {% codeWell %}
         {% codeWellHeader %}
         <div class="d-d-inline-flex d-ai-center d-flow8">
-          {% for i in avatars.classes.sizes %}
+          {% for i in avatar.classes.sizes %}
             <div class="d-avatar {{ i.class }} d-avatar--blue-400 d-avatar--initials d-mb8">DP</div>
           {% endfor %}
         </div>

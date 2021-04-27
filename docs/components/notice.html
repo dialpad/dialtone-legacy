@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Notices
-description: Notices are informational and assistive messages that appear inline with content.
+title: Notice
+description: A notice is an informational and assistive message that appears inline with content.
 ---
 <section class="d-stack16">
   {% header "h2", "Guidelines" %}
@@ -12,20 +12,20 @@ description: Notices are informational and assistive messages that appear inline
   <table class="d-table">
     <thead>
       <tr>
-        <th scope="col" class="d-w25p">Class</th>
-        <th scope="col" class="d-w25p">Applies to</th>
+        <th scope="col" class="d-w40p">Class</th>
+        <th scope="col" class="d-w30p">Applies to</th>
         <th scope="col">Description</th>
       </tr>
     </thead>
     <tbody>
-      {% for i in notices.classes %}
+      {% for i in notice.classes %}
         {% assign class = i.class %}
         {% assign apply = i.applies %}
         {% assign desc = i.description %}
         <tr>
-          <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">{{ class }}</th>
-          <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ apply }}</td>
-          <td>{{ desc }}</td>
+          <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.{{ class }}</th>
+          <td class="d-ff-mono d-fc-teal-500 d-fs12">{% if apply != "N/A" %}<span class="code-example--inline">.{% endif %}{{ apply }}{% if apply != "N/A" %}</span>{% endif %}</td>
+          <td class="d-fs12">{{ desc }}</td>
         </tr>
       {% endfor %}
     </tbody>
@@ -34,15 +34,15 @@ description: Notices are informational and assistive messages that appear inline
 <section class="d-stack16">
   {% header "h2", "Examples" %}
   <div class="d-stack8">
-    {% header "h3", "Default" %}
+    {% header "h3", "Base Styles" %}
     {% paragraph %}Used in most scenarios when the message should be noticeable but not dominate.{% endparagraph %}
     <aside class="d-bar8 d-mt16">
       {% codeWellHeader "white" %}
         <div class="d-stack12 d-w60p">
-          {% assign styles = "info, warning, error, success, default" | split: ", "%}
+          {% assign styles = "info, warning, error, success, base" | split: ", "%}
           {% for i in styles %}
             <aside class="d-notice d-notice--{{ i }}" role="status" aria-hidden="false">
-              {% if i != "default" %}
+              {% if i != "base" %}
                 <div class="d-notice__icon">
                   {% if i == "info" %}
                     {% iconSystem "info" %}
@@ -102,10 +102,10 @@ description: Notices are informational and assistive messages that appear inline
     {% codeWell %}
       {% codeWellHeader %}
         <div class="d-stack12 d-w60p">
-          {% assign styles = "info, warning, error, success, default" | split: ", "%}
+          {% assign styles = "info, warning, error, success, base" | split: ", "%}
           {% for i in styles %}
             <aside class="d-notice d-notice--{{ i }} d-notice--important" role="alert" aria-hidden="false">
-              {% if i != "default" %}
+              {% if i != "base" %}
                 <div class="d-notice__icon">
                   {% if i == "info" %}
                     {% iconSystem "info" %}
@@ -166,24 +166,24 @@ description: Notices are informational and assistive messages that appear inline
   <table class="d-table">
     <thead>
       <tr>
-        <th scope="col" class="d-w25p">Item</th>
-        <th scope="col" class="d-w25p">Applies to</th>
+        <th scope="col" class="d-w40p">Item</th>
+        <th scope="col" class="d-w30p">Applies to</th>
         <th scope="col">Description</th>
       </tr>
     </thead>
     <tbody>
-      {% for i in notices.accessible %}
+      {% for i in notice.accessible %}
         {% assign item = i.item %}
         {% assign apply = i.applies %}
         {% assign desc = i.description %}
         <tr>
           <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">{{ item }}</th>
           <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ apply }}</td>
-          <td>{{ desc }}</td>
+          <td class="d-fs12">{{ desc }}</td>
         </tr>
       {% endfor %}
     </tbody>
   </table>
 </section>
 
-<script src="/{{ site.paths.js }}/notices.js"></script>
+<script src="/{{ site.paths.js }}/notice.js"></script>
