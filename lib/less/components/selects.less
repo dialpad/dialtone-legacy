@@ -50,7 +50,7 @@
       border-bottom-width: 0;
   }
 
-  > select {
+  .d-select__input {
       //  [1] Reset the appearance
       -webkit-appearance: none;
          -moz-appearance: none;
@@ -92,29 +92,40 @@
 //  $$  SIZES
 //  ----------------------------------------------------------------------------
 
-.d-select--xs > select {
-  .input-button-xs();
-  padding-right: var(--su24);
-}
-.d-select--sm > select {
-  .input-button-sm();
-  padding-right: var(--su24);
-}
-.d-select--lg > select {
-  .input-button-lg();
-  padding-left: var(--su8);
-  padding-right: var(--su24);
-}
-.d-select--xl > select {
-  .input-button-xl();
-  padding-left: var(--su8);
-  padding-right: var(--su24);
-}
+.d-select--xs {
+  .d-select__input {
+    .input-button-xs();
 
+    padding-right: var(--su24);
+  }
+}
+.d-select--sm {
+  .d-select__input {
+    .input-button-sm();
+
+    padding-right: var(--su24);
+  }
+}
+.d-select--lg {
+  .d-select__input {
+    .input-button-lg();
+
+    padding-left: var(--su8);
+    padding-right: var(--su24);
+  }
+}
+.d-select--xl {
+  .d-select__input {
+    .input-button-xl();
+
+    padding-left: var(--su8);
+    padding-right: var(--su24);
+  }
+}
 //  $$  VALIDATION STATES
 //  ----------------------------------------------------------------------------
 .d-select--warning {
-    > select {
+    .d-select__input {
         --select--bc: var(--yellow-500);
 
         &:focus {
@@ -132,7 +143,7 @@
     }
 }
 .d-select--error {
-    > select {
+    .d-select__input {
         --select--bc: var(--red-400);
 
         &:focus {
@@ -151,7 +162,7 @@
 }
 
 .d-select--success {
-    > select {
+    .d-select__input {
         --select--bc: var(--green-400);
 
         &:focus {
