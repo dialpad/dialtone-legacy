@@ -4,39 +4,92 @@ title: Select Menus
 description: Select menus are menus used to provide choices to users.
 ---
 <section class="d-stack16">
+    {% header "h2", "Classes" %}
+    <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
+      <table class="d-table">
+        <thead>
+          <tr>
+            <th scope="col" class="d-w25p">Class</th>
+            <th scope="col" class="d-w25p">Applies</th>
+            <th scope="col">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for i in select.classes.base %}
+            {% assign class = i.class %}
+            {% assign applies = i.applies %}
+            {% assign desc = i.description %}
+            <tr>
+              <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">{{ class }}</th>
+              <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ applies }}</td>
+              <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ desc }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+        <tbody>
+          {% for i in select.classes.sizes %}
+            {% assign class = i.class %}
+            {% assign applies = i.applies %}
+            {% assign desc = i.description %}
+            <tr>
+              <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">{{ class }}</th>
+              <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ applies }}</td>
+              <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ desc }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+        <tbody>
+          {% for i in select.classes.validation %}
+            {% assign class = i.class %}
+            {% assign applies = i.applies %}
+            {% assign desc = i.description %}
+            <tr>
+              <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">{{ class }}</th>
+              <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ applies }}</td>
+              <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ desc }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+</section>
+
+<section class="d-stack16">
     <header class="d-stack8">
         <h2 class="dialtone-title__section">Base Style</h2>
         <p class="dialtone-copy__normal">Select menus are normally paired with a label, but there are times when they can be used without a label.</p>
     </header>
     <div class="dialtone-example" data-example="yes" data-code="yes">
         <div class="dialtone-example__example dialtone-section8">
-            <div class="d-stack16">
-                <label class="d-label" for="Dialtone--SelectExample1a">Travel Method</label>
-                <div class="d-select">
-                    <select id="Dialtone--SelectExample1a">
-                        <option value="" selected>Please select one</option>
-                        <option value="train">Train</option>
-                        <option value="plane">Plane</option>
-                        <option value="boat">Boat</option>
-                        <option value="car">Automobile</option>
-                        <option value="walking">Walking</option>
-                    </select>
-                </div>
+            <div class="d-label">
+                <label for="Dialtone--SelectExample1a">Travel Method</label>
             </div>
-        </div>
-        <div class="dialtone-example__code">
+            <div class="d-select">
+                <select class="d-select__input" id="Dialtone--SelectExample1a">
+                    <option value="" selected>Please select one</option>
+                    <option value="train">Train</option>
+                    <option value="plane">Plane</option>
+                    <option value="boat">Boat</option>
+                    <option value="car">Automobile</option>
+                    <option value="walking">Walking</option>
+                </select>
+            </div>
+<div class="dialtone-example__code">
 {% highlight html linenos %}
-<label class="d-label" for="Dialtone--SelectExample1">…</label>
+<div class="d-label">
+    <label for="Dialtone--SelectExample1">Travel Method</label>
+</div>
 <div class="d-select">
-    <select id="Dialtone--SelectExample1">
+    <select class="d-select__input" id="Dialtone--SelectExample1">
         <option>…</option>
     </select>
 </div>
 {% endhighlight %}
-        </div>
+</div>
     </div>
 </section>
-<section class="d-stack32">
+
+<section class="d-stack16">
     <header class="d-stack8">
         <h2 class="dialtone-title__section">Validation States</h2>
         <p class="dialtone-copy__normal">Provides feedback to the user based on their interction, or lack thereof, with a select menu.</p>
@@ -48,9 +101,11 @@ description: Select menus are menus used to provide choices to users.
         </header>
         <div class="dialtone-example" data-example="yes" data-code="yes">
             <div class="dialtone-example__example">
-                <label class="d-label" for="Dialtone--SelectExample2">Travel Method</label>
-                <div class="d-select d-select--warning">
-                    <select id="Dialtone--SelectExample2">
+                <div class="d-label">
+                    <label for="Dialtone--SelectExample2">Travel Method</label>
+                </div>
+                <div class="d-select">
+                    <select class="d-select__input d-select__input--warning" id="Dialtone--SelectExample2">
                         <option value="" selected>Please select one</option>
                         <option value="train">Train</option>
                         <option value="plane">Plane</option>
@@ -59,20 +114,25 @@ description: Select menus are menus used to provide choices to users.
                         <option value="walking">Walking</option>
                     </select>
                 </div>
-                <span class="d-validation-message d-validation-message--warning">Consider selecting an option?</span>
+                <div class="d-validation-message d-validation-message--warning">
+                    <span>Consider selecting an option?</span>
+                </div>
             </div>
-            <div class="dialtone-example__code">
-{% highlight css %}
-.select-example {
-  .d-select();
-  .d-select--warning();
-}
-.select-message-example {
-  .d-validation-message();
-  .d-validation-message--warning();
-}
+        <div class="dialtone-example__code">
+{% highlight html linenos %}
+<div class="d-label">
+    <label for="Dialtone--SelectExample2a">Travel Method</label>
+</div>
+<div class="d-select">
+    <select class="d-select__input d-select__input--warning" id="Dialtone--SelectExample2a">
+        <option>…</option>
+    </select>
+</div>
+<div class="d-validation-message d-validation-message--warning">
+    <span>Consider selecting an option?</span>
+</div>
 {% endhighlight %}
-            </div>
+        </div>
         </div>
     </div>
     <div class="d-stack16">
@@ -82,9 +142,11 @@ description: Select menus are menus used to provide choices to users.
         </header>
         <div class="dialtone-example" data-example="yes" data-code="yes">
             <div class="dialtone-example__example">
-                <label class="d-label" for="Dialtone--SelectExample3">Travel Method</label>
-                <div class="d-select d-select--error">
-                    <select id="Dialtone--SelectExample3">
+                <div class="d-label">
+                    <label for="Dialtone--SelectExample3">Travel Method</label>
+                </div>
+                <div class="d-select">
+                    <select class="d-select__input d-select__input--error" id="Dialtone--SelectExample3">
                         <option value="" selected>Please select one</option>
                         <option value="train">Train</option>
                         <option value="plane">Plane</option>
@@ -93,20 +155,23 @@ description: Select menus are menus used to provide choices to users.
                         <option value="walking">Walking</option>
                     </select>
                 </div>
-                <span class="d-validation-message d-validation-message--error">You must select an option.</span>
+                <div class="d-validation-message d-validation-message--error">
+                    <span>You must select an option.</span>
+                </div>
             </div>
-            <div class="dialtone-example__code">
-{% highlight css %}
-.select-example {
-  .d-select();
-  .d-select--error();
-}
-.select-message-example {
-  .d-validation-message();
-  .d-validation-message--error();
-}
+{% highlight html linenos %}
+<div class="d-label">
+    <label for="Dialtone--SelectExample3a">Travel Method</label>
+</div>
+<div class="d-select">
+    <select class="d-select__input d-select__input--error" id="Dialtone--SelectExample3a">
+        <option>…</option>
+    </select>
+</div>
+<div class="d-validation-message d-validation-message--error">
+    <span>You must select an option.</span>
+</div>
 {% endhighlight %}
-            </div>
         </div>
     </div>
     <div class="d-stack16">
@@ -116,31 +181,232 @@ description: Select menus are menus used to provide choices to users.
         </header>
         <div class="dialtone-example" data-example="yes" data-code="yes">
             <div class="dialtone-example__example">
-                <label class="d-label" for="Dialtone--SelectExample4">Travel Method</label>
-                <div class="d-select d-select--success">
-                    <select id="Dialtone--SelectExample4">
-                        <option value="">Please select one</option>
+                <div class="d-label">
+                    <label for="Dialtone--SelectExample4">Travel Method</label>
+                </div>
+                <div class="d-select">
+                    <select class="d-select__input d-select__input--success" id="Dialtone--SelectExample4">
+                        <option value="" selected>Please select one</option>
                         <option value="train">Train</option>
                         <option value="plane">Plane</option>
                         <option value="boat">Boat</option>
-                        <option value="car" selected>Automobile</option>
+                        <option value="car">Automobile</option>
                         <option value="walking">Walking</option>
                     </select>
                 </div>
-                <span class="d-validation-message d-validation-message--success">Your selection has been saved.</span>
+                <div class="d-validation-message d-validation-message--success">
+                    <span>Your selection has been saved.</span>
+                </div>
             </div>
-            <div class="dialtone-example__code">
-{% highlight css %}
-.select-example {
-  .d-select();
-  .d-select--success();
-}
-.select-message-example {
-  .d-validation-message();
-  .d-validation-message--success();
-}
+{% highlight html linenos %}
+<div class="d-label">
+    <label for="Dialtone--SelectExample4a">Travel Method</label>
+</div>
+<div class="d-select">
+    <select class="d-select__input d-select__input--success" id="Dialtone--SelectExample4a">
+        <option>…</option>
+    </select>
+</div>
+<div class="d-validation-message d-validation-message--success">
+    <span>Your selection has been saved.</span>
+</div>
+
 {% endhighlight %}
+        </div>
+    </div>
+    <div class="d-stack16">
+        <header class="d-stack8">
+            <h3 class="dialtone-title__subsection">Disabled</h3>
+            <p class="dialtone-copy__normal">Add the disabled boolean attribute on a select to give it a grayed out appearance and remove pointer events.</p>
+        </header>
+        <div class="dialtone-example" data-example="yes" data-code="yes">
+            <div class="dialtone-example__example">
+                <div class="d-label">
+                    <label for="Dialtone--SelectExample5">Travel Method</label>
+                </div>
+                <div class="d-select">
+                    <select class="d-select__input" id="Dialtone--SelectExample5" disabled>
+                        <option value="" selected>Please select one</option>
+                        <option value="train">Train</option>
+                        <option value="plane">Plane</option>
+                        <option value="boat">Boat</option>
+                        <option value="car">Automobile</option>
+                        <option value="walking">Walking</option>
+                    </select>
+                </div>
+            </div>
+{% highlight html linenos %}
+<div class="d-label">
+    <label for="Dialtone--SelectExample5a">Travel Method</label>
+</div>
+<div class="d-select">
+    <select class="d-select__input" id="Dialtone--SelectExample5a" disabled>
+        <option>…</option>
+    </select>
+</div>
+{% endhighlight %}
+        </div>
+    </div>
+</section>
+<section class="d-stack16">
+    <header class="d-stack8">
+        <h2 class="dialtone-title__section">Sizes</h2>
+    </header>
+    <div class="d-my16">
+        <div class="d-mt16">
+            <div class="d-label d-label--xs">
+                <label for="Dialtone--SelectExampleDefault1">Extra Small</label>
+            </div>
+            <div class="d-description">
+                <span>Optional description text</span>
+            </div>
+            <div class="d-select d-select--xs">
+                <select class="d-select__input" id="Dialtone--SelectExampleDefault1">
+                    <option value="" selected>Please select one</option>
+                    <option value="train">Train</option>
+                    <option value="plane">Plane</option>
+                    <option value="boat">Boat</option>
+                    <option value="car">Automobile</option>
+                    <option value="walking">Walking</option>
+                </select>
             </div>
         </div>
+{% highlight html linenos %}
+<div class="d-label d-label--xs">
+    <label for="Dialtone--SelectExampleDefault1">Extra Small</label>
+</div>
+<div class="d-description">
+    <span>Optional description text</span>
+</div>
+<div class="d-select d-select--xs">
+    <select class="d-select__input" id="Dialtone--SelectExampleDefault1">
+        <option>…</option>
+    </select>
+</div>
+{% endhighlight %}
+        <div class="d-mt16">
+            <div class="d-label d-label--sm">
+                <label for="Dialtone--SelectExampleDefault2">Small</label>
+            </div>
+            <div class="d-description">
+                <span>Optional description text</span>
+            </div>
+            <div class="d-select d-select--sm">
+                <select class="d-select__input" id="Dialtone--SelectExampleDefault2">
+                    <option value="" selected>Please select one</option>
+                    <option value="train">Train</option>
+                    <option value="plane">Plane</option>
+                    <option value="boat">Boat</option>
+                    <option value="car">Automobile</option>
+                    <option value="walking">Walking</option>
+                </select>
+            </div>
+        </div>
+{% highlight html linenos %}
+<div class="d-label d-label--sm">
+    <label for="Dialtone--SelectExampleDefault2">Small</label>
+</div>
+<div class="d-description">
+    <span>Optional description text</span>
+</div>
+<div class="d-select d-select--sm">
+    <select class="d-select__input" id="Dialtone--SelectExampleDefault2">
+        <option>…</option>
+    </select>
+</div>
+{% endhighlight %}
+        <div class="d-mt16">
+            <div class="d-label">
+                <label for="Dialtone--SelectExampleDefault3">Medium</label>
+            </div>
+            <div class="d-description">
+                <span>Optional description text</span>
+            </div>
+            <div class="d-select">
+                <select class="d-select__input" id="Dialtone--SelectExampleDefault3">
+                    <option value="" selected>Please select one</option>
+                    <option value="train">Train</option>
+                    <option value="plane">Plane</option>
+                    <option value="boat">Boat</option>
+                    <option value="car">Automobile</option>
+                    <option value="walking">Walking</option>
+                </select>
+            </div>
+        </div>
+{% highlight html linenos %}
+<div class="d-label">
+    <label for="Dialtone--SelectExampleDefault3">Medium</label>
+</div>
+<div class="d-description">
+    <span>Optional description text</span>
+</div>
+<div class="d-select">
+    <select class="d-select__input" id="Dialtone--SelectExampleDefault3">
+        <option>…</option>
+    </select>
+</div>
+{% endhighlight %}
+        <div class="d-mt16">
+            <div class="d-label d-label--lg">
+                <label for="Dialtone--SelectExampleDefault4">Large</label>
+            </div>
+            <div class="d-description d-description--lg">
+                <span>Optional description text</span>
+            </div>
+            <div class="d-select d-select--lg">
+                <select class="d-select__input" id="Dialtone--SelectExampleDefault4">
+                    <option value="" selected>Please select one</option>
+                    <option value="train">Train</option>
+                    <option value="plane">Plane</option>
+                    <option value="boat">Boat</option>
+                    <option value="car">Automobile</option>
+                    <option value="walking">Walking</option>
+                </select>
+            </div>
+        </div>
+{% highlight html linenos %}
+<div class="d-label d-label--lg">
+    <label for="Dialtone--SelectExampleDefault4">Large</label>
+</div>
+<div class="d-description d-description--lg">
+    <span>Optional description text</span>
+</div>
+<div class="d-select d-select--lg">
+    <select class="d-select__input" id="Dialtone--SelectExampleDefault4">
+        <option>…</option>
+    </select>
+</div>
+{% endhighlight %}
+        <div class="d-mt16">
+            <div class="d-label d-label--xl">
+                <label for="Dialtone--SelectExampleDefault5">Extra Large</label>
+            </div>
+            <div class="d-description d-description--xl">
+                <span>Optional description text</span>
+            </div>
+            <div class="d-select d-select--xl">
+                <select class="d-select__input" id="Dialtone--SelectExampleDefault5">
+                    <option value="" selected>Please select one</option>
+                    <option value="train">Train</option>
+                    <option value="plane">Plane</option>
+                    <option value="boat">Boat</option>
+                    <option value="car">Automobile</option>
+                    <option value="walking">Walking</option>
+                </select>
+            </div>
+        </div>
+{% highlight html linenos %}
+<div class="d-label d-label--xl">
+    <label for="Dialtone--SelectExampleDefault5">Extra Large</label>
+</div>
+<div class="d-description d-description--xl">
+    <span>Optional description text</span>
+</div>
+<div class="d-select d-select--xl">
+    <select class="d-select__input" id="Dialtone--SelectExampleDefault5">
+        <option>…</option>
+    </select>
+</div>
+{% endhighlight %}
     </div>
 </section>
