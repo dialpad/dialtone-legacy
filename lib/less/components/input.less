@@ -12,37 +12,49 @@
 //    - Base Style
 //    - Validation States
 //    - Sizes
-//  • SELECT MENUS
-//  • CHECKBOXES
-//  • RADIOS
-//  • TOGGLES
-//  • LABELS
+//  • INPUT ICONS
 //
 //  ============================================================================
+//  Inputs CSS Vars
+//  ----------------------------------------------------------------------------
+@inputs-icon-spacing--xs: calc(var(--su4) + @icon12 + var(--su8));
+@inputs-icon-spacing--sm: calc(var(--su4) + @icon14 + var(--su8));
+@inputs-icon-spacing:     calc(var(--su4) + @icon16 + var(--su8));
+@inputs-icon-spacing--lg: calc(var(--su4) + @icon20 + var(--su8));
+@inputs-icon-spacing--xl: calc(var(--su4) + @icon24 + var(--su8));
+
 //  $  INPUTS
 //  ----------------------------------------------------------------------------
 .d-input,
 .d-textarea {
+    //  Component CSS Vars
+    //  ------------------------------------------------------------------------
+    --input--focus-bc:     var(--primary-color);
+    --input--bc:           var(--black-500);
+    --input--bgc:          var(--white);
+    --input--fc:           var(--black-800);
+
     box-sizing: border-box;
 
     position: relative;
     display: inline-flex;
     flex: 1 0%;
-    padding: calc(var(--su8) - var(--su1));
+    margin-top: var(--su6);
+    padding:    0.7rem var(--su8);
     min-width: 0;
     width: 100%;
     outline: none;
 
-    background-color: var(--white);
-    border: 1px solid var(--black-400);
+    color: var(--input--fc);
+    background-color: var(--input--bgc);
+    border: 1px solid var(--input--bc);
     border-radius: var(--base--corner-radius);
     box-shadow: none;
 
     font-weight: inherit;
     font-size: var(--fs16);
     font-family: inherit;
-    line-height: var(--lh-tight);
-    color: var(--fc-dark);
+    line-height: var(--lh4);
 
     transition-timing-function: var(--ttf-in-out);
     transition-duration: 100ms;
@@ -56,21 +68,28 @@
     &::-ms-clear {
         display: none;
     }
+    //  --  FOCUS
     &:focus {
-        border-color: var(--primary-color);
-        box-shadow: inset 0 0 var(--su2) 0 var(--black-100),
-                          0 0 0 0.25em var(--focus-ring);
+        --input--bc: var(--input--focus-bc);
+
+        box-shadow: 0 0 0 var(--su1) var(--white),
+                    0 0 0 0.25em var(--focus-ring);
         outline: 0;
     }
     //  --  DISABLED / READ-ONLY
     &[disabled],
     &[read-only] {
-        border-color: var(--black-100);
-        background-color: var(--black-050);
+        --input--bc:           var(--black-500);
+        --input--bgc:          var(--black-200);
+
         box-shadow: none;
-        color: var(--black-700);
+
+        //  --  Placeholder copy
+        &::placeholder {
+            color: var(--black-400);
+        }
     }
-    //  Disabled
+    //  --  DISABLED
     &[disabled] {
         cursor: not-allowed;
     }
@@ -91,19 +110,20 @@
     .input-button-xl();
 }
 
+
 //  ============================================================================
 //  $  TEXTAREAS
 //  ----------------------------------------------------------------------------
 .d-textarea {
     min-height: 8rem;
-    padding: calc(var(--su12) - var(--su1));
+    vertical-align: top;
 }
 
 //  $$  SIZES
 //  ----------------------------------------------------------------------------
 .d-textarea--xs {
     .input-button-xs();
-    min-height: 4rem;
+    min-height:  4rem;
 }
 .d-textarea--sm {
     .input-button-sm();
@@ -118,247 +138,144 @@
     min-height: 10rem;
 }
 
-
-//  ============================================================================
-//  $  SELECT MENU (NATIVE)
-//  ----------------------------------------------------------------------------
-.d-select {
-    box-sizing: border-box;
-    position: relative;
-    font-weight: inherit;
-    font-size: var(--fs16);
-    font-family: inherit;
-    line-height: var(--lh-tight);
-
-    //  --  Creat some arrows
-    &:before,
-    &:after {
-        content: "";
-        position: absolute;
-        z-index: var(--zi-selected);
-        right: 0.75em;
-        border-color: var(--black-900) transparent;
-        border-style: solid;
-        border-width: 0.25em;
-        pointer-events: none;
-    }
-    &:before {
-        top: calc(~"50% - 0.25em");
-        border-top-width: 0;
-    }
-    &:after {
-        top: calc(~"50% + 0.125em");
-        border-bottom-width: 0;
-    }
-
-    > select {
-        //  [1] Reset the appearance
-        -webkit-appearance: none;
-           -moz-appearance: none;
-                appearance: none;
-
-        //  [2] Update the styles
-        .d-input();
-        padding: 0.7rem 2em 0.7rem 0.7rem;
-        height: 100%; // Fill the height of its parent
-
-        &::-moz-focus-inner {
-            outline: none !important;
-        }
-        &:-moz-focusring {
-            color: transparent;
-            text-shadow: 0 0 0 var(--black-900);
-        }
-        &::-ms-expand {
-            display: none;
-        }
-    }
-}
-
-//  $$  SIZES
-//  ----------------------------------------------------------------------------
-.d-select--xs > select {
-    .input-button-xs();
-    padding-right: 2em;
-}
-.d-select--sm > select {
-    .input-button-sm();
-    padding-right: 2em;
-}
-.d-select--lg > select {
-    .input-button-lg();
-    padding-right: 2em;
-}
-.d-select--xl > select {
-    .input-button-xl();
-    padding-right: 2em;
-}
-
 //  $$  VALIDATION STATES
 //  ----------------------------------------------------------------------------
 .d-input--warning,
-.d-textarea--warning,
-.d-select--warning > select {
-    border-color: var(--warning-color) !important;
+.d-textarea--warning {
+    --input--bc:        var(--warning-color);
+    --input--focus-bc:  var(--warning-color);
 
     &:focus {
-        box-shadow: inset 0 0 var(--su2) 0 var(--black-100),
-                          0 0 0 0.25em hsla(var(--warning-color-hsl) ~" / " 25%);
+        box-shadow: 0 0 0 var(--su1) var(--white),
+                    0 0 0 0.25em var(--warning-color-focus);
     }
 }
 .d-input--error,
-.d-textarea--error,
-.d-select--error > select {
-    border-color: var(--error-color) !important;
+.d-textarea--error {
+    --input--bc:        var(--error-color);
+    --input--focus-bc:  var(--error-color);
 
     &:focus {
-        box-shadow: inset 0 0 var(--su2) 0 var(--black-100),
-                          0 0 0 0.25em hsla(var(--error-color-hsl) ~" / " 25%);
+        box-shadow: 0 0 0 var(--su1) var(--white),
+                    0 0 0 0.25em var(--error-color-focus);
     }
 }
 .d-input--success,
-.d-textarea--success,
-.d-select--success > select {
-    border-color: var(--success-color) !important;
+.d-textarea--success {
+    --input--bc:        var(--success-color);
+    --input--focus-bc:  var(--success-color);
 
     &:focus {
-        box-shadow: inset 0 0 var(--su2) 0 var(--black-100),
-                          0 0 0 0.25em hsla(var(--success-color-hsl) ~" / " 25%);
+        box-shadow: 0 0 0 var(--su1) var(--white),
+                    0 0 0 0.25em var(--success-color-focus);
     }
 }
 
-
 //  ============================================================================
-//  $  FIELDSET
+//  $  INPUT ICONS
 //  ----------------------------------------------------------------------------
-fieldset {
-    padding: var(--su0);
-    min-width: var(--su0);
-    border: none;
-}
+.d-input-icon {
+    //  Component CSS Vars
+    //  ------------------------------------------------------------------------
+    --input-icon-size: @icon16;
 
+    position: absolute;
+    z-index:  var(--zi-base1);
+    margin: 0;
+    margin-top: 1.5rem;
 
-//  ============================================================================
-//  $  LABELS
-//  ----------------------------------------------------------------------------
-.d-label {
-    box-sizing: border-box;
+    height: var(--input-icon-size);
+    width:  var(--input-icon-size);
 
-    display: flex;
-    flex: 1 0%;
-    align-items: baseline;
-    justify-content: space-between;
-
-    font-weight: @fw-bold;
-    font-size: var(--fs16);
-    font-family: inherit;
-    line-height: var(--lh-normal);
-    color: currentColor;
-
-    cursor: pointer;
-    word-break: break-word;
-    overflow-wrap: break-word;
-
-    legend& { cursor: default; }
-}
-
-//  $$  SIZES
-//  ----------------------------------------------------------------------------
-.d-label--xs {
-    font-size: var(--fs12);
-    line-height: 1.333333333;
-}
-.d-label--sm {
-    font-size: var(--fs14);
-    line-height: 1.142857143;
-}
-.d-label--lg {
-    font-size: var(--fs18);
-    line-height: 1.111111111;
-}
-.d-label--xl {
-    font-size: var(--fs20);
-    line-height: 1.2;
-}
-
-
-//  ============================================================================
-//  $  COPY STYLES
-//  ============================================================================
-//  $$ LABEL DESCRIPTION
-//  ----------------------------------------------------------------------------
-.d-description {
-    box-sizing: border-box;
-
-    display: flex;
-    margin: var(--su0);
-    color: var(--black-200);
-    fill: currentColor;
-    font-size: var(--fs12);
-    font-family: inherit;
-    line-height: 1.333333333;
-}
-
-//  --  SIZES
-//  ----------------------------------------------------------------------------
-.d-description--lg {
-    font-size: var(--fs14);
-    line-height: 1.428571429;
-}
-
-
-//  $$ INPUT MESSAGE
-//  ----------------------------------------------------------------------------
-.d-input-message {
-    box-sizing: border-box;
-
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-
-    color: var(--slate-lighter);
-    fill: currentColor;
-    font-size: var(--fs12);
-    font-family: inherit;
-    font-weight: inherit;
-    line-height: 1.333333333;
-
-    > a[href] {
-        .d-link();
-        .d-link--muted();
+    svg {
+        height: var(--input-icon-size);
+        width:  var(--input-icon-size);
     }
 }
 
-//  --  SIZES
+//  $$ POSITIONS
 //  ----------------------------------------------------------------------------
-.d-input-message--lg {
-    font-size: var(--fs14);
-    line-height: 1.428571429;
-}
+.d-input-icon--left {
+    left: var(--su8);
 
-//  $$  VALIDATION STATES
-//  ----------------------------------------------------------------------------
-.d-input-message--warning {
-    color: var(--warning-color-text);
-
-    > a[href] {
-        .d-link();
-        .d-link--warning();
+    // Update padding for d-input, d-textarea if d-input-icon--left is present
+    & ~ .d-input,
+    & ~ .d-textarea {
+        padding-left: @inputs-icon-spacing;
     }
 }
-.d-input-message--error {
-    color: var(--error-color-text);
 
-    > a[href] {
-        .d-link();
-        .d-link--danger();
+.d-input-icon--right {
+    right: var(--su8);
+
+    // Update padding for d-input if d-input-icon--right is present
+    & ~ .d-input {
+        padding-right: @inputs-icon-spacing;
     }
 }
-.d-input-message--success {
-    color: var(--success-color-text);
 
-    > a[href] {
-        .d-link();
-        .d-link--success();
+//  $$ SIZES
+//  ----------------------------------------------------------------------------
+.d-input-icon--xs {
+    --input-icon-size: @icon12;
+    margin-top:        0.9rem;
+
+    // Update padding for d-input, d-textarea if d-input-icon--left is present
+    &.d-input-icon--left ~ .d-input,
+    &.d-input-icon--left ~ .d-textarea {
+        padding-left: @inputs-icon-spacing--xs;
+    }
+
+    // Update padding for d-input if d-input-icon--right is present
+    &.d-input-icon--right ~ .d-input {
+        padding-right: @inputs-icon-spacing--xs;
+    }
+}
+
+.d-input-icon--sm {
+    --input-icon-size: @icon14;
+    margin-top:        var(--su12);
+
+    // Update padding for d-input, d-textarea if d-input-icon--left is present
+    &.d-input-icon--left ~ .d-input,
+    &.d-input-icon--left ~ .d-textarea {
+        padding-left: @inputs-icon-spacing--sm;
+    }
+
+    // Update padding for d-input if d-input-icon--right is present
+    &.d-input-icon--right ~ .d-input {
+        padding-right: @inputs-icon-spacing--sm;
+    }
+}
+
+.d-input-icon--lg {
+    --input-icon-size: @icon20;
+    margin-top:        2.1rem;
+
+    // Update padding for d-input, d-textarea if d-input-icon--left is present
+    &.d-input-icon--left ~ .d-input,
+    &.d-input-icon--left ~ .d-textarea {
+        padding-left: @inputs-icon-spacing--lg;
+    }
+
+    // Update padding for d-input if d-input-icon--right is present
+    &.d-input-icon--right ~ .d-input {
+        padding-right: @inputs-icon-spacing--lg;
+    }
+}
+
+.d-input-icon--xl {
+    --input-icon-size: @icon24;
+    margin-top:        2.3rem;
+
+    // Update padding for d-input, d-textarea if d-input-icon--left is present
+    &.d-input-icon--left ~ .d-input,
+    &.d-input-icon--left ~ .d-textarea {
+        padding-left: @inputs-icon-spacing--xl;
+    }
+
+    // Update padding for d-input if d-input-icon--right is present
+    &.d-input-icon--right ~ .d-input {
+        padding-right: @inputs-icon-spacing--xl;
     }
 }

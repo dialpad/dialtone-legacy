@@ -1,0 +1,31 @@
+---
+layout: page-no-toc
+title: Color Palette
+description: Dialpad uses specific color choices to help communicate user interface functionality, states, and actions within the product. These colors have been selected for on-screen use.
+---
+<section class="d-d-grid d-grg64 d-gcg24 d-g-cols2 md:d-g-cols1">
+  {% for color in colors.colors %}
+    {% assign c = color.color %}
+    <div class="d-stack16">
+      <h2 class="d-headline24">{{ c | capitalize }}</h2>
+      <div class="dialtone-color-grid__group" style="--color-grid-columns: 1">
+        {% for s in color.stops %}
+          {% assign stop = s.stop %}
+          {% assign hex = s.hex %}
+          {% assign hsl = s.hsl %}
+          {% assign copy = s.copy %}
+          {% assign contrast = s.contrast %}
+          <div class="dialtone-color-grid__item d-px24 d-py12 d-bgc-{{ c }}-{{ stop }} d-fc-{{ copy }}{% if c == 'white' %} d-ba d-bc-black-900 d-baw1{% endif %}">
+            <div class="d-d-flex d-jc-space-between d-mb8">
+              <p class="d-d-inline-block d-fs18 d-fw-bold">{{ c | capitalize }} {{ stop }}</p>
+              <p class="d-d-inline-block d-fs14 d-fw-medium">{{ contrast }}</p>
+            </div>
+            <p class="d-fs12 d-ff-mono"><span class="d-fw-bold">CSS:</span> var(--{{ c }}-{{ stop }})</p>
+            <p class="d-fs12 d-ff-mono"><span class="d-fw-bold">HSL:</span> {{ hsl }}</p>
+            <p class="d-fs12 d-ff-mono"><span class="d-fw-bold">HEX:</span> #{{ hex }}</p>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% endfor %}
+</section>
