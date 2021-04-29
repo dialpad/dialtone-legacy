@@ -64,10 +64,10 @@ var git = settings.build ? require('gulp-git') : null;
 var paths = {
     versionFile: './docs/_includes/version.html',
     clean: {
-        libCss: './dist/css/**/*',
-        libSvg: './dist/svg/**/*',
-        libVue: './dist/vue/**/*',
-        libFavicons: './dist/favicons/**/*',
+        libCss: './lib/dist/css/**/*',
+        libSvg: './lib/dist/svg/**/*',
+        libVue: './lib/dist/vue/**/*',
+        libFavicons: './lib/dist/favicons/**/*',
         libFonts: './dist/fonts/**/*',
         docs: './docs/_site/**/*',
         docsCache: './docs/.jekyll-cache/**/*',
@@ -76,38 +76,38 @@ var paths = {
         docsFonts: './docs/assets/fonts/**/*'
     },
     scripts: {
-        input: './lib/js/',
-        output: './dist/js/'
+        input: './lib/build/js/',
+        output: './lib/dist/js/'
     },
     styles: {
-        inputLib: './lib/less/dialtone.less',
-        outputLib: './dist/css/',
+        inputLib: './lib/build/less/dialtone.less',
+        outputLib: './lib/dist/css/',
         inputDocs: './docs/assets/less/dialtone-docs.less',
         outputDocs: './docs/assets/css/',
     },
     svgs: {
-        sysInput: './lib/svg/system/**/*.svg',
-        sysOutputLib: './dist/svg/system/',
+        sysInput: './lib/build/svg/system/**/*.svg',
+        sysOutputLib: './lib/dist/svg/system/',
         sysOutputDocs: './docs/_includes/icons/system/',
-        brandInput: './lib/svg/brand/**/*.svg',
-        brandOutputLib: './dist/svg/brand/',
+        brandInput: './lib/build/svg/brand/**/*.svg',
+        brandOutputLib: './lib/dist/svg/brand/',
         brandOutputDocs: './docs/_includes/icons/brand/',
-        outputVue: './dist/vue/icons/',
+        outputVue: './lib/dist/vue/icons/',
     },
     patterns: {
-        input: './lib/svg/patterns/**/*.svg',
-        outputLib: './dist/svg/patterns/',
+        input: './lib/build/svg/patterns/**/*.svg',
+        outputLib: './lib/dist/svg/patterns/',
         outputDocs: './docs/_includes/patterns/',
-        outputVue: './dist/vue/patterns/',
+        outputVue: './lib/dist/vue/patterns/',
     },
     favicons: {
         dpName: 'Dialpad',
         dpBgColor: '#FFFFFF',
-        dpInput: './lib/favicons/dialpad/',
-        dpOutput: './dist/favicons/dialpad/',
-        ucInput: './lib/favicons/uberconference/',
-        ucOutput: './dist/favicons/uberconference/',
-        docsInput: './lib/favicons/',
+        dpInput: './lib/build/favicons/dialpad/',
+        dpOutput: './lib/dist/favicons/dialpad/',
+        ucInput: './lib/build/favicons/uberconference/',
+        ucOutput: './lib/dist/favicons/uberconference/',
+        docsInput: './lib/build/favicons/',
         docsOutput: './docs/assets/images/favicons/',
         docsIcon: 'favicon-dialtone__512.png',
         dp: 'favicon__512.png',
@@ -120,12 +120,12 @@ var paths = {
         uc: 'favicon-uberconference__512.png',
     },
     fonts: {
-        input: './lib/fonts/**/*.ttf',
-        outputLib: './dist/fonts/',
+        input: './lib/build/fonts/**/*.ttf',
+        outputLib: './lib/dist/fonts/',
         outputDocs: './docs/assets/fonts/'
     },
     mobile: {
-        output: './dist/ios/'
+        output: './lib/dist/ios/'
     },
     build: {
         input: './docs/',
@@ -134,7 +134,7 @@ var paths = {
         baseurl: ''
     },
     watch: {
-        lib: './lib/less/**/*',
+        lib: './lib/build/less/**/*',
         docs: './docs/**/*',
         docsExcludeSite: '!./docs/_site/**/*',
         docsExcludeCSS: '!./docs/assets/css/**/*',
