@@ -31,7 +31,7 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    padding: calc(var(--su6) - var(--su1)) calc(var(--su8) - var(--su1));  // Subtract border
+    padding: calc(var(--su8) - var(--su1));  // Subtract border
 
     border: 0.1rem solid transparent;
     border-radius: var(--button--br);
@@ -78,6 +78,7 @@
     //  --  SIZES
     //  ------------------------------------------------------------------------
     &.d-btn--xs {
+        padding: calc(var(--su6) - var(--su1)) calc(var(--su8) - var(--su1));  // Subtract border
         font-size: var(--fs12);
 
         .d-svg {
@@ -87,15 +88,16 @@
         }
     }
     &.d-btn--sm {
+        padding: calc(var(--su6) - var(--su1)) calc(var(--su8) - var(--su1));  // Subtract border
         font-size: var(--fs14);
+        line-height: var(--lh6);
 
         .d-svg {
             .d-svg--size14
         }
     }
     &.d-btn--lg {
-        padding: calc(var(--su16) - var(--su1)) calc(var(--su12) - var(--su2) - var(--su1)); // Subtract border, su10 doesn't exist so subtract 2 more
-        --button--br:   var(--br8);
+        padding: calc(var(--su12) - var(--su1)) calc(var(--su16) - var(--su1)); // Subtract border
         font-size: var(--fs20);
 
         .d-svg {
@@ -103,9 +105,9 @@
         }
     }
     &.d-btn--xl {
-        padding: calc(var(--su16) - var(--su1)) calc(var(--su12) - var(--su2) - var(--su1)); // Subtract border, su10 doesn't exist so subtract 2 more
-        --button--br:   var(--br12);
+        padding: calc(var(--su12) - var(--su1)) calc(var(--su16) - var(--su1)); // Subtract border
         font-size: var(--fs24);
+        line-height: var(--lh8);
 
         .d-svg {
             .d-svg--size24
@@ -142,13 +144,6 @@
         margin-left: var(--su4);
         margin-right: var(--sun2);
     }
-
-    &.d-btn__icon--dropdown {
-        order: 1;
-        margin-left: var(--su4);
-        margin-right: var(--sun2);
-        .d-svg--size14();
-    }
 }
 
 
@@ -165,9 +160,9 @@
     // }
 }
 
-//  $$  FILLED BUTTON
+//  $$  PRIMARY BUTTON
 //  ----------------------------------------------------------------------------
-.d-btn--filled {
+.d-btn--primary {
     --button--fc: var(--white);
     --button--bgc: var(--primary-color);
 
@@ -236,7 +231,7 @@
         // }
     }
 
-    &.d-btn--filled {
+    &.d-btn--primary {
         --button--fc: var(--white);
         --button--bgc: var(--red-400);
 
@@ -277,8 +272,8 @@
         // }
     }
 
-    //  --  FILLED
-    &.d-btn--filled {
+    //  --  PRIMARY
+    &.d-btn--primary {
         --button--fc: var(--blue-600);
         --button--bgc: var(--white);
 
@@ -294,7 +289,7 @@
 }
 
 // because the inner border of the box-shadow outline needs to be transparent
-// we have to create a pseudo element behind the original element which displays 
+// we have to create a pseudo element behind the original element which displays
 // only a border and grow it to the correct size.
 .d-btn--inverted:focus-within::before {
     content: '';
@@ -308,7 +303,7 @@
 //  $$  CIRCLE BUTTONS
 //  ----------------------------------------------------------------------------
 .d-btn--circle {
-    
+
     padding: calc(var(--su8) + var(--su1));
     --button--br:   var(--br-circle);
     transition-duration: 150ms;
@@ -325,7 +320,7 @@
 
     //  Adjust padding based on sizes
     &.d-btn--xs {
-        padding: var(--su6);
+        padding: calc(var(--su8) - var(--su1));
         --button--br:   var(--br-circle);
     }
     &.d-btn--sm {
@@ -337,29 +332,8 @@
         --button--br:   var(--br-circle);
     }
     &.d-btn--xl {
-        padding: calc(var(--su16) - var(--su2));
+        padding: calc(var(--su16) - var(--su1));
         --button--br:   var(--br-circle);
-    }
-}
-
-//  $$  PILL BUTTONS
-//  ----------------------------------------------------------------------------
-.d-btn--pill {
-    padding: calc(var(--su6) - var(--su1)) var(--su16);  // Subtract border
-    border-radius: @br-pill !important;
-
-    //  Adjust padding based on sizes
-    &.d-btn--xs {
-        padding: calc(var(--su6) - var(--su1)) var(--su8);  // Subtract border
-    }
-    &.d-btn--sm {
-        padding: calc(var(--su6) - var(--su1)) var(--su12);  // Subtract border
-    }
-    &.d-btn--lg {
-        padding: calc(var(--su12) - var(--su2) - var(--su1)) var(--su16);  // Subtract border, su10 doesn't exist so subtract 2 more
-    }
-    &.d-btn--xl {
-        padding: calc(var(--su12) - var(--su2) - var(--su1)) var(--su24);  // Subtract border
     }
 }
 
@@ -407,6 +381,8 @@
         height: 2em;
         border-radius: var(--br2);
         background-color: var(--white);
+        justify-content: center;
+        align-items: center
     }
     .d-btn__label {
         flex: 1 auto;
