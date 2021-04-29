@@ -1,4 +1,5 @@
 # Releasing
+
 Before you can publish anything to [npmjs](https://npmjs.com), you will need an account, with [2FA enabled](https://docs.npmjs.com/configuring-two-factor-authentication), and be a part of the Dialpad npmjs org.
 
 1. Make sure you are up-to-date locally and in the `staging` branch. Also it’s a good idea to stop your local server while versioning.
