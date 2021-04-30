@@ -1,35 +1,37 @@
 ---
-layout: page
+layout: page-no-toc
 title: Adding Icons
 description: A quick guide for how to add icons to Dialtone.
 ---
-<section class="d-layout__stack16">
-    <p class="dialtone-copy__normal">Most icons in Dialtone are pulled from <a href="https://material.io/resources/icons/?style=baseline" class="d-link">Google’s Material Icon Library</a>. Before introducing a new icon into Dialtone, ask the following questions:</p>
-    <ol class="dialtone-copy__normal">
-        <li><strong>Is the use of this icon consistent with how it or similar icons are used in Dialtone?</strong><br/>For a consistent, harmonious user experience, icons <strong>need</strong> to be used consistently across Dialpad’s products. An icon that represents one type of content or action in one area, must also be used similarly in another area.</li>
-        <li><strong>Can I use another icon already in Dialtone to achieve the same purpose?</strong><br/>Every icon introduced is yet another thing that our users must parse and learn. Whenever possible, consider using a pre-existing icon that captures the essence of what you are trying to communicate and clarify further with a label.</li>
-    </ol>
+<section class="d-stack16">
+  {% paragraph %}Most icons in Dialtone are pulled from <a href="https://material.io/resources/icons/?style=baseline" class="d-link">Google’s Material Icon Library</a>. Before introducing a new icon into Dialtone, ask the following questions:{% endparagraph %}
+  <ol class="d-stack16">
+    <li><strong>Is the use of this icon consistent with how it or similar icons are used in Dialtone?</strong><br/>For a consistent, harmonious user experience, icons <strong>need</strong> to be used consistently across Dialpad’s products. An icon that represents one type of content or action in one area, must also be used similarly in another area.</li>
+    <li><strong>Can I use another icon already in Dialtone to achieve the same purpose?</strong><br/>Every icon introduced is yet another thing that our users must parse and learn. Whenever possible, consider using a pre-existing icon that captures the essence of what you are trying to communicate and clarify further with a label.</li>
+  </ol>
 </section>
-<section class="d-layout__stack16">
-    <p class="dialtone-copy__normal">If you need to add an icon into Dialtone, here’s how you would go about doing that.</p>
-    <ol class="dialtone-copy__normal">
-        <li><strong>Has the Senior Designer or Design Team approved the use of this new icon in your designs?</strong><br/>If not, the designer should seek that out in a Design Review or 1:1 with their Senior Designer.</li>
-        <li>Once approved, the designer needs to add the icon to the Dialtone Icon Figma library file. Instructions for how to properly add an icon into the library file are provided in that file.</li>
-        <li>Once added and exported from Figma, create a new branch in Dialtone with the word "icon" in the name.</li>
-        <li>Place the exported SVG file(s) in the appropriate folders:
-            <ul class="dialtone-copy__normal">
-                <li>For system icons: <code class="code-example--inline">./lib/build/svg/system/</code></li>
-                <li>For brand icons: <code class="code-example--inline">./lib/build/svg/brand/</code></li>
-                <li>For patterns: <code class="code-example--inline">./lib/build/svg/patterns/</code></li>
-            </ul>
-        </li>
-        <li><strong>Add icon or pattern information to the correct data file.</strong> System, Brand, and Pattern SVGs all have their own icon data file.
-            <ul class="dialtone-copy__normal">
-                <li>System icons: <code class="code-example--inline">./docs/_data/svg-system.json</code></li>
-                <li>For brand icons: <code class="code-example--inline">./docs/_data/svg-brand.json</code></li>
-                <li>For patterns: <code class="code-example--inline">./docs/_data/svg-patterns.json</code></li>
-            </ul>
-            The data is pulled from the data files in the ordered it's entered, so you must place it in alphabetical order in the data file. Here is an example of  information you must provide is:<br/><br/>
+<section class="d-stack16">
+  {% paragraph %}If you need to add an icon into Dialtone, here’s how you would go about doing that.{% endparagraph %}
+  <ol class="d-stack16">
+    <li><strong>Has the Senior Designer or Design Team approved the use of this new icon in your designs?</strong><br/>If not, the designer should seek that out in a Design Review or 1:1 with their Senior Designer.</li>
+    <li>Once approved, the designer needs to add the icon to the Dialtone Icon Figma library file. Instructions for how to properly add an icon into the library file are provided in that file.</li>
+    <li>Once added and exported from Figma, create a new branch in Dialtone with the word "icon" in the name.</li>
+    <li>Place the exported SVG file(s) in the appropriate folders:
+      <ul class="d-stack8">
+        <li>For system icons: {% code %}./lib/build/svg/system/{% endcode %}</li>
+        <li>For brand icons: {% code %}./lib/build/svg/brand/{% endcode %}</li>
+        <li>For patterns: {% code %}./lib/build/svg/patterns/{% endcode %}</li>
+      </ul>
+    </li>
+    <li><strong>Add icon or pattern information to the correct data file.</strong> System, Brand, and Pattern SVGs all have their own icon data file.
+      <ul class="d-stack8">
+        <li>System icons: {% code%}./docs/_data/svg-system.json{% endcode %}</li>
+        <li>For brand icons: {% code%}./docs/_data/svg-brand.json{% endcode %}</li>
+        <li>For patterns: {% code%}./docs/_data/svg-patterns.json{% endcode %}</li>
+      </ul>
+      The data is pulled from the data files in the ordered it's entered, so you must place it in alphabetical order in the data file. Here is an example of  information you must provide is:<br/><br/>
+      {% codeWell %}
+        {% codeWellFooter %}
 {% highlight yml linenos %}
 {
     "name": "Icon Name",
@@ -38,17 +40,20 @@ description: A quick guide for how to add icons to Dialtone.
     "desc": "Description about the icon and where it's used."
 }
 {% endhighlight %}
-            <br/><ul class="dialtone-copy__normal">
-                <li><strong>Name:</strong> This is the name that will appear on the Dialtone website.</li>
-                <li><strong>File:</strong> This needs to be the exact name of the file minus the .svg file type.</li>
-                <li><strong>Vue:</strong> This is what the compiled name will be. This is generated by Dialtone, using the above file name. It adds the word Icon or Pattern depending on the SVG type. The file name is PascalCased next to it. For example, a “label” file would be IconLabel. An “international-calling-alt” file would be IconInternationalCallingAlt.</li>
-                <li><strong>Desc:</strong> This is a description about the icon and where it is used.</li>
-            </ul>
-        </li>
-        <li>Once finished, run the following command: <code class="code-example--inline">gulp svg</code>. This will recompile the entire <code class="code-example--inline">./lib/build/svg/</code> folder. To create new SVGs and build the documentation site, run <code class="code-example--inline">gulp svg watch</code>.</li>
-        <li>Verify your changes have been updated on the website.</li>
-        <li>Commit and push your branch to Dialtone.</li>
-        <li>Open a pull request.</li>
-        <li>Once approved it will be merged.</li>
-    </ol>
+        {% endcodeWellFooter %}
+      {% endcodeWell %}
+        <br/>
+      <ul class="d-stack8">
+        <li><strong>Name:</strong> This is the name that will appear on the Dialtone website.</li>
+        <li><strong>File:</strong> This needs to be the exact name of the file minus the .svg file type.</li>
+        <li><strong>Vue:</strong> This is what the compiled name will be. This is generated by Dialtone, using the above file name. It adds the word Icon or Pattern depending on the SVG type. The file name is PascalCased next to it. For example, a “label” file would be IconLabel. An “international-calling-alt” file would be IconInternationalCallingAlt.</li>
+        <li><strong>Desc:</strong> This is a description about the icon and where it is used.</li>
+      </ul>
+    </li>
+    <li>Once finished, run the following command: {% code %}gulp svg{% endcode %}. This will recompile the entire {% code %}./lib/build/svg/{% endcode %} folder. To create new SVGs and build the documentation site, run {% code %}gulp svg watch{% endcode %}.</li>
+    <li>Verify your changes have been updated on the website.</li>
+    <li>Commit and push your branch to Dialtone.</li>
+    <li>Open a pull request.</li>
+    <li>Once approved it will be merged.</li>
+  </ol>
 </section>
