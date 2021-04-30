@@ -1,0 +1,154 @@
+//
+//  DIALTONE
+//  COMPONENTS: FORMS
+//
+//  These are form classes for Dialpad's design system Dialtone.
+//  For further documentation of these and other classes,
+//  visit https://dialpad.design/components/forms
+//
+//  TABLE OF CONTENTS
+//  • FIELDSETS
+//  • LABELS
+//    - Sizes
+//  • DESCRIPTIONS
+//    - Sizes
+//  • VALIDATION MESSAGES
+//    - Validation States
+//
+//  ============================================================================
+//  $  FIELDSETS
+//  ----------------------------------------------------------------------------
+fieldset {
+  padding: var(--su0);
+  min-width: var(--su0);
+  border: none;
+}
+
+
+//  ============================================================================
+//  $  LABELS
+//  ----------------------------------------------------------------------------
+.d-label {
+  box-sizing: border-box;
+
+  display: flex;
+  flex: 1 0%;
+  align-items: baseline;
+  justify-content: space-between;
+
+  font-weight: @fw-bold;
+  font-size: var(--fs16);
+  font-family: inherit;
+  line-height: var(--lh4);
+  color: currentColor;
+
+  cursor: pointer;
+  word-break: break-word;
+  overflow-wrap: break-word;
+
+  legend & { cursor: default; }
+}
+
+//  $$  SIZES
+//  ----------------------------------------------------------------------------
+.d-label--xs {
+  font-size:   var(--fs12);
+  line-height: var(--lh4);
+}
+.d-label--sm {
+  font-size:   var(--fs14);
+  line-height: var(--lh2);
+}
+.d-label--lg {
+  font-size:   var(--fs18);
+  line-height: var(--lh2);
+}
+.d-label--xl {
+  font-size:   var(--fs20);
+  line-height: var(--lh4);
+}
+
+
+//  ============================================================================
+//  $ DESCRIPTIONS
+//  ----------------------------------------------------------------------------
+.d-description {
+  box-sizing: border-box;
+
+  display: flex;
+  margin: var(--su0);
+  color: var(--black-500);
+  fill: currentColor;
+  font-size: var(--fs12);
+  font-family: inherit;
+  line-height: var(--lh4);
+}
+
+//  $$  SIZES
+//  ----------------------------------------------------------------------------
+.d-description--lg {
+  font-size:   var(--fs14);
+  line-height: var(--lh6);
+}
+.d-description--xl {
+  font-size:   var(--fs16);
+  line-height: var(--lh6);
+}
+
+//  ============================================================================
+//  $   VALIDATION MESSAGES
+//  ----------------------------------------------------------------------------
+.d-validation-message {
+  display: inline-flex;
+  align-items: flex-start;
+
+  margin-top: var(--su6);
+
+  color: var(--black-700);
+
+  font-size: var(--fs12);
+  font-family: inherit;
+  font-weight: inherit;
+  line-height: var(--lh4);
+
+  // Icon Slot
+  &::before {
+    content: '';
+
+    height: var(--su16);
+    width: var(--su16);
+
+    margin-right: var(--su4);
+  }
+
+  // Link Styles
+  > a {
+    line-height: var(--lh0);
+  }
+}
+
+//  $$   VALIDATION STATES
+//  ----------------------------------------------------------------------------
+.d-validation-message--warning {
+  color: var(--warning-color);
+
+  &::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z' fill='hsl(40, 100%, 31%)'/%3E%3C/svg%3E");
+  }
+}
+
+.d-validation-message--error {
+  color: var(--error-color);
+
+  &::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z' fill='hsl(356, 80%, 51%)'/%3E%3C/svg%3E");
+  }
+}
+
+.d-validation-message--success {
+  color: var(--success-color);
+
+  &::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z' fill='hsl(162, 87%, 21%)'/%3E%3C/svg%3E");
+  }
+}

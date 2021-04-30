@@ -1,0 +1,242 @@
+---
+layout: page
+title: Table
+description: A table is a pattern for organizing data sets. While data visualization helps quickly summarize a data set, a table allows users to compare and analyze individual data rows.
+---
+<section class="d-stack16">
+  {% header "h2", "Classes" %}
+  <table class="d-table">
+    <thead>
+      <tr>
+        <th scope="col" class="d-w40p">Class</th>
+        <th scope="col" class="d-w30p">Applies to</th>
+        <th scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in table.classes %}
+        {% assign class = i.class %}
+        {% assign apply = i.applies %}
+        {% assign desc = i.description %}
+        <tr>
+          <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.{{ class }}</th>
+          <td class="d-ff-mono d-fc-teal-500 d-fs12">{% if apply != "N/A" %}<span class="code-example--inline">.{% endif %}{{ apply }}{% if apply != "N/A" %}</span>{% endif %}</td>
+          <td class="d-fs12">{{ desc }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</section>
+<section class="d-stack16">
+  {% header "h2", "Examples" %}
+  <div class="d-stack48">
+    <div class="d-stack8">
+      {% header "h3", "Base Style" %}
+      {% codeWell %}
+        {% codeWellHeader "white" %}
+          <table class="d-table">
+            <caption class="d-table__caption">Office List</caption>
+            <thead>
+              <tr>
+                <th scope="col">Office</th>
+                <th scope="col">Country</th>
+                <th scope="col" width="10%">Employees</th>
+                <th scope="col">Contact</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for i in table.table-example %}
+              <tr>
+                <th scope="row">{{ i.office }}</th>
+                <td>{{ i.country }}</td>
+                <td>{{ i.size }}</td>
+                <td>{{ i.contact }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        {% endcodeWellHeader %}
+        {% codeWellFooter %}
+{% highlight html linenos %}
+<table class="d-table">
+  <caption class="d-table__caption">...</caption>
+  <thead>
+    <tr>
+      <th scope="col">...</th>
+      <th scope="col">...</th>
+      <th scope="col">...</th>
+      <th scope="col">...</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+  </tbody>
+</table>
+{% endhighlight %}
+        {% endcodeWellFooter %}
+      {% endcodeWell %}
+    </div>
+    <div class="d-stack8">
+      {% header "h3", "Inverted Style" %}
+      {% paragraph %}Used when you want to display a data table on a darker background.{% endparagraph %}
+      {% codeWell %}
+        {% codeWellHeader "black-700" %}
+          <table class="d-table d-table--inverted">
+            <caption class="d-table__caption">Office List</caption>
+            <thead>
+              <tr>
+                <th scope="col">Office</th>
+                <th scope="col">Country</th>
+                <th scope="col" width="10%">Employees</th>
+                <th scope="col">Contact</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for i in table.table-example %}
+              <tr>
+                <th scope="row">{{ i.office }}</th>
+                <td>{{ i.country }}</td>
+                <td>{{ i.size }}</td>
+                <td>{{ i.contact }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        {% endcodeWellHeader %}
+        {% codeWellFooter %}
+{% highlight html linenos %}
+<table class="d-table d-table--inverted">
+  <caption class="d-table__caption">...</caption>
+  <thead>
+    <tr>
+      <th scope="col">...</th>
+      <th scope="col">...</th>
+      <th scope="col">...</th>
+      <th scope="col">...</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+  </tbody>
+</table>
+{% endhighlight %}
+        {% endcodeWellFooter %}
+      {% endcodeWell %}
+    </div>
+
+    <div class="d-stack8">
+      {% header "h3", "Striped" %}
+      {% codeWell %}
+        {% codeWellHeader "white" %}
+          <table class="d-table d-table--striped">
+            <caption class="d-table__caption">Office List</caption>
+            <thead>
+              <tr>
+                <th scope="col">Office</th>
+                <th scope="col">Country</th>
+                <th scope="col" width="10%">Employees</th>
+                <th scope="col">Contact</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for i in table.table-example %}
+              <tr>
+                <th scope="row">{{ i.office }}</th>
+                <td>{{ i.country }}</td>
+                <td>{{ i.size }}</td>
+                <td>{{ i.contact }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        {% endcodeWellHeader %}
+        {% codeWellFooter %}
+{% highlight html linenos %}
+<table class="d-table d-table--striped">
+  <caption class="d-table__caption">...</caption>
+  <thead>
+    <tr>
+      <th scope="col">...</th>
+      <th scope="col">...</th>
+      <th scope="col">...</th>
+      <th scope="col">...</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+  </tbody>
+</table>
+{% endhighlight %}
+        {% endcodeWellFooter %}
+      {% endcodeWell %}
+      {% codeWell %}
+        {% codeWellHeader "black-700" %}
+          <table class="d-table d-table--inverted d-table--striped">
+            <caption class="d-table__caption">Office List</caption>
+            <thead>
+              <tr>
+                <th scope="col">Office</th>
+                <th scope="col">Country</th>
+                <th scope="col" width="10%">Employees</th>
+                <th scope="col">Contact</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for i in table.table-example %}
+              <tr>
+                <th scope="row">{{ i.office }}</th>
+                <td>{{ i.country }}</td>
+                <td>{{ i.size }}</td>
+                <td>{{ i.contact }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        {% endcodeWellHeader %}
+        {% codeWellFooter %}
+{% highlight html linenos %}
+<table class="d-table d-table--inverted d-table--striped">
+  <caption class="d-table__caption">...</caption>
+  <thead>
+    <tr>
+      <th scope="col">...</th>
+      <th scope="col">...</th>
+      <th scope="col">...</th>
+      <th scope="col">...</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+  </tbody>
+</table>
+{% endhighlight %}
+        {% endcodeWellFooter %}
+      {% endcodeWell %}
+    </div>
+  </div>
+</section>
+<section class="d-stack16">
+  {% header "h2", "Accessibility" %}
+  {% paragraph %}Use the {% code %}caption{% endcode %} element to describe a table in the same way you would use a heading. A caption helps users find, navigate and understand tables.{% endparagraph %}
+  {% paragraph %}We provide {% code %}.d-table__caption{% endcode %} for a basic caption style, but you can also use utility classes to apply custom styles as needed.{% endparagraph %}
+</section>

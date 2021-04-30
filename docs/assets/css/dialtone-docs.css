@@ -180,6 +180,14 @@ pre[class*="language-"].line-numbers > code {
 .command-line-prompt > span[data-prompt]:before {
   content: attr(data-prompt);
 }
+.dialtone-color-grid__item:first-of-type {
+  border-top-left-radius: var(--su4);
+  border-top-right-radius: var(--su4);
+}
+.dialtone-color-grid__item:last-of-type {
+  border-bottom-right-radius: var(--su4);
+  border-bottom-left-radius: var(--su4);
+}
 .toc ol {
   display: flex;
   flex-direction: column;
@@ -280,4 +288,127 @@ pre[class*="language-"].line-numbers > code {
   -webkit-column-gap: 4.8rem;
              -moz-column-gap: 4.8rem;
                   column-gap: 4.8rem;
+}
+.d-gl-docsite-icons {
+  --icon-card-width: 12rem;
+  --icon-grid-columns: auto-fit;
+  display: grid;
+  grid-auto-rows: 12rem;
+  grid-gap: 0.2rem;
+  grid-template-columns: repeat(var(--icon-grid-columns), [col] var(--icon-card-width));
+}
+.dialtone-icon-grid__item {
+  position: relative;
+}
+.dialtone-icon-card {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.dialtone-icon-card__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: var(--su8);
+  border-radius: var(--su8);
+  background-color: hsl(var(--black-050-h), var(--black-050-s), var(--black-050-l), 0);
+  transition: all 150ms var(--ttf-in-out);
+  cursor: pointer;
+}
+.dialtone-icon-card__header:hover {
+  background-color: hsl(var(--black-050-h), var(--black-050-s), var(--black-050-l), 0.4);
+}
+.dialtone-icon-card[data-selected="yes"] .dialtone-icon-card__header {
+  border: 1px solid var(--black-700);
+  background-color: hsl(var(--black-050-h), var(--black-050-s), var(--black-050-l), 0.4);
+  box-shadow: var(--bs-md);
+}
+.dialtone-icon-card__footer {
+  display: flex;
+  position: absolute;
+  z-index: var(--zi-popover);
+  top: 0;
+  right: 0;
+  flex-direction: column;
+  justify-content: center;
+  width: calc((var(--icon-card-width) * 2) + var(--su32));
+  min-height: var(--icon-card-width);
+  margin-right: calc(-1 * var(--su1));
+  padding: var(--su12) var(--su16);
+  border-radius: var(--su8);
+  background-color: var(--black-700);
+  box-shadow: var(--bs-md);
+  color: var(--black-050);
+  font-size: var(--fs14);
+}
+.dialtone-icon-card[data-selected="yes"] .dialtone-icon-card__footer {
+  visibility: visible;
+  margin: calc(-1 * var(--su1));
+  opacity: 1;
+  -webkit-transform: translateX(calc(-1 * var(--icon-card-width)));
+          transform: translateX(calc(-1 * var(--icon-card-width)));
+  transition: opacity 50ms var(--ttf-in-out) 0s, visibility 0s 50ms, -webkit-transform 50ms var(--ttf-in-out) 0s;
+  transition: opacity 50ms var(--ttf-in-out) 0s, transform 50ms var(--ttf-in-out) 0s, visibility 0s 50ms;
+  transition: opacity 50ms var(--ttf-in-out) 0s, transform 50ms var(--ttf-in-out) 0s, visibility 0s 50ms, -webkit-transform 50ms var(--ttf-in-out) 0s;
+}
+.dialtone-icon-grid__item:nth-child(5n+1) .dialtone-icon-card[data-selected="yes"] .dialtone-icon-card__footer,
+.dialtone-icon-grid__item:nth-child(5n+2) .dialtone-icon-card[data-selected="yes"] .dialtone-icon-card__footer {
+  right: var(--su1);
+  margin-right: unset;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+.dialtone-icon-card[data-selected="no"] .dialtone-icon-card__footer {
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  transition: opacity 100ms var(--ttf-in-out) 0s, visibility 0s 0s, -webkit-transform 100ms var(--ttf-in-out) 0s;
+  transition: opacity 100ms var(--ttf-in-out) 0s, transform 100ms var(--ttf-in-out) 0s, visibility 0s 0s;
+  transition: opacity 100ms var(--ttf-in-out) 0s, transform 100ms var(--ttf-in-out) 0s, visibility 0s 0s, -webkit-transform 100ms var(--ttf-in-out) 0s;
+}
+.dialtone-icon-card__list {
+  display: flex;
+  flex-direction: column;
+}
+.dialtone-icon-card__list__item {
+  font-size: var(--fs12);
+}
+.dialtone-icon-card__list__item strong {
+  display: inline-block;
+  width: 20%;
+}
+.dialtone-icon-card__icon {
+  width: 4.8rem;
+  height: 4.8rem;
+  margin-bottom: var(--su4);
+}
+.dialtone-icon-card__icon svg {
+  width: 100%;
+  height: auto;
+}
+.dialtone-icon-card__title {
+  margin-top: var(--su0);
+  margin-bottom: var(--su4);
+  font-size: var(--fs16);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+}
+.dialtone-icon-card__subtitle {
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: var(--su0);
+  font-size: var(--fs12);
+  line-height: var(--lh-none);
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.dialtone-icon-card__description {
+  color: var(--white);
+  font-size: var(--fs12);
 }

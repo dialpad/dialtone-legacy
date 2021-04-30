@@ -1,0 +1,230 @@
+//
+//  DIALTONE
+//  COMPONENTS: MODALS
+//
+//  These are modal classes for Dialpad's design system Dialtone.
+//  For further documentation of these and other classes,
+//  visit https://dialpad.design/components/modals
+//
+//  TABLE OF CONTENTS
+//  • BASE STYLES
+//    - Wrapper
+//    - Dialog
+//    - Make them appear
+//  • MODAL BACKGROUND
+//  • HEADER
+//  • CONTENT
+//  • FOOTER
+//  • TRANSITIONS
+//
+//  ============================================================================
+//  $   BASE STYLES
+//  ============================================================================
+//  $$  WRAPPER
+//  ----------------------------------------------------------------------------
+.d-modal {
+    //  Component CSS Vars
+    //  ------------------------------------------------------------------------
+    --modal--bgc:          hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l) ~" / " 85%);
+    --modal-dialog--bgc:   var(--white);
+    --modal-dialog--fc:    var(--black-700);
+    --modal-title--fc:     var(--black-800);
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: var(--su32);
+
+    background-color: var(--modal--bgc);
+
+    z-index: var(--zi-hide);
+    visibility: hidden;
+    opacity: 0;
+    backface-visibility: hidden;
+
+    transition:
+        opacity 100ms var(--ttf-in-out) 10ms,
+        z-index 0s 200ms,
+        visibility 0s 200ms,
+        transform 100ms var(--ttf-in-out) 10ms;
+    will-change: visibility, z-index, opacity;
+
+    @media (prefers-reduced-motion) {
+        transition: none;
+    }
+}
+
+//  $$  MODAL DIALOG
+//  ----------------------------------------------------------------------------
+.d-modal__dialog {
+    position: relative;
+    overflow-y: auto;
+    width: 100%;
+    max-width: var(--size628);
+    max-height: 100%;
+    padding: var(--su24);
+
+    color:            var(--modal-dialog--fc);
+    background-color: var(--modal-dialog--bgc);
+
+    border-radius: var(--br8);
+    box-shadow: var(--bs-card);
+
+    font-size: var(--fs16);
+    line-height: var(--lh8);
+
+    z-index: var(--zi-hide);
+    visibility: hidden;
+    opacity: 0;
+    backface-visibility: hidden;
+    transform: translate3d(0,30%,0) scale3d(.75,.75,.75);
+
+    transition:
+        opacity 200ms var(--ttf-in-out) 0s,
+        z-index 0s 200ms,
+        visibility 0s 200ms,
+        transform 100ms var(--ttf-in-out) 0s;
+    will-change: visibility, z-index, opacity, tranform;
+
+    .d-stack16();
+}
+
+//  $$   MAKE THEM APPEAR
+//  ----------------------------------------------------------------------------
+.d-modal[aria-hidden="false"],
+.d-modal[aria-hidden="false"] .d-modal__dialog {
+    visibility: visible;
+    opacity: 1;
+    z-index: var(--zi-modal);
+    transform: translate3d(0,0,0) scale3d(1,1,1);
+    transition:
+        opacity 100ms var(--ttf-in-out) 10ms,
+        z-index 0s 0s,
+        visibility 0s 0s,
+        transform 100ms var(--ttf-in-out) 10ms;
+}
+
+
+//  ============================================================================
+//  $   MODAL AREAS
+//  ----------------------------------------------------------------------------
+.d-modal__footer {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    margin: var(--sun4);
+
+    > * {
+        margin: var(--su4);
+    }
+}
+
+
+//  ============================================================================
+//  $   TYPE STYLES
+//  ============================================================================
+//  $$  TITLE
+//  ----------------------------------------------------------------------------
+.d-modal__title {
+    margin: 0 !important;
+    font-size: var(--fs24);
+    font-weight: var(--fw-bold);
+    line-height: var(--lh4);
+    color: var(--modal-title--fc);
+}
+
+//  $$  COPY
+//  ----------------------------------------------------------------------------
+.d-modal__copy {
+    margin: 0;
+    max-width: 75ch;
+}
+
+
+//  ============================================================================
+//  $   BUTTONS
+//  ----------------------------------------------------------------------------
+.d-modal__close {
+    position: absolute;
+    top: var(--su8);
+    right: var(--su8);
+    margin: 0 !important;
+}
+
+
+//  ============================================================================
+//  $   BANNERS
+//  ----------------------------------------------------------------------------
+.d-modal__banner {
+    position: relative;
+
+    width: 100%;
+    max-width: var(--size628);
+    padding: var(--su12) var(--su24);
+
+    background-color: var(--yellow-200);
+    border-radius: var(--br8) var(--br8) 0 0;
+
+    font-size: var(--fs14);
+    line-height: var(--lh4);
+
+    &:not(.d-d-none) + .d-modal__dialog {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+}
+
+
+//  ============================================================================
+//  $   MODIFYING STYLES
+//  ============================================================================
+//  $$  FULL WIDTH
+//  ----------------------------------------------------------------------------
+.d-modal--full {
+    padding: 0;
+    overflow: hidden scroll;
+    transform: unset !important;
+
+    .d-modal__dialog {
+        display: flex;
+        flex-direction: column;
+        padding: var(--su32);
+        max-width: unset;
+        height: 100%;
+        border-radius: 0;
+        transform: unset !important;
+    }
+
+    &,
+    .d-modal__dialog {
+        transition:
+            opacity 200ms var(--ttf-in-out) 0s,
+            z-index 0s 200ms,
+            visibility 0s 200ms;
+    }
+
+    .d-modal__footer {
+        margin: var(--sun16) var(--sun12);
+        margin-top: auto !important;
+    }
+
+    .d-modal__banner {
+        max-width: unset;
+        border-radius: 0;
+        padding: var(--su12) var(--su32);
+    }
+}
+
+//  $$  DANGER
+//  ----------------------------------------------------------------------------
+.d-modal--danger {
+    --modal--bgc:          hsla(var(--red-600-h) var(--red-600-s) var(--red-600-l) ~" / " 95%);
+    --modal-title--fc:     var(--red-400);
+}
