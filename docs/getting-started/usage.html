@@ -3,15 +3,7 @@ layout: page
 title: Usage
 description: Dialtone is available in both <a href="#dialpad" class="d-link">Dialpad</a> and <a href="#uberconference" class="d-link">UberConference</a>. Listed below are general examples of how to use Dialtone.
 ---
-<section class="d-stack16">
-  {% header "h2", "Writing CSS" %}
-  {% paragraph %}At Dialpad, we've adopted the <a href="http://getbem.com/" class="d-link" target="_blank">BEM (Block Element Modifier) methodology</a> for writing CSS. This is a simple, common naming convention that helps make our CSS easier to read and understand. If you aren't familiar with the approach, here's a <a href="http://getbem.com/introduction/" class="d-link" target="_blank">quick synposis</a>:{% endparagraph %}
-  <ul class="d-w75ch d-wmx764 d-fs18 d-lh6 d-stack8">
-    <li><strong>Block:</strong> A parent entity that is meaningful on its own. For example: {% code %}.d-input{% endcode %}</li>
-    <li><strong>Element:</strong> A child that is meaningful only in relation to its parent. For example: {% code %}.d-input__label{% endcode %}</li>
-    <li><strong>Modifier:</strong> A modifying flag on a Block or Element that changes appearance or behavior. For example: {% code %}.d-input--lg{% endcode %}</li>
-  </ul>
-</section>
+
 <section class="d-stack16">
   {% header "h2", "Utility-First" %}
   {% paragraph %}To increase development speed and keep our products' CSS bundle size down, Dialtone's CSS library offers a framework of utility-first classes. Each class is a small, <a href="https://css-tricks.com/lets-define-exactly-atomic-css/" class="d-link" target="_blank">atomic style</a> declaration that, when chained together, should mitigate most situations in which custom CSS must be written. Just write these classes right in your mark-up and you're all set!{% endparagraph %}
@@ -49,6 +41,15 @@ description: Dialtone is available in both <a href="#dialpad" class="d-link">Dia
   {% endcodeWell %}
 </section>
 <section class="d-stack16">
+  {% header "h2", "Writing CSS" %}
+  {% paragraph %}In the event you need to write CSS, please note Dialpad has adopted the <a href="http://getbem.com/" class="d-link" target="_blank">BEM (Block Element Modifier) methodology</a>. This is a simple, common naming convention that helps make our CSS easier to read and understand. If you aren't familiar with the approach, here's a <a href="http://getbem.com/introduction/" class="d-link" target="_blank">quick synposis</a>:{% endparagraph %}
+  <ul class="d-w75ch d-wmx764 d-fs18 d-lh6 d-stack8">
+    <li><strong>Block:</strong> A parent entity that is meaningful on its own. For example: {% code %}.d-input{% endcode %}</li>
+    <li><strong>Element:</strong> A child that is meaningful only in relation to its parent. For example: {% code %}.d-input__label{% endcode %}</li>
+    <li><strong>Modifier:</strong> A modifying flag on a Block or Element that changes appearance or behavior. For example: {% code %}.d-input--lg{% endcode %}</li>
+  </ul>
+</section>
+<section class="d-stack16">
   {% header "h2", "Backbone" %}
   {% paragraph %}Using Dialtone in Backbone should be rare, since most front end changes are now being implemented using Vue. Regardless, if you find yourself needing to use Dialtone in Backbone, there are a few steps:{% endparagraph %}
   <ol class="d-stack8">
@@ -57,8 +58,6 @@ description: Dialtone is available in both <a href="#dialpad" class="d-link">Dia
     <li>Import Dialtone into your {% code %}.less{% endcode %} file and compose your styles like shown in the example above.</li>
   </ol>
 </section>
-
-
 <section class="d-stack16">
   {% header "h2", "Box-Sizing" %}
   {% paragraph %}All Dialtone components are implemented with {% code %}box-sizing: border-box;{% endcode %} applied. To understand why we prefer {% code %}border-box{% endcode %} over {% code %}content-box{% endcode %}, please visit this <a target="_blank" class="d-link" href="https://stackoverflow.com/c/dialpad/questions/121">Stack Overflow Teams question</a>.{% endparagraph %}
