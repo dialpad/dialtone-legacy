@@ -31,10 +31,9 @@ description: A button is a UI element which allow users to take an action throug
 </section>
 <section class="d-stack16">
   {% header "h2", "Examples" %}
-  {% paragraph %}Dialtone provides four button styles: {% endparagraph %}
+  {% paragraph %}Dialtone provides three button styles: {% endparagraph %}
   <ol class="d-w75ch d-wmx764 d-fs18 d-lh6 d-stack8">
     <li><a href="#default" class="d-link"><strong>Base:</strong></a> Our normal blue button colors.</li>
-    <li><a href="#muted" class="d-link"><strong>Muted:</strong></a> A secondary button style primarily used for icons or when multiple actions are grouped together.</li>
     <li><a href="#danger" class="d-link"><strong>Danger:</strong></a> Buttons associated with potentially destructive actions. Appears as red.</li>
     <li><a href="#inverted" class="d-link"><strong>Inverted:</strong></a> For scenarios when you want to place a button on a non-white, dark background.</li>
   </ol>
@@ -44,7 +43,7 @@ description: A button is a UI element which allow users to take an action throug
     <li><strong>Outlined:</strong> This button communicates slightly more importance than clear. It provides a border color, but no background color.</li>
     <li><strong>Clear:</strong> This button communicates the least importance. It offers no background or border color. It appears as a link with matching padding. This is typically used for secondary or minimally important actions. This is the default importance level of all buttons.</li>
   </ol>
-  <div class="d-stack32">
+  <div class="d-stack48">
     <div class="d-stack8">
       {% header "h3", "Base" %}
       {% paragraph %}The base button should be the go-to button for most of your needs. When in doubt, use this style. To help provide clarity to users, it is generally recommended to use only one primary button style within a section or page.{% endparagraph %}
@@ -67,28 +66,6 @@ description: A button is a UI element which allow users to take an action throug
 <button class="d-btn d-btn--primary" type="button"><span class="d-btn__label">...</span></button>
 <button class="d-btn d-btn--outlined" type="button"><span class="d-btn__label">...</span></button>
 <button class="d-btn" type="button"><span class="d-btn__label">...</span></button>
-          {% endhighlight %}
-        {% endcodeWellFooter %}
-      {% endcodeWell %}
-    </div>
-    <div class="d-stack8">
-      {% header "h3", "Muted" %}
-      {% paragraph %}The muted button style is used to minimize secondary actions which helps isolate primary buttons better. This is primarily used on icon buttons.{% endparagraph %}
-      {% codeWell %}
-        {% codeWellHeader %}
-          <div class="d-stack8">
-            <div>
-              <button class="d-btn d-btn--muted d-btn--outlined" type="button"><span class="d-btn__label">Place call</span></button>
-            </div>
-            <div>
-              <button class="d-btn d-btn--muted" type="button"><span class="d-btn__label">Place call</span></button>
-            </div>
-          </div>
-        {% endcodeWellHeader %}
-        {% codeWellFooter %}
-          {% highlight html linenos %}
-<button class="d-btn d-btn--muted d-btn--outlined" type="button"><span class="d-btn__label">...</span></button>
-<button class="d-btn d-btn--muted" type="button"><span class="d-btn__label">...</span></button>
           {% endhighlight %}
         {% endcodeWellFooter %}
       {% endcodeWell %}
@@ -169,7 +146,7 @@ description: A button is a UI element which allow users to take an action throug
             <button class="d-btn d-btn--loading d-btn--primary" type="button"><span class="d-btn__label">Place call</span></button>
           </div>
           <div>
-            <button class="d-btn d-btn--loading d-btn--muted d-btn--outlined" type="button"><span class="d-btn__label">Place call</span></button>
+            <button class="d-btn d-btn--loading d-btn--outlined" type="button"><span class="d-btn__label">Place call</span></button>
           </div>
           <div>
             <button class="d-btn d-btn--danger d-btn--loading" type="button"><span class="d-btn__label">Place call</span></button>
@@ -179,7 +156,7 @@ description: A button is a UI element which allow users to take an action throug
         {% codeWellFooter %}
           {% highlight html linenos %}
 <button class="d-btn d-btn--loading d-btn--primary" type="button"><span class="d-btn__label">Place call</span></button>
-<button class="d-btn d-btn--loading d-btn--muted d-btn--outlined" type="button"><span class="d-btn__label">Place call</span></button>
+<button class="d-btn d-btn--loading d-btn--outlined" type="button"><span class="d-btn__label">Place call</span></button>
 <button class="d-btn d-btn--danger d-btn--loading" type="button"><span class="d-btn__label">Place call</span></button>
           {% endhighlight %}
         {% endcodeWellFooter %}
@@ -187,29 +164,61 @@ description: A button is a UI element which allow users to take an action throug
     </div>
     <div class="d-stack8">
       {% header "h3", "Circle Button" %}
-      {% paragraph %}Sometimes an icon-only, circle button is desired. These buttons are used for toggling actions, navigation, or closing UI elements. Every button style can accept circle button classes, though we only provide a few possible examples.{% endparagraph %}
-      {% codeWell %}
-        {% codeWellHeader %}
-        <div class="d-stack8">
-          <div>
-            <button class="d-btn d-btn--circle d-btn--primary" type="button"><span class="d-btn__icon">{% iconSystem "phone", "js-svg" %}</span></button>
+      {% paragraph %}Sometimes an icon-only, circle button is desired. These buttons are used for toggling actions, navigation, or closing UI elements. Only the following styles accept circle button classes.{% endparagraph %}
+      <div class="d-stack16">
+        {% codeWell %}
+          {% codeWellHeader %}
+          <div class="d-stack8">
+            <div>
+              <button class="d-btn d-btn--circle" type="button"><span class="d-btn__icon">{% iconSystem "phone", "js-svg" %}</span></button>
+            </div>
+            <div>
+              <button class="d-btn d-btn--circle d-btn--outlined" type="button"><span class="d-btn__icon">{% iconSystem "phone", "js-svg" %}</span></button>
+            </div>
+            <div>
+              <button class="d-btn d-btn--circle d-btn--danger" type="button"><span class="d-btn__icon">{% iconSystem "phone", "js-svg" %}</span></button>
+            </div>
+            <div>
+              <button class="d-btn d-btn--circle d-btn--danger d-btn--outlined" type="button"><span class="d-btn__icon">{% iconSystem "phone", "js-svg" %}</span></button>
+            </div>
+            <div>
+              <button class="d-btn d-btn--circle d-btn--danger d-btn--primary" type="button"><span class="d-btn__icon">{% iconSystem "phone", "js-svg" %}</span></button>
+            </div>
           </div>
-          <div>
-            <button class="d-btn d-btn--circle d-btn--muted d-btn--outlined" type="button"><span class="d-btn__icon">{% iconSystem "phone", "js-svg" %}</span></button>
+          {% endcodeWellHeader %}
+          {% codeWellFooter %}
+            {% highlight html linenos %}
+<button class="d-btn d-btn--circle" type="button">...</button>
+<button class="d-btn d-btn--circle d-btn--outlined" type="button">...</button>
+<button class="d-btn d-btn--circle d-btn--danger" type="button">...</button>
+<button class="d-btn d-btn--circle d-btn--danger d-btn--outlined" type="button">...</button>
+<button class="d-btn d-btn--circle d-btn--danger d-btn--primary" type="button">...</button>
+            {% endhighlight %}
+          {% endcodeWellFooter %}
+        {% endcodeWell %}
+        {% codeWell %}
+          {% codeWellHeader "black-700" %}
+          <div class="d-stack8">
+            <div>
+              <button class="d-btn d-btn--circle d-btn--inverted" type="button"><span class="d-btn__icon">{% iconSystem "phone", "js-svg" %}</span></button>
+            </div>
+            <div>
+              <button class="d-btn d-btn--circle d-btn--inverted d-btn--outlined" type="button"><span class="d-btn__icon">{% iconSystem "phone", "js-svg" %}</span></button>
+            </div>
+            <div>
+              <button class="d-btn d-btn--circle d-btn--inverted d-btn--primary" type="button"><span class="d-btn__icon">{% iconSystem "phone", "js-svg" %}</span></button>
+            </div>
           </div>
-          <div>
-            <button class="d-btn d-btn--circle d-btn--danger" type="button"><span class="d-btn__icon">{% iconSystem "phone", "js-svg" %}</span></button>
-          </div>
-        </div>
-        {% endcodeWellHeader %}
-        {% codeWellFooter %}
-          {% highlight html linenos %}
-<button class="d-btn d-btn--circle d-btn--primary" type="button"><span class="d-btn__icon">{% iconSystem "phone", "js-svg" %}</span></button>
-<button class="d-btn d-btn--circle d-btn--muted d-btn--outlined" type="button"><span class="d-btn__icon">{% iconSystem "phone", "js-svg" %}</span></button>
-<button class="d-btn d-btn--circle d-btn--danger" type="button"><span class="d-btn__icon">{% iconSystem "phone", "js-svg" %}</span></button>
-          {% endhighlight %}
-        {% endcodeWellFooter %}
-      {% endcodeWell %}
+          {% endcodeWellHeader %}
+          {% codeWellFooter %}
+            {% highlight html linenos %}
+<button class="d-btn d-btn--circle btn--circle" type="button">...</button>
+<button class="d-btn d-btn--circle btn--circle d-btn--outlined" type="button">...</button>
+<button class="d-btn d-btn--circle btn--circle d-btn--primary" type="button">...</button>
+            {% endhighlight %}
+          {% endcodeWellFooter %}
+        {% endcodeWell %}
+      </div>
     </div>
     <div class="d-stack8">
       {% header "h3", "With Icons" %}
@@ -219,13 +228,13 @@ description: A button is a UI element which allow users to take an action throug
           <div class="d-stack8">
             <div>
               <button class="d-btn d-btn--outlined" type="button">
-                <span class="d-btn__icon">{% iconSystem "phone", "js-svg" %}</span>
+                <span class="d-btn__icon d-btn__icon--left">{% iconSystem "phone", "js-svg" %}</span>
                 <span class="d-btn__label">Label</span>
               </button>
             </div>
             <div>
               <button class="d-btn d-btn--outlined" type="button">
-                <span class="d-btn__icon d-btn__icon--last">{% iconSystem "phone", "js-svg" %}</span>
+                <span class="d-btn__icon d-btn__icon--right">{% iconSystem "phone", "js-svg" %}</span>
                 <span class="d-btn__label">Label</span>
               </button>
             </div>
