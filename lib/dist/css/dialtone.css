@@ -742,9 +742,14 @@ body {
   display: flex;
   width: 1em;
   height: 1em;
-  margin: var(--sun4) var(--su4) var(--sun4) var(--sun2);
+  margin-top: var(--sun4);
+  margin-bottom: var(--sun4);
 }
-.d-btn__icon.d-btn__icon--last {
+.d-btn__icon.d-btn__icon--left {
+  margin-right: var(--su4);
+  margin-left: var(--sun2);
+}
+.d-btn__icon.d-btn__icon--right {
   order: 1;
   margin-right: var(--sun2);
   margin-left: var(--su4);
@@ -759,19 +764,6 @@ body {
 .d-btn--primary:hover {
   --button--fc: var(--white);
   --button--bgc: var(--primary-color-hover);
-}
-.d-btn--muted {
-  --button--fc: var(--black-700);
-}
-.d-btn--muted:hover {
-  --button--fc: var(--black-700);
-  --button--bgc: var(--black-050);
-}
-.d-btn--muted:focus {
-  --button--bs-color-outer: var(--black-300);
-}
-.d-btn--muted.d-btn--outlined {
-  border-color: var(--black-500);
 }
 .d-btn--danger {
   --button--fc: var(--red-400);
@@ -832,13 +824,64 @@ body {
 .d-btn--circle {
   padding: calc(var(--su8) + var(--su1));
   transition-duration: 150ms;
+  --button--fc: var(--black-700);
   --button--br: var(--br-circle);
+}
+.d-btn--circle:hover {
+  --button--bgc: hsl(var(--black-050-h) calc(var(--black-050-s) + 2.5%) calc(var(--black-050-l) - 5%));
+  --button--fc: hsl(var(--black-700-h) calc(var(--black-700-s) + 2.5%) calc(var(--black-700-l) - 5%));
+}
+.d-btn--circle:focus {
+  --button--bs-color-outer: var(--black-300);
+}
+.d-btn--circle.d-btn--outlined {
+  border-color: var(--black-500);
 }
 .d-btn--circle .d-btn__icon {
   margin: unset;
 }
 .d-btn--circle .d-btn__label {
   display: none;
+}
+.d-btn--circle.d-btn--danger {
+  --button--fc: var(--red-400);
+}
+.d-btn--circle.d-btn--danger:hover {
+  --button--bgc: var(--red-100);
+  --button--fc: var(--red-500);
+}
+.d-btn--circle.d-btn--danger:focus {
+  --button--bs-color-outer: var(--red-200);
+}
+.d-btn--circle.d-btn--danger.d-btn--outlined {
+  border: 0.1rem solid;
+}
+.d-btn--circle.d-btn--danger.d-btn--primary {
+  --button--fc: var(--white);
+  --button--bgc: var(--red-400);
+}
+.d-btn--circle.d-btn--danger.d-btn--primary:hover {
+  --button--bgc: var(--red-500);
+}
+.d-btn--circle.d-btn--inverted {
+  --button--fc: var(--white);
+  --button--bgc: transparent;
+  box-shadow: none;
+}
+.d-btn--circle.d-btn--inverted:hover {
+  --button--fc: var(--white);
+  --button--bgc: hsla(var(--blue-100-h) var(--blue-100-s) var(--blue-100-l)  /  25%);
+}
+.d-btn--circle.d-btn--inverted.d-btn--outlined {
+  border: 0.1rem solid;
+}
+.d-btn--circle.d-btn--inverted.d-btn--primary {
+  --button--fc: var(--blue-600);
+  --button--bgc: var(--white);
+}
+.d-btn--circle.d-btn--inverted.d-btn--primary:hover {
+  --button--fc: var(--blue-700);
+  --button--bgc: var(--black-200);
 }
 .d-btn--circle.d-btn--xs {
   padding: calc(var(--su8) - var(--su1));
