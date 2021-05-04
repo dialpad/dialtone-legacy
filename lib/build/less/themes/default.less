@@ -22,30 +22,25 @@
 //  $   SET VARIABLES
 //  ----------------------------------------------------------------------------
 @theme-vars: {
-    primary-color-h:                        var(--blue-500-h);
-    primary-color-s:                        var(--blue-500-s);
-    primary-color-l:                        var(--blue-500-l);
+    primary-color-h:                        var(--purple-500-h);
+    primary-color-s:                        var(--purple-500-s);
+    primary-color-l:                        var(--purple-500-l);
     primary-color-hsl:                      var(--primary-color-h) var(--primary-color-s) var(--primary-color-l);
     primary-color:                          hsl(var(--primary-color-h) var(--primary-color-s) var(--primary-color-l));
     primary-color-hover:                    hsl(var(--primary-color-h) var(--primary-color-s) calc(var(--primary-color-l) - 10%));
-    nav-background-color-h:                 var(--blue-800-h);
-    nav-background-color-s:                 var(--blue-800-s);
-    nav-background-color-l:                 var(--blue-800-l);
+    nav-background-color-h:                 var(--purple-900-h);
+    nav-background-color-s:                 var(--purple-900-s);
+    nav-background-color-l:                 var(--purple-900-l);
     nav-background-color:                   hsl(var(--nav-background-color-h) var(--nav-background-color-s) var(--nav-background-color-l));
 
     topbar-height:                          var(--su64);
-}
 
-//  ============================================================================
-//  $$  VISUAL STYLES
-//      Base styles, colors, font-size, and line-heights
-//  ----------------------------------------------------------------------------
-@visual-styles-vars: {
     base--font-size:                        var(--fs16);
     base--font-family:                      @ff-custom;
     base--line-height:                      var(--lh-normal);
     base--corner-radius:                    0.25em;
 }
+
 
 //  ============================================================================
 //  $   OUTPUT VARIABLES
@@ -58,19 +53,132 @@ body {
     --fco: 100%;                // Font color opacity
 
     //  All the light colored HSL vars
-    each(@light-color-vars, {
-        --@{key}: @value;
-    });
+    #d-internals #color-vars(white, @white);
+    #d-internals #color-vars(black-025, @black-025);
+    #d-internals #color-vars(black-050, @black-050);
+    #d-internals #color-vars(black-075, @black-075);
+    #d-internals #color-vars(black-100, @black-100);
+    #d-internals #color-vars(black-200, @black-200);
+    #d-internals #color-vars(black-300, @black-300);
+    #d-internals #color-vars(black-400, @black-400);
+    #d-internals #color-vars(black-500, @black-500);
+    #d-internals #color-vars(black-600, @black-600);
+    #d-internals #color-vars(black-700, @black-700);
+    #d-internals #color-vars(black-800, @black-800);
+    #d-internals #color-vars(black-900, @black-900);
+    #d-internals #color-vars(purple-100, @purple-100);
+    #d-internals #color-vars(purple-200, @purple-200);
+    #d-internals #color-vars(purple-300, @purple-300);
+    #d-internals #color-vars(purple-400, @purple-400);
+    #d-internals #color-vars(purple-500, @purple-500);
+    #d-internals #color-vars(purple-600, @purple-600);
+    #d-internals #color-vars(purple-700, @purple-700);
+    #d-internals #color-vars(purple-800, @purple-800);
+    #d-internals #color-vars(purple-900, @purple-900);
+    #d-internals #color-vars(orange-100, @orange-100);
+    #d-internals #color-vars(orange-200, @orange-200);
+    #d-internals #color-vars(orange-300, @orange-300);
+    #d-internals #color-vars(orange-400, @orange-400);
+    #d-internals #color-vars(orange-500, @orange-500);
+    #d-internals #color-vars(orange-600, @orange-600);
+    #d-internals #color-vars(pink-100, @pink-100);
+    #d-internals #color-vars(pink-200, @pink-200);
+    #d-internals #color-vars(pink-300, @pink-300);
+    #d-internals #color-vars(pink-400, @pink-400);
+    #d-internals #color-vars(pink-500, @pink-500);
+    #d-internals #color-vars(pink-600, @pink-600);
+    #d-internals #color-vars(pink-700, @pink-700);
+    #d-internals #color-vars(yellow-050, @yellow-050);
+    #d-internals #color-vars(yellow-100, @yellow-100);
+    #d-internals #color-vars(yellow-200, @yellow-200);
+    #d-internals #color-vars(yellow-300, @yellow-300);
+    #d-internals #color-vars(yellow-400, @yellow-400);
+    #d-internals #color-vars(yellow-500, @yellow-500);
+    #d-internals #color-vars(yellow-600, @yellow-600);
+    #d-internals #color-vars(green-100, @green-100);
+    #d-internals #color-vars(green-200, @green-200);
+    #d-internals #color-vars(green-300, @green-300);
+    #d-internals #color-vars(green-400, @green-400);
+    #d-internals #color-vars(green-500, @green-500);
+    #d-internals #color-vars(green-600, @green-600);
+    #d-internals #color-vars(green-700, @green-700);
+    #d-internals #color-vars(red-100, @red-100);
+    #d-internals #color-vars(red-200, @red-200);
+    #d-internals #color-vars(red-300, @red-300);
+    #d-internals #color-vars(red-400, @red-400);
+    #d-internals #color-vars(red-500, @red-500);
+    #d-internals #color-vars(red-600, @red-600);
+    #d-internals #color-vars(red-700, @red-700);
 
     //  All the dark colored HSL vars
     &.theme-dark {
+        //  All the light colored HSL vars
+        #d-internals #color-vars(white, @black-900);
+        #d-internals #color-vars(black-025, @black-800);
+        #d-internals #color-vars(black-050, @black-700);
+        #d-internals #color-vars(black-075, @black-600);
+        #d-internals #color-vars(black-100, @black-500);
+        #d-internals #color-vars(black-200, @black-400);
+        #d-internals #color-vars(black-300, @black-300);
+        #d-internals #color-vars(black-400, @black-200);
+        #d-internals #color-vars(black-500, @black-100);
+        #d-internals #color-vars(black-600, @black-075);
+        #d-internals #color-vars(black-700, @black-050);
+        #d-internals #color-vars(black-800, @black-025);
+        #d-internals #color-vars(black-900, @white);
+        #d-internals #color-vars(purple-100, @purple-900);
+        #d-internals #color-vars(purple-200, @purple-800);
+        #d-internals #color-vars(purple-300, @purple-700);
+        #d-internals #color-vars(purple-400, @purple-600);
+        #d-internals #color-vars(purple-500, @purple-500);
+        #d-internals #color-vars(purple-600, @purple-400);
+        #d-internals #color-vars(purple-700, @purple-300);
+        #d-internals #color-vars(purple-800, @purple-200);
+        #d-internals #color-vars(purple-900, @purple-100);
+        #d-internals #color-vars(orange-100, @orange-600);
+        #d-internals #color-vars(orange-200, @orange-500);
+        #d-internals #color-vars(orange-300, @orange-400);
+        #d-internals #color-vars(orange-400, @orange-300);
+        #d-internals #color-vars(orange-500, @orange-200);
+        #d-internals #color-vars(orange-600, @orange-100);
+        #d-internals #color-vars(pink-100, @pink-700);
+        #d-internals #color-vars(pink-200, @pink-600);
+        #d-internals #color-vars(pink-300, @pink-500);
+        #d-internals #color-vars(pink-400, @pink-400);
+        #d-internals #color-vars(pink-500, @pink-300);
+        #d-internals #color-vars(pink-600, @pink-200);
+        #d-internals #color-vars(pink-700, @pink-100);
+        #d-internals #color-vars(yellow-050, @yellow-600);
+        #d-internals #color-vars(yellow-100, @yellow-500);
+        #d-internals #color-vars(yellow-200, @yellow-400);
+        #d-internals #color-vars(yellow-300, @yellow-300);
+        #d-internals #color-vars(yellow-400, @yellow-200);
+        #d-internals #color-vars(yellow-500, @yellow-100);
+        #d-internals #color-vars(yellow-600, @yellow-050);
+        #d-internals #color-vars(green-100, @green-700);
+        #d-internals #color-vars(green-200, @green-600);
+        #d-internals #color-vars(green-300, @green-500);
+        #d-internals #color-vars(green-400, @green-400);
+        #d-internals #color-vars(green-500, @green-300);
+        #d-internals #color-vars(green-600, @green-200);
+        #d-internals #color-vars(green-700, @green-100);
+        #d-internals #color-vars(red-100, @red-700);
+        #d-internals #color-vars(red-200, @red-600);
+        #d-internals #color-vars(red-300, @red-500);
+        #d-internals #color-vars(red-400, @red-400);
+        #d-internals #color-vars(red-500, @red-300);
+        #d-internals #color-vars(red-600, @red-200);
+        #d-internals #color-vars(red-700, @red-100);
+
+        //  Now all our color vars
         each(@dark-color-vars, {
             --@{key}: @value;
         });
     }
 
-    //  Now all our color vars
-    each(@combined-hsl-vars, {
+    //  $$  STATES
+    //  ------------------------------------------------------------------------
+    each(@color-states, {
         --@{key}: @value;
     });
 
@@ -83,9 +191,6 @@ body {
 
     //  $$  VISUAL STYLES
     //  ------------------------------------------------------------------------
-    each(@visual-styles-vars, {
-        --@{key}: @value;
-    });
     each(@box-shadows, {
         --@{key}: @value;
     });
@@ -113,6 +218,9 @@ body {
     each(@type-styles-vars, {
         --@{key}: @value;
     });
+    each(@type-colors, {
+        --@{key}: @value;
+    });
 
     //  $$  Z-INDEX
     //  ------------------------------------------------------------------------
@@ -122,6 +230,9 @@ body {
 
     //  $$  INPUTS & BUTTONS
     //  ------------------------------------------------------------------------
+    each(@focus-rings, {
+        --@{key}: @value;
+    });
     each(@input-button-vars, {
         --@{key}: @value;
     });
