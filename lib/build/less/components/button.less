@@ -181,49 +181,44 @@
     // }
 }
 
-//  $$  MUTED BUTTON
-//  ----------------------------------------------------------------------------
-.d-btn--muted {
-
-}
 
 //  $$  DANGER BUTTON
 //  ----------------------------------------------------------------------------
 .d-btn--danger {
 
-    --button--fc: var(--red-400) !important;
+    --button--fc: var(--red-400);
 
     &:hover {
-        --button--bgc: var(--red-100) !important;
-        --button--fc: var(--red-500) !important;
+        --button--bgc: var(--red-100);
+        --button--fc: var(--red-500);
     }
 
     &:focus {
-        --button--bs-color-outer: var(--red-200) !important;
+        --button--bs-color-outer: var(--red-200);
     }
     // &:active {
-    //     border-color: hsla(var(--error-color-h) var(--error-color-s) var(--error-color-l) ~" / " 50%) !important;
-    //     background-color: hsla(var(--error-color-h) var(--error-color-s) var(--error-color-l) ~" / " 10%) !important;
+    //     border-color: hsla(var(--error-color-h) var(--error-color-s) var(--error-color-l) ~" / " 50%);
+    //     background-color: hsla(var(--error-color-h) var(--error-color-s) var(--error-color-l) ~" / " 10%);
     // }
 
     &.d-btn--outlined {
-        border: 0.1rem solid !important;
+        border: 0.1rem solid;
 
         // &:active {
-        //     border-color: var(--error-color-hover) !important;
+        //     border-color: var(--error-color-hover);
         // }
     }
 
     &.d-btn--primary {
-        --button--fc: var(--white) !important;
-        --button--bgc: var(--red-400) !important;
+        --button--fc: var(--white);
+        --button--bgc: var(--red-400);
 
         &:hover {
-            --button--bgc: var(--red-500) !important;
+            --button--bgc: var(--red-500);
         }
         // &:active {
-        //     background-color: hsl(var(--error-color-h) calc(var(--error-color-s) + 15%) var(--error-color-l)) !important;
-        //     border-color: hsl(var(--error-color-h) var(--error-color-s) calc(var(--error-color-l) - 10%)) !important;
+        //     background-color: hsl(var(--error-color-h) calc(var(--error-color-s) + 15%) var(--error-color-l));
+        //     border-color: hsl(var(--error-color-h) var(--error-color-s) calc(var(--error-color-l) - 10%));
         // }
     }
 }
@@ -233,13 +228,13 @@
 //  --  Base, clear inverted button
 .d-btn--inverted {
 
-    --button--fc: var(--white) !important;
-    --button--bgc: transparent !important;
-    box-shadow: none !important;
+    --button--fc: var(--white);
+    --button--bgc: transparent;
+    box-shadow: none;
 
     &:hover {
-        --button--fc: var(--white) !important;
-        --button--bgc: hsla(var(--blue-100-h) var(--blue-100-s) var(--blue-100-l) ~" / " 25%) !important;
+        --button--fc: var(--white);
+        --button--bgc: hsla(var(--blue-100-h) var(--blue-100-s) var(--blue-100-l) ~" / " 25%);
     }
     // &:active {
     //     background-color: hsla(var(--primary-color-h) var(--primary-color-s) var(--primary-color-l) ~" / " 25%);
@@ -249,24 +244,24 @@
     //  --  OUTLINED
     &.d-btn--outlined {
 
-        border: 0.1rem solid !important;
+        border: 0.1rem solid;
         // &:active {
-        //     border-color: var(--white) !important;
+        //     border-color: var(--white);
         // }
     }
 
     //  --  PRIMARY
     &.d-btn--primary {
-        --button--fc: var(--blue-600) !important;
-        --button--bgc: var(--white) !important;
+        --button--fc: var(--blue-600);
+        --button--bgc: var(--white);
 
         &:hover {
-            --button--fc: var(--blue-700) !important;
-            --button--bgc: var(--black-200) !important;
+            --button--fc: var(--blue-700);
+            --button--bgc: var(--black-200);
         }
         // &:active {
-        //     color: hsl(var(--primary-color-h) var(--primary-color-s) calc(var(--primary-color-l) - 25%)) !important;
-        //     border-color: var(--white) !important;
+        //     color: hsl(var(--primary-color-h) var(--primary-color-s) calc(var(--primary-color-l) - 25%));
+        //     border-color: var(--white);
         // }
     }
 }
@@ -275,12 +270,12 @@
 // we have to create a pseudo element behind the original element which displays
 // only a border and grow it to the correct size.
 .d-btn--inverted:focus-within::before {
-    content: '' !important;
-    position: absolute !important;
-    border-radius: inherit !important;
-    width: calc(100% + var(--su4)) !important;
-    height: calc(100% + var(--su4)) !important;
-    box-shadow: 0 0 0 calc(var(--su1) + var(--su2)) var(--blue-200) !important;
+    content: '';
+    position: absolute;
+    border-radius: inherit;
+    width: calc(100% + var(--su4));
+    height: calc(100% + var(--su4));
+    box-shadow: 0 0 0 calc(var(--su1) + var(--su2)) var(--blue-200);
 }
 
 //  $$  CIRCLE BUTTONS
@@ -321,6 +316,85 @@
     //  If there's a label, hide it
     .d-btn__label {
         display: none;
+    }
+
+    &.d-btn--danger {
+
+        --button--fc: var(--red-400);
+
+        &:hover {
+            --button--bgc: var(--red-100);
+            --button--fc: var(--red-500);
+        }
+
+        &:focus {
+            --button--bs-color-outer: var(--red-200);
+        }
+        // &:active {
+        //     border-color: hsla(var(--error-color-h) var(--error-color-s) var(--error-color-l) ~" / " 50%);
+        //     background-color: hsla(var(--error-color-h) var(--error-color-s) var(--error-color-l) ~" / " 10%);
+        // }
+
+        &.d-btn--outlined {
+            border: 0.1rem solid;
+
+            // &:active {
+            //     border-color: var(--error-color-hover);
+            // }
+        }
+
+        &.d-btn--primary {
+            --button--fc: var(--white);
+            --button--bgc: var(--red-400);
+
+            &:hover {
+                --button--bgc: var(--red-500);
+            }
+            // &:active {
+            //     background-color: hsl(var(--error-color-h) calc(var(--error-color-s) + 15%) var(--error-color-l));
+            //     border-color: hsl(var(--error-color-h) var(--error-color-s) calc(var(--error-color-l) - 10%));
+            // }
+        }
+    }
+
+    &.d-btn--inverted {
+
+        --button--fc: var(--white);
+        --button--bgc: transparent;
+        box-shadow: none;
+
+        &:hover {
+            --button--fc: var(--white);
+            --button--bgc: hsla(var(--blue-100-h) var(--blue-100-s) var(--blue-100-l) ~" / " 25%);
+        }
+        // &:active {
+        //     background-color: hsla(var(--primary-color-h) var(--primary-color-s) var(--primary-color-l) ~" / " 25%);
+        //     border-color: hsla(var(--white-h) var(--white-s) var(--white-l) ~" / " 50%);
+        // }
+
+        //  --  OUTLINED
+        &.d-btn--outlined {
+
+            border: 0.1rem solid;
+            // &:active {
+            //     border-color: var(--white);
+            // }
+        }
+
+        //  --  PRIMARY
+        &.d-btn--primary {
+            --button--fc: var(--blue-600);
+            --button--bgc: var(--white);
+
+            &:hover {
+                --button--fc: var(--blue-700);
+                --button--bgc: var(--black-200);
+            }
+            // &:active {
+            //     color: hsl(var(--primary-color-h) var(--primary-color-s) calc(var(--primary-color-l) - 25%));
+            //     border-color: var(--white);
+            // }
+        }
     }
 
     //  Adjust padding based on sizes
