@@ -9,6 +9,8 @@
 //  TABLE OF CONTENTS
 //  • SELECT MENUS
 //    - Sizes
+//  • SELECT MENU INPUTS
+//    - Validation States
 //
 
 //  ============================================================================
@@ -42,106 +44,126 @@
     pointer-events: none;
     transform: translateY(50%);
   }
+
   &:before {
     top: calc(~"50% - 0.25em");
     border-top-width: 0;
   }
+
   &:after {
     top: calc(~"50% + 0.125em");
     border-bottom-width: 0;
   }
+}
+
+//  $  SELECT MENU INPUT
+//  ----------------------------------------------------------------------------
+.d-select__input {
+  //  [1] Reset the appearance
+  -webkit-appearance: none;
+      -moz-appearance: none;
+          appearance: none;
+
+  //  [2] Update the styles
+  .d-input();
+
+  --select--bc: var(--black-500);
+
+  padding: 0.7rem 2em 0.7rem 0.8rem;
+  height: 100%; // Fill the height of its parent
+
+  color:            var(--select--fc);
+  background-color: var(--select--bgc);
+  border-color:     var(--select--bc);
+
+  &:disabled {
+    background: var(--black-200);
+    border: 1px solid var(--black-500);
+  }
+
+  &:focus {
+    --select--bc: var(--blue-500);
+
+    box-shadow: 0 0 0 var(--su1) var(--white),
+                0 0 0 0.25em var(--blue-200);
+  }
+
+  &::-moz-focus-inner {
+    outline: none !important;
+  }
+
+  &:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 var(--black-900);
+  }
+
+  &::-ms-expand {
+    display: none;
+  }
+}
+
+//  $$  SIZES
+//  ----------------------------------------------------------------------------
+.d-select--xs {
+  font-size: var(--fs14);
+
   .d-select__input {
-    //  [1] Reset the appearance
-    -webkit-appearance: none;
-        -moz-appearance: none;
-            appearance: none;
-
-    //  [2] Update the styles
-    .d-input();
-
-    --select--bc: var(--black-500);
-
-    padding: 0.7rem 2em 0.7rem 0.8rem;
-    height: 100%; // Fill the height of its parent
-
-    color:            var(--select--fc);
-    background-color: var(--select--bgc);
-    border-color:     var(--select--bc);
-
-    &:focus {
-      --select--bc: var(--blue-500);
-
-      box-shadow: 0 0 0 var(--su1) var(--white),
-                  0 0 0 0.25em var(--blue-200);
-    }
-    &:disabled {
-      background: var(--black-200);
-      border: 1px solid var(--black-500);
-    }
-    &::-moz-focus-inner {
-      outline: none !important;
-    }
-    &:-moz-focusring {
-      color: transparent;
-      text-shadow: 0 0 0 var(--black-900);
-    }
-    &::-ms-expand {
-      display: none;
-    }
-    //  $$  VALIDATION STATES
-    //  ------------------------------------------------------------------------
-    &--success {
-      --select--bc: var(--green-400);
-
-      &:focus {
-        --select--bc: var(--green-400);
-        box-shadow: 0 0 0 var(--su1) var(--white),
-                    0 0 0 0.25em var(--green-200);
-      }
-    }
-    &--error {
-      --select--bc: var(--red-400);
-
-      &:focus {
-        --select--bc: var(--red-400);
-        box-shadow: 0 0 0 var(--su1) var(--white),
-                    0 0 0 0.25em var(--red-200);
-      }
-    }
-    &--warning {
-      --select--bc: var(--yellow-500);
-
-      &:focus {
-        --select--bc: var(--yellow-500);
-        box-shadow: 0 0 0 var(--su1) var(--white),
-                    0 0 0 0.25em var(--yellow-400);
-      }
-    }
+    .input-button-xs();
   }
-  //  $$  SIZES
-  //  ----------------------------------------------------------------------------
-  &--xs {
-    font-size: var(--fs14);
-    .d-select__input {
-      .input-button-xs();
-    }
+}
+
+.d-select--sm {
+  font-size: var(--fs16);
+
+  .d-select__input {
+    .input-button-sm();
   }
-  &--sm {
-    font-size: var(--fs16);
-    .d-select__input {
-      .input-button-sm();
-    }
+}
+
+.d-select--lg {
+  font-size: var(--fs20);
+
+  .d-select__input {
+    .input-button-lg();
   }
-  &--lg {
-    font-size: var(--fs20);
-    .d-select__input {
-      .input-button-lg();
-    }
+}
+
+.d-select--xl {
+  font-size: var(--fs24);
+
+  .d-select__input {
+    .input-button-xl();
   }
-  &--xl {
-    font-size: var(--fs24);
-    .d-select__input {
-      .input-button-xl();
-    }
+}
+
+//  $$  VALIDATION STATES
+//  ------------------------------------------------------------------------
+.d-select__input--success {
+  --select--bc: var(--green-400);
+
+  &:focus {
+    --select--bc: var(--green-400);
+    box-shadow: 0 0 0 var(--su1) var(--white),
+                0 0 0 0.25em var(--green-200);
+  }
+}
+
+.d-select__input--error {
+  --select--bc: var(--red-400);
+
+  &:focus {
+    --select--bc: var(--red-400);
+    box-shadow: 0 0 0 var(--su1) var(--white),
+                0 0 0 0.25em var(--red-200);
+  }
+}
+
+.d-select__input--warning {
+  --select--bc: var(--yellow-500);
+
+  &:focus {
+    --select--bc: var(--yellow-500);
+    box-shadow: 0 0 0 var(--su1) var(--white),
+                0 0 0 0.25em var(--yellow-400);
   }
 }
