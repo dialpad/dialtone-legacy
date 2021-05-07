@@ -19,8 +19,8 @@ description: Utilities for controlling the divider width between an element's ch
                 {% assign widths = "default, 0, 2, 4" | split: ", " %}
                 {% for i in widths %}
                 <tr>
-                    <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">d-divide-{{ d }}{% if i != "default" %}{{ i }}{% endif %} > * + *</th>
-                    <td class="d-ff-mono d-fc-teal-500 d-fs12">
+                    <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">d-divide-{{ d }}{% if i != "default" %}{{ i }}{% endif %} > * + *</th>
+                    <td class="d-ff-mono d-fc-orange d-fs12">
                         --divide-{{ d }}-reverse: 0;<br/>
                         border-{% if d == "y" %}top{% elsif d == "x" %}right{% endif %}: calc({% if i != "default" %}1{% else %}{{ i }}{% endif %}px * (1 - var(--divide-{{ d }}-reverse))) solid currentColor !important;<br/>
                         border-{% if d == "y" %}bottom{% elsif d == "x" %}left{% endif %}: calc({% if i != "default" %}1{% else %}{{ i }}{% endif %}px * var(--divide-{{ d }}-reverse)) solid currentColor !important;
@@ -35,7 +35,7 @@ description: Utilities for controlling the divider width between an element's ch
 <section class="d-stack16">
     <header class="d-stack2">
         {% header "h2", "Default Width" %}
-        <p class="d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-divide-{y|x}</code> to create a 1px divider between an element's child items.</p>
+        <p class="d-wmx764 d-fs18 d-lh6">Use {% code %}d-divide-{y|x}{% endcode %} to create a 1px divider between an element's child items.</p>
     </header>
     <aside class="d-bar8 d-of-hidden">
         <header class="d-fl-center d-fd-column d-p24 d-bgc-green-100 d-bgo50 d-w100p d-hmn102">
@@ -45,9 +45,9 @@ description: Utilities for controlling the divider width between an element's ch
                 <div class="d-fl-center d-w100p d-h64 d-p16 d-fc-green-600 d-fs24 d-fw-bold">3</div>
             </div>
             <div class="d-w100p d-fl-col3 d-divide-x d-divide-green-400">
-                <div class="d-fl-center d-h64 d-p16 d-fc-green-600 d-fs24 d-fw-bold">1</div>
-                <div class="d-fl-center d-h64 d-p16 d-fc-green-600 d-fs24 d-fw-bold">2</div>
-                <div class="d-fl-center d-h64 d-p16 d-fc-green-600 d-fs24 d-fw-bold">3</div>
+                <div class="d-fl-center d-fl-grow1 d-h64 d-p16 d-fc-green-600 d-fs24 d-fw-bold">1</div>
+                <div class="d-fl-center d-fl-grow1 d-h64 d-p16 d-fc-green-600 d-fs24 d-fw-bold">2</div>
+                <div class="d-fl-center d-fl-grow1 d-h64 d-p16 d-fc-green-600 d-fs24 d-fw-bold">3</div>
             </div>
         </header>
         <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
@@ -69,32 +69,32 @@ description: Utilities for controlling the divider width between an element's ch
 <section class="d-stack16">
     <header class="d-stack2">
         {% header "h2", "Changing the divider width" %}
-        <p class="d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-divide-{y|x}{n}</code> to change the divider width between an element's child items.</p>
+        <p class="d-wmx764 d-fs18 d-lh6">Use {% code %}d-divide-{y|x}{n}{% endcode %} to change the divider width between an element's child items.</p>
     </header>
     <aside class="d-bar8 d-of-hidden">
         <header class="d-fl-center d-fd-column d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn102 d-stack8">
             <div class="d-w100p d-d-flex d-fd-column d-p8 d-bar8 d-bgc-purple-100">
-                <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">.d-divide-x0</code>
+                {% code %}.d-divide-x0{% endcode %}
                 <div class="d-w100p d-fl-col3 d-divide-x0 d-divide-purple-400">
-                    <div class="d-fl-center d-p16 d-fc-purple-600 d-fs24 d-fw-bold">1</div>
-                    <div class="d-fl-center d-p16 d-fc-purple-600 d-fs24 d-fw-bold">2</div>
-                    <div class="d-fl-center d-p16 d-fc-purple-600 d-fs24 d-fw-bold">3</div>
+                    <div class="d-fl-center d-fl-grow1 d-p16 d-fc-purple-600 d-fs24 d-fw-bold">1</div>
+                    <div class="d-fl-center d-fl-grow1 d-p16 d-fc-purple-600 d-fs24 d-fw-bold">2</div>
+                    <div class="d-fl-center d-fl-grow1 d-p16 d-fc-purple-600 d-fs24 d-fw-bold">3</div>
                 </div>
             </div>
             <div class="d-w100p d-d-flex d-fd-column d-p8 d-bar8 d-bgc-purple-100">
-                <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">.d-divide-x2</code>
+                {% code %}.d-divide-x2{% endcode %}
                 <div class="d-w100p d-fl-col3 d-divide-x2 d-divide-purple-400">
-                    <div class="d-fl-center d-p16 d-fc-purple-600 d-fs24 d-fw-bold">1</div>
-                    <div class="d-fl-center d-p16 d-fc-purple-600 d-fs24 d-fw-bold">2</div>
-                    <div class="d-fl-center d-p16 d-fc-purple-600 d-fs24 d-fw-bold">3</div>
+                    <div class="d-fl-center d-fl-grow1 d-p16 d-fc-purple-600 d-fs24 d-fw-bold">1</div>
+                    <div class="d-fl-center d-fl-grow1 d-p16 d-fc-purple-600 d-fs24 d-fw-bold">2</div>
+                    <div class="d-fl-center d-fl-grow1 d-p16 d-fc-purple-600 d-fs24 d-fw-bold">3</div>
                 </div>
             </div>
             <div class="d-w100p d-d-flex d-fd-column d-p8 d-bar8 d-bgc-purple-100">
-                <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">.d-divide-x4</code>
+                {% code %}.d-divide-x4{% endcode %}
                 <div class="d-w100p d-fl-col3 d-divide-x4 d-divide-purple-400">
-                    <div class="d-fl-center d-p16 d-fc-purple-600 d-fs24 d-fw-bold">1</div>
-                    <div class="d-fl-center d-p16 d-fc-purple-600 d-fs24 d-fw-bold">2</div>
-                    <div class="d-fl-center d-p16 d-fc-purple-600 d-fs24 d-fw-bold">3</div>
+                    <div class="d-fl-center d-fl-grow1 d-p16 d-fc-purple-600 d-fs24 d-fw-bold">1</div>
+                    <div class="d-fl-center d-fl-grow1 d-p16 d-fc-purple-600 d-fs24 d-fw-bold">2</div>
+                    <div class="d-fl-center d-fl-grow1 d-p16 d-fc-purple-600 d-fs24 d-fw-bold">3</div>
                 </div>
             </div>
         </header>
@@ -110,14 +110,14 @@ description: Utilities for controlling the divider width between an element's ch
 <section class="d-stack16">
     <header class="d-stack2">
         {% header "h2", "Reversing the divider direction" %}
-        <p class="d-wmx764 d-fs18 d-lh6">If an element's <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">flex-direction</code> is reversed, apply <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-divide-{y|x}-reverse</code> to reverse the divider placement between an element's child items.</p>
+        <p class="d-wmx764 d-fs18 d-lh6">If an element's {% code %}flex-direction{% endcode %} is reversed, apply {% code %}d-divide-{y|x}-reverse{% endcode %} to reverse the divider placement between an element's child items.</p>
     </header>
     <aside class="d-bar8 d-of-hidden">
-        <header class="d-fl-center d-fd-column d-p24 d-bgc-blue-100 d-bgo50 d-w100p d-hmn102">
-            <div class="d-w100p d-d-flex d-fd-column-reverse d-divide-y d-divide-y-reverse d-divide-blue-400">
-                <div class="d-fl-center d-p16 d-fc-blue-600 d-fs24 d-fw-bold">1</div>
-                <div class="d-fl-center d-p16 d-fc-blue-600 d-fs24 d-fw-bold">2</div>
-                <div class="d-fl-center d-p16 d-fc-blue-600 d-fs24 d-fw-bold">3</div>
+        <header class="d-fl-center d-fd-column d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmn102">
+            <div class="d-w100p d-d-flex d-fd-column-reverse d-divide-y d-divide-y-reverse d-divide-pink-400">
+                <div class="d-fl-center d-p16 d-fc-pink-600 d-fs24 d-fw-bold">1</div>
+                <div class="d-fl-center d-p16 d-fc-pink-600 d-fs24 d-fw-bold">2</div>
+                <div class="d-fl-center d-p16 d-fc-pink-600 d-fs24 d-fw-bold">3</div>
             </div>
         </header>
         <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">

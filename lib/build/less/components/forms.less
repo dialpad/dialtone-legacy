@@ -100,56 +100,54 @@ fieldset {
 //  $   VALIDATION MESSAGES
 //  ----------------------------------------------------------------------------
 .d-validation-message {
-  display: inline-flex;
-  align-items: flex-start;
+    --validation--fc:   var(--fc-light);
 
-  margin-top: var(--su6);
+    display: inline-flex;
+    align-items: flex-start;
+    margin-top: var(--su6);
 
-  color: var(--black-700);
+    font-size: var(--fs12);
+    font-family: inherit;
+    font-weight: inherit;
+    line-height: var(--lh4);
+    color: var(--validation--fc);
 
-  font-size: var(--fs12);
-  font-family: inherit;
-  font-weight: inherit;
-  line-height: var(--lh4);
+    // Icon Slot
+    &::before {
+        content: '';
+        height: var(--su16);
+        width: var(--su16);
+        margin-right: var(--su4);
+    }
 
-  // Icon Slot
-  &::before {
-    content: '';
-
-    height: var(--su16);
-    width: var(--su16);
-
-    margin-right: var(--su4);
-  }
-
-  // Link Styles
-  > a {
-    line-height: var(--lh0);
-  }
+    // Link Styles
+    > a {
+        line-height: var(--lh0);
+    }
 }
 
 //  $$   VALIDATION STATES
 //  ----------------------------------------------------------------------------
 .d-validation-message--warning {
-  color: var(--warning-color);
+    --validation--fc:   var(--fc-warning);
 
-  &::before {
-    background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z' fill='hsl(40, 100%, 31%)'/%3E%3C/svg%3E");
-  }
+    &::before {
+        background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z' fill='hsl(43 100% 33%)'/%3E%3C/svg%3E");
+    }
 }
 
 .d-validation-message--error {
-  color: var(--error-color);
+    --validation--fc:   var(--fc-error);
 
-  &::before {
-    background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z' fill='hsl(356, 80%, 51%)'/%3E%3C/svg%3E");
-  }
+    &::before {
+        background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z' fill='hsl(0 100% 29%)'/%3E%3C/svg%3E");
+    }
 }
 
 .d-validation-message--success {
-  color: var(--success-color);
+    --validation--fc:   var(--fc-success);
 
-  &::before {
-    background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z' fill='hsl(162, 87%, 21%)'/%3E%3C/svg%3E");
-  }
+    &::before {
+        background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z' fill='hsl(115 94% 18%)'/%3E%3C/svg%3E");
+    }
 }

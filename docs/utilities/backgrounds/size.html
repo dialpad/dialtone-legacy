@@ -16,8 +16,8 @@ description: Utilities for controlling an element's background size.
             {% assign repeat = "contain, cover, var, auto, unset" | split: ", " %}
             {% for i in repeat %}
                 <tr>
-                    <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-bgp-{{ i }}</th>
-                    <td class="d-ff-mono d-fc-teal-500 d-fs12">background-size: {% if i == "var" %}var(--bgg-size, 100% 100%);{% else %}{{ i }}{% endif %} !important;
+                    <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-bgp-{{ i }}</th>
+                    <td class="d-ff-mono d-fc-orange d-fs12">background-size: {% if i == "var" %}var(--bgg-size, 100% 100%);{% else %}{{ i }}{% endif %} !important;
                     </td>
                 </tr>
             {% endfor %}
@@ -27,14 +27,14 @@ description: Utilities for controlling an element's background size.
 <section class="d-stack16">
     <header class="d-stack2">
         {% header "h2", "Usage" %}
-        <p class="d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-bgs-{n}</code> to control the size of element's background image.</p>
+        <p class="d-wmx764 d-fs18 d-lh6">Use {% code %}d-bgs-{n}{% endcode %} to control the size of element's background image.</p>
     </header>
     <aside class="d-bar8 d-of-hidden">
-        <header class="d-fl-col4 d-fw-wrap d-p16 d-bgc-blue-100 d-bgo50">
+        <header class="d-fl-col4 d-fw-wrap d-flg12 d-p12 d-bgc-orange-100 d-bgo50">
             {% for i in repeat %}
-            <div class="d-d-flex d-fd-column d-ai-center d-my12 d-stack4">
-                <div class="d-fl-center d-w128 d-h128 d-bgc-blue-300 d-bar8 d-bc-purple-200 d-of-hidden d-bgr-none {% if i == 'auto' %}d-bgp-center {% endif %}d-bgs-{{ i }} =" style="{% if i == 'var' %}--bgg-size: 65% 65%; {% endif %}background-image: url('https://4.bp.blogspot.com/-EVbXg5iW6qY/ULcKZEC-bnI/AAAAAAAACCI/kZDtjeKwQlo/s1600/puffin1.jpg');"></div>
-                <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">.d-bgs-{{ i }}</code>
+            <div class="d-d-flex d-fd-column d-ai-center d-stack4">
+                <div class="d-fl-center d-w128 d-h128 d-bgc-orange-300 d-bar8 d-bc-purple-200 d-of-hidden d-bgr-none {% if i == 'auto' %}d-bgp-center {% endif %}d-bgs-{{ i }} =" style="{% if i == 'var' %}--bgg-size: 65% 65%; {% endif %}background-image: url('https://4.bp.blogspot.com/-EVbXg5iW6qY/ULcKZEC-bnI/AAAAAAAACCI/kZDtjeKwQlo/s1600/puffin1.jpg');"></div>
+                {% code %}.d-bgs-{{ i }}{% endcode %}
             </div>
             {% endfor %}
         </header>

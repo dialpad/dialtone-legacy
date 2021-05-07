@@ -15,8 +15,8 @@ description: Utilities for controlling how an element transitions in and out of 
             </thead>
             <tbody>
                 <tr>
-                    <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-t</th>
-                    <td class="d-ff-mono d-fc-teal-500 d-fs12">transition-duration: var(--td25);<br/>transition-property: all;<br/>transition-timing-function: var(--ttf-in-out);<br/>transition-delay: 0s;</td>
+                    <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-t</th>
+                    <td class="d-ff-mono d-fc-orange-500 d-fs12">transition-duration: var(--td25);<br/>transition-property: all;<br/>transition-timing-function: var(--ttf-in-out);<br/>transition-delay: 0s;</td>
                 </tr>
             </tbody>
             {% assign transition = "td, ttf, tp, t-delay" | split: ", "%}
@@ -26,32 +26,32 @@ description: Utilities for controlling how an element transitions in and out of 
                     {% assign duration = "0, 50, 100, 150, 200" | split: ", " %}
                     {% for d in duration %}
                     <tr>
-                        <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-{{ i }}{{ d }}</th>
-                        <td class="d-ff-mono d-fc-teal-500 d-fs12">transition-duration: var(--td{{ d }}) !important;</td>
+                        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-{{ i }}{{ d }}</th>
+                        <td class="d-ff-mono d-fc-orange-500 d-fs12">transition-duration: var(--td{{ d }}) !important;</td>
                     </tr>
                     {% endfor %}
                 {% elsif i == "ttf" %}
                     {% assign timing = "in-out, out" | split: ", " %}
                     {% for t in timing %}
                     <tr>
-                        <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-{{ i }}-{{ t }}</th>
-                        <td class="d-ff-mono d-fc-teal-500 d-fs12">transition-timing-function: var(--ttf-{{ t }}) !important;</td>
+                        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-{{ i }}-{{ t }}</th>
+                        <td class="d-ff-mono d-fc-orange-500 d-fs12">transition-timing-function: var(--ttf-{{ t }}) !important;</td>
                     </tr>
                     {% endfor %}
                 {% elsif i == "tp" %}
                     {% assign property = "all, o, bs, bgc, transform, colors" | split: ", " %}
                     {% for p in property %}
                     <tr>
-                        <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-{{ i }}-{{ p }}</th>
-                        <td class="d-ff-mono d-fc-teal-500 d-fs12">transition-property: {% if p == "o" %}opacity{% elsif p == "bs" %}box-shadow{% elsif p == "bgc" %}background-color{% elsif p == "colors" %}background-color, border-color, color, fill, stroke{% else %}{{ p }}{% endif %} !important;</td>
+                        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-{{ i }}-{{ p }}</th>
+                        <td class="d-ff-mono d-fc-orange-500 d-fs12">transition-property: {% if p == "o" %}opacity{% elsif p == "bs" %}box-shadow{% elsif p == "bgc" %}background-color{% elsif p == "colors" %}background-color, border-color, color, fill, stroke{% else %}{{ p }}{% endif %} !important;</td>
                     </tr>
                     {% endfor %}
                 {% elsif i == "t-delay" %}
                     {% assign delay = "25, 50, 100, 150, 200" | split: ", " %}
                     {% for d in delay %}
                     <tr>
-                        <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-{{ i }}{{ d }}</th>
-                        <td class="d-ff-mono d-fc-teal-500 d-fs12">transition-delay: var(--td{{ d }}) !important;</td>
+                        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-{{ i }}{{ d }}</th>
+                        <td class="d-ff-mono d-fc-orange-500 d-fs12">transition-delay: var(--td{{ d }}) !important;</td>
                     </tr>
                     {% endfor %}
                 {% endif %}
@@ -63,15 +63,15 @@ description: Utilities for controlling how an element transitions in and out of 
 <section class="d-stack16">
     <header class="d-stack2">
         {% header "h2", "Adding a transition" %}
-        <p class="d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-t</code> to add a transition to an element.</p>
+        <p class="d-wmx764 d-fs18 d-lh6">Use {% code %}d-t{% endcode %} to add a transition to an element.</p>
     </header>
     <aside class="d-bar8 d-of-hidden">
         <header class="d-fl-center d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn102">
-            <div class="d-fl-center d-p24 d-bar8 d-bgc-purple-400 h:d-bgc-yellow-300 h:d-bs-lg d-fs18 d-fw-bold d-fc-white h:d-fc-dark d-t d-c-pointer">Hover on me</div>
+            <div class="d-fl-center d-p24 d-bar8 d-bgc-purple-300 h:d-bgc-yellow-300 h:d-bs-lg d-fs18 d-fw-bold d-fc-white h:d-fc-dark d-t d-c-pointer">Hover on me</div>
         </header>
         <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
 {% highlight html linenos %}
-<div class="d-bgc-purple-400 h:d-bgc-yellow-300 h:d-bs-lg d-fc-white h:d-fc-dark d-t">...</div>
+<div class="d-bgc-purple-300 h:d-bgc-yellow-300 h:d-bs-lg d-fc-white h:d-fc-dark d-t">...</div>
 {% endhighlight %}
         </footer>
     </aside>
@@ -79,15 +79,15 @@ description: Utilities for controlling how an element transitions in and out of 
 <section class="d-stack16">
     <header class="d-stack2">
         {% header "h2", "Changing transition duration" %}
-        <p class="d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-td{n}</code> change an element's <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">transition-delay</code> from it's default <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">50ms</code> length.</p>
+        <p class="d-wmx764 d-fs18 d-lh6">Use {% code %}d-td{n}{% endcode %} change an element's {% code %}transition-delay{% endcode %} from it's default {% code %}50ms{% endcode %} length.</p>
     </header>
     <aside class="d-bar8 d-of-hidden">
-        <header class="d-fl-col3 d-flg8 d-p24 d-bgc-blue-100 d-bgo50 d-w100p d-hmn102">
-            <div class="d-fl-center d-p24 d-bar8 d-bgc-blue-400 h:d-bgc-yellow-300 h:d-bs-lg d-fs18 d-fw-bold d-fc-white h:d-fc-dark d-t d-td0 d-c-pointer">0ms</div>
-            <div class="d-fl-center d-p24 d-bar8 d-bgc-blue-400 h:d-bgc-yellow-300 h:d-bs-lg d-fs18 d-fw-bold d-fc-white h:d-fc-dark d-t d-c-pointer">50ms</div>
-            <div class="d-fl-center d-p24 d-bar8 d-bgc-blue-400 h:d-bgc-yellow-300 h:d-bs-lg d-fs18 d-fw-bold d-fc-white h:d-fc-dark d-t d-td100 d-c-pointer">100ms</div>
-            <div class="d-fl-center d-p24 d-bar8 d-bgc-blue-400 h:d-bgc-yellow-300 h:d-bs-lg d-fs18 d-fw-bold d-fc-white h:d-fc-dark d-t d-td150 d-c-pointer">150ms</div>
-            <div class="d-fl-center d-p24 d-bar8 d-bgc-blue-400 h:d-bgc-yellow-300 h:d-bs-lg d-fs18 d-fw-bold d-fc-white h:d-fc-dark d-t d-td200 d-c-pointer">200ms</div>
+        <header class="d-fl-col3 d-flg8 d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmn102">
+            <div class="d-fl-center d-p24 d-bar8 d-bgc-pink-400 h:d-bgc-yellow-300 h:d-bs-lg d-fs18 d-fw-bold d-fc-white h:d-fc-dark d-t d-td0 d-c-pointer">0ms</div>
+            <div class="d-fl-center d-p24 d-bar8 d-bgc-pink-400 h:d-bgc-yellow-300 h:d-bs-lg d-fs18 d-fw-bold d-fc-white h:d-fc-dark d-t d-c-pointer">50ms</div>
+            <div class="d-fl-center d-p24 d-bar8 d-bgc-pink-400 h:d-bgc-yellow-300 h:d-bs-lg d-fs18 d-fw-bold d-fc-white h:d-fc-dark d-t d-td100 d-c-pointer">100ms</div>
+            <div class="d-fl-center d-p24 d-bar8 d-bgc-pink-400 h:d-bgc-yellow-300 h:d-bs-lg d-fs18 d-fw-bold d-fc-white h:d-fc-dark d-t d-td150 d-c-pointer">150ms</div>
+            <div class="d-fl-center d-p24 d-bar8 d-bgc-pink-400 h:d-bgc-yellow-300 h:d-bs-lg d-fs18 d-fw-bold d-fc-white h:d-fc-dark d-t d-td200 d-c-pointer">200ms</div>
         </header>
         <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
 {% highlight html linenos %}
@@ -103,12 +103,12 @@ description: Utilities for controlling how an element transitions in and out of 
 <section class="d-stack16">
     <header class="d-stack2">
         {% header "h2", "Changing transition easing" %}
-        <p class="d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-ttf-{n}</code> change an element's <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">transition-timing-function</code> (aka easing) from it's default Quad Ease In, Ease Out value.</p>
+        <p class="d-wmx764 d-fs18 d-lh6">Use {% code %}d-ttf-{n}{% endcode %} change an element's {% code %}transition-timing-function{% endcode %} (aka easing) from it's default Quad Ease In, Ease Out value.</p>
     </header>
     <aside class="d-bar8 d-of-hidden">
         <header class="d-fl-col2 d-flg8 d-p24 d-bgc-green-100 d-bgo50 d-w100p d-hmn102">
-            <div class="d-fl-center d-p24 d-bar8 d-bgc-green-400 h:d-bgc-purple-100 h:d-bs-lg d-fs18 d-fw-bold d-fc-white h:d-fc-dark d-t d-td100 d-c-pointer">Ease In, Ease Out</div>
-            <div class="d-fl-center d-p24 d-bar8 d-bgc-green-400 h:d-bgc-purple-100 h:d-bs-lg d-fs18 d-fw-bold d-fc-white h:d-fc-dark d-t d-td100 d-ttf-out d-c-pointer">Ease Out</div>
+            <div class="d-fl-center d-p24 d-bar8 d-bgc-green-300 h:d-bgc-purple-100 h:d-bs-lg d-fs18 d-fw-bold d-t d-td100 d-c-pointer">Ease In, Ease Out</div>
+            <div class="d-fl-center d-p24 d-bar8 d-bgc-green-300 h:d-bgc-purple-100 h:d-bs-lg d-fs18 d-fw-bold d-t d-td100 d-ttf-out d-c-pointer">Ease Out</div>
         </header>
         <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
 {% highlight html linenos %}
@@ -121,7 +121,7 @@ description: Utilities for controlling how an element transitions in and out of 
 <section class="d-stack16">
     <header class="d-stack2">
         {% header "h2", "Changing transition property" %}
-        <p class="d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-tp-{n}</code> change an what items within an element are transitioned.</p>
+        <p class="d-wmx764 d-fs18 d-lh6">Use {% code %}d-tp-{n}{% endcode %} change an what items within an element are transitioned.</p>
     </header>
     <aside class="d-bar8 d-of-hidden">
         <header class="d-fl-col3 d-flg8 d-p24 d-bgc-yellow-100 d-bgo50 d-w100p d-hmn102">

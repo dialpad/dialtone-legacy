@@ -1,31 +1,34 @@
 ---
-layout: page-no-toc
-title: Color Palette
-description: Dialpad uses specific color choices to help communicate user interface functionality, states, and actions within the product. These colors have been selected for on-screen use.
+layout: page
+title: Colors
+description: The Dialtone color system expands our primary, secondary, and expressive colors to build out a functional, personal, usable, and accessible set of color stop.
 ---
-<section class="d-d-grid d-grg64 d-gcg24 d-g-cols2 md:d-g-cols1">
-  {% for color in colors.colors %}
-    {% assign c = color.color %}
-    <div class="d-stack16">
-      <h2 class="d-headline24">{{ c | capitalize }}</h2>
-      <div class="dialtone-color-grid__group" style="--color-grid-columns: 1">
-        {% for s in color.stops %}
-          {% assign stop = s.stop %}
-          {% assign hex = s.hex %}
-          {% assign hsl = s.hsl %}
-          {% assign copy = s.copy %}
-          {% assign contrast = s.contrast %}
-          <div class="dialtone-color-grid__item d-px24 d-py12 d-bgc-{{ c }}-{{ stop }} d-fc-{{ copy }}{% if c == 'white' %} d-ba d-bc-black-900 d-baw1{% endif %}">
-            <div class="d-d-flex d-jc-space-between d-mb8">
-              <p class="d-d-inline-block d-fs18 d-fw-bold">{{ c | capitalize }} {{ stop }}</p>
-              <p class="d-d-inline-block d-fs14 d-fw-medium">{{ contrast }}</p>
-            </div>
-            <p class="d-fs12 d-ff-mono"><span class="d-fw-bold">CSS:</span> var(--{{ c }}-{{ stop }})</p>
-            <p class="d-fs12 d-ff-mono"><span class="d-fw-bold">HSL:</span> {{ hsl }}</p>
-            <p class="d-fs12 d-ff-mono"><span class="d-fw-bold">HEX:</span> #{{ hex }}</p>
-          </div>
+<section class="d-stack16">
+    <div class="d-d-grid d-gg24 d-g-cols2 md:d-g-cols1">
+    {% for color in colors.colors %}
+        {% assign c = color.color %}
+        <aside class="d-d-flex d-fd-column">
+            <header class="d-d-flex d-jc-space-between d-ai-end d-p16 d-pe-none">
+                <h2 class="d-fl1 d-headline20 js-scrollspy" id="{{ c }}"><span class="d-pe-auto">{{ c | capitalize }}</span></h2>
+                <a class="d-btn d-btn--muted d-pe-auto" href="#{{ c }}">
+                    <span class="d-btn__icon d-m0 d-ai-center">{% iconSystem "link", "" %}</span>
+                </a>
+            </header>
+            {% for s in color.stops %}
+                {% assign stop = s.stop %}
+                {% assign hex = s.hex %}
+                {% assign copy = s.copy %}
+                {% assign contrast = s.contrast %}
+                {% assign primary = s.primary %}
+                <div class="d-d-flex d-jc-space-between d-ai-center d-px12 d-py8 d-bgc-{{ c }}-{{ stop }} d-fs12 d-lh6 d-ff-mono d-fc-{{ copy }} {% if forloop.first %}d-btr4{% elsif forloop.last %}d-bbr4{% endif %}">
+                    <div>
+                        <strong>var(--{{ c }}-{{ stop }})</strong><br/>
+                        <span class="d-fc-dark-lighter">#{{ hex }}</span>
+                    </div>
+                    <div class="d-fs11 d-lh2 d-fw-bold d-bar-sm d-px4 py2">{{ contrast}}</div>
+                </div>
         {% endfor %}
-      </div>
+        </aside>
+    {% endfor %}
     </div>
-  {% endfor %}
 </section>

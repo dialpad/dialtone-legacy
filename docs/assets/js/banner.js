@@ -60,7 +60,7 @@ $(document).ready(function() {
         if (important.is(':checked')) {
             banner.addClass('d-banner--important');
 
-            if (style !== 'warning') {
+            if (!['warning', 'success'].includes(style)) {
                 actionBtn.addClass('d-btn--inverted');
                 closeBtn.addClass('d-btn--inverted');
                 link.addClass('d-link--inverted');

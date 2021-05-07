@@ -21,8 +21,8 @@ description: Utilities to change an element's line-height.
                     {% assign addition = class | plus: 0 %}
                     {% capture addition %}{{ addition }}{% endcapture %}
                     <tr>
-                        <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">var(--lh{% if class != addition %}-{% endif %}{{ class }})</th>
-                        <td class="d-ff-mono d-fc-teal-500 d-fs12">{{ output }}</td>
+                        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">var(--lh{% if class != addition %}-{% endif %}{{ class }})</th>
+                        <td class="d-ff-mono d-fc-orange d-fs12">{{ output }}</td>
                     </tr>
                 {% endif %}
                 {% endfor %}
@@ -48,8 +48,8 @@ description: Utilities to change an element's line-height.
                     {% assign addition = class | plus: 0 %}
                     {% capture addition %}{{ addition }}{% endcapture %}
                     <tr>
-                        <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-lh{% if class != addition %}-{% endif %}{{ class }}</th>
-                        <td class="d-ff-mono d-fc-teal-500 d-fs12">line-height: var(--lh{% if class != addition %}-{% endif %}{{ class }}) !important;</td>
+                        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-lh{% if class != addition %}-{% endif %}{{ class }}</th>
+                        <td class="d-ff-mono d-fc-orange d-fs12">line-height: var(--lh{% if class != addition %}-{% endif %}{{ class }}) !important;</td>
                     </tr>
                 {% endif %}
                 {% endfor %}
@@ -60,21 +60,21 @@ description: Utilities to change an element's line-height.
 <section class="d-stack16">
     <header class="d-stack2">
         {% header "h2", "Relative line-heights" %}
-        <p class="d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-lh-{n}</code> to change an element's line-height relatively. This means no unit is set with the line-height. Instead the line-height value is a multiple of the font-size.</p>
+        <p class="d-wmx764 d-fs18 d-lh6">Use {% code %}d-lh-{n}{% endcode %} to change an element's line-height relatively. This means no unit is set with the line-height. Instead the line-height value is a multiple of the font-size.</p>
     </header>
     <aside class="d-bar8 d-of-hidden">
         <header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-purple-100 d-w100p d-hmn102">
             <div class="d-d-grid d-gg16 d-ai-center" style="grid-template-columns: 10rem 1fr">
-                <div class="d-fs12 d-ff-mono d-fc-purple-400 d-fco75">.d-lh-tighter</div>
-                <div><p class="d-fs24 d-lh-tighter d-fc-purple-500 d-bgc-purple-200 d-bgo25">The quick brown fox jumps over the lazy dog.</p></div>
-                <div class="d-fs12 d-ff-mono d-fc-purple-400 d-fco75">.d-lh-tight</div>
-                <div><p class="d-fs24 d-lh-tight d-fc-purple-500 d-bgc-purple-200 d-bgo25">The quick brown fox jumps over the lazy dog.</p></div>
-                <div class="d-fs12 d-ff-mono d-fc-purple-400 d-fco75">.d-lh-normal</div>
-                <div><p class="d-fs24 d-lh-normal d-fc-purple-500 d-bgc-purple-200 d-bgo25">The quick brown fox jumps over the lazy dog.</p></div>
-                <div class="d-fs12 d-ff-mono d-fc-purple-400 d-fco75">.d-lh-loose</div>
-                <div><p class="d-fs24 d-lh-loose d-fc-purple-500 d-bgc-purple-200 d-bgo25">The quick brown fox jumps over the lazy dog.</p></div>
-                <div class="d-fs12 d-ff-mono d-fc-purple-400 d-fco75">.d-lh-looser</div>
-                <div><p class="d-fs24 d-lh-looser d-fc-purple-500 d-bgc-purple-200 d-bgo25">The quick brown fox jumps over the lazy dog.</p></div>
+                <div class="d-fs12 d-ff-mono d-fc-purple d-fco75">.d-lh-tighter</div>
+                <div><p class="d-fs24 d-lh-tighter d-fc-orange d-bgc-purple-200 d-bgo25">The quick brown fox jumps over the lazy dog.</p></div>
+                <div class="d-fs12 d-ff-mono d-fc-purple d-fco75">.d-lh-tight</div>
+                <div><p class="d-fs24 d-lh-tight d-fc-orange d-bgc-purple-200 d-bgo25">The quick brown fox jumps over the lazy dog.</p></div>
+                <div class="d-fs12 d-ff-mono d-fc-purple d-fco75">.d-lh-normal</div>
+                <div><p class="d-fs24 d-lh-normal d-fc-orange d-bgc-purple-200 d-bgo25">The quick brown fox jumps over the lazy dog.</p></div>
+                <div class="d-fs12 d-ff-mono d-fc-purple d-fco75">.d-lh-loose</div>
+                <div><p class="d-fs24 d-lh-loose d-fc-orange d-bgc-purple-200 d-bgo25">The quick brown fox jumps over the lazy dog.</p></div>
+                <div class="d-fs12 d-ff-mono d-fc-purple d-fco75">.d-lh-looser</div>
+                <div><p class="d-fs24 d-lh-looser d-fc-orange d-bgc-purple-200 d-bgo25">The quick brown fox jumps over the lazy dog.</p></div>
             </div>
         </header>
         <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
@@ -91,7 +91,7 @@ description: Utilities to change an element's line-height.
 <section class="d-stack16">
     <header class="d-stack2">
         {% header "h2", "Fixed line-heights" %}
-        <p class="d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-lh{n}</code> to fix an element's line-height. This allows you to target a specific line-height based on the font-size. For example if a target 20px line-height is desired and the current font-size is 14px, apply <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">.d-lh6</code> to achieve this target (14px font-size + 6px = 20px target line-height).</p>
+        <p class="d-wmx764 d-fs18 d-lh6">Use {% code %}d-lh{n}{% endcode %} to fix an element's line-height. This allows you to target a specific line-height based on the font-size. For example if a target 20px line-height is desired and the current font-size is 14px, apply {% code %}.d-lh6{% endcode %} to achieve this target (14px font-size + 6px = 20px target line-height).</p>
     </header>
     <aside class="d-bar8 d-of-hidden">
         <header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-yellow-100 d-w100p d-hmn102">

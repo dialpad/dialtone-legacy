@@ -19,8 +19,8 @@ description: A badge is a compact UI element that provides brief, descriptive in
         {% assign apply = i.applies %}
         {% assign desc = i.description %}
         <tr>
-          <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.{{ class }}</th>
-          <td class="d-ff-mono d-fc-teal-500 d-fs12">{% if apply != "N/A" %}<span class="code-example--inline">.{% endif %}{{ apply }}{% if apply != "N/A" %}</span>{% endif %}</td>
+          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.{{ class }}</th>
+          <td class="d-ff-mono d-fc-orange d-fs12">{% if apply != "N/A" %}<span class="code-example--inline">.{% endif %}{{ apply }}{% if apply != "N/A" %}</span>{% endif %}</td>
           <td class="d-fs12">{{ desc }}</td>
         </tr>
       {% endfor %}
@@ -31,21 +31,34 @@ description: A badge is a compact UI element that provides brief, descriptive in
   {% header "h2", "Examples" %}
   {% codeWell %}
     {% codeWellHeader "white" %}
-      <span class="d-badge d-badge--blue-100 d-mb8">Badge</span>
-      <span class="d-badge d-badge--blue-500 d-mb8">Badge</span>
-      <span class="d-badge d-badge--green-500 d-mb8">Badge</span>
-      <span class="d-badge d-badge--teal-300 d-mb8">Badge</span>
-      <span class="d-badge d-badge--purple-400 d-mb8">Badge</span>
-      <span class="d-badge d-badge--yellow-400 d-mb8">Badge</span>
+    <div>
+      <span class="d-badge d-mr8 d-mb8">Badge</span>
+      {% for i in badge.classes %}
+        {% assign class = i.class %}
+        {% assign apply = i.applies %}
+        {% if apply == "d-badge" %}
+            <span class="d-badge {{ class }} d-mr8 d-mb8">Badge</span>
+        {% endif %}
+      {% endfor %}
+    </div>
     {% endcodeWellHeader %}
     {% codeWellFooter %}
       {% highlight html linenos %}
-<span class="d-badge d-badge--blue-100">Badge</span>
-<span class="d-badge d-badge--blue-500">Badge</span>
-<span class="d-badge d-badge--green-500">Badge</span>
-<span class="d-badge d-badge--teal-300">Badge</span>
+<span class="d-badge">Badge</span>
+<span class="d-badge d-badge--white">Badge</span>
+<span class="d-badge d-badge--black-700">Badge</span>
+<span class="d-badge d-badge--black-800">Badge</span>
+<span class="d-badge d-badge--black-900">Badge</span>
+<span class="d-badge d-badge--purple-100">Badge</span>
 <span class="d-badge d-badge--purple-400">Badge</span>
-<span class="d-badge d-badge--yellow-400">Badge</span>
+<span class="d-badge d-badge--purple-500">Badge</span>
+<span class="d-badge d-badge--pink-300">Badge</span>
+<span class="d-badge d-badge--pink-500">Badge</span>
+<span class="d-badge d-badge--pink-600">Badge</span>
+<span class="d-badge d-badge--orange-400">Badge</span>
+<span class="d-badge d-badge--green-400">Badge</span>
+<span class="d-badge d-badge--red-500">Badge</span>
+<span class="d-badge d-badge--yellow-300">Badge</span>
       {% endhighlight %}
     {% endcodeWellFooter %}
   {% endcodeWell %}

@@ -19,8 +19,8 @@ description: Utilities for creating an background gradient and controlling its s
             {% assign initial = "to-tl, to-t, to-tr, to-r, to-br, to-b, to-bl, to-l, radial, conic, none, unset" | split: ", " %}
             {% for i in initial %}
                 <tr>
-                    <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-bgg-{{ i }}</th>
-                    <td class="d-ff-mono d-fc-teal-500 d-fs12">background-image:
+                    <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-bgg-{{ i }}</th>
+                    <td class="d-ff-mono d-fc-orange d-fs12">background-image:
                         {% if i != "none" %}
                         {% if i != "unset" %}
                             {% if i == "to-tl" %}linear-gradient(to top left,
@@ -44,7 +44,7 @@ description: Utilities for creating an background gradient and controlling its s
 <section class="d-stack16">
     <header class="d-stack2">
         {% header "h2", "Color Stops" %}
-        <p class="d-w90ch d-wmx764 d-fs18 d-lh6">The starting stop (<code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-bgg-from-{color}</code>) should be declared. Optionally an ending stop (<code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-bgg-to-{color}</code>) can also be declared.</p>
+        <p class="d-w90ch d-wmx764 d-fs18 d-lh6">The starting stop ({% code %}d-bgg-from-{color}{% endcode %}) should be declared. Optionally an ending stop ({% code %}d-bgg-to-{color}{% endcode %}) can also be declared.</p>
     </header>
     <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
         <table class="d-table">
@@ -62,10 +62,10 @@ description: Utilities for creating an background gradient and controlling its s
                     {% for s in color.stops %}
                     {% assign stop = s.stop %}
                     <tr>
-                        <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-bgg-{{ d }}-{{ c }}-{{ stop }}</th>
+                        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-bgg-{{ d }}-{{ c }}-{{ stop }}</th>
                         <td>
                             <div class="d-d-flex d-jc-space-between d-ai-center">
-                                <div class="d-fl-grow1 d-ff-mono d-fc-teal-500 d-fs12">
+                                <div class="d-fl-grow1 d-ff-mono d-fc-orange d-fs12">
                                     {% if d == "from" %}
                                         --bgg-from-opacity: 100%;<br/>
                                         --bgg-from: hsla(var(--{{ c }}-{{ stop }}-h) var(--{{ c }}-{{ stop }}-s) var(--{{ c }}-{{ stop }}-l) / var(----bgg-from-opacity)) !important;<br/>
@@ -89,15 +89,15 @@ description: Utilities for creating an background gradient and controlling its s
 <section class="d-stack16">
     <header class="d-stack2">
         {% header "h2", "Starting color" %}
-        <p class="d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-bgg-from-{color}</code> to declare the gradient starting color stop.</p>
+        <p class="d-wmx764 d-fs18 d-lh6">Use {% code %}d-bgg-from-{color}{% endcode %} to declare the gradient starting color stop.</p>
     </header>
     <aside class="d-bar8 d-of-hidden">
         <header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-black-050 d-w100p d-hmn102">
-            <div class="d-w100p d-h128 d-bar8 d-bgg-to-br d-bgg-from-blue-600"></div>
+            <div class="d-w100p d-h128 d-bar8 d-bgg-to-br d-bgg-from-purple-600"></div>
         </header>
         <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
 {% highlight html linenos %}
-<div class="d-bgg-to-br d-bgg-from-blue-600">...</div>
+<div class="d-bgg-to-br d-bgg-from-purple-600">...</div>
 {% endhighlight %}
         </footer>
     </aside>
@@ -105,15 +105,15 @@ description: Utilities for creating an background gradient and controlling its s
 <section class="d-stack16">
     <header class="d-stack2">
         {% header "h2", "Ending color" %}
-        <p class="d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-bgg-to-{color}</code> to declare the gradient ending color stop.</p>
+        <p class="d-wmx764 d-fs18 d-lh6">Use {% code %}d-bgg-to-{color}{% endcode %} to declare the gradient ending color stop.</p>
     </header>
     <aside class="d-bar8 d-of-hidden">
         <header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-black-050 d-w100p d-hmn102">
-            <div class="d-w100p d-h128 d-bar8 d-bgg-to-br d-bgg-from-blue-600 d-bgg-to-teal-300"></div>
+            <div class="d-w100p d-h128 d-bar8 d-bgg-to-br d-bgg-from-purple-600 d-bgg-to-pink-400"></div>
         </header>
         <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
 {% highlight html linenos %}
-<div class="d-bgg-to-br d-bgg-from-blue-600 d-bgg-to-teal-300">...</div>
+<div class="d-bgg-to-br d-bgg-from-purple-600 d-bgg-to-pink-400">...</div>
 {% endhighlight %}
         </footer>
     </aside>
@@ -121,7 +121,7 @@ description: Utilities for creating an background gradient and controlling its s
 <section class="d-stack16">
     <header class="d-stack2">
         {% header "h2", "Changing opacities" %}
-        <p class="d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-bgg-from-o{n}</code> or <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-bgg-to-o{n}</code> to change the opacity values of each gradient color stop.</p>
+        <p class="d-wmx764 d-fs18 d-lh6">Use {% code %}d-bgg-from-o{n}{% endcode %} or {% code %}d-bgg-to-o{n}{% endcode %} to change the opacity values of each gradient color stop.</p>
     </header>
     <aside class="d-bar8 d-of-hidden">
         <header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-black-050 d-w100p d-hmn102 d-stack8">
@@ -153,15 +153,15 @@ description: Utilities for creating an background gradient and controlling its s
 <section class="d-stack16">
     <header class="d-stack2">
         {% header "h2", "Hover" %}
-        <p class="d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">h:d-bgg-{from|to}-{color}</code> to change an element's background gradient color spot when in an <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">:hover</code> state.</p>
+        <p class="d-wmx764 d-fs18 d-lh6">Use {% code %}h:d-bgg-{from|to}-{color}{% endcode %} to change an element's background gradient color spot when in an {% code %}:hover{% endcode %} state.</p>
     </header>
     <aside class="d-bar8 d-of-hidden">
         <header class="d-fl-center d-p24 d-bgc-black-050 d-w100p d-hmn102">
-            <button class="d-p16 d-bar4 d-fs18 d-fc-white d-bgg-to-r d-bgg-from-purple-300 h:d-bgg-from-purple-300 d-bgg-to-pink-300 h:d-bgg-to-blue-700 d-baw0">Hover over me</button>
+            <button class="d-p16 d-bar4 d-fs18 d-fc-white d-bgg-to-r d-bgg-from-purple-300 h:d-bgg-from-purple-300 d-bgg-to-pink-300 h:d-bgg-to-pink-500 d-baw0">Hover over me</button>
         </header>
         <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
 {% highlight html linenos %}
-<button class="d-bgg-from-purple-300 h:d-bgg-from-purple-300 d-bgg-to-pink-300 h:d-bgg-to-blue-700">...</button>
+<button class="d-bgg-from-purple-300 h:d-bgg-from-purple-300 d-bgg-to-pink-300 h:d-bgg-to-pink-500">...</button>
 {% endhighlight %}
         </footer>
     </aside>
@@ -169,15 +169,15 @@ description: Utilities for creating an background gradient and controlling its s
 <section class="d-stack16">
     <header class="d-stack2">
         {% header "h2", "Focus" %}
-        <p class="d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">f:d-bgg-{from|to}-{color}</code> to change an element's background gradient starting and ending stops in <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">:focus</code> and <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">:focus-within</code> states.</p>
+        <p class="d-wmx764 d-fs18 d-lh6">Use {% code %}f:d-bgg-{from|to}-{color}{% endcode %} to change an element's background gradient starting and ending stops in {% code %}:focus{% endcode %} and {% code %}:focus-within{% endcode %} states.</p>
     </header>
     <aside class="d-bar8 d-of-hidden">
         <header class="d-fl-center d-p24 d-bgc-black-050 d-w100p d-hmn102">
-            <button class="d-p16 d-bar4 d-fs18 d-fc-white d-bgg-to-r d-bgg-from-purple-300 f:d-bgg-from-purple-300 d-bgg-to-pink-300 f:d-bgg-to-blue-700 d-baw0">Click on me</button>
+            <button class="d-p16 d-bar4 d-fs18 d-fc-white d-bgg-to-r d-bgg-from-purple-300 f:d-bgg-from-purple-300 d-bgg-to-pink-300 f:d-bgg-to-purple-500 d-baw0">Click on me</button>
         </header>
         <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
 {% highlight html linenos %}
-<button class="d-bgg-from-purple-300 f:d-bgg-from-purple-300 d-bgg-to-pink-300 f:d-bgg-to-blue-700">...</button>
+<button class="d-bgg-from-purple-300 f:d-bgg-from-purple-300 d-bgg-to-pink-300 f:d-bgg-to-purple-500">...</button>
 {% endhighlight %}
         </footer>
     </aside>
@@ -185,9 +185,9 @@ description: Utilities for creating an background gradient and controlling its s
 <section class="d-stack16">
     <header class="d-stack2">
         {% header "h2", "Dark Mode" %}
-        <p class="d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d:d-bgg-{from|to}-{color}</code> to set different background gradient color steps when the user has dark mode enabled.</p>
+        <p class="d-wmx764 d-fs18 d-lh6">Use {% code %}d:d-bgg-{from|to}-{color}{% endcode %} to set different background gradient color steps when the user has dark mode enabled.</p>
     </header>
-    <aside class="d-bar8 d-of-hidden theme-dark">
+    <aside class="d-bar8 d-of-hidden">
         <header class="d-fl-center d-fd-column d-p24 d-bgc-black-050 d-w100p d-hmn102 d-stack16">
             <button class="d-p16 d-bar4 d-fs18 d-fc-white d-bgg-to-r d-bgg-from-purple-300 d:d-bgg-from-purple-300 d-bgg-to-pink-300 d:d-bgg-to-yellow-400 d-baw0 js-theme-switcher">Click on me toggle dark mode</button>
         </header>

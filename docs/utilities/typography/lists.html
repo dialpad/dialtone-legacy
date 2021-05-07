@@ -14,22 +14,22 @@ description: Utilities for controlling list styling.
         </thead>
         <tbody>
             <tr>
-                <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-ls-reset</th>
-                <td class="d-ff-mono d-fc-teal-500 d-fs12">
+                <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-ls-reset</th>
+                <td class="d-ff-mono d-fc-orange d-fs12">
                     margin: 0;<br/>
                     padding: 0;<br/>
                     list-style: none !important;
                 </td>
             </tr>
             <tr>
-                <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-ls-none</th>
-                <td class="d-ff-mono d-fc-teal-500 d-fs12">list-style: none !important;</td>
+                <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-ls-none</th>
+                <td class="d-ff-mono d-fc-orange d-fs12">list-style: none !important;</td>
             </tr>
             {% assign lists = type.lists | split: ", " %}
             {% for i in lists %}
             <tr>
-                <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-lst-{{ i }}</th>
-                <td class="d-ff-mono d-fc-teal-500 d-fs12">list-style-type: {% if i == "content" %}var(--ls-content){% else %}{{ i }}{% endif %} !important;</td>
+                <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-lst-{{ i }}</th>
+                <td class="d-ff-mono d-fc-orange d-fs12">list-style-type: {% if i == "content" %}var(--ls-content){% else %}{{ i }}{% endif %} !important;</td>
             </tr>
             {% endfor %}
         </tbody>
@@ -38,19 +38,19 @@ description: Utilities for controlling list styling.
 <section class="d-stack16">
     <header class="d-stack2">
         {% header "h2", "Resetting a list" %}
-        <p class="d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-ls-reset</code> to reset the margin, padding, and list-style-type of a list. Reseting a list applies to the parent <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">ol</code> or <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">ul</code>, any child <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">li</code> elements, and any child <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">ol</code> or <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">ul</code> elements.</p>
+        <p class="d-wmx764 d-fs18 d-lh6">Use {% code %}d-ls-reset{% endcode %} to reset the margin, padding, and list-style-type of a list. Reseting a list applies to the parent {% code %}ol{% endcode %} or {% code %}ul{% endcode %}, any child {% code %}li{% endcode %} elements, and any child {% code %}ol{% endcode %} or {% code %}ul{% endcode %} elements.</p>
     </header>
     <aside class="d-bar8 d-of-hidden">
         <header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-purple-100 d-w100p d-hmn102">
-            <ul class="d-ls-reset">
-                <li class="d-fs18 d-fc-purple-500">An unordered list item</li>
-                <li class="d-fs18 d-fc-purple-500">
+            <ul class="d-ls-reset d-fc-purple d-fs18">
+                <li>An unordered list item</li>
+                <li>
                     <ol>
-                        <li class="d-fs18 d-fc-purple-500">An ordered list item</li>
-                        <li class="d-fs18 d-fc-purple-500">An ordered list item</li>
+                        <li>An ordered list item</li>
+                        <li>An ordered list item</li>
                     </ol>
                 </li>
-                <li class="d-fs18 d-fc-purple-500">An unordered list item</li>
+                <li>An unordered list item</li>
             </ul>
         </header>
         <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
@@ -72,22 +72,22 @@ description: Utilities for controlling list styling.
 <section class="d-stack16">
     <header class="d-stack2">
         {% header "h2", "Changing the list style type" %}
-        <p class="d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-ls-{disc|decimal}</code> to change an unordered list's bullet styling.</p>
+        <p class="d-wmx764 d-fs18 d-lh6">Use {% code %}d-ls-{disc|decimal}{% endcode %} to change an unordered list's bullet styling.</p>
     </header>
     <aside class="d-bar8 d-of-hidden">
         <header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-green-100 d-w100p d-hmn102">
-            <ul class="d-lst-disc">
-                <li class="d-fs18 d-fc-green-500">An unordered list item</li>
-                <li class="d-fs18 d-fc-green-500">
+            <ul class="d-lst-disc d-fs18 d-fc-green">
+                <li>An unordered list item</li>
+                <li>
                     <ul class="d-lst-circle">
-                        <li class="d-pl4 d-fs18 d-fc-green-500">An unordered list item</li>
-                        <li class="d-pl4 d-fs18 d-fc-green-500">An unordered list item</li>
+                        <li class="d-pl4">An unordered list item</li>
+                        <li class="d-pl4">An unordered list item</li>
                     </ul>
                 </li>
-                <li class="d-fs18 d-fc-green-500">
+                <li>
                     <ul>
-                        <li class="d-pl4 d-fs18 d-fc-green-500 d-lst-content" style="--ls-content: '✅'">An unordered list item</li>
-                        <li class="d-pl4 d-fs18 d-fc-green-500 d-lst-content" style="--ls-content: '❌'">An unordered list item</li>
+                        <li class="d-pl4 d-lst-content" style="--ls-content: '✅'">An unordered list item</li>
+                        <li class="d-pl4 d-lst-content" style="--ls-content: '❌'">An unordered list item</li>
                     </ul>
                 </li>
             </ul>
