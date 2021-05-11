@@ -9,6 +9,8 @@
 //  TABLE OF CONTENTS
 //  • SELECT MENUS
 //    - Sizes
+//  • SELECT MENU INPUTS
+//    - Validation States
 //
 
 //  ============================================================================
@@ -43,105 +45,119 @@
     pointer-events: none;
     transform: translateY(50%);
   }
+
   &:before {
     top: calc(~"50% - 0.25em");
     border-top-width: 0;
   }
+
   &:after {
     top: calc(~"50% + 0.125em");
     border-bottom-width: 0;
   }
+}
+
+//  $$  SIZES
+//  ----------------------------------------------------------------------------
+.d-select--xs {
+  font-size: var(--fs14);
+
   .d-select__input {
-    //  [1] Reset the appearance
-    -webkit-appearance: none;
-        -moz-appearance: none;
-            appearance: none;
-
-    //  [2] Update the styles
-    .d-input();
-
-    --select--bc: var(--black-500);
-
-    padding: 0.7rem 2em 0.7rem 0.8rem;
-    height: 100%; // Fill the height of its parent
-
-    color:            var(--select--fc);
-    background-color: var(--select--bgc);
-    border-color:     var(--select--bc);
-
-    &:focus {
-      --select--bc: var(--primary-color);
-
-      box-shadow: 0 0 0 var(--su1) var(--white),
-                  0 0 0 0.25em var(--select--bs);
-    }
-    &:disabled {
-      background: var(--black-200);
-      border: 1px solid var(--black-500);
-    }
-    &::-moz-focus-inner {
-      outline: none !important;
-    }
-    &:-moz-focusring {
-      color: transparent;
-      text-shadow: 0 0 0 var(--black-900);
-    }
-    &::-ms-expand {
-      display: none;
-    }
-
-    //  $$  VALIDATION STATES
-    //  ------------------------------------------------------------------------
-    &--success {
-      --select--bc: var(--success-color);
-
-      &:focus {
-        --select--bc: var(--success-color);
-        --select--bs: var(--focus-ring-success);
-      }
-    }
-    &--error {
-      --select--bc: var(--error-color);
-
-      &:focus {
-        --select--bc: var(--error-color);
-        --select--bs: var(--focus-ring-error);
-      }
-    }
-    &--warning {
-      --select--bc: var(--warning-color);
-
-      &:focus {
-        --select--bc: var(--warning-color);
-        --select--bs: var(--focus-ring-warning);
-      }
-    }
+    .input-button-xs();
   }
+}
 
-  //  $$  SIZES
-  //  ----------------------------------------------------------------------------
-  &--xs {
-    font-size: var(--fs14);
-    .d-select__input {
-      .input-button-xs();
-    }
+.d-select--sm {
+  font-size: var(--fs16);
+
+  .d-select__input {
+    .input-button-sm();
   }
-  &--sm {
-    font-size: var(--fs16);
-    .d-select__input {
-      .input-button-sm();
-    }
+}
+
+.d-select--lg {
+  font-size: var(--fs20);
+
+  .d-select__input {
+    .input-button-lg();
   }
-  &--lg {
-    font-size: var(--fs20);
-    .d-select__input {
-      .input-button-lg();
-    }
+}
+
+.d-select--xl {
+  font-size: var(--fs24);
+
+  .d-select__input {
+    .input-button-xl();
   }
-  &--xl {
-    font-size: var(--fs24);
-    .d-select__input {
-      .input-button-xl();
-    }
+}
+
+//  $  SELECT MENU INPUT
+//  ----------------------------------------------------------------------------
+.d-select__input {
+  //  [1] Reset the appearance
+  -webkit-appearance: none;
+      -moz-appearance: none;
+          appearance: none;
+
+  //  [2] Update the styles
+  .d-input();
+
+  --select--bc: var(--black-500);
+
+  padding: 0.7rem 2em 0.7rem 0.8rem;
+  height: 100%; // Fill the height of its parent
+
+  color:            var(--select--fc);
+  background-color: var(--select--bgc);
+  border-color:     var(--select--bc);
+
+  &:focus {
+    --select--bc: var(--primary-color);
+
+    box-shadow: 0 0 0 var(--su1) var(--white),
+                0 0 0 0.25em var(--select--bs);
+  }
+  &:disabled {
+    background: var(--black-200);
+    border: 1px solid var(--black-500);
+  }
+  &::-moz-focus-inner {
+    outline: none !important;
+  }
+  &:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 var(--black-900);
+  }
+  &::-ms-expand {
+    display: none;
+  }
+}
+
+//  $$  VALIDATION STATES
+//  ------------------------------------------------------------------------
+.d-select__input--success {
+  --select--bc: var(--success-color);
+
+  &:focus {
+    --select--bc: var(--success-color);
+    --select--bs: var(--focus-ring-success);
+  }
+}
+
+.d-select__input--error {
+  --select--bc: var(--error-color);
+
+  &:focus {
+    --select--bc: var(--error-color);
+    --select--bs: var(--focus-ring-error);
+  }
+}
+
+.d-select__input--warning {
+  --select--bc: var(--warning-color);
+
+  &:focus {
+    --select--bc: var(--warning-color);
+    --select--bs: var(--focus-ring-warning);
   }
 }

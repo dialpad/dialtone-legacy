@@ -65,7 +65,7 @@
     &:focus {
         outline: none;
         --button--bs-color-inner:   var(--white);
-        --button--bs-color-outer:   hsla(var(--primary-color-hsl) ~" / " 10%);
+        --button--bs-color-outer:   var(--focus-ring);
     }
 
     .d-svg {
@@ -131,16 +131,21 @@
 //  $   BUTTON ICON
 //  ----------------------------------------------------------------------------
 .d-btn__icon {
-    display: flex;
-    margin: var(--sun4) var(--su4) var(--sun4) var(--sun2);
-    width: 1em;
-    height: 1em;
+  display: flex;
+  margin-top: var(--sun4);
+  margin-bottom: var(--sun4);
+  width: 1em;
+  height: 1em;
 
-    &.d-btn__icon--last {
-        order: 1;
-        margin-left: var(--su4);
-        margin-right: var(--sun2);
-    }
+  &.d-btn__icon--left {
+      margin-left: var(--sun2);
+      margin-right: var(--su4);
+  }
+  &.d-btn__icon--right {
+      order: 1;
+      margin-left: var(--su4);
+      margin-right: var(--sun2);
+  }
 }
 
 
@@ -148,6 +153,56 @@
 //  ============================================================================
 //  $   VISUAL STYLES
 //  ============================================================================
+//  $$  CIRCLE BUTTONS
+//  ----------------------------------------------------------------------------
+.d-btn--circle {
+  --button--fc: var(--black-800);
+  --button--br: var(--br-circle);
+
+  padding: calc(var(--su8) + var(--su1));
+  transition-duration: 150ms;
+
+  &:hover {
+    --button--fc: var(--black-800);
+    --button--bgc: var(--black-100);
+  }
+
+  &:focus {
+    --button--bs-color-outer: var(--black-200);
+  }
+
+  .d-btn__icon {
+    margin: unset;
+  }
+
+  &.d-btn--outlined {
+    --button--bc:    var(--black-700);
+  }
+
+  // &:active {
+  //     border-color: hsla(var(--black-700-h) var(--black-700-s) var(--black-700-l) ~" / " 50%);
+  //     background-color: hsla(var(--black-700-h) var(--black-700-s) var(--black-700-l) ~" / " 10%);
+  // }
+
+  //  Adjust padding based on sizes
+  &.d-btn--xs {
+      padding: calc(var(--su8) - var(--su1));
+      --button--br:   var(--br-circle);
+  }
+  &.d-btn--sm {
+      padding: var(--su8);
+      --button--br:   var(--br-circle);
+  }
+  &.d-btn--lg {
+      padding: calc(var(--su12) + var(--su1));
+      --button--br:   var(--br-circle);
+  }
+  &.d-btn--xl {
+      padding: calc(var(--su16) - var(--su1));
+      --button--br:   var(--br-circle);
+  }
+}
+
 //  $$  OUTLINED BUTTON
 //  ----------------------------------------------------------------------------
 .d-btn--outlined {
@@ -172,8 +227,8 @@
     --button--fc: var(--black-700);
 
     &:hover {
-        --button--fc: var(--black-800);
-        --button--bgc: var(--black-100);
+      --button--fc: var(--black-800);
+      --button--bgc: var(--black-050);
     }
 
     &:focus {
@@ -196,7 +251,7 @@
     }
 
     &:focus {
-        --button--bs-color-outer: hsla(var(--primary-color-hsl) ~" / " 10%);
+        --button--bs-color-outer: var(--focus-ring--error);
     }
 
     &.d-btn--outlined {
@@ -255,41 +310,6 @@
     box-shadow: 0 0 0 calc(var(--su1) + var(--su2)) hsla(var(--primary-color-hsl) ~" / " 20%);
 }
 
-//  $$  CIRCLE BUTTONS
-//  ----------------------------------------------------------------------------
-.d-btn--circle {
-    padding: calc(var(--su8) + var(--su1));
-    --button--br:   var(--br-circle);
-    transition-duration: 150ms;
-
-    //  Reset icon margins
-    .d-btn__icon {
-        margin: unset;
-    }
-
-    //  If there's a label, hide it
-    .d-btn__label {
-        display: none;
-    }
-
-    //  Adjust padding based on sizes
-    &.d-btn--xs {
-        padding: calc(var(--su8) - var(--su1));
-        --button--br:   var(--br-circle);
-    }
-    &.d-btn--sm {
-        padding: var(--su8);
-        --button--br:   var(--br-circle);
-    }
-    &.d-btn--lg {
-        padding: calc(var(--su12) + var(--su1));
-        --button--br:   var(--br-circle);
-    }
-    &.d-btn--xl {
-        padding: calc(var(--su16) - var(--su1));
-        --button--br:   var(--br-circle);
-    }
-}
 
 //  $$  DISABLED STATES
 //  ----------------------------------------------------------------------------
@@ -329,13 +349,14 @@
     }
 
     .d-btn__icon {
-        margin-left: var(--sun4);
-        width: 2em;
-        height: 2em;
-        border-radius: var(--br2);
-        background-color: var(--white);
-        justify-content: center;
-        align-items: center
+      margin-right: var(--su8);
+      margin-left: var(--sun4);
+      width: 2em;
+      height: 2em;
+      border-radius: var(--br2);
+      background-color: var(--white);
+      justify-content: center;
+      align-items: center
     }
     .d-btn__label {
         flex: 1 auto;

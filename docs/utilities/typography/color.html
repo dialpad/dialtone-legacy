@@ -127,11 +127,15 @@ description: Utilities to change an element's font-color.
             {% assign colors = "black, purple, orange, pink, green, yellow, red" | split: ", " %}
             {% for i in colors %}
                 {% if i == "black" %}
-                    {% assign stops = "900, 800, 700, 600, 500, 400, 300, 200, 100, 050" | split: ", " %}
-                {% elsif i == "blue" %}
-                    {% assign stops = "800, 700, 600, 500, 400, 300, 200, 100" | split: ", " %}
-                {% else %}
+                    {% assign stops = "900, 800, 700, 600, 500, 400, 300, 200, 100, 075, 050, 025" | split: ", " %}
+                {% elsif i == "purple" %}
+                    {% assign stops = "900, 800, 700, 600, 500, 400, 300, 200, 100" | split: ", " %}
+                {% elsif i == "orange" %}
                     {% assign stops = "600, 500, 400, 300, 200, 100" | split: ", " %}
+                {% elsif i == "yellow" %}
+                    {% assign stops = "600, 500, 400, 300, 200, 100, 050" | split: ", " %}
+                {% else %}
+                    {% assign stops = "700, 600, 500, 400, 300, 200, 100" | split: ", " %}
                 {% endif %}
                 <tbody>
                     {% for s in stops %}
