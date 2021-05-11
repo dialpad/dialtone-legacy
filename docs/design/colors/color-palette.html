@@ -1,34 +1,49 @@
 ---
-layout: page
+layout: page-no-toc
 title: Colors
 description: The Dialtone color system expands our primary, secondary, and expressive colors to build out a functional, personal, usable, and accessible set of color stop.
 ---
 <section class="d-stack16">
-    <div class="d-d-grid d-gg24 d-g-cols2 md:d-g-cols1">
+  <div class="d-d-grid d-gg24 d-g-cols2 md:d-g-cols1">
+    <aside class="d-d-flex d-fd-column">
+      <header class="d-d-flex d-jc-space-between d-ai-end d-p16 d-pe-none">
+        <h2 class="d-fl1 d-headline20 js-scrollspy" id="white"><span class="d-pe-auto">White</span></h2>
+        <a class="d-btn d-btn--muted d-pe-auto" href="#white">
+          <span class="d-btn__icon d-m0 d-ai-center">{% iconSystem "link", "" %}</span>
+        </a>
+      </header>
+      <div class="d-d-flex d-jc-space-between d-ai-center d-px12 d-py8 d-bgc-white d-fs12 d-lh6 d-ff-mono d-fc-dark d-bar4">
+        <div>
+          <strong>var(--white)</strong><br/>
+          <span class="d-fc-dark-lighter">#FFFFFF</span>
+        </div>
+        <div class="d-fs11 d-lh2 d-fw-bold d-bar-sm d-px4 py2">AAA 19.50</div>
+      </div>
+    </aside>
     {% for color in colors.colors %}
-        {% assign c = color.color %}
-        <aside class="d-d-flex d-fd-column">
-            <header class="d-d-flex d-jc-space-between d-ai-end d-p16 d-pe-none">
-                <h2 class="d-fl1 d-headline20 js-scrollspy" id="{{ c }}"><span class="d-pe-auto">{{ c | capitalize }}</span></h2>
-                <a class="d-btn d-btn--muted d-pe-auto" href="#{{ c }}">
-                    <span class="d-btn__icon d-m0 d-ai-center">{% iconSystem "link", "" %}</span>
-                </a>
-            </header>
-            {% for s in color.stops %}
-                {% assign stop = s.stop %}
-                {% assign hex = s.hex %}
-                {% assign copy = s.copy %}
-                {% assign contrast = s.contrast %}
-                {% assign primary = s.primary %}
-                <div class="d-d-flex d-jc-space-between d-ai-center d-px12 d-py8 d-bgc-{{ c }}-{{ stop }} d-fs12 d-lh6 d-ff-mono d-fc-{{ copy }} {% if forloop.first %}d-btr4{% elsif forloop.last %}d-bbr4{% endif %}">
-                    <div>
-                        <strong>var(--{{ c }}-{{ stop }})</strong><br/>
-                        <span class="d-fc-dark-lighter">#{{ hex }}</span>
-                    </div>
-                    <div class="d-fs11 d-lh2 d-fw-bold d-bar-sm d-px4 py2">{{ contrast}}</div>
-                </div>
-        {% endfor %}
-        </aside>
-    {% endfor %}
-    </div>
+      {% assign c = color.color %}
+      <aside class="d-d-flex d-fd-column">
+        <header class="d-d-flex d-jc-space-between d-ai-end d-p16 d-pe-none">
+          <h2 class="d-fl1 d-headline20 js-scrollspy" id="{{ c }}"><span class="d-pe-auto">{{ c | capitalize }}</span></h2>
+          <a class="d-btn d-btn--muted d-pe-auto" href="#{{ c }}">
+            <span class="d-btn__icon d-m0 d-ai-center">{% iconSystem "link", "" %}</span>
+          </a>
+        </header>
+        {% for s in color.stops %}
+        {% assign stop = s.stop %}
+        {% assign hex = s.hex %}
+        {% assign copy = s.copy %}
+        {% assign contrast = s.contrast %}
+        {% assign primary = s.primary %}
+        <div class="d-d-flex d-jc-space-between d-ai-center d-px12 d-py8 d-bgc-{{ c }}-{{ stop }} d-fs12 d-lh6 d-ff-mono d-fc-{{ copy }} {% if forloop.first %}d-btr4{% elsif forloop.last %}d-bbr4{% endif %}">
+          <div>
+            <strong>var(--{{ c }}-{{ stop }})</strong><br/>
+            <span class="d-fc-dark-lighter">#{{ hex }}</span>
+          </div>
+          <div class="d-fs11 d-lh2 d-fw-bold d-bar-sm d-px4 py2">{{ contrast}}</div>
+        </div>
+      {% endfor %}
+    </aside>
+  {% endfor %}
+  </div>
 </section>
