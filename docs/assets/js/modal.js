@@ -29,10 +29,10 @@ $(document).ready(function() {
         $(banner).addClass('d-d-none');
 
         if ($('.js-example-modal-btn-cancel.d-btn--danger')) {
-            $(btnCancel).removeClass('d-btn--danger').addClass('d-btn');
+            $(btnCancel).removeClass('d-btn--danger');
         }
-        if ($('.js-example-modal-btn-save.d-btn--danger--primary')) {
-            $(btnSave).removeClass('d-btn--danger--primary').addClass('d-btn--primary');
+        if ($('.js-example-modal-btn-save.d-btn--danger')) {
+            $(btnSave).removeClass('d-btn--danger');
         }
     };
 
@@ -57,8 +57,8 @@ $(document).ready(function() {
         e.preventDefault();
 
         $(modal).attr('aria-hidden','false').addClass('d-modal--danger');
-        $(btnCancel).removeClass('d-btn').addClass('d-btn--danger');
-        $(btnSave).removeClass('d-btn--primary').addClass('d-btn--danger--primary');
+        $(btnCancel).addClass('d-btn--danger');
+        $(btnSave).addClass('d-btn--danger');
         $(body).addClass('d-of-hidden');
     });
 
