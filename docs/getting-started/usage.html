@@ -18,11 +18,11 @@ description: A general overview of Dialtone's utility classes, CSS components, a
     {% endcodeWellFooter %}
   {% endcodeWell %}
   {% paragraph %}In the above example, we used:{% endparagraph %}
-  <ul class="d-w75ch d-wmx764 d-fs18 d-lh6 d-stack8">
+  {% ul %}
     <li>Our <a href="http://dialpad.design/utilities/spacing/padding/" class="d-link">padding utility class</a> {% code %}.d-p16{% endcode %} to add 16px of padding</li>
     <li>Our <a href="http://dialpad.design/utilities/backgrounds/color/" class="d-link">background color utility class</a> {% code %}.d-bgc-purple-400{% endcode %} to add a purple background</li>
     <li>Our <a href="http://dialpad.design/utilities/typography/color/" class="d-link">font color utility class</a> {% code %}.d-fc-white{% endcode %} to change the font color to white</li>
-  </ul>
+  {% endul %}
   {% paragraph %}Though an atomic CSS approach comes with many advantages, we know it also offers a notable disadvantage: reducing the CSS cascade. This is especially true for repeated UI elements, which can end up creating redundant mark-up. For these instances, Dialtone offers components.{% endparagraph %}
 </section>
 <section class="d-stack16">
@@ -43,20 +43,20 @@ description: A general overview of Dialtone's utility classes, CSS components, a
 <section class="d-stack16">
   {% header "h2", "Writing CSS" %}
   {% paragraph %}In the event you need to write CSS, use <a href="http://getbem.com/" class="d-link" target="_blank">BEM (Block Element Modifier)</a>. This is a simple, common naming convention that helps make our CSS easier to read and understand. If you aren't familiar with the approach, here's a <a href="http://getbem.com/introduction/" class="d-link" target="_blank">quick synposis</a>:{% endparagraph %}
-  <ul class="d-w75ch d-wmx764 d-fs18 d-lh6 d-stack8">
+  {% ul %}
     <li><strong>Block:</strong> A parent entity that is meaningful on its own. For example: {% code %}.d-input{% endcode %}</li>
     <li><strong>Element:</strong> A child that is meaningful only in relation to its parent. For example: {% code %}.d-input__label{% endcode %}</li>
     <li><strong>Modifier:</strong> A modifying flag on a Block or Element that changes appearance or behavior. For example: {% code %}.d-input--lg{% endcode %}</li>
-  </ul>
+  {% endul %}
 </section>
 <section class="d-stack16">
   {% header "h2", "Backbone" %}
   {% paragraph %}For internal Dialpad projects, using Dialtone in Backbone should be rare, since most front end changes are now being implemented using Vue. Regardless, if you find yourself needing to use Dialtone in Backbone, there are a few steps:{% endparagraph %}
-  <ol class="d-stack8">
+  {% ol %}
     <li>Create a {% code %}.less{% endcode %} file for your feature, if one does not yet exist.</li>
     <li>Import this {% code %}.less{% endcode %} file into the relevant base less file e.g. {% code %}single.less{% endcode %}, {% code %}web.less{% endcode %} etc.</li>
     <li>Import Dialtone into your {% code %}.less{% endcode %} file and compose your styles like shown in the example above.</li>
-  </ol>
+  {% endol %}
 </section>
 <section class="d-stack16">
   {% header "h2", "Box-Sizing" %}
