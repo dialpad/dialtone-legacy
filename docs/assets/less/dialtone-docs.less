@@ -10,6 +10,7 @@
 //  TABLE OF CONTENTS
 //  • IMPORTS
 //  • COLOR PALETTES
+//  • NAVIGATION
 //  • TOC
 //  • LAYOUT
 //
@@ -31,6 +32,33 @@
 .dialtone-color-grid__item:last-of-type {
   border-bottom-left-radius: var(--su4);
   border-bottom-right-radius: var(--su4);
+}
+
+//  ============================================================================
+//  $   TOP NAVIGATION LINKS
+//  ----------------------------------------------------------------------------
+.top-navigation-links a {
+  padding-top: calc(var(--su16) + 4px);
+  padding-bottom: calc(var(--su16) + 4px);
+  text-decoration: none;
+  &:hover {
+    background-color: var(--black-050);
+  }
+  &.active {
+    position: relative;
+    background-color: var(--black-050);
+    &:after {
+      content: '';
+      background-color: var(--primary-color);
+      border-radius: var(--br4);
+      bottom: var(--su0);
+      display: block;
+      height: var(--su4);
+      left: var(--su0);
+      position:  absolute;
+      right: var(--su0);
+    }
+  }
 }
 
 //  ============================================================================
