@@ -129,7 +129,7 @@ module.exports = function(eleventyConfig) {
 
     // Add shortcode for basic paragraph
     eleventyConfig.addPairedShortcode("paragraph", function(content) {
-        return `<p class="d-w75ch d-wmx764 d-fs18 d-lh6">${content}</p>`;
+        return `<p class="d-wmx764 d-fs16 d-lh6">${content}</p>`;
     });
 
     //  Add submenu navigation
