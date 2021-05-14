@@ -134,12 +134,12 @@ module.exports = function(eleventyConfig) {
 
     // Add shortcode for unordered list
     eleventyConfig.addPairedShortcode("ul", function(content) {
-        return `<ul class="d-fs18 d-lh6">${content}</ul>`;
+        return `<ul class="d-fs18 d-lh6 d-stack16">${content}</ul>`;
     });
 
     // Add shortcode for ordered list
     eleventyConfig.addPairedShortcode("ol", function(content) {
-        return `<ol class="d-fs18 d-lh6">${content}</ol>`;
+        return `<ol class="d-fs18 d-lh6 d-stack16">${content}</ol>`;
     });
 
     //  Add submenu navigation
