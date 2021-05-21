@@ -255,7 +255,7 @@
     }
 
     &:focus {
-        --button--bs-color-outer: var(--focus-ring--error);
+        --button--bs-color-outer: var(--focus-ring-error);
     }
 
     &.d-btn--outlined {
@@ -278,11 +278,14 @@
 .d-btn--inverted {
     --button--fc: var(--white);
     --button--bgc: transparent;
-    box-shadow: none;
 
     &:hover {
         --button--fc: var(--white);
         --button--bgc: hsla(var(--primary-color-hsl) ~" / " 25%);
+    }
+
+    &:focus {
+      --button--bs-color-outer: var(--focus-ring-inverted);
     }
 
     //  --  OUTLINED
@@ -300,18 +303,6 @@
             --button--bgc: hsla(var(--white-hsl) ~" / " 90%);
         }
     }
-}
-
-// because the inner border of the box-shadow outline needs to be transparent
-// we have to create a pseudo element behind the original element which displays
-// only a border and grow it to the correct size.
-.d-btn--inverted:focus-within::before {
-    content: '';
-    position: absolute;
-    border-radius: inherit;
-    width: calc(100% + var(--su4));
-    height: calc(100% + var(--su4));
-    box-shadow: 0 0 0 calc(var(--su1) + var(--su2)) hsla(var(--primary-color-hsl) ~" / " 20%);
 }
 
 

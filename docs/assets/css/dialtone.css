@@ -845,7 +845,7 @@ body {
   --button--fc: var(--error-color-hover);
 }
 .d-btn--danger:focus {
-  --button--bs-color-outer: var(--focus-ring--error);
+  --button--bs-color-outer: var(--focus-ring-error);
 }
 .d-btn--danger.d-btn--outlined {
   --button--bc: var(--error-color);
@@ -860,11 +860,13 @@ body {
 .d-btn--inverted {
   --button--fc: var(--white);
   --button--bgc: transparent;
-  box-shadow: none;
 }
 .d-btn--inverted:hover {
   --button--fc: var(--white);
   --button--bgc: hsla(var(--primary-color-hsl)  /  25%);
+}
+.d-btn--inverted:focus {
+  --button--bs-color-outer: var(--focus-ring-inverted);
 }
 .d-btn--inverted.d-btn--outlined {
   --button--bc: var(--white);
@@ -876,22 +878,6 @@ body {
 .d-btn--inverted.d-btn--primary:hover {
   --button--fc: var(--primary-color-hover);
   --button--bgc: hsla(var(--white-hsl)  /  90%);
-}
-.d-btn--inverted[focus-within]::before {
-  content: '';
-  position: absolute;
-  width: calc(100% + var(--su4));
-  height: calc(100% + var(--su4));
-  border-radius: inherit;
-  box-shadow: 0 0 0 calc(var(--su1) + var(--su2)) hsla(var(--primary-color-hsl)  /  20%);
-}
-.d-btn--inverted:focus-within::before {
-  content: '';
-  position: absolute;
-  width: calc(100% + var(--su4));
-  height: calc(100% + var(--su4));
-  border-radius: inherit;
-  box-shadow: 0 0 0 calc(var(--su1) + var(--su2)) hsla(var(--primary-color-hsl)  /  20%);
 }
 .d-btn.d-btn--disabled {
   pointer-events: none;
