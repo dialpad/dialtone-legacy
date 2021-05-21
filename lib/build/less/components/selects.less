@@ -22,6 +22,7 @@
   --select--bc:           var(--black-400);
   --select--bgc:          var(--white);
   --select--fc:           var(--black-800);
+  --select--bs:           var(--focus-ring);
 
   box-sizing: border-box;
   position: relative;
@@ -110,27 +111,23 @@
   background-color: var(--select--bgc);
   border-color:     var(--select--bc);
 
+  &:focus {
+    --select--bc: var(--primary-color);
+
+    box-shadow: 0 0 0 var(--su1) var(--white),
+                0 0 0 0.25em var(--select--bs);
+  }
   &:disabled {
     background: var(--black-200);
     border: 1px solid var(--black-500);
   }
-
-  &:focus {
-    --select--bc: var(--blue-500);
-
-    box-shadow: 0 0 0 var(--su1) var(--white),
-                0 0 0 0.25em var(--blue-200);
-  }
-
   &::-moz-focus-inner {
     outline: none !important;
   }
-
   &:-moz-focusring {
     color: transparent;
     text-shadow: 0 0 0 var(--black-900);
   }
-
   &::-ms-expand {
     display: none;
   }
@@ -139,31 +136,28 @@
 //  $$  VALIDATION STATES
 //  ------------------------------------------------------------------------
 .d-select__input--success {
-  --select--bc: var(--green-400);
+  --select--bc: var(--success-color);
 
   &:focus {
-    --select--bc: var(--green-400);
-    box-shadow: 0 0 0 var(--su1) var(--white),
-                0 0 0 0.25em var(--green-200);
+    --select--bc: var(--success-color);
+    --select--bs: var(--focus-ring-success);
   }
 }
 
 .d-select__input--error {
-  --select--bc: var(--red-400);
+  --select--bc: var(--error-color);
 
   &:focus {
-    --select--bc: var(--red-400);
-    box-shadow: 0 0 0 var(--su1) var(--white),
-                0 0 0 0.25em var(--red-200);
+    --select--bc: var(--error-color);
+    --select--bs: var(--focus-ring-error);
   }
 }
 
 .d-select__input--warning {
-  --select--bc: var(--yellow-500);
+  --select--bc: var(--warning-color);
 
   &:focus {
-    --select--bc: var(--yellow-500);
-    box-shadow: 0 0 0 var(--su1) var(--white),
-                0 0 0 0.25em var(--yellow-400);
+    --select--bc: var(--warning-color);
+    --select--bs: var(--focus-ring-warning);
   }
 }

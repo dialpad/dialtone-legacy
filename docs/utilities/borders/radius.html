@@ -21,16 +21,16 @@ description: Utilities for controlling an element's border radius.
                 {% if i == "a" %}
                     {% if forloop.first %}
                     <tr>
-                        <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-b{{ i }}r-unset</th>
-                        <td class="d-ff-mono d-fc-teal-500 d-fs12">border-radius: unset !important;</td>
+                        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-b{{ i }}r-unset</th>
+                        <td class="d-ff-mono d-fc-orange d-fs12">border-radius: unset !important;</td>
                     </tr>
                     {% endif %}
                 {% endif %}
                 <tr>
-                    <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-b{{ i }}r{{ r }}</th>
+                    <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-b{{ i }}r{{ r }}</th>
                     <td>
                         <div class="d-d-flex d-jc-space-between d-ai-center">
-                            <div class="d-fl-grow1 d-ff-mono d-fc-teal-500 d-fs12">
+                            <div class="d-fl-grow1 d-ff-mono d-fc-orange d-fs12">
                                 border{% if i == "t" %}-top-left{% elsif i == "r" %}-top-right{% elsif i == "b" %}-bottom-left{% elsif i == "l" %}-bottom-left{% endif %}-radius: var(--br{{ r }}) !important;{% if i != "a" %}<br/>
                                 border{% if i == "t" %}-top-right{% elsif i == "r" %}-bottom-right{% elsif i == "b" %}-bottom-right{% elsif i == "l" %}-top-left{% endif %}-radius: var(--br{{ r }}) !important;{% endif %}
                             </div>
@@ -47,13 +47,13 @@ description: Utilities for controlling an element's border radius.
 <section class="d-stack16">
     <header class="d-stack2">
         {% header "h2", "All Corners" %}
-        <p class="d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-bar{n}</code> to change the border radius on all corners of your element.</p>
+        <p class="d-wmx764 d-fs18 d-lh6">Use {% code %}d-bar{n}{% endcode %} to change the border radius on all corners of your element.</p>
     </header>
     <aside class="d-bar8 d-of-hidden">
         <header class="d-fl-col4 d-flg8 d-fw-wrap d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn102">
             {% assign radii = "0, 2, 4, 8, 12, 16, 24, 32" | split: ", "%}
             {% for r in radii %}
-            <div class="d-fl-center d-p16 d-hmn48 d-bar{{ r }} d-bgc-purple-400 d-fs18 d-fw-bold d-fc-white">.d-bar{{ r }}</div>
+            <div class="d-fl-center d-p16 d-hmn48 d-bar{{ r }} d-bgc-purple-300 d-fs18 d-fw-bold">.d-bar{{ r }}</div>
             {% endfor %}
         </header>
         <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
@@ -73,14 +73,14 @@ description: Utilities for controlling an element's border radius.
 <section class="d-stack16">
     <header class="d-stack2">
         {% header "h2", "Rounded Sides" %}
-        <p class="d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-b{t|r|b|l}r{n}</code> to change the border radius on a side of your element.</p>
+        <p class="d-wmx764 d-fs18 d-lh6">Use {% code %}d-b{t|r|b|l}r{n}{% endcode %} to change the border radius on a side of your element.</p>
     </header>
     <aside class="d-bar8 d-of-hidden">
-        <header class="d-fl-center d-flg8 d-fw-wrap d-p24 d-bgc-blue-100 d-bgo50 d-w100p d-hmn102 d-flow8">
-            <div class="d-fl-center d-p16 d-h48 d-btr4 d-bgc-blue-400 d-fs24 d-fw-bold d-fc-white">.d-btr4</div>
-            <div class="d-fl-center d-p16 d-h48 d-brr8 d-bgc-blue-400 d-fs24 d-fw-bold d-fc-white">.d-brr8</div>
-            <div class="d-fl-center d-p16 d-h48 d-bbr12 d-bgc-blue-400 d-fs24 d-fw-bold d-fc-white">.d-bbr12</div>
-            <div class="d-fl-center d-p16 d-h48 d-blr16 d-bgc-blue-400 d-fs24 d-fw-bold d-fc-white">.d-btr16</div>
+        <header class="d-fl-center d-flg8 d-fw-wrap d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmn102 d-flow8">
+            <div class="d-fl-center d-p16 d-h48 d-btr4 d-bgc-pink-300 d-fs24 d-fw-bold">.d-btr4</div>
+            <div class="d-fl-center d-p16 d-h48 d-brr8 d-bgc-pink-300 d-fs24 d-fw-bold">.d-brr8</div>
+            <div class="d-fl-center d-p16 d-h48 d-bbr12 d-bgc-pink-300 d-fs24 d-fw-bold">.d-bbr12</div>
+            <div class="d-fl-center d-p16 d-h48 d-blr16 d-bgc-pink-300 d-fs24 d-fw-bold">.d-btr16</div>
         </header>
         <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
 {% highlight html linenos %}
@@ -95,11 +95,11 @@ description: Utilities for controlling an element's border radius.
 <section class="d-stack16">
     <header class="d-stack2">
         {% header "h2", "Pills" %}
-        <p class="d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-b{a|t|r|b|l}r-pill</code> to change the border radius of your element to a pill shape.</p>
+        <p class="d-wmx764 d-fs18 d-lh6">Use {% code %}d-b{a|t|r|b|l}r-pill{% endcode %} to change the border radius of your element to a pill shape.</p>
     </header>
     <aside class="d-bar8 d-of-hidden">
         <header class="d-fl-center d-flg8 d-fw-wrap d-p24 d-bgc-green-100 d-bgo50 d-w100p d-hmn102">
-            <div class="d-fl-center d-p16 d-h64 d-wmn264 d-bar-pill d-bgc-green-400 d-fs24 d-fw-bold d-fc-white">.d-bar-pill</div>
+            <div class="d-fl-center d-p16 d-h64 d-wmn264 d-bar-pill d-bgc-green-300 d-fs24 d-fw-bold">.d-bar-pill</div>
         </header>
         <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
 {% highlight html linenos %}
@@ -111,7 +111,7 @@ description: Utilities for controlling an element's border radius.
 <section class="d-stack16">
     <header class="d-stack2">
         {% header "h2", "Circles" %}
-        <p class="d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-b{a|t|r|b|l}r-circle</code> to change the border radius of your element to a circle shape.</p>
+        <p class="d-wmx764 d-fs18 d-lh6">Use {% code %}d-b{a|t|r|b|l}r-circle{% endcode %} to change the border radius of your element to a circle shape.</p>
     </header>
     <aside class="d-bar8 d-of-hidden">
         <header class="d-fl-center d-flg8 d-fw-wrap d-p24 d-bgc-red-100 d-bgo50 d-w100p d-hmn102">

@@ -19,23 +19,23 @@ description: Utilities for controlling how elements are placed across grid colum
                 {% assign numbers = "1, 2, 3, 4, 5, 6, 7, 8, 0, 10, 11, 12" | split: ", "%}
                 {% for i in numbers %}
                 <tr>
-                    <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-gc{% if g == "start" %}s{% elsif g == "end" %}e{% endif %}{{ i }}</th>
-                    <td class="d-ff-mono d-fc-teal-500 d-fs12">grid-column{% if g == "start" %}-start{% elsif g == "end" %}-end{% endif %}: {% if g == "span" %}span {{ i }} / span {% endif %}{{ i }}</td>
+                    <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-gc{% if g == "start" %}s{% elsif g == "end" %}e{% endif %}{{ i }}</th>
+                    <td class="d-ff-mono d-fc-orange d-fs12">grid-column{% if g == "start" %}-start{% elsif g == "end" %}-end{% endif %}: {% if g == "span" %}span {{ i }} / span {% endif %}{{ i }}</td>
                 </tr>
                 {% endfor %}
                 {% if g == "span" %}
                 <tr>
-                    <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-gc-full</th>
-                    <td class="d-ff-mono d-fc-teal-500 d-fs12">grid-column: 1 / -1 !important;</td>
+                    <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-gc-full</th>
+                    <td class="d-ff-mono d-fc-orange d-fs12">grid-column: 1 / -1 !important;</td>
                 </tr>
                 {% endif %}
                 <tr>
-                    <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-gc{% if g == "start" %}s{% elsif g == "end" %}e{% endif %}-auto</th>
-                    <td class="d-ff-mono d-fc-teal-500 d-fs12">grid-column{% if g == "start" %}-start{% elsif g == "end" %}-end{% endif %}: auto !important;</td>
+                    <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-gc{% if g == "start" %}s{% elsif g == "end" %}e{% endif %}-auto</th>
+                    <td class="d-ff-mono d-fc-orange d-fs12">grid-column{% if g == "start" %}-start{% elsif g == "end" %}-end{% endif %}: auto !important;</td>
                 </tr>
                 <tr>
-                    <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-gc{% if g == "start" %}s{% elsif g == "end" %}e{% endif %}-unset</th>
-                    <td class="d-ff-mono d-fc-teal-500 d-fs12">grid-column{% if g == "start" %}-start{% elsif g == "end" %}-end{% endif %}: unset !important;</td>
+                    <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-gc{% if g == "start" %}s{% elsif g == "end" %}e{% endif %}-unset</th>
+                    <td class="d-ff-mono d-fc-orange d-fs12">grid-column{% if g == "start" %}-start{% elsif g == "end" %}-end{% endif %}: unset !important;</td>
                 </tr>
             </tbody>
             {% endfor %}
@@ -45,20 +45,20 @@ description: Utilities for controlling how elements are placed across grid colum
 <section class="d-stack16">
     <header class="d-stack2">
         {% header "h2", "Spanning columns" %}
-        <p class="d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-gc{#}</code> to span an element across multiple columns. This can be combined with <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-gc{#}</code> classes to span a set of columns. Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-gce{#}</code> to set an element's ending point. A reminder that CSS grid columns start at 1 and end at the number of columns + 1. For example in a 3-column grid, the starting line would be 1 and the ending line would be 4.</p>
+        <p class="d-wmx764 d-fs18 d-lh6">Use {% code %}d-gc{#}{% endcode %} to span an element across multiple columns. This can be combined with {% code %}d-gc{#}{% endcode %} classes to span a set of columns. Use {% code %}d-gce{#}{% endcode %} to set an element's ending point. A reminder that CSS grid columns start at 1 and end at the number of columns + 1. For example in a 3-column grid, the starting line would be 1 and the ending line would be 4.</p>
     </header>
     <aside class="d-bar8 d-of-hidden">
         <header class="d-fl-center d-fd-column d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn216">
             <div class="d-d-grid d-gg16 d-g-cols4 d-p16 d-w100p d-hmn216 d-bar8 d-bgc-purple-100">
-                <div class="d-fl-center d-p16 d-bgc-purple-400 d-bar4 d-fs24 d-fc-white d-fw-bold d-o50">1</div>
-                <div class="d-fl-center d-p16 d-bgc-purple-400 d-bar4 d-fs24 d-fc-white d-fw-bold d-o50">2</div>
-                <div class="d-gc2 d-fl-center d-p16 d-bgc-purple-400 d-bar4 d-fs24 d-fc-white d-fw-bold">3</div>
-                <div class="d-gc2 d-fl-center d-p16 d-bgc-purple-400 d-bar4 d-fs24 d-fc-white d-fw-bold">4</div>
-                <div class="d-fl-center d-p16 d-bgc-purple-400 d-bar4 d-fs24 d-fc-white d-fw-bold d-o50">5</div>
-                <div class="d-fl-center d-p16 d-bgc-purple-400 d-bar4 d-fs24 d-fc-white d-fw-bold d-o50">6</div>
-                <div class="d-fl-center d-p16 d-bgc-purple-400 d-bar4 d-fs24 d-fc-white d-fw-bold d-o50">7</div>
-                <div class="d-gc3 d-fl-center d-p16 d-bgc-purple-400 d-bar4 d-fs24 d-fc-white d-fw-bold">8</div>
-                <div class="d-gc-full d-fl-center d-p16 d-bgc-purple-400 d-bar4 d-fs24 d-fc-white d-fw-bold">9</div>
+                <div class="d-fl-center d-p16 d-bgc-purple-300 d-bar4 d-fs24 d-fw-bold d-o50">1</div>
+                <div class="d-fl-center d-p16 d-bgc-purple-300 d-bar4 d-fs24 d-fw-bold d-o50">2</div>
+                <div class="d-gc2 d-fl-center d-p16 d-bgc-purple-300 d-bar4 d-fs24 d-fw-bold">3</div>
+                <div class="d-gc2 d-fl-center d-p16 d-bgc-purple-300 d-bar4 d-fs24 d-fw-bold">4</div>
+                <div class="d-fl-center d-p16 d-bgc-purple-300 d-bar4 d-fs24 d-fw-bold d-o50">5</div>
+                <div class="d-fl-center d-p16 d-bgc-purple-300 d-bar4 d-fs24 d-fw-bold d-o50">6</div>
+                <div class="d-fl-center d-p16 d-bgc-purple-300 d-bar4 d-fs24 d-fw-bold d-o50">7</div>
+                <div class="d-gc3 d-fl-center d-p16 d-bgc-purple-300 d-bar4 d-fs24 d-fw-bold">8</div>
+                <div class="d-gc-full d-fl-center d-p16 d-bgc-purple-300 d-bar4 d-fs24 d-fw-bold">9</div>
             </div>
         </header>
         <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
@@ -81,18 +81,18 @@ description: Utilities for controlling how elements are placed across grid colum
 <section class="d-stack16">
     <header class="d-stack2">
         {% header "h2", "Setting the starting and ending column" %}
-        <p class="d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-gcs{#}</code> to set the starting point for an element. This can be combined with <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-gc{#}</code> classes to span a set of columns.</p>
+        <p class="d-wmx764 d-fs18 d-lh6">Use {% code %}d-gcs{#}{% endcode %} to set the starting point for an element. This can be combined with {% code %}d-gc{#}{% endcode %} classes to span a set of columns.</p>
     </header>
     <aside class="d-bar8 d-of-hidden">
         <header class="d-fl-center d-fd-column d-p24 d-bgc-yellow-100 d-bgo50 d-w100p d-hmn216">
             <div class="d-d-grid d-gg16 d-g-cols6 d-p16 d-w100p d-hmn216 d-bar8 d-bgc-yellow-100">
                 <div class="d-fl-center d-p16 d-bgc-yellow-200 d-bar4"></div>
-                <div class="d-gcs2 d-gce6 d-fl-center d-p16 d-bgc-yellow-400 d-bar4 d-fs24 d-fc-dark d-fw-bold">1</div>
+                <div class="d-gcs2 d-gce6 d-fl-center d-p16 d-bgc-yellow-400 d-bar4 d-fs24 d-fw-bold">1</div>
                 <div class="d-fl-center d-p16 d-bgc-yellow-200 d-bar4"></div>
-                <div class="d-gcs1 d-gce5 d-fl-center d-p16 d-bgc-yellow-400 d-bar4 d-fs24 d-fc-dark d-fw-bold">2</div>
+                <div class="d-gcs1 d-gce5 d-fl-center d-p16 d-bgc-yellow-400 d-bar4 d-fs24 d-fw-bold">2</div>
                 <div class="d-fl-center d-p16 d-bgc-yellow-200 d-bar4"></div>
                 <div class="d-fl-center d-p16 d-bgc-yellow-200 d-bar4"></div>
-                <div class="d-gcs1 d-gce7 d-fl-center d-p16 d-bgc-yellow-400 d-bar4 d-fs24 d-fc-dark d-fw-bold">3</div>
+                <div class="d-gcs1 d-gce7 d-fl-center d-p16 d-bgc-yellow-400 d-bar4 d-fs24 d-fw-bold">3</div>
             </div>
         </header>
         <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">

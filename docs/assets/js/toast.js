@@ -18,7 +18,7 @@ $(document).ready(function() {
   const actionBtn = $('.js-toast-example-action-btn');
   const closeBtn = $('.js-toast-example-close-btn');
 
-  const iconTypes = $('.js-toast-example-icon-info, .js-toast-example-icon-warning, .js-toast-example-icon-error, .js-toast-example-icon-success');
+  const iconTypes = $('.js-toast-example-icon-base, .js-toast-example-icon-info, .js-toast-example-icon-warning, .js-toast-example-icon-error, .js-toast-example-icon-success');
   const styleClassTypes = ("d-toast--info d-toast--warning d-toast--error d-toast--success d-toast--important");
 
 
@@ -73,7 +73,7 @@ $(document).ready(function() {
     if (important.is(':checked')) {
         toast.addClass('d-toast--important');
 
-        if (style !== 'warning') {
+        if (!['warning', 'success'].includes(style)) {
           actionBtn.addClass('d-btn--inverted');
           closeBtn.addClass('d-btn--inverted');
           link.addClass('d-link--inverted');

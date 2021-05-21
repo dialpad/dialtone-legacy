@@ -46,7 +46,7 @@
     &:focus {
         outline: none;
         border-radius: 4px;
-        box-shadow: 0px 0px 0px var(--su2) var(--blue-200);
+        box-shadow: 0px 0px 0px var(--su2) var(--focus-ring);
     }
 }
 
@@ -57,42 +57,42 @@
 //  $$  WARNING
 //  ----------------------------------------------------------------------------
 .d-link--warning {
-    color: var(--warning-color);
+    color: var(--fc-warning);
 
     &:hover {
-        color: var(--warning-color-hover);
+        color: var(--fc-warning-hover);
     }
 
     &:focus {
-        box-shadow: 0px 0px 0px var(--su2) var(--warning-color-focus);
+        box-shadow: 0px 0px 0px var(--su2) var(--focus-ring-warning);
     }
 }
 
 //  $$  DANGER
 //  ----------------------------------------------------------------------------
 .d-link--danger {
-    color: var(--error-color);
+    color: var(--fc-error);
 
     &:hover {
         color: var(--error-color-hover);
     }
 
     &:focus {
-        box-shadow: 0px 0px 0px var(--su2) var(--error-color-focus);
+        box-shadow: 0px 0px 0px var(--su2) var(--focus-ring-error);
     }
 }
 
 //  $$  SUCCESS
 //  ----------------------------------------------------------------------------
 .d-link--success {
-    color: var(--success-color);
+    color: var(--fc-success);
 
     &:hover {
         color: var(--success-color-hover);
     }
 
     &:focus {
-        box-shadow: 0px 0px 0px var(--su2) var(--success-color-focus);
+        box-shadow: 0px 0px 0px var(--su2) var(--focus-ring-success);
     }
 }
 
@@ -106,7 +106,7 @@
     }
 
     &:focus {
-        box-shadow: 0px 0px 0px var(--su2) var(--muted-color-focus);
+        box-shadow: 0px 0px 0px var(--su2) var(--focus-ring-muted);
     }
 }
 
@@ -114,7 +114,7 @@
 //  ----------------------------------------------------------------------------
 // We don't expose these in the documentation because they're meant to be consumed
 // by buttons using .d-link. Links with a disabled attribute are not valid mark-up.
-&[disabled],
+.d-link[disabled],
 .d-link--disabled {
     color: var(--black-400);
 
@@ -136,6 +136,10 @@
 
     &:hover {
         color: var(--inverted-color-hover);
+    }
+
+    &:focus {
+        box-shadow: 0px 0px 0px var(--su2) var(--focus-ring-inverted);
     }
 }
 

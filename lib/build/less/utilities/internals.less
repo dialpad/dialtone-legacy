@@ -27,6 +27,26 @@
 //  ----------------------------------------------------------------------------
 #d-internals() {
     //  ========================================================================
+    //  $   COLOR VARS
+    //      #color-vars creates all our HSL CSS color vars for us from a set
+    //      of HEX codes.
+    //
+    //      USAGE:
+    //      #d-internals #color-vars(@black-900);
+    //
+    //  ------------------------------------------------------------------------
+    #color-vars(@name, @color) {
+        --@{name}-h: hue(@color);
+        --@{name}-s: saturation(@color);
+        --@{name}-l: lightness(@color);
+        --@{name}-hsl: ~"var(--@{name}-h) var(--@{name}-s) var(--@{name}-l)";
+        --@{name}: hsla(~"var(--@{name}-h) var(--@{name}-s) var(--@{name}-l) /  var(--alpha, 100%)");
+    }
+    #dark-color-vars(@name, @color) {
+
+    }
+
+    //  ========================================================================
     //  $   DARK MODE
     //      #dark-mode creates a dark-mode override behind the
     //      `prefers-color-scheme: dark` media query and `.theme-system` class.
@@ -155,7 +175,7 @@
     //      but their use is discouraged.
     //
     //      USAGE:
-    //      #d-internals #color-classes(blue-600);
+    //      #d-internals #color-classes(purple-500);
     //
     //  ------------------------------------------------------------------------
     #color-classes(@color-name) {
@@ -226,7 +246,7 @@
     //      loop that will create most of the colors for us.
     //
     //      USAGE:
-    //      #d-internals #standard-stops(blue);
+    //      #d-internals #standard-stops(purple);
     //
     //  ------------------------------------------------------------------------
     #standard-stops(@color) {

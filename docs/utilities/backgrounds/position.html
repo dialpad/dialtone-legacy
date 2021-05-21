@@ -16,8 +16,8 @@ description: Utilities for controlling the position of an element's background i
             {% assign initial = "tl, t, tr, r, br, b, bl, l, center, unset" | split: ", " %}
             {% for i in initial %}
                 <tr>
-                    <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-bgp-{{ i }}</th>
-                    <td class="d-ff-mono d-fc-teal-500 d-fs12">background-position:
+                    <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-bgp-{{ i }}</th>
+                    <td class="d-ff-mono d-fc-orange d-fs12">background-position:
                         {% if i == "tl" %}top left
                         {% elsif i == "t" %}top
                         {% elsif i == "tr" %}top right
@@ -36,14 +36,14 @@ description: Utilities for controlling the position of an element's background i
 <section class="d-stack16">
     <header class="d-stack2">
         {% header "h2", "Usage" %}
-        <p class="d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-bgp-{position}</code> to control where an element's background image is placed.</p>
+        <p class="d-wmx764 d-fs18 d-lh6">Use {% code %}d-bgp-{position}{% endcode %} to control where an element's background image is placed.</p>
     </header>
     <aside class="d-bar8 d-of-hidden">
-        <header class="d-fl-col4 d-fw-wrap d-p16 d-bgc-purple-100 d-bgo50">
+        <header class="d-fl-col4 d-fw-wrap d-flg12 d-p12 d-bgc-purple-100 d-bgo50">
             {% for i in initial %}
-            <div class="d-d-flex d-fd-column d-ai-center d-my12 d-stack4">
+            <div class="d-d-flex d-fd-column d-ai-center d-stack4">
                 <div class="d-fl-center d-w128 d-h128 d-bgc-purple-300 d-bar8 d-bc-purple-200 d-of-hidden d-bgr-none d-bgp-{{ i }} d-bgs-var" style="--bgg-size: 65% 65%; background-image: url('https://cdn.jpegmini.com/user/images/slider_puffin_before_mobile.jpg');"></div>
-                <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">.d-bgp-{{ i }}</code>
+                {% code %}.d-bgp-{{ i }}{% endcode %}
             </div>
             {% endfor %}
         </header>
