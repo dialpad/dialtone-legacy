@@ -24,8 +24,8 @@
 .d-toast {
     //  Component CSS Vars
     //  ------------------------------------------------------------------------
-    --notice--bgc:          var(--black-050);
-    --notice--fc:           var(--black-800);
+    --toast--bgc:          var(--black-025);
+    --toast--fc:           var(--fc-dark);
 
     box-sizing: border-box;
 
@@ -35,8 +35,8 @@
     margin-bottom: var(--su8);
     z-index:       var(--zi-notification);
 
-    color:            var(--notice--fc);
-    background-color: var(--notice--bgc);
+    color:            var(--toast--fc);
+    background-color: var(--toast--bgc);
 
     border-radius: var(--br4);
     .d-bs-md();
@@ -75,5 +75,62 @@
 
     .d-notice__actions {
         margin-left: var(--su32);
+    }
+}
+
+//  ============================================================================
+//  $   STYLES
+//  ============================================================================
+//  $$  DEFAULT IMPORTANT
+//  ----------------------------------------------------------------------------
+.d-toast.d-toast--important {
+    --toast--bgc:          var(--black-800);
+    --toast--fc:           var(--black-025);
+}
+
+//  $$  ERROR
+//  ----------------------------------------------------------------------------
+.d-toast--error {
+    --toast--bgc:          var(--red-100);
+    --toast--fc:           var(--red-700);
+
+    &.d-toast--important {
+        --toast--bgc:      var(--red-500);
+        --toast--fc:       var(--white);
+    }
+}
+
+//  $$  INFO
+//  ----------------------------------------------------------------------------
+.d-toast--info {
+    --toast--bgc:          var(--purple-100);
+    --toast--fc:           var(--fc-dark);
+
+    &.d-toast--important {
+        --toast--bgc:      var(--purple-500);
+        --toast--fc:       var(--white);
+    }
+}
+
+//  $$  SUCCESS
+//  ----------------------------------------------------------------------------
+.d-toast--success {
+    --toast--bgc:          var(--green-100);
+    --toast--fc:           var(--green-700);
+
+    &.d-toast--important {
+        --toast--bgc:      var(--green-300);
+        --toast--fc:       var(--green-700);
+    }
+}
+
+//  $$  WARNING
+//  ----------------------------------------------------------------------------
+.d-toast--warning {
+    --toast--bgc:          var(--yellow-100);
+
+    &.d-toast--important {
+        --toast--bgc:      var(--yellow-400);
+        --toast--fc:       var(--fc-dark);
     }
 }

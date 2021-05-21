@@ -583,20 +583,6 @@ body {
   --banner--bgc: var(--black-800);
   --banner--fc: var(--black-025);
 }
-.d-banner--info {
-  --banner--bgc: var(--purple-100);
-}
-.d-banner--info.d-banner--important {
-  --banner--bgc: var(--purple-500);
-  --banner--fc: var(--white);
-}
-.d-banner--warning {
-  --banner--bgc: var(--yellow-100);
-}
-.d-banner--warning.d-banner--important {
-  --banner--bgc: var(--yellow-400);
-  --banner--fc: var(--fc-dark);
-}
 .d-banner--error {
   --banner--bgc: var(--red-100);
   --banner--fc: var(--red-700);
@@ -605,12 +591,26 @@ body {
   --banner--bgc: var(--red-500);
   --banner--fc: var(--white);
 }
+.d-banner--info {
+  --banner--bgc: var(--purple-100);
+}
+.d-banner--info.d-banner--important {
+  --banner--bgc: var(--purple-500);
+  --banner--fc: var(--white);
+}
 .d-banner--success {
   --banner--bgc: var(--green-100);
   --banner--fc: var(--green-700);
 }
 .d-banner--success.d-banner--important {
   --banner--bgc: var(--green-300);
+  --banner--fc: var(--green-700);
+}
+.d-banner--warning {
+  --banner--bgc: var(--yellow-100);
+}
+.d-banner--warning.d-banner--important {
+  --banner--bgc: var(--yellow-400);
   --banner--fc: var(--fc-dark);
 }
 .d-breadcrumbs > ol {
@@ -1620,8 +1620,8 @@ legend .d-label {
   margin-top: 0.8rem !important;
 }
 .d-toast {
-  --notice--bgc: var(--black-050);
-  --notice--fc: var(--black-800);
+  --toast--bgc: var(--black-025);
+  --toast--fc: var(--fc-dark);
   z-index: var(--zi-notification);
   box-sizing: border-box;
   width: 100%;
@@ -1629,9 +1629,9 @@ legend .d-label {
   margin-bottom: var(--su8);
   padding: var(--su12);
   border-radius: var(--br4);
-  background-color: var(--notice--bgc);
+  background-color: var(--toast--bgc);
   box-shadow: var(--bs-md) !important;
-  color: var(--notice--fc);
+  color: var(--toast--fc);
   font-size: var(--fs14);
   line-height: var(--lh6);
   word-break: normal;
@@ -1657,6 +1657,41 @@ legend .d-label {
 }
 .d-toast__dialog .d-notice__actions {
   margin-left: var(--su32);
+}
+.d-toast.d-toast--important {
+  --toast--bgc: var(--black-800);
+  --toast--fc: var(--black-025);
+}
+.d-toast--error {
+  --toast--bgc: var(--red-100);
+  --toast--fc: var(--red-700);
+}
+.d-toast--error.d-toast--important {
+  --toast--bgc: var(--red-500);
+  --toast--fc: var(--white);
+}
+.d-toast--info {
+  --toast--bgc: var(--purple-100);
+  --toast--fc: var(--fc-dark);
+}
+.d-toast--info.d-toast--important {
+  --toast--bgc: var(--purple-500);
+  --toast--fc: var(--white);
+}
+.d-toast--success {
+  --toast--bgc: var(--green-100);
+  --toast--fc: var(--green-700);
+}
+.d-toast--success.d-toast--important {
+  --toast--bgc: var(--green-300);
+  --toast--fc: var(--green-700);
+}
+.d-toast--warning {
+  --toast--bgc: var(--yellow-100);
+}
+.d-toast--warning.d-toast--important {
+  --toast--bgc: var(--yellow-400);
+  --toast--fc: var(--fc-dark);
 }
 .d-notice {
   --notice--bgc: var(--black-025);
@@ -1706,40 +1741,6 @@ legend .d-label {
   --notice--bgc: var(--black-800);
   --notice--fc: var(--black-025);
 }
-.d-notice--info,
-.d-banner--info,
-.d-toast--info {
-  --notice--bgc: var(--purple-100);
-}
-.d-notice--info.d-notice--important,
-.d-banner--info.d-notice--important,
-.d-toast--info.d-notice--important,
-.d-notice--info.d-banner--important,
-.d-banner--info.d-banner--important,
-.d-toast--info.d-banner--important,
-.d-notice--info.d-toast--important,
-.d-banner--info.d-toast--important,
-.d-toast--info.d-toast--important {
-  --notice--bgc: var(--purple-500);
-  --notice--fc: var(--white);
-}
-.d-notice--warning,
-.d-banner--warning,
-.d-toast--warning {
-  --notice--bgc: var(--yellow-100);
-}
-.d-notice--warning.d-notice--important,
-.d-banner--warning.d-notice--important,
-.d-toast--warning.d-notice--important,
-.d-notice--warning.d-banner--important,
-.d-banner--warning.d-banner--important,
-.d-toast--warning.d-banner--important,
-.d-notice--warning.d-toast--important,
-.d-banner--warning.d-toast--important,
-.d-toast--warning.d-toast--important {
-  --notice--bgc: var(--yellow-400);
-  --notice--fc: var(--fc-dark);
-}
 .d-notice--error,
 .d-banner--error,
 .d-toast--error {
@@ -1756,6 +1757,23 @@ legend .d-label {
 .d-banner--error.d-toast--important,
 .d-toast--error.d-toast--important {
   --notice--bgc: var(--red-500);
+  --notice--fc: var(--white);
+}
+.d-notice--info,
+.d-banner--info,
+.d-toast--info {
+  --notice--bgc: var(--purple-100);
+}
+.d-notice--info.d-notice--important,
+.d-banner--info.d-notice--important,
+.d-toast--info.d-notice--important,
+.d-notice--info.d-banner--important,
+.d-banner--info.d-banner--important,
+.d-toast--info.d-banner--important,
+.d-notice--info.d-toast--important,
+.d-banner--info.d-toast--important,
+.d-toast--info.d-toast--important {
+  --notice--bgc: var(--purple-500);
   --notice--fc: var(--white);
 }
 .d-notice--success,
@@ -1775,6 +1793,23 @@ legend .d-label {
 .d-toast--success.d-toast--important {
   --notice--bgc: var(--green-300);
   --notice--fc: var(--green-700);
+}
+.d-notice--warning,
+.d-banner--warning,
+.d-toast--warning {
+  --notice--bgc: var(--yellow-100);
+}
+.d-notice--warning.d-notice--important,
+.d-banner--warning.d-notice--important,
+.d-toast--warning.d-notice--important,
+.d-notice--warning.d-banner--important,
+.d-banner--warning.d-banner--important,
+.d-toast--warning.d-banner--important,
+.d-notice--warning.d-toast--important,
+.d-banner--warning.d-toast--important,
+.d-toast--warning.d-toast--important {
+  --notice--bgc: var(--yellow-400);
+  --notice--fc: var(--fc-dark);
 }
 .d-checkbox,
 .d-radio {
