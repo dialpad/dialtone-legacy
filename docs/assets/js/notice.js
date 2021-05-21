@@ -1,6 +1,6 @@
 $(document).ready(function() {
-  // Select important warning notice link and buttons
-  const importantWarningNotice = $('.d-notice--warning.d-notice--important');
+  // Select important success and warning notice link and buttons
+  const importantWarningNotice = $('.d-notice--success.d-notice--important, .d-notice--warning.d-notice--important');
   const link = importantWarningNotice.find('.d-link');
   const actionBtn = importantWarningNotice.find('.d-btn--outlined');
   const closeBtn = importantWarningNotice.find('.d-btn--circle');
