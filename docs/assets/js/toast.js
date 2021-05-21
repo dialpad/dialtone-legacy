@@ -18,7 +18,7 @@ $(document).ready(function() {
   const actionBtn = $('.js-toast-example-action-btn');
   const closeBtn = $('.js-toast-example-close-btn');
 
-  const iconTypes = $('.js-toast-example-icon-info, .js-toast-example-icon-warning, .js-toast-example-icon-error, .js-toast-example-icon-success');
+  const iconTypes = $('.js-toast-example-icon-base, .js-toast-example-icon-info, .js-toast-example-icon-warning, .js-toast-example-icon-error, .js-toast-example-icon-success');
   const styleClassTypes = ("d-toast--info d-toast--warning d-toast--error d-toast--success d-toast--important");
 
 

@@ -20,7 +20,7 @@ $(document).ready(function() {
     var selectMenu = $('.js-banner-style-menu');
     var important = $('.js-banner-important');
     var pinned = $('.js-banner-pinned');
-    var iconTypes = $('.js-banner-example-icon-info, .js-banner-example-icon-warning, .js-banner-example-icon-error, .js-banner-example-icon-success');
+    var iconTypes = $('.js-banner-example-icon-base, .js-banner-example-icon-info, .js-banner-example-icon-warning, .js-banner-example-icon-error, .js-banner-example-icon-success');
     var classTypes = ("d-banner--info d-banner--warning d-banner--error d-banner--success d-banner--important d-banner--pinned");
 
     launchBtn.on('click', function(e) {

@@ -39,22 +39,22 @@ description: A notice is an informational and assistive message that appears inl
     <aside class="d-bar8 d-mt16">
       {% codeWellHeader "white" %}
         <div class="d-stack12 d-w60p">
-          {% assign styles = "info, warning, error, success, base" | split: ", "%}
+          {% assign styles = "base, error, info, success, warning" | split: ", "%}
           {% for i in styles %}
             <aside class="d-notice d-notice--{{ i }}" role="status" aria-hidden="false">
-              {% if i != "base" %}
-                <div class="d-notice__icon">
-                  {% if i == "info" %}
-                    {% iconSystem "info" %}
-                  {% elsif i == "warning" %}
-                    {% iconSystem "warning" %}
-                  {% elsif i == "error" %}
-                    {% iconSystem "error" %}
-                  {% elsif i == "success" %}
-                    {% iconSystem "check-circle" %}
-                  {% endif %}
-                </div>
-              {% endif %}
+              <div class="d-notice__icon">
+                {% if i == "base" %}
+                  {% iconSystem "transcript" %}
+                {% elsif i == "error" %}
+                  {% iconSystem "error" %}
+                {% elsif i == "info" %}
+                  {% iconSystem "info" %}
+                {% elsif i == "success" %}
+                  {% iconSystem "check-circle" %}
+                {% elsif i == "warning" %}
+                  {% iconSystem "warning" %}
+                {% endif %}
+              </div>
               <div class="d-notice__content">
                 <h2 class="d-notice__title">{{ i | capitalize }} title (optional)</h2>
                 <p class="d-notice__message">Message body with <a href="#" class="d-link d-link--muted">a link.</a></p>
@@ -72,7 +72,7 @@ description: A notice is an informational and assistive message that appears inl
       {% endcodeWellHeader %}
       {% codeWellFooter %}
 {% highlight html linenos %}
-<aside class="d-notice d-notice--info" role="status" aria-hidden="false">
+<aside class="d-notice d-notice--base" role="status" aria-hidden="false">
   <div class="d-notice__icon">
     <IconInfo />
   </div>
@@ -89,9 +89,10 @@ description: A notice is an informational and assistive message that appears inl
   </div>
 </aside>
 
+<aside class="d-notice d-notice--error" role="status" aria-hidden="false">…</aside>
+<aside class="d-notice d-notice--info" role="status" aria-hidden="false">…</aside>
 <aside class="d-notice d-notice--success" role="status" aria-hidden="false">…</aside>
 <aside class="d-notice d-notice--warning" role="status" aria-hidden="false">…</aside>
-<aside class="d-notice d-notice--error" role="status" aria-hidden="false">…</aside>
 {% endhighlight %}
       {% endcodeWellFooter %}
     </aside>
@@ -102,22 +103,22 @@ description: A notice is an informational and assistive message that appears inl
     {% codeWell %}
       {% codeWellHeader %}
         <div class="d-stack12 d-w60p">
-          {% assign styles = "info, warning, error, success, base" | split: ", "%}
+          {% assign styles = "base, error, info, success, warning" | split: ", "%}
           {% for i in styles %}
             <aside class="d-notice d-notice--{{ i }} d-notice--important" role="alert" aria-hidden="false">
-              {% if i != "base" %}
-                <div class="d-notice__icon">
-                  {% if i == "info" %}
-                    {% iconSystem "info" %}
-                  {% elsif i == "warning" %}
-                    {% iconSystem "warning" %}
-                  {% elsif i == "error" %}
-                    {% iconSystem "error" %}
-                  {% elsif i == "success" %}
-                    {% iconSystem "check-circle" %}
-                  {% endif %}
-                </div>
-              {% endif %}
+              <div class="d-notice__icon">
+                {% if i == "base" %}
+                  {% iconSystem "transcript" %}
+                {% elsif i == "error" %}
+                  {% iconSystem "error" %}
+                {% elsif i == "info" %}
+                  {% iconSystem "info" %}
+                {% elsif i == "success" %}
+                  {% iconSystem "check-circle" %}
+                {% elsif i == "warning" %}
+                  {% iconSystem "warning" %}
+                {% endif %}
+              </div>
               <div class="d-notice__content">
                 <h2 class="d-notice__title">{{ i | capitalize }} title (optional)</h2>
                 <p class="d-notice__message">Message body with <a href="#" class="d-link d-link--inverted">a link.</a></p>
@@ -135,7 +136,7 @@ description: A notice is an informational and assistive message that appears inl
       {% endcodeWellHeader %}
       {% codeWellFooter %}
 {% highlight html linenos %}
-<aside class="d-notice d-notice--info d-notice--important" role="alert" aria-hidden="false">
+<aside class="d-notice d-notice--base d-notice--important" role="alert" aria-hidden="false">
   <div class="d-notice__icon">
     <IconInfo />
   </div>
@@ -152,9 +153,10 @@ description: A notice is an informational and assistive message that appears inl
   </div>
 </aside>
 
+<aside class="d-notice d-notice--error d-notice--important" role="alert" aria-hidden="false">…</aside>
+<aside class="d-notice d-notice--info d-notice--important" role="alert" aria-hidden="false">…</aside>
 <aside class="d-notice d-notice--success d-notice--important" role="alert" aria-hidden="false">…</aside>
 <aside class="d-notice d-notice--warning d-notice--important" role="alert" aria-hidden="false">…</aside>
-<aside class="d-notice d-notice--error d-notice--important" role="alert" aria-hidden="false">…</aside>
 {% endhighlight %}
       {% endcodeWellFooter %}
     {% endcodeWell %}
