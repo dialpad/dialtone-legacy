@@ -24,10 +24,10 @@ description: Utilities to change an element's font-color.
                 {% assign var = i.var %}
                 {% assign output = i.output %}
                     <tr>
-                        <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">var(--fc-{{ var }})</th>
+                        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">var(--fc-{{ var }})</th>
                         <td>
                             <div class="d-d-flex d-jc-space-between d-ai-center">
-                                <div class="d-fl1 d-ff-mono d-fc-teal-500 d-fs12">
+                                <div class="d-fl1 d-ff-mono d-fc-orange d-fs12">
                                     var(--{{ output }});
                                 </div>
                                 <div class="d-fl0 d-fc-{{ var }} d-fs16 d-lh4">
@@ -53,10 +53,10 @@ description: Utilities to change an element's font-color.
             </thead>
             <tbody>
                 <tr>
-                    <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-fc-current</th>
+                    <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-fc-current</th>
                     <td>
                         <div class="d-d-flex d-jc-space-between d-ai-center">
-                            <div class="d-fl1 d-ff-mono d-fc-teal-500 d-fs12">
+                            <div class="d-fl1 d-ff-mono d-fc-orange d-fs12">
                                 color: currentColor !important;
                             </div>
                             <div class="d-fl0 d-fc-current d-fs16 d-lh4">
@@ -66,10 +66,10 @@ description: Utilities to change an element's font-color.
                     </td>
                 </tr>
                 <tr>
-                    <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-fc-transparent</th>
+                    <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-fc-transparent</th>
                     <td>
                         <div class="d-d-flex d-jc-space-between d-ai-center">
-                            <div class="d-fl1 d-ff-mono d-fc-teal-500 d-fs12">
+                            <div class="d-fl1 d-ff-mono d-fc-orange d-fs12">
                                 color: transparent !important;
                             </div>
                             <div class="d-fl0 d-fc-transparent d-fs16 d-lh4">
@@ -79,10 +79,10 @@ description: Utilities to change an element's font-color.
                     </td>
                 </tr>
                 <tr>
-                    <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-fc-unset</th>
+                    <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-fc-unset</th>
                     <td>
                         <div class="d-d-flex d-jc-space-between d-ai-center">
-                            <div class="d-fl1 d-ff-mono d-fc-teal-500 d-fs12">
+                            <div class="d-fl1 d-ff-mono d-fc-orange d-fs12">
                                 color: unset !important;
                             </div>
                             <div class="d-fl0 d-fc-unset d-fs16 d-lh4">
@@ -92,10 +92,10 @@ description: Utilities to change an element's font-color.
                     </td>
                 </tr>
                 <tr>
-                    <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-fc-white</th>
+                    <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-fc-white</th>
                     <td>
                         <div class="d-d-flex d-jc-space-between d-ai-center">
-                            <div class="d-fl1 d-ff-mono d-fc-teal-500 d-fs12">
+                            <div class="d-fl1 d-ff-mono d-fc-orange d-fs12">
                                 --fco: 100%;<br/>
                                 color: hsla(var(--white-h) var(--white-s) var(--white-l) / var(--fco)) !important;
                             </div>
@@ -109,10 +109,10 @@ description: Utilities to change an element's font-color.
                 {% assign color = i.var %}
                 {% assign output = i.output %}
                 <tr>
-                    <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-fc-{{ color }}</th>
+                    <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-fc-{{ color }}</th>
                     <td>
                         <div class="d-d-flex d-jc-space-between d-ai-center">
-                            <div class="d-fl1 d-ff-mono d-fc-teal-500 d-fs12">
+                            <div class="d-fl1 d-ff-mono d-fc-orange d-fs12">
                                 --fco: 100%;<br/>
                                 color: hsla(var(--{{ output }}-h) var(--{{ output }}-s) var(--{{ output }}-l) / var(--fco)) !important;
                             </div>
@@ -124,22 +124,26 @@ description: Utilities to change an element's font-color.
                 </tr>
                 {% endfor %}
             </tbody>
-            {% assign colors = "black, blue, purple, teal, pink, green, yellow, red" | split: ", " %}
+            {% assign colors = "black, purple, orange, pink, green, yellow, red" | split: ", " %}
             {% for i in colors %}
                 {% if i == "black" %}
-                    {% assign stops = "900, 800, 700, 600, 500, 400, 300, 200, 100, 050" | split: ", " %}
-                {% elsif i == "blue" %}
-                    {% assign stops = "800, 700, 600, 500, 400, 300, 200, 100" | split: ", " %}
-                {% else %}
+                    {% assign stops = "900, 800, 700, 600, 500, 400, 300, 200, 100, 075, 050, 025" | split: ", " %}
+                {% elsif i == "purple" %}
+                    {% assign stops = "900, 800, 700, 600, 500, 400, 300, 200, 100" | split: ", " %}
+                {% elsif i == "orange" %}
                     {% assign stops = "600, 500, 400, 300, 200, 100" | split: ", " %}
+                {% elsif i == "yellow" %}
+                    {% assign stops = "600, 500, 400, 300, 200, 100, 050" | split: ", " %}
+                {% else %}
+                    {% assign stops = "700, 600, 500, 400, 300, 200, 100" | split: ", " %}
                 {% endif %}
                 <tbody>
                     {% for s in stops %}
                     <tr>
-                        <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-fc-{{ i }}-{{ s }}</th>
+                        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-fc-{{ i }}-{{ s }}</th>
                         <td>
                             <div class="d-d-flex d-jc-space-between d-ai-center">
-                                <div class="d-fl1 d-ff-mono d-fc-teal-500 d-fs12">
+                                <div class="d-fl1 d-ff-mono d-fc-orange d-fs12">
                                     --fco: 100%;<br/>
                                     color: hsla(var(--{{ i }}-{{ s }}-h) var(--{{ i }}-{{ s }}-s) var(--{{ i }}-{{ s }}-l) / var(--fco)) !important;
                                 </div>
@@ -158,15 +162,15 @@ description: Utilities to change an element's font-color.
 <section class="d-stack16">
     <header class="d-stack2">
         {% header "h2", "Usage" %}
-        <p class="d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-fc-{color}</code> to change an element's text color.</p>
+        <p class="d-wmx764 d-fs18 d-lh6">Use {% code %}d-fc-{color}{% endcode %} to change an element's text color.</p>
     </header>
     <aside class="d-bar8 d-of-hidden">
         <header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-black-050 d-w100p d-hmn102">
-            <p class="d-fs18 d-fc-blue-600">The quick brown fox jumps over the lazy dog.</p>
+            <p class="d-fs18 d-fc-purple">The quick brown fox jumps over the lazy dog.</p>
         </header>
         <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
 {% highlight html linenos %}
-<p class="d-fc-blue-600">...</p>
+<p class="d-fc-purple">...</p>
 {% endhighlight %}
         </footer>
     </aside>
@@ -174,31 +178,31 @@ description: Utilities to change an element's font-color.
 <section class="d-stack16">
     <header class="d-stack2">
         {% header "h2", "Changing opacity" %}
-        <p class="d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-fco{n}</code> to change an element's text color opacity. You can also change font color opacity on <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">:hover</code>, <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">:focus</code>, or in dark mode by using the respective <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">h:d-fco{stop}</code>, <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">f:d-fco{stop}</code>, or <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d:d-fco{stop}</code> prefixes.</p>
+        <p class="d-wmx764 d-fs18 d-lh6">Use {% code %}d-fco{n}{% endcode %} to change an element's text color opacity. You can also change font color opacity on {% code %}:hover{% endcode %}, {% code %}:focus{% endcode %}, or in dark mode by using the respective {% code %}h:d-fco{stop}{% endcode %}, {% code %}f:d-fco{stop}{% endcode %}, or {% code %}d:d-fco{stop}{% endcode %} prefixes.</p>
     </header>
     <aside class="d-bar8 d-of-hidden">
         <header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-black-050 d-w100p d-hmn102 d-stack8">
-            <p class="d-fs18 d-fc-blue-600">The quick brown fox jumps over the lazy dog.</p>
-            <p class="d-fs18 d-fc-blue-600 d-fco99">The quick brown fox jumps over the lazy dog.</p>
-            <p class="d-fs18 d-fc-blue-600 d-fco95">The quick brown fox jumps over the lazy dog.</p>
-            <p class="d-fs18 d-fc-blue-600 d-fco90">The quick brown fox jumps over the lazy dog.</p>
-            <p class="d-fs18 d-fc-blue-600 d-fco75">The quick brown fox jumps over the lazy dog.</p>
-            <p class="d-fs18 d-fc-blue-600 d-fco50">The quick brown fox jumps over the lazy dog.</p>
-            <p class="d-fs18 d-fc-blue-600 d-fco25">The quick brown fox jumps over the lazy dog.</p>
-            <p class="d-fs18 d-fc-blue-600 d-fco10">The quick brown fox jumps over the lazy dog.</p>
-            <p class="d-fs18 d-fc-blue-600 d-fco0">The quick brown fox jumps over the lazy dog.</p>
+            <p class="d-fs18 d-fc-purple">The quick brown fox jumps over the lazy dog.</p>
+            <p class="d-fs18 d-fc-purple d-fco99">The quick brown fox jumps over the lazy dog.</p>
+            <p class="d-fs18 d-fc-purple d-fco95">The quick brown fox jumps over the lazy dog.</p>
+            <p class="d-fs18 d-fc-purple d-fco90">The quick brown fox jumps over the lazy dog.</p>
+            <p class="d-fs18 d-fc-purple d-fco75">The quick brown fox jumps over the lazy dog.</p>
+            <p class="d-fs18 d-fc-purple d-fco50">The quick brown fox jumps over the lazy dog.</p>
+            <p class="d-fs18 d-fc-purple d-fco25">The quick brown fox jumps over the lazy dog.</p>
+            <p class="d-fs18 d-fc-purple d-fco10">The quick brown fox jumps over the lazy dog.</p>
+            <p class="d-fs18 d-fc-purple d-fco0">The quick brown fox jumps over the lazy dog.</p>
         </header>
         <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
 {% highlight html linenos %}
-<p class="d-fc-blue-600">...</p>
-<p class="d-fc-blue-600 d-fco99">...</p>
-<p class="d-fc-blue-600 d-fco95">...</p>
-<p class="d-fc-blue-600 d-fco90">...</p>
-<p class="d-fc-blue-600 d-fco75">...</p>
-<p class="d-fc-blue-600 d-fco50">...</p>
-<p class="d-fc-blue-600 d-fco25">...</p>
-<p class="d-fc-blue-600 d-fco10">...</p>
-<p class="d-fc-blue-600 d-fco0">...</p>
+<p class="d-fc-purple">...</p>
+<p class="d-fc-purple d-fco99">...</p>
+<p class="d-fc-purple d-fco95">...</p>
+<p class="d-fc-purple d-fco90">...</p>
+<p class="d-fc-purple d-fco75">...</p>
+<p class="d-fc-purple d-fco50">...</p>
+<p class="d-fc-purple d-fco25">...</p>
+<p class="d-fc-purple d-fco10">...</p>
+<p class="d-fc-purple d-fco0">...</p>
 {% endhighlight %}
         </footer>
     </aside>
@@ -206,15 +210,15 @@ description: Utilities to change an element's font-color.
 <section class="d-stack16">
     <header class="d-stack2">
         {% header "h2", "Hover" %}
-        <p class="d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">h:d-fc-{color}</code> to change an element's text color <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">:hover</code> state.</p>
+        <p class="d-wmx764 d-fs18 d-lh6">Use {% code %}h:d-fc-{color}{% endcode %} to change an element's text color {% code %}:hover{% endcode %} state.</p>
     </header>
     <aside class="d-bar8 d-of-hidden">
         <header class="d-fl-center d-p24 d-bgc-black-050 d-w100p d-hmn102">
-            <button class="d-p16 d-bar4 d-fs18 d-fc-blue-600 h:d-fc-white d-bgc-transparent h:d-bgc-blue-600 d-ba d-bc-transparent">Hover over me</button>
+            <button class="d-p16 d-bar4 d-fs18 d-fc-purple h:d-fc-white d-bgc-transparent h:d-bgc-purple-500 d-ba d-bc-transparent">Hover over me</button>
         </header>
         <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
 {% highlight html linenos %}
-<button class="d-fc-blue-600 h:d-fc-white">...</button>
+<button class="d-fc-purple h:d-fc-white">...</button>
 {% endhighlight %}
         </footer>
     </aside>
@@ -222,32 +226,32 @@ description: Utilities to change an element's font-color.
 <section class="d-stack16">
     <header class="d-stack2">
         {% header "h2", "Focus" %}
-        <p class="d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">f:d-fc-{color}</code> to change an element's text color <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">:focus</code> and <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">:focus-within</code> state.</p>
+        <p class="d-wmx764 d-fs18 d-lh6">Use {% code %}f:d-fc-{color}{% endcode %} to change an element's text color {% code %}:focus{% endcode %} and {% code %}:focus-within{% endcode %} state.</p>
     </header>
     <aside class="d-bar8 d-of-hidden">
         <header class="d-fl-center d-p24 d-bgc-black-050 d-w100p d-hmn102">
-            <button class="d-p16 d-bar4 d-fs18 d-fc-blue-600 f:d-fc-white d-bgc-transparent f:d-bgc-blue-600 d-ba d-bc-transparent">Click on me</button>
+            <button class="d-p16 d-bar4 d-fs18 d-fc-pink f:d-fc-white d-bgc-transparent f:d-bgc-pink-600 d-ba d-bc-transparent">Click on me</button>
         </header>
         <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
 {% highlight html linenos %}
-<button class="d-fc-blue-600 f:d-fc-white">...</button>
+<button class="d-fc-pink f:d-fc-white">...</button>
 {% endhighlight %}
         </footer>
     </aside>
 </section>
-<section class="d-stack16">
+<!-- <section class="d-stack16">
     <header class="d-stack2">
         {% header "h2", "Dark Mode" %}
-        <p class="d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d:d-fc-{color}</code> to set a different text color when the user prefers dark mode.</p>
+        <p class="d-wmx764 d-fs18 d-lh6">Use {% code %}d:d-fc-{color}{% endcode %} to set a different text color when the user prefers dark mode.</p>
     </header>
     <aside class="d-bar8 d-of-hidden theme-dark">
         <header class="d-fl-center d-fd-column d-p24 d-bgc-black-050 d-w100p d-hmn102 d-stack16">
-            <button type="button" class="d-p16 d-bar4 d-fs18 d-fc-blue-600 d-bgc-blue-100 d:d-fc-yellow-500 d:d-bgc-yellow-200 d-ba d-bc-transparent js-theme-switcher">Click on me toggle dark mode</button>
+            <button type="button" class="d-p16 d-bar4 d-fs18 d-fc-purple d-bgc-pink-100 d:d-fc-yellow d:d-bgc-yellow-200 d-ba d-bc-transparent js-theme-switcher">Click on me toggle dark mode</button>
         </header>
         <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
 {% highlight html linenos %}
-<button class="d-fc-blue-600 d:d-fc-yellow-500">...</button>
+<button class="d-fc-purple d:d-fc-yellow">...</button>
 {% endhighlight %}
         </footer>
     </aside>
-</section>
+</section> -->

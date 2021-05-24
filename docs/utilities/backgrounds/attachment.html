@@ -4,35 +4,35 @@ title: Background Attachment
 description: Utilities for controlling the way an element's background image position is fixed within the viewport or scrolls with its containing block.
 ---
 <section class="d-stack16">
-    {% header "h2", "Classes" %}
-    <table class="d-table">
-        <thead>
-            <tr>
-                <th scope="col" class="d-w25p">Class</th>
-                <th scope="col">Output</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% assign attachment = "unset, scroll, fixed, local" | split: ", " %}
-            {% for i in attachment %}
-            <tr>
-                <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.d-bga-{{ i }}</th>
-                <td class="d-ff-mono d-fc-teal-500 d-fs12">background-attachment: {{ i }} !important;</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+  {% header "h2", "Classes" %}
+  <table class="d-table">
+    <thead>
+      <tr>
+        <th scope="col" class="d-w25p">Class</th>
+        <th scope="col">Output</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% assign attachment = "unset, scroll, fixed, local" | split: ", " %}
+      {% for i in attachment %}
+      <tr>
+        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-bga-{{ i }}</th>
+        <td class="d-ff-mono d-fc-orange d-fs12">background-attachment: {{ i }} !important;</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 </section>
 <section class="d-stack16">
-    <header class="d-stack2">
-        {% header "h2", "Scroll" %}
-        <p class="d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-bga-scroll</code> to fix a background image to the element. It does not scroll with its content.</p>
+  <header class="d-stack2">
+    {% header "h2", "Scroll" %}
+    <p class="d-wmx764 d-fs18 d-lh6">Use {% code %}d-bga-scroll{% endcode %} to fix a background image to the element. It does not scroll with its content.</p>
+  </header>
+  <aside class="d-bar8 d-of-hidden">
+    <header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-black-050 d-w100p d-hmn102">
+      <div class="d-p32 d-w100p d-h264 d-bgr-none d-bgs-cover d-bga-scroll d-fs24 d-fw-bold d-of-y-scroll" style="background-image: url({{ '/assets/images/agent-bw-illo.svg' | relative_url }})">London. Michaelmas term lately over, and the Lord Chancellor sitting in Lincoln's Inn Hall. Implacable November weather. As much mud in the streets as if the waters had but newly retired from the face of the earth, and it would not be wonderful to meet a Megalosaurus, forty feet long or so, waddling like an elephantine lizard up Holborn Hill. London. Michaelmas term lately over, and the Lord Chancellor sitting in Lincoln's Inn Hall. Implacable November weather. As much mud in the streets as if the waters had but newly retired from the face of the earth, and it would not be wonderful to meet a Megalosaurus, forty feet long or so, waddling like an elephantine lizard up Holborn Hill.</div>
     </header>
-    <aside class="d-bar8 d-of-hidden">
-        <header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-black-050 d-w100p d-hmn102">
-            <div class="d-p32 d-w100p d-h264 d-bgr-none d-bgs-cover d-bga-scroll d-fs24 d-fw-bold d-of-y-scroll" style="background-image: url({{ '/assets/images/agent-bw-illo.svg' | relative_url }})">London. Michaelmas term lately over, and the Lord Chancellor sitting in Lincoln's Inn Hall. Implacable November weather. As much mud in the streets as if the waters had but newly retired from the face of the earth, and it would not be wonderful to meet a Megalosaurus, forty feet long or so, waddling like an elephantine lizard up Holborn Hill. London. Michaelmas term lately over, and the Lord Chancellor sitting in Lincoln's Inn Hall. Implacable November weather. As much mud in the streets as if the waters had but newly retired from the face of the earth, and it would not be wonderful to meet a Megalosaurus, forty feet long or so, waddling like an elephantine lizard up Holborn Hill.</div>
-        </header>
-        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+    <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
 {% highlight html linenos %}
 <div class="... d-bga-scroll">...</div>
 {% endhighlight %}
@@ -42,7 +42,7 @@ description: Utilities for controlling the way an element's background image pos
 <section class="d-stack16">
     <header class="d-stack2">
         {% header "h2", "Fixed" %}
-        <p class="d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-bga-fixed</code> to fix a background image to the viewport. The background image does not scroll with the content.</p>
+        <p class="d-wmx764 d-fs18 d-lh6">Use {% code %}d-bga-fixed{% endcode %} to fix a background image to the viewport. The background image does not scroll with the content.</p>
     </header>
     <aside class="d-bar8 d-of-hidden">
         <header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-black-050 d-w100p d-hmn102">
@@ -58,7 +58,7 @@ description: Utilities for controlling the way an element's background image pos
 <section class="d-stack16">
     <header class="d-stack2">
         {% header "h2", "Local" %}
-        <p class="d-wmx764 d-fs18 d-lh6">Use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple-400 d-fs14">d-bga-local</code> to fix a background image relative to the element's contents. If the element is scrollable, the background scrolls with the element's contents, and background area and positioning are relative to the scrollable area of the element rather than the viewable box.</p>
+        <p class="d-wmx764 d-fs18 d-lh6">Use {% code %}d-bga-local{% endcode %} to fix a background image relative to the element's contents. If the element is scrollable, the background scrolls with the element's contents, and background area and positioning are relative to the scrollable area of the element rather than the viewable box.</p>
     </header>
     <aside class="d-bar8 d-of-hidden">
         <header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-black-050 d-w100p d-hmn102">

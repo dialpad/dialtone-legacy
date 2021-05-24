@@ -23,42 +23,42 @@
 //  $$  WRAPPER
 //  ----------------------------------------------------------------------------
 .d-modal {
-  //  Component CSS Vars
-  //  ------------------------------------------------------------------------
-  --modal--bgc:          hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l) ~" / " 85%);
-  --modal-dialog--bgc:   var(--white);
-  --modal-dialog--fc:    var(--black-700);
-  --modal-header--fc:     var(--black-800);
+    //  Component CSS Vars
+    //  ------------------------------------------------------------------------
+    --modal--bgc:          hsla(var(--black-900-hsl) ~" / " 85%);
+    --modal-dialog--bgc:   var(--white);
+    --modal-dialog--fc:    var(--black-700);
+    --modal-header--fc:    var(--black-800);
 
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: var(--su32);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: var(--su32);
 
-  background-color: var(--modal--bgc);
+    background-color: var(--modal--bgc);
 
-  z-index: var(--zi-hide);
-  visibility: hidden;
-  opacity: 0;
-  backface-visibility: hidden;
+    z-index: var(--zi-hide);
+    visibility: hidden;
+    opacity: 0;
+    backface-visibility: hidden;
 
-  transition:
-    opacity 100ms var(--ttf-in-out) 10ms,
-    z-index 0s 200ms,
-    visibility 0s 200ms,
-    transform 100ms var(--ttf-in-out) 10ms;
-  will-change: visibility, z-index, opacity;
+    transition:
+        opacity 100ms var(--ttf-in-out) 10ms,
+        z-index 0s 200ms,
+        visibility 0s 200ms,
+        transform 100ms var(--ttf-in-out) 10ms;
+    will-change: visibility, z-index, opacity;
 
-  @media (prefers-reduced-motion) {
-    transition: none;
-  }
+    @media (prefers-reduced-motion) {
+        transition: none;
+    }
 }
 
 //  $$  MODAL DIALOG
@@ -225,6 +225,6 @@
 //  $$  DANGER
 //  ----------------------------------------------------------------------------
 .d-modal--danger {
-  --modal--bgc:          hsla(var(--red-600-h) var(--red-600-s) var(--red-600-l) ~" / " 95%);
-  --modal-header--fc:     var(--red-400);
+  --modal--bgc:           hsla(var(--error-color-hsl) ~" / " 95%);
+  --modal-header--fc:     var(--fc-error);
 }

@@ -70,36 +70,41 @@
 //  $$  FLEX COLUMNS
 //  ----------------------------------------------------------------------------
 #d-internals() {
-    #build-flex-columns(@num, @count: 1) when (@count =< @num) {
-        .d-fl-col@{count} {
-            display: flex;
+  #build-flex-columns(@num, @count: 1) when (@count =< @num) {
+    .d-fl-col@{count} {
+      display: flex;
 
-            //  Automatically make all direct child to obey the parent class
-            > * {
-                --fl-gap: 0;
-                --fl-basis: calc(100% / @count);
+      //  Automatically make all direct child to obey the parent class
+      > * {
+        --fl-gap: 0;
+        --fl-basis: calc(100% / @count);
 
-                display: inline-flex;
-                margin: 0 var(--fl-gap);
-                flex: 1 auto;
-                flex-basis: calc(var(--fl-basis) - ((var(--fl-gap) * 2)));
-            }
+        display: inline-flex;
+        margin: var(--fl-gap);
+        flex: 1 calc(var(--fl-basis) - ((var(--fl-gap) * 2)));
 
-            //  If flex column is in a column direction (and became rows),
-            //  change the margin direction.
-            &.d-fd-column {
-                margin: var(--fl-gap) 0;
-            }
+        //  Add in a gap to items after the first row
+        &:nth-child(-n + @{count}) {
+          margin-top: 0;
         }
+      }
 
-        //  Iterate our loop until we hit our grid column total
-        #d-internals #build-flex-columns(@num, @count + 1);
+      //  If flex column is in a column direction (and became rows),
+      //  change the margin direction.
+      &.d-fd-column > * {
+        margin: var(--fl-gap) 0;
+      }
     }
+
+    //  Iterate our loop until we hit our grid column total
+    #d-internals #build-flex-columns(@num, @count + 1);
+  }
 }
 @flex-columns: 12;
 
 //  Now let's generate the columns
 #d-internals #build-flex-columns(@flex-columns);
+
 
 //  $$  FLEX GAPS
 //  ----------------------------------------------------------------------------
@@ -182,9 +187,9 @@
 //  $$$  FLEX EQUAL
 //       Equally distributes children out within a parent container
 .d-fl-equal {
-    flex-grow: 1 !important;
-    flex-shrink: 1 !important;
-    flex-basis: 0 !important;
+  flex-grow: 1 !important;
+  flex-shrink: 1 !important;
+  flex-basis: 0 !important;
 }
 
 //  $$  FLEX GROW
@@ -234,9 +239,9 @@
 //      Use this class when you want both.
 //  ----------------------------------------------------------------------------
 .d-fl-center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 

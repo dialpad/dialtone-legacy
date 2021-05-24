@@ -20,8 +20,8 @@ description: A button is a UI element which allow users to take an action throug
           {% assign apply = i.applies %}
           {% assign desc = i.description %}
           <tr>
-            <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs12">.{{ class }}</th>
-            <td class="d-ff-mono d-fc-teal-500 d-fs12">{% if apply != "N/A" %}<span class="code-example--inline">.{% endif %}{{ apply }}{% if apply != "N/A" %}</span>{% endif %}</td>
+            <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.{{ class }}</th>
+            <td class="d-ff-mono d-fc-orange d-fs12">{% if apply != "N/A" %}<span class="code-example--inline">.{% endif %}{{ apply }}{% if apply != "N/A" %}</span>{% endif %}</td>
             <td class="d-fs12">{{ desc }}</td>
           </tr>
         {% endfor %}
@@ -33,7 +33,7 @@ description: A button is a UI element which allow users to take an action throug
   {% header "h2", "Examples" %}
   {% paragraph %}Dialtone provides three button styles: {% endparagraph %}
   {% ol %}
-    <li><a href="#base" class="d-link"><strong>Base:</strong></a> Our normal blue button colors.</li>
+    <li><a href="#default" class="d-link"><strong>Base:</strong></a> Our default (purple) button colors.</li>
     <li><a href="#danger" class="d-link"><strong>Danger:</strong></a> Buttons associated with potentially destructive actions. Appears as red.</li>
     <li><a href="#inverted" class="d-link"><strong>Inverted:</strong></a> For scenarios when you want to place a button on a non-white, dark background.</li>
   {% endol %}
@@ -100,7 +100,7 @@ description: A button is a UI element which allow users to take an action throug
       {% header "h3", "Inverted" %}
       {% paragraph %}The inverted button style is used to visually separate buttons set on darker backgrounds.{% endparagraph %}
       {% codeWell %}
-        {% codeWellHeader "black-700" %}
+        {% codeWellHeader "black-800" %}
           <div class="d-stack8">
             <div>
               <button class="d-btn d-btn--inverted d-btn--primary" type="button"><span class="d-btn__label">Place call</span></button>
@@ -132,6 +132,22 @@ description: A button is a UI element which allow users to take an action throug
         {% codeWellFooter %}
           {% highlight html linenos %}
 <button class="d-btn" type="button" disabled><span class="d-btn__label">...</span></button>
+          {% endhighlight %}
+        {% endcodeWellFooter %}
+      {% endcodeWell %}
+    </div>
+    <div class="d-stack8">
+      {% header "h3", "Link" %}
+      {% paragraph %}Buttons can be styled as a <a href="/components/link.html">link</a> in situations for which you need the appearance of a link but behavior of a button. Using the {% code %}button{% endcode %} element provides a better accessibility experience.{% endparagraph %}
+      {% codeWell %}
+        {% codeWellHeader %}
+          <button type="button" class="d-link">Place call</button>
+          <button type="button" class="d-link" disabled>Place call</button>
+        {% endcodeWellHeader %}
+        {% codeWellFooter %}
+          {% highlight html linenos %}
+<button type="button" class="d-link">...</button>
+<button type="button" class="d-link" disabled>...</button>
           {% endhighlight %}
         {% endcodeWellFooter %}
       {% endcodeWell %}
@@ -197,7 +213,7 @@ description: A button is a UI element which allow users to take an action throug
           {% endcodeWellFooter %}
         {% endcodeWell %}
         {% codeWell %}
-          {% codeWellHeader "black-700" %}
+          {% codeWellHeader "black-800" %}
           <div class="d-stack8">
             <div>
               <button class="d-btn d-btn--circle d-btn--inverted" type="button"><span class="d-btn__icon">{% iconSystem "phone", "js-svg" %}</span></button>
