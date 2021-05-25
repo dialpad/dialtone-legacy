@@ -129,7 +129,17 @@ module.exports = function(eleventyConfig) {
 
     // Add shortcode for basic paragraph
     eleventyConfig.addPairedShortcode("paragraph", function(content) {
-        return `<p class="d-w75ch d-wmx764 d-fs18 d-lh6">${content}</p>`;
+        return `<p class="d-fs18 d-lh6">${content}</p>`;
+    });
+
+    // Add shortcode for unordered list
+    eleventyConfig.addPairedShortcode("ul", function(content) {
+        return `<ul class="d-fs18 d-lh6 d-stack16">${content}</ul>`;
+    });
+
+    // Add shortcode for ordered list
+    eleventyConfig.addPairedShortcode("ol", function(content) {
+        return `<ol class="d-fs18 d-lh6 d-stack16">${content}</ol>`;
     });
 
     //  Add submenu navigation
