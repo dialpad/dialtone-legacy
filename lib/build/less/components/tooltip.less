@@ -75,7 +75,7 @@
 }
 
 //  ============================================================================
-//  $   SHOW STYLE
+//  $   SHOW AND OPEN STYLES
 //  ----------------------------------------------------------------------------
 .d-tooltip--show {
     transform: translate(0,0);
@@ -87,14 +87,18 @@
         opacity 200ms var(--ttf-in-out) 10ms;
 }
 
+.d-tooltip--open {
+  .d-tooltip {
+    &:extend(.d-tooltip--show);
+  }
+}
 //  ============================================================================
-//  $   HOVER AND FOCUS STYLES
+//  $   HOVER STYLE
 //  ----------------------------------------------------------------------------
 .d-tooltip--hover {
     .d-tooltip {
         &:extend(.d-tooltip--hide);
     }
-    &:focus,
     &:hover {
         .d-tooltip {
             &:extend(.d-tooltip--show);
