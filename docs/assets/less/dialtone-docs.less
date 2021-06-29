@@ -40,52 +40,56 @@
 //      custom CSS here instead.
 //  ----------------------------------------------------------------------------
 .toc ol {
-    .d-ls-reset();
-    display: flex;
-    flex-direction: column;
+  .d-ls-reset();
+  display: flex;
+  flex-direction: column;
 
-    .d-stack4();
+  .d-stack4();
 }
 
 //  Subsections
 .toc li > ol {
-    margin-left: var(--su16);
+  margin-top: var(--su4);
+  margin-left: var(--su16);
+  a {
+    font-size: var(--fs12);
+  }
 }
 
 .toc a {
-    //  We'll base our styles on d-link
-    .d-link();
-    .d-link--muted();
+  //  We'll base our styles on d-link
+  .d-link();
+  .d-link--muted();
 
-    //  Then make some specific adjustments
-    display: flex;
-    justify-content: flex-start;
-    padding: var(--su2) var(--su8);
-    border-radius: var(--br4);
-    font-size: var(--fs14);
-    line-height: var(--lh6);
+  //  Then make some specific adjustments
+  display: flex;
+  justify-content: flex-start;
+  padding: var(--su2) var(--su8);
+  border-radius: var(--br4);
+  font-size: var(--fs14);
+  line-height: var(--lh6);
+  text-decoration: none;
+
+  &:hover {
+    background-color: var(--black-050);
     text-decoration: none;
+  }
 
-    &:hover {
-        background-color: var(--black-050);
-        text-decoration: none;
+  &.active {
+    font-weight: var(--fw-bold);
+    color: var(--primary-color);
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: var(--su0);
+      bottom: var(--su0);
+      left: var(--sun4);
+      width: var(--su4);
+      border-radius: var(--br4);
+      background-color: var(--primary-color);
     }
-
-    &.active {
-        font-weight: var(--fw-bold);
-        color: var(--primary-color);
-
-        &::before {
-            content: "";
-            position: absolute;
-            top: var(--su0);
-            bottom: var(--su0);
-            left: var(--sun4);
-            width: var(--su4);
-            border-radius: var(--br4);
-            background-color: var(--primary-color);
-        }
-    }
+  }
 }
 
 //  ============================================================================
@@ -95,14 +99,14 @@
 //  ----------------------------------------------------------------------------
 .d-ga-toc { grid-area: toc !important; }
 .d-gl-docsite {
-    grid-template-areas: "sidebar content";
-    grid-template-columns: [sidebar] 21.6rem [content] minmax(32rem, 75rem);
-    column-gap: 4.8rem;
+  grid-template-areas: "sidebar content";
+  grid-template-columns: [sidebar] 21.6rem [content] minmax(32rem, 75rem);
+  column-gap: 4.8rem;
 }
 .d-gl-docsite-toc {
-    grid-template-areas: "sidebar content toc";
-    grid-template-columns: [sidebar] 21.6rem [content] minmax(32rem, 75rem) [toc] minmax(min-content, 21.6rem);
-    column-gap: 4.8rem;
+  grid-template-areas: "sidebar content toc";
+  grid-template-columns: [sidebar] 21.6rem [content] minmax(32rem, 75rem) [toc] minmax(min-content, 21.6rem);
+  column-gap: 4.8rem;
 }
 
 
