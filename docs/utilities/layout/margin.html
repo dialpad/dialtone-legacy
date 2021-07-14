@@ -169,7 +169,7 @@ description: Utilities to adjust an element's exterior spacing between other obj
                     {% assign dir = spacing.directions | split: ", "  %}
                     {% for i in dir %}
                     <tr>
-                        <th scope="row">.d-m{% if i != 'All' %}{{ i | slice: 0 }}{% endif %}-auto</th>
+                        <th scope="row">.d-m{% if i == 'All' %}-{% endif %}{% if i != 'All' %}{{ i | slice: 0 }}{% endif %}-auto</th>
                         <td class="d-opacity50 d-background-color--ash">.d-m{% if i != "All" %}-{{ i }}{% endif %}{{ val }}--auto</td>
                         <td>
                             {% if i == "y" %}
@@ -194,14 +194,13 @@ description: Utilities to adjust an element's exterior spacing between other obj
                     {% assign dir = spacing.directions | split: ", "  %}
                     {% for i in dir %}
                     <div class="d-fl-center d-background-color--rose-light d-height1 d-m8" style="flex-basis: calc(33.3333333% - 1.6rem);">
-                        <div class="d-fl-center d-p16 d-m{% if i != 'All' %}{{ i | slice: 0 }}{% endif %}-auto d-border d-border-color--navy-lighter d-fc-navy-text d-fs11 d-fw-bold d-ff-mono d-lh-tight d-background-color--navy-lightest {% if i == 'top' %}d-width100{% elsif i == 'bottom' %}d-width100{% elsif i == 'left' %}d-height100{% elsif i == 'right' %}d-height100{% elsif i == 'y' %}d-width100{% elsif i == 'x' %}d-height100{% endif %}">.d-m{% if i != 'All' %}{{ i | slice: 0 }}{% endif %}-auto</div>
+                        <div class="d-fl-center d-p16 d-m{% if i != 'All' %}{{ i | slice: 0 }}{% endif %}-auto d-border d-border-color--navy-lighter d-fc-navy-text d-fs11 d-fw-bold d-ff-mono d-lh-tight d-background-color--navy-lightest {% if i == 'top' %}d-width100{% elsif i == 'bottom' %}d-width100{% elsif i == 'left' %}d-height100{% elsif i == 'right' %}d-height100{% elsif i == 'y' %}d-width100{% elsif i == 'x' %}d-height100{% endif %}">.d-m{% if i == 'All' %}-{% endif %}{% if i != 'All' %}{{ i | slice: 0 }}{% endif %}-auto</div>
                     </div>
                     {% endfor %}
                 </div>
                 <div class="dialtone-example__code">
 {% highlight html linenos %}
-<div class="d-m-auto">…</div>
-<div class="d-m-auto">…</div>
+<div class="d-m--auto">…</div>
 <div class="d-mt-auto">…</div>
 <div class="d-mr-auto">…</div>
 <div class="d-mb-auto">…</div>
