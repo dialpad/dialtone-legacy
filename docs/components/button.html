@@ -124,14 +124,23 @@ description: A button is a UI element which allows users to take an action throu
     </div>
     <div class="d-stack8">
       {% header "h3", "Disabled" %}
+      {% paragraph %}Buttons can be disabled using either the {% code %}disabled{% endcode %} attribute or a Dialtone class. Use the attribute when a button should appear disabled and not recieve focus; use the class when a button should appear disabled but still recieve focus (i.e. a disabled button with a tooltip). If using the disabled class, you will need to implement a way to prevent the click handler.{% endparagraph %}
       {% paragraph %}All button styles and variations appear the same when disabled.{% endparagraph %}
       {% codeWell %}
         {% codeWellHeader %}
-          <button class="d-btn" type="button" disabled><span class="d-btn__label">Place call</span></button>
+          <div class="d-stack8">
+            <div>
+              <button class="d-btn" type="button" disabled><span class="d-btn__label">Place call</span></button>
+            </div>
+            <div>
+              <button class="d-btn d-btn--disabled" type="button"><span class="d-btn__label">Place call</span></button>
+            </div>
+          </div>
         {% endcodeWellHeader %}
         {% codeWellFooter %}
           {% highlight html linenos %}
 <button class="d-btn" type="button" disabled><span class="d-btn__label">...</span></button>
+<button class="d-btn d-btn--disabled" type="button"><span class="d-btn__label">...</span></button>
           {% endhighlight %}
         {% endcodeWellFooter %}
       {% endcodeWell %}
