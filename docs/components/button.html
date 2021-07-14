@@ -124,14 +124,23 @@ description: A button is a UI element which allows users to take an action throu
     </div>
     <div class="d-stack8">
       {% header "h3", "Disabled" %}
+      {% paragraph %}Buttons can be disabled using either the {% code %}disabled{% endcode %} attribute or a Dialtone class. Use the attribute when a button should appear disabled and not recieve focus; use the class when a button should appear disabled but still recieve focus (i.e. a disabled button with a tooltip). Using the class also requires {% code %}aria-disabled{% endcode %} and additional implementation to prevent the click event.{% endparagraph %}
       {% paragraph %}All button styles and variations appear the same when disabled.{% endparagraph %}
       {% codeWell %}
         {% codeWellHeader %}
-          <button class="d-btn" type="button" disabled><span class="d-btn__label">Place call</span></button>
+          <div class="d-stack8">
+            <div>
+              <button class="d-btn" type="button" disabled><span class="d-btn__label">Place call</span></button>
+            </div>
+            <div>
+              <button class="d-btn d-btn--disabled" type="button" aria-disabled="true"><span class="d-btn__label">Place call</span></button>
+            </div>
+          </div>
         {% endcodeWellHeader %}
         {% codeWellFooter %}
           {% highlight html linenos %}
 <button class="d-btn" type="button" disabled><span class="d-btn__label">...</span></button>
+<button class="d-btn d-btn--disabled" type="button" aria-disabled="true"><span class="d-btn__label">...</span></button>
           {% endhighlight %}
         {% endcodeWellFooter %}
       {% endcodeWell %}
@@ -344,7 +353,8 @@ description: A button is a UI element which allows users to take an action throu
 <section class="d-stack16">
   {% header "h2", "Accessibility" %}
   {% ul %}
-    <li>Disabled buttons don't need to receive focus.</li>
+    <li>Disabled buttons don't require focus.</li>
+    <li>If using {% code %}.d-btn--disabled{% endcode %}, also use {% code %}aria-disabled="true"{% endcode %} and be sure to prevent the click event.</li>
     <li>If an icon and text are both included in a button's label, and they both represent the same thing, the icon may be decorative and may not need to receive focus or be read-out.</li>
     <li>If developing a toggle button (i.e. a button that holds a pressed/unpressed state), use {% code %}aria-pressed{% endcode %}. (<a href="https://www.w3.org/TR/wai-aria/#button" class="d-link" target="_blank">Source</a>)</li>
     <li>If developing a button that triggers a dropdown, consider using {% code %}aria-haspop{% endcode %} and {% code %}aria-expanded{% endcode %}. (<a href="https://www.w3.org/TR/wai-aria/#button" class="d-link" target="_blank">Source</a>)</li>
