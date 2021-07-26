@@ -51,6 +51,7 @@
     --nav__background-color--s: @nav__background-color--s;
     --nav__background-color--l: @nav__background-color--l;
 
+    --banner-height:            4.8rem;
     --nav-width:                30rem;
     --nav-height:               7.2rem;
     --content-width:            1fr;
@@ -93,6 +94,10 @@ body {
 //  Overall wrapper
 .dialtone-wrapper {
     display: grid;
+    grid-template-rows: 4.8rem auto;
+    height: 100%;
+    grid-template-areas: "nav banner"
+                         "nav content";
 
     @media screen and (max-width: 723.9px) {
         padding-top: var(--nav-height);
@@ -117,9 +122,14 @@ body {
     }
 }
 
+// Site banner
+.dialtone-wrapper .d-banner {
+  grid-area: banner;
+}
+
 //  Sidebar navigation
 .dialtone-nav {
-    grid-area: "nav";
+    grid-area: nav;
 
     @media screen and (max-width: 723.9px) {
         position: fixed;
@@ -504,7 +514,7 @@ body {
     --grid-content-row: min-content;
 
     display: grid;
-    grid-area: "content";
+    grid-area: content;
 
     .dialtone-main__header {
         grid-area: header;

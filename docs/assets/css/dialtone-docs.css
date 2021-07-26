@@ -16336,6 +16336,7 @@ legend.d-label--normal {
   --nav__background-color--h: 220;
   --nav__background-color--s: 12%;
   --nav__background-color--l: 95.09803922%;
+  --banner-height: 4.8rem;
   --nav-width: 30rem;
   --nav-height: 7.2rem;
   --content-width: 1fr;
@@ -16365,6 +16366,9 @@ body {
 }
 .dialtone-wrapper {
   display: grid;
+  grid-template-areas: "nav banner" "nav content";
+  grid-template-rows: 4.8rem auto;
+  height: 100%;
 }
 @media screen and (max-width: 723.9px) {
   .dialtone-wrapper {
@@ -16389,8 +16393,11 @@ body {
     height: 100%;
   }
 }
+.dialtone-wrapper .d-banner {
+  grid-area: banner;
+}
 .dialtone-nav {
-  grid-area: "nav";
+  grid-area: nav;
 }
 @media screen and (max-width: 723.9px) {
   .dialtone-nav {
@@ -17285,7 +17292,7 @@ body {
 }
 .dialtone-main {
   display: grid;
-  grid-area: "content";
+  grid-area: content;
   grid-auto-columns: minmax(-webkit-min-content, auto);
   grid-auto-columns: minmax(min-content, auto);
   grid-auto-rows: 1fr;
