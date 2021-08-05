@@ -16,116 +16,128 @@
 //  $   BASE STYLE
 //  ----------------------------------------------------------------------------
 .d-btn {
-    //  Component specific CSS Vars
-    //  ------------------------------------------------------------------------
-    --button--fc:               var(--primary-color);
-    --button--bgc:              transparent;
-    --button--bc:               transparent;
-    --button--bs-color-inner:   transparent;
-    --button--bs-color-outer:   transparent;
-    --button--bs:               0 0 0 var(--su1) var(--button--bs-color-inner), 0 0 0 calc(var(--su1) + var(--su4)) var(--button--bs-color-outer);
-    --button--br:               var(--base--corner-radius);
+  //  Component specific CSS Vars
+  //  ------------------------------------------------------------------------
+  --button--fc: var(--primary-color);
+  --button--bgc: transparent;
+  --button--bc: transparent;
+  --button--bs-color-inner: transparent;
+  --button--bs-color-outer: transparent;
+  --button--bs: 0 0 0 var(--su1) var(--button--bs-color-inner), 0 0 0 calc(var(--su1) + var(--su4)) var(--button--bs-color-outer);
+  --button--br: var(--base--corner-radius);
 
-    box-sizing: border-box;
+  box-sizing: border-box;
 
-    position: relative;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    padding: calc(var(--su8) - var(--su1));  // Subtract border
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: calc(var(--su8) - var(--su1)); // Subtract border
 
-    border: 0.1rem solid var(--button--bc);
-    border-radius: var(--button--br);
-    background-color: var(--button--bgc);
-    box-shadow: var(--button--bs);
+  border: 0.1rem solid var(--button--bc);
+  border-radius: var(--button--br);
+  background-color: var(--button--bgc);
+  box-shadow: var(--button--bs);
 
-    text-decoration: none;
-    text-transform: inherit;
-    font-family: inherit;
-    font-size: var(--fs16);
-    line-height: var(--lh4);
-    color: var(--button--fc);
+  text-decoration: none;
+  text-transform: inherit;
+  font-family: inherit;
+  font-size: var(--fs16);
+  line-height: var(--lh4);
+  color: var(--button--fc);
 
-    cursor: pointer;
-    transition-timing-function: var(--ttf-in-out);
-    transition-duration: 75ms;
-    transition-property: background-color, border, box-shadow;
+  cursor: pointer;
+  transition-timing-function: var(--ttf-in-out);
+  transition-duration: 75ms;
+  transition-property: background-color, border, box-shadow;
 
-    user-select: none;
-    fill: currentColor;
+  user-select: none;
+  fill: currentColor;
 
-    //  --  STATES
-    //  ------------------------------------------------------------------------
+  //  --  STATES
+  //  ------------------------------------------------------------------------
 
-    &:active,
-    &:hover {
-        --button--fc: var(--primary-color-hover);
-        --button--bgc: hsla(var(--primary-color-hsl) ~" / " 10%);
-    }
-    &:focus {
-        outline: none;
-        --button--bs-color-inner:   var(--white);
-        --button--bs-color-outer:   var(--focus-ring);
-    }
+  &:active,
+  &:hover {
+    --button--fc: var(--primary-color-hover);
+    --button--bgc: hsla(var(--primary-color-hsl) ~" / " 10%);
+  }
 
-    .d-svg {
-        .d-svg--size16();
-    }
+  &:focus {
+    outline: none;
+    --button--bs-color-inner: var(--white);
+    --button--bs-color-outer: var(--focus-ring);
+  }
 
-    //  --  SIZES
-    //  ------------------------------------------------------------------------
-    &.d-btn--xs {
-        padding: calc(var(--su6) - var(--su1)) calc(var(--su8) - var(--su1));  // Subtract border
-        font-size: var(--fs12);
+  .d-svg {
+    .d-svg--size16();
+  }
 
-        .d-svg {
-            // no icon-size 12 exists so setting manually
-            width: 1.2rem !important;
-            height: 1.2rem !important;
-        }
-    }
-    &.d-btn--sm {
-        padding: calc(var(--su6) - var(--su1)) calc(var(--su8) - var(--su1));  // Subtract border
-        font-size: var(--fs14);
-        line-height: var(--lh6);
-
-        .d-svg {
-            .d-svg--size14();
-        }
-    }
-    &.d-btn--lg {
-        padding: calc(var(--su12) - var(--su1)) calc(var(--su16) - var(--su1)); // Subtract border
-        font-size: var(--fs20);
-
-        .d-svg {
-            .d-svg--size20();
-        }
-    }
-    &.d-btn--xl {
-        padding: calc(var(--su12) - var(--su1)) calc(var(--su16) - var(--su1)); // Subtract border
-        font-size: var(--fs24);
-        line-height: var(--lh8);
-
-        .d-svg {
-            .d-svg--size24();
-        }
-    }
-
-    //  --  LOADING
-    //  ------------------------------------------------------------------------
-    &.d-btn--loading {
-        .d-btn-loading();
-    }
+  //  --  LOADING
+  //  ------------------------------------------------------------------------
+  &.d-btn--loading {
+    .d-btn-loading();
+  }
 }
 
+//  ============================================================================
+//  $   SIZES
+//  ============================================================================
+//  $$  EXTRA SMALL
+//  ----------------------------------------------------------------------------
+.d-btn--xs {
+  padding: calc(var(--su6) - var(--su1)) calc(var(--su8) - var(--su1)); // Subtract border
+  font-size: var(--fs12);
+
+  .d-svg {
+    // no icon-size 12 exists so setting manually
+    width: 1.2rem !important;
+    height: 1.2rem !important;
+  }
+}
+
+//  $$  SMALL
+//  ----------------------------------------------------------------------------
+.d-btn--sm {
+  padding: calc(var(--su6) - var(--su1)) calc(var(--su8) - var(--su1)); // Subtract border
+  font-size: var(--fs14);
+  line-height: var(--lh6);
+
+  .d-svg {
+    .d-svg--size14();
+  }
+}
+
+//  $$  LARGE
+//  ----------------------------------------------------------------------------
+.d-btn--lg {
+  padding: calc(var(--su12) - var(--su1)) calc(var(--su16) - var(--su1)); // Subtract border
+  font-size: var(--fs20);
+
+  .d-svg {
+    .d-svg--size20();
+  }
+}
+
+//  $$  EXTRA LARGE
+//  ----------------------------------------------------------------------------
+.d-btn--xl {
+  padding: calc(var(--su12) - var(--su1)) calc(var(--su16) - var(--su1)); // Subtract border
+  font-size: var(--fs24);
+  line-height: var(--lh8);
+
+  .d-svg {
+    .d-svg--size24();
+  }
+}
 
 //  ============================================================================
 //  $   BUTTON LABEL
 //  ----------------------------------------------------------------------------
 .d-btn__label {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 }
 
 //  $   BUTTON ICON
@@ -138,16 +150,16 @@
   height: 1em;
 
   &.d-btn__icon--left {
-      margin-left: var(--sun2);
-      margin-right: var(--su4);
+    margin-left: var(--sun2);
+    margin-right: var(--su4);
   }
+
   &.d-btn__icon--right {
-      order: 1;
-      margin-left: var(--su4);
-      margin-right: var(--sun2);
+    order: 1;
+    margin-left: var(--su4);
+    margin-right: var(--sun2);
   }
 }
-
 
 
 //  ============================================================================
@@ -180,201 +192,212 @@
   }
 
   &.d-btn--outlined {
-    --button--bc:    var(--black-700);
+    --button--bc: var(--black-700);
   }
 
   // &:active {
   //     border-color: hsla(var(--black-700-h) var(--black-700-s) var(--black-700-l) ~" / " 50%);
   //     background-color: hsla(var(--black-700-h) var(--black-700-s) var(--black-700-l) ~" / " 10%);
   // }
+}
 
-  //  Adjust padding based on sizes
-  &.d-btn--xs {
-      padding: calc(var(--su8) - var(--su1));
-      --button--br:   var(--br-circle);
-  }
-  &.d-btn--sm {
-      padding: var(--su8);
-      --button--br:   var(--br-circle);
-  }
-  &.d-btn--lg {
-      padding: calc(var(--su12) + var(--su1));
-      --button--br:   var(--br-circle);
-  }
-  &.d-btn--xl {
-      padding: calc(var(--su16) - var(--su1));
-      --button--br:   var(--br-circle);
-  }
+//  $$  EXTRA SMALL
+//  ----------------------------------------------------------------------------
+.d-btn--circle.d-btn--xs {
+  padding: calc(var(--su8) - var(--su1));
+}
+
+//  $$  SMALL
+//  ----------------------------------------------------------------------------
+.d-btn--circle.d-btn--sm {
+  padding: var(--su8);
+}
+
+//  $$  LARGE
+//  ----------------------------------------------------------------------------
+.d-btn--circle.d-btn--lg {
+  padding: calc(var(--su12) + var(--su1));
+}
+
+//  $$  EXTRA LARGE
+//  ----------------------------------------------------------------------------
+.d-btn--circle.d-btn--xl {
+  padding: calc(var(--su16) - var(--su1));
 }
 
 //  $$  OUTLINED BUTTON
 //  ----------------------------------------------------------------------------
 .d-btn--outlined {
-    --button--bc:    var(--primary-color);
+  --button--bc: var(--primary-color);
 }
 
 //  $$  PRIMARY BUTTON
 //  ----------------------------------------------------------------------------
 .d-btn--primary {
-    --button--fc: var(--white);
-    --button--bgc: var(--primary-color);
+  --button--fc: var(--white);
+  --button--bgc: var(--primary-color);
 
-    &:hover {
-        --button--fc: var(--white);
-        --button--bgc: var(--primary-color-hover);
-    }
+  &:hover {
+    --button--fc: var(--white);
+    --button--bgc: var(--primary-color-hover);
+  }
 }
 
 //  $$  MUTED BUTTON
 //  ----------------------------------------------------------------------------
 .d-btn--muted {
-    --button--fc: var(--black-700);
+  --button--fc: var(--black-700);
 
-    &:hover {
-      --button--fc: var(--black-800);
-      --button--bgc: hsla(var(--muted-color-hsl) ~" / " 10%);
-    }
+  &:hover {
+    --button--fc: var(--black-800);
+    --button--bgc: hsla(var(--muted-color-hsl) ~" / " 10%);
+  }
 
-    &:focus {
-        --button--bs-color-outer: var(--black-300);
-    }
+  &:focus {
+    --button--bs-color-outer: var(--black-300);
+  }
 
-    &.d-btn--outlined {
-        --button--bc: var(--black-500);
-    }
+  &.d-btn--outlined {
+    --button--bc: var(--black-500);
+  }
 }
 
 //  $$  DANGER BUTTON
 //  ----------------------------------------------------------------------------
 .d-btn--danger {
-    --button--fc: var(--error-color);
+  --button--fc: var(--error-color);
+
+  &:hover {
+    --button--bgc: hsla(var(--error-color-hsl) ~" / " 10%);
+    --button--fc: var(--error-color-hover);
+  }
+
+  &:focus {
+    --button--bs-color-outer: var(--focus-ring-error);
+  }
+
+  &.d-btn--outlined {
+    --button--bc: var(--error-color);
+  }
+
+  &.d-btn--primary {
+    --button--fc: var(--white);
+    --button--bgc: var(--error-color);
 
     &:hover {
-        --button--bgc: hsla(var(--error-color-hsl) ~" / " 10%);
-        --button--fc: var(--error-color-hover);
+      --button--bgc: var(--error-color-hover);
     }
-
-    &:focus {
-        --button--bs-color-outer: var(--focus-ring-error);
-    }
-
-    &.d-btn--outlined {
-        --button--bc: var(--error-color);
-    }
-
-    &.d-btn--primary {
-        --button--fc: var(--white);
-        --button--bgc: var(--error-color);
-
-        &:hover {
-            --button--bgc: var(--error-color-hover);
-        }
-    }
+  }
 }
 
 //  $$  INVERTED BUTTON
 //  ----------------------------------------------------------------------------
 //  --  Base, clear inverted button
 .d-btn--inverted {
+  --button--fc: var(--white);
+  --button--bgc: transparent;
+
+  &:hover {
     --button--fc: var(--white);
-    --button--bgc: transparent;
+    --button--bgc: hsla(var(--white-hsl) ~" / " 15%);
+  }
+
+  &:focus {
+    --button--bs-color-outer: var(--focus-ring-inverted);
+  }
+
+  //  --  OUTLINED
+  &.d-btn--outlined {
+    --button--bc: var(--white);
+  }
+
+  //  --  PRIMARY
+  &.d-btn--primary {
+    --button--fc: var(--primary-color);
+    --button--bgc: var(--white);
 
     &:hover {
-        --button--fc: var(--white);
-        --button--bgc: hsla(var(--white-hsl) ~" / " 15%);
+      --button--fc: var(--primary-color-hover);
+      --button--bgc: hsla(var(--white-hsl) ~" / " 90%);
     }
-
-    &:focus {
-      --button--bs-color-outer: var(--focus-ring-inverted);
-    }
-
-    //  --  OUTLINED
-    &.d-btn--outlined {
-        --button--bc: var(--white);
-    }
-
-    //  --  PRIMARY
-    &.d-btn--primary {
-        --button--fc: var(--primary-color);
-        --button--bgc: var(--white);
-
-        &:hover {
-            --button--fc: var(--primary-color-hover);
-            --button--bgc: hsla(var(--white-hsl) ~" / " 90%);
-        }
-    }
+  }
 }
 
 
 //  $$  DISABLED STATES
 //  ----------------------------------------------------------------------------
 .d-btn {
-    &.d-btn--disabled {
-        pointer-events: none;
-    }
+  &.d-btn--disabled {
+    pointer-events: none;
+  }
 
-    &[disabled],
-    &.d-btn--disabled {
-        color: var(--black-400);
-        background-color: var(--black-100);
-        cursor: not-allowed;
-        border-color: transparent;
-        transition: none;
-    }
+  &[disabled],
+  &.d-btn--disabled {
+    color: var(--black-400);
+    background-color: var(--black-100);
+    cursor: not-allowed;
+    border-color: transparent;
+    transition: none;
+  }
 }
 
 //  $$  BRAND BUTTONS
 //  ----------------------------------------------------------------------------
 .d-btn--brand {
-    display: flex;
-    background-color: hsl(var(--brand-color-h) var(--brand-color-s) var(--brand-color-l));
-    color: var(--white);
+  display: flex;
+  background-color: hsl(var(--brand-color-h) var(--brand-color-s) var(--brand-color-l));
+  color: var(--white);
 
-    &:hover,
-    &:focus,
-    &:active {
-        background-color: hsl(var(--brand-color-h) calc(var(--brand-color-s) + 2.5%) calc(var(--brand-color-l) - 5%));
-        color: hsla(var(--white-hsl) ~" / " 90%);
-    }
-    &:focus {
-        --focus-ring: hsla(var(--brand-color-h) var(--brand-color-s) var(--brand-color-l) ~" / " 90%);
-    }
-    &:active {
-        background-color: hsl(var(--brand-color-h) calc(var(--brand-color-s) + 5%) calc(var(--brand-color-l) - 10%));
-    }
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: hsl(var(--brand-color-h) calc(var(--brand-color-s) + 2.5%) calc(var(--brand-color-l) - 5%));
+    color: hsla(var(--white-hsl) ~" / " 90%);
+  }
 
-    .d-btn__icon {
-      margin-right: var(--su8);
-      margin-left: var(--sun4);
-      width: 2em;
-      height: 2em;
-      border-radius: var(--br2);
-      background-color: var(--white);
-      justify-content: center;
-      align-items: center
-    }
-    .d-btn__label {
-        flex: 1 auto;
-    }
+  &:focus {
+    --focus-ring: hsla(var(--brand-color-h) var(--brand-color-s) var(--brand-color-l) ~" / " 90%);
+  }
+
+  &:active {
+    background-color: hsl(var(--brand-color-h) calc(var(--brand-color-s) + 5%) calc(var(--brand-color-l) - 10%));
+  }
+
+  .d-btn__icon {
+    margin-right: var(--su8);
+    margin-left: var(--sun4);
+    width: 2em;
+    height: 2em;
+    border-radius: var(--br2);
+    background-color: var(--white);
+    justify-content: center;
+    align-items: center
+  }
+
+  .d-btn__label {
+    flex: 1 auto;
+  }
 }
 
 //  --  GOOGLE
 .d-btn--google {
-    --brand-color-h:    217;
-    --brand-color-s:    89%;
-    --brand-color-l:    61%;
+  --brand-color-h: 217;
+  --brand-color-s: 89%;
+  --brand-color-l: 61%;
 }
+
 //  --  OFFICE 365
 .d-btn--o365 {
-    --brand-color-h:    15;
-    --brand-color-s:    99%;
-    --brand-color-l:    46%;
+  --brand-color-h: 15;
+  --brand-color-s: 99%;
+  --brand-color-l: 46%;
 }
+
 //  --  LINKEDIN
 .d-btn--linkedin {
-    --brand-color-h:    197;
-    --brand-color-s:    100%;
-    --brand-color-l:    26%;
+  --brand-color-h: 197;
+  --brand-color-s: 100%;
+  --brand-color-l: 26%;
 }
 
 //  ============================================================================
@@ -384,29 +407,29 @@
 //  @@  BASE STYLE
 //  ----------------------------------------------------------------------------
 .d-btn-loading() {
-    //  Disable clicking while the loader is in place
-    pointer-events: none;
+  //  Disable clicking while the loader is in place
+  pointer-events: none;
 
-    //  Hide anything that was there before
-    .d-btn__icon,
-    .d-btn__label {
-        opacity: 0;
-        transition: opacity 50ms var(--ttf-in-out);
-    }
+  //  Hide anything that was there before
+  .d-btn__icon,
+  .d-btn__label {
+    opacity: 0;
+    transition: opacity 50ms var(--ttf-in-out);
+  }
 
-    //  Show the loading animation
-    &:before {
-        content: "";
-        position: absolute;
-        top: calc(50% - var(--su8));
-        left: calc(50% - var(--su8));
+  //  Show the loading animation
+  &:before {
+    content: "";
+    position: absolute;
+    top: calc(50% - var(--su8));
+    left: calc(50% - var(--su8));
 
-        width: var(--su16);
-        height: var(--su16);
-        border-radius: var(--br-circle);
-        border: var(--su2) solid currentColor;
-        border-left-color: transparent !important;
+    width: var(--su16);
+    height: var(--su16);
+    border-radius: var(--br-circle);
+    border: var(--su2) solid currentColor;
+    border-left-color: transparent !important;
 
-        animation: d-loading-circle 900ms infinite linear;
-    }
+    animation: d-loading-circle 900ms infinite linear;
+  }
 }
