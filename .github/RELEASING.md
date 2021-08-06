@@ -5,7 +5,9 @@ Before you can publish anything to [npmjs](https://npmjs.com), you will need an 
 1. Make sure you are up-to-date locally and in the `staging` branch. Also it’s a good idea to stop your local server while versioning.
 2. In your CLI window, run `npm version [major | minor | patch]`. Major versions are breaking changes. Minor versions are large changes but backward compatible. Patches are bug fixes to existing Dialtone items.
 3. Run `git push --tags`. This creates a `git` version tag based on the new `npm` version number. **Note:** It does not actually push anything to the `remote` server.
-4. Run `gulp version`. This is a custom script I created that reads the current version number out of the `package.json`, copies it into `/docs/_includes/version.html`, and creates a commit. This file is what’s used to render the current version number on the website.
+4. To bump the version number listed on the site:
+  * For Dialtone CSS, you don't have to do anything. The badge reflects what's listed in the `version6` branch package.json.
+  * If bumping Vue version, update the badge manually in `/docs/index.html`.
 5. Run `git push` to push it all up to staging.
 6. Run `npm publish`.
 7. Dialtone has been updated on npm now
@@ -23,4 +25,6 @@ For `alpha` and `beta` releases:
 
 1. Make sure you are up-to-date locally and in the appropriate next version branch. Also it’s a good idea to stop your local server while versioning.
 2. In your CLI window, run `npm version [major | minor | patch]`. The unofficial standard naming convention for this is `major.minor.patch-prerelease.buildmetadata`. For instance, `6.0.0-alpha.1`.
-3. Run `npm publish --tag prelease` For instance, `npm publish --tag beta`. It can then be installed in another project using the specific version number or the tag (i.e. `npm i packagename@beta`).
+3. Run `git push` to push updated `package.json` to remote.
+4. Run `git push --tags`. This creates a `git` version tag in the project.
+5. Run `npm publish --tag prelease` For instance, `npm publish --tag beta`. It can then be installed in another project using the specific version number or the tag (i.e. `npm i packagename@beta`).

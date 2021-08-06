@@ -639,10 +639,10 @@ exports.fonts = series(
 );
 
 //  --  UPDATES DIALTONE VERSION
-exports.version = series(
-    docVersion,
-    commitDocVersion
-);
+// exports.version = series(
+//     docVersion,
+//     commitDocVersion
+// );
 
 //  --  GENERATES ALL DIALPAD / UC FAVICONS
 // exports.favicons = series(
