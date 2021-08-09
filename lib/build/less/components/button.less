@@ -8,9 +8,10 @@
 //
 //  TABLE OF CONTENTS
 //  • BASE STYLE
+//  • STATES
+//  • SIZES
 //  • VISUAL STYLES
 //  • ALTERNATE STYLES
-//  • SIZES
 //
 //  ============================================================================
 //  $   BASE STYLE
@@ -72,12 +73,29 @@
   .d-svg {
     .d-svg--size16();
   }
+}
 
-  //  --  LOADING
-  //  ------------------------------------------------------------------------
-  &.d-btn--loading {
-    .d-btn-loading();
-  }
+//  ============================================================================
+//  $   STATES
+//  ============================================================================
+//  $$  LOADING
+//  ------------------------------------------------------------------------
+.d-btn--loading {
+  .d-btn-loading();
+}
+
+//  $$  DISABLED
+//  ----------------------------------------------------------------------------
+.d-btn--disabled {
+  pointer-events: none;
+}
+[disabled],
+.d-btn--disabled {
+  color: var(--black-400);
+  background-color: var(--black-100);
+  cursor: not-allowed;
+  border-color: transparent;
+  transition: none;
 }
 
 //  ============================================================================
@@ -95,6 +113,9 @@
     height: 1.2rem !important;
   }
 }
+.d-btn--circle.d-btn--xs {
+  padding: calc(var(--su8) - var(--su1));
+}
 
 //  $$  SMALL
 //  ----------------------------------------------------------------------------
@@ -107,6 +128,9 @@
     .d-svg--size14();
   }
 }
+.d-btn--circle.d-btn--sm {
+  padding: var(--su8);
+}
 
 //  $$  LARGE
 //  ----------------------------------------------------------------------------
@@ -117,6 +141,9 @@
   .d-svg {
     .d-svg--size20();
   }
+}
+.d-btn--circle.d-btn--lg {
+  padding: calc(var(--su12) + var(--su1));
 }
 
 //  $$  EXTRA LARGE
@@ -130,37 +157,9 @@
     .d-svg--size24();
   }
 }
-
-//  ============================================================================
-//  $   BUTTON LABEL
-//  ----------------------------------------------------------------------------
-.d-btn__label {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
+.d-btn--circle.d-btn--xl {
+  padding: calc(var(--su16) - var(--su1));
 }
-
-//  $   BUTTON ICON
-//  ----------------------------------------------------------------------------
-.d-btn__icon {
-  display: flex;
-  margin-top: var(--sun4);
-  margin-bottom: var(--sun4);
-  width: 1em;
-  height: 1em;
-
-  &.d-btn__icon--left {
-    margin-left: var(--sun2);
-    margin-right: var(--su4);
-  }
-
-  &.d-btn__icon--right {
-    order: 1;
-    margin-left: var(--su4);
-    margin-right: var(--sun2);
-  }
-}
-
 
 //  ============================================================================
 //  $   VISUAL STYLES
@@ -199,30 +198,6 @@
   //     border-color: hsla(var(--black-700-h) var(--black-700-s) var(--black-700-l) ~" / " 50%);
   //     background-color: hsla(var(--black-700-h) var(--black-700-s) var(--black-700-l) ~" / " 10%);
   // }
-}
-
-//  $$  EXTRA SMALL
-//  ----------------------------------------------------------------------------
-.d-btn--circle.d-btn--xs {
-  padding: calc(var(--su8) - var(--su1));
-}
-
-//  $$  SMALL
-//  ----------------------------------------------------------------------------
-.d-btn--circle.d-btn--sm {
-  padding: var(--su8);
-}
-
-//  $$  LARGE
-//  ----------------------------------------------------------------------------
-.d-btn--circle.d-btn--lg {
-  padding: calc(var(--su12) + var(--su1));
-}
-
-//  $$  EXTRA LARGE
-//  ----------------------------------------------------------------------------
-.d-btn--circle.d-btn--xl {
-  padding: calc(var(--su16) - var(--su1));
 }
 
 //  $$  OUTLINED BUTTON
@@ -323,22 +298,31 @@
   }
 }
 
-
-//  $$  DISABLED STATES
+//  $$   BUTTON LABEL
 //  ----------------------------------------------------------------------------
-.d-btn {
-  &.d-btn--disabled {
-    pointer-events: none;
-  }
+.d-btn__label {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  &[disabled],
-  &.d-btn--disabled {
-    color: var(--black-400);
-    background-color: var(--black-100);
-    cursor: not-allowed;
-    border-color: transparent;
-    transition: none;
-  }
+//  $$  BUTTON ICON
+//  ----------------------------------------------------------------------------
+.d-btn__icon {
+  display: flex;
+  margin-top: var(--sun4);
+  margin-bottom: var(--sun4);
+  width: 1em;
+  height: 1em;
+}
+.d-btn__icon--left {
+  margin-left: var(--sun2);
+  margin-right: var(--su4);
+}
+.d-btn__icon--right {
+  order: 1;
+  margin-left: var(--su4);
+  margin-right: var(--sun2);
 }
 
 //  $$  BRAND BUTTONS
