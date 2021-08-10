@@ -86,16 +86,19 @@
 
 //  $$  DISABLED
 //  ----------------------------------------------------------------------------
-.d-btn--disabled {
-  pointer-events: none;
-}
-[disabled],
-.d-btn--disabled {
-  color: var(--black-400);
-  background-color: var(--black-100);
-  cursor: not-allowed;
-  border-color: transparent;
-  transition: none;
+.d-btn {
+  &.d-btn--disabled {
+    pointer-events: none;
+  }
+
+  &[disabled],
+  &.d-btn--disabled {
+    color: var(--black-400);
+    background-color: var(--black-100);
+    cursor: not-allowed;
+    border-color: transparent;
+    transition: none;
+  }
 }
 
 //  ============================================================================
@@ -113,9 +116,6 @@
     height: 1.2rem !important;
   }
 }
-.d-btn--circle.d-btn--xs {
-  padding: calc(var(--su8) - var(--su1));
-}
 
 //  $$  SMALL
 //  ----------------------------------------------------------------------------
@@ -128,9 +128,6 @@
     .d-svg--size14();
   }
 }
-.d-btn--circle.d-btn--sm {
-  padding: var(--su8);
-}
 
 //  $$  LARGE
 //  ----------------------------------------------------------------------------
@@ -141,9 +138,6 @@
   .d-svg {
     .d-svg--size20();
   }
-}
-.d-btn--circle.d-btn--lg {
-  padding: calc(var(--su12) + var(--su1));
 }
 
 //  $$  EXTRA LARGE
@@ -156,9 +150,6 @@
   .d-svg {
     .d-svg--size24();
   }
-}
-.d-btn--circle.d-btn--xl {
-  padding: calc(var(--su16) - var(--su1));
 }
 
 //  ============================================================================
@@ -198,6 +189,24 @@
   //     border-color: hsla(var(--black-700-h) var(--black-700-s) var(--black-700-l) ~" / " 50%);
   //     background-color: hsla(var(--black-700-h) var(--black-700-s) var(--black-700-l) ~" / " 10%);
   // }
+
+  //  Adjust padding based on sizes
+  &.d-btn--xs {
+    padding: calc(var(--su8) - var(--su1));
+    --button--br:   var(--br-circle);
+  }
+  &.d-btn--sm {
+    padding: var(--su8);
+    --button--br:   var(--br-circle);
+  }
+  &.d-btn--lg {
+    padding: calc(var(--su12) + var(--su1));
+    --button--br:   var(--br-circle);
+  }
+  &.d-btn--xl {
+    padding: calc(var(--su16) - var(--su1));
+    --button--br:   var(--br-circle);
+  }
 }
 
 //  $$  OUTLINED BUTTON
