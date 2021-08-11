@@ -695,6 +695,13 @@ body {
   --button--bs-color-inner: var(--white);
   --button--bs-color-outer: var(--focus-ring);
 }
+.d-btn[disabled] {
+  border-color: transparent;
+  background-color: var(--black-100);
+  color: var(--black-400);
+  transition: none;
+  cursor: not-allowed;
+}
 .d-btn .d-svg {
   width: 1.6rem !important;
   height: 1.6rem !important;
@@ -766,11 +773,11 @@ body {
   margin-top: var(--sun4);
   margin-bottom: var(--sun4);
 }
-.d-btn__icon.d-btn__icon--left {
+.d-btn__icon--left {
   margin-right: var(--su4);
   margin-left: var(--sun2);
 }
-.d-btn__icon.d-btn__icon--right {
+.d-btn__icon--right {
   order: 1;
   margin-right: var(--sun2);
   margin-left: var(--su4);
@@ -879,16 +886,13 @@ body {
   --button--fc: var(--primary-color-hover);
   --button--bgc: hsla(var(--white-hsl)  /  90%);
 }
-.d-btn.d-btn--disabled {
-  pointer-events: none;
-}
-.d-btn[disabled],
-.d-btn.d-btn--disabled {
+.d-btn--disabled {
   border-color: transparent;
   background-color: var(--black-100);
   color: var(--black-400);
   transition: none;
   cursor: not-allowed;
+  pointer-events: none;
 }
 .d-btn--brand {
   display: flex;
@@ -1006,6 +1010,7 @@ legend .d-label {
 .d-validation-message::before {
   content: '';
   width: var(--su16);
+  min-width: var(--su16);
   height: var(--su16);
   margin-right: var(--su4);
 }
