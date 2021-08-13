@@ -33,6 +33,7 @@
     justify-content: center;
     align-items: center;
     padding: calc(var(--su8) - var(--su1));  // Subtract border
+    vertical-align: middle;
 
     border: 0.1rem solid var(--button--bc);
     border-radius: var(--button--br);
@@ -62,62 +63,76 @@
         --button--fc: var(--primary-color-hover);
         --button--bgc: hsla(var(--primary-color-hsl) ~" / " 10%);
     }
+
     &:focus {
         outline: none;
         --button--bs-color-inner:   var(--white);
         --button--bs-color-outer:   var(--focus-ring);
     }
 
+    &[disabled] {
+        color: var(--black-400);
+        background-color: var(--black-100);
+        cursor: not-allowed;
+        border-color: transparent;
+        transition: none;
+    }
+
     .d-svg {
         .d-svg--size16();
     }
+}
 
-    //  --  SIZES
-    //  ------------------------------------------------------------------------
-    &.d-btn--xs {
-        padding: calc(var(--su6) - var(--su1)) calc(var(--su8) - var(--su1));  // Subtract border
-        font-size: var(--fs12);
+//  ============================================================================
+//  $   SIZES
+//  ----------------------------------------------------------------------------
+//  $$  EXTRA SMALL
+//  ----------------------------------------------------------------------------
+.d-btn--xs {
+    padding: calc(var(--su6) - var(--su1)) calc(var(--su8) - var(--su1));  // Subtract border
+    font-size: var(--fs12);
 
-        .d-svg {
-            // no icon-size 12 exists so setting manually
-            width: 1.2rem !important;
-            height: 1.2rem !important;
-        }
-    }
-    &.d-btn--sm {
-        padding: calc(var(--su6) - var(--su1)) calc(var(--su8) - var(--su1));  // Subtract border
-        font-size: var(--fs14);
-        line-height: var(--lh6);
-
-        .d-svg {
-            .d-svg--size14();
-        }
-    }
-    &.d-btn--lg {
-        padding: calc(var(--su12) - var(--su1)) calc(var(--su16) - var(--su1)); // Subtract border
-        font-size: var(--fs20);
-
-        .d-svg {
-            .d-svg--size20();
-        }
-    }
-    &.d-btn--xl {
-        padding: calc(var(--su12) - var(--su1)) calc(var(--su16) - var(--su1)); // Subtract border
-        font-size: var(--fs24);
-        line-height: var(--lh8);
-
-        .d-svg {
-            .d-svg--size24();
-        }
-    }
-
-    //  --  LOADING
-    //  ------------------------------------------------------------------------
-    &.d-btn--loading {
-        .d-btn-loading();
+    .d-svg {
+        // no icon-size 12 exists so setting manually
+        width: 1.2rem !important;
+        height: 1.2rem !important;
     }
 }
 
+//  $$ SMALL
+//  ----------------------------------------------------------------------------
+.d-btn--sm {
+    padding: calc(var(--su6) - var(--su1)) calc(var(--su8) - var(--su1));  // Subtract border
+    font-size: var(--fs14);
+    line-height: var(--lh6);
+
+    .d-svg {
+        .d-svg--size14();
+    }
+}
+
+//  $$  LARGE
+//  ----------------------------------------------------------------------------
+.d-btn--lg {
+    padding: calc(var(--su12) - var(--su1)) calc(var(--su16) - var(--su1)); // Subtract border
+    font-size: var(--fs20);
+
+    .d-svg {
+        .d-svg--size20();
+    }
+}
+
+//  $$  EXTRA LARGE
+//  ----------------------------------------------------------------------------
+.d-btn--xl {
+    padding: calc(var(--su12) - var(--su1)) calc(var(--su16) - var(--su1)); // Subtract border
+    font-size: var(--fs24);
+    line-height: var(--lh8);
+
+    .d-svg {
+        .d-svg--size24();
+    }
+}
 
 //  ============================================================================
 //  $   BUTTON LABEL
@@ -128,83 +143,86 @@
     align-items: center;
 }
 
+//  ============================================================================
 //  $   BUTTON ICON
 //  ----------------------------------------------------------------------------
 .d-btn__icon {
-  display: flex;
-  margin-top: var(--sun4);
-  margin-bottom: var(--sun4);
-  width: 1em;
-  height: 1em;
-
-  &.d-btn__icon--left {
-      margin-left: var(--sun2);
-      margin-right: var(--su4);
-  }
-  &.d-btn__icon--right {
-      order: 1;
-      margin-left: var(--su4);
-      margin-right: var(--sun2);
-  }
+    display: flex;
+    margin-top: var(--sun4);
+    margin-bottom: var(--sun4);
+    width: 1em;
+    height: 1em;
 }
 
+.d-btn__icon--left {
+    margin-left: var(--sun2);
+    margin-right: var(--su4);
+}
 
+.d-btn__icon--right {
+    order: 1;
+    margin-left: var(--su4);
+    margin-right: var(--sun2);
+}
 
 //  ============================================================================
 //  $   VISUAL STYLES
-//  ============================================================================
+//  ----------------------------------------------------------------------------
 //  $$  CIRCLE BUTTONS
 //  ----------------------------------------------------------------------------
 .d-btn--circle {
-  --button--fc: var(--black-800);
-  --button--br: var(--br-circle);
-
-  padding: calc(var(--su8) + var(--su1));
-  transition-duration: 150ms;
-
-  &:hover {
     --button--fc: var(--black-800);
-    --button--bgc: var(--black-100);
-  }
+    --button--br: var(--br-circle);
 
-  &:focus {
-    --button--bs-color-outer: var(--black-200);
-  }
+    padding: calc(var(--su8) + var(--su1));
+    transition-duration: 150ms;
 
-  .d-btn__icon {
-    margin: unset;
-  }
+    &:hover {
+        --button--fc: var(--black-800);
+        --button--bgc: var(--black-100);
+    }
 
-  &.d-btn__label {
-    display: none;
-  }
+    &:focus {
+        --button--bs-color-outer: var(--black-200);
+    }
 
-  &.d-btn--outlined {
-    --button--bc:    var(--black-700);
-  }
+    .d-btn__icon {
+        margin: unset;
+    }
 
-  // &:active {
-  //     border-color: hsla(var(--black-700-h) var(--black-700-s) var(--black-700-l) ~" / " 50%);
-  //     background-color: hsla(var(--black-700-h) var(--black-700-s) var(--black-700-l) ~" / " 10%);
-  // }
+    &.d-btn__label {
+        display: none;
+    }
 
-  //  Adjust padding based on sizes
-  &.d-btn--xs {
-      padding: calc(var(--su8) - var(--su1));
-      --button--br:   var(--br-circle);
-  }
-  &.d-btn--sm {
-      padding: var(--su8);
-      --button--br:   var(--br-circle);
-  }
-  &.d-btn--lg {
-      padding: calc(var(--su12) + var(--su1));
-      --button--br:   var(--br-circle);
-  }
-  &.d-btn--xl {
-      padding: calc(var(--su16) - var(--su1));
-      --button--br:   var(--br-circle);
-  }
+    &.d-btn--outlined {
+        --button--bc:    var(--black-700);
+    }
+
+    // &:active {
+    //     border-color: hsla(var(--black-700-h) var(--black-700-s) var(--black-700-l) ~" / " 50%);
+    //     background-color: hsla(var(--black-700-h) var(--black-700-s) var(--black-700-l) ~" / " 10%);
+    // }
+
+    //  Adjust padding based on sizes
+    &.d-btn--xs {
+        padding: calc(var(--su8) - var(--su1));
+        --button--br:   var(--br-circle);
+    }
+
+    &.d-btn--sm {
+        padding: var(--su8);
+        --button--br:   var(--br-circle);
+    }
+
+    &.d-btn--lg {
+        padding: calc(var(--su12) + var(--su1));
+        --button--br:   var(--br-circle);
+    }
+
+    &.d-btn--xl {
+        padding: calc(var(--su16) - var(--su1));
+        --button--br:   var(--br-circle);
+    }
 }
 
 //  $$  OUTLINED BUTTON
@@ -285,7 +303,7 @@
     }
 
     &:focus {
-      --button--bs-color-outer: var(--focus-ring-inverted);
+        --button--bs-color-outer: var(--focus-ring-inverted);
     }
 
     //  --  OUTLINED
@@ -305,22 +323,21 @@
     }
 }
 
-
-//  $$  DISABLED STATES
+//  $$  LOADING STATE
 //  ----------------------------------------------------------------------------
-.d-btn {
-    &.d-btn--disabled {
-        pointer-events: none;
-    }
+.d-btn--loading {
+    .d-btn-loading();
+}
 
-    &[disabled],
-    &.d-btn--disabled {
-        color: var(--black-400);
-        background-color: var(--black-100);
-        cursor: not-allowed;
-        border-color: transparent;
-        transition: none;
-    }
+//  $$  DISABLED STATE
+//  ----------------------------------------------------------------------------
+.d-btn--disabled {
+    pointer-events: none;
+    color: var(--black-400);
+    background-color: var(--black-100);
+    cursor: not-allowed;
+    border-color: transparent;
+    transition: none;
 }
 
 //  $$  BRAND BUTTONS
@@ -336,9 +353,11 @@
         background-color: hsl(var(--brand-color-h) calc(var(--brand-color-s) + 2.5%) calc(var(--brand-color-l) - 5%));
         color: hsla(var(--white-hsl) ~" / " 90%);
     }
+
     &:focus {
         --focus-ring: hsla(var(--brand-color-h) var(--brand-color-s) var(--brand-color-l) ~" / " 90%);
     }
+
     &:active {
         background-color: hsl(var(--brand-color-h) calc(var(--brand-color-s) + 5%) calc(var(--brand-color-l) - 10%));
     }
@@ -353,6 +372,7 @@
       justify-content: center;
       align-items: center
     }
+
     .d-btn__label {
         flex: 1 auto;
     }
@@ -380,7 +400,7 @@
 //  ============================================================================
 //  @   BUTTON LOADER
 //      Changes the button
-//  ============================================================================
+//  ----------------------------------------------------------------------------
 //  @@  BASE STYLE
 //  ----------------------------------------------------------------------------
 .d-btn-loading() {
