@@ -62,7 +62,6 @@ var git = settings.build ? require('gulp-git') : null;
 //     Where everything is in this project
 //  ================================================================================
 var paths = {
-    versionFile: './docs/_includes/version.html',
     clean: {
         libCss: './lib/dist/css/**/*',
         libSvg: './lib/dist/svg/**/*',
@@ -588,25 +587,6 @@ var watchFiles = function(done) {
 };
 
 //  ================================================================================
-//  @@  UPDATE VERSION
-//  ================================================================================
-var docVersion = function(done) {
-    fs.writeFileSync(paths.versionFile, 'v' + package.version);
-
-    done();
-}
-
-var commitDocVersion = function(done) {
-    return src(package.version, { allowEmpty: true })
-        .pipe(git.add({
-            args: '-A'
-        }))
-        .pipe(git.commit(() => 'Bump Dialtone to v' + package.version));
-
-    done();
-}
-
-//  ================================================================================
 //  @   EXPORT TASKS
 //  ================================================================================
 //  --  BUILD OUT THE SITE BUT DON'T START THE SERVER
@@ -636,12 +616,6 @@ exports.svg = series(
 exports.fonts = series(
     cleanFonts,
     webfonts
-);
-
-//  --  UPDATES DIALTONE VERSION
-exports.version = series(
-    docVersion,
-    commitDocVersion
 );
 
 //  --  GENERATES ALL DIALPAD / UC FAVICONS
