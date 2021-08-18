@@ -40,6 +40,7 @@ $(document).ready(function() {
         e.stopPropagation();
         e.preventDefault();
 
+        $(modal).addClass('d-modal-enter-active')
         $(modal).attr('aria-hidden','false');
         $(body).addClass('d-of-hidden');
     });
