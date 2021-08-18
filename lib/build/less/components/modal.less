@@ -44,17 +44,10 @@
 
     background-color: var(--modal--bgc);
 
-    z-index: var(--zi-hide);
-    visibility: hidden;
-    opacity: 0;
-    backface-visibility: hidden;
-
-    transition:
-        opacity 100ms var(--ttf-in-out) 10ms,
-        z-index 0s 200ms,
-        visibility 0s 200ms,
-        transform 100ms var(--ttf-in-out) 10ms;
-    will-change: visibility, z-index, opacity;
+  visibility: visible;
+  opacity: 1;
+  z-index: var(--zi-modal);
+  transform: translate3d(0,0,0) scale3d(1,1,1);
 
     @media (prefers-reduced-motion) {
         transition: none;
@@ -80,35 +73,69 @@
   font-size: var(--fs16);
   line-height: var(--lh8);
 
-  z-index: var(--zi-hide);
-  visibility: hidden;
-  opacity: 0;
-  backface-visibility: hidden;
-  transform: translate3d(0,30%,0) scale3d(.75,.75,.75);
-
-  transition:
-    opacity 200ms var(--ttf-in-out) 0s,
-    z-index 0s 200ms,
-    visibility 0s 200ms,
-    transform 100ms var(--ttf-in-out) 0s;
-  will-change: visibility, z-index, opacity, tranform;
-
-  .d-stack16();
-}
-
-//  $$   MAKE THEM APPEAR
-//  ----------------------------------------------------------------------------
-.d-modal[aria-hidden="false"],
-.d-modal[aria-hidden="false"] .d-modal__dialog {
   visibility: visible;
   opacity: 1;
   z-index: var(--zi-modal);
   transform: translate3d(0,0,0) scale3d(1,1,1);
+
+  .d-stack16();
+}
+
+.d-modal[aria-hidden="true"],
+.d-modal[aria-hidden="true"] .d-modal__dialog {
+  z-index: var(--zi-hide);
+  visibility: hidden;
+  opacity: 0;
+  backface-visibility: hidden;
+  will-change: visibility, z-index, opacity;
+}
+
+.d-modal-enter, .d-modal-leave-to {
+  z-index: var(--zi-hide);
+  visibility: hidden;
+  opacity: 0;
+  backface-visibility: hidden;
+  will-change: visibility, z-index, opacity;
+}
+
+.d-modal-enter-active {
   transition:
-    opacity 100ms var(--ttf-in-out) 10ms,
-    z-index 0s 0s,
-    visibility 0s 0s,
-    transform 100ms var(--ttf-in-out) 10ms;
+          opacity 100ms var(--ttf-in-out) 10ms,
+          z-index 0s 0s,
+          visibility 0s 0s,
+          transform 100ms var(--ttf-in-out) 10ms
+}
+
+.d-modal-leave-active {
+  transition:
+          opacity 100ms var(--ttf-in-out) 10ms,
+          z-index 0s 200ms,
+          visibility 0s 200ms,
+          transform 100ms var(--ttf-in-out) 10ms;
+}
+
+.d-modal-dialog-enter, .d-modal-dialog-leave-to {
+  z-index: var(--zi-hide);
+  visibility: hidden;
+  opacity: 0;
+  backface-visibility: hidden;
+  transform: translate3d(0,30%,0) scale3d(.75,.75,.75);;
+}
+
+.d-modal-dialog-enter-active {
+  transition:
+          opacity 100ms var(--ttf-in-out) 10ms,
+          z-index 0s 0s,
+          visibility 0s 0s,
+          transform 100ms var(--ttf-in-out) 10ms;
+}
+
+.d-modal-dialog-leave-active {
+  transition:
+          opacity 200ms var(--ttf-in-out) 0s,
+          z-index 0s 200ms,
+          visibility 0s 200ms,
+          transform 100ms var(--ttf-in-out) 0s;
 }
 
 
