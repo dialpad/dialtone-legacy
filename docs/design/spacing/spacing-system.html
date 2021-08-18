@@ -22,9 +22,18 @@ description: Standardized spacing values helps us create consistent user interfa
         {% assign val = i.value %}
         {% assign output = i.output %}
         <tr>
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">@spacing{{ val }}</th>
+          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">@su{{ val }}</th>
           <td class="d-ff-mono d-fc-orange d-fs12">{{ val }}px</td>
           <td class="d-ff-mono d-fc-orange d-fs12">{{ output }}</td>
+        </tr>
+      {% endfor %}
+      {% for i in spacing.values %}
+        {% assign val = i.value %}
+        {% assign output = i.output %}
+        <tr>
+          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">@sun{{ val }}</th>
+          <td class="d-ff-mono d-fc-orange d-fs12">-{{ val }}px</td>
+          <td class="d-ff-mono d-fc-orange d-fs12">-{{ output }}</td>
         </tr>
       {% endfor %}
     </tbody>
