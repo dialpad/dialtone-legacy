@@ -9,35 +9,70 @@ description: Standardized spacing values helps us create consistent user interfa
   <div class="d-stack8 d-ta-center">
     <img src="/{{ site.paths.img }}/spacing-example.png" alt="A layout example with spacing values to show how the spacing system is used." class="d-w80p" />
   </div>
-  <table class="d-table">
-    <thead>
-      <tr>
-        <th scope="col" class="d-w40p">Value</th>
-        <th scope="col" class="d-w30p">Pixel Equivalent</th>
-        <th scope="col">Actual output</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for i in spacing.values %}
-        {% assign val = i.value %}
-        {% assign output = i.output %}
+  {% header "h3", "CSS Variables" %}
+  <div class="d-h464 d-of-y-scroll">
+    <table class="d-table">
+      <thead>
         <tr>
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">@su{{ val }}</th>
-          <td class="d-ff-mono d-fc-orange d-fs12">{{ val }}px</td>
-          <td class="d-ff-mono d-fc-orange d-fs12">{{ output }}</td>
+          <th scope="col" class="d-w40p">Value</th>
+          <th scope="col" class="d-w30p">Pixel Equivalent</th>
+          <th scope="col">Actual output</th>
         </tr>
-      {% endfor %}
-      {% for i in spacing.values %}
-        {% assign val = i.value %}
-        {% assign output = i.output %}
+      </thead>
+      <tbody>
+        {% for i in spacing.values %}
+          {% assign val = i.value %}
+          {% assign output = i.output %}
+          <tr>
+            <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">var(--su{{ val }})</th>
+            <td class="d-ff-mono d-fc-orange d-fs12">{{ val }}px</td>
+            <td class="d-ff-mono d-fc-orange d-fs12">{{ output }}</td>
+          </tr>
+        {% endfor %}
+        {% for i in spacing.values %}
+          {% assign val = i.value %}
+          {% assign output = i.output %}
+          <tr>
+            <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">var(--sun{{ val }})</th>
+            <td class="d-ff-mono d-fc-orange d-fs12">-{{ val }}px</td>
+            <td class="d-ff-mono d-fc-orange d-fs12">-{{ output }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% header "h3", "Less Variables" %}
+  <div class="d-h464 d-of-y-scroll">
+    <table class="d-table">
+      <thead>
         <tr>
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">@sun{{ val }}</th>
-          <td class="d-ff-mono d-fc-orange d-fs12">-{{ val }}px</td>
-          <td class="d-ff-mono d-fc-orange d-fs12">-{{ output }}</td>
+          <th scope="col" class="d-w40p">Value</th>
+          <th scope="col" class="d-w30p">Pixel Equivalent</th>
+          <th scope="col">Actual output</th>
         </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        {% for i in spacing.values %}
+          {% assign val = i.value %}
+          {% assign output = i.output %}
+          <tr>
+            <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">@su{{ val }}</th>
+            <td class="d-ff-mono d-fc-orange d-fs12">{{ val }}px</td>
+            <td class="d-ff-mono d-fc-orange d-fs12">{{ output }}</td>
+          </tr>
+        {% endfor %}
+        {% for i in spacing.values %}
+          {% assign val = i.value %}
+          {% assign output = i.output %}
+          <tr>
+            <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">@sun{{ val }}</th>
+            <td class="d-ff-mono d-fc-orange d-fs12">-{{ val }}px</td>
+            <td class="d-ff-mono d-fc-orange d-fs12">-{{ output }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
 </section>
 <section class="d-stack8">
   {% header "h2", "Typography" %}
@@ -63,4 +98,13 @@ description: Standardized spacing values helps us create consistent user interfa
       {% endfor %}
     </tbody>
   </table>
+</section>
+<section class="d-stack8">
+  {% header "h2", "Utility Classes" %}
+  <div class="d-d-flex d-fd-column d-ai-flex-start d-stack4">
+    <a href="/utilities/spacing/margin" class="d-link d-fs16">Margin</a>
+    <a href="/utilities/spacing/padding" class="d-link d-fs16">Padding</a>
+    <a href="/utilities/spacing/auto-spacing" class="d-link d-fs16">Auto Spacing</a>
+    <a href="/utilities/typography/line-height" class="d-link d-fs16">Line Height</a>
+  </div>
 </section>
