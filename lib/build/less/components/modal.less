@@ -44,10 +44,11 @@
 
     background-color: var(--modal--bgc);
 
-  visibility: visible;
-  opacity: 1;
-  z-index: var(--zi-modal);
-  transform: translate3d(0,0,0) scale3d(1,1,1);
+    visibility: visible;
+    opacity: 1;
+    z-index: var(--zi-modal);
+    transform: translate3d(0,0,0) scale3d(1,1,1);
+    will-change: visibility, z-index, opacity;
 
     @media (prefers-reduced-motion) {
         transition: none;
@@ -77,6 +78,7 @@
   opacity: 1;
   z-index: var(--zi-modal);
   transform: translate3d(0,0,0) scale3d(1,1,1);
+  will-change: visibility, z-index, opacity, transform;
 
   .d-stack16();
 }
@@ -87,55 +89,50 @@
   visibility: hidden;
   opacity: 0;
   backface-visibility: hidden;
-  will-change: visibility, z-index, opacity;
 }
 
-.d-modal-enter, .d-modal-leave-to {
+.d-modal[aria-hidden="true"] .d-modal__dialog {
+  transform: translate3d(0,30%,0) scale3d(.75,.75,.75);
+}
+
+
+//  ============================================================================
+//  $   ANIMATION
+//  ----------------------------------------------------------------------------
+.d-modal--animate {
   z-index: var(--zi-hide);
   visibility: hidden;
   opacity: 0;
   backface-visibility: hidden;
-  will-change: visibility, z-index, opacity;
 }
 
-.d-modal-enter-active {
+.d-modal__dialog--animate {
+  .d-modal--animate();
+  transform: translate3d(0,30%,0) scale3d(.75,.75,.75);
+}
+
+.d-modal--animate-in, .d-modal__dialog--animate-in {
   transition:
-          opacity 100ms var(--ttf-in-out) 10ms,
-          z-index 0s 0s,
-          visibility 0s 0s,
-          transform 100ms var(--ttf-in-out) 10ms
+    opacity 100ms var(--ttf-in-out) 10ms,
+    z-index 0s 0s,
+    visibility 0s 0s,
+    transform 100ms var(--ttf-in-out) 10ms
 }
 
-.d-modal-leave-active {
+.d-modal--animate-out {
   transition:
-          opacity 100ms var(--ttf-in-out) 10ms,
-          z-index 0s 200ms,
-          visibility 0s 200ms,
-          transform 100ms var(--ttf-in-out) 10ms;
+    opacity 100ms var(--ttf-in-out) 10ms,
+    z-index 0s 200ms,
+    visibility 0s 200ms,
+    transform 100ms var(--ttf-in-out) 10ms;
 }
 
-.d-modal-dialog-enter, .d-modal-dialog-leave-to {
-  z-index: var(--zi-hide);
-  visibility: hidden;
-  opacity: 0;
-  backface-visibility: hidden;
-  transform: translate3d(0,30%,0) scale3d(.75,.75,.75);;
-}
-
-.d-modal-dialog-enter-active {
+.d-modal__dialog--animate-out {
   transition:
-          opacity 100ms var(--ttf-in-out) 10ms,
-          z-index 0s 0s,
-          visibility 0s 0s,
-          transform 100ms var(--ttf-in-out) 10ms;
-}
-
-.d-modal-dialog-leave-active {
-  transition:
-          opacity 200ms var(--ttf-in-out) 0s,
-          z-index 0s 200ms,
-          visibility 0s 200ms,
-          transform 100ms var(--ttf-in-out) 0s;
+    opacity 200ms var(--ttf-in-out) 0s,
+    z-index 0s 200ms,
+    visibility 0s 200ms,
+    transform 100ms var(--ttf-in-out) 0s;
 }
 
 
