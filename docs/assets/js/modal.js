@@ -15,6 +15,8 @@ $(document).ready(function() {
         e.stopPropagation();
         e.preventDefault();
 
+        $.fn.removeTransitionEnterClasses();
+        $.fn.addTransitionLeaveClasses();
         $(modal).attr('aria-hidden','true');
         if ($('.js-example-modal.d-modal--danger')) {
             $(modal).removeClass('d-modal--danger');
@@ -35,12 +37,33 @@ $(document).ready(function() {
             $(btnSave).removeClass('d-btn--danger');
         }
     };
+    
+    $.fn.addTransitionEnterClasses = function() {
+        $(modal).addClass('d-modal--animate-in');
+        $(dialog).addClass('d-modal__dialog--animate-in'); 
+    }
+
+    $.fn.removeTransitionEnterClasses = function() {
+        $(modal).removeClass('d-modal--animate-in');
+        $(dialog).removeClass('d-modal__dialog--animate-in');
+    }
+
+    $.fn.addTransitionLeaveClasses = function() {
+        $(modal).addClass('d-modal--animate-out');
+        $(dialog).addClass('d-modal__dialog--animate-out');
+    }
+
+    $.fn.removeTransitionLeaveClasses = function() {
+        $(modal).removeClass('d-modal--animate-out');
+        $(dialog).removeClass('d-modal__dialog--animate-out');
+    }
 
     $(launchBtn).on('click', function(e) {
         e.stopPropagation();
         e.preventDefault();
 
-        $(modal).addClass('d-modal-enter-active')
+        $.fn.removeTransitionLeaveClasses();
+        $.fn.addTransitionEnterClasses();
         $(modal).attr('aria-hidden','false');
         $(body).addClass('d-of-hidden');
     });
@@ -49,6 +72,8 @@ $(document).ready(function() {
         e.stopPropagation();
         e.preventDefault();
 
+        $.fn.removeTransitionLeaveClasses();
+        $.fn.addTransitionEnterClasses();
         $(modal).attr('aria-hidden','false').addClass('d-modal--full');
         $(body).addClass('d-of-hidden');
     });
@@ -57,6 +82,8 @@ $(document).ready(function() {
         e.stopPropagation();
         e.preventDefault();
 
+        $.fn.removeTransitionLeaveClasses();
+        $.fn.addTransitionEnterClasses();
         $(modal).attr('aria-hidden','false').addClass('d-modal--danger');
         $(btnCancel).addClass('d-btn--danger');
         $(btnSave).addClass('d-btn--danger');
