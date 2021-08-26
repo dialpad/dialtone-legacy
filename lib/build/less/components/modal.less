@@ -50,10 +50,6 @@
     backface-visibility: hidden;
 
     will-change: visibility, z-index, opacity;
-
-    @media (prefers-reduced-motion) {
-        transition: none;
-    }
 }
 
 //  $$  MODAL DIALOG
@@ -229,6 +225,10 @@
     z-index 0s 0s,
     visibility 0s 0s,
     transform 100ms var(--ttf-in-out) 10ms;
+
+  @media (prefers-reduced-motion) {
+    transition: none!important;
+  }
 }
 
 .d-modal--animate-out {
@@ -244,6 +244,10 @@
       z-index 0s 200ms,
       visibility 0s 200ms;
   }
+
+  @media (prefers-reduced-motion) {
+    transition: none!important;
+  }
 }
 
 .d-modal__dialog--animate-out {
@@ -258,5 +262,9 @@
       opacity 200ms var(--ttf-in-out) 0s,
       z-index 0s 200ms,
       visibility 0s 200ms;
+  }
+
+  @media (prefers-reduced-motion) {
+    transition: none!important;
   }
 }
