@@ -15,16 +15,8 @@
 //      [1]     Font size set to 10px to make REM values easier to calculate
 //      [2]     We don't want 10px to be the default size, so we reset it to
 //              the desired 16px size;
-//      [3]     Universally set border-box
-//      [4]     Prevent adjustments of font size after orientation changes in iOS.
+//      [3]     Prevent adjustments of font size after orientation changes in iOS.
 //  ----------------------------------------------------------------------------
-* {
-    &,
-    &::before,
-    &::after {
-        box-sizing: border-box; // [3]
-    }
-}
 
 html,
 body {
@@ -39,7 +31,7 @@ body {
     font-kerning: normal;
     line-height: var(--base--line-height);
     color: var(--base--text-color);
-    -webkit-text-size-adjust: 100%; // [4]
+    -webkit-text-size-adjust: 100%; // [3]
 }
 
 
