@@ -17,17 +17,17 @@
 //  ============================================================================
 //  $   FONT FAMILY
 //  ----------------------------------------------------------------------------
-@define-ff-custom:                       @ff-inter;
-@define-ff-custom-name:                  "Inter";
-@define-ff-mono:                         @ff-roboto-mono;
-@define-ff-mono-name:                    "RobotoMono";
-@define-ff-archivo:                      @ff-archivo;
-@define-ff-archivo-name:                 "Archivo";
-@define-ff-archivo-expanded:             @ff-archivo-expanded;
-@define-ff-archivo-expanded-name:        "ArchivoExpanded";
-@define-ff-archivo-semi-expanded:       @ff-archivo-semi-expanded;
-@define-ff-archivo-semi-expanded-name:  "ArchivoSemiExpanded";
-@headline-weight:                        var(--fw-bold);
+@define-ff-custom:                         @ff-inter;
+@define-ff-custom-name:                    "Inter";
+@define-ff-mono:                           @ff-roboto-mono;
+@define-ff-mono-name:                      "RobotoMono";
+@define-ff-marketing:                      @ff-archivo;
+@define-ff-marketing-name:                 "Archivo";
+@define-ff-marketing-semi-expanded:        @ff-archivo-semi-expanded;
+@define-ff-marketing-semi-expanded-name:   "ArchivoSemiExpanded";
+@define-ff-marketing-expanded:             @ff-archivo-expanded;
+@define-ff-marketing-expanded-name:        "ArchivoExpanded";
+@headline-weight:                          var(--fw-bold);
 
 
 @ff-inter: {
@@ -43,31 +43,34 @@
     600: Archivo-SemiBold;
     700: Archivo-Bold;
 };
-@ff-archivo-expanded: {
-    600: ArchivoExpanded-SemiBold;
-};
 @ff-archivo-semi-expanded: {
     500: ArchivoSemiExpanded-Medium;
     600: ArchivoSemiExpanded-SemiBold;
 };
+@ff-archivo-expanded: {
+    600: ArchivoExpanded-SemiBold;
+};
 
 
-// @ff-custom: @define-ff-custom-name, @ff-sans;
-@ff-custom: @define-ff-archivo-name, @ff-sans;
-@ff-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";;
+@ff-custom: @define-ff-custom-name, @ff-sans;
+@ff-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 @ff-mono: @define-ff-mono-name, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+@ff-marketing: @define-ff-marketing-name, @ff-sans;
+@ff-marketing-semi-expanded: @define-ff-marketing-semi-expanded-name, @ff-sans;
+@ff-marketing-expanded: @define-ff-marketing-expanded-name, @ff-sans;
 
 
 //  ============================================================================
 //  $   FONT WEIGHTS
 //  ----------------------------------------------------------------------------
 @fw-normal:                     400;
+@fw-medium:                     500;
+@fw-semibold:                   600;
 @fw-bold:                       700;
 
 // These are hold-overs from Roboto and are being kept as shims. Don't use them.
 @fw-thin:                       100;
 @fw-light:                      300;
-@fw-medium:                     500;
 @fw-black:                      900;
 
 
@@ -122,6 +125,9 @@
     ff-custom:                              @ff-custom;
     ff-sans:                                @ff-sans;
     ff-mono:                                @ff-mono;
+    ff-marketing:                           @ff-marketing;
+    ff-marketing-semi-expanded:             @ff-marketing-semi-expanded;
+    ff-marketing-expanded:                  @ff-marketing-expanded;
 
     fs10:                                   @fs10;
     fs11:                                   @fs11;
@@ -157,7 +163,8 @@
     fw-thin:                                @fw-thin; // Deprecated, but used as shim
     fw-light:                               @fw-light; // Deprecated, but used as shim
     fw-normal:                              @fw-normal;
-    fw-medium:                              @fw-medium; // Deprecated, but used as shim
+    fw-medium:                              @fw-medium;
+    fw-semibold:                            @fw-semibold;
     fw-bold:                                @fw-bold;
     fw-black:                               @fw-black; // Deprecated, but used as shim
 
