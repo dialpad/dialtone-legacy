@@ -10,7 +10,7 @@
 //  @   TOAST CONTAINER
 //  ----------------------------------------------------------------------------
 .d-toast-wrapper {
-    position: absolute;
+    position: fixed;
     top: var(--su32);
     left: 50%;
     transform: translateX(-50%);
@@ -133,4 +133,66 @@
         --toast--bgc:      var(--yellow-400);
         --toast--fc:       var(--fc-dark);
     }
+}
+
+//  $$  CHAT
+//  ----------------------------------------------------------------------------
+.d-toast--chat {
+  .d-notice__icon, .d-toast__meta {
+    color: @black-600;
+  }
+
+  .d-toast__meta {
+    font-size: var(--fs12);
+  }
+}
+
+//  $$  ORGANIZER
+//  ----------------------------------------------------------------------------
+.d-toast--organizer {
+  //
+}
+
+//  $$  VIEWING
+//  ----------------------------------------------------------------------------
+.d-toast--viewing {
+ //
+}
+
+.d-toast--organizer,
+.d-toast--viewing {
+  &:before {
+    .d-bgc-pink-500();
+  }
+
+  .d-notice__icon {
+    color: @pink-500;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: -(@su1);
+    right: -(@su1);
+    left: -(@su1);
+
+    height: @su6;
+    border-radius: @br4 @br4 0 0;
+  }
+}
+
+.d-toast--chat,
+.d-toast--organizer,
+.d-toast--viewing {
+  background-color: var(--white);
+
+  .d-notice__icon {
+    align-self: flex-start;
+  }
+
+  .d-notice__message {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
 }
