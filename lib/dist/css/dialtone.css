@@ -2401,7 +2401,18 @@ legend .d-label {
   transition: visibility 0s 200ms, transform 200ms var(--ttf-in-out) 0s, opacity 200ms var(--ttf-in-out) 0s, -webkit-transform 200ms var(--ttf-in-out) 0s;
 }
 .d-tooltip--show,
-.d-tooltip--hover:focus .d-tooltip,
+.d-tooltip--hover.focus-visible .d-tooltip,
+.d-tooltip--hover:hover .d-tooltip {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+  transition: visibility 0s 0s, opacity 200ms var(--ttf-in-out) 10ms, -webkit-transform 200ms var(--ttf-in-out) 10ms;
+  transition: visibility 0s 0s, transform 200ms var(--ttf-in-out) 10ms, opacity 200ms var(--ttf-in-out) 10ms;
+  transition: visibility 0s 0s, transform 200ms var(--ttf-in-out) 10ms, opacity 200ms var(--ttf-in-out) 10ms, -webkit-transform 200ms var(--ttf-in-out) 10ms;
+}
+.d-tooltip--show,
+.d-tooltip--hover:focus-visible .d-tooltip,
 .d-tooltip--hover:hover .d-tooltip {
   visibility: visible;
   opacity: 1;
@@ -2415,6 +2426,8 @@ legend .d-label {
 .d-tooltip__arrow--top-center,
 .d-tooltip__arrow--top-right {
   top: calc(100% + var(--su12));
+  -webkit-transform: translateY(var(--su16));
+          transform: translateY(var(--su16));
 }
 .d-tooltip__arrow--top-left::after,
 .d-tooltip__arrow--top-center::after,
@@ -2427,6 +2440,8 @@ legend .d-label {
 .d-tooltip__arrow--bottom-center,
 .d-tooltip__arrow--bottom-right {
   bottom: calc(100% + var(--su12));
+  -webkit-transform: translateY(var(--sun16));
+          transform: translateY(var(--sun16));
 }
 .d-tooltip__arrow--bottom-left::after,
 .d-tooltip__arrow--bottom-center::after,
@@ -2460,6 +2475,8 @@ legend .d-label {
 .d-tooltip__arrow--right-center,
 .d-tooltip__arrow--right-bottom {
   right: calc(100% + var(--su12));
+  -webkit-transform: translateX(var(--sun16));
+          transform: translateX(var(--sun16));
 }
 .d-tooltip__arrow--right-top::after,
 .d-tooltip__arrow--right-center::after,
@@ -2472,6 +2489,8 @@ legend .d-label {
 .d-tooltip__arrow--left-center,
 .d-tooltip__arrow--left-bottom {
   left: calc(100% + var(--su12));
+  -webkit-transform: translateX(var(--su16));
+          transform: translateX(var(--su16));
 }
 .d-tooltip__arrow--left-top::after,
 .d-tooltip__arrow--left-center::after,
@@ -35662,11 +35681,6 @@ ul {
   overflow: hidden !important;
   text-overflow: ellipsis !important;
   white-space: nowrap !important;
-}
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
 }
 html,
 body {
