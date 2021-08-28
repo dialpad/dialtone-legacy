@@ -135,15 +135,24 @@
     }
 }
 
+//  ============================================================================
+//  $   UC Toast Shims
+//  ============================================================================
 //  $$  CHAT
 //  ----------------------------------------------------------------------------
 .d-toast--chat {
   .d-notice__icon, .d-toast__meta {
-    color: @black-600;
+    color: var(--black-600);
   }
 
   .d-toast__meta {
     font-size: var(--fs12);
+  }
+
+  &.d-toast--important {
+    .d-notice__icon, .d-toast__meta {
+      color: var(--black-025);
+    }
   }
 }
 
@@ -161,30 +170,17 @@
 
 .d-toast--organizer,
 .d-toast--viewing {
-  &:before {
-    .d-bgc-pink-500();
-  }
+  border-top: 4px solid var(--pink-500);
 
   .d-notice__icon {
-    color: @pink-500;
-  }
-
-  &:before {
-    content: "";
-    position: absolute;
-    top: -(@su1);
-    right: -(@su1);
-    left: -(@su1);
-
-    height: @su6;
-    border-radius: @br4 @br4 0 0;
+    color: var(--pink-500);
   }
 }
 
 .d-toast--chat,
 .d-toast--organizer,
 .d-toast--viewing {
-  background-color: var(--white);
+  --toast--bgc:          var(--white);
 
   .d-notice__icon {
     align-self: flex-start;
