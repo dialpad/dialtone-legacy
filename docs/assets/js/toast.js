@@ -12,7 +12,6 @@ $(document).ready(function() {
   const dialog = $('.js-toast-example-dialog');
   const title = $('.js-toast-example-title');
   const desc = $('.js-toast-example-desc');
-  const link = $('.js-toast-example-link');
   const icon = $('.js-toast-example-icon');
   const actions = $('.js-toast-example-actions');
   const actionBtn = $('.js-toast-example-action-btn');
@@ -71,6 +70,8 @@ $(document).ready(function() {
       default:
         message.html('Message body with <a href="#" class="d-link d-link--muted js-toast-example-link">a link.</a>');
     }
+
+    const link = $('.js-toast-example-link'); // Need to be here because of the dynamic message link
 
     if(['chat', 'organizer', 'viewing'].includes(style)) {
       title.addClass('d-d-none');
