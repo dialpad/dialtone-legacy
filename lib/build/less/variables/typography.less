@@ -17,11 +17,14 @@
 //  ============================================================================
 //  $   FONT FAMILY
 //  ----------------------------------------------------------------------------
-@define-font-face:               true;
-@define-font-family:             @font-family--mark-pro;
-@define-font-name:               "MarkPro";
-@define-font-path:               "../fonts/";
-@headline-weight:                @font-weight--bold;
+@define-font-face:                           true;
+@define-font-family:                         @font-family--mark-pro;
+@define-font-name:                           "MarkPro";
+@define-font-path:                           "../fonts/";
+@headline-weight:                            @font-weight--bold;
+@define-marketing-font-name:                 "Archivo";
+@define-marketing-semi-expanded-font-name:   "ArchivoSemiExpanded";
+@define-marketing-expanded-font-name:        "ArchivoExpanded";
 
 @font-family--mark-pro: {
     200: MarkWeb-Light;
@@ -30,15 +33,36 @@
     600: MarkWeb-Bold;
 };
 
+@font-family--archivo: {
+    400: Archivo-Regular;
+    600: Archivo-SemiBold;
+    700: Archivo-Bold;
+};
+
+@font-family--archivo-semi-expanded: {
+    500: ArchivoSemiExpanded-Medium;
+    600: ArchivoSemiExpanded-SemiBold;
+};
+
+@font-family--archivo-expanded: {
+    600: ArchivoExpanded-SemiBold;
+}
+
 //  Older variables. Will be deprecated in a future version.
-@font-family--custom:           @define-font-name, @font-family--sans;
-@font-family--sans:             -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-@font-family--mono:             "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+@font-family--custom:                     @define-font-name, @font-family--sans;
+@font-family--sans:                       -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+@font-family--mono:                      "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+@font-family--marketing:                 @define-marketing-font-name, @font-family--sans; // Marketing font
+@font-family--marketing-semi-expanded:   @define-marketing-semi-expanded-font-name, @font-family--sans; // Marketing font
+@font-family--marketing-expanded:        @define-marketing-expanded-font-name, @font-family--sans; // Marketing font
 
 //  New variables. Use these moving forward.
 @ff-custom:                     @font-family--custom;
 @ff-sans:                       @font-family--sans;
 @ff-mono:                       @font-family--mono;
+@ff-marketing:                  @font-family--marketing; // Marketing font
+@ff-marketing-semi-expanded:    @font-family--marketing-semi-expanded; // Marketing font
+@ff-marketing-expanded:         @font-family--marketing-expanded; // Marketing font
 
 
 //  ============================================================================
@@ -56,6 +80,7 @@
 @fw-light:                      200;
 @fw-normal:                     400;
 @fw-medium:                     500;
+@fw-semibold:                   600; // For marketing
 @fw-bold:                       700;
 @fw-black:                      900;
 
