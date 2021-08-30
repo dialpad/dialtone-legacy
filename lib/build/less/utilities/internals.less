@@ -150,12 +150,12 @@
     //  ========================================================================
     //  $   CREATE FONT FACE
     //  ------------------------------------------------------------------------
-    #font-face(@type, @name) {
+    #font-face(@type, @name, @style: normal) {
         #d-internal-config();
 
         if((@generate-font-face = true), each(@type, {
             @font-face {
-                font-style: "normal";
+                font-style: @style;
                 font-weight: @key;
                 font-family: @name;
                 src: url("@{define-font-path}@{value}.woff2") format("woff2");
