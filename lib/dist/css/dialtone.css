@@ -2437,7 +2437,18 @@ legend .d-label {
   transition: visibility 0s 200ms, transform 200ms var(--ttf-in-out) 0s, opacity 200ms var(--ttf-in-out) 0s, -webkit-transform 200ms var(--ttf-in-out) 0s;
 }
 .d-tooltip--show,
-.d-tooltip--hover:focus .d-tooltip,
+.d-tooltip--hover.focus-visible .d-tooltip,
+.d-tooltip--hover:hover .d-tooltip {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+  transition: visibility 0s 0s, opacity 200ms var(--ttf-in-out) 10ms, -webkit-transform 200ms var(--ttf-in-out) 10ms;
+  transition: visibility 0s 0s, transform 200ms var(--ttf-in-out) 10ms, opacity 200ms var(--ttf-in-out) 10ms;
+  transition: visibility 0s 0s, transform 200ms var(--ttf-in-out) 10ms, opacity 200ms var(--ttf-in-out) 10ms, -webkit-transform 200ms var(--ttf-in-out) 10ms;
+}
+.d-tooltip--show,
+.d-tooltip--hover:focus-visible .d-tooltip,
 .d-tooltip--hover:hover .d-tooltip {
   visibility: visible;
   opacity: 1;
