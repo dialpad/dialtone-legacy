@@ -32,20 +32,58 @@ if((@define-font-face = true), each(@define-font-family, {
     };
 }));
 
+// Marketing font
+each(@font-family--archivo, {
+    @font-face {
+        font-style: "normal";
+        font-weight: @key;
+        font-family: @define-marketing-font-name;
+        src: url("@{define-font-path}@{value}.woff2") format("woff2");
+    };
+});
+// Marketing font
+each(@font-family--archivo-semi-expanded, {
+    @font-face {
+        font-style: "normal";
+        font-weight: @key;
+        font-family: @define-marketing-semi-expanded-font-name;
+        src: url("@{define-font-path}@{value}.woff2") format("woff2");
+    };
+});
+// Marketing font
+each(@font-family--archivo-expanded, {
+    @font-face {
+        font-style: "normal";
+        font-weight: @key;
+        font-family: @define-marketing-expanded-font-name;
+        src: url("@{define-font-path}@{value}.woff2") format("woff2");
+    };
+});
+
+
+
+
+
 //  ============================================================================
 //  $   FONT FAMILY
 //  ----------------------------------------------------------------------------
 //  Older classes. Will be deprecated in a future version
-.d-font-family--custom          { font-family: @font-family--custom; }
-.d-font-family--sans            { font-family: @font-family--sans; }
-.d-font-family--mono            { font-family: @font-family--mono; }
-.d-font-family--inherit         { font-family: inherit; }
-.d-font-family--unset           { font-family: unset; }
+.d-font-family--custom                    { font-family: @font-family--custom; }
+.d-font-family--sans                      { font-family: @font-family--sans; }
+.d-font-family--mono                      { font-family: @font-family--mono; }
+.d-font-family--marketing                 { font-family: @font-family--marketing; } // Marketing font
+.d-font-family--marketing-semi-expanded   { font-family: @font-family--marketing-semi-expanded; } // Marketing font
+.d-font-family--marketing-expanded        { font-family: @font-family--marketing-expanded; } // Marketing font
+.d-font-family--inherit                   { font-family: inherit; }
+.d-font-family--unset                     { font-family: unset; }
 
 //  New classes. Use these moving forward
 .d-ff-custom                    { .d-font-family--custom() !important; }
 .d-ff-sans                      { .d-font-family--sans() !important; }
 .d-ff-mono                      { .d-font-family--mono() !important; }
+.d-ff-marketing                 { .d-font-family--marketing() !important; } // Marketing font
+.d-ff-marketing-semi-expanded   { .d-font-family--marketing-semi-expanded() !important; } // Marketing font
+.d-ff-marketing-expanded        { .d-font-family--marketing-expanded() !important; } // Marketing font
 .d-ff-inherit                   { .d-font-family--inherit() !important; }
 .d-ff-unset                     { .d-font-family--unset() !important; }
 
@@ -158,6 +196,7 @@ if((@define-font-face = true), each(@define-font-family, {
 .d-fw-light                     { font-weight: @fw-light !important; }
 .d-fw-normal                    { font-weight: @fw-normal !important; }
 .d-fw-medium                    { font-weight: @fw-medium !important; }
+.d-fw-semibold                  { font-weight: @fw-semibold !important; }
 .d-fw-bold                      { font-weight: @fw-bold !important; }
 .d-fw-black                     { font-weight: @fw-black !important; }
 .d-fw-unset                     { font-weight: unset !important; }
