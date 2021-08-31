@@ -1601,7 +1601,7 @@ legend .d-label {
   --modal-header--fc: var(--fc-error);
 }
 .d-toast-wrapper {
-  position: absolute;
+  position: fixed;
   top: var(--su32);
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -1683,6 +1683,42 @@ legend .d-label {
 .d-toast--warning.d-toast--important {
   --toast--bgc: var(--yellow-400);
   --toast--fc: var(--fc-dark);
+}
+.d-toast--chat .d-notice__icon,
+.d-toast--chat .d-toast__meta {
+  color: var(--black-600);
+}
+.d-toast--chat .d-toast__meta {
+  font-size: var(--fs12);
+}
+.d-toast--chat.d-toast--important .d-notice__icon,
+.d-toast--chat.d-toast--important .d-toast__meta {
+  color: var(--black-025);
+}
+.d-toast--organizer,
+.d-toast--viewing {
+  border-top: 4px solid var(--pink-500);
+}
+.d-toast--organizer .d-notice__icon,
+.d-toast--viewing .d-notice__icon {
+  color: var(--pink-500);
+}
+.d-toast--chat,
+.d-toast--organizer,
+.d-toast--viewing {
+  --toast--bgc: var(--white);
+}
+.d-toast--chat .d-notice__icon,
+.d-toast--organizer .d-notice__icon,
+.d-toast--viewing .d-notice__icon {
+  align-self: flex-start;
+}
+.d-toast--chat .d-notice__message,
+.d-toast--organizer .d-notice__message,
+.d-toast--viewing .d-notice__message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .d-notice {
   --notice--bgc: var(--black-025);
@@ -2426,8 +2462,6 @@ legend .d-label {
 .d-tooltip__arrow--top-center,
 .d-tooltip__arrow--top-right {
   top: calc(100% + var(--su12));
-  -webkit-transform: translateY(var(--su16));
-          transform: translateY(var(--su16));
 }
 .d-tooltip__arrow--top-left::after,
 .d-tooltip__arrow--top-center::after,
@@ -2440,8 +2474,6 @@ legend .d-label {
 .d-tooltip__arrow--bottom-center,
 .d-tooltip__arrow--bottom-right {
   bottom: calc(100% + var(--su12));
-  -webkit-transform: translateY(var(--sun16));
-          transform: translateY(var(--sun16));
 }
 .d-tooltip__arrow--bottom-left::after,
 .d-tooltip__arrow--bottom-center::after,
@@ -2475,8 +2507,6 @@ legend .d-label {
 .d-tooltip__arrow--right-center,
 .d-tooltip__arrow--right-bottom {
   right: calc(100% + var(--su12));
-  -webkit-transform: translateX(var(--sun16));
-          transform: translateX(var(--sun16));
 }
 .d-tooltip__arrow--right-top::after,
 .d-tooltip__arrow--right-center::after,
@@ -2489,8 +2519,6 @@ legend .d-label {
 .d-tooltip__arrow--left-center,
 .d-tooltip__arrow--left-bottom {
   left: calc(100% + var(--su12));
-  -webkit-transform: translateX(var(--su16));
-          transform: translateX(var(--su16));
 }
 .d-tooltip__arrow--left-top::after,
 .d-tooltip__arrow--left-center::after,
@@ -35342,42 +35370,6 @@ body.theme-dark .d\:d-bgg-to-0 {
   font-weight: 700;
   src: url("../fonts/RobotoMono-Bold.woff2") format("woff2");
 }
-@font-face {
-  font-family: "Archivo";
-  font-style: "normal";
-  font-weight: 400;
-  src: url("../fonts/Archivo-Regular.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Archivo";
-  font-style: "normal";
-  font-weight: 600;
-  src: url("../fonts/Archivo-SemiBold.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Archivo";
-  font-style: "normal";
-  font-weight: 700;
-  src: url("../fonts/Archivo-Bold.woff2") format("woff2");
-}
-@font-face {
-  font-family: "ArchivoSemiExpanded";
-  font-style: "normal";
-  font-weight: 500;
-  src: url("../fonts/ArchivoSemiExpanded-Medium.woff2") format("woff2");
-}
-@font-face {
-  font-family: "ArchivoSemiExpanded";
-  font-style: "normal";
-  font-weight: 600;
-  src: url("../fonts/ArchivoSemiExpanded-SemiBold.woff2") format("woff2");
-}
-@font-face {
-  font-family: "ArchivoExpanded";
-  font-style: "normal";
-  font-weight: 600;
-  src: url("../fonts/ArchivoExpanded-SemiBold.woff2") format("woff2");
-}
 .d-ff-custom {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
 }
@@ -35386,15 +35378,6 @@ body.theme-dark .d\:d-bgg-to-0 {
 }
 .d-ff-mono {
   font-family: "RobotoMono", "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace !important;
-}
-.d-ff-marketing {
-  font-family: "Archivo", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
-}
-.d-ff-marketing-semi-expanded {
-  font-family: "ArchivoSemiExpanded", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
-}
-.d-ff-marketing-expanded {
-  font-family: "ArchivoExpanded", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
 }
 .d-ff-unset {
   font-family: unset !important;
@@ -35509,9 +35492,6 @@ ul {
 }
 .d-fw-medium {
   font-weight: var(--fw-medium) !important;
-}
-.d-fw-semibold {
-  font-weight: var(--fw-semibold) !important;
 }
 .d-fw-bold {
   font-weight: var(--fw-bold) !important;
@@ -35729,6 +35709,11 @@ ul {
   overflow: hidden !important;
   text-overflow: ellipsis !important;
   white-space: nowrap !important;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 html,
 body {
@@ -36141,9 +36126,6 @@ body {
   --ff-custom: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --ff-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --ff-mono: "RobotoMono", "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-  --ff-marketing: "Archivo", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  --ff-marketing-semi-expanded: "ArchivoSemiExpanded", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  --ff-marketing-expanded: "ArchivoExpanded", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --fs10: 1rem;
   --fs11: 1.1rem;
   --fs12: 1.2rem;
@@ -36177,7 +36159,6 @@ body {
   --fw-light: 300;
   --fw-normal: 400;
   --fw-medium: 500;
-  --fw-semibold: 600;
   --fw-bold: 700;
   --fw-black: 900;
   --ls-content: "\1F44D";
