@@ -58,7 +58,6 @@ $(document).ready(function() {
             topNav.attr('style','height: 11.2rem !important; padding-top: 4.8rem; max-height: 11.2rem !important;');
             sideNav.attr('style','top: 6.4rem!important');
             dialtone5Banner.addClass('d-d-none');
-            console.log('here');
         }
 
         if (important.is(':checked')) {
