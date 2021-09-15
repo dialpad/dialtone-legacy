@@ -22,6 +22,7 @@ $(document).ready(function() {
     var pinned = $('.js-banner-pinned');
     var iconTypes = $('.js-banner-example-icon-base, .js-banner-example-icon-info, .js-banner-example-icon-warning, .js-banner-example-icon-error, .js-banner-example-icon-success');
     var classTypes = ("d-banner--info d-banner--warning d-banner--error d-banner--success d-banner--important d-banner--pinned");
+    var dialtone5Banner = $('.js-dialtone5-banner');
 
     launchBtn.on('click', function(e) {
         var style = selectMenu.find(':selected').data('class');
@@ -55,6 +56,9 @@ $(document).ready(function() {
             banner.addClass('d-banner--pinned');
             actions.addClass('d-d-none');
             topNav.attr('style','height: 11.2rem !important; padding-top: 4.8rem; max-height: 11.2rem !important;');
+            sideNav.attr('style','top: 6.4rem!important');
+            dialtone5Banner.addClass('d-d-none');
+            console.log('here');
         }
 
         if (important.is(':checked')) {
@@ -82,9 +86,9 @@ $(document).ready(function() {
 
     function closeBanner() {
       var style = selectMenu.find(':selected').data('class');
-      var iconStyle = "js-banner-example-icon-" + style;
+      var iconStyle = $("js-banner-example-icon-" + style);
 
-      sideNav.attr('style','');
+      sideNav.attr('style','top: 6.4rem!important');
       topNav.attr('style','');
       tableOfContents.attr('style','');
       content.attr('style','');
@@ -93,6 +97,7 @@ $(document).ready(function() {
       banner.attr('aria-hidden', 'true').removeClass(classTypes);
       icon.addClass('d-d-none');
       iconStyle.addClass('d-d-none');
+      dialtone5Banner.removeClass('d-d-none');
     }
     closeBtn.add(removeBtn).on('click', function(e) {
       e.stopPropagation();
@@ -100,4 +105,16 @@ $(document).ready(function() {
 
       closeBanner();
     });
+
+  // Position the un-pinned banner
+  $(window).scroll( () => {
+    var windowTop = $(window).scrollTop();
+
+    if (windowTop > 50) {
+      banner.attr('style', '--topbar-height: 6.4rem');
+    } else {
+      var remSize = 11.2 - windowTop/10;
+      banner.attr('style', `--topbar-height: ${remSize}rem`);
+    }
+  })
 });
