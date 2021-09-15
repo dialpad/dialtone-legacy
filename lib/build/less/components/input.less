@@ -1,0 +1,278 @@
+//
+//  DIALTONE
+//  COMPONENTS: INPUTS
+//
+//  These are input classes for Dialpad's design system Dialtone.
+//  For further documentation of these and other classes,
+//  visit https://dialpad.design/components/inputs
+//
+//  TABLE OF CONTENTS
+//  • VARIABLES
+//  • INPUTS & TEXTAREAS
+//    - Base Style
+//    - Validation States
+//    - Sizes
+//  • INPUT ICONS
+//
+//  ============================================================================
+//  Inputs CSS Vars
+//  ----------------------------------------------------------------------------
+@inputs-icon-spacing--xs: calc(var(--su4) + @icon12 + var(--su8));
+@inputs-icon-spacing--sm: calc(var(--su4) + @icon14 + var(--su8));
+@inputs-icon-spacing:     calc(var(--su4) + @icon16 + var(--su8));
+@inputs-icon-spacing--lg: calc(var(--su4) + @icon20 + var(--su8));
+@inputs-icon-spacing--xl: calc(var(--su4) + @icon24 + var(--su8));
+
+//  $  INPUTS
+//  ----------------------------------------------------------------------------
+.d-input,
+.d-textarea {
+    //  Component CSS Vars
+    //  ------------------------------------------------------------------------
+    --input--focus-bc:     var(--primary-color);
+    --input--bc:           var(--black-500);
+    --input--bgc:          var(--white);
+    --input--fc:           var(--black-800);
+
+    box-sizing: border-box;
+
+    position: relative;
+    display: inline-flex;
+    flex: 1 0%;
+    margin-top: var(--su6);
+    padding:    0.7rem var(--su8);
+    min-width: 0;
+    width: 100%;
+    outline: none;
+
+    color: var(--input--fc);
+    background-color: var(--input--bgc);
+    border: 1px solid var(--input--bc);
+    border-radius: var(--base--corner-radius);
+    box-shadow: none;
+
+    font-weight: inherit;
+    font-size: var(--fs16);
+    font-family: inherit;
+    line-height: var(--lh4);
+
+    transition-timing-function: var(--ttf-in-out);
+    transition-duration: 100ms;
+    transition-property: border, box-shadow, background-color;
+
+    //  --  Placeholder copy
+    &::placeholder {
+        color: var(--black-300);
+    }
+    //  --  Remove input EDGE additions
+    &::-ms-clear {
+        display: none;
+    }
+    //  --  FOCUS
+    &:focus {
+        --input--bc: var(--input--focus-bc);
+
+        box-shadow: var(--bs-focus-ring);
+        outline: 0;
+    }
+    //  --  DISABLED / READ-ONLY
+    &[disabled],
+    &[read-only] {
+        --input--bc:           var(--black-500);
+        --input--bgc:          var(--black-200);
+
+        box-shadow: none;
+
+        //  --  Placeholder copy
+        &::placeholder {
+            color: var(--black-400);
+        }
+    }
+    //  --  DISABLED
+    &[disabled] {
+        cursor: not-allowed;
+    }
+}
+
+//  $$  SIZES
+//  ----------------------------------------------------------------------------
+.d-input--xs {
+    .input-button-xs();
+}
+.d-input--sm {
+    .input-button-sm();
+}
+.d-input--lg {
+    .input-button-lg();
+}
+.d-input--xl {
+    .input-button-xl();
+}
+
+
+//  ============================================================================
+//  $  TEXTAREAS
+//  ----------------------------------------------------------------------------
+.d-textarea {
+    min-height: 8rem;
+    vertical-align: top;
+}
+
+//  $$  SIZES
+//  ----------------------------------------------------------------------------
+.d-textarea--xs {
+    .input-button-xs();
+    min-height:  4rem;
+}
+.d-textarea--sm {
+    .input-button-sm();
+    min-height: 4.8rem;
+}
+.d-textarea--lg {
+    .input-button-lg();
+    min-height: 9.2rem;
+}
+.d-textarea--xl {
+    .input-button-xl();
+    min-height: 10rem;
+}
+
+//  $$  VALIDATION STATES
+//  ----------------------------------------------------------------------------
+.d-input--warning,
+.d-textarea--warning {
+    --input--bc:        var(--warning-color);
+    --input--focus-bc:  var(--warning-color);
+
+    &:focus {
+        box-shadow: var(--bs-focus-ring-warning);
+    }
+}
+.d-input--error,
+.d-textarea--error {
+    --input--bc:        var(--error-color);
+    --input--focus-bc:  var(--error-color);
+
+    &:focus {
+        box-shadow: var(--bs-focus-ring-error);
+    }
+}
+.d-input--success,
+.d-textarea--success {
+    --input--bc:        var(--success-color);
+    --input--focus-bc:  var(--success-color);
+
+    &:focus {
+        box-shadow: var(--bs-focus-ring-success);
+    }
+}
+
+//  ============================================================================
+//  $  INPUT ICONS
+//  ----------------------------------------------------------------------------
+.d-input-icon {
+    //  Component CSS Vars
+    //  ------------------------------------------------------------------------
+    --input-icon-size: @icon16;
+
+    position: absolute;
+    z-index:  var(--zi-base1);
+    margin: 0;
+    margin-top: 1.6rem;
+    line-height: 0;
+
+    height: var(--input-icon-size);
+    width:  var(--input-icon-size);
+
+    svg {
+        height: var(--input-icon-size);
+        width:  var(--input-icon-size);
+    }
+}
+
+//  $$ POSITIONS
+//  ----------------------------------------------------------------------------
+.d-input-icon--left {
+    left: var(--su8);
+
+    // Update padding for d-input, d-textarea if d-input-icon--left is present
+    & ~ .d-input,
+    & ~ .d-textarea {
+        padding-left: @inputs-icon-spacing;
+    }
+}
+
+.d-input-icon--right {
+    right: var(--su8);
+
+    // Update padding for d-input if d-input-icon--right is present
+    & ~ .d-input {
+        padding-right: @inputs-icon-spacing;
+    }
+}
+
+//  $$ SIZES
+//  ----------------------------------------------------------------------------
+.d-input-icon--xs {
+    --input-icon-size: @icon12;
+    margin-top:        1.4rem;
+
+    // Update padding for d-input, d-textarea if d-input-icon--left is present
+    &.d-input-icon--left ~ .d-input,
+    &.d-input-icon--left ~ .d-textarea {
+        padding-left: @inputs-icon-spacing--xs;
+    }
+
+    // Update padding for d-input if d-input-icon--right is present
+    &.d-input-icon--right ~ .d-input {
+        padding-right: @inputs-icon-spacing--xs;
+    }
+}
+
+.d-input-icon--sm {
+    --input-icon-size: @icon14;
+    margin-top:        1.5rem;
+
+    // Update padding for d-input, d-textarea if d-input-icon--left is present
+    &.d-input-icon--left ~ .d-input,
+    &.d-input-icon--left ~ .d-textarea {
+        padding-left: @inputs-icon-spacing--sm;
+    }
+
+    // Update padding for d-input if d-input-icon--right is present
+    &.d-input-icon--right ~ .d-input {
+        padding-right: @inputs-icon-spacing--sm;
+    }
+}
+
+.d-input-icon--lg {
+    --input-icon-size: @icon20;
+    margin-top:        2.0rem;
+
+    // Update padding for d-input, d-textarea if d-input-icon--left is present
+    &.d-input-icon--left ~ .d-input,
+    &.d-input-icon--left ~ .d-textarea {
+        padding-left: @inputs-icon-spacing--lg;
+    }
+
+    // Update padding for d-input if d-input-icon--right is present
+    &.d-input-icon--right ~ .d-input {
+        padding-right: @inputs-icon-spacing--lg;
+    }
+}
+
+.d-input-icon--xl {
+    --input-icon-size: @icon24;
+    margin-top:        2.2rem;
+
+    // Update padding for d-input, d-textarea if d-input-icon--left is present
+    &.d-input-icon--left ~ .d-input,
+    &.d-input-icon--left ~ .d-textarea {
+        padding-left: @inputs-icon-spacing--xl;
+    }
+
+    // Update padding for d-input if d-input-icon--right is present
+    &.d-input-icon--right ~ .d-input {
+        padding-right: @inputs-icon-spacing--xl;
+    }
+}

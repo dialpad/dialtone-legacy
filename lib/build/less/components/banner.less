@@ -1,0 +1,137 @@
+//
+//  DIALTONE
+//  COMPONENTS: BANNERS
+//
+//  These are the styles for banners, which are a type of notice used
+//  to alert users about important information relevant to them.
+//  For further documentation of these styles, please visit:
+//  https://dialpad.design/components/banners
+//
+//  ============================================================================
+//  $   BASE WRAPPER
+//  ----------------------------------------------------------------------------
+.d-banner {
+    //  Component CSS Vars
+    //  ------------------------------------------------------------------------
+    --banner--bgc:          var(--black-025);
+    --banner--fc:           var(--fc-dark);
+
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: var(--zi-navigation-fixed);
+    width: 100%;
+    min-height: var(--su48);
+
+    box-sizing: border-box;
+    box-shadow: none;
+    border-radius: 0;
+
+    color: var(--banner--fc);
+    background-color: var(--banner--bgc);
+
+    font-size: var(--fs14);
+    line-height: var(--lh6);
+
+    // If you want to hide and reveal the banner
+    &[aria-hidden="true"] {
+        --topbar-height: var(--sun64);
+        visibility: hidden;
+        opacity: 0;
+    }
+    &[aria-hidden="false"] {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    //  If you want to put the banner above the topbar
+    &.d-banner--pinned {
+        z-index: calc(~"var(--zi-navigation-fixed) + 1");
+        transform: translate3d(0,0,0);
+    }
+}
+
+.d-banner--transform {
+    transform: translate3d(0,var(--topbar-height),0);
+}
+
+//  ============================================================================
+//  $   CONTENT CONTAINER
+//  ----------------------------------------------------------------------------
+.d-banner__dialog {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    width: 100%;
+    min-height: 100%;
+    max-width: 128rem;
+
+    margin: 0 auto;
+    padding: var(--su8);
+
+    .d-notice__content {
+        flex-direction: row;
+        align-items: center;
+
+        .d-flow4();
+    }
+}
+
+//  ============================================================================
+//  $   STYLES
+//  ============================================================================
+//  $$  DEFAULT IMPORTANT
+//  ----------------------------------------------------------------------------
+.d-banner.d-banner--important {
+    --banner--bgc:          var(--black-800);
+    --banner--fc:           var(--black-025);
+}
+
+//  $$  ERROR
+//  ----------------------------------------------------------------------------
+.d-banner--error {
+    --banner--bgc:          var(--red-100);
+    --banner--fc:           var(--red-700);
+
+    &.d-banner--important {
+        --banner--bgc:          var(--red-500);
+        --banner--fc:           var(--white);
+    }
+}
+
+//  $$  INFO
+//  ----------------------------------------------------------------------------
+.d-banner--info {
+    --banner--bgc:          var(--purple-100);
+
+    &.d-banner--important {
+        --banner--bgc:          var(--purple-500);
+        --banner--fc:           var(--white);
+    }
+}
+
+//  $$  SUCCESS
+//  ----------------------------------------------------------------------------
+.d-banner--success {
+    --banner--bgc:          var(--green-100);
+    --banner--fc:           var(--green-700);
+
+    &.d-banner--important {
+        --banner--bgc:          var(--green-300);
+        --banner--fc:           var(--green-700);
+    }
+}
+
+//  $$  WARNING
+//  ----------------------------------------------------------------------------
+.d-banner--warning {
+    --banner--bgc:          var(--yellow-100);
+
+    &.d-banner--important {
+        --banner--bgc:          var(--yellow-400);
+        --banner--fc:           var(--fc-dark);
+    }
+}

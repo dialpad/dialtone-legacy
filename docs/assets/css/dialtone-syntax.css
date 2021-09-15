@@ -1,0 +1,183 @@
+/* PrismJS 1.20.0
+https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript+less&plugins=line-numbers+command-line */
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  margin: 0;
+  border-radius: 0.7rem;
+  background: none;
+  color: var(--black-200);
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-size: 1.2rem;
+  font-size: var(--fs12);
+  line-height: 1.66666667;
+  text-align: left;
+  white-space: pre;
+  word-break: normal;
+  word-spacing: normal;
+  word-wrap: normal;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection, code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+  background: inherit;
+  text-shadow: none;
+}
+pre[class*="language-"]::selection,
+pre[class*="language-"] ::selection,
+code[class*="language-"]::selection,
+code[class*="language-"] ::selection {
+  background: inherit;
+  text-shadow: none;
+}
+@media print {
+  code[class*="language-"],
+  pre[class*="language-"] {
+    text-shadow: none;
+  }
+}
+/* Code blocks */
+pre[class*="language-"] {
+  overflow: auto;
+  padding: 1em;
+}
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  background: inherir;
+}
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: 0.1em;
+  white-space: normal;
+}
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: var(--black-300);
+}
+.token.punctuation {
+  color: var(--purple-100);
+}
+.token.namespace {
+  opacity: 0.7;
+}
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: var(--purple-200);
+}
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: var(--teal-200);
+}
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: var(--yellow-500);
+}
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: var(--green-200);
+}
+.token.function,
+.token.class-name {
+  color: var(--red-300);
+}
+.token.regex,
+.token.important,
+.token.variable {
+  color: var(--yellow-400);
+}
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+.token.entity {
+  cursor: help;
+}
+pre[class*="language-"].line-numbers {
+  counter-reset: linenumber;
+  position: relative;
+  padding-left: 3.8em;
+}
+pre[class*="language-"].line-numbers > code {
+  position: relative;
+  white-space: inherit;
+}
+.line-numbers .line-numbers-rows {
+  position: absolute;
+  top: 0;
+  left: -3.8em;
+  width: 3em;
+  border-right: 1px solid var(--black-300);
+  font-size: 100%;
+  /* works for line-numbers below 1000 lines */
+  letter-spacing: -1px;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.line-numbers-rows > span {
+  counter-increment: linenumber;
+  display: block;
+}
+.line-numbers-rows > span:before {
+  content: counter(linenumber);
+  display: block;
+  padding-right: 0.8em;
+  color: var(--black-300);
+  text-align: right;
+}
+.command-line-prompt {
+  display: block;
+  float: left;
+  margin-right: 1em;
+  border-right: 1px solid var(--black-300);
+  font-size: 100%;
+  letter-spacing: -1px;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.command-line-prompt > span:before {
+  content: ' ';
+  display: block;
+  padding-right: 0.8em;
+  color: var(--black-300);
+}
+.command-line-prompt > span[data-user]:before {
+  content: "[" attr(data-user) "@" attr(data-host) "] $";
+}
+.command-line-prompt > span[data-user="root"]:before {
+  content: "[" attr(data-user) "@" attr(data-host) "] #";
+}
+.command-line-prompt > span[data-prompt]:before {
+  content: attr(data-prompt);
+}

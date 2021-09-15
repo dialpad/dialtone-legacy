@@ -11,7 +11,4 @@ Provide a description of what this pull request is adding, updating, extending, 
  - [ ] Provide a description what is being changed, extended, or removed.
  - [ ] Link to any issue(s) this request is resolving.
  - [ ] Ensure no private Dialpad links or info are in the code or pull request description (Dialtone is a public repo!).
- - [ ] Request a review from Drew Chandler, Joshua Hynes, or Ted Goas.
-
-## Obligatory GIF
-![](path/to/gif)
+ - [ ] Request a review from Joshua Hynes, Ted Goas, or David Becher.

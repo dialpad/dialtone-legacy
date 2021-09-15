@@ -1,0 +1,113 @@
+---
+layout: page
+title: Divide Color
+description: Utilities for controlling the border color between an element's child items.
+---
+<section class="d-stack16">
+    {% header "h2", "Classes" %}
+    <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
+        <table class="d-table">
+            <thead>
+                <tr>
+                    <th scope="col" class="d-w25p">Class</th>
+                    <th scope="col">Output</th>
+                </tr>
+            </thead>
+            {% for color in colors.colors %}
+            {% assign c = color.color %}
+            <tbody>
+                {% for s in color.stops %}
+                {% assign stop = s.stop %}
+                {% assign copy = s.copy %}
+                <tr>
+                    <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-divide-{{ c }}-{{ stop }}</th>
+                    <td>
+                        <div class="d-d-flex d-jc-space-between d-ai-center">
+                            <div class="d-fl-grow1 d-ff-mono d-fc-orange d-fs12">
+                                --dco: 100%;<br/>
+                                border-color: hsla(var(--{{ c }}-{{ stop }}-h) var(--{{ c }}-{{ stop }}-s) var(--{{ c }}-{{ stop }}-l) / var(--dco)) !important;
+                            </div>
+                            <div class="d-fl-shrink0 d-fl-center d-m4 d-ml16 d-h64 d-w64">
+                                <div class="d-w100p d-h0 d-bt d-btw2 d-bc-{{ c }}-{{ stop }}"></div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            {% endfor %}
+        </table>
+    </div>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Vertical Dividers" %}
+        {% paragraph %}Use {% code %}d-divide-y{n}{% endcode %} to create a divider between an element's child items.{% endparagraph %}
+    </header>
+    <aside class="d-bar8 d-of-hidden">
+        <header class="d-fl-center d-fd-column d-p24 d-bgc-green-100 d-bgo50 d-w100p d-hmn102">
+            <div class="d-w100p d-d-flex d-fd-column d-divide-y d-divide-green-400">
+                <div class="d-fl-center d-w100p d-h64 d-p16 d-fc-green-600 d-fs24 d-fw-bold">1</div>
+                <div class="d-fl-center d-w100p d-h64 d-p16 d-fc-green-600 d-fs24 d-fw-bold">2</div>
+                <div class="d-fl-center d-w100p d-h64 d-p16 d-fc-green-600 d-fs24 d-fw-bold">3</div>
+            </div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+{% highlight html linenos %}
+<div class="d-divide-y d-divide-purple-400">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+</div>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Horizontal Dividers" %}
+        {% paragraph %}Use {% code %}d-divide-x{n}{% endcode %} to create a divider between an element's child items.{% endparagraph %}
+    </header>
+    <aside class="d-bar8 d-of-hidden">
+        <header class="d-fl-center d-fd-column d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn102">
+            <div class="d-w100p d-fl-col3 d-divide-x d-divide-purple-400">
+                <div class="d-fl-center d-p16 d-fc-purple-500 d-fs24 d-fw-bold">1</div>
+                <div class="d-fl-center d-p16 d-fc-purple-500 d-fs24 d-fw-bold">2</div>
+                <div class="d-fl-center d-p16 d-fc-purple-500 d-fs24 d-fw-bold">3</div>
+            </div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+{% highlight html linenos %}
+<div class="d-divide-x d-divide-purple-400">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+</div>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Changing opacities" %}
+        {% paragraph %}Use {% code %}d-dco{n}{% endcode %} to change a divider opacity value.{% endparagraph %}
+    </header>
+    <aside class="d-bar8 d-of-hidden">
+        <header class="d-fl-center d-fd-column d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmn102">
+            <div class="d-w100p d-d-flex d-fd-column d-divide-y d-divide-pink-400 d-dco75">
+                <div class="d-fl-center d-p16 d-fc-pink-600 d-fs24 d-fw-bold">1</div>
+                <div class="d-fl-center d-p16 d-fc-pink-600 d-fs24 d-fw-bold">2</div>
+                <div class="d-fl-center d-p16 d-fc-pink-600 d-fs24 d-fw-bold">3</div>
+            </div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+{% highlight html linenos %}
+<div class="d-divide-y1 d-divide-pink-400 d-dco75">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+</div>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>

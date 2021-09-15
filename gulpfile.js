@@ -9,7 +9,8 @@ var settings = {
     styles: true,       // Turn on/off style tasks
     svgs: true,         // Turn on/off SVG tasks
     patterns: true,     // Turn on/off SVG Pattern tasks
-    favicons: true,     // Turn on/off Favicons tasks
+    fonts: true,        // Turn on/off webfonts
+    favicons: false,    // Turn on/off Favicons tasks
     sync: true,         // Turn on/off sync tasks
     build: true,        // Turn on/off build tasks
     watch: true         // Turn on/off watch tasks
@@ -48,6 +49,9 @@ var tap = settings.svgs ? require('gulp-tap') : null;
 //  @@ FAVICONS
 // var favicon = settings.favicons ? require('gulp-favicons') : null;
 
+//  @@ FONTS
+var ttf2woff2 = settings.fonts ? require ('gulp-ttf2woff2') : null;
+
 //  @@ BUILD
 var cp = settings.build ? require('child_process') : null;
 var git = settings.build ? require('gulp-git') : null;
@@ -58,16 +62,17 @@ var git = settings.build ? require('gulp-git') : null;
 //     Where everything is in this project
 //  ================================================================================
 var paths = {
-    versionFile: './docs/_includes/version.html',
     clean: {
         libCss: './lib/dist/css/**/*',
         libSvg: './lib/dist/svg/**/*',
         libVue: './lib/dist/vue/**/*',
         libFavicons: './lib/dist/favicons/**/*',
+        libFonts: './dist/fonts/**/*',
         docs: './docs/_site/**/*',
         docsCache: './docs/.jekyll-cache/**/*',
         docsIcons: './docs/_includes/icons/**/*',
-        docsFavicons: './docs/assets/images/favicons/**/*'
+        docsFavicons: './docs/assets/images/favicons/**/*',
+        docsFonts: './docs/assets/fonts/**/*'
     },
     scripts: {
         input: './lib/build/js/',
@@ -76,7 +81,7 @@ var paths = {
     styles: {
         inputLib: './lib/build/less/dialtone.less',
         outputLib: './lib/dist/css/',
-        inputDocs: './docs/assets/less/*.less',
+        inputDocs: './docs/assets/less/dialtone-docs.less',
         outputDocs: './docs/assets/css/',
     },
     svgs: {
@@ -112,6 +117,11 @@ var paths = {
         dpStaging: 'favicon-staging__512.png',
         dpStagingNotify: 'favicon-staging-notification__512.png',
         uc: 'favicon-uberconference__512.png',
+    },
+    fonts: {
+        input: './lib/build/fonts/**/*.ttf',
+        outputLib: './lib/dist/fonts/',
+        outputDocs: './docs/assets/fonts/'
     },
     mobile: {
         output: './lib/dist/ios/'
@@ -190,6 +200,14 @@ const cleanFavicons = () => {
     ]);
 }
 
+//  --  Clean out Fonts
+const cleanFonts = () => {
+    return cleanUp([
+        paths.clean.libFonts,
+        paths.clean.docsFonts
+    ]);
+}
+
 //  ================================================================================
 //  @@  COMPILE CSS
 //      Lint, minify, and concatenate style files
@@ -248,8 +266,6 @@ var buildSystemSVGs = function(done) {
     return src(paths.svgs.sysInput)
         .pipe(replace(' fill="none"', ''))
         .pipe(replace(' fill="#000"', ''))
-        .pipe(replace(' fill="#010101"', ''))
-        .pipe(replace(' fill="black"', ''))
         .pipe(replace(' fill="#141721"', ''))
         .pipe(replace('<svg width="24" height="24"', '<svg '))
         .pipe(replace('<svg', function(match) {
@@ -478,6 +494,21 @@ var buildPatternSVGs = function(done) {
 // //  --------------------------------------------------------------------------------
 // const faviconDialtone = () => { return generateFavicons('docs', paths.favicons.docsIcon, paths.favicons.docsOutput); }
 
+//  ================================================================================
+//  @@  FONTS
+//  ================================================================================
+var webfonts = function(done) {
+    //  Make sure this feature is activated before running
+    if (!settings.fonts) return done();
+
+    return src(paths.fonts.input)
+        .pipe(ttf2woff2())
+        .pipe(dest(paths.fonts.outputLib))
+        .pipe(dest(paths.fonts.outputDocs));
+
+    done();
+}
+
 
 //  ================================================================================
 //  @@  BUILD SITE
@@ -556,25 +587,6 @@ var watchFiles = function(done) {
 };
 
 //  ================================================================================
-//  @@  UPDATE VERSION
-//  ================================================================================
-var docVersion = function(done) {
-    fs.writeFileSync(paths.versionFile, 'v' + package.version);
-
-    done();
-}
-
-var commitDocVersion = function(done) {
-    return src(package.version, { allowEmpty: true })
-        .pipe(git.add({
-            args: '-A'
-        }))
-        .pipe(git.commit(() => 'Bump Dialtone to v' + package.version));
-
-    done();
-}
-
-//  ================================================================================
 //  @   EXPORT TASKS
 //  ================================================================================
 //  --  BUILD OUT THE SITE BUT DON'T START THE SERVER
@@ -600,10 +612,10 @@ exports.svg = series(
     buildPatternSVGs
 );
 
-//  --  UPDATES DIALTONE VERSION
-exports.version = series(
-    docVersion,
-    commitDocVersion
+//  --  CONVERT WEBFONTS
+exports.fonts = series(
+    cleanFonts,
+    webfonts
 );
 
 //  --  GENERATES ALL DIALPAD / UC FAVICONS

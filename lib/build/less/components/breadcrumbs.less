@@ -34,47 +34,28 @@
     .d-breadcrumbs__item {
         position: relative;
         margin: 0;
-        margin-left: @spacing6;
+        margin-left: var(--su6);
         padding: 0;
         list-style: none;
 
         //  Provide a forward slash with each element except when it's the last one.
         &:not(:last-of-type) {
-            margin-right: @spacing12;
+            margin-right: var(--su12);
 
             &:before {
                 position: absolute;
-                right: -(@spacing12);
-                margin-top: @spacing1;
+                right: var(--sun12);
+                margin-top: var(--su1);
+                color: var(--muted-color);
                 content: "/";
             }
         }
     }
 
-    //  --  BREADCRUMB LINKS
-    .d-breadcrumbs__link {
-        padding: @spacing1;
-
-        font-family: inherit;
-        font-weight: inherit;
-        font-size: inherit;
-        line-height: inherit;
-        color: var(--slate-lightest);
-        text-decoration: underline;
-
-        &:hover {
-            color: var(--primary-color);
-        }
-    }
-
     //  --  SELECTED STATE (CURRENT PAGE)
-    .d-breadcrumbs__item--selected .d-breadcrumbs__link {
+    .d-breadcrumbs__item--selected .d-link {
         text-decoration: none;
-        color: var(--slate);
-
-        &:hover {
-            color: inherit;
-        }
+        cursor: default;
     }
 }
 
@@ -85,20 +66,13 @@
 .d-breadcrumbs.d-breadcrumbs--inverted {
     //  --  ITEM
     .d-breadcrumbs__item:not(:last-of-type):before {
-        color: var(--ash-darkest);
-    }
-
-    //  --  LINK
-    .d-breadcrumbs__link {
-        color: var(--ash-darkest);
-
-        &:hover {
-            color: hsl(var(--primary-color--h) var(--primary-color--s) calc(var(--primary-color--l) + 30%));
-        }
+        color: var(--inverted-color);
     }
 
     //  --  SELECTED STATE (CURRENT PAGE)
-    .d-breadcrumbs__item--selected .d-breadcrumbs__link {
-        color: var(--ash);
+    .d-breadcrumbs__item--selected .d-link {
+        &:hover {
+            color: var(--inverted-color);
+        }
     }
 }

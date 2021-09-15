@@ -1,0 +1,123 @@
+---
+layout: page
+title: Width
+description: Utilities to control an element's width.
+---
+<section class="d-stack16">
+    {% header "h2", "Classes" %}
+    <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
+        <table class="d-table">
+            <thead>
+                <tr>
+                    <th scope="col" class="d-w30p">Class</th>
+                    <th scope="col">Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% assign percentages = width-height.percentage | split: ", " %}
+                {% for i in percentages %}
+                <tr>
+                    <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-w{{ i }}p</th>
+                    <td class="d-ff-mono d-fc-orange-500 d-fs12">width: {{ i }}% !important;</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            <tbody>
+                {% assign fixed = width-height.fixed | split: ", " %}
+                {% for i in fixed %}
+                <tr>
+                    <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-w{{ i }}</th>
+                    <td class="d-ff-mono d-fc-orange-500 d-fs12">width: {{ i }}px !important;</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            <tbody>
+                <tr>
+                    <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-w100vw</th>
+                    <td class="d-ff-mono d-fc-orange-500 d-fs12">width: 100vh !important;</td>
+                </tr>
+                {% assign fixed = width-height.other | split: ", " %}
+                {% for i in fixed %}
+                <tr>
+                    <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-w-{{ i }}</th>
+                    <td class="d-ff-mono d-fc-orange-500 d-fs12">width: {{ i }} !important;</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Percentages" %}
+        {% paragraph %}Use {% code %}d-w{n}p{% endcode %} to set a percentage width for an element.{% endparagraph %}
+    </header>
+    <aside class="d-bar8 d-of-hidden">
+        <header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn216 d-stack16">
+            <div class="d-fl-center d-py16 d-px8 d-h64 d-w40p d-bgc-purple-300 d-bar4 d-fs24 d-fw-bold d-ta-center">1</div>
+            <div class="d-fl-center d-py16 d-px8 d-h64 d-w60p d-bgc-purple-300 d-bar4 d-fs24 d-fw-bold d-ta-center">2</div>
+            <div class="d-fl-center d-py16 d-px8 d-h64 d-w80p d-bgc-purple-300 d-bar4 d-fs24 d-fw-bold d-ta-center">3</div>
+            <div class="d-fl-center d-py16 d-px8 d-h64 d-w100p d-bgc-purple-300 d-bar4 d-fs24 d-fw-bold d-ta-center">4</div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+{% highlight html linenos %}
+<div class="d-w40p">1</div>
+<div class="d-w60p">2</div>
+<div class="d-w80p">3</div>
+<div class="d-w100p">4</div>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Fixed" %}
+        {% paragraph %}Use {% code %}d-w{n}{% endcode %} to set a fixed width for an element.{% endparagraph %}
+    </header>
+    <aside class="d-bar8 d-of-hidden">
+        <header class="d-d-flex d-jc-center d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmn102 d-flow16 d-of-y-scroll">
+            <div class="d-fl-center d-py16 d-px8 d-h64 d-w64 d-bgc-pink-300 d-bar4 d-fs24 d-fw-bold d-ta-center">1</div>
+            <div class="d-fl-center d-py16 d-px8 d-h64 d-w96 d-bgc-pink-300 d-bar4 d-fs24 d-fw-bold d-ta-center">2</div>
+            <div class="d-fl-center d-py16 d-px8 d-h64 d-w332 d-bgc-pink-300 d-bar4 d-fs24 d-fw-bold d-ta-center">3</div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+{% highlight html linenos %}
+<div class="d-w64">1</div>
+<div class="d-w96">2</div>
+<div class="d-w332">3</div>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Screen" %}
+        {% paragraph %}Use {% code %}d-w100vh{% endcode %} to have an element cover the user's viewport.{% endparagraph %}
+    </header>
+    <aside class="d-bar8 d-of-hidden">
+        <header class="d-ps-relative d-d-flex d-jc-center d-p24 d-bgc-yellow-100 d-bgo50 d-w100p d-h3 d-stack16 d-of-y-scroll">
+            <div class="d-fl-center d-py16 d-px8 d-w100vw d-h100vh d-bgc-yellow-400 d-bar4 d-fs24 d-fw-bold d-ta-center">Viewport</div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+{% highlight html linenos %}
+<div class="d-w100vw">...</div>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Auto" %}
+        {% paragraph %}Use {% code %}d-w-auto{% endcode %} have the browser calculate and select a width.{% endparagraph %}
+    </header>
+    <aside class="d-bar8 d-of-hidden">
+        <header class="d-ps-relative d-d-flex d-jc-center d-p24 d-bgc-orange-100 d-bgo50 d-w100p d-hmn102 d-stack16">
+            <div class="d-fl-center d-py16 d-px8 d-h72 d-w-auto d-bgc-orange-400 d-bar4 d-fs24 d-fw-bold d-ta-center">Auto</div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+{% highlight html linenos %}
+<div class="d-w-auto">...</div>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>

@@ -1,0 +1,66 @@
+---
+layout: page
+title: Badge
+description: A badge is a compact UI element that provides brief, descriptive information about an element. It is terse, ideally one word.
+storybook-url: https://vue.dialpad.design/?path=/story/elements-badge--default
+---
+<section class="d-stack16">
+  {% header "h2", "Classes" %}
+  <table class="d-table">
+    <thead>
+      <tr>
+        <th scope="col" class="d-w40p">Class</th>
+        <th scope="col" class="d-w30p">Applies to</th>
+        <th scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in badge.classes %}
+        {% assign class = i.class %}
+        {% assign apply = i.applies %}
+        {% assign desc = i.description %}
+        <tr>
+          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.{{ class }}</th>
+          <td class="d-ff-mono d-fc-orange d-fs12">{% if apply != "N/A" %}<span class="code-example--inline">.{% endif %}{{ apply }}{% if apply != "N/A" %}</span>{% endif %}</td>
+          <td class="d-fs12">{{ desc }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</section>
+<section class="d-stack16">
+  {% header "h2", "Examples" %}
+  {% codeWell %}
+    {% codeWellHeader "white" %}
+    <div>
+      <span class="d-badge d-mr8 d-mb8">Badge</span>
+      {% for i in badge.classes %}
+        {% assign class = i.class %}
+        {% assign apply = i.applies %}
+        {% if apply == "d-badge" %}
+            <span class="d-badge {{ class }} d-mr8 d-mb8">Badge</span>
+        {% endif %}
+      {% endfor %}
+    </div>
+    {% endcodeWellHeader %}
+    {% codeWellFooter %}
+      {% highlight html linenos %}
+<span class="d-badge">...</span>
+<span class="d-badge d-badge--black-700">...</span>
+<span class="d-badge d-badge--green-400">...</span>
+<span class="d-badge d-badge--orange-400">...</span>
+<span class="d-badge d-badge--pink-300">...</span>
+<span class="d-badge d-badge--pink-500">...</span>
+<span class="d-badge d-badge--pink-600">...</span>
+<span class="d-badge d-badge--pink-700">...</span>
+<span class="d-badge d-badge--purple-100">...</span>
+<span class="d-badge d-badge--purple-300">...</span>
+<span class="d-badge d-badge--purple-500">...</span>
+<span class="d-badge d-badge--purple-700">...</span>
+<span class="d-badge d-badge--red-500">...</span>
+<span class="d-badge d-badge--white">...</span>
+<span class="d-badge d-badge--yellow-300">...</span>
+      {% endhighlight %}
+    {% endcodeWellFooter %}
+  {% endcodeWell %}
+</section>

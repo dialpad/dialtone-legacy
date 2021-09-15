@@ -21,271 +21,229 @@
 //  ============================================================================
 //  $   SET VARIABLES
 //  ----------------------------------------------------------------------------
-@primary-color:                 #6C3DFF;
-@primary-color--hsl:            var(--primary-color--h) var(--primary-color--s) var(--primary-color--l);
-@primary-color--h:              hue(@primary-color);
-@primary-color--s:              saturation(@primary-color);
-@primary-color--l:              lightness(@primary-color);
-
-@primary-color--hover:          #3b10ff;
-@primary-color--hover--hsl:     var(--primary-color--hover--h) var(--primary-color--hover--s) var(--primary-color--hover--l);
-@primary-color--hover--h:       hue(@primary-color--hover);
-@primary-color--hover--s:       saturation(@primary-color--hover);
-@primary-color--hover--l:       lightness(@primary-color--hover);
-
-@nav__background-color:         #160645;
-@nav__background-color--hsl:    var(--nav__background-color--h) var(--nav__background-color--s) var(--nav__background-color--l);
-@nav__background-color--h:      hue(@nav__background-color);
-@nav__background-color--s:      saturation(@nav__background-color);
-@nav__background-color--l:      lightness(@nav__background-color);
-
-
-//  ============================================================================
-//  $$  STATES
-//  ----------------------------------------------------------------------------
-@error-color:                   @wildberry;
-@error-color--hover:            #A60329;
-@error-color--text:             @error-color--hover;
-@warning-color:                 @sunflower-dark;
-@warning-color--hover:          darken(@warning-color, 10%);
-@warning-color--text:           @color--sunflower-text;
-@success-color:                 @emerald;
-@success-color--hover:          @emerald-dark;
-@success-color--text:           @color--emerald-text;
-
-//  ============================================================================
-//  $$  HEIGHTS & WIDTHS
-//  ----------------------------------------------------------------------------
-@topbar-height:                             @spacing64;
-
-
-//  ============================================================================
-//  $$  COLORS
-//  ----------------------------------------------------------------------------
-@color-vars: {
-    white:                                  @white;
-    slate:                                  @slate;
-    slate-light:                            @slate-light;
-    slate-lighter:                          @slate-lighter;
-    slate-lightest:                         @slate-lightest;
-    ash-darkest:                            @ash-darkest;
-    ash-darker:                             @ash-darker;
-    ash-dark:                               @ash-dark;
-    ash:                                    @ash;
-    blue-dark:                              @blue-dark;
-    blue:                                   @blue;
-    blue-light:                             @blue-light;
-    blue-lighter:                           @blue-lighter;
-    navy:                                   @navy;
-    navy-light:                             @navy-light;
-    navy-lighter:                           @navy-lighter;
-    navy-lightest:                          @navy-lightest;
-    bright-emerald-dark:                    @bright-emerald-dark;
-    bright-emerald:                         @bright-emerald;
-    bright-emerald-light:                   @bright-emerald-light;
-    bright-emerald-lighter:                 @bright-emerald-lighter;
-    emerald-darker:                         @emerald-darker;
-    emerald-dark:                           @emerald-dark;
-    emerald:                                @emerald;
-    emerald-light:                          @emerald-light;
-    emerald-lighter:                        @emerald-lighter;
-    berry-dark:                             @berry-dark;
-    berry:                                  @berry;
-    berry-light:                            @berry-light;
-    berry-lighter:                          @berry-lighter;
-    rose-darker:                            @rose-darker;
-    rose-dark:                              @rose-dark;
-    rose:                                   @rose;
-    rose-light:                             @rose-light;
-    sunflower-dark:                         @sunflower-dark;
-    sunflower:                              @sunflower;
-    sunflower-light:                        @sunflower-light;
-    sunflower-lighter:                      @sunflower-lighter;
-    crimson-dark:                           @crimson-dark;
-    crimson:                                @crimson;
-    crimson-light:                          @crimson-light;
-    crimson-lighter:                        @crimson-lighter;
-    wildberry-dark:                         @wildberry-dark;
-    wildberry:                              @wildberry;
-    wildberry-light:                        @wildberry-light;
-    wildberry-lighter:                      @wildberry-lighter;
-}
-
-//  $$  VISUAL STYLES
-//      Base styles, colors, font-size, and line-heights
-//  ----------------------------------------------------------------------------
-@visual-styles-vars: {
-    base--text-color:                       var(--text-color--dark);
-    base--font-size:                        var(--text-size--md);
-    base--font-family:                      @font-family--custom;
-    base--line-height:                      var(--line-height--md);
-    base--background-color:                 @white;
-    base--corner-radius:                    0.25em;
-
-    text-color--white:                      @color--white;
-    text-color--dark:                       @color--dark;
-    text-color--medium:                     @color--dark-light;
-    text-color--light:                      @color--dark-lighter;
-    text-color--blue:                       @color--blue-text;
-    text-color--navy:                       @color--navy-text;
-    text-color--bright-emerald:             @color--bright-emerald-text;
-    text-color--emerald:                    @color--emerald-text;
-    text-color--sunflower:                  @color--sunflower-text;
-    text-color--wildberry:                  @color--wildberry-text;
-    text-color--crimson:                    @color--crimson-text;
-    text-color--berry:                      @color--berry-text;
-    text-color--rose:                       @color--rose-text;
-
-    text-size--xxs:                         @text--xxs;
-    text-size--xs:                          @text--xs;
-    text-size--sm:                          @text--sm;
-    text-size--md:                          @text--md;
-    text-size--lg:                          @text--lg;
-    text-size--xl:                          @text--xl;
-
-    line-height--xs:                        @line-height--xs;
-    line-height--sm:                        @line-height--sm;
-    line-height--md:                        @line-height--md;
-    line-height--lg:                        @line-height--lg;
-    line-height--xl:                        @line-height--xl;
-    line-height--xxl:                       @line-height--xxl;
-
-    bgo:                                    100%;
-    bgg-direction:                          to right;
-    bgg-percentage:                         7.5%;
-
-    bgg-pattern-blob--dark:                 @bgg-pattern-blob--dark;
-    bgg-pattern-chevrons--dark:             @bgg-pattern-chevrons--dark;
-    bgg-pattern-crosses--dark:              @bgg-pattern-crosses--dark;
-    bgg-pattern-crosshatch--dark:           @bgg-pattern-crosshatch--dark;
-    bgg-pattern-dot-dash--dark:             @bgg-pattern-dot-dash--dark;
-    bgg-pattern-dots-circles--dark:         @bgg-pattern-dots-circles--dark;
-    bgg-pattern-horz-stripes--dark:         @bgg-pattern-horz-stripes--dark;
-    bgg-pattern-slanted-stripes--dark:      @bgg-pattern-slanted-stripes--dark;
-    bgg-pattern-steps--dark:                @bgg-pattern-steps--dark;
-    bgg-pattern-stripe--dark:               @bgg-pattern-stripe--dark;
-    bgg-pattern-blob--light:                @bgg-pattern-blob--light;
-    bgg-pattern-chevrons--light:            @bgg-pattern-chevrons--light;
-    bgg-pattern-crosses--light:             @bgg-pattern-crosses--light;
-    bgg-pattern-crosshatch--light:          @bgg-pattern-crosshatch--light;
-    bgg-pattern-dot-dash--light:            @bgg-pattern-dot-dash--light;
-    bgg-pattern-dots-circles--light:        @bgg-pattern-dots-circles--light;
-    bgg-pattern-horz-stripes--light:        @bgg-pattern-horz-stripes--light;
-    bgg-pattern-slanted-stripes--light:     @bgg-pattern-slanted-stripes--light;
-    bgg-pattern-steps--light:               @bgg-pattern-steps--light;
-    bgg-pattern-stripe--light:              @bgg-pattern-stripe--light;
-}
-
-//  NEW TYPE CSS VARS
-//  These should be used moving forward
-@type-styles-vars: {
-    ff-custom:                              @ff-custom;
-    ff-sans:                                @ff-sans;
-    ff-mono:                                @ff-mono;
-
-    fs10:                                   @fs10;
-    fs11:                                   @fs11;
-    fs12:                                   @fs12;
-    fs14:                                   @fs14;
-    fs16:                                   @fs16;
-    fs18:                                   @fs18;
-    fs20:                                   @fs20;
-    fs24:                                   @fs24;
-    fs28:                                   @fs28;
-    fs32:                                   @fs32;
-    fs36:                                   @fs36;
-    fs42:                                   @fs42;
-    fs48:                                   @fs48;
-    fs54:                                   @fs54;
-
-    lh0:                                    @lh0;
-    lh1:                                    @lh1;
-    lh2:                                    @lh2;
-    lh4:                                    @lh4;
-    lh6:                                    @lh6;
-    lh8:                                    @lh8;
-    lh12:                                   @lh12;
-    lh16:                                   @lh16;
-    lh20:                                   @lh20;
-    lh24:                                   @lh24;
-
-    lh-none:                                @lh-none;
-    lh-tighter:                             @lh-tighter;
-    lh-tight:                               @lh-tight;
-    lh-normal:                              @lh-normal;
-    lh-loose:                               @lh-loose;
-    lh-looser:                              @lh-looser;
-
-    fw-thin:                                @fw-thin;
-    fw-light:                               @fw-light;
-    fw-normal:                              @fw-normal;
-    fw-medium:                              @fw-medium;
-    fw-bold:                                @fw-bold;
-    fw-black:                               @fw-black;
-
-    fo:                                     100%;
-    fc-blue-text:                           @fc-blue-text;
-    fc-navy-text:                           @fc-navy-text;
-    fc-bright-emerald-text:                 @fc-bright-emerald-text;
-    fc-emerald-text:                        @fc-emerald-text;
-    fc-sunflower-text:                      @fc-sunflower-text;
-    fc-wildberry-text:                      @fc-wildberry-text;
-    fc-crimson-text:                        @fc-crimson-text;
-    fc-berry-text:                          @fc-berry-text;
-    fc-rose-text:                           @fc-rose-text;
-}
-
-//  $$  THEME STYLES
-//      Primary and Navigation Color
-//  ----------------------------------------------------------------------------
 @theme-vars: {
-    primary-color:                 @primary-color;
-    primary-color--h:              @primary-color--h;
-    primary-color--s:              @primary-color--s;
-    primary-color--l:              @primary-color--l;
+    primary-color-h:                        var(--purple-500-h);
+    primary-color-s:                        var(--purple-500-s);
+    primary-color-l:                        var(--purple-500-l);
+    primary-color-hsl:                      var(--primary-color-h) var(--primary-color-s) var(--primary-color-l);
+    primary-color:                          hsl(var(--primary-color-h) var(--primary-color-s) var(--primary-color-l));
+    primary-color-hover:                    hsl(var(--primary-color-h) var(--primary-color-s) calc(var(--primary-color-l) - 10%));
+    nav-background-color-h:                 var(--purple-800-h);
+    nav-background-color-s:                 var(--purple-800-s);
+    nav-background-color-l:                 var(--purple-800-l);
+    nav-background-color:                   hsl(var(--nav-background-color-h) var(--nav-background-color-s) var(--nav-background-color-l));
 
-    primary-color--hover:          @primary-color--hover;
-    primary-color--hover--h:       @primary-color--hover--h;
-    primary-color--hover--s:       @primary-color--hover--s;
-    primary-color--hover--l:       @primary-color--l;
+    topbar-height:                          var(--su64);
 
-    nav__background-color:         @nav__background-color;
-    nav__background-color--h:      @nav__background-color--h;
-    nav__background-color--s:      @nav__background-color--s;
-    nav__background-color--l:      @nav__background-color--l;
-
-    btn--inverted__bg--hover:           fade(mix(#FFF, @primary-color, 75%),25%);
-    btn--inverted__bs--focus:           fade(mix(#FFF, @primary-color, 50%),25%);
-    btn--inverted__bg--active:          fade(mix(#FFF, @primary-color, 50%),25%);
-    btn--inverted--primary__bg--hover:  mix(#FFF, @primary-color, 90%);
-    btn--inverted--primary__bs--focus:  fade(mix(#FFF, @primary-color, 50%),50%);
+    base--font-size:                        var(--fs16);
+    base--font-family:                      @ff-custom;
+    base--line-height:                      var(--lh-normal);
+    base--corner-radius:                    0.25em;
 }
+
 
 //  ============================================================================
 //  $   OUTPUT VARIABLES
 //  ============================================================================
-:root {
-    //  Colors
-    each(@color-vars, {
+body {
+    //  $$  COLOR VARS
+    //  ------------------------------------------------------------------------
+    --bgo: 100%;                // Background color opacity
+    --bco: 100%;                // Border color opacity
+    --fco: 100%;                // Font color opacity
+
+    //  All the light colored HSL vars
+    #d-internals #color-vars(white, @white);
+    #d-internals #color-vars(black-025, @black-025);
+    #d-internals #color-vars(black-050, @black-050);
+    #d-internals #color-vars(black-075, @black-075);
+    #d-internals #color-vars(black-100, @black-100);
+    #d-internals #color-vars(black-200, @black-200);
+    #d-internals #color-vars(black-300, @black-300);
+    #d-internals #color-vars(black-400, @black-400);
+    #d-internals #color-vars(black-500, @black-500);
+    #d-internals #color-vars(black-600, @black-600);
+    #d-internals #color-vars(black-700, @black-700);
+    #d-internals #color-vars(black-800, @black-800);
+    #d-internals #color-vars(black-900, @black-900);
+    #d-internals #color-vars(purple-100, @purple-100);
+    #d-internals #color-vars(purple-200, @purple-200);
+    #d-internals #color-vars(purple-300, @purple-300);
+    #d-internals #color-vars(purple-400, @purple-400);
+    #d-internals #color-vars(purple-500, @purple-500);
+    #d-internals #color-vars(purple-600, @purple-600);
+    #d-internals #color-vars(purple-700, @purple-700);
+    #d-internals #color-vars(purple-800, @purple-800);
+    #d-internals #color-vars(orange-100, @orange-100);
+    #d-internals #color-vars(orange-200, @orange-200);
+    #d-internals #color-vars(orange-300, @orange-300);
+    #d-internals #color-vars(orange-400, @orange-400);
+    #d-internals #color-vars(orange-500, @orange-500);
+    #d-internals #color-vars(orange-600, @orange-600);
+    #d-internals #color-vars(pink-100, @pink-100);
+    #d-internals #color-vars(pink-200, @pink-200);
+    #d-internals #color-vars(pink-300, @pink-300);
+    #d-internals #color-vars(pink-400, @pink-400);
+    #d-internals #color-vars(pink-500, @pink-500);
+    #d-internals #color-vars(pink-600, @pink-600);
+    #d-internals #color-vars(pink-700, @pink-700);
+    #d-internals #color-vars(yellow-050, @yellow-050);
+    #d-internals #color-vars(yellow-100, @yellow-100);
+    #d-internals #color-vars(yellow-200, @yellow-200);
+    #d-internals #color-vars(yellow-300, @yellow-300);
+    #d-internals #color-vars(yellow-400, @yellow-400);
+    #d-internals #color-vars(yellow-500, @yellow-500);
+    #d-internals #color-vars(yellow-600, @yellow-600);
+    #d-internals #color-vars(green-100, @green-100);
+    #d-internals #color-vars(green-200, @green-200);
+    #d-internals #color-vars(green-300, @green-300);
+    #d-internals #color-vars(green-400, @green-400);
+    #d-internals #color-vars(green-500, @green-500);
+    #d-internals #color-vars(green-600, @green-600);
+    #d-internals #color-vars(green-700, @green-700);
+    #d-internals #color-vars(red-100, @red-100);
+    #d-internals #color-vars(red-200, @red-200);
+    #d-internals #color-vars(red-300, @red-300);
+    #d-internals #color-vars(red-400, @red-400);
+    #d-internals #color-vars(red-500, @red-500);
+    #d-internals #color-vars(red-600, @red-600);
+    #d-internals #color-vars(red-700, @red-700);
+
+    //  All the dark colored HSL vars
+    &.theme-dark {
+        //  All the light colored HSL vars
+        #d-internals #color-vars(white, @black-900);
+        #d-internals #color-vars(black-025, @black-800);
+        #d-internals #color-vars(black-050, @black-700);
+        #d-internals #color-vars(black-075, @black-600);
+        #d-internals #color-vars(black-100, @black-500);
+        #d-internals #color-vars(black-200, @black-400);
+        #d-internals #color-vars(black-300, @black-300);
+        #d-internals #color-vars(black-400, @black-200);
+        #d-internals #color-vars(black-500, @black-100);
+        #d-internals #color-vars(black-600, @black-075);
+        #d-internals #color-vars(black-700, @black-050);
+        #d-internals #color-vars(black-800, @black-025);
+        #d-internals #color-vars(black-900, @white);
+        #d-internals #color-vars(purple-100, @purple-800);
+        #d-internals #color-vars(purple-200, @purple-700);
+        #d-internals #color-vars(purple-300, @purple-600);
+        #d-internals #color-vars(purple-400, @purple-500);
+        #d-internals #color-vars(purple-500, @purple-400);
+        #d-internals #color-vars(purple-600, @purple-300);
+        #d-internals #color-vars(purple-700, @purple-200);
+        #d-internals #color-vars(purple-800, @purple-100);
+        #d-internals #color-vars(orange-100, @orange-600);
+        #d-internals #color-vars(orange-200, @orange-500);
+        #d-internals #color-vars(orange-300, @orange-400);
+        #d-internals #color-vars(orange-400, @orange-300);
+        #d-internals #color-vars(orange-500, @orange-200);
+        #d-internals #color-vars(orange-600, @orange-100);
+        #d-internals #color-vars(pink-100, @pink-700);
+        #d-internals #color-vars(pink-200, @pink-600);
+        #d-internals #color-vars(pink-300, @pink-500);
+        #d-internals #color-vars(pink-400, @pink-400);
+        #d-internals #color-vars(pink-500, @pink-300);
+        #d-internals #color-vars(pink-600, @pink-200);
+        #d-internals #color-vars(pink-700, @pink-100);
+        #d-internals #color-vars(yellow-050, @yellow-600);
+        #d-internals #color-vars(yellow-100, @yellow-500);
+        #d-internals #color-vars(yellow-200, @yellow-400);
+        #d-internals #color-vars(yellow-300, @yellow-300);
+        #d-internals #color-vars(yellow-400, @yellow-200);
+        #d-internals #color-vars(yellow-500, @yellow-100);
+        #d-internals #color-vars(yellow-600, @yellow-050);
+        #d-internals #color-vars(green-100, @green-700);
+        #d-internals #color-vars(green-200, @green-600);
+        #d-internals #color-vars(green-300, @green-500);
+        #d-internals #color-vars(green-400, @green-400);
+        #d-internals #color-vars(green-500, @green-300);
+        #d-internals #color-vars(green-600, @green-200);
+        #d-internals #color-vars(green-700, @green-100);
+        #d-internals #color-vars(red-100, @red-700);
+        #d-internals #color-vars(red-200, @red-600);
+        #d-internals #color-vars(red-300, @red-500);
+        #d-internals #color-vars(red-400, @red-400);
+        #d-internals #color-vars(red-500, @red-300);
+        #d-internals #color-vars(red-600, @red-200);
+        #d-internals #color-vars(red-700, @red-100);
+
+        //  Now all our color vars
+        each(@dark-color-vars, {
+            --@{key}: @value;
+        });
+    }
+
+    //  $$  STATES
+    //  ------------------------------------------------------------------------
+    each(@color-states, {
         --@{key}: @value;
     });
 
-    //  Visual Styles
-    each(@visual-styles-vars, {
+    //  $$  WIDTH / HEIGHT SIZES
+    //  ------------------------------------------------------------------------
+    //  Sizes, Fixed
+    each(@sizes-fixed, {
         --@{key}: @value;
     });
 
-    //  Type Styles
+    //  $$  VISUAL STYLES
+    //  ------------------------------------------------------------------------
+    each(@box-shadows, {
+        --@{key}: @value;
+    });
+    each(@transition, {
+        --@{key}: @value;
+    });
+    each(@background-patterns, {
+        --@{key}: @value;
+    });
+
+    //  $$  BORDERS
+    //  ------------------------------------------------------------------------
+    each(@border-vars, {
+        --@{key}: @value;
+    });
+
+    //  $$  ICONS
+    //  ------------------------------------------------------------------------
+    each(@icon-vars, {
+        --@{key}: @value;
+    });
+
+    //  $$  GRID
+    //  ------------------------------------------------------------------------
+    each(@grid-vars, {
+        --@{key}: @value;
+    });
+
+    //  $$  TYPE
+    //  ------------------------------------------------------------------------
     each(@type-styles-vars, {
         --@{key}: @value;
     });
+    each(@type-colors, {
+        --@{key}: @value;
+    });
 
-    //  Inputs & Button Styles
+    //  $$  Z-INDEX
+    //  ------------------------------------------------------------------------
+    each(@zi-vars, {
+        --@{key}: @value;
+    });
+
+    //  $$  INPUTS & BUTTONS
+    //  ------------------------------------------------------------------------
+    each(@focus-rings, {
+        --@{key}: @value;
+    });
     each(@input-button-vars, {
         --@{key}: @value;
     });
 
-    //  Theme Styles
+    //  $$  THEME VARS
+    //      These should always come last
+    //  ------------------------------------------------------------------------
     each(@theme-vars, {
         --@{key}: @value;
     });

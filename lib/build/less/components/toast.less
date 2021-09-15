@@ -4,200 +4,191 @@
 //
 //  These are the styles for toast notices, which are used by alert users to
 //  information they might need. For further documentation of these styles,
-//  please visit https://dialpad.design/components/toast
-//
+//  please visit https://dialpad.design/components/toasts
+
+//  ============================================================================
+//  @   TOAST CONTAINER
+//  ----------------------------------------------------------------------------
+.d-toast-wrapper {
+    position: absolute;
+    top: var(--su32);
+    left: 50%;
+    transform: translateX(-50%);
+
+    .d-stack8();
+}
+
 //  ============================================================================
 //  @   BASE STYLE
 //  ----------------------------------------------------------------------------
 .d-toast {
+    //  Component CSS Vars
+    //  ------------------------------------------------------------------------
+    --toast--bgc:          var(--black-025);
+    --toast--fc:           var(--fc-dark);
+
     box-sizing: border-box;
 
-    position: relative;
-    padding: @spacing12 @spacing8 @spacing8;
-    max-width: (@fixed-size2 + @spacing48);
-    z-index: @z-index--toast;
+    width:         100%;
+    max-width:     var(--size628);
+    padding:       var(--su12);
+    margin-bottom: var(--su8);
+    z-index:       var(--zi-notification);
 
-    border-radius: @border-radius--sm;
-    border: @border-width1 solid var(--ash-dark);
-    background-color: var(--white);
-    box-shadow: @box-shadow--sm;
+    color:            var(--toast--fc);
+    background-color: var(--toast--bgc);
 
-    font-size: var(--text-size--sm);
-    line-height: var(--line-height--sm);
-    color: var(--text-color--medium);
-    word-break: normal;
+    border-radius: var(--br4);
+    .d-bs-md();
+
+    font-size:   var(--fs14);
+    line-height: var(--lh6);
+    word-break:  normal;
 
     //  If there's a link in a toast, break the url so it wraps
     > a {
         word-break: break-all;
     }
 
-    //  Add a top border
-    &:before {
-        content: "";
-        position: absolute;
-        top: -(@spacing1);
-        right: -(@spacing1);
-        left: -(@spacing1);
-
-        height: @spacing6;
-        border-radius: @border-radius--sm @border-radius--sm 0 0;
+    // If you want to hide and reveal the toast
+    &[aria-hidden="true"] {
+        visibility: hidden;
+        opacity: 0;
+    }
+    &[aria-hidden="false"] {
+        visibility: visible;
+        opacity: 1;
     }
 }
 
-//  @@  CONTENT BLOCK
+//  ============================================================================
+//  $   CONTENT CONTAINER
 //  ----------------------------------------------------------------------------
-.d-toast__content {
+.d-toast__dialog {
     display: flex;
-}
+    align-items: center;
+    position: relative;
 
-//  @@  TOAST ICON (IF APPLICABLE)
-//  ----------------------------------------------------------------------------
-.d-toast__icon {
-    .d-flex--center();
-    flex-grow: 0;
-    flex-shrink: 0;
+    .d-notice__content {
+        margin-right: var(--su16);
+    }
 
-    width: @spacing24;
-    height: @spacing24;
-    .d-margin-right4;
-    .d-border-radius--circle();
-    color: @white;
-
-    .d-svg {
-        width: 1.8rem;
-        height: 1.8rem;
+    .d-notice__actions {
+        margin-left: var(--su32);
     }
 }
 
-//  @@  META CONTENT
-//      Currently only used with chat messages to denote who and when a message
-//      was sent.
+//  ============================================================================
+//  $   STYLES
+//  ============================================================================
+//  $$  DEFAULT IMPORTANT
 //  ----------------------------------------------------------------------------
-.d-toast__meta {
-    .d-margin-bottom4();
-    font-size: @fs11;
-    font-family: @ff-sans;
-    color: @slate-lightest;
+.d-toast.d-toast--important {
+    --toast--bgc:          var(--black-800);
+    --toast--fc:           var(--black-025);
 }
 
-//  @@  MESSAGE STYLE
+//  $$  ERROR
 //  ----------------------------------------------------------------------------
-.d-toast__message {
+.d-toast--error {
+    --toast--bgc:          var(--red-100);
+    --toast--fc:           var(--red-700);
+
+    &.d-toast--important {
+        --toast--bgc:      var(--red-500);
+        --toast--fc:       var(--white);
+    }
+}
+
+//  $$  INFO
+//  ----------------------------------------------------------------------------
+.d-toast--info {
+    --toast--bgc:          var(--purple-100);
+    --toast--fc:           var(--fc-dark);
+
+    &.d-toast--important {
+        --toast--bgc:      var(--purple-500);
+        --toast--fc:       var(--white);
+    }
+}
+
+//  $$  SUCCESS
+//  ----------------------------------------------------------------------------
+.d-toast--success {
+    --toast--bgc:          var(--green-100);
+    --toast--fc:           var(--green-700);
+
+    &.d-toast--important {
+        --toast--bgc:      var(--green-300);
+        --toast--fc:       var(--green-700);
+    }
+}
+
+//  $$  WARNING
+//  ----------------------------------------------------------------------------
+.d-toast--warning {
+    --toast--bgc:          var(--yellow-100);
+
+    &.d-toast--important {
+        --toast--bgc:      var(--yellow-400);
+        --toast--fc:       var(--fc-dark);
+    }
+}
+
+//  ============================================================================
+//  $   UC Toast Shims
+//  ============================================================================
+//  $$  CHAT
+//  ----------------------------------------------------------------------------
+.d-toast--chat {
+  .d-notice__icon, .d-toast__meta {
+    color: var(--black-600);
+  }
+
+  .d-toast__meta {
+    font-size: var(--fs12);
+  }
+
+  &.d-toast--important {
+    .d-notice__icon, .d-toast__meta {
+      color: var(--black-025);
+    }
+  }
+}
+
+//  $$  ORGANIZER
+//  ----------------------------------------------------------------------------
+.d-toast--organizer {
+  //
+}
+
+//  $$  VIEWING
+//  ----------------------------------------------------------------------------
+.d-toast--viewing {
+ //
+}
+
+.d-toast--organizer,
+.d-toast--viewing {
+  border-top: 4px solid var(--pink-500);
+
+  .d-notice__icon {
+    color: var(--pink-500);
+  }
+}
+
+.d-toast--chat,
+.d-toast--organizer,
+.d-toast--viewing {
+  --toast--bgc:          var(--white);
+
+  .d-notice__icon {
+    align-self: flex-start;
+  }
+
+  .d-notice__message {
     display: flex;
     justify-content: center;
     flex-direction: column;
-
-    .d-margin-left4();
-    font-size: @fs12;
-    line-height: @lh4;
-}
-
-//  ============================================================================
-//  @   TOAST STYLES
-//  ============================================================================
-//  @@  VIEWING (UC ONLY)
-//  ----------------------------------------------------------------------------
-.d-toast--viewing {
-    .d-toast();
-
-    &:before {
-        .d-background-color--rose();
-    }
-}
-.d-toast__icon--viewing {
-    .d-toast__icon();
-    .d-background-color--rose();
-    color: @rose-darker;
-}
-
-//  @@  CHAT MESSAGE (UC ONLY)
-//  ----------------------------------------------------------------------------
-.d-toast--chat {
-    .d-toast();
-
-    &:before {
-        .d-background-color--navy();
-    }
-}
-.d-toast__icon--chat {
-    .d-toast__icon();
-    .d-background-color--navy();
-
-    .d-svg {
-        .d-margin-top1();
-        width: 1.6rem;
-        height: 1.6rem;
-    }
-}
-
-//  @@  SUCCESS
-//  ----------------------------------------------------------------------------
-.d-toast--success {
-    .d-toast();
-
-    &:before {
-        .d-background-color--emerald();
-    }
-}
-.d-toast__icon--success {
-    .d-toast__icon();
-    .d-background-color--emerald();
-}
-
-//  @@  ERROR
-//  ----------------------------------------------------------------------------
-.d-toast--error {
-    .d-toast();
-
-    &:before {
-        .d-background-color--wildberry();
-    }
-}
-.d-toast__icon--error {
-    .d-toast__icon();
-    .d-background-color--wildberry();
-}
-
-//  @@  INFO
-//  ----------------------------------------------------------------------------
-.d-toast--info {
-    .d-toast();
-
-    &:before {
-        .d-background-color--blue();
-    }
-}
-.d-toast__icon--info {
-    .d-toast__icon();
-    .d-background-color--blue();
-}
-
-//  @@  ORGANIZER
-//  ----------------------------------------------------------------------------
-.d-toast--organizer {
-    .d-toast();
-
-    &:before {
-        .d-background-color--berry();
-    }
-}
-.d-toast__icon--organizer {
-    .d-toast__icon();
-    .d-background-color--berry();
-}
-
-
-//  ============================================================================
-//  @   TOAST WRAPPER
-//  ----------------------------------------------------------------------------
-.d-toast-wrapper {
-    box-sizing: border-box;
-
-    position: absolute;
-    .d-top32();
-    .d-right32();
-
-    //  Space all child elements
-    .d-layout__stack6();
+  }
 }

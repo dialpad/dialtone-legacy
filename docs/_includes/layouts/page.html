@@ -1,26 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-    {% include head.html %}
-    <body>
-        <div class="dialtone-wrapper">
-            {% include banner.html %}
-            {% include nav.html %}
+  {% include head.html %}
+  {% include banner.html %}
+  <body>
+    <div class="d-ps-relative d-stack16">
+      {% include header.html %}
+      <div class="d-d-grid d-gl-docsite-toc d-p16 md:d-d-block">
+        {% include nav.html %}
+        <main id="content" class="d-ga-content d-stack64 d-ps-relative d-mb32 js-content">
+          <header class="d-stack2">
+            {% if title %}
+              <h1 class="d-headline42 d-lh6 d-mb4">{{ title }}</h1>
+              {% if storybook-url %}
+                <a class="d-link d-fs14 d-mb24" href="{{ storybook-url }}" target="_blank">View Storybook{% iconSystem "launch", "d-ml4 d-svg--size18" %}</a>
+              {% endif %}
+            {% endif %}
+            {% if description %}
+              <p class="d-fs20 d-lh6">{{ description }}</p>
+            {% endif %}
+          </header>
+          <div class="d-stack64">
+            {{ content }}
+          </div>
+        </main>
+        <aside class="d-ga-toc d-t64 d-b0 d-r0 d-pt24 md:d-d-none" id="subnav">
+          <div class="d-ps-sticky d-t96 js-navigation-toc">
+            <h4 class="d-mb8 d-py2 d-px8 d-fw-bold d-fs14 d-lh6 d-fc-black-600">On this Page</h5>
+            {{ content | toc | safe }}
+          </div>
+        </aside>
+      </div>
+    </div>
 
-            <main class="dialtone-main">
-                <header class="dialtone-main__header">
-                    {% if title %}
-                        <h1 class="dialtone-title__page">{{ title }}</h1>
-                    {% endif %}
-                    {% if description %}
-                        <p class="dialtone-copy__lead">{{ description }}</p>
-                    {% endif %}
-                </header>
-                <div class="dialtone-main__content">
-                    {{ content }}
-                </div>
-            </main>
-        </div>
-
-        {% include docsearch-js.html %}
-    </body>
+    {% include docsearch-js.html %}
+  </body>
 </html>

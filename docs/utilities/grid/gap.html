@@ -1,0 +1,93 @@
+---
+layout: page
+title: Gap
+description: Utilities to control the spacing between columns, rows, or both in grids.
+---
+<section class="d-stack16">
+    {% header "h2", "Classes" %}
+    <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
+        <table class="d-table">
+            <thead>
+                <tr>
+                  <th scope="col" class="d-w25p">Class</th>
+                  <th scope="col">Output</th>
+                </tr>
+            </thead>
+            {% for i in grid.gap %}
+            {% assign dir = i.direction %}
+            <tbody>
+                {% for gutter in spacing.values %}
+                {% assign rem = gutter.output %}
+                {% assign px = gutter.value %}
+                <tr>
+                    <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-{% if dir == "both" %}gg{% elsif dir == "column" %}gcg{% elsif dir == "row" %}grg{% endif %}{{ px }}</th>
+                    <td class="d-ff-mono d-fc-orange d-fs12">grid{% if dir != "both" %}-{{ dir }}{% endif %}-gap: {{ rem }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            {% endfor %}
+        </table>
+    </div>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Adding universal row and column gaps" %}
+        {% paragraph %}Use {% code %}d-gg{#}{% endcode %} to universally change the row and column gap space in grid layouts.{% endparagraph %}
+    </header>
+    <aside class="d-bar8 d-of-hidden">
+        <header class="d-fl-center d-fd-column d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn216">
+            <div class="d-d-grid d-gg16 d-g-cols2 d-p16 d-w100p d-hmn216 d-bar8 d-bgc-purple-100">
+                <div class="d-fl-center d-p16 d-bgc-purple-300 d-bar4 d-fs24 d-fw-bold">1</div>
+                <div class="d-fl-center d-p16 d-bgc-purple-300 d-bar4 d-fs24 d-fw-bold">2</div>
+                <div class="d-fl-center d-p16 d-bgc-purple-300 d-bar4 d-fs24 d-fw-bold">3</div>
+                <div class="d-fl-center d-p16 d-bgc-purple-300 d-bar4 d-fs24 d-fw-bold">4</div>
+            </div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+{% highlight html linenos %}
+<div class="d-d-grid d-gg16 d-g-cols2">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+</div>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>
+<section class="d-stack16">
+    <header class="d-stack2">
+        {% header "h2", "Independently changing row and column gaps" %}
+        {% paragraph %}Use {% code %}d-gcg{#}{% endcode %} or {% code %}d-grg{#}{% endcode %} to independently change the row and column gap space in grid layouts.{% endparagraph %}
+    </header>
+    <aside class="d-bar8 d-of-hidden">
+        <header class="d-fl-center d-fd-column d-p24 d-bgc-green-100 d-bgo50 d-w100p d-hmn216">
+            <div class="d-d-grid d-gcg24 d-grg8 d-g-cols3 d-p16 d-w100p d-hmn216 d-bar8 d-bgc-green-100">
+                <div class="d-fl-center d-p16 d-bgc-green-300 d-bar4 d-fs24 d-fw-bold">1</div>
+                <div class="d-fl-center d-p16 d-bgc-green-300 d-bar4 d-fs24 d-fw-bold">2</div>
+                <div class="d-fl-center d-p16 d-bgc-green-300 d-bar4 d-fs24 d-fw-bold">3</div>
+                <div class="d-fl-center d-p16 d-bgc-green-300 d-bar4 d-fs24 d-fw-bold">4</div>
+                <div class="d-fl-center d-p16 d-bgc-green-300 d-bar4 d-fs24 d-fw-bold">5</div>
+                <div class="d-fl-center d-p16 d-bgc-green-300 d-bar4 d-fs24 d-fw-bold">6</div>
+                <div class="d-fl-center d-p16 d-bgc-green-300 d-bar4 d-fs24 d-fw-bold">7</div>
+                <div class="d-fl-center d-p16 d-bgc-green-300 d-bar4 d-fs24 d-fw-bold">8</div>
+                <div class="d-fl-center d-p16 d-bgc-green-300 d-bar4 d-fs24 d-fw-bold">9</div>
+            </div>
+        </header>
+        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
+{% highlight html linenos %}
+<div class="d-d-grid d-gcg24 d-grg8 d-g-cols3">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+</div>
+{% endhighlight %}
+        </footer>
+    </aside>
+</section>

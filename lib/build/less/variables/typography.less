@@ -17,72 +17,70 @@
 //  ============================================================================
 //  $   FONT FAMILY
 //  ----------------------------------------------------------------------------
-@define-font-face:                           true;
-@define-font-family:                         @font-family--mark-pro;
-@define-font-name:                           "MarkPro";
-@define-font-path:                           "../../fonts/";
-@headline-weight:                            @font-weight--bold;
-@define-marketing-font-name:                 "Archivo";
-@define-marketing-semi-expanded-font-name:   "ArchivoSemiExpanded";
-@define-marketing-expanded-font-name:        "ArchivoExpanded";
+@define-ff-custom:                         @ff-inter;
+@define-ff-custom-italic:                  @ff-inter-italic;
+@define-ff-custom-name:                    "Inter";
+@define-ff-mono:                           @ff-roboto-mono;
+@define-ff-mono-name:                      "RobotoMono";
+@define-ff-marketing:                      @ff-archivo;
+@define-ff-marketing-name:                 "Archivo";
+@define-ff-marketing-semi-expanded:        @ff-archivo-semi-expanded;
+@define-ff-marketing-semi-expanded-name:   "ArchivoSemiExpanded";
+@define-ff-marketing-expanded:             @ff-archivo-expanded;
+@define-ff-marketing-expanded-name:        "ArchivoExpanded";
+@headline-weight:                          var(--fw-bold);
 
-@font-family--mark-pro: {
-    200: MarkWeb-Light;
-    400: MarkWeb;
-    500: MarkWeb-Medium;
-    600: MarkWeb-Bold;
+
+@ff-inter: {
+    400: Inter-Regular;
+    700: Inter-Bold;
 };
 
-@font-family--archivo: {
+@ff-inter-italic: {
+    400: Inter-Italic;
+    700: Inter-BoldItalic;
+};
+
+@ff-roboto-mono: {
+    400: RobotoMono-Regular;
+    700: RobotoMono-Bold;
+};
+@ff-archivo: {
     400: Archivo-Regular;
     600: Archivo-SemiBold;
     700: Archivo-Bold;
 };
-
-@font-family--archivo-semi-expanded: {
+@ff-archivo-semi-expanded: {
     500: ArchivoSemiExpanded-Medium;
     600: ArchivoSemiExpanded-SemiBold;
 };
-
-@font-family--archivo-expanded: {
+@ff-archivo-expanded: {
     600: ArchivoExpanded-SemiBold;
-}
+};
 
-//  Older variables. Will be deprecated in a future version.
-@font-family--custom:                     @define-font-name, @font-family--sans;
-@font-family--sans:                       -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-@font-family--mono:                      "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-@font-family--marketing:                 @define-marketing-font-name, @font-family--sans; // Marketing font
-@font-family--marketing-semi-expanded:   @define-marketing-semi-expanded-font-name, @font-family--sans; // Marketing font
-@font-family--marketing-expanded:        @define-marketing-expanded-font-name, @font-family--sans; // Marketing font
 
-//  New variables. Use these moving forward.
-@ff-custom:                     @font-family--custom;
-@ff-sans:                       @font-family--sans;
-@ff-mono:                       @font-family--mono;
-@ff-marketing:                  @font-family--marketing; // Marketing font
-@ff-marketing-semi-expanded:    @font-family--marketing-semi-expanded; // Marketing font
-@ff-marketing-expanded:         @font-family--marketing-expanded; // Marketing font
+@ff-custom: @define-ff-custom-name, @ff-sans;
+@ff-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+@ff-mono: @define-ff-mono-name, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+@ff-marketing: @define-ff-marketing-name, @ff-sans;
+@ff-marketing-semi-expanded: @define-ff-marketing-semi-expanded-name, @ff-sans;
+@ff-marketing-expanded: @define-ff-marketing-expanded-name, @ff-sans;
 
 
 //  ============================================================================
 //  $   FONT WEIGHTS
 //  ----------------------------------------------------------------------------
-//  Older variables. Will be deprecated in a future version.
-@font-weight--light:            200;
-@font-weight--normal:           400;
-@font-weight--medium:           500;
-@font-weight--bold:             600;
-@font-weight--ultra:            700;
-
-//  New variables. Use these moving forward.
-@fw-thin:                       100;
-@fw-light:                      200;
 @fw-normal:                     400;
-@fw-medium:                     500;
-@fw-semibold:                   600; // For marketing
+@fw-medium:                     500; // This is for marketing fonts
+@fw-semibold:                   600; // This is for marketing fonts
 @fw-bold:                       700;
+
+// These are hold-overs from Roboto and are being kept as shims. Don't use them.
+@fw-thin:                       100;
+@fw-light:                      300;
 @fw-black:                      900;
+
+
 
 
 //  ============================================================================
@@ -90,20 +88,6 @@
 //  ============================================================================
 //  $$  HEADLINES
 //  ----------------------------------------------------------------------------
-//  Older variables. Will be deprecated in a future version.
-@headline--xl:      4.2rem;      // 42px
-@headline--lg:      3.6rem;      // 36px
-@headline--md:      3.2rem;      // 32px
-@headline--sm:      2.4rem;      // 24px
-@headline--xs:      1.1rem;      // 11px - Eyebrow
-@text--xl:          2rem;        // 20px
-@text--lg:          1.8rem;      // 18px
-@text--md:          1.6rem;      // 28px - Base font size
-@text--sm:          1.4rem;      // 14px
-@text--xs:          1.2rem;      // 12px
-@text--xxs:         1.1rem;      // 11px
-
-//  New variables. Use these moving forward.
 @fs10:              1rem;
 @fs11:              1.1rem;
 @fs12:              1.2rem;
@@ -119,32 +103,77 @@
 @fs48:              4.8rem;
 @fs54:              5.4rem;
 
+
 //  ============================================================================
 //  $   LINE HEIGHTS
 //  ----------------------------------------------------------------------------
-//  Older variables. Will be deprecated in a future version.
-@line-height--xs:         1;
-@line-height--sm:         1.125;
-@line-height--md:         1.25;
-@line-height--lg:         1.5;
-@line-height--xl:         1.75;
-@line-height--xxl:        2;
+@lh0:               1;
+@lh1:               calc(1em + 1px);
+@lh2:               calc(1em + 2px);
+@lh4:               calc(1em + 4px);
+@lh6:               calc(1em + 6px);
+@lh8:               calc(1em + 8px);
+@lh12:              calc(1em + 12px);
+@lh16:              calc(1em + 16px);
+@lh20:              calc(1em + 20px);
+@lh24:              calc(1em + 24px);
 
-//  New variables. Use these moving forward.
-@lh0:               1em;
-@lh1:               calc(@lh0 + 1px);
-@lh2:               calc(@lh0 + 2px);
-@lh4:               calc(@lh0 + 4px);
-@lh6:               calc(@lh0 + 6px);
-@lh8:               calc(@lh0 + 8px);
-@lh12:              calc(@lh0 + 12px);
-@lh16:              calc(@lh0 + 16px);
-@lh20:              calc(@lh0 + 20px);
-@lh24:              calc(@lh0 + 24px);
-
-@lh-none:           1;
 @lh-tighter:        1.125;
 @lh-tight:          1.25;
 @lh-normal:         1.5;
 @lh-loose:          1.75;
 @lh-looser:         2;
+
+
+//  ============================================================================
+//  $   CSS VARIABLES
+//  ----------------------------------------------------------------------------
+@type-styles-vars: {
+    ff-custom:                              @ff-custom;
+    ff-sans:                                @ff-sans;
+    ff-mono:                                @ff-mono;
+    ff-marketing:                           @ff-marketing;
+    ff-marketing-semi-expanded:             @ff-marketing-semi-expanded;
+    ff-marketing-expanded:                  @ff-marketing-expanded;
+
+    fs10:                                   @fs10;
+    fs11:                                   @fs11;
+    fs12:                                   @fs12;
+    fs14:                                   @fs14;
+    fs16:                                   @fs16;
+    fs18:                                   @fs18;
+    fs20:                                   @fs20;
+    fs24:                                   @fs24;
+    fs28:                                   @fs28;
+    fs32:                                   @fs32;
+    fs36:                                   @fs36;
+    fs42:                                   @fs42;
+    fs48:                                   @fs48;
+    fs54:                                   @fs54;
+
+    lh0:                                    @lh0;
+    lh1:                                    @lh1;
+    lh2:                                    @lh2;
+    lh4:                                    @lh4;
+    lh6:                                    @lh6;
+    lh8:                                    @lh8;
+    lh12:                                   @lh12;
+    lh16:                                   @lh16;
+    lh20:                                   @lh20;
+    lh24:                                   @lh24;
+    lh-tighter:                             @lh-tighter;
+    lh-tight:                               @lh-tight;
+    lh-normal:                              @lh-normal;
+    lh-loose:                               @lh-loose;
+    lh-looser:                              @lh-looser;
+
+    fw-thin:                                @fw-thin; // Deprecated, but used as shim
+    fw-light:                               @fw-light; // Deprecated, but used as shim
+    fw-normal:                              @fw-normal;
+    fw-medium:                              @fw-medium; // This is for marketing fonts
+    fw-semibold:                            @fw-semibold; // This is for marketing fonts
+    fw-bold:                                @fw-bold;
+    fw-black:                               @fw-black; // Deprecated, but used as shim
+
+    ls-content:                             "\1F44D";
+}

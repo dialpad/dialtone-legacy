@@ -1,0 +1,241 @@
+//
+//  DIALTONE
+//  COMPONENTS: TOOLTIPS
+//
+//  These are tooltip classes for Dialpad's design system Dialtone.
+//  For further documentation of these and other classes,
+//  visit https://dialpad.design/components/tooltips
+//
+//  TABLE OF CONTENTS
+//  • VARIABLES
+//  • BASE STYLE
+//  • ALTERNATE STYLES
+//  • ARROW DIRECTIONS
+//    - TOP LEFT
+//    - TOP CENTER
+//    - TOP RIGHT
+//    - RIGHT TOP
+//    - RIGHT CENTER
+//    - RIGHT BOTTOM
+//    - BOTTOM LEFT
+//    - BOTTOM CENTER
+//    - BOTTOM RIGHT
+//    - LEFT TOP
+//    - LEFT CENTER
+//    - LEFT BOTTOM
+//
+//  ============================================================================
+//  $   BASE STYLE
+//  ----------------------------------------------------------------------------
+.d-tooltip-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.d-tooltip {
+    //  --  COMPONENT CSS VARS
+    //  -----------------------
+    --tooltip--bgc:           var(--black-800);
+    --tooltip--fc:            var(--white);
+
+    max-width: var(--size216);
+    padding: var(--su8);
+    z-index: var(--zi-tooltip);
+
+    border-radius: var(--br4);
+    background-color: var(--tooltip--bgc);
+
+    color: var(--tooltip--fc);
+    font-size: var(--fs12);
+    text-align: center;
+    line-height: var(--lh-normal);
+
+    &::after {
+        content: "";
+        position: absolute;
+        border: var(--su6) solid transparent;
+    }
+}
+
+//  ============================================================================
+//  $   INVERTED STYLE
+//  ----------------------------------------------------------------------------
+.d-tooltip--inverted {
+    //  --  COMPONENT CSS VARS
+    //  -----------------------
+    --tooltip--bgc:     var(--black-050);
+    --tooltip--fc:      var(--black-700);
+}
+
+//  ============================================================================
+//  $   HIDE STYLE
+//  ----------------------------------------------------------------------------
+.d-tooltip--hide {
+    opacity: 0;
+    visibility: hidden;
+    transition:
+        visibility 0s 200ms,
+        transform 200ms var(--ttf-in-out) 0s,
+        opacity 200ms var(--ttf-in-out) 0s;
+}
+
+//  ============================================================================
+//  $   SHOW STYLE
+//  ----------------------------------------------------------------------------
+.d-tooltip--show {
+    transform: translate(0,0);
+    opacity: 1;
+    visibility: visible;
+    transition:
+        visibility 0s 0s,
+        transform 200ms var(--ttf-in-out) 10ms,
+        opacity 200ms var(--ttf-in-out) 10ms;
+}
+
+//  ============================================================================
+//  $   HOVER AND FOCUS STYLES
+//  ----------------------------------------------------------------------------
+.d-tooltip--hover {
+    .d-tooltip {
+        &:extend(.d-tooltip--hide);
+    }
+    &:focus-visible,
+    &:hover {
+        .d-tooltip {
+            &:extend(.d-tooltip--show);
+        }
+    }
+}
+
+//  ============================================================================
+//  $   TOOLTIP DIRECTIONS
+//  ============================================================================
+//  $$  TOP
+//  ----------------------------------------------------------------------------
+.d-tooltip__arrow--top-left,
+.d-tooltip__arrow--top-center,
+.d-tooltip__arrow--top-right {
+    transform: translateY(var(--su16));
+    top: calc(100% + var(--su12));
+
+    &::after {
+        top: var(--sun6);
+        border-top-width: 0;
+        border-bottom-color: var(--tooltip--bgc);
+    }
+}
+
+
+//  $$  BOTTOM
+//  ----------------------------------------------------------------------------
+.d-tooltip__arrow--bottom-left,
+.d-tooltip__arrow--bottom-center,
+.d-tooltip__arrow--bottom-right {
+    transform: translateY(var(--sun16));
+    bottom: calc(100% + var(--su12));
+
+    &::after {
+        bottom: var(--sun6);
+        border-bottom-width: 0;
+        border-top-color: var(--tooltip--bgc);
+    }
+}
+
+
+//  $$  TOP / BOTTOM LEFT
+//  ----------------------------------------------------------------------------
+.d-tooltip__arrow--top-left,
+.d-tooltip__arrow--bottom-left {
+    left: var(--sun2);
+
+    &::after {
+        left: var(--su16);
+    }
+}
+
+//  $$  TOP / BOTTOM CENTER
+//  ----------------------------------------------------------------------------
+.d-tooltip__arrow--top-center,
+.d-tooltip__arrow--bottom-center {
+    &:after {
+        left: 50%;
+        margin-left: var(--sun6);
+    }
+}
+
+//  $$  TOP / BOTTOM RIGHT
+//  ----------------------------------------------------------------------------
+.d-tooltip__arrow--top-right,
+.d-tooltip__arrow--bottom-right {
+    right: var(--sun2);
+
+    &::after {
+        right: var(--su16);
+    }
+}
+
+//  $$  RIGHT
+//  ----------------------------------------------------------------------------
+.d-tooltip__arrow--right-top,
+.d-tooltip__arrow--right-center,
+.d-tooltip__arrow--right-bottom {
+    transform: translateX(var(--sun16));
+    right: calc(100% + var(--su12));
+
+    &::after {
+        right: var(--sun6);
+        border-right-width: 0;
+        border-left-color: var(--tooltip--bgc);
+    }
+}
+
+
+//  $$  LEFT
+//  ----------------------------------------------------------------------------
+.d-tooltip__arrow--left-top,
+.d-tooltip__arrow--left-center,
+.d-tooltip__arrow--left-bottom {
+    transform: translateX(var(--su16));
+    left: calc(100% + var(--su12));
+
+    &::after {
+        left: var(--sun6);
+        border-left-width: 0;
+        border-right-color: var(--tooltip--bgc);
+    }
+}
+
+
+//  $$  RIGHT / LEFT TOP
+//  ----------------------------------------------------------------------------
+.d-tooltip__arrow--right-top,
+.d-tooltip__arrow--left-top {
+    top: var(--sun1);
+
+    &::after {
+        top: var(--su8);
+    }
+}
+
+//  $$  RIGHT / LEFT CENTER
+//  ----------------------------------------------------------------------------
+.d-tooltip__arrow--right-center,
+.d-tooltip__arrow--left-center {
+    &::after {
+        top: 50%;
+        margin-top: var(--sun6);
+    }
+}
+
+//  $$  RIGHT / LEFT BOTTOM
+//  ----------------------------------------------------------------------------
+.d-tooltip__arrow--right-bottom,
+.d-tooltip__arrow--left-bottom {
+    bottom: var(--sun1);
+
+    &::after {
+        bottom: var(--su8);
+    }
+}

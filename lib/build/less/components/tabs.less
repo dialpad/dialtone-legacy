@@ -18,8 +18,8 @@
     display: flex;
     flex-wrap: wrap;
 
-    font-size: var(--text-size--md);
-    color: var(--text-color--light);
+    font-size: var(--fs16);
+    color: var(--fc-light);
 
     // Add a bottom border unless no border is requested
     &:not(.d-tablist--no-border):after {
@@ -28,9 +28,9 @@
         right: 0;
         bottom: 0;
         left: 0;
-        height: 0.1rem;
-        background-color: var(--ash-darker);
-        z-index: @z-index--base1;
+        height: var(--su1);
+        background-color: var(--black-200);
+        z-index: var(--zi-base1);
     }
 }
 
@@ -39,26 +39,32 @@
 //  $   BASE STYLE
 //  ----------------------------------------------------------------------------
 .d-tab {
+    //  --  COMPONENT CSS VARS
+    //  ------------------------------------------------------------------------
+    --tab--bgc:         hsla(var(--white-hsl) ~" / " 0%);
+    --tab--fc:          inherit;
+    --tab--oc:          var(--focus-ring);
+
     box-sizing: border-box;
 
     position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin: 0 @spacing2;
-    padding: @spacing12;
+    margin: 0 var(--su2);
+    padding: var(--su12);
 
     border: 0;
-    border-radius: @spacing4 @spacing4 0 0;
-    background-color: fade(@white,0%);
+    border-radius: var(--br4) var(--br4) 0 0;
+    background-color: var(--tab--bgc);
     font: inherit;
     line-height: 1;
-    color: inherit;
+    color: var(--tab--fc);
     fill: currentColor;
 
     cursor: pointer;
-    transition-timing-function: @transition--cubic-inOut;
-    transition-duration: @transition--duration60;
+    transition-timing-function: var(--ttf-in-out);
+    transition-duration: var(--td50);
     transition-property: background-color, color;
 
 
@@ -75,18 +81,18 @@
         right: 0;
         bottom: 0;
         left: 0;
-        height: @spacing2;
-        background-color: fade(@white,0%);
+        height: var(--su2);
+        background-color: var(--tab--bgc);
     }
 
     &:focus {
-        outline: @spacing4 auto hsla(~"@{primary-color--hsl} / 25%");
-        z-index: 2;
+        outline: none;
+        box-shadow: 0px 0px 0px var(--su2) var(--tab--oc);
     }
 
     &:hover {
-        color: var(--text-color--dark);
-        background-color: @ash;
+        --tab--bgc:         var(--black-025);
+        --tab--fc:          var(--fc-dark);
     }
 
     //  Turn off animations if someone doesn't want them.
@@ -100,21 +106,18 @@
 //  $   SELECTED STYLE
 //  ----------------------------------------------------------------------------
 .d-tab--selected {
-    color: var(--primary-color);
-    z-index: @z-index--selected;
+    --tab--fc: var(--primary-color);
 
-    &:focus {
-        outline-color: fade(@primary-color,50%);
-    }
+    z-index: var(--zi-selected);
 
     &:hover {
-        color: var(--primary-color--hover);
-        background-color: var(--btn--inverted__bg--hover);
+        --tab--bgc:         hsla(var(--primary-color-hsl) ~" / " 10%);
+        --tab--fc:          var(--primary-color-hover);
     }
 
-    &:after,
-    &:hover:after {
-        background-color: var(--primary-color);
+    &::after,
+    &:hover::after {
+        --tab--bgc:         var(--primary-color);
     }
 }
 
@@ -123,36 +126,24 @@
 //  $   INVERTED STYLE
 //  ----------------------------------------------------------------------------
 .d-tablist--inverted {
-    color: var(--ash-dark);
+    --tab--fc:          var(--white);
 
     &:after {
-        background-color: fade(@ash-dark,50%);
+        background-color: hsla(var(--purple-800-hsl) ~" / " 50%);
     }
 
     .d-tab {
-        &:focus {
-            outline-color: fade(@ash-dark,50%);
-        }
-
+        --tab--fc:      var(--white);
         &:hover {
-            color: inherit;
-            background-color: fade(@ash,10%);
+            --tab--bgc: hsla(var(--white-hsl) ~" / " 10%);
         }
     }
 
     .d-tab--selected {
-        color: var(--white);
-
+        --tab--fc: var(--white);
+        --tab--oc: var(--white);
         &:after {
-            background-color: currentColor;
-        }
-
-        &:focus {
-            outline-color: fade(@white,50%);
-        }
-
-        &:hover {
-            color: var(--blue-lighter);
+            --tab--bgc: currentColor;
         }
     }
 }
@@ -162,9 +153,9 @@
 //  $   SIZES
 //  ----------------------------------------------------------------------------
 .d-tablist--sm {
-    font-size: var(--text-size--xs);
+    font-size: var(--fs12);
 
     .d-tab {
-        padding: @spacing12;
+        padding: var(--su12);
     }
 }

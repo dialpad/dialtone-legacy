@@ -1,189 +1,335 @@
 ---
 layout: page
-title: Select Menus
-description: Select menus are menus used to provide choices to users.
+title: Select Menu
+description: A select menu is an input control that allows users to choose one option from a list.
+storybook-url: https://vue.dialpad.design/?path=/story/forms-select-menu--default
 ---
 <section class="d-stack16">
-    <header class="d-stack8">
-        <h2 class="dialtone-title__section">Base Style</h2>
-        <p class="dialtone-copy__normal">Select menus are normally paired with a label, but there are times when they can be used without a label.</p>
-    </header>
-    <div class="dialtone-example" data-example="yes" data-code="yes">
-        <div class="dialtone-example__example dialtone-section8">
-            <div class="d-stack16">
-                <label class="d-label" for="Dialtone--SelectExample1a">Travel Method</label>
-                <div class="d-select">
-                    <select id="Dialtone--SelectExample1a">
-                        <option value="" selected>Please select one</option>
-                        <option value="train">Train</option>
-                        <option value="plane">Plane</option>
-                        <option value="boat">Boat</option>
-                        <option value="car">Automobile</option>
-                        <option value="walking">Walking</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-        <div class="dialtone-example__code">
-{% highlight html linenos %}
-<label class="d-label" for="Dialtone--SelectExample1">…</label>
-<div class="d-select">
-    <select id="Dialtone--SelectExample1">
-        <option>…</option>
-    </select>
-</div>
-{% endhighlight %}
-        </div>
-    </div>
+  {% header "h2", "Classes" %}
+  <table class="d-table">
+    <thead>
+      <tr>
+        <th scope="col" class="d-w30p">Class</th>
+        <th scope="col" class="d-w25p">Applies to</th>
+        <th scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in select.classes %}
+        {% assign class = i.class %}
+        {% assign applies = i.applies %}
+        {% assign desc = i.description %}
+        <tr>
+          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">{{ class }}</th>
+          <td class="d-ff-mono d-fc-orange d-fs12">{{ applies }}</td>
+          <td class="d-ff-mono d-fc-orange d-fs12">{{ desc }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 </section>
-<section class="d-stack32">
-    <header class="d-stack8">
-        <h2 class="dialtone-title__section">Validation States</h2>
-        <p class="dialtone-copy__normal">Provides feedback to the user based on their interction, or lack thereof, with a select menu.</p>
-    </header>
-    <div class="d-stack16">
-        <header class="d-stack8">
-            <h3 class="dialtone-title__subsection">Warning</h3>
-            <p class="dialtone-copy__normal">Warns the user that the value(s) they've entered has a potential problem, but it doesn't block them from proceeding.</p>
-        </header>
-        <div class="dialtone-example" data-example="yes" data-code="yes">
-            <div class="dialtone-example__example">
-                <div class="d-stack8">
-                    <label class="d-label" for="Dialtone--SelectExample2">Travel Method</label>
-                    <div class="d-select d-select--warning">
-                        <select id="Dialtone--SelectExample2">
-                            <option value="" selected>Please select one</option>
-                            <option value="train">Train</option>
-                            <option value="plane">Plane</option>
-                            <option value="boat">Boat</option>
-                            <option value="car">Automobile</option>
-                            <option value="walking">Walking</option>
-                        </select>
-                    </div>
-                    <span class="d-input-message d-input-message--warning">Consider selecting an option?</span>
-                </div>
+
+<section class="d-stack16">
+  {% header "h2", "Examples" %}
+  <div class="d-stack48">
+    <div class="d-stack8">
+      {% header "h3", "Base Styles" %}
+      {% paragraph %}A select is normally paired with a label, but there are times when it can be used without a label. Don't rely on the placeholder text as a label.{% endparagraph %}
+      {% codeWell %}
+        {% codeWellHeader %}
+          <div class="d-stack24 d-w100p">
+            <div>
+              <div class="d-label">
+                <label for="Dialtone--SelectExample1">Label</label>
+              </div>
+              <div class="d-select">
+                <select class="d-select__input" id="Dialtone--SelectExample1">
+                  <option value="" selected>Please select one</option>
+                  <option value="option1">Option 1</option>
+                  <option value="option2">Option 2</option>
+                  <option value="option3">Option 3</option>
+                </select>
+              </div>
             </div>
-            <div class="dialtone-example__code">
-{% highlight css %}
-.select-example {
-  .d-select();
-  .d-select--warning();
-}
-.select-message-example {
-  .d-input-message();
-  .d-input-message--warning();
-}
-{% endhighlight %}
+            <div>
+              <div class="d-label">
+                <label for="Dialtone--SelectExample2">Label</label>
+              </div>
+              <div class="d-select">
+                <select class="d-select__input" id="Dialtone--SelectExample2" disabled>
+                  <option value="" selected>Please select one</option>
+                  <option value="option1">Option 1</option>
+                  <option value="option2">Option 2</option>
+                  <option value="option3">Option 3</option>
+                </select>
+              </div>
             </div>
-        </div>
+          </div>
+        {% endcodeWellHeader %}
+        {% codeWellFooter %}
+          {% highlight html linenos %}
+<div>
+  <div class="d-label">
+    <label for="Dialtone--SelectExample1">...</label>
+  </div>
+  <div class="d-select">
+    <select class="d-select__input" id="Dialtone--SelectExample1">
+      <option value="" selected>...</option>
+      <option value="...">...</option>
+      <option value="...">...</option>
+      <option value="...">...</option>
+    </select>
+  </div>
+</div>
+<div>
+  <div class="d-label">
+    <label for="Dialtone--SelectExample2">...</label>
+  </div>
+  <div class="d-select">
+    <select class="d-select__input" id="Dialtone--SelectExample2" disabled>
+      <option value="" selected>...</option>
+      <option value="...">...</option>
+      <option value="...">...</option>
+      <option value="...">...</option>
+    </select>
+  </div>
+</div>
+          {% endhighlight %}
+        {% endcodeWellFooter %}
+      {% endcodeWell %}
     </div>
-    <div class="d-stack16">
-        <header class="d-stack8">
-            <h3 class="dialtone-title__subsection">Error</h3>
-            <p class="dialtone-copy__normal">Alerts the user that the value(s) they've entered is incorrect, not provided, or has some issue that will block them from proceeding with input submission.</p>
-        </header>
-        <div class="dialtone-example" data-example="yes" data-code="yes">
-            <div class="dialtone-example__example">
-                <div class="d-stack8">
-                    <label class="d-label" for="Dialtone--SelectExample3">Travel Method</label>
-                    <div class="d-select d-select--error">
-                        <select id="Dialtone--SelectExample3">
-                            <option value="" selected>Please select one</option>
-                            <option value="train">Train</option>
-                            <option value="plane">Plane</option>
-                            <option value="boat">Boat</option>
-                            <option value="car">Automobile</option>
-                            <option value="walking">Walking</option>
-                        </select>
-                    </div>
-                    <span class="d-input-message d-input-message--error">You must select an option.</span>
-                </div>
+    <div class="d-stack8">
+      {% header "h3", "With Description Text" %}
+      {% codeWell %}
+        {% codeWellHeader %}
+          <div class="d-w100p">
+            <div class="d-label">
+              <label for="Dialtone--SelectExample3">Label</label>
             </div>
-            <div class="dialtone-example__code">
-{% highlight css %}
-.select-example {
-  .d-select();
-  .d-select--error();
-}
-.select-message-example {
-  .d-input-message();
-  .d-input-message--error();
-}
-{% endhighlight %}
+            <div class="d-description">
+                <span>Optional description text</span>
             </div>
-        </div>
+            <div class="d-select">
+              <select class="d-select__input" id="Dialtone--SelectExample3">
+                <option value="" selected>Please select one</option>
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+              </select>
+            </div>
+          </div>
+        {% endcodeWellHeader %}
+        {% codeWellFooter %}
+          {% highlight html linenos %}
+<div class="d-label">...</div>
+<div class="d-description">...</div>
+<div class="d-select">
+  <select class="d-select__input" id="Dialtone--SelectExample3">...</select>
+</div>
+          {% endhighlight %}
+        {% endcodeWellFooter %}
+      {% endcodeWell %}
     </div>
-    <div class="d-stack16">
-        <header class="d-stack8">
-            <h3 class="dialtone-title__subsection">Success</h3>
-            <p class="dialtone-copy__normal">Notifies the user that the value(s) they've entered is correct.</p>
-        </header>
-        <div class="dialtone-example" data-example="yes" data-code="yes">
-            <div class="dialtone-example__example">
-                <div class="d-stack8">
-                    <label class="d-label" for="Dialtone--SelectExample4">Travel Method</label>
-                    <div class="d-select d-select--success">
-                        <select id="Dialtone--SelectExample4">
-                            <option value="">Please select one</option>
-                            <option value="train">Train</option>
-                            <option value="plane">Plane</option>
-                            <option value="boat">Boat</option>
-                            <option value="car" selected>Automobile</option>
-                            <option value="walking">Walking</option>
-                        </select>
-                    </div>
-                    <span class="d-input-message d-input-message--success">Your selection has been saved.</span>
-                </div>
+    <div class="d-stack8">
+      {% header "h3", "With Validation States" %}
+      {% paragraph %}Provides feedback to the user based on their interaction, or lack thereof, with a select.{% endparagraph %}
+      {% codeWell %}
+        {% codeWellHeader %}
+          <div class="d-stack24 d-w100p">
+            <div>
+              <div class="d-label">
+                <label for="Dialtone--SelectExample4">Label</label>
+              </div>
+              <div class="d-select">
+                <select class="d-select__input d-select__input--error" id="Dialtone--SelectExample4">
+                  <option value="" selected>Please select one</option>
+                  <option value="option1">Option 1</option>
+                  <option value="option2">Option 2</option>
+                  <option value="option3">Option 3</option>
+                </select>
+              </div>
+              <div class="d-validation-message d-validation-message--error">
+                <span>Error validation message</span>
+              </div>
             </div>
-            <div class="dialtone-example__code">
-{% highlight css %}
-.select-example {
-  .d-select();
-  .d-select--success();
-}
-.select-message-example {
-  .d-input-message();
-  .d-input-message--success();
-}
-{% endhighlight %}
+            <div>
+              <div class="d-label">
+                <label for="Dialtone--SelectExample5">Label</label>
+              </div>
+              <div class="d-select">
+                <select class="d-select__input d-select__input--success" id="Dialtone--SelectExample5">
+                  <option value="" selected>Please select one</option>
+                  <option value="option1">Option 1</option>
+                  <option value="option2">Option 2</option>
+                  <option value="option3">Option 3</option>
+                </select>
+              </div>
+              <div class="d-validation-message d-validation-message--success">
+                <span>Success validation message</span>
+              </div>
             </div>
-        </div>
+            <div>
+              <div class="d-label">
+                <label for="Dialtone--SelectExample6">Label</label>
+              </div>
+              <div class="d-select">
+                <select class="d-select__input d-select__input--warning" id="Dialtone--SelectExample6">
+                  <option value="" selected>Please select one</option>
+                  <option value="option1">Option 1</option>
+                  <option value="option2">Option 2</option>
+                  <option value="option3">Option 3</option>
+                </select>
+              </div>
+              <div class="d-validation-message d-validation-message--warning">
+                <span>Warning validation message</span>
+              </div>
+            </div>
+          </div>
+        {% endcodeWellHeader %}
+        {% codeWellFooter %}
+          {% highlight html linenos %}
+<div>
+  <div class="d-label">...</div>
+  <div class="d-select">
+    <select class="d-select__input d-select__input--error">...</select>
+  </div>
+  <div class="d-validation-message d-validation-message--error">...</div>
+</div>
+<div>
+  <div class="d-label">...</div>
+  <div class="d-select">
+    <select class="d-select__input d-select__input--success">...</select>
+  </div>
+  <div class="d-validation-message d-validation-message--success">...</div>
+</div>
+<div>
+  <div class="d-label">...</div>
+  <div class="d-select">
+    <select class="d-select__input d-select__input--warning">...</select>
+  </div>
+  <div class="d-validation-message d-validation-message--warning">...</div>
+</div>
+          {% endhighlight %}
+        {% endcodeWellFooter %}
+      {% endcodeWell %}
     </div>
+    <div class="d-stack8">
+      {% header "h3", "Sizes" %}
+      {% paragraph %}We offer different sizes for instances in which the interface requires a smaller or larger select. In general, though, use the base (medium) size select as much as possible, especially in forms.{% endparagraph %}
+      {% codeWell %}
+        {% codeWellHeader %}
+          <div class="d-stack24 d-w100p">
+            <div>
+              <div class="d-label d-label--xs">
+                <label for="Dialtone--SelectExample7">Label</label>
+              </div>
+              <div class="d-select d-select--xs">
+                <select class="d-select__input" id="Dialtone--SelectExample7">
+                  <option value="" selected>Please select one</option>
+                  <option value="option1">Option 1</option>
+                  <option value="option2">Option 2</option>
+                  <option value="option3">Option 3</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <div class="d-label d-label--sm">
+                <label for="Dialtone--SelectExample8">Label</label>
+              </div>
+              <div class="d-select d-select--sm">
+                <select class="d-select__input" id="Dialtone--SelectExample8">
+                  <option value="" selected>Please select one</option>
+                  <option value="option1">Option 1</option>
+                  <option value="option2">Option 2</option>
+                  <option value="option3">Option 3</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <div class="d-label">
+                <label for="Dialtone--SelectExample9">Label</label>
+              </div>
+              <div class="d-select">
+                <select class="d-select__input" id="Dialtone--SelectExample9">
+                  <option value="" selected>Please select one</option>
+                  <option value="option1">Option 1</option>
+                  <option value="option2">Option 2</option>
+                  <option value="option3">Option 3</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <div class="d-label d-label--lg">
+                <label for="Dialtone--SelectExample10">Label</label>
+              </div>
+              <div class="d-select d-select--lg">
+                <select class="d-select__input" id="Dialtone--SelectExample10">
+                  <option value="" selected>Please select one</option>
+                  <option value="option1">Option 1</option>
+                  <option value="option2">Option 2</option>
+                  <option value="option3">Option 3</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <div class="d-label d-label--xl">
+                <label for="Dialtone--SelectExample11">Label</label>
+              </div>
+              <div class="d-select d-select--xl">
+                <select class="d-select__input" id="Dialtone--SelectExample11">
+                  <option value="" selected>Please select one</option>
+                  <option value="option1">Option 1</option>
+                  <option value="option2">Option 2</option>
+                  <option value="option3">Option 3</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        {% endcodeWellHeader %}
+        {% codeWellFooter %}
+          {% highlight html linenos %}
+<div>
+  <div class="d-label d-label--xs">...</div>
+  <div class="d-select d-select--xs">
+    <select class="d-select__input">...</select>
+  </div>
+</div>
+<div>
+  <div class="d-label d-label--sm">...</div>
+  <div class="d-select d-select--sm">
+    <select class="d-select__input">...</select>
+  </div>
+</div>
+<div>
+  <div class="d-label">...</div>
+  <div class="d-select">
+    <select class="d-select__input">...</select>
+  </div>
+</div>
+<div>
+  <div class="d-label d-label--lg">...</div>
+  <div class="d-select d-select--lg">
+    <select class="d-select__input">...</select>
+  </div>
+</div>
+<div>
+  <div class="d-label d-label--xl">...</div>
+  <div class="d-select d-select--xl">
+    <select class="d-select__input">...</select>
+  </div>
+</div>
+          {% endhighlight %}
+        {% endcodeWellFooter %}
+      {% endcodeWell %}
+    </div>
+  </div>
 </section>
 <section class="d-stack16">
-    <h2 class="dialtone-title__section">Sizes</h2>
-    <table class="dialtone-table">
-        <thead>
-            <tr>
-                <th scope="col" width="15%">Name</th>
-                <th scope="col" width="25%">Class</th>
-                <th scope="col" width="10%">Size</th>
-                <th scope="col">Example</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for i in inputs.input-sizes %}
-            {% assign name = i.name %}
-            {% assign class = i.class %}
-            {% assign size = i.size %}
-                <tr>
-                    <th scope="row" class="d-fs14">{{ name }}</th>
-                    <td class="code-example">{% if class != nil %}.d-select--{{ class }}{% else %}N/A{% endif %}</td>
-                    <td>{{ size }}</td>
-                    <td>
-                        <div class="d-select{% if class != nil %} d-select--{{ class }}{% endif %}">
-                            <select id="Dialtone--SelectSizeExample--{{ name }}">
-                                <option value="" selected>Please select an option…</option>
-                                <option value="train">Train</option>
-                                <option value="plane">Plane</option>
-                                <option value="boat">Boat</option>
-                                <option value="car">Automobile</option>
-                                <option value="walking">Walking</option>
-                            </select>
-                        </div>
-                    </td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+  {% header "h2", "Accessibility" %}
+  {% ul %}
+    <li>Make sure the {% code %}label{% endcode %} {% code %}for{% endcode %} attribute match the select {% code %}id{% endcode %}.</li>
+    <li>Avoiding removing {% code %}labels{% endcode %}. Labelled selects are user-friendly.</li>
+    <li>Avoid relying on placeholder text as a substitute for a label.</li>
+    <li>Avoid customizing the placeholder text.</li>
+  {% endul %}
 </section>
