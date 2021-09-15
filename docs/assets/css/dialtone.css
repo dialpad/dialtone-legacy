@@ -316,7 +316,12 @@ body {
   --su32: 3.2rem;
   --su48: 4.8rem;
   --su64: 6.4rem;
-  --sun0: 0;
+  --su72: 7.2rem;
+  --su84: 8.4rem;
+  --su96: 9.6rem;
+  --su102: 10.2rem;
+  --su114: 11.4rem;
+  --su128: 12.8rem;
   --sun1: -0.1rem;
   --sun2: -0.2rem;
   --sun4: -0.4rem;
@@ -328,6 +333,12 @@ body {
   --sun32: -3.2rem;
   --sun48: -4.8rem;
   --sun64: -6.4rem;
+  --sun72: -7.2rem;
+  --sun84: -8.4rem;
+  --sun96: -9.6rem;
+  --sun102: -10.2rem;
+  --sun114: -11.4rem;
+  --sun128: -12.8rem;
 }
 .d-avatar {
   --avatar--fc: var(--fc-lighter);
@@ -544,8 +555,6 @@ body {
   color: var(--banner--fc);
   font-size: var(--fs14);
   line-height: var(--lh6);
-  -webkit-transform: translate3d(0, var(--topbar-height), 0);
-          transform: translate3d(0, var(--topbar-height), 0);
 }
 .d-banner[aria-hidden="true"] {
   --topbar-height: var(--sun64);
@@ -560,6 +569,10 @@ body {
   z-index: calc(var(--zi-navigation-fixed) + 1);
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
+}
+.d-banner--transform {
+  -webkit-transform: translate3d(0, var(--topbar-height), 0);
+          transform: translate3d(0, var(--topbar-height), 0);
 }
 .d-banner__dialog {
   display: flex;
@@ -698,43 +711,43 @@ body {
   transition: none;
   cursor: not-allowed;
 }
-.d-btn .d-svg {
-  width: 1.6rem !important;
-  height: 1.6rem !important;
+.d-btn .d-btn__icon .d-svg {
+  width: 1.6rem;
+  height: 1.6rem;
 }
 .d-btn--xs {
   padding: calc(var(--su6) - var(--su1)) calc(var(--su8) - var(--su1));
   font-size: var(--fs12);
 }
-.d-btn--xs .d-svg {
-  width: 1.2rem !important;
-  height: 1.2rem !important;
+.d-btn--xs .d-btn__icon .d-svg {
+  width: 1.2rem;
+  height: 1.2rem;
 }
 .d-btn--sm {
   padding: calc(var(--su6) - var(--su1)) calc(var(--su8) - var(--su1));
   font-size: var(--fs14);
   line-height: var(--lh6);
 }
-.d-btn--sm .d-svg {
-  width: 1.4rem !important;
-  height: 1.4rem !important;
+.d-btn--sm .d-btn__icon .d-svg {
+  width: 1.4rem;
+  height: 1.4rem;
 }
 .d-btn--lg {
   padding: calc(var(--su12) - var(--su1)) calc(var(--su16) - var(--su1));
   font-size: var(--fs20);
 }
-.d-btn--lg .d-svg {
-  width: 2rem !important;
-  height: 2rem !important;
+.d-btn--lg .d-btn__icon .d-svg {
+  width: 2rem;
+  height: 2rem;
 }
 .d-btn--xl {
   padding: calc(var(--su12) - var(--su1)) calc(var(--su16) - var(--su1));
   font-size: var(--fs24);
   line-height: var(--lh8);
 }
-.d-btn--xl .d-svg {
-  width: 2.4rem !important;
-  height: 2.4rem !important;
+.d-btn--xl .d-btn__icon .d-svg {
+  width: 2.4rem;
+  height: 2.4rem;
 }
 .d-btn__label {
   display: inline-flex;
@@ -743,8 +756,6 @@ body {
 }
 .d-btn__icon {
   display: flex;
-  width: 1em;
-  height: 1em;
   margin-top: var(--sun4);
   margin-bottom: var(--sun4);
 }
@@ -1261,7 +1272,8 @@ legend .d-label {
   width: var(--input-icon-size);
   height: var(--input-icon-size);
   margin: 0;
-  margin-top: 1.5rem;
+  margin-top: 1.6rem;
+  line-height: 0;
 }
 .d-input-icon svg {
   width: var(--input-icon-size);
@@ -1282,7 +1294,7 @@ legend .d-label {
 }
 .d-input-icon--xs {
   --input-icon-size: 1.2rem;
-  margin-top: 0.9rem;
+  margin-top: 1.4rem;
 }
 .d-input-icon--xs.d-input-icon--left ~ .d-input,
 .d-input-icon--xs.d-input-icon--left ~ .d-textarea {
@@ -1293,7 +1305,7 @@ legend .d-label {
 }
 .d-input-icon--sm {
   --input-icon-size: 1.4rem;
-  margin-top: var(--su12);
+  margin-top: 1.5rem;
 }
 .d-input-icon--sm.d-input-icon--left ~ .d-input,
 .d-input-icon--sm.d-input-icon--left ~ .d-textarea {
@@ -1304,7 +1316,7 @@ legend .d-label {
 }
 .d-input-icon--lg {
   --input-icon-size: 2rem;
-  margin-top: 2.1rem;
+  margin-top: 2rem;
 }
 .d-input-icon--lg.d-input-icon--left ~ .d-input,
 .d-input-icon--lg.d-input-icon--left ~ .d-textarea {
@@ -1315,7 +1327,7 @@ legend .d-label {
 }
 .d-input-icon--xl {
   --input-icon-size: 2.4rem;
-  margin-top: 2.3rem;
+  margin-top: 2.2rem;
 }
 .d-input-icon--xl.d-input-icon--left ~ .d-input,
 .d-input-icon--xl.d-input-icon--left ~ .d-textarea {
@@ -2025,8 +2037,11 @@ legend .d-label {
   --select--bgc: var(--white);
   --select--fc: var(--black-800);
   --select--bs: var(--focus-ring);
+  display: inline-flex;
   position: relative;
   box-sizing: border-box;
+  width: 100%;
+  width: -webkit-fill-available;
   margin-top: var(--su6);
   font-family: inherit;
   font-size: var(--fs18);
@@ -36180,6 +36195,15 @@ body {
   --br32: var(--su32);
   --br-circle: 50%;
   --br-pill: 100em;
+  --icon12: 1.2rem;
+  --icon14: 1.4rem;
+  --icon16: 1.6rem;
+  --icon18: 1.8rem;
+  --icon20: 2rem;
+  --icon24: 2.4rem;
+  --icon32: 3.2rem;
+  --icon48: 4.8rem;
+  --icon64: 6.4rem;
   --sidebar-width: minmax(20rem, 30rem);
   --content-width: minmax(32rem, 90ch);
   --header-height: minmax(6.4rem, min-content);
