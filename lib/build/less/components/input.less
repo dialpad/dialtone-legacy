@@ -60,6 +60,14 @@
     transition-duration: 100ms;
     transition-property: border, box-shadow, background-color;
 
+    &.d-input-icon--right {
+        padding-right: @inputs-icon-spacing;
+    }
+
+    &.d-input-icon--left {
+        padding-left: @inputs-icon-spacing;
+    }
+
     //  --  Placeholder copy
     &::placeholder {
         color: var(--black-300);
@@ -98,15 +106,39 @@
 //  ----------------------------------------------------------------------------
 .d-input--xs {
     .input-button-xs();
+    &.d-input-icon--right {
+        padding-right: @inputs-icon-spacing--xs;
+    }
+    &.d-input-icon--left {
+        padding-left: @inputs-icon-spacing--xs;
+    }
 }
 .d-input--sm {
     .input-button-sm();
+    &.d-input-icon--right {
+        padding-right: @inputs-icon-spacing--sm;
+    }
+    &.d-input-icon--left {
+        padding-left: @inputs-icon-spacing--sm;
+    }
 }
 .d-input--lg {
     .input-button-lg();
+    &.d-input-icon--right {
+        padding-right: @inputs-icon-spacing--lg;
+    }
+    &.d-input-icon--left {
+        padding-left: @inputs-icon-spacing--lg;
+    }
 }
 .d-input--xl {
     .input-button-xl();
+    &.d-input-icon--right {
+        padding-right: @inputs-icon-spacing--xl;
+    }
+    &.d-input-icon--left {
+        padding-left: @inputs-icon-spacing--xl;
+    }
 }
 
 
@@ -123,18 +155,42 @@
 .d-textarea--xs {
     .input-button-xs();
     min-height:  4rem;
+    &.d-input-icon--right {
+        padding-right: @inputs-icon-spacing--xs;
+    }
+    &.d-input-icon--left {
+        padding-left: @inputs-icon-spacing--xs;
+    }
 }
 .d-textarea--sm {
     .input-button-sm();
     min-height: 4.8rem;
+    &.d-input-icon--right {
+        padding-right: @inputs-icon-spacing--sm;
+    }
+    &.d-input-icon--left {
+        padding-left: @inputs-icon-spacing--sm;
+    }
 }
 .d-textarea--lg {
     .input-button-lg();
     min-height: 9.2rem;
+    &.d-input-icon--right {
+        padding-right: @inputs-icon-spacing--lg;
+    }
+    &.d-input-icon--left {
+        padding-left: @inputs-icon-spacing--lg;
+    }
 }
 .d-textarea--xl {
     .input-button-xl();
     min-height: 10rem;
+    &.d-input-icon--right {
+        padding-right: @inputs-icon-spacing--xl;
+    }
+    &.d-input-icon--left {
+        padding-left: @inputs-icon-spacing--xl;
+    }
 }
 
 //  $$  VALIDATION STATES
@@ -188,23 +244,29 @@
         height: var(--input-icon-size);
         width:  var(--input-icon-size);
     }
+
+    &.d-input-icon--left {
+        left: var(--su8);
+    }
+
+    &.d-input-icon--right {
+        right: var(--su8);
+    }
 }
 
-//  $$ POSITIONS
-//  ----------------------------------------------------------------------------
+// For backwards compatibility purposes only.
+// be used instead of this.
 .d-input-icon--left {
-    left: var(--su8);
-
-    // Update padding for d-input, d-textarea if d-input-icon--left is present
+    // Update padding for d-input if d-input-icon--right is present
     & ~ .d-input,
     & ~ .d-textarea {
         padding-left: @inputs-icon-spacing;
     }
 }
 
+// For backwards compatibility purposes only.
+// be used instead of this.
 .d-input-icon--right {
-    right: var(--su8);
-
     // Update padding for d-input if d-input-icon--right is present
     & ~ .d-input {
         padding-right: @inputs-icon-spacing;
@@ -217,12 +279,14 @@
     --input-icon-size: @icon12;
     margin-top:        1.4rem;
 
+    // For backwards compatibility purposes only.
     // Update padding for d-input, d-textarea if d-input-icon--left is present
     &.d-input-icon--left ~ .d-input,
     &.d-input-icon--left ~ .d-textarea {
         padding-left: @inputs-icon-spacing--xs;
     }
 
+    // For backwards compatibility purposes only.
     // Update padding for d-input if d-input-icon--right is present
     &.d-input-icon--right ~ .d-input {
         padding-right: @inputs-icon-spacing--xs;
@@ -233,12 +297,14 @@
     --input-icon-size: @icon14;
     margin-top:        1.5rem;
 
+    // For backwards compatibility purposes only.
     // Update padding for d-input, d-textarea if d-input-icon--left is present
     &.d-input-icon--left ~ .d-input,
     &.d-input-icon--left ~ .d-textarea {
         padding-left: @inputs-icon-spacing--sm;
     }
 
+    // For backwards compatibility purposes only.
     // Update padding for d-input if d-input-icon--right is present
     &.d-input-icon--right ~ .d-input {
         padding-right: @inputs-icon-spacing--sm;
@@ -249,12 +315,14 @@
     --input-icon-size: @icon20;
     margin-top:        2.0rem;
 
+    // For backwards compatibility purposes only.
     // Update padding for d-input, d-textarea if d-input-icon--left is present
     &.d-input-icon--left ~ .d-input,
     &.d-input-icon--left ~ .d-textarea {
         padding-left: @inputs-icon-spacing--lg;
     }
 
+    // For backwards compatibility purposes only.
     // Update padding for d-input if d-input-icon--right is present
     &.d-input-icon--right ~ .d-input {
         padding-right: @inputs-icon-spacing--lg;
@@ -265,12 +333,14 @@
     --input-icon-size: @icon24;
     margin-top:        2.2rem;
 
+    // For backwards compatibility purposes only.
     // Update padding for d-input, d-textarea if d-input-icon--left is present
     &.d-input-icon--left ~ .d-input,
     &.d-input-icon--left ~ .d-textarea {
         padding-left: @inputs-icon-spacing--xl;
     }
 
+    // For backwards compatibility purposes only.
     // Update padding for d-input if d-input-icon--right is present
     &.d-input-icon--right ~ .d-input {
         padding-right: @inputs-icon-spacing--xl;
