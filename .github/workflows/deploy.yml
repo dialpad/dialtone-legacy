@@ -1,0 +1,50 @@
+name: Deploy
+
+on:
+  push:
+    branches: [ gha-workflow ]
+
+jobs:
+  deploy:
+
+    runs-on: ubuntu-latest
+
+    env:
+      NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v2
+
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14.x'
+
+      - name: Check if dialpad member
+        id: is_organization_member
+        uses: jamessingleton/is-organization-member@v1
+        with:
+          organization: dialpad
+          username: ${{ github.actor }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create Comment
+        if: steps.is_organization_member.outputs.result == false
+        run: echo Failure. User does not belong to dialpad
+
+      # - name: Set token
+      #   if: steps.is_organization_member.outputs.result == true
+      #   run: npm config set //registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}
+
+      - name: Install dependencies
+        if: steps.is_organization_member.outputs.result == true
+        run: npm run setup:ci
+
+      - name: Build project
+        if: steps.is_organization_member.outputs.result == true
+        run: npm run build
+
+      # - name: Deploy project
+      #   if: steps.is_organization_member.outputs.result == true
+      #   run: npm publish
