@@ -1,3 +1,0 @@
-<template>
-  <svg aria-hidden="true" aria-label="Select Dropdown" class="d-svg d-svg--system d-svg__selectDropdown" viewBox="0 0 24 24"><path d="M7 13l5 5 5-5H7zM7 11l5-5 5 5H7z"/></svg>
-</template>
