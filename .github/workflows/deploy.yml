@@ -18,16 +18,18 @@ jobs:
         with:
           node-version: '14.x'
 
-      - name: Check if dialpad member
+      - name: Check if user is a dialpad member
         id: is_organization_member
-        uses: JamesSingleton/is-organization-member@1.0.0
+        uses: octokit/request-action@v2.1.0
         with:
-          organization: dialpad
+          route: GET /orgs/{org}/members/{username}
+          org: dialpad
           username: ${{ github.actor }}
-          token: ${{ secrets.DIALTONE_CI_TOKEN }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.DIALTONE_CI_TOKEN }}
 
       - name: Create Comment
-        if: steps.is_organization_member.outputs.result == false
+        if: steps.is_organization_member.outputs.status != 204
         run: echo Failure. User does not belong to dialpad
 
       # - name: Set token
@@ -35,13 +37,13 @@ jobs:
       #   run: npm config set //registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}
 
       - name: Install dependencies
-        if: steps.is_organization_member.outputs.result == true
+        if: steps.is_organization_member.outputs.status == 204
         run: npm run setup:ci
 
       - name: Build project
-        if: steps.is_organization_member.outputs.result == true
+        if: steps.is_organization_member.outputs.status == 204
         run: npm run build
 
       # - name: Deploy project
-      #   if: steps.is_organization_member.outputs.result == true
+      #   if: steps.is_organization_member.outputs.status == 204
       #   run: npm publish
