@@ -2,7 +2,10 @@ name: Deploy
 
 on:
   push:
-    branches: [ gha-workflow ]
+    branches:
+      - production
+      - alpha
+      - beta
 
 jobs:
   deploy:
@@ -12,6 +15,9 @@ jobs:
     steps:
       - name: Check out branch
         uses: actions/checkout@v2
+
+      - name: Get branch name
+        uses: nelonoel/branch-name@v1.0.1
 
       - name: Use Node.js
         uses: actions/setup-node@v1
@@ -37,5 +43,10 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Deploy project
+      - name: Deploy production
+        if: ${BRANCH_NAME} == 'production'
         run: npm publish
+
+      - name: Deploy prerelease
+        if: ${BRANCH_NAME} != 'production'
+        run: npm publish --tag ${BRANCH_NAME}
