@@ -1,0 +1,8 @@
+#!/bin/bash
+echo "Enter the version number of this release Ex/ 6.0.2 or 6.0.0-beta.16: "
+read version
+branch=$(git branch --show-current)
+echo "Committing new npm version and setting git tag"
+npm version $version
+echo "Pushing new commit and tag to remote"
+git push --atomic origin $branch $version
