@@ -9,9 +9,6 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    env:
-      NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
-
     steps:
       - name: Check out branch
         uses: actions/checkout@v2
@@ -27,7 +24,7 @@ jobs:
         with:
           organization: dialpad
           username: ${{ github.actor }}
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.DIALTONE_CI_TOKEN }}
 
       - name: Create Comment
         if: steps.is_organization_member.outputs.result == false
