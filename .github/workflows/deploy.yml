@@ -21,6 +21,10 @@ jobs:
         with:
           node-version: '14.x'
 
+      - name: parse branch from ref
+        id: branch
+        run: echo ::set-output name=BRANCH::${GITHUB_REF/refs\/heads\//}
+
       # Will prevent the rest of the steps from running on fail
       - name: Check if user is a dialpad member
         uses: octokit/request-action@v2.1.0
@@ -46,4 +50,4 @@ jobs:
 
       - name: Deploy prerelease
         if: ${{ github.ref != 'refs/heads/production' }}
-        run: npm publish --tag ${GITHUB_REF##*/}
+        run: npm publish --tag ${{ steps.branch.outputs.BRANCH }}
