@@ -14,5 +14,5 @@ In order to push the production branch to trigger a build to [npmjs](https://npm
 8. `git push` to push the branch. This will trigger the deploy.
 9. You should be able to see your deploy running at https://github.com/dialpad/dialtone/actions
 10. When this has completed the new version of the package has been deployed to npm, and the documentation website (`dialpad.design`) is now updated.
-11. Finally you need [draft a release on Github](https://github.com/dialpad/dialtone/releases/new). You can look at [past releases](https://github.com/dialpad/dialtone/releases/tag/v5.13.0) for reference, but generally I give it a title (What’s the update?) and then a short description of what was added, changed, or fixed.
+11. Finally you need to [draft a release on Github](https://github.com/dialpad/dialtone/releases/new). Please use the [release template](https://raw.githubusercontent.com/dialpad/dialtone/staging/.github/release_template.md) to enter your description of the release.
 12. Now you’re done.
