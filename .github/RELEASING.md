@@ -10,7 +10,7 @@ In order to push the production branch to trigger a build to [npmjs](https://npm
 5. After entering your version number the package.json version numbers will be updated and committed with a git tag matching the version you entered. This will then be automatically pushed to the remote
 6. `git checkout production` to move to the production branch
 > Note if you would like to deploy a prerelease (alpha or beta). You would do this on a branch named `alpha` or `beta` instead of `production`. This will automatically tag the deployment to npm as a alpha or beta release so npm does not consider it to be the latest version. It could be installed with the command `npm i dialtone@beta`
-7. `git merge staging` (or your prerelease working branch) to merge the changes to this branch
+7. `git merge staging --ff-only` (or your prerelease working branch) to merge the changes to this branch
 8. `git push` to push the branch. This will trigger the deploy.
 9. You should be able to see your deploy running at https://github.com/dialpad/dialtone/actions
 10. When this has completed the new version of the package has been deployed to npm, and the documentation website (`dialpad.design`) is now updated.
