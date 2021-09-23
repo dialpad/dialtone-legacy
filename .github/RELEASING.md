@@ -9,7 +9,7 @@ In order to push the production branch to trigger a build to [npmjs](https://npm
 4. In your CLI window, run `./release.sh` from the dialtone repository directory.
 5. It will prompt you to enter a version number. Major versions are breaking changes. Minor versions are large changes but backward compatible. Patches are bug fixes to existing Dialtone items.
 > Note on a prerelease our convention is major.minor.patch-prerelease.buildmetadata ex. `6.0.0-alpha.1`.
-6. After entering your version number the package.json version numbers will be updated and commited with a git tag matching the version you entered. This will then be automatically pushed to the remote which will trigger a deploy
+6. After entering your version number the package.json version numbers will be updated and committed with a git tag matching the version you entered. This will then be automatically pushed to the remote which will trigger a deploy
 7. You should be able to see your deploy running at https://github.com/dialpad/dialtone/actions
 8. When this has completed the new version of the package has been deployed to npm, and the documentation website (`dialpad.design`) is now updated.
 9. Merge the production branch back to staging so they remain in sync.
