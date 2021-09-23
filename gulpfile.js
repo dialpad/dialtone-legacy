@@ -119,7 +119,7 @@ var paths = {
         uc: 'favicon-uberconference__512.png',
     },
     fonts: {
-        input: './lib/build/fonts/**/*.ttf',
+        input: './lib/build/fonts/*.woff2',
         outputLib: './lib/dist/fonts/',
         outputDocs: './docs/assets/fonts/'
     },
@@ -502,7 +502,6 @@ var webfonts = function(done) {
     if (!settings.fonts) return done();
 
     return src(paths.fonts.input)
-        .pipe(ttf2woff2())
         .pipe(dest(paths.fonts.outputLib))
         .pipe(dest(paths.fonts.outputDocs));
 
@@ -592,6 +591,8 @@ var watchFiles = function(done) {
 //  --  BUILD OUT THE SITE BUT DON'T START THE SERVER
 exports.default = series(
     cleanSite,
+    cleanFonts,
+    webfonts,
     parallel(
         libStyles,
         docStyles,
