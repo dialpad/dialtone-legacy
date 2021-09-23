@@ -21,7 +21,7 @@ If you only need access to Dialtone's variables and customizations to build a fi
 
 ## Building Dialtone locally
 
-To build Dialtone locally, visit our [installation instructions](https://dialpad.design/getting-started/installing/).
+To build Dialtone locally, visit our [installation instructions](https://dialpad.design/getting-started/installation/).
 
 ## Contributing
 
