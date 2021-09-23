@@ -54,66 +54,15 @@ description: Utilities to control an element's height.
     </header>
     <aside class="d-bar8 d-of-hidden">
         <header class="d-d-flex d-p24 d-bgc-green-100 d-bgo50 d-w100p d-h332 d-flow16 d-of-x-scroll d-fs24 d-fw-bold d-ta-center">
-          <div class="d-d-flex d-fd-column d-pls-start d-h100p d-w64"><span>1</span>
-            <div class="d-h216">
-              <div class="d-h10p d-bgc-green-300 d-bar4"></div>
+          {% assign percentages = width-height.percentage | split: ", " %}
+          {% for i in percentages %}
+            <div class="d-d-flex d-fd-column d-pls-start d-h100p">
+              <span>{{forloop.index}}</span>
+              <div class="d-w64 d-h216">
+                <div class="d-h{{i}}p d-bgc-green-300 d-bar4"></div>
+              </div>
             </div>
-          </div>
-          <div class="d-d-flex d-fd-column d-pls-start d-h100p d-w64"><span>2</span>
-            <div class="d-h216">
-              <div class="d-h20p d-bgc-green-300 d-bar4"></div>
-            </div>
-          </div>
-          <div class="d-d-flex d-fd-column d-pls-start d-h100p d-w64"><span>3</span>
-            <div class="d-h216">
-              <div class="d-h25p d-bgc-green-300 d-bar4"></div>
-            </div>
-          </div>
-          <div class="d-d-flex d-fd-column d-pls-start d-h100p d-w64"><span>4</span>
-            <div class="d-h216">
-              <div class="d-h30p d-bgc-green-300 d-bar4"></div>
-            </div>
-          </div>
-          <div class="d-d-flex d-fd-column d-pls-start d-h100p d-w64"><span>5</span>
-            <div class="d-h216">
-              <div class="d-h40p d-bgc-green-300 d-bar4"></div>
-            </div>
-          </div>
-          <div class="d-d-flex d-fd-column d-pls-start d-h100p d-w64"><span>6</span>
-            <div class="d-h216">
-              <div class="d-h50p d-bgc-green-300 d-bar4"></div>
-            </div>
-          </div>
-          <div class="d-d-flex d-fd-column d-pls-start d-h100p d-w64"><span>7</span>
-            <div class="d-h216">
-              <div class="d-h60p d-bgc-green-300 d-bar4"></div>
-            </div>
-          </div>
-          <div class="d-d-flex d-fd-column d-pls-start d-h100p d-w64"><span>8</span>
-            <div class="d-h216">
-              <div class="d-h70p d-bgc-green-300 d-bar4"></div>
-            </div>
-          </div>
-          <div class="d-d-flex d-fd-column d-pls-start d-h100p d-w64"><span>9</span>
-            <div class="d-h216">
-              <div class="d-h75p d-bgc-green-300 d-bar4"></div>
-            </div>
-          </div>
-          <div class="d-d-flex d-fd-column d-pls-start d-h100p d-w64"><span>10</span>
-            <div class="d-h216">
-              <div class="d-h80p d-bgc-green-300 d-bar4"></div>
-            </div>
-          </div>
-          <div class="d-d-flex d-fd-column d-pls-start d-h100p d-w64"><span>11</span>
-            <div class="d-h216">
-              <div class="d-h90p d-bgc-green-300 d-bar4"></div>
-            </div>
-          </div>
-          <div class="d-d-flex d-fd-column d-pls-start d-h100p d-w64"><span>12</span>
-            <div class="d-h216">
-              <div class="d-h100p d-bgc-green-300 d-bar4"></div>
-            </div>
-          </div>
+          {% endfor %}
         </header>
         <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
 {% highlight html linenos %}
@@ -142,105 +91,13 @@ description: Utilities to control an element's height.
     </header>
     <aside class="d-bar8 d-of-hidden">
         <header class="d-d-flex d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmx512 d-flow16 d-of-scroll d-fs24 d-fw-bold d-ta-center">
-          <div class="d-d-flex d-fd-column d-pls-start"><span>1</span>
-            <div class="d-fl-center d-w64 d-h0 d-bgc-pink-300 d-bar4"></div>
+          {% assign fixed = width-height.fixed | split: ", " %}
+          {% for i in fixed %}
+          <div class="d-d-flex d-fd-column d-pls-start">
+            <span>{{forloop.index}}</span>
+            <div class="d-fl-center d-w64 d-h{{i}} d-bgc-pink-300 d-bar4"></div>
           </div>
-          <div class="d-d-flex d-fd-column d-pls-start"><span>2</span>
-            <div class="d-fl-center d-w64 d-h1 d-bgc-pink-300 d-bar4"></div>
-          </div>
-          <div class="d-d-flex d-fd-column d-pls-start"><span>3</span>
-            <div class="d-fl-center d-w64 d-h2 d-bgc-pink-300 d-bar4"></div>
-          </div>
-          <div class="d-d-flex d-fd-column d-pls-start"><span>4</span>
-            <div class="d-fl-center d-w64 d-h4 d-bgc-pink-300 d-bar4"></div>
-          </div>
-          <div class="d-d-flex d-fd-column d-pls-start"><span>5</span>
-            <div class="d-fl-center d-w64 d-h6 d-bgc-pink-300 d-bar4"></div>
-          </div>
-          <div class="d-d-flex d-fd-column d-pls-start"><span>6</span>
-            <div class="d-fl-center d-w64 d-h8 d-bgc-pink-300 d-bar4"></div>
-          </div>
-          <div class="d-d-flex d-fd-column d-pls-start"><span>7</span>
-            <div class="d-fl-center d-w64 d-h12 d-bgc-pink-300 d-bar4"></div>
-          </div>
-          <div class="d-d-flex d-fd-column d-pls-start"><span>8</span>
-            <div class="d-fl-center d-w64 d-h16 d-bgc-pink-300 d-bar4"></div>
-          </div>
-          <div class="d-d-flex d-fd-column d-pls-start"><span>9</span>
-            <div class="d-fl-center d-w64 d-h24 d-bgc-pink-300 d-bar4"></div>
-          </div>
-          <div class="d-d-flex d-fd-column d-pls-start"><span>10</span>
-            <div class="d-fl-center d-w64 d-h32 d-bgc-pink-300 d-bar4"></div>
-          </div>
-          <div class="d-d-flex d-fd-column d-pls-start"><span>11</span>
-            <div class="d-fl-center d-w64 d-h42 d-bgc-pink-300 d-bar4"></div>
-          </div>
-          <div class="d-d-flex d-fd-column d-pls-start"><span>12</span>
-            <div class="d-fl-center d-w64 d-h48 d-bgc-pink-300 d-bar4"></div>
-          </div>
-          <div class="d-d-flex d-fd-column d-pls-start"><span>13</span>
-            <div class="d-fl-center d-w64 d-h64 d-bgc-pink-300 d-bar4"></div>
-          </div>
-          <div class="d-d-flex d-fd-column d-pls-start"><span>14</span>
-            <div class="d-fl-center d-w64 d-h72 d-bgc-pink-300 d-bar4"></div>
-          </div>
-          <div class="d-d-flex d-fd-column d-pls-start"><span>15</span>
-            <div class="d-fl-center d-w64 d-h84 d-bgc-pink-300 d-bar4"></div>
-          </div>
-          <div class="d-d-flex d-fd-column d-pls-start"><span>16</span>
-            <div class="d-fl-center d-w64 d-h96 d-bgc-pink-300 d-bar4"></div>
-          </div>
-          <div class="d-d-flex d-fd-column d-pls-start"><span>17</span>
-            <div class="d-fl-center d-w64 d-h102 d-bgc-pink-300 d-bar4"></div>
-          </div>
-          <div class="d-d-flex d-fd-column d-pls-start"><span>18</span>
-            <div class="d-fl-center d-w64 d-h114 d-bgc-pink-300 d-bar4"></div>
-          </div>
-          <div class="d-d-flex d-fd-column d-pls-start"><span>19</span>
-            <div class="d-fl-center d-w64 d-h128 d-bgc-pink-300 d-bar4"></div>
-          </div>
-          <div class="d-d-flex d-fd-column d-pls-start"><span>20</span>
-            <div class="d-fl-center d-w64 d-h164 d-bgc-pink-300 d-bar4"></div>
-          </div>
-          <div class="d-d-flex d-fd-column d-pls-start"><span>21</span>
-            <div class="d-fl-center d-w64 d-h216 d-bgc-pink-300 d-bar4"></div>
-          </div>
-          <div class="d-d-flex d-fd-column d-pls-start"><span>22</span>
-            <div class="d-fl-center d-w64 d-h264 d-bgc-pink-300 d-bar4"></div>
-          </div>
-          <div class="d-d-flex d-fd-column d-pls-start"><span>23</span>
-            <div class="d-fl-center d-w64 d-h332 d-bgc-pink-300 d-bar4"></div>
-          </div>
-          <div class="d-d-flex d-fd-column d-pls-start"><span>24</span>
-            <div class="d-fl-center d-w64 d-h464 d-bgc-pink-300 d-bar4"></div>
-          </div>
-          <div class="d-d-flex d-fd-column d-pls-start"><span>25</span>
-            <div class="d-fl-center d-w64 d-h512 d-bgc-pink-300 d-bar4"></div>
-          </div>
-          <div class="d-d-flex d-fd-column d-pls-start"><span>26</span>
-            <div class="d-fl-center d-w64 d-h628 d-bgc-pink-300 d-bar4"></div>
-          </div>
-          <div class="d-d-flex d-fd-column d-pls-start"><span>27</span>
-            <div class="d-fl-center d-w64 d-h764 d-bgc-pink-300 d-bar4"></div>
-          </div>
-          <div class="d-d-flex d-fd-column d-pls-start"><span>28</span>
-            <div class="d-fl-center d-w64 d-h828 d-bgc-pink-300 d-bar4"></div>
-          </div>
-          <div class="d-d-flex d-fd-column d-pls-start"><span>29</span>
-            <div class="d-fl-center d-w64 d-h912 d-bgc-pink-300 d-bar4"></div>
-          </div>
-          <div class="d-d-flex d-fd-column d-pls-start"><span>30</span>
-            <div class="d-fl-center d-w64 d-h1024 d-bgc-pink-300 d-bar4"></div>
-          </div>
-          <div class="d-d-flex d-fd-column d-pls-start"><span>31</span>
-            <div class="d-fl-center d-w64 d-h1140 d-bgc-pink-300 d-bar4"></div>
-          </div>
-          <div class="d-d-flex d-fd-column d-pls-start"><span>32</span>
-            <div class="d-fl-center d-w64 d-h1268 d-bgc-pink-300 d-bar4"></div>
-          </div>
-          <div class="d-d-flex d-fd-column d-pls-start"><span>33</span>
-            <div class="d-fl-center d-w64 d-h1340 d-bgc-pink-300 d-bar4"></div>
-          </div>
+          {% endfor %}
         </header>
         <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
 {% highlight html linenos %}
