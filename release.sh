@@ -3,7 +3,7 @@
 # exit when any command fails
 set -e
 
-echo "Enter the version number of this release Ex/ 6.0.2 or 6.0.0-beta.16: "
+echo "Enter the name of the version segment you are incrementing (Ex/ major, minor, patch. 'npm version --help' in your cli for all possible args): "
 read version
 branch=$(git branch --show-current)
 
