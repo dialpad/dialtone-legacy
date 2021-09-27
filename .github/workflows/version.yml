@@ -13,6 +13,12 @@ jobs:
     steps:
       - name: Check out branch
         uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: npm run setup:ci
+
+      - name: Build project
+        run: npm run build
       # Read dialtone-vue version number from package.json
       - name: get dialtone-vue version
         id: dialtone-vue-package-json
