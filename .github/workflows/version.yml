@@ -20,4 +20,4 @@ jobs:
           bearerToken: ${{ secrets.DIALTONE_CI_TOKEN }}
           method: GET
 
-      - run: echo "${{ fromJSON(steps.dialtone-vue-package-json.outputs.response) }}"
+      - run: echo "${{ steps.dialtone-vue-package-json.outputs.response }}"
