@@ -44,6 +44,19 @@ jobs:
       - name: Build project
         run: npm run build
 
+      # Read dialtone-vue version number from dialtone-vue's package.json
+      - name: get dialtone-vue version
+        id: dialtone-vue-package-json
+        uses: fjogeleit/http-request-action@v1.8.1
+        with:
+          url: https://raw.githubusercontent.com/dialpad/dialtone-vue/release/package.json
+          bearerToken: ${{ secrets.DIALTONE_CI_TOKEN }}
+          method: GET
+
+      # Replace string Vue-v0.0.0 with the correct version number we retrieved from dialtone-vue package.json.
+      - name: write dialtone-vue version to index.html
+      - run: sed -i 's/Vue-v0.0.0/Vue-v${{ fromJSON(steps.dialtone-vue-package-json.outputs.response).version }}/' docs/_site/index.html
+
       - name: Deploy production
         if: ${{ github.ref == 'refs/heads/production' }}
         run: npm publish
