@@ -80,16 +80,18 @@
     &:focus {
         --input--bc: var(--input--focus-bc);
 
-        box-shadow: var(--bs-focus-ring);
+        box-shadow: var(--bs-focus-ring)!important;
         outline: 0;
     }
     //  --  DISABLED / READ-ONLY
     &[disabled],
     &[read-only] {
-        --input--bc:           var(--black-500);
+        --input--bc:           var(--black-500)!important;
         --input--bgc:          var(--black-200);
 
-        box-shadow: none;
+        &:focus {
+            box-shadow: none!important;
+        }
 
         //  --  Placeholder copy
         &::placeholder {
@@ -197,29 +199,29 @@
 //  ----------------------------------------------------------------------------
 .d-input--warning,
 .d-textarea--warning {
-    --input--bc:        var(--warning-color);
+    --input--bc:        var(--warning-color)!important;
     --input--focus-bc:  var(--warning-color);
 
     &:focus {
-        box-shadow: var(--bs-focus-ring-warning);
+        box-shadow: var(--bs-focus-ring-warning)!important;
     }
 }
 .d-input--error,
 .d-textarea--error {
-    --input--bc:        var(--error-color);
+    --input--bc:        var(--error-color)!important;
     --input--focus-bc:  var(--error-color);
 
     &:focus {
-        box-shadow: var(--bs-focus-ring-error);
+        box-shadow: var(--bs-focus-ring-error)!important;
     }
 }
 .d-input--success,
 .d-textarea--success {
-    --input--bc:        var(--success-color);
+    --input--bc:        var(--success-color)!important;
     --input--focus-bc:  var(--success-color);
 
     &:focus {
-        box-shadow: var(--bs-focus-ring-success);
+        box-shadow: var(--bs-focus-ring-success)!important;
     }
 }
 

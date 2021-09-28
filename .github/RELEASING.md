@@ -1,30 +1,18 @@
 # Releasing
 
-Before you can publish anything to [npmjs](https://npmjs.com), you will need an account, with [2FA enabled](https://docs.npmjs.com/configuring-two-factor-authentication), and be a part of the Dialpad npmjs org.
+In order to push the production branch to trigger a build to [npmjs](https://npmjs.com), you will need to either be an admin of the dialtone repository, be a user with the "Maintain" role or have manually been given permission on your user.
 
-1. Make sure you are up-to-date locally and in the `staging` branch. Also it’s a good idea to stop your local server while versioning.
-2. In your CLI window, run `npm version [major | minor | patch]`. Major versions are breaking changes. Minor versions are large changes but backward compatible. Patches are bug fixes to existing Dialtone items.
-3. Run `git push --tags`. This creates a `git` version tag based on the new `npm` version number. **Note:** It does not actually push anything to the `remote` server.
-4. To bump the version number listed on the site:
-  * For Dialtone CSS, you don't have to do anything. The badge reflects what's listed in the `version6` branch package.json.
-  * If bumping Vue version, update the badge manually in `/docs/index.html`.
-5. Run `git push` to push it all up to staging.
-6. Run `npm publish`.
-7. Dialtone has been updated on npm now
-8. Switch your branch to `production` .
-9. Run `git pull` to make sure you have the latest updates.
-10. Run `git merge staging` to merge in the latest changes to `production`.
-11. Take care of any potential merge issues you might have. Then run `git push`.
-12. The documentation website (`dialpad.design`) is now updated.
-13. Finally you need [draft a release on Github](https://github.com/dialpad/dialtone/releases/new). You can look at [past releases](https://github.com/dialpad/dialtone/releases/tag/v5.13.0) for reference, but generally I give it a title (What’s the update?) and then a short description of what was added, changed, or fixed.
-14. Now you’re done.
-
-## Pre-releasing
-
-For `alpha` and `beta` releases:
-
-1. Make sure you are up-to-date locally and in the appropriate next version branch. Also it’s a good idea to stop your local server while versioning.
-2. In your CLI window, run `npm version [major | minor | patch]`. The unofficial standard naming convention for this is `major.minor.patch-prerelease.buildmetadata`. For instance, `6.0.0-alpha.1`.
-3. Run `git push` to push updated `package.json` to remote.
-4. Run `git push --tags`. This creates a `git` version tag in the project.
-5. Run `npm publish --tag prelease` For instance, `npm publish --tag beta`. It can then be installed in another project using the specific version number or the tag (i.e. `npm i packagename@beta`).
+1. Make sure your staging and production branches are up-to-date locally. You should be in the `staging` branch. If you are doing a prerelease you should be in whatever named branch you have been working off for the prerelease. Also it’s a good idea to stop your local server while versioning.
+2. If bumping Dialtone-Vue version, update the badge manually in `/docs/index.html` and commit. (this will be automated soon)
+3. In your CLI window, run `./release.sh` from the dialtone repository directory.
+4. It will prompt you to enter a version. enter major, minor, or patch depending on what your change consists of. Major versions are breaking changes. Minor versions are large changes but backward compatible. Patches are bug fixes to existing Dialtone items. You may also enter an exact version if you need to.
+> Note on a prerelease our convention is major.minor.patch-prerelease.buildmetadata ex. `6.0.0-alpha.1`.
+5. After entering your version number the package.json version numbers will be updated and committed with a git tag matching the version you entered. This will then be automatically pushed to the remote
+6. `git checkout production` to move to the production branch
+> Note if you would like to deploy a prerelease (alpha or beta). You would do this on a branch named `alpha` or `beta` instead of `production`. This will automatically tag the deployment to npm as a alpha or beta release so npm does not consider it to be the latest version. It could be installed with the command `npm i dialtone@beta`
+7. `git merge staging --ff-only` (or your prerelease working branch) to merge the changes to this branch
+8. `git push` to push the branch. This will trigger the deploy.
+9. You should be able to see your deploy running at https://github.com/dialpad/dialtone/actions
+10. When this has completed the new version of the package has been deployed to npm, and the documentation website (`dialpad.design`) is now updated.
+11. Finally you need to [draft a release on Github](https://github.com/dialpad/dialtone/releases/new). Please use the [release template](https://raw.githubusercontent.com/dialpad/dialtone/staging/.github/release_template.md) to enter your description of the release.
+12. Now you’re done.
