@@ -53,19 +53,32 @@ description: Utilities to control an element's height.
         {% paragraph %}Use {% code %}d-h{n}p{% endcode %} to set a percentage height for an element.{% endparagraph %}
     </header>
     <aside class="d-bar8 d-of-hidden">
-        <header class="d-d-flex d-jc-center d-p24 d-bgc-green-100 d-bgo50 d-w100p d-h216 d-flow16">
-            <div class="d-fl-center d-py16 d-px8 d-w64 d-h40p d-bgc-green-300 d-bar4 d-fs24 d-fw-bold d-ta-center">1</div>
-            <div class="d-fl-center d-py16 d-px8 d-w64 d-h60p d-bgc-green-300 d-bar4 d-fs24 d-fw-bold d-ta-center">2</div>
-            <div class="d-fl-center d-py16 d-px8 d-w64 d-h80p d-bgc-green-300 d-bar4 d-fs24 d-fw-bold d-ta-center">3</div>
-            <div class="d-fl-center d-py16 d-px8 d-w64 d-h100p d-bgc-green-300 d-bar4 d-fs24 d-fw-bold d-ta-center">4</div>
+        <header class="d-d-flex d-p24 d-bgc-green-100 d-bgo50 d-w100p d-h332 d-flow16 d-of-x-scroll d-fs14 d-ff-mono d-ta-center">
+          {% assign percentages = width-height.percentage | split: ", " %}
+          {% for i in percentages %}
+            <div class="d-d-flex d-fl-center d-h100p d-ps-relative">
+              <span class="d-zi-active d-w64">d-h{{i}}p</span>
+              <div class="d-w64 d-h216 d-ps-absolute d-bgc-green-200">
+                <div class="d-h{{i}}p d-w64 d-bgc-green-300 d-bar4"></div>
+              </div>
+            </div>
+          {% endfor %}
         </header>
         <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
 {% highlight html linenos %}
 <div class="d-h216">
-    <div class="d-h40p">1</div>
-    <div class="d-h60p">2</div>
-    <div class="d-h80p">3</div>
-    <div class="d-h100p">4</div>
+    <div class="d-h10p">d-h10p</div>
+    <div class="d-h20p">d-h20p</div>
+    <div class="d-h25p">d-h25p</div>
+    <div class="d-h30p">d-h30p</div>
+    <div class="d-h40p">d-h40p</div>
+    <div class="d-h50p">d-h50p</div>
+    <div class="d-h60p">d-h60p</div>
+    <div class="d-h70p">d-h70p</div>
+    <div class="d-h75p">d-h75p</div>
+    <div class="d-h80p">d-h80p</div>
+    <div class="d-h90p">d-h80p</div>
+    <div class="d-h100p">d-h100p</div>
 </div>
 {% endhighlight %}
         </footer>
@@ -77,17 +90,51 @@ description: Utilities to control an element's height.
         {% paragraph %}Use {% code %}d-h{n}{% endcode %} to set a fixed height for an element.{% endparagraph %}
     </header>
     <aside class="d-bar8 d-of-hidden">
-        <header class="d-d-flex d-jc-center d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmn264 d-flow16 d-of-y-scroll">
-            <div class="d-fl-center d-py16 d-px8 d-w64 d-h102 d-bgc-pink-300 d-bar4 d-fs24 d-fw-bold d-ta-center">1</div>
-            <div class="d-fl-center d-py16 d-px8 d-w64 d-h332 d-bgc-pink-300 d-bar4 d-fs24 d-fw-bold d-ta-center">2</div>
-            <div class="d-fl-center d-py16 d-px8 d-w64 d-h512 d-bgc-pink-300 d-bar4 d-fs24 d-fw-bold d-ta-center">3</div>
+        <header class="d-d-flex d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmx512 d-flow16 d-of-scroll d-fs24 d-fw-bold d-ta-center">
+          {% assign fixed = width-height.fixed | split: ", " %}
+          {% for i in fixed %}
+          <div class="d-d-flex d-fd-column d-pls-start">
+            <span>{{forloop.index}}</span>
+            <div class="d-fl-center d-w64 d-h{{i}} d-bgc-pink-300 d-bar4"></div>
+          </div>
+          {% endfor %}
         </header>
         <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
 {% highlight html linenos %}
 <div class="d-hmn264">
-    <div class="d-h102">1</div>
-    <div class="d-h332">2</div>
-    <div class="d-h512">3</div>
+    <div class="d-h0">1</div>
+    <div class="d-h1">2</div>
+    <div class="d-h2">3</div>
+    <div class="d-h4">4</div>
+    <div class="d-h6">5</div>
+    <div class="d-h8">6</div>
+    <div class="d-h12">7</div>
+    <div class="d-h16">8</div>
+    <div class="d-h24">9</div>
+    <div class="d-h32">10</div>
+    <div class="d-h42">11</div>
+    <div class="d-h48">12</div>
+    <div class="d-h64">13</div>
+    <div class="d-h72">14</div>
+    <div class="d-h84">15</div>
+    <div class="d-h96">16</div>
+    <div class="d-h102">17</div>
+    <div class="d-h114">18</div>
+    <div class="d-h128">19</div>
+    <div class="d-h164">20</div>
+    <div class="d-h216">21</div>
+    <div class="d-h264">22</div>
+    <div class="d-h332">23</div>
+    <div class="d-h464">24</div>
+    <div class="d-h512">25</div>
+    <div class="d-h628">26</div>
+    <div class="d-h764">27</div>
+    <div class="d-h828">28</div>
+    <div class="d-h912">29</div>
+    <div class="d-h1024">30</div>
+    <div class="d-h1140">31</div>
+    <div class="d-h1268">32</div>
+    <div class="d-h1340">33</div>
 </div>
 {% endhighlight %}
         </footer>

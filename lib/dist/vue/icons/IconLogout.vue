@@ -1,3 +1,0 @@
-<template>
-  <svg aria-hidden="true" aria-label="Logout" class="d-svg d-svg--system d-svg__logout" viewBox="0 0 24 24"><path d="M20 19h-8v2h8c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-8v2h8v14z"/><path d="M8.4 15.6L7 17l-5-5 5-5 1.4 1.4L5.8 11H16v2H5.8l2.6 2.6z"/></svg>
-</template>
