@@ -68,7 +68,8 @@
     align-self: flex-start;
 
     //  --  DISABLED
-    &[disabled] {
+    &[disabled],
+    &--disabled {
         --check-radio--color:   var(--black-200);
         --check-radio--bc:      var(--black-200);
         --check-radio--bgc:     var(--black-075);
@@ -149,13 +150,6 @@
         background-repeat: no-repeat;
         background-size: contain;
 
-        //  Disabled
-        &[disabled] {
-            --check-radio--color:   var(--black-200);
-            --check-radio--bc:      var(--black-200);
-            --check-radio--bgc:     var(--black-075);
-        }
-
         &:focus,
         &:checked:focus {
             border-radius: var(--br2);
@@ -172,15 +166,34 @@
             }
         }
 
+        &--disabled:checked {
+            --check-radio--bgc:     var(--black-075);
+            background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z' fill='hsl(240, 10%, 51%)'/%3E%3C/svg%3E");
+        }
+
         &--indeterminate,
         &:indeterminate {
             --check-radio--bgc:     var(--check-radio--color);
             background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19 13H5v-2h14v2z' fill='%23fff'/%3E%3C/svg%3E");
 
             &[disabled] {
-                --check-radio--bgc:     var(--black-200);
+                --check-radio--bgc:     var(--black-075);
                 background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19 13H5v-2h14v2z' fill='hsl(240, 10%, 51%)'/%3E%3C/svg%3E");
             }
+        }
+
+        &--indeterminate&--disabled,
+        &:indeterminate&--disabled {
+            --check-radio--bgc:     var(--black-075);
+            background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19 13H5v-2h14v2z' fill='hsl(240, 10%, 51%)'/%3E%3C/svg%3E");
+        }
+
+        //  Disabled
+        &[disabled],
+        &--disabled {
+            --check-radio--color:   var(--black-200);
+            --check-radio--bc:      var(--black-200);
+            --check-radio--bgc:     var(--black-075);
         }
 
     }
@@ -225,7 +238,8 @@
         border-radius: var(--br-circle);
 
         // Disabled
-        &[disabled] {
+        &[disabled],
+        &--disabled {
             --check-radio--color:   var(--black-200);
             --check-radio--bc:      var(--black-200);
             --check-radio--bgc:     var(--black-075);
@@ -244,6 +258,10 @@
             &[disabled] {
                 --check-radio--bgc:     var(--black-200);
             }
+        }
+
+        &--disabled:checked {
+            --check-radio--bgc:     var(--black-200);
         }
     }
 }
