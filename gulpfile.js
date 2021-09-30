@@ -589,10 +589,18 @@ var watchFiles = function(done) {
 //  @   EXPORT TASKS
 //  ================================================================================
 //  --  BUILD OUT THE SITE BUT DON'T START THE SERVER
+exports.svg = series(
+    cleanIcons,
+    buildSystemSVGs,
+    buildBrandSVGs,
+    buildPatternSVGs
+);
+
 exports.default = series(
     cleanSite,
     cleanFonts,
     webfonts,
+    exports.svg,
     parallel(
         libStyles,
         docStyles,
@@ -605,13 +613,6 @@ exports.watch = series(
     startServer,
     watchFiles
 )
-
-exports.svg = series(
-    cleanIcons,
-    buildSystemSVGs,
-    buildBrandSVGs,
-    buildPatternSVGs
-);
 
 //  --  CONVERT WEBFONTS
 exports.fonts = series(
