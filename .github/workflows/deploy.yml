@@ -39,10 +39,7 @@ jobs:
         run: npm config set //registry.npmjs.org/:_authToken=${{ secrets.DIALTONE_NPM_TOKEN }}
 
       - name: Install dependencies
-        run: npm run setup:ci
-
-      - name: Build project
-        run: npm run build
+        run: npm ci
 
       - name: Deploy production
         if: ${{ github.ref == 'refs/heads/production' }}
