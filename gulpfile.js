@@ -27,6 +27,7 @@ var del = require('del');
 var lazypipe = require('lazypipe');
 var rename = require('gulp-rename');
 var header = require('gulp-header');
+var cache = require('gulp-cached');
 var browsersync = require('browser-sync').create();
 var package = require('./package.json');
 
@@ -221,6 +222,7 @@ var libStyles = function(done) {
 
     //  Compile library files
     return src(paths.styles.inputLib)
+        .pipe(cache('libStyles'))
         .pipe(less())
         .pipe(postcss())
         .pipe(dest(paths.styles.outputLib))
@@ -243,6 +245,7 @@ var docStyles = function(done) {
 
     //  Compile documentation files
     return src(paths.styles.inputDocs)
+        .pipe(cache('docStyles'))
         .pipe(less())
         .pipe(postcss())
         .pipe(dest(paths.styles.outputDocs))
@@ -266,6 +269,7 @@ var buildSystemSVGs = function(done) {
 
     //  Compile system icons
     return src(paths.svgs.sysInput)
+        .pipe(cache('buildSystemSVGs'))
         .pipe(replace(' fill="none"', ''))
         .pipe(replace(' fill="#000"', ''))
         .pipe(replace(' fill="#141721"', ''))
@@ -323,6 +327,7 @@ var buildBrandSVGs = function(done) {
     if (!settings.svgs) return done();
     //  Compile brand icons
     return src(paths.svgs.brandInput)
+        .pipe(cache('buildBrandSVGs'))
         .pipe(replace('<svg width="24" height="24"', '<svg '))
         .pipe(replace('<svg', function(match) {
             var name = path.parse(this.file.path).name;
@@ -374,6 +379,7 @@ var buildPatternSVGs = function(done) {
 
     //  Compile system icons
     return src(paths.patterns.input)
+        .pipe(cache('buildPatternSVGs'))
         .pipe(replace('<svg', function(match) {
             var name = path.parse(this.file.path).name;
             var converted = name.toLowerCase().replace(/-(.)/g, function(match,group1) {
@@ -504,6 +510,7 @@ var webfonts = function(done) {
     if (!settings.fonts) return done();
 
     return src(paths.fonts.input)
+        .pipe(cache('webfonts'))
         .pipe(dest(paths.fonts.outputLib))
         .pipe(dest(paths.fonts.outputDocs));
 
@@ -522,6 +529,28 @@ var buildDocs = function(done) {
     return cp.spawn(
         'npx', [
             '@11ty/eleventy'
+        ], {
+            cwd: paths.build.input,
+            stdio: 'inherit'
+        }
+    );
+
+    done();
+};
+
+//  ================================================================================
+//  @@  WATCH SITE
+//  ================================================================================
+var watchDocs = function(done) {
+
+    //  Make sure this feature is activated before running
+    if (!settings.watch) return done();
+
+    return cp.spawn(
+        'npx', [
+            '@11ty/eleventy',
+            '--watch',
+            '--incremental',
         ], {
             cwd: paths.build.input,
             stdio: 'inherit'
@@ -585,7 +614,7 @@ var watchFiles = function(done) {
         paths.watch.docsExcludeFonts,
         paths.watch.docsExcludeSVG,
         paths.watch.docsExcludePatterns,
-    ], series(exports.default, reloadBrowser));
+    ], series(exports.buildWatch, reloadBrowser));
     done();
 };
 
@@ -593,16 +622,21 @@ var watchFiles = function(done) {
 //  @   EXPORT TASKS
 //  ================================================================================
 //  --  BUILD OUT THE SITE BUT DON'T START THE SERVER
+
+exports.clean = series(
+    cleanSite,
+    cleanFonts,
+)
+
 exports.svg = series(
-    cleanIcons,
     buildSystemSVGs,
     buildBrandSVGs,
     buildPatternSVGs
 );
 
+// default build task
 exports.default = series(
-    cleanSite,
-    cleanFonts,
+    exports.clean,
     webfonts,
     exports.svg,
     parallel(
@@ -612,15 +646,30 @@ exports.default = series(
     buildDocs
 );
 
+// tasks are similar to default build when we are watching but there are some
+// differences. we don't build the docs (as they are built by the watch) and
+// we don't clean.
+exports.buildWatch = series(
+    webfonts,
+    exports.svg,
+    parallel(
+        libStyles,
+        docStyles,
+    ),
+);
+
+// build and run the gulp watch and eleventy watch in parallel.
 exports.watch = series(
-    exports.default,
+    exports.buildWatch,
     startServer,
-    watchFiles
-)
+    parallel(
+        watchFiles,
+        watchDocs,
+    ),
+);
 
 //  --  CONVERT WEBFONTS
 exports.fonts = series(
-    cleanFonts,
     webfonts
 );
 
