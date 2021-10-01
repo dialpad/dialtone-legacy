@@ -137,7 +137,9 @@ var paths = {
         docs: './docs/**/*',
         docsExcludeSite: '!./docs/_site/**/*',
         docsExcludeCSS: '!./docs/assets/css/**/*',
-        docsExcludeSVG: '!./docs/_includes/icons/**/*'
+        docsExcludeFonts: '!./docs/assets/fonts/**/*',
+        docsExcludeSVG: '!./docs/_includes/icons/**/*',
+        docsExcludePatterns: '!./docs/_includes/patterns/**/*'
     }
 }
 
@@ -580,7 +582,9 @@ var watchFiles = function(done) {
         paths.watch.docs,
         paths.watch.docsExcludeSite,
         paths.watch.docsExcludeCSS,
-        paths.watch.docsExcludeSVG
+        paths.watch.docsExcludeFonts,
+        paths.watch.docsExcludeSVG,
+        paths.watch.docsExcludePatterns,
     ], series(exports.default, reloadBrowser));
     done();
 };
