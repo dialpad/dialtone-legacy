@@ -37,7 +37,6 @@ $(document).ready(function() {
         }, '', window.location.href),
 
         $('#nav').on('click', 'a', function (event) {
-
             // Allow opening links in new tabs
             if (event.metaKey) {
               return
@@ -87,6 +86,8 @@ $(document).ready(function() {
 
                 //  Re-initiate ScrollSpy
                 $('.js-scrollspy').scrollSpy();
+                $('.js-navigation-header').attr('style', '');
+                $('.js-dialtone5-banner').removeClass('d-d-none');
             })
         })
 
