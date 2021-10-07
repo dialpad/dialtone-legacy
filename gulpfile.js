@@ -222,7 +222,7 @@ var libStyles = function(done) {
 
     //  Compile library files
     return src(paths.styles.inputLib)
-        .pipe(cache('libStyles'))
+        //.pipe(cache('libStyles'))
         .pipe(less())
         .pipe(postcss())
         .pipe(dest(paths.styles.outputLib))
@@ -245,7 +245,7 @@ var docStyles = function(done) {
 
     //  Compile documentation files
     return src(paths.styles.inputDocs)
-        .pipe(cache('docStyles'))
+        //.pipe(cache('docStyles'))
         .pipe(less())
         .pipe(postcss())
         .pipe(dest(paths.styles.outputDocs))
