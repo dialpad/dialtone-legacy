@@ -62,6 +62,7 @@ $(document).ready(function() {
                 var nav = $(html).find('#nav').html()
                 var content = $(html).find('#content').html()
                 var subnav = $(html).find('#subnav').html()
+                const breadcrumbs = $(html).find('#breadcrumbs').html()
 
                 // Destroy scrollSpy
                 $('.js-scrollspy').scrollSpy('destroy');
@@ -71,6 +72,7 @@ $(document).ready(function() {
                 $('#nav').html(nav)
                 $('#content').html(content)
                 $('#subnav').html(subnav)
+                $('#breadcrumbs').html(breadcrumbs)
 
                 // Scroll to the top of the page
                 $(document).scrollTop(0)
@@ -109,7 +111,9 @@ $(document).ready(function() {
         var windowTop = $(window).scrollTop();
         calcSideNavPosition();
 
-        if (windowTop > 64) {
+        if(window.innerWidth <= 640) {
+          navHeader.removeClass('d-bs-lg d-bc-white').addClass('d-bc-black-100');
+        } else if (windowTop > 64) {
           navHeader.addClass('d-bs-lg d-bc-white').removeClass('d-bc-black-100');
         } else {
           navHeader.removeClass('d-bs-lg d-bc-white').addClass('d-bc-black-100');
