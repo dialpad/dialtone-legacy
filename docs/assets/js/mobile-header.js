@@ -1,14 +1,14 @@
 $(document).ready(() => {
     const navigationHeader = $('.js-navigation-header')
-    const btnSearch = $('.js-mobile-header-search') 
-    const btnMenu = $('.js-mobile-header-menu') 
+    const btnSearch = $('.js-mobile-header-search')
+    const btnMenu = $('.js-mobile-header-menu')
     const btnClose = $('.js-mobile-header-close')
     const inputSearchWrapper = $('.js-input-search-wrapper')
     const dropDownMenu = $('.js-mobile-header-drop-down-menu')
     const breadcrumbsWrapper = $('.js-mobile-header-breadcrumbs')
     const breadcrumbArrow = $('.js-mobile-header-breadcrumb-arrow')
     const dropDownNavigation = $('.js-mobile-header-drop-down-navigation')
-    
+
     toggleDropDown()
     toggleDropDownNavigation()
 
