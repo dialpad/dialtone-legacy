@@ -2,7 +2,29 @@
 layout: page
 title: Background Attachment
 description: Utilities for controlling the way an element's background image position is fixed within the viewport or scrolls with its containing block.
+eleventyNavigation:
+  key: Attachment
+  parent: Backgrounds
 ---
+
+<div class="d-d-none md:d-d-flex d-ps-fixed d-w100p d-bgc-white d-h64 d-x0 d-d-flex d-bb d-bc-black-100 d-ai-center d-jc-space-between breadcrumb-wrapper js-mobile-header-breadcrumbs">
+    <ul id="breadcrumbs" class="d-breadcrumbs d-d-flex d-p12">
+    {% assign navPages = collections.all | eleventyNavigationBreadcrumb: "Attachment" %}
+    {% for entry in navPages %}
+        <li class="d-breadcrumbs__item">
+          <span class="d-breadcrumbs__item ${selectedClass}">
+              {{ entry.title }}
+          </span>
+        </li>
+    {% endfor %}
+        <li class="d-breadcrumbs__item">
+          <span class="d-breadcrumbs__item d-breadcrumbs__item--selected">
+              Background Attachment
+          </span>
+        </li>       
+    </ul>
+    <span class="js-mobile-header-breadcrumb-arrow d-w24 d-h24 d-m12 breadcrumb-arrow d-c-pointer">{% iconSystem "arrow-back--ios" %}</span>
+</div>
 <section class="d-stack16">
   {% header "h2", "Classes" %}
   <table class="d-table">

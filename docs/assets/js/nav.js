@@ -62,6 +62,7 @@ $(document).ready(function() {
                 var nav = $(html).find('#nav').html()
                 var content = $(html).find('#content').html()
                 var subnav = $(html).find('#subnav').html()
+                const breadcrumbs = $(html).find('#breadcrumbs').html()
 
                 // Destroy scrollSpy
                 $('.js-scrollspy').scrollSpy('destroy');
@@ -71,6 +72,7 @@ $(document).ready(function() {
                 $('#nav').html(nav)
                 $('#content').html(content)
                 $('#subnav').html(subnav)
+                $('#breadcrumbs').html(breadcrumbs)
 
                 // Scroll to the top of the page
                 $(document).scrollTop(0)

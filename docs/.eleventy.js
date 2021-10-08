@@ -1,9 +1,11 @@
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginTOC = require("eleventy-plugin-nesting-toc");
+const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
 module.exports = function(eleventyConfig) {
     //  Add syntax highlighting
     eleventyConfig.addPlugin(syntaxHighlight);
+    eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
     eleventyConfig.addLayoutAlias('page', 'layouts/page.html');
     eleventyConfig.addLayoutAlias('page-no-toc', 'layouts/page-no-toc.html');
