@@ -93,6 +93,8 @@ $(document).ready(function() {
 
                 //  Re-initiate ScrollSpy
                 $('.js-scrollspy').scrollSpy();
+                $('.js-navigation-header').attr('style', '');
+                $('.js-dialtone5-banner').removeClass('d-d-none');
             })
         })
 

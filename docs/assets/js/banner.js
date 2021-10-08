@@ -51,6 +51,7 @@ $(document).ready(function() {
         closeBtn.removeClass('d-btn--inverted');
         link.removeClass('d-link--inverted');
         iconTypes.addClass('d-d-none');
+        dialtone5Banner.removeClass('d-d-none');
 
         if (pinned.is(':checked')) {
             banner.addClass('d-banner--pinned');
@@ -81,7 +82,6 @@ $(document).ready(function() {
             iconStyle.removeClass('d-d-none');
         }
     });
-
 
     function closeBanner() {
       var style = selectMenu.find(':selected').data('class');
