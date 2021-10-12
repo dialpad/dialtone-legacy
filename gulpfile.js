@@ -40,6 +40,7 @@ var gutil = settings.styles ? require('gulp-util') : null;
 var less = settings.styles ? require('gulp-less') : null;
 var sorting = settings.styles ? require('postcss-sorting') : null;
 var runSequence = settings.styles ? require('run-sequence') : null;
+var responsify = settings.styles ? require('postcss-responsify') : null;
 
 //  @@ SVGS
 var path = settings.svgs ? require('path') : null;
@@ -212,6 +213,22 @@ const cleanFonts = () => {
 }
 
 //  ================================================================================
+//  @@  RESPONSIVE CLASSES GENERATION
+//  ================================================================================
+//  -- BREAK POINTS
+
+const breakpoints = [
+  { prefix: 'sm\:', mediaQuery: '(min-width: 480px)' },
+  { prefix: 'md\:', mediaQuery: '(min-width: 640px)' },
+  { prefix: 'lg\:', mediaQuery: '(min-width: 980px)' },
+  { prefix: 'xl\:', mediaQuery: '(min-width: 1264px)' },
+];
+
+const responsifyOptions = {
+  breakpoints,
+};
+
+//  ================================================================================
 //  @@  COMPILE CSS
 //      Lint, minify, and concatenate style files
 //  ================================================================================
@@ -224,7 +241,9 @@ var libStyles = function(done) {
     return src(paths.styles.inputLib)
         //.pipe(cache('libStyles'))
         .pipe(less())
-        .pipe(postcss())
+        .pipe(postcss([
+          responsify(responsifyOptions)
+        ]))
         .pipe(dest(paths.styles.outputLib))
         .pipe(dest(paths.styles.outputDocs))
         .pipe(postcss([
@@ -247,7 +266,9 @@ var docStyles = function(done) {
     return src(paths.styles.inputDocs)
         //.pipe(cache('docStyles'))
         .pipe(less())
-        .pipe(postcss())
+        .pipe(postcss([
+          responsify(responsifyOptions)
+        ]))
         .pipe(dest(paths.styles.outputDocs))
         .pipe(postcss([
             cssnano()
