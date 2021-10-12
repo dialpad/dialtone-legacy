@@ -63,7 +63,7 @@
 
     &:focus {
         outline: none;
-        box-shadow: var(--bs-focus-ring); 
+        box-shadow: var(--bs-focus-ring);
     }
 
     &[disabled] {
@@ -74,8 +74,9 @@
         transition: none;
     }
 
-    .d-svg {
-        .d-svg--size16();
+    .d-btn__icon .d-svg {
+        width: @icon16;
+        height: @icon16;
     }
 }
 
@@ -88,10 +89,9 @@
     padding: calc(var(--su6) - var(--su1)) calc(var(--su8) - var(--su1));  // Subtract border
     font-size: var(--fs12);
 
-    .d-svg {
-        // no icon-size 12 exists so setting manually
-        width: 1.2rem !important;
-        height: 1.2rem !important;
+    .d-btn__icon .d-svg {
+        width: @icon12;
+        height: @icon12;
     }
 }
 
@@ -102,8 +102,9 @@
     font-size: var(--fs14);
     line-height: var(--lh6);
 
-    .d-svg {
-        .d-svg--size14();
+    .d-btn__icon .d-svg {
+        width: @icon14;
+        height: @icon14;
     }
 }
 
@@ -113,8 +114,9 @@
     padding: calc(var(--su12) - var(--su1)) calc(var(--su16) - var(--su1)); // Subtract border
     font-size: var(--fs20);
 
-    .d-svg {
-        .d-svg--size20();
+    .d-btn__icon .d-svg {
+        width: @icon20;
+        height: @icon20;
     }
 }
 
@@ -125,8 +127,9 @@
     font-size: var(--fs24);
     line-height: var(--lh8);
 
-    .d-svg {
-        .d-svg--size24();
+    .d-btn__icon .d-svg {
+        width: @icon24;
+        height: @icon24;
     }
 }
 
@@ -146,19 +149,33 @@
     display: flex;
     margin-top: var(--sun4);
     margin-bottom: var(--sun4);
-    width: 1em;
-    height: 1em;
+    line-height: 0;
 }
 
 .d-btn__icon--left {
-    margin-left: var(--sun2);
-    margin-right: var(--su4);
+    order: -1;
 }
 
 .d-btn__icon--right {
     order: 1;
-    margin-left: var(--su4);
+}
+
+.d-btn__icon--left:not(:only-child) {
+    margin-left: var(--sun2);
+}
+
+.d-btn__icon--right:not(:only-child) {
     margin-right: var(--sun2);
+}
+
+.d-btn__icon--left ~ .d-btn__label,
+.d-btn__label ~ .d-btn__icon--right {
+    margin-left: var(--su4);
+}
+
+.d-btn__icon--right ~ .d-btn__label,
+.d-btn__label ~ .d-btn__icon--left {
+    margin-right: var(--su4);
 }
 
 //  ============================================================================
@@ -281,6 +298,7 @@
         --button--bgc: var(--error-color);
 
         &:hover {
+            --button--fc: var(--white);
             --button--bgc: var(--error-color-hover);
         }
     }

@@ -27,6 +27,7 @@ var del = require('del');
 var lazypipe = require('lazypipe');
 var rename = require('gulp-rename');
 var header = require('gulp-header');
+var cache = require('gulp-cached');
 var browsersync = require('browser-sync').create();
 var package = require('./package.json');
 
@@ -119,7 +120,7 @@ var paths = {
         uc: 'favicon-uberconference__512.png',
     },
     fonts: {
-        input: './lib/build/fonts/**/*.ttf',
+        input: './lib/build/fonts/*.woff2',
         outputLib: './lib/dist/fonts/',
         outputDocs: './docs/assets/fonts/'
     },
@@ -137,7 +138,9 @@ var paths = {
         docs: './docs/**/*',
         docsExcludeSite: '!./docs/_site/**/*',
         docsExcludeCSS: '!./docs/assets/css/**/*',
-        docsExcludeSVG: '!./docs/_includes/icons/**/*'
+        docsExcludeFonts: '!./docs/assets/fonts/**/*',
+        docsExcludeSVG: '!./docs/_includes/icons/**/*',
+        docsExcludePatterns: '!./docs/_includes/patterns/**/*'
     }
 }
 
@@ -219,6 +222,7 @@ var libStyles = function(done) {
 
     //  Compile library files
     return src(paths.styles.inputLib)
+        //.pipe(cache('libStyles'))
         .pipe(less())
         .pipe(postcss())
         .pipe(dest(paths.styles.outputLib))
@@ -241,6 +245,7 @@ var docStyles = function(done) {
 
     //  Compile documentation files
     return src(paths.styles.inputDocs)
+        //.pipe(cache('docStyles'))
         .pipe(less())
         .pipe(postcss())
         .pipe(dest(paths.styles.outputDocs))
@@ -264,6 +269,7 @@ var buildSystemSVGs = function(done) {
 
     //  Compile system icons
     return src(paths.svgs.sysInput)
+        .pipe(cache('buildSystemSVGs'))
         .pipe(replace(' fill="none"', ''))
         .pipe(replace(' fill="#000"', ''))
         .pipe(replace(' fill="#141721"', ''))
@@ -321,6 +327,7 @@ var buildBrandSVGs = function(done) {
     if (!settings.svgs) return done();
     //  Compile brand icons
     return src(paths.svgs.brandInput)
+        .pipe(cache('buildBrandSVGs'))
         .pipe(replace('<svg width="24" height="24"', '<svg '))
         .pipe(replace('<svg', function(match) {
             var name = path.parse(this.file.path).name;
@@ -372,6 +379,7 @@ var buildPatternSVGs = function(done) {
 
     //  Compile system icons
     return src(paths.patterns.input)
+        .pipe(cache('buildPatternSVGs'))
         .pipe(replace('<svg', function(match) {
             var name = path.parse(this.file.path).name;
             var converted = name.toLowerCase().replace(/-(.)/g, function(match,group1) {
@@ -502,7 +510,7 @@ var webfonts = function(done) {
     if (!settings.fonts) return done();
 
     return src(paths.fonts.input)
-        .pipe(ttf2woff2())
+        .pipe(cache('webfonts'))
         .pipe(dest(paths.fonts.outputLib))
         .pipe(dest(paths.fonts.outputDocs));
 
@@ -521,6 +529,28 @@ var buildDocs = function(done) {
     return cp.spawn(
         'npx', [
             '@11ty/eleventy'
+        ], {
+            cwd: paths.build.input,
+            stdio: 'inherit'
+        }
+    );
+
+    done();
+};
+
+//  ================================================================================
+//  @@  WATCH SITE
+//  ================================================================================
+var watchDocs = function(done) {
+
+    //  Make sure this feature is activated before running
+    if (!settings.watch) return done();
+
+    return cp.spawn(
+        'npx', [
+            '@11ty/eleventy',
+            '--watch',
+            '--incremental',
         ], {
             cwd: paths.build.input,
             stdio: 'inherit'
@@ -581,8 +611,10 @@ var watchFiles = function(done) {
         paths.watch.docs,
         paths.watch.docsExcludeSite,
         paths.watch.docsExcludeCSS,
-        paths.watch.docsExcludeSVG
-    ], series(exports.default, reloadBrowser));
+        paths.watch.docsExcludeFonts,
+        paths.watch.docsExcludeSVG,
+        paths.watch.docsExcludePatterns,
+    ], series(exports.buildWatch, reloadBrowser));
     done();
 };
 
@@ -590,8 +622,23 @@ var watchFiles = function(done) {
 //  @   EXPORT TASKS
 //  ================================================================================
 //  --  BUILD OUT THE SITE BUT DON'T START THE SERVER
-exports.default = series(
+
+exports.clean = series(
     cleanSite,
+    cleanFonts,
+)
+
+exports.svg = series(
+    buildSystemSVGs,
+    buildBrandSVGs,
+    buildPatternSVGs
+);
+
+// default build task
+exports.default = series(
+    exports.clean,
+    webfonts,
+    exports.svg,
     parallel(
         libStyles,
         docStyles,
@@ -599,22 +646,30 @@ exports.default = series(
     buildDocs
 );
 
-exports.watch = series(
-    exports.default,
-    startServer,
-    watchFiles
-)
+// tasks are similar to default build when we are watching but there are some
+// differences. we don't build the docs (as they are built by the watch) and
+// we don't clean.
+exports.buildWatch = series(
+    webfonts,
+    exports.svg,
+    parallel(
+        libStyles,
+        docStyles,
+    ),
+);
 
-exports.svg = series(
-    cleanIcons,
-    buildSystemSVGs,
-    buildBrandSVGs,
-    buildPatternSVGs
+// build and run the gulp watch and eleventy watch in parallel.
+exports.watch = series(
+    exports.buildWatch,
+    startServer,
+    parallel(
+        watchFiles,
+        watchDocs,
+    ),
 );
 
 //  --  CONVERT WEBFONTS
 exports.fonts = series(
-    cleanFonts,
     webfonts
 );
 

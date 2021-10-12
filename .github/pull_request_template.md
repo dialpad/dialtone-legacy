@@ -8,7 +8,8 @@ Provide a description of what this pull request is adding, updating, extending, 
  - [ ] Use `staging` as your pull request's base branch. (All PRs using `production` as its base branch will be declined).
  - [ ] Ensure all `gulp` scripts successfully compile.
  - [ ] Update, remove, or extend all affected documentation.
- - [ ] Provide a description what is being changed, extended, or removed.
- - [ ] Link to any issue(s) this request is resolving.
  - [ ] Ensure no private Dialpad links or info are in the code or pull request description (Dialtone is a public repo!).
- - [ ] Request a review from Joshua Hynes, Ted Goas, or David Becher.
+ - [ ] Request a review from Brad Paugh, David Becher, or Drew Chandler.
+
+## Obligatory GIF (super important!)
+![](path/to/gif)

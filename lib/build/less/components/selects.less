@@ -26,6 +26,9 @@
 
   box-sizing: border-box;
   position: relative;
+  display: inline-flex; // important to the children alignment
+  width: 100%; // important to fill the available space
+  width: -webkit-fill-available; // important to fill the available space
 
   font-weight: inherit;
   font-size: var(--fs18);
@@ -43,7 +46,6 @@
     border-style: solid;
     border-width: 0.25em;
     pointer-events: none;
-    transform: translateY(50%);
   }
 
   &:before {
@@ -117,8 +119,9 @@
     box-shadow: var(--bs-focus-ring);
   }
   &:disabled {
-    background: var(--black-200);
-    border: 1px solid var(--black-500);
+    color: var(--black-400);
+    background: var(--black-075);
+    border: 1px solid var(--black-200);
   }
   &::-moz-focus-inner {
     outline: none !important;
@@ -158,5 +161,12 @@
   &:focus {
     --select--bc: var(--warning-color);
     box-shadow: var(--bs-focus-ring-warning);
+  }
+}
+
+.d-select--disabled {
+  &:before,
+  &:after {
+    border-color: var(--black-400) transparent;
   }
 }

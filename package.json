@@ -1,7 +1,7 @@
 {
   "name": "@dialpad/dialtone",
   "description": "The design system for Dialpad and UberConference",
-  "version": "6.0.0-beta.13",
+  "version": "6.3.0",
   "author": "Joshua Hynes",
   "files": [
     "lib",
@@ -12,11 +12,10 @@
   },
   "unpkg": "dist/css/dialtone.min.css",
   "scripts": {
-    "setup": "npm install && gulp svg",
     "build": "gulp",
     "start": "gulp watch",
-    "svg": "gulp svg",
-    "debug": "DEBUG=Elventy* npx @11ty/eleventy --serve --input=docs"
+    "debug": "DEBUG=Elventy* npx @11ty/eleventy --serve --input=docs",
+    "prepublishOnly": "npm run build"
   },
   "license": "MIT",
   "browserslist": [
@@ -39,6 +38,7 @@
     "fs-extra": "^9.0.1",
     "gulp": "^4.0.2",
     "gulp-atoms": "^1.0.3",
+    "gulp-cached": "^1.1.1",
     "gulp-git": "^2.10.1",
     "gulp-header": "^2.0.9",
     "gulp-less": "^4.0.1",

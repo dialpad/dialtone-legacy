@@ -5,6 +5,8 @@ $(document).ready(function() {
 
     var body = $("body");
     var navHeader = $(".js-navigation-header");
+    var navigationSideBar = $(".js-navigation-sidebar");
+    var banner = $('.js-banner-example');
 
     function regenerateMenu () {
         // Hide the navigation if we've opened it
@@ -13,7 +15,17 @@ $(document).ready(function() {
         navigation.addClass("md:d-d-none");
     }
 
+    function calcSideNavPosition () {
+      const windowTop = $(window).scrollTop();
+      // const baseSideNavPosition = banner.attr('aria-hidden') === 'true' ? 0 : 4.8;
+      const baseSideNavPosition = 0;
+      const topPosition = (windowTop > 50 ? 6.4 : 11.2 - windowTop/10) + baseSideNavPosition;
+
+      navigationSideBar.attr('style',`top: ${topPosition}rem!important`);
+    }
+
     $.when($.ready).then(function() {
+        calcSideNavPosition();
         regenerateMenu();
 
         window.history.replaceState({
@@ -25,7 +37,6 @@ $(document).ready(function() {
         }, '', window.location.href),
 
         $('#nav').on('click', 'a', function (event) {
-
             // Allow opening links in new tabs
             if (event.metaKey) {
               return
@@ -75,6 +86,8 @@ $(document).ready(function() {
 
                 //  Re-initiate ScrollSpy
                 $('.js-scrollspy').scrollSpy();
+                $('.js-navigation-header').attr('style', '');
+                $('.js-dialtone5-banner').removeClass('d-d-none');
             })
         })
 
@@ -95,7 +108,12 @@ $(document).ready(function() {
     //  Add box shadow to the header navigation on scroll
     $(window).scroll( () => {
         var windowTop = $(window).scrollTop();
+        calcSideNavPosition();
 
-        windowTop > 64 ? navHeader.addClass('d-bs-lg d-bc-white').removeClass('d-bc-black-100') : navHeader.removeClass('d-bs-lg d-bc-white').addClass('d-bc-black-100');
+        if (windowTop > 64) {
+          navHeader.addClass('d-bs-lg d-bc-white').removeClass('d-bc-black-100');
+        } else {
+          navHeader.removeClass('d-bs-lg d-bc-white').addClass('d-bc-black-100');
+        }
     })
 });
