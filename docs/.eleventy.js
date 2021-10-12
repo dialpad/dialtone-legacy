@@ -184,10 +184,10 @@ module.exports = function(eleventyConfig) {
 
             return  `
             ${links}
-            <li class="d-breadcrumbs__item ${selectedClass}">
+            <li class="d-breadcrumbs__item ${selectedClass} d-d-inline">
                 <${tag}
                     href="${option.path}"
-                    class="${tag === 'a' ? 'd-link d-link--muted' : ''} d-tt-capitalize"
+                    class="${tag === 'a' ? 'd-link d-link--muted' : ''} d-d-inline d-tt-capitalize"
                     aria-current="location"
                 >
                     ${option.name}

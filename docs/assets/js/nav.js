@@ -2,11 +2,26 @@ $(document).ready(function() {
     var navigation = $(".js-navigation");
     var menuOpenIcon = $(".js-menu-open-icon");
     var menuCloseIcon = $(".js-menu-close-icon");
-
     var body = $("body");
     var navHeader = $(".js-navigation-header");
     var navigationSideBar = $(".js-navigation-sidebar");
     var banner = $('.js-banner-example');
+    const dropDownNavigation = $('.js-mobile-header-drop-down-navigation')
+    const navigationHeader = $('.js-navigation-header')
+    const breadcrumbsWrapper = $('.js-mobile-header-breadcrumbs')
+    const breadcrumbArrow = $('.js-mobile-header-breadcrumb-arrow')
+
+
+    function toggleDropDownNavigation () {
+        breadcrumbArrow.toggleClass('breadcrumb-arrow--top')
+        dropDownNavigation.css('height', 0)
+        dropDownNavigation.css('top', navigationHeader.outerHeight() + breadcrumbsWrapper.outerHeight())
+        dropDownNavigation.addClass('d-o0')
+        dropDownNavigation.removeClass('d-py24')
+        dropDownNavigation.removeClass('d-px16')
+        navigationHeader.removeClass('md:d-w100vw')
+        body.removeClass('md:d-ps-fixed')
+    }
 
     function regenerateMenu () {
         // Hide the navigation if we've opened it
@@ -91,6 +106,7 @@ $(document).ready(function() {
                     'content': $(html).find('#content').html(),
                 }, '', href)
 
+                toggleDropDownNavigation()
                 //  Re-initiate ScrollSpy
                 $('.js-scrollspy').scrollSpy();
                 $('.js-navigation-header').attr('style', '');

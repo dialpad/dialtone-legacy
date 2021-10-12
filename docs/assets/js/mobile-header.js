@@ -10,7 +10,8 @@ $(document).ready(() => {
     const dropDownNavigation = $('.js-mobile-header-drop-down-navigation')
     const headerLogo = $('.js-header-logo')
     const headerContent = $('.js-header-content')
-    const algoliaAutocomplete = $('.js-dialtone-search').parent()
+    const dialtoneSearch = $('.js-dialtone-search')
+    const algoliaAutocomplete = dialtoneSearch.parent()
 
   toggleDropDown()
     toggleDropDownNavigation()
@@ -28,6 +29,7 @@ $(document).ready(() => {
         headerLogo.addClass('md:d-d-none')
         headerContent.addClass('md:d-ml0 md:d-w100p md:d-jc-space-between')
         toggleButtons(true)
+        dialtoneSearch.focus()
     }
 
     const hideInputSearch = () => {
@@ -72,7 +74,7 @@ $(document).ready(() => {
         dropDownMenu.toggleClass('d-py24', !!height)
         dropDownMenu.toggleClass('d-px16', !!height)
         $('body').toggleClass('md:d-ps-fixed', !!height)
-        $('.js-navigation-header').css('width', !!height ? '100vw' : '100%')
+        navigationHeader.toggleClass('md:d-w100vw', !!height)
     }
 
     function toggleDropDownNavigation (height = 0, opacity = true) {
@@ -81,7 +83,7 @@ $(document).ready(() => {
         dropDownNavigation.toggleClass('d-o0', opacity)
         dropDownNavigation.toggleClass('d-py24', !!height)
         dropDownNavigation.toggleClass('d-px16', !!height)
+        navigationHeader.toggleClass('md:d-w100vw', !!height)
         $('body').toggleClass('md:d-ps-fixed', !!height)
-        $('.js-navigation-header').css('width', !!height ? '100vw' : '100%')
     }
 })
