@@ -236,7 +236,7 @@ var libStyles = function(done) {
 
     //  Compile library files
     return src(paths.styles.inputLib)
-        .pipe(cache('libStyles'))
+        //.pipe(cache('libStyles'))
         .pipe(less())
         .pipe(postcss())
         .pipe(dest(paths.styles.outputLib))
