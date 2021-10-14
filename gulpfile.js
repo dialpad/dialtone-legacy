@@ -28,11 +28,16 @@ var lazypipe = require('lazypipe');
 var rename = require('gulp-rename');
 var header = require('gulp-header');
 var cache = require('gulp-cached');
+var order = require('gulp-order');
+var concat = require('gulp-concat');
+var remember = require('gulp-remember');
 var browsersync = require('browser-sync').create();
 var package = require('./package.json');
 
 //  @@ STYLES
 var postcss = settings.styles ? require('gulp-postcss') : null;
+// crawls .less dependencies for incremental building
+var progeny = settings.styles ? require('gulp-progeny') : null;
 var preset = settings.styles ? require ('postcss-preset-env') : null;
 var precess = settings.styles ? require('precss') : null;
 var cssnano = settings.styles ? require('cssnano') : null;
@@ -51,12 +56,20 @@ var tap = settings.svgs ? require('gulp-tap') : null;
 //  @@ FAVICONS
 // var favicon = settings.favicons ? require('gulp-favicons') : null;
 
-//  @@ FONTS
-var ttf2woff2 = settings.fonts ? require ('gulp-ttf2woff2') : null;
-
 //  @@ BUILD
 var cp = settings.build ? require('child_process') : null;
 var git = settings.build ? require('gulp-git') : null;
+
+var lessFileOrder = () => order([
+    'dialtone-reset.less',
+    'dialtone-variables.less',
+    'components/toast.less',
+    'components/**/*.less',
+    'utilities/**/*.less',
+    'dialtone-globals.less',
+    'themes/default.less',
+    'utilities/internals.less'
+])
 
 
 //  ================================================================================
@@ -82,6 +95,7 @@ var paths = {
     },
     styles: {
         inputLib: './lib/build/less/dialtone.less',
+        inputLibDev: ['./lib/build/less/**/*.less', '!./lib/build/less/themes/example.less', '!./lib/build/less/dialtone.less'],
         outputLib: './lib/dist/css/',
         inputDocs: './docs/assets/less/dialtone-docs.less',
         outputDocs: './docs/assets/css/',
@@ -256,6 +270,32 @@ var libStyles = function(done) {
     done();
 };
 
+var libStylesDev = function(done) {
+    //  Make sure this feature is activated before running
+    if (!settings.styles) return done();
+
+    //  Compile library files
+    return src(paths.styles.inputLib)
+        // this only pipes through files that have changed since the last build
+        .pipe(cache('libStylesDev'))
+        // progeny will rebuild less dependencies referenced via @import
+        .pipe(progeny())
+        // set the order in which the css should be concat
+        .pipe(lessFileOrder())
+        // compile less to css
+        .pipe(less())
+        // since we are concatting we need to include all files from the
+        // last build or our output file would only have the changed css
+        // in it. remember() does this.
+        .pipe(remember('libStylesDev'))
+        // concat the css into a single file
+        .pipe(concat('dialtone.css'))
+        .pipe(dest(paths.styles.outputLib))
+        .pipe(dest(paths.styles.outputDocs));
+
+    done();
+};
+
 //  --  DOCUMENTATION FILES
 var docStyles = function(done) {
 
@@ -264,7 +304,6 @@ var docStyles = function(done) {
 
     //  Compile documentation files
     return src(paths.styles.inputDocs)
-        //.pipe(cache('docStyles'))
         .pipe(less())
         .pipe(postcss([
           responsify(responsifyOptions)
@@ -274,6 +313,20 @@ var docStyles = function(done) {
             cssnano()
         ]))
         .pipe(rename({ suffix: '.min' }))
+        .pipe(dest(paths.styles.outputDocs));
+
+    done();
+};
+
+//  --  DOCUMENTATION FILES
+var docStylesDev = function(done) {
+
+    //  Make sure this feature is activated before running
+    if (!settings.styles) return done();
+
+    //  Compile documentation files
+    return src(paths.styles.inputDocs)
+        .pipe(less())
         .pipe(dest(paths.styles.outputDocs));
 
     done();
@@ -549,10 +602,11 @@ var buildDocs = function(done) {
 
     return cp.spawn(
         'npx', [
-            '@11ty/eleventy'
+            '@11ty/eleventy',
         ], {
             cwd: paths.build.input,
-            stdio: 'inherit'
+            stdio: 'inherit',
+            env: { ...process.env, ELEVENTY_ENV: 'prod' }
         }
     );
 
@@ -574,7 +628,8 @@ var watchDocs = function(done) {
             '--incremental',
         ], {
             cwd: paths.build.input,
-            stdio: 'inherit'
+            stdio: 'inherit',
+            env: { ...process.env, ELEVENTY_ENV: 'dev' }
         }
     );
 
@@ -627,7 +682,7 @@ var watchFiles = function(done) {
     if (!settings.watch) return done();
 
     //  Watch files
-    watch([
+    const watcher = watch([
         paths.watch.lib,
         paths.watch.docs,
         paths.watch.docsExcludeSite,
@@ -636,6 +691,12 @@ var watchFiles = function(done) {
         paths.watch.docsExcludeSVG,
         paths.watch.docsExcludePatterns,
     ], series(exports.buildWatch, reloadBrowser));
+    watcher.on('change', function (event) {
+        if (event.type === 'deleted') { // if a file is deleted, forget about it
+          delete cache.caches['libStylesDev'][event.path];
+          remember.forget('libStylesDev', event.path);
+        }
+    });
     done();
 };
 
@@ -669,14 +730,12 @@ exports.default = series(
 
 // tasks are similar to default build when we are watching but there are some
 // differences. we don't build the docs (as they are built by the watch) and
-// we don't clean.
+// we don't clean. We also only compile the less and do not postprocess/minify.
 exports.buildWatch = series(
     webfonts,
     exports.svg,
-    parallel(
-        libStyles,
-        docStyles,
-    ),
+    libStylesDev,
+    docStylesDev,
 );
 
 // build and run the gulp watch and eleventy watch in parallel.
