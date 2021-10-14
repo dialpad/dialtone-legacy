@@ -1,5 +1,5 @@
 @import (reference) "../variables/spacing.less";
-@import (reference) "internals.less";
+@import (reference) "../utilities/internals.less";
 
 //
 //  DIALTONE
@@ -40,226 +40,236 @@
 //    - Y-AXIS PADDING
 //    - RESET PADDING
 //
-//  ============================================================================
-//  $   AUTO-SPACING
-//  ============================================================================
-//  $$  THE STACK
-//      Instead of stlying specific elements when we're unaware of their context,
-//      this applies margin to context. The margin is only applied when an
-//      element is proceeded by another element.
-//  ----------------------------------------------------------------------------
-.d-stack1                       { > * + * { margin-top: @su1 !important; } }
-.d-stack2                       { > * + * { margin-top: @su2 !important; } }
-.d-stack4                       { > * + * { margin-top: @su4 !important; } }
-.d-stack6                       { > * + * { margin-top: @su6 !important; } }
-.d-stack8                       { > * + * { margin-top: @su8 !important; } }
-.d-stack12                      { > * + * { margin-top: @su12 !important; } }
-.d-stack16                      { > * + * { margin-top: @su16 !important; } }
-.d-stack24                      { > * + * { margin-top: @su24 !important; } }
-.d-stack32                      { > * + * { margin-top: @su32 !important; } }
-.d-stack48                      { > * + * { margin-top: @su48 !important; } }
-.d-stack64                      { > * + * { margin-top: @su64 !important; } }
 
-.d-flow1                        { > * + * { margin-left: @su1 !important; } }
-.d-flow2                        { > * + * { margin-left: @su2 !important; } }
+// Needed to handle mixins
 .d-flow4                        { > * + * { margin-left: @su4 !important; } }
-.d-flow6                        { > * + * { margin-left: @su6 !important; } }
 .d-flow8                        { > * + * { margin-left: @su8 !important; } }
-.d-flow12                       { > * + * { margin-left: @su12 !important; } }
-.d-flow16                       { > * + * { margin-left: @su16 !important; } }
-.d-flow24                       { > * + * { margin-left: @su24 !important; } }
-.d-flow32                       { > * + * { margin-left: @su32 !important; } }
-.d-flow48                       { > * + * { margin-left: @su48 !important; } }
-.d-flow64                       { > * + * { margin-left: @su64 !important; } }
+.d-stack4                       { > * + * { margin-top: @su4 !important; } }
+.d-stack8                       { > * + * { margin-top: @su8 !important; } }
+.d-stack16                      { > * + * { margin-top: @su16 !important; } }
+
+@responsive {
+  //  ============================================================================
+  //  $   AUTO-SPACING
+  //  ============================================================================
+  //  $$  THE STACK
+  //      Instead of stlying specific elements when we're unaware of their context,
+  //      this applies margin to context. The margin is only applied when an
+  //      element is proceeded by another element.
+  //  ----------------------------------------------------------------------------
+  .d-stack1                       { > * + * { margin-top: @su1 !important; } }
+  .d-stack2                       { > * + * { margin-top: @su2 !important; } }
+  .d-stack4                       { > * + * { margin-top: @su4 !important; } }
+  .d-stack6                       { > * + * { margin-top: @su6 !important; } }
+  .d-stack8                       { > * + * { margin-top: @su8 !important; } }
+  .d-stack12                      { > * + * { margin-top: @su12 !important; } }
+  .d-stack16                      { > * + * { margin-top: @su16 !important; } }
+  .d-stack24                      { > * + * { margin-top: @su24 !important; } }
+  .d-stack32                      { > * + * { margin-top: @su32 !important; } }
+  .d-stack48                      { > * + * { margin-top: @su48 !important; } }
+  .d-stack64                      { > * + * { margin-top: @su64 !important; } }
+
+  .d-flow1                        { > * + * { margin-left: @su1 !important; } }
+  .d-flow2                        { > * + * { margin-left: @su2 !important; } }
+  .d-flow4                        { > * + * { margin-left: @su4 !important; } }
+  .d-flow6                        { > * + * { margin-left: @su6 !important; } }
+  .d-flow8                        { > * + * { margin-left: @su8 !important; } }
+  .d-flow12                       { > * + * { margin-left: @su12 !important; } }
+  .d-flow16                       { > * + * { margin-left: @su16 !important; } }
+  .d-flow24                       { > * + * { margin-left: @su24 !important; } }
+  .d-flow32                       { > * + * { margin-left: @su32 !important; } }
+  .d-flow48                       { > * + * { margin-left: @su48 !important; } }
+  .d-flow64                       { > * + * { margin-left: @su64 !important; } }
 
 
-//  ============================================================================
-//     MARGIN
-//  ============================================================================
-//  ============================================================================
-//  $  POSITIVE MARGINS
-//  ============================================================================
-//  $$ ALL DIRECTIONS
-//  ----------------------------------------------------------------------------
-#d-internals #auto-generate(
-    '.d-m',
-    { .template(@value) { margin: @value !important; } },
-    @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64 auto unset
-);
+  //  ============================================================================
+  //     MARGIN
+  //  ============================================================================
+  //  ============================================================================
+  //  $  POSITIVE MARGINS
+  //  ============================================================================
+  //  $$ ALL DIRECTIONS
+  //  ----------------------------------------------------------------------------
+  #d-internals #auto-generate(
+      '.d-m',
+      { .template(@value) { margin: @value !important; } },
+      @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64 auto unset
+  );
 
-//  $$ TOP MARGIN
-//  ----------------------------------------------------------------------------
-#d-internals #auto-generate(
-    '.d-mt',
-    { .template(@value) { margin-top: @value !important; } },
-    @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64 auto unset
-);
+  //  $$ TOP MARGIN
+  //  ----------------------------------------------------------------------------
+  #d-internals #auto-generate(
+      '.d-mt',
+      { .template(@value) { margin-top: @value !important; } },
+      @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64 auto unset
+  );
 
-//  $$ RIGHT MARGIN
-//  ----------------------------------------------------------------------------
-#d-internals #auto-generate(
-    '.d-mr',
-    { .template(@value) { margin-right: @value !important; } },
-    @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64 auto unset
-);
+  //  $$ RIGHT MARGIN
+  //  ----------------------------------------------------------------------------
+  #d-internals #auto-generate(
+      '.d-mr',
+      { .template(@value) { margin-right: @value !important; } },
+      @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64 auto unset
+  );
 
-//  $$ BOTTOM MARGIN
-//  ----------------------------------------------------------------------------
-#d-internals #auto-generate(
-    '.d-mb',
-    { .template(@value) { margin-bottom: @value !important; } },
-    @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64 auto unset
-);
+  //  $$ BOTTOM MARGIN
+  //  ----------------------------------------------------------------------------
+  #d-internals #auto-generate(
+      '.d-mb',
+      { .template(@value) { margin-bottom: @value !important; } },
+      @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64 auto unset
+  );
 
-//  $$ LEFT MARGIN
-//  ----------------------------------------------------------------------------
-#d-internals #auto-generate(
-    '.d-ml',
-    { .template(@value) { margin-left: @value !important; } },
-    @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64 auto unset
-);
+  //  $$ LEFT MARGIN
+  //  ----------------------------------------------------------------------------
+  #d-internals #auto-generate(
+      '.d-ml',
+      { .template(@value) { margin-left: @value !important; } },
+      @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64 auto unset
+  );
 
-//  $$ X-AXIS (LEFT & RIGHT)
-//  ----------------------------------------------------------------------------
-#d-internals #auto-generate(
-    '.d-mx',
-    { .template(@value) { margin-right: @value !important; margin-left: @value !important; } },
-    @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64 auto unset
-);
+  //  $$ X-AXIS (LEFT & RIGHT)
+  //  ----------------------------------------------------------------------------
+  #d-internals #auto-generate(
+      '.d-mx',
+      { .template(@value) { margin-right: @value !important; margin-left: @value !important; } },
+      @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64 auto unset
+  );
 
-//  $$ Y-AXIS (TOP & BOTTOM)
-//  ----------------------------------------------------------------------------
-#d-internals #auto-generate(
-    '.d-my',
-    { .template(@value) { margin-top: @value !important; margin-bottom: @value !important; } },
-    @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64 auto unset
-);
-
-
-//  ============================================================================
-//  $  NEGATIVE MARGINS
-//  ============================================================================
-//  $$ ALL NEGATIVE DIRECTIONS
-//  ----------------------------------------------------------------------------
-#d-internals #auto-generate(
-    '.d-m',
-    { .template(@value) { margin: @value !important; } },
-    -@su1 -@su2 -@su4 -@su6 -@su8 -@su12 -@su16 -@su24 -@su32 -@su48 -@su64
-);
+  //  $$ Y-AXIS (TOP & BOTTOM)
+  //  ----------------------------------------------------------------------------
+  #d-internals #auto-generate(
+      '.d-my',
+      { .template(@value) { margin-top: @value !important; margin-bottom: @value !important; } },
+      @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64 auto unset
+  );
 
 
-//  $$ TOP NEGATIVE MARGIN
-//  ----------------------------------------------------------------------------
-#d-internals #auto-generate(
-    '.d-mt',
-    { .template(@value) { margin-top: @value !important; } },
-    -@su1 -@su2 -@su4 -@su6 -@su8 -@su12 -@su16 -@su24 -@su32 -@su48 -@su64
-);
-
-//  $$ RIGHT NEGATIVE MARGIN
-//  ----------------------------------------------------------------------------
-#d-internals #auto-generate(
-    '.d-mr',
-    { .template(@value) { margin-right: @value !important; } },
-    -@su1 -@su2 -@su4 -@su6 -@su8 -@su12 -@su16 -@su24 -@su32 -@su48 -@su64
-);
-
-//  $$ BOTTOM NEGATIVE MARGIN
-//  ----------------------------------------------------------------------------
-#d-internals #auto-generate(
-    '.d-mb',
-    { .template(@value) { margin-bottom: @value !important; } },
-    -@su1 -@su2 -@su4 -@su6 -@su8 -@su12 -@su16 -@su24 -@su32 -@su48 -@su64
-);
-
-//  $$ LEFT NEGATIVE MARGIN
-//  ----------------------------------------------------------------------------
-#d-internals #auto-generate(
-    '.d-ml',
-    { .template(@value) { margin-left: @value !important; } },
-    -@su1 -@su2 -@su4 -@su6 -@su8 -@su12 -@su16 -@su24 -@su32 -@su48 -@su64
-);
-
-//  $$ X-AXIS NEGATIVE MARGIN (LEFT & RIGHT)
-//  ----------------------------------------------------------------------------
-#d-internals #auto-generate(
-    '.d-mx',
-    { .template(@value) { margin-right: @value !important; margin-left: @value !important; } },
-    -@su1 -@su2 -@su4 -@su6 -@su8 -@su12 -@su16 -@su24 -@su32 -@su48 -@su64
-);
-
-//  $$ Y-AXIS NEGATIVE MARGIN (TOP & BOTTOM)
-//  ----------------------------------------------------------------------------
-#d-internals #auto-generate(
-    '.d-my',
-    { .template(@value) { margin-top: @value !important; margin-bottom: @value !important; } },
-    -@su1 -@su2 -@su4 -@su6 -@su8 -@su12 -@su16 -@su24 -@su32 -@su48 -@su64
-);
+  //  ============================================================================
+  //  $  NEGATIVE MARGINS
+  //  ============================================================================
+  //  $$ ALL NEGATIVE DIRECTIONS
+  //  ----------------------------------------------------------------------------
+  #d-internals #auto-generate(
+      '.d-m',
+      { .template(@value) { margin: @value !important; } },
+      -@su1 -@su2 -@su4 -@su6 -@su8 -@su12 -@su16 -@su24 -@su32 -@su48 -@su64
+  );
 
 
+  //  $$ TOP NEGATIVE MARGIN
+  //  ----------------------------------------------------------------------------
+  #d-internals #auto-generate(
+      '.d-mt',
+      { .template(@value) { margin-top: @value !important; } },
+      -@su1 -@su2 -@su4 -@su6 -@su8 -@su12 -@su16 -@su24 -@su32 -@su48 -@su64
+  );
 
-//  ============================================================================
-//     PADDING
-//  ============================================================================
-//  ============================================================================
-//  $  ALL DIRECTIONS
-//  ----------------------------------------------------------------------------
-#d-internals #auto-generate(
-    '.d-p',
-    { .template(@value) { padding: @value !important; } },
-    @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64 unset
-);
+  //  $$ RIGHT NEGATIVE MARGIN
+  //  ----------------------------------------------------------------------------
+  #d-internals #auto-generate(
+      '.d-mr',
+      { .template(@value) { margin-right: @value !important; } },
+      -@su1 -@su2 -@su4 -@su6 -@su8 -@su12 -@su16 -@su24 -@su32 -@su48 -@su64
+  );
 
-//  ============================================================================
-//  $  TOP PADDING
-//  ----------------------------------------------------------------------------
-#d-internals #auto-generate(
-    '.d-pt',
-    { .template(@value) { padding-top: @value !important; } },
-    @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64 unset
-);
+  //  $$ BOTTOM NEGATIVE MARGIN
+  //  ----------------------------------------------------------------------------
+  #d-internals #auto-generate(
+      '.d-mb',
+      { .template(@value) { margin-bottom: @value !important; } },
+      -@su1 -@su2 -@su4 -@su6 -@su8 -@su12 -@su16 -@su24 -@su32 -@su48 -@su64
+  );
 
-//  ============================================================================
-//  $  RIGHT PADDING
-//  ----------------------------------------------------------------------------
-#d-internals #auto-generate(
-    '.d-pr',
-    { .template(@value) { padding-right: @value !important; } },
-    @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64 unset
-);
+  //  $$ LEFT NEGATIVE MARGIN
+  //  ----------------------------------------------------------------------------
+  #d-internals #auto-generate(
+      '.d-ml',
+      { .template(@value) { margin-left: @value !important; } },
+      -@su1 -@su2 -@su4 -@su6 -@su8 -@su12 -@su16 -@su24 -@su32 -@su48 -@su64
+  );
 
-//  ============================================================================
-//  $  BOTTOM PADDING
-//  ----------------------------------------------------------------------------
-#d-internals #auto-generate(
-    '.d-pb',
-    { .template(@value) { padding-bottom: @value !important; } },
-    @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64 unset
-);
+  //  $$ X-AXIS NEGATIVE MARGIN (LEFT & RIGHT)
+  //  ----------------------------------------------------------------------------
+  #d-internals #auto-generate(
+      '.d-mx',
+      { .template(@value) { margin-right: @value !important; margin-left: @value !important; } },
+      -@su1 -@su2 -@su4 -@su6 -@su8 -@su12 -@su16 -@su24 -@su32 -@su48 -@su64
+  );
 
-//  ============================================================================
-//  $  LEFT PADDING
-//  ----------------------------------------------------------------------------
-#d-internals #auto-generate(
-    '.d-pl',
-    { .template(@value) { padding-left: @value !important; } },
-    @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64 unset
-);
+  //  $$ Y-AXIS NEGATIVE MARGIN (TOP & BOTTOM)
+  //  ----------------------------------------------------------------------------
+  #d-internals #auto-generate(
+      '.d-my',
+      { .template(@value) { margin-top: @value !important; margin-bottom: @value !important; } },
+      -@su1 -@su2 -@su4 -@su6 -@su8 -@su12 -@su16 -@su24 -@su32 -@su48 -@su64
+  );
 
-//  ============================================================================
-//  $  X-AXIS (LEFT & RIGHT)
-//  ----------------------------------------------------------------------------
-#d-internals #auto-generate(
-    '.d-px',
-    { .template(@value) { padding-right: @value !important; padding-left: @value !important; } },
-    @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64 unset
-);
 
-//  ============================================================================
-//  $  Y-AXIS (TOP & BOTTOM)
-//  ----------------------------------------------------------------------------
-#d-internals #auto-generate(
-    '.d-py',
-    { .template(@value) { padding-top: @value !important; padding-bottom: @value !important; } },
-    @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64 unset
-);
+
+  //  ============================================================================
+  //     PADDING
+  //  ============================================================================
+  //  ============================================================================
+  //  $  ALL DIRECTIONS
+  //  ----------------------------------------------------------------------------
+  #d-internals #auto-generate(
+      '.d-p',
+      { .template(@value) { padding: @value !important; } },
+      @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64 unset
+  );
+
+  //  ============================================================================
+  //  $  TOP PADDING
+  //  ----------------------------------------------------------------------------
+  #d-internals #auto-generate(
+      '.d-pt',
+      { .template(@value) { padding-top: @value !important; } },
+      @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64 unset
+  );
+
+  //  ============================================================================
+  //  $  RIGHT PADDING
+  //  ----------------------------------------------------------------------------
+  #d-internals #auto-generate(
+      '.d-pr',
+      { .template(@value) { padding-right: @value !important; } },
+      @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64 unset
+  );
+
+  //  ============================================================================
+  //  $  BOTTOM PADDING
+  //  ----------------------------------------------------------------------------
+  #d-internals #auto-generate(
+      '.d-pb',
+      { .template(@value) { padding-bottom: @value !important; } },
+      @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64 unset
+  );
+
+  //  ============================================================================
+  //  $  LEFT PADDING
+  //  ----------------------------------------------------------------------------
+  #d-internals #auto-generate(
+      '.d-pl',
+      { .template(@value) { padding-left: @value !important; } },
+      @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64 unset
+  );
+
+  //  ============================================================================
+  //  $  X-AXIS (LEFT & RIGHT)
+  //  ----------------------------------------------------------------------------
+  #d-internals #auto-generate(
+      '.d-px',
+      { .template(@value) { padding-right: @value !important; padding-left: @value !important; } },
+      @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64 unset
+  );
+
+  //  ============================================================================
+  //  $  Y-AXIS (TOP & BOTTOM)
+  //  ----------------------------------------------------------------------------
+  #d-internals #auto-generate(
+      '.d-py',
+      { .template(@value) { padding-top: @value !important; padding-bottom: @value !important; } },
+      @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64 unset
+  );
+}
