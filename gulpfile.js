@@ -256,7 +256,7 @@ var libStylesDev = function(done) {
     if (!settings.styles) return done();
 
     //  Compile library files
-    return src(paths.styles.inputLib)
+    return src(paths.styles.inputLibDev)
         // this only pipes through files that have changed since the last build
         .pipe(cache('libStylesDev'))
         // progeny will rebuild less dependencies referenced via @import
