@@ -103,11 +103,9 @@ function responsifyRule(breakpoints) {
    */
   return (rule) => {
     /* insert the base rule right before the @responsive rule */
-    const root = rule.parent.parent;
-    const clone = rule.clone();
-    root.insertBefore(rule.parent, clone);
-
-    console.log(rule.selector)
+    // const root = rule.parent.parent;
+    // const clone = rule.clone();
+    // root.insertBefore(rule.parent, clone);
 
     const isValidSelector = rule.selector && rule.selector.charAt(0) === '.';
     if (!isValidSelector) return; /* equivilent to continue; */

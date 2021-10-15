@@ -29,6 +29,9 @@
 @import "components/tabs";
 @import "components/tooltip";
 
+//  --  CONFIG
+@import "utilities/internals";
+
 //  --  UTILITIES
 @import "utilities/backgrounds";
 @import "utilities/borders";
@@ -43,11 +46,22 @@
 @import "utilities/svg";
 @import "utilities/typography";
 
+// Create a copy of the classes to make them responsive
+@responsive {
+  @import (multiple) "utilities/backgrounds";
+  @import (multiple) "utilities/borders";
+  @import (multiple) "utilities/colors";
+  @import (multiple) "utilities/effects";
+  @import (multiple) "utilities/flex";
+  @import (multiple) "utilities/grid";
+  @import (multiple) "utilities/interactivity";
+  @import (multiple) "utilities/layout";
+  @import (multiple) "utilities/sizing";
+  @import (multiple) "utilities/spacing";
+  @import (multiple) "utilities/svg";
+  @import (multiple) "utilities/typography";
+}
 
 //  --  THEMES & GLOBAL SETTINGS
 @import "dialtone-globals";
 @import "themes/default";
-
-
-//  --  CONFIG
-@import "utilities/internals";
