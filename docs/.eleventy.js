@@ -1,5 +1,19 @@
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginTOC = require("eleventy-plugin-nesting-toc");
+const sections = require("./_data/site-nav.json").sections
+
+const alignAvailablePages = sections => sections.map(section => section.subsections
+    ? alignAvailablePages(section.subsections)
+    : section.pages
+).flat(Infinity)
+
+const getAvailablePages = sections => alignAvailablePages(sections)
+    .reduce((pages, page) => ({
+        ...pages,
+        [page.url]: page
+    }), {})
+
+const availablePages = getAvailablePages(sections)
 
 module.exports = function(eleventyConfig) {
     //  Add syntax highlighting
@@ -141,6 +155,41 @@ module.exports = function(eleventyConfig) {
     // Add shortcode for ordered list
     eleventyConfig.addPairedShortcode("ol", function(content) {
         return `<ol class="d-fs16 d-lh6 d-stack16">${content}</ol>`;
+    });
+
+    // Add shortcode for ordered list
+    eleventyConfig.addPairedShortcode("breadcrumb", function(url) {
+        const path = url.split('/').filter(v => v.trim())
+        const options = path.reduce((breadcrumbs, breadcrumb, i, arr) => {
+            const isPrev = !!breadcrumbs.length
+            const path = isPrev ? `${breadcrumbs[i - 1].path}/${breadcrumb}` : `/${breadcrumb}`
+            const availablePage = availablePages[`${path}/`]
+            const name = availablePage ? availablePage.title : breadcrumb
+
+            breadcrumbs.push({
+                path,
+                name,
+                disabled: !availablePage,
+                selected: arr.length - 1 === i
+            })
+
+            return breadcrumbs
+        }, [])
+
+        return options.reduce((links, option) => {
+            const tag = option.disabled ? 'span' : 'a'
+            const selectedClass = option.selected
+                ? 'd-breadcrumbs__item--selected'
+                : ''
+
+            return  `${links}<li class="d-breadcrumbs__item ${selectedClass} d-d-inline">
+                <${tag}
+                    href="${option.path}"
+                    class="${tag === 'a' ? 'd-link d-link--muted' : ''} d-d-inline d-tt-capitalize"
+                    aria-current="location"
+                >${option.name}</${tag}>
+            </li>`
+        }, '')
     });
 
     //  Add submenu navigation
