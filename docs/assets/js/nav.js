@@ -2,11 +2,26 @@ $(document).ready(function() {
     var navigation = $(".js-navigation");
     var menuOpenIcon = $(".js-menu-open-icon");
     var menuCloseIcon = $(".js-menu-close-icon");
-
     var body = $("body");
     var navHeader = $(".js-navigation-header");
     var navigationSideBar = $(".js-navigation-sidebar");
     var banner = $('.js-banner-example');
+    const dropDownNavigation = $('.js-mobile-header-drop-down-navigation')
+    const navigationHeader = $('.js-navigation-header')
+    const breadcrumbsWrapper = $('.js-mobile-header-breadcrumbs')
+    const breadcrumbArrow = $('.js-mobile-header-breadcrumb-arrow')
+
+
+    function toggleDropDownNavigation () {
+        breadcrumbArrow.toggleClass('breadcrumb-arrow--top')
+        dropDownNavigation.css('height', 0)
+        dropDownNavigation.css('top', navigationHeader.outerHeight() + breadcrumbsWrapper.outerHeight())
+        dropDownNavigation.addClass('d-o0')
+        dropDownNavigation.removeClass('d-py24')
+        dropDownNavigation.removeClass('d-px16')
+        navigationHeader.removeClass('md:d-w100vw')
+        body.removeClass('md:d-ps-fixed')
+    }
 
     function regenerateMenu () {
         // Hide the navigation if we've opened it
@@ -34,9 +49,11 @@ $(document).ready(function() {
             'nav': $(document).find('#nav').html(),
             'content': $(document).find('#content').html(),
             'subnav': $(document).find('#subnav').html(),
+            'mobile-nav': $(document).find('#mobile-nav').html(),
         }, '', window.location.href),
 
-        $('#nav').on('click', 'a', function (event) {
+        $('#nav,#mobile-nav').on('click', 'a', function (event) {
+
             // Allow opening links in new tabs
             if (event.metaKey) {
               return
@@ -61,6 +78,8 @@ $(document).ready(function() {
                 var nav = $(html).find('#nav').html()
                 var content = $(html).find('#content').html()
                 var subnav = $(html).find('#subnav').html()
+                const breadcrumbs = $(html).find('#breadcrumbs').html()
+                const mobileNav = $(html).find('#mobile-nav').html()
 
                 // Destroy scrollSpy
                 $('.js-scrollspy').scrollSpy('destroy');
@@ -70,6 +89,8 @@ $(document).ready(function() {
                 $('#nav').html(nav)
                 $('#content').html(content)
                 $('#subnav').html(subnav)
+                $('#breadcrumbs').html(breadcrumbs)
+                $('#mobile-nav').html(mobileNav)
 
                 // Scroll to the top of the page
                 $(document).scrollTop(0)
@@ -81,9 +102,11 @@ $(document).ready(function() {
                     'href': href,
                     'title': title,
                     'nav': $(html).find('#nav').html(),
+                    'mobile-nav': $(html).find('#mobile-nav').html(),
                     'content': $(html).find('#content').html(),
                 }, '', href)
 
+                toggleDropDownNavigation()
                 //  Re-initiate ScrollSpy
                 $('.js-scrollspy').scrollSpy();
                 $('.js-navigation-header').attr('style', '');
@@ -98,6 +121,7 @@ $(document).ready(function() {
                 $('#nav').html(e.state.nav)
                 $('#content').html(e.state.content)
                 $('#subnav').html(e.state.subnav)
+                $('#mobile-nav').html(e.state['mobile-nav'])
             }
         }
     });
@@ -110,7 +134,9 @@ $(document).ready(function() {
         var windowTop = $(window).scrollTop();
         calcSideNavPosition();
 
-        if (windowTop > 64) {
+        if(window.innerWidth <= 640) {
+          navHeader.removeClass('d-bs-lg d-bc-white').addClass('d-bc-black-100');
+        } else if (windowTop > 64) {
           navHeader.addClass('d-bs-lg d-bc-white').removeClass('d-bc-black-100');
         } else {
           navHeader.removeClass('d-bs-lg d-bc-white').addClass('d-bc-black-100');
