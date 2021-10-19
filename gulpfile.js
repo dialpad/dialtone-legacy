@@ -232,10 +232,10 @@ const cleanFonts = () => {
 //  -- BREAK POINTS
 
 const breakpoints = [
-  { prefix: 'sm\:', mediaQuery: '(min-width: 480px)' },
-  { prefix: 'md\:', mediaQuery: '(min-width: 640px)' },
-  { prefix: 'lg\:', mediaQuery: '(min-width: 980px)' },
-  { prefix: 'xl\:', mediaQuery: '(min-width: 1264px)' },
+  { prefix: 'sm\\:', mediaQuery: '(max-width: 480px)' },
+  { prefix: 'md\\:', mediaQuery: '(max-width: 640px)' },
+  { prefix: 'lg\\:', mediaQuery: '(max-width: 980px)' },
+  { prefix: 'xl\\:', mediaQuery: '(max-width: 1264px)' },
 ];
 
 const responsifyOptions = {
