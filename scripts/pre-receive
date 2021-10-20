@@ -1,0 +1,52 @@
+#!/bin/bash
+
+set -e
+
+# Regular expression used for commit message validation
+function buildRegex()
+{
+    COMMIT_MSG_TYPES="build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test"
+    COMMIT_MSG_SCOPE="(\(\w+\))?"
+    COMMIT_MSG_SUBJECT="\s\w+.*\S"
+    VALID_COMMIT_MESSAGE_REGEX="^(${COMMIT_MSG_TYPES})(${COMMIT_MSG_SCOPE})\!?\:(${COMMIT_MSG_SUBJECT})$"
+}
+
+# Display the output when the commit message is wrong 
+function displayErrorMessage()
+{
+    NOCOLOR='\033[0m'
+    RED='\033[0;31m'
+    ORANGE='\033[0;33m'
+
+    echo "ERROR: Your push was rejected because the commit"
+    echo "ERROR: $commit in ${refname#refs/heads/}"
+    echo "ERROR: is not valid according to the commit message convention"
+    echo "----------------------------"
+    echo -e "${ORANGE}Valid types:${NOCOLOR} ${COMMIT_MSG_TYPES}"
+    echo -e "${ORANGE}Please read the CONTRIBUTION guidelines for more information"
+}
+
+# Init the hook
+buildRegex
+
+zero_commit='0000000000000000000000000000000000000000'
+
+while read -r oldrev newrev refname; do
+    if [[ "refs/heads/production" == "$refname" || "refs/heads/staging" == "$refname" ||
+           "refs/heads/beta" == "$refname" || "refs/heads/alpha" == "$refname" ]]; then
+        # Branch or tag got deleted, ignore the push
+        [ "$newrev" = "$zero_commit" ] && continue
+
+        # Calculate range for new branch/updated branch
+        [ "$oldrev" = "$zero_commit" ] && range="$newrev" || range="$oldrev..$newrev"
+  
+        for commit in $(git rev-list "$range" --not --all); do
+            if ! git log --max-count=1 --format=%B $commit | grep -iqE "$VALID_COMMIT_MESSAGE_REGEX"; then
+               displayErrorMessage 
+                
+                exit 1
+            fi
+        done
+    
+    fi
+done
