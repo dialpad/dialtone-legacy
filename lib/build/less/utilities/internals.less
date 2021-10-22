@@ -27,6 +27,183 @@
 //  ----------------------------------------------------------------------------
 #d-internals() {
     //  ========================================================================
+    //  $   COLOR CLASS GENERATOR
+    //      Create a mixin to generate all the utility classes required. By doing it
+    //      this way, we are disabling the ability to use Dialtone utility classes as
+    //      a mixin. Previously we had allowed for utility classes to be used as
+    //      mixins, but because our overall CSS bundle size is growing exponentially,
+    //      Dialtone v6 removed this ability. It is now recommended to use CSS
+    //      variables (var(--color)). Less variables (@color) are also available,
+    //      but their use is discouraged.
+    //
+    //      USAGE:
+    //      #d-internals #color-classes(purple-500);
+    //
+    //  ------------------------------------------------------------------------
+    #color-classes(@color-name) {
+      //  --  FONT STYLES
+      .d-fc-@{color-name},
+      .h\:d-fc-@{color-name}:hover,
+      .f\:d-fc-@{color-name}:focus {
+        --fco: 100%;
+        color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--fco)) !important;
+      }
+      .f\:d-fc-@{color-name}:focus-within {
+        --fco: 100%;
+        color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--fco)) !important;
+      }
+      #d-internals #dark-mode('.d\:d-fc-@{color-name}', {
+        --fco: 100%;
+        color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--fco)) !important;
+      });
+
+
+      //  --  BORDER STYLES
+      .d-bc-@{color-name},
+      .h\:d-bc-@{color-name}:hover,
+      .f\:d-bc-@{color-name}:focus {
+        --bco: 100%;
+        border-color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--bco)) !important;
+      }
+      .f\:d-bc-@{color-name}:focus-within {
+        --bco: 100%;
+        border-color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--bco)) !important;
+      }
+      #d-internals #dark-mode('.d\:d-bc-@{color-name}', {
+        --bco: 100%;
+        border-color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--bco)) !important;
+      });
+
+      //  --  DIVIDER COLORS
+      .d-divide-@{color-name} > * + * {
+        --dco: 100%;
+        border-color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--dco)) !important;
+      }
+      #d-internals #dark-mode('.d\:d-divide-@{color-name} > * + *', {
+        --dco: 100%;
+        border-color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--dco)) !important;
+      });
+
+      //  --  BACKGROUND STYLES
+      .d-bgc-@{color-name},
+      .h\:d-bgc-@{color-name}:hover,
+      .f\:d-bgc-@{color-name}:focus {
+        --bgo: 100%;
+        background-color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--bgo)) !important;
+      }
+      .f\:d-bgc-@{color-name}:focus-within {
+        --bgo: 100%;
+        background-color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--bgo)) !important;
+      }
+      #d-internals #dark-mode('.d\:d-bgc-@{color-name}', {
+        --bgo: 100%;
+        background-color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--bgo)) !important;
+      });
+    }
+
+    //  ========================================================================
+    //  $   STANDARD WEIGHT LOOP GENERATOR
+    //      Since most of our colors have similar stops (100 - 600), we'll save
+    //      ourselves the need to call the mixin for each color and create a
+    //      loop that will create most of the colors for us.
+    //
+    //      USAGE:
+    //      #d-internals #standard-stops(purple);
+    //
+    //  ------------------------------------------------------------------------
+    #standard-stops(@color) {
+      #d-internals #color-classes(~"@{color}-600");
+      #d-internals #color-classes(~"@{color}-500");
+      #d-internals #color-classes(~"@{color}-400");
+      #d-internals #color-classes(~"@{color}-300");
+      #d-internals #color-classes(~"@{color}-200");
+      #d-internals #color-classes(~"@{color}-100");
+    }
+
+    //  ========================================================================
+    //  $   OPACITY CLASS GENERATOR
+    //      Creates opacity classes for font, background, and border colors.
+    //
+    //      USAGE:
+    //      #d-internals #opacity-classes(50);
+    //
+    //  ------------------------------------------------------------------------
+    #opacity-classes(@opacity) {
+      //  --  FONT OPACITY
+      .d-fco@{opacity},
+      .h\:d-fco@{opacity}:hover,
+      .f\:d-fco@{opacity}:focus {
+        --fco: ~"@{opacity}%" !important;
+      }
+      .f\:d-fco@{opacity}:focus-within {
+        --fco: ~"@{opacity}%" !important;
+      }
+      #d-internals #dark-mode('.d\:d-fco@{opacity}', {
+        --fco: ~"@{opacity}%" !important;
+      });
+
+
+      //  --  BORDER OPACITY
+      .d-bco@{opacity},
+      .h\:d-bco@{opacity}:hover,
+      .f\:d-bco@{opacity}:focus {
+        --bco: ~"@{opacity}%" !important;
+      }
+      .f\:d-bco@{opacity}:focus-within {
+        --bco: ~"@{opacity}%" !important;
+      }
+      #d-internals #dark-mode('.d\:d-bco@{opacity}', {
+        --bco: ~"@{opacity}%" !important;
+      });
+
+      //  --  DIVIDER OPACITY
+      .d-dco@{opacity} > * + * {
+        --dco: ~"@{opacity}%" !important;
+      }
+      #d-internals #dark-mode('.d\:d-dco@{opacity} > * + *', {
+        --dco: ~"@{opacity}%" !important;
+      });
+
+      //  --  BACKGROUND COLOR OPACITY
+      .d-bgo@{opacity},
+      .h\:d-bgo@{opacity}:hover,
+      .f\:d-bgo@{opacity}:focus {
+        --bgo: ~"@{opacity}%" !important;
+      }
+      .f\:d-bgo@{opacity}:focus-within {
+        --bgo: ~"@{opacity}%" !important;
+      }
+      #d-internals #dark-mode('.d\:d-bgo@{opacity}', {
+        --bgo: ~"@{opacity}%" !important;
+      });
+
+      //  --  BACKGROUND GRADIENT STARTING STOP
+      .d-bgg-from-o@{opacity},
+      .h\:d-bgg-from-@{opacity}:hover,
+      .f\:d-bgg-from-@{opacity}:focus {
+        --bgg-from-opacity: ~"@{opacity}%" !important;
+      }
+      .f\:d-bgg-from-@{opacity}:focus-within {
+        --bgg-from-opacity: ~"@{opacity}%" !important;
+      }
+      #d-internals #dark-mode('.d\:d-bgg-from-@{opacity}', {
+        --bgg-from-opacity: ~"@{opacity}%" !important;
+      });
+
+      //  --  BACKGROUND GRADIENT ENDING STOP
+      .d-bgg-to-o@{opacity},
+      .h\:d-bgg-to-@{opacity}:hover,
+      .f\:d-bgg-to-@{opacity}:focus {
+        --bgg-to-opacity: ~"@{opacity}%" !important;
+      }
+      .f\:d-bgg-to-@{opacity}:focus-within {
+        --bgg-to-opacity: ~"@{opacity}%" !important;
+      }
+      #d-internals #dark-mode('.d\:d-bgg-to-@{opacity}', {
+        --bgg-to-opacity: ~"@{opacity}%" !important;
+      });
+    }
+    //  ========================================================================
     //  $   COLOR VARS
     //      #color-vars creates all our HSL CSS color vars for us from a set
     //      of HEX codes.
@@ -163,182 +340,79 @@
         }));
     }
 
+    #gradient-classes(@color) {
+      //  COLOR STOP 1, STARTING STOP
+      .d-bgg-from-@{color},
+      .h\:d-bgg-from-@{color}:hover,
+      .f\:d-bgg-from-@{color}:focus {
+        --bgg-from-opacity: 100%;
+        --bgg-from: hsla(var(~"--@{color}-h") var(~"--@{color}-s") var(~"--@{color}-l") ~" / " var(--bgg-from-opacity));
+        --bgg-to: hsla(var(~"--@{color}-h") var(~"--@{color}-s") var(~"--@{color}-l") ~" / " 0%);
+      }
+      .f\:d-bgg-from-@{color}:focus-within {
+        --bgg-from-opacity: 100%;
+        --bgg-from: hsla(var(~"--@{color}-h") var(~"--@{color}-s") var(~"--@{color}-l") ~" / " var(--bgg-from-opacity));
+        --bgg-to: hsla(var(~"--@{color}-h") var(~"--@{color}-s") var(~"--@{color}-l") ~" / " 0%);
+      }
+      #d-internals #dark-mode('.d\:d-bgg-from-@{color}', {
+        --bgg-from-opacity: 100%;
+        --bgg-from: hsla(var(~"--@{color}-h") var(~"--@{color}-s") var(~"--@{color}-l") ~" / " var(--bgg-from-opacity));
+        --bgg-to: hsla(var(~"--@{color}-h") var(~"--@{color}-s") var(~"--@{color}-l") ~" / " 0%);
+      });
 
-    //  ========================================================================
-    //  $   COLOR CLASS GENERATOR
-    //      Create a mixin to generate all the utility classes required. By doing it
-    //      this way, we are disabling the ability to use Dialtone utility classes as
-    //      a mixin. Previously we had allowed for utility classes to be used as
-    //      mixins, but because our overall CSS bundle size is growing exponentially,
-    //      Dialtone v6 removed this ability. It is now recommended to use CSS
-    //      variables (var(--color)). Less variables (@color) are also available,
-    //      but their use is discouraged.
-    //
-    //      USAGE:
-    //      #d-internals #color-classes(purple-500);
-    //
-    //  ------------------------------------------------------------------------
-    #color-classes(@color-name) {
-        //  --  FONT STYLES
-        .d-fc-@{color-name},
-        .h\:d-fc-@{color-name}:hover,
-        .f\:d-fc-@{color-name}:focus {
-            --fco: 100%;
-            color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--fco)) !important;
-        }
-        .f\:d-fc-@{color-name}:focus-within {
-            --fco: 100%;
-            color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--fco)) !important;
-        }
-        #d-internals #dark-mode('.d\:d-fc-@{color-name}', {
-            --fco: 100%;
-            color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--fco)) !important;
-        });
-
-
-        //  --  BORDER STYLES
-        .d-bc-@{color-name},
-        .h\:d-bc-@{color-name}:hover,
-        .f\:d-bc-@{color-name}:focus {
-            --bco: 100%;
-            border-color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--bco)) !important;
-        }
-        .f\:d-bc-@{color-name}:focus-within {
-            --bco: 100%;
-            border-color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--bco)) !important;
-        }
-        #d-internals #dark-mode('.d\:d-bc-@{color-name}', {
-            --bco: 100%;
-            border-color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--bco)) !important;
-        });
-
-        //  --  DIVIDER COLORS
-        .d-divide-@{color-name} > * + * {
-            --dco: 100%;
-            border-color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--dco)) !important;
-        }
-        #d-internals #dark-mode('.d\:d-divide-@{color-name} > * + *', {
-            --dco: 100%;
-            border-color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--dco)) !important;
-        });
-
-        //  --  BACKGROUND STYLES
-        .d-bgc-@{color-name},
-        .h\:d-bgc-@{color-name}:hover,
-        .f\:d-bgc-@{color-name}:focus {
-            --bgo: 100%;
-            background-color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--bgo)) !important;
-        }
-        .f\:d-bgc-@{color-name}:focus-within {
-            --bgo: 100%;
-            background-color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--bgo)) !important;
-        }
-        #d-internals #dark-mode('.d\:d-bgc-@{color-name}', {
-            --bgo: 100%;
-            background-color: hsla(var(~"--@{color-name}-h") var(~"--@{color-name}-s") var(~"--@{color-name}-l") ~" / " var(--bgo)) !important;
-        });
+      //  COLOR STOP 2, ENDING STOP
+      .d-bgg-to-@{color},
+      .h\:d-bgg-to-@{color}:hover,
+      .f\:d-bgg-to-@{color}:focus {
+        --bgg-to-opacity: 100%;
+        --bgg-to: hsla(var(~"--@{color}-h") var(~"--@{color}-s") var(~"--@{color}-l") ~" / " var(--bgg-to-opacity)) !important;
+      }
+      .f\:d-bgg-to-@{color}:focus-within {
+        --bgg-to-opacity: 100%;
+        --bgg-to: hsla(var(~"--@{color}-h") var(~"--@{color}-s") var(~"--@{color}-l") ~" / " var(--bgg-to-opacity)) !important;
+      }
+      #d-internals #dark-mode('.d\:d-bgg-to-@{color}', {
+        --bgg-to-opacity: 100%;
+        --bgg-to: hsla(var(~"--@{color}-h") var(~"--@{color}-s") var(~"--@{color}-l") ~" / " var(--bgg-to-opacity)) !important;
+      });
     }
 
-    //  ========================================================================
-    //  $   STANDARD WEIGHT LOOP GENERATOR
-    //      Since most of our colors have similar stops (100 - 600), we'll save
-    //      ourselves the need to call the mixin for each color and create a
-    //      loop that will create most of the colors for us.
-    //
-    //      USAGE:
-    //      #d-internals #standard-stops(purple);
-    //
-    //  ------------------------------------------------------------------------
-    #standard-stops(@color) {
-        #d-internals #color-classes(~"@{color}-600");
-        #d-internals #color-classes(~"@{color}-500");
-        #d-internals #color-classes(~"@{color}-400");
-        #d-internals #color-classes(~"@{color}-300");
-        #d-internals #color-classes(~"@{color}-200");
-        #d-internals #color-classes(~"@{color}-100");
+    #gradient-stops(@color) {
+      #d-internals #gradient-classes(~"@{color}-600");
+      #d-internals #gradient-classes(~"@{color}-500");
+      #d-internals #gradient-classes(~"@{color}-400");
+      #d-internals #gradient-classes(~"@{color}-300");
+      #d-internals #gradient-classes(~"@{color}-200");
+      #d-internals #gradient-classes(~"@{color}-100");
     }
 
-    //  ========================================================================
-    //  $   OPACITY CLASS GENERATOR
-    //      Creates opacity classes for font, background, and border colors.
-    //
-    //      USAGE:
-    //      #d-internals #opacity-classes(50);
-    //
-    //  ------------------------------------------------------------------------
-    #opacity-classes(@opacity) {
-        //  --  FONT OPACITY
-        .d-fco@{opacity},
-        .h\:d-fco@{opacity}:hover,
-        .f\:d-fco@{opacity}:focus {
-            --fco: ~"@{opacity}%" !important;
-        }
-        .f\:d-fco@{opacity}:focus-within {
-            --fco: ~"@{opacity}%" !important;
-        }
-        #d-internals #dark-mode('.d\:d-fco@{opacity}', {
-            --fco: ~"@{opacity}%" !important;
-        });
+    #build-flex-columns(@num, @count: 1) when (@count =< @num) {
+    .d-fl-col@{count} {
+      display: flex;
 
+      //  Automatically make all direct child to obey the parent class
+      > * {
+        --fl-gap: 0;
+        --fl-basis: calc(100% / @count);
 
-        //  --  BORDER OPACITY
-        .d-bco@{opacity},
-        .h\:d-bco@{opacity}:hover,
-        .f\:d-bco@{opacity}:focus {
-            --bco: ~"@{opacity}%" !important;
-        }
-        .f\:d-bco@{opacity}:focus-within {
-            --bco: ~"@{opacity}%" !important;
-        }
-        #d-internals #dark-mode('.d\:d-bco@{opacity}', {
-            --bco: ~"@{opacity}%" !important;
-        });
+        display: inline-flex;
+        margin: var(--fl-gap);
+        flex: 1 calc(var(--fl-basis) - ((var(--fl-gap) * 2)));
 
-        //  --  DIVIDER OPACITY
-        .d-dco@{opacity} > * + * {
-            --dco: ~"@{opacity}%" !important;
+        //  Add in a gap to items after the first row
+        &:nth-child(-n + @{count}) {
+          margin-top: 0;
         }
-        #d-internals #dark-mode('.d\:d-dco@{opacity} > * + *', {
-            --dco: ~"@{opacity}%" !important;
-        });
+      }
 
-        //  --  BACKGROUND COLOR OPACITY
-        .d-bgo@{opacity},
-        .h\:d-bgo@{opacity}:hover,
-        .f\:d-bgo@{opacity}:focus {
-            --bgo: ~"@{opacity}%" !important;
-        }
-        .f\:d-bgo@{opacity}:focus-within {
-            --bgo: ~"@{opacity}%" !important;
-        }
-        #d-internals #dark-mode('.d\:d-bgo@{opacity}', {
-            --bgo: ~"@{opacity}%" !important;
-        });
-
-        //  --  BACKGROUND GRADIENT STARTING STOP
-        .d-bgg-from-o@{opacity},
-        .h\:d-bgg-from-@{opacity}:hover,
-        .f\:d-bgg-from-@{opacity}:focus {
-            --bgg-from-opacity: ~"@{opacity}%" !important;
-        }
-        .f\:d-bgg-from-@{opacity}:focus-within {
-            --bgg-from-opacity: ~"@{opacity}%" !important;
-        }
-        #d-internals #dark-mode('.d\:d-bgg-from-@{opacity}', {
-            --bgg-from-opacity: ~"@{opacity}%" !important;
-        });
-
-        //  --  BACKGROUND GRADIENT ENDING STOP
-        .d-bgg-to-o@{opacity},
-        .h\:d-bgg-to-@{opacity}:hover,
-        .f\:d-bgg-to-@{opacity}:focus {
-            --bgg-to-opacity: ~"@{opacity}%" !important;
-        }
-        .f\:d-bgg-to-@{opacity}:focus-within {
-            --bgg-to-opacity: ~"@{opacity}%" !important;
-        }
-        #d-internals #dark-mode('.d\:d-bgg-to-@{opacity}', {
-            --bgg-to-opacity: ~"@{opacity}%" !important;
-        });
+      //  If flex column is in a column direction (and became rows),
+      //  change the margin direction.
+      &.d-fd-column > * {
+        margin: var(--fl-gap) 0;
+      }
     }
+
+    //  Iterate our loop until we hit our grid column total
+    #d-internals #build-flex-columns(@num, @count + 1);
+  }
 }
