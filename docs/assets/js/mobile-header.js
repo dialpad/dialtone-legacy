@@ -80,8 +80,9 @@ $(document).ready(() => {
     function toggleDropDownNavigation (height = 0, opacity = true) {
         dropDownNavigation.css('height', height)
         dropDownNavigation.css('top', navigationHeader.outerHeight() + breadcrumbsWrapper.outerHeight())
+        dropDownNavigation.css('padding-bottom', '15.2rem')
         dropDownNavigation.toggleClass('d-o0', opacity)
-        dropDownNavigation.toggleClass('d-py24', !!height)
+        dropDownNavigation.toggleClass('d-pt24', !!height)
         dropDownNavigation.toggleClass('d-px16', !!height)
         navigationHeader.toggleClass('md:d-w100vw', !!height)
         $('body').toggleClass('md:d-ps-fixed', !!height)
