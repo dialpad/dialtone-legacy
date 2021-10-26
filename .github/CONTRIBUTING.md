@@ -8,7 +8,7 @@ Before submitting a pull request, **please ask first in [a new issue](https://gi
 
 ## Commit message convention
 
-Dialtone use [Conventional Commits specification](https://www.conventionalcommits.org/en/v1.0.0/) for the commit messages in the release branches: `production`, `staging`, `alpha` and `beta`. Make sure every commit you want to include in the release notes is meeting this specification.
+Dialtone uses [Conventional Commits specification](https://www.conventionalcommits.org/en/v1.0.0/) for the commit messages in the release branches: `production`, `staging`, `alpha` and `beta`. Make sure every commit you want to include in the release notes is meeting this specification.
 
 ### Git hooks
 
