@@ -12,13 +12,7 @@ Dialtone uses [Conventional Commits specification](https://www.conventionalcommi
 
 ### Git hooks
 
-To enforce your commit on the release branches are correct according to the commit specification, install the `commit-msg` hook.
-
-In the Dialtone root directory run:
-
-```
-npm run prepare
-```
+To enforce your commit message on the release branches are correct according to the Conventional Commits specification, there is a `commit-msg` git hook that will be invoked by `git commit`.
 
 ## Versioning
 
