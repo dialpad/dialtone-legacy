@@ -6,9 +6,10 @@
 
 | Commit Type | Release type           |
 | ------------- |:-------------:|
-| Commit with breaking change     | Breaking release |
-| Commit with type feat      | Feature release      |
+| Commit with breaking change     | Major release |
+| Commit with type feat      | Minor release      |
 | Commit with type fix | Patch release      |
+| Commit with type perf | Patch release      |
 
 ## Steps
 

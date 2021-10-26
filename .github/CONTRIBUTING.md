@@ -8,11 +8,11 @@ Before submitting a pull request, **please ask first in [a new issue](https://gi
 
 ## Commit message convention
 
-Dialtone uses [Conventional Commits specification](https://www.conventionalcommits.org/en/v1.0.0/) for the commit messages in the release branches: `production`, `staging`, `alpha` and `beta`. Make sure every commit you want to include in the release notes is meeting this specification.
+Dialtone uses [Conventional Commits specification](https://www.conventionalcommits.org/en/v1.0.0/) to have commit messages that can be used as part of the [semantic release process](RELEASING.md). For more information, see [COMMIT_CONVENTION.md](COMMIT_CONVENTION.md).
 
 ### Git hooks
 
-To enforce your commit message on the release branches are correct according to the Conventional Commits specification, there is a `commit-msg` git hook that will be invoked by `git commit`.
+To enforce your commit message on the release branches (`production`, `staging`, `alpha` and `beta`) are correct according to the Conventional Commits specification, there is a `commit-msg` git hook that will be invoked by `git commit`.
 
 ## Versioning
 
