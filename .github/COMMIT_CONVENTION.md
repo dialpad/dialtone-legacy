@@ -1,6 +1,6 @@
 ## Git Commit Message Convention
 
-Dialtone uses [Conventional Commits specification](https://www.conventionalcommits.org/en/v1.0.0/) for the commit messages in the release branches: `production`, `staging`, `alpha` and `beta`. Make sure every commit you want to include in the [semantic release process](RELEASING.md) is meeting this specification. When opening a PR, ensure the PR's title also complies with the Conventional Commits specification. This way, if your PR is merged using squash strategy, the PR's title will be used af the commit message.
+Dialtone uses [Conventional Commits specification](https://www.conventionalcommits.org/en/v1.0.0/) for the commit messages in the release branches: `production`, `staging`, `alpha` and `beta`. Make sure every commit you want to include in the [semantic release process](RELEASING.md) is meeting this specification. When opening a PR, ensure the PR's title also complies with the Conventional Commits specification. This way, if your PR is merged using squash strategy, the PR's title will be used as the commit message.
 
 Each commit message consists of a **header**, a **body**, and a **footer**.
 
