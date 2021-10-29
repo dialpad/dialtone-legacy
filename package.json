@@ -15,7 +15,9 @@
     "build": "gulp",
     "start": "gulp watch",
     "debug": "DEBUG=Elventy* npx @11ty/eleventy --serve --input=docs",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "stylelint": "npx stylelint 'lib/build/less/**/*.{less,css}'",
+    "stylelint-fix": "npx stylelint 'lib/build/less/**/*.{less,css}' --fix"
   },
   "license": "MIT",
   "browserslist": [
@@ -61,7 +63,9 @@
     "minimist": ">=1.2.3",
     "mixin-deep": ">=1.3.2",
     "path": "^0.12.7",
+    "postcss": "^8.3.11",
     "postcss-cli": "^7.1.1",
+    "postcss-less": "^5.0.0",
     "postcss-preset-env": "^6.7.0",
     "postcss-sorting": "^4.1.0",
     "precss": "^4.0.0",
@@ -69,7 +73,10 @@
     "run-sequence": "^2.2.1",
     "set-value": ">=2.0.1",
     "sharp": "^0.25.4",
-    "socket.io": ">=2.4.0"
+    "socket.io": ">=2.4.0",
+    "stylelint": "^14.0.0",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-recommended": "^6.0.0"
   },
   "dependencies": {
     "eleventy-plugin-nesting-toc": "^1.2.0"
