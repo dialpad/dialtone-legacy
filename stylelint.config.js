@@ -30,7 +30,6 @@ module.exports = {
     'value-keyword-case': null,
     'value-no-vendor-prefix': null,
     indentation: null,
-    'length-zero-no-unit': true,
-
+    'length-zero-no-unit': true
   }
 };
