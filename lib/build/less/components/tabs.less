@@ -17,20 +17,20 @@
     position: relative;
     display: flex;
     flex-wrap: wrap;
+    color: var(--fc-light);
 
     font-size: var(--fs16);
-    color: var(--fc-light);
 
     // Add a bottom border unless no border is requested
     &:not(.d-tablist--no-border):after {
-        content: "";
         position: absolute;
         right: 0;
         bottom: 0;
         left: 0;
+        z-index: var(--zi-base1);
         height: var(--su1);
         background-color: var(--black-200);
-        z-index: var(--zi-base1);
+        content: "";
     }
 }
 
@@ -45,27 +45,27 @@
     --tab--fc:          inherit;
     --tab--oc:          var(--focus-ring);
 
-    box-sizing: border-box;
-
     position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
+
+    box-sizing: border-box;
     margin: 0 var(--su2);
     padding: var(--su12);
+    color: var(--tab--fc);
+    font: inherit;
+    line-height: 1;
+    background-color: var(--tab--bgc);
 
     border: 0;
     border-radius: var(--br4) var(--br4) 0 0;
-    background-color: var(--tab--bgc);
-    font: inherit;
-    line-height: 1;
-    color: var(--tab--fc);
-    fill: currentColor;
 
     cursor: pointer;
     transition-timing-function: var(--ttf-in-out);
     transition-duration: var(--td50);
     transition-property: background-color, color;
+    fill: currentColor;
 
 
     &:first-of-type {
@@ -76,13 +76,13 @@
     }
 
     &:after {
-        content: "";
         position: absolute;
         right: 0;
         bottom: 0;
         left: 0;
         height: var(--su2);
         background-color: var(--tab--bgc);
+        content: "";
     }
 
     &:focus {

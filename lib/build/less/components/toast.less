@@ -29,24 +29,22 @@
     //  ------------------------------------------------------------------------
     --toast--bgc:          var(--black-025);
     --toast--fc:           var(--fc-dark);
-
+    z-index:       var(--zi-notification);
     box-sizing: border-box;
 
     width:         100%;
     max-width:     var(--size628);
-    padding:       var(--su12);
     margin-bottom: var(--su8);
-    z-index:       var(--zi-notification);
-
+    padding:       var(--su12);
     color:            var(--toast--fc);
-    background-color: var(--toast--bgc);
-
-    border-radius: var(--br4);
-    .d-bs-md();
 
     font-size:   var(--fs14);
     line-height: var(--lh6);
     word-break:  normal;
+    background-color: var(--toast--bgc);
+
+    border-radius: var(--br4);
+    .d-bs-md();
 
     //  If there's a link in a toast, break the url so it wraps
     > a {
@@ -68,9 +66,9 @@
 //  $   CONTENT CONTAINER
 //  ----------------------------------------------------------------------------
 .d-toast__dialog {
+    position: relative;
     display: flex;
     align-items: center;
-    position: relative;
 
     .d-notice__content {
         margin-right: var(--su16);
@@ -191,7 +189,7 @@
 
   .d-notice__message {
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    justify-content: center;
   }
 }

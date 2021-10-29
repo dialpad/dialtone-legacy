@@ -38,27 +38,25 @@
     --input--bgc:          var(--white);
     --input--fc:           var(--black-800);
 
-    box-sizing: border-box;
-
     position: relative;
     display: inline-flex;
     flex: 1 0%;
-    padding:    0.7rem var(--su8);
-    min-width: 0;
-    width: 100%;
-    outline: none;
 
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    padding:    0.7rem var(--su8);
     color: var(--input--fc);
-    background-color: var(--input--bgc);
-    border: 1px solid var(--input--bc);
-    border-radius: var(--base--corner-radius);
-    box-shadow: none;
 
     font-weight: inherit;
     font-size: var(--fs16);
     font-family: inherit;
     line-height: var(--lh4);
-
+    background-color: var(--input--bgc);
+    border: 1px solid var(--input--bc);
+    border-radius: var(--base--corner-radius);
+    outline: none;
+    box-shadow: none;
     transition-timing-function: var(--ttf-in-out);
     transition-duration: 100ms;
     transition-property: border, box-shadow, background-color;
@@ -82,9 +80,9 @@
     //  --  FOCUS
     &:focus {
         --input--bc: var(--input--focus-bc);
+        outline: 0;
 
         box-shadow: var(--bs-focus-ring)!important;
-        outline: 0;
     }
     //  --  DISABLED / READ-ONLY
     &[disabled],
@@ -242,22 +240,21 @@
     //  Component CSS Vars
     //  ------------------------------------------------------------------------
     --input-icon-size: @icon16;
-
-    display: inline-flex;
-    align-items: center;
     position: absolute;
     top: 0;
     z-index:  var(--zi-base1);
+    display: inline-flex;
+    align-items: center;
+    width:  var(--input-icon-size);
+
+    height: var(--input-icon-size);
     margin: 0;
     margin-top: 1rem;
     line-height: 0;
 
-    height: var(--input-icon-size);
-    width:  var(--input-icon-size);
-
     svg {
-        height: var(--input-icon-size);
         width:  var(--input-icon-size);
+        height: var(--input-icon-size);
     }
 
     &.d-input-icon--left {

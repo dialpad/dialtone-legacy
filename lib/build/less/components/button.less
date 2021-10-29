@@ -25,32 +25,31 @@
     --button--bc:               transparent;
     --button--br:               var(--base--corner-radius);
 
-    box-sizing: border-box;
-
     position: relative;
     display: inline-flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
     padding: calc(var(--su8) - var(--su1));  // Subtract border
+    color: var(--button--fc);
+    font-size: var(--fs16);
+    font-family: inherit;
+    line-height: var(--lh4);
+    text-transform: inherit;
+
+    text-decoration: none;
     vertical-align: middle;
+    background-color: var(--button--bgc);
 
     border: 0.1rem solid var(--button--bc);
     border-radius: var(--button--br);
-    background-color: var(--button--bgc);
     box-shadow: var(--button--bs);
-
-    text-decoration: none;
-    text-transform: inherit;
-    font-family: inherit;
-    font-size: var(--fs16);
-    line-height: var(--lh4);
-    color: var(--button--fc);
 
     cursor: pointer;
     transition-timing-function: var(--ttf-in-out);
     transition-duration: 75ms;
     transition-property: background-color, border, box-shadow;
-
     user-select: none;
     fill: currentColor;
 
@@ -71,8 +70,8 @@
     &[disabled] {
         color: var(--black-400);
         background-color: var(--black-100);
-        cursor: not-allowed;
         border-color: transparent;
+        cursor: not-allowed;
         transition: none;
     }
 
@@ -140,8 +139,8 @@
 //  ----------------------------------------------------------------------------
 .d-btn__label {
     display: inline-flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }
 
 //  ============================================================================
@@ -348,26 +347,26 @@
 //  $$  DISABLED STATE
 //  ----------------------------------------------------------------------------
 .d-btn--disabled {
-    pointer-events: none;
     color: var(--black-400);
     background-color: var(--black-100);
-    cursor: not-allowed;
     border-color: transparent;
+    cursor: not-allowed;
     transition: none;
+    pointer-events: none;
 }
 
 //  $$  BRAND BUTTONS
 //  ----------------------------------------------------------------------------
 .d-btn--brand {
     display: flex;
-    background-color: hsl(var(--brand-color-h) var(--brand-color-s) var(--brand-color-l));
     color: var(--white);
+    background-color: hsl(var(--brand-color-h) var(--brand-color-s) var(--brand-color-l));
 
     &:hover,
     &:focus,
     &:active {
-        background-color: hsl(var(--brand-color-h) calc(var(--brand-color-s) + 2.5%) calc(var(--brand-color-l) - 5%));
         color: hsla(var(--white-hsl) ~" / " 90%);
+        background-color: hsl(var(--brand-color-h) calc(var(--brand-color-s) + 2.5%) calc(var(--brand-color-l) - 5%));
     }
 
     &:focus {
@@ -379,14 +378,14 @@
     }
 
     .d-btn__icon {
-      margin-right: var(--su8);
-      margin-left: var(--sun4);
+      align-items: center;
+      justify-content: center;
       width: 2em;
       height: 2em;
-      border-radius: var(--br2);
+      margin-right: var(--su8);
+      margin-left: var(--sun4);
       background-color: var(--white);
-      justify-content: center;
-      align-items: center
+      border-radius: var(--br2)
     }
 
     .d-btn__label {
@@ -432,17 +431,15 @@
 
     //  Show the loading animation
     &:before {
-        content: "";
         position: absolute;
         top: calc(50% - var(--su8));
         left: calc(50% - var(--su8));
-
         width: var(--su16);
         height: var(--su16);
-        border-radius: var(--br-circle);
         border: var(--su2) solid currentColor;
         border-left-color: transparent !important;
-
+        border-radius: var(--br-circle);
         animation: d-loading-circle 900ms infinite linear;
+        content: "";
     }
 }
