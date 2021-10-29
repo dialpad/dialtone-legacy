@@ -37,8 +37,9 @@
 .d-tooltip {
     //  --  COMPONENT CSS VARS
     //  -----------------------
-    --tooltip--bgc:           var(--black-800);
-    --tooltip--fc:            var(--white);
+    --tooltip--bgc: var(--black-800);
+    --tooltip--fc: var(--white);
+
     z-index: var(--zi-tooltip);
     max-width: var(--size216);
     padding: var(--su8);
@@ -47,7 +48,6 @@
     line-height: var(--lh-normal);
     text-align: center;
     background-color: var(--tooltip--bgc);
-
     border-radius: var(--br4);
 
     &::after {
@@ -63,8 +63,8 @@
 .d-tooltip--inverted {
     //  --  COMPONENT CSS VARS
     //  -----------------------
-    --tooltip--bgc:     var(--black-050);
-    --tooltip--fc:      var(--black-700);
+    --tooltip--bgc: var(--black-050);
+    --tooltip--fc: var(--black-700);
 }
 
 //  ============================================================================
@@ -83,7 +83,7 @@
 //  $   SHOW STYLE
 //  ----------------------------------------------------------------------------
 .d-tooltip--show {
-    transform: translate(0,0);
+    transform: translate(0, 0);
     visibility: visible;
     opacity: 1;
     transition:
@@ -99,6 +99,7 @@
     .d-tooltip {
         &:extend(.d-tooltip--hide);
     }
+
     &:focus-visible,
     &:hover {
         .d-tooltip {
@@ -157,7 +158,7 @@
 //  ----------------------------------------------------------------------------
 .d-tooltip__arrow--top-center,
 .d-tooltip__arrow--bottom-center {
-    &:after {
+    &::after {
         left: 50%;
         margin-left: var(--sun6);
     }

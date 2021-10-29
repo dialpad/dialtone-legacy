@@ -1,4 +1,4 @@
-@import (reference) '../utilities/spacing.less';
+@import (reference) "../utilities/spacing.less";
 
 //
 //  DIALTONE
@@ -27,17 +27,16 @@
 .d-modal {
     //  Component CSS Vars
     //  ------------------------------------------------------------------------
-    --modal--bgc:          hsla(var(--black-900-hsl) ~" / " 85%);
-    --modal-dialog--bgc:   var(--white);
-    --modal-dialog--fc:    var(--black-700);
-    --modal-header--fc:    var(--black-800);
+    --modal--bgc: hsla(var(--black-900-hsl) ~" / " 85%);
+    --modal-dialog--bgc: var(--white);
+    --modal-dialog--fc: var(--black-700);
+    --modal-header--fc: var(--black-800);
 
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-
     z-index: var(--zi-hide);
     display: flex;
     flex-direction: column;
@@ -64,22 +63,19 @@
 //  ----------------------------------------------------------------------------
 .d-modal__dialog {
   position: relative;
-
   z-index: var(--zi-hide);
   width: 100%;
   max-width: var(--size628);
   max-height: 100%;
   padding: var(--su24);
   overflow-y: auto;
-  color:            var(--modal-dialog--fc);
-
+  color: var(--modal-dialog--fc);
   font-size: var(--fs16);
   line-height: var(--lh8);
   background-color: var(--modal-dialog--bgc);
-
   border-radius: var(--br8);
   box-shadow: var(--bs-card);
-  transform: translate3d(0,30%,0) scale3d(.75,.75,.75);
+  transform: translate3d(0, 30%, 0) scale3d(0.75, 0.75, 0.75);
   backface-visibility: hidden;
   visibility: hidden;
   opacity: 0;
@@ -98,7 +94,7 @@
 .d-modal[aria-hidden="false"],
 .d-modal[aria-hidden="false"] .d-modal__dialog {
   z-index: var(--zi-modal);
-  transform: translate3d(0,0,0) scale3d(1,1,1);
+  transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
   visibility: visible;
   opacity: 1;
   transition:
@@ -219,5 +215,5 @@
 //  $$  DANGER
 //  ----------------------------------------------------------------------------
 .d-modal--danger {
-  --modal-header--fc:     var(--fc-error);
+  --modal-header--fc: var(--fc-error);
 }
