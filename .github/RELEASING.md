@@ -24,6 +24,7 @@ In order to push the `production` branch to trigger a release to [npmjs](https:/
 ---
 
 **If you have made a production release:**
+
 6. We are ready to deploy the release. Switch to the `production` branch: `git checkout production`.
 7. Merge the release commits from `staging` using [`fast-forward` strategy](https://git-scm.com/docs/git-merge#Documentation/git-merge.txt---ff-only): `git merge staging --ff-only`.
 8. If the commits are merged correctly, it's ready to deploy and publish this release by pushing to the remote: `git push`. This will trigger the deploy through a Github Action.
@@ -31,6 +32,7 @@ In order to push the `production` branch to trigger a release to [npmjs](https:/
 ---
 
 **If you have made a pre-release (`alpha` or `beta`):**
+
 6. Since your pre-release branch was pushed to the remote, the deploy Github Action should have been triggered.
 7. Update the `staging` branch with the release you have made on `alpha` or `beta` branch:
 
