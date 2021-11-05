@@ -1,3 +1,11 @@
+# [6.6.0](https://github.com/dialpad/dialtone/compare/v6.5.0...v6.6.0) (2021-11-05)
+
+
+### Features
+
+* add Kare icon ([#495](https://github.com/dialpad/dialtone/issues/495)) ([9a71d5b](https://github.com/dialpad/dialtone/commit/9a71d5b4bbd929315e192c3701dc1f7f46e5b8f0))
+* uc-11528 add background replacement icon to dialtone ([223e17f](https://github.com/dialpad/dialtone/commit/223e17fc28b68730764241dd004799dff55799c2))
+
 # [6.5.0](https://github.com/dialpad/dialtone/compare/v6.4.1...v6.5.0) (2021-11-02)
 
 
