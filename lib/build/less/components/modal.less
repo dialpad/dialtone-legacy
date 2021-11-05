@@ -51,16 +51,7 @@
     opacity: 0;
     backface-visibility: hidden;
 
-    transition:
-        opacity 100ms var(--ttf-in-out) 10ms,
-        z-index 0s 200ms,
-        visibility 0s 200ms,
-        transform 100ms var(--ttf-in-out) 10ms;
     will-change: visibility, z-index, opacity;
-
-    @media (prefers-reduced-motion) {
-        transition: none;
-    }
 }
 
 //  $$  MODAL DIALOG
@@ -88,12 +79,7 @@
   backface-visibility: hidden;
   transform: translate3d(0,30%,0) scale3d(.75,.75,.75);
 
-  transition:
-    opacity 200ms var(--ttf-in-out) 0s,
-    z-index 0s 200ms,
-    visibility 0s 200ms,
-    transform 100ms var(--ttf-in-out) 0s;
-  will-change: visibility, z-index, opacity, tranform;
+  will-change: visibility, z-index, opacity, transform;
 
   .d-stack16();
 }
@@ -106,11 +92,6 @@
   opacity: 1;
   z-index: var(--zi-modal);
   transform: translate3d(0,0,0) scale3d(1,1,1);
-  transition:
-    opacity 100ms var(--ttf-in-out) 10ms,
-    z-index 0s 0s,
-    visibility 0s 0s,
-    transform 100ms var(--ttf-in-out) 10ms;
 }
 
 
@@ -204,13 +185,6 @@
     transform: unset !important;
   }
 
-  &,
-  .d-modal__dialog {
-    transition:
-      opacity 200ms var(--ttf-in-out) 0s,
-      z-index 0s 200ms,
-      visibility 0s 200ms;
-  }
 
   .d-modal__footer {
     margin: var(--sun16) var(--sun12);
@@ -228,4 +202,70 @@
 //  ----------------------------------------------------------------------------
 .d-modal--danger {
   --modal-header--fc:     var(--fc-error);
+}
+
+
+//  ============================================================================
+//  $   TRANSITIONS
+//  ----------------------------------------------------------------------------
+.d-modal--animate {
+  z-index: var(--zi-hide)!important;
+  visibility: hidden!important;
+  opacity: 0!important;
+  backface-visibility: hidden!important;
+}
+
+.d-modal__dialog--animate {
+  .d-modal--animate();
+  transform: translate3d(0,30%,0) scale3d(.75,.75,.75)!important;;
+}
+
+.d-modal--animate-in, .d-modal__dialog--animate-in {
+  transition:
+    opacity 100ms var(--ttf-in-out) 10ms,
+    z-index 0s 0s,
+    visibility 0s 0s,
+    transform 100ms var(--ttf-in-out) 10ms;
+
+  @media (prefers-reduced-motion) {
+    transition: none!important;
+  }
+}
+
+.d-modal--animate-out {
+  transition:
+    opacity 100ms var(--ttf-in-out) 10ms,
+    z-index 0s 200ms,
+    visibility 0s 200ms,
+    transform 100ms var(--ttf-in-out) 10ms;
+
+  &.d-modal--full {
+    transition:
+      opacity 200ms var(--ttf-in-out) 0s,
+      z-index 0s 200ms,
+      visibility 0s 200ms;
+  }
+
+  @media (prefers-reduced-motion) {
+    transition: none!important;
+  }
+}
+
+.d-modal__dialog--animate-out {
+  transition:
+    opacity 200ms var(--ttf-in-out) 0s,
+    z-index 0s 200ms,
+    visibility 0s 200ms,
+    transform 100ms var(--ttf-in-out) 0s;
+
+  &.d-modal--full {
+    transition:
+      opacity 200ms var(--ttf-in-out) 0s,
+      z-index 0s 200ms,
+      visibility 0s 200ms;
+  }
+
+  @media (prefers-reduced-motion) {
+    transition: none!important;
+  }
 }
