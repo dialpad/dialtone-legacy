@@ -18,6 +18,7 @@ module.exports = {
     'alpha-value-notation': 'number',
     'max-empty-lines': 3,
     'max-line-length': 150,
+    'string-quotes': 'single',
 
     // override stylelint-config-standard rules
     'color-function-notation': null,
