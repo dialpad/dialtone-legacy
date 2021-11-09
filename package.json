@@ -1,7 +1,7 @@
 {
   "name": "@dialpad/dialtone",
   "description": "The design system for Dialpad and UberConference",
-  "version": "6.4.1",
+  "version": "6.6.0",
   "author": "Joshua Hynes",
   "files": [
     "lib",
@@ -16,6 +16,8 @@
     "start": "gulp watch",
     "debug": "DEBUG=Elventy* npx @11ty/eleventy --serve --input=docs",
     "prepublishOnly": "npm run build",
+    "release": "semantic-release --no-ci --extends ./release-local.config.js",
+    "prepare": "husky install",
     "stylelint": "npx stylelint 'lib/build/less/**/*.{less,css}'",
     "stylelint-fix": "npx stylelint 'lib/build/less/**/*.{less,css}' --fix"
   },
@@ -31,6 +33,10 @@
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
+    "@commitlint/cli": "^13.2.1",
+    "@commitlint/config-conventional": "^13.2.0",
+    "@semantic-release/changelog": "^6.0.0",
+    "@semantic-release/git": "^10.0.0",
     "axios": ">=0.21.1",
     "browser-sync": "^2.26.14",
     "child_process": "^1.0.2",
@@ -55,6 +61,7 @@
     "gulp-tap": "^2.0.0",
     "gulp-ttf2woff2": "^3.0.0",
     "gulp-util": "^3.0.8",
+    "husky": "^7.0.4",
     "kind-of": ">=6.0.3",
     "lazypipe": "^1.0.2",
     "lodash": "^4.17.21",
@@ -71,6 +78,7 @@
     "precss": "^4.0.0",
     "require-dir": "^1.2.0",
     "run-sequence": "^2.2.1",
+    "semantic-release": "^18.0.0",
     "set-value": ">=2.0.1",
     "sharp": "^0.25.4",
     "socket.io": ">=2.4.0",

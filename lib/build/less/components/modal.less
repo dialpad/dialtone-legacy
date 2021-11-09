@@ -1,4 +1,4 @@
-@import (reference) "../utilities/spacing.less";
+@import (reference) '../utilities/spacing.less';
 
 //
 //  DIALTONE
@@ -27,64 +27,59 @@
 .d-modal {
     //  Component CSS Vars
     //  ------------------------------------------------------------------------
-    --modal--bgc: hsla(var(--black-900-hsl) ~" / " 85%);
-    --modal-dialog--bgc: var(--white);
-    --modal-dialog--fc: var(--black-700);
-    --modal-header--fc: var(--black-800);
+    --modal--bgc:          hsla(var(--black-900-hsl) ~" / " 85%);
+    --modal-dialog--bgc:   var(--white);
+    --modal-dialog--fc:    var(--black-700);
+    --modal-header--fc:    var(--black-800);
 
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: var(--zi-hide);
+
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     padding: var(--su32);
+
     background-color: var(--modal--bgc);
-    backface-visibility: hidden;
+
+    z-index: var(--zi-hide);
     visibility: hidden;
     opacity: 0;
-    transition:
-        opacity 100ms var(--ttf-in-out) 10ms,
-        z-index 0s 200ms,
-        visibility 0s 200ms,
-        transform 100ms var(--ttf-in-out) 10ms;
-    will-change: visibility, z-index, opacity;
+    backface-visibility: hidden;
 
-    @media (prefers-reduced-motion) {
-        transition: none;
-    }
+    will-change: visibility, z-index, opacity;
 }
 
 //  $$  MODAL DIALOG
 //  ----------------------------------------------------------------------------
 .d-modal__dialog {
   position: relative;
-  z-index: var(--zi-hide);
+  overflow-y: auto;
   width: 100%;
   max-width: var(--size628);
   max-height: 100%;
   padding: var(--su24);
-  overflow-y: auto;
-  color: var(--modal-dialog--fc);
-  font-size: var(--fs16);
-  line-height: var(--lh8);
+
+  color:            var(--modal-dialog--fc);
   background-color: var(--modal-dialog--bgc);
+
   border-radius: var(--br8);
   box-shadow: var(--bs-card);
-  transform: translate3d(0, 30%, 0) scale3d(0.75, 0.75, 0.75);
-  backface-visibility: hidden;
+
+  font-size: var(--fs16);
+  line-height: var(--lh8);
+
+  z-index: var(--zi-hide);
   visibility: hidden;
   opacity: 0;
-  transition:
-    opacity 200ms var(--ttf-in-out) 0s,
-    z-index 0s 200ms,
-    visibility 0s 200ms,
-    transform 100ms var(--ttf-in-out) 0s;
-  will-change: visibility, z-index, opacity, tranform;
+  backface-visibility: hidden;
+  transform: translate3d(0,30%,0) scale3d(.75,.75,.75);
+
+  will-change: visibility, z-index, opacity, transform;
 
   .d-stack16();
 }
@@ -93,15 +88,10 @@
 //  ----------------------------------------------------------------------------
 .d-modal[aria-hidden="false"],
 .d-modal[aria-hidden="false"] .d-modal__dialog {
-  z-index: var(--zi-modal);
-  transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
   visibility: visible;
   opacity: 1;
-  transition:
-    opacity 100ms var(--ttf-in-out) 10ms,
-    z-index 0s 0s,
-    visibility 0s 0s,
-    transform 100ms var(--ttf-in-out) 10ms;
+  z-index: var(--zi-modal);
+  transform: translate3d(0,0,0) scale3d(1,1,1);
 }
 
 
@@ -110,8 +100,8 @@
 //  ----------------------------------------------------------------------------
 .d-modal__footer {
   display: flex;
-  flex-direction: row-reverse;
   align-items: center;
+  flex-direction: row-reverse;
   margin: var(--sun4);
 
   > * {
@@ -127,17 +117,17 @@
 //  ----------------------------------------------------------------------------
 .d-modal__header {
   margin: 0 !important;
-  color: var(--modal-header--fc);
-  font-weight: var(--fw-bold);
   font-size: var(--fs24);
+  font-weight: var(--fw-bold);
   line-height: var(--lh4);
+  color: var(--modal-header--fc);
 }
 
 //  $$  CONTENT
 //  ----------------------------------------------------------------------------
 .d-modal__content {
-  max-width: 75ch;
   margin: 0;
+  max-width: 75ch;
 }
 
 
@@ -157,13 +147,16 @@
 //  ----------------------------------------------------------------------------
 .d-modal__banner {
   position: relative;
+
   width: 100%;
   max-width: var(--size628);
   padding: var(--su12) var(--su24);
-  font-size: var(--fs14);
-  line-height: var(--lh4);
+
   background-color: var(--yellow-200);
   border-radius: var(--br8) var(--br8) 0 0;
+
+  font-size: var(--fs14);
+  line-height: var(--lh4);
 
   &:not(.d-d-none) + .d-modal__dialog {
     border-top-left-radius: 0;
@@ -185,20 +178,13 @@
   .d-modal__dialog {
     display: flex;
     flex-direction: column;
+    padding: var(--su32);
     max-width: unset;
     height: 100%;
-    padding: var(--su32);
     border-radius: 0;
     transform: unset !important;
   }
 
-  &,
-  .d-modal__dialog {
-    transition:
-      opacity 200ms var(--ttf-in-out) 0s,
-      z-index 0s 200ms,
-      visibility 0s 200ms;
-  }
 
   .d-modal__footer {
     margin: var(--sun16) var(--sun12);
@@ -207,13 +193,79 @@
 
   .d-modal__banner {
     max-width: unset;
-    padding: var(--su12) var(--su32);
     border-radius: 0;
+    padding: var(--su12) var(--su32);
   }
 }
 
 //  $$  DANGER
 //  ----------------------------------------------------------------------------
 .d-modal--danger {
-  --modal-header--fc: var(--fc-error);
+  --modal-header--fc:     var(--fc-error);
+}
+
+
+//  ============================================================================
+//  $   TRANSITIONS
+//  ----------------------------------------------------------------------------
+.d-modal--animate {
+  z-index: var(--zi-hide)!important;
+  visibility: hidden!important;
+  opacity: 0!important;
+  backface-visibility: hidden!important;
+}
+
+.d-modal__dialog--animate {
+  .d-modal--animate();
+  transform: translate3d(0,30%,0) scale3d(.75,.75,.75)!important;;
+}
+
+.d-modal--animate-in, .d-modal__dialog--animate-in {
+  transition:
+    opacity 100ms var(--ttf-in-out) 10ms,
+    z-index 0s 0s,
+    visibility 0s 0s,
+    transform 100ms var(--ttf-in-out) 10ms;
+
+  @media (prefers-reduced-motion) {
+    transition: none!important;
+  }
+}
+
+.d-modal--animate-out {
+  transition:
+    opacity 100ms var(--ttf-in-out) 10ms,
+    z-index 0s 200ms,
+    visibility 0s 200ms,
+    transform 100ms var(--ttf-in-out) 10ms;
+
+  &.d-modal--full {
+    transition:
+      opacity 200ms var(--ttf-in-out) 0s,
+      z-index 0s 200ms,
+      visibility 0s 200ms;
+  }
+
+  @media (prefers-reduced-motion) {
+    transition: none!important;
+  }
+}
+
+.d-modal__dialog--animate-out {
+  transition:
+    opacity 200ms var(--ttf-in-out) 0s,
+    z-index 0s 200ms,
+    visibility 0s 200ms,
+    transform 100ms var(--ttf-in-out) 0s;
+
+  &.d-modal--full {
+    transition:
+      opacity 200ms var(--ttf-in-out) 0s,
+      z-index 0s 200ms,
+      visibility 0s 200ms;
+  }
+
+  @media (prefers-reduced-motion) {
+    transition: none!important;
+  }
 }
