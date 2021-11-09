@@ -2,6 +2,10 @@ module.exports = {
   "extends": [
     "stylelint-config-standard",
     "stylelint-config-rational-order",
+    "stylelint-config-recommended-less"
+  ],
+  "plugins": [
+    "stylelint-less"
   ],
   "customSyntax": "postcss-less",
   "rules": {
@@ -31,6 +35,8 @@ module.exports = {
     'value-keyword-case': null,
     'value-no-vendor-prefix': null,
     indentation: null,
-    'length-zero-no-unit': true
+    'length-zero-no-unit': true,
+    'less/color-no-invalid-hex': null,
+    'less/no-duplicate-variables': null
   }
 };
