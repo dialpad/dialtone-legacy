@@ -31,6 +31,7 @@ var cache = require('gulp-cached');
 var order = require('gulp-order');
 var concat = require('gulp-concat');
 var remember = require('gulp-remember');
+var through2 = require('through2');
 var browsersync = require('browser-sync').create();
 var package = require('./package.json');
 
@@ -363,6 +364,8 @@ var buildSystemSVGs = function(done) {
         .pipe(dest(paths.svgs.sysOutputDocs))
         .pipe(replace('<svg', '<template>\n  <svg'))
         .pipe(replace('</svg>', '</svg>\n</template>'))
+        // move any style tags within the svg into style tags of the vue component
+        .pipe(through2.obj(moveStyleTagsToEOF))
         .pipe(rename(function(file) {
             var converted = file.basename.replace(/\b\S/g, t => t.toUpperCase()).replace(/[-]+/g, '');
 
@@ -373,6 +376,20 @@ var buildSystemSVGs = function(done) {
 
     done();
 };
+
+const moveStyleTagsToEOF = function(file, enc, cb) {
+    if (file.isBuffer()) {
+        const styleTagsRegex = /<style[\s\S]*<\/style>/gmi;
+        let code = file.contents.toString();
+        const result = styleTagsRegex.exec(code);
+        if (!result) return cb(null, file);
+        const matchedText = result[0];
+        code = code.replace(styleTagsRegex, '');
+        code = code + matchedText;
+        file.contents = Buffer.from(code)
+    }
+    return cb(null, file);
+}
 
 var buildBrandSVGs = function(done) {
 
@@ -414,6 +431,8 @@ var buildBrandSVGs = function(done) {
         .pipe(dest(paths.svgs.brandOutputDocs))
         .pipe(replace('<svg', '<template>\n  <svg'))
         .pipe(replace('</svg>', '</svg>\n</template>'))
+        // move any style tags within the svg into style tags of the vue component
+        .pipe(through2.obj(moveStyleTagsToEOF))
         .pipe(rename(function(file) {
             var converted = file.basename.replace(/\b\S/g, t => t.toUpperCase()).replace(/[-]+/g, '');
 
@@ -465,6 +484,8 @@ var buildPatternSVGs = function(done) {
         .pipe(dest(paths.patterns.outputDocs))
         .pipe(replace('<svg', '<template>\n  <svg'))
         .pipe(replace('</svg>', '</svg>\n</template>'))
+        // move any style tags within the svg into style tags of the vue component
+        .pipe(through2.obj(moveStyleTagsToEOF))
         .pipe(rename(function(file) {
             var converted = file.basename.replace(/\b\S/g, t => t.toUpperCase()).replace(/[-]+/g, '');
 
