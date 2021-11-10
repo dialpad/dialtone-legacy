@@ -366,6 +366,7 @@ var buildSystemSVGs = function(done) {
         .pipe(replace('</svg>', '</svg>\n</template>'))
         // move any style tags within the svg into style tags of the vue component
         .pipe(through2.obj(moveStyleTagsToEOF))
+        .pipe(replace('<style>', '<style scoped>'))
         .pipe(rename(function(file) {
             var converted = file.basename.replace(/\b\S/g, t => t.toUpperCase()).replace(/[-]+/g, '');
 
@@ -433,9 +434,9 @@ var buildBrandSVGs = function(done) {
         .pipe(replace('</svg>', '</svg>\n</template>'))
         // move any style tags within the svg into style tags of the vue component
         .pipe(through2.obj(moveStyleTagsToEOF))
+        .pipe(replace('<style>', '<style scoped>'))
         .pipe(rename(function(file) {
-            var converted = file.basename.replace(/\b\S/g, t => t.toUpperCase()).replace(/[-]+/g, '');
-
+            const converted = file.basename.replace(/\b\S/g, t => t.toUpperCase()).replace(/[-]+/g, '');
             file.basename = 'Icon' + converted;
             file.extname = '.vue';
         }))
@@ -486,6 +487,7 @@ var buildPatternSVGs = function(done) {
         .pipe(replace('</svg>', '</svg>\n</template>'))
         // move any style tags within the svg into style tags of the vue component
         .pipe(through2.obj(moveStyleTagsToEOF))
+        .pipe(replace('<style>', '<style scoped>'))
         .pipe(rename(function(file) {
             var converted = file.basename.replace(/\b\S/g, t => t.toUpperCase()).replace(/[-]+/g, '');
 
