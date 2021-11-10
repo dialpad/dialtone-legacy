@@ -1,3 +1,10 @@
+## [6.6.1](https://github.com/dialpad/dialtone/compare/v6.6.0...v6.6.1) (2021-11-09)
+
+
+### Bug Fixes
+
+* remove generated classes from playstore SVG ([2694fab](https://github.com/dialpad/dialtone/commit/2694fab282b34e0bdab891072f5314f1b0470bdb))
+
 # [6.6.0](https://github.com/dialpad/dialtone/compare/v6.5.0...v6.6.0) (2021-11-05)
 
 
