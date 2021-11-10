@@ -29,8 +29,8 @@
 //
 //  ------------------------------------------------------------------------
     #responsive(@class, @rules) {
-        @nodot-s: replace(@class, "^\.", "");
-        @nodot: ~"@{nodot-s}";
+        @nodot-s: replace(@class, '^\.', '');
+        @nodot: ~'@{nodot-s}';
 
         & when (@class = @nodot-s) {
             error {
@@ -96,12 +96,12 @@
         //  the responsive class
         & when (isstring(extract(@breakpoints, @start-index))) {
 
-            //  The actual breakpoint; "+1" to skip the (selector) string
+            //  The actual breakpoint; '+1' to skip the (selector) string
             @bp: extract(@breakpoints, @start-index + @bp-index + 1);
 
             //  Convert the selector string into an identifier (i.e. remove the quotes)
             @sel-s: extract(@breakpoints, @start-index);
-            @sel: ~"@{sel-s}";
+            @sel: ~'@{sel-s}';
 
             @media (max-width: (@bp)) {
                 @{sel} & {
@@ -109,7 +109,7 @@
                 }
             }
 
-            //  Recursively descend to handle the next breakpoint ("+5" for the
+            //  Recursively descend to handle the next breakpoint ('+5' for the
             //  selector string and the four breakpoint values)
             #d-internals #responsive-generate(@bp-index, @rules, @start-index + 5, @force-selector);
         }
@@ -135,7 +135,7 @@
                 }
             }
 
-            //  Recursively descend to handle the next breakpoint ("+4" for the
+            //  Recursively descend to handle the next breakpoint ('+4' for the
             //  four breakpoint values)
             #d-internals #responsive-generate(@bp-index, @rules, @start-index + 4, @force-selector);
         }
