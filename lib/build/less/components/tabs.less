@@ -17,20 +17,19 @@
     position: relative;
     display: flex;
     flex-wrap: wrap;
-
-    font-size: var(--fs16);
     color: var(--fc-light);
+    font-size: var(--fs16);
 
     // Add a bottom border unless no border is requested
-    &:not(.d-tablist--no-border):after {
-        content: "";
+    &:not(.d-tablist--no-border)::after {
         position: absolute;
         right: 0;
         bottom: 0;
         left: 0;
+        z-index: var(--zi-base1);
         height: var(--su1);
         background-color: var(--black-200);
-        z-index: var(--zi-base1);
+        content: '';
     }
 }
 
@@ -41,58 +40,56 @@
 .d-tab {
     //  --  COMPONENT CSS VARS
     //  ------------------------------------------------------------------------
-    --tab--bgc:         hsla(var(--white-hsl) ~" / " 0%);
-    --tab--fc:          inherit;
-    --tab--oc:          var(--focus-ring);
-
-    box-sizing: border-box;
+    --tab--bgc: hsla(var(--white-hsl) ~' / ' 0%);
+    --tab--fc: inherit;
+    --tab--oc: var(--focus-ring);
 
     position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    box-sizing: border-box;
     margin: 0 var(--su2);
     padding: var(--su12);
-
-    border: 0;
-    border-radius: var(--br4) var(--br4) 0 0;
-    background-color: var(--tab--bgc);
+    color: var(--tab--fc);
     font: inherit;
     line-height: 1;
-    color: var(--tab--fc);
-    fill: currentColor;
-
+    background-color: var(--tab--bgc);
+    border: 0;
+    border-radius: var(--br4) var(--br4) 0 0;
     cursor: pointer;
     transition-timing-function: var(--ttf-in-out);
     transition-duration: var(--td50);
     transition-property: background-color, color;
+    fill: currentColor;
 
 
     &:first-of-type {
         margin-left: 0;
     }
+
     &:last-of-type {
         margin-right: 0;
     }
 
-    &:after {
-        content: "";
+    &::after {
         position: absolute;
         right: 0;
         bottom: 0;
         left: 0;
         height: var(--su2);
         background-color: var(--tab--bgc);
+        content: '';
     }
 
     &:focus {
         outline: none;
-        box-shadow: 0px 0px 0px var(--su2) var(--tab--oc);
+        box-shadow: 0 0 0 var(--su2) var(--tab--oc);
     }
 
     &:hover {
-        --tab--bgc:         var(--black-025);
-        --tab--fc:          var(--fc-dark);
+        --tab--bgc: var(--black-025);
+        --tab--fc: var(--fc-dark);
     }
 
     //  Turn off animations if someone doesn't want them.
@@ -111,13 +108,13 @@
     z-index: var(--zi-selected);
 
     &:hover {
-        --tab--bgc:         hsla(var(--primary-color-hsl) ~" / " 10%);
-        --tab--fc:          var(--primary-color-hover);
+        --tab--bgc: hsla(var(--primary-color-hsl) ~' / ' 10%);
+        --tab--fc: var(--primary-color-hover);
     }
 
     &::after,
     &:hover::after {
-        --tab--bgc:         var(--primary-color);
+        --tab--bgc: var(--primary-color);
     }
 }
 
@@ -126,23 +123,25 @@
 //  $   INVERTED STYLE
 //  ----------------------------------------------------------------------------
 .d-tablist--inverted {
-    --tab--fc:          var(--white);
+    --tab--fc: var(--white);
 
-    &:after {
-        background-color: hsla(var(--purple-800-hsl) ~" / " 50%);
+    &::after {
+        background-color: hsla(var(--purple-800-hsl) ~' / ' 50%);
     }
 
     .d-tab {
-        --tab--fc:      var(--white);
+        --tab--fc: var(--white);
+
         &:hover {
-            --tab--bgc: hsla(var(--white-hsl) ~" / " 10%);
+            --tab--bgc: hsla(var(--white-hsl) ~' / ' 10%);
         }
     }
 
     .d-tab--selected {
         --tab--fc: var(--white);
         --tab--oc: var(--white);
-        &:after {
+
+        &::after {
             --tab--bgc: currentColor;
         }
     }

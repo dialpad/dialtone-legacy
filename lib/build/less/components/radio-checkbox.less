@@ -25,13 +25,25 @@
 .d-radio {
     //  Component specific CSS Vars
     //  ------------------------------------------------------------------------
-    --check-radio--color:         var(--primary-color);
-    --check-radio--bc:            var(--black-500);
-    --check-radio--bgc:           var(--white);
+    --check-radio--color: var(--primary-color);
+    --check-radio--bc: var(--black-500);
+    --check-radio--bgc: var(--white);
 
     //  [1] Check to see if we can use custom styles, if so reset the defaults
     //  ------------------------------------------------------------------------
     @supports ((-webkit-appearance: none) or (-moz-appearance: none) or (appearance: none)) {
+        width: 1em;
+        height: 1em;
+
+        //  [2]  Now re-style the checkboxes and radios
+        //  --------------------------------------------------------------------
+        margin: 0;
+        font-size: inherit;
+        background-color: var(--check-radio--bgc);
+        border: var(--su1) solid var(--check-radio--bc);
+        outline: 0;
+        box-shadow: none;
+        cursor: pointer;
         -webkit-appearance: none;
            -moz-appearance: none;
                 appearance: none;
@@ -40,23 +52,12 @@
             display: none;
         }
 
-        //  [2]  Now re-style the checkboxes and radios
-        //  --------------------------------------------------------------------
-        margin: 0;
-        width: 1em;
-        height: 1em;
-        border: var(--su1) solid var(--check-radio--bc);
-        background-color: var(--check-radio--bgc);
-        box-shadow: none;
-        outline: 0;
-        font-size: inherit;
-        cursor: pointer;
-
         &:focus,
         &:checked:focus {
             --check-radio--bc: var(--check-radio--color);
-            box-shadow:        var(--bs-focus-ring);
+
             outline: 0;
+            box-shadow: var(--bs-focus-ring);
         }
 
         &:checked {
@@ -70,10 +71,11 @@
     //  --  DISABLED
     &[disabled],
     &--disabled {
-        --check-radio--color:   var(--black-200);
-        --check-radio--bc:      var(--black-200);
-        --check-radio--bgc:     var(--black-075);
-        cursor:                 not-allowed;
+        --check-radio--color: var(--black-200);
+        --check-radio--bc: var(--black-200);
+        --check-radio--bgc: var(--black-075);
+
+        cursor: not-allowed;
     }
 }
 
@@ -85,8 +87,8 @@
 .d-radio-group {
     display: flex;
     padding-right: var(--su1);
-    padding-left: var(--su1);
     padding-bottom: var(--su2);
+    padding-left: var(--su1);
 
     //  --  Wrapper Disabled State
     &.d-checkbox-group--disabled,
@@ -120,22 +122,19 @@
 .d-radio__copy {
     display: inline-flex;
     flex-direction: column;
-
-    margin-left: var(--su8);
     max-width: var(--size464);
+    margin-left: var(--su8);
 }
 
 .d-checkbox__label,
 .d-radio__label {
     display: inline-flex;
-    flex-direction: column;
     flex: 1 auto;
-
+    flex-direction: column;
     color: var(--black-800);
+    font-weight: var(--fw-normal);
     font-size: var(--fs14);
     line-height: calc(20/14);
-    font-weight: var(--fw-normal);
-
     cursor: pointer;
 }
 
@@ -145,10 +144,10 @@
 //  ----------------------------------------------------------------------------
 .d-checkbox {
     @supports ((-webkit-appearance: none) or (-moz-appearance: none) or (appearance: none)) {
-        border-radius: var(--br2);
-        background-position: center center;
         background-repeat: no-repeat;
+        background-position: center center;
         background-size: contain;
+        border-radius: var(--br2);
 
         &:focus,
         &:checked:focus {
@@ -156,76 +155,83 @@
         }
 
         &:checked {
-            --check-radio--bgc:     var(--check-radio--color);
+            --check-radio--bgc: var(--check-radio--color);
+
             background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z' fill='%23fff'/%3E%3C/svg%3E");
 
             //  Disabled
             &[disabled] {
-                --check-radio--bgc:     var(--black-075);
+                --check-radio--bgc: var(--black-075);
+
                 background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z' fill='hsl(240, 10%, 51%)'/%3E%3C/svg%3E");
             }
         }
 
         &--disabled:checked {
-            --check-radio--bgc:     var(--black-075);
+            --check-radio--bgc: var(--black-075);
+
             background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z' fill='hsl(240, 10%, 51%)'/%3E%3C/svg%3E");
         }
 
         &--indeterminate,
         &:indeterminate {
-            --check-radio--bgc:     var(--check-radio--color);
+            --check-radio--bgc: var(--check-radio--color);
+
             background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19 13H5v-2h14v2z' fill='%23fff'/%3E%3C/svg%3E");
 
             &[disabled] {
-                --check-radio--bgc:     var(--black-075);
+                --check-radio--bgc: var(--black-075);
+
                 background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19 13H5v-2h14v2z' fill='hsl(240, 10%, 51%)'/%3E%3C/svg%3E");
             }
         }
 
         &--indeterminate&--disabled,
         &:indeterminate&--disabled {
-            --check-radio--bgc:     var(--black-075);
+            --check-radio--bgc: var(--black-075);
+
             background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19 13H5v-2h14v2z' fill='hsl(240, 10%, 51%)'/%3E%3C/svg%3E");
         }
 
         //  Disabled
         &[disabled],
         &--disabled {
-            --check-radio--color:   var(--black-200);
-            --check-radio--bc:      var(--black-200);
-            --check-radio--bgc:     var(--black-075);
+            --check-radio--color: var(--black-200);
+            --check-radio--bc: var(--black-200);
+            --check-radio--bgc: var(--black-075);
         }
-
     }
 }
 
 //  $$  CHECKBOX VALIDATION STATES
 //  ----------------------------------------------------------------------------
 .d-checkbox--warning {
-    --check-radio--color:         var(--warning-color);
-    --check-radio--bc:            var(--check-radio--color);
+    --check-radio--color: var(--warning-color);
+    --check-radio--bc: var(--check-radio--color);
 
     &:focus,
     &:checked:focus {
-        box-shadow:               var(--bs-focus-ring-warning);
+        box-shadow: var(--bs-focus-ring-warning);
     }
 }
+
 .d-checkbox--error {
-    --check-radio--color:         var(--error-color);
-    --check-radio--bc:            var(--check-radio--color);
+    --check-radio--color: var(--error-color);
+    --check-radio--bc: var(--check-radio--color);
 
     &:focus,
     &:checked:focus {
-        box-shadow:               var(--bs-focus-ring-error);
+        box-shadow: var(--bs-focus-ring-error);
     }
 }
+
 .d-checkbox--success {
-    --check-radio--color:         var(--success-color);
-    --check-radio--bc:            var(--check-radio--color);
+    --check-radio--color: var(--success-color);
+    --check-radio--bc: var(--check-radio--color);
 
     &:focus,
     &:checked:focus {
-        box-shadow:               var(--bs-focus-ring-success);
+        box-shadow: var(--bs-focus-ring-success);
     }
 }
 
@@ -240,28 +246,29 @@
         // Disabled
         &[disabled],
         &--disabled {
-            --check-radio--color:   var(--black-200);
-            --check-radio--bc:      var(--black-200);
-            --check-radio--bgc:     var(--black-075);
+            --check-radio--color: var(--black-200);
+            --check-radio--bc: var(--black-200);
+            --check-radio--bgc: var(--black-075);
         }
 
         &:focus,
         &:checked:focus {
-            box-shadow:             var(--bs-focus-ring), inset 0 0 0 var(--su2) var(--white);
+            box-shadow: var(--bs-focus-ring), inset 0 0 0 var(--su2) var(--white);
         }
 
         &:checked {
-            --check-radio--bgc:     var(--check-radio--color);
-            box-shadow:             inset 0 0 0 var(--su2) var(--white);
+            --check-radio--bgc: var(--check-radio--color);
+
+            box-shadow: inset 0 0 0 var(--su2) var(--white);
 
             // Disabled
             &[disabled] {
-                --check-radio--bgc:     var(--black-200);
+                --check-radio--bgc: var(--black-200);
             }
         }
 
         &--disabled:checked {
-            --check-radio--bgc:     var(--black-200);
+            --check-radio--bgc: var(--black-200);
         }
     }
 }
@@ -269,31 +276,31 @@
 //  $$  RADIO VALIDATION STATES
 //  ----------------------------------------------------------------------------
 .d-radio--warning {
-    --check-radio--color:         var(--warning-color);
-    --check-radio--bc:            var(--check-radio--color);
+    --check-radio--color: var(--warning-color);
+    --check-radio--bc: var(--check-radio--color);
 
     &:focus,
     &:checked:focus {
-        box-shadow:               var(--bs-focus-ring-warning), inset 0 0 0 var(--su2) var(--white);
+        box-shadow: var(--bs-focus-ring-warning), inset 0 0 0 var(--su2) var(--white);
     }
 }
 
 .d-radio--error {
-    --check-radio--color:         var(--error-color);
-    --check-radio--bc:            var(--check-radio--color);
+    --check-radio--color: var(--error-color);
+    --check-radio--bc: var(--check-radio--color);
 
     &:focus,
     &:checked:focus {
-        box-shadow:               var(--bs-focus-ring-error), inset 0 0 0 var(--su2) var(--white);
+        box-shadow: var(--bs-focus-ring-error), inset 0 0 0 var(--su2) var(--white);
     }
 }
 
 .d-radio--success {
-    --check-radio--color:         var(--success-color);
-    --check-radio--bc:            var(--check-radio--color);
+    --check-radio--color: var(--success-color);
+    --check-radio--bc: var(--check-radio--color);
 
     &:focus,
     &:checked:focus {
-        box-shadow:               var(--bs-focus-ring-success), inset 0 0 0 var(--su2) var(--white);
+        box-shadow: var(--bs-focus-ring-success), inset 0 0 0 var(--su2) var(--white);
     }
 }

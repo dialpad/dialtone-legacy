@@ -17,7 +17,11 @@
     "debug": "DEBUG=Elventy* npx @11ty/eleventy --serve --input=docs",
     "prepublishOnly": "npm run build",
     "release": "semantic-release --no-ci --extends ./release-local.config.js",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "stylelint": "npx stylelint 'lib/build/less/**/*.{less,css}'",
+    "lesshint": "npx lesshint 'lib/build/less/utilities'",
+    "lint": "run-s stylelint lesshint",
+    "lint:fix": "npx stylelint 'lib/build/less/**/*.{less,css}' --fix"
   },
   "license": "MIT",
   "browserslist": [
@@ -62,13 +66,17 @@
     "husky": "^7.0.4",
     "kind-of": ">=6.0.3",
     "lazypipe": "^1.0.2",
+    "lesshint": "^6.3.7",
     "lodash": "^4.17.21",
     "lodash.merge": ">=4.6.2",
     "lodash.template": ">=4.5.0",
     "minimist": ">=1.2.3",
     "mixin-deep": ">=1.3.2",
+    "npm-run-all": "^4.1.5",
     "path": "^0.12.7",
+    "postcss": "^8.3.11",
     "postcss-cli": "^7.1.1",
+    "postcss-less": "^5.0.0",
     "postcss-preset-env": "^6.7.0",
     "postcss-sorting": "^4.1.0",
     "precss": "^4.0.0",
@@ -78,7 +86,12 @@
     "set-value": ">=2.0.1",
     "sharp": "^0.25.4",
     "socket.io": ">=2.4.0",
-    "through2": "^4.0.2"
+    "through2": "^4.0.2",
+    "stylelint": "^14.0.1",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-recommended-less": "^1.0.1",
+    "stylelint-config-standard": "^23.0.0",
+    "stylelint-less": "^1.0.1"
   },
   "dependencies": {
     "eleventy-plugin-nesting-toc": "^1.2.0"

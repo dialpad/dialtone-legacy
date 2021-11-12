@@ -33,32 +33,28 @@
 .d-textarea {
     //  Component CSS Vars
     //  ------------------------------------------------------------------------
-    --input--focus-bc:     var(--primary-color);
-    --input--bc:           var(--black-500);
-    --input--bgc:          var(--white);
-    --input--fc:           var(--black-800);
-
-    box-sizing: border-box;
+    --input--focus-bc: var(--primary-color);
+    --input--bc: var(--black-500);
+    --input--bgc: var(--white);
+    --input--fc: var(--black-800);
 
     position: relative;
     display: inline-flex;
     flex: 1 0%;
-    padding:    0.7rem var(--su8);
-    min-width: 0;
+    box-sizing: border-box;
     width: 100%;
-    outline: none;
-
+    min-width: 0;
+    padding: 0.7rem var(--su8);
     color: var(--input--fc);
-    background-color: var(--input--bgc);
-    border: 1px solid var(--input--bc);
-    border-radius: var(--base--corner-radius);
-    box-shadow: none;
-
     font-weight: inherit;
     font-size: var(--fs16);
     font-family: inherit;
     line-height: var(--lh4);
-
+    background-color: var(--input--bgc);
+    border: 1px solid var(--input--bc);
+    border-radius: var(--base--corner-radius);
+    outline: none;
+    box-shadow: none;
     transition-timing-function: var(--ttf-in-out);
     transition-duration: 100ms;
     transition-property: border, box-shadow, background-color;
@@ -83,18 +79,18 @@
     &:focus {
         --input--bc: var(--input--focus-bc);
 
-        box-shadow: var(--bs-focus-ring)!important;
         outline: 0;
+        box-shadow: var(--bs-focus-ring) !important;
     }
     //  --  DISABLED / READ-ONLY
     &[disabled],
     &[read-only] {
-        --input--bc:           var(--black-200)!important;
-        --input--bgc:          var(--black-075);
-        --input--fc:           var(--black-400);
+        --input--bc: var(--black-200) !important;
+        --input--bgc: var(--black-075);
+        --input--fc: var(--black-400);
 
         &:focus {
-            box-shadow: none!important;
+            box-shadow: none !important;
         }
 
         //  --  Placeholder copy
@@ -118,36 +114,47 @@
 //  ----------------------------------------------------------------------------
 .d-input--xs {
     .input-button-xs();
+
     &.d-input-icon--right {
         padding-right: @inputs-icon-spacing--xs;
     }
+
     &.d-input-icon--left {
         padding-left: @inputs-icon-spacing--xs;
     }
 }
+
 .d-input--sm {
     .input-button-sm();
+
     &.d-input-icon--right {
         padding-right: @inputs-icon-spacing--sm;
     }
+
     &.d-input-icon--left {
         padding-left: @inputs-icon-spacing--sm;
     }
 }
+
 .d-input--lg {
     .input-button-lg();
+
     &.d-input-icon--right {
         padding-right: @inputs-icon-spacing--lg;
     }
+
     &.d-input-icon--left {
         padding-left: @inputs-icon-spacing--lg;
     }
 }
+
 .d-input--xl {
     .input-button-xl();
+
     &.d-input-icon--right {
         padding-right: @inputs-icon-spacing--xl;
     }
+
     &.d-input-icon--left {
         padding-left: @inputs-icon-spacing--xl;
     }
@@ -166,40 +173,55 @@
 //  ----------------------------------------------------------------------------
 .d-textarea--xs {
     .input-button-xs();
-    min-height:  4rem;
+
+    min-height: 4rem;
+
     &.d-input-icon--right {
         padding-right: @inputs-icon-spacing--xs;
     }
+
     &.d-input-icon--left {
         padding-left: @inputs-icon-spacing--xs;
     }
 }
+
 .d-textarea--sm {
     .input-button-sm();
+
     min-height: 4.8rem;
+
     &.d-input-icon--right {
         padding-right: @inputs-icon-spacing--sm;
     }
+
     &.d-input-icon--left {
         padding-left: @inputs-icon-spacing--sm;
     }
 }
+
 .d-textarea--lg {
     .input-button-lg();
+
     min-height: 9.2rem;
+
     &.d-input-icon--right {
         padding-right: @inputs-icon-spacing--lg;
     }
+
     &.d-input-icon--left {
         padding-left: @inputs-icon-spacing--lg;
     }
 }
+
 .d-textarea--xl {
     .input-button-xl();
+
     min-height: 10rem;
+
     &.d-input-icon--right {
         padding-right: @inputs-icon-spacing--xl;
     }
+
     &.d-input-icon--left {
         padding-left: @inputs-icon-spacing--xl;
     }
@@ -209,29 +231,31 @@
 //  ----------------------------------------------------------------------------
 .d-input--warning,
 .d-textarea--warning {
-    --input--bc:        var(--warning-color)!important;
-    --input--focus-bc:  var(--warning-color);
+    --input--bc: var(--warning-color) !important;
+    --input--focus-bc: var(--warning-color);
 
     &:focus {
-        box-shadow: var(--bs-focus-ring-warning)!important;
+        box-shadow: var(--bs-focus-ring-warning) !important;
     }
 }
+
 .d-input--error,
 .d-textarea--error {
-    --input--bc:        var(--error-color)!important;
-    --input--focus-bc:  var(--error-color);
+    --input--bc: var(--error-color) !important;
+    --input--focus-bc: var(--error-color);
 
     &:focus {
-        box-shadow: var(--bs-focus-ring-error)!important;
+        box-shadow: var(--bs-focus-ring-error) !important;
     }
 }
+
 .d-input--success,
 .d-textarea--success {
-    --input--bc:        var(--success-color)!important;
-    --input--focus-bc:  var(--success-color);
+    --input--bc: var(--success-color) !important;
+    --input--focus-bc: var(--success-color);
 
     &:focus {
-        box-shadow: var(--bs-focus-ring-success)!important;
+        box-shadow: var(--bs-focus-ring-success) !important;
     }
 }
 
@@ -243,21 +267,20 @@
     //  ------------------------------------------------------------------------
     --input-icon-size: @icon16;
 
-    display: inline-flex;
-    align-items: center;
     position: absolute;
     top: 0;
-    z-index:  var(--zi-base1);
+    z-index: var(--zi-base1);
+    display: inline-flex;
+    align-items: center;
+    width: var(--input-icon-size);
+    height: var(--input-icon-size);
     margin: 0;
     margin-top: 1rem;
     line-height: 0;
 
-    height: var(--input-icon-size);
-    width:  var(--input-icon-size);
-
     svg {
+        width: var(--input-icon-size);
         height: var(--input-icon-size);
-        width:  var(--input-icon-size);
     }
 
     &.d-input-icon--left {
@@ -292,7 +315,8 @@
 //  ----------------------------------------------------------------------------
 .d-input-icon--xs {
     --input-icon-size: @icon12;
-    margin-top:        0.8rem;
+
+    margin-top: 0.8rem;
 
     // For backwards compatibility purposes only.
     // Update padding for d-input, d-textarea if d-input-icon--left is present
@@ -310,7 +334,8 @@
 
 .d-input-icon--sm {
     --input-icon-size: @icon14;
-    margin-top:        0.9rem;
+
+    margin-top: 0.9rem;
 
     // For backwards compatibility purposes only.
     // Update padding for d-input, d-textarea if d-input-icon--left is present
@@ -328,7 +353,8 @@
 
 .d-input-icon--lg {
     --input-icon-size: @icon20;
-    margin-top:        1.4rem;
+
+    margin-top: 1.4rem;
 
     // For backwards compatibility purposes only.
     // Update padding for d-input, d-textarea if d-input-icon--left is present
@@ -346,7 +372,8 @@
 
 .d-input-icon--xl {
     --input-icon-size: @icon24;
-    margin-top:        1.6rem;
+
+    margin-top: 1.6rem;
 
     // For backwards compatibility purposes only.
     // Update padding for d-input, d-textarea if d-input-icon--left is present
