@@ -1,3 +1,15 @@
+# [6.7.0](https://github.com/dialpad/dialtone/compare/v6.6.1...v6.7.0) (2021-11-11)
+
+
+### Bug Fixes
+
+* bad syntax in vue files when style tags are used in SVG ([#498](https://github.com/dialpad/dialtone/issues/498)) ([9a7297e](https://github.com/dialpad/dialtone/commit/9a7297ede72f7b7b1778790a6bad958acf310d15))
+
+
+### Features
+
+* add SVGs for thumbs up and down including update to json file ([#497](https://github.com/dialpad/dialtone/issues/497)) ([88ec960](https://github.com/dialpad/dialtone/commit/88ec960ebca4b77e2fe8836b62f01d393c4d6f3e))
+
 ## [6.6.1](https://github.com/dialpad/dialtone/compare/v6.6.0...v6.6.1) (2021-11-09)
 
 
