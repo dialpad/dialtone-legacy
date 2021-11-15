@@ -6,6 +6,10 @@ Thanks for your interest in contributing to Dialtone. Please take a moment to re
 
 Before submitting a pull request, **please ask first in [a new issue](https://github.com/dialpad/dialtone/issues/new)**. It's always discouraging to have a pull request declined after putting in the time. To avoid this, outline the problem and proposed solution. This includes a rough example of how you might compose the styles.
 
+## Code style
+
+Make sure your code lints with `npm run lint`. If you need to format your code, you can do this with `npm run lint:fix`.
+
 ## Commit message convention
 
 Dialtone uses [Conventional Commits specification](https://www.conventionalcommits.org/en/v1.0.0/) to have commit messages that can be used as part of the [semantic release process](RELEASING.md). For more information, see [COMMIT_CONVENTION.md](COMMIT_CONVENTION.md).
