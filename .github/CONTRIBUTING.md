@@ -17,6 +17,7 @@ Dialtone uses [Conventional Commits specification](https://www.conventionalcommi
 ### Git hooks
 
 To enforce your commit message on the release branches (`production`, `staging`, `alpha` and `beta`) are correct according to the Conventional Commits specification, there is a `commit-msg` git hook that will be invoked by `git commit`.
+`pre-commit` git hook will lint your code. 
 
 ## Versioning
 
