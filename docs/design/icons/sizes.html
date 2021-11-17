@@ -1,9 +1,10 @@
 ---
 layout: page-no-toc
 title: Sizes
-description: Dialtone provides different icon sizes. By default all icons have a 100% width and an height auto to constrain aspect ratios. The size classes below can be applied <strong>either</strong> to the icon wrapper or the icon itself.
+description: Dialtone provides different icon sizes. By default all icons have a height and width of 1.5em. The size classes below can be applied <strong>either</strong> to the icon wrapper or the icon itself.
 ---
 <div class="d-stack16">
+  {% paragraph %}Note that the 100% size class sets both {% code %}width: 100%{% endcode %} and {% code %}height: auto{% endcode %} and thus has no variable.{% endparagraph %}
   <table class="d-table">
     <thead>
       <tr>
@@ -16,7 +17,7 @@ description: Dialtone provides different icon sizes. By default all icons have a
     <tbody>
       {% for size in icons-sizes %}
       <tr>
-        <th scope="row">{{ size.size }}px</th>
+        <th scope="row">{{ size.size }}</th>
         <td class="d-ff-mono d-fc-orange d-fs12">{{ size.variable }}</td>
         <td class="d-ff-mono d-fc-orange d-fs12">.{{ size.class }}</td>
         <td>
