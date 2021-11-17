@@ -682,6 +682,12 @@ var buildDocs = function(done) {
 //  ================================================================================
 //  @@  WATCH SITE
 //  ================================================================================
+
+// not currently in use
+//
+// attempted to get eleventy's incremental watch working but had issues with it
+// not compiling files that it should. Leaving here in case we need to use it in the
+// future as it does give a large build performance gain.
 var watchDocs = function(done) {
 
     //  Make sure this feature is activated before running
@@ -797,23 +803,21 @@ exports.default = series(
 );
 
 // tasks are similar to default build when we are watching but there are some
-// differences. we don't build the docs (as they are built by the watch) and
-// we don't clean. We also only compile the less and do not postprocess/minify.
+// differences. We use caching, and do not postprocess/minify for build performance gains
 exports.buildWatch = series(
     webfonts,
     exports.svg,
     libStylesDev,
     docStylesDev,
+    buildDocs
 );
 
 // build and run the gulp watch and eleventy watch in parallel.
 exports.watch = series(
+    exports.clean,
     exports.buildWatch,
     startServer,
-    parallel(
-        watchFiles,
-        watchDocs,
-    ),
+    watchFiles,
 );
 
 //  --  CONVERT WEBFONTS
