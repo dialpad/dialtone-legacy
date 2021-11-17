@@ -72,6 +72,7 @@ var lessFileOrder = () => order([
     'utilities/internals.less'
 ])
 
+const PRIMARY_COLOR = '#6c3dff'
 
 //  ================================================================================
 //  @  PATHS
@@ -511,12 +512,13 @@ var buildSpotIllustrationSVGs = function(done) {
 
     //  Make sure this feature is activated before running
     if (!settings.spot) return done();
-
+    const strokeRegex = new RegExp(`stroke="${PRIMARY_COLOR}"`, 'gi')
+    const fillRegex = new RegExp(`fill="${PRIMARY_COLOR}"`, 'gi')
     //  Compile system icons
     return src(paths.spot.input)
-        // remove d-svg-primary declarations so they can be overriden by the theme.
-        .pipe(replace(/\.d-svg-primary--stroke\s*{[\s\S][^}]*}/gm, ''))
-        .pipe(replace(/\.d-svg-primary--fill\s*{[\s\S][^}]*}/gm, ''))
+        // replace any instances of the primary color in SVG with the theme class
+        .pipe(replace(strokeRegex, 'class=\"d-svg-primary--stroke\"'))
+        .pipe(replace(fillRegex, 'class=\"d-svg-primary--fill\"'))
         .pipe(replace('<svg', function(match) {
             var name = path.parse(this.file.path).name;
             var converted = name.toLowerCase().replace(/-(.)/g, function(match,group1) {
