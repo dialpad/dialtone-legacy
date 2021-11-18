@@ -9,6 +9,7 @@ var settings = {
     styles: true,       // Turn on/off style tasks
     svgs: true,         // Turn on/off SVG tasks
     patterns: true,     // Turn on/off SVG Pattern tasks
+    spot: true,         // Turn on/off SVG spot illustration tasks
     fonts: true,        // Turn on/off webfonts
     favicons: false,    // Turn on/off Favicons tasks
     sync: true,         // Turn on/off sync tasks
@@ -71,6 +72,7 @@ var lessFileOrder = () => order([
     'utilities/internals.less'
 ])
 
+const PRIMARY_COLOR = '#6c3dff'
 
 //  ================================================================================
 //  @  PATHS
@@ -115,6 +117,12 @@ var paths = {
         outputDocs: './docs/_includes/patterns/',
         outputVue: './lib/dist/vue/patterns/',
     },
+    spot: {
+        input: './lib/build/svg/spot/**/*.svg',
+        outputLib: './lib/dist/svg/spot/',
+        outputDocs: './docs/_includes/spot/',
+        outputVue: './lib/dist/vue/spot/',
+    },
     favicons: {
         dpName: 'Dialpad',
         dpBgColor: '#FFFFFF',
@@ -155,7 +163,8 @@ var paths = {
         docsExcludeCSS: '!./docs/assets/css/**/*',
         docsExcludeFonts: '!./docs/assets/fonts/**/*',
         docsExcludeSVG: '!./docs/_includes/icons/**/*',
-        docsExcludePatterns: '!./docs/_includes/patterns/**/*'
+        docsExcludePatterns: '!./docs/_includes/patterns/**/*',
+        docsExcludeSpot: '!./docs/_includes/spot/**/*'
     }
 }
 
@@ -312,6 +321,20 @@ var docStylesDev = function(done) {
     done();
 };
 
+const moveStyleTagsToEOF = function(file, enc, cb) {
+    if (file.isBuffer()) {
+        const styleTagsRegex = /<style[\s\S]*<\/style>/gmi;
+        let code = file.contents.toString();
+        const result = styleTagsRegex.exec(code);
+        if (!result) return cb(null, file);
+        const matchedText = result[0];
+        code = code.replace(styleTagsRegex, '');
+        code = code + matchedText;
+        file.contents = Buffer.from(code)
+    }
+    return cb(null, file);
+}
+
 //  ================================================================================
 //  @@  COMPILE SVGS
 //      Lint and optimize SVG files
@@ -377,20 +400,6 @@ var buildSystemSVGs = function(done) {
 
     done();
 };
-
-const moveStyleTagsToEOF = function(file, enc, cb) {
-    if (file.isBuffer()) {
-        const styleTagsRegex = /<style[\s\S]*<\/style>/gmi;
-        let code = file.contents.toString();
-        const result = styleTagsRegex.exec(code);
-        if (!result) return cb(null, file);
-        const matchedText = result[0];
-        code = code.replace(styleTagsRegex, '');
-        code = code + matchedText;
-        file.contents = Buffer.from(code)
-    }
-    return cb(null, file);
-}
 
 var buildBrandSVGs = function(done) {
 
@@ -495,6 +504,63 @@ var buildPatternSVGs = function(done) {
             file.extname = '.vue';
         }))
         .pipe(dest(paths.patterns.outputVue));
+
+    done();
+};
+
+var buildSpotIllustrationSVGs = function(done) {
+
+    //  Make sure this feature is activated before running
+    if (!settings.spot) return done();
+    const strokeRegex = new RegExp(`stroke="${PRIMARY_COLOR}"`, 'gi')
+    const fillRegex = new RegExp(`fill="${PRIMARY_COLOR}"`, 'gi')
+    //  Compile system icons
+    return src(paths.spot.input)
+        // replace any instances of the primary color in SVG with the theme class
+        .pipe(replace(strokeRegex, 'class=\"d-svg-primary--stroke\"'))
+        .pipe(replace(fillRegex, 'class=\"d-svg-primary--fill\"'))
+        .pipe(replace('<svg', function(match) {
+            var name = path.parse(this.file.path).name;
+            var converted = name.toLowerCase().replace(/-(.)/g, function(match,group1) {
+                return group1.toUpperCase();
+            });
+            var title = name.replace(/\b\S/g, t => t.toUpperCase()).replace(/[-]+/g, " ");
+
+            return match + ' aria-hidden="true" focusable="false" aria-label="' + title + '" class="d-svg ' + converted + '" xmlns="http://www.w3.org/2000/svg"';
+        }))
+        .pipe(svgmin({
+            plugins: [{
+                convertPathData: {
+                    transformPrecision: 4,
+                }
+            }, {
+                cleanupNumericValues: {
+                    floatPrecision: 2,
+                }
+            }, {
+                collapseGroups: true,
+            }, {
+                removeTitle: true,
+            }, {
+                removeViewBox: false,
+            }, {
+                removeUselessStrokeAndFill: true,
+            }]
+        }))
+        .pipe(dest(paths.spot.outputLib))
+        .pipe(dest(paths.spot.outputDocs))
+        .pipe(replace('<svg', '<template>\n  <svg'))
+        .pipe(replace('</svg>', '</svg>\n</template>'))
+        // move any style tags within the svg into style tags of the vue component
+        .pipe(through2.obj(moveStyleTagsToEOF))
+        .pipe(replace('<style>', '<style scoped>'))
+        .pipe(rename(function(file) {
+            var converted = file.basename.replace(/\b\S/g, t => t.toUpperCase()).replace(/[-]+/g, '');
+
+            file.basename = 'Spot' + converted;
+            file.extname = '.vue';
+        }))
+        .pipe(dest(paths.spot.outputVue));
 
     done();
 };
@@ -698,6 +764,7 @@ var watchFiles = function(done) {
         paths.watch.docsExcludeFonts,
         paths.watch.docsExcludeSVG,
         paths.watch.docsExcludePatterns,
+        paths.watch.docsExcludeSpot,
     ], series(exports.buildWatch, reloadBrowser));
     watcher.on('change', function (event) {
         if (event.type === 'deleted') { // if a file is deleted, forget about it
@@ -721,7 +788,8 @@ exports.clean = series(
 exports.svg = series(
     buildSystemSVGs,
     buildBrandSVGs,
-    buildPatternSVGs
+    buildPatternSVGs,
+    buildSpotIllustrationSVGs,
 );
 
 const buildDocsProd = (done) => buildDocs(done, 'prod')
