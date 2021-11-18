@@ -597,7 +597,7 @@ var webfonts = function(done) {
 //  ================================================================================
 //  @@  BUILD SITE
 //  ================================================================================
-var buildDocs = function(done) {
+var buildDocs = function(done, env) {
 
     //  Make sure this feature is activated before running
     if (!settings.build) return done();
@@ -608,7 +608,7 @@ var buildDocs = function(done) {
         ], {
             cwd: paths.build.input,
             stdio: 'inherit',
-            env: { ...process.env, ELEVENTY_ENV: 'prod' }
+            env: { ...process.env, ELEVENTY_ENV: env }
         }
     );
 
@@ -724,6 +724,7 @@ exports.svg = series(
     buildPatternSVGs
 );
 
+const buildDocsProd = (done) => buildDocs(done, 'prod')
 // default build task
 exports.default = series(
     exports.clean,
@@ -733,17 +734,18 @@ exports.default = series(
         libStyles,
         docStyles,
     ),
-    buildDocs
+    buildDocsProd
 );
 
+const buildDocsDev = (done) => buildDocs(done, 'dev')
 // tasks are similar to default build when we are watching but there are some
-// differences. We use caching, and do not postprocess/minify for build performance gains
+// differences. We use caching, and do not postprocess/minify for build performance gains. Also set the env
 exports.buildWatch = series(
     webfonts,
     exports.svg,
     libStylesDev,
     docStylesDev,
-    buildDocs
+    buildDocsDev
 );
 
 // build and run the gulp watch and eleventy watch in parallel.
