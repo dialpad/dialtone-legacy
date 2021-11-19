@@ -1,3 +1,18 @@
+# [6.8.0](https://github.com/dialpad/dialtone/compare/v6.7.0...v6.8.0) (2021-11-19)
+
+
+### Bug Fixes
+
+* allow highlighting within code wells on doc site ([#504](https://github.com/dialpad/dialtone/issues/504)) ([6bddff7](https://github.com/dialpad/dialtone/commit/6bddff7c2de5c8f7e70d063fbde54393601be71e))
+* correct icon size documentation to match implementation ([#506](https://github.com/dialpad/dialtone/issues/506)) ([ae4d871](https://github.com/dialpad/dialtone/commit/ae4d871bf4d0e2e0e21a8eac775cbf142e5f1506))
+* remove fill from IconRaiseHand because it is colored by currentColor ([#501](https://github.com/dialpad/dialtone/issues/501)) ([af5ad68](https://github.com/dialpad/dialtone/commit/af5ad683de8c26923d31bf4027dd4d209062815a))
+
+
+### Features
+
+* add less/css linter to Dialtone ([#490](https://github.com/dialpad/dialtone/issues/490)) ([1c563d9](https://github.com/dialpad/dialtone/commit/1c563d9341eac189f56c9106239248a1cbde0b57))
+* add spot illustration support into dialtone ([#502](https://github.com/dialpad/dialtone/issues/502)) ([6893861](https://github.com/dialpad/dialtone/commit/6893861105fbb3e7019b68e82515cfeb70c66c85))
+
 # [6.7.0](https://github.com/dialpad/dialtone/compare/v6.6.1...v6.7.0) (2021-11-11)
 
 
