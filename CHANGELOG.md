@@ -1,3 +1,10 @@
+## [6.8.1](https://github.com/dialpad/dialtone/compare/v6.8.0...v6.8.1) (2021-11-23)
+
+
+### Bug Fixes
+
+* rename thumb down and thumb up to filename conventions ([9a22ad0](https://github.com/dialpad/dialtone/commit/9a22ad01b4b0bda24f7cd76a4465a76fce1ebbc9))
+
 # [6.8.0](https://github.com/dialpad/dialtone/compare/v6.7.0...v6.8.0) (2021-11-19)
 
 
