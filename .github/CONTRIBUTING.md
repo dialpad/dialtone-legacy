@@ -11,7 +11,8 @@ After you have discussed your change with the dialtone team, follow these steps 
 1. See [README.md](../README.md) for instructions on how to initially clone and run the project
 2. First make sure you are on the staging branch with `git checkout staging`, and that it is up to date with `git pull`
 3. Create a personal branch to make your change off of staging `git checkout -b my-change-branch`. We use kebab-case for branch names.
-4. Make and commit your changes. Note our [commit message conventions](COMMIT_CONVENTION.md). If you have only a single commit on your branch your git commit message must follow the conventions. If you have multiple commits on your branch the github PR title must follow the commit message conventions. Your change will be automatically linted on commit
+4. Make and commit your changes.\
+Note our [commit message conventions](COMMIT_CONVENTION.md). If you have only a single commit on your branch your git commit message must follow the conventions. If you have multiple commits on your branch the github PR title must follow the commit message conventions. Your change will be automatically linted on commit
 5. push your branch to remote. `git push -u origin my-change-branch`
 6. Create a pull request into the staging branch, reviewers will be automatically added and notified of your PR
 7. Once your changes have been approved, you may squash merge your branch into staging
