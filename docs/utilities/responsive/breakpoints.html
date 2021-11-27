@@ -1,8 +1,18 @@
 ---
 layout: page
 title: Breakpoints
-description: All utility classes have responsive variations. Using specific breakpoint constants, we create max-width media queries represented in conditional prefixes. These prefixed classes allow you to apply a style or property within a specific breakpoint.
+description: All classes can have responsive variations. Using our plugin @dialpad/postcss-responsive-variations and configuring the breakpoint constants, you can create media queries represented in conditional prefixes. These prefixed classes allow you to apply a style or property within a specific breakpoint.
 ---
+<section class="d-stack16">
+  {% header "h2", "PostCSS" %}
+  {% paragraph %}
+    To create the responsive variations of classes we use <a href="https://www.npmjs.com/package/postcss">postcss</a> and our custom plugin
+    <a href="https://www.npmjs.com/package/postcss-responsive-variations">@dialpad/postcss-responsive-variations</a>.
+    This plugin takes the breakpoints and the classes you need to have responsive variations as arguments.
+  {% endparagraph %}
+
+
+</section>
 <section class="d-stack16">
   {% header "h2", "Classes" %}
   {% paragraph %}To help keep prefixes concise, we use abbreviations. This syntax is used consistently across all responsive classes. As the viewport size grows, you can change an elements properties. For example, you can set an element to display normally, but be hidden at smaller sizes: {% code %}.d-d-block .sm:d-d-none{% endcode %}.{% endparagraph %}
@@ -45,10 +55,10 @@ description: All utility classes have responsive variations. Using specific brea
   {% codeWell %}
     {% codeWellHeader "purple-100" %}
       <div class="d-fl-center d-w100p d-m8 d-p16 d-bgc-purple-300 d-bar4 d-fs20 d-fw-bold d-ta-center">This is visible on all screens</div>
-      <div class="d-fl-center d-w100p d-m8 d-p16 d-bgc-purple-300 d-bar4 d-fs20 d-fw-bold d-ta-center d-d-none xl:d-d-flex">This is visible on extra large screens</div>
-      <div class="d-fl-center d-w100p d-m8 d-p16 d-bgc-purple-300 d-bar4 d-fs20 d-fw-bold d-ta-center d-d-none lg:d-d-flex">This is visible on large screens</div>
-      <div class="d-fl-center d-w100p d-m8 d-p16 d-bgc-purple-300 d-bar4 d-fs20 d-fw-bold d-ta-center d-d-none md:d-d-flex">This is visible on medium screens</div>
-      <div class="d-fl-center d-w100p d-m8 d-p16 d-bgc-purple-300 d-bar4 d-fs20 d-fw-bold d-ta-center d-d-none sm:d-d-flex">This is visible on small screens</div>
+      <div class="d-fl-center d-w100p d-m8 d-p16 d-bgc-purple-300 d-bar4 d-fs20 d-fw-bold d-ta-center d-d-none xl:d-d-block">This is visible on extra large screens</div>
+      <div class="d-fl-center d-w100p d-m8 d-p16 d-bgc-purple-300 d-bar4 d-fs20 d-fw-bold d-ta-center d-d-none lg:d-d-block">This is visible on large screens</div>
+      <div class="d-fl-center d-w100p d-m8 d-p16 d-bgc-purple-300 d-bar4 d-fs20 d-fw-bold d-ta-center d-d-none md:d-d-block">This is visible on medium screens</div>
+      <div class="d-fl-center d-w100p d-m8 d-p16 d-bgc-purple-300 d-bar4 d-fs20 d-fw-bold d-ta-center d-d-none sm:d-d-block">This is visible on small screens</div>
     {% endcodeWellHeader %}
     {% codeWellFooter %}
 {% highlight html linenos %}
