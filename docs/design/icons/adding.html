@@ -21,13 +21,15 @@ description: A quick guide for how to add icons to Dialtone.
         <li>For system icons: {% code %}./lib/build/svg/system/{% endcode %}</li>
         <li>For brand icons: {% code %}./lib/build/svg/brand/{% endcode %}</li>
         <li>For patterns: {% code %}./lib/build/svg/patterns/{% endcode %}</li>
+        <li>For spot illustrations: {% code %}./lib/build/svg/spot/{% endcode %}</li>
       </ul>
     </li>
     <li><strong>Add icon or pattern information to the correct data file.</strong> System, Brand, and Pattern SVGs all have their own icon data file.
       <ul class="d-stack8">
         <li>System icons: {% code%}./docs/_data/svg-system.json{% endcode %}</li>
         <li>For brand icons: {% code%}./docs/_data/svg-brand.json{% endcode %}</li>
-        <li>For patterns: {% code%}./docs/_data/svg-patterns.json{% endcode %}</li>
+        <li>For patterns: {% code %}./docs/_data/svg-patterns.json{% endcode %}</li>
+        <li>For spot illustrations: {% code %}./docs/_data/svg-spot.json{% endcode %}</li>
       </ul>
       The data is pulled from the data files in the ordered it's entered, so you must place it in alphabetical order in the data file. Here is an example of  information you must provide is:<br/><br/>
       {% codeWell %}
@@ -50,10 +52,14 @@ description: A quick guide for how to add icons to Dialtone.
         <li><strong>Desc:</strong> This is a description about the icon and where it is used.</li>
       </ul>
     </li>
-    <li>Once finished, run the following command: {% code %}gulp svg{% endcode %}. This will recompile the entire {% code %}./lib/build/svg/{% endcode %} folder. To create new SVGs and build the documentation site, run {% code %}gulp svg watch{% endcode %}.</li>
-    <li>Verify your changes have been updated on the website.</li>
+    <li>Verify your changes have been updated on the website by running {% code %}npm run start{% endcode %} and navigating to {% code %}localhost:4000{% endcode %}. If you would like to verify your final output svg file run {% code %}npm run build{% endcode %} and look in the {% code %}./lib/dist/svg{% endcode %} folder</li>
     <li>Commit and push your branch to Dialtone.</li>
     <li>Open a pull request.</li>
-    <li>Once approved it will be merged.</li>
+    <li>Once approved it can be merged into staging and will go out in the next dialtone release.</li>
   {% endol %}
+</section>
+<section class="d-stack16">
+  {% paragraph %}<strong>A note on theming</strong>{% endparagraph %}
+  {% paragraph %}Spot Illustrations allow for theming, meaning the primary color of the illustration will change when the theme changes. If your spot illustration svg contains a fill or a stroke with the dialtone primary color {% code %}#6C3DFF{% endcode %} then it will automatically change when the theme's primary color changes.{% endparagraph %}
+  {% paragraph %}You may often wish to derive lighter or darker colors based on the primary color when making a spot illustration. In these instances it is recommended to set opacity while still using the primary color as the base color so these colors will also change with the theme.{% endparagraph %}
 </section>

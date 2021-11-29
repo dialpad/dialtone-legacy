@@ -9,6 +9,7 @@ var settings = {
     styles: true,       // Turn on/off style tasks
     svgs: true,         // Turn on/off SVG tasks
     patterns: true,     // Turn on/off SVG Pattern tasks
+    spot: true,         // Turn on/off SVG spot illustration tasks
     fonts: true,        // Turn on/off webfonts
     favicons: false,    // Turn on/off Favicons tasks
     sync: true,         // Turn on/off sync tasks
@@ -31,6 +32,7 @@ var cache = require('gulp-cached');
 var order = require('gulp-order');
 var concat = require('gulp-concat');
 var remember = require('gulp-remember');
+var through2 = require('through2');
 var browsersync = require('browser-sync').create();
 var package = require('./package.json');
 
@@ -70,6 +72,7 @@ var lessFileOrder = () => order([
     'utilities/internals.less'
 ])
 
+const PRIMARY_COLOR = '#6c3dff'
 
 //  ================================================================================
 //  @  PATHS
@@ -114,6 +117,12 @@ var paths = {
         outputDocs: './docs/_includes/patterns/',
         outputVue: './lib/dist/vue/patterns/',
     },
+    spot: {
+        input: './lib/build/svg/spot/**/*.svg',
+        outputLib: './lib/dist/svg/spot/',
+        outputDocs: './docs/_includes/spot/',
+        outputVue: './lib/dist/vue/spot/',
+    },
     favicons: {
         dpName: 'Dialpad',
         dpBgColor: '#FFFFFF',
@@ -154,7 +163,8 @@ var paths = {
         docsExcludeCSS: '!./docs/assets/css/**/*',
         docsExcludeFonts: '!./docs/assets/fonts/**/*',
         docsExcludeSVG: '!./docs/_includes/icons/**/*',
-        docsExcludePatterns: '!./docs/_includes/patterns/**/*'
+        docsExcludePatterns: '!./docs/_includes/patterns/**/*',
+        docsExcludeSpot: '!./docs/_includes/spot/**/*'
     }
 }
 
@@ -226,23 +236,6 @@ const cleanFonts = () => {
 }
 
 //  ================================================================================
-//  @@  RESPONSIVE CLASSES GENERATION
-//  ================================================================================
-//  -- BREAK POINTS
-const breakpoints = [
-  { prefix: 'sm\\:', mediaQuery: '(max-width: 480px)' },
-  { prefix: 'md\\:', mediaQuery: '(max-width: 640px)' },
-  { prefix: 'lg\\:', mediaQuery: '(max-width: 980px)' },
-  { prefix: 'xl\\:', mediaQuery: '(max-width: 1264px)' },
-];
-//  -- CLASSES
-const classes = [
-  /\.d-d-*/,
-  /\.d-mt*/,
-  /\.d-g-cols*/
-];
-
-//  ================================================================================
 //  @@  COMPILE CSS
 //      Lint, minify, and concatenate style files
 //  ================================================================================
@@ -255,10 +248,6 @@ var libStyles = function(done) {
     return src(paths.styles.inputLib)
         //.pipe(cache('libStyles'))
         .pipe(less())
-        .pipe(postcss([
-            require('postcss-responsive-variations')({breakpoints, classes})
-          ])
-        )
         .pipe(dest(paths.styles.outputLib))
         .pipe(dest(paths.styles.outputDocs))
         .pipe(postcss([
@@ -279,10 +268,6 @@ var libStylesDev = function(done) {
     return src(paths.styles.inputLib)
         // compile less to css
         .pipe(less())
-        .pipe(postcss([
-            require('postcss-responsive-variations')({breakpoints, classes})
-          ])
-        )
         // concat the css into a single file
         .pipe(concat('dialtone.css'))
         .pipe(dest(paths.styles.outputLib))
@@ -323,6 +308,20 @@ var docStylesDev = function(done) {
 
     done();
 };
+
+const moveStyleTagsToEOF = function(file, enc, cb) {
+    if (file.isBuffer()) {
+        const styleTagsRegex = /<style[\s\S]*<\/style>/gmi;
+        let code = file.contents.toString();
+        const result = styleTagsRegex.exec(code);
+        if (!result) return cb(null, file);
+        const matchedText = result[0];
+        code = code.replace(styleTagsRegex, '');
+        code = code + matchedText;
+        file.contents = Buffer.from(code)
+    }
+    return cb(null, file);
+}
 
 //  ================================================================================
 //  @@  COMPILE SVGS
@@ -376,6 +375,9 @@ var buildSystemSVGs = function(done) {
         .pipe(dest(paths.svgs.sysOutputDocs))
         .pipe(replace('<svg', '<template>\n  <svg'))
         .pipe(replace('</svg>', '</svg>\n</template>'))
+        // move any style tags within the svg into style tags of the vue component
+        .pipe(through2.obj(moveStyleTagsToEOF))
+        .pipe(replace('<style>', '<style scoped>'))
         .pipe(rename(function(file) {
             var converted = file.basename.replace(/\b\S/g, t => t.toUpperCase()).replace(/[-]+/g, '');
 
@@ -427,9 +429,11 @@ var buildBrandSVGs = function(done) {
         .pipe(dest(paths.svgs.brandOutputDocs))
         .pipe(replace('<svg', '<template>\n  <svg'))
         .pipe(replace('</svg>', '</svg>\n</template>'))
+        // move any style tags within the svg into style tags of the vue component
+        .pipe(through2.obj(moveStyleTagsToEOF))
+        .pipe(replace('<style>', '<style scoped>'))
         .pipe(rename(function(file) {
-            var converted = file.basename.replace(/\b\S/g, t => t.toUpperCase()).replace(/[-]+/g, '');
-
+            const converted = file.basename.replace(/\b\S/g, t => t.toUpperCase()).replace(/[-]+/g, '');
             file.basename = 'Icon' + converted;
             file.extname = '.vue';
         }))
@@ -478,6 +482,9 @@ var buildPatternSVGs = function(done) {
         .pipe(dest(paths.patterns.outputDocs))
         .pipe(replace('<svg', '<template>\n  <svg'))
         .pipe(replace('</svg>', '</svg>\n</template>'))
+        // move any style tags within the svg into style tags of the vue component
+        .pipe(through2.obj(moveStyleTagsToEOF))
+        .pipe(replace('<style>', '<style scoped>'))
         .pipe(rename(function(file) {
             var converted = file.basename.replace(/\b\S/g, t => t.toUpperCase()).replace(/[-]+/g, '');
 
@@ -485,6 +492,63 @@ var buildPatternSVGs = function(done) {
             file.extname = '.vue';
         }))
         .pipe(dest(paths.patterns.outputVue));
+
+    done();
+};
+
+var buildSpotIllustrationSVGs = function(done) {
+
+    //  Make sure this feature is activated before running
+    if (!settings.spot) return done();
+    const strokeRegex = new RegExp(`stroke="${PRIMARY_COLOR}"`, 'gi')
+    const fillRegex = new RegExp(`fill="${PRIMARY_COLOR}"`, 'gi')
+    //  Compile system icons
+    return src(paths.spot.input)
+        // replace any instances of the primary color in SVG with the theme class
+        .pipe(replace(strokeRegex, 'class=\"d-svg-primary--stroke\"'))
+        .pipe(replace(fillRegex, 'class=\"d-svg-primary--fill\"'))
+        .pipe(replace('<svg', function(match) {
+            var name = path.parse(this.file.path).name;
+            var converted = name.toLowerCase().replace(/-(.)/g, function(match,group1) {
+                return group1.toUpperCase();
+            });
+            var title = name.replace(/\b\S/g, t => t.toUpperCase()).replace(/[-]+/g, " ");
+
+            return match + ' aria-hidden="true" focusable="false" aria-label="' + title + '" class="d-svg ' + converted + '" xmlns="http://www.w3.org/2000/svg"';
+        }))
+        .pipe(svgmin({
+            plugins: [{
+                convertPathData: {
+                    transformPrecision: 4,
+                }
+            }, {
+                cleanupNumericValues: {
+                    floatPrecision: 2,
+                }
+            }, {
+                collapseGroups: true,
+            }, {
+                removeTitle: true,
+            }, {
+                removeViewBox: false,
+            }, {
+                removeUselessStrokeAndFill: true,
+            }]
+        }))
+        .pipe(dest(paths.spot.outputLib))
+        .pipe(dest(paths.spot.outputDocs))
+        .pipe(replace('<svg', '<template>\n  <svg'))
+        .pipe(replace('</svg>', '</svg>\n</template>'))
+        // move any style tags within the svg into style tags of the vue component
+        .pipe(through2.obj(moveStyleTagsToEOF))
+        .pipe(replace('<style>', '<style scoped>'))
+        .pipe(rename(function(file) {
+            var converted = file.basename.replace(/\b\S/g, t => t.toUpperCase()).replace(/[-]+/g, '');
+
+            file.basename = 'Spot' + converted;
+            file.extname = '.vue';
+        }))
+        .pipe(dest(paths.spot.outputVue));
 
     done();
 };
@@ -587,7 +651,7 @@ var webfonts = function(done) {
 //  ================================================================================
 //  @@  BUILD SITE
 //  ================================================================================
-var buildDocs = function(done) {
+var buildDocs = function(done, env) {
 
     //  Make sure this feature is activated before running
     if (!settings.build) return done();
@@ -598,7 +662,7 @@ var buildDocs = function(done) {
         ], {
             cwd: paths.build.input,
             stdio: 'inherit',
-            env: { ...process.env, ELEVENTY_ENV: 'prod' }
+            env: { ...process.env, ELEVENTY_ENV: env }
         }
     );
 
@@ -608,6 +672,12 @@ var buildDocs = function(done) {
 //  ================================================================================
 //  @@  WATCH SITE
 //  ================================================================================
+
+// not currently in use
+//
+// attempted to get eleventy's incremental watch working but had issues with it
+// not compiling files that it should. Leaving here in case we need to use it in the
+// future as it does give a large build performance gain.
 var watchDocs = function(done) {
 
     //  Make sure this feature is activated before running
@@ -682,6 +752,7 @@ var watchFiles = function(done) {
         paths.watch.docsExcludeFonts,
         paths.watch.docsExcludeSVG,
         paths.watch.docsExcludePatterns,
+        paths.watch.docsExcludeSpot,
     ], series(exports.buildWatch, reloadBrowser));
     watcher.on('change', function (event) {
         if (event.type === 'deleted') { // if a file is deleted, forget about it
@@ -705,9 +776,11 @@ exports.clean = series(
 exports.svg = series(
     buildSystemSVGs,
     buildBrandSVGs,
-    buildPatternSVGs
+    buildPatternSVGs,
+    buildSpotIllustrationSVGs,
 );
 
+const buildDocsProd = (done) => buildDocs(done, 'prod')
 // default build task
 exports.default = series(
     exports.clean,
@@ -717,27 +790,26 @@ exports.default = series(
         libStyles,
         docStyles,
     ),
-    buildDocs
+    buildDocsProd
 );
 
+const buildDocsDev = (done) => buildDocs(done, 'dev')
 // tasks are similar to default build when we are watching but there are some
-// differences. we don't build the docs (as they are built by the watch) and
-// we don't clean. We also only compile the less and do not postprocess/minify.
+// differences. We use caching, and do not postprocess/minify for build performance gains. Also set the env
 exports.buildWatch = series(
     webfonts,
     exports.svg,
     libStylesDev,
     docStylesDev,
+    buildDocsDev
 );
 
 // build and run the gulp watch and eleventy watch in parallel.
 exports.watch = series(
+    exports.clean,
     exports.buildWatch,
     startServer,
-    parallel(
-        watchFiles,
-        watchDocs,
-    ),
+    watchFiles,
 );
 
 //  --  CONVERT WEBFONTS

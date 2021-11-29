@@ -17,15 +17,15 @@
 //  ============================================================================
 //  $   IMPORTS
 //  ----------------------------------------------------------------------------
-@import (reference) "../../../lib/build/less/variables/icons";
-@import (reference) "../../../lib/build/less/variables/typography";
-@import (reference) "../../../lib/build/less/variables/spacing";
-@import (reference) "../../../lib/build/less/utilities/internals";
-@import (reference) "../../../lib/build/less/utilities/spacing";
-@import (reference) "../../../lib/build/less/utilities/grid";
-@import (reference) "../../../lib/build/less/utilities/typography";
-@import (reference) "../../../lib/build/less/components/link";
-@import "dialtone-syntax";
+@import (reference) '../../../lib/build/less/variables/icons';
+@import (reference) '../../../lib/build/less/variables/typography';
+@import (reference) '../../../lib/build/less/variables/spacing';
+@import (reference) '../../../lib/build/less/utilities/internals';
+@import (reference) '../../../lib/build/less/utilities/spacing';
+@import (reference) '../../../lib/build/less/utilities/grid';
+@import (reference) '../../../lib/build/less/utilities/typography';
+@import (reference) '../../../lib/build/less/components/link';
+@import 'dialtone-syntax';
 
 //  ============================================================================
 //  @   RESETS
@@ -145,6 +145,14 @@
   grid-template-columns: repeat(var(--icon-grid-columns), [col] var(--icon-card-width));
 }
 
+.d-gl-docsite-icons--large {
+  .d-gl-docsite-icons();
+  --icon-card-width: 18rem;
+  --icon-grid-columns: auto-fit;
+  grid-auto-rows: 18rem;
+
+}
+
 .dialtone-icon-grid__item {
   position: relative;
 }
@@ -228,6 +236,12 @@
   }
 }
 
+.dialtone-icon-card__footer-spot-illustration {
+  .dialtone-icon-card__footer();
+  width: calc(var(--icon-card-width)*1.5);
+  min-height: auto
+}
+
 .dialtone-icon-card__list {
   display: flex;
   flex-direction: column;
@@ -246,6 +260,14 @@
   height: @icon48;
   margin-bottom: var(--su4);
   width: @icon48;
+  svg {
+    height: auto;
+    width: 100%;
+  }
+}
+
+.dialtone-icon-card__icon--autosize {
+  margin-bottom: var(--su4);
   svg {
     height: auto;
     width: 100%;

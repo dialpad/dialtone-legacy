@@ -28,34 +28,32 @@
 //  $   BASE STYLE
 //  ----------------------------------------------------------------------------
 .d-tooltip-container {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  position: relative;
 }
 
 .d-tooltip {
     //  --  COMPONENT CSS VARS
     //  -----------------------
-    --tooltip--bgc:           var(--black-800);
-    --tooltip--fc:            var(--white);
+    --tooltip--bgc: var(--black-800);
+    --tooltip--fc: var(--white);
 
+    z-index: var(--zi-tooltip);
     max-width: var(--size216);
     padding: var(--su8);
-    z-index: var(--zi-tooltip);
-
-    border-radius: var(--br4);
-    background-color: var(--tooltip--bgc);
-
     color: var(--tooltip--fc);
     font-size: var(--fs12);
-    text-align: center;
     line-height: var(--lh-normal);
+    text-align: center;
+    background-color: var(--tooltip--bgc);
+    border-radius: var(--br4);
 
     &::after {
-        content: "";
         position: absolute;
         border: var(--su6) solid transparent;
+        content: '';
     }
 }
 
@@ -65,16 +63,16 @@
 .d-tooltip--inverted {
     //  --  COMPONENT CSS VARS
     //  -----------------------
-    --tooltip--bgc:     var(--black-050);
-    --tooltip--fc:      var(--black-700);
+    --tooltip--bgc: var(--black-050);
+    --tooltip--fc: var(--black-700);
 }
 
 //  ============================================================================
 //  $   HIDE STYLE
 //  ----------------------------------------------------------------------------
 .d-tooltip--hide {
-    opacity: 0;
     visibility: hidden;
+    opacity: 0;
     transition:
         visibility 0s 200ms,
         transform 200ms var(--ttf-in-out) 0s,
@@ -85,9 +83,9 @@
 //  $   SHOW STYLE
 //  ----------------------------------------------------------------------------
 .d-tooltip--show {
-    transform: translate(0,0);
-    opacity: 1;
+    transform: translate(0, 0);
     visibility: visible;
+    opacity: 1;
     transition:
         visibility 0s 0s,
         transform 200ms var(--ttf-in-out) 10ms,
@@ -101,6 +99,7 @@
     .d-tooltip {
         &:extend(.d-tooltip--hide);
     }
+
     &:focus-visible,
     &:hover {
         .d-tooltip {
@@ -117,8 +116,8 @@
 .d-tooltip__arrow--top-left,
 .d-tooltip__arrow--top-center,
 .d-tooltip__arrow--top-right {
-    transform: translateY(var(--su16));
     top: calc(100% + var(--su12));
+    transform: translateY(var(--su16));
 
     &::after {
         top: var(--sun6);
@@ -133,13 +132,13 @@
 .d-tooltip__arrow--bottom-left,
 .d-tooltip__arrow--bottom-center,
 .d-tooltip__arrow--bottom-right {
-    transform: translateY(var(--sun16));
     bottom: calc(100% + var(--su12));
+    transform: translateY(var(--sun16));
 
     &::after {
         bottom: var(--sun6);
-        border-bottom-width: 0;
         border-top-color: var(--tooltip--bgc);
+        border-bottom-width: 0;
     }
 }
 
@@ -159,7 +158,7 @@
 //  ----------------------------------------------------------------------------
 .d-tooltip__arrow--top-center,
 .d-tooltip__arrow--bottom-center {
-    &:after {
+    &::after {
         left: 50%;
         margin-left: var(--sun6);
     }
@@ -181,8 +180,8 @@
 .d-tooltip__arrow--right-top,
 .d-tooltip__arrow--right-center,
 .d-tooltip__arrow--right-bottom {
-    transform: translateX(var(--sun16));
     right: calc(100% + var(--su12));
+    transform: translateX(var(--sun16));
 
     &::after {
         right: var(--sun6);
@@ -197,13 +196,13 @@
 .d-tooltip__arrow--left-top,
 .d-tooltip__arrow--left-center,
 .d-tooltip__arrow--left-bottom {
-    transform: translateX(var(--su16));
     left: calc(100% + var(--su12));
+    transform: translateX(var(--su16));
 
     &::after {
         left: var(--sun6);
-        border-left-width: 0;
         border-right-color: var(--tooltip--bgc);
+        border-left-width: 0;
     }
 }
 

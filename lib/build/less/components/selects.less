@@ -23,42 +23,41 @@
 .d-select {
   //  Component CSS Vars
   //  --------------------------------------------------------------------------
-  --select--bc:           var(--black-400);
-  --select--bgc:          var(--white);
-  --select--fc:           var(--black-800);
-  --select--bs:           var(--focus-ring);
+  --select--bc: var(--black-400);
+  --select--bgc: var(--white);
+  --select--fc: var(--black-800);
+  --select--bs: var(--focus-ring);
 
-  box-sizing: border-box;
   position: relative;
   display: inline-flex; // important to the children alignment
+  box-sizing: border-box;
   width: 100%; // important to fill the available space
   width: -webkit-fill-available; // important to fill the available space
-
   font-weight: inherit;
   font-size: var(--fs18);
   font-family: inherit;
   line-height: var(--lh-tight);
 
   //  --  Arrows
-  &:before,
-  &:after {
-    content: "";
+  &::before,
+  &::after {
     position: absolute;
-    z-index: var(--zi-selected);
     right: 0.75em;
+    z-index: var(--zi-selected);
     border-color: var(--black-900) transparent;
     border-style: solid;
     border-width: 0.25em;
+    content: '';
     pointer-events: none;
   }
 
-  &:before {
-    top: calc(~"50% - 0.25em");
+  &::before {
+    top: calc(~'50% - 0.25em');
     border-top-width: 0;
   }
 
-  &:after {
-    top: calc(~"50% + 0.125em");
+  &::after {
+    top: calc(~'50% + 0.125em');
     border-bottom-width: 0;
   }
 }
@@ -100,6 +99,11 @@
 //  $  SELECT MENU INPUT
 //  ----------------------------------------------------------------------------
 .d-select__input {
+  height: 100%; // Fill the height of its parent
+  padding: 0.7rem 2em 0.7rem 0.8rem;
+  color: var(--select--fc);
+  background-color: var(--select--bgc);
+  border-color: var(--select--bc);
   //  [1] Reset the appearance
   -webkit-appearance: none;
       -moz-appearance: none;
@@ -110,30 +114,27 @@
 
   --select--bc: var(--black-500);
 
-  padding: 0.7rem 2em 0.7rem 0.8rem;
-  height: 100%; // Fill the height of its parent
-
-  color:            var(--select--fc);
-  background-color: var(--select--bgc);
-  border-color:     var(--select--bc);
-
   &:focus {
     --select--bc: var(--primary-color);
 
     box-shadow: var(--bs-focus-ring);
   }
+
   &:disabled {
     color: var(--black-400);
     background: var(--black-075);
     border: 1px solid var(--black-200);
   }
+
   &::-moz-focus-inner {
     outline: none !important;
   }
+
   &:-moz-focusring {
     color: transparent;
     text-shadow: 0 0 0 var(--black-900);
   }
+
   &::-ms-expand {
     display: none;
   }
@@ -146,6 +147,7 @@
 
   &:focus {
     --select--bc: var(--success-color);
+
     box-shadow: var(--bs-focus-ring-success);
   }
 }
@@ -155,6 +157,7 @@
 
   &:focus {
     --select--bc: var(--error-color);
+
     box-shadow: var(--bs-focus-ring-error);
   }
 }
@@ -164,13 +167,14 @@
 
   &:focus {
     --select--bc: var(--warning-color);
+
     box-shadow: var(--bs-focus-ring-warning);
   }
 }
 
 .d-select--disabled {
-  &:before,
-  &:after {
+  &::before,
+  &::after {
     border-color: var(--black-400) transparent;
   }
 }
