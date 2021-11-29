@@ -252,7 +252,7 @@ var libStyles = function(done) {
     if (!settings.styles) return done();
 
     //  Compile library files
-    return src(paths.styles.inutLib)
+    return src(paths.styles.inputLib)
         //.pipe(cache('libStyles'))
         .pipe(less())
         .pipe(postcss([
