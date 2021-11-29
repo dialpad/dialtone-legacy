@@ -23,7 +23,7 @@ module.exports = {
         require('postcss-preset-env')({
             stage: 3,
         }),
-        require('postcss-responsive-variations')({breakpoints, classes}),
+        require('@dialpad/postcss-responsive-variations')({breakpoints, classes}),
         //  Re-order the CSS declaration
         require('postcss-sorting')({
             "properties-order": [
