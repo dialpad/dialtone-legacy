@@ -12,7 +12,7 @@ Dialtone is a design system by Dialpad comprised of CSS components, [Vue compone
 - Create a suite of well-documented, flexible and intuitive UI components that are easy for designers, developers and users to use.
 - Document and promote accessible development and design across Dialpad.
 
-Note that the Dialtone Vue components are also part of the Dialtone project, but have their own repository and contribution guide at https://github.com/dialpad/dialtone-vue, so they will not be mentioned much in this guide.
+Though part of the design system, Dialtone's Vue components are distributed as a separate package and therefore have their own [repository](https://github.com/dialpad/dialtone-vue) and contribution guidelines.
 
 ### What is a contribution?
 
@@ -32,9 +32,9 @@ The second is to check with the Dialtone team (in [#dialtone](https://dialpad.sl
 
 ### Roles
 
-- Contributor - Has the ability to create PRs and merge their change into staging after at least one approving review.
-- Maintainer - A trusted contributor with the ability to release Dialtone.
-- Admin - Has the ability to change any configuration on the Dialtone repository and release Dialtone. Usually for members of the Dialtone team.
+- Contributor: Has the ability to create PRs and merge their change into staging after at least one approving review.
+- Maintainer: A trusted contributor with the ability to release Dialtone.
+- Admin: Has the ability to change any configuration on the Dialtone repository and release Dialtone. Usually for members of the Dialtone team.
 
 ## Pull Requests
 
