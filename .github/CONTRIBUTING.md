@@ -43,8 +43,7 @@ Dialtone follows [SemVer](https://semver.org/) for versioning and the commit mes
 
 - `docs/_includes`: Contains reusable template segments that can be inserted into other templates.
 - `docs/_site`: Where the compiled build is output to when you run `npm run build`.
-- `docs/assets`: Contains images, javascript utilities and doc site specific less/css.\
-    **note:** the css and fonts folders within `docs/assets` are output by the Dialtone build and any manual changes will be overwritten.
+- `docs/assets`: Contains images, javascript utilities and doc site specific less/css. **Note:** the css and fonts folders within `docs/assets` are output by the Dialtone build and any manual changes will be overwritten.
 - `docs/components`: Contains templates for the "Components" section of the website. (Form inputs, Avatar, Banner etc).
 - `docs/design`: Contains templates for the "Design" section of the website. (Colors, Icons, etc).
 - `docs/getting-started`: Contains templates for the "Getting Started" section of the website. (Installation, Usage).
