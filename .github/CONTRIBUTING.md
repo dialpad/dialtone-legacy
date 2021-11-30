@@ -1,6 +1,40 @@
 # Contributing
 
-Thanks for your interest in contributing to Dialtone. Please take a moment to review this document before submitting a pull request.
+Thanks for your interest in contributing to Dialtone! Please take a moment to review this document before submitting a pull request.
+
+## Overview
+
+### What is Dialtone?
+
+Dialtone is a design system by Dialpad comprised of CSS components, [Vue components](https://vue.dialpad.design/), utility classes, visual assets, documentation and examples which strives to:
+
+- Create a consistent design language between all Dialpad products.
+- Create a suite of well-documented, flexible and intuitive UI components that are easy for designers, developers and users to use.
+- Document and promote accessible development and design across Dialpad.
+
+Though part of the design system, Dialtone's Vue components are distributed as a separate package and therefore have their own [repository](https://github.com/dialpad/dialtone-vue) and contribution guidelines.
+
+### What is a contribution?
+
+A contribution is any proposal, design, code, or documentation completed by someone not on the core Dialtone team, and released through Dialtone for other people to use. It can be created by anyone who'd like to help make Dialtone better.
+
+Types of contributions:
+
+- Fix: fixes a technical defect, documentation typo, or Figma symbol defect.
+- Enhancement: extends an existing style or component without changing the underlying architecture or behavior.
+- New feature: adds something new, like a component.
+
+### What belongs in Dialtone?
+
+There are a couple important considerations when thinking about contributing to Dialtone. The first is to remember that Dialtone strives to offer styles, components, or patterns intended to be shared by multiple teams or features. Generally, one-off or first-time elements (i.e. snowflakes) aren't a great fit, though there may be the occasional exception.
+
+The second is to check with the Dialtone team (in [#dialtone](https://dialpad.slack.com/messages/dialtone/)) to ensure the contribution isn't already requested, planned, or even complete.
+
+### Roles
+
+- Contributor: Has the ability to create PRs and merge their change into staging after at least one approving review.
+- Maintainer: A trusted contributor with the ability to release Dialtone.
+- Admin: Has the ability to change any configuration on the Dialtone repository and release Dialtone. Usually for members of the Dialtone team.
 
 ## Pull Requests
 
