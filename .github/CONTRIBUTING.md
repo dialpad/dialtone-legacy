@@ -6,50 +6,35 @@ Thanks for your interest in contributing to Dialtone! Please take a moment to re
 
 ### What is Dialtone?
 
-Dialtone is a design system by Dialpad comprised of CSS components, utility classes, visual assets, documentation and examples which strives to:
+Dialtone is a design system by Dialpad comprised of CSS components, [Vue components](https://vue.dialpad.design/), utility classes, visual assets, documentation and examples which strives to:
 
-- Create a consistient design language between all Dialpad products.
-- Create a suite of well documented, flexible and intuitive UI components that are easy for designers, developers and users to use.
+- Create a consistent design language between all Dialpad products.
+- Create a suite of well-documented, flexible and intuitive UI components that are easy for designers, developers and users to use.
 - Document and promote accessible development and design across Dialpad.
 
-Note that the dialtone-vue components are also part of the Dialtone project, but have their own repository and contribution guide at https://github.com/dialpad/dialtone-vue, so they will not be mentioned much in this guide.
+Note that the Dialtone Vue components are also part of the Dialtone project, but have their own repository and contribution guide at https://github.com/dialpad/dialtone-vue, so they will not be mentioned much in this guide.
 
 ### What is a contribution?
 
-A contribution can be created by anyone who'd like to help make Dialtone better.
+A contribution is any proposal, design, code, or documentation completed by someone not on the core Dialtone team, and released through Dialtone for other people to use. It can be created by anyone who'd like to help make Dialtone better.
 
 Types of contributions:
 
-- request - you are proposing a change to dialtone.
-- bug fix - you are fixing something that is currently not working correctly.
-- new feature - you are implementing a new feature into dialtone.
-
-These three types of contributions can be made across any of the following areas that dialtone is made up of
-- documentation site
-- less/css components
-- utility classes
-- assets (icons, fonts, spot illustrations)
+- Fix: fixes a technical defect, documentation typo, or Figma symbol defect.
+- Enhancement: extends an existing style or component without changing the underlying architecture or behavior.
+- New feature: adds something new, like a component.
 
 ### What belongs in Dialtone?
 
-The first question to ask is, would this contribution be used by multiple teams or multiple features in a product? If the answer is no, then it probably does not belong in Dialtone.
+There are a couple important considerations when thinking about contributing to Dialtone. The first is to remember that Dialtone strives to offer styles, components, or patterns intended to be shared by multiple teams or features. Generally, one-off or first-time elements (i.e. snowflakes) aren't a great fit, though there may be the occasional exception.
 
-We put components into dialtone based on a few factors:
-- frequency of use
-- priority / demand
-- effort
-
-Creating a ui component used in only 2 places hidden deep in some configuration menus is going to be much lower priority than a core input component that's used in 45 different places around the site.
-
-Another question to ask is does my contribution already exist, or is it already in our backlog or being worked on?
-
-You can see our [Jira Backlog](https://switchcomm.atlassian.net/jira/software/projects/DT/boards/187/backlog) to check if your idea for a contribution already exists in there. If not the next step is to propose your contribution to the dialtone team in the #dialtone channel on slack!
+The second is to check with the Dialtone team (in [#dialtone](https://dialpad.slack.com/messages/dialtone/)) to ensure the contribution isn't already requested, planned, or even complete.
 
 ### Roles
 
 - Contributor - Has the ability to create PRs and merge their change into staging after at least one approving review.
-- Maintainer - Has the ability to release Dialtone, generally given to members of the Dialtone team.
-- Admin - Has the ability to change any configuration on the Dialtone repository.
+- Maintainer - A trusted contributor with the ability to release Dialtone.
+- Admin - Has the ability to change any configuration on the Dialtone repository and release Dialtone. Usually for members of the Dialtone team.
 
 ## Pull Requests
 
