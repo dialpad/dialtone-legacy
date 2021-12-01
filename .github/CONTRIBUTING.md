@@ -60,10 +60,6 @@ Dialtone follows [SemVer](https://semver.org/) for versioning and the commit mes
 - Running the local development server.
 - Caching for faster local build performance.
 
-To build and run gulp locally, use the command `npm run start`. This will build Dialtone and the doc site and run a local web server at http://localhost:4000/ which can be used for development. When running Dialtone in this way any changes to Dialtone less files or eleventy templates will be automatically updated in the browser upon saving.
-
-To just build dialtone and the docsite in production mode without running the server do `npm run build`. This will build the Dialtone library by reading input from `lib/build`, and then outputting the bundle to `lib/dist`. It will also build the eleventy doc site which reads input files from `docs` and then outputs to `docs/_site`. Minification will be performed when building in production mode.
-
 ### Netlify
 
 [Netlify](https://www.netlify.com/) is where our documentation site is hosted. If you need to configure any netlify options you can see the file `netlify.toml` in the repository root and the corresponding [documentation](https://docs.netlify.com/configure-builds/file-based-configuration/). You may not be able to change all options from here some options may require login to our netlify account on the web. If this level of configuration is needed please contact a Dialtone admin.
