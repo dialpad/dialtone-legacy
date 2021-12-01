@@ -55,6 +55,7 @@ Once your change is in `staging` it will go live with the next Dialtone release.
 ## Coding Guidelines
 
 ### Naming Conventions
+
 All Dialtone classes available to users are prefixed with `d-`
 
 ```less
@@ -62,9 +63,10 @@ All Dialtone classes available to users are prefixed with `d-`
 .d-stack8 {}
 ```
 
-Note that variables are not classes, and do not follow this naming convention. Examples: `@purple-300`, `@fw-normal`.
+Note that variables are not classes, and do not follow this naming convention. `@purple-300` for example.
 
 #### Utility Classes
+
 Utility classes are named in the following format `d-[PROPERTY_ACRONYM]-[VALUE]`.
 
 ```less
@@ -73,6 +75,7 @@ Utility classes are named in the following format `d-[PROPERTY_ACRONYM]-[VALUE]`
 ```
 
 #### Component Classes
+
 Component class names use the [Block Element Modifier (BEM)](http://getbem.com/naming/) naming standard.
 
 ```less
@@ -82,12 +85,15 @@ Component class names use the [Block Element Modifier (BEM)](http://getbem.com/n
 ```
 
 ### Generated Classes
+
 While most of the classes you find in `lib/build/less` are available to users and documented on the doc site, one exception to this is d-internals. d-internals definitions are found in [utilties/internals.less](../lib/build/less/utilities/internals.less). These are definitons we use within Dialtone to generate classes, and are not meant for use by consumers of Dialtone.
 
 ### Immutable Utility Classes
+
 All of our utility classes are set to `!important`. This is because they are designed to be immutable, and `!important` is the best way we have of achieving immutability in CSS.
 
 ### CSS Vars
+
 We use CSS vars in our classes for better reusability.
 
 Here we set the `--avatar--size` CSS var to 12, and set both the width and the height to reference this variable.
