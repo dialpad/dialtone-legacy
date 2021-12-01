@@ -56,14 +56,14 @@ Once your change is in `staging` it will go live with the next Dialtone release.
 
 ### Naming Conventions
 
-All Dialtone classes available to users are prefixed with `d-`
+All Dialtone classes available to users are prefixed with `d-`.
 
 ```less
 .d-input {}
 .d-stack8 {}
 ```
 
-Note that variables are not classes, and do not follow this naming convention. `@purple-300` for example.
+Note that variables are not classes and do not follow this convention. For example: `@purple-300` or `--primary-color`.
 
 #### Utility Classes
 
@@ -96,7 +96,7 @@ All of our utility classes are set to `!important`. This is because they are des
 
 We use CSS vars in our classes for better reusability.
 
-Here we set the `--avatar--size` CSS var to 12, and set both the width and the height to reference this variable.
+Here we set the `--avatar--size` CSS var to `var(--su12)`, and set both the width and the height to reference this variable.
 ```less
 .d-avatar {
     --avatar--size: var(--su12);
@@ -134,10 +134,10 @@ Here are some important directories to know within the Dialtone repository
 - `lib/build`: All source code and assets for the Dialtone library.
 - `lib/dist`: The compiled bundle will be output here upon `npm run build`.
 - `lib/build/fonts`: Fonts we wish to bundle with Dialtone (woff2 format).
-- `lib/build/less`: Less files defining our styles. they are processed and transpiled to CSS on build.
+- `lib/build/less`: LESS files defining our styles. they are processed and transpiled to CSS on build.
 - `lib/build/svg`: SVGs used for icons and spot illustrations. See [adding icons](https://dialpad.design/design/icons/adding/) for instructions on how to add icons into Dialtone.
 
-For folder structure of the doc site see the [Eleventy section](#eleventy) of this document.
+For folder structure of the doc site, see the [Eleventy section](#eleventy) of this document.
 
 ### Testing
 
