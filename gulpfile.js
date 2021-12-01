@@ -248,7 +248,6 @@ var libStyles = function(done) {
     return src(paths.styles.inputLib)
         //.pipe(cache('libStyles'))
         .pipe(less())
-        .pipe(postcss())
         .pipe(dest(paths.styles.outputLib))
         .pipe(dest(paths.styles.outputDocs))
         .pipe(postcss([
@@ -266,19 +265,9 @@ var libStylesDev = function(done) {
     if (!settings.styles) return done();
 
     //  Compile library files
-    return src(paths.styles.inputLibDev)
-        // this only pipes through files that have changed since the last build
-        .pipe(cache('libStylesDev'))
-        // progeny will rebuild less dependencies referenced via @import
-        .pipe(progeny())
-        // set the order in which the css should be concat
-        .pipe(lessFileOrder())
+    return src(paths.styles.inputLib)
         // compile less to css
         .pipe(less())
-        // since we are concatting we need to include all files from the
-        // last build or our output file would only have the changed css
-        // in it. remember() does this.
-        .pipe(remember('libStylesDev'))
         // concat the css into a single file
         .pipe(concat('dialtone.css'))
         .pipe(dest(paths.styles.outputLib))
@@ -296,7 +285,6 @@ var docStyles = function(done) {
     //  Compile documentation files
     return src(paths.styles.inputDocs)
         .pipe(less())
-        .pipe(postcss())
         .pipe(dest(paths.styles.outputDocs))
         .pipe(postcss([
             cssnano()
@@ -307,7 +295,7 @@ var docStyles = function(done) {
     done();
 };
 
-//  --  DOCUMENTATION FILES
+//  --  DOCUMENTATION FILES DEV
 var docStylesDev = function(done) {
 
     //  Make sure this feature is activated before running

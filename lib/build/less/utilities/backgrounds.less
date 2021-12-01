@@ -1,5 +1,5 @@
-@import (reference) '../variables/colors.less';
-@import (reference) '../utilities/internals.less';
+//@import (reference) '../variables/colors.less';
+//@import (reference) '../utilities/internals.less';
 
 //
 //  DIALTONE
@@ -10,7 +10,6 @@
 //  visit https://dialpad.design/utilities/borders
 //
 //  TABLE OF CONTENTS
-//  • INTERNALS/MIXINS
 //  • BACKGROUND ATTACHMENT
 //  • BACKGROUND CLIP
 //  • BACKGROUND POSITION
@@ -19,57 +18,6 @@
 //  • GRADIENTS
 //  • PATTERNS
 //
-//  ============================================================================
-//  $   MIXINS
-//  ----------------------------------------------------------------------------
-#d-internals() {
-    #gradient-classes(@color) {
-        //  COLOR STOP 1, STARTING STOP
-        .d-bgg-from-@{color},
-        .h\:d-bgg-from-@{color}:hover,
-        .f\:d-bgg-from-@{color}:focus {
-            --bgg-from-opacity: 100%;
-            --bgg-from: hsla(var(~'--@{color}-h') var(~'--@{color}-s') var(~'--@{color}-l') ~' / ' var(--bgg-from-opacity));
-            --bgg-to: hsla(var(~'--@{color}-h') var(~'--@{color}-s') var(~'--@{color}-l') ~' / ' 0%);
-        }
-        .f\:d-bgg-from-@{color}:focus-within {
-            --bgg-from-opacity: 100%;
-            --bgg-from: hsla(var(~'--@{color}-h') var(~'--@{color}-s') var(~'--@{color}-l') ~' / ' var(--bgg-from-opacity));
-            --bgg-to: hsla(var(~'--@{color}-h') var(~'--@{color}-s') var(~'--@{color}-l') ~' / ' 0%);
-        }
-        #d-internals #dark-mode('.d\:d-bgg-from-@{color}', {
-            --bgg-from-opacity: 100%;
-            --bgg-from: hsla(var(~'--@{color}-h') var(~'--@{color}-s') var(~'--@{color}-l') ~' / ' var(--bgg-from-opacity));
-            --bgg-to: hsla(var(~'--@{color}-h') var(~'--@{color}-s') var(~'--@{color}-l') ~' / ' 0%);
-        });
-
-        //  COLOR STOP 2, ENDING STOP
-        .d-bgg-to-@{color},
-        .h\:d-bgg-to-@{color}:hover,
-        .f\:d-bgg-to-@{color}:focus {
-            --bgg-to-opacity: 100%;
-            --bgg-to: hsla(var(~'--@{color}-h') var(~'--@{color}-s') var(~'--@{color}-l') ~' / ' var(--bgg-to-opacity)) !important;
-        }
-        .f\:d-bgg-to-@{color}:focus-within {
-            --bgg-to-opacity: 100%;
-            --bgg-to: hsla(var(~'--@{color}-h') var(~'--@{color}-s') var(~'--@{color}-l') ~' / ' var(--bgg-to-opacity)) !important;
-        }
-        #d-internals #dark-mode('.d\:d-bgg-to-@{color}', {
-            --bgg-to-opacity: 100%;
-            --bgg-to: hsla(var(~'--@{color}-h') var(~'--@{color}-s') var(~'--@{color}-l') ~' / ' var(--bgg-to-opacity)) !important;
-        })
-    }
-
-    #gradient-stops(@color) {
-        #d-internals #gradient-classes(~'@{color}-600');
-        #d-internals #gradient-classes(~'@{color}-500');
-        #d-internals #gradient-classes(~'@{color}-400');
-        #d-internals #gradient-classes(~'@{color}-300');
-        #d-internals #gradient-classes(~'@{color}-200');
-        #d-internals #gradient-classes(~'@{color}-100');
-    }
-}
-
 //  ----------------------------------------------------------------------------
 //  --  Create background stops for most colors
 #d-internals #gradient-stops(black);

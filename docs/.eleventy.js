@@ -146,11 +146,11 @@ module.exports = function(eleventyConfig) {
     // Add shortcode for code well header
     eleventyConfig.addPairedShortcode("codeWellHeader", function(content, color, minHeight) {
         if (!color) {
-            return `<header class="d-fl-center d-fd-column d-p24 d-bgc-black-025 d-w100p ${minHeight}">${content}</header>`;
+            return `<header class="d-fl-center d-fd-column d-p24 d-bgc-black-025 d-w100p ${minHeight} d-of-auto">${content}</header>`;
         } else if (color == "white") {
-            return `<header class="d-fl-center d-fd-column d-p24 d-bgc-white d-w100p d-ba d-bc-black-050 d-btr8 d-baw2 ${minHeight}">${content}</header>`;
+            return `<header class="d-fl-center d-fd-column d-p24 d-bgc-white d-w100p d-ba d-bc-black-050 d-btr8 d-baw2 ${minHeight} d-of-auto">${content}</header>`;
         } else {
-            return `<header class="d-fl-center d-fd-column d-p24 d-bgc-${color} d-w100p ${minHeight}">${content}</header>`;
+            return `<header class="d-fl-center d-fd-column d-p24 d-bgc-${color} d-w100p ${minHeight} d-of-auto">${content}</header>`;
         }
     });
 
