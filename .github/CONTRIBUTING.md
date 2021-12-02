@@ -94,7 +94,7 @@ All of our utility classes are set to `!important`. This is because they are des
 
 ### CSS Vars
 
-We use CSS vars in our classes for better reusability.
+We use CSS vars in our classes for better reusability. We try to always use CSS vars `var(--su12)` over less vars `@su12` in our code, however we often use LESS vars to help generate CSS vars.
 
 Here we set the `--avatar--size` CSS var to `12`, and set both the width and the height to reference this variable.
 ```less
