@@ -2,7 +2,7 @@
 layout: page
 title: Toast
 description: A toast notice, sometimes called a snackbar, is a time-based message that appears based on users' actions. It contains at-a-glance information about outcomes and can be paired with actions.
-storybook-url: https://vue.dialpad.design/?path=/story/elements-toast--default
+storybook-url: https://vue.dialpad.design/?path=/story/components-toast--default
 ---
 <section class="d-stack16">
   {% header "h2", "Classes" %}
@@ -62,7 +62,7 @@ storybook-url: https://vue.dialpad.design/?path=/story/elements-toast--default
         {% codeWellFooter %}
           {% highlight html linenos %}
 <aside class="d-toast-wrapper">
-  <div class="d-toast" role="alert" aria-hidden="true">
+  <div class="d-toast" role="status" aria-hidden="true">
     <div class="d-toast__dialog">
       <div class="d-notice__icon">...</div>
       <div class="d-notice__content">
@@ -84,7 +84,7 @@ storybook-url: https://vue.dialpad.design/?path=/story/elements-toast--default
   </div>
 </section>
 <aside class="d-toast-wrapper js-toast-example-wrapper">
-  <div class="d-toast js-toast-example-toast" role="alert" aria-hidden="true">
+  <div class="d-toast js-toast-example-toast" role="status" aria-hidden="true">
     <div class="d-toast__dialog js-toast-example-dialog">
       <div class="d-notice__icon js-toast-example-icon">
         {% iconSystem "lightbulb", "js-toast-example-icon-base d-d-none" %}
@@ -108,6 +108,19 @@ storybook-url: https://vue.dialpad.design/?path=/story/elements-toast--default
 </aside>
 <section class="d-stack16">
   {% header "h2", "Accessibility" %}
+  {% paragraph %}Avoid using toast for critical information since toast disappears automatically and make sure
+  to provide enough time to read the message and act consequently. For best accessible user experience, the amount of
+  time a toast displays for should be user configurable.{% endparagraph %}
+  {% paragraph %}Using {% code %}role="alert"{% endcode %}, it sets {% code %}aria-live="assertive"{% endcode %} which
+  means it will immediately interrupt anything currently being read by the screen reader, so use it for things
+  that require immediate attention such as:{% endparagraph %}
+  {% ul %}
+  <li>An invalid value was entered into a form field</li>
+  <li>The user's login session is about to expire</li>
+  <li>The connection to the server was lost, local changes will not be saved</li>
+  {% endul %}
+  {% paragraph %}Meanwhile {% code %}role="status"{% endcode %} implies {% code %}aria-live="polite"{% endcode %} which
+  means the toast will be read out after what's currently being has finished.{% endparagraph %} 
   <table class="d-table">
     <thead>
       <tr>

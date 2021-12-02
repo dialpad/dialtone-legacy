@@ -2,7 +2,7 @@
 layout: page
 title: Radio
 description: A radio is an input control that allows users to select only one option from a number of choices.
-storybook-url: https://vue.dialpad.design/?path=/story/forms-radio--default
+storybook-url: https://vue.dialpad.design/?path=/story/components-radio--default
 ---
 <section class="d-stack16">
   {% header "h2", "Classes" %}
@@ -339,11 +339,12 @@ storybook-url: https://vue.dialpad.design/?path=/story/forms-radio--default
 </section>
 <section class="d-stack16">
   {% header "h2", "Accessibility" %}
-  {% paragraph %}The best accessibility is semantic HTML. Most screen readers understand how to parse inputs if they’re correctly formatted. When it comes to checkboxes, there are a few things to keep in mind:{% endparagraph %}
+  {% paragraph %}The best accessibility is semantic HTML. Most screen readers understand how to parse inputs if they’re correctly formatted. When it comes to radio input, there are a few things to keep in mind:{% endparagraph %}
   {% ul %}
     <li>All inputs should have an {% code %}id{% endcode %} attribute.</li>
-    <li>Associate checkbox labels with their inputs using the {% code %}for{% endcode %} attribute. This correlates with the checkbox's {% code %}id{% endcode %}.</li>
-    <li>If you have a group of related checkboxes, use a {% code %}fieldset{% endcode %} to group them and a {% code %}legend{% endcode %} to title the group.</li>
+    <li>Associate radio labels with their inputs using the {% code %}for{% endcode %} attribute. This correlates with the radio's {% code %}id{% endcode %}.</li>
+    <li>If you have a group of related radios, use a {% code %}fieldset{% endcode %} to group them and a {% code %}legend{% endcode %} to title the group. For further information, please visit Gov.UK’s article, <a href="https://accessibility.blog.gov.uk/2016/07/22/using-the-fieldset-and-legend-elements/">"Using the fieldset and legend elements"</a>.</li>
+    <li>If the input is a required field, use the {% code %}aria-required{% endcode %} property and use the validation message for input errors.</li>
+    <li>Input with validation errors should have {% code %}aria-describedby{% endcode %} with the {% code %}id{% endcode %} of the validation message.</li>
   {% endul %}
-  {% paragraph %}For further information, please visit Gov.UK’s article, <a href="https://accessibility.blog.gov.uk/2016/07/22/using-the-fieldset-and-legend-elements/">"Using the fieldset and legend elements"</a>.{% endparagraph %}
 </section>
