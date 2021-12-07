@@ -1,3 +1,13 @@
+# [6.9.0](https://github.com/dialpad/dialtone/compare/v6.8.1...v6.9.0) (2021-12-07)
+
+
+### Features
+
+* add foundational a11y documentation ([#512](https://github.com/dialpad/dialtone/issues/512)) ([fd7d771](https://github.com/dialpad/dialtone/commit/fd7d77197576ad1506bd1dda71051aa841bcb412))
+* add responsive variations ([#474](https://github.com/dialpad/dialtone/issues/474)) ([7d7aaa4](https://github.com/dialpad/dialtone/commit/7d7aaa4b9f47bfdf48162cfa0013cb8be33ded67)), closes [#478](https://github.com/dialpad/dialtone/issues/478) [#479](https://github.com/dialpad/dialtone/issues/479) [#480](https://github.com/dialpad/dialtone/issues/480) [#486](https://github.com/dialpad/dialtone/issues/486) [#489](https://github.com/dialpad/dialtone/issues/489)
+* add windows logo as system icon ([#517](https://github.com/dialpad/dialtone/issues/517)) ([3ee2445](https://github.com/dialpad/dialtone/commit/3ee24455842b379328409a1ca30399174be46402))
+* button group css classes ([#514](https://github.com/dialpad/dialtone/issues/514)) ([edb75d7](https://github.com/dialpad/dialtone/commit/edb75d7bb672223d4faaeae5e59b1e77d7644191))
+
 ## [6.8.1](https://github.com/dialpad/dialtone/compare/v6.8.0...v6.8.1) (2021-11-23)
 
 
