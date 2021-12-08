@@ -44,7 +44,7 @@ If you would like to request a new feature for Dialtone, please fill out and sub
 
 ### Bug Report
 
-If you would like to report a bug, please post it in [#dialtone](https://dialpad.slack.com/messages/dialtone/). We will assist you in determining whether it is a Dialtone bug. Please give us a working example of the bug on a private beta or deploy preview link. If we have determined that this is a bug in Dialtone, then you may create a [Jira ticket](https://switchcomm.atlassian.net/jira/software/projects/DT/boards/187/backlog) for the bug. We will get to fixing the bug in the future, or you can fix the bug yourself by [Making a Pull Request](#making-a-pull-request)
+If you would like to report a bug, please post it in [#dialtone](https://dialpad.slack.com/messages/dialtone/). We will assist you in determining whether it is a Dialtone bug. Please give us a working example of the bug on a private beta or deploy preview link. A branch we can checkout is also helpful. If we have determined that this is a bug in Dialtone, then you may create a [Jira ticket](https://switchcomm.atlassian.net/jira/software/projects/DT/boards/187/backlog) for the bug. We will get to fixing the bug in the future, or you can fix the bug yourself by [Making a Pull Request](#making-a-pull-request)
 
 ### Making a Pull Request
 
