@@ -28,7 +28,7 @@ Types of contributions:
 
 There are a couple important considerations when thinking about contributing to Dialtone. The first is to remember that Dialtone strives to offer styles, components, or patterns intended to be shared by multiple teams or features. Generally, one-off or first-time elements (i.e. snowflakes) aren't a great fit, though there may be the occasional exception.
 
-The second is to check with the Dialtone team (in [#dialtone](https://dialpad.slack.com/messages/dialtone/)) to ensure the contribution isn't already requested, planned, or even complete.
+The second is to check with the Dialtone team (in [#dialtone](https://dialpad.slack.com/messages/dialtone/)) to ensure the contribution isn't already requested, planned, or even complete. You may also see our [Jira board](https://switchcomm.atlassian.net/jira/software/projects/DT/boards/187/backlog) for upcoming work.
 
 ### Roles
 
@@ -36,7 +36,17 @@ The second is to check with the Dialtone team (in [#dialtone](https://dialpad.sl
 - **Maintainer:** A trusted contributor with the ability to release Dialtone.
 - **Admin:** Has the ability to change any configuration on the Dialtone repository and release Dialtone. Usually for members of the Dialtone team.
 
-## Making a Pull Request
+## How to Contribute
+
+### Feature Request
+
+If you would like to request a new feature for Dialtone, please fill out and submit [this form.](https://forms.monday.com/forms/8a9a6ff69d7e9f95caee029c2806e2c1?r=use1)
+
+### Bug Report
+
+If you would like to report a bug, please post it in [#dialtone](https://dialpad.slack.com/messages/dialtone/). We will assist you in determining whether it is a Dialtone bug. Please give us a working example of the bug on a private beta or deploy preview link. If we have determined that this is a bug in Dialtone, then you may create a [Jira ticket](https://switchcomm.atlassian.net/jira/software/projects/DT/boards/187/backlog) for the bug. We will get to fixing the bug in the future, or you can fix the bug yourself by [Making a Pull Request](#making-a-pull-request)
+
+### Making a Pull Request
 
 Before submitting a pull request, make sure to communicate what you wish to change to the Dialtone team. The easiest way to do this is via the [#dialtone](https://dialpad.slack.com/messages/dialtone/) Slack channel. It's possible your change is already being worked on, has already been fixed, or maybe we just need to discuss the best solution to the problem. This prevents you from having to re-write your entire change, or even having to scrap it entirely.
 
