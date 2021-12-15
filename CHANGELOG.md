@@ -1,3 +1,15 @@
+# [6.10.0](https://github.com/dialpad/dialtone/compare/v6.9.0...v6.10.0) (2021-12-15)
+
+
+### Bug Fixes
+
+* add important to padding ([#518](https://github.com/dialpad/dialtone/issues/518)) ([2a7b0a5](https://github.com/dialpad/dialtone/commit/2a7b0a5d0ff700f9bf24369701f0dd4c93988ec3))
+
+
+### Features
+
+* **button:** add muted styles ([#516](https://github.com/dialpad/dialtone/issues/516)) ([5bea155](https://github.com/dialpad/dialtone/commit/5bea155057620865174e596c539660185029f499))
+
 # [6.9.0](https://github.com/dialpad/dialtone/compare/v6.8.1...v6.9.0) (2021-12-07)
 
 
