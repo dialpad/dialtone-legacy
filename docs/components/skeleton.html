@@ -1,0 +1,106 @@
+---
+layout: page
+title: Skeleton
+description: Skeleton loader is a non-interactive placeholder that displays a preview of the UI to visually communicate that content is in the process of loading. Skeleton is used to provide a low fidelity representation of the user interface (UI) before content appears on the page.
+storybook-url: https://vue.dialpad.design/?path=/story/components-skeleton--default
+---
+<section class="d-stack16">
+  {% header "h2", "Examples" %}
+  <div class="d-stack48">
+    <div class="d-stack8">
+      {% header "h3", "Base Styles" %}
+      {% paragraph %} Skeleton loader are grey animated shapes that visually mimics the content. They use a pulsing wave effect motion to indicate they are loading. Skeleton's default variant is body. {% endparagraph %}
+      {% codeWell %}
+      {% codeWellHeader %}
+      <div class="d-h8 d-bar2 skeleton-placeholder skeleton-placeholder--animate" />
+      {% endcodeWellHeader %}
+        {% codeWellFooter %}
+          {% highlight html linenos %}
+<div class="d-h8 d-bar2 skeleton-placeholder skeleton-placeholder--animate" />
+          {% endhighlight %}
+        {% endcodeWellFooter %}
+      {% endcodeWell %}
+    </div>
+  </div>
+</section>
+
+<section class="d-stack16">
+  {% header "h2", "Usage" %}
+  <div class="d-mt32 d-mb32">
+    <div class="d-d-block d-px16 d-py24 d-bgc-green-100 d-bar4 d-mb32">
+      <h3 class="d-mb16">
+        <span class="d-fc-green-600 d-ps-relative d-t6">
+          {% iconSystem "checkmark", "d-svg--size24" %}
+        </span>
+        <span class="d-fw-bold d-fc-green-600">Do:</span>
+      </h3>
+      <ul class="d-fs14 d-stack8 d-pr24">
+        <li>
+          Use when data takes more than 300ms to load on an average connection for our user base.
+        </li>
+        <li>
+          Use to represent a general layout of what is being loaded.
+        </li>
+        <li>
+          For a repeating list, show 6 items maximum, since it’s enough to give an idea of a layout. For conversations, limit to 3.
+        </li>
+        <li>
+          Use skeleton loading for dynamic content, and use actual content for static content that doesn’t change e.g. page title, headings, action components (button, toggles, checkboxes etc.).
+        </li>
+        <li>
+          Dynamic content: Content that would change after loading, usually data-based text.
+        </li>
+        <li>
+          Static content: Content that can be loaded quickly and wouldn’t change, usually non-data-based text.
+        </li>
+        <li>
+          Always match the size of content that will load.
+        </li>
+        <li>
+          Always allow content to load gradually. Real content should replace skeleton objects immediately when the data is available.
+        </li>
+      </ul>
+    </div>
+    <div class="d-d-block d-px16 d-py24 d-bgc-red-100 d-bar4">
+      <h3 class="d-mb16">
+        <span class="d-fc-red-600 d-ps-relative d-t6">
+          {% iconSystem "close", "d-svg--size24" %}
+        </span>
+        <span class="d-fw-bold d-fc-red-600">Don't:</span>
+      </h3>
+      <ul class="d-fs14 d-stack8 d-pr24">
+        <li>Use for fast loading less than 300ms.</li>
+        <li>Be super detailed trying to represent everything in an interface.</li>
+        <li>Use for user action feedback e.g. saving form.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="d-stack16">
+  {% header "h2", "Accessibility" %}
+  {% paragraph %}
+  For sighted users, they are able to see that there is loading content and no other action is needed until loading completes.
+  Likewise, there is nothing that needs to be added for keyboard users. For users who rely on assistive technology, skeleton’s visual representation of a loading state won’t be accessible without additional labeling.
+  {% endparagraph %}
+  {% paragraph %}
+  It's {% code %}role="status"{% endcode %} on the skeleton component, keep in mind, that:
+  {% endparagraph %}
+  {% ul %}
+    <li>
+      The aria live region role of status has an implicit {% code %}aria-live{% endcode %} value of {% code %}polite{% endcode %}, which allows a user to be
+      notified via AT (such as a screen reader) when status messages are added. The {% code %}role{% endcode %} of {% code %}status{% endcode %} also has a default
+      {% code %}aria-atomic{% endcode %} value of {% code %}true{% endcode %}, so that updates to the container marked with a role of status will result in the AT
+      presenting the entire contents of the container to the user, including any author-defined labels (or additional nested elements).
+    </li>
+    <li>
+      {% code %}aria-busy{% endcode %} state indicates an element is being modified and that assistive technologies may want to wait until the
+      changes are complete before informing the user about the update. When multiple parts of a live region need to be
+      loaded before changes are announced to the user, set {% code %}aria-busy="true"{% endcode %} until loading is complete.
+      Then set to {% code %}aria-busy="false"{% endcode %}. This prevents assistive technologies from announcing changes before updates are done.
+    </li>
+    <li>
+      If you need fully accessible skeleton and loading content, probably you will want to add {% code %}aria-live="polite"{% endcode %}
+      and {% code %}aria-busy="false"{% endcode %} to corresponding loaded html element content.
+    </li>
+  {% endul %}
+</section>

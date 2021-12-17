@@ -20,6 +20,7 @@
 @import (reference) '../../../lib/build/less/variables/icons';
 @import (reference) '../../../lib/build/less/variables/typography';
 @import (reference) '../../../lib/build/less/variables/spacing';
+@import (reference) '../../../lib/build/less/variables/colors';
 @import (reference) '../../../lib/build/less/utilities/internals';
 @import (reference) '../../../lib/build/less/utilities/spacing';
 @import (reference) '../../../lib/build/less/utilities/grid';
@@ -354,3 +355,37 @@
     margin-bottom: calc(var(--su64) + var(--su24));
   }
 }
+
+// The --placeholder-from-color and --placeholder-to-color
+// custom properties can be set on the parent class of the
+// placeholder to control the animation colors.
+.skeleton-placeholder {
+  display: flex;
+  stroke: none;
+  fill: var(--placeholder-from-color, @black-075);
+  background: var(--placeholder-from-color, @black-075);
+  animation-duration: 1000ms;
+  width: 100%;
+
+  &--animate {
+    animation-name: placeholder-throb;
+    animation-iteration-count: infinite;
+  }
+}
+
+// the animation is used by the skeleton component
+@keyframes placeholder-throb {
+  10% {
+    fill: var(--placeholder-from-color, @black-075);
+    background: var(--placeholder-from-color, @black-075);
+  }
+  50% {
+    fill: var(--placeholder-to-color, @black-050);
+    background: var(--placeholder-to-color, @black-050);
+  }
+  90% {
+    fill: var(--placeholder-from-color, @black-075);
+    background: var(--placeholder-from-color, @black-075);
+  }
+}
+
