@@ -121,6 +121,29 @@
     }
 
     //  ========================================================================
+    //  $   HOVER / FOCUS GENERATOR
+    //      Pass a class name and mixin with the properties to copy into this function
+    //      to generate hover / focus copies of it prefixed with h: and f:.
+    //      Many of the class generators in this file will already do this,
+    //      so this mixin is meant more for one off exceptions.
+    //
+    //      USAGE:
+    //      #d-internals #generate-hover-focus(d-bgc-transparent, {.d-bgc-transparent();});
+    //
+    //  ------------------------------------------------------------------------
+    #generate-hover-focus(@className, @mixin) {
+      .h\:@{className}:hover {
+        @mixin();
+      }
+      .f\:@{className}:focus {
+        @mixin();
+      }
+      .f\:@{className}:focus-within {
+        @mixin();
+      }
+    }
+
+    //  ========================================================================
     //  $   OPACITY CLASS GENERATOR
     //      Creates opacity classes for font, background, and border colors.
     //
