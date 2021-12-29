@@ -106,8 +106,8 @@
   border-color: var(--select--bc);
   //  [1] Reset the appearance
   -webkit-appearance: none;
-      -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 
   //  [2] Update the styles
   .d-input();
@@ -115,9 +115,15 @@
   --select--bc: var(--black-500);
 
   &:focus {
+    --input--bc: var(--black-500);
+
+    box-shadow: none !important;
+  }
+
+  &:focus-visible {
     --select--bc: var(--primary-color);
 
-    box-shadow: var(--bs-focus-ring);
+    box-shadow: var(--bs-focus-ring) !important;
   }
 
   &:disabled {
@@ -145,30 +151,30 @@
 .d-select__input--success {
   --select--bc: var(--success-color);
 
-  &:focus {
+  &:focus-visible {
     --select--bc: var(--success-color);
 
-    box-shadow: var(--bs-focus-ring-success);
+    box-shadow: var(--bs-focus-ring-success) !important;
   }
 }
 
 .d-select__input--error {
   --select--bc: var(--error-color);
 
-  &:focus {
+  &:focus-visible {
     --select--bc: var(--error-color);
 
-    box-shadow: var(--bs-focus-ring-error);
+    box-shadow: var(--bs-focus-ring-error) !important;
   }
 }
 
 .d-select__input--warning {
   --select--bc: var(--warning-color);
 
-  &:focus {
+  &:focus-visible {
     --select--bc: var(--warning-color);
 
-    box-shadow: var(--bs-focus-ring-warning);
+    box-shadow: var(--bs-focus-ring-warning) !important;
   }
 }
 
