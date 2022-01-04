@@ -1,3 +1,17 @@
+# [6.11.0](https://github.com/dialpad/dialtone/compare/v6.10.0...v6.11.0) (2022-01-04)
+
+
+### Bug Fixes
+
+* generate missing hover/focus classes ([#522](https://github.com/dialpad/dialtone/issues/522)) ([0cc761b](https://github.com/dialpad/dialtone/commit/0cc761b5b6ee86746dfbd54e48400652b819348c))
+* responsive variations not working ([#526](https://github.com/dialpad/dialtone/issues/526)) ([c29d53d](https://github.com/dialpad/dialtone/commit/c29d53dc1c3c89a839d3c9724380f5b2e27e0cc2))
+* svg sizes showing up as NaN in svg utility class page ([#525](https://github.com/dialpad/dialtone/issues/525)) ([67c2b26](https://github.com/dialpad/dialtone/commit/67c2b26704e0bfe1209f578cfcec222645cfc549))
+
+
+### Features
+
+* add file upload spot illustration ([#527](https://github.com/dialpad/dialtone/issues/527)) ([e1533e8](https://github.com/dialpad/dialtone/commit/e1533e856f570688aa5ffc3dd37ae05c3a842987))
+
 # [6.10.0](https://github.com/dialpad/dialtone/compare/v6.9.0...v6.10.0) (2021-12-15)
 
 
