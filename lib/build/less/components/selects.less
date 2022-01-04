@@ -115,7 +115,13 @@
   --select--bc: var(--black-500);
 
   &:focus {
-    --input--bc: var(--black-500);
+    --select--bc: var(--primary-color);
+
+    box-shadow: var(--bs-focus-ring);
+  }
+
+  &:focus:not(:focus-visible) {
+    --select--bc: var(--black-500);
 
     box-shadow: none !important;
   }
@@ -123,7 +129,7 @@
   &:focus-visible {
     --select--bc: var(--primary-color);
 
-    box-shadow: var(--bs-focus-ring) !important;
+    box-shadow: var(--bs-focus-ring);
   }
 
   &:disabled {
@@ -151,6 +157,18 @@
 .d-select__input--success {
   --select--bc: var(--success-color);
 
+  &:focus {
+    --select--bc: var(--success-color);
+
+    box-shadow: var(--bs-focus-ring-success) !important;
+  }
+
+  &:focus:not(:focus-visible) {
+    --select--bc: var(--black-500);
+
+    box-shadow: none !important;
+  }
+
   &:focus-visible {
     --select--bc: var(--success-color);
 
@@ -161,6 +179,18 @@
 .d-select__input--error {
   --select--bc: var(--error-color);
 
+  &:focus {
+    --select--bc: var(--error-color);
+
+    box-shadow: var(--bs-focus-ring-error) !important;
+  }
+
+  &:focus:not(:focus-visible) {
+    --select--bc: var(--black-500);
+
+    box-shadow: none !important;
+  }
+
   &:focus-visible {
     --select--bc: var(--error-color);
 
@@ -170,6 +200,18 @@
 
 .d-select__input--warning {
   --select--bc: var(--warning-color);
+
+  &:focus {
+    --select--bc: var(--warning-color);
+
+    box-shadow: var(--bs-focus-ring-warning) !important;
+  }
+
+  &:focus:not(:focus-visible) {
+    --select--bc: var(--black-500);
+
+    box-shadow: none !important;
+  }
 
   &:focus-visible {
     --select--bc: var(--warning-color);

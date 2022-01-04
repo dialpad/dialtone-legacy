@@ -100,8 +100,21 @@
         &:extend(.d-tooltip--hide);
     }
 
-    &:focus-visible,
+    &:focus,
     &:hover {
+        .d-tooltip {
+            &:extend(.d-tooltip--show);
+        }
+    }
+
+    // Remove focus style from browsers compatible with focus-visible
+    &:focus:not(:focus-visible) {
+        .d-tooltip {
+            &:extend(.d-tooltip--hide);
+       }
+    }
+
+    &:focus-visible {
         .d-tooltip {
             &:extend(.d-tooltip--show);
         }
