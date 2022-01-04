@@ -1,20 +1,3 @@
-//  ================================================================================
-//  @@  RESPONSIVE CLASSES GENERATION
-//  ================================================================================
-//  -- BREAK POINTS
-const breakpoints = [
-  { prefix: 'sm\\:', mediaQuery: '(max-width: 480px)' },
-  { prefix: 'md\\:', mediaQuery: '(max-width: 640px)' },
-  { prefix: 'lg\\:', mediaQuery: '(max-width: 980px)' },
-  { prefix: 'xl\\:', mediaQuery: '(max-width: 1264px)' },
-];
-//  -- CLASSES
-const classes = [
-  /\.d-d-*/,
-  /\.d-mt*/,
-  /\.d-g-cols*/
-];
-
 module.exports = {
     plugins: [
         //  Allows you to use Sass-like features in CSS
@@ -23,7 +6,6 @@ module.exports = {
         require('postcss-preset-env')({
             stage: 3,
         }),
-        require('@dialpad/postcss-responsive-variations')({breakpoints, classes}),
         //  Re-order the CSS declaration
         require('postcss-sorting')({
             "properties-order": [
