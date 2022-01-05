@@ -52,6 +52,10 @@
         --fco: 100%;
         color: hsla(var(~'--@{color-name}-h') var(~'--@{color-name}-s') var(~'--@{color-name}-l') ~' / ' var(--fco)) !important;
       }
+      .fv\:d-fc-@{color-name}:focus-visible {
+        --fco: 100%;
+        color: hsla(var(~'--@{color-name}-h') var(~'--@{color-name}-s') var(~'--@{color-name}-l') ~' / ' var(--fco)) !important;
+      }
       #d-internals #dark-mode('.d\:d-fc-@{color-name}', {
         --fco: 100%;
         color: hsla(var(~'--@{color-name}-h') var(~'--@{color-name}-s') var(~'--@{color-name}-l') ~' / ' var(--fco)) !important;
@@ -66,6 +70,10 @@
         border-color: hsla(var(~'--@{color-name}-h') var(~'--@{color-name}-s') var(~'--@{color-name}-l') ~' / ' var(--bco)) !important;
       }
       .f\:d-bc-@{color-name}:focus-within {
+        --bco: 100%;
+        border-color: hsla(var(~'--@{color-name}-h') var(~'--@{color-name}-s') var(~'--@{color-name}-l') ~' / ' var(--bco)) !important;
+      }
+      .fv\:d-bc-@{color-name}:focus-visible {
         --bco: 100%;
         border-color: hsla(var(~'--@{color-name}-h') var(~'--@{color-name}-s') var(~'--@{color-name}-l') ~' / ' var(--bco)) !important;
       }
@@ -92,6 +100,10 @@
         background-color: hsla(var(~'--@{color-name}-h') var(~'--@{color-name}-s') var(~'--@{color-name}-l') ~' / ' var(--bgo)) !important;
       }
       .f\:d-bgc-@{color-name}:focus-within {
+        --bgo: 100%;
+        background-color: hsla(var(~'--@{color-name}-h') var(~'--@{color-name}-s') var(~'--@{color-name}-l') ~' / ' var(--bgo)) !important;
+      }
+      .fv\:d-bgc-@{color-name}:focus-visible {
         --bgo: 100%;
         background-color: hsla(var(~'--@{color-name}-h') var(~'--@{color-name}-s') var(~'--@{color-name}-l') ~' / ' var(--bgo)) !important;
       }
@@ -141,6 +153,9 @@
       .f\:@{className}:focus-within {
         @mixin();
       }
+      .fv\:@{className}:focus-visible {
+        @mixin();
+      }
     }
 
     //  ========================================================================
@@ -161,6 +176,9 @@
       .f\:d-fco@{opacity}:focus-within {
         --fco: ~'@{opacity}%' !important;
       }
+      .fv\:d-fco@{opacity}:focus-visible {
+        --fco: ~'@{opacity}%' !important;
+      }
       #d-internals #dark-mode('.d\:d-fco@{opacity}', {
         --fco: ~'@{opacity}%' !important;
       });
@@ -173,6 +191,9 @@
         --bco: ~'@{opacity}%' !important;
       }
       .f\:d-bco@{opacity}:focus-within {
+        --bco: ~'@{opacity}%' !important;
+      }
+      .fv\:d-bco@{opacity}:focus-visible {
         --bco: ~'@{opacity}%' !important;
       }
       #d-internals #dark-mode('.d\:d-bco@{opacity}', {
@@ -196,6 +217,9 @@
       .f\:d-bgo@{opacity}:focus-within {
         --bgo: ~'@{opacity}%' !important;
       }
+      .fv\:d-bgo@{opacity}:focus-visible {
+        --bgo: ~'@{opacity}%' !important;
+      }
       #d-internals #dark-mode('.d\:d-bgo@{opacity}', {
         --bgo: ~'@{opacity}%' !important;
       });
@@ -209,6 +233,9 @@
       .f\:d-bgg-from-@{opacity}:focus-within {
         --bgg-from-opacity: ~'@{opacity}%' !important;
       }
+      .fv\:d-bgg-from-@{opacity}:focus-visible {
+        --bgg-from-opacity: ~'@{opacity}%' !important;
+      }
       #d-internals #dark-mode('.d\:d-bgg-from-@{opacity}', {
         --bgg-from-opacity: ~'@{opacity}%' !important;
       });
@@ -220,6 +247,9 @@
         --bgg-to-opacity: ~'@{opacity}%' !important;
       }
       .f\:d-bgg-to-@{opacity}:focus-within {
+        --bgg-to-opacity: ~'@{opacity}%' !important;
+      }
+      .fv\:d-bgg-to-@{opacity}:focus-visible {
         --bgg-to-opacity: ~'@{opacity}%' !important;
       }
       #d-internals #dark-mode('.d\:d-bgg-to-@{opacity}', {
@@ -377,6 +407,11 @@
         --bgg-from: hsla(var(~"--@{color}-h") var(~"--@{color}-s") var(~"--@{color}-l") ~" / " var(--bgg-from-opacity));
         --bgg-to: hsla(var(~"--@{color}-h") var(~"--@{color}-s") var(~"--@{color}-l") ~" / " 0%);
       }
+      .fv\:d-bgg-from-@{color}:focus-visible {
+        --bgg-from-opacity: 100%;
+        --bgg-from: hsla(var(~"--@{color}-h") var(~"--@{color}-s") var(~"--@{color}-l") ~" / " var(--bgg-from-opacity));
+        --bgg-to: hsla(var(~"--@{color}-h") var(~"--@{color}-s") var(~"--@{color}-l") ~" / " 0%);
+      }
       #d-internals #dark-mode('.d\:d-bgg-from-@{color}', {
         --bgg-from-opacity: 100%;
         --bgg-from: hsla(var(~"--@{color}-h") var(~"--@{color}-s") var(~"--@{color}-l") ~" / " var(--bgg-from-opacity));
@@ -391,6 +426,10 @@
         --bgg-to: hsla(var(~"--@{color}-h") var(~"--@{color}-s") var(~"--@{color}-l") ~" / " var(--bgg-to-opacity)) !important;
       }
       .f\:d-bgg-to-@{color}:focus-within {
+        --bgg-to-opacity: 100%;
+        --bgg-to: hsla(var(~"--@{color}-h") var(~"--@{color}-s") var(~"--@{color}-l") ~" / " var(--bgg-to-opacity)) !important;
+      }
+      .fv\:d-bgg-to-@{color}:focus-visible {
         --bgg-to-opacity: 100%;
         --bgg-to: hsla(var(~"--@{color}-h") var(~"--@{color}-s") var(~"--@{color}-l") ~" / " var(--bgg-to-opacity)) !important;
       }
