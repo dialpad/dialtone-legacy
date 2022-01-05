@@ -18,6 +18,23 @@ var settings = {
 };
 
 //  ================================================================================
+//  @@  RESPONSIVE CLASSES GENERATION
+//  ================================================================================
+//  -- BREAK POINTS
+const breakpoints = [
+  { prefix: 'sm\\:', mediaQuery: '(max-width: 480px)' },
+  { prefix: 'md\\:', mediaQuery: '(max-width: 640px)' },
+  { prefix: 'lg\\:', mediaQuery: '(max-width: 980px)' },
+  { prefix: 'xl\\:', mediaQuery: '(max-width: 1264px)' },
+];
+//  -- CLASSES
+const classes = [
+  /\.d-d-*/,
+  /\.d-mt*/,
+  /\.d-g-cols*/
+];
+
+//  ================================================================================
 //  @  PACKAGES
 //     What makes everything go
 //  ================================================================================
@@ -47,6 +64,7 @@ var gutil = settings.styles ? require('gulp-util') : null;
 var less = settings.styles ? require('gulp-less') : null;
 var sorting = settings.styles ? require('postcss-sorting') : null;
 var runSequence = settings.styles ? require('run-sequence') : null;
+var postcssResponsify = settings.styles ? require('@dialpad/postcss-responsive-variations')({breakpoints, classes}) : null;
 
 //  @@ SVGS
 var path = settings.svgs ? require('path') : null;
@@ -248,11 +266,10 @@ var libStyles = function(done) {
     return src(paths.styles.inputLib)
         //.pipe(cache('libStyles'))
         .pipe(less())
+        .pipe(postcss([ postcssResponsify ]))
         .pipe(dest(paths.styles.outputLib))
         .pipe(dest(paths.styles.outputDocs))
-        .pipe(postcss([
-            cssnano()
-        ]))
+        .pipe(postcss([ cssnano ]))
         .pipe(rename({ suffix: '.min' }))
         .pipe(dest(paths.styles.outputLib))
         .pipe(dest(paths.styles.outputDocs));
@@ -268,6 +285,7 @@ var libStylesDev = function(done) {
     return src(paths.styles.inputLib)
         // compile less to css
         .pipe(less())
+        .pipe(postcss([ postcssResponsify ]))
         // concat the css into a single file
         .pipe(concat('dialtone.css'))
         .pipe(dest(paths.styles.outputLib))

@@ -38,70 +38,85 @@
 #d-internals #color-classes(green-700);
 #d-internals #color-classes(red-700);
 
-//  --  We can't use the mixin for this one class :(
-.d-fc-primary,
-.h\:d-fc-primary:hover,
-.f\:d-fc-primary:focus {
+.d-fc-primary {
     color: hsla(var(--primary-color-h) var(--primary-color-s) var(--primary-color-l)  ~' / ' var(--fco)) !important;
 }
-
-.f\:d-fc-primary:focus-within {
-    color: hsla(var(--primary-color-h) var(--primary-color-s) var(--primary-color-l) ~' / ' var(--fco)) !important;
-}
+#d-internals #generate-hover-focus(d-fc-primary, {.d-fc-primary();});
 
 //  $$  TEXT COLORS
 //  ----------------------------------------------------------------------------
 .d-fc-dark { &:extend(.d-fc-black-900); }
-.h\:d-fc-dark:hover { &:extend(.h\:d-fc-black-900:hover); }
-.f\:d-fc-dark:focus { &:extend(.f\:d-fc-black-900:focus); }
-.f\:d-fc-dark:focus-within { &:extend(.f\:d-fc-black-900:focus-within); }
+#d-internals #generate-hover-focus(d-fc-dark, {.d-fc-dark();});
 
 .d-fc-medium { &:extend(.d-fc-black-800); }
-.h\:d-fc-medium:hover { &:extend(.h\:d-fc-black-800:hover); }
-.f\:d-fc-medium:focus { &:extend(.f\:d-fc-black-800:focus); }
-.f\:d-fc-medium:focus-within { &:extend(.f\:d-fc-black-800:focus-within); }
+#d-internals #generate-hover-focus(d-fc-medium, {.d-fc-medium();});
 
 .d-fc-light { &:extend(.d-fc-black-700); }
-.h\:d-fc-light:hover { &:extend(.h\:d-fc-black-700:hover); }
-.f\:d-fc-light:focus { &:extend(.f\:d-fc-black-700:focus); }
-.f\:d-fc-light:focus-within { &:extend(.f\:d-fc-black-700:focus-within); }
+#d-internals #generate-hover-focus(d-fc-light, {.d-fc-light();});
 
 .d-fc-lighter { &:extend(.d-fc-black-600); }
+#d-internals #generate-hover-focus(d-fc-lighter, {.d-fc-lighter();});
+
 .d-fc-purple { &:extend(.d-fc-purple-500); }
+#d-internals #generate-hover-focus(d-fc-purple, {.d-fc-purple();});
+
 .d-fc-orange { &:extend(.d-fc-orange-600); }
+#d-internals #generate-hover-focus(d-fc-orange, {.d-fc-orange();});
+
 .d-fc-pink { &:extend(.d-fc-pink-600); }
+#d-internals #generate-hover-focus(d-fc-pink, {.d-fc-pink();});
 
 .d-fc-green,
 .d-fc-success { &:extend(.d-fc-green-600); }
+#d-internals #generate-hover-focus(d-fc-green, {.d-fc-green();});
+#d-internals #generate-hover-focus(d-fc-success, {.d-fc-success();});
 
 .d-fc-yellow,
 .d-fc-warning { &:extend(.d-fc-yellow-600); }
+#d-internals #generate-hover-focus(d-fc-yellow, {.d-fc-yellow();});
+#d-internals #generate-hover-focus(d-fc-warning, {.d-fc-warning();});
 
 .d-fc-red,
 .d-fc-error,
 .d-fc-danger { &:extend(.d-fc-red-600); }
+#d-internals #generate-hover-focus(d-fc-red, {.d-fc-red();});
+#d-internals #generate-hover-focus(d-fc-error, {.d-fc-error();});
+#d-internals #generate-hover-focus(d-fc-danger, {.d-fc-danger();});
 
 .d-fc-current { color: currentColor !important; }
+#d-internals #generate-hover-focus(d-fc-current, {.d-fc-current();});
 .d-fc-transparent { color: transparent !important; }
+#d-internals #generate-hover-focus(d-fc-transparent, {.d-fc-transparent();});
 .d-fc-unset { color: unset !important; }
+#d-internals #generate-hover-focus(d-fc-unset, {.d-fc-unset();});
 
 
 //  $$  BACKGROUND COLORS
 //  ----------------------------------------------------------------------------
 .d-bgc-success { &:extend(.d-bgc-green-500); }
+#d-internals #generate-hover-focus(d-bgc-success, {.d-bgc-success();});
 .d-bgc-warning { &:extend(.d-bgc-yellow-500); }
+#d-internals #generate-hover-focus(d-bgc-warning, {.d-bgc-warning();});
 
 .d-bgc-error,
 .d-bgc-danger { &:extend(.d-bgc-red-500); }
+#d-internals #generate-hover-focus(d-bgc-error, {.d-bgc-error();});
+#d-internals #generate-hover-focus(d-bgc-danger, {.d-bgc-danger();});
+
 .d-bgc-transparent { background-color: transparent !important; background-image: none !important; }
+#d-internals #generate-hover-focus(d-bgc-transparent, {.d-bgc-transparent();});
 .d-bgc-unset { background-color: unset !important; background-image: unset !important; }
+#d-internals #generate-hover-focus(d-bgc-unset, {.d-bgc-unset();});
 
 
 //  $$  BORDER COLORS
 //  ----------------------------------------------------------------------------
 .d-bc-transparent { border-color: transparent !important; }
+#d-internals #generate-hover-focus(d-bc-transparent, {.d-bc-transparent();});
 .d-bc-current { border-color: currentColor !important; }
+#d-internals #generate-hover-focus(d-bc-current , {.d-bc-current();});
 .d-bc-unset { border-color: unset !important; }
+#d-internals #generate-hover-focus(d-bc-unset, {.d-bc-unset();});
 
 
 //  $   OPACITY CLASSES
