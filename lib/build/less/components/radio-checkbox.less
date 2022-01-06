@@ -60,6 +60,19 @@
             box-shadow: var(--bs-focus-ring);
         }
 
+        &:focus:not(:focus-visible),
+        &:checked:focus:not(:focus-visible) {
+          box-shadow: none;
+        }
+
+        &:focus-visible,
+        &:checked:focus-visible {
+          --check-radio--bc: var(--check-radio--color);
+
+          outline: 0;
+          box-shadow: var(--bs-focus-ring);
+        }
+
         &:checked {
             --check-radio--bc: var(--check-radio--color);
         }
@@ -256,6 +269,16 @@
             box-shadow: var(--bs-focus-ring), inset 0 0 0 var(--su2) var(--white);
         }
 
+        &:focus:not(:focus-visible),
+        &:checked:focus:not(:focus-visible) {
+          box-shadow: inset 0 0 0 var(--su2) var(--white);
+        }
+
+        &:focus-visible,
+        &:checked:focus-visible {
+          box-shadow: var(--bs-focus-ring), inset 0 0 0 var(--su2) var(--white);
+        }
+
         &:checked {
             --check-radio--bgc: var(--check-radio--color);
 
@@ -283,6 +306,16 @@
     &:checked:focus {
         box-shadow: var(--bs-focus-ring-warning), inset 0 0 0 var(--su2) var(--white);
     }
+
+    &:focus:not(:focus-visible),
+    &:checked:focus:not(:focus-visible) {
+      box-shadow: inset 0 0 0 var(--su2) var(--white);
+    }
+
+    &:focus-visible,
+    &:checked:focus-visible {
+      box-shadow: var(--bs-focus-ring-warning), inset 0 0 0 var(--su2) var(--white);
+    }
 }
 
 .d-radio--error {
@@ -293,6 +326,16 @@
     &:checked:focus {
         box-shadow: var(--bs-focus-ring-error), inset 0 0 0 var(--su2) var(--white);
     }
+
+    &:focus:not(:focus-visible),
+    &:checked:focus:not(:focus-visible) {
+      box-shadow: inset 0 0 0 var(--su2) var(--white);
+    }
+
+    &:focus-visible,
+    &:checked:focus-visible {
+      box-shadow: var(--bs-focus-ring-error), inset 0 0 0 var(--su2) var(--white);
+    }
 }
 
 .d-radio--success {
@@ -302,5 +345,15 @@
     &:focus,
     &:checked:focus {
         box-shadow: var(--bs-focus-ring-success), inset 0 0 0 var(--su2) var(--white);
+    }
+
+    &:focus:not(:focus-visible),
+    &:checked:focus:not(:focus-visible) {
+      box-shadow: inset 0 0 0 var(--su2) var(--white);
+    }
+
+    &:focus-visible,
+    &:checked:focus-visible {
+      box-shadow: var(--bs-focus-ring-success), inset 0 0 0 var(--su2) var(--white);
     }
 }
