@@ -100,24 +100,10 @@
         &:extend(.d-tooltip--hide);
     }
 
-    &:focus,
-    &:hover {
+    &:hover,
+    &.focus-visible {
         .d-tooltip {
             &:extend(.d-tooltip--show);
-        }
-    }
-
-    &:focus:not(:focus-visible):focus:not(:hover) {
-        // Needed because if we extend .d-tooltip--hide, browsers incompatible with
-        // :focus-visible would remove .d-tooltip--hide class too
-        .d-tooltip {
-            transform: unset;
-            visibility: hidden;
-            opacity: 0;
-            transition:
-              visibility 0s 200ms,
-              transform 200ms var(--ttf-in-out) 0s,
-              opacity 200ms var(--ttf-in-out) 0s;
         }
     }
 }
