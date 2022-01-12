@@ -65,6 +65,7 @@ var less = settings.styles ? require('gulp-less') : null;
 var sorting = settings.styles ? require('postcss-sorting') : null;
 var runSequence = settings.styles ? require('run-sequence') : null;
 var postcssResponsify = settings.styles ? require('@dialpad/postcss-responsive-variations')({breakpoints, classes}) : null;
+var postcssFocusVisible = settings.styles ? require('postcss-focus-visible') : null;
 
 //  @@ SVGS
 var path = settings.svgs ? require('path') : null;
@@ -266,7 +267,7 @@ var libStyles = function(done) {
     return src(paths.styles.inputLib)
         //.pipe(cache('libStyles'))
         .pipe(less())
-        .pipe(postcss([ postcssResponsify ]))
+        .pipe(postcss([ postcssResponsify, postcssFocusVisible ]))
         .pipe(dest(paths.styles.outputLib))
         .pipe(dest(paths.styles.outputDocs))
         .pipe(postcss([ cssnano ]))
@@ -285,7 +286,7 @@ var libStylesDev = function(done) {
     return src(paths.styles.inputLib)
         // compile less to css
         .pipe(less())
-        .pipe(postcss([ postcssResponsify ]))
+        .pipe(postcss([ postcssResponsify, postcssFocusVisible ]))
         // concat the css into a single file
         .pipe(concat('dialtone.css'))
         .pipe(dest(paths.styles.outputLib))
