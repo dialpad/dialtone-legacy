@@ -1,3 +1,12 @@
+# [6.12.0](https://github.com/dialpad/dialtone/compare/v6.11.0...v6.12.0) (2022-01-13)
+
+
+### Features
+
+* add documentation for new skeleton component ([#521](https://github.com/dialpad/dialtone/issues/521)) ([574f976](https://github.com/dialpad/dialtone/commit/574f97679619e730050d5a75cadb4fbb020e5af8))
+* implement focus visible ([#524](https://github.com/dialpad/dialtone/issues/524)) ([20938ee](https://github.com/dialpad/dialtone/commit/20938ee94efed2a8ea8c7632a631e2f41ff9a1da))
+* implement focus visible polyfill ([#528](https://github.com/dialpad/dialtone/issues/528)) ([0c3a661](https://github.com/dialpad/dialtone/commit/0c3a661eb2748e03a2a2bfcf75642e7b241bd8bf))
+
 # [6.11.0](https://github.com/dialpad/dialtone/compare/v6.10.0...v6.11.0) (2022-01-04)
 
 
