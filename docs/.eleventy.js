@@ -29,6 +29,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy('assets/fonts');
     eleventyConfig.addPassthroughCopy('assets/images');
     eleventyConfig.addPassthroughCopy('assets/js');
+    eleventyConfig.addPassthroughCopy({'../node_modules/focus-visible/dist/focus-visible.min.js': 'assets/js/focus-visible-polyfill.min.js'});
 
     //  Icon shortcode
     //  Re-used (with love) from Stack Overflow's Stacks. Extended for our purposes
