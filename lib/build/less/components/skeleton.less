@@ -1,0 +1,43 @@
+//
+//  DIALTONE
+//  COMPONENTS: SKELETON
+//
+//  These are the styles for skeleton component.
+//  The --placeholder-from-color and --placeholder-to-color custom properties can be set on the parent class of the
+//  placeholder to control the animation colors.
+//  For further documentation of these styles, please visit https://dialpad.design/components/skeleton
+
+//  ============================================================================
+//  @   SKELETON CONTAINER
+//  ----------------------------------------------------------------------------
+.skeleton-placeholder {
+  display: flex;
+  width: 100%;
+  background: var(--placeholder-from-color, @black-075);
+  animation-duration: 1000ms;
+  fill: var(--placeholder-from-color, @black-075);
+  stroke: none;
+
+  &--animate {
+    animation-name: placeholder-throb;
+    animation-iteration-count: infinite;
+  }
+}
+
+// the animation is used by the skeleton component
+@keyframes placeholder-throb {
+  10% {
+    background: var(--placeholder-from-color, @black-075);
+    fill: var(--placeholder-from-color, @black-075);
+  }
+
+  50% {
+    background: var(--placeholder-to-color, @black-050);
+    fill: var(--placeholder-to-color, @black-050);
+  }
+
+  90% {
+    background: var(--placeholder-from-color, @black-075);
+    fill: var(--placeholder-from-color, @black-075);
+  }
+}
