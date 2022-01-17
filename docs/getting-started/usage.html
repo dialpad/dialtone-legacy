@@ -59,6 +59,14 @@ description: A general overview of Dialtone's utility classes, CSS components, a
   {% endol %}
 </section>
 <section class="d-stack16">
+  {% header "h2", "Polyfills" %}
+  {% paragraph %}In order to make Dialtone work accross our supported browsers you need to manually install <span class="d-fw-bold">focus-visible</span> polyfill and <span class="d-fw-bold">postcss-focus-visible</span> plugin. {% endparagraph %}
+  {% ol %}
+  <li>Focus-visible adds a listener to every element that should be keyboard-focused only and when the element is focused, it adds the .focus-visible class to it, follow the <a href="https://github.com/WICG/focus-visible#installation" target="_blank">focus-visible</a>  installation instructions</li>
+  <li>Postcss focus-visible plugin adds a .focus-visible class for every :focus-visible class found in your css, follow the <a href="https://www.npmjs.com/package/postcss-focus-visible" target="_blank">postcss-focus-visible</a> installation instructions</li>
+  {% endol %}
+</section>
+<section class="d-stack16">
   {% header "h2", "Box-Sizing" %}
   {% paragraph %}All Dialtone components are implemented with {% code %}box-sizing: border-box;{% endcode %} applied. To understand why we prefer {% code %}border-box{% endcode %} over {% code %}content-box{% endcode %}, please visit this <a target="_blank" class="d-link" href="https://stackoverflow.com/c/dialpad/questions/121">Stack Overflow Teams question</a>.{% endparagraph %}
   {% paragraph %}In {% code %}Vue{% endcode %}, we apply {% code %}border-box{% endcode %} globally at the {% code %}VueView{% endcode %} level, ensuring all child elements use this style. As such, Dialtone styles will work correctly in Vue with respect to element sizing.{% endparagraph %}
