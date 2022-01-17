@@ -106,7 +106,7 @@ title: Best Practices
   <h4>Source</h4>
   {% paragraph %}<a href="https://webaim.org/techniques/skipnav/" class="d-link" target="_blank">WebAim - “Skip Navigation Links”</a>{% endparagraph %}
 </section>
-<section class="d-stack16">  
+<section class="d-stack16">
   {% header "h2", "Form best practices" %}
   {% paragraph %}Forms can be difficult, high-friction points for sighted and able users, which means if not done correctly, they can be simply unusable for users reliant on keyboard navigation or assistive technology. Users should be able to fill in forms, press buttons, use range sliders, select options, and operate controls with ease. Forms that use JavaScript to manipulate form data, set focus, change form elements, or submit forms can often create interactions that only work with a mouse. Ensure your forms can be understood and operated with the keyboard alone.{% endparagraph %}
   {% paragraph %}Labeling is also important. Input labels describe the function of a form control (i.e. checkbox, radio button, etc.) and generally appear adjacent to it. While sighted users make the connection visually, users reliant on a screen reader or other assistive technology may not. The {% code %}label{% endcode %} element programmatically associates a text label to its form control, creating a connection that doesn’t rely on vision.{% endparagraph %}
@@ -114,4 +114,38 @@ title: Best Practices
   {% paragraph %}List-based inputs, such as {% code %}select{% endcode %}, comboboxes, or custom dropdown menus can be tricky for keyboard navigation. Users should be able to navigate through the options using their arrows, not their tab key.{% endparagraph %}
   <h4>Source</h4>
   {% paragraph %}<a href="https://webaim.org/techniques/forms/controls" class="d-link" target="_blank">WebAim - “Creating Accessible Forms.”</a>{% endparagraph %}
+</section>
+<section class="d-stack16">
+  {% header "h2", "Focus vs Focus-visible" %}
+  {% paragraph %}User agents can choose their own heuristics for when to match :focus-visible; however, the following (non-normative) suggestions can be used as a starting point:{% endparagraph %}
+  {% ul %}
+    <li>If a user has expressed a preference (such as via a system preference or a browser setting) to always see a visible focus indicator, the user agent should honor this by having :focus-visible always match on the active element, regardless of any other factors. (Another option may be for the user agent to show its own focus indicator regardless of author styles.)</li>
+    <li>Any element which supports keyboard input (such as an input element, or any other element which may trigger a virtual keyboard to be shown on focus if a physical keyboard is not present) should always match :focus-visible when focused.</li>
+    <li>If the user interacts with the page via the keyboard, the currently focused element should match :focus-visible (i.e. keyboard usage may change whether this pseudo-class matches even if it doesn’t affect :focus).</li>
+    <li>If the user interacts with the page via a pointing device, such that the focus is moved to a new element which does not support user input, the newly focused element should not match :focus-visible.</li>
+    <li>If the active element matches :focus-visible, and a script causes focus to move elsewhere, the newly focused element should match :focus-visible.</li>
+    <li>Conversely, if the active element does not match :focus-visible, and a script causes focus to move elsewhere, the newly focused element should not match :focus-visible.</li>
+  {% endul %}
+
+  {% paragraph %}User agents should also use :focus-visible to specify the default focus style, so that authors using :focus-visible will not also need to disable the default :focus style.{% endparagraph %}
+
+  {% paragraph %}In general, a rule of thumb is that: if an element is going to need the keyboard (ex. inputs) that element should use <span class="d-fw-bold">focus</span>, otherwise, it should use <span class="d-fw-bold">focus-visible</span>. Here is a list of elements that use focus vs focus-visible: {% endparagraph %}
+  {% paragraph %} <span class="d-fw-bold">Focus</span> {% endparagraph %}
+  {% ul %}
+    <li>Input</li>
+    <li>Select menu</li>
+  {% endul %}
+  {% paragraph %} <span class="d-fw-bold">Focus visible</span> {% endparagraph %}
+  {% ul %}
+    <li>Button</li>
+    <li>Link</li>
+    <li>Checkbox</li>
+    <li>Radio</li>
+    <li>Dropdown menu</li>
+    <li>List item</li>
+    <li>Tab</li>
+  {% endul %}
+  <h4>Source</h4>
+  {% paragraph %}<a href="https://www.w3.org/TR/selectors-4/#the-focus-visible-pseudo" class="d-link" target="_blank">The Focus-Indicated Pseudo-class: :focus-visible</a>{% endparagraph %}
+  {% paragraph %}<a href="https://www.w3.org/WAI/WCAG21/Understanding/focus-visible.html" class="d-link" target="_blank">Understanding Success Criterion 2.4.7: Focus Visible.</a>{% endparagraph %}
 </section>
