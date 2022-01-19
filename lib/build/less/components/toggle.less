@@ -1,0 +1,96 @@
+//@import (reference) '../variables/icons.less';
+
+//
+//  DIALTONE
+//  COMPONENTS: TOGGLE
+//
+//  These are toggle classes for Dialpad's design system Dialtone.
+//  For further documentation of these and other classes,
+//  visit https://dialpad.design/components/toggle
+//
+//  TABLE OF CONTENTS
+//  • BASE STYLE
+//  • VISUAL STYLES
+//  • ALTERNATE STYLES
+//
+//
+//  ============================================================================
+//  $   BASE STYLE
+//  ----------------------------------------------------------------------------
+.d-toggle {
+  //  Component specific CSS Vars
+  //  ------------------------------------------------------------------------
+  --toggle--ta: var(--ttf-in-out);
+  --toggle-ts: var(--td200);
+  --toggle-bc: var(--black-200);
+
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  width: 48px;
+  height: 24px;
+  padding: 0;
+  line-height: 20px;
+  vertical-align: middle;
+  background-color: var(--toggle-bc);
+  border: 1px solid var(--toggle-bc);
+  border-radius: 25px;
+  cursor: pointer;
+
+  &__inner {
+    position: absolute;
+    top: 2px;
+    left: 23px;
+    color: var(--white);
+    font-size: 12px;
+  }
+
+  &::after {
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: 20px;
+    height: 20px;
+    background-color: var(--white);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: left var(--toggle-ts) var(--toggle--ta);
+    content: ' ';
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: var(--bs-focus-ring);
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: 0;
+    box-shadow: none;
+  }
+}
+
+//  $$  CHECKED TOGGLE
+//  ----------------------------------------------------------------------------
+.d-toggle--checked {
+  --toggle-bc: var(--primary-color);
+
+  .d-toggle__inner {
+    left: 4px;
+  }
+
+  &::after {
+    left: 25px;
+  }
+}
+
+//  $$  DISABLED TOGGLE
+//  ----------------------------------------------------------------------------
+.d-toggle--disabled {
+  cursor: no-drop;
+  opacity: 0.5;
+
+  &::after {
+    cursor: no-drop;
+    transition-property: none;
+  }
+}
