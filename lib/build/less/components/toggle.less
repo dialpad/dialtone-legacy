@@ -1,0 +1,96 @@
+//@import (reference) '../variables/icons.less';
+
+//
+//  DIALTONE
+//  COMPONENTS: TOGGLE
+//
+//  These are toggle classes for Dialpad's design system Dialtone.
+//  For further documentation of these and other classes,
+//  visit https://dialpad.design/components/toggle
+//
+//  TABLE OF CONTENTS
+//  • BASE STYLE
+//  • CHECKED STYLES
+//  • DISABLED STYLES
+//
+//
+//  ============================================================================
+//  $   BASE STYLE
+//  ----------------------------------------------------------------------------
+.d-toggle {
+  //  Component specific CSS Vars
+  //  ------------------------------------------------------------------------
+  --toggle--ta: var(--ttf-in-out);
+  --toggle-ts: var(--td200);
+  --toggle-bc: var(--black-200);
+
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  width: var(--su48);
+  height: var(--su24);
+  padding: 0;
+  line-height: var(--lh4);
+  vertical-align: middle;
+  background-color: var(--toggle-bc);
+  border: var(--su1) solid var(--toggle-bc);
+  border-radius: var(--su48);
+  cursor: pointer;
+
+  &__inner {
+    position: absolute;
+    top: calc(var(--su4) - var(--su1));
+    left: var(--su24);
+    width: var(--su16);
+    height: var(--su16);
+    color: var(--white);
+    background-image: url("data:image/svg+xml;charset=UTF-8, %3csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' %3e%3cpath d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z' fill='%23fff' /%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+  }
+
+  &::after {
+    position: absolute;
+    top: var(--su1);
+    left: var(--su1);
+    width: calc(var(--su16) + var(--su4));
+    height: calc(var(--su16) + var(--su4));
+    background-color: var(--white);
+    border-radius: var(--br-circle);
+    cursor: pointer;
+    transition: left var(--toggle-ts) var(--toggle--ta);
+    content: ' ';
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: var(--bs-focus-ring);
+  }
+}
+
+//  $$  CHECKED TOGGLE
+//  ----------------------------------------------------------------------------
+.d-toggle--checked {
+  --toggle-bc: var(--primary-color);
+
+  .d-toggle__inner {
+    left: var(--su6);
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z' fill='%23fff'/%3E%3C/svg%3E");
+  }
+
+  &::after {
+    left: calc(var(--su24) + var(--su1));
+  }
+}
+
+//  $$  DISABLED TOGGLE
+//  ----------------------------------------------------------------------------
+.d-toggle--disabled,
+ .d-toggle[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+
+  &::after {
+    cursor: not-allowed;
+    transition-property: none;
+  }
+}
