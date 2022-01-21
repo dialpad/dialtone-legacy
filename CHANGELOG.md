@@ -1,3 +1,15 @@
+# [6.13.0](https://github.com/dialpad/dialtone/compare/v6.12.0...v6.13.0) (2022-01-21)
+
+
+### Bug Fixes
+
+* **button:** loading spinner off center ([#532](https://github.com/dialpad/dialtone/issues/532)) ([9595374](https://github.com/dialpad/dialtone/commit/9595374fadea5c006f0146b9691ea4e06d85a4ea))
+
+
+### Features
+
+* add toggle styles ([#533](https://github.com/dialpad/dialtone/issues/533)) ([4aeeece](https://github.com/dialpad/dialtone/commit/4aeeecea4748d56003d1242980af1b438620fdcb))
+
 # [6.12.0](https://github.com/dialpad/dialtone/compare/v6.11.0...v6.12.0) (2022-01-13)
 
 
