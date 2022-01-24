@@ -5,7 +5,8 @@ module.exports = {
     "stylelint-config-recommended-less"
   ],
   "plugins": [
-    "stylelint-less"
+    "stylelint-less",
+    "stylelint-no-px"
   ],
   "customSyntax": "postcss-less",
   "rules": {
@@ -37,6 +38,7 @@ module.exports = {
     indentation: null,
     'length-zero-no-unit': true,
     'less/color-no-invalid-hex': null,
-    'less/no-duplicate-variables': null
+    'less/no-duplicate-variables': null,
+    "meowtec/no-px": [true, {"message": "Use dialtone variables such as line-height: var(--lh6) or width: var(--su24) rather than directly setting px. See the lib/build/less/variables folder."}],
   }
 };
