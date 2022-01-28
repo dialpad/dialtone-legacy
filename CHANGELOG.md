@@ -1,3 +1,15 @@
+# [6.14.0](https://github.com/dialpad/dialtone/compare/v6.13.0...v6.14.0) (2022-01-28)
+
+
+### Bug Fixes
+
+* uc-11528 updating background replacement icon in dialtone ([#536](https://github.com/dialpad/dialtone/issues/536)) ([eab4a92](https://github.com/dialpad/dialtone/commit/eab4a9291856e8d260e7e0dcdc5d0846db362ca8))
+
+
+### Features
+
+* add about page ([#537](https://github.com/dialpad/dialtone/issues/537)) ([0d45b71](https://github.com/dialpad/dialtone/commit/0d45b715837dc00a2caaca099c5e02a0d2ed0f0f))
+
 # [6.13.0](https://github.com/dialpad/dialtone/compare/v6.12.0...v6.13.0) (2022-01-21)
 
 
