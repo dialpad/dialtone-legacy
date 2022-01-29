@@ -1,0 +1,157 @@
+---
+layout: page
+title: Popover
+description: A Popover displays a content overlay when it's anchor element is activated.
+storybook-url: https://vue.dialpad.design/?path=/story/components-popovers--default
+---
+<!--<section class="d-stack16">
+ {% header "h2", "Classes" %}
+  <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
+    <table class="d-table">
+      <thead>
+        <tr>
+          <th scope="col" class="d-w40p">Class</th>
+          <th scope="col" class="d-w30p">Applies to</th>
+          <th scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for i in radio.classes %}
+          {% assign class = i.class %}
+          {% assign apply = i.applies %}
+          {% assign desc = i.description %}
+          <tr>
+            <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.{{ class }}</th>
+            <td class="d-ff-mono d-fc-orange d-fs12">{% if apply != "N/A" %}<span class="code-example--inline">.{% endif %}{{ apply }}{% if apply != "N/A" %}</span>{% endif %}</td>
+            <td class="d-fs12">{{ desc }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>p
+  </div>
+</section> -->
+<section class="d-stack16">
+  {% header "h2", "Examples" %}
+  <div class="d-stack48">
+    <div class="d-stack8">
+      {% header "h3", "Popover" %}
+
+
+
+
+
+      {% codeWell %}
+        {% codeWellHeader %}
+          <div class="d-modal"></div>
+          <div class="dt-popover d-fl-center d-fd-column d-p24 d-w100p d-of-auto">
+            <button class="d-btn d-btn--primary js-popover-anchor">Click Me</button>
+            <div class="dt-popover__content-container d-w264 d-vi-hidden">
+              <div class="dt-popover__content d-p16">
+                This is content rendered within the popover.<br>
+                <button class="d-btn d-btn--primary">Button</button>
+              </div>
+            </div>
+          </div>
+        {% endcodeWellHeader %}
+        {% codeWellFooter %}
+{% highlight html linenos %}
+<div class="d-modal"></div>
+<div class="dt-popover">
+  <button class="d-btn d-btn--primary">Click Me</button>
+  <div class="dt-popover__content-container d-w264">
+    <div class="dt-popover__content d-p16">
+      This is content rendered within the popover.<br>
+      <button class="d-btn d-btn--primary">Button</button>
+    </div>
+  </div>
+</div>
+{% endhighlight %}
+        {% endcodeWellFooter %}
+      {% endcodeWell %}
+    </div>
+
+
+
+
+    <div class="d-stack8">
+      {% header "h3", "With Header" %}
+      {% codeWell %}
+        {% codeWellHeader %}
+          <div class="d-modal"></div>
+          <div class="dt-popover d-fl-center d-fd-column d-p24 d-w100p d-of-auto">
+            <button class="d-btn d-btn--primary js-popover-anchor">Click Me</button>
+            <div class="dt-popover__content-container d-w264 d-hmx128 d-vi-hidden">
+              <div class="dt-popover__header">
+                This is the header
+              </div>
+              <div class="dt-popover__content d-p16">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur delectus distinctio id iure labore, maiores mollitia reprehenderit sunt tempore veritatis. Aliquam delectus earum ex, expedita ipsam nobis obcaecati quibusdam repudiandae.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur delectus distinctio id iure labore, maiores mollitia reprehenderit sunt tempore veritatis. Aliquam delectus earum ex, expedita ipsam nobis obcaecati quibusdam repudiandae.<br>
+                <button class="d-btn d-btn--primary">Button</button>
+              </div>
+            </div>
+          </div>
+        {% endcodeWellHeader %}
+        {% codeWellFooter %}
+{% highlight html linenos %}
+<div class="d-modal"></div>
+<div class="dt-popover">
+  <button class="d-btn d-btn--primary">Click Me</button>
+  <div class="dt-popover__content-container d-w264 d-hmx128">
+    <div class="dt-popover__header">
+      This is the header
+    </div>
+    <div class="dt-popover__content d-p16">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur delectus distinctio id iure labore, maiores mollitia reprehenderit sunt tempore veritatis. Aliquam delectus earum ex, expedita ipsam nobis obcaecati quibusdam repudiandae.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur delectus distinctio id iure labore, maiores mollitia reprehenderit sunt tempore veritatis. Aliquam delectus earum ex, expedita ipsam nobis obcaecati quibusdam repudiandae.<br>
+      <button class="d-btn d-btn--primary">Button</button>
+    </div>
+  </div>
+</div>
+{% endhighlight %}
+        {% endcodeWellFooter %}
+      {% endcodeWell %}
+    </div>
+  </div>
+
+
+
+  <div class="d-stack8">
+    {% header "h3", "With Footer" %}
+    {% codeWell %}
+      {% codeWellHeader %}
+      <div class="d-modal"></div>
+        <div class="dt-popover d-fl-center d-fd-column d-p24 d-w100p d-of-auto">
+          <button class="d-btn d-btn--primary js-popover-anchor">Click Me</button>
+          <div class="dt-popover__content-container d-w264 d-hmx128 d-vi-hidden">
+            <div class="dt-popover__content d-p16">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur delectus distinctio id iure labore, maiores mollitia reprehenderit sunt tempore veritatis. Aliquam delectus earum ex, expedita ipsam nobis obcaecati quibusdam repudiandae.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur delectus distinctio id iure labore, maiores mollitia reprehenderit sunt tempore veritatis. Aliquam delectus earum ex, expedita ipsam nobis obcaecati quibusdam repudiandae.<br>
+              <button class="d-btn d-btn--primary">Button</button>
+            </div>
+            <div class="dt-popover__footer">
+              This is the footer
+            </div>
+          </div>
+        </div>
+      {% endcodeWellHeader %}
+      {% codeWellFooter %}
+{% highlight html linenos %}
+<div class="d-modal"></div>
+<div class="dt-popover">
+  <button class="d-btn d-btn--primary">Click Me</button>
+  <div class="dt-popover__content-container d-w264 d-hmx128">
+    <div class="dt-popover__content d-p16">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur delectus distinctio id iure labore, maiores mollitia reprehenderit sunt tempore veritatis. Aliquam delectus earum ex, expedita ipsam nobis obcaecati quibusdam repudiandae.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur delectus distinctio id iure labore, maiores mollitia reprehenderit sunt tempore veritatis. Aliquam delectus earum ex, expedita ipsam nobis obcaecati quibusdam repudiandae.<br>
+      <button class="d-btn d-btn--primary">Button</button>
+    </div>
+    <div class="dt-popover__footer">
+      This is the footer
+    </div>
+  </div>
+</div>
+{% endhighlight %}
+      {% endcodeWellFooter %}
+    {% endcodeWell %}
+  </div>
+</div>
+</section>
+
+<script src="/{{ site.paths.js }}/popover.js" defer></script>
