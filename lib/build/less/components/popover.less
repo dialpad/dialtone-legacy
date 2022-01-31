@@ -1,26 +1,12 @@
-.dt-popover--overlay[aria-hidden='false'] {
-  z-index: var(--zi-modal);
-  transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
-  visibility: visible;
-  opacity: 1;
-}
-
-.dt-popover-box {
+.d-popover__dialog {
   &,
   *,
   *::before,
   *::after {
     box-sizing: border-box;
   }
-}
 
-.dt-popover--on-top {
-  z-index: var(--zi-notification);
-}
-
-.dt-popover__content-container {
-  .dt-popover-box();
-
+  z-index: var(--zi-popover);
   display: grid;
   grid-template-rows: auto 1fr;
   overflow: auto;
@@ -30,11 +16,11 @@
   box-shadow: var(--bs-card);
 }
 
-.dt-popover__content {
+.d-popover__content {
   overflow: auto;
 }
 
-.dt-popover__header-footer {
+.d-popover__header-footer-base {
   display: flex;
   align-items: center;
   width: 100%;
@@ -45,10 +31,19 @@
   font-size: var(--fs16);
 }
 
-.dt-popover__header:extend(.dt-popover__header-footer) {
+.d-popover__header {
+  .d-popover__header-footer-base();
+
   border-bottom: var(--su1) solid var(--black-075);
 }
 
-.dt-popover__footer:extend(.dt-popover__header-footer) {
+.d-popover__footer {
+  .d-popover__header-footer-base();
+
   border-top: var(--su1) solid var(--black-075);
+}
+
+//When modal overlay is displayed, put the popover anchor on top of it.
+.d-modal[aria-hidden='false'] + .d-popover > * {
+  z-index: var(--zi-modal-element);
 }
