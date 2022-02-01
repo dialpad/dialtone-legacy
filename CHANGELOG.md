@@ -1,3 +1,10 @@
+# [6.15.0-beta.2](https://github.com/dialpad/dialtone/compare/v6.15.0-beta.1...v6.15.0-beta.2) (2022-02-01)
+
+
+### Bug Fixes
+
+* remove side padding from header footer ([e0abbcf](https://github.com/dialpad/dialtone/commit/e0abbcf74c9417e84b96d2541140254c59a10153))
+
 # [6.15.0-beta.1](https://github.com/dialpad/dialtone/compare/v6.14.0...v6.15.0-beta.1) (2022-02-01)
 
 
