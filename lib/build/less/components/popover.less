@@ -1,0 +1,49 @@
+.d-popover__dialog {
+  &,
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  z-index: var(--zi-popover);
+  display: grid;
+  grid-template-rows: auto 1fr;
+  overflow: auto;
+  background-color: var(--white);
+  border-color: var(--black-100);
+  border-radius: var(--su8);
+  box-shadow: var(--bs-card);
+}
+
+.d-popover__content {
+  overflow: auto;
+}
+
+.d-popover__header-footer-base {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: var(--size48);
+  padding: var(--su6) var(--su8) var(--su6) var(--su12);
+  overflow: auto;
+  font-weight: var(--fw-bold);
+  font-size: var(--fs16);
+}
+
+.d-popover__header {
+  .d-popover__header-footer-base();
+
+  border-bottom: var(--su1) solid var(--black-075);
+}
+
+.d-popover__footer {
+  .d-popover__header-footer-base();
+
+  border-top: var(--su1) solid var(--black-075);
+}
+
+//When modal overlay is displayed, put the popover anchor on top of it.
+.d-modal[aria-hidden='false'] + .d-popover > * {
+  z-index: var(--zi-modal-element);
+}
