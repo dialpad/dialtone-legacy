@@ -1,3 +1,11 @@
+# [6.15.0-beta.1](https://github.com/dialpad/dialtone/compare/v6.14.0...v6.15.0-beta.1) (2022-02-01)
+
+
+### Features
+
+* add popover css and documentation ([df3d204](https://github.com/dialpad/dialtone/commit/df3d2049a8391918e72c912e79da00b00e00bb07))
+* **device settings:** gear icon for device settings ([#539](https://github.com/dialpad/dialtone/issues/539)) ([805f17f](https://github.com/dialpad/dialtone/commit/805f17ff777419877cf36f49a24b75982bc1eac4))
+
 # [6.14.0](https://github.com/dialpad/dialtone/compare/v6.13.0...v6.14.0) (2022-01-28)
 
 
