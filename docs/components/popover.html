@@ -9,16 +9,16 @@ storybook-url: https://vue.dialpad.design/?path=/story/components-popovers--defa
   {% paragraph %}A Popover contains a dialog that will appear above other content when activated. It will always appear in a location relative to the anchor.
   If you are looking for a dialog that does not display relative to the anchor, see <a href="/components/modal/" class="d-link">Modal</a>.
   Some common examples of popover usage: dropdown list, emoji picker dialog, add comment dialog.
-  A popover can be modal or non-modal. Below are some general guidelines on when to use a modal vs non-modal popover.{% endparagraph %}
+  A popover can be modal or non-modal. Below are some guidelines on when to use a modal vs non-modal popover.{% endparagraph %}
   {% paragraph %}Your popover should be modal when:{% endparagraph %}
   <ul class="d-fs14 d-stack8 d-pr24">
-    <li>It contains scrollable content</li>
-    <li>It contains components that hold user input state (input, checkbox)</li>
+    <li>It contains scrollable content.</li>
+    <li>It contains components that hold user input state (input, checkbox).</li>
   </ul>
   {% paragraph %}Your popover should be non-modal when:{% endparagraph %}
   <ul class="d-fs14 d-stack8 d-pr24">
-    <li>It is not scrollable</li>
-    <li>It contains only components that do not hold state (link, button)</li>
+    <li>It is not scrollable.</li>
+    <li>It contains only components that do not hold state (link, button).</li>
   </ul>
   <div class="xl:d-fd-column xl:d-flow0 xl:d-stack32 d-fl-col2 d-flow32 d-mt32 d-mb32">
     <div class="d-d-block d-px16 d-py24 d-bgc-green-100 d-bar4">
@@ -104,8 +104,8 @@ storybook-url: https://vue.dialpad.design/?path=/story/components-popovers--defa
         {% codeWellHeader %}
           <div class="d-modal"></div>
           <div class="d-popover d-fl-center d-fd-column d-p24 d-of-auto">
-            <button class="d-btn d-btn--primary js-popover-anchor">Click Me</button>
-            <div class="d-popover__dialog d-w264 d-vi-hidden">
+            <button id="anchor1" class="d-btn d-btn--primary js-popover-anchor" aria-expanded="false" aria-controls="dialog1" aria-haspopup="dialog">Click Me</button>
+            <div id="dialog1" class="d-popover__dialog d-w264 d-vi-hidden" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="anchor1">
               <div class="d-popover__content d-p16">
                 This is content rendered within the popover.<br>
                 <button class="d-btn d-btn--primary">Button</button>
@@ -117,8 +117,8 @@ storybook-url: https://vue.dialpad.design/?path=/story/components-popovers--defa
 {% highlight html linenos %}
 <div class="d-modal"></div>
 <div class="d-popover">
-  <button class="d-btn d-btn--primary">Click Me</button>
-  <div class="d-popover__dialog d-w264">
+  <button id="anchor1" class="d-btn d-btn--primary" aria-expanded="false" aria-controls="dialog1" aria-haspopup="dialog">Click Me</button>
+  <div id="dialog1" class="d-popover__dialog d-w264" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="anchor1">
     <div class="d-popover__content d-p16">
       This is content rendered within the popover.<br>
       <button class="d-btn d-btn--primary">Button</button>
@@ -137,8 +137,8 @@ storybook-url: https://vue.dialpad.design/?path=/story/components-popovers--defa
       {% codeWell %}
         {% codeWellHeader %}
           <div class="d-popover d-fl-center d-fd-column d-p24 d-of-auto">
-            <button class="d-btn d-btn--primary js-popover-anchor">Click Me</button>
-            <div class="d-popover__dialog d-w264 d-vi-hidden">
+            <button id="anchor2" class="d-btn d-btn--primary js-popover-anchor" aria-expanded="false" aria-controls="dialog2" aria-haspopup="dialog">Click Me</button>
+            <div id="dialog2" class="d-popover__dialog d-w264 d-vi-hidden" role="dialog" aria-modal="false" aria-hidden="true" aria-labelledby="anchor2">
               <div class="d-popover__content d-p16">
                 This is content rendered within the popover.<br>
                 <button class="d-btn d-btn--primary">Button</button>
@@ -148,10 +148,9 @@ storybook-url: https://vue.dialpad.design/?path=/story/components-popovers--defa
         {% endcodeWellHeader %}
         {% codeWellFooter %}
 {% highlight html linenos %}
-<div class="d-modal"></div>
 <div class="d-popover">
-  <button class="d-btn d-btn--primary">Click Me</button>
-  <div class="d-popover__dialog d-w264">
+  <button id="anchor2" class="d-btn d-btn--primary" aria-expanded="false" aria-controls="dialog2" aria-haspopup="dialog">Click Me</button>
+  <div id="dialog2" class="d-popover__dialog d-w264" role="dialog" aria-modal="false" aria-hidden="true" aria-labelledby="anchor2">
     <div class="d-popover__content d-p16">
       This is content rendered within the popover.<br>
       <button class="d-btn d-btn--primary">Button</button>
@@ -167,13 +166,13 @@ storybook-url: https://vue.dialpad.design/?path=/story/components-popovers--defa
 
 
     <div class="d-stack8">
-      {% header "h3", "With Header" %}
+      {% header "h3", "With Header - Modal" %}
       {% codeWell %}
         {% codeWellHeader %}
           <div class="d-modal"></div>
           <div class="d-popover d-fl-center d-fd-column d-p24 d-w100p d-of-auto">
-            <button class="d-btn d-btn--primary js-popover-anchor">Click Me</button>
-            <div class="d-popover__dialog d-w264 d-hmx164 d-vi-hidden">
+            <button id="anchor3" class="d-btn d-btn--primary js-popover-anchor" aria-expanded="false" aria-controls="dialog3" aria-haspopup="dialog">Click Me</button>
+            <div id="dialog3" class="d-popover__dialog d-w264 d-hmx164 d-vi-hidden" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="anchor3">
               <div class="d-popover__header">
                 This is the header
               </div>
@@ -188,8 +187,8 @@ storybook-url: https://vue.dialpad.design/?path=/story/components-popovers--defa
 {% highlight html linenos %}
 <div class="d-modal"></div>
 <div class="d-popover">
-  <button class="d-btn d-btn--primary">Click Me</button>
-  <div class="d-popover__dialog d-w264 d-hmx164">
+  <button id="anchor3" class="d-btn d-btn--primary" aria-expanded="false" aria-controls="dialog3" aria-haspopup="dialog">Click Me</button>
+  <div id="dialog3" class="d-popover__dialog d-w264 d-hmx164" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="anchor3">
     <div class="d-popover__header">
       This is the header
     </div>
@@ -211,9 +210,9 @@ storybook-url: https://vue.dialpad.design/?path=/story/components-popovers--defa
     {% codeWell %}
       {% codeWellHeader %}
       <div class="d-modal"></div>
-        <div class="d-popover d-fl-center d-fd-column d-p24 d-w100p d-of-auto">
-          <button class="d-btn d-btn--primary js-popover-anchor">Click Me</button>
-          <div class="d-popover__dialog d-w264 d-hmx164 d-vi-hidden">
+        <div  class="d-popover d-fl-center d-fd-column d-p24 d-w100p d-of-auto">
+          <button id="anchor4" class="d-btn d-btn--primary js-popover-anchor" aria-expanded="false" aria-controls="dialog4" aria-haspopup="dialog">Click Me</button>
+          <div id="dialog4" class="d-popover__dialog d-w264 d-hmx164 d-vi-hidden" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="anchor4">
             <div class="d-popover__content d-p16">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur delectus distinctio id iure labore, maiores mollitia reprehenderit sunt tempore veritatis. Aliquam delectus earum ex, expedita ipsam nobis obcaecati quibusdam repudiandae.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur delectus distinctio id iure labore, maiores mollitia reprehenderit sunt tempore veritatis. Aliquam delectus earum ex, expedita ipsam nobis obcaecati quibusdam repudiandae.<br>
               <button class="d-btn d-btn--primary">Button</button>
@@ -228,8 +227,8 @@ storybook-url: https://vue.dialpad.design/?path=/story/components-popovers--defa
 {% highlight html linenos %}
 <div class="d-modal"></div>
 <div class="d-popover">
-  <button class="d-btn d-btn--primary">Click Me</button>
-  <div class="d-popover__dialog d-w264 d-hmx164">
+  <button id="anchor4" class="d-btn d-btn--primary" aria-expanded="false" aria-controls="dialog4" aria-haspopup="dialog">Click Me</button>
+  <div id="dialog4" class="d-popover__dialog d-w264 d-hmx164" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="anchor4">
     <div class="d-popover__content d-p16">
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur delectus distinctio id iure labore, maiores mollitia reprehenderit sunt tempore veritatis. Aliquam delectus earum ex, expedita ipsam nobis obcaecati quibusdam repudiandae.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur delectus distinctio id iure labore, maiores mollitia reprehenderit sunt tempore veritatis. Aliquam delectus earum ex, expedita ipsam nobis obcaecati quibusdam repudiandae.<br>
       <button class="d-btn d-btn--primary">Button</button>
@@ -250,8 +249,7 @@ storybook-url: https://vue.dialpad.design/?path=/story/components-popovers--defa
 
 <section class="d-stack16">
   {% header "h2", "Accessibility" %}
-  {% paragraph %}If your popover is modal, please see the accessibility section of this page: <a href="/components/modal/#accessibility" class="d-link">Modal Accessibility</a>. The same rules will apply here if your popover is modal. {% endparagraph %}
-  {% paragraph %}For non-modal popovers, make sure you have all of the below attributes applied if applicable. {% endparagraph %}
+  {% paragraph %}If your popover is modal, please see the accessibility section of this page regarding "focus trapping": <a href="/components/modal/#accessibility" class="d-link">Modal Accessibility</a>. The same rules will apply here if your popover is modal. {% endparagraph %}
   <table class="d-table">
     <thead>
       <tr>
