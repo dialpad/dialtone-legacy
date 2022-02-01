@@ -1,3 +1,10 @@
+# [6.15.0-beta.3](https://github.com/dialpad/dialtone/compare/v6.15.0-beta.2...v6.15.0-beta.3) (2022-02-01)
+
+
+### Bug Fixes
+
+* make z-index work on all children ([7aa3fd1](https://github.com/dialpad/dialtone/commit/7aa3fd1a54c058a5db096d72f46869506e41779c))
+
 # [6.15.0-beta.2](https://github.com/dialpad/dialtone/compare/v6.15.0-beta.1...v6.15.0-beta.2) (2022-02-01)
 
 
