@@ -1,3 +1,16 @@
+# [6.15.0](https://github.com/dialpad/dialtone/compare/v6.14.0...v6.15.0) (2022-02-04)
+
+
+### Bug Fixes
+
+* uc-11528 updating background replacement icon in dialtone ([#541](https://github.com/dialpad/dialtone/issues/541)) ([038bd4e](https://github.com/dialpad/dialtone/commit/038bd4e9c9fbd489445233972dce718559fa2f1e))
+
+
+### Features
+
+* add a few social icons for contact center ([#543](https://github.com/dialpad/dialtone/issues/543)) ([7c1e0a9](https://github.com/dialpad/dialtone/commit/7c1e0a9ddef5acece52ecbca11f1f1b3eb84a9c4))
+* **device settings:** gear icon for device settings ([#539](https://github.com/dialpad/dialtone/issues/539)) ([805f17f](https://github.com/dialpad/dialtone/commit/805f17ff777419877cf36f49a24b75982bc1eac4))
+
 # [6.14.0](https://github.com/dialpad/dialtone/compare/v6.13.0...v6.14.0) (2022-01-28)
 
 
