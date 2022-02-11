@@ -1,3 +1,10 @@
+# [6.16.0](https://github.com/dialpad/dialtone/compare/v6.15.0...v6.16.0) (2022-02-11)
+
+
+### Features
+
+* add alarm system icon ([#546](https://github.com/dialpad/dialtone/issues/546)) ([a579460](https://github.com/dialpad/dialtone/commit/a57946052cc03d5cfcf5775b7203e19daaf7686b))
+
 # [6.15.0](https://github.com/dialpad/dialtone/compare/v6.14.0...v6.15.0) (2022-02-04)
 
 
