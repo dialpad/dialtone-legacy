@@ -3,7 +3,7 @@ home: true
 layout: Home
 ---
 
-<HomePage />
+< <HomePage />
 
 
 <script setup>
