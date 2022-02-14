@@ -1,0 +1,37 @@
+@import (reference) '../../../lib/build/less/variables/colors';
+@import (reference) '../../../lib/build/less/variables/typography';
+@import (reference) '../../../lib/build/less/variables/spacing';
+@import (reference) '../../../lib/build/less/utilities/internals';
+@import (reference) '../../../lib/build/less/utilities/spacing';
+@import (reference) '../../../lib/build/less/utilities/typography';
+
+body {
+  --sidebar-width: unset;
+}
+
+:root {
+  --c-brand: @purple-500;
+  --navbar-height: 6.4rem;
+}
+
+.page {
+  padding-top: 0;
+  padding-left: var(--sidebar-width) ;
+}
+
+.theme-default-content {
+  .d-stack16();
+  max-width: 75rem !important;
+}
+
+@media screen and (max-width: 719px) {
+  .page {
+    padding: 0 !important;
+  }
+}
+
+@media (max-width: 959px) {
+  .page {
+    padding-left: var(--sidebar-width-mobile) ;
+  }
+}

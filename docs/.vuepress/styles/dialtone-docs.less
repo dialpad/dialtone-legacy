@@ -1,0 +1,356 @@
+//
+//  DIALTONE DOCUMENTATION
+//  UNIVERSAL FILE
+//
+//  These are various visual styles for Dialtone's documentation.
+//  For more information, please visit:
+//  https://dialpad.design/
+//
+//
+//  TABLE OF CONTENTS
+//  • IMPORTS
+//  • COLOR PALETTES
+//  • TOC
+//  • ICON GRID
+//  • HOME PAGE
+//
+//  ============================================================================
+//  $   IMPORTS
+//  ----------------------------------------------------------------------------
+@import (reference) '../../../lib/build/less/variables/icons';
+@import (reference) '../../../lib/build/less/variables/typography';
+@import (reference) '../../../lib/build/less/variables/spacing';
+@import (reference) '../../../lib/build/less/utilities/internals';
+@import (reference) '../../../lib/build/less/utilities/spacing';
+@import (reference) '../../../lib/build/less/utilities/grid';
+@import (reference) '../../../lib/build/less/utilities/typography';
+@import (reference) '../../../lib/build/less/components/link';
+@import 'dialtone-syntax';
+
+//  ============================================================================
+//  @   RESETS
+//  ============================================================================
+//      [1]     Universally set border-box
+//  ----------------------------------------------------------------------------
+* {
+  &,
+  &::before,
+  &::after {
+    box-sizing: border-box; // [1]
+  }
+}
+
+
+//  ============================================================================
+//  $   COLOR PALETTES
+//      Because we can't target :first-of-type or :first-child using our utility classes.
+//  ----------------------------------------------------------------------------
+.dialtone-color-grid__item:first-of-type {
+  border-top-left-radius: var(--su4);
+  border-top-right-radius: var(--su4);
+}
+.dialtone-color-grid__item:last-of-type {
+  border-bottom-left-radius: var(--su4);
+  border-bottom-right-radius: var(--su4);
+}
+
+//  ============================================================================
+//  $   TOC
+//      Because we're using a third-party plugin to generate the subnav menu,
+//      we can't add utility classes directly to the HTML. So we have to use
+//      custom CSS here instead.
+//  ----------------------------------------------------------------------------
+.toc ol {
+  .d-ls-reset();
+  display: flex;
+  flex-direction: column;
+
+  .d-stack4();
+}
+
+//  Subsections
+.toc li > ol {
+  margin-top: var(--su4);
+  margin-left: var(--su16);
+  a {
+    font-size: var(--fs12);
+  }
+}
+
+.toc a {
+  //  We'll base our styles on d-link
+  .d-link();
+  .d-link--muted();
+
+  //  Then make some specific adjustments
+  display: flex;
+  justify-content: flex-start;
+  padding: var(--su2) var(--su8);
+  border-radius: var(--br4);
+  font-size: var(--fs14);
+  line-height: var(--lh6);
+  text-decoration: none;
+
+  &:hover {
+    background-color: var(--black-050);
+    text-decoration: none;
+  }
+
+  &.active {
+    font-weight: var(--fw-bold);
+    color: var(--primary-color);
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: var(--su0);
+      bottom: var(--su0);
+      left: var(--sun4);
+      width: var(--su4);
+      border-radius: var(--br4);
+      background-color: var(--primary-color);
+    }
+  }
+}
+
+//  ============================================================================
+//  $   LAYOUT
+//      Because the doc site needs layout specifications that aren't
+//      appropriate to ship as part of Dialtone.
+//  ----------------------------------------------------------------------------
+.d-ga-toc { grid-area: toc !important; }
+.d-gl-docsite {
+  grid-template-areas: "sidebar content";
+  grid-template-columns: [sidebar] 21.6rem [content] minmax(32rem, 75rem);
+  column-gap: 4.8rem;
+}
+.d-gl-docsite-toc {
+  grid-template-areas: "sidebar content toc";
+  grid-template-columns: [sidebar] 21.6rem [content] minmax(32rem, 75rem) [toc] minmax(min-content, 21.6rem);
+  column-gap: 4.8rem;
+}
+
+
+//  ============================================================================
+//  $   ICON GRID
+//      Styles our icon pages
+//  ----------------------------------------------------------------------------
+.d-gl-docsite-icons {
+  --icon-card-width: 12rem;
+  --icon-grid-columns: auto-fit;
+
+  display: grid;
+  grid-auto-rows: 12rem;
+  grid-gap: 0.2rem;
+  grid-template-columns: repeat(var(--icon-grid-columns), [col] var(--icon-card-width));
+}
+
+.d-gl-docsite-icons--large {
+  .d-gl-docsite-icons();
+  --icon-card-width: 18rem;
+  --icon-grid-columns: auto-fit;
+  grid-auto-rows: 18rem;
+
+}
+
+.dialtone-icon-grid__item {
+  position: relative;
+}
+
+.dialtone-icon-card {
+  display: flex;
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+
+.dialtone-icon-card__header {
+  align-items: center;
+  background-color: hsl(var(--black-050-h), var(--black-050-s), var(--black-050-l),0);
+  border-radius: var(--su8);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding: var(--su8);
+  transition: all 150ms var(--ttf-in-out);
+  width: 100%;
+
+  &:hover {
+    background-color: hsl(var(--black-050-h), var(--black-050-s), var(--black-050-l), 0.4);
+  }
+
+  .dialtone-icon-card[data-selected="yes"] & {
+    background-color: hsl(var(--black-050-h), var(--black-050-s), var(--black-050-l), 0.4);
+    border: 1px solid var(--black-700);
+    box-shadow: var(--bs-md);
+  }
+}
+
+.dialtone-icon-card__footer {
+  background-color: var(--black-700);
+  border-radius: var(--su8);
+  box-shadow: var(--bs-md);
+  color: var(--black-050);
+  display: flex;
+  flex-direction: column;
+  font-size: var(--fs14);
+  justify-content: center;
+  margin-right: calc(-1 * var(--su1));
+  min-height: var(--icon-card-width);
+  padding: var(--su12) var(--su16);
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: calc((var(--icon-card-width) * 2) + var(--su32));
+  z-index: var(--zi-popover);
+
+  .dialtone-icon-card[data-selected="yes"] & {
+    margin: calc(-1 * var(--su1));
+    opacity: 1;
+    transform: translateX(calc(-1 * var(--icon-card-width)));
+    transition:
+      opacity 50ms var(--ttf-in-out) 0s,
+      transform 50ms var(--ttf-in-out) 0s,
+      visibility 0s 50ms;
+    visibility: visible;
+  }
+
+  //  If it's in the first two columns, show the footer on the right
+  .dialtone-icon-grid__item:nth-child(5n+1) .dialtone-icon-card[data-selected="yes"] &,
+  .dialtone-icon-grid__item:nth-child(5n+2) .dialtone-icon-card[data-selected="yes"] & {
+    margin-right: unset;
+    right: var(--su1);
+    transform: translateX(100%);
+  }
+
+  .dialtone-icon-card[data-selected="no"] & {
+    opacity: 0;
+    transform: translateX(0);
+    transition:
+      opacity 100ms var(--ttf-in-out) 0s,
+      transform 100ms var(--ttf-in-out) 0s,
+      visibility 0s 0s;
+    visibility: hidden;
+  }
+}
+
+.dialtone-icon-card__footer-spot-illustration {
+  .dialtone-icon-card__footer();
+  width: calc(var(--icon-card-width)*1.5);
+  min-height: auto
+}
+
+.dialtone-icon-card__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.dialtone-icon-card__list__item {
+  font-size: var(--fs12);
+
+  strong {
+    display: inline-block;
+    width: 20%;
+  }
+}
+
+.dialtone-icon-card__icon {
+  height: @icon48;
+  margin-bottom: var(--su4);
+  width: @icon48;
+  svg {
+    height: auto;
+    width: 100%;
+  }
+}
+
+.dialtone-icon-card__icon--autosize {
+  margin-bottom: var(--su4);
+  svg {
+    height: auto;
+    width: 100%;
+  }
+}
+
+.dialtone-icon-card__title {
+  font-size: var(--fs16);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+  margin-bottom: var(--su4);
+  margin-top: var(--su0);
+}
+
+.dialtone-icon-card__subtitle {
+  font-size: var(--fs12);
+  line-height: var(--lh-none);
+  margin-bottom: var(--su0);
+  overflow: hidden;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.dialtone-icon-card__description {
+  color: var(--white);
+  font-size: var(--fs12);
+}
+
+
+//  ============================================================================
+//  $   HOME PAGE
+//      Styles the site's home page
+//  ----------------------------------------------------------------------------
+
+.hero {
+  background-color: #F5F2ED;
+  background-image: url("/assets/images/home-dp-logo.svg");
+  background-position: 80% center;
+  margin-top: var(--sun16) !important;
+  @media (max-width: 640px) {
+    padding-left: var(--su8);
+    padding-right: var(--su16);
+  }
+}
+
+.hero--inner-wrapper {
+  padding-bottom: 12.8rem;
+  padding-top: 12.8rem;
+  @media (max-width: 640px) {
+    flex-direction: column;
+  }
+}
+
+.hero--content {
+  align-items: flex-start;
+  max-width: 40%;
+  @media (max-width: 640px) {
+    align-items: unset;
+    max-width: 100%;
+    text-align: center;
+  }
+}
+
+.hero--image {
+  @media (max-width: 640px) {
+    display: none;
+  }
+}
+
+.links {
+  padding-bottom: 9.6rem;
+  padding-top: 9.6rem;
+  @media (max-width: 640px) {
+    display: block !important;
+  }
+}
+
+.link {
+  @media (max-width: 640px) {
+    display: block;
+    grid-column: 1 / -1 !important;
+    margin-bottom: calc(var(--su64) + var(--su24));
+  }
+}
