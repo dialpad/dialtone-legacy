@@ -1,3 +1,32 @@
+//
+//  DIALTONE
+//  COMPONENTS: POPOVER
+//
+//  These are popover classes for Dialpad's design system Dialtone.
+//  For further documentation of these and other classes,
+//  visit https://dialpad.design/components/popover
+//
+//  TABLE OF CONTENTS
+//  • POPOVER
+//    - Anchor
+//  • POPOVER DIALOG
+//    - Base dialog style
+//    - Content
+//    - Header / Footer
+
+
+//  $  POPOVER
+//  ----------------------------------------------------------------------------
+
+//  $$  POPOVER ANCHOR
+//  ----------------------------------------------------------------------------
+//When modal overlay is displayed, put the popover anchor on top of it.
+.d-modal[aria-hidden='false'] + .d-popover > * {
+  z-index: var(--zi-modal-element);
+}
+
+//  $  POPOVER DIALOG
+//  ----------------------------------------------------------------------------
 .d-popover__dialog {
   &,
   *,
@@ -16,10 +45,14 @@
   box-shadow: var(--bs-card);
 }
 
+//  $$  DIALOG CONTENT
+//  ----------------------------------------------------------------------------
 .d-popover__content {
   overflow: auto;
 }
 
+//  $$  DIALOG HEADER / FOOTER
+//  ----------------------------------------------------------------------------
 .d-popover__header-footer-base {
   display: flex;
   align-items: center;
@@ -42,9 +75,4 @@
   .d-popover__header-footer-base();
 
   border-top: var(--su1) solid var(--black-075);
-}
-
-//When modal overlay is displayed, put the popover anchor on top of it.
-.d-modal[aria-hidden='false'] + .d-popover > * {
-  z-index: var(--zi-modal-element);
 }
