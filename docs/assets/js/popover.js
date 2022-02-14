@@ -23,7 +23,6 @@ $(document).ready(function() {
     contentContainer.removeClass('d-vi-hidden');
     contentContainer.addClass('d-vi-visible');
     closestOverlay.attr('aria-hidden','false');
-    console.log(closestOverlay)
 
     if (closestOverlay.length) {
       $(body).addClass('d-of-hidden');
