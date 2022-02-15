@@ -1,3 +1,10 @@
+# [6.15.0-beta.4](https://github.com/dialpad/dialtone/compare/v6.15.0-beta.3...v6.15.0-beta.4) (2022-02-15)
+
+
+### Features
+
+* popover css and documentation ([#540](https://github.com/dialpad/dialtone/issues/540)) ([2c4dc58](https://github.com/dialpad/dialtone/commit/2c4dc58404944036693816c23b69b0453f38399f))
+
 # [6.15.0-beta.3](https://github.com/dialpad/dialtone/compare/v6.15.0-beta.2...v6.15.0-beta.3) (2022-02-01)
 
 
