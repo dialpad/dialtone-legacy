@@ -1,3 +1,37 @@
+# [6.15.0-beta.3](https://github.com/dialpad/dialtone/compare/v6.15.0-beta.2...v6.15.0-beta.3) (2022-02-01)
+
+
+### Bug Fixes
+
+* make z-index work on all children ([7aa3fd1](https://github.com/dialpad/dialtone/commit/7aa3fd1a54c058a5db096d72f46869506e41779c))
+
+# [6.15.0-beta.2](https://github.com/dialpad/dialtone/compare/v6.15.0-beta.1...v6.15.0-beta.2) (2022-02-01)
+
+
+### Bug Fixes
+
+* remove side padding from header footer ([e0abbcf](https://github.com/dialpad/dialtone/commit/e0abbcf74c9417e84b96d2541140254c59a10153))
+
+# [6.15.0-beta.1](https://github.com/dialpad/dialtone/compare/v6.14.0...v6.15.0-beta.1) (2022-02-01)
+
+
+### Features
+
+* add popover css and documentation ([df3d204](https://github.com/dialpad/dialtone/commit/df3d2049a8391918e72c912e79da00b00e00bb07))
+* **device settings:** gear icon for device settings ([#539](https://github.com/dialpad/dialtone/issues/539)) ([805f17f](https://github.com/dialpad/dialtone/commit/805f17ff777419877cf36f49a24b75982bc1eac4))
+
+# [6.14.0](https://github.com/dialpad/dialtone/compare/v6.13.0...v6.14.0) (2022-01-28)
+
+
+### Bug Fixes
+
+* uc-11528 updating background replacement icon in dialtone ([#536](https://github.com/dialpad/dialtone/issues/536)) ([eab4a92](https://github.com/dialpad/dialtone/commit/eab4a9291856e8d260e7e0dcdc5d0846db362ca8))
+
+
+### Features
+
+* add about page ([#537](https://github.com/dialpad/dialtone/issues/537)) ([0d45b71](https://github.com/dialpad/dialtone/commit/0d45b715837dc00a2caaca099c5e02a0d2ed0f0f))
+
 # [6.13.0](https://github.com/dialpad/dialtone/compare/v6.12.0...v6.13.0) (2022-01-21)
 
 
