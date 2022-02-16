@@ -50,6 +50,32 @@
     will-change: visibility, z-index, opacity;
 }
 
+.d-modal--transparent {
+  //  Component CSS Vars
+  //  ------------------------------------------------------------------------
+  --modal--bgc: hsla(var(--black-900-hsl) ~' / ' 85%);
+  --modal-dialog--bgc: var(--white);
+  --modal-dialog--fc: var(--black-700);
+  --modal-header--fc: var(--black-800);
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: var(--zi-hide);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--su32);
+  background-color: var(--d-bgc-transparent);
+  backface-visibility: hidden;
+  visibility: hidden;
+  opacity: 0;
+  will-change: visibility, z-index, opacity;
+}
+
 //  $$  MODAL DIALOG
 //  ----------------------------------------------------------------------------
 .d-modal__dialog {
@@ -78,7 +104,9 @@
 //  $$   MAKE THEM APPEAR
 //  ----------------------------------------------------------------------------
 .d-modal[aria-hidden='false'],
-.d-modal[aria-hidden='false'] .d-modal__dialog {
+.d-modal[aria-hidden='false'] .d-modal__dialog,
+.d-modal--transparent[aria-hidden='false'],
+.d-modal--transparent[aria-hidden='false'] .d-modal__dialog {
   z-index: var(--zi-modal);
   transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
   visibility: visible;
