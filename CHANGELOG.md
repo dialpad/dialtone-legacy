@@ -1,3 +1,15 @@
+# [6.15.0-beta.5](https://github.com/dialpad/dialtone/compare/v6.15.0-beta.4...v6.15.0-beta.5) (2022-02-16)
+
+
+### Bug Fixes
+
+* popover example page issues ([574dee2](https://github.com/dialpad/dialtone/commit/574dee2fe898ac188405cc18683f9f3f6edb2076))
+
+
+### Features
+
+* add transparent modal ([488f46a](https://github.com/dialpad/dialtone/commit/488f46a6c7995b4e67c40efb553e67fa7194412c))
+
 # [6.15.0-beta.4](https://github.com/dialpad/dialtone/compare/v6.15.0-beta.3...v6.15.0-beta.4) (2022-02-15)
 
 
