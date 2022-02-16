@@ -9,6 +9,7 @@ $(document).ready(function() {
     overlay.addClass('d-modal--animate-out');
     overlay.removeClass('d-modal--animate-in');
     $('.d-popover__dialog').removeClass('d-vi-visible');
+    popoverAnchor.removeClass('d-zi-modal-element');
     $('.d-popover__dialog').addClass('d-vi-hidden');
     overlay.attr('aria-hidden','true');
     $(body).removeClass('d-of-hidden');
@@ -20,6 +21,7 @@ $(document).ready(function() {
     const contentContainer = $(e.target).siblings('.d-popover__dialog').first();
     closestOverlay.addClass('d-modal--animate-in');
     closestOverlay.removeClass('d-modal--animate-out');
+    contentContainer.addClass('d-zi-modal-element');
     contentContainer.removeClass('d-vi-hidden');
     contentContainer.addClass('d-vi-visible');
     closestOverlay.attr('aria-hidden','false');
@@ -32,6 +34,7 @@ $(document).ready(function() {
 
   popoverAnchor.on('click', function(e) {
     if (!shown) {
+      $(e.target).addClass('d-zi-modal-element')
       $.fn.openModal(e);
     } else {
       $.fn.closeModal();
