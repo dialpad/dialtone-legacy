@@ -15,7 +15,7 @@ export default defineUserConfig<DefaultThemeOptions>({
     logo: '/assets/images/dialpad-logo.svg',
     navbar: [
       {text: 'About', link: '/about/dialtone'},
-      {text: 'Getting Started', link: '/getting_started/installation'},
+      {text: 'Getting Started', link: '/getting-started/installation'},
       {text: 'Design', link: '/design/colors/color_palette'},
       {text: 'Utilities', link: '/utilities/backgrounds/background_colors'},
       {text: 'Components', link: '/components/avatar'},
@@ -27,17 +27,26 @@ export default defineUserConfig<DefaultThemeOptions>({
           children: [
             {text: 'About Dialtone', link: '/about/dialtone.html'},
             {text: 'Contributing', link: '/about/contributing.html'},
-          ]
-        }
+          ],
+        },
       ],
-      '/getting_started/': [
+      '/getting-started/': [
         {
           text: 'Getting started',
           children: [
-            'installation',
-            'using_dialtone'
-          ]
-        }
+            {text: 'Installation', link: '/getting-started/installation.html'},
+            {text: 'Using Dialtone', link: '/getting-started/usage.html'},
+            {text: 'Building Dialtone Locally', link: '/getting-started/building-locally.html'},
+          ],
+        },
+        {
+          text: 'Accessibility',
+          children: [
+            {text: 'Fundamentals', link: '/getting-started/accessibility/fundamentals.html'},
+            {text: 'Best Practices', link: '/getting-started/accessibility/best-practices.html'},
+            {text: 'Tooling', link: '/getting-started/accessibility/tooling.html'},
+          ],
+        },
       ],
       '/components/': ['Avatar'],
       '/design/': [
@@ -55,7 +64,7 @@ export default defineUserConfig<DefaultThemeOptions>({
             {text: 'Weather Icons', link: '/design/icons/weather_icons'},
             {text: 'Sizes', link: '/design/icons/sizes'},
             {text: 'Adding Icons', link: '/design/icons/adding_icons'},
-          ]
+          ],
         },
         {
           text: 'Illustrations',
@@ -125,6 +134,4 @@ export default defineUserConfig<DefaultThemeOptions>({
     '@svgIcons': resolve(__dirname, '../../lib/dist/vue/icons/'), // Needed to easily import svg
     '@theme': resolve(__dirname, './theme'),
   },
-
-  pagePatterns: ['**/*.md', '!.vuepress', '!node_modules'],
 })
