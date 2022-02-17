@@ -19,10 +19,10 @@ As we consider the entire spectrum of possibilities, the benefits to the people 
 ## Principles
 Building inclusive product experiences can be boiled down to the  **P.O.U.R.** principles:
 
-1.Perceivable.
-1.Operable.
-1.Understandable.
-1.Robust.
+1. Perceivable.
+2. Operable.
+3. Understandable.
+4. Robust.
 
 ### Perceivable
 The interface and its content is designed and implemented in such a way that it works across a variety of users agents and assistive technologies.
@@ -57,7 +57,7 @@ The interface and its content use plain language that’s easy to comprehend. Ev
 - Feedback and error handling.
 - Help, such as contextual help and error prevention.
 
-### Robus
+### Robust
 
 The interface and its content is designed and implemented in such a way that it works across a variety of users agents and assistive technologies.
 
