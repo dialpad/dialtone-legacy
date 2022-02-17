@@ -1,3 +1,10 @@
+# [6.17.0](https://github.com/dialpad/dialtone/compare/v6.16.0...v6.17.0) (2022-02-17)
+
+
+### Features
+
+* add icon only button styles ([#550](https://github.com/dialpad/dialtone/issues/550)) ([4116700](https://github.com/dialpad/dialtone/commit/41167009d1d56ee7b4ddf94ffc320ee1f9e6cb19))
+
 # [6.16.0](https://github.com/dialpad/dialtone/compare/v6.15.0...v6.16.0) (2022-02-11)
 
 
