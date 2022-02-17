@@ -1,3 +1,10 @@
+# [6.15.0-beta.6](https://github.com/dialpad/dialtone/compare/v6.15.0-beta.5...v6.15.0-beta.6) (2022-02-17)
+
+
+### Bug Fixes
+
+* add justify-content flex-end to header/footer ([6547fea](https://github.com/dialpad/dialtone/commit/6547fea38d80696629f1a50f91cd195c789607e4))
+
 # [6.15.0-beta.5](https://github.com/dialpad/dialtone/compare/v6.15.0-beta.4...v6.15.0-beta.5) (2022-02-16)
 
 
