@@ -14,7 +14,7 @@ export default {
   <ParentLayout>
     <template #page-top>
       <header class="theme-default-content d-stack2">
-        <h1 v-if="$page.frontmatter.title" class="d-headline42 d-lh6 d-mb4">{{ $page.frontmatter.title }}</h1>
+        <h1 v-if="$page.frontmatter.title" class="d-headline42 d-lh6 d-mb4 d-pt16">{{ $page.frontmatter.title }}</h1>
         <a v-if="$page.frontmatter.storybook_url" class="d-link d-fs14 d-mb24"
            href="{{ $page.frontmatter.storybook_url }}" target="_blank">
           View Storybook
