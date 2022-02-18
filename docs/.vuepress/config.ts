@@ -16,7 +16,7 @@ export default defineUserConfig<DefaultThemeOptions>({
     navbar: [
       {text: 'About', link: '/about/dialtone'},
       {text: 'Getting Started', link: '/getting-started/installation'},
-      {text: 'Design', link: '/design/colors/color_palette'},
+      {text: 'Design', link: '/design/colors/color-palette'},
       {text: 'Utilities', link: '/utilities/backgrounds/background_colors'},
       {text: 'Components', link: '/components/avatar'},
     ],
@@ -53,24 +53,30 @@ export default defineUserConfig<DefaultThemeOptions>({
         {
           text: 'Colors',
           children: [
-            {text: 'Color Palette', link: '/design/colors/color_palette'},
+            {text: 'Color Palette', link: '/design/colors/color-palette.html'},
           ],
         },
         {
           text: 'Icons',
           children: [
-            {text: 'Brand Icons', link: '/design/icons/brand_icons'},
-            {text: 'System Icons', link: '/design/icons/system_icons'},
-            {text: 'Weather Icons', link: '/design/icons/weather_icons'},
-            {text: 'Sizes', link: '/design/icons/sizes'},
-            {text: 'Adding Icons', link: '/design/icons/adding_icons'},
+            {text: 'Brand Icons', link: '/design/icons/brand.html'},
+            {text: 'System Icons', link: '/design/icons/system.html'},
+            {text: 'Weather Icons', link: '/design/icons/weather.html'},
+            {text: 'Sizes', link: '/design/icons/sizes.html'},
+            {text: 'Adding Icons', link: '/design/icons/adding.html'},
           ],
         },
         {
           text: 'Illustrations',
           children: [
-            {text: 'Patterns', link: '/design/illustrations/patterns'},
-            {text: 'Spot Illustrations', link: '/design/illustrations/spot'},
+            {text: 'Patterns', link: '/design/illustrations/patterns.html'},
+            {text: 'Spot Illustrations', link: '/design/illustrations/spot.html'},
+          ],
+        },
+        {
+          text: 'Spacing',
+          children: [
+            {text: 'Spacing System', link: '/design/spacing/spacing-system.html'},
           ],
         },
       ],
