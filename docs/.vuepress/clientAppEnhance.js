@@ -1,7 +1,8 @@
 import {defineClientAppEnhance} from '@vuepress/client';
 
 import CodeWellHeader from './components/CodeWellHeader.vue';
-import Icons from "./components/Icons.vue";
+import Icons from "./views/Icons.vue";
+import Colors from "./views/Colors.vue";
 import UtilityClassTable from "./components/UtilityClassTable.vue";
 import ComponentClassTable from "./components/ComponentClassTable.vue";
 
@@ -15,4 +16,5 @@ export default defineClientAppEnhance(({app, router, siteData}) => {
     app.component('utility-class-table', UtilityClassTable);
     app.component('code-well-header', CodeWellHeader);
     app.component('icons', Icons);
+    app.component('colors', Colors);
 })

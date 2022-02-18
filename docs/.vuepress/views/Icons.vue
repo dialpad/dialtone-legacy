@@ -1,6 +1,8 @@
 <template>
-  <div class="d-gl-docsite-icons">
-    <base-icon
+  <div class="d-stack16 d-p16 d-bar8" :class="{['d-bgc-black-800 d-fc-white']: variation === 'light'}">
+    <slot name="title"></slot>
+    <div class="d-gl-docsite-icons">
+      <base-icon
         v-for="(icon, index) in icons"
         :desc="icon.desc"
         :file="icon.file"
@@ -8,13 +10,15 @@
         :name="icon.name"
         :selected="selectedCardIndex === index"
         :vue="icon.vue"
+        :variation="variation"
         @click="toggleCard(index)"
-    ></base-icon>
+      ></base-icon>
+    </div>
   </div>
 </template>
 
 <script>
-import BaseIcon, {ICON_KINDS} from "./BaseIcon.vue";
+import BaseIcon, {ICON_KINDS, ICON_VARIATIONS} from "../components/BaseIcon.vue";
 
 export default {
   name: "Icons",
@@ -26,17 +30,29 @@ export default {
       type: String,
       required: true,
       validator: (_kind) => {
-        return ICON_KINDS.includes(_kind)
-      }
-    }
+        return ICON_KINDS.includes(_kind);
+      },
+    },
+    variation: {
+      type: String,
+      validator: (_variation) => {
+        return ICON_VARIATIONS.includes(_variation);
+      },
+    },
   },
   data: () => ({
     icons: [],
     selectedCardIndex: undefined,
   }),
   beforeCreate() {
-    import(`../_data/svg-${this.kind}.json`).then(data => {
+    import(`../../_data/svg-${this.kind}.json`).then(data => {
       this.icons = data.default;
+
+      // if(this.variation) {
+      //   this.icons = data.default[this.variation];
+      // } else {
+      //   this.icons = data.default;
+      // }
     })
   },
   methods: {
