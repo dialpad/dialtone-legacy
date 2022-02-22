@@ -1,3 +1,10 @@
+# [6.18.0](https://github.com/dialpad/dialtone/compare/v6.17.0...v6.18.0) (2022-02-22)
+
+
+### Features
+
+* add icons for new call workflow (Phase 1) ([#554](https://github.com/dialpad/dialtone/issues/554)) ([e23f1de](https://github.com/dialpad/dialtone/commit/e23f1dee4c3c05c136f0b10491ca60e4e1abde21))
+
 # [6.17.0](https://github.com/dialpad/dialtone/compare/v6.16.0...v6.17.0) (2022-02-17)
 
 
