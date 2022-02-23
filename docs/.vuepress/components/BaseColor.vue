@@ -1,9 +1,9 @@
 <template>
   <aside class="d-d-flex d-fd-column">
-    <header class="d-d-flex d-jc-space-between d-ai-end d-p16 d-pe-none">
-      <h2 :id="color" class="d-headline20" tabindex="-1">
+    <header class="d-d-flex d-jc-space-between d-ai-end d-py16">
+      <h2 :id="color" class="d-headline24 d-fl1 d-tt-capitalize" tabindex="-1">
         <a :href="'#' + color" class="header-anchor">#</a>
-        <span class="d-pe-auto d-tt-capitalize">{{ color }}</span>
+        {{ color }}
       </h2>
     </header>
     <div v-for="(s, index) in stops"

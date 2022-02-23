@@ -2,21 +2,22 @@
   <div :id="file" class="dialtone-icon-grid__item">
     <aside :data-selected="selectedStatus" class="dialtone-icon-card js-dialtone-icon-card">
       <header class="dialtone-icon-card__header js-dialtone-icon-card-copy-area">
-        <div class="dialtone-icon-card__icon">
-          <img :src="svgPath" alt="" style="height: 100%">
-        </div>
-        <p class="dialtone-icon-card__subtitle">{{ name }}</p>
+        <div :class="cardIconClass" v-html="svgContent" :style="isWeatherKind && variation === 'night' ? 'filter: invert(1)' : ''"></div>
+        <p class="dialtone-icon-card__subtitle d-tt-capitalize">{{ name }} {{ (!isWeatherKind && variation) ? `(${variation})` : '' }}</p>
       </header>
-      <footer class="dialtone-icon-card__footer js-dialtone-icon-card-footer">
+      <footer :class="cardFooterClass">
         <div class="dialtone-icon-card__content">
-          <h2 class="dialtone-icon-card__title">{{ name }}</h2>
+          <h2 class="dialtone-icon-card__title d-tt-capitalize">{{ name }} {{ (!isWeatherKind && variation) ? `(${variation})` : '' }}</h2>
           <div class="dialtone-icon-card__list">
-              <span class="dialtone-icon-card__list__item">
-                <strong>SVG:</strong> <span class="code-example">{{ `${file}.svg` }}</span>
-              </span>
             <span class="dialtone-icon-card__list__item">
-                <strong>Vue:</strong> <span class="code-example js-vue-file">{{ `${vue}.vue` }}</span>
-              </span>
+              <strong>SVG:</strong> <span class="code-example">{{ file + '.svg' }}</span>
+            </span>
+            <span class="dialtone-icon-card__list__item">
+              <strong>Vue:</strong> <span class="code-example js-vue-file">{{ `<${vue} />` }}</span>
+            </span>
+            <span class="dialtone-icon-card__list__item" v-if="code">
+              <strong>Codes:</strong> <span class="code-example">{{ code }}</span>
+            </span>
           </div>
           <p class="dialtone-icon-card__description">{{ desc }}</p>
         </div>
@@ -26,7 +27,9 @@
 </template>
 
 <script>
-export const ICON_KINDS = ['brand', 'patterns', 'spot', 'system'];
+export const ICON_KINDS = ['brand', 'patterns', 'spot', 'system', 'weather'];
+export const ICON_VARIATIONS = ['dark', 'light', 'night', 'day'];
+
 export default {
   name: "BaseIcon",
   props: {
@@ -39,8 +42,10 @@ export default {
       required: true
     },
     desc: {
-      type: String,
-      required: true
+      type: String
+    },
+    code: {
+      type: String
     },
     vue: {
       type: String,
@@ -48,7 +53,6 @@ export default {
     },
     kind: {
       type: String,
-      default: 'brand',
       validator: (kind) => {
         return ICON_KINDS.includes(kind)
       }
@@ -56,16 +60,41 @@ export default {
     selected: {
       type: Boolean,
       default: false
+    },
+    variation: {
+      type: String,
+      validator: (_variation) => {
+        return ICON_VARIATIONS.includes(_variation);
+      },
     }
   },
   computed: {
+    isWeatherKind() {
+      return this.kind === 'weather';
+    },
+    isSpotKind() {
+      return this.kind === 'spot';
+    },
     selectedStatus() {
       return this.selected ? 'yes' : 'no'
     },
     svgPath() {
-      return `/assets/svg/${this.kind}/${this.file}.svg`;
+      return `/assets/svg/${this.kind}/${this.file}.svg?raw`;
+    },
+    cardFooterClass() {
+      return this.isSpotKind ? 'dialtone-icon-card__footer-spot-illustration' : 'dialtone-icon-card__footer';
+    },
+    cardIconClass() {
+      return this.isSpotKind ? 'dialtone-icon-card__icon--autosize' : 'dialtone-icon-card__icon';
     }
   },
+  data: () => ({
+    svgContent: null,
+  }),
+  async created() {
+    const importedModule = await import(/* @vite-ignore */ this.svgPath)
+    this.svgContent = importedModule.default;
+  }
 }
 </script>
 
