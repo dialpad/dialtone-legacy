@@ -11,6 +11,7 @@
 ### Bug Fixes
 
 * popover example page issues ([574dee2](https://github.com/dialpad/dialtone/commit/574dee2fe898ac188405cc18683f9f3f6edb2076))
+# [6.18.0](https://github.com/dialpad/dialtone/compare/v6.17.0...v6.18.0) (2022-02-22)
 
 
 ### Features
@@ -18,6 +19,9 @@
 * add transparent modal ([488f46a](https://github.com/dialpad/dialtone/commit/488f46a6c7995b4e67c40efb553e67fa7194412c))
 
 # [6.15.0-beta.4](https://github.com/dialpad/dialtone/compare/v6.15.0-beta.3...v6.15.0-beta.4) (2022-02-15)
+* add icons for new call workflow (Phase 1) ([#554](https://github.com/dialpad/dialtone/issues/554)) ([e23f1de](https://github.com/dialpad/dialtone/commit/e23f1dee4c3c05c136f0b10491ca60e4e1abde21))
+
+# [6.17.0](https://github.com/dialpad/dialtone/compare/v6.16.0...v6.17.0) (2022-02-17)
 
 
 ### Features
@@ -32,6 +36,16 @@
 * make z-index work on all children ([7aa3fd1](https://github.com/dialpad/dialtone/commit/7aa3fd1a54c058a5db096d72f46869506e41779c))
 
 # [6.15.0-beta.2](https://github.com/dialpad/dialtone/compare/v6.15.0-beta.1...v6.15.0-beta.2) (2022-02-01)
+* add icon only button styles ([#550](https://github.com/dialpad/dialtone/issues/550)) ([4116700](https://github.com/dialpad/dialtone/commit/41167009d1d56ee7b4ddf94ffc320ee1f9e6cb19))
+
+# [6.16.0](https://github.com/dialpad/dialtone/compare/v6.15.0...v6.16.0) (2022-02-11)
+
+
+### Features
+
+* add alarm system icon ([#546](https://github.com/dialpad/dialtone/issues/546)) ([a579460](https://github.com/dialpad/dialtone/commit/a57946052cc03d5cfcf5775b7203e19daaf7686b))
+
+# [6.15.0](https://github.com/dialpad/dialtone/compare/v6.14.0...v6.15.0) (2022-02-04)
 
 
 ### Bug Fixes
@@ -39,11 +53,13 @@
 * remove side padding from header footer ([e0abbcf](https://github.com/dialpad/dialtone/commit/e0abbcf74c9417e84b96d2541140254c59a10153))
 
 # [6.15.0-beta.1](https://github.com/dialpad/dialtone/compare/v6.14.0...v6.15.0-beta.1) (2022-02-01)
+* uc-11528 updating background replacement icon in dialtone ([#541](https://github.com/dialpad/dialtone/issues/541)) ([038bd4e](https://github.com/dialpad/dialtone/commit/038bd4e9c9fbd489445233972dce718559fa2f1e))
 
 
 ### Features
 
 * add popover css and documentation ([df3d204](https://github.com/dialpad/dialtone/commit/df3d2049a8391918e72c912e79da00b00e00bb07))
+* add a few social icons for contact center ([#543](https://github.com/dialpad/dialtone/issues/543)) ([7c1e0a9](https://github.com/dialpad/dialtone/commit/7c1e0a9ddef5acece52ecbca11f1f1b3eb84a9c4))
 * **device settings:** gear icon for device settings ([#539](https://github.com/dialpad/dialtone/issues/539)) ([805f17f](https://github.com/dialpad/dialtone/commit/805f17ff777419877cf36f49a24b75982bc1eac4))
 
 # [6.14.0](https://github.com/dialpad/dialtone/compare/v6.13.0...v6.14.0) (2022-01-28)
