@@ -1,3 +1,20 @@
+# [6.19.0-beta.1](https://github.com/dialpad/dialtone/compare/v6.18.0...v6.19.0-beta.1) (2022-02-25)
+
+
+### Bug Fixes
+
+* add justify-content flex-end to header/footer ([6547fea](https://github.com/dialpad/dialtone/commit/6547fea38d80696629f1a50f91cd195c789607e4))
+* make z-index work on all children ([7aa3fd1](https://github.com/dialpad/dialtone/commit/7aa3fd1a54c058a5db096d72f46869506e41779c))
+* popover example page issues ([574dee2](https://github.com/dialpad/dialtone/commit/574dee2fe898ac188405cc18683f9f3f6edb2076))
+* remove side padding from header footer ([e0abbcf](https://github.com/dialpad/dialtone/commit/e0abbcf74c9417e84b96d2541140254c59a10153))
+
+
+### Features
+
+* add popover css and documentation ([df3d204](https://github.com/dialpad/dialtone/commit/df3d2049a8391918e72c912e79da00b00e00bb07))
+* add transparent modal ([488f46a](https://github.com/dialpad/dialtone/commit/488f46a6c7995b4e67c40efb553e67fa7194412c))
+* popover css and documentation ([#540](https://github.com/dialpad/dialtone/issues/540)) ([2c4dc58](https://github.com/dialpad/dialtone/commit/2c4dc58404944036693816c23b69b0453f38399f))
+
 # [6.15.0-beta.6](https://github.com/dialpad/dialtone/compare/v6.15.0-beta.5...v6.15.0-beta.6) (2022-02-17)
 
 
