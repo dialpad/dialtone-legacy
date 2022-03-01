@@ -1,3 +1,10 @@
+# [6.19.0-beta.2](https://github.com/dialpad/dialtone/compare/v6.19.0-beta.1...v6.19.0-beta.2) (2022-03-01)
+
+
+### Bug Fixes
+
+* remove z-index from content ([38bd70a](https://github.com/dialpad/dialtone/commit/38bd70aae06f947698e5f90d2043af5d02f23da1))
+
 # [6.19.0-beta.1](https://github.com/dialpad/dialtone/compare/v6.18.0...v6.19.0-beta.1) (2022-02-25)
 
 
