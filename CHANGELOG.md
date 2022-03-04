@@ -1,3 +1,10 @@
+## [6.18.1](https://github.com/dialpad/dialtone/compare/v6.18.0...v6.18.1) (2022-03-04)
+
+
+### Bug Fixes
+
+* remove fixed with from checkbox copy ([377e35c](https://github.com/dialpad/dialtone/commit/377e35c1dbdc2d4c5c8fffb5b26ff7cfe5be297c))
+
 # [6.18.0](https://github.com/dialpad/dialtone/compare/v6.17.0...v6.18.0) (2022-02-22)
 
 
