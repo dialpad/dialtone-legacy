@@ -1,0 +1,276 @@
+---
+layout: page
+title: Popover
+description: A Popover displays a content overlay when it's anchor element is activated.
+storybook-url: https://vue.dialpad.design/?path=/story/components-popover--default
+---
+<section class="d-stack16">
+  {% header "h2", "Overview" %}
+  {% paragraph %}A Popover contains a dialog that will appear above other content when activated. It will always appear in a location relative to the anchor.
+  If you are looking for a dialog that does not display relative to the anchor, see <a href="/components/modal/" class="d-link">Modal</a>.
+  Some common examples of popover usage: dropdown list, emoji picker dialog, add comment dialog.
+  A popover can be modal or non-modal. Below are some guidelines on when to use a modal vs non-modal popover.{% endparagraph %}
+  {% paragraph %}Your popover should be modal when:{% endparagraph %}
+  <ul class="d-fs14 d-stack8 d-pr24">
+    <li>It contains scrollable content.</li>
+    <li>It contains components that hold user input state (input, checkbox).</li>
+  </ul>
+  {% paragraph %}Your popover should be non-modal when:{% endparagraph %}
+  <ul class="d-fs14 d-stack8 d-pr24">
+    <li>It is not scrollable.</li>
+    <li>It contains only components that do not hold state (link, button).</li>
+  </ul>
+  <div class="xl:d-fd-column xl:d-flow0 xl:d-stack32 d-fl-col2 d-flow32 d-mt32 d-mb32">
+    <div class="d-d-block d-px16 d-py24 d-bgc-green-100 d-bar4">
+      <h3 class="d-mb16">
+        <span class="d-fc-green-600 d-ps-relative d-t6">
+          {% iconSystem "checkmark", "d-svg--size24" %}
+        </span>
+        <span class="d-fw-bold d-fc-green-600">Use for</span>
+      </h3>
+      <ul class="d-fs14 d-stack8 d-pr24">
+        <li>Smaller sized dialogs that trigger on user activation of an anchor element.</li>
+        <li>Dialogs that should be positioned relative to the anchor.</li>
+        <li>Dialogs that contain interactive components.</li>
+      </ul>
+    </div>
+    <div class="d-d-block d-px16 d-py24 d-bgc-red-100 d-bar4">
+      <h3 class="d-mb16">
+        <span class="d-fc-red-600 d-ps-relative d-t6">
+          {% iconSystem "close", "d-svg--size24" %}
+        </span>
+        <span class="d-fw-bold d-fc-red-600">Don't use for</span>
+      </h3>
+      <ul class="d-fs14 d-stack8 d-pr24">
+        <li>Content that is displayed on hover. (use <a href="/components/tooltip/" class="d-link">Tooltip</a>)</li>
+        <li>Dialogs that should be positioned in the center of the screen.</li>
+        <li>Dialogs that are very large.</li>
+        <li>Alerts.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="d-stack16">
+    <header class="d-stack2">
+      <h3 class="dialtone-title__subsection">Best practices</h3>
+      <ul class="dialtone-copy__normal">
+        <li>Popovers should be fairly small. If you are looking for more of a full size dialog solution see <a href="/components/modal/" class="d-link">Modal</a></li>
+        <li>Trigger using an anchor element, such as a button.</li>
+        <li>Render the dialog at the body element.</li>
+        <li>Focus the first interactive element within the dialog after it is opened.</li>
+        <li>Close the dialog when ESC is pressed.</li>
+        <li>Close non-modal dialogs if they are scrolled out of visibility.</li>
+        <li>Set the z-index of the dialog to var(--zi-modal-element) if modal, var(--zi-popover) if not.</li>
+      </ul>
+    </header>
+  </div>
+</section>
+
+
+
+<section class="d-stack16">
+  <header class="d-stack8">
+    {% header "h2", "Classes" %}
+    {% paragraph %}Popover must contain an anchor and content element. d-modal--transparent can be used as a sibling before the popover container if you wish to make the popover modal.{% endparagraph %}
+  </header>
+  <table class="d-table">
+    <thead>
+      <tr>
+        <th scope="col" class="d-w25p">Class</th>
+        <th scope="col" class="d-w25p">Applies to</th>
+        <th scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in popover.classes %}
+        {% assign class = i.class %}
+        {% assign apply = i.applies %}
+        {% assign desc = i.description %}
+        <tr>
+          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">{{ class }}</th>
+          <td class="d-ff-mono d-fc-orange d-fs12">{% if apply != "N/A" %}<span class="code-example--inline">{% endif %}{{ apply }}{% if apply != "N/A" %}</span>{% endif %}</td>
+          <td>{{ desc }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</section>
+
+<section class="d-stack16">
+  {% header "h2", "Examples" %}
+  <div class="d-stack48">
+    <div class="d-stack8">
+      {% header "h3", "Popover - Modal" %}
+      {% codeWell %}
+        {% codeWellHeader %}
+          <div class="d-modal--transparent"></div>
+          <div class="d-popover d-fl-center d-fd-column d-p24 d-of-auto">
+            <button id="anchor1" class="d-btn d-btn--primary js-popover-anchor" aria-expanded="false" aria-controls="dialog1" aria-haspopup="dialog">Click Me</button>
+            <div id="dialog1" class="d-popover__dialog d-popover__dialog--modal d-w264 d-vi-hidden" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="anchor1">
+              <div class="d-popover__content d-p16">
+                This is content rendered within the popover.<br>
+                <button class="d-btn d-btn--primary">Button</button>
+              </div>
+            </div>
+          </div>
+        {% endcodeWellHeader %}
+        {% codeWellFooter %}
+{% highlight html linenos %}
+<div class="d-modal--transparent"></div>
+<div class="d-popover">
+  <button id="anchor1" class="d-btn d-btn--primary" aria-expanded="false" aria-controls="dialog1" aria-haspopup="dialog">Click Me</button>
+  <div id="dialog1" class="d-popover__dialog d-popover__dialog--modal d-w264" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="anchor1">
+    <div class="d-popover__content d-p16">
+      This is content rendered within the popover.<br>
+      <button class="d-btn d-btn--primary">Button</button>
+    </div>
+  </div>
+</div>
+{% endhighlight %}
+        {% endcodeWellFooter %}
+      {% endcodeWell %}
+    </div>
+
+
+
+    <div class="d-stack8">
+      {% header "h3", "Popover - Non Modal" %}
+      {% codeWell %}
+        {% codeWellHeader %}
+          <div class="d-popover d-fl-center d-fd-column d-p24 d-of-auto">
+            <button id="anchor2" class="d-btn d-btn--primary js-popover-anchor" aria-expanded="false" aria-controls="dialog2" aria-haspopup="dialog">Click Me</button>
+            <div id="dialog2" class="d-popover__dialog d-w264 d-vi-hidden" role="dialog" aria-modal="false" aria-hidden="true" aria-labelledby="anchor2">
+              <div class="d-popover__content d-p16">
+                This is content rendered within the popover.<br>
+                <button class="d-btn d-btn--primary">Button</button>
+              </div>
+            </div>
+          </div>
+        {% endcodeWellHeader %}
+        {% codeWellFooter %}
+{% highlight html linenos %}
+<div class="d-popover">
+  <button id="anchor2" class="d-btn d-btn--primary" aria-expanded="false" aria-controls="dialog2" aria-haspopup="dialog">Click Me</button>
+  <div id="dialog2" class="d-popover__dialog d-w264" role="dialog" aria-modal="false" aria-hidden="true" aria-labelledby="anchor2">
+    <div class="d-popover__content d-p16">
+      This is content rendered within the popover.<br>
+      <button class="d-btn d-btn--primary">Button</button>
+    </div>
+  </div>
+</div>
+{% endhighlight %}
+        {% endcodeWellFooter %}
+      {% endcodeWell %}
+    </div>
+
+
+
+
+    <div class="d-stack8">
+      {% header "h3", "With Header - Modal" %}
+      {% codeWell %}
+        {% codeWellHeader %}
+          <div class="d-modal--transparent"></div>
+          <div class="d-popover d-fl-center d-fd-column d-p24 d-w100p d-of-auto">
+            <button id="anchor3" class="d-btn d-btn--primary js-popover-anchor" aria-expanded="false" aria-controls="dialog3" aria-haspopup="dialog">Click Me</button>
+            <div id="dialog3" class="d-popover__dialog d-popover__dialog--modal d-w264 d-hmx164 d-vi-hidden" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="anchor3">
+              <div class="d-popover__header">
+                This is the header
+              </div>
+              <div class="d-popover__content d-p16">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur delectus distinctio id iure labore, maiores mollitia reprehenderit sunt tempore veritatis. Aliquam delectus earum ex, expedita ipsam nobis obcaecati quibusdam repudiandae.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur delectus distinctio id iure labore, maiores mollitia reprehenderit sunt tempore veritatis. Aliquam delectus earum ex, expedita ipsam nobis obcaecati quibusdam repudiandae.<br>
+                <button class="d-btn d-btn--primary">Button</button>
+              </div>
+            </div>
+          </div>
+        {% endcodeWellHeader %}
+        {% codeWellFooter %}
+{% highlight html linenos %}
+<div class="d-modal--transparent"></div>
+<div class="d-popover">
+  <button id="anchor3" class="d-btn d-btn--primary" aria-expanded="false" aria-controls="dialog3" aria-haspopup="dialog">Click Me</button>
+  <div id="dialog3" class="d-popover__dialog d-popover__dialog--modal d-w264 d-hmx164" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="anchor3">
+    <div class="d-popover__header">
+      This is the header
+    </div>
+    <div class="d-popover__content d-p16">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur delectus distinctio id iure labore, maiores mollitia reprehenderit sunt tempore veritatis. Aliquam delectus earum ex, expedita ipsam nobis obcaecati quibusdam repudiandae.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur delectus distinctio id iure labore, maiores mollitia reprehenderit sunt tempore veritatis. Aliquam delectus earum ex, expedita ipsam nobis obcaecati quibusdam repudiandae.<br>
+      <button class="d-btn d-btn--primary">Button</button>
+    </div>
+  </div>
+</div>
+{% endhighlight %}
+        {% endcodeWellFooter %}
+      {% endcodeWell %}
+    </div>
+
+
+
+  <div class="d-stack8">
+    {% header "h3", "With Footer" %}
+    {% codeWell %}
+      {% codeWellHeader %}
+      <div class="d-modal--transparent"></div>
+        <div  class="d-popover d-fl-center d-fd-column d-p24 d-w100p d-of-auto">
+          <button id="anchor4" class="d-btn d-btn--primary js-popover-anchor" aria-expanded="false" aria-controls="dialog4" aria-haspopup="dialog">Click Me</button>
+          <div id="dialog4" class="d-popover__dialog d-popover__dialog--modal d-w264 d-hmx164 d-vi-hidden" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="anchor4">
+            <div class="d-popover__content d-p16">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur delectus distinctio id iure labore, maiores mollitia reprehenderit sunt tempore veritatis. Aliquam delectus earum ex, expedita ipsam nobis obcaecati quibusdam repudiandae.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur delectus distinctio id iure labore, maiores mollitia reprehenderit sunt tempore veritatis. Aliquam delectus earum ex, expedita ipsam nobis obcaecati quibusdam repudiandae.<br>
+              <button class="d-btn d-btn--primary">Button</button>
+            </div>
+            <div class="d-popover__footer">
+              This is the footer
+            </div>
+          </div>
+        </div>
+      {% endcodeWellHeader %}
+      {% codeWellFooter %}
+{% highlight html linenos %}
+<div class="d-modal--transparent"></div>
+<div class="d-popover">
+  <button id="anchor4" class="d-btn d-btn--primary" aria-expanded="false" aria-controls="dialog4" aria-haspopup="dialog">Click Me</button>
+  <div id="dialog4" class="d-popover__dialog d-popover__dialog--modal d-w264 d-hmx164" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="anchor4">
+    <div class="d-popover__content d-p16">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur delectus distinctio id iure labore, maiores mollitia reprehenderit sunt tempore veritatis. Aliquam delectus earum ex, expedita ipsam nobis obcaecati quibusdam repudiandae.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur delectus distinctio id iure labore, maiores mollitia reprehenderit sunt tempore veritatis. Aliquam delectus earum ex, expedita ipsam nobis obcaecati quibusdam repudiandae.<br>
+      <button class="d-btn d-btn--primary">Button</button>
+    </div>
+    <div class="d-popover__footer">
+      This is the footer
+    </div>
+  </div>
+</div>
+{% endhighlight %}
+      {% endcodeWellFooter %}
+    {% endcodeWell %}
+  </div>
+</div>
+</section>
+
+
+
+<section class="d-stack16">
+  {% header "h2", "Accessibility" %}
+  {% paragraph %}If your popover is modal, please see the accessibility section of this page regarding "focus trapping": <a href="/components/modal/#accessibility" class="d-link">Modal Accessibility</a>. The same rules will apply here if your popover is modal. {% endparagraph %}
+  <table class="d-table">
+    <thead>
+      <tr>
+        <th scope="col" class="d-w25p">Attribute</th>
+        <th scope="col" class="d-w25p">Applies to</th>
+        <th scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in popover.accessible %}
+        {% assign item = i.item %}
+        {% assign apply = i.applies %}
+        {% assign desc = i.description %}
+        <tr>
+          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">{{ item }}</th>
+          <td class="d-ff-mono d-fc-orange d-fs12">{{ apply }}</td>
+          <td>{{ desc }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</section>
+
+<script src="/{{ site.paths.js }}/popover.js" defer></script>
