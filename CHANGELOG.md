@@ -1,3 +1,10 @@
+# [6.19.0](https://github.com/dialpad/dialtone/compare/v6.18.1...v6.19.0) (2022-03-12)
+
+
+### Features
+
+* add popover into dialtone ([#557](https://github.com/dialpad/dialtone/issues/557)) ([846a4e3](https://github.com/dialpad/dialtone/commit/846a4e3d7d94d00d02a21379a2e32a75edcbb26c))
+
 ## [6.18.1](https://github.com/dialpad/dialtone/compare/v6.18.0...v6.18.1) (2022-03-04)
 
 
