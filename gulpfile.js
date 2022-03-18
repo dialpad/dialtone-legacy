@@ -52,6 +52,7 @@ var remember = require('gulp-remember');
 var through2 = require('through2');
 var browsersync = require('browser-sync').create();
 var package = require('./package.json');
+var argv = require('yargs').argv;
 
 //  @@ STYLES
 var postcss = settings.styles ? require('gulp-postcss') : null;
@@ -678,6 +679,7 @@ var buildDocs = function(done, env) {
     return cp.spawn(
         'npx', [
             '@11ty/eleventy',
+            `--pathprefix=${argv.deploySubdir ?? '/'}`
         ], {
             cwd: paths.build.input,
             stdio: 'inherit',
