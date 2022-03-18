@@ -1,0 +1,105 @@
+.d-tablist {
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  color: var(--fc-light);
+  font-size: var(--fs16);
+}
+.d-tablist:not(.d-tablist--no-border):after {
+  content: "";
+  position: absolute;
+  z-index: var(--zi-base1);
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: var(--su1);
+  background-color: var(--black-200);
+}
+.d-tab {
+  --tab--bgc: hsla(var(--white-hsl)  /  0%);
+  --tab--fc: inherit;
+  --tab--oc: var(--focus-ring);
+  display: inline-flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  margin: 0 var(--su2);
+  padding: var(--su12);
+  border: 0;
+  border-radius: var(--br4) var(--br4) 0 0;
+  background-color: var(--tab--bgc);
+  color: var(--tab--fc);
+  font: inherit;
+  line-height: 1;
+  transition-duration: var(--td50);
+  transition-property: background-color, color;
+  transition-timing-function: var(--ttf-in-out);
+  cursor: pointer;
+  fill: currentColor;
+}
+.d-tab:first-of-type {
+  margin-left: 0;
+}
+.d-tab:last-of-type {
+  margin-right: 0;
+}
+.d-tab:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: var(--su2);
+  background-color: var(--tab--bgc);
+}
+.d-tab:focus {
+  box-shadow: 0px 0px 0px var(--su2) var(--tab--oc);
+  outline: none;
+}
+.d-tab:hover {
+  --tab--bgc: var(--black-025);
+  --tab--fc: var(--fc-dark);
+}
+@media (prefers-reduced-motion) {
+  .d-tab {
+    transition: none;
+  }
+}
+.d-tab--selected {
+  --tab--fc: var(--primary-color);
+  z-index: var(--zi-selected);
+}
+.d-tab--selected:hover {
+  --tab--bgc: hsla(var(--primary-color-hsl)  /  10%);
+  --tab--fc: var(--primary-color-hover);
+}
+.d-tab--selected::after,
+.d-tab--selected:hover::after {
+  --tab--bgc: var(--primary-color);
+}
+.d-tablist--inverted {
+  --tab--fc: var(--white);
+}
+.d-tablist--inverted:after {
+  background-color: hsla(var(--purple-800-hsl)  /  50%);
+}
+.d-tablist--inverted .d-tab {
+  --tab--fc: var(--white);
+}
+.d-tablist--inverted .d-tab:hover {
+  --tab--bgc: hsla(var(--white-hsl)  /  10%);
+}
+.d-tablist--inverted .d-tab--selected {
+  --tab--fc: var(--white);
+  --tab--oc: var(--white);
+}
+.d-tablist--inverted .d-tab--selected:after {
+  --tab--bgc: currentColor;
+}
+.d-tablist--sm {
+  font-size: var(--fs12);
+}
+.d-tablist--sm .d-tab {
+  padding: var(--su12);
+}

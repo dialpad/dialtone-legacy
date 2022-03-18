@@ -1,0 +1,38 @@
+.d-breadcrumbs > ol {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: var(--fs14);
+  line-height: var(--lh6);
+}
+.d-breadcrumbs .d-breadcrumbs__item {
+  list-style: none;
+  position: relative;
+  margin: 0;
+  margin-left: var(--su6);
+  padding: 0;
+}
+.d-breadcrumbs .d-breadcrumbs__item:not(:last-of-type) {
+  margin-right: var(--su12);
+}
+.d-breadcrumbs .d-breadcrumbs__item:not(:last-of-type):before {
+  content: "/";
+  position: absolute;
+  right: var(--sun12);
+  margin-top: var(--su1);
+  color: var(--muted-color);
+}
+.d-breadcrumbs .d-breadcrumbs__item--selected .d-link {
+  text-decoration: none;
+  cursor: default;
+}
+.d-breadcrumbs.d-breadcrumbs--inverted .d-breadcrumbs__item:not(:last-of-type):before {
+  color: var(--inverted-color);
+}
+.d-breadcrumbs.d-breadcrumbs--inverted .d-breadcrumbs__item--selected .d-link:hover {
+  color: var(--inverted-color);
+}

@@ -1,0 +1,88 @@
+.d-banner {
+  --banner--bgc: var(--black-025);
+  --banner--fc: var(--fc-dark);
+  display: flex;
+  position: fixed;
+  z-index: var(--zi-navigation-fixed);
+  top: 0;
+  right: 0;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: var(--su48);
+  border-radius: 0;
+  background-color: var(--banner--bgc);
+  box-shadow: none;
+  color: var(--banner--fc);
+  font-size: var(--fs14);
+  line-height: var(--lh6);
+}
+.d-banner[aria-hidden="true"] {
+  --topbar-height: var(--sun64);
+  visibility: hidden;
+  opacity: 0;
+}
+.d-banner[aria-hidden="false"] {
+  visibility: visible;
+  opacity: 1;
+}
+.d-banner.d-banner--pinned {
+  z-index: calc(var(--zi-navigation-fixed) + 1);
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+.d-banner--transform {
+  -webkit-transform: translate3d(0, var(--topbar-height), 0);
+          transform: translate3d(0, var(--topbar-height), 0);
+}
+.d-banner__dialog {
+  display: flex;
+  position: relative;
+  align-items: center;
+  width: 100%;
+  max-width: 128rem;
+  min-height: 100%;
+  margin: 0 auto;
+  padding: var(--su8);
+}
+.d-banner__dialog .d-notice__content {
+  flex-direction: row;
+  align-items: center;
+}
+.d-banner__dialog .d-notice__content > * + * {
+  margin-left: 0.4rem !important;
+}
+.d-banner.d-banner--important {
+  --banner--bgc: var(--black-800);
+  --banner--fc: var(--black-025);
+}
+.d-banner--error {
+  --banner--bgc: var(--red-100);
+  --banner--fc: var(--red-700);
+}
+.d-banner--error.d-banner--important {
+  --banner--bgc: var(--red-500);
+  --banner--fc: var(--white);
+}
+.d-banner--info {
+  --banner--bgc: var(--purple-100);
+}
+.d-banner--info.d-banner--important {
+  --banner--bgc: var(--purple-500);
+  --banner--fc: var(--white);
+}
+.d-banner--success {
+  --banner--bgc: var(--green-100);
+  --banner--fc: var(--green-700);
+}
+.d-banner--success.d-banner--important {
+  --banner--bgc: var(--green-300);
+  --banner--fc: var(--green-700);
+}
+.d-banner--warning {
+  --banner--bgc: var(--yellow-100);
+}
+.d-banner--warning.d-banner--important {
+  --banner--bgc: var(--yellow-400);
+  --banner--fc: var(--fc-dark);
+}

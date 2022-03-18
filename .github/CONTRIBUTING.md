@@ -177,7 +177,7 @@ Dialtone follows [SemVer](https://semver.org/) for versioning and the commit mes
 [Eleventy](https://www.11ty.dev/) also known as 11ty, is used as a static site generator for our documentation site. Eleventy's root folder is within the folder `docs` in the Dialtone repository. `.eleventy.js` within this folder is the core configuration for eleventy. If you look in this file you can see we have defined many [shortcodes](https://www.11ty.dev/docs/shortcodes/) which can be used in eleventy templates. Our templates use the [Liquid Template Language](https://www.11ty.dev/docs/languages/liquid/). Here are some short descriptions of the folders within `docs` and what they are responsible for.
 
 - `docs/_includes`: Contains reusable template segments that can be inserted into other templates.
-- `docs/_site`: Where the compiled build is output to when you run `npm run build`.
+- `docs/site`: Where the compiled build is output to when you run `npm run build`.
 - `docs/assets`: Contains images, javascript utilities and doc site specific LESS/CSS. **Note:** the CSS and fonts folders within `docs/assets` are output by the Dialtone build and any manual changes will be overwritten.
 - `docs/components`: Contains templates for the "Components" section of the website. (Form inputs, Avatar, Banner etc).
 - `docs/design`: Contains templates for the "Design" section of the website. (Colors, Icons, etc).

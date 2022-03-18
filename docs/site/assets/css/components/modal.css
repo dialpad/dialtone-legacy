@@ -1,0 +1,144 @@
+.d-modal {
+  --modal--bgc: hsla(var(--black-900-hsl)  /  85%);
+  --modal-dialog--bgc: var(--white);
+  --modal-dialog--fc: var(--black-700);
+  --modal-header--fc: var(--black-800);
+  display: flex;
+  visibility: hidden;
+  position: fixed;
+  z-index: var(--zi-hide);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--su32);
+  background-color: var(--modal--bgc);
+  opacity: 0;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  transition: opacity 100ms var(--ttf-in-out) 10ms, z-index 0s 200ms, visibility 0s 200ms, -webkit-transform 100ms var(--ttf-in-out) 10ms;
+  transition: opacity 100ms var(--ttf-in-out) 10ms, z-index 0s 200ms, visibility 0s 200ms, transform 100ms var(--ttf-in-out) 10ms;
+  transition: opacity 100ms var(--ttf-in-out) 10ms, z-index 0s 200ms, visibility 0s 200ms, transform 100ms var(--ttf-in-out) 10ms, -webkit-transform 100ms var(--ttf-in-out) 10ms;
+  will-change: visibility, z-index, opacity;
+}
+@media (prefers-reduced-motion) {
+  .d-modal {
+    transition: none;
+  }
+}
+.d-modal__dialog {
+  visibility: hidden;
+  position: relative;
+  z-index: var(--zi-hide);
+  width: 100%;
+  max-width: var(--size628);
+  max-height: 100%;
+  padding: var(--su24);
+  border-radius: var(--br8);
+  background-color: var(--modal-dialog--bgc);
+  box-shadow: var(--bs-card);
+  opacity: 0;
+  color: var(--modal-dialog--fc);
+  font-size: var(--fs16);
+  line-height: var(--lh8);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 30%, 0) scale3d(0.75, 0.75, 0.75);
+          transform: translate3d(0, 30%, 0) scale3d(0.75, 0.75, 0.75);
+  transition: opacity 200ms var(--ttf-in-out) 0s, z-index 0s 200ms, visibility 0s 200ms, -webkit-transform 100ms var(--ttf-in-out) 0s;
+  transition: opacity 200ms var(--ttf-in-out) 0s, z-index 0s 200ms, visibility 0s 200ms, transform 100ms var(--ttf-in-out) 0s;
+  transition: opacity 200ms var(--ttf-in-out) 0s, z-index 0s 200ms, visibility 0s 200ms, transform 100ms var(--ttf-in-out) 0s, -webkit-transform 100ms var(--ttf-in-out) 0s;
+  will-change: visibility, z-index, opacity, tranform;
+  overflow-y: auto;
+}
+.d-modal__dialog > * + * {
+  margin-top: 1.6rem !important;
+}
+.d-modal[aria-hidden="false"],
+.d-modal[aria-hidden="false"] .d-modal__dialog {
+  visibility: visible;
+  z-index: var(--zi-modal);
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+          transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+  transition: opacity 100ms var(--ttf-in-out) 10ms, z-index 0s 0s, visibility 0s 0s, -webkit-transform 100ms var(--ttf-in-out) 10ms;
+  transition: opacity 100ms var(--ttf-in-out) 10ms, z-index 0s 0s, visibility 0s 0s, transform 100ms var(--ttf-in-out) 10ms;
+  transition: opacity 100ms var(--ttf-in-out) 10ms, z-index 0s 0s, visibility 0s 0s, transform 100ms var(--ttf-in-out) 10ms, -webkit-transform 100ms var(--ttf-in-out) 10ms;
+}
+.d-modal__footer {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  margin: var(--sun4);
+}
+.d-modal__footer > * {
+  margin: var(--su4);
+}
+.d-modal__header {
+  margin: 0 !important;
+  color: var(--modal-header--fc);
+  font-size: var(--fs24);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh4);
+}
+.d-modal__content {
+  max-width: 75ch;
+  margin: 0;
+}
+.d-modal__close {
+  position: absolute;
+  top: var(--su8);
+  right: var(--su8);
+  margin: 0 !important;
+}
+.d-modal__banner {
+  position: relative;
+  width: 100%;
+  max-width: var(--size628);
+  padding: var(--su12) var(--su24);
+  border-radius: var(--br8) var(--br8) 0 0;
+  background-color: var(--yellow-200);
+  font-size: var(--fs14);
+  line-height: var(--lh4);
+}
+.d-modal__banner:not(.d-d-none) + .d-modal__dialog {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.d-modal--full {
+  overflow: hidden scroll;
+  padding: 0;
+  -webkit-transform: unset !important;
+          transform: unset !important;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.d-modal--full .d-modal__dialog {
+  display: flex;
+  flex-direction: column;
+  max-width: unset;
+  height: 100%;
+  padding: var(--su32);
+  border-radius: 0;
+  -webkit-transform: unset !important;
+          transform: unset !important;
+}
+.d-modal--full,
+.d-modal--full .d-modal__dialog {
+  transition: opacity 200ms var(--ttf-in-out) 0s, z-index 0s 200ms, visibility 0s 200ms;
+}
+.d-modal--full .d-modal__footer {
+  margin: var(--sun16) var(--sun12);
+  margin-top: auto !important;
+}
+.d-modal--full .d-modal__banner {
+  max-width: unset;
+  padding: var(--su12) var(--su32);
+  border-radius: 0;
+}
+.d-modal--danger {
+  --modal-header--fc: var(--fc-error);
+}
