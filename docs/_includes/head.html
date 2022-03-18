@@ -1,4 +1,5 @@
 <head>
+    <base href="/{{ site.baseurl }}/">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -6,17 +7,17 @@
     <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
     <!-- Favicons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/{{ site.paths.ico }}/apple-touch-icon.png">
-    <link rel="icon" href="/{{ site.paths.ico }}/favicon.svg">
-    <link rel="manifest" href="/{{ site.paths.ico }}/site.webmanifest">
-    <link rel="mask-icon" href="/{{ site.paths.ico }}/safari-pinned-tab.svg" color="#6C3DFF">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ site.paths.ico }}/apple-touch-icon.png">
+    <link rel="icon" href="{{ site.paths.ico }}/favicon.svg">
+    <link rel="manifest" href="{{ site.paths.ico }}/site.webmanifest">
+    <link rel="mask-icon" href="{{ site.paths.ico }}/safari-pinned-tab.svg" color="#6C3DFF">
     <meta name="msapplication-TileColor" content="#6C3DFF">
     <meta name="theme-color" content="#ffffff">
 
     <!-- Social -->
     <meta property="og:type" content="website"/>
     <meta property="og:url" content="https://dialpad.design/"/>
-    <meta property="og:image" itemprop="image primaryImageOfPage" content="/{{ site.paths.ico }}/apple-touch-icon-180x180.png" />
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="{{ site.paths.ico }}/apple-touch-icon-180x180.png" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:domain" content="dialpad.design" />
     <meta name="twitter:title" property="og:title" itemprop="title name" content="Dialtone" />
@@ -24,15 +25,15 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
-    <link rel="stylesheet" type="text/css" href="/{{ site.paths.css }}/{{ filenames.dialtone }}?{{ site.time | date: '%s%N' }}" />
-    <link rel="stylesheet" type="text/css" href="/{{ site.paths.css }}/{{ filenames.dialtoneDocs }}?{{ site.time | date: '%s%N' }}" />
+    <link rel="stylesheet" type="text/css" href="{{ site.paths.css }}/{{ filenames.dialtone }}?{{ site.time | date: '%s%N' }}" />
+    <link rel="stylesheet" type="text/css" href="{{ site.paths.css }}/{{ filenames.dialtoneDocs }}?{{ site.time | date: '%s%N' }}" />
 
     <!-- Javascript -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="/{{ site.paths.js }}/materialize.min.js"></script>
-    <script src="/{{ site.paths.js }}/theme-switcher.js"></script>
-    <script src="/{{ site.paths.js }}/menu.js"></script>
-    <script src="/{{ site.paths.js }}/nav.js"></script>
+    <script src="{{ site.paths.js }}/materialize.min.js"></script>
+    <script src="{{ site.paths.js }}/theme-switcher.js"></script>
+    <script src="{{ site.paths.js }}/menu.js"></script>
+    <script src="{{ site.paths.js }}/nav.js"></script>
     {% if dialtone.environment == "development" %}
         <script id="__bs_script__">//<![CDATA[
     document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.26.3'><\/script>".replace("HOST", location.hostname));

@@ -3,11 +3,12 @@ module.exports = {
   description: "The design system and resources for Dialpad and UberConference.",
   localurl: "http://localhost:4000/",
   url: "https://dialpad.design",
+  baseurl: process.env.ELEVENTY_BASE_URL,
   paths: {
-    css: `${process.env.ELEVENTY_BASE_URL}/assets/css`,
-    img: `${process.env.ELEVENTY_BASE_URL}/assets/images`,
-    icons: `${process.env.ELEVENTY_BASE_URL}/assets/images/icons`,
-    ico: `${process.env.ELEVENTY_BASE_URL}/assets/images/favicons`,
-    js: `${process.env.ELEVENTY_BASE_URL}/assets/js`,
+    css: `assets/css`,
+    img: `assets/images`,
+    icons: `assets/images/icons`,
+    ico: `assets/images/favicons`,
+    js: `assets/js`,
   }
 }
