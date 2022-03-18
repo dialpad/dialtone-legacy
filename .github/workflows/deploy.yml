@@ -3,18 +3,16 @@ name: Deploy
 on:
   push:
     branches:
-      - production
-      - alpha
-      - beta
+      - github-pages-deploy
 
 jobs:
   deploy:
-
+    concurrency: ${{ github.workflow }}-${{ github.ref }}
     runs-on: ubuntu-latest
 
     steps:
       - name: Check out branch
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Use Node.js
         uses: actions/setup-node@v1
@@ -41,15 +39,24 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+        # note that npm run build is executed before publishing via prepublishOnly
       - name: Deploy production
         if: ${{ github.ref == 'refs/heads/production' }}
         run: npm publish
 
-      - name: Deploy prerelease
-        if: ${{ github.ref != 'refs/heads/production' }}
-        run: npm publish --tag ${{ steps.branch.outputs.BRANCH }}
+      - name: Deploy to GitHub Pages
+        if: ${{ github.ref == 'refs/heads/github-pages-deploy' }}
+        uses: JamesIves/github-pages-deploy-action@v4.2.5
+        with:
+          branch: gh-pages
+          folder: docs/_site
+          clean-exclude: deploy-previews
 
-      - name: Github Release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx semantic-release --extends ./release-ci.config.js
+      # - name: Deploy prerelease
+      #   if: ${{ github.ref != 'refs/heads/production' }}
+      #   run: npm publish --tag ${{ steps.branch.outputs.BRANCH }}
+
+      # - name: Github Release
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   run: npx semantic-release --extends ./release-ci.config.js
