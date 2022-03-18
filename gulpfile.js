@@ -679,6 +679,7 @@ var buildDocs = function(done, env) {
     return cp.spawn(
         'npx', [
             '@11ty/eleventy',
+            `--pathprefix=${argv.deploySubdir ?? '/'}`
         ], {
             cwd: paths.build.input,
             stdio: 'inherit',
