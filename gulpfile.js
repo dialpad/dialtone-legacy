@@ -104,7 +104,7 @@ var paths = {
         libVue: './lib/dist/vue/**/*',
         libFavicons: './lib/dist/favicons/**/*',
         libFonts: './dist/fonts/**/*',
-        docs: './docs/site/**/*',
+        docs: './docs/_site/**/*',
         docsCache: './docs/.jekyll-cache/**/*',
         docsIcons: './docs/_includes/icons/**/*',
         docsFavicons: './docs/assets/images/favicons/**/*',
@@ -171,14 +171,14 @@ var paths = {
     },
     build: {
         input: './docs/',
-        dest: './docs/site/',
+        dest: './docs/_site/',
         config: './docs/_config.yml',
         baseurl: ''
     },
     watch: {
         lib: './lib/build/less/**/*',
         docs: './docs/**/*',
-        docsExcludeSite: '!./docs/site/**/*',
+        docsExcludeSite: '!./docs/_site/**/*',
         docsExcludeCSS: '!./docs/assets/css/**/*',
         docsExcludeFonts: '!./docs/assets/fonts/**/*',
         docsExcludeSVG: '!./docs/_includes/icons/**/*',
