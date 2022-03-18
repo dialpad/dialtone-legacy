@@ -39,6 +39,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Install dependencies
+        run: npm run build
+
         # note that npm run build is executed before publishing via prepublishOnly
       - name: Deploy production
         if: ${{ github.ref == 'refs/heads/production' }}
