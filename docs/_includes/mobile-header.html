@@ -14,8 +14,9 @@
     <div class="js-mobile-header-drop-down-navigation d-o0 d-ps-fixed d-l0 d-w100p d-bgc-white d-of-auto d-fs24 d-d-flex d-fd-column d-ai-baseline d-pt24 d-pr16">
             {% if site-nav %}
               {% for section in site-nav.sections %}
-                {% assign slug = page.url %}
-                {% assign url = section.url %}
+                {% assign pageUrlNoSlash = page.url | remove_first: '/' %}
+                {% assign slug = page.url | replace: '/',' ' | truncatewords: 2 | remove:'...' %}
+                {% assign url = section.url | replace: '/',' ' | truncatewords: 1 | remove:'...' %}
 
                 {% if slug contains url %}
                   <!-- This is for navigation that doesn't categorize its nav items -->
@@ -23,7 +24,7 @@
                       <ul id="mobile-nav" class="d-ls-reset d-pr16 d-stack4">
                         {% for item in section.pages %}
                             <li>
-                                <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4{% if page.url == item.url %} d-bgc-purple-100 d-bgo50{% endif %}" href="{{ item.url }}">{{ item.title }}</a>
+                                <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4{% if pageUrlNoSlash == item.url %} d-bgc-purple-100 d-bgo50{% endif %}" href="{{ item.url }}">{{ item.title }}</a>
                             </li>
                         {% endfor %}
                       </ul>
@@ -39,7 +40,7 @@
                                 <ul class="d-ls-reset d-stack4">
                                     {% for link in subsection.pages %}
                                         <li>
-                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4{% if page.url == link.url %} d-bgc-purple-100 d-bgo50{% endif %}" href="{{ link.url }}">{{ link.title }}</a>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4{% if pageUrlNoSlash == link.url %} d-bgc-purple-100 d-bgo50{% endif %}" href="{{ link.url }}">{{ link.title }}</a>
                                         </li>
                                     {% endfor %}
                                 </ul>
