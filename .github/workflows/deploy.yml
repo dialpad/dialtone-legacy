@@ -3,7 +3,9 @@ name: Deploy
 on:
   push:
     branches:
-      - github-pages-deploy
+      - production
+      - alpha
+      - beta
 
 jobs:
   deploy:
@@ -39,27 +41,24 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Install dependencies
-        run: npm run build -- --deploySubdir dialtone
-
         # note that npm run build is executed before publishing via prepublishOnly
       - name: Deploy production
         if: ${{ github.ref == 'refs/heads/production' }}
         run: npm publish
 
       - name: Deploy to GitHub Pages
-        if: ${{ github.ref == 'refs/heads/github-pages-deploy' }}
+        if: ${{ github.ref == 'refs/heads/production' }}
         uses: JamesIves/github-pages-deploy-action@v4.2.5
         with:
           branch: gh-pages
           folder: docs/_site
           clean-exclude: deploy-previews
 
-      # - name: Deploy prerelease
-      #   if: ${{ github.ref != 'refs/heads/production' }}
-      #   run: npm publish --tag ${{ steps.branch.outputs.BRANCH }}
+      - name: Deploy prerelease
+        if: ${{ github.ref != 'refs/heads/production' }}
+        run: npm publish --tag ${{ steps.branch.outputs.BRANCH }}
 
-      # - name: Github Release
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #   run: npx semantic-release --extends ./release-ci.config.js
+      - name: Github Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npx semantic-release --extends ./release-ci.config.js
