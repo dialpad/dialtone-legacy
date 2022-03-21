@@ -16,7 +16,7 @@
     "build": "gulp",
     "start": "gulp watch",
     "debug": "DEBUG=Elventy* npx @11ty/eleventy --serve --input=docs",
-    "prepublishOnly": "npm run build",
+    "prepublishOnly": "npm run build -- --deploySubdir dialtone",
     "release": "semantic-release --no-ci --extends ./release-local.config.js",
     "prepare": "husky install",
     "stylelint": "npx stylelint 'lib/build/less/**/*.{less,css}'",
@@ -91,7 +91,8 @@
     "stylelint-config-standard": "^23.0.0",
     "stylelint-less": "^1.0.1",
     "stylelint-no-px": "^1.0.1",
-    "through2": "^4.0.2"
+    "through2": "^4.0.2",
+    "yargs": "^17.3.1"
   },
   "dependencies": {
     "eleventy-plugin-nesting-toc": "^1.2.0",
