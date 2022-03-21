@@ -140,20 +140,29 @@
 }
 
 //  ============================================================================
-//  $   BUTTON ICON
+//  $   BUTTON WITH ICON
 //  ----------------------------------------------------------------------------
+.d-btn--vertical {
+    flex-direction: column;
+}
+
 .d-btn__icon {
     display: flex;
-    margin-top: var(--sun4);
-    margin-bottom: var(--sun4);
     line-height: 0;
 }
 
-.d-btn__icon--left {
+:not(.d-btn--vertical) > .d-btn__icon {
+    margin-top: var(--sun4);
+    margin-bottom: var(--sun4);
+}
+
+.d-btn__icon--left,
+.d-btn__icon--top {
     order: -1;
 }
 
-.d-btn__icon--right {
+.d-btn__icon--right,
+.d-btn__icon--bottom {
     order: 1;
 }
 
