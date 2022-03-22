@@ -295,7 +295,7 @@ storybook-url: https://vue.dialpad.design/?path=/story/components-button--defaul
     </div>
     <div class="d-stack8">
       {% header "h3", "With Icons" %}
-      {% paragraph %}Button labels can include an icon to the left or the right of text. Every button style can accept icon classes, though we only provide a few possible examples.{% endparagraph %}
+      {% paragraph %}Button labels can include an icon next to the text. Every button style can accept icon classes, though we only provide a few possible examples.{% endparagraph %}
       {% codeWell %}
         {% codeWellHeader %}
           <div class="d-stack8">
@@ -311,6 +311,18 @@ storybook-url: https://vue.dialpad.design/?path=/story/components-button--defaul
                 <span class="d-btn__label">Label</span>
               </button>
             </div>
+            <div>
+              <button class="d-btn d-btn--outlined d-btn--vertical" type="button">
+                <span class="d-btn__icon d-btn__icon--top">{% iconSystem "phone", "js-svg" %}</span>
+                <span class="d-btn__label">Label</span>
+              </button>
+            </div>
+            <div>
+              <button class="d-btn d-btn--outlined d-btn--vertical" type="button">
+                <span class="d-btn__icon d-btn__icon--bottom">{% iconSystem "phone", "js-svg" %}</span>
+                <span class="d-btn__label">Label</span>
+              </button>
+            </div>
           </div>
         {% endcodeWellHeader %}
         {% codeWellFooter %}
@@ -321,6 +333,14 @@ storybook-url: https://vue.dialpad.design/?path=/story/components-button--defaul
 </button>
 <button class="d-btn d-btn--outlined" type="button">
   <span class="d-btn__icon d-btn__icon--right">...</span>
+  <span class="d-btn__label">...</span>
+</button>
+<button class="d-btn d-btn--vertical d-btn--outlined" type="button">
+  <span class="d-btn__icon d-btn__icon--top">...</span>
+  <span class="d-btn__label">...</span>
+</button>
+<button class="d-btn d-btn--vertical d-btn--outlined" type="button">
+  <span class="d-btn__icon d-btn__icon--bottom">...</span>
   <span class="d-btn__label">...</span>
 </button>
           {% endhighlight %}
