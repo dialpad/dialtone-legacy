@@ -1,3 +1,15 @@
+# [6.20.0](https://github.com/dialpad/dialtone/compare/v6.19.0...v6.20.0) (2022-03-22)
+
+
+### Bug Fixes
+
+* dt-404 popover alignment fixes ([#558](https://github.com/dialpad/dialtone/issues/558)) ([6e8b035](https://github.com/dialpad/dialtone/commit/6e8b035d34d51a3609508b757fea95fa0db99812))
+
+
+### Features
+
+* dt-407 support icons above and below the labels on buttons ([#561](https://github.com/dialpad/dialtone/issues/561)) ([8e2752a](https://github.com/dialpad/dialtone/commit/8e2752a11556836c6061c9e8b559c9fea1e0cffa))
+
 # [6.19.0](https://github.com/dialpad/dialtone/compare/v6.18.1...v6.19.0) (2022-03-12)
 
 
