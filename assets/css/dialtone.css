@@ -753,16 +753,29 @@ body {
   align-items: center;
   justify-content: center;
 }
+.d-btn--vertical {
+  flex-direction: column;
+}
 .d-btn__icon {
   display: flex;
-  margin-top: var(--sun4);
-  margin-bottom: var(--sun4);
   line-height: 0;
 }
-.d-btn__icon--left {
+.d-btn__icon--left,
+.d-btn__icon--right {
+  margin-top: var(--sun4);
+  margin-bottom: var(--sun4);
+}
+.d-btn__icon--top,
+.d-btn__icon--bottom {
+  margin-right: var(--sun4);
+  margin-left: var(--sun4);
+}
+.d-btn__icon--left,
+.d-btn__icon--top {
   order: -1;
 }
-.d-btn__icon--right {
+.d-btn__icon--right,
+.d-btn__icon--bottom {
   order: 1;
 }
 .d-btn__icon--left:not(:only-child) {
@@ -778,6 +791,14 @@ body {
 .d-btn__icon--right ~ .d-btn__label,
 .d-btn__label ~ .d-btn__icon--left {
   margin-right: var(--su4);
+}
+.d-btn__icon--top ~ .d-btn__label,
+.d-btn__label ~ .d-btn__icon--bottom {
+  margin-top: var(--su4);
+}
+.d-btn__icon--bottom ~ .d-btn__label,
+.d-btn__label ~ .d-btn__icon--top {
+  margin-bottom: var(--su4);
 }
 .d-btn--circle {
   --button--fc: var(--black-800);
