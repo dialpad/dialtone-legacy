@@ -1,3 +1,10 @@
+## [6.20.2](https://github.com/dialpad/dialtone/compare/v6.20.1...v6.20.2) (2022-03-29)
+
+
+### Bug Fixes
+
+* update version5 link ([637a5c1](https://github.com/dialpad/dialtone/commit/637a5c1f9c5212de35e09c7a3d646be9d95d70b3))
+
 ## [6.20.1](https://github.com/dialpad/dialtone/compare/v6.20.0...v6.20.1) (2022-03-29)
 
 
