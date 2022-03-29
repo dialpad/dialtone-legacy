@@ -52,7 +52,9 @@ jobs:
         with:
           branch: gh-pages
           folder: docs/_site
-          clean-exclude: deploy-previews
+          clean-exclude: |
+            deploy-previews
+            version5
 
       - name: Deploy prerelease
         if: ${{ github.ref != 'refs/heads/production' }}
