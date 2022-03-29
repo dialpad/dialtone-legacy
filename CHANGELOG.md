@@ -1,3 +1,10 @@
+## [6.20.1](https://github.com/dialpad/dialtone/compare/v6.20.0...v6.20.1) (2022-03-29)
+
+
+### Bug Fixes
+
+* remove docsite deploy subdir ([7fdbd1c](https://github.com/dialpad/dialtone/commit/7fdbd1cdd04984155c5fccfd263896bd6015f739))
+
 # [6.20.0](https://github.com/dialpad/dialtone/compare/v6.19.0...v6.20.0) (2022-03-22)
 
 
