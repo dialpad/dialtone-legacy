@@ -1,0 +1,153 @@
+<section class="d-stack16">
+    <header class="d-stack2">
+        <h2 class="dialtone-title__section">Grid Layouts</h2>
+        <p class="dialtone-copy__normal">These layout classes cover many of the common layouts seen throughout Dialpad and UberConference. Instead of using Less variables (<span class="code-example--inline">@variable</span>) within these classes (which locks the value into the CSS), these layouts use CSS variables (<span class="code-example--inline">var(--variable)</span>). Using CSS variables allows items to change dynamically on a page without needing to add or remove a class name. This is especially helpful with responsive designs, allowing us to adjust column totals, widths, heights, etc based on viewport height or width without needing to write more CSS.</p>
+    </header>
+    <div class="d-stack2">
+        <h2 class="dialtone-title__subsection">CSS Variables</h2>
+        <table class="dialtone-table dialtone-table--code">
+            <thead>
+                <tr>
+                    <th scope="col" class="dialtone-table__column--md">CSS Variable</th>
+                    <th scope="col">Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                
+                
+                <tr>
+                    <th scope="row">--grid-sidebar-col</th>
+                    <td>minmax(19.2rem, 38.4rem)</td>
+                </tr>
+                
+                
+                
+                <tr>
+                    <th scope="row">--grid-content-col</th>
+                    <td>minmax(min-content, 128rem)</td>
+                </tr>
+                
+                
+                
+                <tr>
+                    <th scope="row">--grid-header-row</th>
+                    <td>minmax(12.8rem, min-content)</td>
+                </tr>
+                
+                
+                
+                <tr>
+                    <th scope="row">--grid-content-row</th>
+                    <td>minmax(51.2rem, max-content)</td>
+                </tr>
+                
+                
+                
+                <tr>
+                    <th scope="row">--grid-col</th>
+                    <td>12</td>
+                </tr>
+                
+                
+                
+                <tr>
+                    <th scope="row">--grid-col-width</th>
+                    <td>minmax(min-content, 25.6rem)</td>
+                </tr>
+                
+                
+                
+                <tr>
+                    <th scope="row">--grid-auto-col</th>
+                    <td>1fr</td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+    <div class="d-stack2">
+        <h2 class="dialtone-title__subsection">Classes</h2>
+        <table class="dialtone-table dialtone-table--code">
+            <thead>
+                <tr>
+                    <th scope="col" class="dialtone-table__column--md">Class</th>
+                    <th scope="col">Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">.d-grid-layout--with-columns</th>
+                    <td>
+                        grid-template-columns: var(--grid-template-col);<br/>
+                        grid-auto-columns: var(--grid-auto-col);
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">.d-grid-layout--with-sidebar-content</th>
+                    <td>
+                        grid-template-areas: "sidebar content";<br/>
+                        grid-template-columns: [sidebar-start] var(--grid-sidebar-col) [sidebar-end content-start] var(--grid-content-col) [content-end];
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">.d-grid-layout--with-header-content</th>
+                    <td>
+                        grid-template-areas: "header content";<br/>
+                        grid-template-rows: [header-start] var(--grid-header-row) [header-end content-start] var(--grid-content-row) [content-end];<br/>
+                        grid-auto-rows: 1fr;<br/>
+                        grid-auto-columns: minmax(min-content, auto);
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="d-stack16">
+        <h2 class="dialtone-title__subsection">Examples</h2>
+        <div class="d-stack2">
+            <h3 class="dialtone-title__small">With columns</h3>
+            <div class="dialtone-example" data-example="yes" data-code="yes">
+                <div class="dialtone-example__example">
+                    <div class="d-grid-layout--with-columns d-grid-gap8" style="--grid-col: 5;">
+                        <div class="layout-block"><div class="layout-block__label">[col]</div></div>
+                        <div class="layout-block"><div class="layout-block__label">[col]</div></div>
+                        <div class="layout-block"><div class="layout-block__label">[col]</div></div>
+                        <div class="layout-block"><div class="layout-block__label">[col]</div></div>
+                        <div class="layout-block"><div class="layout-block__label">[col]</div></div>
+                    </div>
+                </div>
+                <div class="dialtone-example__code">
+<pre class="language-html"><code class="language-html"><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>.d-grid-layout--with-columns<span class="token punctuation">"</span></span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">--grid-col</span><span class="token punctuation">:</span> 5<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></span></code></pre>
+                </div>
+            </div>
+        </div>
+        <div class="d-stack2">
+            <h3 class="dialtone-title__small">With sidebar</h3>
+            <div class="dialtone-example" data-example="yes" data-code="yes">
+                <div class="dialtone-example__example">
+                    <div class="d-grid-layout--with-sidebar-content d-grid-gap8">
+                        <div class="layout-block"><div class="layout-block__label">[sidebar]</div></div>
+                        <div class="layout-block"><div class="layout-block__label">[content]</div></div>
+                    </div>
+                </div>
+                <div class="dialtone-example__code">
+<pre class="language-html"><code class="language-html"><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>.d-grid-layout--with-sidebar-content<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></span></code></pre>
+                </div>
+            </div>
+        </div>
+        <div class="d-stack2">
+            <h3 class="dialtone-title__small">With header</h3>
+            <div class="dialtone-example" data-example="yes" data-code="yes">
+                <div class="dialtone-example__example">
+                    <div class="d-grid-layout--with-header-content d-grid-gap8">
+                        <div class="layout-block"><div class="layout-block__label">[header]</div></div>
+                        <div class="layout-block"><div class="layout-block__label">[content]</div></div>
+                    </div>
+                </div>
+                <div class="dialtone-example__code">
+<pre class="language-html"><code class="language-html"><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>.d-grid-layout--with-header-content<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></span></code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
