@@ -28,6 +28,7 @@ var rename = require('gulp-rename');
 var header = require('gulp-header');
 var browsersync = require('browser-sync').create();
 var package = require('./package.json');
+var argv = require('yargs').argv;
 
 //  @@ STYLES
 var postcss = settings.styles ? require('gulp-postcss') : null;
@@ -489,10 +490,12 @@ var buildDocs = function(done) {
 
     return cp.spawn(
         'npx', [
-            '@11ty/eleventy'
+            '@11ty/eleventy',
+            `--pathprefix=${argv.deploySubdir ?? '/'}`
         ], {
             cwd: paths.build.input,
-            stdio: 'inherit'
+            stdio: 'inherit',
+            env: { ...process.env, ELEVENTY_BASE_URL: argv.deploySubdir ?? '/' }
         }
     );
 
