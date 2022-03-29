@@ -1,4 +1,4 @@
-module.export = {
+module.exports = {
   title: "Dialtone",
   description: "The design system and resources for Dialpad and UberConference.",
   localurl: "http://localhost:4000/",
