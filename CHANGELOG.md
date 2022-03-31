@@ -1,3 +1,10 @@
+## [6.20.3](https://github.com/dialpad/dialtone/compare/v6.20.2...v6.20.3) (2022-03-31)
+
+
+### Bug Fixes
+
+* **popover:** remove d-popover__anchor--modal-opened class ([d62cde0](https://github.com/dialpad/dialtone/commit/d62cde09cb2827f8ccbde0f20c19edcdf6c1397f))
+
 ## [6.20.2](https://github.com/dialpad/dialtone/compare/v6.20.1...v6.20.2) (2022-03-29)
 
 
