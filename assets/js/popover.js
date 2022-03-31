@@ -7,7 +7,6 @@ $(document).ready(function() {
 
   $.fn.closeModal = function() {
     $('.d-popover__dialog').removeClass('d-vi-visible');
-    popoverAnchor.removeClass('d-popover__anchor--modal-opened');
     $('.d-popover__dialog').addClass('d-vi-hidden');
     overlay.attr('aria-hidden','true');
     $(body).removeClass('d-of-hidden');
@@ -29,7 +28,6 @@ $(document).ready(function() {
 
   popoverAnchor.on('click', function(e) {
     if (!shown) {
-      $(e.target).addClass('d-popover__anchor--modal-opened')
       $.fn.openModal(e);
     } else {
       $.fn.closeModal();
