@@ -1,3 +1,10 @@
+# [6.21.0](https://github.com/dialpad/dialtone/compare/v6.20.3...v6.21.0) (2022-04-04)
+
+
+### Features
+
+* **input:** support different icon sizes ([#563](https://github.com/dialpad/dialtone/issues/563)) ([0ad3c02](https://github.com/dialpad/dialtone/commit/0ad3c02db72d586bc39883aa6476bd8676e5c893))
+
 ## [6.20.3](https://github.com/dialpad/dialtone/compare/v6.20.2...v6.20.3) (2022-03-31)
 
 
