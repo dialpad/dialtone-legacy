@@ -1184,64 +1184,64 @@ legend .d-label {
 .d-input__wrapper {
   position: relative;
 }
-.d-input--xs {
+.d-input.d-input--xs {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   font-size: var(--fs12);
 }
-.d-input--xs .d-btn__icon {
+.d-input.d-input--xs .d-btn__icon {
   width: 1.4rem;
   height: 1.4rem;
 }
-.d-input--xs.d-input-icon--right {
+.d-input.d-input--xs.d-input-icon--right {
   padding-right: calc(var(--su4) + 1.2rem + var(--su8));
 }
-.d-input--xs.d-input-icon--left {
+.d-input.d-input--xs.d-input-icon--left {
   padding-left: calc(var(--su4) + 1.2rem + var(--su8));
 }
-.d-input--sm {
+.d-input.d-input--sm {
   padding-top: var(--su6);
   padding-bottom: var(--su6);
   font-size: var(--fs14);
 }
-.d-input--sm .d-btn__icon {
+.d-input.d-input--sm .d-btn__icon {
   width: 1.6rem;
   height: 1.6rem;
 }
-.d-input--sm.d-input-icon--right {
+.d-input.d-input--sm.d-input-icon--right {
   padding-right: calc(var(--su4) + 1.4rem + var(--su8));
 }
-.d-input--sm.d-input-icon--left {
+.d-input.d-input--sm.d-input-icon--left {
   padding-left: calc(var(--su4) + 1.4rem + var(--su8));
 }
-.d-input--lg {
+.d-input.d-input--lg {
   padding-top: 1.1rem;
   padding-bottom: 1.1rem;
   font-size: var(--fs20);
 }
-.d-input--lg .d-btn__icon {
+.d-input.d-input--lg .d-btn__icon {
   width: 2rem;
   height: 2rem;
 }
-.d-input--lg.d-input-icon--right {
+.d-input.d-input--lg.d-input-icon--right {
   padding-right: calc(var(--su4) + 2rem + var(--su8));
 }
-.d-input--lg.d-input-icon--left {
+.d-input.d-input--lg.d-input-icon--left {
   padding-left: calc(var(--su4) + 2rem + var(--su8));
 }
-.d-input--xl {
+.d-input.d-input--xl {
   padding-top: 1.3rem;
   padding-bottom: 1.3rem;
   font-size: var(--fs24);
 }
-.d-input--xl .d-btn__icon {
+.d-input.d-input--xl .d-btn__icon {
   width: 2.4rem;
   height: 2.4rem;
 }
-.d-input--xl.d-input-icon--right {
+.d-input.d-input--xl.d-input-icon--right {
   padding-right: calc(var(--su4) + 2.4rem + var(--su8));
 }
-.d-input--xl.d-input-icon--left {
+.d-input.d-input--xl.d-input-icon--left {
   padding-left: calc(var(--su4) + 2.4rem + var(--su8));
 }
 .d-textarea {
@@ -1342,14 +1342,11 @@ legend .d-label {
 .d-input-icon {
   --input-icon-size: 1.6rem;
   position: absolute;
-  top: 0;
   z-index: var(--zi-base1);
   display: inline-flex;
   align-items: center;
-  width: var(--input-icon-size);
-  height: var(--input-icon-size);
+  height: 3.6rem;
   margin: 0;
-  margin-top: 1rem;
   line-height: 0;
 }
 .d-input-icon svg {
@@ -1359,19 +1356,21 @@ legend .d-label {
 .d-input-icon.d-input-icon--left {
   left: var(--su8);
 }
+.d-input-icon.d-input-icon--left ~ .d-input,
+.d-input-icon.d-input-icon--left ~ .d-textarea {
+  padding-left: calc(var(--su4) + 1.6rem + var(--su8));
+}
 .d-input-icon.d-input-icon--right {
   right: var(--su8);
 }
-.d-input-icon--left ~ .d-input,
-.d-input-icon--left ~ .d-textarea {
-  padding-left: calc(var(--su4) + 1.6rem + var(--su8));
-}
-.d-input-icon--right ~ .d-input {
+.d-input-icon.d-input-icon--right ~ .d-input {
   padding-right: calc(var(--su4) + 1.6rem + var(--su8));
+}
+.d-input-icon.d-input--xs {
+  height: 2.8rem;
 }
 .d-input-icon--xs {
   --input-icon-size: 1.2rem;
-  margin-top: 0.8rem;
 }
 .d-input-icon--xs.d-input-icon--left ~ .d-input,
 .d-input-icon--xs.d-input-icon--left ~ .d-textarea {
@@ -1380,9 +1379,11 @@ legend .d-label {
 .d-input-icon--xs.d-input-icon--right ~ .d-input {
   padding-right: calc(var(--su4) + 1.2rem + var(--su8));
 }
+.d-input-icon.d-input--sm {
+  height: 3.2rem;
+}
 .d-input-icon--sm {
   --input-icon-size: 1.4rem;
-  margin-top: 0.9rem;
 }
 .d-input-icon--sm.d-input-icon--left ~ .d-input,
 .d-input-icon--sm.d-input-icon--left ~ .d-textarea {
@@ -1391,9 +1392,11 @@ legend .d-label {
 .d-input-icon--sm.d-input-icon--right ~ .d-input {
   padding-right: calc(var(--su4) + 1.4rem + var(--su8));
 }
+.d-input-icon.d-input--lg {
+  height: 4.8rem;
+}
 .d-input-icon--lg {
   --input-icon-size: 2rem;
-  margin-top: 1.4rem;
 }
 .d-input-icon--lg.d-input-icon--left ~ .d-input,
 .d-input-icon--lg.d-input-icon--left ~ .d-textarea {
@@ -1402,9 +1405,11 @@ legend .d-label {
 .d-input-icon--lg.d-input-icon--right ~ .d-input {
   padding-right: calc(var(--su4) + 2rem + var(--su8));
 }
+.d-input-icon.d-input--xl {
+  height: 5.6rem;
+}
 .d-input-icon--xl {
   --input-icon-size: 2.4rem;
-  margin-top: 1.6rem;
 }
 .d-input-icon--xl.d-input-icon--left ~ .d-input,
 .d-input-icon--xl.d-input-icon--left ~ .d-textarea {
