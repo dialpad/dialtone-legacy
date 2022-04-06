@@ -51,12 +51,16 @@
 
     //  --  STATES
     //  ------------------------------------------------------------------------
-
-    &:active,
-    &:hover {
+    &:hover,
+    &:active {
         --button--fc: var(--primary-color-hover);
-        --button--bgc: hsla(var(--primary-color-hsl) ~' / ' 10%);
+        --button--bgc: hsla(var(--primary-color-hsl) ~' / ' 3%);
     }
+
+    &:active {
+        --button--bgc: hsla(var(--primary-color-hsl) ~' / ' 9%);
+    }
+
 
     &:focus-visible {
       outline: none;
@@ -213,11 +217,6 @@
     padding: calc(var(--su8) + var(--su1));
     transition-duration: 150ms;
 
-    &:hover {
-        --button--fc: var(--black-800);
-        --button--bgc: var(--black-100);
-    }
-
     &:focus-visible {
         box-shadow: var(--bs-focus-ring-circle);
     }
@@ -233,11 +232,6 @@
     &.d-btn--outlined {
         --button--bc: var(--black-700);
     }
-
-    // &:active {
-    //     border-color: hsla(var(--black-700-h) var(--black-700-s) var(--black-700-l) ~" / " 50%);
-    //     background-color: hsla(var(--black-700-h) var(--black-700-s) var(--black-700-l) ~" / " 10%);
-    // }
 
     //  Adjust padding based on sizes
     &.d-btn--xs {
@@ -277,9 +271,14 @@
     --button--fc: var(--white);
     --button--bgc: var(--primary-color);
 
-    &:hover {
-        --button--fc: var(--white);
-        --button--bgc: var(--primary-color-hover);
+    &:hover,
+    &:active {
+      --button--fc: var(--white);
+      --button--bgc: hsl(var(--primary-color-h), var(--primary-color-s), 65%);
+    }
+
+    &:active {
+      --button--bgc: hsl(var(--primary-color-h), var(--primary-color-s), 42%);
     }
 }
 
@@ -288,9 +287,14 @@
 .d-btn--muted {
     --button--fc: var(--muted-color);
 
-    &:hover {
+    &:hover,
+    &:active {
       --button--fc: var(--muted-color-hover);
-      --button--bgc: hsla(var(--muted-color-hsl) ~' / ' 7.5%);
+      --button--bgc: hsla(var(--black-800-hsl) ~' / ' 3%);
+    }
+
+    &:active {
+      --button--bgc: hsla(var(--black-800-hsl) ~' / ' 9%);
     }
 
     &:focus-visible {
@@ -307,9 +311,14 @@
 .d-btn--danger {
     --button--fc: var(--error-color);
 
-    &:hover {
-        --button--bgc: hsla(var(--error-color-hsl) ~' / ' 10%);
+    &:hover,
+    &:active {
         --button--fc: var(--error-color-hover);
+        --button--bgc: hsla(var(--error-color-hsl) ~' / ' 6%);
+    }
+
+    &:active {
+        --button--bgc: hsla(var(--error-color-hsl) ~' / ' 20%);
     }
 
     &:focus-visible {
@@ -324,9 +333,14 @@
         --button--fc: var(--white);
         --button--bgc: var(--error-color);
 
-        &:hover {
+        &:hover,
+        &:active {
             --button--fc: var(--white);
-            --button--bgc: var(--error-color-hover);
+            --button--bgc: hsl(var(--red-500-h), var(--red-500-s), 40%);
+        }
+
+        &:active {
+            --button--bgc: hsl(var(--red-500-h), var(--red-500-s), 27%);
         }
     }
 }
@@ -338,9 +352,14 @@
     --button--fc: var(--white);
     --button--bgc: transparent;
 
-    &:hover {
+    &:hover,
+    &:active {
         --button--fc: var(--white);
         --button--bgc: hsla(var(--white-hsl) ~' / ' 15%);
+    }
+
+    &:active {
+        --button--bgc: hsla(var(--white-hsl) ~' / ' 30%);
     }
 
     &:focus-visible {
@@ -355,11 +374,16 @@
     //  --  PRIMARY
     &.d-btn--primary {
         --button--fc: var(--primary-color);
-        --button--bgc: var(--white);
+        --button--bgc: hsl(var(--purple-100-h), var(--purple-100-s), 100%);
 
         &:hover {
             --button--fc: var(--primary-color-hover);
-            --button--bgc: hsla(var(--white-hsl) ~' / ' 90%);
+            --button--bgc: hsl(var(--purple-100-h), var(--purple-100-s), 94%);
+        }
+
+        &:active {
+            --button--fc: var(--primary-color-hover);
+            --button--bgc: hsl(var(--purple-100-h), var(--purple-100-s), 91%);
         }
     }
 }
