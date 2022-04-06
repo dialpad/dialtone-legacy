@@ -174,6 +174,45 @@ storybook-url: https://vue.dialpad.design/?path=/story/components-button--defaul
       {% endcodeWell %}
     </div>
     <div class="d-stack8">
+      {% header "h3", "Active" %}
+      {% paragraph %}Buttons can be set to active state using the {% code %}.d-btn--active{% endcode %} Dialtone class.{% endparagraph %}
+      {% paragraph %}Different button styles and variations appear different when active.{% endparagraph %}
+      {% codeWell %}
+      {% codeWellHeader %}
+      <div class="d-stack8">
+        <div>
+          <button class="d-btn d-btn--active" type="button">
+            <span class="d-btn__label">Place call</span>
+          </button>
+        </div>
+        <div>
+          <button class="d-btn d-btn--primary d-btn--active" type="button">
+            <span class="d-btn__label">Place call</span>
+          </button>
+        </div>
+        <div>
+          <button class="d-btn d-btn--danger d-btn--active" type="button">
+            <span class="d-btn__label">Place call</span>
+          </button>
+        </div>
+        <div>
+          <button class="d-btn d-btn--inverted d-btn--primary d-btn--active" type="button">
+            <span class="d-btn__label">Place call</span>
+          </button>
+        </div>
+      </div>
+      {% endcodeWellHeader %}
+      {% codeWellFooter %}
+      {% highlight html linenos %}
+<button class="d-btn d-btn--active" type="button"><span class="d-btn__label">...</span></button>
+<button class="d-btn d-btn--primary d-btn--active" type="button"><span class="d-btn__label">...</span></button>
+<button class="d-btn d-btn--danger d-btn--active" type="button"><span class="d-btn__label">...</span></button>
+<button class="d-btn d-btn--inverted d-btn--primary d-btn--active" type="button"><span class="d-btn__label">...</span></button>
+      {% endhighlight %}
+      {% endcodeWellFooter %}
+      {% endcodeWell %}
+    </div>
+    <div class="d-stack8">
       {% header "h3", "Link" %}
       {% paragraph %}Buttons can be styled as a <a href="components/link.html">link</a> in situations for which you need the appearance of a link but behavior of a button. Using the {% code %}button{% endcode %} element provides a better accessibility experience.{% endparagraph %}
       {% codeWell %}
@@ -293,128 +332,129 @@ storybook-url: https://vue.dialpad.design/?path=/story/components-button--defaul
           {% endcodeWell %}
       </div>
     </div>
-    <div class="d-stack8">
-      {% header "h3", "With Icons" %}
-      {% paragraph %}Button labels can include an icon next to the text. Every button style can accept icon classes, though we only provide a few possible examples.{% endparagraph %}
-      {% codeWell %}
-        {% codeWellHeader %}
+      <div class="d-stack8">
+        {% header "h3", "With Icons" %}
+        {% paragraph %}Button labels can include an icon next to the text. Every button style can accept icon classes, though we only provide a few possible examples.{% endparagraph %}
+        {% codeWell %}
+          {% codeWellHeader %}
+            <div class="d-stack8">
+              <div>
+                <button class="d-btn d-btn--outlined" type="button">
+                  <span class="d-btn__icon d-btn__icon--left">{% iconSystem "phone", "js-svg" %}</span>
+                  <span class="d-btn__label">Label</span>
+                </button>
+              </div>
+              <div>
+                <button class="d-btn d-btn--outlined" type="button">
+                  <span class="d-btn__icon d-btn__icon--right">{% iconSystem "phone", "js-svg" %}</span>
+                  <span class="d-btn__label">Label</span>
+                </button>
+              </div>
+              <div>
+                <button class="d-btn d-btn--outlined d-btn--vertical" type="button">
+                  <span class="d-btn__icon d-btn__icon--top">{% iconSystem "phone", "js-svg" %}</span>
+                  <span class="d-btn__label">Label</span>
+                </button>
+              </div>
+              <div>
+                <button class="d-btn d-btn--outlined d-btn--vertical" type="button">
+                  <span class="d-btn__icon d-btn__icon--bottom">{% iconSystem "phone", "js-svg" %}</span>
+                  <span class="d-btn__label">Label</span>
+                </button>
+              </div>
+            </div>
+          {% endcodeWellHeader %}
+          {% codeWellFooter %}
+            {% highlight html linenos %}
+  <button class="d-btn d-btn--outlined" type="button">
+    <span class="d-btn__icon d-btn__icon--left">...</span>
+    <span class="d-btn__label">...</span>
+  </button>
+  <button class="d-btn d-btn--outlined" type="button">
+    <span class="d-btn__icon d-btn__icon--right">...</span>
+    <span class="d-btn__label">...</span>
+  </button>
+  <button class="d-btn d-btn--vertical d-btn--outlined" type="button">
+    <span class="d-btn__icon d-btn__icon--top">...</span>
+    <span class="d-btn__label">...</span>
+  </button>
+  <button class="d-btn d-btn--vertical d-btn--outlined" type="button">
+    <span class="d-btn__icon d-btn__icon--bottom">...</span>
+    <span class="d-btn__label">...</span>
+  </button>
+            {% endhighlight %}
+          {% endcodeWellFooter %}
+        {% endcodeWell %}
+      </div>
+      <div class="d-stack8">
+        {% header "h3", "Branded" %}
+        {% paragraph %}We provide the following branded buttons for log-in and sign-up workflows.{% endparagraph %}
+        {% codeWell %}
+          {% codeWellHeader %}
           <div class="d-stack8">
             <div>
-              <button class="d-btn d-btn--outlined" type="button">
-                <span class="d-btn__icon d-btn__icon--left">{% iconSystem "phone", "js-svg" %}</span>
-                <span class="d-btn__label">Label</span>
-              </button>
+              <button class="d-btn d-btn--brand d-btn--google d-w100p" type="button"><span class="d-btn__icon">{% iconBrand "google-glyph", "js-svg" %}</span><span class="d-btn__label">Log in with Google</span></button>
             </div>
             <div>
-              <button class="d-btn d-btn--outlined" type="button">
-                <span class="d-btn__icon d-btn__icon--right">{% iconSystem "phone", "js-svg" %}</span>
-                <span class="d-btn__label">Label</span>
-              </button>
+              <button class="d-btn d-btn--brand d-btn--o365 d-w100p" type="button"><span class="d-btn__icon">{% iconBrand "office-365", "js-svg" %}</span><span class="d-btn__label">Log in with Office365</span></button>
             </div>
             <div>
-              <button class="d-btn d-btn--outlined d-btn--vertical" type="button">
-                <span class="d-btn__icon d-btn__icon--top">{% iconSystem "phone", "js-svg" %}</span>
-                <span class="d-btn__label">Label</span>
-              </button>
+              <button class="d-btn d-btn--brand d-btn--linkedin d-w100p" type="button"><span class="d-btn__icon">{% iconBrand "linkedin", "js-svg" %}</span><span class="d-btn__label">Log in with LinkedIn</span></button>
+            </div>
+          </div>
+          {% endcodeWellHeader %}
+          {% codeWellFooter %}
+            {% highlight html linenos %}
+  <button class="d-btn d-btn--brand d-btn--google" type="button">
+    <span class="d-btn__icon">{% iconBrand "google-glyph", "js-svg" %}</span>
+    <span class="d-btn__label">Log in with Google</span>
+  </button>
+  <button class="d-btn d-btn--brand d-btn--o365" type="button">
+    <span class="d-btn__icon">{% iconBrand "office-365", "js-svg" %}</span>
+    <span class="d-btn__label">Log in with Office365</span>
+  </button>
+  <button class="d-btn d-btn--brand d-btn--linkedin" type="button">
+    <span class="d-btn__icon">{% iconBrand "linkedin", "js-svg" %}</span>
+    <span class="d-btn__label">Log in with LinkedIn</span>
+  </button>
+            {% endhighlight %}
+          {% endcodeWellFooter %}
+        {% endcodeWell %}
+      </div>
+      <div class="d-stack8">
+        {% header "h3", "Sizes" %}
+        {% paragraph %}The base button font size is 16px and should be used in most cases. Every button style can accept size classes, though we only provide a few possible examples.{% endparagraph %}
+        {% codeWell %}
+          {% codeWellHeader %}
+          <div class="d-stack8">
+            <div>
+              <button class="d-btn d-btn--primary d-btn--xs" type="button"><span class="d-btn__label">Place call</span></button>
             </div>
             <div>
-              <button class="d-btn d-btn--outlined d-btn--vertical" type="button">
-                <span class="d-btn__icon d-btn__icon--bottom">{% iconSystem "phone", "js-svg" %}</span>
-                <span class="d-btn__label">Label</span>
-              </button>
+              <button class="d-btn d-btn--primary d-btn--sm" type="button"><span class="d-btn__label">Place call</span></button>
+            </div>
+            <div>
+              <button class="d-btn d-btn--primary" type="button"><span class="d-btn__label">Place call</span></button>
+            </div>
+            <div>
+              <button class="d-btn d-btn--primary d-btn--lg" type="button"><span class="d-btn__label">Place call</span></button>
+            </div>
+            <div>
+              <button class="d-btn d-btn--primary d-btn--xl" type="button"><span class="d-btn__label">Place call</span></button>
             </div>
           </div>
-        {% endcodeWellHeader %}
-        {% codeWellFooter %}
-          {% highlight html linenos %}
-<button class="d-btn d-btn--outlined" type="button">
-  <span class="d-btn__icon d-btn__icon--left">...</span>
-  <span class="d-btn__label">...</span>
-</button>
-<button class="d-btn d-btn--outlined" type="button">
-  <span class="d-btn__icon d-btn__icon--right">...</span>
-  <span class="d-btn__label">...</span>
-</button>
-<button class="d-btn d-btn--vertical d-btn--outlined" type="button">
-  <span class="d-btn__icon d-btn__icon--top">...</span>
-  <span class="d-btn__label">...</span>
-</button>
-<button class="d-btn d-btn--vertical d-btn--outlined" type="button">
-  <span class="d-btn__icon d-btn__icon--bottom">...</span>
-  <span class="d-btn__label">...</span>
-</button>
-          {% endhighlight %}
-        {% endcodeWellFooter %}
-      {% endcodeWell %}
-    </div>
-    <div class="d-stack8">
-      {% header "h3", "Branded" %}
-      {% paragraph %}We provide the following branded buttons for log-in and sign-up workflows.{% endparagraph %}
-      {% codeWell %}
-        {% codeWellHeader %}
-        <div class="d-stack8">
-          <div>
-            <button class="d-btn d-btn--brand d-btn--google d-w100p" type="button"><span class="d-btn__icon">{% iconBrand "google-glyph", "js-svg" %}</span><span class="d-btn__label">Log in with Google</span></button>
-          </div>
-          <div>
-            <button class="d-btn d-btn--brand d-btn--o365 d-w100p" type="button"><span class="d-btn__icon">{% iconBrand "office-365", "js-svg" %}</span><span class="d-btn__label">Log in with Office365</span></button>
-          </div>
-          <div>
-            <button class="d-btn d-btn--brand d-btn--linkedin d-w100p" type="button"><span class="d-btn__icon">{% iconBrand "linkedin", "js-svg" %}</span><span class="d-btn__label">Log in with LinkedIn</span></button>
-          </div>
-        </div>
-        {% endcodeWellHeader %}
-        {% codeWellFooter %}
-          {% highlight html linenos %}
-<button class="d-btn d-btn--brand d-btn--google" type="button">
-  <span class="d-btn__icon">{% iconBrand "google-glyph", "js-svg" %}</span>
-  <span class="d-btn__label">Log in with Google</span>
-</button>
-<button class="d-btn d-btn--brand d-btn--o365" type="button">
-  <span class="d-btn__icon">{% iconBrand "office-365", "js-svg" %}</span>
-  <span class="d-btn__label">Log in with Office365</span>
-</button>
-<button class="d-btn d-btn--brand d-btn--linkedin" type="button">
-  <span class="d-btn__icon">{% iconBrand "linkedin", "js-svg" %}</span>
-  <span class="d-btn__label">Log in with LinkedIn</span>
-</button>
-          {% endhighlight %}
-        {% endcodeWellFooter %}
-      {% endcodeWell %}
-    </div>
-    <div class="d-stack8">
-      {% header "h3", "Sizes" %}
-      {% paragraph %}The base button font size is 16px and should be used in most cases. Every button style can accept size classes, though we only provide a few possible examples.{% endparagraph %}
-      {% codeWell %}
-        {% codeWellHeader %}
-        <div class="d-stack8">
-          <div>
-            <button class="d-btn d-btn--primary d-btn--xs" type="button"><span class="d-btn__label">Place call</span></button>
-          </div>
-          <div>
-            <button class="d-btn d-btn--primary d-btn--sm" type="button"><span class="d-btn__label">Place call</span></button>
-          </div>
-          <div>
-            <button class="d-btn d-btn--primary" type="button"><span class="d-btn__label">Place call</span></button>
-          </div>
-          <div>
-            <button class="d-btn d-btn--primary d-btn--lg" type="button"><span class="d-btn__label">Place call</span></button>
-          </div>
-          <div>
-            <button class="d-btn d-btn--primary d-btn--xl" type="button"><span class="d-btn__label">Place call</span></button>
-          </div>
-        </div>
-        {% endcodeWellHeader %}
-        {% codeWellFooter %}
-          {% highlight html linenos %}
-<button class="d-btn d-btn--primary d-btn--xs" type="button"><span class="d-btn__label">...</span></button>
-<button class="d-btn d-btn--primary d-btn--sm" type="button"><span class="d-btn__label">...</span></button>
-<button class="d-btn d-btn--primary" type="button"><span class="d-btn__label">...</span></button>
-<button class="d-btn d-btn--primary d-btn--lg" type="button"><span class="d-btn__label">...</span></button>
-<button class="d-btn d-btn--primary d-btn--xl" type="button"><span class="d-btn__label">...</span></button>
-          {% endhighlight %}
-        {% endcodeWellFooter %}
-      {% endcodeWell %}
+          {% endcodeWellHeader %}
+          {% codeWellFooter %}
+            {% highlight html linenos %}
+  <button class="d-btn d-btn--primary d-btn--xs" type="button"><span class="d-btn__label">...</span></button>
+  <button class="d-btn d-btn--primary d-btn--sm" type="button"><span class="d-btn__label">...</span></button>
+  <button class="d-btn d-btn--primary" type="button"><span class="d-btn__label">...</span></button>
+  <button class="d-btn d-btn--primary d-btn--lg" type="button"><span class="d-btn__label">...</span></button>
+  <button class="d-btn d-btn--primary d-btn--xl" type="button"><span class="d-btn__label">...</span></button>
+            {% endhighlight %}
+          {% endcodeWellFooter %}
+        {% endcodeWell %}
+      </div>
     </div>
   </div>
 </section>
