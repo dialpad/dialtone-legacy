@@ -480,11 +480,13 @@ body {
   --badge--fc: var(--fc-dark);
   --badge--bgc: var(--black-050);
   display: inline-block;
-  padding: var(--su2) var(--su6) var(--su1);
+  min-width: calc(var(--su6) + var(--su1));
+  padding: calc(var(--su6) / 4) var(--su6);
   color: var(--badge--fc);
   font-weight: bold;
   font-size: var(--fs10);
   line-height: var(--lh6);
+  text-align: center;
   text-transform: uppercase;
   background-color: var(--badge--bgc);
   border-radius: var(--su4);
@@ -690,10 +692,15 @@ body {
   user-select: none;
   fill: currentColor;
 }
-.d-btn:active,
 .d-btn:hover {
   --button--fc: var(--primary-color-hover);
-  --button--bgc: hsla(var(--primary-color-hsl)  /  10%);
+  --button--bgc: hsla(var(--primary-color-hsl)  /  3%);
+}
+.d-btn:active,
+.d-btn.d-btn--active,
+.d-btn.d-btn--active:active {
+  --button--fc: var(--primary-color-hover);
+  --button--bgc: hsla(var(--primary-color-hsl)  /  9%);
 }
 .d-btn.focus-visible {
   outline: none;
@@ -806,10 +813,6 @@ body {
   padding: calc(var(--su8) + var(--su1));
   transition-duration: 150ms;
 }
-.d-btn--circle:hover {
-  --button--fc: var(--black-800);
-  --button--bgc: var(--black-100);
-}
 .d-btn--circle.focus-visible {
   box-shadow: var(--bs-focus-ring-circle);
 }
@@ -850,14 +853,24 @@ body {
 }
 .d-btn--primary:hover {
   --button--fc: var(--white);
-  --button--bgc: var(--primary-color-hover);
+  --button--bgc: hsl(var(--primary-color-h), var(--primary-color-s), 65%);
+}
+.d-btn--primary:active,
+.d-btn--primary.d-btn--active,
+.d-btn--primary.d-btn--active:active {
+  --button--fc: var(--white);
+  --button--bgc: hsl(var(--primary-color-h), var(--primary-color-s), 42%);
 }
 .d-btn--muted {
   --button--fc: var(--muted-color);
 }
-.d-btn--muted:hover {
+.d-btn--muted:hover,
+.d-btn--muted:active {
   --button--fc: var(--muted-color-hover);
-  --button--bgc: hsla(var(--muted-color-hsl)  /  7.5%);
+  --button--bgc: hsla(var(--black-800-hsl)  /  3%);
+}
+.d-btn--muted:active {
+  --button--bgc: hsla(var(--black-800-hsl)  /  9%);
 }
 .d-btn--muted.focus-visible {
   box-shadow: var(--bs-focus-ring-muted);
@@ -872,8 +885,14 @@ body {
   --button--fc: var(--error-color);
 }
 .d-btn--danger:hover {
-  --button--bgc: hsla(var(--error-color-hsl)  /  10%);
   --button--fc: var(--error-color-hover);
+  --button--bgc: hsla(var(--error-color-hsl)  /  6%);
+}
+.d-btn--danger:active,
+.d-btn--danger.d-btn--active,
+.d-btn--danger.d-btn--active:active {
+  --button--fc: var(--error-color-hover);
+  --button--bgc: hsla(var(--error-color-hsl)  /  20%);
 }
 .d-btn--danger.focus-visible {
   box-shadow: var(--bs-focus-ring-error);
@@ -889,8 +908,13 @@ body {
   --button--bgc: var(--error-color);
 }
 .d-btn--danger.d-btn--primary:hover {
+  --button--bgc: hsl(var(--red-500-h), var(--red-500-s), 40%);
+}
+.d-btn--danger.d-btn--primary:active,
+.d-btn--danger.d-btn--primary.d-btn--active,
+.d-btn--danger.d-btn--primary.d-btn--active:active {
   --button--fc: var(--white);
-  --button--bgc: var(--error-color-hover);
+  --button--bgc: hsl(var(--red-500-h), var(--red-500-s), 27%);
 }
 .d-btn--inverted {
   --button--fc: var(--white);
@@ -899,6 +923,12 @@ body {
 .d-btn--inverted:hover {
   --button--fc: var(--white);
   --button--bgc: hsla(var(--white-hsl)  /  15%);
+}
+.d-btn--inverted:active,
+.d-btn--inverted.d-btn--active,
+.d-btn--inverted.d-btn--active:active {
+  --button--fc: var(--white);
+  --button--bgc: hsla(var(--white-hsl)  /  30%);
 }
 .d-btn--inverted.focus-visible {
   box-shadow: var(--bs-focus-ring-inverted);
@@ -911,11 +941,17 @@ body {
 }
 .d-btn--inverted.d-btn--primary {
   --button--fc: var(--primary-color);
-  --button--bgc: var(--white);
+  --button--bgc: hsl(var(--purple-100-h), var(--purple-100-s), 100%);
 }
 .d-btn--inverted.d-btn--primary:hover {
   --button--fc: var(--primary-color-hover);
-  --button--bgc: hsla(var(--white-hsl)  /  90%);
+  --button--bgc: hsl(var(--purple-100-h), var(--purple-100-s), 94%);
+}
+.d-btn--inverted.d-btn--primary:active,
+.d-btn--inverted.d-btn--primary.d-btn--active,
+.d-btn--inverted.d-btn--primary.d-btn--active:active {
+  --button--fc: var(--primary-color-hover);
+  --button--bgc: hsl(var(--purple-100-h), var(--purple-100-s), 91%);
 }
 .d-btn--icon-only {
   padding: calc(var(--su8) + var(--su1));
