@@ -1,3 +1,17 @@
+# [6.22.0](https://github.com/dialpad/dialtone/compare/v6.21.0...v6.22.0) (2022-04-08)
+
+
+### Bug Fixes
+
+* badge alignment (min-width and vertical alignment) ([#566](https://github.com/dialpad/dialtone/issues/566)) ([946186c](https://github.com/dialpad/dialtone/commit/946186cc7e6a38c5d5e8986acd284cffe9b100ce))
+* typo in spacing ([#565](https://github.com/dialpad/dialtone/issues/565)) ([729be23](https://github.com/dialpad/dialtone/commit/729be23e5d5c197e3c868b2ae5e65aecb25442b6))
+
+
+### Features
+
+* **button:** add active styles ([#564](https://github.com/dialpad/dialtone/issues/564)) ([1d4a962](https://github.com/dialpad/dialtone/commit/1d4a962833e2031daf9f9fa1a23092b244fbc34e))
+* **button:** add d-btn--active class ([#567](https://github.com/dialpad/dialtone/issues/567)) ([2a89e25](https://github.com/dialpad/dialtone/commit/2a89e253ddd7f7c15d6de7af0ef13c293dba0a86))
+
 # [6.21.0](https://github.com/dialpad/dialtone/compare/v6.20.3...v6.21.0) (2022-04-04)
 
 
