@@ -1,6 +1,6 @@
 ---
 title: Usage
-description: A general overview of Dialtone's utility classes, CSS components, and Vue components.
+desc: A general overview of Dialtone's utility classes, CSS components, and Vue components.
 ---
 
 ## Utility-First

@@ -20,7 +20,7 @@ export default {
           View Storybook
           <icon-launch></icon-launch>
         </a>
-        <p v-if="$page.frontmatter.description" class="d-fs20 d-lh6" v-html="$page.frontmatter.description"></p>
+        <p v-if="$page.frontmatter.desc" class="d-fs20 d-lh6" v-html="$page.frontmatter.desc"></p>
       </header>
     </template>
   </ParentLayout>

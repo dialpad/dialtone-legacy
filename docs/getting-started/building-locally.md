@@ -1,6 +1,6 @@
 ---
 title: Build Dialtone Locally
-description: A more thorough guide for installing Dialtone locally.
+desc: A more thorough guide for installing Dialtone locally.
 next:
   text: Fundamentals
   link: /getting-started/accessibility/fundamentals.html
