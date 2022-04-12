@@ -48,7 +48,27 @@ export default defineUserConfig<DefaultThemeOptions>({
           ],
         },
       ],
-      '/components/': ['Avatar'],
+      '/components/': [
+        'Avatar',
+        'Badge',
+        'Banner',
+        'Breadcrumbs',
+        'Button',
+        'Checkbox',
+        'Input',
+        'Link',
+        'Modal',
+        'Notice',
+        'Popover',
+        'Radio',
+        'Select',
+        'Skeleton',
+        'Table',
+        'Tabs',
+        'Toast',
+        'Toggle',
+        'Tooltip'
+      ],
       '/design/': [
         {
           text: 'Colors',
