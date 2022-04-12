@@ -36,7 +36,7 @@ export default {
     }
   },
   beforeMount() {
-    import(`../_data/${this.componentName}.json`).then((module) => {
+    import(`../../_data/${this.componentName}.json`).then((module) => {
       this.classes = module.classes
     })
   }
