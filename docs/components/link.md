@@ -24,7 +24,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-link--default
 <a href="#" class="d-link d-link--warning">...</a>
 ```
 
-<code-well-header dark>
+<code-well-header bgclass="d-bgc-black-800">
   <a href="#" class="d-link d-link--inverted">Inverted base link</a>
 </code-well-header>
 

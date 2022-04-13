@@ -2,7 +2,7 @@
   <aside class="d-mt16 d-btr8 d-of-hidden">
     <header
       class="d-fl-center d-fd-column d-p24 d-of-auto d-stack8"
-      :class="dark ? 'd-bgc-black-800' : 'd-bgc-black-025'"
+      :class="bgclass"
     >
       <slot></slot>
     </header>
@@ -12,10 +12,11 @@
 <script>
 export default {
   name: "CodeWellHeader",
+  inheritAttrs: false,
   props: {
-    dark: {
-      type: Boolean,
-      default: false,
+    bgclass: {
+      type: String,
+      default: 'd-bgc-black-025',
     },
   },
 }
