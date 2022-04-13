@@ -1,0 +1,75 @@
+//
+//  DIALTONE
+//  COMPONENTS: POPOVER
+//
+//  These are popover classes for Dialpad's design system Dialtone.
+//  For further documentation of these and other classes,
+//  visit https://dialpad.design/components/popover
+//
+//  TABLE OF CONTENTS
+//  • POPOVER
+//  • POPOVER DIALOG
+//    - Base dialog style
+//    - Content
+//    - Header / Footer
+
+
+//  $  POPOVER
+//  ----------------------------------------------------------------------------
+
+//  $  POPOVER DIALOG
+//  ----------------------------------------------------------------------------
+.d-popover__dialog {
+  &,
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  display: grid;
+  grid-template-rows: auto 1fr;
+  overflow: auto;
+  background-color: var(--white);
+  border-color: var(--black-100);
+  border-radius: var(--su8);
+  box-shadow: var(--bs-card);
+}
+
+// to be set on the dialog when it is modal
+.d-popover__dialog--modal {
+  z-index: var(--zi-modal-element);
+}
+
+//  $$  DIALOG CONTENT
+//  ----------------------------------------------------------------------------
+.d-popover__content {
+  overflow: auto;
+}
+
+//  $$  DIALOG HEADER / FOOTER
+//  ----------------------------------------------------------------------------
+.d-popover__header-footer-base {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  min-height: var(--size48);
+  padding-top: var(--su6);
+  padding-bottom: var(--su6);
+  overflow: auto;
+  font-weight: var(--fw-bold);
+  font-size: var(--fs16);
+}
+
+.d-popover__header {
+  .d-popover__header-footer-base();
+
+  border-bottom: var(--su1) solid var(--black-075);
+}
+
+.d-popover__footer {
+  .d-popover__header-footer-base();
+
+  border-top: var(--su1) solid var(--black-075);
+}

@@ -112,7 +112,7 @@
 
 //  $$  SIZES
 //  ----------------------------------------------------------------------------
-.d-input--xs {
+.d-input.d-input--xs {
     .input-button-xs();
 
     &.d-input-icon--right {
@@ -124,7 +124,7 @@
     }
 }
 
-.d-input--sm {
+.d-input.d-input--sm {
     .input-button-sm();
 
     &.d-input-icon--right {
@@ -136,7 +136,7 @@
     }
 }
 
-.d-input--lg {
+.d-input.d-input--lg {
     .input-button-lg();
 
     &.d-input-icon--right {
@@ -148,7 +148,7 @@
     }
 }
 
-.d-input--xl {
+.d-input.d-input--xl {
     .input-button-xl();
 
     &.d-input-icon--right {
@@ -268,14 +268,11 @@
     --input-icon-size: @icon16;
 
     position: absolute;
-    top: 0;
     z-index: var(--zi-base1);
     display: inline-flex;
     align-items: center;
-    width: var(--input-icon-size);
-    height: var(--input-icon-size);
+    height: 3.6rem;
     margin: 0;
-    margin-top: 1rem;
     line-height: 0;
 
     svg {
@@ -285,38 +282,33 @@
 
     &.d-input-icon--left {
         left: var(--su8);
+        // Update padding for d-input if d-input-icon--left is present
+        & ~ .d-input,
+        & ~ .d-textarea {
+            padding-left: @inputs-icon-spacing;
+        }
     }
 
     &.d-input-icon--right {
         right: var(--su8);
+
+        // Update padding for d-input if d-input-icon--right is present
+        & ~ .d-input {
+            padding-right: @inputs-icon-spacing;
+        }
     }
 }
 
-// For backwards compatibility purposes only.
-// be used instead of this.
-.d-input-icon--left {
-    // Update padding for d-input if d-input-icon--right is present
-    & ~ .d-input,
-    & ~ .d-textarea {
-        padding-left: @inputs-icon-spacing;
-    }
-}
 
-// For backwards compatibility purposes only.
-// be used instead of this.
-.d-input-icon--right {
-    // Update padding for d-input if d-input-icon--right is present
-    & ~ .d-input {
-        padding-right: @inputs-icon-spacing;
-    }
-}
 
 //  $$ SIZES
 //  ----------------------------------------------------------------------------
+.d-input-icon.d-input--xs {
+    height: 2.8rem;
+}
+
 .d-input-icon--xs {
     --input-icon-size: @icon12;
-
-    margin-top: 0.8rem;
 
     // For backwards compatibility purposes only.
     // Update padding for d-input, d-textarea if d-input-icon--left is present
@@ -332,10 +324,12 @@
     }
 }
 
+.d-input-icon.d-input--sm {
+    height: 3.2rem;
+}
+
 .d-input-icon--sm {
     --input-icon-size: @icon14;
-
-    margin-top: 0.9rem;
 
     // For backwards compatibility purposes only.
     // Update padding for d-input, d-textarea if d-input-icon--left is present
@@ -351,10 +345,12 @@
     }
 }
 
+.d-input-icon.d-input--lg {
+    height: 4.8rem;
+}
+
 .d-input-icon--lg {
     --input-icon-size: @icon20;
-
-    margin-top: 1.4rem;
 
     // For backwards compatibility purposes only.
     // Update padding for d-input, d-textarea if d-input-icon--left is present
@@ -370,10 +366,12 @@
     }
 }
 
+.d-input-icon.d-input--xl {
+    height: 5.6rem;
+}
+
 .d-input-icon--xl {
     --input-icon-size: @icon24;
-
-    margin-top: 1.6rem;
 
     // For backwards compatibility purposes only.
     // Update padding for d-input, d-textarea if d-input-icon--left is present
