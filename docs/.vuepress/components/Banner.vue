@@ -9,7 +9,7 @@
               <label for="style-select">Style</label>
             </div>
             <div class="d-select d-select--sm">
-              <select id="style-select" class="d-select__input" v-model="style">
+              <select id="style-select" class="d-select__input" v-model="kind">
                 <option name="style-select" id="style-select-base" value="base" selected>Base</option>
                 <option name="style-select" id="style-select-error" value="error">Error</option>
                 <option name="style-select" id="style-select-info" value="info">Informational</option>
@@ -46,11 +46,11 @@
         :aria-describedby="bannerDesc"
     >
       <div class="d-notice__icon">
-        <icon-lightbulb v-show="style === 'base'"></icon-lightbulb>
-        <icon-error v-show="style === 'error'"></icon-error>
-        <icon-info v-show="style === 'info'"></icon-info>
-        <icon-check-circle v-show="style === 'success'"></icon-check-circle>
-        <icon-warning v-show="style === 'warning'"></icon-warning>
+        <icon-lightbulb v-show="kind === 'base'"></icon-lightbulb>
+        <icon-error v-show="kind === 'error'"></icon-error>
+        <icon-info v-show="kind === 'info'"></icon-info>
+        <icon-check-circle v-show="kind === 'success'"></icon-check-circle>
+        <icon-warning v-show="kind === 'warning'"></icon-warning>
       </div>
       <div class="d-notice__content">
         <h2>Optional title</h2>
@@ -58,8 +58,8 @@
           Message body with
           <a
               href="#"
-              class="d-link d-link--muted"
-              :class="{'d-link--inverted': shouldBeInverted}"
+              class="d-link"
+              :class="shouldBeInverted ? 'd-link--inverted': 'd-link--muted'"
           >
             a link.
           </a>
@@ -68,15 +68,15 @@
       <div class="d-notice__actions">
         <button
             type="button"
-            class="d-btn d-btn--sm d-btn--outlined d-btn--muted"
-            :class="{'d-btn--inverted': shouldBeInverted}"
+            class="d-btn d-btn--sm d-btn--outlined"
+            :class="shouldBeInverted ? 'd-btn--inverted': 'd-btn--muted'"
         >
           Action
         </button>
         <button
             type="button"
-            class="d-btn d-btn--sm d-btn--circle d-btn--muted"
-            :class="{'d-btn--inverted': shouldBeInverted}"
+            class="d-btn d-btn--sm d-btn--circle"
+            :class="shouldBeInverted ? 'd-btn--inverted': 'd-btn--muted'"
             aria-label="Close"
             @click="toggleExample"
         >
@@ -90,26 +90,12 @@
 </template>
 
 <script>
-import IconInfo from '@svgIcons/IconInfo.vue';
-import IconLightbulb from "@svgIcons/IconLightbulb.vue";
-import IconCheckCircle from "@svgIcons/IconCheckCircle.vue";
-import IconWarning from "@svgIcons/IconWarning.vue";
-import IconError from "@svgIcons/IconError.vue";
-import IconClose from "@svgIcons/IconClose.vue";
 
 export default {
   name: 'banner',
-  components: {
-    IconError,
-    IconWarning,
-    IconCheckCircle,
-    IconLightbulb,
-    IconInfo,
-    IconClose,
-  },
   data() {
     return {
-      style: 'base',
+      kind: 'base',
       showBanner: false,
       pinned: false,
       important: false,
@@ -117,19 +103,19 @@ export default {
   },
   computed: {
     bannerClass() {
-      return 'd-banner--' + this.style;
+      return 'd-banner--' + this.kind;
     },
 
     bannerTitle() {
-      return this.style + '-banner-title';
+      return this.kind + '-banner-title';
     },
 
     bannerDesc() {
-      return this.style + '-banner-desc';
+      return this.kind + '-banner-desc';
     },
 
     shouldBeInverted() {
-      return this.important && !['warning', 'success'].includes(this.style);
+      return this.important && !['warning', 'success'].includes(this.kind);
     }
   },
   methods: {
