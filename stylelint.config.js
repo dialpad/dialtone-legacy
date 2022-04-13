@@ -1,4 +1,5 @@
 module.exports = {
+  "ignoreFiles": ["**/node_modules", "**/dist/**/*", "docs/_site/**/*", "docs/assets/css/**/*", "docs/assets/fonts/**/*", "**/*.js"],
   "extends": [
     "stylelint-config-standard",
     "stylelint-config-rational-order",
