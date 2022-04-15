@@ -1,1 +1,0 @@
-import{N as n}from"./Navbar.014895cb.js";import{_ as s,r as e,o as r,c,b as o,a as _,F as p}from"./app.b2ddcba6.js";const m={components:{Navbar:n}},d={class:"d-ps-relative d-stack16"};function l(i,f,v,N,u,b){const t=e("Navbar"),a=e("Content");return r(),c(p,null,[o(t),_("div",d,[o(a)])],64)}var x=s(m,[["render",l]]);export{x as default};
