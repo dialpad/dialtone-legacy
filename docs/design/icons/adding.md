@@ -5,4 +5,5 @@ next:
   link: /design/illustrations/patterns
 ---
 
-Please consult the [contribution page](/about/contributing/#adding-icons-and-illustrations) for the documentation.
+{{$withBase('/about/contributing/#adding-icons-and-illustrations')}}
+Please consult the [contribution page](../../about/contributing/#adding-icons-and-illustrations) for the documentation.

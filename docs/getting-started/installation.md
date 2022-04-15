@@ -3,7 +3,7 @@ title: Installation
 description: A quick start guide to adding Dialtone to your project.
 ---
 
-## Adding Dialtone To Your Project 
+## Adding Dialtone To Your Project
 To take advantage of Dialtone's customizations, classes, and variables in your project, you will want to install Dialtone via <a href="https://www.npmjs.com/" class="d-link" target="_blank">npm</a>.
 
 ```bash
@@ -34,4 +34,3 @@ If you only need access to Dialtone's variables and customizations to build a fi
 ```less
 @import (reference) "your/path/to/dialtone.less";
 ```
-  

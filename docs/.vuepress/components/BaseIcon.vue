@@ -79,7 +79,7 @@ export default {
       return this.selected ? 'yes' : 'no'
     },
     svgPath() {
-      return `/assets/svg/${this.kind}/${this.file}.svg?raw`;
+      return this.$withBase(`/assets/svg/${this.kind}/${this.file}.svg?raw`);
     },
     cardFooterClass() {
       return this.isSpotKind ? 'dialtone-icon-card__footer-spot-illustration' : 'dialtone-icon-card__footer';

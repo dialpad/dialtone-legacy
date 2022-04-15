@@ -12,7 +12,7 @@ Dialpad strives to maintain  **WCAG 2.1 AA** compliance in our digital products.
 
 Everyone benefits when things are designed accessibly. Simply put: building products for accessibility is simply building products for better usability. Considering  **1 in 4** US adults -- that’s 61 million people! -- live with a permanent disability and many more will have temporary or situational throughout their lifetime, accessibility isn’t for just some people. It benefits everyone.
 
-![Accessibility illustration: permanent, temporary and situational disabilities. For touch, a person could have one arm, an arm injury, or be a new parent holding an infant. For sight, a person could be blind, have cataracts, or be a distracted driver. For hearing, the person might be deaf, have an ear infection, or be a bartender in a loud bar. When speaking, a person might be non-verbal, have laryngitis, or speak with a heavy accent.](/assets/images/accessibility-graphic.png)
+![Accessibility illustration: permanent, temporary and situational disabilities. For touch, a person could have one arm, an arm injury, or be a new parent holding an infant. For sight, a person could be blind, have cataracts, or be a distracted driver. For hearing, the person might be deaf, have an ear infection, or be a bartender in a loud bar. When speaking, a person might be non-verbal, have laryngitis, or speak with a heavy accent.](../../assets/images/accessibility-graphic.png)
 
 As we consider the entire spectrum of possibilities, the benefits to the people we are designing for goes up dramatically. Accessible design is usable design, for more people in more circumstances.
 
@@ -81,16 +81,16 @@ The interface and its content is designed and implemented in such a way that it 
 
 #### Additional Resources
 
-[Apple - Voiceover/keyboard shortcuts for OS X](https://www.apple.com/voiceover/info/guide/_1131.html)  
-[Deque - Accessibility Testing Tools](https://www.deque.com/axe/)  
-[Deque University - Web Accessibility Training and Courses](https://dequeuniversity.com/)  
-[MDN - Developer Guides](https://developer.mozilla.org/en-US/docs/Web/Guide)  
-[Microsoft - Narrator keyboard commands for Windows](https://support.microsoft.com/en-us/windows/appendix-b-narrator-keyboard-commands-and-touch-gestures-8bdab3f4-b3e9-4554-7f28-8b15bd37410a)  
-[Pa11y](https://pa11y.org/)  
-[Web Content Accessibility Guidelines (WCAG) 2.1](https://www.w3.org/TR/WCAG21/)  
-[WebAim - Constructing a POUR Website](https://webaim.org/articles/pour/)  
+[Apple - Voiceover/keyboard shortcuts for OS X](https://www.apple.com/voiceover/info/guide/_1131.html)
+[Deque - Accessibility Testing Tools](https://www.deque.com/axe/)
+[Deque University - Web Accessibility Training and Courses](https://dequeuniversity.com/)
+[MDN - Developer Guides](https://developer.mozilla.org/en-US/docs/Web/Guide)
+[Microsoft - Narrator keyboard commands for Windows](https://support.microsoft.com/en-us/windows/appendix-b-narrator-keyboard-commands-and-touch-gestures-8bdab3f4-b3e9-4554-7f28-8b15bd37410a)
+[Pa11y](https://pa11y.org/)
+[Web Content Accessibility Guidelines (WCAG) 2.1](https://www.w3.org/TR/WCAG21/)
+[WebAim - Constructing a POUR Website](https://webaim.org/articles/pour/)
 
 #### Sources
-[CDC - Disability Impacts All of Us Infographic](https://www.cdc.gov/ncbddd/disabilityandhealth/infographic-disability-impacts-all.html)  
-[Berkeley - Types of Assistive Technology](https://webaccess.berkeley.edu/resources/assistive-technology)  
+[CDC - Disability Impacts All of Us Infographic](https://www.cdc.gov/ncbddd/disabilityandhealth/infographic-disability-impacts-all.html)
+[Berkeley - Types of Assistive Technology](https://webaccess.berkeley.edu/resources/assistive-technology)
 [UXcellence - Designing for Accessibility: An Introduction](https://uxcellence.com/2018/accessible-design-intro)
