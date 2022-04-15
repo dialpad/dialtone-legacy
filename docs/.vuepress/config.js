@@ -6,7 +6,7 @@ exports.default = (0, vuepress_1.defineUserConfig)({
     // site config
     lang: 'en-US',
     title: 'Dialtone',
-    base: '/',
+    base: '/vuepress/',
     // theme and its config
     theme: (0, path_1.resolve)(__dirname, './theme/index.js'),
     themeConfig: {
