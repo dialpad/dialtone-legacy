@@ -7,7 +7,7 @@ export default defineUserConfig<DefaultThemeOptions>({
   lang: 'en-US',
   title: 'Dialtone',
 
-  base: '/',
+  base: '/vuepress/',
 
   // theme and its config
   theme: resolve(__dirname, './theme/index.js'),
