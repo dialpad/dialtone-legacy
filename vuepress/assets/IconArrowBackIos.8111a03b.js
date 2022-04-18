@@ -1,0 +1,1 @@
+import{_ as s,o as e,c as o,a}from"./app.574cc9e1.js";const r={},c={"aria-hidden":"true","aria-label":"Arrow Back Ios",class:"d-svg d-svg--system d-svg__arrowBack-ios",viewBox:"0 0 24 24"},t=a("path",{d:"M17 19.88L9.12 12 17 4.12 14.88 2l-10 10 10 10L17 19.88z"},null,-1),_=[t];function n(d,i){return e(),o("svg",c,_)}var B=s(r,[["render",n]]);export{B as default};

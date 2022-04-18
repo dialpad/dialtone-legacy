@@ -1,1 +1,0 @@
-import{_ as e,o as s,c as t,a as o}from"./app.83d62723.js";const a={},c={"aria-hidden":"true","aria-label":"Chevron Right",class:"d-svg d-svg--system d-svg__chevronRight",viewBox:"0 0 24 24"},r=o("path",{d:"M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6-6-6z"},null,-1),n=[r];function _(d,i){return s(),t("svg",c,n)}var l=e(a,[["render",_]]);export{l as default};

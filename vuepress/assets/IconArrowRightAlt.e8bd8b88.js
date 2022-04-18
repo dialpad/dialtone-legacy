@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as s,a}from"./app.574cc9e1.js";const o={},r={"aria-hidden":"true","aria-label":"Arrow Right Alt",class:"d-svg d-svg--system d-svg__arrowRight-alt",viewBox:"0 0 24 24"},c=a("path",{d:"M16.01 11H4v2h12.01v3L20 12l-3.99-4v3z"},null,-1),_=[c];function n(d,i){return t(),s("svg",r,_)}var h=e(o,[["render",n]]);export{h as default};

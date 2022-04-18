@@ -1,0 +1,1 @@
+import{_ as e,o as a,c as s,a as t}from"./app.574cc9e1.js";const o={},r={"aria-hidden":"true","aria-label":"Drag Handle",class:"d-svg d-svg--system d-svg__dragHandle",viewBox:"0 0 24 24"},c=t("path",{d:"M20 9H4v2h16V9zM4 15h16v-2H4v2z"},null,-1),n=[c];function d(_,l){return a(),s("svg",r,n)}var v=e(o,[["render",d]]);export{v as default};
