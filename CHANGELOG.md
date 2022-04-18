@@ -1,3 +1,16 @@
+# [6.23.0](https://github.com/dialpad/dialtone/compare/v6.22.0...v6.23.0) (2022-04-18)
+
+
+### Bug Fixes
+
+* internal links when using <base> tag ([24b65fa](https://github.com/dialpad/dialtone/commit/24b65fa69a29c6cd7bb5264f70a78c3e508fa81d))
+
+
+### Features
+
+* add facebook, sentiment, reply icons ([#568](https://github.com/dialpad/dialtone/issues/568)) ([ff185d5](https://github.com/dialpad/dialtone/commit/ff185d51322adc630bbe8ffaeaead9275ce6b0c4))
+* add icons for new call workflow (Phase 2) ([#569](https://github.com/dialpad/dialtone/issues/569)) ([599852b](https://github.com/dialpad/dialtone/commit/599852b8b436a935df0cf7db2d8bb03c0723021c))
+
 # [6.22.0](https://github.com/dialpad/dialtone/compare/v6.21.0...v6.22.0) (2022-04-08)
 
 
