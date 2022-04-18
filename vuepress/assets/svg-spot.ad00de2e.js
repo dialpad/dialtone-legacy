@@ -1,1 +1,0 @@
-var e=[{name:"Browser List Callout",file:"browser-list-callout",vue:"SpotBrowserListCallout",desc:"Browser List Callout"},{name:"Browser Table Graph",file:"browser-table-graph",vue:"SpotBrowserTableGraph",desc:"Browser Table Graph"},{name:"File Upload",file:"file-upload",vue:"SpotFileUpload",desc:"File Upload"}];export{e as default};
