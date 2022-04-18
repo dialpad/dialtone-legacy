@@ -78,9 +78,6 @@ export default {
     selectedStatus() {
       return this.selected ? 'yes' : 'no'
     },
-    svgPath() {
-      return this.$withBase(`/assets/svg/${this.kind}/${this.file}.svg?raw`);
-    },
     cardFooterClass() {
       return this.isSpotKind ? 'dialtone-icon-card__footer-spot-illustration' : 'dialtone-icon-card__footer';
     },
@@ -92,7 +89,7 @@ export default {
     svgContent: null,
   }),
   async created() {
-    const importedModule = await import(/* @vite-ignore */ this.svgPath)
+    const importedModule = await import(`../../../lib/build/svg/${this.kind}/${this.file}.svg?raw`)
     this.svgContent = importedModule.default;
   }
 }

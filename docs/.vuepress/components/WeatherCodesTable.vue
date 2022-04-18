@@ -17,10 +17,10 @@
       <tr v-for="code in codes">
         <th scope="row">{{ code.code }}</th>
         <td class="d-ta-center d-py4">
-          <img height="32" :src="`/assets/svg/weather/${code.day}.svg`" alt="">
+          <svg class="d-svg d-svg--system d-svg--size32" viewBox="0 0 24 24" v-html="code.day"></svg>
         </td>
         <td class="d-ta-center d-py4">
-          <img height="32" :src="`/assets/svg/weather/${code.night}.svg`" alt="">
+          <svg class="d-svg d-svg--system d-svg--size32" viewBox="0 0 24 24" v-html="code.night"></svg>
         </td>
         <td class="d-fs14">{{ code.name }}</td>
       </tr>
@@ -30,23 +30,33 @@
 </template>
 
 <script>
+import {codes} from '../../_data/svg-weather.json';
+
 export default {
   name: "WeatherCodesTable",
   data() {
     return {
-      codes: null
-    }
+      codes: null,
+      dayIcon: null,
+    };
   },
   methods: {
-    async importSvg(fileName) {
-      const svgPath = `/assets/svg/weather/${fileName}.svg`;
-      const module = await import(/* @vite-ignore */ svgPath);
-      return module.default;
+    async importSvgs() {
+      this.codes = await Promise.all(codes.map(async (code) => {
+        const dayIcon = await import(`../../../lib/build/svg/weather/${code.day}.svg?raw`);
+        const nightIcon = await import(`../../../lib/build/svg/weather/${code.night}.svg?raw`);
+        return {
+          ...code,
+          day: dayIcon.default.replace(/<\/?svg.*>/g, ''),
+          night: nightIcon.default.replace(/<\/?svg.*>/g, '')
+        };
+      }))
     }
   },
   async beforeMount() {
     const importedModule = await import('../../_data/svg-weather.json');
     this.codes = importedModule.codes;
+    this.importSvgs();
   }
 }
 </script>

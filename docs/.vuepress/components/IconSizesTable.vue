@@ -34,7 +34,7 @@ export default {
     const module = await import('../../_data/icons-sizes.json')
     this.iconSizes = module.default;
 
-    const svgModule = await import('/assets/svg/system/phone.svg?raw');
+    const svgModule = await import('../../../lib/build/svg/system/phone.svg?raw');
     this.exampleSvg = svgModule.default;
     this.exampleSvg = this.exampleSvg.replace(/<\/?svg.*>/g, '')
   }
