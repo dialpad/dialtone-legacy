@@ -54,7 +54,9 @@ At minimum, modals contain a title and one button. They could also contain body 
 
 ## Examples
 ### Base Style
-<modal kind="base"></modal>
+<code-well-header>
+  <modal kind="base"></modal>
+</code-well-header>
 
 ```html
 <aside class="d-modal" id="modal-base" tabindex="-1" role="dialog" aria-labelledby="modal-title" aria-describedby="modal-description" aria-hidden="true">
@@ -71,7 +73,9 @@ At minimum, modals contain a title and one button. They could also contain body 
 ```
 
 ### Danger
-<modal kind="danger"></modal>
+<code-well-header>
+  <modal kind="danger"></modal>
+</code-well-header>
 
 ```html
 <aside class="d-modal d-modal--danger" id="modal-base" tabindex="-1" role="dialog" aria-labelledby="modal-title" aria-describedby="modal-description" aria-hidden="true">
@@ -88,7 +92,9 @@ At minimum, modals contain a title and one button. They could also contain body 
 ```
 
 ### Full Screen
-<modal kind="full-screen"></modal>
+<code-well-header>
+  <modal kind="full-screen"></modal>
+</code-well-header>
 
 ```html
 <aside class="d-modal d-modal--full" id="modal-base" tabindex="-1" role="dialog" aria-labelledby="modal-title" aria-describedby="modal-description" aria-hidden="true">

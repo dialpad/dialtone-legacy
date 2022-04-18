@@ -1,8 +1,5 @@
 <template>
-  <code-well-header>
-    <button class="d-btn d-btn--primary d-btn--sm" type="button" @click="openModal">Launch modal</button>
-  </code-well-header>
-
+  <button class="d-btn d-btn--primary d-btn--sm" type="button" @click="openModal">Launch modal</button>
   <aside
     class="d-modal d-mn1"
     :class="{
@@ -17,6 +14,7 @@
     aria-labelledby="modal-title"
     aria-describedby="modal-description"
     :aria-hidden="!showModal"
+    @click.self="closeModal"
   >
     <div class="d-modal__banner" v-show="showModalBanner">
       This example banner sits at the top of the modal.
