@@ -109,7 +109,10 @@ $(document).ready(function() {
 
                 toggleDropDownNavigation()
                 //  Re-initiate ScrollSpy
-                $('.js-scrollspy').scrollSpy();
+                $('.js-scrollspy').scrollSpy({
+                  getActiveElement: (id) => getActiveAbsolute(id),
+                  scrollOffset: 0,
+                });
                 $('.js-navigation-header').attr('style', '');
                 $('.js-dialtone5-banner').removeClass('d-d-none');
             })
@@ -128,7 +131,17 @@ $(document).ready(function() {
     });
 
     //  Initiate ScrollSpy
-    $('.js-scrollspy').scrollSpy();
+    $('.js-scrollspy').scrollSpy({
+      getActiveElement: (id) => getActiveAbsolute(id),
+      scrollOffset: 0,
+    });
+
+    // Custom getActiveElement using absolute path. Needed when using the <base> tag
+    function getActiveAbsolute(id) {
+      console.log($('.js-scrollspy').scrollSpy.scrollOffset)
+      const address = window.location.href.split('#')[0];
+      return `a[href="${address}#${id}"]`;
+    }
 
     //  Add box shadow to the header navigation on scroll
     $(window).scroll( () => {
