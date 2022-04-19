@@ -1,1 +1,0 @@
-import{_ as e,o as s,c as a,a as n}from"./app.213c74f7.js";const t={},o={"aria-hidden":"true","aria-label":"Warning",class:"d-svg d-svg--system d-svg__warning",viewBox:"0 0 24 24"},r=n("path",{d:"M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"},null,-1),c=[r];function _(d,i){return s(),a("svg",o,c)}var v=e(t,[["render",_]]);export{v as default};

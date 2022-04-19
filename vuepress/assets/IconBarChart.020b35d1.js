@@ -1,1 +1,0 @@
-import{_ as a,o as e,c as s,a as t}from"./app.213c74f7.js";const r={},o={"aria-hidden":"true","aria-label":"Bar Chart",class:"d-svg d-svg--system d-svg__barChart",viewBox:"0 0 24 24"},c=t("path",{d:"M5 9.2h3V19H5V9.2zM10.6 5h2.8v14h-2.8V5zm5.6 8H19v6h-2.8v-6z"},null,-1),_=[c];function n(d,h){return e(),s("svg",o,_)}var l=a(r,[["render",n]]);export{l as default};
