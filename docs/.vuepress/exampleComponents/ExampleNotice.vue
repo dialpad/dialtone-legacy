@@ -53,7 +53,7 @@
 
 <script>
 export default {
-  name: "notice",
+  name: "example-notice",
   props: {
     important: {
       type: Boolean,

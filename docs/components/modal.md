@@ -55,7 +55,7 @@ At minimum, modals contain a title and one button. They could also contain body 
 ## Examples
 ### Base Style
 <code-well-header>
-  <modal kind="base"></modal>
+  <example-modal kind="base" />
 </code-well-header>
 
 ```html
@@ -74,7 +74,7 @@ At minimum, modals contain a title and one button. They could also contain body 
 
 ### Danger
 <code-well-header>
-  <modal kind="danger"></modal>
+  <example-modal kind="danger" />
 </code-well-header>
 
 ```html
@@ -93,7 +93,7 @@ At minimum, modals contain a title and one button. They could also contain body 
 
 ### Full Screen
 <code-well-header>
-  <modal kind="full-screen"></modal>
+  <example-modal kind="full-screen" />
 </code-well-header>
 
 ```html
@@ -124,5 +124,5 @@ Check out the "Focus management" section of the following <a href="https://devel
 <script setup>
   import IconCheckmark from '@svgIcons/IconCheckmark.vue';
   import IconClose from '@svgIcons/IconClose.vue';
-  import Modal from '@components/Modal.vue';
+  import ExampleModal from '@exampleComponents/ExampleModal.vue';
 </script>

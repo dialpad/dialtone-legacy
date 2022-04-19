@@ -53,7 +53,7 @@
 
 <script>
 export default {
-  name: "Tabs",
+  name: "example-tabs",
   data() {
     return {
       selected: 0

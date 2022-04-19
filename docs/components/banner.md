@@ -16,7 +16,7 @@ Banners are a type of notice and so you can use the following <a class="d-link" 
 <component-class-table component-name="banner"></component-class-table>
 
 ## Examples
-<banner />
+<example-banner />
 
 ```html
 <aside class="d-banner" role="alert" aria-hidden="false">
@@ -47,5 +47,5 @@ Banners are a type of notice and so you can use the following <a class="d-link" 
 
 <script setup>
     import { accessible } from '@data/banner.json';
-    import Banner from '@components/Banner.vue';
+    import ExampleBanner from '@exampleComponents/ExampleBanner.vue';
 </script>

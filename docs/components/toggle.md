@@ -12,16 +12,16 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-toggle--defaul
 <code-well-header>
   <fieldset class="d-stack8">
     <div class="d-toggle-group d-d-flex d-ai-center">
-      <toggle label="Unchecked Toggle"/>
+      <example-toggle label="Unchecked Toggle"/>
     </div>
     <div class="d-toggle-group d-d-flex d-ai-center">
-      <toggle label="Unchecked Disabled" disabled/>
+      <example-toggle label="Checked Toggle" checked/>
     </div>
     <div class="d-toggle-group d-d-flex d-ai-center">
-      <toggle label="Checked Disabled" checked disabled/>
+      <example-toggle label="Unchecked Disabled" disabled/>
     </div>
     <div class="d-toggle-group d-d-flex d-ai-center">
-      <toggle label="Checked Toggle" checked/>
+      <example-toggle label="Checked Disabled" checked disabled/>
     </div>
   </fieldset>
 </code-well-header>
@@ -81,16 +81,16 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-toggle--defaul
         <h3 class="d-mr4">DND</h3>
       </div>
       <div class="row d-d-flex d-ai-center d-jc-space-between d-mb6">
-        <toggle label="Acorn Test" />
+        <example-toggle label="Acorn Test" />
       </div>
       <div class="row d-d-flex d-ai-center d-jc-space-between d-mb6">
-        <toggle label="California Zoo" />
+        <example-toggle label="California Zoo" />
       </div>
       <div class="row d-d-flex d-ai-center d-jc-space-between d-mb6">
-        <toggle label="Montana Centre" />
+        <example-toggle label="Montana Centre" />
       </div>
       <div class="row d-d-flex d-ai-center d-jc-space-between d-mb6">
-        <toggle label="Wilson Centre" />
+        <example-toggle label="Wilson Centre" />
       </div>
     </div>
   </fieldset>
@@ -156,5 +156,5 @@ The best accessibility is semantic HTML. Most screen readers understand how to p
 - If you have a group of related toggles, use a `fieldset` to group them and a `legend` to title the group. For further information, please visit Gov.UK’s article, <a class="d-link" href="https://accessibility.blog.gov.uk/2016/07/22/using-the-fieldset-and-legend-elements/">Using the fieldset and legend elements</a>.
 
 <script setup>
-  import Toggle from '@components/Toggle.vue';
+  import ExampleToggle from '@exampleComponents/ExampleToggle.vue';
 </script>

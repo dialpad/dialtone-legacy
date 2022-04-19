@@ -67,7 +67,7 @@ Popover must contain an anchor and content element. d-modal--transparent can be 
 ## Examples
 ### Popover - Modal
 <code-well-header>
-  <popover modal />
+  <example-popover modal />
 </code-well-header>
 
 ```html
@@ -85,7 +85,7 @@ Popover must contain an anchor and content element. d-modal--transparent can be 
 
 ### Popover - Non Modal
 <code-well-header>
-  <popover />
+  <example-popover />
 </code-well-header>
 
 ```html
@@ -102,11 +102,11 @@ Popover must contain an anchor and content element. d-modal--transparent can be 
 
 ### With Header - Modal
 <code-well-header>
-  <popover modal header>
+  <example-popover modal header>
     <template #content>
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur delectus distinctio id iure labore, maiores mollitia reprehenderit sunt tempore veritatis. Aliquam delectus earum ex, expedita ipsam nobis obcaecati quibusdam repudiandae.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur delectus distinctio id iure labore, maiores mollitia reprehenderit sunt tempore veritatis. Aliquam delectus earum ex, expedita ipsam nobis obcaecati quibusdam repudiandae.<br>
     </template>
-  </popover>
+  </example-popover>
 </code-well-header>
 
 ```html
@@ -128,11 +128,11 @@ Popover must contain an anchor and content element. d-modal--transparent can be 
 ```
 ### With Footer - Modal
 <code-well-header>
-  <popover modal footer>
+  <example-popover modal footer>
     <template #content>
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur delectus distinctio id iure labore, maiores mollitia reprehenderit sunt tempore veritatis. Aliquam delectus earum ex, expedita ipsam nobis obcaecati quibusdam repudiandae.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur delectus distinctio id iure labore, maiores mollitia reprehenderit sunt tempore veritatis. Aliquam delectus earum ex, expedita ipsam nobis obcaecati quibusdam repudiandae.<br>
     </template>
-  </popover>
+  </example-popover>
 </code-well-header>
 
 ```html
@@ -159,5 +159,5 @@ If your popover is modal, please see the accessibility section of this page rega
 <component-accessible-table component-name="popover"/>
 
 <script setup>
-  import Popover from '@components/Popover.vue';
+  import ExamplePopover from '@exampleComponents/ExamplePopover.vue';
 </script>

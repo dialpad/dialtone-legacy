@@ -92,7 +92,7 @@
 <script>
 
 export default {
-  name: 'banner',
+  name: 'example-banner',
   data() {
     return {
       kind: 'base',

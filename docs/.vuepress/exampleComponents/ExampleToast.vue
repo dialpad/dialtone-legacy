@@ -82,7 +82,7 @@
 
 <script>
 export default {
-  name: "Toast",
+  name: "example-toast",
   data() {
     return {
       kind: 'base',

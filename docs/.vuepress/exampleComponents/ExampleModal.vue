@@ -72,7 +72,7 @@ const MODAL_KINDS = ['full-screen', 'danger', 'base'];
 import IconClose from '@svgIcons/IconClose.vue';
 
 export default {
-  name: "Modal.vue",
+  name: "example-modal",
   components: {
     IconClose
   },

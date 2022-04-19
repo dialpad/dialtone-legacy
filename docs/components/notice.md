@@ -15,11 +15,11 @@ A notice delivers informational and assistive messages that inform the user abou
 Used in most scenarios when the message should be noticeable but not dominate.
 
 <code-well-header bgclass="d-bgc-white">
-  <notice kind="base" role="status" />
-  <notice kind="error" role="status" />
-  <notice kind="info" role="status" />
-  <notice kind="success" role="status" />
-  <notice kind="warning" role="status" />
+  <example-notice kind="base" role="status" />
+  <example-notice kind="error" role="status" />
+  <example-notice kind="info" role="status" />
+  <example-notice kind="success" role="status" />
+  <example-notice kind="warning" role="status" />
 </code-well-header>
 
 ```html
@@ -49,11 +49,11 @@ Used in most scenarios when the message should be noticeable but not dominate.
 Used occasionally in scenarios when the message needs to dominate.
 
 <code-well-header>
-  <notice kind="base" role="status" important />
-  <notice kind="error" role="status" important />
-  <notice kind="info" role="status" important />
-  <notice kind="success" role="status" important />
-  <notice kind="warning" role="status" important />
+  <example-notice kind="base" role="status" important />
+  <example-notice kind="error" role="status" important />
+  <example-notice kind="info" role="status" important />
+  <example-notice kind="success" role="status" important />
+  <example-notice kind="warning" role="status" important />
 </code-well-header>
 
 ```html
@@ -84,5 +84,5 @@ Used occasionally in scenarios when the message needs to dominate.
 
 
 <script setup>
-  import Notice from '@components/Notice.vue';
+  import ExampleNotice from '@exampleComponents/ExampleNotice.vue';
 </script>

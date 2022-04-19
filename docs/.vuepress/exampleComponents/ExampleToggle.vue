@@ -20,7 +20,7 @@
 
 <script>
 export default {
-  name: "Toggle.vue",
+  name: "example-toggle",
   data() {
     return {
       isChecked: this.checked,

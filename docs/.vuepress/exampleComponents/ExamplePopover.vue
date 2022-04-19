@@ -47,7 +47,7 @@
 
 <script>
 export default {
-  name: "Popover",
+  name: "example-popover",
   data() {
     return {
       shown: false,

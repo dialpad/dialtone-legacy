@@ -159,6 +159,6 @@ export default defineUserConfig<DefaultThemeOptions>({
     '@data': resolve(__dirname, '../_data/'), // Needed to import json data.
     '@svgIcons': resolve(__dirname, '../../lib/dist/vue/icons/'), // Needed to easily import svg
     '@theme': resolve(__dirname, './theme'),
-    '@components': resolve(__dirname, './components'),
+    '@exampleComponents': resolve(__dirname, './exampleComponents'),
   },
 })

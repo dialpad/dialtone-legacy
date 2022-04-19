@@ -8,7 +8,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-toast--default
 <component-class-table component-name="toast" />
 
 ## Examples
-<toast />
+<example-toast />
 
 ```html
 <aside class="d-toast-wrapper">
@@ -48,5 +48,5 @@ means the toast will be read out after what's currently being has finished.
 <component-accessible-table component-name="toast" />
 
 <script setup>
-  import Toast from '@components/Toast.vue';
+  import ExampleToast from '@exampleComponents/ExampleToast.vue';
 </script>

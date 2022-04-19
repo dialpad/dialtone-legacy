@@ -11,7 +11,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-tabs--default
 ## Examples
 ### Base Styles
 <code-well-header bgclass="d-bgc-white">
-  <tabs>
+  <example-tabs>
     <template #panel_content="{selected}">
       <div id="base-panel-1" role="tabpanel" tabindex="0" aria-labelledby="base-tab-1" :hidden="selected !== 0">
         <p>First tab content panel</p>
@@ -23,7 +23,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-tabs--default
         <p>Third tab content panel</p>
       </div>
     </template>
-  </tabs>
+  </example-tabs>
 </code-well-header>
     
 ```html
@@ -45,8 +45,8 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-tabs--default
 
 ### Sizes
 <code-well-header bgclass="d-bgc-white">
-  <tabs />
-  <tabs size="small" />
+  <example-tabs />
+  <example-tabs size="small" />
 </code-well-header>
     
 ```html
@@ -58,8 +58,8 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-tabs--default
 Add a `d-tablist--no-border` to remove the bottom border of any tablist. Handy for small tablists and tablists serving as subtabs to a larger menu.
 
 <code-well-header bgclass="d-bgc-white">
-  <tabs borderless />
-  <tabs size="small" borderless />
+  <example-tabs borderless />
+  <example-tabs size="small" borderless />
 </code-well-header>
  
 ```html
@@ -71,7 +71,7 @@ Add a `d-tablist--no-border` to remove the bottom border of any tablist. Handy f
 Add `d-tablist--inverted` when you want to display tabs on a darker background.
 
 <code-well-header bgclass="d-bgc-black-800">
-  <tabs inverted>
+  <example-tabs inverted>
     <template #panel_content="{selected}">
       <div id="inverted-panel-1" role="tabpanel" tabindex="0" aria-labelledby="inverted-tab-1" :hidden="selected !== 0">
         <p class="d-fc-white">First tab content panel</p>
@@ -83,7 +83,7 @@ Add `d-tablist--inverted` when you want to display tabs on a darker background.
         <p class="d-fc-white">Third tab content panel</p>
       </div>
     </template>
-  </tabs>
+  </example-tabs>
 </code-well-header>
     
 ```html
@@ -96,5 +96,5 @@ To create accessible tabs, be sure to implement the <a href="https://www.w3.org/
 <component-accessible-table component-name="tabs" />
 
 <script setup>
-  import Tabs from "@components/Tabs.vue"; 
+  import ExampleTabs from "@exampleComponents/ExampleTabs.vue"; 
 </script>
