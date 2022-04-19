@@ -2,7 +2,7 @@
   <aside class="d-mt16 d-btr8 d-of-hidden">
     <header
       class="d-fl-center d-fd-column d-p24 d-w100p d-of-auto d-stack8"
-      :class="customClasses"
+      :class="classes"
     >
       <slot></slot>
     </header>
@@ -16,15 +16,22 @@ export default {
   props: {
     bgclass: {
       type: String,
-      default: 'd-bgc-black-025',
+      default: 'd-bgc-black-025'
+    },
+    customClasses: {
+      type: Array,
+      default: function () {
+        return [];
+      }
     },
   },
   computed: {
-    customClasses() {
+    classes() {
       return [
         this.bgclass,
+        this.customClasses,
         {
-          'd-ba d-bc-black-050 d-btr8 d-baw2': this.bgclass === 'd-bgc-white'
+          'd-ba d-bc-black-050 d-btr8 d-baw2': this.bgclass === 'd-bgc-white',
         }
       ];
     }
