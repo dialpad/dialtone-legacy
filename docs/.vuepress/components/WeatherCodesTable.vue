@@ -17,10 +17,10 @@
       <tr v-for="code in codes">
         <th scope="row">{{ code.code }}</th>
         <td class="d-ta-center d-py4">
-          <svg class="d-svg d-svg--system d-svg--size32" viewBox="0 0 24 24" v-html="code.day"></svg>
+          <component :is="importIconComponent(code.day)"></component>
         </td>
         <td class="d-ta-center d-py4">
-          <svg class="d-svg d-svg--system d-svg--size32" viewBox="0 0 24 24" v-html="code.night"></svg>
+          <component :is="importIconComponent(code.night)"></component>
         </td>
         <td class="d-fs14">{{ code.name }}</td>
       </tr>
@@ -30,33 +30,23 @@
 </template>
 
 <script>
-import {codes} from '../../_data/svg-weather.json';
+import {defineAsyncComponent} from 'vue';
 
 export default {
   name: "WeatherCodesTable",
   data() {
     return {
       codes: null,
-      dayIcon: null,
     };
   },
   methods: {
-    async importSvgs() {
-      this.codes = await Promise.all(codes.map(async (code) => {
-        const dayIcon = await import(`../../../lib/build/svg/weather/${code.day}.svg?raw`);
-        const nightIcon = await import(`../../../lib/build/svg/weather/${code.night}.svg?raw`);
-        return {
-          ...code,
-          day: dayIcon.default.replace(/<\/?svg.*>/g, ''),
-          night: nightIcon.default.replace(/<\/?svg.*>/g, '')
-        };
-      }))
+    importIconComponent(icon) {
+      return defineAsyncComponent(() => import(`../../../lib/dist/vue/icons/${icon}.vue`));
     }
   },
   async beforeMount() {
     const importedModule = await import('../../_data/svg-weather.json');
     this.codes = importedModule.codes;
-    this.importSvgs();
   }
 }
 </script>

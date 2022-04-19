@@ -2,10 +2,11 @@
   <div :id="file" class="dialtone-icon-grid__item">
     <aside :data-selected="selectedStatus" class="dialtone-icon-card js-dialtone-icon-card">
       <header class="dialtone-icon-card__header js-dialtone-icon-card-copy-area">
-        <component
-          :is="dynamicIconComponent"
-          :class="cardIconClass">
-        </component>
+        <div :class="cardIconClass">
+          <component
+            :is="dynamicIconComponent">
+          </component>
+        </div>
         <p class="dialtone-icon-card__subtitle d-tt-capitalize">{{ name }}
           {{ (!isWeatherKind && variation) ? `(${variation})` : '' }}</p>
       </header>
@@ -92,16 +93,15 @@ export default {
       return this.isSpotKind ? 'dialtone-icon-card__icon--autosize' : 'dialtone-icon-card__icon';
     },
     dynamicIconComponent() {
-      return defineAsyncComponent(() => import(`../../../lib/dist/vue/icons/${this.vue}.vue`))
+      if (this.kind === 'patterns') {
+        return defineAsyncComponent(() => import(`../../../lib/dist/vue/patterns/${this.vue}.vue`))
+      } else if (this.kind === 'spot') {
+        return defineAsyncComponent(() => import(`../../../lib/dist/vue/spot/${this.vue}.vue`))
+      } else {
+        return defineAsyncComponent(() => import(`../../../lib/dist/vue/icons/${this.vue}.vue`))
+      }
     },
   },
-  data: () => ({
-    svgContent: null,
-  }),
-  async created() {
-    //const importedModule = await import(`../../../lib/dist/vue/icons/${this.vue}.vue`).default
-    //this.svgContent = importedModule.default;
-  }
 }
 </script>
 
