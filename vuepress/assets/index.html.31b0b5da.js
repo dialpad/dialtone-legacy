@@ -1,0 +1,1 @@
+const e={key:"v-8daa1a0e",path:"/",title:"",lang:"en-US",frontmatter:{home:!0,layout:"Home"},excerpt:"",headers:[],git:{updatedTime:1650330434e3,contributors:[{name:"juliodialpad",email:"julio.ortega@dialpad.com",commits:1}]},filePathRelative:"index.md"};export{e as data};
