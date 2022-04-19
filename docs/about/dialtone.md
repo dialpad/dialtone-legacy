@@ -13,16 +13,16 @@ Use [Vue components](https://vue.dialpad.design/) in the case your project suppo
 and with usability and performance in mind.
 
 ### CSS components
-If Vue isn't supported in your application, you can use the [CSS components](/components/avatar/) in your project, but you'll be responsible
-for writing the correct markup, managing DOM elements and events, and making it [accessible for all users](/getting-started/accessibility/fundamentals/).
+If Vue isn't supported in your application, you can use the [CSS components](../components/avatar/) in your project, but you'll be responsible
+for writing the correct markup, managing DOM elements and events, and making it [accessible for all users](../getting-started/accessibility/fundamentals/).
 
 
-See more about [components usage](/getting-started/usage/#components).
+See more about [components usage](../getting-started/usage/#components).
 
 ## Intake
 ### Contributions
 
-Read about [how to contribute to Dialtone](/about/contributing/).
+Read about [how to contribute to Dialtone](../about/contributing/).
 
 ### Request a feature
 
@@ -37,4 +37,3 @@ for reporting any issue.
 ## Contact Us
 - [#dialtone](https://dialpad.slack.com/messages/dialtone/) Slack channel
 - [dialtone@dialpad.com](mailto:dialtone@dialpad.com)
-  

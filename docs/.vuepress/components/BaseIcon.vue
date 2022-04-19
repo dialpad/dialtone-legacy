@@ -2,12 +2,18 @@
   <div :id="file" class="dialtone-icon-grid__item">
     <aside :data-selected="selectedStatus" class="dialtone-icon-card js-dialtone-icon-card">
       <header class="dialtone-icon-card__header js-dialtone-icon-card-copy-area">
-        <div :class="cardIconClass" v-html="svgContent" :style="isWeatherKind && variation === 'night' ? 'filter: invert(1)' : ''"></div>
-        <p class="dialtone-icon-card__subtitle d-tt-capitalize">{{ name }} {{ (!isWeatherKind && variation) ? `(${variation})` : '' }}</p>
+        <div :class="cardIconClass">
+          <component
+            :is="dynamicIconComponent">
+          </component>
+        </div>
+        <p class="dialtone-icon-card__subtitle d-tt-capitalize">{{ name }}
+          {{ (!isWeatherKind && variation) ? `(${variation})` : '' }}</p>
       </header>
       <footer :class="cardFooterClass">
         <div class="dialtone-icon-card__content">
-          <h2 class="dialtone-icon-card__title d-tt-capitalize">{{ name }} {{ (!isWeatherKind && variation) ? `(${variation})` : '' }}</h2>
+          <h2 class="dialtone-icon-card__title d-tt-capitalize">{{ name }}
+            {{ (!isWeatherKind && variation) ? `(${variation})` : '' }}</h2>
           <div class="dialtone-icon-card__list">
             <span class="dialtone-icon-card__list__item">
               <strong>SVG:</strong> <span class="code-example">{{ file + '.svg' }}</span>
@@ -27,6 +33,8 @@
 </template>
 
 <script>
+import {defineAsyncComponent} from "vue";
+
 export const ICON_KINDS = ['brand', 'patterns', 'spot', 'system', 'weather'];
 export const ICON_VARIATIONS = ['dark', 'light', 'night', 'day'];
 
@@ -78,23 +86,22 @@ export default {
     selectedStatus() {
       return this.selected ? 'yes' : 'no'
     },
-    svgPath() {
-      return `/assets/svg/${this.kind}/${this.file}.svg?raw`;
-    },
     cardFooterClass() {
       return this.isSpotKind ? 'dialtone-icon-card__footer-spot-illustration' : 'dialtone-icon-card__footer';
     },
     cardIconClass() {
       return this.isSpotKind ? 'dialtone-icon-card__icon--autosize' : 'dialtone-icon-card__icon';
-    }
+    },
+    dynamicIconComponent() {
+      if (this.kind === 'patterns') {
+        return defineAsyncComponent(() => import(`../../../lib/dist/vue/patterns/${this.vue}.vue`))
+      } else if (this.kind === 'spot') {
+        return defineAsyncComponent(() => import(`../../../lib/dist/vue/spot/${this.vue}.vue`))
+      } else {
+        return defineAsyncComponent(() => import(`../../../lib/dist/vue/icons/${this.vue}.vue`))
+      }
+    },
   },
-  data: () => ({
-    svgContent: null,
-  }),
-  async created() {
-    const importedModule = await import(/* @vite-ignore */ this.svgPath)
-    this.svgContent = importedModule.default;
-  }
 }
 </script>
 

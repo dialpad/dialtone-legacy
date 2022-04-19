@@ -7,12 +7,12 @@ export default defineUserConfig<DefaultThemeOptions>({
   lang: 'en-US',
   title: 'Dialtone',
 
-  base: '/',
+  base: '/vuepress/',
 
   // theme and its config
   theme: resolve(__dirname, './theme/index.js'),
   themeConfig: {
-    logo: '/assets/images/dialpad-logo.svg',
+    logo: '/vuepress/assets/images/dialpad-logo.svg',
     navbar: [
       {text: 'About', link: '/about/dialtone'},
       {text: 'Getting Started', link: '/getting-started/installation'},

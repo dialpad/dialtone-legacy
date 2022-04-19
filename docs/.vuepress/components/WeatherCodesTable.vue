@@ -17,10 +17,10 @@
       <tr v-for="code in codes">
         <th scope="row">{{ code.code }}</th>
         <td class="d-ta-center d-py4">
-          <img height="32" :src="`/assets/svg/weather/${code.day}.svg`" alt="">
+          <component :is="importIconComponent(code.day)"></component>
         </td>
         <td class="d-ta-center d-py4">
-          <img height="32" :src="`/assets/svg/weather/${code.night}.svg`" alt="">
+          <component :is="importIconComponent(code.night)"></component>
         </td>
         <td class="d-fs14">{{ code.name }}</td>
       </tr>
@@ -30,18 +30,18 @@
 </template>
 
 <script>
+import {defineAsyncComponent} from 'vue';
+
 export default {
   name: "WeatherCodesTable",
   data() {
     return {
-      codes: null
-    }
+      codes: null,
+    };
   },
   methods: {
-    async importSvg(fileName) {
-      const svgPath = `/assets/svg/weather/${fileName}.svg`;
-      const module = await import(/* @vite-ignore */ svgPath);
-      return module.default;
+    importIconComponent(icon) {
+      return defineAsyncComponent(() => import(`../../../lib/dist/vue/icons/${icon}.vue`));
     }
   },
   async beforeMount() {
