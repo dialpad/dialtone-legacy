@@ -16,7 +16,7 @@ Banners are a type of notice and so you can use the following <a class="d-link" 
 <component-class-table component-name="banner"></component-class-table>
 
 ## Examples
-<banner></banner>
+<banner />
 
 ```html
 <aside class="d-banner" role="alert" aria-hidden="false">

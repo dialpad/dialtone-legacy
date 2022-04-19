@@ -81,7 +81,7 @@
             @click="toggleExample"
         >
           <span class="d-btn__icon">
-            <icon-close></icon-close>
+            <icon-close />
           </span>
         </button>
       </div>
@@ -123,9 +123,6 @@ export default {
       this.showBanner = !this.showBanner;
     },
   },
-  mounted() {
-    console.log(this.$refs);
-  }
 }
 </script>
 
