@@ -1,3 +1,10 @@
+## [6.23.1](https://github.com/dialpad/dialtone/compare/v6.23.0...v6.23.1) (2022-04-19)
+
+
+### Bug Fixes
+
+* internal links not working after page switch ([8ff76cd](https://github.com/dialpad/dialtone/commit/8ff76cda55185bc662df8007725713fc23a2b75f))
+
 # [6.23.0](https://github.com/dialpad/dialtone/compare/v6.22.0...v6.23.0) (2022-04-18)
 
 
