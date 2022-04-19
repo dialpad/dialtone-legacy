@@ -1,1 +1,0 @@
-import{_ as e,o as s,c as t,a as o}from"./app.373b87af.js";const a={},c={"aria-hidden":"true","aria-label":"Stop",class:"d-svg d-svg--system d-svg__stop",viewBox:"0 0 24 24"},_=o("path",{d:"M5 5h14v14H5z"},null,-1),r=[_];function n(d,i){return s(),t("svg",c,r)}var p=e(a,[["render",n]]);export{p as default};

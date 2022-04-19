@@ -54,7 +54,6 @@ $(document).ready(function() {
         }, '', window.location.href),
 
         $('#nav,#mobile-nav').on('click', 'a', function (event) {
-
             // Allow opening links in new tabs
             if (event.metaKey) {
               return
@@ -85,6 +84,7 @@ $(document).ready(function() {
                 // Destroy scrollSpy
                 $('.js-scrollspy').scrollSpy('destroy');
 
+
                 // Update the page
                 $('head title').text(title)
                 $('#nav').html(nav)
@@ -108,6 +108,8 @@ $(document).ready(function() {
                 }, '', href)
 
                 toggleDropDownNavigation()
+
+                fixInternalLinks();
                 //  Re-initiate ScrollSpy
                 $('.js-scrollspy').scrollSpy({
                   getActiveElement: (id) => getActiveAbsolute(id),
@@ -130,17 +132,28 @@ $(document).ready(function() {
         }
     });
 
+    fixInternalLinks();
+
     //  Initiate ScrollSpy
     $('.js-scrollspy').scrollSpy({
       getActiveElement: (id) => getActiveAbsolute(id),
       scrollOffset: 0,
     });
 
-    // Custom getActiveElement using absolute path. Needed when using the <base> tag
+    // Custom getActiveElement to find the active element using absolute path. Needed when using the <base> tag
     function getActiveAbsolute(id) {
-      console.log($('.js-scrollspy').scrollSpy.scrollOffset)
       const address = window.location.href.split('#')[0];
       return `a[href="${address}#${id}"]`;
+    }
+
+    // sets all internal a href links to use absolute path
+    function fixInternalLinks() {
+      const pathname = window.location.href.split('#')[0];
+      $('a[href^="#"]').each(function() {
+          var $this = $(this),
+              link = $this.attr('href');
+          $this.attr('href', pathname + link);
+      });
     }
 
     //  Add box shadow to the header navigation on scroll
