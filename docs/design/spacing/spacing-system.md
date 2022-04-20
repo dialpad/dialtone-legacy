@@ -1,6 +1,6 @@
 ---
 title: Spacing
-description: Standardized spacing values helps us create consistent user interfaces (UIs). This consistency makes it easier for customers to scan, browse, and utilize our UIs as we're setting visual rhythmns and expectations that customres can rely upon.
+desc: Standardized spacing values helps us create consistent user interfaces (UIs). This consistency makes it easier for customers to scan, browse, and utilize our UIs as we're setting visual rhythmns and expectations that customres can rely upon.
 prev:
   text: Spot Illustrations
   link: /design/illustrations/spot

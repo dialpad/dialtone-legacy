@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import BaseIcon, {ICON_KINDS, ICON_VARIATIONS} from "../components/BaseIcon.vue";
+import BaseIcon, {ICON_KINDS, ICON_VARIATIONS} from "../baseComponents/BaseIcon.vue";
 
 export default {
   name: "Icons",
