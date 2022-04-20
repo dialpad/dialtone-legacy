@@ -1,3 +1,10 @@
+## [6.23.2](https://github.com/dialpad/dialtone/compare/v6.23.1...v6.23.2) (2022-04-20)
+
+
+### Bug Fixes
+
+* **button:** add removed font color on hover state ([#570](https://github.com/dialpad/dialtone/issues/570)) ([9214dfa](https://github.com/dialpad/dialtone/commit/9214dfa21069f9e59dbb058edbcd345745ad6c7a))
+
 ## [6.23.1](https://github.com/dialpad/dialtone/compare/v6.23.0...v6.23.1) (2022-04-19)
 
 
