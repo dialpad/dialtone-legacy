@@ -4,6 +4,7 @@ module.exports = {
   localurl: "http://localhost:4000/",
   url: "https://dialpad.design",
   baseurl: process.env.ELEVENTY_BASE_URL !== '/' ? `/${process.env.ELEVENTY_BASE_URL}/` : '/',
+  branch: process.env.ELEVENTY_BASE_URL !== '/' ? process.env.ELEVENTY_BASE_URL : 'staging',
   paths: {
     css: `assets/css`,
     img: `assets/images`,
