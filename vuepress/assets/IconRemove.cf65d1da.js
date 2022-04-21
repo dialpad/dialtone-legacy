@@ -1,0 +1,1 @@
+import{_ as e,o as s,c as o,a}from"./app.5cf3ffab.js";const t={},c={"aria-hidden":"true","aria-label":"Remove",class:"d-svg d-svg--system d-svg__remove",viewBox:"0 0 24 24"},r=a("path",{d:"M19 13H5v-2h14v2z"},null,-1),_=[r];function n(d,v){return s(),o("svg",c,_)}var l=e(t,[["render",n]]);export{l as default};
