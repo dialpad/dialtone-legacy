@@ -1,3 +1,10 @@
+## [6.23.3](https://github.com/dialpad/dialtone/compare/v6.23.2...v6.23.3) (2022-04-21)
+
+
+### Bug Fixes
+
+* upgrade docsearch to version 3. prevent subdir overlap ([#572](https://github.com/dialpad/dialtone/issues/572)) ([90d2ea4](https://github.com/dialpad/dialtone/commit/90d2ea4c6752f45ebc68b4cf53f110af6fcbbb21))
+
 ## [6.23.2](https://github.com/dialpad/dialtone/compare/v6.23.1...v6.23.2) (2022-04-20)
 
 
