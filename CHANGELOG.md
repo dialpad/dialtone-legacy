@@ -1,3 +1,10 @@
+## [6.23.4](https://github.com/dialpad/dialtone/compare/v6.23.3...v6.23.4) (2022-04-21)
+
+
+### Bug Fixes
+
+* whitespace xml error ([b4da340](https://github.com/dialpad/dialtone/commit/b4da3404cdf49ea6749942e64c12268527e25685))
+
 ## [6.23.3](https://github.com/dialpad/dialtone/compare/v6.23.2...v6.23.3) (2022-04-21)
 
 
