@@ -4,7 +4,7 @@ module.exports = {
   sections: [
     {
       title: "About",
-      url: `about/dialtone/`,
+      url: `${Site.baseurl}about/dialtone/`,
       subsections: [
         {
           title: "About",
@@ -27,7 +27,7 @@ module.exports = {
     },
     {
       title: "Getting Started",
-      url: `getting-started/installation/`,
+      url: `${Site.baseurl}getting-started/installation/`,
       subsections: [
         {
           title: "Getting Started",
@@ -77,7 +77,7 @@ module.exports = {
     },
     {
       title: "Design",
-      url: `design/colors/color-palette`,
+      url: `${Site.baseurl}design/colors/color-palette`,
       subsections: [
         {
           title: "Colors",
@@ -147,7 +147,7 @@ module.exports = {
     },
     {
       title: "Utilities",
-      url: `utilities/backgrounds/attachment`,
+      url: `${Site.baseurl}utilities/backgrounds/attachment`,
       subsections: [
         {
           title: "Backgrounds",
@@ -521,7 +521,7 @@ module.exports = {
     },
     {
       title: "Components",
-      url: `components/avatar`,
+      url: `${Site.baseurl}components/avatar/`,
       pages: [
         {
           title: "Avatar",
