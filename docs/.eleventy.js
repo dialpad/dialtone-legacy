@@ -1,6 +1,6 @@
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginTOC = require("eleventy-plugin-nesting-toc");
-const sections = require("./_data/site-nav.json").sections
+const sections = require("./_data/site-nav.js").sections
 
 const alignAvailablePages = sections => sections.map(section => section.subsections
     ? alignAvailablePages(section.subsections)
