@@ -14,7 +14,7 @@
                  src="https://img.shields.io/badge/Vue-v0.0.0-A687FF">
           </a>
         </div>
-        <router-link class="d-btn d-btn--primary d-btn--lg" to="/getting_started/installation/">Get Started</router-link>
+        <router-link class="d-btn d-btn--primary d-btn--lg" to="/getting-started/installation.html">Get Started</router-link>
       </div>
       <img alt="" class="hero--image d-w50p d-as-flex-start" src="/assets/images/home-hero.png" />
     </div>
