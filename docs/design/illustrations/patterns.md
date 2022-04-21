@@ -1,6 +1,6 @@
 ---
 title: Patterns
-description: The following patterns used for Department and Call Centers, paired with various colors to help with low-color or color-blindness issues.
+desc: The following patterns used for Department and Call Centers, paired with various colors to help with low-color or color-blindness issues.
 prev:
   text: Adding Icons
   link: /design/icons/adding

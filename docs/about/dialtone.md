@@ -1,6 +1,6 @@
 ---
 title: About Dialtone
-description: Dialtone is Dialpad's Design System that unites product teams around a common visual language.
+desc: Dialtone is Dialpad's Design System that unites product teams around a common visual language.
 ---
 ## Components
 Components are reusable building blocks that support a specific interaction or UI need. These components can be reused across Dialpad products and projects

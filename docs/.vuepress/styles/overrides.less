@@ -9,6 +9,12 @@ body {
   --sidebar-width: unset;
 }
 
+tr {
+  &:nth-child(2n) {
+    background-color: unset;
+  }
+}
+
 :root {
   --c-brand: @purple-500;
   --navbar-height: 6.4rem;
@@ -16,7 +22,7 @@ body {
 
 .page {
   padding-top: var(--navbar-height);
-  padding-left: var(--sidebar-width) ;
+  padding-left: var(--sidebar-width);
 }
 
 .theme-default-content {
@@ -26,13 +32,13 @@ body {
     margin-top: var(--su16);
   }
 
-  h2 {
+  > h2 {
     font-size: var(--fs24);
-    border-bottom: unset;
   }
 
   h2, h3 {
     font-weight: var(--fw-bold);
+    border-bottom: unset;
   }
 
   h3 {
@@ -47,20 +53,15 @@ body {
   .d-table {
     thead {
       tr, th, td {
-          border: unset;
+        border: unset;
       }
     }
-    tbody {
-      tr {
-        &:nth-child(2n) {
-          background-color: unset;
-        }
 
-        th, td {
-          border-bottom: var(--su1) solid var(--table-bc);
-          border-left: unset;
-          border-right: unset;
-        }
+    tbody {
+      th, td {
+        border-bottom: var(--su1) solid var(--table-bc);
+        border-left: unset;
+        border-right: unset;
       }
     }
   }

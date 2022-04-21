@@ -1,6 +1,6 @@
 ---
 title: Weather Icons
-description: The following weather icons are provided by Dialtone, used to communicate a user's local weather on an UberConference call.
+desc: The following weather icons are provided by Dialtone, used to communicate a user's local weather on an UberConference call.
 ---
 
 <icons kind="weather" title="Day Icons" variation="day"></icons>

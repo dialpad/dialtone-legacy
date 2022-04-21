@@ -1,5 +1,5 @@
 <template>
-  <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
+  <div class="d-bc-black-200">
     <table class="d-table">
       <thead>
       <tr>
@@ -36,7 +36,7 @@ export default {
     }
   },
   beforeMount() {
-    import(`../_data/${this.componentName}.json`).then((module) => {
+    import(`../../_data/${this.componentName}.json`).then((module) => {
       this.classes = module.classes
     })
   }

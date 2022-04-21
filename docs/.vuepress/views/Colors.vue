@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import BaseColor from "../components/BaseColor.vue";
+import BaseColor from "../baseComponents/BaseColor.vue";
 
 export default {
   name: "Colors",
