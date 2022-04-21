@@ -1,3 +1,10 @@
+## [6.23.6](https://github.com/dialpad/dialtone/compare/v6.23.5...v6.23.6) (2022-04-21)
+
+
+### Bug Fixes
+
+* add baseurl to top level links ([835a881](https://github.com/dialpad/dialtone/commit/835a88188c70533bca27db8369003f5830961609))
+
 ## [6.23.5](https://github.com/dialpad/dialtone/compare/v6.23.4...v6.23.5) (2022-04-21)
 
 
