@@ -72,6 +72,7 @@ export default {
           container: '#algolia-search-container',
           appId: 'Y5HG9UX6KM',
           placeholder: 'Search Dialtone',
+          facetFilters: ['version:vuepress']
         })
       })
     },

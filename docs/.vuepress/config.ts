@@ -1,6 +1,6 @@
-import { defineUserConfig } from 'vuepress'
-import type { DefaultThemeOptions } from 'vuepress'
-import { resolve } from "path";
+import {defineUserConfig} from 'vuepress'
+import type {DefaultThemeOptions} from 'vuepress'
+import {resolve} from "path";
 
 export default defineUserConfig<DefaultThemeOptions>({
   // site config
@@ -142,6 +142,9 @@ export default defineUserConfig<DefaultThemeOptions>({
       itemprop: "description",
       content: "Dialtone is the design system and resources for the Dialpad team."
     }],
+
+    // Docsearch
+    ['meta', {name: "docsearch:version", content: 'vuepress'}],
 
     // CSS
     ['link', {rel: "stylesheet", href: "https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"}],
