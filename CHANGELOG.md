@@ -1,3 +1,10 @@
+## [6.23.5](https://github.com/dialpad/dialtone/compare/v6.23.4...v6.23.5) (2022-04-21)
+
+
+### Bug Fixes
+
+* add baseurl to sitenav ([1805e49](https://github.com/dialpad/dialtone/commit/1805e49e31f70cfc342e7b9eb8f8edd21a641eeb))
+
 ## [6.23.4](https://github.com/dialpad/dialtone/compare/v6.23.3...v6.23.4) (2022-04-21)
 
 
