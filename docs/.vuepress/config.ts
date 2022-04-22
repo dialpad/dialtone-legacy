@@ -1,6 +1,7 @@
 import { defineUserConfig } from 'vuepress'
 import type { DefaultThemeOptions } from 'vuepress'
-import { resolve } from "path";
+import { resolve } from 'path';
+import * as sidebar from '../_data/site-nav';
 
 export default defineUserConfig<DefaultThemeOptions>({
   // site config
@@ -17,98 +18,10 @@ export default defineUserConfig<DefaultThemeOptions>({
       {text: 'About', link: '/about/dialtone'},
       {text: 'Getting Started', link: '/getting-started/installation'},
       {text: 'Design', link: '/design/colors/color-palette'},
-      {text: 'Utilities', link: '/utilities/backgrounds/background_colors'},
+      {text: 'Utilities', link: '/utilities/backgrounds/attachment'},
       {text: 'Components', link: '/components/avatar'},
     ],
-    sidebar: {
-      '/about/': [
-        {
-          text: 'About',
-          children: [
-            {text: 'About Dialtone', link: '/about/dialtone.html'},
-            {text: 'Contributing', link: '/about/contributing.html'},
-          ],
-        },
-      ],
-      '/getting-started/': [
-        {
-          text: 'Getting started',
-          children: [
-            {text: 'Installation', link: '/getting-started/installation.html'},
-            {text: 'Using Dialtone', link: '/getting-started/usage.html'},
-            {text: 'Building Dialtone Locally', link: '/getting-started/building-locally.html'},
-          ],
-        },
-        {
-          text: 'Accessibility',
-          children: [
-            {text: 'Fundamentals', link: '/getting-started/accessibility/fundamentals.html'},
-            {text: 'Best Practices', link: '/getting-started/accessibility/best-practices.html'},
-            {text: 'Tooling', link: '/getting-started/accessibility/tooling.html'},
-          ],
-        },
-      ],
-      '/components/': [
-        'Avatar',
-        'Badge',
-        'Banner',
-        'Breadcrumbs',
-        'Button',
-        'Checkbox',
-        'Input',
-        'Link',
-        'Modal',
-        'Notice',
-        'Popover',
-        'Radio',
-        'Select',
-        'Skeleton',
-        'Table',
-        'Tabs',
-        'Toast',
-        'Toggle',
-        'Tooltip'
-      ],
-      '/design/': [
-        {
-          text: 'Colors',
-          children: [
-            {text: 'Color Palette', link: '/design/colors/color-palette.html'},
-          ],
-        },
-        {
-          text: 'Icons',
-          children: [
-            {text: 'Brand Icons', link: '/design/icons/brand.html'},
-            {text: 'System Icons', link: '/design/icons/system.html'},
-            {text: 'Weather Icons', link: '/design/icons/weather.html'},
-            {text: 'Sizes', link: '/design/icons/sizes.html'},
-            {text: 'Adding Icons', link: '/design/icons/adding.html'},
-          ],
-        },
-        {
-          text: 'Illustrations',
-          children: [
-            {text: 'Patterns', link: '/design/illustrations/patterns.html'},
-            {text: 'Spot Illustrations', link: '/design/illustrations/spot.html'},
-          ],
-        },
-        {
-          text: 'Spacing',
-          children: [
-            {text: 'Spacing System', link: '/design/spacing/spacing-system.html'},
-          ],
-        },
-      ],
-      '/utilities/': [
-        {
-          text: 'Backgrounds',
-          children: [
-            '/utilities/backgrounds/background_colors',
-          ],
-        },
-      ],
-    },
+    sidebar,
     editLink: false,
     darkMode: false,
     // contributors: false,
