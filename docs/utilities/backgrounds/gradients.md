@@ -145,6 +145,6 @@ Use `fv:d-bgg-{from|to}-{color}` to change an element's background gradient star
 ```
 
 <script setup>
-  import gradients from '@data/gradients.json';
+  import { gradients } from '@data/backgrounds.json';
   import colors from '@data/colors.json';
 </script>
