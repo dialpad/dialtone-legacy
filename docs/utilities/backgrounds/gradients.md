@@ -25,13 +25,8 @@ To create a background gradient, first declare the desired gradient and, if appl
 The starting stop (`d-bgg-from-{color}`) should be declared. Optionally an ending stop (`d-bgg-to-{color}`) can also be declared.
 
 <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
-    <table class="d-table">
-        <thead>
-            <tr>
-                <th scope="col" class="d-w25p">Class</th>
-                <th scope="col">Output</th>
-            </tr>
-        </thead>
+<utility-class-table>
+	<template #content>
         <div v-for="direction in ['from', 'to']" style="display: contents">
           <tbody v-for="{ color, stops } in colors">
               <tr v-for="{ stop } in stops">
@@ -59,7 +54,8 @@ The starting stop (`d-bgg-from-{color}`) should be declared. Optionally an endin
               </tr>
           </tbody>
         </div>
-    </table>
+    </template>
+  </utility-class-table>
 </div>
 
 ## Starting color
