@@ -1,3 +1,58 @@
+## [6.23.6](https://github.com/dialpad/dialtone/compare/v6.23.5...v6.23.6) (2022-04-21)
+
+
+### Bug Fixes
+
+* add baseurl to top level links ([835a881](https://github.com/dialpad/dialtone/commit/835a88188c70533bca27db8369003f5830961609))
+
+## [6.23.5](https://github.com/dialpad/dialtone/compare/v6.23.4...v6.23.5) (2022-04-21)
+
+
+### Bug Fixes
+
+* add baseurl to sitenav ([1805e49](https://github.com/dialpad/dialtone/commit/1805e49e31f70cfc342e7b9eb8f8edd21a641eeb))
+
+## [6.23.4](https://github.com/dialpad/dialtone/compare/v6.23.3...v6.23.4) (2022-04-21)
+
+
+### Bug Fixes
+
+* whitespace xml error ([b4da340](https://github.com/dialpad/dialtone/commit/b4da3404cdf49ea6749942e64c12268527e25685))
+
+## [6.23.3](https://github.com/dialpad/dialtone/compare/v6.23.2...v6.23.3) (2022-04-21)
+
+
+### Bug Fixes
+
+* upgrade docsearch to version 3. prevent subdir overlap ([#572](https://github.com/dialpad/dialtone/issues/572)) ([90d2ea4](https://github.com/dialpad/dialtone/commit/90d2ea4c6752f45ebc68b4cf53f110af6fcbbb21))
+
+## [6.23.2](https://github.com/dialpad/dialtone/compare/v6.23.1...v6.23.2) (2022-04-20)
+
+
+### Bug Fixes
+
+* **button:** add removed font color on hover state ([#570](https://github.com/dialpad/dialtone/issues/570)) ([9214dfa](https://github.com/dialpad/dialtone/commit/9214dfa21069f9e59dbb058edbcd345745ad6c7a))
+
+## [6.23.1](https://github.com/dialpad/dialtone/compare/v6.23.0...v6.23.1) (2022-04-19)
+
+
+### Bug Fixes
+
+* internal links not working after page switch ([8ff76cd](https://github.com/dialpad/dialtone/commit/8ff76cda55185bc662df8007725713fc23a2b75f))
+
+# [6.23.0](https://github.com/dialpad/dialtone/compare/v6.22.0...v6.23.0) (2022-04-18)
+
+
+### Bug Fixes
+
+* internal links when using <base> tag ([24b65fa](https://github.com/dialpad/dialtone/commit/24b65fa69a29c6cd7bb5264f70a78c3e508fa81d))
+
+
+### Features
+
+* add facebook, sentiment, reply icons ([#568](https://github.com/dialpad/dialtone/issues/568)) ([ff185d5](https://github.com/dialpad/dialtone/commit/ff185d51322adc630bbe8ffaeaead9275ce6b0c4))
+* add icons for new call workflow (Phase 2) ([#569](https://github.com/dialpad/dialtone/issues/569)) ([599852b](https://github.com/dialpad/dialtone/commit/599852b8b436a935df0cf7db2d8bb03c0723021c))
+
 # [6.22.0](https://github.com/dialpad/dialtone/compare/v6.21.0...v6.22.0) (2022-04-08)
 
 

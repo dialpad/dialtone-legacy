@@ -6,5 +6,6 @@ module.exports = {
     layouts: path.resolve(__dirname, 'layouts/'),
     alias: {
         '@theme/Navbar.vue': path.resolve(__dirname, './components/Navbar.vue'),
+        '@theme/Home.vue': path.resolve(__dirname, './components/Home.vue'),
     }
 }
