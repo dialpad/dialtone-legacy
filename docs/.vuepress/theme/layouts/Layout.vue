@@ -1,13 +1,6 @@
-<script>
-import ParentLayout from '@vuepress/theme-default/lib/client/layouts/Layout.vue';
-import IconLaunch from '@svgIcons/IconLaunch.vue';
-
-export default {
-  components: {
-    ParentLayout,
-    IconLaunch
-  },
-}
+<script setup>
+  import ParentLayout from '@vuepress/theme-default/lib/client/layouts/Layout.vue';
+  import IconLaunch from '@svgIcons/IconLaunch.vue';
 </script>
 
 <template>
