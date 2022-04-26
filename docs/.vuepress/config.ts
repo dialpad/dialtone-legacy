@@ -1,6 +1,6 @@
-import { defineUserConfig } from 'vuepress'
-import type { DefaultThemeOptions } from 'vuepress'
-import { resolve } from "path";
+import {defineUserConfig} from 'vuepress'
+import type {DefaultThemeOptions} from 'vuepress'
+import {resolve} from "path";
 
 export default defineUserConfig<DefaultThemeOptions>({
   // site config
