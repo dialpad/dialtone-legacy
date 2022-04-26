@@ -1,0 +1,1 @@
+import{_ as o,o as e,c as r,a as s}from"./app.37642c14.js";const a={},t={"aria-hidden":"true","aria-label":"Arrow Drop Down",class:"d-svg d-svg--system d-svg__arrowDropDown",viewBox:"0 0 24 24"},c=s("path",{d:"M7 10l5 5 5-5H7z"},null,-1),n=[c];function _(d,i){return e(),r("svg",t,n)}var p=o(a,[["render",_]]);export{p as default};
