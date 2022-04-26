@@ -22,11 +22,11 @@ import IconError from "@svgIcons/IconError.vue";
 import IconClose from "@svgIcons/IconClose.vue";
 import IconCheckmark from "@svgIcons/IconCheckmark.vue";
 
-// Less files
+// LESS files
 import '../.././lib/build/less/dialtone.less';
-import './styles/dialtone-docs.less';
-import './styles/overrides.less';
-import './styles/hljs-dialpad.less';
+import '../assets/less/dialtone-docs.less';
+import '../assets/less/overrides.less';
+import '../assets/less/hljs-dialpad.less';
 
 export default defineClientAppEnhance(({app, router, siteData}) => {
     // Common views
