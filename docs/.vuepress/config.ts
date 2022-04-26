@@ -143,9 +143,6 @@ export default defineUserConfig<DefaultThemeOptions>({
       content: "Dialtone is the design system and resources for the Dialpad team."
     }],
 
-    // Docsearch
-    ['meta', {name: "docsearch:version", content: 'vuepress'}],
-
     // CSS
     ['link', {rel: "stylesheet", href: "https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"}],
   ],
