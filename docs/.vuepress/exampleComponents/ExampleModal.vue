@@ -16,7 +16,7 @@
     :aria-hidden="!showModal"
     @click.self="closeModal"
   >
-    <div class="d-modal__banner" v-show="showModalBanner">
+    <div class="d-modal__banner" :class="{'d-d-none': !showModalBanner}">
       This example banner sits at the top of the modal.
     </div>
     <div
