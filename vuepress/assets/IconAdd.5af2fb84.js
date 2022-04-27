@@ -1,1 +1,0 @@
-import{_ as e,o as s,c as a,a as t}from"./app.37642c14.js";const d={},o={"aria-hidden":"true","aria-label":"Add",class:"d-svg d-svg--system d-svg__add",viewBox:"0 0 24 24"},c=t("path",{d:"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"},null,-1),_=[c];function r(n,h){return s(),a("svg",o,_)}var i=e(d,[["render",r]]);export{i as default};
