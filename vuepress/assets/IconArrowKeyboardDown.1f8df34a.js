@@ -1,1 +1,0 @@
-import{_ as e,o,c as r,a}from"./app.38599963.js";const s={},t={"aria-hidden":"true","aria-label":"Arrow Keyboard Down",class:"d-svg d-svg--system d-svg__arrowKeyboardDown",viewBox:"0 0 24 24"},c=a("path",{d:"M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"},null,-1),n=[c];function _(d,l){return o(),r("svg",t,n)}var w=e(s,[["render",_]]);export{w as default};
