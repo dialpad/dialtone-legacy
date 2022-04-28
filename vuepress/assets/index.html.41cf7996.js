@@ -1,1 +1,0 @@
-const a={key:"v-8daa1a0e",path:"/",title:"",lang:"en-US",frontmatter:{home:!0},excerpt:"",headers:[],git:{updatedTime:1651103873e3,contributors:[{name:"Brad Paugh",email:"brad.paugh@dialpad.com",commits:1}]},filePathRelative:"index.md"};export{a as data};
