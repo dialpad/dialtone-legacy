@@ -1,9 +1,6 @@
 <template>
   <aside class="d-mt16 d-btr8 d-of-hidden">
-    <header
-      class="d-fl-center d-fd-column d-p24 d-w100p d-of-auto d-stack8"
-      :class="classes"
-    >
+    <header :class="classes">
       <slot></slot>
     </header>
   </aside>
@@ -14,26 +11,34 @@ export default {
   name: "CodeWellHeader",
   inheritAttrs: false,
   props: {
+    /**
+     * Background class color
+     */
     bgclass: {
       type: String,
       default: 'd-bgc-black-025'
     },
-    customClasses: {
-      type: Array,
-      default: function () {
-        return [];
-      }
-    },
+
+    /**
+     * Used to be able to set only custom classes to the header
+     */
+    custom: {
+      type: Boolean,
+      default: false,
+    }
   },
   computed: {
     classes() {
+      if (this.custom) return this.$attrs.class;
       return [
+        'd-fl-center d-fd-column d-p24 d-w100p d-of-auto d-stack8',
         this.bgclass,
-        this.customClasses,
-        {
-          'd-ba d-bc-black-050 d-btr8 d-baw2': this.bgclass === 'd-bgc-white',
-        }
+        {'d-ba d-bc-black-050 d-btr8 d-baw2': this.isWhiteBackground},
+        this.$attrs.class
       ];
+    },
+    isWhiteBackground() {
+      return this.bgclass === 'd-bgc-white';
     }
   }
 }

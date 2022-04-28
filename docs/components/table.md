@@ -9,7 +9,7 @@ desc: A table is a pattern for organizing data sets. While data visualization he
 ## Examples
 ### Base Style
 
-<code-well-header bgclass="d-bgc-white" border>
+<code-well-header bgclass="d-bgc-white">
   <table class="d-table d-d-unset">
     <caption class="d-table__caption">Office List</caption>
     <thead>
@@ -101,7 +101,7 @@ Used when you want to display a data table on a darker background.
 ```
 
 ### Striped
-<code-well-header bgclass="d-bgc-white" border>
+<code-well-header bgclass="d-bgc-white">
   <table class="d-table d-d-unset d-table--striped">
     <caption class="d-table__caption">Office List</caption>
     <thead>

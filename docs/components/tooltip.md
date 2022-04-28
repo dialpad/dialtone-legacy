@@ -9,7 +9,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-tooltip--defau
 
 ## Examples
 ### Base Styles
-<code-well-header bgclass="d-bgc-black-050" :custom-classes="['d-hmn264']">
+<code-well-header bgclass="d-bgc-black-050" class='d-hmn264'>
   <button class="d-btn d-btn--outlined d-tooltip--hover" type="button">
       <div class="d-tooltip d-tooltip__arrow--bottom-center d-ps-absolute">
           <span>This is a simple tooltip. The tooltip can be positioned in multiple areas too!</span>

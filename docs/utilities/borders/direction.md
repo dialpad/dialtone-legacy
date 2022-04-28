@@ -1,0 +1,75 @@
+---
+title: Border Directions
+desc: Utilities for controlling an element's border.
+---
+
+## Classes
+
+<utility-class-table>
+  <template #content>
+    <tbody>
+      <tr v-for="i in directions">
+        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-b{{ i[0] }}</th>
+        <td class="d-ff-mono d-fc-orange d-fs12">
+          <span v-if="i === 'y'"> 
+            border-top: var(--su1) solid currentColor !important;<br/>
+            border-bottom: var(--su1) solid currentColor !important;
+          </span>
+          <span v-else-if="i === 'x'">
+            border-right: var(--su1) solid currentColor !important;<br/>
+            border-left: var(--su1) solid currentColor !important;
+          </span>
+          <span v-else>
+            border-{{i}}: var(--su1) solid currentColor !important;
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </template>
+</utility-class-table>
+
+## All sides
+Use `d-ba` to add a border to all sides of your element.
+
+<code-well-header class="d-fl-col5 d-flg8 d-fw-wrap d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmn102">
+  <div class="d-fl-center d-p16 d-ba d-bc-pink-400 d-baw0 d-bgc-pink-100 d-fs16 d-fw-bold">.d-baw0</div>
+  <div class="d-fl-center d-p16 d-ba d-bc-pink-400 d-baw1 d-bgc-pink-100 d-fs16 d-fw-bold">.d-baw1</div>
+  <div class="d-fl-center d-p16 d-ba d-bc-pink-400 d-baw2 d-bgc-pink-100 d-fs16 d-fw-bold">.d-baw2</div>
+  <div class="d-fl-center d-p16 d-ba d-bc-pink-400 d-baw4 d-bgc-pink-100 d-fs16 d-fw-bold">.d-baw4</div>
+  <div class="d-fl-center d-p16 d-ba d-bc-pink-400 d-baw6 d-bgc-pink-100 d-fs16 d-fw-bold">.d-baw6</div>
+</code-well-header>
+
+```html
+<div class="d-ba d-bc-pink-400 d-baw0">...</div>
+<div class="d-ba d-bc-pink-400 d-baw1">...</div>
+<div class="d-ba d-bc-pink-400 d-baw2">...</div>
+<div class="d-ba d-bc-pink-400 d-baw4">...</div>
+<div class="d-ba d-bc-pink-400 d-baw6">...</div>
+```
+
+## Individual sides
+Use `d-b{t|r|b|l|x|y}` to add a border to only specific sides of your element.
+
+<code-well-header class="d-fl-col4 d-flg8 d-fw-wrap d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn102">
+  <div class="d-fl-center d-p16 d-bt d-bc-purple-400 d-baw2 d-bgc-purple-100 d-fs16 d-fw-bold">.d-bt</div>
+  <div class="d-fl-center d-p16 d-br d-bc-purple-400 d-baw2 d-bgc-purple-100 d-fs16 d-fw-bold">.d-br</div>
+  <div class="d-fl-center d-p16 d-bb d-bc-purple-400 d-baw2 d-bgc-purple-100 d-fs16 d-fw-bold">.d-bb</div>
+  <div class="d-fl-center d-p16 d-bl d-bc-purple-400 d-baw2 d-bgc-purple-100 d-fs16 d-fw-bold">.d-bl</div>
+  <div class="d-fl-center d-p16 d-bx d-bc-purple-400 d-baw2 d-bgc-purple-100 d-fs16 d-fw-bold">.d-bx</div>
+  <div class="d-fl-center d-p16 d-by d-bc-purple-400 d-baw2 d-bgc-purple-100 d-fs16 d-fw-bold">.d-by</div>
+  <div class="d-fl-center d-p16 d-ba d-bc-purple-400 d-baw2 d-btw0 d-bgc-purple-100 d-fs16 d-fw-bold">.d-ba d-btw0</div>
+</code-well-header>
+
+```html
+<div class="d-bt d-bc-purple-400 d-baw2 ">...</div>
+<div class="d-br d-bc-purple-400 d-baw2 ">...</div>
+<div class="d-bb d-bc-purple-400 d-baw2 ">...</div>
+<div class="d-bl d-bc-purple-400 d-baw2 ">...</div>
+<div class="d-bx d-bc-purple-400 d-baw2 ">...</div>
+<div class="d-by d-bc-purple-400 d-baw2 ">...</div>
+<div class="d-ba d-bc-purple-400 d-baw2 d-btw0 ">...</div>
+```
+
+<script setup>
+  import { directions } from '@data/borders.json';
+</script>
