@@ -13,23 +13,6 @@
 <script>
 export default {
   name: "UtilityClassTable",
-  props: {
-    dataFile: {
-      type: String,
-    }
-  },
-  data() {
-    return {
-      classes: null
-    }
-  },
-  beforeMount() {
-    if(!this.dataFile) return;
-
-    import(`../_data/${this.dataFile}.json`).then((module) => {
-      this.classes = module[this.dataFile]
-    })
-  }
 }
 </script>
 
