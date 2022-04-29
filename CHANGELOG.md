@@ -1,3 +1,11 @@
+## [6.24.1](https://github.com/dialpad/dialtone/compare/v6.24.0...v6.24.1) (2022-04-29)
+
+
+### Bug Fixes
+
+* its ([a66564f](https://github.com/dialpad/dialtone/commit/a66564f0dab4fd3b3f26efed59f47cea0334c887))
+* remove d-svg class from spot illustrations ([6b7fa63](https://github.com/dialpad/dialtone/commit/6b7fa63ae3b0ebaa8eccf3228ec8fc41591de16b))
+
 # [6.24.0](https://github.com/dialpad/dialtone/compare/v6.23.6...v6.24.0) (2022-04-29)
 
 
