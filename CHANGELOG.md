@@ -1,3 +1,10 @@
+# [6.24.0](https://github.com/dialpad/dialtone/compare/v6.23.6...v6.24.0) (2022-04-29)
+
+
+### Features
+
+* add laptop typing svg ([#575](https://github.com/dialpad/dialtone/issues/575)) ([ca861fd](https://github.com/dialpad/dialtone/commit/ca861fdfd5bab5a9ac74d3dc6e3d62b6fd1e2c17))
+
 ## [6.23.6](https://github.com/dialpad/dialtone/compare/v6.23.5...v6.23.6) (2022-04-21)
 
 
