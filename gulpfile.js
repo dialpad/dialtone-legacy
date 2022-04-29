@@ -534,7 +534,7 @@ var buildSpotIllustrationSVGs = function(done) {
             });
             var title = name.replace(/\b\S/g, t => t.toUpperCase()).replace(/[-]+/g, " ");
 
-            return match + ' aria-hidden="true" focusable="false" aria-label="' + title + '" class="d-svg ' + converted + '" xmlns="http://www.w3.org/2000/svg"';
+            return match + ' aria-hidden="true" focusable="false" aria-label="' + title + '" class="' + converted + '" xmlns="http://www.w3.org/2000/svg"';
         }))
         .pipe(svgmin({
             plugins: [{
