@@ -1,7 +1,11 @@
 ---
 title: Contributing
 desc: Help Dialtone be even better.
+next:
+   text: Getting Started - Installation
+   link: /getting-started/installation
 ---
+
 ## Component contribution
 ### Design
 TBD
@@ -37,11 +41,11 @@ If not, the designer should seek that out in a Design Review or 1:1 with their S
     The data is pulled from the data files in the ordered it's entered, so you must place it in alphabetical order in the data file. Here is an example of information you must provide is:
 
     ```yaml
-    {
-    "name": "Icon Name",
-    "file": "actual-file-name",
-    "vue": "[Icon|Pattern]Name",
-    "desc": "Description about the icon and where it's used."
+   {
+      "name": "Icon Name",
+      "file": "actual-file-name",
+      "vue": "[Icon|Pattern]Name",
+      "desc": "Description about the icon and where it's used."
     }
     ```
 

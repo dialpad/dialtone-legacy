@@ -1,6 +1,9 @@
 ---
 title: Divide Width
 desc: Utilities for controlling the divider width between an element's child items.
+next:
+  text: Box Shadows
+  link: /utilities/effects/box-shadow
 ---
 
 ## Classes

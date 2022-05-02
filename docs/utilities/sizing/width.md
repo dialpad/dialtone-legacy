@@ -1,71 +1,55 @@
 ---
-layout: page
 title: Width
-description: Utilities to control an element's width.
+desc: Utilities to control an element's width.
 ---
-<section class="d-stack16">
-    {% header "h2", "Classes" %}
-    <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
-        <table class="d-table">
-            <thead>
-                <tr>
-                    <th scope="col" class="d-w30p">Class</th>
-                    <th scope="col">Output</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% assign percentages = width-height.percentage | split: ", " %}
-                {% for i in percentages %}
-                <tr>
-                    <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-w{{ i }}p</th>
-                    <td class="d-ff-mono d-fc-orange-500 d-fs12">width: {{ i }}% !important;</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-            <tbody>
-                {% assign fixed = width-height.fixed | split: ", " %}
-                {% for i in fixed %}
-                <tr>
-                    <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-w{{ i }}</th>
-                    <td class="d-ff-mono d-fc-orange-500 d-fs12">width: {{ i }}px !important;</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-            <tbody>
-                <tr>
-                    <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-w100vw</th>
-                    <td class="d-ff-mono d-fc-orange-500 d-fs12">width: 100vh !important;</td>
-                </tr>
-                {% assign fixed = width-height.other | split: ", " %}
-                {% for i in fixed %}
-                <tr>
-                    <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-w-{{ i }}</th>
-                    <td class="d-ff-mono d-fc-orange-500 d-fs12">width: {{ i }} !important;</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+
+## Classes
+<div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
+  <table class="d-table">
+    <thead>
+      <tr>
+        <th scope="col" class="d-w30p">Class</th>
+        <th scope="col">Output</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="i in percentage">
+        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-w{{ i }}p</th>
+        <td class="d-ff-mono d-fc-orange-500 d-fs12">width: {{ i }}% !important;</td>
+      </tr>
+    </tbody>
+    <tbody>
+      <tr v-for="i in fixed">
+        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-w{{ i }}</th>
+        <td class="d-ff-mono d-fc-orange-500 d-fs12">width: {{ i }}px !important;</td>
+      </tr>
+    </tbody>
+    <tbody>
+      <tr>
+        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-w100vw</th>
+        <td class="d-ff-mono d-fc-orange-500 d-fs12">width: 100vh !important;</td>
+      </tr>
+      <tr v-for="i in other">
+        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-w-{{ i }}</th>
+        <td class="d-ff-mono d-fc-orange-500 d-fs12">width: {{ i }} !important;</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+## Percentages
+Use `d-w{n}p` to set a percentage width for an element.
+
+<code-well-header class="d-d-flex d-fd-column d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmx332 d-stack16 d-fs14 d-ff-mono d-ta-center d-of-y-scroll" custom>
+  <div v-for="i in percentage" class="d-d-flex d-fl-center d-ps-relative">
+    <span class="d-zi-active d-h64 d-d-flex d-ai-center">d-w{{i}}p</span>
+    <div class="d-w100p d-h64 d-ps-absolute d-bgc-purple-200">
+      <div class="d-h64 d-bgc-purple-300 d-bar4" :class="`d-w${i}p`"></div>
     </div>
-</section>
-<section class="d-stack16">
-    <header class="d-stack2">
-        {% header "h2", "Percentages" %}
-        {% paragraph %}Use {% code %}d-w{n}p{% endcode %} to set a percentage width for an element.{% endparagraph %}
-    </header>
-    <aside class="d-bar8 d-of-hidden">
-        <header class="d-d-flex d-fd-column d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmx332 d-stack16 d-fs14 d-ff-mono d-ta-center d-of-y-scroll">
-          {% assign percentages = width-height.percentage | split: ", " %}
-          {% for i in percentages %}
-            <div class="d-d-flex d-fl-center d-ps-relative">
-              <span class="d-zi-active d-h64 d-d-flex d-ai-center">d-w{{i}}p</span>
-              <div class="d-w100p d-h64 d-ps-absolute d-bgc-purple-200">
-                <div class="d-h64 d-w{{i}}p d-bgc-purple-300 d-bar4"></div>
-              </div>
-            </div>
-          {% endfor %}
-        </header>
-        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
-{% highlight html linenos %}
+  </div>
+</code-well-header>
+
+```html
 <div class="d-w10p">d-w10p</div>
 <div class="d-w20p">d-w20p</div>
 <div class="d-w25p">d-w25p</div>
@@ -78,27 +62,19 @@ description: Utilities to control an element's width.
 <div class="d-w80p">d-w80p</div>
 <div class="d-w90p">d-w90p</div>
 <div class="d-w100p">d-w100p</div>
-{% endhighlight %}
-        </footer>
-    </aside>
-</section>
-<section class="d-stack16">
-    <header class="d-stack2">
-        {% header "h2", "Fixed" %}
-        {% paragraph %}Use {% code %}d-w{n}{% endcode %} to set a fixed width for an element.{% endparagraph %}
-    </header>
-    <aside class="d-bar8 d-of-hidden">
-        <header class="d-d-flex d-fd-column d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmx332 d-stack16 d-fs24 d-fw-bold d-ta-center d-of-scroll">
-          {% assign fixed = width-height.fixed | split: ", " %}
-          {% for i in fixed %}
-            <div class="d-d-flex d-pls-start d-ai-center">
-              <span class="d-w48">{{forloop.index}}</span>
-              <div class="d-h64 d-w{{i}} d-bgc-pink-300 d-bar4"></div>
+```
+
+## Fixed
+Use `d-w{n}` to set a fixed width for an element.
+
+<code-well-header class="d-d-flex d-fd-column d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmx332 d-stack16 d-fs24 d-fw-bold d-ta-center d-of-scroll" custom>
+  <div v-for="(i, index) in fixed" class="d-d-flex d-pls-start d-ai-center">
+              <span class="d-w48">{{ index }}</span>
+              <div class="d-h64 d-bgc-pink-300 d-bar4" :class="`d-w${i}`"></div>
             </div>
-          {% endfor %}
-        </header>
-        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
-{% highlight html linenos %}
+</code-well-header>
+
+```html
 <div class="d-w0">1</div>
 <div class="d-w1">2</div>
 <div class="d-w2">3</div>
@@ -132,39 +108,30 @@ description: Utilities to control an element's width.
 <div class="d-w1140">31</div>
 <div class="d-w1268">32</div>
 <div class="d-w1340">33</div>
-{% endhighlight %}
-        </footer>
-    </aside>
-</section>
-<section class="d-stack16">
-    <header class="d-stack2">
-        {% header "h2", "Screen" %}
-        {% paragraph %}Use {% code %}d-w100vh{% endcode %} to have an element cover the user's viewport.{% endparagraph %}
-    </header>
-    <aside class="d-bar8 d-of-hidden">
-        <header class="d-ps-relative d-d-flex d-jc-center d-p24 d-bgc-yellow-100 d-bgo50 d-w100p d-h3 d-stack16 d-of-y-scroll">
-            <div class="d-fl-center d-py16 d-px8 d-w100vw d-h100vh d-bgc-yellow-400 d-bar4 d-fs24 d-fw-bold d-ta-center">Viewport</div>
-        </header>
-        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
-{% highlight html linenos %}
+```
+
+## Screen
+Use `d-w100vh` to have an element cover the user's viewport.
+
+<code-well-header class="d-ps-relative d-d-flex d-jc-center d-p24 d-bgc-yellow-100 d-bgo50 d-w100p d-h3 d-stack16 d-of-y-scroll" custom>
+  <div class="d-fl-center d-py16 d-px8 d-w100vw d-h100vh d-bgc-yellow-400 d-bar4 d-fs24 d-fw-bold d-ta-center">Viewport</div>
+</code-well-header>
+
+```html
 <div class="d-w100vw">...</div>
-{% endhighlight %}
-        </footer>
-    </aside>
-</section>
-<section class="d-stack16">
-    <header class="d-stack2">
-        {% header "h2", "Auto" %}
-        {% paragraph %}Use {% code %}d-w-auto{% endcode %} have the browser calculate and select a width.{% endparagraph %}
-    </header>
-    <aside class="d-bar8 d-of-hidden">
-        <header class="d-ps-relative d-d-flex d-jc-center d-p24 d-bgc-orange-100 d-bgo50 d-w100p d-hmn102 d-stack16">
-            <div class="d-fl-center d-py16 d-px8 d-h72 d-w-auto d-bgc-orange-400 d-bar4 d-fs24 d-fw-bold d-ta-center">Auto</div>
-        </header>
-        <footer class="d-p8 d-bgc-black-700 d-bbr8 d-fs12">
-{% highlight html linenos %}
+```
+
+## Auto
+Use `d-w-auto` have the browser calculate and select a width.
+
+<code-well-header class="d-ps-relative d-d-flex d-jc-center d-p24 d-bgc-orange-100 d-bgo50 d-w100p d-hmn102 d-stack16" custom>
+  <div class="d-fl-center d-py16 d-px8 d-h72 d-w-auto d-bgc-orange-400 d-bar4 d-fs24 d-fw-bold d-ta-center">Auto</div>
+</code-well-header>
+
+```html
 <div class="d-w-auto">...</div>
-{% endhighlight %}
-        </footer>
-    </aside>
-</section>
+```
+
+<script setup>
+  import { percentage, fixed, other } from '@data/width-height.json';
+</script>

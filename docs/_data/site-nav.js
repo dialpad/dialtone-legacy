@@ -407,7 +407,7 @@ module.exports = {
         },
         {
           'text': 'Line Height',
-          'link': '/utilities/typography/line-height'
+          'link': '/utilities/typography/line-height.html'
         },
         {
           'text': 'Lists',
