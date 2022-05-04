@@ -1,9 +1,25 @@
 import { defineUserConfig } from 'vuepress'
-import type { DefaultThemeOptions } from 'vuepress'
 import { resolve } from 'path';
-import * as sidebar from '../_data/site-nav';
+const sidebar = require('../_data/site-nav');
+const { dialtoneTheme } = require('./theme');
 
-export default defineUserConfig<DefaultThemeOptions>({
+const themeConfig = {
+  logo: '/assets/images/dialpad-logo.svg',
+  navbar: [
+    {text: 'About', link: '/about/dialtone'},
+    {text: 'Getting Started', link: '/getting-started/installation'},
+    {text: 'Design', link: '/design/colors/color-palette'},
+    {text: 'Utilities', link: '/utilities/backgrounds/attachment'},
+    {text: 'Components', link: '/components/avatar'},
+  ],
+  sidebar,
+  editLink: false,
+  darkMode: false,
+  // contributors: false,
+  // lastUpdated: false,
+};
+
+export default defineUserConfig({
   // site config
   lang: 'en-US',
   title: 'Dialtone',
@@ -11,22 +27,7 @@ export default defineUserConfig<DefaultThemeOptions>({
   base: '/vuepress/',
 
   // theme and its config
-  theme: resolve(__dirname, './theme/index.js'),
-  themeConfig: {
-    logo: '/vuepress/assets/images/dialpad-logo.svg',
-    navbar: [
-      {text: 'About', link: '/about/dialtone'},
-      {text: 'Getting Started', link: '/getting-started/installation'},
-      {text: 'Design', link: '/design/colors/color-palette'},
-      {text: 'Utilities', link: '/utilities/backgrounds/attachment'},
-      {text: 'Components', link: '/components/avatar'},
-    ],
-    sidebar,
-    editLink: false,
-    darkMode: false,
-    // contributors: false,
-    // lastUpdated: false,
-  },
+  theme: dialtoneTheme(themeConfig),
 
   // Header links and meta tags
   head: [
