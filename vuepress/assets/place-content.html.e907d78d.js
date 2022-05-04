@@ -1,0 +1,43 @@
+import{_ as f,r as h,a as n,b as d,d as s,w as l,F as r,e,o as t,f as b,t as i}from"./app.935ad005.js";const v=d("h2",{id:"classes",tabindex:"-1"},[d("a",{class:"header-anchor",href:"#classes","aria-hidden":"true"},"#"),e(" Classes")],-1),u={class:"d-h464 d-of-y-scroll d-bb d-bc-black-200"},_={style:{display:"contents"}},m={scope:"row",class:"d-ff-mono d-fc-purple d-fw-normal d-fs12"},w={key:0},y={key:1},x={class:"d-ff-mono d-fc-orange d-fs12"},k={key:0},U={key:1},S=d("h2",{id:"stretch",tabindex:"-1"},[d("a",{class:"header-anchor",href:"#stretch","aria-hidden":"true"},"#"),e(" Stretch")],-1),C=d("p",null,[e("Use "),d("code",null,"d-plc-stretch{-n}"),e(" to stretch grid items along the block and inline axis.")],-1),B=d("div",{class:"d-d-grid d-g-cols2 d-plc-stretch d-gg16 d-p16 d-w100p d-hmn216 d-bar8 d-bgc-purple-100"},[d("div",{class:"d-fl-center d-p16 d-bgc-purple-300 d-bar4 d-fs24 d-fw-bold"},"1"),d("div",{class:"d-fl-center d-p16 d-bgc-purple-300 d-bar4 d-fs24 d-fw-bold"},"2"),d("div",{class:"d-fl-center d-p16 d-bgc-purple-300 d-bar4 d-fs24 d-fw-bold"},"3"),d("div",{class:"d-fl-center d-p16 d-bgc-purple-300 d-bar4 d-fs24 d-fw-bold"},"4")],-1),E=d("div",{class:"language-html ext-html"},[d("pre",{class:"language-html"},[d("code",null,`<div class="d-d-grid d-g-cols2 d-plc-stretch">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+</div>
+`)])],-1),N=d("h2",{id:"start",tabindex:"-1"},[d("a",{class:"header-anchor",href:"#start","aria-hidden":"true"},"#"),e(" Start")],-1),V=d("p",null,[e("Use "),d("code",null,"d-plc-start{-n}"),e(" to align grid items along the start of the block and/or inline axis.")],-1),q=d("div",{class:"d-d-grid d-g-cols2 d-plc-start-center d-gg16 d-p16 d-w100p d-h216d-bar8 d-bgc-green-100",style:{"--col-width":"6.4rem"}},[d("div",{class:"d-fl-center d-p16 d-bgc-green-300 d-bar4 d-fs24 d-fw-bold"},"1"),d("div",{class:"d-fl-center d-p16 d-bgc-green-300 d-bar4 d-fs24 d-fw-bold"},"2"),d("div",{class:"d-fl-center d-p16 d-bgc-green-300 d-bar4 d-fs24 d-fw-bold"},"3"),d("div",{class:"d-fl-center d-p16 d-bgc-green-300 d-bar4 d-fs24 d-fw-bold"},"4")],-1),F=d("div",{class:"language-html ext-html"},[d("pre",{class:"language-html"},[d("code",null,`<div class="d-d-grid d-g-cols3 d-plc-start-center">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+</div>
+`)])],-1),A=d("h2",{id:"end",tabindex:"-1"},[d("a",{class:"header-anchor",href:"#end","aria-hidden":"true"},"#"),e(" End")],-1),D=d("p",null,[e("Use "),d("code",null,"d-plc-end{-n}"),e(" to align grid items along the end of the block and/or inline axis.")],-1),L=d("div",{class:"d-d-grid d-g-cols2 d-plc-end-center d-gg16 d-p16 d-w100p d-h216d-bar8 d-bgc-pink-100",style:{"--col-width":"6.4rem"}},[d("div",{class:"d-fl-center d-p16 d-bgc-pink-300 d-bar4 d-fs24 d-fw-bold"},"1"),d("div",{class:"d-fl-center d-p16 d-bgc-pink-300 d-bar4 d-fs24 d-fw-bold"},"2"),d("div",{class:"d-fl-center d-p16 d-bgc-pink-300 d-bar4 d-fs24 d-fw-bold"},"3"),d("div",{class:"d-fl-center d-p16 d-bgc-pink-300 d-bar4 d-fs24 d-fw-bold"},"4")],-1),T=d("div",{class:"language-html ext-html"},[d("pre",{class:"language-html"},[d("code",null,`<div class="d-d-grid d-g-cols3 d-plc-end-center">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+</div>
+`)])],-1),j=d("h2",{id:"center",tabindex:"-1"},[d("a",{class:"header-anchor",href:"#center","aria-hidden":"true"},"#"),e(" Center")],-1),z=d("p",null,[e("Use "),d("code",null,"d-plc-center{-n}"),e(" to align grid items along the center of the block and/or inline axis.")],-1),G=d("div",{class:"d-d-grid d-g-cols2 d-plc-center d-gg16 d-p16 d-w100p d-h216d-bar8 d-bgc-red-100",style:{"--col-width":"6.4rem"}},[d("div",{class:"d-fl-center d-p16 d-bgc-red-300 d-bar4 d-fs24 d-fw-bold"},"1"),d("div",{class:"d-fl-center d-p16 d-bgc-red-300 d-bar4 d-fs24 d-fw-bold"},"2"),d("div",{class:"d-fl-center d-p16 d-bgc-red-300 d-bar4 d-fs24 d-fw-bold"},"3"),d("div",{class:"d-fl-center d-p16 d-bgc-red-300 d-bar4 d-fs24 d-fw-bold"},"4")],-1),H=d("div",{class:"language-html ext-html"},[d("pre",{class:"language-html"},[d("code",null,`<div class="d-d-grid d-g-cols3 d-plc-center">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+</div>
+`)])],-1),I=d("h2",{id:"space-evenly",tabindex:"-1"},[d("a",{class:"header-anchor",href:"#space-evenly","aria-hidden":"true"},"#"),e(" Space Evenly")],-1),J=d("p",null,[e("Use "),d("code",null,"d-plc-space-evenly{-n}"),e(" to distribute grid items evenly along the block axis.")],-1),K=d("div",{class:"d-d-grid d-g-cols2 d-plc-space-evenly d-gg16 d-p16 d-w100p d-h216d-bar8 d-bgc-yellow-100",style:{"--col-width":"6.4rem"}},[d("div",{class:"d-fl-center d-p16 d-bgc-yellow-300 d-bar4 d-fs24 d-fw-bold"},"1"),d("div",{class:"d-fl-center d-p16 d-bgc-yellow-300 d-bar4 d-fs24 d-fw-bold"},"2"),d("div",{class:"d-fl-center d-p16 d-bgc-yellow-300 d-bar4 d-fs24 d-fw-bold"},"3"),d("div",{class:"d-fl-center d-p16 d-bgc-yellow-300 d-bar4 d-fs24 d-fw-bold"},"4")],-1),M=d("div",{class:"language-html ext-html"},[d("pre",{class:"language-html"},[d("code",null,`<div class="d-d-grid d-g-cols3 d-plc-space-evenly">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+</div>
+`)])],-1),O=d("h2",{id:"space-around",tabindex:"-1"},[d("a",{class:"header-anchor",href:"#space-around","aria-hidden":"true"},"#"),e(" Space Around")],-1),P=d("p",null,[e("Use "),d("code",null,"d-plc-space-around{-n}"),e(" to distribute grid items so there is an equal amount of space around each row on the block axis.")],-1),Q=d("div",{class:"d-d-grid d-g-cols2 d-plc-space-around d-gg16 d-p16 d-w100p d-h216d-bar8 d-bgc-pink-100",style:{"--col-width":"6.4rem"}},[d("div",{class:"d-fl-center d-p16 d-bgc-pink-300 d-bar4 d-fs24 d-fw-bold"},"1"),d("div",{class:"d-fl-center d-p16 d-bgc-pink-300 d-bar4 d-fs24 d-fw-bold"},"2"),d("div",{class:"d-fl-center d-p16 d-bgc-pink-300 d-bar4 d-fs24 d-fw-bold"},"3"),d("div",{class:"d-fl-center d-p16 d-bgc-pink-300 d-bar4 d-fs24 d-fw-bold"},"4")],-1),R=d("div",{class:"language-html ext-html"},[d("pre",{class:"language-html"},[d("code",null,`<div class="d-d-grid d-g-cols3 d-space-around">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+</div>
+`)])],-1),W=d("h2",{id:"space-between",tabindex:"-1"},[d("a",{class:"header-anchor",href:"#space-between","aria-hidden":"true"},"#"),e(" Space Between")],-1),X=d("p",null,[e("Use "),d("code",null,"d-plc-space-between{-n}"),e(" to distribute grid items along the block axis so that there is an equal space between each row.")],-1),Y=d("div",{class:"d-d-grid d-g-cols2 d-plc-space-between d-gg16 d-p16 d-w100p d-h216d-bar8 d-bgc-purple-100",style:{"--col-width":"6.4rem"}},[d("div",{class:"d-fl-center d-p16 d-bgc-purple-300 d-bar4 d-fs24 d-fw-bold"},"1"),d("div",{class:"d-fl-center d-p16 d-bgc-purple-300 d-bar4 d-fs24 d-fw-bold"},"2"),d("div",{class:"d-fl-center d-p16 d-bgc-purple-300 d-bar4 d-fs24 d-fw-bold"},"3"),d("div",{class:"d-fl-center d-p16 d-bgc-purple-300 d-bar4 d-fs24 d-fw-bold"},"4")],-1),Z=d("div",{class:"language-html ext-html"},[d("pre",{class:"language-html"},[d("code",null,`<div class="d-d-grid d-g-cols3 d-plc-space-between">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+</div>
+`)])],-1),$={setup(dd){const p=["center","end","start","stretch","space-around","space-evenly","space-between"];return(ed,sd)=>{const g=h("utility-class-table"),c=h("code-well-header");return t(),n(r,null,[v,d("div",u,[s(g,null,{content:l(()=>[d("tbody",null,[(t(),n(r,null,b(p,a=>d("div",_,[(t(),n(r,null,b(p,o=>d("tr",null,[d("th",m,[o!==a?(t(),n("span",w,".d-plc-"+i(a)+"-"+i(o),1)):(t(),n("span",y,".d-plc-"+i(a),1))]),d("td",x,[o!==a?(t(),n("span",k,"place-content: "+i(a)+" "+i(o)+" !important",1)):(t(),n("span",U,"place-content: "+i(a)+" !important",1))])])),64))])),64))])]),_:1})]),S,C,s(c,{class:"d-fl-center d-fd-column d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn102",custom:""},{default:l(()=>[B]),_:1}),E,N,V,s(c,{class:"d-fl-center d-fd-column d-p24 d-bgc-green-100 d-bgo50 d-w100p d-hmn102",custom:""},{default:l(()=>[q]),_:1}),F,A,D,s(c,{class:"d-fl-center d-fd-column d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmn102",custom:""},{default:l(()=>[L]),_:1}),T,j,z,s(c,{class:"d-fl-center d-fd-column d-p24 d-bgc-red-100 d-bgo50 d-w100p d-hmn102",custom:""},{default:l(()=>[G]),_:1}),H,I,J,s(c,{class:"d-fl-center d-fd-column d-p24 d-bgc-yellow-100 d-bgo50 d-w100p d-hmn102",custom:""},{default:l(()=>[K]),_:1}),M,O,P,s(c,{class:"d-fl-center d-fd-column d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmn102",custom:""},{default:l(()=>[Q]),_:1}),R,W,X,s(c,{class:"d-fl-center d-fd-column d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn102",custom:""},{default:l(()=>[Y]),_:1}),Z],64)}}};var cd=f($,[["__file","place-content.html.vue"]]);export{cd as default};

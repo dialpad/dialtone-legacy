@@ -1,0 +1,23 @@
+import{alignItems as p}from"./flex.0972db06.js";import{_ as m,r as c,a,d as s,w as l,F as i,b as d,e,o as n,f as b,t as r,u as _}from"./app.935ad005.js";const u=d("h2",{id:"classes",tabindex:"-1"},[d("a",{class:"header-anchor",href:"#classes","aria-hidden":"true"},"#"),e(" Classes")],-1),v={scope:"row",class:"d-ff-mono d-fc-purple d-fw-normal d-fs12"},g={class:"d-ff-mono d-fc-orange d-fs12"},x=d("h2",{id:"stretch",tabindex:"-1"},[d("a",{class:"header-anchor",href:"#stretch","aria-hidden":"true"},"#"),e(" Stretch")],-1),w=d("p",null,[e("Use "),d("code",null,"d-ai-stretch"),e(" to stretch items across the element's cross axis. This is the default value.")],-1),y=d("div",{class:"d-d-flex d-ai-stretch d-p8 d-w100p d-hmn216 d-bar8 d-bgc-purple-100"},[d("div",{class:"d-fl-center d-fl1 d-m8 d-px16 d-py8 d-bgc-purple-300 d-bar4 d-fs24 d-fw-bold"},"1"),d("div",{class:"d-fl-center d-fl1 d-m8 d-px16 d-py16 d-bgc-purple-300 d-bar4 d-fs24 d-fw-bold"},"2"),d("div",{class:"d-fl-center d-fl1 d-m8 d-px16 d-py4 d-bgc-purple-300 d-bar4 d-fs24 d-fw-bold"},"3")],-1),k=d("div",{class:"language-html ext-html"},[d("pre",{class:"language-html"},[d("code",null,`<div class="d-d-flex d-ai-stretch">
+  <div class="d-py8">1</div>
+  <div class="d-py16">2</div>
+  <div class="d-py4">3</div>
+</div>
+`)])],-1),C=d("h2",{id:"flex-start",tabindex:"-1"},[d("a",{class:"header-anchor",href:"#flex-start","aria-hidden":"true"},"#"),e(" Flex Start")],-1),F=d("p",null,[e("Use "),d("code",null,"d-ai-flex-start"),e(" to align items to the start of the element's cross axis.")],-1),U=d("div",{class:"d-d-flex d-ai-flex-start d-p8 d-w100p d-hmn216 d-bar8 d-bgc-pink-100"},[d("div",{class:"d-fl-center d-fl1 d-m8 d-px16 d-py4 d-bgc-pink-300 d-bar4 d-fs24 d-fw-bold"},"1"),d("div",{class:"d-fl-center d-fl1 d-m8 d-px16 d-py24 d-bgc-pink-300 d-bar4 d-fs24 d-fw-bold"},"2"),d("div",{class:"d-fl-center d-fl1 d-m8 d-px16 d-py16 d-bgc-pink-300 d-bar4 d-fs24 d-fw-bold"},"3")],-1),B=d("div",{class:"language-html ext-html"},[d("pre",{class:"language-html"},[d("code",null,`<div class="d-d-flex d-ai-flex-start">
+  <div class="d-h32">1</div>
+  <div class="d-h64">2</div>
+  <div class="d-h16">3</div>
+</div>
+`)])],-1),N=d("h2",{id:"center",tabindex:"-1"},[d("a",{class:"header-anchor",href:"#center","aria-hidden":"true"},"#"),e(" Center")],-1),S=d("p",null,[e("Use "),d("code",null,"d-ai-center"),e(" to distribute items along the center of the element's cross axis.")],-1),V=d("div",{class:"d-d-flex d-ai-center d-p8 d-w100p d-hmn216 d-bar8 d-bgc-green-100"},[d("div",{class:"d-fl-center d-fl1 d-m8 d-px16 d-py4 d-bgc-green-300 d-bar4 d-fs24 d-fw-bold"},"1"),d("div",{class:"d-fl-center d-fl1 d-m8 d-px16 d-py24 d-bgc-green-300 d-bar4 d-fs24 d-fw-bold"},"2"),d("div",{class:"d-fl-center d-fl1 d-m8 d-px16 d-py16 d-bgc-green-300 d-bar4 d-fs24 d-fw-bold"},"3")],-1),E=d("div",{class:"language-html ext-html"},[d("pre",{class:"language-html"},[d("code",null,`<div class="d-d-flex d-ai-center">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+</div>
+`)])],-1),I=d("h2",{id:"flex-end",tabindex:"-1"},[d("a",{class:"header-anchor",href:"#flex-end","aria-hidden":"true"},"#"),e(" Flex End")],-1),T=d("p",null,[e("Use "),d("code",null,"d-ai-flex-end"),e(" to distribute items from the end of the element's cross axis.")],-1),D=d("div",{class:"d-d-flex d-ai-flex-end d-p8 d-w100p d-hmn216 d-bar8 d-bgc-red-100"},[d("div",{class:"d-fl-center d-fl1 d-m8 d-px16 d-py4 d-bgc-red-300 d-bar4 d-fs24 d-fw-bold"},"1"),d("div",{class:"d-fl-center d-fl1 d-m8 d-px16 d-py24 d-bgc-red-300 d-bar4 d-fs24 d-fw-bold"},"2"),d("div",{class:"d-fl-center d-fl1 d-m8 d-px16 d-py16 d-bgc-red-300 d-bar4 d-fs24 d-fw-bold"},"3")],-1),L=d("div",{class:"language-html ext-html"},[d("pre",{class:"language-html"},[d("code",null,`<div class="d-d-flex d-ai-flex-end">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+  <div>5</div>
+</div>
+`)])],-1),j={setup(q){return(z,A)=>{const o=c("utility-class-table"),t=c("code-well-header");return n(),a(i,null,[u,s(o,null,{content:l(()=>[d("tbody",null,[(n(!0),a(i,null,b(_(p),({class:f,output:h})=>(n(),a("tr",null,[d("th",v,".d-"+r(f),1),d("td",g,r(h),1)]))),256))])]),_:1}),x,w,s(t,{class:"d-fl-center d-fd-column d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn216",custom:""},{default:l(()=>[y]),_:1}),k,C,F,s(t,{class:"d-fl-center d-fd-column d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmn216",custom:""},{default:l(()=>[U]),_:1}),B,N,S,s(t,{class:"d-fl-center d-fd-column d-p24 d-bgc-green-100 d-bgo50 d-w100p d-hmn216",custom:""},{default:l(()=>[V]),_:1}),E,I,T,s(t,{class:"d-fl-center d-fd-column d-p24 d-bgc-red-100 d-bgo50 d-w100p d-hmn216"},{default:l(()=>[D]),_:1}),L],64)}}};var J=m(j,[["__file","align-items.html.vue"]]);export{J as default};

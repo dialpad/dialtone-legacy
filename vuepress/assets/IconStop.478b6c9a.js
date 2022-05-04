@@ -1,0 +1,1 @@
+import{_ as e,o as s,a as o,b as t}from"./app.935ad005.js";const a={},_={"aria-hidden":"true","aria-label":"Stop",class:"d-svg d-svg--system d-svg__stop",viewBox:"0 0 24 24"},c=t("path",{d:"M5 5h14v14H5z"},null,-1),n=[c];function r(d,i){return s(),o("svg",_,n)}var p=e(a,[["render",r],["__file","IconStop.vue"]]);export{p as default};

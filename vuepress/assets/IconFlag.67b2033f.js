@@ -1,0 +1,1 @@
+import{_ as e,o as a,a as s,b as o}from"./app.935ad005.js";const t={},_={"aria-hidden":"true","aria-label":"Flag",class:"d-svg d-svg--system d-svg__flag",viewBox:"0 0 24 24"},c=o("path",{d:"M14 6l-1-2H5v17h2v-7h5l1 2h7V6h-6zm4 8h-4l-1-2H7V6h5l1 2h5v6z"},null,-1),l=[c];function n(r,d){return a(),s("svg",_,l)}var i=e(t,[["render",n],["__file","IconFlag.vue"]]);export{i as default};

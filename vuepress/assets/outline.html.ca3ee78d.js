@@ -1,0 +1,1 @@
+const e={key:"v-36a923ce",path:"/utilities/interactivity/outline.html",title:"Outline",lang:"en-US",frontmatter:{title:"Outline",desc:"Utilities for controlling an element's outline."},excerpt:"",headers:[{level:2,title:"Classes",slug:"classes",children:[]},{level:2,title:"Usage",slug:"usage",children:[]}]};export{e as data};

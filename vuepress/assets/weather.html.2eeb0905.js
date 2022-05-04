@@ -1,0 +1,1 @@
+import{_ as o,r as a,a as r,d as e,F as c,o as s}from"./app.935ad005.js";const _={};function i(l,h){const t=a("icons"),n=a("weather-codes-table");return s(),r(c,null,[e(t,{kind:"weather",title:"Day Icons",variation:"day"}),e(t,{kind:"weather",title:"Night Icons",variation:"night"}),e(n)],64)}var m=o(_,[["render",i],["__file","weather.html.vue"]]);export{m as default};

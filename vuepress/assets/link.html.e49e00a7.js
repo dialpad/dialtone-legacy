@@ -1,0 +1,7 @@
+import{_ as d,r as n,a as i,d as a,w as l,F as o,b as e,e as t,o as r}from"./app.935ad005.js";const h={},_=e("h2",{id:"classes",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#classes","aria-hidden":"true"},"#"),t(" Classes")],-1),k=e("h2",{id:"examples",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#examples","aria-hidden":"true"},"#"),t(" Examples")],-1),m=e("a",{href:"#",class:"d-link"},"Base link",-1),f=e("a",{href:"#",class:"d-link d-link--danger"},"Danger link",-1),u=e("a",{href:"#",class:"d-link d-link--muted"},"Muted link",-1),g=e("a",{href:"#",class:"d-link d-link--success"},"Success link",-1),p=e("a",{href:"#",class:"d-link d-link--warning"},"Warning link",-1),x=e("div",{class:"language-html ext-html"},[e("pre",{class:"language-html"},[e("code",null,`<a href="#" class="d-link">...</a>
+<a href="#" class="d-link d-link--danger">...</a>
+<a href="#" class="d-link d-link--muted">...</a>
+<a href="#" class="d-link d-link--success">...</a>
+<a href="#" class="d-link d-link--warning">...</a>
+`)])],-1),b=e("a",{href:"#",class:"d-link d-link--inverted"},"Inverted base link",-1),v=e("div",{class:"language-html ext-html"},[e("pre",{class:"language-html"},[e("code",null,`<a href="#" class="d-link d-link--inverted">...</a>
+`)])],-1);function w(B,C){const c=n("component-class-table"),s=n("code-well-header");return r(),i(o,null,[_,a(c,{"component-name":"link"}),k,a(s,null,{default:l(()=>[m,f,u,g,p]),_:1}),x,a(s,{bgclass:"d-bgc-black-800"},{default:l(()=>[b]),_:1}),v],64)}var V=d(h,[["render",w],["__file","link.html.vue"]]);export{V as default};

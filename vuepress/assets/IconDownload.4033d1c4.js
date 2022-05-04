@@ -1,0 +1,1 @@
+import{_ as e,o,a,b as s}from"./app.935ad005.js";const n={},t={"aria-hidden":"true","aria-label":"Download",class:"d-svg d-svg--system d-svg__download",viewBox:"0 0 24 24"},_=s("path",{d:"M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"},null,-1),c=[_];function d(r,l){return o(),a("svg",t,c)}var v=e(n,[["render",d],["__file","IconDownload.vue"]]);export{v as default};

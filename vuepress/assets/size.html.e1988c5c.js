@@ -1,0 +1,12 @@
+import h from"./icons-sizes.cae23832.js";import{_,r as o,a as l,d as e,w as c,F as v,b as s,e as a,o as n,f as m,t as i,q as u,u as p}from"./app.935ad005.js";const z=s("h2",{id:"classes",tabindex:"-1"},[s("a",{class:"header-anchor",href:"#classes","aria-hidden":"true"},"#"),a(" Classes")],-1),f={scope:"row",class:"d-ff-mono d-fc-purple d-fw-normal d-fs12"},y={class:"d-ff-mono d-fc-orange d-fs12"},w={key:0},x={key:1},b=s("h2",{id:"usage",tabindex:"-1"},[s("a",{class:"header-anchor",href:"#usage","aria-hidden":"true"},"#"),a(" Usage")],-1),V=s("p",null,[a("Use "),s("code",null,"d-svg--size{n}"),a(" to control the size of an SVG.")],-1),k=s("div",{class:"language-html ext-html"},[s("pre",{class:"language-html"},[s("code",null,`<svg class="d-svg d-svg--system d-svg--size14">...</svg>
+<svg class="d-svg d-svg--system d-svg--size16">...</svg>
+<svg class="d-svg d-svg--system d-svg--size18">...</svg>
+<svg class="d-svg d-svg--system d-svg--size20">...</svg>
+<svg class="d-svg d-svg--system d-svg--size24">...</svg>
+<svg class="d-svg d-svg--system d-svg--size32">...</svg>
+<svg class="d-svg d-svg--system d-svg--size48">...</svg>
+<svg class="d-svg d-svg--system d-svg--size64">...</svg>
+`)])],-1),C=s("p",null,[a("Use "),s("code",null,"d-svg--size100p"),a(" to set the size of an SVG to the size of the containing element.")],-1),N={class:"d-w32 d-h32"},S=s("div",{class:"language-html ext-html"},[s("pre",{class:"language-html"},[s("code",null,`<div class="d-w32 d-h32">
+  <svg class="d-svg d-svg--system d-svg--size100p">...</svg>
+</div>
+`)])],-1),B={setup(R){return(U,F)=>{const r=o("utility-class-table"),t=o("icon-phone"),g=o("code-well-header");return n(),l(v,null,[z,e(r,null,{content:c(()=>[s("tbody",null,[(n(!0),l(v,null,m(p(h),d=>(n(),l("tr",null,[s("th",f,i(d.class),1),s("td",y,[d.sizeRem?(n(),l("span",w," width: "+i(d.sizeRem)+" !important; height: "+i(d.sizeRem)+" !important; ",1)):d.class==="d-svg--size100p"?(n(),l("span",x," width: 100% !important; height: auto !important; ")):u("",!0)])]))),256))])]),_:1}),b,V,e(g,null,{default:c(()=>[e(t,{class:"d-svg--size14"}),e(t,{class:"d-svg--size16"}),e(t,{class:"d-svg--size18"}),e(t,{class:"d-svg--size20"}),e(t,{class:"d-svg--size24"}),e(t,{class:"d-svg--size32"}),e(t,{class:"d-svg--size48"}),e(t,{class:"d-svg--size64"})]),_:1}),k,C,e(g,null,{default:c(()=>[s("div",N,[e(t,{class:"d-svg--size100p"})])]),_:1}),S],64)}}};var D=_(B,[["__file","size.html.vue"]]);export{D as default};

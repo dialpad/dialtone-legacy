@@ -1,0 +1,1 @@
+import{_ as e,o as s,a,b as o}from"./app.935ad005.js";const t={},_={"aria-hidden":"true","aria-label":"Pause",class:"d-svg d-svg--system d-svg__pause",viewBox:"0 0 24 24"},c=o("path",{d:"M6 19h4V5H6v14zm8-14v14h4V5h-4z"},null,-1),n=[c];function r(d,i){return s(),a("svg",_,n)}var u=e(t,[["render",r],["__file","IconPause.vue"]]);export{u as default};

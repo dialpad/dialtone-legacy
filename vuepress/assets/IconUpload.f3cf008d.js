@@ -1,0 +1,1 @@
+import{_ as e,o as a,a as o,b as s}from"./app.935ad005.js";const t={},_={"aria-hidden":"true","aria-label":"Upload",class:"d-svg d-svg--system d-svg__upload",viewBox:"0 0 24 24"},c=s("path",{d:"M5 10h4v5h6v-5h4l-7-7-7 7zM5 20v-2h14v2H5z"},null,-1),d=[c];function n(r,l){return a(),o("svg",_,d)}var v=e(t,[["render",n],["__file","IconUpload.vue"]]);export{v as default};
