@@ -1,1 +1,0 @@
-import{_ as e,o,a as r,b as s}from"./app.935ad005.js";const a={},t={"aria-hidden":"true","aria-label":"Arrow Drop Up",class:"d-svg d-svg--system d-svg__arrowDropUp",viewBox:"0 0 24 24"},_=s("path",{d:"M7 14l5-5 5 5H7z"},null,-1),c=[_];function n(d,p){return o(),r("svg",t,c)}var l=e(a,[["render",n],["__file","IconArrowDropUp.vue"]]);export{l as default};

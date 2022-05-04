@@ -1,1 +1,0 @@
-import{_ as e,o,a as s,b as a}from"./app.935ad005.js";const t={},_={"aria-hidden":"true","aria-label":"Remove",class:"d-svg d-svg--system d-svg__remove",viewBox:"0 0 24 24"},c=a("path",{d:"M19 13H5v-2h14v2z"},null,-1),r=[c];function n(d,v){return o(),s("svg",_,r)}var l=e(t,[["render",n],["__file","IconRemove.vue"]]);export{l as default};

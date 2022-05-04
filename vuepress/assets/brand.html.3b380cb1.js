@@ -1,1 +1,0 @@
-import{_ as e,r as o,x as r,o as c}from"./app.935ad005.js";const t={};function _(a,s){const n=o("icons");return c(),r(n,{kind:"brand"})}var f=e(t,[["render",_],["__file","brand.html.vue"]]);export{f as default};

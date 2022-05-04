@@ -1,1 +1,0 @@
-import{_ as e,o as s,a as i,b as a}from"./app.935ad005.js";const n={},o={"aria-hidden":"true","aria-label":"Minimize",class:"d-svg d-svg--system d-svg__minimize",viewBox:"0 0 24 24"},t=a("path",{d:"M6 19h12v2H6v-2z"},null,-1),_=[t];function c(r,d){return s(),i("svg",o,_)}var m=e(n,[["render",c],["__file","IconMinimize.vue"]]);export{m as default};

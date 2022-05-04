@@ -1,1 +1,0 @@
-import{_ as e,o as a,a as s,b as o}from"./app.935ad005.js";const t={},i={"aria-hidden":"true","aria-label":"Maximize",class:"d-svg d-svg--system d-svg__maximize",viewBox:"0 0 24 24"},_=o("path",{d:"M3 3h18v2H3V3z"},null,-1),c=[_];function n(r,d){return a(),s("svg",i,c)}var m=e(t,[["render",n],["__file","IconMaximize.vue"]]);export{m as default};

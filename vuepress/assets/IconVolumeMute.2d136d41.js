@@ -1,1 +1,0 @@
-import{_ as e,o,a as s,b as t}from"./app.935ad005.js";const a={},_={"aria-hidden":"true","aria-label":"Volume Mute",class:"d-svg d-svg--system d-svg__volumeMute",viewBox:"0 0 24 24"},c=t("path",{d:"M7 9v6h4l5 5V4l-5 5H7z"},null,-1),l=[c];function n(r,u){return o(),s("svg",_,l)}var i=e(a,[["render",n],["__file","IconVolumeMute.vue"]]);export{i as default};

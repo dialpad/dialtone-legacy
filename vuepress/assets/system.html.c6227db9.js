@@ -1,1 +1,0 @@
-import{_ as s,r as o,x as t,o as n}from"./app.935ad005.js";const c={};function r(_,a){const e=o("icons");return n(),t(e,{kind:"system"})}var f=s(c,[["render",r],["__file","system.html.vue"]]);export{f as default};
