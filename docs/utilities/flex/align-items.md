@@ -5,7 +5,7 @@ desc: Utilities for setting how an element's is aligned along an element's cross
 
 ## Classes
 <utility-class-table>
-	<template #content>
+ <template #content>
     <tbody>
       <tr v-for="{ class: className, output } in alignItems">
         <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-{{ className }}</th>

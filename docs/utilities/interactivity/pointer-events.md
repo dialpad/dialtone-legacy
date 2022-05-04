@@ -1,6 +1,9 @@
 ---
 title: Pointer Events
 desc: Utilities for controlling how an element responds to mouse/touch events.
+next:
+  text: Box Sizing
+  link: /utilities/layout/box-sizing
 ---
 ## Classes
 <utility-class-table>

@@ -26,7 +26,7 @@ The starting stop (`d-bgg-from-{color}`) should be declared. Optionally an endin
 
 <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
 <utility-class-table>
-	<template #content>
+ <template #content>
         <div v-for="direction in ['from', 'to']" style="display: contents">
           <tbody v-for="{ color, stops } in colors">
               <tr v-for="{ stop } in stops">

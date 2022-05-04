@@ -21,9 +21,12 @@ import IconWarning from "@svgIcons/IconWarning.vue";
 import IconError from "@svgIcons/IconError.vue";
 import IconClose from "@svgIcons/IconClose.vue";
 import IconCheckmark from "@svgIcons/IconCheckmark.vue";
+import IconPhone from "@svgIcons/IconPhone.vue";
+
+// Import compiled dialtone to include responsive variations
+import '../../lib/dist/css/dialtone.min.css';
 
 // LESS files
-import '../.././lib/build/less/dialtone.less';
 import '../assets/less/dialtone-docs.less';
 import '../assets/less/overrides.less';
 import '../assets/less/hljs-dialpad.less';
@@ -44,6 +47,7 @@ export default defineClientAppEnhance(({app, router, siteData}) => {
 
     // Common icons
     app.component('icon-info', IconInfo);
+    app.component('icon-phone', IconPhone);
     app.component('icon-lightbulb', IconLightbulb);
     app.component('icon-check-circle', IconCheckCircle);
     app.component('icon-warning', IconWarning);

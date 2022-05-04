@@ -1,6 +1,9 @@
 ---
 title: Background Attachment
 desc: Utilities for controlling the way an element's background image position is fixed within the viewport or scrolls with its containing block.
+prev:
+  text: Design - Spacing System
+  link: /design/spacing/spacing-system
 ---
 
 ## Classes
@@ -56,4 +59,3 @@ of the element rather than the viewable box.
 
 <div class="... d-bga-local">...</div>
 ```
-

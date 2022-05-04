@@ -25,7 +25,20 @@ tr {
   padding-left: var(--sidebar-width);
 }
 
-.theme-default-content {
+.sidebar {
+  scrollbar-color: var(--black-200);
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--black-200);
+    border-radius: var(--br-pill);
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: var(--black-400);
+  }
+}
+
+.theme-default-content:not(.custom) {
   max-width: 75rem !important;
 
   > p, > ol, > ul {
@@ -34,6 +47,7 @@ tr {
   }
 
   > h2 {
+    margin-top: unset;
     font-size: var(--fs24);
   }
 

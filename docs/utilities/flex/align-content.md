@@ -1,11 +1,14 @@
 ---
 title: Align Content
 desc: Utilities for setting how rows are distributed along it's cross axis. This property only works when a parent container has more than one line.
+prev:
+  text: Transition
+  link: /utilities/effects/transition
 ---
 
 ## Classes
 <utility-class-table>
-	<template #content>
+ <template #content>
     <tbody>
       <tr v-for="{ class: className, output } in alignContent">
         <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-{{ className }}</th>

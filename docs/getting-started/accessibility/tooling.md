@@ -1,5 +1,8 @@
 ---
 title: Tooling
+next:
+  text: Design - Colors
+  link: /design/colors/color-palette
 ---
 
 ## Browser extension

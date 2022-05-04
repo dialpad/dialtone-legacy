@@ -1,6 +1,9 @@
 ---
 title: Row Start / End / Span
 desc: Utilities for controlling how elements are placed across grid rows.
+next:
+  text: Cursor
+  link: /utilities/interactivity/cursor
 ---
 
 ## Classes
@@ -10,21 +13,21 @@ desc: Utilities for controlling how elements are placed across grid rows.
       <tbody v-for="g in ['start', 'end', 'span']">
         <tr v-for="i in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]">
           <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">
-  <span v-if="g === 'start'">.d-grs{{ i }}</span>
-  <span v-else-if="g === 'end'">.d-gre{{ i }}</span>
-  <span v-else>.d-gr{{ i }}</span>
-</th>
+            <span v-if="g === 'start'">.d-grs{{ i }}</span>
+            <span v-else-if="g === 'end'">.d-gre{{ i }}</span>
+            <span v-else>.d-gr{{ i }}</span>
+          </th>
           <td class="d-ff-mono d-fc-orange d-fs12">
-    <span v-if="g === 'start'">
-      grid-row-start: {{ i }}
-    </span>
-    <span v-else-if="g === 'end'">
-      grid-row-end: {{ i }}
-    </span>
-    <span v-else>
-      grid-row: span {{ i }} / span {{ i }}
-    </span>
-  </td>
+            <span v-if="g === 'start'">
+              grid-row-start: {{ i }}
+            </span>
+            <span v-else-if="g === 'end'">
+              grid-row-end: {{ i }}
+            </span>
+            <span v-else>
+              grid-row: span {{ i }} / span {{ i }}
+            </span>
+          </td>
         </tr>
         <tr v-if="g === 'span'">
           <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-gr-full</th>

@@ -1,6 +1,9 @@
 ---
 title: Box Shadows 
 desc: Utilities for controlling an element's box shadows.
+prev:
+  text: Divide Width
+  link: /utilities/borders/divide-width
 ---
 
 ## Variables

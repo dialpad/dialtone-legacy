@@ -1,6 +1,9 @@
 ---
 title: Column Start / End / Span
 desc: Utilities for controlling how elements are placed across grid columns.
+prev:
+  text: Order
+  link: /utilities/flex/order
 ---
 
 ## Classes
