@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <base href="/deploy-previews/pr-579/">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Best Practices - Dialtone</title>
+    <meta name="description" content="The design system and resources for Dialpad and UberConference.">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png">
+    <link rel="icon" href="assets/images/favicons/favicon.svg">
+    <link rel="manifest" href="assets/images/favicons/site.webmanifest">
+    <link rel="mask-icon" href="assets/images/favicons/safari-pinned-tab.svg" color="#6C3DFF">
+    <meta name="msapplication-TileColor" content="#6C3DFF">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Social -->
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://dialpad.design/"/>
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="assets/images/favicons/apple-touch-icon-180x180.png" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:domain" content="dialpad.design" />
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="Dialtone" />
+    <meta name="twitter:description" property="og:description" itemprop="description" content="Dialtone is the design system and resources for the Dialpad team." />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+    <link rel="stylesheet" type="text/css" href="assets/css/dialtone.min.css?" />
+    <link rel="stylesheet" type="text/css" href="assets/css/dialtone-docs.min.css?" />
+
+    <!-- Javascript -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="assets/js/materialize.min.js"></script>
+    <script src="assets/js/theme-switcher.js"></script>
+    <script src="assets/js/menu.js"></script>
+    <script src="assets/js/nav.js"></script>
+    
+</head>
+
+  <aside class="d-banner d-banner--info d-ps-relative js-dialtone5-banner md:d-d-none" role="alert" aria-hidden="false">
+  <div class="d-banner__dialog d-w-unset" role="alertdialog" aria-labelledy="info-alert-title" aria-describedby="info-alert-desc">
+    <div class="d-notice__icon">
+      <IconInfo />
+    </div>
+    <div class="d-notice__content">
+      <h1 class="d-notice__title" id="info-alert-title">Dialtone 6.0 is here!</h1>
+      <p class="d-notice__message" id="info-alert-desc">
+        Looking for Dialtone 5 documentation?
+        <a href="//dialpad.design/version5" class="d-link" target="_blank">Find it here.</a>
+      </p>
+    </div>
+  </div>
+</aside>
+
+  <body>
+    <div class="d-ps-relative d-stack16">
+      <header class="d-ps-sticky d-t0 d-x0 d-d-flex d-ai-center d-w100 d-pl8 d-pr12 d-h128 d-hmx64 d-bb d-bc-black-100 d-bgc-white d-zi-navigation js-navigation-header">
+    <a href="" class="js-header-logo d-btn d-py0" title="Go back to the homepage">
+        <svg aria-hidden="true" class="dialtone-logo__svg d-svg--native d-svg--dialpad-logo" width="180" height="48" viewbox="0 0 180 48" xmlns="http://www.w3.org/2000/svg" style="max-width: 12rem"><path d="M79.254 11.147a2.147 2.147 0 11-4.294 0 2.147 2.147 0 014.294 0zM104.521 34.02V9.318c0-.13.106-.235.235-.235h3.021c.131 0 .236.105.236.235V34.02c0 .13-.105.235-.236.235h-3.021a.236.236 0 01-.235-.235z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M67.91 9.325v8.66c-1.449-1.65-3.502-2.666-6.02-2.666-5.197 0-9.425 4.316-9.425 9.622 0 5.305 4.228 9.621 9.424 9.621 2.52 0 4.572-1.016 6.022-2.665v2.13c0 .13.105.235.235.235h3.02c.13 0 .236-.106.236-.235V9.325a.235.235 0 00-.235-.235h-3.021a.235.235 0 00-.235.235zM62.084 31c-3.274 0-5.788-2.719-5.788-6.06 0-3.342 2.514-6.06 5.788-6.06 3.273 0 5.488 2.718 5.488 6.06 0 3.341-2.215 6.06-5.488 6.06zM121.486 15.316c-2.519 0-4.572 1.016-6.021 2.666v-1.919a.236.236 0 00-.235-.235h-3.021a.235.235 0 00-.236.235v24.701c0 .13.105.236.236.236h3.021a.236.236 0 00.235-.236v-8.87c1.449 1.65 3.502 2.665 6.021 2.665 5.197 0 9.425-4.316 9.425-9.622 0-5.304-4.228-9.62-9.425-9.62zm-.193 15.682c-3.274 0-5.488-2.719-5.488-6.06 0-3.342 2.214-6.06 5.488-6.06 3.273 0 5.787 2.718 5.787 6.06 0 3.34-2.514 6.06-5.787 6.06zM97.07 16.063v1.921c-1.45-1.649-3.503-2.665-6.021-2.665-5.197 0-9.426 4.316-9.426 9.622 0 5.305 4.229 9.621 9.426 9.621 2.518 0 4.572-1.016 6.02-2.665v2.13c0 .13.106.235.236.235h3.021c.13 0 .235-.106.235-.235V16.063a.235.235 0 00-.235-.235h-3.021a.235.235 0 00-.235.235zm-5.828 14.938c-3.274 0-5.788-2.719-5.788-6.06 0-3.342 2.514-6.06 5.788-6.06 3.273 0 5.488 2.718 5.488 6.06 0 3.341-2.215 6.06-5.488 6.06zM148.257 17.984v-1.92c0-.131.105-.236.235-.236h3.021c.13 0 .236.105.236.235v17.964c0 .13-.106.235-.236.235h-3.021a.235.235 0 01-.235-.235v-2.13c-1.449 1.65-3.502 2.665-6.021 2.665-5.197 0-9.425-4.316-9.425-9.621 0-5.306 4.228-9.622 9.425-9.622 2.519 0 4.572 1.016 6.021 2.665zm-11.616 6.957c0 3.341 2.514 6.06 5.788 6.06 3.273 0 5.488-2.719 5.488-6.06 0-3.342-2.215-6.06-5.488-6.06-3.274 0-5.788 2.718-5.788 6.06zM169.525 17.984v-8.66c0-.13.106-.234.235-.234h3.021c.13 0 .236.105.236.235v24.702c0 .13-.106.235-.236.235h-3.021a.236.236 0 01-.235-.235v-2.13c-1.449 1.65-3.502 2.665-6.021 2.665-5.197 0-9.425-4.316-9.425-9.621 0-5.306 4.228-9.622 9.425-9.622 2.519 0 4.572 1.016 6.021 2.665zm-11.615 6.957c0 3.341 2.513 6.06 5.787 6.06s5.488-2.719 5.488-6.06c0-3.342-2.214-6.06-5.488-6.06-3.274 0-5.787 2.718-5.787 6.06z"/><path d="M75.362 16.063V34.02c0 .13.106.235.235.235h3.021c.13 0 .236-.105.236-.235V16.063a.235.235 0 00-.236-.235h-3.02a.236.236 0 00-.236.235zM23.814 23.61c.644-4.684 4.658-8.292 9.516-8.292 5.307 0 9.61 4.304 9.61 9.613 0 5.309-4.303 9.612-9.61 9.612a9.581 9.581 0 01-3.74-.755l-5.62 5.81a.144.144 0 01-.249-.1V26.252c-.644 4.683-4.657 8.291-9.516 8.291-5.307 0-9.61-4.303-9.61-9.612 0-5.31 4.303-9.613 9.61-9.613 1.327 0 2.59.27 3.74.755l5.62-5.81a.145.145 0 01.25.1V23.61z"/></svg>
+
+    </a>
+    <nav role="navigation" class="d-ml64 d-flow8 md:d-d-none">
+        
+            
+
+            
+                
+                <a class="d-link" href="/deploy-previews/pr-579/about/dialtone/">About</a>
+            
+                
+                <a class="d-link" href="/deploy-previews/pr-579/getting-started/installation/">Getting Started</a>
+            
+                
+                <a class="d-link" href="/deploy-previews/pr-579/design/colors/color-palette">Design</a>
+            
+                
+                <a class="d-link" href="/deploy-previews/pr-579/utilities/backgrounds/attachment">Utilities</a>
+            
+                
+                <a class="d-link" href="/deploy-previews/pr-579/components/avatar/">Components</a>
+            
+        
+    </nav>
+    <div class="d-ml-auto js-header-content d-flow8 d-d-flex">
+        <div class="d-d-flex d-flow4 md:d-d-none">
+            <a href="https://github.com/dialpad/dialtone" alt="GitHub repo" class="d-btn d-btn--muted d-tooltip--hover">
+                <svg aria-hidden="true" class="d-svg d-svg--system d-svg--Github d-svg--size20" width="24" height="24" viewBox="0 0 18 18"><path d="M9 1a8 8 0 00-2.53 15.59c.4.07.55-.17.55-.38l-.01-1.49c-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.42 7.42 0 014 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48l-.01 2.2c0 .21.15.46.55.38A8.01 8.01 0 009 1z"></path></svg>
+                <div class="d-tooltip d-tooltip__arrow--top-center d-ps-absolute d-ws-nowrap">
+                    GitHub Repo
+                </div>
+            </a>
+            <a href="https://codepen.io/pen/?template=BajJpwW" alt="Codepen Template" class="d-btn d-btn--muted d-tooltip--hover">
+                <svg aria-hidden="true" class="d-svg d-svg--system d-svg--Codepen d-svg--size20" width="24" height="24" viewBox="0 0 18 18"><path d="M12.67 8.17l-2.98-2v-3.2l5.38 3.6-2.4 1.6zM13.9 9l1.73-1.15v2.3L13.9 9zm-4.2 2.82l2.98-2 2.4 1.62-5.38 3.59v-3.2zm-4.36-2l2.98 2v3.2l-5.38-3.58 2.4-1.61zM4.1 9l-1.73 1.15v-2.3L4.1 9zm4.2-2.82l-2.98 2-2.4-1.62L8.3 2.97v3.2zm.7 4.45L6.57 9 9 7.37 11.43 9 9 10.63zm7.99-4.19l-.01-.05-.01-.04-.02-.05-.02-.03a.6.6 0 0 0-.02-.05l-.02-.03a.69.69 0 0 0-.15-.17L16.7 6h-.02L9.4 1.11a.69.69 0 0 0-.77 0L1.3 5.99h-.02c0 .02-.02.02-.03.03a.81.81 0 0 0-.12.13.69.69 0 0 0-.03.04l-.02.03-.02.05-.02.03-.02.05v.04L1 6.44v.03a.7.7 0 0 0-.01.1v4.87a.7.7 0 0 0 0 .09l.01.03.01.05.01.04.02.05.02.03a.51.51 0 0 0 .07.12.53.53 0 0 0 .08.1c.02 0 .03.02.04.03l.03.02h.02l7.3 4.88a.69.69 0 0 0 .77 0l7.31-4.87h.02c0-.02.02-.02.03-.03a.72.72 0 0 0 .04-.04l.02-.02a.62.62 0 0 0 .13-.19l.02-.03a.6.6 0 0 0 .02-.05v-.04l.02-.05v-.03a.7.7 0 0 0 .01-.1V6.57a.7.7 0 0 0 0-.09l-.01-.03z"></path></svg>
+                <div class="d-tooltip d-tooltip__arrow--top-center d-ps-absolute d-ws-nowrap">
+                    Codepen Template
+                </div>
+            </a>
+            <!-- <a href="#" class="d-btn d-btn--muted d-btn--sm d-tooltip--hover js-theme-switcher" title="Toggle dark and light modes">
+                <svg aria-hidden="true" aria-label="Invert Colors" class="d-svg d-svg--system d-svg--size20 d-svg__invertColors" height="24" viewBox="0 0 24 24" width="24"><path d="M17.66 7.93L12 2.27 6.34 7.93c-3.12 3.12-3.12 8.19 0 11.31A7.98 7.98 0 0012 21.58c2.05 0 4.1-.78 5.66-2.34 3.12-3.12 3.12-8.19 0-11.31zM12 19.59c-1.6 0-3.11-.62-4.24-1.76C6.62 16.69 6 15.19 6 13.59s.62-3.11 1.76-4.24L12 5.1v14.49z"/></svg>
+                <div class="d-tooltip d-tooltip__arrow--top-center d-ps-absolute d-w128">
+                    Toggle between dark and light color modes
+                </div>
+            </a> -->
+        </div>
+        <div class="d-ps-relative js-input-search-wrapper md:d-d-none">
+            <div class="js-dialtone-search"></div>
+            <div class="d-ps-absolute d-t6 d-l4 d-ml1 d-fc-black-600">
+            </div>
+        </div>
+        <div class="d-d-none md:d-d-flex d-ai-center">
+    <span class="js-mobile-header-search d-c-pointer d-mr16"><svg aria-hidden="true" aria-label="Search" class="d-svg d-svg--system d-svg__search" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.732 14.318h-.741l-.263-.253a6.095 6.095 0 001.389-5.009c-.441-2.607-2.619-4.69-5.246-5.009a6.103 6.103 0 00-6.823 6.82c.319 2.626 2.402 4.802 5.011 5.243a6.103 6.103 0 005.012-1.388l.253.262v.741l3.989 3.987a.992.992 0 001.398 0 .99.99 0 000-1.398l-3.979-3.996zm-5.631 0a4.217 4.217 0 01-4.223-4.22A4.216 4.216 0 0110.1 5.876a4.216 4.216 0 014.223 4.22 4.216 4.216 0 01-4.223 4.221z"/></svg></span>
+    <span class="js-mobile-header-menu d-c-pointer"><svg aria-hidden="true" aria-label="Menu" class="d-svg d-svg--system d-svg__menu" viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></span>
+    <span class="js-mobile-header-close d-d-none d-c-pointer d-d-flex d-ai-center"><svg aria-hidden="true" aria-label="Close" class="d-svg d-svg--system d-svg__close" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg></span>
+    <div class="d-ps-fixed d-w100p d-bgc-white d-h64 d-x0 d-d-flex d-bb d-bc-black-100 d-ai-center d-jc-space-between d-t64 js-mobile-header-breadcrumbs ">
+        <ul id="breadcrumbs" class="d-breadcrumbs d-p12 d-of-hidden d-to-ellipsis d-ws-nowrap d-w628">
+          <li class="d-breadcrumbs__item  d-d-inline">
+                <span
+                    href="/getting-started"
+                    class=" d-d-inline d-tt-capitalize"
+                    aria-current="location"
+                >getting-started</span>
+            </li><li class="d-breadcrumbs__item  d-d-inline">
+                <span
+                    href="/getting-started/accessibility"
+                    class=" d-d-inline d-tt-capitalize"
+                    aria-current="location"
+                >accessibility</span>
+            </li><li class="d-breadcrumbs__item d-breadcrumbs__item--selected d-d-inline">
+                <span
+                    href="/getting-started/accessibility/best-practices"
+                    class=" d-d-inline d-tt-capitalize"
+                    aria-current="location"
+                >best-practices</span>
+            </li>
+        </ul>
+        <span class="js-mobile-header-breadcrumb-arrow d-w24 d-h24 d-p12 d-mr12 breadcrumb-arrow d-c-pointer"><svg aria-hidden="true" aria-label="Arrow Back Ios" class="d-svg d-svg--system d-svg__arrowBack-ios" viewBox="0 0 24 24"><path d="M17 19.88L9.12 12 17 4.12 14.88 2l-10 10 10 10L17 19.88z"/></svg></span>
+    </div>
+
+    <div class="js-mobile-header-drop-down-navigation d-o0 d-ps-fixed d-l0 d-w100p d-bgc-white d-of-auto d-fs24 d-d-flex d-fd-column d-ai-baseline d-pt24 d-pr16">
+            
+              
+                
+                
+                
+
+                
+                  <!-- This is for navigation that doesn't categorize its nav items -->
+                  
+                <!-- This is for navigation that DOES categorize its nav items -->
+                
+
+                <ul id="mobile-nav" class="d-ls-reset d-pr16 d-stack32">
+                    
+                        <li>
+                            <div class="d-d-block d-px8 d-py2 d-mb4 d-fs14 d-lh6 d-fc-black-600 d-fw-bold">About</div>
+                            
+                                <ul class="d-ls-reset d-stack4">
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/about/dialtone/">About Dialtone</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/about/contributing/">Contributing</a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                    
+                </ul>
+                
+            
+        
+                
+                
+                
+
+                
+                  <!-- This is for navigation that doesn't categorize its nav items -->
+                  
+                <!-- This is for navigation that DOES categorize its nav items -->
+                
+
+                <ul id="mobile-nav" class="d-ls-reset d-pr16 d-stack32">
+                    
+                        <li>
+                            <div class="d-d-block d-px8 d-py2 d-mb4 d-fs14 d-lh6 d-fc-black-600 d-fw-bold">Getting Started</div>
+                            
+                                <ul class="d-ls-reset d-stack4">
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/getting-started/installation/">Installation</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/getting-started/usage/">Using Dialtone</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/getting-started/building-locally/">Building Dialtone Locally</a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                    
+                        <li>
+                            <div class="d-d-block d-px8 d-py2 d-mb4 d-fs14 d-lh6 d-fc-black-600 d-fw-bold">Accessibility</div>
+                            
+                                <ul class="d-ls-reset d-stack4">
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/getting-started/accessibility/fundamentals/">Fundamentals</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/getting-started/accessibility/best-practices/">Best Practices</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/getting-started/accessibility/tooling/">Tooling</a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                    
+                </ul>
+                
+            
+        
+                
+                
+                
+
+                
+                  <!-- This is for navigation that doesn't categorize its nav items -->
+                  
+                <!-- This is for navigation that DOES categorize its nav items -->
+                
+
+                <ul id="mobile-nav" class="d-ls-reset d-pr16 d-stack32">
+                    
+                        <li>
+                            <div class="d-d-block d-px8 d-py2 d-mb4 d-fs14 d-lh6 d-fc-black-600 d-fw-bold">Colors</div>
+                            
+                                <ul class="d-ls-reset d-stack4">
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/design/colors/color-palette/">Color Palette</a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                    
+                        <li>
+                            <div class="d-d-block d-px8 d-py2 d-mb4 d-fs14 d-lh6 d-fc-black-600 d-fw-bold">Icons</div>
+                            
+                                <ul class="d-ls-reset d-stack4">
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/design/icons/brand/">Brand Icons</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/design/icons/system/">System Icons</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/design/icons/weather/">Weather Icons</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/design/icons/sizes/">Sizes</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/design/icons/adding/">Adding Icons</a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                    
+                        <li>
+                            <div class="d-d-block d-px8 d-py2 d-mb4 d-fs14 d-lh6 d-fc-black-600 d-fw-bold">Illustrations</div>
+                            
+                                <ul class="d-ls-reset d-stack4">
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/design/illustrations/patterns/">Patterns</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/design/illustrations/spot/">Spot Illustrations</a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                    
+                        <li>
+                            <div class="d-d-block d-px8 d-py2 d-mb4 d-fs14 d-lh6 d-fc-black-600 d-fw-bold">Spacing</div>
+                            
+                                <ul class="d-ls-reset d-stack4">
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/design/spacing/spacing-system/">Spacing System</a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                    
+                </ul>
+                
+            
+        
+                
+                
+                
+
+                
+                  <!-- This is for navigation that doesn't categorize its nav items -->
+                  
+                <!-- This is for navigation that DOES categorize its nav items -->
+                
+
+                <ul id="mobile-nav" class="d-ls-reset d-pr16 d-stack32">
+                    
+                        <li>
+                            <div class="d-d-block d-px8 d-py2 d-mb4 d-fs14 d-lh6 d-fc-black-600 d-fw-bold">Backgrounds</div>
+                            
+                                <ul class="d-ls-reset d-stack4">
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/backgrounds/attachment/">Background Attachment</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/backgrounds/clip/">Background Clip</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/backgrounds/color/">Background Color</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/backgrounds/position/">Background Position</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/backgrounds/repeat/">Background Repeat</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/backgrounds/size/">Background Size</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/backgrounds/gradients/">Gradients</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/backgrounds/patterns/">Patterns</a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                    
+                        <li>
+                            <div class="d-d-block d-px8 d-py2 d-mb4 d-fs14 d-lh6 d-fc-black-600 d-fw-bold">Borders</div>
+                            
+                                <ul class="d-ls-reset d-stack4">
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/borders/color/">Border Color</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/borders/direction/">Border Direction</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/borders/radius/">Border Radius</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/borders/style/">Border Style</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/borders/width/">Border Width</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/borders/divide-color/">Divide Color</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/borders/divide-width/">Divide Width</a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                    
+                        <li>
+                            <div class="d-d-block d-px8 d-py2 d-mb4 d-fs14 d-lh6 d-fc-black-600 d-fw-bold">Effects & Transitions</div>
+                            
+                                <ul class="d-ls-reset d-stack4">
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/effects/box-shadow/">Box Shadow</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/effects/opacity/">Opacity</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/effects/transition/">Transition</a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                    
+                        <li>
+                            <div class="d-d-block d-px8 d-py2 d-mb4 d-fs14 d-lh6 d-fc-black-600 d-fw-bold">Flex</div>
+                            
+                                <ul class="d-ls-reset d-stack4">
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/flex/align-content/">Align Content</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/flex/align-items/">Align Items</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/flex/align-self/">Align Self</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/flex/columns-layouts/">Columns & Layouts</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/flex/direction-wrap-flow/">Direction, Wrap, & Flow</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/flex/flex-grow-shrink/">Flex, Grow, & Shrink</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/flex/justify/">Justify Content</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/flex/order/">Order</a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                    
+                        <li>
+                            <div class="d-d-block d-px8 d-py2 d-mb4 d-fs14 d-lh6 d-fc-black-600 d-fw-bold">Grid</div>
+                            
+                                <ul class="d-ls-reset d-stack4">
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/grid/column-start-end-span/">Columns</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/grid/gap/">Gap</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/grid/justify-items/">Justify Items</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/grid/justify-self/">Justify Self</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/grid/layouts/">Layouts</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/grid/place-content/">Place Content</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/grid/place-items/">Place Items</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/grid/place-self/">Place Self</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/grid/row-start-end-span/">Rows</a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                    
+                        <li>
+                            <div class="d-d-block d-px8 d-py2 d-mb4 d-fs14 d-lh6 d-fc-black-600 d-fw-bold">Interactivity</div>
+                            
+                                <ul class="d-ls-reset d-stack4">
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/interactivity/cursor/">Cursor</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/interactivity/outline/">Outline</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/interactivity/pointer-events/">Pointer Events</a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                    
+                        <li>
+                            <div class="d-d-block d-px8 d-py2 d-mb4 d-fs14 d-lh6 d-fc-black-600 d-fw-bold">Layout</div>
+                            
+                                <ul class="d-ls-reset d-stack4">
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/layout/box-sizing/">Box Sizing</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/layout/coordinates/">Coordinates</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/layout/display/">Display</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/layout/overflow/">Overflow</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/layout/position/">Position</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/layout/visibility/">Visibility</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/layout/z-index/">Z-Index</a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                    
+                        <li>
+                            <div class="d-d-block d-px8 d-py2 d-mb4 d-fs14 d-lh6 d-fc-black-600 d-fw-bold">Responsive</div>
+                            
+                                <ul class="d-ls-reset d-stack4">
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/responsive/breakpoints/">Breakpoints</a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                    
+                        <li>
+                            <div class="d-d-block d-px8 d-py2 d-mb4 d-fs14 d-lh6 d-fc-black-600 d-fw-bold">Sizing</div>
+                            
+                                <ul class="d-ls-reset d-stack4">
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/sizing/height/">Height</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/sizing/max-height/">Max-Height</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/sizing/min-height/">Min-Height</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/sizing/width/">Width</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/sizing/max-width/">Max-Width</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/sizing/min-width/">Min-Width</a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                    
+                        <li>
+                            <div class="d-d-block d-px8 d-py2 d-mb4 d-fs14 d-lh6 d-fc-black-600 d-fw-bold">Spacing</div>
+                            
+                                <ul class="d-ls-reset d-stack4">
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/spacing/auto-spacing/">Auto Spacing</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/spacing/margin/">Margin</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/spacing/padding/">Padding</a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                    
+                        <li>
+                            <div class="d-d-block d-px8 d-py2 d-mb4 d-fs14 d-lh6 d-fc-black-600 d-fw-bold">SVG</div>
+                            
+                                <ul class="d-ls-reset d-stack4">
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/svg/size/">Size</a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                    
+                        <li>
+                            <div class="d-d-block d-px8 d-py2 d-mb4 d-fs14 d-lh6 d-fc-black-600 d-fw-bold">Typography</div>
+                            
+                                <ul class="d-ls-reset d-stack4">
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/typography/color/">Color</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/typography/font-family/">Font Family</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/typography/font-size/">Font Size</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/typography/font-style/">Font Style</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/typography/font-weight/">Font Weight</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/typography/line-height/">Line Height</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/typography/lists/">Lists</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/typography/text-align/">Text Align</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/typography/text-decoration/">Text Decoration</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/typography/text-opacity/">Text Opacity</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/typography/text-overflow/">Text Overflow</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/typography/text-transform/">Text Transform</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/typography/vertical-align/">Vertical Align</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/typography/whitespace/">Whitespace</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/utilities/typography/word-break/">Word Break</a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                    
+                </ul>
+                
+            
+        
+                
+                
+                
+
+                
+                  <!-- This is for navigation that doesn't categorize its nav items -->
+                  
+                      <ul id="mobile-nav" class="d-ls-reset d-pr16 d-stack4">
+                        
+                            <li>
+                                <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/components/avatar/">Avatar</a>
+                            </li>
+                        
+                            <li>
+                                <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/components/badge/">Badge</a>
+                            </li>
+                        
+                            <li>
+                                <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/components/banner/">Banner</a>
+                            </li>
+                        
+                            <li>
+                                <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/components/breadcrumbs/">Breadcrumbs</a>
+                            </li>
+                        
+                            <li>
+                                <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/components/button/">Button</a>
+                            </li>
+                        
+                            <li>
+                                <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/components/checkbox/">Checkbox</a>
+                            </li>
+                        
+                            <li>
+                                <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/components/input/">Input</a>
+                            </li>
+                        
+                            <li>
+                                <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/components/link/">Link</a>
+                            </li>
+                        
+                            <li>
+                                <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/components/modal/">Modal</a>
+                            </li>
+                        
+                            <li>
+                                <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/components/notice/">Notice</a>
+                            </li>
+                        
+                            <li>
+                                <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/components/popover/">Popover</a>
+                            </li>
+                        
+                            <li>
+                                <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/components/radio/">Radio</a>
+                            </li>
+                        
+                            <li>
+                                <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/components/select/">Select</a>
+                            </li>
+                        
+                            <li>
+                                <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/components/skeleton/">Skeleton</a>
+                            </li>
+                        
+                            <li>
+                                <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/components/table/">Table</a>
+                            </li>
+                        
+                            <li>
+                                <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/components/tabs/">Tabs</a>
+                            </li>
+                        
+                            <li>
+                                <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/components/toast/">Toast</a>
+                            </li>
+                        
+                            <li>
+                                <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/components/toggle/">Toggle</a>
+                            </li>
+                        
+                            <li>
+                                <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/components/tooltip/">Tooltip</a>
+                            </li>
+                        
+                      </ul>
+                  
+                <!-- This is for navigation that DOES categorize its nav items -->
+                
+            
+        
+    
+    </div>
+    <div class="js-mobile-header-drop-down-menu d-o0 d-ps-fixed d-l0 d-w100p d-bgc-white d-of-auto d-fs24 d-d-flex d-fd-column d-ai-baseline d-py24 d-pr16">
+        
+            
+            <a class="d-link d-mb12" href="/deploy-previews/pr-579/about/dialtone/">About</a>
+        
+            
+            <a class="d-link d-mb12" href="/deploy-previews/pr-579/getting-started/installation/">Getting Started</a>
+        
+            
+            <a class="d-link d-mb12" href="/deploy-previews/pr-579/design/colors/color-palette">Design</a>
+        
+            
+            <a class="d-link d-mb12" href="/deploy-previews/pr-579/utilities/backgrounds/attachment">Utilities</a>
+        
+            
+            <a class="d-link d-mb12" href="/deploy-previews/pr-579/components/avatar/">Components</a>
+        
+    </div>
+</div>
+
+<style>
+.breadcrumb-arrow {
+   transform: rotate(-90deg);
+}
+
+.breadcrumb-arrow svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.breadcrumb-arrow--top {
+    transform: rotate(90deg);
+}
+
+/* added for now before dialtone responsive classes update */
+@media (max-width: 640px) {
+  .md\:d-mt64 {
+    margin-top: 6.4rem !important;
+  }
+
+  .md\:d-ml0 {
+    margin-left: 0 !important;
+  }
+
+  .md\:d-w100p {
+    width: 100% !important;
+  }
+
+  .md\:d-jc-space-between {
+    justify-content: space-between !important;
+  }
+}
+
+.d-breadcrumbs .d-breadcrumbs__item:not(:last-of-type):before {
+  right: -1rem;
+  margin-top: 0;
+}
+</style>
+
+<script type="module" src="assets/js/mobile-header.js"></script>
+
+    </div>
+</header>
+
+
+<style>
+@media (max-width: 640px) {
+  .md\:d-w100vw {
+    width: 100vw!important;
+  }
+
+  .algolia-autocomplete .ds-dropdown-menu {
+      min-width: calc(100vw - 44px);
+      max-width: 640px;
+  }
+}
+</style>
+
+      <div class="d-d-grid d-gl-docsite-toc d-p16 md:d-d-block md:d-mt64">
+        <nav class="d-ga-sidebar md:d-d-none d-ps-fixed" role="navigation">
+    <div class="d-of-y-scroll d-zi-navigation d-ps-fixed d-b0 d-pt24 d-w216 d-pb48 js-navigation-sidebar">
+    
+        
+            
+            
+            
+            
+        
+            
+            
+            
+            
+                <!-- This is for navigation that doesn't categorize its nav items -->
+                
+                <!-- This is for navigation that DOES categorize its nav items -->
+                
+                <ul id="nav" class="d-ls-reset d-px16 d-stack32">
+                    
+                        <li>
+                            <div class="d-d-block d-px8 d-py2 d-mb4 d-fs14 d-lh6 d-fc-black-600 d-fw-bold">Getting Started</div>
+                            
+                                <ul class="d-ls-reset d-stack4">
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/getting-started/installation/">Installation</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/getting-started/usage/">Using Dialtone</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/getting-started/building-locally/">Building Dialtone Locally</a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                    
+                        <li>
+                            <div class="d-d-block d-px8 d-py2 d-mb4 d-fs14 d-lh6 d-fc-black-600 d-fw-bold">Accessibility</div>
+                            
+                                <ul class="d-ls-reset d-stack4">
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/getting-started/accessibility/fundamentals/">Fundamentals</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/getting-started/accessibility/best-practices/">Best Practices</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a class="d-link d-td-none d-d-block d-px8 d-py4 d-fs14 d-lh6 d-bar4" href="/deploy-previews/pr-579/getting-started/accessibility/tooling/">Tooling</a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                    
+                </ul>
+                
+            
+        
+            
+            
+            
+            
+        
+            
+            
+            
+            
+        
+            
+            
+            
+            
+        
+    
+    </div>
+</nav>
+
+        <main id="content" class="d-ga-content d-stack64 d-ps-relative d-mb32 js-content">
+          <header class="d-stack2">
+            
+              <h1 class="d-headline42 d-lh6 d-mb4">Best Practices</h1>
+              
+            
+            
+          </header>
+          <div class="d-stack64">
+            <section class="d-stack16">
+  <div class="d-d-flex d-jc-space-between d-ai-end d-pe-none"><h2 class="d-fl1 d-headline24 js-scrollspy" id="color-contrast-ratio"><span class="d-pe-auto">Color contrast ratio</span></h2><a class="d-btn d-btn--muted d-pe-auto" href="#color-contrast-ratio"><span class="d-btn__icon d-m0 d-ai-center"><svg aria-hidden="true" aria-label="Link" class="d-svg d-svg--system d-svg__link" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1 0 1.71-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></span></a></div>
+  <p class="d-fs16 d-lh6">Dialpad strives to maintain <strong>WCAG 2.1 AA</strong> compliance in our digital products, including color contrast. <a href="https://www.w3.org/TR/WCAG21/#contrast-minimum" class="d-link" target="_blank">WCAG guidelines</a> require a minimum of 4:51 ratio for all content in regular-weight fonts.</p>
+  <p class="d-fs16 d-lh6">For easy reference, our color references are displayed alongside a contrast rating. Note that these are calculated using either a white or black background, and contrast between type and background should always be verified when using different background colors.</p>
+  <p class="d-fs16 d-lh6">To check color contrast combination, try one of these tools:</p>
+  <ul class="d-fs16 d-lh6 d-stack16">
+  <li>Colorable</li>
+  <li>WebAim</li>
+  <li>Figma plugin: Stark</li>
+  </ul>
+</section>
+<section class="d-stack16">
+  <div class="d-d-flex d-jc-space-between d-ai-end d-pe-none"><h2 class="d-fl1 d-headline24 js-scrollspy" id="semantics"><span class="d-pe-auto">Semantics</span></h2><a class="d-btn d-btn--muted d-pe-auto" href="#semantics"><span class="d-btn__icon d-m0 d-ai-center"><svg aria-hidden="true" aria-label="Link" class="d-svg d-svg--system d-svg__link" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1 0 1.71-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></span></a></div>
+  <p class="d-fs16 d-lh6">One of the simplest things we can do to make more accessible sites is to build with semantic HTML. Creating semantic HTML, or “semantic markup” is the practice of using the appropriate HTML element to convey information about the meaning and context of each element. For example, for a paragraph or bulleted list, you would use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple d-fs14">p</code>  or <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple d-fs14">ul</code> tags, respectively. In places where there is no HTML element which has a matching semantic meaning for what you are creating, you will want to employ the use of an inline <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple d-fs14">span</code>, or division element <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple d-fs14">div</code>.</p>
+  <p class="d-fs16 d-lh6">Semantic markup also maintains the separation between the semantics and the visual presentation. For example, it’s common to choose which heading element to use based on its style, but that would be incorrect. The proper way would be <a href="#headings" class="d-link" target="_blank">choosing the semantic heading level</a> and then applying CSS to style it, thus not using your mark-up as a means to style.</p>
+  <p class="d-fs16 d-lh6">Inversely, there may be times when you want a <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple d-fs14">button</code>, <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple d-fs14">select</code>, etc. element, but also want it to have just slightly different behavior or non-native styling. In these cases, we generally choose to use a <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple d-fs14">div</code> or less semantic implementation. Be so careful when you decide to do this. We forget how much native functionality is built in a <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple d-fs14">button</code>, <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple d-fs14">link</code>, <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple d-fs14">select</code>, etc. and re-creating that exact implementation so a screen reader user or keyboard-only user can still interact with the element appropriately can be complex and time consuming.</p>
+  <p class="d-fs16 d-lh6">As an example, to recreate a <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple d-fs14">button</code> with a <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple d-fs14">div</code>, you would need to add in multiple ARIA attributes, manage focus, and then also add additional JavaScript to allow you to click it, or use the spacebar and enter key to activate it. You can learn more by watching <a href="https://www.youtube.com/watch?v=CZGqnp06DnI" class="d-link" target="_blank">“Just Use a Button,”</a> as explained by Rob Dodson from the Google Chrome Team.</p>
+
+  <div class="d-d-flex d-jc-space-between d-ai-end d-pe-none"><h3 class="d-fl1 d-headline20 js-scrollspy" id="structural-semantics-and-landmarks"><span class="d-pe-auto">Structural semantics and landmarks</span></h3><a class="d-btn d-btn--muted d-pe-auto" href="#structural-semantics-and-landmarks"><span class="d-btn__icon d-m0 d-ai-center"><svg aria-hidden="true" aria-label="Link" class="d-svg d-svg--system d-svg__link" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1 0 1.71-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></span></a></div>
+  <p class="d-fs16 d-lh6">The following HTML elements should be used to identify common elements of our products.</p>
+  <aside class="d-bar8 d-of-hidden">
+    <footer class="d-p8 d-bgc-black-600 d-bbr8 d-fs12">
+    
+      <pre class="language-html"><code class="language-html"><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span><span class="token punctuation">></span></span></span><br><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nav</span><span class="token punctuation">></span></span></span><br><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>main</span><span class="token punctuation">></span></span></span><br><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>article</span><span class="token punctuation">></span></span>, <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>aside</span><span class="token punctuation">></span></span></span><br><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span><span class="token punctuation">></span></span></span><br><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>footer</span><span class="token punctuation">></span></span></span></code></pre>
+    </footer>
+  </aside>
+  <h4>Source</h4>
+  <p class="d-fs16 d-lh6"><a href="https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML#good_semantics" class="d-link" target="_blank">MDN - Developer Guides - Good Semantics</a></p>
+  <p class="d-fs16 d-lh6"><a href="https://www.w3.org/TR/wai-aria-practices/examples/landmarks/HTML5.html" class="d-link" target="_blank">W3C - HTML Sectioning Elements: ARIA Landmarks Example</a></p>
+</section>
+<section class="d-stack16">
+  <div class="d-d-flex d-jc-space-between d-ai-end d-pe-none"><h2 class="d-fl1 d-headline24 js-scrollspy" id="headings"><span class="d-pe-auto">Headings</span></h2><a class="d-btn d-btn--muted d-pe-auto" href="#headings"><span class="d-btn__icon d-m0 d-ai-center"><svg aria-hidden="true" aria-label="Link" class="d-svg d-svg--system d-svg__link" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1 0 1.71-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></span></a></div>
+  <p class="d-fs16 d-lh6">There are two easy rules that only apply to heading elements that we should adhere to for the best accessibility practices:</p>
+  <p class="d-fs16 d-lh6">The first: use one <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple d-fs14">h1</code> per page. The <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple d-fs14">h1</code> is typically the page title and use of more than one <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple d-fs14">h1</code> can confuse browsers and assistive technology.</p>
+  <p class="d-fs16 d-lh6">The second: when employing multiple heading levels, do not skip heading levels in a section. For example, if you’re writing an article, you could do:</p>
+  <aside class="d-bar8 d-of-hidden">
+    <footer class="d-p8 d-bgc-black-600 d-bbr8 d-fs12">
+    
+      <pre class="language-html"><code class="language-html"><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span></span><br><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span></span><br><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">></span></span></span><br><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span></span><br><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">></span></span></span><br><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h4</span><span class="token punctuation">></span></span></span></code></pre>
+    </footer>
+  </aside>
+  <p class="d-fs16 d-lh6">But you should never do:</p>
+  <aside class="d-bar8 d-of-hidden">
+    <footer class="d-p8 d-bgc-black-600 d-bbr8 d-fs12">
+    
+      <pre class="language-html"><code class="language-html"><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span></span><br><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span></span><br><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h4</span><span class="token punctuation">></span></span> // This is problematic since you skipped the <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">></span></span> in the same section</span><br><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span></span><br><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">></span></span></span><br><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h4</span><span class="token punctuation">></span></span></span></code></pre>
+    </footer>
+  </aside>
+  <p class="d-fs16 d-lh6">Headings taken out of context, such as accumulated together in a list for a screen reader, should logically represent the page content for users who choose this option as a way to browse.</p>
+</section>
+<section class="d-stack16">
+  <div class="d-d-flex d-jc-space-between d-ai-end d-pe-none"><h2 class="d-fl1 d-headline24 js-scrollspy" id="lists"><span class="d-pe-auto">Lists</span></h2><a class="d-btn d-btn--muted d-pe-auto" href="#lists"><span class="d-btn__icon d-m0 d-ai-center"><svg aria-hidden="true" aria-label="Link" class="d-svg d-svg--system d-svg__link" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1 0 1.71-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></span></a></div>
+  <p class="d-fs16 d-lh6">Do not underestimate the power of list elements. When there are more than two or three similar items next to one another on the page, consider putting them in either an order list <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple d-fs14">ol</code> or unordered list <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple d-fs14">ul</code> for screen readers.</p>
+  <p class="d-fs16 d-lh6">By using a list element, a screen reader user knows how many items they can expect to go through, and where they are in the list. A screen reader will announce, “1 of 3 list items,” which is helpful context that allows a user to orient themselves and have a better expectation of what will come next.</p>
+</section>
+<section class="d-stack16">
+  <div class="d-d-flex d-jc-space-between d-ai-end d-pe-none"><h2 class="d-fl1 d-headline24 js-scrollspy" id="tab-order"><span class="d-pe-auto">Tab order</span></h2><a class="d-btn d-btn--muted d-pe-auto" href="#tab-order"><span class="d-btn__icon d-m0 d-ai-center"><svg aria-hidden="true" aria-label="Link" class="d-svg d-svg--system d-svg__link" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1 0 1.71-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></span></a></div>
+  <p class="d-fs16 d-lh6">Like the name suggests, tab order is the order in which elements receive focus when a user is navigating with a keyboard. The tab order should match the visual order, so users are able to logically navigate through content. This is important. The default keyboard navigation order must be logical and intuitive, which generally means that it follows the page’s visual flow: left to right, top to bottom -- header first, then main navigation, then page navigation (if applicable), and finally the footer.</p>
+  <p class="d-fs16 d-lh6">Ideally, the visual tab flow will match the flow of the code. There are cases when something must be coded in an illogical order. In these cases, we can use <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple d-fs14">tabindex</code> to override the default order. By applying a <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple d-fs14">tabindex</code> value to each element in the flow, we can control the element order.</p>
+  <p class="d-fs16 d-lh6">For example:</p>
+  <aside class="d-bar8 d-of-hidden">
+    <footer class="d-p8 d-bgc-black-600 d-bbr8 d-fs12">
+    
+      <pre class="language-html"><code class="language-html"><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>”#”</span> <span class="token attr-name">tabindex</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>”2”</span><span class="token punctuation">></span></span>First Element<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></span><br><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>”#”</span> <span class="token attr-name">tabindex</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>”1”</span><span class="token punctuation">></span></span>Second Element<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></span></code></pre>
+    </footer>
+  </aside>
+  <p class="d-fs16 d-lh6">Because “Second Element” has a lower tabindex, keyboard users will focus it before “First Element.”</p>
+  <p class="d-fs16 d-lh6">Though it sounds convenient, <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple d-fs14">tabindex</code> should be used only in cases where there is no other option.</p>
+  <p class="d-fs16 d-lh6">By default, users can only navigate to links, buttons, and form controls with a keyboard. These natively-accessible elements should be used whenever possible, although there are times when HTML falls short and custom “widgets” are necessary. Complex menus, sliders, dialogs, tab panels, etc. must all be built to support keyboard accessibility.</p>
+  <p class="d-fs16 d-lh6"><code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple d-fs14">Tabindex=”0”</code> can be used to add non-interactive elements into the tab flow. This is useful when coding custom elements that are not natively focused.</p>
+</section>
+<section class="d-stack16">
+  <div class="d-d-flex d-jc-space-between d-ai-end d-pe-none"><h2 class="d-fl1 d-headline24 js-scrollspy" id="visible-focus"><span class="d-pe-auto">Visible focus</span></h2><a class="d-btn d-btn--muted d-pe-auto" href="#visible-focus"><span class="d-btn__icon d-m0 d-ai-center"><svg aria-hidden="true" aria-label="Link" class="d-svg d-svg--system d-svg__link" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1 0 1.71-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></span></a></div>
+  <p class="d-fs16 d-lh6">It is often difficult for keyboard users to tell where they are on the page. We must take care to ensure that it is easy to tell which item on the page currently has keyboard focus. All browsers by default display a visible outline around the element that currently has focus. Some browsers (i.e. Chrome and Safari) show an easy-to-see blue outline as their visible focus. However, other browsers show a thin, dotted line, which can be very difficult to see.</p>
+  <p class="d-fs16 d-lh6">Dialtone provides visible focus on all components. However, we cannot anticipate the various contexts in which each component will be inserted. Be sure to remember that focus indication can occur on different colored backgrounds and a minimum contrast ratio of 3:1 is required.</p>
+</section>
+<section class="d-stack16">
+  <div class="d-d-flex d-jc-space-between d-ai-end d-pe-none"><h2 class="d-fl1 d-headline24 js-scrollspy" id="skip-navigation-links"><span class="d-pe-auto">Skip navigation links</span></h2><a class="d-btn d-btn--muted d-pe-auto" href="#skip-navigation-links"><span class="d-btn__icon d-m0 d-ai-center"><svg aria-hidden="true" aria-label="Link" class="d-svg d-svg--system d-svg__link" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1 0 1.71-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></span></a></div>
+  <p class="d-fs16 d-lh6">A site or product’s main content is not usually the first thing on the page. Keyboard users generally must navigate a long list of navigation links, dropdowns, logos, search inputs, and other elements before ever arriving at the main content. This is particularly difficult for users with some forms of motor disabilities. Without some sort of system, for bypassing the long list of links at the top, some users are at a huge disadvantage. Consider users with no arm movement, who use computers by tapping their heads on a switch or that use a stick in their mouth to press keyboard keys. Requiring users to perform any action perhaps 100s of times before reaching the main content is simply unacceptable.</p>
+  <p class="d-fs16 d-lh6">The “skip navigation” idea was invented to give keyboard users the same capability as sighted mouse users to go directly to the main content. The idea is simple: provide a link at the top of the page which jumps the users down to an anchor or target at the beginning of the main content.</p>
+  <p class="d-fs16 d-lh6">Often developers hide the skip navigation link so it is available for screen reader users only. Ensure that the link is visible, or becomes visible when the keyboard user tabs to it.</p>
+  <h4>Source</h4>
+  <p class="d-fs16 d-lh6"><a href="https://webaim.org/techniques/skipnav/" class="d-link" target="_blank">WebAim - “Skip Navigation Links”</a></p>
+</section>
+<section class="d-stack16">
+  <div class="d-d-flex d-jc-space-between d-ai-end d-pe-none"><h2 class="d-fl1 d-headline24 js-scrollspy" id="form-best-practices"><span class="d-pe-auto">Form best practices</span></h2><a class="d-btn d-btn--muted d-pe-auto" href="#form-best-practices"><span class="d-btn__icon d-m0 d-ai-center"><svg aria-hidden="true" aria-label="Link" class="d-svg d-svg--system d-svg__link" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1 0 1.71-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></span></a></div>
+  <p class="d-fs16 d-lh6">Forms can be difficult, high-friction points for sighted and able users, which means if not done correctly, they can be simply unusable for users reliant on keyboard navigation or assistive technology. Users should be able to fill in forms, press buttons, use range sliders, select options, and operate controls with ease. Forms that use JavaScript to manipulate form data, set focus, change form elements, or submit forms can often create interactions that only work with a mouse. Ensure your forms can be understood and operated with the keyboard alone.</p>
+  <p class="d-fs16 d-lh6">Labeling is also important. Input labels describe the function of a form control (i.e. checkbox, radio button, etc.) and generally appear adjacent to it. While sighted users make the connection visually, users reliant on a screen reader or other assistive technology may not. The <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple d-fs14">label</code> element programmatically associates a text label to its form control, creating a connection that doesn’t rely on vision.</p>
+  <p class="d-fs16 d-lh6">Groups of form controls, such as checkboxes and radio buttons, sometimes require a higher-level label. This information can be associated with the group of form controls using <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple d-fs14">fieldset</code> and <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple d-fs14">legend</code>. The <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple d-fs14">fieldset</code> defines the group and the <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple d-fs14">legend</code> contains the description. Screen readers announce the <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple d-fs14">legend</code> when users navigate into the group.</p>
+  <p class="d-fs16 d-lh6">List-based inputs, such as <code class="d-py2 d-px4 d-bar2 d-bgc-purple-100 d-bgo50 d-fc-purple d-fs14">select</code>, comboboxes, or custom dropdown menus can be tricky for keyboard navigation. Users should be able to navigate through the options using their arrows, not their tab key.</p>
+  <h4>Source</h4>
+  <p class="d-fs16 d-lh6"><a href="https://webaim.org/techniques/forms/controls" class="d-link" target="_blank">WebAim - “Creating Accessible Forms.”</a></p>
+</section>
+<section class="d-stack16">
+  <div class="d-d-flex d-jc-space-between d-ai-end d-pe-none"><h2 class="d-fl1 d-headline24 js-scrollspy" id="focus-vs-focus-visible"><span class="d-pe-auto">Focus vs Focus-visible</span></h2><a class="d-btn d-btn--muted d-pe-auto" href="#focus-vs-focus-visible"><span class="d-btn__icon d-m0 d-ai-center"><svg aria-hidden="true" aria-label="Link" class="d-svg d-svg--system d-svg__link" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1 0 1.71-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></span></a></div>
+  <p class="d-fs16 d-lh6">User agents can choose their own heuristics for when to match :focus-visible; however, the following (non-normative) suggestions can be used as a starting point:</p>
+  <ul class="d-fs16 d-lh6 d-stack16">
+    <li>If a user has expressed a preference (such as via a system preference or a browser setting) to always see a visible focus indicator, the user agent should honor this by having :focus-visible always match on the active element, regardless of any other factors. (Another option may be for the user agent to show its own focus indicator regardless of author styles.)</li>
+    <li>Any element which supports keyboard input (such as an input element, or any other element which may trigger a virtual keyboard to be shown on focus if a physical keyboard is not present) should always match :focus-visible when focused.</li>
+    <li>If the user interacts with the page via the keyboard, the currently focused element should match :focus-visible (i.e. keyboard usage may change whether this pseudo-class matches even if it doesn’t affect :focus).</li>
+    <li>If the user interacts with the page via a pointing device, such that the focus is moved to a new element which does not support user input, the newly focused element should not match :focus-visible.</li>
+    <li>If the active element matches :focus-visible, and a script causes focus to move elsewhere, the newly focused element should match :focus-visible.</li>
+    <li>Conversely, if the active element does not match :focus-visible, and a script causes focus to move elsewhere, the newly focused element should not match :focus-visible.</li>
+  </ul>
+
+  <p class="d-fs16 d-lh6">User agents should also use :focus-visible to specify the default focus style, so that authors using :focus-visible will not also need to disable the default :focus style.</p>
+
+  <p class="d-fs16 d-lh6">In general, a rule of thumb is that: if an element is going to need the keyboard (ex. inputs) that element should use <span class="d-fw-bold">focus</span>, otherwise, it should use <span class="d-fw-bold">focus-visible</span>. Here is a list of elements that use focus vs focus-visible: </p>
+  <p class="d-fs16 d-lh6"> <span class="d-fw-bold">Focus</span> </p>
+  <ul class="d-fs16 d-lh6 d-stack16">
+    <li>Input</li>
+    <li>Select menu</li>
+  </ul>
+  <p class="d-fs16 d-lh6"> <span class="d-fw-bold">Focus visible</span> </p>
+  <ul class="d-fs16 d-lh6 d-stack16">
+    <li>Button</li>
+    <li>Link</li>
+    <li>Checkbox</li>
+    <li>Radio</li>
+    <li>Dropdown menu</li>
+    <li>List item</li>
+    <li>Tab</li>
+  </ul>
+  <h4>Source</h4>
+  <p class="d-fs16 d-lh6"><a href="https://www.w3.org/TR/selectors-4/#the-focus-visible-pseudo" class="d-link" target="_blank">The Focus-Indicated Pseudo-class: :focus-visible</a></p>
+  <p class="d-fs16 d-lh6"><a href="https://www.w3.org/WAI/WCAG21/Understanding/focus-visible.html" class="d-link" target="_blank">Understanding Success Criterion 2.4.7: Focus Visible.</a></p>
+</section>
+
+          </div>
+        </main>
+        <aside class="d-ga-toc d-t64 d-b0 d-r0 d-pt24 md:d-d-none" id="subnav">
+          <div class="d-ps-sticky d-t96 js-navigation-toc">
+            <h4 class="d-mb8 d-py2 d-px8 d-fw-bold d-fs14 d-lh6 d-fc-black-600">On this Page</h5>
+            <nav class="toc">
+                <ol>
+                    
+                    <li><a href="#color-contrast-ratio">Color contrast ratio</a>
+            		</li>
+
+                    <li><a href="#semantics">Semantics</a>
+            
+                <ol>
+                    
+                    <li><a href="#structural-semantics-and-landmarks">Structural semantics and landmarks</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#headings">Headings</a>
+            		</li>
+
+                    <li><a href="#lists">Lists</a>
+            		</li>
+
+                    <li><a href="#tab-order">Tab order</a>
+            		</li>
+
+                    <li><a href="#visible-focus">Visible focus</a>
+            		</li>
+
+                    <li><a href="#skip-navigation-links">Skip navigation links</a>
+            		</li>
+
+                    <li><a href="#form-best-practices">Form best practices</a>
+            		</li>
+
+                    <li><a href="#focus-vs-focus-visible">Focus vs Focus-visible</a>
+            		</li>
+                </ol>
+            </nav>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+<script type="text/javascript"> docsearch({
+appId: 'Y5HG9UX6KM',
+apiKey: '6436ebddb959748daeec411eb388a99d',
+indexName: 'dialpad',
+container: '.js-dialtone-search',
+debug: false // Set debug to true if you want to inspect the dropdown
+});
+</script>
+
+    <script type="text/javascript" src="assets/js/focus-visible-polyfill.min.js"></script>
+  </body>
+</html>
