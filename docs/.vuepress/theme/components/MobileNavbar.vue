@@ -23,7 +23,7 @@
 <script setup>
 import IconSearch from "@svgIcons/IconSearch.vue";
 import IconMenu from "@svgIcons/IconMenu.vue";
-import { ref, defineEmits } from 'vue';
+import { ref } from 'vue';
 
 const isMenuOpen = ref(false);
 const searchBtn = ref(undefined);
