@@ -1,5 +1,5 @@
 <template>
-  <aside aria-hidden="false" class="d-banner d-banner--info d-ps-relative" role="alert">
+  <aside aria-hidden="false" class="d-banner d-banner--info d-ps-relative lg:d-d-none" role="alert">
     <div aria-describedby="info-alert-desc" aria-labelledy="info-alert-title" class="d-banner__dialog d-w-unset"
          role="alertdialog">
       <div class="d-notice__icon">

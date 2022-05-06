@@ -24,7 +24,7 @@ import IconCheckmark from "@svgIcons/IconCheckmark.vue";
 import IconPhone from "@svgIcons/IconPhone.vue";
 
 // Import compiled dialtone to include responsive variations
-import '../../lib/dist/css/dialtone.min.css';
+import '../assets/css/dialtone.css';
 
 // LESS files
 import '../assets/less/dialtone-docs.less';

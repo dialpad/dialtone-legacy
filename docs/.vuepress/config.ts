@@ -1,6 +1,6 @@
 import { defineUserConfig } from 'vuepress'
 import { resolve } from 'path';
-const sidebar = require('../_data/site-nav');
+const sidebar = require('../_data/site-nav.json');
 const { dialtoneTheme } = require('./theme');
 
 const themeConfig = {
