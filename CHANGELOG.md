@@ -1,3 +1,10 @@
+# [6.25.0](https://github.com/dialpad/dialtone/compare/v6.24.1...v6.25.0) (2022-05-06)
+
+
+### Features
+
+* add spot illustration for wireless screen share ([#579](https://github.com/dialpad/dialtone/issues/579)) ([03c9761](https://github.com/dialpad/dialtone/commit/03c976161fb6649d3769ca94f3172a09d82124a3))
+
 ## [6.24.1](https://github.com/dialpad/dialtone/compare/v6.24.0...v6.24.1) (2022-04-29)
 
 
