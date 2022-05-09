@@ -1,3 +1,10 @@
+## [6.25.1](https://github.com/dialpad/dialtone/compare/v6.25.0...v6.25.1) (2022-05-09)
+
+
+### Bug Fixes
+
+* fc-warning not mapped correctly ([#584](https://github.com/dialpad/dialtone/issues/584)) ([9757d01](https://github.com/dialpad/dialtone/commit/9757d011c952129f57507620902ee07c45780b0c))
+
 # [6.25.0](https://github.com/dialpad/dialtone/compare/v6.24.1...v6.25.0) (2022-05-06)
 
 
