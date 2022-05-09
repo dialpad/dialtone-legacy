@@ -82,15 +82,26 @@ The interface and its content is designed and implemented in such a way that it 
 #### Additional Resources
 
 [Apple - Voiceover/keyboard shortcuts for OS X](https://www.apple.com/voiceover/info/guide/_1131.html)
+
 [Deque - Accessibility Testing Tools](https://www.deque.com/axe/)
+
 [Deque University - Web Accessibility Training and Courses](https://dequeuniversity.com/)
+
 [MDN - Developer Guides](https://developer.mozilla.org/en-US/docs/Web/Guide)
+
 [Microsoft - Narrator keyboard commands for Windows](https://support.microsoft.com/en-us/windows/appendix-b-narrator-keyboard-commands-and-touch-gestures-8bdab3f4-b3e9-4554-7f28-8b15bd37410a)
+
 [Pa11y](https://pa11y.org/)
+
 [Web Content Accessibility Guidelines (WCAG) 2.1](https://www.w3.org/TR/WCAG21/)
+
 [WebAim - Constructing a POUR Website](https://webaim.org/articles/pour/)
+
 
 #### Sources
 [CDC - Disability Impacts All of Us Infographic](https://www.cdc.gov/ncbddd/disabilityandhealth/infographic-disability-impacts-all.html)
+
 [Berkeley - Types of Assistive Technology](https://webaccess.berkeley.edu/resources/assistive-technology)
+
 [UXcellence - Designing for Accessibility: An Introduction](https://uxcellence.com/2018/accessible-design-intro)
+

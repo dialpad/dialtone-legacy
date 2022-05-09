@@ -1,3 +1,25 @@
+# [6.25.0](https://github.com/dialpad/dialtone/compare/v6.24.1...v6.25.0) (2022-05-06)
+
+
+### Features
+
+* add spot illustration for wireless screen share ([#579](https://github.com/dialpad/dialtone/issues/579)) ([03c9761](https://github.com/dialpad/dialtone/commit/03c976161fb6649d3769ca94f3172a09d82124a3))
+
+## [6.24.1](https://github.com/dialpad/dialtone/compare/v6.24.0...v6.24.1) (2022-04-29)
+
+
+### Bug Fixes
+
+* its ([a66564f](https://github.com/dialpad/dialtone/commit/a66564f0dab4fd3b3f26efed59f47cea0334c887))
+* remove d-svg class from spot illustrations ([6b7fa63](https://github.com/dialpad/dialtone/commit/6b7fa63ae3b0ebaa8eccf3228ec8fc41591de16b))
+
+# [6.24.0](https://github.com/dialpad/dialtone/compare/v6.23.6...v6.24.0) (2022-04-29)
+
+
+### Features
+
+* add laptop typing svg ([#575](https://github.com/dialpad/dialtone/issues/575)) ([ca861fd](https://github.com/dialpad/dialtone/commit/ca861fdfd5bab5a9ac74d3dc6e3d62b6fd1e2c17))
+
 ## [6.23.6](https://github.com/dialpad/dialtone/compare/v6.23.5...v6.23.6) (2022-04-21)
 
 
