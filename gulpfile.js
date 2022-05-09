@@ -813,7 +813,6 @@ exports.default = series(
         libStyles,
         docStyles,
     ),
-    buildDocsProd
 );
 
 const buildDocsDev = (done) => buildDocs(done, 'dev')
@@ -824,7 +823,6 @@ exports.buildWatch = series(
     exports.svg,
     libStylesDev,
     docStylesDev,
-    buildDocsDev
 );
 
 // build and run the gulp watch and eleventy watch in parallel.
