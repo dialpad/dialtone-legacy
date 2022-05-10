@@ -24,7 +24,7 @@ jobs:
     - name: Use Node.js
       uses: actions/setup-node@v1
       with:
-        node-version: '14.x'
+        node-version: '16.x'
 
     - uses: actions/cache@v2
       id: npm-cache
@@ -38,13 +38,13 @@ jobs:
       run: npm ci
 
     - name: Build docsite
-      run: npm run build -- --deploySubdir deploy-previews/pr-${{github.event.pull_request.number}}
+      run: npm run build -- --deploySubdir /deploy-previews/pr-${{github.event.pull_request.number}}/
 
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@v4.2.5
       with:
         branch: gh-pages
-        folder: docs/_site
+        folder: docs/.vuepress/dist
         target-folder: deploy-previews/pr-${{ github.event.pull_request.number }}
 
     - name: Add Message

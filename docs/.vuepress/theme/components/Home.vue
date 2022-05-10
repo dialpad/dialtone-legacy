@@ -16,24 +16,24 @@
         </div>
         <router-link class="d-btn d-btn--primary d-btn--lg" to="/getting-started/installation.html">Get Started</router-link>
       </div>
-      <img alt="" class="hero--image d-w50p d-as-flex-start" src="/assets/images/home-hero.png" />
+      <img alt="" class="hero--image d-w50p d-as-flex-start" :src="$withBase('/assets/images/home-hero.png')" />
     </div>
   </section>
   <section class="links d-d-grid d-gg16 d-g-cols12 d-wmx1340 d-mx-auto">
     <div class="d-gc4 link d-px32 d-ta-center">
-      <img alt="" class="link--image d-h96 d-mb24" src="/assets/images/home-design.svg">
+      <img alt="" class="link--image d-h96 d-mb24" :src="$withBase('/assets/images/home-design.svg')">
       <h2 class="link--headline d-fs28 d-lh4 d-mb12">Design</h2>
       <p class="link--paragraph d-fs18 d-lh6 d-mb8">Foundational color, iconography, and spacing guidelines</p>
       <router-link class="d-link link--link" to="/design/colors/color-palette">Browse design guidelines</router-link>
     </div>
     <div class="d-gc4 link d-px32 d-ta-center">
-      <img alt="" class="link--image d-h96 d-mb24" src="/assets/images/home-utilities.svg">
+      <img alt="" class="link--image d-h96 d-mb24" :src="$withBase('/assets/images/home-utilities.svg')">
       <h2 class="link--headline d-fs28 d-lh4 d-mb12">Utilities</h2>
       <p class="link--paragraph d-fs18 d-lh6 d-mb8">Atomic CSS utility classes so you don't have to write custom CSS</p>
       <router-link class="d-link link--link" to="/utilities/backgrounds/attachment">Browse utility classes</router-link>
     </div>
     <div class="d-gc4 link d-px32 d-ta-center">
-      <img alt="" class="link--image d-h96 d-mb24" src="/assets/images/home-components.svg">
+      <img alt="" class="link--image d-h96 d-mb24" :src="$withBase('/assets/images/home-components.svg')">
       <h2 class="link--headline d-fs28 d-lh4 d-mb12">Components</h2>
       <p class="link--paragraph d-fs18 d-lh6 d-mb8">Presentational UI components offered in CSS and Vue</p>
       <div class="d-d-inline-flex d-fd-column">
