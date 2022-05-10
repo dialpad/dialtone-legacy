@@ -1,0 +1,142 @@
+---
+layout: page
+title: Chip
+description: A chip is a compact UI element that provides brief, descriptive information about an element. It is terse, ideally one word.
+---
+<section class="d-stack16">
+  {% header "h2", "Classes" %}
+  <table class="d-table">
+    <thead>
+      <tr>
+        <th scope="col" class="d-w40p">Class</th>
+        <th scope="col" class="d-w30p">Applies to</th>
+        <th scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in chip.classes %}
+        {% assign class = i.class %}
+        {% assign apply = i.applies %}
+        {% assign desc = i.description %}
+        <tr>
+          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.{{ class }}</th>
+          <td class="d-ff-mono d-fc-orange d-fs12">{% if apply != "N/A" %}<span class="code-example--inline">.{% endif %}{{ apply }}{% if apply != "N/A" %}</span>{% endif %}</td>
+          <td class="d-fs12">{{ desc }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</section>
+<section class="d-stack16">
+  {% header "h2", "Examples" %}
+  <div class="d-stack48">
+    <div class="d-stack8">
+      {% header "h3", "Base" %}
+      {% paragraph %}The base chip should be the go-to chip for most of your needs.{% endparagraph %}
+      {% codeWell %}
+        {% codeWellHeader %}
+          <span class="d-chip">
+            Chip
+            <button class="d-btn d-btn--circle" type="button">
+              {% iconSystem "close", "js-svg"%}
+            </button>
+          </span>
+        {% endcodeWellHeader %}
+        {% codeWellFooter %}
+          {% highlight html linenos %}
+<span class="d-chip">Chip<button class="d-btn d-btn--circle" type="button"></button></span>
+          {% endhighlight %}
+        {% endcodeWellFooter %}
+      {% endcodeWell %}
+    </div>
+    <div class="d-stack8">
+      {% header "h3", "Without close button" %}
+      {% codeWell %}
+        {% codeWellHeader %}
+          <span class="d-chip">Chip</span>
+        {% endcodeWellHeader %}
+        {% codeWellFooter %}
+          {% highlight html linenos %}
+<span class="d-chip">Chip</span>
+          {% endhighlight %}
+        {% endcodeWellFooter %}
+      {% endcodeWell %}
+    </div>
+    <div class="d-stack8">
+      {% header "h3", "With icon" %}
+      {% codeWell %}
+        {% codeWellHeader %}
+          <span class="d-chip">
+            <span class="d-chip__icon">
+              {% iconSystem "phone", "js-svg"%}
+            </span>
+            Chip
+          </span>
+        {% endcodeWellHeader %}
+        {% codeWellFooter %}
+          {% highlight html linenos %}
+<span class="d-chip"><span class="d-chip__icon"></span>Chip</span>
+          {% endhighlight %}
+        {% endcodeWellFooter %}
+      {% endcodeWell %}
+    </div>
+    <div class="d-stack8">
+      {% header "h3", "With icon and close button" %}
+      {% codeWell %}
+        {% codeWellHeader %}
+          <span class="d-chip">
+            <span class="d-chip__icon">
+              {% iconSystem "phone", "js-svg"%}
+            </span>
+            Chip
+            <button class="d-btn d-btn--circle" type="button">
+              {% iconSystem "close", "js-svg"%}
+            </button>
+          </span>
+        {% endcodeWellHeader %}
+        {% codeWellFooter %}
+          {% highlight html linenos %}
+<span class="d-chip"><span class="d-chip__icon"></span>Chip<button class="d-btn d-btn--circle" type="button"></button></span>
+          {% endhighlight %}
+        {% endcodeWellFooter %}
+      {% endcodeWell %}
+    </div>
+    <div class="d-stack8">
+      {% header "h3", "Sizes" %}
+      {% codeWell %}
+        {% codeWellHeader %}
+          {% for c in chip.classes %}
+            {% assign class = c.class %}
+            {% assign apply = c.applies %}
+            {% if apply == "d-chip" %}
+              <span class="d-chip {{class}} d-mb4">
+                <span class="d-chip__icon">
+                  {% iconSystem "phone", "js-svg"%}
+                </span>
+                Chip
+                <button class="d-btn d-btn--circle" type="button">
+                  {% iconSystem "close", "js-svg"%}
+                </button>
+              </span>
+            {% endif %}
+          {% endfor%}
+          <span class="d-chip">
+            <span class="d-chip__icon">
+              {% iconSystem "phone", "js-svg"%}
+            </span>
+            Chip
+            <button class="d-btn d-btn--circle" type="button">
+              {% iconSystem "close", "js-svg"%}
+            </button>
+          </span>
+        {% endcodeWellHeader %}
+        {% codeWellFooter %}
+          {% highlight html linenos %}
+<span class="d-chip d-chip--xs">Chip...</span>
+<span class="d-chip d-chip--sm">Chip...</span>
+          {% endhighlight %}
+        {% endcodeWellFooter %}
+      {% endcodeWell %}
+    </div>
+  </div>
+</section>
