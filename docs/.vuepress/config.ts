@@ -1,10 +1,11 @@
-import { defineUserConfig } from 'vuepress'
+import { defineUserConfig } from 'vuepress';
 import { resolve } from 'path';
 const sidebar = require('../_data/site-nav.json');
 const { dialtoneTheme } = require('./theme');
+const baseURL = (process.env.VUEPRESS_BASE_URL ?? "/") as `/${string}/`;
 
 const themeConfig = {
-  logo: '/assets/images/dialpad-logo.svg',
+  logo: baseURL + 'assets/images/dialpad-logo.svg',
   navbar: [
     {text: 'About', link: '/about/dialtone'},
     {text: 'Getting Started', link: '/getting-started/installation'},
@@ -24,7 +25,7 @@ export default defineUserConfig({
   lang: 'en-US',
   title: 'Dialtone',
 
-  base: process.env.VUEPRESS_BASE_URL ?? "/",
+  base: baseURL,
 
   // theme and its config
   theme: dialtoneTheme(themeConfig),
@@ -32,10 +33,10 @@ export default defineUserConfig({
   // Header links and meta tags
   head: [
     // Favicons
-    ['link', {rel: "apple-touch-icon", sizes: "180x180", href: "/assets/images/favicons/apple-touch-icon.png"}],
-    ['link', {rel: "icon", href: "/assets/images/favicons/favicon.svg"}],
-    ['link', {rel: "manifest", href: "/assets/images/favicons/site.webmanifest"}],
-    ['link', {rel: "mask-icon", href: "/assets/images/favicons/safari-pinned-tab.svg", color: "#6C3DFF"}],
+    ['link', {rel: "apple-touch-icon", sizes: "180x180", href: baseURL + "assets/images/favicons/apple-touch-icon.png"}],
+    ['link', {rel: "icon", href: baseURL + "assets/images/favicons/favicon.svg"}],
+    ['link', {rel: "manifest", href: baseURL + "assets/images/favicons/site.webmanifest"}],
+    ['link', {rel: "mask-icon", href: baseURL + "assets/images/favicons/safari-pinned-tab.svg", color: "#6C3DFF"}],
     ['meta', {name: "msapplication-TileColor", content: "#6C3DFF"}],
     ['meta', {name: "theme-color", content: "#ffffff"}],
 
@@ -45,7 +46,7 @@ export default defineUserConfig({
     ['meta', {
       property: "og:image",
       itemprop: "image primaryImageOfPage",
-      content: "/assets/images/favicons/apple-touch-icon-180x180.png"
+      content: baseURL + "assets/images/favicons/apple-touch-icon-180x180.png",
     }],
     ['meta', {name: "twitter:card", content: "summary"}],
     ['meta', {name: "twitter:domain", content: "dialpad.design"}],
