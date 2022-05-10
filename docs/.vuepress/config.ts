@@ -1,6 +1,6 @@
 import { defineUserConfig } from 'vuepress'
 import { resolve } from 'path';
-const sidebar = require('../_data/site-nav');
+const sidebar = require('../_data/site-nav.json');
 const { dialtoneTheme } = require('./theme');
 
 const themeConfig = {
@@ -56,9 +56,6 @@ export default defineUserConfig({
       itemprop: "description",
       content: "Dialtone is the design system and resources for the Dialpad team."
     }],
-
-    // CSS
-    ['link', {rel: "stylesheet", href: "https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"}],
   ],
 
   // markdown config

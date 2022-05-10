@@ -31,7 +31,9 @@ const breakpoints = [
 const classes = [
   /\.d-d-*/,
   /\.d-mt*/,
-  /\.d-g-cols*/
+  /\.d-g-cols*/,
+  /\.d-w100p*/,
+  /\.d-jc-*/
 ];
 
 //  ================================================================================
@@ -811,7 +813,6 @@ exports.default = series(
         libStyles,
         docStyles,
     ),
-    buildDocsProd
 );
 
 const buildDocsDev = (done) => buildDocs(done, 'dev')
@@ -822,7 +823,6 @@ exports.buildWatch = series(
     exports.svg,
     libStylesDev,
     docStylesDev,
-    buildDocsDev
 );
 
 // build and run the gulp watch and eleventy watch in parallel.

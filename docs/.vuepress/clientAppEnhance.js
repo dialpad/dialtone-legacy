@@ -23,13 +23,8 @@ import IconClose from "@svgIcons/IconClose.vue";
 import IconCheckmark from "@svgIcons/IconCheckmark.vue";
 import IconPhone from "@svgIcons/IconPhone.vue";
 
-// Import compiled dialtone to include responsive variations
-import '../../lib/dist/css/dialtone.min.css';
-
-// LESS files
-import '../assets/less/dialtone-docs.less';
-import '../assets/less/overrides.less';
-import '../assets/less/hljs-dialpad.less';
+process.env.NODE_ENV === 'development' ? import ('../assets/css/dialtone.css') : import ('../assets/css/dialtone.min.css');
+process.env.NODE_ENV === 'development' ? import ('../assets/css/dialtone-docs.css') : import ('../assets/css/dialtone-docs.min.css');
 
 export default defineClientAppEnhance(({app, router, siteData}) => {
     // Common views

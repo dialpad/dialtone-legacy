@@ -2,6 +2,9 @@
 title: Avatar
 desc: An avatar is a visual representation of a user or object.
 storybook_url: https://vue.dialpad.design/?path=/story/components-avatar--default
+prev:
+  text: Utilities - Word break
+  link: /utilities/typography/word-break
 ---
 
 ## Classes
