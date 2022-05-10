@@ -147,7 +147,7 @@ Here are some important directories to know within the Dialtone repository
 - `lib/build/less`: LESS files defining our styles. they are processed and transpiled to CSS on build.
 - `lib/build/svg`: SVGs used for icons and spot illustrations. See [adding icons](https://dialpad.design/design/icons/adding/) for instructions on how to add icons into Dialtone.
 
-For folder structure of the doc site, see the [Eleventy section](#eleventy) of this document.
+For folder structure of the doc site, see the [VuePress section](#vuepress) of this document.
 
 ### Testing
 
@@ -172,13 +172,14 @@ Dialtone follows [SemVer](https://semver.org/) for versioning and the commit mes
 
 ## Tooling
 
-### Eleventy
+### VuePress
 
-[Eleventy](https://www.11ty.dev/) also known as 11ty, is used as a static site generator for our documentation site. Eleventy's root folder is within the folder `docs` in the Dialtone repository. `.eleventy.js` within this folder is the core configuration for eleventy. If you look in this file you can see we have defined many [shortcodes](https://www.11ty.dev/docs/shortcodes/) which can be used in eleventy templates. Our templates use the [Liquid Template Language](https://www.11ty.dev/docs/languages/liquid/). Here are some short descriptions of the folders within `docs` and what they are responsible for.
+[VuePress](https://v2.vuepress.vuejs.org/) Vue-powered static site generator, is used as a static site generator for our documentation site. VuePress's root folder is within the folder `docs` in the Dialtone repository. Here are some short descriptions of the folders within `docs` and what they are responsible for.
 
-- `docs/_includes`: Contains reusable template segments that can be inserted into other templates.
-- `docs/_site`: Where the compiled build is output to when you run `npm run build`.
-- `docs/assets`: Contains images, javascript utilities and doc site specific LESS/CSS. **Note:** the CSS and fonts folders within `docs/assets` are output by the Dialtone build and any manual changes will be overwritten.
+- `docs/.vuepress`: This is where all VuePress-specific files are placed.
+- `docs/_data`: Contains json files with data to populate tables, examples and the sidebar items.
+- `doc/about`: Contains templates for the "About" section of the website. (About dialtone, Contributing).
+- `docs/assets`: Contains images and doc site specific LESS/CSS. **Note:** the CSS and fonts folders within `docs/assets` are output by the Dialtone build and any manual changes will be overwritten.
 - `docs/components`: Contains templates for the "Components" section of the website. (Form inputs, Avatar, Banner etc).
 - `docs/design`: Contains templates for the "Design" section of the website. (Colors, Icons, etc).
 - `docs/getting-started`: Contains templates for the "Getting Started" section of the website. (Installation, Usage).
@@ -190,14 +191,8 @@ Dialtone follows [SemVer](https://semver.org/) for versioning and the commit mes
 
 - Compilation, minification and output of LESS to CSS.
 - Processing svg files for themability, and outputting them as vue files.
-- Compilation and output of the eleventy doc site.
 - Bundling and output of fonts.
-- Running the local development server.
 - Caching for faster local build performance.
-
-### Netlify
-
-[Netlify](https://www.netlify.com/) is where our documentation site is hosted. If you need to configure any netlify options you can see the file `netlify.toml` in the repository root and the corresponding [documentation](https://docs.netlify.com/configure-builds/file-based-configuration/). You may not be able to change all options from here some options may require login to our netlify account on the web. If this level of configuration is needed please contact a Dialtone admin.
 
 ### Github Actions
 
