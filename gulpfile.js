@@ -140,6 +140,7 @@ var paths = {
     },
     watch: {
         lib: './lib/build/less/**/*',
+        docs: './docs/assets/less/*'
     }
 }
 
@@ -642,6 +643,7 @@ var watchFiles = function(done) {
     //  Watch files
     const watcher = watch([
         paths.watch.lib,
+        paths.watch.docs
     ], series(exports.buildWatch));
     watcher.on('change', function (event) {
         if (event.type === 'deleted') { // if a file is deleted, forget about it
