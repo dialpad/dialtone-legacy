@@ -38,7 +38,7 @@ jobs:
       run: npm ci
 
     - name: Build docsite
-      run: npm run build -- --deploySubdir deploy-previews/pr-${{github.event.pull_request.number}}
+      run: npm run build -- --deploySubdir /deploy-previews/pr-${{github.event.pull_request.number}}/
 
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@v4.2.5

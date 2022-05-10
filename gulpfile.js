@@ -49,6 +49,7 @@ var concat = require('gulp-concat');
 var remember = require('gulp-remember');
 var through2 = require('through2');
 var package = require('./package.json');
+var argv = require('yargs').argv;
 
 //  @@ STYLES
 var postcss = settings.styles ? require('gulp-postcss') : null;
@@ -588,6 +589,28 @@ var webfonts = function(done) {
     done();
 }
 
+
+//  ================================================================================
+//  @@  BUILD SITE
+//  ================================================================================
+var buildDocs = function(done) {
+
+    //  Make sure this feature is activated before running
+    if (!settings.build) return done();
+
+    return cp.spawn(
+        'vuepress', [
+            'build',
+            `docs`
+        ], {
+            stdio: 'inherit',
+            env: { ...process.env, VUEPRESS_BASE_URL: argv.deploySubdir ?? '/' }
+        }
+    );
+
+    done();
+};
+
 var watchDocs = function(done) {
 
     //  Make sure this feature is activated before running
@@ -655,6 +678,7 @@ exports.default = series(
         libStyles,
         docStyles,
     ),
+    buildDocs,
 );
 
 // tasks are similar to default build when we are watching but there are some

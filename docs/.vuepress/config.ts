@@ -24,7 +24,7 @@ export default defineUserConfig({
   lang: 'en-US',
   title: 'Dialtone',
 
-  base: '/vuepress/',
+  base: process.env.VUEPRESS_BASE_URL ?? "/",
 
   // theme and its config
   theme: dialtoneTheme(themeConfig),
