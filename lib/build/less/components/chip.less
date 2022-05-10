@@ -1,0 +1,104 @@
+//
+//  DIALTONE
+//  COMPONENTS: CHIP
+//
+//  These are chip classes for Dialpad's design system Dialtone.
+//  For further documentation of these and other classes,
+//  visit https://dialpad.design/components/chip
+//
+//  TABLE OF CONTENTS
+//  • BASE STYLE
+//    • ALTERNATE STYLE
+//
+//  ============================================================================
+//  $   BASE STYLE
+//  ----------------------------------------------------------------------------
+.d-chip {
+  //  Component CSS Vars
+  --chip--fc: var(--fc-dark);
+  --chip--bgc: var(--black-050);
+  --chip--br: var(--su4);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: var(--su4) var(--su6);
+  color: var(--chip--fc);
+  font-size: var(--fs16);
+  font-family: inherit;
+  line-height: var(--lh4);
+  background-color: var(--chip--bgc);
+  border-radius: var(--chip--br);
+  cursor: pointer;
+
+  //  --  STATES
+  //  ------------------------------------------------------------------------
+  &:hover {
+    --chip--bgc: var(--black-075);
+  }
+
+  &:active {
+    --chip--bgc: var(--black-100);
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: var(--bs-focus-ring-muted);
+  }
+
+  .d-btn {
+    padding: var(--su2);
+    color: var(--black-900);
+
+    &:hover {
+      --button--bgc: hsla(var(--black-900-hsl) ~' / ' 3%);
+    }
+
+    &:active {
+      --button--bgc: var(--black-100);
+    }
+
+    &:focus-visible {
+      outline: none;
+      box-shadow: var(--bs-focus-ring-muted);
+    }
+  }
+
+  .d-svg {
+    width: @icon16;
+    height: @icon16;
+  }
+}
+
+.d-chip__icon {
+  padding-right: var(--su4);
+  line-height: 0;
+}
+
+//  ============================================================================
+//  $   SIZES
+//  ----------------------------------------------------------------------------
+//  $$  EXTRA SMALL
+//  ----------------------------------------------------------------------------
+.d-chip--xs {
+  padding: var(--su2) var(--su6);
+  font-size: var(--fs12);
+
+  .d-svg {
+    width: @icon12;
+    height: @icon12;
+  }
+}
+
+//  $$ SMALL
+//  ----------------------------------------------------------------------------
+.d-chip--sm {
+  padding: var(--su2) var(--su6);
+  font-size: var(--fs14);
+
+  .d-svg {
+    width: @icon14;
+    height: @icon14;
+  }
+}

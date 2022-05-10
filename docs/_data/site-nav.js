@@ -554,6 +554,11 @@ module.exports = {
           publish: "yes",
         },
         {
+          title: "Chip",
+          url: `${Site.baseurl}components/chip/`,
+          publish: "yes",
+        },
+        {
           title: "Input",
           url: `${Site.baseurl}components/input/`,
           publish: "yes",

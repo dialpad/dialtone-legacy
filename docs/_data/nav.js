@@ -221,6 +221,10 @@ module.exports = {
           url: "components/checkboxes/",
         },
         {
+          title: "Chip",
+          url: "components/chip/",
+        },
+        {
           title: "Forms",
           url: "components/forms/",
         },
