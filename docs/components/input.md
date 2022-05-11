@@ -237,7 +237,8 @@ Provides feedback to the user based on their interaction, or lack thereof, with 
 ```
 
 ### Input Sizes
-      We offer different sizes for instances in which the interface requires a smaller or larger input. In general, though, use the base (medium) size input as much as possible, especially in forms.
+We offer different sizes for instances in which the interface requires a smaller or larger input. In general, though, use the base (medium) size input as much as possible, especially in forms.
+
 <code-well-header>
   <div class="d-stack24 d-w100p">
     <div>
