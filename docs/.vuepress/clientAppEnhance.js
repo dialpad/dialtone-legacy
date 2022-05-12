@@ -23,8 +23,8 @@ import IconClose from "@svgIcons/IconClose.vue";
 import IconCheckmark from "@svgIcons/IconCheckmark.vue";
 import IconPhone from "@svgIcons/IconPhone.vue";
 
-process.env.NODE_ENV === 'development' ? import ('../assets/css/dialtone.css') : import ('../assets/css/dialtone.min.css');
-process.env.NODE_ENV === 'development' ? import ('../assets/css/dialtone-docs.css') : import ('../assets/css/dialtone-docs.min.css');
+import '@dialtoneCSS';
+import '@dialtoneDocsCSS';
 
 export default defineClientAppEnhance(({app, router, siteData}) => {
     // Common views
