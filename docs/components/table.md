@@ -1,0 +1,199 @@
+---
+title: Table
+desc: A table is a pattern for organizing data sets. While data visualization helps quickly summarize a data set, a table allows users to compare and analyze individual data rows.
+---
+
+## Classes
+<component-class-table component-name="table" />
+
+## Examples
+### Base Style
+
+<code-well-header bgclass="d-bgc-white">
+  <table class="d-table d-d-unset">
+    <caption class="d-table__caption">Office List</caption>
+    <thead>
+      <tr>
+        <th scope="col">Office</th>
+        <th scope="col">Country</th>
+        <th scope="col" width="10%">Employees</th>
+        <th scope="col">Contact</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="i in examples">
+        <th scope="row">{{ i.office }}</th>
+        <td>{{ i.country }}</td>
+        <td>{{ i.size }}</td>
+        <td>{{ i.contact }}</td>
+      </tr>
+    </tbody>
+  </table>
+</code-well-header>
+
+```html
+<table class="d-table">
+  <caption class="d-table__caption">...</caption>
+  <thead>
+    <tr>
+      <th scope="col">...</th>
+      <th scope="col">...</th>
+      <th scope="col">...</th>
+      <th scope="col">...</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+### Inverted Style
+Used when you want to display a data table on a darker background.
+
+<code-well-header bgclass="d-bgc-black-800">
+  <table class="d-table d-d-unset d-table--inverted">
+    <caption class="d-table__caption">Office List</caption>
+    <thead>
+      <tr>
+        <th scope="col">Office</th>
+        <th scope="col">Country</th>
+        <th scope="col" width="10%">Employees</th>
+        <th scope="col">Contact</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="i in examples">
+        <th scope="row">{{ i.office }}</th>
+        <td>{{ i.country }}</td>
+        <td>{{ i.size }}</td>
+        <td>{{ i.contact }}</td>
+      </tr>
+    </tbody>
+  </table>
+</code-well-header>
+
+```html
+<table class="d-table d-table--inverted">
+  <caption class="d-table__caption">...</caption>
+  <thead>
+    <tr>
+      <th scope="col">...</th>
+      <th scope="col">...</th>
+      <th scope="col">...</th>
+      <th scope="col">...</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+### Striped
+<code-well-header bgclass="d-bgc-white">
+  <table class="d-table d-d-unset d-table--striped">
+    <caption class="d-table__caption">Office List</caption>
+    <thead>
+      <tr>
+        <th scope="col">Office</th>
+        <th scope="col">Country</th>
+        <th scope="col" width="10%">Employees</th>
+        <th scope="col">Contact</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="i in examples">
+        <th scope="row">{{ i.office }}</th>
+        <td>{{ i.country }}</td>
+        <td>{{ i.size }}</td>
+        <td>{{ i.contact }}</td>
+      </tr>
+    </tbody>
+  </table>
+</code-well-header>
+
+```html
+<table class="d-table d-table--striped">
+  <caption class="d-table__caption">...</caption>
+  <thead>
+    <tr>
+      <th scope="col">...</th>
+      <th scope="col">...</th>
+      <th scope="col">...</th>
+      <th scope="col">...</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+<code-well-header bgclass="d-bgc-black-800">
+  <table class="d-table d-d-unset d-table--inverted d-table--striped">
+    <caption class="d-table__caption">Office List</caption>
+    <thead>
+      <tr>
+        <th scope="col">Office</th>
+        <th scope="col">Country</th>
+        <th scope="col" width="10%">Employees</th>
+        <th scope="col">Contact</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="i in examples">
+        <th scope="row">{{ i.office }}</th>
+        <td>{{ i.country }}</td>
+        <td>{{ i.size }}</td>
+        <td>{{ i.contact }}</td>
+      </tr>
+    </tbody>
+  </table>
+</code-well-header>
+
+```html
+<table class="d-table d-table--inverted d-table--striped">
+  <caption class="d-table__caption">...</caption>
+  <thead>
+    <tr>
+      <th scope="col">...</th>
+      <th scope="col">...</th>
+      <th scope="col">...</th>
+      <th scope="col">...</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+## Accessibility
+Use the `caption` element to describe a table in the same way you would use a heading. A caption helps users find, navigate and understand tables.
+
+We provide `.d-table__caption` for a basic caption style, but you can also use utility classes to apply custom styles as needed.
+
+<script setup>
+  import { examples } from '@data/table.json';
+</script>

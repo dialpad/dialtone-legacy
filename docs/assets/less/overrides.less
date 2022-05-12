@@ -1,0 +1,95 @@
+@import (reference) '../../../lib/build/less/variables/colors';
+@import (reference) '../../../lib/build/less/variables/typography';
+@import (reference) '../../../lib/build/less/variables/spacing';
+@import (reference) '../../../lib/build/less/utilities/internals';
+@import (reference) '../../../lib/build/less/utilities/spacing';
+@import (reference) '../../../lib/build/less/utilities/typography';
+
+body {
+  --sidebar-width: unset !important;
+}
+
+tr {
+  &:nth-child(2n) {
+    background-color: unset;
+  }
+}
+
+:root {
+  --c-brand: @purple-500;
+  --navbar-height: 6.4rem;
+}
+
+.page {
+  padding-top: var(--navbar-height);
+  padding-left: var(--sidebar-width);
+}
+
+.sidebar {
+  scrollbar-color: var(--black-200);
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--black-200);
+    border-radius: var(--br-pill);
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: var(--black-400);
+  }
+}
+
+.theme-default-content:not(.custom) {
+  max-width: 75rem !important;
+
+  > p, > ol, > ul {
+    margin-top: var(--su16);
+    padding-left: revert;
+  }
+
+  > h2 {
+    margin-top: unset;
+    font-size: var(--fs24);
+  }
+
+  h2, h3 {
+    font-weight: var(--fw-bold);
+    border-bottom: unset;
+  }
+
+  h3 {
+    font-size: unset;
+  }
+
+  ol, ul {
+    .d-stack8();
+  }
+
+  ol > * + * {
+    margin-top: 0!important;
+  }
+
+  .d-table {
+    thead {
+      tr, th, td {
+        border: unset;
+      }
+    }
+
+    tbody {
+      th, td {
+        border-bottom: var(--su1) solid var(--table-bc);
+        border-left: unset;
+        border-right: unset;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .page {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    padding-bottom: 0 !important;
+    padding-top: var(--su128);
+  }
+}

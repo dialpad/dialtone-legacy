@@ -27,6 +27,8 @@
 @import (reference) '../../../lib/build/less/components/link';
 @import (reference) '../../../lib/build/less/components/button';
 @import 'dialtone-syntax';
+@import 'overrides.less';
+@import 'hljs-dialpad.less';
 
 //  ============================================================================
 //  @   RESETS
@@ -60,7 +62,7 @@
 //  $   SEARCH BUTTON
 //      Override search button with dialtone styles
 //  ----------------------------------------------------------------------------
-.DocSearch-Button {
+button.DocSearch-Button {
   &:hover {
     color: var(--muted-color-hover);
     background-color: hsla(var(--black-800-hsl) ~' / ' 3%);
@@ -74,14 +76,22 @@
   width: 22.9rem;
 }
 
-.DocSearch-Button-Container {
+span.DocSearch-Button-Container {
   display: none;
 }
 
-.DocSearch-Button-Keys {
+span.DocSearch-Button-Keys {
   display: none;
 }
 
+//  ============================================================================
+//  $   SEARCH BUTTON
+//      Override search button with dialtone styles
+//  ----------------------------------------------------------------------------
+nav a.router-link-active {
+  font-weight: var(--fw-black);
+  text-decoration: none;
+}
 //  ============================================================================
 //  $   TOC
 //      Because we're using a third-party plugin to generate the subnav menu,
