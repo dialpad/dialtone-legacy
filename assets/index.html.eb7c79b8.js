@@ -1,0 +1,1 @@
+const e={key:"v-8daa1a0e",path:"/",title:"",lang:"en-US",frontmatter:{home:!0},excerpt:"",headers:[],git:{updatedTime:1652380763e3,contributors:[{name:"semantic-release-bot",email:"semantic-release-bot@martynus.net",commits:1}]},filePathRelative:"index.md"};export{e as data};
