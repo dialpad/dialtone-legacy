@@ -31,6 +31,8 @@ export default defineUserConfig({
 
   base: baseURL,
 
+  port: 4000,
+
   // theme and its config
   theme: dialtoneTheme(themeConfig),
 
