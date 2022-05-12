@@ -17,8 +17,7 @@ const themeConfig = {
   sidebar,
   editLink: false,
   darkMode: false,
-  // contributors: false,
-  // lastUpdated: false,
+  contributors: false,
 };
 
 const isDevelopment = (process.env.NODE_ENV === 'development');
