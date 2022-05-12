@@ -17,7 +17,7 @@
   //  Component CSS Vars
   --chip--fc: var(--fc-dark);
   --chip--bgc: var(--black-050);
-  --chip--br: var(--su4);
+  --chip--br: var(--su102);
 
   display: inline-flex;
   align-items: center;
@@ -30,22 +30,6 @@
   line-height: var(--lh4);
   background-color: var(--chip--bgc);
   border-radius: var(--chip--br);
-  cursor: pointer;
-
-  //  --  STATES
-  //  ------------------------------------------------------------------------
-  &:hover {
-    --chip--bgc: var(--black-075);
-  }
-
-  &:active {
-    --chip--bgc: var(--black-100);
-  }
-
-  &:focus-visible {
-    outline: none;
-    box-shadow: var(--bs-focus-ring-muted);
-  }
 
   .d-btn {
     padding: var(--su2);
@@ -75,6 +59,34 @@
   padding-right: var(--su4);
   line-height: 0;
 }
+
+//  ============================================================================
+//  $   INTERACTIVITY
+//  ----------------------------------------------------------------------------
+//  $$  INTERACTIVE (DEFAULT)
+//  ----------------------------------------------------------------------------
+.d-chip--interactive {
+  cursor: pointer;
+
+  &:hover {
+    --chip--bgc: var(--black-075);
+  }
+
+  &:active {
+    --chip--bgc: var(--black-100);
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: var(--bs-focus-ring-muted);
+  }
+}
+
+//  $$  NON INTERACTIVE
+//  ----------------------------------------------------------------------------
+//.d-chip--non-interactive {
+//  cursor: default;
+//}
 
 //  ============================================================================
 //  $   SIZES
