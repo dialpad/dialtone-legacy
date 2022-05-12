@@ -1,3 +1,12 @@
+# [6.26.0](https://github.com/dialpad/dialtone/compare/v6.25.1...v6.26.0) (2022-05-12)
+
+
+### Features
+
+* **docsite:** merge vuepress migration into staging ([#588](https://github.com/dialpad/dialtone/issues/588)) ([0524459](https://github.com/dialpad/dialtone/commit/0524459c96bcc712cf17bff8f93c31e3f517ebf0)), closes [#548](https://github.com/dialpad/dialtone/issues/548) [#549](https://github.com/dialpad/dialtone/issues/549) [#551](https://github.com/dialpad/dialtone/issues/551) [#553](https://github.com/dialpad/dialtone/issues/553) [#571](https://github.com/dialpad/dialtone/issues/571) [#573](https://github.com/dialpad/dialtone/issues/573) [#574](https://github.com/dialpad/dialtone/issues/574) [#576](https://github.com/dialpad/dialtone/issues/576) [#577](https://github.com/dialpad/dialtone/issues/577) [#578](https://github.com/dialpad/dialtone/issues/578) [#581](https://github.com/dialpad/dialtone/issues/581) [#580](https://github.com/dialpad/dialtone/issues/580) [#585](https://github.com/dialpad/dialtone/issues/585) [#586](https://github.com/dialpad/dialtone/issues/586)
+* **icon:** add thread reply icon ([#583](https://github.com/dialpad/dialtone/issues/583)) ([088f8bf](https://github.com/dialpad/dialtone/commit/088f8bfb0dd5e672c89efba2ededc630f1def9d0))
+* **icons:** add fire and snooze icons ([#589](https://github.com/dialpad/dialtone/issues/589)) ([91a38ec](https://github.com/dialpad/dialtone/commit/91a38ec77af6944393454d0e68ec1d3e856eeab5))
+
 ## [6.25.1](https://github.com/dialpad/dialtone/compare/v6.25.0...v6.25.1) (2022-05-09)
 
 
