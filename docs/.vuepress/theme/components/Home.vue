@@ -9,9 +9,9 @@
             <img alt="Dialtone CSS version number"
                  src="https://img.shields.io/github/package-json/v/dialpad/dialtone?color=A687FF&label=CSS">
           </a>
-          <a class="d-td-unset" href="https://github.com/dialpad/dialtone-vue">
+          <a class="d-td-unset d-ml4" href="https://github.com/dialpad/dialtone-vue">
             <img id="dialtone-vue-badge" alt="Dialtone Vue version number"
-                 src="https://img.shields.io/badge/Vue-v0.0.0-A687FF">
+                 :src="'https://img.shields.io/badge/Vue-v' + version + '-A687FF'">
           </a>
         </div>
         <router-link class="d-btn d-btn--primary d-btn--lg" to="/getting-started/installation.html">Get Started</router-link>
@@ -49,17 +49,16 @@
   </section>
 </template>
 
-<!-- @TODO: Get vue version in badge -->
-<script>
-export default {
-  name: 'HomePage',
-  setup() {
-    const lede = "Documented styles, utility classes, and components to help you quickly design and build unified experiences across Dialpad and Dialpad Meetings.";
-    const headline = "Improve your UI's reception with Dialtone";
-    return {
-      lede,
-      headline
-    }
-  }
-}
+<script setup>
+import {onBeforeMount, ref} from "vue";
+  import axios from "axios";
+
+  const lede = "Documented styles, utility classes, and components to help you quickly design and build unified experiences across Dialpad and Dialpad Meetings.";
+  const headline = "Improve your UI's reception with Dialtone";
+  const version = ref('0.0.0')
+
+  onBeforeMount(async () => {
+    const response = await axios.get('https://vue.dialpad.design/version.txt');
+    version.value = response.data;
+  })
 </script>
