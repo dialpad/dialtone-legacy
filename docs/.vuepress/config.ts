@@ -1,5 +1,6 @@
 import { defineUserConfig } from 'vuepress';
 import { resolve } from 'path';
+
 const sidebar = require('../_data/site-nav.json');
 const { dialtoneTheme } = require('./theme');
 const baseURL = (process.env.VUEPRESS_BASE_URL ?? "/") as `/${string}/`;
@@ -16,9 +17,12 @@ const themeConfig = {
   sidebar,
   editLink: false,
   darkMode: false,
-  // contributors: false,
-  // lastUpdated: false,
+  contributors: false,
 };
+
+const isDevelopment = (process.env.NODE_ENV === 'development');
+const dialtoneCSS = isDevelopment ? 'dialtone.css' : 'dialtone.min.css';
+const dialtoneDocsCSS = isDevelopment ? 'dialtone-docs.css' : 'dialtone-docs.min.css';
 
 export default defineUserConfig({
   // site config
@@ -26,6 +30,8 @@ export default defineUserConfig({
   title: 'Dialtone',
 
   base: baseURL,
+
+  port: 4000,
 
   // theme and its config
   theme: dialtoneTheme(themeConfig),
@@ -72,5 +78,7 @@ export default defineUserConfig({
     '@svgIcons': resolve(__dirname, '../../lib/dist/vue/icons/'), // Needed to easily import svg
     '@theme': resolve(__dirname, './theme'),
     '@exampleComponents': resolve(__dirname, './exampleComponents'),
+    '@dialtoneCSS': resolve(__dirname, '../assets/css/' + dialtoneCSS),
+    '@dialtoneDocsCSS': resolve(__dirname, '../assets/css/' + dialtoneDocsCSS)
   },
 })
