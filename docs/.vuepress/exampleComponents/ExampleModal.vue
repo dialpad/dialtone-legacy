@@ -30,11 +30,12 @@
     >
       <h2 class="d-modal__header">Example title</h2>
       <div class="d-modal__content">
-        <p id="modal-description">Sed at orci quis nunc finibus gravida eget vitae est. Praesent
-          ac laoreet mi. Cras porttitor mauris ex. Integer convallis tellus a ex egestas, id laoreet elit mollis. Mauris
-          ut elementum velit. Nam vel consectetur turpis. Aenean consequat purus non nunc tincidunt rutrum. In semper
-          pretium dui vel tempus. Proin et mi id mi egestas iaculis. Sed lacinia libero non molestie consequat. Sed
-          efficitur purus eget lacus viverra volutpat. Nam luctus ac eros eu iaculis. Fusce non condimentum lorem.</p>
+        <p id="modal-description">
+          {{ this.modalDescription }}
+          <template v-if="isFixed">
+            {{ this.modalDescription.repeat(3) }}
+          </template>
+        </p>
         <p class="d-mt16">
           <a href="#" class="d-link" @click.prevent="openModalBanner">Show me a modal banner</a>
         </p>
@@ -94,6 +95,11 @@ export default {
       showModalBanner: false,
       animateIn: false,
       animateOut: false,
+      modalDescription: `Sed at orci quis nunc finibus gravida eget vitae est. Praesent
+          ac laoreet mi. Cras porttitor mauris ex. Integer convallis tellus a ex egestas, id laoreet elit mollis. Mauris
+          ut elementum velit. Nam vel consectetur turpis. Aenean consequat purus non nunc tincidunt rutrum. In semper
+          pretium dui vel tempus. Proin et mi id mi egestas iaculis. Sed lacinia libero non molestie consequat. Sed
+          efficitur purus eget lacus viverra volutpat. Nam luctus ac eros eu iaculis. Fusce non condimentum lorem.`,
     }
   },
   computed: {
