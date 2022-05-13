@@ -119,6 +119,8 @@ export default {
       this.animateIn = true;
 
       this.showModal = true;
+
+      document.body.classList.add('d-of-hidden');
     },
     openModalBanner() {
       this.showModalBanner = true;
@@ -129,6 +131,8 @@ export default {
 
       this.showModal = false;
       this.showModalBanner = false;
+
+      document.body.classList.remove('d-of-hidden');
     }
   }
 }
