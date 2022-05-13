@@ -219,13 +219,15 @@
     padding: calc(var(--su8) + var(--su1));
     transition-duration: 150ms;
 
-    &:hover,
-    &:active {
+    &:hover {
         --button--fc: var(--muted-color-hover);
         --button--bgc: hsla(var(--black-800-hsl) ~' / ' 3%);
     }
 
-    &:active {
+    &:active,
+    &.d-btn--active,
+    &.d-btn--active:active {
+        --button--fc: var(--muted-color-hover);
         --button--bgc: hsla(var(--black-800-hsl) ~' / ' 9%);
     }
 
@@ -301,14 +303,16 @@
 .d-btn--muted {
     --button--fc: var(--muted-color);
 
-    &:hover,
-    &:active {
-      --button--fc: var(--muted-color-hover);
-      --button--bgc: hsla(var(--black-800-hsl) ~' / ' 3%);
+    &:hover {
+        --button--fc: var(--muted-color-hover);
+        --button--bgc: hsla(var(--black-800-hsl) ~' / ' 3%);
     }
 
-    &:active {
-      --button--bgc: hsla(var(--black-800-hsl) ~' / ' 9%);
+    &:active,
+    &.d-btn--active,
+    &.d-btn--active:active {
+        --button--fc: var(--muted-color-hover);
+        --button--bgc: hsla(var(--black-800-hsl) ~' / ' 9%);
     }
 
     &:focus-visible {

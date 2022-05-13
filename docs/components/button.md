@@ -155,6 +155,11 @@ Different button styles and variations appear different when active.
         <span class="d-btn__label">Place call</span>
       </button>
     </div>
+    <div>
+      <button class="d-btn d-btn--muted d-btn--active" type="button">
+        <span class="d-btn__label">Place call</span>
+      </button>
+    </div>
   </div>
 </code-well-header>
 
