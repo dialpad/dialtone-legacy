@@ -31,9 +31,9 @@
       <h2 class="d-modal__header">Example title</h2>
       <div class="d-modal__content">
         <p id="modal-description">
-          {{ this.modalDescription }}
+          {{ modalDescription }}
           <template v-if="isFixed">
-            {{ this.modalDescription.repeat(3) }}
+            {{ modalDescription.repeat(3) }}
           </template>
         </p>
         <p class="d-mt16">
