@@ -1,3 +1,17 @@
+# [6.27.0](https://github.com/dialpad/dialtone/compare/v6.26.0...v6.27.0) (2022-05-16)
+
+
+### Bug Fixes
+
+* circle button hover and active colors ([#592](https://github.com/dialpad/dialtone/issues/592)) ([2ab2918](https://github.com/dialpad/dialtone/commit/2ab291882d804f7c659ae6b1f336306fe65eca4b))
+* missing css file, change port and disable contributors ([#590](https://github.com/dialpad/dialtone/issues/590)) ([3474924](https://github.com/dialpad/dialtone/commit/3474924d256af59cf80bb6b92f5fb9871171fe61))
+* missing vue version ([#591](https://github.com/dialpad/dialtone/issues/591)) ([a39e540](https://github.com/dialpad/dialtone/commit/a39e54073ab860f57a0c292cd0831f82f043aa77))
+
+
+### Features
+
+* **modal:** add dialog scrollable class ([#593](https://github.com/dialpad/dialtone/issues/593)) ([9a1b26d](https://github.com/dialpad/dialtone/commit/9a1b26d4f64cbdeb245e122b9a5eb28840bea767))
+
 # [6.26.0](https://github.com/dialpad/dialtone/compare/v6.25.1...v6.26.0) (2022-05-12)
 
 
