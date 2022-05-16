@@ -24,7 +24,7 @@
       :class="{
         'd-modal__dialog--animate-in': animateIn,
         'd-modal__dialog--animate-out': animateOut,
-        'd-modal__dialog--scrollable': isFixed
+        'd-modal__dialog--scrollable d-hmx764': isFixed
       }"
       role="document"
     >
@@ -110,7 +110,7 @@ export default {
       return this.kind === 'danger';
     },
     isFixed() {
-      return this.kind === 'fixed'
+      return this.kind === 'fixed';
     }
   },
   methods: {
