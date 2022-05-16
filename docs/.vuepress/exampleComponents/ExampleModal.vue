@@ -23,19 +23,23 @@
       class="d-modal__dialog"
       :class="{
         'd-modal__dialog--animate-in': animateIn,
-        'd-modal__dialog--animate-out': animateOut
+        'd-modal__dialog--animate-out': animateOut,
+        'd-modal__dialog--scrollable d-hmx764': isFixed
       }"
       role="document"
     >
       <h2 class="d-modal__header">Example title</h2>
-      <p class="d-modal__content" id="modal-description">Sed at orci quis nunc finibus gravida eget vitae est. Praesent
-        ac laoreet mi. Cras porttitor mauris ex. Integer convallis tellus a ex egestas, id laoreet elit mollis. Mauris
-        ut elementum velit. Nam vel consectetur turpis. Aenean consequat purus non nunc tincidunt rutrum. In semper
-        pretium dui vel tempus. Proin et mi id mi egestas iaculis. Sed lacinia libero non molestie consequat. Sed
-        efficitur purus eget lacus viverra volutpat. Nam luctus ac eros eu iaculis. Fusce non condimentum lorem.</p>
-      <p class="d-modal__content">
-        <a href="#" class="d-link" @click.prevent="openModalBanner">Show me a modal banner</a>
-      </p>
+      <div class="d-modal__content">
+        <p id="modal-description">
+          {{ modalDescription }}
+          <template v-if="isFixed">
+            {{ modalDescription.repeat(3) }}
+          </template>
+        </p>
+        <p class="d-mt16">
+          <a href="#" class="d-link" @click.prevent="openModalBanner">Show me a modal banner</a>
+        </p>
+      </div>
       <footer class="d-modal__footer">
         <button
           class="d-btn d-btn--primary"
@@ -68,7 +72,7 @@
 </template>
 
 <script>
-const MODAL_KINDS = ['full-screen', 'danger', 'base'];
+const MODAL_KINDS = ['full-screen', 'danger', 'fixed', 'base'];
 import IconClose from '@svgIcons/IconClose.vue';
 
 export default {
@@ -91,6 +95,11 @@ export default {
       showModalBanner: false,
       animateIn: false,
       animateOut: false,
+      modalDescription: `Sed at orci quis nunc finibus gravida eget vitae est. Praesent
+          ac laoreet mi. Cras porttitor mauris ex. Integer convallis tellus a ex egestas, id laoreet elit mollis. Mauris
+          ut elementum velit. Nam vel consectetur turpis. Aenean consequat purus non nunc tincidunt rutrum. In semper
+          pretium dui vel tempus. Proin et mi id mi egestas iaculis. Sed lacinia libero non molestie consequat. Sed
+          efficitur purus eget lacus viverra volutpat. Nam luctus ac eros eu iaculis. Fusce non condimentum lorem.`,
     }
   },
   computed: {
@@ -99,6 +108,9 @@ export default {
     },
     isDanger() {
       return this.kind === 'danger';
+    },
+    isFixed() {
+      return this.kind === 'fixed';
     }
   },
   methods: {
@@ -107,6 +119,8 @@ export default {
       this.animateIn = true;
 
       this.showModal = true;
+
+      document.body.classList.add('d-of-hidden');
     },
     openModalBanner() {
       this.showModalBanner = true;
@@ -117,6 +131,8 @@ export default {
 
       this.showModal = false;
       this.showModalBanner = false;
+
+      document.body.classList.remove('d-of-hidden');
     }
   }
 }
