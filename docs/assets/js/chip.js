@@ -5,7 +5,6 @@ $(document).ready(function() {
     $(chip).on('mousedown', function(e) {
         const target = $(e.target);
         if (!target.parents().is(chipBtn)) {
-            console.log('in');
             chip.addClass('d-chip--active');
         }
     });
