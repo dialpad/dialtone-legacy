@@ -8,7 +8,6 @@
         [`d-chip--${size}`]: size
       }"
       tabindex="0"
-      ref="chip"
       @mousedown="setActive"
       @mouseup="setActive"
   >
@@ -25,7 +24,7 @@
         class="d-btn d-btn--circle"
         type="button"
     >
-      <span class="d-btn__icon"><icon-close/></span>
+      <span class="d-btn__icon" ref="closeBtn"><icon-close/></span>
     </button>
   </span>
 </template>
@@ -34,7 +33,7 @@
 import {ref} from 'vue';
 
 const isActive = ref(false);
-const chip = ref(null);
+const closeBtn = ref(null);
 
 const props = defineProps({
   label: { type: String },
@@ -47,9 +46,8 @@ const props = defineProps({
 })
 
 function setActive(event) {
-  if(event.target.parentNode !== chip.value) return;
+  if(!props.interactive || event.target === closeBtn.value || event.target.parentNode === closeBtn.value) return;
   isActive.value = event.type === 'mousedown';
-
 }
 
 </script>
