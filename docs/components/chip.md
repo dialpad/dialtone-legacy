@@ -73,12 +73,7 @@ The base chip should be the go-to chip for most of your needs.
 No `.d-chip--interactive` class.
 
 <code-well-header>
-  <span class="d-chip" tabindex="0">
-    <span>Chip</span>
-    <button class="d-btn d-btn--circle js-chip-button" aria-label="close" type="button">
-      <span class="d-btn__icon"><icon-close /></span>
-    </button>
-  </span>
+  <example-chip label="Chip" :interactive="false"/>  
 </code-well-header>
 
 ```html
@@ -92,12 +87,7 @@ No `.d-chip--interactive` class.
 `.d-truncate` is added to text content by default.
 
 <code-well-header>
-  <span class="d-chip d-chip--interactive d-w102" tabindex="0">
-    <span class="d-truncate">Chip loooooong name</span>
-    <button class="d-btn d-btn--circle js-chip-button" aria-label="close" type="button">
-      <span class="d-btn__icon"><icon-close /></span>
-    </button>
-  </span>
+  <example-chip label="Chip loooooong name" truncate/>
 </code-well-header>
 
 ```html
@@ -109,33 +99,9 @@ No `.d-chip--interactive` class.
 
 ### Sizes
 <code-well-header>
-  <span class="d-chip d-chip--xs d-mb4 d-chip--interactive" tabindex="0">
-    <span class="d-chip__icon">
-      <icon-phone />
-    </span>
-    Chip
-    <button class="d-btn d-btn--circle js-chip-button" aria-label="close" type="button">
-      <span class="d-btn__icon"><icon-close /></span>
-    </button>
-  </span>
-  <span class="d-chip d-chip--sm d-mb4 d-chip--interactive" tabindex="0">
-    <span class="d-avatar">
-      <img src="/assets/images/person.png" alt="" />
-    </span>
-    <span>Chip</span>
-    <button class="d-btn d-btn--circle js-chip-button" aria-label="close" type="button">
-      <span class="d-btn__icon"><icon-close /></span>
-    </button>
-  </span>
-  <span class="d-chip d-chip--interactive" tabindex="0">
-    <span class="d-chip__icon">
-      <icon-phone />
-    </span>
-    <span>Chip</span>
-    <button class="d-btn d-btn--circle js-chip-button" aria-label="close" type="button">
-      <span class="d-btn__icon"><icon-close /></span>
-    </button>
-  </span>
+  <example-chip label="Chip" with-icon size="xs"/>
+  <example-chip label="Chip" with-avatar size="sm"/>
+  <example-chip label="Chip" with-icon/>
 </code-well-header>
 
 ```html
