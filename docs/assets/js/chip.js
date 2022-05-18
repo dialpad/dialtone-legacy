@@ -1,9 +1,15 @@
 $(document).ready(function() {
-    var closeButton = $('.js-chip-button');
+    var chip = $('.js-chip');
+    var chipBtn = $('.js-chip-button');
 
-    $(closeButton).on('click', function(e) {
-        console.log('clicked');
-        e.stopPropagation();
-        e.preventDefault();
+    $(chip).on('mousedown', function(e) {
+        const target = $(e.target);
+        if (!target.parents().is(chipBtn)) {
+            chip.addClass('d-chip--active');
+        }
+    });
+
+    $(document).on('mouseup', function(e) {
+        chip.removeClass('d-chip--active');
     });
 });

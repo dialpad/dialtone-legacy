@@ -33,21 +33,9 @@
   border-radius: var(--chip--br);
 
   .d-btn {
+    .d-btn--muted();
+
     padding: var(--su2);
-    color: var(--black-900);
-
-    &:hover {
-      --button--bgc: hsla(var(--black-900-hsl) ~' / ' 3%);
-    }
-
-    &:active {
-      --button--bgc: var(--black-100);
-    }
-
-    &:focus-visible {
-      outline: none;
-      box-shadow: var(--bs-focus-ring-muted);
-    }
   }
 
   .d-svg {
@@ -61,6 +49,10 @@
   line-height: 0;
 }
 
+.d-chip--active {
+  background-color: var(--black-100);
+}
+
 //  ============================================================================
 //  $   INTERACTIVITY
 //  ----------------------------------------------------------------------------
@@ -71,10 +63,6 @@
 
   &:hover {
     --chip--bgc: var(--black-075);
-  }
-
-  &:active {
-    --chip--bgc: var(--black-100);
   }
 
   &:focus-visible {
