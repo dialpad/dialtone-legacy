@@ -33,22 +33,23 @@
   border-radius: var(--chip--br);
 
   .d-btn {
-    .d-btn--muted();
-
     margin-top: var(--sun2);
     margin-right: var(--sun6);
     margin-bottom: var(--sun2);
     padding: var(--su0);
     border-width: var(--su0);
 
+    &:hover {
+      --button--bgc: hsla(var(--black-800-hsl) ~' / ' 15%);
+    }
+
+    &:active {
+      --button--bgc: hsla(var(--black-800-hsl) ~' / ' 25%);
+    }
+
     .d-btn__icon {
       // To make the hover area 24 X 24 px
       padding: calc(var(--su2) + var(--su1));
-
-      .d-svg {
-        width: @icon18;
-        height: @icon18;
-      }
     }
   }
 
@@ -58,9 +59,10 @@
     margin: var(--sun2) var(--su4) var(--sun2) var(--sun6);
   }
 
-  .d-svg {
-    width: @icon20;
-    height: @icon20;
+  .d-svg,
+  .d-btn .d-btn__icon .d-svg {
+    width: @icon18;
+    height: @icon18;
   }
 }
 
@@ -100,14 +102,10 @@
   padding: var(--su2) var(--su6);
   font-size: var(--fs12);
 
-  .d-btn .d-btn__icon .d-svg {
+  .d-btn .d-btn__icon .d-svg,
+  .d-svg {
     width: @icon14;
     height: @icon14;
-  }
-
-  .d-svg {
-    width: var(--su16);
-    height: var(--su16);
   }
 
   .d-avatar {
@@ -124,14 +122,10 @@
   padding: var(--su2) var(--su8);
   font-size: var(--fs16);
 
-  .d-btn .d-btn__icon .d-svg {
-    width: var(--su16);
-    height: var(--su16);
-  }
-
+  .d-btn .d-btn__icon .d-svg,
   .d-svg {
-    width: @icon18;
-    height: @icon18;
+    width: @icon16;
+    height: @icon16;
   }
 
   .d-avatar {
