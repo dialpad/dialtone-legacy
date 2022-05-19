@@ -16,7 +16,7 @@ The base chip should be the go-to chip for most of your needs.
 </code-well-header>
 
 ```html
-<span class="d-chip d-chip--interactive">
+<span class="d-chip d-chip--interactive" tabindex="0">
   <span>...</span>
   <button class="d-btn d-btn--circle" aria-label="close" type="button" >...</button>
 </span>
@@ -28,7 +28,7 @@ The base chip should be the go-to chip for most of your needs.
 </code-well-header>
 
 ```html
-<span class="d-chip">...</span>
+<span class="d-chip d-chip--interactive" tabindex="0">...</span>
 ```
 
 ### With icon
@@ -37,7 +37,7 @@ The base chip should be the go-to chip for most of your needs.
 </code-well-header>
 
 ```html
-<span class="d-chip d-chip--interactive">
+<span class="d-chip d-chip--interactive" tabindex="0">
   <span class="d-chip__icon">...</span>
   <span>...</span>
 </span>
@@ -49,7 +49,7 @@ The base chip should be the go-to chip for most of your needs.
 </code-well-header>
 
 ```html
-<span class="d-chip d-chip--interactive">
+<span class="d-chip d-chip--interactive" tabindex="0">
   <span class="d-chip__icon">...</span>
   <span>...</span>
   <button class="d-btn d-btn--circle" type="button">...</button>
@@ -62,7 +62,7 @@ The base chip should be the go-to chip for most of your needs.
 </code-well-header>
 
 ```html
-<span class="d-chip d-chip--interactive">
+<span class="d-chip d-chip--interactive" tabindex="0">
   <span class="d-avatar">...</span>
   <span>...</span>
   <button class="d-btn d-btn--circle" type="button">...</button>
@@ -77,7 +77,7 @@ No `.d-chip--interactive` class.
 </code-well-header>
 
 ```html
-<span class="d-chip" tabindex="0">
+<span class="d-chip" tabindex="-1">
   <span>...</span>
   <button class="d-btn d-btn--circle" type="button">...</button>
 </span>
@@ -91,7 +91,7 @@ No `.d-chip--interactive` class.
 </code-well-header>
 
 ```html
-<span class="d-chip d-w102" tabindex="0">
+<span class="d-chip d-chip--interactive d-w102" tabindex="0">
   <span class="d-truncate">...</span>
   <button class="d-btn d-btn--circle" type="button">...</button>
 </span>
@@ -105,9 +105,9 @@ No `.d-chip--interactive` class.
 </code-well-header>
 
 ```html
-<span class="d-chip d-chip--xs d-chip--interactive">...</span>
-<span class="d-chip d-chip--sm d-chip--interactive">...</span>
-<span class="d-chip d-chip--interactive">...</span>
+<span class="d-chip d-chip--xs d-chip--interactive" tabindex="0">...</span>
+<span class="d-chip d-chip--sm d-chip--interactive" tabindex="0">...</span>
+<span class="d-chip d-chip--interactive" tabindex="0">...</span>
 ```
 
 <script setup>
