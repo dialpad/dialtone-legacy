@@ -341,6 +341,10 @@ module.exports = {
               title: "Pointer Events",
               url: `${Site.baseurl}utilities/interactivity/pointer-events/`,
             },
+            {
+              title: "Resize",
+              url: `${Site.baseurl}utilities/interactivity/resize/`,
+            },
           ],
         },
         {
