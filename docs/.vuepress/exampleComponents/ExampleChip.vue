@@ -7,9 +7,10 @@
         'd-chip--active': isActive,
         [`d-chip--${size}`]: size
       }"
-      tabindex="0"
+      :tabindex="interactive ? 0 : -1"
       @mousedown="setActive"
       @mouseup="setActive"
+      @mouseleave="isActive = false"
   >
     <span v-if="withAvatar" class="d-avatar">
       <img src="/assets/images/person.png" alt="" />
@@ -46,7 +47,7 @@ const props = defineProps({
 })
 
 function setActive(event) {
-  if(!props.interactive || event.target === closeBtn.value || event.target.parentNode === closeBtn.value) return;
+  if(!props.interactive || closeBtn.value.parentNode.contains(event.target)) return;
   isActive.value = event.type === 'mousedown';
 }
 
