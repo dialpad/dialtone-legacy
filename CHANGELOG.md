@@ -1,3 +1,10 @@
+## [6.27.1](https://github.com/dialpad/dialtone/compare/v6.27.0...v6.27.1) (2022-05-19)
+
+
+### Bug Fixes
+
+* **modal:** focus ring being cut off in fixed header and footer ([#596](https://github.com/dialpad/dialtone/issues/596)) ([49467aa](https://github.com/dialpad/dialtone/commit/49467aaad1560de7c49f221e721846f52eae6dc3))
+
 # [6.27.0](https://github.com/dialpad/dialtone/compare/v6.26.0...v6.27.0) (2022-05-16)
 
 
