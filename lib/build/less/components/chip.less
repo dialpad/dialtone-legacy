@@ -20,6 +20,7 @@
   --chip--bgc: var(--black-050);
   --chip--br: var(--su102);
 
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -32,24 +33,33 @@
   background-color: var(--chip--bgc);
   border-radius: var(--chip--br);
 
-  .d-btn {
-    margin-top: var(--sun2);
-    margin-right: var(--sun6);
-    margin-bottom: var(--sun2);
-    padding: var(--su0);
-    border-width: var(--su0);
+  .d-chip-btn-holder {
+    width: calc(var(--su16) + var(--su2));
+    height: calc(var(--su16) + var(--su2));
+  }
+
+  .d-chip-btn-container {
+    position: absolute;
+    top: var(--su0);
+    right: var(--su1);
+    padding: var(--su2) var(--su1);
+    cursor: pointer;
+
+    .d-btn {
+      padding: calc(var(--su2) + var(--su1));
+      border-width: var(--su0);
+    }
 
     &:hover {
-      --button--bgc: hsla(var(--black-800-hsl) ~' / ' 15%);
+      .d-btn {
+        --button--bgc: hsla(var(--black-800-hsl) ~' / ' 15%);
+      }
     }
 
     &:active {
-      --button--bgc: hsla(var(--black-800-hsl) ~' / ' 25%);
-    }
-
-    .d-btn__icon {
-      // To make the hover area 24 X 24 px
-      padding: calc(var(--su2) + var(--su1));
+      .d-btn {
+        --button--bgc: hsla(var(--black-800-hsl) ~' / ' 25%);
+      }
     }
   }
 
@@ -63,6 +73,10 @@
   .d-btn .d-btn__icon .d-svg {
     width: @icon18;
     height: @icon18;
+  }
+
+  .d-truncate {
+    margin-right: var(--su4);
   }
 }
 
@@ -108,6 +122,21 @@
     height: @icon14;
   }
 
+  .d-chip-btn-holder {
+    width: var(--su12);
+    height: var(--su12);
+  }
+
+  .d-chip-btn-container {
+    top: calc(var(--sun1) + var(--sun2));
+    right: var(--sun2);
+    padding: var(--su4);
+
+    .d-btn {
+      padding: var(--su1);
+    }
+  }
+
   .d-avatar {
     --avatar--size: var(--su16);
 
@@ -126,6 +155,21 @@
   .d-svg {
     width: @icon16;
     height: @icon16;
+  }
+
+  .d-chip-btn-holder {
+    width: calc(var(--su12) + var(--su2));
+    height: calc(var(--su12) + var(--su2));
+  }
+
+  .d-chip-btn-container {
+    top: var(--sun1);
+    right: var(--su0);
+    padding: var(--su2);
+
+    .d-btn {
+      padding: var(--su2);
+    }
   }
 
   .d-avatar {

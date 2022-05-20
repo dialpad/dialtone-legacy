@@ -19,14 +19,17 @@
       <icon-phone />
     </span>
     <span :class="{'d-truncate': truncate}">{{ label }}</span>
-    <button
-        v-if="!hideCloseBtn"
-        aria-label="close"
-        class="d-btn d-btn--circle"
-        type="button"
-    >
-      <span class="d-btn__icon" ref="closeBtn"><icon-close/></span>
-    </button>
+    <span v-if="!hideCloseBtn" class="d-chip-btn-holder"></span>
+    <span class="d-chip-btn-container">
+      <button
+          v-if="!hideCloseBtn"
+          aria-label="close"
+          class="d-btn d-btn--circle"
+          type="button"
+      >
+        <span class="d-btn__icon" ref="closeBtn"><icon-close/></span>
+      </button>
+    </span>
   </span>
 </template>
 
