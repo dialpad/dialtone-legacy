@@ -11,6 +11,7 @@
       @mousedown="setActive"
       @mouseup="setActive"
       @mouseleave="isActive = false"
+      @focusout="isActive = false"
   >
     <span v-if="withAvatar" class="d-avatar">
       <img src="/assets/images/person.png" alt="" />
