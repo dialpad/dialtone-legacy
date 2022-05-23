@@ -3,15 +3,11 @@ title: Badge
 desc: A badge is a compact UI element that provides brief, descriptive information about an element. It is terse, ideally one word.
 storybook_url: https://vue.dialpad.design/?path=/story/components-badge--default
 ---
-## Classes
-<component-class-table component-name="badge"></component-class-table>
-
 ## Examples
-
 <code-well-header>
-    <div>
-        <span v-for="i in classes" class="d-badge d-mr8 d-mb8" :class="i.class">Badge</span>
-    </div>
+  <div>
+    <span v-for="i in classes" class="d-badge d-mr8 d-mb8" :class="i.class">Badge</span>
+  </div>
 </code-well-header>
 
 ```html
@@ -32,6 +28,10 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-badge--default
 <span class="d-badge d-badge--yellow-300">...</span>
 ```
 
+## Classes
+<component-class-table component-name="badge"></component-class-table>
+
 <script setup>
     import { classes } from '@data/badge.json';
 </script>
+

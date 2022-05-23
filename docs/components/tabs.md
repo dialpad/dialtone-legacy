@@ -3,11 +3,6 @@ title: Tabs
 desc: Tabs allow users to navigation between grouped content in different views while within the same page context.
 storybook_url: https://vue.dialpad.design/?path=/story/components-tabs--default
 ---
-
-## Classes
-<component-class-table component-name="tabs" />
-
-
 ## Examples
 ### Base Styles
 <code-well-header bgclass="d-bgc-white">
@@ -89,6 +84,9 @@ Add `d-tablist--inverted` when you want to display tabs on a darker background.
 ```html
 <div class="d-tablist d-tablist--inverted">…</div>
 ```
+
+## Classes
+<component-class-table component-name="tabs" />
 
 ## Accessibility
 To create accessible tabs, be sure to implement the <a href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-2/tabs.html" target="_blank">proper keyboard navigation</a> and utilize the following ARIA roles to properly declare element roles, content relationships, and current status:

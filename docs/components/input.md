@@ -3,10 +3,6 @@ title: Input
 desc: An input field is an input control that allows users to enter alphanumeric information. It can have a range of options and supports single line and multi-line lengths, as well as varying formats, including numbers, masked passwords, etc.
 storybook_url: https://vue.dialpad.design/?path=/story/components-input--default
 ---
-
-## Classes
-<component-class-table component-name="input"></component-class-table>
-
 ## Examples
 ### Base Styles
 An input is normally paired with a label, but there are times when it can be used without a label.  Placeholder text should primarily be used as a content prompt and only provided when needed.
@@ -402,6 +398,9 @@ You may use different icon sizes in different sized inputs
   <textarea class="d-textarea d-input-icon--left d-textarea--lg" id="Dialtone--TextareaExample--IconLeft-lg-md" type="text" placeholder="Placeholder"></textarea>
 </div>
 ```
+
+## Classes
+<component-class-table component-name="input"></component-class-table>
 
 ## Accessibility
 - Make sure the `label` `for` attribute match the input `id`.

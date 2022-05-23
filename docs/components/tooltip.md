@@ -3,10 +3,6 @@ title: Tooltip
 desc: A tooltip is a floating label that briefly explains an action, function, or an element. Its content is exclusively text and shouldn't be vital information for users. If richer media is desired, consider using a popover instead.
 storybook_url: https://vue.dialpad.design/?path=/story/components-tooltip--default
 ---
-
-## Classes
-<component-class-table component-name="tooltip" />
-
 ## Examples
 ### Base Styles
 <code-well-header bgclass="d-bgc-black-050" class='d-hmn264'>
@@ -64,6 +60,9 @@ No arrow direction is assigned by default. You must select a direction. Twelve d
     </div>
   </div>
 </code-well-header>
+
+## Classes
+<component-class-table component-name="tooltip" />
 
 ## Accessibility
 <component-accessible-table component-name="tooltip" />

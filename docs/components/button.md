@@ -3,9 +3,6 @@ title: Button
 desc: A button is a UI element which allows users to take an action throughout the app. It is important a button is identifiable, consistent, and communicates its actions clearly, and is appropriately sized to its action.
 storybook_url: https://vue.dialpad.design/?path=/story/components-button--default
 ---
-## Classes
-<component-class-table component-name="button"></component-class-table>
-
 ## Examples
 Dialtone provides four button styles:
 1. <a href="#default" class="d-link">**Base:**</a> Our default (purple) button colors.
@@ -40,6 +37,7 @@ The base button should be the go-to button for most of your needs. When in doubt
 <button class="d-btn d-btn--outlined" type="button"><span class="d-btn__label">...</span></button>
 <button class="d-btn" type="button"><span class="d-btn__label">...</span></button>
 ```
+
 ### Danger
 The danger button style is used to communicate destructive actions such as deleting content, accounts, or canceling services.
 
@@ -388,6 +386,9 @@ The base button font size is 16px and should be used in most cases. Every button
 <button class="d-btn d-btn--primary d-btn--lg" type="button"><span class="d-btn__label">...</span></button>
 <button class="d-btn d-btn--primary d-btn--xl" type="button"><span class="d-btn__label">...</span></button>
 ```
+
+## Classes
+<component-class-table component-name="button"></component-class-table>
 
 ## Accessibility
 

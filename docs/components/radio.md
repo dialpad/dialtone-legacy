@@ -3,10 +3,6 @@ title: Radio
 desc: A radio is an input control that allows users to select only one option from a number of choices.
 storybook_url: https://vue.dialpad.design/?path=/story/components-radio--default
 ---
-
-## Classes
-<component-class-table component-name="radio" />
-
 ## Examples
 ### Base Styles
 <code-well-header>
@@ -293,6 +289,9 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-radio--default
   </div>
 </fieldset>
 ```
+
+## Classes
+<component-class-table component-name="radio" />
 
 ## Accessibility
 The best accessibility is semantic HTML. Most screen readers understand how to parse inputs if they’re correctly formatted. When it comes to radio input, there are a few things to keep in mind:

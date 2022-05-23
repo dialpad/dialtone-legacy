@@ -3,8 +3,7 @@ title: Banner
 desc: A banner is a type of <a class="d-link" href="components/notice">notice</a>, delivering system and engagement messaging. It is highly intrusive and should be used sparingly and appropriately.
 storybook_url: https://vue.dialpad.design/?path=/story/components-banner--default
 ---
-
-## Overview
+## Usage
 
 System banners are used for **system** messaging. They are full-width notices placed in one of two locations:
 
@@ -12,8 +11,6 @@ System banners are used for **system** messaging. They are full-width notices pl
 2. **Below the top bar:** This is the default location for system banners. Use these when it affects only a particular area of the product (e.g. when the user is in Do Not Disturb mode).
 
 Banners are a type of notice and so you can use the following <a class="d-link" href="components/notice/">notice styles</a> in conjunction with `.d-banner`.
-## Classes
-<component-class-table component-name="banner"></component-class-table>
 
 ## Examples
 <example-banner />
@@ -41,6 +38,9 @@ Banners are a type of notice and so you can use the following <a class="d-link" 
 <aside class="d-banner d-banner--success" role="alert" aria-hidden="false">…</aside>
 <aside class="d-banner d-banner--warning" role="alert" aria-hidden="false">…</aside>
 ```
+
+## Classes
+<component-class-table component-name="banner"></component-class-table>
 
 ## Accessibility
 <component-accessible-table component-name="banner"></component-accessible-table>

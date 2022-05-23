@@ -3,10 +3,6 @@ title: Link
 desc: A link is a navigational element that can be found on its own, within other text, or directly following content.
 storybook_url: https://vue.dialpad.design/?path=/story/components-link--default
 ---
-
-## Classes
-<component-class-table component-name="link"></component-class-table>
-
 ## Examples
 <code-well-header>
   <a href="#" class="d-link">Base link</a>
@@ -31,3 +27,6 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-link--default
 ```html
 <a href="#" class="d-link d-link--inverted">...</a>
 ```
+
+## Classes
+<component-class-table component-name="link"></component-class-table>

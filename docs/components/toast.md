@@ -3,10 +3,6 @@ title: Toast
 desc: A toast notice, sometimes called a snackbar, is a time-based message that appears based on users' actions. It contains at-a-glance information about outcomes and can be paired with actions.
 storybook_url: https://vue.dialpad.design/?path=/story/components-toast--default
 ---
-
-## Classes
-<component-class-table component-name="toast" />
-
 ## Examples
 <example-toast />
 
@@ -28,6 +24,9 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-toast--default
   </div>
 </aside>
 ```
+
+## Classes
+<component-class-table component-name="toast" />
 
 ## Accessibility
 Avoid using toast for critical information since toast disappears automatically and make sure

@@ -2,13 +2,8 @@
 title: Table
 desc: A table is a pattern for organizing data sets. While data visualization helps quickly summarize a data set, a table allows users to compare and analyze individual data rows.
 ---
-
-## Classes
-<component-class-table component-name="table" />
-
 ## Examples
 ### Base Style
-
 <code-well-header bgclass="d-bgc-white">
   <table class="d-table d-d-unset">
     <caption class="d-table__caption">Office List</caption>
@@ -188,6 +183,9 @@ Used when you want to display a data table on a darker background.
   </tbody>
 </table>
 ```
+
+## Classes
+<component-class-table component-name="table" />
 
 ## Accessibility
 Use the `caption` element to describe a table in the same way you would use a heading. A caption helps users find, navigate and understand tables.

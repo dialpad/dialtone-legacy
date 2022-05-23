@@ -6,11 +6,6 @@ prev:
   text: Utilities - Word break
   link: /utilities/typography/word-break
 ---
-
-## Classes
-
-<component-class-table component-name="avatar"></component-class-table>
-
 ## Examples
 
 ### Icons
@@ -66,8 +61,10 @@ prev:
 <div class="d-avatar d-avatar--lg ...">DP</div>
 ```
 
-## Accessibility
+## Classes
+<component-class-table component-name="avatar"></component-class-table>
 
+## Accessibility
 Initial avatars' background and font color combinations have been paired to ensure minimum contrast is met.
 
 When it comes to voiceover, avatars accompanying a label should generally be considered decorative and shouldn't be

@@ -3,10 +3,6 @@ title: Select Menu
 desc: A select menu is an input control that allows users to choose one option from a list.
 storybook_url: https://vue.dialpad.design/?path=/story/components-select-menu--default
 ---
-
-## Classes
-<component-class-table component-name="select" />
-
 ## Examples
 ### Base Styles
 A select is normally paired with a label, but there are times when it can be used without a label. Don't rely on the placeholder text as a label.
@@ -284,6 +280,9 @@ We offer different sizes for instances in which the interface requires a smaller
   </div>
 </div>
 ```
+
+## Classes
+<component-class-table component-name="select" />
 
 ## Accessibility
 - Make sure the `label` `for` attribute match the select `id`.

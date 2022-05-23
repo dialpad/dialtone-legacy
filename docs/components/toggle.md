@@ -3,10 +3,6 @@ title: Toggle
 desc: A toggle (or "switch") is a button control element that allows the user to make a binary (on/off) selection.
 storybook_url: https://vue.dialpad.design/?path=/story/components-toggle--default
 ---
-
-## Classes
-<component-class-table component-name="toggle" />
-
 ## Examples
 ### Base Styles
 <code-well-header>
@@ -147,6 +143,9 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-toggle--defaul
   </div>
 </fieldset>
 ```
+
+## Classes
+<component-class-table component-name="toggle" />
 
 ## Accessibility
 The best accessibility is semantic HTML. Most screen readers understand how to parse buttons if they’re correctly formatted. When it comes to toggles, there are a few things to keep in mind:
