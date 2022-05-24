@@ -6,6 +6,7 @@ on:
       - production
       - alpha
       - beta
+      - 'DT-424-ci-deploy-website-independently-of-library'
 
 jobs:
   deploy:
@@ -29,9 +30,7 @@ jobs:
       - name: Check if user is a dialpad member
         uses: octokit/request-action@v2.1.0
         with:
-          route: GET /orgs/{org}/members/{username}
-          org: dialpad
-          username: ${{ github.actor }}
+          route: GET /orgs/dialpad/members/${{ github.actor }}
         env:
           GITHUB_TOKEN: ${{ secrets.DIALTONE_CI_TOKEN }}
 
@@ -41,7 +40,7 @@ jobs:
       # note that npm run build is executed before publishing via prepublishOnly
       - name: Build library and docsite
         if: ${{ github.ref == 'refs/heads/production' }}
-        run: npm run build:docsite
+        run: npm run build:docsite -- --deploySubdir /independent-deploy/
 
       - name: Deploy to GitHub Pages
         if: ${{ github.ref == 'refs/heads/production' }}
@@ -49,6 +48,7 @@ jobs:
         with:
           branch: gh-pages
           folder: docs/.vuepress/dist
+          target-folder: independent-deploy
           clean-exclude: |
             deploy-previews
             version5

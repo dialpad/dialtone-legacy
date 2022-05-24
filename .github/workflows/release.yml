@@ -6,6 +6,7 @@ on:
       - production
       - alpha
       - beta
+      - 'DT-424-ci-deploy-website-independently-of-library'
     paths:
       - 'lib/**'
 
@@ -31,9 +32,7 @@ jobs:
       - name: Check if user is a dialpad member
         uses: octokit/request-action@v2.1.0
         with:
-          route: GET /orgs/{org}/members/{username}
-          org: dialpad
-          username: ${{ github.actor }}
+          route: GET /orgs/dialpad/members/${{ github.actor }}
         env:
           GITHUB_TOKEN: ${{ secrets.DIALTONE_CI_TOKEN }}
 
@@ -46,11 +45,11 @@ jobs:
       # note that npm run build is executed before publishing via prepublishOnly
       - name: Deploy production
         if: ${{ github.ref == 'refs/heads/production' }}
-        run: npm publish
+        run: npm publish --dry-run
 
       - name: Deploy prerelease
         if: ${{ github.ref != 'refs/heads/production' }}
-        run: npm publish --tag ${{ steps.branch.outputs.BRANCH }}
+        run: npm publish --dry-run --tag ${{ steps.branch.outputs.BRANCH }}
 
       - name: Github Release
         env:
