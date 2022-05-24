@@ -22,7 +22,7 @@ Proin at placerat tortor.
 Nam ullamcorper metus et eros porta, at lacinia leo scelerisque. Curabitur finibus sollicitudin odio tempor finibus.
 Donec lobortis metus vitae mollis gravida.
 
-## Examples
+## Variants and Examples
 <code-well-header>
   <div>
     <span v-for="i in classes" class="d-badge d-mr8 d-mb8" :class="i.class">Badge</span>

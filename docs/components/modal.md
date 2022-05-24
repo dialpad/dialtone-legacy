@@ -49,7 +49,7 @@ Although highly versatile, this doesn't mean modal dialogs are fit for all purpo
 - The primary button should reflect the modal title.
 - Don’t surprise users by popping up a modal. Let a user’s action, such as a button click, trigger the modal. Uninvited modals may surprise the user and result in a quick dismissal of the window.
 
-## Examples
+## Variants and Examples
 ### Base Style
 <code-well-header>
   <example-modal kind="base" />

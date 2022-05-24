@@ -25,7 +25,7 @@ Proin at placerat tortor.
 Nam ullamcorper metus et eros porta, at lacinia leo scelerisque. Curabitur finibus sollicitudin odio tempor finibus.
 Donec lobortis metus vitae mollis gravida.
 
-## Examples
+## Variants and Examples
 ### Icons
 <code-well-header>
     <div class="d-avatar d-avatar--md d-avatar--icon d-avatar--purple-600">

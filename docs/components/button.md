@@ -22,7 +22,7 @@ Proin at placerat tortor.
 Nam ullamcorper metus et eros porta, at lacinia leo scelerisque. Curabitur finibus sollicitudin odio tempor finibus.
 Donec lobortis metus vitae mollis gravida.
 
-## Examples
+## Variants and Examples
 Dialtone provides four button styles:
 1. <a href="#default" class="d-link">**Base:**</a> Our default (purple) button colors.
 1. <a href="#danger" class="d-link">**Danger:**</a> Buttons associated with potentially destructive actions. Appears as red.

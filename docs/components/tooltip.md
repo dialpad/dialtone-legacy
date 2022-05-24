@@ -15,7 +15,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-tooltip--defau
 ## Usage
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 Morbi massa ante, tempus vitae lacus id, luctus tristique lorem. 
-Mauris feugiat massa ex, id aliquet mi tempor non. Curabitur non tristique lectus. 
+Mauris feugiat massa ex, id aliquet   mi tempor non. Curabitur non tristique lectus. 
 Fusce ut nisl non diam dignissim viverra. 
 In posuere dui arcu, sed eleifend massa faucibus sed. 
 Phasellus quis leo vitae erat pellentesque venenatis id vitae lectus. 
@@ -25,7 +25,7 @@ Proin at placerat tortor.
 Nam ullamcorper metus et eros porta, at lacinia leo scelerisque. Curabitur finibus sollicitudin odio tempor finibus. 
 Donec lobortis metus vitae mollis gravida.
 
-## Examples
+## Variants and Examples
 ### Base Styles
 <code-well-header bgclass="d-bgc-black-050" class='d-hmn264'>
   <button class="d-btn d-btn--outlined d-tooltip--hover" type="button">

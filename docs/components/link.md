@@ -20,7 +20,7 @@ Proin at placerat tortor.
 Nam ullamcorper metus et eros porta, at lacinia leo scelerisque. Curabitur finibus sollicitudin odio tempor finibus.
 Donec lobortis metus vitae mollis gravida.
 
-## Examples
+## Variants and Examples
 <code-well-header>
   <a href="#" class="d-link">Base link</a>
   <a href="#" class="d-link d-link--danger">Danger link</a>

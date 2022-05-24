@@ -20,7 +20,7 @@ Proin at placerat tortor.
 Nam ullamcorper metus et eros porta, at lacinia leo scelerisque. Curabitur finibus sollicitudin odio tempor finibus.
 Donec lobortis metus vitae mollis gravida.
 
-## Examples
+## Variants and Examples
 The Skeleton component only exists in Dialtone Vue.
 Please follow <a href="https://vue.dialpad.design/?path=/story/components-skeleton--default">this link</a> for
 more details on its usage.

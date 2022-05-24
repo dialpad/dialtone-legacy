@@ -37,7 +37,7 @@ Proin at placerat tortor.
 Nam ullamcorper metus et eros porta, at lacinia leo scelerisque. Curabitur finibus sollicitudin odio tempor finibus.
 Donec lobortis metus vitae mollis gravida.
 
-## Examples
+## Variants and Examples
 ### Base Style
 <code-well-header bgclass="d-bgc-white">
   <table class="d-table d-d-unset">
