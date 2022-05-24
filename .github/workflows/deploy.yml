@@ -39,11 +39,9 @@ jobs:
 
       # note that npm run build is executed before publishing via prepublishOnly
       - name: Build library and docsite
-        if: ${{ github.ref == 'refs/heads/production' }}
         run: npm run build:docsite -- --deploySubdir /independent-deploy/
 
       - name: Deploy to GitHub Pages
-        if: ${{ github.ref == 'refs/heads/production' }}
         uses: JamesIves/github-pages-deploy-action@v4.2.5
         with:
           branch: gh-pages

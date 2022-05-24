@@ -44,11 +44,9 @@ jobs:
 
       # note that npm run build is executed before publishing via prepublishOnly
       - name: Deploy production
-        if: ${{ github.ref == 'refs/heads/production' }}
         run: npm publish --dry-run
 
       - name: Deploy prerelease
-        if: ${{ github.ref != 'refs/heads/production' }}
         run: npm publish --dry-run --tag ${{ steps.branch.outputs.BRANCH }}
 
       - name: Github Release
