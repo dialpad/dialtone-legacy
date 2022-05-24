@@ -6,7 +6,6 @@ on:
       - production
       - alpha
       - beta
-      - 'DT-424-ci-deploy-website-independently-of-library'
 
 jobs:
   deploy:
@@ -39,14 +38,15 @@ jobs:
 
       # note that npm run build is executed before publishing via prepublishOnly
       - name: Build library and docsite
-        run: npm run build:docsite -- --deploySubdir /independent-deploy/
+        if: ${{ github.ref == 'refs/heads/production' }}
+        run: npm run build:docsite
 
       - name: Deploy to GitHub Pages
+        if: ${{ github.ref == 'refs/heads/production' }}
         uses: JamesIves/github-pages-deploy-action@v4.2.5
         with:
           branch: gh-pages
           folder: docs/.vuepress/dist
-          target-folder: independent-deploy
           clean-exclude: |
             deploy-previews
             version5

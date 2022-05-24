@@ -6,7 +6,6 @@ on:
       - production
       - alpha
       - beta
-      - 'DT-424-ci-deploy-website-independently-of-library'
     paths:
       - 'lib/**'
 
@@ -45,13 +44,13 @@ jobs:
       # note that npm run build is executed before publishing via prepublishOnly
       - name: Deploy production
         if: ${{ github.ref == 'refs/heads/production' }}
-        run: npm publish --dry-run
+        run: npm publish
 
       - name: Deploy prerelease
         if: ${{ github.ref != 'refs/heads/production' }}
-        run: npm publish --dry-run --tag ${{ steps.branch.outputs.BRANCH }}
+        run: npm publish --tag ${{ steps.branch.outputs.BRANCH }}
 
       - name: Github Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx semantic-release --dry-run --extends ./release-ci.config.js
+        run: npx semantic-release --extends ./release-ci.config.js

@@ -2,7 +2,6 @@ module.exports = {
   branches: [
     'production',
     'staging',
-    'DT-424-ci-deploy-website-independently-of-library',
     {
       name: 'beta',
       prerelease: true,
