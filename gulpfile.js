@@ -698,7 +698,7 @@ exports.watch = series(
     ),
 );
 
-// default build task
+// build the library and docsite
 exports.docsite = series(
     exports.clean,
     webfonts,
