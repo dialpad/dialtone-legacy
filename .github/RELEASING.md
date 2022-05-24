@@ -13,13 +13,15 @@
 
 ## Steps
 
-In order to push the `production` branch to trigger a release to [npmjs](https://npmjs.com) and Github Releases, you will need to either be an admin of the Dialtone repository, be a user with the "Maintain" role or have manually been given permission on your user.
+In order to push the `production` branch to deploy the documentation site and/or trigger a release to [npmjs](https://npmjs.com) and Github Releases, you will need to either be an admin of the Dialtone repository, be a user with the "Maintain" role or have manually been given permission on your user.
 
 1. Make sure your `staging` and `production` branches are up-to-date locally. You should be in the `staging` branch. If you want to make a prerelease, it should be `beta` or `alpha` branch instead of `staging`.
 2. Stop your local server and keep your working directory clean before versioning.
 3. In your CLI window, run `npm run release` from the Dialtone repository directory.
-4. The script will update the `package.json` and `package-lock.json` files with the version number according to the types of changes introduced since the last release and will add release notes in the `CHANGELOG.MD` file.
-5. A release commit and a git tag associated with this commit will be created and pushed to the remote.
+4. If there are changes that should trigger a release:
+   - The script will update the `package.json` and `package-lock.json` files with the version number according to the types of changes introduced since the last release and will add release notes in the `CHANGELOG.MD` file. 
+   - A release commit and a git tag associated with this commit will be created and pushed to the remote.
+5. Otherwise, go to next section.
 
 ---
 
@@ -27,7 +29,8 @@ In order to push the `production` branch to trigger a release to [npmjs](https:/
 
 6. We are ready to deploy the release. Switch to the `production` branch: `git checkout production`.
 7. Merge the release commits from `staging` using [`fast-forward` strategy](https://git-scm.com/docs/git-merge#Documentation/git-merge.txt---ff-only): `git merge staging --ff-only`.
-8. If the commits are merged correctly, it's ready to deploy and publish this release by pushing to the remote: `git push`. This will trigger the deploy through a Github Action.
+8. If the commits are merged correctly, it's ready to deploy the documentation site and/or publish this release by pushing to the remote: `git push`. This will trigger the deploy through a Github Action.
+9. If there are changes to library, this will trigger the release through a Github Action.
 
 ---
 
@@ -46,5 +49,5 @@ git merge --ff-only $BRANCH
 ---
 
 9. You should be able to see your deployment running at https://github.com/dialpad/dialtone/actions.
-10. When this Github Action has been completed, the new version of the package should have been deployed to Github releases, npm, and the documentation website (`dialpad.design`) is now updated (if it was a production release).
+10. When the Github Actions have been completed, the new version of the package should have been deployed to Github releases, npm, and the documentation website (`dialpad.design`) is now updated (if it was a production release).
 11. Now you’re ready to update your projects to use the latest Dialtone version 🎉.
