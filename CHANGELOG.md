@@ -1,3 +1,10 @@
+# [6.28.0](https://github.com/dialpad/dialtone/compare/v6.27.1...v6.28.0) (2022-05-24)
+
+
+### Features
+
+* **interactivity:** add resize property ([#595](https://github.com/dialpad/dialtone/issues/595)) ([f3d7384](https://github.com/dialpad/dialtone/commit/f3d7384c7922a056bcaf07e07cb26df199f3b4c5))
+
 ## [6.27.1](https://github.com/dialpad/dialtone/compare/v6.27.0...v6.27.1) (2022-05-19)
 
 
