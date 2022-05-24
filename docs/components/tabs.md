@@ -3,6 +3,35 @@ title: Tabs
 desc: Tabs allow users to navigation between grouped content in different views while within the same page context.
 storybook_url: https://vue.dialpad.design/?path=/story/components-tabs--default
 ---
+<code-well-header bgclass="d-bgc-white">
+  <example-tabs>
+    <template #panel_content="{selected}">
+      <div id="base-panel-1" role="tabpanel" tabindex="0" aria-labelledby="base-tab-1" :hidden="selected !== 0">
+        <p>First tab content panel</p>
+      </div>
+      <div v-if="!size" id="base-panel-2" role="tabpanel" tabindex="0" aria-labelledby="base-tab-2" :hidden="selected !== 1">
+        <p>Second tab content panel</p>
+      </div>
+      <div v-if="!size" id="base-panel-3" role="tabpanel" tabindex="0" aria-labelledby="base-tab-3" :hidden="selected !== 2">
+        <p>Third tab content panel</p>
+      </div>
+    </template>
+  </example-tabs>
+</code-well-header>
+
+## Usage
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Morbi massa ante, tempus vitae lacus id, luctus tristique lorem.
+Mauris feugiat massa ex, id aliquet mi tempor non. Curabitur non tristique lectus.
+Fusce ut nisl non diam dignissim viverra.
+In posuere dui arcu, sed eleifend massa faucibus sed.
+Phasellus quis leo vitae erat pellentesque venenatis id vitae lectus.
+Suspendisse convallis, metus a congue tincidunt, velit sem tincidunt dui, eget auctor ipsum ipsum in ex.
+Nullam lobortis, mauris vel vestibulum rutrum, lorem elit vehicula est, nec viverra ante erat nec dolor.
+Proin at placerat tortor.
+Nam ullamcorper metus et eros porta, at lacinia leo scelerisque. Curabitur finibus sollicitudin odio tempor finibus.
+Donec lobortis metus vitae mollis gravida.
+
 ## Examples
 ### Base Styles
 <code-well-header bgclass="d-bgc-white">

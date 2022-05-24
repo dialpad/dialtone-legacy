@@ -3,6 +3,10 @@ title: Popover
 desc: A Popover displays a content overlay when its anchor element is activated.
 storybook_url: https://vue.dialpad.design/?path=/story/components-popover--default
 ---
+<code-well-header>
+  <example-popover modal />
+</code-well-header>
+
 ## Usage
 A Popover contains a dialog that will appear above other content when activated. It will always appear in a location relative to the anchor.
 If you are looking for a dialog that does not display relative to the anchor, see <a href="components/modal/" class="d-link">Modal</a>.

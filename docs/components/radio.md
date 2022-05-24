@@ -3,6 +3,30 @@ title: Radio
 desc: A radio is an input control that allows users to select only one option from a number of choices.
 storybook_url: https://vue.dialpad.design/?path=/story/components-radio--default
 ---
+<code-well-header>
+  <div class="d-radio-group">
+    <div class="d-radio__input">
+      <input class="d-radio" type="radio" name="Dialtone-RadioGroup0" id="Dialtone-RadioExample0" />
+    </div>
+    <div class="d-radio__copy">
+      <label class="d-radio__label" for="Dialtone-RadioExample0">Radio label</label>
+    </div>
+  </div>
+</code-well-header>
+
+## Usage
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Morbi massa ante, tempus vitae lacus id, luctus tristique lorem.
+Mauris feugiat massa ex, id aliquet mi tempor non. Curabitur non tristique lectus.
+Fusce ut nisl non diam dignissim viverra.
+In posuere dui arcu, sed eleifend massa faucibus sed.
+Phasellus quis leo vitae erat pellentesque venenatis id vitae lectus.
+Suspendisse convallis, metus a congue tincidunt, velit sem tincidunt dui, eget auctor ipsum ipsum in ex.
+Nullam lobortis, mauris vel vestibulum rutrum, lorem elit vehicula est, nec viverra ante erat nec dolor.
+Proin at placerat tortor.
+Nam ullamcorper metus et eros porta, at lacinia leo scelerisque. Curabitur finibus sollicitudin odio tempor finibus.
+Donec lobortis metus vitae mollis gravida.
+
 ## Examples
 ### Base Styles
 <code-well-header>

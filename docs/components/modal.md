@@ -3,6 +3,10 @@ title: Modal
 desc: A modal is an interstitial over page content that focuses the user’s attention exclusively on one task or piece of information.
 storybook_url: https://vue.dialpad.design/?path=/story/components-modal--default
 ---
+<code-well-header>
+  <example-modal kind="base" />
+</code-well-header>
+
 ## Usage
 Modals are used to present a short-term task the user needs to perform without losing the context of the underlying page. Users won't be able to interact with the page until they close the modal.
 Although highly versatile, this doesn't mean modal dialogs are fit for all purposes. Modals are purposefully disruptive and should be used thoughtfully and sparingly, specifically in moments where focus is required or an action must be taken.

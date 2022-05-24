@@ -3,6 +3,35 @@ title: Select Menu
 desc: A select menu is an input control that allows users to choose one option from a list.
 storybook_url: https://vue.dialpad.design/?path=/story/components-select-menu--default
 ---
+<code-well-header>
+  <div class="d-w100p">
+    <div class="d-label">
+      <label for="Dialtone--SelectExample1">Label</label>
+    </div>
+    <div class="d-select">
+      <select class="d-select__input" id="Dialtone--SelectExample1">
+        <option value="" selected>Please select one</option>
+        <option value="option1">Option 1</option>
+        <option value="option2">Option 2</option>
+        <option value="option3">Option 3</option>
+      </select>
+    </div>
+  </div>
+</code-well-header>
+
+## Usage
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Morbi massa ante, tempus vitae lacus id, luctus tristique lorem.
+Mauris feugiat massa ex, id aliquet mi tempor non. Curabitur non tristique lectus.
+Fusce ut nisl non diam dignissim viverra.
+In posuere dui arcu, sed eleifend massa faucibus sed.
+Phasellus quis leo vitae erat pellentesque venenatis id vitae lectus.
+Suspendisse convallis, metus a congue tincidunt, velit sem tincidunt dui, eget auctor ipsum ipsum in ex.
+Nullam lobortis, mauris vel vestibulum rutrum, lorem elit vehicula est, nec viverra ante erat nec dolor.
+Proin at placerat tortor.
+Nam ullamcorper metus et eros porta, at lacinia leo scelerisque. Curabitur finibus sollicitudin odio tempor finibus.
+Donec lobortis metus vitae mollis gravida.
+
 ## Examples
 ### Base Styles
 A select is normally paired with a label, but there are times when it can be used without a label. Don't rely on the placeholder text as a label.
