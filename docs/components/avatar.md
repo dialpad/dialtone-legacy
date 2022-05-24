@@ -7,6 +7,9 @@ prev:
   link: /utilities/typography/word-break
 ---
 
+## Temp change
+I'm testing temporary changes in docs.
+
 ## Classes
 
 <component-class-table component-name="avatar"></component-class-table>
