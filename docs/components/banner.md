@@ -6,17 +6,12 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-banner--defaul
 <example-banner />
 
 ## Usage
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-Morbi massa ante, tempus vitae lacus id, luctus tristique lorem.
-Mauris feugiat massa ex, id aliquet mi tempor non. Curabitur non tristique lectus.
-Fusce ut nisl non diam dignissim viverra.
-In posuere dui arcu, sed eleifend massa faucibus sed.
-Phasellus quis leo vitae erat pellentesque venenatis id vitae lectus.
-Suspendisse convallis, metus a congue tincidunt, velit sem tincidunt dui, eget auctor ipsum ipsum in ex.
-Nullam lobortis, mauris vel vestibulum rutrum, lorem elit vehicula est, nec viverra ante erat nec dolor.
-Proin at placerat tortor.
-Nam ullamcorper metus et eros porta, at lacinia leo scelerisque. Curabitur finibus sollicitudin odio tempor finibus.
-Donec lobortis metus vitae mollis gravida.
+System banners are used for **system** messaging. They are full-width notices placed in one of two locations:
+
+1. **Above everything else:** If the banner is related to the entire app (e.g. the user lost internet service), place the banner first. <em>These should not be dismissable until the issue is resolved.</em> To pin the banner to the top of the app, add the `.d-notice--pinned` class.
+2. **Below the top bar:** This is the default location for system banners. Use these when it affects only a particular area of the product (e.g. when the user is in Do Not Disturb mode).
+
+Banners are a type of notice and so you can use the following <a class="d-link" href="components/notice/">notice styles</a> in conjunction with `.d-banner`.
 
 ## Variants and Examples
 <example-banner />
@@ -44,15 +39,6 @@ Donec lobortis metus vitae mollis gravida.
 <aside class="d-banner d-banner--success" role="alert" aria-hidden="false">…</aside>
 <aside class="d-banner d-banner--warning" role="alert" aria-hidden="false">…</aside>
 ```
-
-## Usage
-
-System banners are used for **system** messaging. They are full-width notices placed in one of two locations:
-
-1. **Above everything else:** If the banner is related to the entire app (e.g. the user lost internet service), place the banner first. <em>These should not be dismissable until the issue is resolved.</em> To pin the banner to the top of the app, add the `.d-notice--pinned` class.
-2. **Below the top bar:** This is the default location for system banners. Use these when it affects only a particular area of the product (e.g. when the user is in Do Not Disturb mode).
-
-Banners are a type of notice and so you can use the following <a class="d-link" href="components/notice/">notice styles</a> in conjunction with `.d-banner`.
 
 ## Classes
 <component-class-table component-name="banner"></component-class-table>
