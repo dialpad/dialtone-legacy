@@ -1,0 +1,181 @@
+//
+//  DIALTONE
+//  COMPONENTS: CHIP
+//
+//  These are chip classes for Dialpad's design system Dialtone.
+//  For further documentation of these and other classes,
+//  visit https://dialpad.design/components/chip
+//
+//  TABLE OF CONTENTS
+//  • BASE STYLE
+//  • INTERACTIVITY
+//  • SIZES
+//
+//  ============================================================================
+//  $   BASE STYLE
+//  ----------------------------------------------------------------------------
+.d-chip {
+  //  Component CSS Vars
+  --chip--fc: var(--fc-dark);
+  --chip--bgc: var(--black-050);
+  --chip--br: var(--su102);
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: var(--su4) var(--su8);
+  color: var(--chip--fc);
+  font-size: var(--fs16);
+  font-family: inherit;
+  line-height: var(--lh4);
+  background-color: var(--chip--bgc);
+  border-radius: var(--chip--br);
+  transition-timing-function: var(--ttf-in-out);
+  transition-duration: 75ms;
+  transition-property: background-color;
+
+  .d-chip-btn-holder {
+    flex-shrink: 0;
+    width: calc(var(--su16) + var(--su2));
+    height: calc(var(--su16) + var(--su2));
+  }
+
+  .d-chip-btn-container {
+    position: absolute;
+    top: var(--su0);
+    right: var(--su0);
+    padding: var(--su2) var(--su2) var(--su2) var(--su0);
+    cursor: pointer;
+
+    .d-btn {
+      padding: calc(var(--su2) + var(--su1));
+      border-width: var(--su0);
+    }
+
+    &:hover {
+      .d-btn {
+        --button--bgc: hsla(var(--black-800-hsl) ~' / ' 15%);
+      }
+    }
+
+    &:active {
+      .d-btn {
+        --button--bgc: hsla(var(--black-800-hsl) ~' / ' 25%);
+      }
+    }
+  }
+
+  .d-avatar {
+    --avatar--size: var(--su24);
+
+    margin: var(--sun2) var(--su4) var(--sun2) var(--sun6);
+  }
+
+  .d-svg,
+  .d-btn .d-btn__icon .d-svg {
+    width: @icon18;
+    height: @icon18;
+  }
+}
+
+.d-chip__icon {
+  padding-right: var(--su4);
+  line-height: 0;
+}
+
+.d-chip--active {
+  background-color: var(--black-100);
+}
+
+//  ============================================================================
+//  $   INTERACTIVITY
+//  ----------------------------------------------------------------------------
+//  $$  INTERACTIVE (DEFAULT)
+//  ----------------------------------------------------------------------------
+.d-chip--interactive {
+  cursor: pointer;
+
+  &:hover {
+    --chip--bgc: var(--black-075);
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: var(--bs-focus-ring-muted);
+  }
+}
+
+//  ============================================================================
+//  $   SIZES
+//  ----------------------------------------------------------------------------
+//  $$  EXTRA SMALL
+//  ----------------------------------------------------------------------------
+.d-chip--xs {
+  padding: var(--su2) var(--su6);
+  font-size: var(--fs12);
+
+  .d-btn .d-btn__icon .d-svg,
+  .d-svg {
+    width: @icon14;
+    height: @icon14;
+  }
+
+  .d-chip-btn-holder {
+    width: var(--su12);
+    height: var(--su12);
+  }
+
+  .d-chip-btn-container {
+    top: calc(var(--sun1) + var(--sun2));
+    right: var(--sun2);
+    padding: var(--su4);
+
+    .d-btn {
+      padding: var(--su1);
+    }
+  }
+
+  .d-avatar {
+    --avatar--size: var(--su16);
+
+    margin-right: var(--su4);
+    margin-left: var(--sun4);
+  }
+}
+
+//  $$ SMALL
+//  ----------------------------------------------------------------------------
+.d-chip--sm {
+  padding: var(--su2) var(--su8);
+  font-size: var(--fs16);
+
+  .d-btn .d-btn__icon .d-svg,
+  .d-svg {
+    width: @icon16;
+    height: @icon16;
+  }
+
+  .d-chip-btn-holder {
+    width: calc(var(--su12) + var(--su2));
+    height: calc(var(--su12) + var(--su2));
+  }
+
+  .d-chip-btn-container {
+    top: var(--sun1);
+    right: var(--su0);
+    padding: var(--su2);
+
+    .d-btn {
+      padding: var(--su2);
+    }
+  }
+
+  .d-avatar {
+    --avatar--size: calc(var(--su24) - var(--su4));
+
+    margin-right: var(--su4);
+    margin-left: var(--sun6);
+  }
+}

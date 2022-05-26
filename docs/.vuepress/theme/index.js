@@ -1,5 +1,6 @@
 const { path } = require('@vuepress/utils')
 const { defaultTheme } = require('vuepress')
+const { mediumZoomPlugin } = require('@vuepress/plugin-medium-zoom')
 
 exports.dialtoneTheme = (options) => {
     return {
@@ -13,5 +14,10 @@ exports.dialtoneTheme = (options) => {
             '@theme/Home.vue': path.resolve(__dirname, './components/Home.vue'),
             '@theme/Sidebar.vue': path.resolve(__dirname, './components/Sidebar.vue'),
         },
+        plugins: [
+            mediumZoomPlugin({
+                selector: '.zoomable-image'
+            }),
+        ],
     }
 };
