@@ -1,3 +1,15 @@
+# [6.29.0](https://github.com/dialpad/dialtone/compare/v6.28.0...v6.29.0) (2022-05-26)
+
+
+### Bug Fixes
+
+* removed fill attribute from icons ([#600](https://github.com/dialpad/dialtone/issues/600)) ([59b2395](https://github.com/dialpad/dialtone/commit/59b239519b1953010ef9da912f2f5942f4d3a82e))
+
+
+### Features
+
+* **chip:** add chip component ([#597](https://github.com/dialpad/dialtone/issues/597)) ([b2ddfd7](https://github.com/dialpad/dialtone/commit/b2ddfd77f808f572d05e0b77f5a7e0bff892512b)), closes [#594](https://github.com/dialpad/dialtone/issues/594)
+
 # [6.28.0](https://github.com/dialpad/dialtone/compare/v6.27.1...v6.28.0) (2022-05-24)
 
 
