@@ -3,9 +3,11 @@ title: Popover
 desc: A Popover displays a content overlay when its anchor element is activated.
 storybook_url: https://vue.dialpad.design/?path=/story/components-popover--default
 ---
+<code-well-header>
+  <example-popover modal />
+</code-well-header>
 
-
-## Overview
+## Usage
 A Popover contains a dialog that will appear above other content when activated. It will always appear in a location relative to the anchor.
 If you are looking for a dialog that does not display relative to the anchor, see <a href="components/modal/" class="d-link">Modal</a>.
 Some common examples of popover usage: dropdown list, emoji picker dialog, add comment dialog.
@@ -58,13 +60,7 @@ Your popover should be non-modal when:
 - Close non-modal dialogs if they are scrolled out of visibility.
 - Set the z-index of the dialog to var(--zi-modal-element) if modal, var(--zi-popover) if not.
 
-## Classes
-Popover must contain an anchor and content element. d-modal--transparent can be used as a sibling before the popover container if you wish to make the popover modal.
-
-<component-class-table component-name="popover" />
-
-
-## Examples
+## Variants and Examples
 ### Popover - Modal
 <code-well-header>
   <example-popover modal />
@@ -152,6 +148,11 @@ Popover must contain an anchor and content element. d-modal--transparent can be 
   </div>
 </div>
 ```
+
+## Classes
+Popover must contain an anchor and content element. d-modal--transparent can be used as a sibling before the popover container if you wish to make the popover modal.
+
+<component-class-table component-name="popover" />
 
 ## Accessibility
 If your popover is modal, please see the accessibility section of this page regarding "focus trapping": <a href="components/modal/#accessibility" class="d-link">Modal Accessibility</a>. The same rules will apply here if your popover is modal. 

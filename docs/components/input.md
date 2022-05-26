@@ -3,11 +3,17 @@ title: Input
 desc: An input field is an input control that allows users to enter alphanumeric information. It can have a range of options and supports single line and multi-line lengths, as well as varying formats, including numbers, masked passwords, etc.
 storybook_url: https://vue.dialpad.design/?path=/story/components-input--default
 ---
+<code-well-header>
+  <div class="d-w100p">
+    <label class="d-label" for="Dialtone--InputExample1a">Label</label>
+    <input class="d-input" id="Dialtone--InputExample1a" type="text" placeholder="Placeholder" />
+  </div>
+</code-well-header>
 
-## Classes
-<component-class-table component-name="input"></component-class-table>
+[//]: # (## Usage)
+[//]: # (Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi massa ante, tempus vitae lacus id, luctus tristique lorem. Mauris feugiat massa ex, id aliquet mi tempor non. Curabitur non tristique lectus. Fusce ut nisl non diam dignissim viverra. In posuere dui arcu, sed eleifend massa faucibus sed. Phasellus quis leo vitae erat pellentesque venenatis id vitae lectus. Suspendisse convallis, metus a congue tincidunt, velit sem tincidunt dui, eget auctor ipsum ipsum in ex. Nullam lobortis, mauris vel vestibulum rutrum, lorem elit vehicula est, nec viverra ante erat nec dolor. Proin at placerat tortor. Nam ullamcorper metus et eros porta, at lacinia leo scelerisque. Curabitur finibus sollicitudin odio tempor finibus. Donec lobortis metus vitae mollis gravida.)
 
-## Examples
+## Variants and Examples
 ### Base Styles
 An input is normally paired with a label, but there are times when it can be used without a label.  Placeholder text should primarily be used as a content prompt and only provided when needed.
 
@@ -402,6 +408,9 @@ You may use different icon sizes in different sized inputs
   <textarea class="d-textarea d-input-icon--left d-textarea--lg" id="Dialtone--TextareaExample--IconLeft-lg-md" type="text" placeholder="Placeholder"></textarea>
 </div>
 ```
+
+## Classes
+<component-class-table component-name="input"></component-class-table>
 
 ## Accessibility
 - Make sure the `label` `for` attribute match the input `id`.

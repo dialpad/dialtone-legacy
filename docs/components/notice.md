@@ -3,14 +3,14 @@ title: Notice
 desc: A notice is an informational and assistive message that appears inline with content.
 storybook_url: https://vue.dialpad.design/?path=/story/components-notice--default
 ---
+<code-well-header bgclass="d-bgc-white">
+  <example-notice kind="base" role="status" />
+</code-well-header>
 
-## Overview
+## Usage
 A notice delivers informational and assistive messages that inform the user about product or account statuses and related actions. It can suggest an action or dismissed by the user, though neither are required. For time-based notifications, see <a href="/components/toasts/" class="d-link">toasts</a>.
-## Classes
-<component-class-table component-name="notice" />
 
-## Examples
-
+## Variants and Examples
 ### Base Styles
 Used in most scenarios when the message should be noticeable but not dominate.
 
@@ -79,9 +79,11 @@ Used occasionally in scenarios when the message needs to dominate.
 <aside class="d-notice d-notice--warning d-notice--important" role="alert" aria-hidden="false">…</aside>
 ```
 
+## Classes
+<component-class-table component-name="notice" />
+
 ## Accessibility
 <component-accessible-table component-name="notice" />
-
 
 <script setup>
   import ExampleNotice from '@exampleComponents/ExampleNotice.vue';

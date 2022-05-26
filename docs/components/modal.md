@@ -3,8 +3,11 @@ title: Modal
 desc: A modal is an interstitial over page content that focuses the user’s attention exclusively on one task or piece of information.
 storybook_url: https://vue.dialpad.design/?path=/story/components-modal--default
 ---
+<code-well-header>
+  <example-modal kind="base" />
+</code-well-header>
 
-## Overview
+## Usage
 Modals are used to present a short-term task the user needs to perform without losing the context of the underlying page. Users won't be able to interact with the page until they close the modal.
 Although highly versatile, this doesn't mean modal dialogs are fit for all purposes. Modals are purposefully disruptive and should be used thoughtfully and sparingly, specifically in moments where focus is required or an action must be taken.
 
@@ -46,13 +49,7 @@ Although highly versatile, this doesn't mean modal dialogs are fit for all purpo
 - The primary button should reflect the modal title.
 - Don’t surprise users by popping up a modal. Let a user’s action, such as a button click, trigger the modal. Uninvited modals may surprise the user and result in a quick dismissal of the window.
 
-## Classes
-At minimum, modals contain a title and one button. They could also contain body text, brand illustrations, product wireframes, or multiple buttons.
-
-<component-class-table component-name="modal"></component-class-table>
-
-
-## Examples
+## Variants and Examples
 ### Base Style
 <code-well-header>
   <example-modal kind="base" />
@@ -128,6 +125,11 @@ At minimum, modals contain a title and one button. They could also contain body 
   </div>
 </aside>
 ```
+
+## Classes
+At minimum, modals contain a title and one button. They could also contain body text, brand illustrations, product wireframes, or multiple buttons.
+
+<component-class-table component-name="modal"></component-class-table>
 
 ## Accessibility
 Opened modals “trap focus,” meaning keyboard navigation controls are constrained to elements within the modal. Tabbing to the modal's last focusable element, and then pressing tab again would loop the focus back to the first element on the page. Focus doesn't return to the underlying page until the user explicitly dismisses the modal, in which case it would return to the place it was before the dialog opened.

@@ -3,12 +3,22 @@ title: Checkbox
 desc: A checkbox is an input control that allows users to select zero, one, or more options from a number of choices.
 storybook_url: https://vue.dialpad.design/?path=/story/components-checkbox--default
 ---
-## Classes
-<component-class-table component-name="checkbox"></component-class-table>
+<code-well-header>
+  <div class="d-checkbox-group">
+    <div class="d-checkbox__input">
+      <input class="d-checkbox" type="checkbox" name="Dialtone-CheckExample1" id="Dialtone-CheckExample1" />
+    </div>
+    <div class="d-checkbox__copy">
+      <label class="d-checkbox__label" for="Dialtone-CheckExample1">Checkbox label</label>
+    </div>
+  </div>
+</code-well-header>
 
-## Examples
+[//]: # (## Usage)
+[//]: # (Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi massa ante, tempus vitae lacus id, luctus tristique lorem. Mauris feugiat massa ex, id aliquet mi tempor non. Curabitur non tristique lectus. Fusce ut nisl non diam dignissim viverra. In posuere dui arcu, sed eleifend massa faucibus sed. Phasellus quis leo vitae erat pellentesque venenatis id vitae lectus. Suspendisse convallis, metus a congue tincidunt, velit sem tincidunt dui, eget auctor ipsum ipsum in ex. Nullam lobortis, mauris vel vestibulum rutrum, lorem elit vehicula est, nec viverra ante erat nec dolor. Proin at placerat tortor. Nam ullamcorper metus et eros porta, at lacinia leo scelerisque. Curabitur finibus sollicitudin odio tempor finibus. Donec lobortis metus vitae mollis gravida.)
+
+## Variants and Examples
 ### Base Styles
-
 <code-well-header>
   <fieldset class="d-stack8">
     <div class="d-checkbox-group">
@@ -364,6 +374,9 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-checkbox--defa
   </div>
 </fieldset>
 ```
+
+## Classes
+<component-class-table component-name="checkbox"></component-class-table>
 
 ## Accessibility
 The best accessibility is semantic HTML. Most screen readers understand how to parse inputs if they’re correctly formatted. When it comes to checkboxes, there are a few things to keep in mind:
