@@ -676,11 +676,7 @@ exports.default = series(
     exports.clean,
     webfonts,
     exports.svg,
-    parallel(
-        libStyles,
-        docStyles,
-    ),
-    buildDocs,
+    libStyles,
 );
 
 // tasks are similar to default build when we are watching but there are some
@@ -700,6 +696,18 @@ exports.watch = series(
         watchFiles,
         watchDocs,
     ),
+);
+
+// build the library and docsite
+exports.docsite = series(
+    exports.clean,
+    webfonts,
+    exports.svg,
+    parallel(
+        libStyles,
+        docStyles,
+    ),
+    buildDocs,
 );
 
 //  --  CONVERT WEBFONTS
