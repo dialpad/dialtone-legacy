@@ -14,8 +14,45 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-checkbox--defa
   </div>
 </code-well-header>
 
-[//]: # (## Usage)
-[//]: # (Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi massa ante, tempus vitae lacus id, luctus tristique lorem. Mauris feugiat massa ex, id aliquet mi tempor non. Curabitur non tristique lectus. Fusce ut nisl non diam dignissim viverra. In posuere dui arcu, sed eleifend massa faucibus sed. Phasellus quis leo vitae erat pellentesque venenatis id vitae lectus. Suspendisse convallis, metus a congue tincidunt, velit sem tincidunt dui, eget auctor ipsum ipsum in ex. Nullam lobortis, mauris vel vestibulum rutrum, lorem elit vehicula est, nec viverra ante erat nec dolor. Proin at placerat tortor. Nam ullamcorper metus et eros porta, at lacinia leo scelerisque. Curabitur finibus sollicitudin odio tempor finibus. Donec lobortis metus vitae mollis gravida.)
+## Usage
+Checkboxes are an easily understandable way to indicate that users can select one or more answers to a question or items from a list. They visibly show users what’s been selected and makes it easy for them to “uncheck” an option, which can be difficult with other selection methods on a form (such as radio buttons or select menus).
+
+<div class="xl:d-fd-column xl:d-flow0 xl:d-stack32 d-fl-col2 d-flow32 d-mt32 d-mb32">
+  <div class="d-d-block d-px16 d-py24 d-bgc-green-100 d-bar4">
+    <h3 class="d-mb16">
+      <span class="d-fc-green-600 d-ps-relative d-t6">
+        <icon-checkmark />
+      </span>
+      <span class="d-fw-bold d-fc-green-600">Use for</span>
+    </h3>
+    <ul class="d-fs14">
+      <li>Selecting any number of choices from a set list.</li>
+      <li>Binary selections that convey opposite states, such as check=“on” and unchecked=“off”, paired with a label that conveys the choice.</li>
+      <li>When users need to see all the available options at a glance.</li>
+    </ul>
+  </div>
+  <div class="d-d-block d-px16 d-py24 d-bgc-red-100 d-bar4">
+    <h3 class="d-mb16">
+      <span class="d-fc-red-600 d-ps-relative d-t6">
+        <icon-close />
+      </span>
+      <span class="d-fw-bold d-fc-red-600">Don't use for</span>
+    </h3>
+    <ul class="d-fs14">
+      <li>If a user can only select one option from a list; consider using <a href="/components/radio/" class="d-link">Radio</a> or <a href="/components/select/" class="d-link">Select</a>.</li>
+      <li>If there are too many options to reasonably display in its context. </li>
+    </ul>
+  </div>
+</div>
+
+### Best practices
+- Users should be able to tap on or click on either the text `label` or the checkbox element itself to toggle an option, aiding accessibility.
+- Options that are listed vertically are easier to read than those listed horizontally. Horizontal listings can make it difficult to tell which label pertains to which checkbox.
+- Negative language in labels can be counterintuitive. For example, use “I want to receive a promotional email” instead of “I don’t want to receive promotional email.
+- Make sure that the label makes both states — checked and unchecked — clear to the user. If that’s not possible, consider using a [Radio](/components/radio/) button with two individual options instead. Then both states can have their own clearly marked label.
+- Make sure selections are adequately spaced for touch screens.
+- Multiple checkbox options should be organized in a meaningful way, like alphabetical or most-frequent to least-frequent. This helps users easily find the option they’re looking for.
+
 
 ## Variants and Examples
 ### Base Styles
