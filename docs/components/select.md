@@ -19,8 +19,42 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-select-menu--d
   </div>
 </code-well-header>
 
-[//]: # (## Usage)
-[//]: # (Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi massa ante, tempus vitae lacus id, luctus tristique lorem. Mauris feugiat massa ex, id aliquet mi tempor non. Curabitur non tristique lectus. Fusce ut nisl non diam dignissim viverra. In posuere dui arcu, sed eleifend massa faucibus sed. Phasellus quis leo vitae erat pellentesque venenatis id vitae lectus. Suspendisse convallis, metus a congue tincidunt, velit sem tincidunt dui, eget auctor ipsum ipsum in ex. Nullam lobortis, mauris vel vestibulum rutrum, lorem elit vehicula est, nec viverra ante erat nec dolor. Proin at placerat tortor. Nam ullamcorper metus et eros porta, at lacinia leo scelerisque. Curabitur finibus sollicitudin odio tempor finibus. Donec lobortis metus vitae mollis gravida.)
+## Usage
+
+<div class="xl:d-fd-column xl:d-flow0 xl:d-stack32 d-fl-col2 d-flow32 d-mt32 d-mb32">
+  <div class="d-d-block d-px16 d-py24 d-bgc-green-100 d-bar4">
+    <h3 class="d-mb16">
+      <span class="d-fc-green-600 d-ps-relative d-t6">
+        <icon-checkmark />
+      </span>
+      <span class="d-fw-bold d-fc-green-600">Use for</span>
+    </h3>
+    <ul class="d-fs14">
+      <li>Use sparingly — only when a user needs to choose from about seven to 15 possible options and you have limited space to display the options.</li>
+    </ul>
+  </div>
+  <div class="d-d-block d-px16 d-py24 d-bgc-red-100 d-bar4">
+    <h3 class="d-mb16">
+      <span class="d-fc-red-600 d-ps-relative d-t6">
+        <icon-close />
+      </span>
+      <span class="d-fw-bold d-fc-red-600">Don't use for</span>
+    </h3>
+    <ul class="d-fs14">
+      <li>For site navigation.</li>
+      <li>If the list of options is very short. Use <a href="/components/radio/" class="d-link">Radio</a> instead.</li>
+      <li>If the list of options is very long. Let users type the same information into an <a href="/components/input/" class="d-link">Input</a> that suggests possible options instead (aka Combobox).</li>
+      <li>Avoid using the <code>multiple</code> attribute. Users often don’t understand how to <code>select</code> multiple items from the select element (e.g. by holding down a modifier key).</li>
+    </ul>
+  </div>
+</div>
+
+### Best practices
+- Selects should be considered the “UI of last resort,” as users often find them confusing and difficult to use. Consider testing thoroughly with members of your target audience.
+- Avoid making options in one dropdown menu change based on the input to another. Users often don’t understand how selecting an item in one impacts another.
+- When most users will (or should) pick a particular option, make it the default selection.
+- Avoid auto-submission. Be wary of UI implications of automatically submitting upon selection or applying its value. Users may often change their choices multiple times, particularly if interacting with a form solely with keyboard. Auto-submission is also less accessible.
+
 
 ## Variants and Examples
 ### Base Styles
@@ -310,4 +344,3 @@ We offer different sizes for instances in which the interface requires a smaller
 - Avoid customizing the placeholder text.
 - If the select is a required field, use the `aria-required` property and use the validation message for input errors.
 - Select with validation errors should have `aria-describedby` with the `id` of the validation message.
-
