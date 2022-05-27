@@ -9,8 +9,39 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-toggle--defaul
   </div>
 </code-well-header>
 
-[//]: # (## Usage)
-[//]: # (Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi massa ante, tempus vitae lacus id, luctus tristique lorem. Mauris feugiat massa ex, id aliquet mi tempor non. Curabitur non tristique lectus. Fusce ut nisl non diam dignissim viverra. In posuere dui arcu, sed eleifend massa faucibus sed. Phasellus quis leo vitae erat pellentesque venenatis id vitae lectus. Suspendisse convallis, metus a congue tincidunt, velit sem tincidunt dui, eget auctor ipsum ipsum in ex. Nullam lobortis, mauris vel vestibulum rutrum, lorem elit vehicula est, nec viverra ante erat nec dolor. Proin at placerat tortor. Nam ullamcorper metus et eros porta, at lacinia leo scelerisque. Curabitur finibus sollicitudin odio tempor finibus. Donec lobortis metus vitae mollis gravida.)
+## Usage
+The Toggle component acts as a way to allow the User to switch between two mutually exclusive options. While it technically mirrors a [Checkbox](/components/checkbox/) state, its affect on the system is instantaneous.
+
+<div class="xl:d-fd-column xl:d-flow0 xl:d-stack32 d-fl-col2 d-flow32 d-mt32 d-mb32">
+  <div class="d-d-block d-px16 d-py24 d-bgc-green-100 d-bar4">
+    <h3 class="d-mb16">
+      <span class="d-fc-green-600 d-ps-relative d-t6">
+        <icon-checkmark />
+      </span>
+      <span class="d-fw-bold d-fc-green-600">Use for</span>
+    </h3>
+    <ul class="d-fs14">
+      <li>When its action has an instantaneous affect.</li>
+    </ul>
+  </div>
+  <div class="d-d-block d-px16 d-py24 d-bgc-red-100 d-bar4">
+    <h3 class="d-mb16">
+      <span class="d-fc-red-600 d-ps-relative d-t6">
+        <icon-close />
+      </span>
+      <span class="d-fw-bold d-fc-red-600">Don't use for</span>
+    </h3>
+    <ul class="d-fs14">
+      <li>When its action does not have an immediate affect on the application.</li>
+      <li>Selecting between 2 options. Instead utilize a <a href="/components/checkbox/" class="d-link">Checkbox</a>.</li>
+      <li>As an alternative to a <a href="/components/checkbox/" class="d-link">Checkbox</a> or <a href="/components/radio/" class="d-link">Radio</a> within a Form.      </li>
+    </ul>
+  </div>
+</div>
+
+### Best practices
+- A Toggle component should be used as a control within an application and provide a way to toggle between two states like a household light switch.
+- The Indeterminate states is only available prior to a user’s interaction with it, and cannot be manually set to Indeterminate.
 
 ## Variants and Examples
 ### Base Styles
@@ -158,7 +189,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-toggle--defaul
 
 ## Accessibility
 The best accessibility is semantic HTML. Most screen readers understand how to parse buttons if they’re correctly formatted. When it comes to toggles, there are a few things to keep in mind:
- 
+
 - All toggle buttons should have an `id` attribute.
 - Associate toggle labels with their buttons using the `for` attribute. This correlates with the toggle's `id`.
 - If you have a group of related toggles, use a `fieldset` to group them and a `legend` to title the group. For further information, please visit Gov.UK’s article, <a class="d-link" href="https://accessibility.blog.gov.uk/2016/07/22/using-the-fieldset-and-legend-elements/">Using the fieldset and legend elements</a>.
