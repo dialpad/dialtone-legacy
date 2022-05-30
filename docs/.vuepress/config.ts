@@ -5,8 +5,6 @@ const sidebar = require('../_data/site-nav.json');
 const { dialtoneTheme } = require('./theme');
 const baseURL = (process.env.VUEPRESS_BASE_URL ?? "/") as `/${string}/`;
 
-const { viteBundler } = require('@vuepress/bundler-vite')
-
 const themeConfig = {
   logo: baseURL + 'assets/images/dialpad-logo.svg',
   navbar: [
@@ -37,17 +35,6 @@ export default defineUserConfig({
 
   // theme and its config
   theme: dialtoneTheme(themeConfig),
-
-  bundler: viteBundler({
-    viteOptions: {},
-    vuePluginOptions: {
-      template: {
-        compilerOptions: {
-          whitespace: 'preserve'
-        }
-      }
-    },
-  }),
 
   // Header links and meta tags
   head: [
@@ -91,7 +78,6 @@ export default defineUserConfig({
     '@svgIcons': resolve(__dirname, '../../lib/dist/vue/icons/'), // Needed to easily import svg
     '@theme': resolve(__dirname, './theme'),
     '@exampleComponents': resolve(__dirname, './exampleComponents'),
-    '@baseComponents': resolve(__dirname, './baseComponents'),
     '@dialtoneCSS': resolve(__dirname, '../assets/css/' + dialtoneCSS),
     '@dialtoneDocsCSS': resolve(__dirname, '../assets/css/' + dialtoneDocsCSS)
   },
