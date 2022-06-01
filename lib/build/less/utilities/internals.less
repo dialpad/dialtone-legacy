@@ -12,13 +12,8 @@
 //      Various configuration settings to generate the classes desired.
 //  ----------------------------------------------------------------------------
 #d-internal-config {
-
     //  Do we want to generate font-face CSS?
     @generate-font-face:             true;
-
-    //  What's the font-face file path?
-    @define-font-path:               '../fonts/';
-
 }
 
 //  ============================================================================
@@ -382,6 +377,9 @@
     //  ------------------------------------------------------------------------
     #font-face(@type, @name, @style: normal) {
         #d-internal-config();
+
+        //  Path of the fonts that Dialtone provides
+        @define-font-path: '../../fonts/';
 
         if((@generate-font-face = true), each(@type, {
             @font-face {
