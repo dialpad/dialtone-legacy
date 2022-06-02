@@ -405,7 +405,7 @@ The base button font size is 16px and should be used in most cases. Every button
 - If using `.d-btn--disabled`, also use `aria-disabled="true"` and be sure to prevent the click event.
 - If an icon and text are both included in a button's label, and they both represent the same thing, the icon may be decorative and may not need to receive focus or be read-out.
 - If developing a toggle button (i.e. a button that holds a pressed/unpressed state), use `aria-pressed`. (<a href="https://www.w3.org/TR/wai-aria/#button" target="_blank">Source</a>)
-- If developing a button that triggers a dropdown, consider using `aria-haspop` and `aria-expanded`. (<a href="https://www.w3.org/TR/wai-aria/#button" target="_blank">Source</a>)
+- If developing a button that triggers a dropdown, consider using `aria-haspopup` and `aria-expanded`. (<a href="https://www.w3.org/TR/wai-aria/#button" target="_blank">Source</a>)
 
 <script setup>
   import IconPhone from '@svgIcons/IconPhone.vue';
