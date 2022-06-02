@@ -39,7 +39,6 @@ Checkboxes are an easily understandable way to indicate that users can select on
   </div>
 </div>
 
-
 ### Best practices
 - Users should be able to tap on or click on either the text `label` or the checkbox element itself to toggle an option, aiding accessibility.
 - Options that are listed vertically are easier to read than those listed horizontally. Horizontal listings can make it difficult to tell which label pertains to which checkbox.
@@ -47,7 +46,10 @@ Checkboxes are an easily understandable way to indicate that users can select on
 - Make sure that the label makes both states — checked and unchecked — clear to the user. If that’s not possible, consider using a [Radio](/components/radio/) button with two individual options instead. Then both states can have their own clearly marked label.
 - Make sure selections are adequately spaced for touch screens.
 - Multiple checkbox options should be organized in a meaningful way, like alphabetical or most-frequent to least-frequent. This helps users easily find the option they’re looking for.
-
+- `indeterminate` checkboxes convey a "mixed" state that neither qualifies as checked or unchecked. An example use case is when a checkbox acts as a "parent" of a collection of child checkboxes:
+  - `checked`: all children are checked.
+  - `unchecked`: all children are not checked.
+  - `indeterminate`: children are a mix of checked and unchecked.
 
 ## Variants and Examples
 ### Base Styles

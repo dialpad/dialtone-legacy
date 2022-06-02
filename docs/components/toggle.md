@@ -17,7 +17,7 @@ The Toggle component acts as a way to allow the User to switch between two mutua
     <h3 class="dialtone-usage__hd dialtone-usage__hd--do"><icon-checkmark /> Use for</h3>
     <div class="dialtone-usage__bd">
       <ul>
-        <li>When its action has an instantaneous affect.</li>
+        <li>When its action has an instantaneous effect.</li>
       </ul>
     </div>
   </div>
@@ -25,7 +25,7 @@ The Toggle component acts as a way to allow the User to switch between two mutua
     <h3 class="dialtone-usage__hd dialtone-usage__hd--dont"><icon-close /> Don't use for</h3>
     <div class="dialtone-usage__bd">
       <ul>
-        <li>When its action does not have an immediate affect on the application.</li>
+        <li>When its action does not have an immediate effect on the application.</li>
         <li>Selecting between 2 options. Instead utilize a <a href="/components/checkbox/">Checkbox</a>.</li>
         <li>As an alternative to a <a href="/components/checkbox/">Checkbox</a> or <a href="/components/radio/">Radio</a> within a Form.</li>
       </ul>
@@ -35,7 +35,11 @@ The Toggle component acts as a way to allow the User to switch between two mutua
 
 ### Best practices
 - A Toggle component should be used as a control within an application and provide a way to toggle between two states like a household light switch.
-- The Indeterminate states is only available prior to a user’s interaction with it, and cannot be manually set to Indeterminate.
+- An `indeterminate` Toggle convey a "mixed" state that neither qualifies as toggled or not toggled. An example use case is when a Toggle acts as a "parent" of a collection of child Toggle components:
+  - Toggled: all children are toggled.
+  - Not toggled: all children are not toggled.
+  - `indeterminate`: children are a mix of toggled and not toggled.
+
 
 ## Variants and Examples
 ### Base Styles
