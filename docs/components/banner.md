@@ -3,6 +3,7 @@ title: Banner
 desc: A banner is a type of <a href="components/notice">notice</a>, delivering system and engagement messaging. It is highly intrusive and should be used sparingly and appropriately.
 storybook_url: https://vue.dialpad.design/?path=/story/components-banner--default
 ---
+
 <example-banner />
 
 ## Usage
@@ -31,7 +32,7 @@ Banners are a type of notice and so you can use the following <a href="component
       <button type="button" class="d-btn d-btn--sm d-btn--circle d-btn--muted js-example-notice-close" aria-label="Close">
         <span class="d-btn__icon"><IconClose /></span>
       </button>
-
+    </div>
 </aside>
 
 <aside class="d-banner d-banner--error" role="alert" aria-hidden="false">…</aside>
@@ -47,6 +48,6 @@ Banners are a type of notice and so you can use the following <a href="component
 <component-accessible-table component-name="banner"></component-accessible-table>
 
 <script setup>
-    import { accessible } from '@data/banner.json';
-    import ExampleBanner from '@exampleComponents/ExampleBanner.vue';
+  import { accessible } from '@data/banner.json';
+  import ExampleBanner from '@exampleComponents/ExampleBanner.vue';
 </script>
