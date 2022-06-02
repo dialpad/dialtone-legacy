@@ -79,7 +79,7 @@ focusable or read out. An example is a user's avatar next to their name.
 
 Avatars unaccompanied by labels, especially those representing functionality or navigation, should be focusable and
 readout in voiceover. Please refer
-to <a class="d-link" href="https://www.w3.org/WAI/tutorials/images/decorative/" target="_blank">WCAG</a> references for
+to <a href="https://www.w3.org/WAI/tutorials/images/decorative/" target="_blank">WCAG</a> references for
 your specific usage.
 
 <script setup>

@@ -10,8 +10,37 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-input--default
   </div>
 </code-well-header>
 
-[//]: # (## Usage)
-[//]: # (Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi massa ante, tempus vitae lacus id, luctus tristique lorem. Mauris feugiat massa ex, id aliquet mi tempor non. Curabitur non tristique lectus. Fusce ut nisl non diam dignissim viverra. In posuere dui arcu, sed eleifend massa faucibus sed. Phasellus quis leo vitae erat pellentesque venenatis id vitae lectus. Suspendisse convallis, metus a congue tincidunt, velit sem tincidunt dui, eget auctor ipsum ipsum in ex. Nullam lobortis, mauris vel vestibulum rutrum, lorem elit vehicula est, nec viverra ante erat nec dolor. Proin at placerat tortor. Nam ullamcorper metus et eros porta, at lacinia leo scelerisque. Curabitur finibus sollicitudin odio tempor finibus. Donec lobortis metus vitae mollis gravida.)
+## Usage
+This component combines both the `input` and `textarea` elements as options within a single component. Its default presentation includes a paired text `label`.
+
+<div class="dialtone-usage">
+  <div class="dialtone-usage__item dialtone-usage__item--do">
+    <h3 class="dialtone-usage__hd dialtone-usage__hd--do"><icon-checkmark /> Use for</h3>
+    <div class="dialtone-usage__bd">
+      <ul>
+        <li>If you can’t reasonably predict a user’s answer to a prompt and there might be wide variability in users’ answers.</li>
+        <li>When using another type of input will make answering more difficult. For example, birthdays and other known dates are easier to type in than they are to select from a calendar picker.</li>
+        <li>When users want to be able to paste in a response.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="dialtone-usage__item dialtone-usage__item--dont">
+    <h3 class="dialtone-usage__hd dialtone-usage__hd--dont"><icon-close /> Don't use for</h3>
+    <div class="dialtone-usage__bd">
+      <ul>
+        <li>When users are choosing from a specific set of options. Consider <a href="/components/select/">Select</a>, <a href="/components/radio/">Radio</a>, or <a href="/components/checkbox/">Checkbox</a>.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+### Best practices
+- The length of the text input provides a hint to users as to how much text to enter.
+- Only show error validation messages or stylings after a user has interacted with a particular field.
+- Do not use placeholder text (i.e. `placeholder` attribute) in place of an accessible `label`.
+- Consider the type of content a user may enter to aid mobile device entry; mobile devices typically surface a keyboard UI attuned to the type. For example, type="tel" will surface a <a href="http://html5doctor.com/html5-forms-input-types/#input-tel">phone keyboard</a>.
+
 
 ## Variants and Examples
 ### Base Styles

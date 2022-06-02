@@ -14,10 +14,10 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-button--defaul
 
 ## Variants and Examples
 Dialtone provides four button styles:
-1. <a href="#default" class="d-link">**Base:**</a> Our default (purple) button colors.
-1. <a href="#danger" class="d-link">**Danger:**</a> Buttons associated with potentially destructive actions. Appears as red.
-1. <a href="#inverted" class="d-link">**Inverted:**</a> For scenarios when you want to place a button on a non-white, dark background.
-1. <a href="#muted" class="d-link">**Muted:**</a> For non-primary actions and contexts in which the base style may not work.
+1. [**Base:**](#base) Our default (purple) button colors.
+1. [**Danger:**](#danger) Buttons associated with potentially destructive actions. Appears as red.
+1. [**Inverted:**](#inverted) For scenarios when you want to place a button on a non-white, dark background.
+1. [**Muted:**](#muted) For non-primary actions and contexts in which the base style may not work.
 
 Each button style offers three levels of visual important:
 1. **Primary:** This is the highest visual importance a button can have. It provides a background color.
@@ -94,7 +94,7 @@ The inverted button style is used to visually separate buttons set on darker bac
 ```
 
 ### Muted
-The muted button style is used to communicate non-primary actions for contexts in which the base style may not work (e.g. colored backgrounds, validation components, etc). This style’s use should be rare. When in doubt, use the <a href="#base" class="d-link">base button style</a>.
+The muted button style is used to communicate non-primary actions for contexts in which the base style may not work (e.g. colored backgrounds, validation components, etc). This style’s use should be rare. When in doubt, use the [base button style](#base).
 
 <code-well-header>
   <div class="d-stack8">
@@ -404,8 +404,8 @@ The base button font size is 16px and should be used in most cases. Every button
 - Disabled buttons don't require focus.
 - If using `.d-btn--disabled`, also use `aria-disabled="true"` and be sure to prevent the click event.
 - If an icon and text are both included in a button's label, and they both represent the same thing, the icon may be decorative and may not need to receive focus or be read-out.
-- If developing a toggle button (i.e. a button that holds a pressed/unpressed state), use `aria-pressed`. (<a href="https://www.w3.org/TR/wai-aria/#button" class="d-link" target="_blank">Source</a>)
-- If developing a button that triggers a dropdown, consider using `aria-haspop` and `aria-expanded`. (<a href="https://www.w3.org/TR/wai-aria/#button" class="d-link" target="_blank">Source</a>)
+- If developing a toggle button (i.e. a button that holds a pressed/unpressed state), use `aria-pressed`. (<a href="https://www.w3.org/TR/wai-aria/#button" target="_blank">Source</a>)
+- If developing a button that triggers a dropdown, consider using `aria-haspopup` and `aria-expanded`. (<a href="https://www.w3.org/TR/wai-aria/#button" target="_blank">Source</a>)
 
 <script setup>
   import IconPhone from '@svgIcons/IconPhone.vue';

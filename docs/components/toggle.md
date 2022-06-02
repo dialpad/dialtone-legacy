@@ -9,8 +9,37 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-toggle--defaul
   </div>
 </code-well-header>
 
-[//]: # (## Usage)
-[//]: # (Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi massa ante, tempus vitae lacus id, luctus tristique lorem. Mauris feugiat massa ex, id aliquet mi tempor non. Curabitur non tristique lectus. Fusce ut nisl non diam dignissim viverra. In posuere dui arcu, sed eleifend massa faucibus sed. Phasellus quis leo vitae erat pellentesque venenatis id vitae lectus. Suspendisse convallis, metus a congue tincidunt, velit sem tincidunt dui, eget auctor ipsum ipsum in ex. Nullam lobortis, mauris vel vestibulum rutrum, lorem elit vehicula est, nec viverra ante erat nec dolor. Proin at placerat tortor. Nam ullamcorper metus et eros porta, at lacinia leo scelerisque. Curabitur finibus sollicitudin odio tempor finibus. Donec lobortis metus vitae mollis gravida.)
+## Usage
+The Toggle component acts as a way to allow the User to switch between two mutually exclusive options. While it technically mirrors a [Checkbox](/components/checkbox/) state, its effect on the system is immediate&mdash;much like a light switch immediately turns on or off the lights. In contrast, the checked state of a [Checkbox](/components/checkbox/) won't be applied until a separate action to confirm the selection is taken.
+
+<div class="dialtone-usage">
+  <div class="dialtone-usage__item dialtone-usage__item--do">
+    <h3 class="dialtone-usage__hd dialtone-usage__hd--do"><icon-checkmark /> Use for</h3>
+    <div class="dialtone-usage__bd">
+      <ul>
+        <li>When its action has an instantaneous effect.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="dialtone-usage__item dialtone-usage__item--dont">
+    <h3 class="dialtone-usage__hd dialtone-usage__hd--dont"><icon-close /> Don't use for</h3>
+    <div class="dialtone-usage__bd">
+      <ul>
+        <li>When its action does not have an immediate effect on the application.</li>
+        <li>Selecting between 2 options. Instead utilize a <a href="/components/checkbox/">Checkbox</a>.</li>
+        <li>As an alternative to a <a href="/components/checkbox/">Checkbox</a> or <a href="/components/radio/">Radio</a> within a Form.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+### Best practices
+- A Toggle component should be used as a control within an application and provide a way to toggle between two states like a household light switch.
+- An `indeterminate` Toggle convey a "mixed" state that neither qualifies as toggled or not toggled. An example use case is when a Toggle acts as a "parent" of a collection of child Toggle components:
+  - Toggled: all children are toggled.
+  - Not toggled: all children are not toggled.
+  - `indeterminate`: children are a mix of toggled and not toggled.
+
 
 ## Variants and Examples
 ### Base Styles
@@ -158,10 +187,10 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-toggle--defaul
 
 ## Accessibility
 The best accessibility is semantic HTML. Most screen readers understand how to parse buttons if they’re correctly formatted. When it comes to toggles, there are a few things to keep in mind:
- 
+
 - All toggle buttons should have an `id` attribute.
 - Associate toggle labels with their buttons using the `for` attribute. This correlates with the toggle's `id`.
-- If you have a group of related toggles, use a `fieldset` to group them and a `legend` to title the group. For further information, please visit Gov.UK’s article, <a class="d-link" href="https://accessibility.blog.gov.uk/2016/07/22/using-the-fieldset-and-legend-elements/">Using the fieldset and legend elements</a>.
+- If you have a group of related toggles, use a `fieldset` to group them and a `legend` to title the group. For further information, please visit Gov.UK’s article, <a href="https://accessibility.blog.gov.uk/2016/07/22/using-the-fieldset-and-legend-elements/">Using the fieldset and legend elements</a>.
 
 <script setup>
   import ExampleToggle from '@exampleComponents/ExampleToggle.vue';

@@ -9,7 +9,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-popover--defau
 
 ## Usage
 A Popover contains a dialog that will appear above other content when activated. It will always appear in a location relative to the anchor.
-If you are looking for a dialog that does not display relative to the anchor, see <a href="components/modal/" class="d-link">Modal</a>.
+If you are looking for a dialog that does not display relative to the anchor, see [Modal](components/modal/).
 Some common examples of popover usage: dropdown list, emoji picker dialog, add comment dialog.
 A popover can be modal or non-modal. Below are some guidelines on when to use a modal vs non-modal popover.
 
@@ -21,38 +21,33 @@ Your popover should be non-modal when:
 - It is not scrollable.
 - It contains only components that do not hold state (link, button).
 
-<div class="xl:d-fd-column xl:d-flow0 xl:d-stack32 d-fl-col2 d-flow32 d-mt32 d-mb32">
-  <div class="d-d-block d-px16 d-py24 d-bgc-green-100 d-bar4">
-    <h3 class="d-mb16">
-      <span class="d-fc-green-600 d-ps-relative d-t6">
-        <icon-checkmark />
-      </span>
-      <span class="d-fw-bold d-fc-green-600">Use for</span>
-    </h3>
-    <ul class="d-fs14 d-stack8 d-pr24">
-      <li>Smaller sized dialogs that trigger on user activation of an anchor element.</li>
-      <li>Dialogs that should be positioned relative to the anchor.</li>
-      <li>Dialogs that contain interactive components.</li>
-    </ul>
+<div class="dialtone-usage">
+  <div class="dialtone-usage__item dialtone-usage__item--do">
+    <h3 class="dialtone-usage__hd dialtone-usage__hd--do"><icon-checkmark /> Use for</h3>
+    <div class="dialtone-usage__bd">
+      <ul>
+        <li>Smaller sized dialogs that trigger on user activation of an anchor element.</li>
+        <li>Dialogs that should be positioned relative to the anchor.</li>
+        <li>Dialogs that contain interactive components.</li>
+      </ul>
+    </div>
   </div>
-  <div class="d-d-block d-px16 d-py24 d-bgc-red-100 d-bar4">
-    <h3 class="d-mb16">
-      <span class="d-fc-red-600 d-ps-relative d-t6">
-        <icon-close />
-      </span>
-      <span class="d-fw-bold d-fc-red-600">Don't use for</span>
-    </h3>
-    <ul class="d-fs14 d-stack8 d-pr24">
-      <li>Content that is displayed on hover. (use <a href="components/tooltip/" class="d-link">Tooltip</a>)</li>
-      <li>Dialogs that should be positioned in the center of the screen.</li>
-      <li>Dialogs that are very large.</li>
-      <li>Alerts.</li>
-    </ul>
+  <div class="dialtone-usage__item dialtone-usage__item--dont">
+    <h3 class="dialtone-usage__hd dialtone-usage__hd--dont"><icon-close /> Don't use for</h3>
+    <div class="dialtone-usage__bd">
+      <ul>
+        <li>Content that is displayed on hover. (use <a href="components/tooltip/">Tooltip</a>)</li>
+        <li>Dialogs that should be positioned in the center of the screen.</li>
+        <li>Dialogs that are very large.</li>
+        <li>Alerts.</li>
+      </ul>
+    </div>
   </div>
 </div>
-  
+
+
 ### Best practices
-- Popovers should be fairly small. If you are looking for more of a full size dialog solution see <a href="components/modal/" class="d-link">Modal</a>
+- Popovers should be fairly small. If you are looking for more of a full size dialog solution see <a href="components/modal/">Modal</a>
 - Trigger using an anchor element, such as a button.
 - Render the dialog at the body element.
 - Focus the first interactive element within the dialog after it is opened.
@@ -155,7 +150,7 @@ Popover must contain an anchor and content element. d-modal--transparent can be 
 <component-class-table component-name="popover" />
 
 ## Accessibility
-If your popover is modal, please see the accessibility section of this page regarding "focus trapping": <a href="components/modal/#accessibility" class="d-link">Modal Accessibility</a>. The same rules will apply here if your popover is modal. 
+If your popover is modal, please see the accessibility section of this page regarding "focus trapping": <a href="components/modal/#accessibility">Modal Accessibility</a>. The same rules will apply here if your popover is modal.
 
 <component-accessible-table component-name="popover"/>
 

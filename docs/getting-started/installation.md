@@ -3,11 +3,11 @@ title: Installation
 desc: A quick start guide to adding Dialtone to your project.
 prev:
   text: About - Contributing
-  link: /about/contributing 
+  link: /about/contributing
 ---
 
 ## Adding Dialtone To Your Project
-To take advantage of Dialtone's customizations, classes, and variables in your project, you will want to install Dialtone via <a href="https://www.npmjs.com/" class="d-link" target="_blank">npm</a>.
+To take advantage of Dialtone's customizations, classes, and variables in your project, you will want to install Dialtone via <a href="https://www.npmjs.com/" target="_blank">npm</a>.
 
 ```bash
 npm install @dialpad/dialtone

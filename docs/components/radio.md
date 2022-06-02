@@ -14,8 +14,38 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-radio--default
   </div>
 </code-well-header>
 
-[//]: # (## Usage)
-[//]: # (Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi massa ante, tempus vitae lacus id, luctus tristique lorem. Mauris feugiat massa ex, id aliquet mi tempor non. Curabitur non tristique lectus. Fusce ut nisl non diam dignissim viverra. In posuere dui arcu, sed eleifend massa faucibus sed. Phasellus quis leo vitae erat pellentesque venenatis id vitae lectus. Suspendisse convallis, metus a congue tincidunt, velit sem tincidunt dui, eget auctor ipsum ipsum in ex. Nullam lobortis, mauris vel vestibulum rutrum, lorem elit vehicula est, nec viverra ante erat nec dolor. Proin at placerat tortor. Nam ullamcorper metus et eros porta, at lacinia leo scelerisque. Curabitur finibus sollicitudin odio tempor finibus. Donec lobortis metus vitae mollis gravida.)
+## Usage
+Radio buttons are a common way to allow users to make a single selection from a list of options. Since only one radio button can be selected at a time (within the same group), each available choice must be its own item and label. Upon selection of a radio item in a group, the group cannot be easily reset to zero selections.
+
+<div class="dialtone-usage">
+  <div class="dialtone-usage__item dialtone-usage__item--do">
+    <h3 class="dialtone-usage__hd dialtone-usage__hd--do"><icon-checkmark /> Use for</h3>
+    <div class="dialtone-usage__bd">
+      <ul>
+        <li>When users may only choose a single option out of a set of mutually exclusive choices.</li>
+        <li>If the number of available options can fit onto a mobile screen.</li>
+        <li>In place of <a href="/components/select/">Select</a> element if there are few enough options (e.g. &lt;=7) and the design can support it.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="dialtone-usage__item dialtone-usage__item--dont">
+    <h3 class="dialtone-usage__hd dialtone-usage__hd--dont"><icon-close /> Don't use for</h3>
+    <div class="dialtone-usage__bd">
+      <ul>
+        <li>Consider <a href="/components/checkbox/">Checkbox</a> if users may have the option to select more than one.</li>
+        <li>Consider a <a href="/components/select/">Select</a> if you don’t have enough space to list out all available options.</li>
+        <li>If users should be able to select zero of the options; radio elements are not “uncheckable.” A <a href="/components/Checkbox/">Checkbox</a> may be warranted.</li>
+        <li>If there are too many options to display on a single view; consider a <a href="/components/select/">Select</a> instead.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+### Best practices
+- Users should be able to tap on or click either the text `label` or the radio element itself to select an option.
+- Options that are listed vertically are easier to read than those listed horizontally. Horizontal listings can make it difficult to tell which label pertains to which radio button.
+- Make sure selections are adequately spaced for touch screens.
+- Use caution if you decide to set a default value as they cannot be unchecked. Setting a default value can discourage users from making conscious decisions, seem pushy, or alienate users who don’t fit into your assumptions. If you are unsure, leave nothing selected by default.
 
 ## Variants and Examples
 ### Base Styles
@@ -314,4 +344,3 @@ The best accessibility is semantic HTML. Most screen readers understand how to p
 - If you have a group of related radios, use a `fieldset` to group them and a `legend` to title the group. For further information, please visit Gov.UK’s article, <a href="https://accessibility.blog.gov.uk/2016/07/22/using-the-fieldset-and-legend-elements/">"Using the fieldset and legend elements"</a>.
 - If the input is a required field, use the `aria-required` property and use the validation message for input errors.
 - Input with validation errors should have `aria-describedby` with the `id` of the validation message.
-
