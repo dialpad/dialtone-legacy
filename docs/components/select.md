@@ -37,7 +37,8 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-select-menu--d
         <li>For site navigation.</li>
         <li>If the list of options is very short. Use <a href="/components/radio/">Radio</a> instead.</li>
         <li>If the list of options is very long. Let users type the same information into an <a href="/components/input/">Input</a> that suggests possible options instead (aka Combobox).</li>
-        <li>Avoid using the <code>multiple</code> attribute. Users often don’t understand how to <code>select</code> multiple items from the select element (e.g. by holding down a modifier key).</li>
+        <li>Avoid using the <code>multiple</code> attribute. Users often don’t understand how to select multiple items from the select element (e.g. by holding down a modifier key).</li>
+        <li>For selecting an action that takes immediate effect. <code>select</code>s are for selecting a choice that is only confirmed by a separate submit action (much like a <a href="/components/checkbox/">Checkbox</a>). For immediate actions consider the <a href="https://vue.dialpad.design/?path=/story/components-dropdown--default">Dropdown</a> component.</li>
       </ul>
     </div>
   </div>
@@ -47,7 +48,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-select-menu--d
 - Selects should be considered the “UI of last resort,” as users often find them confusing and difficult to use. Consider testing thoroughly with members of your target audience.
 - Avoid making options in one dropdown menu change based on the input to another. Users often don’t understand how selecting an item in one impacts another.
 - When most users will (or should) pick a particular option, make it the default selection.
-- Avoid auto-submission. Be wary of UI implications of automatically submitting upon selection or applying its value. Users may often change their choices multiple times, particularly if interacting with a form solely with keyboard. Auto-submission is also less accessible.
+- Avoid auto-submission. Be wary of UI implications of automatically submitting upon selection or applying its value. Users may often change their choices multiple times, particularly if interacting with a form solely with keyboard. Auto-submission is also less accessible. For auto-submission consider the <a href="https://vue.dialpad.design/?path=/story/components-dropdown--default">Dropdown</a> component.
 
 ## Variants and Examples
 ### Base Styles
