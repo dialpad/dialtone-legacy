@@ -9,7 +9,6 @@ Provide a description of what this pull request is adding, updating, extending, 
  - [ ] Ensure all `gulp` scripts successfully compile.
  - [ ] Update, remove, or extend all affected documentation.
  - [ ] Ensure no private Dialpad links or info are in the code or pull request description (Dialtone is a public repo!).
- - [ ] Request a review from Brad Paugh, David Becher, or Francis Rupert.
 
 ## Obligatory GIF (super important!)
 ![](path/to/gif)
