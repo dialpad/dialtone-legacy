@@ -13,32 +13,27 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-input--default
 ## Usage
 This component combines both the `input` and `textarea` elements as options within a single component. Its default presentation includes a paired text `label`.
 
-<div class="xl:d-fd-column xl:d-flow0 xl:d-stack32 d-fl-col2 d-flow32 d-mt32 d-mb32">
-  <div class="d-d-block d-px16 d-py24 d-bgc-green-100 d-bar4">
-    <h3 class="d-mb16">
-      <span class="d-fc-green-600 d-ps-relative d-t6">
-        <icon-checkmark />
-      </span>
-      <span class="d-fw-bold d-fc-green-600">Use for</span>
-    </h3>
-    <ul class="d-fs14">
-      <li>If you can’t reasonably predict a user’s answer to a prompt and there might be wide variability in users’ answers.</li>
-      <li>When using another type of input will make answering more difficult. For example, birthdays and other known dates are easier to type in than they are to select from a calendar picker.</li>
-      <li>When users want to be able to paste in a response.</li>
-    </ul>
+<div class="dialtone-usage">
+  <div class="dialtone-usage__item dialtone-usage__item--do">
+    <h3 class="dialtone-usage__hd dialtone-usage__hd--do"><icon-checkmark /> Use for</h3>
+    <div class="dialtone-usage__bd">
+      <ul>
+        <li>If you can’t reasonably predict a user’s answer to a prompt and there might be wide variability in users’ answers.</li>
+        <li>When using another type of input will make answering more difficult. For example, birthdays and other known dates are easier to type in than they are to select from a calendar picker.</li>
+        <li>When users want to be able to paste in a response.</li>
+      </ul>
+    </div>
   </div>
-  <div class="d-d-block d-px16 d-py24 d-bgc-red-100 d-bar4">
-    <h3 class="d-mb16">
-      <span class="d-fc-red-600 d-ps-relative d-t6">
-        <icon-close />
-      </span>
-      <span class="d-fw-bold d-fc-red-600">Don't use for</span>
-    </h3>
-    <ul class="d-fs14">
-      <li>When users are choosing from a specific set of options. Consider <a href="/components/select/">Select</a>, <a href="/components/radio/">Radio</a>, or <a href="/components/checkbox/">Checkbox</a>.</li>
-    </ul>
+  <div class="dialtone-usage__item dialtone-usage__item--dont">
+    <h3 class="dialtone-usage__hd dialtone-usage__hd--dont"><icon-close /> Don't use for</h3>
+    <div class="dialtone-usage__bd">
+      <ul>
+        <li>When users are choosing from a specific set of options. Consider <a href="/components/select/">Select</a>, <a href="/components/radio/">Radio</a>, or <a href="/components/checkbox/">Checkbox</a>.</li>
+      </ul>
+    </div>
   </div>
 </div>
+
 
 ### Best practices
 - The length of the text input provides a hint to users as to how much text to enter.

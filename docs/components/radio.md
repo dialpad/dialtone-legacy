@@ -17,33 +17,27 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-radio--default
 ## Usage
 Radio buttons are a common way to allow users to make a single selection from a list of options. Since only one radio button can be selected at a time (within the same group), each available choice must be its own item and label. Upon selection of a radio item in a group, the group cannot be easily reset to zero selections.
 
-<div class="xl:d-fd-column xl:d-flow0 xl:d-stack32 d-fl-col2 d-flow32 d-mt32 d-mb32">
-  <div class="d-d-block d-px16 d-py24 d-bgc-green-100 d-bar4">
-    <h3 class="d-mb16">
-      <span class="d-fc-green-600 d-ps-relative d-t6">
-        <icon-checkmark />
-      </span>
-      <span class="d-fw-bold d-fc-green-600">Use for</span>
-    </h3>
-    <ul class="d-fs14">
-      <li>When users may only choose a single option out of a set of mutually exclusive choices.</li>
-      <li>If the number of available options can fit onto a mobile screen.</li>
-      <li>In place of <a href="/components/select/">Select</a> element if there are few enough options (e.g. &lt;=7) and the design can support it.</li>
-    </ul>
+<div class="dialtone-usage">
+  <div class="dialtone-usage__item dialtone-usage__item--do">
+    <h3 class="dialtone-usage__hd dialtone-usage__hd--do"><icon-checkmark /> Use for</h3>
+    <div class="dialtone-usage__bd">
+      <ul>
+        <li>When users may only choose a single option out of a set of mutually exclusive choices.</li>
+        <li>If the number of available options can fit onto a mobile screen.</li>
+        <li>In place of <a href="/components/select/">Select</a> element if there are few enough options (e.g. &lt;=7) and the design can support it.</li>
+      </ul>
+    </div>
   </div>
-  <div class="d-d-block d-px16 d-py24 d-bgc-red-100 d-bar4">
-    <h3 class="d-mb16">
-      <span class="d-fc-red-600 d-ps-relative d-t6">
-        <icon-close />
-      </span>
-      <span class="d-fw-bold d-fc-red-600">Don't use for</span>
-    </h3>
-    <ul class="d-fs14">
-      <li>Consider <a href="/components/checkbox/">Checkbox</a> if users may have the option to select more than one.</li>
-      <li>Consider a <a href="/components/select/">Select</a> if you don’t have enough space to list out all available options.</li>
-      <li>If users should be able to select zero of the options; radio elements are not “uncheckable.” A <a href="/components/Checkbox/">Checkbox</a> may be warranted.</li>
-      <li>If there are too many options to display on a single view; consider a <a href="/components/select/">Select</a> instead.</li>
-    </ul>
+  <div class="dialtone-usage__item dialtone-usage__item--dont">
+    <h3 class="dialtone-usage__hd dialtone-usage__hd--dont"><icon-close /> Don't use for</h3>
+    <div class="dialtone-usage__bd">
+      <ul>
+        <li>Consider <a href="/components/checkbox/">Checkbox</a> if users may have the option to select more than one.</li>
+        <li>Consider a <a href="/components/select/">Select</a> if you don’t have enough space to list out all available options.</li>
+        <li>If users should be able to select zero of the options; radio elements are not “uncheckable.” A <a href="/components/Checkbox/">Checkbox</a> may be warranted.</li>
+        <li>If there are too many options to display on a single view; consider a <a href="/components/select/">Select</a> instead.</li>
+      </ul>
+    </div>
   </div>
 </div>
 

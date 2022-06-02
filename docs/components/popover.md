@@ -21,35 +21,30 @@ Your popover should be non-modal when:
 - It is not scrollable.
 - It contains only components that do not hold state (link, button).
 
-<div class="xl:d-fd-column xl:d-flow0 xl:d-stack32 d-fl-col2 d-flow32 d-mt32 d-mb32">
-  <div class="d-d-block d-px16 d-py24 d-bgc-green-100 d-bar4">
-    <h3 class="d-mb16">
-      <span class="d-fc-green-600 d-ps-relative d-t6">
-        <icon-checkmark />
-      </span>
-      <span class="d-fw-bold d-fc-green-600">Use for</span>
-    </h3>
-    <ul class="d-fs14 d-stack8 d-pr24">
-      <li>Smaller sized dialogs that trigger on user activation of an anchor element.</li>
-      <li>Dialogs that should be positioned relative to the anchor.</li>
-      <li>Dialogs that contain interactive components.</li>
-    </ul>
+<div class="dialtone-usage">
+  <div class="dialtone-usage__item dialtone-usage__item--do">
+    <h3 class="dialtone-usage__hd dialtone-usage__hd--do"><icon-checkmark /> Use for</h3>
+    <div class="dialtone-usage__bd">
+      <ul>
+        <li>Smaller sized dialogs that trigger on user activation of an anchor element.</li>
+        <li>Dialogs that should be positioned relative to the anchor.</li>
+        <li>Dialogs that contain interactive components.</li>
+      </ul>
+    </div>
   </div>
-  <div class="d-d-block d-px16 d-py24 d-bgc-red-100 d-bar4">
-    <h3 class="d-mb16">
-      <span class="d-fc-red-600 d-ps-relative d-t6">
-        <icon-close />
-      </span>
-      <span class="d-fw-bold d-fc-red-600">Don't use for</span>
-    </h3>
-    <ul class="d-fs14 d-stack8 d-pr24">
-      <li>Content that is displayed on hover. (use <a href="components/tooltip/">Tooltip</a>)</li>
-      <li>Dialogs that should be positioned in the center of the screen.</li>
-      <li>Dialogs that are very large.</li>
-      <li>Alerts.</li>
-    </ul>
+  <div class="dialtone-usage__item dialtone-usage__item--dont">
+    <h3 class="dialtone-usage__hd dialtone-usage__hd--dont"><icon-close /> Don't use for</h3>
+    <div class="dialtone-usage__bd">
+      <ul>
+        <li>Content that is displayed on hover. (use <a href="components/tooltip/">Tooltip</a>)</li>
+        <li>Dialogs that should be positioned in the center of the screen.</li>
+        <li>Dialogs that are very large.</li>
+        <li>Alerts.</li>
+      </ul>
+    </div>
   </div>
 </div>
+
 
 ### Best practices
 - Popovers should be fairly small. If you are looking for more of a full size dialog solution see <a href="components/modal/">Modal</a>

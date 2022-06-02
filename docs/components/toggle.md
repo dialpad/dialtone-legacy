@@ -12,30 +12,24 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-toggle--defaul
 ## Usage
 The Toggle component acts as a way to allow the User to switch between two mutually exclusive options. While it technically mirrors a [Checkbox](/components/checkbox/) state, its affect on the system is instantaneous.
 
-<div class="xl:d-fd-column xl:d-flow0 xl:d-stack32 d-fl-col2 d-flow32 d-mt32 d-mb32">
-  <div class="d-d-block d-px16 d-py24 d-bgc-green-100 d-bar4">
-    <h3 class="d-mb16">
-      <span class="d-fc-green-600 d-ps-relative d-t6">
-        <icon-checkmark />
-      </span>
-      <span class="d-fw-bold d-fc-green-600">Use for</span>
-    </h3>
-    <ul class="d-fs14">
-      <li>When its action has an instantaneous affect.</li>
-    </ul>
+<div class="dialtone-usage">
+  <div class="dialtone-usage__item dialtone-usage__item--do">
+    <h3 class="dialtone-usage__hd dialtone-usage__hd--do"><icon-checkmark /> Use for</h3>
+    <div class="dialtone-usage__bd">
+      <ul>
+        <li>When its action has an instantaneous affect.</li>
+      </ul>
+    </div>
   </div>
-  <div class="d-d-block d-px16 d-py24 d-bgc-red-100 d-bar4">
-    <h3 class="d-mb16">
-      <span class="d-fc-red-600 d-ps-relative d-t6">
-        <icon-close />
-      </span>
-      <span class="d-fw-bold d-fc-red-600">Don't use for</span>
-    </h3>
-    <ul class="d-fs14">
-      <li>When its action does not have an immediate affect on the application.</li>
-      <li>Selecting between 2 options. Instead utilize a <a href="/components/checkbox/">Checkbox</a>.</li>
-      <li>As an alternative to a <a href="/components/checkbox/">Checkbox</a> or <a href="/components/radio/">Radio</a> within a Form.</li>
-    </ul>
+  <div class="dialtone-usage__item dialtone-usage__item--dont">
+    <h3 class="dialtone-usage__hd dialtone-usage__hd--dont"><icon-close /> Don't use for</h3>
+    <div class="dialtone-usage__bd">
+      <ul>
+        <li>When its action does not have an immediate affect on the application.</li>
+        <li>Selecting between 2 options. Instead utilize a <a href="/components/checkbox/">Checkbox</a>.</li>
+        <li>As an alternative to a <a href="/components/checkbox/">Checkbox</a> or <a href="/components/radio/">Radio</a> within a Form.</li>
+      </ul>
+    </div>
   </div>
 </div>
 

@@ -11,33 +11,27 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-modal--default
 Modals are used to present a short-term task the user needs to perform without losing the context of the underlying page. Users won't be able to interact with the page until they close the modal.
 Although highly versatile, this doesn't mean modal dialogs are fit for all purposes. Modals are purposefully disruptive and should be used thoughtfully and sparingly, specifically in moments where focus is required or an action must be taken.
 
-<div class="xl:d-fd-column xl:d-flow0 xl:d-stack32 d-fl-col2 d-flow32 d-mt32 d-mb32">
-  <div class="d-d-block d-px16 d-py24 d-bgc-green-100 d-bar4">
-    <h3 class="d-mb16">
-      <span class="d-fc-green-600 d-ps-relative d-t6">
-        <icon-checkmark />
-      </span>
-      <span class="d-fw-bold d-fc-green-600">Use for</span>
-    </h3>
-    <ul class="d-fs14 d-stack8 d-pr24">
-      <li>Confirming a destructive action that is about to happen</li>
-      <li>Entering the name and description of a new Call Center</li>
-      <li>Ask for a user’s consent for an action</li>
-    </ul>
+<div class="dialtone-usage">
+  <div class="dialtone-usage__item dialtone-usage__item--do">
+    <h3 class="dialtone-usage__hd dialtone-usage__hd--do"><icon-checkmark /> Use for</h3>
+    <div class="dialtone-usage__bd">
+      <ul>
+        <li>Confirming a destructive action that is about to happen</li>
+        <li>Entering the name and description of a new Call Center</li>
+        <li>Ask for a user’s consent for an action</li>
+      </ul>
+    </div>
   </div>
-  <div class="d-d-block d-px16 d-py24 d-bgc-red-100 d-bar4">
-    <h3 class="d-mb16">
-      <span class="d-fc-red-600 d-ps-relative d-t6">
-        <icon-close />
-      </span>
-      <span class="d-fw-bold d-fc-red-600">Don't use for</span>
-    </h3>
-    <ul class="d-fs14 d-stack8 d-pr24">
-      <li>Confirming an action took place (instead: use a Toast)</li>
-      <li>Revealing more information (instead: place content inline)</li>
-      <li>Displaying complex forms or large amounts of information (instead: place content inline)</li>
-      <li>Displaying content unrelated to current task (instead: place content inline as link or banner)</li>
-    </ul>
+  <div class="dialtone-usage__item dialtone-usage__item--dont">
+    <h3 class="dialtone-usage__hd dialtone-usage__hd--dont"><icon-close /> Don't use for</h3>
+    <div class="dialtone-usage__bd">
+      <ul>
+        <li>Confirming an action took place (instead: use a Toast)</li>
+        <li>Revealing more information (instead: place content inline)</li>
+        <li>Displaying complex forms or large amounts of information (instead: place content inline)</li>
+        <li>Displaying content unrelated to current task (instead: place content inline as link or banner)</li>
+      </ul>
+    </div>
   </div>
 </div>
 
