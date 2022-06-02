@@ -19,14 +19,26 @@
             </div>
           </div>
         </div>
-        <div class="d-input-group d-d-flex d-ai-center d-fl0 d-flow6">
-          <input type="checkbox" id="style-select-important" class="d-checkbox d-mt1" v-model="important"/>
-          <label for="style-select-important" class="d-label d-fs14 d-lh2">Important?</label>
-        </div>
-        <div class="d-input-group d-d-flex d-ai-center d-fl0 d-flow6">
-          <input type="checkbox" id="style-select-pinned" class="d-checkbox d-mt1" v-model="pinned"/>
-          <label for="style-select-pinned" class="d-label d-fs14 d-lh2">Pinned?</label>
-        </div>
+        <label>
+          <div class="d-checkbox-group">
+            <div class="d-checkbox__input">
+              <input type="checkbox" class="d-checkbox" v-model="important" />
+            </div>
+            <span class="d-checkbox__copy d-checkbox__label d-mb6 d-fw-bold">
+              Important?
+            </span>
+          </div>
+        </label>
+        <label>
+          <div class="d-checkbox-group">
+            <div class="d-checkbox__input">
+              <input type="checkbox" class="d-checkbox" v-model="pinned" />
+            </div>
+            <span class="d-checkbox__copy d-checkbox__label d-mb6 d-fw-bold">
+              Pinned?
+            </span>
+          </div>
+        </label>
         <button class="d-btn d-btn--outlined d-btn--sm" role="button" @click="toggleExample">
           Toggle example
         </button>
