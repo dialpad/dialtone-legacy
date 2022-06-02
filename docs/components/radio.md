@@ -28,7 +28,7 @@ Radio buttons are a common way to allow users to make a single selection from a 
     <ul class="d-fs14">
       <li>When users may only choose a single option out of a set of mutually exclusive choices.</li>
       <li>If the number of available options can fit onto a mobile screen.</li>
-      <li>In place of <a href="/components/select/" class="d-link">Select</a> element if there are few enough options (e.g. &lt;=7) and the design can support it.</li>
+      <li>In place of <a href="/components/select/">Select</a> element if there are few enough options (e.g. &lt;=7) and the design can support it.</li>
     </ul>
   </div>
   <div class="d-d-block d-px16 d-py24 d-bgc-red-100 d-bar4">
@@ -39,10 +39,10 @@ Radio buttons are a common way to allow users to make a single selection from a 
       <span class="d-fw-bold d-fc-red-600">Don't use for</span>
     </h3>
     <ul class="d-fs14">
-      <li>Consider <a href="/components/checkbox/" class="d-link">Checkbox</a> if users may have the option to select more than one.</li>
-      <li>Consider a <a href="/components/select/" class="d-link">Select</a> if you don’t have enough space to list out all available options.</li>
-      <li>If users should be able to select zero of the options; radio elements are not “uncheckable.” A <a href="/components/Checkbox/" class="d-link">Checkbox</a> may be warranted.</li>
-      <li>If there are too many options to display on a single view; consider a <a href="/components/select/" class="d-link">Select</a> instead.</li>
+      <li>Consider <a href="/components/checkbox/">Checkbox</a> if users may have the option to select more than one.</li>
+      <li>Consider a <a href="/components/select/">Select</a> if you don’t have enough space to list out all available options.</li>
+      <li>If users should be able to select zero of the options; radio elements are not “uncheckable.” A <a href="/components/Checkbox/">Checkbox</a> may be warranted.</li>
+      <li>If there are too many options to display on a single view; consider a <a href="/components/select/">Select</a> instead.</li>
     </ul>
   </div>
 </div>

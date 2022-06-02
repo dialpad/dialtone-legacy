@@ -35,7 +35,7 @@ This component combines both the `input` and `textarea` elements as options with
       <span class="d-fw-bold d-fc-red-600">Don't use for</span>
     </h3>
     <ul class="d-fs14">
-      <li>When users are choosing from a specific set of options. Consider <a href="/components/select/" class="d-link">Select</a>, <a href="/components/radio/" class="d-link">Radio</a>, or <a href="/components/checkbox/" class="d-link">Checkbox</a>.</li>
+      <li>When users are choosing from a specific set of options. Consider <a href="/components/select/">Select</a>, <a href="/components/radio/">Radio</a>, or <a href="/components/checkbox/">Checkbox</a>.</li>
     </ul>
   </div>
 </div>

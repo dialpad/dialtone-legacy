@@ -7,11 +7,11 @@ prev:
 ---
 
 All font colors pass the WCAG 2.1 Level AA contrast ratio requirements (ratio >= 4.5:1) and most pass WCAG 2.1 Level AAA requirements (ratio >= 7:1).
-The contrast ratio value is noted with the colors below. 
+The contrast ratio value is noted with the colors below.
 Please use **only** these colors or variations of these colors which pass WCAG 2.1 Level AA contrast ratio requirements.
 
 ## CSS Variables
-Dialtone provides a few abstracted colors CSS variables based on our <a href="/design/colors/color-palette/" class="d-link">color stops</a>.
+Dialtone provides a few abstracted colors CSS variables based on our [color stops](/design/colors/color-palette/).
 
 <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
   <table class="d-table">
@@ -42,7 +42,7 @@ Dialtone provides a few abstracted colors CSS variables based on our <a href="/d
 ## Classes
 <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
   <utility-class-table>
-    <template #content> 
+    <template #content>
       <tbody>
         <!-- Current Color -->
         <tr>
@@ -203,7 +203,7 @@ Use `fv:d-fc-{color}` to change an element's text color on `:focus-visible` stat
 <code-well-header class="d-fl-center d-p24 d-bgc-black-050 d-w100p d-hmn102" custom>
   <button class="d-p16 d-bar4 d-fs18 d-fc-pink fv:d-fc-white d-bgc-transparent fv:d-bgc-pink-600 d-ba d-bc-transparent">Focus on me</button>
 </code-well-header>
-      
+
 ```html
 <button class="d-fc-pink fv:d-fc-white d-bgc-transparent fv:d-bgc-pink-600">...</button>
 ```

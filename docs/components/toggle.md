@@ -33,8 +33,8 @@ The Toggle component acts as a way to allow the User to switch between two mutua
     </h3>
     <ul class="d-fs14">
       <li>When its action does not have an immediate affect on the application.</li>
-      <li>Selecting between 2 options. Instead utilize a <a href="/components/checkbox/" class="d-link">Checkbox</a>.</li>
-      <li>As an alternative to a <a href="/components/checkbox/" class="d-link">Checkbox</a> or <a href="/components/radio/" class="d-link">Radio</a> within a Form.      </li>
+      <li>Selecting between 2 options. Instead utilize a <a href="/components/checkbox/">Checkbox</a>.</li>
+      <li>As an alternative to a <a href="/components/checkbox/">Checkbox</a> or <a href="/components/radio/">Radio</a> within a Form.</li>
     </ul>
   </div>
 </div>
@@ -192,7 +192,7 @@ The best accessibility is semantic HTML. Most screen readers understand how to p
 
 - All toggle buttons should have an `id` attribute.
 - Associate toggle labels with their buttons using the `for` attribute. This correlates with the toggle's `id`.
-- If you have a group of related toggles, use a `fieldset` to group them and a `legend` to title the group. For further information, please visit Gov.UK’s article, <a class="d-link" href="https://accessibility.blog.gov.uk/2016/07/22/using-the-fieldset-and-legend-elements/">Using the fieldset and legend elements</a>.
+- If you have a group of related toggles, use a `fieldset` to group them and a `legend` to title the group. For further information, please visit Gov.UK’s article, <a href="https://accessibility.blog.gov.uk/2016/07/22/using-the-fieldset-and-legend-elements/">Using the fieldset and legend elements</a>.
 
 <script setup>
   import ExampleToggle from '@exampleComponents/ExampleToggle.vue';

@@ -138,7 +138,7 @@ To ensure maximum compatibility, all `a` tags must have an `href`attribute. Also
 
 Focus should always begin on the first element within the dialog. This could be an OK button, or the first field in the form. An X button in the top right corner should be last in the tab order even though it may be visually above the other elements.
 
-Check out the "Focus management" section of the following <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role#focus_management" class="d-link">MDN Dialog document</a> if you'd like to know more
+Check out the "Focus management" section of the following <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role#focus_management" target="_blank">MDN Dialog document</a> if you'd like to know more.
 
 <component-accessible-table component-name="modal"></component-accessible-table>
 

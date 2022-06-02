@@ -41,6 +41,17 @@ tr {
 .theme-default-content:not(.custom) {
   max-width: 75rem !important;
 
+  // override to underline if class attribute doesn't exist OR if class attribute has no value
+  a[class=""],
+  a:not([class]) {
+    text-decoration: underline;
+    background-color: rgba(255, 0, 0, .5);
+    &:hover {
+      color: var(--primary-color-hover);
+      text-decoration: none;
+    }
+  }
+
   > p, > ol, > ul {
     margin-top: var(--su16);
     padding-left: revert;

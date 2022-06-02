@@ -27,7 +27,7 @@ Building inclusive product experiences can be boiled down to the  **P.O.U.R.** p
 ### Perceivable
 The interface and its content is designed and implemented in such a way that it works across a variety of users agents and assistive technologies.
 
- **Examples:**
+#### Examples
 
 - The handling of media content like video, audio and imagery.
 - The handling of text alternatives through things like captioning and sign language.
@@ -38,7 +38,7 @@ The interface and its content is designed and implemented in such a way that it 
 ### Operable
 Users are able to interact with and navigate the interface and its content.
 
- **Examples:**
+#### Examples
 
 - Keyboard operability.
 - Time allowance.
@@ -49,7 +49,7 @@ Users are able to interact with and navigate the interface and its content.
 ### Understandable
 The interface and its content use plain language that’s easy to comprehend. Even if users can perceive and navigate content, what if they can’t actually understand the information?
 
-**Examples:**
+#### Examples
 
 - Predictable and consistent navigation.
 - Use of language such as abbreviations, jargon, reading levels.
@@ -61,7 +61,7 @@ The interface and its content use plain language that’s easy to comprehend. Ev
 
 The interface and its content is designed and implemented in such a way that it works across a variety of users agents and assistive technologies.
 
-**Examples:**
+#### Examples
 
 - Parsing and generally ‘clean’ code like proper heading hierarchy, no duplicate attributes, complete start and end tags for elements.
 - Name, role and value.
@@ -79,29 +79,20 @@ The interface and its content is designed and implemented in such a way that it 
     -  **Motion tracking or eye tracking:** This can include devices that watch a target or even the eyes of the user to interpret where the user wants to place the mouse pointer and moves it for the user.
     -  **Single switch entry devices:** These kinds of devices can be used with other alternative input devices or by themselves. These are typically used with on-screen keyboards. The on-screen keyboard has a cursor move across the keys, and when the key the user wants is in focus, the user will click the switch. This can also work on a webpage: the cursor can move through the webpage, and if the user wants to click on a link or button when that link or button is in focus, the user can activate the switch.
 
-#### Additional Resources
+### Additional Resources
 
-[Apple - Voiceover/keyboard shortcuts for OS X](https://www.apple.com/voiceover/info/guide/_1131.html)
-
-[Deque - Accessibility Testing Tools](https://www.deque.com/axe/)
-
-[Deque University - Web Accessibility Training and Courses](https://dequeuniversity.com/)
-
-[MDN - Developer Guides](https://developer.mozilla.org/en-US/docs/Web/Guide)
-
-[Microsoft - Narrator keyboard commands for Windows](https://support.microsoft.com/en-us/windows/appendix-b-narrator-keyboard-commands-and-touch-gestures-8bdab3f4-b3e9-4554-7f28-8b15bd37410a)
-
-[Pa11y](https://pa11y.org/)
-
-[Web Content Accessibility Guidelines (WCAG) 2.1](https://www.w3.org/TR/WCAG21/)
-
-[WebAim - Constructing a POUR Website](https://webaim.org/articles/pour/)
+- [Apple - Voiceover/keyboard shortcuts for OS X](https://www.apple.com/voiceover/info/guide/_1131.html)
+- [Deque - Accessibility Testing Tools](https://www.deque.com/axe/)
+- [Deque University - Web Accessibility Training and Courses](https://dequeuniversity.com/)
+- [MDN - Developer Guides](https://developer.mozilla.org/en-US/docs/Web/Guide)
+- [Microsoft - Narrator keyboard commands for Windows](https://support.microsoft.com/en-us/windows/appendix-b-narrator-keyboard-commands-and-touch-gestures-8bdab3f4-b3e9-4554-7f28-8b15bd37410a)
+- [Pa11y](https://pa11y.org/)
+- [Web Content Accessibility Guidelines (WCAG) 2.1](https://www.w3.org/TR/WCAG21/)
+- [WebAim - Constructing a POUR Website](https://webaim.org/articles/pour/)
 
 
-#### Sources
-[CDC - Disability Impacts All of Us Infographic](https://www.cdc.gov/ncbddd/disabilityandhealth/infographic-disability-impacts-all.html)
-
-[Berkeley - Types of Assistive Technology](https://webaccess.berkeley.edu/resources/assistive-technology)
-
-[UXcellence - Designing for Accessibility: An Introduction](https://uxcellence.com/2018/accessible-design-intro)
+### Sources
+- [CDC - Disability Impacts All of Us Infographic](https://www.cdc.gov/ncbddd/disabilityandhealth/infographic-disability-impacts-all.html)
+- [Berkeley - Types of Assistive Technology](https://webaccess.berkeley.edu/resources/assistive-technology)
+- [UXcellence - Designing for Accessibility: An Introduction](https://uxcellence.com/2018/accessible-design-intro)
 

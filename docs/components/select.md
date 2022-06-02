@@ -42,8 +42,8 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-select-menu--d
     </h3>
     <ul class="d-fs14">
       <li>For site navigation.</li>
-      <li>If the list of options is very short. Use <a href="/components/radio/" class="d-link">Radio</a> instead.</li>
-      <li>If the list of options is very long. Let users type the same information into an <a href="/components/input/" class="d-link">Input</a> that suggests possible options instead (aka Combobox).</li>
+      <li>If the list of options is very short. Use <a href="/components/radio/">Radio</a> instead.</li>
+      <li>If the list of options is very long. Let users type the same information into an <a href="/components/input/">Input</a> that suggests possible options instead (aka Combobox).</li>
       <li>Avoid using the <code>multiple</code> attribute. Users often don’t understand how to <code>select</code> multiple items from the select element (e.g. by holding down a modifier key).</li>
     </ul>
   </div>

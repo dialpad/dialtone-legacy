@@ -39,7 +39,7 @@ Checkboxes are an easily understandable way to indicate that users can select on
       <span class="d-fw-bold d-fc-red-600">Don't use for</span>
     </h3>
     <ul class="d-fs14">
-      <li>If a user can only select one option from a list; consider using <a href="/components/radio/" class="d-link">Radio</a> or <a href="/components/select/" class="d-link">Select</a>.</li>
+      <li>If a user can only select one option from a list; consider using <a href="/components/radio/">Radio</a> or <a href="/components/select/">Select</a>.</li>
       <li>If there are too many options to reasonably display in its context. </li>
     </ul>
   </div>
