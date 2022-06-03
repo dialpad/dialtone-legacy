@@ -1,3 +1,16 @@
+## [6.29.1](https://github.com/dialpad/dialtone/compare/v6.29.0...v6.29.1) (2022-06-03)
+
+
+### Bug Fixes
+
+* **Chip:** add Preview and reorder docs ([#601](https://github.com/dialpad/dialtone/issues/601)) ([7c29e79](https://github.com/dialpad/dialtone/commit/7c29e79f7efc6cf491bf1a56b33a9d1d0d9bd276))
+* fix fonts reference ([#604](https://github.com/dialpad/dialtone/issues/604)) ([c164f8f](https://github.com/dialpad/dialtone/commit/c164f8f02841a36abcd8e3d7369f28a7919799b9))
+
+
+### Reverts
+
+* Revert 12da734f9ee2e1adccaac092d3f35552c0daa0e7 ([6d4389c](https://github.com/dialpad/dialtone/commit/6d4389c1d9fafff37e5efa9e25360eab70fab357))
+
 # [6.29.0](https://github.com/dialpad/dialtone/compare/v6.28.0...v6.29.0) (2022-05-26)
 
 
