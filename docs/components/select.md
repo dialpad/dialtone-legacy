@@ -25,21 +25,21 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-select-menu--d
   <div class="dialtone-usage__item dialtone-usage__item--do">
     <h3 class="dialtone-usage__hd dialtone-usage__hd--do"><icon-checkmark /> Use for</h3>
     <div class="dialtone-usage__bd">
-      <ul>
-        <li>Use sparingly — only when a user needs to choose from about seven to 15 possible options and you have limited space to display the options.</li>
-      </ul>
+<Markdown>
+- Use sparingly — only when a user needs to choose from about seven to 15 possible options and you have limited space to display the options.
+</Markdown>
     </div>
   </div>
   <div class="dialtone-usage__item dialtone-usage__item--dont">
     <h3 class="dialtone-usage__hd dialtone-usage__hd--dont"><icon-close /> Don't use for</h3>
     <div class="dialtone-usage__bd">
-      <ul>
-        <li>For site navigation.</li>
-        <li>If the list of options is very short. Use <a href="/components/radio/">Radio</a> instead.</li>
-        <li>If the list of options is very long. Let users type the same information into an <a href="/components/input/">Input</a> that suggests possible options instead (aka Combobox).</li>
-        <li>Avoid using the <code>multiple</code> attribute. Users often don’t understand how to select multiple items from the select element (e.g. by holding down a modifier key).</li>
-        <li>For selecting an action that takes immediate effect. <code>select</code>s are for selecting a choice that is only confirmed by a separate submit action (much like a <a href="/components/checkbox/">Checkbox</a>). For immediate actions consider the <a href="https://vue.dialpad.design/?path=/story/components-dropdown--default">Dropdown</a> component.</li>
-      </ul>
+<Markdown>
+- For site navigation.
+- If the list of options is very short. Use [Radio](/components/radio/) instead.
+- If the list of options is very long. Let users type the same information into an [Input](/components/input/) that suggests possible options instead (aka Combobox).
+- Avoid using the `multiple` attribute. Users often don’t understand how to select multiple items from the select element (e.g. by holding down a modifier key).
+- For selecting an action that takes immediate effect. A `select` is for selecting a choice that is only confirmed by a separate submit action (much like a [Checkbox](/components/checkbox/)). For immediate actions consider the [Dropdown](https://vue.dialpad.design/?path=/story/components-dropdown--default) component.
+</Markdown>
     </div>
   </div>
 </div>
@@ -338,3 +338,7 @@ We offer different sizes for instances in which the interface requires a smaller
 - Avoid customizing the placeholder text.
 - If the select is a required field, use the `aria-required` property and use the validation message for input errors.
 - Select with validation errors should have `aria-describedby` with the `id` of the validation message.
+
+<script setup>
+  import Markdown from "@baseComponents/Markdown.vue";
+</script>

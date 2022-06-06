@@ -5,7 +5,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-toggle--defaul
 ---
 <code-well-header>
   <div class="d-toggle-group d-d-flex d-ai-center">
-    <example-toggle label="Toggle"/>
+    <example-toggle label="Label"/>
   </div>
 </code-well-header>
 
@@ -16,19 +16,19 @@ The Toggle component acts as a way to allow the User to switch between two mutua
   <div class="dialtone-usage__item dialtone-usage__item--do">
     <h3 class="dialtone-usage__hd dialtone-usage__hd--do"><icon-checkmark /> Use for</h3>
     <div class="dialtone-usage__bd">
-      <ul>
-        <li>When its action has an instantaneous effect.</li>
-      </ul>
+<Markdown>
+- When its action has an instantaneous effect.
+</Markdown>
     </div>
   </div>
   <div class="dialtone-usage__item dialtone-usage__item--dont">
     <h3 class="dialtone-usage__hd dialtone-usage__hd--dont"><icon-close /> Don't use for</h3>
     <div class="dialtone-usage__bd">
-      <ul>
-        <li>When its action does not have an immediate effect on the application.</li>
-        <li>Selecting between 2 options. Instead utilize a <a href="/components/checkbox/">Checkbox</a>.</li>
-        <li>As an alternative to a <a href="/components/checkbox/">Checkbox</a> or <a href="/components/radio/">Radio</a> within a Form.</li>
-      </ul>
+<Markdown>
+- When its action does not have an immediate effect on the application.
+- Selecting between 2 options. Instead utilize a [Checkbox](/components/checkbox/).
+- As an alternative to a [Checkbox](/components/checkbox/) or [Radio](/components/radio/) within a Form.
+</Markdown>
     </div>
   </div>
 </div>
@@ -39,7 +39,6 @@ The Toggle component acts as a way to allow the User to switch between two mutua
   - Toggled: all children are toggled.
   - Not toggled: all children are not toggled.
   - `indeterminate`: children are a mix of toggled and not toggled.
-
 
 ## Variants and Examples
 ### Base Styles
@@ -194,4 +193,5 @@ The best accessibility is semantic HTML. Most screen readers understand how to p
 
 <script setup>
   import ExampleToggle from '@exampleComponents/ExampleToggle.vue';
+  import Markdown from "@baseComponents/Markdown.vue";
 </script>
