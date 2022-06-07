@@ -1,11 +1,9 @@
 <script setup>
   import ParentLayout from '@vuepress/theme-default/lib/client/layouts/Layout.vue';
   import IconLaunch from '@svgIcons/IconLaunch.vue';
-  import Banner from '../components/Banner.vue';
 </script>
 
 <template>
-  <Banner />
   <ParentLayout>
     <template #page-top>
       <section class="theme-default-content d-stack32 d-pb0 d-mb8">
