@@ -29,6 +29,22 @@ tr {
   padding-top: var(--navbar-height);
   padding-top: 0;
   padding-left: var(--sidebar-width);
+
+  @media screen and (max-width: 980px) {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    padding-bottom: 0 !important;
+    padding-top: var(--su48) !important;
+  }
+  @media screen and (min-width: 981px) {
+    outline-offset: -24px;
+    padding-top: 0 !important;
+  }
+  @media screen and (min-width: 1264px) {
+    outline-offset: -24px;
+    padding-top: 0 !important;
+    padding-top: var(--su24) !important;
+  }
 }
 
 .sidebar-item.active:not(p.sidebar-heading) {
@@ -62,21 +78,16 @@ tr {
   // }
 }
 
-
-
 .sidebar-item-children {
   margin-bottom: var(--su8) !important;
 }
 
-.sidebar-item-children > li > .sidebar-item-children {
-}
 
 .theme-default-content:not(.custom) {
 
   @media screen and (min-width: 1264px) {
     max-width: 99rem; // magic number
   }
-
 
   // override to underline if class attribute doesn't exist OR if class attribute has no value
   a[class=""],
@@ -98,7 +109,8 @@ tr {
     font-size: var(--fs24);
   }
 
-  h2, h3 {
+  h2,
+  h3 {
     font-weight: var(--fw-bold);
     border-bottom: unset;
   }
@@ -107,8 +119,25 @@ tr {
     font-size: unset;
   }
 
-  ol, ul {
+  ol,
+  ul {
     .d-stack8();
+  }
+
+  > p,
+  > ul,
+  > ol {
+    max-width: 72ch;
+  }
+
+  // I feel so dirty doing this but ¯\_🤪_/¯
+  > ul,
+  > ol {
+    padding-left: 1.5em;
+    > li > ul,
+    > li > ol {
+      margin-top: var(--su8);
+    }
   }
 
   ol > * + * {
@@ -130,26 +159,5 @@ tr {
       }
     }
   }
-}
 
-@media screen and (max-width: 980px) {
-  .page {
-    padding-right: 0 !important;
-    padding-left: 0 !important;
-    padding-bottom: 0 !important;
-    padding-top: var(--su48) !important;
-  }
-}
-@media screen and (min-width: 981px) {
-  .page {
-    outline-offset: -24px;
-    padding-top: 0 !important;
-  }
-}
-@media screen and (min-width: 1264px) {
-  .page {
-    outline-offset: -24px;
-    padding-top: 0 !important;
-    padding-top: var(--su24) !important;
-  }
 }
