@@ -12,12 +12,21 @@ Dialpad strives to maintain  **WCAG 2.1 AA** compliance in our digital products.
 
 Everyone benefits when things are designed accessibly. Simply put: building products for accessibility is simply building products for better usability. Considering  **1 in 4** US adults -- that’s 61 million people! -- live with a permanent disability and many more will have temporary or situational throughout their lifetime, accessibility isn’t for just some people. It benefits everyone.
 
+<figure>
+<Markdown>
 ![Accessibility illustration: permanent, temporary and situational disabilities. For touch, a person could have one arm, an arm injury, or be a new parent holding an infant. For sight, a person could be blind, have cataracts, or be a distracted driver. For hearing, the person might be deaf, have an ear infection, or be a bartender in a loud bar. When speaking, a person might be non-verbal, have laryngitis, or speak with a heavy accent.](/assets/images/accessibility-graphic.png)
+</Markdown>
+<figcaption>
+<Markdown>
+[Microsoft Inclusive Design](https://www.microsoft.com/design/inclusive/)
+</Markdown>
+</figcaption>
+</figure>
 
 As we consider the entire spectrum of possibilities, the benefits to the people we are designing for goes up dramatically. Accessible design is usable design, for more people in more circumstances.
 
 ## Principles
-Building inclusive product experiences can be boiled down to the  **P.O.U.R.** principles:
+Building inclusive product experiences can be boiled down to the  **<abbr title="Perceivable Operable Understandable Robust">P.O.U.R</abbr>.** principles:
 
 1. Perceivable.
 2. Operable.
@@ -96,3 +105,6 @@ The interface and its content is designed and implemented in such a way that it 
 - [Berkeley - Types of Assistive Technology](https://webaccess.berkeley.edu/resources/assistive-technology)
 - [UXcellence - Designing for Accessibility: An Introduction](https://uxcellence.com/2018/accessible-design-intro)
 
+<script setup>
+  import Markdown from "@baseComponents/Markdown.vue";
+</script>
