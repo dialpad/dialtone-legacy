@@ -2,6 +2,7 @@
 title: About Dialtone
 desc: Dialtone is Dialpad's Design System that unites product teams around a common visual language.
 ---
+
 ## Components
 Components are reusable building blocks that support a specific interaction or UI need. These components can be reused across Dialpad products and projects
 ensuring UI consistency and cohesion while helping teams deliver high-quality features faster.
@@ -16,8 +17,11 @@ and with usability and performance in mind.
 If Vue isn't supported in your application, you can use the [CSS components](../components/avatar/) in your project, but you'll be responsible
 for writing the correct markup, managing DOM elements and events, and making it [accessible for all users](../getting-started/accessibility/fundamentals/).
 
-
 See more about [components usage](../getting-started/usage/#components).
+
+### Previous Version
+
+[Dialtone 5](https://dialpad.design/version5/) remains viewable, though is no longer being maintained. [Reach out](#contact-us) to the Dialtone team if you have any questions.
 
 ## Intake
 ### Contributions
