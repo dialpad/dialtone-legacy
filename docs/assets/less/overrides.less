@@ -11,6 +11,7 @@ html {
 
 body {
   --sidebar-width: 23.3rem !important;
+  --sidebar-width-mobile: var(--sidebar-width);
 }
 
 tr {
@@ -30,7 +31,12 @@ tr {
   padding-left: var(--sidebar-width);
 }
 
+.sidebar-item.active:not(p.sidebar-heading) {
+  border-left-color: transparent;
+}
+
 .sidebar {
+  padding-left: var(--su8);
   border-right: 0;
   scrollbar-color: var(--black-200);
 
@@ -42,6 +48,27 @@ tr {
   &::-webkit-scrollbar-thumb:hover {
     background-color: var(--black-400);
   }
+}
+
+.sidebar-item {
+  &:not(.sidebar-heading) {
+    padding-left: 1.3rem;
+  }
+  .sidebar-item-children .sidebar-item-children &:not(.sidebar-heading) {
+    padding-left: 1.3rem;
+  }
+  // &:not(.sidebar-heading) + .sidebar-item-children {
+  //   padding-left: 0;
+  // }
+}
+
+
+
+.sidebar-item-children {
+  margin-bottom: var(--su8) !important;
+}
+
+.sidebar-item-children > li > .sidebar-item-children {
 }
 
 .theme-default-content:not(.custom) {

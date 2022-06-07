@@ -3,7 +3,7 @@
     <router-link class="d-btn d-py0" title="Go back to the homepage" to="/">
       <img :alt="brandLogoAlt" :src="brandLogo">
     </router-link>
-    <nav class="d-ml64 d-flow8 lg:d-d-none" role="navigation">
+    <nav class="d-ml64 d-flow12 lg:d-d-none" role="navigation">
       <router-link
         v-for="link in navbarLinks"
         v-bind:key="link.text"
