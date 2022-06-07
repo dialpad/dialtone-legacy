@@ -26,8 +26,6 @@ Checkboxes are an easily understandable way to indicate that users can select on
 - Binary selections that convey opposite states, such as check=“on” and unchecked=“off”, paired with a label that conveys the choice.
 - When users need to see all the available options at a glance.
 </Markdown>
-      <ul>
-      </ul>
     </div>
   </div>
   <div class="dialtone-usage__item dialtone-usage__item--dont">

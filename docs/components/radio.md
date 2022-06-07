@@ -344,6 +344,7 @@ The best accessibility is semantic HTML. Most screen readers understand how to p
 - If you have a group of related radios, use a `fieldset` to group them and a `legend` to title the group. For further information, please visit Gov.UK’s article, <a href="https://accessibility.blog.gov.uk/2016/07/22/using-the-fieldset-and-legend-elements/">"Using the fieldset and legend elements"</a>.
 - If the input is a required field, use the `aria-required` property and use the validation message for input errors.
 - Input with validation errors should have `aria-describedby` with the `id` of the validation message.
+- Input with validation errors should have `aria-describedby` with the `id` of the validation message.
 
 <script setup>
   import Markdown from "@baseComponents/Markdown.vue";
