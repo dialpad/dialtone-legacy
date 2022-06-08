@@ -99,46 +99,34 @@ tr {
     }
   }
 
-  // override to underline if class attribute doesn't exist OR if class attribute has no value
-  a[class=""],
-  a:not([class]) {
-    text-decoration: underline;
-    &:hover {
-      color: var(--primary-color-hover);
-      text-decoration: none;
-    }
-  }
-
-  > p, > ol, > ul {
-    margin-top: var(--su16);
-    padding-left: revert;
-  }
-
   > h2 {
     margin-top: unset;
     font-size: var(--fs24);
   }
 
-  h2,
-  h3 {
+  > h2,
+  > h3 {
     font-weight: var(--fw-bold);
     border-bottom: unset;
   }
 
-  h3 {
+  > h3 {
     font-size: unset;
   }
 
-  ol,
-  ul {
+  > ol,
+  > ul {
     .d-stack8();
   }
 
   > p,
-  > ul,
-  > ol {
+  > ol,
+  > ul {
     max-width: 72ch;
+    margin-top: var(--su16);
+    padding-left: revert;
   }
+
 
   // I feel so dirty doing this but ¯\_🤪_/¯
   > ul,
@@ -150,7 +138,7 @@ tr {
     }
   }
 
-  ol > * + * {
+  > ol > * + * {
     margin-top: 0!important;
   }
 
