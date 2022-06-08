@@ -1,3 +1,10 @@
+# [6.30.0](https://github.com/dialpad/dialtone/compare/v6.29.1...v6.30.0) (2022-06-08)
+
+
+### Features
+
+* **icon:** add skip next / prev and zero icons ([#608](https://github.com/dialpad/dialtone/issues/608)) ([de6495a](https://github.com/dialpad/dialtone/commit/de6495a854aaf5d0b276be3d462f7c90ccd88c5e))
+
 ## [6.29.1](https://github.com/dialpad/dialtone/compare/v6.29.0...v6.29.1) (2022-06-03)
 
 
