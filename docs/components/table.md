@@ -3,7 +3,7 @@ title: Table
 desc: A table is a pattern for organizing data sets. While data visualization helps quickly summarize a data set, a table allows users to compare and analyze individual data rows.
 ---
 <code-well-header bgclass="d-bgc-white">
-  <table class="d-table d-d-unset">
+  <table class="d-table dialtone-doc-table">
     <caption class="d-table__caption">Office List</caption>
     <thead>
       <tr>
@@ -30,7 +30,7 @@ desc: A table is a pattern for organizing data sets. While data visualization he
 ## Variants and Examples
 ### Base Style
 <code-well-header bgclass="d-bgc-white">
-  <table class="d-table d-d-unset">
+  <table class="d-table dialtone-doc-table">
     <caption class="d-table__caption">Office List</caption>
     <thead>
       <tr>
@@ -77,7 +77,7 @@ desc: A table is a pattern for organizing data sets. While data visualization he
 Used when you want to display a data table on a darker background.
 
 <code-well-header bgclass="d-bgc-black-800">
-  <table class="d-table d-d-unset d-table--inverted">
+  <table class="d-table dialtone-doc-table d-table--inverted">
     <caption class="d-table__caption">Office List</caption>
     <thead>
       <tr>
@@ -122,7 +122,7 @@ Used when you want to display a data table on a darker background.
 
 ### Striped
 <code-well-header bgclass="d-bgc-white">
-  <table class="d-table d-d-unset d-table--striped">
+  <table class="d-table dialtone-doc-table d-table--striped">
     <caption class="d-table__caption">Office List</caption>
     <thead>
       <tr>
@@ -166,7 +166,7 @@ Used when you want to display a data table on a darker background.
 ```
 
 <code-well-header bgclass="d-bgc-black-800">
-  <table class="d-table d-d-unset d-table--inverted d-table--striped">
+  <table class="d-table dialtone-doc-table d-table--inverted d-table--striped">
     <caption class="d-table__caption">Office List</caption>
     <thead>
       <tr>
