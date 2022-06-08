@@ -8,7 +8,7 @@
         v-for="link in navbarLinks"
         v-bind:key="link.text"
         :to="link.link"
-        class="d-link"
+        class="d-link d-td-none"
         :class="{ 'router-link-active': isActive(link.text) }"
       >
         {{ link.text }}
