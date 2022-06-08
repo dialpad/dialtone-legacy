@@ -17,7 +17,7 @@ This plugin takes the breakpoints and the classes you need to have responsive va
 ## Classes
 To help keep prefixes concise, we use abbreviations. This syntax is used consistently across all responsive classes. As the viewport size grows, you can change an elements properties. For example, you can set an element to display normally, but be hidden at smaller sizes: `.d-d-block .sm:d-d-none`.
 
-<table class="d-table">
+<table class="d-table dialtone-doc-table">
   <thead>
     <tr>
       <th scope="col" class="d-w25p">Class Prefix</th>

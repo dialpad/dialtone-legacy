@@ -6,7 +6,7 @@ desc: Utility classes to assign an element’s top, right, bottom, or left posit
 ## Positive Coordinates
 ### Classes
 <div class="d-w100p d-of-auto">
-  <table class="d-table">
+  <table class="d-table dialtone-doc-table">
     <thead>
       <tr>
         <th scope="col">Value</th>
@@ -45,7 +45,7 @@ Use the `top|right|bottom|left|x|y|all` utility classes to absolutely position e
   <div class="d-ps-relative xl:d-h48 xl:d-w48 d-h128 d-w128 d-bar8 d-bgc-purple-200"><div class="d-fl-center d-ps-absolute d-l0 d-b0 d-bgc-purple-300 d-bar4 d-w50p d-h50p">9</div></div>
   <div class="d-ps-relative xl:d-h48 xl:d-w48 d-h128 d-w128 d-bar8 d-bgc-purple-200"><div class="d-fl-center d-ps-absolute d-all8 d-bgc-purple-300 d-bar4">10</div></div>
 </code-well-header>
-    
+
 ```html
     <!-- Example 1 -->
     <div class="d-ps-relative d-h128 d-w128">
@@ -102,7 +102,7 @@ Use the `top|right|bottom|left|x|y|all` utility classes to absolutely position e
 
 ### Classes
 <div class="d-w100p d-of-auto">
-  <table class="d-table">
+  <table class="d-table dialtone-doc-table">
     <thead>
       <tr>
         <th scope="col">Value</th>

@@ -9,7 +9,7 @@ next:
 ## Variables
 When writing Less, you can set an element's z-index by using a variable (`@zi-{level}`). The table below lists the available variables, output, and a description for when they should be used.
 
-<table class="d-table">
+<table class="d-table dialtone-doc-table">
   <thead>
     <tr>
       <th scope="col" class="d-w25p">Variable</th>

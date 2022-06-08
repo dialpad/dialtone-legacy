@@ -5,7 +5,7 @@ desc: Utilities to change an element's line-height.
 
 ## CSS Variables
 <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
-  <table class="d-table">
+  <table class="d-table dialtone-doc-table">
     <thead>
       <tr>
         <th scope="col" class="d-w25p">Variable</th>

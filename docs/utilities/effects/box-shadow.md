@@ -1,5 +1,5 @@
 ---
-title: Box Shadows 
+title: Box Shadows
 desc: Utilities for controlling an element's box shadows.
 prev:
   text: Divide Width
@@ -8,7 +8,7 @@ prev:
 
 ## Variables
 
-<table class="d-table">
+<table class="d-table dialtone-doc-table">
   <thead>
     <tr>
       <th scope="col" class="d-w25p">CSS Variable</th>
@@ -23,8 +23,8 @@ prev:
           0 var(--su2) var(--su{{size}}) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l) / {{opacity}}%);
         </span>
         <span v-else>
-          0 var(--su2) var(--su16) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l) / 8%),<br/> 
-          0 var(--su2) var(--su4) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l) / 4%),<br/> 
+          0 var(--su2) var(--su16) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l) / 8%),<br/>
+          0 var(--su2) var(--su4) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l) / 4%),<br/>
           0 var(--su1) var(--su2) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l) / 3%);
         </span>
       </td>

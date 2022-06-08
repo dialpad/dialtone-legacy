@@ -4,7 +4,7 @@ desc: Utilities to change an element's font-family.
 ---
 
 ## CSS Variables
-<table class="d-table">
+<table class="d-table dialtone-doc-table">
   <thead>
     <tr>
       <th scope="col" class="d-w40p">Variable</th>
@@ -20,7 +20,7 @@ desc: Utilities to change an element's font-family.
 </table>
 
 ## Classes
-<table class="d-table">
+<table class="d-table dialtone-doc-table">
   <thead>
     <tr>
       <th scope="col" class="d-w40p">Class</th>

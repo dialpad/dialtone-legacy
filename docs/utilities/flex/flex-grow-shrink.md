@@ -1,5 +1,5 @@
 ---
-title: Flex, Grow, & Shrink 
+title: Flex, Grow, & Shrink
 desc: Utilities for setting an object's flex, grow, and shrink flex properties.
 ---
 
@@ -8,7 +8,7 @@ desc: Utilities for setting an object's flex, grow, and shrink flex properties.
 The `flex` property is a shorthand property for `flex-grow`, `flex-shrink`, and `flex-basis` properties. You can also
 control the grow and shrink flex values separately with their own utility classes.
 
-<table class="d-table">
+<table class="d-table dialtone-doc-table">
   <thead>
     <tr>
       <th scope="col" class="d-w20p">Class</th>
@@ -50,7 +50,7 @@ control the grow and shrink flex values separately with their own utility classe
 
 The `flex-grow` sets the flex container’s grow factor relative to the parent's main size. The default value is 0.
 
-<table class="d-table">
+<table class="d-table dialtone-doc-table">
   <thead>
     <tr>
       <th scope="col" class="d-w20p">Class</th>
@@ -92,7 +92,7 @@ The `flex-grow` sets the flex container’s grow factor relative to the parent's
 
 The `flex-shrink` sets the flex container’s shrink factor relative to the parent's main size. The default value is 1.
 
-<table class="d-table">
+<table class="d-table dialtone-doc-table">
   <thead>
     <tr>
       <th scope="col" class="d-w20p">Class</th>

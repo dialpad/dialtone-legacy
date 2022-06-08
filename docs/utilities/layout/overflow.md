@@ -6,7 +6,7 @@ desc: Utilities for controlling how an element handles content that is too large
 ## Classes
 The `overflow` CSS shorthand property sets the desired behavior for how content is handled when it exceeds the wrapper's bounds in both directions (x-axis and then y-axis).
 
-<table class="d-table">
+<table class="d-table dialtone-doc-table">
     <thead>
         <tr>
             <th scope="col" class="d-w20p">Class</th>

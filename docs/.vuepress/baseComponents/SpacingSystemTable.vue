@@ -1,6 +1,6 @@
 <template>
   <div class="d-h464 d-of-y-scroll d-mt16">
-    <table class="d-table">
+    <table class="d-table dialtone-doc-table">
       <thead>
         <tr>
           <th class="d-w40p" scope="col">Value</th>

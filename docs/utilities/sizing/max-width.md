@@ -5,7 +5,7 @@ desc: Utilities to control an element's maximum width.
 
 ## Classes
 <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
-  <table class="d-table">
+  <table class="d-table dialtone-doc-table">
     <thead>
       <tr>
         <th scope="col" class="d-w30p">Class</th>

@@ -4,7 +4,7 @@ desc: Utilities to change an element's font-weight.
 ---
 
 ## Variables
-<table class="d-table">
+<table class="d-table dialtone-doc-table">
   <thead>
       <tr>
           <th scope="col" class="d-w25p">Variable</th>

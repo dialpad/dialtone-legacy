@@ -4,7 +4,7 @@
       <a class="header-anchor" href="#weather-codes">#</a>
       Weather Codes
     </h2>
-    <table class="d-table">
+    <table class="d-table dialtone-doc-table">
       <thead>
       <tr>
         <th class="d-w10p" scope="col">Code</th>

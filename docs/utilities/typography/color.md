@@ -14,7 +14,7 @@ Please use **only** these colors or variations of these colors which pass WCAG 2
 Dialtone provides a few abstracted colors CSS variables based on our [color stops](/design/colors/color-palette/).
 
 <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
-  <table class="d-table">
+  <table class="d-table dialtone-doc-table">
     <thead>
       <tr>
         <th scope="col" class="d-w30p">Variable</th>

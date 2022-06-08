@@ -7,7 +7,7 @@ desc: Common grid layout patterns used throughout Dialpad and UberConference.
 Use `.d-gl-sidebar` to create a simple 2-column layout with a sidebar and main content area.
 
 ### CSS Variables
-<table class="d-table">
+<table class="d-table dialtone-doc-table">
   <thead>
     <tr>
       <th scope="col" class="d-w25p">CSS Var</th>
@@ -47,7 +47,7 @@ Use `.d-gl-sidebar` to create a simple 2-column layout with a sidebar and main c
 Use `.d-gl-header` to create a simple 2-row layout with a header area and main content area. Usually this is nested within a `.d-gl-sidebar` content area.
 
 ### CSS Variables
-<table class="d-table">
+<table class="d-table dialtone-doc-table">
   <thead>
     <tr>
       <th scope="col" class="d-w25p">CSS Var</th>
