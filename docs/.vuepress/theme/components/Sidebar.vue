@@ -1,4 +1,5 @@
 <template>
+  <Test />
   <aside class="sidebar">
     <SidebarItems />
   </aside>

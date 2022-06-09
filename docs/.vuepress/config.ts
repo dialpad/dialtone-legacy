@@ -5,7 +5,8 @@ const siteNav = require('../_data/site-nav.json');
 const { dialtoneTheme } = require('./theme');
 const baseURL = (process.env.VUEPRESS_BASE_URL ?? "/") as `/${string}/`;
 
-const { viteBundler } = require('@vuepress/bundler-vite')
+const { viteBundler } = require('@vuepress/bundler-vite');
+const { tocPlugin } = require('@vuepress/plugin-toc');
 
 const themeConfig = {
   logo: baseURL + 'assets/images/dialpad-logo.svg',
@@ -27,18 +28,18 @@ const dialtoneCSS = isDevelopment ? 'dialtone.css' : 'dialtone.min.css';
 const dialtoneDocsCSS = isDevelopment ? 'dialtone-docs.css' : 'dialtone-docs.min.css';
 
 function generateSidebar(siteNav) {
-  let sidebar = siteNav;
+/*  let sidebar = siteNav;
   Object.keys(sidebar).forEach(navPath => {
     Object.keys(sidebar[navPath]).forEach(section => {
-      sidebar[navPath][section]["children"].map(heading => {
+      sidebar[navPath][section]["children"].forEach(heading => {
         heading.link = "/";
       });
     });
-  });
+  });*/
   return siteNav;
 }
 
-export default defineUserConfig({
+const userConfig = defineUserConfig({
   // site config
   lang: 'en-US',
   title: 'Dialtone',
@@ -107,4 +108,13 @@ export default defineUserConfig({
     '@dialtoneCSS': resolve(__dirname, '../assets/css/' + dialtoneCSS),
     '@dialtoneDocsCSS': resolve(__dirname, '../assets/css/' + dialtoneDocsCSS)
   },
-})
+});
+
+userConfig["plugins"] = [
+  tocPlugin({
+    componentName: "Test",
+    defaultPropsOptions: {}
+  })
+];
+
+export default userConfig;
