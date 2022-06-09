@@ -6,18 +6,6 @@ next:
   link: /components/avatar
 ---
 
-## Classes
-<utility-class-table>
-  <template #content>
-    <tbody>
-      <tr v-for="i in ['normal', 'break-all', 'keep-all', 'unset']">
-        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-wb-{{ i }}</th>
-        <td class="d-ff-mono d-fc-orange d-fs12">word-break: {{ i }} !important;</td>
-      </tr>
-    </tbody>
-  </template>
-</utility-class-table>
-
 ## Normal
 Use `d-wb-normal` to reset an element's line break rule.
 
@@ -56,3 +44,15 @@ Use `d-wb-keep-all` on an element to not use word breaks for Chinese, Japanese, 
 ```html
 <p class="d-wb-keep-all">...</p>
 ```
+
+## Classes
+<utility-class-table>
+  <template #content>
+    <tbody>
+      <tr v-for="i in ['normal', 'break-all', 'keep-all', 'unset']">
+        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-wb-{{ i }}</th>
+        <td class="d-ff-mono d-fc-orange d-fs12">word-break: {{ i }} !important;</td>
+      </tr>
+    </tbody>
+  </template>
+</utility-class-table>

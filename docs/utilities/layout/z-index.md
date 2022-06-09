@@ -6,26 +6,6 @@ next:
   link: /utilities/responsive/breakpoints
 ---
 
-## Variables
-When writing Less, you can set an element's z-index by using a variable (`@zi-{level}`). The table below lists the available variables, output, and a description for when they should be used.
-
-<table class="d-table">
-  <thead>
-    <tr>
-      <th scope="col" class="d-w25p">Variable</th>
-      <th scope="col">Output</th>
-      <th scope="col">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr v-for="{ name, description, output } in zIndex">
-      <th scope="row" class="d-ff-mono d-fc-pink-500 d-fs12 d-fw-normal">@zi-{{ name }}</th>
-      <td>{{ output }}</td>
-      <td class="dialtone-table--sans">{{ description }}</td>
-    </tr>
-  </tbody>
-</table>
-
 ## Classes
 Set an element's z-index by using a class (`.d-zi-{level}`>). These classes match up with the variables names listed above. The table below lists the available z-index levels, class names, and the CSS output.
 
@@ -43,3 +23,23 @@ Set an element's z-index by using a class (`.d-zi-{level}`>). These classes matc
 <script setup>
   import zIndex from '@data/z-index.json';
 </script>
+
+## Variables
+When writing Less, you can set an element's z-index by using a variable (`@zi-{level}`). The table below lists the available variables, output, and a description for when they should be used.
+
+<table class="d-table dialtone-doc-table">
+  <thead>
+    <tr>
+      <th scope="col" class="d-w25p">Variable</th>
+      <th scope="col">Output</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr v-for="{ name, description, output } in zIndex">
+      <th scope="row" class="d-ff-mono d-fc-pink-500 d-fs12 d-fw-normal">@zi-{{ name }}</th>
+      <td>{{ output }}</td>
+      <td class="dialtone-table--sans">{{ description }}</td>
+    </tr>
+  </tbody>
+</table>

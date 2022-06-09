@@ -2,27 +2,13 @@
 title: Background Position
 desc: Utilities for controlling the position of an element's background image.
 ---
-## Classes
-
-<utility-class-table>
-  <template #content>
-    <tbody>
-      <tr v-for="{ className, output } in positions">
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-bgp-{{ className }}</th>
-          <td class="d-ff-mono d-fc-orange d-fs12">
-            background-position: {{ output }} !important;
-          </td>
-      </tr>
-    </tbody>
-  </template>
-</utility-class-table>
 
 ## Usage
 Use `d-bgp-{position}` to control where an element's background image is placed.
 
 <code-well-header class="d-fl-col4 d-fw-wrap d-flg12 d-p12 d-bgc-purple-100 d-bgo50" custom>
   <div class="d-d-flex d-fd-column d-ai-center d-stack4" v-for="{ className } in positions">
-      <div 
+      <div
         class="d-fl-center d-w128 d-h128 d-bgc-purple-300 d-bar8 d-bc-purple-200 d-of-hidden d-bgr-none d-bgs-var" style="--bgg-size: 65% 65%; background-image: url('https://cdn.jpegmini.com/user/images/slider_puffin_before_mobile.jpg');"
         :class="`d-bgp-${className}`"
       >
@@ -46,3 +32,18 @@ Use `d-bgp-{position}` to control where an element's background image is placed.
 <script setup>
   import { positions } from '@data/backgrounds.json';
 </script>
+
+## Classes
+
+<utility-class-table>
+  <template #content>
+    <tbody>
+      <tr v-for="{ className, output } in positions">
+          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-bgp-{{ className }}</th>
+          <td class="d-ff-mono d-fc-orange d-fs12">
+            background-position: {{ output }} !important;
+          </td>
+      </tr>
+    </tbody>
+  </template>
+</utility-class-table>

@@ -3,18 +3,6 @@ title: Align Self
 desc: Utilities for setting how an element's is aligned along a parent's cross axis.
 ---
 
-## Classes
-<utility-class-table>
-  <template #content>
-    <tbody>
-      <tr v-for=" { class: className, output } in alignSelf">
-        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-{{ className }}</th>
-        <td class="d-ff-mono d-fc-orange d-fs12">{{ output }}</td>
-      </tr>
-    </tbody>
-</template>
-</utility-class-table>
-
 ## Stretch
 Use `d-as-stretch` to stretch an item along a parent's cross axis.
 
@@ -94,3 +82,15 @@ Use `d-as-flex-end` to align an item from the end of the parent's cross axis.
 <script setup>
   import { alignSelf } from '@data/flex.json';
 </script>
+
+## Classes
+<utility-class-table>
+  <template #content>
+    <tbody>
+      <tr v-for=" { class: className, output } in alignSelf">
+        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-{{ className }}</th>
+        <td class="d-ff-mono d-fc-orange d-fs12">{{ output }}</td>
+      </tr>
+    </tbody>
+</template>
+</utility-class-table>

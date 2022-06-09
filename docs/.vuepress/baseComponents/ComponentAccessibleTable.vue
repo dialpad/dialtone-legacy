@@ -1,5 +1,5 @@
 <template>
-  <table class="d-table">
+  <table class="d-table dialtone-doc-table">
     <thead>
     <tr>
       <th scope="col" class="d-w40p">Item</th>

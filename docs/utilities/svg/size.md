@@ -9,27 +9,6 @@ next:
   link: /utilities/typography/color
 ---
 
-## Classes
-<utility-class-table>
-  <template #content>
-    <tbody>
-      <tr v-for="size in iconSizes">
-        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">{{ size.class }}</th>
-          <td class="d-ff-mono d-fc-orange d-fs12">
-            <span v-if="size.sizeRem">
-              width: {{ size.sizeRem }} !important; 
-              height: {{ size.sizeRem }} !important;
-            </span>
-            <span v-else-if="size.class === 'd-svg--size100p'">
-              width: 100% !important; 
-              height: auto !important;
-            </span>
-          </td>
-      </tr>
-    </tbody>
-  </template>
-</utility-class-table>
-
 ## Usage
 
 Use `d-svg--size{n}` to control the size of an SVG.
@@ -44,7 +23,7 @@ Use `d-svg--size{n}` to control the size of an SVG.
   <icon-phone class="d-svg--size48" />
   <icon-phone class="d-svg--size64" />
 </code-well-header>
-      
+
 ```html
 <svg class="d-svg d-svg--system d-svg--size14">...</svg>
 <svg class="d-svg d-svg--system d-svg--size16">...</svg>
@@ -63,7 +42,7 @@ Use `d-svg--size100p` to set the size of an SVG to the size of the containing el
     <icon-phone class="d-svg--size100p" />
   </div>
 </code-well-header>
-      
+
 ```html
 <div class="d-w32 d-h32">
   <svg class="d-svg d-svg--system d-svg--size100p">...</svg>
@@ -73,3 +52,24 @@ Use `d-svg--size100p` to set the size of an SVG to the size of the containing el
 <script setup>
   import iconSizes from '@data/icons-sizes.json';
 </script>
+
+## Classes
+<utility-class-table>
+  <template #content>
+    <tbody>
+      <tr v-for="size in iconSizes">
+        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">{{ size.class }}</th>
+          <td class="d-ff-mono d-fc-orange d-fs12">
+            <span v-if="size.sizeRem">
+              width: {{ size.sizeRem }} !important;
+              height: {{ size.sizeRem }} !important;
+            </span>
+            <span v-else-if="size.class === 'd-svg--size100p'">
+              width: 100% !important;
+              height: auto !important;
+            </span>
+          </td>
+      </tr>
+    </tbody>
+  </template>
+</utility-class-table>

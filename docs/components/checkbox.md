@@ -21,20 +21,20 @@ Checkboxes are an easily understandable way to indicate that users can select on
   <div class="dialtone-usage__item dialtone-usage__item--do">
     <h3 class="dialtone-usage__hd dialtone-usage__hd--do"><icon-checkmark /> Use for</h3>
     <div class="dialtone-usage__bd">
-      <ul>
-        <li>Selecting any number of choices from a set list.</li>
-        <li>Binary selections that convey opposite states, such as check=“on” and unchecked=“off”, paired with a label that conveys the choice.</li>
-        <li>When users need to see all the available options at a glance.</li>
-      </ul>
+<Markdown>
+- Selecting any number of choices from a set list.
+- Binary selections that convey opposite states, such as check=“on” and unchecked=“off”, paired with a label that conveys the choice.
+- When users need to see all the available options at a glance.
+</Markdown>
     </div>
   </div>
   <div class="dialtone-usage__item dialtone-usage__item--dont">
     <h3 class="dialtone-usage__hd dialtone-usage__hd--dont"><icon-close /> Don't use for</h3>
     <div class="dialtone-usage__bd">
-      <ul>
-        <li>If a user can only select one option from a list; consider using <a href="/components/radio/">Radio</a> or <a href="/components/select/">Select</a>.</li>
-        <li>If there are too many options to reasonably display in its context. </li>
-      </ul>
+<Markdown>
+- If a user can only select one option from a list; consider using [Radio](/components/radio/) or [Select](/components/select/).
+- If there are too many options to reasonably display in its context.
+</Markdown>
     </div>
   </div>
 </div>
@@ -420,3 +420,7 @@ The best accessibility is semantic HTML. Most screen readers understand how to p
 - Input with description text should have `aria-describedby` with the `id` of the description text.
 - If the input is a required field, use the `aria-required` property and use the validation message for input errors.
 - Input with validation errors should have `aria-describedby` with the `id` of the validation message.
+
+<script setup>
+  import Markdown from "@baseComponents/Markdown.vue";
+</script>

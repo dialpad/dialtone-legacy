@@ -3,19 +3,6 @@ title: Text Align
 desc: Utilities for controlling an element's text alignment.
 ---
 
-
-## Classes
-<utility-class-table>
-  <template #content>
-    <tbody>
-      <tr v-for="i in align">
-        <th class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-ta-{{ i }}</th>
-        <td class="d-ff-mono d-fc-orange d-fs12">text-align: {{ i }} !important;</td>
-      </tr>
-    </tbody>
-  </template>
-</utility-class-table>
-
 ## Usage
 Use `d-ta-{n}` to change an element's text alignment.
 
@@ -45,3 +32,15 @@ Use `d-ta-{n}` to change an element's text alignment.
 <script setup>
   import { align } from '@data/type.json';
 </script>
+
+## Classes
+<utility-class-table>
+  <template #content>
+    <tbody>
+      <tr v-for="i in align">
+        <th class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-ta-{{ i }}</th>
+        <td class="d-ff-mono d-fc-orange d-fs12">text-align: {{ i }} !important;</td>
+      </tr>
+    </tbody>
+  </template>
+</utility-class-table>

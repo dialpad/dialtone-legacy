@@ -6,32 +6,6 @@ next:
   link: /utilities/borders/color.html
 ---
 
-## Classes
-
-<div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
-  <utility-class-table>
-    <template #content>
-      <tbody v-for="c in ['dark', 'light']">
-        <tr v-for="i in ['blob', 'chevrons', 'crosses', 'crosshatch', 'dot-dash', 'dots-circles', 'horz-stripes', 'slanted-stripes', 'steps', 'stripe']">
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-bgg-pattern-{{ i }}-{{ c }}</th>
-          <td>
-            <div class="d-d-flex d-jc-space-between d-ai-center">
-              <div class="d-fl-grow1 d-ff-mono d-fc-orange d-fs12">
-                --bgg-pattern: --bgg-pattern-{{ i }}-{{ c }};
-              </div>
-              <div 
-                class="d-w24 d-h24 d-bgg-pattern d-ba d-bc-black-900 d-bar4"
-                :class="[{'d-bgc-black-900': c === 'light'}, `d-bgg-pattern-${i}-${c}`]"
-              >
-              </div>
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </template>
-  </utility-class-table>
-</div>
-
 ## Usage
 Use `d-bgg-pattern-{pattern}-{dark|light}` to apply a pattern.
 
@@ -45,3 +19,29 @@ Use `d-bgg-pattern-{pattern}-{dark|light}` to apply a pattern.
 <div class="... d-bgg-pattern d-bgg-pattern-slanted-stripes-dark">...</div>
 <div class="... d-bgg-pattern d-bgg-pattern-dots-circles-light">...</div>
 ```
+
+## Classes
+
+<div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
+  <utility-class-table>
+    <template #content>
+      <tbody v-for="c in ['dark', 'light']">
+        <tr v-for="i in ['blob', 'chevrons', 'crosses', 'crosshatch', 'dot-dash', 'dots-circles', 'horz-stripes', 'slanted-stripes', 'steps', 'stripe']">
+          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-bgg-pattern-{{ i }}-{{ c }}</th>
+          <td>
+            <div class="d-d-flex d-jc-space-between d-ai-center">
+              <div class="d-fl-grow1 d-ff-mono d-fc-orange d-fs12">
+                --bgg-pattern: --bgg-pattern-{{ i }}-{{ c }};
+              </div>
+              <div
+                class="d-w24 d-h24 d-bgg-pattern d-ba d-bc-black-900 d-bar4"
+                :class="[{'d-bgc-black-900': c === 'light'}, `d-bgg-pattern-${i}-${c}`]"
+              >
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </template>
+  </utility-class-table>
+</div>

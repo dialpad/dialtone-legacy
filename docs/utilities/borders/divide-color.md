@@ -3,34 +3,6 @@ title: Divide Color
 desc: Utilities for controlling the border color between an element's child items.
 ---
 
-## Classes
-<div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
-  <utility-class-table>
-    <template #content>
-      <tbody v-for="{ color: c, stops } in colors">
-        <tr v-for="{ stop, copy } in stops">
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-divide-{{ c }}-{{ stop }}</th>
-          <td>
-            <div class="d-d-flex d-jc-space-between d-ai-center">
-              <div class="d-fl-grow1 d-ff-mono d-fc-orange d-fs12">
-                --dco: 100%;<br/>
-                border-color: hsla(var(--{{ c }}-{{ stop }}-h) var(--{{ c }}-{{ stop }}-s) var(--{{ c }}-{{ stop }}-l) / var(--dco)) !important;
-              </div>
-              <div class="d-fl-shrink0 d-fl-center d-m4 d-ml16 d-h64 d-w64">
-                <div 
-                  class="d-w100p d-h0 d-bt d-btw2" 
-                  :class="`d-bc-${c}-${stop}`"
-                >
-                </div>
-              </div>
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </template>
-  </utility-class-table>
-</div>
-
 ## Vertical Dividers
 Use `d-divide-y{n}` to create a divider between an element's child items.
 
@@ -91,3 +63,31 @@ Use `d-dco{n}` to change a divider opacity value.
 <script setup>
   import colors from '@data/colors.json';
 </script>
+
+## Classes
+<div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
+  <utility-class-table>
+    <template #content>
+      <tbody v-for="{ color: c, stops } in colors">
+        <tr v-for="{ stop, copy } in stops">
+          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-divide-{{ c }}-{{ stop }}</th>
+          <td>
+            <div class="d-d-flex d-jc-space-between d-ai-center">
+              <div class="d-fl-grow1 d-ff-mono d-fc-orange d-fs12">
+                --dco: 100%;<br/>
+                border-color: hsla(var(--{{ c }}-{{ stop }}-h) var(--{{ c }}-{{ stop }}-s) var(--{{ c }}-{{ stop }}-l) / var(--dco)) !important;
+              </div>
+              <div class="d-fl-shrink0 d-fl-center d-m4 d-ml16 d-h64 d-w64">
+                <div
+                  class="d-w100p d-h0 d-bt d-btw2"
+                  :class="`d-bc-${c}-${stop}`"
+                >
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </template>
+  </utility-class-table>
+</div>

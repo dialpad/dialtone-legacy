@@ -10,7 +10,8 @@ html {
 }
 
 body {
-  --sidebar-width: unset !important;
+  --sidebar-width: 23.3rem !important;
+  --sidebar-width-mobile: var(--sidebar-width);
 }
 
 tr {
@@ -26,10 +27,51 @@ tr {
 
 .page {
   padding-top: var(--navbar-height);
+  padding-top: 0;
   padding-left: var(--sidebar-width);
+
+  @media screen and (max-width: 980px) {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    padding-bottom: 0 !important;
+    padding-top: var(--su48) !important;
+  }
+  @media screen and (min-width: 981px) {
+    outline-offset: -24px;
+    padding-top: 0 !important;
+  }
+  @media screen and (min-width: 1264px) {
+    outline-offset: -24px;
+    padding-top: 0 !important;
+    padding-top: var(--su24) !important;
+  }
 }
 
+code,
+kbd,
+samp {
+  font-family: RobotoMono,SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+}
+
+
+.sidebar-item.active {
+  border-left-color: transparent !important;
+}
+
+.sidebar-item:not(.sidebar-heading) + .sidebar-item-children {
+  padding-left: var(--su8);
+  .sidebar-item-children {
+    display: none;
+  }
+}
+
+
 .sidebar {
+  @media screen and (min-width: 981px) {
+    padding-left: var(--su8);
+  }
+
+  border-right: 0;
   scrollbar-color: var(--black-200);
 
   &::-webkit-scrollbar-thumb {
@@ -42,8 +84,43 @@ tr {
   }
 }
 
+.sidebar-heading,
+.sidebar-item {
+  @media screen and (min-width: 981px) {
+    font-size: var(--fs16) !important;
+  }
+}
+
+.sidebar-heading {
+  @media screen and (min-width: 981px) {
+    font-size: var(--fs14) !important;
+    text-transform: uppercase;
+  }
+}
+
+.sidebar-item {
+  &:not(.sidebar-heading) {
+    @media screen and (min-width: 981px) {
+      padding-left: 1.3rem;
+      font-size: var(--base--font-size);
+    }
+  }
+  .sidebar-item-children .sidebar-item-children &:not(.sidebar-heading) {
+    @media screen and (min-width: 981px) {
+      padding-left: 1.3rem;
+    }
+  }
+}
+
+.sidebar-item-children {
+  margin-bottom: var(--su8) !important;
+}
+
 .theme-default-content:not(.custom) {
-  max-width: 75rem !important;
+
+  @media screen and (min-width: 1264px) {
+    max-width: 99rem; // magic number
+  }
 
   // override to underline if class attribute doesn't exist OR if class attribute has no value
   a[class=""],
@@ -55,55 +132,100 @@ tr {
     }
   }
 
-  > p, > ol, > ul {
-    margin-top: var(--su16);
-    padding-left: revert;
-  }
-
   > h2 {
     margin-top: unset;
     font-size: var(--fs24);
   }
 
-  h2, h3 {
+  > h2,
+  > h3 {
     font-weight: var(--fw-bold);
     border-bottom: unset;
   }
 
-  h3 {
+  > h3 {
     font-size: unset;
   }
 
-  ol, ul {
+  > ol,
+  > ul {
     .d-stack8();
   }
 
-  ol > * + * {
+  > p,
+  > ol,
+  > ul {
+    max-width: 72ch;
+    margin-top: var(--su16);
+    padding-left: revert;
+  }
+
+  > ul,
+  > ol {
+    padding-left: 1.5em;
+    > li > ul,
+    > li > ol {
+      margin-top: var(--su8);
+    }
+  }
+
+  > ol > * + * {
     margin-top: 0!important;
   }
 
-  .d-table {
-    thead {
-      tr, th, td {
-        border: unset;
+}
+
+.page-nav {
+  margin: 0 auto;
+  max-width: 99rem;
+  .inner {
+    border: 0;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--su72);
+  }
+  .prev,
+  .next {
+    display: flex;
+    gap: var(--su12);
+
+    a {
+      color: var(--black-500);
+      font-size: var(--fs16);
+      background-color: var(--black-025);
+      padding: var(--su16) var(--su24);
+      border-radius: var(--br8);
+      @media screen and (min-width: 981px) {
+        font-size: var(--fs24);
+      }
+      &:hover {
+        color: var(--black-900);
+      }
+      &:active {
+        background-color: var(--black-050);
       }
     }
 
-    tbody {
-      th, td {
-        border-bottom: var(--su1) solid var(--table-bc);
-        border-left: unset;
-        border-right: unset;
-      }
+  }
+  .prev {
+    a:before {
+      margin-right: var(--su4);
+    }
+  }
+  .next {
+    a:after {
+      margin-left: var(--su4);
     }
   }
 }
 
-@media screen and (max-width: 980px) {
-  .page {
-    padding-right: 0 !important;
-    padding-left: 0 !important;
-    padding-bottom: 0 !important;
-    padding-top: var(--su128);
+.page-meta {
+  font-size: var(--fs14);
+  & {
+    margin: 0 auto;
+    max-width: 99rem;
+  }
+  .last-updated {
+    float: unset;
   }
 }

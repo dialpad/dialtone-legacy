@@ -1,57 +1,10 @@
 ---
-title: Box Shadows 
+title: Box Shadows
 desc: Utilities for controlling an element's box shadows.
 prev:
   text: Divide Width
   link: /utilities/borders/divide-width
 ---
-
-## Variables
-
-<table class="d-table">
-  <thead>
-    <tr>
-      <th scope="col" class="d-w25p">CSS Variable</th>
-      <th scope="col">Output</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr v-for="{className, size, opacity} in boxSize">
-      <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">var(--bs-{{ className }})</th>
-      <td class="d-ff-mono d-fc-orange d-fs12">
-        <span v-if="className !== 'card'">
-          0 var(--su2) var(--su{{size}}) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l) / {{opacity}}%);
-        </span>
-        <span v-else>
-          0 var(--su2) var(--su16) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l) / 8%),<br/> 
-          0 var(--su2) var(--su4) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l) / 4%),<br/> 
-          0 var(--su1) var(--su2) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l) / 3%);
-        </span>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-## Classes
-
-<utility-class-table>
-  <template #content>
-    <tbody>
-      <tr v-for="{ className } in boxSize">
-        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-bs-{{ className }}</th>
-        <td class="d-ff-mono d-fc-orange d-fs12">box-shadow: var(--br-{{ className }}) !important;</td>
-      </tr>
-      <tr>
-        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-bs-none</th>
-        <td class="d-ff-mono d-fc-orange d-fs12">box-shadow: none !important;</td>
-      </tr>
-      <tr>
-        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-bs-unset</th>
-        <td class="d-ff-mono d-fc-orange d-fs12">box-shadow: unset !important;</td>
-      </tr>
-    </tbody>
-  </template>
-</utility-class-table>
 
 ## Outer shadow
 
@@ -134,3 +87,50 @@ Use `fv:d-bs-{n}` to change an element's `:focus-visible` state box shadow [only
     {className: "card", size: 4, opacity: 30},
   ];
 </script>
+
+## Variables
+
+<table class="d-table dialtone-doc-table">
+  <thead>
+    <tr>
+      <th scope="col" class="d-w25p">CSS Variable</th>
+      <th scope="col">Output</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr v-for="{className, size, opacity} in boxSize">
+      <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">var(--bs-{{ className }})</th>
+      <td class="d-ff-mono d-fc-orange d-fs12">
+        <span v-if="className !== 'card'">
+          0 var(--su2) var(--su{{size}}) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l) / {{opacity}}%);
+        </span>
+        <span v-else>
+          0 var(--su2) var(--su16) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l) / 8%),<br/>
+          0 var(--su2) var(--su4) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l) / 4%),<br/>
+          0 var(--su1) var(--su2) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l) / 3%);
+        </span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+## Classes
+
+<utility-class-table>
+  <template #content>
+    <tbody>
+      <tr v-for="{ className } in boxSize">
+        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-bs-{{ className }}</th>
+        <td class="d-ff-mono d-fc-orange d-fs12">box-shadow: var(--br-{{ className }}) !important;</td>
+      </tr>
+      <tr>
+        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-bs-none</th>
+        <td class="d-ff-mono d-fc-orange d-fs12">box-shadow: none !important;</td>
+      </tr>
+      <tr>
+        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-bs-unset</th>
+        <td class="d-ff-mono d-fc-orange d-fs12">box-shadow: unset !important;</td>
+      </tr>
+    </tbody>
+  </template>
+</utility-class-table>

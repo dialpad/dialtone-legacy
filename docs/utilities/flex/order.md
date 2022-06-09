@@ -6,24 +6,6 @@ next:
   link: /utilities/grid/column-start-end-span
 ---
 
-## Classes
-<utility-class-table>
-  <template #content>
-    <tbody>
-      <tr v-for="i in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, '-first', '-last']">
-        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-order{{ i }}</th>
-        <td class="d-ff-mono d-fc-orange d-fs12">
-          order: 
-          <span v-if="i === '-first'">-9999</span>
-          <span v-else-if="i === '-last'">9999</span>
-          <span v-else>{{ i }}</span>
-          !important;
-        </td>
-      </tr>
-    </tbody>
-  </template>
-</utility-class-table>
-
 ## Example
 By default, items are ordered by their position in the DOM. To re-order an element, use `d-order{#}`.
 
@@ -42,3 +24,21 @@ By default, items are ordered by their position in the DOM. To re-order an eleme
   <div class="d-order-first">3</div>
 </div>
 ```
+
+## Classes
+<utility-class-table>
+  <template #content>
+    <tbody>
+      <tr v-for="i in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, '-first', '-last']">
+        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-order{{ i }}</th>
+        <td class="d-ff-mono d-fc-orange d-fs12">
+          order:
+          <span v-if="i === '-first'">-9999</span>
+          <span v-else-if="i === '-last'">9999</span>
+          <span v-else>{{ i }}</span>
+          !important;
+        </td>
+      </tr>
+    </tbody>
+  </template>
+</utility-class-table>

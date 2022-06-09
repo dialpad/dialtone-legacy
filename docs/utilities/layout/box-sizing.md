@@ -6,19 +6,6 @@ prev:
   link: /utilities/interactivity/pointer-events
 ---
 
-## Classes
-
-<utility-class-table>
-  <template #content>
-    <tbody>
-      <tr v-for="i in ['content', 'split']">
-        <th class="d-ff-mono d-fc-purple d-fs12 d-fw-normal">d-box-{{ i }}</th>
-        <td class="d-ff-mono d-fc-orange d-fs12">box-sizing: {{ i }}-box;</td>
-      </tr>
-    </tbody>
-  </template>
-</utility-class-table>
-
 ## Examples
 All examples below have a 128px height and width. You can see how `.d-box-border` elements includes the padding and border into the overall box's height and width.
 
@@ -34,5 +21,15 @@ All examples below have a 128px height and width. You can see how `.d-box-border
 <div class="d-box-unset">…</div>
 ```
 
+## Classes
 
-
+<utility-class-table>
+  <template #content>
+    <tbody>
+      <tr v-for="i in ['content', 'split']">
+        <th class="d-ff-mono d-fc-purple d-fs12 d-fw-normal">d-box-{{ i }}</th>
+        <td class="d-ff-mono d-fc-orange d-fs12">box-sizing: {{ i }}-box;</td>
+      </tr>
+    </tbody>
+  </template>
+</utility-class-table>

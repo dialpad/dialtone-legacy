@@ -3,26 +3,6 @@ title: Text Overflow
 desc: Utilities for controlling an element's text overflow.
 ---
 
-## Classes
-<utility-class-table>
-  <template #content>
-    <tbody>
-      <tr>
-        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-truncate</th>
-        <td class="d-ff-mono d-fc-orange d-fs12">
-          overflow: hidden !important;<br/>
-          text-overflow: ellipsis !important;<br/>
-          white-space: nowrap !important;
-        </td>
-      </tr>
-      <tr v-for="i in ['ellipsis', 'clip', 'unset']">
-        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-to-{{ i }}</th>
-        <td class="d-ff-mono d-fc-orange d-fs12">text-overflow: {{ i }} !important;</td>
-      </tr>
-    </tbody>
-  </template>
-</utility-class-table>
-
 ## Truncate
 Use `d-truncate` to truncate an element's text.
 
@@ -62,3 +42,23 @@ Use `d-to-clip` to clip an element's overflowing text if needed.
 <p class="d-of-hidden d-to-clip">...</p>
 ```
 
+
+## Classes
+<utility-class-table>
+  <template #content>
+    <tbody>
+      <tr>
+        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-truncate</th>
+        <td class="d-ff-mono d-fc-orange d-fs12">
+          overflow: hidden !important;<br/>
+          text-overflow: ellipsis !important;<br/>
+          white-space: nowrap !important;
+        </td>
+      </tr>
+      <tr v-for="i in ['ellipsis', 'clip', 'unset']">
+        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-to-{{ i }}</th>
+        <td class="d-ff-mono d-fc-orange d-fs12">text-overflow: {{ i }} !important;</td>
+      </tr>
+    </tbody>
+  </template>
+</utility-class-table>

@@ -21,22 +21,22 @@ Radio buttons are a common way to allow users to make a single selection from a 
   <div class="dialtone-usage__item dialtone-usage__item--do">
     <h3 class="dialtone-usage__hd dialtone-usage__hd--do"><icon-checkmark /> Use for</h3>
     <div class="dialtone-usage__bd">
-      <ul>
-        <li>When users may only choose a single option out of a set of mutually exclusive choices.</li>
-        <li>If the number of available options can fit onto a mobile screen.</li>
-        <li>In place of <a href="/components/select/">Select</a> element if there are few enough options (e.g. &lt;=7) and the design can support it.</li>
-      </ul>
+<Markdown>
+- When users may only choose a single option out of a set of mutually exclusive choices.
+- If the number of available options can fit onto a mobile screen.
+- In place of [Select](/components/select/) element if there are few enough options (e.g. =7) and the design can support it.
+</Markdown>
     </div>
   </div>
   <div class="dialtone-usage__item dialtone-usage__item--dont">
     <h3 class="dialtone-usage__hd dialtone-usage__hd--dont"><icon-close /> Don't use for</h3>
     <div class="dialtone-usage__bd">
-      <ul>
-        <li>Consider <a href="/components/checkbox/">Checkbox</a> if users may have the option to select more than one.</li>
-        <li>Consider a <a href="/components/select/">Select</a> if you don’t have enough space to list out all available options.</li>
-        <li>If users should be able to select zero of the options; radio elements are not “uncheckable.” A <a href="/components/Checkbox/">Checkbox</a> may be warranted.</li>
-        <li>If there are too many options to display on a single view; consider a <a href="/components/select/">Select</a> instead.</li>
-      </ul>
+<Markdown>
+- Consider [Checkbox](/components/checkbox/) if users may have the option to select more than one.
+- Consider a [Select](/components/select/) if you don’t have enough space to list out all available options.
+- If users should be able to select zero of the options; radio elements are not “uncheckable.” A [Checkbox](/components/Checkbox/) may be warranted.
+- If there are too many options to display on a single view; consider a [Select](/components/select/) instead.
+</Markdown>
     </div>
   </div>
 </div>
@@ -344,3 +344,8 @@ The best accessibility is semantic HTML. Most screen readers understand how to p
 - If you have a group of related radios, use a `fieldset` to group them and a `legend` to title the group. For further information, please visit Gov.UK’s article, <a href="https://accessibility.blog.gov.uk/2016/07/22/using-the-fieldset-and-legend-elements/">"Using the fieldset and legend elements"</a>.
 - If the input is a required field, use the `aria-required` property and use the validation message for input errors.
 - Input with validation errors should have `aria-describedby` with the `id` of the validation message.
+- Input with validation errors should have `aria-describedby` with the `id` of the validation message.
+
+<script setup>
+  import Markdown from "@baseComponents/Markdown.vue";
+</script>

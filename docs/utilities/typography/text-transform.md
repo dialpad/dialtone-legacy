@@ -3,18 +3,6 @@ title: Text Transform
 desc: Utilities for controlling an element's text transform.
 ---
 
-## Classes
-<utility-class-table>
-  <template #content>
-    <tbody>
-      <tr v-for="i in transform">
-        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-tt-{{ i }}</th>
-        <td class="d-ff-mono d-fc-orange d-fs12">text-transform: {{ i }} !important;</td>
-      </tr>
-    </tbody>
-  </template>
-</utility-class-table>
-
 ## Uppercase
 Use `d-tt-uppercase` to uppercase an element's text.
 
@@ -51,3 +39,15 @@ Use `d-tt-capitalize` to capitalize an element's text.
 <script setup>
   import { transform } from '@data/type.json';
 </script>
+
+## Classes
+<utility-class-table>
+  <template #content>
+    <tbody>
+      <tr v-for="i in transform">
+        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-tt-{{ i }}</th>
+        <td class="d-ff-mono d-fc-orange d-fs12">text-transform: {{ i }} !important;</td>
+      </tr>
+    </tbody>
+  </template>
+</utility-class-table>

@@ -3,38 +3,6 @@ title: Font Family
 desc: Utilities to change an element's font-family.
 ---
 
-## CSS Variables
-<table class="d-table">
-  <thead>
-    <tr>
-      <th scope="col" class="d-w40p">Variable</th>
-      <th scope="col">Output</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr v-for="{ var: varName, output } in fontFamily.slice(0, -1)">
-      <td class="d-ff-mono d-fc-purple d-fw-normal d-fs12">var(--ff-{{ varName }})</td>
-      <td class="d-ff-mono d-fc-orange d-fs12">{{ output }}</td>
-    </tr>
-  </tbody>
-</table>
-
-## Classes
-<table class="d-table">
-  <thead>
-    <tr>
-      <th scope="col" class="d-w40p">Class</th>
-      <th scope="col">Output</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr v-for="{ var: varName, output } in fontFamily">
-      <td class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-ff-{{ varName }}</td>
-      <td class="d-ff-mono d-fc-orange d-fs12">font-family: {{ output }} !important;</td>
-    </tr>
-  </tbody>
-</table>
-
 ## Custom
 Use `d-ff-custom` to apply the theme's font-family.
 
@@ -98,3 +66,35 @@ Dialtone supports select marketing fonts and weights. Use the following combinat
 <script setup>
   import { fontFamily } from '@data/type.json';
 </script>
+
+## CSS Variables
+<table class="d-table dialtone-doc-table">
+  <thead>
+    <tr>
+      <th scope="col" class="d-w40p">Variable</th>
+      <th scope="col">Output</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr v-for="{ var: varName, output } in fontFamily.slice(0, -1)">
+      <td class="d-ff-mono d-fc-purple d-fw-normal d-fs12">var(--ff-{{ varName }})</td>
+      <td class="d-ff-mono d-fc-orange d-fs12">{{ output }}</td>
+    </tr>
+  </tbody>
+</table>
+
+## Classes
+<table class="d-table dialtone-doc-table">
+  <thead>
+    <tr>
+      <th scope="col" class="d-w40p">Class</th>
+      <th scope="col">Output</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr v-for="{ var: varName, output } in fontFamily">
+      <td class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-ff-{{ varName }}</td>
+      <td class="d-ff-mono d-fc-orange d-fs12">font-family: {{ output }} !important;</td>
+    </tr>
+  </tbody>
+</table>

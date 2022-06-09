@@ -3,29 +3,6 @@ title: Overflow
 desc: Utilities for controlling how an element handles content that is too large for the container.
 ---
 
-## Classes
-The `overflow` CSS shorthand property sets the desired behavior for how content is handled when it exceeds the wrapper's bounds in both directions (x-axis and then y-axis).
-
-<table class="d-table">
-    <thead>
-        <tr>
-            <th scope="col" class="d-w20p">Class</th>
-            <th scope="col" class="d-w20p">Output</th>
-            <th scope="col">Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr v-for="{ class: className, output, description } in overflow">
-            <th scope="row" class="d-ff-mono d-fc-purple d-fs12 d-fw-normal">.d-of-{{ className }}</th>
-            <td class="d-ff-mono d-fc-orange d-fs12">{{ output }};</td>
-            <td>{{ description }}</td>
-        </tr>
-    </tbody>
-</table>
-
-
-
-
 ## Examples
 <code-well-header  class="d-d-flex d-fd-row d-fw-wrap d-p24 d-pb48 d-bgc-purple-100 d-bgo50 d-w100p d-hmn216" custom>
     <div v-for="{ class: className } in overflow" class="d-w216 d-h216 d-m6 d-p12 d-bar4 d-bgc-purple-200 d-bgo75" :class="`d-of-${className}`">
@@ -55,3 +32,23 @@ The `overflow` CSS shorthand property sets the desired behavior for how content 
 <script setup>
     import overflow from '@data/overflow.json';
 </script>
+
+## Classes
+The `overflow` CSS shorthand property sets the desired behavior for how content is handled when it exceeds the wrapper's bounds in both directions (x-axis and then y-axis).
+
+<table class="d-table dialtone-doc-table">
+    <thead>
+        <tr>
+            <th scope="col" class="d-w20p">Class</th>
+            <th scope="col" class="d-w20p">Output</th>
+            <th scope="col">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr v-for="{ class: className, output, description } in overflow">
+            <th scope="row" class="d-ff-mono d-fc-purple d-fs12 d-fw-normal">.d-of-{{ className }}</th>
+            <td class="d-ff-mono d-fc-orange d-fs12">{{ output }};</td>
+            <td>{{ description }}</td>
+        </tr>
+    </tbody>
+</table>

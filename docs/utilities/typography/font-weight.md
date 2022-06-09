@@ -3,22 +3,6 @@ title: Font Weight
 desc: Utilities to change an element's font-weight.
 ---
 
-## Variables
-<table class="d-table">
-  <thead>
-      <tr>
-          <th scope="col" class="d-w25p">Variable</th>
-          <th scope="col">Output</th>
-      </tr>
-  </thead>
-  <tbody>
-    <tr v-for="{ name, output } in weight">
-      <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">var(--fw-{{ name }})</th>
-      <td class="d-ff-mono d-fc-orange d-fs12">{{ output }}</td>
-    </tr>
-  </tbody>
-</table>
-
 ## Classes
 <utility-class-table>
   <template #content>
@@ -55,3 +39,19 @@ Use `d-fw-{n}` to change an element's font-weight.
 <script setup>
   import { weight } from '@data/type.json';
 </script>
+
+## Variables
+<table class="d-table dialtone-doc-table">
+  <thead>
+      <tr>
+          <th scope="col" class="d-w25p">Variable</th>
+          <th scope="col">Output</th>
+      </tr>
+  </thead>
+  <tbody>
+    <tr v-for="{ name, output } in weight">
+      <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">var(--fw-{{ name }})</th>
+      <td class="d-ff-mono d-fc-orange d-fs12">{{ output }}</td>
+    </tr>
+  </tbody>
+</table>

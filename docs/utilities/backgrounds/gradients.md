@@ -3,61 +3,6 @@ title: Gradients
 desc: Utilities for creating an background gradient and controlling its stops.
 ---
 
-## Directions
-To create a background gradient, first declare the desired gradient and, if applicable, the direction. All classes with directions are linear gradients. Radial gradients start from the center and work out to the edge. Conic gradients progressively work around a circle.
-
-<utility-class-table>
-  <template #content>
-    <tbody>
-      <tr v-for="{ className, output } in gradients">
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-bgg-{{ className }}</th>
-          <td class="d-ff-mono d-fc-orange d-fs12">
-            background-image: {{ output }} 
-            <span v-if="!['unset', 'none'].includes(className)"> var(--bgg-stops)) </span> 
-            !important;
-          </td>
-      </tr>
-    </tbody>
-  </template>
-</utility-class-table>
-
-## Color Stops
-The starting stop (`d-bgg-from-{color}`) should be declared. Optionally an ending stop (`d-bgg-to-{color}`) can also be declared.
-
-<div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
-<utility-class-table>
- <template #content>
-        <div v-for="direction in ['from', 'to']" style="display: contents">
-          <tbody v-for="{ color, stops } in colors">
-              <tr v-for="{ stop } in stops">
-                  <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-bgg-{{ direction }}-{{ color }}-{{ stop }}</th>
-                  <td>
-                      <div class="d-d-flex d-jc-space-between d-ai-center">
-                          <div class="d-fl-grow1 d-ff-mono d-fc-orange d-fs12">
-                              <span v-if="direction === 'from'">
-                                --bgg-from-opacity: 100%;<br/>
-                                --bgg-from: hsla(var(--{{ color }}-{{ stop }}-h) var(--{{ color }}-{{ stop }}-s) var(--{{ color }}-{{ stop }}-l) / var(----bgg-from-opacity)) !important;<br/>
-                                --bgg-to: hsla(var(--{{ color }}-{{ stop }}-h) var(--{{ color }}-{{ stop }}-s) var(--{{ color }}-{{ stop }}-l) / 0%) !important;
-                              </span>
-                              <span v-else-if="direction === 'to'">
-                                --bgg-to-opacity: 100%;<br/>
-                                --bgg-to: hsla(var(--{{ color }}-{{ stop }}-h) var(--{{ color }}-{{ stop }}-s) var(--{{ color }}-{{ stop }}-l) / var(--bgg-to-opacity)) !important;
-                              </span>
-                          </div>
-                          <div 
-                            class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w64 d-bar4 d-bgg-to-r d-bgg-from-black-100"
-                            :class="[`d-bgg-${direction}-${color}-${stop}`]"
-                          >
-                          </div>
-                      </div>
-                  </td>
-              </tr>
-          </tbody>
-        </div>
-    </template>
-  </utility-class-table>
-</div>
-
 ## Starting color
 Use `d-bgg-from-{color}` to declare the gradient starting color stop.
 
@@ -144,3 +89,58 @@ Use `fv:d-bgg-{from|to}-{color}` to change an element's background gradient star
   import { gradients } from '@data/backgrounds.json';
   import colors from '@data/colors.json';
 </script>
+
+## Directions
+To create a background gradient, first declare the desired gradient and, if applicable, the direction. All classes with directions are linear gradients. Radial gradients start from the center and work out to the edge. Conic gradients progressively work around a circle.
+
+<utility-class-table>
+  <template #content>
+    <tbody>
+      <tr v-for="{ className, output } in gradients">
+          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-bgg-{{ className }}</th>
+          <td class="d-ff-mono d-fc-orange d-fs12">
+            background-image: {{ output }}
+            <span v-if="!['unset', 'none'].includes(className)"> var(--bgg-stops)) </span>
+            !important;
+          </td>
+      </tr>
+    </tbody>
+  </template>
+</utility-class-table>
+
+## Color Stops
+The starting stop (`d-bgg-from-{color}`) should be declared. Optionally an ending stop (`d-bgg-to-{color}`) can also be declared.
+
+<div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
+<utility-class-table>
+ <template #content>
+        <div v-for="direction in ['from', 'to']" style="display: contents">
+          <tbody v-for="{ color, stops } in colors">
+              <tr v-for="{ stop } in stops">
+                  <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-bgg-{{ direction }}-{{ color }}-{{ stop }}</th>
+                  <td>
+                      <div class="d-d-flex d-jc-space-between d-ai-center">
+                          <div class="d-fl-grow1 d-ff-mono d-fc-orange d-fs12">
+                              <span v-if="direction === 'from'">
+                                --bgg-from-opacity: 100%;<br/>
+                                --bgg-from: hsla(var(--{{ color }}-{{ stop }}-h) var(--{{ color }}-{{ stop }}-s) var(--{{ color }}-{{ stop }}-l) / var(----bgg-from-opacity)) !important;<br/>
+                                --bgg-to: hsla(var(--{{ color }}-{{ stop }}-h) var(--{{ color }}-{{ stop }}-s) var(--{{ color }}-{{ stop }}-l) / 0%) !important;
+                              </span>
+                              <span v-else-if="direction === 'to'">
+                                --bgg-to-opacity: 100%;<br/>
+                                --bgg-to: hsla(var(--{{ color }}-{{ stop }}-h) var(--{{ color }}-{{ stop }}-s) var(--{{ color }}-{{ stop }}-l) / var(--bgg-to-opacity)) !important;
+                              </span>
+                          </div>
+                          <div
+                            class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w64 d-bar4 d-bgg-to-r d-bgg-from-black-100"
+                            :class="[`d-bgg-${direction}-${color}-${stop}`]"
+                          >
+                          </div>
+                      </div>
+                  </td>
+              </tr>
+          </tbody>
+        </div>
+    </template>
+  </utility-class-table>
+</div>

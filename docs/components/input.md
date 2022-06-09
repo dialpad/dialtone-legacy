@@ -17,19 +17,19 @@ This component combines both the `input` and `textarea` elements as options with
   <div class="dialtone-usage__item dialtone-usage__item--do">
     <h3 class="dialtone-usage__hd dialtone-usage__hd--do"><icon-checkmark /> Use for</h3>
     <div class="dialtone-usage__bd">
-      <ul>
-        <li>If you can’t reasonably predict a user’s answer to a prompt and there might be wide variability in users’ answers.</li>
-        <li>When using another type of input will make answering more difficult. For example, birthdays and other known dates are easier to type in than they are to select from a calendar picker.</li>
-        <li>When users want to be able to paste in a response.</li>
-      </ul>
+<Markdown>
+- If you can’t reasonably predict a user’s answer to a prompt and there might be wide variability in users’ answers.
+- When using another type of input will make answering more difficult. For example, birthdays and other known dates are easier to type in than they are to select from a calendar picker.
+- When users want to be able to paste in a response.
+</Markdown>
     </div>
   </div>
   <div class="dialtone-usage__item dialtone-usage__item--dont">
     <h3 class="dialtone-usage__hd dialtone-usage__hd--dont"><icon-close /> Don't use for</h3>
     <div class="dialtone-usage__bd">
-      <ul>
-        <li>When users are choosing from a specific set of options. Consider <a href="/components/select/">Select</a>, <a href="/components/radio/">Radio</a>, or <a href="/components/checkbox/">Checkbox</a>.</li>
-      </ul>
+<Markdown>
+- When users are choosing from a specific set of options. Consider [Select](/components/select/), [Radio](/components/radio/), or [Checkbox](/components/checkbox/).
+</Markdown>
     </div>
   </div>
 </div>
@@ -452,4 +452,5 @@ You may use different icon sizes in different sized inputs
 <script setup>
   import IconSend from '@svgIcons/IconSend.vue';
   import IconLock from '@svgIcons/IconLock.vue';
+  import Markdown from "@baseComponents/Markdown.vue";
 </script>

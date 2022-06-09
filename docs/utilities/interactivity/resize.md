@@ -5,17 +5,6 @@ next:
   text: Box Sizing
   link: /utilities/layout/box-sizing
 ---
-## Classes
-<utility-class-table>
-  <template #content>
-    <tbody>
-      <tr v-for="{ class: className, output } in resize">
-        <th scope="row" class="d-ff-mono d-fc-purple d-fs12">.{{ className }}</th>
-        <td class="d-ff-mono d-fc-orange d-fs12">{{ output }}</td>
-      </tr>
-    </tbody>
-  </template>
-</utility-class-table>
 
 ## Usage
 
@@ -35,3 +24,15 @@ next:
 <script setup>
   import { resize } from '@data/interactivity.json';
 </script>
+
+## Classes
+<utility-class-table>
+  <template #content>
+    <tbody>
+      <tr v-for="{ class: className, output } in resize">
+        <th scope="row" class="d-ff-mono d-fc-purple d-fs12">.{{ className }}</th>
+        <td class="d-ff-mono d-fc-orange d-fs12">{{ output }}</td>
+      </tr>
+    </tbody>
+  </template>
+</utility-class-table>

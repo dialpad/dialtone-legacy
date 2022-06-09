@@ -3,27 +3,6 @@ title: Gap
 desc: Utilities to control the spacing between columns, rows, or both in grids.
 ---
 
-## Classes
-<div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
-  <utility-class-table>
-    <template #content>
-      <tbody v-for="{ direction: dir } in gap">
-        <tr v-for="{ output: rem, value: px } in values">
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">
-            <span v-if="dir === 'both'">.d-gg{{ px }}</span>
-            <span v-else-if="dir === 'column'">.d-gcg{{ px }}</span>
-            <span v-else-if="dir === 'row'">.d-grg{{ px }}</span>
-          </th>
-          <td class="d-ff-mono d-fc-orange d-fs12">
-            <span v-if="dir !== 'both'">grid-{{ dir }}-gap: {{ rem }}</span>
-            <span v-else>grid-gap: {{ rem }}</span>
-          </td>
-        </tr>
-      </tbody>
-    </template>
-  </utility-class-table>
-</div>
-
 ## Adding universal row and column gaps
 Use `d-gg{#}` to universally change the row and column gap space in grid layouts.
 
@@ -80,3 +59,24 @@ Use `d-gcg{#}` or `d-grg{#}` to independently change the row and column gap spac
   import { gap } from '@data/grid.json';
   import { values } from '@data/spacing.json';
 </script>
+
+## Classes
+<div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
+  <utility-class-table>
+    <template #content>
+      <tbody v-for="{ direction: dir } in gap">
+        <tr v-for="{ output: rem, value: px } in values">
+          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">
+            <span v-if="dir === 'both'">.d-gg{{ px }}</span>
+            <span v-else-if="dir === 'column'">.d-gcg{{ px }}</span>
+            <span v-else-if="dir === 'row'">.d-grg{{ px }}</span>
+          </th>
+          <td class="d-ff-mono d-fc-orange d-fs12">
+            <span v-if="dir !== 'both'">grid-{{ dir }}-gap: {{ rem }}</span>
+            <span v-else>grid-gap: {{ rem }}</span>
+          </td>
+        </tr>
+      </tbody>
+    </template>
+  </utility-class-table>
+</div>

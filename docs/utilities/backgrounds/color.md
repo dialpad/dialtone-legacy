@@ -3,67 +3,6 @@ title: Background Colors
 desc: Utilities for setting background colors.
 ---
 
-## Classes
-<div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
-  <utility-class-table>
-    <template #content>
-      <tbody>
-          <tr>
-              <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-bgc-transparent</th>
-              <td>
-                  <div class="d-d-flex d-jc-space-between d-ai-center">
-                      <div class="d-fl-grow1 d-ff-mono d-fc-orange d-fs12">
-                          background-color: transparent !important;
-                      </div>
-                      <div class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar4 d-bgc-transparent d-ba d-bc-black-100"></div>
-                  </div>
-              </td>
-          </tr>
-          <tr>
-              <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-bgc-unset</th>
-              <td>
-                  <div class="d-d-flex d-jc-space-between d-ai-center">
-                      <div class="d-fl-grow1 d-ff-mono d-fc-orange d-fs12">
-                          background-color: unset !important;
-                      </div>
-                      <div class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar4 d-bgc-unset d-ba d-bc-black-100"></div>
-                  </div>
-              </td>
-          </tr>
-          <tr>
-              <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-bgc-white</th>
-              <td>
-                  <div class="d-d-flex d-jc-space-between d-ai-center">
-                      <div class="d-fl-grow1 d-ff-mono d-fc-orange d-fs12">
-                          --bgo: 100%;<br/>
-                          background-color: hsla(var(--white-h) var(--white-s) var(--white-l) / var(--bgo)) !important;
-                      </div>
-                      <div class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar4 d-bgc-white d-ba d-bc-black-100"></div>
-                  </div>
-              </td>
-          </tr>
-      </tbody>
-      <tbody v-for="{ color, stops } in colors">
-        <tr v-for="{ stop } in stops">
-            <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-bgc-{{ color }}-{{ stop }}</th>
-            <td>
-                <div class="d-d-flex d-jc-space-between d-ai-center">
-                    <div class="d-fl-grow1 d-ff-mono d-fc-orange d-fs12">
-                        --bgo: 100%;<br/>
-                        background-color: hsla(var(--{{ color }}-{{ stop }}-h) var(--{{ color }}-{{ stop }}-s) var(--{{ color }}-{{ stop }}-l) / var(--bgo)) !important;
-                    </div>
-                    <div 
-                      class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar4 d-ba d-bc-black-100"
-                      :class="`d-bgc-${color}-${stop}`"
-                    />
-                </div>
-            </td>
-        </tr>
-      </tbody>
-    </template>
-  </utility-class-table>
-</div>
-
 ## Usage
 Use `d-bgc-{color}` to set an element's background color.
 
@@ -138,3 +77,64 @@ Use `fv:d-bgc-{color}` to change an element's `:focus-visible` state background 
 <script setup>
   import colors from '@data/colors.json';
 </script>
+
+## Classes
+<div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
+  <utility-class-table>
+    <template #content>
+      <tbody>
+          <tr>
+              <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-bgc-transparent</th>
+              <td>
+                  <div class="d-d-flex d-jc-space-between d-ai-center">
+                      <div class="d-fl-grow1 d-ff-mono d-fc-orange d-fs12">
+                          background-color: transparent !important;
+                      </div>
+                      <div class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar4 d-bgc-transparent d-ba d-bc-black-100"></div>
+                  </div>
+              </td>
+          </tr>
+          <tr>
+              <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-bgc-unset</th>
+              <td>
+                  <div class="d-d-flex d-jc-space-between d-ai-center">
+                      <div class="d-fl-grow1 d-ff-mono d-fc-orange d-fs12">
+                          background-color: unset !important;
+                      </div>
+                      <div class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar4 d-bgc-unset d-ba d-bc-black-100"></div>
+                  </div>
+              </td>
+          </tr>
+          <tr>
+              <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-bgc-white</th>
+              <td>
+                  <div class="d-d-flex d-jc-space-between d-ai-center">
+                      <div class="d-fl-grow1 d-ff-mono d-fc-orange d-fs12">
+                          --bgo: 100%;<br/>
+                          background-color: hsla(var(--white-h) var(--white-s) var(--white-l) / var(--bgo)) !important;
+                      </div>
+                      <div class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar4 d-bgc-white d-ba d-bc-black-100"></div>
+                  </div>
+              </td>
+          </tr>
+      </tbody>
+      <tbody v-for="{ color, stops } in colors">
+        <tr v-for="{ stop } in stops">
+            <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-bgc-{{ color }}-{{ stop }}</th>
+            <td>
+                <div class="d-d-flex d-jc-space-between d-ai-center">
+                    <div class="d-fl-grow1 d-ff-mono d-fc-orange d-fs12">
+                        --bgo: 100%;<br/>
+                        background-color: hsla(var(--{{ color }}-{{ stop }}-h) var(--{{ color }}-{{ stop }}-s) var(--{{ color }}-{{ stop }}-l) / var(--bgo)) !important;
+                    </div>
+                    <div
+                      class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar4 d-ba d-bc-black-100"
+                      :class="`d-bgc-${color}-${stop}`"
+                    />
+                </div>
+            </td>
+        </tr>
+      </tbody>
+    </template>
+  </utility-class-table>
+</div>

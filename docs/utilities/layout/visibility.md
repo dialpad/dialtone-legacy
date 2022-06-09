@@ -3,6 +3,24 @@ title: Visibility
 desc: Utilities for showing or hiding an element without changing the layout of a document.
 ---
 
+## Usage
+<code-well-header bgclass='d-bgc-purple-100'>
+  <div class="d-w100p">
+    <div class="d-d-inline-block d-m8 d-p16 d-bgc-purple-300 d-bar4 d-ff-mono d-fs14 d-ta-center d-vi-visible">.d-vi-visible</div>
+    <div class="d-d-inline-block d-m8 d-p16 d-bgc-purple-300 d-bar4 d-ff-mono d-fs14 d-ta-center d-vi-visible-sr">.d-vi-visible-sr</div>
+    <div class="d-d-inline-block d-m8 d-p16 d-bgc-purple-300 d-bar4 d-ff-mono d-fs14 d-ta-center d-vi-hidden">.d-vi-hidden</div>
+  </div>
+</code-well-header>
+
+```html
+<div class="d-vi-visible">...</div>
+<div class="d-vi-visible-sr">...</div>
+<div class="d-vi-hidden">...</div>
+```
+
+## Accessibility
+Bear in mind using a visibility value of `hidden` on an element will remove it from the accessibility tree. This will cause the element and all its descendant elements to no longer be announced by screen reading technology.
+
 ## Classes
 <utility-class-table>
   <template #content>
@@ -31,21 +49,3 @@ desc: Utilities for showing or hiding an element without changing the layout of 
     </tbody>
   </template>
 </utility-class-table>
-
-## Usage
-<code-well-header bgclass='d-bgc-purple-100'>
-  <div class="d-w100p">
-    <div class="d-d-inline-block d-m8 d-p16 d-bgc-purple-300 d-bar4 d-ff-mono d-fs14 d-ta-center d-vi-visible">.d-vi-visible</div>
-    <div class="d-d-inline-block d-m8 d-p16 d-bgc-purple-300 d-bar4 d-ff-mono d-fs14 d-ta-center d-vi-visible-sr">.d-vi-visible-sr</div>
-    <div class="d-d-inline-block d-m8 d-p16 d-bgc-purple-300 d-bar4 d-ff-mono d-fs14 d-ta-center d-vi-hidden">.d-vi-hidden</div>
-  </div>
-</code-well-header>
-
-```html
-<div class="d-vi-visible">...</div>
-<div class="d-vi-visible-sr">...</div>
-<div class="d-vi-hidden">...</div>
-```
-
-## Accessibility
-Bear in mind using a visibility value of `hidden` on an element will remove it from the accessibility tree. This will cause the element and all its descendant elements to no longer be announced by screen reading technology.

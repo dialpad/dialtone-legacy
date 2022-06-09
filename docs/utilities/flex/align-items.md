@@ -3,18 +3,6 @@ title: Align Items
 desc: Utilities for setting how an element's is aligned along an element's cross axis.
 ---
 
-## Classes
-<utility-class-table>
- <template #content>
-    <tbody>
-      <tr v-for="{ class: className, output } in alignItems">
-        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-{{ className }}</th>
-        <td class="d-ff-mono d-fc-orange d-fs12">{{ output }}</td>
-      </tr>
-    </tbody>
-  </template>
-</utility-class-table>
-
 ## Stretch
 Use `d-ai-stretch` to stretch items across the element's cross axis. This is the default value.
 
@@ -96,3 +84,15 @@ Use `d-ai-flex-end` to distribute items from the end of the element's cross axis
 <script setup>
   import { alignItems } from '@data/flex.json';
 </script>
+
+## Classes
+<utility-class-table>
+ <template #content>
+    <tbody>
+      <tr v-for="{ class: className, output } in alignItems">
+        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-{{ className }}</th>
+        <td class="d-ff-mono d-fc-orange d-fs12">{{ output }}</td>
+      </tr>
+    </tbody>
+  </template>
+</utility-class-table>

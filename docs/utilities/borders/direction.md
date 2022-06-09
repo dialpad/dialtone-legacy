@@ -3,31 +3,6 @@ title: Border Directions
 desc: Utilities for controlling an element's border.
 ---
 
-## Classes
-
-<utility-class-table>
-  <template #content>
-    <tbody>
-      <tr v-for="i in directions">
-        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-b{{ i[0] }}</th>
-        <td class="d-ff-mono d-fc-orange d-fs12">
-          <span v-if="i === 'y'"> 
-            border-top: var(--su1) solid currentColor !important;<br/>
-            border-bottom: var(--su1) solid currentColor !important;
-          </span>
-          <span v-else-if="i === 'x'">
-            border-right: var(--su1) solid currentColor !important;<br/>
-            border-left: var(--su1) solid currentColor !important;
-          </span>
-          <span v-else>
-            border-{{i}}: var(--su1) solid currentColor !important;
-          </span>
-        </td>
-      </tr>
-    </tbody>
-  </template>
-</utility-class-table>
-
 ## All sides
 Use `d-ba` to add a border to all sides of your element.
 
@@ -73,3 +48,28 @@ Use `d-b{t|r|b|l|x|y}` to add a border to only specific sides of your element.
 <script setup>
   import { directions } from '@data/borders.json';
 </script>
+
+## Classes
+
+<utility-class-table>
+  <template #content>
+    <tbody>
+      <tr v-for="i in directions">
+        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-b{{ i[0] }}</th>
+        <td class="d-ff-mono d-fc-orange d-fs12">
+          <span v-if="i === 'y'">
+            border-top: var(--su1) solid currentColor !important;<br/>
+            border-bottom: var(--su1) solid currentColor !important;
+          </span>
+          <span v-else-if="i === 'x'">
+            border-right: var(--su1) solid currentColor !important;<br/>
+            border-left: var(--su1) solid currentColor !important;
+          </span>
+          <span v-else>
+            border-{{i}}: var(--su1) solid currentColor !important;
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </template>
+</utility-class-table>

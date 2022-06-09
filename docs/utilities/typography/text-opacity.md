@@ -4,21 +4,6 @@ desc: Utilities for controlling an element's font-color opacity.
 ---
 The ability to control an element's color is <em>only</em> provided as a class. We do not provide variables to control this. The text opacity class resets the font color's alpha channel CSS variable value.
 
-
-
-
-## Classes
-<utility-class-table>
-  <template #content>
-    <tbody>
-      <tr v-for="i in opacity">
-        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-fco{{ i }}</th>
-        <td class="d-ff-mono d-fc-orange d-fs12">--fco: {{ i }}% !important;</td>
-      </tr>
-    </tbody>
-  </template>
-</utility-class-table>
-
 ## Usage
 Use `d-fco{n}` to change a font-color's opacity. You can also change font-color's opacity on `:hover`, `:focus`, `:focus-visible`, or in dark mode by using the respective `h:d-fco{n}`, `f:d-fco{n}`, `fv:d-fco{n}`, or `d:d-fco{n}` prefixes.
 
@@ -86,3 +71,15 @@ Please note that because the opacity adjustments are made via CSS variables, a f
   import { opacity } from '@data/type.json';
 </script>
 
+
+## Classes
+<utility-class-table>
+  <template #content>
+    <tbody>
+      <tr v-for="i in opacity">
+        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-fco{{ i }}</th>
+        <td class="d-ff-mono d-fc-orange d-fs12">--fco: {{ i }}% !important;</td>
+      </tr>
+    </tbody>
+  </template>
+</utility-class-table>

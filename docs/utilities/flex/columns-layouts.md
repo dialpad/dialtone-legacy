@@ -3,26 +3,6 @@ title: Columns & Layouts
 desc: Utilities for flex columns and common flex layouts.
 ---
 
-## Classes
-<div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
-  <utility-class-table>
-    <template #content>
-      <tbody>
-        <tr v-for="i in columns">
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-fl-col{{ i }}</th>
-          <td class="d-ff-mono d-fc-orange d-fs12 d-ws-pre">> * { flex-basis: calc({{ calcFlexBasis(i) }}% - (var(--fl-gap) * 2)); }</td>
-        </tr>
-      </tbody>
-      <tbody>
-        <tr v-for="i in gaps">
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-flg{{ i }}</th>
-          <td class="d-ff-mono d-fc-orange d-fs12 d-ws-pre">> * { --fl-gap: {{ calcGap(i) }} !important; }</td>
-        </tr>
-      </tbody>
-    </template>
-  </utility-class-table>
-</div>
-
 ## Creating flex columns
 Use `d-fl-col{n}` to create uniformly sized children within an element.
 
@@ -103,7 +83,27 @@ By default flexed items align to `flex-start` both horizontally and vertically (
     return Math.round(100/columns);
   };
   const calcGap = (gap) => {
-    const res = (gap/10); 
+    const res = (gap/10);
     return res !== 0 ? res+'rem' : res;
   };
 </script>
+
+## Classes
+<div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
+  <utility-class-table>
+    <template #content>
+      <tbody>
+        <tr v-for="i in columns">
+          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-fl-col{{ i }}</th>
+          <td class="d-ff-mono d-fc-orange d-fs12 d-ws-pre">> * { flex-basis: calc({{ calcFlexBasis(i) }}% - (var(--fl-gap) * 2)); }</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr v-for="i in gaps">
+          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-flg{{ i }}</th>
+          <td class="d-ff-mono d-fc-orange d-fs12 d-ws-pre">> * { --fl-gap: {{ calcGap(i) }} !important; }</td>
+        </tr>
+      </tbody>
+    </template>
+  </utility-class-table>
+</div>
