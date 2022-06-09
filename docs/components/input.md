@@ -34,7 +34,6 @@ This component combines both the `input` and `textarea` elements as options with
   </div>
 </div>
 
-
 ### Best practices
 - The length of the text input provides a hint to users as to how much text to enter.
 - Only show error validation messages or stylings after a user has interacted with a particular field.

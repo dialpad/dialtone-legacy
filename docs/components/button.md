@@ -1,6 +1,6 @@
 ---
 title: Button
-desc: A button is a UI element which allows users to take an action throughout the app. It is important a button is identifiable, consistent, and communicates its actions clearly, and is appropriately sized to its action.
+desc: A button is an UI element which signals key actions to take an action throughout an app. It is important a button is identifiable, consistent, communicates its actions clearly, and is appropriately sized to its action.
 storybook_url: https://vue.dialpad.design/?path=/story/components-button--default
 ---
 
@@ -12,7 +12,47 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-button--defaul
 
 ## Usage
 
+`button` and link (`<a>`) HTML elements each describe a specific intent. Understanding the distinction is important: if it goes somewhere, use a [Link](link.html). If an action occurs, use a Button.
 
+
+<div class="dialtone-usage">
+  <div class="dialtone-usage__item dialtone-usage__item--do">
+    <h3 class="dialtone-usage__hd dialtone-usage__hd--do"><icon-checkmark /> Use for</h3>
+    <div class="dialtone-usage__bd">
+<Markdown>
+- Conveying that an action that will occur when invoked.
+- To trigger an action or behavior, such as submitting a form or spawning a Modal.
+</Markdown>
+    </div>
+  </div>
+  <div class="dialtone-usage__item dialtone-usage__item--dont">
+    <h3 class="dialtone-usage__hd dialtone-usage__hd--dont"><icon-close /> Don't use for</h3>
+    <div class="dialtone-usage__bd">
+<Markdown>
+- Avoid using to navigate between destinations, deferring to a [Link](/components/link/) instead).
+</Markdown>
+    </div>
+  </div>
+</div>
+
+### Best Practices
+
+- Avoid using too many buttons on a page.
+- Use sentence case capitalization for button labels, e.g “Save report”.
+- Do not use punctuation
+- Button text should be as short as possible and lead with an action verb.
+- Set the type attribute to define its purpose: submit, button, or reset. Browsers default to submit if it isn't defined, and that cannot be assumed as the preferred behavior.
+
+## Accessibility
+
+- Choosing between Link and Button elements is paramount for screenreaders to inform the user what will occur. For example: will it go somewhere (Link) or will something happen (Button)?
+- Do not rely on color alone to convey the intent of the button. Defer to the button text as primary way to convey the buttons intent.
+- Display a visible focus state when users tab to them.
+- Use standard semantic usage of HTML elements.
+- Be aware of how screenreaders handle buttons and links differently. For example, both the Enter and Spacebar keys triggers a button, while links are triggered only by the Enter key.
+- If a button cannot be used for an action and it must be an anchor link, two things are required:
+  - Add `role="button"` to the `<a>` to allow screenreaders to announce it as a `button`.
+  - Attach an event handler to detect Spacebar keypress. Buttons react to both Enter and Spacebar, but Link react only to Enter.
 
 ## Variants and Examples
 
@@ -480,14 +520,6 @@ The base button font size is 16px and should be used in most cases. Every button
 
 ## Classes
 <component-class-table component-name="button"></component-class-table>
-
-## Accessibility
-
-- Disabled buttons don't require focus.
-- If using `.d-btn--disabled`, also use `aria-disabled="true"` and be sure to prevent the click event.
-- If an icon and text are both included in a button's label, and they both represent the same thing, the icon may be decorative and may not need to receive focus or be read-out.
-- If developing a toggle button (i.e. a button that holds a pressed/unpressed state), use `aria-pressed`. (<a href="https://www.w3.org/TR/wai-aria/#button" target="_blank">Source</a>)
-- If developing a button that triggers a dropdown, consider using `aria-haspopup` and `aria-expanded`. (<a href="https://www.w3.org/TR/wai-aria/#button" target="_blank">Source</a>)
 
 <script setup>
   import IconPhone from '@svgIcons/IconPhone.vue';
