@@ -1,7 +1,7 @@
 import { defineUserConfig } from 'vuepress';
 import { resolve } from 'path';
 
-const sidebar = require('../_data/site-nav.json');
+const siteNav = require('../_data/site-nav.json');
 const { dialtoneTheme } = require('./theme');
 const baseURL = (process.env.VUEPRESS_BASE_URL ?? "/") as `/${string}/`;
 
@@ -16,7 +16,7 @@ const themeConfig = {
     {text: 'Utilities', link: '/utilities/backgrounds/attachment'},
     {text: 'Components', link: '/components/avatar'},
   ],
-  sidebar,
+  sidebar: generateSidebar(siteNav),
   editLink: false,
   darkMode: false,
   contributors: false,
@@ -25,6 +25,18 @@ const themeConfig = {
 const isDevelopment = (process.env.NODE_ENV === 'development');
 const dialtoneCSS = isDevelopment ? 'dialtone.css' : 'dialtone.min.css';
 const dialtoneDocsCSS = isDevelopment ? 'dialtone-docs.css' : 'dialtone-docs.min.css';
+
+function generateSidebar(siteNav) {
+  let sidebar = siteNav;
+  Object.keys(sidebar).forEach(navPath => {
+    Object.keys(sidebar[navPath]).forEach(section => {
+      sidebar[navPath][section]["children"].map(heading => {
+        heading.link = "/";
+      });
+    });
+  });
+  return siteNav;
+}
 
 export default defineUserConfig({
   // site config
