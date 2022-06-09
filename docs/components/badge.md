@@ -30,12 +30,11 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-badge--default
   </div>
 </div>
 
-
 ### Best practices
 - While the color variant used should not be the sole indicator of information, choose color patterns that users can quickly scan and identify its intention.
 - Avoid long values, favoring a brief scannable word.
 
-### Accessibility
+## Accessibility
 - Since a Badge may often reflect a value within an implied label, ensure a label is announced. For example, via `aria-label` or `aria-labeledby`.
 
 
