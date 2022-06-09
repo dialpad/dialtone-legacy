@@ -3,26 +3,108 @@ title: Button
 desc: A button is a UI element which allows users to take an action throughout the app. It is important a button is identifiable, consistent, and communicates its actions clearly, and is appropriately sized to its action.
 storybook_url: https://vue.dialpad.design/?path=/story/components-button--default
 ---
+
 <code-well-header>
   <button class="d-btn d-btn--primary" type="button">
     <span class="d-btn__label">Place call</span>
   </button>
 </code-well-header>
 
-[//]: # (## Usage)
-[//]: # (Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi massa ante, tempus vitae lacus id, luctus tristique lorem. Mauris feugiat massa ex, id aliquet mi tempor non. Curabitur non tristique lectus. Fusce ut nisl non diam dignissim viverra. In posuere dui arcu, sed eleifend massa faucibus sed. Phasellus quis leo vitae erat pellentesque venenatis id vitae lectus. Suspendisse convallis, metus a congue tincidunt, velit sem tincidunt dui, eget auctor ipsum ipsum in ex. Nullam lobortis, mauris vel vestibulum rutrum, lorem elit vehicula est, nec viverra ante erat nec dolor. Proin at placerat tortor. Nam ullamcorper metus et eros porta, at lacinia leo scelerisque. Curabitur finibus sollicitudin odio tempor finibus. Donec lobortis metus vitae mollis gravida.)
+## Usage
+
+
 
 ## Variants and Examples
-Dialtone provides four button styles:
-1. [**Base:**](#base) Our default (purple) button colors.
-1. [**Danger:**](#danger) Buttons associated with potentially destructive actions. Appears as red.
-1. [**Inverted:**](#inverted) For scenarios when you want to place a button on a non-white, dark background.
-1. [**Muted:**](#muted) For non-primary actions and contexts in which the base style may not work.
 
-Each button style offers three levels of visual important:
-1. **Primary:** This is the highest visual importance a button can have. It provides a background color.
-1. **Outlined:** This button communicates slightly more importance than clear. It provides a border color, but no background color.
-1. **Clear:** This button communicates the least importance. It offers no background or border color. It appears as a link with matching padding. This is typically used for secondary or minimally important actions. This is the default importance level of all buttons.
+Dialtone provides four core button **types**, each with three levels of **importance**.
+
+<table class="d-fs14">
+  <colgroup>
+    <col>
+    <col class="d-w25p">
+    <col class="d-w25p">
+    <col class="d-w25p">
+  </colgroup>
+  <thead>
+    <th scope="row" class="d-ta-left d-va-top">
+    </th>
+    <th scope="row" class="d-ta-left d-va-top">
+      Clear
+      <div class="d-fw-normal">Default level of importance. Typically used for secondary or minimally important actions.</div>
+    </th>
+    <th scope="row" class="d-ta-left d-va-top">
+      Outlined
+      <div class="d-fw-normal">Slightly more important than clear, presenting a contrasting border and transparent background.</div>
+    </th>
+    <th scope="row" class="d-ta-left d-va-top">
+      Primary
+      <div class="d-fw-normal">Highest level of importance, presenting a solid background color.</div>
+    </th>
+  </thead>
+  <tbody>
+    <tr>
+      <th class="d-ta-left">
+        <a href="#base"><strong>Base</strong></a>
+        <div class="d-fw-normal">Our default (purple) button colors.</div>
+      </th>
+      <td class="d-bgc-black-025 d-ta-center">
+        <button class="d-btn" type="button"> <span class="d-btn__label">Place call</span> </button>
+      </td>
+      <td class="d-bgc-black-025 d-ta-center">
+        <button class="d-btn d-btn--outlined" type="button"> <span class="d-btn__label">Place call</span> </button>
+      </td>
+      <td class="d-bgc-black-025 d-ta-center">
+        <button class="d-btn d-btn--primary" type="button"> <span class="d-btn__label">Place call</span> </button>
+      </td>
+    </tr>
+    <tr>
+      <th class="d-ta-left">
+        <a href="#danger"><strong>Danger</strong></a>
+        <div class="d-fw-normal">Potentially destructive actions.</div>
+      </th>
+      <td class="d-bgc-black-025 d-ta-center">
+        <button class="d-btn d-btn--danger" type="button"> <span class="d-btn__label">Place call</span> </button>
+      </td>
+      <td class="d-bgc-black-025 d-ta-center">
+        <button class="d-btn d-btn--outlined d-btn--danger" type="button"> <span class="d-btn__label">Place call</span> </button>
+      </td>
+      <td class="d-bgc-black-025 d-ta-center">
+        <button class="d-btn d-btn--primary d-btn--danger" type="button"> <span class="d-btn__label">Place call</span> </button>
+      </td>
+    </tr>
+    <tr>
+      <th class="d-ta-left">
+        <a href="#inverted"><strong>Inverted</strong></a>
+        <div class="d-fw-normal">Use for placement on non-white, dark backgrounds.</div>
+      </th>
+      <td class="d-bgc-black-400 d-ta-center">
+        <button class="d-btn d-btn--inverted" type="button"> <span class="d-btn__label">Place call</span> </button>
+      </td>
+      <td class="d-bgc-black-400 d-ta-center">
+        <button class="d-btn d-btn--outlined d-btn--inverted" type="button"> <span class="d-btn__label">Place call</span> </button>
+      </td>
+      <td class="d-bgc-black-400 d-ta-center">
+        <button class="d-btn d-btn--primary d-btn--inverted" type="button"> <span class="d-btn__label">Place call</span> </button>
+      </td>
+    </tr>
+    <tr>
+      <th class="d-ta-left">
+        <a href="#muted"><strong>Muted</strong></a>
+        <div class="d-fw-normal">For non-primary actions and contexts where base style may not work.</div>
+      </th>
+       <td class="d-bgc-black-025 d-ta-center">
+        <abbr class="d-fc-black-400 d-td-none d-fs12" title="Not applicable">N/A</abbr>
+      </td>
+       <td class="d-bgc-black-025 d-ta-center">
+        <button class="d-btn d-btn--muted d-btn--outlined" type="button"> <span class="d-btn__label">Place call</span> </button>
+      </td>
+      <td class="d-bgc-black-025 d-ta-center">
+        <button class="d-btn d-btn--muted" type="button"> <span class="d-btn__label">Place call</span> </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 
 ### Base
 The base button should be the go-to button for most of your needs. When in doubt, use this style. To help provide clarity to users, it is generally recommended to use only one primary button style within a section or page.
@@ -412,4 +494,5 @@ The base button font size is 16px and should be used in most cases. Every button
   import IconGoogleGlyph from '@svgIcons/IconGoogleGlyph.vue';
   import IconOffice365 from '@svgIcons/IconOffice365.vue';
   import IconLinkedin from '@svgIcons/IconLinkedin.vue';
+  import Markdown from "@baseComponents/Markdown.vue";
 </script>
