@@ -6,48 +6,6 @@ next:
   link: /utilities/effects/box-shadow
 ---
 
-## Classes
-<div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
-  <utility-class-table>
-    <template #content>
-      <tbody v-for="d in ['y', 'x']">
-        <tr v-for="i in ['default', '0', '2', '4']">
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">
-            d-divide-{{ d }}<span v-if="i !== 'default'" v-text="i"></span> > * + *
-          </th>
-          <td class="d-ff-mono d-fc-orange d-fs12">
-            --divide-{{ d }}-reverse: 0;<br/>
-            <span v-if="d === 'y'">
-              border-top: calc(
-                <span v-if="i === 'default'">1</span>
-                <span v-else>{{ i }}</span>
-                px * (1 - var(--divide-{{ d }}-reverse))
-              ) solid currentColor !important;<br/>
-              border-bottom: calc(
-                <span v-if="i === 'default'">1</span>
-                <span v-else>{{ i }}</span>
-                px * var(--divide-{{ d }}-reverse)
-              ) solid currentColor !important;
-            </span>
-            <span v-else>
-              border-right: calc(
-                <span v-if="i === 'default'">1</span>
-                <span v-else>{{ i }}</span>
-                px * (1 - var(--divide-{{ d }}-reverse))
-              ) solid currentColor !important;<br/>
-              border-left: calc(
-                <span v-if="i === 'default'">1</span>
-                <span v-else>{{ i }}</span>
-                px * var(--divide-{{ d }}-reverse)
-              ) solid currentColor !important;
-            </span>
-          </td>
-        </tr>
-      </tbody>
-    </template>
-  </utility-class-table>
-</div>
-
 ## Default Width
 Use `d-divide-{y|x}` to create a 1px divider between an element's child items.
 
@@ -131,3 +89,45 @@ If an element's `flex-direction` is reversed, apply `d-divide-{y|x}-reverse` to 
   <div>3</div>
 </div>
 ```
+
+## Classes
+<div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
+  <utility-class-table>
+    <template #content>
+      <tbody v-for="d in ['y', 'x']">
+        <tr v-for="i in ['default', '0', '2', '4']">
+          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">
+            d-divide-{{ d }}<span v-if="i !== 'default'" v-text="i"></span> > * + *
+          </th>
+          <td class="d-ff-mono d-fc-orange d-fs12">
+            --divide-{{ d }}-reverse: 0;<br/>
+            <span v-if="d === 'y'">
+              border-top: calc(
+                <span v-if="i === 'default'">1</span>
+                <span v-else>{{ i }}</span>
+                px * (1 - var(--divide-{{ d }}-reverse))
+              ) solid currentColor !important;<br/>
+              border-bottom: calc(
+                <span v-if="i === 'default'">1</span>
+                <span v-else>{{ i }}</span>
+                px * var(--divide-{{ d }}-reverse)
+              ) solid currentColor !important;
+            </span>
+            <span v-else>
+              border-right: calc(
+                <span v-if="i === 'default'">1</span>
+                <span v-else>{{ i }}</span>
+                px * (1 - var(--divide-{{ d }}-reverse))
+              ) solid currentColor !important;<br/>
+              border-left: calc(
+                <span v-if="i === 'default'">1</span>
+                <span v-else>{{ i }}</span>
+                px * var(--divide-{{ d }}-reverse)
+              ) solid currentColor !important;
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </template>
+  </utility-class-table>
+</div>

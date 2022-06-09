@@ -3,28 +3,6 @@ title: Place Self
 desc: Utilities for controlling a grid item's alignment along their block and inline axis directions.
 ---
 
-## Classes
-<div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
-  <utility-class-table>
-    <template #content>
-      <tbody>
-        <div v-for="c in alignments" style="display: contents">
-          <tr v-for="i in alignments">
-            <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">
-              <span v-if="i !== c">.d-pls-{{ c }}-{{ i }}</span>
-              <span v-else>.d-pls-{{ c }}</span>
-            </th>
-            <td class="d-ff-mono d-fc-orange d-fs12">
-              <span v-if="i !== c">place-self: {{ c }} {{ i }} !important;</span>
-              <span v-else>place-self: {{ c }} !important;</span>
-            </td>
-          </tr>
-        </div>
-      </tbody>
-    </template>
-  </utility-class-table>
-</div>
-
 ## Stretch
 Use `d-pls-stretch{-n}` to stretch grid items along their block and inline axis.
 
@@ -112,3 +90,25 @@ Use `d-pls-center{-n}` to align a grid item along the center of their block and/
 <script setup>
   const alignments = ['center', 'end', 'start', 'stretch'];
 </script>
+
+## Classes
+<div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
+  <utility-class-table>
+    <template #content>
+      <tbody>
+        <div v-for="c in alignments" style="display: contents">
+          <tr v-for="i in alignments">
+            <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">
+              <span v-if="i !== c">.d-pls-{{ c }}-{{ i }}</span>
+              <span v-else>.d-pls-{{ c }}</span>
+            </th>
+            <td class="d-ff-mono d-fc-orange d-fs12">
+              <span v-if="i !== c">place-self: {{ c }} {{ i }} !important;</span>
+              <span v-else>place-self: {{ c }} !important;</span>
+            </td>
+          </tr>
+        </div>
+      </tbody>
+    </template>
+  </utility-class-table>
+</div>

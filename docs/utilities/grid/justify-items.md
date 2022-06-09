@@ -3,18 +3,6 @@ title: Justify Items
 desc: Utilities for controlling how grid items align along their inline axis.
 ---
 
-## Classes
-<utility-class-table>
-  <template #content>
-    <tbody>
-      <tr v-for="i in ['center', 'end', 'start', 'left', 'right', 'baseline', 'first-baseline', 'last-baseline', 'stretch', 'safe', 'unsafe', 'normal', 'legacy', 'auto', 'unset']">
-        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-ji-{{ i }}</th>
-        <td class="d-ff-mono d-fc-orange-500 d-fs12">justify-items: {{ i }} !important;</td>
-      </tr>
-    </tbody>
-  </template>
-</utility-class-table>
-
 ## Auto
 Use `d-ji-auto` to justify grid items automatically along their inline axis. This is the default value.
 
@@ -98,3 +86,15 @@ Use `d-ji-center` to justify items to the center of their inline axis.
   <div>4</div>
 </div>
 ```
+
+## Classes
+<utility-class-table>
+  <template #content>
+    <tbody>
+      <tr v-for="i in ['center', 'end', 'start', 'left', 'right', 'baseline', 'first-baseline', 'last-baseline', 'stretch', 'safe', 'unsafe', 'normal', 'legacy', 'auto', 'unset']">
+        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-ji-{{ i }}</th>
+        <td class="d-ff-mono d-fc-orange-500 d-fs12">justify-items: {{ i }} !important;</td>
+      </tr>
+    </tbody>
+  </template>
+</utility-class-table>

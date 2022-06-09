@@ -3,40 +3,6 @@ title: Width
 desc: Utilities to control an element's width.
 ---
 
-## Classes
-<div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
-  <table class="d-table dialtone-doc-table">
-    <thead>
-      <tr>
-        <th scope="col" class="d-w30p">Class</th>
-        <th scope="col">Output</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr v-for="i in percentage">
-        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-w{{ i }}p</th>
-        <td class="d-ff-mono d-fc-orange-500 d-fs12">width: {{ i }}% !important;</td>
-      </tr>
-    </tbody>
-    <tbody>
-      <tr v-for="i in fixed">
-        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-w{{ i }}</th>
-        <td class="d-ff-mono d-fc-orange-500 d-fs12">width: {{ i }}px !important;</td>
-      </tr>
-    </tbody>
-    <tbody>
-      <tr>
-        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-w100vw</th>
-        <td class="d-ff-mono d-fc-orange-500 d-fs12">width: 100vh !important;</td>
-      </tr>
-      <tr v-for="i in other">
-        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-w-{{ i }}</th>
-        <td class="d-ff-mono d-fc-orange-500 d-fs12">width: {{ i }} !important;</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
 ## Percentages
 Use `d-w{n}p` to set a percentage width for an element.
 
@@ -135,3 +101,37 @@ Use `d-w-auto` have the browser calculate and select a width.
 <script setup>
   import { percentage, fixed, other } from '@data/width-height.json';
 </script>
+
+## Classes
+<div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
+  <table class="d-table dialtone-doc-table">
+    <thead>
+      <tr>
+        <th scope="col" class="d-w30p">Class</th>
+        <th scope="col">Output</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="i in percentage">
+        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-w{{ i }}p</th>
+        <td class="d-ff-mono d-fc-orange-500 d-fs12">width: {{ i }}% !important;</td>
+      </tr>
+    </tbody>
+    <tbody>
+      <tr v-for="i in fixed">
+        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-w{{ i }}</th>
+        <td class="d-ff-mono d-fc-orange-500 d-fs12">width: {{ i }}px !important;</td>
+      </tr>
+    </tbody>
+    <tbody>
+      <tr>
+        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-w100vw</th>
+        <td class="d-ff-mono d-fc-orange-500 d-fs12">width: 100vh !important;</td>
+      </tr>
+      <tr v-for="i in other">
+        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-w-{{ i }}</th>
+        <td class="d-ff-mono d-fc-orange-500 d-fs12">width: {{ i }} !important;</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

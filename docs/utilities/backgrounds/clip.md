@@ -3,19 +3,6 @@ title: Background Clip
 desc: Utilities for controlling whether an element's background extends underneath its border, padding, or content box.
 ---
 
-## Classes
-
-<utility-class-table>
-  <template #content>
-    <tbody>
-        <tr v-for="i in ['unset', 'border-box', 'padding-box', 'content-box', 'text']">
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-bgc-{{ i }}</th>
-          <td class="d-ff-mono d-fc-orange d-fs12">background-clip: {{ i }} !important;</td>
-        </tr>
-    </tbody>
-  </template>
-</utility-class-table>
-
 ## Usage
 
 Use `d-bgc-{name}` to control which box an element's background is clipped by.
@@ -45,4 +32,18 @@ Use `d-bgc-text` to clip the background color(s) within the foreground text.
 
 <div class="d-bgc-text d-bgg-to-r d-bgg-from-purple-500 d-bgg-to-pink-400">...</div>
 ```
+
+
+## Classes
+
+<utility-class-table>
+  <template #content>
+    <tbody>
+        <tr v-for="i in ['unset', 'border-box', 'padding-box', 'content-box', 'text']">
+          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-bgc-{{ i }}</th>
+          <td class="d-ff-mono d-fc-orange d-fs12">background-clip: {{ i }} !important;</td>
+        </tr>
+    </tbody>
+  </template>
+</utility-class-table>
 

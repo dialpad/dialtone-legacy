@@ -3,18 +3,6 @@ title: Justify Self
 desc: Utilities for controlling how a grid item is aligned along its inline axis.
 ---
 
-## Classes
-<utility-class-table>
-  <template #content>
-    <tbody>
-      <tr v-for="i in ['center', 'end', 'start', 'left', 'right', 'baseline', 'first-baseline', 'last-baseline', 'stretch', 'safe', 'unsafe', 'normal', 'legacy', 'auto', 'unset']">
-        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-js-{{ i }}</th>
-        <td class="d-ff-mono d-fc-orange d-fs12">justify-self: {{ i }} !important;</td>
-      </tr>
-    </tbody>
-  </template>
-</utility-class-table>
-
 ## Auto
 Use `d-js-auto` to justify an item automatically along its inline axis. This is the default value.
 
@@ -90,3 +78,15 @@ Use `d-js-center` to justify an item to the center of its inline axis.
   <div>3</div>
 </div>
 ```
+
+## Classes
+<utility-class-table>
+  <template #content>
+    <tbody>
+      <tr v-for="i in ['center', 'end', 'start', 'left', 'right', 'baseline', 'first-baseline', 'last-baseline', 'stretch', 'safe', 'unsafe', 'normal', 'legacy', 'auto', 'unset']">
+        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-js-{{ i }}</th>
+        <td class="d-ff-mono d-fc-orange d-fs12">justify-self: {{ i }} !important;</td>
+      </tr>
+    </tbody>
+  </template>
+</utility-class-table>

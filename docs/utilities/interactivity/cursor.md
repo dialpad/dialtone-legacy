@@ -5,20 +5,6 @@ prev:
   text: Rows
   link: /utilities/grid/row-start-end-span
 ---
-## Classes
-<div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
-  <utility-class-table>
-    <template #content>
-      <tbody>
-        <tr v-for="{ class: className, output } in cursor"> 
-          <th scope="row" class="d-ff-mono d-fw-normal d-fc-purple-400 d-fs12">.{{ className }}</th>
-          <td class="d-ff-mono d-fc-orange d-fs12">{{ output }}</td>
-        </tr>
-      </tbody>
-    </template>
-  </utility-class-table>
-</div>
-
 ## Usage
 <code-well-header class="d-fl-col5 d-ta-center d-flg8 d-fw-wrap d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn102" custom>
   <div class="d-d-flex d-fw-wrap d-ac-center d-p8 d-w100p d-hmn216 d-bar8">
@@ -52,3 +38,17 @@ prev:
 <script setup>
   import { cursor } from '@data/interactivity.json';
 </script>
+
+## Classes
+<div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
+  <utility-class-table>
+    <template #content>
+      <tbody>
+        <tr v-for="{ class: className, output } in cursor">
+          <th scope="row" class="d-ff-mono d-fw-normal d-fc-purple-400 d-fs12">.{{ className }}</th>
+          <td class="d-ff-mono d-fc-orange d-fs12">{{ output }}</td>
+        </tr>
+      </tbody>
+    </template>
+  </utility-class-table>
+</div>

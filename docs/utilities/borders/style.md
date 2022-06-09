@@ -1,31 +1,7 @@
 ---
-title: Border Style. 
+title: Border Style.
 desc: Utilities for controlling an element's border style.
 ---
-
-## Classes
-
-<div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
-  <utility-class-table>
-    <template #content>
-      <tbody>
-        <tr>
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-bas-unset</th>
-          <td class="d-ff-mono d-fc-orange d-fs12">border-style: unset !important;</td>
-        </tr>
-      </tbody>
-      <tbody v-for="s in ['dashed', 'dotted']">
-        <tr v-for="i in ['all', 'top', 'right', 'bottom', 'left']">
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-b{{ i[0] }}s-{{ s }}</th>
-          <td class="d-ff-mono d-fc-orange d-fs12">
-            <span v-if="i === 'all'">border-style: {{ s }} !important;</span>
-            <span v-else>border-{{i}}-style: {{ s }} !important;</span>
-          </td>
-        </tr>
-      </tbody>
-    </template>
-  </utility-class-table>
-</div>
 
 ## Dashed Borders
 
@@ -68,3 +44,27 @@ Use `d-b{a|t|r|b|l}s-dotted` to change the border style to dotted on your elemen
 <div class="d-ba d-bc-purple-400 d-bbs-dotted d-baw4">...</div>
 <div class="d-ba d-bc-purple-400 d-bls-dotted d-baw4">...</div>
 ```
+
+## Classes
+
+<div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
+  <utility-class-table>
+    <template #content>
+      <tbody>
+        <tr>
+          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-bas-unset</th>
+          <td class="d-ff-mono d-fc-orange d-fs12">border-style: unset !important;</td>
+        </tr>
+      </tbody>
+      <tbody v-for="s in ['dashed', 'dotted']">
+        <tr v-for="i in ['all', 'top', 'right', 'bottom', 'left']">
+          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-b{{ i[0] }}s-{{ s }}</th>
+          <td class="d-ff-mono d-fc-orange d-fs12">
+            <span v-if="i === 'all'">border-style: {{ s }} !important;</span>
+            <span v-else>border-{{i}}-style: {{ s }} !important;</span>
+          </td>
+        </tr>
+      </tbody>
+    </template>
+  </utility-class-table>
+</div>

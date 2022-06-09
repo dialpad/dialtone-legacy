@@ -4,31 +4,6 @@ desc: Utility classes to assign an element’s top, right, bottom, or left posit
 ---
 
 ## Positive Coordinates
-### Classes
-<div class="d-w100p d-of-auto">
-  <table class="d-table dialtone-doc-table">
-    <thead>
-      <tr>
-        <th scope="col">Value</th>
-        <th v-for="{ direction: dir } in coordinateDirections" scope="col">{{ dir }}</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr v-for="{coordinate, suffix, combo, value } in coordinates">
-        <th scope="row">{{ value }}</th>
-        <div v-for="{direction: dir, prefix: pre, percent} in coordinateDirections" style="display: contents">
-          <td v-if="percent === 'no' && combo === 'no'" class="d-o50 d-bgc-black-050 d-fc-black-400 d-fs12 d-ta-center">
-            <em>N/A</em>
-          </td>
-          <td v-else class="d-ff-mono d-fc-purple d-fs12">
-            <span v-if="suffix === '-calc'">.d-{{ pre }}{{ coordinate }}{{ suffix }}</span>
-            <span v-else>.d-{{ pre }}{{ coordinate }}</span>
-          </td>
-        </div>
-      </tr>
-    </tbody>
-  </table>
-</div>
 
 ### Examples
 Use the `top|right|bottom|left|x|y|all` utility classes to absolutely position elements within the nearest positioned element.
@@ -98,8 +73,6 @@ Use the `top|right|bottom|left|x|y|all` utility classes to absolutely position e
     </div>
 ```
 
-## Negative Coordinates
-
 ### Classes
 <div class="d-w100p d-of-auto">
   <table class="d-table dialtone-doc-table">
@@ -110,21 +83,23 @@ Use the `top|right|bottom|left|x|y|all` utility classes to absolutely position e
       </tr>
     </thead>
     <tbody>
-      <tr v-for="{coordinate, suffix, combo, negative, value } in coordinates">
-        <th v-if="negative === 'yes'" scope="row">{{ value }}</th>
-        <div v-if="negative === 'yes'" v-for="{direction: dir, prefix: pre, percent} in coordinateDirections" style="display: contents">
+      <tr v-for="{coordinate, suffix, combo, value } in coordinates">
+        <th scope="row">{{ value }}</th>
+        <div v-for="{direction: dir, prefix: pre, percent} in coordinateDirections" style="display: contents">
           <td v-if="percent === 'no' && combo === 'no'" class="d-o50 d-bgc-black-050 d-fc-black-400 d-fs12 d-ta-center">
             <em>N/A</em>
           </td>
           <td v-else class="d-ff-mono d-fc-purple d-fs12">
-            <span v-if="suffix === '-calc'">.d-{{ pre }}n{{ coordinate }}{{ suffix }}</span>
-            <span v-else>.d-{{ pre }}n{{ coordinate }}</span>
+            <span v-if="suffix === '-calc'">.d-{{ pre }}{{ coordinate }}{{ suffix }}</span>
+            <span v-else>.d-{{ pre }}{{ coordinate }}</span>
           </td>
         </div>
       </tr>
     </tbody>
   </table>
 </div>
+
+## Negative Coordinates
 
 ### Examples
 Use the `top|right|bottom|left|x|y|all` utility classes to absolutely position elements within the nearest positioned element.
@@ -191,3 +166,29 @@ Use the `top|right|bottom|left|x|y|all` utility classes to absolutely position e
 <script setup>
   import { coordinateDirections, coordinates } from '@data/spacing.json';
 </script>
+
+### Classes
+<div class="d-w100p d-of-auto">
+  <table class="d-table dialtone-doc-table">
+    <thead>
+      <tr>
+        <th scope="col">Value</th>
+        <th v-for="{ direction: dir } in coordinateDirections" scope="col">{{ dir }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="{coordinate, suffix, combo, negative, value } in coordinates">
+        <th v-if="negative === 'yes'" scope="row">{{ value }}</th>
+        <div v-if="negative === 'yes'" v-for="{direction: dir, prefix: pre, percent} in coordinateDirections" style="display: contents">
+          <td v-if="percent === 'no' && combo === 'no'" class="d-o50 d-bgc-black-050 d-fc-black-400 d-fs12 d-ta-center">
+            <em>N/A</em>
+          </td>
+          <td v-else class="d-ff-mono d-fc-purple d-fs12">
+            <span v-if="suffix === '-calc'">.d-{{ pre }}n{{ coordinate }}{{ suffix }}</span>
+            <span v-else>.d-{{ pre }}n{{ coordinate }}</span>
+          </td>
+        </div>
+      </tr>
+    </tbody>
+  </table>
+</div>

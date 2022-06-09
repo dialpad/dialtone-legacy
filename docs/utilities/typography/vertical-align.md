@@ -3,18 +3,6 @@ title: Vertical Align
 desc: Utilities for controlling an element's text transform.
 ---
 
-## Classes
-<utility-class-table>
-  <template #content>
-    <tbody>
-      <tr v-for="i in ['baseline', 'top', 'bottom', 'text-top', 'text-bottom', 'middle', 'sub', 'super', 'unset']">
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-va-{{ i }}</th>
-          <td class="d-ff-mono d-fc-orange d-fs12">vertical-align: {{ i }} !important;</td>
-      </tr>
-    </tbody>
-  </template>
-</utility-class-table>
-
 ## Baseline
 Use `d-va-baseline` to vertically align an element to the baseline.
 
@@ -116,3 +104,15 @@ Use `d-va-text-bottom` to vertically align an element to text bottom.
 ```html
 <div class="d-d-inline-block d-va-text-bottom">...</div>
 ```
+
+## Classes
+<utility-class-table>
+  <template #content>
+    <tbody>
+      <tr v-for="i in ['baseline', 'top', 'bottom', 'text-top', 'text-bottom', 'middle', 'sub', 'super', 'unset']">
+          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-va-{{ i }}</th>
+          <td class="d-ff-mono d-fc-orange d-fs12">vertical-align: {{ i }} !important;</td>
+      </tr>
+    </tbody>
+  </template>
+</utility-class-table>

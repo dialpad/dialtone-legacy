@@ -3,28 +3,6 @@ title: Place Content
 desc: Utilities for controlling how grid items are aligned along both the block and inline axis directions.
 ---
 
-## Classes
-<div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
-  <utility-class-table>
-    <template #content>
-      <tbody>
-        <div v-for="c in alignments" style="display: contents">
-          <tr v-for="i in alignments">
-            <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">
-              <span v-if="i !== c">.d-plc-{{ c }}-{{ i }}</span>
-              <span v-else>.d-plc-{{ c }}</span>
-            </th>
-            <td class="d-ff-mono d-fc-orange d-fs12">
-              <span v-if="i !== c">place-content: {{ c }} {{ i }} !important</span>
-              <span v-else>place-content: {{ c }} !important</span>
-            </td>
-          </tr>
-        </div>
-      </tbody>
-    </template>
-  </utility-class-table>
-</div>
-
 ## Stretch
 Use `d-plc-stretch{-n}` to stretch grid items along the block and inline axis.
 
@@ -175,3 +153,25 @@ Use `d-plc-space-between{-n}` to distribute grid items along the block axis so t
 <script setup>
   const alignments = ['center', 'end', 'start', 'stretch', 'space-around', 'space-evenly', 'space-between'];
 </script>
+
+## Classes
+<div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
+  <utility-class-table>
+    <template #content>
+      <tbody>
+        <div v-for="c in alignments" style="display: contents">
+          <tr v-for="i in alignments">
+            <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">
+              <span v-if="i !== c">.d-plc-{{ c }}-{{ i }}</span>
+              <span v-else>.d-plc-{{ c }}</span>
+            </th>
+            <td class="d-ff-mono d-fc-orange d-fs12">
+              <span v-if="i !== c">place-content: {{ c }} {{ i }} !important</span>
+              <span v-else>place-content: {{ c }} !important</span>
+            </td>
+          </tr>
+        </div>
+      </tbody>
+    </template>
+  </utility-class-table>
+</div>

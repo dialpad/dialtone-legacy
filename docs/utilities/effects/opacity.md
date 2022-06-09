@@ -3,20 +3,6 @@ title: Opacity
 desc: Utility classes for changing an element's opacity.
 ---
 
-## Classes
-<div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
-  <utility-class-table>
-    <template #content>
-      <tbody>
-        <tr v-for="{className, value} in opacities">
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-o{{className}}</th>
-          <td class="d-ff-mono d-fc-orange d-fs12">opacity: {{value}} !important;</td>
-        </tr>
-      </tbody>
-    </template>
-  </utility-class-table>
-</div>
-
 ## Usage
 Use `d-o{n}` to change the opacity of your element.
 
@@ -58,3 +44,17 @@ Use `d-o{n}` to change the opacity of your element.
     {className: '-unset', value: 'unset'}
   ];
 </script>
+
+## Classes
+<div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
+  <utility-class-table>
+    <template #content>
+      <tbody>
+        <tr v-for="{className, value} in opacities">
+          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-o{{className}}</th>
+          <td class="d-ff-mono d-fc-orange d-fs12">opacity: {{value}} !important;</td>
+        </tr>
+      </tbody>
+    </template>
+  </utility-class-table>
+</div>

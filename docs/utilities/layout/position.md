@@ -3,22 +3,6 @@ title: Position
 desc: Utility classes to change an element’s position type.
 ---
 
-## Classes
-Set an element’s position by using the position classes listed in the table below. Starting in v5.8.0, Dialtone began providing immutable type classes, meaning they include an <span class="code-example--inline">!important</span> to override CSS specificity.
-
-
-
-<utility-class-table>
-  <template #content>
-    <tbody>
-      <tr v-for="i in ['static', 'relative', 'absolute', 'fixed', 'sticky', 'unset']">
-        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-ps-{{ i }}</th>
-        <td class="d-ff-mono d-fc-orange d-fs12">position: {{ i }} !important;</td>
-      </tr>
-    </tbody>
-  </template>
-</utility-class-table>
-
 ## Examples
 
 <code-well-header class="d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn216 d-of-y-auto" custom>
@@ -42,3 +26,17 @@ Set an element’s position by using the position classes listed in the table be
 <div class="d-ps-fixed">…</div>
 <div class="d-ps-sticky">…</div>
 ```
+
+## Classes
+Set an element’s position by using the position classes listed in the table below. Starting in v5.8.0, Dialtone began providing immutable type classes, meaning they include an <span class="code-example--inline">!important</span> to override CSS specificity.
+
+<utility-class-table>
+  <template #content>
+    <tbody>
+      <tr v-for="i in ['static', 'relative', 'absolute', 'fixed', 'sticky', 'unset']">
+        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-ps-{{ i }}</th>
+        <td class="d-ff-mono d-fc-orange d-fs12">position: {{ i }} !important;</td>
+      </tr>
+    </tbody>
+  </template>
+</utility-class-table>

@@ -3,33 +3,6 @@ title: Lists
 desc: Utilities for controlling list styling.
 ---
 
-## Classes
-<utility-class-table>
-  <template #content>
-    <tbody>
-      <tr>
-        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-ls-reset</th>
-        <td class="d-ff-mono d-fc-orange d-fs12">
-          margin: 0;<br/>
-          padding: 0;<br/>
-          list-style: none !important;
-        </td>
-      </tr>
-      <tr>
-        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-ls-none</th>
-        <td class="d-ff-mono d-fc-orange d-fs12">list-style: none !important;</td>
-      </tr>
-      <tr v-for="i in lists">
-        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-lst-{{ i }}</th>
-        <td class="d-ff-mono d-fc-orange d-fs12">
-          <span v-if="i === 'content'">list-style-type: var(--ls-content) !important;</span>
-          <span v-else>list-style-type: {{ i }} !important;</span>
-        </td>
-      </tr>
-    </tbody>
-  </template>
-</utility-class-table>
-
 ## Resetting a list
 Use `d-ls-reset` to reset the margin, padding, and list-style-type of a list. Reseting a list applies to the parent `ol` or `ul`, any child `li` elements, and any child `ol` or `ul` elements.
 
@@ -101,3 +74,30 @@ Use `d-ls-{disc|decimal}` to change an unordered list's bullet styling.
 <script setup>
   import { lists } from '@data/type.json';
 </script>
+
+## Classes
+<utility-class-table>
+  <template #content>
+    <tbody>
+      <tr>
+        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-ls-reset</th>
+        <td class="d-ff-mono d-fc-orange d-fs12">
+          margin: 0;<br/>
+          padding: 0;<br/>
+          list-style: none !important;
+        </td>
+      </tr>
+      <tr>
+        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-ls-none</th>
+        <td class="d-ff-mono d-fc-orange d-fs12">list-style: none !important;</td>
+      </tr>
+      <tr v-for="i in lists">
+        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-lst-{{ i }}</th>
+        <td class="d-ff-mono d-fc-orange d-fs12">
+          <span v-if="i === 'content'">list-style-type: var(--ls-content) !important;</span>
+          <span v-else>list-style-type: {{ i }} !important;</span>
+        </td>
+      </tr>
+    </tbody>
+  </template>
+</utility-class-table>

@@ -2,28 +2,13 @@
 title: Background Repeat
 desc: Utilities for controlling if or how an element's background image repeats.
 ---
-## Classes
-
-<utility-class-table>
-  <template #content>
-    <tbody>
-      <tr v-for="i in repeat">
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-bgr-{{ i }}</th>
-          <td class="d-ff-mono d-fc-orange d-fs12">
-            background-repeat: {{ i }} !important;
-          </td>
-      </tr>
-    </tbody>
-  </template>
-</utility-class-table>
-
 
 ## Usage
 Use `d-bgr-{n}` to how an element's background image repeats.
 
 <code-well-header class="d-fl-col4 d-fw-wrap d-flg12 d-p12 d-bgc-green-100 d-bgo50" custom>
   <div class="d-d-flex d-fd-column d-ai-center d-stack4" v-for="i in repeat">
-      <div 
+      <div
         class="d-fl-center d-w128 d-h128 d-bgc-green-300 d-bar8 d-bc-purple-200 d-of-hidden d-bgp-tl d-bgs-var" style="--bgg-size: 65% 65%; background-image: url('https://cdn.jpegmini.com/user/images/slider_puffin_before_mobile.jpg');"
         :class="`d-bgr-${i}`"
       >
@@ -44,3 +29,19 @@ Use `d-bgr-{n}` to how an element's background image repeats.
 <script setup>
 const repeat = ['repeat', 'repeat-x', 'repeat-y', 'space', 'none', 'unset'];
 </script>
+
+## Classes
+
+<utility-class-table>
+  <template #content>
+    <tbody>
+      <tr v-for="i in repeat">
+          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-bgr-{{ i }}</th>
+          <td class="d-ff-mono d-fc-orange d-fs12">
+            background-repeat: {{ i }} !important;
+          </td>
+      </tr>
+    </tbody>
+  </template>
+</utility-class-table>
+

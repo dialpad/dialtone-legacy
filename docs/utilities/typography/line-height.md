@@ -3,44 +3,6 @@ title: Line Height
 desc: Utilities to change an element's line-height.
 ---
 
-## CSS Variables
-<div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
-  <table class="d-table dialtone-doc-table">
-    <thead>
-      <tr>
-        <th scope="col" class="d-w25p">Variable</th>
-        <th scope="col">Output</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr v-for="{ class: className, output } in lineHeight.slice(0, -1)">
-        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">
-          var(--lh{{ className }})
-        </th>
-        <td class="d-ff-mono d-fc-orange d-fs12">{{ output }}</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-## Classes
-<div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
-  <utility-class-table>
-    <template #content>
-      <tbody>
-        <tr v-for="{ class: className, output } in lineHeight.slice(0, -1)">
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">
-            .d-lh{{ className }}
-          </th>
-          <td class="d-ff-mono d-fc-orange d-fs12">
-            line-height: var(--lh{{ className }}) !important;
-          </td>
-        </tr>
-      </tbody>
-    </template>
-  </utility-class-table>
-</div>
-
 ## Relative line-heights
 Use `d-lh-{n}` to change an element's line-height relatively. This means no unit is set with the line-height. Instead the line-height value is a multiple of the font-size.
 
@@ -111,3 +73,41 @@ Use `d-lh{n}` to fix an element's line-height. This allows you to target a speci
 <script setup>
   import { lineHeight } from '@data/type.json';
 </script>
+
+## CSS Variables
+<div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
+  <table class="d-table dialtone-doc-table">
+    <thead>
+      <tr>
+        <th scope="col" class="d-w25p">Variable</th>
+        <th scope="col">Output</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="{ class: className, output } in lineHeight.slice(0, -1)">
+        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">
+          var(--lh{{ className }})
+        </th>
+        <td class="d-ff-mono d-fc-orange d-fs12">{{ output }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+## Classes
+<div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
+  <utility-class-table>
+    <template #content>
+      <tbody>
+        <tr v-for="{ class: className, output } in lineHeight.slice(0, -1)">
+          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">
+            .d-lh{{ className }}
+          </th>
+          <td class="d-ff-mono d-fc-orange d-fs12">
+            line-height: var(--lh{{ className }}) !important;
+          </td>
+        </tr>
+      </tbody>
+    </template>
+  </utility-class-table>
+</div>

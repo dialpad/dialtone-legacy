@@ -6,40 +6,6 @@ prev:
   link: /utilities/responsive/breakpoints
 ---
 
-## Classes
-<div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
-  <table class="d-table dialtone-doc-table">
-    <thead>
-      <tr>
-        <th scope="col" class="d-w30p">Class</th>
-        <th scope="col">Output</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr v-for="i in percentage">
-        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-h{{ i }}p</th>
-        <td class="d-ff-mono d-fc-orange d-fs12">height: {{ i }}% !important;</td>
-      </tr>
-    </tbody>
-    <tbody>
-      <tr v-for="i in fixed">
-        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-h{{ i }}</th>
-        <td class="d-ff-mono d-fc-orange d-fs12">height: {{ i }}px !important;</td>
-      </tr>
-    </tbody>
-    <tbody>
-      <tr>
-        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-h100vh</th>
-        <td class="d-ff-mono d-fc-orange d-fs12">height: 100vh !important;</td>
-      </tr>
-      <tr v-for="i in other">
-        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-h-{{ i }}</th>
-        <td class="d-ff-mono d-fc-orange d-fs12">height: {{ i }} !important;</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
 ## Percentages
 Use `d-h{n}p` to set a percentage height for an element.
 
@@ -142,3 +108,37 @@ Use `d-h-auto` have the browser calculate and select a height.
 <script setup>
   import { percentage, fixed, other } from '@data/width-height.json';
 </script>
+
+## Classes
+<div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
+  <table class="d-table dialtone-doc-table">
+    <thead>
+      <tr>
+        <th scope="col" class="d-w30p">Class</th>
+        <th scope="col">Output</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="i in percentage">
+        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-h{{ i }}p</th>
+        <td class="d-ff-mono d-fc-orange d-fs12">height: {{ i }}% !important;</td>
+      </tr>
+    </tbody>
+    <tbody>
+      <tr v-for="i in fixed">
+        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-h{{ i }}</th>
+        <td class="d-ff-mono d-fc-orange d-fs12">height: {{ i }}px !important;</td>
+      </tr>
+    </tbody>
+    <tbody>
+      <tr>
+        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-h100vh</th>
+        <td class="d-ff-mono d-fc-orange d-fs12">height: 100vh !important;</td>
+      </tr>
+      <tr v-for="i in other">
+        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-h-{{ i }}</th>
+        <td class="d-ff-mono d-fc-orange d-fs12">height: {{ i }} !important;</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -6,18 +6,6 @@ prev:
   link: /utilities/effects/transition
 ---
 
-## Classes
-<utility-class-table>
- <template #content>
-    <tbody>
-      <tr v-for="{ class: className, output } in alignContent">
-        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-{{ className }}</th>
-        <td class="d-ff-mono d-fc-orange d-fs12">{{ output }}</td>
-      </tr>
-    </tbody>
-  </template>
-</utility-class-table>
-
 ## Flex Start
 Use `d-ac-flex-start` to pack rows against the start of the element's cross axis. This is the default value.
 
@@ -165,3 +153,15 @@ Use `d-ac-space-evenly` to distribute rows along the element's cross axis so tha
 <script setup>
 import { alignContent } from '@data/flex.json';
 </script>
+
+## Classes
+<utility-class-table>
+ <template #content>
+    <tbody>
+      <tr v-for="{ class: className, output } in alignContent">
+        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-{{ className }}</th>
+        <td class="d-ff-mono d-fc-orange d-fs12">{{ output }}</td>
+      </tr>
+    </tbody>
+  </template>
+</utility-class-table>

@@ -3,21 +3,6 @@ title: Text Decoration
 desc: Utilities to change an element's text decoration styles.
 ---
 
-## Classes
-<utility-class-table>
-  <template #content>
-    <tbody>
-      <tr v-for=" i in decoration">
-        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-td-{{ i }}</th>
-        <td class="d-ff-mono d-fc-orange d-fs12">
-          <span v-if="i === 'dotted'">text-decoration: underline {{ i }} !important</span>
-          <span v-else>text-decoration: {{ i }} !important</span>
-        </td>
-      </tr>
-    </tbody>
-  </template>
-</utility-class-table>
-
 ## Underline
 Use `d-td-underline` to underline text.
 
@@ -65,3 +50,18 @@ Use `d-td-none` to remove text decorations.
 <script setup>
   import { decoration } from '@data/type.json';
 </script>
+
+## Classes
+<utility-class-table>
+  <template #content>
+    <tbody>
+      <tr v-for=" i in decoration">
+        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-td-{{ i }}</th>
+        <td class="d-ff-mono d-fc-orange d-fs12">
+          <span v-if="i === 'dotted'">text-decoration: underline {{ i }} !important</span>
+          <span v-else>text-decoration: {{ i }} !important</span>
+        </td>
+      </tr>
+    </tbody>
+  </template>
+</utility-class-table>

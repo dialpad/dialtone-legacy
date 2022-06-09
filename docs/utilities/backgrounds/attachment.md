@@ -6,19 +6,6 @@ prev:
   link: /design/spacing/spacing-system
 ---
 
-## Classes
-
-<utility-class-table>
-  <template #content>
-    <tbody>
-      <tr v-for="i in ['unset', 'scroll', 'fixed', 'local']">
-        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-bga-{{ i }}</th>
-        <td class="d-ff-mono d-fc-orange d-fs12">background-attachment: {{ i }} !important;</td>
-      </tr>
-    </tbody>
-  </template>
-</utility-class-table>
-
 ## Scroll
 
 Use `d-bga-scroll` to fix a background image to the element. It does not scroll with its content.
@@ -59,3 +46,16 @@ of the element rather than the viewable box.
 
 <div class="... d-bga-local">...</div>
 ```
+
+## Classes
+
+<utility-class-table>
+  <template #content>
+    <tbody>
+      <tr v-for="i in ['unset', 'scroll', 'fixed', 'local']">
+        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-bga-{{ i }}</th>
+        <td class="d-ff-mono d-fc-orange d-fs12">background-attachment: {{ i }} !important;</td>
+      </tr>
+    </tbody>
+  </template>
+</utility-class-table>

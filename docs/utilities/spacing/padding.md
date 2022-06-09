@@ -6,6 +6,58 @@ next:
   link: /utilities/svg/size
 ---
 
+## Add padding to all sides
+
+<code-well-header class="d-fl-center d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn216" custom>
+  <div class="d-h128 d-w128 d-p16 d-bar8 d-bgc-purple-200 d-of-hidden"><div class="d-fl-center d-fl1 d-h100p d-bgc-purple-300 d-bar4 d-fs14 d-ff-mono">d-p16</div></div>
+</code-well-header>
+
+```html
+<div class="d-p8 ...">d-p8</div>
+```
+
+## Add padding to a single side
+
+<code-well-header class="d-d-flex d-fw-wrap d-ai-start d-jc-center d-bgc-green-100 d-bgo50 d-w100p d-hmn216 d-flow24" custom>
+  <div class="d-as-center d-pt12 d-bar8 d-bgc-green-300 d-of-hidden"><div class="d-fl-center d-p16 d-bgc-green-200 d-bbr4 d-fs14 d-ff-mono">d-pt12</div></div>
+  <div class="d-as-center d-pr16 d-bar8 d-bgc-green-300 d-of-hidden"><div class="d-fl-center d-p16 d-bgc-green-200 d-brl4 d-fs14 d-ff-mono">d-pr16</div></div>
+  <div class="d-as-center d-pb24 d-bar8 d-bgc-green-300 d-of-hidden"><div class="d-fl-center d-p16 d-bgc-green-200 d-btr4 d-fs14 d-ff-mono">d-pb24</div></div>
+  <div class="d-as-center d-pl32 d-bar8 d-bgc-green-300 d-of-hidden"><div class="d-fl-center d-p16 d-bgc-green-200 d-brr4 d-fs14 d-ff-mono">d-pl32</div></div>
+</code-well-header>
+
+```html
+<div class="d-pt12 ...">d-pt12</div>
+<div class="d-pr16 ...">d-pr16</div>
+<div class="d-pb24 ...">d-pb24</div>
+<div class="d-pl32 ...">d-pl32</div>
+```
+
+## Add horizontal padding
+
+<code-well-header class="d-d-flex d-fw-wrap d-ai-start d-jc-center d-bgc-pink-100 d-bgo50 d-w100p d-hmn216" custom>
+  <div class="d-as-center d-px24 d-bar8 d-bgc-pink-300 d-of-hidden"><div class="d-fl-center d-p16 d-bgc-pink-200 d-fs14 d-ff-mono">d-px24</div></div>
+</code-well-header>
+
+```html
+<div class="d-px24 ...">d-px24</div>
+```
+
+## Add vertical padding
+
+<code-well-header class="d-d-flex d-fw-wrap d-ai-start d-jc-center d-bgc-red-100 d-bgo50 d-w100p d-hmn216" custom>
+  <div class="d-as-center d-py24 d-bar8 d-bgc-red-300 d-of-hidden">
+    <div class="d-fl-center d-p16 d-bgc-red-200 d-fs14 d-ff-mono">d-py24</div>
+  </div>
+</code-well-header>
+
+```html
+<div class="d-py24 ...">d-py24</div>
+```
+
+<script setup>
+  import { directions, values } from '@data/spacing.json';
+</script>
+
 ## Classes
 Padding can be added to an element by using a utility class (i.e. `.d-p[#]`) or by using a directional class (i.e. `.d-p{t|r|b|l|y|x}[#]`).
 
@@ -61,58 +113,3 @@ Padding can be added to an element by using a utility class (i.e. `.d-p[#]`) or 
     </template>
   </utility-class-table>
 </div>
-
-
-
-
-## Add padding to all sides
-
-<code-well-header class="d-fl-center d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn216" custom>
-  <div class="d-h128 d-w128 d-p16 d-bar8 d-bgc-purple-200 d-of-hidden"><div class="d-fl-center d-fl1 d-h100p d-bgc-purple-300 d-bar4 d-fs14 d-ff-mono">d-p16</div></div>
-</code-well-header>
-
-```html
-<div class="d-p8 ...">d-p8</div>
-```
-
-## Add padding to a single side
-
-<code-well-header class="d-d-flex d-fw-wrap d-ai-start d-jc-center d-bgc-green-100 d-bgo50 d-w100p d-hmn216 d-flow24" custom>
-  <div class="d-as-center d-pt12 d-bar8 d-bgc-green-300 d-of-hidden"><div class="d-fl-center d-p16 d-bgc-green-200 d-bbr4 d-fs14 d-ff-mono">d-pt12</div></div>
-  <div class="d-as-center d-pr16 d-bar8 d-bgc-green-300 d-of-hidden"><div class="d-fl-center d-p16 d-bgc-green-200 d-brl4 d-fs14 d-ff-mono">d-pr16</div></div>
-  <div class="d-as-center d-pb24 d-bar8 d-bgc-green-300 d-of-hidden"><div class="d-fl-center d-p16 d-bgc-green-200 d-btr4 d-fs14 d-ff-mono">d-pb24</div></div>
-  <div class="d-as-center d-pl32 d-bar8 d-bgc-green-300 d-of-hidden"><div class="d-fl-center d-p16 d-bgc-green-200 d-brr4 d-fs14 d-ff-mono">d-pl32</div></div>
-</code-well-header>
-
-```html
-<div class="d-pt12 ...">d-pt12</div>
-<div class="d-pr16 ...">d-pr16</div>
-<div class="d-pb24 ...">d-pb24</div>
-<div class="d-pl32 ...">d-pl32</div>
-```
-
-## Add horizontal padding
-
-<code-well-header class="d-d-flex d-fw-wrap d-ai-start d-jc-center d-bgc-pink-100 d-bgo50 d-w100p d-hmn216" custom>
-  <div class="d-as-center d-px24 d-bar8 d-bgc-pink-300 d-of-hidden"><div class="d-fl-center d-p16 d-bgc-pink-200 d-fs14 d-ff-mono">d-px24</div></div>
-</code-well-header>
-
-```html
-<div class="d-px24 ...">d-px24</div>
-```
-
-## Add vertical padding
-
-<code-well-header class="d-d-flex d-fw-wrap d-ai-start d-jc-center d-bgc-red-100 d-bgo50 d-w100p d-hmn216" custom>
-  <div class="d-as-center d-py24 d-bar8 d-bgc-red-300 d-of-hidden">
-    <div class="d-fl-center d-p16 d-bgc-red-200 d-fs14 d-ff-mono">d-py24</div>
-  </div>
-</code-well-header>
-
-```html
-<div class="d-py24 ...">d-py24</div>
-```
-
-<script setup>
-  import { directions, values } from '@data/spacing.json';
-</script>

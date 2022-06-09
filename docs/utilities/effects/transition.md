@@ -6,50 +6,6 @@ next:
   link: /utilities/flex/align-content
 ---
 
-## Classes
-<div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
-  <utility-class-table>
-    <template #content>
-      <tbody>
-        <tr>
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-t</th>
-          <td class="d-ff-mono d-fc-orange-500 d-fs12">
-            transition-duration: var(--td25);<br/>
-            transition-property: all;<br/>
-            transition-timing-function: var(--ttf-in-out);<br/>
-            transition-delay: 0s;</td>
-        </tr>
-      </tbody>
-      <tbody v-for="i in ['td', 'ttf', 'tp', 't-delay']">
-        <tr v-if="i === 'td'" v-for="d in [0, 50, 100, 150, 200]">
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-{{ i }}{{ d }}</th>
-          <td class="d-ff-mono d-fc-orange-500 d-fs12">transition-duration: var(--td{{ d }}) !important;</td>
-        </tr>
-        <tr v-else-if="i === 'ttf'" v-for="t in ['in-out', 'out']">
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-{{ i }}-{{ t }}</th>
-          <td class="d-ff-mono d-fc-orange-500 d-fs12">transition-timing-function: var(--ttf-{{ t }}) !important;</td>
-        </tr>
-        <tr v-else-if="i === 'tp'" v-for="p in ['all', 'o', 'bs', 'bgc', 'transform', 'colors']">
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-{{ i }}-{{ p }}</th>
-          <td class="d-ff-mono d-fc-orange-500 d-fs12">
-            transition-property: 
-              <span v-if="p === 'o'">opacity</span>
-              <span v-else-if="p === 'bs'">box-shadow</span>
-              <span v-else-if="p === 'bgc'">background-color</span>
-              <span v-else-if="p === 'colors'">background-color, border-color, color, fill, stroke</span>
-              <span v-else>{{ p }}</span>
-            !important;
-          </td>
-        </tr>
-        <tr v-else v-for="d in [25, 50, 100, 150, 200]">
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-{{ i }}{{ d }}</th>
-          <td class="d-ff-mono d-fc-orange-500 d-fs12">transition-delay: var(--td{{ d }}) !important;</td>
-        </tr>
-      </tbody>
-    </template>
-  </utility-class-table>
-</div>
-
 ## Adding a transition
 Use `d-t` to add a transition to an element.
 
@@ -113,3 +69,47 @@ Use `d-tp-{n}` change an what items within an element are transitioned.
 <div class="d-t d-tp-transform">...</div>
 <div class="d-t d-tp-colors">...</div>
 ```
+
+## Classes
+<div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
+  <utility-class-table>
+    <template #content>
+      <tbody>
+        <tr>
+          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-t</th>
+          <td class="d-ff-mono d-fc-orange-500 d-fs12">
+            transition-duration: var(--td25);<br/>
+            transition-property: all;<br/>
+            transition-timing-function: var(--ttf-in-out);<br/>
+            transition-delay: 0s;</td>
+        </tr>
+      </tbody>
+      <tbody v-for="i in ['td', 'ttf', 'tp', 't-delay']">
+        <tr v-if="i === 'td'" v-for="d in [0, 50, 100, 150, 200]">
+          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-{{ i }}{{ d }}</th>
+          <td class="d-ff-mono d-fc-orange-500 d-fs12">transition-duration: var(--td{{ d }}) !important;</td>
+        </tr>
+        <tr v-else-if="i === 'ttf'" v-for="t in ['in-out', 'out']">
+          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-{{ i }}-{{ t }}</th>
+          <td class="d-ff-mono d-fc-orange-500 d-fs12">transition-timing-function: var(--ttf-{{ t }}) !important;</td>
+        </tr>
+        <tr v-else-if="i === 'tp'" v-for="p in ['all', 'o', 'bs', 'bgc', 'transform', 'colors']">
+          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-{{ i }}-{{ p }}</th>
+          <td class="d-ff-mono d-fc-orange-500 d-fs12">
+            transition-property:
+              <span v-if="p === 'o'">opacity</span>
+              <span v-else-if="p === 'bs'">box-shadow</span>
+              <span v-else-if="p === 'bgc'">background-color</span>
+              <span v-else-if="p === 'colors'">background-color, border-color, color, fill, stroke</span>
+              <span v-else>{{ p }}</span>
+            !important;
+          </td>
+        </tr>
+        <tr v-else v-for="d in [25, 50, 100, 150, 200]">
+          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-{{ i }}{{ d }}</th>
+          <td class="d-ff-mono d-fc-orange-500 d-fs12">transition-delay: var(--td{{ d }}) !important;</td>
+        </tr>
+      </tbody>
+    </template>
+  </utility-class-table>
+</div>

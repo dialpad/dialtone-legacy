@@ -3,18 +3,6 @@ title: Whitespace
 desc: Utilities for controlling an element's whitespace.
 ---
 
-## Classes
-<utility-class-table>
-  <template #content>
-    <tbody>
-      <tr v-for="i in ['normal', 'nowrap', 'pre', 'pre-line', 'pre-wrap', 'break-spaces', 'unset']">
-        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-ws-{{ i }}</th>
-        <td class="d-ff-mono d-fc-orange d-fs12">white-space: {{ i }} !important;</td>
-      </tr>
-    </tbody>
-  </template>
-</utility-class-table>
-
 ## Normal
 Use `d-ws-normal` to collapse an element's text whitespaces sequences and newline characters are treated like whitespace. Lines are broken as needed to fill boxes.
 
@@ -92,3 +80,15 @@ Use `d-ws-break-spaces` to have an element act like `pre-wrap` except that any s
 ```html
 <p class="d-ws-break-spaces">...</p>
 ```
+
+## Classes
+<utility-class-table>
+  <template #content>
+    <tbody>
+      <tr v-for="i in ['normal', 'nowrap', 'pre', 'pre-line', 'pre-wrap', 'break-spaces', 'unset']">
+        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-ws-{{ i }}</th>
+        <td class="d-ff-mono d-fc-orange d-fs12">white-space: {{ i }} !important;</td>
+      </tr>
+    </tbody>
+  </template>
+</utility-class-table>
