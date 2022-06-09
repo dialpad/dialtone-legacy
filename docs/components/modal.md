@@ -1,6 +1,6 @@
 ---
 title: Modal
-desc: A modal is an interstitial over page content that focuses the user’s attention exclusively on one task or piece of information.
+desc: A modal focuses the user’s attention on a single task or message.
 storybook_url: https://vue.dialpad.design/?path=/story/components-modal--default
 ---
 <code-well-header>
@@ -8,40 +8,57 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-modal--default
 </code-well-header>
 
 ## Usage
-Modals are used to present a short-term task the user needs to perform without losing the context of the underlying page. Users won't be able to interact with the page until they close the modal.
+Modals disabled underlying content and are used to present a short-term task the user needs to perform without losing the context of the underlying page. Users won't be able to interact with the page until they close the modal.
+
 Although highly versatile, this doesn't mean modal dialogs are fit for all purposes. Modals are purposefully disruptive and should be used thoughtfully and sparingly, specifically in moments where focus is required or an action must be taken.
 
 <div class="dialtone-usage">
   <div class="dialtone-usage__item dialtone-usage__item--do">
     <h3 class="dialtone-usage__hd dialtone-usage__hd--do"><icon-checkmark /> Use for</h3>
     <div class="dialtone-usage__bd">
-      <ul>
-        <li>Confirming a destructive action that is about to happen</li>
-        <li>Entering the name and description of a new Call Center</li>
-        <li>Ask for a user’s consent for an action</li>
-      </ul>
+<Markdown>
+- To complete a simple task or decision that requires their full attention outside of the main workflow.
+- Confirming a destructive action that is about to happen
+- Entering the name and description of a new Call Center.
+- Ask for a user’s consent for an action.
+</Markdown>
     </div>
   </div>
   <div class="dialtone-usage__item dialtone-usage__item--dont">
     <h3 class="dialtone-usage__hd dialtone-usage__hd--dont"><icon-close /> Don't use for</h3>
     <div class="dialtone-usage__bd">
-      <ul>
-        <li>Confirming an action took place (instead: use a Toast)</li>
-        <li>Revealing more information (instead: place content inline)</li>
-        <li>Displaying complex forms or large amounts of information (instead: place content inline)</li>
-        <li>Displaying content unrelated to current task (instead: place content inline as link or banner)</li>
-      </ul>
+<Markdown>
+- When its content or features can be part of the page without complicating the page’s intent.
+- When the content or message requires interaction with other parts of the application or screen.
+- Form-related error, success, or warning messages. Keep feedback in context to forms.
+- Confirming an action took place (instead: use a Toast)
+- Revealing more information (instead: place content inline)
+- Displaying complex forms or large amounts of information (instead: place content inline)
+- Displaying content unrelated to current task (instead: place content inline as link or banner)
+</Markdown>
     </div>
   </div>
 </div>
 
 ### Best practices
+- Ideally, users trigger the modal, not the system, and should not be a surprise. Its appearance should reflect user intent to invoke it.  Uninvited modals may surprise the user and result in a quick dismissal of the window.
+- Treat modals as a last resort. Consider whether there’s another component or UI that might be  less disruptive for the user.
 - Limit the number of interactions in a modal. Remove anything that does not support the task.
 - Avoid multiple steps that require navigation within the modal dialog.
 - Avoid complex decision making that requires additional sources of information unavailable in the modal.
-- Label links and buttons with a verb that indicates what happens when it’s selected.
-- The primary button should reflect the modal title.
-- Don’t surprise users by popping up a modal. Let a user’s action, such as a button click, trigger the modal. Uninvited modals may surprise the user and result in a quick dismissal of the window.
+- User clear header and action labels. Label links and buttons with a verb that avoids ambiguity and clearly indicates what happens when it’s selected. The primary action’s label should complement the modal title.
+- Avoid lengthy contents that require scrolling.
+
+## Accessibility
+
+- Opened modals “trap focus,” meaning keyboard navigation controls are constrained to elements within the modal. Tabbing to the modal's last focusable element, and then pressing tab again would loop the focus back to the first element on the page. Focus doesn't return to the underlying page until the user explicitly dismisses the modal, in which case it would return to the place it was before the dialog opened.
+- To ensure maximum compatibility, all `a` tags must have an `href`attribute. Also any elements which you don't want to be focusable (but might be focusable by default) must have their `tabindex` set to `-1`.
+- Focus should always begin on the first actionable element within the dialog. This could be an OK button, or the first field in the form. An X button in the top right corner should be last in the tab order even though it may be visually above the other elements.
+- Check out the "Focus management" section of the following <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role#focus_management" target="_blank">MDN Dialog document</a> if you'd like to know more.
+- Use `aria-labelledby` on its root element to associate a title to the modal to announce its to accessible technology. The value of aria-labelledby is to the `id` value of its heading element (e.g. `h2`).
+- Dismissing Modal returns focus to the originating element that spawned the modal’s display.
+
+<component-accessible-table component-name="modal"></component-accessible-table>
 
 ## Variants and Examples
 ### Base Style
@@ -125,19 +142,9 @@ At minimum, modals contain a title and one button. They could also contain body 
 
 <component-class-table component-name="modal"></component-class-table>
 
-## Accessibility
-Opened modals “trap focus,” meaning keyboard navigation controls are constrained to elements within the modal. Tabbing to the modal's last focusable element, and then pressing tab again would loop the focus back to the first element on the page. Focus doesn't return to the underlying page until the user explicitly dismisses the modal, in which case it would return to the place it was before the dialog opened.
-
-To ensure maximum compatibility, all `a` tags must have an `href`attribute. Also any elements which you don't want to be focusable (but might be focusable by default) must have their `tabindex` set to `-1`.
-
-Focus should always begin on the first element within the dialog. This could be an OK button, or the first field in the form. An X button in the top right corner should be last in the tab order even though it may be visually above the other elements.
-
-Check out the "Focus management" section of the following <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role#focus_management" target="_blank">MDN Dialog document</a> if you'd like to know more.
-
-<component-accessible-table component-name="modal"></component-accessible-table>
-
 <script setup>
   import IconCheckmark from '@svgIcons/IconCheckmark.vue';
   import IconClose from '@svgIcons/IconClose.vue';
   import ExampleModal from '@exampleComponents/ExampleModal.vue';
+  import Markdown from "@baseComponents/Markdown.vue";
 </script>
