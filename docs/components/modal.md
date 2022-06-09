@@ -4,8 +4,26 @@ desc: A modal focuses the user’s attention on a single task or message.
 storybook_url: https://vue.dialpad.design/?path=/story/components-modal--default
 ---
 <code-well-header>
-  <example-modal kind="base" />
+  <div class="d-d-grid d-gg48 d-g-cols4">
+    <div class="d-stack4">
+      <div class="d-fs14" id="modal-demo-01">Base Style</div>
+      <example-modal kind="base" aria-labeledby="modal-demo-01" />
+    </div>
+    <div class="d-stack4">
+      <div class="d-fs14" id="modal-demo-02">Fixed header and footer</div>
+      <example-modal kind="fixed" aria-labeledby="modal-demo-02" />
+    </div>
+    <div class="d-stack4">
+      <div class="d-fs14" id="modal-demo-03">Danger</div>
+      <example-modal kind="danger" aria-labeledby="modal-demo-03" />
+    </div>
+    <div class="d-stack4">
+      <div class="d-fs14" id="modal-demo-04">Full Screen</div>
+      <example-modal kind="full-screen" aria-labeledby="modal-demo-04" />
+    </div>
+  </div>
 </code-well-header>
+
 
 ## Usage
 Modals disabled underlying content and are used to present a short-term task the user needs to perform without losing the context of the underlying page. Users won't be able to interact with the page until they close the modal.
