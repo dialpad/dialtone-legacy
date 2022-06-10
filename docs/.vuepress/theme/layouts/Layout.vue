@@ -1,13 +1,13 @@
 <template>
   <ParentLayout>
     <template #page>
-      <div class="container">
+      <div class="main-content">
         <Page>
           <template #top>
             <PageHeader :page="$page" />
           </template>
         </Page>
-        <PageToc class="d-pr16" :headers="$page.headers" />
+        <PageToc :headers="$page.headers" />
       </div>
     </template>
   </ParentLayout>
@@ -21,7 +21,7 @@
 </script>
 
 <style lang="less">
-  .container {
+  .main-content {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -36,23 +36,28 @@
 
   .toc {
     top: var(--su64);
-    padding-top: var(--su16);
+    padding: var(--su16);
     position: sticky;
     flex-grow: 1;
     align-self: flex-start;
+    background-color: var(--base--background-color);
+    z-index: 10;
   }
 
   @media screen and (max-width: 980px) {
-    .container {
+    .main-content {
       flex-direction: column-reverse;
       width: 100%;
     }
 
+    .page {
+      padding-top: 0;
+    }
+
     .toc {
-      top: var(--su128);
-      background-color: white;
+      position: initial;
+      padding-top: var(--su96);
       width: 100%;
-      z-index: 10;
     }
   }
 </style>

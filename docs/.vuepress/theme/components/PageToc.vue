@@ -1,6 +1,6 @@
 <template>
   <aside class="toc">
-    <Toc class="d-pr16" :headers="headers" :options="options" />
+    <Toc :headers="headers" :options="options" />
   </aside>
 </template>
 
