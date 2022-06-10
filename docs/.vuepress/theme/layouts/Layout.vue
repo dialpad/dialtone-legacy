@@ -9,7 +9,7 @@
     <template #page-top>
       <div class="content">
         <Header :page="$page"/>
-        <Test test="Test" />
+        <Test :page="$page" />
       </div>
     </template>
   </ParentLayout>

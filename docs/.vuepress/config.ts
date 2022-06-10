@@ -28,14 +28,14 @@ const dialtoneCSS = isDevelopment ? 'dialtone.css' : 'dialtone.min.css';
 const dialtoneDocsCSS = isDevelopment ? 'dialtone-docs.css' : 'dialtone-docs.min.css';
 
 function generateSidebar(siteNav) {
-/*  let sidebar = siteNav;
-  Object.keys(sidebar).forEach(navPath => {
-    Object.keys(sidebar[navPath]).forEach(section => {
-      sidebar[navPath][section]["children"].forEach(heading => {
-        heading.link = "/";
-      });
-    });
-  });*/
+  // let sidebar = siteNav;
+  // Object.keys(sidebar).forEach(navPath => {
+  //   Object.keys(sidebar[navPath]).forEach(section => {
+  //     sidebar[navPath][section]["children"].forEach(heading => {
+  //       heading.link = "/";
+  //     });
+  //   });
+  // });
   return siteNav;
 }
 
