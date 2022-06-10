@@ -39,7 +39,7 @@ function generateSidebar(siteNav) {
   return siteNav;
 }
 
-const userConfig = defineUserConfig({
+export default defineUserConfig({
   // site config
   lang: 'en-US',
   title: 'Dialtone',
@@ -50,6 +50,10 @@ const userConfig = defineUserConfig({
 
   // theme and its config
   theme: dialtoneTheme(themeConfig),
+
+  plugins: [
+    tocPlugin({})
+  ],
 
   bundler: viteBundler({
     viteOptions: {},
@@ -93,7 +97,6 @@ const userConfig = defineUserConfig({
 
   // markdown config
   markdown: {
-    toc: false,
     code: {
       lineNumbers: false
     }
@@ -109,12 +112,3 @@ const userConfig = defineUserConfig({
     '@dialtoneDocsCSS': resolve(__dirname, '../assets/css/' + dialtoneDocsCSS)
   },
 });
-
-userConfig["plugins"] = [
-  tocPlugin({
-    componentName: "Test",
-    defaultPropsOptions: {}
-  })
-];
-
-export default userConfig;

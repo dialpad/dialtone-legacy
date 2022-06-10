@@ -13,6 +13,8 @@ exports.dialtoneTheme = (options) => {
             '@theme/Navbar.vue': path.resolve(__dirname, './components/Navbar.vue'),
             '@theme/Home.vue': path.resolve(__dirname, './components/Home.vue'),
             '@theme/Sidebar.vue': path.resolve(__dirname, './components/Sidebar.vue'),
+            '@theme/Test.vue': path.resolve(__dirname, './components/Test.vue'),
+            '@theme/Header.vue': path.resolve(__dirname, './components/Header.vue')
         },
         plugins: [
             mediumZoomPlugin({

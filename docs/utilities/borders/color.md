@@ -8,8 +8,6 @@ prev:
 
 ## Usage
 
-[[test]]
-
 Use `d-bc-{color}` to set an element's border color.
 
 <code-well-header class="d-d-flex d-jc-center d-fd-column d-p32 d-bgc-purple-100 d-bgo50 d-w100p d-hmn102" custom>
