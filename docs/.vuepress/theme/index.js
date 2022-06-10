@@ -1,25 +1,25 @@
-const { path } = require('@vuepress/utils')
-const { defaultTheme } = require('vuepress')
-const { mediumZoomPlugin } = require('@vuepress/plugin-medium-zoom')
+const {path} = require('@vuepress/utils')
+const {defaultTheme} = require('vuepress')
+const {mediumZoomPlugin} = require('@vuepress/plugin-medium-zoom')
 
 exports.dialtoneTheme = (options) => {
-    return {
-        name: '@dialpad/vuepress-theme-default',
-        extends: defaultTheme(options),
-        layouts: {
-            Layout: path.resolve(__dirname, 'layouts/Layout.vue'),
-        },
-        alias: {
-            '@theme/Navbar.vue': path.resolve(__dirname, './components/Navbar.vue'),
-            '@theme/Home.vue': path.resolve(__dirname, './components/Home.vue'),
-            '@theme/Sidebar.vue': path.resolve(__dirname, './components/Sidebar.vue'),
-            '@theme/Test.vue': path.resolve(__dirname, './components/Test.vue'),
-            '@theme/Header.vue': path.resolve(__dirname, './components/Header.vue')
-        },
-        plugins: [
-            mediumZoomPlugin({
-                selector: '.zoomable-image'
-            }),
-        ],
-    }
+  return {
+    name: '@dialpad/vuepress-theme-default',
+    extends: defaultTheme(options),
+    layouts: {
+      Layout: path.resolve(__dirname, 'layouts/Layout.vue'),
+    },
+    alias: {
+      '@theme/Navbar.vue': path.resolve(__dirname, './components/Navbar.vue'),
+      '@theme/Home.vue': path.resolve(__dirname, './components/Home.vue'),
+      '@theme/Sidebar.vue': path.resolve(__dirname, './components/Sidebar.vue'),
+      '@theme/PageHeader.vue': path.resolve(__dirname, './components/PageHeader.vue'),
+      '@theme/PageToc.vue': path.resolve(__dirname, './components/PageToc.vue')
+    },
+    plugins: [
+      mediumZoomPlugin({
+        selector: '.zoomable-image'
+      }),
+    ],
+  }
 };

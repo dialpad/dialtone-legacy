@@ -1,23 +1,21 @@
-<script setup>
-  import ParentLayout from '@vuepress/theme-default/lib/client/layouts/Layout.vue';
-  import Test from "@theme/Test.vue";
-  import Header from "@theme/Header.vue";
-</script>
-
 <template>
   <ParentLayout>
-    <template #page-top>
-      <div class="content">
-        <Header :page="$page"/>
-        <Test :page="$page" />
+    <template #page>
+      <div class="d-d-flex d-jc-space-between">
+        <Page class="d-fl-grow1">
+          <template #top>
+            <PageHeader :page="$page" />
+          </template>
+        </Page>
+        <PageToc class="d-pr16 d-pt16" :headers="$page.headers" />
       </div>
     </template>
   </ParentLayout>
 </template>
 
-<style lang="less" scoped>
-  .content {
-    display: flex;
-    flex-direction: row;
-  }
-</style>
+<script setup>
+  import ParentLayout from '@vuepress/theme-default/lib/client/layouts/Layout.vue';
+  import Page from "@theme/Page.vue";
+  import PageToc from "@theme/PageToc.vue";
+  import PageHeader from "@theme/PageHeader.vue";
+</script>
