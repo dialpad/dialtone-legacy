@@ -6,6 +6,7 @@ const { dialtoneTheme } = require('./theme');
 const baseURL = (process.env.VUEPRESS_BASE_URL ?? "/") as `/${string}/`;
 
 const { viteBundler } = require('@vuepress/bundler-vite')
+const { googleAnalyticsPlugin } = require('@vuepress/plugin-google-analytics')
 
 const themeConfig = {
   logo: baseURL + 'assets/images/dialpad-logo.svg',
@@ -95,4 +96,10 @@ export default defineUserConfig({
     '@dialtoneCSS': resolve(__dirname, '../assets/css/' + dialtoneCSS),
     '@dialtoneDocsCSS': resolve(__dirname, '../assets/css/' + dialtoneDocsCSS)
   },
+
+  plugins: [
+    googleAnalyticsPlugin({
+      id: 'G-0YV8QJ44LF',
+    }),
+  ],
 })
