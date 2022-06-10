@@ -4,26 +4,29 @@ desc: A modal focuses the user’s attention on a single task or message.
 storybook_url: https://vue.dialpad.design/?path=/story/components-modal--default
 ---
 <code-well-header>
-  <div class="d-d-grid d-gg48 d-g-cols4">
-    <div class="d-stack4">
-      <div class="d-fs14" id="modal-demo-01">Base Style</div>
-      <example-modal kind="base" aria-labeledby="modal-demo-01" />
-    </div>
-    <div class="d-stack4">
-      <div class="d-fs14" id="modal-demo-02">Fixed header and footer</div>
-      <example-modal kind="fixed" aria-labeledby="modal-demo-02" />
-    </div>
-    <div class="d-stack4">
-      <div class="d-fs14" id="modal-demo-03">Danger</div>
-      <example-modal kind="danger" aria-labeledby="modal-demo-03" />
-    </div>
-    <div class="d-stack4">
-      <div class="d-fs14" id="modal-demo-04">Full Screen</div>
-      <example-modal kind="full-screen" aria-labeledby="modal-demo-04" />
-    </div>
+  <div class="d-d-grid d-gg16 d-g-cols4 d-w100p d-fs14">
+    <figure class="d-m0 d-stack4 d-w100p">
+      <img class="d-bar4" alt="Modal screen: Base" :src="$withBase('/assets/images/screen-modal--base.png')">
+      <figcaption><a href="#base-style">Base Style</a></figcaption>
+      <!-- <example-modal kind="base" /> -->
+    </figure>
+    <figure class="d-m0 d-stack4 d-w100p">
+      <img class="d-bar4" alt="Modal screen: Fixed header and footer" :src="$withBase('/assets/images/screen-modal--fixed-header-and-footer.png')">
+      <figcaption><a href="#fixed-header-and-footer">Fixed header and footer</a></figcaption>
+      <!-- <example-modal kind="fixed" /> -->
+    </figure>
+    <figure class="d-m0 d-stack4 d-w100p">
+      <img class="d-bar4" alt="Modal screen: Danger" :src="$withBase('/assets/images/screen-modal--danger.png')">
+      <figcaption><a href="#danger">Danger</a></figcaption>
+      <!-- <example-modal kind="danger" /> -->
+    </figure>
+    <figure class="d-m0 d-stack4 d-w100p">
+      <img class="d-bar4" alt="Modal screen: Full Screen" :src="$withBase('/assets/images/screen-modal--fullscreen.png')">
+      <figcaption><a href="#full-screen">Full Screen</a></figcaption>
+      <!-- <example-modal kind="full-screen" /> -->
+    </figure>
   </div>
 </code-well-header>
-
 
 ## Usage
 Modals disabled underlying content and are used to present a short-term task the user needs to perform without losing the context of the underlying page. Users won't be able to interact with the page until they close the modal.
