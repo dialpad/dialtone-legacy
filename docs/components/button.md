@@ -66,24 +66,24 @@ Dialtone provides four core button **types**, each with three levels of **import
     <col class="d-w25p">
   </colgroup>
   <thead>
-    <th scope="row" class="d-ta-left d-va-top">
+    <th class="d-ta-left d-va-top">
     </th>
-    <th scope="row" class="d-ta-left d-va-top">
+    <th class="d-ta-left d-va-top">
       Clear
       <div class="d-fw-normal">Default level of importance. Typically used for secondary or minimally important actions.</div>
     </th>
-    <th scope="row" class="d-ta-left d-va-top">
+    <th class="d-ta-left d-va-top">
       Outlined
       <div class="d-fw-normal">Slightly more important than clear, presenting a contrasting border and transparent background.</div>
     </th>
-    <th scope="row" class="d-ta-left d-va-top">
+    <th class="d-ta-left d-va-top">
       Primary
       <div class="d-fw-normal">Highest level of importance, presenting a solid background color.</div>
     </th>
   </thead>
   <tbody>
     <tr>
-      <th class="d-ta-left">
+      <th class="d-ta-left" scope="row">
         <a href="#base"><strong>Base</strong></a>
         <div class="d-fw-normal">Our default (purple) button colors.</div>
       </th>
@@ -98,7 +98,7 @@ Dialtone provides four core button **types**, each with three levels of **import
       </td>
     </tr>
     <tr>
-      <th class="d-ta-left">
+      <th class="d-ta-left" scope="row">
         <a href="#danger"><strong>Danger</strong></a>
         <div class="d-fw-normal">Potentially destructive actions.</div>
       </th>
@@ -113,7 +113,7 @@ Dialtone provides four core button **types**, each with three levels of **import
       </td>
     </tr>
     <tr>
-      <th class="d-ta-left">
+      <th class="d-ta-left" scope="row">
         <a href="#inverted"><strong>Inverted</strong></a>
         <div class="d-fw-normal">Use for placement on non-white, dark backgrounds.</div>
       </th>
@@ -128,7 +128,7 @@ Dialtone provides four core button **types**, each with three levels of **import
       </td>
     </tr>
     <tr>
-      <th class="d-ta-left">
+      <th class="d-ta-left" scope="row">
         <a href="#muted"><strong>Muted</strong></a>
         <div class="d-fw-normal">For non-primary actions and contexts where base style may not work.</div>
       </th>
