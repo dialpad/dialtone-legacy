@@ -87,7 +87,7 @@ export default defineUserConfig({
       lineNumbers: false
     },
     extractHeaders: {
-      level: [2] // Generate data for toc header levels
+      level: [2] // Generated data header levels (used for toc)
     }
   },
 
