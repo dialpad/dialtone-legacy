@@ -1,3 +1,10 @@
+## [6.30.1](https://github.com/dialpad/dialtone/compare/v6.30.0...v6.30.1) (2022-06-13)
+
+
+### Bug Fixes
+
+* **tabs:** keypress events not working ([#609](https://github.com/dialpad/dialtone/issues/609)) ([a514ba5](https://github.com/dialpad/dialtone/commit/a514ba5300e73b63ae298918eacb509185d5e1ee))
+
 # [6.30.0](https://github.com/dialpad/dialtone/compare/v6.29.1...v6.30.0) (2022-06-08)
 
 
