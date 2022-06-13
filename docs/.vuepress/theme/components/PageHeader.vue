@@ -1,5 +1,5 @@
 <template>
-  <section class="theme-default-content d-pb0 d-mb8 d-stack32">
+  <section class="theme-default-content d-stack32 d-pt64 d-pb0 d-mb8">
     <header class="d-stack2">
       <h1 v-if="page.frontmatter.title" class="d-headline42 d-lh6 d-mb8 d-pt16" v-text="page.frontmatter.title" />
       <p v-if="page.frontmatter.desc" class="d-fs20 d-lh6" v-html="page.frontmatter.desc"></p>

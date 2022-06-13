@@ -1,6 +1,6 @@
 <template>
-  <aside class="toc">
-    <h3 class="d-pl16">ON THIS PAGE</h3>
+  <aside class="toc d-pr32 d-pt24 d-ws-nowrap" v-if="headers.length > 0">
+    <h3 class="d-pl24 d-pb8">ON THIS PAGE</h3>
     <Toc :headers="headers" :options="options" />
   </aside>
 </template>
