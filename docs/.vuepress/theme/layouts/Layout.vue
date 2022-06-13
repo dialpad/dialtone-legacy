@@ -4,10 +4,14 @@
       <div class="main-content">
         <Page>
           <template #top>
-            <PageHeader :page="$page" />
+            <PageHeader :page="$page">
+              <template #content-bottom>
+                <PageToc v-if="isMobile" :headers="$page.headers" />
+              </template>
+            </PageHeader>
           </template>
         </Page>
-        <PageToc :headers="$page.headers" />
+        <PageToc class="d-pr32 d-pt24" v-if="!isMobile" :headers="$page.headers" />
       </div>
     </template>
   </ParentLayout>
@@ -15,9 +19,18 @@
 
 <script setup>
   import ParentLayout from '@vuepress/theme-default/lib/client/layouts/Layout.vue';
-  import Page from "@theme/Page.vue";
-  import PageToc from "@theme/PageToc.vue";
-  import PageHeader from "@theme/PageHeader.vue";
+  import Page from '@theme/Page.vue';
+  import PageToc from '@theme/PageToc.vue';
+  import PageHeader from '@theme/PageHeader.vue';
+  import {ref} from 'vue';
+
+  const mobileBreakpoint = 980;
+  const evaluateIfMobile = () => window.innerWidth <= mobileBreakpoint;
+
+  const isMobile = ref(evaluateIfMobile());
+  window.addEventListener('resize', () => {
+    isMobile.value = evaluateIfMobile();
+  });
 </script>
 
 <style lang="less">
@@ -50,7 +63,8 @@
     }
 
     .toc {
-      position: relative;
+      position: initial;
+      top: initial;
       width: 100%;
     }
 
