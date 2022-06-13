@@ -17,7 +17,8 @@ const themeConfig = {
     {text: 'Utilities', link: '/utilities/backgrounds/attachment'},
     {text: 'Components', link: '/components/avatar'},
   ],
-  sidebar: generateSidebar(siteNav),
+  sidebar: siteNav,
+  sidebarDepth: 0,
   editLink: false,
   darkMode: false,
   contributors: false,
@@ -26,18 +27,6 @@ const themeConfig = {
 const isDevelopment = (process.env.NODE_ENV === 'development');
 const dialtoneCSS = isDevelopment ? 'dialtone.css' : 'dialtone.min.css';
 const dialtoneDocsCSS = isDevelopment ? 'dialtone-docs.css' : 'dialtone-docs.min.css';
-
-function generateSidebar(siteNav) {
-  // let sidebar = siteNav;
-  // Object.keys(sidebar).forEach(navPath => {
-  //   Object.keys(sidebar[navPath]).forEach(section => {
-  //     sidebar[navPath][section]["children"].forEach(heading => {
-  //       heading.link = "/";
-  //     });
-  //   });
-  // });
-  return siteNav;
-}
 
 export default defineUserConfig({
   // site config
@@ -99,6 +88,9 @@ export default defineUserConfig({
   markdown: {
     code: {
       lineNumbers: false
+    },
+    extractHeaders: {
+      level: [1, 2, 3] // Generate data for TOC header levels
     }
   },
 
