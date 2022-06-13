@@ -1,4 +1,4 @@
-import {defineClientAppEnhance} from '@vuepress/client';
+import { defineClientConfig } from '@vuepress/client';
 
 // Common views
 import Icons from "./views/Icons.vue";
@@ -26,7 +26,8 @@ import IconPhone from "@svgIcons/IconPhone.vue";
 import '@dialtoneCSS';
 import '@dialtoneDocsCSS';
 
-export default defineClientAppEnhance(({app, router, siteData}) => {
+export default defineClientConfig({
+  enhance({app, router, siteData}) {
     // Common views
     app.component('icons', Icons);
     app.component('colors', Colors);
@@ -49,4 +50,7 @@ export default defineClientAppEnhance(({app, router, siteData}) => {
     app.component('icon-error', IconError);
     app.component('icon-close', IconClose);
     app.component('icon-checkmark', IconCheckmark);
+  },
+  setup() {},
+  rootComponents: [],
 })
