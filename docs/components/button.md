@@ -66,20 +66,21 @@ Dialtone provides four core button **types**, each with three levels of **import
     <col class="d-w25p">
   </colgroup>
   <thead>
-    <th class="d-ta-left d-va-top">
-    </th>
-    <th class="d-ta-left d-va-top">
-      Clear
-      <div class="d-fw-normal">Default level of importance. Typically used for secondary or minimally important actions.</div>
-    </th>
-    <th class="d-ta-left d-va-top">
-      Outlined
-      <div class="d-fw-normal">Slightly more important than clear, presenting a contrasting border and transparent background.</div>
-    </th>
-    <th class="d-ta-left d-va-top">
-      Primary
-      <div class="d-fw-normal">Highest level of importance, presenting a solid background color.</div>
-    </th>
+    <tr>
+      <th class="d-ta-left d-va-top"></th>
+      <th class="d-ta-left d-va-top">
+        Clear
+        <div class="d-fw-normal">Default level of importance. Typically used for secondary or minimally important actions.</div>
+      </th>
+      <th class="d-ta-left d-va-top">
+        Outlined
+        <div class="d-fw-normal">Slightly more important than clear, presenting a contrasting border and transparent background.</div>
+      </th>
+      <th class="d-ta-left d-va-top">
+        Primary
+        <div class="d-fw-normal">Highest level of importance, presenting a solid background color.</div>
+      </th>
+    </tr>
   </thead>
   <tbody>
     <tr>
