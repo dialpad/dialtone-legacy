@@ -7,8 +7,37 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-link--default
   <a href="#" class="d-link">Base link</a>
 </code-well-header>
 
-[//]: # (## Usage)
-[//]: # (Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi massa ante, tempus vitae lacus id, luctus tristique lorem. Mauris feugiat massa ex, id aliquet mi tempor non. Curabitur non tristique lectus. Fusce ut nisl non diam dignissim viverra. In posuere dui arcu, sed eleifend massa faucibus sed. Phasellus quis leo vitae erat pellentesque venenatis id vitae lectus. Suspendisse convallis, metus a congue tincidunt, velit sem tincidunt dui, eget auctor ipsum ipsum in ex. Nullam lobortis, mauris vel vestibulum rutrum, lorem elit vehicula est, nec viverra ante erat nec dolor. Proin at placerat tortor. Nam ullamcorper metus et eros porta, at lacinia leo scelerisque. Curabitur finibus sollicitudin odio tempor finibus. Donec lobortis metus vitae mollis gravida.)
+## Usage
+`button` and link (`<a>`) HTML elements each describe a specific intent. Understanding the distinction is important: if it goes somewhere, use a Link. If an action occurs, use a [Button](button.html).
+
+<div class="dialtone-usage">
+  <div class="dialtone-usage__item dialtone-usage__item--do">
+    <h3 class="dialtone-usage__hd dialtone-usage__hd--do"><icon-checkmark /> Use for</h3>
+    <div class="dialtone-usage__bd">
+<Markdown>
+- Navigating between destinations.
+</Markdown>
+    </div>
+  </div>
+  <div class="dialtone-usage__item dialtone-usage__item--dont">
+    <h3 class="dialtone-usage__hd dialtone-usage__hd--dont"><icon-close /> Don't use for</h3>
+    <div class="dialtone-usage__bd">
+<Markdown>
+- Actions, instead use a [Button](button.html)
+</Markdown>
+    </div>
+  </div>
+</div>
+
+### Best practices
+- Use useful, actionable, and descriptive text clearly conveying the hyperlink’s destination. For example, a generic label like "click here" doesn’t convey its target content.
+- Too many links can be overwhelming. Be selective about the number of links in a context.
+- Clearly identify links that target an external source.
+
+## Accessibility
+- Allow keyboard navigation. Users must be able to navigate between links, i.e. keypress of tab, and activate it by pressing ‘Enter’.
+- Users must be able to identify links without relying on color alone.
+- Users must be able to activate hover and focus states with both a mouse and a keyboard.
 
 ## Variants and Examples
 <code-well-header>
@@ -37,3 +66,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-link--default
 
 ## Classes
 <component-class-table component-name="link"></component-class-table>
+
+<script setup>
+  import Markdown from "@baseComponents/Markdown.vue";
+</script>
