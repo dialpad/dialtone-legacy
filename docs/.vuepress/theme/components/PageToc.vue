@@ -1,5 +1,5 @@
 <template>
-  <aside class="toc" v-if="headers.length > 0">
+  <aside v-if="headers.length > 0" class="toc">
     <h3 class="d-pl24 d-pb8 d-ws-nowrap">ON THIS PAGE</h3>
     <Toc :headers="headers" :options="options" />
   </aside>

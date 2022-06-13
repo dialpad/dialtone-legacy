@@ -1,35 +1,43 @@
 <template>
   <ParentLayout>
     <template #page>
-      <div class="main-content">
-        <Page>
-          <template #top>
-            <PageHeader :page="$page">
-              <template #content-bottom>
-                <PageToc v-if="isMobile" :headers="$page.headers" />
-              </template>
-            </PageHeader>
-          </template>
-        </Page>
-        <PageToc class="d-pr32 d-pt24" v-if="!isMobile" :headers="$page.headers" />
-      </div>
+      <Home v-if="$frontmatter.home" />
+      <Transition
+        v-else
+        name="fade-slide-y"
+        mode="out-in"
+      >
+        <div class="main-content">
+          <Page :key="$page.path">
+            <template #top>
+              <PageHeader :path="$page.path" :frontmatter="$frontmatter">
+                <template #content-bottom>
+                  <PageToc v-if="isMobile" :headers="$page.headers" />
+                </template>
+              </PageHeader>
+            </template>
+          </Page>
+          <PageToc v-if="!isMobile" :headers="$page.headers" class="d-pr32 d-pt24" />
+        </div>
+      </Transition>
     </template>
   </ParentLayout>
 </template>
 
 <script setup>
   import ParentLayout from '@vuepress/theme-default/lib/client/layouts/Layout.vue';
+  import Home from '@theme/Home.vue';
   import Page from '@theme/Page.vue';
   import PageToc from '@theme/PageToc.vue';
   import PageHeader from '@theme/PageHeader.vue';
   import {ref} from 'vue';
 
   const mobileBreakpoint = 980;
-  const evaluateIfMobile = () => window.innerWidth <= mobileBreakpoint;
+  const evaluateWindowWidth = () => window.innerWidth <= mobileBreakpoint;
 
-  const isMobile = ref(evaluateIfMobile());
+  const isMobile = ref(evaluateWindowWidth());
   window.addEventListener('resize', () => {
-    isMobile.value = evaluateIfMobile();
+    isMobile.value = evaluateWindowWidth();
   });
 </script>
 
