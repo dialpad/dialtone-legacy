@@ -1,1 +1,0 @@
-import{_ as e,r,o as t,z as c}from"./app.6e82855b.js";const _={};function l(n,s){const o=r("colors");return t(),c(o)}var f=e(_,[["render",l],["__file","color-palette.html.vue"]]);export{f as default};
