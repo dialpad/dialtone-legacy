@@ -1,5 +1,6 @@
 <template>
   <aside class="toc">
+    <h3 class="d-pl16">ON THIS PAGE</h3>
     <Toc :headers="headers" :options="options" />
   </aside>
 </template>
