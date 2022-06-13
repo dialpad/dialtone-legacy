@@ -68,6 +68,7 @@ Although highly versatile, this doesn't mean modal dialogs are fit for all purpo
 - Avoid complex decision making that requires additional sources of information unavailable in the modal.
 - Use clear header and action labels. Label links and buttons with a verb that avoids ambiguity and clearly indicates what happens when it’s selected. The primary action’s label should complement the modal title.
 - Avoid lengthy contents that require scrolling.
+- Only one modal can be present at a time.
 
 ## Accessibility
 
