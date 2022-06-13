@@ -5,7 +5,8 @@ const siteNav = require('../_data/site-nav.json');
 const { dialtoneTheme } = require('./theme');
 const baseURL = (process.env.VUEPRESS_BASE_URL ?? "/") as `/${string}/`;
 
-const { viteBundler } = require('@vuepress/bundler-vite');
+const { viteBundler } = require('@vuepress/bundler-vite')
+const { googleAnalyticsPlugin } = require('@vuepress/plugin-google-analytics')
 const { tocPlugin } = require('@vuepress/plugin-toc');
 
 const themeConfig = {
@@ -39,10 +40,6 @@ export default defineUserConfig({
 
   // theme and its config
   theme: dialtoneTheme(themeConfig),
-
-  plugins: [
-    tocPlugin({})
-  ],
 
   bundler: viteBundler({
     viteOptions: {},
@@ -90,7 +87,7 @@ export default defineUserConfig({
       lineNumbers: false
     },
     extractHeaders: {
-      level: [2] // Generate data for TOC header levels
+      level: [2] // Generate data for toc header levels
     }
   },
 
@@ -103,4 +100,11 @@ export default defineUserConfig({
     '@dialtoneCSS': resolve(__dirname, '../assets/css/' + dialtoneCSS),
     '@dialtoneDocsCSS': resolve(__dirname, '../assets/css/' + dialtoneDocsCSS)
   },
-});
+
+  plugins: [
+    tocPlugin({}),
+    googleAnalyticsPlugin({
+      id: 'G-0YV8QJ44LF',
+    }),
+  ],
+})
