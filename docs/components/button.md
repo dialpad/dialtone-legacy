@@ -21,7 +21,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-button--defaul
     <div class="dialtone-usage__bd">
 <Markdown>
 - Conveying that an action that will occur when invoked.
-- To trigger an action or behavior, such as submitting a form or spawning a Modal.
+- To trigger an action or behavior, such as submitting a form or spawning a [Modal](/components/modal.html).
 </Markdown>
     </div>
   </div>
@@ -52,7 +52,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-button--defaul
 - Be aware of how screenreaders handle buttons and links differently. For example, both the Enter and Spacebar keys triggers a button, while links are triggered only by the Enter key.
 - If a button cannot be used for an action and it must be an anchor link, two things are required:
   - Add `role="button"` to the `<a>` to allow screenreaders to announce it as a `button`.
-  - Attach an event handler to detect Spacebar keypress. Buttons react to both Enter and Spacebar, but Link react only to Enter.
+  - Attach an event handler to detect Spacebar keypress. Buttons react to both Enter and Spacebar, but Link reacts only to Enter.
 
 ## Variants and Examples
 
@@ -300,7 +300,7 @@ Different button styles and variations appear different when active.
 ```
 
 ### Link
-Buttons can be styled as a <a href="components/link.html">link</a> in situations for which you need the appearance of a link but behavior of a button. Using the `button` element provides a better accessibility experience.
+Buttons can be styled as a [Link](components/link.html) in situations for which you need the appearance of a link but behavior of a button. Using the `button` element provides a better accessibility experience.
 
 <code-well-header>
   <button type="button" class="d-link">Place call</button>

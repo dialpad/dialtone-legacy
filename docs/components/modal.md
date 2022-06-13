@@ -29,7 +29,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-modal--default
 </code-well-header>
 
 ## Usage
-Modals disabled underlying content and are used to present a short-term task the user needs to perform without losing the context of the underlying page. Users won't be able to interact with the page until they close the modal.
+Modals disable underlying content and are used to present a short-term task the user needs to perform without losing the context of the underlying page. Users won't be able to interact with the page until they close the modal.
 
 Although highly versatile, this doesn't mean modal dialogs are fit for all purposes. Modals are purposefully disruptive and should be used thoughtfully and sparingly, specifically in moments where focus is required or an action must be taken.
 
@@ -40,7 +40,6 @@ Although highly versatile, this doesn't mean modal dialogs are fit for all purpo
 <Markdown>
 - To complete a simple task or decision that requires their full attention outside of the main workflow.
 - Confirming a destructive action that is about to happen
-- Entering the name and description of a new Call Center.
 - Ask for a user’s consent for an action.
 </Markdown>
     </div>
@@ -52,10 +51,10 @@ Although highly versatile, this doesn't mean modal dialogs are fit for all purpo
 - When its content or features can be part of the page without complicating the page’s intent.
 - When the content or message requires interaction with other parts of the application or screen.
 - Form-related error, success, or warning messages. Keep feedback in context to forms.
-- Confirming an action took place (instead: use a Toast)
+- Confirming an action took place (instead: use a [Toast](/components/toast.html)).
 - Revealing more information (instead: place content inline)
 - Displaying complex forms or large amounts of information (instead: place content inline)
-- Displaying content unrelated to current task (instead: place content inline as link or banner)
+- Displaying content unrelated to current task (instead: place content inline as a [Link](/components/link.html)) or [Banner](/components/banner.html)).
 </Markdown>
     </div>
   </div>
@@ -67,7 +66,7 @@ Although highly versatile, this doesn't mean modal dialogs are fit for all purpo
 - Limit the number of interactions in a modal. Remove anything that does not support the task.
 - Avoid multiple steps that require navigation within the modal dialog.
 - Avoid complex decision making that requires additional sources of information unavailable in the modal.
-- User clear header and action labels. Label links and buttons with a verb that avoids ambiguity and clearly indicates what happens when it’s selected. The primary action’s label should complement the modal title.
+- Use clear header and action labels. Label links and buttons with a verb that avoids ambiguity and clearly indicates what happens when it’s selected. The primary action’s label should complement the modal title.
 - Avoid lengthy contents that require scrolling.
 
 ## Accessibility
