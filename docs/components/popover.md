@@ -36,7 +36,7 @@ Your popover should be non-modal when:
     <h3 class="dialtone-usage__hd dialtone-usage__hd--dont"><icon-close /> Don't use for</h3>
     <div class="dialtone-usage__bd">
       <ul>
-        <li>Content that is displayed on hover. (use <a href="components/tooltip/">Tooltip</a>)</li>
+        <li>Content that is displayed on hover. Instead, use a <a href="components/tooltip/">Tooltip</a></li>
         <li>Dialogs that should be positioned in the center of the screen.</li>
         <li>Dialogs that are very large.</li>
         <li>Alerts.</li>

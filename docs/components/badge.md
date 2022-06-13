@@ -1,6 +1,6 @@
 ---
 title: Badge
-desc: A badge is a compact UI element that provides brief, descriptive information about an element. It is terse, ideally one word.
+desc: A badge is a compact UI element providing brief, descriptive information about an element and its surrounding context. It is terse, ideally one word.
 storybook_url: https://vue.dialpad.design/?path=/story/components-badge--default
 ---
 <code-well-header>
@@ -9,8 +9,34 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-badge--default
   </div>
 </code-well-header>
 
-[//]: # (## Usage)
-[//]: # (Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi massa ante, tempus vitae lacus id, luctus tristique lorem. Mauris feugiat massa ex, id aliquet mi tempor non. Curabitur non tristique lectus. Fusce ut nisl non diam dignissim viverra. In posuere dui arcu, sed eleifend massa faucibus sed. Phasellus quis leo vitae erat pellentesque venenatis id vitae lectus. Suspendisse convallis, metus a congue tincidunt, velit sem tincidunt dui, eget auctor ipsum ipsum in ex. Nullam lobortis, mauris vel vestibulum rutrum, lorem elit vehicula est, nec viverra ante erat nec dolor. Proin at placerat tortor. Nam ullamcorper metus et eros porta, at lacinia leo scelerisque. Curabitur finibus sollicitudin odio tempor finibus. Donec lobortis metus vitae mollis gravida.)
+## Usage
+<div class="dialtone-usage">
+  <div class="dialtone-usage__item dialtone-usage__item--do">
+    <h3 class="dialtone-usage__hd dialtone-usage__hd--do"><icon-checkmark /> Use for</h3>
+    <div class="dialtone-usage__bd">
+<Markdown>
+- To flag and draw awareness to a specific element or feature of focus. For example, something is unique about that separates it from other like content.
+- As a notification system with minimal footprint.
+</Markdown>
+    </div>
+  </div>
+  <div class="dialtone-usage__item dialtone-usage__item--dont">
+    <h3 class="dialtone-usage__hd dialtone-usage__hd--dont"><icon-close /> Don't use for</h3>
+    <div class="dialtone-usage__bd">
+<Markdown>
+- To indicate that interaction by the user is required.
+</Markdown>
+    </div>
+  </div>
+</div>
+
+### Best practices
+- While the color variant used should not be the sole indicator of information, choose color patterns that users can quickly scan and identify its intention.
+- Avoid long values, favoring a brief scannable word.
+
+## Accessibility
+- Since a Badge may often reflect a value within an implied label, ensure a label is announced. For example, via `aria-label` or `aria-labeledby`.
+
 
 ## Variants and Examples
 <code-well-header>
@@ -41,6 +67,6 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-badge--default
 <component-class-table component-name="badge"></component-class-table>
 
 <script setup>
-    import { classes } from '@data/badge.json';
+  import { classes } from '@data/badge.json';
+  import Markdown from "@baseComponents/Markdown.vue";
 </script>
-

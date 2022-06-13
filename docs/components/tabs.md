@@ -4,19 +4,7 @@ desc: Tabs allow users to navigation between grouped content in different views 
 storybook_url: https://vue.dialpad.design/?path=/story/components-tabs--default
 ---
 <code-well-header bgclass="d-bgc-white">
-  <example-tabs>
-    <template #panel_content="{selected}">
-      <div id="base-panel-1" role="tabpanel" tabindex="0" aria-labelledby="base-tab-1" :hidden="selected !== 0">
-        <p>First tab content panel</p>
-      </div>
-      <div v-if="!size" id="base-panel-2" role="tabpanel" tabindex="0" aria-labelledby="base-tab-2" :hidden="selected !== 1">
-        <p>Second tab content panel</p>
-      </div>
-      <div v-if="!size" id="base-panel-3" role="tabpanel" tabindex="0" aria-labelledby="base-tab-3" :hidden="selected !== 2">
-        <p>Third tab content panel</p>
-      </div>
-    </template>
-  </example-tabs>
+  <example-tabs />
 </code-well-header>
 
 [//]: # (## Usage)
@@ -25,19 +13,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-tabs--default
 ## Variants and Examples
 ### Base Styles
 <code-well-header bgclass="d-bgc-white">
-  <example-tabs>
-    <template #panel_content="{selected}">
-      <div id="base-panel-1" role="tabpanel" tabindex="0" aria-labelledby="base-tab-1" :hidden="selected !== 0">
-        <p>First tab content panel</p>
-      </div>
-      <div v-if="!size" id="base-panel-2" role="tabpanel" tabindex="0" aria-labelledby="base-tab-2" :hidden="selected !== 1">
-        <p>Second tab content panel</p>
-      </div>
-      <div v-if="!size" id="base-panel-3" role="tabpanel" tabindex="0" aria-labelledby="base-tab-3" :hidden="selected !== 2">
-        <p>Third tab content panel</p>
-      </div>
-    </template>
-  </example-tabs>
+  <example-tabs />
 </code-well-header>
     
 ```html
@@ -59,8 +35,8 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-tabs--default
 
 ### Sizes
 <code-well-header bgclass="d-bgc-white">
-  <example-tabs />
-  <example-tabs size="small" />
+  <example-tabs hide-content />
+  <example-tabs hide-content size="small" />
 </code-well-header>
     
 ```html
@@ -72,8 +48,8 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-tabs--default
 Add a `d-tablist--no-border` to remove the bottom border of any tablist. Handy for small tablists and tablists serving as subtabs to a larger menu.
 
 <code-well-header bgclass="d-bgc-white">
-  <example-tabs borderless />
-  <example-tabs size="small" borderless />
+  <example-tabs hide-content borderless />
+  <example-tabs hide-content  size="small" borderless />
 </code-well-header>
  
 ```html
@@ -85,19 +61,7 @@ Add a `d-tablist--no-border` to remove the bottom border of any tablist. Handy f
 Add `d-tablist--inverted` when you want to display tabs on a darker background.
 
 <code-well-header bgclass="d-bgc-black-800">
-  <example-tabs inverted>
-    <template #panel_content="{selected}">
-      <div id="inverted-panel-1" role="tabpanel" tabindex="0" aria-labelledby="inverted-tab-1" :hidden="selected !== 0">
-        <p class="d-fc-white">First tab content panel</p>
-      </div>
-      <div v-if="!size" id="inverted-panel-2" role="tabpanel" tabindex="0" aria-labelledby="inverted-tab-2" :hidden="selected !== 1">
-        <p class="d-fc-white">Second tab content panel</p>
-      </div>
-      <div v-if="!size" id="inverted-panel-3" role="tabpanel" tabindex="0" aria-labelledby="inverted-tab-3" :hidden="selected !== 2">
-        <p class="d-fc-white">Third tab content panel</p>
-      </div>
-    </template>
-  </example-tabs>
+  <example-tabs inverted />
 </code-well-header>
     
 ```html

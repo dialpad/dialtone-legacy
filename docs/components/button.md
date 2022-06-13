@@ -1,28 +1,151 @@
 ---
 title: Button
-desc: A button is a UI element which allows users to take an action throughout the app. It is important a button is identifiable, consistent, and communicates its actions clearly, and is appropriately sized to its action.
+desc: A button is an UI element which signals key actions to take an action throughout an app. It is important a button is identifiable, consistent, communicates its actions clearly, and is appropriately sized to its action.
 storybook_url: https://vue.dialpad.design/?path=/story/components-button--default
 ---
+
 <code-well-header>
   <button class="d-btn d-btn--primary" type="button">
     <span class="d-btn__label">Place call</span>
   </button>
 </code-well-header>
 
-[//]: # (## Usage)
-[//]: # (Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi massa ante, tempus vitae lacus id, luctus tristique lorem. Mauris feugiat massa ex, id aliquet mi tempor non. Curabitur non tristique lectus. Fusce ut nisl non diam dignissim viverra. In posuere dui arcu, sed eleifend massa faucibus sed. Phasellus quis leo vitae erat pellentesque venenatis id vitae lectus. Suspendisse convallis, metus a congue tincidunt, velit sem tincidunt dui, eget auctor ipsum ipsum in ex. Nullam lobortis, mauris vel vestibulum rutrum, lorem elit vehicula est, nec viverra ante erat nec dolor. Proin at placerat tortor. Nam ullamcorper metus et eros porta, at lacinia leo scelerisque. Curabitur finibus sollicitudin odio tempor finibus. Donec lobortis metus vitae mollis gravida.)
+## Usage
+
+`button` and link (`<a>`) HTML elements each describe a specific intent. Understanding the distinction is important: if it goes somewhere, use a [Link](link.html). If an action occurs, use a Button.
+
+
+<div class="dialtone-usage">
+  <div class="dialtone-usage__item dialtone-usage__item--do">
+    <h3 class="dialtone-usage__hd dialtone-usage__hd--do"><icon-checkmark /> Use for</h3>
+    <div class="dialtone-usage__bd">
+<Markdown>
+- Conveying that an action that will occur when invoked.
+- To trigger an action or behavior, such as submitting a form or spawning a [Modal](/components/modal.html).
+</Markdown>
+    </div>
+  </div>
+  <div class="dialtone-usage__item dialtone-usage__item--dont">
+    <h3 class="dialtone-usage__hd dialtone-usage__hd--dont"><icon-close /> Don't use for</h3>
+    <div class="dialtone-usage__bd">
+<Markdown>
+- Avoid using to navigate between destinations, deferring to a [Link](/components/link/) instead).
+</Markdown>
+    </div>
+  </div>
+</div>
+
+### Best Practices
+
+- Avoid using too many buttons on a page.
+- Use sentence case capitalization for button labels, e.g “Save report”.
+- Do not use punctuation
+- Button text should be as short as possible and lead with an action verb.
+- Set the type attribute to define its purpose: submit, button, or reset. Browsers default to submit if it isn't defined, and that cannot be assumed as the preferred behavior.
+
+## Accessibility
+
+- Choosing between Link and Button elements is paramount for screenreaders to inform the user what will occur. For example: will it go somewhere (Link) or will something happen (Button)?
+- Do not rely on color alone to convey the intent of the button. Defer to the button text as primary way to convey the buttons intent.
+- Display a visible focus state when users tab to them.
+- Use standard semantic usage of HTML elements.
+- Be aware of how screenreaders handle buttons and links differently. For example, both the Enter and Spacebar keys triggers a button, while links are triggered only by the Enter key.
+- If a button cannot be used for an action and it must be an anchor link, two things are required:
+  - Add `role="button"` to the `<a>` to allow screenreaders to announce it as a `button`.
+  - Attach an event handler to detect Spacebar keypress. Buttons react to both Enter and Spacebar, but Link reacts only to Enter.
 
 ## Variants and Examples
-Dialtone provides four button styles:
-1. [**Base:**](#base) Our default (purple) button colors.
-1. [**Danger:**](#danger) Buttons associated with potentially destructive actions. Appears as red.
-1. [**Inverted:**](#inverted) For scenarios when you want to place a button on a non-white, dark background.
-1. [**Muted:**](#muted) For non-primary actions and contexts in which the base style may not work.
 
-Each button style offers three levels of visual important:
-1. **Primary:** This is the highest visual importance a button can have. It provides a background color.
-1. **Outlined:** This button communicates slightly more importance than clear. It provides a border color, but no background color.
-1. **Clear:** This button communicates the least importance. It offers no background or border color. It appears as a link with matching padding. This is typically used for secondary or minimally important actions. This is the default importance level of all buttons.
+Dialtone provides four core button **types**, each with three levels of **importance**.
+
+<table class="d-fs14">
+  <colgroup>
+    <col>
+    <col class="d-w25p">
+    <col class="d-w25p">
+    <col class="d-w25p">
+  </colgroup>
+  <thead>
+    <tr>
+      <th class="d-ta-left d-va-top"></th>
+      <th class="d-ta-left d-va-top">
+        Clear
+        <div class="d-fw-normal">Default level of importance. Typically used for secondary or minimally important actions.</div>
+      </th>
+      <th class="d-ta-left d-va-top">
+        Outlined
+        <div class="d-fw-normal">Slightly more important than clear, presenting a contrasting border and transparent background.</div>
+      </th>
+      <th class="d-ta-left d-va-top">
+        Primary
+        <div class="d-fw-normal">Highest level of importance, presenting a solid background color.</div>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th class="d-ta-left" scope="row">
+        <a href="#base"><strong>Base</strong></a>
+        <div class="d-fw-normal">Our default (purple) button colors.</div>
+      </th>
+      <td class="d-bgc-black-025 d-ta-center">
+        <button class="d-btn" type="button"> <span class="d-btn__label">Place call</span> </button>
+      </td>
+      <td class="d-bgc-black-025 d-ta-center">
+        <button class="d-btn d-btn--outlined" type="button"> <span class="d-btn__label">Place call</span> </button>
+      </td>
+      <td class="d-bgc-black-025 d-ta-center">
+        <button class="d-btn d-btn--primary" type="button"> <span class="d-btn__label">Place call</span> </button>
+      </td>
+    </tr>
+    <tr>
+      <th class="d-ta-left" scope="row">
+        <a href="#danger"><strong>Danger</strong></a>
+        <div class="d-fw-normal">Potentially destructive actions.</div>
+      </th>
+      <td class="d-bgc-black-025 d-ta-center">
+        <button class="d-btn d-btn--danger" type="button"> <span class="d-btn__label">Place call</span> </button>
+      </td>
+      <td class="d-bgc-black-025 d-ta-center">
+        <button class="d-btn d-btn--outlined d-btn--danger" type="button"> <span class="d-btn__label">Place call</span> </button>
+      </td>
+      <td class="d-bgc-black-025 d-ta-center">
+        <button class="d-btn d-btn--primary d-btn--danger" type="button"> <span class="d-btn__label">Place call</span> </button>
+      </td>
+    </tr>
+    <tr>
+      <th class="d-ta-left" scope="row">
+        <a href="#inverted"><strong>Inverted</strong></a>
+        <div class="d-fw-normal">Use for placement on non-white, dark backgrounds.</div>
+      </th>
+      <td class="d-bgc-black-500 d-ta-center">
+        <button class="d-btn d-btn--inverted" type="button"> <span class="d-btn__label">Place call</span> </button>
+      </td>
+      <td class="d-bgc-black-500 d-ta-center">
+        <button class="d-btn d-btn--outlined d-btn--inverted" type="button"> <span class="d-btn__label">Place call</span> </button>
+      </td>
+      <td class="d-bgc-black-500 d-ta-center">
+        <button class="d-btn d-btn--primary d-btn--inverted" type="button"> <span class="d-btn__label">Place call</span> </button>
+      </td>
+    </tr>
+    <tr>
+      <th class="d-ta-left" scope="row">
+        <a href="#muted"><strong>Muted</strong></a>
+        <div class="d-fw-normal">For non-primary actions and contexts where base style may not work.</div>
+      </th>
+       <td class="d-bgc-black-025 d-ta-center">
+        <abbr class="d-fc-black-400 d-td-none d-fs12" title="Not applicable">N/A</abbr>
+      </td>
+       <td class="d-bgc-black-025 d-ta-center">
+        <button class="d-btn d-btn--muted d-btn--outlined" type="button"> <span class="d-btn__label">Place call</span> </button>
+      </td>
+      <td class="d-bgc-black-025 d-ta-center">
+        <button class="d-btn d-btn--muted" type="button"> <span class="d-btn__label">Place call</span> </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 
 ### Base
 The base button should be the go-to button for most of your needs. When in doubt, use this style. To help provide clarity to users, it is generally recommended to use only one primary button style within a section or page.
@@ -178,7 +301,7 @@ Different button styles and variations appear different when active.
 ```
 
 ### Link
-Buttons can be styled as a <a href="components/link.html">link</a> in situations for which you need the appearance of a link but behavior of a button. Using the `button` element provides a better accessibility experience.
+Buttons can be styled as a [Link](components/link.html) in situations for which you need the appearance of a link but behavior of a button. Using the `button` element provides a better accessibility experience.
 
 <code-well-header>
   <button type="button" class="d-link">Place call</button>
@@ -399,17 +522,10 @@ The base button font size is 16px and should be used in most cases. Every button
 ## Classes
 <component-class-table component-name="button"></component-class-table>
 
-## Accessibility
-
-- Disabled buttons don't require focus.
-- If using `.d-btn--disabled`, also use `aria-disabled="true"` and be sure to prevent the click event.
-- If an icon and text are both included in a button's label, and they both represent the same thing, the icon may be decorative and may not need to receive focus or be read-out.
-- If developing a toggle button (i.e. a button that holds a pressed/unpressed state), use `aria-pressed`. (<a href="https://www.w3.org/TR/wai-aria/#button" target="_blank">Source</a>)
-- If developing a button that triggers a dropdown, consider using `aria-haspopup` and `aria-expanded`. (<a href="https://www.w3.org/TR/wai-aria/#button" target="_blank">Source</a>)
-
 <script setup>
   import IconPhone from '@svgIcons/IconPhone.vue';
   import IconGoogleGlyph from '@svgIcons/IconGoogleGlyph.vue';
   import IconOffice365 from '@svgIcons/IconOffice365.vue';
   import IconLinkedin from '@svgIcons/IconLinkedin.vue';
+  import Markdown from "@baseComponents/Markdown.vue";
 </script>
