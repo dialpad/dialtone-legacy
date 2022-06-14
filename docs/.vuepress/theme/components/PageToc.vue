@@ -13,7 +13,13 @@
   const options = {
     containerTag: "",
     listClass: "toc-list d-ls-reset",
-    itemClass: "toc-item",
+    itemClass: "toc-item d-py2",
     linkClass: "toc-link"
   };
 </script>
+
+<style lang="less">
+  .toc a.active {
+    font-weight: initial;
+  }
+</style>
