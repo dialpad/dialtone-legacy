@@ -24,7 +24,11 @@ The base chip should be the go-to chip for most of your needs.
   <button class="d-chip" type="button">
     <span>Chip</span>
   </button>
-  <button class="d-chip-close-btn" type="button" aria-label="close"/>
+  <button class="d-chip-close-btn" type="button" aria-label="close">
+    <span class="d-btn__icon">
+      <svg>...</svg>
+    </span>
+  </button>
 </span>
 ```
 
@@ -66,7 +70,11 @@ The base chip should be the go-to chip for most of your needs.
     <span class="d-chip__icon">...</span>
     <span>Chip</span>
   </button>
-  <button class="d-chip-close-btn" type="button" aria-label="close"/>
+  <button class="d-chip-close-btn" type="button" aria-label="close">
+    <span class="d-btn__icon">
+      <svg>...</svg>
+    </span>
+  </button>
 </span>
 ```
 
@@ -81,7 +89,11 @@ The base chip should be the go-to chip for most of your needs.
     <span class="d-avatar">...</span>
     <span>...</span>
   </button>
-  <button class="d-chip-close-btn" type="button" aria-label="close"/>
+  <button class="d-chip-close-btn" type="button" aria-label="close">
+    <span class="d-btn__icon">
+      <svg>...</svg>
+    </span>
+  </button>
 </span>
 ```
 
@@ -98,7 +110,11 @@ the close button can still be interactive even if the chip is non-interactive.
   <span class="d-chip">
     <span>Chip</span>
   </span>
-  <button class="d-chip-close-btn" aria-label="close"/>
+  <button class="d-chip-close-btn" type="button" aria-label="close">
+    <span class="d-btn__icon">
+      <svg>...</svg>
+    </span>
+  </button>
 </span>
 ```
 
@@ -114,7 +130,11 @@ To truncate text, add `.d-truncate` to the content element, and set the width of
   <button class="d-chip d-w102" type="button">
     <span class="d-truncate">Chip loooooong name</span>
   </button>
-  <button class="d-chip-close-btn" type="button" aria-label="close"/>
+  <button class="d-chip-close-btn" type="button" aria-label="close">
+    <span class="d-btn__icon">
+      <svg>...</svg>
+    </span>
+  </button>
 </span>
 ```
 
@@ -131,21 +151,33 @@ To truncate text, add `.d-truncate` to the content element, and set the width of
     <span class="d-chip__icon">...</span>
     <span>Chip</span>
   </button>
-  <button class="d-chip-close-btn d-chip-close-btn--xs" type="button" aria-label="close"/>
+  <button class="d-chip-close-btn d-chip-close-btn--xs" type="button" aria-label="close">
+    <span class="d-btn__icon">
+      <svg>...</svg>
+    </span>
+  </button>
 </span>
 <span class="d-chip-container">
   <button class="d-chip d-chip--sm" type="button">
     <span class="d-avatar">...</span>
     <span>Chip</span>
   </button>
-  <button class="d-chip-close-btn d-chip-close-btn--sm" type="button" aria-label="close"/>
+  <button class="d-chip-close-btn d-chip-close-btn--sm" type="button" aria-label="close">
+    <span class="d-btn__icon">
+      <svg>...</svg>
+    </span>
+  </button>
 </span>
 <span class="d-chip-container">
   <button class="d-chip" type="button">
     <span class="d-chip__icon">...</span>
     <span>Chip</span>
   </button>
-  <button class="d-chip-close-btn" type="button" aria-label="close"/>
+  <button class="d-chip-close-btn" type="button" aria-label="close">
+    <span class="d-btn__icon">
+      <svg>...</svg>
+    </span>
+  </button>
 </span>
 ```
 
