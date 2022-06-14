@@ -2,6 +2,7 @@
   <span class="d-chip-container">
     <component
         :is="interactive ? 'button' : 'span'"
+        :type="interactive ? 'button' : undefined"
         :class="['d-chip', {
           'd-w102': truncate,
           [`d-chip--${size}`]: size
