@@ -14,13 +14,18 @@
 //  ============================================================================
 //  $   BASE STYLE
 //  ----------------------------------------------------------------------------
+.d-chip-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
 .d-chip {
   //  Component CSS Vars
   --chip--fc: var(--fc-dark);
   --chip--bgc: var(--black-050);
   --chip--br: var(--su102);
 
-  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -31,40 +36,19 @@
   font-family: inherit;
   line-height: var(--lh4);
   background-color: var(--chip--bgc);
+  border: none;
   border-radius: var(--chip--br);
   transition-timing-function: var(--ttf-in-out);
   transition-duration: 75ms;
   transition-property: background-color;
 
-  .d-chip-btn-holder {
+  // Reserves space within the chip for the close button, since the close button is
+  // not nested within the chip. Only apply if close button exists (more than one child).
+  &:not(:only-child)::after {
     flex-shrink: 0;
     width: calc(var(--su16) + var(--su2));
     height: calc(var(--su16) + var(--su2));
-  }
-
-  .d-chip-btn-container {
-    position: absolute;
-    top: var(--su0);
-    right: var(--su0);
-    padding: var(--su2) var(--su2) var(--su2) var(--su0);
-    cursor: pointer;
-
-    .d-btn {
-      padding: calc(var(--su2) + var(--su1));
-      border-width: var(--su0);
-    }
-
-    &:hover {
-      .d-btn {
-        --button--bgc: hsla(var(--black-800-hsl) ~' / ' 15%);
-      }
-    }
-
-    &:active {
-      .d-btn {
-        --button--bgc: hsla(var(--black-800-hsl) ~' / ' 25%);
-      }
-    }
+    content: '';
   }
 
   .d-avatar {
@@ -73,8 +57,51 @@
     margin: var(--sun2) var(--su4) var(--sun2) var(--sun6);
   }
 
-  .d-svg,
-  .d-btn .d-btn__icon .d-svg {
+  .d-svg {
+    width: @icon18;
+    height: @icon18;
+  }
+}
+
+button.d-chip {
+  cursor: pointer;
+
+  &:hover {
+    --chip--bgc: var(--black-075);
+  }
+
+  &:active {
+    --chip--bgc: var(--black-100);
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: var(--bs-focus-ring-muted);
+  }
+}
+
+.d-chip-close-btn {
+  position: absolute;
+  right: var(--su2);
+  padding: calc(var(--su2) + var(--su1));
+  border-width: var(--su0);
+
+  &::before {
+    position: absolute;
+    width: 2.6rem;
+    height: 2.8rem;
+    content: '';
+  }
+
+  &:hover {
+    --button--bgc: hsla(var(--black-800-hsl) ~' / ' 15%);
+  }
+
+  &:active {
+    --button--bgc: hsla(var(--black-800-hsl) ~' / ' 25%);
+  }
+
+  .d-btn__icon .d-svg {
     width: @icon18;
     height: @icon18;
   }
@@ -90,24 +117,6 @@
 }
 
 //  ============================================================================
-//  $   INTERACTIVITY
-//  ----------------------------------------------------------------------------
-//  $$  INTERACTIVE (DEFAULT)
-//  ----------------------------------------------------------------------------
-.d-chip--interactive {
-  cursor: pointer;
-
-  &:hover {
-    --chip--bgc: var(--black-075);
-  }
-
-  &:focus-visible {
-    outline: none;
-    box-shadow: var(--bs-focus-ring-muted);
-  }
-}
-
-//  ============================================================================
 //  $   SIZES
 //  ----------------------------------------------------------------------------
 //  $$  EXTRA SMALL
@@ -116,25 +125,25 @@
   padding: var(--su2) var(--su6);
   font-size: var(--fs12);
 
-  .d-btn .d-btn__icon .d-svg,
+  &::before {
+    position: absolute;
+    width: var(--su24);
+    height: var(--su24);
+    content: '';
+  }
+
   .d-svg {
     width: @icon14;
     height: @icon14;
   }
 
-  .d-chip-btn-holder {
+  // reserves space within the chip for the close button, since the close button is
+  // not nested within the chip.
+  &::after {
+    flex-shrink: 0;
     width: var(--su12);
     height: var(--su12);
-  }
-
-  .d-chip-btn-container {
-    top: calc(var(--sun1) + var(--sun2));
-    right: var(--sun2);
-    padding: var(--su4);
-
-    .d-btn {
-      padding: var(--su1);
-    }
+    content: '';
   }
 
   .d-avatar {
@@ -145,31 +154,50 @@
   }
 }
 
+.d-chip-close-btn--xs {
+  position: absolute;
+  padding: var(--su1);
+  border-width: var(--su0);
+
+  &:hover {
+    --button--bgc: hsla(var(--black-800-hsl) ~' / ' 15%);
+  }
+
+  &:active {
+    --button--bgc: hsla(var(--black-800-hsl) ~' / ' 25%);
+  }
+
+  .d-btn__icon .d-svg {
+    width: @icon14;
+    height: @icon14;
+  }
+}
+
 //  $$ SMALL
 //  ----------------------------------------------------------------------------
 .d-chip--sm {
   padding: var(--su2) var(--su8);
   font-size: var(--fs16);
 
-  .d-btn .d-btn__icon .d-svg,
+  &::before {
+    position: absolute;
+    width: var(--su24);
+    height: var(--su24);
+    content: '';
+  }
+
   .d-svg {
     width: @icon16;
     height: @icon16;
   }
 
-  .d-chip-btn-holder {
+  // reserves space within the chip for the close button, since the close button is
+  // not nested within the chip.
+  &::after {
+    flex-shrink: 0;
     width: calc(var(--su12) + var(--su2));
     height: calc(var(--su12) + var(--su2));
-  }
-
-  .d-chip-btn-container {
-    top: var(--sun1);
-    right: var(--su0);
-    padding: var(--su2);
-
-    .d-btn {
-      padding: var(--su2);
-    }
+    content: '';
   }
 
   .d-avatar {
@@ -177,5 +205,24 @@
 
     margin-right: var(--su4);
     margin-left: var(--sun6);
+  }
+}
+
+.d-chip-close-btn--sm {
+  position: absolute;
+  padding: var(--su2);
+  border-width: var(--su0);
+
+  &:hover {
+    --button--bgc: hsla(var(--black-800-hsl) ~' / ' 15%);
+  }
+
+  &:active {
+    --button--bgc: hsla(var(--black-800-hsl) ~' / ' 25%);
+  }
+
+  .d-btn__icon .d-svg {
+    width: @icon16;
+    height: @icon16;
   }
 }
