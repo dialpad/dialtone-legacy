@@ -1,6 +1,6 @@
-const {path} = require('@vuepress/utils')
-const {defaultTheme} = require('vuepress')
-const {mediumZoomPlugin} = require('@vuepress/plugin-medium-zoom')
+const { path } = require('@vuepress/utils')
+const { defaultTheme } = require('vuepress')
+const { mediumZoomPlugin } = require('@vuepress/plugin-medium-zoom')
 
 exports.dialtoneTheme = (options) => {
   return {
