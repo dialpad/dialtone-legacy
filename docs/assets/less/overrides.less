@@ -14,12 +14,6 @@ body {
   --sidebar-width-mobile: var(--sidebar-width);
 }
 
-tr {
-  &:nth-child(2n) {
-    background-color: unset;
-  }
-}
-
 :root {
   --c-brand: @purple-500;
   --navbar-height: 6.4rem;
@@ -107,7 +101,7 @@ samp {
   margin-bottom: var(--su8) !important;
 }
 
-.theme-default-content:not(.custom)>div:not(#preview-header), .theme-default-content:not(.custom) {
+.theme-default-content:not(.custom)>div:not([class]), .theme-default-content:not(.custom) {
 
   @media screen and (min-width: 1264px) {
     max-width: 99rem; // magic number
@@ -124,18 +118,13 @@ samp {
   }
 
   > h2 {
-    margin-top: unset;
     font-size: var(--fs24);
   }
 
   > h2,
   > h3 {
+    margin-top: var(--su48);
     font-weight: var(--fw-bold);
-    border-bottom: unset;
-  }
-
-  > h3 {
-    font-size: unset;
   }
 
   > ol,
@@ -215,8 +204,5 @@ samp {
   & {
     margin: 0 auto;
     max-width: 99rem;
-  }
-  .last-updated {
-    float: unset;
   }
 }
