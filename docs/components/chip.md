@@ -54,9 +54,7 @@ The base chip should be the go-to chip for most of your needs.
 <span class="d-chip">
   <button class="d-chip__label" type="button">
     <span class="d-chip__icon">
-      <span class="d-btn__icon">
-        <svg>...</svg>
-      </span>
+      <svg>...</svg>
     </span>
     <span class="d-chip__text">Chip</span>
   </button>
@@ -72,9 +70,7 @@ The base chip should be the go-to chip for most of your needs.
 <span class="d-chip">
   <button class="d-chip__label" type="button">
     <span class="d-chip__icon">
-      <span class="d-btn__icon">
-        <svg>...</svg>
-      </span>
+      <svg>...</svg>
     </span>
     <span class="d-chip__text">Chip</span>
   </button>
@@ -156,7 +152,9 @@ To truncate text, add `.d-truncate` to the content element, and set the width of
 ```html
 <span class="d-chip">
   <button class="d-chip__label d-chip__label--xs" type="button">
-    <span class="d-chip__icon">...</span>
+    <span class="d-chip__icon">
+      <svg>...</svg>
+    </span>
     <span class="d-chip__text">Chip</span>
   </button>
   <button class="d-chip__close d-chip__close--xs" type="button" aria-label="close">
@@ -178,7 +176,9 @@ To truncate text, add `.d-truncate` to the content element, and set the width of
 </span>
 <span class="d-chip">
   <button class="d-chip__label" type="button">
-    <span class="d-chip__icon">...</span>
+    <span class="d-chip__icon">
+      <svg>...</svg>
+    </span>
     <span class="d-chip__text">Chip</span>
   </button>
   <button class="d-chip__close" type="button" aria-label="close">
