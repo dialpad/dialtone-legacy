@@ -7,6 +7,7 @@ const baseURL = (process.env.VUEPRESS_BASE_URL ?? "/") as `/${string}/`;
 
 const { viteBundler } = require('@vuepress/bundler-vite');
 const { googleAnalyticsPlugin } = require('@vuepress/plugin-google-analytics');
+const { tocPlugin } = require('@vuepress/plugin-toc');
 
 const themeConfig = {
   logo: baseURL + 'assets/images/dialpad-logo.svg',
@@ -18,6 +19,7 @@ const themeConfig = {
     {text: 'Components', link: '/components/avatar'},
   ],
   sidebar,
+  sidebarDepth: 0,
   editLink: false,
   colorModeSwitch: false,
   contributors: false,
@@ -84,9 +86,11 @@ export default defineUserConfig({
 
   // markdown config
   markdown: {
-    toc: false,
     code: {
       lineNumbers: false
+    },
+    extractHeaders: {
+      level: [2] // Generated data header levels (used for toc)
     }
   },
 
@@ -101,6 +105,7 @@ export default defineUserConfig({
   },
 
   plugins: [
+    tocPlugin({}),
     googleAnalyticsPlugin({
       id: 'G-0YV8QJ44LF',
     }),
