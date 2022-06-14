@@ -63,6 +63,7 @@
   }
 }
 
+// Only set these properties if d-chip is interactive (a button).
 button.d-chip {
   cursor: pointer;
 
@@ -81,6 +82,9 @@ button.d-chip {
 }
 
 .d-chip-close-btn {
+  .d-btn();
+  .d-btn--circle();
+
   position: absolute;
   right: var(--su2);
   padding: calc(var(--su2) + var(--su1));
@@ -125,12 +129,7 @@ button.d-chip {
   padding: var(--su2) var(--su6);
   font-size: var(--fs12);
 
-  &::before {
-    position: absolute;
-    width: var(--su24);
-    height: var(--su24);
-    content: '';
-  }
+
 
   .d-svg {
     width: @icon14;
@@ -155,16 +154,12 @@ button.d-chip {
 }
 
 .d-chip-close-btn--xs {
-  position: absolute;
   padding: var(--su1);
-  border-width: var(--su0);
 
-  &:hover {
-    --button--bgc: hsla(var(--black-800-hsl) ~' / ' 15%);
-  }
-
-  &:active {
-    --button--bgc: hsla(var(--black-800-hsl) ~' / ' 25%);
+  // Clickable area for the close button.
+  &::before {
+    width: var(--su24);
+    height: var(--su24);
   }
 
   .d-btn__icon .d-svg {
@@ -178,13 +173,6 @@ button.d-chip {
 .d-chip--sm {
   padding: var(--su2) var(--su8);
   font-size: var(--fs16);
-
-  &::before {
-    position: absolute;
-    width: var(--su24);
-    height: var(--su24);
-    content: '';
-  }
 
   .d-svg {
     width: @icon16;
@@ -209,16 +197,11 @@ button.d-chip {
 }
 
 .d-chip-close-btn--sm {
-  position: absolute;
   padding: var(--su2);
-  border-width: var(--su0);
 
-  &:hover {
-    --button--bgc: hsla(var(--black-800-hsl) ~' / ' 15%);
-  }
-
-  &:active {
-    --button--bgc: hsla(var(--black-800-hsl) ~' / ' 25%);
+  &::before {
+    width: var(--su24);
+    height: var(--su24);
   }
 
   .d-btn__icon .d-svg {

@@ -14,12 +14,11 @@
         <icon-phone />
       </span>
       <span :class="{'d-truncate': truncate}">{{ label }}</span>
-      <span v-if="!hideCloseBtn" class="d-chip-btn-holder"></span>
     </component>
     <button
         v-if="!hideCloseBtn"
         aria-label="close"
-        :class="['d-btn', 'd-btn--circle', 'd-chip-close-btn', {[`d-chip-close-btn--${size}`]: size}]"
+        :class="['d-chip-close-btn', {[`d-chip-close-btn--${size}`]: size}]"
     >
       <span class="d-btn__icon" ref="closeBtn"><icon-close/></span>
     </button>

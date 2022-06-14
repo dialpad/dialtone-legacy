@@ -24,7 +24,7 @@ The base chip should be the go-to chip for most of your needs.
   <button class="d-chip">
     <span>Chip</span>
   </button>
-  <button class="d-btn d-btn--circle d-chip-close-btn" aria-label="close">...</button>
+  <button class="d-chip-close-btn" aria-label="close">...</button>
 </span>
 ```
 
@@ -66,7 +66,7 @@ The base chip should be the go-to chip for most of your needs.
     <span class="d-chip__icon">...</span>
     <span>Chip</span>
   </button>
-  <button class="d-btn d-btn--circle d-chip-close-btn" aria-label="close">...</button>
+  <button class="d-chip-close-btn" aria-label="close">...</button>
 </span>
 ```
 
@@ -81,7 +81,7 @@ The base chip should be the go-to chip for most of your needs.
     <span class="d-avatar">...</span>
     <span>...</span>
   </button>
-  <button class="d-btn d-btn--circle d-chip-close-btn" aria-label="close">...</button>
+  <button class="d-chip-close-btn" aria-label="close">...</button>
 </span>
 ```
 
@@ -98,12 +98,12 @@ the close button can still be interactive even if the chip is non-interactive.
   <span class="d-chip">
     <span>Chip</span>
   </span>
-   <button class="d-btn d-btn--circle d-chip-close-btn" aria-label="close">...</button>
+   <button class="d-chip-close-btn" aria-label="close">...</button>
 </span>
 ```
 
 ### Truncated
-`.d-truncate` is added to text content by default.
+To truncate text, add `.d-truncate` to the content element, and set the width of the `.d-chip` element.
 
 <code-well-header>
   <example-chip label="Chip loooooong name" truncate/>
@@ -114,7 +114,7 @@ the close button can still be interactive even if the chip is non-interactive.
   <button class="d-chip d-w102">
     <span class="d-truncate">Chip loooooong name</span>
   </button>
-  <button class="d-btn d-btn--circle d-chip-close-btn" aria-label="close">...</button>
+  <button class="d-chip-close-btn" aria-label="close">...</button>
 </span>
 ```
 
@@ -131,21 +131,21 @@ the close button can still be interactive even if the chip is non-interactive.
     <span class="d-chip__icon">...</span>
     <span>Chip</span>
   </button>
-  <button class="d-btn d-btn--circle d-chip-close-btn--xs" aria-label="close">...</button>
+  <button class="d-chip-close-btn d-chip-close-btn--xs" aria-label="close">...</button>
 </span>
 <span class="d-chip-container">
   <button class="d-chip d-chip--sm">
     <span class="d-avatar">...</span>
     <span>Chip</span>
   </button>
-  <button class="d-btn d-btn--circle d-chip-close-btn--sm" aria-label="close">...</button>
+  <button class="d-chip-close-btn d-chip-close-btn--sm" aria-label="close">...</button>
 </span>
 <span class="d-chip-container">
   <button class="d-chip">
     <span class="d-chip__icon">...</span>
     <span>Chip</span>
   </button>
-  <button class="d-btn d-btn--circle d-chip-close-btn" aria-label="close">...</button>
+  <button class="d-chip-close-btn" aria-label="close">...</button>
 </span>
 ```
 
