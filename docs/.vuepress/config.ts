@@ -19,7 +19,7 @@ const themeConfig = {
   ],
   sidebar,
   editLink: false,
-  darkMode: false,
+  colorModeSwitch: false,
   contributors: false,
 };
 
