@@ -55,6 +55,7 @@
   }
 
   .page {
+    padding-top: var(--su24);
     width: 100%;
     min-width: 0;
   }
