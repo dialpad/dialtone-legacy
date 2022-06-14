@@ -1,11 +1,11 @@
 <template>
-  <span class="d-chip-container">
+  <span class="d-chip">
     <component
         :is="interactive ? 'button' : 'span'"
         :type="interactive ? 'button' : undefined"
-        :class="['d-chip', {
+        :class="['d-chip__label', {
           'd-w102': truncate,
-          [`d-chip--${size}`]: size
+          [`d-chip__label--${size}`]: size
         }]"
     >
       <span v-if="withAvatar" class="d-avatar">
@@ -19,7 +19,7 @@
     <button
         v-if="!hideCloseBtn"
         aria-label="close"
-        :class="['d-chip-close-btn', {[`d-chip-close-btn--${size}`]: size}]"
+        :class="['d-chip__close', {[`d-chip__close--${size}`]: size}]"
     >
       <span class="d-btn__icon" ref="closeBtn"><icon-close/></span>
     </button>
