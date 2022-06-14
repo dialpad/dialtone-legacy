@@ -1,12 +1,12 @@
 import { defineUserConfig } from 'vuepress';
 import { resolve } from 'path';
 
-const siteNav = require('../_data/site-nav.json');
+const sidebar = require('../_data/site-nav.json');
 const { dialtoneTheme } = require('./theme');
 const baseURL = (process.env.VUEPRESS_BASE_URL ?? "/") as `/${string}/`;
 
-const { viteBundler } = require('@vuepress/bundler-vite')
-const { googleAnalyticsPlugin } = require('@vuepress/plugin-google-analytics')
+const { viteBundler } = require('@vuepress/bundler-vite');
+const { googleAnalyticsPlugin } = require('@vuepress/plugin-google-analytics');
 const { tocPlugin } = require('@vuepress/plugin-toc');
 
 const themeConfig = {
@@ -18,11 +18,14 @@ const themeConfig = {
     {text: 'Utilities', link: '/utilities/backgrounds/attachment'},
     {text: 'Components', link: '/components/avatar'},
   ],
-  sidebar: siteNav,
+  sidebar,
   sidebarDepth: 0,
   editLink: false,
-  darkMode: false,
+  colorModeSwitch: false,
   contributors: false,
+  themePlugins: {
+    mediumZoom: false,
+  }
 };
 
 const isDevelopment = (process.env.NODE_ENV === 'development');
