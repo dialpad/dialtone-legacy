@@ -97,5 +97,9 @@
       text-decoration: underline;
       background-color: transparent;
     }
+
+    .toc a.active::before {
+      display: none;
+    }
   }
 </style>
