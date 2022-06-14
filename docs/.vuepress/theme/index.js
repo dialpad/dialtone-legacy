@@ -1,6 +1,7 @@
-const { path } = require('@vuepress/utils')
-const { defaultTheme } = require('vuepress')
-const { mediumZoomPlugin } = require('@vuepress/plugin-medium-zoom')
+const { path } = require('@vuepress/utils');
+const { defaultTheme } = require('vuepress');
+const { mediumZoomPlugin } = require('@vuepress/plugin-medium-zoom');
+const { activeHeaderLinksPlugin } = require("@vuepress/plugin-active-header-links");
 
 exports.dialtoneTheme = (options) => {
   return {
@@ -19,6 +20,9 @@ exports.dialtoneTheme = (options) => {
     plugins: [
       mediumZoomPlugin({
         selector: '.zoomable-image'
+      }),
+      activeHeaderLinksPlugin({
+        headerLinkSelector: "a.toc-link"
       }),
     ],
   }
