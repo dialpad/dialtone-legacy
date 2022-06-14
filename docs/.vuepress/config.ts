@@ -5,8 +5,8 @@ const sidebar = require('../_data/site-nav.json');
 const { dialtoneTheme } = require('./theme');
 const baseURL = (process.env.VUEPRESS_BASE_URL ?? "/") as `/${string}/`;
 
-const { viteBundler } = require('@vuepress/bundler-vite')
-const { googleAnalyticsPlugin } = require('@vuepress/plugin-google-analytics')
+const { viteBundler } = require('@vuepress/bundler-vite');
+const { googleAnalyticsPlugin } = require('@vuepress/plugin-google-analytics');
 
 const themeConfig = {
   logo: baseURL + 'assets/images/dialpad-logo.svg',
@@ -21,6 +21,9 @@ const themeConfig = {
   editLink: false,
   colorModeSwitch: false,
   contributors: false,
+  themePlugins: {
+    mediumZoom: false,
+  }
 };
 
 const isDevelopment = (process.env.NODE_ENV === 'development');
