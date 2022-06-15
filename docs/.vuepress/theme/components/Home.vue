@@ -65,9 +65,9 @@
   })
 
   function handleClick () {
-    window.gtag('event', 'click', {
-      'event_name': 'get_started_button_clicked'
-    });
+    if (window.gtag) {
+      window.gtag('event', 'click', { 'event_name': 'get_started_button_clicked' });
+    }
     router.push("/getting-started/installation.html");
   }
 </script>
