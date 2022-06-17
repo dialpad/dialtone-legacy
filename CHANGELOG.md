@@ -1,3 +1,10 @@
+# [6.31.0](https://github.com/dialpad/dialtone/compare/v6.30.1...v6.31.0) (2022-06-17)
+
+
+### Features
+
+* **icon:** add ai-glyph and dialpad-ai icons ([#618](https://github.com/dialpad/dialtone/issues/618)) ([af8fb04](https://github.com/dialpad/dialtone/commit/af8fb04ef1bfd032822170f13a2144c58520b46b))
+
 ## [6.30.1](https://github.com/dialpad/dialtone/compare/v6.30.0...v6.30.1) (2022-06-13)
 
 
