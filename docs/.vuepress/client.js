@@ -1,4 +1,5 @@
 import { defineClientConfig } from '@vuepress/client';
+import { VueLive } from "vue-live";
 
 // Common views
 import Icons from "./views/Icons.vue";
@@ -23,8 +24,10 @@ import IconClose from "@svgIcons/IconClose.vue";
 import IconCheckmark from "@svgIcons/IconCheckmark.vue";
 import IconPhone from "@svgIcons/IconPhone.vue";
 
+// CSS
 import '@dialtoneCSS';
 import '@dialtoneDocsCSS';
+import "vue-live/lib/vue-live.esm.css";
 
 export default defineClientConfig({
   enhance({app, router, siteData}) {
@@ -40,6 +43,7 @@ export default defineClientConfig({
     app.component('spacing-system-table', SpacingSystemTable);
     app.component('icon-sizes-table', IconSizesTable);
     app.component('component-accessible-table', ComponentAccessibleTable);
+    app.component('vue-live', VueLive);
 
     // Common icons
     app.component('icon-info', IconInfo);
