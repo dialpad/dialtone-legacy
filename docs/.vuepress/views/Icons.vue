@@ -11,6 +11,7 @@
         :code="icon.code"
         :file="icon.file"
         :kind="kind"
+        :hidden="icon.hidden"
         :name="icon.name"
         :selected="selectedCardIndex === index"
         :variation="variation"

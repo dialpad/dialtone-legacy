@@ -1,5 +1,5 @@
 <template>
-  <div :id="file" class="dialtone-icon-grid__item">
+  <div :id="file" class="dialtone-icon-grid__item" v-if="!hidden">
     <aside :data-selected="selectedStatus" class="dialtone-icon-card js-dialtone-icon-card">
       <header class="dialtone-icon-card__header js-dialtone-icon-card-copy-area">
         <div :class="cardIconClass">
@@ -54,6 +54,10 @@ export default {
     },
     code: {
       type: String
+    },
+    hidden: {
+      type: Boolean,
+      default: false,
     },
     vue: {
       type: String,
