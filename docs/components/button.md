@@ -10,6 +10,16 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-button--defaul
   </button>
 </code-well-header>
 
+### Live preview
+
+<vue-live
+  class="d-bgc-black-600"
+  code="<dt-button>Button</dt-button>"
+  :components="{ DtButton }"
+  :editorProps="{ lineNumbers: true }"
+  :layout="CustomLayout"
+/>
+
 ## Usage
 
 `button` and link (`<a>`) HTML elements each describe a specific intent. Understanding the distinction is important: if it goes somewhere, use a [Link](link.html). If an action occurs, use a Button.
@@ -523,9 +533,10 @@ The base button font size is 16px and should be used in most cases. Every button
 <component-class-table component-name="button"></component-class-table>
 
 <script setup>
-  import IconPhone from '@svgIcons/IconPhone.vue';
   import IconGoogleGlyph from '@svgIcons/IconGoogleGlyph.vue';
   import IconOffice365 from '@svgIcons/IconOffice365.vue';
   import IconLinkedin from '@svgIcons/IconLinkedin.vue';
   import Markdown from "@baseComponents/Markdown.vue";
+  import { DtButton } from '@dialpad/dialtone-vue';
+  import CustomLayout from '@baseComponents/CustomLayout.vue';
 </script>
