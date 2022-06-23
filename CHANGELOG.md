@@ -1,3 +1,10 @@
+## [6.32.1](https://github.com/dialpad/dialtone/compare/v6.32.0...v6.32.1) (2022-06-23)
+
+
+### Bug Fixes
+
+* fix fonts reference ([#621](https://github.com/dialpad/dialtone/issues/621)) ([f1940a5](https://github.com/dialpad/dialtone/commit/f1940a5fe6ef3031cdc6b1a729291d4e833621de))
+
 # [6.32.0](https://github.com/dialpad/dialtone/compare/v6.31.0...v6.32.0) (2022-06-23)
 
 
