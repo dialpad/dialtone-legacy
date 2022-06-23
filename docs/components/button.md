@@ -14,8 +14,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-button--defaul
 
 <vue-live
   class="d-bgc-black-600"
-  code="<dt-button>Button</dt-button>"
-  :components="{ DtButton }"
+  code="<button class='d-btn d-btn--primary'>Button</button>"
   :editorProps="{ lineNumbers: true }"
   :layout="CustomLayout"
 />
@@ -537,6 +536,5 @@ The base button font size is 16px and should be used in most cases. Every button
   import IconOffice365 from '@svgIcons/IconOffice365.vue';
   import IconLinkedin from '@svgIcons/IconLinkedin.vue';
   import Markdown from "@baseComponents/Markdown.vue";
-  import { DtButton } from '@dialpad/dialtone-vue';
   import CustomLayout from '@baseComponents/CustomLayout.vue';
 </script>
