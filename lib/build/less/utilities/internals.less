@@ -14,6 +14,9 @@
 #d-internal-config {
     //  Do we want to generate font-face CSS?
     @generate-font-face:             true;
+
+    //  Path of the fonts that Dialtone provides
+    @define-font-path: '../../fonts/';
 }
 
 //  ============================================================================
@@ -378,15 +381,12 @@
     #font-face(@type, @name, @style: normal) {
         #d-internal-config();
 
-        //  Path of the fonts that Dialtone provides
-        @define-font-path: '../../fonts/';
-
         if((@generate-font-face = true), each(@type, {
             @font-face {
                 font-style: @style;
                 font-weight: @key;
                 font-family: @name;
-                src: url("./@{define-font-path}@{value}.woff2") format("woff2");
+                src: url("@{define-font-path}@{value}.woff2") format("woff2");
             };
         }));
     }
