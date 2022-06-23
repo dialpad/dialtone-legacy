@@ -14,7 +14,20 @@
                  :src="'https://img.shields.io/badge/Vue-v' + version + '-A687FF'">
           </a>
         </div>
-        <router-link class="d-btn d-btn--primary d-btn--lg" to="/getting-started/installation.html">Get Started</router-link>
+        <router-link
+          to="/getting-started/installation.html"
+          custom
+          v-slot="{ navigate }"
+        >
+          <button
+            class="d-btn d-btn--primary d-btn--lg"
+            @click="(e) => { sendAnalyticsEvent(); navigate(e); }"
+            @keypress.enter="(e) => { sendAnalyticsEvent(); navigate(e); }"
+            role="link"
+          >
+            Get Started
+          </button>
+        </router-link>
       </div>
       <img alt="" class="hero--image d-w50p d-as-flex-start" :src="$withBase('/assets/images/home-hero.png')" />
     </div>
@@ -50,15 +63,20 @@
 </template>
 
 <script setup>
-import {onBeforeMount, ref} from "vue";
-  import axios from "axios";
+  import { onBeforeMount, ref } from 'vue';
+  import axios from 'axios';
 
   const lede = "Documented styles, utility classes, and components to help you quickly design and build unified experiences across Dialpad and Dialpad Meetings.";
   const headline = "Improve your UI's reception with Dialtone";
-  const version = ref('0.0.0')
+  const version = ref('0.0.0');
 
   onBeforeMount(async () => {
     const response = await axios.get('https://vue.dialpad.design/version.txt');
     version.value = response.data;
   })
+
+  function sendAnalyticsEvent () {
+    if (!window.gtag) return
+    window.gtag('event', 'click', { 'event_name': 'get_started_button_clicked' });
+  }
 </script>
