@@ -197,6 +197,7 @@ var libStyles = function(done) {
     return src(paths.styles.inputLib)
         //.pipe(cache('libStyles'))
         .pipe(less())
+        .pipe(replace('../../fonts/', '../fonts/'))
         .pipe(postcss([ postcssResponsify, postcssFocusVisible ]))
         .pipe(dest(paths.styles.outputLib))
         .pipe(dest(paths.styles.outputDocs))
