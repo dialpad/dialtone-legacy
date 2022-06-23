@@ -1,3 +1,15 @@
+# [6.32.0](https://github.com/dialpad/dialtone/compare/v6.31.0...v6.32.0) (2022-06-23)
+
+
+### Bug Fixes
+
+* **Chip:** improvements to semantic html ([#616](https://github.com/dialpad/dialtone/issues/616)) ([9ca9dae](https://github.com/dialpad/dialtone/commit/9ca9dae160689b3fcc8d33747f879478725ea0c9))
+
+
+### Features
+
+* **icons:** hide old vi icon. remove vi-off icon ([#619](https://github.com/dialpad/dialtone/issues/619)) ([f8fbdf1](https://github.com/dialpad/dialtone/commit/f8fbdf145784e21849eca01076117306281827f8))
+
 # [6.31.0](https://github.com/dialpad/dialtone/compare/v6.30.1...v6.31.0) (2022-06-17)
 
 
