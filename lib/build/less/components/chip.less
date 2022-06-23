@@ -51,6 +51,30 @@
     content: '';
   }
 
+  // These properties are only set if d-chip is interactive (ex: a button).
+  &:is(a),
+  &:is(button),
+  &:is([role='button']),
+  &:is([role='link']) {
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+      --chip--bgc: var(--black-075);
+
+      text-decoration: none;
+    }
+
+    &:active {
+      --chip--bgc: var(--black-100);
+    }
+
+    &:focus-visible {
+      outline: none;
+      box-shadow: var(--bs-focus-ring-muted);
+    }
+  }
+
   .d-avatar {
     --avatar--size: var(--su24);
 
@@ -60,28 +84,6 @@
   .d-svg {
     width: @icon18;
     height: @icon18;
-  }
-}
-
-// Only set these properties if d-chip is interactive (a button).
-button.d-chip__label,
-a.d-chip__label {
-  text-decoration: none;
-  cursor: pointer;
-
-  &:hover {
-    --chip--bgc: var(--black-075);
-
-    text-decoration: none;
-  }
-
-  &:active {
-    --chip--bgc: var(--black-100);
-  }
-
-  &:focus-visible {
-    outline: none;
-    box-shadow: var(--bs-focus-ring-muted);
   }
 }
 
