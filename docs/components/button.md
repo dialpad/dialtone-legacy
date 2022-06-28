@@ -12,12 +12,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-button--defaul
 
 ### Live preview
 
-<vue-live
-  class="d-bgc-black-600"
-  code="<button class='d-btn d-btn--primary'>Button</button>"
-  :editorProps="{ lineNumbers: true }"
-  :layout="CustomLayout"
-/>
+<live-preview code="<button class='d-btn d-btn--primary'>Button</button>"></live-preview>
 
 ## Usage
 
@@ -536,5 +531,5 @@ The base button font size is 16px and should be used in most cases. Every button
   import IconOffice365 from '@svgIcons/IconOffice365.vue';
   import IconLinkedin from '@svgIcons/IconLinkedin.vue';
   import Markdown from "@baseComponents/Markdown.vue";
-  import CustomLayout from '@baseComponents/CustomLayout.vue';
+  import LivePreview from "@baseComponents/LivePreview.vue";
 </script>

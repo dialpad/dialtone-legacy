@@ -1,5 +1,4 @@
 import { defineClientConfig } from '@vuepress/client';
-import { VueLive } from "vue-live";
 
 // Common views
 import Icons from "./views/Icons.vue";
@@ -13,6 +12,7 @@ import WeatherCodesTable from "./baseComponents/WeatherCodesTable.vue";
 import SpacingSystemTable from "./baseComponents/SpacingSystemTable.vue";
 import IconSizesTable from "./baseComponents/IconSizesTable.vue";
 import ComponentAccessibleTable from "./baseComponents/ComponentAccessibleTable.vue";
+import LivePreview from "./baseComponents/LivePreview.vue";
 
 // Common icons
 import IconInfo from '@svgIcons/IconInfo.vue';
@@ -27,7 +27,6 @@ import IconPhone from "@svgIcons/IconPhone.vue";
 // CSS
 import '@dialtoneCSS';
 import '@dialtoneDocsCSS';
-import "vue-live/lib/vue-live.esm.css";
 
 export default defineClientConfig({
   enhance({app, router, siteData}) {
@@ -43,7 +42,7 @@ export default defineClientConfig({
     app.component('spacing-system-table', SpacingSystemTable);
     app.component('icon-sizes-table', IconSizesTable);
     app.component('component-accessible-table', ComponentAccessibleTable);
-    app.component('vue-live', VueLive);
+    app.component('live-preview', LivePreview);
 
     // Common icons
     app.component('icon-info', IconInfo);
