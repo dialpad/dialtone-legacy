@@ -11,8 +11,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-button--defaul
 </code-well-header>
 
 ### Live preview
-
-<live-preview code="<button class='d-btn d-btn--primary'>Button</button>"></live-preview>
+<live-preview :code="code"></live-preview>
 
 ## Usage
 
@@ -532,4 +531,5 @@ The base button font size is 16px and should be used in most cases. Every button
   import IconLinkedin from '@svgIcons/IconLinkedin.vue';
   import Markdown from "@baseComponents/Markdown.vue";
   import LivePreview from "@baseComponents/LivePreview.vue";
+  const code = `<dt-button>Place call</dt-button>`;
 </script>
