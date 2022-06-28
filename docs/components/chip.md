@@ -20,9 +20,15 @@ The base chip should be the go-to chip for most of your needs.
 </code-well-header>
 
 ```html
-<span class="d-chip d-chip--interactive" tabindex="0">
-  <span>...</span>
-  <button class="d-btn d-btn--circle" aria-label="close" type="button" >...</button>
+<span class="d-chip">
+  <button class="d-chip__label" type="button">
+    <span class="d-chip__text">Chip</span>
+  </button>
+  <button class="d-chip__close" type="button" aria-label="close">
+    <span class="d-btn__icon">
+      <svg>...</svg>
+    </span>
+  </button>
 </span>
 ```
 
@@ -32,7 +38,11 @@ The base chip should be the go-to chip for most of your needs.
 </code-well-header>
 
 ```html
-<span class="d-chip d-chip--interactive" tabindex="0">...</span>
+<span class="d-chip">
+  <button class="d-chip__label" type="button">
+    <span class="d-chip__text">Chip</span>
+  </button>
+</span>
 ```
 
 ### With icon
@@ -41,9 +51,13 @@ The base chip should be the go-to chip for most of your needs.
 </code-well-header>
 
 ```html
-<span class="d-chip d-chip--interactive" tabindex="0">
-  <span class="d-chip__icon">...</span>
-  <span>...</span>
+<span class="d-chip">
+  <button class="d-chip__label" type="button">
+    <span class="d-chip__icon">
+      <svg>...</svg>
+    </span>
+    <span class="d-chip__text">Chip</span>
+  </button>
 </span>
 ```
 
@@ -53,10 +67,18 @@ The base chip should be the go-to chip for most of your needs.
 </code-well-header>
 
 ```html
-<span class="d-chip d-chip--interactive" tabindex="0">
-  <span class="d-chip__icon">...</span>
-  <span>...</span>
-  <button class="d-btn d-btn--circle" type="button">...</button>
+<span class="d-chip">
+  <button class="d-chip__label" type="button">
+    <span class="d-chip__icon">
+      <svg>...</svg>
+    </span>
+    <span class="d-chip__text">Chip</span>
+  </button>
+  <button class="d-chip__close" type="button" aria-label="close">
+    <span class="d-btn__icon">
+      <svg>...</svg>
+    </span>
+  </button>
 </span>
 ```
 
@@ -66,38 +88,57 @@ The base chip should be the go-to chip for most of your needs.
 </code-well-header>
 
 ```html
-<span class="d-chip d-chip--interactive" tabindex="0">
-  <span class="d-avatar">...</span>
-  <span>...</span>
-  <button class="d-btn d-btn--circle" type="button">...</button>
+<span class="d-chip">
+  <button class="d-chip__label" type="button">
+    <span class="d-avatar">...</span>
+    <span class="d-chip__text">Chip</span>
+  </button>
+  <button class="d-chip__close" type="button" aria-label="close">
+    <span class="d-btn__icon">
+      <svg>...</svg>
+    </span>
+  </button>
 </span>
 ```
 
 ### Non Interactive
-No `.d-chip--interactive` class.
+To make Chip non-interactive, change the d-chip element from a button to a span. Note
+the close button can still be interactive even if the chip is non-interactive.
 
 <code-well-header>
   <example-chip label="Chip" :interactive="false"/>
 </code-well-header>
 
 ```html
-<span class="d-chip" tabindex="-1">
-  <span>...</span>
-  <button class="d-btn d-btn--circle" type="button">...</button>
+<span class="d-chip">
+  <span class="d-chip__label">
+    <span class="d-chip__text">Chip</span>
+  </span>
+  <button class="d-chip__close" type="button" aria-label="close">
+    <span class="d-btn__icon">
+      <svg>...</svg>
+    </span>
+  </button>
 </span>
 ```
 
 ### Truncated
-`.d-truncate` is added to text content by default.
+To truncate text, add `.d-truncate` to the content element, and set the width of the `.d-chip` element.
 
 <code-well-header>
   <example-chip label="Chip loooooong name" truncate/>
 </code-well-header>
 
 ```html
-<span class="d-chip d-chip--interactive d-w102" tabindex="0">
-  <span class="d-truncate">...</span>
-  <button class="d-btn d-btn--circle" type="button">...</button>
+<span class="d-chip">
+  <button class="d-chip__label d-w102" type="button">
+    <span class="d-chip__text d-truncate">Chip loooooong name</span>
+  </button>
+  <button class="d-chip__close" type="button" aria-label="close">
+    <span class="d-btn__icon">
+      <svg>...</svg>
+    </span>
+  </button>
 </span>
 ```
 
@@ -109,9 +150,43 @@ No `.d-chip--interactive` class.
 </code-well-header>
 
 ```html
-<span class="d-chip d-chip--xs d-chip--interactive" tabindex="0">...</span>
-<span class="d-chip d-chip--sm d-chip--interactive" tabindex="0">...</span>
-<span class="d-chip d-chip--interactive" tabindex="0">...</span>
+<span class="d-chip">
+  <button class="d-chip__label d-chip__label--xs" type="button">
+    <span class="d-chip__icon">
+      <svg>...</svg>
+    </span>
+    <span class="d-chip__text">Chip</span>
+  </button>
+  <button class="d-chip__close d-chip__close--xs" type="button" aria-label="close">
+    <span class="d-btn__icon">
+      <svg>...</svg>
+    </span>
+  </button>
+</span>
+<span class="d-chip">
+  <button class="d-chip__label d-chip__label--sm" type="button">
+    <span class="d-avatar">...</span>
+    <span class="d-chip__text">Chip</span>
+  </button>
+  <button class="d-chip__close d-chip__close--sm" type="button" aria-label="close">
+    <span class="d-btn__icon">
+      <svg>...</svg>
+    </span>
+  </button>
+</span>
+<span class="d-chip">
+  <button class="d-chip__label" type="button">
+    <span class="d-chip__icon">
+      <svg>...</svg>
+    </span>
+    <span class="d-chip__text">Chip</span>
+  </button>
+  <button class="d-chip__close" type="button" aria-label="close">
+    <span class="d-btn__icon">
+      <svg>...</svg>
+    </span>
+  </button>
+</span>
 ```
 
 <script setup>
