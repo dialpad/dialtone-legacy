@@ -31,6 +31,7 @@ import '@dialtoneDocsCSS';
 export default defineClientConfig({
   enhance({app, router, siteData}) {
     if (!__VUEPRESS_SSR__) {
+      // Dialtone vue components
       import('@dialpad/dialtone-vue').then(module => {
         Object.keys(module)
           .filter((key) => key.startsWith('Dt'))

@@ -31,15 +31,6 @@ export default {
         this.LivePreviewLayout = layout.default;
         this.loading = false;
       });
-      //import('@dialpad/dialtone-vue').then(module => {
-        /*this.DialtoneVueComponents = Object.keys(module)
-          .filter((key) => key.startsWith('Dt'))
-          .reduce((obj, key) => {
-            return Object.assign(obj, {[key]: module[key]})
-          }, {});*/
-
-        //this.loading = false;
-      //});
   }
 }
 </script>

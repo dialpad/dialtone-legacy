@@ -1,6 +1,6 @@
 <template>
   <div class="preview-code">
-    <div>
+    <div class="d-d-flex d-jc-center">
       <slot name="preview"></slot>
     </div>
     <div>
