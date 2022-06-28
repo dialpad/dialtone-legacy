@@ -1,1 +1,0 @@
-import{_ as o,o as i,c as d,a as r,z as a,e as s}from"./app.ea2202f4.js";const t={},c={class:"preview-code"},l=s();function v(e,n){return i(),d("div",c,[r("div",null,[a(e.$slots,"preview")]),l,r("div",null,[a(e.$slots,"editor")])])}var u=o(t,[["render",v],["__file","LivePreviewLayout.vue"]]);export{u as default};
