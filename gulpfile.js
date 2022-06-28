@@ -133,7 +133,7 @@ var paths = {
     fonts: {
         input: './lib/build/fonts/*.woff2',
         outputLib: './lib/dist/fonts/',
-        outputDocs: './docs/assets/fonts/'
+        outputDocs: './docs/.vuepress/public/fonts/'
     },
     mobile: {
         output: './lib/dist/ios/'
