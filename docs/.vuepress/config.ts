@@ -45,7 +45,13 @@ export default defineUserConfig({
   theme: dialtoneTheme(themeConfig),
 
   bundler: viteBundler({
-    viteOptions: {},
+    viteOptions: {
+      resolve: {
+        alias: {
+          vue$: 'vue/dist/vue.esm-bundler.js',
+        },
+      },
+    },
     vuePluginOptions: {
       template: {
         compilerOptions: {
@@ -101,7 +107,8 @@ export default defineUserConfig({
     '@exampleComponents': resolve(__dirname, './exampleComponents'),
     '@baseComponents': resolve(__dirname, './baseComponents'),
     '@dialtoneCSS': resolve(__dirname, '../assets/css/' + dialtoneCSS),
-    '@dialtoneDocsCSS': resolve(__dirname, '../assets/css/' + dialtoneDocsCSS)
+    '@dialtoneDocsCSS': resolve(__dirname, '../assets/css/' + dialtoneDocsCSS),
+    vue: 'vue/dist/vue.esm-bundler.js',
   },
 
   plugins: [

@@ -4,11 +4,8 @@ desc: A button is an UI element which signals key actions to take an action thro
 storybook_url: https://vue.dialpad.design/?path=/story/components-button--default
 ---
 
-<code-well-header>
-  <button class="d-btn d-btn--primary" type="button">
-    <span class="d-btn__label">Place call</span>
-  </button>
-</code-well-header>
+### Live preview
+<live-preview :code="code"></live-preview>
 
 ## Usage
 
@@ -523,9 +520,10 @@ The base button font size is 16px and should be used in most cases. Every button
 <component-class-table component-name="button"></component-class-table>
 
 <script setup>
-  import IconPhone from '@svgIcons/IconPhone.vue';
   import IconGoogleGlyph from '@svgIcons/IconGoogleGlyph.vue';
   import IconOffice365 from '@svgIcons/IconOffice365.vue';
   import IconLinkedin from '@svgIcons/IconLinkedin.vue';
   import Markdown from "@baseComponents/Markdown.vue";
+  import LivePreview from "@baseComponents/LivePreview.vue";
+  const code = `<dt-button>Place call</dt-button>`;
 </script>

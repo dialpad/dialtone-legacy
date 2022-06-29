@@ -15,7 +15,8 @@ exports.dialtoneTheme = (options) => {
       '@theme/Home.vue': path.resolve(__dirname, './components/Home.vue'),
       '@theme/Sidebar.vue': path.resolve(__dirname, './components/Sidebar.vue'),
       '@theme/PageHeader.vue': path.resolve(__dirname, './components/PageHeader.vue'),
-      '@theme/PageToc.vue': path.resolve(__dirname, './components/PageToc.vue')
+      '@theme/PageToc.vue': path.resolve(__dirname, './components/PageToc.vue'),
+      '@theme/LivePreviewLayout.vue': path.resolve(__dirname, './layouts/LivePreviewLayout.vue')
     },
     plugins: [
       mediumZoomPlugin({
