@@ -1,3 +1,10 @@
+## [6.32.2](https://github.com/dialpad/dialtone/compare/v6.32.1...v6.32.2) (2022-06-29)
+
+
+### Bug Fixes
+
+* disable calt font feature setting ([#622](https://github.com/dialpad/dialtone/issues/622)) ([a9e38fa](https://github.com/dialpad/dialtone/commit/a9e38fa0a1b8901f3b7952529af14056a284791f))
+
 ## [6.32.1](https://github.com/dialpad/dialtone/compare/v6.32.0...v6.32.1) (2022-06-23)
 
 
