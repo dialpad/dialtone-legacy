@@ -4,12 +4,6 @@ desc: A button is an UI element which signals key actions to take an action thro
 storybook_url: https://vue.dialpad.design/?path=/story/components-button--default
 ---
 
-<code-well-header>
-  <button class="d-btn d-btn--primary" type="button">
-    <span class="d-btn__label">Place call</span>
-  </button>
-</code-well-header>
-
 ### Live preview
 <live-preview :code="code"></live-preview>
 
