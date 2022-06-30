@@ -56,6 +56,7 @@
       ? mobileHeaderSize
       : defaultHeaderSize
     );
+    console.log(app.appContext.config.globalProperties.$headerSize);
   }, { immediate: true });
 </script>
 
