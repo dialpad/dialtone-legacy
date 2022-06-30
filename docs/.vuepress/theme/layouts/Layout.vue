@@ -32,20 +32,32 @@
   import PageToc from '@theme/PageToc.vue';
   import PageHeader from '@theme/PageHeader.vue';
 
-  import {useScrollPromise} from '@vuepress/theme-default/lib/client/composables'
-  import {ref} from 'vue';
+  import { useScrollPromise } from '@vuepress/theme-default/lib/client/composables'
+  import { ref, watch, getCurrentInstance } from 'vue';
 
+  const defaultHeaderSize = 64;
+  const mobileHeaderSize = 128;
   const mobileBreakpoint = 980;
-  const evaluateWindowWidth = () => window.innerWidth <= mobileBreakpoint;
 
+  const scrollPromise = useScrollPromise();
+  const onBeforeEnter = scrollPromise.resolve;
+  const onBeforeLeave = scrollPromise.pending;
+  const app = getCurrentInstance();
+
+  const evaluateWindowWidth = () => window.innerWidth <= mobileBreakpoint;
   const isMobile = ref(evaluateWindowWidth());
   window.addEventListener('resize', () => {
     isMobile.value = evaluateWindowWidth();
   });
 
-  const scrollPromise = useScrollPromise();
-  const onBeforeEnter = scrollPromise.resolve;
-  const onBeforeLeave = scrollPromise.pending;
+  watch(isMobile, (current) => {
+    app.appContext.config.globalProperties.$headerSize = (
+      current
+      ? mobileHeaderSize
+      : defaultHeaderSize
+    );
+    console.log(app.appContext.config.globalProperties.$headerSize);
+  }, { immediate: true });
 </script>
 
 <style lang="less">
