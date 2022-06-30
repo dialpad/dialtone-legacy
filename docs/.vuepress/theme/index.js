@@ -23,8 +23,7 @@ exports.dialtoneTheme = (options) => {
         selector: '.zoomable-image'
       }),
       activeHeaderLinksPlugin({
-        headerLinkSelector: "a.toc-link",
-        offset: 64,
+        headerLinkSelector: "a.toc-link"
       }),
     ],
   }

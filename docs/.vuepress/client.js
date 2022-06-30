@@ -41,17 +41,6 @@ export default defineClientConfig({
       });
     }
 
-    const scrollBehavior = router.options.scrollBehavior;
-    router.options.scrollBehavior = async (to, from, savedPosition) => {
-      const anchorPadding = 16;
-      const position = await scrollBehavior(to, from, savedPosition);
-      return (
-        to.hash
-        ? { ...position, top: app.config.globalProperties.$headerSize + anchorPadding }
-        : position
-      );
-    }
-
     // Common views
     app.component('icons', Icons);
     app.component('colors', Colors);
