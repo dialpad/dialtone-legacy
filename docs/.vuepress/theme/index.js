@@ -24,7 +24,7 @@ exports.dialtoneTheme = (options) => {
       }),
       activeHeaderLinksPlugin({
         headerLinkSelector: "a.toc-link",
-        offset: 196,
+        offset: 64,
       }),
     ],
   }
