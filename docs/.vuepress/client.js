@@ -52,10 +52,6 @@ export default defineClientConfig({
       );
     }
 
-    window.addEventListener('hashchange', () => {
-      router.push(router.currentRoute.value);
-    });
-
     // Common views
     app.component('icons', Icons);
     app.component('colors', Colors);
