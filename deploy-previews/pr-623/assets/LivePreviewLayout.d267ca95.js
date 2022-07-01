@@ -1,1 +1,0 @@
-import{_ as o,o as d,c as i,a as r,z as a,e as s}from"./app.7d9bc5f8.js";const c={},t={class:"preview-code"},l={class:"d-d-flex d-jc-center"},v=s();function n(e,_){return d(),i("div",t,[r("div",l,[a(e.$slots,"preview")]),v,r("div",null,[a(e.$slots,"editor")])])}var u=o(c,[["render",n],["__file","LivePreviewLayout.vue"]]);export{u as default};
