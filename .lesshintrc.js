@@ -1,6 +1,6 @@
 module.exports = {
   excludedFiles: [
-    'lib/build/less/utilities/internals.less'
+    'lib/build/less/utilities/internals.less',
   ],
 
   // turn off the rules because of syntax semantic of less code generation
@@ -23,9 +23,9 @@ module.exports = {
   },
   decimalZero: 'none',
   spaceAfterPropertyColon: {
-    style: 'at_least_one_space'
+    style: 'at_least_one_space',
   },
   borderZero: {
-    style: 'none'
-  }
+    style: 'none',
+  },
 };
