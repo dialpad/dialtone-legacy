@@ -28,7 +28,6 @@ module.exports = {
       registeredComponentsOnly: true,
     }],
 
-    // TODO remove these as the errors are fixed.
     'vuejs-accessibility/label-has-for': [
       'error',
       {
