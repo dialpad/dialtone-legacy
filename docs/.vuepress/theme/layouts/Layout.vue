@@ -55,7 +55,7 @@
       '--navbar-height',
       `${(current ? mobileHeaderSize : defaultHeaderSize)}px`
     );
-  });
+  }, { immediate: true });
 </script>
 
 <style lang="less">
