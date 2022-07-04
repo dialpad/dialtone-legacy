@@ -46,8 +46,14 @@ import PageToc from '@theme/PageToc.vue';
 import PageHeader from '@theme/PageHeader.vue';
 
 import { useScrollPromise } from '@vuepress/theme-default/lib/client/composables';
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 
+const scrollPromise = useScrollPromise();
+const onBeforeEnter = scrollPromise.resolve;
+const onBeforeLeave = scrollPromise.pending;
+
+const defaultHeaderSize = 64;
+const mobileHeaderSize = 128;
 const mobileBreakpoint = 980;
 const evaluateWindowWidth = () => window.innerWidth <= mobileBreakpoint;
 
@@ -56,9 +62,13 @@ window.addEventListener('resize', () => {
   isMobile.value = evaluateWindowWidth();
 });
 
-const scrollPromise = useScrollPromise();
-const onBeforeEnter = scrollPromise.resolve;
-const onBeforeLeave = scrollPromise.pending;
+watch(isMobile, (current) => {
+  const root = document.querySelector(':root');
+  root.style.setProperty(
+    '--navbar-height',
+    `${(current ? mobileHeaderSize : defaultHeaderSize)}px`,
+  );
+}, { immediate: true });
 </script>
 
 <style lang="less">
