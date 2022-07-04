@@ -6,6 +6,7 @@ prev:
   link: /utilities/grid/row-start-end-span
 ---
 ## Usage
+
 <code-well-header class="d-fl-col5 d-ta-center d-flg8 d-fw-wrap d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn102" custom>
   <div class="d-d-flex d-fw-wrap d-ac-center d-p8 d-w100p d-hmn216 d-bar8">
     <div v-for="{ class: className, output } in cursor" class="d-fl-center d-m8 d-p16 d-bgc-purple-300 d-fs12 d-ff-mono d-bar4" :class="className">.{{ className }}</div>
@@ -40,6 +41,7 @@ prev:
 </script>
 
 ## Classes
+
 <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
   <utility-class-table>
     <template #content>

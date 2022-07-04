@@ -11,6 +11,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-input--default
 </code-well-header>
 
 ## Usage
+
 This component combines both the `input` and `textarea` elements as options within a single component. Its default presentation includes a paired text `label`.
 
 <div class="dialtone-usage">
@@ -35,14 +36,16 @@ This component combines both the `input` and `textarea` elements as options with
 </div>
 
 ### Best practices
+
 - The length of the text input provides a hint to users as to how much text to enter.
 - Only show error validation messages or stylings after a user has interacted with a particular field.
 - Do not use placeholder text (i.e. `placeholder` attribute) in place of an accessible `label`.
 - Consider the type of content a user may enter to aid mobile device entry; mobile devices typically surface a keyboard UI attuned to the type. For example, type="tel" will surface a <a href="http://html5doctor.com/html5-forms-input-types/#input-tel">phone keyboard</a>.
 
-
 ## Variants and Examples
+
 ### Base Styles
+
 An input is normally paired with a label, but there are times when it can be used without a label.  Placeholder text should primarily be used as a content prompt and only provided when needed.
 
 <code-well-header>
@@ -94,6 +97,7 @@ An input is normally paired with a label, but there are times when it can be use
 ```
 
 ### With Description Text
+
 <code-well-header>
   <div class="d-w100p">
     <div>
@@ -127,6 +131,7 @@ An input is normally paired with a label, but there are times when it can be use
 ```
 
 ### With Validation States
+
 Provides feedback to the user based on their interaction, or lack thereof, with an input.
 
 <code-well-header>
@@ -206,6 +211,7 @@ Provides feedback to the user based on their interaction, or lack thereof, with 
 ```
 
 ### With Icons
+
 <code-well-header>
   <div class="d-stack24 d-w100p">
     <div class="d-w100p">
@@ -271,6 +277,7 @@ Provides feedback to the user based on their interaction, or lack thereof, with 
 ```
 
 ### Input Sizes
+
 We offer different sizes for instances in which the interface requires a smaller or larger input. In general, though, use the base (medium) size input as much as possible, especially in forms.
 
 <code-well-header>
@@ -370,6 +377,7 @@ We offer different sizes for instances in which the interface requires a smaller
 ```
 
 ### Icon Sizes
+
 You may use different icon sizes in different sized inputs
 
 <code-well-header>
@@ -438,9 +446,11 @@ You may use different icon sizes in different sized inputs
 ```
 
 ## Classes
+
 <component-class-table component-name="input"></component-class-table>
 
 ## Accessibility
+
 - Make sure the `label` `for` attribute match the input `id`.
 - Avoiding removing `labels`. Labelled inputs are user-friendly.
 - Avoid relying on placeholder text as a substitute for a `label`.

@@ -10,6 +10,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-badge--default
 </code-well-header>
 
 ## Usage
+
 <div class="dialtone-usage">
   <div class="dialtone-usage__item dialtone-usage__item--do">
     <h3 class="dialtone-usage__hd dialtone-usage__hd--do"><icon-checkmark /> Use for</h3>
@@ -31,14 +32,16 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-badge--default
 </div>
 
 ### Best practices
+
 - While the color variant used should not be the sole indicator of information, choose color patterns that users can quickly scan and identify its intention.
 - Avoid long values, favoring a brief scannable word.
 
 ## Accessibility
+
 - Since a Badge may often reflect a value within an implied label, ensure a label is announced. For example, via `aria-label` or `aria-labeledby`.
 
-
 ## Variants and Examples
+
 <code-well-header>
   <div>
     <span v-for="i in classes" class="d-badge d-mr8 d-mb8" :class="i.class">Badge</span>
@@ -64,6 +67,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-badge--default
 ```
 
 ## Classes
+
 <component-class-table component-name="badge"></component-class-table>
 
 <script setup>

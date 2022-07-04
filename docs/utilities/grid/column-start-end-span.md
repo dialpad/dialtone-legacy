@@ -7,6 +7,7 @@ prev:
 ---
 
 ## Spanning columns
+
 Use `d-gc{#}` to span an element across multiple columns. This can be combined with `d-gc{#}` classes to span a set of columns. Use `d-gce{#}` to set an element's ending point. A reminder that CSS grid columns start at 1 and end at the number of columns + 1. For example in a 3-column grid, the starting line would be 1 and the ending line would be 4.
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn216" custom>
@@ -38,6 +39,7 @@ Use `d-gc{#}` to span an element across multiple columns. This can be combined w
 ```
 
 ## Setting the starting and ending column
+
 Use `d-gcs{#}` to set the starting point for an element. This can be combined with `d-gc{#}` classes to span a set of columns.
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-yellow-100 d-bgo50 d-w100p d-hmn216" custom>
@@ -61,6 +63,7 @@ Use `d-gcs{#}` to set the starting point for an element. This can be combined wi
 ```
 
 ## Classes
+
 <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
   <utility-class-table>
     <template #content>

@@ -11,6 +11,7 @@ The contrast ratio value is noted with the colors below.
 Please use **only** these colors or variations of these colors which pass WCAG 2.1 Level AA contrast ratio requirements.
 
 ## Usage
+
 Use `d-fc-{color}` to change an element's text color.
 
 <code-well-header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-black-050 d-w100p d-hmn102" custom>
@@ -22,6 +23,7 @@ Use `d-fc-{color}` to change an element's text color.
 ```
 
 ## Changing opacity
+
 Use `d-fco{n}` to change an element's text color opacity. You can also change font color opacity on `:hover`, `:focus`, `:focus-visible`, or in dark mode by using the respective `h:d-fco{n}`, `f:d-fco{n}`, `fv:d-fco{n}`, or `d:d-fco{n}` prefixes.
 
 <code-well-header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-black-050 d-w100p d-hmn102 d-stack8" custom>
@@ -49,6 +51,7 @@ Use `d-fco{n}` to change an element's text color opacity. You can also change fo
 ```
 
 ## Hover
+
 Use `h:d-fc-{color}` to change an element's text color `:hover` state.
 
 <code-well-header class="d-fl-center d-p24 d-bgc-black-050 d-w100p d-hmn102" custom>
@@ -60,6 +63,7 @@ Use `h:d-fc-{color}` to change an element's text color `:hover` state.
 ```
 
 ## Focus
+
 Use `f:d-fc-{color}` to change an element's text color `:focus` and `:focus-within` state.
 
 <code-well-header class="d-fl-center d-p24 d-bgc-black-050 d-w100p d-hmn102" custom>
@@ -71,6 +75,7 @@ Use `f:d-fc-{color}` to change an element's text color `:focus` and `:focus-with
 ```
 
 ## Focus visible
+
 Use `fv:d-fc-{color}` to change an element's text color on `:focus-visible` state [only when focused by keyboard].
 
 <code-well-header class="d-fl-center d-p24 d-bgc-black-050 d-w100p d-hmn102" custom>
@@ -100,6 +105,7 @@ Use `d:d-fc-{color}` to set a different text color when the user prefers dark mo
 </script>
 
 ## CSS Variables
+
 Dialtone provides a few abstracted colors CSS variables based on our [color stops](/design/colors/color-palette/).
 
 <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
@@ -129,6 +135,7 @@ Dialtone provides a few abstracted colors CSS variables based on our [color stop
 </div>
 
 ## Classes
+
 <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
   <utility-class-table>
     <template #content>

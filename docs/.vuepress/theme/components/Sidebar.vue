@@ -5,5 +5,5 @@
 </template>
 
 <script setup>
-  import SidebarItems from '@theme/SidebarItems.vue'
+import SidebarItems from '@theme/SidebarItems.vue';
 </script>

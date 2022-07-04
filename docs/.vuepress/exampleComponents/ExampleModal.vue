@@ -1,6 +1,13 @@
 <template>
-  <button class="d-btn d-btn--primary d-btn--sm" type="button" @click="openModal">Launch modal</button>
+  <button
+    class="d-btn d-btn--primary d-btn--sm"
+    type="button"
+    @click="openModal"
+  >
+    Launch modal
+  </button>
   <aside
+    id="modal-base"
     class="d-modal d-mn1"
     :class="{
       'd-modal--full': isFullScreen,
@@ -8,7 +15,6 @@
       'd-modal--animate-in': animateIn,
       'd-modal--animate-out': animateOut,
     }"
-    id="modal-base"
     tabindex="-1"
     role="dialog"
     aria-labelledby="modal-title"
@@ -16,7 +22,10 @@
     :aria-hidden="!showModal"
     @click.self="closeModal"
   >
-    <div class="d-modal__banner" :class="{'d-d-none': !showModalBanner}">
+    <div
+      class="d-modal__banner"
+      :class="{ 'd-d-none': !showModalBanner }"
+    >
       This example banner sits at the top of the modal.
     </div>
     <div
@@ -24,11 +33,13 @@
       :class="{
         'd-modal__dialog--animate-in': animateIn,
         'd-modal__dialog--animate-out': animateOut,
-        'd-modal__dialog--scrollable d-hmx764': isFixed
+        'd-modal__dialog--scrollable d-hmx764': isFixed,
       }"
       role="document"
     >
-      <h2 class="d-modal__header">Example title</h2>
+      <h2 class="d-modal__header">
+        Example title
+      </h2>
       <div class="d-modal__content">
         <p id="modal-description">
           {{ modalDescription }}
@@ -37,7 +48,11 @@
           </template>
         </p>
         <p class="d-mt16">
-          <a href="#" class="d-link" @click.prevent="openModalBanner">Show me a modal banner</a>
+          <a
+            href="#"
+            class="d-link"
+            @click.prevent="openModalBanner"
+          >Show me a modal banner</a>
         </p>
       </div>
       <footer class="d-modal__footer">
@@ -64,7 +79,7 @@
         @click="closeModal"
       >
         <span class="d-btn__icon">
-          <icon-close/>
+          <icon-close />
         </span>
       </button>
     </div>
@@ -72,24 +87,26 @@
 </template>
 
 <script>
-const MODAL_KINDS = ['full-screen', 'danger', 'fixed', 'base'];
 import IconClose from '@svgIcons/IconClose.vue';
+const MODAL_KINDS = ['full-screen', 'danger', 'fixed', 'base'];
 
 export default {
-  name: "example-modal",
+  name: 'ExampleModal',
   components: {
-    IconClose
+    IconClose,
   },
+
   props: {
     kind: {
       type: String,
       default: 'base',
       validator: (_kind) => {
         return MODAL_KINDS.includes(_kind);
-      }
-    }
+      },
+    },
   },
-  data() {
+
+  data () {
     return {
       showModal: false,
       showModalBanner: false,
@@ -100,21 +117,25 @@ export default {
           ut elementum velit. Nam vel consectetur turpis. Aenean consequat purus non nunc tincidunt rutrum. In semper
           pretium dui vel tempus. Proin et mi id mi egestas iaculis. Sed lacinia libero non molestie consequat. Sed
           efficitur purus eget lacus viverra volutpat. Nam luctus ac eros eu iaculis. Fusce non condimentum lorem.`,
-    }
+    };
   },
+
   computed: {
-    isFullScreen() {
+    isFullScreen () {
       return this.kind === 'full-screen';
     },
-    isDanger() {
+
+    isDanger () {
       return this.kind === 'danger';
     },
-    isFixed() {
+
+    isFixed () {
       return this.kind === 'fixed';
-    }
+    },
   },
+
   methods: {
-    openModal() {
+    openModal () {
       this.animateOut = false;
       this.animateIn = true;
 
@@ -122,10 +143,12 @@ export default {
 
       document.body.classList.add('d-of-hidden');
     },
-    openModalBanner() {
+
+    openModalBanner () {
       this.showModalBanner = true;
     },
-    closeModal() {
+
+    closeModal () {
       this.animateIn = false;
       this.animateOut = true;
 
@@ -133,9 +156,9 @@ export default {
       this.showModalBanner = false;
 
       document.body.classList.remove('d-of-hidden');
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style scoped>

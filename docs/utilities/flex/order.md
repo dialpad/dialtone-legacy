@@ -7,6 +7,7 @@ next:
 ---
 
 ## Example
+
 By default, items are ordered by their position in the DOM. To re-order an element, use `d-order{#}`.
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn102" custom>
@@ -26,6 +27,7 @@ By default, items are ordered by their position in the DOM. To re-order an eleme
 ```
 
 ## Classes
+
 <utility-class-table>
   <template #content>
     <tbody>

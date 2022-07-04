@@ -1,7 +1,7 @@
 const { path } = require('@vuepress/utils');
 const { defaultTheme } = require('vuepress');
 const { mediumZoomPlugin } = require('@vuepress/plugin-medium-zoom');
-const { activeHeaderLinksPlugin } = require("@vuepress/plugin-active-header-links");
+const { activeHeaderLinksPlugin } = require('@vuepress/plugin-active-header-links');
 
 exports.dialtoneTheme = (options) => {
   return {
@@ -16,15 +16,15 @@ exports.dialtoneTheme = (options) => {
       '@theme/Sidebar.vue': path.resolve(__dirname, './components/Sidebar.vue'),
       '@theme/PageHeader.vue': path.resolve(__dirname, './components/PageHeader.vue'),
       '@theme/PageToc.vue': path.resolve(__dirname, './components/PageToc.vue'),
-      '@theme/LivePreviewLayout.vue': path.resolve(__dirname, './layouts/LivePreviewLayout.vue')
+      '@theme/LivePreviewLayout.vue': path.resolve(__dirname, './layouts/LivePreviewLayout.vue'),
     },
     plugins: [
       mediumZoomPlugin({
-        selector: '.zoomable-image'
+        selector: '.zoomable-image',
       }),
       activeHeaderLinksPlugin({
-        headerLinkSelector: "a.toc-link"
+        headerLinkSelector: 'a.toc-link',
       }),
     ],
-  }
+  };
 };

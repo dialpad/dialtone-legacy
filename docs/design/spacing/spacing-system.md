@@ -10,6 +10,7 @@ next:
 ---
 
 ## Overview
+
 Dialtone uses a spacing system based on a 4-pixel system, providing half-steps where deemed necessary. This 4px unit forms the base measurement unit for spacing in Dialtone.
 
 <div class="d-ta-center">
@@ -21,9 +22,11 @@ Dialtone uses a spacing system based on a 4-pixel system, providing half-steps w
 <spacing-system-table kind="css"></spacing-system-table>
 
 ### Less Variables
+
 <spacing-system-table kind="less"></spacing-system-table>
 
 ## Utility Classes
+
 Aside from the spacing variables, it may be necessary to use the following utility classes to manage interface spacing:
 
 - [Auto Spacing](../../utilities/spacing/auto-spacing)

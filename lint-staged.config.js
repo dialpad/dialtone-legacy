@@ -1,3 +1,11 @@
 module.exports = {
-  '*.{js,jsx,vue}': 'vue-cli-service lint',
+  '*.{js, vue}': [
+    'npm run lint-staged:code',
+  ],
+  '*.md': [
+    'npm run lint-staged:docs',
+  ],
+  '*.{less, css}': [
+    'npm run lint-staged:library',
+  ],
 };

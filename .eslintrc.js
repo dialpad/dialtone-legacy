@@ -2,7 +2,8 @@ module.exports = {
   extends: [
     'standard',
     'semistandard',
-    'plugin:vue/recommended',
+    'plugin:vue/base',
+    'plugin:vue/vue3-recommended',
     'plugin:vuejs-accessibility/recommended',
   ],
   env: {
@@ -52,9 +53,9 @@ module.exports = {
     'vue/valid-next-tick': ['error'],
     'vue/block-tag-newline': ['error'],
     'vue/no-duplicate-attr-inheritance': ['error'],
-    'vue/no-bare-strings-in-template': ['error'],
-    'vue/no-undef-components': ['error'],
-    'vue/no-unused-properties': ['warn'],
+    'vue/no-undef-components': ['error', {
+      ignorePatterns: ['icon-', 'router-link', 'toc'],
+    }],
     'vue/v-on-event-hyphenation': ['error'],
     'vue/no-template-target-blank': ['error'],
     'vue/no-static-inline-styles': ['error'],
@@ -98,5 +99,6 @@ module.exports = {
     'vue/space-infix-ops': 'error',
     'vue/space-unary-ops': ['error', { words: true, nonwords: false }],
     'vue/template-curly-spacing': ['error', 'never'],
+    'vue/no-v-html': 'off',
   },
 };

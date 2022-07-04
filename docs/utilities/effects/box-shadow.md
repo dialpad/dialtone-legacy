@@ -27,7 +27,6 @@ Use `d-bs-{n}` to add an outer box shadow to an element.
 
 Use `d-bs-none` to remove a box shadow to an element.
 
-
 <code-well-header class="d-fl-center d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmn102" custom>
   <div class="d-fl-center d-p16 d-bar8 d-bgc-white d-fs18 d-fw-bold d-bs-none">.d-bs-none</div>
 </code-well-header>
@@ -41,7 +40,6 @@ Use `d-bs-none` to remove a box shadow to an element.
 
 Use `h:d-bs-{n}` to change an element's `:hover` state box shadow.
 
-
 <code-well-header class="d-fl-center d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn102" custom>
   <div class="d-fl-center d-p16 d-bar8 d-bgc-white d-fs18 d-fw-bold d-bs-none h:d-bs-lg">Hover over me</div>
 </code-well-header>
@@ -54,7 +52,6 @@ Use `h:d-bs-{n}` to change an element's `:hover` state box shadow.
 ## Focus
 
 Use `f:d-bs-{n}` to change an element's `:focus` and `:focus-within` state box shadow.
-
 
 <code-well-header class="d-fl-center d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmn102" custom>
   <div tabindex="0" class="d-fl-center d-p16 d-bar8 d-bgc-white d-fs18 d-fw-bold d-bs-none f:d-bs-lg">Click on me</div>

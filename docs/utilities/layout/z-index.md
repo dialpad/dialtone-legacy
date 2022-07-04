@@ -7,6 +7,7 @@ next:
 ---
 
 ## Classes
+
 Set an element's z-index by using a class (`.d-zi-{level}`>). These classes match up with the variables names listed above. The table below lists the available z-index levels, class names, and the CSS output.
 
 <utility-class-table>
@@ -25,6 +26,7 @@ Set an element's z-index by using a class (`.d-zi-{level}`>). These classes matc
 </script>
 
 ## Variables
+
 When writing Less, you can set an element's z-index by using a variable (`@zi-{level}`). The table below lists the available variables, output, and a description for when they should be used.
 
 <table class="d-table dialtone-doc-table">

@@ -9,6 +9,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-toast--default
 [//]: # (Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi massa ante, tempus vitae lacus id, luctus tristique lorem. Mauris feugiat massa ex, id aliquet mi tempor non. Curabitur non tristique lectus. Fusce ut nisl non diam dignissim viverra. In posuere dui arcu, sed eleifend massa faucibus sed. Phasellus quis leo vitae erat pellentesque venenatis id vitae lectus. Suspendisse convallis, metus a congue tincidunt, velit sem tincidunt dui, eget auctor ipsum ipsum in ex. Nullam lobortis, mauris vel vestibulum rutrum, lorem elit vehicula est, nec viverra ante erat nec dolor. Proin at placerat tortor. Nam ullamcorper metus et eros porta, at lacinia leo scelerisque. Curabitur finibus sollicitudin odio tempor finibus. Donec lobortis metus vitae mollis gravida.)
 
 ## Variants and Examples
+
 <example-toast />
 
 ```html
@@ -31,9 +32,11 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-toast--default
 ```
 
 ## Classes
+
 <component-class-table component-name="toast" />
 
 ## Accessibility
+
 Avoid using toast for critical information since toast disappears automatically and make sure
 to provide enough time to read the message and act consequently. For best accessible user experience, the amount of
 time a toast displays for should be user configurable.

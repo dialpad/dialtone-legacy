@@ -7,6 +7,7 @@ next:
 ---
 
 ## Percentages
+
 Use `d-wmn{n}p` to set a minimum width percentage for an element. This can be combined with `d-w{n}p` and `d-wmx{n}` to have an element fill a certain height range.
 
 <code-well-header class="d-d-flex d-jc-center d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-flow16" custom>
@@ -18,6 +19,7 @@ Use `d-wmn{n}p` to set a minimum width percentage for an element. This can be co
 ```
 
 ## Fixed
+
 Use `d-wmn{n}` to set a fixed minimum width for an element. This can be combined with `d-w{n}p` and `d-wmx{n}` to have an element fill a certain height range.
 
 <code-well-header class="d-d-flex d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-flow16 d-of-x-scroll d-fs24 d-fw-bold d-ta-center" custom>
@@ -37,6 +39,7 @@ Use `d-wmn{n}` to set a fixed minimum width for an element. This can be combined
 </script>
 
 ## Classes
+
 <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
   <table class="d-table dialtone-doc-table">
     <thead>

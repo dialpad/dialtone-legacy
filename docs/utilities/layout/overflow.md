@@ -4,6 +4,7 @@ desc: Utilities for controlling how an element handles content that is too large
 ---
 
 ## Examples
+
 <code-well-header  class="d-d-flex d-fd-row d-fw-wrap d-p24 d-pb48 d-bgc-purple-100 d-bgo50 d-w100p d-hmn216" custom>
     <div v-for="{ class: className } in overflow" class="d-w216 d-h216 d-m6 d-p12 d-bar4 d-bgc-purple-200 d-bgo75" :class="`d-of-${className}`">
         <code>.d-of-{{ className }}</code>
@@ -34,6 +35,7 @@ desc: Utilities for controlling how an element handles content that is too large
 </script>
 
 ## Classes
+
 The `overflow` CSS shorthand property sets the desired behavior for how content is handled when it exceeds the wrapper's bounds in both directions (x-axis and then y-axis).
 
 <table class="d-table dialtone-doc-table">

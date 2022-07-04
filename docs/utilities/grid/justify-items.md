@@ -4,6 +4,7 @@ desc: Utilities for controlling how grid items align along their inline axis.
 ---
 
 ## Auto
+
 Use `d-ji-auto` to justify grid items automatically along their inline axis. This is the default value.
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn102" custom>
@@ -25,6 +26,7 @@ Use `d-ji-auto` to justify grid items automatically along their inline axis. Thi
 ```
 
 ## Start
+
 Use `d-ji-start` to justify items against the start of their inline axis. Note that this does not work on flexed objects, only grid objects.
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-green-100 d-bgo50 d-w100p d-hmn102" custom>
@@ -46,6 +48,7 @@ Use `d-ji-start` to justify items against the start of their inline axis. Note t
 ```
 
 ## End
+
 Use `d-ji-end` to justify items against the end of their inline axis. Note that this does not work on flexed objects, only grid objects.
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmn102" custom>
@@ -67,6 +70,7 @@ Use `d-ji-end` to justify items against the end of their inline axis. Note that 
 ```
 
 ## Center
+
 Use `d-ji-center` to justify items to the center of their inline axis.
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-red-100 d-bgo50 d-w100p d-hmn102" custom>
@@ -88,6 +92,7 @@ Use `d-ji-center` to justify items to the center of their inline axis.
 ```
 
 ## Classes
+
 <utility-class-table>
   <template #content>
     <tbody>

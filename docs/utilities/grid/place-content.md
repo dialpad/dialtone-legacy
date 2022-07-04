@@ -4,6 +4,7 @@ desc: Utilities for controlling how grid items are aligned along both the block 
 ---
 
 ## Stretch
+
 Use `d-plc-stretch{-n}` to stretch grid items along the block and inline axis.
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn102" custom>
@@ -25,6 +26,7 @@ Use `d-plc-stretch{-n}` to stretch grid items along the block and inline axis.
 ```
 
 ## Start
+
 Use `d-plc-start{-n}` to align grid items along the start of the block and/or inline axis.
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-green-100 d-bgo50 d-w100p d-hmn102" custom>
@@ -46,6 +48,7 @@ Use `d-plc-start{-n}` to align grid items along the start of the block and/or in
 ```
 
 ## End
+
 Use `d-plc-end{-n}` to align grid items along the end of the block and/or inline axis.
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmn102" custom>
@@ -67,6 +70,7 @@ Use `d-plc-end{-n}` to align grid items along the end of the block and/or inline
 ```
 
 ## Center
+
 Use `d-plc-center{-n}` to align grid items along the center of the block and/or inline axis.
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-red-100 d-bgo50 d-w100p d-hmn102" custom>
@@ -88,6 +92,7 @@ Use `d-plc-center{-n}` to align grid items along the center of the block and/or 
 ```
 
 ## Space Evenly
+
 Use `d-plc-space-evenly{-n}` to distribute grid items evenly along the block axis.
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-yellow-100 d-bgo50 d-w100p d-hmn102" custom>
@@ -109,6 +114,7 @@ Use `d-plc-space-evenly{-n}` to distribute grid items evenly along the block axi
 ```
 
 ## Space Around
+
 Use `d-plc-space-around{-n}` to distribute grid items so there is an equal amount of space around each row on the block axis.
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmn102" custom>
@@ -130,6 +136,7 @@ Use `d-plc-space-around{-n}` to distribute grid items so there is an equal amoun
 ```
 
 ## Space Between
+
 Use `d-plc-space-between{-n}` to distribute grid items along the block axis so that there is an equal space between each row.
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn102" custom>
@@ -155,6 +162,7 @@ Use `d-plc-space-between{-n}` to distribute grid items along the block axis so t
 </script>
 
 ## Classes
+
 <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
   <utility-class-table>
     <template #content>

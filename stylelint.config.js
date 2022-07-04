@@ -2,9 +2,12 @@ module.exports = {
   ignoreFiles: [
     '**/node_modules',
     '**/dist/**/*',
-    'docs/_site/**/*',
+    'docs/.vuepress/**/*',
     'docs/assets/css/**/*',
-    'docs/assets/fonts/**/*', '**/*.js',
+    'docs/assets/fonts/**/*',
+    '**/*.js',
+    '**/*.vue',
+    '**/*.md',
   ],
   extends: [
     'stylelint-config-standard',

@@ -28,6 +28,7 @@ desc: Utility classes to change an element’s position type.
 ```
 
 ## Classes
+
 Set an element’s position by using the position classes listed in the table below. Starting in v5.8.0, Dialtone began providing immutable type classes, meaning they include an <span class="code-example--inline">!important</span> to override CSS specificity.
 
 <utility-class-table>

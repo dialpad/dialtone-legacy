@@ -5,12 +5,12 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-button--defaul
 ---
 
 ### Live preview
+
 <live-preview :code="code"></live-preview>
 
 ## Usage
 
 `button` and link (`<a>`) HTML elements each describe a specific intent. Understanding the distinction is important: if it goes somewhere, use a [Link](link.html). If an action occurs, use a Button.
-
 
 <div class="dialtone-usage">
   <div class="dialtone-usage__item dialtone-usage__item--do">
@@ -143,8 +143,8 @@ Dialtone provides four core button **types**, each with three levels of **import
   </tbody>
 </table>
 
-
 ### Base
+
 The base button should be the go-to button for most of your needs. When in doubt, use this style. To help provide clarity to users, it is generally recommended to use only one primary button style within a section or page.
 
 <code-well-header>
@@ -168,6 +168,7 @@ The base button should be the go-to button for most of your needs. When in doubt
 ```
 
 ### Danger
+
 The danger button style is used to communicate destructive actions such as deleting content, accounts, or canceling services.
 
 <code-well-header>
@@ -191,6 +192,7 @@ The danger button style is used to communicate destructive actions such as delet
 ```
 
 ### Inverted
+
 The inverted button style is used to visually separate buttons set on darker backgrounds.
 
 <code-well-header bgclass="d-bgc-black-800">
@@ -214,6 +216,7 @@ The inverted button style is used to visually separate buttons set on darker bac
 ```
 
 ### Muted
+
 The muted button style is used to communicate non-primary actions for contexts in which the base style may not work (e.g. colored backgrounds, validation components, etc). This style’s use should be rare. When in doubt, use the [base button style](#base).
 
 <code-well-header>
@@ -233,6 +236,7 @@ The muted button style is used to communicate non-primary actions for contexts i
 ```
 
 ### Disabled
+
 Buttons can be disabled using either the `disabled` attribute or a Dialtone class. Use the attribute when a button should appear disabled and not recieve focus; use the class when a button should appear disabled but still recieve focus (i.e. a disabled button with a tooltip). Using the class also requires `aria-disabled` and a wrapper to display the "not allowed" pointer. Additional javascript implementation is required to prevent the click event.
 All button styles and variations appear the same when disabled.
 
@@ -257,6 +261,7 @@ All button styles and variations appear the same when disabled.
 ```
 
 ### Active
+
 Buttons can be set to active state using the `.d-btn--active` Dialtone class.
 Different button styles and variations appear different when active.
 
@@ -298,6 +303,7 @@ Different button styles and variations appear different when active.
 ```
 
 ### Link
+
 Buttons can be styled as a [Link](components/link.html) in situations for which you need the appearance of a link but behavior of a button. Using the `button` element provides a better accessibility experience.
 
 <code-well-header>
@@ -311,6 +317,7 @@ Buttons can be styled as a [Link](components/link.html) in situations for which 
 ```
 
 ### Loading
+
 Loading buttons are useful for communicating a delay between the button interaction and its action taking place. Every button style can accept the loading button class, though we only provide a few possible examples.
 
 <code-well-header>
@@ -334,6 +341,7 @@ Loading buttons are useful for communicating a delay between the button interact
 ```
 
 ### Icon Only
+
 Sometimes an icon-only, circle button is desired. These buttons are used for toggling actions, navigation, or closing UI elements. Only the following styles accept circle button classes.
 
 <code-well-header>
@@ -403,6 +411,7 @@ If you want to use the rectangular button, use the icon only styles.
 ```
 
 ### With Icons
+
 Button labels can include an icon next to the text. Every button style can accept icon classes, though we only provide a few possible examples.
 
 <code-well-header>
@@ -454,6 +463,7 @@ Button labels can include an icon next to the text. Every button style can accep
 ```
 
 ### Branded
+
 We provide the following branded buttons for log-in and sign-up workflows.
 
 <code-well-header>
@@ -486,6 +496,7 @@ We provide the following branded buttons for log-in and sign-up workflows.
 ```
 
 ### Sizes
+
 The base button font size is 16px and should be used in most cases. Every button style can accept size classes, though we only provide a few possible examples.
 
 <code-well-header>
@@ -517,6 +528,7 @@ The base button font size is 16px and should be used in most cases. Every button
 ```
 
 ## Classes
+
 <component-class-table component-name="button"></component-class-table>
 
 <script setup>

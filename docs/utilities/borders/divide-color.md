@@ -4,6 +4,7 @@ desc: Utilities for controlling the border color between an element's child item
 ---
 
 ## Vertical Dividers
+
 Use `d-divide-y{n}` to create a divider between an element's child items.
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-green-100 d-bgo50 d-w100p d-hmn102" custom>
@@ -23,6 +24,7 @@ Use `d-divide-y{n}` to create a divider between an element's child items.
 ```
 
 ## Horizontal Dividers
+
 Use `d-divide-x{n}` to create a divider between an element's child items.
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn102" custom>
@@ -42,6 +44,7 @@ Use `d-divide-x{n}` to create a divider between an element's child items.
 ```
 
 ## Changing opacities
+
 Use `d-dco{n}` to change a divider opacity value.
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmn102" custom>
@@ -65,6 +68,7 @@ Use `d-dco{n}` to change a divider opacity value.
 </script>
 
 ## Classes
+
 <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
   <utility-class-table>
     <template #content>

@@ -4,6 +4,7 @@ desc: Utilities for controlling an element's text overflow.
 ---
 
 ## Truncate
+
 Use `d-truncate` to truncate an element's text.
 
 <code-well-header class="d-fl-center d-p24 d-bgc-green-100 d-bgo50 d-w100p d-hmn102" custom>
@@ -17,6 +18,7 @@ Use `d-truncate` to truncate an element's text.
 ```
 
 ## Ellipsis
+
 Use `d-to-ellipsis` to truncate an element's overflowing text with an ellipsis (`...`) if needed.
 
 <code-well-header class="d-fl-center d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmn102" custom>
@@ -30,6 +32,7 @@ Use `d-to-ellipsis` to truncate an element's overflowing text with an ellipsis (
 ```
 
 ## Clip
+
 Use `d-to-clip` to clip an element's overflowing text if needed.
 
 <code-well-header class="d-fl-center d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn102" custom>
@@ -42,8 +45,8 @@ Use `d-to-clip` to clip an element's overflowing text if needed.
 <p class="d-of-hidden d-to-clip">...</p>
 ```
 
-
 ## Classes
+
 <utility-class-table>
   <template #content>
     <tbody>

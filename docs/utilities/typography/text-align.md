@@ -4,6 +4,7 @@ desc: Utilities for controlling an element's text alignment.
 ---
 
 ## Usage
+
 Use `d-ta-{n}` to change an element's text alignment.
 
 <code-well-header class="d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn102 d-of-auto" custom>
@@ -34,6 +35,7 @@ Use `d-ta-{n}` to change an element's text alignment.
 </script>
 
 ## Classes
+
 <utility-class-table>
   <template #content>
     <tbody>

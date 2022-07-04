@@ -4,6 +4,7 @@ desc: Utilities for controlling an element's text transform.
 ---
 
 ## Baseline
+
 Use `d-va-baseline` to vertically align an element to the baseline.
 
 <code-well-header class="d-px64 d-py32 d-bgc-green-100 d-bgo50 d-w100p" custom>
@@ -21,6 +22,7 @@ Use `d-va-baseline` to vertically align an element to the baseline.
 ```
 
 ## Top
+
 Use `d-va-top` to vertically align an element to the top.
 
 <code-well-header class="d-px64 d-py32 d-bgc-purple-100 d-bgo50 d-w100p" custom>
@@ -38,6 +40,7 @@ Use `d-va-top` to vertically align an element to the top.
 ```
 
 ## Middle
+
 Use `d-va-middle` to vertically align an element to middle.
 
 <code-well-header class="d-px64 d-py32 d-bgc-pink-100 d-bgo50 d-w100p" custom>
@@ -55,6 +58,7 @@ Use `d-va-middle` to vertically align an element to middle.
 ```
 
 ## Bottom
+
 Use `d-va-bottom` to vertically align an element to the bottom.
 
 <code-well-header class="d-px64 d-py32 d-bgc-pink-100 d-bgo50 d-w100p" custom>
@@ -72,6 +76,7 @@ Use `d-va-bottom` to vertically align an element to the bottom.
 ```
 
 ## Text Top
+
 Use `d-va-text-top` to vertically align an element to text top.
 
 <code-well-header class="d-px64 d-py32 d-bgc-yellow-100 d-bgo50 d-w100p" custom>
@@ -89,6 +94,7 @@ Use `d-va-text-top` to vertically align an element to text top.
 ```
 
 ## Text Bottom
+
 Use `d-va-text-bottom` to vertically align an element to text bottom.
 
 <code-well-header class="d-px64 d-py32 d-bgc-red-100 d-bgo50 d-w100p" custom>
@@ -106,6 +112,7 @@ Use `d-va-text-bottom` to vertically align an element to text bottom.
 ```
 
 ## Classes
+
 <utility-class-table>
   <template #content>
     <tbody>

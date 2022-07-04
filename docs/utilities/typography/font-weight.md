@@ -4,6 +4,7 @@ desc: Utilities to change an element's font-weight.
 ---
 
 ## Classes
+
 <utility-class-table>
   <template #content>
     <tbody>
@@ -20,6 +21,7 @@ desc: Utilities to change an element's font-weight.
 </utility-class-table>
 
 ## Usage
+
 Use `d-fw-{n}` to change an element's font-weight.
 
 <code-well-header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-purple-100 d-w100p d-hmn102" custom>
@@ -41,6 +43,7 @@ Use `d-fw-{n}` to change an element's font-weight.
 </script>
 
 ## Variables
+
 <table class="d-table dialtone-doc-table">
   <thead>
       <tr>

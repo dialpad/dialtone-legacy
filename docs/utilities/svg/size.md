@@ -54,6 +54,7 @@ Use `d-svg--size100p` to set the size of an SVG to the size of the containing el
 </script>
 
 ## Classes
+
 <utility-class-table>
   <template #content>
     <tbody>

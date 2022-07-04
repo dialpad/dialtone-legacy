@@ -4,6 +4,7 @@ desc: Utilities for creating an background gradient and controlling its stops.
 ---
 
 ## Starting color
+
 Use `d-bgg-from-{color}` to declare the gradient starting color stop.
 
 <code-well-header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-black-050 d-w100p d-hmn102" custom>
@@ -15,6 +16,7 @@ Use `d-bgg-from-{color}` to declare the gradient starting color stop.
 ```
 
 ## Ending color
+
 Use `d-bgg-to-{color}` to declare the gradient ending color stop.
 
 <code-well-header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-black-050 d-w100p d-hmn102" custom>
@@ -26,6 +28,7 @@ Use `d-bgg-to-{color}` to declare the gradient ending color stop.
 ```
 
 ## Changing opacities
+
 Use `d-bgg-(from|to)-o{n}` to change the opacity values of each gradient color stop. You can also change the opacity values of each gradient color stop on `:hover`, `:focus`, `:focus-visible`, or in dark mode by using the respective `h:d-bgg-(from|to)-o{n}`, `f:d-bgg-(from|to)-o{n}`, `fv:d-bgg-(from|to)-o{n}`, `d:d-bgg-(from|to)-o{n}` prefixes.
 
 <code-well-header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-black-050 d-w100p d-hmn102 d-stack8" custom>
@@ -53,6 +56,7 @@ Use `d-bgg-(from|to)-o{n}` to change the opacity values of each gradient color s
 ```
 
 ## Hover
+
 Use `h:d-bgg-{from|to}-{color}` to change an element's background gradient color spot when in an `:hover` state.
 
 <code-well-header class="d-fl-center d-p24 d-bgc-black-050 d-w100p d-hmn102" custom>
@@ -64,6 +68,7 @@ Use `h:d-bgg-{from|to}-{color}` to change an element's background gradient color
 ```
 
 ## Focus
+
 Use `f:d-bgg-{from|to}-{color}` to change an element's background gradient starting and ending stops in `:focus` and `:focus-within` states.
 
 <code-well-header class="d-fl-center d-p24 d-bgc-black-050 d-w100p d-hmn102" custom>
@@ -75,6 +80,7 @@ Use `f:d-bgg-{from|to}-{color}` to change an element's background gradient start
 ```
 
 ## Focus visible
+
 Use `fv:d-bgg-{from|to}-{color}` to change an element's background gradient starting and ending stops in `:focus-visible` state [only when focused by keyboard].
 
 <code-well-header class="d-fl-center d-p24 d-bgc-black-050 d-w100p d-hmn102" custom>
@@ -91,6 +97,7 @@ Use `fv:d-bgg-{from|to}-{color}` to change an element's background gradient star
 </script>
 
 ## Directions
+
 To create a background gradient, first declare the desired gradient and, if applicable, the direction. All classes with directions are linear gradients. Radial gradients start from the center and work out to the edge. Conic gradients progressively work around a circle.
 
 <utility-class-table>
@@ -109,6 +116,7 @@ To create a background gradient, first declare the desired gradient and, if appl
 </utility-class-table>
 
 ## Color Stops
+
 The starting stop (`d-bgg-from-{color}`) should be declared. Optionally an ending stop (`d-bgg-to-{color}`) can also be declared.
 
 <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">

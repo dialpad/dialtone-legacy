@@ -6,6 +6,7 @@ desc: Utility classes to assign an element’s top, right, bottom, or left posit
 ## Positive Coordinates
 
 ### Examples
+
 Use the `top|right|bottom|left|x|y|all` utility classes to absolutely position elements within the nearest positioned element.
 
 <code-well-header class="d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn216 d-d-grid d-g-cols4 d-gg24 d-pi-center sm:d-fs10 xl:d-fs18 d-fs24 d-fw-bold" custom>
@@ -74,6 +75,7 @@ Use the `top|right|bottom|left|x|y|all` utility classes to absolutely position e
 ```
 
 ### Classes
+
 <div class="d-w100p d-of-auto">
   <table class="d-table dialtone-doc-table">
     <thead>
@@ -102,6 +104,7 @@ Use the `top|right|bottom|left|x|y|all` utility classes to absolutely position e
 ## Negative Coordinates
 
 ### Examples
+
 Use the `top|right|bottom|left|x|y|all` utility classes to absolutely position elements within the nearest positioned element.
 
 <code-well-header class="d-p24 d-bgc-yellow-100 d-bgo50 d-w100p d-hmn216 d-d-grid d-g-cols4 d-gg24 d-pi-center sm:d-fs10 xl:d-fs18 d-fs24 d-fw-bold" custom>
@@ -168,6 +171,7 @@ Use the `top|right|bottom|left|x|y|all` utility classes to absolutely position e
 </script>
 
 ### Classes
+
 <div class="d-w100p d-of-auto">
   <table class="d-table dialtone-doc-table">
     <thead>

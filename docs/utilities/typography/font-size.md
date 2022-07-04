@@ -4,6 +4,7 @@ desc: Utilities to change an element's font-size.
 ---
 
 ## Usage
+
 Use `d-{fs|headline}{n}` to change an element's font-size.
 
 <code-well-header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-purple-100 d-w100p d-hmn102" custom>
@@ -42,6 +43,7 @@ Use `d-{fs|headline}{n}` to change an element's font-size.
 </script>
 
 ## Classes
+
 <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
   <table class="d-table dialtone-doc-table">
     <thead>

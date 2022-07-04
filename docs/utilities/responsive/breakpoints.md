@@ -10,11 +10,13 @@ next:
 ---
 
 ## PostCSS
+
 To create the responsive variations of classes we use <a href="https://www.npmjs.com/package/postcss">postcss</a> and our custom plugin
 <a href="https://www.npmjs.com/package/@dialpad/postcss-responsive-variations">@dialpad/postcss-responsive-variations</a>.
 This plugin takes the breakpoints and the classes you need to have responsive variations as arguments.
 
 ## Usage
+
 <code-well-header bgclass='d-bgc-purple-100'>
   <div class="d-fl-center d-w100p d-m8 d-p16 d-bgc-purple-300 d-bar4 d-fs20 d-fw-bold d-ta-center">This is visible on all screens</div>
   <div class="d-fl-center d-w100p d-m8 d-p16 d-bgc-purple-300 d-bar4 d-fs20 d-fw-bold d-ta-center d-d-none xl:d-d-block">This is visible on extra large screens</div>
@@ -32,6 +34,7 @@ This plugin takes the breakpoints and the classes you need to have responsive va
 ```
 
 ## Classes
+
 To help keep prefixes concise, we use abbreviations. This syntax is used consistently across all responsive classes. As the viewport size grows, you can change an elements properties. For example, you can set an element to display normally, but be hidden at smaller sizes: `.d-d-block .sm:d-d-none`.
 
 <table class="d-table dialtone-doc-table">

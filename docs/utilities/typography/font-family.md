@@ -4,6 +4,7 @@ desc: Utilities to change an element's font-family.
 ---
 
 ## Custom
+
 Use `d-ff-custom` to apply the theme's font-family.
 
 <code-well-header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-black-050 d-w100p d-hmn102" custom>
@@ -15,6 +16,7 @@ Use `d-ff-custom` to apply the theme's font-family.
 ```
 
 ## Sans-serif
+
 Use `d-ff-sans` to apply a Sans-Serif font stack.
 
 <code-well-header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-black-050 d-w100p d-hmn102" custom>
@@ -26,6 +28,7 @@ Use `d-ff-sans` to apply a Sans-Serif font stack.
 ```
 
 ## Mono
+
 Use `d-ff-mono` to apply a Sans-Serif font stack.
 
 <code-well-header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-black-050 d-w100p d-hmn102" custom>
@@ -37,6 +40,7 @@ Use `d-ff-mono` to apply a Sans-Serif font stack.
 ```
 
 ## Marketing
+
 Dialtone supports select marketing fonts and weights. Use the following combinations to apply the marketing font stack.
 
 <code-well-header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-black-050 d-w100p d-hmn102" custom>
@@ -68,6 +72,7 @@ Dialtone supports select marketing fonts and weights. Use the following combinat
 </script>
 
 ## CSS Variables
+
 <table class="d-table dialtone-doc-table">
   <thead>
     <tr>
@@ -84,6 +89,7 @@ Dialtone supports select marketing fonts and weights. Use the following combinat
 </table>
 
 ## Classes
+
 <table class="d-table dialtone-doc-table">
   <thead>
     <tr>

@@ -7,6 +7,7 @@ next:
 ---
 
 ## Usage
+
 Use `d-bgg-pattern-{pattern}-{dark|light}` to apply a pattern.
 
 <code-well-header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-black-050 d-w100p d-hmn102 d-stack8" custom>

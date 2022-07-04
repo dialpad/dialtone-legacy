@@ -4,6 +4,7 @@ desc: Utilities for controlling if or how an element's background image repeats.
 ---
 
 ## Usage
+
 Use `d-bgr-{n}` to how an element's background image repeats.
 
 <code-well-header class="d-fl-col4 d-fw-wrap d-flg12 d-p12 d-bgc-green-100 d-bgo50" custom>
@@ -44,4 +45,3 @@ const repeat = ['repeat', 'repeat-x', 'repeat-y', 'space', 'none', 'unset'];
     </tbody>
   </template>
 </utility-class-table>
-

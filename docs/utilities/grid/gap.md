@@ -4,6 +4,7 @@ desc: Utilities to control the spacing between columns, rows, or both in grids.
 ---
 
 ## Adding universal row and column gaps
+
 Use `d-gg{#}` to universally change the row and column gap space in grid layouts.
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn216" custom>
@@ -25,6 +26,7 @@ Use `d-gg{#}` to universally change the row and column gap space in grid layouts
 ```
 
 ## Independently changing row and column gaps
+
 Use `d-gcg{#}` or `d-grg{#}` to independently change the row and column gap space in grid layouts.
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-green-100 d-bgo50 d-w100p d-hmn216" custom>
@@ -61,6 +63,7 @@ Use `d-gcg{#}` or `d-grg{#}` to independently change the row and column gap spac
 </script>
 
 ## Classes
+
 <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
   <utility-class-table>
     <template #content>

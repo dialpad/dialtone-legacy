@@ -4,6 +4,7 @@ desc: Utilities for controlling list styling.
 ---
 
 ## Resetting a list
+
 Use `d-ls-reset` to reset the margin, padding, and list-style-type of a list. Reseting a list applies to the parent `ol` or `ul`, any child `li` elements, and any child `ol` or `ul` elements.
 
 <code-well-header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-purple-100 d-w100p d-hmn102" custom>
@@ -33,6 +34,7 @@ Use `d-ls-reset` to reset the margin, padding, and list-style-type of a list. Re
 ```
 
 ## Changing the list style type
+
 Use `d-ls-{disc|decimal}` to change an unordered list's bullet styling.
 
 <code-well-header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-green-100 d-w100p d-hmn102" custom>
@@ -76,6 +78,7 @@ Use `d-ls-{disc|decimal}` to change an unordered list's bullet styling.
 </script>
 
 ## Classes
+
 <utility-class-table>
   <template #content>
     <tbody>

@@ -4,6 +4,7 @@ desc: Utilities for controlling an element's text transform.
 ---
 
 ## Uppercase
+
 Use `d-tt-uppercase` to uppercase an element's text.
 
 <code-well-header class="d-fl-center d-p24 d-bgc-green-100 d-bgo50 d-w100p d-hmn102" custom>
@@ -15,6 +16,7 @@ Use `d-tt-uppercase` to uppercase an element's text.
 ```
 
 ## Lowercase
+
 Use `d-tt-lowercase` to lowercase an element's text.
 
 <code-well-header class="d-fl-center d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn102" custom>
@@ -26,6 +28,7 @@ Use `d-tt-lowercase` to lowercase an element's text.
 ```
 
 ## Capitalize
+
 Use `d-tt-capitalize` to capitalize an element's text.
 
 <code-well-header class="d-fl-center d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmn102" custom>
@@ -41,6 +44,7 @@ Use `d-tt-capitalize` to capitalize an element's text.
 </script>
 
 ## Classes
+
 <utility-class-table>
   <template #content>
     <tbody>

@@ -4,8 +4,8 @@ desc: Utility classes for changing an element's opacity.
 ---
 
 ## Usage
-Use `d-o{n}` to change the opacity of your element.
 
+Use `d-o{n}` to change the opacity of your element.
 
 <code-well-header class="d-fl-col5 d-flg8 d-fw-wrap d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmn102" custom>
   <div class="d-fl-center d-p16 d-bar8 d-bgc-pink-100 d-fc-pink-600 d-fs16 d-fw-bold d-o100">.d-o100</div>
@@ -14,8 +14,6 @@ Use `d-o{n}` to change the opacity of your element.
   <div class="d-fl-center d-p16 d-bar8 d-bgc-pink-100 d-fc-pink-600 d-fs16 d-fw-bold d-o25">.d-o25</div>
   <div class="d-fl-center d-p16 d-bar8 d-bgc-pink-100 d-fc-pink-600 d-fs16 d-fw-bold d-o0">.d-o0</div>
 </code-well-header>
-
-
 
 ```html
 <div class="d-o100">...</div>
@@ -46,6 +44,7 @@ Use `d-o{n}` to change the opacity of your element.
 </script>
 
 ## Classes
+
 <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
   <utility-class-table>
     <template #content>

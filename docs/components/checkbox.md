@@ -15,6 +15,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-checkbox--defa
 </code-well-header>
 
 ## Usage
+
 Checkboxes are an easily understandable way to indicate that users can select one or more answers to a question or items from a list. They visibly show users what’s been selected and makes it easy for them to “uncheck” an option, which can be difficult with other selection methods on a form (such as radio buttons or select menus).
 
 <div class="dialtone-usage">
@@ -40,6 +41,7 @@ Checkboxes are an easily understandable way to indicate that users can select on
 </div>
 
 ### Best practices
+
 - Users should be able to tap on or click on either the text `label` or the checkbox element itself to toggle an option, aiding accessibility.
 - Options that are listed vertically are easier to read than those listed horizontally. Horizontal listings can make it difficult to tell which label pertains to which checkbox.
 - Negative language in labels can be counterintuitive. For example, use “I want to receive a promotional email” instead of “I don’t want to receive promotional email.
@@ -52,7 +54,9 @@ Checkboxes are an easily understandable way to indicate that users can select on
   - `indeterminate`: children are a mix of checked and unchecked.
 
 ## Variants and Examples
+
 ### Base Styles
+
 <code-well-header>
   <fieldset class="d-stack8">
     <div class="d-checkbox-group">
@@ -160,6 +164,7 @@ Checkboxes are an easily understandable way to indicate that users can select on
 ```
 
 ### Indeterminate
+
 <code-well-header>
   <fieldset class="d-stack8">
     <div class="d-checkbox-group">
@@ -203,6 +208,7 @@ Checkboxes are an easily understandable way to indicate that users can select on
 ```
 
 ### Stacked Group
+
 <code-well-header>
   <fieldset class="d-stack8">
     <legend class="d-label">Call Blocking & Spam Protection</legend>
@@ -264,6 +270,7 @@ Checkboxes are an easily understandable way to indicate that users can select on
 ```
 
 ### With Description Text
+
 <code-well-header>
   <fieldset class="d-stack8">
     <legend class="d-label">Call Blocking & Spam Protection</legend>
@@ -337,6 +344,7 @@ Checkboxes are an easily understandable way to indicate that users can select on
 ```
 
 ### With Validation States
+
 <code-well-header>
   <fieldset class="d-stack8">
     <legend class="d-label">Call Blocking & Spam Protection</legend>
@@ -410,10 +418,13 @@ Checkboxes are an easily understandable way to indicate that users can select on
 ```
 
 ## Classes
+
 <component-class-table component-name="checkbox"></component-class-table>
 
 ## Accessibility
+
 The best accessibility is semantic HTML. Most screen readers understand how to parse inputs if they’re correctly formatted. When it comes to checkboxes, there are a few things to keep in mind:
+
 - All inputs should have an `id` attribute.
 - Associate checkbox labels with their inputs using the `for` attribute. This correlates with the checkbox's `id`.
 - If you have a group of related checkboxes, use a `fieldset` to group them and a `legend` to title the group. For further information, please visit Gov.UK’s article, <a href="https://accessibility.blog.gov.uk/2016/07/22/using-the-fieldset-and-legend-elements/">"Using the fieldset and legend elements"</a>.

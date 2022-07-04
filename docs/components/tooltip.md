@@ -16,7 +16,9 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-tooltip--defau
 [//]: # (Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi massa ante, tempus vitae lacus id, luctus tristique lorem. Mauris feugiat massa ex, id aliquet mi tempor non. Curabitur non tristique lectus. Fusce ut nisl non diam dignissim viverra. In posuere dui arcu, sed eleifend massa faucibus sed. Phasellus quis leo vitae erat pellentesque venenatis id vitae lectus. Suspendisse convallis, metus a congue tincidunt, velit sem tincidunt dui, eget auctor ipsum ipsum in ex. Nullam lobortis, mauris vel vestibulum rutrum, lorem elit vehicula est, nec viverra ante erat nec dolor. Proin at placerat tortor. Nam ullamcorper metus et eros porta, at lacinia leo scelerisque. Curabitur finibus sollicitudin odio tempor finibus. Donec lobortis metus vitae mollis gravida.)
 
 ## Variants and Examples
+
 ### Base Styles
+
 <code-well-header bgclass="d-bgc-black-050" class='d-hmn264'>
   <button class="d-btn d-btn--outlined d-tooltip--hover" type="button">
       <div class="d-tooltip d-tooltip__arrow--bottom-center d-ps-absolute">
@@ -60,6 +62,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-tooltip--defau
 ```
 
 ### Arrow Directions
+
 No arrow direction is assigned by default. You must select a direction. Twelve directions are offered: three on each face of the tooltip.
 
 <code-well-header>
@@ -74,9 +77,11 @@ No arrow direction is assigned by default. You must select a direction. Twelve d
 </code-well-header>
 
 ## Classes
+
 <component-class-table component-name="tooltip" />
 
 ## Accessibility
+
 <component-accessible-table component-name="tooltip" />
 
 <script>
@@ -84,17 +89,17 @@ export default {
   data() {
     return {
       directions: [
-        'top-left', 
-        'top-center', 
+        'top-left',
+        'top-center',
         'top-right',
-        'right-top', 
-        'right-center', 
+        'right-top',
+        'right-center',
         'right-bottom',
-        'bottom-left', 
-        'bottom-center', 
+        'bottom-left',
+        'bottom-center',
         'bottom-right',
-        'left-top', 
-        'left-center', 
+        'left-top',
+        'left-center',
         'left-bottom',
       ]
     }

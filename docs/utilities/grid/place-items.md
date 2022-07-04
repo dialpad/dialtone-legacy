@@ -4,6 +4,7 @@ desc: Utilities for controlling how grid items are aligned along their block and
 ---
 
 ## Stretch
+
 Use `d-pli-stretch{-n}` to stretch grid items along their block and inline axis.
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn102" custom>
@@ -25,6 +26,7 @@ Use `d-pli-stretch{-n}` to stretch grid items along their block and inline axis.
 ```
 
 ## Start
+
 Use `d-pli-start{-n}` to align grid items along the start of their block and/or inline axis.
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-green-100 d-bgo50 d-w100p d-hmn102" custom>
@@ -46,6 +48,7 @@ Use `d-pli-start{-n}` to align grid items along the start of their block and/or 
 ```
 
 ## End
+
 Use `d-pli-end{-n}` to align grid items along the end of their block and/or inline axis.
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmn102" custom>
@@ -67,6 +70,7 @@ Use `d-pli-end{-n}` to align grid items along the end of their block and/or inli
 ```
 
 ## Center
+
 Use `d-pli-center{-n}` to align grid items along the center of their block and/or inline axis.
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-red-100 d-bgo50 d-w100p d-hmn102" custom>
@@ -92,6 +96,7 @@ Use `d-pli-center{-n}` to align grid items along the center of their block and/o
 </script>
 
 ## Classes
+
 <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
   <utility-class-table>
     <template #content>

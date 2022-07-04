@@ -50,6 +50,7 @@ desc: Utilities to adjust an element's exterior spacing between other objects.
 ```
 
 ## Auto margins
+
 Auto margins allow an element to fill a remaining space within an object. This is especially useful in flex layouts.
 
 <code-well-header class="d-bgc-yellow-100 d-bgo50 d-w100p d-hmn216 d-p24 d-stack16" custom>
@@ -69,6 +70,7 @@ Auto margins allow an element to fill a remaining space within an object. This i
 </script>
 
 ## Classes
+
 Margins can be added to an element by using a utility class (i.e. `.d-m[#]`) or by using a directional class (i.e. `.d-m{t|r|b|l|y|x}[#]`).
 The margin utility classes help visually separate elements. Because layouts are highly contextual, margins are never applied natively to a component's outer wrapper. Instead you can use these margin classes to provide that space or the [Stack and Flow layouts](/utilities/layout/stacks/).
 

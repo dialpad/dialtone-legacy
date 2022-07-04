@@ -1,31 +1,47 @@
 <template>
-  <div :id="file" class="dialtone-icon-grid__item" v-if="!hidden">
-    <aside :data-selected="selectedStatus" class="dialtone-icon-card js-dialtone-icon-card">
+  <div
+    v-if="!hidden"
+    :id="file"
+    class="dialtone-icon-grid__item"
+  >
+    <aside
+      :data-selected="selectedStatus"
+      class="dialtone-icon-card js-dialtone-icon-card"
+    >
       <header class="dialtone-icon-card__header js-dialtone-icon-card-copy-area">
         <div :class="cardIconClass">
           <component
-            :is="dynamicIconComponent">
-          </component>
+            :is="dynamicIconComponent"
+          />
         </div>
-        <p class="dialtone-icon-card__subtitle d-tt-capitalize">{{ name }}
-          {{ (!isWeatherKind && variation) ? `(${variation})` : '' }}</p>
+        <p class="dialtone-icon-card__subtitle d-tt-capitalize">
+          {{ name }}
+          {{ (!isWeatherKind && variation) ? `(${variation})` : '' }}
+        </p>
       </header>
       <footer :class="cardFooterClass">
         <div class="dialtone-icon-card__content">
-          <h2 class="dialtone-icon-card__title d-tt-capitalize">{{ name }}
-            {{ (!isWeatherKind && variation) ? `(${variation})` : '' }}</h2>
+          <h2 class="dialtone-icon-card__title d-tt-capitalize">
+            {{ name }}
+            {{ (!isWeatherKind && variation) ? `(${variation})` : '' }}
+          </h2>
           <div class="dialtone-icon-card__list">
             <span class="dialtone-icon-card__list__item">
-              <strong>SVG:</strong> <span class="code-example">{{ file + '.svg' }}</span>
+              <strong>SVG:</strong> <span class="code-example">{{ `${file}.svg` }}</span>
             </span>
             <span class="dialtone-icon-card__list__item">
               <strong>Vue:</strong> <span class="code-example js-vue-file">{{ `<${vue} />` }}</span>
             </span>
-            <span class="dialtone-icon-card__list__item" v-if="code">
+            <span
+              v-if="code"
+              class="dialtone-icon-card__list__item"
+            >
               <strong>Codes:</strong> <span class="code-example">{{ code }}</span>
             </span>
           </div>
-          <p class="dialtone-icon-card__description">{{ desc }}</p>
+          <p class="dialtone-icon-card__description">
+            {{ desc }}
+          </p>
         </div>
       </footer>
     </aside>
@@ -33,80 +49,98 @@
 </template>
 
 <script>
-import {defineAsyncComponent} from "vue";
+import { defineAsyncComponent } from 'vue';
 
 export const ICON_KINDS = ['brand', 'patterns', 'spot', 'system', 'weather'];
 export const ICON_VARIATIONS = ['dark', 'light', 'night', 'day'];
 
 export default {
-  name: "BaseIcon",
+  name: 'BaseIcon',
   props: {
     name: {
       type: String,
-      required: true
+      required: true,
     },
+
     file: {
       type: String,
-      required: true
+      required: true,
     },
+
     desc: {
-      type: String
+      type: String,
+      default: '',
     },
+
     code: {
-      type: String
+      type: String,
+      default: '',
     },
+
     hidden: {
       type: Boolean,
       default: false,
     },
+
     vue: {
       type: String,
-      required: true
+      required: true,
     },
+
     kind: {
       type: String,
+      required: true,
       validator: (kind) => {
-        return ICON_KINDS.includes(kind)
-      }
+        return ICON_KINDS.includes(kind);
+      },
     },
+
     selected: {
       type: Boolean,
-      default: false
+      default: false,
     },
+
     variation: {
       type: String,
+      required: true,
       validator: (_variation) => {
         return ICON_VARIATIONS.includes(_variation);
       },
-    }
+    },
   },
+
   computed: {
-    isWeatherKind() {
+    isWeatherKind () {
       return this.kind === 'weather';
     },
-    isSpotKind() {
+
+    isSpotKind () {
       return this.kind === 'spot';
     },
-    selectedStatus() {
-      return this.selected ? 'yes' : 'no'
+
+    selectedStatus () {
+      return this.selected ? 'yes' : 'no';
     },
-    cardFooterClass() {
+
+    cardFooterClass () {
       return this.isSpotKind ? 'dialtone-icon-card__footer-spot-illustration' : 'dialtone-icon-card__footer';
     },
-    cardIconClass() {
+
+    cardIconClass () {
       return this.isSpotKind ? 'dialtone-icon-card__icon--autosize' : 'dialtone-icon-card__icon';
     },
-    dynamicIconComponent() {
+
+    dynamicIconComponent () {
       if (this.kind === 'patterns') {
-        return defineAsyncComponent(() => import(`../../../lib/dist/vue/patterns/${this.vue}.vue`))
+        return defineAsyncComponent(() => import(`../../../lib/dist/vue/patterns/${this.vue}.vue`));
       } else if (this.kind === 'spot') {
-        return defineAsyncComponent(() => import(`../../../lib/dist/vue/spot/${this.vue}.vue`))
+        return defineAsyncComponent(() => import(`../../../lib/dist/vue/spot/${this.vue}.vue`));
       } else {
-        return defineAsyncComponent(() => import(`../../../lib/dist/vue/icons/${this.vue}.vue`))
+        return defineAsyncComponent(() => import(`../../../lib/dist/vue/icons/${this.vue}.vue`));
       }
     },
   },
-}
+};
 </script>
 
 <style scoped>

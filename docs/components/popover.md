@@ -8,16 +8,19 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-popover--defau
 </code-well-header>
 
 ## Usage
+
 A Popover contains a dialog that will appear above other content when activated. It will always appear in a location relative to the anchor.
 If you are looking for a dialog that does not display relative to the anchor, see [Modal](components/modal/).
 Some common examples of popover usage: dropdown list, emoji picker dialog, add comment dialog.
 A popover can be modal or non-modal. Below are some guidelines on when to use a modal vs non-modal popover.
 
 Your popover should be modal when:
+
 - It contains scrollable content.
 - It contains components that hold user input state (input, checkbox).
 
 Your popover should be non-modal when:
+
 - It is not scrollable.
 - It contains only components that do not hold state (link, button).
 
@@ -45,8 +48,8 @@ Your popover should be non-modal when:
   </div>
 </div>
 
-
 ### Best practices
+
 - Popovers should be fairly small. If you are looking for more of a full size dialog solution see <a href="components/modal/">Modal</a>
 - Trigger using an anchor element, such as a button.
 - Render the dialog at the body element.
@@ -56,7 +59,9 @@ Your popover should be non-modal when:
 - Set the z-index of the dialog to var(--zi-modal-element) if modal, var(--zi-popover) if not.
 
 ## Variants and Examples
+
 ### Popover - Modal
+
 <code-well-header>
   <example-popover modal />
 </code-well-header>
@@ -75,6 +80,7 @@ Your popover should be non-modal when:
 ```
 
 ### Popover - Non Modal
+
 <code-well-header>
   <example-popover />
 </code-well-header>
@@ -92,6 +98,7 @@ Your popover should be non-modal when:
 ```
 
 ### With Header - Modal
+
 <code-well-header>
   <example-popover modal header>
     <template #content>
@@ -117,7 +124,9 @@ Your popover should be non-modal when:
   </div>
 </div>
 ```
+
 ### With Footer - Modal
+
 <code-well-header>
   <example-popover modal footer>
     <template #content>
@@ -145,11 +154,13 @@ Your popover should be non-modal when:
 ```
 
 ## Classes
+
 Popover must contain an anchor and content element. d-modal--transparent can be used as a sibling before the popover container if you wish to make the popover modal.
 
 <component-class-table component-name="popover" />
 
 ## Accessibility
+
 If your popover is modal, please see the accessibility section of this page regarding "focus trapping": <a href="components/modal/#accessibility">Modal Accessibility</a>. The same rules will apply here if your popover is modal.
 
 <component-accessible-table component-name="popover"/>

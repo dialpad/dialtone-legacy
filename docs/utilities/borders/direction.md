@@ -4,6 +4,7 @@ desc: Utilities for controlling an element's border.
 ---
 
 ## All sides
+
 Use `d-ba` to add a border to all sides of your element.
 
 <code-well-header class="d-fl-col5 d-flg8 d-fw-wrap d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmn102">
@@ -23,6 +24,7 @@ Use `d-ba` to add a border to all sides of your element.
 ```
 
 ## Individual sides
+
 Use `d-b{t|r|b|l|x|y}` to add a border to only specific sides of your element.
 
 <code-well-header class="d-fl-col4 d-flg8 d-fw-wrap d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn102">

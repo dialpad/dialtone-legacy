@@ -4,6 +4,7 @@ desc: Utilities to control an element's maximum height.
 ---
 
 ## Example
+
 Use `d-hmx{n}p` or `d-hmx{n}` to set a maximum height percentage for an element. This can be combined with `d-h{n}p` and `d-hmn{n}` to have an element fill a certain height range.
 
 <code-well-header class="d-d-flex d-jc-center d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmx216" custom>
@@ -21,6 +22,7 @@ Use `d-hmx{n}p` or `d-hmx{n}` to set a maximum height percentage for an element.
 </script>
 
 ## Classes
+
 <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
   <table class="d-table dialtone-doc-table">
     <thead>

@@ -4,6 +4,7 @@ desc: Utilities for controlling an element's background size.
 ---
 
 ## Usage
+
 Use `d-bgs-{n}` to control the size of element's background image.
 
 <code-well-header class="d-fl-col4 d-fw-wrap d-flg12 d-p12 d-bgc-orange-100 d-bgo50" custom>
@@ -30,7 +31,6 @@ Use `d-bgs-{n}` to control the size of element's background image.
 <script setup>
   const sizes = ['contain', 'cover', 'var', 'auto', 'unset'];
 </script>
-
 
 ## Classes
 
