@@ -7,6 +7,7 @@ next:
 ---
 
 ## Spanning rows
+
 Use `d-gr{#}` to span an element across multiple rows. This can be combined with `d-gc{#}` classes to span a set of columns.
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn216" custom>
@@ -28,6 +29,7 @@ Use `d-gr{#}` to span an element across multiple rows. This can be combined with
 ```
 
 ## Setting the starting and ending rows
+
 Use `d-grs{#}` to set the starting point for an element. This can be combined with `d-gc{#}` classes to span a set of columns.
 
 Use `d-gre{#}` to set an element's ending point. A reminder that CSS grid rows start at 1 and end at the number of rows + 1. For example in a 4-row grid, the starting line would be 1 and the ending line would be 5.
@@ -51,6 +53,7 @@ Use `d-gre{#}` to set an element's ending point. A reminder that CSS grid rows s
 ```
 
 ## Classes
+
 <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
   <utility-class-table>
     <template #content>

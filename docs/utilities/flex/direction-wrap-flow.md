@@ -4,6 +4,7 @@ desc: Utilities for setting an object's flex direction, wrap, and flow direction
 ---
 
 ## Flex Direction
+
 The `flex-direction` property declares a flex container’s main axis direction. The default value is row.
 
 <table class="d-table dialtone-doc-table">
@@ -50,6 +51,7 @@ The `flex-direction` property declares a flex container’s main axis direction.
 ```
 
 ## Flex Wrap
+
 The `flex-wrap` property declares a flex container’s wrapping status. The default value is nowrap.
 
 <table class="d-table dialtone-doc-table">
@@ -86,6 +88,7 @@ The `flex-wrap` property declares a flex container’s wrapping status. The defa
 ```
 
 ## Flex Flow
+
 The `flex-flow` property is a shorthand property that sets allows you to quickly set the above `flex-direction` and `flex-wrap` properties. By default all flex containers are set to `row` and `nowrap`.
 
 <table class="d-table dialtone-doc-table">

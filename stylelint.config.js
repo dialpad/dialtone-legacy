@@ -1,26 +1,35 @@
 module.exports = {
-  "ignoreFiles": ["**/node_modules", "**/dist/**/*", "docs/_site/**/*", "docs/assets/css/**/*", "docs/assets/fonts/**/*", "**/*.js"],
-  "extends": [
-    "stylelint-config-standard",
-    "stylelint-config-rational-order",
-    "stylelint-config-recommended-less"
+  ignoreFiles: [
+    '**/node_modules',
+    '**/dist/**/*',
+    'docs/.vuepress/**/*',
+    'docs/assets/css/**/*',
+    'docs/assets/fonts/**/*',
+    '**/*.js',
+    '**/*.vue',
+    '**/*.md',
   ],
-  "plugins": [
-    "stylelint-less",
-    "stylelint-no-px"
+  extends: [
+    'stylelint-config-standard',
+    'stylelint-config-rational-order',
+    'stylelint-config-recommended-less',
   ],
-  "customSyntax": "postcss-less",
-  "rules": {
-    "at-rule-no-unknown": [
+  plugins: [
+    'stylelint-less',
+    'stylelint-no-px',
+  ],
+  customSyntax: 'postcss-less',
+  rules: {
+    'at-rule-no-unknown': [
       true,
       {
-        "ignoreAtRules": ["/^ff-/"]
-      }
+        ignoreAtRules: ['/^ff-/'],
+      },
     ],
-    "property-no-unknown": null,
+    'property-no-unknown': null,
 
-    "no-descending-specificity": null, // turn off for now, descending cases could be fixed on the last refactoring
-    "function-calc-no-unspaced-operator": null, // otherwise it will be an error during build
+    'no-descending-specificity': null, // turn off for now, descending cases could be fixed on the last refactoring
+    'function-calc-no-unspaced-operator': null, // otherwise it will be an error during build
     'alpha-value-notation': 'number',
     'max-empty-lines': 3,
     'max-line-length': 150,
@@ -40,6 +49,12 @@ module.exports = {
     'length-zero-no-unit': true,
     'less/color-no-invalid-hex': null,
     'less/no-duplicate-variables': null,
-    "meowtec/no-px": [true, {"message": "Use dialtone variables such as line-height: var(--lh6) or width: var(--su24) rather than directly setting px. See the lib/build/less/variables folder."}],
-  }
+    'meowtec/no-px': [
+      true,
+      {
+        message: 'Use dialtone variables such as line-height: var(--lh6) or width: var(--su24) ' +
+        'rather than directly setting px. See the lib/build/less/variables folder.',
+      },
+    ],
+  },
 };

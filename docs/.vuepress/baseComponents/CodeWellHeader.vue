@@ -1,14 +1,14 @@
 <template>
   <aside class="d-mt16 d-bar8 d-of-hidden">
     <header :class="classes">
-      <slot></slot>
+      <slot />
     </header>
   </aside>
 </template>
 
 <script>
 export default {
-  name: "CodeWellHeader",
+  name: 'CodeWellHeader',
   inheritAttrs: false,
   props: {
     /**
@@ -16,7 +16,7 @@ export default {
      */
     bgclass: {
       type: String,
-      default: 'd-bgc-black-025'
+      default: 'd-bgc-black-025',
     },
 
     /**
@@ -25,21 +25,23 @@ export default {
     custom: {
       type: Boolean,
       default: false,
-    }
+    },
   },
+
   computed: {
-    classes() {
+    classes () {
       if (this.custom) return this.$attrs.class;
       return [
         'd-fl-center d-fd-column d-p24 d-w100p d-of-auto d-stack8',
         this.bgclass,
-        {'d-ba d-bc-black-050 d-btr8 d-baw2': this.isWhiteBackground},
-        this.$attrs.class
+        { 'd-ba d-bc-black-050 d-btr8 d-baw2': this.isWhiteBackground },
+        this.$attrs.class,
       ];
     },
-    isWhiteBackground() {
+
+    isWhiteBackground () {
       return this.bgclass === 'd-bgc-white';
-    }
-  }
-}
+    },
+  },
+};
 </script>

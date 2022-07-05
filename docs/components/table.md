@@ -28,7 +28,9 @@ desc: A table is a pattern for organizing data sets. While data visualization he
 [//]: # (Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi massa ante, tempus vitae lacus id, luctus tristique lorem. Mauris feugiat massa ex, id aliquet mi tempor non. Curabitur non tristique lectus. Fusce ut nisl non diam dignissim viverra. In posuere dui arcu, sed eleifend massa faucibus sed. Phasellus quis leo vitae erat pellentesque venenatis id vitae lectus. Suspendisse convallis, metus a congue tincidunt, velit sem tincidunt dui, eget auctor ipsum ipsum in ex. Nullam lobortis, mauris vel vestibulum rutrum, lorem elit vehicula est, nec viverra ante erat nec dolor. Proin at placerat tortor. Nam ullamcorper metus et eros porta, at lacinia leo scelerisque. Curabitur finibus sollicitudin odio tempor finibus. Donec lobortis metus vitae mollis gravida.)
 
 ## Variants and Examples
+
 ### Base Style
+
 <code-well-header bgclass="d-bgc-white">
   <table class="d-table dialtone-doc-table">
     <caption class="d-table__caption">Office List</caption>
@@ -74,6 +76,7 @@ desc: A table is a pattern for organizing data sets. While data visualization he
 ```
 
 ### Inverted Style
+
 Used when you want to display a data table on a darker background.
 
 <code-well-header bgclass="d-bgc-black-800">
@@ -121,6 +124,7 @@ Used when you want to display a data table on a darker background.
 ```
 
 ### Striped
+
 <code-well-header bgclass="d-bgc-white">
   <table class="d-table dialtone-doc-table d-table--striped">
     <caption class="d-table__caption">Office List</caption>
@@ -210,9 +214,11 @@ Used when you want to display a data table on a darker background.
 ```
 
 ## Classes
+
 <component-class-table component-name="table" />
 
 ## Accessibility
+
 Use the `caption` element to describe a table in the same way you would use a heading. A caption helps users find, navigate and understand tables.
 
 We provide `.d-table__caption` for a basic caption style, but you can also use utility classes to apply custom styles as needed.

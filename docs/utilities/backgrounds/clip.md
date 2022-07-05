@@ -33,7 +33,6 @@ Use `d-bgc-text` to clip the background color(s) within the foreground text.
 <div class="d-bgc-text d-bgg-to-r d-bgg-from-purple-500 d-bgg-to-pink-400">...</div>
 ```
 
-
 ## Classes
 
 <utility-class-table>
@@ -46,4 +45,3 @@ Use `d-bgc-text` to clip the background color(s) within the foreground text.
     </tbody>
   </template>
 </utility-class-table>
-

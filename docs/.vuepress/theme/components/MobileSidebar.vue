@@ -1,50 +1,67 @@
 <template>
   <div class="mobile-sidebar">
     <div
-        class="d-ps-fixed d-w100p d-bgc-white d-h64 d-x0 lg:d-d-flex d-bb d-bc-black-100 d-ai-center d-jc-space-between d-t64 d-d-none">
-      <ul id="breadcrumbs" class="d-breadcrumbs d-p12 d-of-hidden d-to-ellipsis d-ws-nowrap d-w628">
-        <li v-for="breadcrumb in breadcrumbs" class="d-breadcrumbs__item d-d-inline">{{ breadcrumb }}</li>
+      class="
+        d-ps-fixed d-w100p d-bgc-white d-h64 d-x0
+        lg:d-d-flex d-bb d-bc-black-100 d-ai-center
+        d-jc-space-between d-t64 d-d-none
+      "
+    >
+      <ul
+        id="breadcrumbs"
+        class="d-breadcrumbs d-p12 d-of-hidden d-to-ellipsis d-ws-nowrap d-w628"
+      >
+        <li
+          v-for="breadcrumb in breadcrumbs"
+          :key="breadcrumb"
+          class="d-breadcrumbs__item d-d-inline"
+        >
+          {{ breadcrumb }}
+        </li>
       </ul>
       <span
-          :class="{'breadcrumb-arrow--top': isSiteNavOpen }"
-          class="d-w24 d-h24 d-p12 d-mr12 breadcrumb-arrow d-c-pointer"
-          @click="toggleSiteNav"
+        :class="{ 'breadcrumb-arrow--top': isSiteNavOpen }"
+        class="d-w24 d-h24 d-p12 d-mr12 breadcrumb-arrow d-c-pointer"
+        @click="toggleSiteNav"
+        @keydown.space="toggleSiteNav"
       >
-        <icon-arrow-back-ios/>
+        <icon-arrow-back-ios />
       </span>
     </div>
     <div
-        :class="{'d-o0 d-d-none': !isSiteNavOpen }"
-        class="mobile-header-drop-down-navigation d-ps-fixed d-l0 d-w100p d-bgc-white d-of-auto d-fs24 d-d-flex d-fd-column d-ai-baseline d-pt24 d-pr16"
+      :class="{ 'd-o0 d-d-none': !isSiteNavOpen }"
+      class="
+        mobile-header-drop-down-navigation d-ps-fixed d-l0 d-w100p
+        d-bgc-white d-of-auto d-fs24 d-d-flex
+        d-fd-column d-ai-baseline d-pt24 d-pr16
+      "
     >
-      <SidebarItems @click="toggleSiteNav"/>
+      <SidebarItems @click="toggleSiteNav" />
     </div>
   </div>
 </template>
 
 <script setup>
-import {computed, ref} from "vue";
-import IconArrowBackIos from "@svgIcons/IconArrowBackIos.vue";
-import SidebarItems from '@theme/SidebarItems.vue'
+import { computed, ref } from 'vue';
+import IconArrowBackIos from '@svgIcons/IconArrowBackIos.vue';
+import SidebarItems from '@theme/SidebarItems.vue';
 
-const props = defineProps({
-  currentPath: String
-});
+const props = defineProps({ currentPath: { type: String, required: true } });
 
 const isSiteNavOpen = ref(false);
 
 const breadcrumbs = computed(() => {
   return props.currentPath
-      .replaceAll('-', ' ')
-      .replace('.html', '')
-      .split('/')
-      .filter(v => v.trim())
-      .map(v => v[0].toUpperCase() + v.slice(1));
+    .replaceAll('-', ' ')
+    .replace('.html', '')
+    .split('/')
+    .filter(v => v.trim())
+    .map(v => v[0].toUpperCase() + v.slice(1));
 });
 
-function toggleSiteNav() {
+function toggleSiteNav () {
   isSiteNavOpen.value = !isSiteNavOpen.value;
-  document.body.classList.toggle('d-of-hidden', !!isSiteNavOpen.value)
+  document.body.classList.toggle('d-of-hidden', !!isSiteNavOpen.value);
 }
 </script>
 

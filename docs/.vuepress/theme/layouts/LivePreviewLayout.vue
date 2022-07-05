@@ -1,10 +1,10 @@
 <template>
   <div class="preview-code">
     <div class="d-d-flex d-jc-center">
-      <slot name="preview"></slot>
+      <slot name="preview" />
     </div>
     <div>
-      <slot name="editor"></slot>
+      <slot name="editor" />
     </div>
   </div>
 </template>

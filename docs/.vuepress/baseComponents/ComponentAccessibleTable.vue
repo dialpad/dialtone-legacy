@@ -1,42 +1,69 @@
 <template>
   <table class="d-table dialtone-doc-table">
     <thead>
-    <tr>
-      <th scope="col" class="d-w40p">Item</th>
-      <th scope="col" class="d-w30p">Applies to</th>
-      <th scope="col">Description</th>
-    </tr>
+      <tr>
+        <th
+          scope="col"
+          class="d-w40p"
+        >
+          Item
+        </th>
+        <th
+          scope="col"
+          class="d-w30p"
+        >
+          Applies to
+        </th>
+        <th scope="col">
+          Description
+        </th>
+      </tr>
     </thead>
     <tbody>
-    <tr v-for="({item, applies, description}) in accessible">
-      <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12" v-text="item"></th>
-      <td class="d-ff-mono d-fc-orange d-fs12" v-html="applies"></td>
-      <td class="d-fs12" v-html="description"></td>
-    </tr>
+      <tr
+        v-for="({ item, applies, description }) in accessible"
+        :key="item"
+      >
+        <th
+          scope="row"
+          class="d-ff-mono d-fc-purple d-fw-normal d-fs12"
+          v-text="item"
+        />
+        <td
+          class="d-ff-mono d-fc-orange d-fs12"
+          v-html="applies"
+        />
+        <td
+          class="d-fs12"
+          v-html="description"
+        />
+      </tr>
     </tbody>
   </table>
 </template>
 
 <script>
 export default {
-  name: "ComponentAccessibleTable",
+  name: 'ComponentAccessibleTable',
   props: {
     componentName: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
-  data() {
+
+  data () {
     return {
       accessible: null,
     };
   },
-  beforeMount() {
+
+  beforeMount () {
     import(`../../_data/${this.componentName}.json`).then((module) => {
-      this.accessible = module.accessible
-    })
-  }
-}
+      this.accessible = module.accessible;
+    });
+  },
+};
 </script>
 
 <style scoped>

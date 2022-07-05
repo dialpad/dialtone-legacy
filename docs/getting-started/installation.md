@@ -7,6 +7,7 @@ prev:
 ---
 
 ## Adding Dialtone To Your Project
+
 To take advantage of Dialtone's customizations, classes, and variables in your project, you will want to install Dialtone via <a href="https://www.npmjs.com/" target="_blank">npm</a>.
 
 ```bash
@@ -26,6 +27,7 @@ If you only need access to Dialtone's variables and customizations to build a fi
 ```
 
 ## Theming
+
 To customize your Dialtone installation, create a new Less file in the `/lib/build/less/themes/` folder. By default this will compile during build, which can be added as an additional CSS file in your page `head`.
 
 ```less

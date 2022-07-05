@@ -2,8 +2,15 @@
   <table class="d-table dialtone-doc-table">
     <thead>
       <tr>
-        <th class="d-w25p" scope="col">Class</th>
-        <th scope="col">Output</th>
+        <th
+          class="d-w25p"
+          scope="col"
+        >
+          Class
+        </th>
+        <th scope="col">
+          Output
+        </th>
       </tr>
     </thead>
     <slot name="content" />
@@ -12,8 +19,8 @@
 
 <script>
 export default {
-  name: "UtilityClassTable",
-}
+  name: 'UtilityClassTable',
+};
 </script>
 
 <style scoped>

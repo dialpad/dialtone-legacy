@@ -2,60 +2,73 @@
   <ParentLayout>
     <template #page>
       <Home v-if="$frontmatter.home" />
-        <div v-else class="main-content">
-          <Transition
-            name="fade-slide-y"
-            mode="out-in"
-            @before-enter="onBeforeEnter"
-            @before-leave="onBeforeLeave"
-          >
-            <Page :key="$page.path">
-              <template #top>
-                <PageHeader :path="$page.path" :frontmatter="$frontmatter">
-                  <template #content-bottom>
-                    <PageToc v-if="isMobile" :headers="$page.headers" />
-                  </template>
-                </PageHeader>
-              </template>
-            </Page>
-          </Transition>
-          <PageToc v-if="!isMobile" :headers="$page.headers" class="d-pr32 d-pt24" />
-        </div>
+      <div
+        v-else
+        class="main-content"
+      >
+        <Transition
+          name="fade-slide-y"
+          mode="out-in"
+          @before-enter="onBeforeEnter"
+          @before-leave="onBeforeLeave"
+        >
+          <Page :key="$page.path">
+            <template #top>
+              <PageHeader
+                :path="$page.path"
+                :frontmatter="$frontmatter"
+              >
+                <template #content-bottom>
+                  <PageToc
+                    v-if="isMobile"
+                    :headers="$page.headers"
+                  />
+                </template>
+              </PageHeader>
+            </template>
+          </Page>
+        </Transition>
+        <PageToc
+          v-if="!isMobile"
+          :headers="$page.headers"
+          class="d-pr32 d-pt24"
+        />
+      </div>
     </template>
   </ParentLayout>
 </template>
 
 <script setup>
-  import ParentLayout from '@vuepress/theme-default/lib/client/layouts/Layout.vue';
-  import Home from '@theme/Home.vue';
-  import Page from '@theme/Page.vue';
-  import PageToc from '@theme/PageToc.vue';
-  import PageHeader from '@theme/PageHeader.vue';
+import ParentLayout from '@vuepress/theme-default/lib/client/layouts/Layout.vue';
+import Home from '@theme/Home.vue';
+import Page from '@theme/Page.vue';
+import PageToc from '@theme/PageToc.vue';
+import PageHeader from '@theme/PageHeader.vue';
 
-  import { useScrollPromise } from '@vuepress/theme-default/lib/client/composables'
-  import { ref, watch } from 'vue';
+import { useScrollPromise } from '@vuepress/theme-default/lib/client/composables';
+import { ref, watch } from 'vue';
 
-  const scrollPromise = useScrollPromise();
-  const onBeforeEnter = scrollPromise.resolve;
-  const onBeforeLeave = scrollPromise.pending;
+const scrollPromise = useScrollPromise();
+const onBeforeEnter = scrollPromise.resolve;
+const onBeforeLeave = scrollPromise.pending;
 
-  const defaultHeaderSize = 64;
-  const mobileHeaderSize = 128;
-  const mobileBreakpoint = 980;
-  const evaluateWindowWidth = () => window.innerWidth <= mobileBreakpoint;
+const defaultHeaderSize = 64;
+const mobileHeaderSize = 128;
+const mobileBreakpoint = 980;
+const evaluateWindowWidth = () => window.innerWidth <= mobileBreakpoint;
 
-  const isMobile = ref(evaluateWindowWidth());
-  window.addEventListener('resize', () => {
-    isMobile.value = evaluateWindowWidth();
-  });
+const isMobile = ref(evaluateWindowWidth());
+window.addEventListener('resize', () => {
+  isMobile.value = evaluateWindowWidth();
+});
 
-  watch(isMobile, (current) => {
-    const root = document.querySelector(':root');
-    root.style.setProperty(
-      '--navbar-height',
-      `${(current ? mobileHeaderSize : defaultHeaderSize)}px`
-    );
-  }, { immediate: true });
+watch(isMobile, (current) => {
+  const root = document.querySelector(':root');
+  root.style.setProperty(
+    '--navbar-height',
+    `${(current ? mobileHeaderSize : defaultHeaderSize)}px`,
+  );
+}, { immediate: true });
 </script>
 
 <style lang="less">

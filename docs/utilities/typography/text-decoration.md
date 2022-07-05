@@ -4,6 +4,7 @@ desc: Utilities to change an element's text decoration styles.
 ---
 
 ## Underline
+
 Use `d-td-underline` to underline text.
 
 <code-well-header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-pink-100 d-w100p d-hmn102" custom>
@@ -15,6 +16,7 @@ Use `d-td-underline` to underline text.
 ```
 
 ## Dotted
+
 Use `d-td-dotted` to apply a dotted underline style to the text.
 
 <code-well-header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-purple-100 d-w100p d-hmn102" custom>
@@ -26,6 +28,7 @@ Use `d-td-dotted` to apply a dotted underline style to the text.
 ```
 
 ## Line Through
+
 Use `d-td-line-through` to apply a line through the text.
 
 <code-well-header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-green-100 d-w100p d-hmn102" custom>
@@ -37,6 +40,7 @@ Use `d-td-line-through` to apply a line through the text.
 ```
 
 ## No decorations
+
 Use `d-td-none` to remove text decorations.
 
 <code-well-header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-red-100 d-w100p d-hmn102" custom>
@@ -52,6 +56,7 @@ Use `d-td-none` to remove text decorations.
 </script>
 
 ## Classes
+
 <utility-class-table>
   <template #content>
     <tbody>

@@ -7,6 +7,7 @@ prev:
 ---
 
 ## Percentages
+
 Use `d-h{n}p` to set a percentage height for an element.
 
 <code-well-header class="d-d-flex d-p24 d-bgc-green-100 d-bgo50 d-w100p d-h332 d-flow16 d-of-x-scroll d-fs14 d-ff-mono d-ta-center" custom>
@@ -36,6 +37,7 @@ Use `d-h{n}p` to set a percentage height for an element.
 ```
 
 ## Fixed
+
 Use `d-h{n}` to set a fixed height for an element.
 
 <code-well-header class="d-d-flex d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmx512 d-flow16 d-of-scroll d-fs24 d-fw-bold d-ta-center" custom>
@@ -84,6 +86,7 @@ Use `d-h{n}` to set a fixed height for an element.
 ```
 
 ## Screen
+
 Use `d-h100vh` to have an element cover the user's viewport.
 
 <code-well-header class="d-ps-relative d-d-flex d-jc-center d-p24 d-bgc-yellow-100 d-bgo50 d-w100p d-h3 d-flow16 d-of-y-scroll" custom>
@@ -95,6 +98,7 @@ Use `d-h100vh` to have an element cover the user's viewport.
 ```
 
 ## Auto
+
 Use `d-h-auto` have the browser calculate and select a height.
 
 <code-well-header class="d-ps-relative d-d-flex d-jc-center d-p24 d-bgc-orange-100 d-bgo50 d-w100p d-hmn216 d-flow16" custom>
@@ -110,6 +114,7 @@ Use `d-h-auto` have the browser calculate and select a height.
 </script>
 
 ## Classes
+
 <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
   <table class="d-table dialtone-doc-table">
     <thead>

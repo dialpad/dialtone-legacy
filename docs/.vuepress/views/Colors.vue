@@ -5,25 +5,28 @@
         v-for="color in colors"
         :key="color.color"
         :color="color.color"
-        :stops="color.stops || []"></base-color>
+        :stops="color.stops || []"
+      />
     </div>
   </section>
 </template>
 
 <script>
-import BaseColor from "../baseComponents/BaseColor.vue";
+import BaseColor from '../baseComponents/BaseColor.vue';
 
 export default {
-  name: "Colors",
+  name: 'Colors',
   components: {
-    BaseColor
+    BaseColor,
   },
+
   data: () => ({
     colors: [],
   }),
-  async beforeCreate() {
+
+  async beforeCreate () {
     const data = await import('../../_data/colors.json');
     this.colors = data.default;
   },
-}
+};
 </script>

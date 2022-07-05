@@ -4,6 +4,7 @@ desc: Utilities for setting how an element's is aligned along a parent's cross a
 ---
 
 ## Stretch
+
 Use `d-as-stretch` to stretch an item along a parent's cross axis.
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn216">
@@ -23,6 +24,7 @@ Use `d-as-stretch` to stretch an item along a parent's cross axis.
 ```
 
 ## Flex Start
+
 Use `d-as-flex-start` to align an item to the start of the parent's cross axis.
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmn216">
@@ -42,6 +44,7 @@ Use `d-as-flex-start` to align an item to the start of the parent's cross axis.
 ```
 
 ## Center
+
 Use `d-as-center` to align an item along the center of the parent's cross axis.
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-green-100 d-bgo50 d-w100p d-hmn216">
@@ -61,6 +64,7 @@ Use `d-as-center` to align an item along the center of the parent's cross axis.
 ```
 
 ## Flex End
+
 Use `d-as-flex-end` to align an item from the end of the parent's cross axis.
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-red-100 d-bgo50 d-w100p d-hmn216">
@@ -84,6 +88,7 @@ Use `d-as-flex-end` to align an item from the end of the parent's cross axis.
 </script>
 
 ## Classes
+
 <utility-class-table>
   <template #content>
     <tbody>

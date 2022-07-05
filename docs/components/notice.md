@@ -8,10 +8,13 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-notice--defaul
 </code-well-header>
 
 ## Usage
+
 A notice delivers informational and assistive messages that inform the user about product or account statuses and related actions. It can suggest an action or dismissed by the user, though neither are required. For time-based notifications, see [Toasts](/components/toasts/).
 
 ## Variants and Examples
+
 ### Base Styles
+
 Used in most scenarios when the message should be noticeable but not dominate.
 
 <code-well-header bgclass="d-bgc-white">
@@ -46,6 +49,7 @@ Used in most scenarios when the message should be noticeable but not dominate.
 ```
 
 ### Important
+
 Used occasionally in scenarios when the message needs to dominate.
 
 <code-well-header>
@@ -80,9 +84,11 @@ Used occasionally in scenarios when the message needs to dominate.
 ```
 
 ## Classes
+
 <component-class-table component-name="notice" />
 
 ## Accessibility
+
 <component-accessible-table component-name="notice" />
 
 <script setup>

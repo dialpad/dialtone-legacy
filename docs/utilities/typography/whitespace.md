@@ -4,6 +4,7 @@ desc: Utilities for controlling an element's whitespace.
 ---
 
 ## Normal
+
 Use `d-ws-normal` to collapse an element's text whitespaces sequences and newline characters are treated like whitespace. Lines are broken as needed to fill boxes.
 
 <code-well-header class="d-fl-center d-p24 d-bgc-green-100 d-bgo50 d-w100p d-hmn102" custom>
@@ -17,6 +18,7 @@ Use `d-ws-normal` to collapse an element's text whitespaces sequences and newlin
 ```
 
 ## No wrap
+
 Use `d-ws-nowrap` to collapse an element's text whitespaces sequences, but line breaks are not honored. This keeps text from wrapping.
 
 <code-well-header class="d-fl-center d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn102" custom>
@@ -30,6 +32,7 @@ Use `d-ws-nowrap` to collapse an element's text whitespaces sequences, but line 
 ```
 
 ## Pre
+
 Use `d-ws-pre` to preserve an element's whitespaces sequences. Lines are only broken at new line characters and `<br/>` elements.
 
 <code-well-header class="d-fl-center d-p24 d-bgc-orange-100 d-bgo50 d-w100p d-hmn102" custom>
@@ -43,6 +46,7 @@ Use `d-ws-pre` to preserve an element's whitespaces sequences. Lines are only br
 ```
 
 ## Pre Line
+
 Use `d-ws-pre-line` to collapse an element's whitespaces sequences. Lines are broken at new line characters, `<br/>` elements, or as needed to fill boxes.
 
 <code-well-header class="d-fl-center d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmn102" custom>
@@ -56,6 +60,7 @@ Use `d-ws-pre-line` to collapse an element's whitespaces sequences. Lines are br
 ```
 
 ## Pre Wrap
+
 Use `d-ws-pre-wrap` to preserve an element's whitespaces sequences. Lines are broken at new line characters, `<br/>` elements, or as needed to fill boxes.
 
 <code-well-header class="d-fl-center d-p24 d-bgc-yellow-100 d-bgo50 d-w100p d-hmn102" custom>
@@ -69,6 +74,7 @@ Use `d-ws-pre-wrap` to preserve an element's whitespaces sequences. Lines are br
 ```
 
 ## Break Spaces
+
 Use `d-ws-break-spaces` to have an element act like `pre-wrap` except that any sequence of preserved whitespace always takes up space, a line breaking opportunity exists after every preserved whitespace character, and preserved spaces take up space and do not hang which affects the element's intrinisic size (`min-content` and `max-content` sizes).
 
 <code-well-header class="d-fl-center d-p24 d-bgc-red-100 d-bgo50 d-w100p d-hmn102" custom>
@@ -82,6 +88,7 @@ Use `d-ws-break-spaces` to have an element act like `pre-wrap` except that any s
 ```
 
 ## Classes
+
 <utility-class-table>
   <template #content>
     <tbody>

@@ -1,12 +1,23 @@
 <template>
-  <div :class="{['d-bgc-black-800 d-fc-white']: ['light', 'night'].includes(variation) }" class="d-stack16 d-p16 d-bar8">
-    <h2 :id="`${variation}-${kind}`" class="d-pl16 d-headline24 d-fl1" tabindex="-1">
-      <a :href="'#' + variation + '-' + kind" class="header-anchor">#</a>
+  <div
+    :class="{ ['d-bgc-black-800 d-fc-white']: ['light', 'night'].includes(variation) }"
+    class="d-stack16 d-p16 d-bar8"
+  >
+    <h2
+      :id="`${variation}-${kind}`"
+      class="d-pl16 d-headline24 d-fl1"
+      tabindex="-1"
+    >
+      <a
+        :href="`#${variation}-${kind}`"
+        class="header-anchor"
+      >#</a>
       {{ title }}
     </h2>
     <div :class="iconsContainerClass">
       <base-icon
         v-for="(icon, index) in icons"
+        :key="index"
         :desc="icon.desc"
         :code="icon.code"
         :file="icon.file"
@@ -17,19 +28,20 @@
         :variation="variation"
         :vue="icon.vue"
         @click="toggleCard(index)"
-      ></base-icon>
+      />
     </div>
   </div>
 </template>
 
 <script>
-import BaseIcon, {ICON_KINDS, ICON_VARIATIONS} from "../baseComponents/BaseIcon.vue";
+import BaseIcon, { ICON_KINDS, ICON_VARIATIONS } from '../baseComponents/BaseIcon.vue';
 
 export default {
-  name: "Icons",
+  name: 'Icons',
   components: {
-    BaseIcon
+    BaseIcon,
   },
+
   props: {
     kind: {
       type: String,
@@ -38,48 +50,60 @@ export default {
         return ICON_KINDS.includes(_kind);
       },
     },
+
     variation: {
       type: String,
+      required: true,
       validator: (_variation) => {
         return ICON_VARIATIONS.includes(_variation);
       },
     },
+
     size: {
       type: String,
-      required: false,
+      default: null,
       validator: (_size) => {
-        return _size === 'large'
-      }
+        return _size === 'large';
+      },
     },
+
     title: {
       type: String,
-      default: null
-    }
-  },
-  computed: {
-    iconsContainerClass() {
-      return this.size ? `d-gl-docsite-icons--${this.size}` : 'd-gl-docsite-icons';
-    },
-    isWeatherKind() {
-      return this.kind === 'weather';
-    },
-    isPatternsKind() {
-      return this.kind === 'patterns';
+      default: null,
     },
   },
+
   data: () => ({
     icons: [],
     selectedCardIndex: undefined,
   }),
-  async beforeCreate() {
-    const importedModule = await import(`../../_data/svg-${this.kind}.json`);
-    this.icons = (this.isWeatherKind || this.isPatternsKind) ? importedModule.default[this.variation] : this.icons = importedModule.default;
+
+  computed: {
+    iconsContainerClass () {
+      return this.size ? `d-gl-docsite-icons--${this.size}` : 'd-gl-docsite-icons';
+    },
+
+    isWeatherKind () {
+      return this.kind === 'weather';
+    },
+
+    isPatternsKind () {
+      return this.kind === 'patterns';
+    },
   },
+
+  async beforeCreate () {
+    const importedModule = await import(`../../_data/svg-${this.kind}.json`);
+    this.icons = (this.isWeatherKind || this.isPatternsKind)
+      ? importedModule.default[this.variation]
+      : this.icons = importedModule.default;
+  },
+
   methods: {
-    toggleCard(index) {
+    toggleCard (index) {
       if (this.selectedCardIndex === index) index = undefined;
       this.selectedCardIndex = index;
-    }
-  }
-}
+    },
+  },
+};
 </script>

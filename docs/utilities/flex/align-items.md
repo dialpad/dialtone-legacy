@@ -4,6 +4,7 @@ desc: Utilities for setting how an element's is aligned along an element's cross
 ---
 
 ## Stretch
+
 Use `d-ai-stretch` to stretch items across the element's cross axis. This is the default value.
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn216" custom>
@@ -23,6 +24,7 @@ Use `d-ai-stretch` to stretch items across the element's cross axis. This is the
 ```
 
 ## Flex Start
+
 Use `d-ai-flex-start` to align items to the start of the element's cross axis.
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmn216" custom>
@@ -42,6 +44,7 @@ Use `d-ai-flex-start` to align items to the start of the element's cross axis.
 ```
 
 ## Center
+
 Use `d-ai-center` to distribute items along the center of the element's cross axis.
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-green-100 d-bgo50 d-w100p d-hmn216" custom>
@@ -61,6 +64,7 @@ Use `d-ai-center` to distribute items along the center of the element's cross ax
 ```
 
 ## Flex End
+
 Use `d-ai-flex-end` to distribute items from the end of the element's cross axis.
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-red-100 d-bgo50 d-w100p d-hmn216">
@@ -86,6 +90,7 @@ Use `d-ai-flex-end` to distribute items from the end of the element's cross axis
 </script>
 
 ## Classes
+
 <utility-class-table>
  <template #content>
     <tbody>

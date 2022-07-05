@@ -5,6 +5,7 @@ desc: Utilities for controlling an element's font-color opacity.
 The ability to control an element's color is <em>only</em> provided as a class. We do not provide variables to control this. The text opacity class resets the font color's alpha channel CSS variable value.
 
 ## Usage
+
 Use `d-fco{n}` to change a font-color's opacity. You can also change font-color's opacity on `:hover`, `:focus`, `:focus-visible`, or in dark mode by using the respective `h:d-fco{n}`, `f:d-fco{n}`, `fv:d-fco{n}`, or `d:d-fco{n}` prefixes.
 
 <code-well-header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-pink-100 d-w100p d-hmn102" custom>
@@ -47,6 +48,7 @@ Please note that because the opacity adjustments are made via CSS variables, a f
       <span class="d-fco75">The quick brown fox jumps over the lazy dog.</span>
   </p>
   ```
+
   </div>
 </div>
 
@@ -64,6 +66,7 @@ Please note that because the opacity adjustments are made via CSS variables, a f
       <span class="d-fc-dark d-fco75">The quick brown fox jumps over the lazy dog.</span>
   </p>
   ```
+
   </div>
 </div>
 
@@ -71,8 +74,8 @@ Please note that because the opacity adjustments are made via CSS variables, a f
   import { opacity } from '@data/type.json';
 </script>
 
-
 ## Classes
+
 <utility-class-table>
   <template #content>
     <tbody>

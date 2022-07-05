@@ -15,6 +15,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-radio--default
 </code-well-header>
 
 ## Usage
+
 Radio buttons are a common way to allow users to make a single selection from a list of options. Since only one radio button can be selected at a time (within the same group), each available choice must be its own item and label. Upon selection of a radio item in a group, the group cannot be easily reset to zero selections.
 
 <div class="dialtone-usage">
@@ -42,13 +43,16 @@ Radio buttons are a common way to allow users to make a single selection from a 
 </div>
 
 ### Best practices
+
 - Users should be able to tap on or click either the text `label` or the radio element itself to select an option.
 - Options that are listed vertically are easier to read than those listed horizontally. Horizontal listings can make it difficult to tell which label pertains to which radio button.
 - Make sure selections are adequately spaced for touch screens.
 - Use caution if you decide to set a default value as they cannot be unchecked. Setting a default value can discourage users from making conscious decisions, seem pushy, or alienate users who don’t fit into your assumptions. If you are unsure, leave nothing selected by default.
 
 ## Variants and Examples
+
 ### Base Styles
+
 <code-well-header>
   <fieldset class="d-stack8">
     <div class="d-radio-group">
@@ -140,6 +144,7 @@ Radio buttons are a common way to allow users to make a single selection from a 
 ```
 
 ### Stacked Group
+
 <code-well-header>
   <fieldset class="d-stack8">
     <legend class="d-label">Advanced missed call routing</legend>
@@ -201,6 +206,7 @@ Radio buttons are a common way to allow users to make a single selection from a 
 ```
 
 ### With Description Text
+
 <code-well-header>
   <fieldset class="d-stack8">
     <legend class="d-label">Advanced missed call routing</legend>
@@ -268,6 +274,7 @@ Radio buttons are a common way to allow users to make a single selection from a 
 ```
 
 ### With Validation States
+
 <code-well-header>
   <fieldset class="d-stack8">
     <legend class="d-label">Advanced missed call routing</legend>
@@ -335,10 +342,13 @@ Radio buttons are a common way to allow users to make a single selection from a 
 ```
 
 ## Classes
+
 <component-class-table component-name="radio" />
 
 ## Accessibility
+
 The best accessibility is semantic HTML. Most screen readers understand how to parse inputs if they’re correctly formatted. When it comes to radio input, there are a few things to keep in mind:
+
 - All inputs should have an `id` attribute.
 - Associate radio labels with their inputs using the `for` attribute. This correlates with the radio's `id`.
 - If you have a group of related radios, use a `fieldset` to group them and a `legend` to title the group. For further information, please visit Gov.UK’s article, <a href="https://accessibility.blog.gov.uk/2016/07/22/using-the-fieldset-and-legend-elements/">"Using the fieldset and legend elements"</a>.

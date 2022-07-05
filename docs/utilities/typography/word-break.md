@@ -7,6 +7,7 @@ next:
 ---
 
 ## Normal
+
 Use `d-wb-normal` to reset an element's line break rule.
 
 <code-well-header class="d-fl-center d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn102" custom>
@@ -20,6 +21,7 @@ Use `d-wb-normal` to reset an element's line break rule.
 ```
 
 ## Break All
+
 Use `d-wb-break-all` on an element to insert word breaks between any two characters (excluding Chinese, Japanese, or Korean text) to prevent text from overflowing.
 
 <code-well-header class="d-fl-center d-p24 d-bgc-green-100 d-bgo50 d-w100p d-hmn102" custom>
@@ -33,6 +35,7 @@ Use `d-wb-break-all` on an element to insert word breaks between any two charact
 ```
 
 ## Keep All
+
 Use `d-wb-keep-all` on an element to not use word breaks for Chinese, Japanese, or Korean (CJK) text. Non-CJK text behavior is set to normal.
 
 <code-well-header class="d-fl-center d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmn102" custom>
@@ -46,6 +49,7 @@ Use `d-wb-keep-all` on an element to not use word breaks for Chinese, Japanese, 
 ```
 
 ## Classes
+
 <utility-class-table>
   <template #content>
     <tbody>

@@ -1,10 +1,10 @@
 <template>
   <div
+    v-if="modal"
     class="d-modal--transparent"
     :aria-hidden="!shown"
     @click.self="closeModal"
-    v-if="modal"
-  ></div>
+  />
   <div class="d-popover d-fl-center d-fd-column d-p24 d-w100p d-of-auto">
     <button
       id="anchor1"
@@ -25,7 +25,10 @@
       :aria-hidden="shown"
       aria-labelledby="anchor1"
     >
-      <div v-if="header" class="d-popover__header d-px16">
+      <div
+        v-if="header"
+        class="d-popover__header d-px16"
+      >
         <div class="d-w100p">
           This is the header
         </div>
@@ -34,9 +37,14 @@
         <slot name="content">
           This is content rendered within the popover.<br>
         </slot>
-        <button class="d-btn d-btn--primary">Button</button>
+        <button class="d-btn d-btn--primary">
+          Button
+        </button>
       </div>
-      <div v-if="footer" class="d-popover__footer d-px16">
+      <div
+        v-if="footer"
+        class="d-popover__footer d-px16"
+      >
         <div class="d-w100p">
           This is the footer
         </div>
@@ -47,40 +55,60 @@
 
 <script>
 export default {
-  name: "example-popover",
-  data() {
-    return {
-      shown: false,
-    }
-  },
+  name: 'ExamplePopover',
   props: {
     modal: {
       type: Boolean,
       default: false,
     },
+
     header: {
       type: Boolean,
       default: false,
     },
+
     footer: {
       type: Boolean,
       default: false,
     },
   },
+
+  data () {
+    return {
+      shown: false,
+    };
+  },
+
+  mounted () {
+    window.addEventListener('keyup', (e) => {
+      if (e.key === 'Escape') {
+        this.closeModal();
+      }
+    });
+  },
+
+  beforeUnmount () {
+    window.removeEventListener('keyup', (e) => {
+      if (e.key === 'Escape') {
+        this.closeModal();
+      }
+    });
+  },
+
   methods: {
-    closeModal() {
+    closeModal () {
       document.body.classList.remove('d-of-hidden');
       this.shown = false;
     },
 
-    openModal() {
+    openModal () {
       if (this.modal) {
         document.body.classList.add('d-of-hidden');
       }
       this.shown = true;
     },
 
-    togglePopover() {
+    togglePopover () {
       if (!this.shown) {
         this.openModal();
       } else {
@@ -88,21 +116,7 @@ export default {
       }
     },
   },
-  mounted() {
-    window.addEventListener('keyup', (e) => {
-      if (e.key === 'Escape') {
-        this.closeModal();
-      }
-    })
-  },
-  beforeUnmount() {
-    window.removeEventListener('keyup', (e) => {
-      if (e.key === 'Escape') {
-        this.closeModal();
-      }
-    });
-  }
-}
+};
 </script>
 
 <style scoped>

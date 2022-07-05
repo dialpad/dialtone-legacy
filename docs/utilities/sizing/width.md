@@ -4,6 +4,7 @@ desc: Utilities to control an element's width.
 ---
 
 ## Percentages
+
 Use `d-w{n}p` to set a percentage width for an element.
 
 <code-well-header class="d-d-flex d-fd-column d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmx332 d-stack16 d-fs14 d-ff-mono d-ta-center d-of-y-scroll" custom>
@@ -31,6 +32,7 @@ Use `d-w{n}p` to set a percentage width for an element.
 ```
 
 ## Fixed
+
 Use `d-w{n}` to set a fixed width for an element.
 
 <code-well-header class="d-d-flex d-fd-column d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmx332 d-stack16 d-fs24 d-fw-bold d-ta-center d-of-scroll" custom>
@@ -77,6 +79,7 @@ Use `d-w{n}` to set a fixed width for an element.
 ```
 
 ## Screen
+
 Use `d-w100vh` to have an element cover the user's viewport.
 
 <code-well-header class="d-ps-relative d-d-flex d-jc-center d-p24 d-bgc-yellow-100 d-bgo50 d-w100p d-h3 d-stack16 d-of-y-scroll" custom>
@@ -88,6 +91,7 @@ Use `d-w100vh` to have an element cover the user's viewport.
 ```
 
 ## Auto
+
 Use `d-w-auto` have the browser calculate and select a width.
 
 <code-well-header class="d-ps-relative d-d-flex d-jc-center d-p24 d-bgc-orange-100 d-bgo50 d-w100p d-hmn102 d-stack16" custom>
@@ -103,6 +107,7 @@ Use `d-w-auto` have the browser calculate and select a width.
 </script>
 
 ## Classes
+
 <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
   <table class="d-table dialtone-doc-table">
     <thead>

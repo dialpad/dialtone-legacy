@@ -4,16 +4,19 @@ desc: Dialtone is Dialpad's Design System that unites product teams around a com
 ---
 
 ## Components
+
 Components are reusable building blocks that support a specific interaction or UI need. These components can be reused across Dialpad products and projects
 ensuring UI consistency and cohesion while helping teams deliver high-quality features faster.
 
 Dialtone provides two options to use the components: CSS and Vue.
 
 ### Vue components (recommended)
+
 Use [Vue components](https://vue.dialpad.design/) in the case your project supports Vue since these components are built conforming to [WCAG AA Accessibility Guidelines](https://www.w3.org/WAI/standards-guidelines/wcag/glance/)
 and with usability and performance in mind.
 
 ### CSS components
+
 If Vue isn't supported in your application, you can use the [CSS components](../components/avatar/) in your project, but you'll be responsible
 for writing the correct markup, managing DOM elements and events, and making it [accessible for all users](../getting-started/accessibility/fundamentals/).
 
@@ -24,6 +27,7 @@ See more about [components usage](../getting-started/usage/#components).
 [Dialtone 5](https://dialpad.design/version5/) remains viewable, though is no longer being maintained. [Reach out](#contact-us) to the Dialtone team if you have any questions.
 
 ## Intake
+
 ### Contributions
 
 Read about [how to contribute to Dialtone](../about/contributing/).
@@ -39,5 +43,6 @@ Please refer to [CONTRIBUTING.md](https://github.com/dialpad/dialtone/blob/stagi
 for reporting any issue.
 
 ## Contact Us
+
 - [#dialtone](https://dialpad.slack.com/messages/dialtone/) Slack channel
 - [dialtone@dialpad.com](mailto:dialtone@dialpad.com)

@@ -7,7 +7,6 @@ desc: Utilities for controlling an element's border width.
 
 Use `d-baw{n}` to change the border width on your element.
 
-
 <code-well-header class="d-fl-col5 d-flg8 d-fw-wrap d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmn102" custom>
   <div class="d-fl-center d-p16 d-ba d-bc-pink-400 d-baw0 d-bgc-pink-100 d-fs16 d-ff-mono">.d-baw0</div>
   <div class="d-fl-center d-p16 d-ba d-bc-pink-400 d-baw1 d-bgc-pink-100 d-fs16 d-ff-mono">.d-baw1</div>
@@ -43,8 +42,6 @@ Use `d-b{a|t|r|b|l}w{n}` to change the border width of your direction on your el
 <div class="d-bb d-bbw4">...</div>
 <div class="d-bl d-blw6">...</div>
 ```
-
-
 
 ## Classes
 

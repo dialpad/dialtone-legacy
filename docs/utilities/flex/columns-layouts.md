@@ -4,6 +4,7 @@ desc: Utilities for flex columns and common flex layouts.
 ---
 
 ## Creating flex columns
+
 Use `d-fl-col{n}` to create uniformly sized children within an element.
 
 <code-well-header class="d-d-flex d-fd-column d-p16 d-bgc-purple-100 d-bgo50 d-w100p d-hmx464 d-of-y-scroll d-stack8" custom>
@@ -31,6 +32,7 @@ Use `d-fl-col{n}` to create uniformly sized children within an element.
 ```
 
 ## Flex Column Gaps
+
 Use `d-flg{n}` to create uniform gaps between flex columns within an element.
 
 <code-well-header class="d-d-flex d-fd-column d-p16 d-bgc-purple-100 d-bgo50 d-w100p d-hmx464 d-of-y-scroll d-stack8" custom>
@@ -60,6 +62,7 @@ Use `d-flg{n}` to create uniform gaps between flex columns within an element.
 ```
 
 ## Centering objects
+
 By default flexed items align to `flex-start` both horizontally and vertically (effectively top, left). Use `d-fl-center` to center-center child items within an element.
 
 <code-well-header class="d-fl-center d-p24 d-bgc-green-100 d-bgo50 d-w100p d-hmn216" custom>
@@ -89,13 +92,14 @@ By default flexed items align to `flex-start` both horizontally and vertically (
 </script>
 
 ## Classes
+
 <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
   <utility-class-table>
     <template #content>
       <tbody>
         <tr v-for="i in columns">
           <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-fl-col{{ i }}</th>
-          <td class="d-ff-mono d-fc-orange d-fs12 d-ws-pre">> * { flex-basis: calc({{ calcFlexBasis(i) }}% - (var(--fl-gap) * 2)); }</td>
+          <td class="d-ff-mono d-fc-orange d-fs12 d-ws-pre">> *{ flex-basis: calc({{ calcFlexBasis(i) }}% - (var(--fl-gap)* 2)); }</td>
         </tr>
       </tbody>
       <tbody>

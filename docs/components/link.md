@@ -8,6 +8,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-link--default
 </code-well-header>
 
 ## Usage
+
 `button` and link (`<a>`) HTML elements each describe a specific intent. Understanding the distinction is important: if it goes somewhere, use a Link. If an action occurs, use a [Button](button.html).
 
 <div class="dialtone-usage">
@@ -30,16 +31,19 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-link--default
 </div>
 
 ### Best practices
+
 - Use useful, actionable, and descriptive text clearly conveying the hyperlink’s destination. For example, a generic label like "click here" doesn’t convey its target content.
 - Too many links can be overwhelming. Be selective about the number of links in a context.
 - Clearly identify links that target an external source.
 
 ## Accessibility
+
 - Allow keyboard navigation. Users must be able to navigate between links, i.e. keypress of tab, and activate it by pressing ‘Enter’.
 - Users must be able to identify links without relying on color alone.
 - Users must be able to activate hover and focus states with both a mouse and a keyboard.
 
 ## Variants and Examples
+
 <code-well-header>
   <a href="#" class="d-link">Base link</a>
   <a href="#" class="d-link d-link--danger">Danger link</a>
@@ -65,6 +69,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-link--default
 ```
 
 ## Classes
+
 <component-class-table component-name="link"></component-class-table>
 
 <script setup>

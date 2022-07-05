@@ -59,6 +59,7 @@ next:
 </script>
 
 ## Classes
+
 Padding can be added to an element by using a utility class (i.e. `.d-p[#]`) or by using a directional class (i.e. `.d-p{t|r|b|l|y|x}[#]`).
 
 <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">

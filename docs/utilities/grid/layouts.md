@@ -4,9 +4,11 @@ desc: Common grid layout patterns used throughout Dialpad and UberConference.
 ---
 
 ## Sidebar
+
 Use `.d-gl-sidebar` to create a simple 2-column layout with a sidebar and main content area.
 
 ### CSS Variables
+
 <table class="d-table dialtone-doc-table">
   <thead>
     <tr>
@@ -27,6 +29,7 @@ Use `.d-gl-sidebar` to create a simple 2-column layout with a sidebar and main c
 </table>
 
 ### Example
+
 <aside class="d-bar8 d-of-hidden">
   <header class="d-fl-center d-fd-column d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn216">
     <div class="d-d-grid d-gl-sidebar d-gg16 d-p16 d-w100p d-hmn216 d-bar8 d-bgc-purple-100 d-of-auto" style="--sidebar-width: minmax(10rem, 20rem);">
@@ -44,9 +47,11 @@ Use `.d-gl-sidebar` to create a simple 2-column layout with a sidebar and main c
 ```
 
 ## Header
+
 Use `.d-gl-header` to create a simple 2-row layout with a header area and main content area. Usually this is nested within a `.d-gl-sidebar` content area.
 
 ### CSS Variables
+
 <table class="d-table dialtone-doc-table">
   <thead>
     <tr>
@@ -67,6 +72,7 @@ Use `.d-gl-header` to create a simple 2-row layout with a header area and main c
 </table>
 
 ### Example
+
 <aside class="d-bar8 d-of-hidden">
   <header class="d-fl-center d-fd-column d-p24 d-bgc-green-100 d-bgo50 d-w100p d-hmn216 d-of-auto">
     <div class="d-d-grid d-gl-sidebar d-gg16 d-p16 d-w100p d-hmn216 d-bar8 d-bgc-green-100" style="--sidebar-width: minmax(10rem, 20rem);">
@@ -92,6 +98,7 @@ Use `.d-gl-header` to create a simple 2-row layout with a header area and main c
 ```
 
 ## Columns
+
 Use `.d-g-cols{n}` to create a multi-column layout.
 
 ### Classes
@@ -108,6 +115,7 @@ Use `.d-g-cols{n}` to create a multi-column layout.
 </utility-class-table>
 
 ### Example
+
 <aside class="d-bar8 d-of-hidden">
   <header class="d-fl-center d-fd-column d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmn216">
     <div class="d-d-grid d-g-cols4 d-gg16 d-p16 d-w100p d-hmn216 d-bar8 d-bgc-pink-100">
@@ -137,6 +145,7 @@ Use `.d-g-cols{n}` to create a multi-column layout.
 ```
 
 ## Nesting Grids
+
 Unlike some CSS, CSS grid does not cascade beyond the parent and its direct children (`parent-element > *`). We can use this to our advantage by being able to nest grids within each other without cascade errors.
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-yellow-100 d-bgo50 d-w100p d-hmn216" custom>

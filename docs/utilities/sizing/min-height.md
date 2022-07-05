@@ -4,6 +4,7 @@ desc: Utilities to control an element's minimum height.
 ---
 
 ## Percentages
+
 Use `d-hmn{n}p` to set a minimum height percentage for an element. This can be combined with `d-h{n}p` and `d-hmx{n}` to have an element fill a certain height range.
 
 <code-well-header class="d-d-flex d-jc-center d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-h216 d-flow16" custom>
@@ -17,6 +18,7 @@ Use `d-hmn{n}p` to set a minimum height percentage for an element. This can be c
 ```
 
 ## Fixed
+
 Use `d-hmn{n}` to set a fixed minimum height for an element. This can be combined with `d-h{n}p` and `d-hmx{n}` to have an element fill a certain height range.
 
 <code-well-header class="d-d-flex d-jc-center d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmn264 d-flow16 d-of-y-scroll" custom>
@@ -36,6 +38,7 @@ Use `d-hmn{n}` to set a fixed minimum height for an element. This can be combine
 </script>
 
 ## Classes
+
 <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
   <table class="d-table dialtone-doc-table">
     <thead>

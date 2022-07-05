@@ -4,6 +4,7 @@ desc: Utilities to change an element's font styles.
 ---
 
 ## Italics
+
 Use `d-fs-italic` to change an element's font-style.
 
 <code-well-header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-purple-100 d-w100p d-hmn102" custom>
@@ -15,6 +16,7 @@ Use `d-fs-italic` to change an element's font-style.
 ```
 
 ## No italics
+
 Use `d-fs-none` to remove an element's font-style.
 
 <code-well-header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-purple-100 d-w100p d-hmn102" custom>
@@ -30,6 +32,7 @@ Use `d-fs-none` to remove an element's font-style.
 </script>
 
 ## Classes
+
 <utility-class-table>
   <template #content>
     <tbody>

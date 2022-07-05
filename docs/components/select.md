@@ -45,13 +45,16 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-select-menu--d
 </div>
 
 ### Best practices
+
 - Selects should be considered the “UI of last resort,” as users often find them confusing and difficult to use. Consider testing thoroughly with members of your target audience.
 - Avoid making options in one dropdown menu change based on the input to another. Users often don’t understand how selecting an item in one impacts another.
 - When most users will (or should) pick a particular option, make it the default selection.
 - Avoid auto-submission. Be wary of UI implications of automatically submitting upon selection or applying its value. Users may often change their choices multiple times, particularly if interacting with a form solely with keyboard. Auto-submission is also less accessible. For auto-submission consider the <a href="https://vue.dialpad.design/?path=/story/components-dropdown--default">Dropdown</a> component.
 
 ## Variants and Examples
+
 ### Base Styles
+
 A select is normally paired with a label, but there are times when it can be used without a label. Don't rely on the placeholder text as a label.
 
 <code-well-header>
@@ -115,6 +118,7 @@ A select is normally paired with a label, but there are times when it can be use
 ```
 
 ### With Description Text
+
 <code-well-header>
   <div class="d-w100p">
     <div class="d-label">
@@ -143,6 +147,7 @@ A select is normally paired with a label, but there are times when it can be use
 ```
 
 ### With Validation States
+
 Provides feedback to the user based on their interaction, or lack thereof, with a select.
 
 <code-well-header>
@@ -223,6 +228,7 @@ Provides feedback to the user based on their interaction, or lack thereof, with 
 ```
 
 ### Sizes
+
 We offer different sizes for instances in which the interface requires a smaller or larger select. In general, though, use the base (medium) size select as much as possible, especially in forms.
 
 <code-well-header>
@@ -329,9 +335,11 @@ We offer different sizes for instances in which the interface requires a smaller
 ```
 
 ## Classes
+
 <component-class-table component-name="select" />
 
 ## Accessibility
+
 - Make sure the `label` `for` attribute match the select `id`.
 - Avoiding removing `labels`. Labelled selects are user-friendly.
 - Avoid relying on placeholder text as a substitute for a label.

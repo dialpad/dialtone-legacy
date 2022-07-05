@@ -4,6 +4,7 @@ desc: Utilities for controlling how a grid item is aligned along its inline axis
 ---
 
 ## Auto
+
 Use `d-js-auto` to justify an item automatically along its inline axis. This is the default value.
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn102" custom>
@@ -23,6 +24,7 @@ Use `d-js-auto` to justify an item automatically along its inline axis. This is 
 ```
 
 ## Start
+
 Use `d-js-start` to justify an item to the start of its inline axis.
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-green-100 d-bgo50 d-w100p d-hmn102" custom>
@@ -42,6 +44,7 @@ Use `d-js-start` to justify an item to the start of its inline axis.
 ```
 
 ## End
+
 Use `d-js-end` to justify an item to the end of its inline axis.
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmn102" custom>
@@ -61,6 +64,7 @@ Use `d-js-end` to justify an item to the end of its inline axis.
 ```
 
 ## Center
+
 Use `d-js-center` to justify an item to the center of its inline axis.
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-red-100 d-bgo50 d-w100p d-hmn102" custom>
@@ -80,6 +84,7 @@ Use `d-js-center` to justify an item to the center of its inline axis.
 ```
 
 ## Classes
+
 <utility-class-table>
   <template #content>
     <tbody>

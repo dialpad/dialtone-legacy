@@ -4,6 +4,7 @@ desc: Utilities for setting how an element's space around and between content is
 ---
 
 ## Classes
+
 <utility-class-table>
   <template #content>
     <tbody>
@@ -16,6 +17,7 @@ desc: Utilities for setting how an element's space around and between content is
 </utility-class-table>
 
 ## Flex Start
+
 Use `d-jc-flex-start` to justify items against the start of the element's main axis. This is the default value.
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn102" custom>
@@ -35,6 +37,7 @@ Use `d-jc-flex-start` to justify items against the start of the element's main a
 ```
 
 ## Center
+
 Use `d-jc-center` to justify items along the center of the element's main axis.
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmn102" custom>
@@ -54,6 +57,7 @@ Use `d-jc-center` to justify items along the center of the element's main axis.
 ```
 
 ## Flex End
+
 Use `d-jc-flex-end` to justify items against the end of the element's main axis.
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-green-100 d-bgo50 d-w100p d-hmn102" custom>
@@ -73,6 +77,7 @@ Use `d-jc-flex-end` to justify items against the end of the element's main axis.
 ```
 
 ## Space Around
+
 Use `d-jc-space-around` to justify items along the element's main axis so that there is an equal amount of space on each side of the item. This effectively takes all available space, divides it for each child element, placing half of available space on either side of the child. This is why the space appears doubled for interior objects versus end objects.
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-red-100 d-bgo50 d-w100p d-hmn102" custom>
@@ -92,6 +97,7 @@ Use `d-jc-space-around` to justify items along the element's main axis so that t
 ```
 
 ## Space Between
+
 Use `d-jc-space-between` to justify items along the element's main axis so that there is an equal amount of space between each item without inserting any space between the first or last object.
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-yellow-100 d-bgo50 d-w100p d-hmn102" custom>
@@ -111,6 +117,7 @@ Use `d-jc-space-between` to justify items along the element's main axis so that 
 ```
 
 ## Space Evenly
+
 Use `d-jc-space-evenly` to justify items along the element's main axis so that there is an equal amount of space on each side of the item, but unlike `d-jc-space-around` visually evenly spaces objects.
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-orange-100 d-bgo50 d-w100p d-hmn102" custom>
@@ -132,4 +139,3 @@ Use `d-jc-space-evenly` to justify items along the element's main axis so that t
 <script setup>
   import { justifyContent } from '@data/flex.json';
 </script>
-

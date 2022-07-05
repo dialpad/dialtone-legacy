@@ -7,6 +7,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-banner--defaul
 <example-banner />
 
 ## Usage
+
 System banners are used for **system** messaging. They are full-width notices placed in one of two locations:
 
 1. **Above everything else:** If the banner is related to the entire app (e.g. the user lost internet service), place the banner first. <em>These should not be dismissable until the issue is resolved.</em> To pin the banner to the top of the app, add the `.d-notice--pinned` class.
@@ -15,6 +16,7 @@ System banners are used for **system** messaging. They are full-width notices pl
 Banners are a type of notice and so you can use the following <a href="components/notice/">notice styles</a> in conjunction with `.d-banner`.
 
 ## Variants and Examples
+
 <example-banner />
 
 ```html
@@ -42,9 +44,11 @@ Banners are a type of notice and so you can use the following <a href="component
 ```
 
 ## Classes
+
 <component-class-table component-name="banner"></component-class-table>
 
 ## Accessibility
+
 <component-accessible-table component-name="banner"></component-accessible-table>
 
 <script setup>

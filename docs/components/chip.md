@@ -14,6 +14,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-chip--default
 ## Variants and Examples
 
 ### Base
+
 The base chip should be the go-to chip for most of your needs.
 <code-well-header>
   <example-chip label="Chip"/>
@@ -33,6 +34,7 @@ The base chip should be the go-to chip for most of your needs.
 ```
 
 ### Without close button
+
 <code-well-header>
   <example-chip label="Chip" hide-close-btn/>
 </code-well-header>
@@ -46,6 +48,7 @@ The base chip should be the go-to chip for most of your needs.
 ```
 
 ### With icon
+
 <code-well-header>
   <example-chip label="Chip" with-icon hide-close-btn/>
 </code-well-header>
@@ -62,6 +65,7 @@ The base chip should be the go-to chip for most of your needs.
 ```
 
 ### With icon and close button
+
 <code-well-header>
   <example-chip label="Chip" with-icon/>
 </code-well-header>
@@ -83,6 +87,7 @@ The base chip should be the go-to chip for most of your needs.
 ```
 
 ### With Avatar and close button
+
 <code-well-header>
   <example-chip label="Chip" with-avatar/>
 </code-well-header>
@@ -102,6 +107,7 @@ The base chip should be the go-to chip for most of your needs.
 ```
 
 ### Non Interactive
+
 To make Chip non-interactive, change the d-chip element from a button to a span. Note
 the close button can still be interactive even if the chip is non-interactive.
 
@@ -123,6 +129,7 @@ the close button can still be interactive even if the chip is non-interactive.
 ```
 
 ### Truncated
+
 To truncate text, add `.d-truncate` to the content element, and set the width of the `.d-chip` element.
 
 <code-well-header>
@@ -143,6 +150,7 @@ To truncate text, add `.d-truncate` to the content element, and set the width of
 ```
 
 ### Sizes
+
 <code-well-header>
   <example-chip label="Chip" with-icon size="xs"/>
   <example-chip label="Chip" with-avatar size="sm"/>
@@ -194,6 +202,7 @@ To truncate text, add `.d-truncate` to the content element, and set the width of
 </script>
 
 ## Classes
+
 <component-class-table component-name="chip" />
 
 [//]: # (## Accessibility)

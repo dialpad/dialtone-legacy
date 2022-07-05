@@ -4,6 +4,7 @@ desc: Utilities for controlling the display box type of an element.
 ---
 
 ## Examples
+
 <code-well-header  class="d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn216 d-stack12" custom>
   <div class="d-p8 d-ba d-baw4 d-bar4 d-bc-purple-300 d-bgc-purple-200 d-d-block">
     <div class="d-fl-center d-fl1 d-as-stretch d-p8 d-bgc-purple-300 d-bar2 d-ff-mono d-fs12">d-d-block</div>
@@ -35,6 +36,7 @@ desc: Utilities for controlling the display box type of an element.
 </script>
 
 ## Classes
+
 <utility-class-table>
   <template #content>
     <tbody>

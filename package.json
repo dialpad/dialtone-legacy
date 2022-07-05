@@ -1,34 +1,35 @@
 {
   "name": "@dialpad/dialtone",
-  "description": "The design system for Dialpad and UberConference",
-  "repository": "git@github.com:dialpad/dialtone.git",
   "version": "6.32.2",
+  "description": "The design system for Dialpad and UberConference",
   "author": "Joshua Hynes",
+  "scripts": {
+    "build": "gulp",
+    "lint": "run-s lint:library lint:docs lint:code",
+    "lint:fix": "run-s lint-staged:library lint-staged:docs lint-staged:code",
+    "build:docsite": "gulp docsite",
+    "lesshint": "npx lesshint 'lib/build/less/utilities'",
+    "lint-staged:code": "npm run lint:code -- --fix",
+    "lint-staged:docs": "npm run lint:docs -- --fix",
+    "lint-staged:library": "npm run stylelint -- --fix",
+    "lint:code": "eslint '**/*.{js,vue}'",
+    "lint:docs": "markdownlint 'docs/**/*.md'",
+    "lint:library": "run-s stylelint lesshint",
+    "prepare": "husky install",
+    "prepublishOnly": "npm run build",
+    "release": "semantic-release --no-ci --extends ./release-local.config.js",
+    "start": "gulp watch",
+    "stylelint": "npx stylelint 'lib/build/less/**/*.{less,css}'"
+  },
+  "unpkg": "dist/css/dialtone.min.css",
   "files": [
     "lib",
     "dist"
   ],
-  "publishConfig": {
-    "access": "public"
+  "dependencies": {
+    "@docsearch/js": "^3.0.0",
+    "vue-live": "^2.0.1"
   },
-  "unpkg": "dist/css/dialtone.min.css",
-  "scripts": {
-    "build": "gulp",
-    "build:docsite": "gulp docsite",
-    "start": "gulp watch",
-    "prepublishOnly": "npm run build",
-    "release": "semantic-release --no-ci --extends ./release-local.config.js",
-    "prepare": "husky install",
-    "stylelint": "npx stylelint 'lib/build/less/**/*.{less,css}'",
-    "lesshint": "npx lesshint 'lib/build/less/utilities'",
-    "lint": "run-s stylelint lesshint",
-    "lint:fix": "npx stylelint 'lib/build/less/**/*.{less,css}' --fix"
-  },
-  "license": "MIT",
-  "browserslist": [
-    "last 1 version",
-    "maintained node versions"
-  ],
   "devDependencies": {
     "@commitlint/cli": "^15.0.0",
     "@commitlint/config-conventional": "^15.0.0",
@@ -36,6 +37,8 @@
     "@dialpad/postcss-responsive-variations": "^1.1.2",
     "@semantic-release/changelog": "^6.0.0",
     "@semantic-release/git": "^10.0.0",
+    "@vue/cli-plugin-eslint": "~5.0.4",
+    "@vue/cli-service": "~5.0.4",
     "@vuepress/plugin-active-header-links": "^2.0.0-beta.48",
     "@vuepress/plugin-google-analytics": "^2.0.0-beta.48",
     "@vuepress/plugin-toc": "^2.0.0-beta.48",
@@ -43,6 +46,14 @@
     "child_process": "^1.0.2",
     "cssnano": "^5.1.7",
     "del": "^5.1.0",
+    "eslint": "^8.18.0",
+    "eslint-config-semistandard": "^16.0.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-vue": "^9.1.1",
+    "eslint-plugin-vuejs-accessibility": "^1.2.0",
     "gulp": "^4.0.2",
     "gulp-cached": "^1.1.1",
     "gulp-concat": "^2.6.1",
@@ -54,6 +65,9 @@
     "gulp-svgmin": "^2.2.0",
     "husky": "^7.0.4",
     "lesshint": "^6.3.7",
+    "lint-staged": "^13.0.3",
+    "markdownlint": "^0.26.0",
+    "markdownlint-cli": "^0.31.1",
     "npm-run-all": "^4.1.5",
     "path": "^0.12.7",
     "postcss-focus-visible": "^6.0.3",
@@ -70,8 +84,16 @@
     "vuepress": "^2.0.0-beta.48",
     "yargs": "^17.3.1"
   },
-  "dependencies": {
-    "@docsearch/js": "^3.0.0",
-    "vue-live": "^2.0.1"
-  }
+  "browserslist": [
+    "last 1 version",
+    "maintained node versions"
+  ],
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": "git@github.com:dialpad/dialtone.git"
 }

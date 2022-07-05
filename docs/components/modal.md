@@ -29,6 +29,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-modal--default
 </code-well-header>
 
 ## Usage
+
 Modals disable underlying content and are used to present a short-term task the user needs to perform without losing the context of the underlying page. Users won't be able to interact with the page until they close the modal.
 
 Although highly versatile, this doesn't mean modal dialogs are fit for all purposes. Modals are purposefully disruptive and should be used thoughtfully and sparingly, specifically in moments where focus is required or an action must be taken.
@@ -61,6 +62,7 @@ Although highly versatile, this doesn't mean modal dialogs are fit for all purpo
 </div>
 
 ### Best practices
+
 - Ideally, users trigger the modal, not the system, and should not be a surprise. Its appearance should reflect user intent to invoke it.  Uninvited modals may surprise the user and result in a quick dismissal of the window.
 - Treat modals as a last resort. Consider whether there’s another component or UI that might be  less disruptive for the user.
 - Limit the number of interactions in a modal. Remove anything that does not support the task.
@@ -82,7 +84,9 @@ Although highly versatile, this doesn't mean modal dialogs are fit for all purpo
 <component-accessible-table component-name="modal"></component-accessible-table>
 
 ## Variants and Examples
+
 ### Base Style
+
 <code-well-header>
   <example-modal kind="base" />
 </code-well-header>
@@ -102,6 +106,7 @@ Although highly versatile, this doesn't mean modal dialogs are fit for all purpo
 ```
 
 ### Fixed header and footer
+
 <code-well-header>
   <example-modal kind="fixed" />
 </code-well-header>
@@ -121,6 +126,7 @@ Although highly versatile, this doesn't mean modal dialogs are fit for all purpo
 ```
 
 ### Danger
+
 <code-well-header>
   <example-modal kind="danger" />
 </code-well-header>
@@ -140,6 +146,7 @@ Although highly versatile, this doesn't mean modal dialogs are fit for all purpo
 ```
 
 ### Full Screen
+
 <code-well-header>
   <example-modal kind="full-screen" />
 </code-well-header>
@@ -159,6 +166,7 @@ Although highly versatile, this doesn't mean modal dialogs are fit for all purpo
 ```
 
 ## Classes
+
 At minimum, modals contain a title and one button. They could also contain body text, brand illustrations, product wireframes, or multiple buttons.
 
 <component-class-table component-name="modal"></component-class-table>

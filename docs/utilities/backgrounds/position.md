@@ -4,6 +4,7 @@ desc: Utilities for controlling the position of an element's background image.
 ---
 
 ## Usage
+
 Use `d-bgp-{position}` to control where an element's background image is placed.
 
 <code-well-header class="d-fl-col4 d-fw-wrap d-flg12 d-p12 d-bgc-purple-100 d-bgo50" custom>
@@ -16,7 +17,6 @@ Use `d-bgp-{position}` to control where an element's background image is placed.
       <code>.d-bgp-{{ className }}</code>
   </div>
 </code-well-header>
-
 
 ```html
 <div class="d-bgr-none d-bgs-var d-bgp-tl" style="--bgg-size: 65% 65%; background-image: url(...);">...</div>

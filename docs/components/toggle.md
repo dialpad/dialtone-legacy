@@ -10,6 +10,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-toggle--defaul
 </code-well-header>
 
 ## Usage
+
 The Toggle component acts as a way to allow the User to switch between two mutually exclusive options. While it technically mirrors a [Checkbox](/components/checkbox/) state, its effect on the system is immediate&mdash;much like a light switch immediately turns on or off the lights. In contrast, the checked state of a [Checkbox](/components/checkbox/) won't be applied until a separate action to confirm the selection is taken.
 
 <div class="dialtone-usage">
@@ -34,6 +35,7 @@ The Toggle component acts as a way to allow the User to switch between two mutua
 </div>
 
 ### Best practices
+
 - A Toggle component should be used as a control within an application and provide a way to toggle between two states like a household light switch.
 - An `indeterminate` Toggle convey a "mixed" state that neither qualifies as toggled or not toggled. An example use case is when a Toggle acts as a "parent" of a collection of child Toggle components:
   - Toggled: all children are toggled.
@@ -41,7 +43,9 @@ The Toggle component acts as a way to allow the User to switch between two mutua
   - `indeterminate`: children are a mix of toggled and not toggled.
 
 ## Variants and Examples
+
 ### Base Styles
+
 <code-well-header>
   <fieldset class="d-stack8">
     <div class="d-toggle-group d-d-flex d-ai-center">
@@ -105,6 +109,7 @@ The Toggle component acts as a way to allow the User to switch between two mutua
 ```
 
 ### Stacked Group
+
 <code-well-header>
   <fieldset class="d-stack8 d-w50p">
     <legend class="d-label d-fs20">DND Settings</legend>
@@ -182,9 +187,11 @@ The Toggle component acts as a way to allow the User to switch between two mutua
 ```
 
 ## Classes
+
 <component-class-table component-name="toggle" />
 
 ## Accessibility
+
 The best accessibility is semantic HTML. Most screen readers understand how to parse buttons if they’re correctly formatted. When it comes to toggles, there are a few things to keep in mind:
 
 - All toggle buttons should have an `id` attribute.

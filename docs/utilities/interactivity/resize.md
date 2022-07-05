@@ -26,6 +26,7 @@ next:
 </script>
 
 ## Classes
+
 <utility-class-table>
   <template #content>
     <tbody>

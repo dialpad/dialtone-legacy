@@ -7,6 +7,7 @@ next:
 ---
 
 ## Adding a transition
+
 Use `d-t` to add a transition to an element.
 
 <code-well-header class="d-fl-center d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn102" custom>
@@ -18,6 +19,7 @@ Use `d-t` to add a transition to an element.
 ```
 
 ## Changing transition duration
+
 Use `d-td{n}` change an element's `transition-delay` from it's default `50ms` length.
 
 <code-well-header class="d-fl-col3 d-flg8 d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmn102 d-of-auto" custom>
@@ -37,6 +39,7 @@ Use `d-td{n}` change an element's `transition-delay` from it's default `50ms` le
 ```
 
 ## Changing transition easing
+
 Use `d-ttf-{n}` change an element's `transition-timing-function` (aka easing) from it's default Quad Ease In, Ease Out value.
 
 <code-well-header class="d-fl-col2 d-flg8 d-p24 d-bgc-green-100 d-bgo50 d-w100p d-hmn102" custom>
@@ -50,6 +53,7 @@ Use `d-ttf-{n}` change an element's `transition-timing-function` (aka easing) fr
 ```
 
 ## Changing transition property
+
 Use `d-tp-{n}` change an what items within an element are transitioned.
 
 <code-well-header class="d-fl-col3 d-flg8 d-p24 d-bgc-yellow-100 d-bgo50 d-w100p d-hmn102 d-of-auto" custom>
@@ -71,6 +75,7 @@ Use `d-tp-{n}` change an what items within an element are transitioned.
 ```
 
 ## Classes
+
 <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
   <utility-class-table>
     <template #content>

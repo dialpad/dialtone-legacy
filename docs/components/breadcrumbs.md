@@ -26,7 +26,9 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-breadcrumbs--d
 </code-well-header>
 
 ## Usage
+
 Breadcrumbs show users where they are within a site’s hierarchy. Breadcrumbs help orient the user and allow for navigation to previous page levels. It can be appropriate to use a breadcrumb when:
+
 - The user is many levels of navigation deep
 - The current page does not have its own navigation
 - The user needs to quickly go back to the previous parent page
@@ -34,9 +36,11 @@ Breadcrumbs show users where they are within a site’s hierarchy. Breadcrumbs h
 Breadcrumbs should be the first page element—placed directly above the page’s title. All pages that appear in the breadcrumb should link to their respective page. The page the user is on should always be the last page listed and not linked.
 
 ### When not to use
+
 Breadcrumbs are always treated as secondary and should not entirely replace the primary navigation. They shouldn’t be used for products that have single level navigation because they create unnecessary clutter.
 
 ## Variants and Examples
+
 <code-well-header>
     <nav class="d-breadcrumbs" aria-label="breadcrumb">
         <ol>
@@ -109,9 +113,11 @@ Breadcrumbs are always treated as secondary and should not entirely replace the 
 ```
 
 ## Classes
+
 <component-class-table component-name="breadcrumbs"></component-class-table>
 
 ## Accessibility
+
 HTML doesn't provide dedicated semantic elements for breadcrumbs, so we need to add a few ARIA attributes to make them accessible.
 
 <component-accessible-table component-name="breadcrumbs"></component-accessible-table>

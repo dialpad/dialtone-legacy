@@ -7,6 +7,7 @@ prev:
 ---
 
 ## Flex Start
+
 Use `d-ac-flex-start` to pack rows against the start of the element's cross axis. This is the default value.
 
 <code-well-header bgclass="d-bgc-purple-100">
@@ -30,6 +31,7 @@ Use `d-ac-flex-start` to pack rows against the start of the element's cross axis
 ```
 
 ## Center
+
 Use `d-ac-center` to pack rows along the center of the element's cross axis.
 
 <code-well-header bgclass="d-bgc-pink-100">
@@ -53,6 +55,7 @@ Use `d-ac-center` to pack rows along the center of the element's cross axis.
 ```
 
 ## Flex End
+
 Use `d-ac-flex-end` to rack rows against the end of the element's main axis.
 
 <code-well-header bgclass="d-bgc-green-100" >
@@ -76,6 +79,7 @@ Use `d-ac-flex-end` to rack rows against the end of the element's main axis.
 ```
 
 ## Space Around
+
 Use `d-ac-space-around` to pack rows along the element's cross axis so that there is an equal amount of space on each side of the item. This effectively takes all available space, divides it for each row, placing half of alotted space on either side of the row. This is why the space appears doubled for interior rows versus end rows.
 
 <code-well-header bgclass="d-bgc-red-100" >
@@ -99,6 +103,7 @@ Use `d-ac-space-around` to pack rows along the element's cross axis so that ther
 ```
 
 ## Space Between
+
 Use `d-ac-space-between` to distribute rows along the element's cross axis so that there is an equal amount of space between each row without inserting any space between the first or last object.
 
 <code-well-header bgclass="d-bgc-yellow-100" >
@@ -122,6 +127,7 @@ Use `d-ac-space-between` to distribute rows along the element's cross axis so th
 ```
 
 ## Space Evenly
+
 Use `d-ac-space-evenly` to distribute rows along the element's cross axis so that there is an equal amount of space on each side of the rows, but unlike `d-ac-space-around` the space visually looks evenly distributed between objects.
 
 <code-well-header bgclass="d-bgc-orange-100" >
@@ -155,6 +161,7 @@ import { alignContent } from '@data/flex.json';
 </script>
 
 ## Classes
+
 <utility-class-table>
  <template #content>
     <tbody>

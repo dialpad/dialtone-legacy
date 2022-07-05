@@ -4,6 +4,7 @@ desc: Utilities to change an element's line-height.
 ---
 
 ## Relative line-heights
+
 Use `d-lh-{n}` to change an element's line-height relatively. This means no unit is set with the line-height. Instead the line-height value is a multiple of the font-size.
 
 <code-well-header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-purple-100 d-w100p d-hmn102" custom>
@@ -30,6 +31,7 @@ Use `d-lh-{n}` to change an element's line-height relatively. This means no unit
 ```
 
 ## Fixed line-heights
+
 Use `d-lh{n}` to fix an element's line-height. This allows you to target a specific line-height based on the font-size. For example if a target 20px line-height is desired and the current font-size is 14px, apply `.d-lh6` to achieve this target (14px font-size + 6px = 20px target line-height).
 
 <code-well-header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-yellow-100 d-w100p d-hmn102" custom>
@@ -75,6 +77,7 @@ Use `d-lh{n}` to fix an element's line-height. This allows you to target a speci
 </script>
 
 ## CSS Variables
+
 <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
   <table class="d-table dialtone-doc-table">
     <thead>
@@ -95,6 +98,7 @@ Use `d-lh{n}` to fix an element's line-height. This allows you to target a speci
 </div>
 
 ## Classes
+
 <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
   <utility-class-table>
     <template #content>
