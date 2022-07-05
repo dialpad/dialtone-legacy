@@ -125,10 +125,19 @@ Now in variation `d-avatar--sm`, we just set `--avatar--size`. Width and height 
 
 ### Linting
 
-Our code is linted by [stylelint](https://stylelint.io/) as well as [lesshint](https://github.com/lesshint/lesshint). Configuration can be found in:
+Our code is linted by:
 
-- [stylelint.config.js](../stylelint.config.js)
+- [stylelint](https://stylelint.io).
+- [lesshint](https://github.com/lesshint/lesshint).
+- [eslint](https://eslint.org).
+- [markdownlint](https://github.com/DavidAnson/markdownlint).
+
+Configuration can be found in:
+
+- [stylelint.config.js](../stylelint.config.js), [.stylelintignore](../.stylelintignore)
 - [.lesshintrc.js](../.lesshintrc.js)
+- [.eslintrc.js](../.eslintrc.js), [.eslintignore](../.eslintignore)
+- [.markdownlintrc](../.markdownlintrc), [.markdownlintignore](../.markdownlintignore)
 
 Your code will be linted automatically on commit.
 
