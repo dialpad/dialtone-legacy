@@ -20,7 +20,6 @@ module.exports = {
     'max-len': ['error', {
       code: 120,
       tabWidth: 2,
-      ignorePattern: 'd="([\\s\\S]*?)"',
     }],
     'prefer-promise-reject-errors': ['error', {
       allowEmptyReject: true,
