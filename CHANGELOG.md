@@ -1,3 +1,17 @@
+## [6.32.3](https://github.com/dialpad/dialtone/compare/v6.32.2...v6.32.3) (2022-07-06)
+
+
+### Bug Fixes
+
+* add missing utility classes. ([#624](https://github.com/dialpad/dialtone/issues/624)) ([45f4896](https://github.com/dialpad/dialtone/commit/45f48968e510528609e2f4ee73c120ab168f7065))
+
+## [6.32.3](https://github.com/dialpad/dialtone/compare/v6.32.2...v6.32.3) (2022-07-06)
+
+
+### Bug Fixes
+
+* add missing utility classes. ([#624](https://github.com/dialpad/dialtone/issues/624)) ([45f4896](https://github.com/dialpad/dialtone/commit/45f48968e510528609e2f4ee73c120ab168f7065))
+
 ## [6.32.2](https://github.com/dialpad/dialtone/compare/v6.32.1...v6.32.2) (2022-06-29)
 
 
