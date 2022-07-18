@@ -1,3 +1,10 @@
+## [6.33.1](https://github.com/dialpad/dialtone/compare/v6.33.0...v6.33.1) (2022-07-18)
+
+
+### Bug Fixes
+
+* fix release GA ([265d73b](https://github.com/dialpad/dialtone/commit/265d73b7e081919ceee7aa843c16317ff86d8f52))
+
 # [6.33.0](https://github.com/dialpad/dialtone/compare/v6.32.3...v6.33.0) (2022-07-18)
 
 
