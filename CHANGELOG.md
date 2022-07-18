@@ -1,3 +1,10 @@
+# [6.33.0](https://github.com/dialpad/dialtone/compare/v6.32.3...v6.33.0) (2022-07-18)
+
+
+### Features
+
+* add the new router icon ([#626](https://github.com/dialpad/dialtone/issues/626)) ([a4bb7bd](https://github.com/dialpad/dialtone/commit/a4bb7bd98a917f020376f8c542ae890b083ff80e))
+
 ## [6.32.3](https://github.com/dialpad/dialtone/compare/v6.32.2...v6.32.3) (2022-07-06)
 
 
