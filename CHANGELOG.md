@@ -1,3 +1,10 @@
+## [6.33.2](https://github.com/dialpad/dialtone/compare/v6.33.1...v6.33.2) (2022-07-18)
+
+
+### Bug Fixes
+
+* bump dialtone version ([#628](https://github.com/dialpad/dialtone/issues/628)) ([8e5e5eb](https://github.com/dialpad/dialtone/commit/8e5e5eb0963d36b51afd6d802bb47d0a1b0bdf50))
+
 ## [6.33.1](https://github.com/dialpad/dialtone/compare/v6.33.0...v6.33.1) (2022-07-18)
 
 
