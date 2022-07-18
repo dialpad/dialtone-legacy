@@ -44,7 +44,7 @@ jobs:
       - name: Set npm token
         run: npm config set //registry.npmjs.org/:_authToken=${{ secrets.DIALTONE_NPM_TOKEN }}
 
-      # Note that npm run build is executed before publishing via prepublishOnly
+      # note that npm run build is executed before publishing via prepublishOnly
       - name: Deploy production
         if: ${{ github.ref == 'refs/heads/production' }}
         run: npm publish
