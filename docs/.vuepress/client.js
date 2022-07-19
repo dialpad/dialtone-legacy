@@ -12,7 +12,6 @@ import WeatherCodesTable from './baseComponents/WeatherCodesTable.vue';
 import SpacingSystemTable from './baseComponents/SpacingSystemTable.vue';
 import IconSizesTable from './baseComponents/IconSizesTable.vue';
 import ComponentAccessibleTable from './baseComponents/ComponentAccessibleTable.vue';
-import LivePreview from './baseComponents/LivePreview.vue';
 
 // Common icons
 import IconInfo from '@svgIcons/IconInfo.vue';
@@ -30,18 +29,6 @@ import '@dialtoneDocsCSS';
 
 export default defineClientConfig({
   enhance ({ app, router, siteData }) {
-    // eslint-disable-next-line no-undef
-    if (!__VUEPRESS_SSR__) {
-      // Dialtone vue components
-      import('@dialpad/dialtone-vue').then(module => {
-        Object.keys(module)
-          .filter((key) => key.startsWith('Dt'))
-          .forEach((key) => {
-            app.component(key, module[key]);
-          });
-      });
-    }
-
     // Common views
     app.component('Icons', Icons);
     app.component('Colors', Colors);
@@ -54,7 +41,6 @@ export default defineClientConfig({
     app.component('SpacingSystemTable', SpacingSystemTable);
     app.component('IconSizesTable', IconSizesTable);
     app.component('ComponentAccessibleTable', ComponentAccessibleTable);
-    app.component('LivePreview', LivePreview);
 
     // Common icons
     app.component('IconInfo', IconInfo);
