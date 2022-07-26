@@ -1,3 +1,10 @@
+# [6.34.0](https://github.com/dialpad/dialtone/compare/v6.33.3...v6.34.0) (2022-07-26)
+
+
+### Features
+
+* add icons for new bottom bar ([#631](https://github.com/dialpad/dialtone/issues/631)) ([00e5bab](https://github.com/dialpad/dialtone/commit/00e5bab2bc604558e1553856538106aa40ae41fa))
+
 ## [6.33.3](https://github.com/dialpad/dialtone/compare/v6.33.2...v6.33.3) (2022-07-18)
 
 
