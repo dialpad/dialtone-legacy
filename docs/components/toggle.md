@@ -66,7 +66,7 @@ The Toggle component acts as a way to allow the User to switch between two mutua
 ```html
 <fieldset class="d-stack8">
   <div class="d-toggle-group d-d-flex d-ai-center">
-    <div class="d-toggle-copy d-mr6">
+    <div class="d-toggle-copy">
       <label class="d-toggle-label" for="Dialtone-Toggle1">Unchecked Toggle</label>
     </div>
     <div class="d-toggle-button">
@@ -76,7 +76,7 @@ The Toggle component acts as a way to allow the User to switch between two mutua
     </div>
   </div>
   <div class="d-toggle-group d-d-flex d-ai-center">
-    <div class="d-toggle-copy d-mr6">
+    <div class="d-toggle-copy">
       <label class="d-toggle-label" for="Dialtone-Toggle2">Checked Toggle</label>
     </div>
     <div class="d-toggle-button">
@@ -86,7 +86,7 @@ The Toggle component acts as a way to allow the User to switch between two mutua
     </div>
   </div>
   <div class="d-toggle-group d-d-flex d-ai-center">
-    <div class="d-toggle-copy d-mr6">
+    <div class="d-toggle-copy">
       <label class="d-toggle-label" for="Dialtone-Toggle3">Unchecked Disabled</label>
     </div>
     <div class="d-toggle-button">
@@ -96,7 +96,7 @@ The Toggle component acts as a way to allow the User to switch between two mutua
     </div>
   </div>
   <div class="d-toggle-group d-d-flex d-ai-center">
-    <div class="d-toggle-copy d-mr6">
+    <div class="d-toggle-copy">
       <label class="d-toggle-label" for="Dialtone-Toggle4">Checked Disabled</label>
     </div>
     <div class="d-toggle-button">
@@ -143,7 +143,7 @@ The Toggle component acts as a way to allow the User to switch between two mutua
       <h3 class="d-mr4">DND</h3>
     </div>
     <div class="row d-d-flex d-ai-center d-jc-space-between d-mb6">
-      <div class="d-toggle-copy d-mr6">
+      <div class="d-toggle-copy">
         <label class="d-toggle-label" for="Dialtone-Toggle5">Acorn Tech</label>
       </div>
       <div class="d-toggle-button">
@@ -153,7 +153,7 @@ The Toggle component acts as a way to allow the User to switch between two mutua
       </div>
     </div>
     <div class="row d-d-flex d-ai-center d-jc-space-between d-mb6">
-      <div class="d-toggle-copy d-mr6">
+      <div class="d-toggle-copy">
         <label class="d-toggle-label" for="Dialtone-Toggle5">California Zoo</label>
       </div>
       <div class="d-toggle-button">
@@ -163,7 +163,7 @@ The Toggle component acts as a way to allow the User to switch between two mutua
       </div>
     </div>
     <div class="row d-d-flex d-ai-center d-jc-space-between d-mb6">
-      <div class="d-toggle-copy d-mr6">
+      <div class="d-toggle-copy">
         <label class="d-toggle-label" for="Dialtone-Toggle5">Montana Centre</label>
       </div>
       <div class="d-toggle-button">
@@ -173,7 +173,7 @@ The Toggle component acts as a way to allow the User to switch between two mutua
       </div>
     </div>
     <div class="row d-d-flex d-ai-center d-jc-space-between d-mb6">
-      <div class="d-toggle-copy d-mr6">
+      <div class="d-toggle-copy">
         <label class="d-toggle-label" for="Dialtone-Toggle5">Wilson Centre</label>
       </div>
       <div class="d-toggle-button">

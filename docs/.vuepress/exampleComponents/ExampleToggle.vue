@@ -1,5 +1,5 @@
 <template>
-  <div class="d-toggle-copy d-mr6">
+  <div class="d-toggle-copy">
     <label
       class="d-toggle-label"
       for="Dialtone-Toggle1"
