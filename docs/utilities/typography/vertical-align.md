@@ -31,7 +31,7 @@ Use `d-va-top` to vertically align an element to the top.
       <span class="d-ps-absolute d-t0 d-h32 d-w100p d-by d-bts-dashed d-bbs-dashed d-bc-purple-300"></span>
       <span class="d-ps-absolute d-t0 d-h16 d-w100p d-by d-bts-dashed d-bbs-dashed d-bc-purple-300"></span>
     </div>
-    <p class="d-d-inline-block d-ps-relative d-zi-base1 d-fc-purple-400 d-fs18">The quick brown fox jumps over the lazy dog.</p>
+    <p class="d-d-inline-block d-ps-relative d-zi-base1 d-fc-purple d-fs18">The quick brown fox jumps over the lazy dog.</p>
   </div>
 </code-well-header>
 
