@@ -24,8 +24,13 @@
         <br>
         <span class="d-fc-dark-lighter">#{{ s.hex }}</span>
       </div>
-      <div class="d-fs11 d-lh2 d-fw-bold d-bar-sm d-px4 py2">
-        {{ s.contrast }}
+      <div class="d-d-flex d-fd-column d-fs11 d-lh2 d-fw-bold d-bar-sm d-px4 py2">
+        <div class="">
+          {{ s.contrast }}
+        </div>
+        <div v-if="s.darkContrast" class="d-fc-dark">
+          {{ s.darkContrast }}
+        </div>
       </div>
     </div>
   </aside>
