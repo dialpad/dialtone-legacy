@@ -79,7 +79,7 @@ If you would like to verify your final output svg file run `npm run build` and l
 ### A note on theming
 
 Spot Illustrations allow for theming, meaning the primary color of the illustration will change when the theme changes.
-If your spot illustration svg contains a fill or a stroke with the dialtone primary color `#6C3DFF`
+If your spot illustration svg contains a fill or a stroke with the dialtone primary color `#7C52FF`
 then it will automatically change when the theme's primary color changes.
 
 You may often wish to derive lighter or darker colors based on the primary color when making a spot illustration.
