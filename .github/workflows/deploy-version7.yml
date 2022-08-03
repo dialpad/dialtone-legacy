@@ -1,9 +1,9 @@
-name: Deploy Vuepress
+name: Deploy Version 7
 
 on:
   push:
     branches:
-      - VuePress_migration_base
+      - version7
 
 jobs:
   deploy:
@@ -23,11 +23,11 @@ jobs:
         run: npm install
 
       - name: Build Library and docsite
-        run: npm run build:docsite -- --deploySubdir /vuepress/
+        run: npm run build:docsite -- --deploySubdir /version7/
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4.2.5
         with:
           branch: gh-pages
           folder: docs/.vuepress/dist
-          target-folder: vuepress
+          target-folder: version7
