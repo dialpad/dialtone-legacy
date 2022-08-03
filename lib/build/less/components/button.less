@@ -51,12 +51,18 @@
 
     //  --  STATES
     //  ------------------------------------------------------------------------
-
-    &:active,
     &:hover {
         --button--fc: var(--primary-color-hover);
-        --button--bgc: hsla(var(--primary-color-hsl) ~' / ' 10%);
+        --button--bgc: hsla(var(--primary-color-hsl) ~' / ' 3%);
     }
+
+    &:active,
+    &.d-btn--active,
+    &.d-btn--active:active {
+        --button--fc: var(--primary-color-hover);
+        --button--bgc: hsla(var(--primary-color-hsl) ~' / ' 9%);
+    }
+
 
     &:focus-visible {
       outline: none;
@@ -140,20 +146,36 @@
 }
 
 //  ============================================================================
-//  $   BUTTON ICON
+//  $   BUTTON WITH ICON
 //  ----------------------------------------------------------------------------
+.d-btn--vertical {
+    flex-direction: column;
+}
+
 .d-btn__icon {
     display: flex;
-    margin-top: var(--sun4);
-    margin-bottom: var(--sun4);
     line-height: 0;
 }
 
-.d-btn__icon--left {
+.d-btn__icon--left,
+.d-btn__icon--right {
+    margin-top: var(--sun4);
+    margin-bottom: var(--sun4);
+}
+
+.d-btn__icon--top,
+.d-btn__icon--bottom {
+    margin-right: var(--sun4);
+    margin-left: var(--sun4);
+}
+
+.d-btn__icon--left,
+.d-btn__icon--top {
     order: -1;
 }
 
-.d-btn__icon--right {
+.d-btn__icon--right,
+.d-btn__icon--bottom {
     order: 1;
 }
 
@@ -175,6 +197,16 @@
     margin-right: var(--su4);
 }
 
+.d-btn__icon--top ~ .d-btn__label,
+.d-btn__label ~ .d-btn__icon--bottom {
+    margin-top: var(--su4);
+}
+
+.d-btn__icon--bottom ~ .d-btn__label,
+.d-btn__label ~ .d-btn__icon--top {
+    margin-bottom: var(--su4);
+}
+
 //  ============================================================================
 //  $   VISUAL STYLES
 //  ----------------------------------------------------------------------------
@@ -188,8 +220,15 @@
     transition-duration: 150ms;
 
     &:hover {
-        --button--fc: var(--black-800);
-        --button--bgc: var(--black-100);
+        --button--fc: var(--muted-color-hover);
+        --button--bgc: hsla(var(--black-800-hsl) ~' / ' 3%);
+    }
+
+    &:active,
+    &.d-btn--active,
+    &.d-btn--active:active {
+        --button--fc: var(--muted-color-hover);
+        --button--bgc: hsla(var(--black-800-hsl) ~' / ' 9%);
     }
 
     &:focus-visible {
@@ -207,11 +246,6 @@
     &.d-btn--outlined {
         --button--bc: var(--black-700);
     }
-
-    // &:active {
-    //     border-color: hsla(var(--black-700-h) var(--black-700-s) var(--black-700-l) ~" / " 50%);
-    //     background-color: hsla(var(--black-700-h) var(--black-700-s) var(--black-700-l) ~" / " 10%);
-    // }
 
     //  Adjust padding based on sizes
     &.d-btn--xs {
@@ -252,8 +286,15 @@
     --button--bgc: var(--primary-color);
 
     &:hover {
-        --button--fc: var(--white);
-        --button--bgc: var(--primary-color-hover);
+      --button--fc: var(--white);
+      --button--bgc: hsl(var(--primary-color-h), var(--primary-color-s), 65%);
+    }
+
+    &:active,
+    &.d-btn--active,
+    &.d-btn--active:active {
+      --button--fc: var(--white);
+      --button--bgc: hsl(var(--primary-color-h), var(--primary-color-s), 42%);
     }
 }
 
@@ -263,8 +304,15 @@
     --button--fc: var(--muted-color);
 
     &:hover {
-      --button--fc: var(--muted-color-hover);
-      --button--bgc: hsla(var(--muted-color-hsl) ~' / ' 7.5%);
+        --button--fc: var(--muted-color-hover);
+        --button--bgc: hsla(var(--black-800-hsl) ~' / ' 3%);
+    }
+
+    &:active,
+    &.d-btn--active,
+    &.d-btn--active:active {
+        --button--fc: var(--muted-color-hover);
+        --button--bgc: hsla(var(--black-800-hsl) ~' / ' 9%);
     }
 
     &:focus-visible {
@@ -282,8 +330,15 @@
     --button--fc: var(--error-color);
 
     &:hover {
-        --button--bgc: hsla(var(--error-color-hsl) ~' / ' 10%);
         --button--fc: var(--error-color-hover);
+        --button--bgc: hsla(var(--error-color-hsl) ~' / ' 6%);
+    }
+
+    &:active,
+    &.d-btn--active,
+    &.d-btn--active:active {
+        --button--fc: var(--error-color-hover);
+        --button--bgc: hsla(var(--error-color-hsl) ~' / ' 20%);
     }
 
     &:focus-visible {
@@ -300,7 +355,14 @@
 
         &:hover {
             --button--fc: var(--white);
-            --button--bgc: var(--error-color-hover);
+            --button--bgc: hsl(var(--red-500-h), var(--red-500-s), 40%);
+        }
+
+        &:active,
+        &.d-btn--active,
+        &.d-btn--active:active {
+            --button--fc: var(--white);
+            --button--bgc: hsl(var(--red-500-h), var(--red-500-s), 27%);
         }
     }
 }
@@ -317,6 +379,13 @@
         --button--bgc: hsla(var(--white-hsl) ~' / ' 15%);
     }
 
+    &:active,
+    &.d-btn--active,
+    &.d-btn--active:active {
+        --button--fc: var(--white);
+        --button--bgc: hsla(var(--white-hsl) ~' / ' 30%);
+    }
+
     &:focus-visible {
         box-shadow: var(--bs-focus-ring-inverted);
     }
@@ -329,11 +398,18 @@
     //  --  PRIMARY
     &.d-btn--primary {
         --button--fc: var(--primary-color);
-        --button--bgc: var(--white);
+        --button--bgc: hsl(var(--purple-100-h), var(--purple-100-s), 100%);
 
         &:hover {
             --button--fc: var(--primary-color-hover);
-            --button--bgc: hsla(var(--white-hsl) ~' / ' 90%);
+            --button--bgc: hsl(var(--purple-100-h), var(--purple-100-s), 94%);
+        }
+
+        &:active,
+        &.d-btn--active,
+        &.d-btn--active:active {
+            --button--fc: var(--primary-color-hover);
+            --button--bgc: hsl(var(--purple-100-h), var(--purple-100-s), 91%);
         }
     }
 }

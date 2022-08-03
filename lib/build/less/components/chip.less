@@ -1,0 +1,217 @@
+//
+//  DIALTONE
+//  COMPONENTS: CHIP
+//
+//  These are chip classes for Dialpad's design system Dialtone.
+//  For further documentation of these and other classes,
+//  visit https://dialpad.design/components/chip
+//
+//  TABLE OF CONTENTS
+//  • BASE STYLE
+//  • INTERACTIVITY
+//  • SIZES
+//
+//  ============================================================================
+//  $   BASE STYLE
+//  ----------------------------------------------------------------------------
+.d-chip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.d-chip__label {
+  //  Component CSS Vars
+  --chip--fc: var(--fc-dark);
+  --chip--bgc: var(--black-050);
+  --chip--br: var(--su102);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: var(--su4) var(--su8);
+  color: var(--chip--fc);
+  font-size: var(--fs16);
+  font-family: inherit;
+  line-height: var(--lh4);
+  background-color: var(--chip--bgc);
+  border: none;
+  border-radius: var(--chip--br);
+  transition-timing-function: var(--ttf-in-out);
+  transition-duration: 75ms;
+  transition-property: background-color;
+
+  // Reserves space within the chip for the close button, since the close button is
+  // not nested within the chip. Only apply if close button exists (more than one child).
+  &:not(:only-child)::after {
+    flex-shrink: 0;
+    width: calc(var(--su16) + var(--su2));
+    height: calc(var(--su16) + var(--su2));
+    content: '';
+  }
+
+  // These properties are only set if d-chip is interactive (ex: a button).
+  &:is(a),
+  &:is(button),
+  &:is([role='button']),
+  &:is([role='link']) {
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+      --chip--bgc: var(--black-075);
+
+      text-decoration: none;
+    }
+
+    &:active {
+      --chip--bgc: var(--black-100);
+    }
+
+    &:focus-visible {
+      outline: none;
+      box-shadow: var(--bs-focus-ring-muted);
+    }
+  }
+
+  .d-avatar {
+    --avatar--size: var(--su24);
+
+    margin: var(--sun2) var(--su4) var(--sun2) var(--sun6);
+  }
+
+  .d-svg {
+    width: @icon18;
+    height: @icon18;
+  }
+}
+
+.d-chip__close {
+  .d-btn();
+  .d-btn--circle();
+
+  position: absolute;
+  right: var(--su2);
+  padding: calc(var(--su2) + var(--su1));
+  border-width: var(--su0);
+
+  &::before {
+    position: absolute;
+    width: 2.6rem;
+    height: 2.8rem;
+    content: '';
+  }
+
+  &:hover {
+    --button--bgc: hsla(var(--black-800-hsl) ~' / ' 15%);
+  }
+
+  &:active {
+    --button--bgc: hsla(var(--black-800-hsl) ~' / ' 25%);
+  }
+
+  .d-btn__icon .d-svg {
+    width: @icon18;
+    height: @icon18;
+  }
+}
+
+.d-chip__icon {
+  padding-right: var(--su4);
+  line-height: 0;
+}
+
+.d-chip__label--active {
+  background-color: var(--black-100);
+}
+
+//  ============================================================================
+//  $   SIZES
+//  ----------------------------------------------------------------------------
+//  $$  EXTRA SMALL
+//  ----------------------------------------------------------------------------
+.d-chip__label--xs {
+  padding: var(--su2) var(--su6);
+  font-size: var(--fs12);
+
+
+
+  .d-svg {
+    width: @icon14;
+    height: @icon14;
+  }
+
+  // reserves space within the chip for the close button, since the close button is
+  // not nested within the chip.
+  &::after {
+    flex-shrink: 0;
+    width: var(--su12);
+    height: var(--su12);
+    content: '';
+  }
+
+  .d-avatar {
+    --avatar--size: var(--su16);
+
+    margin-right: var(--su4);
+    margin-left: var(--sun4);
+  }
+}
+
+.d-chip__close--xs {
+  padding: var(--su1);
+
+  // Clickable area for the close button.
+  &::before {
+    width: var(--su24);
+    height: var(--su24);
+  }
+
+  .d-btn__icon .d-svg {
+    width: @icon14;
+    height: @icon14;
+  }
+}
+
+//  $$ SMALL
+//  ----------------------------------------------------------------------------
+.d-chip__label--sm {
+  padding: var(--su2) var(--su8);
+  font-size: var(--fs16);
+
+  .d-svg {
+    width: @icon16;
+    height: @icon16;
+  }
+
+  // reserves space within the chip for the close button, since the close button is
+  // not nested within the chip.
+  &::after {
+    flex-shrink: 0;
+    width: calc(var(--su12) + var(--su2));
+    height: calc(var(--su12) + var(--su2));
+    content: '';
+  }
+
+  .d-avatar {
+    --avatar--size: calc(var(--su24) - var(--su4));
+
+    margin-right: var(--su4);
+    margin-left: var(--sun6);
+  }
+}
+
+.d-chip__close--sm {
+  padding: var(--su2);
+
+  &::before {
+    width: var(--su24);
+    height: var(--su24);
+  }
+
+  .d-btn__icon .d-svg {
+    width: @icon16;
+    height: @icon16;
+  }
+}

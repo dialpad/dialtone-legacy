@@ -1,0 +1,32 @@
+@import (reference) '../../../lib/build/less/variables/spacing.less';
+@import (reference) '../../../lib/build/less/variables/colors';
+
+div[class*=language-] {
+  padding: var(--su8);
+  border-radius: var(--su8);
+  background-color: hsla(var(--black-600-h) var(--black-600-s) var(--black-600-l) ~' / ' var(--bgo));
+
+  pre {
+    padding: 1em !important;
+    margin: 0 !important;
+
+    code {
+      color: @black-200 !important;
+    }
+  }
+
+  &[class*=jsx] {
+    background: inherit;
+  }
+
+  &[class*=html] {
+    border-radius: 0 0 6px 6px !important;
+    margin-top: var(--sun4) !important;
+  }
+}
+
+code {
+  --bgo: 50% !important;
+  background-color: @purple-100;
+  color: @purple-400;
+}
