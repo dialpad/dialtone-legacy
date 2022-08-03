@@ -72,7 +72,7 @@ const replace = settings.svgs ? require('gulp-replace') : null;
 //  @@ BUILD
 const cp = settings.build ? require('child_process') : null;
 
-const PRIMARY_COLOR = '#6c3dff';
+const PRIMARY_COLOR = '#7C52FF';
 
 //  ================================================================================
 //  @  PATHS

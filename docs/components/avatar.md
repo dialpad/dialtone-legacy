@@ -7,7 +7,7 @@ prev:
   link: /utilities/typography/word-break
 ---
 <code-well-header>
-  <div class="d-avatar d-avatar--md d-avatar--icon d-avatar--purple-600">
+  <div class="d-avatar d-avatar--md d-avatar--icon d-avatar--purple-500">
     <img src="/assets/images/person.png" alt=""/>
   </div>
 </code-well-header>
@@ -20,19 +20,19 @@ prev:
 ### Icons
 
 <code-well-header>
-    <div class="d-avatar d-avatar--md d-avatar--icon d-avatar--purple-600">
+    <div class="d-avatar d-avatar--md d-avatar--icon d-avatar--purple-500">
         <IconGroup/>
     </div>
 </code-well-header>
 
 ```html
-<div class="d-avatar d-avatar--icon d-avatar--purple-600">...</div>
+<div class="d-avatar d-avatar--icon d-avatar--purple-500">...</div>
 ```
 
 ### Images
 
 <code-well-header>
-    <div class="d-avatar d-avatar--md d-avatar--icon d-avatar--purple-600">
+    <div class="d-avatar d-avatar--md d-avatar--icon d-avatar--purple-500">
         <img src="/assets/images/person.png" alt=""/>
     </div>
 </code-well-header>
@@ -61,9 +61,9 @@ prev:
 
 <code-well-header>
     <div class="d-d-inline-flex d-ai-center d-flow8">
-        <div class="d-avatar d-avatar--sm d-avatar--purple-600 d-avatar--initials d-mb8">DP</div>
-        <div class="d-avatar d-avatar--md d-avatar--purple-600 d-avatar--initials d-mb8">DP</div>
-        <div class="d-avatar d-avatar--lg d-avatar--purple-600 d-avatar--initials d-mb8">DP</div>
+        <div class="d-avatar d-avatar--sm d-avatar--purple-500 d-avatar--initials d-mb8">DP</div>
+        <div class="d-avatar d-avatar--md d-avatar--purple-500 d-avatar--initials d-mb8">DP</div>
+        <div class="d-avatar d-avatar--lg d-avatar--purple-500 d-avatar--initials d-mb8">DP</div>
     </div>
 </code-well-header>
 
