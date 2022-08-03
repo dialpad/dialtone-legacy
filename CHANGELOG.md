@@ -1,3 +1,10 @@
+# [7.0.0-beta.2](https://github.com/dialpad/dialtone/compare/v7.0.0-beta.1...v7.0.0-beta.2) (2022-08-03)
+
+
+### Bug Fixes
+
+* add package.json to trigger a release paths ([72144f6](https://github.com/dialpad/dialtone/commit/72144f6da94498b5ef6ffe9c56344f48e75c5f7d))
+
 # [7.0.0-beta.1](https://github.com/dialpad/dialtone/compare/v6.34.0...v7.0.0-beta.1) (2022-08-03)
 
 
