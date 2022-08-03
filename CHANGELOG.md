@@ -1,3 +1,28 @@
+# [7.0.0-beta.1](https://github.com/dialpad/dialtone/compare/v6.34.0...v7.0.0-beta.1) (2022-08-03)
+
+
+### Bug Fixes
+
+* add justify-content flex-end to header/footer ([6547fea](https://github.com/dialpad/dialtone/commit/6547fea38d80696629f1a50f91cd195c789607e4))
+* make z-index work on all children ([7aa3fd1](https://github.com/dialpad/dialtone/commit/7aa3fd1a54c058a5db096d72f46869506e41779c))
+* popover example page issues ([574dee2](https://github.com/dialpad/dialtone/commit/574dee2fe898ac188405cc18683f9f3f6edb2076))
+* remove side padding from header footer ([e0abbcf](https://github.com/dialpad/dialtone/commit/e0abbcf74c9417e84b96d2541140254c59a10153))
+* remove z-index from content ([38bd70a](https://github.com/dialpad/dialtone/commit/38bd70aae06f947698e5f90d2043af5d02f23da1))
+* **toggle:** dt-569 toggle default padding ([#632](https://github.com/dialpad/dialtone/issues/632)) ([0111087](https://github.com/dialpad/dialtone/commit/0111087136c460068ee5b9f629794c77ed5b3849))
+
+
+### Features
+
+* add popover css and documentation ([df3d204](https://github.com/dialpad/dialtone/commit/df3d2049a8391918e72c912e79da00b00e00bb07))
+* add transparent modal ([488f46a](https://github.com/dialpad/dialtone/commit/488f46a6c7995b4e67c40efb553e67fa7194412c))
+* **colors:** update purple colors ([#633](https://github.com/dialpad/dialtone/issues/633)) ([7330fa0](https://github.com/dialpad/dialtone/commit/7330fa08e2a6e643c92f8d68c29ea894c8333fe0))
+* popover css and documentation ([#540](https://github.com/dialpad/dialtone/issues/540)) ([2c4dc58](https://github.com/dialpad/dialtone/commit/2c4dc58404944036693816c23b69b0453f38399f))
+
+
+### BREAKING CHANGES
+
+* **colors:** Removed purple-700 and purple-800 color stops
+
 # [6.19.0-beta.2](https://github.com/dialpad/dialtone/compare/v6.19.0-beta.1...v6.19.0-beta.2) (2022-03-01)
 
 
