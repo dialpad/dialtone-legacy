@@ -4,6 +4,7 @@
 @import (reference) '../../../lib/build/less/utilities/internals';
 @import (reference) '../../../lib/build/less/utilities/spacing';
 @import (reference) '../../../lib/build/less/utilities/typography';
+@import (reference) '../../../lib/build/less/components/modal';
 
 html {
   scroll-behavior: smooth;
@@ -154,6 +155,13 @@ samp {
     margin-top: 0!important;
   }
 
+}
+
+// Fix theme-default styles leaking into the modal
+.theme-default-content {
+  .d-modal__header {
+    .d-modal__header();
+  }
 }
 
 .page-nav {
