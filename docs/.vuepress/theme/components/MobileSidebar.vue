@@ -36,7 +36,7 @@
         d-fd-column d-ai-baseline d-pt24 d-pr16
       "
     >
-      <SidebarItems @click="toggleSiteNav" />
+      <sidebar-items @click="toggleSiteNav" />
     </div>
   </div>
 </template>

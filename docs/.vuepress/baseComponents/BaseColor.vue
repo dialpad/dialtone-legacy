@@ -28,7 +28,10 @@
         <div class="">
           {{ s.contrast }}
         </div>
-        <div v-if="s.darkContrast" class="d-fc-dark">
+        <div
+          v-if="s.darkContrast"
+          class="d-fc-dark"
+        >
           {{ s.darkContrast }}
         </div>
       </div>
