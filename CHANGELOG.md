@@ -1,3 +1,10 @@
+## [6.34.2](https://github.com/dialpad/dialtone/compare/v6.34.1...v6.34.2) (2022-08-10)
+
+
+### Bug Fixes
+
+* **modal:** add box sizing in modal banner class ([#638](https://github.com/dialpad/dialtone/issues/638)) ([a66141c](https://github.com/dialpad/dialtone/commit/a66141c32d397cc1436b9e53485306633a464b79))
+
 ## [6.34.1](https://github.com/dialpad/dialtone/compare/v6.34.0...v6.34.1) (2022-08-08)
 
 
