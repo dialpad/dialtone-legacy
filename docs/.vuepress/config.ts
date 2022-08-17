@@ -101,7 +101,8 @@ export default defineUserConfig({
     '@exampleComponents': resolve(__dirname, './exampleComponents'),
     '@baseComponents': resolve(__dirname, './baseComponents'),
     '@dialtoneCSS': resolve(__dirname, '../assets/css/' + dialtoneCSS),
-    '@dialtoneDocsCSS': resolve(__dirname, '../assets/css/' + dialtoneDocsCSS)
+    '@dialtoneDocsCSS': resolve(__dirname, '../assets/css/' + dialtoneDocsCSS),
+    '@mixins': resolve(__dirname, './common/mixins/'),
   },
 
   plugins: [
