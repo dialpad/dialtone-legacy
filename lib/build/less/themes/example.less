@@ -25,16 +25,8 @@
 //  $$  SET THESE
 //      Currently only the following items are themeable in Dialtone.
 //
-//      @primary-color:         This is used for all selected and primary states
-//                              in elements and components (i.e. buttons, input focus,
-//                              links, etc).
-//
-//      @primary-color--hover:  Hover state color for @primary-color.
-//
 //      @nav__background-color: This sets the navigation background color.
 //  ----------------------------------------------------------------------------
-@primary-color:                 @purple-500;
-@primary-color--hover:          darken(@primary-color, 10%);
 @nav__background-color:         @black-400;
 
 //  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -43,14 +35,6 @@
 //      Warning:    We use these to extract the HSL values of the HEX code and
 //                  restate them in the CSS Variables.
 //  ----------------------------------------------------------------------------
-@primary-color--h:              hue(@primary-color);
-@primary-color--s:              saturation(@primary-color);
-@primary-color--l:              lightness(@primary-color);
-
-@primary-color--hover--h:       hue(@primary-color--hover);
-@primary-color--hover--s:       saturation(@primary-color--hover);
-@primary-color--hover--l:       lightness(@primary-color--hover);
-
 @nav__background-color--h:      hue(@nav__background-color);
 @nav__background-color--s:      saturation(@nav__background-color);
 @nav__background-color--l:      lightness(@nav__background-color);
@@ -59,23 +43,10 @@
 //  --  RE-DECLARE CSS VARIABLES WITH NEW COLORS
 //  ----------------------------------------------------------------------------
 @theme-vars: {
-    primary-color:              @primary-color;
-    primary-color--h:           @primary-color--h;
-    primary-color--s:           @primary-color--s;
-    primary-color--l:           @primary-color--l;
-
-    primary-color--hover:       @primary-color--hover;
-    primary-color--hover--h:    @primary-color--hover--h;
-    primary-color--hover--s:    @primary-color--hover--s;
-    primary-color--hover--l:    @primary-color--l;
-
     nav__background-color:      @nav__background-color;
     nav__background-color--h:   @nav__background-color--h;
     nav__background-color--s:   @nav__background-color--s;
     nav__background-color--l:   @nav__background-color--l;
-
-    btn--inverted__bg--hover:   fade(mix(#fff, @primary-color, 90%), 25%);
-    btn--inverted--primary__bg--hover: mix(#fff, @primary-color, 90%);
 }
 
 //  ============================================================================
