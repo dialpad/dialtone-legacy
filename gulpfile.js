@@ -72,8 +72,6 @@ const replace = settings.svgs ? require('gulp-replace') : null;
 //  @@ BUILD
 const cp = settings.build ? require('child_process') : null;
 
-const PRIMARY_COLOR = '#6c3dff';
-
 //  ================================================================================
 //  @  PATHS
 //     Where everything is in this project
@@ -435,13 +433,9 @@ const buildPatternSVGs = function (done) {
 const buildSpotIllustrationSVGs = function (done) {
   //  Make sure this feature is activated before running
   if (!settings.spot) return done();
-  const strokeRegex = new RegExp(`stroke="${PRIMARY_COLOR}"`, 'gi');
-  const fillRegex = new RegExp(`fill="${PRIMARY_COLOR}"`, 'gi');
   //  Compile system icons
   return src(paths.spot.input)
   // replace any instances of the primary color in SVG with the theme class
-    .pipe(replace(strokeRegex, 'class="d-svg-primary--stroke"'))
-    .pipe(replace(fillRegex, 'class="d-svg-primary--fill"'))
     .pipe(replace('<svg', function (match) {
       const name = path.parse(this.file.path).name;
       const converted = name.toLowerCase().replace(/-(.)/g, function (match, group1) {
