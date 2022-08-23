@@ -10,6 +10,8 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-button--defaul
   </button>
 </code-well-header>
 
+<component-combinator component-name="DtButton"></component-combinator>
+
 ## Usage
 
 `button` and link (`<a>`) HTML elements each describe a specific intent. Understanding the distinction is important: if it goes somewhere, use a [Link](link.html). If an action occurs, use a Button.

@@ -12,6 +12,7 @@ import WeatherCodesTable from './baseComponents/WeatherCodesTable.vue';
 import SpacingSystemTable from './baseComponents/SpacingSystemTable.vue';
 import IconSizesTable from './baseComponents/IconSizesTable.vue';
 import ComponentAccessibleTable from './baseComponents/ComponentAccessibleTable.vue';
+import ComponentCombinator from './baseComponents/ComponentCombinator.vue';
 
 // Common icons
 import IconInfo from '@svgIcons/IconInfo.vue';
@@ -41,6 +42,7 @@ export default defineClientConfig({
     app.component('SpacingSystemTable', SpacingSystemTable);
     app.component('IconSizesTable', IconSizesTable);
     app.component('ComponentAccessibleTable', ComponentAccessibleTable);
+    app.component('ComponentCombinator', ComponentCombinator);
 
     // Common icons
     app.component('IconInfo', IconInfo);
