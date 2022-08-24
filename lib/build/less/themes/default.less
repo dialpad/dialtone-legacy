@@ -34,56 +34,55 @@
 
 
 @theme-vars: {
-    primary-color-h:                        var(--purple-500-h);
-    primary-color-s:                        var(--purple-500-s);
-    primary-color-l:                        var(--purple-500-l);
-    primary-color-hsl:                      var(--primary-color-h) var(--primary-color-s) var(--primary-color-l);
-    primary-color:                          hsl(var(--primary-color-h) var(--primary-color-s) var(--primary-color-l));
-    primary-color-hover:                    hsl(var(--primary-color-h) var(--primary-color-s) calc(var(--primary-color-l) - 10%));
-    nav-background-color-h:                 var(--purple-800-h);
-    nav-background-color-s:                 var(--purple-800-s);
-    nav-background-color-l:                 var(--purple-800-l);
-    nav-background-color:                   hsl(var(--nav-background-color-h) var(--nav-background-color-s) var(--nav-background-color-l));
+    primary-color-h:                                  var(--purple-500-h);
+    primary-color-s:                                  var(--purple-500-s);
+    primary-color-l:                                  var(--purple-500-l);
+    primary-color-hsl:                                var(--primary-color-h) var(--primary-color-s) var(--primary-color-l);
+    primary-color:                                    hsl(var(--primary-color-h) var(--primary-color-s) var(--primary-color-l));
+    primary-color-hover:                              hsl(var(--primary-color-h) var(--primary-color-s) calc(var(--primary-color-l) - 10%));
 
-    topbar-height:                          var(--su64);
+    topbar-height:                                    var(--su64);
 
-    base--font-size:                        var(--fs16);
-    base--font-family:                      @ff-custom;
-    base--font-feature-settings:            'calt' 0;
-    base--line-height:                      var(--lh-normal);
-    base--corner-radius:                    0.25em;
+    base--font-size:                                  var(--fs16);
+    base--font-family:                                @ff-custom;
+    base--font-feature-settings:                      'calt' 0;
+    base--line-height:                                var(--lh-normal);
+    base--corner-radius:                              0.25em;
 
-    theme-topbar-color:                               var(--black-900);
-    theme-topbar-color-background:                    #f9f9f9; // DT7 black-100?
+    theme-topbar-color:                               hsl(var(--theme-topbar-color-hsl));
+    theme-topbar-color-hsl:                           var(--black-900-h) var(--black-900-s) var(--black-900-l); // Use with d-fco[##] Opacity utility
+    theme-topbar-color-background:                    #f9f9f9; // DT7 TBD, possibly black-100?
 
-    theme-sidebar-color:                              var(--black-900);
-    theme-sidebar-color-background:                   #f9f9f9; // DT7 black-100?
+    theme-sidebar-color:                              hsl(var(--theme-sidebar-color-hsl));
+    theme-sidebar-color-hsl:                          var(--black-900-h) var(--black-900-s) var(--black-900-l); // Use with d-fco[##] Opacity utility
+    theme-sidebar-color-background:                   #f9f9f9; // DT7 TBD, possibly black-100?
 
-    theme-sidebar-active-row-color:                   var(--black-900);
-    theme-sidebar-active-row-color-background:        #e9e9e9; // DT7 black-200?
+    theme-sidebar-active-row-color:                   hsl(var(--theme-sidebar-active-row-color-hsl));
+    theme-sidebar-active-row-color-hsl:               var(--black-900-h) var(--black-900-s) var(--black-900-l); // Use with d-fco[##] Opacity utility
+    theme-sidebar-active-row-color-background:        #e9e9e9; // DT7 TBD, possibly black-100?
     theme-sidebar-active-row-color-background-hover:  var(--purple-100);
-
-    theme-mention-color-background:                   var(--purple-500);
 
     theme-presence-color-background-available:        var(--green-500);
     theme-presence-color-background-busy-unavailable: var(--red-500);
     theme-presence-color-background-busy:             var(--yellow-500);
+
+    theme-mention-color-background:                   var(--purple-500);
 }
 
 //  ============================================================================
 //  $   THEME CLASSES
 //  ============================================================================
-.d-theme-top-bar-bgc { background-color: var(--theme-topbar-color-background) !important; }
-.d-theme-top-bar-fc { color: var(--theme-topbar-color) !important; }
+.d-theme-topbar-fc { color: hsla(var(--theme-topbar-color-hsl) / var(--fco)) !important; }
+.d-theme-topbar-bgc { background-color: var(--theme-topbar-color-background) !important; }
+.d-theme-sidebar-fc { color: hsla(var(--theme-sidebar-color-hsl) / var(--fco)) !important; }
 .d-theme-sidebar-bgc { background-color: var(--theme-sidebar-color-background) !important; }
-.d-theme-sidebar-fc { color: var(--theme-sidebar-color) !important; }
+.d-theme-sidebar-active-fc { color: hsla(var(--theme-sidebar-active-row-color-hsl) / var(--fco)) !important; }
 .d-theme-sidebar-active-bgc { background-color: var(--theme-sidebar-active-row-color-background) !important; }
 .d-theme-sidebar-active-bgc:hover { background-color: var(--theme-sidebar-active-row-color-background-hover) !important; }
-.d-theme-sidebar-active-fc { background-color: var(--theme-sidebar-active-row-color) !important; }
-.d-theme-badge { background-color: var(--theme-mention-color-background) !important; }
 .d-theme-presence-available { background-color: var(--theme-presence-color-background-available) !important; }
 .d-theme-presence-busy-unavailable { background-color: var(--theme-presence-color-background-busy-unavailable) !important; }
 .d-theme-presence-busy { background-color: var(--theme-presence-color-background-busy) !important; }
+.d-theme-mention { background-color: var(--theme-mention-color-background) !important; }
 
 //  ============================================================================
 //  $   OUTPUT VARIABLES
@@ -111,7 +110,7 @@ body {
     #d-internals #color-vars(black-900, @black-900);
     #d-internals #color-vars(purple-100, @purple-100);
     #d-internals #color-vars(purple-200, @purple-200);
-    #d-internals #color-vars(purple-300, @purple-300);
+    #d-internals #color-vars(purple-3000, @purple-300);
     #d-internals #color-vars(purple-400, @purple-400);
     #d-internals #color-vars(purple-500, @purple-500);
     #d-internals #color-vars(purple-600, @purple-600);
