@@ -112,12 +112,12 @@ watch(isMobile, (current) => {
     }
 
     .toc-item > a {
-      color: var(--primary-color);
+      color: hsl(var(--purple-400-h) var(--purple-400-s) var(--purple-400-l));
       text-decoration: underline;
     }
 
     .toc-item > a:hover {
-      color: var(--primary-color-hover);
+      color: hsl(var(--purple-400-h) var(--purple-400-s) calc(var(--purple-400-l) - 10%));
       text-decoration: underline;
       background-color: transparent;
     }

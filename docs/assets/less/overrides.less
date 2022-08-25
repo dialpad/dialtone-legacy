@@ -4,6 +4,7 @@
 @import (reference) '../../../lib/build/less/utilities/internals';
 @import (reference) '../../../lib/build/less/utilities/spacing';
 @import (reference) '../../../lib/build/less/utilities/typography';
+@import (reference) '../../../lib/build/less/components/modal';
 
 html {
   scroll-behavior: smooth;
@@ -112,7 +113,7 @@ samp {
   a:not([class]) {
     text-decoration: underline;
     &:hover {
-      color: var(--primary-color-hover);
+      color: hsl(var(--purple-400-h) var(--purple-400-s) calc(var(--purple-400-l) - 10%));
       text-decoration: none;
     }
   }
@@ -154,6 +155,13 @@ samp {
     margin-top: 0!important;
   }
 
+}
+
+// Fix theme-default styles leaking into the modal
+.theme-default-content {
+  .d-modal__header {
+    .d-modal__header();
+  }
 }
 
 .page-nav {
