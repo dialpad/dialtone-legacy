@@ -1,3 +1,24 @@
+# [7.0.0-beta.3](https://github.com/dialpad/dialtone/compare/v7.0.0-beta.2...v7.0.0-beta.3) (2022-08-25)
+
+
+### Bug Fixes
+
+* **modal:** add box sizing in modal banner class ([#638](https://github.com/dialpad/dialtone/issues/638)) ([a66141c](https://github.com/dialpad/dialtone/commit/a66141c32d397cc1436b9e53485306633a464b79))
+* **modal:** fix spacing and overriding styles in the docsite ([#635](https://github.com/dialpad/dialtone/issues/635)) ([55d5693](https://github.com/dialpad/dialtone/commit/55d56931278a004dd46c94ff454b6cdecce3e454))
+
+
+### Features
+
+* **nix primary theme var:** change contributing example ([89d0ad2](https://github.com/dialpad/dialtone/commit/89d0ad277f60c97fe08af8ac78c5af77b47919b2))
+* **nix primary theme var:** remove doc referencing theming Spot Illustrations ([0e2ee01](https://github.com/dialpad/dialtone/commit/0e2ee017b7da4814a804ebd4a6fd4366e568b7a4))
+* **nix primary theme var:** remove doc referencing theming Spot Illustrations ([3d87ae2](https://github.com/dialpad/dialtone/commit/3d87ae22b3cb158a1c2bfc2b4d53ba11f51701b0))
+* **nix primary theme var:** remove from doc json ([d4febae](https://github.com/dialpad/dialtone/commit/d4febae705a6efc5c4de12951b8da85b2e0e0fae))
+* **nix primary theme var:** remove primary-color CSS Utility ([fe923f8](https://github.com/dialpad/dialtone/commit/fe923f8823d5953a13c61bedce2a3c0edae48f7f))
+* **nix primary theme var:** remove primary-color from Spot Illustrations ([f199939](https://github.com/dialpad/dialtone/commit/f19993981a9a99830f724a6ce442e4749419b697))
+* **nix primary theme var:** remove primary-color from theme variables ([87214f3](https://github.com/dialpad/dialtone/commit/87214f3e092432af85437eae736707ce89ac17b1))
+* **nix primary theme var:** replace primary-color usage with specific hsl values ([51083a2](https://github.com/dialpad/dialtone/commit/51083a24cc2c00fb8f824c400416d31d684ee4e5))
+* **nix primary theme var:** replace primary-color usage with specific hsl values ([10c36d8](https://github.com/dialpad/dialtone/commit/10c36d892a9772bb9da31cab1c59e936ed1c8a9f))
+
 # [7.0.0-beta.2](https://github.com/dialpad/dialtone/compare/v7.0.0-beta.1...v7.0.0-beta.2) (2022-08-03)
 
 
