@@ -1,3 +1,18 @@
+## [6.34.2](https://github.com/dialpad/dialtone/compare/v6.34.1...v6.34.2) (2022-08-10)
+
+
+### Bug Fixes
+
+* **modal:** add box sizing in modal banner class ([#638](https://github.com/dialpad/dialtone/issues/638)) ([a66141c](https://github.com/dialpad/dialtone/commit/a66141c32d397cc1436b9e53485306633a464b79))
+
+## [6.34.1](https://github.com/dialpad/dialtone/compare/v6.34.0...v6.34.1) (2022-08-08)
+
+
+### Bug Fixes
+
+* **modal:** fix spacing and overriding styles in the docsite ([#635](https://github.com/dialpad/dialtone/issues/635)) ([55d5693](https://github.com/dialpad/dialtone/commit/55d56931278a004dd46c94ff454b6cdecce3e454))
+* **toggle:** dt-569 toggle default padding ([#632](https://github.com/dialpad/dialtone/issues/632)) ([0111087](https://github.com/dialpad/dialtone/commit/0111087136c460068ee5b9f629794c77ed5b3849))
+
 # [6.34.0](https://github.com/dialpad/dialtone/compare/v6.33.3...v6.34.0) (2022-07-26)
 
 

@@ -75,13 +75,4 @@ If you would like to verify your final output svg file run `npm run build` and l
 7. Commit and push your branch to Dialtone.
 8. Open a pull request.
 9. Once approved it can be merged into staging and will go out in the next dialtone release.
-
-### A note on theming
-
-Spot Illustrations allow for theming, meaning the primary color of the illustration will change when the theme changes.
-If your spot illustration svg contains a fill or a stroke with the dialtone primary color `#7C52FF`
-then it will automatically change when the theme's primary color changes.
-
-You may often wish to derive lighter or darker colors based on the primary color when making a spot illustration.
-In these instances it is recommended to set opacity while still using the primary color as the base color so these
-colors will also change with the theme.
+<<<<<<< HEAD
