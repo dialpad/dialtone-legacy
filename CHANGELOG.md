@@ -1,3 +1,15 @@
+# [6.35.0](https://github.com/dialpad/dialtone/compare/v6.34.2...v6.35.0) (2022-08-25)
+
+
+### Bug Fixes
+
+* modal functionality ([#642](https://github.com/dialpad/dialtone/issues/642)) ([0677209](https://github.com/dialpad/dialtone/commit/06772099e74ddf96c7fe1c700ed94761b8463555))
+
+
+### Features
+
+* **icon:** add wifi-off icon to library ([#646](https://github.com/dialpad/dialtone/issues/646)) ([55004cd](https://github.com/dialpad/dialtone/commit/55004cdff052a892ae3b0ea111330f478b2cb1e7))
+
 ## [6.34.2](https://github.com/dialpad/dialtone/compare/v6.34.1...v6.34.2) (2022-08-10)
 
 
