@@ -25,6 +25,8 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-breadcrumbs--d
   </nav>
 </code-well-header>
 
+<component-combinator component-name="DtBreadcrumbs" />
+
 ## Usage
 
 Breadcrumbs show users where they are within a site’s hierarchy. Breadcrumbs help orient the user and allow for navigation to previous page levels. It can be appropriate to use a breadcrumb when:

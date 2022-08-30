@@ -8,12 +8,11 @@
       />
     </div>
     <ul
-      v-if="showBlueprints"
+      v-if="hasBlueprints()"
       class="d-ls-reset d-mt64 d-bgc-black-025 d-ba d-bar4"
     >
       <template
         v-for="(variant, name) in variants"
-
         :key="name"
       >
         <component
@@ -58,24 +57,15 @@ export default {
       combinator: null,
       section: null,
       component: null,
-      variants: {
-        variant: {
-          props: {
-            active: {
-              defaultValue: true,
-            },
-          },
-        },
-
-        variant2: {
-          props: {
-            active: {
-              defaultValue: true,
-            },
-          },
-        },
-      },
+      variants: {},
     };
+  },
+
+  methods: {
+    capitalize,
+    hasBlueprints () {
+      return this.showBlueprints && Object.keys(this.variants).length > 0;
+    },
   },
 
   beforeMount () {
@@ -87,10 +77,6 @@ export default {
     import('@dialpad/dialtone-vue').then((module) => {
       this.component = markRaw(Object.entries(module).find(([name, _]) => name === this.componentName)[1]);
     });
-  },
-
-  methods: {
-    capitalize,
   },
 };
 </script>

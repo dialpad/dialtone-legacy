@@ -9,6 +9,8 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-toggle--defaul
   </div>
 </code-well-header>
 
+<component-combinator component-name="DtToggle" />
+
 ## Usage
 
 The Toggle component acts as a way to allow the User to switch between two mutually exclusive options. While it technically mirrors a [Checkbox](/components/checkbox/) state, its effect on the system is immediate&mdash;much like a light switch immediately turns on or off the lights. In contrast, the checked state of a [Checkbox](/components/checkbox/) won't be applied until a separate action to confirm the selection is taken.
