@@ -84,10 +84,10 @@ Search for | Replace with
 `var(--primary-color-hsl)` | `hsl(var(--purple-400-h) var(--purple-400-s) var(--purple-400-l))`
 `var(--primary-color-hover)` | `hsl(var(--purple-400-h) var(--purple-400-s) calc(var(--purple-400-l) - 10%))`
 `var(--primary-color-h)` | `var(--purple-400-h)`
-`var(--primary-color-s)` | `var(--primary-color-s)`
+`var(--primary-color-s)` | `var(--purple-400-s)`
 `var(--primary-color-l)` | `var(--purple-400-l)`
 
-#### Replace "Primary Color" CSS Utility classes usage, e.g. `class="[UTILITY]`
+#### Replace "Primary Color" CSS Utility classes usage, e.g. `class="[UTILITY]"`
 
 Search for | Replace with
 :-:|:-:
@@ -95,7 +95,7 @@ Search for | Replace with
 
 ### 4. Replace hardcoded HEX values
 
-Any custom CSS authored with HEX values (e.g. `#ff000`) should be replaced with its CSS Custom Property equivalent (e.g. `var(--[COLOR-STOP])`).
+Any custom CSS authored with HEX values (e.g. `#ff0000`) should be replaced with its CSS Custom Property equivalent (e.g. `var(--[COLOR-STOP])`).
 
 #### Example
 
