@@ -10,7 +10,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-button--defaul
   </button>
 </code-well-header>
 
-<component-combinator component-name="DtButton"></component-combinator>
+<component-combinator component-name="DtButton" show-blueprints></component-combinator>
 
 ## Usage
 
