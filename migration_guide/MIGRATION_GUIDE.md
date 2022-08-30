@@ -25,9 +25,9 @@ While the migration is fairly straightforward, there may be instances where manu
 
 #### Purple
 1. Updated color values for `purple-100`, `purple-200` and `purple-300` stops.
-1. Consolidated Dialtone v6's `purple-400` and `purple-500` stops into the redefined `purple-400` stop.
-1. Consolidated Dialtone v6's `purple-600` and `purple-700` stops into the redefined `purple-500` stop.
-1. Consolidated Dialtone v6's `purple-800` stop into the redefined `purple-600` stop.
+2. Consolidated Dialtone v6's `purple-400` and `purple-500` stops into the redefined `purple-400` stop.
+3. Consolidated Dialtone v6's `purple-600` and `purple-700` stops into the redefined `purple-500` stop.
+4. Consolidated Dialtone v6's `purple-800` stop into the redefined `purple-600` stop.
 
 [Before/After images to be replaced with one that reflects **all** Color Ramps once completed.]
 Purple Remapping | Before and After
@@ -41,7 +41,11 @@ Purple Remapping | Before and After
 #### Green
 [TBD]
 #### Black
-[TBD]
+1. Removed `black-025`, `black-050`, `black-075` color stops.
+2. Updated color values for `black-100`, `black-200`, `black-300`, `black-400`, `black-500`, `black-600`, `black-700`, `black-800`, `black-900` stops.
+3. Consolidated Dialtone v6's `black-600` and `black-500` stops into the redefined `black-600` stop.
+4. Consolidated Dialtone v6's `black-400` and `black-300` stops into the redefined `black-500` stop.
+5. Consolidated Dialtone v6's `black-200` and `black-100` stops into the redefined `black-400` stop.
 #### Yellow/Gold
 [TBD]
 #### Pink/Magenta
@@ -72,6 +76,14 @@ Search for | Replace with
 `purple-600` | `purple-500`
 `purple-700` | `purple-500`
 `purple-800` | `purple-600`
+`black-500` | `black-600`
+`black-400` | `black-500`
+`black-300` | `black-500`
+`black-200` | `black-400`
+`black-100` | `black-400`
+`black-075` | `black-300`
+`black-050` | `black-200`
+`black-025` | `black-100`
 [others TBD, e.g. Green] | ...
 
 ### 3. Replace "Primary Color" theme uses
@@ -119,6 +131,18 @@ Search for | Replace with
 `#3A1C95` | `var(--purple-500)`
 `#2A1173` | `var(--purple-500)`
 `#160645` | `var(--purple-600)`
+`#F2F2F6` | `var(--black-100)`
+`#EAE9EF` | `var(--black-200)`
+`#DFDEE5` | `var(--black-300)`
+`#CDCDD8` | `var(--black-400)`
+`#B3B0C0` | `var(--black-400)`
+`#9C99AC` | `var(--black-500)`
+`#7B7789` | `var(--black-500)`
+`#575564` | `var(--black-600)`
+`#444150` | `var(--black-600)`
+`#322D37` | `var(--black-700)`
+`#221F24` | `var(--black-800)`
+`#0D0C0F` | `var(--black-900)`
 
 ### 5. Check color updates for readability
 
