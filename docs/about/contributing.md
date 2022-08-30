@@ -75,4 +75,3 @@ If you would like to verify your final output svg file run `npm run build` and l
 7. Commit and push your branch to Dialtone.
 8. Open a pull request.
 9. Once approved it can be merged into staging and will go out in the next dialtone release.
-<<<<<<< HEAD
