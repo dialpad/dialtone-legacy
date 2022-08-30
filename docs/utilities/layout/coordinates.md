@@ -88,7 +88,7 @@ Use the `top|right|bottom|left|x|y|all` utility classes to absolutely position e
       <tr v-for="{coordinate, suffix, combo, value } in coordinates">
         <th scope="row">{{ value }}</th>
         <div v-for="{direction: dir, prefix: pre, percent} in coordinateDirections" style="display: contents">
-          <td v-if="percent === 'no' && combo === 'no'" class="d-o50 d-bgc-black-050 d-fc-black-400 d-fs12 d-ta-center">
+          <td v-if="percent === 'no' && combo === 'no'" class="d-o50 d-bgc-black-200 d-fc-black-400 d-fs12 d-ta-center">
             <em>N/A</em>
           </td>
           <td v-else class="d-ff-mono d-fc-purple d-fs12">
@@ -184,7 +184,7 @@ Use the `top|right|bottom|left|x|y|all` utility classes to absolutely position e
       <tr v-for="{coordinate, suffix, combo, negative, value } in coordinates">
         <th v-if="negative === 'yes'" scope="row">{{ value }}</th>
         <div v-if="negative === 'yes'" v-for="{direction: dir, prefix: pre, percent} in coordinateDirections" style="display: contents">
-          <td v-if="percent === 'no' && combo === 'no'" class="d-o50 d-bgc-black-050 d-fc-black-400 d-fs12 d-ta-center">
+          <td v-if="percent === 'no' && combo === 'no'" class="d-o50 d-bgc-black-200 d-fc-black-400 d-fs12 d-ta-center">
             <em>N/A</em>
           </td>
           <td v-else class="d-ff-mono d-fc-purple d-fs12">
