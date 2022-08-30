@@ -7,7 +7,7 @@ desc: Utilities for creating an background gradient and controlling its stops.
 
 Use `d-bgg-from-{color}` to declare the gradient starting color stop.
 
-<code-well-header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-black-050 d-w100p d-hmn102" custom>
+<code-well-header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-black-200 d-w100p d-hmn102" custom>
   <div class="d-w100p d-h128 d-bar8 d-bgg-to-br d-bgg-from-purple-500"></div>
 </code-well-header>
 
@@ -19,7 +19,7 @@ Use `d-bgg-from-{color}` to declare the gradient starting color stop.
 
 Use `d-bgg-to-{color}` to declare the gradient ending color stop.
 
-<code-well-header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-black-050 d-w100p d-hmn102" custom>
+<code-well-header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-black-200 d-w100p d-hmn102" custom>
   <div class="d-w100p d-h128 d-bar8 d-bgg-to-br d-bgg-from-purple-500 d-bgg-to-pink-400"></div>
 </code-well-header>
 
@@ -31,7 +31,7 @@ Use `d-bgg-to-{color}` to declare the gradient ending color stop.
 
 Use `d-bgg-(from|to)-o{n}` to change the opacity values of each gradient color stop. You can also change the opacity values of each gradient color stop on `:hover`, `:focus`, `:focus-visible`, or in dark mode by using the respective `h:d-bgg-(from|to)-o{n}`, `f:d-bgg-(from|to)-o{n}`, `fv:d-bgg-(from|to)-o{n}`, `d:d-bgg-(from|to)-o{n}` prefixes.
 
-<code-well-header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-black-050 d-w100p d-hmn102 d-stack8" custom>
+<code-well-header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-black-200 d-w100p d-hmn102 d-stack8" custom>
   <div class="d-d-flex d-jc-space-between d-ai-center d-p8 d-w100p d-h48 d-bar8 d-bgg-to-r d-bgg-from-purple-300 d-bgg-to-pink-300 d-bgg-to-o0 d-fs24 d-fw-bold d-fc-white"><span>100%</span><span>0%</span></div>
   <div class="d-d-flex d-jc-space-between d-ai-center d-p8 d-w100p d-h48 d-bar8 d-bgg-to-r d-bgg-from-purple-300 d-bgg-from-o99 d-bgg-to-pink-300 d-bgg-to-o10 d-fs24 d-fw-bold d-fc-white"><span>99%</span><span>10%</span></div>
   <div class="d-d-flex d-jc-space-between d-ai-center d-p8 d-w100p d-h48 d-bar8 d-bgg-to-r d-bgg-from-purple-300 d-bgg-from-o95 d-bgg-to-pink-300 d-bgg-to-o25 d-fs24 d-fw-bold d-fc-white"><span>95%</span><span>25%</span></div>
@@ -59,7 +59,7 @@ Use `d-bgg-(from|to)-o{n}` to change the opacity values of each gradient color s
 
 Use `h:d-bgg-{from|to}-{color}` to change an element's background gradient color spot when in an `:hover` state.
 
-<code-well-header class="d-fl-center d-p24 d-bgc-black-050 d-w100p d-hmn102" custom>
+<code-well-header class="d-fl-center d-p24 d-bgc-black-200 d-w100p d-hmn102" custom>
   <button class="d-p16 d-bar4 d-fs18 d-fc-white d-bgg-to-r d-bgg-from-purple-300 h:d-bgg-from-purple-300 d-bgg-to-pink-300 h:d-bgg-to-pink-500 d-baw0">Hover over me</button>
 </code-well-header>
 
@@ -71,7 +71,7 @@ Use `h:d-bgg-{from|to}-{color}` to change an element's background gradient color
 
 Use `f:d-bgg-{from|to}-{color}` to change an element's background gradient starting and ending stops in `:focus` and `:focus-within` states.
 
-<code-well-header class="d-fl-center d-p24 d-bgc-black-050 d-w100p d-hmn102" custom>
+<code-well-header class="d-fl-center d-p24 d-bgc-black-200 d-w100p d-hmn102" custom>
   <button class="d-p16 d-bar4 d-fs18 d-fc-white d-bgg-to-r d-bgg-from-purple-300 f:d-bgg-from-purple-300 d-bgg-to-pink-300 f:d-bgg-to-purple-500 d-baw0">Click on me</button>
 </code-well-header>
 
@@ -83,7 +83,7 @@ Use `f:d-bgg-{from|to}-{color}` to change an element's background gradient start
 
 Use `fv:d-bgg-{from|to}-{color}` to change an element's background gradient starting and ending stops in `:focus-visible` state [only when focused by keyboard].
 
-<code-well-header class="d-fl-center d-p24 d-bgc-black-050 d-w100p d-hmn102" custom>
+<code-well-header class="d-fl-center d-p24 d-bgc-black-200 d-w100p d-hmn102" custom>
   <button class="d-p16 d-bar4 d-fs18 d-fc-white d-bgg-to-r d-bgg-from-purple-300 fv:d-bgg-from-purple-300 d-bgg-to-pink-300 fv:d-bgg-to-purple-500 d-baw0">Focus on me</button>
 </code-well-header>
 

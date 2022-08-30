@@ -16,7 +16,7 @@ export default {
      */
     bgclass: {
       type: String,
-      default: 'd-bgc-black-025',
+      default: 'd-bgc-black-100',
     },
 
     /**
@@ -34,7 +34,7 @@ export default {
       return [
         'd-fl-center d-fd-column d-p24 d-w100p d-of-auto d-stack8',
         this.bgclass,
-        { 'd-ba d-bc-black-050 d-btr8 d-baw2': this.isWhiteBackground },
+        { 'd-ba d-bc-black-200 d-btr8 d-baw2': this.isWhiteBackground },
         this.$attrs.class,
       ];
     },
