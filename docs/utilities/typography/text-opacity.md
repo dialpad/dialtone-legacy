@@ -25,6 +25,7 @@ Use `d-fco{n}` to change a font-color's opacity. You can also change font-color'
 <p class="d-fc-pink-600 d-fco99">The quick brown fox jumps over the lazy dog.</p>
 <p class="d-fc-pink-600 d-fco95">The quick brown fox jumps over the lazy dog.</p>
 <p class="d-fc-pink-600 d-fco90">The quick brown fox jumps over the lazy dog.</p>
+<p class="d-fc-pink-600 d-fco85">The quick brown fox jumps over the lazy dog.</p>
 <p class="d-fc-pink-600 d-fco75">The quick brown fox jumps over the lazy dog.</p>
 <p class="d-fc-pink-600 d-fco50">The quick brown fox jumps over the lazy dog.</p>
 <p class="d-fc-pink-600 d-fco25">The quick brown fox jumps over the lazy dog.</p>

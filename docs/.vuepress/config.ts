@@ -86,6 +86,9 @@ export default defineUserConfig({
 
   // markdown config
   markdown: {
+    anchor: {
+      level: [1, 2],
+    },
     code: {
       lineNumbers: false
     },
