@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import { markRaw, capitalize } from 'vue';
+import { capitalize } from 'vue';
 
 export default {
   name: 'ComponentCombinator',
@@ -63,15 +63,15 @@ export default {
     },
   },
 
-  async beforeMount () {
-    const dialtoneVue = await import('@dialpad/dialtone-vue');
-
-    const component = markRaw(Object.entries(dialtoneVue).find(([exportName, _]) => {
-      return exportName === this.componentName;
-    }))[1];
-
-    this.component = markRaw(component);
-    this.variants = {}; // combinator.variantBank()[exportName];
-  },
+  // async beforeMount () {
+  //   const dialtoneVue = await import('@dialpad/dialtone-vue');
+  //
+  //   const component = markRaw(Object.entries(dialtoneVue).find(([exportName, _]) => {
+  //     return exportName === this.componentName;
+  //   }))[1];
+  //
+  //   this.component = markRaw(component);
+  //   this.variants = {}; // combinator.variantBank()[exportName];
+  // },
 };
 </script>
