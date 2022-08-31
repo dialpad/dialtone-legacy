@@ -31,10 +31,10 @@ Use `d-pls-start{-n}` to align a grid item along the start of their block and/or
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-green-100 d-bgo50 d-w100p d-hmn102" custom>
   <div class="d-d-grid d-g-cols2 d-gg16 d-p16 d-w100p d-h216d-bar8 d-bgc-green-100">
-    <div class="d-fl-center d-pls-start d-p16 d-w64 d-h64 d-bgc-green-300 d-bar4 d-fs24 d-fw-bold">1</div>
-    <div class="d-fl-center d-p16 d-bgc-green-300 d-bar4 d-fs24 d-fw-bold d-o50">2</div>
-    <div class="d-fl-center d-p16 d-bgc-green-300 d-bar4 d-fs24 d-fw-bold d-o50">3</div>
-    <div class="d-fl-center d-p16 d-bgc-green-300 d-bar4 d-fs24 d-fw-bold d-o50">4</div>
+    <div class="d-fl-center d-pls-start d-p16 d-w64 d-h64 d-bgc-green-200 d-bar4 d-fs24 d-fw-bold">1</div>
+    <div class="d-fl-center d-p16 d-bgc-green-200 d-bar4 d-fs24 d-fw-bold d-o50">2</div>
+    <div class="d-fl-center d-p16 d-bgc-green-200 d-bar4 d-fs24 d-fw-bold d-o50">3</div>
+    <div class="d-fl-center d-p16 d-bgc-green-200 d-bar4 d-fs24 d-fw-bold d-o50">4</div>
   </div>
 </code-well-header>
 

@@ -43,8 +43,8 @@ Use `d-td{n}` change an element's `transition-delay` from it's default `50ms` le
 Use `d-ttf-{n}` change an element's `transition-timing-function` (aka easing) from it's default Quad Ease In, Ease Out value.
 
 <code-well-header class="d-fl-col2 d-flg8 d-p24 d-bgc-green-100 d-bgo50 d-w100p d-hmn102" custom>
-  <div class="d-fl-center d-p24 d-bar8 d-bgc-green-300 h:d-bgc-purple-100 h:d-bs-lg d-fs18 d-fw-bold d-t d-td100 d-c-pointer">Ease In, Ease Out</div>
-  <div class="d-fl-center d-p24 d-bar8 d-bgc-green-300 h:d-bgc-purple-100 h:d-bs-lg d-fs18 d-fw-bold d-t d-td100 d-ttf-out d-c-pointer">Ease Out</div>
+  <div class="d-fl-center d-p24 d-bar8 d-bgc-green-200 h:d-bgc-purple-100 h:d-bs-lg d-fs18 d-fw-bold d-t d-td100 d-c-pointer">Ease In, Ease Out</div>
+  <div class="d-fl-center d-p24 d-bar8 d-bgc-green-200 h:d-bgc-purple-100 h:d-bs-lg d-fs18 d-fw-bold d-t d-td100 d-ttf-out d-c-pointer">Ease Out</div>
 </code-well-header>
 
 ```html

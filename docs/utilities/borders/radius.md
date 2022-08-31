@@ -51,7 +51,7 @@ Use `d-b{t|r|b|l}r{n}` to change the border radius on a side of your element.
 Use `d-b{a|t|r|b|l}r-pill` to change the border radius of your element to a pill shape.
 
 <code-well-header class="d-fl-center d-flg8 d-fw-wrap d-p24 d-bgc-green-100 d-bgo50 d-w100p d-hmn102" custom>
-            <div class="d-fl-center d-p16 d-h64 d-wmn264 d-bar-pill d-bgc-green-300 d-fs24 d-fw-bold">.d-bar-pill</div>
+            <div class="d-fl-center d-p16 d-h64 d-wmn264 d-bar-pill d-bgc-green-200 d-fs24 d-fw-bold">.d-bar-pill</div>
 </code-well-header>
 
 ```html
