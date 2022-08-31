@@ -54,7 +54,7 @@ module.exports = {
     'vue/block-tag-newline': ['error'],
     'vue/no-duplicate-attr-inheritance': ['error'],
     'vue/no-undef-components': ['error', {
-      ignorePatterns: ['icon-', 'router-link', 'toc'],
+      ignorePatterns: ['icon-', 'router-link', 'toc', 'dtc-', 'dt-'],
     }],
     'vue/v-on-event-hyphenation': ['error'],
     'vue/no-template-target-blank': ['error'],
