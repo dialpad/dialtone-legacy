@@ -58,7 +58,6 @@ export default {
       return resolveComponent(this.componentName);
     },
     variants () {
-      console.log(this.variantBank);
       return this.variantBank[this.componentName];
     },
     hasBlueprints () {
