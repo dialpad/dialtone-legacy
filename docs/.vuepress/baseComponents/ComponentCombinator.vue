@@ -78,12 +78,10 @@ export default {
   },
 
   async mounted () {
+    const dialtoneCombinator = await import('@dialpad/dialtone-combinator');
     const dialtoneVue = await import('@dialpad/dialtone-vue');
 
     this.component = markRaw(dialtoneVue[this.componentName]);
-
-    const dialtoneCombinator = await import('@dialpad/dialtone-combinator');
-
     this.combinator = markRaw(dialtoneCombinator.DtcCombinator);
     this.section = markRaw(dialtoneCombinator.DtcSection);
     this.variantBank = dialtoneCombinator.variantBank();
