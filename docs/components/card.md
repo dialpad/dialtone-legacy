@@ -7,8 +7,8 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-card--default
 <code-well-header>
   <div class="d-card">
       <div class="d-card__content">
-        <p class="d-fs14 d-fw-bold d-fc-black-800">What is Lorem Ipsum?</p>
-        <p class="d-fs12">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        <p class="d-fs14 d-fw-bold d-fc-black-800">Lorem ipsum</p>
+        <p class="d-fs12">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum molestie semper. Morbi finibus nulla turpis, nec molestie mi rutrum.</p>
       </div>
   </div>
 </code-well-header>
