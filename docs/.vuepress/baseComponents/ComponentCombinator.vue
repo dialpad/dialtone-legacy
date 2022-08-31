@@ -1,7 +1,9 @@
 <template>
   <div v-if="component">
     <div class="d-d-flex d-mt64 d-h628">
-      <dtc-combinator
+      <component
+        v-if="combinator"
+        :is="combinator"
         :component="component"
         :variants="variants"
       />
@@ -14,26 +16,30 @@
         v-for="(variant, name) in variants"
         :key="name"
       >
-        <dtc-section
+        <component
+          v-if="section"
+          :is="section"
           :heading="capitalize(name)"
           :open="false"
         >
           <div class="d-d-flex d-hmx332">
-            <dtc-combinator
+            <component
+              v-if="combinator"
+              :is="combinator"
               :component="component"
               :variants="{ default: variant }"
               root-class="d-baw0"
               blueprint
             />
           </div>
-        </dtc-section>
+        </component>
       </template>
     </ul>
   </div>
 </template>
 
 <script>
-import { capitalize, resolveComponent } from 'vue';
+import { capitalize, markRaw } from 'vue';
 
 export default {
   name: 'ComponentCombinator',
@@ -49,14 +55,16 @@ export default {
     },
   },
 
-  inject: [
-    'variantBank',
-  ],
+  data () {
+    return {
+      component: null,
+      combinator: null,
+      section: null,
+      variantBank: null,
+    };
+  },
 
   computed: {
-    component () {
-      return resolveComponent(this.componentName);
-    },
     variants () {
       return this.variantBank[this.componentName];
     },
@@ -67,6 +75,18 @@ export default {
 
   methods: {
     capitalize,
+  },
+
+  async mounted () {
+    const dialtoneVue = await import('@dialpad/dialtone-vue');
+
+    this.component = markRaw(dialtoneVue[this.componentName]);
+
+    const dialtoneCombinator = await import('@dialpad/dialtone-combinator');
+
+    this.combinator = markRaw(dialtoneCombinator.DtcCombinator);
+    this.section = markRaw(dialtoneCombinator.DtcSection);
+    this.variantBank = dialtoneCombinator.variantBank();
   },
 };
 </script>

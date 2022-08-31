@@ -30,23 +30,6 @@ import '@dialtoneDocsCSS';
 
 export default defineClientConfig({
   enhance ({ app, router, siteData }) {
-    // Register libraries
-    if (!__VUEPRESS_SSR__) {
-      import('@dialpad/dialtone-vue').then(module => {
-        Object.keys(module)
-          .filter((key) => key.startsWith('Dt'))
-          .forEach((key) => {
-            app.component(key, module[key]);
-          });
-      });
-
-      import('@dialpad/dialtone-combinator').then(module => {
-        app.component('DtcCombinator', module.DtcCombinator);
-        app.component('DtcSection', module.DtcSection);
-        app.provide('variantBank', module.variantBank());
-      });
-    }
-
     // Common views
     app.component('Icons', Icons);
     app.component('Colors', Colors);
