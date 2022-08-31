@@ -7,7 +7,7 @@
       />
     </div>
     <ul
-      v-if="hasBlueprints()"
+      v-if="hasBlueprints"
       class="d-ls-reset d-mt64 d-bgc-black-025 d-ba d-bar4"
     >
       <template
@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import { capitalize } from 'vue';
+import { capitalize, resolveComponent } from 'vue';
 
 export default {
   name: 'ComponentCombinator',
@@ -49,29 +49,25 @@ export default {
     },
   },
 
-  data () {
-    return {
-      component: null,
-      variants: {},
-    };
-  },
+  inject: [
+    'variantBank',
+  ],
 
-  methods: {
-    capitalize,
+  computed: {
+    component () {
+      return resolveComponent(this.componentName);
+    },
+    variants () {
+      console.log(this.variantBank);
+      return this.variantBank[this.componentName];
+    },
     hasBlueprints () {
       return this.showBlueprints && Object.keys(this.variants).length > 0;
     },
   },
 
-  // async beforeMount () {
-  //   const dialtoneVue = await import('@dialpad/dialtone-vue');
-  //
-  //   const component = markRaw(Object.entries(dialtoneVue).find(([exportName, _]) => {
-  //     return exportName === this.componentName;
-  //   }))[1];
-  //
-  //   this.component = markRaw(component);
-  //   this.variants = {}; // combinator.variantBank()[exportName];
-  // },
+  methods: {
+    capitalize,
+  },
 };
 </script>
