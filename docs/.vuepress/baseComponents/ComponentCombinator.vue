@@ -1,6 +1,6 @@
 <template>
   <div v-if="combinator && component">
-    <div class="d-d-flex d-mt64 d-h512">
+    <div class="d-d-flex d-mt64 d-h628">
       <component
         :is="combinator"
         :component="component"
@@ -68,15 +68,19 @@ export default {
     },
   },
 
-  beforeMount () {
-    import('@dialpad/dialtone-combinator').then((module) => {
-      this.combinator = markRaw(module.DtcCombinator);
-      this.section = markRaw(module.DtcSection);
-    });
+  async beforeMount () {
+    const combinator = await import('@dialpad/dialtone-combinator');
+    const dialtoneVue = await import('@dialpad/dialtone-vue');
 
-    import('@dialpad/dialtone-vue').then((module) => {
-      this.component = markRaw(Object.entries(module).find(([name, _]) => name === this.componentName)[1]);
-    });
+    this.combinator = markRaw(combinator.DtcCombinator);
+    this.section = markRaw(combinator.DtcSection);
+
+    const [exportName, component] = markRaw(Object.entries(dialtoneVue).find(([exportName, _]) => {
+      return exportName === this.componentName;
+    }));
+
+    this.component = markRaw(component);
+    this.variants = combinator.variantBank()[exportName];
   },
 };
 </script>
