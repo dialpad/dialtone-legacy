@@ -1,5 +1,4 @@
 import { defineClientConfig } from '@vuepress/client';
-import { DtcCombinator, DtcSection, variantBank } from '@dialpad/dialtone-combinator';
 
 // Common views
 import Icons from './views/Icons.vue';
@@ -41,9 +40,11 @@ export default defineClientConfig({
           });
       });
 
-      app.component('DtcCombinator', DtcCombinator);
-      app.component('DtcSection', DtcSection);
-      app.provide('variantBank', variantBank);
+      import('@dialpad/dialtone-combinator').then(module => {
+        app.component('DtcCombinator', module.DtcCombinator);
+        app.component('DtcSection', module.DtcSection);
+        app.provide('variantBank', module.variantBank());
+      });
     }
 
     // Common views
