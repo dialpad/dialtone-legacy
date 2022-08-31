@@ -40,7 +40,7 @@ export default defineClientConfig({
           });
       });
 
-      import('@dialpad/dialtone-combinator/dist/lib/dialtone-combinator.common.js').then(module => {
+      import('@dialpad/dialtone-combinator').then(module => {
         app.component('DtcCombinator', module.DtcCombinator);
         app.component('DtcSection', module.DtcSection);
         app.provide('variantBank', module.variantBank());
