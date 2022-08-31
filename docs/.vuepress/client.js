@@ -13,7 +13,6 @@ import SpacingSystemTable from './baseComponents/SpacingSystemTable.vue';
 import IconSizesTable from './baseComponents/IconSizesTable.vue';
 import ComponentAccessibleTable from './baseComponents/ComponentAccessibleTable.vue';
 import ComponentCombinator from './baseComponents/ComponentCombinator.vue';
-import { DtcCombinator, DtcSection } from '@dialpad/dialtone-combinator';
 
 // Common icons
 import IconInfo from '@svgIcons/IconInfo.vue';
@@ -46,8 +45,12 @@ export default defineClientConfig({
     app.component('ComponentCombinator', ComponentCombinator);
 
     // Combinator
-    app.component('DtcCombinator', DtcCombinator);
-    app.component('DtcSection', DtcSection);
+    if (!__VUEPRESS_SSR__) {
+      import('@dialpad/dialtone-combinator').then(module => {
+        app.component('DtcCombinator', module.DtcCombinator);
+        app.component('DtcSection', module.DtcSection);
+      });
+    }
 
     // Common icons
     app.component('IconInfo', IconInfo);
