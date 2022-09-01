@@ -608,6 +608,13 @@ const buildDocs = function (done) {
   );
 };
 
+// copies the .nojekyll file to the output directory.
+// this is necessary to get around a problem with github pages where files starting with _ are not served.
+const copyNoJekyll = function (done) {
+  return src('./.nojekyll')
+    .pipe(dest('docs/.vuepress/dist'));
+};
+
 const watchDocs = function (done) {
   //  Make sure this feature is activated before running
   if (!settings.watch) return done();
@@ -700,6 +707,7 @@ exports.docsite = series(
     docStyles,
   ),
   buildDocs,
+  copyNoJekyll,
 );
 
 //  --  CONVERT WEBFONTS
