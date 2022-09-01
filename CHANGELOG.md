@@ -1,3 +1,11 @@
+# [6.36.0](https://github.com/dialpad/dialtone/compare/v6.35.0...v6.36.0) (2022-09-01)
+
+
+### Features
+
+* add style for card ([#651](https://github.com/dialpad/dialtone/issues/651)) ([ed7fbec](https://github.com/dialpad/dialtone/commit/ed7fbec74e8bc0d07f88b54284c14198e0010c9b))
+* **theme:** create and update theme variables ([#643](https://github.com/dialpad/dialtone/issues/643)) ([7b5dcce](https://github.com/dialpad/dialtone/commit/7b5dcce4f35a4d11a98e4d9795627c33c45a7baa))
+
 # [6.35.0](https://github.com/dialpad/dialtone/compare/v6.34.2...v6.35.0) (2022-08-25)
 
 
