@@ -5,7 +5,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-card--default
 
 ---
 <code-well-header>
-  <div class="d-card">
+  <div class="d-card d-w264">
       <div class="d-card__content">
         <p class="d-fs14 d-fw-bold d-fc-black-800">Lorem ipsum</p>
         <p class="d-fs12">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum molestie semper. Morbi finibus nulla turpis, nec molestie mi rutrum.</p>
@@ -49,7 +49,7 @@ They should be easy to scan for relevant and actionable information. Elements, l
 ### With Header
 
 <code-well-header>
-    <div class="d-card">
+    <div class="d-card d-w264">
       <div class="d-card__header">
         <p>Header</p>
         <button href="#" class="d-btn d-btn--xs d-fc-black-400"><IconMenuVertical /></button>
@@ -62,7 +62,7 @@ They should be easy to scan for relevant and actionable information. Elements, l
 </code-well-header>
 
 ```html
-<div class="d-card">
+<div class="d-card d-w264">
   <div class="d-card__header">
     <p>Header</p>
     <button href="#" class="d-btn d-btn--xs d-fc-black-400"><IconMenuVertical /></button>
@@ -77,7 +77,7 @@ They should be easy to scan for relevant and actionable information. Elements, l
 ### With Footer
 
 <code-well-header>
-    <div class="d-card">
+    <div class="d-card d-w264">
       <div class="d-card__content">
         <p class="d-fs14 d-fw-bold d-fc-black-800">Lorem ipsum</p>
         <p class="d-fs12">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum molestie semper. Morbi finibus nulla turpis, nec molestie mi rutrum.</p>
@@ -90,7 +90,7 @@ They should be easy to scan for relevant and actionable information. Elements, l
 </code-well-header>
 
 ```html
-<div class="d-card">
+<div class="d-card d-w264">
   <div class="d-card__content">
     <p class="d-fs14 d-fw-bold d-fc-black-800">Lorem ipsum</p>
     <p class="d-fs12">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum molestie semper. Morbi finibus nulla turpis, nec molestie mi rutrum.</p>
@@ -105,7 +105,7 @@ They should be easy to scan for relevant and actionable information. Elements, l
 ### With Header, Footer and scrollable content
 
 <code-well-header>
-    <div class="d-card">
+    <div class="d-card d-w264">
       <div class="d-card__header">
         <p>Header</p>
         <button href="#" class="d-btn d-btn--xs d-fc-black-400"><IconMenuVertical /></button>
@@ -122,7 +122,7 @@ They should be easy to scan for relevant and actionable information. Elements, l
 </code-well-header>
 
 ```html
-<div class="d-card">
+<div class="d-card d-w264">
   <div class="d-card__header">
     <p>Header</p>
     <button href="#" class="d-btn d-btn--xs d-fc-black-400"><IconMenuVertical /></button>
