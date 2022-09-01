@@ -42,7 +42,7 @@ desc: Utilities to adjust an element's exterior spacing between other objects.
 ## Add vertical margins
 
 <code-well-header class="d-d-flex d-fw-wrap d-ai-start d-jc-center d-bgc-red-100 d-bgo50 d-w100p d-hmn216" custom>
-  <div class="d-as-center d-bar8 d-bgc-red-200 d-of-hidden"><div class="d-fl-center d-my24 d-p16 d-bgc-red-500 d-fs14 d-fc-white d-ff-mono">d-my24</div></div>
+  <div class="d-as-center d-bar8 d-bgc-red-100 d-of-hidden"><div class="d-fl-center d-my24 d-p16 d-bgc-red-300 d-fs14 d-fc-white d-ff-mono">d-my24</div></div>
 </code-well-header>
 
 ```html
