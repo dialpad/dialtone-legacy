@@ -7,12 +7,12 @@ desc: Utility classes for changing an element's opacity.
 
 Use `d-o{n}` to change the opacity of your element.
 
-<code-well-header class="d-fl-col5 d-flg8 d-fw-wrap d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmn102" custom>
-  <div class="d-fl-center d-p16 d-bar8 d-bgc-pink-100 d-fc-pink-600 d-fs16 d-fw-bold d-o100">.d-o100</div>
-  <div class="d-fl-center d-p16 d-bar8 d-bgc-pink-100 d-fc-pink-600 d-fs16 d-fw-bold d-o75">.d-o75</div>
-  <div class="d-fl-center d-p16 d-bar8 d-bgc-pink-100 d-fc-pink-600 d-fs16 d-fw-bold d-o50">.d-o50</div>
-  <div class="d-fl-center d-p16 d-bar8 d-bgc-pink-100 d-fc-pink-600 d-fs16 d-fw-bold d-o25">.d-o25</div>
-  <div class="d-fl-center d-p16 d-bar8 d-bgc-pink-100 d-fc-pink-600 d-fs16 d-fw-bold d-o0">.d-o0</div>
+<code-well-header class="d-fl-col5 d-flg8 d-fw-wrap d-p24 d-bgc-magenta-100 d-bgo50 d-w100p d-hmn102" custom>
+  <div class="d-fl-center d-p16 d-bar8 d-bgc-magenta-100 d-fc-magenta-400 d-fs16 d-fw-bold d-o100">.d-o100</div>
+  <div class="d-fl-center d-p16 d-bar8 d-bgc-magenta-100 d-fc-magenta-400 d-fs16 d-fw-bold d-o75">.d-o75</div>
+  <div class="d-fl-center d-p16 d-bar8 d-bgc-magenta-100 d-fc-magenta-400 d-fs16 d-fw-bold d-o50">.d-o50</div>
+  <div class="d-fl-center d-p16 d-bar8 d-bgc-magenta-100 d-fc-magenta-400 d-fs16 d-fw-bold d-o25">.d-o25</div>
+  <div class="d-fl-center d-p16 d-bar8 d-bgc-magenta-100 d-fc-magenta-400 d-fs16 d-fw-bold d-o0">.d-o0</div>
 </code-well-header>
 
 ```html

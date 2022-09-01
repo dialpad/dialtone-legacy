@@ -40,10 +40,10 @@ Use `d-h{n}p` to set a percentage height for an element.
 
 Use `d-h{n}` to set a fixed height for an element.
 
-<code-well-header class="d-d-flex d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmx512 d-flow16 d-of-scroll d-fs24 d-fw-bold d-ta-center" custom>
+<code-well-header class="d-d-flex d-p24 d-bgc-magenta-100 d-bgo50 d-w100p d-hmx512 d-flow16 d-of-scroll d-fs24 d-fw-bold d-ta-center" custom>
   <div v-for="(i, index) in fixed" class="d-d-flex d-fd-column d-pls-start">
     <span>{{ index }}</span>
-    <div class="d-fl-center d-w64 d-bgc-pink-300 d-bar4" :class="`d-h${i}`"></div>
+    <div class="d-fl-center d-w64 d-bgc-magenta-100 d-bar4" :class="`d-h${i}`"></div>
   </div>
 </code-well-header>
 

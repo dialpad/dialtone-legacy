@@ -27,11 +27,11 @@ Use `d-as-stretch` to stretch an item along a parent's cross axis.
 
 Use `d-as-flex-start` to align an item to the start of the parent's cross axis.
 
-<code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmn216">
-  <div class="d-d-flex d-p8 d-w100p d-hmn216 d-bar8 d-bgc-pink-100">
-    <div class="d-fl-center d-fl1 d-m8 d-p16 d-bgc-pink-300 d-bar4 d-fs24 d-fw-bold">1</div>
-    <div class="d-fl-center d-fl1 d-as-flex-start d-m8 d-p16 d-bgc-pink-300 d-bar4 d-fs24 d-fw-bold">2</div>
-    <div class="d-fl-center d-fl1 d-m8 d-p16 d-bgc-pink-300 d-bar4 d-fs24 d-fw-bold">3</div>
+<code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-magenta-100 d-bgo50 d-w100p d-hmn216">
+  <div class="d-d-flex d-p8 d-w100p d-hmn216 d-bar8 d-bgc-magenta-100">
+    <div class="d-fl-center d-fl1 d-m8 d-p16 d-bgc-magenta-100 d-bar4 d-fs24 d-fw-bold">1</div>
+    <div class="d-fl-center d-fl1 d-as-flex-start d-m8 d-p16 d-bgc-magenta-100 d-bar4 d-fs24 d-fw-bold">2</div>
+    <div class="d-fl-center d-fl1 d-m8 d-p16 d-bgc-magenta-100 d-bar4 d-fs24 d-fw-bold">3</div>
   </div>
 </code-well-header>
 

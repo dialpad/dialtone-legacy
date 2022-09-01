@@ -27,7 +27,7 @@ Use `d-bs-{n}` to add an outer box shadow to an element.
 
 Use `d-bs-none` to remove a box shadow to an element.
 
-<code-well-header class="d-fl-center d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmn102" custom>
+<code-well-header class="d-fl-center d-p24 d-bgc-magenta-100 d-bgo50 d-w100p d-hmn102" custom>
   <div class="d-fl-center d-p16 d-bar8 d-bgc-white d-fs18 d-fw-bold d-bs-none">.d-bs-none</div>
 </code-well-header>
 
@@ -53,7 +53,7 @@ Use `h:d-bs-{n}` to change an element's `:hover` state box shadow.
 
 Use `f:d-bs-{n}` to change an element's `:focus` and `:focus-within` state box shadow.
 
-<code-well-header class="d-fl-center d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmn102" custom>
+<code-well-header class="d-fl-center d-p24 d-bgc-magenta-100 d-bgo50 d-w100p d-hmn102" custom>
   <div tabindex="0" class="d-fl-center d-p16 d-bar8 d-bgc-white d-fs18 d-fw-bold d-bs-none f:d-bs-lg">Click on me</div>
 </code-well-header>
 
@@ -66,7 +66,7 @@ Use `f:d-bs-{n}` to change an element's `:focus` and `:focus-within` state box s
 
 Use `fv:d-bs-{n}` to change an element's `:focus-visible` state box shadow [only when focused by keyboard].
 
-<code-well-header class="d-fl-center d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmn102" custom>
+<code-well-header class="d-fl-center d-p24 d-bgc-magenta-100 d-bgo50 d-w100p d-hmn102" custom>
   <div tabindex="0" class="d-fl-center d-p16 d-bar8 d-bgc-white d-fs18 d-fw-bold d-bs-none fv:d-bs-lg">Focus on me</div>
 </code-well-header>
 

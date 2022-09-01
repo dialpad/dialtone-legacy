@@ -33,7 +33,6 @@ While the migration is fairly straightforward, there may be instances where manu
 Purple Remapping | Before and After
 :-------------------------:|:-------------------------:
 ![](purple_mappings.png) | ![](previous_next_mappings.png)
-
 #### Blue
 [TBD]
 #### Tan
@@ -49,7 +48,13 @@ Purple Remapping | Before and After
 #### Yellow/Gold
 [TBD]
 #### Pink/Magenta
-[TBD]
+1. Renamed `pink-[100-700]` to `magenta-[100-500]` color stops.
+2. Consolidated Dialtone v6's `pink-100`, `pink-200` and `pink-300` stops into the redefined `magenta-100` stop.
+3. Consolidated Dialtone v6's `pink-400` stop into the redefined `magenta-200` stop.
+4. Consolidated Dialtone v6's `pink-500` stop into the redefined `magenta-300` stop.
+5. Consolidated Dialtone v6's `pink-600` stop into the redefined `magenta-400` stop.
+6. Consolidated Dialtone v6's `pink-700` stop into the redefined `magenta-500` stop.
+
 #### Red
 [TBD]
 
@@ -84,6 +89,14 @@ Search for | Replace with
 `black-075` | `black-300`
 `black-050` | `black-200`
 `black-025` | `black-100`
+`pink-100` | `magenta-100`
+`pink-200` | `magenta-100`
+`pink-300` | `magenta-100`
+`pink-400` | `magenta-200`
+`pink-500` | `magenta-300`
+`pink-600` | `magenta-400`
+`pink-700` | `magenta-500`
+`d-fc-pink` | `d-fc-magenta`
 [others TBD, e.g. Green] | ...
 
 ### 3. Replace "Primary Color" theme uses
@@ -143,6 +156,13 @@ Search for | Replace with
 `#322D37` | `var(--black-700)`
 `#221F24` | `var(--black-800)`
 `#0D0C0F` | `var(--black-900)`
+`#FFEBEC` | `var(--magenta-100)`
+`#FFD8DA` | `var(--magenta-100)`
+`#FDA2A8` | `var(--magenta-100)`
+`#FF578A` | `var(--magenta-200)`
+`#E92A7A` | `var(--magenta-300)`
+`#A2114D` | `var(--magenta-400)`
+`#57102E` | `var(--magenta-500)`
 
 ### 5. Check color updates for readability
 

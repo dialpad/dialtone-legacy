@@ -67,11 +67,11 @@ Use `h:d-fc-{color}` to change an element's text color `:hover` state.
 Use `f:d-fc-{color}` to change an element's text color `:focus` and `:focus-within` state.
 
 <code-well-header class="d-fl-center d-p24 d-bgc-black-200 d-w100p d-hmn102" custom>
-  <button class="d-p16 d-bar4 d-fs18 d-fc-pink f:d-fc-white d-bgc-transparent f:d-bgc-pink-600 d-ba d-bc-transparent">Click on me</button>
+  <button class="d-p16 d-bar4 d-fs18 d-fc-magenta f:d-fc-white d-bgc-transparent f:d-bgc-magenta-400 d-ba d-bc-transparent">Click on me</button>
 </code-well-header>
 
 ```html
-<button class="d-fc-pink f:d-fc-white d-bgc-transparent f:d-bgc-pink-600">...</button>
+<button class="d-fc-magenta f:d-fc-white d-bgc-transparent f:d-bgc-magenta-400">...</button>
 ```
 
 ## Focus visible
@@ -79,11 +79,11 @@ Use `f:d-fc-{color}` to change an element's text color `:focus` and `:focus-with
 Use `fv:d-fc-{color}` to change an element's text color on `:focus-visible` state [only when focused by keyboard].
 
 <code-well-header class="d-fl-center d-p24 d-bgc-black-200 d-w100p d-hmn102" custom>
-  <button class="d-p16 d-bar4 d-fs18 d-fc-pink fv:d-fc-white d-bgc-transparent fv:d-bgc-pink-600 d-ba d-bc-transparent">Focus on me</button>
+  <button class="d-p16 d-bar4 d-fs18 d-fc-magenta fv:d-fc-white d-bgc-transparent fv:d-bgc-magenta-400 d-ba d-bc-transparent">Focus on me</button>
 </code-well-header>
 
 ```html
-<button class="d-fc-pink fv:d-fc-white d-bgc-transparent fv:d-bgc-pink-600">...</button>
+<button class="d-fc-magenta fv:d-fc-white d-bgc-transparent fv:d-bgc-magenta-400">...</button>
 ```
 
 <!--
@@ -91,7 +91,7 @@ Use `fv:d-fc-{color}` to change an element's text color on `:focus-visible` stat
 Use `d:d-fc-{color}` to set a different text color when the user prefers dark mode.
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-black-200 d-w100p d-hmn102 d-stack16">
-  <button type="button" class="d-p16 d-bar4 d-fs18 d-fc-purple d-bgc-pink-100 d:d-fc-yellow d:d-bgc-yellow-200 d-ba d-bc-transparent js-theme-switcher">Click on me toggle dark mode</button>
+  <button type="button" class="d-p16 d-bar4 d-fs18 d-fc-purple d-bgc-magenta-100 d:d-fc-yellow d:d-bgc-yellow-200 d-ba d-bc-transparent js-theme-switcher">Click on me toggle dark mode</button>
 </code-well-header>
 
 ```html

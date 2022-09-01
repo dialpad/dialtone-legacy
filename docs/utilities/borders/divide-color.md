@@ -47,16 +47,16 @@ Use `d-divide-x{n}` to create a divider between an element's child items.
 
 Use `d-dco{n}` to change a divider opacity value.
 
-<code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmn102" custom>
-  <div class="d-w100p d-d-flex d-fd-column d-divide-y d-divide-pink-400 d-dco75">
-    <div class="d-fl-center d-p16 d-fc-pink-600 d-fs24 d-fw-bold">1</div>
-    <div class="d-fl-center d-p16 d-fc-pink-600 d-fs24 d-fw-bold">2</div>
-    <div class="d-fl-center d-p16 d-fc-pink-600 d-fs24 d-fw-bold">3</div>
+<code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-magenta-100 d-bgo50 d-w100p d-hmn102" custom>
+  <div class="d-w100p d-d-flex d-fd-column d-divide-y d-divide-magenta-200 d-dco75">
+    <div class="d-fl-center d-p16 d-fc-magenta-400 d-fs24 d-fw-bold">1</div>
+    <div class="d-fl-center d-p16 d-fc-magenta-400 d-fs24 d-fw-bold">2</div>
+    <div class="d-fl-center d-p16 d-fc-magenta-400 d-fs24 d-fw-bold">3</div>
   </div>
 </code-well-header>
 
 ```html
-<div class="d-divide-y1 d-divide-pink-400 d-dco75">
+<div class="d-divide-y1 d-divide-magenta-200 d-dco75">
   <div>1</div>
   <div>2</div>
   <div>3</div>

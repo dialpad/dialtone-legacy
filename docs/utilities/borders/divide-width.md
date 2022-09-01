@@ -77,11 +77,11 @@ Use `d-divide-{y|x}{n}` to change the divider width between an element's child i
 
 If an element's `flex-direction` is reversed, apply `d-divide-{y|x}-reverse` to reverse the divider placement between an element's child items.
 
-<code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmn102" custom>
-  <div class="d-w100p d-d-flex d-fd-column-reverse d-divide-y d-divide-y-reverse d-divide-pink-400">
-    <div class="d-fl-center d-p16 d-fc-pink-600 d-fs24 d-fw-bold">1</div>
-    <div class="d-fl-center d-p16 d-fc-pink-600 d-fs24 d-fw-bold">2</div>
-    <div class="d-fl-center d-p16 d-fc-pink-600 d-fs24 d-fw-bold">3</div>
+<code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-magenta-100 d-bgo50 d-w100p d-hmn102" custom>
+  <div class="d-w100p d-d-flex d-fd-column-reverse d-divide-y d-divide-y-reverse d-divide-magenta-200">
+    <div class="d-fl-center d-p16 d-fc-magenta-400 d-fs24 d-fw-bold">1</div>
+    <div class="d-fl-center d-p16 d-fc-magenta-400 d-fs24 d-fw-bold">2</div>
+    <div class="d-fl-center d-p16 d-fc-magenta-400 d-fs24 d-fw-bold">3</div>
   </div>
 </code-well-header>
 

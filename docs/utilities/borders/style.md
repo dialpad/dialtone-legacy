@@ -7,21 +7,21 @@ desc: Utilities for controlling an element's border style.
 
 Use `d-b{a|t|r|b|l}s-dashed` to change the border style to dashed on your element.
 
-<code-well-header class="d-fl-col5 d-flg8 d-fw-wrap d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmn102" custom>
-  <div class="d-fl-center d-p16 d-ba d-bc-pink-400 d-bas-dashed d-baw4 d-bgc-pink-100 d-fs12 d-ff-mono">.d-bas-dashed</div>
-  <div class="d-fl-center d-p16 d-ba d-bc-pink-400 d-bts-dashed d-baw4 d-bgc-pink-100 d-fs12 d-ff-mono">.d-bts-dashed</div>
-  <div class="d-fl-center d-p16 d-ba d-bc-pink-400 d-brs-dashed d-baw4 d-bgc-pink-100 d-fs12 d-ff-mono">.d-brs-dashed</div>
-  <div class="d-fl-center d-p16 d-ba d-bc-pink-400 d-bbs-dashed d-baw4 d-bgc-pink-100 d-fs12 d-ff-mono">.d-bbs-dashed</div>
-  <div class="d-fl-center d-p16 d-ba d-bc-pink-400 d-bls-dashed d-baw4 d-bgc-pink-100 d-fs12 d-ff-mono">.d-bls-dashed</div>
+<code-well-header class="d-fl-col5 d-flg8 d-fw-wrap d-p24 d-bgc-magenta-100 d-bgo50 d-w100p d-hmn102" custom>
+  <div class="d-fl-center d-p16 d-ba d-bc-magenta-200 d-bas-dashed d-baw4 d-bgc-magenta-100 d-fs12 d-ff-mono">.d-bas-dashed</div>
+  <div class="d-fl-center d-p16 d-ba d-bc-magenta-200 d-bts-dashed d-baw4 d-bgc-magenta-100 d-fs12 d-ff-mono">.d-bts-dashed</div>
+  <div class="d-fl-center d-p16 d-ba d-bc-magenta-200 d-brs-dashed d-baw4 d-bgc-magenta-100 d-fs12 d-ff-mono">.d-brs-dashed</div>
+  <div class="d-fl-center d-p16 d-ba d-bc-magenta-200 d-bbs-dashed d-baw4 d-bgc-magenta-100 d-fs12 d-ff-mono">.d-bbs-dashed</div>
+  <div class="d-fl-center d-p16 d-ba d-bc-magenta-200 d-bls-dashed d-baw4 d-bgc-magenta-100 d-fs12 d-ff-mono">.d-bls-dashed</div>
 </code-well-header>
 
 ```html
 
-<div class="d-ba d-bc-pink-400 d-bas-dashed d-baw4">...</div>
-<div class="d-ba d-bc-pink-400 d-bts-dashed d-baw4">...</div>
-<div class="d-ba d-bc-pink-400 d-brs-dashed d-baw4">...</div>
-<div class="d-ba d-bc-pink-400 d-bbs-dashed d-baw4">...</div>
-<div class="d-ba d-bc-pink-400 d-bls-dashed d-baw4">...</div>
+<div class="d-ba d-bc-magenta-200 d-bas-dashed d-baw4">...</div>
+<div class="d-ba d-bc-magenta-200 d-bts-dashed d-baw4">...</div>
+<div class="d-ba d-bc-magenta-200 d-brs-dashed d-baw4">...</div>
+<div class="d-ba d-bc-magenta-200 d-bbs-dashed d-baw4">...</div>
+<div class="d-ba d-bc-magenta-200 d-bls-dashed d-baw4">...</div>
 ```
 
 ## Dotted Borders

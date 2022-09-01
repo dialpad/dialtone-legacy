@@ -49,8 +49,8 @@ Use `d-ws-pre` to preserve an element's whitespaces sequences. Lines are only br
 
 Use `d-ws-pre-line` to collapse an element's whitespaces sequences. Lines are broken at new line characters, `<br/>` elements, or as needed to fill boxes.
 
-<code-well-header class="d-fl-center d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmn102" custom>
-  <div class="d-bgc-pink-200 d-py8 d-px16 d-bar8 d-w216">
+<code-well-header class="d-fl-center d-p24 d-bgc-magenta-100 d-bgo50 d-w100p d-hmn102" custom>
+  <div class="d-bgc-magenta-100 d-py8 d-px16 d-bar8 d-w216">
     <p class="lg:d-fs14 d-fs18 d-ws-pre-line d-of-hidden">Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br/>Blanditiisitaquequodpraesentiumexplicaboincidunt? Dolores beatae nam at sed dolorum ratione dolorem nisi velit dolor.</p>
   </div>
 </code-well-header>

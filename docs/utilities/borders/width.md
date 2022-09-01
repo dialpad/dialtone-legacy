@@ -7,12 +7,12 @@ desc: Utilities for controlling an element's border width.
 
 Use `d-baw{n}` to change the border width on your element.
 
-<code-well-header class="d-fl-col5 d-flg8 d-fw-wrap d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmn102" custom>
-  <div class="d-fl-center d-p16 d-ba d-bc-pink-400 d-baw0 d-bgc-pink-100 d-fs16 d-ff-mono">.d-baw0</div>
-  <div class="d-fl-center d-p16 d-ba d-bc-pink-400 d-baw1 d-bgc-pink-100 d-fs16 d-ff-mono">.d-baw1</div>
-  <div class="d-fl-center d-p16 d-ba d-bc-pink-400 d-baw2 d-bgc-pink-100 d-fs16 d-ff-mono">.d-baw2</div>
-  <div class="d-fl-center d-p16 d-ba d-bc-pink-400 d-baw4 d-bgc-pink-100 d-fs16 d-ff-mono">.d-baw4</div>
-  <div class="d-fl-center d-p16 d-ba d-bc-pink-400 d-baw6 d-bgc-pink-100 d-fs16 d-ff-mono">.d-baw6</div>
+<code-well-header class="d-fl-col5 d-flg8 d-fw-wrap d-p24 d-bgc-magenta-100 d-bgo50 d-w100p d-hmn102" custom>
+  <div class="d-fl-center d-p16 d-ba d-bc-magenta-200 d-baw0 d-bgc-magenta-100 d-fs16 d-ff-mono">.d-baw0</div>
+  <div class="d-fl-center d-p16 d-ba d-bc-magenta-200 d-baw1 d-bgc-magenta-100 d-fs16 d-ff-mono">.d-baw1</div>
+  <div class="d-fl-center d-p16 d-ba d-bc-magenta-200 d-baw2 d-bgc-magenta-100 d-fs16 d-ff-mono">.d-baw2</div>
+  <div class="d-fl-center d-p16 d-ba d-bc-magenta-200 d-baw4 d-bgc-magenta-100 d-fs16 d-ff-mono">.d-baw4</div>
+  <div class="d-fl-center d-p16 d-ba d-bc-magenta-200 d-baw6 d-bgc-magenta-100 d-fs16 d-ff-mono">.d-baw6</div>
 </code-well-header>
 
 ```html

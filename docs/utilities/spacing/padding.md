@@ -34,8 +34,8 @@ next:
 
 ## Add horizontal padding
 
-<code-well-header class="d-d-flex d-fw-wrap d-ai-start d-jc-center d-bgc-pink-100 d-bgo50 d-w100p d-hmn216" custom>
-  <div class="d-as-center d-px24 d-bar8 d-bgc-pink-300 d-of-hidden"><div class="d-fl-center d-p16 d-bgc-pink-200 d-fs14 d-ff-mono">d-px24</div></div>
+<code-well-header class="d-d-flex d-fw-wrap d-ai-start d-jc-center d-bgc-magenta-100 d-bgo50 d-w100p d-hmn216" custom>
+  <div class="d-as-center d-px24 d-bar8 d-bgc-magenta-100 d-of-hidden"><div class="d-fl-center d-p16 d-bgc-magenta-100 d-fs14 d-ff-mono">d-px24</div></div>
 </code-well-header>
 
 ```html

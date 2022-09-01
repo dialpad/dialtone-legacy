@@ -25,12 +25,12 @@ Use `d-bgc-{name}` to control which box an element's background is clipped by.
 Use `d-bgc-text` to clip the background color(s) within the foreground text.
 
 <code-well-header class="d-jc-center d-p24 d-bgc-black-200 d-flow16" custom>
-  <div class="d-bgc-text d-w100p d-fl-center d-p16 d-bc-black-100 d-ba d-baw4 d-bas-dashed d-bar8 d-bgg-to-r d-bgg-from-purple-500 d-bgg-to-pink-400 d-fs48 d-fw-bold">Magic stuff happens.</div>
+  <div class="d-bgc-text d-w100p d-fl-center d-p16 d-bc-black-100 d-ba d-baw4 d-bas-dashed d-bar8 d-bgg-to-r d-bgg-from-purple-500 d-bgg-to-magenta-200 d-fs48 d-fw-bold">Magic stuff happens.</div>
 </code-well-header>
 
 ```html
 
-<div class="d-bgc-text d-bgg-to-r d-bgg-from-purple-500 d-bgg-to-pink-400">...</div>
+<div class="d-bgc-text d-bgg-to-r d-bgg-from-purple-500 d-bgg-to-magenta-200">...</div>
 ```
 
 ## Classes

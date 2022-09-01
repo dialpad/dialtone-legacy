@@ -39,7 +39,7 @@ When writing Less, you can set an element's z-index by using a variable (`@zi-{l
   </thead>
   <tbody>
     <tr v-for="{ name, description, output } in zIndex">
-      <th scope="row" class="d-ff-mono d-fc-pink-500 d-fs12 d-fw-normal">@zi-{{ name }}</th>
+      <th scope="row" class="d-ff-mono d-fc-magenta-300 d-fs12 d-fw-normal">@zi-{{ name }}</th>
       <td>{{ output }}</td>
       <td class="dialtone-table--sans">{{ description }}</td>
     </tr>

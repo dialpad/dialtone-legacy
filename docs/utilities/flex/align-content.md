@@ -34,13 +34,13 @@ Use `d-ac-flex-start` to pack rows against the start of the element's cross axis
 
 Use `d-ac-center` to pack rows along the center of the element's cross axis.
 
-<code-well-header bgclass="d-bgc-pink-100">
-  <div class="d-fl-col3 d-flg16 d-fw-wrap d-ac-center d-p8 d-w100p d-hmn216 d-bar8 d-bgc-pink-100">
-    <div class="d-fl-center d-m8 d-p16 d-h64 d-bgc-pink-300 d-bar4 d-fs24 d-fw-bold">1</div>
-    <div class="d-fl-center d-m8 d-p16 d-h64 d-bgc-pink-300 d-bar4 d-fs24 d-fw-bold">2</div>
-    <div class="d-fl-center d-m8 d-p16 d-h64 d-bgc-pink-300 d-bar4 d-fs24 d-fw-bold">3</div>
-    <div class="d-fl-center d-m8 d-p16 d-h64 d-bgc-pink-300 d-bar4 d-fs24 d-fw-bold">4</div>
-    <div class="d-fl-center d-m8 d-p16 d-h64 d-bgc-pink-300 d-bar4 d-fs24 d-fw-bold">5</div>
+<code-well-header bgclass="d-bgc-magenta-100">
+  <div class="d-fl-col3 d-flg16 d-fw-wrap d-ac-center d-p8 d-w100p d-hmn216 d-bar8 d-bgc-magenta-100">
+    <div class="d-fl-center d-m8 d-p16 d-h64 d-bgc-magenta-100 d-bar4 d-fs24 d-fw-bold">1</div>
+    <div class="d-fl-center d-m8 d-p16 d-h64 d-bgc-magenta-100 d-bar4 d-fs24 d-fw-bold">2</div>
+    <div class="d-fl-center d-m8 d-p16 d-h64 d-bgc-magenta-100 d-bar4 d-fs24 d-fw-bold">3</div>
+    <div class="d-fl-center d-m8 d-p16 d-h64 d-bgc-magenta-100 d-bar4 d-fs24 d-fw-bold">4</div>
+    <div class="d-fl-center d-m8 d-p16 d-h64 d-bgc-magenta-100 d-bar4 d-fs24 d-fw-bold">5</div>
   </div>
 </code-well-header>
 

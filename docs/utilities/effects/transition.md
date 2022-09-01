@@ -22,12 +22,12 @@ Use `d-t` to add a transition to an element.
 
 Use `d-td{n}` change an element's `transition-delay` from it's default `50ms` length.
 
-<code-well-header class="d-fl-col3 d-flg8 d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmn102 d-of-auto" custom>
-  <div class="d-fl-center d-p24 d-bar8 d-bgc-pink-400 h:d-bgc-yellow-300 h:d-bs-lg d-fs18 d-fw-bold d-fc-white h:d-fc-dark d-t d-td0 d-c-pointer">0ms</div>
-  <div class="d-fl-center d-p24 d-bar8 d-bgc-pink-400 h:d-bgc-yellow-300 h:d-bs-lg d-fs18 d-fw-bold d-fc-white h:d-fc-dark d-t d-c-pointer">50ms</div>
-  <div class="d-fl-center d-p24 d-bar8 d-bgc-pink-400 h:d-bgc-yellow-300 h:d-bs-lg d-fs18 d-fw-bold d-fc-white h:d-fc-dark d-t d-td100 d-c-pointer">100ms</div>
-  <div class="d-fl-center d-p24 d-bar8 d-bgc-pink-400 h:d-bgc-yellow-300 h:d-bs-lg d-fs18 d-fw-bold d-fc-white h:d-fc-dark d-t d-td150 d-c-pointer">150ms</div>
-  <div class="d-fl-center d-p24 d-bar8 d-bgc-pink-400 h:d-bgc-yellow-300 h:d-bs-lg d-fs18 d-fw-bold d-fc-white h:d-fc-dark d-t d-td200 d-c-pointer">200ms</div>
+<code-well-header class="d-fl-col3 d-flg8 d-p24 d-bgc-magenta-100 d-bgo50 d-w100p d-hmn102 d-of-auto" custom>
+  <div class="d-fl-center d-p24 d-bar8 d-bgc-magenta-200 h:d-bgc-yellow-300 h:d-bs-lg d-fs18 d-fw-bold d-fc-white h:d-fc-dark d-t d-td0 d-c-pointer">0ms</div>
+  <div class="d-fl-center d-p24 d-bar8 d-bgc-magenta-200 h:d-bgc-yellow-300 h:d-bs-lg d-fs18 d-fw-bold d-fc-white h:d-fc-dark d-t d-c-pointer">50ms</div>
+  <div class="d-fl-center d-p24 d-bar8 d-bgc-magenta-200 h:d-bgc-yellow-300 h:d-bs-lg d-fs18 d-fw-bold d-fc-white h:d-fc-dark d-t d-td100 d-c-pointer">100ms</div>
+  <div class="d-fl-center d-p24 d-bar8 d-bgc-magenta-200 h:d-bgc-yellow-300 h:d-bs-lg d-fs18 d-fw-bold d-fc-white h:d-fc-dark d-t d-td150 d-c-pointer">150ms</div>
+  <div class="d-fl-center d-p24 d-bar8 d-bgc-magenta-200 h:d-bgc-yellow-300 h:d-bs-lg d-fs18 d-fw-bold d-fc-white h:d-fc-dark d-t d-td200 d-c-pointer">200ms</div>
 </code-well-header>
 
 ```html
