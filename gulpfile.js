@@ -6,7 +6,7 @@
 //  ================================================================================
 const settings = {
   clean: true, // Turn on/off clean tasks
-  scripts: false, // Turn on/off script tasks
+  scripts: true, // Turn on/off script tasks
   styles: true, // Turn on/off style tasks
   svgs: true, // Turn on/off SVG tasks
   patterns: true, // Turn on/off SVG Pattern tasks
@@ -87,7 +87,7 @@ const paths = {
     libFonts: './dist/fonts/**/*',
   },
   scripts: {
-    input: './lib/build/js/',
+    input: './lib/build/js/**/*.js',
     output: './lib/dist/js/',
   },
   styles: {
@@ -171,6 +171,15 @@ const cleanSite = () => {
 //  --  Clean out Fonts
 const cleanFonts = () => {
   return cleanUp([paths.clean.libFonts]);
+};
+
+const libScripts = function (done) {
+  //  Make sure this feature is activated before running
+  if (!settings.scripts) return done();
+
+  //  Compile library files
+  return src(paths.scripts.input)
+    .pipe(dest(paths.scripts.output));
 };
 
 //  ================================================================================
@@ -676,6 +685,7 @@ exports.default = series(
   webfonts,
   exports.svg,
   libStyles,
+  libScripts,
 );
 
 // tasks are similar to default build when we are watching but there are some
