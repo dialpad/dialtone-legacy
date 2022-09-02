@@ -13,8 +13,8 @@ Use `d-h{n}p` to set a percentage height for an element.
 <code-well-header class="d-d-flex d-p24 d-bgc-green-100 d-bgo50 d-w100p d-h332 d-flow16 d-of-x-scroll d-fs14 d-ff-mono d-ta-center" custom>
   <div v-for="i in percentage" class="d-d-flex d-fl-center d-h100p d-ps-relative">
     <span class="d-zi-active d-w64">d-h{{i}}p</span>
-    <div class="d-w64 d-h216 d-ps-absolute d-bgc-green-200">
-      <div class="d-w64 d-bgc-green-300 d-bar4" :class="`d-h${i}p`"></div>
+    <div class="d-w64 d-h216 d-ps-absolute d-bgc-green-100">
+      <div class="d-w64 d-bgc-green-200 d-bar4" :class="`d-h${i}p`"></div>
     </div>
   </div>
 </code-well-header>

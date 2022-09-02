@@ -16,10 +16,10 @@ desc: Utilities to adjust an element's exterior spacing between other objects.
 ## Add margin to a single side
 
 <code-well-header class="d-d-flex d-fw-wrap d-ai-start d-jc-center d-bgc-green-100 d-bgo50 d-w100p d-hmn216 d-flow24" custom>
-  <div class="d-as-center d-bar8 d-bgc-green-200 d-of-hidden"><div class="d-fl-center d-mt12 d-p16 d-bgc-green-300 d-bbr4 d-fs14 d-ff-mono">d-mt12</div></div>
-  <div class="d-as-center d-bar8 d-bgc-green-200 d-of-hidden"><div class="d-fl-center d-mr16 d-p16 d-bgc-green-300 d-brl4 d-fs14 d-ff-mono">d-mr16</div></div>
-  <div class="d-as-center d-bar8 d-bgc-green-200 d-of-hidden"><div class="d-fl-center d-mb24 d-p16 d-bgc-green-300 d-btr4 d-fs14 d-ff-mono">d-mb24</div></div>
-  <div class="d-as-center d-bar8 d-bgc-green-200 d-of-hidden"><div class="d-fl-center d-ml32 d-p16 d-bgc-green-300 d-brr4 d-fs14 d-ff-mono">d-ml32</div></div>
+  <div class="d-as-center d-bar8 d-bgc-green-100 d-of-hidden"><div class="d-fl-center d-mt12 d-p16 d-bgc-green-200 d-bbr4 d-fs14 d-ff-mono">d-mt12</div></div>
+  <div class="d-as-center d-bar8 d-bgc-green-100 d-of-hidden"><div class="d-fl-center d-mr16 d-p16 d-bgc-green-200 d-brl4 d-fs14 d-ff-mono">d-mr16</div></div>
+  <div class="d-as-center d-bar8 d-bgc-green-100 d-of-hidden"><div class="d-fl-center d-mb24 d-p16 d-bgc-green-200 d-btr4 d-fs14 d-ff-mono">d-mb24</div></div>
+  <div class="d-as-center d-bar8 d-bgc-green-100 d-of-hidden"><div class="d-fl-center d-ml32 d-p16 d-bgc-green-200 d-brr4 d-fs14 d-ff-mono">d-ml32</div></div>
 </code-well-header>
 
 ```html

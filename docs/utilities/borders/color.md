@@ -55,12 +55,12 @@ or `d:d-bco{n}` prefixes.
 Use `h:d-bc-{color}` to change an element's border color spot on `:hover`.
 
 <code-well-header class="d-fl-center d-p24 d-bgc-green-100 d-bgo50 d-w100p d-hmn102" custom>
-  <button class="d-p16 d-bar4 d-fs18 d-fc-green-600 d-ba d-baw2 d-bc-green-200 h:d-bc-green-500 d-bgc-green-100">Hover over me</button>
+  <button class="d-p16 d-bar4 d-fs18 d-fc-green-400 d-ba d-baw2 d-bc-green-100 h:d-bc-green-400 d-bgc-green-100">Hover over me</button>
 </code-well-header>
 
 ```html
 
-<button class="d-ba d-baw2 d-bc-green-200 h:d-bc-green-500">...</button>
+<button class="d-ba d-baw2 d-bc-green-100 h:d-bc-green-400">...</button>
 ```
 
 ## Focus

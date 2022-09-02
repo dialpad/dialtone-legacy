@@ -8,7 +8,7 @@ desc: Utilities for controlling an element's text transform.
 Use `d-tt-uppercase` to uppercase an element's text.
 
 <code-well-header class="d-fl-center d-p24 d-bgc-green-100 d-bgo50 d-w100p d-hmn102" custom>
-  <p class="d-fs24 d-fc-green-500 d-tt-uppercase">The quick brown fox jumps over the lazy dog.</p>
+  <p class="d-fs24 d-fc-green-400 d-tt-uppercase">The quick brown fox jumps over the lazy dog.</p>
 </code-well-header>
 
 ```html
