@@ -1,3 +1,10 @@
+## [6.36.1](https://github.com/dialpad/dialtone/compare/v6.36.0...v6.36.1) (2022-09-02)
+
+
+### Bug Fixes
+
+* cleanup card css ([#657](https://github.com/dialpad/dialtone/issues/657)) ([59d2941](https://github.com/dialpad/dialtone/commit/59d294162ad643c68be7d44376be4b6205dfb3c1))
+
 # [6.36.0](https://github.com/dialpad/dialtone/compare/v6.35.0...v6.36.0) (2022-09-01)
 
 
