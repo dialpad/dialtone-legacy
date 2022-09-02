@@ -66,9 +66,9 @@ Use `d-flg{n}` to create uniform gaps between flex columns within an element.
 By default flexed items align to `flex-start` both horizontally and vertically (effectively top, left). Use `d-fl-center` to center-center child items within an element.
 
 <code-well-header class="d-fl-center d-p24 d-bgc-green-100 d-bgo50 d-w100p d-hmn216" custom>
-  <div class="d-fl-center d-w48 d-h48 d-m8 d-p16 d-bgc-green-300 d-bar4 d-fs24 d-fw-bold">1</div>
-  <div class="d-fl-center d-w64 d-h64 d-m8 d-p16 d-bgc-green-300 d-bar4 d-fs24 d-fw-bold">2</div>
-  <div class="d-fl-center d-w48 d-h48 d-m8 d-p16 d-bgc-green-300 d-bar4 d-fs24 d-fw-bold">3</div>
+  <div class="d-fl-center d-w48 d-h48 d-m8 d-p16 d-bgc-green-200 d-bar4 d-fs24 d-fw-bold">1</div>
+  <div class="d-fl-center d-w64 d-h64 d-m8 d-p16 d-bgc-green-200 d-bar4 d-fs24 d-fw-bold">2</div>
+  <div class="d-fl-center d-w48 d-h48 d-m8 d-p16 d-bgc-green-200 d-bar4 d-fs24 d-fw-bold">3</div>
 </code-well-header>
 
 ```html

@@ -10,10 +10,10 @@ Use `d-va-baseline` to vertically align an element to the baseline.
 <code-well-header class="d-px64 d-py32 d-bgc-green-100 d-bgo50 d-w100p" custom>
   <div class="d-w100p d-ps-relative d-lh0">
     <div class="d-w0 d-h32 d-d-inline-block d-va-baseline">
-      <span class="d-ps-absolute d-t0 d-h32 d-w100p d-by d-bts-dashed d-bbs-dashed d-bc-green-400"></span>
-      <span class="d-ps-absolute d-t0 d-h16 d-w100p d-by d-bts-dashed d-bbs-dashed d-bc-green-400"></span>
+      <span class="d-ps-absolute d-t0 d-h32 d-w100p d-by d-bts-dashed d-bbs-dashed d-bc-green-300"></span>
+      <span class="d-ps-absolute d-t0 d-h16 d-w100p d-by d-bts-dashed d-bbs-dashed d-bc-green-300"></span>
     </div>
-    <p class="d-d-inline-block d-ps-relative d-zi-base1 d-fc-green-500 d-fs18">The quick brown fox jumps over the lazy dog.</p>
+    <p class="d-d-inline-block d-ps-relative d-zi-base1 d-fc-green-400 d-fs18">The quick brown fox jumps over the lazy dog.</p>
   </div>
 </code-well-header>
 
