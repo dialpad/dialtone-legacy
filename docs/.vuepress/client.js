@@ -32,19 +32,9 @@ export default defineClientConfig({
   enhance ({ app, router, siteData }) {
     // Register libraries
     if (!__VUEPRESS_SSR__) {
-      import('@dialpad/dialtone-vue').then(module => {
-        Object.keys(module)
-          .filter((key) => key.startsWith('Dt'))
-          .forEach((key) => {
-            app.component(key, module[key]);
-          });
-      });
-
-      import('@dialpad/dialtone-combinator').then(module => {
-        app.component('DtcCombinator', module.DtcCombinator);
-        app.component('DtcSection', module.DtcSection);
-        app.provide('variantBank', module.variantBank());
-      });
+      registerDialtoneVue(app);
+      registerDialtoneCombinator(app);
+      registerDialtoneIcons(app);
     }
 
     // Common views
@@ -74,3 +64,46 @@ export default defineClientConfig({
   setup () {},
   rootComponents: [],
 });
+
+async function registerDialtoneCombinator (app) {
+  const module = await import('@dialpad/dialtone-combinator');
+  app.component('DtcCombinator', module.DtcCombinator);
+  app.component('DtcSection', module.DtcSection);
+  app.provide('variantBank', module.variantBank());
+}
+
+async function registerDialtoneVue (app) {
+  const module = await import('@dialpad/dialtone-vue');
+  const dialtoneComponents = Object.keys(module).filter((key) => key.startsWith('Dt'));
+  dialtoneComponents.forEach((key) => {
+    app.component(key, module[key]);
+  });
+  app.provide('dialtoneComponents', dialtoneComponents);
+}
+
+async function registerDialtoneIcons (app) {
+  const brandIcons = (await import(`../_data/svg-brand.json`)).default;
+  const systemIcons = (await import(`../_data/svg-system.json`)).default;
+  const icons = [
+    ...brandIcons,
+    ...systemIcons,
+  ];
+
+  const iconEntries = [];
+  const iconPromises = [];
+  icons.forEach(icon => {
+    const promise = import(`../../lib/dist/vue/icons/${icon.vue}.vue`);
+    iconPromises.push(promise);
+    promise.then(module => {
+      iconEntries.push([icon.vue, module.default]);
+    });
+  });
+
+  await Promise.all(iconPromises);
+
+  iconEntries.forEach(([name, icon]) => {
+    app.component(name, icon);
+  });
+
+  app.provide('dialtoneIcons', iconEntries.map(([name]) => name));
+}
