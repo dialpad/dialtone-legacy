@@ -76,10 +76,10 @@ Use `.d-gl-header` to create a simple 2-row layout with a header area and main c
 <aside class="d-bar8 d-of-hidden">
   <header class="d-fl-center d-fd-column d-p24 d-bgc-green-100 d-bgo50 d-w100p d-hmn216 d-of-auto">
     <div class="d-d-grid d-gl-sidebar d-gg16 d-p16 d-w100p d-hmn216 d-bar8 d-bgc-green-100" style="--sidebar-width: minmax(10rem, 20rem);">
-      <div class="d-ga-sidebar d-fl-center d-p16 d-bgc-green-300 d-bar4 d-fs24 d-fw-bold d-o50">Sidebar</div>
+      <div class="d-ga-sidebar d-fl-center d-p16 d-bgc-green-200 d-bar4 d-fs24 d-fw-bold d-o50">Sidebar</div>
       <div class="d-ga-content d-d-grid d-gl-header d-gg16 d-p16 d-bgc-green-100 d-bar4 d-fs24 d-fw-bold" style="--content-height: minmax(24rem, max-content);">
-        <div class="d-ga-header d-fl-center d-p16 d-bgc-green-300 d-bar4 d-fs24 d-fw-bold">Header</div>
-        <div class="d-ga-content d-fl-center d-p16 d-bgc-green-300 d-bar4 d-fs24 d-fw-bold">Content</div>
+        <div class="d-ga-header d-fl-center d-p16 d-bgc-green-200 d-bar4 d-fs24 d-fw-bold">Header</div>
+        <div class="d-ga-content d-fl-center d-p16 d-bgc-green-200 d-bar4 d-fs24 d-fw-bold">Content</div>
       </div>
     </div>
   </header>

@@ -31,15 +31,15 @@ Use `d-gcg{#}` or `d-grg{#}` to independently change the row and column gap spac
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-green-100 d-bgo50 d-w100p d-hmn216" custom>
   <div class="d-d-grid d-gcg24 d-grg8 d-g-cols3 d-p16 d-w100p d-hmn216 d-bar8 d-bgc-green-100">
-    <div class="d-fl-center d-p16 d-bgc-green-300 d-bar4 d-fs24 d-fw-bold">1</div>
-    <div class="d-fl-center d-p16 d-bgc-green-300 d-bar4 d-fs24 d-fw-bold">2</div>
-    <div class="d-fl-center d-p16 d-bgc-green-300 d-bar4 d-fs24 d-fw-bold">3</div>
-    <div class="d-fl-center d-p16 d-bgc-green-300 d-bar4 d-fs24 d-fw-bold">4</div>
-    <div class="d-fl-center d-p16 d-bgc-green-300 d-bar4 d-fs24 d-fw-bold">5</div>
-    <div class="d-fl-center d-p16 d-bgc-green-300 d-bar4 d-fs24 d-fw-bold">6</div>
-    <div class="d-fl-center d-p16 d-bgc-green-300 d-bar4 d-fs24 d-fw-bold">7</div>
-    <div class="d-fl-center d-p16 d-bgc-green-300 d-bar4 d-fs24 d-fw-bold">8</div>
-    <div class="d-fl-center d-p16 d-bgc-green-300 d-bar4 d-fs24 d-fw-bold">9</div>
+    <div class="d-fl-center d-p16 d-bgc-green-200 d-bar4 d-fs24 d-fw-bold">1</div>
+    <div class="d-fl-center d-p16 d-bgc-green-200 d-bar4 d-fs24 d-fw-bold">2</div>
+    <div class="d-fl-center d-p16 d-bgc-green-200 d-bar4 d-fs24 d-fw-bold">3</div>
+    <div class="d-fl-center d-p16 d-bgc-green-200 d-bar4 d-fs24 d-fw-bold">4</div>
+    <div class="d-fl-center d-p16 d-bgc-green-200 d-bar4 d-fs24 d-fw-bold">5</div>
+    <div class="d-fl-center d-p16 d-bgc-green-200 d-bar4 d-fs24 d-fw-bold">6</div>
+    <div class="d-fl-center d-p16 d-bgc-green-200 d-bar4 d-fs24 d-fw-bold">7</div>
+    <div class="d-fl-center d-p16 d-bgc-green-200 d-bar4 d-fs24 d-fw-bold">8</div>
+    <div class="d-fl-center d-p16 d-bgc-green-200 d-bar4 d-fs24 d-fw-bold">9</div>
   </div>
 </code-well-header>
 

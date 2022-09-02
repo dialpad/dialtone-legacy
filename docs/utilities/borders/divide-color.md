@@ -8,10 +8,10 @@ desc: Utilities for controlling the border color between an element's child item
 Use `d-divide-y{n}` to create a divider between an element's child items.
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-green-100 d-bgo50 d-w100p d-hmn102" custom>
-  <div class="d-w100p d-d-flex d-fd-column d-divide-y d-divide-green-400">
-    <div class="d-fl-center d-w100p d-h64 d-p16 d-fc-green-600 d-fs24 d-fw-bold">1</div>
-    <div class="d-fl-center d-w100p d-h64 d-p16 d-fc-green-600 d-fs24 d-fw-bold">2</div>
-    <div class="d-fl-center d-w100p d-h64 d-p16 d-fc-green-600 d-fs24 d-fw-bold">3</div>
+  <div class="d-w100p d-d-flex d-fd-column d-divide-y d-divide-green-300">
+    <div class="d-fl-center d-w100p d-h64 d-p16 d-fc-green-400 d-fs24 d-fw-bold">1</div>
+    <div class="d-fl-center d-w100p d-h64 d-p16 d-fc-green-400 d-fs24 d-fw-bold">2</div>
+    <div class="d-fl-center d-w100p d-h64 d-p16 d-fc-green-400 d-fs24 d-fw-bold">3</div>
   </div>
 </code-well-header>
 

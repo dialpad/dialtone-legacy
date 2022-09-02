@@ -8,7 +8,7 @@ desc: Utilities for controlling an element's text overflow.
 Use `d-truncate` to truncate an element's text.
 
 <code-well-header class="d-fl-center d-p24 d-bgc-green-100 d-bgo50 d-w100p d-hmn102" custom>
-  <div class="d-bgc-green-200 d-py8 d-px16 d-bar8 d-w332">
+  <div class="d-bgc-green-100 d-py8 d-px16 d-bar8 d-w332">
     <p class="d-fs18 d-truncate">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiisitaquequodpraesentiumexplicaboincidunt? Dolores beatae nam at sed dolorum ratione dolorem nisi velit dolor.</p>
   </div>
 </code-well-header>

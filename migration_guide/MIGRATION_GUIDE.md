@@ -38,7 +38,13 @@ Purple Remapping | Before and After
 #### Tan
 [TBD]
 #### Green
-[TBD]
+1. Removed `green-600` and `green-700` color stops.
+2. Updated color values for `green-100`, `green-200`, `green-300`, `green-400` and `green-500` stops.
+3. Consolidated Dialtone v6's `green-100` and `green-200` stops into the redefined `green-100` stop.
+4. Consolidated Dialtone v6's `green-300` stop into the redefined `green-200` stop.
+5. Consolidated Dialtone v6's `green-400` stop into the redefined `green-300` stop.
+6. Consolidated Dialtone v6's `green-500` and `green-600` stops into the redefined `green-400` stop.
+7. Consolidated Dialtone v6's `green-700` stop into the redefined `green-500` stop.
 #### Black
 1. Removed `black-025`, `black-050`, `black-075` color stops.
 2. Updated color values for `black-100`, `black-200`, `black-300`, `black-400`, `black-500`, `black-600`, `black-700`, `black-800`, `black-900` stops.
@@ -89,6 +95,12 @@ Search for | Replace with
 `black-075` | `black-300`
 `black-050` | `black-200`
 `black-025` | `black-100`
+`green-200` | `green-100`
+`green-300` | `green-200`
+`green-400` | `green-300`
+`green-500` | `green-400`
+`green-600` | `green-400`
+`green-700` | `green-500`
 `pink-100` | `magenta-100`
 `pink-200` | `magenta-100`
 `pink-300` | `magenta-100`
@@ -156,6 +168,13 @@ Search for | Replace with
 `#322D37` | `var(--black-700)`
 `#221F24` | `var(--black-800)`
 `#0D0C0F` | `var(--black-900)`
+`#EBFFE2` | `var(--green-100)`
+`#D1FFBC` | `var(--green-100)`
+`#9CFF6D` | `var(--green-200)`
+`#6BEE04` | `var(--green-300)`
+`#0C9B02` | `var(--green-400)`
+`#0A5B03` | `var(--green-400)`
+`#052F01` | `var(--green-500)`
 `#FFEBEC` | `var(--magenta-100)`
 `#FFD8DA` | `var(--magenta-100)`
 `#FDA2A8` | `var(--magenta-100)`

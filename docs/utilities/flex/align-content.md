@@ -60,11 +60,11 @@ Use `d-ac-flex-end` to rack rows against the end of the element's main axis.
 
 <code-well-header bgclass="d-bgc-green-100" >
   <div class="d-fl-col3 d-fw-wrap d-flg16 d-ac-flex-end d-p8 d-w100p d-hmn216 d-bar8 d-bgc-green-100">
-    <div class="d-fl-center d-m8 d-p16 d-h64 d-bgc-green-300 d-bar4 d-fs24 d-fw-bold">1</div>
-    <div class="d-fl-center d-m8 d-p16 d-h64 d-bgc-green-300 d-bar4 d-fs24 d-fw-bold">2</div>
-    <div class="d-fl-center d-m8 d-p16 d-h64 d-bgc-green-300 d-bar4 d-fs24 d-fw-bold">3</div>
-    <div class="d-fl-center d-m8 d-p16 d-h64 d-bgc-green-300 d-bar4 d-fs24 d-fw-bold">4</div>
-    <div class="d-fl-center d-m8 d-p16 d-h64 d-bgc-green-300 d-bar4 d-fs24 d-fw-bold">5</div>
+    <div class="d-fl-center d-m8 d-p16 d-h64 d-bgc-green-200 d-bar4 d-fs24 d-fw-bold">1</div>
+    <div class="d-fl-center d-m8 d-p16 d-h64 d-bgc-green-200 d-bar4 d-fs24 d-fw-bold">2</div>
+    <div class="d-fl-center d-m8 d-p16 d-h64 d-bgc-green-200 d-bar4 d-fs24 d-fw-bold">3</div>
+    <div class="d-fl-center d-m8 d-p16 d-h64 d-bgc-green-200 d-bar4 d-fs24 d-fw-bold">4</div>
+    <div class="d-fl-center d-m8 d-p16 d-h64 d-bgc-green-200 d-bar4 d-fs24 d-fw-bold">5</div>
   </div>
 </code-well-header>
 

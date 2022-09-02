@@ -53,13 +53,13 @@ Please note that because the opacity adjustments are made via CSS variables, a f
 </div>
 
 <div class="d-fw-bold d-d-flex d-ai-center d-lh20 d-mt16">
-  <icon-checkmark class="d-w24 d-h24 d-p2 d-bar-circle d-bgc-green-100 d-fc-green-400" />
+  <icon-checkmark class="d-w24 d-h24 d-p2 d-bar-circle d-bgc-green-100 d-fc-green-300" />
   <span class="d-ml8">Add a font-color utility classes to enable the opacity class to work.</span>
 </div>
 
 <!-- Is important to have a blank line between div and ```html -->
 <div  class="d-bgc-black-700 d-bar8">
-  <div  class="d-p8 d-bgc-green-300 d-bgo25 d-bar8">
+  <div  class="d-p8 d-bgc-green-200 d-bgo25 d-bar8">
 
   ```jsx
   <p class="d-fc-dark">

@@ -19,10 +19,10 @@ next:
 ## Add padding to a single side
 
 <code-well-header class="d-d-flex d-fw-wrap d-ai-start d-jc-center d-bgc-green-100 d-bgo50 d-w100p d-hmn216 d-flow24" custom>
-  <div class="d-as-center d-pt12 d-bar8 d-bgc-green-300 d-of-hidden"><div class="d-fl-center d-p16 d-bgc-green-200 d-bbr4 d-fs14 d-ff-mono">d-pt12</div></div>
-  <div class="d-as-center d-pr16 d-bar8 d-bgc-green-300 d-of-hidden"><div class="d-fl-center d-p16 d-bgc-green-200 d-brl4 d-fs14 d-ff-mono">d-pr16</div></div>
-  <div class="d-as-center d-pb24 d-bar8 d-bgc-green-300 d-of-hidden"><div class="d-fl-center d-p16 d-bgc-green-200 d-btr4 d-fs14 d-ff-mono">d-pb24</div></div>
-  <div class="d-as-center d-pl32 d-bar8 d-bgc-green-300 d-of-hidden"><div class="d-fl-center d-p16 d-bgc-green-200 d-brr4 d-fs14 d-ff-mono">d-pl32</div></div>
+  <div class="d-as-center d-pt12 d-bar8 d-bgc-green-200 d-of-hidden"><div class="d-fl-center d-p16 d-bgc-green-100 d-bbr4 d-fs14 d-ff-mono">d-pt12</div></div>
+  <div class="d-as-center d-pr16 d-bar8 d-bgc-green-200 d-of-hidden"><div class="d-fl-center d-p16 d-bgc-green-100 d-brl4 d-fs14 d-ff-mono">d-pr16</div></div>
+  <div class="d-as-center d-pb24 d-bar8 d-bgc-green-200 d-of-hidden"><div class="d-fl-center d-p16 d-bgc-green-100 d-btr4 d-fs14 d-ff-mono">d-pb24</div></div>
+  <div class="d-as-center d-pl32 d-bar8 d-bgc-green-200 d-of-hidden"><div class="d-fl-center d-p16 d-bgc-green-100 d-brr4 d-fs14 d-ff-mono">d-pl32</div></div>
 </code-well-header>
 
 ```html
