@@ -45,8 +45,8 @@ next:
 ## Add vertical padding
 
 <code-well-header class="d-d-flex d-fw-wrap d-ai-start d-jc-center d-bgc-red-100 d-bgo50 d-w100p d-hmn216" custom>
-  <div class="d-as-center d-py24 d-bar8 d-bgc-red-300 d-of-hidden">
-    <div class="d-fl-center d-p16 d-bgc-red-200 d-fs14 d-ff-mono">d-py24</div>
+  <div class="d-as-center d-py24 d-bar8 d-bgc-red-100 d-of-hidden">
+    <div class="d-fl-center d-p16 d-bgc-red-100 d-fs14 d-ff-mono">d-py24</div>
   </div>
 </code-well-header>
 

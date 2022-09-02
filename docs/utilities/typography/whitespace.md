@@ -78,7 +78,7 @@ Use `d-ws-pre-wrap` to preserve an element's whitespaces sequences. Lines are br
 Use `d-ws-break-spaces` to have an element act like `pre-wrap` except that any sequence of preserved whitespace always takes up space, a line breaking opportunity exists after every preserved whitespace character, and preserved spaces take up space and do not hang which affects the element's intrinisic size (`min-content` and `max-content` sizes).
 
 <code-well-header class="d-fl-center d-p24 d-bgc-red-100 d-bgo50 d-w100p d-hmn102" custom>
-  <div class="d-bgc-red-200 d-py8 d-px16 d-bar8 d-w216">
+  <div class="d-bgc-red-100 d-py8 d-px16 d-bar8 d-w216">
     <p class="lg:d-fs14 d-fs18 d-ws-break-spaces d-of-hidden">Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br/>Blanditiisitaquequodpraesentiumexplicaboincidunt? Dolores beatae nam at sed dolorum ratione dolorem nisi velit dolor.</p>
   </div>
 </code-well-header>

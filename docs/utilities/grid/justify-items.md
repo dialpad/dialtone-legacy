@@ -75,10 +75,10 @@ Use `d-ji-center` to justify items to the center of their inline axis.
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-red-100 d-bgo50 d-w100p d-hmn102" custom>
   <div class="d-d-grid d-g-cols2 d-ji-center d-w100p d-bar8 d-bgc-red-100">
-    <div class="d-fl-center d-m8 d-p16 d-wmn64 d-bgc-red-400 d-bar4 d-fs24 d-fw-bold">1</div>
-    <div class="d-fl-center d-m8 d-p16 d-wmn64 d-bgc-red-400 d-bar4 d-fs24 d-fw-bold">2</div>
-    <div class="d-fl-center d-m8 d-p16 d-wmn64 d-bgc-red-400 d-bar4 d-fs24 d-fw-bold">3</div>
-    <div class="d-fl-center d-m8 d-p16 d-wmn64 d-bgc-red-400 d-bar4 d-fs24 d-fw-bold">4</div>
+    <div class="d-fl-center d-m8 d-p16 d-wmn64 d-bgc-red-200 d-bar4 d-fs24 d-fw-bold">1</div>
+    <div class="d-fl-center d-m8 d-p16 d-wmn64 d-bgc-red-200 d-bar4 d-fs24 d-fw-bold">2</div>
+    <div class="d-fl-center d-m8 d-p16 d-wmn64 d-bgc-red-200 d-bar4 d-fs24 d-fw-bold">3</div>
+    <div class="d-fl-center d-m8 d-p16 d-wmn64 d-bgc-red-200 d-bar4 d-fs24 d-fw-bold">4</div>
   </div>
 </code-well-header>
 

@@ -57,12 +57,12 @@ Use `d-ttf-{n}` change an element's `transition-timing-function` (aka easing) fr
 Use `d-tp-{n}` change an what items within an element are transitioned.
 
 <code-well-header class="d-fl-col3 d-flg8 d-p24 d-bgc-yellow-100 d-bgo50 d-w100p d-hmn102 d-of-auto" custom>
-  <div class="d-fl-center d-p24 d-bar8 d-bgc-yellow-400 h:d-bgc-purple-100 h:d-bs-lg d-fs18 d-fw-bold d-fc-dark h:d-fc-red-400 d-t d-td100 d-c-pointer">All</div>
+  <div class="d-fl-center d-p24 d-bar8 d-bgc-yellow-400 h:d-bgc-purple-100 h:d-bs-lg d-fs18 d-fw-bold d-fc-dark h:d-fc-red-200 d-t d-td100 d-c-pointer">All</div>
   <div class="d-fl-center d-p24 d-bar8 d-bgc-yellow-400 d-fs18 d-fw-bold d-fc-dark d-t d-td100 d-tp-o d-c-pointer h:d-o50">Opacity</div>
   <div class="d-fl-center d-p24 d-bar8 d-bgc-yellow-400 d-fs18 d-fw-bold d-fc-dark d-t d-td100 d-tp-bs d-c-pointer d-bs-sm h:d-bs-lg">Box Shadow</div>
   <div class="d-fl-center d-p24 d-bar8 d-bgc-yellow-400 h:d-bgc-purple-100 d-fs18 d-fw-bold d-fc-dark d-t d-td100 d-tp-bgc d-c-pointer">Background</div>
   <div class="d-fl-center d-p24 d-bar8 d-bgc-yellow-400 d-fs18 d-fw-bold d-fc-dark d-t d-td100 d-tp-transform d-c-pointer">Transform</div>
-  <div class="d-fl-center d-p24 d-bar8 d-bgc-yellow-400 h:d-bgc-purple-100 d-fs18 d-fw-bold d-fc-dark h:d-fc-red-400 d-ba h:d-bc-yellow-500 d-t d-td100 d-tp-colors d-c-pointer">Colors</div>
+  <div class="d-fl-center d-p24 d-bar8 d-bgc-yellow-400 h:d-bgc-purple-100 d-fs18 d-fw-bold d-fc-dark h:d-fc-red-200 d-ba h:d-bc-yellow-500 d-t d-td100 d-tp-colors d-c-pointer">Colors</div>
 </code-well-header>
 
 ```html
