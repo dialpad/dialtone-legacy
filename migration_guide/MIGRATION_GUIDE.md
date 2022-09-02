@@ -158,10 +158,10 @@ Search for | Replace with
 `#FFF1F1` | `var(--red-100)`
 `#FFD3D3` | `var(--red-100)`
 `#FFA7A7` | `var(--red-100)`
-`#FA4646` | `var(--red-100)`
-`#D81616` | `var(--red-100)`
-`#930000` | `var(--red-100)`
-`#480000` | `var(--red-100)`
+`#FA4646` | `var(--red-200)`
+`#D81616` | `var(--red-300)`
+`#930000` | `var(--red-400)`
+`#480000` | `var(--red-500)`
 
 ### 5. Check color updates for readability
 
