@@ -69,9 +69,9 @@ Use `d-as-flex-end` to align an item from the end of the parent's cross axis.
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-red-100 d-bgo50 d-w100p d-hmn216">
   <div class="d-d-flex d-p8 d-w100p d-hmn216 d-bar8 d-bgc-red-100">
-    <div class="d-fl-center d-fl1 d-m8 d-p16 d-bgc-red-300 d-bar4 d-fs24 d-fw-bold">1</div>
-    <div class="d-fl-center d-fl1 d-as-flex-end d-m8 d-p16 d-bgc-red-300 d-bar4 d-fs24 d-fw-bold">2</div>
-    <div class="d-fl-center d-fl1 d-m8 d-p16 d-bgc-red-300 d-bar4 d-fs24 d-fw-bold">3</div>
+    <div class="d-fl-center d-fl1 d-m8 d-p16 d-bgc-red-100 d-bar4 d-fs24 d-fw-bold">1</div>
+    <div class="d-fl-center d-fl1 d-as-flex-end d-m8 d-p16 d-bgc-red-100 d-bar4 d-fs24 d-fw-bold">2</div>
+    <div class="d-fl-center d-fl1 d-m8 d-p16 d-bgc-red-100 d-bar4 d-fs24 d-fw-bold">3</div>
   </div>
 </code-well-header>
 

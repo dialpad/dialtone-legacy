@@ -68,12 +68,12 @@ Use `h:d-bc-{color}` to change an element's border color spot on `:hover`.
 Use `f:d-bc-{color}` to change an element's border color when in `:focus` or `:focus-within` states.
 
 <code-well-header class="d-fl-center d-p24 d-bgc-red-100 d-bgo50 d-w100p d-hmn102" custom>
-  <button class="d-p16 d-bar4 d-fs18 d-fc-white d-bgc-red-400 d-ba d-baw2 d-bc-red-500 f:d-bc-purple-400">Click on me</button>
+  <button class="d-p16 d-bar4 d-fs18 d-fc-white d-bgc-red-200 d-ba d-baw2 d-bc-red-300 f:d-bc-purple-400">Click on me</button>
 </code-well-header>
 
 ```html
 
-<button class="d-ba d-baw2 d-bc-red-500 f:d-bc-white">...</button>
+<button class="d-ba d-baw2 d-bc-red-300 f:d-bc-white">...</button>
 ```
 
 ## Focus visible
@@ -82,12 +82,12 @@ Use `fv:d-bc-{color}` to change an element's border color when in `:focus-visibl
 .
 
 <code-well-header class="d-fl-center d-p24 d-bgc-red-100 d-bgo50 d-w100p d-hmn102" custom>
-  <button class="d-p16 d-bar4 d-fs18 d-fc-white d-bgc-red-400 d-ba d-baw2 d-bc-red-500 fv:d-bc-purple-400">Focus on me</button>
+  <button class="d-p16 d-bar4 d-fs18 d-fc-white d-bgc-red-200 d-ba d-baw2 d-bc-red-300 fv:d-bc-purple-400">Focus on me</button>
 </code-well-header>
 
 ```html
 
-<button class="d-ba d-baw2 d-bc-red-500 fv:d-bc-purple-400">...</button>
+<button class="d-ba d-baw2 d-bc-red-300 fv:d-bc-purple-400">...</button>
 ```
 
 <script setup>

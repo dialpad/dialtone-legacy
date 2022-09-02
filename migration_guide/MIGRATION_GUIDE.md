@@ -56,7 +56,13 @@ Purple Remapping | Before and After
 #### Pink/Magenta
 [TBD]
 #### Red
-[TBD]
+1. Removed `red-600` and `red-700` color stops.
+2. Updated color values for `red-100`, `red-200`, `red-300`, `red-400`, `red-500` stops.
+3. Consolidated Dialtone v6's `red-100`, `red-200` and `red-300` stops into the redefined `red-100` stop.
+4. Consolidated Dialtone v6's `red-400` stop into the redefined `red-200` stop.
+5. Consolidated Dialtone v6's `red-500` stop into the redefined `red-300` stop.
+6. Consolidated Dialtone v6's `red-600` stop into the redefined `red-400` stop.
+7. Consolidated Dialtone v6's `red-700` stop into the redefined `red-500` stop.
 
 ### Removed Primary Color Theme
 - Removed the `--primary-color` theme variable.
@@ -95,6 +101,12 @@ Search for | Replace with
 `green-500` | `green-400`
 `green-600` | `green-400`
 `green-700` | `green-500`
+`red-200` | `red-100`
+`red-300` | `red-100`
+`red-400` | `red-200`
+`red-500` | `red-300`
+`red-600` | `red-400`
+`red-700` | `red-500`
 [others TBD, e.g. Green] | ...
 
 ### 3. Replace "Primary Color" theme uses
@@ -161,6 +173,13 @@ Search for | Replace with
 `#0C9B02` | `var(--green-400)`
 `#0A5B03` | `var(--green-400)`
 `#052F01` | `var(--green-500)`
+`#FFF1F1` | `var(--red-100)`
+`#FFD3D3` | `var(--red-100)`
+`#FFA7A7` | `var(--red-100)`
+`#FA4646` | `var(--red-200)`
+`#D81616` | `var(--red-300)`
+`#930000` | `var(--red-400)`
+`#480000` | `var(--red-500)`
 
 ### 5. Check color updates for readability
 

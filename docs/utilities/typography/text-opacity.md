@@ -35,13 +35,13 @@ Use `d-fco{n}` to change a font-color's opacity. You can also change font-color'
 Please note that because the opacity adjustments are made via CSS variables, a font-color utility class must be present on the same element to work.
 
 <div class="d-fw-bold d-d-flex d-ai-center d-lh20 d-mt16">
-  <icon-close class="d-w24 d-h24 d-p2 d-bar-circle d-bgc-red-100 d-fc-red-400" />
+  <icon-close class="d-w24 d-h24 d-p2 d-bar-circle d-bgc-red-100 d-fc-red-200" />
   <span class="d-ml8">Text opacity utility classes don't inherit colors.</span>
 </div>
 
 <!-- Is important to have a blank line between div and ```html -->
 <div  class="d-bgc-black-700 d-bar8">
-  <div  class="d-p8 d-bgc-red-400 d-bgo25 d-bar8">
+  <div  class="d-p8 d-bgc-red-200 d-bgo25 d-bar8">
 
   ```jsx
   <p class="d-fc-dark">
