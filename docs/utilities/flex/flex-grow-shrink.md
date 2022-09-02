@@ -30,11 +30,11 @@ control the grow and shrink flex values separately with their own utility classe
   </tbody>
 </table>
 
-<code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmn216 d-of-auto" custom>
-  <div class="d-d-flex d-w100p d-bar8 d-bgc-pink-100">
-    <div class="d-fl-none d-p16 d-fs14 d-lh-tight d-bgc-pink-100 d-ps-relative">Content cannot flex</div>
-    <div class="d-fl1 d-p16 d-fs14 d-lh-tight d-bgc-pink-200 d-ps-relative">Text that will flex</div>
-    <div class="d-fl-none d-p16 d-fs14 d-lh-tight d-bgc-pink-100 d-ps-relative">Content cannot flex</div>
+<code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-magenta-100 d-bgo50 d-w100p d-hmn216 d-of-auto" custom>
+  <div class="d-d-flex d-w100p d-bar8 d-bgc-magenta-100">
+    <div class="d-fl-none d-p16 d-fs14 d-lh-tight d-bgc-magenta-100 d-ps-relative">Content cannot flex</div>
+    <div class="d-fl1 d-p16 d-fs14 d-lh-tight d-bgc-magenta-100 d-ps-relative">Text that will flex</div>
+    <div class="d-fl-none d-p16 d-fs14 d-lh-tight d-bgc-magenta-100 d-ps-relative">Content cannot flex</div>
   </div>
 </code-well-header>
 

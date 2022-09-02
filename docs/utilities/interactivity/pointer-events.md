@@ -5,7 +5,7 @@ desc: Utilities for controlling how an element responds to mouse/touch events.
 
 ## Pointer Event Classes
 
-<code-well-header class="d-fl-col5 d-flg8 d-fw-wrap d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmn102" custom>
+<code-well-header class="d-fl-col5 d-flg8 d-fw-wrap d-p24 d-bgc-magenta-100 d-bgo50 d-w100p d-hmn102" custom>
   <button v-for="{ class: className } in pointerEvents.slice(0, 3)" class="d-btn d-btn--filled d-fs12 d-ff-mono" :class="className">.{{ className }}</button>
 </code-well-header>
 

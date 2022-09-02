@@ -31,8 +31,8 @@ desc: Utilities to adjust an element's exterior spacing between other objects.
 
 ## Add horizontal margins
 
-<code-well-header class="d-d-flex d-fw-wrap d-ai-start d-jc-center d-bgc-pink-100 d-bgo50 d-w100p d-hmn216" custom>
-  <div class="d-as-center d-bar8 d-bgc-pink-200 d-of-hidden"><div class="d-fl-center d-mx24 d-p16 d-bgc-pink-400 d-fs14 d-ff-mono">d-mx24</div></div>
+<code-well-header class="d-d-flex d-fw-wrap d-ai-start d-jc-center d-bgc-magenta-100 d-bgo50 d-w100p d-hmn216" custom>
+  <div class="d-as-center d-bar8 d-bgc-magenta-100 d-of-hidden"><div class="d-fl-center d-mx24 d-p16 d-bgc-magenta-200 d-fs14 d-ff-mono">d-mx24</div></div>
 </code-well-header>
 
 ```html

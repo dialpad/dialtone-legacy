@@ -51,12 +51,12 @@ Use `d-ji-start` to justify items against the start of their inline axis. Note t
 
 Use `d-ji-end` to justify items against the end of their inline axis. Note that this does not work on flexed objects, only grid objects.
 
-<code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmn102" custom>
-  <div class="d-d-grid d-g-cols2 d-ji-end d-w100p d-bar8 d-bgc-pink-100">
-    <div class="d-fl-center d-m8 d-p16 d-wmn64 d-bgc-pink-400 d-bar4 d-fs24 d-fw-bold">1</div>
-    <div class="d-fl-center d-m8 d-p16 d-wmn64 d-bgc-pink-400 d-bar4 d-fs24 d-fw-bold">2</div>
-    <div class="d-fl-center d-m8 d-p16 d-wmn64 d-bgc-pink-400 d-bar4 d-fs24 d-fw-bold">3</div>
-    <div class="d-fl-center d-m8 d-p16 d-wmn64 d-bgc-pink-400 d-bar4 d-fs24 d-fw-bold">4</div>
+<code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-magenta-100 d-bgo50 d-w100p d-hmn102" custom>
+  <div class="d-d-grid d-g-cols2 d-ji-end d-w100p d-bar8 d-bgc-magenta-100">
+    <div class="d-fl-center d-m8 d-p16 d-wmn64 d-bgc-magenta-200 d-bar4 d-fs24 d-fw-bold">1</div>
+    <div class="d-fl-center d-m8 d-p16 d-wmn64 d-bgc-magenta-200 d-bar4 d-fs24 d-fw-bold">2</div>
+    <div class="d-fl-center d-m8 d-p16 d-wmn64 d-bgc-magenta-200 d-bar4 d-fs24 d-fw-bold">3</div>
+    <div class="d-fl-center d-m8 d-p16 d-wmn64 d-bgc-magenta-200 d-bar4 d-fs24 d-fw-bold">4</div>
   </div>
 </code-well-header>
 

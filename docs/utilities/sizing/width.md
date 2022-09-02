@@ -35,10 +35,10 @@ Use `d-w{n}p` to set a percentage width for an element.
 
 Use `d-w{n}` to set a fixed width for an element.
 
-<code-well-header class="d-d-flex d-fd-column d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmx332 d-stack16 d-fs24 d-fw-bold d-ta-center d-of-scroll" custom>
+<code-well-header class="d-d-flex d-fd-column d-p24 d-bgc-magenta-100 d-bgo50 d-w100p d-hmx332 d-stack16 d-fs24 d-fw-bold d-ta-center d-of-scroll" custom>
   <div v-for="(i, index) in fixed" class="d-d-flex d-pls-start d-ai-center">
               <span class="d-w48">{{ index }}</span>
-              <div class="d-h64 d-bgc-pink-300 d-bar4" :class="`d-w${i}`"></div>
+              <div class="d-h64 d-bgc-magenta-100 d-bar4" :class="`d-w${i}`"></div>
             </div>
 </code-well-header>
 
