@@ -1,3 +1,10 @@
+# [6.38.0](https://github.com/dialpad/dialtone/compare/v6.37.1...v6.38.0) (2022-09-06)
+
+
+### Features
+
+* **icon:** add branch, expert-node icons to library ([#661](https://github.com/dialpad/dialtone/issues/661)) ([c128291](https://github.com/dialpad/dialtone/commit/c128291c0495be2dcc75d6d47db1b8f9fd0bd254))
+
 ## [6.37.1](https://github.com/dialpad/dialtone/compare/v6.37.0...v6.37.1) (2022-09-06)
 
 
