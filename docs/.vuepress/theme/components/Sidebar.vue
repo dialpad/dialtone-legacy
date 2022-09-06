@@ -1,6 +1,6 @@
 <template>
   <aside class="sidebar">
-    <SidebarItems />
+    <sidebar-items />
   </aside>
 </template>
 
