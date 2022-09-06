@@ -263,6 +263,7 @@ const buildSystemSVGs = function (done) {
     .pipe(cache('buildSystemSVGs'))
     .pipe(replace(' fill="none"', ''))
     .pipe(replace(' fill="#000"', ''))
+    .pipe(replace(' fill="black"', ''))
     .pipe(replace(' fill="#141721"', ''))
     .pipe(replace('<svg width="24" height="24"', '<svg '))
     .pipe(replace('<svg', function (match) {
@@ -280,29 +281,7 @@ const buildSystemSVGs = function (done) {
       aria-label="${title}"
       class="d-svg d-svg--system d-svg__${converted}"`;
     }))
-    .pipe(svgmin({
-      plugins: [{
-        convertPathData: {
-          transformPrecision: 4,
-        },
-      }, {
-        cleanupNumericValues: {
-          floatPrecision: 2,
-        },
-      }, {
-        collapseGroups: true,
-      }, {
-        removeTitle: true,
-      }, {
-        removeViewBox: false,
-      }, {
-        removeUselessStrokeAndFill: true,
-      }, {
-        removeAttrs: {
-          attrs: ['xmlns'],
-        },
-      }],
-    }))
+    .pipe(svgmin())
     .pipe(dest(paths.svgs.sysOutputLib))
     .pipe(replace('<svg', '<template>\n  <svg'))
     .pipe(replace('</svg>', '</svg>\n</template>'))
@@ -340,25 +319,7 @@ const buildBrandSVGs = function (done) {
       aria-label="${title}"
       class="d-svg d-svg--native d-svg__${converted}"`;
     }))
-    .pipe(svgmin({
-      plugins: [{
-        convertPathData: {
-          transformPrecision: 4,
-        },
-      }, {
-        cleanupNumericValues: {
-          floatPrecision: 2,
-        },
-      }, {
-        collapseGroups: true,
-      }, {
-        removeTitle: true,
-      }, {
-        removeViewBox: false,
-      }, {
-        removeUselessStrokeAndFill: true,
-      }],
-    }))
+    .pipe(svgmin())
     .pipe(dest(paths.svgs.brandOutputLib))
     .pipe(replace('<svg', '<template>\n  <svg'))
     .pipe(replace('</svg>', '</svg>\n</template>'))
@@ -396,25 +357,7 @@ const buildPatternSVGs = function (done) {
       class="d-svg d-svg--pattern d-svg__${converted}"
       xmlns="http://www.w3.org/2000/svg"`;
     }))
-    .pipe(svgmin({
-      plugins: [{
-        convertPathData: {
-          transformPrecision: 4,
-        },
-      }, {
-        cleanupNumericValues: {
-          floatPrecision: 2,
-        },
-      }, {
-        collapseGroups: true,
-      }, {
-        removeTitle: true,
-      }, {
-        removeViewBox: false,
-      }, {
-        removeUselessStrokeAndFill: true,
-      }],
-    }))
+    .pipe(svgmin())
     .pipe(dest(paths.patterns.outputLib))
     .pipe(replace('<svg', '<template>\n  <svg'))
     .pipe(replace('</svg>', '</svg>\n</template>'))
@@ -458,25 +401,7 @@ const buildSpotIllustrationSVGs = function (done) {
       class="${converted}"
       xmlns="http://www.w3.org/2000/svg"`;
     }))
-    .pipe(svgmin({
-      plugins: [{
-        convertPathData: {
-          transformPrecision: 4,
-        },
-      }, {
-        cleanupNumericValues: {
-          floatPrecision: 2,
-        },
-      }, {
-        collapseGroups: true,
-      }, {
-        removeTitle: true,
-      }, {
-        removeViewBox: false,
-      }, {
-        removeUselessStrokeAndFill: true,
-      }],
-    }))
+    .pipe(svgmin())
     .pipe(dest(paths.spot.outputLib))
     .pipe(replace('<svg', '<template>\n  <svg'))
     .pipe(replace('</svg>', '</svg>\n</template>'))
