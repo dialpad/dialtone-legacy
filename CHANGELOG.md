@@ -1,3 +1,17 @@
+## [6.37.1](https://github.com/dialpad/dialtone/compare/v6.37.0...v6.37.1) (2022-09-06)
+
+
+### Bug Fixes
+
+* dialtone_health_check path ([d435189](https://github.com/dialpad/dialtone/commit/d435189675f3032d57dbe41e0548c5d0dcd9b54e))
+
+# [6.37.0](https://github.com/dialpad/dialtone/compare/v6.36.2...v6.37.0) (2022-09-06)
+
+
+### Features
+
+* add dialtone health check script ([#659](https://github.com/dialpad/dialtone/issues/659)) ([f06f06d](https://github.com/dialpad/dialtone/commit/f06f06de38a7315cdf84b7ed0d3ded827a74ee92))
+
 ## [6.36.2](https://github.com/dialpad/dialtone/compare/v6.36.1...v6.36.2) (2022-09-02)
 
 
