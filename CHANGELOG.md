@@ -1,3 +1,10 @@
+# [6.39.0](https://github.com/dialpad/dialtone/compare/v6.38.0...v6.39.0) (2022-09-07)
+
+
+### Features
+
+* **icon:** fix fill for branch, expert-node icons ([#662](https://github.com/dialpad/dialtone/issues/662)) ([77ef2fb](https://github.com/dialpad/dialtone/commit/77ef2fbf6e2f282778718f3a5c62585bc020f517))
+
 # [6.38.0](https://github.com/dialpad/dialtone/compare/v6.37.1...v6.38.0) (2022-09-06)
 
 
