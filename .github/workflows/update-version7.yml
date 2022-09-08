@@ -1,0 +1,31 @@
+name: Update Version 7 Branch
+
+on:
+  pull_request:
+    branches:
+      - staging
+    types: ["closed"]
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  update_version_7:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    name: Cherry pick into version7 branch
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Create PR
+        uses: carloscastrojumo/github-cherry-pick-action@v1.0.1
+        with:
+          branch: version7
+          labels: |
+            cherry-pick
+          reviewers: |
+            braddialpad
+            josedialpad
+            juliodialpad
