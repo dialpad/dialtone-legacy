@@ -6,7 +6,7 @@
 //  ================================================================================
 const settings = {
   clean: true, // Turn on/off clean tasks
-  scripts: false, // Turn on/off script tasks
+  scripts: true, // Turn on/off script tasks
   styles: true, // Turn on/off style tasks
   svgs: true, // Turn on/off SVG tasks
   patterns: true, // Turn on/off SVG Pattern tasks
@@ -85,7 +85,7 @@ const paths = {
     libFonts: './dist/fonts/**/*',
   },
   scripts: {
-    input: './lib/build/js/',
+    input: './lib/build/js/**/*.js',
     output: './lib/dist/js/',
   },
   styles: {
@@ -169,6 +169,15 @@ const cleanSite = () => {
 //  --  Clean out Fonts
 const cleanFonts = () => {
   return cleanUp([paths.clean.libFonts]);
+};
+
+const libScripts = function (done) {
+  //  Make sure this feature is activated before running
+  if (!settings.scripts) return done();
+
+  //  Compile library files
+  return src(paths.scripts.input)
+    .pipe(dest(paths.scripts.output));
 };
 
 //  ================================================================================
@@ -261,6 +270,7 @@ const buildSystemSVGs = function (done) {
     .pipe(cache('buildSystemSVGs'))
     .pipe(replace(' fill="none"', ''))
     .pipe(replace(' fill="#000"', ''))
+    .pipe(replace(' fill="black"', ''))
     .pipe(replace(' fill="#141721"', ''))
     .pipe(replace('<svg width="24" height="24"', '<svg '))
     .pipe(replace('<svg', function (match) {
@@ -278,29 +288,7 @@ const buildSystemSVGs = function (done) {
       aria-label="${title}"
       class="d-svg d-svg--system d-svg__${converted}"`;
     }))
-    .pipe(svgmin({
-      plugins: [{
-        convertPathData: {
-          transformPrecision: 4,
-        },
-      }, {
-        cleanupNumericValues: {
-          floatPrecision: 2,
-        },
-      }, {
-        collapseGroups: true,
-      }, {
-        removeTitle: true,
-      }, {
-        removeViewBox: false,
-      }, {
-        removeUselessStrokeAndFill: true,
-      }, {
-        removeAttrs: {
-          attrs: ['xmlns'],
-        },
-      }],
-    }))
+    .pipe(svgmin())
     .pipe(dest(paths.svgs.sysOutputLib))
     .pipe(replace('<svg', '<template>\n  <svg'))
     .pipe(replace('</svg>', '</svg>\n</template>'))
@@ -338,25 +326,7 @@ const buildBrandSVGs = function (done) {
       aria-label="${title}"
       class="d-svg d-svg--native d-svg__${converted}"`;
     }))
-    .pipe(svgmin({
-      plugins: [{
-        convertPathData: {
-          transformPrecision: 4,
-        },
-      }, {
-        cleanupNumericValues: {
-          floatPrecision: 2,
-        },
-      }, {
-        collapseGroups: true,
-      }, {
-        removeTitle: true,
-      }, {
-        removeViewBox: false,
-      }, {
-        removeUselessStrokeAndFill: true,
-      }],
-    }))
+    .pipe(svgmin())
     .pipe(dest(paths.svgs.brandOutputLib))
     .pipe(replace('<svg', '<template>\n  <svg'))
     .pipe(replace('</svg>', '</svg>\n</template>'))
@@ -394,25 +364,7 @@ const buildPatternSVGs = function (done) {
       class="d-svg d-svg--pattern d-svg__${converted}"
       xmlns="http://www.w3.org/2000/svg"`;
     }))
-    .pipe(svgmin({
-      plugins: [{
-        convertPathData: {
-          transformPrecision: 4,
-        },
-      }, {
-        cleanupNumericValues: {
-          floatPrecision: 2,
-        },
-      }, {
-        collapseGroups: true,
-      }, {
-        removeTitle: true,
-      }, {
-        removeViewBox: false,
-      }, {
-        removeUselessStrokeAndFill: true,
-      }],
-    }))
+    .pipe(svgmin())
     .pipe(dest(paths.patterns.outputLib))
     .pipe(replace('<svg', '<template>\n  <svg'))
     .pipe(replace('</svg>', '</svg>\n</template>'))
@@ -452,25 +404,7 @@ const buildSpotIllustrationSVGs = function (done) {
       class="${converted}"
       xmlns="http://www.w3.org/2000/svg"`;
     }))
-    .pipe(svgmin({
-      plugins: [{
-        convertPathData: {
-          transformPrecision: 4,
-        },
-      }, {
-        cleanupNumericValues: {
-          floatPrecision: 2,
-        },
-      }, {
-        collapseGroups: true,
-      }, {
-        removeTitle: true,
-      }, {
-        removeViewBox: false,
-      }, {
-        removeUselessStrokeAndFill: true,
-      }],
-    }))
+    .pipe(svgmin())
     .pipe(dest(paths.spot.outputLib))
     .pipe(replace('<svg', '<template>\n  <svg'))
     .pipe(replace('</svg>', '</svg>\n</template>'))
@@ -602,6 +536,13 @@ const buildDocs = function (done) {
   );
 };
 
+// copies the .nojekyll file to the output directory.
+// this is necessary to get around a problem with github pages where files starting with _ are not served.
+const copyNoJekyll = function (done) {
+  return src('./.nojekyll')
+    .pipe(dest('docs/.vuepress/dist'));
+};
+
 const watchDocs = function (done) {
   //  Make sure this feature is activated before running
   if (!settings.watch) return done();
@@ -663,6 +604,7 @@ exports.default = series(
   webfonts,
   exports.svg,
   libStyles,
+  libScripts,
 );
 
 // tasks are similar to default build when we are watching but there are some
@@ -694,6 +636,7 @@ exports.docsite = series(
     docStyles,
   ),
   buildDocs,
+  copyNoJekyll,
 );
 
 //  --  CONVERT WEBFONTS

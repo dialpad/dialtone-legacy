@@ -8,6 +8,7 @@
   </button>
   <aside
     id="modal-base"
+    ref="modal"
     class="d-modal d-mn1"
     :class="{
       'd-modal--full': isFullScreen,
@@ -21,6 +22,8 @@
     aria-describedby="modal-description"
     :aria-hidden="!showModal"
     @click.self="closeModal"
+    @keydown.tab="trapFocus"
+    @keydown.esc="closeModal"
   >
     <div
       class="d-modal__banner"
@@ -88,6 +91,7 @@
 
 <script>
 import IconClose from '@svgIcons/IconClose.vue';
+import Modal from '@mixins/modal.js';
 const MODAL_KINDS = ['full-screen', 'danger', 'fixed', 'base'];
 
 export default {
@@ -95,6 +99,8 @@ export default {
   components: {
     IconClose,
   },
+
+  mixins: [Modal],
 
   props: {
     kind: {
@@ -142,6 +148,7 @@ export default {
       this.showModal = true;
 
       document.body.classList.add('d-of-hidden');
+      this.focusFirstElement(this.$refs.modal);
     },
 
     openModalBanner () {
@@ -156,6 +163,12 @@ export default {
       this.showModalBanner = false;
 
       document.body.classList.remove('d-of-hidden');
+    },
+
+    trapFocus (e) {
+      if (this.showModal) {
+        this.focusTrappedTabPress(e, this.$refs.modal);
+      }
     },
   },
 };

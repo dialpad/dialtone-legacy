@@ -5,8 +5,8 @@ prev:
   text: Getting Started - Tooling
   link: /getting-started/accessibility/tooling
 next:
-  text: Brand Icons
-  link: /design/icons/brand.html
+  text: Theme
+  link: /design/colors/theme.html
 ---
 
 <colors></colors>

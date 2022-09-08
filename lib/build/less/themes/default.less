@@ -39,14 +39,58 @@
     nav-background-color-l:                 var(--purple-800-l);
     nav-background-color:                   hsl(var(--nav-background-color-h) var(--nav-background-color-s) var(--nav-background-color-l));
 
-    topbar-height:                          var(--su64);
+    topbar-height:                                    var(--su64);
 
-    base--font-size:                        var(--fs16);
-    base--font-family:                      @ff-custom;
-    base--font-feature-settings:            'calt' 0;
-    base--line-height:                      var(--lh-normal);
-    base--corner-radius:                    0.25em;
+    base--font-size:                                  var(--fs16);
+    base--font-family:                                @ff-custom;
+    base--font-feature-settings:                      'calt' 0;
+    base--line-height:                                var(--lh-normal);
+    base--corner-radius:                              0.25em;
+
+    theme-topbar-color:                               hsl(var(--theme-topbar-color-hsl));
+    theme-topbar-color-hsl:                           var(--black-900-h) var(--black-900-s) var(--black-900-l); // Use with d-fco[##] Opacity utility
+    theme-topbar-color-background:                    #f9f9f9; // DT7 TBD, possibly black-100?
+
+    theme-sidebar-color:                              hsl(var(--theme-sidebar-color-hsl));
+    theme-sidebar-color-hsl:                          var(--black-900-h) var(--black-900-s) var(--black-900-l); // Use with d-fco[##] Opacity utility
+    theme-sidebar-color-background:                   #f9f9f9; // DT7 TBD, possibly black-100?
+
+//  theme-sidebar-row-color-background:               {UNUSED}
+    theme-sidebar-row-color-background-hover:         var(--purple-100);
+    theme-sidebar-active-row-color:                   hsl(var(--theme-sidebar-active-row-color-hsl));
+    theme-sidebar-active-row-color-hsl:               var(--black-900-h) var(--black-900-s) var(--black-900-l); // Use with d-fco[##] Opacity utility
+    theme-sidebar-active-row-color-background:        #e9e9e9; // DT7 TBD, possibly black-100?
+
+    theme-presence-color-background-available:        var(--green-500);
+    theme-presence-color-background-busy-unavailable: var(--red-500);
+    theme-presence-color-background-busy:             var(--yellow-500);
+
+    theme-mention-color-background:                   var(--purple-500);
 }
+
+//  ============================================================================
+//  $   THEME CLASSES
+//  ============================================================================
+
+.d-theme-topbar-fc {
+    --fco: 75%;
+
+    color: hsla(var(--theme-topbar-color-hsl) / var(--fco)) !important;
+
+    &:hover {
+        --fco: 100%;
+    }
+}
+.d-theme-topbar-bgc { background-color: var(--theme-topbar-color-background) !important; }
+.d-theme-sidebar-fc { color: hsla(var(--theme-sidebar-color-hsl) / var(--fco)) !important; }
+.d-theme-sidebar-bgc { background-color: var(--theme-sidebar-color-background) !important; }
+.d-theme-sidebar-row-bgc:hover { background-color: var(--theme-sidebar-row-color-background-hover) !important; }
+.d-theme-sidebar-row-active-fc { color: hsla(var(--theme-sidebar-active-row-color-hsl) / var(--fco)) !important; }
+.d-theme-sidebar-row-active-bgc { background-color: var(--theme-sidebar-active-row-color-background) !important; }
+.d-theme-presence-available { background-color: var(--theme-presence-color-background-available) !important; }
+.d-theme-presence-busy-unavailable { background-color: var(--theme-presence-color-background-busy-unavailable) !important; }
+.d-theme-presence-busy { background-color: var(--theme-presence-color-background-busy) !important; }
+.d-theme-mention { background-color: var(--theme-mention-color-background) !important; }
 
 
 //  ============================================================================

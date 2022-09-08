@@ -1,3 +1,65 @@
+# [6.39.0](https://github.com/dialpad/dialtone/compare/v6.38.0...v6.39.0) (2022-09-07)
+
+
+### Features
+
+* **icon:** fix fill for branch, expert-node icons ([#662](https://github.com/dialpad/dialtone/issues/662)) ([77ef2fb](https://github.com/dialpad/dialtone/commit/77ef2fbf6e2f282778718f3a5c62585bc020f517))
+
+# [6.38.0](https://github.com/dialpad/dialtone/compare/v6.37.1...v6.38.0) (2022-09-06)
+
+
+### Features
+
+* **icon:** add branch, expert-node icons to library ([#661](https://github.com/dialpad/dialtone/issues/661)) ([c128291](https://github.com/dialpad/dialtone/commit/c128291c0495be2dcc75d6d47db1b8f9fd0bd254))
+
+## [6.37.1](https://github.com/dialpad/dialtone/compare/v6.37.0...v6.37.1) (2022-09-06)
+
+
+### Bug Fixes
+
+* dialtone_health_check path ([d435189](https://github.com/dialpad/dialtone/commit/d435189675f3032d57dbe41e0548c5d0dcd9b54e))
+
+# [6.37.0](https://github.com/dialpad/dialtone/compare/v6.36.2...v6.37.0) (2022-09-06)
+
+
+### Features
+
+* add dialtone health check script ([#659](https://github.com/dialpad/dialtone/issues/659)) ([f06f06d](https://github.com/dialpad/dialtone/commit/f06f06de38a7315cdf84b7ed0d3ded827a74ee92))
+
+## [6.36.2](https://github.com/dialpad/dialtone/compare/v6.36.1...v6.36.2) (2022-09-02)
+
+
+### Bug Fixes
+
+* **theme:** resurrect nav-background-color variable ([#658](https://github.com/dialpad/dialtone/issues/658)) ([3235b0f](https://github.com/dialpad/dialtone/commit/3235b0f7e810c2b1db2bcf9a3030fcc42cfebfe6))
+
+## [6.36.1](https://github.com/dialpad/dialtone/compare/v6.36.0...v6.36.1) (2022-09-02)
+
+
+### Bug Fixes
+
+* cleanup card css ([#657](https://github.com/dialpad/dialtone/issues/657)) ([59d2941](https://github.com/dialpad/dialtone/commit/59d294162ad643c68be7d44376be4b6205dfb3c1))
+
+# [6.36.0](https://github.com/dialpad/dialtone/compare/v6.35.0...v6.36.0) (2022-09-01)
+
+
+### Features
+
+* add style for card ([#651](https://github.com/dialpad/dialtone/issues/651)) ([ed7fbec](https://github.com/dialpad/dialtone/commit/ed7fbec74e8bc0d07f88b54284c14198e0010c9b))
+* **theme:** create and update theme variables ([#643](https://github.com/dialpad/dialtone/issues/643)) ([7b5dcce](https://github.com/dialpad/dialtone/commit/7b5dcce4f35a4d11a98e4d9795627c33c45a7baa))
+
+# [6.35.0](https://github.com/dialpad/dialtone/compare/v6.34.2...v6.35.0) (2022-08-25)
+
+
+### Bug Fixes
+
+* modal functionality ([#642](https://github.com/dialpad/dialtone/issues/642)) ([0677209](https://github.com/dialpad/dialtone/commit/06772099e74ddf96c7fe1c700ed94761b8463555))
+
+
+### Features
+
+* **icon:** add wifi-off icon to library ([#646](https://github.com/dialpad/dialtone/issues/646)) ([55004cd](https://github.com/dialpad/dialtone/commit/55004cdff052a892ae3b0ea111330f478b2cb1e7))
+
 ## [6.34.2](https://github.com/dialpad/dialtone/compare/v6.34.1...v6.34.2) (2022-08-10)
 
 
