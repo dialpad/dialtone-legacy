@@ -1,23 +1,25 @@
-name: Update Dialtone 7
+name: Update Version 7 Branch
 
 on:
-  push:
+  pull_request:
     branches:
       - staging
+    types: ["closed"]
 
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
   update_version_7:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
-    name: Cherry pick into version7
+    name: Cherry pick into version7 branch
     steps:
       - name: Checkout
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - name: Cherry pick
+      - name: Create PR
         uses: carloscastrojumo/github-cherry-pick-action@v1.0.1
         with:
           branch: version7
