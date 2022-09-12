@@ -31,7 +31,7 @@
           .{{ i.class }}
         </th>
         <td class="d-ff-mono d-fc-orange d-fs12">
-          <span class="code-example--inline">{{ i.applies !== 'N/A' ? `.${i.applies}` : i.applies }}</span>
+          <span class="code-example--inline" v-html="i.applies"/>
         </td>
         <td class="d-fs12">
           {{ i.description }}
