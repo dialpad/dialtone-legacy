@@ -11,7 +11,7 @@ prev:
 Use `d-bga-scroll` to fix a background image to the element. It does not scroll with its content.
 
 <code-well-header>
-  <div class="d-p32 d-w100p d-h264 d-bgr-none d-bgs-cover d-bga-scroll d-fs24 d-fw-bold d-of-y-scroll" style="background-image: url('/assets/images/agent-bw-illo.svg')">London. Michaelmas term lately over, and the Lord Chancellor sitting in Lincoln's Inn Hall. Implacable November weather. As much mud in the streets as if the waters had but newly retired from the face of the earth, and it would not be wonderful to meet a Megalosaurus, forty feet long or so, waddling like an elephantine lizard up Holborn Hill. London. Michaelmas term lately over, and the Lord Chancellor sitting in Lincoln's Inn Hall. Implacable November weather. As much mud in the streets as if the waters had but newly retired from the face of the earth, and it would not be wonderful to meet a Megalosaurus, forty feet long or so, waddling like an elephantine lizard up Holborn Hill.</div>
+  <div class="d-p32 d-w100p d-h264 d-bgr-none d-bgs-cover d-bga-scroll d-fs-300 d-fw-bold d-of-y-scroll" style="background-image: url('/assets/images/agent-bw-illo.svg')">London. Michaelmas term lately over, and the Lord Chancellor sitting in Lincoln's Inn Hall. Implacable November weather. As much mud in the streets as if the waters had but newly retired from the face of the earth, and it would not be wonderful to meet a Megalosaurus, forty feet long or so, waddling like an elephantine lizard up Holborn Hill. London. Michaelmas term lately over, and the Lord Chancellor sitting in Lincoln's Inn Hall. Implacable November weather. As much mud in the streets as if the waters had but newly retired from the face of the earth, and it would not be wonderful to meet a Megalosaurus, forty feet long or so, waddling like an elephantine lizard up Holborn Hill.</div>
 </code-well-header>
 
 ```html
@@ -24,7 +24,7 @@ Use `d-bga-scroll` to fix a background image to the element. It does not scroll 
 Use `d-bga-fixed` to fix a background image to the viewport. The background image does not scroll with the content.
 
 <code-well-header>
-  <div class="d-p32 d-w100p d-h264 d-bgr-none d-bgs-cover d-bga-fixed d-fs24 d-fw-bold d-of-y-scroll" style="background-image: url('/assets/images/agent-bw-illo.svg')">London. Michaelmas term lately over, and the Lord Chancellor sitting in Lincoln's Inn Hall. Implacable November weather. As much mud in the streets as if the waters had but newly retired from the face of the earth, and it would not be wonderful to meet a Megalosaurus, forty feet long or so, waddling like an elephantine lizard up Holborn Hill. London. Michaelmas term lately over, and the Lord Chancellor sitting in Lincoln's Inn Hall. Implacable November weather. As much mud in the streets as if the waters had but newly retired from the face of the earth, and it would not be wonderful to meet a Megalosaurus, forty feet long or so, waddling like an elephantine lizard up Holborn Hill.</div>
+  <div class="d-p32 d-w100p d-h264 d-bgr-none d-bgs-cover d-bga-fixed d-fs-300 d-fw-bold d-of-y-scroll" style="background-image: url('/assets/images/agent-bw-illo.svg')">London. Michaelmas term lately over, and the Lord Chancellor sitting in Lincoln's Inn Hall. Implacable November weather. As much mud in the streets as if the waters had but newly retired from the face of the earth, and it would not be wonderful to meet a Megalosaurus, forty feet long or so, waddling like an elephantine lizard up Holborn Hill. London. Michaelmas term lately over, and the Lord Chancellor sitting in Lincoln's Inn Hall. Implacable November weather. As much mud in the streets as if the waters had but newly retired from the face of the earth, and it would not be wonderful to meet a Megalosaurus, forty feet long or so, waddling like an elephantine lizard up Holborn Hill.</div>
 </code-well-header>
 
 ```html
@@ -39,7 +39,7 @@ background scrolls with the element's contents, and background area and position
 of the element rather than the viewable box.
 
 <code-well-header>
-        <div class="d-p32 d-w100p d-h264 d-bgr-none d-bgs-cover d-bga-local d-fs24 d-fw-bold d-of-y-scroll" style="background-image: url('/assets/images/agent-bw-illo.svg')">London. Michaelmas term lately over, and the Lord Chancellor sitting in Lincoln's Inn Hall. Implacable November weather. As much mud in the streets as if the waters had but newly retired from the face of the earth, and it would not be wonderful to meet a Megalosaurus, forty feet long or so, waddling like an elephantine lizard up Holborn Hill. London. Michaelmas term lately over, and the Lord Chancellor sitting in Lincoln's Inn Hall. Implacable November weather. As much mud in the streets as if the waters had but newly retired from the face of the earth, and it would not be wonderful to meet a Megalosaurus, forty feet long or so, waddling like an elephantine lizard up Holborn Hill.</div>
+        <div class="d-p32 d-w100p d-h264 d-bgr-none d-bgs-cover d-bga-local d-fs-300 d-fw-bold d-of-y-scroll" style="background-image: url('/assets/images/agent-bw-illo.svg')">London. Michaelmas term lately over, and the Lord Chancellor sitting in Lincoln's Inn Hall. Implacable November weather. As much mud in the streets as if the waters had but newly retired from the face of the earth, and it would not be wonderful to meet a Megalosaurus, forty feet long or so, waddling like an elephantine lizard up Holborn Hill. London. Michaelmas term lately over, and the Lord Chancellor sitting in Lincoln's Inn Hall. Implacable November weather. As much mud in the streets as if the waters had but newly retired from the face of the earth, and it would not be wonderful to meet a Megalosaurus, forty feet long or so, waddling like an elephantine lizard up Holborn Hill.</div>
 </code-well-header>
 
 ```html
@@ -53,8 +53,8 @@ of the element rather than the viewable box.
   <template #content>
     <tbody>
       <tr v-for="i in ['unset', 'scroll', 'fixed', 'local']">
-        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-bga-{{ i }}</th>
-        <td class="d-ff-mono d-fc-orange d-fs12">background-attachment: {{ i }} !important;</td>
+        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-bga-{{ i }}</th>
+        <td class="d-ff-mono d-fc-orange d-fs-100">background-attachment: {{ i }} !important;</td>
       </tr>
     </tbody>
   </template>

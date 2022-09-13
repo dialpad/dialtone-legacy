@@ -18,11 +18,11 @@ This plugin takes the breakpoints and the classes you need to have responsive va
 ## Usage
 
 <code-well-header bgclass='d-bgc-purple-100'>
-  <div class="d-fl-center d-w100p d-m8 d-p16 d-bgc-purple-300 d-bar4 d-fs20 d-fw-bold d-ta-center">This is visible on all screens</div>
-  <div class="d-fl-center d-w100p d-m8 d-p16 d-bgc-purple-300 d-bar4 d-fs20 d-fw-bold d-ta-center d-d-none xl:d-d-block">This is visible on extra large screens</div>
-  <div class="d-fl-center d-w100p d-m8 d-p16 d-bgc-purple-300 d-bar4 d-fs20 d-fw-bold d-ta-center d-d-none lg:d-d-block">This is visible on large screens</div>
-  <div class="d-fl-center d-w100p d-m8 d-p16 d-bgc-purple-300 d-bar4 d-fs20 d-fw-bold d-ta-center d-d-none md:d-d-block">This is visible on medium screens</div>
-  <div class="d-fl-center d-w100p d-m8 d-p16 d-bgc-purple-300 d-bar4 d-fs20 d-fw-bold d-ta-center d-d-none sm:d-d-block">This is visible on small screens</div>
+  <div class="d-fl-center d-w100p d-m8 d-p16 d-bgc-purple-300 d-bar4 d-fs-300 d-fw-bold d-ta-center">This is visible on all screens</div>
+  <div class="d-fl-center d-w100p d-m8 d-p16 d-bgc-purple-300 d-bar4 d-fs-300 d-fw-bold d-ta-center d-d-none xl:d-d-block">This is visible on extra large screens</div>
+  <div class="d-fl-center d-w100p d-m8 d-p16 d-bgc-purple-300 d-bar4 d-fs-300 d-fw-bold d-ta-center d-d-none lg:d-d-block">This is visible on large screens</div>
+  <div class="d-fl-center d-w100p d-m8 d-p16 d-bgc-purple-300 d-bar4 d-fs-300 d-fw-bold d-ta-center d-d-none md:d-d-block">This is visible on medium screens</div>
+  <div class="d-fl-center d-w100p d-m8 d-p16 d-bgc-purple-300 d-bar4 d-fs-300 d-fw-bold d-ta-center d-d-none sm:d-d-block">This is visible on small screens</div>
 </code-well-header>
 
 ```html
@@ -47,24 +47,24 @@ To help keep prefixes concise, we use abbreviations. This syntax is used consist
   </thead>
   <tbody>
     <tr>
-      <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.xl:{class}</th>
-      <td class="d-ff-mono d-fc-orange d-fs12">max-width: 1264px</td>
-      <td class="d-ff-mono d-fc-orange d-fs12">The class is applied on extra large browser widths and below.</td>
+      <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.xl:{class}</th>
+      <td class="d-ff-mono d-fc-orange d-fs-100">max-width: 1264px</td>
+      <td class="d-ff-mono d-fc-orange d-fs-100">The class is applied on extra large browser widths and below.</td>
     </tr>
     <tr>
-      <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.lg:{class}</th>
-      <td class="d-ff-mono d-fc-orange d-fs12">max-width: 980px</td>
-      <td class="d-ff-mono d-fc-orange d-fs12">The class is applied on large browser widths and below.</td>
+      <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.lg:{class}</th>
+      <td class="d-ff-mono d-fc-orange d-fs-100">max-width: 980px</td>
+      <td class="d-ff-mono d-fc-orange d-fs-100">The class is applied on large browser widths and below.</td>
     </tr>
     <tr>
-      <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.md:{class}</th>
-      <td class="d-ff-mono d-fc-orange d-fs12">max-width: 640px</td>
-      <td class="d-ff-mono d-fc-orange d-fs12">The class is applied on medium browser widths and below.</td>
+      <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.md:{class}</th>
+      <td class="d-ff-mono d-fc-orange d-fs-100">max-width: 640px</td>
+      <td class="d-ff-mono d-fc-orange d-fs-100">The class is applied on medium browser widths and below.</td>
     </tr>
     <tr>
-      <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.sm:{class}</th>
-      <td class="d-ff-mono d-fc-orange d-fs12">max-width: 480px</td>
-      <td class="d-ff-mono d-fc-orange d-fs12">The class is applied on small browser widths and below.</td>
+      <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.sm:{class}</th>
+      <td class="d-ff-mono d-fc-orange d-fs-100">max-width: 480px</td>
+      <td class="d-ff-mono d-fc-orange d-fs-100">The class is applied on small browser widths and below.</td>
     </tr>
   </tbody>
 </table>

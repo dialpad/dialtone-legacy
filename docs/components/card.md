@@ -7,8 +7,8 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-card--default
 <code-well-header>
   <div class="d-card d-w264">
       <div class="d-card__content">
-        <p class="d-fs14 d-fw-bold d-fc-black-800">Lorem ipsum</p>
-        <p class="d-fs12">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum molestie semper. Morbi finibus nulla turpis, nec molestie mi rutrum.</p>
+        <p class="d-fs-200 d-fw-bold d-fc-black-800">Lorem ipsum</p>
+        <p class="d-fs-100">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum molestie semper. Morbi finibus nulla turpis, nec molestie mi rutrum.</p>
       </div>
   </div>
 </code-well-header>
@@ -55,8 +55,8 @@ They should be easy to scan for relevant and actionable information. Elements, l
         <button href="#" class="d-btn d-btn--xs d-fc-black-400"><IconMenuVertical /></button>
       </div>
       <div class="d-card__content">
-        <p class="d-fs14 d-fw-bold d-fc-black-800">Lorem ipsum</p>
-        <p class="d-fs12">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum molestie semper. Morbi finibus nulla turpis, nec molestie mi rutrum.</p>
+        <p class="d-fs-200 d-fw-bold d-fc-black-800">Lorem ipsum</p>
+        <p class="d-fs-100">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum molestie semper. Morbi finibus nulla turpis, nec molestie mi rutrum.</p>
       </div>
     </div>
 </code-well-header>
@@ -68,8 +68,8 @@ They should be easy to scan for relevant and actionable information. Elements, l
     <button href="#" class="d-btn d-btn--xs d-fc-black-400"><IconMenuVertical /></button>
   </div>
   <div class="d-card__content">
-    <p class="d-fs14 d-fw-bold d-fc-black-800">Lorem ipsum</p>
-    <p class="d-fs12">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum molestie semper. Morbi finibus nulla turpis, nec molestie mi rutrum.</p>
+    <p class="d-fs-200 d-fw-bold d-fc-black-800">Lorem ipsum</p>
+    <p class="d-fs-100">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum molestie semper. Morbi finibus nulla turpis, nec molestie mi rutrum.</p>
   </div>
 </div>
 ```
@@ -79,8 +79,8 @@ They should be easy to scan for relevant and actionable information. Elements, l
 <code-well-header>
     <div class="d-card d-w264">
       <div class="d-card__content">
-        <p class="d-fs14 d-fw-bold d-fc-black-800">Lorem ipsum</p>
-        <p class="d-fs12">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum molestie semper. Morbi finibus nulla turpis, nec molestie mi rutrum.</p>
+        <p class="d-fs-200 d-fw-bold d-fc-black-800">Lorem ipsum</p>
+        <p class="d-fs-100">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum molestie semper. Morbi finibus nulla turpis, nec molestie mi rutrum.</p>
       </div>
       <div class="d-card__footer">
         <button href="#" class="d-btn d-btn--sm d-fc-black-400">Button 1</button>
@@ -92,8 +92,8 @@ They should be easy to scan for relevant and actionable information. Elements, l
 ```html
 <div class="d-card d-w264">
   <div class="d-card__content">
-    <p class="d-fs14 d-fw-bold d-fc-black-800">Lorem ipsum</p>
-    <p class="d-fs12">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum molestie semper. Morbi finibus nulla turpis, nec molestie mi rutrum.</p>
+    <p class="d-fs-200 d-fw-bold d-fc-black-800">Lorem ipsum</p>
+    <p class="d-fs-100">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum molestie semper. Morbi finibus nulla turpis, nec molestie mi rutrum.</p>
   </div>
   <div class="d-card__footer">
     <button href="#" class="d-btn d-btn--sm d-fc-black-400">Button 1</button>
@@ -111,8 +111,8 @@ They should be easy to scan for relevant and actionable information. Elements, l
         <button href="#" class="d-btn d-btn--xs d-fc-black-400"><IconMenuVertical /></button>
       </div>
       <div class="d-card__content d-h84">
-        <p class="d-fs14 d-fw-bold d-fc-black-800">Lorem ipsum</p>
-        <p class="d-fs12">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p class="d-fs-200 d-fw-bold d-fc-black-800">Lorem ipsum</p>
+        <p class="d-fs-100">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
       </div>
       <div class="d-card__footer">
         <button href="#" class="d-btn d-btn--sm d-fc-black-400">Button 1</button>
@@ -128,8 +128,8 @@ They should be easy to scan for relevant and actionable information. Elements, l
     <button href="#" class="d-btn d-btn--xs d-fc-black-400"><IconMenuVertical /></button>
   </div>
   <div class="d-card__content d-h84">
-    <p class="d-fs14 d-fw-bold d-fc-black-800">Lorem ipsum</p>
-    <p class="d-fs12">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p class="d-fs-200 d-fw-bold d-fc-black-800">Lorem ipsum</p>
+    <p class="d-fs-100">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
   </div>
   <div class="d-card__footer">
     <button href="#" class="d-btn d-btn--sm d-fc-black-400">Button 1</button>
