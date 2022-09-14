@@ -31,7 +31,7 @@
         />
         <td
           class="d-ff-mono d-fc-orange d-fs-100"
-          v-html="applies"
+          v-text="applies"
         />
         <td
           class="d-fs-100"
