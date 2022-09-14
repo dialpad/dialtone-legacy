@@ -212,3 +212,44 @@ Check updates to confirm desired rendering and alignment to contrast accessibili
 ### 6. Font updates
 
 Remove any usages of deprecated `.d-fw-thin`, `.d-fw-light` and `.d-fw-dark` classes. 
+
+#### Update font-size CSS classes usage 
+
+Search for | Replace with
+:-:|:-:
+`d-fs10` | `d-fs-100`
+`d-fs11` | `d-fs-100`
+`d-fs12` | `d-fs-100`
+`d-fs14` | `d-fs-200`
+`d-fs16` | `d-fs-200`
+`d-fs18` | `d-fs-200`
+`d-fs20` | `d-fs-300`
+`d-fs24` | `d-fs-300`
+`d-fs28` | `d-fs-400`
+`d-fs32` | `d-fs-400`
+`d-fs36` | `d-fs-400`
+`d-fs42` | `d-fs-500`
+`d-fs48` | `d-fs-500`
+`d-fs54` | `d-fs-500`
+
+####  Update font-size CSS variables
+
+Search for | Replace with
+:-:|:-:
+`var(--d-fs10)` | `var(--d-fs-100)`
+`var(--d-fs11)` | `var(--d-fs-100)`
+`var(--d-fs12)` | `var(--d-fs-100)`
+`var(--d-fs14)` | `var(--d-fs-200)`
+`var(--d-fs16)` | `var(--d-fs-200)`
+`var(--d-fs18)` | `var(--d-fs-200)`
+`var(--d-fs20)` | `var(--d-fs-300)`
+`var(--d-fs24)` | `var(--d-fs-300)`
+`var(--d-fs28)` | `var(--d-fs-400)`
+`var(--d-fs32)` | `var(--d-fs-400)`
+`var(--d-fs36)` | `var(--d-fs-400)`
+`var(--d-fs42)` | `var(--d-fs-500)`
+`var(--d-fs48)` | `var(--d-fs-500)`
+`var(--d-fs54)` | `var(--d-fs-500)`
+
+Check updates to confirm desired readability. Most replacements are likely accurate, though they may need to be visually
+validated.
