@@ -77,6 +77,9 @@ Purple Remapping | Before and After
 - Replaced `RobotoMono` font with SFMono.
 - Removed `fw-thin`, `fw-light` and `fw-black` variables (RobotoMono shims).
 
+### Updated Font Size Ramps
+- Removed `fs10`, `fs11`, `fs12`, `fs14`, `fs16`, `fs18`, `fs20`, `fs24`, `fs28`, `fs32`, `fs36`, `fs42`, `fs48`, `fs54`.
+
 ## Migration Steps
 
 Follow steps in this exact order.
