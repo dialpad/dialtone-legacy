@@ -21,8 +21,6 @@ While the migration is fairly straightforward, there may be instances where manu
 - 🛑 Pink/Magenta
 - 🛑 Red
 
-
-
 #### Purple
 1. Updated color values for `purple-100`, `purple-200` and `purple-300` stops.
 2. Consolidated Dialtone v6's `purple-400` and `purple-500` stops into the redefined `purple-400` stop.
@@ -73,6 +71,11 @@ Purple Remapping | Before and After
 - Removed the `--primary-color` theme variable.
 - Removed `d-fc-primary` utility class.
 - Removed Spot Illustrations' theming capability.
+
+### Updated Font Stack
+- Replaced `Inter` font with local system font stack. 
+- Replaced `RobotoMono` font with SFMono.
+- Removed `fw-thin`, `fw-light` and `fw-black` variables (RobotoMono shims).
 
 ## Migration Steps
 
@@ -204,3 +207,8 @@ Search for | Replace with
 ### 5. Check color updates for readability
 
 Check updates to confirm desired rendering and alignment to contrast accessibility requirements. When in doubt, confer with your Product Designer to identify a proper solution.
+
+
+### 6. Font updates
+
+Remove any usages of deprecated `.d-fw-thin`, `.d-fw-light` and `.d-fw-dark` classes. 
