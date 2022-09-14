@@ -21,26 +21,30 @@
     </thead>
     <tbody>
       <tr
-        v-for="i in classes"
-        :key="i.class"
+        v-for="({ class: className, applies, description }) in classes"
+        :key="className"
       >
         <th
-          class="d-ff-mono d-fc-purple d-fw-normal d-fs-100"
           scope="row"
-        >
-          .{{ i.class }}
-        </th>
+          class="d-ff-mono d-fc-purple d-fw-normal d-fs-100"
+          v-text="`.${className}`"
+        />
         <td class="d-ff-mono d-fc-orange d-fs-100">
-          <span class="code-example--inline">{{ i.applies !== 'N/A' ? `.${i.applies}` : i.applies }}</span>
+          <span
+            class="code-example--inline"
+            v-text="applies"
+          />
         </td>
-        <td class="d-fs-100">
-          {{ i.description }}
-        </td>
+        <td
+          class="d-fs-100"
+          v-text="description"
+        />
       </tr>
     </tbody>
   </table>
 </template>
 
+<!-- TODO: Refactor ComponentClassTable and ComponentAccessibleTable to avoid code repetition -->
 <script>
 export default {
   name: 'ComponentClassTable',
