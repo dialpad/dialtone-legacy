@@ -25,15 +25,15 @@
         :key="i.class"
       >
         <th
-          class="d-ff-mono d-fc-purple d-fw-normal d-fs12"
+          class="d-ff-mono d-fc-purple d-fw-normal d-fs-100"
           scope="row"
         >
           .{{ i.class }}
         </th>
-        <td class="d-ff-mono d-fc-orange d-fs12">
+        <td class="d-ff-mono d-fc-orange d-fs-100">
           <span class="code-example--inline">{{ i.applies !== 'N/A' ? `.${i.applies}` : i.applies }}</span>
         </td>
-        <td class="d-fs12">
+        <td class="d-fs-100">
           {{ i.description }}
         </td>
       </tr>

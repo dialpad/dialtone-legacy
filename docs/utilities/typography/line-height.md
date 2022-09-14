@@ -9,16 +9,16 @@ Use `d-lh-{n}` to change an element's line-height relatively. This means no unit
 
 <code-well-header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-purple-100 d-w100p d-hmn102" custom>
   <div class="d-d-grid d-gg16 d-ai-center" style="grid-template-columns: 10rem 1fr">
-    <div class="d-fs12 d-ff-mono d-fc-purple d-fco75">.d-lh-tighter</div>
-    <div><p class="d-fs24 d-lh-tighter d-fc-orange d-bgc-purple-200 d-bgo25">The quick brown fox jumps over the lazy dog.</p></div>
-    <div class="d-fs12 d-ff-mono d-fc-purple d-fco75">.d-lh-tight</div>
-    <div><p class="d-fs24 d-lh-tight d-fc-orange d-bgc-purple-200 d-bgo25">The quick brown fox jumps over the lazy dog.</p></div>
-    <div class="d-fs12 d-ff-mono d-fc-purple d-fco75">.d-lh-normal</div>
-    <div><p class="d-fs24 d-lh-normal d-fc-orange d-bgc-purple-200 d-bgo25">The quick brown fox jumps over the lazy dog.</p></div>
-    <div class="d-fs12 d-ff-mono d-fc-purple d-fco75">.d-lh-loose</div>
-    <div><p class="d-fs24 d-lh-loose d-fc-orange d-bgc-purple-200 d-bgo25">The quick brown fox jumps over the lazy dog.</p></div>
-    <div class="d-fs12 d-ff-mono d-fc-purple d-fco75">.d-lh-looser</div>
-    <div><p class="d-fs24 d-lh-looser d-fc-orange d-bgc-purple-200 d-bgo25">The quick brown fox jumps over the lazy dog.</p></div>
+    <div class="d-fs-100 d-ff-mono d-fc-purple d-fco75">.d-lh-tighter</div>
+    <div><p class="d-fs-300 d-lh-tighter d-fc-orange d-bgc-purple-200 d-bgo25">The quick brown fox jumps over the lazy dog.</p></div>
+    <div class="d-fs-100 d-ff-mono d-fc-purple d-fco75">.d-lh-tight</div>
+    <div><p class="d-fs-300 d-lh-tight d-fc-orange d-bgc-purple-200 d-bgo25">The quick brown fox jumps over the lazy dog.</p></div>
+    <div class="d-fs-100 d-ff-mono d-fc-purple d-fco75">.d-lh-normal</div>
+    <div><p class="d-fs-300 d-lh-normal d-fc-orange d-bgc-purple-200 d-bgo25">The quick brown fox jumps over the lazy dog.</p></div>
+    <div class="d-fs-100 d-ff-mono d-fc-purple d-fco75">.d-lh-loose</div>
+    <div><p class="d-fs-300 d-lh-loose d-fc-orange d-bgc-purple-200 d-bgo25">The quick brown fox jumps over the lazy dog.</p></div>
+    <div class="d-fs-100 d-ff-mono d-fc-purple d-fco75">.d-lh-looser</div>
+    <div><p class="d-fs-300 d-lh-looser d-fc-orange d-bgc-purple-200 d-bgo25">The quick brown fox jumps over the lazy dog.</p></div>
   </div>
 </code-well-header>
 
@@ -36,26 +36,26 @@ Use `d-lh{n}` to fix an element's line-height. This allows you to target a speci
 
 <code-well-header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-yellow-100 d-w100p d-hmn102" custom>
   <div class="d-d-grid d-gg16 d-ai-center" style="grid-template-columns: 10rem 1fr">
-    <div class="d-fs12 d-ff-mono d-fc-yellow-500">.d-lh0</div>
-    <div><p class="d-fs24 d-lh0 d-fc-yellow-600 d-bgc-yellow-200 d-bgo50">The quick brown fox jumps over the lazy dog.</p></div>
-    <div class="d-fs12 d-ff-mono d-fc-yellow-500">.d-lh1</div>
-    <div><p class="d-fs24 d-lh1 d-fc-yellow-600 d-bgc-yellow-200 d-bgo50">The quick brown fox jumps over the lazy dog.</p></div>
-    <div class="d-fs12 d-ff-mono d-fc-yellow-500">.d-lh2</div>
-    <div><p class="d-fs24 d-lh2 d-fc-yellow-600 d-bgc-yellow-200 d-bgo50">The quick brown fox jumps over the lazy dog.</p></div>
-    <div class="d-fs12 d-ff-mono d-fc-yellow-500">.d-lh4</div>
-    <div><p class="d-fs24 d-lh4 d-fc-yellow-600 d-bgc-yellow-200 d-bgo50">The quick brown fox jumps over the lazy dog.</p></div>
-    <div class="d-fs12 d-ff-mono d-fc-yellow-500">.d-lh6</div>
-    <div><p class="d-fs24 d-lh6 d-fc-yellow-600 d-bgc-yellow-200 d-bgo50">The quick brown fox jumps over the lazy dog.</p></div>
-    <div class="d-fs12 d-ff-mono d-fc-yellow-500">.d-lh8</div>
-    <div><p class="d-fs24 d-lh8 d-fc-yellow-600 d-bgc-yellow-200 d-bgo50">The quick brown fox jumps over the lazy dog.</p></div>
-    <div class="d-fs12 d-ff-mono d-fc-yellow-500">.d-lh12</div>
-    <div><p class="d-fs24 d-lh12 d-fc-yellow-600 d-bgc-yellow-200 d-bgo50">The quick brown fox jumps over the lazy dog.</p></div>
-    <div class="d-fs12 d-ff-mono d-fc-yellow-500">.d-lh16</div>
-    <div><p class="d-fs24 d-lh16 d-fc-yellow-600 d-bgc-yellow-200 d-bgo50">The quick brown fox jumps over the lazy dog.</p></div>
-    <div class="d-fs12 d-ff-mono d-fc-yellow-500">.d-lh20</div>
-    <div><p class="d-fs24 d-lh20 d-fc-yellow-600 d-bgc-yellow-200 d-bgo50">The quick brown fox jumps over the lazy dog.</p></div>
-    <div class="d-fs12 d-ff-mono d-fc-yellow-500">.d-lh24</div>
-    <div><p class="d-fs24 d-lh24 d-fc-yellow-600 d-bgc-yellow-200 d-bgo50">The quick brown fox jumps over the lazy dog.</p></div>
+    <div class="d-fs-100 d-ff-mono d-fc-yellow-500">.d-lh0</div>
+    <div><p class="d-fs-300 d-lh0 d-fc-yellow-600 d-bgc-yellow-200 d-bgo50">The quick brown fox jumps over the lazy dog.</p></div>
+    <div class="d-fs-100 d-ff-mono d-fc-yellow-500">.d-lh1</div>
+    <div><p class="d-fs-300 d-lh1 d-fc-yellow-600 d-bgc-yellow-200 d-bgo50">The quick brown fox jumps over the lazy dog.</p></div>
+    <div class="d-fs-100 d-ff-mono d-fc-yellow-500">.d-lh2</div>
+    <div><p class="d-fs-300 d-lh2 d-fc-yellow-600 d-bgc-yellow-200 d-bgo50">The quick brown fox jumps over the lazy dog.</p></div>
+    <div class="d-fs-100 d-ff-mono d-fc-yellow-500">.d-lh4</div>
+    <div><p class="d-fs-300 d-lh4 d-fc-yellow-600 d-bgc-yellow-200 d-bgo50">The quick brown fox jumps over the lazy dog.</p></div>
+    <div class="d-fs-100 d-ff-mono d-fc-yellow-500">.d-lh6</div>
+    <div><p class="d-fs-300 d-lh6 d-fc-yellow-600 d-bgc-yellow-200 d-bgo50">The quick brown fox jumps over the lazy dog.</p></div>
+    <div class="d-fs-100 d-ff-mono d-fc-yellow-500">.d-lh8</div>
+    <div><p class="d-fs-300 d-lh8 d-fc-yellow-600 d-bgc-yellow-200 d-bgo50">The quick brown fox jumps over the lazy dog.</p></div>
+    <div class="d-fs-100 d-ff-mono d-fc-yellow-500">.d-lh12</div>
+    <div><p class="d-fs-300 d-lh12 d-fc-yellow-600 d-bgc-yellow-200 d-bgo50">The quick brown fox jumps over the lazy dog.</p></div>
+    <div class="d-fs-100 d-ff-mono d-fc-yellow-500">.d-lh16</div>
+    <div><p class="d-fs-300 d-lh16 d-fc-yellow-600 d-bgc-yellow-200 d-bgo50">The quick brown fox jumps over the lazy dog.</p></div>
+    <div class="d-fs-100 d-ff-mono d-fc-yellow-500">.d-lh20</div>
+    <div><p class="d-fs-300 d-lh20 d-fc-yellow-600 d-bgc-yellow-200 d-bgo50">The quick brown fox jumps over the lazy dog.</p></div>
+    <div class="d-fs-100 d-ff-mono d-fc-yellow-500">.d-lh24</div>
+    <div><p class="d-fs-300 d-lh24 d-fc-yellow-600 d-bgc-yellow-200 d-bgo50">The quick brown fox jumps over the lazy dog.</p></div>
   </div>
 </code-well-header>
 
@@ -88,10 +88,10 @@ Use `d-lh{n}` to fix an element's line-height. This allows you to target a speci
     </thead>
     <tbody>
       <tr v-for="{ class: className, output } in lineHeight.slice(0, -1)">
-        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">
+        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">
           var(--lh{{ className }})
         </th>
-        <td class="d-ff-mono d-fc-orange d-fs12">{{ output }}</td>
+        <td class="d-ff-mono d-fc-orange d-fs-100">{{ output }}</td>
       </tr>
     </tbody>
   </table>
@@ -104,10 +104,10 @@ Use `d-lh{n}` to fix an element's line-height. This allows you to target a speci
     <template #content>
       <tbody>
         <tr v-for="{ class: className, output } in lineHeight.slice(0, -1)">
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">
+          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">
             .d-lh{{ className }}
           </th>
-          <td class="d-ff-mono d-fc-orange d-fs12">
+          <td class="d-ff-mono d-fc-orange d-fs-100">
             line-height: var(--lh{{ className }}) !important;
           </td>
         </tr>
