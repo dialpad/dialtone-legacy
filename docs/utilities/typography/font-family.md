@@ -29,7 +29,7 @@ Use `d-ff-sans` to apply a Sans-Serif font stack.
 
 ## Mono
 
-Use `d-ff-mono` to apply a Sans-Serif font stack.
+Use `d-ff-mono` to apply a Monospace font stack.
 
 <code-well-header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-black-200 d-w100p d-hmn102" custom>
   <p class="d-fs-300 d-ff-mono">The quick brown fox jumps over the lazy dog.</p>
