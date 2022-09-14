@@ -236,20 +236,20 @@ Search for | Replace with
 
 Search for | Replace with
 :-:|:-:
-`var(--d-fs10)` | `var(--d-fs-100)`
-`var(--d-fs11)` | `var(--d-fs-100)`
-`var(--d-fs12)` | `var(--d-fs-100)`
-`var(--d-fs14)` | `var(--d-fs-200)`
-`var(--d-fs16)` | `var(--d-fs-200)`
-`var(--d-fs18)` | `var(--d-fs-200)`
-`var(--d-fs20)` | `var(--d-fs-300)`
-`var(--d-fs24)` | `var(--d-fs-300)`
-`var(--d-fs28)` | `var(--d-fs-400)`
-`var(--d-fs32)` | `var(--d-fs-400)`
-`var(--d-fs36)` | `var(--d-fs-400)`
-`var(--d-fs42)` | `var(--d-fs-500)`
-`var(--d-fs48)` | `var(--d-fs-500)`
-`var(--d-fs54)` | `var(--d-fs-500)`
+`var(--fs10)` | `var(--fs-100)`
+`var(--fs11)` | `var(--fs-100)`
+`var(--fs12)` | `var(--fs-100)`
+`var(--fs14)` | `var(--fs-200)`
+`var(--fs16)` | `var(--fs-200)`
+`var(--fs18)` | `var(--fs-200)`
+`var(--fs20)` | `var(--fs-300)`
+`var(--fs24)` | `var(--fs-300)`
+`var(--fs28)` | `var(--fs-400)`
+`var(--fs32)` | `var(--fs-400)`
+`var(--fs36)` | `var(--fs-400)`
+`var(--fs42)` | `var(--fs-500)`
+`var(--fs48)` | `var(--fs-500)`
+`var(--fs54)` | `var(--fs-500)`
 
 Check updates to confirm desired readability. Most replacements are likely accurate, though they may need to be visually
 validated.
