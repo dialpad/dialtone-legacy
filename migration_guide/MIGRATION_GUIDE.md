@@ -279,7 +279,21 @@ Check updates to confirm desired rendering and alignment to contrast accessibili
 
 ### 7. Font updates
 
-Remove any usages of deprecated `.d-fw-thin`, `.d-fw-light` and `.d-fw-dark` classes.
+#### Update font-weight CSS classes usage
+
+Search for | Replace with
+:-:|:-:
+`d-fw-thin` | `d-fw-normal`
+`d-fw-light` | `d-fw-normal`
+`d-fw-black` | `d-fw-bold`
+
+#### Update font-weight CSS variables
+
+Search for | Replace with
+:-:|:-:
+`var(--fw-thin)` | `var(--fw-normal)`
+`var(--fw-light)` | `var(--fw-normal)`
+`var(--fw-black)` | `var(--fw-bold)`
 
 #### Update font-size CSS classes usage
 
