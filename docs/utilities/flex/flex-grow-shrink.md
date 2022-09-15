@@ -18,12 +18,12 @@ control the grow and shrink flex values separately with their own utility classe
   </thead>
   <tbody>
     <tr v-for="v in properties[0].values">
-      <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-fl{{ v }}</th>
+      <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-fl{{ v }}</th>
       <td class="d-ff-mono d-fc-orange d-fs-100">flex: {{ v }} auto !important;</td>
       <td>{{ properties[0].description }} {{ v }}.</td>
     </tr>
     <tr>
-      <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-fl-unset</th>
+      <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-fl-unset</th>
       <td class="d-ff-mono d-fc-orange d-fs-100">flex: unset;</td>
       <td>Resets the flex value to the initial value (0 1 auto).</td>
     </tr>
@@ -60,12 +60,12 @@ The `flex-grow` sets the flex container’s grow factor relative to the parent's
   </thead>
   <tbody>
     <tr v-for="v in properties[1].values">
-      <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-{{ properties[1].class }}{{ v }}</th>
+      <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-{{ properties[1].class }}{{ v }}</th>
       <td class="d-ff-mono d-fc-orange d-fs-100">flex-grow: {{ v }} !important;</td>
       <td>{{ properties[1].description }} {{ v }}.</td>
     </tr>
     <tr>
-      <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-fl-grow-unset</th>
+      <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-fl-grow-unset</th>
       <td class="d-ff-mono d-fc-orange-600 d-fs-100">flex-grow: unset !important;</td>
       <td>Resets the flex-grow value to the initial value (0).</td>
     </tr>
@@ -102,12 +102,12 @@ The `flex-shrink` sets the flex container’s shrink factor relative to the pare
   </thead>
   <tbody>
     <tr v-for="v in properties[2].values">
-      <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-{{ properties[2].class }}{{ v }}</th>
+      <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-{{ properties[2].class }}{{ v }}</th>
       <td class="d-ff-mono d-fc-orange d-fs-100">flex-shrink: {{ v }} !important;</td>
       <td>{{ properties[2].description }} {{ v }}.</td>
     </tr>
     <tr>
-      <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-fl-shrink-unset</th>
+      <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-fl-shrink-unset</th>
       <td class="d-ff-mono d-fc-orange d-fs-100">flex-shrink: unset !important;</td>
       <td>Resets the flex-shrink value to the initial value (1).</td>
     </tr>

@@ -80,7 +80,7 @@ The margin utility classes help visually separate elements. Because layouts are 
       <!-- Positive margins -->
       <tbody v-for="i in directions">
         <tr v-for="{ value: val, output } in values">
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">
+          <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
             <span v-if="i !== 'All'">.d-m{{ i[0] }}{{ val }}</span>
             <span v-else>.d-m{{ val }}</span>
           </th>
@@ -103,7 +103,7 @@ The margin utility classes help visually separate elements. Because layouts are 
       <!-- Negative margins -->
       <tbody v-for="i in directions">
         <tr v-for="{ value: val, output } in values.slice(1)">
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">
+          <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
             <span v-if="i !== 'All'">.d-m{{ i[0] }}n{{ val }}</span>
             <span v-else>.d-mn{{ val }}</span>
           </th>
@@ -126,7 +126,7 @@ The margin utility classes help visually separate elements. Because layouts are 
       <!-- Auto margins -->
       <tbody>
         <tr v-for="i in directions">
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">
+          <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
             <span v-if="i !== 'All'">.d-m{{ i[0] }}-auto</span>
             <span v-else>.d-m-auto</span>
           </th>
@@ -149,7 +149,7 @@ The margin utility classes help visually separate elements. Because layouts are 
       <!-- Unset margins -->
       <tbody>
         <tr v-for="i in directions">
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">
+          <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
             <span v-if="i !== 'All'">.d-m{{ i[0] }}-unset</span>
             <span v-else>.d-m-unset</span>
           </th>

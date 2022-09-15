@@ -69,7 +69,7 @@ Use `d-gcs{#}` to set the starting point for an element. This can be combined wi
     <template #content>
       <tbody v-for="g in ['start', 'end', 'span']">
         <tr v-for="i in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]">
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">
+          <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
             <span v-if="g === 'start'">.d-gcs{{ i }}</span>
             <span v-else-if="g === 'end'">.d-gce{{ i }}</span>
             <span v-else>.d-gc{{ i }}</span>
@@ -87,11 +87,11 @@ Use `d-gcs{#}` to set the starting point for an element. This can be combined wi
           </td>
         </tr>
         <tr v-if="g === 'span'">
-            <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-gc-full</th>
+            <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-gc-full</th>
             <td class="d-ff-mono d-fc-orange d-fs-100">grid-column: 1 / -1 !important;</td>
         </tr>
         <tr>
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">
+          <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
             <span v-if="g === 'start'">
               .d-gcs-auto
             </span>
@@ -115,7 +115,7 @@ Use `d-gcs{#}` to set the starting point for an element. This can be combined wi
           </td>
         </tr>
         <tr>
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">
+          <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
             <span v-if="g === 'start'">
               .d-gcs-unset
             </span>

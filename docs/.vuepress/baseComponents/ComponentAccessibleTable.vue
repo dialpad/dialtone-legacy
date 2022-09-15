@@ -26,7 +26,7 @@
       >
         <th
           scope="row"
-          class="d-ff-mono d-fc-purple d-fw-normal d-fs-100"
+          class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100"
           v-text="item"
         />
         <td

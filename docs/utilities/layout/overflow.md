@@ -48,7 +48,7 @@ The `overflow` CSS shorthand property sets the desired behavior for how content 
     </thead>
     <tbody>
         <tr v-for="{ class: className, output, description } in overflow">
-            <th scope="row" class="d-ff-mono d-fc-purple d-fs-100 d-fw-normal">.d-of-{{ className }}</th>
+            <th scope="row" class="d-ff-mono d-fc-purple-400 d-fs-100 d-fw-normal">.d-of-{{ className }}</th>
             <td class="d-ff-mono d-fc-orange d-fs-100">{{ output }};</td>
             <td>{{ description }}</td>
         </tr>

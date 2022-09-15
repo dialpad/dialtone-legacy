@@ -90,7 +90,7 @@ Use `fv:d-bgc-{color}` to change an element's `:focus-visible` state background 
     <template #content>
       <tbody>
           <tr>
-              <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-bgc-transparent</th>
+              <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-bgc-transparent</th>
               <td>
                   <div class="d-d-flex d-jc-space-between d-ai-center">
                       <div class="d-fl-grow1 d-ff-mono d-fc-orange d-fs-100">
@@ -101,7 +101,7 @@ Use `fv:d-bgc-{color}` to change an element's `:focus-visible` state background 
               </td>
           </tr>
           <tr>
-              <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-bgc-unset</th>
+              <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-bgc-unset</th>
               <td>
                   <div class="d-d-flex d-jc-space-between d-ai-center">
                       <div class="d-fl-grow1 d-ff-mono d-fc-orange d-fs-100">
@@ -112,7 +112,7 @@ Use `fv:d-bgc-{color}` to change an element's `:focus-visible` state background 
               </td>
           </tr>
           <tr>
-              <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-bgc-white</th>
+              <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-bgc-white</th>
               <td>
                   <div class="d-d-flex d-jc-space-between d-ai-center">
                       <div class="d-fl-grow1 d-ff-mono d-fc-orange d-fs-100">
@@ -126,7 +126,7 @@ Use `fv:d-bgc-{color}` to change an element's `:focus-visible` state background 
       </tbody>
       <tbody v-for="{ color, stops } in colors">
         <tr v-for="{ stop } in stops">
-            <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-bgc-{{ color }}-{{ stop }}</th>
+            <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-bgc-{{ color }}-{{ stop }}</th>
             <td>
                 <div class="d-d-flex d-jc-space-between d-ai-center">
                     <div class="d-fl-grow1 d-ff-mono d-fc-orange d-fs-100">

@@ -50,7 +50,7 @@ Use `d-o{n}` to change the opacity of your element.
     <template #content>
       <tbody>
         <tr v-for="{className, value} in opacities">
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-o{{className}}</th>
+          <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-o{{className}}</th>
           <td class="d-ff-mono d-fc-orange d-fs-100">opacity: {{value}} !important;</td>
         </tr>
       </tbody>

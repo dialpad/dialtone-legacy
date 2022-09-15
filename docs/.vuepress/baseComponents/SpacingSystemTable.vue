@@ -26,7 +26,7 @@
           :key="val"
         >
           <th
-            class="d-ff-mono d-fc-purple d-fw-normal d-fs-100"
+            class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100"
             scope="row"
           >
             <span v-if="kind === 'css'">var(--su{{ val }})</span>
@@ -46,7 +46,7 @@
           :key="val"
         >
           <th
-            class="d-ff-mono d-fc-purple d-fw-normal d-fs-100"
+            class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100"
             scope="row"
           >
             var(--sun{{ val }})

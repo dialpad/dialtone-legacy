@@ -41,7 +41,7 @@ desc: Utilities for controlling the display box type of an element.
   <template #content>
     <tbody>
       <tr v-for=" { name, output } in display">
-        <th class="d-ff-mono d-fc-purple d-fs-100 d-fw-normal">{{ name }}</th>
+        <th class="d-ff-mono d-fc-purple-400 d-fs-100 d-fw-normal">{{ name }}</th>
         <td class="d-ff-mono d-fc-orange d-fs-100">{{ output }}</td>
       </tr>
     </tbody>

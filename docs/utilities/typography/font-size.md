@@ -10,21 +10,21 @@ change in other platforms (mobile, tc8, tv).
 
 <code-well-header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-purple-100 d-w100p d-hmn102" custom>
   <div class="d-d-grid d-gg16 d-ai-center" style="grid-template-columns: 10rem 1fr">
-    <div class="d-fs-100 d-ff-mono d-fc-purple">.d-fs-100</div>
+    <div class="d-fs-100 d-ff-mono d-fc-purple-400">.d-fs-100</div>
     <div><p class="d-fs-100 d-fc-orange">The quick brown fox jumps over the lazy dog.</p></div>
-    <div class="d-fs-100 d-ff-mono d-fc-purple">.d-fs-200</div>
+    <div class="d-fs-100 d-ff-mono d-fc-purple-400">.d-fs-200</div>
     <div><p class="d-fs-200 d-fc-orange">The quick brown fox jumps over the lazy dog.</p></div>
-    <div class="d-fs-100 d-ff-mono d-fc-purple">.d-fs-300</div>
+    <div class="d-fs-100 d-ff-mono d-fc-purple-400">.d-fs-300</div>
     <div><p class="d-fs-300 d-fc-orange">The quick brown fox jumps over the lazy dog.</p></div>
-    <div class="d-fs-100 d-ff-mono d-fc-purple">.d-fs-400</div>
+    <div class="d-fs-100 d-ff-mono d-fc-purple-400">.d-fs-400</div>
     <div><p class="d-fs-400 d-fc-orange">The quick brown fox jumps over the lazy dog.</p></div>
-    <div class="d-fs-100 d-ff-mono d-fc-purple">.d-fs-500</div>
+    <div class="d-fs-100 d-ff-mono d-fc-purple-400">.d-fs-500</div>
     <div><p class="d-fs-500 d-fc-orange">The quick brown fox jumps over the lazy dog.</p></div>
-    <div class="d-fs-100 d-ff-mono d-fc-purple">.d-headline36</div>
+    <div class="d-fs-100 d-ff-mono d-fc-purple-400">.d-headline36</div>
     <div><p class="d-headline36 d-lh1 d-fc-orange">The quick brown fox jumps over the lazy dog.</p></div>
-    <div class="d-fs-100 d-ff-mono d-fc-purple">.d-headline48</div>
+    <div class="d-fs-100 d-ff-mono d-fc-purple-400">.d-headline48</div>
     <div><p class="d-headline48 d-lh1 d-fc-orange">The quick brown fox jumps over the lazy dog.</p></div>
-    <div class="d-fs-100 d-ff-mono d-fc-purple">.d-headline54</div>
+    <div class="d-fs-100 d-ff-mono d-fc-purple-400">.d-headline54</div>
     <div><p class="d-headline54 d-lh1 d-fc-orange">The quick brown fox jumps over the lazy dog.</p></div>
   </div>
 </code-well-header>
@@ -60,7 +60,7 @@ change in other platforms (mobile, tc8, tv).
     <tbody>
       <tr v-for="{ stop, size, output } in fontSize.product">
         <th scope="row">{{ size }}px</th>
-        <td class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-fs-{{ stop }}</td>
+        <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-fs-{{ stop }}</td>
         <td>
           <div class="d-d-flex d-jc-space-between d-ai-center">
             <div class="d-fl1 d-ff-mono d-fc-orange d-fs-100">
@@ -75,7 +75,7 @@ change in other platforms (mobile, tc8, tv).
       <tr v-for="{ size, output, headline } in fontSize.product">
         <div v-if="headline === 'yes'" style="display: contents">
           <th scope="row">{{ size }}px</th>
-          <td class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-headline{{ size }}</td>
+          <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-headline{{ size }}</td>
           <td>
             <div class="d-d-flex d-jc-space-between d-ai-center">
               <div class="d-fl1 d-ff-mono d-fc-orange d-fs-100">
@@ -107,7 +107,7 @@ change in other platforms (mobile, tc8, tv).
     <tbody>
       <tr v-for="{ stop, size, output } in fontSize.mobile">
         <th scope="row">{{ size }}px</th>
-        <td class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-fs-{{ stop }}-mobile</td>
+        <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-fs-{{ stop }}-mobile</td>
         <td>
           <div class="d-d-flex d-jc-space-between d-ai-center">
             <div class="d-fl1 d-ff-mono d-fc-orange d-fs-100">
@@ -122,7 +122,7 @@ change in other platforms (mobile, tc8, tv).
       <tr v-for="{ size, output, headline } in fontSize.mobile">
         <div v-if="headline === 'yes'" style="display: contents">
           <th scope="row">{{ size }}px</th>
-          <td class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-headline{{ size }}</td>
+          <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-headline{{ size }}</td>
           <td>
             <div class="d-d-flex d-jc-space-between d-ai-center">
               <div class="d-fl1 d-ff-mono d-fc-orange d-fs-100">
@@ -154,7 +154,7 @@ change in other platforms (mobile, tc8, tv).
     <tbody>
       <tr v-for="{ stop, size, output } in fontSize.tc8">
         <th scope="row">{{ size }}px</th>
-        <td class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-fs-{{ stop }}-tc8</td>
+        <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-fs-{{ stop }}-tc8</td>
         <td>
           <div class="d-d-flex d-jc-space-between d-ai-center">
             <div class="d-fl1 d-ff-mono d-fc-orange d-fs-100">
@@ -169,7 +169,7 @@ change in other platforms (mobile, tc8, tv).
       <tr v-for="{ size, output, headline } in fontSize.tc8">
         <div v-if="headline === 'yes'" style="display: contents">
           <th scope="row">{{ size }}px</th>
-          <td class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-headline{{ size }}</td>
+          <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-headline{{ size }}</td>
           <td>
             <div class="d-d-flex d-jc-space-between d-ai-center">
               <div class="d-fl1 d-ff-mono d-fc-orange d-fs-100">
@@ -201,7 +201,7 @@ change in other platforms (mobile, tc8, tv).
     <tbody>
       <tr v-for="{ stop, size, output } in fontSize.tv">
         <th scope="row">{{ size }}px</th>
-        <td class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-fs-{{ stop }}-tv</td>
+        <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-fs-{{ stop }}-tv</td>
         <td>
           <div class="d-d-flex d-jc-space-between d-ai-center">
             <div class="d-fl1 d-ff-mono d-fc-orange d-fs-100">
@@ -216,7 +216,7 @@ change in other platforms (mobile, tc8, tv).
       <tr v-for="{ size, output, headline } in fontSize.tv">
         <div v-if="headline === 'yes'" style="display: contents">
           <th scope="row">{{ size }}px</th>
-          <td class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-headline{{ size }}</td>
+          <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-headline{{ size }}</td>
           <td>
             <div class="d-d-flex d-jc-space-between d-ai-center">
               <div class="d-fl1 d-ff-mono d-fc-orange d-fs-100">

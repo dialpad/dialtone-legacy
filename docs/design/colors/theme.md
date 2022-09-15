@@ -37,10 +37,10 @@ next:
       <td class="d-fw-normal">
         Background
       </td>
-      <td class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
         background-color
       </td>
-      <td class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
         var(--theme-topbar-color-background)
       </td>
       <td>
@@ -59,10 +59,10 @@ next:
       <td class="d-fw-normal">
         Text
       </td>
-      <td class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
         color
       </td>
-      <td class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
         var(--theme-topbar-color-hsl)
       </td>
       <td>
@@ -83,10 +83,10 @@ next:
       <td class="d-fw-normal">
         Background
       </td>
-      <td class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
         background-color
       </td>
-      <td class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
         var(--theme-sidebar-color-background)
       </td>
       <td>
@@ -105,10 +105,10 @@ next:
       <td class="d-fw-normal">
         Text: Name / Group
       </td>
-      <td class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
         color
       </td>
-      <td class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
         var(--theme-sidebar-color-hsl)
       </td>
       <td>
@@ -129,10 +129,10 @@ next:
       <td class="d-fw-normal">
         Text: Status
       </td>
-      <td class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
         color
       </td>
-      <td class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
         var(--theme-sidebar-color-hsl)
       </td>
       <td>
@@ -153,10 +153,10 @@ next:
       <td class="d-fw-normal">
         Icon
       </td>
-      <td class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
         color
       </td>
-      <td class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
         var(--theme-sidebar-color-hsl)
       </td>
       <td>
@@ -177,10 +177,10 @@ next:
       <td class="d-fw-normal">
         Background: Active Row
       </td>
-      <td class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
         background-color
       </td>
-      <td class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
         var(--theme-sidebar-active-row-color-background)
       </td>
       <td>
@@ -199,10 +199,10 @@ next:
       <td class="d-fw-normal">
         Text: Active Row
       </td>
-      <td class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
         color
       </td>
-      <td class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
         var(--theme-sidebar-active-row-color-hsl)
       </td>
       <td>
@@ -223,10 +223,10 @@ next:
       <td class="d-fw-normal">
         Background: Hover Row Color
       </td>
-      <td class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
         background-color
       </td>
-      <td class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
         var(--theme-sidebar-row-color-background-hover)
       </td>
       <td>
@@ -245,10 +245,10 @@ next:
       <td class="d-fw-normal">
         Background: Mention Badges
       </td>
-      <td class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
         background-color
       </td>
-      <td class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
         var(--theme-mention-color-background)
       </td>
       <td>
@@ -267,10 +267,10 @@ next:
       <td class="d-fw-normal">
         Available
       </td>
-      <td class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
         background-color
       </td>
-      <td class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
         var(--theme-presence-color-background-available)
       </td>
       <td>
@@ -289,10 +289,10 @@ next:
       <td class="d-fw-normal">
         Actively Busy
       </td>
-      <td class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
         background-color
       </td>
-      <td class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
         var(--theme-presence-color-background-busy-unavailable)
       </td>
       <td>
@@ -311,10 +311,10 @@ next:
       <td class="d-fw-normal">
         Busy
       </td>
-      <td class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
         background-color
       </td>
-      <td class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
         var(--theme-presence-color-background-busy)
       </td>
       <td>

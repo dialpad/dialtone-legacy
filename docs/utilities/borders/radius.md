@@ -77,13 +77,13 @@ Use `d-b{a|t|r|b|l}r-circle` to change the border radius of your element to a ci
     <template #content>
       <tbody>
         <tr>
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-bar-unset</th>
+          <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-bar-unset</th>
           <td class="d-ff-mono d-fc-orange d-fs-100">border-radius: unset !important;</td>
         </tr>
       </tbody>
       <tbody v-for="i in ['a', 't', 'r', 'b', 'l']">
         <tr v-for="r in [0, 2, 4, 8, 12, 16, 24, 32, '-circle', '-pill']">
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-b{{ i }}r{{ r }}</th>
+          <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-b{{ i }}r{{ r }}</th>
           <td>
             <div class="d-d-flex d-jc-space-between d-ai-center">
               <div class="d-fl-grow1 d-ff-mono d-fc-orange d-fs-100">

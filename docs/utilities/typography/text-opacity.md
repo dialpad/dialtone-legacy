@@ -81,7 +81,7 @@ Please note that because the opacity adjustments are made via CSS variables, a f
   <template #content>
     <tbody>
       <tr v-for="i in opacity">
-        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-fco{{ i }}</th>
+        <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-fco{{ i }}</th>
         <td class="d-ff-mono d-fc-orange d-fs-100">--fco: {{ i }}% !important;</td>
       </tr>
     </tbody>

@@ -29,11 +29,11 @@ Bear in mind using a visibility value of `hidden` on an element will remove it f
   <template #content>
     <tbody>
       <tr>
-        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-vi-visible</th>
+        <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-vi-visible</th>
         <td class="d-ff-mono d-fc-orange d-fs-100">visibility: visible !important;</td>
       </tr>
       <tr>
-        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-vi-visible-sr</th>
+        <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-vi-visible-sr</th>
         <td class="d-ff-mono d-fc-orange d-fs-100">border: 0;
         clip: rect(1px,1px,1px,1px);
         clip-path: inset(50%);
@@ -46,7 +46,7 @@ Bear in mind using a visibility value of `hidden` on an element will remove it f
         word-wrap: normal;</td>
       </tr>
       <tr>
-        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-vi-hidden</th>
+        <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-vi-hidden</th>
         <td class="d-ff-mono d-fc-orange d-fs-100">visibility: hidden !important;</td>
       </tr>
     </tbody>

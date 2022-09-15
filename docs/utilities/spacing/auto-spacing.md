@@ -61,8 +61,8 @@ The Stack and Flow layouts work by using the adjacent sibling combinator (`+`) t
   <tbody>
     <tr v-for="{ value: val } in values">
       <th scope="row">{{ val }}px</th>
-      <td class="d-ff-mono d-fc-purple d-fs-100">.d-stack{{ val }}</td>
-      <td class="d-ff-mono d-fc-purple d-fs-100">.d-flow{{ val }}</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fs-100">.d-stack{{ val }}</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fs-100">.d-flow{{ val }}</td>
     </tr>
   </tbody>
 </table>

@@ -74,7 +74,7 @@ Use `d-dco{n}` to change a divider opacity value.
     <template #content>
       <tbody v-for="{ color: c, stops } in colors">
         <tr v-for="{ stop, copy } in stops">
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-divide-{{ c }}-{{ stop }}</th>
+          <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-divide-{{ c }}-{{ stop }}</th>
           <td>
             <div class="d-d-flex d-jc-space-between d-ai-center">
               <div class="d-fl-grow1 d-ff-mono d-fc-orange d-fs-100">
