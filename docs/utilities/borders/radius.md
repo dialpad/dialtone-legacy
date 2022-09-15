@@ -10,7 +10,7 @@ Use `d-bar{n}` to change the border radius on all corners of your element.
 <code-well-header class="d-fl-col4 d-flg8 d-fw-wrap d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn102" custom>
   <div
     v-for="r in [0, 2, 4, 8, 12, 16, 24, 32]"
-    class="d-fl-center d-p16 d-hmn48 d-bgc-purple-300 d-fs18 d-fw-bold"
+    class="d-fl-center d-p16 d-hmn48 d-bgc-purple-300 d-fs-200 d-fw-bold"
     :class="`d-bar${r}`"
   >
     .d-bar{{ r }}
@@ -32,11 +32,11 @@ Use `d-bar{n}` to change the border radius on all corners of your element.
 
 Use `d-b{t|r|b|l}r{n}` to change the border radius on a side of your element.
 
-<code-well-header class="d-fl-center d-flg8 d-fw-wrap d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmn102 lg:d-stack8 d-flow8" custom>
-  <div class="d-fl-center d-p16 d-h48 d-btr4 d-bgc-pink-300 d-fs24 d-fw-bold">.d-btr4</div>
-  <div class="d-fl-center d-p16 d-h48 d-brr8 d-bgc-pink-300 d-fs24 d-fw-bold">.d-brr8</div>
-  <div class="d-fl-center d-p16 d-h48 d-bbr12 d-bgc-pink-300 d-fs24 d-fw-bold">.d-bbr12</div>
-  <div class="d-fl-center d-p16 d-h48 d-blr16 d-bgc-pink-300 d-fs24 d-fw-bold">.d-blr16</div>
+<code-well-header class="d-fl-center d-flg8 d-fw-wrap d-p24 d-bgc-magenta-100 d-bgo50 d-w100p d-hmn102 lg:d-stack8 d-flow8" custom>
+  <div class="d-fl-center d-p16 d-h48 d-btr4 d-bgc-magenta-100 d-fs-300 d-fw-bold">.d-btr4</div>
+  <div class="d-fl-center d-p16 d-h48 d-brr8 d-bgc-magenta-100 d-fs-300 d-fw-bold">.d-brr8</div>
+  <div class="d-fl-center d-p16 d-h48 d-bbr12 d-bgc-magenta-100 d-fs-300 d-fw-bold">.d-bbr12</div>
+  <div class="d-fl-center d-p16 d-h48 d-blr16 d-bgc-magenta-100 d-fs-300 d-fw-bold">.d-blr16</div>
 </code-well-header>
 
 ```html
@@ -51,7 +51,7 @@ Use `d-b{t|r|b|l}r{n}` to change the border radius on a side of your element.
 Use `d-b{a|t|r|b|l}r-pill` to change the border radius of your element to a pill shape.
 
 <code-well-header class="d-fl-center d-flg8 d-fw-wrap d-p24 d-bgc-green-100 d-bgo50 d-w100p d-hmn102" custom>
-            <div class="d-fl-center d-p16 d-h64 d-wmn264 d-bar-pill d-bgc-green-300 d-fs24 d-fw-bold">.d-bar-pill</div>
+            <div class="d-fl-center d-p16 d-h64 d-wmn264 d-bar-pill d-bgc-green-200 d-fs-300 d-fw-bold">.d-bar-pill</div>
 </code-well-header>
 
 ```html
@@ -63,7 +63,7 @@ Use `d-b{a|t|r|b|l}r-pill` to change the border radius of your element to a pill
 Use `d-b{a|t|r|b|l}r-circle` to change the border radius of your element to a circle shape.
 
 <code-well-header class="d-fl-center d-flg8 d-fw-wrap d-p24 d-bgc-red-100 d-bgo50 d-w100p d-hmn102" custom>
-            <div class="d-fl-center d-p16 d-h264 d-w264 d-bar-circle d-bgc-red-400 d-fs24 d-fw-bold d-fc-white">.d-bar-circle</div>
+            <div class="d-fl-center d-p16 d-h264 d-w264 d-bar-circle d-bgc-red-200 d-fs-300 d-fw-bold d-fc-white">.d-bar-circle</div>
 </code-well-header>
 
 ```html
@@ -77,16 +77,16 @@ Use `d-b{a|t|r|b|l}r-circle` to change the border radius of your element to a ci
     <template #content>
       <tbody>
         <tr>
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-bar-unset</th>
-          <td class="d-ff-mono d-fc-orange d-fs12">border-radius: unset !important;</td>
+          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-bar-unset</th>
+          <td class="d-ff-mono d-fc-orange d-fs-100">border-radius: unset !important;</td>
         </tr>
       </tbody>
       <tbody v-for="i in ['a', 't', 'r', 'b', 'l']">
         <tr v-for="r in [0, 2, 4, 8, 12, 16, 24, 32, '-circle', '-pill']">
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-b{{ i }}r{{ r }}</th>
+          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-b{{ i }}r{{ r }}</th>
           <td>
             <div class="d-d-flex d-jc-space-between d-ai-center">
-              <div class="d-fl-grow1 d-ff-mono d-fc-orange d-fs12">
+              <div class="d-fl-grow1 d-ff-mono d-fc-orange d-fs-100">
                 <span v-if="i === 'a'">border-radius: var(--br{{ r }}) !important;</span>
                 <span v-else-if="i === 't'">
                   border-top-left-radius: var(--br{{ r }}) !important;<br/>

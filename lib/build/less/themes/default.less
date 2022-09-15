@@ -39,14 +39,58 @@
     nav-background-color-l:                 var(--purple-800-l);
     nav-background-color:                   hsl(var(--nav-background-color-h) var(--nav-background-color-s) var(--nav-background-color-l));
 
-    topbar-height:                          var(--su64);
+    topbar-height:                                    var(--su64);
 
-    base--font-size:                        var(--fs16);
-    base--font-family:                      @ff-custom;
-    base--font-feature-settings:            'calt' 0;
-    base--line-height:                      var(--lh-normal);
-    base--corner-radius:                    0.25em;
+    base--font-size:                                  var(--fs-200);
+    base--font-family:                                @ff-custom;
+    base--font-feature-settings:                      'calt' 0;
+    base--line-height:                                var(--lh-normal);
+    base--corner-radius:                              0.25em;
+
+    theme-topbar-color:                               hsl(var(--theme-topbar-color-hsl));
+    theme-topbar-color-hsl:                           var(--black-900-h) var(--black-900-s) var(--black-900-l); // Use with d-fco[##] Opacity utility
+    theme-topbar-color-background:                    #f9f9f9; // DT7 TBD, possibly black-100?
+
+    theme-sidebar-color:                              hsl(var(--theme-sidebar-color-hsl));
+    theme-sidebar-color-hsl:                          var(--black-900-h) var(--black-900-s) var(--black-900-l); // Use with d-fco[##] Opacity utility
+    theme-sidebar-color-background:                   #f9f9f9; // DT7 TBD, possibly black-100?
+
+//  theme-sidebar-row-color-background:               {UNUSED}
+    theme-sidebar-row-color-background-hover:         var(--purple-100);
+    theme-sidebar-active-row-color:                   hsl(var(--theme-sidebar-active-row-color-hsl));
+    theme-sidebar-active-row-color-hsl:               var(--black-900-h) var(--black-900-s) var(--black-900-l); // Use with d-fco[##] Opacity utility
+    theme-sidebar-active-row-color-background:        #e9e9e9; // DT7 TBD, possibly black-100?
+
+    theme-presence-color-background-available:        var(--green-500);
+    theme-presence-color-background-busy-unavailable: var(--red-500);
+    theme-presence-color-background-busy:             var(--yellow-500);
+
+    theme-mention-color-background:                   var(--purple-500);
 }
+
+//  ============================================================================
+//  $   THEME CLASSES
+//  ============================================================================
+
+.d-theme-topbar-fc {
+    --fco: 75%;
+
+    color: hsla(var(--theme-topbar-color-hsl) / var(--fco)) !important;
+
+    &:hover {
+        --fco: 100%;
+    }
+}
+.d-theme-topbar-bgc { background-color: var(--theme-topbar-color-background) !important; }
+.d-theme-sidebar-fc { color: hsla(var(--theme-sidebar-color-hsl) / var(--fco)) !important; }
+.d-theme-sidebar-bgc { background-color: var(--theme-sidebar-color-background) !important; }
+.d-theme-sidebar-row-bgc:hover { background-color: var(--theme-sidebar-row-color-background-hover) !important; }
+.d-theme-sidebar-row-active-fc { color: hsla(var(--theme-sidebar-active-row-color-hsl) / var(--fco)) !important; }
+.d-theme-sidebar-row-active-bgc { background-color: var(--theme-sidebar-active-row-color-background) !important; }
+.d-theme-presence-available { background-color: var(--theme-presence-color-background-available) !important; }
+.d-theme-presence-busy-unavailable { background-color: var(--theme-presence-color-background-busy-unavailable) !important; }
+.d-theme-presence-busy { background-color: var(--theme-presence-color-background-busy) !important; }
+.d-theme-mention { background-color: var(--theme-mention-color-background) !important; }
 
 
 //  ============================================================================
@@ -61,9 +105,6 @@ body {
 
     //  All the light colored HSL vars
     #d-internals #color-vars(white, @white);
-    #d-internals #color-vars(black-025, @black-025);
-    #d-internals #color-vars(black-050, @black-050);
-    #d-internals #color-vars(black-075, @black-075);
     #d-internals #color-vars(black-100, @black-100);
     #d-internals #color-vars(black-200, @black-200);
     #d-internals #color-vars(black-300, @black-300);
@@ -85,13 +126,11 @@ body {
     #d-internals #color-vars(orange-400, @orange-400);
     #d-internals #color-vars(orange-500, @orange-500);
     #d-internals #color-vars(orange-600, @orange-600);
-    #d-internals #color-vars(pink-100, @pink-100);
-    #d-internals #color-vars(pink-200, @pink-200);
-    #d-internals #color-vars(pink-300, @pink-300);
-    #d-internals #color-vars(pink-400, @pink-400);
-    #d-internals #color-vars(pink-500, @pink-500);
-    #d-internals #color-vars(pink-600, @pink-600);
-    #d-internals #color-vars(pink-700, @pink-700);
+    #d-internals #color-vars(magenta-100, @magenta-100);
+    #d-internals #color-vars(magenta-200, @magenta-200);
+    #d-internals #color-vars(magenta-300, @magenta-300);
+    #d-internals #color-vars(magenta-400, @magenta-400);
+    #d-internals #color-vars(magenta-500, @magenta-500);
     #d-internals #color-vars(yellow-050, @yellow-050);
     #d-internals #color-vars(yellow-100, @yellow-100);
     #d-internals #color-vars(yellow-200, @yellow-200);
@@ -104,31 +143,34 @@ body {
     #d-internals #color-vars(green-300, @green-300);
     #d-internals #color-vars(green-400, @green-400);
     #d-internals #color-vars(green-500, @green-500);
-    #d-internals #color-vars(green-600, @green-600);
-    #d-internals #color-vars(green-700, @green-700);
     #d-internals #color-vars(red-100, @red-100);
     #d-internals #color-vars(red-200, @red-200);
     #d-internals #color-vars(red-300, @red-300);
     #d-internals #color-vars(red-400, @red-400);
     #d-internals #color-vars(red-500, @red-500);
-    #d-internals #color-vars(red-600, @red-600);
-    #d-internals #color-vars(red-700, @red-700);
+    #d-internals #color-vars(blue-100, @blue-100);
+    #d-internals #color-vars(blue-200, @blue-200);
+    #d-internals #color-vars(blue-300, @blue-300);
+    #d-internals #color-vars(blue-400, @blue-400);
+    #d-internals #color-vars(blue-500, @blue-500);
+    #d-internals #color-vars(tan-100, @tan-100);
+    #d-internals #color-vars(tan-200, @tan-200);
+    #d-internals #color-vars(tan-300, @tan-300);
+    #d-internals #color-vars(tan-400, @tan-400);
+    #d-internals #color-vars(tan-500, @tan-500);
 
     //  All the dark colored HSL vars
     &.theme-dark {
         //  All the light colored HSL vars
         #d-internals #color-vars(white, @black-900);
-        #d-internals #color-vars(black-025, @black-800);
-        #d-internals #color-vars(black-050, @black-700);
-        #d-internals #color-vars(black-075, @black-600);
-        #d-internals #color-vars(black-100, @black-500);
-        #d-internals #color-vars(black-200, @black-400);
-        #d-internals #color-vars(black-300, @black-300);
-        #d-internals #color-vars(black-400, @black-200);
-        #d-internals #color-vars(black-500, @black-100);
-        #d-internals #color-vars(black-600, @black-075);
-        #d-internals #color-vars(black-700, @black-050);
-        #d-internals #color-vars(black-800, @black-025);
+        #d-internals #color-vars(black-100, @black-800);
+        #d-internals #color-vars(black-200, @black-700);
+        #d-internals #color-vars(black-300, @black-600);
+        #d-internals #color-vars(black-400, @black-500);
+        #d-internals #color-vars(black-500, @black-400);
+        #d-internals #color-vars(black-600, @black-300);
+        #d-internals #color-vars(black-700, @black-200);
+        #d-internals #color-vars(black-800, @black-100);
         #d-internals #color-vars(black-900, @white);
         #d-internals #color-vars(purple-100, @purple-600);
         #d-internals #color-vars(purple-200, @purple-500);
@@ -142,13 +184,11 @@ body {
         #d-internals #color-vars(orange-400, @orange-300);
         #d-internals #color-vars(orange-500, @orange-200);
         #d-internals #color-vars(orange-600, @orange-100);
-        #d-internals #color-vars(pink-100, @pink-700);
-        #d-internals #color-vars(pink-200, @pink-600);
-        #d-internals #color-vars(pink-300, @pink-500);
-        #d-internals #color-vars(pink-400, @pink-400);
-        #d-internals #color-vars(pink-500, @pink-300);
-        #d-internals #color-vars(pink-600, @pink-200);
-        #d-internals #color-vars(pink-700, @pink-100);
+        #d-internals #color-vars(magenta-100, @magenta-500);
+        #d-internals #color-vars(magenta-200, @magenta-400);
+        #d-internals #color-vars(magenta-300, @magenta-300);
+        #d-internals #color-vars(magenta-400, @magenta-200);
+        #d-internals #color-vars(magenta-500, @magenta-100);
         #d-internals #color-vars(yellow-050, @yellow-600);
         #d-internals #color-vars(yellow-100, @yellow-500);
         #d-internals #color-vars(yellow-200, @yellow-400);
@@ -156,20 +196,16 @@ body {
         #d-internals #color-vars(yellow-400, @yellow-200);
         #d-internals #color-vars(yellow-500, @yellow-100);
         #d-internals #color-vars(yellow-600, @yellow-050);
-        #d-internals #color-vars(green-100, @green-700);
-        #d-internals #color-vars(green-200, @green-600);
-        #d-internals #color-vars(green-300, @green-500);
-        #d-internals #color-vars(green-400, @green-400);
-        #d-internals #color-vars(green-500, @green-300);
-        #d-internals #color-vars(green-600, @green-200);
-        #d-internals #color-vars(green-700, @green-100);
-        #d-internals #color-vars(red-100, @red-700);
-        #d-internals #color-vars(red-200, @red-600);
-        #d-internals #color-vars(red-300, @red-500);
-        #d-internals #color-vars(red-400, @red-400);
-        #d-internals #color-vars(red-500, @red-300);
-        #d-internals #color-vars(red-600, @red-200);
-        #d-internals #color-vars(red-700, @red-100);
+        #d-internals #color-vars(green-100, @green-500);
+        #d-internals #color-vars(green-200, @green-400);
+        #d-internals #color-vars(green-300, @green-300);
+        #d-internals #color-vars(green-400, @green-200);
+        #d-internals #color-vars(green-500, @green-100);
+        #d-internals #color-vars(red-100, @red-500);
+        #d-internals #color-vars(red-200, @red-400);
+        #d-internals #color-vars(red-300, @red-300);
+        #d-internals #color-vars(red-400, @red-200);
+        #d-internals #color-vars(red-500, @red-100);
 
         //  Now all our color vars
         each(@dark-color-vars, {

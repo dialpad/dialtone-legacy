@@ -282,7 +282,7 @@
     //      `.theme-dark`.
     //
     //      USAGE:
-    //      #d-internals #dark-mode('.d-modal', { background-color: var(--black-200); })
+    //      #d-internals #dark-mode('.d-modal', { background-color: var(--black-400); })
     //
     //  ------------------------------------------------------------------------
     #dark-mode(@class, @rules) {
@@ -378,16 +378,17 @@
     //  ========================================================================
     //  $   CREATE FONT FACE
     //  ------------------------------------------------------------------------
-    #font-face(@type, @name, @style: normal) {
+    #font-face(@type, @name, @style: normal, @local: false, @ascent: normal) {
         #d-internal-config();
 
         if((@generate-font-face = true), each(@type, {
-            @font-face {
-                font-style: @style;
-                font-weight: @key;
-                font-family: @name;
-                src: url("@{define-font-path}@{value}.woff2") format("woff2");
-            };
+          @font-face {
+            font-style: @style;
+            font-weight: @key;
+            font-family: @name;
+            src: if((@local = true ), local(@value), url("@{define-font-path}@{value}.woff2") format("woff2"));
+            ascent-override: @ascent;
+          };
         }));
     }
 

@@ -1,43 +1,272 @@
 # Dialtone 7 Migration guide
 
-The migration from v6 to v7 is mostly visual. The purple color stops were updated.
+Migration from version `6` to `7` is mostly visual, focusing on CSS updates.
 
-Even the migration is very straightforward, you still need to search through your codebase
-to make some decisions about the contrast ratio of some elements after the migration and check
-that all of them meet the accessibility requirements.
+While the migration is fairly straightforward, there may be instances where manual updates to a product's code are required. These are usually search-and-replace tasks, and may include decisions to be made with your Product Designer; for example, contrast ratios to meet accessibility requirements.
 
-## What changed:
+**⚠️ Note for `dialtone-vue`:** Updating `dialtone-vue` to the latest beta version components automatically receive Color updates.
 
-- Updated hex values of `purple-100`, `purple-200` and `purple-300` stops.
-- Merged old `purple-400` and `purple-500` stops into new `purple-400` stop
-- Merged old `purple-600` and `purple-700` stops into new `purple-500` stop
-- Mapped old `purple-800` stop into new `purple-600` stop
+## Changes
 
-![](purple_mappings.png)
-![](previous_next_mappings.png)
+### Updated Color Ramps
 
-## Migrating to v7
+✅ Complete 🟨 In Progress 🛑 TBD
 
-1. Install dialtone@7.X
-   - `npm install @dialpad/dialtone@beta`
-2. Replace the purple stops (`@purple-X`, `--purple-X`) in the next order.
-   1. `purple-500` usages with `purple-400`
-   2. `purple-600`, `purple-700` usages with `purple-500`
-   3. `purple-800` usages with `purple-600`
-3. Replace any old RAW HEX values with the updated one and if you can replace RAW 
-values with the corresponding CSS variable, please do it.
-   - (purple-100) `#ECE1FF` → `#EEE5FF` (purple-100)
-   - (purple-200) `#D1C0FF` → `#D3BCFF` (purple-200)
-   - (purple-300) `#A687FF` → `#AB7EFF` (purple-300)
-   - (purple-400) `#8B65FF` → `#7C52FF` (purple-400)
-   - (purple-500) `#6C3DFF` → `#7C52FF` (purple-400)
-   - (purple-600) `#3A1C95` → `#3A1D95` (purple-500)
-   - (purple-700) `#2A1173` → `#3A1D95` (purple-500)
-   - (purple-800) `#160645` → `#10022C` (purple-600)
-4. At last, check the usages you just replaced and ensure you still have the desired look and feel,
-contrast ratio. If not, check with your designer which background/foreground color you should update 
-to meet the accessibility requirements.
+- ✅ Purple
+- 🟨 Blue
+- 🟨 Tan
+- 🛑 Green
+- 🛑 Black
+- 🛑 Yellow/Gold
+- 🛑 Pink/Magenta
+- 🛑 Red
 
-### Note for Dialtone-vue users
+#### Purple
+1. Updated color values for `purple-100`, `purple-200` and `purple-300` stops.
+2. Consolidated Dialtone v6's `purple-400` and `purple-500` stops into the redefined `purple-400` stop.
+3. Consolidated Dialtone v6's `purple-600` and `purple-700` stops into the redefined `purple-500` stop.
+4. Consolidated Dialtone v6's `purple-800` stop into the redefined `purple-600` stop.
 
-When you update Dialtone-vue to the latest beta version, all the components will have the new colors included.
+[Before/After images to be replaced with one that reflects **all** Color Ramps once completed.]
+Purple Remapping | Before and After
+:-------------------------:|:-------------------------:
+![](purple_mappings.png) | ![](previous_next_mappings.png)
+#### Blue
+[TBD]
+#### Tan
+[TBD]
+#### Green
+1. Removed `green-600` and `green-700` color stops.
+2. Updated color values for `green-100`, `green-200`, `green-300`, `green-400` and `green-500` stops.
+3. Consolidated Dialtone v6's `green-100` and `green-200` stops into the redefined `green-100` stop.
+4. Consolidated Dialtone v6's `green-300` stop into the redefined `green-200` stop.
+5. Consolidated Dialtone v6's `green-400` stop into the redefined `green-300` stop.
+6. Consolidated Dialtone v6's `green-500` and `green-600` stops into the redefined `green-400` stop.
+7. Consolidated Dialtone v6's `green-700` stop into the redefined `green-500` stop.
+#### Black
+1. Removed `black-025`, `black-050`, `black-075` color stops.
+2. Updated color values for `black-100`, `black-200`, `black-300`, `black-400`, `black-500`, `black-600`, `black-700`, `black-800`, `black-900` stops.
+3. Consolidated Dialtone v6's `black-600` and `black-500` stops into the redefined `black-600` stop.
+4. Consolidated Dialtone v6's `black-400` and `black-300` stops into the redefined `black-500` stop.
+5. Consolidated Dialtone v6's `black-200` and `black-100` stops into the redefined `black-400` stop.
+#### Yellow/Gold
+[TBD]
+#### Pink/Magenta
+1. Renamed `pink-[100-700]` to `magenta-[100-500]` color stops.
+2. Consolidated Dialtone v6's `pink-100`, `pink-200` and `pink-300` stops into the redefined `magenta-100` stop.
+3. Consolidated Dialtone v6's `pink-400` stop into the redefined `magenta-200` stop.
+4. Consolidated Dialtone v6's `pink-500` stop into the redefined `magenta-300` stop.
+5. Consolidated Dialtone v6's `pink-600` stop into the redefined `magenta-400` stop.
+6. Consolidated Dialtone v6's `pink-700` stop into the redefined `magenta-500` stop.
+#### Red
+1. Removed `red-600` and `red-700` color stops.
+2. Updated color values for `red-100`, `red-200`, `red-300`, `red-400`, `red-500` stops.
+3. Consolidated Dialtone v6's `red-100`, `red-200` and `red-300` stops into the redefined `red-100` stop.
+4. Consolidated Dialtone v6's `red-400` stop into the redefined `red-200` stop.
+5. Consolidated Dialtone v6's `red-500` stop into the redefined `red-300` stop.
+6. Consolidated Dialtone v6's `red-600` stop into the redefined `red-400` stop.
+7. Consolidated Dialtone v6's `red-700` stop into the redefined `red-500` stop.
+
+### Removed Primary Color Theme
+- Removed the `--primary-color` theme variable.
+- Removed `d-fc-primary` utility class.
+- Removed Spot Illustrations' theming capability.
+
+### Updated Font Stack
+- Replaced `Inter` font with local system font stack. 
+- Replaced `RobotoMono` font with SFMono.
+- Removed `fw-thin`, `fw-light` and `fw-black` variables (RobotoMono shims).
+
+### Updated Font Size Ramps
+- Removed `fs10`, `fs11`, `fs12`, `fs14`, `fs16`, `fs18`, `fs20`, `fs24`, `fs28`, `fs32`, `fs36`, `fs42`, `fs48`, `fs54`.
+
+## Migration Steps
+
+Follow steps in this exact order.
+
+### 1. Update to Dialtone v7
+
+```
+npm install @dialpad/dialtone@beta
+```
+
+### 2. Replace color stops
+
+Search for | Replace with
+:-:|:-:
+`purple-500` | `purple-400`
+`purple-600` | `purple-500`
+`purple-700` | `purple-500`
+`purple-800` | `purple-600`
+`black-500` | `black-600`
+`black-400` | `black-500`
+`black-300` | `black-500`
+`black-200` | `black-400`
+`black-100` | `black-400`
+`black-075` | `black-300`
+`black-050` | `black-200`
+`black-025` | `black-100`
+`green-200` | `green-100`
+`green-300` | `green-200`
+`green-400` | `green-300`
+`green-500` | `green-400`
+`green-600` | `green-400`
+`green-700` | `green-500`
+`red-200` | `red-100`
+`red-300` | `red-100`
+`red-400` | `red-200`
+`red-500` | `red-300`
+`red-600` | `red-400`
+`red-700` | `red-500`
+`pink-100` | `magenta-100`
+`pink-200` | `magenta-100`
+`pink-300` | `magenta-100`
+`pink-400` | `magenta-200`
+`pink-500` | `magenta-300`
+`pink-600` | `magenta-400`
+`pink-700` | `magenta-500`
+`d-fc-pink` | `d-fc-magenta`
+[others TBD, e.g. Green] | ...
+
+### 3. Replace "Primary Color" theme uses
+
+#### Custom CSS references to expired "Primary Color" CSS Variables
+
+Search for | Replace with
+:-:|:-:
+`var(--primary-color)` | `hsl(var(--purple-400-h) var(--purple-400-s) var(--purple-400-l))`
+`var(--primary-color-hsl)` | `hsl(var(--purple-400-h) var(--purple-400-s) var(--purple-400-l))`
+`var(--primary-color-hover)` | `hsl(var(--purple-400-h) var(--purple-400-s) calc(var(--purple-400-l) - 10%))`
+`var(--primary-color-h)` | `var(--purple-400-h)`
+`var(--primary-color-s)` | `var(--purple-400-s)`
+`var(--primary-color-l)` | `var(--purple-400-l)`
+
+#### Replace "Primary Color" CSS Utility classes usage, e.g. `class="[UTILITY]"`
+
+Search for | Replace with
+:-:|:-:
+`d-fc-primary` | `d-fc-purple`
+
+### 4. Replace hardcoded HEX values
+
+Any custom CSS authored with HEX values (e.g. `#ff0000`) should be replaced with its CSS Custom Property equivalent (e.g. `var(--[COLOR-STOP])`).
+
+#### Example
+
+Replace...
+
+```css
+.foo { color: #ECE1FF; }
+```
+
+...with
+```css
+.foo { color: var(--purple-100); }
+```
+
+Search for | Replace with
+:-:|:-:
+`#ECE1FF` | `var(--purple-100)`
+`#A687FF` | `var(--purple-300)`
+`#8B65FF` | `var(--purple-400)`
+`#6C3DFF` | `var(--purple-400)`
+`#3A1C95` | `var(--purple-500)`
+`#2A1173` | `var(--purple-500)`
+`#160645` | `var(--purple-600)`
+`#F2F2F6` | `var(--black-100)`
+`#EAE9EF` | `var(--black-200)`
+`#DFDEE5` | `var(--black-300)`
+`#CDCDD8` | `var(--black-400)`
+`#B3B0C0` | `var(--black-400)`
+`#9C99AC` | `var(--black-500)`
+`#7B7789` | `var(--black-500)`
+`#575564` | `var(--black-600)`
+`#444150` | `var(--black-600)`
+`#322D37` | `var(--black-700)`
+`#221F24` | `var(--black-800)`
+`#0D0C0F` | `var(--black-900)`
+`#EBFFE2` | `var(--green-100)`
+`#D1FFBC` | `var(--green-100)`
+`#9CFF6D` | `var(--green-200)`
+`#6BEE04` | `var(--green-300)`
+`#0C9B02` | `var(--green-400)`
+`#0A5B03` | `var(--green-400)`
+`#052F01` | `var(--green-500)`
+`#FFF1F1` | `var(--red-100)`
+`#FFD3D3` | `var(--red-100)`
+`#FFA7A7` | `var(--red-100)`
+`#FA4646` | `var(--red-200)`
+`#D81616` | `var(--red-300)`
+`#930000` | `var(--red-400)`
+`#480000` | `var(--red-500)`
+`#FFEBEC` | `var(--magenta-100)`
+`#FFD8DA` | `var(--magenta-100)`
+`#FDA2A8` | `var(--magenta-100)`
+`#FF578A` | `var(--magenta-200)`
+`#E92A7A` | `var(--magenta-300)`
+`#A2114D` | `var(--magenta-400)`
+`#57102E` | `var(--magenta-500)`
+
+### 5. Check color updates for readability
+
+Check updates to confirm desired rendering and alignment to contrast accessibility requirements. When in doubt, confer with your Product Designer to identify a proper solution.
+
+
+### 6. Font updates
+
+#### Update font-weight CSS classes usage
+
+Search for | Replace with
+:-:|:-:
+`d-fw-thin` | `d-fw-normal`
+`d-fw-light` | `d-fw-normal`
+`d-fw-black` | `d-fw-bold`
+
+#### Update font-weight CSS variables
+
+Search for | Replace with
+:-:|:-:
+`var(--fw-thin)` | `var(--fw-normal)`
+`var(--fw-light)` | `var(--fw-normal)`
+`var(--fw-black)` | `var(--fw-bold)`
+
+#### Update font-size CSS classes usage 
+
+Search for | Replace with
+:-:|:-:
+`d-fs10` | `d-fs-100`
+`d-fs11` | `d-fs-100`
+`d-fs12` | `d-fs-100`
+`d-fs14` | `d-fs-200`
+`d-fs16` | `d-fs-200`
+`d-fs18` | `d-fs-200`
+`d-fs20` | `d-fs-300`
+`d-fs24` | `d-fs-300`
+`d-fs28` | `d-fs-400`
+`d-fs32` | `d-fs-400`
+`d-fs36` | `d-fs-400`
+`d-fs42` | `d-fs-500`
+`d-fs48` | `d-fs-500`
+`d-fs54` | `d-fs-500`
+
+####  Update font-size CSS variables
+
+Search for | Replace with
+:-:|:-:
+`var(--fs10)` | `var(--fs-100)`
+`var(--fs11)` | `var(--fs-100)`
+`var(--fs12)` | `var(--fs-100)`
+`var(--fs14)` | `var(--fs-200)`
+`var(--fs16)` | `var(--fs-200)`
+`var(--fs18)` | `var(--fs-200)`
+`var(--fs20)` | `var(--fs-300)`
+`var(--fs24)` | `var(--fs-300)`
+`var(--fs28)` | `var(--fs-400)`
+`var(--fs32)` | `var(--fs-400)`
+`var(--fs36)` | `var(--fs-400)`
+`var(--fs42)` | `var(--fs-500)`
+`var(--fs48)` | `var(--fs-500)`
+`var(--fs54)` | `var(--fs-500)`
+
+Check updates to confirm desired readability. Most replacements are likely accurate, though they may need to be visually
+validated.

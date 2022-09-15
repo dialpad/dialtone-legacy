@@ -1,3 +1,53 @@
+# [6.39.0](https://github.com/dialpad/dialtone/compare/v6.38.0...v6.39.0) (2022-09-07)
+
+
+### Features
+
+* **icon:** fix fill for branch, expert-node icons ([#662](https://github.com/dialpad/dialtone/issues/662)) ([77ef2fb](https://github.com/dialpad/dialtone/commit/77ef2fbf6e2f282778718f3a5c62585bc020f517))
+
+# [6.38.0](https://github.com/dialpad/dialtone/compare/v6.37.1...v6.38.0) (2022-09-06)
+
+
+### Features
+
+* **icon:** add branch, expert-node icons to library ([#661](https://github.com/dialpad/dialtone/issues/661)) ([c128291](https://github.com/dialpad/dialtone/commit/c128291c0495be2dcc75d6d47db1b8f9fd0bd254))
+
+## [6.37.1](https://github.com/dialpad/dialtone/compare/v6.37.0...v6.37.1) (2022-09-06)
+
+
+### Bug Fixes
+
+* dialtone_health_check path ([d435189](https://github.com/dialpad/dialtone/commit/d435189675f3032d57dbe41e0548c5d0dcd9b54e))
+
+# [6.37.0](https://github.com/dialpad/dialtone/compare/v6.36.2...v6.37.0) (2022-09-06)
+
+
+### Features
+
+* add dialtone health check script ([#659](https://github.com/dialpad/dialtone/issues/659)) ([f06f06d](https://github.com/dialpad/dialtone/commit/f06f06de38a7315cdf84b7ed0d3ded827a74ee92))
+
+## [6.36.2](https://github.com/dialpad/dialtone/compare/v6.36.1...v6.36.2) (2022-09-02)
+
+
+### Bug Fixes
+
+* **theme:** resurrect nav-background-color variable ([#658](https://github.com/dialpad/dialtone/issues/658)) ([3235b0f](https://github.com/dialpad/dialtone/commit/3235b0f7e810c2b1db2bcf9a3030fcc42cfebfe6))
+
+## [6.36.1](https://github.com/dialpad/dialtone/compare/v6.36.0...v6.36.1) (2022-09-02)
+
+
+### Bug Fixes
+
+* cleanup card css ([#657](https://github.com/dialpad/dialtone/issues/657)) ([59d2941](https://github.com/dialpad/dialtone/commit/59d294162ad643c68be7d44376be4b6205dfb3c1))
+
+# [6.36.0](https://github.com/dialpad/dialtone/compare/v6.35.0...v6.36.0) (2022-09-01)
+
+
+### Features
+
+* add style for card ([#651](https://github.com/dialpad/dialtone/issues/651)) ([ed7fbec](https://github.com/dialpad/dialtone/commit/ed7fbec74e8bc0d07f88b54284c14198e0010c9b))
+* **theme:** create and update theme variables ([#643](https://github.com/dialpad/dialtone/issues/643)) ([7b5dcce](https://github.com/dialpad/dialtone/commit/7b5dcce4f35a4d11a98e4d9795627c33c45a7baa))
+
 # [7.0.0-beta.3](https://github.com/dialpad/dialtone/compare/v7.0.0-beta.2...v7.0.0-beta.3) (2022-08-25)
 
 
@@ -18,6 +68,33 @@
 * **nix primary theme var:** remove primary-color from theme variables ([87214f3](https://github.com/dialpad/dialtone/commit/87214f3e092432af85437eae736707ce89ac17b1))
 * **nix primary theme var:** replace primary-color usage with specific hsl values ([51083a2](https://github.com/dialpad/dialtone/commit/51083a24cc2c00fb8f824c400416d31d684ee4e5))
 * **nix primary theme var:** replace primary-color usage with specific hsl values ([10c36d8](https://github.com/dialpad/dialtone/commit/10c36d892a9772bb9da31cab1c59e936ed1c8a9f))
+
+# [6.35.0](https://github.com/dialpad/dialtone/compare/v6.34.2...v6.35.0) (2022-08-25)
+
+
+### Bug Fixes
+
+* modal functionality ([#642](https://github.com/dialpad/dialtone/issues/642)) ([0677209](https://github.com/dialpad/dialtone/commit/06772099e74ddf96c7fe1c700ed94761b8463555))
+
+
+### Features
+
+* **icon:** add wifi-off icon to library ([#646](https://github.com/dialpad/dialtone/issues/646)) ([55004cd](https://github.com/dialpad/dialtone/commit/55004cdff052a892ae3b0ea111330f478b2cb1e7))
+
+## [6.34.2](https://github.com/dialpad/dialtone/compare/v6.34.1...v6.34.2) (2022-08-10)
+
+
+### Bug Fixes
+
+* **modal:** add box sizing in modal banner class ([#638](https://github.com/dialpad/dialtone/issues/638)) ([a66141c](https://github.com/dialpad/dialtone/commit/a66141c32d397cc1436b9e53485306633a464b79))
+
+## [6.34.1](https://github.com/dialpad/dialtone/compare/v6.34.0...v6.34.1) (2022-08-08)
+
+
+### Bug Fixes
+
+* **modal:** fix spacing and overriding styles in the docsite ([#635](https://github.com/dialpad/dialtone/issues/635)) ([55d5693](https://github.com/dialpad/dialtone/commit/55d56931278a004dd46c94ff454b6cdecce3e454))
+* **toggle:** dt-569 toggle default padding ([#632](https://github.com/dialpad/dialtone/issues/632)) ([0111087](https://github.com/dialpad/dialtone/commit/0111087136c460068ee5b9f629794c77ed5b3849))
 
 # [7.0.0-beta.2](https://github.com/dialpad/dialtone/compare/v7.0.0-beta.1...v7.0.0-beta.2) (2022-08-03)
 
@@ -51,12 +128,315 @@
 
 * **colors:** Removed purple-700 and purple-800 color stops
 
-# [6.19.0-beta.2](https://github.com/dialpad/dialtone/compare/v6.19.0-beta.1...v6.19.0-beta.2) (2022-03-01)
+# [6.34.0](https://github.com/dialpad/dialtone/compare/v6.33.3...v6.34.0) (2022-07-26)
+
+
+### Features
+
+* add icons for new bottom bar ([#631](https://github.com/dialpad/dialtone/issues/631)) ([00e5bab](https://github.com/dialpad/dialtone/commit/00e5bab2bc604558e1553856538106aa40ae41fa))
+
+## [6.33.3](https://github.com/dialpad/dialtone/compare/v6.33.2...v6.33.3) (2022-07-18)
 
 
 ### Bug Fixes
 
-* remove z-index from content ([38bd70a](https://github.com/dialpad/dialtone/commit/38bd70aae06f947698e5f90d2043af5d02f23da1))
+* bump dialtone version ([9678498](https://github.com/dialpad/dialtone/commit/9678498f6d2d938fb27c62d64e8401fbad17caab))
+
+## [6.33.2](https://github.com/dialpad/dialtone/compare/v6.33.1...v6.33.2) (2022-07-18)
+
+
+### Bug Fixes
+
+* bump dialtone version ([#628](https://github.com/dialpad/dialtone/issues/628)) ([8e5e5eb](https://github.com/dialpad/dialtone/commit/8e5e5eb0963d36b51afd6d802bb47d0a1b0bdf50))
+
+## [6.33.1](https://github.com/dialpad/dialtone/compare/v6.33.0...v6.33.1) (2022-07-18)
+
+
+### Bug Fixes
+
+* fix release GA ([265d73b](https://github.com/dialpad/dialtone/commit/265d73b7e081919ceee7aa843c16317ff86d8f52))
+
+# [6.33.0](https://github.com/dialpad/dialtone/compare/v6.32.3...v6.33.0) (2022-07-18)
+
+
+### Features
+
+* add the new router icon ([#626](https://github.com/dialpad/dialtone/issues/626)) ([a4bb7bd](https://github.com/dialpad/dialtone/commit/a4bb7bd98a917f020376f8c542ae890b083ff80e))
+
+## [6.32.3](https://github.com/dialpad/dialtone/compare/v6.32.2...v6.32.3) (2022-07-06)
+
+
+### Bug Fixes
+
+* add missing utility classes. ([#624](https://github.com/dialpad/dialtone/issues/624)) ([45f4896](https://github.com/dialpad/dialtone/commit/45f48968e510528609e2f4ee73c120ab168f7065))
+
+## [6.32.3](https://github.com/dialpad/dialtone/compare/v6.32.2...v6.32.3) (2022-07-06)
+
+
+### Bug Fixes
+
+* add missing utility classes. ([#624](https://github.com/dialpad/dialtone/issues/624)) ([45f4896](https://github.com/dialpad/dialtone/commit/45f48968e510528609e2f4ee73c120ab168f7065))
+
+## [6.32.2](https://github.com/dialpad/dialtone/compare/v6.32.1...v6.32.2) (2022-06-29)
+
+
+### Bug Fixes
+
+* disable calt font feature setting ([#622](https://github.com/dialpad/dialtone/issues/622)) ([a9e38fa](https://github.com/dialpad/dialtone/commit/a9e38fa0a1b8901f3b7952529af14056a284791f))
+
+## [6.32.1](https://github.com/dialpad/dialtone/compare/v6.32.0...v6.32.1) (2022-06-23)
+
+
+### Bug Fixes
+
+* fix fonts reference ([#621](https://github.com/dialpad/dialtone/issues/621)) ([f1940a5](https://github.com/dialpad/dialtone/commit/f1940a5fe6ef3031cdc6b1a729291d4e833621de))
+
+# [6.32.0](https://github.com/dialpad/dialtone/compare/v6.31.0...v6.32.0) (2022-06-23)
+
+
+### Bug Fixes
+
+* **Chip:** improvements to semantic html ([#616](https://github.com/dialpad/dialtone/issues/616)) ([9ca9dae](https://github.com/dialpad/dialtone/commit/9ca9dae160689b3fcc8d33747f879478725ea0c9))
+
+
+### Features
+
+* **icons:** hide old vi icon. remove vi-off icon ([#619](https://github.com/dialpad/dialtone/issues/619)) ([f8fbdf1](https://github.com/dialpad/dialtone/commit/f8fbdf145784e21849eca01076117306281827f8))
+
+# [6.31.0](https://github.com/dialpad/dialtone/compare/v6.30.1...v6.31.0) (2022-06-17)
+
+
+### Features
+
+* **icon:** add ai-glyph and dialpad-ai icons ([#618](https://github.com/dialpad/dialtone/issues/618)) ([af8fb04](https://github.com/dialpad/dialtone/commit/af8fb04ef1bfd032822170f13a2144c58520b46b))
+
+## [6.30.1](https://github.com/dialpad/dialtone/compare/v6.30.0...v6.30.1) (2022-06-13)
+
+
+### Bug Fixes
+
+* **tabs:** keypress events not working ([#609](https://github.com/dialpad/dialtone/issues/609)) ([a514ba5](https://github.com/dialpad/dialtone/commit/a514ba5300e73b63ae298918eacb509185d5e1ee))
+
+# [6.30.0](https://github.com/dialpad/dialtone/compare/v6.29.1...v6.30.0) (2022-06-08)
+
+
+### Features
+
+* **icon:** add skip next / prev and zero icons ([#608](https://github.com/dialpad/dialtone/issues/608)) ([de6495a](https://github.com/dialpad/dialtone/commit/de6495a854aaf5d0b276be3d462f7c90ccd88c5e))
+
+## [6.29.1](https://github.com/dialpad/dialtone/compare/v6.29.0...v6.29.1) (2022-06-03)
+
+
+### Bug Fixes
+
+* **Chip:** add Preview and reorder docs ([#601](https://github.com/dialpad/dialtone/issues/601)) ([7c29e79](https://github.com/dialpad/dialtone/commit/7c29e79f7efc6cf491bf1a56b33a9d1d0d9bd276))
+* fix fonts reference ([#604](https://github.com/dialpad/dialtone/issues/604)) ([c164f8f](https://github.com/dialpad/dialtone/commit/c164f8f02841a36abcd8e3d7369f28a7919799b9))
+
+
+### Reverts
+
+* Revert 12da734f9ee2e1adccaac092d3f35552c0daa0e7 ([6d4389c](https://github.com/dialpad/dialtone/commit/6d4389c1d9fafff37e5efa9e25360eab70fab357))
+
+# [6.29.0](https://github.com/dialpad/dialtone/compare/v6.28.0...v6.29.0) (2022-05-26)
+
+
+### Bug Fixes
+
+* removed fill attribute from icons ([#600](https://github.com/dialpad/dialtone/issues/600)) ([59b2395](https://github.com/dialpad/dialtone/commit/59b239519b1953010ef9da912f2f5942f4d3a82e))
+
+
+### Features
+
+* **chip:** add chip component ([#597](https://github.com/dialpad/dialtone/issues/597)) ([b2ddfd7](https://github.com/dialpad/dialtone/commit/b2ddfd77f808f572d05e0b77f5a7e0bff892512b)), closes [#594](https://github.com/dialpad/dialtone/issues/594)
+
+# [6.28.0](https://github.com/dialpad/dialtone/compare/v6.27.1...v6.28.0) (2022-05-24)
+
+
+### Features
+
+* **interactivity:** add resize property ([#595](https://github.com/dialpad/dialtone/issues/595)) ([f3d7384](https://github.com/dialpad/dialtone/commit/f3d7384c7922a056bcaf07e07cb26df199f3b4c5))
+
+## [6.27.1](https://github.com/dialpad/dialtone/compare/v6.27.0...v6.27.1) (2022-05-19)
+
+
+### Bug Fixes
+
+* **modal:** focus ring being cut off in fixed header and footer ([#596](https://github.com/dialpad/dialtone/issues/596)) ([49467aa](https://github.com/dialpad/dialtone/commit/49467aaad1560de7c49f221e721846f52eae6dc3))
+
+# [6.27.0](https://github.com/dialpad/dialtone/compare/v6.26.0...v6.27.0) (2022-05-16)
+
+
+### Bug Fixes
+
+* circle button hover and active colors ([#592](https://github.com/dialpad/dialtone/issues/592)) ([2ab2918](https://github.com/dialpad/dialtone/commit/2ab291882d804f7c659ae6b1f336306fe65eca4b))
+* missing css file, change port and disable contributors ([#590](https://github.com/dialpad/dialtone/issues/590)) ([3474924](https://github.com/dialpad/dialtone/commit/3474924d256af59cf80bb6b92f5fb9871171fe61))
+* missing vue version ([#591](https://github.com/dialpad/dialtone/issues/591)) ([a39e540](https://github.com/dialpad/dialtone/commit/a39e54073ab860f57a0c292cd0831f82f043aa77))
+
+
+### Features
+
+* **modal:** add dialog scrollable class ([#593](https://github.com/dialpad/dialtone/issues/593)) ([9a1b26d](https://github.com/dialpad/dialtone/commit/9a1b26d4f64cbdeb245e122b9a5eb28840bea767))
+
+# [6.26.0](https://github.com/dialpad/dialtone/compare/v6.25.1...v6.26.0) (2022-05-12)
+
+
+### Features
+
+* **docsite:** merge vuepress migration into staging ([#588](https://github.com/dialpad/dialtone/issues/588)) ([0524459](https://github.com/dialpad/dialtone/commit/0524459c96bcc712cf17bff8f93c31e3f517ebf0)), closes [#548](https://github.com/dialpad/dialtone/issues/548) [#549](https://github.com/dialpad/dialtone/issues/549) [#551](https://github.com/dialpad/dialtone/issues/551) [#553](https://github.com/dialpad/dialtone/issues/553) [#571](https://github.com/dialpad/dialtone/issues/571) [#573](https://github.com/dialpad/dialtone/issues/573) [#574](https://github.com/dialpad/dialtone/issues/574) [#576](https://github.com/dialpad/dialtone/issues/576) [#577](https://github.com/dialpad/dialtone/issues/577) [#578](https://github.com/dialpad/dialtone/issues/578) [#581](https://github.com/dialpad/dialtone/issues/581) [#580](https://github.com/dialpad/dialtone/issues/580) [#585](https://github.com/dialpad/dialtone/issues/585) [#586](https://github.com/dialpad/dialtone/issues/586)
+* **icon:** add thread reply icon ([#583](https://github.com/dialpad/dialtone/issues/583)) ([088f8bf](https://github.com/dialpad/dialtone/commit/088f8bfb0dd5e672c89efba2ededc630f1def9d0))
+* **icons:** add fire and snooze icons ([#589](https://github.com/dialpad/dialtone/issues/589)) ([91a38ec](https://github.com/dialpad/dialtone/commit/91a38ec77af6944393454d0e68ec1d3e856eeab5))
+
+## [6.25.1](https://github.com/dialpad/dialtone/compare/v6.25.0...v6.25.1) (2022-05-09)
+
+
+### Bug Fixes
+
+* fc-warning not mapped correctly ([#584](https://github.com/dialpad/dialtone/issues/584)) ([9757d01](https://github.com/dialpad/dialtone/commit/9757d011c952129f57507620902ee07c45780b0c))
+
+# [6.25.0](https://github.com/dialpad/dialtone/compare/v6.24.1...v6.25.0) (2022-05-06)
+
+
+### Features
+
+* add spot illustration for wireless screen share ([#579](https://github.com/dialpad/dialtone/issues/579)) ([03c9761](https://github.com/dialpad/dialtone/commit/03c976161fb6649d3769ca94f3172a09d82124a3))
+
+## [6.24.1](https://github.com/dialpad/dialtone/compare/v6.24.0...v6.24.1) (2022-04-29)
+
+
+### Bug Fixes
+
+* its ([a66564f](https://github.com/dialpad/dialtone/commit/a66564f0dab4fd3b3f26efed59f47cea0334c887))
+* remove d-svg class from spot illustrations ([6b7fa63](https://github.com/dialpad/dialtone/commit/6b7fa63ae3b0ebaa8eccf3228ec8fc41591de16b))
+
+# [6.24.0](https://github.com/dialpad/dialtone/compare/v6.23.6...v6.24.0) (2022-04-29)
+
+
+### Features
+
+* add laptop typing svg ([#575](https://github.com/dialpad/dialtone/issues/575)) ([ca861fd](https://github.com/dialpad/dialtone/commit/ca861fdfd5bab5a9ac74d3dc6e3d62b6fd1e2c17))
+
+## [6.23.6](https://github.com/dialpad/dialtone/compare/v6.23.5...v6.23.6) (2022-04-21)
+
+
+### Bug Fixes
+
+* add baseurl to top level links ([835a881](https://github.com/dialpad/dialtone/commit/835a88188c70533bca27db8369003f5830961609))
+
+## [6.23.5](https://github.com/dialpad/dialtone/compare/v6.23.4...v6.23.5) (2022-04-21)
+
+
+### Bug Fixes
+
+* add baseurl to sitenav ([1805e49](https://github.com/dialpad/dialtone/commit/1805e49e31f70cfc342e7b9eb8f8edd21a641eeb))
+
+## [6.23.4](https://github.com/dialpad/dialtone/compare/v6.23.3...v6.23.4) (2022-04-21)
+
+
+### Bug Fixes
+
+* whitespace xml error ([b4da340](https://github.com/dialpad/dialtone/commit/b4da3404cdf49ea6749942e64c12268527e25685))
+
+## [6.23.3](https://github.com/dialpad/dialtone/compare/v6.23.2...v6.23.3) (2022-04-21)
+
+
+### Bug Fixes
+
+* upgrade docsearch to version 3. prevent subdir overlap ([#572](https://github.com/dialpad/dialtone/issues/572)) ([90d2ea4](https://github.com/dialpad/dialtone/commit/90d2ea4c6752f45ebc68b4cf53f110af6fcbbb21))
+
+## [6.23.2](https://github.com/dialpad/dialtone/compare/v6.23.1...v6.23.2) (2022-04-20)
+
+
+### Bug Fixes
+
+* **button:** add removed font color on hover state ([#570](https://github.com/dialpad/dialtone/issues/570)) ([9214dfa](https://github.com/dialpad/dialtone/commit/9214dfa21069f9e59dbb058edbcd345745ad6c7a))
+
+## [6.23.1](https://github.com/dialpad/dialtone/compare/v6.23.0...v6.23.1) (2022-04-19)
+
+
+### Bug Fixes
+
+* internal links not working after page switch ([8ff76cd](https://github.com/dialpad/dialtone/commit/8ff76cda55185bc662df8007725713fc23a2b75f))
+
+# [6.23.0](https://github.com/dialpad/dialtone/compare/v6.22.0...v6.23.0) (2022-04-18)
+
+
+### Bug Fixes
+
+* internal links when using <base> tag ([24b65fa](https://github.com/dialpad/dialtone/commit/24b65fa69a29c6cd7bb5264f70a78c3e508fa81d))
+
+
+### Features
+
+* add facebook, sentiment, reply icons ([#568](https://github.com/dialpad/dialtone/issues/568)) ([ff185d5](https://github.com/dialpad/dialtone/commit/ff185d51322adc630bbe8ffaeaead9275ce6b0c4))
+* add icons for new call workflow (Phase 2) ([#569](https://github.com/dialpad/dialtone/issues/569)) ([599852b](https://github.com/dialpad/dialtone/commit/599852b8b436a935df0cf7db2d8bb03c0723021c))
+
+# [6.22.0](https://github.com/dialpad/dialtone/compare/v6.21.0...v6.22.0) (2022-04-08)
+
+
+### Bug Fixes
+
+* badge alignment (min-width and vertical alignment) ([#566](https://github.com/dialpad/dialtone/issues/566)) ([946186c](https://github.com/dialpad/dialtone/commit/946186cc7e6a38c5d5e8986acd284cffe9b100ce))
+* typo in spacing ([#565](https://github.com/dialpad/dialtone/issues/565)) ([729be23](https://github.com/dialpad/dialtone/commit/729be23e5d5c197e3c868b2ae5e65aecb25442b6))
+
+
+### Features
+
+* **button:** add active styles ([#564](https://github.com/dialpad/dialtone/issues/564)) ([1d4a962](https://github.com/dialpad/dialtone/commit/1d4a962833e2031daf9f9fa1a23092b244fbc34e))
+* **button:** add d-btn--active class ([#567](https://github.com/dialpad/dialtone/issues/567)) ([2a89e25](https://github.com/dialpad/dialtone/commit/2a89e253ddd7f7c15d6de7af0ef13c293dba0a86))
+
+# [6.21.0](https://github.com/dialpad/dialtone/compare/v6.20.3...v6.21.0) (2022-04-04)
+
+
+### Features
+
+* **input:** support different icon sizes ([#563](https://github.com/dialpad/dialtone/issues/563)) ([0ad3c02](https://github.com/dialpad/dialtone/commit/0ad3c02db72d586bc39883aa6476bd8676e5c893))
+
+## [6.20.3](https://github.com/dialpad/dialtone/compare/v6.20.2...v6.20.3) (2022-03-31)
+
+
+### Bug Fixes
+
+* **popover:** remove d-popover__anchor--modal-opened class ([d62cde0](https://github.com/dialpad/dialtone/commit/d62cde09cb2827f8ccbde0f20c19edcdf6c1397f))
+
+## [6.20.2](https://github.com/dialpad/dialtone/compare/v6.20.1...v6.20.2) (2022-03-29)
+
+
+### Bug Fixes
+
+* update version5 link ([637a5c1](https://github.com/dialpad/dialtone/commit/637a5c1f9c5212de35e09c7a3d646be9d95d70b3))
+
+## [6.20.1](https://github.com/dialpad/dialtone/compare/v6.20.0...v6.20.1) (2022-03-29)
+
+
+### Bug Fixes
+
+* remove docsite deploy subdir ([7fdbd1c](https://github.com/dialpad/dialtone/commit/7fdbd1cdd04984155c5fccfd263896bd6015f739))
+
+# [6.20.0](https://github.com/dialpad/dialtone/compare/v6.19.0...v6.20.0) (2022-03-22)
+
+
+### Bug Fixes
+
+* dt-404 popover alignment fixes ([#558](https://github.com/dialpad/dialtone/issues/558)) ([6e8b035](https://github.com/dialpad/dialtone/commit/6e8b035d34d51a3609508b757fea95fa0db99812))
+
+
+### Features
+
+* dt-407 support icons above and below the labels on buttons ([#561](https://github.com/dialpad/dialtone/issues/561)) ([8e2752a](https://github.com/dialpad/dialtone/commit/8e2752a11556836c6061c9e8b559c9fea1e0cffa))
+
+# [6.19.0](https://github.com/dialpad/dialtone/compare/v6.18.1...v6.19.0) (2022-03-12)
+
+
+### Features
+
+* add popover into dialtone ([#557](https://github.com/dialpad/dialtone/issues/557)) ([846a4e3](https://github.com/dialpad/dialtone/commit/846a4e3d7d94d00d02a21379a2e32a75edcbb26c))
+
+## [6.18.1](https://github.com/dialpad/dialtone/compare/v6.18.0...v6.18.1) (2022-03-04)
+
+
+### Bug Fixes
+
+* remove fixed with from checkbox copy ([377e35c](https://github.com/dialpad/dialtone/commit/377e35c1dbdc2d4c5c8fffb5b26ff7cfe5be297c))
 
 # [6.19.0-beta.1](https://github.com/dialpad/dialtone/compare/v6.18.0...v6.19.0-beta.1) (2022-02-25)
 
@@ -75,6 +455,13 @@
 * add transparent modal ([488f46a](https://github.com/dialpad/dialtone/commit/488f46a6c7995b4e67c40efb553e67fa7194412c))
 * popover css and documentation ([#540](https://github.com/dialpad/dialtone/issues/540)) ([2c4dc58](https://github.com/dialpad/dialtone/commit/2c4dc58404944036693816c23b69b0453f38399f))
 
+# [6.18.0](https://github.com/dialpad/dialtone/compare/v6.17.0...v6.18.0) (2022-02-22)
+
+
+### Features
+
+* add transparent modal ([488f46a](https://github.com/dialpad/dialtone/commit/488f46a6c7995b4e67c40efb553e67fa7194412c))
+
 # [6.15.0-beta.6](https://github.com/dialpad/dialtone/compare/v6.15.0-beta.5...v6.15.0-beta.6) (2022-02-17)
 
 
@@ -88,14 +475,10 @@
 ### Bug Fixes
 
 * popover example page issues ([574dee2](https://github.com/dialpad/dialtone/commit/574dee2fe898ac188405cc18683f9f3f6edb2076))
-# [6.18.0](https://github.com/dialpad/dialtone/compare/v6.17.0...v6.18.0) (2022-02-22)
-
-
-### Features
-
-* add transparent modal ([488f46a](https://github.com/dialpad/dialtone/commit/488f46a6c7995b4e67c40efb553e67fa7194412c))
 
 # [6.15.0-beta.4](https://github.com/dialpad/dialtone/compare/v6.15.0-beta.3...v6.15.0-beta.4) (2022-02-15)
+
+
 * add icons for new call workflow (Phase 1) ([#554](https://github.com/dialpad/dialtone/issues/554)) ([e23f1de](https://github.com/dialpad/dialtone/commit/e23f1dee4c3c05c136f0b10491ca60e4e1abde21))
 
 # [6.17.0](https://github.com/dialpad/dialtone/compare/v6.16.0...v6.17.0) (2022-02-17)

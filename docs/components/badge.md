@@ -51,17 +51,17 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-badge--default
 ```html
 <span class="d-badge">...</span>
 <span class="d-badge d-badge--black-700">...</span>
-<span class="d-badge d-badge--green-400">...</span>
+<span class="d-badge d-badge--green-300">...</span>
 <span class="d-badge d-badge--orange-400">...</span>
-<span class="d-badge d-badge--pink-300">...</span>
-<span class="d-badge d-badge--pink-500">...</span>
-<span class="d-badge d-badge--pink-600">...</span>
-<span class="d-badge d-badge--pink-700">...</span>
+<span class="d-badge d-badge--magenta-100">...</span>
+<span class="d-badge d-badge--magenta-300">...</span>
+<span class="d-badge d-badge--magenta-400">...</span>
+<span class="d-badge d-badge--magenta-500">...</span>
 <span class="d-badge d-badge--purple-100">...</span>
 <span class="d-badge d-badge--purple-300">...</span>
 <span class="d-badge d-badge--purple-400">...</span>
 <span class="d-badge d-badge--purple-500">...</span>
-<span class="d-badge d-badge--red-500">...</span>
+<span class="d-badge d-badge--red-300">...</span>
 <span class="d-badge d-badge--white">...</span>
 <span class="d-badge d-badge--yellow-300">...</span>
 ```

@@ -11,7 +11,7 @@ next:
 Use `d-t` to add a transition to an element.
 
 <code-well-header class="d-fl-center d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn102" custom>
-  <div class="d-fl-center d-p24 d-bar8 d-bgc-purple-300 h:d-bgc-yellow-300 h:d-bs-lg d-fs18 d-fw-bold d-fc-white h:d-fc-dark d-t d-c-pointer">Hover on me</div>
+  <div class="d-fl-center d-p24 d-bar8 d-bgc-purple-300 h:d-bgc-yellow-300 h:d-bs-lg d-fs-200 d-fw-bold d-fc-white h:d-fc-dark d-t d-c-pointer">Hover on me</div>
 </code-well-header>
 
 ```html
@@ -22,12 +22,12 @@ Use `d-t` to add a transition to an element.
 
 Use `d-td{n}` change an element's `transition-delay` from it's default `50ms` length.
 
-<code-well-header class="d-fl-col3 d-flg8 d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmn102 d-of-auto" custom>
-  <div class="d-fl-center d-p24 d-bar8 d-bgc-pink-400 h:d-bgc-yellow-300 h:d-bs-lg d-fs18 d-fw-bold d-fc-white h:d-fc-dark d-t d-td0 d-c-pointer">0ms</div>
-  <div class="d-fl-center d-p24 d-bar8 d-bgc-pink-400 h:d-bgc-yellow-300 h:d-bs-lg d-fs18 d-fw-bold d-fc-white h:d-fc-dark d-t d-c-pointer">50ms</div>
-  <div class="d-fl-center d-p24 d-bar8 d-bgc-pink-400 h:d-bgc-yellow-300 h:d-bs-lg d-fs18 d-fw-bold d-fc-white h:d-fc-dark d-t d-td100 d-c-pointer">100ms</div>
-  <div class="d-fl-center d-p24 d-bar8 d-bgc-pink-400 h:d-bgc-yellow-300 h:d-bs-lg d-fs18 d-fw-bold d-fc-white h:d-fc-dark d-t d-td150 d-c-pointer">150ms</div>
-  <div class="d-fl-center d-p24 d-bar8 d-bgc-pink-400 h:d-bgc-yellow-300 h:d-bs-lg d-fs18 d-fw-bold d-fc-white h:d-fc-dark d-t d-td200 d-c-pointer">200ms</div>
+<code-well-header class="d-fl-col3 d-flg8 d-p24 d-bgc-magenta-100 d-bgo50 d-w100p d-hmn102 d-of-auto" custom>
+  <div class="d-fl-center d-p24 d-bar8 d-bgc-magenta-200 h:d-bgc-yellow-300 h:d-bs-lg d-fs-200 d-fw-bold d-fc-white h:d-fc-dark d-t d-td0 d-c-pointer">0ms</div>
+  <div class="d-fl-center d-p24 d-bar8 d-bgc-magenta-200 h:d-bgc-yellow-300 h:d-bs-lg d-fs-200 d-fw-bold d-fc-white h:d-fc-dark d-t d-c-pointer">50ms</div>
+  <div class="d-fl-center d-p24 d-bar8 d-bgc-magenta-200 h:d-bgc-yellow-300 h:d-bs-lg d-fs-200 d-fw-bold d-fc-white h:d-fc-dark d-t d-td100 d-c-pointer">100ms</div>
+  <div class="d-fl-center d-p24 d-bar8 d-bgc-magenta-200 h:d-bgc-yellow-300 h:d-bs-lg d-fs-200 d-fw-bold d-fc-white h:d-fc-dark d-t d-td150 d-c-pointer">150ms</div>
+  <div class="d-fl-center d-p24 d-bar8 d-bgc-magenta-200 h:d-bgc-yellow-300 h:d-bs-lg d-fs-200 d-fw-bold d-fc-white h:d-fc-dark d-t d-td200 d-c-pointer">200ms</div>
 </code-well-header>
 
 ```html
@@ -43,8 +43,8 @@ Use `d-td{n}` change an element's `transition-delay` from it's default `50ms` le
 Use `d-ttf-{n}` change an element's `transition-timing-function` (aka easing) from it's default Quad Ease In, Ease Out value.
 
 <code-well-header class="d-fl-col2 d-flg8 d-p24 d-bgc-green-100 d-bgo50 d-w100p d-hmn102" custom>
-  <div class="d-fl-center d-p24 d-bar8 d-bgc-green-300 h:d-bgc-purple-100 h:d-bs-lg d-fs18 d-fw-bold d-t d-td100 d-c-pointer">Ease In, Ease Out</div>
-  <div class="d-fl-center d-p24 d-bar8 d-bgc-green-300 h:d-bgc-purple-100 h:d-bs-lg d-fs18 d-fw-bold d-t d-td100 d-ttf-out d-c-pointer">Ease Out</div>
+  <div class="d-fl-center d-p24 d-bar8 d-bgc-green-200 h:d-bgc-purple-100 h:d-bs-lg d-fs-200 d-fw-bold d-t d-td100 d-c-pointer">Ease In, Ease Out</div>
+  <div class="d-fl-center d-p24 d-bar8 d-bgc-green-200 h:d-bgc-purple-100 h:d-bs-lg d-fs-200 d-fw-bold d-t d-td100 d-ttf-out d-c-pointer">Ease Out</div>
 </code-well-header>
 
 ```html
@@ -57,12 +57,12 @@ Use `d-ttf-{n}` change an element's `transition-timing-function` (aka easing) fr
 Use `d-tp-{n}` change an what items within an element are transitioned.
 
 <code-well-header class="d-fl-col3 d-flg8 d-p24 d-bgc-yellow-100 d-bgo50 d-w100p d-hmn102 d-of-auto" custom>
-  <div class="d-fl-center d-p24 d-bar8 d-bgc-yellow-400 h:d-bgc-purple-100 h:d-bs-lg d-fs18 d-fw-bold d-fc-dark h:d-fc-red-400 d-t d-td100 d-c-pointer">All</div>
-  <div class="d-fl-center d-p24 d-bar8 d-bgc-yellow-400 d-fs18 d-fw-bold d-fc-dark d-t d-td100 d-tp-o d-c-pointer h:d-o50">Opacity</div>
-  <div class="d-fl-center d-p24 d-bar8 d-bgc-yellow-400 d-fs18 d-fw-bold d-fc-dark d-t d-td100 d-tp-bs d-c-pointer d-bs-sm h:d-bs-lg">Box Shadow</div>
-  <div class="d-fl-center d-p24 d-bar8 d-bgc-yellow-400 h:d-bgc-purple-100 d-fs18 d-fw-bold d-fc-dark d-t d-td100 d-tp-bgc d-c-pointer">Background</div>
-  <div class="d-fl-center d-p24 d-bar8 d-bgc-yellow-400 d-fs18 d-fw-bold d-fc-dark d-t d-td100 d-tp-transform d-c-pointer">Transform</div>
-  <div class="d-fl-center d-p24 d-bar8 d-bgc-yellow-400 h:d-bgc-purple-100 d-fs18 d-fw-bold d-fc-dark h:d-fc-red-400 d-ba h:d-bc-yellow-500 d-t d-td100 d-tp-colors d-c-pointer">Colors</div>
+  <div class="d-fl-center d-p24 d-bar8 d-bgc-yellow-400 h:d-bgc-purple-100 h:d-bs-lg d-fs-200 d-fw-bold d-fc-dark h:d-fc-red-200 d-t d-td100 d-c-pointer">All</div>
+  <div class="d-fl-center d-p24 d-bar8 d-bgc-yellow-400 d-fs-200 d-fw-bold d-fc-dark d-t d-td100 d-tp-o d-c-pointer h:d-o50">Opacity</div>
+  <div class="d-fl-center d-p24 d-bar8 d-bgc-yellow-400 d-fs-200 d-fw-bold d-fc-dark d-t d-td100 d-tp-bs d-c-pointer d-bs-sm h:d-bs-lg">Box Shadow</div>
+  <div class="d-fl-center d-p24 d-bar8 d-bgc-yellow-400 h:d-bgc-purple-100 d-fs-200 d-fw-bold d-fc-dark d-t d-td100 d-tp-bgc d-c-pointer">Background</div>
+  <div class="d-fl-center d-p24 d-bar8 d-bgc-yellow-400 d-fs-200 d-fw-bold d-fc-dark d-t d-td100 d-tp-transform d-c-pointer">Transform</div>
+  <div class="d-fl-center d-p24 d-bar8 d-bgc-yellow-400 h:d-bgc-purple-100 d-fs-200 d-fw-bold d-fc-dark h:d-fc-red-200 d-ba h:d-bc-yellow-500 d-t d-td100 d-tp-colors d-c-pointer">Colors</div>
 </code-well-header>
 
 ```html
@@ -81,8 +81,8 @@ Use `d-tp-{n}` change an what items within an element are transitioned.
     <template #content>
       <tbody>
         <tr>
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-t</th>
-          <td class="d-ff-mono d-fc-orange-500 d-fs12">
+          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-t</th>
+          <td class="d-ff-mono d-fc-orange-500 d-fs-100">
             transition-duration: var(--td25);<br/>
             transition-property: all;<br/>
             transition-timing-function: var(--ttf-in-out);<br/>
@@ -91,16 +91,16 @@ Use `d-tp-{n}` change an what items within an element are transitioned.
       </tbody>
       <tbody v-for="i in ['td', 'ttf', 'tp', 't-delay']">
         <tr v-if="i === 'td'" v-for="d in [0, 50, 100, 150, 200]">
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-{{ i }}{{ d }}</th>
-          <td class="d-ff-mono d-fc-orange-500 d-fs12">transition-duration: var(--td{{ d }}) !important;</td>
+          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-{{ i }}{{ d }}</th>
+          <td class="d-ff-mono d-fc-orange-500 d-fs-100">transition-duration: var(--td{{ d }}) !important;</td>
         </tr>
         <tr v-else-if="i === 'ttf'" v-for="t in ['in-out', 'out']">
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-{{ i }}-{{ t }}</th>
-          <td class="d-ff-mono d-fc-orange-500 d-fs12">transition-timing-function: var(--ttf-{{ t }}) !important;</td>
+          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-{{ i }}-{{ t }}</th>
+          <td class="d-ff-mono d-fc-orange-500 d-fs-100">transition-timing-function: var(--ttf-{{ t }}) !important;</td>
         </tr>
         <tr v-else-if="i === 'tp'" v-for="p in ['all', 'o', 'bs', 'bgc', 'transform', 'colors']">
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-{{ i }}-{{ p }}</th>
-          <td class="d-ff-mono d-fc-orange-500 d-fs12">
+          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-{{ i }}-{{ p }}</th>
+          <td class="d-ff-mono d-fc-orange-500 d-fs-100">
             transition-property:
               <span v-if="p === 'o'">opacity</span>
               <span v-else-if="p === 'bs'">box-shadow</span>
@@ -111,8 +111,8 @@ Use `d-tp-{n}` change an what items within an element are transitioned.
           </td>
         </tr>
         <tr v-else v-for="d in [25, 50, 100, 150, 200]">
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-{{ i }}{{ d }}</th>
-          <td class="d-ff-mono d-fc-orange-500 d-fs12">transition-delay: var(--td{{ d }}) !important;</td>
+          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-{{ i }}{{ d }}</th>
+          <td class="d-ff-mono d-fc-orange-500 d-fs-100">transition-delay: var(--td{{ d }}) !important;</td>
         </tr>
       </tbody>
     </template>

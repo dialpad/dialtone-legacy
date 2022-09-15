@@ -8,7 +8,7 @@ desc: Utilities for controlling an element's text alignment.
 Use `d-ta-{n}` to change an element's text alignment.
 
 <code-well-header class="d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn102 d-of-auto" custom>
-  <div class="d-d-grid d-gg16 d-ai-center lg:d-fs12" style="grid-template-columns: 10rem 1fr">
+  <div class="d-d-grid d-gg16 d-ai-center lg:d-fs-100" style="grid-template-columns: 10rem 1fr">
     <div class="d-ff-mono d-fc-purple">.d-ta-left</div>
     <div><p class="d-ta-left d-fc-orange d-pr12">The quick brown fox jumps over the lazy dog.</p></div>
     <div class="d-ff-mono d-fc-purple">.d-ta-center</div>
@@ -40,8 +40,8 @@ Use `d-ta-{n}` to change an element's text alignment.
   <template #content>
     <tbody>
       <tr v-for="i in align">
-        <th class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-ta-{{ i }}</th>
-        <td class="d-ff-mono d-fc-orange d-fs12">text-align: {{ i }} !important;</td>
+        <th class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-ta-{{ i }}</th>
+        <td class="d-ff-mono d-fc-orange d-fs-100">text-align: {{ i }} !important;</td>
       </tr>
     </tbody>
   </template>

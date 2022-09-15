@@ -12,15 +12,15 @@ Use `d-gc{#}` to span an element across multiple columns. This can be combined w
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn216" custom>
   <div class="d-d-grid d-gg16 d-g-cols4 d-p16 d-w100p d-hmn216 d-bar8 d-bgc-purple-100">
-    <div class="d-fl-center d-p16 d-bgc-purple-300 d-bar4 d-fs24 d-fw-bold d-o50">1</div>
-    <div class="d-fl-center d-p16 d-bgc-purple-300 d-bar4 d-fs24 d-fw-bold d-o50">2</div>
-    <div class="d-gc2 d-fl-center d-p16 d-bgc-purple-300 d-bar4 d-fs24 d-fw-bold">3</div>
-    <div class="d-gc2 d-fl-center d-p16 d-bgc-purple-300 d-bar4 d-fs24 d-fw-bold">4</div>
-    <div class="d-fl-center d-p16 d-bgc-purple-300 d-bar4 d-fs24 d-fw-bold d-o50">5</div>
-    <div class="d-fl-center d-p16 d-bgc-purple-300 d-bar4 d-fs24 d-fw-bold d-o50">6</div>
-    <div class="d-fl-center d-p16 d-bgc-purple-300 d-bar4 d-fs24 d-fw-bold d-o50">7</div>
-    <div class="d-gc3 d-fl-center d-p16 d-bgc-purple-300 d-bar4 d-fs24 d-fw-bold">8</div>
-    <div class="d-gc-full d-fl-center d-p16 d-bgc-purple-300 d-bar4 d-fs24 d-fw-bold">9</div>
+    <div class="d-fl-center d-p16 d-bgc-purple-300 d-bar4 d-fs-300 d-fw-bold d-o50">1</div>
+    <div class="d-fl-center d-p16 d-bgc-purple-300 d-bar4 d-fs-300 d-fw-bold d-o50">2</div>
+    <div class="d-gc2 d-fl-center d-p16 d-bgc-purple-300 d-bar4 d-fs-300 d-fw-bold">3</div>
+    <div class="d-gc2 d-fl-center d-p16 d-bgc-purple-300 d-bar4 d-fs-300 d-fw-bold">4</div>
+    <div class="d-fl-center d-p16 d-bgc-purple-300 d-bar4 d-fs-300 d-fw-bold d-o50">5</div>
+    <div class="d-fl-center d-p16 d-bgc-purple-300 d-bar4 d-fs-300 d-fw-bold d-o50">6</div>
+    <div class="d-fl-center d-p16 d-bgc-purple-300 d-bar4 d-fs-300 d-fw-bold d-o50">7</div>
+    <div class="d-gc3 d-fl-center d-p16 d-bgc-purple-300 d-bar4 d-fs-300 d-fw-bold">8</div>
+    <div class="d-gc-full d-fl-center d-p16 d-bgc-purple-300 d-bar4 d-fs-300 d-fw-bold">9</div>
   </div>
 </code-well-header>
 
@@ -45,12 +45,12 @@ Use `d-gcs{#}` to set the starting point for an element. This can be combined wi
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-yellow-100 d-bgo50 d-w100p d-hmn216" custom>
   <div class="d-d-grid d-gg16 d-g-cols6 d-p16 d-w100p d-hmn216 d-bar8 d-bgc-yellow-100">
     <div class="d-fl-center d-p16 d-bgc-yellow-200 d-bar4"></div>
-    <div class="d-gcs2 d-gce6 d-fl-center d-p16 d-bgc-yellow-400 d-bar4 d-fs24 d-fw-bold">1</div>
+    <div class="d-gcs2 d-gce6 d-fl-center d-p16 d-bgc-yellow-400 d-bar4 d-fs-300 d-fw-bold">1</div>
     <div class="d-fl-center d-p16 d-bgc-yellow-200 d-bar4"></div>
-    <div class="d-gcs1 d-gce5 d-fl-center d-p16 d-bgc-yellow-400 d-bar4 d-fs24 d-fw-bold">2</div>
+    <div class="d-gcs1 d-gce5 d-fl-center d-p16 d-bgc-yellow-400 d-bar4 d-fs-300 d-fw-bold">2</div>
     <div class="d-fl-center d-p16 d-bgc-yellow-200 d-bar4"></div>
     <div class="d-fl-center d-p16 d-bgc-yellow-200 d-bar4"></div>
-    <div class="d-gcs1 d-gce7 d-fl-center d-p16 d-bgc-yellow-400 d-bar4 d-fs24 d-fw-bold">3</div>
+    <div class="d-gcs1 d-gce7 d-fl-center d-p16 d-bgc-yellow-400 d-bar4 d-fs-300 d-fw-bold">3</div>
   </div>
 </code-well-header>
 
@@ -69,12 +69,12 @@ Use `d-gcs{#}` to set the starting point for an element. This can be combined wi
     <template #content>
       <tbody v-for="g in ['start', 'end', 'span']">
         <tr v-for="i in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]">
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">
+          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">
             <span v-if="g === 'start'">.d-gcs{{ i }}</span>
             <span v-else-if="g === 'end'">.d-gce{{ i }}</span>
             <span v-else>.d-gc{{ i }}</span>
           </th>
-          <td class="d-ff-mono d-fc-orange d-fs12">
+          <td class="d-ff-mono d-fc-orange d-fs-100">
             <span v-if="g === 'start'">
               grid-column-start: {{ i }}
             </span>
@@ -87,11 +87,11 @@ Use `d-gcs{#}` to set the starting point for an element. This can be combined wi
           </td>
         </tr>
         <tr v-if="g === 'span'">
-            <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-gc-full</th>
-            <td class="d-ff-mono d-fc-orange d-fs12">grid-column: 1 / -1 !important;</td>
+            <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-gc-full</th>
+            <td class="d-ff-mono d-fc-orange d-fs-100">grid-column: 1 / -1 !important;</td>
         </tr>
         <tr>
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">
+          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">
             <span v-if="g === 'start'">
               .d-gcs-auto
             </span>
@@ -102,7 +102,7 @@ Use `d-gcs{#}` to set the starting point for an element. This can be combined wi
               .d-gc-auto
             </span>
           </th>
-          <td class="d-ff-mono d-fc-orange d-fs12">
+          <td class="d-ff-mono d-fc-orange d-fs-100">
             <span v-if="g === 'start'">
               grid-column-start: auto !important;
             </span>
@@ -115,7 +115,7 @@ Use `d-gcs{#}` to set the starting point for an element. This can be combined wi
           </td>
         </tr>
         <tr>
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">
+          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">
             <span v-if="g === 'start'">
               .d-gcs-unset
             </span>
@@ -126,7 +126,7 @@ Use `d-gcs{#}` to set the starting point for an element. This can be combined wi
               .d-gc-unset
             </span>
           </th>
-          <td class="d-ff-mono d-fc-orange d-fs12">
+          <td class="d-ff-mono d-fc-orange d-fs-100">
             <span v-if="g === 'start'">
               grid-column-start: unset !important;
             </span>

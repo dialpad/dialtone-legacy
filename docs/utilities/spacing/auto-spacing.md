@@ -9,10 +9,10 @@ prev:
 ## Adding space vertically
 
 <code-well-header class="d-fl-center d-p24 d-bgc-purple-100 d-w100p d-hmn216" custom>
-  <div class="d-fl-center d-fd-column d-bgc-red-200 d-stack16 d-bar8">
-    <div class="d-w128 d-p16 d-bar8 d-bgc-purple-300 d-fs24 d-fw-bold d-ta-center">1</div>
-    <div class="d-w128 d-p16 d-bar8 d-bgc-purple-300 d-fs24 d-fw-bold d-ta-center">2</div>
-    <div class="d-w128 d-p16 d-bar8 d-bgc-purple-300 d-fs24 d-fw-bold d-ta-center">3</div>
+  <div class="d-fl-center d-fd-column d-bgc-red-100 d-stack16 d-bar8">
+    <div class="d-w128 d-p16 d-bar8 d-bgc-purple-300 d-fs-300 d-fw-bold d-ta-center">1</div>
+    <div class="d-w128 d-p16 d-bar8 d-bgc-purple-300 d-fs-300 d-fw-bold d-ta-center">2</div>
+    <div class="d-w128 d-p16 d-bar8 d-bgc-purple-300 d-fs-300 d-fw-bold d-ta-center">3</div>
   </div>
 </code-well-header>
 
@@ -27,7 +27,7 @@ prev:
 ## Adding space horizontally
 
 <code-well-header class="d-fl-center d-p24 d-bgc-purple-100 d-w100p d-hmn216" custom>
-  <div class="d-fl-center d-bgc-red-200 d-flow24 d-bar8 d-fs24 d-fw-bold d-ta-center">
+  <div class="d-fl-center d-bgc-red-100 d-flow24 d-bar8 d-fs-300 d-fw-bold d-ta-center">
     <div class="lg:d-w96 d-w128 d-p16 d-bar8 d-bgc-purple-300">1</div>
     <div class="lg:d-w96 d-w128 d-p16 d-bar8 d-bgc-purple-300">2</div>
     <div class="lg:d-w96 d-w128 d-p16 d-bar8 d-bgc-purple-300">3</div>
@@ -61,8 +61,8 @@ The Stack and Flow layouts work by using the adjacent sibling combinator (`+`) t
   <tbody>
     <tr v-for="{ value: val } in values">
       <th scope="row">{{ val }}px</th>
-      <td class="d-ff-mono d-fc-purple d-fs12">.d-stack{{ val }}</td>
-      <td class="d-ff-mono d-fc-purple d-fs12">.d-flow{{ val }}</td>
+      <td class="d-ff-mono d-fc-purple d-fs-100">.d-stack{{ val }}</td>
+      <td class="d-ff-mono d-fc-purple d-fs-100">.d-flow{{ val }}</td>
     </tr>
   </tbody>
 </table>

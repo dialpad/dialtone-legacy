@@ -17,14 +17,14 @@
       v-for="(s, index) in stops"
       :key="index"
       :class="dynamicClasses(s, index)"
-      class="d-d-flex d-jc-space-between d-ai-center d-px12 d-py8 d-fs12 d-lh6 d-ff-mono"
+      class="d-d-flex d-jc-space-between d-ai-center d-px12 d-py8 d-fs-100 d-lh6 d-ff-mono"
     >
       <div>
         <strong>var(--{{ color }}{{ s.stop ? `-${s.stop}` : '' }})</strong>
         <br>
         <span class="d-fc-dark-lighter">#{{ s.hex }}</span>
       </div>
-      <div class="d-d-flex d-fd-column d-fs11 d-lh2 d-fw-bold d-bar-sm d-px4 py2">
+      <div class="d-d-flex d-fd-column d-fs-100 d-lh2 d-fw-bold d-bar-sm d-px4 py2">
         <div class="">
           {{ s.contrast }}
         </div>
