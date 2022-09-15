@@ -20,7 +20,7 @@ Use `d-tt-uppercase` to uppercase an element's text.
 Use `d-tt-lowercase` to lowercase an element's text.
 
 <code-well-header class="d-fl-center d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn102" custom>
-  <p class="d-fs-300 d-fc-purple d-tt-lowercase">The quick brown fox jumps over the lazy dog.</p>
+  <p class="d-fs-300 d-fc-purple-400 d-tt-lowercase">The quick brown fox jumps over the lazy dog.</p>
 </code-well-header>
 
 ```html
@@ -32,7 +32,7 @@ Use `d-tt-lowercase` to lowercase an element's text.
 Use `d-tt-capitalize` to capitalize an element's text.
 
 <code-well-header class="d-fl-center d-p24 d-bgc-magenta-100 d-bgo50 d-w100p d-hmn102" custom>
-  <p class="d-fs-300 d-fc-magenta d-tt-capitalize">The quick brown fox jumps over the lazy dog.</p>
+  <p class="d-fs-300 d-fc-magenta-300 d-tt-capitalize">The quick brown fox jumps over the lazy dog.</p>
 </code-well-header>
 
 ```html
@@ -49,8 +49,8 @@ Use `d-tt-capitalize` to capitalize an element's text.
   <template #content>
     <tbody>
       <tr v-for="i in transform">
-        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-tt-{{ i }}</th>
-        <td class="d-ff-mono d-fc-orange d-fs-100">text-transform: {{ i }} !important;</td>
+        <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-tt-{{ i }}</th>
+        <td class="d-ff-mono d-fs-100">text-transform: {{ i }} !important;</td>
       </tr>
     </tbody>
   </template>

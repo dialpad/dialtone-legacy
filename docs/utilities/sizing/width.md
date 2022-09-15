@@ -118,24 +118,24 @@ Use `d-w-auto` have the browser calculate and select a width.
     </thead>
     <tbody>
       <tr v-for="i in percentage">
-        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-w{{ i }}p</th>
-        <td class="d-ff-mono d-fc-orange-500 d-fs-100">width: {{ i }}% !important;</td>
+        <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-w{{ i }}p</th>
+        <td class="d-ff-mono d-fs-100">width: {{ i }}% !important;</td>
       </tr>
     </tbody>
     <tbody>
       <tr v-for="i in fixed">
-        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-w{{ i }}</th>
-        <td class="d-ff-mono d-fc-orange-500 d-fs-100">width: {{ i }}px !important;</td>
+        <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-w{{ i }}</th>
+        <td class="d-ff-mono d-fs-100">width: {{ i }}px !important;</td>
       </tr>
     </tbody>
     <tbody>
       <tr>
-        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-w100vw</th>
-        <td class="d-ff-mono d-fc-orange-500 d-fs-100">width: 100vh !important;</td>
+        <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-w100vw</th>
+        <td class="d-ff-mono d-fs-100">width: 100vh !important;</td>
       </tr>
       <tr v-for="i in other">
-        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-w-{{ i }}</th>
-        <td class="d-ff-mono d-fc-orange-500 d-fs-100">width: {{ i }} !important;</td>
+        <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-w-{{ i }}</th>
+        <td class="d-ff-mono d-fs-100">width: {{ i }} !important;</td>
       </tr>
     </tbody>
   </table>

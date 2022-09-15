@@ -31,7 +31,7 @@ Use `d-va-top` to vertically align an element to the top.
       <span class="d-ps-absolute d-t0 d-h32 d-w100p d-by d-bts-dashed d-bbs-dashed d-bc-purple-300"></span>
       <span class="d-ps-absolute d-t0 d-h16 d-w100p d-by d-bts-dashed d-bbs-dashed d-bc-purple-300"></span>
     </div>
-    <p class="d-d-inline-block d-ps-relative d-zi-base1 d-fc-purple d-fs-200">The quick brown fox jumps over the lazy dog.</p>
+    <p class="d-d-inline-block d-ps-relative d-zi-base1 d-fc-purple-400 d-fs-200">The quick brown fox jumps over the lazy dog.</p>
   </div>
 </code-well-header>
 
@@ -67,7 +67,7 @@ Use `d-va-bottom` to vertically align an element to the bottom.
       <span class="d-ps-absolute d-t0 d-h32 d-w100p d-by d-bts-dashed d-bbs-dashed d-bc-magenta-200"></span>
       <span class="d-ps-absolute d-t0 d-h16 d-w100p d-by d-bts-dashed d-bbs-dashed d-bc-magenta-200"></span>
     </div>
-    <p class="d-d-inline-block d-ps-relative d-zi-base1 d-fc-magenta d-fs-200">The quick brown fox jumps over the lazy dog.</p>
+    <p class="d-d-inline-block d-ps-relative d-zi-base1 d-fc-magenta-300 d-fs-200">The quick brown fox jumps over the lazy dog.</p>
   </div>
 </code-well-header>
 
@@ -85,7 +85,7 @@ Use `d-va-text-top` to vertically align an element to text top.
       <span class="d-ps-absolute d-t0 d-h32 d-w100p d-by d-bts-dashed d-bbs-dashed d-bc-gold-300"></span>
       <span class="d-ps-absolute d-t0 d-h16 d-w100p d-by d-bts-dashed d-bbs-dashed d-bc-gold-300"></span>
     </div>
-    <p class="d-d-inline-block d-ps-relative d-zi-base1 d-fc-gold d-fs-200">The quick brown fox jumps over the lazy dog.</p>
+    <p class="d-d-inline-block d-ps-relative d-zi-base1 d-fc-gold-500 d-fs-200">The quick brown fox jumps over the lazy dog.</p>
   </div>
 </code-well-header>
 
@@ -117,8 +117,8 @@ Use `d-va-text-bottom` to vertically align an element to text bottom.
   <template #content>
     <tbody>
       <tr v-for="i in ['baseline', 'top', 'bottom', 'text-top', 'text-bottom', 'middle', 'sub', 'super', 'unset']">
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-va-{{ i }}</th>
-          <td class="d-ff-mono d-fc-orange d-fs-100">vertical-align: {{ i }} !important;</td>
+          <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-va-{{ i }}</th>
+          <td class="d-ff-mono d-fs-100">vertical-align: {{ i }} !important;</td>
       </tr>
     </tbody>
   </template>

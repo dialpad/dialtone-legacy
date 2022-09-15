@@ -54,8 +54,8 @@ Use `d-wb-keep-all` on an element to not use word breaks for Chinese, Japanese, 
   <template #content>
     <tbody>
       <tr v-for="i in ['normal', 'break-all', 'keep-all', 'unset']">
-        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-wb-{{ i }}</th>
-        <td class="d-ff-mono d-fc-orange d-fs-100">word-break: {{ i }} !important;</td>
+        <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-wb-{{ i }}</th>
+        <td class="d-ff-mono d-fs-100">word-break: {{ i }} !important;</td>
       </tr>
     </tbody>
   </template>

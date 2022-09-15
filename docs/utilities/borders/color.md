@@ -101,10 +101,10 @@ Use `fv:d-bc-{color}` to change an element's border color when in `:focus-visibl
     <template #content>
       <tbody>
           <tr>
-              <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-bc-transparent</th>
+              <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-bc-transparent</th>
               <td>
                   <div class="d-d-flex d-jc-space-between d-ai-center">
-                      <div class="d-fl-grow1 d-ff-mono d-fc-orange d-fs-100">
+                      <div class="d-fl-grow1 d-ff-mono d-fs-100">
                           border-color: transparent !important;
                       </div>
                       <div class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar4 d-bc-transparent d-ba"></div>
@@ -112,10 +112,10 @@ Use `fv:d-bc-{color}` to change an element's border color when in `:focus-visibl
               </td>
           </tr>
           <tr>
-              <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-bc-unset</th>
+              <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-bc-unset</th>
               <td>
                   <div class="d-d-flex d-jc-space-between d-ai-center">
-                      <div class="d-fl-grow1 d-ff-mono d-fc-orange d-fs-100">
+                      <div class="d-fl-grow1 d-ff-mono d-fs-100">
                           border-color: unset !important;
                       </div>
                       <div class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar4 d-bc-unset d-ba"></div>
@@ -123,10 +123,10 @@ Use `fv:d-bc-{color}` to change an element's border color when in `:focus-visibl
               </td>
           </tr>
           <tr>
-              <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-bc-white</th>
+              <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-bc-white</th>
               <td>
                   <div class="d-d-flex d-jc-space-between d-ai-center">
-                      <div class="d-fl-grow1 d-ff-mono d-fc-orange d-fs-100">
+                      <div class="d-fl-grow1 d-ff-mono d-fs-100">
                           --bco: 100%;<br/>
                           border-color: hsla(var(--white-h) var(--white-s) var(--white-l) / var(--bco)) !important;
                       </div>
@@ -137,10 +137,10 @@ Use `fv:d-bc-{color}` to change an element's border color when in `:focus-visibl
       </tbody>
       <tbody v-for="{color: c, stops} in colors">
           <tr v-for="{ stop, copy } in stops">
-              <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-bc-{{ c }}-{{ stop }}</th>
+              <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-bc-{{ c }}-{{ stop }}</th>
               <td>
                   <div class="d-d-flex d-jc-space-between d-ai-center">
-                      <div class="d-fl-grow1 d-ff-mono d-fc-orange d-fs-100">
+                      <div class="d-fl-grow1 d-ff-mono d-fs-100">
                           --bco: 100%;<br/>
                           border-color: hsla(var(--{{ c }}-{{ stop }}-h) var(--{{ c }}-{{ stop }}-s) var(--{{ c }}-{{ stop }}-l) / var(--bco)) !important;
                       </div>
