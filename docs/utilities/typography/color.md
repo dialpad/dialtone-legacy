@@ -91,11 +91,11 @@ Use `fv:d-fc-{color}` to change an element's text color on `:focus-visible` stat
 Use `d:d-fc-{color}` to set a different text color when the user prefers dark mode.
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-black-200 d-w100p d-hmn102 d-stack16">
-  <button type="button" class="d-p16 d-bar4 d-fs-200 d-fc-purple d-bgc-magenta-100 d:d-fc-gold d:d-bgc-gold-100 d-ba d-bc-transparent js-theme-switcher">Click on me toggle dark mode</button>
+  <button type="button" class="d-p16 d-bar4 d-fs-200 d-fc-purple-400 d-bgc-magenta-100 d:d-fc-gold-400 d:d-bgc-gold-200 d-ba d-bc-transparent js-theme-switcher">Click on me toggle dark mode</button>
 </code-well-header>
 
 ```html
-<button class="d-fc-purple d:d-fc-gold">...</button>
+<button class="d-fc-purple-400 d:d-fc-gold-400">...</button>
 ```
  -->
 
