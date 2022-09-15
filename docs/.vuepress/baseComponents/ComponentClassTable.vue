@@ -26,17 +26,17 @@
       >
         <th
           scope="row"
-          class="d-ff-mono d-fc-purple d-fw-normal d-fs12"
+          class="d-ff-mono d-fc-purple d-fw-normal d-fs-100"
           v-text="`.${className}`"
         />
-        <td class="d-ff-mono d-fc-orange d-fs12">
+        <td class="d-ff-mono d-fc-orange d-fs-100">
           <span
             class="code-example--inline"
             v-text="applies"
           />
         </td>
         <td
-          class="d-fs12"
+          class="d-fs-100"
           v-text="description"
         />
       </tr>

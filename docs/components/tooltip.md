@@ -68,7 +68,7 @@ No arrow direction is assigned by default. You must select a direction. Twelve d
 <code-well-header>
   <div v-for="dir in directions" class="d-w40p d-p12">
     <div class="d-tooltip d-tooltip--show" :class="'d-tooltip__arrow--'+dir">
-      <span class="d-ff-mono d-fs11 d-mb4">.d-tooltip__arrow--{{ dir }}</span>
+      <span class="d-ff-mono d-fs-100 d-mb4">.d-tooltip__arrow--{{ dir }}</span>
       <div>
         <span>Arrow appears {{ capitalizeDirection(dir) }}.</span>
       </div>

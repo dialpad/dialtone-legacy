@@ -112,7 +112,7 @@ The Toggle component acts as a way to allow the User to switch between two mutua
 
 <code-well-header>
   <fieldset class="d-stack8 d-w50p">
-    <legend class="d-label d-fs20">DND Settings</legend>
+    <legend class="d-label d-fs-300">DND Settings</legend>
     <div class="d-toggle-wrapper d-d-flex d-fd-column">
       <div class="row d-d-flex d-ai-center d-jc-space-between d-mb12">
         <h3>Status</h3>
@@ -136,7 +136,7 @@ The Toggle component acts as a way to allow the User to switch between two mutua
 
 ```html
 <fieldset class="d-stack8 d-w50p">
-  <legend class="d-label d-fs20">DND Settings</legend>
+  <legend class="d-label d-fs-300">DND Settings</legend>
   <div class="d-toggle-wrapper d-d-flex d-fd-column">
     <div class="row d-d-flex d-ai-center d-jc-space-between d-mb12">
       <h3>Status</h3>

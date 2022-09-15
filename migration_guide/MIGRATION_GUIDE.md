@@ -77,6 +77,9 @@ Purple Remapping | Before and After
 - Replaced `RobotoMono` font with SFMono.
 - Removed `fw-thin`, `fw-light` and `fw-black` variables (RobotoMono shims).
 
+### Updated Font Size Ramps
+- Removed `fs10`, `fs11`, `fs12`, `fs14`, `fs16`, `fs18`, `fs20`, `fs24`, `fs28`, `fs32`, `fs36`, `fs42`, `fs48`, `fs54`.
+
 ## Migration Steps
 
 Follow steps in this exact order.
@@ -212,3 +215,44 @@ Check updates to confirm desired rendering and alignment to contrast accessibili
 ### 6. Font updates
 
 Remove any usages of deprecated `.d-fw-thin`, `.d-fw-light` and `.d-fw-dark` classes. 
+
+#### Update font-size CSS classes usage 
+
+Search for | Replace with
+:-:|:-:
+`d-fs10` | `d-fs-100`
+`d-fs11` | `d-fs-100`
+`d-fs12` | `d-fs-100`
+`d-fs14` | `d-fs-200`
+`d-fs16` | `d-fs-200`
+`d-fs18` | `d-fs-200`
+`d-fs20` | `d-fs-300`
+`d-fs24` | `d-fs-300`
+`d-fs28` | `d-fs-400`
+`d-fs32` | `d-fs-400`
+`d-fs36` | `d-fs-400`
+`d-fs42` | `d-fs-500`
+`d-fs48` | `d-fs-500`
+`d-fs54` | `d-fs-500`
+
+####  Update font-size CSS variables
+
+Search for | Replace with
+:-:|:-:
+`var(--fs10)` | `var(--fs-100)`
+`var(--fs11)` | `var(--fs-100)`
+`var(--fs12)` | `var(--fs-100)`
+`var(--fs14)` | `var(--fs-200)`
+`var(--fs16)` | `var(--fs-200)`
+`var(--fs18)` | `var(--fs-200)`
+`var(--fs20)` | `var(--fs-300)`
+`var(--fs24)` | `var(--fs-300)`
+`var(--fs28)` | `var(--fs-400)`
+`var(--fs32)` | `var(--fs-400)`
+`var(--fs36)` | `var(--fs-400)`
+`var(--fs42)` | `var(--fs-500)`
+`var(--fs48)` | `var(--fs-500)`
+`var(--fs54)` | `var(--fs-500)`
+
+Check updates to confirm desired readability. Most replacements are likely accurate, though they may need to be visually
+validated.
