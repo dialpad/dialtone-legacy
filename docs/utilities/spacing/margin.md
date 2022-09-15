@@ -53,10 +53,10 @@ desc: Utilities to adjust an element's exterior spacing between other objects.
 
 Auto margins allow an element to fill a remaining space within an object. This is especially useful in flex layouts.
 
-<code-well-header class="d-bgc-yellow-100 d-bgo50 d-w100p d-hmn216 d-p24 d-stack16" custom>
-  <div class="d-d-flex d-bar8 d-bgc-yellow-200 d-of-hidden"><div class="d-fl-center d-mx-auto d-p16 d-bgc-yellow-400 d-fs-200 d-ff-mono">d-mx-auto</div></div>
-  <div class="d-d-flex d-bar8 d-bgc-yellow-200 d-of-hidden"><div class="d-fl-center d-ml-auto d-p16 d-bgc-yellow-400 d-fs-200 d-ff-mono">d-ml-auto</div></div>
-  <div class="d-d-flex d-bar8 d-bgc-yellow-200 d-of-hidden"><div class="d-fl-center d-mr-auto d-p16 d-bgc-yellow-400 d-fs-200 d-ff-mono">d-mr-auto</div></div>
+<code-well-header class="d-bgc-gold-100 d-bgo50 d-w100p d-hmn216 d-p24 d-stack16" custom>
+  <div class="d-d-flex d-bar8 d-bgc-gold-100 d-of-hidden"><div class="d-fl-center d-mx-auto d-p16 d-bgc-gold-200 d-fs-200 d-ff-mono">d-mx-auto</div></div>
+  <div class="d-d-flex d-bar8 d-bgc-gold-100 d-of-hidden"><div class="d-fl-center d-ml-auto d-p16 d-bgc-gold-200 d-fs-200 d-ff-mono">d-ml-auto</div></div>
+  <div class="d-d-flex d-bar8 d-bgc-gold-100 d-of-hidden"><div class="d-fl-center d-mr-auto d-p16 d-bgc-gold-200 d-fs-200 d-ff-mono">d-mr-auto</div></div>
 </code-well-header>
 
 ```html
