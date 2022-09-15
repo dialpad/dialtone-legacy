@@ -8,10 +8,10 @@ desc: Utilities for controlling an element's outline.
 Use `d-ol-{focusring|none}` to change an elements' outline.
 
 <code-well-header class="d-fl-col5 d-flg8 d-fw-wrap d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn102" custom>
-  <div class="d-fl-center d-p16 d-ba d-bc-purple-300 d-bgc-purple-100 d-fs12 d-ff-mono d-ol-focusring">
+  <div class="d-fl-center d-p16 d-ba d-bc-purple-300 d-bgc-purple-100 d-fs-100 d-ff-mono d-ol-focusring">
     .d-ol-focusring
   </div>
-  <div class="d-fl-center d-p16 d-ba d-bc-purple-300 d-bgc-purple-100 d-fs12 d-ff-mono d-ol-none">
+  <div class="d-fl-center d-p16 d-ba d-bc-purple-300 d-bgc-purple-100 d-fs-100 d-ff-mono d-ol-none">
     .d-ol-none
   </div>
 </code-well-header>
@@ -31,8 +31,8 @@ Use `d-ol-{focusring|none}` to change an elements' outline.
   <template #content>
     <tbody>
       <tr v-for="{ class: className, output } in outline">
-        <th scope="row" class="d-ff-mono d-fc-purple d-fs12">.{{ className }}</th>
-        <td class="d-ff-mono d-fc-orange d-fs12">{{ output }}</td>
+        <th scope="row" class="d-ff-mono d-fc-purple d-fs-100">.{{ className }}</th>
+        <td class="d-ff-mono d-fc-orange d-fs-100">{{ output }}</td>
       </tr>
     </tbody>
   </template>

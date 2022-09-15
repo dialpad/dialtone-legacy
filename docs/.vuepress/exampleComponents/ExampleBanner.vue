@@ -14,7 +14,7 @@
       >
         <div class="d-fl-grow1">
           <div>
-            <div class="d-label d-fs14">
+            <div class="d-label d-fs-200">
               <label for="style-select">Style</label>
             </div>
             <div class="d-select d-select--sm">

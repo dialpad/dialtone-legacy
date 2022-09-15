@@ -11,7 +11,7 @@ prev:
 Use `d-bs-{n}` to add an outer box shadow to an element.
 
 <code-well-header class="d-fl-col4 d-flg16 d-fw-wrap d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn102" custom>
-  <div v-for="{ className } in boxSize" class="d-fl-center d-p16 d-bar8 d-bgc-white d-fs18 d-fw-bold" :class="`d-bs-${className}`">.d-bs-{{ className }}</div>
+  <div v-for="{ className } in boxSize" class="d-fl-center d-p16 d-bar8 d-bgc-white d-fs-200 d-fw-bold" :class="`d-bs-${className}`">.d-bs-{{ className }}</div>
 </code-well-header>
 
 ```html
@@ -28,7 +28,7 @@ Use `d-bs-{n}` to add an outer box shadow to an element.
 Use `d-bs-none` to remove a box shadow to an element.
 
 <code-well-header class="d-fl-center d-p24 d-bgc-magenta-100 d-bgo50 d-w100p d-hmn102" custom>
-  <div class="d-fl-center d-p16 d-bar8 d-bgc-white d-fs18 d-fw-bold d-bs-none">.d-bs-none</div>
+  <div class="d-fl-center d-p16 d-bar8 d-bgc-white d-fs-200 d-fw-bold d-bs-none">.d-bs-none</div>
 </code-well-header>
 
 ```html
@@ -41,7 +41,7 @@ Use `d-bs-none` to remove a box shadow to an element.
 Use `h:d-bs-{n}` to change an element's `:hover` state box shadow.
 
 <code-well-header class="d-fl-center d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn102" custom>
-  <div class="d-fl-center d-p16 d-bar8 d-bgc-white d-fs18 d-fw-bold d-bs-none h:d-bs-lg">Hover over me</div>
+  <div class="d-fl-center d-p16 d-bar8 d-bgc-white d-fs-200 d-fw-bold d-bs-none h:d-bs-lg">Hover over me</div>
 </code-well-header>
 
 ```html
@@ -54,7 +54,7 @@ Use `h:d-bs-{n}` to change an element's `:hover` state box shadow.
 Use `f:d-bs-{n}` to change an element's `:focus` and `:focus-within` state box shadow.
 
 <code-well-header class="d-fl-center d-p24 d-bgc-magenta-100 d-bgo50 d-w100p d-hmn102" custom>
-  <div tabindex="0" class="d-fl-center d-p16 d-bar8 d-bgc-white d-fs18 d-fw-bold d-bs-none f:d-bs-lg">Click on me</div>
+  <div tabindex="0" class="d-fl-center d-p16 d-bar8 d-bgc-white d-fs-200 d-fw-bold d-bs-none f:d-bs-lg">Click on me</div>
 </code-well-header>
 
 ```html
@@ -67,7 +67,7 @@ Use `f:d-bs-{n}` to change an element's `:focus` and `:focus-within` state box s
 Use `fv:d-bs-{n}` to change an element's `:focus-visible` state box shadow [only when focused by keyboard].
 
 <code-well-header class="d-fl-center d-p24 d-bgc-magenta-100 d-bgo50 d-w100p d-hmn102" custom>
-  <div tabindex="0" class="d-fl-center d-p16 d-bar8 d-bgc-white d-fs18 d-fw-bold d-bs-none fv:d-bs-lg">Focus on me</div>
+  <div tabindex="0" class="d-fl-center d-p16 d-bar8 d-bgc-white d-fs-200 d-fw-bold d-bs-none fv:d-bs-lg">Focus on me</div>
 </code-well-header>
 
 ```html
@@ -96,8 +96,8 @@ Use `fv:d-bs-{n}` to change an element's `:focus-visible` state box shadow [only
   </thead>
   <tbody>
     <tr v-for="{className, size, opacity} in boxSize">
-      <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">var(--bs-{{ className }})</th>
-      <td class="d-ff-mono d-fc-orange d-fs12">
+      <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">var(--bs-{{ className }})</th>
+      <td class="d-ff-mono d-fc-orange d-fs-100">
         <span v-if="className !== 'card'">
           0 var(--su2) var(--su{{size}}) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l) / {{opacity}}%);
         </span>
@@ -117,16 +117,16 @@ Use `fv:d-bs-{n}` to change an element's `:focus-visible` state box shadow [only
   <template #content>
     <tbody>
       <tr v-for="{ className } in boxSize">
-        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-bs-{{ className }}</th>
-        <td class="d-ff-mono d-fc-orange d-fs12">box-shadow: var(--br-{{ className }}) !important;</td>
+        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-bs-{{ className }}</th>
+        <td class="d-ff-mono d-fc-orange d-fs-100">box-shadow: var(--br-{{ className }}) !important;</td>
       </tr>
       <tr>
-        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-bs-none</th>
-        <td class="d-ff-mono d-fc-orange d-fs12">box-shadow: none !important;</td>
+        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-bs-none</th>
+        <td class="d-ff-mono d-fc-orange d-fs-100">box-shadow: none !important;</td>
       </tr>
       <tr>
-        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-bs-unset</th>
-        <td class="d-ff-mono d-fc-orange d-fs12">box-shadow: unset !important;</td>
+        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-bs-unset</th>
+        <td class="d-ff-mono d-fc-orange d-fs-100">box-shadow: unset !important;</td>
       </tr>
     </tbody>
   </template>

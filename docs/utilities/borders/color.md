@@ -11,7 +11,7 @@ prev:
 Use `d-bc-{color}` to set an element's border color.
 
 <code-well-header class="d-d-flex d-jc-center d-fd-column d-p32 d-bgc-purple-100 d-bgo50 d-w100p d-hmn102" custom>
-  <div class="d-d-flex d-ai-center d-w100p d-h64 d-py8 d-px16 d-bar8 d-ba d-bc-purple-400 d-bgc-white d-bgo50 d-fc-black-700 d-fs18">A bordered element</div>
+  <div class="d-d-flex d-ai-center d-w100p d-h64 d-py8 d-px16 d-bar8 d-ba d-bc-purple-400 d-bgc-white d-bgo50 d-fc-black-700 d-fs-200">A bordered element</div>
 </code-well-header>
 
 ```html
@@ -26,15 +26,15 @@ Use `d-bco{n}` to change the border color opacity value. You can also change the
 or `d:d-bco{n}` prefixes.
 
 <code-well-header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-orange-100 d-bgo50 d-w100p d-hmn102 d-stack8" custom>
-  <div class="d-w100p d-p4 d-bb d-bbw2 d-bc-orange-500 d-fs14 d-fw-bold d-ff-mono">100%</div>
-  <div class="d-w100p d-p4 d-bb d-bbw2 d-bc-orange-500 d-bco99 d-fs14 d-fw-bold">99%</div>
-  <div class="d-w100p d-p4 d-bb d-bbw2 d-bc-orange-500 d-bco95 d-fs14 d-fw-bold">95%</div>
-  <div class="d-w100p d-p4 d-bb d-bbw2 d-bc-orange-500 d-bco90 d-fs14 d-fw-bold">90%</div>
-  <div class="d-w100p d-p4 d-bb d-bbw2 d-bc-orange-500 d-bco75 d-fs14 d-fw-bold">75%</div>
-  <div class="d-w100p d-p4 d-bb d-bbw2 d-bc-orange-500 d-bco50 d-fs14 d-fw-bold">50%</div>
-  <div class="d-w100p d-p4 d-bb d-bbw2 d-bc-orange-500 d-bco25 d-fs14 d-fw-bold">25%</div>
-  <div class="d-w100p d-p4 d-bb d-bbw2 d-bc-orange-500 d-bco10 d-fs14 d-fw-bold">10%</div>
-  <div class="d-w100p d-p4 d-bb d-bbw2 d-bc-orange-500 d-bco0 d-fs14 d-fw-bold">0%</div>
+  <div class="d-w100p d-p4 d-bb d-bbw2 d-bc-orange-500 d-fs-200 d-fw-bold d-ff-mono">100%</div>
+  <div class="d-w100p d-p4 d-bb d-bbw2 d-bc-orange-500 d-bco99 d-fs-200 d-fw-bold">99%</div>
+  <div class="d-w100p d-p4 d-bb d-bbw2 d-bc-orange-500 d-bco95 d-fs-200 d-fw-bold">95%</div>
+  <div class="d-w100p d-p4 d-bb d-bbw2 d-bc-orange-500 d-bco90 d-fs-200 d-fw-bold">90%</div>
+  <div class="d-w100p d-p4 d-bb d-bbw2 d-bc-orange-500 d-bco75 d-fs-200 d-fw-bold">75%</div>
+  <div class="d-w100p d-p4 d-bb d-bbw2 d-bc-orange-500 d-bco50 d-fs-200 d-fw-bold">50%</div>
+  <div class="d-w100p d-p4 d-bb d-bbw2 d-bc-orange-500 d-bco25 d-fs-200 d-fw-bold">25%</div>
+  <div class="d-w100p d-p4 d-bb d-bbw2 d-bc-orange-500 d-bco10 d-fs-200 d-fw-bold">10%</div>
+  <div class="d-w100p d-p4 d-bb d-bbw2 d-bc-orange-500 d-bco0 d-fs-200 d-fw-bold">0%</div>
 </code-well-header>
 
 ```html
@@ -55,7 +55,7 @@ or `d:d-bco{n}` prefixes.
 Use `h:d-bc-{color}` to change an element's border color spot on `:hover`.
 
 <code-well-header class="d-fl-center d-p24 d-bgc-green-100 d-bgo50 d-w100p d-hmn102" custom>
-  <button class="d-p16 d-bar4 d-fs18 d-fc-green-400 d-ba d-baw2 d-bc-green-100 h:d-bc-green-400 d-bgc-green-100">Hover over me</button>
+  <button class="d-p16 d-bar4 d-fs-200 d-fc-green-400 d-ba d-baw2 d-bc-green-100 h:d-bc-green-400 d-bgc-green-100">Hover over me</button>
 </code-well-header>
 
 ```html
@@ -68,7 +68,7 @@ Use `h:d-bc-{color}` to change an element's border color spot on `:hover`.
 Use `f:d-bc-{color}` to change an element's border color when in `:focus` or `:focus-within` states.
 
 <code-well-header class="d-fl-center d-p24 d-bgc-red-100 d-bgo50 d-w100p d-hmn102" custom>
-  <button class="d-p16 d-bar4 d-fs18 d-fc-white d-bgc-red-200 d-ba d-baw2 d-bc-red-300 f:d-bc-purple-400">Click on me</button>
+  <button class="d-p16 d-bar4 d-fs-200 d-fc-white d-bgc-red-200 d-ba d-baw2 d-bc-red-300 f:d-bc-purple-400">Click on me</button>
 </code-well-header>
 
 ```html
@@ -82,7 +82,7 @@ Use `fv:d-bc-{color}` to change an element's border color when in `:focus-visibl
 .
 
 <code-well-header class="d-fl-center d-p24 d-bgc-red-100 d-bgo50 d-w100p d-hmn102" custom>
-  <button class="d-p16 d-bar4 d-fs18 d-fc-white d-bgc-red-200 d-ba d-baw2 d-bc-red-300 fv:d-bc-purple-400">Focus on me</button>
+  <button class="d-p16 d-bar4 d-fs-200 d-fc-white d-bgc-red-200 d-ba d-baw2 d-bc-red-300 fv:d-bc-purple-400">Focus on me</button>
 </code-well-header>
 
 ```html
@@ -101,10 +101,10 @@ Use `fv:d-bc-{color}` to change an element's border color when in `:focus-visibl
     <template #content>
       <tbody>
           <tr>
-              <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-bc-transparent</th>
+              <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-bc-transparent</th>
               <td>
                   <div class="d-d-flex d-jc-space-between d-ai-center">
-                      <div class="d-fl-grow1 d-ff-mono d-fc-orange d-fs12">
+                      <div class="d-fl-grow1 d-ff-mono d-fc-orange d-fs-100">
                           border-color: transparent !important;
                       </div>
                       <div class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar4 d-bc-transparent d-ba"></div>
@@ -112,10 +112,10 @@ Use `fv:d-bc-{color}` to change an element's border color when in `:focus-visibl
               </td>
           </tr>
           <tr>
-              <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-bc-unset</th>
+              <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-bc-unset</th>
               <td>
                   <div class="d-d-flex d-jc-space-between d-ai-center">
-                      <div class="d-fl-grow1 d-ff-mono d-fc-orange d-fs12">
+                      <div class="d-fl-grow1 d-ff-mono d-fc-orange d-fs-100">
                           border-color: unset !important;
                       </div>
                       <div class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar4 d-bc-unset d-ba"></div>
@@ -123,10 +123,10 @@ Use `fv:d-bc-{color}` to change an element's border color when in `:focus-visibl
               </td>
           </tr>
           <tr>
-              <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-bc-white</th>
+              <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-bc-white</th>
               <td>
                   <div class="d-d-flex d-jc-space-between d-ai-center">
-                      <div class="d-fl-grow1 d-ff-mono d-fc-orange d-fs12">
+                      <div class="d-fl-grow1 d-ff-mono d-fc-orange d-fs-100">
                           --bco: 100%;<br/>
                           border-color: hsla(var(--white-h) var(--white-s) var(--white-l) / var(--bco)) !important;
                       </div>
@@ -137,10 +137,10 @@ Use `fv:d-bc-{color}` to change an element's border color when in `:focus-visibl
       </tbody>
       <tbody v-for="{color: c, stops} in colors">
           <tr v-for="{ stop, copy } in stops">
-              <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-bc-{{ c }}-{{ stop }}</th>
+              <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-bc-{{ c }}-{{ stop }}</th>
               <td>
                   <div class="d-d-flex d-jc-space-between d-ai-center">
-                      <div class="d-fl-grow1 d-ff-mono d-fc-orange d-fs12">
+                      <div class="d-fl-grow1 d-ff-mono d-fc-orange d-fs-100">
                           --bco: 100%;<br/>
                           border-color: hsla(var(--{{ c }}-{{ stop }}-h) var(--{{ c }}-{{ stop }}-s) var(--{{ c }}-{{ stop }}-l) / var(--bco)) !important;
                       </div>

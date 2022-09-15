@@ -38,8 +38,8 @@ Use `d-bgs-{n}` to control the size of element's background image.
   <template #content>
     <tbody>
       <tr v-for="i in sizes">
-        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-bgp-{{ i }}</th>
-        <td class="d-ff-mono d-fc-orange d-fs12">
+        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-bgp-{{ i }}</th>
+        <td class="d-ff-mono d-fc-orange d-fs-100">
           background-size:
             <span v-if="i === 'var'"> var(--bgg-size, 100% 100%); </span>
             <span v-else >{{ i }} !important; </span>

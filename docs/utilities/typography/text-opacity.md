@@ -9,15 +9,15 @@ The ability to control an element's color is <em>only</em> provided as a class. 
 Use `d-fco{n}` to change a font-color's opacity. You can also change font-color's opacity on `:hover`, `:focus`, `:focus-visible`, or in dark mode by using the respective `h:d-fco{n}`, `f:d-fco{n}`, `fv:d-fco{n}`, or `d:d-fco{n}` prefixes.
 
 <code-well-header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-magenta-100 d-w100p d-hmn102" custom>
-  <p class="d-fs20 d-fc-magenta-400">The quick brown fox jumps over the lazy dog.</p>
-  <p class="d-fs20 d-fc-magenta-400 d-fco99">The quick brown fox jumps over the lazy dog.</p>
-  <p class="d-fs20 d-fc-magenta-400 d-fco95">The quick brown fox jumps over the lazy dog.</p>
-  <p class="d-fs20 d-fc-magenta-400 d-fco90">The quick brown fox jumps over the lazy dog.</p>
-  <p class="d-fs20 d-fc-magenta-400 d-fco75">The quick brown fox jumps over the lazy dog.</p>
-  <p class="d-fs20 d-fc-magenta-400 d-fco50">The quick brown fox jumps over the lazy dog.</p>
-  <p class="d-fs20 d-fc-magenta-400 d-fco25">The quick brown fox jumps over the lazy dog.</p>
-  <p class="d-fs20 d-fc-magenta-400 d-fco10">The quick brown fox jumps over the lazy dog.</p>
-  <p class="d-fs20 d-fc-magenta-400 d-fco0">The quick brown fox jumps over the lazy dog.</p>
+  <p class="d-fs-300 d-fc-magenta-400">The quick brown fox jumps over the lazy dog.</p>
+  <p class="d-fs-300 d-fc-magenta-400 d-fco99">The quick brown fox jumps over the lazy dog.</p>
+  <p class="d-fs-300 d-fc-magenta-400 d-fco95">The quick brown fox jumps over the lazy dog.</p>
+  <p class="d-fs-300 d-fc-magenta-400 d-fco90">The quick brown fox jumps over the lazy dog.</p>
+  <p class="d-fs-300 d-fc-magenta-400 d-fco75">The quick brown fox jumps over the lazy dog.</p>
+  <p class="d-fs-300 d-fc-magenta-400 d-fco50">The quick brown fox jumps over the lazy dog.</p>
+  <p class="d-fs-300 d-fc-magenta-400 d-fco25">The quick brown fox jumps over the lazy dog.</p>
+  <p class="d-fs-300 d-fc-magenta-400 d-fco10">The quick brown fox jumps over the lazy dog.</p>
+  <p class="d-fs-300 d-fc-magenta-400 d-fco0">The quick brown fox jumps over the lazy dog.</p>
 </code-well-header>
 
 ```html
@@ -81,8 +81,8 @@ Please note that because the opacity adjustments are made via CSS variables, a f
   <template #content>
     <tbody>
       <tr v-for="i in opacity">
-        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-fco{{ i }}</th>
-        <td class="d-ff-mono d-fc-orange d-fs12">--fco: {{ i }}% !important;</td>
+        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-fco{{ i }}</th>
+        <td class="d-ff-mono d-fc-orange d-fs-100">--fco: {{ i }}% !important;</td>
       </tr>
     </tbody>
   </template>

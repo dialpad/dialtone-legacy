@@ -51,7 +51,7 @@
           <td class="d-ta-center d-py4">
             <component :is="importIconComponent(code.night)" />
           </td>
-          <td class="d-fs14">
+          <td class="d-fs-200">
             {{ code.name }}
           </td>
         </tr>
