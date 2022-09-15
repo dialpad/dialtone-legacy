@@ -29,7 +29,7 @@ All examples below have a 128px height and width. You can see how `.d-box-border
     <tbody>
       <tr v-for="i in ['content', 'split']">
         <th class="d-ff-mono d-fc-purple-400 d-fs-100 d-fw-normal">d-box-{{ i }}</th>
-        <td class="d-ff-mono d-fc-orange d-fs-100">box-sizing: {{ i }}-box;</td>
+        <td class="d-ff-mono d-fs-100">box-sizing: {{ i }}-box;</td>
       </tr>
     </tbody>
   </template>

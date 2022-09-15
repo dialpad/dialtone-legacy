@@ -19,11 +19,11 @@ Use `.d-gl-sidebar` to create a simple 2-column layout with a sidebar and main c
   <tbody>
     <tr>
       <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">var(--sidebar-width)</th>
-      <td class="d-ff-mono d-fc-orange d-fs-100">minmax(20rem, 30rem);</td>
+      <td class="d-ff-mono d-fs-100">minmax(20rem, 30rem);</td>
     </tr>
     <tr>
       <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">var(--content-width)</th>
-      <td class="d-ff-mono d-fc-orange d-fs-100">minmax(32rem, 90ch);</td>
+      <td class="d-ff-mono d-fs-100">minmax(32rem, 90ch);</td>
     </tr>
   </tbody>
 </table>
@@ -62,11 +62,11 @@ Use `.d-gl-header` to create a simple 2-row layout with a header area and main c
   <tbody>
     <tr>
       <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">var(--header-height)</th>
-      <td class="d-ff-mono d-fc-orange d-fs-100">minmax(6.4rem, min-content);</td>
+      <td class="d-ff-mono d-fs-100">minmax(6.4rem, min-content);</td>
     </tr>
     <tr>
       <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">var(--content-height)</th>
-      <td class="d-ff-mono d-fc-orange d-fs-100">minmax(64rem, max-content);</td>
+      <td class="d-ff-mono d-fs-100">minmax(64rem, max-content);</td>
     </tr>
   </tbody>
 </table>
@@ -108,7 +108,7 @@ Use `.d-g-cols{n}` to create a multi-column layout.
     <tbody>
       <tr v-for="i in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]">
         <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-g-cols{{ i }}</th>
-        <td class="d-ff-mono d-fc-orange-500 d-fs-100">grid-template-columns: repeat({{ i }},  minmax(0, 1fr)) !important;</td>
+        <td class="d-ff-mono d-fs-100">grid-template-columns: repeat({{ i }},  minmax(0, 1fr)) !important;</td>
       </tr>
     </tbody>
   </template>

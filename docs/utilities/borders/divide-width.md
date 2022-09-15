@@ -103,7 +103,7 @@ If an element's `flex-direction` is reversed, apply `d-divide-{y|x}-reverse` to 
           <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
             d-divide-{{ d }}<span v-if="i !== 'default'" v-text="i"></span> > *+*
           </th>
-          <td class="d-ff-mono d-fc-orange d-fs-100">
+          <td class="d-ff-mono d-fs-100">
             --divide-{{ d }}-reverse: 0;<br/>
             <span v-if="d === 'y'">
               border-top: calc(

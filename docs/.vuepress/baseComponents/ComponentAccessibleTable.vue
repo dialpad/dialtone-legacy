@@ -30,7 +30,7 @@
           v-text="item"
         />
         <td
-          class="d-ff-mono d-fc-orange d-fs-100"
+          class="d-ff-mono d-fs-100"
           v-text="applies"
         />
         <td

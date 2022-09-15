@@ -93,7 +93,7 @@ Use `fv:d-bgc-{color}` to change an element's `:focus-visible` state background 
               <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-bgc-transparent</th>
               <td>
                   <div class="d-d-flex d-jc-space-between d-ai-center">
-                      <div class="d-fl-grow1 d-ff-mono d-fc-orange d-fs-100">
+                      <div class="d-fl-grow1 d-ff-mono d-fs-100">
                           background-color: transparent !important;
                       </div>
                       <div class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar4 d-bgc-transparent d-ba d-bc-black-100"></div>
@@ -104,7 +104,7 @@ Use `fv:d-bgc-{color}` to change an element's `:focus-visible` state background 
               <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-bgc-unset</th>
               <td>
                   <div class="d-d-flex d-jc-space-between d-ai-center">
-                      <div class="d-fl-grow1 d-ff-mono d-fc-orange d-fs-100">
+                      <div class="d-fl-grow1 d-ff-mono d-fs-100">
                           background-color: unset !important;
                       </div>
                       <div class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar4 d-bgc-unset d-ba d-bc-black-100"></div>
@@ -115,7 +115,7 @@ Use `fv:d-bgc-{color}` to change an element's `:focus-visible` state background 
               <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-bgc-white</th>
               <td>
                   <div class="d-d-flex d-jc-space-between d-ai-center">
-                      <div class="d-fl-grow1 d-ff-mono d-fc-orange d-fs-100">
+                      <div class="d-fl-grow1 d-ff-mono d-fs-100">
                           --bgo: 100%;<br/>
                           background-color: hsla(var(--white-h) var(--white-s) var(--white-l) / var(--bgo)) !important;
                       </div>
@@ -129,7 +129,7 @@ Use `fv:d-bgc-{color}` to change an element's `:focus-visible` state background 
             <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-bgc-{{ color }}-{{ stop }}</th>
             <td>
                 <div class="d-d-flex d-jc-space-between d-ai-center">
-                    <div class="d-fl-grow1 d-ff-mono d-fc-orange d-fs-100">
+                    <div class="d-fl-grow1 d-ff-mono d-fs-100">
                         --bgo: 100%;<br/>
                         background-color: hsla(var(--{{ color }}-{{ stop }}-h) var(--{{ color }}-{{ stop }}-s) var(--{{ color }}-{{ stop }}-l) / var(--bgo)) !important;
                     </div>

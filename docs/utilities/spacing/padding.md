@@ -72,7 +72,7 @@ Padding can be added to an element by using a utility class (i.e. `.d-p[#]`) or 
                 <span v-if="i !== 'All'">.d-p{{ i[0] }}{{ val }}</span>
                 <span v-else>.d-p{{ val }}</span>
               </th>
-              <td class="d-ff-mono d-fc-orange-500 d-fs-100">
+              <td class="d-ff-mono d-fs-100">
                   <span v-if="i == 'y'">
                     padding-top: {{ output }} !important;<br/>
                     padding-bottom: {{ output }} !important;
@@ -95,7 +95,7 @@ Padding can be added to an element by using a utility class (i.e. `.d-p[#]`) or 
             <span v-if="i !== 'All'">.d-p{{ i[0] }}-unset</span>
             <span v-else>.d-p-unset</span>
           </th>
-          <td class="d-ff-mono d-fc-orange-500 d-fs-100">
+          <td class="d-ff-mono d-fs-100">
             <span v-if="i == 'y'">
               padding-top: unset !important;<br/>
               padding-bottom: unset !important;

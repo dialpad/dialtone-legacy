@@ -97,7 +97,7 @@ Use `fv:d-bs-{n}` to change an element's `:focus-visible` state box shadow [only
   <tbody>
     <tr v-for="{className, size, opacity} in boxSize">
       <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">var(--bs-{{ className }})</th>
-      <td class="d-ff-mono d-fc-orange d-fs-100">
+      <td class="d-ff-mono d-fs-100">
         <span v-if="className !== 'card'">
           0 var(--su2) var(--su{{size}}) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l) / {{opacity}}%);
         </span>
@@ -118,15 +118,15 @@ Use `fv:d-bs-{n}` to change an element's `:focus-visible` state box shadow [only
     <tbody>
       <tr v-for="{ className } in boxSize">
         <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-bs-{{ className }}</th>
-        <td class="d-ff-mono d-fc-orange d-fs-100">box-shadow: var(--br-{{ className }}) !important;</td>
+        <td class="d-ff-mono d-fs-100">box-shadow: var(--br-{{ className }}) !important;</td>
       </tr>
       <tr>
         <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-bs-none</th>
-        <td class="d-ff-mono d-fc-orange d-fs-100">box-shadow: none !important;</td>
+        <td class="d-ff-mono d-fs-100">box-shadow: none !important;</td>
       </tr>
       <tr>
         <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-bs-unset</th>
-        <td class="d-ff-mono d-fc-orange d-fs-100">box-shadow: unset !important;</td>
+        <td class="d-ff-mono d-fs-100">box-shadow: unset !important;</td>
       </tr>
     </tbody>
   </template>

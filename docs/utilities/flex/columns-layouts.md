@@ -99,13 +99,13 @@ By default flexed items align to `flex-start` both horizontally and vertically (
       <tbody>
         <tr v-for="i in columns">
           <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-fl-col{{ i }}</th>
-          <td class="d-ff-mono d-fc-orange d-fs-100 d-ws-pre">> *{ flex-basis: calc({{ calcFlexBasis(i) }}% - (var(--fl-gap)* 2)); }</td>
+          <td class="d-ff-mono d-fs-100 d-ws-pre">> *{ flex-basis: calc({{ calcFlexBasis(i) }}% - (var(--fl-gap)* 2)); }</td>
         </tr>
       </tbody>
       <tbody>
         <tr v-for="i in gaps">
           <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-flg{{ i }}</th>
-          <td class="d-ff-mono d-fc-orange d-fs-100 d-ws-pre">> * { --fl-gap: {{ calcGap(i) }} !important; }</td>
+          <td class="d-ff-mono d-fs-100 d-ws-pre">> * { --fl-gap: {{ calcGap(i) }} !important; }</td>
         </tr>
       </tbody>
     </template>

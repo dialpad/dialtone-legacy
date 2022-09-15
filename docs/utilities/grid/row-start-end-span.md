@@ -64,7 +64,7 @@ Use `d-gre{#}` to set an element's ending point. A reminder that CSS grid rows s
             <span v-else-if="g === 'end'">.d-gre{{ i }}</span>
             <span v-else>.d-gr{{ i }}</span>
           </th>
-          <td class="d-ff-mono d-fc-orange d-fs-100">
+          <td class="d-ff-mono d-fs-100">
             <span v-if="g === 'start'">
               grid-row-start: {{ i }}
             </span>
@@ -78,7 +78,7 @@ Use `d-gre{#}` to set an element's ending point. A reminder that CSS grid rows s
         </tr>
         <tr v-if="g === 'span'">
           <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-gr-full</th>
-          <td class="d-ff-mono d-fc-orange d-fs-100">grid-row: 1 / -1 !important;</td>
+          <td class="d-ff-mono d-fs-100">grid-row: 1 / -1 !important;</td>
         </tr>
         <tr>
           <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
@@ -92,7 +92,7 @@ Use `d-gre{#}` to set an element's ending point. A reminder that CSS grid rows s
               .d-gr-auto
             </span>
           </th>
-          <td class="d-ff-mono d-fc-orange d-fs-100">
+          <td class="d-ff-mono d-fs-100">
             <span v-if="g === 'start'">
               grid-row-start: auto !important;
             </span>
@@ -116,7 +116,7 @@ Use `d-gre{#}` to set an element's ending point. A reminder that CSS grid rows s
               .d-gr-unset
             </span>
           </th>
-          <td class="d-ff-mono d-fc-orange d-fs-100">
+          <td class="d-ff-mono d-fs-100">
             <span v-if="g === 'start'">
               grid-row-start: unset !important;
             </span>

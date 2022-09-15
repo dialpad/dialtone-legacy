@@ -60,7 +60,7 @@ Use `d-svg--size100p` to set the size of an SVG to the size of the containing el
     <tbody>
       <tr v-for="size in iconSizes">
         <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">{{ size.class }}</th>
-          <td class="d-ff-mono d-fc-orange d-fs-100">
+          <td class="d-ff-mono d-fs-100">
             <span v-if="size.sizeRem">
               width: {{ size.sizeRem }} !important;
               height: {{ size.sizeRem }} !important;

@@ -32,10 +32,10 @@
             <span v-if="kind === 'css'">var(--su{{ val }})</span>
             <span v-else>@su{{ val }}</span>
           </th>
-          <td class="d-ff-mono d-fc-orange d-fs-100">
+          <td class="d-ff-mono d-fs-100">
             {{ val }}px
           </td>
-          <td class="d-ff-mono d-fc-orange d-fs-100">
+          <td class="d-ff-mono d-fs-100">
             {{ output }}
           </td>
         </tr>
@@ -51,10 +51,10 @@
           >
             var(--sun{{ val }})
           </th>
-          <td class="d-ff-mono d-fc-orange d-fs-100">
+          <td class="d-ff-mono d-fs-100">
             -{{ val }}px
           </td>
-          <td class="d-ff-mono d-fc-orange d-fs-100">
+          <td class="d-ff-mono d-fs-100">
             -{{ output }}
           </td>
         </tr>

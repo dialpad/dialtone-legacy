@@ -126,23 +126,23 @@ Use `d-h-auto` have the browser calculate and select a height.
     <tbody>
       <tr v-for="i in percentage">
         <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-h{{ i }}p</th>
-        <td class="d-ff-mono d-fc-orange d-fs-100">height: {{ i }}% !important;</td>
+        <td class="d-ff-mono d-fs-100">height: {{ i }}% !important;</td>
       </tr>
     </tbody>
     <tbody>
       <tr v-for="i in fixed">
         <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-h{{ i }}</th>
-        <td class="d-ff-mono d-fc-orange d-fs-100">height: {{ i }}px !important;</td>
+        <td class="d-ff-mono d-fs-100">height: {{ i }}px !important;</td>
       </tr>
     </tbody>
     <tbody>
       <tr>
         <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-h100vh</th>
-        <td class="d-ff-mono d-fc-orange d-fs-100">height: 100vh !important;</td>
+        <td class="d-ff-mono d-fs-100">height: 100vh !important;</td>
       </tr>
       <tr v-for="i in other">
         <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-h-{{ i }}</th>
-        <td class="d-ff-mono d-fc-orange d-fs-100">height: {{ i }} !important;</td>
+        <td class="d-ff-mono d-fs-100">height: {{ i }} !important;</td>
       </tr>
     </tbody>
   </table>

@@ -74,7 +74,7 @@ Use `d-gcs{#}` to set the starting point for an element. This can be combined wi
             <span v-else-if="g === 'end'">.d-gce{{ i }}</span>
             <span v-else>.d-gc{{ i }}</span>
           </th>
-          <td class="d-ff-mono d-fc-orange d-fs-100">
+          <td class="d-ff-mono d-fs-100">
             <span v-if="g === 'start'">
               grid-column-start: {{ i }}
             </span>
@@ -88,7 +88,7 @@ Use `d-gcs{#}` to set the starting point for an element. This can be combined wi
         </tr>
         <tr v-if="g === 'span'">
             <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-gc-full</th>
-            <td class="d-ff-mono d-fc-orange d-fs-100">grid-column: 1 / -1 !important;</td>
+            <td class="d-ff-mono d-fs-100">grid-column: 1 / -1 !important;</td>
         </tr>
         <tr>
           <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
@@ -102,7 +102,7 @@ Use `d-gcs{#}` to set the starting point for an element. This can be combined wi
               .d-gc-auto
             </span>
           </th>
-          <td class="d-ff-mono d-fc-orange d-fs-100">
+          <td class="d-ff-mono d-fs-100">
             <span v-if="g === 'start'">
               grid-column-start: auto !important;
             </span>
@@ -126,7 +126,7 @@ Use `d-gcs{#}` to set the starting point for an element. This can be combined wi
               .d-gc-unset
             </span>
           </th>
-          <td class="d-ff-mono d-fc-orange d-fs-100">
+          <td class="d-ff-mono d-fs-100">
             <span v-if="g === 'start'">
               grid-column-start: unset !important;
             </span>

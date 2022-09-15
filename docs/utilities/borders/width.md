@@ -51,7 +51,7 @@ Use `d-b{a|t|r|b|l}w{n}` to change the border width of your direction on your el
       <tbody v-for="i in ['all', 'top', 'right', 'bottom', 'left']">
         <tr v-for="w in [0, 1, 2, 4, 6]">
           <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-b{{ i[0] }}w{{ w }}</th>
-          <td class="d-ff-mono d-fc-orange d-fs-100">
+          <td class="d-ff-mono d-fs-100">
             <span v-if="i === 'all'">border-width: var(--su{{ w }}) !important;</span>
             <span v-else>border-{{i}}-width: var(--su{{ w }}) !important;</span>
           </td>

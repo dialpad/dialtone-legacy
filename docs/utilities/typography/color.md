@@ -121,7 +121,7 @@ Dialtone provides a few abstracted colors CSS variables based on our [color stop
         <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">var(--fc-{{ varName }})</th>
         <td>
           <div class="d-d-flex d-jc-space-between d-ai-center">
-            <div class="d-fl1 d-ff-mono d-fc-orange d-fs-100">
+            <div class="d-fl1 d-ff-mono d-fs-100">
               var(--{{ output }});
             </div>
             <div class="d-fl0 d-fs-200 d-lh4" :class="`d-fc-${varName}`">
@@ -145,7 +145,7 @@ Dialtone provides a few abstracted colors CSS variables based on our [color stop
           <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-fc-current</th>
           <td>
             <div class="d-d-flex d-jc-space-between d-ai-center">
-              <div class="d-fl1 d-ff-mono d-fc-orange d-fs-100">
+              <div class="d-fl1 d-ff-mono d-fs-100">
                 color: currentColor !important;
               </div>
               <div class="d-fl0 d-fc-current d-fs-200 d-lh4">
@@ -159,7 +159,7 @@ Dialtone provides a few abstracted colors CSS variables based on our [color stop
           <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-fc-transparent</th>
           <td>
             <div class="d-d-flex d-jc-space-between d-ai-center">
-              <div class="d-fl1 d-ff-mono d-fc-orange d-fs-100">
+              <div class="d-fl1 d-ff-mono d-fs-100">
                 color: transparent !important;
               </div>
               <div class="d-fl0 d-fc-transparent d-fs-200 d-lh4">
@@ -173,7 +173,7 @@ Dialtone provides a few abstracted colors CSS variables based on our [color stop
           <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-fc-unset</th>
           <td>
             <div class="d-d-flex d-jc-space-between d-ai-center">
-              <div class="d-fl1 d-ff-mono d-fc-orange d-fs-100">
+              <div class="d-fl1 d-ff-mono d-fs-100">
                 color: unset !important;
               </div>
               <div class="d-fl0 d-fc-unset d-fs-200 d-lh4">
@@ -187,7 +187,7 @@ Dialtone provides a few abstracted colors CSS variables based on our [color stop
           <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-fc-white</th>
           <td>
             <div class="d-d-flex d-jc-space-between d-ai-center">
-              <div class="d-fl1 d-ff-mono d-fc-orange d-fs-100">
+              <div class="d-fl1 d-ff-mono d-fs-100">
                 --fco: 100%;<br/>
                 color: hsla(var(--white-h) var(--white-s) var(--white-l) / var(--fco)) !important;
               </div>
@@ -202,7 +202,7 @@ Dialtone provides a few abstracted colors CSS variables based on our [color stop
           <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-fc-{{ color }}</th>
           <td>
             <div class="d-d-flex d-jc-space-between d-ai-center">
-              <div class="d-fl1 d-ff-mono d-fc-orange d-fs-100">
+              <div class="d-fl1 d-ff-mono d-fs-100">
                 --fco: 100%;<br/>
                 color: hsla(var(--{{ output }}-h) var(--{{ output }}-s) var(--{{ output }}-l) / var(--fco)) !important;
               </div>
@@ -218,7 +218,7 @@ Dialtone provides a few abstracted colors CSS variables based on our [color stop
           <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-fc-{{ color }}-{{ stop }}</th>
           <td>
             <div class="d-d-flex d-jc-space-between d-ai-center">
-              <div class="d-fl1 d-ff-mono d-fc-orange d-fs-100">
+              <div class="d-fl1 d-ff-mono d-fs-100">
                   --fco: 100%;<br/>
                   color: hsla(var(--{{ color }}-{{ stop }}-h) var(--{{ color }}-{{ stop }}-s) var(--{{ color }}-{{ stop }}-l) / var(--fco)) !important;
               </div>

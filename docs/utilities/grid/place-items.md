@@ -107,7 +107,7 @@ Use `d-pli-center{-n}` to align grid items along the center of their block and/o
               <span v-if="i !== c">.d-pli-{{ c }}-{{ i }}</span>
               <span v-else>.d-pli-{{ c }}</span>
             </th>
-            <td class="d-ff-mono d-fc-orange d-fs-100">
+            <td class="d-ff-mono d-fs-100">
               <span v-if="i !== c">place-items: {{ c }} {{ i }} !important;</span>
               <span v-else>place-items: {{ c }} !important;</span>
             </td>

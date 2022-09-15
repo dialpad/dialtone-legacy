@@ -82,7 +82,7 @@ Use `d-tp-{n}` change an what items within an element are transitioned.
       <tbody>
         <tr>
           <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-t</th>
-          <td class="d-ff-mono d-fc-orange-500 d-fs-100">
+          <td class="d-ff-mono d-fs-100">
             transition-duration: var(--td25);<br/>
             transition-property: all;<br/>
             transition-timing-function: var(--ttf-in-out);<br/>
@@ -92,15 +92,15 @@ Use `d-tp-{n}` change an what items within an element are transitioned.
       <tbody v-for="i in ['td', 'ttf', 'tp', 't-delay']">
         <tr v-if="i === 'td'" v-for="d in [0, 50, 100, 150, 200]">
           <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-{{ i }}{{ d }}</th>
-          <td class="d-ff-mono d-fc-orange-500 d-fs-100">transition-duration: var(--td{{ d }}) !important;</td>
+          <td class="d-ff-mono d-fs-100">transition-duration: var(--td{{ d }}) !important;</td>
         </tr>
         <tr v-else-if="i === 'ttf'" v-for="t in ['in-out', 'out']">
           <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-{{ i }}-{{ t }}</th>
-          <td class="d-ff-mono d-fc-orange-500 d-fs-100">transition-timing-function: var(--ttf-{{ t }}) !important;</td>
+          <td class="d-ff-mono d-fs-100">transition-timing-function: var(--ttf-{{ t }}) !important;</td>
         </tr>
         <tr v-else-if="i === 'tp'" v-for="p in ['all', 'o', 'bs', 'bgc', 'transform', 'colors']">
           <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-{{ i }}-{{ p }}</th>
-          <td class="d-ff-mono d-fc-orange-500 d-fs-100">
+          <td class="d-ff-mono d-fs-100">
             transition-property:
               <span v-if="p === 'o'">opacity</span>
               <span v-else-if="p === 'bs'">box-shadow</span>
@@ -112,7 +112,7 @@ Use `d-tp-{n}` change an what items within an element are transitioned.
         </tr>
         <tr v-else v-for="d in [25, 50, 100, 150, 200]">
           <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-{{ i }}{{ d }}</th>
-          <td class="d-ff-mono d-fc-orange-500 d-fs-100">transition-delay: var(--td{{ d }}) !important;</td>
+          <td class="d-ff-mono d-fs-100">transition-delay: var(--td{{ d }}) !important;</td>
         </tr>
       </tbody>
     </template>

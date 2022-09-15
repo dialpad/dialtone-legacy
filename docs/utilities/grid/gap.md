@@ -74,7 +74,7 @@ Use `d-gcg{#}` or `d-grg{#}` to independently change the row and column gap spac
             <span v-else-if="dir === 'column'">.d-gcg{{ px }}</span>
             <span v-else-if="dir === 'row'">.d-grg{{ px }}</span>
           </th>
-          <td class="d-ff-mono d-fc-orange d-fs-100">
+          <td class="d-ff-mono d-fs-100">
             <span v-if="dir !== 'both'">grid-{{ dir }}-gap: {{ rem }}</span>
             <span v-else>grid-gap: {{ rem }}</span>
           </td>

@@ -10,7 +10,7 @@ desc: Utilities for setting how an element's space around and between content is
     <tbody>
       <tr v-for="{ class: className, output } in justifyContent">
         <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-{{ className }}</th>
-        <td class="d-ff-mono d-fc-orange d-fs-100">{{ output }}</td>
+        <td class="d-ff-mono d-fs-100">{{ output }}</td>
       </tr>
     </tbody>
   </template>

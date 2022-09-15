@@ -40,7 +40,7 @@ Use `d-bgc-text` to clip the background color(s) within the foreground text.
     <tbody>
         <tr v-for="i in ['unset', 'border-box', 'padding-box', 'content-box', 'text']">
           <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-bgc-{{ i }}</th>
-          <td class="d-ff-mono d-fc-orange d-fs-100">background-clip: {{ i }} !important;</td>
+          <td class="d-ff-mono d-fs-100">background-clip: {{ i }} !important;</td>
         </tr>
     </tbody>
   </template>

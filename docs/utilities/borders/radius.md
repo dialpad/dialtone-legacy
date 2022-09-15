@@ -78,7 +78,7 @@ Use `d-b{a|t|r|b|l}r-circle` to change the border radius of your element to a ci
       <tbody>
         <tr>
           <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-bar-unset</th>
-          <td class="d-ff-mono d-fc-orange d-fs-100">border-radius: unset !important;</td>
+          <td class="d-ff-mono d-fs-100">border-radius: unset !important;</td>
         </tr>
       </tbody>
       <tbody v-for="i in ['a', 't', 'r', 'b', 'l']">
@@ -86,7 +86,7 @@ Use `d-b{a|t|r|b|l}r-circle` to change the border radius of your element to a ci
           <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-b{{ i }}r{{ r }}</th>
           <td>
             <div class="d-d-flex d-jc-space-between d-ai-center">
-              <div class="d-fl-grow1 d-ff-mono d-fc-orange d-fs-100">
+              <div class="d-fl-grow1 d-ff-mono d-fs-100">
                 <span v-if="i === 'a'">border-radius: var(--br{{ r }}) !important;</span>
                 <span v-else-if="i === 't'">
                   border-top-left-radius: var(--br{{ r }}) !important;<br/>

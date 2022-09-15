@@ -105,7 +105,7 @@ To create a background gradient, first declare the desired gradient and, if appl
     <tbody>
       <tr v-for="{ className, output } in gradients">
           <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-bgg-{{ className }}</th>
-          <td class="d-ff-mono d-fc-orange d-fs-100">
+          <td class="d-ff-mono d-fs-100">
             background-image: {{ output }}
             <span v-if="!['unset', 'none'].includes(className)"> var(--bgg-stops)) </span>
             !important;
@@ -128,7 +128,7 @@ The starting stop (`d-bgg-from-{color}`) should be declared. Optionally an endin
                   <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-bgg-{{ direction }}-{{ color }}-{{ stop }}</th>
                   <td>
                       <div class="d-d-flex d-jc-space-between d-ai-center">
-                          <div class="d-fl-grow1 d-ff-mono d-fc-orange d-fs-100">
+                          <div class="d-fl-grow1 d-ff-mono d-fs-100">
                               <span v-if="direction === 'from'">
                                 --bgg-from-opacity: 100%;<br/>
                                 --bgg-from: hsla(var(--{{ color }}-{{ stop }}-h) var(--{{ color }}-{{ stop }}-s) var(--{{ color }}-{{ stop }}-l) / var(----bgg-from-opacity)) !important;<br/>

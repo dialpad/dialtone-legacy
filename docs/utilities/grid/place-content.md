@@ -173,7 +173,7 @@ Use `d-plc-space-between{-n}` to distribute grid items along the block axis so t
               <span v-if="i !== c">.d-plc-{{ c }}-{{ i }}</span>
               <span v-else>.d-plc-{{ c }}</span>
             </th>
-            <td class="d-ff-mono d-fc-orange d-fs-100">
+            <td class="d-ff-mono d-fs-100">
               <span v-if="i !== c">place-content: {{ c }} {{ i }} !important</span>
               <span v-else>place-content: {{ c }} !important</span>
             </td>

@@ -84,7 +84,7 @@ The margin utility classes help visually separate elements. Because layouts are 
             <span v-if="i !== 'All'">.d-m{{ i[0] }}{{ val }}</span>
             <span v-else>.d-m{{ val }}</span>
           </th>
-          <td class="d-ff-mono d-fc-orange-500 d-fs-100">
+          <td class="d-ff-mono d-fs-100">
             <span v-if="i == 'y'">
               margin-top: {{ output }} !important;<br/>
               margin-bottom: {{ output }} !important;
@@ -107,7 +107,7 @@ The margin utility classes help visually separate elements. Because layouts are 
             <span v-if="i !== 'All'">.d-m{{ i[0] }}n{{ val }}</span>
             <span v-else>.d-mn{{ val }}</span>
           </th>
-          <td class="d-ff-mono d-fc-orange-500 d-fs-100">
+          <td class="d-ff-mono d-fs-100">
             <span v-if="i == 'y'">
               margin-top: -{{ output }} !important;<br/>
               margin-bottom: -{{ output }} !important;
@@ -130,7 +130,7 @@ The margin utility classes help visually separate elements. Because layouts are 
             <span v-if="i !== 'All'">.d-m{{ i[0] }}-auto</span>
             <span v-else>.d-m-auto</span>
           </th>
-          <td class="d-ff-mono d-fc-orange-500 d-fs-100">
+          <td class="d-ff-mono d-fs-100">
             <span v-if="i == 'y'">
               margin-top: auto !important;<br/>
               margin-bottom: auto !important;
@@ -153,7 +153,7 @@ The margin utility classes help visually separate elements. Because layouts are 
             <span v-if="i !== 'All'">.d-m{{ i[0] }}-unset</span>
             <span v-else>.d-m-unset</span>
           </th>
-          <td class="d-ff-mono d-fc-orange-500 d-fs-100">
+          <td class="d-ff-mono d-fs-100">
             <span v-if="i == 'y'">
               margin-top: unset !important;<br/>
               margin-bottom: unset !important;

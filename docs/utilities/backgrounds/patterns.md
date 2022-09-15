@@ -31,7 +31,7 @@ Use `d-bgg-pattern-{pattern}-{dark|light}` to apply a pattern.
           <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-bgg-pattern-{{ i }}-{{ c }}</th>
           <td>
             <div class="d-d-flex d-jc-space-between d-ai-center">
-              <div class="d-fl-grow1 d-ff-mono d-fc-orange d-fs-100">
+              <div class="d-fl-grow1 d-ff-mono d-fs-100">
                 --bgg-pattern: --bgg-pattern-{{ i }}-{{ c }};
               </div>
               <div

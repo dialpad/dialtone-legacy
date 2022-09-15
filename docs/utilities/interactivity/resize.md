@@ -32,7 +32,7 @@ next:
     <tbody>
       <tr v-for="{ class: className, output } in resize">
         <th scope="row" class="d-ff-mono d-fc-purple-400 d-fs-100">.{{ className }}</th>
-        <td class="d-ff-mono d-fc-orange d-fs-100">{{ output }}</td>
+        <td class="d-ff-mono d-fs-100">{{ output }}</td>
       </tr>
     </tbody>
   </template>
