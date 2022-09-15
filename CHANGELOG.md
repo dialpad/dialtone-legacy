@@ -1,3 +1,33 @@
+# [7.0.0-beta.4](https://github.com/dialpad/dialtone/compare/v7.0.0-beta.3...v7.0.0-beta.4) (2022-09-15)
+
+
+### Bug Fixes
+
+* cleanup card css ([#657](https://github.com/dialpad/dialtone/issues/657)) ([59d2941](https://github.com/dialpad/dialtone/commit/59d294162ad643c68be7d44376be4b6205dfb3c1))
+* dialtone_health_check path ([d435189](https://github.com/dialpad/dialtone/commit/d435189675f3032d57dbe41e0548c5d0dcd9b54e))
+* downgrade eslint to prevent linting errors. ([#669](https://github.com/dialpad/dialtone/issues/669)) ([#670](https://github.com/dialpad/dialtone/issues/670)) ([4ff5ce1](https://github.com/dialpad/dialtone/commit/4ff5ce1e5176e104f05a23ae213bd6f146693bf1))
+* inline classes table ([#667](https://github.com/dialpad/dialtone/issues/667)) ([#671](https://github.com/dialpad/dialtone/issues/671)) ([b2f25da](https://github.com/dialpad/dialtone/commit/b2f25dab2baa0b38e861922d3c10fa2cb831b93e))
+* modal functionality ([#642](https://github.com/dialpad/dialtone/issues/642)) ([0677209](https://github.com/dialpad/dialtone/commit/06772099e74ddf96c7fe1c700ed94761b8463555))
+* **theme:** resurrect nav-background-color variable ([#658](https://github.com/dialpad/dialtone/issues/658)) ([3235b0f](https://github.com/dialpad/dialtone/commit/3235b0f7e810c2b1db2bcf9a3030fcc42cfebfe6))
+
+
+### Features
+
+* add dialtone health check script ([#659](https://github.com/dialpad/dialtone/issues/659)) ([f06f06d](https://github.com/dialpad/dialtone/commit/f06f06de38a7315cdf84b7ed0d3ded827a74ee92))
+* add style for card ([#651](https://github.com/dialpad/dialtone/issues/651)) ([ed7fbec](https://github.com/dialpad/dialtone/commit/ed7fbec74e8bc0d07f88b54284c14198e0010c9b))
+* **color:** new ramps blue and tan ([#647](https://github.com/dialpad/dialtone/issues/647)) ([eb666a7](https://github.com/dialpad/dialtone/commit/eb666a7e391a76e894b0bbfce6fb0922496bcc9f))
+* **colors:** update black color ramp ([#649](https://github.com/dialpad/dialtone/issues/649)) ([104de76](https://github.com/dialpad/dialtone/commit/104de76a4a62a1af31a13758d2f7322b674aacd5))
+* **colors:** update green color ramp ([#652](https://github.com/dialpad/dialtone/issues/652)) ([cb74744](https://github.com/dialpad/dialtone/commit/cb74744247adf94a673f1abbda322befca6fd1f3))
+* **colors:** update pink/magenta color ramp ([#656](https://github.com/dialpad/dialtone/issues/656)) ([df209e9](https://github.com/dialpad/dialtone/commit/df209e9c763275a7aa2c10f371f852622dce071e))
+* **colors:** update red color ramp ([#654](https://github.com/dialpad/dialtone/issues/654)) ([2dafb81](https://github.com/dialpad/dialtone/commit/2dafb813dffaa83f0460336b0bd70753277adba0))
+* **font-size:** update font size ramp ([#672](https://github.com/dialpad/dialtone/issues/672)) ([cf957c1](https://github.com/dialpad/dialtone/commit/cf957c1f8bcb39fb935ece4c89986e7842cfe426))
+* **font-weight:** migrate usages and update migration guide ([#676](https://github.com/dialpad/dialtone/issues/676)) ([3d9c5e5](https://github.com/dialpad/dialtone/commit/3d9c5e5003e32b0b2820a44654124e103574f945))
+* **icon:** add branch, expert-node icons to library ([#661](https://github.com/dialpad/dialtone/issues/661)) ([c128291](https://github.com/dialpad/dialtone/commit/c128291c0495be2dcc75d6d47db1b8f9fd0bd254))
+* **icon:** add wifi-off icon to library ([#646](https://github.com/dialpad/dialtone/issues/646)) ([55004cd](https://github.com/dialpad/dialtone/commit/55004cdff052a892ae3b0ea111330f478b2cb1e7))
+* **icon:** fix fill for branch, expert-node icons ([#662](https://github.com/dialpad/dialtone/issues/662)) ([77ef2fb](https://github.com/dialpad/dialtone/commit/77ef2fbf6e2f282778718f3a5c62585bc020f517))
+* **theme:** create and update theme variables ([#643](https://github.com/dialpad/dialtone/issues/643)) ([7b5dcce](https://github.com/dialpad/dialtone/commit/7b5dcce4f35a4d11a98e4d9795627c33c45a7baa))
+* **type:** system font stack ([#666](https://github.com/dialpad/dialtone/issues/666)) ([059a152](https://github.com/dialpad/dialtone/commit/059a1526d6dbe63b4433205dfbe1722f3b55c3d3)), closes [#663](https://github.com/dialpad/dialtone/issues/663) [#664](https://github.com/dialpad/dialtone/issues/664) [#669](https://github.com/dialpad/dialtone/issues/669)
+
 # [6.39.0](https://github.com/dialpad/dialtone/compare/v6.38.0...v6.39.0) (2022-09-07)
 
 
