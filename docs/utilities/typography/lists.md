@@ -38,7 +38,7 @@ Use `d-ls-reset` to reset the margin, padding, and list-style-type of a list. Re
 Use `d-ls-{disc|decimal}` to change an unordered list's bullet styling.
 
 <code-well-header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-green-100 d-w100p d-hmn102" custom>
-  <ul class="d-lst-disc d-fs-200 d-fc-green">
+  <ul class="d-lst-disc d-fs-200 d-fc-success">
     <li>An unordered list item</li>
     <li>
       <ul class="d-lst-circle">

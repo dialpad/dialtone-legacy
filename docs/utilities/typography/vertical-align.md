@@ -85,7 +85,7 @@ Use `d-va-text-top` to vertically align an element to text top.
       <span class="d-ps-absolute d-t0 d-h32 d-w100p d-by d-bts-dashed d-bbs-dashed d-bc-yellow-500"></span>
       <span class="d-ps-absolute d-t0 d-h16 d-w100p d-by d-bts-dashed d-bbs-dashed d-bc-yellow-500"></span>
     </div>
-    <p class="d-d-inline-block d-ps-relative d-zi-base1 d-fc-yellow d-fs-200">The quick brown fox jumps over the lazy dog.</p>
+    <p class="d-d-inline-block d-ps-relative d-zi-base1 d-fc-yellow-500 d-fs-200">The quick brown fox jumps over the lazy dog.</p>
   </div>
 </code-well-header>
 
