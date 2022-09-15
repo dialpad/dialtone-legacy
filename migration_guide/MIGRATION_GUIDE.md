@@ -97,6 +97,23 @@ Purple Remapping | Before and After
 - Added `fc-placeholder` variable
 - Added `fc-disabled` variable
 - Added `fc-success` variable
+- Removed `.d-fc-dark` CSS Utilities
+- Added `.d-fc-primary` CSS Utilities
+- Removed `.d-fc-medium` CSS Utilities
+- Added `.d-fc-secondary` CSS Utilities
+- Removed `.d-fc-lighter` CSS Utilities
+- Removed `.d-fc-light` CSS Utilities
+- Added `.d-fc-tertiary` CSS Utilities
+- Added `.d-fc-muted` CSS Utilities
+- Removed `.d-fc-purple` CSS Utilities
+- Removed `.d-fc-orange` CSS Utilities
+- Removed `.d-fc-magenta` CSS Utilities
+- Removed `.d-fc-green` CSS Utilities
+- Removed `.d-fc-yellow` CSS Utilities
+- Removed `.d-fc-red` CSS Utilities
+- Removed `.d-fc-danger` CSS Utilities
+- Removed `.d-fc-blue` CSS Utilities
+- Removed `.d-fc-tan` CSS Utilities
 
 ### Updated Font Stack
 - Replaced `Inter` font with local system font stack.
@@ -173,7 +190,9 @@ Search for | Replace with
 :-:|:-:
 `d-fc-primary` | `d-fc-purple`
 
-### 4. Replace Text Color Variables
+### 4. Replace Text Color Styles
+
+#### Update color CSS variables
 
 Search for | Replace with
 :-:|:-:
@@ -183,9 +202,19 @@ Search for | Replace with
 `var(--fc-light)` | `var(--fc-tertiary)`
 Any disabled element's text color | `var(--fc-disabled)`
 
+#### Update Color CSS Utility class usage
+
+Search for | Replace with
+:-:|:-:
+`fc-dark` | `fc-primary`
+`fc-medium` | `fc-secondary`
+`fc-lighter` | `fc-tertiary`
+`fc-light` | `fc-tertiary`
+`fc-purple` | `d-fc-purple-400`)
+
 ### 5. Replace hardcoded HEX values
 
-Any custom CSS authored with HEX values (e.g. `#ff0000`) should be replaced with its CSS Custom Property equivalent (e.g. `var(--[COLOR-STOP])`).
+Any custom CSS authored with HEX values (e.g. `#ff0000`) should be replaced with its CSS Custom Property equivalent (e.g. `var(--[COLOR-STOP])`). If no equivalent exists, consult your Product Designer.
 
 #### Example
 
