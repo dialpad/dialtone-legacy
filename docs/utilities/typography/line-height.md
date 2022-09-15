@@ -9,16 +9,16 @@ Use `d-lh-{n}` to change an element's line-height relatively. This means no unit
 
 <code-well-header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-purple-100 d-w100p d-hmn102" custom>
   <div class="d-d-grid d-gg16 d-ai-center" style="grid-template-columns: 10rem 1fr">
-    <div class="d-fs-100 d-ff-mono d-fc-purple d-fco75">.d-lh-tighter</div>
-    <div><p class="d-fs-300 d-lh-tighter d-fc-orange d-bgc-purple-200 d-bgo25">The quick brown fox jumps over the lazy dog.</p></div>
-    <div class="d-fs-100 d-ff-mono d-fc-purple d-fco75">.d-lh-tight</div>
-    <div><p class="d-fs-300 d-lh-tight d-fc-orange d-bgc-purple-200 d-bgo25">The quick brown fox jumps over the lazy dog.</p></div>
-    <div class="d-fs-100 d-ff-mono d-fc-purple d-fco75">.d-lh-normal</div>
-    <div><p class="d-fs-300 d-lh-normal d-fc-orange d-bgc-purple-200 d-bgo25">The quick brown fox jumps over the lazy dog.</p></div>
-    <div class="d-fs-100 d-ff-mono d-fc-purple d-fco75">.d-lh-loose</div>
-    <div><p class="d-fs-300 d-lh-loose d-fc-orange d-bgc-purple-200 d-bgo25">The quick brown fox jumps over the lazy dog.</p></div>
-    <div class="d-fs-100 d-ff-mono d-fc-purple d-fco75">.d-lh-looser</div>
-    <div><p class="d-fs-300 d-lh-looser d-fc-orange d-bgc-purple-200 d-bgo25">The quick brown fox jumps over the lazy dog.</p></div>
+    <div class="d-fs-100 d-ff-mono d-fc-purple-400 d-fco75">.d-lh-tighter</div>
+    <div><p class="d-fs-300 d-lh-tighter d-bgc-purple-200 d-bgo25">The quick brown fox jumps over the lazy dog.</p></div>
+    <div class="d-fs-100 d-ff-mono d-fc-purple-400 d-fco75">.d-lh-tight</div>
+    <div><p class="d-fs-300 d-lh-tight d-bgc-purple-200 d-bgo25">The quick brown fox jumps over the lazy dog.</p></div>
+    <div class="d-fs-100 d-ff-mono d-fc-purple-400 d-fco75">.d-lh-normal</div>
+    <div><p class="d-fs-300 d-lh-normal d-bgc-purple-200 d-bgo25">The quick brown fox jumps over the lazy dog.</p></div>
+    <div class="d-fs-100 d-ff-mono d-fc-purple-400 d-fco75">.d-lh-loose</div>
+    <div><p class="d-fs-300 d-lh-loose d-bgc-purple-200 d-bgo25">The quick brown fox jumps over the lazy dog.</p></div>
+    <div class="d-fs-100 d-ff-mono d-fc-purple-400 d-fco75">.d-lh-looser</div>
+    <div><p class="d-fs-300 d-lh-looser d-bgc-purple-200 d-bgo25">The quick brown fox jumps over the lazy dog.</p></div>
   </div>
 </code-well-header>
 
@@ -88,10 +88,10 @@ Use `d-lh{n}` to fix an element's line-height. This allows you to target a speci
     </thead>
     <tbody>
       <tr v-for="{ class: className, output } in lineHeight.slice(0, -1)">
-        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">
+        <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
           var(--lh{{ className }})
         </th>
-        <td class="d-ff-mono d-fc-orange d-fs-100">{{ output }}</td>
+        <td class="d-ff-mono d-fs-100">{{ output }}</td>
       </tr>
     </tbody>
   </table>
@@ -104,10 +104,10 @@ Use `d-lh{n}` to fix an element's line-height. This allows you to target a speci
     <template #content>
       <tbody>
         <tr v-for="{ class: className, output } in lineHeight.slice(0, -1)">
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">
+          <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
             .d-lh{{ className }}
           </th>
-          <td class="d-ff-mono d-fc-orange d-fs-100">
+          <td class="d-ff-mono d-fs-100">
             line-height: var(--lh{{ className }}) !important;
           </td>
         </tr>
