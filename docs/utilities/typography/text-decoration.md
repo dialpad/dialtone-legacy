@@ -20,7 +20,7 @@ Use `d-td-underline` to underline text.
 Use `d-td-dotted` to apply a dotted underline style to the text.
 
 <code-well-header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-purple-100 d-w100p d-hmn102" custom>
-  <p class="d-fs-300 d-fc-purple d-td-dotted">The quick brown fox jumps over the lazy dog.</p>
+  <p class="d-fs-300 d-fc-purple-400 d-td-dotted">The quick brown fox jumps over the lazy dog.</p>
 </code-well-header>
 
 ```html
@@ -61,7 +61,7 @@ Use `d-td-none` to remove text decorations.
   <template #content>
     <tbody>
       <tr v-for=" i in decoration">
-        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-td-{{ i }}</th>
+        <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-td-{{ i }}</th>
         <td class="d-ff-mono d-fc-orange d-fs-100">
           <span v-if="i === 'dotted'">text-decoration: underline {{ i }} !important</span>
           <span v-else>text-decoration: {{ i }} !important</span>
