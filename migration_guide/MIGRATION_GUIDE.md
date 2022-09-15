@@ -72,8 +72,34 @@ Purple Remapping | Before and After
 - Removed `d-fc-primary` utility class.
 - Removed Spot Illustrations' theming capability.
 
+### New/Updated/Removed Text Color Variables
+
+- Removed `--fc-dark` variable
+- Removed `--fc-medium` variable
+- Removed `--fc-light` variable
+- Removed `--fc-lighter` variable
+- Removed `--fc-purple` variable
+- Removed `--fc-orange` variable
+- Removed `--fc-magenta` variable
+- Removed `--fc-green` variable
+- Removed `--fc-yellow` variable
+- Removed `--fc-red` variable
+- Removed `--fc-danger` variable
+- Removed `--fc-danger` variable
+- Updated `--fc-muted` variable
+- Updated `--fc-warning` variable
+- Updated `--fc-warning` variable
+- Added `fc-primary` variable
+- Added `fc-primary-inverted` variable
+- Added `fc-secondary` variable
+- Added `fc-secondary-inverted` variable
+- Added `fc-tertiary` variable
+- Added `fc-placeholder` variable
+- Added `fc-disabled` variable
+- Added `fc-success` variable
+
 ### Updated Font Stack
-- Replaced `Inter` font with local system font stack. 
+- Replaced `Inter` font with local system font stack.
 - Replaced `RobotoMono` font with SFMono.
 - Removed `fw-thin`, `fw-light` and `fw-black` variables (RobotoMono shims).
 
@@ -147,7 +173,17 @@ Search for | Replace with
 :-:|:-:
 `d-fc-primary` | `d-fc-purple`
 
-### 4. Replace hardcoded HEX values
+### 4. Replace Text Color Variables
+
+Search for | Replace with
+:-:|:-:
+`var(--fc-dark)` | `var(--fc-primary)`
+`var(--fc-medium)` | `var(--fc-secondary)`
+`var(--fc-lighter)` | `var(--fc-tertiary)`
+`var(--fc-light)` | `var(--fc-tertiary)`
+Any disabled element's text color | `var(--fc-disabled)`
+
+### 5. Replace hardcoded HEX values
 
 Any custom CSS authored with HEX values (e.g. `#ff0000`) should be replaced with its CSS Custom Property equivalent (e.g. `var(--[COLOR-STOP])`).
 
@@ -207,16 +243,16 @@ Search for | Replace with
 `#A2114D` | `var(--magenta-400)`
 `#57102E` | `var(--magenta-500)`
 
-### 5. Check color updates for readability
+### 6. Check color updates for readability
 
 Check updates to confirm desired rendering and alignment to contrast accessibility requirements. When in doubt, confer with your Product Designer to identify a proper solution.
 
 
-### 6. Font updates
+### 7. Font updates
 
-Remove any usages of deprecated `.d-fw-thin`, `.d-fw-light` and `.d-fw-dark` classes. 
+Remove any usages of deprecated `.d-fw-thin`, `.d-fw-light` and `.d-fw-dark` classes.
 
-#### Update font-size CSS classes usage 
+#### Update font-size CSS classes usage
 
 Search for | Replace with
 :-:|:-:
@@ -256,3 +292,4 @@ Search for | Replace with
 
 Check updates to confirm desired readability. Most replacements are likely accurate, though they may need to be visually
 validated.
+
