@@ -32,7 +32,7 @@ Use `d-tt-lowercase` to lowercase an element's text.
 Use `d-tt-capitalize` to capitalize an element's text.
 
 <code-well-header class="d-fl-center d-p24 d-bgc-magenta-100 d-bgo50 d-w100p d-hmn102" custom>
-  <p class="d-fs-300 d-fc-magenta d-tt-capitalize">The quick brown fox jumps over the lazy dog.</p>
+  <p class="d-fs-300 d-fc-magenta-300 d-tt-capitalize">The quick brown fox jumps over the lazy dog.</p>
 </code-well-header>
 
 ```html

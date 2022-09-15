@@ -67,7 +67,7 @@ Use `d-va-bottom` to vertically align an element to the bottom.
       <span class="d-ps-absolute d-t0 d-h32 d-w100p d-by d-bts-dashed d-bbs-dashed d-bc-magenta-200"></span>
       <span class="d-ps-absolute d-t0 d-h16 d-w100p d-by d-bts-dashed d-bbs-dashed d-bc-magenta-200"></span>
     </div>
-    <p class="d-d-inline-block d-ps-relative d-zi-base1 d-fc-magenta d-fs-200">The quick brown fox jumps over the lazy dog.</p>
+    <p class="d-d-inline-block d-ps-relative d-zi-base1 d-fc-magenta-300 d-fs-200">The quick brown fox jumps over the lazy dog.</p>
   </div>
 </code-well-header>
 

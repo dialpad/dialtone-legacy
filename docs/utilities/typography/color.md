@@ -67,11 +67,11 @@ Use `h:d-fc-{color}` to change an element's text color `:hover` state.
 Use `f:d-fc-{color}` to change an element's text color `:focus` and `:focus-within` state.
 
 <code-well-header class="d-fl-center d-p24 d-bgc-black-200 d-w100p d-hmn102" custom>
-  <button class="d-p16 d-bar4 d-fs-200 d-fc-magenta f:d-fc-white d-bgc-transparent f:d-bgc-magenta-400 d-ba d-bc-transparent">Click on me</button>
+  <button class="d-p16 d-bar4 d-fs-200 d-fc-magenta-300 f:d-fc-white d-bgc-transparent f:d-bgc-magenta-400 d-ba d-bc-transparent">Click on me</button>
 </code-well-header>
 
 ```html
-<button class="d-fc-magenta f:d-fc-white d-bgc-transparent f:d-bgc-magenta-400">...</button>
+<button class="d-fc-magenta-300 f:d-fc-white d-bgc-transparent f:d-bgc-magenta-400">...</button>
 ```
 
 ## Focus visible
@@ -79,11 +79,11 @@ Use `f:d-fc-{color}` to change an element's text color `:focus` and `:focus-with
 Use `fv:d-fc-{color}` to change an element's text color on `:focus-visible` state [only when focused by keyboard].
 
 <code-well-header class="d-fl-center d-p24 d-bgc-black-200 d-w100p d-hmn102" custom>
-  <button class="d-p16 d-bar4 d-fs-200 d-fc-magenta fv:d-fc-white d-bgc-transparent fv:d-bgc-magenta-400 d-ba d-bc-transparent">Focus on me</button>
+  <button class="d-p16 d-bar4 d-fs-200 d-fc-magenta-300 fv:d-fc-white d-bgc-transparent fv:d-bgc-magenta-400 d-ba d-bc-transparent">Focus on me</button>
 </code-well-header>
 
 ```html
-<button class="d-fc-magenta fv:d-fc-white d-bgc-transparent fv:d-bgc-magenta-400">...</button>
+<button class="d-fc-magenta-300 fv:d-fc-white d-bgc-transparent fv:d-bgc-magenta-400">...</button>
 ```
 
 <!--

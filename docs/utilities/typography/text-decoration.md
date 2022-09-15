@@ -8,7 +8,7 @@ desc: Utilities to change an element's text decoration styles.
 Use `d-td-underline` to underline text.
 
 <code-well-header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-magenta-100 d-w100p d-hmn102" custom>
-  <p class="d-fs-300 d-fc-magenta d-td-underline">The quick brown fox jumps over the lazy dog.</p>
+  <p class="d-fs-300 d-fc-magenta-300 d-td-underline">The quick brown fox jumps over the lazy dog.</p>
 </code-well-header>
 
 ```html
