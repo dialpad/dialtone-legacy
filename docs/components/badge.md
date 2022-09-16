@@ -63,7 +63,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-badge--default
 <span class="d-badge d-badge--purple-500">...</span>
 <span class="d-badge d-badge--red-300">...</span>
 <span class="d-badge d-badge--white">...</span>
-<span class="d-badge d-badge--yellow-300">...</span>
+<span class="d-badge d-badge--gold-200">...</span>
 ```
 
 ## Classes

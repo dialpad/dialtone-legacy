@@ -82,8 +82,8 @@ Use `d-w{n}` to set a fixed width for an element.
 
 Use `d-w100vh` to have an element cover the user's viewport.
 
-<code-well-header class="d-ps-relative d-d-flex d-jc-center d-p24 d-bgc-yellow-100 d-bgo50 d-w100p d-h3 d-stack16 d-of-y-scroll" custom>
-  <div class="d-fl-center d-py16 d-px8 d-w100vw d-h100vh d-bgc-yellow-400 d-bar4 d-fs-300 d-fw-bold d-ta-center">Viewport</div>
+<code-well-header class="d-ps-relative d-d-flex d-jc-center d-p24 d-bgc-gold-100 d-bgo50 d-w100p d-h3 d-stack16 d-of-y-scroll" custom>
+  <div class="d-fl-center d-py16 d-px8 d-w100vw d-h100vh d-bgc-gold-200 d-bar4 d-fs-300 d-fw-bold d-ta-center">Viewport</div>
 </code-well-header>
 
 ```html

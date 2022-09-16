@@ -79,13 +79,13 @@ Use `d-va-bottom` to vertically align an element to the bottom.
 
 Use `d-va-text-top` to vertically align an element to text top.
 
-<code-well-header class="d-px64 d-py32 d-bgc-yellow-100 d-bgo50 d-w100p" custom>
+<code-well-header class="d-px64 d-py32 d-bgc-gold-100 d-bgo50 d-w100p" custom>
   <div class="d-ps-relative d-lh0">
     <div class="d-w0 d-h32 d-d-inline-block d-va-text-top">
-      <span class="d-ps-absolute d-t0 d-h32 d-w100p d-by d-bts-dashed d-bbs-dashed d-bc-yellow-500"></span>
-      <span class="d-ps-absolute d-t0 d-h16 d-w100p d-by d-bts-dashed d-bbs-dashed d-bc-yellow-500"></span>
+      <span class="d-ps-absolute d-t0 d-h32 d-w100p d-by d-bts-dashed d-bbs-dashed d-bc-gold-300"></span>
+      <span class="d-ps-absolute d-t0 d-h16 d-w100p d-by d-bts-dashed d-bbs-dashed d-bc-gold-300"></span>
     </div>
-    <p class="d-d-inline-block d-ps-relative d-zi-base1 d-fc-yellow-500 d-fs-200">The quick brown fox jumps over the lazy dog.</p>
+    <p class="d-d-inline-block d-ps-relative d-zi-base1 d-fc-gold-500 d-fs-200">The quick brown fox jumps over the lazy dog.</p>
   </div>
 </code-well-header>
 

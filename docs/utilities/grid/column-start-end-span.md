@@ -42,15 +42,15 @@ Use `d-gc{#}` to span an element across multiple columns. This can be combined w
 
 Use `d-gcs{#}` to set the starting point for an element. This can be combined with `d-gc{#}` classes to span a set of columns.
 
-<code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-yellow-100 d-bgo50 d-w100p d-hmn216" custom>
-  <div class="d-d-grid d-gg16 d-g-cols6 d-p16 d-w100p d-hmn216 d-bar8 d-bgc-yellow-100">
-    <div class="d-fl-center d-p16 d-bgc-yellow-200 d-bar4"></div>
-    <div class="d-gcs2 d-gce6 d-fl-center d-p16 d-bgc-yellow-400 d-bar4 d-fs-300 d-fw-bold">1</div>
-    <div class="d-fl-center d-p16 d-bgc-yellow-200 d-bar4"></div>
-    <div class="d-gcs1 d-gce5 d-fl-center d-p16 d-bgc-yellow-400 d-bar4 d-fs-300 d-fw-bold">2</div>
-    <div class="d-fl-center d-p16 d-bgc-yellow-200 d-bar4"></div>
-    <div class="d-fl-center d-p16 d-bgc-yellow-200 d-bar4"></div>
-    <div class="d-gcs1 d-gce7 d-fl-center d-p16 d-bgc-yellow-400 d-bar4 d-fs-300 d-fw-bold">3</div>
+<code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-gold-100 d-bgo50 d-w100p d-hmn216" custom>
+  <div class="d-d-grid d-gg16 d-g-cols6 d-p16 d-w100p d-hmn216 d-bar8 d-bgc-gold-100">
+    <div class="d-fl-center d-p16 d-bgc-gold-100 d-bar4"></div>
+    <div class="d-gcs2 d-gce6 d-fl-center d-p16 d-bgc-gold-200 d-bar4 d-fs-300 d-fw-bold">1</div>
+    <div class="d-fl-center d-p16 d-bgc-gold-100 d-bar4"></div>
+    <div class="d-gcs1 d-gce5 d-fl-center d-p16 d-bgc-gold-200 d-bar4 d-fs-300 d-fw-bold">2</div>
+    <div class="d-fl-center d-p16 d-bgc-gold-100 d-bar4"></div>
+    <div class="d-fl-center d-p16 d-bgc-gold-100 d-bar4"></div>
+    <div class="d-gcs1 d-gce7 d-fl-center d-p16 d-bgc-gold-200 d-bar4 d-fs-300 d-fw-bold">3</div>
   </div>
 </code-well-header>
 
