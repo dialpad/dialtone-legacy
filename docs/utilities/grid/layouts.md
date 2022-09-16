@@ -18,12 +18,12 @@ Use `.d-gl-sidebar` to create a simple 2-column layout with a sidebar and main c
   </thead>
   <tbody>
     <tr>
-      <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">var(--sidebar-width)</th>
-      <td class="d-ff-mono d-fc-orange d-fs-100">minmax(20rem, 30rem);</td>
+      <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">var(--sidebar-width)</th>
+      <td class="d-ff-mono d-fs-100">minmax(20rem, 30rem);</td>
     </tr>
     <tr>
-      <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">var(--content-width)</th>
-      <td class="d-ff-mono d-fc-orange d-fs-100">minmax(32rem, 90ch);</td>
+      <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">var(--content-width)</th>
+      <td class="d-ff-mono d-fs-100">minmax(32rem, 90ch);</td>
     </tr>
   </tbody>
 </table>
@@ -61,12 +61,12 @@ Use `.d-gl-header` to create a simple 2-row layout with a header area and main c
   </thead>
   <tbody>
     <tr>
-      <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">var(--header-height)</th>
-      <td class="d-ff-mono d-fc-orange d-fs-100">minmax(6.4rem, min-content);</td>
+      <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">var(--header-height)</th>
+      <td class="d-ff-mono d-fs-100">minmax(6.4rem, min-content);</td>
     </tr>
     <tr>
-      <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">var(--content-height)</th>
-      <td class="d-ff-mono d-fc-orange d-fs-100">minmax(64rem, max-content);</td>
+      <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">var(--content-height)</th>
+      <td class="d-ff-mono d-fs-100">minmax(64rem, max-content);</td>
     </tr>
   </tbody>
 </table>
@@ -107,8 +107,8 @@ Use `.d-g-cols{n}` to create a multi-column layout.
   <template #content>
     <tbody>
       <tr v-for="i in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]">
-        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-g-cols{{ i }}</th>
-        <td class="d-ff-mono d-fc-orange-500 d-fs-100">grid-template-columns: repeat({{ i }},  minmax(0, 1fr)) !important;</td>
+        <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-g-cols{{ i }}</th>
+        <td class="d-ff-mono d-fs-100">grid-template-columns: repeat({{ i }},  minmax(0, 1fr)) !important;</td>
       </tr>
     </tbody>
   </template>
@@ -148,12 +148,12 @@ Use `.d-g-cols{n}` to create a multi-column layout.
 
 Unlike some CSS, CSS grid does not cascade beyond the parent and its direct children (`parent-element > *`). We can use this to our advantage by being able to nest grids within each other without cascade errors.
 
-<code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-yellow-100 d-bgo50 d-w100p d-hmn216" custom>
-  <div class="d-d-grid d-g-cols2 d-gg16 d-p16 d-w100p d-hmn216 d-bar8 d-bgc-yellow-100">
-    <div class="d-fl-center d-p16 d-bgc-yellow-300 d-bar4 d-fs-300 d-fw-bold">1</div>
-    <div class="d-d-grid d-g-cols2 d-gg16 d-p16 d-bgc-yellow-200 d-bar4 d-fs-300 d-fw-bold">
-      <div class="d-fl-center d-p16 d-bgc-yellow-300 d-bar4 d-fs-300 d-fw-bold">3</div>
-      <div class="d-fl-center d-p16 d-bgc-yellow-300 d-bar4 d-fs-300 d-fw-bold">4</div>
+<code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-gold-100 d-bgo50 d-w100p d-hmn216" custom>
+  <div class="d-d-grid d-g-cols2 d-gg16 d-p16 d-w100p d-hmn216 d-bar8 d-bgc-gold-100">
+    <div class="d-fl-center d-p16 d-bgc-gold-200 d-bar4 d-fs-300 d-fw-bold">1</div>
+    <div class="d-d-grid d-g-cols2 d-gg16 d-p16 d-bgc-gold-100 d-bar4 d-fs-300 d-fw-bold">
+      <div class="d-fl-center d-p16 d-bgc-gold-200 d-bar4 d-fs-300 d-fw-bold">3</div>
+      <div class="d-fl-center d-p16 d-bgc-gold-200 d-bar4 d-fs-300 d-fw-bold">4</div>
     </div>
   </div>
 </code-well-header>
