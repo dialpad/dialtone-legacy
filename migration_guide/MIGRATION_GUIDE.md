@@ -8,18 +8,11 @@ While the migration is fairly straightforward, there may be instances where manu
 
 ## Changes
 
+### Color updates
+
+<img width="1818" alt="image" src="https://user-images.githubusercontent.com/1165933/190548054-3600c97a-07ce-4f86-9882-7f7836af1393.png">
+
 ### Updated Color Ramps
-
-✅ Complete 🟨 In Progress 🛑 TBD
-
-- ✅ Purple
-- 🟨 Blue
-- 🟨 Tan
-- ✅ Green
-- ✅ Black
-- ✅ Yellow/Gold
-- ✅ Pink/Magenta
-- ✅ Red
 
 #### Purple
 1. Updated color values for `purple-100`, `purple-200` and `purple-300` stops.
@@ -28,13 +21,15 @@ While the migration is fairly straightforward, there may be instances where manu
 4. Consolidated Dialtone v6's `purple-800` stop into the redefined `purple-600` stop.
 
 [Before/After images to be replaced with one that reflects **all** Color Ramps once completed.]
-Purple Remapping | Before and After
-:-------------------------:|:-------------------------:
-![](purple_mappings.png) | ![](previous_next_mappings.png)
+
 #### Blue
-[TBD]
+
+New Color Ramp
+
 #### Tan
-[TBD]
+
+New Color Ramp
+
 #### Green
 1. Removed `green-600` and `green-700` color stops.
 2. Updated color values for `green-100`, `green-200`, `green-300`, `green-400` and `green-500` stops.
