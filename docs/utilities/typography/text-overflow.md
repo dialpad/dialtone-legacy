@@ -51,16 +51,16 @@ Use `d-to-clip` to clip an element's overflowing text if needed.
   <template #content>
     <tbody>
       <tr>
-        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-truncate</th>
-        <td class="d-ff-mono d-fc-orange d-fs-100">
+        <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-truncate</th>
+        <td class="d-ff-mono d-fs-100">
           overflow: hidden !important;<br/>
           text-overflow: ellipsis !important;<br/>
           white-space: nowrap !important;
         </td>
       </tr>
       <tr v-for="i in ['ellipsis', 'clip', 'unset']">
-        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-to-{{ i }}</th>
-        <td class="d-ff-mono d-fc-orange d-fs-100">text-overflow: {{ i }} !important;</td>
+        <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-to-{{ i }}</th>
+        <td class="d-ff-mono d-fs-100">text-overflow: {{ i }} !important;</td>
       </tr>
     </tbody>
   </template>

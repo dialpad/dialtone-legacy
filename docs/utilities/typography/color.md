@@ -15,7 +15,7 @@ Please use **only** these colors or variations of these colors which pass WCAG 2
 Use `d-fc-{color}` to change an element's text color.
 
 <code-well-header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-black-200 d-w100p d-hmn102" custom>
-  <p class="d-fs-200 d-fc-purple">The quick brown fox jumps over the lazy dog.</p>
+  <p class="d-fs-200 d-fc-purple-400">The quick brown fox jumps over the lazy dog.</p>
 </code-well-header>
 
 ```html
@@ -27,27 +27,27 @@ Use `d-fc-{color}` to change an element's text color.
 Use `d-fco{n}` to change an element's text color opacity. You can also change font color opacity on `:hover`, `:focus`, `:focus-visible`, or in dark mode by using the respective `h:d-fco{n}`, `f:d-fco{n}`, `fv:d-fco{n}`, or `d:d-fco{n}` prefixes.
 
 <code-well-header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-black-200 d-w100p d-hmn102 d-stack8" custom>
-  <p class="d-fs-200 d-fc-purple">The quick brown fox jumps over the lazy dog.</p>
-  <p class="d-fs-200 d-fc-purple d-fco99">The quick brown fox jumps over the lazy dog.</p>
-  <p class="d-fs-200 d-fc-purple d-fco95">The quick brown fox jumps over the lazy dog.</p>
-  <p class="d-fs-200 d-fc-purple d-fco90">The quick brown fox jumps over the lazy dog.</p>
-  <p class="d-fs-200 d-fc-purple d-fco75">The quick brown fox jumps over the lazy dog.</p>
-  <p class="d-fs-200 d-fc-purple d-fco50">The quick brown fox jumps over the lazy dog.</p>
-  <p class="d-fs-200 d-fc-purple d-fco25">The quick brown fox jumps over the lazy dog.</p>
-  <p class="d-fs-200 d-fc-purple d-fco10">The quick brown fox jumps over the lazy dog.</p>
-  <p class="d-fs-200 d-fc-purple d-fco0">The quick brown fox jumps over the lazy dog.</p>
+  <p class="d-fs-200 d-fc-purple-400">The quick brown fox jumps over the lazy dog.</p>
+  <p class="d-fs-200 d-fc-purple-400 d-fco99">The quick brown fox jumps over the lazy dog.</p>
+  <p class="d-fs-200 d-fc-purple-400 d-fco95">The quick brown fox jumps over the lazy dog.</p>
+  <p class="d-fs-200 d-fc-purple-400 d-fco90">The quick brown fox jumps over the lazy dog.</p>
+  <p class="d-fs-200 d-fc-purple-400 d-fco75">The quick brown fox jumps over the lazy dog.</p>
+  <p class="d-fs-200 d-fc-purple-400 d-fco50">The quick brown fox jumps over the lazy dog.</p>
+  <p class="d-fs-200 d-fc-purple-400 d-fco25">The quick brown fox jumps over the lazy dog.</p>
+  <p class="d-fs-200 d-fc-purple-400 d-fco10">The quick brown fox jumps over the lazy dog.</p>
+  <p class="d-fs-200 d-fc-purple-400 d-fco0">The quick brown fox jumps over the lazy dog.</p>
 </code-well-header>
 
 ```html
-<p class="d-fc-purple">...</p>
-<p class="d-fc-purple d-fco99">...</p>
-<p class="d-fc-purple d-fco95">...</p>
-<p class="d-fc-purple d-fco90">...</p>
-<p class="d-fc-purple d-fco75">...</p>
-<p class="d-fc-purple d-fco50">...</p>
-<p class="d-fc-purple d-fco25">...</p>
-<p class="d-fc-purple d-fco10">...</p>
-<p class="d-fc-purple d-fco0">...</p>
+<p class="d-fc-purple-400">...</p>
+<p class="d-fc-purple-400 d-fco99">...</p>
+<p class="d-fc-purple-400 d-fco95">...</p>
+<p class="d-fc-purple-400 d-fco90">...</p>
+<p class="d-fc-purple-400 d-fco75">...</p>
+<p class="d-fc-purple-400 d-fco50">...</p>
+<p class="d-fc-purple-400 d-fco25">...</p>
+<p class="d-fc-purple-400 d-fco10">...</p>
+<p class="d-fc-purple-400 d-fco0">...</p>
 ```
 
 ## Hover
@@ -55,11 +55,11 @@ Use `d-fco{n}` to change an element's text color opacity. You can also change fo
 Use `h:d-fc-{color}` to change an element's text color `:hover` state.
 
 <code-well-header class="d-fl-center d-p24 d-bgc-black-200 d-w100p d-hmn102" custom>
-  <button class="d-p16 d-bar4 d-fs-200 d-fc-purple h:d-fc-white d-bgc-transparent h:d-bgc-purple-500 d-ba d-bc-transparent">Hover over me</button>
+  <button class="d-p16 d-bar4 d-fs-200 d-fc-purple-400 h:d-fc-white d-bgc-transparent h:d-bgc-purple-500 d-ba d-bc-transparent">Hover over me</button>
 </code-well-header>
 
 ```html
-<button class="d-fc-purple h:d-fc-white">...</button>
+<button class="d-fc-purple-400 h:d-fc-white">...</button>
 ```
 
 ## Focus
@@ -67,11 +67,11 @@ Use `h:d-fc-{color}` to change an element's text color `:hover` state.
 Use `f:d-fc-{color}` to change an element's text color `:focus` and `:focus-within` state.
 
 <code-well-header class="d-fl-center d-p24 d-bgc-black-200 d-w100p d-hmn102" custom>
-  <button class="d-p16 d-bar4 d-fs-200 d-fc-magenta f:d-fc-white d-bgc-transparent f:d-bgc-magenta-400 d-ba d-bc-transparent">Click on me</button>
+  <button class="d-p16 d-bar4 d-fs-200 d-fc-magenta-300 f:d-fc-white d-bgc-transparent f:d-bgc-magenta-400 d-ba d-bc-transparent">Click on me</button>
 </code-well-header>
 
 ```html
-<button class="d-fc-magenta f:d-fc-white d-bgc-transparent f:d-bgc-magenta-400">...</button>
+<button class="d-fc-magenta-300 f:d-fc-white d-bgc-transparent f:d-bgc-magenta-400">...</button>
 ```
 
 ## Focus visible
@@ -79,11 +79,11 @@ Use `f:d-fc-{color}` to change an element's text color `:focus` and `:focus-with
 Use `fv:d-fc-{color}` to change an element's text color on `:focus-visible` state [only when focused by keyboard].
 
 <code-well-header class="d-fl-center d-p24 d-bgc-black-200 d-w100p d-hmn102" custom>
-  <button class="d-p16 d-bar4 d-fs-200 d-fc-magenta fv:d-fc-white d-bgc-transparent fv:d-bgc-magenta-400 d-ba d-bc-transparent">Focus on me</button>
+  <button class="d-p16 d-bar4 d-fs-200 d-fc-magenta-300 fv:d-fc-white d-bgc-transparent fv:d-bgc-magenta-400 d-ba d-bc-transparent">Focus on me</button>
 </code-well-header>
 
 ```html
-<button class="d-fc-magenta fv:d-fc-white d-bgc-transparent fv:d-bgc-magenta-400">...</button>
+<button class="d-fc-magenta-300 fv:d-fc-white d-bgc-transparent fv:d-bgc-magenta-400">...</button>
 ```
 
 <!--
@@ -91,11 +91,11 @@ Use `fv:d-fc-{color}` to change an element's text color on `:focus-visible` stat
 Use `d:d-fc-{color}` to set a different text color when the user prefers dark mode.
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-black-200 d-w100p d-hmn102 d-stack16">
-  <button type="button" class="d-p16 d-bar4 d-fs-200 d-fc-purple d-bgc-magenta-100 d:d-fc-yellow d:d-bgc-yellow-200 d-ba d-bc-transparent js-theme-switcher">Click on me toggle dark mode</button>
+  <button type="button" class="d-p16 d-bar4 d-fs-200 d-fc-purple-400 d-bgc-magenta-100 d:d-fc-gold-400 d:d-bgc-gold-200 d-ba d-bc-transparent js-theme-switcher">Click on me toggle dark mode</button>
 </code-well-header>
 
 ```html
-<button class="d-fc-purple d:d-fc-yellow">...</button>
+<button class="d-fc-purple-400 d:d-fc-gold-400">...</button>
 ```
  -->
 
@@ -118,10 +118,10 @@ Dialtone provides a few abstracted colors CSS variables based on our [color stop
     </thead>
     <tbody>
       <tr v-for="{ var: varName, output } in fontColorVars">
-        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">var(--fc-{{ varName }})</th>
+        <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">var(--fc-{{ varName }})</th>
         <td>
           <div class="d-d-flex d-jc-space-between d-ai-center">
-            <div class="d-fl1 d-ff-mono d-fc-orange d-fs-100">
+            <div class="d-fl1 d-ff-mono d-fs-100">
               var(--{{ output }});
             </div>
             <div class="d-fl0 d-fs-200 d-lh4" :class="`d-fc-${varName}`">
@@ -142,10 +142,10 @@ Dialtone provides a few abstracted colors CSS variables based on our [color stop
       <tbody>
         <!-- Current Color -->
         <tr>
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-fc-current</th>
+          <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-fc-current</th>
           <td>
             <div class="d-d-flex d-jc-space-between d-ai-center">
-              <div class="d-fl1 d-ff-mono d-fc-orange d-fs-100">
+              <div class="d-fl1 d-ff-mono d-fs-100">
                 color: currentColor !important;
               </div>
               <div class="d-fl0 d-fc-current d-fs-200 d-lh4">
@@ -156,10 +156,10 @@ Dialtone provides a few abstracted colors CSS variables based on our [color stop
         </tr>
         <!-- Transparent -->
         <tr>
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-fc-transparent</th>
+          <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-fc-transparent</th>
           <td>
             <div class="d-d-flex d-jc-space-between d-ai-center">
-              <div class="d-fl1 d-ff-mono d-fc-orange d-fs-100">
+              <div class="d-fl1 d-ff-mono d-fs-100">
                 color: transparent !important;
               </div>
               <div class="d-fl0 d-fc-transparent d-fs-200 d-lh4">
@@ -170,10 +170,10 @@ Dialtone provides a few abstracted colors CSS variables based on our [color stop
         </tr>
         <!-- Unset Color -->
         <tr>
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-fc-unset</th>
+          <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-fc-unset</th>
           <td>
             <div class="d-d-flex d-jc-space-between d-ai-center">
-              <div class="d-fl1 d-ff-mono d-fc-orange d-fs-100">
+              <div class="d-fl1 d-ff-mono d-fs-100">
                 color: unset !important;
               </div>
               <div class="d-fl0 d-fc-unset d-fs-200 d-lh4">
@@ -184,10 +184,10 @@ Dialtone provides a few abstracted colors CSS variables based on our [color stop
         </tr>
         <!-- White Color -->
         <tr>
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-fc-white</th>
+          <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-fc-white</th>
           <td>
             <div class="d-d-flex d-jc-space-between d-ai-center">
-              <div class="d-fl1 d-ff-mono d-fc-orange d-fs-100">
+              <div class="d-fl1 d-ff-mono d-fs-100">
                 --fco: 100%;<br/>
                 color: hsla(var(--white-h) var(--white-s) var(--white-l) / var(--fco)) !important;
               </div>
@@ -199,10 +199,10 @@ Dialtone provides a few abstracted colors CSS variables based on our [color stop
         </tr>
         <!-- Colors -->
         <tr v-for="{ var: color, output } in fontColorVars">
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-fc-{{ color }}</th>
+          <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-fc-{{ color }}</th>
           <td>
             <div class="d-d-flex d-jc-space-between d-ai-center">
-              <div class="d-fl1 d-ff-mono d-fc-orange d-fs-100">
+              <div class="d-fl1 d-ff-mono d-fs-100">
                 --fco: 100%;<br/>
                 color: hsla(var(--{{ output }}-h) var(--{{ output }}-s) var(--{{ output }}-l) / var(--fco)) !important;
               </div>
@@ -215,10 +215,10 @@ Dialtone provides a few abstracted colors CSS variables based on our [color stop
       </tbody>
       <tbody v-for="{ color, stops } in colors">
         <tr v-for="{ stop } in stops.reverse()">
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">.d-fc-{{ color }}-{{ stop }}</th>
+          <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-fc-{{ color }}-{{ stop }}</th>
           <td>
             <div class="d-d-flex d-jc-space-between d-ai-center">
-              <div class="d-fl1 d-ff-mono d-fc-orange d-fs-100">
+              <div class="d-fl1 d-ff-mono d-fs-100">
                   --fco: 100%;<br/>
                   color: hsla(var(--{{ color }}-{{ stop }}-h) var(--{{ color }}-{{ stop }}-s) var(--{{ color }}-{{ stop }}-l) / var(--fco)) !important;
               </div>

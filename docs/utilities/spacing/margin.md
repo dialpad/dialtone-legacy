@@ -53,10 +53,10 @@ desc: Utilities to adjust an element's exterior spacing between other objects.
 
 Auto margins allow an element to fill a remaining space within an object. This is especially useful in flex layouts.
 
-<code-well-header class="d-bgc-yellow-100 d-bgo50 d-w100p d-hmn216 d-p24 d-stack16" custom>
-  <div class="d-d-flex d-bar8 d-bgc-yellow-200 d-of-hidden"><div class="d-fl-center d-mx-auto d-p16 d-bgc-yellow-400 d-fs-200 d-ff-mono">d-mx-auto</div></div>
-  <div class="d-d-flex d-bar8 d-bgc-yellow-200 d-of-hidden"><div class="d-fl-center d-ml-auto d-p16 d-bgc-yellow-400 d-fs-200 d-ff-mono">d-ml-auto</div></div>
-  <div class="d-d-flex d-bar8 d-bgc-yellow-200 d-of-hidden"><div class="d-fl-center d-mr-auto d-p16 d-bgc-yellow-400 d-fs-200 d-ff-mono">d-mr-auto</div></div>
+<code-well-header class="d-bgc-gold-100 d-bgo50 d-w100p d-hmn216 d-p24 d-stack16" custom>
+  <div class="d-d-flex d-bar8 d-bgc-gold-100 d-of-hidden"><div class="d-fl-center d-mx-auto d-p16 d-bgc-gold-200 d-fs-200 d-ff-mono">d-mx-auto</div></div>
+  <div class="d-d-flex d-bar8 d-bgc-gold-100 d-of-hidden"><div class="d-fl-center d-ml-auto d-p16 d-bgc-gold-200 d-fs-200 d-ff-mono">d-ml-auto</div></div>
+  <div class="d-d-flex d-bar8 d-bgc-gold-100 d-of-hidden"><div class="d-fl-center d-mr-auto d-p16 d-bgc-gold-200 d-fs-200 d-ff-mono">d-mr-auto</div></div>
 </code-well-header>
 
 ```html
@@ -80,11 +80,11 @@ The margin utility classes help visually separate elements. Because layouts are 
       <!-- Positive margins -->
       <tbody v-for="i in directions">
         <tr v-for="{ value: val, output } in values">
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">
+          <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
             <span v-if="i !== 'All'">.d-m{{ i[0] }}{{ val }}</span>
             <span v-else>.d-m{{ val }}</span>
           </th>
-          <td class="d-ff-mono d-fc-orange-500 d-fs-100">
+          <td class="d-ff-mono d-fs-100">
             <span v-if="i == 'y'">
               margin-top: {{ output }} !important;<br/>
               margin-bottom: {{ output }} !important;
@@ -103,11 +103,11 @@ The margin utility classes help visually separate elements. Because layouts are 
       <!-- Negative margins -->
       <tbody v-for="i in directions">
         <tr v-for="{ value: val, output } in values.slice(1)">
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">
+          <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
             <span v-if="i !== 'All'">.d-m{{ i[0] }}n{{ val }}</span>
             <span v-else>.d-mn{{ val }}</span>
           </th>
-          <td class="d-ff-mono d-fc-orange-500 d-fs-100">
+          <td class="d-ff-mono d-fs-100">
             <span v-if="i == 'y'">
               margin-top: -{{ output }} !important;<br/>
               margin-bottom: -{{ output }} !important;
@@ -126,11 +126,11 @@ The margin utility classes help visually separate elements. Because layouts are 
       <!-- Auto margins -->
       <tbody>
         <tr v-for="i in directions">
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">
+          <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
             <span v-if="i !== 'All'">.d-m{{ i[0] }}-auto</span>
             <span v-else>.d-m-auto</span>
           </th>
-          <td class="d-ff-mono d-fc-orange-500 d-fs-100">
+          <td class="d-ff-mono d-fs-100">
             <span v-if="i == 'y'">
               margin-top: auto !important;<br/>
               margin-bottom: auto !important;
@@ -149,11 +149,11 @@ The margin utility classes help visually separate elements. Because layouts are 
       <!-- Unset margins -->
       <tbody>
         <tr v-for="i in directions">
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">
+          <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
             <span v-if="i !== 'All'">.d-m{{ i[0] }}-unset</span>
             <span v-else>.d-m-unset</span>
           </th>
-          <td class="d-ff-mono d-fc-orange-500 d-fs-100">
+          <td class="d-ff-mono d-fs-100">
             <span v-if="i == 'y'">
               margin-top: unset !important;<br/>
               margin-bottom: unset !important;

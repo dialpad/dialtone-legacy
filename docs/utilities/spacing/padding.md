@@ -68,11 +68,11 @@ Padding can be added to an element by using a utility class (i.e. `.d-p[#]`) or 
       <!-- Positive paddings -->
       <tbody v-for="i in directions">
           <tr v-for="{ value: val, output } in values">
-              <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">
+              <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
                 <span v-if="i !== 'All'">.d-p{{ i[0] }}{{ val }}</span>
                 <span v-else>.d-p{{ val }}</span>
               </th>
-              <td class="d-ff-mono d-fc-orange-500 d-fs-100">
+              <td class="d-ff-mono d-fs-100">
                   <span v-if="i == 'y'">
                     padding-top: {{ output }} !important;<br/>
                     padding-bottom: {{ output }} !important;
@@ -91,11 +91,11 @@ Padding can be added to an element by using a utility class (i.e. `.d-p[#]`) or 
       <!-- Unset paddings -->
       <tbody>
         <tr v-for="i in directions">
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs-100">
+          <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
             <span v-if="i !== 'All'">.d-p{{ i[0] }}-unset</span>
             <span v-else>.d-p-unset</span>
           </th>
-          <td class="d-ff-mono d-fc-orange-500 d-fs-100">
+          <td class="d-ff-mono d-fs-100">
             <span v-if="i == 'y'">
               padding-top: unset !important;<br/>
               padding-bottom: unset !important;
