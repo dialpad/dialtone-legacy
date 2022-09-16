@@ -1,3 +1,17 @@
+# [7.0.0-beta.5](https://github.com/dialpad/dialtone/compare/v7.0.0-beta.4...v7.0.0-beta.5) (2022-09-16)
+
+
+### Bug Fixes
+
+* **icons:** social icon sizing ([#668](https://github.com/dialpad/dialtone/issues/668)) ([#675](https://github.com/dialpad/dialtone/issues/675)) ([d4fab13](https://github.com/dialpad/dialtone/commit/d4fab1349081e08e95a1c7fd7f1f2caf59db909c))
+
+
+### Features
+
+* add publish spot illustration ([#677](https://github.com/dialpad/dialtone/issues/677)) ([#678](https://github.com/dialpad/dialtone/issues/678)) ([7b4e5b4](https://github.com/dialpad/dialtone/commit/7b4e5b47e5256ff173b08d5c6ea24c13176573d9))
+* **colors:** update yellow/gold color ramp ([#680](https://github.com/dialpad/dialtone/issues/680)) ([3985127](https://github.com/dialpad/dialtone/commit/39851273588da868989173c8382cb4af3a351898))
+* dt7 text color variables and utilities ([#679](https://github.com/dialpad/dialtone/issues/679)) ([2e61d24](https://github.com/dialpad/dialtone/commit/2e61d24b82b2fdf63ebc6c67d59f345fe3062fd1))
+
 # [7.0.0-beta.4](https://github.com/dialpad/dialtone/compare/v7.0.0-beta.3...v7.0.0-beta.4) (2022-09-15)
 
 
