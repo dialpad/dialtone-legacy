@@ -391,6 +391,16 @@ Search for | Replace with
 Check updates to confirm desired readability. Most replacements are likely accurate, though they may need to be visually
 validated.
 
+#### Update relative line-height CSS classes usage
+
+Search for | Replace with
+:-:|:-:
+`d-lh-tighter` | `d-lh-200`
+`d-lh-tight`   | `d-lh-200`
+`d-lh-normal`  | `d-lh-300`
+`d-lh-loose`   | `d-lh-400`
+`d-lh-looser`  | `d-lh-500`
+
 #### Update line-height CSS variables
 
 Search for | Replace with
