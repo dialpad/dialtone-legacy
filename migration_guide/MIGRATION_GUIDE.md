@@ -6,6 +6,8 @@ While the migration is fairly straightforward, there may be instances where manu
 
 **⚠️ Note for `dialtone-vue`:** Updating `dialtone-vue` to the latest beta version components automatically receive Color updates.
 
+---
+
 ## Changes
 
 ### Color updates
@@ -114,6 +116,8 @@ New Color Ramp
 - Removed `.d-fc-blue` CSS Utilities
 - Removed `.d-fc-tan` CSS Utilities
 
+---
+
 ### Typography: Updated Font Stack
 - Replaced `Inter` font with local system font stack.
 - Replaced `RobotoMono` font with `SFMono`.
@@ -147,6 +151,18 @@ New Color Ramp
 #### Code
 * `d-code-base`
 * `d-code-small`
+
+### Typography: New Headline Styles
+* `d-headline-eyebrow`
+* `d-headline-small`
+* `d-headline-medium`
+* `d-headline-compact-small`
+* `d-headline-compact-base`
+* `d-headline-large`
+* `d-headline-extra-large`
+* `d-headline-extra-extra-large`
+
+---
 
 ## Migration Steps
 
