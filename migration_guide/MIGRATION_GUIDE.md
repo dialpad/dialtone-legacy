@@ -290,7 +290,6 @@ Search for | Replace with
 
 Check updates to confirm desired rendering and alignment to contrast accessibility requirements. When in doubt, confer with your Product Designer to identify a proper solution.
 
-
 ### 7. Font updates
 
 #### Update font-weight CSS classes usage
@@ -350,3 +349,12 @@ Search for | Replace with
 Check updates to confirm desired readability. Most replacements are likely accurate, though they may need to be visually
 validated.
 
+#### Update line-height CSS variables
+
+Search for | Replace with
+:-:|:-:
+`var(--lh-tighter)` | `var(--lh-200)`
+`var(--lh-tight)`   | `var(--lh-200)`
+`var(--lh-normal)`  | `var(--lh-300)`
+`var(--lh-loose)`   | `var(--lh-400)`
+`var(--lh-looser)`  | `var(--lh-500)`
