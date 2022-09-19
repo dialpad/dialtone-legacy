@@ -12,7 +12,7 @@ While the migration is fairly straightforward, there may be instances where manu
 
 <img width="1818" alt="image" src="https://user-images.githubusercontent.com/1165933/190548054-3600c97a-07ce-4f86-9882-7f7836af1393.png">
 
-### Updated Color Ramps
+### Color: Updated Ramps
 
 #### Purple
 1. Updated color values for `purple-100`, `purple-200` and `purple-300` stops.
@@ -66,12 +66,12 @@ New Color Ramp
 6. Consolidated Dialtone v6's `red-600` stop into the redefined `red-400` stop.
 7. Consolidated Dialtone v6's `red-700` stop into the redefined `red-500` stop.
 
-### Removed Primary Color Theme
+### Color: Removed Primary Theme
 - Removed the `--primary-color` theme variable.
 - Removed `d-fc-primary` utility class.
 - Removed Spot Illustrations' theming capability.
 
-### New/Updated/Removed Text Color Variables
+### Color: New/Updated/Removed Text Color Variables
 
 - Removed `--fc-dark` variable
 - Removed `--fc-medium` variable
@@ -114,13 +114,39 @@ New Color Ramp
 - Removed `.d-fc-blue` CSS Utilities
 - Removed `.d-fc-tan` CSS Utilities
 
-### Updated Font Stack
+### Typography: Updated Font Stack
 - Replaced `Inter` font with local system font stack.
-- Replaced `RobotoMono` font with SFMono.
+- Replaced `RobotoMono` font with `SFMono`.
 - Removed `fw-thin`, `fw-light` and `fw-black` variables (RobotoMono shims).
 
-### Updated Font Size Ramps
+### Typography: Updated Font Size Ramps
 - Removed `fs10`, `fs11`, `fs12`, `fs14`, `fs16`, `fs18`, `fs20`, `fs24`, `fs28`, `fs32`, `fs36`, `fs42`, `fs48`, `fs54`.
+
+### Typography: New Body Styles
+
+#### Body
+* `d-body-base`
+* `d-body-small`
+* `d-body-compact`
+* `d-body-compact-small`
+
+#### Label
+* `d-label-base`
+* `d-label-small`
+* `d-label-compact`
+* `d-label-plain`
+* `d-label-compact-plain`
+* `d-label-compact-small`
+* `d-label-plain-small`
+* `d-label-compact-plain-small`
+
+#### Helper
+* `d-helper-base`
+* `d-helper-small`
+
+#### Code
+* `d-code-base`
+* `d-code-small`
 
 ## Migration Steps
 
@@ -327,7 +353,7 @@ Search for | Replace with
 `d-fs48` | `d-fs-500`
 `d-fs54` | `d-fs-500`
 
-####  Update font-size CSS variables
+#### Update font-size CSS variables
 
 Search for | Replace with
 :-:|:-:
