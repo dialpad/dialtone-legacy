@@ -476,4 +476,29 @@
     //  Iterate our loop until we hit our grid column total
     #d-internals #build-flex-columns(@num, @count + 1);
   }
+
+    //  ========================================================================
+    //  $   SPACING CLASSES
+    //  ------------------------------------------------------------------------
+    #spacing-classes(@BU, @prefix, @suffix: '') {
+      @stop-100: ~"@{prefix}-100@{suffix}";
+      @stop-200: ~"@{prefix}-200@{suffix}";
+      @stop-300: ~"@{prefix}-300@{suffix}";
+      @stop-400: ~"@{prefix}-400@{suffix}";
+      @stop-500: ~"@{prefix}-500@{suffix}";
+      @stop-600: ~"@{prefix}-600@{suffix}";
+      @stop-700: ~"@{prefix}-700@{suffix}";
+      @stop-800: ~"@{prefix}-800@{suffix}";
+
+      body {
+        --@{stop-100}:       calc(((@BU / 2) / 2) / 2);
+        --@{stop-200}:       calc((@BU / 2) / 2);
+        --@{stop-300}:       calc(@BU / 2);
+        --@{stop-400}:       @BU;
+        --@{stop-500}:       calc(@BU * 2);
+        --@{stop-600}:       calc((@BU * 2) * 2);
+        --@{stop-700}:       calc(((@BU * 2) * 2) * 2);
+        --@{stop-800}:       calc((((@BU * 2) * 2) * 2) * 2);
+      }
+    }
 }
