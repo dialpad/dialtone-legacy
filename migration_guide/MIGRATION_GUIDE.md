@@ -6,13 +6,15 @@ While the migration is fairly straightforward, there may be instances where manu
 
 **⚠️ Note for `dialtone-vue`:** Updating `dialtone-vue` to the latest beta version components automatically receive Color updates.
 
+---
+
 ## Changes
 
 ### Color updates
 
 <img width="1818" alt="image" src="https://user-images.githubusercontent.com/1165933/190548054-3600c97a-07ce-4f86-9882-7f7836af1393.png">
 
-### Updated Color Ramps
+### Color: Updated Ramps
 
 #### Purple
 1. Updated color values for `purple-100`, `purple-200` and `purple-300` stops.
@@ -66,12 +68,12 @@ New Color Ramp
 6. Consolidated Dialtone v6's `red-600` stop into the redefined `red-400` stop.
 7. Consolidated Dialtone v6's `red-700` stop into the redefined `red-500` stop.
 
-### Removed Primary Color Theme
+### Color: Removed Primary Theme
 - Removed the `--primary-color` theme variable.
 - Removed `d-fc-primary` utility class.
 - Removed Spot Illustrations' theming capability.
 
-### New/Updated/Removed Text Color Variables
+### Color: New/Updated/Removed Text Color Variables
 
 - Removed `--fc-dark` variable
 - Removed `--fc-medium` variable
@@ -114,13 +116,54 @@ New Color Ramp
 - Removed `.d-fc-blue` CSS Utilities
 - Removed `.d-fc-tan` CSS Utilities
 
-### Updated Font Stack
-- Replaced `Inter` font with local system font stack.
-- Replaced `RobotoMono` font with SFMono.
-- Removed `fw-thin`, `fw-light` and `fw-black` variables (RobotoMono shims).
+---
 
-### Updated Font Size Ramps
+### Typography: Updated Font Stack
+- Replaced `Inter` font with local system font stack.
+- Replaced `RobotoMono` font with `SFMono`.
+- Removed `fw-thin`, `fw-light` and `fw-black` variables (RobotoMono shims).
+- `fw-medium` and `fw-semibold` are no longer restricted to Marketing use.
+
+### Typography: Updated Font Size Ramps
 - Removed `fs10`, `fs11`, `fs12`, `fs14`, `fs16`, `fs18`, `fs20`, `fs24`, `fs28`, `fs32`, `fs36`, `fs42`, `fs48`, `fs54`.
+
+### Typography: New Body Styles
+
+#### Body
+* `d-body-base`
+* `d-body-small`
+* `d-body-compact`
+* `d-body-compact-small`
+
+#### Label
+* `d-label-base`
+* `d-label-small`
+* `d-label-compact`
+* `d-label-plain`
+* `d-label-compact-plain`
+* `d-label-compact-small`
+* `d-label-plain-small`
+* `d-label-compact-plain-small`
+
+#### Helper
+* `d-helper-base`
+* `d-helper-small`
+
+#### Code
+* `d-code-base`
+* `d-code-small`
+
+### Typography: New Headline Styles
+* `d-headline-eyebrow`
+* `d-headline-small`
+* `d-headline-medium`
+* `d-headline-compact-small`
+* `d-headline-compact-base`
+* `d-headline-large`
+* `d-headline-extra-large`
+* `d-headline-extra-extra-large`
+
+---
 
 ## Migration Steps
 
@@ -132,7 +175,7 @@ Follow steps in this exact order.
 npm install @dialpad/dialtone@beta
 ```
 
-### 2. Replace color stops
+### 2. Color: Replace stops
 
 Search for | Replace with
 :-:|:-:
@@ -178,7 +221,7 @@ Search for | Replace with
 `d-fc-yellow` | `d-fc-gold`
 [others TBD, e.g. Green] | ...
 
-### 3. Replace "Primary Color" theme uses
+### 3. Color: Replace "Primary Color" theme uses
 
 #### Custom CSS references to expired "Primary Color" CSS Variables
 
@@ -197,7 +240,7 @@ Search for | Replace with
 :-:|:-:
 `d-fc-primary` | `d-fc-purple`
 
-### 4. Replace Text Color Styles
+### 4. Color: Replace Text Color Styles
 
 #### Update color CSS variables
 
@@ -219,7 +262,7 @@ Search for | Replace with
 `fc-light` | `fc-tertiary`
 `fc-purple` | `d-fc-purple-400`)
 
-### 5. Replace hardcoded HEX values
+### 5. Color: Replace hardcoded HEX values
 
 Any custom CSS authored with HEX values (e.g. `#ff0000`) should be replaced with its CSS Custom Property equivalent (e.g. `var(--[COLOR-STOP])`). If no equivalent exists, consult your Product Designer.
 
@@ -286,11 +329,11 @@ Search for | Replace with
 `#FFBC0F` | `var(--gold-300)`
 `#3F2D00` | `var(--gold-500)`
 
-### 6. Check color updates for readability
+### 6. Color: Check color updates for readability
 
 Check updates to confirm desired rendering and alignment to contrast accessibility requirements. When in doubt, confer with your Product Designer to identify a proper solution.
 
-### 7. Font updates
+### 7. Typography
 
 #### Update font-weight CSS classes usage
 
@@ -327,7 +370,7 @@ Search for | Replace with
 `d-fs48` | `d-fs-500`
 `d-fs54` | `d-fs-500`
 
-####  Update font-size CSS variables
+#### Update font-size CSS variables
 
 Search for | Replace with
 :-:|:-:
@@ -348,6 +391,16 @@ Search for | Replace with
 
 Check updates to confirm desired readability. Most replacements are likely accurate, though they may need to be visually
 validated.
+
+#### Update relative line-height CSS classes usage
+
+Search for | Replace with
+:-:|:-:
+`d-lh-tighter` | `d-lh-200`
+`d-lh-tight`   | `d-lh-200`
+`d-lh-normal`  | `d-lh-300`
+`d-lh-loose`   | `d-lh-400`
+`d-lh-looser`  | `d-lh-500`
 
 #### Update line-height CSS variables
 
