@@ -491,14 +491,14 @@
       @stop-800: ~"@{prefix}-800@{suffix}";
 
       body {
-        --@{stop-100}:       calc(((@BU / 2) / 2) / 2);
-        --@{stop-200}:       calc((@BU / 2) / 2);
-        --@{stop-300}:       calc(@BU / 2);
+        --@{stop-100}:       calc(@BU / pow(2, 3));
+        --@{stop-200}:       calc(@BU / pow(2, 2));
+        --@{stop-300}:       calc(@BU / pow(2, 1));
         --@{stop-400}:       @BU;
-        --@{stop-500}:       calc(@BU * 2);
-        --@{stop-600}:       calc((@BU * 2) * 2);
-        --@{stop-700}:       calc(((@BU * 2) * 2) * 2);
-        --@{stop-800}:       calc((((@BU * 2) * 2) * 2) * 2);
+        --@{stop-500}:       calc(@BU * pow(2, 1));
+        --@{stop-600}:       calc(@BU * pow(2, 2));
+        --@{stop-700}:       calc(@BU * pow(2, 3));
+        --@{stop-800}:       calc(@BU * pow(2, 4));
       }
     }
 }
