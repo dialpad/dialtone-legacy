@@ -15,7 +15,7 @@
     </header>
     <slot name="content-bottom" />
     <div
-      v-if="path.startsWith('/components')"
+      v-if="path.startsWith('/components') && !frontmatter.no_preview"
       id="preview-header"
       class="d-d-flex d-jc-space-between"
     >
