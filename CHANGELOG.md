@@ -1,3 +1,23 @@
+# [6.40.0](https://github.com/dialpad/dialtone/compare/v6.39.0...v6.40.0) (2022-09-21)
+
+
+### Bug Fixes
+
+* downgrade eslint to prevent linting errors. ([#669](https://github.com/dialpad/dialtone/issues/669)) ([54c38ba](https://github.com/dialpad/dialtone/commit/54c38bab8a1c312d2ab8d07cfd20d97a1aa10ecb))
+* **icons:** social icon sizing ([#668](https://github.com/dialpad/dialtone/issues/668)) ([fc38274](https://github.com/dialpad/dialtone/commit/fc38274e44499c3e23f1c0def8bc9976cbef3bee))
+* inline classes table ([#667](https://github.com/dialpad/dialtone/issues/667)) ([1318149](https://github.com/dialpad/dialtone/commit/13181492d6dfdb0e3084f6587223bb1c4308019e))
+* set wifi-off icon fill to black ([#687](https://github.com/dialpad/dialtone/issues/687)) ([505ef60](https://github.com/dialpad/dialtone/commit/505ef60dd2c9436a731fdce9482fd4209ad97ba1))
+
+
+### Features
+
+* add publish spot illustration ([#677](https://github.com/dialpad/dialtone/issues/677)) ([5cadf74](https://github.com/dialpad/dialtone/commit/5cadf74ec1783891322b964c2521a0bb2733107d))
+
+
+### Reverts
+
+* Revert "build: add GHA to update dialtone7 after staging PR merge (#663)" ([80595e2](https://github.com/dialpad/dialtone/commit/80595e2884ce5d1ec4de59ea06aaf3dc50e3bfd9)), closes [#663](https://github.com/dialpad/dialtone/issues/663)
+
 # [6.39.0](https://github.com/dialpad/dialtone/compare/v6.38.0...v6.39.0) (2022-09-07)
 
 
