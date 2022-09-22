@@ -38,25 +38,25 @@ Although highly versatile, this doesn't mean modal dialogs are fit for all purpo
   <div class="dialtone-usage__item dialtone-usage__item--do">
     <h3 class="dialtone-usage__hd dialtone-usage__hd--do"><icon-checkmark /> Use for</h3>
     <div class="dialtone-usage__bd">
-<Markdown>
-- To complete a simple task or decision that requires their full attention outside of the main workflow.
-- Confirming a destructive action that is about to happen
-- Ask for a user’s consent for an action.
-</Markdown>
+      <ul>
+        <li>To complete a simple task or decision that requires their full attention outside the main workflow.</li>
+        <li>Confirming a destructive action that is about to happen</li>
+        <li>Ask for a user’s consent for an action.</li>
+      </ul>
     </div>
   </div>
   <div class="dialtone-usage__item dialtone-usage__item--dont">
     <h3 class="dialtone-usage__hd dialtone-usage__hd--dont"><icon-close /> Don't use for</h3>
     <div class="dialtone-usage__bd">
-<Markdown>
-- When its content or features can be part of the page without complicating the page’s intent.
-- When the content or message requires interaction with other parts of the application or screen.
-- Form-related error, success, or warning messages. Keep feedback in context to forms.
-- Confirming an action took place (instead: use a [Toast](/components/toast.html)).
-- Revealing more information (instead: place content inline)
-- Displaying complex forms or large amounts of information (instead: place content inline)
-- Displaying content unrelated to current task (instead: place content inline as a [Link](/components/link.html)) or [Banner](/components/banner.html)).
-</Markdown>
+      <ul>
+        <li>When its content or features can be part of the page without complicating the page’s intent.</li>
+        <li>When the content or message requires interaction with other parts of the application or screen.</li>
+        <li>Form-related error, success, or warning messages. Keep feedback in context to forms.</li>
+        <li>Confirming an action took place (instead: use a <RouterLink to="toast.html">Toast</RouterLink>).</li>
+        <li>Revealing more information (instead: place content inline)</li>
+        <li>Displaying complex forms or large amounts of information (instead: place content inline)</li>
+        <li>Displaying content unrelated to current task (instead: place content inline as a <RouterLink to="link.html">Link</RouterLink>) or <RouterLink to="banner.html">Banner</RouterLink>).</li>
+      </ul>
     </div>
   </div>
 </div>
@@ -67,7 +67,7 @@ Although highly versatile, this doesn't mean modal dialogs are fit for all purpo
 - Treat modals as a last resort. Consider whether there’s another component or UI that might be  less disruptive for the user.
 - Limit the number of interactions in a modal. Remove anything that does not support the task.
 - Avoid multiple steps that require navigation within the modal dialog.
-- Avoid complex decision making that requires additional sources of information unavailable in the modal.
+- Avoid complex decision-making that requires additional sources of information unavailable in the modal.
 - Use clear header and action labels. Label links and buttons with a verb that avoids ambiguity and clearly indicates what happens when it’s selected. The primary action’s label should complement the modal title.
 - Avoid lengthy contents that require scrolling.
 - Only one modal can be present at a time.
@@ -75,9 +75,9 @@ Although highly versatile, this doesn't mean modal dialogs are fit for all purpo
 ## Accessibility
 
 - Opened modals “trap focus,” meaning keyboard navigation controls are constrained to elements within the modal. Tabbing to the modal's last focusable element, and then pressing tab again would loop the focus back to the first element on the page. Focus doesn't return to the underlying page until the user explicitly dismisses the modal, in which case it would return to the place it was before the dialog opened.
-- To ensure maximum compatibility, all `a` tags must have an `href`attribute. Also any elements which you don't want to be focusable (but might be focusable by default) must have their `tabindex` set to `-1`.
+- To ensure maximum compatibility, all `a` tags must have an `href`attribute. Also, any elements which you don't want to be focusable (but might be focusable by default) must have their `tabindex` set to `-1`.
 - Focus should always begin on the first actionable element within the dialog. This could be an OK button, or the first field in the form. An X button in the top right corner should be last in the tab order even though it may be visually above the other elements.
-- Check out the "Focus management" section of the following <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role#focus_management" target="_blank">MDN Dialog document</a> if you'd like to know more.
+- Check out the "Focus management" section of the following [MDN Dialog document](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role#focus_management) if you'd like to know more.
 - Use `aria-labelledby` on its root element to associate a title to the modal to announce its to accessible technology. The value of aria-labelledby is to the `id` value of its heading element (e.g. `h2`).
 - Dismissing Modal returns focus to the originating element that spawned the modal’s display.
 
@@ -175,5 +175,4 @@ At minimum, modals contain a title and one button. They could also contain body 
   import IconCheckmark from '@svgIcons/IconCheckmark.vue';
   import IconClose from '@svgIcons/IconClose.vue';
   import ExampleModal from '@exampleComponents/ExampleModal.vue';
-  import Markdown from "@baseComponents/Markdown.vue";
 </script>

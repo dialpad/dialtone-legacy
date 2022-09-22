@@ -7,4 +7,4 @@ no_preview: true
 
 ## Variants and Examples
 
-The Combobox component only exists in Dialtone Vue. Please follow [this link](https://vue.dialpad.design/?path=/story/components-combobox--default) for more details on its usage.
+The Combobox component only exists in Dialtone Vue. Please follow [this link](https://vue.dialpad.design/?path=/docs/components-combobox--default) for more details on its usage.

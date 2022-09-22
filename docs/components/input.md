@@ -18,19 +18,19 @@ This component combines both the `input` and `textarea` elements as options with
   <div class="dialtone-usage__item dialtone-usage__item--do">
     <h3 class="dialtone-usage__hd dialtone-usage__hd--do"><icon-checkmark /> Use for</h3>
     <div class="dialtone-usage__bd">
-<Markdown>
-- If you can’t reasonably predict a user’s answer to a prompt and there might be wide variability in users’ answers.
-- When using another type of input will make answering more difficult. For example, birthdays and other known dates are easier to type in than they are to select from a calendar picker.
-- When users want to be able to paste in a response.
-</Markdown>
+      <ul>
+        <li>If you can’t reasonably predict a user’s answer to a prompt and there might be wide variability in users’ answers.</li>
+        <li>When using another type of input will make answering more difficult. For example, birthdays and other known dates are easier to type in than they are to select from a calendar picker.</li>
+        <li>When users want to be able to paste in a response.</li>
+      </ul>
     </div>
   </div>
   <div class="dialtone-usage__item dialtone-usage__item--dont">
     <h3 class="dialtone-usage__hd dialtone-usage__hd--dont"><icon-close /> Don't use for</h3>
     <div class="dialtone-usage__bd">
-<Markdown>
-- When users are choosing from a specific set of options. Consider [Select](/components/select/), [Radio](/components/radio/), or [Checkbox](/components/checkbox/).
-</Markdown>
+      <ul>
+        <li>When users are choosing from a specific set of options. Consider <RouterLink to="select.html">Select</RouterLink>, <RouterLink to="radio.html">Radio</RouterLink>, or <RouterLink to="checkbox.html">Checkbox</RouterLink>.</li>
+      </ul>
     </div>
   </div>
 </div>
@@ -40,7 +40,7 @@ This component combines both the `input` and `textarea` elements as options with
 - The length of the text input provides a hint to users as to how much text to enter.
 - Only show error validation messages or stylings after a user has interacted with a particular field.
 - Do not use placeholder text (i.e. `placeholder` attribute) in place of an accessible `label`.
-- Consider the type of content a user may enter to aid mobile device entry; mobile devices typically surface a keyboard UI attuned to the type. For example, type="tel" will surface a <a href="http://html5doctor.com/html5-forms-input-types/#input-tel">phone keyboard</a>.
+- Consider the type of content a user may enter to aid mobile device entry; mobile devices typically surface a keyboard UI attuned to the type. For example, type="tel" will surface a [phone keyboard](http://html5doctor.com/html5-forms-input-types/#input-tel).
 
 ## Variants and Examples
 
@@ -461,5 +461,4 @@ You may use different icon sizes in different sized inputs
 <script setup>
   import IconSend from '@svgIcons/IconSend.vue';
   import IconLock from '@svgIcons/IconLock.vue';
-  import Markdown from "@baseComponents/Markdown.vue";
 </script>

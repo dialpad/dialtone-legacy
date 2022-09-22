@@ -1,10 +1,10 @@
 ---
-title: Emoji Text Wrapper
-desc: "Wrapper to find and replace shortcodes like :smile: or unicode chars such as 😄 with our custom Emojis implementation."
-storybook_url: https://vue.dialpad.design/?path=/story/components-emoji-text-wrapper--default
+title: Pagination
+desc: Pagination allows you to divide large amounts of content into smaller chunks across multiple pages.
+storybook_url: https://vue.dialpad.design/?path=/story/components-pagination--default
 no_preview: true
 ---
 
 ## Variants and Examples
 
-The Emoji Text Wrapper component only exists in Dialtone Vue. Please follow [this link](https://vue.dialpad.design/?path=/story/components-emoji-text-wrapper-text-wrapper--default) for more details on its usage.
+The Pagination component only exists in Dialtone Vue. Please follow [this link](https://vue.dialpad.design/?path=/docs/components-pagination--default) for more details on its usage.

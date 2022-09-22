@@ -22,22 +22,22 @@ Radio buttons are a common way to allow users to make a single selection from a 
   <div class="dialtone-usage__item dialtone-usage__item--do">
     <h3 class="dialtone-usage__hd dialtone-usage__hd--do"><icon-checkmark /> Use for</h3>
     <div class="dialtone-usage__bd">
-<Markdown>
-- When users may only choose a single option out of a set of mutually exclusive choices.
-- If the number of available options can fit onto a mobile screen.
-- In place of [Select](/components/select/) element if there are few enough options (e.g. =7) and the design can support it.
-</Markdown>
+      <ul>
+        <li> When users may only choose a single option out of a set of mutually exclusive choices.</li>
+        <li> If the number of available options can fit onto a mobile screen.</li>
+        <li> In place of <RouterLink to="select.html" >Select</RouterLink> element if there are few enough options (e.g. =7) and the design can support it.</li>
+      </ul>
     </div>
   </div>
   <div class="dialtone-usage__item dialtone-usage__item--dont">
     <h3 class="dialtone-usage__hd dialtone-usage__hd--dont"><icon-close /> Don't use for</h3>
     <div class="dialtone-usage__bd">
-<Markdown>
-- Consider [Checkbox](/components/checkbox/) if users may have the option to select more than one.
-- Consider a [Select](/components/select/) if you don’t have enough space to list out all available options.
-- If users should be able to select zero of the options; radio elements are not “uncheckable.” A [Checkbox](/components/Checkbox/) may be warranted.
-- If there are too many options to display on a single view; consider a [Select](/components/select/) instead.
-</Markdown>
+      <ul>
+        <li>Consider <RouterLink to="checkbox.html">Checkbox</RouterLink> if users may have the option to select more than one.</li>
+        <li>Consider a <RouterLink to="select.html">Select</RouterLink> if you don’t have enough space to list out all available options.</li>
+        <li>If users should be able to select zero of the options; radio elements are not “uncheckable.” A <RouterLink to="checkbox.html">Checkbox</RouterLink> may be warranted.</li>
+        <li>If there are too many options to display on a single view; consider a <RouterLink to="select.html">Select</RouterLink> instead.</li>
+      </ul>
     </div>
   </div>
 </div>
@@ -351,11 +351,7 @@ The best accessibility is semantic HTML. Most screen readers understand how to p
 
 - All inputs should have an `id` attribute.
 - Associate radio labels with their inputs using the `for` attribute. This correlates with the radio's `id`.
-- If you have a group of related radios, use a `fieldset` to group them and a `legend` to title the group. For further information, please visit Gov.UK’s article, <a href="https://accessibility.blog.gov.uk/2016/07/22/using-the-fieldset-and-legend-elements/">"Using the fieldset and legend elements"</a>.
+- If you have a group of related radios, use a `fieldset` to group them and a `legend` to title the group. For further information, please visit Gov.UK’s article, ["Using the fieldset and legend elements"](https://accessibility.blog.gov.uk/2016/07/22/using-the-fieldset-and-legend-elements).
 - If the input is a required field, use the `aria-required` property and use the validation message for input errors.
 - Input with validation errors should have `aria-describedby` with the `id` of the validation message.
 - Input with validation errors should have `aria-describedby` with the `id` of the validation message.
-
-<script setup>
-  import Markdown from "@baseComponents/Markdown.vue";
-</script>

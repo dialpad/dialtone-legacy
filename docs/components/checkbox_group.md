@@ -7,4 +7,4 @@ no_preview: true
 
 ## Variants and Examples
 
-The Checkbox Group component only exists in Dialtone Vue. Please follow [this link](https://vue.dialpad.design/?path=/story/components-checkbox-group--default) for more details on its usage.
+The Checkbox Group component only exists in Dialtone Vue. Please follow [this link](https://vue.dialpad.design/?path=/docs/components-checkbox-group--default) for more details on its usage.

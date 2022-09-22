@@ -22,20 +22,20 @@ Checkboxes are an easily understandable way to indicate that users can select on
   <div class="dialtone-usage__item dialtone-usage__item--do">
     <h3 class="dialtone-usage__hd dialtone-usage__hd--do"><icon-checkmark /> Use for</h3>
     <div class="dialtone-usage__bd">
-<Markdown>
-- Selecting any number of choices from a set list.
-- Binary selections that convey opposite states, such as check=“on” and unchecked=“off”, paired with a label that conveys the choice.
-- When users need to see all the available options at a glance.
-</Markdown>
+      <ul>
+        <li>Selecting any number of choices from a set list.</li>
+        <li>Binary selections that convey opposite states, such as check=“on” and unchecked=“off”, paired with a label that conveys the choice.</li>
+        <li>When users need to see all the available options at a glance.</li>
+      </ul>
     </div>
   </div>
   <div class="dialtone-usage__item dialtone-usage__item--dont">
     <h3 class="dialtone-usage__hd dialtone-usage__hd--dont"><icon-close /> Don't use for</h3>
     <div class="dialtone-usage__bd">
-<Markdown>
-- If a user can only select one option from a list; consider using [Radio](/components/radio/) or [Select](/components/select/).
-- If there are too many options to reasonably display in its context.
-</Markdown>
+      <ul>
+        <li>If a user can only select one option from a list; consider using <RouterLink to="radio.html">Radio</RouterLink> or <RouterLink to="select.html">Select</RouterLink>.</li>
+        <li>If there are too many options to reasonably display in its context.</li>
+      </ul>
     </div>
   </div>
 </div>
@@ -44,8 +44,8 @@ Checkboxes are an easily understandable way to indicate that users can select on
 
 - Users should be able to tap on or click on either the text `label` or the checkbox element itself to toggle an option, aiding accessibility.
 - Options that are listed vertically are easier to read than those listed horizontally. Horizontal listings can make it difficult to tell which label pertains to which checkbox.
-- Negative language in labels can be counterintuitive. For example, use “I want to receive a promotional email” instead of “I don’t want to receive promotional email.
-- Make sure that the label makes both states — checked and unchecked — clear to the user. If that’s not possible, consider using a [Radio](/components/radio/) button with two individual options instead. Then both states can have their own clearly marked label.
+- Negative language in labels can be counterintuitive. For example, use "I want to receive a promotional email" instead of "I don’t want to receive promotional email".
+- Make sure that the label makes both states — checked and unchecked — clear to the user. If that’s not possible, consider using a [Radio](radio.md) button with two individual options instead. Then both states can have their own clearly marked label.
 - Make sure selections are adequately spaced for touch screens.
 - Multiple checkbox options should be organized in a meaningful way, like alphabetical or most-frequent to least-frequent. This helps users easily find the option they’re looking for.
 - `indeterminate` checkboxes convey a "mixed" state that neither qualifies as checked or unchecked. An example use case is when a checkbox acts as a "parent" of a collection of child checkboxes:
@@ -427,11 +427,7 @@ The best accessibility is semantic HTML. Most screen readers understand how to p
 
 - All inputs should have an `id` attribute.
 - Associate checkbox labels with their inputs using the `for` attribute. This correlates with the checkbox's `id`.
-- If you have a group of related checkboxes, use a `fieldset` to group them and a `legend` to title the group. For further information, please visit Gov.UK’s article, <a href="https://accessibility.blog.gov.uk/2016/07/22/using-the-fieldset-and-legend-elements/">"Using the fieldset and legend elements"</a>.
+- If you have a group of related checkboxes, use a `fieldset` to group them and a `legend` to title the group. For further information, please visit Gov.UK’s article, ["Using the fieldset and legend elements"](https://accessibility.blog.gov.uk/2016/07/22/using-the-fieldset-and-legend-elements).
 - Input with description text should have `aria-describedby` with the `id` of the description text.
 - If the input is a required field, use the `aria-required` property and use the validation message for input errors.
 - Input with validation errors should have `aria-describedby` with the `id` of the validation message.
-
-<script setup>
-  import Markdown from "@baseComponents/Markdown.vue";
-</script>

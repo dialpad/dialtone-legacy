@@ -22,18 +22,18 @@ They should be easy to scan for relevant and actionable information. Elements, l
   <div class="dialtone-usage__item dialtone-usage__item--do">
     <h3 class="dialtone-usage__hd dialtone-usage__hd--do"><icon-checkmark /> Use for</h3>
     <div class="dialtone-usage__bd">
-<Markdown>
-- To display content and actions on a single topic.
-</Markdown>
+      <ul>
+        <li>To display content and actions on a single topic.</li>
+      </ul>
     </div>
   </div>
   <div class="dialtone-usage__item dialtone-usage__item--dont">
     <h3 class="dialtone-usage__hd dialtone-usage__hd--dont"><icon-close /> Don't use for</h3>
     <div class="dialtone-usage__bd">
-<Markdown>
-- Add too many call-to-action elements to the same card. A card should only contain a single primary action.
-- Inform users about important changes.
-</Markdown>
+      <ul>
+        <li>Add too many call-to-action elements to the same card. A card should only contain a single primary action.</li>
+        <li>Inform users about important changes.</li>
+      </ul>
     </div>
   </div>
 </div>
@@ -146,5 +146,4 @@ At minimum, card contains body of content. It could also have header with button
 
 <script setup>
   import IconMenuVertical from '@svgIcons/IconMenuVertical.vue';
-  import Markdown from "@baseComponents/Markdown.vue";
 </script>

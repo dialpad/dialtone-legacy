@@ -17,19 +17,19 @@ The Toggle component acts as a way to allow the User to switch between two mutua
   <div class="dialtone-usage__item dialtone-usage__item--do">
     <h3 class="dialtone-usage__hd dialtone-usage__hd--do"><icon-checkmark /> Use for</h3>
     <div class="dialtone-usage__bd">
-<Markdown>
-- When its action has an instantaneous effect.
-</Markdown>
+      <ul>
+        <li>When its action has an instantaneous effect.</li>
+      </ul>
     </div>
   </div>
   <div class="dialtone-usage__item dialtone-usage__item--dont">
     <h3 class="dialtone-usage__hd dialtone-usage__hd--dont"><icon-close /> Don't use for</h3>
     <div class="dialtone-usage__bd">
-<Markdown>
-- When its action does not have an immediate effect on the application.
-- Selecting between 2 options. Instead utilize a [Checkbox](/components/checkbox/).
-- As an alternative to a [Checkbox](/components/checkbox/) or [Radio](/components/radio/) within a Form.
-</Markdown>
+      <ul>
+        <li>When its action does not have an immediate effect on the application.</li>
+        <li>Selecting between 2 options. Instead, utilize a <RouterLink to="checkbox.html">Checkbox</RouterLink>.</li>
+        <li>As an alternative to a <RouterLink to="checkbox.html">Checkbox</RouterLink> or <RouterLink to="radio.html">Radio</RouterLink> within a Form.</li>
+      </ul>
     </div>
   </div>
 </div>
@@ -196,9 +196,8 @@ The best accessibility is semantic HTML. Most screen readers understand how to p
 
 - All toggle buttons should have an `id` attribute.
 - Associate toggle labels with their buttons using the `for` attribute. This correlates with the toggle's `id`.
-- If you have a group of related toggles, use a `fieldset` to group them and a `legend` to title the group. For further information, please visit Gov.UK’s article, <a href="https://accessibility.blog.gov.uk/2016/07/22/using-the-fieldset-and-legend-elements/">Using the fieldset and legend elements</a>.
+- If you have a group of related toggles, use a `fieldset` to group them and a `legend` to title the group. For further information, please visit Gov.UK’s article, ["Using the fieldset and legend elements"](https://accessibility.blog.gov.uk/2016/07/22/using-the-fieldset-and-legend-elements).
 
 <script setup>
   import ExampleToggle from '@exampleComponents/ExampleToggle.vue';
-  import Markdown from "@baseComponents/Markdown.vue";
 </script>

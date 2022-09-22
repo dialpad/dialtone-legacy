@@ -7,4 +7,4 @@ no_preview: true
 
 ## Variants and Examples
 
-The Button Group component only exists in Dialtone Vue. Please follow [this link](https://vue.dialpad.design/?path=/story/components-button-group--default) for more details on its usage.
+The Button Group component only exists in Dialtone Vue. Please follow [this link](https://vue.dialpad.design/?path=/docs/components-button-group--default) for more details on its usage.

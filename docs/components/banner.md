@@ -1,6 +1,6 @@
 ---
 title: Banner
-desc: A banner is a type of <a href="components/notice">notice</a>, delivering system and engagement messaging. It is highly intrusive and should be used sparingly and appropriately.
+desc: A banner is a type of <a href="/components/notice.html">notice</a>, delivering system and engagement messaging. It is highly intrusive and should be used sparingly and appropriately.
 storybook_url: https://vue.dialpad.design/?path=/story/components-banner--default
 ---
 
@@ -13,7 +13,7 @@ System banners are used for **system** messaging. They are full-width notices pl
 1. **Above everything else:** If the banner is related to the entire app (e.g. the user lost internet service), place the banner first. <em>These should not be dismissable until the issue is resolved.</em> To pin the banner to the top of the app, add the `.d-notice--pinned` class.
 2. **Below the top bar:** This is the default location for system banners. Use these when it affects only a particular area of the product (e.g. when the user is in Do Not Disturb mode).
 
-Banners are a type of notice and so you can use the following <a href="components/notice/">notice styles</a> in conjunction with `.d-banner`.
+Banners are a type of notice and so you can use the following [notice styles](./notice.md) in conjunction with `.d-banner`.
 
 ## Variants and Examples
 

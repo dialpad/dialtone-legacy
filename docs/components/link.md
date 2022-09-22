@@ -15,17 +15,17 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-link--default
   <div class="dialtone-usage__item dialtone-usage__item--do">
     <h3 class="dialtone-usage__hd dialtone-usage__hd--do"><icon-checkmark /> Use for</h3>
     <div class="dialtone-usage__bd">
-<Markdown>
-- Navigating between destinations.
-</Markdown>
+      <ul>
+        <li>Navigating between destinations.</li>
+      </ul>
     </div>
   </div>
   <div class="dialtone-usage__item dialtone-usage__item--dont">
     <h3 class="dialtone-usage__hd dialtone-usage__hd--dont"><icon-close /> Don't use for</h3>
     <div class="dialtone-usage__bd">
-<Markdown>
-- Actions, instead use a [Button](button.html)
-</Markdown>
+      <ul>
+        <li>Actions, instead use a <RouterLink to="button.html">Button</RouterLink></li>
+      </ul>
     </div>
   </div>
 </div>
@@ -71,7 +71,3 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-link--default
 ## Classes
 
 <component-class-table component-name="link"></component-class-table>
-
-<script setup>
-  import Markdown from "@baseComponents/Markdown.vue";
-</script>

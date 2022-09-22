@@ -7,4 +7,4 @@ no_preview: true
 
 ## Variants and Examples
 
-The Collapsible component only exists in Dialtone Vue. Please follow [this link](https://vue.dialpad.design/?path=/story/components-collapsible--default) for more details on its usage.
+The Collapsible component only exists in Dialtone Vue. Please follow [this link](https://vue.dialpad.design/?path=/docs/components-collapsible--default) for more details on its usage.

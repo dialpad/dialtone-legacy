@@ -7,4 +7,4 @@ no_preview: true
 
 ## Variants and Examples
 
-The Emoji component only exists in Dialtone Vue. Please follow [this link](https://vue.dialpad.design/?path=/story/components-emoji--default) for more details on its usage.
+The Emoji component only exists in Dialtone Vue. Please follow [this link](https://vue.dialpad.design/?path=/docs/components-emoji--default) for more details on its usage.
