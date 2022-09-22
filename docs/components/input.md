@@ -228,8 +228,8 @@ Provides feedback to the user based on their interaction, or lack thereof, with 
         <label class="d-label" for="Dialtone--InputExample--IconRight">Label</label>
       </div>
       <div class="d-input__wrapper">
-        <span class="d-input-icon d-input-icon--right"><icon-lock /></span>
         <input class="d-input d-input-icon--right" id="Dialtone--InputExample--IconRight" type="text" placeholder="Placeholder" />
+         <span class="d-input-icon d-input-icon--right"><icon-lock /></span>
       </div>
     </div>
   </div>
@@ -246,8 +246,8 @@ Provides feedback to the user based on their interaction, or lack thereof, with 
 <div>
   <label class="d-label" for="Dialtone--InputExample--IconRight">...</label>
   <div class="d-input__wrapper">
-    <span class="d-input-icon d-input-icon--right">...</span>
     <input class="d-input d-input-icon--right" id="Dialtone--InputExample--IconRight" type="text" placeholder="..." />
+     <span class="d-input-icon d-input-icon--right">...</span>
   </div>
 </div>
 ```
