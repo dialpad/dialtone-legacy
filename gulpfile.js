@@ -270,6 +270,8 @@ const buildSystemSVGs = function (done) {
     .pipe(cache('buildSystemSVGs'))
     .pipe(replace(' fill="none"', ''))
     .pipe(replace(' fill="#000"', ''))
+    .pipe(replace(' fill="#000000"', ''))
+    .pipe(replace(' fill="#0D0C0F"', ''))
     .pipe(replace(' fill="black"', ''))
     .pipe(replace(' fill="#141721"', ''))
     .pipe(replace('<svg width="24" height="24"', '<svg '))
