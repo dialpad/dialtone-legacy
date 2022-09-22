@@ -12,7 +12,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-button--defaul
 
 ## Usage
 
-`button` and link (`<a>`) HTML elements each describe a specific intent. Understanding the distinction is important: if it goes somewhere, use a [Link](link.html). If an action occurs, use a Button.
+`button` and link (`<a>`) HTML elements each describe a specific intent. Understanding the distinction is important: if it goes somewhere, use a [Link](link.md). If an action occurs, use a Button.
 
 <div class="dialtone-usage">
   <div class="dialtone-usage__item dialtone-usage__item--do">
