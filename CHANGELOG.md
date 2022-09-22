@@ -1,3 +1,10 @@
+## [6.40.1](https://github.com/dialpad/dialtone/compare/v6.40.0...v6.40.1) (2022-09-22)
+
+
+### Bug Fixes
+
+* **input:** remove absolute positioning of icons ([#684](https://github.com/dialpad/dialtone/issues/684)) ([7713502](https://github.com/dialpad/dialtone/commit/77135023234c908b8bcb8397009d9f2cedcfd837))
+
 # [6.40.0](https://github.com/dialpad/dialtone/compare/v6.39.0...v6.40.0) (2022-09-21)
 
 
