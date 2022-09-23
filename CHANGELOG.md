@@ -1,3 +1,15 @@
+# [6.41.0](https://github.com/dialpad/dialtone/compare/v6.40.1...v6.41.0) (2022-09-23)
+
+
+### Bug Fixes
+
+* add more svg fill replacements ([#691](https://github.com/dialpad/dialtone/issues/691)) ([e797046](https://github.com/dialpad/dialtone/commit/e797046c94e0de71c997a24b57949f3ad3a6fee6))
+
+
+### Features
+
+* **modal:** update danger style ([#689](https://github.com/dialpad/dialtone/issues/689)) ([bc18e18](https://github.com/dialpad/dialtone/commit/bc18e18b9b06a77219dc3cef2b7f6d509cc4dfba))
+
 ## [6.40.1](https://github.com/dialpad/dialtone/compare/v6.40.0...v6.40.1) (2022-09-22)
 
 
