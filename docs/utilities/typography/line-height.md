@@ -9,25 +9,28 @@ Use `d-lh-{n}` to change an element's line-height relatively. This means no unit
 
 <code-well-header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-purple-100 d-w100p d-hmn102" custom>
   <div class="d-d-grid d-gg16 d-ai-center" style="grid-template-columns: 10rem 1fr">
-    <div class="d-fs-100 d-ff-mono d-fc-purple-400 d-fco75">.d-lh-tighter</div>
-    <div><p class="d-fs-300 d-lh-tighter d-bgc-purple-200 d-bgo25">The quick brown fox jumps over the lazy dog.</p></div>
-    <div class="d-fs-100 d-ff-mono d-fc-purple-400 d-fco75">.d-lh-tight</div>
-    <div><p class="d-fs-300 d-lh-tight d-bgc-purple-200 d-bgo25">The quick brown fox jumps over the lazy dog.</p></div>
-    <div class="d-fs-100 d-ff-mono d-fc-purple-400 d-fco75">.d-lh-normal</div>
-    <div><p class="d-fs-300 d-lh-normal d-bgc-purple-200 d-bgo25">The quick brown fox jumps over the lazy dog.</p></div>
-    <div class="d-fs-100 d-ff-mono d-fc-purple-400 d-fco75">.d-lh-loose</div>
-    <div><p class="d-fs-300 d-lh-loose d-bgc-purple-200 d-bgo25">The quick brown fox jumps over the lazy dog.</p></div>
-    <div class="d-fs-100 d-ff-mono d-fc-purple-400 d-fco75">.d-lh-looser</div>
-    <div><p class="d-fs-300 d-lh-looser d-bgc-purple-200 d-bgo25">The quick brown fox jumps over the lazy dog.</p></div>
+    <div class="d-fs-100 d-ff-mono d-fc-purple-400 d-fco75">.d-lh-100</div>
+    <div><p class="d-fs-300 d-lh-100 d-bgc-purple-200 d-bgo25">The quick brown fox jumps over the lazy dog.</p></div>
+    <div class="d-fs-100 d-ff-mono d-fc-purple-400 d-fco75">.d-lh-200</div>
+    <div><p class="d-fs-300 d-lh-200 d-bgc-purple-200 d-bgo25">The quick brown fox jumps over the lazy dog.</p></div>
+    <div class="d-fs-100 d-ff-mono d-fc-purple-400 d-fco75">.d-lh-300</div>
+    <div><p class="d-fs-300 d-lh-300 d-bgc-purple-200 d-bgo25">The quick brown fox jumps over the lazy dog.</p></div>
+    <div class="d-fs-100 d-ff-mono d-fc-purple-400 d-fco75">.d-lh-400</div>
+    <div><p class="d-fs-300 d-lh-400 d-bgc-purple-200 d-bgo25">The quick brown fox jumps over the lazy dog.</p></div>
+    <div class="d-fs-100 d-ff-mono d-fc-purple-400 d-fco75">.d-lh-500</div>
+    <div><p class="d-fs-300 d-lh-500 d-bgc-purple-200 d-bgo25">The quick brown fox jumps over the lazy dog.</p></div>
+    <div class="d-fs-100 d-ff-mono d-fc-purple-400 d-fco75">.d-lh-600</div>
+    <div><p class="d-fs-300 d-lh-600 d-bgc-purple-200 d-bgo25">The quick brown fox jumps over the lazy dog.</p></div>
   </div>
 </code-well-header>
 
 ```html
-<p class="d-lh-tighter">...</p>
-<p class="d-lh-tight">...</p>
-<p class="d-lh-normal">...</p>
-<p class="d-lh-loose">...</p>
-<p class="d-lh-looser">...</p>
+<p class="d-lh-100">...</p>
+<p class="d-lh-200">...</p>
+<p class="d-lh-300">...</p>
+<p class="d-lh-400">...</p>
+<p class="d-lh-500">...</p>
+<p class="d-lh-600">...</p>
 ```
 
 ## Fixed line-heights

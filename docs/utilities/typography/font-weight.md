@@ -28,13 +28,19 @@ Use `d-fw-{n}` to change an element's font-weight.
   <div class="d-d-grid d-gg16 d-ai-center" style="grid-template-columns: 10rem 1fr">
     <div class="d-fs-100 d-ff-mono d-fc-purple-400">.d-fw-normal</div>
     <div><p class="d-fs-300 d-fw-normal">The quick brown fox jumps over the lazy dog.</p></div>
+    <div class="d-fs-100 d-ff-mono d-fc-purple-400">.d-fw-semibold</div>
+    <div><p class="d-fs-300 d-fw-medium">The quick brown fox jumps over the lazy dog.</p></div>
     <div class="d-fs-100 d-ff-mono d-fc-purple-400">.d-fw-bold</div>
+    <div><p class="d-fs-300 d-fw-semibold">The quick brown fox jumps over the lazy dog.</p></div>
+    <div class="d-fs-100 d-ff-mono d-fc-purple-400">.d-fw-medium</div>
     <div><p class="d-fs-300 d-fw-bold">The quick brown fox jumps over the lazy dog.</p></div>
   </div>
 </code-well-header>
 
 ```html
 <p class="d-fw-normal">...</p>
+<p class="d-fw-medium">...</p>
+<p class="d-fw-semibold">...</p>
 <p class="d-fw-bold">...</p>
 ```
 
