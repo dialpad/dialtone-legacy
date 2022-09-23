@@ -1,3 +1,21 @@
+# [7.0.0-beta.6](https://github.com/dialpad/dialtone/compare/v7.0.0-beta.5...v7.0.0-beta.6) (2022-09-23)
+
+
+### Bug Fixes
+
+* add more svg fill replacements ([#693](https://github.com/dialpad/dialtone/issues/693)) ([70862ca](https://github.com/dialpad/dialtone/commit/70862ca999cbd94c3423d9906472df1d740578b2))
+* **input:** remove absolute positioning of icons ([#690](https://github.com/dialpad/dialtone/issues/690)) ([4694084](https://github.com/dialpad/dialtone/commit/46940842823d67c9f3a056a3c138836c1c0b5ce4))
+* set wifi-off icon fill to black ([#687](https://github.com/dialpad/dialtone/issues/687)) ([#688](https://github.com/dialpad/dialtone/issues/688)) ([f2cfa77](https://github.com/dialpad/dialtone/commit/f2cfa770c78fbfda561752c0f60f99110c363a2c))
+* **spacing:** add CSS spacing variables back ([#686](https://github.com/dialpad/dialtone/issues/686)) ([7c3a6b7](https://github.com/dialpad/dialtone/commit/7c3a6b789f5204abea9b3cf8af8df5ed2f21a0cb))
+
+
+### Features
+
+* **modal:** update danger style ([#689](https://github.com/dialpad/dialtone/issues/689)) ([#694](https://github.com/dialpad/dialtone/issues/694)) ([785df56](https://github.com/dialpad/dialtone/commit/785df5671c5c7189a3e420648c613fa9a52ba1d1))
+* **size and space:** update spacing unit ramp ([#685](https://github.com/dialpad/dialtone/issues/685)) ([782f0c2](https://github.com/dialpad/dialtone/commit/782f0c24a98066b250428e13f350e8a24c86897a))
+* **type:** typography classes body, headline, label, helper, code ([#683](https://github.com/dialpad/dialtone/issues/683)) ([e586900](https://github.com/dialpad/dialtone/commit/e586900f2149024ed0d870dfdc01575a6a3255de))
+* **type:** update line height ramp ([#681](https://github.com/dialpad/dialtone/issues/681)) ([054366c](https://github.com/dialpad/dialtone/commit/054366c310f278fe893d89af6391700ff47c0e32))
+
 # [7.0.0-beta.5](https://github.com/dialpad/dialtone/compare/v7.0.0-beta.4...v7.0.0-beta.5) (2022-09-16)
 
 
