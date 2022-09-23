@@ -137,7 +137,7 @@ Although highly versatile, this doesn't mean modal dialogs are fit for all purpo
     <h2 class="d-modal__header" id="modal-title">…</h2>
     <p class="d-modal__content" id="modal-description">…</p>
     <footer class="d-modal__footer">
-      <button class="d-btn d-btn--danger" type="button">…</button>
+      <button class="d-btn" type="button">…</button>
       <button class="d-btn d-btn--danger d-btn--primary" type="button">…</button>
     </footer>
     <button href="#" class="d-modal__close d-btn d-btn--circle d-btn--lg" aria-label="Close"><IconClose \></button>

@@ -68,7 +68,7 @@
         </button>
         <button
           class="d-btn"
-          :class="{ 'd-btn--danger': isDanger }"
+          :class="{ 'd-btn--muted': isDanger }"
           type="button"
           @click="closeModal"
         >
@@ -77,7 +77,6 @@
       </footer>
       <button
         class="d-modal__close d-btn d-btn--circle d-btn--lg"
-        :class="{ 'd-btn--danger': isDanger }"
         aria-label="Close"
         @click="closeModal"
       >
