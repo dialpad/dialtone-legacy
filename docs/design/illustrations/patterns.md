@@ -2,8 +2,8 @@
 title: Patterns
 desc: The following patterns used for Department and Call Centers, paired with various colors to help with low-color or color-blindness issues.
 prev:
-  text: Adding Icons
-  link: /design/icons/adding
+  text: Emoji
+  link: /design/icons/emoji.html
 ---
 <icons kind="patterns" variation="dark" title="Dark Patterns"></icons>
 
