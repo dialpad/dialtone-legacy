@@ -1,3 +1,10 @@
+# [6.42.0](https://github.com/dialpad/dialtone/compare/v6.41.0...v6.42.0) (2022-09-26)
+
+
+### Features
+
+* add ai notes icon ([#696](https://github.com/dialpad/dialtone/issues/696)) ([028d03c](https://github.com/dialpad/dialtone/commit/028d03c7cb17be78e689a2bd2b786e5c9c8009d6))
+
 # [6.41.0](https://github.com/dialpad/dialtone/compare/v6.40.1...v6.41.0) (2022-09-23)
 
 
