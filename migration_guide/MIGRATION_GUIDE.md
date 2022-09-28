@@ -12,7 +12,7 @@ While the migration is fairly straightforward, there may be instances where manu
 
 ### Color updates
 
-<img width="1818" alt="image" src="https://user-images.githubusercontent.com/1165933/190548054-3600c97a-07ce-4f86-9882-7f7836af1393.png">
+<img alt="dialtone-7-colors" src="https://user-images.githubusercontent.com/1165933/192900758-e9b7e53b-ee9c-43ab-a6ce-52f841ad21e6.png">
 
 ### Color: Updated Ramps
 
