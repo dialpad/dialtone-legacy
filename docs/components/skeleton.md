@@ -13,8 +13,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-skeleton--defa
 ## Variants and Examples
 
 The Skeleton component only exists in Dialtone Vue.
-Please follow <a href="https://vue.dialpad.design/?path=/story/components-skeleton--default">this link</a> for
-more details on its usage.
+Please follow [this link](https://vue.dialpad.design/?path=/docs/components-skeleton--default) for more details on its usage.
 
 <code-well-header>
   <div class="d-h8 d-bar2 skeleton-placeholder skeleton-placeholder--animate" />

@@ -18,25 +18,17 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-card--default
 Cards are surfaces that display content and actions on a single topic.
 They should be easy to scan for relevant and actionable information. Elements, like text and images, should be placed on them in a way that clearly indicates hierarchy.
 
-<div class="dialtone-usage">
-  <div class="dialtone-usage__item dialtone-usage__item--do">
-    <h3 class="dialtone-usage__hd dialtone-usage__hd--do"><icon-checkmark /> Use for</h3>
-    <div class="dialtone-usage__bd">
-<Markdown>
+<dialtone-usage>
+<template #do>
+
 - To display content and actions on a single topic.
-</Markdown>
-    </div>
-  </div>
-  <div class="dialtone-usage__item dialtone-usage__item--dont">
-    <h3 class="dialtone-usage__hd dialtone-usage__hd--dont"><icon-close /> Don't use for</h3>
-    <div class="dialtone-usage__bd">
-<Markdown>
+</template>
+<template #dont>
+
 - Add too many call-to-action elements to the same card. A card should only contain a single primary action.
 - Inform users about important changes.
-</Markdown>
-    </div>
-  </div>
-</div>
+</template>
+</dialtone-usage>
 
 ### Best Practices
 
@@ -146,5 +138,5 @@ At minimum, card contains body of content. It could also have header with button
 
 <script setup>
   import IconMenuVertical from '@svgIcons/IconMenuVertical.vue';
-  import Markdown from "@baseComponents/Markdown.vue";
+  import DialtoneUsage from '@baseComponents/DialtoneUsage.vue';
 </script>

@@ -9,26 +9,18 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-link--default
 
 ## Usage
 
-`button` and link (`<a>`) HTML elements each describe a specific intent. Understanding the distinction is important: if it goes somewhere, use a Link. If an action occurs, use a [Button](button.html).
+`button` and link (`<a>`) HTML elements each describe a specific intent. Understanding the distinction is important: if it goes somewhere, use a Link. If an action occurs, use a [Button](button.md).
 
-<div class="dialtone-usage">
-  <div class="dialtone-usage__item dialtone-usage__item--do">
-    <h3 class="dialtone-usage__hd dialtone-usage__hd--do"><icon-checkmark /> Use for</h3>
-    <div class="dialtone-usage__bd">
-<Markdown>
+<dialtone-usage>
+<template #do>
+
 - Navigating between destinations.
-</Markdown>
-    </div>
-  </div>
-  <div class="dialtone-usage__item dialtone-usage__item--dont">
-    <h3 class="dialtone-usage__hd dialtone-usage__hd--dont"><icon-close /> Don't use for</h3>
-    <div class="dialtone-usage__bd">
-<Markdown>
-- Actions, instead use a [Button](button.html)
-</Markdown>
-    </div>
-  </div>
-</div>
+</template>
+<template #dont>
+
+- Actions, instead use a [Button](button.md).
+</template>
+</dialtone-usage>
 
 ### Best practices
 
@@ -73,5 +65,5 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-link--default
 <component-class-table component-name="link"></component-class-table>
 
 <script setup>
-  import Markdown from "@baseComponents/Markdown.vue";
+  import DialtoneUsage from '@baseComponents/DialtoneUsage.vue';
 </script>

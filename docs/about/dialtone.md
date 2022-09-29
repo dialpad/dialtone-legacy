@@ -17,10 +17,10 @@ and with usability and performance in mind.
 
 ### CSS components
 
-If Vue isn't supported in your application, you can use the [CSS components](../components/avatar/) in your project, but you'll be responsible
-for writing the correct markup, managing DOM elements and events, and making it [accessible for all users](../getting-started/accessibility/fundamentals/).
+If Vue isn't supported in your application, you can use the [CSS components](../components/avatar.md) in your project, but you'll be responsible
+for writing the correct markup, managing DOM elements and events, and making it [accessible for all users](../getting-started/accessibility/fundamentals.md).
 
-See more about [components usage](../getting-started/usage/#components).
+See more about [components usage](../getting-started/usage.md/#components).
 
 ### Previous Version
 
@@ -30,7 +30,7 @@ See more about [components usage](../getting-started/usage/#components).
 
 ### Contributions
 
-Read about [how to contribute to Dialtone](../about/contributing/).
+Read about [how to contribute to Dialtone](../about/contributing.md).
 
 ### Request a feature
 
