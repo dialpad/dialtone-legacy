@@ -156,8 +156,10 @@ New Color Ramp
 ### Typography: New Headline Styles
 * `d-headline-eyebrow`
 * `d-headline-small`
+* `d-headline-soft-small`
 * `d-headline-medium`
 * `d-headline-compact-small`
+* `d-headline-compact-soft-small`
 * `d-headline-compact-medium`
 * `d-headline-large`
 * `d-headline-compact-large`
