@@ -11,28 +11,20 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-toggle--defaul
 
 ## Usage
 
-The Toggle component acts as a way to allow the User to switch between two mutually exclusive options. While it technically mirrors a [Checkbox](/components/checkbox/) state, its effect on the system is immediate&mdash;much like a light switch immediately turns on or off the lights. In contrast, the checked state of a [Checkbox](/components/checkbox/) won't be applied until a separate action to confirm the selection is taken.
+The Toggle component acts as a way to allow the User to switch between two mutually exclusive options. While it technically mirrors a [Checkbox](checkbox.md) state, its effect on the system is immediate&mdash;much like a light switch immediately turns on or off the lights. In contrast, the checked state of a [Checkbox](checkbox.md) won't be applied until a separate action to confirm the selection is taken.
 
-<div class="dialtone-usage">
-  <div class="dialtone-usage__item dialtone-usage__item--do">
-    <h3 class="dialtone-usage__hd dialtone-usage__hd--do"><icon-checkmark /> Use for</h3>
-    <div class="dialtone-usage__bd">
-      <ul>
-        <li>When its action has an instantaneous effect.</li>
-      </ul>
-    </div>
-  </div>
-  <div class="dialtone-usage__item dialtone-usage__item--dont">
-    <h3 class="dialtone-usage__hd dialtone-usage__hd--dont"><icon-close /> Don't use for</h3>
-    <div class="dialtone-usage__bd">
-      <ul>
-        <li>When its action does not have an immediate effect on the application.</li>
-        <li>Selecting between 2 options. Instead, utilize a <RouterLink to="checkbox.html">Checkbox</RouterLink>.</li>
-        <li>As an alternative to a <RouterLink to="checkbox.html">Checkbox</RouterLink> or <RouterLink to="radio.html">Radio</RouterLink> within a Form.</li>
-      </ul>
-    </div>
-  </div>
-</div>
+<dialtone-usage>
+<template #do>
+
+- When its action has an instantaneous effect.
+</template>
+<template #dont>
+
+- When its action does not have an immediate effect on the application.
+- Selecting between 2 options. Instead, utilize a [Checkbox](checkbox.md).
+- As an alternative to a [Checkbox](checkbox.md) or [Radio](radio.md) within a Form.
+</template>
+</dialtone-usage>
 
 ### Best practices
 
@@ -200,4 +192,5 @@ The best accessibility is semantic HTML. Most screen readers understand how to p
 
 <script setup>
   import ExampleToggle from '@exampleComponents/ExampleToggle.vue';
+  import DialtoneUsage from '@baseComponents/DialtoneUsage.vue';
 </script>

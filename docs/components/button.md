@@ -14,25 +14,17 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-button--defaul
 
 `button` and link (`<a>`) HTML elements each describe a specific intent. Understanding the distinction is important: if it goes somewhere, use a [Link](link.md). If an action occurs, use a Button.
 
-<div class="dialtone-usage">
-  <div class="dialtone-usage__item dialtone-usage__item--do">
-    <h3 class="dialtone-usage__hd dialtone-usage__hd--do"><icon-checkmark /> Use for</h3>
-    <div class="dialtone-usage__bd">
-      <ul>
-        <li>Conveying that an action that will occur when invoked.</li>
-        <li>To trigger an action or behavior, such as submitting a form or spawning a <RouterLink to="modal.html">Modal</RouterLink>.</li>
-      </ul>
-    </div>
-  </div>
-  <div class="dialtone-usage__item dialtone-usage__item--dont">
-    <h3 class="dialtone-usage__hd dialtone-usage__hd--dont"><icon-close /> Don't use for</h3>
-    <div class="dialtone-usage__bd">
-      <ul>
-        <li>Avoid using to navigate between destinations, deferring to a <RouterLink to="link.html">Link</RouterLink> instead).</li>
-      </ul>
-    </div>
-  </div>
-</div>
+<dialtone-usage>
+<template #do>
+
+- Conveying that an action that will occur when invoked.
+- To trigger an action or behavior, such as submitting a form or spawning a [Modal](modal.md).
+</template>
+<template #dont>
+
+- Avoid using to navigate between destinations, deferring to a [Link](link.md) instead).
+</template>
+</dialtone-usage>
 
 ### Best Practices
 
@@ -538,4 +530,5 @@ The base button font size is 16px and should be used in most cases. Every button
   import IconGoogleGlyph from '@svgIcons/IconGoogleGlyph.vue';
   import IconOffice365 from '@svgIcons/IconOffice365.vue';
   import IconLinkedin from '@svgIcons/IconLinkedin.vue';
+  import DialtoneUsage from '@baseComponents/DialtoneUsage.vue';
 </script>

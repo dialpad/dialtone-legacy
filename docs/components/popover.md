@@ -24,29 +24,21 @@ Your popover should be non-modal when:
 - It is not scrollable.
 - It contains only components that do not hold state (link, button).
 
-<div class="dialtone-usage">
-  <div class="dialtone-usage__item dialtone-usage__item--do">
-    <h3 class="dialtone-usage__hd dialtone-usage__hd--do"><icon-checkmark /> Use for</h3>
-    <div class="dialtone-usage__bd">
-      <ul>
-        <li>Smaller sized dialogs that trigger on user activation of an anchor element.</li>
-        <li>Dialogs that should be positioned relative to the anchor.</li>
-        <li>Dialogs that contain interactive components.</li>
-      </ul>
-    </div>
-  </div>
-  <div class="dialtone-usage__item dialtone-usage__item--dont">
-    <h3 class="dialtone-usage__hd dialtone-usage__hd--dont"><icon-close /> Don't use for</h3>
-    <div class="dialtone-usage__bd">
-      <ul>
-        <li>Content that is displayed on hover. Instead, use a <RouterLink to="tooltip.html">Tooltip</RouterLink></li>
-        <li>Dialogs that should be positioned in the center of the screen.</li>
-        <li>Dialogs that are very large.</li>
-        <li>Alerts.</li>
-      </ul>
-    </div>
-  </div>
-</div>
+<dialtone-usage>
+<template #do>
+
+- Smaller sized dialogs that trigger on user activation of an anchor element.
+- Dialogs that should be positioned relative to the anchor.
+- Dialogs that contain interactive components.
+</template>
+<template #dont>
+
+- Content that is displayed on hover. Instead, use a [Tooltip](tooltip.md).
+- Dialogs that should be positioned in the center of the screen.
+- Dialogs that are very large.
+- Alerts.
+</template>
+</dialtone-usage>
 
 ### Best practices
 
@@ -167,4 +159,5 @@ If your popover is modal, please see the accessibility section of this page rega
 
 <script setup>
   import ExamplePopover from '@exampleComponents/ExamplePopover.vue';
+  import DialtoneUsage from '@baseComponents/DialtoneUsage.vue';
 </script>

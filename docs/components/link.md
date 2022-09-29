@@ -11,24 +11,16 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-link--default
 
 `button` and link (`<a>`) HTML elements each describe a specific intent. Understanding the distinction is important: if it goes somewhere, use a Link. If an action occurs, use a [Button](button.md).
 
-<div class="dialtone-usage">
-  <div class="dialtone-usage__item dialtone-usage__item--do">
-    <h3 class="dialtone-usage__hd dialtone-usage__hd--do"><icon-checkmark /> Use for</h3>
-    <div class="dialtone-usage__bd">
-      <ul>
-        <li>Navigating between destinations.</li>
-      </ul>
-    </div>
-  </div>
-  <div class="dialtone-usage__item dialtone-usage__item--dont">
-    <h3 class="dialtone-usage__hd dialtone-usage__hd--dont"><icon-close /> Don't use for</h3>
-    <div class="dialtone-usage__bd">
-      <ul>
-        <li>Actions, instead use a <RouterLink to="button.html">Button</RouterLink></li>
-      </ul>
-    </div>
-  </div>
-</div>
+<dialtone-usage>
+<template #do>
+
+- Navigating between destinations.
+</template>
+<template #dont>
+
+- Actions, instead use a [Button](button.md).
+</template>
+</dialtone-usage>
 
 ### Best practices
 
@@ -71,3 +63,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-link--default
 ## Classes
 
 <component-class-table component-name="link"></component-class-table>
+
+<script setup>
+  import DialtoneUsage from '@baseComponents/DialtoneUsage.vue';
+</script>

@@ -11,25 +11,17 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-badge--default
 
 ## Usage
 
-<div class="dialtone-usage">
-  <div class="dialtone-usage__item dialtone-usage__item--do">
-    <h3 class="dialtone-usage__hd dialtone-usage__hd--do"><icon-checkmark /> Use for</h3>
-    <div class="dialtone-usage__bd">
-      <ul>
-        <li>To flag and draw awareness to a specific element or feature of focus. For example, something is unique about that separates it from other like content.</li>
-        <li>As a notification system with minimal footprint.</li>
-      </ul>
-    </div>
-  </div>
-  <div class="dialtone-usage__item dialtone-usage__item--dont">
-    <h3 class="dialtone-usage__hd dialtone-usage__hd--dont"><icon-close /> Don't use for</h3>
-    <div class="dialtone-usage__bd">
-      <ul>
-        <li>To indicate that interaction by the user is required.</li>
-      </ul>
-    </div>
-  </div>
-</div>
+<dialtone-usage>
+<template #do>
+
+- To flag and draw awareness to a specific element or feature of focus. For example, something is unique about that separates it from other like content.
+- As a notification system with minimal footprint.
+</template>
+<template #dont>
+
+- To indicate that interaction by the user is required.
+</template>
+</dialtone-usage>
 
 ### Best practices
 
@@ -72,4 +64,5 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-badge--default
 
 <script setup>
   import { classes } from '@data/badge.json';
+  import DialtoneUsage from '@baseComponents/DialtoneUsage.vue';
 </script>

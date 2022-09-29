@@ -14,26 +14,18 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-input--default
 
 This component combines both the `input` and `textarea` elements as options within a single component. Its default presentation includes a paired text `label`.
 
-<div class="dialtone-usage">
-  <div class="dialtone-usage__item dialtone-usage__item--do">
-    <h3 class="dialtone-usage__hd dialtone-usage__hd--do"><icon-checkmark /> Use for</h3>
-    <div class="dialtone-usage__bd">
-      <ul>
-        <li>If you can’t reasonably predict a user’s answer to a prompt and there might be wide variability in users’ answers.</li>
-        <li>When using another type of input will make answering more difficult. For example, birthdays and other known dates are easier to type in than they are to select from a calendar picker.</li>
-        <li>When users want to be able to paste in a response.</li>
-      </ul>
-    </div>
-  </div>
-  <div class="dialtone-usage__item dialtone-usage__item--dont">
-    <h3 class="dialtone-usage__hd dialtone-usage__hd--dont"><icon-close /> Don't use for</h3>
-    <div class="dialtone-usage__bd">
-      <ul>
-        <li>When users are choosing from a specific set of options. Consider <RouterLink to="select.html">Select</RouterLink>, <RouterLink to="radio.html">Radio</RouterLink>, or <RouterLink to="checkbox.html">Checkbox</RouterLink>.</li>
-      </ul>
-    </div>
-  </div>
-</div>
+<dialtone-usage>
+<template #do>
+
+- If you can’t reasonably predict a user’s answer to a prompt and there might be wide variability in users’ answers.
+- When using another type of input will make answering more difficult. For example, birthdays and other known dates are easier to type in than they are to select from a calendar picker.
+- When users want to be able to paste in a response.
+</template>
+<template #dont>
+
+- When users are choosing from a specific set of options. Consider [Select](select.md), [Radio](radio.md), or [Checkbox](checkbox.md).
+</template>
+</dialtone-usage>
 
 ### Best practices
 
@@ -461,4 +453,5 @@ You may use different icon sizes in different sized inputs
 <script setup>
   import IconSend from '@svgIcons/IconSend.vue';
   import IconLock from '@svgIcons/IconLock.vue';
+  import DialtoneUsage from '@baseComponents/DialtoneUsage.vue';
 </script>

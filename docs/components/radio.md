@@ -18,29 +18,21 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-radio--default
 
 Radio buttons are a common way to allow users to make a single selection from a list of options. Since only one radio button can be selected at a time (within the same group), each available choice must be its own item and label. Upon selection of a radio item in a group, the group cannot be easily reset to zero selections.
 
-<div class="dialtone-usage">
-  <div class="dialtone-usage__item dialtone-usage__item--do">
-    <h3 class="dialtone-usage__hd dialtone-usage__hd--do"><icon-checkmark /> Use for</h3>
-    <div class="dialtone-usage__bd">
-      <ul>
-        <li> When users may only choose a single option out of a set of mutually exclusive choices.</li>
-        <li> If the number of available options can fit onto a mobile screen.</li>
-        <li> In place of <RouterLink to="select.html" >Select</RouterLink> element if there are few enough options (e.g. =7) and the design can support it.</li>
-      </ul>
-    </div>
-  </div>
-  <div class="dialtone-usage__item dialtone-usage__item--dont">
-    <h3 class="dialtone-usage__hd dialtone-usage__hd--dont"><icon-close /> Don't use for</h3>
-    <div class="dialtone-usage__bd">
-      <ul>
-        <li>Consider <RouterLink to="checkbox.html">Checkbox</RouterLink> if users may have the option to select more than one.</li>
-        <li>Consider a <RouterLink to="select.html">Select</RouterLink> if you don’t have enough space to list out all available options.</li>
-        <li>If users should be able to select zero of the options; radio elements are not “uncheckable.” A <RouterLink to="checkbox.html">Checkbox</RouterLink> may be warranted.</li>
-        <li>If there are too many options to display on a single view; consider a <RouterLink to="select.html">Select</RouterLink> instead.</li>
-      </ul>
-    </div>
-  </div>
-</div>
+<dialtone-usage>
+<template #do>
+
+- When users may only choose a single option out of a set of mutually exclusive choices.
+- If the number of available options can fit onto a mobile screen.
+- In place of [Select](select.md) element if there are few enough options (e.g. =7) and the design can support it.
+</template>
+<template #dont>
+
+- Consider [Checkbox](checkbox.md) if users may have the option to select more than one.
+- Consider a [Select](select.md) if you don’t have enough space to list out all available options.
+- If users should be able to select zero of the options; radio elements are not “uncheckable.” A [Checkbox](checkbox.md) may be warranted.
+- If there are too many options to display on a single view; consider a [Select](select.md) instead.
+</template>
+</dialtone-usage>
 
 ### Best practices
 
@@ -355,3 +347,7 @@ The best accessibility is semantic HTML. Most screen readers understand how to p
 - If the input is a required field, use the `aria-required` property and use the validation message for input errors.
 - Input with validation errors should have `aria-describedby` with the `id` of the validation message.
 - Input with validation errors should have `aria-describedby` with the `id` of the validation message.
+
+<script setup>
+  import DialtoneUsage from '@baseComponents/DialtoneUsage.vue';
+</script>

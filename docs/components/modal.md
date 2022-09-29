@@ -34,32 +34,24 @@ Modals disable underlying content and are used to present a short-term task the 
 
 Although highly versatile, this doesn't mean modal dialogs are fit for all purposes. Modals are purposefully disruptive and should be used thoughtfully and sparingly, specifically in moments where focus is required or an action must be taken.
 
-<div class="dialtone-usage">
-  <div class="dialtone-usage__item dialtone-usage__item--do">
-    <h3 class="dialtone-usage__hd dialtone-usage__hd--do"><icon-checkmark /> Use for</h3>
-    <div class="dialtone-usage__bd">
-      <ul>
-        <li>To complete a simple task or decision that requires their full attention outside the main workflow.</li>
-        <li>Confirming a destructive action that is about to happen</li>
-        <li>Ask for a user’s consent for an action.</li>
-      </ul>
-    </div>
-  </div>
-  <div class="dialtone-usage__item dialtone-usage__item--dont">
-    <h3 class="dialtone-usage__hd dialtone-usage__hd--dont"><icon-close /> Don't use for</h3>
-    <div class="dialtone-usage__bd">
-      <ul>
-        <li>When its content or features can be part of the page without complicating the page’s intent.</li>
-        <li>When the content or message requires interaction with other parts of the application or screen.</li>
-        <li>Form-related error, success, or warning messages. Keep feedback in context to forms.</li>
-        <li>Confirming an action took place (instead: use a <RouterLink to="toast.html">Toast</RouterLink>).</li>
-        <li>Revealing more information (instead: place content inline)</li>
-        <li>Displaying complex forms or large amounts of information (instead: place content inline)</li>
-        <li>Displaying content unrelated to current task (instead: place content inline as a <RouterLink to="link.html">Link</RouterLink>) or <RouterLink to="banner.html">Banner</RouterLink>).</li>
-      </ul>
-    </div>
-  </div>
-</div>
+<dialtone-usage>
+<template #do>
+
+- To complete a simple task or decision that requires their full attention outside the main workflow.
+- Confirming a destructive action that is about to happen.
+- Ask for a user’s consent for an action.
+</template>
+<template #dont>
+
+- When its content or features can be part of the page without complicating the page’s intent.
+- When the content or message requires interaction with other parts of the application or screen.
+- Form-related error, success, or warning messages. Keep feedback in context to forms.
+- Confirming an action took place (instead: use a [Toast](toast.md)).
+- Revealing more information (instead: place content inline)
+- Displaying complex forms or large amounts of information (instead: place content inline)
+- Displaying content unrelated to current task (instead: place content inline as a [Link](link.md) or [Banner](banner.md)).
+</template>
+</dialtone-usage>
 
 ### Best practices
 
@@ -175,4 +167,5 @@ At minimum, modals contain a title and one button. They could also contain body 
   import IconCheckmark from '@svgIcons/IconCheckmark.vue';
   import IconClose from '@svgIcons/IconClose.vue';
   import ExampleModal from '@exampleComponents/ExampleModal.vue';
+  import DialtoneUsage from '@baseComponents/DialtoneUsage.vue';
 </script>

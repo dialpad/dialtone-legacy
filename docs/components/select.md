@@ -21,28 +21,20 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-select-menu--d
 
 ## Usage
 
-<div class="dialtone-usage">
-  <div class="dialtone-usage__item dialtone-usage__item--do">
-    <h3 class="dialtone-usage__hd dialtone-usage__hd--do"><icon-checkmark /> Use for</h3>
-    <div class="dialtone-usage__bd">
-      <ul>
-        <li>Use sparingly — only when a user needs to choose from about seven to 15 possible options, and you have limited space to display the options.</li>
-      </ul>
-    </div>
-  </div>
-  <div class="dialtone-usage__item dialtone-usage__item--dont">
-    <h3 class="dialtone-usage__hd dialtone-usage__hd--dont"><icon-close /> Don't use for</h3>
-    <div class="dialtone-usage__bd">
-      <ul>
-        <li>For site navigation.</li>
-        <li>If the list of options is very short. Use <RouterLink to="radio.html">Radio</RouterLink> instead.</li>
-        <li>If the list of options is very long. Let users type the same information into an <RouterLink to="input.html">Input</RouterLink> that suggests possible options instead (aka Combobox).</li>
-        <li>Avoid using the `multiple` attribute. Users often don’t understand how to select multiple items from the select element (e.g. by holding down a modifier key).</li>
-        <li>For selecting an action that takes immediate effect. A `select` is for selecting a choice that is only confirmed by a separate submit action (much like a <RouterLink to="checkbox.html">Checkbox</RouterLink>). For immediate actions consider the <RouterLink to="dropdown.html">Dropdown</RouterLink> component.</li>
-      </ul>
-    </div>
-  </div>
-</div>
+<dialtone-usage>
+<template #do>
+
+- Use sparingly — only when a user needs to choose from about seven to 15 possible options, and you have limited space to display the options.
+</template>
+<template #dont>
+
+- For site navigation.
+- If the list of options is very short. Use [Radio](radio.md) instead.
+- If the list of options is very long. Let users type the same information into an [Input](input.md) that suggests possible options instead (aka Combobox).
+- Avoid using the `multiple` attribute. Users often don’t understand how to select multiple items from the select element (e.g. by holding down a modifier key).
+- For selecting an action that takes immediate effect. A `select` is for selecting a choice that is only confirmed by a separate submit action (much like a [Checkbox](checkbox.md)). For immediate actions consider the [Dropdown](dropdown.md) component.
+</template>
+</dialtone-usage>
 
 ### Best practices
 
@@ -346,3 +338,7 @@ We offer different sizes for instances in which the interface requires a smaller
 - Avoid customizing the placeholder text.
 - If the select is a required field, use the `aria-required` property and use the validation message for input errors.
 - Select with validation errors should have `aria-describedby` with the `id` of the validation message.
+
+<script setup>
+  import DialtoneUsage from '@baseComponents/DialtoneUsage.vue';
+</script>

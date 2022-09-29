@@ -18,27 +18,19 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-checkbox--defa
 
 Checkboxes are an easily understandable way to indicate that users can select one or more answers to a question or items from a list. They visibly show users what’s been selected and makes it easy for them to “uncheck” an option, which can be difficult with other selection methods on a form (such as radio buttons or select menus).
 
-<div class="dialtone-usage">
-  <div class="dialtone-usage__item dialtone-usage__item--do">
-    <h3 class="dialtone-usage__hd dialtone-usage__hd--do"><icon-checkmark /> Use for</h3>
-    <div class="dialtone-usage__bd">
-      <ul>
-        <li>Selecting any number of choices from a set list.</li>
-        <li>Binary selections that convey opposite states, such as check=“on” and unchecked=“off”, paired with a label that conveys the choice.</li>
-        <li>When users need to see all the available options at a glance.</li>
-      </ul>
-    </div>
-  </div>
-  <div class="dialtone-usage__item dialtone-usage__item--dont">
-    <h3 class="dialtone-usage__hd dialtone-usage__hd--dont"><icon-close /> Don't use for</h3>
-    <div class="dialtone-usage__bd">
-      <ul>
-        <li>If a user can only select one option from a list; consider using <RouterLink to="radio.html">Radio</RouterLink> or <RouterLink to="select.html">Select</RouterLink>.</li>
-        <li>If there are too many options to reasonably display in its context.</li>
-      </ul>
-    </div>
-  </div>
-</div>
+<dialtone-usage>
+<template #do>
+
+- Selecting any number of choices from a set list.
+- Binary selections that convey opposite states, such as check=“on” and unchecked=“off”, paired with a label that conveys the choice.
+- When users need to see all the available options at a glance.
+</template>
+<template #dont>
+
+- If a user can only select one option from a list; consider using [Radio](radio.md) or [Select](select.md).
+- If there are too many options to reasonably display in its context.
+</template>
+</dialtone-usage>
 
 ### Best practices
 
@@ -431,3 +423,7 @@ The best accessibility is semantic HTML. Most screen readers understand how to p
 - Input with description text should have `aria-describedby` with the `id` of the description text.
 - If the input is a required field, use the `aria-required` property and use the validation message for input errors.
 - Input with validation errors should have `aria-describedby` with the `id` of the validation message.
+
+<script setup>
+  import DialtoneUsage from '@baseComponents/DialtoneUsage.vue';
+</script>
