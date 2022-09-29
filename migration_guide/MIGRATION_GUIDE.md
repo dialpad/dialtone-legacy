@@ -158,8 +158,9 @@ New Color Ramp
 * `d-headline-small`
 * `d-headline-medium`
 * `d-headline-compact-small`
-* `d-headline-compact-base`
+* `d-headline-compact-medium`
 * `d-headline-large`
+* `d-headline-compact-large`
 * `d-headline-extra-large`
 * `d-headline-extra-extra-large`
 
