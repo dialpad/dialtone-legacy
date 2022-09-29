@@ -15,8 +15,8 @@ desc: Core typographic styles for body text and headlines.
     <div><p class="d-headline-medium d-bgc-purple-200 d-bgo25">The quick brown fox jumps over the lazy dog.</p></div>
     <div class="d-fs-100 d-ff-mono d-fc-purple-400 d-fco75">d-headline-compact-small</div>
     <div><p class="d-headline-compact-small d-bgc-purple-200 d-bgo25">The quick brown fox jumps over the lazy dog.</p></div>
-    <div class="d-fs-100 d-ff-mono d-fc-purple-400 d-fco75">d-headline-compact-base</div>
-    <div><p class="d-headline-compact-base d-bgc-purple-200 d-bgo25">The quick brown fox jumps over the lazy dog.</p></div>
+    <div class="d-fs-100 d-ff-mono d-fc-purple-400 d-fco75">d-headline-compact-medium</div>
+    <div><p class="d-headline-compact-medium d-bgc-purple-200 d-bgo25">The quick brown fox jumps over the lazy dog.</p></div>
     <div class="d-fs-100 d-ff-mono d-fc-purple-400 d-fco75">d-headline-large</div>
     <div><p class="d-headline-large d-bgc-purple-200 d-bgo25">The quick brown fox jumps over the lazy dog.</p></div>
     <div class="d-fs-100 d-ff-mono d-fc-purple-400 d-fco75">d-headline-extra-large</div>
