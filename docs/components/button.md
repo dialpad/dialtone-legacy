@@ -12,27 +12,19 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-button--defaul
 
 ## Usage
 
-`button` and link (`<a>`) HTML elements each describe a specific intent. Understanding the distinction is important: if it goes somewhere, use a [Link](link.html). If an action occurs, use a Button.
+`button` and link (`<a>`) HTML elements each describe a specific intent. Understanding the distinction is important: if it goes somewhere, use a [Link](link.md). If an action occurs, use a Button.
 
-<div class="dialtone-usage">
-  <div class="dialtone-usage__item dialtone-usage__item--do">
-    <h3 class="dialtone-usage__hd dialtone-usage__hd--do"><icon-checkmark /> Use for</h3>
-    <div class="dialtone-usage__bd">
-<Markdown>
+<dialtone-usage>
+<template #do>
+
 - Conveying that an action that will occur when invoked.
-- To trigger an action or behavior, such as submitting a form or spawning a [Modal](/components/modal.html).
-</Markdown>
-    </div>
-  </div>
-  <div class="dialtone-usage__item dialtone-usage__item--dont">
-    <h3 class="dialtone-usage__hd dialtone-usage__hd--dont"><icon-close /> Don't use for</h3>
-    <div class="dialtone-usage__bd">
-<Markdown>
-- Avoid using to navigate between destinations, deferring to a [Link](/components/link/) instead).
-</Markdown>
-    </div>
-  </div>
-</div>
+- To trigger an action or behavior, such as submitting a form or spawning a [Modal](modal.md).
+</template>
+<template #dont>
+
+- Avoid using to navigate between destinations, deferring to a [Link](link.md) instead).
+</template>
+</dialtone-usage>
 
 ### Best Practices
 
@@ -306,7 +298,7 @@ Different button styles and variations appear different when active.
 
 ### Link
 
-Buttons can be styled as a [Link](components/link.html) in situations for which you need the appearance of a link but behavior of a button. Using the `button` element provides a better accessibility experience.
+Buttons can be styled as a [Link](link.md) in situations for which you need the appearance of a link but behavior of a button. Using the `button` element provides a better accessibility experience.
 
 <code-well-header>
   <button type="button" class="d-link">Place call</button>
@@ -538,5 +530,5 @@ The base button font size is 16px and should be used in most cases. Every button
   import IconGoogleGlyph from '@svgIcons/IconGoogleGlyph.vue';
   import IconOffice365 from '@svgIcons/IconOffice365.vue';
   import IconLinkedin from '@svgIcons/IconLinkedin.vue';
-  import Markdown from "@baseComponents/Markdown.vue";
+  import DialtoneUsage from '@baseComponents/DialtoneUsage.vue';
 </script>
