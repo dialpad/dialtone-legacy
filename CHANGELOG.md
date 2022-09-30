@@ -1,3 +1,16 @@
+# [7.0.0-beta.7](https://github.com/dialpad/dialtone/compare/v7.0.0-beta.6...v7.0.0-beta.7) (2022-09-30)
+
+
+### Bug Fixes
+
+* revert "Merge branch 'remove-primary-color-variable' into version7" ([224cd23](https://github.com/dialpad/dialtone/commit/224cd23465707a0bbdc6aa039b6f3e08827fbe1a))
+* roll back muted-color value ([#700](https://github.com/dialpad/dialtone/issues/700)) ([413193f](https://github.com/dialpad/dialtone/commit/413193f196939b7afd653febcf2a50e63078353e))
+
+
+### Features
+
+* add ai notes icon ([#696](https://github.com/dialpad/dialtone/issues/696)) ([#697](https://github.com/dialpad/dialtone/issues/697)) ([cd2c1d2](https://github.com/dialpad/dialtone/commit/cd2c1d29a0f995d1d8ad40a847120bff0f6cac5a))
+
 # [7.0.0-beta.6](https://github.com/dialpad/dialtone/compare/v7.0.0-beta.5...v7.0.0-beta.6) (2022-09-23)
 
 
