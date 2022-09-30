@@ -27,9 +27,11 @@ body {
   @media screen and (max-width: 980px) {
     padding: var(--su114) 0 0 !important;
   }
+
   @media screen and (min-width: 981px) {
     outline-offset: -24px;
   }
+
   @media screen and (min-width: 1264px) {
     outline-offset: -24px;
   }
@@ -38,7 +40,7 @@ body {
 code,
 kbd,
 samp {
-  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
+  font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace;
 }
 
 .sidebar-item.active {
@@ -47,6 +49,7 @@ samp {
 
 .sidebar-item:not(.sidebar-heading) + .sidebar-item-children {
   padding-left: var(--su8);
+
   .sidebar-item-children {
     display: none;
   }
@@ -91,6 +94,7 @@ samp {
       font-size: var(--base--font-size);
     }
   }
+
   .sidebar-item-children .sidebar-item-children &:not(.sidebar-heading) {
     @media screen and (min-width: 981px) {
       padding-left: 1.3rem;
@@ -102,18 +106,19 @@ samp {
   margin-bottom: var(--su8) !important;
 }
 
-.theme-default-content:not(.custom)>div:not([class]), .theme-default-content:not(.custom) {
-
+.theme-default-content:not(.custom) > div:not([class]),
+ .theme-default-content:not(.custom) {
   @media screen and (min-width: 1264px) {
     max-width: 99rem; // magic number
   }
 
   // override to underline if class attribute doesn't exist OR if class attribute has no value
-  a[class=""],
+  a[class=''],
   a:not([class]) {
     text-decoration: underline;
+
     &:hover {
-      color: hsl(var(--purple-400-h) var(--purple-400-s) calc(var(--purple-400-l) - 10%));
+      color: var(--primary-color-hover);
       text-decoration: none;
     }
   }
@@ -145,6 +150,7 @@ samp {
   > ul,
   > ol {
     padding-left: 1.5em;
+
     > li > ul,
     > li > ol {
       margin-top: var(--su8);
@@ -152,9 +158,8 @@ samp {
   }
 
   > ol > * + * {
-    margin-top: 0!important;
+    margin-top: 0 !important;
   }
-
 }
 
 // Fix theme-default styles leaking into the modal
@@ -165,44 +170,50 @@ samp {
 }
 
 .page-nav {
-  margin: 0 auto;
   max-width: 99rem;
+  margin: 0 auto;
+
   .inner {
-    border: 0;
     display: flex;
     justify-content: space-between;
     margin-bottom: var(--su72);
+    border: 0;
   }
+
   .prev,
   .next {
     display: flex;
     gap: var(--su12);
 
     a {
+      padding: var(--su16) var(--su24);
       color: var(--black-600);
       font-size: var(--fs-200);
       background-color: var(--black-100);
-      padding: var(--su16) var(--su24);
       border-radius: var(--br8);
+
       @media screen and (min-width: 981px) {
         font-size: var(--fs-300);
       }
+
       &:hover {
         color: var(--black-900);
       }
+
       &:active {
         background-color: var(--black-200);
       }
     }
-
   }
+
   .prev {
-    a:before {
+    a::before {
       margin-right: var(--su4);
     }
   }
+
   .next {
-    a:after {
+    a::after {
       margin-left: var(--su4);
     }
   }
@@ -210,8 +221,9 @@ samp {
 
 .page-meta {
   font-size: var(--fs-200);
+
   & {
-    margin: 0 auto;
     max-width: 99rem;
+    margin: 0 auto;
   }
 }

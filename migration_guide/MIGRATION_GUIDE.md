@@ -69,8 +69,6 @@ New Color Ramp
 7. Consolidated Dialtone v6's `red-700` stop into the redefined `red-500` stop.
 
 ### Color: Removed Primary Theme
-- Removed the `--primary-color` theme variable.
-- Removed `d-fc-primary` utility class.
 - Removed Spot Illustrations' theming capability.
 
 ### Color: New/Updated/Removed Text Color Variables
@@ -221,7 +219,7 @@ Search for | Replace with
 `d-fc-yellow` | `d-fc-gold`
 [others TBD, e.g. Green] | ...
 
-### 3. Color: Replace "Primary Color" theme uses
+<!-- ### 3. Color: Replace "Primary Color" theme uses
 
 #### Custom CSS references to expired "Primary Color" CSS Variables
 
@@ -238,9 +236,9 @@ Search for | Replace with
 
 Search for | Replace with
 :-:|:-:
-`d-fc-primary` | `d-fc-purple`
+`d-fc-primary` | `d-fc-purple` -->
 
-### 4. Color: Replace Text Color Styles
+### 3. Color: Replace Text Color Styles
 
 #### Update color CSS variables
 
@@ -262,7 +260,7 @@ Search for | Replace with
 `fc-light` | `fc-tertiary`
 `fc-purple` | `d-fc-purple-400`)
 
-### 5. Color: Replace hardcoded HEX values
+### 4. Color: Replace hardcoded HEX values
 
 Any custom CSS authored with HEX values (e.g. `#ff0000`) should be replaced with its CSS Custom Property equivalent (e.g. `var(--[COLOR-STOP])`). If no equivalent exists, consult your Product Designer.
 
@@ -329,11 +327,11 @@ Search for | Replace with
 `#FFBC0F` | `var(--gold-300)`
 `#3F2D00` | `var(--gold-500)`
 
-### 6. Color: Check color updates for readability
+### 5. Color: Check color updates for readability
 
 Check updates to confirm desired rendering and alignment to contrast accessibility requirements. When in doubt, confer with your Product Designer to identify a proper solution.
 
-### 7. Typography
+### 6. Typography
 
 #### Update font-weight CSS classes usage
 
