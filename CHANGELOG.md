@@ -1,3 +1,15 @@
+# [7.0.0-beta.8](https://github.com/dialpad/dialtone/compare/v7.0.0-beta.7...v7.0.0-beta.8) (2022-10-05)
+
+
+### Bug Fixes
+
+* added missing lock-outline icon ([#704](https://github.com/dialpad/dialtone/issues/704)) ([#705](https://github.com/dialpad/dialtone/issues/705)) ([cd81ea0](https://github.com/dialpad/dialtone/commit/cd81ea078629573a97625f45eeeedbabfb76191e))
+
+
+### Features
+
+* medium-weight headline styles ([#702](https://github.com/dialpad/dialtone/issues/702)) ([c2bdd69](https://github.com/dialpad/dialtone/commit/c2bdd69db1b650eb5b84a6c939b39e1079b54cc5))
+
 # [7.0.0-beta.7](https://github.com/dialpad/dialtone/compare/v7.0.0-beta.6...v7.0.0-beta.7) (2022-09-30)
 
 
