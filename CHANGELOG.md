@@ -1,3 +1,10 @@
+## [6.42.1](https://github.com/dialpad/dialtone/compare/v6.42.0...v6.42.1) (2022-10-05)
+
+
+### Bug Fixes
+
+* added missing lock-outline icon ([#704](https://github.com/dialpad/dialtone/issues/704)) ([74f8568](https://github.com/dialpad/dialtone/commit/74f85680eca29e9d7e62a8007d1ff318adac7566))
+
 # [6.42.0](https://github.com/dialpad/dialtone/compare/v6.41.0...v6.42.0) (2022-09-26)
 
 
