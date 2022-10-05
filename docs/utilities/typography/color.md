@@ -19,7 +19,7 @@ Use `d-fc-{color}` to change an element's text color.
 </code-well-header>
 
 ```html
-<p class="d-fc-purple">...</p>
+<p class="d-fc-purple-400">...</p>
 ```
 
 ## Changing opacity
