@@ -330,6 +330,73 @@ Search for | Replace with
 `#FFBC0F` | `var(--gold-300)`
 `#3F2D00` | `var(--gold-500)`
 
+In some cases you may not be able to replace a hex code with a CSS variable. A common case of this is in email templates where you cannot import CSS files and therefore don't have access to Dialtone CSS variables. For these specific cases you can replace the old hex value with the new hex value, see the table below.
+
+#### Example
+
+Replace...
+
+```html
+<a style="background-color: #6C3DFF">Click Here</a>
+```
+
+...with
+```html
+<a style="background-color: #7C52FF">Click Here</a>
+```
+
+__IMPORTANT NOTE:__ Only use these if you are unable to use css variables.
+
+Search for | Replace with
+:-:|:-:
+`#ECE1FF` | `#EEE5FF`
+`#A687FF` | `#AB7EFF`
+`#8B65FF` | `#7C52FF`
+`#6C3DFF` | `#7C52FF`
+`#3A1C95` | `#3A1D95`
+`#2A1173` | `#3A1D95`
+`#160645` | `#10022C`
+`#F2F2F6` | `#F9F9F9`
+`#EAE9EF` | `#E9E9E9`
+`#DFDEE5` | `#D2D2D2`
+`#CDCDD8` | `#AAAAAA`
+`#B3B0C0` | `#AAAAAA`
+`#9C99AC` | `#808080`
+`#7B7789` | `#808080`
+`#575564` | `#555555`
+`#444150` | `#555555`
+`#322D37` | `#3A3A3A`
+`#221F24` | `#222222`
+`#0D0C0F` | `#000000`
+`#EBFFE2` | `#DDF4D9`
+`#D1FFBC` | `#DDF4D9`
+`#9CFF6D` | `#9FFF90`
+`#6BEE04` | `#45F777`
+`#0C9B02` | `#1AA340`
+`#0A5B03` | `#1AA340`
+`#052F01` | `#124620`
+`#FFF1F1` | `#FFDCDC`
+`#FFD3D3` | `#FFDCDC`
+`#FFA7A7` | `#FFDCDC`
+`#FA4646` | `#FF7474`
+`#D81616` | `#FF2E2E`
+`#930000` | `#A41111`
+`#480000` | `#540000`
+`#FFEBEC` | `#FF97D2`
+`#FFD8DA` | `#FF97D2`
+`#FDA2A8` | `#FF97D2`
+`#FF578A` | `#F756B1`
+`#E92A7A` | `#F9008E`
+`#A2114D` | `#8C0E56`
+`#57102E` | `#541A3B`
+`#FBF8F1` | `#FFE793`
+`#FFF9E3` | `#FFE793`
+`#FFEEB0` | `#FFE793`
+`#FFDB59` | `#FFD362`
+`#FFCE1C` | `#FFD362`
+`#FFBC0F` | `#F6AB3C`
+`#3F2D00` | `#815008`
+
 ### 5. Color: Check color updates for readability
 
 Check updates to confirm desired rendering and alignment to contrast accessibility requirements. When in doubt, confer with your Product Designer to identify a proper solution.
