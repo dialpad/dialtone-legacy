@@ -1,6 +1,6 @@
 ---
 title: Accessibility Principles by Role
-desc: A framework for how your role can address accessibility and Inclusive Design.
+desc: A framework outlining how your role can address accessibility and Inclusive Design.
 ---
 
 ## Product Management
