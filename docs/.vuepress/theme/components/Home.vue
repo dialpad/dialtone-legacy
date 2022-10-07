@@ -59,14 +59,14 @@
         class="link--image d-h96 d-mb24"
         :src="$withBase('/assets/images/home-design.svg')"
       >
-      <h2 class="link--headline d-fs-400 d-lh4 d-mb12">
+      <h2 class="d-fs-400 d-fw-medium d-mb12">
         Design
       </h2>
-      <p class="link--paragraph d-fs-200 d-lh6 d-mb8">
+      <p class="d-fs-200 d-lh6 d-mb8">
         Foundational color, iconography, and spacing guidelines
       </p>
       <router-link
-        class="d-link link--link"
+        class="d-link"
         to="/design/colors/color-palette"
       >
         Browse design guidelines
@@ -78,21 +78,21 @@
         class="link--image d-h96 d-mb24"
         :src="$withBase('/assets/images/home-components.svg')"
       >
-      <h2 class="link--headline d-fs-400 d-lh4 d-mb12">
+      <h2 class="d-fs-400 d-fw-medium d-mb12">
         Components
       </h2>
-      <p class="link--paragraph d-fs-200 d-lh6 d-mb8">
+      <p class="d-fs-200 d-lh6 d-mb8">
         Presentational UI components offered in CSS and Vue
       </p>
       <div class="d-d-inline-flex d-fd-column">
         <router-link
-          class="d-link link--link"
+          class="d-link"
           to="/components/avatar"
         >
           Browse CSS components
         </router-link>
         <a
-          class="d-link link--link"
+          class="d-link"
           href="https://vue.dialpad.design/"
           target="_blank"
           rel="noopener noreferrer"
@@ -105,14 +105,14 @@
         class="link--image d-h96 d-mb24"
         :src="$withBase('/assets/images/home-utilities.svg')"
       >
-      <h2 class="link--headline d-fs-400 d-lh4 d-mb12">
+      <h2 class="d-fs-400 d-fw-medium d-mb12">
         Utilities
       </h2>
-      <p class="link--paragraph d-fs-200 d-lh6 d-mb8">
+      <p class="d-fs-200 d-lh6 d-mb8">
         Atomic CSS utility classes so you don't have to write custom CSS
       </p>
       <router-link
-        class="d-link link--link"
+        class="d-link"
         to="/utilities/backgrounds/attachment"
       >
         Browse utility classes
@@ -122,29 +122,29 @@
       <img
         alt=""
         class="link--image d-h96 d-mb24"
-        :src="$withBase('/assets/images/home-utilities.svg')"
+        :src="$withBase('/assets/images/home-guides.svg')"
       >
-      <h2 class="link--headline d-fs-400 d-lh4 d-mb12">
+      <h2 class="d-fs-400 d-fw-medium d-mb12">
         Guides
       </h2>
-      <p class="link--paragraph d-fs-200 d-lh6 d-mb8">
-        Atomic CSS utility classes so you don't have to write custom CSS
+      <p class="d-fs-200 d-lh6 d-mb8">
+        Reference guidelines for Accessibility, Writing, and more
       </p>
       <div class="d-d-inline-flex d-fd-column">
         <router-link
-          class="d-link link--link"
+          class="d-link"
           to="/guides/getting-started/installation.html"
         >
           Getting started
         </router-link>
         <router-link
-          class="d-link link--link"
+          class="d-link"
           to="/guides/content/principles.html"
         >
           Writing Guidelines
         </router-link>
         <router-link
-          class="d-link link--link"
+          class="d-link"
           to="/guides/accessibility/fundamentals.html"
         >
           Accessibility
