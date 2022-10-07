@@ -2,8 +2,8 @@
 title: Installation
 desc: A quick start guide to adding Dialtone to your project.
 prev:
-  text: About - Contributing
-  link: /about/contributing
+  text: Utilities - Word Break
+  link: /utilities/typography/word-break.html
 ---
 
 ## Adding Dialtone To Your Project

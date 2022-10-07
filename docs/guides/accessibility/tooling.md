@@ -1,8 +1,8 @@
 ---
 title: Tooling
 next:
-  text: Design - Colors
-  link: /design/colors/color-palette
+  text: About Dialtone
+  link: /about/dialtone
 ---
 
 ## Browser extension

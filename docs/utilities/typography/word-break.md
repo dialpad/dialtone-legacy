@@ -2,8 +2,8 @@
 title: Word Break
 desc: Utilities for controlling the way words break within an element.
 next:
-  text: Components - Avatar
-  link: /components/avatar
+  text: Guides - Getting Started
+  link: /guides/getting-started/installation.html
 ---
 
 ## Normal

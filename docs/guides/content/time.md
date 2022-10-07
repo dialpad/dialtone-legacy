@@ -1,6 +1,9 @@
 ---
 title: Time
 desc: Depending on context, dates may need to be displayed to varying levels of specificity.
+next:
+  text: Accessibility - Fundamentals
+  link: /guides/accessibility/fundamentals.html
 ---
 
 Times are represented as **HH:MM:SS AM/PM**.

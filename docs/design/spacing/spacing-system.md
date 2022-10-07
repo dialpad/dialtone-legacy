@@ -5,8 +5,8 @@ prev:
   text: Spot Illustrations
   link: /design/illustrations/spot
 next:
-  text: Utilities - Background Attachment
-  link: /utilities/backgrounds/attachment
+  text: Components - Avatar
+  link: /components/avatar.html
 ---
 
 ## Overview

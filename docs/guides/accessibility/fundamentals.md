@@ -1,8 +1,8 @@
 ---
 title: Fundamentals
 prev:
-  text: Building Locally
-  link: /getting-started/building-locally.html
+  text: Writing Guidelines - Time
+  link: /guides/content/time.html
 ---
 
 ## Overview

@@ -2,8 +2,8 @@
 title: Build Dialtone Locally
 desc: A more thorough guide for installing Dialtone locally.
 next:
-  text: Fundamentals
-  link: /getting-started/accessibility/fundamentals.html
+  text: Writing Guidelines - Principles
+  link: /guides/content/principles.html
 ---
 
 We're excited you want to install Dialtone locally as this most likely means you'll be contributing soon! Before you get to get started though,  **please make sure you've read our [contributing docs](https://github.com/dialpad/dialtone/blob/master/.github/CONTRIBUTING.md)**.
