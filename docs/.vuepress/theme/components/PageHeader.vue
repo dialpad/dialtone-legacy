@@ -9,7 +9,7 @@
       />
       <p
         v-if="frontmatter.desc"
-        class="d-fs-300 d-lh6"
+        class="d-fs-300 d-lh6 d-wmx80p"
         v-html="frontmatter.desc"
       />
     </header>

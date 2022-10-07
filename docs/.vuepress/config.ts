@@ -12,11 +12,12 @@ const { tocPlugin } = require('@vuepress/plugin-toc');
 const themeConfig = {
   logo: baseURL + 'assets/images/dialpad-logo.svg',
   navbar: [
-    {text: 'About', link: '/about/dialtone'},
-    {text: 'Getting Started', link: '/getting-started/installation'},
+    {text: 'Home', link: '/'},
     {text: 'Design', link: '/design/colors/color-palette'},
-    {text: 'Utilities', link: '/utilities/backgrounds/attachment'},
     {text: 'Components', link: '/components/avatar'},
+    {text: 'Utilities', link: '/utilities/backgrounds/attachment'},
+    {text: 'Guides', link: '/guides/getting-started/installation'},
+    {text: 'About', link: '/about/dialtone'},
   ],
   sidebar,
   sidebarDepth: 0,

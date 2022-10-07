@@ -5,7 +5,7 @@
         <h1 class="d-headline42 d-lh6 d-mb12">
           Improve your UI's reception with Dialtone
         </h1>
-        <p class="d-fs-300 d-lh6 d-mb8">
+        <p class="d-fs-300 d-lh-400 d-mb8">
           Documented styles, utility classes, and components to help you quickly design
           and build unified experiences across Dialpad and Dialpad Meetings.
         </p>
@@ -32,7 +32,7 @@
         </div>
         <router-link
           v-slot="{ navigate }"
-          to="/getting-started/installation.html"
+          to="/guides/getting-started/installation.html"
           custom
         >
           <button
@@ -53,7 +53,7 @@
     </div>
   </section>
   <section class="links d-d-grid d-gg16 d-g-cols12 d-wmx1340 d-mx-auto">
-    <div class="d-gc4 link d-px32 d-ta-center">
+    <div class="d-gc3 link d-px32 d-ta-center">
       <img
         alt=""
         class="link--image d-h96 d-mb24"
@@ -72,26 +72,7 @@
         Browse design guidelines
       </router-link>
     </div>
-    <div class="d-gc4 link d-px32 d-ta-center">
-      <img
-        alt=""
-        class="link--image d-h96 d-mb24"
-        :src="$withBase('/assets/images/home-utilities.svg')"
-      >
-      <h2 class="link--headline d-fs-400 d-lh4 d-mb12">
-        Utilities
-      </h2>
-      <p class="link--paragraph d-fs-200 d-lh6 d-mb8">
-        Atomic CSS utility classes so you don't have to write custom CSS
-      </p>
-      <router-link
-        class="d-link link--link"
-        to="/utilities/backgrounds/attachment"
-      >
-        Browse utility classes
-      </router-link>
-    </div>
-    <div class="d-gc4 link d-px32 d-ta-center">
+    <div class="d-gc3 link d-px32 d-ta-center">
       <img
         alt=""
         class="link--image d-h96 d-mb24"
@@ -116,6 +97,58 @@
           target="_blank"
           rel="noopener noreferrer"
         >Browse Vue components</a>
+      </div>
+    </div>
+    <div class="d-gc3 link d-px32 d-ta-center">
+      <img
+        alt=""
+        class="link--image d-h96 d-mb24"
+        :src="$withBase('/assets/images/home-utilities.svg')"
+      >
+      <h2 class="link--headline d-fs-400 d-lh4 d-mb12">
+        Utilities
+      </h2>
+      <p class="link--paragraph d-fs-200 d-lh6 d-mb8">
+        Atomic CSS utility classes so you don't have to write custom CSS
+      </p>
+      <router-link
+        class="d-link link--link"
+        to="/utilities/backgrounds/attachment"
+      >
+        Browse utility classes
+      </router-link>
+    </div>
+    <div class="d-gc3 link d-px32 d-ta-center">
+      <img
+        alt=""
+        class="link--image d-h96 d-mb24"
+        :src="$withBase('/assets/images/home-utilities.svg')"
+      >
+      <h2 class="link--headline d-fs-400 d-lh4 d-mb12">
+        Guides
+      </h2>
+      <p class="link--paragraph d-fs-200 d-lh6 d-mb8">
+        Atomic CSS utility classes so you don't have to write custom CSS
+      </p>
+      <div class="d-d-inline-flex d-fd-column">
+        <router-link
+          class="d-link link--link"
+          to="/guides/getting-started/installation.html"
+        >
+          Getting started
+        </router-link>
+        <router-link
+          class="d-link link--link"
+          to="/guides/content/principles.html"
+        >
+          Writing Guidelines
+        </router-link>
+        <router-link
+          class="d-link link--link"
+          to="/guides/accessibility/fundamentals.html"
+        >
+          Accessibility
+        </router-link>
       </div>
     </div>
   </section>
