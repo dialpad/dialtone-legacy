@@ -16,7 +16,7 @@
           >
             <img
               alt="Dialtone CSS version number"
-              src="https://img.shields.io/github/package-json/v/dialpad/dialtone?color=AB7EFF&label=CSS"
+              src="https://img.shields.io/github/package-json/v/dialpad/dialtone?color=D3BCFF&label=CSS"
             >
           </a>
           <a
@@ -26,7 +26,7 @@
             <img
               id="dialtone-vue-badge"
               alt="Dialtone Vue version number"
-              :src="`https://img.shields.io/badge/Vue-v${version}-AB7EFF`"
+              :src="`https://img.shields.io/badge/Vue-v${version}-D3BCFF`"
             >
           </a>
         </div>
