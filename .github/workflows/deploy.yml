@@ -3,9 +3,7 @@ name: Deploy
 on:
   push:
     branches:
-      - production
-      - alpha
-      - beta
+      - version6
 
 jobs:
   deploy:
@@ -17,37 +15,19 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Use Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: '16.x'
 
-      - name: parse branch from ref
-        id: branch
-        run: echo ::set-output name=BRANCH::${GITHUB_REF/refs\/heads\//}
-
-      # Will prevent the rest of the steps from running on fail
-      - name: Check if user is a dialpad member
-        uses: octokit/request-action@v2.1.0
-        with:
-          route: GET /orgs/dialpad/members/${{ github.actor }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.DIALTONE_CI_TOKEN }}
-
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
-      # note that npm run build is executed before publishing via prepublishOnly
-      - name: Build library and docsite
-        if: ${{ github.ref == 'refs/heads/production' }}
-        run: npm run build:docsite
+      - name: Build Library and docsite
+        run: npm run build:docsite -- --deploySubdir /version6/
 
       - name: Deploy to GitHub Pages
-        if: ${{ github.ref == 'refs/heads/production' }}
         uses: JamesIves/github-pages-deploy-action@v4.2.5
         with:
           branch: gh-pages
           folder: docs/.vuepress/dist
-          clean-exclude: |
-            deploy-previews
-            version5
-            version7
+          target-folder: version6
