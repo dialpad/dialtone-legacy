@@ -24,7 +24,7 @@ See more about [components usage](../getting-started/usage.md/#components).
 
 ### Previous Version
 
-[Dialtone 5](https://dialpad.design/version5/) remains viewable, though is no longer being maintained. [Reach out](#contact-us) to the Dialtone team if you have any questions.
+[Dialtone 6](https://dialpad.design/version6/) remains viewable, though is no longer being maintained. [Reach out](#contact-us) to the Dialtone team if you have any questions.
 
 ## Intake
 
