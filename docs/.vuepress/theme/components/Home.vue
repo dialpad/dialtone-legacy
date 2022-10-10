@@ -5,7 +5,7 @@
         <h1 class="d-headline42 d-lh6 d-mb12">
           Improve your UI's reception with Dialtone
         </h1>
-        <p class="d-fs20 d-lh6 d-mb8">
+        <p class="d-fs-300 d-lh6 d-mb8">
           Documented styles, utility classes, and components to help you quickly design
           and build unified experiences across Dialpad and Dialpad Meetings.
         </p>
@@ -16,7 +16,7 @@
           >
             <img
               alt="Dialtone CSS version number"
-              src="https://img.shields.io/github/package-json/v/dialpad/dialtone?color=A687FF&label=CSS"
+              src="https://img.shields.io/github/package-json/v/dialpad/dialtone?color=AB7EFF&label=CSS"
             >
           </a>
           <a
@@ -26,7 +26,7 @@
             <img
               id="dialtone-vue-badge"
               alt="Dialtone Vue version number"
-              :src="`https://img.shields.io/badge/Vue-v${version}-A687FF`"
+              :src="`https://img.shields.io/badge/Vue-v${version}-AB7EFF`"
             >
           </a>
         </div>
@@ -59,10 +59,10 @@
         class="link--image d-h96 d-mb24"
         :src="$withBase('/assets/images/home-design.svg')"
       >
-      <h2 class="link--headline d-fs28 d-lh4 d-mb12">
+      <h2 class="link--headline d-fs-400 d-lh4 d-mb12">
         Design
       </h2>
-      <p class="link--paragraph d-fs18 d-lh6 d-mb8">
+      <p class="link--paragraph d-fs-200 d-lh6 d-mb8">
         Foundational color, iconography, and spacing guidelines
       </p>
       <router-link
@@ -78,10 +78,10 @@
         class="link--image d-h96 d-mb24"
         :src="$withBase('/assets/images/home-utilities.svg')"
       >
-      <h2 class="link--headline d-fs28 d-lh4 d-mb12">
+      <h2 class="link--headline d-fs-400 d-lh4 d-mb12">
         Utilities
       </h2>
-      <p class="link--paragraph d-fs18 d-lh6 d-mb8">
+      <p class="link--paragraph d-fs-200 d-lh6 d-mb8">
         Atomic CSS utility classes so you don't have to write custom CSS
       </p>
       <router-link
@@ -97,10 +97,10 @@
         class="link--image d-h96 d-mb24"
         :src="$withBase('/assets/images/home-components.svg')"
       >
-      <h2 class="link--headline d-fs28 d-lh4 d-mb12">
+      <h2 class="link--headline d-fs-400 d-lh4 d-mb12">
         Components
       </h2>
-      <p class="link--paragraph d-fs18 d-lh6 d-mb8">
+      <p class="link--paragraph d-fs-200 d-lh6 d-mb8">
         Presentational UI components offered in CSS and Vue
       </p>
       <div class="d-d-inline-flex d-fd-column">
@@ -120,7 +120,7 @@
     </div>
   </section>
   <section class="d-bgc-purple-500 d-py64 d-ta-center">
-    <p class="d-fc-white d-fs24 d-fw-bold d-px48">
+    <p class="d-fc-white d-fs-300 d-fw-bold d-px48">
       Don't see something? Want to contribute?
     </p>
     <a

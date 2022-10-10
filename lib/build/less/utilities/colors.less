@@ -18,88 +18,72 @@
 #d-internals #standard-stops(black);
 #d-internals #standard-stops(purple);
 #d-internals #standard-stops(orange);
-#d-internals #standard-stops(pink);
-#d-internals #standard-stops(yellow);
+#d-internals #standard-stops(magenta);
+#d-internals #standard-stops(gold);
 #d-internals #standard-stops(red);
 #d-internals #standard-stops(green);
+#d-internals #standard-stops(blue);
+#d-internals #standard-stops(tan);
 
 //  --  A few additional colors that the standard-stops mixin misses
 #d-internals #color-classes(white);
 #d-internals #color-classes(black-900);
 #d-internals #color-classes(black-800);
 #d-internals #color-classes(black-700);
-#d-internals #color-classes(black-075);
-#d-internals #color-classes(black-050);
-#d-internals #color-classes(black-025);
-#d-internals #color-classes(pink-700);
-#d-internals #color-classes(purple-800);
-#d-internals #color-classes(purple-700);
-#d-internals #color-classes(yellow-050);
-#d-internals #color-classes(green-700);
-#d-internals #color-classes(red-700);
-
-.d-fc-primary {
-    color: hsla(var(--primary-color-h) var(--primary-color-s) var(--primary-color-l)  ~' / ' var(--fco)) !important;
-}
-#d-internals #generate-hover-focus(d-fc-primary, {.d-fc-primary();});
 
 //  $$  TEXT COLORS
 //  ----------------------------------------------------------------------------
-.d-fc-dark { &:extend(.d-fc-black-900); }
-#d-internals #generate-hover-focus(d-fc-dark, {.d-fc-dark();});
+.d-fc-primary { &:extend(.d-fc-black-900); }
+#d-internals #generate-hover-focus(d-fc-primary, {.d-fc-primary();});
 
-.d-fc-medium { &:extend(.d-fc-black-800); }
-#d-internals #generate-hover-focus(d-fc-medium, {.d-fc-medium();});
+.d-fc-primary-inverted { &:extend(.d-fc-black-100); }
+#d-internals #generate-hover-focus(fc-primary-inverted, {.d-fc-primary-inverted();});
 
-.d-fc-light { &:extend(.d-fc-black-700); }
-#d-internals #generate-hover-focus(d-fc-light, {.d-fc-light();});
+.d-fc-secondary { &:extend(.d-fc-black-700); }
+#d-internals #generate-hover-focus(d-fc-secondary, {.d-fc-secondary();});
 
-.d-fc-lighter { &:extend(.d-fc-black-600); }
-#d-internals #generate-hover-focus(d-fc-lighter, {.d-fc-lighter();});
+.d-fc-secondary-inverted { &:extend(.d-fc-black-300); }
+#d-internals #generate-hover-focus(fc-secondary-inverted, {.d-fc-secondary-inverted();});
 
-.d-fc-purple { &:extend(.d-fc-purple-500); }
-#d-internals #generate-hover-focus(d-fc-purple, {.d-fc-purple();});
+.d-fc-tertiary { &:extend(.d-fc-black-600); }
+#d-internals #generate-hover-focus(d-fc-tertiary, {.d-fc-tertiary();});
 
-.d-fc-orange { &:extend(.d-fc-orange-600); }
-#d-internals #generate-hover-focus(d-fc-orange, {.d-fc-orange();});
+.d-fc-muted { --fco: 50%; &:extend(.d-fc-black-500); }
+#d-internals #generate-hover-focus(d-fc-muted, {.d-fc-muted();});
 
-.d-fc-pink { &:extend(.d-fc-pink-600); }
-#d-internals #generate-hover-focus(d-fc-pink, {.d-fc-pink();});
+.d-fc-placeholder { &:extend(.d-fc-black-500); }
+#d-internals #generate-hover-focus(d-fc-placeholder, {.d-fc-placeholder();});
 
-.d-fc-green,
-.d-fc-success { &:extend(.d-fc-green-600); }
-#d-internals #generate-hover-focus(d-fc-green, {.d-fc-green();});
+.d-fc-disabled { &:extend(.d-fc-black-500); }
+#d-internals #generate-hover-focus(d-fc-disabled, {.d-fc-disabled();});
+
+.d-fc-success { color: var(--fc-success); }
 #d-internals #generate-hover-focus(d-fc-success, {.d-fc-success();});
 
-.d-fc-yellow { &:extend(.d-fc-yellow-600); }
-.d-fc-warning { color: var(--fc-warning) }
-#d-internals #generate-hover-focus(d-fc-yellow, {.d-fc-yellow();});
+.d-fc-warning { color: var(--fc-warning); }
 #d-internals #generate-hover-focus(d-fc-warning, {.d-fc-warning();});
 
-.d-fc-red,
-.d-fc-error,
-.d-fc-danger { &:extend(.d-fc-red-600); }
-#d-internals #generate-hover-focus(d-fc-red, {.d-fc-red();});
+.d-fc-error { &:extend(.d-fc-red-400); }
 #d-internals #generate-hover-focus(d-fc-error, {.d-fc-error();});
-#d-internals #generate-hover-focus(d-fc-danger, {.d-fc-danger();});
 
 .d-fc-current { color: currentColor !important; }
 #d-internals #generate-hover-focus(d-fc-current, {.d-fc-current();});
+
 .d-fc-transparent { color: transparent !important; }
 #d-internals #generate-hover-focus(d-fc-transparent, {.d-fc-transparent();});
+
 .d-fc-unset { color: unset !important; }
 #d-internals #generate-hover-focus(d-fc-unset, {.d-fc-unset();});
 
-
 //  $$  BACKGROUND COLORS
 //  ----------------------------------------------------------------------------
-.d-bgc-success { &:extend(.d-bgc-green-500); }
+.d-bgc-success { &:extend(.d-bgc-green-400); }
 #d-internals #generate-hover-focus(d-bgc-success, {.d-bgc-success();});
-.d-bgc-warning { &:extend(.d-bgc-yellow-500); }
+.d-bgc-warning { &:extend(.d-bgc-gold-300); }
 #d-internals #generate-hover-focus(d-bgc-warning, {.d-bgc-warning();});
 
 .d-bgc-error,
-.d-bgc-danger { &:extend(.d-bgc-red-500); }
+.d-bgc-danger { &:extend(.d-bgc-red-300); }
 #d-internals #generate-hover-focus(d-bgc-error, {.d-bgc-error();});
 #d-internals #generate-hover-focus(d-bgc-danger, {.d-bgc-danger();});
 

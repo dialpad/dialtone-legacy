@@ -49,7 +49,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-button--defaul
 
 Dialtone provides four core button **types**, each with three levels of **importance**.
 
-<table class="d-fs14">
+<table class="d-fs-200">
   <colgroup>
     <col>
     <col class="d-w25p">
@@ -79,13 +79,13 @@ Dialtone provides four core button **types**, each with three levels of **import
         <a href="#base"><strong>Base</strong></a>
         <div class="d-fw-normal">Our default (purple) button colors.</div>
       </th>
-      <td class="d-bgc-black-025 d-ta-center">
+      <td class="d-bgc-black-100 d-ta-center">
         <button class="d-btn" type="button"> <span class="d-btn__label">Place call</span> </button>
       </td>
-      <td class="d-bgc-black-025 d-ta-center">
+      <td class="d-bgc-black-100 d-ta-center">
         <button class="d-btn d-btn--outlined" type="button"> <span class="d-btn__label">Place call</span> </button>
       </td>
-      <td class="d-bgc-black-025 d-ta-center">
+      <td class="d-bgc-black-100 d-ta-center">
         <button class="d-btn d-btn--primary" type="button"> <span class="d-btn__label">Place call</span> </button>
       </td>
     </tr>
@@ -94,13 +94,13 @@ Dialtone provides four core button **types**, each with three levels of **import
         <a href="#danger"><strong>Danger</strong></a>
         <div class="d-fw-normal">Potentially destructive actions.</div>
       </th>
-      <td class="d-bgc-black-025 d-ta-center">
+      <td class="d-bgc-black-100 d-ta-center">
         <button class="d-btn d-btn--danger" type="button"> <span class="d-btn__label">Place call</span> </button>
       </td>
-      <td class="d-bgc-black-025 d-ta-center">
+      <td class="d-bgc-black-100 d-ta-center">
         <button class="d-btn d-btn--outlined d-btn--danger" type="button"> <span class="d-btn__label">Place call</span> </button>
       </td>
-      <td class="d-bgc-black-025 d-ta-center">
+      <td class="d-bgc-black-100 d-ta-center">
         <button class="d-btn d-btn--primary d-btn--danger" type="button"> <span class="d-btn__label">Place call</span> </button>
       </td>
     </tr>
@@ -124,13 +124,13 @@ Dialtone provides four core button **types**, each with three levels of **import
         <a href="#muted"><strong>Muted</strong></a>
         <div class="d-fw-normal">For non-primary actions and contexts where base style may not work.</div>
       </th>
-       <td class="d-bgc-black-025 d-ta-center">
-        <abbr class="d-fc-black-400 d-td-none d-fs12" title="Not applicable">N/A</abbr>
+       <td class="d-bgc-black-100 d-ta-center">
+        <abbr class="d-fc-black-400 d-td-none d-fs-100" title="Not applicable">N/A</abbr>
       </td>
-       <td class="d-bgc-black-025 d-ta-center">
+       <td class="d-bgc-black-100 d-ta-center">
         <button class="d-btn d-btn--muted d-btn--outlined" type="button"> <span class="d-btn__label">Place call</span> </button>
       </td>
-      <td class="d-bgc-black-025 d-ta-center">
+      <td class="d-bgc-black-100 d-ta-center">
         <button class="d-btn d-btn--muted" type="button"> <span class="d-btn__label">Place call</span> </button>
       </td>
     </tr>

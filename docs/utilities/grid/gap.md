@@ -9,10 +9,10 @@ Use `d-gg{#}` to universally change the row and column gap space in grid layouts
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn216" custom>
   <div class="d-d-grid d-gg16 d-g-cols2 d-p16 d-w100p d-hmn216 d-bar8 d-bgc-purple-100">
-    <div class="d-fl-center d-p16 d-bgc-purple-300 d-bar4 d-fs24 d-fw-bold">1</div>
-    <div class="d-fl-center d-p16 d-bgc-purple-300 d-bar4 d-fs24 d-fw-bold">2</div>
-    <div class="d-fl-center d-p16 d-bgc-purple-300 d-bar4 d-fs24 d-fw-bold">3</div>
-    <div class="d-fl-center d-p16 d-bgc-purple-300 d-bar4 d-fs24 d-fw-bold">4</div>
+    <div class="d-fl-center d-p16 d-bgc-purple-300 d-bar4 d-fs-300 d-fw-bold">1</div>
+    <div class="d-fl-center d-p16 d-bgc-purple-300 d-bar4 d-fs-300 d-fw-bold">2</div>
+    <div class="d-fl-center d-p16 d-bgc-purple-300 d-bar4 d-fs-300 d-fw-bold">3</div>
+    <div class="d-fl-center d-p16 d-bgc-purple-300 d-bar4 d-fs-300 d-fw-bold">4</div>
   </div>
 </code-well-header>
 
@@ -31,15 +31,15 @@ Use `d-gcg{#}` or `d-grg{#}` to independently change the row and column gap spac
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-green-100 d-bgo50 d-w100p d-hmn216" custom>
   <div class="d-d-grid d-gcg24 d-grg8 d-g-cols3 d-p16 d-w100p d-hmn216 d-bar8 d-bgc-green-100">
-    <div class="d-fl-center d-p16 d-bgc-green-300 d-bar4 d-fs24 d-fw-bold">1</div>
-    <div class="d-fl-center d-p16 d-bgc-green-300 d-bar4 d-fs24 d-fw-bold">2</div>
-    <div class="d-fl-center d-p16 d-bgc-green-300 d-bar4 d-fs24 d-fw-bold">3</div>
-    <div class="d-fl-center d-p16 d-bgc-green-300 d-bar4 d-fs24 d-fw-bold">4</div>
-    <div class="d-fl-center d-p16 d-bgc-green-300 d-bar4 d-fs24 d-fw-bold">5</div>
-    <div class="d-fl-center d-p16 d-bgc-green-300 d-bar4 d-fs24 d-fw-bold">6</div>
-    <div class="d-fl-center d-p16 d-bgc-green-300 d-bar4 d-fs24 d-fw-bold">7</div>
-    <div class="d-fl-center d-p16 d-bgc-green-300 d-bar4 d-fs24 d-fw-bold">8</div>
-    <div class="d-fl-center d-p16 d-bgc-green-300 d-bar4 d-fs24 d-fw-bold">9</div>
+    <div class="d-fl-center d-p16 d-bgc-green-200 d-bar4 d-fs-300 d-fw-bold">1</div>
+    <div class="d-fl-center d-p16 d-bgc-green-200 d-bar4 d-fs-300 d-fw-bold">2</div>
+    <div class="d-fl-center d-p16 d-bgc-green-200 d-bar4 d-fs-300 d-fw-bold">3</div>
+    <div class="d-fl-center d-p16 d-bgc-green-200 d-bar4 d-fs-300 d-fw-bold">4</div>
+    <div class="d-fl-center d-p16 d-bgc-green-200 d-bar4 d-fs-300 d-fw-bold">5</div>
+    <div class="d-fl-center d-p16 d-bgc-green-200 d-bar4 d-fs-300 d-fw-bold">6</div>
+    <div class="d-fl-center d-p16 d-bgc-green-200 d-bar4 d-fs-300 d-fw-bold">7</div>
+    <div class="d-fl-center d-p16 d-bgc-green-200 d-bar4 d-fs-300 d-fw-bold">8</div>
+    <div class="d-fl-center d-p16 d-bgc-green-200 d-bar4 d-fs-300 d-fw-bold">9</div>
   </div>
 </code-well-header>
 
@@ -69,12 +69,12 @@ Use `d-gcg{#}` or `d-grg{#}` to independently change the row and column gap spac
     <template #content>
       <tbody v-for="{ direction: dir } in gap">
         <tr v-for="{ output: rem, value: px } in values">
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">
+          <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
             <span v-if="dir === 'both'">.d-gg{{ px }}</span>
             <span v-else-if="dir === 'column'">.d-gcg{{ px }}</span>
             <span v-else-if="dir === 'row'">.d-grg{{ px }}</span>
           </th>
-          <td class="d-ff-mono d-fc-orange d-fs12">
+          <td class="d-ff-mono d-fs-100">
             <span v-if="dir !== 'both'">grid-{{ dir }}-gap: {{ rem }}</span>
             <span v-else>grid-gap: {{ rem }}</span>
           </td>

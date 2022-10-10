@@ -9,8 +9,8 @@ desc: Utilities for setting how an element's space around and between content is
   <template #content>
     <tbody>
       <tr v-for="{ class: className, output } in justifyContent">
-        <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-{{ className }}</th>
-        <td class="d-ff-mono d-fc-orange d-fs12">{{ output }}</td>
+        <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-{{ className }}</th>
+        <td class="d-ff-mono d-fs-100">{{ output }}</td>
       </tr>
     </tbody>
   </template>
@@ -22,9 +22,9 @@ Use `d-jc-flex-start` to justify items against the start of the element's main a
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn102" custom>
   <div class="d-d-flex d-jc-flex-start d-w100p d-bar8 d-bgc-purple-100">
-    <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-purple-300 d-bar4 d-fs24 d-fw-bold">1</div>
-    <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-purple-300 d-bar4 d-fs24 d-fw-bold">2</div>
-    <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-purple-300 d-bar4 d-fs24 d-fw-bold">3</div>
+    <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-purple-300 d-bar4 d-fs-300 d-fw-bold">1</div>
+    <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-purple-300 d-bar4 d-fs-300 d-fw-bold">2</div>
+    <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-purple-300 d-bar4 d-fs-300 d-fw-bold">3</div>
   </div>
 </code-well-header>
 
@@ -40,11 +40,11 @@ Use `d-jc-flex-start` to justify items against the start of the element's main a
 
 Use `d-jc-center` to justify items along the center of the element's main axis.
 
-<code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmn102" custom>
-  <div class="d-d-flex d-jc-center d-w100p d-bar8 d-bgc-pink-100">
-    <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-pink-300 d-bar4 d-fs24 d-fw-bold">1</div>
-    <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-pink-300 d-bar4 d-fs24 d-fw-bold">2</div>
-    <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-pink-300 d-bar4 d-fs24 d-fw-bold">3</div>
+<code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-magenta-100 d-bgo50 d-w100p d-hmn102" custom>
+  <div class="d-d-flex d-jc-center d-w100p d-bar8 d-bgc-magenta-100">
+    <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-magenta-100 d-bar4 d-fs-300 d-fw-bold">1</div>
+    <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-magenta-100 d-bar4 d-fs-300 d-fw-bold">2</div>
+    <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-magenta-100 d-bar4 d-fs-300 d-fw-bold">3</div>
   </div>
 </code-well-header>
 
@@ -62,9 +62,9 @@ Use `d-jc-flex-end` to justify items against the end of the element's main axis.
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-green-100 d-bgo50 d-w100p d-hmn102" custom>
   <div class="d-d-flex d-jc-flex-end d-w100p d-bar8 d-bgc-green-100">
-    <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-green-300 d-bar4 d-fs24 d-fw-bold">1</div>
-    <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-green-300 d-bar4 d-fs24 d-fw-bold">2</div>
-    <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-green-300 d-bar4 d-fs24 d-fw-bold">3</div>
+    <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-green-200 d-bar4 d-fs-300 d-fw-bold">1</div>
+    <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-green-200 d-bar4 d-fs-300 d-fw-bold">2</div>
+    <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-green-200 d-bar4 d-fs-300 d-fw-bold">3</div>
   </div>
 </code-well-header>
 
@@ -82,9 +82,9 @@ Use `d-jc-space-around` to justify items along the element's main axis so that t
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-red-100 d-bgo50 d-w100p d-hmn102" custom>
   <div class="d-d-flex d-jc-space-around d-w100p d-bar8 d-bgc-red-100">
-    <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-red-300 d-bar4 d-fs24 d-fw-bold">1</div>
-    <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-red-300 d-bar4 d-fs24 d-fw-bold">2</div>
-    <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-red-300 d-bar4 d-fs24 d-fw-bold">3</div>
+    <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-red-100 d-bar4 d-fs-300 d-fw-bold">1</div>
+    <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-red-100 d-bar4 d-fs-300 d-fw-bold">2</div>
+    <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-red-100 d-bar4 d-fs-300 d-fw-bold">3</div>
   </div>
 </code-well-header>
 
@@ -100,11 +100,11 @@ Use `d-jc-space-around` to justify items along the element's main axis so that t
 
 Use `d-jc-space-between` to justify items along the element's main axis so that there is an equal amount of space between each item without inserting any space between the first or last object.
 
-<code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-yellow-100 d-bgo50 d-w100p d-hmn102" custom>
-  <div class="d-d-flex d-jc-space-between d-w100p d-bar8 d-bgc-yellow-100">
-    <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-yellow-300 d-bar4 d-fs24 d-fw-bold">1</div>
-    <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-yellow-300 d-bar4 d-fs24 d-fw-bold">2</div>
-    <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-yellow-300 d-bar4 d-fs24 d-fw-bold">3</div>
+<code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-gold-100 d-bgo50 d-w100p d-hmn102" custom>
+  <div class="d-d-flex d-jc-space-between d-w100p d-bar8 d-bgc-gold-100">
+    <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-gold-200 d-bar4 d-fs-300 d-fw-bold">1</div>
+    <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-gold-200 d-bar4 d-fs-300 d-fw-bold">2</div>
+    <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-gold-200 d-bar4 d-fs-300 d-fw-bold">3</div>
   </div>
 </code-well-header>
 
@@ -122,9 +122,9 @@ Use `d-jc-space-evenly` to justify items along the element's main axis so that t
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-orange-100 d-bgo50 d-w100p d-hmn102" custom>
   <div class="d-d-flex d-jc-space-evenly d-w100p d-bar8 d-bgc-orange-100">
-    <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-orange-300 d-bar4 d-fs24 d-fw-bold">1</div>
-    <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-orange-300 d-bar4 d-fs24 d-fw-bold">2</div>
-    <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-orange-300 d-bar4 d-fs24 d-fw-bold">3</div>
+    <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-orange-300 d-bar4 d-fs-300 d-fw-bold">1</div>
+    <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-orange-300 d-bar4 d-fs-300 d-fw-bold">2</div>
+    <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-orange-300 d-bar4 d-fs-300 d-fw-bold">3</div>
   </div>
 </code-well-header>
 

@@ -9,7 +9,7 @@
       />
       <p
         v-if="frontmatter.desc"
-        class="d-fs20 d-lh6"
+        class="d-fs-300 d-lh6"
         v-html="frontmatter.desc"
       />
     </header>
@@ -19,12 +19,12 @@
       id="preview-header"
       class="d-d-flex d-jc-space-between"
     >
-      <h2 class="d-fs16 d-ba-unset">
+      <h2 class="d-fs-200 d-ba-unset">
         Preview
       </h2>
       <a
         v-if="frontmatter.storybook_url"
-        class="d-link d-fs14"
+        class="d-link d-fs-200"
         :href="frontmatter.storybook_url"
         target="_blank"
         rel="noopener noreferrer"

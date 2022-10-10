@@ -18,23 +18,23 @@ control the grow and shrink flex values separately with their own utility classe
   </thead>
   <tbody>
     <tr v-for="v in properties[0].values">
-      <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-fl{{ v }}</th>
-      <td class="d-ff-mono d-fc-orange d-fs12">flex: {{ v }} auto !important;</td>
+      <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-fl{{ v }}</th>
+      <td class="d-ff-mono d-fs-100">flex: {{ v }} auto !important;</td>
       <td>{{ properties[0].description }} {{ v }}.</td>
     </tr>
     <tr>
-      <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-fl-unset</th>
-      <td class="d-ff-mono d-fc-orange d-fs12">flex: unset;</td>
+      <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-fl-unset</th>
+      <td class="d-ff-mono d-fs-100">flex: unset;</td>
       <td>Resets the flex value to the initial value (0 1 auto).</td>
     </tr>
   </tbody>
 </table>
 
-<code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmn216 d-of-auto" custom>
-  <div class="d-d-flex d-w100p d-bar8 d-bgc-pink-100">
-    <div class="d-fl-none d-p16 d-fs14 d-lh-tight d-bgc-pink-100 d-ps-relative">Content cannot flex</div>
-    <div class="d-fl1 d-p16 d-fs14 d-lh-tight d-bgc-pink-200 d-ps-relative">Text that will flex</div>
-    <div class="d-fl-none d-p16 d-fs14 d-lh-tight d-bgc-pink-100 d-ps-relative">Content cannot flex</div>
+<code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-magenta-100 d-bgo50 d-w100p d-hmn216 d-of-auto" custom>
+  <div class="d-d-flex d-w100p d-bar8 d-bgc-magenta-100">
+    <div class="d-fl-none d-p16 d-fs-200 d-lh-tight d-bgc-magenta-100 d-ps-relative">Content cannot flex</div>
+    <div class="d-fl1 d-p16 d-fs-200 d-lh-tight d-bgc-magenta-100 d-ps-relative">Text that will flex</div>
+    <div class="d-fl-none d-p16 d-fs-200 d-lh-tight d-bgc-magenta-100 d-ps-relative">Content cannot flex</div>
   </div>
 </code-well-header>
 
@@ -60,13 +60,13 @@ The `flex-grow` sets the flex container’s grow factor relative to the parent's
   </thead>
   <tbody>
     <tr v-for="v in properties[1].values">
-      <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-{{ properties[1].class }}{{ v }}</th>
-      <td class="d-ff-mono d-fc-orange d-fs12">flex-grow: {{ v }} !important;</td>
+      <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-{{ properties[1].class }}{{ v }}</th>
+      <td class="d-ff-mono d-fs-100">flex-grow: {{ v }} !important;</td>
       <td>{{ properties[1].description }} {{ v }}.</td>
     </tr>
     <tr>
-      <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-fl-grow-unset</th>
-      <td class="d-ff-mono d-fc-orange-600 d-fs12">flex-grow: unset !important;</td>
+      <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-fl-grow-unset</th>
+      <td class="d-ff-mono d-fs-100">flex-grow: unset !important;</td>
       <td>Resets the flex-grow value to the initial value (0).</td>
     </tr>
   </tbody>
@@ -74,9 +74,9 @@ The `flex-grow` sets the flex container’s grow factor relative to the parent's
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn216 d-of-auto" custom>
   <div class="d-d-flex d-w100p d-bar8 d-bgc-purple-100">
-    <div class="d-fl-none d-p16 d-fs14 d-lh-tight d-bgc-purple-100">Content cannot flex</div>
-    <div class="d-fl-grow1 d-p16 d-fs14 d-lh-tight d-bgc-purple-200">Text that will grow</div>
-    <div class="d-fl-none d-p16 d-fs14 d-lh-tight d-bgc-purple-100">Content cannot flex</div>
+    <div class="d-fl-none d-p16 d-fs-200 d-lh-tight d-bgc-purple-100">Content cannot flex</div>
+    <div class="d-fl-grow1 d-p16 d-fs-200 d-lh-tight d-bgc-purple-200">Text that will grow</div>
+    <div class="d-fl-none d-p16 d-fs-200 d-lh-tight d-bgc-purple-100">Content cannot flex</div>
   </div>
 </code-well-header>
 
@@ -102,13 +102,13 @@ The `flex-shrink` sets the flex container’s shrink factor relative to the pare
   </thead>
   <tbody>
     <tr v-for="v in properties[2].values">
-      <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-{{ properties[2].class }}{{ v }}</th>
-      <td class="d-ff-mono d-fc-orange d-fs12">flex-shrink: {{ v }} !important;</td>
+      <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-{{ properties[2].class }}{{ v }}</th>
+      <td class="d-ff-mono d-fs-100">flex-shrink: {{ v }} !important;</td>
       <td>{{ properties[2].description }} {{ v }}.</td>
     </tr>
     <tr>
-      <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-fl-shrink-unset</th>
-      <td class="d-ff-mono d-fc-orange d-fs12">flex-shrink: unset !important;</td>
+      <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-fl-shrink-unset</th>
+      <td class="d-ff-mono d-fs-100">flex-shrink: unset !important;</td>
       <td>Resets the flex-shrink value to the initial value (1).</td>
     </tr>
   </tbody>
@@ -116,9 +116,9 @@ The `flex-shrink` sets the flex container’s shrink factor relative to the pare
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-red-100 d-bgo50 d-w100p d-hmn216 d-of-auto" custom>
   <div class="d-d-flex d-w5 d-bar8 d-bgc-red-100">
-    <div class="d-fl-none d-p16 d-fs14 d-lh-tight d-bgc-red-100">Longer text that cannot flex</div>
-    <div class="d-fl-shrink1 d-p16 d-fs14 d-lh-tight d-bgc-red-200">Text that will shrink even if it causes text to wrap</div>
-    <div class="d-fl-none d-p16 d-fs14 d-lh-tight d-bgc-red-100">Longer text that cannot flex</div>
+    <div class="d-fl-none d-p16 d-fs-200 d-lh-tight d-bgc-red-100">Longer text that cannot flex</div>
+    <div class="d-fl-shrink1 d-p16 d-fs-200 d-lh-tight d-bgc-red-100">Text that will shrink even if it causes text to wrap</div>
+    <div class="d-fl-none d-p16 d-fs-200 d-lh-tight d-bgc-red-100">Longer text that cannot flex</div>
   </div>
 </code-well-header>
 

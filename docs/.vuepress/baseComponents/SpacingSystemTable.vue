@@ -26,16 +26,16 @@
           :key="val"
         >
           <th
-            class="d-ff-mono d-fc-purple d-fw-normal d-fs12"
+            class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100"
             scope="row"
           >
             <span v-if="kind === 'css'">var(--su{{ val }})</span>
             <span v-else>@su{{ val }}</span>
           </th>
-          <td class="d-ff-mono d-fc-orange d-fs12">
+          <td class="d-ff-mono d-fs-100">
             {{ val }}px
           </td>
-          <td class="d-ff-mono d-fc-orange d-fs12">
+          <td class="d-ff-mono d-fs-100">
             {{ output }}
           </td>
         </tr>
@@ -46,15 +46,15 @@
           :key="val"
         >
           <th
-            class="d-ff-mono d-fc-purple d-fw-normal d-fs12"
+            class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100"
             scope="row"
           >
             var(--sun{{ val }})
           </th>
-          <td class="d-ff-mono d-fc-orange d-fs12">
+          <td class="d-ff-mono d-fs-100">
             -{{ val }}px
           </td>
-          <td class="d-ff-mono d-fc-orange d-fs12">
+          <td class="d-ff-mono d-fs-100">
             -{{ output }}
           </td>
         </tr>

@@ -73,7 +73,7 @@ All Dialtone classes available to users are prefixed with `d-`.
 .d-stack8 {}
 ```
 
-Note that variables are not classes and do not follow this convention. For example: `@purple-300` or `--primary-color`.
+Note that variables are not classes and do not follow this convention. For example: `@purple-300` (`LESS`) or `var(--su12)` (CSS Custom Property).
 
 #### Utility Classes
 

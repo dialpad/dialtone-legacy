@@ -4,7 +4,7 @@ desc: A modal focuses the user’s attention on a single task or message.
 storybook_url: https://vue.dialpad.design/?path=/story/components-modal--default
 ---
 <code-well-header>
-  <div class="d-d-grid d-gg16 d-g-cols4 d-w100p d-fs14">
+  <div class="d-d-grid d-gg16 d-g-cols4 d-w100p d-fs-200">
     <figure class="d-m0 d-stack4 d-w100p">
       <img class="d-bar4" alt="Modal screen: Base" :src="$withBase('/assets/images/screen-modal--base.png')">
       <figcaption><a href="#base-style">Base Style</a></figcaption>

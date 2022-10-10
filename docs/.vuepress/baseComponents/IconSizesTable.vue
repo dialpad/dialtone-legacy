@@ -33,10 +33,10 @@
         <th scope="row">
           {{ size.size }}
         </th>
-        <td class="d-ff-mono d-fc-orange d-fs12">
+        <td class="d-ff-mono d-fs-100">
           {{ size.variable }}
         </td>
-        <td class="d-ff-mono d-fc-orange d-fs12">
+        <td class="d-ff-mono d-fs-100">
           .{{ size.class }}
         </td>
         <td>

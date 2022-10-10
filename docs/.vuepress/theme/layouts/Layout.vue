@@ -6,7 +6,7 @@
         v-else
         class="main-content"
       >
-        <Transition
+        <transition
           name="fade-slide-y"
           mode="out-in"
           @before-enter="onBeforeEnter"
@@ -27,7 +27,7 @@
               </page-header>
             </template>
           </page>
-        </Transition>
+        </transition>
         <page-toc
           v-if="!isMobile"
           :headers="$page.headers"
