@@ -1,3 +1,15 @@
+# [7.1.0](https://github.com/dialpad/dialtone/compare/v7.0.0...v7.1.0) (2022-10-11)
+
+
+### Bug Fixes
+
+* badge-300 font color ([#713](https://github.com/dialpad/dialtone/issues/713)) ([f921627](https://github.com/dialpad/dialtone/commit/f921627d0422b781e725e9f16096d4a62c731c79))
+
+
+### Features
+
+* add linux and android system fonts to the stack ([#710](https://github.com/dialpad/dialtone/issues/710)) ([7917d66](https://github.com/dialpad/dialtone/commit/7917d665c161a2409eae8f935c8027e21d17c478))
+
 # [7.0.0](https://github.com/dialpad/dialtone/compare/v6.42.1...v7.0.0) (2022-10-10)
 
 
