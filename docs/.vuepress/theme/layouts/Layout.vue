@@ -89,6 +89,7 @@ watch(isMobile, (current) => {
     align-self: flex-start;
     background-color: var(--base--background-color);
     z-index: 10;
+    width: var(--sidebar-width);
   }
 
   @media screen and (max-width: 980px) {

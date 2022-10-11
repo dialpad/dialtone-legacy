@@ -2,10 +2,10 @@
   <section class="hero d-mnt16 d-bgr-none">
     <div class="hero--inner-wrapper d-d-flex d-jc-space-between d-mx-auto d-wmx1340 d-pl16 d-pr16">
       <div class="hero--content d-d-flex d-fd-column d-jc-center">
-        <h1 class="d-headline42 d-lh6 d-mb12">
+        <h1 class="d-headline-extra-extra-large d-mb12">
           Improve your UI's reception with Dialtone
         </h1>
-        <p class="d-fs-300 d-lh-400 d-mb8">
+        <p class="d-fs-300 d-lh-400 d-mb16">
           Documented styles, utility classes, and components to help you quickly design
           and build unified experiences across Dialpad and Dialpad Meetings.
         </p>
@@ -53,16 +53,16 @@
     </div>
   </section>
   <section class="links d-d-grid d-gg16 d-g-cols12 d-wmx1340 d-mx-auto">
-    <div class="d-gc3 link d-px32 d-ta-center">
+    <div class="link d-body-base d-gc3 d-px32 d-ta-center">
       <img
         alt=""
-        class="link--image d-h96 d-mb24"
+        class="d-h96 d-mb24"
         :src="$withBase('/assets/images/home-design.svg')"
       >
-      <h2 class="d-fs-400 d-fw-medium d-mb12">
+      <h2 class="d-fs-400 d-fw-medium d-mb8 d-baw0">
         Design
       </h2>
-      <p class="d-fs-200 d-lh6 d-mb8">
+      <p class="d-mb8">
         Foundational color, iconography, and spacing guidelines
       </p>
       <router-link
@@ -72,16 +72,16 @@
         Browse design guidelines
       </router-link>
     </div>
-    <div class="d-gc3 link d-px32 d-ta-center">
+    <div class="link d-body-base d-gc3 d-px32 d-ta-center">
       <img
         alt=""
-        class="link--image d-h96 d-mb24"
+        class="d-h96 d-mb24"
         :src="$withBase('/assets/images/home-components.svg')"
       >
-      <h2 class="d-fs-400 d-fw-medium d-mb12">
+      <h2 class="d-fs-400 d-fw-medium d-mb8 d-baw0">
         Components
       </h2>
-      <p class="d-fs-200 d-lh6 d-mb8">
+      <p class="d-mb8">
         Presentational UI components offered in CSS and Vue
       </p>
       <div class="d-d-inline-flex d-fd-column">
@@ -99,16 +99,16 @@
         >Browse Vue components</a>
       </div>
     </div>
-    <div class="d-gc3 link d-px32 d-ta-center">
+    <div class="link d-body-base d-gc3 d-px32 d-ta-center">
       <img
         alt=""
-        class="link--image d-h96 d-mb24"
+        class="d-h96 d-mb24"
         :src="$withBase('/assets/images/home-utilities.svg')"
       >
-      <h2 class="d-fs-400 d-fw-medium d-mb12">
+      <h2 class="d-fs-400 d-fw-medium d-mb8 d-baw0">
         Utilities
       </h2>
-      <p class="d-fs-200 d-lh6 d-mb8">
+      <p class="d-mb8">
         Atomic CSS utility classes so you don't have to write custom CSS
       </p>
       <router-link
@@ -118,16 +118,16 @@
         Browse utility classes
       </router-link>
     </div>
-    <div class="d-gc3 link d-px32 d-ta-center">
+    <div class="link d-body-base d-gc3 d-px32 d-ta-center">
       <img
         alt=""
-        class="link--image d-h96 d-mb24"
+        class="d-h96 d-mb24"
         :src="$withBase('/assets/images/home-guides.svg')"
       >
-      <h2 class="d-fs-400 d-fw-medium d-mb12">
+      <h2 class="d-fs-400 d-fw-medium d-mb8 d-baw0">
         Guides
       </h2>
-      <p class="d-fs-200 d-lh6 d-mb8">
+      <p class="d-mb8">
         Reference guidelines for Accessibility, Writing, and more
       </p>
       <div class="d-d-inline-flex d-fd-column">
@@ -141,7 +141,7 @@
           class="d-link"
           to="/guides/content/principles.html"
         >
-          Writing Guidelines
+          Writing guidelines
         </router-link>
         <router-link
           class="d-link"
@@ -153,7 +153,7 @@
     </div>
   </section>
   <section class="d-bgc-purple-500 d-py64 d-ta-center">
-    <p class="d-fc-white d-fs-300 d-fw-bold d-px48">
+    <p class="d-fc-white d-fs-300 d-fw-semibold d-px48">
       Don't see something? Want to contribute?
     </p>
     <a

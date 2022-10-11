@@ -3,7 +3,7 @@
     v-if="headers.length > 0"
     class="toc"
   >
-    <h3 class="d-pl8 d-pb8 d-ws-nowrap d-tt-uppercase">
+    <h3 class="d-pl8 d-fs-100 d-pb8 d-ws-nowrap d-tt-uppercase d-fw-semibold">
       On this page
     </h3>
     <Toc

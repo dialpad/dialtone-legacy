@@ -4,12 +4,12 @@
     <header class="d-stack2">
       <h1
         v-if="frontmatter.title"
-        class="d-headline42 d-lh6 d-mb8 d-pt16"
+        class="d-lh-200 d-fs-500 d-fw-medium d-mb8"
         v-text="frontmatter.title"
       />
       <p
         v-if="frontmatter.desc"
-        class="d-fs-300 d-lh6 d-wmx80p"
+        class="d-fs-300 d-lh-300 d-wmx80p"
         v-html="frontmatter.desc"
       />
     </header>
