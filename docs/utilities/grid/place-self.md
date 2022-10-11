@@ -1,5 +1,5 @@
 ---
-title: Place Self
+title: Place self
 desc: Utilities for controlling a grid item's alignment along their block and inline axis directions.
 ---
 

@@ -43,7 +43,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-select-menu--d
 - When most users will (or should) pick a particular option, make it the default selection.
 - Avoid auto-submission. Be wary of UI implications of automatically submitting upon selection or applying its value. Users may often change their choices multiple times, particularly if interacting with a form solely with keyboard. Auto-submission is also less accessible. For auto-submission consider the [Dropdown](dropdown.md) component.
 
-## Variants and Examples
+## Variants and examples
 
 ### Base Styles
 

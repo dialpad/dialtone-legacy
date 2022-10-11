@@ -41,7 +41,7 @@ Radio buttons are a common way to allow users to make a single selection from a 
 - Make sure selections are adequately spaced for touch screens.
 - Use caution if you decide to set a default value as they cannot be unchecked. Setting a default value can discourage users from making conscious decisions, seem pushy, or alienate users who don’t fit into your assumptions. If you are unsure, leave nothing selected by default.
 
-## Variants and Examples
+## Variants and examples
 
 ### Base Styles
 

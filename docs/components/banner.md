@@ -15,7 +15,7 @@ System banners are used for **system** messaging. They are full-width notices pl
 
 Banners are a type of notice and so you can use the following [Notice](notice.md) styles in conjunction with `.d-banner`.
 
-## Variants and Examples
+## Variants and examples
 
 <example-banner />
 

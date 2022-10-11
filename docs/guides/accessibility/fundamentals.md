@@ -1,7 +1,7 @@
 ---
 title: Fundamentals
 prev:
-  text: Writing Guidelines - Time
+  text: Writing guidelines - Time
   link: /guides/content/time.html
 ---
 
@@ -75,7 +75,7 @@ The interface and its content is designed and implemented in such a way that it 
 - Name, role and value.
 - Status messages, sending messaging to the user without interrupting their workflow by giving focus to an element. e.g. “added to cart” while shopping online should act as a message and not a redirection of activity and focus for the user.
 
-## Types of Assistive Technology
+## Types of assistive technology
 
 “Assistive technology” is a generic term that describes tools used by people with disabilities to accomplish tasks. Here are some examples:
 
@@ -102,5 +102,5 @@ The interface and its content is designed and implemented in such a way that it 
 ### Sources
 
 - [CDC - Disability Impacts All of Us Infographic](https://www.cdc.gov/ncbddd/disabilityandhealth/infographic-disability-impacts-all.html)
-- [Berkeley - Types of Assistive Technology](https://webaccess.berkeley.edu/resources/assistive-technology)
+- [Berkeley - Types of assistive technology](https://webaccess.berkeley.edu/resources/assistive-technology)
 - [UXcellence - Designing for Accessibility: An Introduction](https://uxcellence.com/2018/accessible-design-intro)

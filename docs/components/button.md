@@ -65,7 +65,7 @@ Button labels should be clear and predictable so users have confidence in their 
   - Add `role="button"` to the `<a>` to allow screenreaders to announce it as a `button`.
   - Attach an event handler to detect Spacebar keypress. Buttons react to both Enter and Spacebar, but Link reacts only to Enter.
 
-## Variants and Examples
+## Variants and examples
 
 Dialtone provides four core button **types**, each with three levels of **importance**.
 

@@ -3,7 +3,7 @@ title: Usage
 desc: A general overview of Dialtone's utility classes, CSS components, and Vue components.
 ---
 
-## Utility-First
+## Utility-first
 
 Dialtone's CSS library offers a framework of utility-first classes. Each class is a small, <a href="https://css-tricks.com/lets-define-exactly-atomic-css/" target="_blank">atomic style</a> declaration that, when chained together, should mitigate most situations in which custom CSS must be written. Just write these classes right in your mark-up and you're all set!
 
@@ -59,7 +59,7 @@ In order to make Dialtone work across our supported browsers you need to manuall
 1. Focus-visible adds a listener to every element that should be keyboard-focused only and when the element is focused, it adds the .focus-visible class to it, follow the [focus-visible](https://github.com/WICG/focus-visible#installation) installation instructions.
 2. Postcss focus-visible plugin adds a .focus-visible class for every :focus-visible class found in your css, follow the [postcss-focus-visible](https://www.npmjs.com/package/postcss-focus-visible) installation instructions.
 
-## Box-Sizing
+## Box-sizing
 
 All Dialtone components are implemented with `box-sizing: border-box;` applied. To understand why we prefer `border-box` over `content-box`, please visit this [Stack Overflow Teams question](https://stackoverflow.com/c/dialpad/questions/121).
 

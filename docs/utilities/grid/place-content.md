@@ -1,5 +1,5 @@
 ---
-title: Place Content
+title: Place content
 desc: Utilities for controlling how grid items are aligned along both the block and inline axis directions.
 ---
 
@@ -91,7 +91,7 @@ Use `d-plc-center{-n}` to align grid items along the center of the block and/or 
 </div>
 ```
 
-## Space Evenly
+## Space evenly
 
 Use `d-plc-space-evenly{-n}` to distribute grid items evenly along the block axis.
 
@@ -113,7 +113,7 @@ Use `d-plc-space-evenly{-n}` to distribute grid items evenly along the block axi
 </div>
 ```
 
-## Space Around
+## Space around
 
 Use `d-plc-space-around{-n}` to distribute grid items so there is an equal amount of space around each row on the block axis.
 
@@ -135,7 +135,7 @@ Use `d-plc-space-around{-n}` to distribute grid items so there is an equal amoun
 </div>
 ```
 
-## Space Between
+## Space between
 
 Use `d-plc-space-between{-n}` to distribute grid items along the block axis so that there is an equal space between each row.
 

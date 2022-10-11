@@ -1,5 +1,5 @@
 ---
-title: Line Height
+title: Line height
 desc: Utilities to change an element's line-height.
 ---
 

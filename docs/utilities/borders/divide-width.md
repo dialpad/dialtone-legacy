@@ -1,12 +1,12 @@
 ---
-title: Divide Width
+title: Divide width
 desc: Utilities for controlling the divider width between an element's child items.
 next:
-  text: Box Shadows
+  text: Box shadows
   link: /utilities/effects/box-shadow
 ---
 
-## Default Width
+## Default width
 
 Use `d-divide-{y|x}` to create a 1px divider between an element's child items.
 

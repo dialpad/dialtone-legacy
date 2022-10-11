@@ -1,5 +1,5 @@
 ---
-title: Accessibility Principles by Role
+title: Accessibility principles by role
 desc: A framework outlining how your role can address accessibility and Inclusive Design.
 ---
 

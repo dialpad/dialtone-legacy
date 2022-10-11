@@ -1,5 +1,5 @@
 ---
-title: Vertical Align
+title: Vertical align
 desc: Utilities for controlling an element's text transform.
 ---
 
@@ -75,7 +75,7 @@ Use `d-va-bottom` to vertically align an element to the bottom.
 <div class="d-d-inline-block d-va-bottom">...</div>
 ```
 
-## Text Top
+## Text top
 
 Use `d-va-text-top` to vertically align an element to text top.
 
@@ -93,7 +93,7 @@ Use `d-va-text-top` to vertically align an element to text top.
 <div class="d-d-inline-block d-va-text-top">...</div>
 ```
 
-## Text Bottom
+## Text bottom
 
 Use `d-va-text-bottom` to vertically align an element to text bottom.
 

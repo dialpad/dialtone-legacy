@@ -50,7 +50,7 @@ Your popover should be non-modal when:
 - Close non-modal dialogs if they are scrolled out of visibility.
 - Set the z-index of the dialog to var(--zi-modal-element) if modal, var(--zi-popover) if not.
 
-## Variants and Examples
+## Variants and examples
 
 ### Popover - Modal
 

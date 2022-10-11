@@ -1,5 +1,5 @@
 ---
-title: Font Style
+title: Font style
 desc: Utilities to change an element's font styles.
 ---
 

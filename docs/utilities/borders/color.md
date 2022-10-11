@@ -1,5 +1,5 @@
 ---
-title: Border Colors
+title: Border colors
 desc: Utilities for controlling an element's border color.
 prev:
   text: Patterns

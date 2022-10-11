@@ -41,7 +41,7 @@
             @click="(e) => { sendAnalyticsEvent(); navigate(e); }"
             @keypress.enter="(e) => { sendAnalyticsEvent(); navigate(e); }"
           >
-            Get Started
+            Get started
           </button>
         </router-link>
       </div>

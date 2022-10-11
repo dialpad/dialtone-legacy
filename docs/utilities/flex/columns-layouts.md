@@ -1,5 +1,5 @@
 ---
-title: Columns & Layouts
+title: Columns & layouts
 desc: Utilities for flex columns and common flex layouts.
 ---
 
@@ -31,7 +31,7 @@ Use `d-fl-col{n}` to create uniformly sized children within an element.
 <div class="d-fl-col12">...</div>
 ```
 
-## Flex Column Gaps
+## Flex Column gaps
 
 Use `d-flg{n}` to create uniform gaps between flex columns within an element.
 

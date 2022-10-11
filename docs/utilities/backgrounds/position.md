@@ -1,5 +1,5 @@
 ---
-title: Background Position
+title: Background position
 desc: Utilities for controlling the position of an element's background image.
 ---
 

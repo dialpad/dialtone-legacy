@@ -1,8 +1,8 @@
 ---
-title: Background Attachment
+title: Background attachment
 desc: Utilities for controlling the way an element's background image position is fixed within the viewport or scrolls with its containing block.
 prev:
-  text: Design - Spacing System
+  text: Design - Spacing system
   link: /design/spacing/spacing-system
 ---
 

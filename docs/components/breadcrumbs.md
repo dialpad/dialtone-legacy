@@ -39,7 +39,7 @@ Breadcrumbs should be the first page element—placed directly above the page’
 
 Breadcrumbs are always treated as secondary and should not entirely replace the primary navigation. They shouldn’t be used for products that have single level navigation because they create unnecessary clutter.
 
-## Variants and Examples
+## Variants and examples
 
 <code-well-header>
     <nav class="d-breadcrumbs" aria-label="breadcrumb">

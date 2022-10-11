@@ -122,7 +122,7 @@ New Color Ramp
 - Removed `fw-thin`, `fw-light` and `fw-black` variables (RobotoMono shims).
 - `fw-medium` and `fw-semibold` are no longer restricted to Marketing use.
 
-### Typography: Updated Font Size Ramps
+### Typography: Updated Font size Ramps
 - Removed `fs10`, `fs11`, `fs12`, `fs14`, `fs16`, `fs18`, `fs20`, `fs24`, `fs28`, `fs32`, `fs36`, `fs42`, `fs48`, `fs54`.
 
 ### Typography: New Body Styles

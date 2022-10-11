@@ -144,7 +144,7 @@ Use `.d-g-cols{n}` to create a multi-column layout.
 </div>
 ```
 
-## Nesting Grids
+## Nesting grids
 
 Unlike some CSS, CSS grid does not cascade beyond the parent and its direct children (`parent-element > *`). We can use this to our advantage by being able to nest grids within each other without cascade errors.
 

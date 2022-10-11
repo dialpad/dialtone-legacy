@@ -2,7 +2,7 @@
 title: Principles
 desc: When writing for the Dialpad interface, we aim to be clear, concise, helpful, and friendly.
 prev:
-  text: Getting Started - Building Dialtone locally
+  text: Getting started - Building Dialtone locally
   link: /guides/getting-started/building-locally.html
 ---
 

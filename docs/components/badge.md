@@ -32,7 +32,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-badge--default
 
 - Since a Badge may often reflect a value within an implied label, ensure a label is announced. For example, via `aria-label` or `aria-labeledby`.
 
-## Variants and Examples
+## Variants and examples
 
 <code-well-header>
   <div>

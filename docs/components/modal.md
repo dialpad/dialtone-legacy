@@ -75,7 +75,7 @@ Although highly versatile, this doesn't mean modal dialogs are fit for all purpo
 
 <component-accessible-table component-name="modal"></component-accessible-table>
 
-## Variants and Examples
+## Variants and examples
 
 ### Base Style
 

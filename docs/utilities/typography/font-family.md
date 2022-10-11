@@ -1,5 +1,5 @@
 ---
-title: Font Family
+title: Font family
 desc: Utilities to change an element's font-family.
 ---
 
