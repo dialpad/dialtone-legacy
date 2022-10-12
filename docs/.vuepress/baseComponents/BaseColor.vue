@@ -22,15 +22,15 @@
       <div>
         <strong>var(--{{ color }}{{ s.stop ? `-${s.stop}` : '' }})</strong>
         <br>
-        <span class="d-fc-dark-lighter">#{{ s.hex }}</span>
+        <span>#{{ s.hex }}</span>
       </div>
       <div class="d-d-flex d-fd-column d-fs-100 d-lh2 d-fw-bold d-bar-sm d-px4 py2">
-        <div class="">
+        <div>
           {{ s.contrast }}
         </div>
         <div
           v-if="s.darkContrast"
-          class="d-fc-dark"
+          class="d-fc-primary"
         >
           {{ s.darkContrast }}
         </div>

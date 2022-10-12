@@ -18,16 +18,16 @@
           id="info-alert-title"
           class="d-notice__title"
         >
-          Dialtone 6.0 is here!
+          Dialtone 7.0 is here!
         </h1>
         <p
           id="info-alert-desc"
           class="d-notice__message"
         >
-          Looking for Dialtone 5 documentation?
+          Looking for Dialtone 6 documentation?
           <a
             class="d-link"
-            href="//dialpad.design/version5"
+            href="//dialpad.design/version6"
             target="_blank"
             rel="noopener noreferrer"
           >Find it here.</a>

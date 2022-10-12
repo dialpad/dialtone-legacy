@@ -45,7 +45,7 @@ Please note that because the opacity adjustments are made via CSS variables, a f
   <div  class="d-p8 d-bgc-red-200 d-bgo25 d-bar8">
 
   ```jsx
-  <p class="d-fc-dark">
+  <p class="d-fc-primary">
       <span class="d-fco75">The quick brown fox jumps over the lazy dog.</span>
   </p>
   ```
@@ -63,8 +63,8 @@ Please note that because the opacity adjustments are made via CSS variables, a f
   <div  class="d-p8 d-bgc-green-200 d-bgo25 d-bar8">
 
   ```jsx
-  <p class="d-fc-dark">
-      <span class="d-fc-dark d-fco75">The quick brown fox jumps over the lazy dog.</span>
+  <p class="d-fc-primary">
+      <span class="d-fc-primary d-fco75">The quick brown fox jumps over the lazy dog.</span>
   </p>
   ```
 
