@@ -20,21 +20,42 @@
 .d-toggle {
   //  Component specific CSS Vars
   //  ------------------------------------------------------------------------
-  --toggle--ta: var(--ttf-in-out);
+  --toggle-ta: var(--ttf-in-out);
   --toggle-ts: var(--td200);
   --toggle-bc: var(--black-400);
+  --toggle-height-default: var(--su24);
+  --toggle-height-small: calc(var(--su16) + var(--su2));
+  --toggle-width-default: var(--su48);
+  --toggle-width-small: calc(var(--su32) + var(--su4));
+  --toggle-icon-size-default: var(--su16);
+  --toggle-icon-size-small: calc(var(--su12) + var(--su2));
 
   position: relative;
   display: inline-block;
   box-sizing: border-box;
-  width: var(--su48);
-  height: var(--su24);
+  width: var(--toggle-width-default);
+  height: var(--toggle-height-default);
+
+  &--small {
+    width: var(--toggle-width-small);
+    height: var(--toggle-height-small);
+
+    &::before {
+      position: absolute;
+      top: calc(var(--su4) * -1);
+      right: 0;
+      bottom: calc(var(--su4) * -1);
+      left: 0;
+      content: '';
+    }
+  }
+
   padding: 0;
   line-height: var(--lh4);
   vertical-align: middle;
   background-color: var(--toggle-bc);
   border: var(--su1) solid var(--toggle-bc);
-  border-radius: var(--su48);
+  border-radius: var(--toggle-width-default);
   cursor: pointer;
 
   &-copy {
@@ -45,8 +66,16 @@
     position: absolute;
     top: calc(var(--su4) - var(--su1));
     left: var(--su24);
-    width: var(--su16);
-    height: var(--su16);
+    width: var(--toggle-icon-size-default);
+    height: var(--toggle-icon-size-default);
+
+    .d-toggle--small & {
+      top: var(--su1);
+      left: calc(var(--su16) + var(--su1));
+      width: var(--toggle-icon-size-small);
+      height: var(--toggle-icon-size-small);
+    }
+
     color: var(--white);
     background-image: url("data:image/svg+xml;charset=UTF-8, %3csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' %3e%3cpath d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z' fill='%23fff' /%3e%3c/svg%3e");
     background-repeat: no-repeat;
@@ -56,13 +85,18 @@
     position: absolute;
     top: var(--su1);
     left: var(--su1);
-    width: calc(var(--su16) + var(--su4));
-    height: calc(var(--su16) + var(--su4));
+    width: calc(var(--toggle-icon-size-default) + var(--su4));
+    height: calc(var(--toggle-icon-size-default) + var(--su4));
     background-color: var(--white);
     border-radius: var(--br-circle);
     cursor: pointer;
-    transition: left var(--toggle-ts) var(--toggle--ta);
+    transition: left var(--toggle-ts) var(--toggle-ta);
     content: ' ';
+  }
+
+  &--small::after {
+    width: calc(var(--toggle-icon-size-small));
+    height: calc(var(--toggle-icon-size-small));
   }
 
   &:focus-visible {
@@ -81,8 +115,17 @@
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z' fill='%23fff'/%3E%3C/svg%3E");
   }
 
+  &.d-toggle--small .d-toggle__inner {
+    left: calc(var(--su2) + var(--su1));
+  }
+
   &::after {
     left: calc(var(--su24) + var(--su1));
+  }
+
+  &.d-toggle--small::after {
+    right: var(--su1);
+    left: auto;
   }
 }
 

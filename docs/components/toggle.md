@@ -9,6 +9,21 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-toggle--defaul
   </div>
 </code-well-header>
 
+<div class="d-mt12 d-mb12 d-bgc-orange-200 d-p32">
+  <button id="dfhytj" class="d-toggle" aria-checked="false" type="button" role="switch">
+    <span class="d-toggle__inner"></span>
+  </button>
+  <button id="oiuiuyo" class="d-toggle d-toggle--checked" aria-checked="true" type="button" role="switch">
+    <span class="d-toggle__inner"></span>
+  </button>
+  <button id="asdfasdf" class="d-toggle d-toggle--small" aria-checked="false" type="button" role="switch">
+    <span class="d-toggle__inner"></span>
+  </button>
+  <button id="asdfdfdfgs" class="d-toggle d-toggle--checked d-toggle--small" aria-checked="true" type="button" role="switch">
+    <span class="d-toggle__inner"></span>
+  </button>
+</div>
+
 ## Usage
 
 The Toggle component acts as a way to allow the User to switch between two mutually exclusive options. While it technically mirrors a [Checkbox](checkbox.md) state, its effect on the system is immediate&mdash;much like a light switch immediately turns on or off the lights. In contrast, the checked state of a [Checkbox](checkbox.md) won't be applied until a separate action to confirm the selection is taken.
