@@ -16,10 +16,16 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-toggle--defaul
   <button id="oiuiuyo" class="d-toggle d-toggle--checked" aria-checked="true" type="button" role="switch">
     <span class="d-toggle__inner"></span>
   </button>
+  <button id="fgku8i" class="d-toggle d-toggle--indeterminate" aria-checked="false" type="button" role="switch">
+    <span class="d-toggle__inner"></span>
+  </button>
   <button id="asdfasdf" class="d-toggle d-toggle--small" aria-checked="false" type="button" role="switch">
     <span class="d-toggle__inner"></span>
   </button>
   <button id="asdfdfdfgs" class="d-toggle d-toggle--checked d-toggle--small" aria-checked="true" type="button" role="switch">
+    <span class="d-toggle__inner"></span>
+  </button>
+  <button id="asdfasdf" class="d-toggle d-toggle--small d-toggle--indeterminate" aria-checked="false" type="button" role="switch">
     <span class="d-toggle__inner"></span>
   </button>
 </div>

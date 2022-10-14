@@ -12,6 +12,7 @@
 //  • BASE STYLE
 //  • TOGGLE VARIANTS
 //  • CHECKED TOGGLE
+//  • INDETERMINATE TOGGLE
 //  • FOCUSED TOGGLE
 //  • DISABLED TOGGLE
 //
@@ -54,6 +55,10 @@
     .d-toggle--small & {
       top: var(--su1);
       left: calc(var(--su16) + var(--su1));
+    }
+
+    .d-toggle--indeterminate & {
+      display: none;
     }
 
     color: var(--white);
@@ -118,6 +123,19 @@
     &.d-toggle--small::after {
       right: var(--su1);
       left: auto;
+    }
+  }
+
+  //  $$  INDETERMINATE TOGGLE
+  //  ----------------------------------------------------------------------------
+  &--indeterminate {
+    &__inner {
+      display: none;
+    }
+
+    &::after {
+      left: 50%;
+      transform: translate(-50%, 0);
     }
   }
 
