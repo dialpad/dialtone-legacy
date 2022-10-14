@@ -10,8 +10,10 @@
 //
 //  TABLE OF CONTENTS
 //  • BASE STYLE
-//  • CHECKED STYLES
-//  • DISABLED STYLES
+//  • TOGGLE VARIANTS
+//  • CHECKED TOGGLE
+//  • FOCUSED TOGGLE
+//  • DISABLED TOGGLE
 //
 //
 //  ============================================================================
@@ -22,58 +24,36 @@
   //  ------------------------------------------------------------------------
   --toggle-ta: var(--ttf-in-out);
   --toggle-ts: var(--td200);
-  --toggle-bc: var(--black-400);
-  --toggle-height-default: var(--su24);
-  --toggle-height-small: calc(var(--su16) + var(--su2));
-  --toggle-width-default: var(--su48);
-  --toggle-width-small: calc(var(--su32) + var(--su4));
-  --toggle-icon-size-default: var(--su16);
-  --toggle-icon-size-small: calc(var(--su12) + var(--su2));
+  --toggle-bgc: var(--black-400);
+  --toggle-height: var(--su24);
+  --toggle-width: var(--su48);
+  --toggle-icon-size: var(--su16);
 
+  //  $$  BASE STYLE
+  //  ----------------------------------------------------------------------------
   position: relative;
   display: inline-block;
   box-sizing: border-box;
-  width: var(--toggle-width-default);
-  height: var(--toggle-height-default);
-
-  &--small {
-    width: var(--toggle-width-small);
-    height: var(--toggle-height-small);
-
-    &::before {
-      position: absolute;
-      top: calc(var(--su4) * -1);
-      right: 0;
-      bottom: calc(var(--su4) * -1);
-      left: 0;
-      content: '';
-    }
-  }
-
+  width: var(--toggle-width);
+  height: var(--toggle-height);
   padding: 0;
   line-height: var(--lh4);
   vertical-align: middle;
-  background-color: var(--toggle-bc);
-  border: var(--su1) solid var(--toggle-bc);
-  border-radius: var(--toggle-width-default);
+  background-color: var(--toggle-bgc);
+  border: var(--su1) solid var(--toggle-bgc);
+  border-radius: var(--toggle-width);
   cursor: pointer;
-
-  &-copy {
-    margin-right: var(--su6);
-  }
 
   &__inner {
     position: absolute;
     top: calc(var(--su4) - var(--su1));
     left: var(--su24);
-    width: var(--toggle-icon-size-default);
-    height: var(--toggle-icon-size-default);
+    width: var(--toggle-icon-size);
+    height: var(--toggle-icon-size);
 
     .d-toggle--small & {
       top: var(--su1);
       left: calc(var(--su16) + var(--su1));
-      width: var(--toggle-icon-size-small);
-      height: var(--toggle-icon-size-small);
     }
 
     color: var(--white);
@@ -85,8 +65,8 @@
     position: absolute;
     top: var(--su1);
     left: var(--su1);
-    width: calc(var(--toggle-icon-size-default) + var(--su4));
-    height: calc(var(--toggle-icon-size-default) + var(--su4));
+    width: calc(var(--toggle-icon-size) + var(--su4));
+    height: calc(var(--toggle-icon-size) + var(--su4));
     background-color: var(--white);
     border-radius: var(--br-circle);
     cursor: pointer;
@@ -94,50 +74,70 @@
     content: ' ';
   }
 
-  &--small::after {
-    width: calc(var(--toggle-icon-size-small));
-    height: calc(var(--toggle-icon-size-small));
+  //  $$  TOGGLE VARIANTS
+  //  ----------------------------------------------------------------------------
+  &--small {
+    --toggle-height: calc(var(--su16) + var(--su2));
+    --toggle-width: calc(var(--su32) + var(--su4));
+    --toggle-icon-size: calc(var(--su12) + var(--su2));
+
+    &::before {
+      position: absolute;
+      top: calc(var(--su4) * -1);
+      right: 0;
+      bottom: calc(var(--su4) * -1);
+      left: 0;
+      content: '';
+    }
   }
 
+  &--small::after {
+    width: var(--toggle-icon-size);
+    height: var(--toggle-icon-size);
+  }
+
+  //  $$  CHECKED TOGGLE
+  //  ----------------------------------------------------------------------------
+  &--checked {
+    --toggle-bgc: var(--primary-color);
+
+    .d-toggle__inner {
+      left: var(--su6);
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z' fill='%23fff'/%3E%3C/svg%3E");
+    }
+
+    &.d-toggle--small .d-toggle__inner {
+      left: calc(var(--su2) + var(--su1));
+    }
+
+    &::after {
+      left: calc(var(--su24) + var(--su1));
+    }
+
+    &.d-toggle--small::after {
+      right: var(--su1);
+      left: auto;
+    }
+  }
+
+  //  $$  FOCUSED TOGGLE
+  //  ----------------------------------------------------------------------------
   &:focus-visible {
     outline: none;
     box-shadow: var(--bs-focus-ring);
   }
-}
 
-//  $$  CHECKED TOGGLE
-//  ----------------------------------------------------------------------------
-.d-toggle--checked {
-  --toggle-bc: var(--primary-color);
-
-  .d-toggle__inner {
-    left: var(--su6);
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z' fill='%23fff'/%3E%3C/svg%3E");
-  }
-
-  &.d-toggle--small .d-toggle__inner {
-    left: calc(var(--su2) + var(--su1));
-  }
-
-  &::after {
-    left: calc(var(--su24) + var(--su1));
-  }
-
-  &.d-toggle--small::after {
-    right: var(--su1);
-    left: auto;
-  }
-}
-
-//  $$  DISABLED TOGGLE
-//  ----------------------------------------------------------------------------
-.d-toggle--disabled,
- .d-toggle[disabled] {
-  cursor: not-allowed;
-  opacity: 0.5;
-
-  &::after {
+  //  $$  DISABLED TOGGLE
+  //  ----------------------------------------------------------------------------
+  &--disabled,
+  &[disabled] {
     cursor: not-allowed;
-    transition-property: none;
+    opacity: 0.5;
+
+    &::after {
+      cursor: not-allowed;
+      transition-property: none;
+    }
   }
 }
+
