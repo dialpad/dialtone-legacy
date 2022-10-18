@@ -31,7 +31,7 @@ Times are represented as **HH:MM:SS AM/PM**.
 
 ## Time ranges
 
-Use an en dash (–) with no spaces. Mac: <kbd title="option dash">⌥ + -</kbd>; Windows: <kbd title="control dash">⌃ + -</kbd>.
+Use an en dash (–) with no surrounding spaces.
 
 - Always include AM or PM for the second time.
 - Only include AM or PM for the first time if it’s different from the second one:
