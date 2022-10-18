@@ -131,7 +131,7 @@ List-based inputs, such as `select`, comboboxes, or custom dropdown menus can be
 
 - [WebAim - “Creating Accessible Forms.”](https://webaim.org/techniques/forms/controls)
 
-## Focus vs Focus-visible
+## Focus vs focus-visible
 
 User agents can choose their own heuristics for when to match :focus-visible; however, the following (non-normative) suggestions can be used as a starting point:
 

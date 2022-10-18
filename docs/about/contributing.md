@@ -1,9 +1,6 @@
 ---
 title: Contributing
 desc: Help Dialtone be even better.
-next:
-   text: Getting Started - Installation
-   link: /getting-started/installation
 ---
 
 ## Component contribution

@@ -2,8 +2,8 @@
 title: Build Dialtone Locally
 desc: A more thorough guide for installing Dialtone locally.
 next:
-  text: Fundamentals
-  link: /getting-started/accessibility/fundamentals.html
+  text: Writing guidelines - Principles
+  link: /guides/content/principles.html
 ---
 
 We're excited you want to install Dialtone locally as this most likely means you'll be contributing soon! Before you get to get started though,  **please make sure you've read our [contributing docs](https://github.com/dialpad/dialtone/blob/master/.github/CONTRIBUTING.md)**.
@@ -24,7 +24,7 @@ You should see the following response:
 v14.16.1
 ```
 
-## Clone Project
+## Clone project
 
 Download the project:
 
@@ -42,7 +42,7 @@ Then `cd` into the Dialtone directory:
 cd ./path/to/dialtone
 ```
 
-## Install Dependencies
+## Install dependencies
 
 Dialtone uses [Gulp](https://gulpjs.com/) to automate its various workflows. Run the following command to install Gulp and all other project dependencies:
 

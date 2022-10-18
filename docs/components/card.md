@@ -36,7 +36,7 @@ They should be easy to scan for relevant and actionable information. Elements, l
 - The content of a card should be concise and offer only a preview of detailed content.
 - The headings should set clear expectations about the card’s purpose.
 
-## Variants and Examples
+## Variants and examples
 
 ### With Header
 
@@ -77,7 +77,7 @@ They should be easy to scan for relevant and actionable information. Elements, l
       <div class="d-card__footer">
         <button href="#" class="d-btn d-btn--sm d-fc-black-400">Button 1</button>
         <button href="#" class="d-btn d-btn--sm d-fc-black-400">Button 2</button>
-      </div>  
+      </div>
     </div>
 </code-well-header>
 
@@ -109,7 +109,7 @@ They should be easy to scan for relevant and actionable information. Elements, l
       <div class="d-card__footer">
         <button href="#" class="d-btn d-btn--sm d-fc-black-400">Button 1</button>
         <button href="#" class="d-btn d-btn--sm d-fc-black-400">Button 2</button>
-      </div>  
+      </div>
     </div>
 </code-well-header>
 

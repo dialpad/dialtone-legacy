@@ -45,7 +45,7 @@ Checkboxes are an easily understandable way to indicate that users can select on
   - `unchecked`: all children are not checked.
   - `indeterminate`: children are a mix of checked and unchecked.
 
-## Variants and Examples
+## Variants and examples
 
 ### Base Styles
 

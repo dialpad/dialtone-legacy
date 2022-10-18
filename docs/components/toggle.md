@@ -34,7 +34,7 @@ The Toggle component acts as a way to allow the User to switch between two mutua
   - Not toggled: all children are not toggled.
   - `indeterminate`: children are a mix of toggled and not toggled.
 
-## Variants and Examples
+## Variants and examples
 
 ### Base Styles
 

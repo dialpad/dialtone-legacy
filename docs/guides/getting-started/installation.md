@@ -1,12 +1,12 @@
 ---
 title: Installation
-desc: A quick start guide to adding Dialtone to your project.
+desc: A quick start guide to add Dialtone to your project.
 prev:
-  text: About - Contributing
-  link: /about/contributing
+  text: Utilities - Word break
+  link: /utilities/typography/word-break.html
 ---
 
-## Adding Dialtone To Your Project
+## Adding Dialtone to your project
 
 To take advantage of Dialtone's customizations, classes, and variables in your project, you will want to install Dialtone via <a href="https://www.npmjs.com/" target="_blank">npm</a>.
 

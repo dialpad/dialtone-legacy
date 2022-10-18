@@ -1,5 +1,5 @@
 ---
-title: Text Decoration
+title: Text decoration
 desc: Utilities to change an element's text decoration styles.
 ---
 
@@ -27,7 +27,7 @@ Use `d-td-dotted` to apply a dotted underline style to the text.
 <p class="d-td-dotted">...</p>
 ```
 
-## Line Through
+## Line through
 
 Use `d-td-line-through` to apply a line through the text.
 

@@ -34,7 +34,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-link--default
 - Users must be able to identify links without relying on color alone.
 - Users must be able to activate hover and focus states with both a mouse and a keyboard.
 
-## Variants and Examples
+## Variants and examples
 
 <code-well-header>
   <a href="#" class="d-link">Base link</a>

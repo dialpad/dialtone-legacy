@@ -5,8 +5,8 @@ prev:
   text: Spot Illustrations
   link: /design/illustrations/spot
 next:
-  text: Utilities - Background Attachment
-  link: /utilities/backgrounds/attachment
+  text: Components - Avatar
+  link: /components/avatar.html
 ---
 
 ## Overview
@@ -29,7 +29,7 @@ Dialtone uses a spacing system based on a 4-pixel system, providing half-steps w
 
 Aside from the spacing variables, it may be necessary to use the following utility classes to manage interface spacing:
 
-- [Auto Spacing](../../utilities/spacing/auto-spacing)
-- [Line Height](../../utilities/typography/line-height)
+- [Auto spacing](../../utilities/spacing/auto-spacing)
+- [Line height](../../utilities/typography/line-height)
 - [Margin](../../utilities/spacing/margin)
 - [Padding](../../utilities/spacing/padding)

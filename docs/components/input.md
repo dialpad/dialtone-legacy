@@ -34,7 +34,7 @@ This component combines both the `input` and `textarea` elements as options with
 - Do not use placeholder text (i.e. `placeholder` attribute) in place of an accessible `label`.
 - Consider the type of content a user may enter to aid mobile device entry; mobile devices typically surface a keyboard UI attuned to the type. For example, type="tel" will surface a [phone keyboard](http://html5doctor.com/html5-forms-input-types/#input-tel).
 
-## Variants and Examples
+## Variants and examples
 
 ### Base Styles
 

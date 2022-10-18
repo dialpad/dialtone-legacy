@@ -2,10 +2,10 @@
 title: Theme
 desc:
 prev:
-  text: Color Palette
+  text: Color palette
   link: /design/colors/color-palette.html
 next:
-  text: Brand Icons
+  text: Brand icons
   link: /design/icons/brand.html
 ---
 

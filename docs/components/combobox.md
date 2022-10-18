@@ -5,6 +5,6 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-combobox--defa
 no_preview: true
 ---
 
-## Variants and Examples
+## Variants and examples
 
 The Combobox component only exists in Dialtone Vue. Please follow [this link](https://vue.dialpad.design/?path=/docs/components-combobox--default) for more details on its usage.

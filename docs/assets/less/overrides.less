@@ -11,8 +11,11 @@ html {
 }
 
 body {
-  --sidebar-width: 23.3rem !important;
+  --sidebar-width: 22rem !important;
   --sidebar-width-mobile: var(--sidebar-width);
+  --c-text: var(--fc-primary);
+  --c-text-lighter: var(--fc-secondary);
+  --c-text-quote: var(--fc-tertiary);
 }
 
 :root {
@@ -82,8 +85,9 @@ samp {
 
 .sidebar-heading {
   @media screen and (min-width: 981px) {
-    font-size: var(--fs-200) !important;
+    font-size: var(--fs-100) !important;
     text-transform: uppercase;
+    font-weight: var(--fw-semibold) !important;
   }
 }
 
@@ -107,7 +111,7 @@ samp {
 }
 
 .theme-default-content:not(.custom) > div:not([class]),
- .theme-default-content:not(.custom) {
+.theme-default-content:not(.custom) {
   @media screen and (min-width: 1264px) {
     max-width: 99rem; // magic number
   }
@@ -144,7 +148,10 @@ samp {
   > ul {
     max-width: 72ch;
     margin-top: var(--su16);
+    margin-bottom: var(--su8);
     padding-left: revert;
+    font-size: var(--fs-200);
+    line-height: var(--lh-400);
   }
 
   > ul,
@@ -154,6 +161,8 @@ samp {
     > li > ul,
     > li > ol {
       margin-top: var(--su8);
+      font-size: var(--fs-200);
+      line-height: var(--lh-400);
     }
   }
 
@@ -186,10 +195,7 @@ samp {
     gap: var(--su12);
 
     a {
-      padding: var(--su16) var(--su24);
-      color: var(--black-600);
       font-size: var(--fs-200);
-      background-color: var(--black-100);
       border-radius: var(--br8);
 
       @media screen and (min-width: 981px) {
@@ -198,10 +204,6 @@ samp {
 
       &:hover {
         color: var(--black-900);
-      }
-
-      &:active {
-        background-color: var(--black-200);
       }
     }
   }
@@ -220,7 +222,7 @@ samp {
 }
 
 .page-meta {
-  font-size: var(--fs-200);
+  font-size: var(--fs-100);
 
   & {
     max-width: 99rem;

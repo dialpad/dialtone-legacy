@@ -1,5 +1,5 @@
 ---
-title: Font Size
+title: Font size
 desc: Utilities to change an element's font-size.
 ---
 

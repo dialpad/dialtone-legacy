@@ -1,5 +1,5 @@
 ---
-title: Background Clip
+title: Background clip
 desc: Utilities for controlling whether an element's background extends underneath its border, padding, or content box.
 ---
 

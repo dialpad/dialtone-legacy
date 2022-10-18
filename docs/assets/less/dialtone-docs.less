@@ -133,11 +133,12 @@ nav a.router-link-active {
 
   &:hover {
     text-decoration: none;
-    background-color: var(--black-200);
+    color: var(--c-text-accent);
+    // background-color: var(--black-200);
   }
 
   &.active {
-    color: var(--primary-color);
+    color: var(--c-text-accent);
     font-weight: var(--fw-bold);
 
     &::before {
@@ -389,8 +390,8 @@ nav a.router-link-active {
 }
 
 .links {
-  padding-top: 9.6rem;
-  padding-bottom: 9.6rem;
+  padding-top: var(--su96);
+  padding-bottom: var(--su96);
 
   @media (max-width: 640px) {
     display: block !important;
@@ -402,6 +403,25 @@ nav a.router-link-active {
     display: block;
     grid-column: 1 / -1 !important;
     margin-bottom: calc(var(--su64) + var(--su24));
+  }
+}
+
+//  ============================================================================
+//  $   DEFINITION LIST
+//      Style a doc page's <dl>
+//  ----------------------------------------------------------------------------
+
+.dialtone-definition {
+  > dt {
+    margin-top: var(--su16);
+    font-weight: var(--fw-bold);
+  }
+  > dd {
+    margin: 0;
+    max-width: 72ch;
+  }
+  code {
+    font-weight: var(--fw-normal);
   }
 }
 
@@ -469,6 +489,10 @@ nav a.router-link-active {
       padding: 0;
       list-style: none;
     }
+    li {
+      font-size: var(--fs-200);
+      line-height: var(--lh-400);
+    }
   }
 }
 
@@ -481,18 +505,25 @@ nav a.router-link-active {
 .dialtone-doc-table {
   thead {
     tr,
- th,
- td {
+    th,
+    th,
+    td {
       border: unset;
+    }
+    [scope="col"]:first-child {
+      padding-left: 0;
     }
   }
 
   tbody {
     th,
- td {
+    td {
       border-right: unset;
       border-bottom: var(--su1) solid var(--table-bc);
       border-left: unset;
+    }
+    [scope="row"] {
+      padding-left: 0;
     }
   }
 }

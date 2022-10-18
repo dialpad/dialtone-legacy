@@ -1,5 +1,5 @@
 ---
-title: Auto Spacing
+title: Auto spacing
 desc: Utilities for controlling the space between child elements.
 prev:
   text: Min Width

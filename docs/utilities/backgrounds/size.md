@@ -1,5 +1,5 @@
 ---
-title: Background Size
+title: Background size
 desc: Utilities for controlling an element's background size.
 ---
 

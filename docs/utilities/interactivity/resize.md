@@ -2,7 +2,7 @@
 title: Resize
 desc: Utilities for controlling the resize of an element.
 next:
-  text: Box Sizing
+  text: Box sizing
   link: /utilities/layout/box-sizing
 ---
 

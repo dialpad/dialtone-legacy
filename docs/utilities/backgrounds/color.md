@@ -1,5 +1,5 @@
 ---
-title: Background Colors
+title: Background colors
 desc: Utilities for setting background colors.
 ---
 

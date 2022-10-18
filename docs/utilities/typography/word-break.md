@@ -1,9 +1,9 @@
 ---
-title: Word Break
+title: Word break
 desc: Utilities for controlling the way words break within an element.
 next:
-  text: Components - Avatar
-  link: /components/avatar
+  text: Guides - Getting started
+  link: /guides/getting-started/installation.html
 ---
 
 ## Normal
@@ -20,7 +20,7 @@ Use `d-wb-normal` to reset an element's line break rule.
 <p class="d-wb-normal">...</p>
 ```
 
-## Break All
+## Break all
 
 Use `d-wb-break-all` on an element to insert word breaks between any two characters (excluding Chinese, Japanese, or Korean text) to prevent text from overflowing.
 
@@ -34,7 +34,7 @@ Use `d-wb-break-all` on an element to insert word breaks between any two charact
 <p class="d-wb-break-all">...</p>
 ```
 
-## Keep All
+## Keep all
 
 Use `d-wb-keep-all` on an element to not use word breaks for Chinese, Japanese, or Korean (CJK) text. Non-CJK text behavior is set to normal.
 

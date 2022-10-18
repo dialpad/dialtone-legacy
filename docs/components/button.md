@@ -12,27 +12,47 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-button--defaul
 
 ## Usage
 
-`button` and link (`<a>`) HTML elements each describe a specific intent. Understanding the distinction is important: if it goes somewhere, use a [Link](link.md). If an action occurs, use a Button.
+- `<button>` and link (`<a>`) HTML elements each describe a specific intent. Understanding the distinction is important: if it goes somewhere, it's a link (`<a>`). If an action occurs, use a Button (`<button>`).
+- Avoid using too many buttons on a page.
+- Set the `type` attribute to define its purpose: `submit`, `button`, or `reset`. Browsers default to `submit` if it isn't defined, and that cannot be assumed as the preferred behavior.
 
 <dialtone-usage>
 <template #do>
 
 - Conveying that an action that will occur when invoked.
 - To trigger an action or behavior, such as submitting a form or spawning a [Modal](modal.md).
+
 </template>
 <template #dont>
 
 - Avoid using to navigate between destinations, deferring to a [Link](link.md) instead).
+
 </template>
 </dialtone-usage>
 
-### Best Practices
+## Writing guidelines
 
-- Avoid using too many buttons on a page.
-- Use sentence case capitalization for button labels, e.g “Save report”.
+Button labels should be clear and predictable so users have confidence in their actions.
+
+- Lead with a strong verb and use **verb + noun** structure except for common actions like “Done,” “Close,” “Cancel,” or “OK”
+- Should be sentence case
 - Do not use punctuation
-- Button text should be as short as possible and lead with an action verb.
-- Set the type attribute to define its purpose: submit, button, or reset. Browsers default to submit if it isn't defined, and that cannot be assumed as the preferred behavior.
+- Avoid unnecessary articles such as “the,” “an,” and “a.”
+
+<dialtone-usage>
+<template #do>
+
+- Add number
+- Create menu
+
+</template>
+<template #dont>
+
+- Add Number
+- Create a menu
+
+</template>
+</dialtone-usage>
 
 ## Accessibility
 
@@ -45,7 +65,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-button--defaul
   - Add `role="button"` to the `<a>` to allow screenreaders to announce it as a `button`.
   - Attach an event handler to detect Spacebar keypress. Buttons react to both Enter and Spacebar, but Link reacts only to Enter.
 
-## Variants and Examples
+## Variants and examples
 
 Dialtone provides four core button **types**, each with three levels of **importance**.
 

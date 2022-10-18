@@ -1,8 +1,8 @@
 ---
 title: Tooling
 next:
-  text: Design - Colors
-  link: /design/colors/color-palette
+  text: About Dialtone
+  link: /about/dialtone
 ---
 
 ## Browser extension
@@ -13,21 +13,21 @@ next:
 
 ## Checklists
 
-### Android Accessibility Checklist
+### Android accessibility checklist
 
 - [Deque - Summary and Checklist: Android Native Application Accessibility](https://dequeuniversity.com/assets/pdf/module-android/module-android-checklist.pdf)
 
-### iOS Accessibility Checklist
+### iOS accessibility checklist
 
 - [Deque - Summary and Checklist: iOS Application Accessibility](https://dequeuniversity.com/assets/pdf/module-ios/module-ios-checklist.pdf)
 
-### Web Accessibility Checklist
+### Web accessibility checklist
 
 - [Deque - Web Accessibility Checklist](https://dequeuniversity.com/checklists/web/)
 
 ## Figma plugins
 
-### Adee Comprehensive Accessibility Tool
+### Adee comprehensive accessibility tool
 
 - [Figma Plugins - Adee Comprehensive Accessibility Tool](https://www.figma.com/community/plugin/931280467863251825/Adee-Comprehensive-Accessibility-Tool)
 
@@ -35,15 +35,15 @@ next:
 
 - [Figma Plugins - Stark](https://www.figma.com/community/plugin/732603254453395948/Stark)
 
-## Screen Readers
+## Screen readers
 
 To learn more about the various combinations of operating systems and screen reader software, read [WebAim’s 2021 Screen Reader User Survey.](https://webaim.org/projects/screenreadersurvey9/)
 
-### VoiceOver for Apple Computers
+### VoiceOver for Apple computers
 
 - [Apple - Appendix A: Commands and Gestures](https://www.apple.com/voiceover/info/guide/_1131.html)
 
-### Narrator Shortcuts for Windows
+### Narrator shortcuts for Windows
 
 - [Microsoft - Appendix B: Narrator keyboard commands and touch gestures](https://support.microsoft.com/en-us/windows/windows-keyboard-shortcuts-for-accessibility-021bcb62-45c8-e4ef-1e4f-41b8c1fc87fd)
 

@@ -1,5 +1,5 @@
 ---
-title: Border Directions
+title: Border directions
 desc: Utilities for controlling an element's border.
 ---
 
