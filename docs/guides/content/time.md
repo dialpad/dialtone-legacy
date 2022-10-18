@@ -78,32 +78,94 @@ Relative timestamps may change based on context. When using relative timestamps,
   - minutes - min
   - seconds - s
 
-<dl class="dialtone-definition">
-  <dt>Less than a minute</dt>
-  <dd>Just now</dd>
-  <dt>Less than 60 minutes <code>NN minutes ago</code></dt>
-  <dd>10 minutes ago</dd>
-  <dt>Less than 24 hours <code>NN hours ago</code></dt>
-  <dd>5 hours ago</dd>
-  <dt>Yesterday</dt>
-  <dd>Yesterday</dd>
-</dl>
+<table class="d-table dialtone-doc-table d-body-base">
+  <thead>
+    <tr>
+      <th class="d-w25p" scope="col">
+        Format
+      </th>
+      <th scope="col">
+        Structure
+      </th>
+      <th scope="col">
+        Example
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Less than a minute</th>
+      <td></td>
+      <td>Just now</td>
+    </tr>
+    <tr>
+      <th scope="row">Less than 60 minutes</th>
+      <td><code class="d-fs-100">[NN] minutes ago</code></td>
+      <td>10 minutes ago</td>
+    </tr>
+    <tr>
+      <th scope="row">Less than 24 hours</th>
+      <td><code class="d-fs-100">[NN] hours ago</code></td>
+      <td>5 hours ago</td>
+    </tr>
+    <tr>
+      <th scope="row">Yesterday</th>
+      <td>Yesterday</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Absolute Timestamps
 
-<dl class="dialtone-definition">
-  <dt>Less than a year <code>[Day of week], [Mon (abbrev)] [Date]</code></dt>
-  <dd>Wednesday, September 1</dd>
-  <dd>Wed, Sep 1</dd>
-  <dd>Wednesday, Sep 1 at 10:45 AM</dd>
-  <dt>Greater than a year <code>[Mon (abbrev)] [Date], [Year]</code></dt>
-  <dd>September 1, 2020</dd>
-  <dd>Sep 1, 2020</dd>
-  <dd>Sep 1, 2020 at 11:11 PM</dd>
-  <dt>Contexts that need more precision, use numerical values: <code>NNh NNm ago</code></dt>
-  <dd>1h 7m ago</dd>
-  <dd>25h 34m ago</dd>
-</dl>
+<table class="d-table dialtone-doc-table d-body-base">
+  <thead>
+    <tr>
+      <th class="d-w25p" scope="col">
+        Format
+      </th>
+      <th scope="col">
+        Structure
+      </th>
+      <th scope="col">
+        Example
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Less than a year </th>
+      <td><code class="d-fs-100">[Day of week], [Mon (abbrev)] [Date]</code></td>
+      <td>
+        <ul class="d-ls-reset">
+          <li>Wednesday, September 1</li>
+          <li>Wed, Sep 1</li>
+          <li>Wednesday, Sep 1 at 10:45 AM</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Greater than a year</th>
+      <td><code class="d-fs-100">[Mon (abbrev)] [Date], [Year]</code></td>
+      <td>
+        <ul class="d-ls-reset">
+          <li>September 1, 2020</li>
+          <li>Sep 1, 2020</li>
+          <li>Sep 1, 2020 at 11:11 PM</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Contexts that need more precision, use numerical values</th>
+      <td><code class="d-fs-100">NNh NNm ago</code></td>
+      <td>
+        <ul class="d-ls-reset">
+          <li>1h 7m ago</li>
+          <li>25h 34m ago</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 ## Duration
 

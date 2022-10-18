@@ -13,49 +13,88 @@ When written out, dates are represented in this order **[Day of week], [Month] [
 
 ## Formats by length
 
-<dl class="dialtone-definition">
-  <dt>Long date</dt>
-  <dd>Thursday, September 2, 2022</dd>
-  <dt>Medium date</dt>
-  <dd>September 2, 2022</dd>
-  <dt>Short date</dt>
-  <dd>Thu, Sep 2, 2022</dd>
-  <dd>Sep 2, 2022</dd>
-  <dt>If you need to leave out the year</dt>
-  <dd>September 2</dd>
-  <dd>Sep 2</dd>
-</dl>
+<table class="d-table dialtone-doc-table d-body-base">
+  <thead>
+    <tr>
+      <th class="d-w25p" scope="col">
+        Format
+      </th>
+      <th scope="col">
+        Example
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Long date</th>
+      <td>Thursday, September 2, 2022</td>
+    </tr>
+    <tr>
+      <th scope="row">Medium date</th>
+      <td>September 2, 2022</td>
+    </tr>
+    <tr>
+      <th scope="row">Short date</th>
+      <td>Thu, Sep 2, 2022<br>Sep 2, 2022</td>
+    </tr>
+    <tr>
+      <th scope="row">If you need to leave out the year</th>
+      <td>September 2<br>Sep 2</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Abbreviating dates
 
 If space isn’t an issue, spell out the full day of the week and month. When space is constrained, abbreviate days of the week and months.
 
-<dl class="dialtone-definition">
-  <dt>Abbreviated days of the week</dt>
-  <dd>Monday - Mon</dd>
-  <dd>Tuesday - Tue</dd>
-  <dd>Wednesday - Wed</dd>
-  <dd>Thursday - Thu</dd>
-  <dd>Friday - Fri</dd>
-  <dd>Saturday - Sat</dd>
-  <dd>Sunday - Sun</dd>
-</dl>
-
-<dl class="dialtone-definition">
-  <dt>Abbreviated months</dt>
-  <dd>January - Jan</dd>
-  <dd>February - Feb</dd>
-  <dd>March - Mar</dd>
-  <dd>April - Apr</dd>
-  <dd>May</dd>
-  <dd>June - Jun</dd>
-  <dd>July - Jul</dd>
-  <dd>August - Aug</dd>
-  <dd>September - Sep</dd>
-  <dd>October - Oct</dd>
-  <dd>November - Nov</dd>
-  <dd>December - Dec</dd>
-</dl>
+<table class="d-table dialtone-doc-table d-body-base">
+  <thead>
+    <tr>
+      <th class="d-w25p" scope="col">
+        Format
+      </th>
+      <th scope="col">
+        Example
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Days of the week</th>
+      <td>
+        <ul class="d-ls-reset">
+          <li>Monday - Mon</li>
+          <li>Tuesday - Tue</li>
+          <li>Wednesday - Wed</li>
+          <li>Thursday - Thu</li>
+          <li>Friday - Fri</li>
+          <li>Saturday - Sat</li>
+          <li>Sunday - Sun</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Months</th>
+      <td>
+        <ul class="d-ls-reset">
+          <li>January - Jan</li>
+          <li>February - Feb</li>
+          <li>March - Mar</li>
+          <li>April - Apr</li>
+          <li>May</li>
+          <li>June - Jun</li>
+          <li>July - Jul</li>
+          <li>August - Aug</li>
+          <li>September - Sep</li>
+          <li>October - Oct</li>
+          <li>November - Nov</li>
+          <li>December - Dec</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 ## Date and time
 

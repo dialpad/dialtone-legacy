@@ -16,13 +16,26 @@ Because contact center users are more specialized than talk users, it may occasi
 </template>
 </dialtone-usage>
 
-## Abbreviation List
 <!-- This should be a JSON file, spit out as a styled <dl> -->
 
-<dl class="dialtone-definition">
-  <dt>KB</dt>
-  <dd>Kilobytes</dd>
-</dl>
+<table class="d-table dialtone-doc-table d-body-base">
+  <thead>
+    <tr>
+      <th class="d-w25p" scope="col">
+        Abbreviation
+      </th>
+      <th scope="col">
+        Description
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">KB</th>
+      <td>Kilobytes</td>
+    </tr>
+  </tbody>
+</table>
 
 <script setup>
   import DialtoneUsage from '@baseComponents/DialtoneUsage.vue';
