@@ -1,6 +1,6 @@
 ---
 title: Voice and Tone
-desc: (Intro statement)
+desc: Voice and tone are what make our writing personable. Word choice, phrasing, and even punctuation can all impact how we sound to users.
 ---
 
 ## Voice
