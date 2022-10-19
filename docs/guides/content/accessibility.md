@@ -1,6 +1,6 @@
 ---
 title: Writing for accessibility
-desc: (Intro statement)
+desc: Good content is accessible to all kinds of people. Here are a few things to keep in mind when writing.
 ---
 
 ## Write clearly
