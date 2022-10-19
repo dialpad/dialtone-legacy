@@ -100,6 +100,8 @@ const paths = {
     brandInput: './lib/build/svg/brand/**/*.svg',
     brandOutputLib: './lib/dist/svg/brand/',
     outputVue: './lib/dist/vue/icons/',
+    newInput: './lib/dist/svg/new/*.svg',
+    newOutput: './lib/dist/svg/new/',
   },
   patterns: {
     input: './lib/build/svg/patterns/**/*.svg',
@@ -390,22 +392,7 @@ const buildSpotIllustrationSVGs = function (done) {
   //  Compile system icons
   return src(paths.spot.input)
   // replace any instances of the primary color in SVG with the theme class
-    .pipe(replace('<svg', function (match) {
-      const name = path.parse(this.file.path).name;
-      const converted = name.toLowerCase().replace(/-(.)/g, function (match, group1) {
-        return group1.toUpperCase();
-      });
-      const title = name
-        .replace(/\b\S/g, t => t.toUpperCase())
-        .replace(/[-]+/g, ' ');
-
-      return `${match}
-      aria-hidden="true"
-      focusable="false"
-      aria-label="${title}"
-      class="${converted}"
-      xmlns="http://www.w3.org/2000/svg"`;
-    }))
+    .pipe(addAttrsToSVG())
     .pipe(svgmin())
     .pipe(dest(paths.spot.outputLib))
     .pipe(replace('<svg', '<template>\n  <svg'))
@@ -584,6 +571,57 @@ const watchFiles = function (done) {
 };
 
 //  ================================================================================
+//  @@  NEW ICONS BUILD PROCESS
+//  ================================================================================
+const transformSVGStrokeToOutline = function (done) {
+  if (!settings.svgs) return done();
+
+  cp
+    .spawn(
+      'node',
+      ['build-icons'],
+      { stdio: 'inherit' },
+    )
+    .on('close', (code) => {
+      done(code);
+    });
+};
+
+const addAttrsToSVG = () => {
+  return replace('<svg', function (match) {
+    const name = path.parse(this.file.path).name;
+    const converted = name
+      .toLowerCase()
+      .replace(
+        /-(.)/g,
+        (match, group1) => group1.toUpperCase(),
+      );
+    const title = name
+      .replace(/\b\S/g, t => t.toUpperCase())
+      .replace(/-+/g, ' ');
+
+    return `${match}
+      aria-hidden="true"
+      focusable="false"
+      aria-label="${title}"
+      class="${converted}"
+      xmlns="http://www.w3.org/2000/svg"`;
+  });
+};
+
+const buildNewSVGIcons = function (done) {
+  //  Make sure this feature is activated before running
+  if (!settings.svgs) return done();
+
+  //  Compile icons
+  return src(paths.svgs.newInput)
+  // replace any instances of the primary color in SVG with the theme class
+    .pipe(addAttrsToSVG())
+    .pipe(svgmin())
+    .pipe(dest(paths.svgs.newOutput));
+};
+
+//  ================================================================================
 //  @   EXPORT TASKS
 //  ================================================================================
 //  --  BUILD OUT THE SITE BUT DON'T START THE SERVER
@@ -644,6 +682,11 @@ exports.docsite = series(
 //  --  CONVERT WEBFONTS
 exports.fonts = series(
   webfonts,
+);
+// NEW ICONS BUILD PROCESS
+exports.icons = series(
+  transformSVGStrokeToOutline,
+  buildNewSVGIcons,
 );
 
 //  --  GENERATES ALL DIALPAD / UC FAVICONS
