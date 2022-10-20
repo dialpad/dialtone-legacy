@@ -65,6 +65,23 @@ const postcssFocusVisible = settings.styles ? require('postcss-focus-visible') :
 const path = settings.svgs ? require('path') : null;
 const svgmin = settings.svgs ? require('gulp-svgmin') : null;
 const replace = settings.svgs ? require('gulp-replace') : null;
+const svgStrokeToFill = settings.svgs ? require('./svg-stroke-to-fill') : null;
+const categories = [
+  'alerts',
+  'arrows',
+  'brand',
+  'communications',
+  'controls',
+  'data',
+  'devices',
+  'editing',
+  'general',
+  'os',
+  'people',
+  'places',
+  'time',
+  'weather',
+];
 
 //  @@ FAVICONS
 // var favicon = settings.favicons ? require('gulp-favicons') : null;
@@ -100,8 +117,8 @@ const paths = {
     brandInput: './lib/build/svg/brand/**/*.svg',
     brandOutputLib: './lib/dist/svg/brand/',
     outputVue: './lib/dist/vue/icons/',
-    newInput: './lib/dist/svg/new/*.svg',
-    newOutput: './lib/dist/svg/new/',
+    newInputRoot: './lib/build/svg/new',
+    newOutputRoot: './lib/dist/svg/new',
   },
   patterns: {
     input: './lib/build/svg/patterns/**/*.svg',
@@ -573,18 +590,32 @@ const watchFiles = function (done) {
 //  ================================================================================
 //  @@  NEW ICONS BUILD PROCESS
 //  ================================================================================
-const transformSVGStrokeToOutline = function (done) {
-  if (!settings.svgs) return done();
+const transformStrokeToFillAsync = function (done) {
+  const promises = [];
 
-  cp
-    .spawn(
-      'node',
-      ['build-icons'],
-      { stdio: 'inherit' },
+  categories.forEach(category => {
+    promises
+      .push(
+        svgStrokeToFill
+          .transformAsync(
+              `${paths.svgs.newInputRoot}/${category}/`,
+              `${paths.svgs.newOutputRoot}/${category}/`,
+          ),
+      );
+  });
+
+  Promise
+    .all(promises)
+    .then(() => done());
+};
+
+const transformStrokeToFill = function (done) {
+  svgStrokeToFill
+    .transformAsync(
+        `./lib/build/svg/new2/`,
+        `./lib/dist/svg/new2/`,
     )
-    .on('close', (code) => {
-      done(code);
-    });
+    .then(() => done());
 };
 
 const addAttrsToSVG = () => {
@@ -614,11 +645,11 @@ const buildNewSVGIcons = function (done) {
   if (!settings.svgs) return done();
 
   //  Compile icons
-  return src(paths.svgs.newInput)
+  return src(`${paths.svgs.newInputRoot}/**/*.svg`)
   // replace any instances of the primary color in SVG with the theme class
     .pipe(addAttrsToSVG())
     .pipe(svgmin())
-    .pipe(dest(paths.svgs.newOutput));
+    .pipe(dest(paths.svgs.newOutputRoot));
 };
 
 //  ================================================================================
@@ -685,7 +716,12 @@ exports.fonts = series(
 );
 // NEW ICONS BUILD PROCESS
 exports.icons = series(
-  transformSVGStrokeToOutline,
+  transformStrokeToFill,
+  buildNewSVGIcons,
+);
+
+exports.iconsParallel = parallel(
+  transformStrokeToFillAsync,
   buildNewSVGIcons,
 );
 
