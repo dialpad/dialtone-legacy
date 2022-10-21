@@ -2,7 +2,7 @@
 title: Presence
 desc: A visual control element indicating the current status of a user
 ---
-<code-well-header>
+<code-well-header bgclass='d-bgc-white'>
   <div class="d-d-flex d-ai-center">
     <example-presence presence="active"/>
   </div>
