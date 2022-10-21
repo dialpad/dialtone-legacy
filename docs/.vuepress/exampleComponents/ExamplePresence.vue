@@ -1,5 +1,5 @@
 <template>
-  <div v-if="presence" class="d-presence" data-qa="leftbar-contact-presence">
+  <div v-if="presence" class="d-presence">
     <div
       class="d-presence__inner"
       :class="{

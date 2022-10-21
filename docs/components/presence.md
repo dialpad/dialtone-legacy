@@ -8,23 +8,6 @@ desc: A visual control element indicating the current status of a user
   </div>
 </code-well-header>
 
-## Usage
-
-The Presence component renders a circle indicating the current status of a user.
-
-<dialtone-usage>
-<template #do>
-
-- When its action has an instantaneous effect.
-</template>
-<template #dont>
-
-- When its action does not have an immediate effect on the application.
-- Selecting between 2 options. Instead, utilize a [Checkbox](checkbox.md).
-- As an alternative to a [Checkbox](checkbox.md) or [Radio](radio.md) within a Form.
-</template>
-</dialtone-usage>
-
 ### Best practices
 
 - A Presence component should be used as a way to show the current status of a user.
@@ -32,40 +15,68 @@ The Presence component renders a circle indicating the current status of a user.
 
 ## Variants and examples
 
-### Base Styles
+### Active
 
-<code-well-header>
-  <fieldset class="d-stack8">
-    <div class="d-d-flex d-ai-center">
-      <example-presence presence="active"/>
-    </div>
-    <div class="d-toggle-group d-d-flex d-ai-center">
-      <example-presence presence="busy"/>
-    </div>
-    <div class="d-toggle-group d-d-flex d-ai-center">
-      <example-presence presence="away"/>
-    </div>
-    <div class="d-toggle-group d-d-flex d-ai-center">
-      <example-presence presence="active"/>
-    </div>
-  </fieldset>
-</code-well-header>
-
-```html
-<fieldset class="d-stack8">
+<code-well-header bgclass='d-bgc-white'>
   <div class="d-d-flex d-ai-center">
     <example-presence presence="active"/>
   </div>
-  <div class="d-toggle-group d-d-flex d-ai-center">
+</code-well-header>
+
+```html
+<div class="d-presence">
+  <div
+    class="d-presence__inner d-presence__inner--active"
+  />
+</div>
+```
+
+### Busy
+
+<code-well-header bgclass='d-bgc-white'>
+  <div class="d-d-flex d-ai-center">
     <example-presence presence="busy"/>
   </div>
-  <div class="d-toggle-group d-d-flex d-ai-center">
+</code-well-header>
+
+```html
+<div class="d-presence">
+  <div
+    class="d-presence__inner d-presence__inner--busy"
+  />
+</div>
+```
+
+### Away
+
+<code-well-header bgclass='d-bgc-white'>
+  <div class="d-d-flex d-ai-center">
     <example-presence presence="away"/>
   </div>
-  <div class="d-toggle-group d-d-flex d-ai-center">
-    <example-presence presence="active"/>
+</code-well-header>
+
+```html
+<div class="d-presence">
+  <div
+    class="d-presence__inner d-presence__inner--away"
+  />
+</div>
+```
+
+### Offline
+
+<code-well-header bgclass='d-bgc-white'>
+  <div class="d-d-flex d-ai-center">
+    <example-presence presence="offline"/>
   </div>
-</fieldset>
+</code-well-header>
+
+```html
+<div class="d-presence">
+  <div
+    class="d-presence__inner d-presence__inner--offline"
+  />
+</div>
 ```
 
 ## Classes
