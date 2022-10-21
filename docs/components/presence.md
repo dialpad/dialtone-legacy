@@ -1,6 +1,6 @@
 ---
 title: Presence
-desc: Presence is a visual control element indicating the active state of the user
+desc: A visual control element indicating the current status of a user
 ---
 <code-well-header>
   <div class="d-d-flex d-ai-center">
@@ -10,7 +10,7 @@ desc: Presence is a visual control element indicating the active state of the us
 
 ## Usage
 
-The Presence component renders a circle indicating showing the status of a user.
+The Presence component renders a circle indicating the current status of a user.
 
 <dialtone-usage>
 <template #do>
@@ -77,6 +77,6 @@ The Presence component renders a circle indicating showing the status of a user.
 The best accessibility is semantic HTML. Most screen readers understand how to parse buttons if they’re correctly formatted.
 
 <script setup>
-  import ExampleToggle from '@exampleComponents/ExampleToggle.vue';
+  import ExamplePresence from '@exampleComponents/ExamplePresence.vue';
   import DialtoneUsage from '@baseComponents/DialtoneUsage.vue';
 </script>
