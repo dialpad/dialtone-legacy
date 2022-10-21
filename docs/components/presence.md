@@ -41,9 +41,7 @@ desc: A visual control element indicating the current status of a user
 
 ```html
 <div class="d-presence">
-  <div
-    class="d-presence__inner d-presence__inner--busy"
-  />
+  <div class="d-presence__inner d-presence__inner--busy" />
 </div>
 ```
 
@@ -57,9 +55,7 @@ desc: A visual control element indicating the current status of a user
 
 ```html
 <div class="d-presence">
-  <div
-    class="d-presence__inner d-presence__inner--away"
-  />
+  <div class="d-presence__inner d-presence__inner--away" />
 </div>
 ```
 
@@ -73,9 +69,7 @@ desc: A visual control element indicating the current status of a user
 
 ```html
 <div class="d-presence">
-  <div
-    class="d-presence__inner d-presence__inner--offline"
-  />
+  <div class="d-presence__inner d-presence__inner--offline" />
 </div>
 ```
 
