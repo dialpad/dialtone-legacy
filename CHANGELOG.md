@@ -1,3 +1,10 @@
+## [7.1.1](https://github.com/dialpad/dialtone/compare/v7.1.0...v7.1.1) (2022-10-24)
+
+
+### Bug Fixes
+
+* remove calt 0 and kerning ([#717](https://github.com/dialpad/dialtone/issues/717)) ([065a8b7](https://github.com/dialpad/dialtone/commit/065a8b76ccedec3a1da82a5ca08ddd89f2d18cdb))
+
 # [7.1.0](https://github.com/dialpad/dialtone/compare/v7.0.0...v7.1.0) (2022-10-11)
 
 
