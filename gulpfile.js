@@ -66,6 +66,7 @@ const path = settings.svgs ? require('path') : null;
 const svgmin = settings.svgs ? require('gulp-svgmin') : null;
 const replace = settings.svgs ? require('gulp-replace') : null;
 const svgStrokeToFill = settings.svgs ? require('./svg-stroke-to-fill') : null;
+// TODO: Sort the icons in the right category folder.
 const categories = [
   'alerts',
   'arrows',
@@ -590,14 +591,14 @@ const watchFiles = function (done) {
 //  ================================================================================
 //  @@  NEW ICONS BUILD PROCESS
 //  ================================================================================
-const transformStrokeToFillAsync = function (done) {
+const transformStrokeToFill = function (done) {
   const promises = [];
 
   categories.forEach(category => {
     promises
       .push(
         svgStrokeToFill
-          .transformAsync(
+          .transform(
               `${paths.svgs.newInputRoot}/${category}/`,
               `${paths.svgs.newOutputRoot}/${category}/`,
           ),
@@ -606,15 +607,6 @@ const transformStrokeToFillAsync = function (done) {
 
   Promise
     .all(promises)
-    .then(() => done());
-};
-
-const transformStrokeToFill = function (done) {
-  svgStrokeToFill
-    .transformAsync(
-        `./lib/build/svg/new2/`,
-        `./lib/dist/svg/new2/`,
-    )
     .then(() => done());
 };
 
@@ -717,11 +709,6 @@ exports.fonts = series(
 // NEW ICONS BUILD PROCESS
 exports.icons = series(
   transformStrokeToFill,
-  buildNewSVGIcons,
-);
-
-exports.iconsParallel = parallel(
-  transformStrokeToFillAsync,
   buildNewSVGIcons,
 );
 
