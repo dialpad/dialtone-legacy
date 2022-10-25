@@ -8,10 +8,16 @@ desc: A visual control element indicating the current status of a user
   </div>
 </code-well-header>
 
+## Usage
+
 ### Best practices
 
-- A Presence component should be used as a way to show the current status of a user.
-- A `presence` prop can be used to determine the status of the user, with the following valid statuses: `away`, `busy`, `active`, `offline`
+- Presence should be used to visually indicate the current status of a user.
+- The following set of CSS classes can be set to set their status:
+  - `d-presence__inner--active`
+  - `d-presence__inner--busy`
+  - `d-presence__inner--away`
+  - `d-presence__inner--offline`
 
 ## Variants and examples
 
