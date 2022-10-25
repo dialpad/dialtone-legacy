@@ -85,7 +85,7 @@ desc: A visual control element indicating the current status of a user
 
 ## Accessibility
 
-The best accessibility is semantic HTML. Most screen readers understand how to parse buttons if they’re correctly formatted.
+You may wish to announce any live changes to this component via the screen reader since this is only a visual indicator.
 
 <script setup>
   import ExamplePresence from '@exampleComponents/ExamplePresence.vue';

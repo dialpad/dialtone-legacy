@@ -8,7 +8,7 @@
         'd-presence__inner--busy': presence === 'busy',
         'd-presence__inner--offline': presence === 'offline',
       }"
-    ></div>
+    />
   </div>
 </template>
 
