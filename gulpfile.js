@@ -66,7 +66,6 @@ const path = settings.svgs ? require('path') : null;
 const svgmin = settings.svgs ? require('gulp-svgmin') : null;
 const replace = settings.svgs ? require('gulp-replace') : null;
 const svgStrokeToFill = settings.svgs ? require('./svg-stroke-to-fill') : null;
-// TODO: Sort the icons in the right category folder.
 const categories = [
   'alerts',
   'arrows',
@@ -118,8 +117,10 @@ const paths = {
     brandInput: './lib/build/svg/brand/**/*.svg',
     brandOutputLib: './lib/dist/svg/brand/',
     outputVue: './lib/dist/vue/icons/',
-    newInputRoot: './lib/build/svg/new',
-    newOutputRoot: './lib/dist/svg/new',
+    newInputRoot: './newIcons',
+    newOutputRoot: './lib/build/svg/v7',
+    version7Input: './lib/build/svg/v7/**/*.svg',
+    version7OutputLib: './lib/dist/svg/v7/',
   },
   patterns: {
     input: './lib/build/svg/patterns/**/*.svg',
@@ -189,6 +190,11 @@ const cleanSite = () => {
 //  --  Clean out Fonts
 const cleanFonts = () => {
   return cleanUp([paths.clean.libFonts]);
+};
+
+//  --  Clean out SVGs
+const cleanSVGs = () => {
+  return cleanUp([paths.clean.libSvg]);
 };
 
 const libScripts = function (done) {
@@ -601,6 +607,7 @@ const transformStrokeToFill = function (done) {
           .transform(
               `${paths.svgs.newInputRoot}/${category}/`,
               `${paths.svgs.newOutputRoot}/${category}/`,
+              { traceResolution: 600, showProgressBar: true },
           ),
       );
   });
@@ -637,11 +644,10 @@ const buildNewSVGIcons = function (done) {
   if (!settings.svgs) return done();
 
   //  Compile icons
-  return src(`${paths.svgs.newInputRoot}/**/*.svg`)
-  // replace any instances of the primary color in SVG with the theme class
+  return src(paths.svgs.version7Input)
     .pipe(addAttrsToSVG())
     .pipe(svgmin())
-    .pipe(dest(paths.svgs.newOutputRoot));
+    .pipe(dest(paths.svgs.version7OutputLib));
 };
 
 //  ================================================================================
@@ -652,6 +658,7 @@ const buildNewSVGIcons = function (done) {
 exports.clean = series(
   cleanSite,
   cleanFonts,
+  cleanSVGs,
 );
 
 exports.svg = series(
@@ -659,6 +666,7 @@ exports.svg = series(
   buildBrandSVGs,
   buildPatternSVGs,
   buildSpotIllustrationSVGs,
+  buildNewSVGIcons,
 );
 
 // default build task
