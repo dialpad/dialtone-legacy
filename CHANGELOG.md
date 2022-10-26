@@ -1,3 +1,10 @@
+# [7.2.0](https://github.com/dialpad/dialtone/compare/v7.1.1...v7.2.0) (2022-10-26)
+
+
+### Features
+
+* add presence ([#716](https://github.com/dialpad/dialtone/issues/716)) ([d28d69a](https://github.com/dialpad/dialtone/commit/d28d69a562ddc85a0a05fb4a03ceadc539c518b1))
+
 ## [7.1.1](https://github.com/dialpad/dialtone/compare/v7.1.0...v7.1.1) (2022-10-24)
 
 
