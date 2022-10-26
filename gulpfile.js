@@ -65,6 +65,24 @@ const postcssFocusVisible = settings.styles ? require('postcss-focus-visible') :
 const path = settings.svgs ? require('path') : null;
 const svgmin = settings.svgs ? require('gulp-svgmin') : null;
 const replace = settings.svgs ? require('gulp-replace') : null;
+const svgStrokeToFill = settings.svgs ? require('./svg-stroke-to-fill') : null;
+// TODO: Sort the icons in the right category folder.
+const categories = [
+  'alerts',
+  'arrows',
+  'brand',
+  'communications',
+  'controls',
+  'data',
+  'devices',
+  'editing',
+  'general',
+  'os',
+  'people',
+  'places',
+  'time',
+  'weather',
+];
 
 //  @@ FAVICONS
 // var favicon = settings.favicons ? require('gulp-favicons') : null;
@@ -100,6 +118,8 @@ const paths = {
     brandInput: './lib/build/svg/brand/**/*.svg',
     brandOutputLib: './lib/dist/svg/brand/',
     outputVue: './lib/dist/vue/icons/',
+    newInputRoot: './lib/build/svg/new',
+    newOutputRoot: './lib/dist/svg/new',
   },
   patterns: {
     input: './lib/build/svg/patterns/**/*.svg',
@@ -390,22 +410,7 @@ const buildSpotIllustrationSVGs = function (done) {
   //  Compile system icons
   return src(paths.spot.input)
   // replace any instances of the primary color in SVG with the theme class
-    .pipe(replace('<svg', function (match) {
-      const name = path.parse(this.file.path).name;
-      const converted = name.toLowerCase().replace(/-(.)/g, function (match, group1) {
-        return group1.toUpperCase();
-      });
-      const title = name
-        .replace(/\b\S/g, t => t.toUpperCase())
-        .replace(/[-]+/g, ' ');
-
-      return `${match}
-      aria-hidden="true"
-      focusable="false"
-      aria-label="${title}"
-      class="${converted}"
-      xmlns="http://www.w3.org/2000/svg"`;
-    }))
+    .pipe(addAttrsToSVG())
     .pipe(svgmin())
     .pipe(dest(paths.spot.outputLib))
     .pipe(replace('<svg', '<template>\n  <svg'))
@@ -584,6 +589,62 @@ const watchFiles = function (done) {
 };
 
 //  ================================================================================
+//  @@  NEW ICONS BUILD PROCESS
+//  ================================================================================
+const transformStrokeToFill = function (done) {
+  const promises = [];
+
+  categories.forEach(category => {
+    promises
+      .push(
+        svgStrokeToFill
+          .transform(
+              `${paths.svgs.newInputRoot}/${category}/`,
+              `${paths.svgs.newOutputRoot}/${category}/`,
+          ),
+      );
+  });
+
+  Promise
+    .all(promises)
+    .then(() => done());
+};
+
+const addAttrsToSVG = () => {
+  return replace('<svg', function (match) {
+    const name = path.parse(this.file.path).name;
+    const converted = name
+      .toLowerCase()
+      .replace(
+        /-(.)/g,
+        (match, group1) => group1.toUpperCase(),
+      );
+    const title = name
+      .replace(/\b\S/g, t => t.toUpperCase())
+      .replace(/-+/g, ' ');
+
+    return `${match}
+      aria-hidden="true"
+      focusable="false"
+      aria-label="${title}"
+      class="${converted}"
+      xmlns="http://www.w3.org/2000/svg"`;
+  });
+};
+
+const buildNewSVGIcons = function (done) {
+  //  Make sure this feature is activated before running
+  if (!settings.svgs) return done();
+
+  //  Compile icons
+  return src(`${paths.svgs.newInputRoot}/**/*.svg`)
+  // replace any instances of the primary color in SVG with the theme class
+    .pipe(addAttrsToSVG())
+    .pipe(svgmin())
+    .pipe(dest(paths.svgs.newOutputRoot));
+};
+
+//  ================================================================================
 //  @   EXPORT TASKS
 //  ================================================================================
 //  --  BUILD OUT THE SITE BUT DON'T START THE SERVER
@@ -644,6 +705,11 @@ exports.docsite = series(
 //  --  CONVERT WEBFONTS
 exports.fonts = series(
   webfonts,
+);
+// NEW ICONS BUILD PROCESS
+exports.icons = series(
+  transformStrokeToFill,
+  buildNewSVGIcons,
 );
 
 //  --  GENERATES ALL DIALPAD / UC FAVICONS
