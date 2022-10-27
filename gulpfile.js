@@ -643,6 +643,8 @@ const buildNewSVGIcons = function (done) {
   return src(paths.version7.input)
     .pipe(replace(' fill="none"', ''))
     .pipe(replace(' fill="#000"', ' fill="currentColor"'))
+    .pipe(replace(' fill="#000000"', ' fill="currentColor"'))
+    .pipe(replace(' fill="black"', ' fill="currentColor"'))
     .pipe(replace('width="12" height="12"', ''))
     .pipe(replace('<svg', function (match) {
       const name = path.parse(this.file.path).name;
