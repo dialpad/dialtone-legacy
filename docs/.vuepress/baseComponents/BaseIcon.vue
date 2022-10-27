@@ -131,12 +131,15 @@ export default {
     },
 
     dynamicIconComponent () {
-      if (this.kind === 'patterns') {
-        return defineAsyncComponent(() => import(`../../../lib/dist/vue/patterns/${this.vue}.vue`));
-      } else if (this.kind === 'spot') {
-        return defineAsyncComponent(() => import(`../../../lib/dist/vue/spot/${this.vue}.vue`));
-      } else {
-        return defineAsyncComponent(() => import(`../../../lib/dist/vue/icons/${this.vue}.vue`));
+      switch (this.kind) {
+        case 'patterns':
+          return defineAsyncComponent(() => import(`../../../lib/dist/vue/patterns/${this.vue}.vue`));
+        case 'spot':
+          return defineAsyncComponent(() => import(`../../../lib/dist/vue/spot/${this.vue}.vue`));
+        case 'version7':
+          return defineAsyncComponent(() => import(`../../../lib/dist/vue/v7/${this.vue}.vue`));
+        default:
+          return defineAsyncComponent(() => import(`../../../lib/dist/vue/icons/${this.vue}.vue`));
       }
     },
   },

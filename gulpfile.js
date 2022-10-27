@@ -119,8 +119,11 @@ const paths = {
     outputVue: './lib/dist/vue/icons/',
     newInputRoot: './newIcons',
     newOutputRoot: './lib/build/svg/v7',
-    version7Input: './lib/build/svg/v7/**/*.svg',
-    version7OutputLib: './lib/dist/svg/v7/',
+  },
+  version7: {
+    input: './lib/build/svg/v7/**/*.svg',
+    outputLib: './lib/dist/svg/v7/',
+    outputVue: './lib/dist/vue/v7/',
   },
   patterns: {
     input: './lib/build/svg/patterns/**/*.svg',
@@ -416,7 +419,22 @@ const buildSpotIllustrationSVGs = function (done) {
   //  Compile system icons
   return src(paths.spot.input)
   // replace any instances of the primary color in SVG with the theme class
-    .pipe(addAttrsToSVG())
+    .pipe(replace('<svg', function (match) {
+      const name = path.parse(this.file.path).name;
+      const converted = name.toLowerCase().replace(/-(.)/g, function (match, group1) {
+        return group1.toUpperCase();
+      });
+      const title = name
+        .replace(/\b\S/g, t => t.toUpperCase())
+        .replace(/[-]+/g, ' ');
+
+      return `${match}
+      aria-hidden="true"
+      focusable="false"
+      aria-label="${title}"
+      class="${converted}"
+      xmlns="http://www.w3.org/2000/svg"`;
+    }))
     .pipe(svgmin())
     .pipe(dest(paths.spot.outputLib))
     .pipe(replace('<svg', '<template>\n  <svg'))
@@ -617,37 +635,46 @@ const transformStrokeToFill = function (done) {
     .then(() => done());
 };
 
-const addAttrsToSVG = () => {
-  return replace('<svg', function (match) {
-    const name = path.parse(this.file.path).name;
-    const converted = name
-      .toLowerCase()
-      .replace(
-        /-(.)/g,
-        (match, group1) => group1.toUpperCase(),
-      );
-    const title = name
-      .replace(/\b\S/g, t => t.toUpperCase())
-      .replace(/-+/g, ' ');
-
-    return `${match}
-      aria-hidden="true"
-      focusable="false"
-      aria-label="${title}"
-      class="${converted}"
-      xmlns="http://www.w3.org/2000/svg"`;
-  });
-};
-
 const buildNewSVGIcons = function (done) {
   //  Make sure this feature is activated before running
   if (!settings.svgs) return done();
 
   //  Compile icons
-  return src(paths.svgs.version7Input)
-    .pipe(addAttrsToSVG())
+  return src(paths.version7.input)
+    .pipe(replace(' fill="none"', ''))
+    .pipe(replace(' fill="#000"', ' fill="currentColor"'))
+    .pipe(replace(' fill="#000000"', ' fill="currentColor"'))
+    .pipe(replace(' fill="black"', ' fill="currentColor"'))
+    .pipe(replace('width="12" height="12"', ''))
+    .pipe(replace('<svg', function (match) {
+      const name = path.parse(this.file.path).name;
+      const converted = name.toLowerCase().replace(/-(.)/g, function (match, group1) {
+        return group1.toUpperCase();
+      });
+      const title = name
+        .replace(/\b\S/g, t => t.toUpperCase())
+        .replace(/[-]+/g, ' ');
+      return `${match}
+      aria-hidden="true"
+      focusable="false"
+      data-name="${title}"
+      class="d-icon d-icon--${converted}"
+      xmlns="http://www.w3.org/2000/svg"`;
+    }))
     .pipe(svgmin())
-    .pipe(dest(paths.svgs.version7OutputLib));
+    .pipe(dest(paths.version7.outputLib))
+    .pipe(replace('<svg', '<template>\n  <svg'))
+    .pipe(replace('</svg>', '</svg>\n</template>'))
+  // move any style tags within the svg into style tags of the vue component
+    .pipe(through2.obj(moveStyleTagsToEOF))
+    .pipe(replace('<style>', '<style scoped>'))
+    .pipe(rename(function (file) {
+      file.basename = file.basename
+        .replace(/\b\S/g, t => t.toUpperCase())
+        .replace(/[-]+/g, '');
+      file.extname = '.vue';
+    }))
+    .pipe(dest(paths.version7.outputVue));
 };
 
 //  ================================================================================
@@ -681,6 +708,7 @@ exports.default = series(
 // tasks are similar to default build when we are watching but there are some
 // differences. We use caching, and do not postprocess/minify for build performance gains. Also set the env
 exports.buildWatch = series(
+  exports.clean,
   webfonts,
   exports.svg,
   libStylesDev,
