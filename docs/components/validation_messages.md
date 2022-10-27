@@ -8,6 +8,14 @@ next:
   link: /utilities/backgrounds/attachment.html
 ---
 
-## Variants and examples
+<aside class="d-notice d-notice--info" role="status" aria-hidden="false">
+  <div class="d-notice__icon">
+    <svg aria-hidden="true" focusable="false" aria-label="Info" class="d-svg d-svg--system d-svg__info" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm1 15h-2v-6h2v6Zm0-8h-2V7h2v2Z"></path></svg>
+  </div>
+  <div class="d-notice__content d-stack4">
+    <p class="d-notice__message">
 
-The Validation messages component only exists in Dialtone Vue. Please follow [this link](https://vue.dialpad.design/?path=/docs/components-validation-messages--default) for more details on its usage.
+Currently documented in [Dialtone Vue](https://vue.dialpad.design/?path=/docs/components-validation-messages--default).
+    </p>
+  </div>
+</aside>
