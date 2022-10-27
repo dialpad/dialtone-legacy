@@ -2,6 +2,7 @@
 title: Icon
 desc: The Icon component provides a set of glyphs and sizes to provide context your application.
 storybook_url: https://vue.dialpad.design/?path=/story/components-icon--default
+new: true
 ---
 
 <code-well-header>

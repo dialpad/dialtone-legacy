@@ -2,11 +2,14 @@
   <section class="theme-default-content d-stack32 d-pb0 d-mb8">
     <slot name="content-top" />
     <header class="d-stack2">
-      <h1
-        v-if="frontmatter.title"
-        class="d-lh-200 d-fs-500 d-fw-medium d-mb8"
-        v-text="frontmatter.title"
-      />
+      <div class="d-d-flex d-ai-center d-gg8" >
+        <h1
+          v-if="frontmatter.title"
+          class="d-lh-200 d-fs-500 d-fw-medium d-mb8"
+          v-text="frontmatter.title"
+        />
+        <span v-if="frontmatter.new" class="d-badge d-badge--purple-500">New</span>
+      </div>
       <p
         v-if="frontmatter.desc"
         class="d-fs-300 d-lh-300 d-wmx80p"
