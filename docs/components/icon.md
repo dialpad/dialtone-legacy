@@ -16,17 +16,6 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-icon--default
   </div>
 </code-well-header>
 
-```html
-<dt-icon name="inbox" size="100"></dt-icon>
-<dt-icon name="inbox" size="200"></dt-icon>
-<dt-icon name="inbox" size="300"></dt-icon>
-<dt-icon name="inbox" size="400"></dt-icon>
-<dt-icon name="inbox" size="500"></dt-icon>
-<dt-icon name="inbox" size="600"></dt-icon>
-<dt-icon name="inbox" size="700"></dt-icon>
-<dt-icon name="inbox" size="800"></dt-icon>
-```
-
 ## Variants and examples
 
 The Icon component only exists in Dialtone Vue. Please
