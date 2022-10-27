@@ -645,10 +645,18 @@ const buildNewSVGIcons = function (done) {
     .pipe(replace(' fill="#000"', ' fill="currentColor"'))
     .pipe(replace('width="12" height="12"', ''))
     .pipe(replace('<svg', function (match) {
+      const name = path.parse(this.file.path).name;
+      const converted = name.toLowerCase().replace(/-(.)/g, function (match, group1) {
+        return group1.toUpperCase();
+      });
+      const title = name
+        .replace(/\b\S/g, t => t.toUpperCase())
+        .replace(/[-]+/g, ' ');
       return `${match}
       aria-hidden="true"
       focusable="false"
-      class="d-icon"
+      data-name="${title}"
+      class="d-icon d-icon--${converted}"
       xmlns="http://www.w3.org/2000/svg"`;
     }))
     .pipe(svgmin())
@@ -659,11 +667,9 @@ const buildNewSVGIcons = function (done) {
     .pipe(through2.obj(moveStyleTagsToEOF))
     .pipe(replace('<style>', '<style scoped>'))
     .pipe(rename(function (file) {
-      const converted = file.basename
+      file.basename = file.basename
         .replace(/\b\S/g, t => t.toUpperCase())
         .replace(/[-]+/g, '');
-
-      file.basename = 'V7' + converted;
       file.extname = '.vue';
     }))
     .pipe(dest(paths.version7.outputVue));
@@ -700,6 +706,7 @@ exports.default = series(
 // tasks are similar to default build when we are watching but there are some
 // differences. We use caching, and do not postprocess/minify for build performance gains. Also set the env
 exports.buildWatch = series(
+  exports.clean,
   webfonts,
   exports.svg,
   libStylesDev,
