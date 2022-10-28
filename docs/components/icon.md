@@ -13,7 +13,7 @@ new: true
 
 ### SVG
 
-To use SVG icons use the following path: `@dialpad/dialtone/svg/v7/[CATEGORY]/icon-name.svg`
+To use SVG icons use the following path: `@dialpad/dialtone/lib/dist/svg/v7/icon-name.svg`
 
 ## Variants and examples
 
@@ -67,6 +67,6 @@ To use SVG icons use the following path: `@dialpad/dialtone/svg/v7/[CATEGORY]/ic
 </table>
 
 <script setup>
-    import InboxIcon from '@v7Icons/general/Inbox.vue';
+    import InboxIcon from '@v7Icons/Inbox.vue';
     import { sizes } from '@data/icon.json';
 </script>

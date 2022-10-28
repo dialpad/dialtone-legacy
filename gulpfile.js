@@ -662,6 +662,7 @@ const buildNewSVGIcons = function (done) {
       xmlns="http://www.w3.org/2000/svg"`;
     }))
     .pipe(svgmin())
+    .pipe(rename({ dirname: '' }))
     .pipe(dest(paths.version7.outputLib))
     .pipe(replace('<svg', '<template>\n  <svg'))
     .pipe(replace('</svg>', '</svg>\n</template>'))
