@@ -1,3 +1,11 @@
+## [7.3.1](https://github.com/dialpad/dialtone/compare/v7.3.0...v7.3.1) (2022-10-28)
+
+
+### Bug Fixes
+
+* correct "busy" color, and made use of local css custom properties ([#721](https://github.com/dialpad/dialtone/issues/721)) ([a1c5f2d](https://github.com/dialpad/dialtone/commit/a1c5f2d0c9ff6dc278954a1ea9f46df29972ae84))
+* icons folder structure ([#722](https://github.com/dialpad/dialtone/issues/722)) ([bbbc4ad](https://github.com/dialpad/dialtone/commit/bbbc4ad7fa7a48a4a08bd7724135c88ab4463753))
+
 # [7.3.0](https://github.com/dialpad/dialtone/compare/v7.2.0...v7.3.0) (2022-10-28)
 
 
