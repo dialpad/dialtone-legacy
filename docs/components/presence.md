@@ -2,10 +2,8 @@
 title: Presence
 desc: A visual control element indicating the current status of a user
 ---
-<code-well-header bgclass='d-bgc-white'>
-  <div class="d-d-flex d-ai-center">
-    <example-presence presence="active"/>
-  </div>
+<code-well-header>
+  <example-presence presence="active"/>
 </code-well-header>
 
 ## Usage
@@ -23,10 +21,8 @@ desc: A visual control element indicating the current status of a user
 
 ### Active
 
-<code-well-header bgclass='d-bgc-white'>
-  <div class="d-d-flex d-ai-center">
-    <example-presence presence="active"/>
-  </div>
+<code-well-header>
+  <example-presence presence="active"/>
 </code-well-header>
 
 ```html
@@ -39,10 +35,8 @@ desc: A visual control element indicating the current status of a user
 
 ### Busy
 
-<code-well-header bgclass='d-bgc-white'>
-  <div class="d-d-flex d-ai-center">
-    <example-presence presence="busy"/>
-  </div>
+<code-well-header>
+  <example-presence presence="busy"/>
 </code-well-header>
 
 ```html
@@ -53,10 +47,8 @@ desc: A visual control element indicating the current status of a user
 
 ### Away
 
-<code-well-header bgclass='d-bgc-white'>
-  <div class="d-d-flex d-ai-center">
-    <example-presence presence="away"/>
-  </div>
+<code-well-header>
+  <example-presence presence="away"/>
 </code-well-header>
 
 ```html
@@ -67,10 +59,8 @@ desc: A visual control element indicating the current status of a user
 
 ### Offline
 
-<code-well-header bgclass='d-bgc-white'>
-  <div class="d-d-flex d-ai-center">
-    <example-presence presence="offline"/>
-  </div>
+<code-well-header>
+  <example-presence presence="offline"/>
 </code-well-header>
 
 ```html

@@ -101,6 +101,7 @@ export default defineUserConfig({
   alias: {
     '@data': resolve(__dirname, '../_data/'), // Needed to import json data.
     '@svgIcons': resolve(__dirname, '../../lib/dist/vue/icons/'), // Needed to easily import svg
+    '@v7Icons': resolve(__dirname, '../../lib/dist/vue/v7/'), // Needed to easily import new icons
     '@theme': resolve(__dirname, './theme'),
     '@exampleComponents': resolve(__dirname, './exampleComponents'),
     '@baseComponents': resolve(__dirname, './baseComponents'),
