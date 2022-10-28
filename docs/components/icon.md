@@ -9,6 +9,26 @@ new: true
   <inbox-icon class="d-icon--size-800" />
 </code-well-header>
 
+## Usage
+
+### SVG
+
+To use icons as SVG  use the following path: `@dialpad/dialtone/svg/v7/[CATEGORY]/icon-name.svg`
+
+### Vue
+
+To use icons as Vue components (recommended), use the following import statement:
+
+`import iconName from '@dialpad/dialtone/vue/v7/[CATEGORY]/IconName.vue'`
+
+## Variants and examples
+
+### Base Styles
+
+<code-well-header>
+    <inbox-icon class="d-icon--size-800"></inbox-icon>
+</code-well-header>
+
 ```html
 <svg
   aria-hidden="true"
