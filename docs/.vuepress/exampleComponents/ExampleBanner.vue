@@ -8,8 +8,8 @@
       <div
         class="
           lg:d-fd-column lg:d-ai-stretch lg:d-stack8 lg:d-flow0
-          d-d-flex d-ai-flex-end d-p16 d-bgc-ash
-          d-ba d-bc-black-100 d-flow16 d-mb8 d-bar4
+          d-d-flex d-ai-flex-end d-p16 d-bgc-black-100
+          d-ba d-bc-transparent d-flow16 d-mb8 d-bar4
         "
       >
         <div class="d-fl-grow1">
