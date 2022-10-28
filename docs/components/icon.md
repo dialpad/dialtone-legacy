@@ -30,114 +30,23 @@ new: true
 <table class="d-table dialtone-doc-table">
   <thead>
     <tr>
-      <th scope="col">
-        Size
-      </th>
-      <th scope="col">
-        Width and height
-      </th>
-      <th scope="col" class="d-w35p">
-        Class
-      </th>
-      <th scope="col" class="d-ta-center">
-        Example
-      </th>
+      <th scope="col">Size</th>
+      <th scope="col">Width and height</th>
+      <th scope="col" class="d-w35p">Class</th>
+      <th scope="col" class="d-ta-center">Example</th>
       <th scope="col"><span class="d-vi-visible-sr">Exception</span></th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">100</th>
-      <td class="d-ff-mono d-fs-100">12px (1.2rem)</td>
-      <td class="d-ff-mono d-fs-100">
-        .d-icon--100
-      </td>
+    <tr v-for="{size, width_height, className, deviceOnly } in sizes">
+      <th scope="row">{{ size }}</th>
+      <td class="d-ff-mono d-fs-100">{{ width_height }}</td>
+      <td class="d-ff-mono d-fs-100">.{{ className }}</td>
       <td class="d-ta-center">
-        <inbox-icon class="d-icon--size-100" />
-      </td>
-      <td></td>
-    </tr>
-    <tr>
-      <th scope="row">200</th>
-      <td class="d-ff-mono d-fs-100">14px (1.4rem)</td>
-      <td class="d-ff-mono d-fs-100">
-        .d-icon--200
-      </td>
-      <td class="d-ta-center">
-        <inbox-icon class="d-icon--size-200" />
-      </td>
-      <td></td>
-    </tr>
-    <tr>
-      <th scope="row">300</th>
-      <td class="d-ff-mono d-fs-100">18px (1.8rem)</td>
-      <td class="d-ff-mono d-fs-100">
-        .d-icon--300
-      </td>
-      <td class="d-ta-center">
-        <inbox-icon class="d-icon--size-300" />
-      </td>
-      <td></td>
-    </tr>
-    <tr>
-      <th scope="row">400</th>
-      <td class="d-ff-mono d-fs-100">20px (2.0rem)</td>
-      <td class="d-ff-mono d-fs-100">
-        .d-icon--400
-      </td>
-      <td class="d-ta-center">
-        <inbox-icon class="d-icon--size-400" />
-      </td>
-      <td></td>
-    </tr>
-    <tr>
-      <th scope="row">500</th>
-      <td class="d-ff-mono d-fs-100">24px (2.4rem)</td>
-      <td class="d-ff-mono d-fs-100">
-        .d-icon--500
-      </td>
-      <td class="d-ta-center">
-        <inbox-icon class="d-icon--size-500" />
-      </td>
-      <td></td>
-    </tr>
-    <tr>
-      <th scope="row">600</th>
-      <td class="d-ff-mono d-fs-100">32px (3.2rem)</td>
-      <td class="d-ff-mono d-fs-100">
-        .d-icon--600
-      </td>
-      <td class="d-ta-center">
-        <inbox-icon class="d-icon--size-600" />
+        <inbox-icon :class="className" />
       </td>
       <td class="d-ta-right">
-        <span class="d-badge d-mr8 d-mb8 d-badge">Device only</span>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">700</th>
-      <td class="d-ff-mono d-fs-100">38px (3.8rem)</td>
-      <td class="d-ff-mono d-fs-100">
-        .d-icon--700
-      </td>
-      <td class="d-ta-center">
-        <inbox-icon class="d-icon--size-700" />
-      </td>
-      <td class="d-ta-right">
-        <span class="d-badge d-mr8 d-mb8 d-badge">Device only</span>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">800</th>
-      <td class="d-ff-mono d-fs-100">48px (4.8rem)</td>
-      <td class="d-ff-mono d-fs-100">
-        .d-icon--800
-      </td>
-      <td class="d-ta-center">
-        <inbox-icon class="d-icon--size-800" />
-      </td>
-      <td class="d-ta-right">
-        <span class="d-badge d-mr8 d-mb8 d-badge">Device only</span>
+        <span v-if="deviceOnly" class="d-badge d-mr8 d-mb8 d-badge">Device only</span>
       </td>
     </tr>
   </tbody>
@@ -145,4 +54,5 @@ new: true
 
 <script setup>
     import InboxIcon from '@v7Icons/general/Inbox.vue';
+    import { sizes } from '@data/icon.json';
 </script>
