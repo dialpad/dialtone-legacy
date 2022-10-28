@@ -1,3 +1,15 @@
+# [7.3.0](https://github.com/dialpad/dialtone/compare/v7.2.0...v7.3.0) (2022-10-28)
+
+
+### Bug Fixes
+
+* add ol/ul/li to reset.css ([5fcfc4f](https://github.com/dialpad/dialtone/commit/5fcfc4fc419a274a5051d210634e7992bfd6bb70))
+
+
+### Features
+
+* publish v7 general icons ([#718](https://github.com/dialpad/dialtone/issues/718)) ([4cbf3bf](https://github.com/dialpad/dialtone/commit/4cbf3bf08222c1a035d251030ce1515168661309)), closes [#719](https://github.com/dialpad/dialtone/issues/719)
+
 # [7.2.0](https://github.com/dialpad/dialtone/compare/v7.1.1...v7.2.0) (2022-10-26)
 
 
