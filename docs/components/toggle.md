@@ -16,7 +16,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-toggle--defaul
   <button id="Dialtone-Preview-Toggle2" class="d-toggle d-toggle--checked d-mr8" aria-checked="true" type="button" role="switch">
     <span class="d-toggle__inner"></span>
   </button>
-  <button id="Dialtone-Preview-Toggle3" class="d-toggle d-toggle--indeterminate d-mr8" aria-checked="false" type="button" role="switch">
+  <button id="Dialtone-Preview-Toggle3" class="d-toggle d-toggle--indeterminate d-mr8" aria-checked="mixed" type="button" role="checkbox">
     <span class="d-toggle__inner"></span>
   </button>
   <button id="Dialtone-Preview-Toggle4" class="d-toggle d-toggle--small d-mr8" aria-checked="false" type="button" role="switch">
@@ -25,7 +25,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-toggle--defaul
   <button id="Dialtone-Preview-Toggle5" class="d-toggle d-toggle--checked d-toggle--small d-mr8" aria-checked="true" type="button" role="switch">
     <span class="d-toggle__inner"></span>
   </button>
-  <button id="Dialtone-Preview-Toggle6" class="d-toggle d-toggle--small d-toggle--indeterminate" aria-checked="false" type="button" role="switch">
+  <button id="Dialtone-Preview-Toggle6" class="d-toggle d-toggle--small d-toggle--indeterminate" aria-checked="mixed" type="button" role="checkbox">
     <span class="d-toggle__inner"></span>
   </button>
 </div>
