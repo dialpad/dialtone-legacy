@@ -9,23 +9,23 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-toggle--defaul
   </div>
 </code-well-header>
 
-<div class="d-mt12 d-mb12 d-bgc-orange-200 d-p32">
-  <button id="dfhytj" class="d-toggle" aria-checked="false" type="button" role="switch">
+<div class="d-fl-center d-mt12 d-mb12 d-bgc-black-100 d-p32">
+  <button id="Dialtone-Preview-Toggle1" class="d-toggle d-mr8" aria-checked="false" type="button" role="switch">
     <span class="d-toggle__inner"></span>
   </button>
-  <button id="oiuiuyo" class="d-toggle d-toggle--checked" aria-checked="true" type="button" role="switch">
+  <button id="Dialtone-Preview-Toggle2" class="d-toggle d-toggle--checked d-mr8" aria-checked="true" type="button" role="switch">
     <span class="d-toggle__inner"></span>
   </button>
-  <button id="fgku8i" class="d-toggle d-toggle--indeterminate" aria-checked="false" type="button" role="switch">
+  <button id="Dialtone-Preview-Toggle3" class="d-toggle d-toggle--indeterminate d-mr8" aria-checked="false" type="button" role="switch">
     <span class="d-toggle__inner"></span>
   </button>
-  <button id="asdfasdf" class="d-toggle d-toggle--small" aria-checked="false" type="button" role="switch">
+  <button id="Dialtone-Preview-Toggle4" class="d-toggle d-toggle--small d-mr8" aria-checked="false" type="button" role="switch">
     <span class="d-toggle__inner"></span>
   </button>
-  <button id="asdfdfdfgs" class="d-toggle d-toggle--checked d-toggle--small" aria-checked="true" type="button" role="switch">
+  <button id="Dialtone-Preview-Toggle5" class="d-toggle d-toggle--checked d-toggle--small d-mr8" aria-checked="true" type="button" role="switch">
     <span class="d-toggle__inner"></span>
   </button>
-  <button id="asdfasdf" class="d-toggle d-toggle--small d-toggle--indeterminate" aria-checked="false" type="button" role="switch">
+  <button id="Dialtone-Preview-Toggle6" class="d-toggle d-toggle--small d-toggle--indeterminate" aria-checked="false" type="button" role="switch">
     <span class="d-toggle__inner"></span>
   </button>
 </div>
