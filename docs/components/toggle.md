@@ -73,6 +73,9 @@ The Toggle component acts as a way to allow the User to switch between two mutua
     <div class="d-toggle-group d-d-flex d-ai-center">
       <example-toggle label="Checked Disabled" checked disabled/>
     </div>
+    <div class="d-toggle-group d-d-flex d-ai-center">
+      <example-toggle label="Indeterminate Toggle" indeterminate />
+    </div>
   </fieldset>
 </code-well-header>
 
@@ -114,6 +117,16 @@ The Toggle component acts as a way to allow the User to switch between two mutua
     </div>
     <div class="d-toggle-button">
       <button class="d-toggle d-toggle--checked" type="button" role="switch" disabled id="Dialtone-Toggle4" >
+        <span class="d-toggle__inner" />
+      </button>
+    </div>
+  </div>
+  <div class="d-toggle-group d-d-flex d-ai-center">
+    <div class="d-toggle-copy">
+      <label class="d-toggle-label" for="Dialtone-Toggle5">Indeterminate Toggle</label>
+    </div>
+    <div class="d-toggle-button">
+      <button class="d-toggle d-toggle--indeterminate" type="button" role="checkbox" aria-checked="mixed" id="Dialtone-Toggle5">
         <span class="d-toggle__inner" />
       </button>
     </div>
