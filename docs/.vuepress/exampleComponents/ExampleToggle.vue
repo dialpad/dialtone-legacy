@@ -2,13 +2,13 @@
   <div class="d-toggle-copy">
     <label
       class="d-toggle-label"
-      for="Dialtone-Toggle1"
+      :for="id"
       v-text="label"
     />
   </div>
   <div class="d-toggle-button">
     <button
-      id="Dialtone-Toggle1"
+      :id="id"
       class="d-toggle"
       :class="toggleClasses"
       :aria-checked="toggleAriaChecked"
@@ -26,6 +26,11 @@
 export default {
   name: 'ExampleToggle',
   props: {
+    id: {
+      type: String,
+      default: 'Dialtone-Toggle',
+    },
+
     label: {
       type: String,
       default: '',

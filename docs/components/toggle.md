@@ -5,30 +5,9 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-toggle--defaul
 ---
 <code-well-header>
   <div class="d-toggle-group d-d-flex d-ai-center">
-    <example-toggle label="Label"/>
+    <example-toggle label="Label" id="Dialtone-Toggle-Preview"/>
   </div>
 </code-well-header>
-
-<div class="d-fl-center d-mt12 d-mb12 d-bgc-black-100 d-p32">
-  <button id="Dialtone-Preview-Toggle1" class="d-toggle d-mr8" aria-checked="false" type="button" role="switch">
-    <span class="d-toggle__inner"></span>
-  </button>
-  <button id="Dialtone-Preview-Toggle2" class="d-toggle d-toggle--checked d-mr8" aria-checked="true" type="button" role="switch">
-    <span class="d-toggle__inner"></span>
-  </button>
-  <button id="Dialtone-Preview-Toggle3" class="d-toggle d-toggle--indeterminate d-mr8" aria-checked="mixed" type="button" role="checkbox">
-    <span class="d-toggle__inner"></span>
-  </button>
-  <button id="Dialtone-Preview-Toggle4" class="d-toggle d-toggle--small d-mr8" aria-checked="false" type="button" role="switch">
-    <span class="d-toggle__inner"></span>
-  </button>
-  <button id="Dialtone-Preview-Toggle5" class="d-toggle d-toggle--checked d-toggle--small d-mr8" aria-checked="true" type="button" role="switch">
-    <span class="d-toggle__inner"></span>
-  </button>
-  <button id="Dialtone-Preview-Toggle6" class="d-toggle d-toggle--small d-toggle--indeterminate" aria-checked="mixed" type="button" role="checkbox">
-    <span class="d-toggle__inner"></span>
-  </button>
-</div>
 
 ## Usage
 
@@ -62,19 +41,19 @@ The Toggle component acts as a way to allow the User to switch between two mutua
 <code-well-header>
   <fieldset class="d-stack8">
     <div class="d-toggle-group d-d-flex d-ai-center">
-      <example-toggle label="Unchecked Toggle"/>
+      <example-toggle label="Unchecked Toggle" id="Dialtone-Toggle1"/>
     </div>
     <div class="d-toggle-group d-d-flex d-ai-center">
-      <example-toggle label="Checked Toggle" checked/>
+      <example-toggle label="Checked Toggle" checked id="Dialtone-Toggle2"/>
     </div>
     <div class="d-toggle-group d-d-flex d-ai-center">
-      <example-toggle label="Unchecked Disabled" disabled/>
+      <example-toggle label="Unchecked Disabled" disabled id="Dialtone-Toggle3"/>
     </div>
     <div class="d-toggle-group d-d-flex d-ai-center">
-      <example-toggle label="Checked Disabled" checked disabled/>
+      <example-toggle label="Checked Disabled" checked disabled id="Dialtone-Toggle4"/>
     </div>
     <div class="d-toggle-group d-d-flex d-ai-center">
-      <example-toggle label="Indeterminate Toggle" indeterminate />
+      <example-toggle label="Indeterminate Toggle" indeterminate id="Dialtone-Toggle5"/>
     </div>
   </fieldset>
 </code-well-header>
@@ -139,10 +118,10 @@ The Toggle component acts as a way to allow the User to switch between two mutua
 <code-well-header>
   <fieldset class="d-stack8">
     <div class="d-toggle-group d-d-flex d-ai-center">
-      <example-toggle label="Small size" size="small" />
+      <example-toggle label="Small size" size="small" id="Dialtone-Toggle6"/>
     </div>
     <div class="d-toggle-group d-d-flex d-ai-center">
-      <example-toggle label="Default size" />
+      <example-toggle label="Default size" id="Dialtone-Toggle7"/>
     </div>
   </fieldset>
 </code-well-header>
@@ -183,16 +162,16 @@ The Toggle component acts as a way to allow the User to switch between two mutua
         <h3 class="d-mr4">DND</h3>
       </div>
       <div class="row d-d-flex d-ai-center d-jc-space-between d-mb6">
-        <example-toggle label="Acorn Test" />
+        <example-toggle label="Acorn Test" id="Dialtone-Toggle8" />
       </div>
       <div class="row d-d-flex d-ai-center d-jc-space-between d-mb6">
-        <example-toggle label="California Zoo" />
+        <example-toggle label="California Zoo" id="Dialtone-Toggle9" />
       </div>
       <div class="row d-d-flex d-ai-center d-jc-space-between d-mb6">
-        <example-toggle label="Montana Centre" />
+        <example-toggle label="Montana Centre" id="Dialtone-Toggle10" />
       </div>
       <div class="row d-d-flex d-ai-center d-jc-space-between d-mb6">
-        <example-toggle label="Wilson Centre" />
+        <example-toggle label="Wilson Centre" id="Dialtone-Toggle11" />
       </div>
     </div>
   </fieldset>
@@ -208,40 +187,40 @@ The Toggle component acts as a way to allow the User to switch between two mutua
     </div>
     <div class="row d-d-flex d-ai-center d-jc-space-between d-mb6">
       <div class="d-toggle-copy">
-        <label class="d-toggle-label" for="Dialtone-Toggle5">Acorn Tech</label>
+        <label class="d-toggle-label" for="Dialtone-Toggle8">Acorn Tech</label>
       </div>
       <div class="d-toggle-button">
-        <button class="d-toggle" type="button" role="switch" id="Dialtone-Toggle5" >
+        <button class="d-toggle" type="button" role="switch" id="Dialtone-Toggle8" >
           <span class="d-toggle__inner" />
         </button>
       </div>
     </div>
     <div class="row d-d-flex d-ai-center d-jc-space-between d-mb6">
       <div class="d-toggle-copy">
-        <label class="d-toggle-label" for="Dialtone-Toggle5">California Zoo</label>
+        <label class="d-toggle-label" for="Dialtone-Toggle9">California Zoo</label>
       </div>
       <div class="d-toggle-button">
-        <button class="d-toggle" type="button" role="switch" id="Dialtone-Toggle5" >
+        <button class="d-toggle" type="button" role="switch" id="Dialtone-Toggle9" >
           <span class="d-toggle__inner" />
         </button>
       </div>
     </div>
     <div class="row d-d-flex d-ai-center d-jc-space-between d-mb6">
       <div class="d-toggle-copy">
-        <label class="d-toggle-label" for="Dialtone-Toggle5">Montana Centre</label>
+        <label class="d-toggle-label" for="Dialtone-Toggle10">Montana Centre</label>
       </div>
       <div class="d-toggle-button">
-        <button class="d-toggle" type="button" role="switch" id="Dialtone-Toggle5" >
+        <button class="d-toggle" type="button" role="switch" id="Dialtone-Toggle10" >
           <span class="d-toggle__inner" />
         </button>
       </div>
     </div>
     <div class="row d-d-flex d-ai-center d-jc-space-between d-mb6">
       <div class="d-toggle-copy">
-        <label class="d-toggle-label" for="Dialtone-Toggle5">Wilson Centre</label>
+        <label class="d-toggle-label" for="Dialtone-Toggle11">Wilson Centre</label>
       </div>
       <div class="d-toggle-button">
-        <button class="d-toggle" type="button" role="switch" id="Dialtone-Toggle5" >
+        <button class="d-toggle" type="button" role="switch" id="Dialtone-Toggle11" >
           <span class="d-toggle__inner" />
         </button>
       </div>
