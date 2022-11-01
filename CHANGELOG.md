@@ -1,3 +1,10 @@
+## [7.3.2](https://github.com/dialpad/dialtone/compare/v7.3.1...v7.3.2) (2022-11-01)
+
+
+### Bug Fixes
+
+* missing icons ([#723](https://github.com/dialpad/dialtone/issues/723)) ([9499475](https://github.com/dialpad/dialtone/commit/9499475ecf7e338489522f9f1a044995ff565a9c))
+
 ## [7.3.1](https://github.com/dialpad/dialtone/compare/v7.3.0...v7.3.1) (2022-10-28)
 
 
