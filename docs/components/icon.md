@@ -24,7 +24,7 @@ new: true
   <div class="d-notice__content d-stack4">
     <h2 class="d-notice__title">Looking for the previous icon set?</h2>
     <p class="d-notice__message">
-      The older deprecated icon set can still be found at <router-link class="d-link" to="/design/icons/system.html">new Icon component</router-link>
+      <router-link class="d-link" to="/design/icons/system.html">Documentation for the deprecated icon set</router-link> will remain available until this new icon is more fully adopted.
     </p>
   </div>
 </aside>
