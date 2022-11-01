@@ -45,6 +45,11 @@ export default {
       type: Boolean,
       default: false,
     },
+
+    size: {
+      type: String,
+      default: null,
+    },
   },
 
   data () {
@@ -60,6 +65,7 @@ export default {
         {
           'd-toggle--checked': this.isChecked,
           'd-toggle--indeterminate': this.isIndeterminate,
+          [`d-toggle--${this.size}`]: this.size,
         },
       ];
     },

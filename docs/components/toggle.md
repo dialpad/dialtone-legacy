@@ -134,6 +134,44 @@ The Toggle component acts as a way to allow the User to switch between two mutua
 </fieldset>
 ```
 
+### Sizes
+
+<code-well-header>
+  <fieldset class="d-stack8">
+    <div class="d-toggle-group d-d-flex d-ai-center">
+      <example-toggle label="Small size" size="small" />
+    </div>
+    <div class="d-toggle-group d-d-flex d-ai-center">
+      <example-toggle label="Default size" />
+    </div>
+  </fieldset>
+</code-well-header>
+
+```html
+<fieldset class="d-stack8">
+  <div class="d-toggle-group d-d-flex d-ai-center">
+    <div class="d-toggle-copy">
+      <label class="d-toggle-label" for="Dialtone-Toggle6">Small size</label>
+    </div>
+    <div class="d-toggle-button">
+      <button class="d-toggle d-toggle--small" type="button" role="switch" id="Dialtone-Toggle6" >
+        <span class="d-toggle__inner" />
+      </button>
+    </div>
+  </div>
+  <div class="d-toggle-group d-d-flex d-ai-center">
+    <div class="d-toggle-copy">
+      <label class="d-toggle-label" for="Dialtone-Toggle7">Default size</label>
+    </div>
+    <div class="d-toggle-button">
+      <button class="d-toggle" type="button" role="switch" id="Dialtone-Toggle7" >
+        <span class="d-toggle__inner" />
+      </button>
+    </div>
+  </div>
+</fieldset>
+```
+
 ### Stacked Group
 
 <code-well-header>
