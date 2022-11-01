@@ -1,3 +1,10 @@
+# [7.4.0](https://github.com/dialpad/dialtone/compare/v7.3.2...v7.4.0) (2022-11-01)
+
+
+### Features
+
+* **toggle:** add small variant and indeterminate state ([#725](https://github.com/dialpad/dialtone/issues/725)) ([5014433](https://github.com/dialpad/dialtone/commit/501443372ce80fd45db8272bcc185c912cdf98d7))
+
 ## [7.3.2](https://github.com/dialpad/dialtone/compare/v7.3.1...v7.3.2) (2022-11-01)
 
 
