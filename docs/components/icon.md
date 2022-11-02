@@ -170,6 +170,18 @@ We're in the process of updating our documentation to search all available new i
     <aside class="dialtone-icon-card">
       <header class="dialtone-icon-card__header d-c-text h:d-bgc-unset">
         <div class="dialtone-icon-card__icon">
+          <svg aria-hidden="true" focusable="false" data-name="close" class="d-icon d-icon--close" viewBox="0 0 12 12"><path fill="currentColor" fill-rule="evenodd" d="M2.646 2.646a.5.5 0 0 1 .708 0L6 5.293l2.646-2.647a.5.5 0 1 1 .708.708L6.707 6l2.647 2.646a.5.5 0 1 1-.708.708L6 6.707 3.354 9.354a.5.5 0 1 1-.708-.708L5.293 6 2.646 3.354a.5.5 0 0 1 0-.708Z" clip-rule="evenodd"/></svg>
+        </div>
+        <p class="dialtone-icon-card__subtitle d-tt-capitalize">
+          Close
+        </p>
+      </header>
+    </aside>
+  </div>
+  <div class="dialtone-icon-grid__item">
+    <aside class="dialtone-icon-card">
+      <header class="dialtone-icon-card__header d-c-text h:d-bgc-unset">
+        <div class="dialtone-icon-card__icon">
           <svg aria-hidden="true" focusable="false" data-name="Contacts" class="d-icon d-icon--contacts" width="13" height="12" viewBox="0 0 13 12"><path fill="currentColor" fill-rule="evenodd" d="M2.333.667a.5.5 0 0 1 .5-.5h7.334a.5.5 0 0 1 0 1H2.833a.5.5 0 0 1-.5-.5ZM1.48 1.98a.5.5 0 0 1 .353-.147h9.334a.5.5 0 0 1 .5.5v7.334a.5.5 0 0 1-.5.5H1.833a.5.5 0 0 1-.5-.5V2.333a.5.5 0 0 1 .147-.353Zm.853.853v6.334h1V9a1.833 1.833 0 0 1 1.834-1.833h2.666A1.833 1.833 0 0 1 9.667 9v.167h1V2.833H2.333Zm6.334 6.334V9a.833.833 0 0 0-.834-.833H5.167A.833.833 0 0 0 4.333 9v.167h4.334Zm-2.167-2a1.833 1.833 0 1 0 0-3.667 1.833 1.833 0 0 0 0 3.667Zm0-2.667a.833.833 0 1 0 0 1.667.833.833 0 0 0 0-1.667Zm-4.167 6.833a.5.5 0 0 1 .5-.5H10.3a.5.5 0 1 1 0 1H2.833a.5.5 0 0 1-.5-.5Z" clip-rule="evenodd"/></svg>
         </div>
         <p class="dialtone-icon-card__subtitle d-tt-capitalize">
@@ -510,18 +522,6 @@ We're in the process of updating our documentation to search all available new i
         </div>
         <p class="dialtone-icon-card__subtitle d-tt-capitalize">
           Video Off
-        </p>
-      </header>
-    </aside>
-  </div>
-  <div class="dialtone-icon-grid__item">
-    <aside class="dialtone-icon-card">
-      <header class="dialtone-icon-card__header d-c-text h:d-bgc-unset">
-        <div class="dialtone-icon-card__icon">
-          <svg aria-hidden="true" focusable="false" data-name="X" class="d-icon d-icon--x" viewBox="0 0 12 12"><path fill="currentColor" fill-rule="evenodd" d="M2.646 2.646a.5.5 0 0 1 .708 0L6 5.293l2.646-2.647a.5.5 0 1 1 .708.708L6.707 6l2.647 2.646a.5.5 0 1 1-.708.708L6 6.707 3.354 9.354a.5.5 0 1 1-.708-.708L5.293 6 2.646 3.354a.5.5 0 0 1 0-.708Z" clip-rule="evenodd"/></svg>
-        </div>
-        <p class="dialtone-icon-card__subtitle d-tt-capitalize">
-          X
         </p>
       </header>
     </aside>
