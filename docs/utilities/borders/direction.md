@@ -60,15 +60,15 @@ Use `d-b{t|r|b|l|x|y}` to add a border to only specific sides of your element.
         <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-b{{ i[0] }}</th>
         <td class="d-ff-mono d-fs-100">
           <span v-if="i === 'y'">
-            border-top: var(--su1) solid currentColor !important;<br/>
-            border-bottom: var(--su1) solid currentColor !important;
+            border-top: var(--su1) solid !important;<br/>
+            border-bottom: var(--su1) solid !important;
           </span>
           <span v-else-if="i === 'x'">
-            border-right: var(--su1) solid currentColor !important;<br/>
-            border-left: var(--su1) solid currentColor !important;
+            border-right: var(--su1) solid !important;<br/>
+            border-left: var(--su1) solid !important;
           </span>
           <span v-else>
-            border-{{i}}: var(--su1) solid currentColor !important;
+            border-{{i}}: var(--su1) solid !important;
           </span>
         </td>
       </tr>
