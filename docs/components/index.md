@@ -164,15 +164,6 @@ prev:
       <div class="d-body-compact d-fc-tertiary">An input field is an input control that allows users to enter alphanumeric information.</div>
     </div>
   </router-link>
-  <router-link class="d-d-block d-ba d-bc-black-300 d-bar8 d-of-hidden d-td-none h:d-td-none h:d-bs-sm" to="/components/input_group.html">
-    <div class="d-bgc-black-100"><img alt="" class="d-d-block d-w100p" :src="$withBase('/assets/images/components/input-group.png')"></div>
-    <div class="d-p16 d-stack4">
-      <div class="d-fc-secondary d-headline-large d-d-flex d-ai-center d-gg8">
-        <span class="d-fl1">Input group</span>
-      </div>
-      <div class="d-body-compact d-fc-tertiary">Input groups are convenience components for a grouping of related inputs. </div>
-    </div>
-  </router-link>
   <router-link class="d-d-block d-ba d-bc-black-300 d-bar8 d-of-hidden d-td-none h:d-td-none h:d-bs-sm" to="/components/keyboard_shortcut.html">
     <div class="d-bgc-black-100"><img alt="" class="d-d-block d-w100p" :src="$withBase('/assets/images/components/keyboard-shortcut.png')"></div>
     <div class="d-p16 d-stack4">
