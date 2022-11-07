@@ -87,7 +87,7 @@
       <div class="d-d-inline-flex d-fd-column">
         <router-link
           class="d-link"
-          to="/components/avatar"
+          to="/components/"
         >
           Browse CSS components
         </router-link>

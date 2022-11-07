@@ -5,8 +5,8 @@ prev:
   text: Spot Illustrations
   link: /design/illustrations/spot
 next:
-  text: Components - Avatar
-  link: /components/avatar.html
+  text: Components
+  link: /components/
 ---
 
 ## Overview

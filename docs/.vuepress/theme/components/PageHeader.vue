@@ -12,7 +12,7 @@
       </div>
       <p
         v-if="frontmatter.desc"
-        class="d-fs-300 d-lh-300 d-wmx80p"
+        class="d-fs-300 d-lh-300 d-wmx80p d-fc-secondary"
         v-html="frontmatter.desc"
       />
     </header>

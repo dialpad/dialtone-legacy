@@ -1,6 +1,6 @@
 ---
 title: Toggle
-desc: A toggle (or "switch") is a button control element that allows the user to make a binary (on/off) selection.
+desc: A toggle, or "switch", is a button control element that allows the user to make a binary selection.
 storybook_url: https://vue.dialpad.design/?path=/story/components-toggle--default
 ---
 <code-well-header>

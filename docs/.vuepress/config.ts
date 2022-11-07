@@ -14,7 +14,7 @@ const themeConfig = {
   navbar: [
     {text: 'Home', link: '/'},
     {text: 'Design', link: '/design/colors/color-palette'},
-    {text: 'Components', link: '/components/avatar'},
+    {text: 'Components', link: '/components/'},
     {text: 'Utilities', link: '/utilities/backgrounds/attachment'},
     {text: 'Guides', link: '/guides/getting-started/installation'},
     {text: 'About', link: '/about/dialtone'},
