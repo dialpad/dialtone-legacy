@@ -1,7 +1,6 @@
 import { defineClientConfig } from '@vuepress/client';
 
 // Common views
-import Icons from './views/Icons.vue';
 import Colors from './views/Colors.vue';
 
 // Base components
@@ -30,7 +29,6 @@ import '@dialtoneDocsCSS';
 export default defineClientConfig({
   enhance ({ app, router, siteData }) {
     // Common views
-    app.component('Icons', Icons);
     app.component('Colors', Colors);
 
     // Base components
@@ -42,7 +40,7 @@ export default defineClientConfig({
     app.component('IconSizesTable', IconSizesTable);
     app.component('ComponentAccessibleTable', ComponentAccessibleTable);
 
-    // Common icons
+    // Common iconsw
     app.component('IconInfo', IconInfo);
     app.component('IconPhone', IconPhone);
     app.component('IconLightbulb', IconLightbulb);
