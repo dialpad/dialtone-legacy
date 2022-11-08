@@ -5,14 +5,14 @@
       <div class="d-d-flex d-ai-center d-gg8" >
         <h1
           v-if="frontmatter.title"
-          class="d-lh-200 d-fs-500 d-fw-medium d-mb8"
+          class="dialtone-page-title"
           v-text="frontmatter.title"
         />
         <span v-if="frontmatter.new" class="d-badge d-badge--purple-500">New</span>
       </div>
       <p
         v-if="frontmatter.desc"
-        class="d-fs-300 d-lh-300 d-wmx80p d-fc-secondary"
+        class="dialtone-intro"
         v-html="frontmatter.desc"
       />
     </header>
