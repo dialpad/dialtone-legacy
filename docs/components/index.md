@@ -15,7 +15,19 @@ prev:
   * {frontmatter.desc}
   * {frontmatter.status} badge (eventually); e.g. "New", "Ready", etc.
 
+  <router-link class="dialtone-wall__item" to="/components/avatar.html">
+    <div class="dialtone-wall__image"><img class="dialtone-wall__thumb" alt="" :src="$withBase('/assets/images/components/{frontmatter.thumb}.png')"></div>
+    <div class="dialtone-wall__details">
+      <div class="dialtone-wall__title">
+        <span class="dialtone-wall__title-text">{frontmatter.title}</span>
+        <span class="d-badge d-badge d-bgc-green-100">{frontmatter.status}</span>
+      </div>
+      <div class="dialtone-wall__description">{frontmatter.desc}</div>
+    </div>
+  </router-link>
+
 -->
+
 <div class="dialtone-wall">
   <router-link class="dialtone-wall__item" to="/components/avatar.html">
     <div class="dialtone-wall__image"><img class="dialtone-wall__thumb" alt="" :src="$withBase('/assets/images/components/avatar.png')"></div>
