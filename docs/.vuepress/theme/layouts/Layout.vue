@@ -1,41 +1,41 @@
 <template>
-  <ParentLayout>
+  <parent-layout>
     <template #page>
-      <Home v-if="$frontmatter.home" />
+      <home v-if="$frontmatter.home" />
       <div
         v-else
         class="main-content"
       >
-        <Transition
+        <transition
           name="fade-slide-y"
           mode="out-in"
           @before-enter="onBeforeEnter"
           @before-leave="onBeforeLeave"
         >
-          <Page :key="$page.path">
+          <page :key="$page.path">
             <template #top>
-              <PageHeader
+              <page-header
                 :path="$page.path"
                 :frontmatter="$frontmatter"
               >
                 <template #content-bottom>
-                  <PageToc
+                  <page-toc
                     v-if="isMobile"
                     :headers="$page.headers"
                   />
                 </template>
-              </PageHeader>
+              </page-header>
             </template>
-          </Page>
-        </Transition>
-        <PageToc
+          </page>
+        </transition>
+        <page-toc
           v-if="!isMobile"
           :headers="$page.headers"
           class="d-pr32 d-pt24"
         />
       </div>
     </template>
-  </ParentLayout>
+  </parent-layout>
 </template>
 
 <script setup>
@@ -89,6 +89,7 @@ watch(isMobile, (current) => {
     align-self: flex-start;
     background-color: var(--base--background-color);
     z-index: 10;
+    width: var(--sidebar-width);
   }
 
   @media screen and (max-width: 980px) {

@@ -5,10 +5,10 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-card--default
 
 ---
 <code-well-header>
-  <div class="d-card">
+  <div class="d-card d-w264">
       <div class="d-card__content">
-        <p class="d-fs14 d-fw-bold d-fc-black-800">Lorem ipsum</p>
-        <p class="d-fs12">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum molestie semper. Morbi finibus nulla turpis, nec molestie mi rutrum.</p>
+        <p class="d-fs-200 d-fw-bold d-fc-black-800">Lorem ipsum</p>
+        <p class="d-fs-100">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum molestie semper. Morbi finibus nulla turpis, nec molestie mi rutrum.</p>
       </div>
   </div>
 </code-well-header>
@@ -18,25 +18,17 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-card--default
 Cards are surfaces that display content and actions on a single topic.
 They should be easy to scan for relevant and actionable information. Elements, like text and images, should be placed on them in a way that clearly indicates hierarchy.
 
-<div class="dialtone-usage">
-  <div class="dialtone-usage__item dialtone-usage__item--do">
-    <h3 class="dialtone-usage__hd dialtone-usage__hd--do"><icon-checkmark /> Use for</h3>
-    <div class="dialtone-usage__bd">
-<Markdown>
+<dialtone-usage>
+<template #do>
+
 - To display content and actions on a single topic.
-</Markdown>
-    </div>
-  </div>
-  <div class="dialtone-usage__item dialtone-usage__item--dont">
-    <h3 class="dialtone-usage__hd dialtone-usage__hd--dont"><icon-close /> Don't use for</h3>
-    <div class="dialtone-usage__bd">
-<Markdown>
+</template>
+<template #dont>
+
 - Add too many call-to-action elements to the same card. A card should only contain a single primary action.
 - Inform users about important changes.
-</Markdown>
-    </div>
-  </div>
-</div>
+</template>
+</dialtone-usage>
 
 ### Best Practices
 
@@ -44,32 +36,32 @@ They should be easy to scan for relevant and actionable information. Elements, l
 - The content of a card should be concise and offer only a preview of detailed content.
 - The headings should set clear expectations about the card’s purpose.
 
-## Variants and Examples
+## Variants and examples
 
 ### With Header
 
 <code-well-header>
-    <div class="d-card">
+    <div class="d-card d-w264">
       <div class="d-card__header">
         <p>Header</p>
         <button href="#" class="d-btn d-btn--xs d-fc-black-400"><IconMenuVertical /></button>
       </div>
       <div class="d-card__content">
-        <p class="d-fs14 d-fw-bold d-fc-black-800">Lorem ipsum</p>
-        <p class="d-fs12">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum molestie semper. Morbi finibus nulla turpis, nec molestie mi rutrum.</p>
+        <p class="d-fs-200 d-fw-bold d-fc-black-800">Lorem ipsum</p>
+        <p class="d-fs-100">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum molestie semper. Morbi finibus nulla turpis, nec molestie mi rutrum.</p>
       </div>
     </div>
 </code-well-header>
 
 ```html
-<div class="d-card">
+<div class="d-card d-w264">
   <div class="d-card__header">
     <p>Header</p>
     <button href="#" class="d-btn d-btn--xs d-fc-black-400"><IconMenuVertical /></button>
   </div>
   <div class="d-card__content">
-    <p class="d-fs14 d-fw-bold d-fc-black-800">Lorem ipsum</p>
-    <p class="d-fs12">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum molestie semper. Morbi finibus nulla turpis, nec molestie mi rutrum.</p>
+    <p class="d-fs-200 d-fw-bold d-fc-black-800">Lorem ipsum</p>
+    <p class="d-fs-100">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum molestie semper. Morbi finibus nulla turpis, nec molestie mi rutrum.</p>
   </div>
 </div>
 ```
@@ -77,23 +69,23 @@ They should be easy to scan for relevant and actionable information. Elements, l
 ### With Footer
 
 <code-well-header>
-    <div class="d-card">
+    <div class="d-card d-w264">
       <div class="d-card__content">
-        <p class="d-fs14 d-fw-bold d-fc-black-800">Lorem ipsum</p>
-        <p class="d-fs12">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum molestie semper. Morbi finibus nulla turpis, nec molestie mi rutrum.</p>
+        <p class="d-fs-200 d-fw-bold d-fc-black-800">Lorem ipsum</p>
+        <p class="d-fs-100">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum molestie semper. Morbi finibus nulla turpis, nec molestie mi rutrum.</p>
       </div>
       <div class="d-card__footer">
         <button href="#" class="d-btn d-btn--sm d-fc-black-400">Button 1</button>
         <button href="#" class="d-btn d-btn--sm d-fc-black-400">Button 2</button>
-      </div>  
+      </div>
     </div>
 </code-well-header>
 
 ```html
-<div class="d-card">
+<div class="d-card d-w264">
   <div class="d-card__content">
-    <p class="d-fs14 d-fw-bold d-fc-black-800">Lorem ipsum</p>
-    <p class="d-fs12">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum molestie semper. Morbi finibus nulla turpis, nec molestie mi rutrum.</p>
+    <p class="d-fs-200 d-fw-bold d-fc-black-800">Lorem ipsum</p>
+    <p class="d-fs-100">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum molestie semper. Morbi finibus nulla turpis, nec molestie mi rutrum.</p>
   </div>
   <div class="d-card__footer">
     <button href="#" class="d-btn d-btn--sm d-fc-black-400">Button 1</button>
@@ -105,31 +97,31 @@ They should be easy to scan for relevant and actionable information. Elements, l
 ### With Header, Footer and scrollable content
 
 <code-well-header>
-    <div class="d-card">
+    <div class="d-card d-w264">
       <div class="d-card__header">
         <p>Header</p>
         <button href="#" class="d-btn d-btn--xs d-fc-black-400"><IconMenuVertical /></button>
       </div>
       <div class="d-card__content d-h84">
-        <p class="d-fs14 d-fw-bold d-fc-black-800">Lorem ipsum</p>
-        <p class="d-fs12">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p class="d-fs-200 d-fw-bold d-fc-black-800">Lorem ipsum</p>
+        <p class="d-fs-100">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
       </div>
       <div class="d-card__footer">
         <button href="#" class="d-btn d-btn--sm d-fc-black-400">Button 1</button>
         <button href="#" class="d-btn d-btn--sm d-fc-black-400">Button 2</button>
-      </div>  
+      </div>
     </div>
 </code-well-header>
 
 ```html
-<div class="d-card">
+<div class="d-card d-w264">
   <div class="d-card__header">
     <p>Header</p>
     <button href="#" class="d-btn d-btn--xs d-fc-black-400"><IconMenuVertical /></button>
   </div>
   <div class="d-card__content d-h84">
-    <p class="d-fs14 d-fw-bold d-fc-black-800">Lorem ipsum</p>
-    <p class="d-fs12">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p class="d-fs-200 d-fw-bold d-fc-black-800">Lorem ipsum</p>
+    <p class="d-fs-100">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
   </div>
   <div class="d-card__footer">
     <button href="#" class="d-btn d-btn--sm d-fc-black-400">Button 1</button>
@@ -146,5 +138,5 @@ At minimum, card contains body of content. It could also have header with button
 
 <script setup>
   import IconMenuVertical from '@svgIcons/IconMenuVertical.vue';
-  import Markdown from "@baseComponents/Markdown.vue";
+  import DialtoneUsage from '@baseComponents/DialtoneUsage.vue';
 </script>

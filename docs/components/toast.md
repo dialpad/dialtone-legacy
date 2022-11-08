@@ -10,7 +10,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-toast--default
 
 <component-combinator component-name="DtToast" />
 
-## Variants and Examples
+## Variants and examples
 
 <example-toast />
 
@@ -42,7 +42,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-toast--default
 Avoid using toast for critical information since toast disappears automatically and make sure
 to provide enough time to read the message and act consequently. For best accessible user experience, the amount of
 time a toast displays for should be user configurable.
-  
+
 Using `role="alert"`, it sets `aria-live="assertive"` which
 means it will immediately interrupt anything currently being read by the screen reader, so use it for things
 that require immediate attention such as:

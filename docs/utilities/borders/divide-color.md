@@ -1,17 +1,17 @@
 ---
-title: Divide Color
+title: Divide color
 desc: Utilities for controlling the border color between an element's child items.
 ---
 
-## Vertical Dividers
+## Vertical dividers
 
 Use `d-divide-y{n}` to create a divider between an element's child items.
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-green-100 d-bgo50 d-w100p d-hmn102" custom>
-  <div class="d-w100p d-d-flex d-fd-column d-divide-y d-divide-green-400">
-    <div class="d-fl-center d-w100p d-h64 d-p16 d-fc-green-600 d-fs24 d-fw-bold">1</div>
-    <div class="d-fl-center d-w100p d-h64 d-p16 d-fc-green-600 d-fs24 d-fw-bold">2</div>
-    <div class="d-fl-center d-w100p d-h64 d-p16 d-fc-green-600 d-fs24 d-fw-bold">3</div>
+  <div class="d-w100p d-d-flex d-fd-column d-divide-y d-divide-green-300">
+    <div class="d-fl-center d-w100p d-h64 d-p16 d-fc-green-400 d-fs-300 d-fw-bold">1</div>
+    <div class="d-fl-center d-w100p d-h64 d-p16 d-fc-green-400 d-fs-300 d-fw-bold">2</div>
+    <div class="d-fl-center d-w100p d-h64 d-p16 d-fc-green-400 d-fs-300 d-fw-bold">3</div>
   </div>
 </code-well-header>
 
@@ -23,15 +23,15 @@ Use `d-divide-y{n}` to create a divider between an element's child items.
 </div>
 ```
 
-## Horizontal Dividers
+## Horizontal dividers
 
 Use `d-divide-x{n}` to create a divider between an element's child items.
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn102" custom>
   <div class="d-w100p d-fl-col3 d-divide-x d-divide-purple-400">
-    <div class="d-fl-center d-p16 d-fc-purple-500 d-fs24 d-fw-bold">1</div>
-    <div class="d-fl-center d-p16 d-fc-purple-500 d-fs24 d-fw-bold">2</div>
-    <div class="d-fl-center d-p16 d-fc-purple-500 d-fs24 d-fw-bold">3</div>
+    <div class="d-fl-center d-p16 d-fc-purple-500 d-fs-300 d-fw-bold">1</div>
+    <div class="d-fl-center d-p16 d-fc-purple-500 d-fs-300 d-fw-bold">2</div>
+    <div class="d-fl-center d-p16 d-fc-purple-500 d-fs-300 d-fw-bold">3</div>
   </div>
 </code-well-header>
 
@@ -47,16 +47,16 @@ Use `d-divide-x{n}` to create a divider between an element's child items.
 
 Use `d-dco{n}` to change a divider opacity value.
 
-<code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmn102" custom>
-  <div class="d-w100p d-d-flex d-fd-column d-divide-y d-divide-pink-400 d-dco75">
-    <div class="d-fl-center d-p16 d-fc-pink-600 d-fs24 d-fw-bold">1</div>
-    <div class="d-fl-center d-p16 d-fc-pink-600 d-fs24 d-fw-bold">2</div>
-    <div class="d-fl-center d-p16 d-fc-pink-600 d-fs24 d-fw-bold">3</div>
+<code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-magenta-100 d-bgo50 d-w100p d-hmn102" custom>
+  <div class="d-w100p d-d-flex d-fd-column d-divide-y d-divide-magenta-200 d-dco75">
+    <div class="d-fl-center d-p16 d-fc-magenta-400 d-fs-300 d-fw-bold">1</div>
+    <div class="d-fl-center d-p16 d-fc-magenta-400 d-fs-300 d-fw-bold">2</div>
+    <div class="d-fl-center d-p16 d-fc-magenta-400 d-fs-300 d-fw-bold">3</div>
   </div>
 </code-well-header>
 
 ```html
-<div class="d-divide-y1 d-divide-pink-400 d-dco75">
+<div class="d-divide-y1 d-divide-magenta-200 d-dco75">
   <div>1</div>
   <div>2</div>
   <div>3</div>
@@ -74,10 +74,10 @@ Use `d-dco{n}` to change a divider opacity value.
     <template #content>
       <tbody v-for="{ color: c, stops } in colors">
         <tr v-for="{ stop, copy } in stops">
-          <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-divide-{{ c }}-{{ stop }}</th>
+          <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-divide-{{ c }}-{{ stop }}</th>
           <td>
             <div class="d-d-flex d-jc-space-between d-ai-center">
-              <div class="d-fl-grow1 d-ff-mono d-fc-orange d-fs12">
+              <div class="d-fl-grow1 d-ff-mono d-fs-100">
                 --dco: 100%;<br/>
                 border-color: hsla(var(--{{ c }}-{{ stop }}-h) var(--{{ c }}-{{ stop }}-s) var(--{{ c }}-{{ stop }}-l) / var(--dco)) !important;
               </div>

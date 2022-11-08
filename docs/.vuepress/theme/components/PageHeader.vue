@@ -2,29 +2,32 @@
   <section class="theme-default-content d-stack32 d-pb0 d-mb8">
     <slot name="content-top" />
     <header class="d-stack2">
-      <h1
-        v-if="frontmatter.title"
-        class="d-headline42 d-lh6 d-mb8 d-pt16"
-        v-text="frontmatter.title"
-      />
+      <div class="d-d-flex d-ai-center d-gg8" >
+        <h1
+          v-if="frontmatter.title"
+          class="d-lh-200 d-fs-500 d-fw-medium d-mb8"
+          v-text="frontmatter.title"
+        />
+        <span v-if="frontmatter.new" class="d-badge d-badge--purple-500">New</span>
+      </div>
       <p
         v-if="frontmatter.desc"
-        class="d-fs20 d-lh6"
+        class="d-fs-300 d-lh-300 d-wmx80p"
         v-html="frontmatter.desc"
       />
     </header>
     <slot name="content-bottom" />
     <div
-      v-if="path.startsWith('/components')"
+      v-if="path.startsWith('/components') && !frontmatter.no_preview"
       id="preview-header"
       class="d-d-flex d-jc-space-between"
     >
-      <h2 class="d-fs16 d-ba-unset">
+      <h2 class="d-fs-200 d-ba-unset">
         Preview
       </h2>
       <a
         v-if="frontmatter.storybook_url"
-        class="d-link d-fs14"
+        class="d-link d-fs-200"
         :href="frontmatter.storybook_url"
         target="_blank"
         rel="noopener noreferrer"

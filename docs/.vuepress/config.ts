@@ -12,11 +12,12 @@ const { tocPlugin } = require('@vuepress/plugin-toc');
 const themeConfig = {
   logo: baseURL + 'assets/images/dialpad-logo.svg',
   navbar: [
-    {text: 'About', link: '/about/dialtone'},
-    {text: 'Getting Started', link: '/getting-started/installation'},
+    {text: 'Home', link: '/'},
     {text: 'Design', link: '/design/colors/color-palette'},
-    {text: 'Utilities', link: '/utilities/backgrounds/attachment'},
     {text: 'Components', link: '/components/avatar'},
+    {text: 'Utilities', link: '/utilities/backgrounds/attachment'},
+    {text: 'Guides', link: '/guides/getting-started/installation'},
+    {text: 'About', link: '/about/dialtone'},
   ],
   sidebar,
   sidebarDepth: 0,
@@ -67,8 +68,8 @@ export default defineUserConfig({
     ['link', {rel: "apple-touch-icon", sizes: "180x180", href: baseURL + "assets/images/favicons/apple-touch-icon.png"}],
     ['link', {rel: "icon", href: baseURL + "assets/images/favicons/favicon.svg"}],
     ['link', {rel: "manifest", href: baseURL + "assets/images/favicons/site.webmanifest"}],
-    ['link', {rel: "mask-icon", href: baseURL + "assets/images/favicons/safari-pinned-tab.svg", color: "#6C3DFF"}],
-    ['meta', {name: "msapplication-TileColor", content: "#6C3DFF"}],
+    ['link', {rel: "mask-icon", href: baseURL + "assets/images/favicons/safari-pinned-tab.svg", color: "#7C52FF"}],
+    ['meta', {name: "msapplication-TileColor", content: "#7C52FF"}],
     ['meta', {name: "theme-color", content: "#ffffff"}],
 
     // Social
@@ -106,6 +107,7 @@ export default defineUserConfig({
   alias: {
     '@data': resolve(__dirname, '../_data/'), // Needed to import json data.
     '@svgIcons': resolve(__dirname, '../../lib/dist/vue/icons/'), // Needed to easily import svg
+    '@v7Icons': resolve(__dirname, '../../lib/dist/vue/v7/'), // Needed to easily import new icons
     '@theme': resolve(__dirname, './theme'),
     '@exampleComponents': resolve(__dirname, './exampleComponents'),
     '@baseComponents': resolve(__dirname, './baseComponents'),

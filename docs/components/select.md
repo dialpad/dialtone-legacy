@@ -23,37 +23,29 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-select-menu--d
 
 ## Usage
 
-<div class="dialtone-usage">
-  <div class="dialtone-usage__item dialtone-usage__item--do">
-    <h3 class="dialtone-usage__hd dialtone-usage__hd--do"><icon-checkmark /> Use for</h3>
-    <div class="dialtone-usage__bd">
-<Markdown>
-- Use sparingly — only when a user needs to choose from about seven to 15 possible options and you have limited space to display the options.
-</Markdown>
-    </div>
-  </div>
-  <div class="dialtone-usage__item dialtone-usage__item--dont">
-    <h3 class="dialtone-usage__hd dialtone-usage__hd--dont"><icon-close /> Don't use for</h3>
-    <div class="dialtone-usage__bd">
-<Markdown>
+<dialtone-usage>
+<template #do>
+
+- Use sparingly — only when a user needs to choose from about seven to 15 possible options, and you have limited space to display the options.
+</template>
+<template #dont>
+
 - For site navigation.
-- If the list of options is very short. Use [Radio](/components/radio/) instead.
-- If the list of options is very long. Let users type the same information into an [Input](/components/input/) that suggests possible options instead (aka Combobox).
+- If the list of options is very short. Use [Radio](radio.md) instead.
+- If the list of options is very long. Let users type the same information into an [Input](input.md) that suggests possible options instead (aka Combobox).
 - Avoid using the `multiple` attribute. Users often don’t understand how to select multiple items from the select element (e.g. by holding down a modifier key).
-- For selecting an action that takes immediate effect. A `select` is for selecting a choice that is only confirmed by a separate submit action (much like a [Checkbox](/components/checkbox/)). For immediate actions consider the [Dropdown](https://vue.dialpad.design/?path=/story/components-dropdown--default) component.
-</Markdown>
-    </div>
-  </div>
-</div>
+- For selecting an action that takes immediate effect. A `select` is for selecting a choice that is only confirmed by a separate submit action (much like a [Checkbox](checkbox.md)). For immediate actions consider the [Dropdown](dropdown.md) component.
+</template>
+</dialtone-usage>
 
 ### Best practices
 
 - Selects should be considered the “UI of last resort,” as users often find them confusing and difficult to use. Consider testing thoroughly with members of your target audience.
 - Avoid making options in one dropdown menu change based on the input to another. Users often don’t understand how selecting an item in one impacts another.
 - When most users will (or should) pick a particular option, make it the default selection.
-- Avoid auto-submission. Be wary of UI implications of automatically submitting upon selection or applying its value. Users may often change their choices multiple times, particularly if interacting with a form solely with keyboard. Auto-submission is also less accessible. For auto-submission consider the <a href="https://vue.dialpad.design/?path=/story/components-dropdown--default">Dropdown</a> component.
+- Avoid auto-submission. Be wary of UI implications of automatically submitting upon selection or applying its value. Users may often change their choices multiple times, particularly if interacting with a form solely with keyboard. Auto-submission is also less accessible. For auto-submission consider the [Dropdown](dropdown.md) component.
 
-## Variants and Examples
+## Variants and examples
 
 ### Base Styles
 
@@ -350,5 +342,5 @@ We offer different sizes for instances in which the interface requires a smaller
 - Select with validation errors should have `aria-describedby` with the `id` of the validation message.
 
 <script setup>
-  import Markdown from "@baseComponents/Markdown.vue";
+  import DialtoneUsage from '@baseComponents/DialtoneUsage.vue';
 </script>

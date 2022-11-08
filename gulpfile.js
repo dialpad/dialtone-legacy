@@ -6,7 +6,7 @@
 //  ================================================================================
 const settings = {
   clean: true, // Turn on/off clean tasks
-  scripts: false, // Turn on/off script tasks
+  scripts: true, // Turn on/off script tasks
   styles: true, // Turn on/off style tasks
   svgs: true, // Turn on/off SVG tasks
   patterns: true, // Turn on/off SVG Pattern tasks
@@ -65,14 +65,29 @@ const postcssFocusVisible = settings.styles ? require('postcss-focus-visible') :
 const path = settings.svgs ? require('path') : null;
 const svgmin = settings.svgs ? require('gulp-svgmin') : null;
 const replace = settings.svgs ? require('gulp-replace') : null;
+const svgStrokeToFill = settings.svgs ? require('./svg-stroke-to-fill') : null;
+const categories = [
+  'alerts',
+  'arrows',
+  'brand',
+  'communications',
+  'controls',
+  'data',
+  'devices',
+  'editing',
+  'general',
+  'os',
+  'people',
+  'places',
+  'time',
+  'weather',
+];
 
 //  @@ FAVICONS
 // var favicon = settings.favicons ? require('gulp-favicons') : null;
 
 //  @@ BUILD
 const cp = settings.build ? require('child_process') : null;
-
-const PRIMARY_COLOR = '#6c3dff';
 
 //  ================================================================================
 //  @  PATHS
@@ -87,7 +102,7 @@ const paths = {
     libFonts: './dist/fonts/**/*',
   },
   scripts: {
-    input: './lib/build/js/',
+    input: './lib/build/js/**/*.js',
     output: './lib/dist/js/',
   },
   styles: {
@@ -102,6 +117,13 @@ const paths = {
     brandInput: './lib/build/svg/brand/**/*.svg',
     brandOutputLib: './lib/dist/svg/brand/',
     outputVue: './lib/dist/vue/icons/',
+    newInputRoot: './newIcons',
+    newOutputRoot: './lib/build/svg/v7',
+  },
+  version7: {
+    input: './lib/build/svg/v7/**/*.svg',
+    outputLib: './lib/dist/svg/v7/',
+    outputVue: './lib/dist/vue/v7/',
   },
   patterns: {
     input: './lib/build/svg/patterns/**/*.svg',
@@ -171,6 +193,20 @@ const cleanSite = () => {
 //  --  Clean out Fonts
 const cleanFonts = () => {
   return cleanUp([paths.clean.libFonts]);
+};
+
+//  --  Clean out SVGs
+const cleanSVGs = () => {
+  return cleanUp([paths.clean.libSvg]);
+};
+
+const libScripts = function (done) {
+  //  Make sure this feature is activated before running
+  if (!settings.scripts) return done();
+
+  //  Compile library files
+  return src(paths.scripts.input)
+    .pipe(dest(paths.scripts.output));
 };
 
 //  ================================================================================
@@ -263,6 +299,9 @@ const buildSystemSVGs = function (done) {
     .pipe(cache('buildSystemSVGs'))
     .pipe(replace(' fill="none"', ''))
     .pipe(replace(' fill="#000"', ''))
+    .pipe(replace(' fill="#000000"', ''))
+    .pipe(replace(' fill="#0D0C0F"', ''))
+    .pipe(replace(' fill="black"', ''))
     .pipe(replace(' fill="#141721"', ''))
     .pipe(replace('<svg width="24" height="24"', '<svg '))
     .pipe(replace('<svg', function (match) {
@@ -280,29 +319,7 @@ const buildSystemSVGs = function (done) {
       aria-label="${title}"
       class="d-svg d-svg--system d-svg__${converted}"`;
     }))
-    .pipe(svgmin({
-      plugins: [{
-        convertPathData: {
-          transformPrecision: 4,
-        },
-      }, {
-        cleanupNumericValues: {
-          floatPrecision: 2,
-        },
-      }, {
-        collapseGroups: true,
-      }, {
-        removeTitle: true,
-      }, {
-        removeViewBox: false,
-      }, {
-        removeUselessStrokeAndFill: true,
-      }, {
-        removeAttrs: {
-          attrs: ['xmlns'],
-        },
-      }],
-    }))
+    .pipe(svgmin())
     .pipe(dest(paths.svgs.sysOutputLib))
     .pipe(replace('<svg', '<template>\n  <svg'))
     .pipe(replace('</svg>', '</svg>\n</template>'))
@@ -340,25 +357,7 @@ const buildBrandSVGs = function (done) {
       aria-label="${title}"
       class="d-svg d-svg--native d-svg__${converted}"`;
     }))
-    .pipe(svgmin({
-      plugins: [{
-        convertPathData: {
-          transformPrecision: 4,
-        },
-      }, {
-        cleanupNumericValues: {
-          floatPrecision: 2,
-        },
-      }, {
-        collapseGroups: true,
-      }, {
-        removeTitle: true,
-      }, {
-        removeViewBox: false,
-      }, {
-        removeUselessStrokeAndFill: true,
-      }],
-    }))
+    .pipe(svgmin())
     .pipe(dest(paths.svgs.brandOutputLib))
     .pipe(replace('<svg', '<template>\n  <svg'))
     .pipe(replace('</svg>', '</svg>\n</template>'))
@@ -396,25 +395,7 @@ const buildPatternSVGs = function (done) {
       class="d-svg d-svg--pattern d-svg__${converted}"
       xmlns="http://www.w3.org/2000/svg"`;
     }))
-    .pipe(svgmin({
-      plugins: [{
-        convertPathData: {
-          transformPrecision: 4,
-        },
-      }, {
-        cleanupNumericValues: {
-          floatPrecision: 2,
-        },
-      }, {
-        collapseGroups: true,
-      }, {
-        removeTitle: true,
-      }, {
-        removeViewBox: false,
-      }, {
-        removeUselessStrokeAndFill: true,
-      }],
-    }))
+    .pipe(svgmin())
     .pipe(dest(paths.patterns.outputLib))
     .pipe(replace('<svg', '<template>\n  <svg'))
     .pipe(replace('</svg>', '</svg>\n</template>'))
@@ -435,13 +416,9 @@ const buildPatternSVGs = function (done) {
 const buildSpotIllustrationSVGs = function (done) {
   //  Make sure this feature is activated before running
   if (!settings.spot) return done();
-  const strokeRegex = new RegExp(`stroke="${PRIMARY_COLOR}"`, 'gi');
-  const fillRegex = new RegExp(`fill="${PRIMARY_COLOR}"`, 'gi');
   //  Compile system icons
   return src(paths.spot.input)
   // replace any instances of the primary color in SVG with the theme class
-    .pipe(replace(strokeRegex, 'class="d-svg-primary--stroke"'))
-    .pipe(replace(fillRegex, 'class="d-svg-primary--fill"'))
     .pipe(replace('<svg', function (match) {
       const name = path.parse(this.file.path).name;
       const converted = name.toLowerCase().replace(/-(.)/g, function (match, group1) {
@@ -458,25 +435,7 @@ const buildSpotIllustrationSVGs = function (done) {
       class="${converted}"
       xmlns="http://www.w3.org/2000/svg"`;
     }))
-    .pipe(svgmin({
-      plugins: [{
-        convertPathData: {
-          transformPrecision: 4,
-        },
-      }, {
-        cleanupNumericValues: {
-          floatPrecision: 2,
-        },
-      }, {
-        collapseGroups: true,
-      }, {
-        removeTitle: true,
-      }, {
-        removeViewBox: false,
-      }, {
-        removeUselessStrokeAndFill: true,
-      }],
-    }))
+    .pipe(svgmin())
     .pipe(dest(paths.spot.outputLib))
     .pipe(replace('<svg', '<template>\n  <svg'))
     .pipe(replace('</svg>', '</svg>\n</template>'))
@@ -654,6 +613,72 @@ const watchFiles = function (done) {
 };
 
 //  ================================================================================
+//  @@  NEW ICONS BUILD PROCESS
+//  ================================================================================
+const transformStrokeToFill = function (done) {
+  const promises = [];
+
+  categories.forEach(category => {
+    promises
+      .push(
+        svgStrokeToFill
+          .transform(
+              `${paths.svgs.newInputRoot}/${category}/`,
+              `${paths.svgs.newOutputRoot}/${category}/`,
+              { traceResolution: 600, showProgressBar: true },
+          ),
+      );
+  });
+
+  Promise
+    .all(promises)
+    .then(() => done());
+};
+
+const buildNewSVGIcons = function (done) {
+  //  Make sure this feature is activated before running
+  if (!settings.svgs) return done();
+
+  //  Compile icons
+  return src(paths.version7.input)
+    .pipe(replace(' fill="none"', ''))
+    .pipe(replace(' fill="#000"', ' fill="currentColor"'))
+    .pipe(replace(' fill="#000000"', ' fill="currentColor"'))
+    .pipe(replace(' fill="black"', ' fill="currentColor"'))
+    .pipe(replace('width="12" height="12"', ''))
+    .pipe(replace('<svg', function (match) {
+      const name = path.parse(this.file.path).name;
+      const converted = name.toLowerCase().replace(/-(.)/g, function (match, group1) {
+        return group1.toUpperCase();
+      });
+      const title = name
+        .replace(/\b\S/g, t => t.toUpperCase())
+        .replace(/[-]+/g, ' ');
+      return `${match}
+      aria-hidden="true"
+      focusable="false"
+      data-name="${title}"
+      class="d-icon d-icon--${converted}"
+      xmlns="http://www.w3.org/2000/svg"`;
+    }))
+    .pipe(svgmin())
+    .pipe(rename({ dirname: '' }))
+    .pipe(dest(paths.version7.outputLib))
+    .pipe(replace('<svg', '<template>\n  <svg'))
+    .pipe(replace('</svg>', '</svg>\n</template>'))
+  // move any style tags within the svg into style tags of the vue component
+    .pipe(through2.obj(moveStyleTagsToEOF))
+    .pipe(replace('<style>', '<style scoped>'))
+    .pipe(rename(function (file) {
+      file.basename = file.basename
+        .replace(/\b\S/g, t => t.toUpperCase())
+        .replace(/[-]+/g, '');
+      file.extname = '.vue';
+    }))
+    .pipe(dest(paths.version7.outputVue));
+};
+
+//  ================================================================================
 //  @   EXPORT TASKS
 //  ================================================================================
 //  --  BUILD OUT THE SITE BUT DON'T START THE SERVER
@@ -661,6 +686,7 @@ const watchFiles = function (done) {
 exports.clean = series(
   cleanSite,
   cleanFonts,
+  cleanSVGs,
 );
 
 exports.svg = series(
@@ -668,6 +694,7 @@ exports.svg = series(
   buildBrandSVGs,
   buildPatternSVGs,
   buildSpotIllustrationSVGs,
+  buildNewSVGIcons,
 );
 
 // default build task
@@ -676,11 +703,13 @@ exports.default = series(
   webfonts,
   exports.svg,
   libStyles,
+  libScripts,
 );
 
 // tasks are similar to default build when we are watching but there are some
 // differences. We use caching, and do not postprocess/minify for build performance gains. Also set the env
 exports.buildWatch = series(
+  exports.clean,
   webfonts,
   exports.svg,
   libStylesDev,
@@ -713,6 +742,11 @@ exports.docsite = series(
 //  --  CONVERT WEBFONTS
 exports.fonts = series(
   webfonts,
+);
+// NEW ICONS BUILD PROCESS
+exports.icons = series(
+  transformStrokeToFill,
+  buildNewSVGIcons,
 );
 
 //  --  GENERATES ALL DIALPAD / UC FAVICONS

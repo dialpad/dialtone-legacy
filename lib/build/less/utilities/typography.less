@@ -32,13 +32,19 @@
 //  $   FONT FACE
 //      To turn on custom webfonts, set @define-font-face to true.
 //  ----------------------------------------------------------------------------
-#d-internals #font-face(@define-ff-custom, @define-ff-custom-name);
-#d-internals #font-face(@define-ff-custom-italic, @define-ff-custom-name, italic);
-#d-internals #font-face(@define-ff-mono, @define-ff-mono-name);
+#d-internals #font-face(@define-ff-custom-adjusted, @define-ff-custom-adjusted-name, normal, true, 95%);
+#d-internals #font-face(@define-ff-custom-adjusted-italic, @define-ff-custom-adjusted-name, italic, true, 95%);
+#d-internals #font-face(@define-ff-mono, @define-ff-mono-name, normal, true);
 #d-internals #font-face(@define-ff-marketing, @define-ff-marketing-name);
 #d-internals #font-face(@define-ff-marketing-semi-expanded, @define-ff-marketing-semi-expanded-name);
 #d-internals #font-face(@define-ff-marketing-expanded, @define-ff-marketing-expanded-name);
 
+@font-face {
+    font-family: 'Segoe UI Adjusted';
+    src: local(Segoe UI Bold);
+    ascent-override: 90%;
+    font-weight: 700;
+}
 //  ============================================================================
 //  $   FONT FAMILY
 //  ----------------------------------------------------------------------------
@@ -67,34 +73,88 @@ ul {
 }
 
 //  ============================================================================
+//  $   BODY STYLES
+//  ----------------------------------------------------------------------------
+.d-body-base          { line-height: var(--lh-400); font-size: var(--fs-200); }
+.d-body-small         { line-height: var(--lh-300); font-size: var(--fs-100); }
+.d-body-compact       { line-height: var(--lh-300); font-size: var(--fs-200); }
+.d-body-compact-small { line-height: var(--lh-200); font-size: var(--fs-100); }
+
+//  ============================================================================
+//  $   LABEL STYLES
+//  ----------------------------------------------------------------------------
+.d-label-base                { line-height: var(--lh-400); font-size: var(--fs-200); font-weight: var(--fw-semibold); }
+.d-label-small               { line-height: var(--lh-300); font-size: var(--fs-100); font-weight: var(--fw-semibold); }
+.d-label-compact             { line-height: var(--lh-300); font-size: var(--fs-200); font-weight: var(--fw-semibold); }
+.d-label-plain               { line-height: var(--lh-400); font-size: var(--fs-200);                                  }
+.d-label-compact-plain       { line-height: var(--lh-300); font-size: var(--fs-200);                                  }
+.d-label-compact-small       { line-height: var(--lh-200); font-size: var(--fs-100); font-weight: var(--fw-semibold); }
+.d-label-plain-small         { line-height: var(--lh-300); font-size: var(--fs-100);                                  }
+.d-label-compact-plain-small { line-height: var(--lh-200); font-size: var(--fs-100);                                  }
+
+//  ============================================================================
+//  $   HELPER STYLES
+//  ----------------------------------------------------------------------------
+.d-helper-base  { line-height: var(--lh-300); font-size: var(--fs-200); }
+.d-helper-small { line-height: var(--lh-200); font-size: var(--fs-100); }
+
+//  ============================================================================
+//  $   CODE STYLES
+//  ----------------------------------------------------------------------------
+
+.d-code-base  { font-family: var(--ff-mono); line-height: var(--lh-200); font-size: var(--fs-200); }
+.d-code-small { font-family: var(--ff-mono); line-height: var(--lh-200); font-size: var(--fs-100); }
+
+//  ============================================================================
 //  $   FONT SIZE
 //  ----------------------------------------------------------------------------
-.d-fs10 { font-size: var(--fs10) !important; }
-.d-fs11 { font-size: var(--fs11) !important; }
-.d-fs12 { font-size: var(--fs12) !important; }
-.d-fs14 { font-size: var(--fs14) !important; }
-.d-fs16 { font-size: var(--fs16) !important; }
-.d-fs18 { font-size: var(--fs18) !important; }
-.d-fs20 { font-size: var(--fs20) !important; }
-.d-fs24 { font-size: var(--fs24) !important; }
-.d-fs28 { font-size: var(--fs28) !important; }
-.d-fs32 { font-size: var(--fs32) !important; }
-.d-fs36 { font-size: var(--fs36) !important; }
-.d-fs42 { font-size: var(--fs42) !important; }
-.d-fs48 { font-size: var(--fs48) !important; }
-.d-fs54 { font-size: var(--fs54) !important; }
+.d-fs-100 { font-size: var(--fs-100) !important; }
+.d-fs-200 { font-size: var(--fs-200) !important; }
+.d-fs-300 { font-size: var(--fs-300) !important; }
+.d-fs-400 { font-size: var(--fs-400) !important; }
+.d-fs-500 { font-size: var(--fs-500) !important; }
 
-.d-headline10 { .d-fs10(); font-weight: @headline-weight; .d-tt-uppercase(); }
-.d-headline24 { .d-fs24(); font-weight: @headline-weight !important; }
-.d-headline28 { .d-fs28(); font-weight: @headline-weight !important; }
-.d-headline32 { .d-fs32(); font-weight: @headline-weight !important; }
-.d-headline36 { .d-fs36(); font-weight: @headline-weight !important; }
-.d-headline42 { .d-fs42(); font-weight: @headline-weight !important; }
-.d-headline48 { .d-fs48(); font-weight: @headline-weight !important; }
-.d-headline54 { .d-fs54(); font-weight: @headline-weight !important; }
+.d-fs-100-mobile { font-size: var(--fs-100-mobile) !important; }
+.d-fs-200-mobile { font-size: var(--fs-200-mobile) !important; }
+.d-fs-300-mobile { font-size: var(--fs-300-mobile) !important; }
+.d-fs-400-mobile { font-size: var(--fs-400-mobile) !important; }
+.d-fs-500-mobile { font-size: var(--fs-500-mobile) !important; }
+
+.d-fs-100-tc8 { font-size: var(--fs-100-tc8) !important; }
+.d-fs-200-tc8 { font-size: var(--fs-200-tc8) !important; }
+.d-fs-300-tc8 { font-size: var(--fs-300-tc8) !important; }
+.d-fs-400-tc8 { font-size: var(--fs-400-tc8) !important; }
+.d-fs-500-tc8 { font-size: var(--fs-500-tc8) !important; }
+
+.d-fs-100-tv { font-size: var(--fs-100-tv) !important; }
+.d-fs-200-tv { font-size: var(--fs-200-tv) !important; }
+.d-fs-300-tv { font-size: var(--fs-300-tv) !important; }
+.d-fs-400-tv { font-size: var(--fs-400-tv) !important; }
+.d-fs-500-tv { font-size: var(--fs-500-tv) !important; }
+
+.d-headline10 { .d-fs-100(); font-weight: @headline-weight; .d-tt-uppercase(); }
+.d-headline24 { .d-fs-300(); font-weight: @headline-weight !important; }
+.d-headline28 { .d-fs-400(); font-weight: @headline-weight !important; }
+.d-headline32 { .d-fs-400(); font-weight: @headline-weight !important; }
+.d-headline36 { .d-fs-400(); font-weight: @headline-weight !important; }
+.d-headline42 { .d-fs-500(); font-weight: @headline-weight !important; }
+.d-headline48 { .d-fs-500(); font-weight: @headline-weight !important; }
+.d-headline54 { .d-fs-500(); font-weight: @headline-weight !important; }
+
+.d-headline-eyebrow            { line-height: var(--lh-300); font-size: var(--fs-100); font-weight: var(--fw-normal); .d-tt-uppercase(); }
+.d-headline-small              { line-height: var(--lh-300); font-size: var(--fs-100); font-weight: var(--fw-bold); }
+.d-headline-soft-small         { line-height: var(--lh-300); font-size: var(--fs-100); font-weight: var(--fw-medium); }
+.d-headline-medium             { line-height: var(--lh-400); font-size: var(--fs-200); font-weight: var(--fw-bold); }
+.d-headline-compact-small      { line-height: var(--lh-200); font-size: var(--fs-100); font-weight: var(--fw-bold); }
+.d-headline-compact-soft-small { line-height: var(--lh-200); font-size: var(--fs-100); font-weight: var(--fw-medium); }
+.d-headline-compact-base,
+.d-headline-compact-medium     { line-height: var(--lh-300); font-size: var(--fs-200); font-weight: var(--fw-bold); }
+.d-headline-compact-large      { line-height: var(--lh-200); font-size: var(--fs-300); font-weight: var(--fw-bold); }
+.d-headline-large              { line-height: var(--lh-400); font-size: var(--fs-300); font-weight: var(--fw-bold); }
+.d-headline-extra-large        { line-height: var(--lh-200); font-size: var(--fs-400); font-weight: var(--fw-medium); }
+.d-headline-extra-extra-large  { line-height: var(--lh-200); font-size: var(--fs-500); font-weight: var(--fw-medium); }
 
 .d-fs-unset { font-size: unset !important; }
-
 
 //  ============================================================================
 //  $$  FONT STYLE
@@ -107,13 +167,10 @@ ul {
 //  ============================================================================
 //  $$  FONT WEIGHT
 //  ----------------------------------------------------------------------------
-.d-fw-thin { font-weight: var(--fw-thin) !important; }
-.d-fw-light { font-weight: var(--fw-light) !important; }
 .d-fw-normal { font-weight: var(--fw-normal) !important; }
 .d-fw-medium { font-weight: var(--fw-medium) !important; }
 .d-fw-semibold { font-weight: var(--fw-semibold) !important; }
 .d-fw-bold { font-weight: var(--fw-bold) !important; }
-.d-fw-black { font-weight: var(--fw-black) !important; }
 .d-fw-unset { font-weight: unset !important; }
 
 
@@ -130,11 +187,12 @@ ul {
 .d-lh16 { line-height: var(--lh16) !important; }
 .d-lh20 { line-height: var(--lh20) !important; }
 .d-lh24 { line-height: var(--lh24) !important; }
-.d-lh-tighter { line-height: var(--lh-tighter) !important; }
-.d-lh-tight { line-height: var(--lh-tight) !important; }
-.d-lh-normal { line-height: var(--lh-normal) !important; }
-.d-lh-loose { line-height: var(--lh-loose) !important; }
-.d-lh-looser { line-height: var(--lh-looser) !important; }
+.d-lh-100 { line-height: var(--lh-100) !important; }
+.d-lh-200 { line-height: var(--lh-200) !important; }
+.d-lh-300 { line-height: var(--lh-300) !important; }
+.d-lh-400 { line-height: var(--lh-400) !important; }
+.d-lh-500 { line-height: var(--lh-500) !important; }
+.d-lh-600 { line-height: var(--lh-600) !important; }
 .d-lh-unset { line-height: unset !important; }
 
 

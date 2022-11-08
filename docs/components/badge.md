@@ -13,25 +13,17 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-badge--default
 
 ## Usage
 
-<div class="dialtone-usage">
-  <div class="dialtone-usage__item dialtone-usage__item--do">
-    <h3 class="dialtone-usage__hd dialtone-usage__hd--do"><icon-checkmark /> Use for</h3>
-    <div class="dialtone-usage__bd">
-<Markdown>
+<dialtone-usage>
+<template #do>
+
 - To flag and draw awareness to a specific element or feature of focus. For example, something is unique about that separates it from other like content.
 - As a notification system with minimal footprint.
-</Markdown>
-    </div>
-  </div>
-  <div class="dialtone-usage__item dialtone-usage__item--dont">
-    <h3 class="dialtone-usage__hd dialtone-usage__hd--dont"><icon-close /> Don't use for</h3>
-    <div class="dialtone-usage__bd">
-<Markdown>
+</template>
+<template #dont>
+
 - To indicate that interaction by the user is required.
-</Markdown>
-    </div>
-  </div>
-</div>
+</template>
+</dialtone-usage>
 
 ### Best practices
 
@@ -42,7 +34,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-badge--default
 
 - Since a Badge may often reflect a value within an implied label, ensure a label is announced. For example, via `aria-label` or `aria-labeledby`.
 
-## Variants and Examples
+## Variants and examples
 
 <code-well-header>
   <div>
@@ -55,17 +47,17 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-badge--default
 <span class="d-badge d-badge--black-700">...</span>
 <span class="d-badge d-badge--green-400">...</span>
 <span class="d-badge d-badge--orange-400">...</span>
-<span class="d-badge d-badge--pink-300">...</span>
-<span class="d-badge d-badge--pink-500">...</span>
-<span class="d-badge d-badge--pink-600">...</span>
-<span class="d-badge d-badge--pink-700">...</span>
+<span class="d-badge d-badge--magenta-100">...</span>
+<span class="d-badge d-badge--magenta-300">...</span>
+<span class="d-badge d-badge--magenta-400">...</span>
+<span class="d-badge d-badge--magenta-500">...</span>
 <span class="d-badge d-badge--purple-100">...</span>
 <span class="d-badge d-badge--purple-300">...</span>
+<span class="d-badge d-badge--purple-400">...</span>
 <span class="d-badge d-badge--purple-500">...</span>
-<span class="d-badge d-badge--purple-700">...</span>
-<span class="d-badge d-badge--red-500">...</span>
+<span class="d-badge d-badge--red-300">...</span>
 <span class="d-badge d-badge--white">...</span>
-<span class="d-badge d-badge--yellow-300">...</span>
+<span class="d-badge d-badge--gold-200">...</span>
 ```
 
 ## Classes
@@ -74,5 +66,5 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-badge--default
 
 <script setup>
   import { classes } from '@data/badge.json';
-  import Markdown from "@baseComponents/Markdown.vue";
+  import DialtoneUsage from '@baseComponents/DialtoneUsage.vue';
 </script>

@@ -10,7 +10,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-popover--defau
 ## Usage
 
 A Popover contains a dialog that will appear above other content when activated. It will always appear in a location relative to the anchor.
-If you are looking for a dialog that does not display relative to the anchor, see [Modal](components/modal/).
+If you are looking for a dialog that does not display relative to the anchor, see [Modal](modal.md).
 Some common examples of popover usage: dropdown list, emoji picker dialog, add comment dialog.
 A popover can be modal or non-modal. Below are some guidelines on when to use a modal vs non-modal popover.
 
@@ -24,33 +24,25 @@ Your popover should be non-modal when:
 - It is not scrollable.
 - It contains only components that do not hold state (link, button).
 
-<div class="dialtone-usage">
-  <div class="dialtone-usage__item dialtone-usage__item--do">
-    <h3 class="dialtone-usage__hd dialtone-usage__hd--do"><icon-checkmark /> Use for</h3>
-    <div class="dialtone-usage__bd">
-      <ul>
-        <li>Smaller sized dialogs that trigger on user activation of an anchor element.</li>
-        <li>Dialogs that should be positioned relative to the anchor.</li>
-        <li>Dialogs that contain interactive components.</li>
-      </ul>
-    </div>
-  </div>
-  <div class="dialtone-usage__item dialtone-usage__item--dont">
-    <h3 class="dialtone-usage__hd dialtone-usage__hd--dont"><icon-close /> Don't use for</h3>
-    <div class="dialtone-usage__bd">
-      <ul>
-        <li>Content that is displayed on hover. Instead, use a <a href="components/tooltip/">Tooltip</a></li>
-        <li>Dialogs that should be positioned in the center of the screen.</li>
-        <li>Dialogs that are very large.</li>
-        <li>Alerts.</li>
-      </ul>
-    </div>
-  </div>
-</div>
+<dialtone-usage>
+<template #do>
+
+- Smaller sized dialogs that trigger on user activation of an anchor element.
+- Dialogs that should be positioned relative to the anchor.
+- Dialogs that contain interactive components.
+</template>
+<template #dont>
+
+- Content that is displayed on hover. Instead, use a [Tooltip](tooltip.md).
+- Dialogs that should be positioned in the center of the screen.
+- Dialogs that are very large.
+- Alerts.
+</template>
+</dialtone-usage>
 
 ### Best practices
 
-- Popovers should be fairly small. If you are looking for more of a full size dialog solution see <a href="components/modal/">Modal</a>
+- Popovers should be fairly small. If you are looking for more of a full size dialog solution see [Modal](modal.md)
 - Trigger using an anchor element, such as a button.
 - Render the dialog at the body element.
 - Focus the first interactive element within the dialog after it is opened.
@@ -58,7 +50,7 @@ Your popover should be non-modal when:
 - Close non-modal dialogs if they are scrolled out of visibility.
 - Set the z-index of the dialog to var(--zi-modal-element) if modal, var(--zi-popover) if not.
 
-## Variants and Examples
+## Variants and examples
 
 ### Popover - Modal
 
@@ -167,4 +159,5 @@ If your popover is modal, please see the accessibility section of this page rega
 
 <script setup>
   import ExamplePopover from '@exampleComponents/ExamplePopover.vue';
+  import DialtoneUsage from '@baseComponents/DialtoneUsage.vue';
 </script>

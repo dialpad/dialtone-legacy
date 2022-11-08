@@ -11,9 +11,9 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-notice--defaul
 
 ## Usage
 
-A notice delivers informational and assistive messages that inform the user about product or account statuses and related actions. It can suggest an action or dismissed by the user, though neither are required. For time-based notifications, see [Toasts](/components/toasts/).
+A notice delivers informational and assistive messages that inform the user about product or account statuses and related actions. It can suggest an action or dismissed by the user, though neither are required. For time-based notifications, see [Toast](toast.md).
 
-## Variants and Examples
+## Variants and examples
 
 ### Base Styles
 

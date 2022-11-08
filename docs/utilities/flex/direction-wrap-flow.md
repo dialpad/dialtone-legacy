@@ -3,7 +3,7 @@ title: Direction, Wrap, & Flow
 desc: Utilities for setting an object's flex direction, wrap, and flow directions.
 ---
 
-## Flex Direction
+## Flex direction
 
 The `flex-direction` property declares a flex container’s main axis direction. The default value is row.
 
@@ -17,8 +17,8 @@ The `flex-direction` property declares a flex container’s main axis direction.
   </thead>
   <tbody>
     <tr v-for="{ class: className, output, description } in direction">
-      <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-{{ className }}</th>
-      <td class="d-ff-mono d-fc-orange d-fs12">{{ output }}</td>
+      <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-{{ className }}</th>
+      <td class="d-ff-mono d-fs-100">{{ output }}</td>
       <td>{{ description }}</td>
     </tr>
   </tbody>
@@ -26,14 +26,14 @@ The `flex-direction` property declares a flex container’s main axis direction.
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn216">
   <div class="d-d-flex d-fd-row-reverse d-w100p d-bar8 d-bgc-purple-100">
-    <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-purple-500 d-bar4 d-fs24 d-fc-white d-fw-bold">1</div>
-    <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-purple-500 d-bar4 d-fs24 d-fc-white d-fw-bold">2</div>
-    <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-purple-500 d-bar4 d-fs24 d-fc-white d-fw-bold">3</div>
+    <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-purple-500 d-bar4 d-fs-300 d-fc-white d-fw-bold">1</div>
+    <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-purple-500 d-bar4 d-fs-300 d-fc-white d-fw-bold">2</div>
+    <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-purple-500 d-bar4 d-fs-300 d-fc-white d-fw-bold">3</div>
   </div>
   <div class="d-d-flex d-fd-row d-w100p d-mt16 d-bar8 d-bgc-purple-100">
-    <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-purple-500 d-bar4 d-fs24 d-fc-white d-fw-bold">1</div>
-    <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-purple-500 d-bar4 d-fs24 d-fc-white d-fw-bold">2</div>
-    <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-purple-500 d-bar4 d-fs24 d-fc-white d-fw-bold">3</div>
+    <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-purple-500 d-bar4 d-fs-300 d-fc-white d-fw-bold">1</div>
+    <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-purple-500 d-bar4 d-fs-300 d-fc-white d-fw-bold">2</div>
+    <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-purple-500 d-bar4 d-fs-300 d-fc-white d-fw-bold">3</div>
   </div>
 </code-well-header>
 
@@ -50,7 +50,7 @@ The `flex-direction` property declares a flex container’s main axis direction.
 </div>
 ```
 
-## Flex Wrap
+## Flex wrap
 
 The `flex-wrap` property declares a flex container’s wrapping status. The default value is nowrap.
 
@@ -64,18 +64,18 @@ The `flex-wrap` property declares a flex container’s wrapping status. The defa
   </thead>
   <tbody>
     <tr v-for="{ class: className, output, description } in wrap">
-      <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-{{ className }}</th>
-      <td class="d-ff-mono d-fc-orange d-fs12">{{ output }}</td>
+      <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-{{ className }}</th>
+      <td class="d-ff-mono d-fs-100">{{ output }}</td>
       <td>{{ description }}</td>
     </tr>
     </tbody>
 </table>
 
-<code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-pink-100 d-bgo50 d-w100p d-hmn216">
-  <div class="d-d-flex d-fw-wrap d-w100p d-bar8 d-bgc-pink-100">
-    <div class="d-fl-center d-m8 d-p16 d-w25p d-h64 d-bgc-pink-400 d-bar4 d-fs24 d-fw-bold">1</div>
-    <div class="d-fl-center d-m8 d-p16 d-w50p d-h64 d-bgc-pink-400 d-bar4 d-fs24 d-fw-bold">2</div>
-    <div class="d-fl-center d-m8 d-p16 d-w75p d-h64 d-bgc-pink-400 d-bar4 d-fs24 d-fw-bold">3</div>
+<code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-magenta-100 d-bgo50 d-w100p d-hmn216">
+  <div class="d-d-flex d-fw-wrap d-w100p d-bar8 d-bgc-magenta-100">
+    <div class="d-fl-center d-m8 d-p16 d-w25p d-h64 d-bgc-magenta-200 d-bar4 d-fs-300 d-fw-bold">1</div>
+    <div class="d-fl-center d-m8 d-p16 d-w50p d-h64 d-bgc-magenta-200 d-bar4 d-fs-300 d-fw-bold">2</div>
+    <div class="d-fl-center d-m8 d-p16 d-w75p d-h64 d-bgc-magenta-200 d-bar4 d-fs-300 d-fw-bold">3</div>
   </div>
 </code-well-header>
 
@@ -87,7 +87,7 @@ The `flex-wrap` property declares a flex container’s wrapping status. The defa
 </div>
 ```
 
-## Flex Flow
+## Flex flow
 
 The `flex-flow` property is a shorthand property that sets allows you to quickly set the above `flex-direction` and `flex-wrap` properties. By default all flex containers are set to `row` and `nowrap`.
 
@@ -101,8 +101,8 @@ The `flex-flow` property is a shorthand property that sets allows you to quickly
   </thead>
   <tbody>
     <tr v-for="{class: className, output, description} in flow">
-      <th scope="row" class="d-ff-mono d-fc-purple d-fw-normal d-fs12">.d-{{ className }}</th>
-      <td class="d-ff-mono d-fc-orange d-fs12">{{ output }}</td>
+      <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-{{ className }}</th>
+      <td class="d-ff-mono d-fs-100">{{ output }}</td>
       <td>{{ description }}</td>
     </tr>
   </tbody>
@@ -110,9 +110,9 @@ The `flex-flow` property is a shorthand property that sets allows you to quickly
 
 <code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-orange-100 d-bgo50 d-w100p d-hmn216">
   <div class="d-d-flex d-ff-row-reverse-wrap d-w100p d-bar8 d-bgc-orange-100">
-    <div class="d-fl-center d-m8 d-p16 d-w25p d-h64 d-bgc-orange-400 d-bar4 d-fs24 d-fw-bold">1</div>
-    <div class="d-fl-center d-m8 d-p16 d-w50p d-h64 d-bgc-orange-400 d-bar4 d-fs24 d-fw-bold">2</div>
-    <div class="d-fl-center d-m8 d-p16 d-w75p d-h64 d-bgc-orange-400 d-bar4 d-fs24 d-fw-bold">3</div>
+    <div class="d-fl-center d-m8 d-p16 d-w25p d-h64 d-bgc-orange-400 d-bar4 d-fs-300 d-fw-bold">1</div>
+    <div class="d-fl-center d-m8 d-p16 d-w50p d-h64 d-bgc-orange-400 d-bar4 d-fs-300 d-fw-bold">2</div>
+    <div class="d-fl-center d-m8 d-p16 d-w75p d-h64 d-bgc-orange-400 d-bar4 d-fs-300 d-fw-bold">3</div>
   </div>
 </code-well-header>
 

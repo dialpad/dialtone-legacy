@@ -32,11 +32,11 @@
       :class="{ 'd-o0 d-d-none': !isSiteNavOpen }"
       class="
         mobile-header-drop-down-navigation d-ps-fixed d-l0 d-w100p
-        d-bgc-white d-of-auto d-fs24 d-d-flex
+        d-bgc-white d-of-auto d-fs-300 d-d-flex
         d-fd-column d-ai-baseline d-pt24 d-pr16
       "
     >
-      <SidebarItems @click="toggleSiteNav" />
+      <sidebar-items @click="toggleSiteNav" />
     </div>
   </div>
 </template>

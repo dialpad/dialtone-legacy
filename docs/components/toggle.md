@@ -5,7 +5,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-toggle--defaul
 ---
 <code-well-header>
   <div class="d-toggle-group d-d-flex d-ai-center">
-    <example-toggle label="Label"/>
+    <example-toggle label="Label" id="Dialtone-Toggle-Preview"/>
   </div>
 </code-well-header>
 
@@ -13,28 +13,20 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-toggle--defaul
 
 ## Usage
 
-The Toggle component acts as a way to allow the User to switch between two mutually exclusive options. While it technically mirrors a [Checkbox](/components/checkbox/) state, its effect on the system is immediate&mdash;much like a light switch immediately turns on or off the lights. In contrast, the checked state of a [Checkbox](/components/checkbox/) won't be applied until a separate action to confirm the selection is taken.
+The Toggle component acts as a way to allow the User to switch between two mutually exclusive options. While it technically mirrors a [Checkbox](checkbox.md) state, its effect on the system is immediate&mdash;much like a light switch immediately turns on or off the lights. In contrast, the checked state of a [Checkbox](checkbox.md) won't be applied until a separate action to confirm the selection is taken.
 
-<div class="dialtone-usage">
-  <div class="dialtone-usage__item dialtone-usage__item--do">
-    <h3 class="dialtone-usage__hd dialtone-usage__hd--do"><icon-checkmark /> Use for</h3>
-    <div class="dialtone-usage__bd">
-<Markdown>
+<dialtone-usage>
+<template #do>
+
 - When its action has an instantaneous effect.
-</Markdown>
-    </div>
-  </div>
-  <div class="dialtone-usage__item dialtone-usage__item--dont">
-    <h3 class="dialtone-usage__hd dialtone-usage__hd--dont"><icon-close /> Don't use for</h3>
-    <div class="dialtone-usage__bd">
-<Markdown>
+</template>
+<template #dont>
+
 - When its action does not have an immediate effect on the application.
-- Selecting between 2 options. Instead utilize a [Checkbox](/components/checkbox/).
-- As an alternative to a [Checkbox](/components/checkbox/) or [Radio](/components/radio/) within a Form.
-</Markdown>
-    </div>
-  </div>
-</div>
+- Selecting between 2 options. Instead, utilize a [Checkbox](checkbox.md).
+- As an alternative to a [Checkbox](checkbox.md) or [Radio](radio.md) within a Form.
+</template>
+</dialtone-usage>
 
 ### Best practices
 
@@ -44,23 +36,26 @@ The Toggle component acts as a way to allow the User to switch between two mutua
   - Not toggled: all children are not toggled.
   - `indeterminate`: children are a mix of toggled and not toggled.
 
-## Variants and Examples
+## Variants and examples
 
 ### Base Styles
 
 <code-well-header>
   <fieldset class="d-stack8">
     <div class="d-toggle-group d-d-flex d-ai-center">
-      <example-toggle label="Unchecked Toggle"/>
+      <example-toggle label="Unchecked Toggle" id="Dialtone-Toggle1"/>
     </div>
     <div class="d-toggle-group d-d-flex d-ai-center">
-      <example-toggle label="Checked Toggle" checked/>
+      <example-toggle label="Checked Toggle" checked id="Dialtone-Toggle2"/>
     </div>
     <div class="d-toggle-group d-d-flex d-ai-center">
-      <example-toggle label="Unchecked Disabled" disabled/>
+      <example-toggle label="Unchecked Disabled" disabled id="Dialtone-Toggle3"/>
     </div>
     <div class="d-toggle-group d-d-flex d-ai-center">
-      <example-toggle label="Checked Disabled" checked disabled/>
+      <example-toggle label="Checked Disabled" checked disabled id="Dialtone-Toggle4"/>
+    </div>
+    <div class="d-toggle-group d-d-flex d-ai-center">
+      <example-toggle label="Indeterminate Toggle" indeterminate id="Dialtone-Toggle5"/>
     </div>
   </fieldset>
 </code-well-header>
@@ -107,6 +102,54 @@ The Toggle component acts as a way to allow the User to switch between two mutua
       </button>
     </div>
   </div>
+  <div class="d-toggle-group d-d-flex d-ai-center">
+    <div class="d-toggle-copy">
+      <label class="d-toggle-label" for="Dialtone-Toggle5">Indeterminate Toggle</label>
+    </div>
+    <div class="d-toggle-button">
+      <button class="d-toggle d-toggle--indeterminate" type="button" role="checkbox" aria-checked="mixed" id="Dialtone-Toggle5">
+        <span class="d-toggle__inner" />
+      </button>
+    </div>
+  </div>
+</fieldset>
+```
+
+### Sizes
+
+<code-well-header>
+  <fieldset class="d-stack8">
+    <div class="d-toggle-group d-d-flex d-ai-center">
+      <example-toggle label="Small size" size="small" id="Dialtone-Toggle6"/>
+    </div>
+    <div class="d-toggle-group d-d-flex d-ai-center">
+      <example-toggle label="Default size" id="Dialtone-Toggle7"/>
+    </div>
+  </fieldset>
+</code-well-header>
+
+```html
+<fieldset class="d-stack8">
+  <div class="d-toggle-group d-d-flex d-ai-center">
+    <div class="d-toggle-copy">
+      <label class="d-toggle-label" for="Dialtone-Toggle6">Small size</label>
+    </div>
+    <div class="d-toggle-button">
+      <button class="d-toggle d-toggle--small" type="button" role="switch" id="Dialtone-Toggle6" >
+        <span class="d-toggle__inner" />
+      </button>
+    </div>
+  </div>
+  <div class="d-toggle-group d-d-flex d-ai-center">
+    <div class="d-toggle-copy">
+      <label class="d-toggle-label" for="Dialtone-Toggle7">Default size</label>
+    </div>
+    <div class="d-toggle-button">
+      <button class="d-toggle" type="button" role="switch" id="Dialtone-Toggle7" >
+        <span class="d-toggle__inner" />
+      </button>
+    </div>
+  </div>
 </fieldset>
 ```
 
@@ -114,23 +157,23 @@ The Toggle component acts as a way to allow the User to switch between two mutua
 
 <code-well-header>
   <fieldset class="d-stack8 d-w50p">
-    <legend class="d-label d-fs20">DND Settings</legend>
+    <legend class="d-label d-fs-300">DND Settings</legend>
     <div class="d-toggle-wrapper d-d-flex d-fd-column">
       <div class="row d-d-flex d-ai-center d-jc-space-between d-mb12">
         <h3>Status</h3>
         <h3 class="d-mr4">DND</h3>
       </div>
       <div class="row d-d-flex d-ai-center d-jc-space-between d-mb6">
-        <example-toggle label="Acorn Test" />
+        <example-toggle label="Acorn Test" id="Dialtone-Toggle8" />
       </div>
       <div class="row d-d-flex d-ai-center d-jc-space-between d-mb6">
-        <example-toggle label="California Zoo" />
+        <example-toggle label="California Zoo" id="Dialtone-Toggle9" />
       </div>
       <div class="row d-d-flex d-ai-center d-jc-space-between d-mb6">
-        <example-toggle label="Montana Centre" />
+        <example-toggle label="Montana Centre" id="Dialtone-Toggle10" />
       </div>
       <div class="row d-d-flex d-ai-center d-jc-space-between d-mb6">
-        <example-toggle label="Wilson Centre" />
+        <example-toggle label="Wilson Centre" id="Dialtone-Toggle11" />
       </div>
     </div>
   </fieldset>
@@ -138,7 +181,7 @@ The Toggle component acts as a way to allow the User to switch between two mutua
 
 ```html
 <fieldset class="d-stack8 d-w50p">
-  <legend class="d-label d-fs20">DND Settings</legend>
+  <legend class="d-label d-fs-300">DND Settings</legend>
   <div class="d-toggle-wrapper d-d-flex d-fd-column">
     <div class="row d-d-flex d-ai-center d-jc-space-between d-mb12">
       <h3>Status</h3>
@@ -146,40 +189,40 @@ The Toggle component acts as a way to allow the User to switch between two mutua
     </div>
     <div class="row d-d-flex d-ai-center d-jc-space-between d-mb6">
       <div class="d-toggle-copy">
-        <label class="d-toggle-label" for="Dialtone-Toggle5">Acorn Tech</label>
+        <label class="d-toggle-label" for="Dialtone-Toggle8">Acorn Tech</label>
       </div>
       <div class="d-toggle-button">
-        <button class="d-toggle" type="button" role="switch" id="Dialtone-Toggle5" >
+        <button class="d-toggle" type="button" role="switch" id="Dialtone-Toggle8" >
           <span class="d-toggle__inner" />
         </button>
       </div>
     </div>
     <div class="row d-d-flex d-ai-center d-jc-space-between d-mb6">
       <div class="d-toggle-copy">
-        <label class="d-toggle-label" for="Dialtone-Toggle5">California Zoo</label>
+        <label class="d-toggle-label" for="Dialtone-Toggle9">California Zoo</label>
       </div>
       <div class="d-toggle-button">
-        <button class="d-toggle" type="button" role="switch" id="Dialtone-Toggle5" >
+        <button class="d-toggle" type="button" role="switch" id="Dialtone-Toggle9" >
           <span class="d-toggle__inner" />
         </button>
       </div>
     </div>
     <div class="row d-d-flex d-ai-center d-jc-space-between d-mb6">
       <div class="d-toggle-copy">
-        <label class="d-toggle-label" for="Dialtone-Toggle5">Montana Centre</label>
+        <label class="d-toggle-label" for="Dialtone-Toggle10">Montana Centre</label>
       </div>
       <div class="d-toggle-button">
-        <button class="d-toggle" type="button" role="switch" id="Dialtone-Toggle5" >
+        <button class="d-toggle" type="button" role="switch" id="Dialtone-Toggle10" >
           <span class="d-toggle__inner" />
         </button>
       </div>
     </div>
     <div class="row d-d-flex d-ai-center d-jc-space-between d-mb6">
       <div class="d-toggle-copy">
-        <label class="d-toggle-label" for="Dialtone-Toggle5">Wilson Centre</label>
+        <label class="d-toggle-label" for="Dialtone-Toggle11">Wilson Centre</label>
       </div>
       <div class="d-toggle-button">
-        <button class="d-toggle" type="button" role="switch" id="Dialtone-Toggle5" >
+        <button class="d-toggle" type="button" role="switch" id="Dialtone-Toggle11" >
           <span class="d-toggle__inner" />
         </button>
       </div>
@@ -198,9 +241,9 @@ The best accessibility is semantic HTML. Most screen readers understand how to p
 
 - All toggle buttons should have an `id` attribute.
 - Associate toggle labels with their buttons using the `for` attribute. This correlates with the toggle's `id`.
-- If you have a group of related toggles, use a `fieldset` to group them and a `legend` to title the group. For further information, please visit Gov.UK’s article, <a href="https://accessibility.blog.gov.uk/2016/07/22/using-the-fieldset-and-legend-elements/">Using the fieldset and legend elements</a>.
+- If you have a group of related toggles, use a `fieldset` to group them and a `legend` to title the group. For further information, please visit Gov.UK’s article, ["Using the fieldset and legend elements"](https://accessibility.blog.gov.uk/2016/07/22/using-the-fieldset-and-legend-elements).
 
 <script setup>
   import ExampleToggle from '@exampleComponents/ExampleToggle.vue';
-  import Markdown from "@baseComponents/Markdown.vue";
+  import DialtoneUsage from '@baseComponents/DialtoneUsage.vue';
 </script>

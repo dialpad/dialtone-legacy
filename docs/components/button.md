@@ -13,35 +13,47 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-button--defaul
 
 ## Usage
 
-`button` and link (`<a>`) HTML elements each describe a specific intent. Understanding the distinction is important: if it goes somewhere, use a [Link](link.html). If an action occurs, use a Button.
-
-<div class="dialtone-usage">
-  <div class="dialtone-usage__item dialtone-usage__item--do">
-    <h3 class="dialtone-usage__hd dialtone-usage__hd--do"><icon-checkmark /> Use for</h3>
-    <div class="dialtone-usage__bd">
-<Markdown>
-- Conveying that an action that will occur when invoked.
-- To trigger an action or behavior, such as submitting a form or spawning a [Modal](/components/modal.html).
-</Markdown>
-    </div>
-  </div>
-  <div class="dialtone-usage__item dialtone-usage__item--dont">
-    <h3 class="dialtone-usage__hd dialtone-usage__hd--dont"><icon-close /> Don't use for</h3>
-    <div class="dialtone-usage__bd">
-<Markdown>
-- Avoid using to navigate between destinations, deferring to a [Link](/components/link/) instead).
-</Markdown>
-    </div>
-  </div>
-</div>
-
-### Best Practices
-
+- `<button>` and link (`<a>`) HTML elements each describe a specific intent. Understanding the distinction is important: if it goes somewhere, it's a link (`<a>`). If an action occurs, use a Button (`<button>`).
 - Avoid using too many buttons on a page.
-- Use sentence case capitalization for button labels, e.g “Save report”.
+- Set the `type` attribute to define its purpose: `submit`, `button`, or `reset`. Browsers default to `submit` if it isn't defined, and that cannot be assumed as the preferred behavior.
+
+<dialtone-usage>
+<template #do>
+
+- Conveying that an action that will occur when invoked.
+- To trigger an action or behavior, such as submitting a form or spawning a [Modal](modal.md).
+
+</template>
+<template #dont>
+
+- Avoid using to navigate between destinations, deferring to a [Link](link.md) instead).
+
+</template>
+</dialtone-usage>
+
+## Writing guidelines
+
+Button labels should be clear and predictable so users have confidence in their actions.
+
+- Lead with a strong verb and use **verb + noun** structure except for common actions like “Done,” “Close,” “Cancel,” or “OK”
+- Should be sentence case
 - Do not use punctuation
-- Button text should be as short as possible and lead with an action verb.
-- Set the type attribute to define its purpose: submit, button, or reset. Browsers default to submit if it isn't defined, and that cannot be assumed as the preferred behavior.
+- Avoid unnecessary articles such as “the,” “an,” and “a.”
+
+<dialtone-usage>
+<template #do>
+
+- Add number
+- Create menu
+
+</template>
+<template #dont>
+
+- Add Number
+- Create a menu
+
+</template>
+</dialtone-usage>
 
 ## Accessibility
 
@@ -54,11 +66,11 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-button--defaul
   - Add `role="button"` to the `<a>` to allow screenreaders to announce it as a `button`.
   - Attach an event handler to detect Spacebar keypress. Buttons react to both Enter and Spacebar, but Link reacts only to Enter.
 
-## Variants and Examples
+## Variants and examples
 
 Dialtone provides four core button **types**, each with three levels of **importance**.
 
-<table class="d-fs14">
+<table class="d-fs-200">
   <colgroup>
     <col>
     <col class="d-w25p">
@@ -88,13 +100,13 @@ Dialtone provides four core button **types**, each with three levels of **import
         <a href="#base"><strong>Base</strong></a>
         <div class="d-fw-normal">Our default (purple) button colors.</div>
       </th>
-      <td class="d-bgc-black-025 d-ta-center">
+      <td class="d-bgc-black-100 d-ta-center">
         <button class="d-btn" type="button"> <span class="d-btn__label">Place call</span> </button>
       </td>
-      <td class="d-bgc-black-025 d-ta-center">
+      <td class="d-bgc-black-100 d-ta-center">
         <button class="d-btn d-btn--outlined" type="button"> <span class="d-btn__label">Place call</span> </button>
       </td>
-      <td class="d-bgc-black-025 d-ta-center">
+      <td class="d-bgc-black-100 d-ta-center">
         <button class="d-btn d-btn--primary" type="button"> <span class="d-btn__label">Place call</span> </button>
       </td>
     </tr>
@@ -103,13 +115,13 @@ Dialtone provides four core button **types**, each with three levels of **import
         <a href="#danger"><strong>Danger</strong></a>
         <div class="d-fw-normal">Potentially destructive actions.</div>
       </th>
-      <td class="d-bgc-black-025 d-ta-center">
+      <td class="d-bgc-black-100 d-ta-center">
         <button class="d-btn d-btn--danger" type="button"> <span class="d-btn__label">Place call</span> </button>
       </td>
-      <td class="d-bgc-black-025 d-ta-center">
+      <td class="d-bgc-black-100 d-ta-center">
         <button class="d-btn d-btn--outlined d-btn--danger" type="button"> <span class="d-btn__label">Place call</span> </button>
       </td>
-      <td class="d-bgc-black-025 d-ta-center">
+      <td class="d-bgc-black-100 d-ta-center">
         <button class="d-btn d-btn--primary d-btn--danger" type="button"> <span class="d-btn__label">Place call</span> </button>
       </td>
     </tr>
@@ -133,13 +145,13 @@ Dialtone provides four core button **types**, each with three levels of **import
         <a href="#muted"><strong>Muted</strong></a>
         <div class="d-fw-normal">For non-primary actions and contexts where base style may not work.</div>
       </th>
-       <td class="d-bgc-black-025 d-ta-center">
-        <abbr class="d-fc-black-400 d-td-none d-fs12" title="Not applicable">N/A</abbr>
+       <td class="d-bgc-black-100 d-ta-center">
+        <abbr class="d-fc-black-400 d-td-none d-fs-100" title="Not applicable">N/A</abbr>
       </td>
-       <td class="d-bgc-black-025 d-ta-center">
+       <td class="d-bgc-black-100 d-ta-center">
         <button class="d-btn d-btn--muted d-btn--outlined" type="button"> <span class="d-btn__label">Place call</span> </button>
       </td>
-      <td class="d-bgc-black-025 d-ta-center">
+      <td class="d-bgc-black-100 d-ta-center">
         <button class="d-btn d-btn--muted" type="button"> <span class="d-btn__label">Place call</span> </button>
       </td>
     </tr>
@@ -307,7 +319,7 @@ Different button styles and variations appear different when active.
 
 ### Link
 
-Buttons can be styled as a [Link](components/link.html) in situations for which you need the appearance of a link but behavior of a button. Using the `button` element provides a better accessibility experience.
+Buttons can be styled as a [Link](link.md) in situations for which you need the appearance of a link but behavior of a button. Using the `button` element provides a better accessibility experience.
 
 <code-well-header>
   <button type="button" class="d-link">Place call</button>
@@ -539,5 +551,5 @@ The base button font size is 16px and should be used in most cases. Every button
   import IconGoogleGlyph from '@svgIcons/IconGoogleGlyph.vue';
   import IconOffice365 from '@svgIcons/IconOffice365.vue';
   import IconLinkedin from '@svgIcons/IconLinkedin.vue';
-  import Markdown from "@baseComponents/Markdown.vue";
+  import DialtoneUsage from '@baseComponents/DialtoneUsage.vue';
 </script>

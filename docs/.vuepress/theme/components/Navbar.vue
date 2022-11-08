@@ -3,7 +3,7 @@
     class="
     d-ps-sticky d-t0 d-x0 d-d-flex
     d-ai-center d-w100 d-pl8 d-pr12
-    d-h128 d-hmx64 d-bb d-bc-black-100
+    d-h128 d-hmx64 d-bb d-bc-black-200
     d-bgc-white d-zi-navigation"
   >
     <router-link

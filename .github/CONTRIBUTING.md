@@ -73,7 +73,7 @@ All Dialtone classes available to users are prefixed with `d-`.
 .d-stack8 {}
 ```
 
-Note that variables are not classes and do not follow this convention. For example: `@purple-300` or `--primary-color`.
+Note that variables are not classes and do not follow this convention. For example: `@purple-300` (`LESS`) or `var(--su12)` (CSS Custom Property).
 
 #### Utility Classes
 
@@ -204,7 +204,7 @@ Dialtone follows [SemVer](https://semver.org/) for versioning and the commit mes
   - `less/hljs-dialpad.less`: Contains code blocks styling rules.
 - `docs/components`: Contains templates for the "Components" section of the website. (Form inputs, Avatar, Banner etc).
 - `docs/design`: Contains templates for the "Design" section of the website. (Colors, Icons, etc).
-- `docs/getting-started`: Contains templates for the "Getting Started" section of the website. (Installation, Usage).
+- `docs/getting-started`: Contains templates for the "Getting started" section of the website. (Installation, Usage).
 - `docs/utilities`: Contains templates for the "Utilities" section of the website. (Utility classes).
 
 ### Gulp

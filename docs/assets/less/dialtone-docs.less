@@ -89,7 +89,7 @@ span.DocSearch-Button-Keys {
 //      Override search button with dialtone styles
 //  ----------------------------------------------------------------------------
 nav a.router-link-active {
-  font-weight: var(--fw-black);
+  font-weight: var(--fw-bold);
   text-decoration: none;
 }
 //  ============================================================================
@@ -113,7 +113,7 @@ nav a.router-link-active {
   margin-left: var(--su16);
 
   a {
-    font-size: var(--fs12);
+    font-size: var(--fs-100);
   }
 }
 
@@ -126,18 +126,19 @@ nav a.router-link-active {
   display: flex;
   justify-content: flex-start;
   padding: var(--su2) var(--su8);
-  font-size: var(--fs14);
+  font-size: var(--fs-200);
   line-height: var(--lh6);
   text-decoration: none;
   border-radius: var(--br4);
 
   &:hover {
     text-decoration: none;
-    background-color: var(--black-050);
+    color: var(--c-text-accent);
+    // background-color: var(--black-200);
   }
 
   &.active {
-    color: var(--primary-color);
+    color: var(--c-text-accent);
     font-weight: var(--fw-bold);
 
     &::before {
@@ -215,17 +216,17 @@ nav a.router-link-active {
   width: 100%;
   height: 100%;
   padding: var(--su8);
-  background-color: hsl(var(--black-050-h), var(--black-050-s), var(--black-050-l), 0);
+  background-color: hsl(var(--black-200-h), var(--black-200-s), var(--black-200-l), 0);
   border-radius: var(--su8);
   cursor: pointer;
   transition: all 150ms var(--ttf-in-out);
 
   &:hover {
-    background-color: hsl(var(--black-050-h), var(--black-050-s), var(--black-050-l), 0.4);
+    background-color: hsl(var(--black-200-h), var(--black-200-s), var(--black-200-l), 0.4);
   }
 
   .dialtone-icon-card[data-selected='yes'] & {
-    background-color: hsl(var(--black-050-h), var(--black-050-s), var(--black-050-l), 0.4);
+    background-color: hsl(var(--black-200-h), var(--black-200-s), var(--black-200-l), 0.4);
     border: 1px solid var(--black-700);
     box-shadow: var(--bs-md);
   }
@@ -243,8 +244,8 @@ nav a.router-link-active {
   min-height: var(--icon-card-width);
   margin-right: calc(-1 * var(--su1));
   padding: var(--su12) var(--su16);
-  color: var(--black-050);
-  font-size: var(--fs14);
+  color: var(--black-200);
+  font-size: var(--fs-200);
   background-color: var(--black-700);
   border-radius: var(--su8);
   box-shadow: var(--bs-md);
@@ -292,7 +293,7 @@ nav a.router-link-active {
 }
 
 .dialtone-icon-card__list__item {
-  font-size: var(--fs12);
+  font-size: var(--fs-100);
 
   strong {
     display: inline-block;
@@ -324,15 +325,15 @@ nav a.router-link-active {
   margin-top: var(--su0);
   margin-bottom: var(--su4);
   font-weight: var(--fw-bold);
-  font-size: var(--fs16);
-  line-height: var(--lh-tight);
+  font-size: var(--fs-200);
+  line-height: var(--lh-200);
 }
 
 .dialtone-icon-card__subtitle {
   width: 100%;
   margin-bottom: var(--su0);
   overflow: hidden;
-  font-size: var(--fs12);
+  font-size: var(--fs-100);
   line-height: var(--lh-none);
   white-space: nowrap;
   text-align: center;
@@ -341,7 +342,7 @@ nav a.router-link-active {
 
 .dialtone-icon-card__description {
   color: var(--white);
-  font-size: var(--fs12);
+  font-size: var(--fs-100);
 }
 
 
@@ -389,8 +390,8 @@ nav a.router-link-active {
 }
 
 .links {
-  padding-top: 9.6rem;
-  padding-bottom: 9.6rem;
+  padding-top: var(--su96);
+  padding-bottom: var(--su96);
 
   @media (max-width: 640px) {
     display: block !important;
@@ -402,6 +403,25 @@ nav a.router-link-active {
     display: block;
     grid-column: 1 / -1 !important;
     margin-bottom: calc(var(--su64) + var(--su24));
+  }
+}
+
+//  ============================================================================
+//  $   DEFINITION LIST
+//      Style a doc page's <dl>
+//  ----------------------------------------------------------------------------
+
+.dialtone-definition {
+  > dt {
+    margin-top: var(--su16);
+    font-weight: var(--fw-bold);
+  }
+  > dd {
+    margin: 0;
+    max-width: 72ch;
+  }
+  code {
+    font-weight: var(--fw-normal);
   }
 }
 
@@ -427,14 +447,14 @@ nav a.router-link-active {
     display: flex;
     gap: var(--su8);
     align-items: center;
-    font-size: var(--fs16);
+    font-size: var(--fs-200);
 
     &--do {
-      color: var(--green-600);
+      color: var(--green-400);
     }
 
     &--dont {
-      color: var(--red-600);
+      color: var(--red-400);
     }
   }
 
@@ -444,7 +464,7 @@ nav a.router-link-active {
     flex-direction: column;
     gap: var(--su8);
     padding: var(--su16);
-    background-color: var(--black-025);
+    background-color: var(--black-100);
     border-radius: var(--br8);
 
     &--do {
@@ -458,8 +478,7 @@ nav a.router-link-active {
 
   &__bd {
     padding-left: var(--su4);
-    padding-left: var(--su4);
-    font-size: var(--fs14);
+    font-size: var(--fs-200);
 
     > div > ul,
     > ul {
@@ -468,6 +487,10 @@ nav a.router-link-active {
       margin: 0;
       padding: 0;
       list-style: none;
+    }
+    li {
+      font-size: var(--fs-200);
+      line-height: var(--lh-400);
     }
   }
 }
@@ -481,18 +504,25 @@ nav a.router-link-active {
 .dialtone-doc-table {
   thead {
     tr,
- th,
- td {
+    th,
+    th,
+    td {
       border: unset;
+    }
+    [scope="col"]:first-child {
+      padding-left: 0;
     }
   }
 
   tbody {
     th,
- td {
+    td {
       border-right: unset;
       border-bottom: var(--su1) solid var(--table-bc);
       border-left: unset;
+    }
+    [scope="row"] {
+      padding-left: 0;
     }
   }
 }
