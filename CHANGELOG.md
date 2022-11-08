@@ -1,3 +1,25 @@
+## [7.4.1](https://github.com/dialpad/dialtone/compare/v7.4.0...v7.4.1) (2022-11-04)
+
+
+### Bug Fixes
+
+* 'close' icon renamed from 'x' ([#727](https://github.com/dialpad/dialtone/issues/727)) ([0dce440](https://github.com/dialpad/dialtone/commit/0dce440780f6c5b55ab23efd030c35b89e7a47d3))
+* remove redundant `currentColor` from border utilities ([#728](https://github.com/dialpad/dialtone/issues/728)) ([d0ba4ab](https://github.com/dialpad/dialtone/commit/d0ba4abf7826345effe8422483a33625de593a2c))
+
+# [7.4.0](https://github.com/dialpad/dialtone/compare/v7.3.2...v7.4.0) (2022-11-01)
+
+
+### Features
+
+* **toggle:** add small variant and indeterminate state ([#725](https://github.com/dialpad/dialtone/issues/725)) ([5014433](https://github.com/dialpad/dialtone/commit/501443372ce80fd45db8272bcc185c912cdf98d7))
+
+## [7.3.2](https://github.com/dialpad/dialtone/compare/v7.3.1...v7.3.2) (2022-11-01)
+
+
+### Bug Fixes
+
+* missing icons ([#723](https://github.com/dialpad/dialtone/issues/723)) ([9499475](https://github.com/dialpad/dialtone/commit/9499475ecf7e338489522f9f1a044995ff565a9c))
+
 ## [7.3.1](https://github.com/dialpad/dialtone/compare/v7.3.0...v7.3.1) (2022-10-28)
 
 
