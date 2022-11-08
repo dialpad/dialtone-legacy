@@ -345,7 +345,6 @@ nav a.router-link-active {
   font-size: var(--fs-100);
 }
 
-
 //  ============================================================================
 //  $   HOME PAGE
 //      Styles the site's home page
@@ -429,6 +428,98 @@ nav a.router-link-active {
   line-height: var(--lh-300);
   color: var(--fc-secondary);
 }
+
+//  ============================================================================
+//  $   LANDING PAGE WALL
+//      Style the grid of landing page items
+//  ----------------------------------------------------------------------------
+
+.dialtone-wall {
+  & {
+    display: grid;
+    grid-gap: var(--space-500);
+
+    @media screen and (min-width: 640px) {
+      grid-gap: var(--space-600);
+      grid-template-columns: [full-start] repeat(2, [col-start] var(--col-width, minmax(0, 1fr)) [col-end]) [full-end] !important;
+    }
+
+    @media screen and (min-width: 768px) {
+      grid-template-columns: [full-start] repeat(3, [col-start] var(--col-width, minmax(0, 1fr)) [col-end]) [full-end] !important;
+    }
+
+    @media screen and (min-width: 1264px) {
+      margin-top: var(--space-600);
+    }
+  }
+
+  &__item {
+    display: block;
+    border: var(--size-100) solid;
+    border-color: var(--black-300);
+    border-radius: var(--size-400);
+    overflow: hidden;
+
+    &:hover,
+    .theme-default-content &:hover { // overspecific to overcome vuepress aggressive specificity
+      text-decoration: none;
+      box-shadow: var(--bs-sm);
+    }
+  }
+
+  &__image {
+    background-color: var(--black-100);
+    text-align: center;
+  }
+
+  &__thumb {
+    width: auto;
+    height: 96px;
+
+    @media screen and (min-width: 640px) {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__details {
+    padding: var(--space-500);
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: var(--space-400);
+    color: var(--fc-secondary);
+    line-height: var(--lh-400);
+    font-size: var(--fs-300);
+    font-weight: var(--fw-bold);
+  }
+
+  &__title-text {
+    flex: 1;
+  }
+
+  &__description {
+    color: var(--fc-tertiary);
+    line-height: var(--lh-300);
+    font-size: var(--fs-200);
+  }
+
+  @media screen and (min-width: 480px) {
+  }
+  @media screen and (min-width: 640px) {
+  }
+  @media screen and (min-width: 768px) {
+  }
+  @media screen and (min-width: 980px) {
+  }
+  @media screen and (min-width: 1264px) {
+  }
+
+}
+
 //  ============================================================================
 //  $   DEFINITION LIST
 //      Style a doc page's <dl>
@@ -517,7 +608,6 @@ nav a.router-link-active {
     }
   }
 }
-
 
 //  ============================================================================
 //  $   USAGE
