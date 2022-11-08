@@ -11,6 +11,9 @@ module.exports = {
     node: true,
     amd: true,
   },
+  globals: {
+    __VUEPRESS_SSR__: 'readonly',
+  },
   rules: {
     camelcase: ['error', {
       properties: 'never', // Ignore snake_case in JSON properties, which are often params.
@@ -54,7 +57,7 @@ module.exports = {
     'vue/block-tag-newline': ['error'],
     'vue/no-duplicate-attr-inheritance': ['error'],
     'vue/no-undef-components': ['error', {
-      ignorePatterns: ['icon-', 'router-link', 'toc'],
+      ignorePatterns: ['icon-', 'router-link', 'toc', 'dtc-', 'dt-'],
     }],
     'vue/v-on-event-hyphenation': ['error'],
     'vue/no-template-target-blank': ['error'],

@@ -14,6 +14,8 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-radio--default
   </div>
 </code-well-header>
 
+<!-- <component-combinator component-name="DtRadio" /> -->
+
 ## Usage
 
 Radio buttons are a common way to allow users to make a single selection from a list of options. Since only one radio button can be selected at a time (within the same group), each available choice must be its own item and label. Upon selection of a radio item in a group, the group cannot be easily reset to zero selections.

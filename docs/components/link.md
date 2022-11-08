@@ -7,6 +7,8 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-link--default
   <a href="#" class="d-link">Base link</a>
 </code-well-header>
 
+<!-- <component-combinator component-name="DtLink" /> -->
+
 ## Usage
 
 `button` and link (`<a>`) HTML elements each describe a specific intent. Understanding the distinction is important: if it goes somewhere, use a Link. If an action occurs, use a [Button](button.md).
