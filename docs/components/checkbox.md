@@ -14,7 +14,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-checkbox--defa
   </div>
 </code-well-header>
 
-<component-combinator component-name="DtCheckbox" />
+<!-- <component-combinator component-name="DtCheckbox" /> -->
 
 ## Usage
 

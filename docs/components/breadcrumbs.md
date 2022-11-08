@@ -25,7 +25,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-breadcrumbs--d
   </nav>
 </code-well-header>
 
-<component-combinator component-name="DtBreadcrumbs" />
+<!-- <component-combinator component-name="DtBreadcrumbs" /> -->
 
 ## Usage
 

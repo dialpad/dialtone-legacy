@@ -14,7 +14,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-radio--default
   </div>
 </code-well-header>
 
-<component-combinator component-name="DtRadio" />
+<!-- <component-combinator component-name="DtRadio" /> -->
 
 ## Usage
 

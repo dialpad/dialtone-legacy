@@ -7,7 +7,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-notice--defaul
   <example-notice kind="base" role="status" />
 </code-well-header>
 
-<component-combinator component-name="DtNotice" />
+<!-- <component-combinator component-name="DtNotice" /> -->
 
 ## Usage
 

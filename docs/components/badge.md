@@ -9,7 +9,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-badge--default
   </div>
 </code-well-header>
 
-<component-combinator component-name="DtBadge" />
+<!-- <component-combinator component-name="DtBadge" /> -->
 
 ## Usage
 

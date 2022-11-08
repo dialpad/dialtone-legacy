@@ -10,7 +10,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-input--default
   </div>
 </code-well-header>
 
-<component-combinator component-name="DtInput" />
+<!-- <component-combinator component-name="DtInput" /> -->
 
 ## Usage
 

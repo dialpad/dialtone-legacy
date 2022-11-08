@@ -9,7 +9,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-toggle--defaul
   </div>
 </code-well-header>
 
-<component-combinator component-name="DtToggle" />
+<!-- <component-combinator component-name="DtToggle" /> -->
 
 ## Usage
 

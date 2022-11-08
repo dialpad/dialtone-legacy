@@ -7,7 +7,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-link--default
   <a href="#" class="d-link">Base link</a>
 </code-well-header>
 
-<component-combinator component-name="DtLink" />
+<!-- <component-combinator component-name="DtLink" /> -->
 
 ## Usage
 
