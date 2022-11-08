@@ -9,14 +9,11 @@ prev:
 
 <!--
 
-
   Presumably store in each item's front matter (e.g. `avatar.md`):
-
-    * {frontmatter.title}
-    * {frontmatter.thumb}
-    * {frontmatter.desc}
-    * {frontmatter.status} badge (eventually); e.g. "New", "Ready", etc.
-
+  * {frontmatter.title}
+  * {frontmatter.thumb}
+  * {frontmatter.desc}
+  * {frontmatter.status} badge (eventually); e.g. "New", "Ready", etc.
 
 -->
 <div class="dialtone-wall">
