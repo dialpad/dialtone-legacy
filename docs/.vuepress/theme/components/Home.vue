@@ -5,7 +5,7 @@
         <h1 class="d-headline-extra-extra-large d-mb12">
           Improve your UI's reception with Dialtone
         </h1>
-        <p class="d-fs-300 d-lh-400 d-mb16">
+        <p class="d-fs-300 d-lh-400 d-mb16 d-fc-secondary">
           Documented styles, utility classes, and components to help you quickly design
           and build unified experiences across Dialpad and Dialpad Meetings.
         </p>
@@ -59,10 +59,10 @@
         class="d-h96 d-mb24"
         :src="$withBase('/assets/images/home-design.svg')"
       >
-      <h2 class="d-fs-400 d-fw-medium d-mb8 d-baw0">
+      <h2 class="d-headline-extra-large d-mb8 d-baw0">
         Design
       </h2>
-      <p class="d-mb8">
+      <p class="d-mb8 d-body-compact d-fc-secondary">
         Foundational color, iconography, and spacing guidelines
       </p>
       <router-link
@@ -78,16 +78,16 @@
         class="d-h96 d-mb24"
         :src="$withBase('/assets/images/home-components.svg')"
       >
-      <h2 class="d-fs-400 d-fw-medium d-mb8 d-baw0">
+      <h2 class="d-headline-extra-large d-mb8 d-baw0">
         Components
       </h2>
-      <p class="d-mb8">
+      <p class="d-mb8 d-body-compact d-fc-secondary">
         Presentational UI components offered in CSS and Vue
       </p>
       <div class="d-d-inline-flex d-fd-column">
         <router-link
           class="d-link"
-          to="/components/avatar"
+          to="/components/"
         >
           Browse CSS components
         </router-link>
@@ -105,10 +105,10 @@
         class="d-h96 d-mb24"
         :src="$withBase('/assets/images/home-utilities.svg')"
       >
-      <h2 class="d-fs-400 d-fw-medium d-mb8 d-baw0">
+      <h2 class="d-headline-extra-large d-mb8 d-baw0">
         Utilities
       </h2>
-      <p class="d-mb8">
+      <p class="d-mb8 d-body-compact d-fc-secondary">
         Atomic CSS utility classes so you don't have to write custom CSS
       </p>
       <router-link
@@ -124,10 +124,10 @@
         class="d-h96 d-mb24"
         :src="$withBase('/assets/images/home-guides.svg')"
       >
-      <h2 class="d-fs-400 d-fw-medium d-mb8 d-baw0">
+      <h2 class="d-headline-extra-large d-mb8 d-baw0">
         Guides
       </h2>
-      <p class="d-mb8">
+      <p class="d-mb8 d-body-compact d-fc-secondary">
         Reference guidelines for Accessibility, Writing, and more
       </p>
       <div class="d-d-inline-flex d-fd-column">
