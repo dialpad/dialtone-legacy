@@ -1,6 +1,6 @@
 ---
 title: Icon
-desc: The Icon component provides a set of glyphs and sizes to provide context your application.
+desc: An icon is used to visually communicate commands, meaning, status, feedback, or common actions.
 new: true
 no_preview: true
 ---
