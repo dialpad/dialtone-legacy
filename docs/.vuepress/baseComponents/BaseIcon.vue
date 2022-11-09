@@ -1,55 +1,43 @@
 <template>
   <div
     v-if="!hidden"
-    :id="fileName"
+    :id="file"
     class="dialtone-icon-grid__item"
   >
     <aside
       :data-selected="selectedStatus"
       class="dialtone-icon-card js-dialtone-icon-card"
     >
-      <header
-        class="dialtone-icon-card__header js-dialtone-icon-card-copy-area"
-        @keydown.space="$emit('select-icon')"
-        @click="$emit('select-icon')"
-      >
+      <header class="dialtone-icon-card__header js-dialtone-icon-card-copy-area">
         <div :class="cardIconClass">
           <component
             :is="dynamicIconComponent"
-            class="d-icon--size-600"
           />
         </div>
-        <p class="dialtone-icon-card__subtitle d-tt-capitalize d-fc-tertiary">
+        <p class="dialtone-icon-card__subtitle d-tt-capitalize">
           {{ name }}
+          {{ (!isWeatherKind && variation) ? `(${variation})` : '' }}
         </p>
       </header>
       <footer :class="cardFooterClass">
-        <span
-          class="d-tt-capitalize d-mt0 d-mb8 d-fw-semibold d-fs-200 d-lh-100"
-          v-text="name"
-        />
         <div class="dialtone-icon-card__content">
-          <div class="d-d-flex d-fd-column">
-            <p class="d-fs-100 d-d-flex d-gg4">
-              <strong>SVG:</strong>
-              <span class="code-example">{{ `${fileName}.svg` }}</span>
-            </p>
-            <p class="d-fs-100 d-d-flex d-gg4">
-              <strong>Vue:</strong>
-              <span class="code-example">{{ `<dt-icon name="${fileName}" />` }}</span>
-            </p>
-            <p
-              v-if="keywords.length"
-              class="d-fs-100 d-d-flex d-gg4"
+          <h2 class="dialtone-icon-card__title d-tt-capitalize">
+            {{ name }}
+            {{ (!isWeatherKind && variation) ? `(${variation})` : '' }}
+          </h2>
+          <div class="dialtone-icon-card__list">
+            <span class="dialtone-icon-card__list__item">
+              <strong>SVG:</strong> <span class="code-example">{{ `${file}.svg` }}</span>
+            </span>
+            <span class="dialtone-icon-card__list__item">
+              <strong>Vue:</strong> <span class="code-example js-vue-file">{{ `<${vue} />` }}</span>
+            </span>
+            <span
+              v-if="code"
+              class="dialtone-icon-card__list__item"
             >
-              <strong>Keywords:</strong>
-              <span
-                :title="keywords.join(', ')"
-                class="d-truncate"
-              >
-                {{ keywords.join(', ') }}
-              </span>
-            </p>
+              <strong>Codes:</strong> <span class="code-example">{{ code }}</span>
+            </span>
           </div>
           <p class="dialtone-icon-card__description">
             {{ desc }}
@@ -61,20 +49,32 @@
 </template>
 
 <script>
-import * as icons from '@dialpad/dialtone-icons';
+import { defineAsyncComponent } from 'vue';
+
+export const ICON_KINDS = ['brand', 'patterns', 'spot', 'system', 'weather'];
+export const ICON_VARIATIONS = ['dark', 'light', 'night', 'day'];
 
 export default {
   name: 'BaseIcon',
-
   props: {
-    fileName: {
+    name: {
+      type: String,
+      required: true,
+    },
+
+    file: {
       type: String,
       required: true,
     },
 
     desc: {
       type: String,
-      default: null,
+      default: '',
+    },
+
+    code: {
+      type: String,
+      default: '',
     },
 
     hidden: {
@@ -82,52 +82,69 @@ export default {
       default: false,
     },
 
+    vue: {
+      type: String,
+      required: true,
+    },
+
+    kind: {
+      type: String,
+      required: true,
+      validator: (kind) => {
+        return ICON_KINDS.includes(kind);
+      },
+    },
+
     selected: {
       type: Boolean,
       default: false,
     },
 
-    keywords: {
-      type: Array,
-      default: () => [],
+    variation: {
+      type: String,
+      default: null,
+      validator: (_variation) => {
+        if (_variation === null) return true;
+        return ICON_VARIATIONS.includes(_variation);
+      },
     },
   },
 
-  emits: ['select-icon'],
-
   computed: {
+    isWeatherKind () {
+      return this.kind === 'weather';
+    },
+
+    isSpotKind () {
+      return this.kind === 'spot';
+    },
+
     selectedStatus () {
       return this.selected ? 'yes' : 'no';
     },
 
     cardFooterClass () {
-      return 'dialtone-icon-card__footer';
+      return this.isSpotKind ? 'dialtone-icon-card__footer-spot-illustration' : 'dialtone-icon-card__footer';
     },
 
     cardIconClass () {
-      return 'dialtone-icon-card__icon';
+      return this.isSpotKind ? 'dialtone-icon-card__icon--autosize' : 'dialtone-icon-card__icon';
     },
 
     dynamicIconComponent () {
-      return icons[this.vueComponentName];
-    },
-
-    name () {
-      return this.fileName
-        .replaceAll('-', ' ');
-    },
-
-    vueComponentName () {
-      return this.fileName
-        .split('-')
-        .map(word => word[0].toUpperCase() + word.slice(1))
-        .join('');
+      switch (this.kind) {
+        case 'patterns':
+          return defineAsyncComponent(() => import(`../../../lib/dist/vue/patterns/${this.vue}.vue`));
+        case 'spot':
+          return defineAsyncComponent(() => import(`../../../lib/dist/vue/spot/${this.vue}.vue`));
+        default:
+          return defineAsyncComponent(() => import(`../../../lib/dist/vue/icons/${this.vue}.vue`));
+      }
     },
   },
 };
 </script>
-<style scoped lang="less">
-  .code-example {
-    user-select: all;
-  }
+
+<style scoped>
+
 </style>

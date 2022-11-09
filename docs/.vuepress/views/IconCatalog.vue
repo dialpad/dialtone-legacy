@@ -1,8 +1,12 @@
 <template>
   <div class="d-mt8 d-mb16">
     <div class="d-select">
-      <!-- eslint-disable-next-line vuejs-accessibility/form-control-has-label -->
-      <label class="d-vi-visible-sr" for="Dialtone--SelectCategory">Categories</label>
+      <label
+        class="d-vi-visible-sr"
+        for="Dialtone--SelectCategory"
+      >
+        Categories
+      </label>
       <select
         id="Dialtone--SelectCategory"
         v-model="selectedCategory"
@@ -48,7 +52,7 @@
 </template>
 
 <script setup>
-import BaseIcon from '@baseComponents/BaseIcon.vue';
+import BaseIcon from '@baseComponents/BaseV7Icon.vue';
 import { categories } from '@data/icon.json';
 import { computed, ref } from 'vue';
 

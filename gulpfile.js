@@ -724,7 +724,6 @@ exports.buildWatch = series(
 
 // build and run the gulp watch.
 exports.watch = series(
-  exports.clean,
   exports.buildWatch,
   parallel(
     watchFiles,
