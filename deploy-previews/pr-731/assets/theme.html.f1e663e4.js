@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-f6488ed2","path":"/design/colors/theme.html","title":"Theme","lang":"en-US","frontmatter":{"title":"Theme","desc":null,"next":{"text":"Spacing","link":"/design/spacing/spacing-system.html"}},"excerpt":"","headers":[],"git":{"updatedTime":1667955712000},"filePathRelative":"design/colors/theme.md"}');export{e as data};
