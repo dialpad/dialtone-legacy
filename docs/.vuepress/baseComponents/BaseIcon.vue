@@ -16,33 +16,39 @@
         <div :class="cardIconClass">
           <component
             :is="dynamicIconComponent"
+            class="d-icon--size-600"
           />
         </div>
-        <p class="dialtone-icon-card__subtitle d-tt-capitalize d-fc-black-600">
+        <p class="dialtone-icon-card__subtitle d-tt-capitalize d-fc-tertiary">
           {{ name }}
         </p>
       </header>
       <footer :class="cardFooterClass">
         <span
-          class="d-tt-capitalize d-mt0 d-mb16 d-fw-bold d-fs-200 d-lh-200"
+          class="d-tt-capitalize d-mt0 d-mb8 d-fw-semibold d-fs-200 d-lh-100"
           v-text="name"
         />
         <div class="dialtone-icon-card__content">
           <div class="d-d-flex d-fd-column">
-            <p class="d-fs-100 d-d-flex d-jc-space-between">
+            <p class="d-fs-100 d-d-flex d-gg4">
               <strong>SVG:</strong>
               <span class="code-example">{{ `${fileName}.svg` }}</span>
             </p>
-            <p class="d-fs-100 d-d-flex d-jc-space-between">
+            <p class="d-fs-100 d-d-flex d-gg4">
               <strong>Vue:</strong>
               <span class="code-example">{{ `<dt-icon name="${fileName}" />` }}</span>
             </p>
             <p
               v-if="keywords.length"
-              class="d-fs-100 d-d-flex d-jc-space-between"
+              class="d-fs-100 d-d-flex d-gg4"
             >
               <strong>Keywords:</strong>
-              <span>{{ keywords.join(', ') }}</span>
+              <span
+                :title="keywords.join(', ')"
+                class="d-truncate"
+              >
+                {{ keywords.join(', ') }}
+              </span>
             </p>
           </div>
           <p class="dialtone-icon-card__description">
@@ -120,3 +126,8 @@ export default {
   },
 };
 </script>
+<style scoped lang="less">
+  .code-example {
+    user-select: all;
+  }
+</style>

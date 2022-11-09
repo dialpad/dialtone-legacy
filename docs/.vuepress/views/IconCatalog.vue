@@ -1,47 +1,48 @@
 <template>
-  <div class="d-select d-mb4">
-    <!-- eslint-disable-next-line vuejs-accessibility/form-control-has-label -->
-    <select
-      id="Dialtone--SelectCategory"
-      v-model="selectedCategory"
-      class="d-select__input d-tt-capitalize"
-    >
-      <option
-        value="all"
-        selected
+  <div class="d-mt8 d-mb16">
+    <div class="d-select">
+      <!-- eslint-disable-next-line vuejs-accessibility/form-control-has-label -->
+      <label class="d-vi-visible-sr" for="Dialtone--SelectCategory">Categories</label>
+      <select
+        id="Dialtone--SelectCategory"
+        v-model="selectedCategory"
+        class="d-select__input d-tt-capitalize"
       >
-        All categories
-      </option>
-      <option
-        v-for="category in categoriesList"
-        :key="category"
-        :value="category"
-      >
-        {{ category }}
-      </option>
-    </select>
+        <option
+          value="all"
+          selected
+        >
+          All categories
+        </option>
+        <option
+          v-for="category in categoriesList"
+          :key="category"
+          :value="category"
+        >
+          {{ category }}
+        </option>
+      </select>
+    </div>
   </div>
-  <div class="d-mt8 d-ba d-bar8 d-p12 d-bc-black-300">
-    <div
-      v-for="(icons, category) in iconsList"
-      :key="category"
-      class="d-mb12"
-    >
-      <span
-        v-if="selectedCategory === 'all' "
-        class="d-fw-bold d-tt-capitalize"
-        v-text="category"
+  <div
+    v-for="(icons, category) in iconsList"
+    :key="category"
+    class="d-mb16"
+  >
+    <span
+      v-if="selectedCategory === 'all' "
+      class="d-headline-medium d-tt-capitalize"
+      v-text="category"
+    />
+    <div class="d-gl-docsite-icons">
+      <base-icon
+        v-for="(keywords, icon, index) in icons"
+        :key="`${category}-${index}`"
+        :file-name="icon"
+        :keywords="keywords"
+        :selected="selectedIcon === `${category}-${index}`"
+        @select-icon="selectIcon(`${category}-${index}`)"
       />
-      <div class="d-gl-docsite-icons">
-        <base-icon
-          v-for="(keywords, icon, index) in icons"
-          :key="`${category}-${index}`"
-          :file-name="icon"
-          :keywords="keywords"
-          :selected="selectedIcon === `${category}-${index}`"
-          @select-icon="selectIcon(`${category}-${index}`)"
-        />
-      </div>
     </div>
   </div>
 </template>
