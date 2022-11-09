@@ -14,6 +14,8 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-checkbox--defa
   </div>
 </code-well-header>
 
+<!-- <component-combinator component-name="DtCheckbox" /> -->
+
 ## Usage
 
 Checkboxes are an easily understandable way to indicate that users can select one or more answers to a question or items from a list. They visibly show users what’s been selected and makes it easy for them to “uncheck” an option, which can be difficult with other selection methods on a form (such as radio buttons or select menus).
