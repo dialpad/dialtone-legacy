@@ -7,12 +7,19 @@ no_preview: true
 
 <aside class="d-notice d-notice--info d-mt24 d-wmx100p" role="status" aria-hidden="false">
   <div class="d-notice__icon">
-    <svg aria-hidden="true" focusable="false" data-name="Info" class="d-icon d-icon--info" viewBox="0 0 12 12"><g clip-path="url(#a)"><path fill="currentColor" fill-rule="evenodd" d="M6 1.5a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 0-9ZM.5 6a5.5 5.5 0 1 1 11 0 5.5 5.5 0 0 1-11 0Zm5-2a.5.5 0 0 1 .5-.5h.005a.5.5 0 0 1 0 1H6a.5.5 0 0 1-.5-.5ZM6 5.5a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Z" clip-rule="evenodd"/></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h12v12H0z"/></clipPath></defs></svg>
+    <icon-info></icon-info>
   </div>
   <div class="d-notice__content d-stack4">
     <h2 class="d-notice__title">Looking for the previous icon set?</h2>
     <p class="d-notice__message">
-      <router-link class="d-link" to="/design/icons/system.html">Documentation for the deprecated icon set</router-link> will remain available until this new icon is more fully adopted.
+      Check
+      <a
+        href="https://dialpad.design/version6/design/icons/system.html"
+        class="d-link"
+        target="_blank"
+      >
+       documentation for the deprecated icon set
+      </a>.
     </p>
   </div>
 </aside>
@@ -73,6 +80,7 @@ no_preview: true
 </table>
 
 <script setup>
+    import IconInfo from '@v7Icons/Info.vue';
     import IconCatalog from "@views/IconCatalog.vue";
     import InboxIcon from '@v7Icons/Inbox.vue';
     import { sizes } from '@data/icon.json';

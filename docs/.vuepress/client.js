@@ -40,7 +40,7 @@ export default defineClientConfig({
     app.component('IconSizesTable', IconSizesTable);
     app.component('ComponentAccessibleTable', ComponentAccessibleTable);
 
-    // Common iconsw
+    // Common icons
     app.component('IconInfo', IconInfo);
     app.component('IconPhone', IconPhone);
     app.component('IconLightbulb', IconLightbulb);

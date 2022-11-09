@@ -1,12 +1,9 @@
 ---
 title: Theme
 desc:
-prev:
-  text: Color palette
-  link: /design/colors/color-palette.html
 next:
-  text: Brand icons
-  link: /design/icons/brand.html
+  text: Spacing
+  link: /design/spacing/spacing-system.html
 ---
 
 <table class="d-table dialtone-doc-table d-mt16">
