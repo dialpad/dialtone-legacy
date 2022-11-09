@@ -12,14 +12,7 @@ no_preview: true
   <div class="d-notice__content d-stack4">
     <h2 class="d-notice__title">Looking for the previous icon set?</h2>
     <p class="d-notice__message">
-      Check
-      <a
-        href="https://dialpad.design/version6/design/icons/system.html"
-        class="d-link"
-        target="_blank"
-      >
-       documentation for the deprecated icon set
-      </a>.
+      <router-link class="d-link" to="/design/icons/system.html">Documentation for the deprecated icon set</router-link> will remain available until this new icon is more fully adopted.
     </p>
   </div>
 </aside>
@@ -80,8 +73,8 @@ no_preview: true
 </table>
 
 <script setup>
-    import IconInfo from '@v7Icons/Info.vue';
     import IconCatalog from "@views/IconCatalog.vue";
     import InboxIcon from '@v7Icons/Inbox.vue';
+    import IconInfo from '@v7Icons/Info.vue';
     import { sizes } from '@data/icon.json';
 </script>
