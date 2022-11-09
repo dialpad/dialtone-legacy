@@ -8,28 +8,42 @@
       :data-selected="selectedStatus"
       class="dialtone-icon-card js-dialtone-icon-card"
     >
-      <header class="dialtone-icon-card__header js-dialtone-icon-card-copy-area">
+      <header
+        class="dialtone-icon-card__header js-dialtone-icon-card-copy-area"
+        @keydown.space="$emit('select-icon')"
+        @click="$emit('select-icon')"
+      >
         <div :class="cardIconClass">
           <component
             :is="dynamicIconComponent"
           />
         </div>
-        <p class="dialtone-icon-card__subtitle d-tt-capitalize">
+        <p class="dialtone-icon-card__subtitle d-tt-capitalize d-fc-black-600">
           {{ name }}
         </p>
       </header>
       <footer :class="cardFooterClass">
+        <span
+          class="d-tt-capitalize d-mt0 d-mb16 d-fw-bold d-fs-200 d-lh-200"
+          v-text="name"
+        />
         <div class="dialtone-icon-card__content">
-          <h2 class="dialtone-icon-card__title d-tt-capitalize">
-            {{ name }}
-          </h2>
-          <div class="dialtone-icon-card__list">
-            <span class="dialtone-icon-card__list__item">
-              <strong>SVG:</strong> <span class="code-example">{{ `${fileName}.svg` }}</span>
-            </span>
-            <span class="dialtone-icon-card__list__item">
-              <strong>Vue:</strong> <span class="code-example js-vue-file">{{ `<${vueComponentName} />` }}</span>
-            </span>
+          <div class="d-d-flex d-fd-column">
+            <p class="d-fs-100 d-d-flex d-jc-space-between">
+              <strong>SVG:</strong>
+              <span class="code-example">{{ `${fileName}.svg` }}</span>
+            </p>
+            <p class="d-fs-100 d-d-flex d-jc-space-between">
+              <strong>Vue:</strong>
+              <span class="code-example">{{ `<dt-icon name="${fileName}" />` }}</span>
+            </p>
+            <p
+              v-if="keywords.length"
+              class="d-fs-100 d-d-flex d-jc-space-between"
+            >
+              <strong>Keywords:</strong>
+              <span>{{ keywords.join(', ') }}</span>
+            </p>
           </div>
           <p class="dialtone-icon-card__description">
             {{ desc }}
@@ -72,6 +86,8 @@ export default {
       default: () => [],
     },
   },
+
+  emits: ['select-icon'],
 
   computed: {
     selectedStatus () {
