@@ -102,8 +102,9 @@ export default {
 
     variation: {
       type: String,
-      required: true,
+      default: null,
       validator: (_variation) => {
+        if (_variation === null) return true;
         return ICON_VARIATIONS.includes(_variation);
       },
     },
@@ -136,8 +137,6 @@ export default {
           return defineAsyncComponent(() => import(`../../../lib/dist/vue/patterns/${this.vue}.vue`));
         case 'spot':
           return defineAsyncComponent(() => import(`../../../lib/dist/vue/spot/${this.vue}.vue`));
-        case 'version7':
-          return defineAsyncComponent(() => import(`../../../lib/dist/vue/v7/${this.vue}.vue`));
         default:
           return defineAsyncComponent(() => import(`../../../lib/dist/vue/icons/${this.vue}.vue`));
       }
