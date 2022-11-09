@@ -41,10 +41,11 @@
 </template>
 
 <script>
-import { defineAsyncComponent } from 'vue';
+import * as icons from '@dialpad/dialtone-icons';
 
 export default {
   name: 'BaseIcon',
+
   props: {
     fileName: {
       type: String,
@@ -86,8 +87,7 @@ export default {
     },
 
     dynamicIconComponent () {
-      console.log(this.vueComponentName, this.keywords);
-      return defineAsyncComponent(() => import(`../../../lib/dist/vue/v7/${this.vueComponentName}.vue`));
+      return icons[this.vueComponentName];
     },
 
     name () {
