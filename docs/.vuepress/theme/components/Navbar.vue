@@ -37,9 +37,11 @@
           alt="GitHub repo"
           class="d-btn d-btn--muted d-tooltip--hover"
           href="https://github.com/dialpad/dialtone"
+          target="_blank"
+          rel="noreferrer noopener"
         >
           <img
-            class="d-svg--size20"
+            class="d-icon d-icon--size-400"
             alt="Github icon"
             :src="$withBase('/assets/images/github-icon.svg')"
           >
@@ -51,9 +53,11 @@
           alt="Codepen Template"
           class="d-btn d-btn--muted d-tooltip--hover"
           href="https://codepen.io/pen/?template=BajJpwW"
+          target="_blank"
+          rel="noreferrer noopener"
         >
           <img
-            class="d-svg--size20"
+            class="d-icon d-icon--size-400"
             alt="Github icon"
             :src="$withBase('/assets/images/codepen-icon.svg')"
           >
@@ -66,7 +70,7 @@
               class="d-btn d-btn--muted d-btn--sm d-tooltip--hover js-theme-switcher"
               title="Toggle dark and light modes"
             >
-            {% iconSystem "invert-colors", "d-svg--size20" %}
+            {% iconSystem "invert-colors", "d-icon--size-400" %}
             <div class="d-tooltip d-tooltip__arrow--top-center d-ps-absolute d-w128">
                 Toggle between dark and light color modes
             </div>
@@ -122,6 +126,7 @@ function initialize () {
     convertSearchToDialtone();
   });
 }
+
 function convertSearchToDialtone () {
   const DocSearchBtn = searchBtn.value.children.item(0);
   const searchString = document.createElement('span');
@@ -130,18 +135,13 @@ function convertSearchToDialtone () {
 
   const searchIcon = document.createElement('span');
   searchIcon.className = 'd-btn__icon d-btn__icon--left';
-  searchIcon.innerHTML = '' +
-        '<svg aria-hidden="true" aria-label="Search" class="d-svg d-svg--system d-svg__search" viewBox="0 0 24 24">\n' +
-          '<path clip-rule="evenodd" d="M15.732 14.318h-.741l-.263-.253a6.095 6.095 0 001.389-5.009c-.441-2.607-2.' +
-          '619-4.69-5.246-5.009a6.103 6.103 0 00-6.823 6.82c.319 2.626 2.402 4.802 5.011 5.243a6.103 6.103 0 005.' +
-          '012-1.388l.253.262v.741l3.989 3.987a.992.992 0 001.398 0 .99.99 0 000-1.398l-3.979-3.996zm-5.631 0a4.217 ' +
-          '4.217 0 01-4.223-4.22A4.216 4.216 0 0110.1 5.876a4.216 4.216 0 014.223 4.22 4.216 4.216 0 01-4.223 4.221z"' +
-          'fill-rule="evenodd" />\n' +
-        '</svg>';
+  // eslint-disable-next-line max-len
+  searchIcon.innerHTML = '<svg aria-hidden="true" focusable="false" data-name="Search" class="d-icon d-icon--search d-icon--size-200" viewBox="0 0 12 12"><path fill="currentColor" fill-rule="evenodd" d="M5.5 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7ZM1 5.5a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0Z" clip-rule="evenodd"/><path fill="currentColor" fill-rule="evenodd" d="M7.972 7.972a.5.5 0 0 1 .707 0l2.175 2.174a.5.5 0 1 1-.707.708L7.972 8.679a.5.5 0 0 1 0-.707Z" clip-rule="evenodd"/></svg>';
 
   DocSearchBtn.appendChild(searchString);
   DocSearchBtn.appendChild(searchIcon);
 }
+
 function isActive (text) {
   const linkBase = text.toLowerCase().replace(' ', '-');
   if (currentPath.value.search(linkBase) !== -1) {
@@ -151,6 +151,7 @@ function isActive (text) {
     return false;
   }
 }
+
 function openSearch () {
   const DocSearchBtn = searchBtn.value.children.item(0);
   DocSearchBtn.click();

@@ -166,6 +166,10 @@ New Color Ramp
 
 ---
 
+### Icon updates:
+
+- Deprecated .d-svg class
+
 ## Migration Steps
 
 Follow steps in this exact order.
@@ -479,3 +483,32 @@ Search for | Replace with
 `var(--lh-normal)`  | `var(--lh-300)`
 `var(--lh-loose)`   | `var(--lh-400)`
 `var(--lh-looser)`  | `var(--lh-500)`
+
+### Icons
+
+#### Replace icons with dialtone-vue icon component if possible
+
+Replace any custom usage of icon component with <dt-icon name="icon-name" size="icon-size" />
+Do a search in [Icon docs](https://dialpad.design/components/icon.html) to find an icon that matches your needs.
+For icon component documentation on props (naming and sizing), check 
+[Dialtone Vue - Icon component](https://vue.dialpad.design/?path=/story/components-icon--default)
+
+#### Update Icon contextual sizing with fixed
+
+Some `svgs` are sized with `d-svg--sizeX` this are direct mappings that work in most of the cases.
+After replacing make sure the updated icon includes `d-icon` class too and that it looks correct.
+
+Search for | Replace with
+:-:|:-:
+`d-svg--size14` | `d-icon--size-100`
+`d-svg--size16` | `d-icon--size-200`
+`d-svg--size18` | `d-icon--size-300`
+`d-svg--size20` | `d-icon--size-400`
+`d-svg--size24` | `d-icon--size-500`
+`d-svg--size32` | `d-icon--size-600`
+`d-svg--size48` | `d-icon--size-700`
+`d-svg--size64` | `d-icon--size-800`
+
+Remove any usage of `d-svg` and `d-svg--*`.
+
+**Consult your Product Designer if anything looks off after the update.**
