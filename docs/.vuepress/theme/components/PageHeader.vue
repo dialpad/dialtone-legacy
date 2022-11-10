@@ -11,9 +11,7 @@
         <span
           v-if="frontmatter.new"
           class="d-badge d-badge--purple-500"
-        >
-          New
-        </span>
+        >New</span>
       </div>
       <p
         v-if="frontmatter.desc"
