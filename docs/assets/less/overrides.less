@@ -88,6 +88,7 @@ samp {
     font-size: var(--fs-100) !important;
     text-transform: uppercase;
     font-weight: var(--fw-semibold) !important;
+    color: var(--fc-secondary);
   }
 }
 
@@ -106,8 +107,27 @@ samp {
   }
 }
 
+p.sidebar-item:not(.sidebar-heading) {
+  // TODO hack until we have a custom method for tagging planned or otherwise inactive nav items
+  color: var(--fc-disabled);
+  cursor: text;
+
+  &:after {
+    content: 'planned';
+    background: var(--black-200);
+    border-radius: var(--br-pill);
+    color: var(--fc-secondary);
+    font-size: 1.1rem;
+    font-weight: var(--n-font-weight-heading);
+    text-transform: uppercase;
+    margin-left: var(--su4);
+    padding: var(--su2) var(--su6);
+    line-height: 1;
+  }
+}
+
 .sidebar-item-children {
-  margin-bottom: var(--su8) !important;
+  margin-bottom: var(--su16) !important;
 }
 
 .theme-default-content:not(.custom) > div:not([class]),
@@ -132,15 +152,14 @@ samp {
     font-size: var(--fs-400);
   }
 
-  > h2,
-  > h3 {
+  > h2 {
     margin-top: calc(0.5rem - var(--navbar-height) + var(--su48));
     padding-top: calc(1rem + var(--navbar-height));
     font-weight: var(--fw-bold);
   }
 
   > h3 {
-    margin-top: 1em;
+    margin-top: 1.25em;
     font-size: var(--fs-300);
   }
 

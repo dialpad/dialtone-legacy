@@ -423,7 +423,7 @@ nav a.router-link-active {
 //  ----------------------------------------------------------------------------
 
 .dialtone-intro {
-  max-width: 62ch;
+  max-width: 58ch;
   font-size: var(--fs-300);
   line-height: var(--lh-300);
   color: var(--fc-secondary);
@@ -460,8 +460,12 @@ nav a.router-link-active {
     border-radius: var(--size-400);
     overflow: hidden;
 
-    &:hover,
-    .theme-default-content &:hover { // overspecific to overcome vuepress aggressive specificity
+    &--disabled {
+      opacity: .7;
+    }
+
+    &:not(.dialtone-wall__item--disabled):hover,
+    .theme-default-content &:not(.dialtone-wall__item--disabled):hover { // overspecific to overcome vuepress aggressive specificity
       text-decoration: none;
       box-shadow: var(--bs-sm);
     }
