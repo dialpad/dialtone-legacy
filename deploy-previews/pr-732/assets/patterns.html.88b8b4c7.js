@@ -1,0 +1,1 @@
+import{_ as a,r as n,o as r,c as s,d as e,a as o}from"./app.d36c32b6.js";const c={};function i(l,_){const t=n("icons");return r(),s("div",null,[e(t,{kind:"patterns",variation:"dark",title:"Dark Patterns"}),o(),e(t,{kind:"patterns",variation:"light",class:"d-mt64",title:"Light Patterns"})])}var p=a(c,[["render",i],["__file","patterns.html.vue"]]);export{p as default};
