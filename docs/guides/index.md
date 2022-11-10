@@ -9,6 +9,7 @@ prev:
 
 <div class="dialtone-wall">
   <router-link class="dialtone-wall__item" to="/guides/getting-started/">
+    <div class="dialtone-wall__image"><img class="dialtone-wall__thumb" alt="" :src="$withBase('/assets/images/components/input-group.png')"></div>
     <div class="dialtone-wall__details">
       <div class="dialtone-wall__title">
         <span class="dialtone-wall__title-text">Getting started</span>
@@ -17,6 +18,7 @@ prev:
     </div>
   </router-link>
   <router-link class="dialtone-wall__item" to="/guides/content/">
+    <div class="dialtone-wall__image"><img class="dialtone-wall__thumb" alt="" :src="$withBase('/assets/images/components/input-group.png')"></div>
     <div class="dialtone-wall__details">
       <div class="dialtone-wall__title">
         <span class="dialtone-wall__title-text">Writing guidelines</span>
@@ -25,6 +27,7 @@ prev:
     </div>
   </router-link>
   <router-link class="dialtone-wall__item" to="/guides/accessibility/">
+    <div class="dialtone-wall__image"><img class="dialtone-wall__thumb" alt="" :src="$withBase('/assets/images/components/input-group.png')"></div>
     <div class="dialtone-wall__details">
       <div class="dialtone-wall__title">
         <span class="dialtone-wall__title-text">Accessibility</span>
