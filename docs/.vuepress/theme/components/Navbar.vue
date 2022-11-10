@@ -51,6 +51,8 @@
           alt="Codepen Template"
           class="d-btn d-btn--muted d-tooltip--hover"
           href="https://codepen.io/pen/?template=BajJpwW"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <img
             class="d-svg--size20"
