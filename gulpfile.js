@@ -97,7 +97,7 @@ const paths = {
   clean: {
     libCss: './lib/dist/css/**/*',
     libSvg: './lib/dist/svg/**/*',
-    libVue: './lib/dist/vue/**/*',
+    libVueIcons: './lib/dist/vue/**/*',
     libFavicons: './lib/dist/favicons/**/*',
     libFonts: './dist/fonts/**/*',
   },
@@ -198,6 +198,11 @@ const cleanFonts = () => {
 //  --  Clean out SVGs
 const cleanSVGs = () => {
   return cleanUp([paths.clean.libSvg]);
+};
+
+//  --  Clean out Vue icons
+const cleanVueIcons = () => {
+  return cleanUp([paths.clean.libVueIcons]);
 };
 
 const libScripts = function (done) {
@@ -653,7 +658,7 @@ const buildNewSVGIcons = function (done) {
       });
       const title = name
         .replace(/\b\S/g, t => t.toUpperCase())
-        .replace(/[-]+/g, ' ');
+        .replace(/-+/g, ' ');
       return `${match}
       aria-hidden="true"
       focusable="false"
@@ -672,7 +677,7 @@ const buildNewSVGIcons = function (done) {
     .pipe(rename(function (file) {
       file.basename = file.basename
         .replace(/\b\S/g, t => t.toUpperCase())
-        .replace(/[-]+/g, '');
+        .replace(/-+/g, '');
       file.extname = '.vue';
     }))
     .pipe(dest(paths.version7.outputVue));
@@ -687,6 +692,7 @@ exports.clean = series(
   cleanSite,
   cleanFonts,
   cleanSVGs,
+  cleanVueIcons,
 );
 
 exports.svg = series(
@@ -718,7 +724,6 @@ exports.buildWatch = series(
 
 // build and run the gulp watch.
 exports.watch = series(
-  exports.clean,
   exports.buildWatch,
   parallel(
     watchFiles,

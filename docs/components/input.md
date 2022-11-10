@@ -10,6 +10,8 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-input--default
   </div>
 </code-well-header>
 
+<!-- <component-combinator component-name="DtInput" /> -->
+
 ## Usage
 
 This component combines both the `input` and `textarea` elements as options within a single component. Its default presentation includes a paired text `label`.

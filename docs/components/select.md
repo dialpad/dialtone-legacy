@@ -19,6 +19,8 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-select-menu--d
   </div>
 </code-well-header>
 
+<!-- <component-combinator component-name="DtSelectMenu" /> -->
+
 ## Usage
 
 <dialtone-usage>

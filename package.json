@@ -1,8 +1,32 @@
 {
   "name": "@dialpad/dialtone",
   "version": "7.4.1",
-  "description": "The design system for Dialpad and UberConference",
-  "author": "Joshua Hynes",
+  "description": "Dialpad's design system",
+  "keywords": [
+    "Dialpad",
+    "Dialtone",
+    "Design System",
+    "CSS"
+  ],
+  "homepage": "https://dialpad.design",
+  "bugs": {
+    "email" : "dialtone@dialpad.com"
+  },
+  "license": "MIT",
+  "contributors": [
+    {"name":"Brad Paugh","email":"brad.paugh@dialpad.com","url":"https://github.com/braddialpad"},
+    {"name":"Francis Rupert","email":"francis.rupert@dialpad.com","url":"https://github.com/francisrupert"},
+    {"name":"Julio Ortega","email":"julio.ortega@dialpad.com","url":"https://github.com/juliodialpad"},
+    {"name":"Jose Silva","email":"jose.silva@dialpad.com","url":"https://github.com/josedialpad"}
+  ],
+  "files": [
+    "lib",
+    "dist"
+  ],
+  "bin": {
+    "dialtone-health-check": "./lib/dist/js/dialtone_health_check.js"
+  },
+  "repository": "git@github.com:dialpad/dialtone.git",
   "scripts": {
     "build": "gulp",
     "lint": "run-s lint:library lint:docs lint:code",
@@ -22,21 +46,28 @@
     "stylelint": "npx stylelint 'lib/build/less/**/*.{less,css}'",
     "build:icons": "gulp icons"
   },
-  "bin": {
-    "dialtone-health-check": "./lib/dist/js/dialtone_health_check.js"
-  },
   "unpkg": "dist/css/dialtone.min.css",
-  "files": [
-    "lib",
-    "dist"
+  "browserslist": [
+    "last 1 version",
+    "maintained node versions"
   ],
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
+    "@dialpad/dialtone-icons": "0.0.7-vue3",
     "@docsearch/js": "^3.2.1",
-    "docopt": "^0.6.2"
+    "docopt": "^0.6.2",
+    "precss": "^4.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
+    "@dialpad/dialtone-combinator": "^0.3.1",
+    "@dialpad/dialtone-vue": "^3.13.0",
     "@dialpad/postcss-responsive-variations": "^1.1.3",
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/git": "^10.0.1",
@@ -87,17 +118,5 @@
     "through2": "^4.0.2",
     "vuepress": "2.0.0-beta.48",
     "yargs": "^17.5.1"
-  },
-  "browserslist": [
-    "last 1 version",
-    "maintained node versions"
-  ],
-  "gitHooks": {
-    "pre-commit": "lint-staged"
-  },
-  "license": "MIT",
-  "publishConfig": {
-    "access": "public"
-  },
-  "repository": "git@github.com:dialpad/dialtone.git"
+  }
 }

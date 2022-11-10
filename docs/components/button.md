@@ -3,12 +3,13 @@ title: Button
 desc: A button is an UI element which signals key actions to take an action throughout an app. It is important a button is identifiable, consistent, communicates its actions clearly, and is appropriately sized to its action.
 storybook_url: https://vue.dialpad.design/?path=/story/components-button--default
 ---
-
 <code-well-header>
   <button class="d-btn d-btn--primary" type="button">
     <span class="d-btn__label">Place call</span>
   </button>
 </code-well-header>
+
+<!-- <component-combinator component-name="DtButton" /> -->
 
 ## Usage
 

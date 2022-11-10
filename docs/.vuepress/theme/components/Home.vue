@@ -72,7 +72,7 @@
       </p>
       <router-link
         class="d-link"
-        to="/design/colors/color-palette"
+        to="/design/"
       >
         Browse design guidelines
       </router-link>
@@ -112,7 +112,7 @@
     <div class="link d-body-base d-gc3 d-px32 d-ta-center">
       <router-link
         class="d-fc-secondary h:d-fc-purple-400 d-d-block"
-        to="/utilities/backgrounds/attachment"
+        to="/utilities/"
       >
         <img
           alt=""
@@ -128,7 +128,7 @@
       </p>
       <router-link
         class="d-link"
-        to="/utilities/backgrounds/attachment"
+        to="/utilities/"
       >
         Browse utility classes
       </router-link>
