@@ -40,7 +40,7 @@ Our voice is consistent. It’s what makes Dialpad feel like Dialpad. It adds wa
 
 #### We are always
 
-* ***Helpful**
+* **Helpful**
   * We make it easy for users to know the information they want and need. We write with simplicity, clarity, and purpose to make it easy for everyone to follow along.
   * We aren't confusing or complicated.
 * **Real**

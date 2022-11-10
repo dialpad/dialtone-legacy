@@ -1,12 +1,6 @@
 ---
-title: Spacing
+title: Size and spacing
 desc: Standardized spacing values help us create consistent user interfaces (UIs). This consistency makes it easier for customers to scan, browse, and utilize our UIs as we're setting visual rhythms and expectations that customers can rely upon.
-prev:
-  text: Spot Illustrations
-  link: /design/illustrations/spot
-next:
-  text: Components
-  link: /components/
 ---
 
 ## Overview
@@ -17,11 +11,11 @@ Dialtone uses a spacing system based on a 4-pixel system, providing half-steps w
   <img :src="$withBase('/assets/images/spacing-example.png')" alt="A layout example with spacing values to show how the spacing system is used." class="d-w80p" />
 </div>
 
-### CSS Variables
+## CSS Variables
 
 <spacing-system-table kind="css"></spacing-system-table>
 
-### Less Variables
+## Less Variables
 
 <spacing-system-table kind="less"></spacing-system-table>
 
