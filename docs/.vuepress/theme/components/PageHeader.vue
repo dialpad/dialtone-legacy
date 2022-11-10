@@ -2,13 +2,18 @@
   <section class="theme-default-content d-stack32 d-pb0 d-mb8">
     <slot name="content-top" />
     <header class="d-stack2">
-      <div class="d-d-flex d-ai-center d-gg8" >
+      <div class="d-d-flex d-ai-center d-gg8">
         <h1
           v-if="frontmatter.title"
           class="dialtone-page-title"
           v-text="frontmatter.title"
         />
-        <span v-if="frontmatter.new" class="d-badge d-badge--purple-500">New</span>
+        <span
+          v-if="frontmatter.new"
+          class="d-badge d-badge--purple-500"
+        >
+          New
+        </span>
       </div>
       <p
         v-if="frontmatter.desc"
