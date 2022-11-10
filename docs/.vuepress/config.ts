@@ -16,7 +16,7 @@ const themeConfig = {
     {text: 'Design', link: '/design/colors/color-palette'},
     {text: 'Components', link: '/components/'},
     {text: 'Utilities', link: '/utilities/backgrounds/attachment'},
-    {text: 'Guides', link: '/guides/getting-started/installation'},
+    {text: 'Guides', link: '/guides/'},
     {text: 'About', link: '/about/dialtone'},
   ],
   sidebar,

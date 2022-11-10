@@ -32,7 +32,7 @@
         </div>
         <router-link
           v-slot="{ navigate }"
-          to="/guides/getting-started/installation.html"
+          to="/guides/getting-started/"
           custom
         >
           <button
@@ -79,7 +79,12 @@
         :src="$withBase('/assets/images/home-components.svg')"
       >
       <h2 class="d-headline-extra-large d-mb8 d-baw0">
-        Components
+        <router-link
+        class="d-fc-secondary h:d-fc-primary"
+        to="/components/"
+        >
+          Components
+        </router-link>
       </h2>
       <p class="d-mb8 d-body-compact d-fc-secondary">
         Presentational UI components offered in CSS and Vue
@@ -125,7 +130,12 @@
         :src="$withBase('/assets/images/home-guides.svg')"
       >
       <h2 class="d-headline-extra-large d-mb8 d-baw0">
-        Guides
+        <router-link
+          class="d-fc-secondary h:d-fc-primary"
+          to="/guides/"
+        >
+          Guides
+        </router-link>
       </h2>
       <p class="d-mb8 d-body-compact d-fc-secondary">
         Reference guidelines for Accessibility, Writing, and more
@@ -133,19 +143,19 @@
       <div class="d-d-inline-flex d-fd-column">
         <router-link
           class="d-link"
-          to="/guides/getting-started/installation.html"
+          to="/guides/getting-started/"
         >
           Getting started
         </router-link>
         <router-link
           class="d-link"
-          to="/guides/content/principles.html"
+          to="/guides/content/"
         >
           Writing guidelines
         </router-link>
         <router-link
           class="d-link"
-          to="/guides/accessibility/fundamentals.html"
+          to="/guides/accessibility/"
         >
           Accessibility
         </router-link>
