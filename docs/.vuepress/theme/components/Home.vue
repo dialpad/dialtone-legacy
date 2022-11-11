@@ -1,6 +1,6 @@
 <template>
   <section class="hero d-mnt16 d-bgr-none">
-    <div class="hero--inner-wrapper d-d-flex d-jc-space-between d-mx-auto d-wmx1340 d-pl16 d-pr16">
+    <div class="hero--inner-wrapper d-d-flex d-jc-space-between d-mx-auto d-wmx1340 d-pl32 d-pr32">
       <div class="hero--content d-d-flex d-fd-column d-jc-center">
         <h1 class="d-headline-extra-extra-large d-mb12">
           Improve your UI's reception with Dialtone
