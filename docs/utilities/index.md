@@ -13,30 +13,42 @@ Most utilities comes with responsive options, enabling alterations at targeted s
 
 While an atomic CSS approach comes with many advantages, we recognize it also offers a notable disadvantage: reducing the CSS cascade. This is especially true for repeated UI elements, which can end up creating redundant mark-up. For these instances, Dialtone offers components.
 
-## Examples
+## Example
 
-### Border
+### Border top
 
-`d-ba` applies a border (`b`) to all (`a`) sides.
+`d-bt` applies a border (`b`) to the top (`t`) side. 1px is the default width, and the color is inherited from the foreground color (`currentColor`).
 
 <code-well-header>
-  <div class="d-ba">Box</div>
+  <div class="d-bt">Box</div>
 </code-well-header>
 
 ```html
-<div class="d-ba">Box</div>
+<div class="d-bt">Box</div>
 ```
 
-### Border right
+### Border top width
 
-`d-br` applies a border (`b`) to the right (`r`) side.
+`d-btw4` applies a 4px (`4`) width (`w`) to the top (`t`).
 
 <code-well-header>
-  <div class="d-br">Box</div>
+  <div class="d-bt d-btw4">Box</div>
 </code-well-header>
 
 ```html
-<div class="d-br">Box</div>
+<div class="d-bt d-btw4">Box</div>
+```
+
+### Border color
+
+`d-bc-purple-400` applies a border (`b`) color (`c`) of [Purple 400](/design/colors/#purple).
+
+<code-well-header>
+  <div class="d-bt d-btw4 d-bc-purple-400">Box</div>
+</code-well-header>
+
+```html
+<div class="d-bt d-btw4 d-bc-purple-400">Box</div>
 ```
 
 ## Tutorial
