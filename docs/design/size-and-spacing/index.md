@@ -11,15 +11,15 @@ Dialtone uses a spacing system based on a 4-pixel system, providing half-steps w
   <img :src="$withBase('/assets/images/spacing-example.png')" alt="A layout example with spacing values to show how the spacing system is used." class="d-w80p" />
 </div>
 
-## CSS Variables
+## CSS variables
 
 <spacing-system-table kind="css"></spacing-system-table>
 
-## Less Variables
+## Less variables
 
 <spacing-system-table kind="less"></spacing-system-table>
 
-## Utility Classes
+## Utility classes
 
 Aside from the spacing variables, it may be necessary to use the following utility classes to manage interface spacing:
 

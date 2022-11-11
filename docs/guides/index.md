@@ -17,6 +17,16 @@ prev:
       <div class="dialtone-wall__description">A quick start guide to add Dialtone to your project.</div>
     </div>
   </router-link>
+  <div class="dialtone-wall__item dialtone-wall__item--disabled" to="/design/typography/">
+    <div class="dialtone-wall__image"><img class="dialtone-wall__thumb" alt="" :src="$withBase('/assets/images/components/input-group.png')"></div>
+    <div class="dialtone-wall__details">
+      <div class="dialtone-wall__title">
+        <span class="dialtone-wall__title-text">Design principles</span>
+        <span class="d-badge d-badge d-badge--purple-500">Planned</span>
+      </div>
+      <div class="dialtone-wall__description">Guiding the team with principles and values to build cohesive experiences.</div>
+    </div>
+  </div>
   <router-link class="dialtone-wall__item" to="/guides/content/">
     <div class="dialtone-wall__image"><img class="dialtone-wall__thumb" alt="" :src="$withBase('/assets/images/components/input-group.png')"></div>
     <div class="dialtone-wall__details">
@@ -35,4 +45,24 @@ prev:
       <div class="dialtone-wall__description">Build accessible Dialpad products.</div>
     </div>
   </router-link>
+  <div class="dialtone-wall__item dialtone-wall__item--disabled" to="/design/typography/">
+    <div class="dialtone-wall__image"><img class="dialtone-wall__thumb" alt="" :src="$withBase('/assets/images/components/input-group.png')"></div>
+    <div class="dialtone-wall__details">
+      <div class="dialtone-wall__title">
+        <span class="dialtone-wall__title-text">Brand</span>
+        <span class="d-badge d-badge d-badge--purple-500">Planned</span>
+      </div>
+      <div class="dialtone-wall__description">Express the Dialpad brand and design philosophy.</div>
+    </div>
+  </div>
+  <div class="dialtone-wall__item dialtone-wall__item--disabled" to="/design/typography/">
+    <div class="dialtone-wall__image"><img class="dialtone-wall__thumb" alt="" :src="$withBase('/assets/images/components/input-group.png')"></div>
+    <div class="dialtone-wall__details">
+      <div class="dialtone-wall__title">
+        <span class="dialtone-wall__title-text">Design assets</span>
+        <span class="d-badge d-badge d-badge--purple-500">Planned</span>
+      </div>
+      <div class="dialtone-wall__description">Figma toolkit of building blocks for exploration and collaboration.</div>
+    </div>
+  </div>
 </div>

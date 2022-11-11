@@ -1,6 +1,6 @@
 ---
 title: Design language
-desc: Lorem ipsum dolor sit amet.
+desc: Foundational visual attributes establishing the distinct look and feel of Dialpad products.
 ---
 
 <div class="dialtone-wall">
