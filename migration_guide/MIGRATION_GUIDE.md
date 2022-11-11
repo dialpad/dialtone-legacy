@@ -501,14 +501,9 @@ Replace any custom usage of icon component with `<dt-icon name="icon-name" size=
 
 **If you can't use vue component e.g. in backbone**:
 
-- Using images:
-  - Replace the `img` path with `@dialpad/dialtone-icons/dist/svg/icon-name.svg`.
-  e.g. replace `<img src="@dialpad/dialtone/lib/build/svg/user.svg">` 
-  with `<img src="@dialpad/dialtone-icons/dist/svg/user.svg">`
-- Using CSS:
-  - Replace `d-svg*` classes with their corresponding `d-icon` classes.
-- Using RAW html element:
-  - Replace the element with the new one from '@dialpad/dialtone-icons/dist/svg/icon-name.svg'
+Replace the current `img` or `svg` with the RAW svg file content from `@dialpad/dialtone-icons/dist/svg/icon-name.svg`. 
+e.g. replace `<img src="@dialpad/dialtone/lib/build/svg/user.svg">`
+with `<svg>...</svg>`
 
 #### Update Icon contextual sizing with fixed
 
