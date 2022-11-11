@@ -25,25 +25,34 @@
       id="preview-header"
       class="d-d-flex d-jc-space-between"
     >
-      <h2 class="d-fs-200 d-ba-unset">
+      <h2 class="d-fs-200 d-ba-unset d-fc-secondary">
         Preview
       </h2>
-      <a
-        v-if="frontmatter.storybook_url"
-        class="d-link d-fs-200"
-        :href="frontmatter.storybook_url"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <span class="d-mr4">View Storybook</span>
-        <icon-launch class="d-svg--size16" />
-      </a>
+      <span class="d-d-flex d-flow8">
+        <a
+          v-if="frontmatter.figma_url"
+          class="d-link d-fs-200"
+          :href="frontmatter.figma_url"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span>Figma</span>
+        </a>
+        <a
+          v-if="frontmatter.storybook_url"
+          class="d-link d-fs-200"
+          :href="frontmatter.storybook_url"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span>Storybook</span>
+        </a>
+      </span>
     </div>
   </section>
 </template>
 
 <script setup>
-import IconLaunch from '@svgIcons/IconLaunch.vue';
 defineProps({
   path: {
     type: String,

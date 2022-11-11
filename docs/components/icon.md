@@ -2,8 +2,22 @@
 title: Icon
 desc: An icon is used to visually communicate commands, meaning, status, feedback, or common actions.
 new: true
-no_preview: true
+storybook_url: https://vue.dialpad.design/?path=/docs/components-icon--default
+figma_url: https://www.figma.com/file/zz40wi0uW9MvaJ5RuhcRZR/DT-Core%3A-Icons-7?node-id=1473%3A3757&viewport=-168%2C479%2C1&t=OhX4ilCDvb7Tqkx4-11
 ---
+
+<code-well-header>
+  <div class="d-d-flex d-gg8 d-ai-center">
+    <dt-icon name="lightning-bolt" size="100" />
+    <dt-icon name="lightning-bolt" size="200" />
+    <dt-icon name="lightning-bolt" size="300" />
+    <dt-icon name="lightning-bolt" size="400" />
+    <dt-icon name="lightning-bolt" size="500" />
+    <dt-icon name="lightning-bolt" size="600" />
+    <dt-icon name="lightning-bolt" size="700" />
+    <dt-icon name="lightning-bolt" size="800" />
+  </div>
+</code-well-header>
 
 <aside class="d-notice d-notice--info d-mt24 d-wmx100p" role="status" aria-hidden="false">
   <div class="d-notice__icon">
@@ -12,7 +26,7 @@ no_preview: true
   <div class="d-notice__content d-stack4">
     <p class="d-notice__message">
       <strong>Looking for the previous icon set?</strong>
-      <router-link class="d-link" to="/design/icons/system.html">Documentation for the deprecated icon set</router-link> will remain available until this new icon is more fully adopted.
+      <router-link class="d-link" to="/design/icons/">Documentation for the deprecated icon set</router-link> will remain available until this new icon is more fully adopted.
     </p>
   </div>
 </aside>
