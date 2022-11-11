@@ -94,7 +94,7 @@
       <p class="d-mb8 d-body-compact d-fc-secondary">
         Presentational UI components offered in CSS and Vue
       </p>
-      <div class="d-d-inline-flex d-fd-column">
+      <div class="d-d-inline-flex d-fd-column d-stack4">
         <router-link
           class="d-link"
           to="/components/"
@@ -150,7 +150,7 @@
       <p class="d-mb8 d-body-compact d-fc-secondary">
         Reference guidelines for Accessibility, Writing, and more
       </p>
-      <div class="d-d-inline-flex d-fd-column">
+      <div class="d-d-inline-flex d-fd-column d-stack4">
         <router-link
           class="d-link"
           to="/guides/getting-started/"
