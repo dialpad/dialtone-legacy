@@ -147,7 +147,7 @@ Convert it to a `flex` container by adding `class="d-d-flex"`.
 
 ### 7. Add borders to segment each.
 
-Add a border to each box by applying `d-divide-x` (horizontal borders) to the surrounding container from the list of [devide width classes](/utilities/borders/divide-width.html).
+Add a border to each box by applying `d-divide-x` (horizontal borders) to the surrounding container from the list of [divide width classes](/utilities/borders/divide-width.html).
 
 <code-well-header>
   <div class="d-d-flex d-divide-x">
