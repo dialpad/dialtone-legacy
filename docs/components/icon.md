@@ -7,7 +7,7 @@ no_preview: true
 
 <aside class="d-notice d-notice--info d-mt24 d-wmx100p" role="status" aria-hidden="false">
   <div class="d-notice__icon">
-    <icon-info></icon-info>
+    <dt-icon name="info"></dt-icon>
   </div>
   <div class="d-notice__content d-stack4">
     <h2 class="d-notice__title">Looking for the previous icon set?</h2>

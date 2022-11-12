@@ -36,14 +36,16 @@
         rel="noopener noreferrer"
       >
         <span class="d-mr4">View Storybook</span>
-        <icon-launch class="d-svg--size16" />
+        <dt-icon
+          name="external-link"
+          size="200"
+        />
       </a>
     </div>
   </section>
 </template>
 
 <script setup>
-import IconLaunch from '@svgIcons/IconLaunch.vue';
 defineProps({
   path: {
     type: String,
