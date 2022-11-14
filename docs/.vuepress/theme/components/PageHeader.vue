@@ -25,10 +25,10 @@
       id="preview-header"
       class="d-d-flex d-jc-space-between"
     >
-      <h2 class="d-fs-200 d-ba-unset d-fc-secondary">
+      <h2 class="d-vi-visible-sr">
         Preview
       </h2>
-      <span class="d-d-flex d-flow8">
+      <span class="d-d-flex d-flow16">
         <a
           v-if="frontmatter.figma_url"
           class="d-link d-fs-200"
