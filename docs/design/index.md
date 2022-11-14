@@ -5,7 +5,6 @@ desc: Foundational visual attributes establishing the distinct look and feel of 
 
 <div class="dialtone-wall">
   <router-link class="dialtone-wall__item" to="/design/colors/">
-    <div class="dialtone-wall__image"><img class="dialtone-wall__thumb" alt="" :src="$withBase('/assets/images/components/input-group.png')"></div>
     <div class="dialtone-wall__details">
       <div class="dialtone-wall__title">
         <span class="dialtone-wall__title-text">Color</span>
@@ -14,7 +13,6 @@ desc: Foundational visual attributes establishing the distinct look and feel of 
     </div>
   </router-link>
   <div class="dialtone-wall__item dialtone-wall__item--disabled" to="/design/typography/">
-    <div class="dialtone-wall__image"><img class="dialtone-wall__thumb" alt="" :src="$withBase('/assets/images/components/input-group.png')"></div>
     <div class="dialtone-wall__details">
       <div class="dialtone-wall__title">
         <span class="dialtone-wall__title-text">Typography</span>
@@ -24,7 +22,6 @@ desc: Foundational visual attributes establishing the distinct look and feel of 
     </div>
   </div>
   <router-link class="dialtone-wall__item" to="/design/size-and-spacing/">
-    <div class="dialtone-wall__image"><img class="dialtone-wall__thumb" alt="" :src="$withBase('/assets/images/components/input-group.png')"></div>
     <div class="dialtone-wall__details">
       <div class="dialtone-wall__title">
         <span class="dialtone-wall__title-text">Size and spacing</span>
@@ -33,7 +30,6 @@ desc: Foundational visual attributes establishing the distinct look and feel of 
     </div>
   </router-link>
   <router-link class="dialtone-wall__item" to="/design/icons/">
-    <div class="dialtone-wall__image"><img class="dialtone-wall__thumb" alt="" :src="$withBase('/assets/images/components/input-group.png')"></div>
     <div class="dialtone-wall__details">
       <div class="dialtone-wall__title">
         <span class="dialtone-wall__title-text">Iconography</span>
@@ -42,7 +38,6 @@ desc: Foundational visual attributes establishing the distinct look and feel of 
     </div>
   </router-link>
   <router-link class="dialtone-wall__item" to="/design/icons/">
-    <div class="dialtone-wall__image"><img class="dialtone-wall__thumb" alt="" :src="$withBase('/assets/images/components/input-group.png')"></div>
     <div class="dialtone-wall__details">
       <div class="dialtone-wall__title">
         <span class="dialtone-wall__title-text">Illustrations</span>
@@ -51,7 +46,6 @@ desc: Foundational visual attributes establishing the distinct look and feel of 
     </div>
   </router-link>
   <div class="dialtone-wall__item dialtone-wall__item--disabled" to="/design/typography/">
-    <div class="dialtone-wall__image"><img class="dialtone-wall__thumb" alt="" :src="$withBase('/assets/images/components/input-group.png')"></div>
     <div class="dialtone-wall__details">
       <div class="dialtone-wall__title">
         <span class="dialtone-wall__title-text">Elevation</span>
@@ -61,7 +55,6 @@ desc: Foundational visual attributes establishing the distinct look and feel of 
     </div>
   </div>
   <div class="dialtone-wall__item dialtone-wall__item--disabled" to="/design/typography/">
-    <div class="dialtone-wall__image"><img class="dialtone-wall__thumb" alt="" :src="$withBase('/assets/images/components/input-group.png')"></div>
     <div class="dialtone-wall__details">
       <div class="dialtone-wall__title">
         <span class="dialtone-wall__title-text">Motion</span>
