@@ -14,7 +14,7 @@ const themeConfig = {
   navbar: [
     {text: 'Home', link: '/'},
     {text: 'Design', link: '/design/colors/color-palette'},
-    {text: 'Components', link: '/components/avatar'},
+    {text: 'Components', link: '/components/'},
     {text: 'Utilities', link: '/utilities/backgrounds/attachment'},
     {text: 'Guides', link: '/guides/getting-started/installation'},
     {text: 'About', link: '/about/dialtone'},
@@ -111,6 +111,7 @@ export default defineUserConfig({
     '@theme': resolve(__dirname, './theme'),
     '@exampleComponents': resolve(__dirname, './exampleComponents'),
     '@baseComponents': resolve(__dirname, './baseComponents'),
+    '@views': resolve(__dirname, './views'),
     '@dialtoneCSS': resolve(__dirname, '../assets/css/' + dialtoneCSS),
     '@dialtoneDocsCSS': resolve(__dirname, '../assets/css/' + dialtoneDocsCSS),
     '@mixins': resolve(__dirname, './common/mixins/'),

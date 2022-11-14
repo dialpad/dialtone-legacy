@@ -184,7 +184,6 @@ nav a.router-link-active {
 
   display: grid;
   grid-auto-rows: 12rem;
-  grid-gap: 0.2rem;
   grid-template-columns: repeat(var(--icon-grid-columns), [col] var(--icon-card-width));
 }
 
@@ -227,8 +226,6 @@ nav a.router-link-active {
 
   .dialtone-icon-card[data-selected='yes'] & {
     background-color: hsl(var(--black-200-h), var(--black-200-s), var(--black-200-l), 0.4);
-    border: 1px solid var(--black-700);
-    box-shadow: var(--bs-md);
   }
 }
 
@@ -262,8 +259,8 @@ nav a.router-link-active {
   }
 
   //  If it's in the first two columns, show the footer on the right
-  .dialtone-icon-grid__item:nth-child(5n+1) .dialtone-icon-card[data-selected='yes'] &,
-  .dialtone-icon-grid__item:nth-child(5n+2) .dialtone-icon-card[data-selected='yes'] & {
+  .dialtone-icon-grid__item:nth-child(6n+1) .dialtone-icon-card[data-selected='yes'] &,
+  .dialtone-icon-grid__item:nth-child(6n+2) .dialtone-icon-card[data-selected='yes'] & {
     right: var(--su1);
     margin-right: unset;
     transform: translateX(100%);
@@ -345,7 +342,6 @@ nav a.router-link-active {
   font-size: var(--fs-100);
 }
 
-
 //  ============================================================================
 //  $   HOME PAGE
 //      Styles the site's home page
@@ -404,6 +400,121 @@ nav a.router-link-active {
     grid-column: 1 / -1 !important;
     margin-bottom: calc(var(--su64) + var(--su24));
   }
+}
+
+//  ============================================================================
+//  $   DOC PAGE TITLE
+//      The <h1> element
+//  ----------------------------------------------------------------------------
+
+.dialtone-page-title {
+  line-height: var(--lh-200);
+  font-size: var(--fs-500) !important;
+  font-weight: var(--fw-medium) !important;
+  margin-bottom: var(--su8);
+}
+
+//  ============================================================================
+//  $   INTRO PARAGRAPH
+//      Type styles for intro paragraph, aka front matter's `desc`
+//  ----------------------------------------------------------------------------
+
+.dialtone-intro {
+  max-width: 62ch;
+  font-size: var(--fs-300);
+  line-height: var(--lh-300);
+  color: var(--fc-secondary);
+}
+
+//  ============================================================================
+//  $   LANDING PAGE WALL
+//      Style the grid of landing page items
+//  ----------------------------------------------------------------------------
+
+.dialtone-wall {
+  & {
+    display: grid;
+    grid-gap: var(--space-500);
+
+    @media screen and (min-width: 640px) {
+      grid-gap: var(--space-600);
+      grid-template-columns: [full-start] repeat(2, [col-start] var(--col-width, minmax(0, 1fr)) [col-end]) [full-end] !important;
+    }
+
+    @media screen and (min-width: 768px) {
+      grid-template-columns: [full-start] repeat(3, [col-start] var(--col-width, minmax(0, 1fr)) [col-end]) [full-end] !important;
+    }
+
+    @media screen and (min-width: 1264px) {
+      margin-top: var(--space-600);
+    }
+  }
+
+  &__item {
+    display: block;
+    border: var(--size-100) solid;
+    border-color: var(--black-300);
+    border-radius: var(--size-400);
+    overflow: hidden;
+
+    &:hover,
+    .theme-default-content &:hover { // overspecific to overcome vuepress aggressive specificity
+      text-decoration: none;
+      box-shadow: var(--bs-sm);
+    }
+  }
+
+  &__image {
+    background-color: var(--black-100);
+    text-align: center;
+  }
+
+  &__thumb {
+    width: auto;
+    height: 96px;
+
+    @media screen and (min-width: 640px) {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__details {
+    padding: var(--space-500);
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: var(--space-400);
+    color: var(--fc-secondary);
+    line-height: var(--lh-400);
+    font-size: var(--fs-300);
+    font-weight: var(--fw-bold);
+  }
+
+  &__title-text {
+    flex: 1;
+  }
+
+  &__description {
+    color: var(--fc-tertiary);
+    line-height: var(--lh-300);
+    font-size: var(--fs-200);
+  }
+
+  @media screen and (min-width: 480px) {
+  }
+  @media screen and (min-width: 640px) {
+  }
+  @media screen and (min-width: 768px) {
+  }
+  @media screen and (min-width: 980px) {
+  }
+  @media screen and (min-width: 1264px) {
+  }
+
 }
 
 //  ============================================================================
@@ -494,7 +605,6 @@ nav a.router-link-active {
     }
   }
 }
-
 
 //  ============================================================================
 //  $   USAGE

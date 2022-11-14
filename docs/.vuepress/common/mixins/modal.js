@@ -70,6 +70,7 @@ export default {
      * @param {object} el - optional - ref of dom element to trap focus on.
      *  will default to the root node of the vue component
      */
+    /* eslint-disable complexity */
     focusTrappedTabPress (e, el) {
       const isTabPressed = e.key === 'Tab';
 

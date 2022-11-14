@@ -53,8 +53,9 @@ export default {
 
     variation: {
       type: String,
-      required: true,
+      default: null,
       validator: (_variation) => {
+        if (_variation === null) return true;
         return ICON_VARIATIONS.includes(_variation);
       },
     },

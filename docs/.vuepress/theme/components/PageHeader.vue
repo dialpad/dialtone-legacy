@@ -2,17 +2,20 @@
   <section class="theme-default-content d-stack32 d-pb0 d-mb8">
     <slot name="content-top" />
     <header class="d-stack2">
-      <div class="d-d-flex d-ai-center d-gg8" >
+      <div class="d-d-flex d-ai-center d-gg8">
         <h1
           v-if="frontmatter.title"
-          class="d-lh-200 d-fs-500 d-fw-medium d-mb8"
+          class="dialtone-page-title"
           v-text="frontmatter.title"
         />
-        <span v-if="frontmatter.new" class="d-badge d-badge--purple-500">New</span>
+        <span
+          v-if="frontmatter.new"
+          class="d-badge d-badge--purple-500"
+        >New</span>
       </div>
       <p
         v-if="frontmatter.desc"
-        class="d-fs-300 d-lh-300 d-wmx80p"
+        class="dialtone-intro"
         v-html="frontmatter.desc"
       />
     </header>
@@ -33,14 +36,16 @@
         rel="noopener noreferrer"
       >
         <span class="d-mr4">View Storybook</span>
-        <icon-launch class="d-svg--size16" />
+        <dt-icon
+          name="external-link"
+          size="200"
+        />
       </a>
     </div>
   </section>
 </template>
 
 <script setup>
-import IconLaunch from '@svgIcons/IconLaunch.vue';
 defineProps({
   path: {
     type: String,

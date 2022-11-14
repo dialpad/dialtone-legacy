@@ -1,5 +1,8 @@
 <template>
-  <div v-if="presence" class="d-presence">
+  <div
+    v-if="presence"
+    class="d-presence"
+  >
     <div
       class="d-presence__inner"
       :class="{
