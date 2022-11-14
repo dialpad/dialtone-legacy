@@ -177,7 +177,7 @@ desc: The Dialtone color system expands our primary, secondary, and expressive c
             "d-theme-sidebar-fc d-fco85 h:d-fco100"
           </div>
           <div class="d-fl0 d-fs-200 d-lh4 d-theme-sidebar-fc d-ta-center d-w32 d-m4 d-ml16 d-fco85 h:d-fco100">
-            <svg aria-hidden="true" aria-label="Info" class="d-svg d-svg--system d-svg__info" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"></path></svg>
+            <dt-icon name="info"></dt-icon>
           </div>
         </div>
       </td>

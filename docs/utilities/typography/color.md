@@ -2,8 +2,8 @@
 title: Colors
 desc: Utilities to change an element's font-color.
 prev:
-  text: Size
-  link: /utilities/svg/size
+  text: Styles
+  link: /utilities/typography/styles
 ---
 
 All font colors pass the WCAG 2.1 Level AA contrast ratio requirements (ratio >= 4.5:1) and most pass WCAG 2.1 Level AAA requirements (ratio >= 7:1).

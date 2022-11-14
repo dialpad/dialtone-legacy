@@ -295,6 +295,7 @@ const moveStyleTagsToEOF = function (file, enc, cb) {
 //  @@  COMPILE SVGS
 //      Lint and optimize SVG files
 //  ================================================================================
+// TODO: Remove this scripts once old icon set is deprecated
 const buildSystemSVGs = function (done) {
   //  Make sure this feature is activated before running
   if (!settings.svgs) return done();

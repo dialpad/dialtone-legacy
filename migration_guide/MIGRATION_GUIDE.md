@@ -166,6 +166,11 @@ New Color Ramp
 
 ---
 
+### Icon updates:
+
+- Deprecated .d-svg class associated with the previous Material Design icon set.
+- The previous icon set will remain available until it is sunset upon complete adoption.
+
 ## Migration Steps
 
 Follow steps in this exact order.
@@ -479,3 +484,54 @@ Search for | Replace with
 `var(--lh-normal)`  | `var(--lh-300)`
 `var(--lh-loose)`   | `var(--lh-400)`
 `var(--lh-looser)`  | `var(--lh-500)`
+
+### Icons
+
+#### Replace icons
+
+Do a search in [Icon docs][icon-docs] to find an icon that matches your needs.
+For icon component documentation on props (naming and sizing), check 
+[Dialtone Vue - Icon component](https://vue.dialpad.design/?path=/story/components-icon--default)
+
+*Check with your designer or ask in #dialtone if you are having trouble finding a replacement for an existing icon*
+
+**If you can use vue components**: 
+
+Replace any custom usage of icon component with `<dt-icon name="icon-name" size="icon-size" />`
+
+**If you can't use vue component e.g. in backbone**:
+
+Replace the current `img` or `svg` with the RAW svg file content from `@dialpad/dialtone-icons/dist/svg/icon-name.svg`. 
+e.g. replace `<img src="@dialpad/dialtone/lib/build/svg/user.svg">`
+with `<svg>...</svg>`
+
+#### Update Icon contextual sizing with fixed
+
+Some `svgs` are sized with `d-svg--sizeX` this are direct mappings that work in most of the cases.
+After replacing make sure the updated icon includes `d-icon` class too and that it looks correct. 
+
+e.g. replace `d-svg--size14` with `d-icon d-icon--size-100` 
+and `d-svg d-svg--size14` with `d-icon d-icon--size-100`.  
+
+Search for | Replace with
+:-:|:-:
+`d-svg--size14` | `d-icon--size-100`
+`d-svg--size16` | `d-icon--size-200`
+`d-svg--size18` | `d-icon--size-300`
+`d-svg--size20` | `d-icon--size-400`
+`d-svg--size24` | `d-icon--size-500`
+`d-svg--size32` | `d-icon--size-600`
+`d-svg--size48` | `d-icon--size-700`
+`d-svg--size64` | `d-icon--size-800`
+
+Remove any usage of `d-svg` and `d-svg--*`.
+
+**Consult your Product Designer if anything looks off after the update.**
+
+
+#### Product custom CSS
+
+Remove any custom icon sizing e.g. `.foo .icon { width: xxx; height: yyy; }.` 
+and replace with the correct sizing class in [icon documentation][icon-docs].
+
+[icon-docs]: https://dialpad.design/components/icon.html
