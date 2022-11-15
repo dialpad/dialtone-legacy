@@ -9,7 +9,7 @@ Utilities – also known as “trumps,” “helper classes,” or “alteration
 
 Each utility is a small, <a href="https://css-tricks.com/lets-define-exactly-atomic-css/" target="_blank">atomic style</a> declaration that, when chained together, should mitigate most situations in which custom CSS must be written. Just write these classes right in your mark-up and you're all set!
 
-Most utilities comes with responsive options, enabling alterations at targeted screen size ranges. For example, “small padding on smaller screens, larger padding on bigger screens.”
+Most utilities come with responsive options, enabling alterations at targeted screen size ranges. For example, “small padding on smaller screens, larger padding on bigger screens.”
 
 While an atomic CSS approach comes with many advantages, we recognize it also offers a notable disadvantage: reducing the CSS cascade. This is especially true for repeated UI elements, which can end up creating redundant mark-up. For these instances, Dialtone offers components.
 
@@ -169,7 +169,7 @@ Add a border to each box by applying `d-divide-x` (horizontal borders) to the su
 
 ### 8. And change the border color
 
-Since the border color of `d-divide-x` inherits the color of the parent's foreground (implicitly `currentColor`), let's soften it with `d-divide-black-400`, from the list of [devide color classes](/utilities/borders/divide-color.html).
+Since the border color of `d-divide-x` inherits the color of the parent's foreground (implicitly `currentColor`), let's soften it with `d-divide-black-400`, from the list of [divide color classes](/utilities/borders/divide-color.html).
 
 <code-well-header>
   <div class="d-d-flex d-divide-x d-divide-black-400">
@@ -189,6 +189,6 @@ Since the border color of `d-divide-x` inherits the color of the parent's foregr
 </div>
 ```
 
-### Keep exploring
+### Keep exploring!
 
-You can see the final result in this [Codepen template](https://codepen.io/pen?template=XWYMMRY). Continue to explore using the variety of CSS utilities listed here.
+View the final result in this [Codepen template](https://codepen.io/pen?template=XWYMMRY). Continue to explore using the variety of CSS utilities listed here.

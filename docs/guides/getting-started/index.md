@@ -111,7 +111,7 @@ We're excited you want to install Dialtone locally as this most likely means you
 
 ### Install Node & npm
 
-To run Dialtone locally, you must have Node and NPM (Node Packet Manager) installed. [Click here to download Node](https://nodejs.org/en/). The recommended Node version is fine. NPM is included with Node. If you already have Node installed, you may move onto the next step.
+To run Dialtone locally, you must have Node and NPM (Node Package Manager) installed. [Click here to download Node](https://nodejs.org/en/). The recommended Node version is fine. NPM is included with Node. If you already have Node installed, you may move onto the next step.
 
 Once Node finishes installing, ensure it is installed properly by typing the following command in your Terminal window:
 
@@ -122,7 +122,7 @@ node -v
 You should see the following response:
 
 ```bash
-v14.16.1
+v16.x.x
 ```
 
 ### Clone project
