@@ -18,7 +18,7 @@ desc: Foundational visual attributes establishing the distinct look and feel of 
         <span class="dialtone-wall__title-text">Typography</span>
         <span class="d-badge d-badge d-badge--purple-500">Planned</span>
       </div>
-      <div class="dialtone-wall__description">Clear and consistent headline, highly legible body text, clear labels, and easy-to-read form elements.</div>
+      <div class="dialtone-wall__description">Consistent headlines, legible body text, clear labels, and easy-to-read form elements.</div>
     </div>
   </div>
   <router-link class="dialtone-wall__item" to="/design/size-and-spacing/">
