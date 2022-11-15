@@ -9,7 +9,7 @@ desc: Foundational visual attributes establishing the distinct look and feel of 
       <div class="dialtone-wall__title">
         <span class="dialtone-wall__title-text">Color</span>
       </div>
-      <div class="dialtone-wall__description">The Dialtone color system expands our primary, secondary, and expressive colors to build out a functional, personal, usable, and accessible set of color stop.</div>
+      <div class="dialtone-wall__description">The Dialtone color system expands our primary, secondary, and expressive colors to build out a functional, personal, usable, and accessible set of color stops.</div>
     </div>
   </router-link>
   <div class="dialtone-wall__item dialtone-wall__item--disabled" to="/design/typography/">

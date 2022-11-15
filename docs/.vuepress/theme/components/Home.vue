@@ -88,7 +88,7 @@
           :src="$withBase('/assets/images/home-components.svg')"
         >
         <h2 class="d-headline-extra-large d-mb8 d-baw0">
-            Components
+          Components
         </h2>
       </router-link>
       <p class="d-mb8 d-body-compact d-fc-secondary">
