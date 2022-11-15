@@ -30,7 +30,7 @@ prev:
       <div class="dialtone-wall__title">
         <span class="dialtone-wall__title-text">Writing guidelines</span>
       </div>
-      <div class="dialtone-wall__description">Write content for that’s easy to understand and meets people where they are.</div>
+      <div class="dialtone-wall__description">Write content that’s easy to understand and meets people where they are.</div>
     </div>
   </router-link>
   <router-link class="dialtone-wall__item" to="/guides/accessibility/">
