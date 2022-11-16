@@ -79,7 +79,7 @@ Use `d-lh{n}` to fix an element's line-height. This allows you to target a speci
   import { lineHeight } from '@data/type.json';
 </script>
 
-## CSS Variables
+## CSS variables
 
 <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
   <table class="d-table dialtone-doc-table">

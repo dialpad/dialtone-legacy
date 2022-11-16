@@ -71,7 +71,7 @@ Dialtone supports select marketing fonts and weights. Use the following combinat
   import { fontFamily } from '@data/type.json';
 </script>
 
-## CSS Variables
+## CSS variables
 
 <table class="d-table dialtone-doc-table">
   <thead>
