@@ -3,7 +3,24 @@ title: Typography
 desc: Consistent headlines, legible body text, clear labels, and easy-to-read form elements.
 ---
 
-Dialtone provides a constrained, purposeful set of typographic styles that we use to present user interface and content as clearly and efficiently as possible.
+Dialtone provides a set of purposeful typographic styles to present user interface and content as clearly and efficiently as possible.
+
+<!-- <div style="background-color: orangered; font-size: 54px">
+  <a href="https://www.figma.com/file/nnMW63EwQxLMJBFLd1qgjo/DAH-September-2022?node-id=3%3A1238&viewport=-4020%2C688%2C0.5&t=VeMOh5CN6E6agKK7-11">https://www.figma.com/file/nnMW63EwQxLMJBFLd1qgjo/DAH-September-2022?node-id=3%3A1238&viewport=-4020%2C688%2C0.5&t=VeMOh5CN6E6agKK7-11</a>
+</div> -->
+
+## Text styles
+
+<aside class="d-notice d-notice--info d-mt24 d-wmx100p" role="status" aria-hidden="false">
+  <div class="d-notice__icon">
+    <dt-icon name="info"></dt-icon>
+  </div>
+  <div class="d-notice__content d-stack4">
+    <p class="d-notice__message">
+      <strong>WIP</strong>
+    </p>
+  </div>
+</aside>
 
 ## Font family
 
@@ -45,6 +62,19 @@ Dialtone provides a constrained, purposeful set of typographic styles that we us
 </aside>
 
 ## Line height
+
+<aside class="d-notice d-notice--info d-mt24 d-wmx100p" role="status" aria-hidden="false">
+  <div class="d-notice__icon">
+    <dt-icon name="info"></dt-icon>
+  </div>
+  <div class="d-notice__content d-stack4">
+    <p class="d-notice__message">
+      <strong>WIP</strong>
+    </p>
+  </div>
+</aside>
+
+## Typescale
 
 <aside class="d-notice d-notice--info d-mt24 d-wmx100p" role="status" aria-hidden="false">
   <div class="d-notice__icon">
