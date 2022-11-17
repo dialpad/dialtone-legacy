@@ -5,7 +5,7 @@ desc: The Dialtone color system expands our primary, secondary, and expressive c
 
 ## Text
 
-Key foreground colors rendered on surfaces, with modifiers to indicate hierarchy and importance.
+Key foreground colors rendered on surfaces to indicate hierarchy and importance.
 
 <table class="d-table dialtone-doc-table">
   <thead>
@@ -27,7 +27,7 @@ Key foreground colors rendered on surfaces, with modifiers to indicate hierarchy
       </td>
       <th scope="row" class="d-lh-300">
         Primary
-        <div class="d-fw-normal">{DESCRIPTION}</div>
+        <div class="d-fw-normal">Default text color throughout the UI.</div>
       </th>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--fc-primary)</td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-primary</td>
@@ -43,7 +43,7 @@ Key foreground colors rendered on surfaces, with modifiers to indicate hierarchy
       </td>
       <th scope="row" class="d-lh-300">
         Secondary
-        <div class="d-fw-normal">{DESCRIPTION}</div>
+        <div class="d-fw-normal">Examples uses include introduction paragraphs, labels, and descriptions paired with form elements.</div>
       </th>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--fc-secondary)</td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-secondary</td>
@@ -59,10 +59,74 @@ Key foreground colors rendered on surfaces, with modifiers to indicate hierarchy
       </td>
       <th scope="row" class="d-lh-300">
         Tertiary
-        <div class="d-fw-normal">{DESCRIPTION}</div>
+        <div class="d-fw-normal">Used to imply visual hierarchy relative to primary and secondary text colors, e.g. headlines and labels.</div>
       </th>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--fc-tertiary)</td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-tertiary</td>
+    </tr>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42" style="background-color: var(--fc-primary-inverted)"></div></th>
+      <td>
+        <div class="d-d-flex d-jc-space-between d-ai-center">
+          <div class="d-fl0 d-fs-300 d-fc-primary-inverted d-bgc-black-900 d-p6">
+            Aa
+          </div>
+        </div>
+      </td>
+      <th scope="row" class="d-lh-300">
+        Primary inverted
+        <div class="d-fw-normal">Primary text that sits on contrasting surfaces or backgrounds</div>
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--fc-primary-inverted)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-primary-inverted</td>
+    </tr>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42" style="background-color: var(--fc-secondary-inverted)"></div></th>
+      <td>
+        <div class="d-d-flex d-jc-space-between d-ai-center">
+          <div class="d-fl0 d-fs-300 d-fc-secondary-inverted d-bgc-black-900 d-p6">
+            Aa
+          </div>
+        </div>
+      </td>
+      <th scope="row" class="d-lh-300">
+        Secondary inverted
+        <div class="d-fw-normal">Secondary text color that sits on contrasting surfaces or backgrounds</div>
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--fc-secondary-inverted)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-secondary-inverted</td>
+    </tr>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42" style="background-color: var(--fc-placeholder)"></div></th>
+      <td>
+        <div class="d-d-flex d-jc-space-between d-ai-center">
+          <div class="d-fl0 d-fs-300 d-fc-placeholder d-p6">
+            Aa
+          </div>
+        </div>
+      </td>
+      <th scope="row" class="d-lh-300">
+        Placeholder
+        <div class="d-fw-normal">Text color for placeholder text within form elements</div>
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--fc-placeholder)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-placeholder</td>
+    </tr>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42" style="background-color: var(--fc-disabled)"></div></th>
+      <td>
+        <div class="d-d-flex d-jc-space-between d-ai-center">
+          <div class="d-fl0 d-fs-300 d-fc-disabled d-p6">
+            Aa
+          </div>
+        </div>
+      </td>
+      <th scope="row" class="d-lh-300">
+        Disabled
+        <div class="d-fw-normal">Used for text paired with disabled content or components, like the form elements.</div>
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--fc-disabled)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-disabled</td>
     </tr>
     <tr>
       <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42" style="background-color: var(--fc-muted)"></div></th>
@@ -79,70 +143,6 @@ Key foreground colors rendered on surfaces, with modifiers to indicate hierarchy
       </th>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--fc-muted)</td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-muted</td>
-    </tr>
-    <tr>
-      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42" style="background-color: var(--fc-primary-inverted)"></div></th>
-      <td>
-        <div class="d-d-flex d-jc-space-between d-ai-center">
-          <div class="d-fl0 d-fs-300 d-fc-primary-inverted d-bgc-black-900 d-p6">
-            Aa
-          </div>
-        </div>
-      </td>
-      <th scope="row" class="d-lh-300">
-        Primary inverted
-        <div class="d-fw-normal">{DESCRIPTION}</div>
-      </th>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--fc-primary-inverted)</td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-primary-inverted</td>
-    </tr>
-    <tr>
-      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42" style="background-color: var(--fc-secondary-inverted)"></div></th>
-      <td>
-        <div class="d-d-flex d-jc-space-between d-ai-center">
-          <div class="d-fl0 d-fs-300 d-fc-secondary-inverted d-bgc-black-900 d-p6">
-            Aa
-          </div>
-        </div>
-      </td>
-      <th scope="row" class="d-lh-300">
-        Secondary inverted
-        <div class="d-fw-normal">{DESCRIPTION}</div>
-      </th>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--fc-secondary-inverted)</td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-secondary-inverted</td>
-    </tr>
-    <tr>
-      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42" style="background-color: var(--fc-placeholder)"></div></th>
-      <td>
-        <div class="d-d-flex d-jc-space-between d-ai-center">
-          <div class="d-fl0 d-fs-300 d-fc-placeholder d-p6">
-            Aa
-          </div>
-        </div>
-      </td>
-      <th scope="row" class="d-lh-300">
-        Placeholder
-        <div class="d-fw-normal">{DESCRIPTION}</div>
-      </th>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--fc-placeholder)</td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-placeholder</td>
-    </tr>
-    <tr>
-      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42" style="background-color: var(--fc-disabled)"></div></th>
-      <td>
-        <div class="d-d-flex d-jc-space-between d-ai-center">
-          <div class="d-fl0 d-fs-300 d-fc-disabled d-p6">
-            Aa
-          </div>
-        </div>
-      </td>
-      <th scope="row" class="d-lh-300">
-        Disabled
-        <div class="d-fw-normal">{DESCRIPTION}</div>
-      </th>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--fc-disabled)</td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-disabled</td>
     </tr>
   </tbody>
 </table>
@@ -243,7 +243,9 @@ Define the edge of key content area, components, or surfaces.
 
 ## Base colors
 
-Base colors are the literal value of all available colors. Each of the colors listed above referenced one of these. Use these after abstracted text, status text, surface, or border colors have been exhausted.
+Base colors are the literal value of all available colors. Use these if all abstracted text, status text, surface, or border colors to not fit your need.
+
+Each of the colors listed above referenced one of these. For example, `var(--fc-primary)` is an alias to `var(--black-900)`, and `var(--fc-error)` is an alias to `var(--red-400)`.
 
 <colors></colors>
 
