@@ -14,10 +14,10 @@ const themeConfig = {
   logo: baseURL + 'assets/images/dialpad-logo.svg',
   navbar: [
     {text: 'Home', link: '/'},
-    {text: 'Design', link: '/design/colors/color-palette'},
+    {text: 'Design', link: '/design/'},
     {text: 'Components', link: '/components/'},
-    {text: 'Utilities', link: '/utilities/backgrounds/attachment'},
-    {text: 'Guides', link: '/guides/getting-started/installation'},
+    {text: 'Utilities', link: '/utilities/'},
+    {text: 'Guides', link: '/guides/'},
     {text: 'About', link: '/about/dialtone'},
   ],
   sidebar,

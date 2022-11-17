@@ -2,6 +2,7 @@
 title: Input
 desc: An input field is an input control that allows users to enter alphanumeric information. It can have a range of options and supports single line and multi-line lengths, as well as varying formats, including numbers, masked passwords, etc.
 storybook_url: https://vue.dialpad.design/?path=/story/components-input--default
+figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Components-7?node-id=8923%3A21866&viewport=-983%2C83%2C0.16&t=xHutRjwo1o5zMTgT-11
 ---
 <code-well-header>
   <div class="d-w100p">

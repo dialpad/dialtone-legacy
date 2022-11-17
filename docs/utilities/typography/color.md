@@ -104,7 +104,7 @@ Use `d:d-fc-{color}` to set a different text color when the user prefers dark mo
   import colors from '@data/colors.json';
 </script>
 
-## CSS Variables
+## CSS variables
 
 Dialtone provides a few abstracted colors CSS variables based on our [color stops](/design/colors/color-palette/).
 
