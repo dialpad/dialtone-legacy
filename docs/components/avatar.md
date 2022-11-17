@@ -77,6 +77,82 @@ prev:
 <div class="d-avatar d-avatar--lg ...">DP</div>
 ```
 
+### Presence
+
+<code-well-header>
+    <div class="d-d-inline-flex d-ai-center d-flow8">
+        <div class="d-avatar d-avatar--sm d-avatar--icon d-avatar--purple-500">
+            <img src="/assets/images/person.png" alt=""/>
+            <div class="d-avatar__presence">
+                <example-presence presence="active"/>
+            </div>
+        </div>
+        <div class="d-avatar d-avatar--md d-avatar--icon d-avatar--purple-500">
+            <img src="/assets/images/person.png" alt=""/>
+            <div class="d-avatar__presence">
+                <example-presence presence="busy"/>
+            </div>
+        </div>
+        <div class="d-avatar d-avatar--lg d-avatar--icon d-avatar--purple-500">
+            <img src="/assets/images/person.png" alt=""/>
+            <div class="d-avatar__presence">
+                <example-presence presence="offline"/>
+            </div>
+        </div>
+    </div>
+    <div class="d-d-inline-flex d-ai-center d-flow8">
+        <div class="d-avatar d-avatar--sm d-avatar--purple-500 d-avatar--initials">
+            DP
+            <div class="d-avatar__presence">
+                <example-presence presence="active"/>
+            </div>
+        </div>
+        <div class="d-avatar d-avatar--md d-avatar--purple-500 d-avatar--initials">
+            DP
+            <div class="d-avatar__presence">
+                <example-presence presence="busy"/>
+            </div>
+        </div>
+        <div class="d-avatar d-avatar--lg d-avatar--purple-500 d-avatar--initials">
+            DP
+            <div class="d-avatar__presence">
+                <example-presence presence="away"/>
+            </div>
+        </div>
+    </div>
+    <div class="d-d-inline-flex d-ai-center d-flow8">
+        <div class="d-avatar d-avatar--sm d-avatar--icon d-avatar--purple-500">
+            <IconGroup/>
+            <div class="d-avatar__presence">
+                <example-presence presence="away"/>
+            </div>
+        </div>
+        <div class="d-avatar d-avatar--md d-avatar--icon d-avatar--purple-500">
+            <IconGroup/>
+            <div class="d-avatar__presence">
+                <example-presence presence="offline"/>
+            </div>
+        </div>
+        <div class="d-avatar d-avatar--lg d-avatar--icon d-avatar--purple-500">
+            <IconGroup/>
+            <div class="d-avatar__presence">
+                <example-presence presence="active"/>
+            </div>
+        </div>
+    </div>
+</code-well-header>
+
+```html
+<div class="d-avatar ...">
+    ...
+    <div class="d-avatar__presence">
+        <div class="d-presence">
+            <div class="d-presence__inner d-presence__inner--{$status}"></div>
+        </div>
+    </div>
+</div>
+```
+
 ## Classes
 
 <component-class-table component-name="avatar"></component-class-table>
@@ -94,6 +170,7 @@ to [WCAG](https://www.w3.org/WAI/tutorials/images/decorative) references for
 your specific usage.
 
 <script setup>
+import ExamplePresence from '@exampleComponents/ExamplePresence.vue';
 import IconGroup from "@svgIcons/IconGroup.vue";
 import { colors } from '@data/avatar.json';
 </script>
