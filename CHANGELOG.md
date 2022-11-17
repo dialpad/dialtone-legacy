@@ -1,3 +1,10 @@
+# [7.5.0](https://github.com/dialpad/dialtone/compare/v7.4.1...v7.5.0) (2022-11-17)
+
+
+### Features
+
+* update d-avatar with position: relative style attr ([#736](https://github.com/dialpad/dialtone/issues/736)) ([82193ab](https://github.com/dialpad/dialtone/commit/82193ab12da809628bf0bfbb65e93e53a1379612))
+
 ## [7.4.1](https://github.com/dialpad/dialtone/compare/v7.4.0...v7.4.1) (2022-11-04)
 
 
