@@ -25,5 +25,19 @@ exports.dialtoneTheme = (options) => {
         headerLinkSelector: 'a.toc-link',
       }),
     ],
+    async onInitialized (app) {
+      const blogPostsFrontmatter = app
+        .pages
+        .filter(page => page.path.includes('/about/whats_new/posts'))
+        .map(post => post.frontmatter);
+
+      const blogIndex = app.pages.find(page => page.path === '/about/whats_new/');
+      blogIndex.data.blogPosts = blogPostsFrontmatter;
+    },
+    extendsPage: (page, app) => {
+      if (page.path === '/about/whats_new/') {
+        page.data.blogPosts = [];
+      }
+    },
   };
 };

@@ -1,6 +1,5 @@
 import { defineUserConfig } from 'vuepress';
 import { resolve } from 'path';
-import Markdown from 'vite-plugin-md';
 
 const sidebar = require('../_data/site-nav.json');
 const { dialtoneTheme } = require('./theme');
@@ -48,7 +47,6 @@ export default defineUserConfig({
 
   bundler: viteBundler({
     viteOptions: {
-      plugins: [Markdown()],
       resolve: {
         alias: {
           vue$: 'vue/dist/vue.esm-bundler.js',
@@ -56,7 +54,6 @@ export default defineUserConfig({
       },
     },
     vuePluginOptions: {
-      include: [/\.vue$/, /\.md$/],
       template: {
         compilerOptions: {
           whitespace: 'preserve'
