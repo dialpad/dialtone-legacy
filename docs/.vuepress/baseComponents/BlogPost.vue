@@ -49,69 +49,45 @@
   </article>
 </template>
 
-<script>
-import { DtAvatar, DtButton, DtTooltip, DtIcon, DtLink, DtCard } from '@dialpad/dialtone-vue';
+<script setup>
+import { DtAvatar, DtButton, DtTooltip, DtIcon } from '@dialpad/dialtone-vue';
 import { format } from 'date-fns';
+import { computed } from 'vue';
 
-export default {
-  name: 'BlogPost',
-
-  components: {
-    DtAvatar,
-    DtButton,
-    DtTooltip,
-    DtIcon,
-    DtLink,
-    DtCard,
+const props = defineProps({
+  posted: {
+    type: Date,
+    required: true,
   },
-
-  props: {
-    posted: {
-      type: Date,
-      required: true,
-    },
-
-    heading: {
-      type: String,
-      required: true,
-    },
-
-    author: {
-      type: String,
-      required: true,
-    },
-
-    isPreview: {
-      type: Boolean,
-      default: false,
-    },
+  heading: {
+    type: String,
+    required: true,
   },
-
-  data () {
-    return {
-      format,
-    };
+  author: {
+    type: String,
+    required: true,
   },
-
-  computed: {
-    initials () {
-      // get first and last initials from author name.
-      const words = this.author.split(' ');
-      if (words.length > 1) {
-        return words[0][0] + words[words.length - 1][0];
-      } else {
-        return words[0][0];
-      }
-    },
+  isPreview: {
+    type: Boolean,
+    default: false,
   },
+});
 
-  methods: {
-    async copyLink () {
-      try {
-        await navigator.clipboard.writeText(window.location.href);
-      } catch (err) {}
-    },
-  },
+const initials = computed(() => {
+  // get first and last initials from author name.
+  const words = props.author.split(' ');
+  if (words.length === 0) return '';
+  if (words.length > 1) {
+    return words[0][0] + words[words.length - 1][0];
+  } else {
+    return words[0][0];
+  }
+});
+
+const copyLink = async () => {
+  try {
+    await navigator.clipboard.writeText(window.location.href);
+  } catch (err) {}
 };
 </script>
 

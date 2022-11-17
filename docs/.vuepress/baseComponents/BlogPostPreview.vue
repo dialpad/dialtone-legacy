@@ -18,59 +18,23 @@
   </dt-link>
 </template>
 
-<script>
+<script setup>
 import { DtLink, DtCard } from '@dialpad/dialtone-vue';
 import { format } from 'date-fns';
 import BlogPost from '@baseComponents/BlogPost.vue';
 
-export default {
-  name: 'BlogPostPreview',
-
-  components: {
-    DtLink,
-    DtCard,
-    BlogPost,
+defineProps({
+  posted: {
+    type: Date,
+    required: true,
   },
-
-  props: {
-    posted: {
-      type: Date,
-      required: true,
-    },
-
-    heading: {
-      type: String,
-      required: true,
-    },
-
-    author: {
-      type: String,
-      required: true,
-    },
+  heading: {
+    type: String,
+    required: true,
   },
-
-  data () {
-    return {
-      format,
-    };
+  author: {
+    type: String,
+    required: true,
   },
-};
+});
 </script>
-
-<style lang="less">
-.blog-post {
-  ol, ul, li {
-    white-space: initial;
-  }
-  h2 {
-    font-size: var(--fs-300);
-  }
-
-  h2,
-  h3 {
-    margin-top: calc(0.5rem - var(--navbar-height) + var(--su48));
-    padding-top: calc(1rem + var(--navbar-height));
-    font-weight: var(--fw-bold);
-  }
-}
-</style>
