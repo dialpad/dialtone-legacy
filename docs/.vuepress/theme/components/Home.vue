@@ -206,7 +206,6 @@
 <script setup>
 import { onBeforeMount, ref } from 'vue';
 import axios from 'axios';
-import { DtButton } from '@dialpad/dialtone-vue';
 
 const version = ref('0.0.0');
 
