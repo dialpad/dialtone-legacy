@@ -30,8 +30,8 @@ Must be one of the following:
 * **docs**: documentation changes.
 * **feat**: a new feature (corresponding with `MINOR` in SemVer).
 * **fix**: a bug fix (corresponding with `PATCH` in SemVer).
-* **perf**: performance improvements  (corresponding with `PATCH` in SemVer).
-* **refactor**: changes that neither fix a bug nor add a feature  (corresponding with `PATCH` in SemVer).
+* **perf**: performance improvements (corresponding with `PATCH` in SemVer).
+* **refactor**: changes that neither fix a bug nor add a feature (corresponding with `PATCH` in SemVer).
 * **revert**: changes that revert a commit.
 * **style**: not relevant changes (whitespace, code formatting, semicolons, etc).
 * **test**: changes that add or modify tests.
