@@ -1,3 +1,10 @@
+# [7.7.0](https://github.com/dialpad/dialtone/compare/v7.6.0...v7.7.0) (2022-11-18)
+
+
+### Features
+
+* what's new blog page ([#737](https://github.com/dialpad/dialtone/issues/737)) ([4f01000](https://github.com/dialpad/dialtone/commit/4f0100021679f73a187528250ba2047afcad5fc1))
+
 # [7.6.0](https://github.com/dialpad/dialtone/compare/v7.5.0...v7.6.0) (2022-11-18)
 
 
