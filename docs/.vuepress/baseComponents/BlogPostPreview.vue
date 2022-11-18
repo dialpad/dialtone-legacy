@@ -19,7 +19,6 @@
 </template>
 
 <script setup>
-import { DtLink, DtCard } from '@dialpad/dialtone-vue';
 import { format } from 'date-fns';
 import BlogPost from '@baseComponents/BlogPost.vue';
 

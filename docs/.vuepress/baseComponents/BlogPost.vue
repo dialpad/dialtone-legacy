@@ -45,7 +45,6 @@
 </template>
 
 <script setup>
-import { DtAvatar, DtButton, DtIcon } from '@dialpad/dialtone-vue';
 import { format } from 'date-fns';
 import { computed } from 'vue';
 
