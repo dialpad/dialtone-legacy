@@ -1,6 +1,6 @@
 ---
 title: Guides
-desc:
+desc: In-depth guidance to support consistent, high-quality product design.
 no_preview: true
 prev:
   text: Spacing system
@@ -22,7 +22,7 @@ prev:
         <span class="dialtone-wall__title-text">Design principles</span>
         <span class="d-badge d-badge d-badge--purple-500">Planned</span>
       </div>
-      <div class="dialtone-wall__description">Guiding the team with principles and values to build cohesive experiences.</div>
+      <div class="dialtone-wall__description">The core values behind Dialpad's experiences.</div>
     </div>
   </div>
   <router-link class="dialtone-wall__item" to="/guides/content/">
@@ -30,7 +30,7 @@ prev:
       <div class="dialtone-wall__title">
         <span class="dialtone-wall__title-text">Writing guidelines</span>
       </div>
-      <div class="dialtone-wall__description">Write content that’s easy to understand and meets people where they are.</div>
+      <div class="dialtone-wall__description">Guidance on voice and tone, terms, grammar, and more.</div>
     </div>
   </router-link>
   <router-link class="dialtone-wall__item" to="/guides/accessibility/">
@@ -38,7 +38,7 @@ prev:
       <div class="dialtone-wall__title">
         <span class="dialtone-wall__title-text">Accessibility</span>
       </div>
-      <div class="dialtone-wall__description">Build accessible Dialpad products.</div>
+      <div class="dialtone-wall__description">Guidance on building products for everyone.</div>
     </div>
   </router-link>
   <div class="dialtone-wall__item dialtone-wall__item--disabled" to="/design/typography/">
@@ -47,7 +47,7 @@ prev:
         <span class="dialtone-wall__title-text">Brand</span>
         <span class="d-badge d-badge d-badge--purple-500">Planned</span>
       </div>
-      <div class="dialtone-wall__description">Express the Dialpad brand and design philosophy.</div>
+      <div class="dialtone-wall__description">Details on Dialpad's identity and who we are as a company.</div>
     </div>
   </div>
   <div class="dialtone-wall__item dialtone-wall__item--disabled" to="/design/typography/">

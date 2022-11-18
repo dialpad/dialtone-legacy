@@ -1,4 +1,4 @@
 ---
 title: Typography
-desc: Lorem ipsum dolor sit amet.
+desc: Guidance for clear, legible, and easy-to-read text.
 ---

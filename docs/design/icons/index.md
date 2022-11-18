@@ -1,6 +1,6 @@
 ---
 title: Iconography
-desc:
+desc: An icon style for visually communicating commands, status, and more
 ---
 
 <aside class="d-notice d-notice--info d-mt24 d-wmx100p" role="status" aria-hidden="false">

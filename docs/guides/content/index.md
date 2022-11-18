@@ -1,5 +1,6 @@
 ---
 title: Writing guidelines
+desc: Guidance on voice and tone, terms, grammar, and more.
 ---
 
 ## Principles
