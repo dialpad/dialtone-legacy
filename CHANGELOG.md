@@ -1,3 +1,10 @@
+# [7.6.0](https://github.com/dialpad/dialtone/compare/v7.5.0...v7.6.0) (2022-11-18)
+
+
+### Features
+
+* **Presence:** added to avatar ([#740](https://github.com/dialpad/dialtone/issues/740)) ([fd87a50](https://github.com/dialpad/dialtone/commit/fd87a50c427e56a07219e405812a69dcdca455b2))
+
 # [7.5.0](https://github.com/dialpad/dialtone/compare/v7.4.1...v7.5.0) (2022-11-17)
 
 
