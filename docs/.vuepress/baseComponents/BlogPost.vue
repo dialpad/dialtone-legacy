@@ -21,14 +21,19 @@
     <div
       class="d-pls-end"
     >
-      <dt-button
-        kind="inverted"
-        @click="copyLink"
-      >
-        <template #icon>
-          <dt-icon name="copy" />
+      <dt-tooltip v-if="!isPreview">
+        <template #anchor>
+          <dt-button
+            kind="inverted"
+            @click="copyLink"
+          >
+            <template #icon>
+              <dt-icon name="copy" />
+            </template>
+          </dt-button>
         </template>
-      </dt-button>
+        Copy link
+      </dt-tooltip>
     </div>
     <section class="d-gc-full d-ws-pre-wrap">
       <component
