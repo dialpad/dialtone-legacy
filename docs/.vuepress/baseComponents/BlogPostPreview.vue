@@ -18,7 +18,9 @@
             :heading="heading"
             :posted="posted"
             :is-preview="true"
-          />
+          >
+            <slot />
+          </blog-post>
         </template>
       </dt-card>
     </dt-link>

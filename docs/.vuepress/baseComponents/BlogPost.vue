@@ -95,15 +95,18 @@ const copyLink = async () => {
   ol, ul, li {
     white-space: initial;
   }
-  h2 {
-    font-size: var(--fs-300);
-  }
 
-  h2,
-  h3 {
+  h2 {
+    font-weight: var(--fw-medium) !important;
+    font-size: var(--fs-400);
     margin-top: calc(0.5rem - var(--navbar-height) + var(--su48));
     padding-top: calc(1rem + var(--navbar-height));
     font-weight: var(--fw-bold);
+  }
+
+  h3 {
+    margin-top: 1.25em;
+    font-size: var(--fs-300);
   }
 }
 </style>
