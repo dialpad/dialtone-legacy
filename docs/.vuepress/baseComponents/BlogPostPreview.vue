@@ -1,7 +1,7 @@
 <template>
   <dt-link
     class="d-td-none d-fc-unset d-d-block"
-    :href="`/about/whats_new/posts/${format(posted, 'y-M-d')}`"
+    :href="$withBase(`/about/whats_new/posts/${format(posted, 'y-M-d')}`)"
   >
     <dt-card
       class="d-mt72 h:d-bgc-black-200"
