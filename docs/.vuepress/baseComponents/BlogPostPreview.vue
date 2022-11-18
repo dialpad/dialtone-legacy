@@ -23,7 +23,7 @@ import { DtLink, DtCard } from '@dialpad/dialtone-vue';
 import { format } from 'date-fns';
 import BlogPost from '@baseComponents/BlogPost.vue';
 
-const props = defineProps({
+defineProps({
   posted: {
     type: Date,
     required: true,
@@ -37,6 +37,4 @@ const props = defineProps({
     required: true,
   },
 });
-
-console.log('PROPS: ', props);
 </script>
