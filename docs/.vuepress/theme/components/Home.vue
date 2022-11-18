@@ -30,20 +30,38 @@
             >
           </a>
         </div>
-        <router-link
-          v-slot="{ navigate }"
-          to="/guides/getting-started/"
-          custom
-        >
-          <button
-            class="d-btn d-btn--primary d-btn--lg"
-            role="link"
-            @click="(e) => { sendAnalyticsEvent(); navigate(e); }"
-            @keypress.enter="(e) => { sendAnalyticsEvent(); navigate(e); }"
+        <div class="d-d-flex">
+          <router-link
+            v-slot="{ navigate }"
+            to="/guides/getting-started/"
+            custom
           >
-            Get started
-          </button>
-        </router-link>
+            <dt-button
+              role="link"
+              size="lg"
+              @click="(e) => { sendAnalyticsEvent(); navigate(e); }"
+              @keypress.enter="(e) => { sendAnalyticsEvent(); navigate(e); }"
+            >
+              Get started
+            </dt-button>
+          </router-link>
+          <router-link
+            v-slot="{ navigate }"
+            to="/about/whats_new/"
+            custom
+          >
+            <dt-button
+              role="link"
+              size="lg"
+              importance="outlined"
+              class="d-ml16"
+              @click="(e) => { navigate(e); }"
+              @keypress.enter="(e) => { navigate(e); }"
+            >
+              What's new?
+            </dt-button>
+          </router-link>
+        </div>
       </div>
       <img
         alt=""

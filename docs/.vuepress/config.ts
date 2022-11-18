@@ -115,6 +115,7 @@ export default defineUserConfig({
     '@dialtoneCSS': resolve(__dirname, '../assets/css/' + dialtoneCSS),
     '@dialtoneDocsCSS': resolve(__dirname, '../assets/css/' + dialtoneDocsCSS),
     '@mixins': resolve(__dirname, './common/mixins/'),
+    '@': resolve(__dirname, '../'),
     vue: 'vue/dist/vue.esm-bundler.js',
   },
 
