@@ -4,9 +4,10 @@ desc: Updates, progress and planning for all things Dialtone.
 ---
 
 <div>
-  <BlogPostPreview v-for="post in $page.blogPosts" :key="post.posted" :author="post.author" :heading="post.heading" :posted="post.posted "/>
+  <BlogPostPreview v-for="post in $page.blogPosts" :key="post.posted" :author="post.author" :heading="post.heading" :posted="parse(post.posted, 'y-M-d', new Date())"/>
 </div>
 
 <script setup>
 import BlogPostPreview from '@baseComponents/BlogPostPreview.vue';
+import { parse } from 'date-fns';
 </script>
