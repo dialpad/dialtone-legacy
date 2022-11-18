@@ -21,19 +21,14 @@
     <div
       class="d-pls-end"
     >
-      <dt-tooltip v-if="!isPreview">
-        <template #anchor>
-          <dt-button
-            kind="inverted"
-            @click="copyLink"
-          >
-            <template #icon>
-              <dt-icon name="copy" />
-            </template>
-          </dt-button>
+      <dt-button
+        kind="inverted"
+        @click="copyLink"
+      >
+        <template #icon>
+          <dt-icon name="copy" />
         </template>
-        Copy link
-      </dt-tooltip>
+      </dt-button>
     </div>
     <section class="d-gc-full d-ws-pre-wrap">
       <component
@@ -50,7 +45,7 @@
 </template>
 
 <script setup>
-import { DtAvatar, DtButton, DtTooltip, DtIcon } from '@dialpad/dialtone-vue';
+import { DtAvatar, DtButton, DtIcon } from '@dialpad/dialtone-vue';
 import { format } from 'date-fns';
 import { computed } from 'vue';
 
