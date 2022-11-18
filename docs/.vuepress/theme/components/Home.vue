@@ -1,13 +1,13 @@
 <template>
   <section class="hero d-mnt16 d-bgr-none">
-    <div class="hero--inner-wrapper d-d-flex d-jc-space-between d-mx-auto d-wmx1340 d-pl16 d-pr16">
+    <div class="hero--inner-wrapper d-d-flex d-jc-space-between d-mx-auto d-wmx1340 d-pl32 d-pr32">
       <div class="hero--content d-d-flex d-fd-column d-jc-center">
         <h1 class="d-headline-extra-extra-large d-mb12">
           Improve your UI's reception with Dialtone
         </h1>
         <p class="d-fs-300 d-lh-400 d-mb16 d-fc-secondary">
-          Documented styles, utility classes, and components to help you quickly design
-          and build unified experiences across Dialpad and Dialpad Meetings.
+          Documented styles, components, and utility classes to help you quickly design and build unified experiences
+          across Dialpad and Dialpad Meetings.
         </p>
         <div class="d-mb48">
           <a
@@ -32,7 +32,7 @@
         </div>
         <router-link
           v-slot="{ navigate }"
-          to="/guides/getting-started/installation.html"
+          to="/guides/getting-started/"
           custom
         >
           <button
@@ -54,37 +54,47 @@
   </section>
   <section class="links d-d-grid d-gg16 d-g-cols12 d-wmx1340 d-mx-auto">
     <div class="link d-body-base d-gc3 d-px32 d-ta-center">
-      <img
-        alt=""
-        class="d-h96 d-mb24"
-        :src="$withBase('/assets/images/home-design.svg')"
+      <router-link
+        class="d-fc-secondary h:d-fc-purple-400 d-d-block"
+        to="/design/"
       >
-      <h2 class="d-headline-extra-large d-mb8 d-baw0">
-        Design
-      </h2>
+        <img
+          alt=""
+          class="d-h96 d-mb24"
+          :src="$withBase('/assets/images/home-design.svg')"
+        >
+        <h2 class="d-headline-extra-large d-mb8 d-baw0">
+          Design language
+        </h2>
+      </router-link>
       <p class="d-mb8 d-body-compact d-fc-secondary">
         Foundational color, iconography, and spacing guidelines
       </p>
       <router-link
         class="d-link"
-        to="/design/colors/color-palette"
+        to="/design/"
       >
         Browse design guidelines
       </router-link>
     </div>
     <div class="link d-body-base d-gc3 d-px32 d-ta-center">
-      <img
-        alt=""
-        class="d-h96 d-mb24"
-        :src="$withBase('/assets/images/home-components.svg')"
+      <router-link
+        class="d-fc-secondary h:d-fc-purple-400 d-d-block"
+        to="/components/"
       >
-      <h2 class="d-headline-extra-large d-mb8 d-baw0">
-        Components
-      </h2>
+        <img
+          alt=""
+          class="d-h96 d-mb24"
+          :src="$withBase('/assets/images/home-components.svg')"
+        >
+        <h2 class="d-headline-extra-large d-mb8 d-baw0">
+          Components
+        </h2>
+      </router-link>
       <p class="d-mb8 d-body-compact d-fc-secondary">
         Presentational UI components offered in CSS and Vue
       </p>
-      <div class="d-d-inline-flex d-fd-column">
+      <div class="d-d-inline-flex d-fd-column d-stack4">
         <router-link
           class="d-link"
           to="/components/"
@@ -100,52 +110,62 @@
       </div>
     </div>
     <div class="link d-body-base d-gc3 d-px32 d-ta-center">
-      <img
-        alt=""
-        class="d-h96 d-mb24"
-        :src="$withBase('/assets/images/home-utilities.svg')"
+      <router-link
+        class="d-fc-secondary h:d-fc-purple-400 d-d-block"
+        to="/utilities/"
       >
-      <h2 class="d-headline-extra-large d-mb8 d-baw0">
-        Utilities
-      </h2>
+        <img
+          alt=""
+          class="d-h96 d-mb24"
+          :src="$withBase('/assets/images/home-utilities.svg')"
+        >
+        <h2 class="d-headline-extra-large d-mb8 d-baw0">
+          Utilities
+        </h2>
+      </router-link>
       <p class="d-mb8 d-body-compact d-fc-secondary">
-        Atomic CSS utility classes so you don't have to write custom CSS
+        A utility-first CSS framework for building user interfaces.
       </p>
       <router-link
         class="d-link"
-        to="/utilities/backgrounds/attachment"
+        to="/utilities/"
       >
         Browse utility classes
       </router-link>
     </div>
     <div class="link d-body-base d-gc3 d-px32 d-ta-center">
-      <img
-        alt=""
-        class="d-h96 d-mb24"
-        :src="$withBase('/assets/images/home-guides.svg')"
+      <router-link
+        class="d-fc-secondary h:d-fc-purple-400 d-d-block"
+        to="/guides/"
       >
-      <h2 class="d-headline-extra-large d-mb8 d-baw0">
-        Guides
-      </h2>
+        <img
+          alt=""
+          class="d-h96 d-mb24"
+          :src="$withBase('/assets/images/home-guides.svg')"
+        >
+        <h2 class="d-headline-extra-large d-mb8 d-baw0">
+          Guides
+        </h2>
+      </router-link>
       <p class="d-mb8 d-body-compact d-fc-secondary">
         Reference guidelines for Accessibility, Writing, and more
       </p>
-      <div class="d-d-inline-flex d-fd-column">
+      <div class="d-d-inline-flex d-fd-column d-stack4">
         <router-link
           class="d-link"
-          to="/guides/getting-started/installation.html"
+          to="/guides/getting-started/"
         >
           Getting started
         </router-link>
         <router-link
           class="d-link"
-          to="/guides/content/principles.html"
+          to="/guides/content/"
         >
           Writing guidelines
         </router-link>
         <router-link
           class="d-link"
-          to="/guides/accessibility/fundamentals.html"
+          to="/guides/accessibility/"
         >
           Accessibility
         </router-link>

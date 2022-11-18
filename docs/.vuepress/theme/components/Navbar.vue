@@ -54,7 +54,7 @@
           class="d-btn d-btn--muted d-tooltip--hover"
           href="https://codepen.io/pen/?template=BajJpwW"
           target="_blank"
-          rel="noreferrer noopener"
+          rel="noopener noreferrer"
         >
           <img
             class="d-icon d-icon--size-400"

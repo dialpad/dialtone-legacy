@@ -2,6 +2,7 @@
 title: Avatar
 desc: An avatar is a visual representation of a user or object.
 storybook_url: https://vue.dialpad.design/?path=/story/components-avatar--default
+figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Components-7?node-id=8918%3A21289&viewport=137%2C605%2C0.46&t=xHutRjwo1o5zMTgT-11
 prev:
   text: Design - Spacing system
   link: /design/spacing/spacing-system.html
@@ -76,6 +77,82 @@ prev:
 <div class="d-avatar d-avatar--lg ...">DP</div>
 ```
 
+### Presence
+
+<code-well-header>
+    <div class="d-d-inline-flex d-ai-center d-flow8">
+        <div class="d-avatar d-avatar--sm d-avatar--icon d-avatar--purple-500">
+            <img src="/assets/images/person.png" alt=""/>
+            <div class="d-avatar__presence">
+                <example-presence presence="active"/>
+            </div>
+        </div>
+        <div class="d-avatar d-avatar--md d-avatar--icon d-avatar--purple-500">
+            <img src="/assets/images/person.png" alt=""/>
+            <div class="d-avatar__presence">
+                <example-presence presence="busy"/>
+            </div>
+        </div>
+        <div class="d-avatar d-avatar--lg d-avatar--icon d-avatar--purple-500">
+            <img src="/assets/images/person.png" alt=""/>
+            <div class="d-avatar__presence">
+                <example-presence presence="offline"/>
+            </div>
+        </div>
+    </div>
+    <div class="d-d-inline-flex d-ai-center d-flow8">
+        <div class="d-avatar d-avatar--sm d-avatar--purple-500 d-avatar--initials">
+            DP
+            <div class="d-avatar__presence">
+                <example-presence presence="active"/>
+            </div>
+        </div>
+        <div class="d-avatar d-avatar--md d-avatar--purple-500 d-avatar--initials">
+            DP
+            <div class="d-avatar__presence">
+                <example-presence presence="busy"/>
+            </div>
+        </div>
+        <div class="d-avatar d-avatar--lg d-avatar--purple-500 d-avatar--initials">
+            DP
+            <div class="d-avatar__presence">
+                <example-presence presence="away"/>
+            </div>
+        </div>
+    </div>
+    <div class="d-d-inline-flex d-ai-center d-flow8">
+        <div class="d-avatar d-avatar--sm d-avatar--icon d-avatar--purple-500">
+            <IconGroup/>
+            <div class="d-avatar__presence">
+                <example-presence presence="away"/>
+            </div>
+        </div>
+        <div class="d-avatar d-avatar--md d-avatar--icon d-avatar--purple-500">
+            <IconGroup/>
+            <div class="d-avatar__presence">
+                <example-presence presence="offline"/>
+            </div>
+        </div>
+        <div class="d-avatar d-avatar--lg d-avatar--icon d-avatar--purple-500">
+            <IconGroup/>
+            <div class="d-avatar__presence">
+                <example-presence presence="active"/>
+            </div>
+        </div>
+    </div>
+</code-well-header>
+
+```html
+<div class="d-avatar ...">
+    ...
+    <div class="d-avatar__presence">
+        <div class="d-presence">
+            <div class="d-presence__inner d-presence__inner--{$status}"></div>
+        </div>
+    </div>
+</div>
+```
+
 ## Classes
 
 <component-class-table component-name="avatar"></component-class-table>
@@ -93,6 +170,7 @@ to [WCAG](https://www.w3.org/WAI/tutorials/images/decorative) references for
 your specific usage.
 
 <script setup>
+import ExamplePresence from '@exampleComponents/ExamplePresence.vue';
 import IconGroup from "@svgIcons/IconGroup.vue";
 import { colors } from '@data/avatar.json';
 </script>

@@ -1,13 +1,25 @@
 ---
-title: Theme
-desc:
-prev:
-  text: Color palette
-  link: /design/colors/color-palette.html
-next:
-  text: Brand icons
-  link: /design/icons/brand.html
+title: Color
+desc: The Dialtone color system expands our primary, secondary, and expressive colors to build out a functional, personal, usable, and accessible set of color stop.
 ---
+
+<!--
+
+## Text
+
+<span class="d-fc-tertiary">Coming soon</span>
+
+## Surface
+
+<span class="d-fc-tertiary">Coming soon</span>
+
+-->
+
+## Base colors
+
+<colors></colors>
+
+## Theme
 
 <table class="d-table dialtone-doc-table d-mt16">
   <thead>
