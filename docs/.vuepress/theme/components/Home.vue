@@ -55,8 +55,8 @@
               size="lg"
               importance="outlined"
               class="d-ml16"
-              @click="(e) => { sendAnalyticsEvent(); navigate(e); }"
-              @keypress.enter="(e) => { sendAnalyticsEvent(); navigate(e); }"
+              @click="(e) => { navigate(e); }"
+              @keypress.enter="(e) => { navigate(e); }"
             >
               What's new?
             </dt-button>
