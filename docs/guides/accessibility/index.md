@@ -1,7 +1,9 @@
 ---
 title: Accessibility and inclusive design
-desc: We are committed to experiences and products that are usable by everyone. Because “everyone” is a lot of people reflecting a variety of backgrounds, abilities, and circumstances, we believe in applying thoughtful and inclusive design and development practices.
+desc: Guidance on building products for everyone.
 ---
+
+We are committed to usable experiences and products for everyone. Because “everyone” is a lot of people reflecting a variety of backgrounds, abilities, and circumstances, we believe in applying thoughtful and inclusive design and development practices.
 
 ## Fundamentals
 

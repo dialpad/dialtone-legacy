@@ -1,7 +1,9 @@
 ---
 title: Size and spacing
-desc: Standardized spacing values help us create consistent user interfaces (UIs). This consistency makes it easier for customers to scan, browse, and utilize our UIs as we're setting visual rhythms and expectations that customers can rely upon.
+desc: A system to maintain consistent size, space, and scale.
 ---
+
+Consistently using this system makes it easier for customers to scan, browse, and use Dialpad product interfaces with a predictable visual rhythm.
 
 ## Overview
 
