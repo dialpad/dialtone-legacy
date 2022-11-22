@@ -9,6 +9,7 @@ exports.dialtoneTheme = (options) => {
     extends: defaultTheme(options),
     layouts: {
       Layout: path.resolve(__dirname, 'layouts/Layout.vue'),
+      OnlyDialtoneLayout: path.resolve(__dirname, 'layouts/OnlyDialtoneLayout.vue'),
     },
     alias: {
       '@theme/Navbar.vue': path.resolve(__dirname, './components/Navbar.vue'),
