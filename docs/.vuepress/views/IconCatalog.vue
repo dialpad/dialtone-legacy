@@ -122,6 +122,9 @@ const resetCategory = () => { selectedCategory.value = 'all'; };
 
 const iconsList = computed(() => {
   if (search.value != null && search.value !== '') {
+    // Do not search until 2 characters are entered
+    if (search.value?.length < 2) return categories;
+
     resetCategory();
     return searchByIconName(categories, search.value);
   }
