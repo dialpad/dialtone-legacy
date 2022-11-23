@@ -107,7 +107,12 @@ const searchByIconName = (icons, name) => {
   return result;
 };
 
-const resetSearch = () => { search.value = null; searchDebounced.value = null; searchRef.value.focus(); };
+const resetSearch = () => {
+  search.value = null;
+  searchDebounced.value = null;
+  resetCategory();
+  searchRef.value.focus();
+};
 
 const resetCategory = () => { selectedCategory.value = 'all'; };
 
