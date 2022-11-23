@@ -57,7 +57,7 @@
     </div>
   </div>
   <div
-    v-for="(icons, category) in iconsList"
+    v-for="(icons, category) in filteredIconList"
     :key="category"
     class="d-mb16"
   >
@@ -121,18 +121,20 @@ const resetSearch = () => {
 
 const resetCategory = () => { selectedCategory.value = 'all'; };
 
-const iconsList = computed(() => {
-  if (search.value != null && search.value !== '') {
-    // Do not search until 2 characters are entered
-    if (search.value?.length < 2) return categories;
+const hasSearchMinimumLength = computed(() => search.value?.length > 1);
 
+const iconsList = computed(() => {
+  if (hasSearchMinimumLength.value) {
     resetCategory();
     return searchByIconName(categories, search.value);
   }
+  return categories;
+});
 
+const filteredIconList = computed(() => {
   return selectedCategory.value === 'all'
-    ? categories
-    : Object.assign({}, { [selectedCategory.value]: categories[selectedCategory.value] });
+    ? iconsList.value
+    : Object.assign({}, { [selectedCategory.value]: iconsList.value[selectedCategory.value] });
 });
 
 const isCategoryInResults = (category) => {
