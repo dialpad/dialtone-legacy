@@ -48,6 +48,7 @@
           v-for="category in categoriesList"
           :key="category"
           :value="category"
+          :disabled="!isCategoryInResults(category)"
         >
           {{ category }}
         </option>
@@ -60,7 +61,6 @@
     class="d-mb16"
   >
     <span
-      v-if="selectedCategory === 'all' "
       class="d-headline-medium d-tt-capitalize"
       v-text="category"
     />
@@ -133,6 +133,10 @@ const iconsList = computed(() => {
     ? categories
     : Object.assign({}, { [selectedCategory.value]: categories[selectedCategory.value] });
 });
+
+const isCategoryInResults = (category) => {
+  return Object.keys(iconsList.value).includes(category);
+};
 
 const selectIcon = (index) => {
   selectedIcon.value = index !== selectedIcon.value ? index : null;
