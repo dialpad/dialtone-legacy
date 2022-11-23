@@ -10,7 +10,6 @@
 //  • BASE STYLE
 //    • SIZES
 //    • COLORS
-//  • ALTERNATE STYLES
 //
 //  ============================================================================
 //  $   BASE STYLE
@@ -18,193 +17,86 @@
 .d-avatar {
   //  Component CSS Vars
   //  ------------------------------------------------------------------------
-  --avatar--fc: var(--fc-tertiary);
-  --avatar--bgc: var(--fc-primary);
-  --avatar--size: var(--su24);
-  --presence-position-right: var(--sun2);
-  --presence-position-bottom: var(--sun2);
+  --avatar-color-background: var(--gold-100);
+  --avatar-color-text: var(--fc-secondary);
+  --avatar-gradient-angle: 180deg;
+  --avatar-gradient-stop-1: var(--gold-100);
+  --avatar-gradient-stop-2: var(--magenta-100);
+  --avatar-gradient-stop-3: var(--blue-200);
+  --avatar-gradient:
+    conic-gradient(
+      from var(--avatar-gradient-angle) at 50% 50%,
+      var(--avatar-gradient-stop-1) 0deg,
+      var(--avatar-gradient-stop-2) 180deg,
+      var(--avatar-gradient-stop-3) 360deg
+    );
+  --avatar-size-shape: var(--size-600);
+  --avatar-size-text: var(--fs-200);
+  --avatar-presence-position-right: var(--sun2);
+  --avatar-presence-position-bottom: var(--sun2);
 
   position: relative;
-  width: var(--avatar--size);
-  height: var(--avatar--size);
-  color: var(--avatar--fc);
-  background-color: var(--avatar--bgc);
-  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--avatar-size-shape);
+  height: var(--avatar-size-shape);
+  color: var(--avatar-color-text);
+  font-weight: var(--fw-bold);
+  font-size: var(--avatar-size-text);
+  line-height: var(--lh-100);
+  background-color: var(--avatar-color-background);
+  background-image: var(--avatar-gradient);
+  border-radius: var(--br-pill);
 
-  img {
-    width: var(--avatar--size);
-    height: var(--avatar--size);
+  &__image {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     border-radius: inherit;
   }
 
   &__presence {
     position: absolute;
-    right: var(--presence-position-right);
-    bottom: var(--presence-position-bottom);
+    right: var(--avatar-presence-position-right);
+    bottom: var(--avatar-presence-position-bottom);
     display: flex;
   }
 
   //  --  SIZES
   //  ------------------------------------------------------------------------
-  //&--sm {}
+
+  &--xs {
+    --avatar-size-shape: calc(var(--size-500) + var(--size-200));
+    --avatar-presence-position-right: var(--sun4);
+    --avatar-presence-position-bottom: var(--sun4);
+  }
+
+  &--sm {
+    --avatar-size-shape: calc(var(--size-500) + var(--size-400));
+    --avatar-size-text: var(--fs-100);
+    --avatar-presence-position-right: var(--sun2);
+    --avatar-presence-position-bottom: var(--sun2);
+  }
 
   &--md {
-    --avatar--size: var(--su32);
-    --presence-position-right: var(--sun1);
-    --presence-position-bottom: var(--sun1);
+    --avatar-size-shape: var(--size-600);
+    --avatar-size-text: var(--fs-200);
+    --avatar-presence-position-right: var(--sun1);
+    --avatar-presence-position-bottom: var(--sun1);
   }
 
   &--lg {
-    --avatar--size: var(--su48);
-    --presence-position-right: var(--su1);
-    --presence-position-bottom: var(--su1);
+    --avatar-size-shape: calc(var(--size-600) + var(--size-500));
+    --avatar-size-text: var(--fs-300);
+    --avatar-presence-position-right: var(--su1);
+    --avatar-presence-position-bottom: var(--su1);
   }
 
-  //  --  COLORS
-  //  ------------------------------------------------------------------------
-  &--purple-600 {
-      --avatar--fc: var(--white);
-      --avatar--bgc: var(--purple-600);
-  }
-
-  &--purple-500 {
-      --avatar--fc: var(--white);
-      --avatar--bgc: var(--purple-500);
-  }
-
-  &--purple-400 {
-      --avatar--fc: var(--white);
-      --avatar--bgc: var(--purple-400);
-  }
-
-  &--purple-300 {
-      --avatar--fc: var(--purple-600);
-      --avatar--bgc: var(--purple-300);
-  }
-
-  &--purple-200 {
-      --avatar--fc: var(--purple-600);
-      --avatar--bgc: var(--purple-200);
-  }
-
-  &--orange-500 {
-      --avatar--fc: var(--white);
-      --avatar--bgc: var(--orange-500);
-  }
-
-  &--orange-400 {
-      --avatar--fc: var(--orange-600);
-      --avatar--bgc: var(--orange-400);
-  }
-
-  &--orange-300 {
-      --avatar--fc: var(--orange-600);
-      --avatar--bgc: var(--orange-300);
-  }
-
-  &--orange-200 {
-      --avatar--fc: var(--orange-600);
-      --avatar--bgc: var(--orange-200);
-  }
-
-  &--magenta-400 {
-      --avatar--fc: var(--white);
-      --avatar--bgc: var(--magenta-400);
-  }
-
-  &--magenta-300 {
-      --avatar--fc: var(--white);
-      --avatar--bgc: var(--magenta-300);
-  }
-
-  &--magenta-200 {
-      --avatar--fc: var(--magenta-500);
-      --avatar--bgc: var(--magenta-200);
-  }
-
-  &--magenta-100 {
-      --avatar--fc: var(--magenta-500);
-      --avatar--bgc: var(--magenta-100);
-  }
-
-  &--gold-500 {
-      --avatar--fc: var(--white);
-      --avatar--bgc: var(--gold-500);
-  }
-
-  &--gold-300 {
-      --avatar--fc: var(--gold-500);
-      --avatar--bgc: var(--gold-300);
-  }
-
-  &--gold-200 {
-      --avatar--fc: var(--gold-500);
-      --avatar--bgc: var(--gold-200);
-  }
-
-  &--gold-100 {
-      --avatar--fc: var(--gold-500);
-      --avatar--bgc: var(--gold-100);
-  }
-}
-
-
-//  ============================================================================
-//  $   ALTERNATE STYLES
-//  ============================================================================
-//  $$  INITIALS
-//  ----------------------------------------------------------------------------
-.d-avatar--initials {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: var(--fw-bold);
-  font-family: inherit;
-  text-align: center;
-
-  //  --  SIZES
-  //  ------------------------------------------------------------------------
-  &.d-avatar--sm {
-    font-size: var(--fs-100);
-  }
-
-  &.d-avatar--md {
-    font-size: var(--fs-200);
-  }
-
-  &.d-avatar--lg {
-    font-size: var(--fs-300);
-  }
-}
-
-//  $$  ICON
-//  ----------------------------------------------------------------------------
-.d-avatar--icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  //  --  SIZES
-  //  ------------------------------------------------------------------------
-  &.d-avatar--sm {
-    .d-svg {
-      width: var(--su16);
-      height: var(--su16);
-    }
-  }
-
-  &.d-avatar--md {
-    .d-svg {
-      width: var(--su24);
-      height: var(--su24);
-    }
-  }
-
-  &.d-avatar--lg {
-    .d-svg {
-      width: var(--su32);
-      height: var(--su32);
-    }
+  &--xl {
+    --avatar-size-shape: var(--size-700);
+    --avatar-size-text: var(--fs-400);
+    --avatar-presence-position-right: var(--su4);
+    --avatar-presence-position-bottom: var(--su4);
   }
 }
