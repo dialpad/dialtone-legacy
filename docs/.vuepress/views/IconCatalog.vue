@@ -83,12 +83,10 @@ import { categories } from '@data/icon.json';
 import { computed, ref } from 'vue';
 import IconSearch from '@v7Icons/Search.vue';
 import IconClose from '@v7Icons/Close.vue';
-import { refDebounced } from '@vueuse/core';
 
 const selectedIcon = ref(null);
 const selectedCategory = ref('all');
 const search = ref(null);
-const searchDebounced = refDebounced(search, 500);
 const searchRef = ref(null);
 
 const categoriesList = computed(() => {
@@ -116,7 +114,6 @@ const searchByIconName = (icons, name) => {
 
 const resetSearch = () => {
   search.value = null;
-  searchDebounced.value = null;
   resetCategory();
   searchRef.value.focus();
 };
@@ -124,9 +121,9 @@ const resetSearch = () => {
 const resetCategory = () => { selectedCategory.value = 'all'; };
 
 const iconsList = computed(() => {
-  if (searchDebounced.value != null && searchDebounced.value !== '') {
+  if (search.value != null && search.value !== '') {
     resetCategory();
-    return searchByIconName(categories, searchDebounced.value);
+    return searchByIconName(categories, search.value);
   }
 
   return selectedCategory.value === 'all'
