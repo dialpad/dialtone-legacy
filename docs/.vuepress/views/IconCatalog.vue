@@ -13,10 +13,17 @@
         type="text"
       >
       <span class="d-input-icon d-input-icon--right">
-        <icon-close
-          class="d-c-pointer"
+        <dt-button
+          kind="muted"
+          importance="clear"
+          circle
+          aria-label="Clear filters"
           @click="resetSearch"
-        />
+        >
+          <template #icon>
+            <icon-close />
+          </template>
+        </dt-button>
       </span>
     </div>
     <div class="d-gc2 d-select">
