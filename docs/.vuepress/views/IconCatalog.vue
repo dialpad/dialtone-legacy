@@ -1,10 +1,7 @@
 <template>
   <div class="d-d-grid d-gg16 d-g-cols6 d-mt8 d-mb16">
-    <div class="d-gc4 d-input__wrapper">
-      <span class="d-input-icon d-input-icon--left">
-        <icon-search />
-      </span>
-      <input
+    <div class="d-gc4">
+      <dt-input
         id="search-input"
         ref="searchRef"
         v-model="search"
@@ -12,19 +9,23 @@
         class="d-input d-input-icon--left d-input-icon--right"
         type="text"
       >
-      <span class="d-input-icon d-input-icon--right">
-        <dt-button
-          kind="muted"
-          importance="clear"
-          circle
-          aria-label="Clear filters"
-          @click="resetSearch"
-        >
-          <template #icon>
-            <icon-close />
-          </template>
-        </dt-button>
-      </span>
+        <template #leftIcon>
+          <icon-search />
+        </template>
+        <template #rightIcon>
+          <dt-button
+            kind="muted"
+            importance="clear"
+            circle
+            aria-label="Clear filters"
+            @click="resetSearch"
+          >
+            <template #icon>
+              <icon-close />
+            </template>
+          </dt-button>
+        </template>
+      </dt-input>
     </div>
     <div class="d-gc2 d-select">
       <label
