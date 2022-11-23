@@ -13,7 +13,7 @@
         type="text"
       >
       <span class="d-input-icon d-input-icon--right">
-        <icon-x-circle
+        <icon-close
           class="d-c-pointer"
           @click="resetSearch"
         />
@@ -75,7 +75,7 @@ import BaseIcon from '@baseComponents/BaseV7Icon.vue';
 import { categories } from '@data/icon.json';
 import { computed, ref } from 'vue';
 import IconSearch from '@v7Icons/Search.vue';
-import IconXCircle from '@v7Icons/XCircle.vue';
+import IconClose from '@v7Icons/Close.vue';
 import { refDebounced } from '@vueuse/core';
 
 const selectedIcon = ref(null);
