@@ -77,6 +77,12 @@
       />
     </div>
   </div>
+  <div
+    v-if="!hasSearchResults"
+    class="d-d-flex d-fl-center"
+  >
+    No results found for "{{ search }}"
+  </div>
 </template>
 
 <script setup>
@@ -123,6 +129,8 @@ const resetSearch = () => {
 const resetCategory = () => { selectedCategory.value = 'all'; };
 
 const hasSearchMinimumLength = computed(() => search.value?.length > 1);
+
+const hasSearchResults = computed(() => Object.keys(filteredIconList.value).length > 0);
 
 const iconsList = computed(() => {
   if (hasSearchMinimumLength.value) {
