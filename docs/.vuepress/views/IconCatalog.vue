@@ -6,6 +6,7 @@
         ref="searchRef"
         v-model="search"
         aria-label="Search icon"
+        placeholder="Search for an icon by name"
         class="d-input d-input-icon--left d-input-icon--right"
         type="text"
       >
