@@ -108,8 +108,6 @@ const paths = {
   styles: {
     inputLib: './lib/build/less/dialtone.less',
     outputLib: './lib/dist/css/',
-    inputDocs: './docs/assets/less/dialtone-docs.less',
-    outputDocs: './docs/assets/css/',
   },
   svgs: {
     sysInput: './lib/build/svg/system/**/*.svg',
@@ -164,7 +162,6 @@ const paths = {
   },
   watch: {
     lib: './lib/build/less/**/*',
-    docs: './docs/assets/less/*',
   },
 };
 
@@ -230,11 +227,9 @@ const libStyles = function (done) {
     .pipe(replace('../../fonts/', '../fonts/'))
     .pipe(postcss([postcssResponsify, postcssFocusVisible]))
     .pipe(dest(paths.styles.outputLib))
-    .pipe(dest(paths.styles.outputDocs))
     .pipe(postcss([cssnano]))
     .pipe(rename({ suffix: '.min' }))
-    .pipe(dest(paths.styles.outputLib))
-    .pipe(dest(paths.styles.outputDocs));
+    .pipe(dest(paths.styles.outputLib));
 };
 
 const libStylesDev = function (done) {
@@ -248,33 +243,7 @@ const libStylesDev = function (done) {
     .pipe(postcss([postcssResponsify, postcssFocusVisible]))
   // concat the css into a single file
     .pipe(concat('dialtone.css'))
-    .pipe(dest(paths.styles.outputLib))
-    .pipe(dest(paths.styles.outputDocs));
-};
-
-//  --  DOCUMENTATION FILES
-const docStyles = function (done) {
-  //  Make sure this feature is activated before running
-  if (!settings.styles) return done();
-
-  //  Compile documentation files
-  return src(paths.styles.inputDocs)
-    .pipe(less())
-    .pipe(dest(paths.styles.outputDocs))
-    .pipe(postcss([cssnano()]))
-    .pipe(rename({ suffix: '.min' }))
-    .pipe(dest(paths.styles.outputDocs));
-};
-
-//  --  DOCUMENTATION FILES DEV
-const docStylesDev = function (done) {
-  //  Make sure this feature is activated before running
-  if (!settings.styles) return done();
-
-  //  Compile documentation files
-  return src(paths.styles.inputDocs)
-    .pipe(less())
-    .pipe(dest(paths.styles.outputDocs));
+    .pipe(dest(paths.styles.outputLib));
 };
 
 const moveStyleTagsToEOF = function (file, enc, cb) {
@@ -607,7 +576,6 @@ const watchFiles = function (done) {
   //  Watch files
   const watcher = watch([
     paths.watch.lib,
-    paths.watch.docs,
   ], series(exports.buildWatch));
   watcher.on('change', function (event) {
     if (event.type === 'deleted') { // if a file is deleted, forget about it
@@ -720,7 +688,6 @@ exports.buildWatch = series(
   webfonts,
   exports.svg,
   libStylesDev,
-  docStylesDev,
 );
 
 // build and run the gulp watch.
@@ -739,7 +706,6 @@ exports.docsite = series(
   exports.svg,
   parallel(
     libStyles,
-    docStyles,
   ),
   buildDocs,
   copyNoJekyll,

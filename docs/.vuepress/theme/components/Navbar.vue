@@ -1,104 +1,85 @@
 <template>
-  <header
-    class="
-    d-ps-sticky d-t0 d-x0 d-d-flex
-    d-ai-center d-w100 d-pl8 d-pr12
-    d-h128 d-hmx64 d-bb d-bc-black-200
-    d-bgc-white d-zi-navigation"
+  <router-link
+    class="d-btn d-py0"
+    title="Go back to the homepage"
+    to="/"
+  >
+    <img
+      class="d-h42"
+      :alt="brandLogoAlt"
+      :src="brandLogo"
+    >
+  </router-link>
+  <nav
+    class="d-ml64 d-flow12 lg:d-d-none"
+    role="navigation"
   >
     <router-link
-      class="d-btn d-py0"
-      title="Go back to the homepage"
-      to="/"
+      v-for="link in navbarLinks"
+      :key="link.text"
+      :to="link.link"
+      class="d-link d-td-none"
+      :class="{ 'router-link-active': isActive(link.text) }"
     >
-      <img
-        class="d-h42"
-        :alt="brandLogoAlt"
-        :src="brandLogo"
-      >
+      {{ link.text }}
     </router-link>
-    <nav
-      class="d-ml64 d-flow12 lg:d-d-none"
-      role="navigation"
-    >
-      <router-link
-        v-for="link in navbarLinks"
-        :key="link.text"
-        :to="link.link"
-        class="d-link d-td-none"
-        :class="{ 'router-link-active': isActive(link.text) }"
+  </nav>
+  <div class="d-ml-auto d-flow8 d-d-flex lg:d-d-none">
+    <div class="d-d-flex d-flow4">
+      <a
+        alt="GitHub repo"
+        class="d-btn d-btn--muted d-tooltip--hover"
+        href="https://github.com/dialpad/dialtone"
+        target="_blank"
+        rel="noreferrer noopener"
       >
-        {{ link.text }}
-      </router-link>
-    </nav>
-    <div class="d-ml-auto d-flow8 d-d-flex lg:d-d-none">
-      <div class="d-d-flex d-flow4">
-        <a
-          alt="GitHub repo"
-          class="d-btn d-btn--muted d-tooltip--hover"
-          href="https://github.com/dialpad/dialtone"
-          target="_blank"
-          rel="noreferrer noopener"
+        <img
+          class="d-icon d-icon--size-400"
+          alt="Github icon"
+          :src="$withBase('/assets/images/github-icon.svg')"
         >
-          <img
-            class="d-icon d-icon--size-400"
-            alt="Github icon"
-            :src="$withBase('/assets/images/github-icon.svg')"
-          >
-          <div class="d-tooltip d-tooltip__arrow--top-center d-ps-absolute d-ws-nowrap">
-            GitHub Repo
-          </div>
-        </a>
-        <a
-          alt="Codepen Template"
-          class="d-btn d-btn--muted d-tooltip--hover"
-          href="https://codepen.io/pen/?template=BajJpwW"
-          target="_blank"
-          rel="noopener noreferrer"
+        <div class="d-tooltip d-tooltip__arrow--top-center d-ps-absolute d-ws-nowrap">
+          GitHub Repo
+        </div>
+      </a>
+      <a
+        alt="Codepen Template"
+        class="d-btn d-btn--muted d-tooltip--hover"
+        href="https://codepen.io/pen/?template=BajJpwW"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          class="d-icon d-icon--size-400"
+          alt="Github icon"
+          :src="$withBase('/assets/images/codepen-icon.svg')"
         >
-          <img
-            class="d-icon d-icon--size-400"
-            alt="Github icon"
-            :src="$withBase('/assets/images/codepen-icon.svg')"
+        <div class="d-tooltip d-tooltip__arrow--top-center d-ps-absolute d-ws-nowrap">
+          Codepen Template
+        </div>
+      </a>
+      <!-- <a
+            href="#"
+            class="d-btn d-btn--muted d-btn--sm d-tooltip--hover js-theme-switcher"
+            title="Toggle dark and light modes"
           >
-          <div class="d-tooltip d-tooltip__arrow--top-center d-ps-absolute d-ws-nowrap">
-            Codepen Template
+          {% iconSystem "invert-colors", "d-icon--size-400" %}
+          <div class="d-tooltip d-tooltip__arrow--top-center d-ps-absolute d-w128">
+              Toggle between dark and light color modes
           </div>
-        </a>
-        <!-- <a
-              href="#"
-              class="d-btn d-btn--muted d-btn--sm d-tooltip--hover js-theme-switcher"
-              title="Toggle dark and light modes"
-            >
-            {% iconSystem "invert-colors", "d-icon--size-400" %}
-            <div class="d-tooltip d-tooltip__arrow--top-center d-ps-absolute d-w128">
-                Toggle between dark and light color modes
-            </div>
-        </a> -->
-      </div>
-      <div
-        id="algolia-search-container"
-        ref="searchBtn"
-      />
+      </a> -->
     </div>
-    <mobile-navbar
-      :active-link="activeLink"
-      :items="navbarLinks"
-      @search="openSearch"
+    <div
+      id="algolia-search-container"
+      ref="searchBtn"
     />
-    <mobile-sidebar
-      v-if="currentPath !== '/'"
-      :current-path="currentPath"
-    />
-  </header>
+  </div>
 </template>
 
 <script setup>
-import { useThemeLocaleData } from '@vuepress/theme-default/lib/client/composables';
+import { useThemeLocaleData } from '@vuepress/plugin-theme-data/client';
 import { useSiteLocaleData } from '@vuepress/client';
 import { useRoute } from 'vue-router';
-import MobileNavbar from './MobileNavbar.vue';
-import MobileSidebar from './MobileSidebar.vue';
 import { onMounted, ref, watch } from 'vue';
 
 const navbarLinks = useThemeLocaleData().value.navbar || [];
@@ -150,11 +131,6 @@ function isActive (text) {
   } else {
     return false;
   }
-}
-
-function openSearch () {
-  const DocSearchBtn = searchBtn.value.children.item(0);
-  DocSearchBtn.click();
 }
 
 onMounted(() => {

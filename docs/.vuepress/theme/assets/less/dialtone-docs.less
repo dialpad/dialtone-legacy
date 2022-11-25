@@ -17,15 +17,15 @@
 //  ============================================================================
 //  $   IMPORTS
 //  ----------------------------------------------------------------------------
-@import (reference) '../../../lib/build/less/variables/icons';
-@import (reference) '../../../lib/build/less/variables/typography';
-@import (reference) '../../../lib/build/less/variables/spacing';
-@import (reference) '../../../lib/build/less/utilities/internals';
-@import (reference) '../../../lib/build/less/utilities/spacing';
-@import (reference) '../../../lib/build/less/utilities/grid';
-@import (reference) '../../../lib/build/less/utilities/typography';
-@import (reference) '../../../lib/build/less/components/link';
-@import (reference) '../../../lib/build/less/components/button';
+@import (reference) '@dialpad/dialtone/lib/build/less/variables/icons';
+@import (reference) '@dialpad/dialtone/lib/build/less/variables/typography';
+@import (reference) '@dialpad/dialtone/lib/build/less/variables/spacing';
+@import (reference) '@dialpad/dialtone/lib/build/less/utilities/internals';
+@import (reference) '@dialpad/dialtone/lib/build/less/utilities/spacing';
+@import (reference) '@dialpad/dialtone/lib/build/less/utilities/grid';
+@import (reference) '@dialpad/dialtone/lib/build/less/utilities/typography';
+@import (reference) '@dialpad/dialtone/lib/build/less/components/link';
+@import (reference) '@dialpad/dialtone/lib/build/less/components/button';
 @import 'dialtone-syntax';
 @import 'overrides.less';
 @import 'hljs-dialpad.less';
@@ -68,6 +68,7 @@ button.DocSearch-Button {
   &:hover {
     box-shadow: unset;
   }
+
   .d-btn();
   .d-btn--muted();
   .d-btn--outlined();
@@ -96,12 +97,23 @@ nav a.router-link-active {
   font-weight: var(--fw-bold);
   text-decoration: none;
 }
+
 //  ============================================================================
 //  $   TOC
 //      Because we're using a third-party plugin to generate the subnav menu,
 //      we can't add utility classes directly to the HTML. So we have to use
 //      custom CSS here instead.
 //  ----------------------------------------------------------------------------
+.toc {
+  position: sticky;
+  top: var(--su64);
+  align-self: flex-start;
+  background-color: var(--base--background-color);
+  z-index: 10;
+  padding-right: var(--su32);
+  flex-basis: 256px;
+}
+
 .toc ol {
   .d-ls-reset();
 
@@ -137,13 +149,12 @@ nav a.router-link-active {
 
   &:hover {
     text-decoration: none;
-    color: var(--c-text-accent);
+    color: var(--primary-color);
     // background-color: var(--black-200);
   }
 
   &.active {
-    color: var(--c-text-accent);
-    font-weight: var(--fw-bold);
+    color: var(--primary-color);
 
     &::before {
       position: absolute;
@@ -163,7 +174,22 @@ nav a.router-link-active {
 //      Because the doc site needs layout specifications that aren't
 //      appropriate to ship as part of Dialtone.
 //  ----------------------------------------------------------------------------
-.d-ga-toc { grid-area: toc !important; }
+.main-content {
+  padding: 0 2.5rem;
+  //max-width: calc(100% - 16rem);
+  a.header-anchor {
+    opacity: 0;
+  }
+  h2 {
+    &:hover a.header-anchor {
+      opacity: 1;
+    }
+  }
+}
+
+.d-ga-toc {
+  grid-area: toc !important;
+}
 
 .d-gl-docsite {
   grid-template-areas: 'sidebar content';
@@ -256,10 +282,9 @@ nav a.router-link-active {
     transform: translateX(calc(-1 * var(--icon-card-width)));
     visibility: visible;
     opacity: 1;
-    transition:
-      opacity 50ms var(--ttf-in-out) 0s,
-      transform 50ms var(--ttf-in-out) 0s,
-      visibility 0s 50ms;
+    transition: opacity 50ms var(--ttf-in-out) 0s,
+    transform 50ms var(--ttf-in-out) 0s,
+    visibility 0s 50ms;
   }
 
   //  If it's in the first two columns, show the footer on the right
@@ -274,17 +299,16 @@ nav a.router-link-active {
     transform: translateX(0);
     visibility: hidden;
     opacity: 0;
-    transition:
-      opacity 100ms var(--ttf-in-out) 0s,
-      transform 100ms var(--ttf-in-out) 0s,
-      visibility 0s 0s;
+    transition: opacity 100ms var(--ttf-in-out) 0s,
+    transform 100ms var(--ttf-in-out) 0s,
+    visibility 0s 0s;
   }
 }
 
 .dialtone-icon-card__footer-spot-illustration {
   .dialtone-icon-card__footer();
 
-  width: calc(var(--icon-card-width) *1.5);
+  width: calc(var(--icon-card-width) * 1.5);
   min-height: auto;
 }
 
@@ -535,10 +559,12 @@ nav a.router-link-active {
     margin-top: var(--su16);
     font-weight: var(--fw-bold);
   }
+
   > dd {
     margin: 0;
     max-width: 72ch;
   }
+
   code {
     font-weight: var(--fw-normal);
   }
@@ -607,6 +633,7 @@ nav a.router-link-active {
       padding: 0;
       list-style: none;
     }
+
     li {
       font-size: var(--fs-200);
       line-height: var(--lh-400);
@@ -627,6 +654,7 @@ nav a.router-link-active {
     td {
       border: unset;
     }
+
     [scope="col"]:first-child {
       padding-left: 0;
     }
@@ -639,6 +667,7 @@ nav a.router-link-active {
       border-bottom: var(--su1) solid var(--table-bc);
       border-left: unset;
     }
+
     [scope="row"] {
       padding-left: 0;
     }

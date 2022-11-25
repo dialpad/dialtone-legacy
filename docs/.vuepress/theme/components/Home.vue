@@ -204,6 +204,7 @@
 </template>
 
 <script setup>
+import { DtButton } from '@dialpad/dialtone-vue';
 import { onBeforeMount, ref } from 'vue';
 import axios from 'axios';
 

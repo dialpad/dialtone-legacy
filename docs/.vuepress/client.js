@@ -24,17 +24,12 @@ import IconClose from '@svgIcons/IconClose.vue';
 import IconCheckmark from '@svgIcons/IconCheckmark.vue';
 import IconPhone from '@svgIcons/IconPhone.vue';
 
-// CSS
-import '@dialtoneCSS';
-import '@dialtoneDocsCSS';
-
 export default defineClientConfig({
   enhance ({ app, router, siteData }) {
     // Register libraries
     if (!__VUEPRESS_SSR__) {
       registerDialtoneVue(app);
       registerDialtoneCombinator(app);
-      registerDialtoneIcons(app);
     }
 
     // Common views
@@ -79,31 +74,4 @@ async function registerDialtoneVue (app) {
     app.component(key, module[key]);
   });
   app.provide('dialtoneComponents', dialtoneComponents);
-}
-
-async function registerDialtoneIcons (app) {
-  const brandIcons = (await import(`../_data/svg-brand.json`)).default;
-  const systemIcons = (await import(`../_data/svg-system.json`)).default;
-  const icons = [
-    ...brandIcons,
-    ...systemIcons,
-  ];
-
-  const iconEntries = [];
-  const iconPromises = [];
-  icons.forEach(icon => {
-    const promise = import(`../../lib/dist/vue/icons/${icon.vue}.vue`);
-    iconPromises.push(promise);
-    promise.then(module => {
-      iconEntries.push([icon.vue, module.default]);
-    });
-  });
-
-  await Promise.all(iconPromises);
-
-  iconEntries.forEach(([name, icon]) => {
-    app.component(name, icon);
-  });
-
-  app.provide('dialtoneIcons', iconEntries.map(([name]) => name));
 }
