@@ -1,3 +1,10 @@
+## [7.8.1](https://github.com/dialpad/dialtone/compare/v7.8.0...v7.8.1) (2022-11-25)
+
+
+### Bug Fixes
+
+* **Chip:** rename invalid avatar css var in chip ([8b21d42](https://github.com/dialpad/dialtone/commit/8b21d42fbe779cf782ea7452850e9610f14e674f))
+
 # [7.8.0](https://github.com/dialpad/dialtone/compare/v7.7.0...v7.8.0) (2022-11-25)
 
 
