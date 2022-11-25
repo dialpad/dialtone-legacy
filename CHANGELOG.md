@@ -1,3 +1,16 @@
+# [7.8.0](https://github.com/dialpad/dialtone/compare/v7.7.0...v7.8.0) (2022-11-25)
+
+
+### Bug Fixes
+
+* **Chip:** add new avatar class to chip ([9d03273](https://github.com/dialpad/dialtone/commit/9d032732d210f989fb37a72fd767f481acc1fff7))
+* **Chip:** incorrect width for xs and sm size when no close btn ([#747](https://github.com/dialpad/dialtone/issues/747)) ([53abd40](https://github.com/dialpad/dialtone/commit/53abd40a5299b5c17465d6e713fb1c32c6213684))
+
+
+### Features
+
+* **Avatar:** refreshed component, with dynamic conic gradient ([#746](https://github.com/dialpad/dialtone/issues/746)) ([fdb9b92](https://github.com/dialpad/dialtone/commit/fdb9b928007d90421dab510e17f2915a37d1de7a))
+
 # [7.7.0](https://github.com/dialpad/dialtone/compare/v7.6.0...v7.7.0) (2022-11-18)
 
 
