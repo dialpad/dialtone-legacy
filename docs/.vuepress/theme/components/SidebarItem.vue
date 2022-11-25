@@ -34,7 +34,6 @@
 
 <script setup>
 import { computed } from 'vue';
-import { DtBadge } from '@dialpad/dialtone-vue';
 
 const itemClass = 'd-link d-td-none d-my4';
 const props = defineProps({
@@ -44,6 +43,6 @@ const props = defineProps({
   },
 });
 const subItems = computed(() => {
-  return props.item.children || [];
+  return props.item?.children || [];
 });
 </script>

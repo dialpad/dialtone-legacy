@@ -26,7 +26,6 @@
 </template>
 
 <script setup>
-import { DtRootLayout } from '@dialpad/dialtone-vue';
 import Navbar from '../components/Navbar.vue';
 import Sidebar from '../components/Sidebar.vue';
 import Home from '../components/Home.vue';

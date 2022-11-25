@@ -26,12 +26,6 @@ import IconPhone from '@svgIcons/IconPhone.vue';
 
 export default defineClientConfig({
   enhance ({ app, router, siteData }) {
-    // Register libraries
-    if (!__VUEPRESS_SSR__) {
-      registerDialtoneVue(app);
-      registerDialtoneCombinator(app);
-    }
-
     // Common views
     app.component('Icons', Icons);
     app.component('Colors', Colors);
@@ -59,19 +53,3 @@ export default defineClientConfig({
   setup () {},
   rootComponents: [],
 });
-
-async function registerDialtoneCombinator (app) {
-  const module = await import('@dialpad/dialtone-combinator');
-  app.component('DtcCombinator', module.DtcCombinator);
-  app.component('DtcSection', module.DtcSection);
-  app.provide('variantBank', module.variantBank());
-}
-
-async function registerDialtoneVue (app) {
-  const module = await import('@dialpad/dialtone-vue');
-  const dialtoneComponents = Object.keys(module).filter((key) => key.startsWith('Dt'));
-  dialtoneComponents.forEach((key) => {
-    app.component(key, module[key]);
-  });
-  app.provide('dialtoneComponents', dialtoneComponents);
-}

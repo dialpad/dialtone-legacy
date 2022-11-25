@@ -1,5 +1,5 @@
 import { defineUserConfig } from 'vuepress';
-import { resolve } from 'path';
+import { getDirname, path } from '@vuepress/utils';
 import { viteBundler } from '@vuepress/bundler-vite';
 import { googleAnalyticsPlugin } from '@vuepress/plugin-google-analytics';
 
@@ -23,6 +23,8 @@ const themeConfig = {
   colorModeSwitch: false,
   contributors: false,
 };
+
+const __dirname = getDirname(import.meta.url);
 
 export default defineUserConfig({
   // site config
@@ -48,6 +50,7 @@ export default defineUserConfig({
       template: {
         compilerOptions: {
           whitespace: 'preserve',
+          // isCustomElement: (tag) => tag.startsWith('dt-'),
         },
       },
     },
@@ -94,21 +97,20 @@ export default defineUserConfig({
     code: {
       lineNumbers: false,
     },
-    headers: {
+    extractHeaders: {
       level: [2], // Generated data header levels (used for toc)
     },
   },
 
   alias: {
-    '@data': resolve(__dirname, '../_data/'), // Needed to import json data.
-    '@svgIcons': resolve(__dirname, '../../lib/dist/vue/icons/'), // Needed to easily import svg
-    '@v7Icons': resolve(__dirname, '../../lib/dist/vue/v7/'), // Needed to easily import new icons
-    '@exampleComponents': resolve(__dirname, './exampleComponents'),
-    '@baseComponents': resolve(__dirname, './baseComponents'),
-    '@views': resolve(__dirname, './views'),
-    '@mixins': resolve(__dirname, './common/mixins/'),
-    '@': resolve(__dirname, '../'),
-    vue: 'vue/dist/vue.esm-bundler.js',
+    '@data': path.resolve(__dirname, '../_data/'), // Needed to import json data.
+    '@svgIcons': path.resolve(__dirname, '../../lib/dist/vue/icons/'), // Needed to easily import svg
+    '@v7Icons': path.resolve(__dirname, '../../lib/dist/vue/v7/'), // Needed to easily import new icons
+    '@exampleComponents': path.resolve(__dirname, './exampleComponents'),
+    '@baseComponents': path.resolve(__dirname, './baseComponents'),
+    '@views': path.resolve(__dirname, './views'),
+    '@mixins': path.resolve(__dirname, './common/mixins/'),
+    '@': path.resolve(__dirname, '../'),
   },
 
   plugins: [

@@ -204,19 +204,18 @@
 </template>
 
 <script setup>
-import { DtButton } from '@dialpad/dialtone-vue';
 import { onBeforeMount, ref } from 'vue';
 import axios from 'axios';
 
 const version = ref('0.0.0');
 
-onBeforeMount(async () => {
-  const response = await axios.get('https://vue.dialpad.design/version.txt');
-  version.value = response.data;
-});
-
 function sendAnalyticsEvent () {
   if (!window.gtag) return;
   window.gtag('event', 'click', { event_name: 'get_started_button_clicked' });
 }
+
+onBeforeMount(async () => {
+  const response = await axios.get('https://vue.dialpad.design/version.txt');
+  version.value = response.data;
+});
 </script>
