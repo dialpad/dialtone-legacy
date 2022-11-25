@@ -1,0 +1,16 @@
+import{classes as r}from"./badge.4ed04b8c.js";import{D as p}from"./DialtoneUsage.b170463a.js";import{_ as u,r as o,o as d,c as l,e as s,w as n,a as e,f as b,b as a,F as g,g as h,n as m,u as _}from"./app.5e51e3f0.js";const f=a("div",null,[a("span",{class:"d-badge d-mr8 d-mb8 d-badge--black-700"},"Badge")],-1),x=a("h2",{id:"usage",tabindex:"-1"},[a("a",{class:"header-anchor",href:"#usage","aria-hidden":"true"},"#"),e(" Usage")],-1),v=a("ul",null,[a("li",null,"To flag and draw awareness to a specific element or feature of focus. For example, something is unique about that separates it from other like content."),e(),a("li",null,"As a notification system with minimal footprint.")],-1),w=a("ul",null,[a("li",null,"To indicate that interaction by the user is required.")],-1),y=a("h3",null,"Best practices",-1),B=a("ul",null,[a("li",null,"While the color variant used should not be the sole indicator of information, choose color patterns that users can quickly scan and identify its intention."),e(),a("li",null,"Avoid long values, favoring a brief scannable word.")],-1),k=a("h2",{id:"accessibility",tabindex:"-1"},[a("a",{class:"header-anchor",href:"#accessibility","aria-hidden":"true"},"#"),e(" Accessibility")],-1),C=a("ul",null,[a("li",null,[e("Since a Badge may often reflect a value within an implied label, ensure a label is announced. For example, via "),a("code",null,"aria-label"),e(" or "),a("code",null,"aria-labeledby"),e(".")])],-1),V=a("h2",{id:"variants-and-examples",tabindex:"-1"},[a("a",{class:"header-anchor",href:"#variants-and-examples","aria-hidden":"true"},"#"),e(" Variants and examples")],-1),F=a("div",{class:"language-html","data-ext":"html"},[a("pre",{class:"language-html"},[a("code",null,`<span class="d-badge">...</span>
+<span class="d-badge d-badge--black-700">...</span>
+<span class="d-badge d-badge--green-400">...</span>
+<span class="d-badge d-badge--orange-400">...</span>
+<span class="d-badge d-badge--magenta-100">...</span>
+<span class="d-badge d-badge--magenta-300">...</span>
+<span class="d-badge d-badge--magenta-400">...</span>
+<span class="d-badge d-badge--magenta-500">...</span>
+<span class="d-badge d-badge--purple-100">...</span>
+<span class="d-badge d-badge--purple-300">...</span>
+<span class="d-badge d-badge--purple-400">...</span>
+<span class="d-badge d-badge--purple-500">...</span>
+<span class="d-badge d-badge--red-300">...</span>
+<span class="d-badge d-badge--white">...</span>
+<span class="d-badge d-badge--gold-200">...</span>
+`)])],-1),N=a("h2",{id:"classes",tabindex:"-1"},[a("a",{class:"header-anchor",href:"#classes","aria-hidden":"true"},"#"),e(" Classes")],-1),q={__name:"badge.html",setup(A){return(D,T)=>{const t=o("code-well-header"),i=o("component-class-table");return d(),l("div",null,[s(t,null,{default:n(()=>[f]),_:1}),e(),b(' <component-combinator component-name="DtBadge" /> '),e(),x,e(),s(p,null,{do:n(()=>[v]),dont:n(()=>[w]),_:1}),e(),y,e(),B,e(),k,e(),C,e(),V,e(),s(t,null,{default:n(()=>[a("div",null,[(d(!0),l(g,null,h(_(r),c=>(d(),l("span",{class:m(["d-badge d-mr8 d-mb8",c.class])},"Badge",2))),256))])]),_:1}),e(),F,N,e(),s(i,{"component-name":"badge"})])}}},L=u(q,[["__file","badge.html.vue"]]);export{L as default};
