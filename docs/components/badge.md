@@ -4,9 +4,12 @@ desc: A badge is a compact UI element providing brief, descriptive information a
 storybook_url: https://vue.dialpad.design/?path=/story/components-badge--default
 figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Components-7?node-id=8914%3A21227&viewport=656%2C314%2C0.55&t=xHutRjwo1o5zMTgT-11
 ---
+<span class="d-badge">Badge</span>
+<span class="d-badge">1</span>
+
 <code-well-header>
   <div>
-    <span class="d-badge d-mr8 d-mb8 d-badge--black-700">Badge</span>
+    <span class="d-badge">Badge</span>
   </div>
 </code-well-header>
 
@@ -45,7 +48,7 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 
 ```html
 <span class="d-badge">...</span>
-<span class="d-badge d-badge--black-700">...</span>
+<span class="d-badge">...</span>
 <span class="d-badge d-badge--green-400">...</span>
 <span class="d-badge d-badge--orange-400">...</span>
 <span class="d-badge d-badge--magenta-100">...</span>
