@@ -1,3 +1,17 @@
+## [7.8.2](https://github.com/dialpad/dialtone/compare/v7.8.1...v7.8.2) (2022-11-29)
+
+
+### Bug Fixes
+
+* **Toggle:** small variant transition ([#749](https://github.com/dialpad/dialtone/issues/749)) ([b8b3038](https://github.com/dialpad/dialtone/commit/b8b303851fe2005c889d040ce41135343031fa30))
+
+## [7.8.1](https://github.com/dialpad/dialtone/compare/v7.8.0...v7.8.1) (2022-11-25)
+
+
+### Bug Fixes
+
+* **Chip:** rename invalid avatar css var in chip ([8b21d42](https://github.com/dialpad/dialtone/commit/8b21d42fbe779cf782ea7452850e9610f14e674f))
+
 # [7.8.0](https://github.com/dialpad/dialtone/compare/v7.7.0...v7.8.0) (2022-11-25)
 
 

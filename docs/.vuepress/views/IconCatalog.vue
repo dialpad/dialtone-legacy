@@ -87,7 +87,7 @@
 
 <script setup>
 import BaseIcon from '@baseComponents/BaseV7Icon.vue';
-import { categories } from '@data/icon.json';
+import { categories } from '@dialpad/dialtone-icons/dist/icons.json';
 import { computed, ref } from 'vue';
 import IconSearch from '@v7Icons/Search.vue';
 import IconClose from '@v7Icons/Close.vue';
