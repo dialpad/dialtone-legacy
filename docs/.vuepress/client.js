@@ -29,12 +29,12 @@ import '@dialtoneCSS';
 import '@dialtoneDocsCSS';
 
 export default defineClientConfig({
-  enhance ({ app, router, siteData }) {
+  async enhance ({ app, router, siteData }) {
     // Register libraries
     if (!__VUEPRESS_SSR__) {
-      registerDialtoneVue(app);
-      registerDialtoneCombinator(app);
-      registerDialtoneIcons(app);
+      await registerDialtoneVue(app);
+      await registerDialtoneCombinator(app);
+      await registerDialtoneIcons(app);
     }
 
     // Common views
