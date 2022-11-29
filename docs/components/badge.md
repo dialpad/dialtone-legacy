@@ -4,8 +4,41 @@ desc: A badge is a compact UI element providing brief, descriptive information a
 storybook_url: https://vue.dialpad.design/?path=/story/components-badge--default
 figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Components-7?node-id=8914%3A21227&viewport=656%2C314%2C0.55&t=xHutRjwo1o5zMTgT-11
 ---
-<span class="d-badge">Badge</span>
-<span class="d-badge">1</span>
+
+<div class="d-p64 d-ba d-bc-black-300 d-mb32">
+  <div class="d-mb4"><strong>Kind</strong>: Default (implicitly “label”)</div>
+  <div class="d-fl-center d-mb16" style="justify-content: flex-start; gap: 8px">
+    <span class="d-badge">Label</span>
+    <!-- <span class="d-badge">
+      <svg aria-hidden="true" focusable="false" data-name="Lightning Bolt" class="d-icon d-icon--lightningBolt d-icon--size-200" viewBox="0 0 12 12" data-qa="dt-icon"><path fill="currentColor" fill-rule="evenodd" d="M6.7.541a.5.5 0 0 1 .296.521L6.566 4.5H10.5a.5.5 0 0 1 .384.82l-5 6a.5.5 0 0 1-.88-.382l.43-3.438H1.5a.5.5 0 0 1-.384-.82l5-6a.5.5 0 0 1 .583-.14ZM2.567 6.5H6a.5.5 0 0 1 .496.562L6.208 9.37 9.432 5.5H6a.5.5 0 0 1-.496-.562l.288-2.308L2.568 6.5Z" clip-rule="evenodd"></path></svg>
+      Label
+    </span> -->
+  </div>
+  <div class="d-mb4"><strong>Kind</strong>: Count (effectively “quantifiable”)</div>
+  <div class="d-fl-center d-mb16" style="justify-content: flex-start; gap: 8px">
+    <span class="d-badge d-badge--count">1</span>
+    <span class="d-badge d-badge--count">3</span>
+    <span class="d-badge d-badge--count">86</span>
+    <span class="d-badge d-badge--count">99+</span>
+  </div>
+  <div class="d-mb4"><strong>Types</strong> (style variants)</div>
+  <div class="d-fl-center d-mb8" style="justify-content: flex-start; gap: 8px">
+    <div class="d-badge">Default</div>
+    <div class="d-badge d-badge--info">Info</div>
+    <div class="d-badge d-badge--success">Success</div>
+    <div class="d-badge d-badge--warning">Warning</div>
+    <div class="d-badge d-badge--critical">Critical</div>
+    <div class="d-badge d-badge--feature">Feature</div>
+  </div>
+  <div class="d-fl-center d-mb16" style="justify-content: flex-start; gap: 8px">
+    <div class="d-badge d-badge--count">9</div>
+    <div class="d-badge d-badge--count d-badge--info">9</div>
+    <div class="d-badge d-badge--count d-badge--success">9</div>
+    <div class="d-badge d-badge--count d-badge--warning">9</div>
+    <div class="d-badge d-badge--count d-badge--critical">9</div>
+    <div class="d-badge d-badge--count d-badge--feature">9</div>
+  </div>
+</div>
 
 <code-well-header>
   <div>

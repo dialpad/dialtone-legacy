@@ -18,24 +18,56 @@
   --badge-color-text: var(--fc-primary);
   --badge-color-background: var(--black-200);
   --badge-border-radius: var(--su4);
-  --badge-line-height: var(--size-300);
+  --badge-line-height: var(--size-500);
   --badge-font-size: var(--fs-100);
   --badge-font-weight: var(--fw-semibold);
   --badge-space-gap: var(--space-300);
   --badge-letter-spacing: calc(var(--size-100) / 2);
+  --badge-padding-y: var(--space-300);
+  --badge-padding-x: var(--space-400);
 
   display: inline-flex;
   gap: var(--badge-space-gap);
-  min-width: calc(var(--su6) + var(--su1));
-  padding: var(--space-300) var(--space-400);
+  align-items: center;
+  min-width: calc(var(--size-400) + var(--size-500));
+  padding: var(--badge-padding-y) var(--badge-padding-x);
   color: var(--badge-color-text);
   font-weight: var(--badge-font-weight);
   font-size: var(--badge-font-size);
   line-height: var(--badge-line-height);
   letter-spacing: var(--badge-letter-spacing);
   text-align: center;
-  text-transform: uppercase;
+  // text-transform: uppercase;
   background-color: var(--badge-color-background);
   border-radius: var(--badge-border-radius);
+
+  &--count {
+    --badge-border-radius: var(--br-pill);
+  }
+
+  &--info {
+    --badge-color-text: var(--blue-500);
+    --badge-color-background: var(--blue-100);
+  }
+
+  &--success {
+    --badge-color-text: var(--green-500);
+    --badge-color-background: var(--green-100);
+  }
+
+  &--warning {
+    --badge-color-text: var(--gold-500);
+    --badge-color-background: var(--gold-100);
+  }
+
+  &--critical {
+    --badge-color-text: var(--red-500);
+    --badge-color-background: var(--red-100);
+  }
+
+  &--feature {
+    --badge-color-text: var(--fc-primary-inverted);
+    --badge-color-background: var(--purple-400);
+  }
 }
 
