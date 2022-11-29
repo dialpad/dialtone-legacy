@@ -30,13 +30,21 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
     <div class="d-badge d-badge--critical">Critical</div>
     <div class="d-badge d-badge--feature">Feature</div>
   </div>
-  <div class="d-fl-center d-mb16" style="justify-content: flex-start; gap: 8px">
+  <div class="d-fl-center d-mb8" style="justify-content: flex-start; gap: 8px">
     <div class="d-badge d-badge--count">9</div>
     <div class="d-badge d-badge--count d-badge--info">9</div>
     <div class="d-badge d-badge--count d-badge--success">9</div>
     <div class="d-badge d-badge--count d-badge--warning">9</div>
     <div class="d-badge d-badge--count d-badge--critical">9</div>
     <div class="d-badge d-badge--count d-badge--feature">9</div>
+  </div>
+  <div class="d-fl-center d-mb8" style="justify-content: flex-start; gap: 8px">
+    <div class="d-badge d-badge--count">99+</div>
+    <div class="d-badge d-badge--count d-badge--info">99+</div>
+    <div class="d-badge d-badge--count d-badge--success">99+</div>
+    <div class="d-badge d-badge--count d-badge--warning">99+</div>
+    <div class="d-badge d-badge--count d-badge--critical">99+</div>
+    <div class="d-badge d-badge--count d-badge--feature">99+</div>
   </div>
 </div>
 
