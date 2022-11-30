@@ -5,46 +5,88 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-badge--default
 figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Components-7?node-id=8914%3A21227&viewport=656%2C314%2C0.55&t=xHutRjwo1o5zMTgT-11
 ---
 
-<div class="d-p64 d-ba d-bc-black-300 d-mb32">
-  <div class="d-mb4"><strong>Kind</strong>: Default (implicitly “label”)</div>
-  <div class="d-fl-center d-mb16" style="justify-content: flex-start; gap: 8px">
-    <span class="d-badge">Label</span>
-    <!-- <span class="d-badge">
-      <svg aria-hidden="true" focusable="false" data-name="Lightning Bolt" class="d-icon d-icon--lightningBolt d-icon--size-200" viewBox="0 0 12 12" data-qa="dt-icon"><path fill="currentColor" fill-rule="evenodd" d="M6.7.541a.5.5 0 0 1 .296.521L6.566 4.5H10.5a.5.5 0 0 1 .384.82l-5 6a.5.5 0 0 1-.88-.382l.43-3.438H1.5a.5.5 0 0 1-.384-.82l5-6a.5.5 0 0 1 .583-.14ZM2.567 6.5H6a.5.5 0 0 1 .496.562L6.208 9.37 9.432 5.5H6a.5.5 0 0 1-.496-.562l.288-2.308L2.568 6.5Z" clip-rule="evenodd"></path></svg>
-      Label
-    </span> -->
+<div class="d-p96 d-d-flex d-gg16 d-ai-center d-jc-center" id="badge-prototype">
+  <div class="d-p16 d-w628">
+    <div class="d-mb4"><strong>Kind</strong>: Default (implicitly “label”)</div>
+    <div class="d-fl-center d-mb48 d-jc-flex-start" style="gap: 8px">
+      <span class="d-badge">
+        <svg aria-hidden="true" focusable="false" data-name="Lightning Bolt" class="d-icon d-icon--lightningBolt d-icon--size-200 qwerdhg" viewBox="0 0 12 12" data-qa="dt-icon"><path fill="currentColor" fill-rule="evenodd" d="M6.7.541a.5.5 0 0 1 .296.521L6.566 4.5H10.5a.5.5 0 0 1 .384.82l-5 6a.5.5 0 0 1-.88-.382l.43-3.438H1.5a.5.5 0 0 1-.384-.82l5-6a.5.5 0 0 1 .583-.14ZM2.567 6.5H6a.5.5 0 0 1 .496.562L6.208 9.37 9.432 5.5H6a.5.5 0 0 1-.496-.562l.288-2.308L2.568 6.5Z" clip-rule="evenodd"></path></svg>
+        Label
+      </span>
+    </div>
+    <div class="d-mb4"><strong>Kind</strong>: Count (effectively “quantifiable”)</div>
+    <div class="d-fl-center d-mb48 d-jc-flex-start" style="gap: 8px">
+      <span class="d-badge d-badge--count">1</span>
+      <span class="d-badge d-badge--count">3</span>
+      <span class="d-badge d-badge--count">86</span>
+      <span class="d-badge d-badge--count">99+</span>
+    </div>
+    <div class="d-mb4"><strong>Types</strong> (style variants)</div>
+    <div class="d-fl-center d-mb12 d-jc-flex-start" style="gap: 8px">
+      <div class="d-badge">
+        <svg aria-hidden="true" focusable="false" data-name="Lightning Bolt" class="d-icon d-icon--lightningBolt d-icon--size-200 qwerdhg" viewBox="0 0 12 12" data-qa="dt-icon"><path fill="currentColor" fill-rule="evenodd" d="M6.7.541a.5.5 0 0 1 .296.521L6.566 4.5H10.5a.5.5 0 0 1 .384.82l-5 6a.5.5 0 0 1-.88-.382l.43-3.438H1.5a.5.5 0 0 1-.384-.82l5-6a.5.5 0 0 1 .583-.14ZM2.567 6.5H6a.5.5 0 0 1 .496.562L6.208 9.37 9.432 5.5H6a.5.5 0 0 1-.496-.562l.288-2.308L2.568 6.5Z" clip-rule="evenodd"></path></svg>
+        Default
+      </div>
+      <div class="d-badge d-badge--info">
+        <svg aria-hidden="true" focusable="false" data-name="Lightning Bolt" class="d-icon d-icon--lightningBolt d-icon--size-200 qwerdhg" viewBox="0 0 12 12" data-qa="dt-icon"><path fill="currentColor" fill-rule="evenodd" d="M6.7.541a.5.5 0 0 1 .296.521L6.566 4.5H10.5a.5.5 0 0 1 .384.82l-5 6a.5.5 0 0 1-.88-.382l.43-3.438H1.5a.5.5 0 0 1-.384-.82l5-6a.5.5 0 0 1 .583-.14ZM2.567 6.5H6a.5.5 0 0 1 .496.562L6.208 9.37 9.432 5.5H6a.5.5 0 0 1-.496-.562l.288-2.308L2.568 6.5Z" clip-rule="evenodd"></path></svg>
+        Info
+      </div>
+      <div class="d-badge d-badge--success">
+        <svg aria-hidden="true" focusable="false" data-name="Lightning Bolt" class="d-icon d-icon--lightningBolt d-icon--size-200 qwerdhg" viewBox="0 0 12 12" data-qa="dt-icon"><path fill="currentColor" fill-rule="evenodd" d="M6.7.541a.5.5 0 0 1 .296.521L6.566 4.5H10.5a.5.5 0 0 1 .384.82l-5 6a.5.5 0 0 1-.88-.382l.43-3.438H1.5a.5.5 0 0 1-.384-.82l5-6a.5.5 0 0 1 .583-.14ZM2.567 6.5H6a.5.5 0 0 1 .496.562L6.208 9.37 9.432 5.5H6a.5.5 0 0 1-.496-.562l.288-2.308L2.568 6.5Z" clip-rule="evenodd"></path></svg>
+        Success
+      </div>
+      <div class="d-badge d-badge--warning">
+        <svg aria-hidden="true" focusable="false" data-name="Lightning Bolt" class="d-icon d-icon--lightningBolt d-icon--size-200 qwerdhg" viewBox="0 0 12 12" data-qa="dt-icon"><path fill="currentColor" fill-rule="evenodd" d="M6.7.541a.5.5 0 0 1 .296.521L6.566 4.5H10.5a.5.5 0 0 1 .384.82l-5 6a.5.5 0 0 1-.88-.382l.43-3.438H1.5a.5.5 0 0 1-.384-.82l5-6a.5.5 0 0 1 .583-.14ZM2.567 6.5H6a.5.5 0 0 1 .496.562L6.208 9.37 9.432 5.5H6a.5.5 0 0 1-.496-.562l.288-2.308L2.568 6.5Z" clip-rule="evenodd"></path></svg>
+        Warning
+      </div>
+      <div class="d-badge d-badge--critical">
+        <svg aria-hidden="true" focusable="false" data-name="Lightning Bolt" class="d-icon d-icon--lightningBolt d-icon--size-200 qwerdhg" viewBox="0 0 12 12" data-qa="dt-icon"><path fill="currentColor" fill-rule="evenodd" d="M6.7.541a.5.5 0 0 1 .296.521L6.566 4.5H10.5a.5.5 0 0 1 .384.82l-5 6a.5.5 0 0 1-.88-.382l.43-3.438H1.5a.5.5 0 0 1-.384-.82l5-6a.5.5 0 0 1 .583-.14ZM2.567 6.5H6a.5.5 0 0 1 .496.562L6.208 9.37 9.432 5.5H6a.5.5 0 0 1-.496-.562l.288-2.308L2.568 6.5Z" clip-rule="evenodd"></path></svg>
+        Critical
+      </div>
+      <div class="d-badge d-badge--feature">
+        <svg aria-hidden="true" focusable="false" data-name="Lightning Bolt" class="d-icon d-icon--lightningBolt d-icon--size-200 qwerdhg" viewBox="0 0 12 12" data-qa="dt-icon"><path fill="currentColor" fill-rule="evenodd" d="M6.7.541a.5.5 0 0 1 .296.521L6.566 4.5H10.5a.5.5 0 0 1 .384.82l-5 6a.5.5 0 0 1-.88-.382l.43-3.438H1.5a.5.5 0 0 1-.384-.82l5-6a.5.5 0 0 1 .583-.14ZM2.567 6.5H6a.5.5 0 0 1 .496.562L6.208 9.37 9.432 5.5H6a.5.5 0 0 1-.496-.562l.288-2.308L2.568 6.5Z" clip-rule="evenodd"></path></svg>
+        Feature
+      </div>
+    </div>
+    <div class="d-fl-center d-mb12 d-jc-flex-start" style="gap: 8px">
+      <div class="d-badge d-badge--count">1</div>
+      <div class="d-badge d-badge--count d-badge--info">2</div>
+      <div class="d-badge d-badge--count d-badge--success">3</div>
+      <div class="d-badge d-badge--count d-badge--warning">4</div>
+      <div class="d-badge d-badge--count d-badge--critical">5</div>
+      <div class="d-badge d-badge--count d-badge--feature">6</div>
+    </div>
+    <div class="d-fl-center d-mb12 d-jc-flex-start" style="gap: 8px">
+      <div class="d-badge d-badge--count">11</div>
+      <div class="d-badge d-badge--count d-badge--info">21</div>
+      <div class="d-badge d-badge--count d-badge--success">33</div>
+      <div class="d-badge d-badge--count d-badge--warning">99</div>
+      <div class="d-badge d-badge--count d-badge--critical">91</div>
+      <div class="d-badge d-badge--count d-badge--feature">99+</div>
+    </div>
   </div>
-  <div class="d-mb4"><strong>Kind</strong>: Count (effectively “quantifiable”)</div>
-  <div class="d-fl-center d-mb16" style="justify-content: flex-start; gap: 8px">
-    <span class="d-badge d-badge--count">1</span>
-    <span class="d-badge d-badge--count">3</span>
-    <span class="d-badge d-badge--count">86</span>
-    <span class="d-badge d-badge--count">99+</span>
+  <div class="d-p16">
+    <div class="d-mb4"><strong>Explore style</strong></div>
+    <div class="d-stack8 d-mb16">
+      <div><button class="d-btn d-btn--muted d-btn--outlined d-w164 d-bgc-white" onclick="document.getElementById('badge-prototype').classList.toggle('pill');" type="button">Pill all</button></div>
+      <div><button class="d-btn d-btn--muted d-btn--outlined d-w164 d-bgc-white" onclick="document.getElementById('badge-prototype').classList.toggle('ceps');" type="button">Caps or no</button></div>
+      <div><button class="d-btn d-btn--muted d-btn--outlined d-w164 d-bgc-white" onclick="document.getElementById('badge-prototype').classList.toggle('beld');" type="button">Semibold or Bold</button></div>
+      <div><button class="d-btn d-btn--muted d-btn--outlined d-w164 d-bgc-white" onclick="document.getElementById('badge-prototype').classList.toggle('derk');" type="button">Light or dark</button></div>
+      <div><button class="d-btn d-btn--muted d-btn--outlined d-w164 d-bgc-white" onclick="document.getElementById('badge-prototype').classList.toggle('icin')" type="button">Toggle icon</button></div>
+    </div>
+    <div class="d-mb4"><strong>Surface</strong></div>
+    <div class="d-stack8 d-mb16">
+      <div><button class="d-btn d-btn--muted d-btn--outlined d-w164 d-bgc-white" onclick="document.getElementById('badge-prototype').style.backgroundColor='white';" type="button">White</button></div>
+      <div><button class="d-btn d-btn--muted d-btn--outlined d-w164 d-bgc-white" onclick="document.getElementById('badge-prototype').style.backgroundColor='var(--black-100)';" type="button">Black 100</button></div>
+      <div><button class="d-btn d-btn--muted d-btn--outlined d-w164 d-bgc-white" onclick="document.getElementById('badge-prototype').style.backgroundColor='var(--black-200)';" type="button">Black 200</button></div>
+      <div><button class="d-btn d-btn--muted d-btn--outlined d-w164 d-bgc-white" onclick="document.getElementById('badge-prototype').style.backgroundColor='var(--black-200)';" type="button">Black 300</button></div>
+      <div><button class="d-btn d-btn--muted d-btn--outlined d-w164 d-bgc-white" onclick="document.getElementById('badge-prototype').style.backgroundColor='var(--black-700)';" type="button">Black 700</button></div>
+      <div><button class="d-btn d-btn--muted d-btn--outlined d-w164 d-bgc-white" onclick="document.getElementById('badge-prototype').classList.toggle('videosample')" type="button">Video BG</button></div>
+    </div>
   </div>
-  <div class="d-mb4"><strong>Types</strong> (style variants)</div>
-  <div class="d-fl-center d-mb8" style="justify-content: flex-start; gap: 8px">
-    <div class="d-badge">Default</div>
-    <div class="d-badge d-badge--info">Info</div>
-    <div class="d-badge d-badge--success">Success</div>
-    <div class="d-badge d-badge--warning">Warning</div>
-    <div class="d-badge d-badge--critical">Critical</div>
-    <div class="d-badge d-badge--feature">Feature</div>
-  </div>
-  <div class="d-fl-center d-mb8" style="justify-content: flex-start; gap: 8px">
-    <div class="d-badge d-badge--count">9</div>
-    <div class="d-badge d-badge--count d-badge--info">9</div>
-    <div class="d-badge d-badge--count d-badge--success">9</div>
-    <div class="d-badge d-badge--count d-badge--warning">9</div>
-    <div class="d-badge d-badge--count d-badge--critical">9</div>
-    <div class="d-badge d-badge--count d-badge--feature">9</div>
-  </div>
-  <div class="d-fl-center d-mb8" style="justify-content: flex-start; gap: 8px">
-    <div class="d-badge d-badge--count">99+</div>
-    <div class="d-badge d-badge--count d-badge--info">99+</div>
-    <div class="d-badge d-badge--count d-badge--success">99+</div>
-    <div class="d-badge d-badge--count d-badge--warning">99+</div>
-    <div class="d-badge d-badge--count d-badge--critical">99+</div>
-    <div class="d-badge d-badge--count d-badge--feature">99+</div>
+  <div class="resizeWindow">
+    <div class="d-fs-200 d-mb8 d-fw-bold">Resize window</div>
+    ↘
   </div>
 </div>
 
