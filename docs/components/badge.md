@@ -79,7 +79,7 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
       <div><button class="d-btn d-btn--muted d-btn--outlined d-w164 d-bgc-white" onclick="document.getElementById('badge-prototype').style.backgroundColor='white';" type="button">White</button></div>
       <div><button class="d-btn d-btn--muted d-btn--outlined d-w164 d-bgc-white" onclick="document.getElementById('badge-prototype').style.backgroundColor='var(--black-100)';" type="button">Black 100</button></div>
       <div><button class="d-btn d-btn--muted d-btn--outlined d-w164 d-bgc-white" onclick="document.getElementById('badge-prototype').style.backgroundColor='var(--black-200)';" type="button">Black 200</button></div>
-      <div><button class="d-btn d-btn--muted d-btn--outlined d-w164 d-bgc-white" onclick="document.getElementById('badge-prototype').style.backgroundColor='var(--black-200)';" type="button">Black 300</button></div>
+      <div><button class="d-btn d-btn--muted d-btn--outlined d-w164 d-bgc-white" onclick="document.getElementById('badge-prototype').style.backgroundColor='var(--black-300)';" type="button">Black 300</button></div>
       <div><button class="d-btn d-btn--muted d-btn--outlined d-w164 d-bgc-white" onclick="document.getElementById('badge-prototype').style.backgroundColor='var(--black-700)';" type="button">Black 700</button></div>
       <div><button class="d-btn d-btn--muted d-btn--outlined d-w164 d-bgc-white" onclick="document.getElementById('badge-prototype').classList.toggle('videosample')" type="button">Video BG</button></div>
     </div>
