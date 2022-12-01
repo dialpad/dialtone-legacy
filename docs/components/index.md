@@ -2,9 +2,6 @@
 title: Components
 desc: Reusable components solving common UI needs, designed and built to be assembled in countless combinations.
 no_preview: true
-prev:
-  text: Spacing system
-  link: /design/spacing/spacing-system.html
 ---
 
 <!--
