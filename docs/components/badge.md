@@ -100,15 +100,15 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
         <td>To communicate problems that must be resolved, something has failed, or otherwise negative label or dangerous condition.</td>
       </tr>
       <tr>
-        <th class="d-ta-left">[TBD]</th>
+        <th class="d-ta-left">Bulletin</th>
         <td>
           <div class="d-fl-center d-jc-flex-start" style="gap: 8px">
-            <div class="d-badge d-badge--feature">
+            <div class="d-badge d-badge--bulletin">
               <svg aria-hidden="true" focusable="false" data-name="Lightning Bolt" class="d-icon d-icon--lightningBolt d-icon--size-200 qwerdhg" viewBox="0 0 12 12" data-qa="dt-icon"><path fill="currentColor" fill-rule="evenodd" d="M6.7.541a.5.5 0 0 1 .296.521L6.566 4.5H10.5a.5.5 0 0 1 .384.82l-5 6a.5.5 0 0 1-.88-.382l.43-3.438H1.5a.5.5 0 0 1-.384-.82l5-6a.5.5 0 0 1 .583-.14ZM2.567 6.5H6a.5.5 0 0 1 .496.562L6.208 9.37 9.432 5.5H6a.5.5 0 0 1-.496-.562l.288-2.308L2.568 6.5Z" clip-rule="evenodd"></path></svg>
               Label
             </div>
-            <div class="d-badge d-badge--count d-badge--feature">6</div>
-            <div class="d-badge d-badge--count d-badge--feature">99+</div>
+            <div class="d-badge d-badge--count d-badge--bulletin">6</div>
+            <div class="d-badge d-badge--count d-badge--bulletin">99+</div>
           </div>
         </td>
         <td>Used to provide temporary feedback to specific items in the interface, like notifications and unread counts.</td>
