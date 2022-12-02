@@ -1,9 +1,6 @@
 ---
 title: Box sizing
 desc: Utilities for controlling how the browser should calculate an element's total size.
-prev:
-  text: Pointer events
-  link: /utilities/interactivity/pointer-events
 ---
 
 ## Examples

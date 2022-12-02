@@ -1,9 +1,6 @@
 ---
 title: Typography Styles
 desc: Core typographic styles for body text and headlines.
-prev:
-  text: Padding
-  link: /utilities/spacing/padding
 ---
 
 ## Headlines

@@ -2,9 +2,6 @@
 title: Guides
 desc: In-depth guidance to support consistent, high-quality product design.
 no_preview: true
-prev:
-  text: Spacing system
-  link: /design/spacing/spacing-system.html
 ---
 
 <div class="dialtone-wall">

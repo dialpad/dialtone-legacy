@@ -1,9 +1,6 @@
 ---
 title: Align content
 desc: Utilities for setting how rows are distributed along it's cross axis. This property only works when a parent container has more than one line.
-prev:
-  text: Transition
-  link: /utilities/effects/transition
 ---
 
 ## Flex start

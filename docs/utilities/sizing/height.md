@@ -1,9 +1,6 @@
 ---
 title: Height
 desc: Utilities to control an element's height.
-prev:
-  text: Breakpoints
-  link: /utilities/responsive/breakpoints
 ---
 
 ## Percentages

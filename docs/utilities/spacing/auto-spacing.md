@@ -1,9 +1,6 @@
 ---
 title: Auto spacing
 desc: Utilities for controlling the space between child elements.
-prev:
-  text: Min Width
-  link: /utilities/sizing/min-width
 ---
 
 ## Adding space vertically
