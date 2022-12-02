@@ -2,6 +2,7 @@ import { defineUserConfig } from 'vuepress';
 import { getDirname, path } from '@vuepress/utils';
 import { viteBundler } from '@vuepress/bundler-vite';
 import { googleAnalyticsPlugin } from '@vuepress/plugin-google-analytics';
+import anchor from 'markdown-it-anchor';
 
 const sidebar = require('../_data/site-nav.json');
 const { dialtoneVuepressTheme } = require('./theme');
@@ -92,12 +93,15 @@ export default defineUserConfig({
   // markdown config
   markdown: {
     anchor: {
-      level: [1, 2],
+      level: [1, 2, 3],
+      permalink: anchor.permalink.ariaHidden({
+        class: 'header-anchor d-link d-td-none',
+      }),
     },
     code: {
       lineNumbers: false,
     },
-    extractHeaders: {
+    headers: {
       level: [2], // Generated data header levels (used for toc)
     },
   },
