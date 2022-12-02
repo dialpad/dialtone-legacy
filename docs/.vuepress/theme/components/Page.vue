@@ -30,7 +30,7 @@
           @click="navigate"
         >
           <template #icon>
-            <arrow-left />
+            <component :is="arrowLeft" />
           </template>
           {{ prev.text }}
         </dt-button>
@@ -48,7 +48,7 @@
           @click="navigate"
         >
           <template #icon>
-            <arrow-right />
+            <component :is="arrowRight" />
           </template>
           {{ next.text }}
         </dt-button>
@@ -60,7 +60,7 @@
 <script setup>
 import PageHeader from '../components/PageHeader.vue';
 import PageToc from '../components/PageToc.vue';
-import { ArrowLeft, ArrowRight } from '@dialpad/dialtone-icons';
+import * as icons from '@dialpad/dialtone-icons';
 import { computed } from 'vue';
 import { usePageData } from '@vuepress/client';
 
@@ -77,6 +77,12 @@ defineProps({
 const lastUpdated = computed(() => {
   const timestamp = usePageData().value.git.updatedTime;
   return new Date(timestamp);
+});
+const arrowLeft = computed(() => {
+  return icons.ArrowLeft;
+});
+const arrowRight = computed(() => {
+  return icons.ArrowRight;
 });
 const isMobile = false;
 </script>
