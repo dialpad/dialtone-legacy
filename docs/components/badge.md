@@ -5,151 +5,10 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-badge--default
 figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Components-7?node-id=8914%3A21227&viewport=656%2C314%2C0.55&t=xHutRjwo1o5zMTgT-11
 ---
 
-<div class="d-p96 d-d-flex d-gg16 d-ai-center d-jc-center" id="badge-prototype">
-  <div class="d-p16 d-w628">
-    <div class="d-mb4"><strong>Kind</strong>: Default (implicitly “label”)</div>
-    <div class="d-fl-center d-mb48 d-jc-flex-start" style="gap: 8px">
-      <span class="d-badge">
-        <svg aria-hidden="true" focusable="false" data-name="Lightning Bolt" class="d-icon d-icon--lightningBolt d-icon--size-200 qwerdhg" viewBox="0 0 12 12" data-qa="dt-icon"><path fill="currentColor" fill-rule="evenodd" d="M6.7.541a.5.5 0 0 1 .296.521L6.566 4.5H10.5a.5.5 0 0 1 .384.82l-5 6a.5.5 0 0 1-.88-.382l.43-3.438H1.5a.5.5 0 0 1-.384-.82l5-6a.5.5 0 0 1 .583-.14ZM2.567 6.5H6a.5.5 0 0 1 .496.562L6.208 9.37 9.432 5.5H6a.5.5 0 0 1-.496-.562l.288-2.308L2.568 6.5Z" clip-rule="evenodd"></path></svg>
-        Label
-      </span>
-    </div>
-    <div class="d-mb4"><strong>Kind</strong>: Count (effectively “quantifiable”)</div>
-    <div class="d-fl-center d-mb48 d-jc-flex-start" style="gap: 8px">
-      <span class="d-badge d-badge--count">1</span>
-      <span class="d-badge d-badge--count">3</span>
-      <span class="d-badge d-badge--count">86</span>
-      <span class="d-badge d-badge--count">99+</span>
-    </div>
-    <div class="d-mb4"><strong>Types</strong> (style variants)</div>
-    <table>
-      <colgroup>
-        <col>
-        <col class="d-w216">
-        <col>
-      </colgroup>
-      <tr>
-        <th class="d-ta-left">Default</th>
-        <td>
-          <div class="d-fl-center d-jc-flex-start" style="gap: 8px">
-            <div class="d-badge">
-              <svg aria-hidden="true" focusable="false" data-name="Lightning Bolt" class="d-icon d-icon--lightningBolt d-icon--size-200 qwerdhg" viewBox="0 0 12 12" data-qa="dt-icon"><path fill="currentColor" fill-rule="evenodd" d="M6.7.541a.5.5 0 0 1 .296.521L6.566 4.5H10.5a.5.5 0 0 1 .384.82l-5 6a.5.5 0 0 1-.88-.382l.43-3.438H1.5a.5.5 0 0 1-.384-.82l5-6a.5.5 0 0 1 .583-.14ZM2.567 6.5H6a.5.5 0 0 1 .496.562L6.208 9.37 9.432 5.5H6a.5.5 0 0 1-.496-.562l.288-2.308L2.568 6.5Z" clip-rule="evenodd"></path></svg>
-              Label
-            </div>
-            <div class="d-badge d-badge--count">1</div>
-            <div class="d-badge d-badge--count">11</div>
-          </div>
-        </td>
-        <td>Default general purpose callout is needed without any implicit semantic meaning.</td>
-      </tr>
-      <tr>
-        <th class="d-ta-left">Info</th>
-        <td>
-          <div class="d-fl-center d-jc-flex-start" style="gap: 8px">
-            <div class="d-badge d-badge--info">
-              <svg aria-hidden="true" focusable="false" data-name="Lightning Bolt" class="d-icon d-icon--lightningBolt d-icon--size-200 qwerdhg" viewBox="0 0 12 12" data-qa="dt-icon"><path fill="currentColor" fill-rule="evenodd" d="M6.7.541a.5.5 0 0 1 .296.521L6.566 4.5H10.5a.5.5 0 0 1 .384.82l-5 6a.5.5 0 0 1-.88-.382l.43-3.438H1.5a.5.5 0 0 1-.384-.82l5-6a.5.5 0 0 1 .583-.14ZM2.567 6.5H6a.5.5 0 0 1 .496.562L6.208 9.37 9.432 5.5H6a.5.5 0 0 1-.496-.562l.288-2.308L2.568 6.5Z" clip-rule="evenodd"></path></svg>
-              Label
-            </div>
-            <div class="d-badge d-badge--count d-badge--info">2</div>
-            <div class="d-badge d-badge--count d-badge--info">21</div>
-          </div>
-        </td>
-        <td>Used to convey general information that isn’t critical or requires action on the user's part.</td>
-      </tr>
-      <tr>
-        <th class="d-ta-left">Success</th>
-        <td>
-          <div class="d-fl-center d-jc-flex-start" style="gap: 8px">
-            <div class="d-badge d-badge--success">
-              <svg aria-hidden="true" focusable="false" data-name="Lightning Bolt" class="d-icon d-icon--lightningBolt d-icon--size-200 qwerdhg" viewBox="0 0 12 12" data-qa="dt-icon"><path fill="currentColor" fill-rule="evenodd" d="M6.7.541a.5.5 0 0 1 .296.521L6.566 4.5H10.5a.5.5 0 0 1 .384.82l-5 6a.5.5 0 0 1-.88-.382l.43-3.438H1.5a.5.5 0 0 1-.384-.82l5-6a.5.5 0 0 1 .583-.14ZM2.567 6.5H6a.5.5 0 0 1 .496.562L6.208 9.37 9.432 5.5H6a.5.5 0 0 1-.496-.562l.288-2.308L2.568 6.5Z" clip-rule="evenodd"></path></svg>
-              Label
-            </div>
-            <div class="d-badge d-badge--count d-badge--success">3</div>
-            <div class="d-badge d-badge--count d-badge--success">33</div>
-          </div>
-        </td>
-        <td>Accompanying a successful or otherwise positive action or message</td>
-      </tr>
-      <tr>
-        <th class="d-ta-left">Warning</th>
-        <td>
-          <div class="d-fl-center d-jc-flex-start" style="gap: 8px">
-            <div class="d-badge d-badge--warning">
-              <svg aria-hidden="true" focusable="false" data-name="Lightning Bolt" class="d-icon d-icon--lightningBolt d-icon--size-200 qwerdhg" viewBox="0 0 12 12" data-qa="dt-icon"><path fill="currentColor" fill-rule="evenodd" d="M6.7.541a.5.5 0 0 1 .296.521L6.566 4.5H10.5a.5.5 0 0 1 .384.82l-5 6a.5.5 0 0 1-.88-.382l.43-3.438H1.5a.5.5 0 0 1-.384-.82l5-6a.5.5 0 0 1 .583-.14ZM2.567 6.5H6a.5.5 0 0 1 .496.562L6.208 9.37 9.432 5.5H6a.5.5 0 0 1-.496-.562l.288-2.308L2.568 6.5Z" clip-rule="evenodd"></path></svg>
-              Label
-            </div>
-            <div class="d-badge d-badge--count d-badge--warning">4</div>
-            <div class="d-badge d-badge--count d-badge--warning">99</div>
-          </div>
-        </td>
-        <td>
-          When a users attention is needed, or action may be required.</td>
-      </tr>
-      <tr>
-        <th class="d-ta-left">Critical</th>
-        <td>
-          <div class="d-fl-center d-jc-flex-start" style="gap: 8px">
-            <div class="d-badge d-badge--critical">
-              <svg aria-hidden="true" focusable="false" data-name="Lightning Bolt" class="d-icon d-icon--lightningBolt d-icon--size-200 qwerdhg" viewBox="0 0 12 12" data-qa="dt-icon"><path fill="currentColor" fill-rule="evenodd" d="M6.7.541a.5.5 0 0 1 .296.521L6.566 4.5H10.5a.5.5 0 0 1 .384.82l-5 6a.5.5 0 0 1-.88-.382l.43-3.438H1.5a.5.5 0 0 1-.384-.82l5-6a.5.5 0 0 1 .583-.14ZM2.567 6.5H6a.5.5 0 0 1 .496.562L6.208 9.37 9.432 5.5H6a.5.5 0 0 1-.496-.562l.288-2.308L2.568 6.5Z" clip-rule="evenodd"></path></svg>
-              Label
-            </div>
-            <div class="d-badge d-badge--count d-badge--critical">5</div>
-            <div class="d-badge d-badge--count d-badge--critical">91</div>
-          </div>
-        </td>
-        <td>To communicate problems that must be resolved, something has failed, or otherwise negative label or dangerous condition.</td>
-      </tr>
-      <tr>
-        <th class="d-ta-left">Bulletin</th>
-        <td>
-          <div class="d-fl-center d-jc-flex-start" style="gap: 8px">
-            <div class="d-badge d-badge--bulletin">
-              <svg aria-hidden="true" focusable="false" data-name="Lightning Bolt" class="d-icon d-icon--lightningBolt d-icon--size-200 qwerdhg" viewBox="0 0 12 12" data-qa="dt-icon"><path fill="currentColor" fill-rule="evenodd" d="M6.7.541a.5.5 0 0 1 .296.521L6.566 4.5H10.5a.5.5 0 0 1 .384.82l-5 6a.5.5 0 0 1-.88-.382l.43-3.438H1.5a.5.5 0 0 1-.384-.82l5-6a.5.5 0 0 1 .583-.14ZM2.567 6.5H6a.5.5 0 0 1 .496.562L6.208 9.37 9.432 5.5H6a.5.5 0 0 1-.496-.562l.288-2.308L2.568 6.5Z" clip-rule="evenodd"></path></svg>
-              Label
-            </div>
-            <div class="d-badge d-badge--count d-badge--bulletin">6</div>
-            <div class="d-badge d-badge--count d-badge--bulletin">99+</div>
-          </div>
-        </td>
-        <td>Used to provide temporary feedback to specific items in the interface, like notifications and unread counts.</td>
-      </tr>
-    </table>
-    <div class="d-fl-center d-mb12 d-jc-flex-start" style="gap: 8px">
-    </div>
-  </div>
-  <div class="d-p16">
-    <div class="d-mb4">
-      <div class="d-w164">
-        <strong>Explore style</strong><br>
-        Some other combinations under consideration.
-      </div>
-    </div>
-    <div class="d-stack8 d-mb16">
-      <div><button class="d-btn d-btn--muted d-btn--outlined d-w164 d-bgc-white" onclick="document.getElementById('badge-prototype').classList.toggle('pill');" type="button">Pill all?</button></div>
-      <div><button class="d-btn d-btn--muted d-btn--outlined d-w164 d-bgc-white" onclick="document.getElementById('badge-prototype').classList.toggle('ceps');" type="button">Caps or no?</button></div>
-      <div><button class="d-btn d-btn--muted d-btn--outlined d-w164 d-bgc-white" onclick="document.getElementById('badge-prototype').classList.toggle('beld');" type="button">Semibold or Bold?</button></div>
-      <div><button class="d-btn d-btn--muted d-btn--outlined d-w164 d-bgc-white" onclick="document.getElementById('badge-prototype').classList.toggle('litt');" type="button">Light or dark?</button></div>
-      <div><button class="d-btn d-btn--muted d-btn--outlined d-w164 d-bgc-white" onclick="document.getElementById('badge-prototype').classList.toggle('icin')" type="button">Toggle icon</button></div>
-    </div>
-    <div class="d-mb4"><strong>Surface</strong></div>
-    <div class="d-stack8 d-mb16">
-      <div><button class="d-btn d-btn--muted d-btn--outlined d-w164 d-bgc-white" onclick="document.getElementById('badge-prototype').style.backgroundColor='white';" type="button">White</button></div>
-      <div><button class="d-btn d-btn--muted d-btn--outlined d-w164 d-bgc-white" onclick="document.getElementById('badge-prototype').style.backgroundColor='var(--black-100)';" type="button">Black 100</button></div>
-      <div><button class="d-btn d-btn--muted d-btn--outlined d-w164 d-bgc-white" onclick="document.getElementById('badge-prototype').style.backgroundColor='var(--black-200)';" type="button">Black 200</button></div>
-      <div><button class="d-btn d-btn--muted d-btn--outlined d-w164 d-bgc-white" onclick="document.getElementById('badge-prototype').style.backgroundColor='var(--black-300)';" type="button">Black 300</button></div>
-      <div><button class="d-btn d-btn--muted d-btn--outlined d-w164 d-bgc-white" onclick="document.getElementById('badge-prototype').style.backgroundColor='var(--black-700)';" type="button">Black 700</button></div>
-      <div><button class="d-btn d-btn--muted d-btn--outlined d-w164 d-bgc-white" onclick="document.getElementById('badge-prototype').classList.toggle('videosample')" type="button">Video BG</button></div>
-    </div>
-  </div>
-  <div class="resizeWindow">
-    <div class="d-fs-200 d-mb8 d-fw-bold">Resize window</div>
-    ↘
-  </div>
-</div>
-
 <code-well-header>
-  <div>
-    <span class="d-badge">Badge</span>
+  <div class="d-d-flex d-gg8 d-ai-center">
+    <span class="d-badge">Label</span>
+    <span class="d-badge d-badge--count">1</span>
   </div>
 </code-well-header>
 
@@ -178,31 +37,264 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 
 - Since a Badge may often reflect a value within an implied label, ensure a label is announced. For example, via `aria-label` or `aria-labeledby`.
 
-## Variants and examples
+## Kind
+
+### Label
 
 <code-well-header>
-  <div>
-    <span v-for="i in classes" class="d-badge d-mr8 d-mb8" :class="i.class">Badge</span>
-  </div>
+  <span class="d-badge">Label</span>
 </code-well-header>
 
 ```html
-<span class="d-badge">...</span>
-<span class="d-badge">...</span>
-<span class="d-badge d-badge--green-400">...</span>
-<span class="d-badge d-badge--orange-400">...</span>
-<span class="d-badge d-badge--magenta-100">...</span>
-<span class="d-badge d-badge--magenta-300">...</span>
-<span class="d-badge d-badge--magenta-400">...</span>
-<span class="d-badge d-badge--magenta-500">...</span>
-<span class="d-badge d-badge--purple-100">...</span>
-<span class="d-badge d-badge--purple-300">...</span>
-<span class="d-badge d-badge--purple-400">...</span>
-<span class="d-badge d-badge--purple-500">...</span>
-<span class="d-badge d-badge--red-300">...</span>
-<span class="d-badge d-badge--white">...</span>
-<span class="d-badge d-badge--gold-200">...</span>
+<span class="d-badge">Label</span>
 ```
+
+### Count
+
+<code-well-header>
+  <span class="d-badge d-badge--count">1</span>
+</code-well-header>
+
+```html
+<span class="d-badge">Label</span>
+```
+
+## Type
+
+<table>
+  <tr>
+    <th class="d-ta-left">Default</th>
+    <td>
+      <span class="d-badge">Label</span>
+    </td>
+    <td>
+      <span class="d-badge d-badge--count">1</span>
+    </td>
+    <td>Default general purpose callout when no implicit semantic meaning applies.</td>
+  </tr>
+  <tr>
+    <th class="d-ta-left">Info</th>
+    <td>
+      <span class="d-badge d-badge--info">Label</span>
+    </td>
+    <td>
+      <span class="d-badge d-badge--count d-badge--info">2</span>
+    </td>
+    <td>Used to convey general information that isn’t critical or requires action on the user's part.</td>
+  </tr>
+  <tr>
+    <th class="d-ta-left">Success</th>
+    <td>
+      <span class="d-badge d-badge--success">Label</span>
+    </td>
+    <td>
+      <span class="d-badge d-badge--count d-badge--success">3</span>
+    </td>
+    <td>Accompanying a successful or otherwise positive action or message</td>
+  </tr>
+  <tr>
+    <th class="d-ta-left">Warning</th>
+    <td>
+      <span class="d-badge d-badge--warning">Label</span>
+    </td>
+    <td>
+      <span class="d-badge d-badge--count d-badge--warning">4</span>
+    </td>
+    <td>When a users attention is needed, or action may be required.</td>
+  </tr>
+  <tr>
+    <th class="d-ta-left">Critical</th>
+    <td>
+      <span class="d-badge d-badge--critical">Label</span>
+    </td>
+    <td>
+      <span class="d-badge d-badge--count d-badge--critical">5</span>
+    </td>
+    <td>To communicate problems that must be resolved, something has failed, or otherwise negative label or dangerous condition.</td>
+  </tr>
+  <tr>
+    <th class="d-ta-left">Bulletin</th>
+    <td>
+      <span class="d-badge d-badge--bulletin">Label</span>
+    </td>
+    <td>
+      <span class="d-badge d-badge--count d-badge--bulletin">6</span>
+    </td>
+    <td>Used to provide temporary feedback to specific items in the interface, like live activity, notifications, and unread counts. </td>
+  </tr>
+  <tr>
+    <th class="d-ta-left">Ai</th>
+    <td>
+      <span class="d-badge d-badge--ai">
+        <svg aria-hidden="true" data-name="Dialpad Ai" class="d-icon d-icon--dialpadAi d-icon--size-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" data-v-68a9d516=""><path fill="currentColor" fill-rule="evenodd" d="M10.25 2a.75.75 0 1 1 1.5 0 .75.75 0 0 1-1.5 0Zm-5.722.5c-.415 0-.886.352-1.108 1.058v.001L1.476 9.652a.5.5 0 1 1-.952-.304l1.943-6.09c0-.001 0 0 0 0C2.765 2.308 3.518 1.5 4.528 1.5s1.761.806 2.06 1.753l1.498 4.692C8.308 8.65 8.777 9 9.193 9c.735 0 1.307-.576 1.307-1.257V4.53a.5.5 0 0 1 1 0v3.212C11.5 9.003 10.454 10 9.193 10c-1.009 0-1.761-.806-2.06-1.753l-1.497-4.69v-.002C5.412 2.85 4.943 2.5 4.527 2.5Z" clip-rule="evenodd"></path></svg>
+         Label
+      </span>
+    </td>
+    <td class="d-bgc-black-100 d-ta-center"><abbr class="d-fc-black-400 d-td-none d-fs-100" title="Not applicable">N/A</abbr></td>
+    <td>To call out Ai features, e.g. "Ai suggestions," "Ai on."</td>
+  </tr>
+</table>
+
+```html
+<span class="d-badge">Label</span>
+<span class="d-badge d-badge--info">Label</span>
+<span class="d-badge d-badge--success">Label</span>
+<span class="d-badge d-badge--warning">Label</span>
+<span class="d-badge d-badge--critical">Label</span>
+<span class="d-badge d-badge--bulletin">Label</span>
+<span class="d-badge d-badge--ai">
+  <svg class="d-icon d-icon--dialpadAi d-icon--size-200" ...>...</svg>
+   Label
+</span>
+
+<span class="d-badge d-badge--count">1</span>
+<span class="d-badge d-badge--count d-badge--info">2</span>
+<span class="d-badge d-badge--count d-badge--success">3</span>
+<span class="d-badge d-badge--count d-badge--warning">4</span>
+<span class="d-badge d-badge--count d-badge--critical">5</span>
+<span class="d-badge d-badge--count d-badge--bulletin">6</span>
+```
+
+## Icon
+
+<code-well-header>
+  <span class="d-badge">
+    <svg aria-hidden="true" focusable="false" data-name="Lightning Bolt" class="d-icon d-icon--lightningBolt d-icon--size-200" viewBox="0 0 12 12" data-qa="dt-icon"><path fill="currentColor" fill-rule="evenodd" d="M6.7.541a.5.5 0 0 1 .296.521L6.566 4.5H10.5a.5.5 0 0 1 .384.82l-5 6a.5.5 0 0 1-.88-.382l.43-3.438H1.5a.5.5 0 0 1-.384-.82l5-6a.5.5 0 0 1 .583-.14ZM2.567 6.5H6a.5.5 0 0 1 .496.562L6.208 9.37 9.432 5.5H6a.5.5 0 0 1-.496-.562l.288-2.308L2.568 6.5Z" clip-rule="evenodd"></path></svg>
+    Label
+    <svg aria-hidden="true" focusable="false" data-name="Lightning Bolt" class="d-icon d-icon--lightningBolt d-icon--size-200" viewBox="0 0 12 12" data-qa="dt-icon"><path fill="currentColor" fill-rule="evenodd" d="M6.7.541a.5.5 0 0 1 .296.521L6.566 4.5H10.5a.5.5 0 0 1 .384.82l-5 6a.5.5 0 0 1-.88-.382l.43-3.438H1.5a.5.5 0 0 1-.384-.82l5-6a.5.5 0 0 1 .583-.14ZM2.567 6.5H6a.5.5 0 0 1 .496.562L6.208 9.37 9.432 5.5H6a.5.5 0 0 1-.496-.562l.288-2.308L2.568 6.5Z" clip-rule="evenodd"></path></svg>
+  </span>
+</code-well-header>
+
+```html
+<span class="d-badge">
+  <svg class="d-icon d-icon--size-200" ...>...</svg>
+  Label
+  <svg class="d-icon d-icon--size-200" ...>...</svg>
+</span>
+```
+
+## Examples
+
+### Label
+
+<code-well-header>
+  <div class="d-stack8">
+    <div class="d-d-flex d-gg8 d-ai-center">
+      <span class="d-badge">
+        Co-host
+      </span>
+      <span class="d-badge">
+        Customer
+      </span>
+      <span class="d-badge">
+        <svg aria-hidden="true" data-name="Lock" class="d-icon d-icon--lock d-icon--size-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" data-v-68a9d516=""><g clip-path="url(#a)" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"><path d="M2.5 6a.5.5 0 0 0-.5.5V10a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5V6.5a.5.5 0 0 0-.5-.5h-7ZM1 6.5A1.5 1.5 0 0 1 2.5 5h7A1.5 1.5 0 0 1 11 6.5V10a1.5 1.5 0 0 1-1.5 1.5h-7A1.5 1.5 0 0 1 1 10V6.5Z"></path><path d="M6 1.5a2 2 0 0 0-2 2v2a.5.5 0 1 1-1 0v-2a3 3 0 1 1 6 0v2a.5.5 0 1 1-1 0v-2a2 2 0 0 0-2-2Z"></path></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h12v12H0z"></path></clipPath></defs></svg>
+        Locked
+      </span>
+      <span class="d-badge">
+        <svg aria-hidden="true" data-name="Message" class="d-icon d-icon--message d-icon--size-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 12" data-v-68a9d516=""><path fill="currentColor" fill-rule="evenodd" d="M3 2a.5.5 0 0 0-.5.5v6.793l1.146-1.147A.5.5 0 0 1 4 8h6a.5.5 0 0 0 .5-.5v-5A.5.5 0 0 0 10 2H3Zm-1.06-.56A1.5 1.5 0 0 1 3 1h7a1.5 1.5 0 0 1 1.5 1.5v5A1.5 1.5 0 0 1 10 9H4.207l-1.853 1.854A.5.5 0 0 1 1.5 10.5v-8c0-.398.158-.78.44-1.06Z" clip-rule="evenodd"></path></svg>
+        Chat log
+      </span>
+    </div>
+  </div>
+  <div class="d-stack8">
+    <div class="d-d-flex d-gg8 d-ai-center">
+      <span class="d-badge d-badge--info">
+        In progress
+      </span>
+      <span class="d-badge d-badge--info">
+        Beta
+      </span>
+      <span class="d-badge d-badge--info">
+        Draft
+      </span>
+    </div>
+  </div>
+  <div class="d-stack8">
+    <div class="d-d-flex d-gg8 d-ai-center">
+      <span class="d-badge d-badge--warning">
+        Overdue
+      </span>
+    </div>
+  </div>
+  <div class="d-stack8">
+    <div class="d-d-flex d-gg8 d-ai-center">
+      <span class="d-badge d-badge--success">
+        Resolved
+      </span>
+    </div>
+  </div>
+  <div class="d-stack8">
+    <div class="d-d-flex d-gg8 d-ai-center">
+      <span class="d-badge d-badge--critical">
+        <svg aria-hidden="true" data-name="Record Filled" class="d-icon d-icon--recordFilled d-icon--size-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" data-v-68a9d516=""><path fill="currentColor" fill-rule="evenodd" d="M6 2a4 4 0 1 0 0 8 4 4 0 0 0 0-8ZM1 6a5 5 0 1 1 10 0A5 5 0 0 1 1 6Z" clip-rule="evenodd"></path><path fill="currentColor" d="M8.5 6a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Z"></path><path fill="currentColor" fill-rule="evenodd" d="M6 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM3 6a3 3 0 1 1 6 0 3 3 0 0 1-6 0Z" clip-rule="evenodd"></path></svg>
+        Recording
+      </span>
+    </div>
+  </div>
+  <div class="d-stack8">
+    <div class="d-d-flex d-gg8 d-ai-center">
+      <span class="d-badge d-badge--bulletin">
+        Live
+      </span>
+      <span class="d-badge d-badge--bulletin">
+        Presenter
+      </span>
+    </div>
+  </div>
+  <div class="d-stack8">
+    <div class="d-d-flex d-gg8 d-ai-center">
+      <span class="d-badge d-badge--ai">
+        <svg aria-hidden="true" data-name="Dialpad Ai" class="d-icon d-icon--dialpadAi d-icon--size-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" data-v-68a9d516=""><path fill="currentColor" fill-rule="evenodd" d="M10.25 2a.75.75 0 1 1 1.5 0 .75.75 0 0 1-1.5 0Zm-5.722.5c-.415 0-.886.352-1.108 1.058v.001L1.476 9.652a.5.5 0 1 1-.952-.304l1.943-6.09c0-.001 0 0 0 0C2.765 2.308 3.518 1.5 4.528 1.5s1.761.806 2.06 1.753l1.498 4.692C8.308 8.65 8.777 9 9.193 9c.735 0 1.307-.576 1.307-1.257V4.53a.5.5 0 0 1 1 0v3.212C11.5 9.003 10.454 10 9.193 10c-1.009 0-1.761-.806-2.06-1.753l-1.497-4.69v-.002C5.412 2.85 4.943 2.5 4.527 2.5Z" clip-rule="evenodd"></path></svg>
+        <span class="d-vi-visible-sr">Ai</span>
+        suggestion
+      </span>
+      <span class="d-badge d-badge--ai">
+        <svg aria-hidden="true" data-name="Dialpad Ai" class="d-icon d-icon--dialpadAi d-icon--size-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" data-v-68a9d516=""><path fill="currentColor" fill-rule="evenodd" d="M10.25 2a.75.75 0 1 1 1.5 0 .75.75 0 0 1-1.5 0Zm-5.722.5c-.415 0-.886.352-1.108 1.058v.001L1.476 9.652a.5.5 0 1 1-.952-.304l1.943-6.09c0-.001 0 0 0 0C2.765 2.308 3.518 1.5 4.528 1.5s1.761.806 2.06 1.753l1.498 4.692C8.308 8.65 8.777 9 9.193 9c.735 0 1.307-.576 1.307-1.257V4.53a.5.5 0 0 1 1 0v3.212C11.5 9.003 10.454 10 9.193 10c-1.009 0-1.761-.806-2.06-1.753l-1.497-4.69v-.002C5.412 2.85 4.943 2.5 4.527 2.5Z" clip-rule="evenodd"></path></svg>
+        <span class="d-vi-visible-sr">Ai</span>
+        on
+      </span>
+      <span class="d-badge d-badge--ai">
+        <svg aria-hidden="true" data-name="Dialpad Ai" class="d-icon d-icon--dialpadAi d-icon--size-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" data-v-68a9d516=""><path fill="currentColor" fill-rule="evenodd" d="M10.25 2a.75.75 0 1 1 1.5 0 .75.75 0 0 1-1.5 0Zm-5.722.5c-.415 0-.886.352-1.108 1.058v.001L1.476 9.652a.5.5 0 1 1-.952-.304l1.943-6.09c0-.001 0 0 0 0C2.765 2.308 3.518 1.5 4.528 1.5s1.761.806 2.06 1.753l1.498 4.692C8.308 8.65 8.777 9 9.193 9c.735 0 1.307-.576 1.307-1.257V4.53a.5.5 0 0 1 1 0v3.212C11.5 9.003 10.454 10 9.193 10c-1.009 0-1.761-.806-2.06-1.753l-1.497-4.69v-.002C5.412 2.85 4.943 2.5 4.527 2.5Z" clip-rule="evenodd"></path></svg>
+        <span class="d-vi-visible-sr">Ai</span>
+        transcript
+      </span>
+    </div>
+  </div>
+</code-well-header>
+
+### Count
+
+<code-well-header>
+  <div class="d-stack8">
+    <div class="d-d-flex d-gg8 d-ai-center">
+      <span class="d-badge d-badge--count d-badge--success">
+        <svg aria-hidden="true" data-name="Arrow Up" class="d-icon d-icon--arrowUp d-icon--size-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" data-v-68a9d516=""><path fill="currentColor" fill-rule="evenodd" d="M5.646 2.146a.5.5 0 0 1 .708 0l3.5 3.5a.5.5 0 0 1-.708.708L6.5 3.707V9.5a.5.5 0 0 1-1 0V3.707L2.854 6.354a.5.5 0 1 1-.708-.708l3.5-3.5Z" clip-rule="evenodd"></path></svg>
+        5%
+      </span>
+    </div>
+  </div>
+  <div class="d-stack8">
+    <div class="d-d-flex d-gg8 d-ai-center">
+      <span class="d-badge d-badge--count d-badge--critical">
+        <svg aria-hidden="true" data-name="Arrow Down" class="d-icon d-icon--arrowDown d-icon--size-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" data-v-68a9d516=""><path fill="currentColor" fill-rule="evenodd" d="M6 2a.5.5 0 0 1 .5.5v5.793l2.646-2.647a.5.5 0 1 1 .708.708l-3.5 3.5a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L5.5 8.293V2.5A.5.5 0 0 1 6 2Z" clip-rule="evenodd"></path></svg>
+        -12%
+      </span>
+    </div>
+  </div>
+  <div class="d-stack8">
+    <div class="d-d-flex d-gg8 d-ai-center">
+      <span class="d-badge d-badge--count d-badge--bulletin">
+        1
+      </span>
+      <span class="d-badge d-badge--count d-badge--bulletin">
+        18
+      </span>
+      <span class="d-badge d-badge--count d-badge--bulletin">
+        99+
+      </span>
+    </div>
+  </div>
+</code-well-header>
 
 ## Classes
 
