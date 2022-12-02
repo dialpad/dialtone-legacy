@@ -11,7 +11,7 @@ const __dirname = getDirname(import.meta.url);
 const mapping = {
   h2: 'd-docsite--header d-pt72',
   h3: 'd-docsite--subheader d-pt72 d-mt24',
-  p: 'd-docsite--paragraph d-my16 d-lh-400',
+  p: 'd-docsite--paragraph d-my16 d-lh-400 d-w75ch',
   ul: 'd-docsite--unordered-list',
   li: 'd-docsite--list-element d-mt8',
 };
