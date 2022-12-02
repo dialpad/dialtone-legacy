@@ -73,7 +73,7 @@
   <section class="links d-d-grid d-gg16 d-g-cols12 d-wmx1340 d-mx-auto">
     <div class="link d-body-base d-gc3 d-px32 d-ta-center">
       <router-link
-        class="d-fc-secondary h:d-fc-purple-400 d-d-block"
+        class="d-fc-secondary h:d-fc-purple-400 d-d-block d-td-none"
         to="/design/"
       >
         <img
@@ -97,7 +97,7 @@
     </div>
     <div class="link d-body-base d-gc3 d-px32 d-ta-center">
       <router-link
-        class="d-fc-secondary h:d-fc-purple-400 d-d-block"
+        class="d-fc-secondary h:d-fc-purple-400 d-d-block d-td-none"
         to="/components/"
       >
         <img
@@ -129,7 +129,7 @@
     </div>
     <div class="link d-body-base d-gc3 d-px32 d-ta-center">
       <router-link
-        class="d-fc-secondary h:d-fc-purple-400 d-d-block"
+        class="d-fc-secondary h:d-fc-purple-400 d-d-block d-td-none"
         to="/utilities/"
       >
         <img
@@ -153,7 +153,7 @@
     </div>
     <div class="link d-body-base d-gc3 d-px32 d-ta-center">
       <router-link
-        class="d-fc-secondary h:d-fc-purple-400 d-d-block"
+        class="d-fc-secondary h:d-fc-purple-400 d-d-block d-td-none"
         to="/guides/"
       >
         <img
