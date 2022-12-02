@@ -1,1 +1,0 @@
-const t=JSON.parse(`{"key":"v-8f66414c","path":"/about/whats_new/","title":"What's New","lang":"en-US","frontmatter":{"title":"What's New","desc":"Updates, progress and planning for all things Dialtone."},"excerpt":"","headers":[]}`);export{t as data};
