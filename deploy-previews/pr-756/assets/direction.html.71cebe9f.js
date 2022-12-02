@@ -1,0 +1,21 @@
+import{directions as r}from"./borders.91a96305.js";import{_ as p,r as o,o as e,c as a,a as s,e as t,w as c,b as d,F as _,g as u,t as b,u as f}from"./app.c69bfef1.js";const h=d("h2",{id:"all-sides",tabindex:"-1"},[d("a",{class:"header-anchor",href:"#all-sides","aria-hidden":"true"},"#"),s(" All sides")],-1),w=d("p",null,[s("Use "),d("code",null,"d-ba"),s(" to add a border to all sides of your element.")],-1),m=d("div",{class:"d-fl-center d-p16 d-ba d-bc-magenta-200 d-baw0 d-bgc-magenta-100 d-fs-200 d-fw-bold"},".d-baw0",-1),v=d("div",{class:"d-fl-center d-p16 d-ba d-bc-magenta-200 d-baw1 d-bgc-magenta-100 d-fs-200 d-fw-bold"},".d-baw1",-1),g=d("div",{class:"d-fl-center d-p16 d-ba d-bc-magenta-200 d-baw2 d-bgc-magenta-100 d-fs-200 d-fw-bold"},".d-baw2",-1),x=d("div",{class:"d-fl-center d-p16 d-ba d-bc-magenta-200 d-baw4 d-bgc-magenta-100 d-fs-200 d-fw-bold"},".d-baw4",-1),y=d("div",{class:"d-fl-center d-p16 d-ba d-bc-magenta-200 d-baw6 d-bgc-magenta-100 d-fs-200 d-fw-bold"},".d-baw6",-1),k=d("div",{class:"language-html","data-ext":"html"},[d("pre",{class:"language-html"},[d("code",null,`<div class="d-ba d-bc-magenta-200 d-baw0">...</div>
+<div class="d-ba d-bc-magenta-200 d-baw1">...</div>
+<div class="d-ba d-bc-magenta-200 d-baw2">...</div>
+<div class="d-ba d-bc-magenta-200 d-baw4">...</div>
+<div class="d-ba d-bc-magenta-200 d-baw6">...</div>
+`)])],-1),B=d("h2",{id:"individual-sides",tabindex:"-1"},[d("a",{class:"header-anchor",href:"#individual-sides","aria-hidden":"true"},"#"),s(" Individual sides")],-1),C=d("p",null,[s("Use "),d("code",null,"d-b{t|r|b|l|x|y}"),s(" to add a border to only specific sides of your element.")],-1),N=d("div",{class:"d-fl-center d-p16 d-bt d-bc-purple-400 d-baw2 d-bgc-purple-100 d-fs-200 d-fw-bold"},".d-bt",-1),V=d("div",{class:"d-fl-center d-p16 d-br d-bc-purple-400 d-baw2 d-bgc-purple-100 d-fs-200 d-fw-bold"},".d-br",-1),F=d("div",{class:"d-fl-center d-p16 d-bb d-bc-purple-400 d-baw2 d-bgc-purple-100 d-fs-200 d-fw-bold"},".d-bb",-1),U=d("div",{class:"d-fl-center d-p16 d-bl d-bc-purple-400 d-baw2 d-bgc-purple-100 d-fs-200 d-fw-bold"},".d-bl",-1),A=d("div",{class:"d-fl-center d-p16 d-bx d-bc-purple-400 d-baw2 d-bgc-purple-100 d-fs-200 d-fw-bold"},".d-bx",-1),D=d("div",{class:"d-fl-center d-p16 d-by d-bc-purple-400 d-baw2 d-bgc-purple-100 d-fs-200 d-fw-bold"},".d-by",-1),E=d("div",{class:"d-fl-center d-p16 d-ba d-bc-purple-400 d-baw2 d-btw0 d-bgc-purple-100 d-fs-200 d-fw-bold"},".d-ba d-btw0",-1),I=d("div",{class:"language-html","data-ext":"html"},[d("pre",{class:"language-html"},[d("code",null,`<div class="d-bt d-bc-purple-400 d-baw2 ">...</div>
+<div class="d-br d-bc-purple-400 d-baw2 ">...</div>
+<div class="d-bb d-bc-purple-400 d-baw2 ">...</div>
+<div class="d-bl d-bc-purple-400 d-baw2 ">...</div>
+<div class="d-bx d-bc-purple-400 d-baw2 ">...</div>
+<div class="d-by d-bc-purple-400 d-baw2 ">...</div>
+<div class="d-ba d-bc-purple-400 d-baw2 d-btw0 ">...</div>
+`)])],-1),L=d("h2",{id:"classes",tabindex:"-1"},[d("a",{class:"header-anchor",href:"#classes","aria-hidden":"true"},"#"),s(" Classes")],-1),S={scope:"row",class:"d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100"},T={class:"d-ff-mono d-fs-100"},j={key:0},q=d("br",null,null,-1),z={key:1},G=d("br",null,null,-1),H={key:2},J={__name:"direction.html",setup(K){return(M,O)=>{const n=o("code-well-header"),i=o("utility-class-table");return e(),a("div",null,[h,s(),w,s(),t(n,{class:"d-fl-col5 d-flg8 d-fw-wrap d-p24 d-bgc-magenta-100 d-bgo50 d-w100p d-hmn102"},{default:c(()=>[m,s(),v,s(),g,s(),x,s(),y]),_:1}),s(),k,B,s(),C,s(),t(n,{class:"d-fl-col4 d-flg8 d-fw-wrap d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn102"},{default:c(()=>[N,s(),V,s(),F,s(),U,s(),A,s(),D,s(),E]),_:1}),s(),I,L,s(),t(i,null,{content:c(()=>[d("tbody",null,[(e(!0),a(_,null,u(f(r),l=>(e(),a("tr",null,[d("th",S,".d-b"+b(l[0]),1),s(),d("td",T,[l==="y"?(e(),a("span",j,[s(`
+            border-top: var(--su1) solid !important;`),q,s(`
+            border-bottom: var(--su1) solid !important;
+          `)])):l==="x"?(e(),a("span",z,[s(`
+            border-right: var(--su1) solid !important;`),G,s(`
+            border-left: var(--su1) solid !important;
+          `)])):(e(),a("span",H,`
+            border-`+b(l)+`: var(--su1) solid !important;
+          `,1))])]))),256))])]),_:1})])}}},R=p(J,[["__file","direction.html.vue"]]);export{R as default};
