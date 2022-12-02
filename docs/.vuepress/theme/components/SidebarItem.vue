@@ -1,41 +1,59 @@
 <template>
-  <p
-    class="d-fw-bold"
-    tabindex="0"
-    v-text="item.text"
-  />
-  <li
-    v-for="subItem in subItems"
-    :key="subItem.text"
-  >
-    <router-link
-      v-if="subItem.link && !subItem.planned"
-      :class="itemClass"
-      :to="subItem.link"
-    >
-      {{ subItem.text }}
-    </router-link>
+  <li>
     <p
-      v-else
+      class="d-tt-uppercase d-fw-bold d-fs-100"
       tabindex="0"
-      :class="itemClass"
-      class="d-fc-muted"
-    >
-      {{ subItem.text }}
-      <dt-badge
-        v-if="subItem.planned"
-        class="d-fw-normal d-ml4"
+      v-text="item.text"
+    />
+    <ul class="d-pl0 d-mb16">
+      <li
+        v-for="subItem in subItems"
+        :key="subItem.text"
       >
-        Planned
-      </dt-badge>
-    </p>
+        <router-link
+          v-if="subItem.link && !subItem.planned"
+          v-slot="{ href, navigate, isActive, isExactActive }"
+          :to="subItem.link"
+          custom
+        >
+          <a
+            :href="href"
+            class="d-link d-td-none"
+            :class="[
+              itemClass,
+              {
+                'router-link-active ': isActive,
+                'router-link-exact-active': isExactActive,
+                'd-fc-primary': !isActive || !isExactActive,
+              },
+            ]"
+            @click="navigate"
+          >
+            {{ subItem.text }}
+          </a>
+        </router-link>
+        <p
+          v-else
+          tabindex="0"
+          class="d-td-none d-fc-muted"
+        >
+          {{ subItem.text }}
+          <dt-badge
+            v-if="subItem.planned"
+            class="d-fw-normal d-ml4"
+          >
+            Planned
+          </dt-badge>
+        </p>
+      </li>
+    </ul>
   </li>
 </template>
 
 <script setup>
 import { computed } from 'vue';
 
-const itemClass = 'd-link d-td-none d-my4';
+const itemClass = 'd-my4 d-link';
 const props = defineProps({
   item: {
     type: Object,

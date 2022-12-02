@@ -1,7 +1,7 @@
 <template>
   <ul
     v-if="sidebarItems.length"
-    class="d-p24"
+    class="d-t64 d-b0 d-ps-fixed d-p24 d-pb96 d-h100vh d-of-y-auto"
   >
     <sidebar-item
       v-for="item in sidebarItems"

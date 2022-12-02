@@ -1,5 +1,5 @@
 <template>
-  <div class="main-content d-pt24">
+  <div class="main-content d-w100p d-pt24">
     <page-header>
       <template #content-bottom>
         <page-toc

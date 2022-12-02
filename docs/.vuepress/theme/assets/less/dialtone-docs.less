@@ -27,7 +27,6 @@
 @import (reference) '@dialpad/dialtone/lib/build/less/components/link';
 @import (reference) '@dialpad/dialtone/lib/build/less/components/button';
 @import 'dialtone-syntax';
-@import 'overrides.less';
 @import 'hljs-dialpad.less';
 
 //  ============================================================================
@@ -43,6 +42,9 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
 
 //  ============================================================================
 //  $   COLOR PALETTES
@@ -93,9 +95,8 @@ span.DocSearch-Button-Keys {
 //  $   SEARCH BUTTON
 //      Override search button with dialtone styles
 //  ----------------------------------------------------------------------------
-nav a.router-link-active {
-  font-weight: var(--fw-bold);
-  text-decoration: none;
+a.router-link-active {
+  font-weight: var(--fw-semibold);
 }
 
 //  ============================================================================
@@ -104,16 +105,6 @@ nav a.router-link-active {
 //      we can't add utility classes directly to the HTML. So we have to use
 //      custom CSS here instead.
 //  ----------------------------------------------------------------------------
-.toc {
-  position: sticky;
-  top: var(--su64);
-  align-self: flex-start;
-  background-color: var(--base--background-color);
-  z-index: 10;
-  padding-right: var(--su32);
-  flex-basis: 256px;
-}
-
 .toc ol {
   .d-ls-reset();
 
@@ -175,15 +166,20 @@ nav a.router-link-active {
 //      appropriate to ship as part of Dialtone.
 //  ----------------------------------------------------------------------------
 .main-content {
-  padding: 0 2.5rem;
-  //max-width: calc(100% - 16rem);
-  a.header-anchor {
-    opacity: 0;
-  }
-  h2 {
-    &:hover a.header-anchor {
-      opacity: 1;
-    }
+  max-width: 99rem;
+  margin: 0 auto;
+  padding: 2rem 2.5rem;
+}
+
+a.header-anchor {
+  float: left;
+  margin-left: -0.87em;
+  padding-right: 0.23em;
+  opacity: 0;
+}
+.d-docsite--header, .d-docsite--subheader {
+  &:hover a.header-anchor {
+    opacity: 1;
   }
 }
 
@@ -641,35 +637,17 @@ nav a.router-link-active {
   }
 }
 
-//  ============================================================================
-//  $   USAGE
-//      Override / unset VuePress's default table styles to align to DT tables
-//  ----------------------------------------------------------------------------
-
-.dialtone-doc-table {
-  thead {
-    tr,
-    th,
-    th,
-    td {
-      border: unset;
-    }
-
-    [scope="col"]:first-child {
-      padding-left: 0;
-    }
+.back-to-top {
+  background-color: var(--primary-color);
+  &:hover {
+    background-color: var(--primary-color-hover);
   }
+}
 
-  tbody {
-    th,
-    td {
-      border-right: unset;
-      border-bottom: var(--su1) solid var(--table-bc);
-      border-left: unset;
-    }
+.d-docsite--unordered-list, .d-docsite--list-element {
+  list-style: revert;
+}
 
-    [scope="row"] {
-      padding-left: 0;
-    }
-  }
+.dialtone-wall__item {
+  .d-td-none();
 }
