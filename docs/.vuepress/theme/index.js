@@ -2,6 +2,7 @@ import { getDirname, path } from '@vuepress/utils';
 import { themeDataPlugin } from '@vuepress/plugin-theme-data';
 import { tocPlugin } from '@vuepress/plugin-toc';
 import { activeHeaderLinksPlugin } from '@vuepress/plugin-active-header-links';
+import { gitPlugin } from '@vuepress/plugin-git';
 
 const __dirname = getDirname(import.meta.url);
 
@@ -23,6 +24,9 @@ export const dialtoneVuepressTheme = (options) => {
       }),
       activeHeaderLinksPlugin({
         headerLinkSelector: 'a.toc-link',
+      }),
+      gitPlugin({
+        // options
       }),
     ],
   };
