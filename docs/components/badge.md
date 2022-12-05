@@ -56,7 +56,7 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 </code-well-header>
 
 ```html
-<span class="d-badge"><span class="d-badge__label">Label</span></span>
+<span class="d-badge d-badge--count"><span class="d-badge__label">1</span></span>
 ```
 
 ## Type
@@ -175,9 +175,13 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 
 ```html
 <span class="d-badge">
-  <svg class="d-icon d-icon--size-200" ...>...</svg>
+  <span class="d-badge__icon-left">
+    <dt-icon name="lightning-bolt" size="200" />
+  </span>
   <span class="d-badge__label">Label</span>
-  <svg class="d-icon d-icon--size-200" ...>...</svg>
+  <span class="d-badge__icon-right">
+    <dt-icon name="lightning-bolt" size="200" />
+  </span>
 </span>
 ```
 
