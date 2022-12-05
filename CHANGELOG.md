@@ -1,3 +1,11 @@
+# [7.9.0](https://github.com/dialpad/dialtone/compare/v7.8.2...v7.9.0) (2022-12-05)
+
+
+### Features
+
+* **Badge:** refreshed ([#754](https://github.com/dialpad/dialtone/issues/754)) ([a7e3784](https://github.com/dialpad/dialtone/commit/a7e3784de166d036c5c6f91844925c1ff972d6bb))
+* **Icons:** new omnichannel brand icons ([#750](https://github.com/dialpad/dialtone/issues/750)) ([2d573ca](https://github.com/dialpad/dialtone/commit/2d573ca9ebfec019a7fc9c54fba55ae0c2329eae))
+
 ## [7.8.2](https://github.com/dialpad/dialtone/compare/v7.8.1...v7.8.2) (2022-11-29)
 
 
