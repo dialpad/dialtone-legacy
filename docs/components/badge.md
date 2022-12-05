@@ -127,11 +127,11 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
     <td>
       <span class="d-badge d-badge--ai">
         <svg aria-hidden="true" data-name="Dialpad Ai" class="d-icon d-icon--dialpadAi d-icon--size-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" data-v-68a9d516=""><path fill="currentColor" fill-rule="evenodd" d="M10.25 2a.75.75 0 1 1 1.5 0 .75.75 0 0 1-1.5 0Zm-5.722.5c-.415 0-.886.352-1.108 1.058v.001L1.476 9.652a.5.5 0 1 1-.952-.304l1.943-6.09c0-.001 0 0 0 0C2.765 2.308 3.518 1.5 4.528 1.5s1.761.806 2.06 1.753l1.498 4.692C8.308 8.65 8.777 9 9.193 9c.735 0 1.307-.576 1.307-1.257V4.53a.5.5 0 0 1 1 0v3.212C11.5 9.003 10.454 10 9.193 10c-1.009 0-1.761-.806-2.06-1.753l-1.497-4.69v-.002C5.412 2.85 4.943 2.5 4.527 2.5Z" clip-rule="evenodd"></path></svg>
-         Label
+         label
       </span>
     </td>
     <td class="d-bgc-black-100 d-ta-center"><abbr class="d-fc-black-400 d-td-none d-fs-100" title="Not applicable">N/A</abbr></td>
-    <td>To call out Ai features, e.g. "Ai suggestions," "Ai on."</td>
+    <td>To call out Ai features, e.g. "Ai Transcript," "Ai on."</td>
   </tr>
 </table>
 
@@ -178,7 +178,7 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 ### Label
 
 <code-well-header>
-  <div class="d-stack8">
+  <div>
     <div class="d-d-flex d-gg8 d-ai-center">
       <span class="d-badge">
         Co-host
@@ -196,7 +196,7 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
       </span>
     </div>
   </div>
-  <div class="d-stack8">
+  <div>
     <div class="d-d-flex d-gg8 d-ai-center">
       <span class="d-badge d-badge--info">
         In progress
@@ -209,21 +209,21 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
       </span>
     </div>
   </div>
-  <div class="d-stack8">
+  <div>
     <div class="d-d-flex d-gg8 d-ai-center">
       <span class="d-badge d-badge--warning">
         Overdue
       </span>
     </div>
   </div>
-  <div class="d-stack8">
+  <div>
     <div class="d-d-flex d-gg8 d-ai-center">
       <span class="d-badge d-badge--success">
         Resolved
       </span>
     </div>
   </div>
-  <div class="d-stack8">
+  <div>
     <div class="d-d-flex d-gg8 d-ai-center">
       <span class="d-badge d-badge--critical">
         <svg aria-hidden="true" data-name="Record Filled" class="d-icon d-icon--recordFilled d-icon--size-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" data-v-68a9d516=""><path fill="currentColor" fill-rule="evenodd" d="M6 2a4 4 0 1 0 0 8 4 4 0 0 0 0-8ZM1 6a5 5 0 1 1 10 0A5 5 0 0 1 1 6Z" clip-rule="evenodd"></path><path fill="currentColor" d="M8.5 6a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Z"></path><path fill="currentColor" fill-rule="evenodd" d="M6 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM3 6a3 3 0 1 1 6 0 3 3 0 0 1-6 0Z" clip-rule="evenodd"></path></svg>
@@ -231,7 +231,7 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
       </span>
     </div>
   </div>
-  <div class="d-stack8">
+  <div>
     <div class="d-d-flex d-gg8 d-ai-center">
       <span class="d-badge d-badge--bulletin">
         Live
@@ -241,12 +241,17 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
       </span>
     </div>
   </div>
-  <div class="d-stack8">
+  <div>
     <div class="d-d-flex d-gg8 d-ai-center">
       <span class="d-badge d-badge--ai">
         <svg aria-hidden="true" data-name="Dialpad Ai" class="d-icon d-icon--dialpadAi d-icon--size-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" data-v-68a9d516=""><path fill="currentColor" fill-rule="evenodd" d="M10.25 2a.75.75 0 1 1 1.5 0 .75.75 0 0 1-1.5 0Zm-5.722.5c-.415 0-.886.352-1.108 1.058v.001L1.476 9.652a.5.5 0 1 1-.952-.304l1.943-6.09c0-.001 0 0 0 0C2.765 2.308 3.518 1.5 4.528 1.5s1.761.806 2.06 1.753l1.498 4.692C8.308 8.65 8.777 9 9.193 9c.735 0 1.307-.576 1.307-1.257V4.53a.5.5 0 0 1 1 0v3.212C11.5 9.003 10.454 10 9.193 10c-1.009 0-1.761-.806-2.06-1.753l-1.497-4.69v-.002C5.412 2.85 4.943 2.5 4.527 2.5Z" clip-rule="evenodd"></path></svg>
         <span class="d-vi-visible-sr">Ai</span>
-        suggestion
+        Notes
+      </span>
+      <span class="d-badge d-badge--ai">
+        <svg aria-hidden="true" data-name="Dialpad Ai" class="d-icon d-icon--dialpadAi d-icon--size-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" data-v-68a9d516=""><path fill="currentColor" fill-rule="evenodd" d="M10.25 2a.75.75 0 1 1 1.5 0 .75.75 0 0 1-1.5 0Zm-5.722.5c-.415 0-.886.352-1.108 1.058v.001L1.476 9.652a.5.5 0 1 1-.952-.304l1.943-6.09c0-.001 0 0 0 0C2.765 2.308 3.518 1.5 4.528 1.5s1.761.806 2.06 1.753l1.498 4.692C8.308 8.65 8.777 9 9.193 9c.735 0 1.307-.576 1.307-1.257V4.53a.5.5 0 0 1 1 0v3.212C11.5 9.003 10.454 10 9.193 10c-1.009 0-1.761-.806-2.06-1.753l-1.497-4.69v-.002C5.412 2.85 4.943 2.5 4.527 2.5Z" clip-rule="evenodd"></path></svg>
+        <span class="d-vi-visible-sr">Ai</span>
+        Suggestion
       </span>
       <span class="d-badge d-badge--ai">
         <svg aria-hidden="true" data-name="Dialpad Ai" class="d-icon d-icon--dialpadAi d-icon--size-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" data-v-68a9d516=""><path fill="currentColor" fill-rule="evenodd" d="M10.25 2a.75.75 0 1 1 1.5 0 .75.75 0 0 1-1.5 0Zm-5.722.5c-.415 0-.886.352-1.108 1.058v.001L1.476 9.652a.5.5 0 1 1-.952-.304l1.943-6.09c0-.001 0 0 0 0C2.765 2.308 3.518 1.5 4.528 1.5s1.761.806 2.06 1.753l1.498 4.692C8.308 8.65 8.777 9 9.193 9c.735 0 1.307-.576 1.307-1.257V4.53a.5.5 0 0 1 1 0v3.212C11.5 9.003 10.454 10 9.193 10c-1.009 0-1.761-.806-2.06-1.753l-1.497-4.69v-.002C5.412 2.85 4.943 2.5 4.527 2.5Z" clip-rule="evenodd"></path></svg>
@@ -256,7 +261,7 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
       <span class="d-badge d-badge--ai">
         <svg aria-hidden="true" data-name="Dialpad Ai" class="d-icon d-icon--dialpadAi d-icon--size-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" data-v-68a9d516=""><path fill="currentColor" fill-rule="evenodd" d="M10.25 2a.75.75 0 1 1 1.5 0 .75.75 0 0 1-1.5 0Zm-5.722.5c-.415 0-.886.352-1.108 1.058v.001L1.476 9.652a.5.5 0 1 1-.952-.304l1.943-6.09c0-.001 0 0 0 0C2.765 2.308 3.518 1.5 4.528 1.5s1.761.806 2.06 1.753l1.498 4.692C8.308 8.65 8.777 9 9.193 9c.735 0 1.307-.576 1.307-1.257V4.53a.5.5 0 0 1 1 0v3.212C11.5 9.003 10.454 10 9.193 10c-1.009 0-1.761-.806-2.06-1.753l-1.497-4.69v-.002C5.412 2.85 4.943 2.5 4.527 2.5Z" clip-rule="evenodd"></path></svg>
         <span class="d-vi-visible-sr">Ai</span>
-        transcript
+        Transcript
       </span>
     </div>
   </div>
@@ -265,7 +270,7 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 ### Count
 
 <code-well-header>
-  <div class="d-stack8">
+  <div>
     <div class="d-d-flex d-gg8 d-ai-center">
       <span class="d-badge d-badge--count d-badge--success">
         <svg aria-hidden="true" data-name="Arrow Up" class="d-icon d-icon--arrowUp d-icon--size-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" data-v-68a9d516=""><path fill="currentColor" fill-rule="evenodd" d="M5.646 2.146a.5.5 0 0 1 .708 0l3.5 3.5a.5.5 0 0 1-.708.708L6.5 3.707V9.5a.5.5 0 0 1-1 0V3.707L2.854 6.354a.5.5 0 1 1-.708-.708l3.5-3.5Z" clip-rule="evenodd"></path></svg>
@@ -273,7 +278,7 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
       </span>
     </div>
   </div>
-  <div class="d-stack8">
+  <div>
     <div class="d-d-flex d-gg8 d-ai-center">
       <span class="d-badge d-badge--count d-badge--critical">
         <svg aria-hidden="true" data-name="Arrow Down" class="d-icon d-icon--arrowDown d-icon--size-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" data-v-68a9d516=""><path fill="currentColor" fill-rule="evenodd" d="M6 2a.5.5 0 0 1 .5.5v5.793l2.646-2.647a.5.5 0 1 1 .708.708l-3.5 3.5a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L5.5 8.293V2.5A.5.5 0 0 1 6 2Z" clip-rule="evenodd"></path></svg>
@@ -281,7 +286,7 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
       </span>
     </div>
   </div>
-  <div class="d-stack8">
+  <div>
     <div class="d-d-flex d-gg8 d-ai-center">
       <span class="d-badge d-badge--count d-badge--bulletin">
         1
