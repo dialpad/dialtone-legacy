@@ -7,15 +7,19 @@
 //  visit https://dialpad.design/components/badges
 //
 //  TABLE OF CONTENTS
+//  • COMPONENT CSS VARIABLES
 //  • BASE STYLE
-//    • COLORS
+//  • KIND
+//  • TYPE
+//  • SLOTS
 //
 //  ============================================================================
 //  $   BASE STYLE
 //  ----------------------------------------------------------------------------
 
 .d-badge {
-  //  Component CSS Vars
+  //  COMPONENT CSS VARIABLES
+  //  --------------------------------------------------------------------------
   --badge-color-text: var(--fc-primary);
   --badge-color-background: var(--black-200);
   --badge-color-background-ai: linear-gradient(to bottom right, var(--purple-400) 0%, var(--magenta-300) 100%);
@@ -29,6 +33,8 @@
   --badge-padding-x: var(--space-400);
   --badge-text-case: none;
 
+  //  BASE STYLE
+  //  --------------------------------------------------------------------------
   display: inline-flex;
   gap: var(--badge-gap);
   align-items: center;
@@ -45,11 +51,17 @@
   background-color: var(--badge-color-background);
   border-radius: var(--badge-border-radius);
 
+  //  Kind
+  //  --------------------------------------------------------------------------
+
   &--count {
     --badge-border-radius: var(--br-pill);
     --badge-padding-x: calc(var(--space-400) - var(--space-100));
     --badge-padding-y: var(--space-300);
   }
+
+  //  TYPE
+  //  --------------------------------------------------------------------------
 
   &--info {
     --badge-color-background: var(--blue-100);
@@ -77,5 +89,17 @@
     --badge-color-background: var(--magenta-300);
 
     background-image: var(--badge-color-background-ai);
+  }
+
+  //  SLOTS
+  //  --------------------------------------------------------------------------
+
+  &__label {
+    display: flex;
+  }
+
+  &__icon-left,
+  &__icon-right {
+    display: flex;
   }
 }
