@@ -127,7 +127,7 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
     <td>
       <span class="d-badge d-badge--ai">
         <span class="d-badge__icon-left">
-          <svg aria-hidden="true" data-name="Dialpad Ai" class="d-icon d-icon--dialpadAi d-icon--size-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" data-v-68a9d516=""><path fill="currentColor" fill-rule="evenodd" d="M10.25 2a.75.75 0 1 1 1.5 0 .75.75 0 0 1-1.5 0Zm-5.722.5c-.415 0-.886.352-1.108 1.058v.001L1.476 9.652a.5.5 0 1 1-.952-.304l1.943-6.09c0-.001 0 0 0 0C2.765 2.308 3.518 1.5 4.528 1.5s1.761.806 2.06 1.753l1.498 4.692C8.308 8.65 8.777 9 9.193 9c.735 0 1.307-.576 1.307-1.257V4.53a.5.5 0 0 1 1 0v3.212C11.5 9.003 10.454 10 9.193 10c-1.009 0-1.761-.806-2.06-1.753l-1.497-4.69v-.002C5.412 2.85 4.943 2.5 4.527 2.5Z" clip-rule="evenodd"></path></svg>
+          <dt-icon name="dialpad-ai" size="200" />
         </span>
         <span class="d-badge__label">Label</span>
       </span>
@@ -146,7 +146,7 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 <span class="d-badge d-badge--bulletin"><span class="d-badge__label">Label</span></span>
 <span class="d-badge d-badge--ai">
   <span class="d-badge__icon-left">
-    <svg class="d-icon d-icon--dialpadAi d-icon--size-200" ...>...</svg>
+    <dt-icon name="lightning-bolt" size="200" />
   </span>
   <span class="d-badge__label">Label</span>
 </span>
@@ -160,49 +160,14 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 ```
 
 ## Icon
-
-  <span class="d-badge">
-    <span class="d-badge__label">Label</span>
-  </span>
-  <span class="d-badge">
-    <span class="d-badge__icon-left">
-      <svg aria-hidden="true" focusable="false" data-name="Lightning Bolt" class="d-icon d-icon--lightningBolt d-icon--size-200" viewBox="0 0 12 12" data-qa="dt-icon"><path fill="currentColor" fill-rule="evenodd" d="M6.7.541a.5.5 0 0 1 .296.521L6.566 4.5H10.5a.5.5 0 0 1 .384.82l-5 6a.5.5 0 0 1-.88-.382l.43-3.438H1.5a.5.5 0 0 1-.384-.82l5-6a.5.5 0 0 1 .583-.14ZM2.567 6.5H6a.5.5 0 0 1 .496.562L6.208 9.37 9.432 5.5H6a.5.5 0 0 1-.496-.562l.288-2.308L2.568 6.5Z" clip-rule="evenodd"></path></svg>
-    </span>
-    <span class="d-badge__label">Label</span>
-    <span class="d-badge__icon-right">
-      <svg aria-hidden="true" focusable="false" data-name="Lightning Bolt" class="d-icon d-icon--lightningBolt d-icon--size-200" viewBox="0 0 12 12" data-qa="dt-icon"><path fill="currentColor" fill-rule="evenodd" d="M6.7.541a.5.5 0 0 1 .296.521L6.566 4.5H10.5a.5.5 0 0 1 .384.82l-5 6a.5.5 0 0 1-.88-.382l.43-3.438H1.5a.5.5 0 0 1-.384-.82l5-6a.5.5 0 0 1 .583-.14ZM2.567 6.5H6a.5.5 0 0 1 .496.562L6.208 9.37 9.432 5.5H6a.5.5 0 0 1-.496-.562l.288-2.308L2.568 6.5Z" clip-rule="evenodd"></path></svg>
-    </span>
-  </span>
-  <span class="d-badge">
-    <span class="d-badge__label">Label</span>
-    <span class="d-badge__icon-right">
-      <svg aria-hidden="true" focusable="false" data-name="Lightning Bolt" class="d-icon d-icon--lightningBolt d-icon--size-200" viewBox="0 0 12 12" data-qa="dt-icon"><path fill="currentColor" fill-rule="evenodd" d="M6.7.541a.5.5 0 0 1 .296.521L6.566 4.5H10.5a.5.5 0 0 1 .384.82l-5 6a.5.5 0 0 1-.88-.382l.43-3.438H1.5a.5.5 0 0 1-.384-.82l5-6a.5.5 0 0 1 .583-.14ZM2.567 6.5H6a.5.5 0 0 1 .496.562L6.208 9.37 9.432 5.5H6a.5.5 0 0 1-.496-.562l.288-2.308L2.568 6.5Z" clip-rule="evenodd"></path></svg>
-    </span>
-  </span>
-    <span class="d-badge">
-    <span class="d-badge__icon-left">
-      <svg aria-hidden="true" focusable="false" data-name="Lightning Bolt" class="d-icon d-icon--lightningBolt d-icon--size-200" viewBox="0 0 12 12" data-qa="dt-icon"><path fill="currentColor" fill-rule="evenodd" d="M6.7.541a.5.5 0 0 1 .296.521L6.566 4.5H10.5a.5.5 0 0 1 .384.82l-5 6a.5.5 0 0 1-.88-.382l.43-3.438H1.5a.5.5 0 0 1-.384-.82l5-6a.5.5 0 0 1 .583-.14ZM2.567 6.5H6a.5.5 0 0 1 .496.562L6.208 9.37 9.432 5.5H6a.5.5 0 0 1-.496-.562l.288-2.308L2.568 6.5Z" clip-rule="evenodd"></path></svg>
-    </span>
-    <span class="d-badge__label">Label</span>
-    <span class="d-badge__icon-right">
-      <svg aria-hidden="true" focusable="false" data-name="Lightning Bolt" class="d-icon d-icon--lightningBolt d-icon--size-200" viewBox="0 0 12 12" data-qa="dt-icon"><path fill="currentColor" fill-rule="evenodd" d="M6.7.541a.5.5 0 0 1 .296.521L6.566 4.5H10.5a.5.5 0 0 1 .384.82l-5 6a.5.5 0 0 1-.88-.382l.43-3.438H1.5a.5.5 0 0 1-.384-.82l5-6a.5.5 0 0 1 .583-.14ZM2.567 6.5H6a.5.5 0 0 1 .496.562L6.208 9.37 9.432 5.5H6a.5.5 0 0 1-.496-.562l.288-2.308L2.568 6.5Z" clip-rule="evenodd"></path></svg>
-    </span>
-  </span>
-  <span class="d-badge">
-    <span class="d-badge__label">Label</span>
-    <span class="d-badge__icon-right">
-      <svg aria-hidden="true" focusable="false" data-name="Lightning Bolt" class="d-icon d-icon--lightningBolt d-icon--size-200" viewBox="0 0 12 12" data-qa="dt-icon"><path fill="currentColor" fill-rule="evenodd" d="M6.7.541a.5.5 0 0 1 .296.521L6.566 4.5H10.5a.5.5 0 0 1 .384.82l-5 6a.5.5 0 0 1-.88-.382l.43-3.438H1.5a.5.5 0 0 1-.384-.82l5-6a.5.5 0 0 1 .583-.14ZM2.567 6.5H6a.5.5 0 0 1 .496.562L6.208 9.37 9.432 5.5H6a.5.5 0 0 1-.496-.562l.288-2.308L2.568 6.5Z" clip-rule="evenodd"></path></svg>
-    </span>
-  </span>
-
 <code-well-header>
   <span class="d-badge">
     <span class="d-badge__icon-left">
-      <svg aria-hidden="true" focusable="false" data-name="Lightning Bolt" class="d-icon d-icon--lightningBolt d-icon--size-200" viewBox="0 0 12 12" data-qa="dt-icon"><path fill="currentColor" fill-rule="evenodd" d="M6.7.541a.5.5 0 0 1 .296.521L6.566 4.5H10.5a.5.5 0 0 1 .384.82l-5 6a.5.5 0 0 1-.88-.382l.43-3.438H1.5a.5.5 0 0 1-.384-.82l5-6a.5.5 0 0 1 .583-.14ZM2.567 6.5H6a.5.5 0 0 1 .496.562L6.208 9.37 9.432 5.5H6a.5.5 0 0 1-.496-.562l.288-2.308L2.568 6.5Z" clip-rule="evenodd"></path></svg>
+      <dt-icon name="lightning-bolt" size="200" />
     </span>
     <span class="d-badge__label">Label</span>
     <span class="d-badge__icon-right">
-      <svg aria-hidden="true" focusable="false" data-name="Lightning Bolt" class="d-icon d-icon--lightningBolt d-icon--size-200" viewBox="0 0 12 12" data-qa="dt-icon"><path fill="currentColor" fill-rule="evenodd" d="M6.7.541a.5.5 0 0 1 .296.521L6.566 4.5H10.5a.5.5 0 0 1 .384.82l-5 6a.5.5 0 0 1-.88-.382l.43-3.438H1.5a.5.5 0 0 1-.384-.82l5-6a.5.5 0 0 1 .583-.14ZM2.567 6.5H6a.5.5 0 0 1 .496.562L6.208 9.37 9.432 5.5H6a.5.5 0 0 1-.496-.562l.288-2.308L2.568 6.5Z" clip-rule="evenodd"></path></svg>
+      <dt-icon name="lightning-bolt" size="200" />
     </span>
   </span>
 </code-well-header>
