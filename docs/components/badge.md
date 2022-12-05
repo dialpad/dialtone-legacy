@@ -160,6 +160,7 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 ```
 
 ## Icon
+
 <code-well-header>
   <span class="d-badge">
     <span class="d-badge__icon-left">
