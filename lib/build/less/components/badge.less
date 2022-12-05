@@ -7,91 +7,99 @@
 //  visit https://dialpad.design/components/badges
 //
 //  TABLE OF CONTENTS
+//  • COMPONENT CSS VARIABLES
 //  • BASE STYLE
-//    • COLORS
+//  • KIND
+//  • TYPE
+//  • SLOTS
 //
 //  ============================================================================
 //  $   BASE STYLE
 //  ----------------------------------------------------------------------------
+
 .d-badge {
-  //  Component CSS Vars
-  --badge--fc: var(--fc-primary);
-  --badge--bgc: var(--black-200);
+  //  COMPONENT CSS VARIABLES
+  //  --------------------------------------------------------------------------
+  --badge-color-text: var(--fc-primary);
+  --badge-color-background: var(--black-200);
+  --badge-color-background-ai: linear-gradient(to bottom right, var(--purple-400) 0%, var(--magenta-300) 100%);
+  --badge-border-radius: var(--size-300);
+  --badge-line-height: var(--size-500);
+  --badge-font-size: var(--fs-100);
+  --badge-font-weight: var(--fw-semibold);
+  --badge-gap: var(--space-300);
+  --badge-letter-spacing: calc(var(--size-100) / 2);
+  --badge-padding-y: var(--space-100);
+  --badge-padding-x: var(--space-400);
+  --badge-text-case: none;
 
-  display: inline-block;
-  min-width: calc(var(--su6) + var(--su1));
-  padding: calc(var(--su6) / 4) var(--su6);
-  color: var(--badge--fc);
-  font-weight: bold;
-  font-size: var(--fs-100);
-  line-height: var(--lh6);
+  //  BASE STYLE
+  //  --------------------------------------------------------------------------
+  display: inline-flex;
+  gap: var(--badge-gap);
+  align-items: center;
+  justify-content: center;
+  min-width: calc(var(--size-400) + var(--size-500));
+  padding: var(--badge-padding-y) var(--badge-padding-x);
+  color: var(--badge-color-text);
+  font-weight: var(--badge-font-weight);
+  font-size: var(--badge-font-size);
+  line-height: var(--badge-line-height);
+  letter-spacing: var(--badge-letter-spacing);
   text-align: center;
-  text-transform: uppercase;
-  background-color: var(--badge--bgc);
-  border-radius: var(--su4);
-}
+  text-transform: var(--badge-text-case);
+  background-color: var(--badge-color-background);
+  border-radius: var(--badge-border-radius);
 
+  //  Kind
+  //  --------------------------------------------------------------------------
 
-//  ============================================================================
-//  $   STYLE VARIATIONS
-//  ----------------------------------------------------------------------------
-.d-badge--white {
-  --badge--bgc: var(--white);
-}
+  &--count {
+    --badge-border-radius: var(--br-pill);
+    --badge-padding-x: calc(var(--space-400) - var(--space-100));
+    --badge-padding-y: var(--space-300);
+  }
 
-.d-badge--black-700 {
-  --badge--fc: var(--white);
-  --badge--bgc: var(--black-700);
-}
+  //  TYPE
+  //  --------------------------------------------------------------------------
 
-.d-badge--purple-100 {
-  --badge--bgc: var(--purple-100);
-}
+  &--info {
+    --badge-color-background: var(--blue-100);
+  }
 
-.d-badge--purple-300 {
-  --badge--bgc: var(--purple-300);
-}
+  &--success {
+    --badge-color-background: var(--green-100);
+  }
 
-.d-badge--purple-400 {
-  --badge--bgc: var(--purple-400);
-  --badge--fc: var(--white);
-}
+  &--warning {
+    --badge-color-background: var(--gold-100);
+  }
 
-.d-badge--purple-500 {
-  --badge--fc: var(--white);
-  --badge--bgc: var(--purple-500);
-}
+  &--critical {
+    --badge-color-background: var(--red-100);
+  }
 
-.d-badge--orange-400 {
-  --badge--bgc: var(--orange-400);
-}
+  &--bulletin {
+    --badge-color-text: var(--fc-primary-inverted);
+    --badge-color-background: var(--purple-400);
+  }
 
-.d-badge--magenta-100 {
-  --badge--bgc: var(--magenta-100);
-}
+  &--ai {
+    --badge-color-text: var(--fc-primary-inverted);
+    --badge-color-background: var(--magenta-300);
 
-.d-badge--magenta-300 {
-  --badge--bgc: var(--magenta-300);
-}
+    background-image: var(--badge-color-background-ai);
+  }
 
-.d-badge--magenta-400 {
-  --badge--fc: var(--white);
-  --badge--bgc: var(--magenta-400);
-}
+  //  SLOTS
+  //  --------------------------------------------------------------------------
 
-.d-badge--magenta-500 {
-  --badge--fc: var(--white);
-  --badge--bgc: var(--magenta-500);
-}
+  &__label {
+    display: flex;
+  }
 
-.d-badge--gold-200 {
-  --badge--bgc: var(--gold-200);
-}
-
-.d-badge--green-400 {
-  --badge--bgc: var(--green-400);
-}
-
-.d-badge--red-300 {
-  --badge--bgc: var(--red-300);
+  &__icon-left,
+  &__icon-right {
+    display: flex;
+  }
 }
