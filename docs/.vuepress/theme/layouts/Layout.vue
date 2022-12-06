@@ -71,9 +71,11 @@ const next = ref(null);
 const docSearchBtn = ref(null);
 const items = useThemeLocaleData().value.sidebar;
 const mobileBreakpoint = 980;
-const evaluateWindowWidth = () => window.innerWidth <= mobileBreakpoint;
+const evaluateWindowWidth = () => {
+  isMobile.value = window.innerWidth <= mobileBreakpoint;
+};
 
-const isMobile = ref(evaluateWindowWidth());
+const isMobile = ref(false);
 
 // Remove "planned" items to avoid errors
 const currentItems = computed(() => {
@@ -114,8 +116,9 @@ watch(
 );
 
 onMounted(() => {
+  evaluateWindowWidth();
   window.addEventListener('resize', () => {
-    isMobile.value = evaluateWindowWidth();
+    evaluateWindowWidth();
   });
 });
 </script>
