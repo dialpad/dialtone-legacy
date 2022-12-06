@@ -10,7 +10,7 @@
         />
         <span
           v-if="$frontmatter.new"
-          class="d-badge d-badge--purple-500"
+          class="d-badge d-badge--bulletin"
         >New</span>
       </div>
       <p

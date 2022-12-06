@@ -17,12 +17,11 @@ no_preview: true
     <div class="dialtone-wall__details">
       <div class="dialtone-wall__title">
         <span class="dialtone-wall__title-text">{frontmatter.title}</span>
-        <span class="d-badge d-badge d-bgc-green-100">{frontmatter.status}</span>
+        <span class="d-badge d-badge--{ALIGN_VARIANT_TO_TYPE}">{frontmatter.status}</span>
       </div>
       <div class="dialtone-wall__description">{frontmatter.desc}</div>
     </div>
   </router-link>
-
 -->
 
 <div class="dialtone-wall">
@@ -31,8 +30,8 @@ no_preview: true
     <div class="dialtone-wall__details">
       <div class="dialtone-wall__title">
         <span class="dialtone-wall__title-text">Avatar</span>
-        <!-- <span class="d-badge d-badge d-bgc-green-100">Ready</span> -->
-        <!-- <span class="d-badge d-badge--purple-500">New</span> -->
+        <!-- <span class="d-badge">Ready</span> -->
+        <!-- <span class="d-badge">New</span> -->
       </div>
       <div class="dialtone-wall__description">An avatar is a visual representation of a user or object.</div>
     </div>

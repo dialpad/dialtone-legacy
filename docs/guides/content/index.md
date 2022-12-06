@@ -157,6 +157,10 @@ It’s important to use the same words and spellings across the interface. This 
       <td>Use to refer to our Ai Transcript feature in Dialpad Meetings. Because this is a branded feature, capitalize both words.</td>
     </tr>
     <tr>
+      <th scope="row">Ai Suggestion</th>
+      <td>Use to refer to our Ai Suggestion feature in Dialpad Meetings. Because this is a branded feature, capitalize both words.</td>
+    </tr>
+    <tr>
       <th scope="row">Allow</th>
       <td>Use instead of enable or enabled. Turn on is also acceptable—use what makes sense in context.</td>
     </tr>
