@@ -6,6 +6,7 @@ import { prismjsPlugin } from '@vuepress/plugin-prismjs';
 import { backToTopPlugin } from '@vuepress/plugin-back-to-top';
 import { gitPlugin } from '@vuepress/plugin-git';
 import { docsearchPlugin } from '@vuepress/plugin-docsearch';
+import { sitemapPlugin } from 'vuepress-plugin-sitemap2';
 import markdownItClass from '@toycode/markdown-it-class';
 
 const __dirname = getDirname(import.meta.url);
@@ -49,6 +50,9 @@ export const dialtoneVuepressTheme = (options) => {
         container: '#algolia-search-container',
         appId: 'Y5HG9UX6KM',
         placeholder: 'Search Dialtone',
+      }),
+      sitemapPlugin({
+        hostname: 'https://dialpad.design',
       }),
     ],
     extendsMarkdown: (md) => {
