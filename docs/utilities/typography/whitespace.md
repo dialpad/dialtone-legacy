@@ -8,7 +8,7 @@ desc: Utilities for controlling an element's whitespace.
 Use `d-ws-normal` to collapse an element's text whitespaces sequences and newline characters are treated like whitespace. Lines are broken as needed to fill boxes.
 
 <code-well-header class="d-fl-center d-p24 d-bgc-green-100 d-bgo50 d-w100p d-hmn102" custom>
-  <div class="d-bgc-green-100 d-py8 d-px16 d-bar8 d-w216">
+  <div class="d-bgc-green-200 d-py8 d-px16 d-bar8 d-w216">
     <p class="lg:d-fs-200 d-fs-200 d-ws-normal">Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br/>Blanditiisitaquequodpraesentium Dolores beatae nam at sed dolorum ratione dolorem nisi velit dolor.</p>
   </div>
 </code-well-header>
