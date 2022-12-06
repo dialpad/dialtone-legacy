@@ -80,7 +80,7 @@ figma_url: https://www.figma.com/file/zz40wi0uW9MvaJ5RuhcRZR/DT-Core%3A-Icons-7?
         <inbox-icon :class="className" />
       </td>
       <td class="d-ta-right">
-        <span v-if="deviceOnly" class="d-badge d-mr8 d-mb8 d-badge">Device only</span>
+        <span v-if="deviceOnly" class="d-badge d-badge--warning">Device only</span>
       </td>
     </tr>
   </tbody>

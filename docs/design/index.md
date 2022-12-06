@@ -16,7 +16,7 @@ desc: The visual foundation that supports and unites Dialpad products.
     <div class="dialtone-wall__details">
       <div class="dialtone-wall__title">
         <span class="dialtone-wall__title-text">Typography</span>
-        <span class="d-badge d-badge d-badge--purple-500">Planned</span>
+        <span class="d-badge">Planned</span>
       </div>
       <div class="dialtone-wall__description">Guidance for clear, legible, and easy-to-read text.</div>
     </div>
@@ -49,7 +49,7 @@ desc: The visual foundation that supports and unites Dialpad products.
     <div class="dialtone-wall__details">
       <div class="dialtone-wall__title">
         <span class="dialtone-wall__title-text">Elevation</span>
-        <span class="d-badge d-badge d-badge--purple-500">Planned</span>
+        <span class="d-badge">Planned</span>
       </div>
       <div class="dialtone-wall__description">A layering system to give content blocks visual depth and prominence.</div>
     </div>
@@ -58,7 +58,7 @@ desc: The visual foundation that supports and unites Dialpad products.
     <div class="dialtone-wall__details">
       <div class="dialtone-wall__title">
         <span class="dialtone-wall__title-text">Motion</span>
-        <span class="d-badge d-badge d-badge--purple-500">Planned</span>
+        <span class="d-badge">Planned</span>
       </div>
       <div class="dialtone-wall__description">Expressive transitions to guide users through complex experiences.</div>
     </div>
