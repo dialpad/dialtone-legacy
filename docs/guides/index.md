@@ -20,7 +20,7 @@ prev:
     <div class="dialtone-wall__details">
       <div class="dialtone-wall__title">
         <span class="dialtone-wall__title-text">Design principles</span>
-        <span class="d-badge d-badge d-badge--purple-500">Planned</span>
+        <span class="d-badge">Planned</span>
       </div>
       <div class="dialtone-wall__description">The core values behind Dialpad's experiences.</div>
     </div>
@@ -45,7 +45,7 @@ prev:
     <div class="dialtone-wall__details">
       <div class="dialtone-wall__title">
         <span class="dialtone-wall__title-text">Brand</span>
-        <span class="d-badge d-badge d-badge--purple-500">Planned</span>
+        <span class="d-badge">Planned</span>
       </div>
       <div class="dialtone-wall__description">Details on Dialpad's identity and who we are as a company.</div>
     </div>
@@ -54,7 +54,7 @@ prev:
     <div class="dialtone-wall__details">
       <div class="dialtone-wall__title">
         <span class="dialtone-wall__title-text">Design assets</span>
-        <span class="d-badge d-badge d-badge--purple-500">Planned</span>
+        <span class="d-badge">Planned</span>
       </div>
       <div class="dialtone-wall__description">Figma toolkit of building blocks for exploration and collaboration.</div>
     </div>
