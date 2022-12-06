@@ -11,12 +11,14 @@ import markdownItClass from '@toycode/markdown-it-class';
 
 const __dirname = getDirname(import.meta.url);
 const mapping = {
-  h2: 'd-docsite--header d-pt72',
-  h3: 'd-docsite--subheader d-pt72 d-mt24',
+  h2: 'd-docsite--header-2 d-mt64',
+  h3: 'd-docsite--header-3 d-my24',
+  h4: 'd-docsite--header-4 d-my24',
   p: 'd-docsite--paragraph d-my16 d-lh-400 d-wmx75ch',
   ul: 'd-docsite--unordered-list',
-  li: 'd-docsite--list-element d-mt8',
-  img: 'd-docsite--image d-w100p',
+  ol: 'd-docsite--ordered-list',
+  li: 'd-docsite--list-element d-my8',
+  img: 'd-docsite--image d-wmx100p',
 };
 
 export const dialtoneVuepressTheme = (options) => {
