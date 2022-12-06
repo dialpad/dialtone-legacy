@@ -5,6 +5,7 @@ import { activeHeaderLinksPlugin } from '@vuepress/plugin-active-header-links';
 import { prismjsPlugin } from '@vuepress/plugin-prismjs';
 import { backToTopPlugin } from '@vuepress/plugin-back-to-top';
 import { gitPlugin } from '@vuepress/plugin-git';
+import { sitemapPlugin } from 'vuepress-plugin-sitemap2';
 import markdownItClass from '@toycode/markdown-it-class';
 
 const __dirname = getDirname(import.meta.url);
@@ -40,6 +41,9 @@ export const dialtoneVuepressTheme = (options) => {
       backToTopPlugin(),
       gitPlugin({
         // options
+      }),
+      sitemapPlugin({
+        hostname: 'https://dialpad.design',
       }),
     ],
     extendsMarkdown: (md) => {
