@@ -3,12 +3,25 @@ title: Card
 desc: A card contains summary content and actions about a single subject. It can be used by itself or within a list, and is generally interactive.
 storybook_url: https://vue.dialpad.design/?path=/story/components-card--default
 ---
+
 <code-well-header>
   <div class="d-card d-w264">
-      <div class="d-card__content">
-        <p class="d-fs-200 d-fw-bold d-fc-black-800">Lorem ipsum</p>
-        <p class="d-fs-100">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum molestie semper. Morbi finibus nulla turpis, nec molestie mi rutrum.</p>
+    <div class="d-card__header">
+      <div class="d-headline-medium">
+        Lorem ipsum
       </div>
+      <button type="button" class="d-btn d-btn--xs d-btn--circle">
+        <dt-icon name="more-vertical" size="200" />
+      </button>
+    </div>
+    <div class="d-card__content">
+      <div>Content slot. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum molestie semper. Morbi finibus nulla turpis, nec molestie mi rutrum.</div>
+    </div>
+    <div class="d-card__footer">
+      <div class="d-d-flex d-gg8">
+        <button type="button" class="d-btn d-btn--sm d-btn--outlined">Button</button>
+      </div>
+    </div>
   </div>
 </code-well-header>
 
@@ -37,30 +50,66 @@ They should be easy to scan for relevant and actionable information. Elements, l
 
 ## Variants and examples
 
-### With Header
+### Base
 
 <code-well-header>
-    <div class="d-card d-w264">
-      <div class="d-card__header">
-        <p>Header</p>
-        <button href="#" class="d-btn d-btn--xs d-fc-black-400"><IconMenuVertical /></button>
-      </div>
-      <div class="d-card__content">
-        <p class="d-fs-200 d-fw-bold d-fc-black-800">Lorem ipsum</p>
-        <p class="d-fs-100">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum molestie semper. Morbi finibus nulla turpis, nec molestie mi rutrum.</p>
-      </div>
+  <div class="d-card d-w264">
+    <div class="d-card__header">
+      <div>(header slot)</div>
     </div>
+    <div class="d-card__content">
+      <div>(content slot)</div>
+    </div>
+    <div class="d-card__footer">
+      <div>(footer slot)</div>
+    </div>
+  </div>
 </code-well-header>
 
 ```html
 <div class="d-card d-w264">
   <div class="d-card__header">
-    <p>Header</p>
-    <button href="#" class="d-btn d-btn--xs d-fc-black-400"><IconMenuVertical /></button>
+    <div>(header slot)</div>
   </div>
   <div class="d-card__content">
-    <p class="d-fs-200 d-fw-bold d-fc-black-800">Lorem ipsum</p>
-    <p class="d-fs-100">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum molestie semper. Morbi finibus nulla turpis, nec molestie mi rutrum.</p>
+    <div>(content slot)</div>
+  </div>
+  <div class="d-card__footer">
+    <div>(footer slot)</div>
+  </div>
+</div>
+```
+
+### With Header
+
+<code-well-header>
+  <div class="d-card d-w264">
+    <div class="d-card__header">
+      <div class="d-headline-medium">
+        Lorem ipsum
+      </div>
+      <button type="button" class="d-btn d-btn--xs d-btn--circle">
+        <dt-icon name="more-vertical" size="200" />
+      </button>
+    </div>
+    <div class="d-card__content">
+      <div>Content slot. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum molestie semper. Morbi finibus nulla turpis, nec molestie mi rutrum.</div>
+    </div>
+  </div>
+</code-well-header>
+
+```html
+<div class="d-card d-w264">
+  <div class="d-card__header">
+    <div class="d-headline-medium">
+      Lorem ipsum
+    </div>
+    <button type="button" class="d-btn d-btn--xs d-btn--circle">
+      <dt-icon name="more-vertical" size="200" />
+    </button>
+  </div>
+  <div class="d-card__content">
+    <div>Content slot. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum molestie semper. Morbi finibus nulla turpis, nec molestie mi rutrum.</div>
   </div>
 </div>
 ```
@@ -68,27 +117,45 @@ They should be easy to scan for relevant and actionable information. Elements, l
 ### With Footer
 
 <code-well-header>
-    <div class="d-card d-w264">
-      <div class="d-card__content">
-        <p class="d-fs-200 d-fw-bold d-fc-black-800">Lorem ipsum</p>
-        <p class="d-fs-100">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum molestie semper. Morbi finibus nulla turpis, nec molestie mi rutrum.</p>
-      </div>
-      <div class="d-card__footer">
-        <button href="#" class="d-btn d-btn--sm d-fc-black-400">Button 1</button>
-        <button href="#" class="d-btn d-btn--sm d-fc-black-400">Button 2</button>
+  <div class="d-card d-w264">
+    <div class="d-card__content">
+      <div>Content slot. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum molestie semper. Morbi finibus nulla turpis, nec molestie mi rutrum.</div>
+    </div>
+    <div class="d-card__footer">
+      <div class="d-d-flex d-gg8">
+        <button type="button" class="d-btn d-btn--sm d-btn--outlined">Button</button>
       </div>
     </div>
+  </div>
 </code-well-header>
 
 ```html
 <div class="d-card d-w264">
   <div class="d-card__content">
-    <p class="d-fs-200 d-fw-bold d-fc-black-800">Lorem ipsum</p>
-    <p class="d-fs-100">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum molestie semper. Morbi finibus nulla turpis, nec molestie mi rutrum.</p>
+    <div>Content slot. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum molestie semper. Morbi finibus nulla turpis, nec molestie mi rutrum.</div>
   </div>
   <div class="d-card__footer">
-    <button href="#" class="d-btn d-btn--sm d-fc-black-400">Button 1</button>
-    <button href="#" class="d-btn d-btn--sm d-fc-black-400">Button 2</button>
+    <div class="d-d-flex d-gg8">
+      <button type="button" class="d-btn d-btn--sm d-btn--outlined">Button</button>
+    </div>
+  </div>
+</div>
+```
+
+### Content only
+
+<code-well-header>
+  <div class="d-card d-w264">
+    <div class="d-card__content">
+      <div>Content slot. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum molestie semper. Morbi finibus nulla turpis, nec molestie mi rutrum.</div>
+    </div>
+  </div>
+</code-well-header>
+
+```html
+<div class="d-card d-w264">
+  <div class="d-card__content">
+    <div>Content slot. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum molestie semper. Morbi finibus nulla turpis, nec molestie mi rutrum.</div>
   </div>
 </div>
 ```
@@ -96,35 +163,43 @@ They should be easy to scan for relevant and actionable information. Elements, l
 ### With Header, Footer and scrollable content
 
 <code-well-header>
-    <div class="d-card d-w264">
-      <div class="d-card__header">
-        <p>Header</p>
-        <button href="#" class="d-btn d-btn--xs d-fc-black-400"><IconMenuVertical /></button>
+  <div class="d-card d-w264">
+    <div class="d-card__header">
+      <div class="d-headline-medium">
+        Lorem ipsum
       </div>
-      <div class="d-card__content d-h84">
-        <p class="d-fs-200 d-fw-bold d-fc-black-800">Lorem ipsum</p>
-        <p class="d-fs-100">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </div>
-      <div class="d-card__footer">
-        <button href="#" class="d-btn d-btn--sm d-fc-black-400">Button 1</button>
-        <button href="#" class="d-btn d-btn--sm d-fc-black-400">Button 2</button>
+      <button type="button" class="d-btn d-btn--xs d-btn--circle">
+        <dt-icon name="more-vertical" size="200" />
+      </button>
+    </div>
+    <div class="d-card__content d-h72">
+      <div>Content slot. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum molestie semper. Morbi finibus nulla turpis, nec molestie mi rutrum.</div>
+    </div>
+    <div class="d-card__footer">
+      <div class="d-d-flex d-gg8">
+        <button type="button" class="d-btn d-btn--sm d-btn--outlined">Button</button>
       </div>
     </div>
+  </div>
 </code-well-header>
 
 ```html
 <div class="d-card d-w264">
   <div class="d-card__header">
-    <p>Header</p>
-    <button href="#" class="d-btn d-btn--xs d-fc-black-400"><IconMenuVertical /></button>
+    <div class="d-headline-medium">
+      Lorem ipsum
+    </div>
+    <button type="button" class="d-btn d-btn--xs d-btn--circle">
+      <dt-icon name="more-vertical" size="200" />
+    </button>
   </div>
   <div class="d-card__content d-h84">
-    <p class="d-fs-200 d-fw-bold d-fc-black-800">Lorem ipsum</p>
-    <p class="d-fs-100">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <div>Content slot. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum molestie semper. Morbi finibus nulla turpis, nec molestie mi rutrum.</div>
   </div>
   <div class="d-card__footer">
-    <button href="#" class="d-btn d-btn--sm d-fc-black-400">Button 1</button>
-    <button href="#" class="d-btn d-btn--sm d-fc-black-400">Button 2</button>
+    <div class="d-d-flex d-gg8">
+      <button type="button" class="d-btn d-btn--sm d-btn--outlined">Button</button>
+    </div>
   </div>
 </div>
 ```
