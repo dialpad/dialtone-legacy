@@ -1,9 +1,10 @@
 <template>
-  <div class="main-content d-w100p d-pt24">
+  <div class="main-content d-w100p lg:d-pt64">
     <page-header>
       <template #content-bottom>
         <page-toc
           v-if="isMobile"
+          :is-mobile="isMobile"
           :headers="$page.headers"
         />
       </template>
@@ -73,6 +74,10 @@ defineProps({
     type: Object,
     default: () => {},
   },
+  isMobile: {
+    type: Boolean,
+    required: true,
+  },
 });
 const lastUpdated = computed(() => {
   const timestamp = usePageData().value.git.updatedTime;
@@ -84,5 +89,4 @@ const arrowLeft = computed(() => {
 const arrowRight = computed(() => {
   return icons.ArrowRight;
 });
-const isMobile = false;
 </script>

@@ -3,16 +3,21 @@ import Layout from './layouts/Layout.vue';
 import NotFound from './layouts/NotFound.vue';
 
 // CSS
-import '../../../lib/build/less/dialtone.less';
+import '../../../lib/dist/css/dialtone.css';
 import './assets/less/dialtone-docs.less';
 
 export default defineClientConfig({
-  async enhance ({ app }) {
+  async enhance ({ app, router }) {
     // Register libraries
     if (!__VUEPRESS_SSR__) {
       await registerDialtoneVue(app);
       await registerDialtoneCombinator(app);
     }
+    router.options.scrollBehavior = (to, from, savedPosition) => {
+      return to.hash
+        ? { el: to.hash, behavior: 'smooth', top: 64 }
+        : { top: 0 };
+    };
   },
   layouts: {
     Layout,

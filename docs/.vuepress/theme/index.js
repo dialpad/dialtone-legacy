@@ -5,15 +5,17 @@ import { activeHeaderLinksPlugin } from '@vuepress/plugin-active-header-links';
 import { prismjsPlugin } from '@vuepress/plugin-prismjs';
 import { backToTopPlugin } from '@vuepress/plugin-back-to-top';
 import { gitPlugin } from '@vuepress/plugin-git';
+import { docsearchPlugin } from '@vuepress/plugin-docsearch';
 import markdownItClass from '@toycode/markdown-it-class';
 
 const __dirname = getDirname(import.meta.url);
 const mapping = {
   h2: 'd-docsite--header d-pt72',
   h3: 'd-docsite--subheader d-pt72 d-mt24',
-  p: 'd-docsite--paragraph d-my16 d-lh-400 d-w75ch',
+  p: 'd-docsite--paragraph d-my16 d-lh-400 d-wmx75ch',
   ul: 'd-docsite--unordered-list',
   li: 'd-docsite--list-element d-mt8',
+  img: 'd-docsite--image d-w100p',
 };
 
 export const dialtoneVuepressTheme = (options) => {
@@ -34,12 +36,19 @@ export const dialtoneVuepressTheme = (options) => {
       }),
       activeHeaderLinksPlugin({
         headerLinkSelector: 'a.toc-link',
-        offset: 64,
+        offset: 128,
       }),
       prismjsPlugin({}),
       backToTopPlugin(),
       gitPlugin({
         // options
+      }),
+      docsearchPlugin({
+        indexName: 'dialpad',
+        apiKey: '6436ebddb959748daeec411eb388a99d',
+        container: '#algolia-search-container',
+        appId: 'Y5HG9UX6KM',
+        placeholder: 'Search Dialtone',
       }),
     ],
     extendsMarkdown: (md) => {
