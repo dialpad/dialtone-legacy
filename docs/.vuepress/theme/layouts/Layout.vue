@@ -3,9 +3,29 @@
     header-class="d-d-flex d-ai-center d-pl8 d-pr12 d-h64 d-bb d-bc-black-200 d-bgc-white d-zi-navigation"
     :header-sticky="true"
     footer-class="d-text-right"
+    sidebar-class="lg:d-d-none"
   >
     <template #header>
-      <navbar />
+      <dialtone-logo />
+      <navbar
+        v-if="!isMobile"
+        :items="navbarLinks"
+        @search="openSearch"
+      />
+      <mobile-navbar
+        v-else
+        :items="navbarLinks"
+        @search="openSearch"
+      />
+      <mobile-sidebar
+        v-if="isMobile && route.path !== '/'"
+      />
+      <!-- eslint-disable-next-line vue/no-undef-components -->
+      <docsearch
+        ref="docSearchBtn"
+        class="d-d-none"
+        options=""
+      />
     </template>
     <template
       v-if="!$frontmatter.home"
@@ -17,13 +37,14 @@
       <home v-if="$frontmatter.home" />
       <div
         v-else
-        class="d-d-flex"
+        class="lg:d-d-block d-d-flex"
       >
         <page
           :prev="prev"
           :next="next"
+          :is-mobile="isMobile"
         />
-        <page-toc />
+        <page-toc v-if="!isMobile" />
       </div>
     </template>
   </dt-root-layout>
@@ -35,15 +56,26 @@ import Sidebar from '../components/Sidebar.vue';
 import Home from '../components/Home.vue';
 import Page from '../components/Page.vue';
 import PageToc from '../components/PageToc.vue';
-import { computed, ref, watch } from 'vue';
+import MobileNavbar from '../components/MobileNavbar.vue';
+import MobileSidebar from '../components/MobileSidebar.vue';
+import { computed, ref, watch, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import { useThemeLocaleData } from '@vuepress/plugin-theme-data/client';
+import DialtoneLogo from '../components/DialtoneLogo.vue';
 
 const route = useRoute();
 
+const navbarLinks = useThemeLocaleData().value.navbar || [];
 const prev = ref(null);
 const next = ref(null);
+const docSearchBtn = ref(null);
 const items = useThemeLocaleData().value.sidebar;
+const mobileBreakpoint = 980;
+const evaluateWindowWidth = () => {
+  isMobile.value = window.innerWidth <= mobileBreakpoint;
+};
+
+const isMobile = ref(false);
 
 // Remove "planned" items to avoid errors
 const currentItems = computed(() => {
@@ -70,6 +102,9 @@ const findCurrent = () => {
     }
   });
 };
+const openSearch = () => {
+  docSearchBtn.value.children[0].click();
+};
 
 watch(
   () => route.path,
@@ -79,4 +114,11 @@ watch(
   },
   { immediate: true },
 );
+
+onMounted(() => {
+  evaluateWindowWidth();
+  window.addEventListener('resize', () => {
+    evaluateWindowWidth();
+  });
+});
 </script>

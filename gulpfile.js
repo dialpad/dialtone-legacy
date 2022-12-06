@@ -32,6 +32,8 @@ const breakpoints = [
 const classes = [
   /\.d-d-*/,
   /\.d-mt*/,
+  /\.d-t0/,
+  /\.d-pt*/,
   /\.d-g-cols*/,
   /\.d-w100p*/,
   /\.d-jc-*/,
