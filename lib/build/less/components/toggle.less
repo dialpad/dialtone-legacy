@@ -23,34 +23,34 @@
 .d-toggle {
   //  Component specific CSS Vars
   //  ------------------------------------------------------------------------
-  --toggle-ta: var(--ttf-in-out);
-  --toggle-ts: var(--td200);
-  --toggle-bgc: var(--black-400);
-  --toggle-height: var(--su24);
-  --toggle-width: var(--su48);
-  --toggle-icon-size: var(--su16);
+  --toggle-transition-timing-function: var(--ttf-in-out);
+  --toggle-transition-speed: var(--td200);
+  --toggle-color-background: var(--black-400);
+  --toggle-size-height: var(--su24);
+  --toggle-size-width: var(--su48);
+  --toggle-size-icon: var(--su16);
 
   //  $$  BASE STYLE
   //  ----------------------------------------------------------------------------
   position: relative;
   display: inline-block;
   box-sizing: border-box;
-  width: var(--toggle-width);
-  height: var(--toggle-height);
+  width: var(--toggle-size-width);
+  height: var(--toggle-size-height);
   padding: 0;
   line-height: var(--lh4);
   vertical-align: middle;
-  background-color: var(--toggle-bgc);
-  border: var(--su1) solid var(--toggle-bgc);
-  border-radius: var(--toggle-width);
+  background-color: var(--toggle-color-background);
+  border: var(--su1) solid var(--toggle-color-background);
+  border-radius: var(--toggle-size-width);
   cursor: pointer;
 
   &__inner {
     position: absolute;
     top: calc(var(--su4) - var(--su1));
     left: var(--su24);
-    width: var(--toggle-icon-size);
-    height: var(--toggle-icon-size);
+    width: var(--toggle-size-icon);
+    height: var(--toggle-size-icon);
 
     .d-toggle--small & {
       top: var(--su1);
@@ -71,21 +71,21 @@
     position: absolute;
     top: var(--su1);
     left: var(--su1);
-    width: calc(var(--toggle-icon-size) + var(--su4));
-    height: calc(var(--toggle-icon-size) + var(--su4));
+    width: calc(var(--toggle-size-icon) + var(--su4));
+    height: calc(var(--toggle-size-icon) + var(--su4));
     background-color: var(--white);
     border-radius: var(--br-circle);
     cursor: pointer;
-    transition: left var(--toggle-ts) var(--toggle-ta);
+    transition: left var(--toggle-transition-speed) var(--toggle-transition-timing-function);
     content: ' ';
   }
 
   //  $$  TOGGLE VARIANTS
   //  ----------------------------------------------------------------------------
   &--small {
-    --toggle-height: calc(var(--su16) + var(--su2));
-    --toggle-width: calc(var(--su32) + var(--su4));
-    --toggle-icon-size: calc(var(--su12) + var(--su2));
+    --toggle-size-height: calc(var(--su16) + var(--su2));
+    --toggle-size-width: calc(var(--su32) + var(--su4));
+    --toggle-size-icon: calc(var(--su12) + var(--su2));
 
     &::before {
       position: absolute;
@@ -98,14 +98,14 @@
   }
 
   &--small::after {
-    width: var(--toggle-icon-size);
-    height: var(--toggle-icon-size);
+    width: var(--toggle-size-icon);
+    height: var(--toggle-size-icon);
   }
 
   //  $$  CHECKED TOGGLE
   //  ----------------------------------------------------------------------------
   &--checked {
-    --toggle-bgc: var(--primary-color);
+    --toggle-color-background: var(--primary-color);
 
     .d-toggle__inner {
       left: var(--su6);
