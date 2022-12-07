@@ -1,3 +1,15 @@
+# [7.10.0](https://github.com/dialpad/dialtone/compare/v7.9.0...v7.10.0) (2022-12-07)
+
+
+### Bug Fixes
+
+* **Badge:** add box-sizing: border-box ([#760](https://github.com/dialpad/dialtone/issues/760)) ([10eb3f8](https://github.com/dialpad/dialtone/commit/10eb3f8e2becd385dd1cc88c76986cdb3421c72a))
+
+
+### Features
+
+* **Color:** updated lower ramp ([#758](https://github.com/dialpad/dialtone/issues/758)) ([4bfbddf](https://github.com/dialpad/dialtone/commit/4bfbddf785c9b06f209e376ccc750edf2f6971fc))
+
 # [7.9.0](https://github.com/dialpad/dialtone/compare/v7.8.2...v7.9.0) (2022-12-05)
 
 
