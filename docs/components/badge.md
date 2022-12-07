@@ -110,7 +110,7 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
     <td>
       <span class="d-badge d-badge--count d-badge--critical"><span class="d-badge__label">5</span></span>
     </td>
-    <td>To communicate problems that must be resolved, something has failed, or otherwise negative label or dangerous condition.</td>
+    <td>To communicate conditions deemed critical, negative, or dangerous. For example, sensitive state (e.g. recording), must be resolved, or something has failed.</td>
   </tr>
   <tr>
     <th class="d-ta-left">Bulletin</th>
