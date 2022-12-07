@@ -2,61 +2,65 @@
   <div class="mobile-sidebar">
     <div
       class="
+        d-px16
         d-ps-fixed d-w100p d-bgc-white d-h64 d-x0
         lg:d-d-flex d-bb d-bc-black-100 d-ai-center
         d-jc-space-between d-t64 d-d-none
       "
     >
-      <ul
-        id="breadcrumbs"
-        class="d-breadcrumbs d-p12 d-of-hidden d-to-ellipsis d-ws-nowrap d-w628"
-      >
-        <li
-          v-for="breadcrumb in breadcrumbs"
-          :key="breadcrumb"
-          class="d-breadcrumbs__item d-d-inline"
-        >
-          {{ breadcrumb }}
-        </li>
-      </ul>
-      <span
-        :class="{ 'breadcrumb-arrow--top': isSiteNavOpen }"
-        class="d-w24 d-h24 d-p12 d-mr12 breadcrumb-arrow d-c-pointer"
+      <dt-breadcrumbs :breadcrumbs="breadcrumbs" />
+      <dt-button
+        importance="clear"
+        :circle="true"
         @click="toggleSiteNav"
-        @keydown.space="toggleSiteNav"
       >
-        <icon-arrow-back-ios />
-      </span>
+        <template #icon>
+          <dt-icon
+            name="chevron-down"
+          />
+        </template>
+      </dt-button>
     </div>
     <div
       :class="{ 'd-o0 d-d-none': !isSiteNavOpen }"
       class="
         mobile-header-drop-down-navigation d-ps-fixed d-l0 d-w100p
-        d-bgc-white d-of-auto d-fs-300 d-d-flex
-        d-fd-column d-ai-baseline d-pt24 d-pr16
+        d-bgc-white d-of-auto d-d-flex
+        d-fd-column d-ai-baseline d-pt24 d-pr16 d-pl64
       "
     >
-      <sidebar-items @click="toggleSiteNav" />
+      <sidebar-item
+        v-for="item in sidebarItems"
+        :key="item.link || item.text"
+        :item="item"
+        @click="toggleSiteNav"
+      />
     </div>
   </div>
 </template>
 
 <script setup>
+import SidebarItem from '../components/SidebarItem.vue';
+import { useThemeLocaleData } from '@vuepress/plugin-theme-data/client';
 import { computed, ref } from 'vue';
-import IconArrowBackIos from '@svgIcons/IconArrowBackIos.vue';
-import SidebarItems from '@theme/SidebarItems.vue';
+import { useRoute } from 'vue-router';
 
-const props = defineProps({ currentPath: { type: String, required: true } });
+const route = useRoute();
+const items = useThemeLocaleData().value.sidebar;
+const sidebarItems = computed(() => {
+  const key = Object.keys(items).filter(item => route.path.includes(item));
+  return items[key] || [];
+});
 
 const isSiteNavOpen = ref(false);
 
 const breadcrumbs = computed(() => {
-  return props.currentPath
+  return route.path
     .replaceAll('-', ' ')
     .replace('.html', '')
     .split('/')
     .filter(v => v.trim())
-    .map(v => v[0].toUpperCase() + v.slice(1));
+    .map(v => ({ label: v[0].toUpperCase() + v.slice(1) }));
 });
 
 function toggleSiteNav () {

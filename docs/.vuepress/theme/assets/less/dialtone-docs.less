@@ -17,18 +17,21 @@
 //  ============================================================================
 //  $   IMPORTS
 //  ----------------------------------------------------------------------------
-@import (reference) '../../../lib/build/less/variables/icons';
-@import (reference) '../../../lib/build/less/variables/typography';
-@import (reference) '../../../lib/build/less/variables/spacing';
-@import (reference) '../../../lib/build/less/utilities/internals';
-@import (reference) '../../../lib/build/less/utilities/spacing';
-@import (reference) '../../../lib/build/less/utilities/grid';
-@import (reference) '../../../lib/build/less/utilities/typography';
-@import (reference) '../../../lib/build/less/components/link';
-@import (reference) '../../../lib/build/less/components/button';
+@import (reference) '@dialpad/dialtone/lib/build/less/variables/icons';
+@import (reference) '@dialpad/dialtone/lib/build/less/variables/typography';
+@import (reference) '@dialpad/dialtone/lib/build/less/variables/spacing';
+@import (reference) '@dialpad/dialtone/lib/build/less/utilities/internals';
+@import (reference) '@dialpad/dialtone/lib/build/less/utilities/spacing';
+@import (reference) '@dialpad/dialtone/lib/build/less/utilities/grid';
+@import (reference) '@dialpad/dialtone/lib/build/less/utilities/typography';
+@import (reference) '@dialpad/dialtone/lib/build/less/components/link';
+@import (reference) '@dialpad/dialtone/lib/build/less/components/button';
 @import 'dialtone-syntax';
-@import 'overrides.less';
 @import 'hljs-dialpad.less';
+
+:root {
+  --docsearch-primary-color: #7C52FF;
+}
 
 //  ============================================================================
 //  @   RESETS
@@ -43,6 +46,10 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6.4rem;
+}
 
 //  ============================================================================
 //  $   COLOR PALETTES
@@ -68,6 +75,7 @@ button.DocSearch-Button {
   &:hover {
     box-shadow: unset;
   }
+
   .d-btn();
   .d-btn--muted();
   .d-btn--outlined();
@@ -92,16 +100,25 @@ span.DocSearch-Button-Keys {
 //  $   SEARCH BUTTON
 //      Override search button with dialtone styles
 //  ----------------------------------------------------------------------------
-nav a.router-link-active {
-  font-weight: var(--fw-bold);
-  text-decoration: none;
+a.router-link-active {
+  font-weight: var(--fw-semibold);
 }
+
 //  ============================================================================
 //  $   TOC
 //      Because we're using a third-party plugin to generate the subnav menu,
 //      we can't add utility classes directly to the HTML. So we have to use
 //      custom CSS here instead.
 //  ----------------------------------------------------------------------------
+.toc {
+  &-item {
+    @media screen and (max-width: 980px) {
+      display: inline-block;
+      .d-link();
+    }
+  }
+}
+
 .toc ol {
   .d-ls-reset();
 
@@ -137,13 +154,12 @@ nav a.router-link-active {
 
   &:hover {
     text-decoration: none;
-    color: var(--c-text-accent);
+    color: var(--primary-color);
     // background-color: var(--black-200);
   }
 
   &.active {
-    color: var(--c-text-accent);
-    font-weight: var(--fw-bold);
+    color: var(--primary-color);
 
     &::before {
       position: absolute;
@@ -163,7 +179,27 @@ nav a.router-link-active {
 //      Because the doc site needs layout specifications that aren't
 //      appropriate to ship as part of Dialtone.
 //  ----------------------------------------------------------------------------
-.d-ga-toc { grid-area: toc !important; }
+.main-content {
+  max-width: 99rem;
+  margin: 0 auto;
+  padding: 2rem 2.5rem;
+}
+
+a.header-anchor {
+  float: left;
+  margin-left: -0.87em;
+  padding-right: 0.23em;
+  opacity: 0;
+}
+.d-docsite--header-2, .d-docsite--header-3 {
+  &:hover a.header-anchor {
+    opacity: 1;
+  }
+}
+
+.d-ga-toc {
+  grid-area: toc !important;
+}
 
 .d-gl-docsite {
   grid-template-areas: 'sidebar content';
@@ -256,10 +292,9 @@ nav a.router-link-active {
     transform: translateX(calc(-1 * var(--icon-card-width)));
     visibility: visible;
     opacity: 1;
-    transition:
-      opacity 50ms var(--ttf-in-out) 0s,
-      transform 50ms var(--ttf-in-out) 0s,
-      visibility 0s 50ms;
+    transition: opacity 50ms var(--ttf-in-out) 0s,
+    transform 50ms var(--ttf-in-out) 0s,
+    visibility 0s 50ms;
   }
 
   //  If it's in the first two columns, show the footer on the right
@@ -274,17 +309,16 @@ nav a.router-link-active {
     transform: translateX(0);
     visibility: hidden;
     opacity: 0;
-    transition:
-      opacity 100ms var(--ttf-in-out) 0s,
-      transform 100ms var(--ttf-in-out) 0s,
-      visibility 0s 0s;
+    transition: opacity 100ms var(--ttf-in-out) 0s,
+    transform 100ms var(--ttf-in-out) 0s,
+    visibility 0s 0s;
   }
 }
 
 .dialtone-icon-card__footer-spot-illustration {
   .dialtone-icon-card__footer();
 
-  width: calc(var(--icon-card-width) *1.5);
+  width: calc(var(--icon-card-width) * 1.5);
   min-height: auto;
 }
 
@@ -535,10 +569,12 @@ nav a.router-link-active {
     margin-top: var(--su16);
     font-weight: var(--fw-bold);
   }
+
   > dd {
     margin: 0;
     max-width: 72ch;
   }
+
   code {
     font-weight: var(--fw-normal);
   }
@@ -607,6 +643,7 @@ nav a.router-link-active {
       padding: 0;
       list-style: none;
     }
+
     li {
       font-size: var(--fs-200);
       line-height: var(--lh-400);
@@ -614,33 +651,17 @@ nav a.router-link-active {
   }
 }
 
-//  ============================================================================
-//  $   USAGE
-//      Override / unset VuePress's default table styles to align to DT tables
-//  ----------------------------------------------------------------------------
-
-.dialtone-doc-table {
-  thead {
-    tr,
-    th,
-    th,
-    td {
-      border: unset;
-    }
-    [scope="col"]:first-child {
-      padding-left: 0;
-    }
+.back-to-top {
+  background-color: var(--primary-color);
+  &:hover {
+    background-color: var(--primary-color-hover);
   }
+}
 
-  tbody {
-    th,
-    td {
-      border-right: unset;
-      border-bottom: var(--su1) solid var(--table-bc);
-      border-left: unset;
-    }
-    [scope="row"] {
-      padding-left: 0;
-    }
-  }
+.d-docsite--unordered-list, .d-docsite--list-element, .d-docsite--ordered-list {
+  list-style: revert;
+}
+
+.dialtone-wall__item {
+  .d-td-none();
 }

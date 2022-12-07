@@ -25,7 +25,7 @@ Dialtone uses a spacing system based on a 4-pixel system, providing half-steps w
 
 Aside from the spacing variables, it may be necessary to use the following utility classes to manage interface spacing:
 
-- [Auto spacing](../../utilities/spacing/auto-spacing)
-- [Line height](../../utilities/typography/line-height)
-- [Margin](../../utilities/spacing/margin)
-- [Padding](../../utilities/spacing/padding)
+- [Auto spacing](../../utilities/spacing/auto-spacing.md)
+- [Line height](../../utilities/typography/line-height.md)
+- [Margin](../../utilities/spacing/margin.md)
+- [Padding](../../utilities/spacing/padding.md)

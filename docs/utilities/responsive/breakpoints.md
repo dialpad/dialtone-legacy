@@ -1,12 +1,6 @@
 ---
 title: Breakpoints
 desc: All classes can have responsive variations. Using our plugin @dialpad/postcss-responsive-variations and configuring the breakpoint constants, you can create media queries represented in conditional prefixes. These prefixed classes allow you to apply a style or property within a specific breakpoint.
-prev:
-  text: Z-Index
-  link: /utilities/layout/z-index
-next:
-  text: Height
-  link: /utilities/sizing/height
 ---
 
 ## PostCSS

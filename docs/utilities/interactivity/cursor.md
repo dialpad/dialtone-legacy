@@ -1,9 +1,6 @@
 ---
 title: Cursor
 desc: Utilities for setting the type of mouse cursor, if any, to show when the mouse pointer is over an element.
-prev:
-  text: Rows
-  link: /utilities/grid/row-start-end-span
 ---
 ## Usage
 

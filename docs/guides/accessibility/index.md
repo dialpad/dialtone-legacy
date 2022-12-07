@@ -12,7 +12,7 @@ Dialpad strives to maintain  **WCAG 2.1 AA** compliance in our digital products.
 Everyone benefits when things are designed accessibly. Simply put: building products for accessibility is simply building products for better usability. Considering  **1 in 4** US adults -- that’s 61 million people! -- live with a permanent disability and many more will have temporary or situational throughout their lifetime, accessibility isn’t for just some people. It benefits everyone.
 
 <figure>
-  <img src="/assets/images/accessibility-graphic.png" alt="Accessibility illustration: permanent, temporary and situational disabilities. For touch, a person could have one arm, an arm injury, or be a new parent holding an infant. For sight, a person could be blind, have cataracts, or be a distracted driver. For hearing, the person might be deaf, have an ear infection, or be a bartender in a loud bar. When speaking, a person might be non-verbal, have laryngitis, or speak with a heavy accent">
+  <img class="d-wmx100p" src="/assets/images/accessibility-graphic.png" alt="Accessibility illustration: permanent, temporary and situational disabilities. For touch, a person could have one arm, an arm injury, or be a new parent holding an infant. For sight, a person could be blind, have cataracts, or be a distracted driver. For hearing, the person might be deaf, have an ear infection, or be a bartender in a loud bar. When speaking, a person might be non-verbal, have laryngitis, or speak with a heavy accent">
   <figcaption><a href="https://www.microsoft.com/design/inclusive/" target="_blank" rel="noopener noreferrer">Microsoft Inclusive Design</a></figcaption>
 </figure>
 
@@ -29,9 +29,9 @@ Building inclusive product experiences can be boiled down to the  **<abbr title=
 
 #### Perceivable
 
-The interface and its content is designed and implemented in such a way that it works across a variety of users agents and assistive technologies.
+The interface and its content are designed and implemented in such a way that it works across a variety of users agents and assistive technologies.
 
-* *The handling of media content like video, audio and imagery.
+* The handling of media content like video, audio and imagery.
 * The handling of text alternatives through things like captioning and sign language.
 * The handling of color and contrast.
 * The control of text size and audio controls.
