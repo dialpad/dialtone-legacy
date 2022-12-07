@@ -95,15 +95,17 @@ const findCurrent = () => {
   }
 
   const parentIndex = currentItems.value.findIndex(item => item.find(child => child.link === route.path));
-  const items = currentItems.value[parentIndex];
-  const childIndex = Object.values(items).findIndex(child => child.link === route.path);
+  if (parentIndex === -1) return;
+
+  const filteredItems = currentItems.value[parentIndex];
+  const childIndex = Object.values(filteredItems).findIndex(child => child.link === route.path);
   const isFirstItem = childIndex === 0;
-  const isLastItem = childIndex === items.length - 1;
+  const isLastItem = childIndex === filteredItems.length - 1;
   const prevItems = currentItems.value[parentIndex - 1];
   const nextItems = currentItems.value[parentIndex + 1];
 
-  prev.value = isFirstItem && prevItems ? prevItems[prevItems.length - 1] : items[childIndex - 1];
-  next.value = isLastItem && nextItems ? nextItems[0] : items[childIndex + 1];
+  prev.value = isFirstItem && prevItems ? prevItems[prevItems.length - 1] : filteredItems[childIndex - 1];
+  next.value = isLastItem && nextItems ? nextItems[0] : filteredItems[childIndex + 1];
 };
 const openSearch = () => {
   docSearchBtn.value.children[0].click();
