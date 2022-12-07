@@ -29,8 +29,8 @@
     //  ------------------------------------------------------------------------
     --modal-color-background: hsla(var(--black-900-hsl) ~' / ' 60%);
     --modal-dialog-color-background: var(--white);
-    --modal-dialog-color-text: var(--black-700);
-    --modal-header-color-text: var(--black-800);
+    --modal-dialog-color-text: var(--fc-tertiary);
+    --modal-header-color-text: var(--fc-secondary);
 
     position: fixed;
     top: 0;
@@ -42,7 +42,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: var(--su32);
+    padding: var(--space-600); // 32
     background-color: var(--modal-color-background);
     backface-visibility: hidden;
     visibility: hidden;
@@ -54,9 +54,6 @@
   //  Component CSS Vars
   //  ------------------------------------------------------------------------
   --modal-color-background: hsla(var(--black-900-hsl) ~' / ' 85%);
-  --modal-dialog-color-background: var(--white);
-  --modal-dialog-color-text: var(--black-700);
-  --modal-header-color-text: var(--black-800);
 
   position: fixed;
   top: 0;
@@ -68,7 +65,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: var(--su32);
+  padding: var(--space-600); // 32
   background-color: var(--d-bgc-transparent);
   backface-visibility: hidden;
   visibility: hidden;
@@ -82,7 +79,7 @@
   position: relative;
   z-index: var(--zi-hide);
   width: 100%;
-  max-width: var(--size628);
+  max-width: calc(var(--size-300) * 157); // 628
   max-height: 100%;
   overflow-y: auto;
   color: var(--modal-dialog-color-text);
@@ -115,17 +112,19 @@
 //  $   MODAL AREAS
 //  ----------------------------------------------------------------------------
 .d-modal__footer {
+  --modal-footer-padding: calc(var(--space-300) * 6); // 24
+
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
-  padding: 0 var(--su24) var(--su24) var(--su24);
+  padding: 0 var(--modal-footer-padding) var(--modal-footer-padding) var(--modal-footer-padding); // 0 24 24 24
 
   >:not(:first-child) {
-    margin-right: var(--su4);
+    margin-right: var(--space-300); // 4
   }
 
   >:not(:last-child) {
-    margin-left: var(--su4);
+    margin-left: var(--space-300); // 4
   }
 }
 
@@ -136,8 +135,10 @@
 //  $$  HEADER
 //  ----------------------------------------------------------------------------
 .d-modal__header {
+  --modal-header-padding: calc(var(--space-300) * 6); // 24
+
   margin: 0 !important;
-  padding: var(--su24) var(--su24) 0;
+  padding: var(--modal-header-padding) var(--modal-header-padding) 0;
   color: var(--modal-header-color-text);
   font-weight: var(--fw-bold);
   font-size: var(--fs-300);
@@ -148,8 +149,8 @@
 //  ----------------------------------------------------------------------------
 .d-modal__content {
   max-width: 75ch;
-  margin: var(--su12) 0;
-  padding: var(--su4) var(--su24);
+  margin: calc(var(--space-300) * 3) 0; // 12 0
+  padding: var(--space-300) calc(var(--space-300) * 6); // 4 24
 }
 
 
@@ -158,8 +159,8 @@
 //  ----------------------------------------------------------------------------
 .d-modal__close {
   position: absolute;
-  top: var(--su8);
-  right: var(--su8);
+  top: var(--space-400); // 8
+  right: var(--space-400); // 8
   margin: 0 !important;
 }
 
@@ -171,8 +172,8 @@
   position: relative;
   box-sizing: border-box;
   width: 100%;
-  max-width: var(--size628);
-  padding: var(--su12) var(--su24);
+  max-width: calc(var(--size-300) * 157); // 628
+  padding: calc(var(--space-300) * 3) calc(var(--space-300) * 6); // 12 24
   font-size: var(--fs-200);
   line-height: var(--lh4);
   background-color: var(--gold-100);
@@ -205,22 +206,22 @@
   }
 
   .d-modal__header {
-    padding: var(--su32) var(--su32) 0;
+    padding: var(--space-600) var(--space-600) 0; // 32
   }
 
   .d-modal__content {
     padding-right: 0;
-    padding-left: var(--su32);
+    padding-left: var(--space-600); // 32
   }
 
   .d-modal__footer {
     margin-top: auto !important;
-    padding: 0 var(--su24) var(--su32) var(--su32);
+    padding: 0 calc(var(--space-300) * 6) var(--space-600) var(--space-600); // 0 24 32 32
   }
 
   .d-modal__banner {
     max-width: unset;
-    padding: var(--su12) var(--su32);
+    padding: calc(var(--space-300) * 3) var(--space-600); // 12 32
     border-radius: 0;
   }
 }
@@ -240,7 +241,7 @@
 //  $$  DANGER
 //  ----------------------------------------------------------------------------
 .d-modal--danger {
-  --modal-header-color-text: var(--fc-dark);
+  --modal-header-color-text: var(--fc-secondary);
 }
 
 
