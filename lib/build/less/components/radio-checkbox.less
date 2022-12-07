@@ -25,22 +25,22 @@
 .d-radio {
     //  Component specific CSS Vars
     //  ------------------------------------------------------------------------
-    --check-radio--color: var(--primary-color);
+    --check-radio--color: var(--purple-400);
     --check-radio--bc: var(--black-600);
     --check-radio--bgc: var(--white);
 
     //  [1] Check to see if we can use custom styles, if so reset the defaults
     //  ------------------------------------------------------------------------
     @supports ((-webkit-appearance: none) or (-moz-appearance: none) or (appearance: none)) {
-        width: 1em;
-        height: 1em;
+        width: var(--size-500);
+        height: var(--size-500);
 
         //  [2]  Now re-style the checkboxes and radios
         //  --------------------------------------------------------------------
         margin: 0;
         font-size: inherit;
         background-color: var(--check-radio--bgc);
-        border: var(--su1) solid var(--check-radio--bc);
+        border: var(--size-100) solid var(--check-radio--bc);
         outline: 0;
         box-shadow: none;
         cursor: pointer;
@@ -86,9 +86,10 @@
 .d-checkbox-group,
 .d-radio-group {
     display: flex;
-    padding-right: var(--su1);
-    padding-bottom: var(--su2);
-    padding-left: var(--su1);
+    gap: var(--space-400);
+    padding-right: var(--space-100);
+    padding-bottom: var(--space-200);
+    padding-left: var(--space-100);
 
     //  --  Wrapper Disabled State
     &.d-checkbox-group--disabled,
@@ -110,7 +111,7 @@
 .d-radio__input {
     display: flex;
     align-self: flex-start;
-    padding-top: var(--su2);
+    padding-top: calc(var(--space-200) + var(--space-100)); // magic number
 }
 
 
@@ -122,7 +123,6 @@
 .d-radio__copy {
     display: inline-flex;
     flex-direction: column;
-    margin-left: var(--su8);
 }
 
 .d-checkbox__label,
@@ -252,13 +252,13 @@
 
         &:focus-visible,
         &:checked:focus-visible {
-          box-shadow: var(--bs-focus-ring), inset 0 0 0 var(--su2) var(--white);
+          box-shadow: var(--bs-focus-ring), inset 0 0 0 var(--size-200) var(--white);
         }
 
         &:checked {
             --check-radio--bgc: var(--check-radio--color);
 
-            box-shadow: inset 0 0 0 var(--su2) var(--white);
+            box-shadow: inset 0 0 0 var(--size-200) var(--white);
 
             // Disabled
             &[disabled] {
@@ -280,7 +280,7 @@
 
     &:focus-visible,
     &:checked:focus-visible {
-      box-shadow: var(--bs-focus-ring-warning), inset 0 0 0 var(--su2) var(--white);
+      box-shadow: var(--bs-focus-ring-warning), inset 0 0 0 var(--space-200) var(--white);
     }
 }
 
@@ -290,7 +290,7 @@
 
     &:focus-visible,
     &:checked:focus-visible {
-      box-shadow: var(--bs-focus-ring-error), inset 0 0 0 var(--su2) var(--white);
+      box-shadow: var(--bs-focus-ring-error), inset 0 0 0 var(--space-200) var(--white);
     }
 }
 
@@ -300,6 +300,6 @@
 
     &:focus-visible,
     &:checked:focus-visible {
-      box-shadow: var(--bs-focus-ring-success), inset 0 0 0 var(--su2) var(--white);
+      box-shadow: var(--bs-focus-ring-success), inset 0 0 0 var(--space-200) var(--white);
     }
 }
