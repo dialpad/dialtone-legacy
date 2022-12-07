@@ -26,9 +26,9 @@
   --toggle-transition-timing-function: var(--ttf-in-out);
   --toggle-transition-speed: var(--td200);
   --toggle-color-background: var(--black-400);
-  --toggle-size-height: var(--su24);
-  --toggle-size-width: var(--su48);
-  --toggle-size-icon: var(--su16);
+  --toggle-size-height: calc(var(--size-300) * 6); // 24
+  --toggle-size-width: calc(var(--size-300) * 12); // 48
+  --toggle-size-icon: var(--size-500); // 16
 
   //  $$  BASE STYLE
   //  ----------------------------------------------------------------------------
@@ -47,14 +47,14 @@
 
   &__inner {
     position: absolute;
-    top: calc(var(--su4) - var(--su1));
-    left: var(--su24);
+    top: calc(var(--space-300) - var(--space-100)); // 3
+    left: calc(var(--space-300) * 6); // 24
     width: var(--toggle-size-icon);
     height: var(--toggle-size-icon);
 
     .d-toggle--small & {
-      top: var(--su1);
-      left: calc(var(--su16) + var(--su1));
+      top: var(--space-100); // 1
+      left: calc(var(--space-500) + var(--space-100)); // 17
     }
 
     .d-toggle--indeterminate & {
@@ -69,8 +69,8 @@
 
   &::after {
     position: absolute;
-    top: var(--su1);
-    left: var(--su1);
+    top: var(--su1); // 1
+    left: var(--su1); // 1
     width: calc(var(--toggle-size-icon) + var(--su4));
     height: calc(var(--toggle-size-icon) + var(--su4));
     background-color: var(--white);
@@ -83,15 +83,15 @@
   //  $$  TOGGLE VARIANTS
   //  ----------------------------------------------------------------------------
   &--small {
-    --toggle-size-height: calc(var(--su16) + var(--su2));
-    --toggle-size-width: calc(var(--su32) + var(--su4));
-    --toggle-size-icon: calc(var(--su12) + var(--su2));
+    --toggle-size-height: calc(var(--size-500) + var(--size-200)); // 18
+    --toggle-size-width: calc(var(--size-600) + var(--size-300)); // 36
+    --toggle-size-icon: calc(var(--size-500) - var(--size-200)); // 14
 
     &::before {
       position: absolute;
-      top: calc(var(--su4) * -1);
+      top: calc(var(--space-300) * -1); // -4
       right: 0;
-      bottom: calc(var(--su4) * -1);
+      bottom: calc(var(--space-300) * -1); // -4
       left: 0;
       content: '';
     }
@@ -108,21 +108,21 @@
     --toggle-color-background: var(--primary-color);
 
     .d-toggle__inner {
-      left: var(--su6);
+      left: calc(var(--space-300) + var(--space-200)); // 6
       background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0yMC42MTg3IDUuMzgxMjhDMjAuOTYwNCA1LjcyMjk5IDIwLjk2MDQgNi4yNzcwMSAyMC42MTg3IDYuNjE4NzJMOS42MTg3MiAxNy42MTg3QzkuMjc3MDEgMTcuOTYwNCA4LjcyMjk5IDE3Ljk2MDQgOC4zODEyOCAxNy42MTg3TDMuMzgxMjggMTIuNjE4N0MzLjAzOTU3IDEyLjI3NyAzLjAzOTU3IDExLjcyMyAzLjM4MTI4IDExLjM4MTNDMy43MjI5OSAxMS4wMzk2IDQuMjc3MDEgMTEuMDM5NiA0LjYxODcyIDExLjM4MTNMOSAxNS43NjI2TDE5LjM4MTMgNS4zODEyOEMxOS43MjMgNS4wMzk1NyAyMC4yNzcgNS4wMzk1NyAyMC42MTg3IDUuMzgxMjhaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K');
     }
 
     &.d-toggle--small .d-toggle__inner {
-      left: calc(var(--su2) + var(--su1));
+      left: calc(var(--space-100) + var(--space-200)); // 3
     }
 
     &::after {
-      left: calc(var(--su24) + var(--su1));
+      left: calc(calc(var(--space-300) * 6) + var(--space-100)); // 25
     }
 
     &.d-toggle--small::after {
-      right: var(--su1);
-      left: calc(var(--su16) + var(--su2) + var(--su1));
+      right: var(--space-100); // 1
+      left: calc(calc(var(--space-300) * 5) - var(--space-100)); // 19
     }
   }
 
@@ -161,5 +161,5 @@
 }
 
 .d-toggle-group {
-  gap: var(--su8);
+  gap: var(--space-400); // 8
 }
