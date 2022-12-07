@@ -20,10 +20,10 @@
 .d-btn {
     //  Component specific CSS Vars
     //  ------------------------------------------------------------------------
-    --button--fc: var(--primary-color);
-    --button--bgc: transparent;
-    --button--bc: transparent;
-    --button--br: var(--base--corner-radius);
+    --button-color-text: var(--purple-400);
+    --button-color-background: transparent;
+    --button-color-border: transparent;
+    --button-radius: var(--size-300);
 
     position: relative;
     display: inline-flex;
@@ -31,16 +31,16 @@
     justify-content: center;
     box-sizing: border-box;
     padding: calc(var(--space-400) - var(--space-100));  // Subtract border
-    color: var(--button--fc);
+    color: var(--button-color-text);
     font-size: var(--fs-200);
     font-family: inherit;
     line-height: var(--lh4);
     text-transform: inherit;
     text-decoration: none;
     vertical-align: middle;
-    background-color: var(--button--bgc);
-    border: var(--size-100) solid var(--button--bc);
-    border-radius: var(--button--br);
+    background-color: var(--button-color-background);
+    border: var(--size-100) solid var(--button-color-border);
+    border-radius: var(--button-radius);
     box-shadow: var(--button--bs);
     cursor: pointer;
     transition-timing-function: var(--ttf-in-out);
@@ -52,15 +52,15 @@
     //  --  STATES
     //  ------------------------------------------------------------------------
     &:hover {
-        --button--fc: var(--primary-color-hover);
-        --button--bgc: hsla(var(--primary-color-hsl) ~' / ' 3%);
+        --button-color-text: hsl(var(--purple-400-h) var(--purple-400-s) calc(var(--purple-400-l) - 10%));
+        --button-color-background: hsla(var(--purple-400-hsl) ~' / ' 3%);
     }
 
     &:active,
     &.d-btn--active,
     &.d-btn--active:active {
-        --button--fc: var(--primary-color-hover);
-        --button--bgc: hsla(var(--primary-color-hsl) ~' / ' 9%);
+        --button-color-text: hsl(var(--purple-400-h) var(--purple-400-s) calc(var(--purple-400-l) - 10%));
+        --button-color-background: hsla(var(--purple-400-hsl) ~' / ' 9%);
     }
 
 
@@ -213,22 +213,22 @@
 //  $$  CIRCLE BUTTONS
 //  ----------------------------------------------------------------------------
 .d-btn--circle {
-    --button--fc: var(--black-800);
-    --button--br: var(--br-circle);
+    --button-color-text: var(--black-800);
+    --button-radius: var(--br-circle);
 
     padding: calc(var(--space-400) + var(--space-100));
     transition-duration: 150ms;
 
     &:hover {
-        --button--fc: var(--muted-color-hover);
-        --button--bgc: hsla(var(--black-800-hsl) ~' / ' 3%);
+        --button-color-text: var(--muted-color-hover);
+        --button-color-background: hsla(var(--black-800-hsl) ~' / ' 3%);
     }
 
     &:active,
     &.d-btn--active,
     &.d-btn--active:active {
-        --button--fc: var(--muted-color-hover);
-        --button--bgc: hsla(var(--black-800-hsl) ~' / ' 9%);
+        --button-color-text: var(--muted-color-hover);
+        --button-color-background: hsla(var(--black-800-hsl) ~' / ' 9%);
     }
 
     &:focus-visible {
@@ -244,75 +244,75 @@
     }
 
     &.d-btn--outlined {
-        --button--bc: var(--black-700);
+        --button-color-border: var(--black-700);
     }
 
     //  Adjust padding based on sizes
     &.d-btn--xs {
         padding: calc(var(--space-400) - var(--space-100));
 
-        --button--br: var(--br-circle);
+        --button-radius: var(--br-circle);
     }
 
     &.d-btn--sm {
         padding: var(--space-400);
 
-        --button--br: var(--br-circle);
+        --button-radius: var(--br-circle);
     }
 
     &.d-btn--lg {
         padding: calc(calc(var(--space-400) + var(--space-300)) + var(--space-100));
 
-        --button--br: var(--br-circle);
+        --button-radius: var(--br-circle);
     }
 
     &.d-btn--xl {
         padding: calc(var(--space-500) - var(--space-100));
 
-        --button--br: var(--br-circle);
+        --button-radius: var(--br-circle);
     }
 }
 
 //  $$  OUTLINED BUTTON
 //  ----------------------------------------------------------------------------
 .d-btn--outlined {
-    --button--bc: var(--primary-color);
+    --button-color-border: var(--purple-400);
 }
 
 //  $$  PRIMARY BUTTON
 //  ----------------------------------------------------------------------------
 .d-btn--primary {
-    --button--fc: var(--white);
-    --button--bgc: var(--primary-color);
+    --button-color-text: var(--white);
+    --button-color-background: var(--purple-400);
 
     &:hover {
-      --button--fc: var(--white);
-      --button--bgc: hsl(var(--primary-color-h), var(--primary-color-s), 65%);
+      --button-color-text: var(--white);
+      --button-color-background: hsl(var(--purple-400-h), var(--purple-400-s), calc(var(--purple-400-l) - 5%));
     }
 
     &:active,
     &.d-btn--active,
     &.d-btn--active:active {
-      --button--fc: var(--white);
-      --button--bgc: hsl(var(--primary-color-h), var(--primary-color-s), 42%);
+      --button-color-text: var(--white);
+      --button-color-background: hsl(var(--purple-400-h), var(--purple-400-s), calc(var(--purple-400-l) - 10%));
     }
 }
 
 //  $$  MUTED BUTTON
 //  ----------------------------------------------------------------------------
 .d-btn--muted {
-    --button--fc: var(--muted-color);
+    --button-color-text: var(--muted-color);
 
     &:hover {
-        --button--fc: var(--muted-color-hover);
-        --button--bgc: hsla(var(--black-800-hsl) ~' / ' 3%);
+        --button-color-text: var(--muted-color-hover);
+        --button-color-background: hsla(var(--black-800-hsl) ~' / ' 3%);
     }
 
     &:active,
     &.d-btn--active,
     &.d-btn--active:active {
-        --button--fc: var(--muted-color-hover);
-        --button--bgc: hsla(var(--black-800-hsl) ~' / ' 9%);
+        --button-color-text: var(--muted-color-hover);
+        --button-color-background: hsla(var(--black-800-hsl) ~' / ' 9%);
     }
 
     &:focus-visible {
@@ -320,25 +320,25 @@
     }
 
     &.d-btn--outlined {
-        --button--bc: var(--black-600);
+        --button-color-border: var(--black-600);
     }
 }
 
 //  $$  DANGER BUTTON
 //  ----------------------------------------------------------------------------
 .d-btn--danger {
-    --button--fc: var(--error-color);
+    --button-color-text: var(--error-color);
 
     &:hover {
-        --button--fc: var(--error-color-hover);
-        --button--bgc: hsla(var(--error-color-hsl) ~' / ' 6%);
+        --button-color-text: var(--error-color-hover);
+        --button-color-background: hsla(var(--error-color-hsl) ~' / ' 6%);
     }
 
     &:active,
     &.d-btn--active,
     &.d-btn--active:active {
-        --button--fc: var(--error-color-hover);
-        --button--bgc: hsla(var(--error-color-hsl) ~' / ' 20%);
+        --button-color-text: var(--error-color-hover);
+        --button-color-background: hsla(var(--error-color-hsl) ~' / ' 20%);
     }
 
     &:focus-visible {
@@ -346,23 +346,23 @@
     }
 
     &.d-btn--outlined {
-        --button--bc: var(--error-color);
+        --button-color-border: var(--error-color);
     }
 
     &.d-btn--primary {
-        --button--fc: var(--white);
-        --button--bgc: var(--error-color);
+        --button-color-text: var(--white);
+        --button-color-background: var(--error-color);
 
         &:hover {
-            --button--fc: var(--white);
-            --button--bgc: hsl(var(--red-300-h), var(--red-300-s), 40%);
+            --button-color-text: var(--white);
+            --button-color-background: hsl(var(--red-300-h), var(--red-300-s), 40%);
         }
 
         &:active,
         &.d-btn--active,
         &.d-btn--active:active {
-            --button--fc: var(--white);
-            --button--bgc: hsl(var(--red-300-h), var(--red-300-s), 27%);
+            --button-color-text: var(--white);
+            --button-color-background: hsl(var(--red-300-h), var(--red-300-s), 27%);
         }
     }
 }
@@ -371,19 +371,19 @@
 //  ----------------------------------------------------------------------------
 //  --  Base, clear inverted button
 .d-btn--inverted {
-    --button--fc: var(--white);
-    --button--bgc: transparent;
+    --button-color-text: var(--white);
+    --button-color-background: transparent;
 
     &:hover {
-        --button--fc: var(--white);
-        --button--bgc: hsla(var(--white-hsl) ~' / ' 15%);
+        --button-color-text: var(--white);
+        --button-color-background: hsla(var(--white-hsl) ~' / ' 15%);
     }
 
     &:active,
     &.d-btn--active,
     &.d-btn--active:active {
-        --button--fc: var(--white);
-        --button--bgc: hsla(var(--white-hsl) ~' / ' 30%);
+        --button-color-text: var(--white);
+        --button-color-background: hsla(var(--white-hsl) ~' / ' 30%);
     }
 
     &:focus-visible {
@@ -392,24 +392,24 @@
 
     //  --  OUTLINED
     &.d-btn--outlined {
-        --button--bc: var(--white);
+        --button-color-border: var(--white);
     }
 
     //  --  PRIMARY
     &.d-btn--primary {
-        --button--fc: var(--primary-color);
-        --button--bgc: hsl(var(--purple-100-h), var(--purple-100-s), 100%);
+        --button-color-text: var(--purple-400);
+        --button-color-background: hsl(var(--purple-100-h), var(--purple-100-s), 100%);
 
         &:hover {
-            --button--fc: var(--primary-color-hover);
-            --button--bgc: hsl(var(--purple-100-h), var(--purple-100-s), 94%);
+            --button-color-text: hsl(var(--purple-400-h) var(--purple-400-s) calc(var(--purple-400-l) - 10%));
+            --button-color-background: hsl(var(--purple-100-h), var(--purple-100-s), 94%);
         }
 
         &:active,
         &.d-btn--active,
         &.d-btn--active:active {
-            --button--fc: var(--primary-color-hover);
-            --button--bgc: hsl(var(--purple-100-h), var(--purple-100-s), 91%);
+            --button-color-text: hsl(var(--purple-400-h) var(--purple-400-s) calc(var(--purple-400-l) - 10%));
+            --button-color-background: hsl(var(--purple-100-h), var(--purple-100-s), 91%);
         }
     }
 }
