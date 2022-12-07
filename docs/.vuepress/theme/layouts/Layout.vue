@@ -84,23 +84,26 @@ const currentItems = computed(() => {
 });
 
 // Finds the current item
+// eslint-disable-next-line complexity
 const findCurrent = () => {
   prev.value = null;
   next.value = null;
 
-  currentItems.value.forEach((item, idx) => {
-    const index = item.findIndex(child => child.link === route.path);
-    if (index < 0) return;
+  if (route.path.includes('/about/whats_new/posts/')) {
+    prev.value = { link: '/about/whats_new/', text: 'Back to what\'s new' };
+    return;
+  }
 
-    if (index >= 0) {
-      const prevArray = currentItems.value[idx - 1] || [];
-      prev.value = index === 0 ? prevArray[prevArray.length - 1] : prev.value = item[index - 1];
-    }
-    if (index <= item.length - 1) {
-      const nextArray = currentItems.value[idx + 1] || [];
-      next.value = index === item.length - 1 ? nextArray[0] : next.value = item[index + 1];
-    }
-  });
+  const parentIndex = currentItems.value.findIndex(item => item.find(child => child.link === route.path));
+  const items = currentItems.value[parentIndex];
+  const childIndex = Object.values(items).findIndex(child => child.link === route.path);
+  const isFirstItem = childIndex === 0;
+  const isLastItem = childIndex === items.length - 1;
+  const prevItems = currentItems.value[parentIndex - 1];
+  const nextItems = currentItems.value[parentIndex + 1];
+
+  prev.value = isFirstItem && prevItems ? prevItems[prevItems.length - 1] : items[childIndex - 1];
+  next.value = isLastItem && nextItems ? nextItems[0] : items[childIndex + 1];
 };
 const openSearch = () => {
   docSearchBtn.value.children[0].click();
