@@ -21,8 +21,8 @@
 //  $  FIELDSETS
 //  ----------------------------------------------------------------------------
 fieldset {
-  min-width: var(--su0);
-  padding: var(--su0);
+  min-width: 0;
+  padding: 0;
   border: none;
 }
 
@@ -36,7 +36,7 @@ fieldset {
   align-items: baseline;
   justify-content: space-between;
   box-sizing: border-box;
-  margin-bottom: var(--su6);
+  margin-bottom: calc(var(--space-300) + var(--space-200)); // 6
   color: currentColor;
   font-weight: @fw-bold;
   font-size: var(--fs-200);
@@ -78,7 +78,7 @@ fieldset {
 .d-description {
   display: flex;
   box-sizing: border-box;
-  margin-bottom: var(--su6);
+  margin-bottom: calc(var(--space-300) + var(--space-200)); // 6
   color: var(--black-600);
   font-size: var(--fs-100);
   font-family: inherit;
@@ -87,7 +87,7 @@ fieldset {
 }
 
 .d-label + .d-description {
-  margin-top: var(--sun6);
+  margin-top: calc(calc(var(--space-300) + var(--space-200)) * -1); // -6
 }
 
 //  $$  SIZES
@@ -109,8 +109,9 @@ fieldset {
   --validation--fc: var(--fc-tertiary);
 
   display: inline-flex;
+  gap: var(--space-300); // 4
   align-items: flex-start;
-  margin-top: var(--su6);
+  margin-top: calc(var(--space-300) + var(--space-200)); // 6
   color: var(--validation--fc);
   font-weight: inherit;
   font-size: var(--fs-100);
@@ -119,10 +120,9 @@ fieldset {
 
   // Icon Slot
   &::before {
-    width: var(--su16);
-    min-width: var(--su16);
-    height: var(--su16);
-    margin-right: var(--su4);
+    width: var(--size-500); // 16
+    min-width: var(--size-500); // 16
+    height: var(--size-500); // 16
     content: '';
   }
 }
