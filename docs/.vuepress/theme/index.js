@@ -61,23 +61,35 @@ export const dialtoneVuepressTheme = (options) => {
     extendsMarkdown: (md) => {
       md.use(markdownItClass, mapping);
     },
-    async onInitialized (app) {
-      const blogPostsFrontmatter = app
-        .pages
+    onInitialized (app) {
+      const blogPostsFrontmatter = app.pages
         .filter(page => page.path.includes('/about/whats_new/posts'))
-        .map(post => {
-          return {
-            ...post.frontmatter,
-            firstParagraph: post.contentRendered.split('\n').find(f => f.startsWith('<p>')),
-          };
-        });
+        .map(post => ({
+          ...post.frontmatter,
+          firstParagraph: post.contentRendered.split('\n').find(f => f.startsWith('<p>')),
+        }));
+
+      const componentsIndexPath = '/components/';
+      const componentsFrontmatter = app.pages
+        .filter(page => page.path.includes(componentsIndexPath) && page.path !== componentsIndexPath)
+        .map(component => ({
+          name: component.frontmatter.title.toLowerCase().replaceAll(' ', '-'),
+          link: component.frontmatter.title.toLowerCase().replaceAll(' ', '_'),
+          ...component.frontmatter,
+        }));
 
       const blogIndex = app.pages.find(page => page.path === '/about/whats_new/');
       blogIndex.data.blogPosts = blogPostsFrontmatter;
+
+      const componentsIndexPage = app.pages.find(page => page.path === componentsIndexPath);
+      componentsIndexPage.data.componentsFrontmatter = componentsFrontmatter;
     },
     extendsPage: (page, app) => {
       if (page.path === '/about/whats_new/') {
         page.data.blogPosts = [];
+      }
+      if (page.path === '/components/') {
+        page.data.componentsFrontmatter = [];
       }
     },
   };

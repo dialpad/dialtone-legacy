@@ -1,6 +1,7 @@
 ---
 title: Input
 desc: An input field is an input control that allows users to enter alphanumeric information. It can have a range of options and supports single line and multi-line lengths, as well as varying formats, including numbers, masked passwords, etc.
+status: ready
 storybook_url: https://vue.dialpad.design/?path=/story/components-input--default
 figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Components-7?node-id=8923%3A21866&viewport=-983%2C83%2C0.16&t=xHutRjwo1o5zMTgT-11
 ---
@@ -26,7 +27,7 @@ This component combines both the `input` and `textarea` elements as options with
 </template>
 <template #dont>
 
-- When users are choosing from a specific set of options. Consider [Select](select.md), [Radio](radio.md), or [Checkbox](checkbox.md).
+- When users are choosing from a specific set of options. Consider [Select](select_menu.md), [Radio](radio.md), or [Checkbox](checkbox.md).
 </template>
 </dialtone-usage>
 

@@ -1,6 +1,7 @@
 ---
 title: Badge
 desc: A badge is a compact UI element providing brief, descriptive information about an element and its surrounding context. It is terse, ideally one word.
+status: ready
 storybook_url: https://vue.dialpad.design/?path=/story/components-badge--default
 figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Components-7?node-id=8914%3A21227&viewport=656%2C314%2C0.55&t=xHutRjwo1o5zMTgT-11
 ---

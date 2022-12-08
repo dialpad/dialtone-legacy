@@ -1,6 +1,7 @@
 ---
 title: Chip
 desc: A Chip is a compact UI element that provides brief, descriptive information about an element. It is terse, ideally one word.
+status: ready
 storybook_url: https://vue.dialpad.design/?path=/story/components-chip--default
 figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Components-7?node-id=9937%3A64802
 ---

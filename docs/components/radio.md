@@ -1,6 +1,7 @@
 ---
 title: Radio
 desc: A radio is an input control that allows users to select only one option from a number of choices.
+status: ready
 storybook_url: https://vue.dialpad.design/?path=/story/components-radio--default
 figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Components-7?node-id=8919%3A22042&viewport=-451%2C205%2C0.6&t=xHutRjwo1o5zMTgT-11
 ---
@@ -26,14 +27,14 @@ Radio buttons are a common way to allow users to make a single selection from a 
 
 - When users may only choose a single option out of a set of mutually exclusive choices.
 - If the number of available options can fit onto a mobile screen.
-- In place of [Select](select.md) element if there are few enough options (e.g. =7) and the design can support it.
+- In place of [Select](select_menu.md) element if there are few enough options (e.g. =7) and the design can support it.
 </template>
 <template #dont>
 
 - Consider [Checkbox](checkbox.md) if users may have the option to select more than one.
-- Consider a [Select](select.md) if you don’t have enough space to list out all available options.
+- Consider a [Select](select_menu.md) if you don’t have enough space to list out all available options.
 - If users should be able to select zero of the options; radio elements are not “uncheckable.” A [Checkbox](checkbox.md) may be warranted.
-- If there are too many options to display on a single view; consider a [Select](select.md) instead.
+- If there are too many options to display on a single view; consider a [Select](select_menu.md) instead.
 </template>
 </dialtone-usage>
 

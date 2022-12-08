@@ -1,6 +1,7 @@
 ---
 title: Avatar
 desc: An avatar is a visual representation of a user or object.
+status: ready
 storybook_url: https://vue.dialpad.design/?path=/story/components-avatar--default
 figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Components-7?node-id=8918%3A21289&viewport=137%2C605%2C0.46&t=xHutRjwo1o5zMTgT-11
 ---

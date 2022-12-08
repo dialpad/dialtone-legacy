@@ -1,6 +1,7 @@
 ---
 title: Radio group
 desc: Radio groups are control elements that allow the user to make a single selection from a list of options.
+status: ready
 storybook_url: https://vue.dialpad.design/?path=/story/components-radio-group--default
 no_preview: true
 ---
