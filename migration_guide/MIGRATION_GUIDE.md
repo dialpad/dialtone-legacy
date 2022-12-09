@@ -545,7 +545,7 @@ The "color" prop has been removed from the DtBadge component and replaced with "
 
 ##### Styling
 
-All `d-badge` color classes are no longer valid and will have to be replaced with a "type" class. There is no direct mapping for this so you'll have to decided which works best on a case by case basis. Speak with your designer if you are unsure.
+The previous d-badge color classes are no longer valid and will have to be replaced with a "type" class. There is no direct mapping guide, as the previous use of badge colors may not imply which updated type to use. Use your judgment on a case-by-case basis and validate with your Product Designer.
 
 Classes removed:
 
