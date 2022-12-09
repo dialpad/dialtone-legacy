@@ -63,80 +63,90 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 
 ## Type
 
-<table>
-  <tr>
-    <th class="d-ta-left">Default</th>
-    <td>
-      <span class="d-badge">Label</span>
-    </td>
-    <td>
-      <span class="d-badge d-badge--count"><span class="d-badge__label">1</span></span>
-    </td>
-    <td>Default general purpose callout when no implicit semantic meaning applies.</td>
-  </tr>
-  <tr>
-    <th class="d-ta-left">Info</th>
-    <td>
-      <span class="d-badge d-badge--info"><span class="d-badge__label">Label</span></span>
-    </td>
-    <td>
-      <span class="d-badge d-badge--count d-badge--info"><span class="d-badge__label">2</span></span>
-    </td>
-    <td>Used to convey general information that isn’t critical or requires action on the user's part.</td>
-  </tr>
-  <tr>
-    <th class="d-ta-left">Success</th>
-    <td>
-      <span class="d-badge d-badge--success"><span class="d-badge__label">Label</span></span>
-    </td>
-    <td>
-      <span class="d-badge d-badge--count d-badge--success"><span class="d-badge__label">3</span></span>
-    </td>
-    <td>Accompanying a successful or otherwise positive action or message</td>
-  </tr>
-  <tr>
-    <th class="d-ta-left">Warning</th>
-    <td>
-      <span class="d-badge d-badge--warning"><span class="d-badge__label">Label</span></span>
-    </td>
-    <td>
-      <span class="d-badge d-badge--count d-badge--warning"><span class="d-badge__label">4</span></span>
-    </td>
-    <td>When a users attention is needed, or action may be required.</td>
-  </tr>
-  <tr>
-    <th class="d-ta-left">Critical</th>
-    <td>
-      <span class="d-badge d-badge--critical"><span class="d-badge__label">Label</span></span>
-    </td>
-    <td>
-      <span class="d-badge d-badge--count d-badge--critical"><span class="d-badge__label">5</span></span>
-    </td>
-    <td>To communicate problems that must be resolved, something has failed, or otherwise negative label or dangerous condition.</td>
-  </tr>
-  <tr>
-    <th class="d-ta-left">Bulletin</th>
-    <td>
-      <span class="d-badge d-badge--bulletin"><span class="d-badge__label">Label</span></span>
-    </td>
-    <td>
-      <span class="d-badge d-badge--count d-badge--bulletin"><span class="d-badge__label">6</span></span>
-    </td>
-    <td>Used to provide temporary feedback to specific items in the interface, like live activity, notifications, and unread counts. </td>
-  </tr>
-  <tr>
-    <th class="d-ta-left">Ai</th>
-    <td>
-      <span class="d-badge d-badge--ai">
-        <span class="d-badge__icon-left">
-          <dt-icon name="dialpad-ai" size="200" />
+<table class="d-table dialtone-doc-table d-mb16">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th class="d-ws-nowrap">Kind: <span class="d-fw-normal">Label</span></th>
+      <th class="d-ws-nowrap">Kind: <span class="d-fw-normal">Count</span></th>
+      <th>Usage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th class="d-ta-left">Default</th>
+      <td>
+        <span class="d-badge">Label</span>
+      </td>
+      <td>
+        <span class="d-badge d-badge--count"><span class="d-badge__label">1</span></span>
+      </td>
+      <td>Default general purpose callout when no implicit semantic meaning applies.</td>
+    </tr>
+    <tr>
+      <th class="d-ta-left">Info</th>
+      <td>
+        <span class="d-badge d-badge--info"><span class="d-badge__label">Label</span></span>
+      </td>
+      <td>
+        <span class="d-badge d-badge--count d-badge--info"><span class="d-badge__label">2</span></span>
+      </td>
+      <td>Used to convey general information that isn’t critical or requires action on the user's part.</td>
+    </tr>
+    <tr>
+      <th class="d-ta-left">Success</th>
+      <td>
+        <span class="d-badge d-badge--success"><span class="d-badge__label">Label</span></span>
+      </td>
+      <td>
+        <span class="d-badge d-badge--count d-badge--success"><span class="d-badge__label">3</span></span>
+      </td>
+      <td>Accompanying a successful or otherwise positive action or message</td>
+    </tr>
+    <tr>
+      <th class="d-ta-left">Warning</th>
+      <td>
+        <span class="d-badge d-badge--warning"><span class="d-badge__label">Label</span></span>
+      </td>
+      <td>
+        <span class="d-badge d-badge--count d-badge--warning"><span class="d-badge__label">4</span></span>
+      </td>
+      <td>When a users attention is needed, or action may be required.</td>
+    </tr>
+    <tr>
+      <th class="d-ta-left">Critical</th>
+      <td>
+        <span class="d-badge d-badge--critical"><span class="d-badge__label">Label</span></span>
+      </td>
+      <td>
+        <span class="d-badge d-badge--count d-badge--critical"><span class="d-badge__label">5</span></span>
+      </td>
+      <td>To communicate conditions deemed critical, negative, or dangerous. For example, sensitive state (e.g. recording), must be resolved, or something has failed.</td>
+    </tr>
+    <tr>
+      <th class="d-ta-left">Bulletin</th>
+      <td>
+        <span class="d-badge d-badge--bulletin"><span class="d-badge__label">Label</span></span>
+      </td>
+      <td>
+        <span class="d-badge d-badge--count d-badge--bulletin"><span class="d-badge__label">6</span></span>
+      </td>
+      <td>Used to provide temporary feedback to specific items in the interface, like live activity, notifications, and unread counts. </td>
+    </tr>
+    <tr>
+      <th class="d-ta-left">Ai</th>
+      <td>
+        <span class="d-badge d-badge--ai">
+          <span class="d-badge__icon-left">
+            <dt-icon name="dialpad-ai" size="200" />
+          </span>
+          <span class="d-badge__label">Label</span>
         </span>
-        <span class="d-badge__label">Label</span>
-      </span>
-    </td>
-    <td class="d-bgc-black-100 d-ta-center"><abbr class="d-fc-black-400 d-td-none d-fs-100" title="Not applicable">N/A</abbr></td>
-    <td>To call out Ai features, e.g. "Ai Transcript," "Ai on."</td>
-  </tr>
+      </td>
+      <td><abbr class="d-fc-black-400 d-td-none d-fs-100" title="Not applicable">N/A</abbr></td>
+      <td>To call out Ai features, e.g. "Ai Transcript," "Ai enabled."</td>
+    </tr>
+  </tbody>
 </table>
 
 ```html
@@ -264,7 +274,7 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
           <svg aria-hidden="true" data-name="Dialpad Ai" class="d-icon d-icon--dialpadAi d-icon--size-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" data-v-68a9d516=""><path fill="currentColor" fill-rule="evenodd" d="M10.25 2a.75.75 0 1 1 1.5 0 .75.75 0 0 1-1.5 0Zm-5.722.5c-.415 0-.886.352-1.108 1.058v.001L1.476 9.652a.5.5 0 1 1-.952-.304l1.943-6.09c0-.001 0 0 0 0C2.765 2.308 3.518 1.5 4.528 1.5s1.761.806 2.06 1.753l1.498 4.692C8.308 8.65 8.777 9 9.193 9c.735 0 1.307-.576 1.307-1.257V4.53a.5.5 0 0 1 1 0v3.212C11.5 9.003 10.454 10 9.193 10c-1.009 0-1.761-.806-2.06-1.753l-1.497-4.69v-.002C5.412 2.85 4.943 2.5 4.527 2.5Z" clip-rule="evenodd"></path></svg>
         </span>
         <span class="d-vi-visible-sr">Ai</span>
-        <span class="d-badge__label">on</span>
+        <span class="d-badge__label">enabled</span>
       </span>
       <span class="d-badge d-badge--ai">
         <span class="d-badge__icon-left">

@@ -8,8 +8,9 @@
 //  ============================================================================
 //  $   CSS VARS
 //  ============================================================================
+// I don't think these are used anymore. Confirm and remove.
 @input-button-vars: {
-    input-button__padding:                  0.7rem var(--su8);
+    input-button__padding:                  calc(var(--space-400) - var(--space-100)) var(--space-400);
     input-button__text-size:                var(--fs-200);
     input-button__line-height:              var(--lh4);
     input-button__icon-size:                @icon-size18;
@@ -22,8 +23,8 @@
 //      Target height: 24px
 //  ----------------------------------------------------------------------------
 .input-button-xs() {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    padding-top: var(--space-100 / 2); // .5rem
+    padding-bottom: calc(var(--space-400) + var(--space-100)); // 5px
     font-size: var(--fs-100);
 
     .d-btn__icon {
@@ -36,8 +37,10 @@
 //      Target height: 32px
 //  ----------------------------------------------------------------------------
 .input-button-sm() {
-    padding-top: var(--su6);
-    padding-bottom: var(--su6);
+    --padding-y: calc(var(--space-300) + var(--space-200)); // 6
+
+    padding-top: var(--padding-y);
+    padding-bottom: var(--padding-y);
     font-size: var(--fs-200);
 
     .d-btn__icon {
@@ -50,8 +53,10 @@
 //      Target height: 48px
 //  ----------------------------------------------------------------------------
 .input-button-lg() {
-    padding-top: 1.1rem;
-    padding-bottom: 1.1rem;
+    --padding-y: calc(calc(var(--space-300) + var(--space-200)) + calc(var(--space-300) + var(--space-200))); // 11 yes this is awkward
+
+    padding-top: var(--padding-y);
+    padding-bottom: var(--padding-y);
     font-size: var(--fs-300);
 
     .d-btn__icon {
@@ -64,8 +69,10 @@
 //      Target height: 56px
 //  ----------------------------------------------------------------------------
 .input-button-xl() {
-    padding-top: 1.3rem;
-    padding-bottom: 1.3rem;
+    --padding-y: calc(calc(var(--space-400) + var(--space-300)) + var(--space-100)); // 13
+
+    padding-top: var(--padding-y);
+    padding-bottom: var(--padding-y);
     font-size: var(--fs-300);
 
     .d-btn__icon {
