@@ -1,6 +1,7 @@
 ---
 title: Toast
 status: ready
+thumb: true
 desc: A toast notice, sometimes called a snackbar, is a time-based message that appears based on users' actions. It contains at-a-glance information about outcomes and can be paired with actions.
 storybook_url: https://vue.dialpad.design/?path=/story/components-toast--default
 figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Components-7?node-id=8919%3A21834&viewport=-496%2C632%2C0.48&t=xHutRjwo1o5zMTgT-11

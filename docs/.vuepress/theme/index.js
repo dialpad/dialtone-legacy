@@ -22,6 +22,28 @@ const mapping = {
   a: 'd-docsite--link d-link',
 };
 
+function blogPostsFrontmatter (app) {
+  const blogIndex = app.pages.find(page => page.path === '/about/whats_new/');
+  blogIndex.data.blogPosts = app.pages
+    .filter(page => page.path.includes('/about/whats_new/posts'))
+    .map(post => ({
+      ...post.frontmatter,
+      firstParagraph: post.contentRendered.split('\n').find(f => f.startsWith('<p>')),
+    }));
+}
+
+function extractFrontmatter (app, path) {
+  const indexPage = app.pages.find(page => page.path === path);
+
+  indexPage.data.enhancedFrontmatter = app.pages
+    .filter(page => page.path.includes(path) && page.path !== path)
+    .map(component => ({
+      name: component.frontmatter.title.toLowerCase().replaceAll(' ', '-'),
+      link: component.frontmatter.title.toLowerCase().replaceAll(' ', '_'),
+      ...component.frontmatter,
+    }));
+}
+
 export const dialtoneVuepressTheme = (options) => {
   return {
     name: '@dialpad/vuepress-theme-dialtone',
@@ -62,34 +84,21 @@ export const dialtoneVuepressTheme = (options) => {
       md.use(markdownItClass, mapping);
     },
     onInitialized (app) {
-      const blogPostsFrontmatter = app.pages
-        .filter(page => page.path.includes('/about/whats_new/posts'))
-        .map(post => ({
-          ...post.frontmatter,
-          firstParagraph: post.contentRendered.split('\n').find(f => f.startsWith('<p>')),
-        }));
-
-      const componentsIndexPath = '/components/';
-      const componentsFrontmatter = app.pages
-        .filter(page => page.path.includes(componentsIndexPath) && page.path !== componentsIndexPath)
-        .map(component => ({
-          name: component.frontmatter.title.toLowerCase().replaceAll(' ', '-'),
-          link: component.frontmatter.title.toLowerCase().replaceAll(' ', '_'),
-          ...component.frontmatter,
-        }));
-
-      const blogIndex = app.pages.find(page => page.path === '/about/whats_new/');
-      blogIndex.data.blogPosts = blogPostsFrontmatter;
-
-      const componentsIndexPage = app.pages.find(page => page.path === componentsIndexPath);
-      componentsIndexPage.data.componentsFrontmatter = componentsFrontmatter;
+      blogPostsFrontmatter(app);
+      extractFrontmatter(app, '/guides/');
+      extractFrontmatter(app, '/components/');
+      extractFrontmatter(app, '/design/');
     },
-    extendsPage: (page, app) => {
-      if (page.path === '/about/whats_new/') {
-        page.data.blogPosts = [];
-      }
-      if (page.path === '/components/') {
-        page.data.componentsFrontmatter = [];
+    extendsPage: (page) => {
+      switch (page.path) {
+        case '/about/whats_new/':
+          page.data.blogPosts = [];
+          break;
+        case '/components/':
+        case '/guides/':
+        case '/design/':
+          page.data.enhancedFrontmatter = [];
+          break;
       }
     },
   };

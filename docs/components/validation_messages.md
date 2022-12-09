@@ -1,6 +1,7 @@
 ---
 title: Validation messages
 status: ready
+thumb: true
 desc: Validation messages are used to convey information to the user about the current state of the input element. These messages can have an error, warning or success type.
 storybook_url: https://vue.dialpad.design/?path=/story/components-validation-messages--default
 no_preview: true
