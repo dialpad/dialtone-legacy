@@ -8,6 +8,7 @@
 //
 //  TABLE OF CONTENTS
 //  • POPOVER
+//  • CSS CUSTOM PROPERTIES
 //  • POPOVER DIALOG
 //    - Base dialog style
 //    - Content
@@ -16,6 +17,16 @@
 
 //  $  POPOVER
 //  ----------------------------------------------------------------------------
+.d-popover {
+  //  $  CSS CUSTOM PROPERTIES
+  //  ----------------------------------------------------------------------------
+
+  --popover-color-background: var(--black-100);
+  --popover-color-border: var(--black-300);
+  --popover-border-width: var(--size-100); // 8
+  --popover-border-radius: var(--size-400);
+  --popover-shadow: var(--bs-card);
+}
 
 //  $  POPOVER DIALOG
 //  ----------------------------------------------------------------------------
@@ -30,10 +41,12 @@
   display: grid;
   grid-template-rows: auto 1fr;
   overflow: auto;
-  background-color: var(--white);
-  border-color: var(--black-400);
-  border-radius: var(--br8); // 8
-  box-shadow: var(--bs-card);
+  background-color: var(--popover-color-background);
+  border-color: var(--popover-color-border);
+  border-style: solid;
+  border-width: var(--popover-border-width);
+  border-radius: var(--popover-border-radius);
+  box-shadow: var(--popover-shadow);
 }
 
 // to be set on the dialog when it is modal
@@ -49,7 +62,7 @@
 
 //  $$  DIALOG HEADER / FOOTER
 //  ----------------------------------------------------------------------------
-.d-popover__header-footer-base {
+.d-popover__header-footer-base() {
   display: flex;
   align-items: center;
   justify-content: flex-end;
