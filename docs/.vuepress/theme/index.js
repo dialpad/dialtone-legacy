@@ -22,6 +22,31 @@ const mapping = {
   a: 'd-docsite--link d-link',
 };
 
+function blogPostsFrontmatter (app) {
+  const blogIndex = app.pages.find(page => page.path === '/about/whats-new/');
+  blogIndex.data.blogPosts = app.pages
+    .filter(page => page.path.includes('/about/whats-new/posts'))
+    .map(post => ({
+      ...post.frontmatter,
+      firstParagraph: post.contentRendered.split('\n').find(f => f.startsWith('<p>')),
+    }));
+}
+
+function extractFrontmatter (app, path) {
+  const indexPage = app.pages.find(page => page.path === path);
+
+  indexPage.data.enhancedFrontmatter = app.pages
+    .filter(page => page.path.includes(path) && page.path !== path)
+    .map(component => {
+      const fileName = component.frontmatter.title.toLowerCase().replaceAll(' ', '-');
+      return {
+        fileName,
+        link: component.frontmatter.shortTitle || fileName,
+        ...component.frontmatter,
+      };
+    });
+}
+
 export const dialtoneVuepressTheme = (options) => {
   return {
     name: '@dialpad/vuepress-theme-dialtone',
@@ -61,23 +86,22 @@ export const dialtoneVuepressTheme = (options) => {
     extendsMarkdown: (md) => {
       md.use(markdownItClass, mapping);
     },
-    async onInitialized (app) {
-      const blogPostsFrontmatter = app
-        .pages
-        .filter(page => page.path.includes('/about/whats_new/posts'))
-        .map(post => {
-          return {
-            ...post.frontmatter,
-            firstParagraph: post.contentRendered.split('\n').find(f => f.startsWith('<p>')),
-          };
-        });
-
-      const blogIndex = app.pages.find(page => page.path === '/about/whats_new/');
-      blogIndex.data.blogPosts = blogPostsFrontmatter;
+    onInitialized (app) {
+      blogPostsFrontmatter(app);
+      extractFrontmatter(app, '/guides/');
+      extractFrontmatter(app, '/components/');
+      extractFrontmatter(app, '/design/');
     },
-    extendsPage: (page, app) => {
-      if (page.path === '/about/whats_new/') {
-        page.data.blogPosts = [];
+    extendsPage: (page) => {
+      switch (page.path) {
+        case '/about/whats-new/':
+          page.data.blogPosts = [];
+          break;
+        case '/components/':
+        case '/guides/':
+        case '/design/':
+          page.data.enhancedFrontmatter = [];
+          break;
       }
     },
   };

@@ -1,6 +1,8 @@
 ---
 title: Emoji
 desc: "Renders an emoji from a shortcode such as :smile: or unicode character such as 😄."
+status: ready
+thumb: true
 storybook_url: https://vue.dialpad.design/?path=/story/components-emoji--default
 no_preview: true
 ---

@@ -1,12 +1,12 @@
 <template>
   <router-link
     v-slot="{ navigate }"
-    :to="`/about/whats_new/posts/${format(posted, 'y-M-d')}`"
+    :to="`/about/whats-new/posts/${format(posted, 'y-M-d')}`"
     custom
   >
     <dt-link
       class="d-td-none d-fc-unset d-d-block"
-      href="`/about/whats_new/posts/${format(posted, 'y-M-d')}`"
+      href="`/about/whats-new/posts/${format(posted, 'y-M-d')}`"
       @click="(e) => { navigate(e); }"
     >
       <dt-card

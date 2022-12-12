@@ -558,8 +558,6 @@ const watchDocs = function (done) {
     'vuepress', [
       'dev',
       'docs',
-      '--clean-cache',
-      '--clean-temp',
     ], {
       stdio: 'inherit',
       env: { ...process.env },
