@@ -18,7 +18,7 @@
         </div>
         <div class="dialtone-wall__details">
           <div class="dialtone-wall__title">
-            <span class="dialtone-wall__title-text">{{ page.title }}</span>
+            <span class="dialtone-wall__title-text">{{ pageTitle(page) }}</span>
             <span class="d-badge">Planned</span>
           </div>
           <div class="dialtone-wall__description">
@@ -41,7 +41,7 @@
         </div>
         <div class="dialtone-wall__details">
           <div class="dialtone-wall__title">
-            <span class="dialtone-wall__title-text">{{ page.title }}</span>
+            <span class="dialtone-wall__title-text">{{ pageTitle(page) }}</span>
             <span
               v-if="isNew(page.status) || isReady(page.status)"
               class="d-badge d-tt-capitalize"
@@ -84,5 +84,9 @@ const badgeKindClass = (status) => {
     default:
       return '';
   }
+};
+const pageTitle = (page) => {
+  const shortTitle = page.shortTitle ? page.shortTitle[0].toUpperCase() + page.shortTitle.slice(1) : undefined;
+  return shortTitle || page.title;
 };
 </script>
