@@ -26,63 +26,61 @@
   --popover-border-width: var(--size-100); // 8
   --popover-border-radius: var(--size-400);
   --popover-shadow: var(--bs-card);
-}
 
-//  $  POPOVER DIALOG
-//  ----------------------------------------------------------------------------
-.d-popover__dialog {
-  &,
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
+  //  $  POPOVER DIALOG
+  //  ----------------------------------------------------------------------------
+  &__dialog {
+    &,
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    display: grid;
+    grid-template-rows: auto 1fr;
+    overflow: auto;
+    background-color: var(--popover-color-background);
+    border-color: var(--popover-color-border);
+    border-style: solid;
+    border-width: var(--popover-border-width);
+    border-radius: var(--popover-border-radius);
+    box-shadow: var(--popover-shadow);
+
+    // to be set on the dialog when it is modal
+    &--modal {
+      z-index: var(--zi-modal-element);
+    }
   }
 
-  display: grid;
-  grid-template-rows: auto 1fr;
-  overflow: auto;
-  background-color: var(--popover-color-background);
-  border-color: var(--popover-color-border);
-  border-style: solid;
-  border-width: var(--popover-border-width);
-  border-radius: var(--popover-border-radius);
-  box-shadow: var(--popover-shadow);
-}
+  //  $$  DIALOG CONTENT
+  //  ----------------------------------------------------------------------------
+  &__content {
+    overflow: auto;
+  }
 
-// to be set on the dialog when it is modal
-.d-popover__dialog--modal {
-  z-index: var(--zi-modal-element);
-}
+  //  $$  DIALOG HEADER / FOOTER
+  //  ----------------------------------------------------------------------------
 
-//  $$  DIALOG CONTENT
-//  ----------------------------------------------------------------------------
-.d-popover__content {
-  overflow: auto;
-}
+  &__header,
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    min-height: var(--size48);
+    padding-top: calc(var(--space-300) + var(--space-200)); // 6
+    padding-bottom: calc(var(--space-300) + var(--space-200)); // 6
+    overflow: auto;
+    font-weight: var(--fw-semibold);
+    font-size: var(--fs-200);
+  }
 
-//  $$  DIALOG HEADER / FOOTER
-//  ----------------------------------------------------------------------------
-.d-popover__header-footer-base() {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  width: 100%;
-  min-height: var(--size48);
-  padding-top: calc(var(--space-300) + var(--space-200)); // 6
-  padding-bottom: calc(var(--space-300) + var(--space-200)); // 6
-  overflow: auto;
-  font-weight: var(--fw-semibold);
-  font-size: var(--fs-200);
-}
+  &__header {
+    border-bottom: var(--popover-border-width) solid var(--popover-color-border);
+  }
 
-.d-popover__header {
-  .d-popover__header-footer-base();
-
-  border-bottom: var(--size-100) solid var(--black-300);
-}
-
-.d-popover__footer {
-  .d-popover__header-footer-base();
-
-  border-top: var(--size-100) solid var(--black-300);
+  &__footer {
+    border-top: var(--popover-border-width) solid var(--popover-color-border);
+  }
 }
