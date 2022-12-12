@@ -1,6 +1,5 @@
 ---
 title: Writing guidelines
-shortTitle: content
 desc: Guidance on voice and tone, terms, grammar, and more.
 ---
 
