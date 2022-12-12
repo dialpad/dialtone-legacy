@@ -28,6 +28,7 @@
     //  Component CSS Vars
     //  ------------------------------------------------------------------------
     --modal-color-background: hsla(var(--black-900-hsl) ~' / ' 60%);
+    --modal-dialog-padding: var(--space-600);
     --modal-dialog-color-background: var(--white);
     --modal-dialog-color-text: var(--fc-tertiary);
     --modal-header-color-text: var(--fc-secondary);
@@ -84,7 +85,7 @@
   width: 100%;
   max-width: calc(var(--size-300) * 157); // 628
   max-height: 100%;
-  padding: var(--space-600); // 32
+  padding: var(--modal-dialog-padding); // 32
   overflow-y: auto;
   color: var(--modal-dialog-color-text);
   font-size: var(--fs-200);
@@ -186,6 +187,8 @@
 //  $$  FULL WIDTH
 //  ----------------------------------------------------------------------------
 .d-modal--full {
+  --modal-dialog-padding: 0;
+
   padding: 0;
   overflow: hidden scroll;
   transform: unset !important;
