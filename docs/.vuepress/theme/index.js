@@ -23,9 +23,9 @@ const mapping = {
 };
 
 function blogPostsFrontmatter (app) {
-  const blogIndex = app.pages.find(page => page.path === '/about/whats_new/');
+  const blogIndex = app.pages.find(page => page.path === '/about/whats-new/');
   blogIndex.data.blogPosts = app.pages
-    .filter(page => page.path.includes('/about/whats_new/posts'))
+    .filter(page => page.path.includes('/about/whats-new/posts'))
     .map(post => ({
       ...post.frontmatter,
       firstParagraph: post.contentRendered.split('\n').find(f => f.startsWith('<p>')),
@@ -37,11 +37,14 @@ function extractFrontmatter (app, path) {
 
   indexPage.data.enhancedFrontmatter = app.pages
     .filter(page => page.path.includes(path) && page.path !== path)
-    .map(component => ({
-      name: component.frontmatter.title.toLowerCase().replaceAll(' ', '-'),
-      link: component.frontmatter.title.toLowerCase().replaceAll(' ', '_'),
-      ...component.frontmatter,
-    }));
+    .map(component => {
+      const fileName = component.frontmatter.title.toLowerCase().replaceAll(' ', '-');
+      return {
+        fileName,
+        link: component.frontmatter.shortTitle || fileName,
+        ...component.frontmatter,
+      };
+    });
 }
 
 export const dialtoneVuepressTheme = (options) => {
@@ -91,7 +94,7 @@ export const dialtoneVuepressTheme = (options) => {
     },
     extendsPage: (page) => {
       switch (page.path) {
-        case '/about/whats_new/':
+        case '/about/whats-new/':
           page.data.blogPosts = [];
           break;
         case '/components/':

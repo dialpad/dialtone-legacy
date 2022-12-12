@@ -12,8 +12,8 @@
           <img
             v-if="page.thumb"
             class="dialtone-wall__thumb"
-            :alt="`${page.name}-thumbnail`"
-            :src="$withBase(`/assets/images/${basePath}/${page.name}.png`)"
+            :alt="`${page.fileName}-thumbnail`"
+            :src="$withBase(`/assets/images/${basePath}/${page.fileName}.png`)"
           >
         </div>
         <div class="dialtone-wall__details">
@@ -35,8 +35,8 @@
           <img
             v-if="page.thumb"
             class="dialtone-wall__thumb"
-            :alt="`${page.name}-thumbnail`"
-            :src="$withBase(`/assets/images/${basePath}/${page.name}.png`)"
+            :alt="`${page.fileName}-thumbnail`"
+            :src="$withBase(`/assets/images/${basePath}/${page.fileName}.png`)"
           >
         </div>
         <div class="dialtone-wall__details">

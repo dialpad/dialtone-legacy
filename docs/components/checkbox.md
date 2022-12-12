@@ -32,7 +32,7 @@ Checkboxes are an easily understandable way to indicate that users can select on
 </template>
 <template #dont>
 
-- If a user can only select one option from a list; consider using [Radio](radio.md) or [Select](select_menu.md).
+- If a user can only select one option from a list; consider using [Radio](radio.md) or [Select](select-menu.md).
 - If there are too many options to reasonably display in its context.
 </template>
 </dialtone-usage>

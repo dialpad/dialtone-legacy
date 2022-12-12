@@ -28,7 +28,7 @@ This component combines both the `input` and `textarea` elements as options with
 </template>
 <template #dont>
 
-- When users are choosing from a specific set of options. Consider [Select](select_menu.md), [Radio](radio.md), or [Checkbox](checkbox.md).
+- When users are choosing from a specific set of options. Consider [Select](select-menu.md), [Radio](radio.md), or [Checkbox](checkbox.md).
 </template>
 </dialtone-usage>
 
