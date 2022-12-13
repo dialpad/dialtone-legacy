@@ -20,7 +20,7 @@ Key foreground colors rendered on surfaces to indicate hierarchy and importance.
       <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42" style="background-color: var(--fc-primary)"></div></th>
       <td>
         <div class="d-d-flex d-jc-space-between d-ai-center">
-          <div class="d-fl0 d-fs-300 d-fc-primary d-p6">
+          <div class="d-fl0 d-fs-300 d-fc-primary d-p6 d-fw-medium">
             Aa
           </div>
         </div>
@@ -36,7 +36,7 @@ Key foreground colors rendered on surfaces to indicate hierarchy and importance.
       <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42" style="background-color: var(--fc-secondary)"></div></th>
       <td>
         <div class="d-d-flex d-jc-space-between d-ai-center">
-          <div class="d-fl0 d-fs-300 d-fc-secondary d-p6">
+          <div class="d-fl0 d-fs-300 d-fc-secondary d-p6 d-fw-medium">
             Aa
           </div>
         </div>
@@ -52,7 +52,7 @@ Key foreground colors rendered on surfaces to indicate hierarchy and importance.
       <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42" style="background-color: var(--fc-tertiary)"></div></th>
       <td>
         <div class="d-d-flex d-jc-space-between d-ai-center">
-          <div class="d-fl0 d-fs-300 d-fc-tertiary d-p6">
+          <div class="d-fl0 d-fs-300 d-fc-tertiary d-p6 d-fw-medium">
             Aa
           </div>
         </div>
@@ -68,14 +68,14 @@ Key foreground colors rendered on surfaces to indicate hierarchy and importance.
       <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42" style="background-color: var(--fc-primary-inverted)"></div></th>
       <td>
         <div class="d-d-flex d-jc-space-between d-ai-center">
-          <div class="d-fl0 d-fs-300 d-fc-primary-inverted d-bgc-black-900 d-p6">
+          <div class="d-fl0 d-fs-300 d-fc-primary-inverted d-bgc-black-900 d-p6 d-bar2 d-fw-medium">
             Aa
           </div>
         </div>
       </td>
       <th scope="row" class="d-lh-300">
         Primary inverted
-        <div class="d-fw-normal">Primary text that sits on contrasting surfaces or backgrounds</div>
+        <div class="d-fw-normal">Primary text that sits on high-contrast surfaces or backgrounds.</div>
       </th>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--fc-primary-inverted)</td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-primary-inverted</td>
@@ -84,14 +84,14 @@ Key foreground colors rendered on surfaces to indicate hierarchy and importance.
       <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42" style="background-color: var(--fc-secondary-inverted)"></div></th>
       <td>
         <div class="d-d-flex d-jc-space-between d-ai-center">
-          <div class="d-fl0 d-fs-300 d-fc-secondary-inverted d-bgc-black-900 d-p6">
+          <div class="d-fl0 d-fs-300 d-fc-secondary-inverted d-bgc-black-900 d-p6 d-bar2 d-fw-medium">
             Aa
           </div>
         </div>
       </td>
       <th scope="row" class="d-lh-300">
         Secondary inverted
-        <div class="d-fw-normal">Secondary text color that sits on contrasting surfaces or backgrounds</div>
+        <div class="d-fw-normal">Secondary text color that sits on high-contrast surfaces or backgrounds.</div>
       </th>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--fc-secondary-inverted)</td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-secondary-inverted</td>
@@ -100,14 +100,14 @@ Key foreground colors rendered on surfaces to indicate hierarchy and importance.
       <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42" style="background-color: var(--fc-placeholder)"></div></th>
       <td>
         <div class="d-d-flex d-jc-space-between d-ai-center">
-          <div class="d-fl0 d-fs-300 d-fc-placeholder d-p6">
+          <div class="d-fl0 d-fs-300 d-fc-placeholder d-p6 d-fw-medium">
             Aa
           </div>
         </div>
       </td>
       <th scope="row" class="d-lh-300">
         Placeholder
-        <div class="d-fw-normal">Text color for placeholder text within form elements</div>
+        <div class="d-fw-normal">Text color for placeholder text within form elements.</div>
       </th>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--fc-placeholder)</td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-placeholder</td>
@@ -116,7 +116,7 @@ Key foreground colors rendered on surfaces to indicate hierarchy and importance.
       <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42" style="background-color: var(--fc-disabled)"></div></th>
       <td>
         <div class="d-d-flex d-jc-space-between d-ai-center">
-          <div class="d-fl0 d-fs-300 d-fc-disabled d-p6">
+          <div class="d-fl0 d-fs-300 d-fc-disabled d-p6 d-fw-medium">
             Aa
           </div>
         </div>
@@ -132,14 +132,14 @@ Key foreground colors rendered on surfaces to indicate hierarchy and importance.
       <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42" style="background-color: var(--fc-muted)"></div></th>
       <td>
         <div class="d-d-flex d-jc-space-between d-ai-center">
-          <div class="d-fl0 d-fs-300 d-fc-muted d-p6">
+          <div class="d-fl0 d-fs-300 d-fc-muted d-p6 d-fw-medium">
             Aa
           </div>
         </div>
       </td>
       <th scope="row" class="d-lh-300">
         Muted
-        <div class="d-fw-normal">{DESCRIPTION}</div>
+        <!-- <div class="d-fw-normal">{DESCRIPTION}</div> -->
       </th>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--fc-muted)</td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-muted</td>
@@ -164,14 +164,14 @@ Foreground colors distinguishing important information with a status role.
       <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42" style="background-color: var(--fc-error)"></div></th>
       <td>
         <div class="d-d-flex d-jc-space-between d-ai-center">
-          <div class="d-fl0 d-fs-300 d-fc-error d-p6">
+          <div class="d-fl0 d-fs-300 d-fc-error d-p6 d-fw-medium">
             Aa
           </div>
         </div>
       </td>
       <th scope="row" class="d-lh-300">
         Error
-        <div class="d-fw-normal">Expresses an error, danger, or an otherwise critical state</div>
+        <div class="d-fw-normal">Expresses an error, danger, or an otherwise critical state.</div>
       </th>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--fc-error)</td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-error</td>
@@ -180,7 +180,7 @@ Foreground colors distinguishing important information with a status role.
       <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42" style="background-color: var(--fc-success)"></div></th>
       <td>
         <div class="d-d-flex d-jc-space-between d-ai-center">
-          <div class="d-fl0 d-fs-300 d-fc-success d-p6">
+          <div class="d-fl0 d-fs-300 d-fc-success d-p6 d-fw-medium">
             Aa
           </div>
         </div>
@@ -196,14 +196,14 @@ Foreground colors distinguishing important information with a status role.
       <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42" style="background-color: var(--fc-warning)"></div></th>
       <td>
         <div class="d-d-flex d-jc-space-between d-ai-center">
-          <div class="d-fl0 d-fs-300 d-fc-warning d-p6">
+          <div class="d-fl0 d-fs-300 d-fc-warning d-p6 d-fw-medium">
             Aa
           </div>
         </div>
       </td>
       <th scope="row" class="d-lh-300">
         Warning
-        <div class="d-fw-normal">Indicates information that requires user’s attention and further action may be necessary</div>
+        <div class="d-fw-normal">Indicates information that requires user’s attention and further action may be necessary.</div>
       </th>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--fc-warning)</td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-warning</td>
@@ -221,7 +221,7 @@ Background colors for default application UI surfaces. Surface colors are used f
   </div>
   <div class="d-notice__content d-stack4">
     <p class="d-notice__message">
-      <strong>Planned</strong>. In the meantime continue to rely on components' built-in surface colors and <router-link class="d-link" to="/utilities/backgrounds/color.html">background color CSS utilities</router-link>.
+      <strong>Planned</strong>. In the meantime continue to rely on components' built-in surface colors and <router-link class="d-link" to="/utilities/backgrounds/color.html">background color CSS utilities</router-link>, and work with your Product Designer to validate.
     </p>
   </div>
 </aside>
@@ -236,28 +236,20 @@ Define the edge of key content area, components, or surfaces.
   </div>
   <div class="d-notice__content d-stack4">
     <p class="d-notice__message">
-      <strong>Planned</strong>. In the meantime continue to rely on components' built-in border colors and <router-link class="d-link" to="/utilities/borders/color.html">border color CSS utilities</router-link>.
+      <strong>Planned</strong>. In the meantime continue to rely on components' built-in border colors and <router-link class="d-link" to="/utilities/borders/color.html">border color CSS utilities</router-link>, and work with your Product Designer to validate.
     </p>
   </div>
 </aside>
-
-## Base colors
-
-Base colors are the literal value of all available colors. Use these if all abstracted text, status text, surface, or border colors to not fit your need.
-
-Each of the colors listed above referenced one of these. For example, `var(--fc-primary)` is an alias to `var(--black-900)`, and `var(--fc-error)` is an alias to `var(--red-400)`.
-
-<colors></colors>
 
 ## Theme
 
 <table class="d-table dialtone-doc-table d-mt16">
   <thead>
     <tr>
-      <th scope="col">
+      <th scope="col" class="d-pl0">
         Color
       </th>
-      <th scope="col" class="d-pl0">
+      <th scope="col">
         Section
       </th>
       <th scope="col">
@@ -299,7 +291,7 @@ Each of the colors listed above referenced one of these. For example, `var(--fc-
     </tr>
     <tr>
       <td class="d-pl0">
-        <div class="d-fs-300 d-p6 d-theme-topbar-f-circle d-ta-center"> Aa </div>
+        <div class="d-fs-300 d-p6 d-theme-topbar-f-circle d-ta-center d-fw-medium"> Aa </div>
       </td>
       <th scope="row">
         Topbar
@@ -343,7 +335,7 @@ Each of the colors listed above referenced one of these. For example, `var(--fc-
     </tr>
     <tr>
       <td class="d-pl0">
-        <div class="d-fs-300 d-p6 d-theme-sidebar-f-circle d-ta-center"> Aa </div>
+        <div class="d-fs-300 d-p6 d-theme-sidebar-f-circle d-ta-center d-fw-medium"> Aa </div>
       </td>
       <th scope="row">
         Sidebar
@@ -365,7 +357,7 @@ Each of the colors listed above referenced one of these. For example, `var(--fc-
     </tr>
     <tr>
       <td class="d-pl0">
-        <div class="d-fs-300 d-p6 d-theme-sidebar-f-circle d-fco75 d-ta-center"> Aa </div>
+        <div class="d-fs-300 d-p6 d-theme-sidebar-f-circle d-fco75 d-ta-center d-fw-medium"> Aa </div>
       </td>
       <th scope="row">
         Sidebar
@@ -453,7 +445,7 @@ Each of the colors listed above referenced one of these. For example, `var(--fc-
     </tr>
     <tr>
       <td class="d-pl0">
-        <div class="d-fs-300 d-p6 d-theme-sidebar-row-active-f-circle d-ta-center"> Aa </div>
+        <div class="d-fs-300 d-p6 d-theme-sidebar-row-active-f-circle d-ta-center d-fw-medium"> Aa </div>
       </td>
       <th scope="row">
         Sidebar
@@ -563,3 +555,11 @@ Each of the colors listed above referenced one of these. For example, `var(--fc-
     </tr>
   </tbody>
 </table>
+
+## Base palette
+
+Base colors are the literal value of all available colors. Use these if all abstracted text, status text, surface, or border colors to not fit your need.
+
+Each of the colors listed above references one of these. For example, `var(--fc-primary)` is an alias to `var(--black-900)`, and `var(--fc-error)` is an alias to `var(--red-400)`.
+
+<colors></colors>

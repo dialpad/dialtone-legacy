@@ -3,6 +3,17 @@ title: Border colors
 desc: Utilities for controlling an element's border color.
 ---
 
+<aside class="d-notice d-notice--warning d-mt24 d-wmx100p" role="status" aria-hidden="false">
+  <div class="d-notice__icon">
+    <dt-icon name="alert-triangle"></dt-icon>
+  </div>
+  <div class="d-notice__content d-stack4">
+    <p class="d-notice__message">
+      Before using border color utilities, first consider <router-link to="/design/colors/#borders">semantic border colors</router-link>.
+    </p>
+  </div>
+</aside>
+
 ## Usage
 
 Use `d-bc-{color}` to set an element's border color.
