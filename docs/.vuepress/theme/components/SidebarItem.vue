@@ -35,7 +35,7 @@
         <p
           v-else
           tabindex="0"
-          class="d-td-none d-fc-muted"
+          class="d-td-none d-fc-muted d-td-none d-py4"
         >
           {{ subItem.text }}
           <dt-badge
@@ -53,7 +53,7 @@
 <script setup>
 import { computed } from 'vue';
 
-const itemClass = 'd-my4 d-link';
+const itemClass = 'd-py4 d-link';
 const props = defineProps({
   item: {
     type: Object,

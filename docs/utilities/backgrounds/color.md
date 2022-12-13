@@ -3,6 +3,17 @@ title: Background colors
 desc: Utilities for setting background colors.
 ---
 
+<aside class="d-notice d-notice--warning d-mt24 d-wmx100p" role="status" aria-hidden="false">
+  <div class="d-notice__icon">
+    <dt-icon name="alert-triangle"></dt-icon>
+  </div>
+  <div class="d-notice__content d-stack4">
+    <p class="d-notice__message">
+      Before using background color utilities, first consider <router-link to="/design/colors/#surface">semantic surface colors</router-link>.
+    </p>
+  </div>
+</aside>
+
 ## Usage
 
 Use `d-bgc-{color}` to set an element's background color.
