@@ -43,7 +43,7 @@ Key foreground colors rendered on surfaces to indicate hierarchy and importance.
       </td>
       <th scope="row" class="d-lh-300">
         Secondary
-        <div class="d-fw-normal">Examples uses include introduction paragraphs, labels, and descriptions paired with form elements.</div>
+        <div class="d-fw-normal">Example uses include introduction paragraphs, labels, and descriptions paired with form elements.</div>
       </th>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--fc-secondary)</td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-secondary</td>
