@@ -1,5 +1,6 @@
 ---
 title: Accessibility and inclusive design
+shortTitle: accessibility
 desc: Guidance on building products for everyone.
 ---
 

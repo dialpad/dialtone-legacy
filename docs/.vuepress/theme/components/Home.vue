@@ -47,7 +47,7 @@
           </router-link>
           <router-link
             v-slot="{ navigate }"
-            to="/about/whats_new/"
+            to="/about/whats-new/"
             custom
           >
             <dt-button

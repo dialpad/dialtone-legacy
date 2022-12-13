@@ -1,6 +1,8 @@
 ---
 title: Card
 desc: A card contains summary content and actions about a single subject. It can be used by itself or within a list, and is generally interactive.
+status: ready
+thumb: true
 storybook_url: https://vue.dialpad.design/?path=/story/components-card--default
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: Color
+title: Colors
 desc: A functional, personal, and accessible color palette.
 ---
 

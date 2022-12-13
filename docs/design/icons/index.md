@@ -1,5 +1,6 @@
 ---
 title: Iconography
+shortTitle: icons
 desc: An icon style for visually communicating commands, status, and more.
 ---
 

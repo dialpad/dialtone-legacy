@@ -3,6 +3,7 @@ import { defineClientConfig } from '@vuepress/client';
 // Common views
 import Icons from './views/Icons.vue';
 import Colors from './views/Colors.vue';
+import Overview from './views/Overview.vue';
 
 // Base components
 import CodeWellHeader from './baseComponents/CodeWellHeader.vue';
@@ -29,6 +30,7 @@ export default defineClientConfig({
     // Common views
     app.component('Icons', Icons);
     app.component('Colors', Colors);
+    app.component('Overview', Overview);
 
     // Base components
     app.component('CodeWellHeader', CodeWellHeader);
