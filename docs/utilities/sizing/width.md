@@ -94,8 +94,8 @@ Use `d-w100vh` to have an element cover the user's viewport.
 
 Use `d-w-auto` have the browser calculate and select a width.
 
-<code-well-header class="d-ps-relative d-d-flex d-jc-center d-p24 d-bgc-orange-100 d-bgo50 d-w100p d-hmn102 d-stack16" custom>
-  <div class="d-fl-center d-py16 d-px8 d-h72 d-w-auto d-bgc-orange-400 d-bar4 d-fs-300 d-fw-bold d-ta-center">Auto</div>
+<code-well-header class="d-ps-relative d-d-flex d-jc-center d-p24 d-bgc-blue-100 d-bgo50 d-w100p d-hmn102 d-stack16" custom>
+  <div class="d-fl-center d-py16 d-px8 d-h72 d-w-auto d-bgc-blue-200 d-bar4 d-fs-300 d-fw-bold d-ta-center">Auto</div>
 </code-well-header>
 
 ```html

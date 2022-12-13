@@ -120,11 +120,11 @@ Use `d-jc-space-between` to justify items along the element's main axis so that 
 
 Use `d-jc-space-evenly` to justify items along the element's main axis so that there is an equal amount of space on each side of the item, but unlike `d-jc-space-around` visually evenly spaces objects.
 
-<code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-orange-100 d-bgo50 d-w100p d-hmn102" custom>
-  <div class="d-d-flex d-jc-space-evenly d-w100p d-bar8 d-bgc-orange-100">
-    <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-orange-300 d-bar4 d-fs-300 d-fw-bold">1</div>
-    <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-orange-300 d-bar4 d-fs-300 d-fw-bold">2</div>
-    <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-orange-300 d-bar4 d-fs-300 d-fw-bold">3</div>
+<code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-blue-100 d-bgo50 d-w100p d-hmn102" custom>
+  <div class="d-d-flex d-jc-space-evenly d-w100p d-bar8 d-bgc-blue-200">
+    <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-blue-300 d-bar4 d-fs-300 d-fw-bold">1</div>
+    <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-blue-300 d-bar4 d-fs-300 d-fw-bold">2</div>
+    <div class="d-fl-center d-m8 d-p16 d-w64 d-h64 d-bgc-blue-300 d-bar4 d-fs-300 d-fw-bold">3</div>
   </div>
 </code-well-header>
 

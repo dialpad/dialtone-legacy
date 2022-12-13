@@ -108,11 +108,11 @@ The `flex-flow` property is a shorthand property that sets allows you to quickly
   </tbody>
 </table>
 
-<code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-orange-100 d-bgo50 d-w100p d-hmn216">
-  <div class="d-d-flex d-ff-row-reverse-wrap d-w100p d-bar8 d-bgc-orange-100">
-    <div class="d-fl-center d-m8 d-p16 d-w25p d-h64 d-bgc-orange-400 d-bar4 d-fs-300 d-fw-bold">1</div>
-    <div class="d-fl-center d-m8 d-p16 d-w50p d-h64 d-bgc-orange-400 d-bar4 d-fs-300 d-fw-bold">2</div>
-    <div class="d-fl-center d-m8 d-p16 d-w75p d-h64 d-bgc-orange-400 d-bar4 d-fs-300 d-fw-bold">3</div>
+<code-well-header class="d-fl-center d-fd-column d-p24 d-bgc-blue-100 d-bgo50 d-w100p d-hmn216">
+  <div class="d-d-flex d-ff-row-reverse-wrap d-w100p d-bar8 d-bgc-blue-200">
+    <div class="d-fl-center d-m8 d-p16 d-w25p d-h64 d-bgc-blue-400 d-bar4 d-fs-300 d-fw-bold">1</div>
+    <div class="d-fl-center d-m8 d-p16 d-w50p d-h64 d-bgc-blue-400 d-bar4 d-fs-300 d-fw-bold">2</div>
+    <div class="d-fl-center d-m8 d-p16 d-w75p d-h64 d-bgc-blue-400 d-bar4 d-fs-300 d-fw-bold">3</div>
   </div>
 </code-well-header>
 

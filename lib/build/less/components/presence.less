@@ -9,46 +9,47 @@
 //  visit https://dialpad.design/components/presence
 
 .d-presence {
-  --color-border-base: var(--black-100);
-  --color-border-offline: var(--black-400);
-  --color-background-base: var(--white);
-  --color-background-active: var(--green-400);
-  --color-background-busy: var(--red-300);
-  --color-background-away: var(--gold-200);
-  --color-background-offline: var(--white);
+  --presence-color-border-base: var(--black-100);
+  --presence-color-border-offline: var(--black-400);
+  --presence-color-background-base: var(--black-400);
+  --presence-color-background-active: var(--green-400);
+  --presence-color-background-busy: var(--red-300);
+  --presence-color-background-away: var(--gold-300);
+  --presence-color-background-offline: var(--white);
+  --presence-size: var(--size-200);
 
   display: inline-block;
   box-sizing: border-box;
-  border-color: var(--color-border-base);
+  border-color: var(--presence-color-border-base);
   border-style: solid;
-  border-width: var(--su2);
-  border-radius: 50%;
+  border-width: var(--presence-size);
+  border-radius: var(--br-circle);
 
   &__inner {
     box-sizing: border-box;
-    width: var(--su8);
-    height: var(--su8);
-    background-color: var(--color-background-base);
+    width: var(--size-400);
+    height: var(--size-400);
+    background-color: var(--presence-color-background-base);
     border: none;
     border-radius: 50%;
   }
 
   &__inner--active {
-    background-color: var(--color-background-active);
+    background-color: var(--presence-color-background-active);
   }
 
   &__inner--busy {
-    background-color: var(--color-background-busy);
+    background-color: var(--presence-color-background-busy);
   }
 
   &__inner--away {
-    background-color: var(--color-background-away);
+    background-color: var(--presence-color-background-away);
   }
 
   &__inner--offline {
-    background-color: var(--color-background-offline);
-    border-color: var(--color-border-offline);
+    background-color: var(--presence-color-background-offline);
+    border-color: var(--presence-color-border-offline);
     border-style: solid;
-    border-width: var(--su2);
+    border-width: var(--size-200);
   }
 }

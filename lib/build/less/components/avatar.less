@@ -10,7 +10,6 @@
 //  • BASE STYLE
 //    • SIZES
 //    • COLORS
-//  • ALTERNATE STYLES
 //
 //  ============================================================================
 //  $   BASE STYLE
@@ -18,182 +17,87 @@
 .d-avatar {
   //  Component CSS Vars
   //  ------------------------------------------------------------------------
-  --avatar--fc: var(--fc-tertiary);
-  --avatar--bgc: var(--fc-primary);
-  --avatar--size: var(--su12);
+  --avatar-color-background: var(--gold-100);
+  --avatar-color-text: var(--fc-secondary);
+  --avatar-gradient-angle: 180deg;
+  --avatar-gradient-stop-1: var(--gold-100);
+  --avatar-gradient-stop-2: var(--magenta-100);
+  --avatar-gradient-stop-3: var(--blue-200);
+  --avatar-gradient:
+    conic-gradient(
+      from var(--avatar-gradient-angle) at 50% 50%,
+      var(--avatar-gradient-stop-1) 0deg,
+      var(--avatar-gradient-stop-2) 180deg,
+      var(--avatar-gradient-stop-3) 360deg
+    );
+  --avatar-size-shape: var(--size-600);
+  --avatar-size-text: var(--fs-200);
+  --avatar-presence-position-right: calc(var(--space-200) * -1); // -2
+  --avatar-presence-position-bottom: calc(var(--space-200) * -1); // -2
 
   position: relative;
-  width: var(--avatar--size);
-  height: var(--avatar--size);
-  color: var(--avatar--fc);
-  background-color: var(--avatar--bgc);
-  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--avatar-size-shape);
+  height: var(--avatar-size-shape);
+  color: var(--avatar-color-text);
+  font-weight: var(--fw-bold);
+  font-size: var(--avatar-size-text);
+  line-height: var(--lh-100);
+  text-transform: uppercase;
+  background-color: var(--avatar-color-background);
+  background-image: var(--avatar-gradient);
+  border-radius: var(--br-pill);
 
-  img {
-    width: var(--avatar--size);
-    height: var(--avatar--size);
+  &__image {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     border-radius: inherit;
   }
 
-  //  --  SIZES
-  //  ------------------------------------------------------------------------
-  &.d-avatar--sm {
-    --avatar--size: var(--su24);
+  &__presence {
+    position: absolute;
+    right: var(--avatar-presence-position-right);
+    bottom: var(--avatar-presence-position-bottom);
+    display: flex;
   }
-
-  &.d-avatar--md {
-    --avatar--size: var(--su32);
-  }
-
-  &.d-avatar--lg {
-    --avatar--size: var(--su48);
-  }
-
-  //  --  COLORS
-  //  ------------------------------------------------------------------------
-  &.d-avatar--purple-600 {
-      --avatar--fc: var(--white);
-      --avatar--bgc: var(--purple-600);
-  }
-
-  &.d-avatar--purple-500 {
-      --avatar--fc: var(--white);
-      --avatar--bgc: var(--purple-500);
-  }
-
-  &.d-avatar--purple-400 {
-      --avatar--fc: var(--white);
-      --avatar--bgc: var(--purple-400);
-  }
-
-  &.d-avatar--purple-300 {
-      --avatar--fc: var(--purple-600);
-      --avatar--bgc: var(--purple-300);
-  }
-
-  &.d-avatar--purple-200 {
-      --avatar--fc: var(--purple-600);
-      --avatar--bgc: var(--purple-200);
-  }
-
-  &.d-avatar--orange-500 {
-      --avatar--fc: var(--white);
-      --avatar--bgc: var(--orange-500);
-  }
-
-  &.d-avatar--orange-400 {
-      --avatar--fc: var(--orange-600);
-      --avatar--bgc: var(--orange-400);
-  }
-
-  &.d-avatar--orange-300 {
-      --avatar--fc: var(--orange-600);
-      --avatar--bgc: var(--orange-300);
-  }
-
-  &.d-avatar--orange-200 {
-      --avatar--fc: var(--orange-600);
-      --avatar--bgc: var(--orange-200);
-  }
-
-  &.d-avatar--magenta-400 {
-      --avatar--fc: var(--white);
-      --avatar--bgc: var(--magenta-400);
-  }
-
-  &.d-avatar--magenta-300 {
-      --avatar--fc: var(--white);
-      --avatar--bgc: var(--magenta-300);
-  }
-
-  &.d-avatar--magenta-200 {
-      --avatar--fc: var(--magenta-500);
-      --avatar--bgc: var(--magenta-200);
-  }
-
-  &.d-avatar--magenta-100 {
-      --avatar--fc: var(--magenta-500);
-      --avatar--bgc: var(--magenta-100);
-  }
-
-  &.d-avatar--gold-500 {
-      --avatar--fc: var(--white);
-      --avatar--bgc: var(--gold-500);
-  }
-
-  &.d-avatar--gold-300 {
-      --avatar--fc: var(--gold-500);
-      --avatar--bgc: var(--gold-300);
-  }
-
-  &.d-avatar--gold-200 {
-      --avatar--fc: var(--gold-500);
-      --avatar--bgc: var(--gold-200);
-  }
-
-  &.d-avatar--gold-100 {
-      --avatar--fc: var(--gold-500);
-      --avatar--bgc: var(--gold-100);
-  }
-}
-
-
-//  ============================================================================
-//  $   ALTERNATE STYLES
-//  ============================================================================
-//  $$  INITIALS
-//  ----------------------------------------------------------------------------
-.d-avatar--initials {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: var(--fw-bold);
-  font-family: inherit;
-  text-align: center;
 
   //  --  SIZES
   //  ------------------------------------------------------------------------
-  &.d-avatar--sm {
-    font-size: var(--fs-100);
+
+  &--xs {
+    --avatar-size-shape: calc(var(--size-500) + var(--size-200)); // 18
+    --avatar-presence-position-right: calc(var(--space-300) * -1); // -4
+    --avatar-presence-position-bottom: calc(var(--space-300) * -1); // -4
   }
 
-  &.d-avatar--md {
-    font-size: var(--fs-200);
+  &--sm {
+    --avatar-size-shape: calc(var(--size-500) + var(--size-400)); // 24
+    --avatar-size-text: var(--fs-100);
+    --avatar-presence-position-right: calc(var(--space-200) * -1); // -2
+    --avatar-presence-position-bottom: calc(var(--space-200) * -1); // -2
   }
 
-  &.d-avatar--lg {
-    font-size: var(--fs-300);
-  }
-}
-
-//  $$  ICON
-//  ----------------------------------------------------------------------------
-.d-avatar--icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  //  --  SIZES
-  //  ------------------------------------------------------------------------
-  &.d-avatar--sm {
-    .d-svg {
-      width: var(--su16);
-      height: var(--su16);
-    }
+  &--md {
+    --avatar-size-shape: var(--size-600); // 32
+    --avatar-size-text: var(--fs-200);
+    --avatar-presence-position-right: calc(var(--space-100) * -1); // -1
+    --avatar-presence-position-bottom: calc(var(--space-100) * -1); // -1
   }
 
-  &.d-avatar--md {
-    .d-svg {
-      width: var(--su24);
-      height: var(--su24);
-    }
+  &--lg {
+    --avatar-size-shape: calc(var(--size-600) + var(--size-500)); // 48
+    --avatar-size-text: var(--fs-300);
+    --avatar-presence-position-right: var(--space-100); // 1
+    --avatar-presence-position-bottom: var(--space-100); // 1
   }
 
-  &.d-avatar--lg {
-    .d-svg {
-      width: var(--su32);
-      height: var(--su32);
-    }
+  &--xl {
+    --avatar-size-shape: var(--size-700); // 64
+    --avatar-size-text: var(--fs-400);
+    --avatar-presence-position-right: var(--space-300); // 4
+    --avatar-presence-position-bottom: var(--space-300); // 4
   }
 }

@@ -13,6 +13,7 @@
         class="d-avatar"
       >
         <img
+          class="d-avatar__image"
           :src="$withBase('/assets/images/person.png')"
           alt="Person avatar image"
         >

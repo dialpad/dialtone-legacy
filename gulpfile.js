@@ -32,6 +32,8 @@ const breakpoints = [
 const classes = [
   /\.d-d-*/,
   /\.d-mt*/,
+  /\.d-t0/,
+  /\.d-pt*/,
   /\.d-g-cols*/,
   /\.d-w100p*/,
   /\.d-jc-*/,
@@ -47,7 +49,6 @@ const del = require('del');
 const rename = require('gulp-rename');
 const cache = require('gulp-cached');
 const concat = require('gulp-concat');
-const remember = require('gulp-remember');
 const through2 = require('through2');
 const argv = require('yargs').argv;
 
@@ -108,8 +109,6 @@ const paths = {
   styles: {
     inputLib: './lib/build/less/dialtone.less',
     outputLib: './lib/dist/css/',
-    inputDocs: './docs/assets/less/dialtone-docs.less',
-    outputDocs: './docs/assets/css/',
   },
   svgs: {
     sysInput: './lib/build/svg/system/**/*.svg',
@@ -164,7 +163,6 @@ const paths = {
   },
   watch: {
     lib: './lib/build/less/**/*',
-    docs: './docs/assets/less/*',
   },
 };
 
@@ -225,16 +223,13 @@ const libStyles = function (done) {
 
   //  Compile library files
   return src(paths.styles.inputLib)
-  // .pipe(cache('libStyles'))
     .pipe(less())
     .pipe(replace('../../fonts/', '../fonts/'))
     .pipe(postcss([postcssResponsify, postcssFocusVisible]))
     .pipe(dest(paths.styles.outputLib))
-    .pipe(dest(paths.styles.outputDocs))
     .pipe(postcss([cssnano]))
     .pipe(rename({ suffix: '.min' }))
-    .pipe(dest(paths.styles.outputLib))
-    .pipe(dest(paths.styles.outputDocs));
+    .pipe(dest(paths.styles.outputLib));
 };
 
 const libStylesDev = function (done) {
@@ -243,38 +238,12 @@ const libStylesDev = function (done) {
 
   //  Compile library files
   return src(paths.styles.inputLib)
-  // compile less to css
+    // compile less to css
     .pipe(less())
     .pipe(postcss([postcssResponsify, postcssFocusVisible]))
-  // concat the css into a single file
+    // concat the css into a single file
     .pipe(concat('dialtone.css'))
-    .pipe(dest(paths.styles.outputLib))
-    .pipe(dest(paths.styles.outputDocs));
-};
-
-//  --  DOCUMENTATION FILES
-const docStyles = function (done) {
-  //  Make sure this feature is activated before running
-  if (!settings.styles) return done();
-
-  //  Compile documentation files
-  return src(paths.styles.inputDocs)
-    .pipe(less())
-    .pipe(dest(paths.styles.outputDocs))
-    .pipe(postcss([cssnano()]))
-    .pipe(rename({ suffix: '.min' }))
-    .pipe(dest(paths.styles.outputDocs));
-};
-
-//  --  DOCUMENTATION FILES DEV
-const docStylesDev = function (done) {
-  //  Make sure this feature is activated before running
-  if (!settings.styles) return done();
-
-  //  Compile documentation files
-  return src(paths.styles.inputDocs)
-    .pipe(less())
-    .pipe(dest(paths.styles.outputDocs));
+    .pipe(dest(paths.styles.outputLib));
 };
 
 const moveStyleTagsToEOF = function (file, enc, cb) {
@@ -424,7 +393,8 @@ const buildSpotIllustrationSVGs = function (done) {
   if (!settings.spot) return done();
   //  Compile system icons
   return src(paths.spot.input)
-  // replace any instances of the primary color in SVG with the theme class
+    .pipe(cache('buildSpotIllustrationSVGs'))
+    // replace any instances of the primary color in SVG with the theme class
     .pipe(replace('<svg', function (match) {
       const name = path.parse(this.file.path).name;
       const converted = name.toLowerCase().replace(/-(.)/g, function (match, group1) {
@@ -588,8 +558,6 @@ const watchDocs = function (done) {
     'vuepress', [
       'dev',
       'docs',
-      '--clean-cache',
-      '--clean-temp',
     ], {
       stdio: 'inherit',
       env: { ...process.env },
@@ -605,16 +573,9 @@ const watchFiles = function (done) {
   if (!settings.watch) return done();
 
   //  Watch files
-  const watcher = watch([
+  watch([
     paths.watch.lib,
-    paths.watch.docs,
   ], series(exports.buildWatch));
-  watcher.on('change', function (event) {
-    if (event.type === 'deleted') { // if a file is deleted, forget about it
-      delete cache.caches.libStylesDev[event.path];
-      remember.forget('libStylesDev', event.path);
-    }
-  });
   done();
 };
 
@@ -647,6 +608,7 @@ const buildNewSVGIcons = function (done) {
 
   //  Compile icons
   return src(paths.version7.input)
+    .pipe(cache('buildNewSVGIcons'))
     .pipe(replace(' fill="none"', ''))
     .pipe(replace(' fill="#000"', ' fill="currentColor"'))
     .pipe(replace(' fill="#000000"', ' fill="currentColor"'))
@@ -716,15 +678,14 @@ exports.default = series(
 // tasks are similar to default build when we are watching but there are some
 // differences. We use caching, and do not postprocess/minify for build performance gains. Also set the env
 exports.buildWatch = series(
-  exports.clean,
   webfonts,
   exports.svg,
   libStylesDev,
-  docStylesDev,
 );
 
 // build and run the gulp watch.
 exports.watch = series(
+  exports.clean,
   exports.buildWatch,
   parallel(
     watchFiles,
@@ -739,7 +700,6 @@ exports.docsite = series(
   exports.svg,
   parallel(
     libStyles,
-    docStyles,
   ),
   buildDocs,
   copyNoJekyll,

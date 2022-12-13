@@ -1,6 +1,6 @@
 ---
 title: Illustrations
-desc:
+desc: A system for consistent visual rhythms and proportions.
 ---
 
 ## Spot illustrations

@@ -30,20 +30,38 @@
             >
           </a>
         </div>
-        <router-link
-          v-slot="{ navigate }"
-          to="/guides/getting-started/"
-          custom
-        >
-          <button
-            class="d-btn d-btn--primary d-btn--lg"
-            role="link"
-            @click="(e) => { sendAnalyticsEvent(); navigate(e); }"
-            @keypress.enter="(e) => { sendAnalyticsEvent(); navigate(e); }"
+        <div class="d-d-flex">
+          <router-link
+            v-slot="{ navigate }"
+            to="/guides/getting-started/"
+            custom
           >
-            Get started
-          </button>
-        </router-link>
+            <dt-button
+              role="link"
+              size="lg"
+              @click="(e) => { sendAnalyticsEvent(); navigate(e); }"
+              @keypress.enter="(e) => { sendAnalyticsEvent(); navigate(e); }"
+            >
+              Get started
+            </dt-button>
+          </router-link>
+          <router-link
+            v-slot="{ navigate }"
+            to="/about/whats-new/"
+            custom
+          >
+            <dt-button
+              role="link"
+              size="lg"
+              importance="outlined"
+              class="d-ml16"
+              @click="(e) => { navigate(e); }"
+              @keypress.enter="(e) => { navigate(e); }"
+            >
+              What's new?
+            </dt-button>
+          </router-link>
+        </div>
       </div>
       <img
         alt=""
@@ -55,7 +73,7 @@
   <section class="links d-d-grid d-gg16 d-g-cols12 d-wmx1340 d-mx-auto">
     <div class="link d-body-base d-gc3 d-px32 d-ta-center">
       <router-link
-        class="d-fc-secondary h:d-fc-purple-400 d-d-block"
+        class="d-fc-secondary h:d-fc-purple-400 d-d-block d-td-none"
         to="/design/"
       >
         <img
@@ -79,7 +97,7 @@
     </div>
     <div class="link d-body-base d-gc3 d-px32 d-ta-center">
       <router-link
-        class="d-fc-secondary h:d-fc-purple-400 d-d-block"
+        class="d-fc-secondary h:d-fc-purple-400 d-d-block d-td-none"
         to="/components/"
       >
         <img
@@ -111,7 +129,7 @@
     </div>
     <div class="link d-body-base d-gc3 d-px32 d-ta-center">
       <router-link
-        class="d-fc-secondary h:d-fc-purple-400 d-d-block"
+        class="d-fc-secondary h:d-fc-purple-400 d-d-block d-td-none"
         to="/utilities/"
       >
         <img
@@ -135,7 +153,7 @@
     </div>
     <div class="link d-body-base d-gc3 d-px32 d-ta-center">
       <router-link
-        class="d-fc-secondary h:d-fc-purple-400 d-d-block"
+        class="d-fc-secondary h:d-fc-purple-400 d-d-block d-td-none"
         to="/guides/"
       >
         <img
@@ -191,13 +209,13 @@ import axios from 'axios';
 
 const version = ref('0.0.0');
 
-onBeforeMount(async () => {
-  const response = await axios.get('https://vue.dialpad.design/version.txt');
-  version.value = response.data;
-});
-
 function sendAnalyticsEvent () {
   if (!window.gtag) return;
   window.gtag('event', 'click', { event_name: 'get_started_button_clicked' });
 }
+
+onBeforeMount(async () => {
+  const response = await axios.get('https://vue.dialpad.design/version.txt');
+  version.value = response.data;
+});
 </script>

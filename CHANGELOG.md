@@ -1,3 +1,80 @@
+## [7.10.2](https://github.com/dialpad/dialtone/compare/v7.10.1...v7.10.2) (2022-12-08)
+
+## [7.10.1](https://github.com/dialpad/dialtone/compare/v7.10.0...v7.10.1) (2022-12-07)
+
+
+### Bug Fixes
+
+* move docsite deps to devDeps ([3b051d1](https://github.com/dialpad/dialtone/commit/3b051d1c3e8240e431a2629687646ba4fc6597e4))
+
+# [7.10.0](https://github.com/dialpad/dialtone/compare/v7.9.0...v7.10.0) (2022-12-07)
+
+
+### Bug Fixes
+
+* **Badge:** add box-sizing: border-box ([#760](https://github.com/dialpad/dialtone/issues/760)) ([10eb3f8](https://github.com/dialpad/dialtone/commit/10eb3f8e2becd385dd1cc88c76986cdb3421c72a))
+
+
+### Features
+
+* **Color:** updated lower ramp ([#758](https://github.com/dialpad/dialtone/issues/758)) ([4bfbddf](https://github.com/dialpad/dialtone/commit/4bfbddf785c9b06f209e376ccc750edf2f6971fc))
+
+# [7.9.0](https://github.com/dialpad/dialtone/compare/v7.8.2...v7.9.0) (2022-12-05)
+
+
+### Features
+
+* **Badge:** refreshed ([#754](https://github.com/dialpad/dialtone/issues/754)) ([a7e3784](https://github.com/dialpad/dialtone/commit/a7e3784de166d036c5c6f91844925c1ff972d6bb))
+* **Icons:** new omnichannel brand icons ([#750](https://github.com/dialpad/dialtone/issues/750)) ([2d573ca](https://github.com/dialpad/dialtone/commit/2d573ca9ebfec019a7fc9c54fba55ae0c2329eae))
+
+## [7.8.2](https://github.com/dialpad/dialtone/compare/v7.8.1...v7.8.2) (2022-11-29)
+
+
+### Bug Fixes
+
+* **Toggle:** small variant transition ([#749](https://github.com/dialpad/dialtone/issues/749)) ([b8b3038](https://github.com/dialpad/dialtone/commit/b8b303851fe2005c889d040ce41135343031fa30))
+
+## [7.8.1](https://github.com/dialpad/dialtone/compare/v7.8.0...v7.8.1) (2022-11-25)
+
+
+### Bug Fixes
+
+* **Chip:** rename invalid avatar css var in chip ([8b21d42](https://github.com/dialpad/dialtone/commit/8b21d42fbe779cf782ea7452850e9610f14e674f))
+
+# [7.8.0](https://github.com/dialpad/dialtone/compare/v7.7.0...v7.8.0) (2022-11-25)
+
+
+### Bug Fixes
+
+* **Chip:** add new avatar class to chip ([9d03273](https://github.com/dialpad/dialtone/commit/9d032732d210f989fb37a72fd767f481acc1fff7))
+* **Chip:** incorrect width for xs and sm size when no close btn ([#747](https://github.com/dialpad/dialtone/issues/747)) ([53abd40](https://github.com/dialpad/dialtone/commit/53abd40a5299b5c17465d6e713fb1c32c6213684))
+
+
+### Features
+
+* **Avatar:** refreshed component, with dynamic conic gradient ([#746](https://github.com/dialpad/dialtone/issues/746)) ([fdb9b92](https://github.com/dialpad/dialtone/commit/fdb9b928007d90421dab510e17f2915a37d1de7a))
+
+# [7.7.0](https://github.com/dialpad/dialtone/compare/v7.6.0...v7.7.0) (2022-11-18)
+
+
+### Features
+
+* what's new blog page ([#737](https://github.com/dialpad/dialtone/issues/737)) ([4f01000](https://github.com/dialpad/dialtone/commit/4f0100021679f73a187528250ba2047afcad5fc1))
+
+# [7.6.0](https://github.com/dialpad/dialtone/compare/v7.5.0...v7.6.0) (2022-11-18)
+
+
+### Features
+
+* **Presence:** added to avatar ([#740](https://github.com/dialpad/dialtone/issues/740)) ([fd87a50](https://github.com/dialpad/dialtone/commit/fd87a50c427e56a07219e405812a69dcdca455b2))
+
+# [7.5.0](https://github.com/dialpad/dialtone/compare/v7.4.1...v7.5.0) (2022-11-17)
+
+
+### Features
+
+* update d-avatar with position: relative style attr ([#736](https://github.com/dialpad/dialtone/issues/736)) ([82193ab](https://github.com/dialpad/dialtone/commit/82193ab12da809628bf0bfbb65e93e53a1379612))
+
 ## [7.4.1](https://github.com/dialpad/dialtone/compare/v7.4.0...v7.4.1) (2022-11-04)
 
 

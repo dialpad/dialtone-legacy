@@ -1,6 +1,8 @@
 ---
 title: Checkbox
 desc: A checkbox is an input control that allows users to select zero, one, or more options from a number of choices.
+status: ready
+thumb: true
 storybook_url: https://vue.dialpad.design/?path=/story/components-checkbox--default
 figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Components-7?node-id=8921%3A21160&viewport=-351%2C484%2C0.54&t=xHutRjwo1o5zMTgT-11
 ---
@@ -30,7 +32,7 @@ Checkboxes are an easily understandable way to indicate that users can select on
 </template>
 <template #dont>
 
-- If a user can only select one option from a list; consider using [Radio](radio.md) or [Select](select.md).
+- If a user can only select one option from a list; consider using [Radio](radio.md) or [Select](select-menu.md).
 - If there are too many options to reasonably display in its context.
 </template>
 </dialtone-usage>

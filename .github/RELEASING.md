@@ -13,7 +13,7 @@
 
 ## Steps
 
-In order to push the `production` branch to deploy the documentation site and/or trigger a release to [npmjs](https://npmjs.com) and Github Releases, you will need to either be an admin of the Dialtone repository, be a user with the "Maintain" role or have manually been given permission on your user.
+In order to push the `production` branch to deploy the documentation site and/or trigger a release to [npmjs](https://npmjs.com) and GitHub Releases, you will need to either be an admin of the Dialtone repository, be a user with the "Maintain" role or have manually been given permission on your user.
 
 ### Production release:
 
@@ -29,9 +29,9 @@ In order to push the `production` branch to deploy the documentation site and/or
 8. Merge the release commits from `staging` using [`fast-forward` strategy](https://git-scm.com/docs/git-merge#Documentation/git-merge.txt---ff-only): `git merge staging --ff-only`.
 9. If the commits merged correctly, we can now push to the remote: `git push`.
 10. If there were changes to the library, GitHub Actions will now deploy a new release of Dialtone to npm.
-11. Github Actions will always deploy the documentation site to our GitHub Pages site: [dialpad.design](https://dialpad.design) even if the library version number has not changed.
-12. You should be able to see your deployment running at [Dialtone Github actions](https://github.com/dialpad/dialtone/actions).
-13. When the Github Actions have been completed, the new version of the package should have been deployed to Github releases, npm, and the documentation website (`dialpad.design`) is now updated (if it was a production release).
+11. GitHub Actions will always deploy the documentation site to our GitHub Pages site: [dialpad.design](https://dialpad.design) even if the library version number has not changed.
+12. You should be able to see your deployment running at [Dialtone GitHub actions](https://github.com/dialpad/dialtone/actions).
+13. When the GitHub Actions have been completed, the version of the package deployed to GitHub releases, npm, and the documentation website (`dialpad.design`) is now updated.
 14. Now you’re ready to update your projects to use the latest Dialtone version 🎉.
 
 ### Pre-release (`alpha` or `beta`):
@@ -47,16 +47,16 @@ In order to push the `production` branch to deploy the documentation site and/or
 7. If there are changes that should trigger a release:
    - The script will update the `package.json` and `package-lock.json` files with the version number according to the types of changes introduced since the last release and will add release notes in the `CHANGELOG.MD` file. 
    - A release commit and a git tag associated with this commit will be created and pushed to the remote.
-8. Since your pre-release branch was pushed to the remote, the deploy Github Action should have been triggered.
-9. Merge the release you have made on `beta` or `alpha` branch into your feature branch so you have the release commit in sync:
+8. Since your pre-release branch was pushed to the remote, the deployment GitHub Action should have been triggered.
+9. Merge the release you have made on `beta` or `alpha` branch into your feature branch, so you have the release commit in sync:
    - Replace `$FEATURE_BRANCH` with your feature branch name and `$RELEASED_BRANCH` with the branch name you have released `beta` or `alpha`:
       ```
       git checkout $FEATURE_BRANCH
       git merge --ff-only $RELEASED_BRANCH
       ```
 10. Push to the remote: `git push`.
-11. You should be able to see your deployment running at [Dialtone Github actions](https://github.com/dialpad/dialtone/actions).
-12. When the Github Actions have been completed, the new version of the package should have been deployed to Github releases, npm.
+11. You should be able to see your deployment running at [Dialtone GitHub actions](https://github.com/dialpad/dialtone/actions).
+12. When the GitHub Actions have been completed, the new version of the package should have been deployed to GitHub releases, npm.
 13. Now you’re ready to update your projects to use the recently deployed Dialtone version 🎉.
     - Use `npm install @dialpad/dialtone@alpha` to install the latest alpha. 
     - Use `npm install @dialpad/dialtone@beta` to install the latest beta.

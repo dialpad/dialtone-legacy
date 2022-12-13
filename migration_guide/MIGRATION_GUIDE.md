@@ -490,28 +490,28 @@ Search for | Replace with
 #### Replace icons
 
 Do a search in [Icon docs][icon-docs] to find an icon that matches your needs.
-For icon component documentation on props (naming and sizing), check 
+For icon component documentation on props (naming and sizing), check
 [Dialtone Vue - Icon component](https://vue.dialpad.design/?path=/story/components-icon--default)
 
 *Check with your designer or ask in #dialtone if you are having trouble finding a replacement for an existing icon*
 
-**If you can use vue components**: 
+**If you can use vue components**:
 
 Replace any custom usage of icon component with `<dt-icon name="icon-name" size="icon-size" />`
 
 **If you can't use vue component e.g. in backbone**:
 
-Replace the current `img` or `svg` with the RAW svg file content from `@dialpad/dialtone-icons/dist/svg/icon-name.svg`. 
+Replace the current `img` or `svg` with the RAW svg file content from `@dialpad/dialtone-icons/dist/svg/icon-name.svg`.
 e.g. replace `<img src="@dialpad/dialtone/lib/build/svg/user.svg">`
 with `<svg>...</svg>`
 
 #### Update Icon contextual sizing with fixed
 
 Some `svgs` are sized with `d-svg--sizeX` this are direct mappings that work in most of the cases.
-After replacing make sure the updated icon includes `d-icon` class too and that it looks correct. 
+After replacing make sure the updated icon includes `d-icon` class too and that it looks correct.
 
-e.g. replace `d-svg--size14` with `d-icon d-icon--size-100` 
-and `d-svg d-svg--size14` with `d-icon d-icon--size-100`.  
+e.g. replace `d-svg--size14` with `d-icon d-icon--size-100`
+and `d-svg d-svg--size14` with `d-icon d-icon--size-100`.
 
 Search for | Replace with
 :-:|:-:
@@ -531,7 +531,48 @@ Remove any usage of `d-svg` and `d-svg--*`.
 
 #### Product custom CSS
 
-Remove any custom icon sizing e.g. `.foo .icon { width: xxx; height: yyy; }.` 
+Remove any custom icon sizing e.g. `.foo .icon { width: xxx; height: yyy; }.`
 and replace with the correct sizing class in [icon documentation][icon-docs].
 
 [icon-docs]: https://dialpad.design/components/icon.html
+
+
+#### Badge
+
+##### DtBadge Vue Component
+
+The "color" prop has been removed from the DtBadge component and replaced with "type".
+
+##### Styling
+
+The previous d-badge color classes are no longer valid and will have to be replaced with a "type" class. There is no direct mapping guide, as the previous use of badge colors may not imply which updated type to use. Use your judgment on a case-by-case basis and validate with your Product Designer.
+
+Classes removed:
+
+```
+d-badge--white
+d-badge--black-700
+d-badge--purple-100
+d-badge--purple-300
+d-badge--purple-400
+d-badge--purple-500
+d-badge--orange-400
+d-badge--magenta-100
+d-badge--magenta-300
+d-badge--magenta-400
+d-badge--magenta-500
+d-badge--gold-200
+d-badge--green-400
+d-badge--red-300
+```
+
+Replaced with:
+
+```
+d-badge--info
+d-badge--success
+d-badge--warning
+d-badge--critical
+d-badge--bulletin
+d-badge--ai
+```

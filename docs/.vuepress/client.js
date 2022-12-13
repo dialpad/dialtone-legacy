@@ -3,6 +3,7 @@ import { defineClientConfig } from '@vuepress/client';
 // Common views
 import Icons from './views/Icons.vue';
 import Colors from './views/Colors.vue';
+import Overview from './views/Overview.vue';
 
 // Base components
 import CodeWellHeader from './baseComponents/CodeWellHeader.vue';
@@ -24,22 +25,12 @@ import IconClose from '@svgIcons/IconClose.vue';
 import IconCheckmark from '@svgIcons/IconCheckmark.vue';
 import IconPhone from '@svgIcons/IconPhone.vue';
 
-// CSS
-import '@dialtoneCSS';
-import '@dialtoneDocsCSS';
-
 export default defineClientConfig({
   enhance ({ app, router, siteData }) {
-    // Register libraries
-    if (!__VUEPRESS_SSR__) {
-      registerDialtoneVue(app);
-      registerDialtoneCombinator(app);
-      registerDialtoneIcons(app);
-    }
-
     // Common views
     app.component('Icons', Icons);
     app.component('Colors', Colors);
+    app.component('Overview', Overview);
 
     // Base components
     app.component('CodeWellHeader', CodeWellHeader);
@@ -64,46 +55,3 @@ export default defineClientConfig({
   setup () {},
   rootComponents: [],
 });
-
-async function registerDialtoneCombinator (app) {
-  const module = await import('@dialpad/dialtone-combinator');
-  app.component('DtcCombinator', module.DtcCombinator);
-  app.component('DtcSection', module.DtcSection);
-  app.provide('variantBank', module.variantBank());
-}
-
-async function registerDialtoneVue (app) {
-  const module = await import('@dialpad/dialtone-vue');
-  const dialtoneComponents = Object.keys(module).filter((key) => key.startsWith('Dt'));
-  dialtoneComponents.forEach((key) => {
-    app.component(key, module[key]);
-  });
-  app.provide('dialtoneComponents', dialtoneComponents);
-}
-
-async function registerDialtoneIcons (app) {
-  const brandIcons = (await import(`../_data/svg-brand.json`)).default;
-  const systemIcons = (await import(`../_data/svg-system.json`)).default;
-  const icons = [
-    ...brandIcons,
-    ...systemIcons,
-  ];
-
-  const iconEntries = [];
-  const iconPromises = [];
-  icons.forEach(icon => {
-    const promise = import(`../../lib/dist/vue/icons/${icon.vue}.vue`);
-    iconPromises.push(promise);
-    promise.then(module => {
-      iconEntries.push([icon.vue, module.default]);
-    });
-  });
-
-  await Promise.all(iconPromises);
-
-  iconEntries.forEach(([name, icon]) => {
-    app.component(name, icon);
-  });
-
-  app.provide('dialtoneIcons', iconEntries.map(([name]) => name));
-}

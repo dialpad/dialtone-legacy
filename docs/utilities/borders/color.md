@@ -1,9 +1,6 @@
 ---
 title: Border colors
 desc: Utilities for controlling an element's border color.
-prev:
-  text: Patterns
-  link: /utilities/backgrounds/patterns
 ---
 
 ## Usage
@@ -25,29 +22,28 @@ Use `d-bco{n}` to change the border color opacity value. You can also change the
 , `:focus`, `:focus-visible`, or in dark mode by using the respective `h:d-bco{n}`, `f:d-bco{n}`, `fv:d-bco{n}`,
 or `d:d-bco{n}` prefixes.
 
-<code-well-header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-orange-100 d-bgo50 d-w100p d-hmn102 d-stack8" custom>
-  <div class="d-w100p d-p4 d-bb d-bbw2 d-bc-orange-500 d-fs-200 d-fw-bold d-ff-mono">100%</div>
-  <div class="d-w100p d-p4 d-bb d-bbw2 d-bc-orange-500 d-bco99 d-fs-200 d-fw-bold">99%</div>
-  <div class="d-w100p d-p4 d-bb d-bbw2 d-bc-orange-500 d-bco95 d-fs-200 d-fw-bold">95%</div>
-  <div class="d-w100p d-p4 d-bb d-bbw2 d-bc-orange-500 d-bco90 d-fs-200 d-fw-bold">90%</div>
-  <div class="d-w100p d-p4 d-bb d-bbw2 d-bc-orange-500 d-bco75 d-fs-200 d-fw-bold">75%</div>
-  <div class="d-w100p d-p4 d-bb d-bbw2 d-bc-orange-500 d-bco50 d-fs-200 d-fw-bold">50%</div>
-  <div class="d-w100p d-p4 d-bb d-bbw2 d-bc-orange-500 d-bco25 d-fs-200 d-fw-bold">25%</div>
-  <div class="d-w100p d-p4 d-bb d-bbw2 d-bc-orange-500 d-bco10 d-fs-200 d-fw-bold">10%</div>
-  <div class="d-w100p d-p4 d-bb d-bbw2 d-bc-orange-500 d-bco0 d-fs-200 d-fw-bold">0%</div>
+<code-well-header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-magenta-100 d-bgo50 d-w100p d-hmn102 d-stack8" custom>
+  <div class="d-w100p d-p4 d-bb d-bbw2 d-bc-magenta-300 d-fs-200 d-fw-bold d-ff-mono">100%</div>
+  <div class="d-w100p d-p4 d-bb d-bbw2 d-bc-magenta-300 d-bco99 d-fs-200 d-fw-bold">99%</div>
+  <div class="d-w100p d-p4 d-bb d-bbw2 d-bc-magenta-300 d-bco95 d-fs-200 d-fw-bold">95%</div>
+  <div class="d-w100p d-p4 d-bb d-bbw2 d-bc-magenta-300 d-bco90 d-fs-200 d-fw-bold">90%</div>
+  <div class="d-w100p d-p4 d-bb d-bbw2 d-bc-magenta-300 d-bco75 d-fs-200 d-fw-bold">75%</div>
+  <div class="d-w100p d-p4 d-bb d-bbw2 d-bc-magenta-300 d-bco50 d-fs-200 d-fw-bold">50%</div>
+  <div class="d-w100p d-p4 d-bb d-bbw2 d-bc-magenta-300 d-bco25 d-fs-200 d-fw-bold">25%</div>
+  <div class="d-w100p d-p4 d-bb d-bbw2 d-bc-magenta-300 d-bco10 d-fs-200 d-fw-bold">10%</div>
+  <div class="d-w100p d-p4 d-bb d-bbw2 d-bc-magenta-300 d-bco0 d-fs-200 d-fw-bold">0%</div>
 </code-well-header>
 
 ```html
-
-<div class="d-bb d-bbw2 d-bc-orange-500">...</div>
-<div class="d-bb d-bbw2 d-bc-orange-500 d-bco99">...</div>
-<div class="d-bb d-bbw2 d-bc-orange-500 d-bco95">...</div>
-<div class="d-bb d-bbw2 d-bc-orange-500 d-bco90">...</div>
-<div class="d-bb d-bbw2 d-bc-orange-500 d-bco75">...</div>
-<div class="d-bb d-bbw2 d-bc-orange-500 d-bco50">...</div>
-<div class="d-bb d-bbw2 d-bc-orange-500 d-bco25">...</div>
-<div class="d-bb d-bbw2 d-bc-orange-500 d-bco10">...</div>
-<div class="d-bb d-bbw2 d-bc-orange-500 d-bco0">...</div>
+<div class="d-bb d-bbw2 d-bc-magenta-300">...</div>
+<div class="d-bb d-bbw2 d-bc-magenta-300 d-bco99">...</div>
+<div class="d-bb d-bbw2 d-bc-magenta-300 d-bco95">...</div>
+<div class="d-bb d-bbw2 d-bc-magenta-300 d-bco90">...</div>
+<div class="d-bb d-bbw2 d-bc-magenta-300 d-bco75">...</div>
+<div class="d-bb d-bbw2 d-bc-magenta-300 d-bco50">...</div>
+<div class="d-bb d-bbw2 d-bc-magenta-300 d-bco25">...</div>
+<div class="d-bb d-bbw2 d-bc-magenta-300 d-bco10">...</div>
+<div class="d-bb d-bbw2 d-bc-magenta-300 d-bco0">...</div>
 ```
 
 ## Hover
