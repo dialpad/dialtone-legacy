@@ -32,7 +32,8 @@ function blogPostsFrontmatter (app) {
     }));
 }
 
-function extractFrontmatter (app, path) {
+function extractFrontmatter (app, path, options) {
+  const sortingArr = options?.sidebar[path][0].children.map(child => child.text.toLowerCase().replaceAll(' ', '-'));
   const indexPage = app.pages.find(page => page.path === path);
 
   indexPage.data.enhancedFrontmatter = app.pages
@@ -44,7 +45,8 @@ function extractFrontmatter (app, path) {
         link: component.frontmatter.shortTitle || fileName,
         ...component.frontmatter,
       };
-    });
+    })
+    .sort((a, b) => sortingArr.indexOf(a.link) - sortingArr.indexOf(b.link));
 }
 
 export const dialtoneVuepressTheme = (options) => {
@@ -88,9 +90,9 @@ export const dialtoneVuepressTheme = (options) => {
     },
     onInitialized (app) {
       blogPostsFrontmatter(app);
-      extractFrontmatter(app, '/guides/');
-      extractFrontmatter(app, '/components/');
-      extractFrontmatter(app, '/design/');
+      extractFrontmatter(app, '/guides/', options);
+      extractFrontmatter(app, '/components/', options);
+      extractFrontmatter(app, '/design/', options);
     },
     extendsPage: (page) => {
       switch (page.path) {
