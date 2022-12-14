@@ -26,6 +26,8 @@
     --button-radius: var(--size-300);
     --button-border-width: var(--size-100);
     --button-padding: calc(var(--space-400) - var(--button-border-width));
+    --button-font-size: var(--fs-200);
+    --button-line-height: var(--lh4);
 
     position: relative;
     display: inline-flex;
@@ -34,14 +36,16 @@
     box-sizing: border-box;
     padding: var(--button-padding);
     color: var(--button-color-text);
-    font-size: var(--fs-200);
+    font-size: var(--button-font-size);
     font-family: inherit;
-    line-height: var(--lh4);
+    line-height: var(--button-line-height);
     text-transform: inherit;
     text-decoration: none;
     vertical-align: middle;
     background-color: var(--button-color-background);
-    border: var(--button-border-width) solid var(--button-color-border);
+    border-color: var(--button-color-border);
+    border-style: solid;
+    border-width: var(--button-border-width);
     border-radius: var(--button-radius);
     box-shadow: var(--button--bs);
     cursor: pointer;
@@ -72,9 +76,10 @@
     }
 
     &[disabled] {
-        color: var(--fc-disabled);
-        background-color: var(--black-300);
-        border-color: transparent;
+        --button-color-border: transparent;
+        --button-color-text: var(--fc-disabled);
+        --button-color-background: var(--black-300);
+
         cursor: not-allowed;
         transition: none;
     }
@@ -94,8 +99,7 @@
     --button-padding:
         calc(var(--space-300) + var(--space-100))
         calc(var(--space-400) - var(--button-border-width));
-
-    font-size: var(--fs-100);
+    --button-font-size: var(--fs-100);
 
     .d-btn__icon .d-svg {
         width: @icon12;
@@ -109,9 +113,8 @@
     --button-padding:
         calc(var(--space-300) + var(--space-100))
         calc(var(--space-400) - var(--button-border-width));
-
-    font-size: var(--fs-200);
-    line-height: var(--lh6);
+    --button-font-size: var(--fs-200);
+    --button-line-height: var(--lh6);
 
     .d-btn__icon .d-svg {
         width: @icon14;
@@ -125,8 +128,7 @@
     --button-padding:
         calc(calc(var(--space-400) + var(--space-300)) - var(--button-border-width))
         calc(var(--space-500) - var(--button-border-width));
-
-    font-size: var(--fs-300);
+    --button-font-size: var(--fs-300);
 
     .d-btn__icon .d-svg {
         width: @icon20;
@@ -140,9 +142,8 @@
     --button-padding:
         calc(calc(var(--space-400) + var(--space-300)) - var(--button-border-width))
         calc(var(--space-500) - var(--button-border-width));
-
-    font-size: var(--fs-300);
-    line-height: var(--lh8);
+    --button-font-size: var(--fs-300);
+    --button-line-height: var(--lh8);
 
     .d-btn__icon .d-svg {
         width: @icon24;
@@ -167,8 +168,9 @@
 }
 
 .d-btn__icon {
+    --button-line-height: 0;
+
     display: flex;
-    line-height: 0;
 }
 
 .d-btn__icon--left,
@@ -227,9 +229,9 @@
 //  $$  CIRCLE BUTTONS
 //  ----------------------------------------------------------------------------
 .d-btn--circle {
+    --button-padding: calc(var(--space-400) + var(--space-100));
     --button-color-text: var(--black-800);
     --button-radius: var(--br-circle);
-    --button-padding: calc(var(--space-400) + var(--space-100));
 
     transition-duration: 150ms;
 
@@ -443,9 +445,10 @@
 //  $$  DISABLED STATE
 //  ----------------------------------------------------------------------------
 .d-btn--disabled {
-    color: var(--fc-disabled);
-    background-color: var(--black-300);
-    border-color: transparent;
+    --button-color-text: var(--fc-disabled);
+    --button-color-background: var(--black-300);
+    --button-color-border: transparent;
+
     cursor: not-allowed;
     transition: none;
     pointer-events: none;
@@ -454,14 +457,15 @@
 //  $$  BRAND BUTTONS
 //  ----------------------------------------------------------------------------
 .d-btn--brand {
+    --button-color-text: var(--white);
+    --button-color-background: hsl(var(--brand-color-h) var(--brand-color-s) var(--brand-color-l));
+
     display: flex;
-    color: var(--white);
-    background-color: hsl(var(--brand-color-h) var(--brand-color-s) var(--brand-color-l));
 
     &:hover,
     &:active {
-        color: hsla(var(--white-hsl) ~' / ' 90%);
-        background-color: hsl(var(--brand-color-h) calc(var(--brand-color-s) + 2.5%) calc(var(--brand-color-l) - 5%));
+        --button-color-text: hsla(var(--white-hsl) ~' / ' 90%);
+        --button-color-background: hsl(var(--brand-color-h) calc(var(--brand-color-s) + 2.5%) calc(var(--brand-color-l) - 5%));
     }
 
     &:focus-visible {
@@ -469,7 +473,7 @@
     }
 
     &:active {
-        background-color: hsl(var(--brand-color-h) calc(var(--brand-color-s) + 5%) calc(var(--brand-color-l) - 10%));
+        --button-color-background: hsl(var(--brand-color-h) calc(var(--brand-color-s) + 5%) calc(var(--brand-color-l) - 10%));
     }
 
     .d-btn__icon {
