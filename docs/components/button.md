@@ -133,26 +133,6 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
     </div>
   </div>
   <div>
-    <div class="d-code-small d-mb4">Primary: hover</div>
-    <div class="d-d-flex d-gg8 d-ai-flex-start">
-      <button class="d-btn d-btn--hover" type="button">
-        <span class="d-btn__label">Place call</span>
-      </button>
-      <button class="d-btn d-btn--primary d-btn--hover" type="button">
-        <span class="d-btn__label">Place call</span>
-      </button>
-      <button class="d-btn d-btn--danger d-btn--hover" type="button">
-        <span class="d-btn__label">Place call</span>
-      </button>
-      <button class="d-btn d-btn--inverted d-btn--primary d-btn--hover" type="button">
-        <span class="d-btn__label">Place call</span>
-      </button>
-      <button class="d-btn d-btn--muted d-btn--hover" type="button">
-        <span class="d-btn__label">Place call</span>
-      </button>
-    </div>
-  </div>
-  <div>
     <div class="d-code-small d-mb4">Link appearance</div>
     <div class="d-d-flex d-gg8 d-ai-flex-start">
       <button type="button" class="d-link">Place call</button>
@@ -168,18 +148,13 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
     </div>
   </div>
   <div>
-    <div class="d-code-small d-mb4">Circle: new icon</div>
+    <div class="d-code-small d-mb4">Circle</div>
     <div class="d-d-flex d-gg8 d-ai-flex-start">
       <button class="d-btn d-btn--circle" type="button"><span class="d-btn__icon"><dt-icon name="dp-phone" size="200" /></span></button>
       <button class="d-btn d-btn--circle d-btn--outlined" type="button"><span class="d-btn__icon"><dt-icon name="dp-phone" size="200" /></span></button>
       <button class="d-btn d-btn--circle d-btn--danger" type="button"><span class="d-btn__icon"><dt-icon name="dp-phone" size="200" /></span></button>
       <button class="d-btn d-btn--circle d-btn--danger d-btn--outlined" type="button"><span class="d-btn__icon"><dt-icon name="dp-phone" size="200" /></span></button>
       <button class="d-btn d-btn--circle d-btn--danger d-btn--primary" type="button"><span class="d-btn__icon"><dt-icon name="dp-phone" size="200" /></span></button>
-    </div>
-  </div>
-  <div>
-    <div class="d-code-small d-mb4">Circle: old icon</div>
-    <div class="d-d-flex d-gg8 d-ai-flex-start">
       <button class="d-btn d-btn--circle" type="button"><span class="d-btn__icon"><icon-phone/></span></button>
       <button class="d-btn d-btn--circle d-btn--outlined" type="button"><span class="d-btn__icon"><icon-phone/></span></button>
       <button class="d-btn d-btn--circle d-btn--danger" type="button"><span class="d-btn__icon"><icon-phone/></span></button>
@@ -190,6 +165,8 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
   <div>
     <div class="d-code-small d-mb4">Icon only</div>
     <div class="d-d-flex d-gg8 d-ai-flex-start">
+      <button class="d-btn d-btn--icon-only" type="button"><span class="d-btn__icon"><dt-icon name="dp-phone" size="200" /></span></button>
+      <button class="d-btn d-btn--icon-only d-btn--outlined" type="button"><span class="d-btn__icon"><dt-icon name="dp-phone" size="200" /></span></button>
       <button class="d-btn d-btn--icon-only" type="button"><span class="d-btn__icon"><icon-phone/></span></button>
       <button class="d-btn d-btn--icon-only d-btn--outlined" type="button"><span class="d-btn__icon"><icon-phone/></span></button>
     </div>
@@ -198,11 +175,27 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
     <div class="d-code-small d-mb4">Icon and label</div>
     <div class="d-d-flex d-gg8 d-ai-flex-start">
       <button class="d-btn d-btn--outlined" type="button">
+        <span class="d-btn__icon d-btn__icon--left"><dt-icon name="dp-phone" size="200" /></span>
+        <span class="d-btn__label">Label</span>
+      </button>
+      <button class="d-btn d-btn--outlined" type="button">
+        <span class="d-btn__icon d-btn__icon--right"><dt-icon name="dp-phone" size="200" /></span>
+        <span class="d-btn__label">Label</span>
+      </button>
+      <button class="d-btn d-btn--outlined" type="button">
         <span class="d-btn__icon d-btn__icon--left"><icon-phone/></span>
         <span class="d-btn__label">Label</span>
       </button>
       <button class="d-btn d-btn--outlined" type="button">
         <span class="d-btn__icon d-btn__icon--right"><icon-phone/></span>
+        <span class="d-btn__label">Label</span>
+      </button>
+      <button class="d-btn d-btn--outlined d-btn--vertical" type="button">
+        <span class="d-btn__icon d-btn__icon--top"><dt-icon name="dp-phone" size="200" /></span>
+        <span class="d-btn__label">Label</span>
+      </button>
+      <button class="d-btn d-btn--outlined d-btn--vertical" type="button">
+        <span class="d-btn__icon d-btn__icon--bottom"><dt-icon name="dp-phone" size="200" /></span>
         <span class="d-btn__label">Label</span>
       </button>
       <button class="d-btn d-btn--outlined d-btn--vertical" type="button">
