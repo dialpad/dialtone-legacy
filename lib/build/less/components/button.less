@@ -24,13 +24,15 @@
     --button-color-background: transparent;
     --button-color-border: transparent;
     --button-radius: var(--size-300);
+    --button-border-width: var(--size-100);
+    --button-padding: calc(var(--space-400) - var(--button-border-width));
 
     position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-    padding: calc(var(--space-400) - var(--space-100));  // Subtract border
+    padding: var(--button-padding);
     color: var(--button-color-text);
     font-size: var(--fs-200);
     font-family: inherit;
@@ -39,7 +41,7 @@
     text-decoration: none;
     vertical-align: middle;
     background-color: var(--button-color-background);
-    border: var(--size-100) solid var(--button-color-border);
+    border: var(--button-border-width) solid var(--button-color-border);
     border-radius: var(--button-radius);
     box-shadow: var(--button--bs);
     cursor: pointer;
@@ -89,7 +91,8 @@
 //  $$  EXTRA SMALL
 //  ----------------------------------------------------------------------------
 .d-btn--xs {
-    padding: calc(var(--space-300) + var(--space-100)) calc(var(--space-400) - var(--space-100));  // Subtract border
+    --button-padding: calc(var(--space-300) + var(--space-100)) calc(var(--space-400) - var(--button-border-width));
+
     font-size: var(--fs-100);
 
     .d-btn__icon .d-svg {
@@ -101,7 +104,8 @@
 //  $$ SMALL
 //  ----------------------------------------------------------------------------
 .d-btn--sm {
-    padding: calc(var(--space-300) + var(--space-100)) calc(var(--space-400) - var(--space-100));  // Subtract border
+    --button-padding: calc(var(--space-300) + var(--space-100)) calc(var(--space-400) - var(--button-border-width));
+
     font-size: var(--fs-200);
     line-height: var(--lh6);
 
@@ -114,7 +118,10 @@
 //  $$  LARGE
 //  ----------------------------------------------------------------------------
 .d-btn--lg {
-    padding: calc(calc(var(--space-400) + var(--space-300)) - var(--space-100)) calc(var(--space-500) - var(--space-100)); // Subtract border
+    --button-padding:
+        calc(calc(var(--space-400) + var(--space-300)) - var(--button-border-width))
+        calc(var(--space-500) - var(--button-border-width));
+
     font-size: var(--fs-300);
 
     .d-btn__icon .d-svg {
@@ -126,7 +133,10 @@
 //  $$  EXTRA LARGE
 //  ----------------------------------------------------------------------------
 .d-btn--xl {
-    padding: calc(calc(var(--space-400) + var(--space-300)) - var(--space-100)) calc(var(--space-500) - var(--space-100)); // Subtract border
+    --button-padding:
+        calc(calc(var(--space-400) + var(--space-300)) - var(--button-border-width))
+        calc(var(--space-500) - var(--button-border-width));
+
     font-size: var(--fs-300);
     line-height: var(--lh8);
 
@@ -215,8 +225,8 @@
 .d-btn--circle {
     --button-color-text: var(--black-800);
     --button-radius: var(--br-circle);
+    --button-padding: calc(var(--space-400) + var(--space-100));
 
-    padding: calc(var(--space-400) + var(--space-100));
     transition-duration: 150ms;
 
     &:hover {
@@ -249,26 +259,22 @@
 
     //  Adjust padding based on sizes
     &.d-btn--xs {
-        padding: calc(var(--space-400) - var(--space-100));
-
+        --button-padding: calc(var(--space-400) - var(--button-border-width));
         --button-radius: var(--br-circle);
     }
 
     &.d-btn--sm {
-        padding: var(--space-400);
-
+        --button-padding: var(--space-400);
         --button-radius: var(--br-circle);
     }
 
     &.d-btn--lg {
-        padding: calc(calc(var(--space-400) + var(--space-300)) + var(--space-100));
-
+        --button-padding: calc(calc(var(--space-400) + var(--space-300)) + var(--space-100));
         --button-radius: var(--br-circle);
     }
 
     &.d-btn--xl {
-        padding: calc(var(--space-500) - var(--space-100));
-
+        --button-padding: calc(var(--space-500) - var(--button-border-width));
         --button-radius: var(--br-circle);
     }
 }
@@ -417,7 +423,7 @@
 //  $$  ICON ONLY
 //  ----------------------------------------------------------------------------
 .d-btn--icon-only {
-    padding: calc(var(--space-400) + var(--space-100));
+    --button-padding: calc(var(--space-400) + var(--space-100));
 
     .d-btn__icon {
         margin: unset;
