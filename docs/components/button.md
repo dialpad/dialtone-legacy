@@ -6,6 +6,225 @@ thumb: true
 storybook_url: https://vue.dialpad.design/?path=/story/components-button--default
 figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Components-7?node-id=8923%3A20208&viewport=-1695%2C219%2C0.19&t=xHutRjwo1o5zMTgT-11
 ---
+
+<div class="asdfasdf">
+  <div>
+    <table class="d-table dialtone-doc-table d-mb16">
+      <colgroup>
+        <col>
+        <col class="d-w25p">
+        <col class="d-w25p">
+        <col class="d-w25p">
+      </colgroup>
+      <thead>
+        <tr>
+          <th class="d-ta-left d-va-top"></th>
+          <th class="d-ta-left d-va-top">
+            Clear
+          </th>
+          <th class="d-ta-left d-va-top">
+            Outlined
+          </th>
+          <th class="d-ta-left d-va-top">
+            Primary
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th class="d-ta-left d-pl0" scope="row">
+            <a class="d-link d-fs-100 d-fw-medium d-d-block d-mb4 d-tt-uppercase" href="#base"><strong>Base</strong></a>
+          </th>
+          <td class="d-bgc-black-100 d-ta-center">
+            <button class="d-btn" type="button"> <span class="d-btn__label">Place call</span> </button>
+          </td>
+          <td class="d-bgc-black-100 d-ta-center">
+            <button class="d-btn d-btn--outlined" type="button"> <span class="d-btn__label">Place call</span> </button>
+          </td>
+          <td class="d-bgc-black-100 d-ta-center">
+            <button class="d-btn d-btn--primary" type="button"> <span class="d-btn__label">Place call</span> </button>
+          </td>
+        </tr>
+        <tr>
+          <th class="d-ta-left d-pl0" scope="row">
+            <a class="d-link d-fs-100 d-fw-medium d-d-block d-mb4 d-tt-uppercase" href="#danger"><strong>Danger</strong></a>
+          </th>
+          <td class="d-bgc-black-100 d-ta-center">
+            <button class="d-btn d-btn--danger" type="button"> <span class="d-btn__label">Place call</span> </button>
+          </td>
+          <td class="d-bgc-black-100 d-ta-center">
+            <button class="d-btn d-btn--outlined d-btn--danger" type="button"> <span class="d-btn__label">Place call</span> </button>
+          </td>
+          <td class="d-bgc-black-100 d-ta-center">
+            <button class="d-btn d-btn--primary d-btn--danger" type="button"> <span class="d-btn__label">Place call</span> </button>
+          </td>
+        </tr>
+        <tr>
+          <th class="d-ta-left d-pl0" scope="row">
+            <a class="d-link d-fs-100 d-fw-medium d-d-block d-mb4 d-tt-uppercase" href="#inverted"><strong>Inverted</strong></a>
+          </th>
+          <td class="d-bgc-black-500 d-ta-center">
+            <button class="d-btn d-btn--inverted" type="button"> <span class="d-btn__label">Place call</span> </button>
+          </td>
+          <td class="d-bgc-black-500 d-ta-center">
+            <button class="d-btn d-btn--outlined d-btn--inverted" type="button"> <span class="d-btn__label">Place call</span> </button>
+          </td>
+          <td class="d-bgc-black-500 d-ta-center">
+            <button class="d-btn d-btn--primary d-btn--inverted" type="button"> <span class="d-btn__label">Place call</span> </button>
+          </td>
+        </tr>
+        <tr>
+          <th class="d-ta-left d-pl0" scope="row">
+            <a class="d-link d-fs-100 d-fw-medium d-d-block d-mb4 d-tt-uppercase" href="#muted"><strong>Muted</strong></a>
+          </th>
+           <td class="d-bgc-black-100 d-ta-center d-lh-200">
+            <abbr class="d-fc-black-400 d-td-none d-fs-100" title="Not applicable">N/A</abbr>
+          </td>
+           <td class="d-bgc-black-100 d-ta-center">
+            <button class="d-btn d-btn--muted d-btn--outlined" type="button"> <span class="d-btn__label">Place call</span> </button>
+          </td>
+          <td class="d-bgc-black-100 d-ta-center">
+            <button class="d-btn d-btn--muted" type="button"> <span class="d-btn__label">Place call</span> </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <div class="d-code-small d-mb4">Sizes</div>
+    <div class="d-d-flex d-gg8 d-ai-flex-start">
+      <button class="d-btn d-btn--primary d-btn--xs" type="button"><span class="d-btn__label">Place call</span></button>
+      <button class="d-btn d-btn--primary d-btn--sm" type="button"><span class="d-btn__label">Place call</span></button>
+      <button class="d-btn d-btn--primary" type="button"><span class="d-btn__label">Place call</span></button>
+      <button class="d-btn d-btn--primary d-btn--lg" type="button"><span class="d-btn__label">Place call</span></button>
+      <button class="d-btn d-btn--primary d-btn--xl" type="button"><span class="d-btn__label">Place call</span></button>
+    </div>
+  </div>
+  <div>
+    <div class="d-code-small d-mb4">Base/Primary</div>
+    <div class="d-d-flex d-gg8 d-ai-flex-start">
+        <button class="d-btn d-btn--primary" type="button"><span class="d-btn__label">Place call</span></button>
+        <button class="d-btn d-btn--outlined" type="button"><span class="d-btn__label">Place call</span></button>
+        <button class="d-btn" type="button"><span class="d-btn__label">Place call</span></button>
+    </div>
+  </div>
+  <div>
+    <div class="d-code-small d-mb4">Danger/Primary</div>
+    <div class="d-d-flex d-gg8 d-ai-flex-start">
+      <button class="d-btn d-btn--danger d-btn--primary" type="button"><span class="d-btn__label">Place call</span></button>
+      <button class="d-btn d-btn--danger d-btn--outlined" type="button"><span class="d-btn__label">Place call</span></button>
+      <button class="d-btn d-btn--danger" type="button"><span class="d-btn__label">Place call</span></button>
+    </div>
+  </div>
+  <div>
+    <div class="d-code-small d-mb4">Muted/Primary</div>
+    <div class="d-d-flex d-gg8 d-ai-flex-start">
+      <button class="d-btn d-btn--muted" type="button"><span class="d-btn__label">Place call</span></button>
+      <button class="d-btn d-btn--muted d-btn--outlined" type="button"><span class="d-btn__label">Place call</span></button>
+    </div>
+  </div>
+  <div>
+    <div class="d-code-small d-mb4">Disabled</div>
+    <div class="d-d-flex d-gg8 d-ai-flex-start">
+      <button class="d-btn" type="button" disabled><span class="d-btn__label">Place call</span></button>
+      <span class="d-c-not-allowed">
+        <button class="d-btn d-btn--disabled" type="button" aria-disabled="true"><span class="d-btn__label">Place call</span></button>
+      </span>
+    </div>
+  </div>
+  <div>
+    <div class="d-code-small d-mb4">Primary: hover</div>
+    <div class="d-d-flex d-gg8 d-ai-flex-start">
+      <button class="d-btn d-btn--hover" type="button">
+        <span class="d-btn__label">Place call</span>
+      </button>
+      <button class="d-btn d-btn--primary d-btn--hover" type="button">
+        <span class="d-btn__label">Place call</span>
+      </button>
+      <button class="d-btn d-btn--danger d-btn--hover" type="button">
+        <span class="d-btn__label">Place call</span>
+      </button>
+      <button class="d-btn d-btn--inverted d-btn--primary d-btn--hover" type="button">
+        <span class="d-btn__label">Place call</span>
+      </button>
+      <button class="d-btn d-btn--muted d-btn--hover" type="button">
+        <span class="d-btn__label">Place call</span>
+      </button>
+    </div>
+  </div>
+  <div>
+    <div class="d-code-small d-mb4">Link appearance</div>
+    <div class="d-d-flex d-gg8 d-ai-flex-start">
+      <button type="button" class="d-link">Place call</button>
+      <button type="button" class="d-link" disabled>Place call</button>
+    </div>
+  </div>
+  <div>
+    <div class="d-code-small d-mb4">Loading</div>
+    <div class="d-d-flex d-gg8 d-ai-flex-start">
+      <button class="d-btn d-btn--loading d-btn--primary" type="button"><span class="d-btn__label">Place call</span></button>
+      <button class="d-btn d-btn--loading d-btn--outlined" type="button"><span class="d-btn__label">Place call</span></button>
+      <button class="d-btn d-btn--danger d-btn--loading" type="button"><span class="d-btn__label">Place call</span></button>
+    </div>
+  </div>
+  <div>
+    <div class="d-code-small d-mb4">Circle: new icon</div>
+    <div class="d-d-flex d-gg8 d-ai-flex-start">
+      <button class="d-btn d-btn--circle" type="button"><span class="d-btn__icon"><dt-icon name="dp-phone" size="200" /></span></button>
+      <button class="d-btn d-btn--circle d-btn--outlined" type="button"><span class="d-btn__icon"><dt-icon name="dp-phone" size="200" /></span></button>
+      <button class="d-btn d-btn--circle d-btn--danger" type="button"><span class="d-btn__icon"><dt-icon name="dp-phone" size="200" /></span></button>
+      <button class="d-btn d-btn--circle d-btn--danger d-btn--outlined" type="button"><span class="d-btn__icon"><dt-icon name="dp-phone" size="200" /></span></button>
+      <button class="d-btn d-btn--circle d-btn--danger d-btn--primary" type="button"><span class="d-btn__icon"><dt-icon name="dp-phone" size="200" /></span></button>
+    </div>
+  </div>
+  <div>
+    <div class="d-code-small d-mb4">Circle: old icon</div>
+    <div class="d-d-flex d-gg8 d-ai-flex-start">
+      <button class="d-btn d-btn--circle" type="button"><span class="d-btn__icon"><icon-phone/></span></button>
+      <button class="d-btn d-btn--circle d-btn--outlined" type="button"><span class="d-btn__icon"><icon-phone/></span></button>
+      <button class="d-btn d-btn--circle d-btn--danger" type="button"><span class="d-btn__icon"><icon-phone/></span></button>
+      <button class="d-btn d-btn--circle d-btn--danger d-btn--outlined" type="button"><span class="d-btn__icon"><icon-phone/></span></button>
+      <button class="d-btn d-btn--circle d-btn--danger d-btn--primary" type="button"><span class="d-btn__icon"><icon-phone/></span></button>
+    </div>
+  </div>
+  <div>
+    <div class="d-code-small d-mb4">Icon only</div>
+    <div class="d-d-flex d-gg8 d-ai-flex-start">
+      <button class="d-btn d-btn--icon-only" type="button"><span class="d-btn__icon"><icon-phone/></span></button>
+      <button class="d-btn d-btn--icon-only d-btn--outlined" type="button"><span class="d-btn__icon"><icon-phone/></span></button>
+    </div>
+  </div>
+  <div>
+    <div class="d-code-small d-mb4">Icon and label</div>
+    <div class="d-d-flex d-gg8 d-ai-flex-start">
+      <button class="d-btn d-btn--outlined" type="button">
+        <span class="d-btn__icon d-btn__icon--left"><icon-phone/></span>
+        <span class="d-btn__label">Label</span>
+      </button>
+      <button class="d-btn d-btn--outlined" type="button">
+        <span class="d-btn__icon d-btn__icon--right"><icon-phone/></span>
+        <span class="d-btn__label">Label</span>
+      </button>
+      <button class="d-btn d-btn--outlined d-btn--vertical" type="button">
+        <span class="d-btn__icon d-btn__icon--top"><icon-phone/></span>
+        <span class="d-btn__label">Label</span>
+      </button>
+      <button class="d-btn d-btn--outlined d-btn--vertical" type="button">
+        <span class="d-btn__icon d-btn__icon--bottom"><icon-phone/></span>
+        <span class="d-btn__label">Label</span>
+      </button>
+    </div>
+  </div>
+  <div>
+    <div class="d-code-small d-mb4">Branded</div>
+    <div class="d-d-flex d-gg8 d-ai-flex-start">
+      <button class="d-btn d-btn--brand d-btn--google d-w100p" type="button"><span class="d-btn__icon"><icon-google-glyph /></span><span class="d-btn__label">Log in with Google</span></button>
+      <button class="d-btn d-btn--brand d-btn--o365 d-w100p" type="button"><span class="d-btn__icon"><icon-office-365 /></span><span class="d-btn__label">Log in with Office365</span></button>
+      <button class="d-btn d-btn--brand d-btn--linkedin d-w100p" type="button"><span class="d-btn__icon"><icon-linkedin /></span><span class="d-btn__label">Log in with LinkedIn</span></button>
+    </div>
+  </div>
+</div>
+
 <code-well-header>
   <button class="d-btn d-btn--primary" type="button">
     <span class="d-btn__label">Place call</span>
