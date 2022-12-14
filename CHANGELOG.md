@@ -1,3 +1,10 @@
+## [7.10.3](https://github.com/dialpad/dialtone/compare/v7.10.2...v7.10.3) (2022-12-13)
+
+
+### Bug Fixes
+
+* **Avatar:** uppercase initial ([#767](https://github.com/dialpad/dialtone/issues/767)) ([27c22c3](https://github.com/dialpad/dialtone/commit/27c22c3eba1921db50bdb01e6c389f78fcdb2529))
+
 ## [7.10.2](https://github.com/dialpad/dialtone/compare/v7.10.1...v7.10.2) (2022-12-08)
 
 ## [7.10.1](https://github.com/dialpad/dialtone/compare/v7.10.0...v7.10.1) (2022-12-07)
