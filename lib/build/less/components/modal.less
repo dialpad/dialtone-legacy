@@ -91,7 +91,7 @@
   overflow-y: auto;
   color: var(--modal-dialog-color-text);
   font-size: var(--fs-200);
-  line-height: var(--lh8);
+  line-height: var(--lh-400);
   background-color: var(--modal-dialog-color-background);
   border-radius: var(--size-500);
   box-shadow: var(--modal-dialog-shadow);
@@ -140,7 +140,7 @@
   color: var(--modal-header-color-text);
   font-weight: var(--fw-medium);
   font-size: var(--fs-400);
-  line-height: var(--lh-200);
+  line-height: var(--lh-100);
 }
 
 //  $$  CONTENT
@@ -169,12 +169,24 @@
   box-sizing: border-box;
   width: 100%;
   max-width: calc(var(--size-300) * 157); // 628
-  padding: var(--space-500) var(--space-600); // 4 32
+  padding: var(--space-500) var(--space-600); // 16 32
   color: var(--fc-primary);
   font-size: var(--fs-200);
   line-height: var(--lh-300);
   background-color: var(--gold-100);
-  border-radius: var(--br8) var(--br8) 0 0;
+  border-radius: var(--size-500) var(--size-500) 0 0;
+  box-shadow: var(--modal-dialog-shadow);
+
+  &::after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: var(--zi-modal-element);
+    height: 1px;
+    background-color: var(--white);
+    content: '';
+  }
 
   &:not(.d-d-none) + .d-modal__dialog {
     border-top-left-radius: 0;

@@ -7,27 +7,37 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-modal--default
 figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Components-7?node-id=8923%3A20396&viewport=-724%2C-52%2C0.38&t=xHutRjwo1o5zMTgT-11
 ---
 <code-well-header>
-  <div class="d-d-grid d-gg16 d-g-cols4 d-fs-200">
-    <figure class="d-m0">
-      <img class="d-bar4 d-w100p" alt="Modal screen: Base" :src="$withBase('/assets/images/screen-modal--base.png')">
-      <figcaption><a class="d-link d-td-none" href="#base-style">Base Style</a></figcaption>
-      <!-- <example-modal kind="base" /> -->
-    </figure>
-    <figure class="d-m0">
-      <img class="d-bar4 d-w100p" alt="Modal screen: Fixed header and footer" :src="$withBase('/assets/images/screen-modal--fixed-header-and-footer.png')">
-      <figcaption><a class="d-link d-td-none" href="#fixed-header-and-footer">Fixed header and footer</a></figcaption>
-      <!-- <example-modal kind="fixed" /> -->
-    </figure>
-    <figure class="d-m0">
-      <img class="d-bar4 d-w100p" alt="Modal screen: Danger" :src="$withBase('/assets/images/screen-modal--danger.png')">
-      <figcaption><a class="d-link d-td-none" href="#danger">Danger</a></figcaption>
-      <!-- <example-modal kind="danger" /> -->
-    </figure>
-    <figure class="d-m0">
-      <img class="d-bar4 d-w100p" alt="Modal screen: Full Screen" :src="$withBase('/assets/images/screen-modal--fullscreen.png')">
-      <figcaption><a class="d-link d-td-none" href="#full-screen">Full Screen</a></figcaption>
-      <!-- <example-modal kind="full-screen" /> -->
-    </figure>
+  <div class="d-d-grid d-gg16 d-g-cols4 md:d-g-cols2 d-fs-200">
+    <a class="d-link d-td-none" href="#base-style">
+      <figure class="d-m0">
+        <img class="d-bar4 d-w100p" alt="Modal screen: Base" :src="$withBase('/assets/images/screen-modal--base.png')">
+        <figcaption>Base Style</figcaption>
+      </figure>
+    </a>
+    <a class="d-link d-td-none" href="#fixed-header-and-footer">
+      <figure class="d-m0">
+        <img class="d-bar4 d-w100p" alt="Modal screen: Fixed header and footer" :src="$withBase('/assets/images/screen-modal--fixed-header-and-footer.png')">
+        <figcaption>
+          Fixed header and footer
+        </figcaption>
+      </figure>
+    </a>
+    <a class="d-link d-td-none" href="#danger">
+      <figure class="d-m0">
+        <img class="d-bar4 d-w100p" alt="Modal screen: Danger" :src="$withBase('/assets/images/screen-modal--danger.png')">
+        <figcaption>
+          Danger
+        </figcaption>
+      </figure>
+    </a>
+    <a class="d-link d-td-none" href="#full-screen">
+      <figure class="d-m0">
+        <img class="d-bar4 d-w100p" alt="Modal screen: Full Screen" :src="$withBase('/assets/images/screen-modal--fullscreen.png')">
+        <figcaption>
+          Full Screen
+        </figcaption>
+      </figure>
+    </a>
   </div>
 </code-well-header>
 
