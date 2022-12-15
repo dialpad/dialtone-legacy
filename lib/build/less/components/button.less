@@ -18,23 +18,6 @@
 //  $   BASE STYLE
 //  ----------------------------------------------------------------------------
 
-.toggle-css {
-    position: fixed;
-    right: 45px;
-    bottom: 45px;
-    z-index: 9;
-    font-size: 21px;
-    display: flex;
-    padding: 16px;
-    gap: 8px;
-    border-color: var(--gold-400);
-    background-color: var(--gold-200);
-    cursor: pointer;
-    &:active {
-        transform: scale(.98);
-    }
-}
-
 .asdfasdf {
     position: fixed;
     top: 0;
@@ -57,13 +40,29 @@
     --button-color-text: var(--purple-400);
     --button-color-background: transparent;
     --button-color-border: transparent;
-    --button-radius: var(--size-400);
-    --button-border-width: var(--size-100);
-    --button-padding-y: 8px;
-    --button-padding-x: 12px;
-    --button-font-size: var(--fs-200);
-    --button-line-height: 18px;
     --button-gap: calc(var(--button-padding-x) / 2);
+    --button-border-radius: var(--size-400);
+    --button-border-width: var(--size-100);
+    --button-font-size: var(--fs-200);
+    --button-font-weight: var(--fw-medium);
+    --button-line-height-xs: var(--lh-100);
+    --button-line-height-sm: var(--lh-200);
+    --button-line-height-md: var(--lh-200);
+    --button-line-height-lg: var(--lh-200);
+    --button-line-height-xl: var(--lh-200);
+    --button-line-height: var(--button-line-height-md);
+    --button-padding-y-xs: calc(var(--space-400) - var(--button-border-width)); // 8 minus border-width
+    --button-padding-x-xs: calc(var(--space-400) - var(--button-border-width)); // 8 minus border-width
+    --button-padding-y-sm: calc(var(--space-400) - var(--button-border-width)); // 8 minus border-width
+    --button-padding-x-sm: calc((var(--space-500) - var(--space-300)) - var(--button-border-width)); // 12 minus border-width
+    --button-padding-y-md: calc(var(--space-400) - var(--button-border-width)); // 8 minus border-width
+    --button-padding-x-md: calc((var(--space-500) - var(--space-300)) - var(--button-border-width)); // 12 minus border-width
+    --button-padding-y-lg: calc((var(--space-400) + var(--space-200)) - var(--button-border-width)); // 10 minus border-width
+    --button-padding-x-lg: calc(var(--space-500) - var(--button-border-width)); // 16 minus border-width
+    --button-padding-y-xl: calc((var(--space-500) - var(--space-300)) - var(--button-border-width)); // 12 minus border-width
+    --button-padding-x-xl: calc(var(--space-500) - var(--button-border-width)); // 16 minus border-width
+    --button-padding-y: var(--button-padding-y-md);
+    --button-padding-x: var(--button-padding-x-md);
 
     position: relative;
     display: inline-flex;
@@ -73,7 +72,7 @@
     box-sizing: border-box;
     padding: var(--button-padding-y) var(--button-padding-x);
     color: var(--button-color-text);
-    font-weight: var(--fw-medium);
+    font-weight: var(--button-font-weight);
     font-size: var(--button-font-size);
     font-family: inherit;
     line-height: var(--button-line-height);
@@ -84,7 +83,7 @@
     border-color: var(--button-color-border);
     border-style: solid;
     border-width: var(--button-border-width);
-    border-radius: var(--button-radius);
+    border-radius: var(--button-border-radius);
     box-shadow: var(--button--bs);
     cursor: pointer;
     transition-timing-function: var(--ttf-in-out);
@@ -134,11 +133,11 @@
 //  $$  EXTRA SMALL
 //  ----------------------------------------------------------------------------
 .d-btn--xs {
-    --button-padding-y: 8px;
-    --button-padding-x: 8px;
+    --button-padding-y: var(--button-padding-y-xs);
+    --button-padding-x: var(--button-padding-x-xs);
     --button-font-size: var(--fs-100);
-    --button-line-height: 1;
-    --button-radius: var(--size-300);
+    --button-line-height: var(--button-line-height-xs);
+    --button-border-radius: var(--size-300);
 
     .d-btn__icon .d-svg {
         width: @icon12;
@@ -149,10 +148,10 @@
 //  $$ SMALL
 //  ----------------------------------------------------------------------------
 .d-btn--sm {
-    --button-padding-y: 8px;
-    --button-padding-x: 12px;
-    --button-font-size: var(--fs-200);
-    --button-line-height: 14px;
+    --button-padding-y: var(--button-padding-y-sm);
+    --button-padding-x: var(--button-padding-x-sm);
+    --button-font-size: var(--fs-100);
+    --button-line-height: var(--button-line-height-sm);
 
     .d-btn__icon .d-svg {
         width: @icon14;
@@ -169,11 +168,11 @@
 //  $$  LARGE
 //  ----------------------------------------------------------------------------
 .d-btn--lg {
-    --button-padding-y: 10px;
-    --button-padding-x: 16px;
+    --button-padding-y: var(--button-padding-y-lg);
+    --button-padding-x: var(--button-padding-x-lg);
     --button-font-size: var(--fs-300);
-    --button-line-height: 24px;
-    --button-radius: calc(var(--size-300) * 3);
+    --button-line-height: var(--button-line-height-lg);
+    --button-border-radius: calc(var(--size-300) * 3);
 
     .d-btn__icon .d-svg {
         width: @icon20;
@@ -184,11 +183,12 @@
 //  $$  EXTRA LARGE
 //  ----------------------------------------------------------------------------
 .d-btn--xl {
-    --button-padding-y: 12px;
-    --button-padding-x: 16px;
-    --button-font-size: var(--fs-300);
-    --button-line-height: 32px;
-    --button-radius: var(--size-500);
+    --button-padding-y: var(--button-padding-y-xl);
+    --button-padding-x: var(--button-padding-x-xl);
+    --button-font-size: var(--fs-400);
+    --button-font-weight: var(--fw-normal);
+    --button-line-height: var(--button-line-height-xl);
+    --button-border-radius: var(--size-500);
 
     .d-btn__icon .d-svg {
         width: @icon24;
@@ -248,10 +248,10 @@
 //  $$  CIRCLE BUTTONS
 //  ----------------------------------------------------------------------------
 .d-btn--circle {
-    --button-padding-y: 10px;
-    --button-padding-x: var(--button-padding-y);
+    --button-padding-x: var(--button-padding-y-md);
+    --button-padding-y: var(--button-padding-y-md);
     --button-color-text: var(--black-800);
-    --button-radius: var(--br-circle);
+    --button-border-radius: var(--br-circle);
 
     transition-duration: 150ms;
 
@@ -285,23 +285,28 @@
 
     //  Adjust padding based on sizes
     &.d-btn--xs {
-        --button-padding-y: 8px;
+        --button-padding-y: var(--button-padding-y-xs);
+        --button-padding-x: var(--button-padding-y-xs);
     }
 
     &.d-btn--sm {
-        --button-padding-y: 8px;
+        --button-padding-y: var(--button-padding-y-sm);
+        --button-padding-x: var(--button-padding-y-sm);
     }
 
     &.d-btn--md {
-        //
+        --button-padding-x: var(--button-padding-y-md);
+        --button-padding-y: var(--button-padding-y-md);
     }
 
     &.d-btn--lg {
-        --button-padding-y: 12px;
+        --button-padding-x: calc(var(--button-padding-y-lg) + var(--space-100));
+        --button-padding-y: calc(var(--button-padding-y-lg) + var(--space-100));
     }
 
     &.d-btn--xl {
-        --button-padding-y: 16px;
+        --button-padding-x: calc(var(--button-padding-y-xl) + var(--space-300));
+        --button-padding-y: calc(var(--button-padding-y-xl) + var(--space-300));
     }
 }
 
