@@ -41,6 +41,9 @@ export default defineUserConfig({
 
   bundler: viteBundler({
     viteOptions: {
+      css: {
+        devSourcemap: true,
+      },
       resolve: {
         alias: {
           vue$: 'vue/dist/vue.esm-bundler.js',

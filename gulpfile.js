@@ -61,6 +61,7 @@ const postcssResponsify = settings.styles
   ? require('@dialpad/postcss-responsive-variations')({ breakpoints, classes })
   : null;
 const postcssFocusVisible = settings.styles ? require('postcss-focus-visible') : null;
+const sourcemaps = require('gulp-sourcemaps');
 
 //  @@ SVGS
 const path = settings.svgs ? require('path') : null;
@@ -239,10 +240,16 @@ const libStylesDev = function (done) {
   //  Compile library files
   return src(paths.styles.inputLib)
     // compile less to css
+    .pipe(sourcemaps.init())
     .pipe(less())
+    .pipe(sourcemaps.mapSources(function (sourcePath, file) {
+      return '../../build/less/' + sourcePath;
+    }))
+    .pipe(sourcemaps.write())
     .pipe(postcss([postcssResponsify, postcssFocusVisible]))
     // concat the css into a single file
     .pipe(concat('dialtone.css'))
+
     .pipe(dest(paths.styles.outputLib));
 };
 
