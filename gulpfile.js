@@ -242,10 +242,14 @@ const libStylesDev = function (done) {
     // compile less to css
     .pipe(sourcemaps.init())
     .pipe(less())
+    .pipe(sourcemaps.mapSources(function (sourcePath, file) {
+      return '../../build/less/' + sourcePath;
+    }))
     .pipe(sourcemaps.write())
     .pipe(postcss([postcssResponsify, postcssFocusVisible]))
     // concat the css into a single file
     .pipe(concat('dialtone.css'))
+
     .pipe(dest(paths.styles.outputLib));
 };
 
