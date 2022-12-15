@@ -165,26 +165,31 @@
 //  $   BANNERS
 //  ----------------------------------------------------------------------------
 .d-modal__banner {
+  --modal-banner-padding-y: var(--space-500);
+  --modal-banner-padding-x: var(--space-600);
+  --modal-banner-color-background: var(--gold-100);
+
   position: relative;
   box-sizing: border-box;
   width: 100%;
   max-width: calc(var(--size-300) * 157); // 628
-  padding: var(--space-500) var(--space-600); // 16 32
+  padding: var(--modal-banner-padding-y) var(--modal-banner-padding-x); // 16 32
   color: var(--fc-primary);
   font-size: var(--fs-200);
   line-height: var(--lh-300);
-  background-color: var(--gold-100);
+  background-color: var(--modal-banner-color-background);
   border-radius: var(--size-500) var(--size-500) 0 0;
   box-shadow: var(--modal-dialog-shadow);
 
-  &::after {
+  &::before {
+    // 🤦 don't ask. or do, i'm not even sorry.
     position: absolute;
     right: 0;
     bottom: 0;
     left: 0;
     z-index: var(--zi-modal-element);
-    height: 1px;
-    background-color: var(--white);
+    height: var(--modal-banner-padding-y);
+    background-color: var(--modal-banner-color-background);
     content: '';
   }
 
