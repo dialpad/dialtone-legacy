@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-8daa1a0e","path":"/","title":"","lang":"en-US","frontmatter":{"home":true},"excerpt":"","headers":[],"git":{"createdTime":1671205628000,"updatedTime":1671205628000,"contributors":[{"name":"semantic-release-bot","email":"semantic-release-bot@martynus.net","commits":1}]}}');export{e as data};
