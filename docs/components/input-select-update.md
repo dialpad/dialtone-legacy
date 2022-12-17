@@ -23,7 +23,30 @@ thumb: true
   <div class="tryeht d-d-grid d-gg16 d-g-cols2">
     <div class="pepjaj">
       <h2>Input</h2>
-      <h3>Sizes</h3>
+      <h3>Size: match button size</h3>
+      <div class="d-stack16 lkhhjj">
+        <div class="d-d-flex d-ai-center d-flow8">
+          <input class="d-input d-input--xs" id="Dialtone--InputExamplez--ExtraSmall" type="text" placeholder="Placeholder" />
+          <button class="d-btn d-btn--primary d-btn--xs" type="button"><span class="d-btn__label">Btn</span></button>
+        </div>
+        <div class="d-d-flex d-ai-center d-flow8">
+          <input class="d-input d-input--sm" id="Dialtone--InputExamplez--Small" type="text" placeholder="Placeholder" />
+          <button class="d-btn d-btn--primary d-btn--sm" type="button"><span class="d-btn__label">Btn</span></button>
+        </div>
+        <div class="d-d-flex d-ai-center d-flow8">
+          <input class="d-input" id="Dialtone--InputExamplez--Base" type="text" placeholder="Placeholder" />
+          <button class="d-btn d-btn--primary" type="button"><span class="d-btn__label">Btn</span></button>
+        </div>
+        <div class="d-d-flex d-ai-center d-flow8">
+          <input class="d-input d-input--lg" id="Dialtone--InputExamplez--Large" type="text" placeholder="Placeholder" />
+          <button class="d-btn d-btn--primary d-btn--lg" type="button"><span class="d-btn__label">Btn</span></button>
+        </div>
+        <div class="d-d-flex d-ai-center d-flow8">
+          <input class="d-input d-input--xl" id="Dialtone--InputExamplez--ExtraLarge" type="text" placeholder="Placeholder" />
+          <button class="d-btn d-btn--primary d-btn--xl" type="button"><span class="d-btn__label">Btn</span></button>
+        </div>
+      </div>
+      <h3>Size: with label</h3>
       <div class="d-stack16 lkhhjj">
         <div>
           <label class="d-label d-label--xs" for="Dialtone--InputExample--ExtraSmall">XS Label</label>
@@ -207,7 +230,65 @@ thumb: true
     </div>
     <div class="pepjaj">
       <h2>Select</h2>
-      <h3>Select Sizes</h3>
+      <h3>Size: match button size</h3>
+      <div class="d-stack16 hgrtrrss">
+        <div class="d-d-flex d-ai-center d-flow8">
+          <div class="d-select d-select--xs">
+            <select class="d-select__input" id="Dialtone--SelectExamplez7">
+              <option value="" selected>Please select one</option>
+              <option value="option1">Option 1</option>
+              <option value="option2">Option 2</option>
+              <option value="option3">Option 3</option>
+            </select>
+          </div>
+          <button class="d-btn d-btn--primary d-btn--xs" type="button"><span class="d-btn__label">Btn</span></button>
+        </div>
+        <div class="d-d-flex d-ai-center d-flow8">
+          <div class="d-select d-select--sm">
+            <select class="d-select__input" id="Dialtone--SelectExamplez8">
+              <option value="" selected>Please select one</option>
+              <option value="option1">Option 1</option>
+              <option value="option2">Option 2</option>
+              <option value="option3">Option 3</option>
+            </select>
+          </div>
+          <button class="d-btn d-btn--primary d-btn--sm" type="button"><span class="d-btn__label">Btn</span></button>
+        </div>
+        <div class="d-d-flex d-ai-center d-flow8">
+          <div class="d-select">
+            <select class="d-select__input" id="Dialtone--SelectExamplez9">
+              <option value="" selected>Please select one</option>
+              <option value="option1">Option 1</option>
+              <option value="option2">Option 2</option>
+              <option value="option3">Option 3</option>
+            </select>
+          </div>
+          <button class="d-btn d-btn--primary" type="button"><span class="d-btn__label">Btn</span></button>
+        </div>
+        <div class="d-d-flex d-ai-center d-flow8">
+          <div class="d-select d-select--lg">
+            <select class="d-select__input" id="Dialtone--SelectExamplez10">
+              <option value="" selected>Please select one</option>
+              <option value="option1">Option 1</option>
+              <option value="option2">Option 2</option>
+              <option value="option3">Option 3</option>
+            </select>
+          </div>
+          <button class="d-btn d-btn--primary d-btn--lg" type="button"><span class="d-btn__label">Btn</span></button>
+        </div>
+        <div class="d-d-flex d-ai-center d-flow8">
+          <div class="d-select d-select--xl">
+            <select class="d-select__input" id="Dialtone--SelectExamplez11">
+              <option value="" selected>Please select one</option>
+              <option value="option1">Option 1</option>
+              <option value="option2">Option 2</option>
+              <option value="option3">Option 3</option>
+            </select>
+          </div>
+          <button class="d-btn d-btn--primary d-btn--xl" type="button"><span class="d-btn__label">Btn</span></button>
+        </div>
+      </div>
+      <h3>Size: with label</h3>
       <div class="d-stack16 hgrtrrss">
         <div>
           <div class="d-label d-label--xs">
