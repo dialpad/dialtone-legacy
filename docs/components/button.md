@@ -251,22 +251,6 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
   <div class="d-stack8">
     <div class="d-code-small d-mb4"><strong>Vertical</strong></div>
     <div class="d-d-flex d-gg8 d-ai-center">
-      <button class="d-btn d-btn--outlined d-btn--vertical" type="button">
-        <span class="d-btn__icon d-btn__icon--top"><dt-icon name="dp-phone" size="300" /></span>
-        <span class="d-btn__label">Label</span>
-      </button>
-      <button class="d-btn d-btn--outlined d-btn--vertical" type="button">
-        <span class="d-btn__icon d-btn__icon--bottom"><dt-icon name="dp-phone" size="300" /></span>
-        <span class="d-btn__label">Label</span>
-      </button>
-      <button class="d-btn d-btn--outlined d-btn--vertical" type="button">
-        <span class="d-btn__icon d-btn__icon--top"><icon-phone/></span>
-        <span class="d-btn__label">Label</span>
-      </button>
-      <button class="d-btn d-btn--outlined d-btn--vertical" type="button">
-        <span class="d-btn__icon d-btn__icon--bottom"><icon-phone/></span>
-        <span class="d-btn__label">Label</span>
-      </button>
       <button class="d-btn d-btn--xs d-btn--outlined d-btn--vertical" type="button">
         <span class="d-btn__icon d-btn__icon--top"><dt-icon name="dp-phone" size="100" /></span>
         <span class="d-btn__label">Label</span>
@@ -737,12 +721,6 @@ Button labels can include an icon next to the text. Every button style can accep
         <span class="d-btn__label">Label</span>
       </button>
     </div>
-    <div>
-      <button class="d-btn d-btn--outlined d-btn--vertical" type="button">
-        <span class="d-btn__icon d-btn__icon--bottom"><icon-phone/></span>
-        <span class="d-btn__label">Label</span>
-      </button>
-    </div>
   </div>
 </code-well-header>
 
@@ -757,10 +735,6 @@ Button labels can include an icon next to the text. Every button style can accep
 </button>
 <button class="d-btn d-btn--vertical d-btn--outlined" type="button">
   <span class="d-btn__icon d-btn__icon--top">...</span>
-  <span class="d-btn__label">...</span>
-</button>
-<button class="d-btn d-btn--vertical d-btn--outlined" type="button">
-  <span class="d-btn__icon d-btn__icon--bottom">...</span>
   <span class="d-btn__label">...</span>
 </button>
 ```
