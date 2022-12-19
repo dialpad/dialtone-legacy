@@ -13,6 +13,7 @@ thumb: true
     <button onclick="document.getElementById('ouyps').style.background='var(--black-200)'" type="button" class="d-btn d-btn--outlined">Moderate</button>
     <button onclick="document.getElementById('ouyps').style.background='var(--gold-100)'" type="button" class="d-btn d-btn--outlined">Warning</button>
     <button onclick="document.getElementById('ouyps').style.background='var(--red-100)'" type="button" class="d-btn d-btn--outlined">Critical</button>
+    <button onclick="document.getElementById('ouyps').style.background='var(--green-100)'" type="button" class="d-btn d-btn--outlined">Success</button>
     <button onclick="document.getElementById('ouyps').style.background='var(--blue-100)'" type="button" class="d-btn d-btn--outlined">Info</button>
     <button onclick="document.getElementById('ouyps').style.background='var(--black-600)'" type="button" class="d-btn d-btn--outlined">Strong</button>
     <button onclick="document.getElementById('ouyps').style.background='var(--black-900)'" type="button" class="d-btn d-btn--outlined">Black</button>
@@ -21,7 +22,8 @@ thumb: true
     </button>
   </div>
   <div class="d-d-flex d-flow8 d-ai-baseline d-jc-center">
-    <button onclick="document.getElementById('input-button-collection').classList.toggle('bg-test')" type="button" class="d-btn d-btn--outlined">🤔 Outline or Translucent BG?</button>
+    <strong>🤔 Borders and BG</strong>
+    <button onclick="document.getElementById('input-button-collection').classList.toggle('bg-test')" type="button" class="d-btn d-btn--outlined"> Solid vs Translucent❓</button>
   </div>
   <div class="tryeht d-d-grid d-gg16 d-g-cols2" id="input-button-collection">
     <div class="pepjaj">
