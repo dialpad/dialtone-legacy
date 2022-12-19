@@ -251,7 +251,7 @@ thumb: true
         <div class="d-d-flex d-ai-center d-flow8">
           <div class="d-select d-select--sm">
             <select class="d-select__input" id="Dialtone--SelectExamplez8">
-              <option value="" selected>Please select one</option>
+              <option value="" selected>Please select one lorem ipsum dolor sit amet gemino quis</option>
               <option value="option1">Option 1</option>
               <option value="option2">Option 2</option>
               <option value="option3">Option 3</option>
@@ -262,7 +262,7 @@ thumb: true
         <div class="d-d-flex d-ai-center d-flow8">
           <div class="d-select">
             <select class="d-select__input" id="Dialtone--SelectExamplez9">
-              <option value="" selected>Please select one</option>
+              <option value="" selected>Please select one lorem ipsum dolor sit amet gemino quis</option>
               <option value="option1">Option 1</option>
               <option value="option2">Option 2</option>
               <option value="option3">Option 3</option>
@@ -273,7 +273,7 @@ thumb: true
         <div class="d-d-flex d-ai-center d-flow8">
           <div class="d-select d-select--lg">
             <select class="d-select__input" id="Dialtone--SelectExamplez10">
-              <option value="" selected>Please select one</option>
+              <option value="" selected>Please select one lorem ipsum dolor sit amet gemino quis</option>
               <option value="option1">Option 1</option>
               <option value="option2">Option 2</option>
               <option value="option3">Option 3</option>
@@ -284,7 +284,7 @@ thumb: true
         <div class="d-d-flex d-ai-center d-flow8">
           <div class="d-select d-select--xl">
             <select class="d-select__input" id="Dialtone--SelectExamplez11">
-              <option value="" selected>Please select one</option>
+              <option value="" selected>Please select one lorem ipsum dolor sit amet gemino quis</option>
               <option value="option1">Option 1</option>
               <option value="option2">Option 2</option>
               <option value="option3">Option 3</option>
