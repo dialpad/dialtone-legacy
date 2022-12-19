@@ -235,7 +235,7 @@ thumb: true
         <div class="d-d-flex d-ai-center d-flow8">
           <div class="d-select d-select--xs">
             <select class="d-select__input" id="Dialtone--SelectExamplez7">
-              <option value="" selected>Please select one</option>
+              <option value="" selected>Please select one lorem ipsum dolor sit amet gemino quis</option>
               <option value="option1">Option 1</option>
               <option value="option2">Option 2</option>
               <option value="option3">Option 3</option>
