@@ -20,7 +20,10 @@ thumb: true
       All
     </button>
   </div>
-  <div class="tryeht d-d-grid d-gg16 d-g-cols2">
+  <div class="d-d-flex d-flow8 d-ai-baseline d-jc-center">
+    <button onclick="document.getElementById('input-button-collection').classList.toggle('bg-test')" type="button" class="d-btn d-btn--outlined">🤔 Outline or Translucent BG?</button>
+  </div>
+  <div class="tryeht d-d-grid d-gg16 d-g-cols2" id="input-button-collection">
     <div class="pepjaj">
       <h2>Input</h2>
       <h3>Size: match button size</h3>
@@ -30,7 +33,7 @@ thumb: true
           <button class="d-btn d-btn--outlined d-btn--xs" type="button"><span class="d-btn__label">Btn</span></button>
         </div>
         <div class="d-d-flex d-ai-center d-flow8">
-          <input class="d-input d-input--sm" id="Dialtone--InputExamplez--Small" type="text" placeholder="Placeholder" />
+          <input class="d-input d-input--sm" id="Dialtone--InputExamplez--Small" type="text" value="Value" placeholder="Placeholder" />
           <button class="d-btn d-btn--primary d-btn--sm" type="button"><span class="d-btn__label">Btn</span></button>
         </div>
         <div class="d-d-flex d-ai-center d-flow8">
@@ -38,7 +41,7 @@ thumb: true
           <button class="d-btn d-btn--primary" type="button"><span class="d-btn__label">Btn</span></button>
         </div>
         <div class="d-d-flex d-ai-center d-flow8">
-          <input class="d-input d-input--lg" id="Dialtone--InputExamplez--Large" type="text" placeholder="Placeholder" />
+          <input class="d-input d-input--lg" id="Dialtone--InputExamplez--Large" type="text" value="Value" placeholder="Placeholder" />
           <button class="d-btn d-btn--primary d-btn--lg" type="button"><span class="d-btn__label">Btn</span></button>
         </div>
         <div class="d-d-flex d-ai-center d-flow8">
