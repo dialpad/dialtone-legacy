@@ -27,7 +27,7 @@ thumb: true
       <div class="d-stack16 lkhhjj">
         <div class="d-d-flex d-ai-center d-flow8">
           <input class="d-input d-input--xs" id="Dialtone--InputExamplez--ExtraSmall" type="text" placeholder="Placeholder" />
-          <button class="d-btn d-btn--primary d-btn--xs" type="button"><span class="d-btn__label">Btn</span></button>
+          <button class="d-btn d-btn--outlined d-btn--xs" type="button"><span class="d-btn__label">Btn</span></button>
         </div>
         <div class="d-d-flex d-ai-center d-flow8">
           <input class="d-input d-input--sm" id="Dialtone--InputExamplez--Small" type="text" placeholder="Placeholder" />
@@ -43,7 +43,7 @@ thumb: true
         </div>
         <div class="d-d-flex d-ai-center d-flow8">
           <input class="d-input d-input--xl" id="Dialtone--InputExamplez--ExtraLarge" type="text" placeholder="Placeholder" />
-          <button class="d-btn d-btn--primary d-btn--xl" type="button"><span class="d-btn__label">Btn</span></button>
+          <button class="d-btn d-btn--outlined d-btn--xl" type="button"><span class="d-btn__label">Btn</span></button>
         </div>
       </div>
       <h3>Size: with label</h3>

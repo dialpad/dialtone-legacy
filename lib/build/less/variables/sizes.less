@@ -10,9 +10,10 @@
 //  $$  EXTRA SMALL
 //  ----------------------------------------------------------------------------
 #d-internal__input-and-select-xs() {
-    padding-top: var(--space-100 / 2); // .5rem
-    padding-bottom: calc(var(--space-400) + var(--space-100)); // 5px
-    font-size: var(--fs-100);
+    --input-padding-y: calc(calc(var(--space-400) - var(--space-100)) - var(--input-border-width));
+    --input-padding-x: calc(var(--space-400) - var(--input-border-width));
+    --input-font-size: var(--fs-100);
+    --input-border-radius: var(--size-300);
 
     .d-btn__icon {
         width: @icon-size14;
@@ -23,11 +24,9 @@
 //  $$  SMALL
 //  ----------------------------------------------------------------------------
 #d-internal__input-and-select-sm() {
-    --padding-y: calc(var(--space-300) + var(--space-200)); // 6
-
-    padding-top: var(--padding-y);
-    padding-bottom: var(--padding-y);
-    font-size: var(--fs-200);
+    --input-padding-y: calc(var(--space-400) - var(--input-border-width));
+    --input-padding-x: calc((var(--space-500) - var(--space-300)) - var(--input-border-width));
+    --input-font-size: var(--fs-100);
 
     .d-btn__icon {
         width: @icon-size16;
@@ -38,11 +37,10 @@
 //  $$  LARGE
 //  ----------------------------------------------------------------------------
 #d-internal__input-and-select-lg() {
-    --padding-y: calc(calc(var(--space-300) + var(--space-200)) + calc(var(--space-300) + var(--space-200))); // 11 yes this is awkward
-
-    padding-top: var(--padding-y);
-    padding-bottom: var(--padding-y);
-    font-size: var(--fs-300);
+    --input-padding-y: calc((var(--space-400) + var(--space-200)) - var(--input-border-width));
+    --input-padding-x: calc(var(--space-500) - var(--input-border-width));
+    --input-font-size: var(--fs-300);
+    --input-border-radius: calc(var(--size-300) * 3);
 
     .d-btn__icon {
         width: @icon-size20;
@@ -53,11 +51,10 @@
 //  $$  EXTRA LARGE
 //  ----------------------------------------------------------------------------
 #d-internal__input-and-select-xl() {
-    --padding-y: calc(calc(var(--space-400) + var(--space-300)) + var(--space-100)); // 13
-
-    padding-top: var(--padding-y);
-    padding-bottom: var(--padding-y);
-    font-size: var(--fs-300);
+    --input-padding-y: calc((var(--space-500) - var(--space-300)) - var(--input-border-width));
+    --input-padding-x: calc(var(--space-500) - var(--input-border-width));
+    --input-font-size: var(--fs-400);
+    --input-border-radius: var(--size-500);
 
     .d-btn__icon {
         width: @icon-size24;

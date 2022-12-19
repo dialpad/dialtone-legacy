@@ -36,15 +36,14 @@ fieldset {
   align-items: baseline;
   justify-content: space-between;
   box-sizing: border-box;
-  margin-bottom: calc(var(--space-300) + var(--space-200)); // 6
-  color: currentColor;
-  font-weight: @fw-bold;
+  margin-bottom: var(--space-300);
+  color: var(--fc-secondary);
+  font-weight: var(--fw-semibold);
   font-size: var(--fs-200);
   font-family: inherit;
-  line-height: var(--lh4);
+  line-height: var(--lh-300);
   word-break: break-word;
   overflow-wrap: break-word;
-  cursor: pointer;
 
   legend & { cursor: default; }
 }
@@ -53,24 +52,19 @@ fieldset {
 //  ----------------------------------------------------------------------------
 .d-label--xs {
   font-size: var(--fs-100);
-  line-height: var(--lh4);
 }
 
 .d-label--sm {
   font-size: var(--fs-200);
-  line-height: var(--lh2);
 }
 
 .d-label--lg {
   font-size: var(--fs-200);
-  line-height: var(--lh2);
 }
 
 .d-label--xl {
   font-size: var(--fs-300);
-  line-height: var(--lh4);
 }
-
 
 //  ============================================================================
 //  $ DESCRIPTIONS
@@ -78,28 +72,26 @@ fieldset {
 .d-description {
   display: flex;
   box-sizing: border-box;
-  margin-bottom: calc(var(--space-300) + var(--space-200)); // 6
-  color: var(--black-600);
+  color: var(--fc-tertiary);
   font-size: var(--fs-100);
   font-family: inherit;
-  line-height: var(--lh4);
+  line-height: var(--lh-300);
   fill: currentColor;
 }
 
 .d-label + .d-description {
-  margin-top: calc(calc(var(--space-300) + var(--space-200)) * -1); // -6
+  margin-top: calc(var(--space-300) * -1);
+  margin-bottom: var(--space-300);
 }
 
 //  $$  SIZES
 //  ----------------------------------------------------------------------------
 .d-description--lg {
   font-size: var(--fs-200);
-  line-height: var(--lh6);
 }
 
 .d-description--xl {
   font-size: var(--fs-200);
-  line-height: var(--lh6);
 }
 
 //  ============================================================================
@@ -111,12 +103,12 @@ fieldset {
   display: inline-flex;
   gap: var(--space-300); // 4
   align-items: flex-start;
-  margin-top: calc(var(--space-300) + var(--space-200)); // 6
+  margin-top: var(--space-300);
   color: var(--validation--fc);
-  font-weight: inherit;
+  font-weight: var(--fw-medium);
   font-size: var(--fs-100);
   font-family: inherit;
-  line-height: var(--lh4);
+  line-height: var(--lh-300);
 
   // Icon Slot
   &::before {

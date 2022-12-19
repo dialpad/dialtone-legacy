@@ -22,14 +22,23 @@
 //  $  INPUTS
 //  ----------------------------------------------------------------------------
 .d-input,
+.d-input--md,
 .d-textarea,
+.d-textarea--md,
+.d-input__wrapper--md,
 .d-input__wrapper {
     //  Component CSS Vars
     //  ------------------------------------------------------------------------
     --input-color-border-focus: var(--purple-400);
     --input-color-border: var(--black-400);
     --input-color-background: var(--white);
-    --input-color-text: var(--black-800);
+    --input-border-width: calc(var(--size-100) + calc(var(--size-100) / 2)); // 1.5
+    --input-border-radius: var(--size-400);
+    --input-padding-y: calc(var(--space-400) - var(--input-border-width));
+    --input-padding-x: calc((var(--space-500) - var(--space-300)) - var(--input-border-width));
+    --input-color-text: var(--fc-secondary);
+    --input-font-size: var(--fs-200);
+    --input-line-height: var(--lh-200);
 
     position: relative;
     display: inline-flex;
@@ -37,20 +46,21 @@
     box-sizing: border-box;
     width: 100%;
     min-width: 0;
-    padding: calc(var(--space-400) - var(--space-100)) var(--space-400); // 7 8
+    padding: var(--input-padding-y) var(--input-padding-x);
     color: var(--input-color-text);
     font-weight: inherit;
-    font-size: var(--fs-200);
+    font-size: var(--input-font-size);
     font-family: inherit;
-    line-height: var(--lh4);
+    line-height: var(--input-line-height);
     background-color: var(--input-color-background);
-    border: 1px solid var(--input-color-border);
-    border-radius: var(--base--corner-radius);
+    border: var(--input-border-width) solid var(--input-color-border);
+    border-radius: var(--input-border-radius);
     outline: none;
     box-shadow: none;
     transition-timing-function: var(--ttf-in-out);
     transition-duration: 100ms;
     transition-property: border, box-shadow, background-color;
+    appearance: none;
 
     //  --  Placeholder copy
     &::placeholder {
@@ -72,7 +82,7 @@
     &[disabled],
     &[read-only] {
         --input-color-border: var(--black-400) !important;
-        --input-color-background: var(--black-300);
+        --input-color-background: var(--black-200);
         --input-color-text: var(--fc-disabled);
 
         &:focus,
@@ -85,9 +95,24 @@
             color: var(--fc-placeholder);
         }
     }
+
     //  --  DISABLED
     &[disabled] {
         cursor: not-allowed;
+    }
+
+    //  --  BROWSER-SPECIFIC
+    &::-moz-focus-inner {
+        outline: none !important;
+    }
+
+    &:-moz-focusring {
+        color: transparent;
+        text-shadow: 0 0 0 var(--black-900);
+    }
+
+    &::-ms-expand {
+        display: none;
     }
 }
 
@@ -97,11 +122,11 @@
     padding: 0;
 
     .d-input-icon.d-input-icon--right {
-        margin-right: var(--space-400); // 8
+        margin-right: var(--space-400);
     }
 
     .d-input-icon.d-input-icon--left {
-        margin-left: var(--space-400); // 8
+        margin-left: var(--space-400);
     }
 
     .d-input,
@@ -117,11 +142,11 @@
         }
 
         &.d-input-icon--right {
-            padding-right: calc(var(--space-300) + var(--space-200)); // 6
+            padding-right: calc(var(--space-300) + var(--space-200));
         }
 
         &.d-input-icon--left {
-            padding-left: calc(var(--space-300) + var(--space-200)); // 6
+            padding-left: calc(var(--space-300) + var(--space-200));
         }
     }
 }
