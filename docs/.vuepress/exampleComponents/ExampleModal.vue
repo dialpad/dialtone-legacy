@@ -9,7 +9,7 @@
   <aside
     id="modal-base"
     ref="modal"
-    class="d-modal d-mn1"
+    class="d-modal d-m0"
     :class="{
       'd-modal--full': isFullScreen,
       'd-modal--danger': isDanger,
