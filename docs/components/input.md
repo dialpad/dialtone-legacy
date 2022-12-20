@@ -224,26 +224,22 @@ Provides feedback to the user based on their interaction, or lack thereof, with 
 </div>
 ```
 
-### With Icons
+### With icons
 
 <code-well-header>
   <div class="d-stack24 d-w100p">
-    <div class="d-w100p">
-      <div>
-        <label class="d-label" for="Dialtone--InputExample--IconLeft">Label</label>
-      </div>
+    <div>
+      <label class="d-label" for="Dialtone--InputExample--IconLeft">Label</label>
       <div class="d-input__wrapper">
-        <span class="d-input-icon d-input-icon--left"><icon-send /></span>
+        <span class="d-input-icon d-input-icon--left"><dt-icon name="send" size="200" /></span>
         <input class="d-input d-input-icon--left" id="Dialtone--InputExample--IconLeft" type="text" placeholder="Placeholder" />
       </div>
     </div>
-    <div class="d-w100p">
-      <div>
-        <label class="d-label" for="Dialtone--InputExample--IconRight">Label</label>
-      </div>
+    <div>
+      <label class="d-label" for="Dialtone--InputExample--IconRight">Label</label>
       <div class="d-input__wrapper">
         <input class="d-input d-input-icon--right" id="Dialtone--InputExample--IconRight" type="text" placeholder="Placeholder" />
-         <span class="d-input-icon d-input-icon--right"><icon-lock /></span>
+         <span class="d-input-icon d-input-icon--right"><dt-icon name="lock" size="200" /></span>
       </div>
     </div>
   </div>
@@ -251,17 +247,17 @@ Provides feedback to the user based on their interaction, or lack thereof, with 
 
 ```html
 <div>
-  <label class="d-label" for="Dialtone--InputExample--IconLeft">...</label>
+  <label class="d-label" for="Dialtone--InputExample--IconLeft">Label</label>
   <div class="d-input__wrapper">
-    <span class="d-input-icon d-input-icon--left">...</span>
-    <input class="d-input d-input-icon--left" id="Dialtone--InputExample--IconLeft" type="text" placeholder="..." />
+    <span class="d-input-icon d-input-icon--left"><dt-icon name="send" size="200" /></span>
+    <input class="d-input d-input-icon--left" id="Dialtone--InputExample--IconLeft" type="text" placeholder="Placeholder" />
   </div>
 </div>
 <div>
-  <label class="d-label" for="Dialtone--InputExample--IconRight">...</label>
+  <label class="d-label" for="Dialtone--InputExample--IconRight">Label</label>
   <div class="d-input__wrapper">
-    <input class="d-input d-input-icon--right" id="Dialtone--InputExample--IconRight" type="text" placeholder="..." />
-     <span class="d-input-icon d-input-icon--right">...</span>
+    <input class="d-input d-input-icon--right" id="Dialtone--InputExample--IconRight" type="text" placeholder="Placeholder" />
+     <span class="d-input-icon d-input-icon--right"><dt-icon name="lock" size="200" /></span>
   </div>
 </div>
 ```
@@ -269,11 +265,9 @@ Provides feedback to the user based on their interaction, or lack thereof, with 
 <code-well-header>
   <div class="d-stack24 d-w100p">
     <div class="d-w100p">
-      <div>
-        <label class="d-label" for="Dialtone--InputExample--IconLeft">Label</label>
-      </div>
+      <label class="d-label" for="Dialtone--InputExample--IconLeft">Label</label>
       <div class="d-input__wrapper">
-        <span class="d-input-icon d-input-icon--left"><icon-send /></span>
+        <span class="d-input-icon d-input-icon--left"><dt-icon name="send" size="200" /></span>
         <textarea class="d-textarea d-input-icon--left" id="Dialtone--InputExample--IconLeft" type="text" placeholder="Placeholder"></textarea>
       </div>
     </div>
@@ -290,7 +284,7 @@ Provides feedback to the user based on their interaction, or lack thereof, with 
 </div>
 ```
 
-### Input Sizes
+### Input sizes
 
 We offer different sizes for instances in which the interface requires a smaller or larger input. In general, though, use the base (medium) size input as much as possible, especially in forms.
 
@@ -396,39 +390,39 @@ You may use different icon sizes in different sized inputs
 
 <code-well-header>
   <div class="d-stack24 d-w100p">
-    <div class="d-w100p">
+    <div>
       <div>
         <label class="d-label" for="Dialtone--InputExample--IconLeft">Input:sm Icon:lg</label>
       </div>
       <div class="d-input__wrapper">
-        <span class="d-input-icon d-input-icon--left d-input--sm d-input-icon--lg"><icon-send /></span>
+        <span class="d-input-icon d-input-icon--left d-input--sm d-input-icon--lg"><dt-icon name="send" /></span>
         <input class="d-input d-input-icon--left d-input--sm" id="Dialtone--InputExample--IconLeft-sm-lg" type="text" placeholder="Placeholder" />
       </div>
     </div>
-    <div class="d-w100p">
+    <div>
       <div>
         <label class="d-label" for="Dialtone--InputExample--IconLeft">Input:md(default), Icon:xl</label>
       </div>
       <div class="d-input__wrapper">
-        <span class="d-input-icon d-input-icon--left d-input-icon--xl"><icon-send /></span>
+        <span class="d-input-icon d-input-icon--left d-input-icon--xl"><dt-icon name="send" /></span>
         <input class="d-input d-input-icon--left" id="Dialtone--InputExample--IconLeft-md-xl" type="text" placeholder="Placeholder" />
       </div>
     </div>
-    <div class="d-w100p">
+    <div>
       <div>
         <label class="d-label" for="Dialtone--InputExample--IconLeft">Input:xl Icon:md(default)</label>
       </div>
       <div class="d-input__wrapper">
-        <span class="d-input-icon d-input-icon--left d-input--xl"><icon-send /></span>
+        <span class="d-input-icon d-input-icon--left d-input--xl"><dt-icon name="send" /></span>
         <input class="d-input d-input-icon--left d-input--xl" id="Dialtone--InputExample--IconLeft-xl-md" type="text" placeholder="Placeholder" />
       </div>
     </div>
-    <div class="d-w100p">
+    <div>
       <div>
         <label class="d-label" for="Dialtone--InputExample--IconLeft">Textarea:lg Icon:md(default)</label>
       </div>
       <div class="d-input__wrapper">
-        <span class="d-input-icon d-input-icon--left d-input--lg"><icon-send /></span>
+        <span class="d-input-icon d-input-icon--left d-input--lg"><dt-icon name="send" /></span>
         <textarea class="d-textarea d-input-icon--left d-textarea--lg" id="Dialtone--TextareaExample--IconLeft-lg-md" type="text" placeholder="Placeholder"></textarea>
       </div>
     </div>
@@ -436,26 +430,41 @@ You may use different icon sizes in different sized inputs
 </code-well-header>
 
 ```html
-<label class="d-label" for="Dialtone--InputExample--IconLeft">Input:sm Icon:lg</label>
-<div class="d-input__wrapper">
-  <!-- note you must put the d-input--sm class on the icon element as well as the input -->
-  <span class="d-input-icon d-input-icon--left d-input--sm d-input-icon--lg"><icon-send /></span>
-  <input class="d-input d-input-icon--left d-input--sm" id="Dialtone--InputExample--IconLeft-sm-lg" type="text" placeholder="Placeholder" />
+<div>
+  <div>
+    <label class="d-label" for="Dialtone--InputExample--IconLeft">Input:sm Icon:lg</label>
+  </div>
+  <div class="d-input__wrapper">
+    <span class="d-input-icon d-input-icon--left d-input--sm d-input-icon--lg"><dt-icon name="send" /></span>
+    <input class="d-input d-input-icon--left d-input--sm" id="Dialtone--InputExample--IconLeft-sm-lg" type="text" placeholder="Placeholder" />
+  </div>
 </div>
-<label class="d-label" for="Dialtone--InputExample--IconLeft">Input:md(default), Icon:xl</label>
-<div class="d-input__wrapper">
-  <span class="d-input-icon d-input-icon--left d-input-icon--xl"><icon-send /></span>
-  <input class="d-input d-input-icon--left" id="Dialtone--InputExample--IconLeft-md-xl" type="text" placeholder="Placeholder" />
+<div>
+  <div>
+    <label class="d-label" for="Dialtone--InputExample--IconLeft">Input:md(default), Icon:xl</label>
+  </div>
+  <div class="d-input__wrapper">
+    <span class="d-input-icon d-input-icon--left d-input-icon--xl"><dt-icon name="send" /></span>
+    <input class="d-input d-input-icon--left" id="Dialtone--InputExample--IconLeft-md-xl" type="text" placeholder="Placeholder" />
+  </div>
 </div>
-<label class="d-label" for="Dialtone--InputExample--IconLeft">Input:xl Icon:md(default)</label>
-<div class="d-input__wrapper">
-  <span class="d-input-icon d-input-icon--left d-input--xl"><icon-send /></span>
-  <input class="d-input d-input-icon--left d-input--xl" id="Dialtone--InputExample--IconLeft-xl-md" type="text" placeholder="Placeholder" />
+<div>
+  <div>
+    <label class="d-label" for="Dialtone--InputExample--IconLeft">Input:xl Icon:md(default)</label>
+  </div>
+  <div class="d-input__wrapper">
+    <span class="d-input-icon d-input-icon--left d-input--xl"><dt-icon name="send" /></span>
+    <input class="d-input d-input-icon--left d-input--xl" id="Dialtone--InputExample--IconLeft-xl-md" type="text" placeholder="Placeholder" />
+  </div>
 </div>
-<label class="d-label" for="Dialtone--InputExample--IconLeft">Textarea:lg Icon:md(default)</label>
-<div class="d-input__wrapper">
-  <span class="d-input-icon d-input-icon--left d-input--lg"><icon-send /></span>
-  <textarea class="d-textarea d-input-icon--left d-textarea--lg" id="Dialtone--TextareaExample--IconLeft-lg-md" type="text" placeholder="Placeholder"></textarea>
+<div>
+  <div>
+    <label class="d-label" for="Dialtone--InputExample--IconLeft">Textarea:lg Icon:md(default)</label>
+  </div>
+  <div class="d-input__wrapper">
+    <span class="d-input-icon d-input-icon--left d-input--lg"><dt-icon name="send" /></span>
+    <textarea class="d-textarea d-input-icon--left d-textarea--lg" id="Dialtone--TextareaExample--IconLeft-lg-md" type="text" placeholder="Placeholder"></textarea>
+  </div>
 </div>
 ```
 
