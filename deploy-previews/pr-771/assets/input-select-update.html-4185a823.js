@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-95399efc","path":"/components/input-select-update.html","title":"asdf","lang":"en-US","frontmatter":{"title":"asdf","desc":null,"status":"ready","thumb":true},"headers":[],"git":{"createdTime":1671567994000,"updatedTime":1671567994000,"contributors":[{"name":"Francis Rupert","email":"francisrupert@gmail.com","commits":1}]}}');export{t as data};
