@@ -39,16 +39,23 @@
     //  -----------------------
     --tooltip-color-background: var(--black-800);
     --tooltip-color-text: var(--white);
+    --tooltip-font-weight: var(--fw-medium);
+    --tooltip-line-height: var(--lh-300);
+    --tooltip-padding-y: var(--space-400);
+    --tooltip-padding-x: calc(var(--space-300) * 3);
+    --tooltip-border-radius: var(--size-300);
 
     z-index: var(--zi-tooltip);
     max-width: calc(var(--size-300) * 54); // 216
-    padding: var(--space-400); // 8
+    padding: var(--tooltip-padding-y) var(--tooltip-padding-x); // 8 12
     color: var(--tooltip-color-text);
+    font-weight: var(--tooltip-font-weight);
     font-size: var(--fs-100);
-    line-height: var(--lh-300);
+    line-height: var(--tooltip-line-height);
+    letter-spacing: calc(var(--size-100) * 0.25);
     text-align: center;
     background-color: var(--tooltip-color-background);
-    border-radius: var(--size-300); // 4
+    border-radius: var(--tooltip-border-radius); // 4
 
     &::after {
         position: absolute;
