@@ -417,14 +417,14 @@ Dialtone provides four core button **types**, each with three levels of **import
         <a class="d-link d-fs-100 d-fw-medium d-d-block d-mb4 d-tt-uppercase" href="#muted"><strong>Muted</strong></a>
         <div class="d-fw-normal">For non-primary actions and contexts where base style may not work.</div>
       </th>
-       <td class="d-bgc-black-100 d-ta-center d-lh-200">
-        <abbr class="d-fc-black-400 d-td-none d-fs-100" title="Not applicable">N/A</abbr>
-      </td>
-       <td class="d-bgc-black-100 d-ta-center">
-        <button class="d-btn d-btn--muted d-btn--outlined" type="button"> <span class="d-btn__label">Place call</span> </button>
-      </td>
       <td class="d-bgc-black-100 d-ta-center">
         <button class="d-btn d-btn--muted" type="button"> <span class="d-btn__label">Place call</span> </button>
+      </td>
+      <td class="d-bgc-black-100 d-ta-center">
+        <button class="d-btn d-btn--muted d-btn--outlined" type="button"> <span class="d-btn__label">Place call</span> </button>
+      </td>
+      <td class="d-bgc-black-100 d-ta-center d-lh-200">
+        <abbr class="d-fc-black-400 d-td-none d-fs-100" title="Not applicable">N/A</abbr>
       </td>
     </tr>
   </tbody>
