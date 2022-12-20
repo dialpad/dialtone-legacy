@@ -53,6 +53,10 @@ An input is normally paired with a label, but there are times when it can be use
       <input class="d-input" id="Dialtone--InputExample1a" type="text" placeholder="Placeholder" />
     </div>
     <div>
+      <label class="d-label" for="Dialtone--InputExample1c">Label</label>
+      <input class="d-input" id="Dialtone--InputExample1c" type="text" value="Value" />
+    </div>
+    <div>
       <label class="d-label" for="Dialtone--InputExample1b">Label</label>
       <input class="d-input" id="Dialtone--InputExample1b" type="text" placeholder="Placeholder" disabled />
     </div>
@@ -63,6 +67,10 @@ An input is normally paired with a label, but there are times when it can be use
 <div>
   <label class="d-label" for="Dialtone--InputExample1a">...</label>
   <input class="d-input" id="Dialtone--InputExample1a" type="text" placeholder="..." />
+</div>
+<div>
+  <label class="d-label" for="Dialtone--InputExample1c">Label</label>
+  <input class="d-input" id="Dialtone--InputExample1c" type="text" value="Value" />
 </div>
 <div>
   <label class="d-label" for="Dialtone--InputExample1b">...</label>
@@ -77,6 +85,10 @@ An input is normally paired with a label, but there are times when it can be use
       <textarea class="d-textarea" id="Dialtone--TextareaExample1a" type="text" placeholder="Placeholder"></textarea>
     </div>
     <div>
+      <label class="d-label" for="Dialtone--TextareaExample1c">Label</label>
+      <textarea class="d-textarea" id="Dialtone--TextareaExample1c" type="text">Value</textarea>
+    </div>
+    <div>
       <label class="d-label" for="Dialtone--TextareaExample1b">Label</label>
       <textarea class="d-textarea" id="Dialtone--TextareaExample1b" type="text" placeholder="Placeholder" disabled></textarea>
     </div>
@@ -87,6 +99,10 @@ An input is normally paired with a label, but there are times when it can be use
 <div>
   <label class="d-label" for="Dialtone--TextareaExample1a">...</label>
   <textarea class="d-textarea" id="Dialtone--TextareaExample1a" type="text" placeholder="..."></textarea>
+</div>
+<div>
+  <label class="d-label" for="Dialtone--TextareaExample1c">Label</label>
+  <textarea class="d-textarea" id="Dialtone--TextareaExample1c" type="text">Value</textarea>
 </div>
 <div>
   <label class="d-label" for="Dialtone--TextareaExample1b">...</label>
