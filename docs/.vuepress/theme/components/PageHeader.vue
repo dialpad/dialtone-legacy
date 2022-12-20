@@ -31,7 +31,7 @@
       <span class="d-d-flex d-flow4">
         <a
           v-if="$frontmatter.storybook_url"
-          class="d-btn d-btn--muted d-btn--sm d-fw-normal"
+          class="d-btn d-btn--muted"
           :href="$frontmatter.storybook_url"
           target="_blank"
           rel="noopener noreferrer"
@@ -72,7 +72,7 @@
         </a>
         <a
           v-if="$frontmatter.figma_url"
-          class="d-btn d-btn--muted d-btn--sm d-fw-normal"
+          class="d-btn d-btn--muted"
           :href="$frontmatter.figma_url"
           target="_blank"
           rel="noopener noreferrer"
