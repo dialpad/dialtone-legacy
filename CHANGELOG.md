@@ -1,3 +1,10 @@
+## [7.10.4](https://github.com/dialpad/dialtone/compare/v7.10.3...v7.10.4) (2022-12-16)
+
+
+### Bug Fixes
+
+* **Chip:** avatar spacing ([#772](https://github.com/dialpad/dialtone/issues/772)) ([fcd2037](https://github.com/dialpad/dialtone/commit/fcd2037da5b974fd45461d37228d4234e73ff72f))
+
 ## [7.10.3](https://github.com/dialpad/dialtone/compare/v7.10.2...v7.10.3) (2022-12-13)
 
 
