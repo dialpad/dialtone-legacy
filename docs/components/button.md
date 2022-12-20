@@ -188,7 +188,7 @@ The base button should be the go-to button for most of your needs. When in doubt
 
 ### Danger
 
-The danger button style is used to communicate destructive actions such as deleting content, accounts, or canceling services.
+The danger button style is used to communicate critical or destructive actions such as deleting content, accounts, or canceling services.
 
 <code-well-header>
   <div class="d-stack8">
@@ -214,7 +214,7 @@ The danger button style is used to communicate destructive actions such as delet
 
 The inverted button style is used to visually separate buttons set on darker backgrounds.
 
-<code-well-header bgclass="d-bgc-black-800">
+<code-well-header bgclass="d-bgc-black-700">
   <div class="d-stack8">
     <div>
       <button class="d-btn d-btn--inverted d-btn--primary" type="button"><span class="d-btn__label">Place call</span></button>
