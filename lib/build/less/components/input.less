@@ -30,10 +30,9 @@
     //  Component CSS Vars
     //  ------------------------------------------------------------------------
     --input-color-border-focus: var(--purple-400);
-    --input-color-border: var(--black-300);
-    --input-color-background: var(--black-100);
-    // --input-color-border: hsl(var(--black-900-h), var(--black-900-s), 89%);
-    // --input-color-background: hsl(var(--black-900-h), var(--black-900-s), 97%);
+    --input-color-border: hsla(var(--black-900-hsl) ~' / ' 9%);
+    --input-color-background: hsla(var(--black-900-hsl) ~' / ' 3%);
+    --input-color-background-disabled: hsla(var(--black-900-hsl) ~' / ' 12%);
     --input-border-width: calc(var(--size-100) + calc(var(--size-100) / 2)); // 1.5
     --input-border-radius: var(--size-400);
     --input-padding-y: calc(var(--space-400) - var(--input-border-width));
@@ -43,8 +42,8 @@
     --input-line-height: var(--lh-200);
 
     .bg-test & {
-        --input-color-background: hsla(var(--black-900-hsl) ~' / ' 3%);
-        --input-color-border: hsla(var(--black-900-hsl) ~' / ' 9%);
+        --input-color-border: var(--black-300);
+        --input-color-background: var(--black-100);
     }
 
     position: relative;
@@ -88,8 +87,8 @@
     //  --  DISABLED / READ-ONLY
     &[disabled],
     &[read-only] {
-        --input-color-border: var(--black-400) !important;
-        --input-color-background: var(--black-200);
+        --input-color-border: transparent !important;
+        --input-color-background: var(--input-color-background-disabled);
         --input-color-text: var(--fc-disabled);
 
         &:focus,
@@ -139,8 +138,8 @@
     .d-input,
     .d-textarea {
         flex: 1;
+        background-color: transparent;
         border: none;
-        border-radius: var(--base--corner-radius);
 
         &:focus {
             border: none;
@@ -263,7 +262,7 @@
     margin: 0;
     line-height: 0;
 
-    svg {
+    .d-svg {
         width: var(--input-icon-size);
         height: var(--input-icon-size);
     }
@@ -290,7 +289,7 @@
 }
 
 .d-input-icon.d-input--lg {
-    height: calc(var(--size-300) * 12); // 48
+    height: calc(var(--size-300) * 10); // 48
 }
 
 .d-input-icon--lg {
