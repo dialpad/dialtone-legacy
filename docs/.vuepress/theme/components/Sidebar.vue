@@ -2,7 +2,7 @@
   <ul
     v-if="sidebarItems.length"
     class="
-    d-t64 d-b0 d-ps-fixed d-p24
+    dialtone-sidebar__list d-t64 d-b0 d-ps-fixed d-p24 d-pl16 d-pr16
     d-pb96 d-h100vh d-of-y-auto"
   >
     <sidebar-item

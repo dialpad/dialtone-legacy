@@ -1,50 +1,52 @@
 <!-- eslint-disable max-len -->
 <template>
-  <article class="blog-post d-d-grid d-p12 d-g-cols2">
-    <section class="d-d-flex">
-      <dt-avatar
-        size="lg"
-        color="purple-200"
-        avatar-class="d-mr16"
-      >
-        {{ initials }}
-      </dt-avatar>
-      <div class="d-d-grid d-g-cols1">
-        <div class="d-fw-medium">
-          {{ author }}
-        </div>
-        <time class="d-fc-black-700">
-          {{ format(posted, 'MMMM do, y') }}
-        </time>
-      </div>
-    </section>
-    <div
-      class="d-pls-end"
-    >
-      <dt-tooltip v-if="!isPreview">
-        <template #anchor>
-          <dt-button
-            kind="inverted"
-            @click="copyLink"
-          >
-            <template #icon>
-              <dt-icon name="copy" />
-            </template>
-          </dt-button>
-        </template>
-        Copy link
-      </dt-tooltip>
-    </div>
-    <section class="d-gc-full">
+  <article class="blog-post">
+    <section class="d-stack16">
       <component
         :is="isPreview ? 'h2' : 'h1'"
-        class="d-pt24 dialtone-page-title"
+        class="d-d-flex"
+        :class="isPreview ? 'd-docsite--header-2 d-mt0' : 'dialtone-page-title'"
       >
-        {{ heading }}
+        <div class=" d-fl1">
+          {{ heading }}
+        </div>
+        <dt-tooltip v-if="!isPreview">
+          <template #anchor>
+            <dt-button
+              size="sm"
+              kind="inverted"
+              @click="copyLink"
+            >
+              <template #icon>
+                <dt-icon name="copy" size="300" />
+              </template>
+            </dt-button>
+          </template>
+          Copy link
+        </dt-tooltip>
       </component>
-      <span class="blog-post-content">
+      <div class="d-d-flex d-ai-center">
+        <section class="d-d-flex">
+          <dt-avatar
+            size="lg"
+            color="purple-200"
+            avatar-class="d-mr16"
+          >
+            {{ initials }}
+          </dt-avatar>
+          <div class="d-d-grid d-g-cols1">
+            <div class="d-fw-semibold d-fc-secondary">
+              {{ author }}
+            </div>
+            <time class="d-fc-tertiary">
+              {{ format(posted, 'MMMM do, y') }}
+            </time>
+          </div>
+        </section>
+      </div>
+      <div class="blog-post-content">
         <slot />
-      </span>
+      </div>
     </section>
   </article>
 </template>

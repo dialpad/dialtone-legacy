@@ -6,6 +6,7 @@ thumb: true
 storybook_url: https://vue.dialpad.design/?path=/story/components-button--default
 figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Components-7?node-id=8923%3A20208&viewport=-1695%2C219%2C0.19&t=xHutRjwo1o5zMTgT-11
 ---
+
 <code-well-header>
   <button class="d-btn d-btn--primary" type="button">
     <span class="d-btn__label">Place call</span>
@@ -148,14 +149,14 @@ Dialtone provides four core button **types**, each with three levels of **import
         <a class="d-link d-fs-100 d-fw-medium d-d-block d-mb4 d-tt-uppercase" href="#muted"><strong>Muted</strong></a>
         <div class="d-fw-normal">For non-primary actions and contexts where base style may not work.</div>
       </th>
-       <td class="d-bgc-black-100 d-ta-center d-lh-200">
-        <abbr class="d-fc-black-400 d-td-none d-fs-100" title="Not applicable">N/A</abbr>
-      </td>
-       <td class="d-bgc-black-100 d-ta-center">
-        <button class="d-btn d-btn--muted d-btn--outlined" type="button"> <span class="d-btn__label">Place call</span> </button>
-      </td>
       <td class="d-bgc-black-100 d-ta-center">
         <button class="d-btn d-btn--muted" type="button"> <span class="d-btn__label">Place call</span> </button>
+      </td>
+      <td class="d-bgc-black-100 d-ta-center">
+        <button class="d-btn d-btn--muted d-btn--outlined" type="button"> <span class="d-btn__label">Place call</span> </button>
+      </td>
+      <td class="d-bgc-black-100 d-ta-center d-lh-200">
+        <abbr class="d-fc-black-400 d-td-none d-fs-100" title="Not applicable">N/A</abbr>
       </td>
     </tr>
   </tbody>
@@ -187,7 +188,7 @@ The base button should be the go-to button for most of your needs. When in doubt
 
 ### Danger
 
-The danger button style is used to communicate destructive actions such as deleting content, accounts, or canceling services.
+The danger button style is used to communicate critical or destructive actions such as deleting content, accounts, or canceling services.
 
 <code-well-header>
   <div class="d-stack8">
@@ -213,7 +214,7 @@ The danger button style is used to communicate destructive actions such as delet
 
 The inverted button style is used to visually separate buttons set on darker backgrounds.
 
-<code-well-header bgclass="d-bgc-black-800">
+<code-well-header bgclass="d-bgc-black-700">
   <div class="d-stack8">
     <div>
       <button class="d-btn d-btn--inverted d-btn--primary" type="button"><span class="d-btn__label">Place call</span></button>
@@ -358,26 +359,26 @@ Loading buttons are useful for communicating a delay between the button interact
 <button class="d-btn d-btn--danger d-btn--loading" type="button"><span class="d-btn__label">Place call</span></button>
 ```
 
-### Icon Only
+### Icon only
 
 Sometimes an icon-only, circle button is desired. These buttons are used for toggling actions, navigation, or closing UI elements. Only the following styles accept circle button classes.
 
 <code-well-header>
   <div class="d-stack8">
     <div>
-      <button class="d-btn d-btn--circle" type="button"><span class="d-btn__icon"><icon-phone/></span></button>
+      <button class="d-btn d-btn--circle" type="button"><span class="d-btn__icon"><dt-icon name="phone" size="300" /></span></button>
     </div>
     <div>
-      <button class="d-btn d-btn--circle d-btn--outlined" type="button"><span class="d-btn__icon"><icon-phone/></span></button>
+      <button class="d-btn d-btn--circle d-btn--outlined" type="button"><span class="d-btn__icon"><dt-icon name="phone" size="300" /></span></button>
     </div>
     <div>
-      <button class="d-btn d-btn--circle d-btn--danger" type="button"><span class="d-btn__icon"><icon-phone/></span></button>
+      <button class="d-btn d-btn--circle d-btn--danger" type="button"><span class="d-btn__icon"><dt-icon name="phone" size="300" /></span></button>
     </div>
     <div>
-      <button class="d-btn d-btn--circle d-btn--danger d-btn--outlined" type="button"><span class="d-btn__icon"><icon-phone/></span></button>
+      <button class="d-btn d-btn--circle d-btn--danger d-btn--outlined" type="button"><span class="d-btn__icon"><dt-icon name="phone" size="300" /></span></button>
     </div>
     <div>
-      <button class="d-btn d-btn--circle d-btn--danger d-btn--primary" type="button"><span class="d-btn__icon"><icon-phone/></span></button>
+      <button class="d-btn d-btn--circle d-btn--danger d-btn--primary" type="button"><span class="d-btn__icon"><dt-icon name="phone" size="300" /></span></button>
     </div>
   </div>
 </code-well-header>
@@ -393,13 +394,13 @@ Sometimes an icon-only, circle button is desired. These buttons are used for tog
 <code-well-header bgclass="d-bgc-black-800">
   <div class="d-stack8">
     <div>
-      <button class="d-btn d-btn--circle d-btn--inverted" type="button"><span class="d-btn__icon"><icon-phone/></span></button>
+      <button class="d-btn d-btn--circle d-btn--inverted" type="button"><span class="d-btn__icon"><dt-icon name="phone" size="300" /></span></button>
     </div>
     <div>
-      <button class="d-btn d-btn--circle d-btn--inverted d-btn--outlined" type="button"><span class="d-btn__icon"><icon-phone/></span></button>
+      <button class="d-btn d-btn--circle d-btn--inverted d-btn--outlined" type="button"><span class="d-btn__icon"><dt-icon name="phone" size="300" /></span></button>
     </div>
     <div>
-      <button class="d-btn d-btn--circle d-btn--inverted d-btn--primary" type="button"><span class="d-btn__icon"><icon-phone/></span></button>
+      <button class="d-btn d-btn--circle d-btn--inverted d-btn--primary" type="button"><span class="d-btn__icon"><dt-icon name="phone" size="300" /></span></button>
     </div>
   </div>
 </code-well-header>
@@ -415,10 +416,10 @@ If you want to use the rectangular button, use the icon only styles.
 <code-well-header>
   <div class="d-stack8">
     <div>
-      <button class="d-btn d-btn--icon-only" type="button"><span class="d-btn__icon"><icon-phone/></span></button>
+      <button class="d-btn d-btn--icon-only" type="button"><span class="d-btn__icon"><dt-icon name="phone" size="300" /></span></button>
     </div>
     <div>
-      <button class="d-btn d-btn--icon-only d-btn--outlined" type="button"><span class="d-btn__icon"><icon-phone/></span></button>
+      <button class="d-btn d-btn--icon-only d-btn--outlined" type="button"><span class="d-btn__icon"><dt-icon name="phone" size="300" /></span></button>
     </div>
   </div>
 </code-well-header>
@@ -436,25 +437,19 @@ Button labels can include an icon next to the text. Every button style can accep
   <div class="d-stack8">
     <div>
       <button class="d-btn d-btn--outlined" type="button">
-        <span class="d-btn__icon d-btn__icon--left"><icon-phone/></span>
+        <span class="d-btn__icon d-btn__icon--left"><dt-icon name="phone" size="300" /></span>
         <span class="d-btn__label">Label</span>
       </button>
     </div>
     <div>
       <button class="d-btn d-btn--outlined" type="button">
-        <span class="d-btn__icon d-btn__icon--right"><icon-phone/></span>
+        <span class="d-btn__icon d-btn__icon--right"><dt-icon name="phone" size="300" /></span>
         <span class="d-btn__label">Label</span>
       </button>
     </div>
     <div>
       <button class="d-btn d-btn--outlined d-btn--vertical" type="button">
-        <span class="d-btn__icon d-btn__icon--top"><icon-phone/></span>
-        <span class="d-btn__label">Label</span>
-      </button>
-    </div>
-    <div>
-      <button class="d-btn d-btn--outlined d-btn--vertical" type="button">
-        <span class="d-btn__icon d-btn__icon--bottom"><icon-phone/></span>
+        <span class="d-btn__icon d-btn__icon--top"><dt-icon name="phone" size="300" /></span>
         <span class="d-btn__label">Label</span>
       </button>
     </div>
@@ -472,10 +467,6 @@ Button labels can include an icon next to the text. Every button style can accep
 </button>
 <button class="d-btn d-btn--vertical d-btn--outlined" type="button">
   <span class="d-btn__icon d-btn__icon--top">...</span>
-  <span class="d-btn__label">...</span>
-</button>
-<button class="d-btn d-btn--vertical d-btn--outlined" type="button">
-  <span class="d-btn__icon d-btn__icon--bottom">...</span>
   <span class="d-btn__label">...</span>
 </button>
 ```

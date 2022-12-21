@@ -171,7 +171,7 @@ Foreground colors distinguishing important information with a status role.
       </td>
       <th scope="row" class="d-lh-300">
         Error
-        <div class="d-fw-normal">Expresses an error, danger, or an otherwise critical state.</div>
+        <div class="d-fw-normal">Expresses an error, danger, or otherwise critical state.</div>
       </th>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--fc-error)</td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-error</td>

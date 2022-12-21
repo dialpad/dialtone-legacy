@@ -72,7 +72,7 @@
                 class="d-checkbox"
               >
             </div>
-            <span class="d-checkbox__copy d-checkbox__label d-mb6 d-fw-bold">
+            <span class="d-checkbox__copy d-checkbox__label d-mb4">
               Important?
             </span>
           </div>
