@@ -11,13 +11,13 @@ import markdownItClass from '@toycode/markdown-it-class';
 
 const __dirname = getDirname(import.meta.url);
 const mapping = {
-  h2: 'd-docsite--header-2 d-my24',
-  h3: 'd-docsite--header-3 d-my24',
-  h4: 'd-docsite--header-4 d-my24',
-  p: 'd-docsite--paragraph d-mb8 d-lh-400 d-wmx75ch',
-  ul: 'd-docsite--unordered-list d-mb16',
-  ol: 'd-docsite--ordered-list d-mb16',
-  li: 'd-docsite--list-element d-my8',
+  h2: 'd-docsite--header-2',
+  h3: 'd-docsite--header-3',
+  h4: 'd-docsite--header-4',
+  p: 'd-docsite--paragraph',
+  ul: 'd-docsite--unordered-list',
+  ol: 'd-docsite--ordered-list',
+  li: 'd-docsite--list-element',
   img: 'd-docsite--image d-wmx100p',
   a: 'd-docsite--link d-link',
 };

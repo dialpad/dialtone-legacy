@@ -10,11 +10,6 @@
       </template>
     </page-header>
     <content />
-    <footer class="page-meta d-h64 d-d-flex d-ai-center">
-      <small>
-        Last updated: <span class="d-fc-muted">{{ lastUpdated }}</span>
-      </small>
-    </footer>
     <nav
       :class="prev ? 'd-jc-space-between' : 'd-jc-flex-end'"
       class="page-nav d-h64 d-d-flex d-ai-center"
@@ -26,7 +21,7 @@
         :to="prev.link"
       >
         <dt-button
-          size="xl"
+          size="lg"
           importance="clear"
           @click="navigate"
         >
@@ -43,7 +38,7 @@
         :to="next.link"
       >
         <dt-button
-          size="xl"
+          size="lg"
           icon-position="right"
           importance="clear"
           @click="navigate"
@@ -55,7 +50,11 @@
         </dt-button>
       </router-link>
     </nav>
-  </div>
+    <footer class="d-mt16 d-mb16 d-body-small d-fc-secondary">
+      <span v-if="$frontmatter.title" v-text="$frontmatter.title" /> documentation
+      last updated {{ lastUpdated }}
+    </footer>
+</div>
 </template>
 
 <script setup>

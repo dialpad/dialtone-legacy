@@ -25,7 +25,7 @@
       id="preview-header"
       class="d-d-flex d-jc-space-between"
     >
-      <h2 class="d-docsite--header-3">
+      <h2 class="d-docsite--header-3 d-mb0">
         Preview
       </h2>
       <span class="d-d-flex d-flow4">
