@@ -35,7 +35,7 @@
         Copy link
       </dt-tooltip>
     </div>
-    <section class="d-gc-full d-ws-pre-wrap">
+    <section class="d-gc-full">
       <component
         :is="isPreview ? 'h2' : 'h1'"
         class="d-pt24 dialtone-page-title"
@@ -89,24 +89,3 @@ const copyLink = async () => {
   } catch (err) {}
 };
 </script>
-
-<style lang="less">
-.blog-post {
-  ol, ul, li {
-    white-space: initial;
-  }
-
-  h2 {
-    font-weight: var(--fw-medium) !important;
-    font-size: var(--fs-400);
-    margin-top: calc(0.5rem - var(--navbar-height) + var(--su48));
-    padding-top: calc(1rem + var(--navbar-height));
-    font-weight: var(--fw-bold);
-  }
-
-  h3 {
-    margin-top: 1.25em;
-    font-size: var(--fs-300);
-  }
-}
-</style>

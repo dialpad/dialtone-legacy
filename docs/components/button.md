@@ -1,6 +1,8 @@
 ---
 title: Button
 desc: A button is an UI element which signals key actions to take an action throughout an app. It is important a button is identifiable, consistent, communicates its actions clearly, and is appropriately sized to its action.
+status: ready
+thumb: true
 storybook_url: https://vue.dialpad.design/?path=/story/components-button--default
 figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Components-7?node-id=8923%3A20208&viewport=-1695%2C219%2C0.19&t=xHutRjwo1o5zMTgT-11
 ---
@@ -71,7 +73,7 @@ Button labels should be clear and predictable so users have confidence in their 
 
 Dialtone provides four core button **types**, each with three levels of **importance**.
 
-<table class="d-fs-200">
+<table class="d-table dialtone-doc-table d-mb16">
   <colgroup>
     <col>
     <col class="d-w25p">
@@ -83,23 +85,23 @@ Dialtone provides four core button **types**, each with three levels of **import
       <th class="d-ta-left d-va-top"></th>
       <th class="d-ta-left d-va-top">
         Clear
-        <div class="d-fw-normal">Default level of importance. Typically used for secondary or minimally important actions.</div>
+        <div class="d-fw-normal d-tt-none d-fs-200 d-lh-200">Default level of importance. Typically used for secondary or minimally important actions.</div>
       </th>
       <th class="d-ta-left d-va-top">
         Outlined
-        <div class="d-fw-normal">Slightly more important than clear, presenting a contrasting border and transparent background.</div>
+        <div class="d-fw-normal d-tt-none d-fs-200 d-lh-200">Slightly more important than clear, presenting a contrasting border and transparent background.</div>
       </th>
       <th class="d-ta-left d-va-top">
         Primary
-        <div class="d-fw-normal">Highest level of importance, presenting a solid background color.</div>
+        <div class="d-fw-normal d-tt-none d-fs-200 d-lh-200">Highest level of importance, presenting a solid background color.</div>
       </th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th class="d-ta-left" scope="row">
-        <a href="#base"><strong>Base</strong></a>
-        <div class="d-fw-normal">Our default (purple) button colors.</div>
+      <th class="d-ta-left d-pl0" scope="row">
+        <a class="d-link d-fs-100 d-fw-medium d-d-block d-mb4 d-tt-uppercase" href="#base"><strong>Base</strong></a>
+        <div class="d-fw-normal d-lh-200">Our default button colors.</div>
       </th>
       <td class="d-bgc-black-100 d-ta-center">
         <button class="d-btn" type="button"> <span class="d-btn__label">Place call</span> </button>
@@ -112,9 +114,9 @@ Dialtone provides four core button **types**, each with three levels of **import
       </td>
     </tr>
     <tr>
-      <th class="d-ta-left" scope="row">
-        <a href="#danger"><strong>Danger</strong></a>
-        <div class="d-fw-normal">Potentially destructive actions.</div>
+      <th class="d-ta-left d-pl0" scope="row">
+        <a class="d-link d-fs-100 d-fw-medium d-d-block d-mb4 d-tt-uppercase" href="#danger"><strong>Danger</strong></a>
+        <div class="d-fw-normal d-lh-200">Potentially destructive or otherwise critical actions.</div>
       </th>
       <td class="d-bgc-black-100 d-ta-center">
         <button class="d-btn d-btn--danger" type="button"> <span class="d-btn__label">Place call</span> </button>
@@ -127,9 +129,9 @@ Dialtone provides four core button **types**, each with three levels of **import
       </td>
     </tr>
     <tr>
-      <th class="d-ta-left" scope="row">
-        <a href="#inverted"><strong>Inverted</strong></a>
-        <div class="d-fw-normal">Use for placement on non-white, dark backgrounds.</div>
+      <th class="d-ta-left d-pl0" scope="row">
+        <a class="d-link d-fs-100 d-fw-medium d-d-block d-mb4 d-tt-uppercase" href="#inverted"><strong>Inverted</strong></a>
+        <div class="d-fw-normal d-lh-200">Use for placement on non-white, dark backgrounds.</div>
       </th>
       <td class="d-bgc-black-500 d-ta-center">
         <button class="d-btn d-btn--inverted" type="button"> <span class="d-btn__label">Place call</span> </button>
@@ -142,11 +144,11 @@ Dialtone provides four core button **types**, each with three levels of **import
       </td>
     </tr>
     <tr>
-      <th class="d-ta-left" scope="row">
-        <a href="#muted"><strong>Muted</strong></a>
+      <th class="d-ta-left d-pl0" scope="row">
+        <a class="d-link d-fs-100 d-fw-medium d-d-block d-mb4 d-tt-uppercase" href="#muted"><strong>Muted</strong></a>
         <div class="d-fw-normal">For non-primary actions and contexts where base style may not work.</div>
       </th>
-       <td class="d-bgc-black-100 d-ta-center">
+       <td class="d-bgc-black-100 d-ta-center d-lh-200">
         <abbr class="d-fc-black-400 d-td-none d-fs-100" title="Not applicable">N/A</abbr>
       </td>
        <td class="d-bgc-black-100 d-ta-center">

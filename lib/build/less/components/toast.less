@@ -14,7 +14,7 @@
 //  ----------------------------------------------------------------------------
 .d-toast-wrapper {
     position: absolute;
-    top: var(--su32);
+    top: var(--size-600); // 32
     left: 50%;
     transform: translateX(-50%);
 
@@ -27,20 +27,20 @@
 .d-toast {
     //  Component CSS Vars
     //  ------------------------------------------------------------------------
-    --toast--bgc: var(--black-100);
-    --toast--fc: var(--fc-primary);
+    --toast-color-background: var(--black-100);
+    --toast-color-text: var(--fc-primary);
 
     z-index: var(--zi-notification);
     box-sizing: border-box;
     width: 100%;
-    max-width: var(--size628);
-    margin-bottom: var(--su8);
-    padding: var(--su12);
-    color: var(--toast--fc);
+    max-width: calc(var(--size-300) * 157); // 628
+    margin-bottom: var(--space-400); // 8
+    padding: calc(var(--space-300) * 3); // 12
+    color: var(--toast-color-text);
     font-size: var(--fs-200);
     line-height: var(--lh6);
     word-break: normal;
-    background-color: var(--toast--bgc);
+    background-color: var(--toast-color-background);
     border-radius: var(--br4);
     .d-bs-md();
 
@@ -70,11 +70,11 @@
     align-items: center;
 
     .d-notice__content {
-        margin-right: var(--su16);
+        margin-right: var(--space-500); // 16
     }
 
     .d-notice__actions {
-        margin-left: var(--su32);
+        margin-left: var(--space-600); // 32
     }
 }
 
@@ -84,54 +84,54 @@
 //  $$  DEFAULT IMPORTANT
 //  ----------------------------------------------------------------------------
 .d-toast.d-toast--important {
-    --toast--bgc: var(--black-800);
-    --toast--fc: var(--black-100);
+    --toast-color-background: var(--black-800);
+    --toast-color-text: var(--black-100);
 }
 
 //  $$  ERROR
 //  ----------------------------------------------------------------------------
 .d-toast--error {
-    --toast--bgc: var(--red-100);
-    --toast--fc: var(--red-500);
+    --toast-color-background: var(--red-100);
+    --toast-color-text: var(--red-500);
 
     &.d-toast--important {
-        --toast--bgc: var(--red-300);
-        --toast--fc: var(--white);
+        --toast-color-background: var(--red-300);
+        --toast-color-text: var(--white);
     }
 }
 
 //  $$  INFO
 //  ----------------------------------------------------------------------------
 .d-toast--info {
-    --toast--bgc: var(--purple-100);
-    --toast--fc: var(--fc-primary);
+    --toast-color-background: var(--purple-100);
+    --toast-color-text: var(--fc-primary);
 
     &.d-toast--important {
-        --toast--bgc: var(--purple-400);
-        --toast--fc: var(--white);
+        --toast-color-background: var(--purple-400);
+        --toast-color-text: var(--white);
     }
 }
 
 //  $$  SUCCESS
 //  ----------------------------------------------------------------------------
 .d-toast--success {
-    --toast--bgc: var(--green-100);
-    --toast--fc: var(--green-500);
+    --toast-color-background: var(--green-100);
+    --toast-color-text: var(--green-500);
 
     &.d-toast--important {
-        --toast--bgc: var(--green-200);
-        --toast--fc: var(--green-500);
+        --toast-color-background: var(--green-200);
+        --toast-color-text: var(--green-500);
     }
 }
 
 //  $$  WARNING
 //  ----------------------------------------------------------------------------
 .d-toast--warning {
-    --toast--bgc: var(--gold-100);
+    --toast-color-background: var(--gold-100);
 
     &.d-toast--important {
-        --toast--bgc: var(--gold-200);
-        --toast--fc: var(--fc-primary);
+        --toast-color-background: var(--gold-200);
+        --toast-color-text: var(--fc-primary);
     }
 }
 
@@ -172,7 +172,7 @@
 
 .d-toast--organizer,
 .d-toast--viewing {
-  border-top: var(--su4) solid var(--magenta-300);
+  border-top: var(--size-300) solid var(--magenta-300);
 
   .d-notice__icon {
     color: var(--magenta-300);
@@ -182,7 +182,7 @@
 .d-toast--chat,
 .d-toast--organizer,
 .d-toast--viewing {
-  --toast--bgc: var(--white);
+  --toast-color-background: var(--white);
 
   .d-notice__icon {
     align-self: flex-start;

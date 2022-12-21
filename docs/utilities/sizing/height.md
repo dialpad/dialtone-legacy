@@ -1,9 +1,6 @@
 ---
 title: Height
 desc: Utilities to control an element's height.
-prev:
-  text: Breakpoints
-  link: /utilities/responsive/breakpoints
 ---
 
 ## Percentages
@@ -101,8 +98,8 @@ Use `d-h100vh` to have an element cover the user's viewport.
 
 Use `d-h-auto` have the browser calculate and select a height.
 
-<code-well-header class="d-ps-relative d-d-flex d-jc-center d-p24 d-bgc-orange-100 d-bgo50 d-w100p d-hmn216 d-flow16" custom>
-  <div class="d-fl-center d-py16 d-px8 d-w100p d-h-auto d-bgc-orange-300 d-bar4 d-fs-300 d-fw-bold d-ta-center">Auto</div>
+<code-well-header class="d-ps-relative d-d-flex d-jc-center d-p24 d-bgc-blue-100 d-bgo50 d-w100p d-hmn216 d-flow16" custom>
+  <div class="d-fl-center d-py16 d-px8 d-w100p d-h-auto d-bgc-blue-200 d-bar4 d-fs-300 d-fw-bold d-ta-center">Auto</div>
 </code-well-header>
 
 ```html

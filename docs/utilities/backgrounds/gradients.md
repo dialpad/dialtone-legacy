@@ -20,11 +20,11 @@ Use `d-bgg-from-{color}` to declare the gradient starting color stop.
 Use `d-bgg-to-{color}` to declare the gradient ending color stop.
 
 <code-well-header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-black-200 d-w100p d-hmn102" custom>
-  <div class="d-w100p d-h128 d-bar8 d-bgg-to-br d-bgg-from-purple-500 d-bgg-to-magenta-200"></div>
+  <div class="d-w100p d-h128 d-bar8 d-bgg-to-br d-bgg-from-purple-400 d-bgg-to-magenta-300"></div>
 </code-well-header>
 
 ```html
-<div class="d-bgg-to-br d-bgg-from-purple-500 d-bgg-to-magenta-200">...</div>
+<div class="d-bgg-to-br d-bgg-from-purple-400 d-bgg-to-magenta-300">...</div>
 ```
 
 ## Changing opacities

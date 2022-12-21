@@ -1,0 +1,670 @@
+//
+//  DIALTONE DOCUMENTATION
+//  UNIVERSAL FILE
+//
+//  These are various visual styles for Dialtone's documentation.
+//  For more information, please visit:
+//  https://dialpad.design/
+//
+//
+//  TABLE OF CONTENTS
+//  • IMPORTS
+//  • COLOR PALETTES
+//  • TOC
+//  • ICON GRID
+//  • HOME PAGE
+//
+//  ============================================================================
+//  $   IMPORTS
+//  ----------------------------------------------------------------------------
+@import (reference) '@dialpad/dialtone/lib/build/less/variables/icons';
+@import (reference) '@dialpad/dialtone/lib/build/less/variables/typography';
+@import (reference) '@dialpad/dialtone/lib/build/less/variables/spacing';
+@import (reference) '@dialpad/dialtone/lib/build/less/utilities/internals';
+@import (reference) '@dialpad/dialtone/lib/build/less/utilities/spacing';
+@import (reference) '@dialpad/dialtone/lib/build/less/utilities/grid';
+@import (reference) '@dialpad/dialtone/lib/build/less/utilities/typography';
+@import (reference) '@dialpad/dialtone/lib/build/less/components/link';
+@import (reference) '@dialpad/dialtone/lib/build/less/components/button';
+@import 'dialtone-syntax';
+@import 'hljs-dialpad.less';
+
+:root {
+  --docsearch-primary-color: #7C52FF;
+}
+
+//  ============================================================================
+//  @   RESETS
+//  ============================================================================
+//      [1]     Universally set border-box
+//  ----------------------------------------------------------------------------
+* {
+  &,
+  &::before,
+  &::after {
+    box-sizing: border-box; // [1]
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6.4rem;
+}
+
+//  ============================================================================
+//  $   COLOR PALETTES
+//      Because we can't target :first-of-type or :first-child using our utility classes.
+//  ----------------------------------------------------------------------------
+.dialtone-color-grid__item:first-of-type {
+  border-top-left-radius: var(--su4);
+  border-top-right-radius: var(--su4);
+}
+
+.dialtone-color-grid__item:last-of-type {
+  border-bottom-right-radius: var(--su4);
+  border-bottom-left-radius: var(--su4);
+}
+
+//  ============================================================================
+//  $   SEARCH BUTTON
+//      Override search button with dialtone styles
+//  ----------------------------------------------------------------------------
+button.DocSearch-Button {
+  gap: var(--su2);
+
+  &:hover {
+    box-shadow: unset;
+  }
+
+  .d-btn();
+  .d-btn--muted();
+  .d-btn--outlined();
+
+  .d-btn__label {
+    color: var(--fc-placeholder);
+  }
+
+  justify-content: left;
+  width: 22.9rem;
+}
+
+span.DocSearch-Button-Container {
+  display: none;
+}
+
+span.DocSearch-Button-Keys {
+  display: none;
+}
+
+//  ============================================================================
+//  $   SEARCH BUTTON
+//      Override search button with dialtone styles
+//  ----------------------------------------------------------------------------
+a.router-link-active {
+  font-weight: var(--fw-semibold);
+}
+
+//  ============================================================================
+//  $   TOC
+//      Because we're using a third-party plugin to generate the subnav menu,
+//      we can't add utility classes directly to the HTML. So we have to use
+//      custom CSS here instead.
+//  ----------------------------------------------------------------------------
+.toc {
+  &-item {
+    @media screen and (max-width: 980px) {
+      display: inline-block;
+      .d-link();
+    }
+  }
+}
+
+.toc ol {
+  .d-ls-reset();
+
+  display: flex;
+  flex-direction: column;
+
+  .d-stack4();
+}
+
+//  Subsections
+.toc li > ol {
+  margin-top: var(--su4);
+  margin-left: var(--su16);
+
+  a {
+    font-size: var(--fs-100);
+  }
+}
+
+.toc a {
+  //  We'll base our styles on d-link
+  .d-link();
+  .d-link--muted();
+
+  //  Then make some specific adjustments
+  display: flex;
+  justify-content: flex-start;
+  padding: var(--su2) var(--su8);
+  font-size: var(--fs-200);
+  line-height: var(--lh6);
+  text-decoration: none;
+  border-radius: var(--br4);
+
+  &:hover {
+    text-decoration: none;
+    color: var(--primary-color);
+    // background-color: var(--black-200);
+  }
+
+  &.active {
+    color: var(--primary-color);
+
+    &::before {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: var(--sun4);
+      width: var(--su4);
+      background-color: var(--primary-color);
+      border-radius: var(--br4);
+      content: '';
+    }
+  }
+}
+
+//  ============================================================================
+//  $   LAYOUT
+//      Because the doc site needs layout specifications that aren't
+//      appropriate to ship as part of Dialtone.
+//  ----------------------------------------------------------------------------
+.main-content {
+  max-width: 99rem;
+  margin: 0 auto;
+  padding: 2rem 2.5rem;
+}
+
+a.header-anchor {
+  float: left;
+  margin-left: -0.87em;
+  padding-right: 0.23em;
+  opacity: 0;
+}
+.d-docsite--header-2, .d-docsite--header-3 {
+  &:hover a.header-anchor {
+    opacity: 1;
+  }
+}
+
+.d-ga-toc {
+  grid-area: toc !important;
+}
+
+.d-gl-docsite {
+  grid-template-areas: 'sidebar content';
+  grid-template-columns: [sidebar] 21.6rem [content] minmax(32rem, 75rem);
+  column-gap: 4.8rem;
+}
+
+.d-gl-docsite-toc {
+  grid-template-areas: 'sidebar content toc';
+  grid-template-columns: [sidebar] 21.6rem [content] minmax(32rem, 75rem) [toc] minmax(min-content, 21.6rem);
+  column-gap: 4.8rem;
+}
+
+
+//  ============================================================================
+//  $   ICON GRID
+//      Styles our icon pages
+//  ----------------------------------------------------------------------------
+.d-gl-docsite-icons {
+  --icon-card-width: 12rem;
+  --icon-grid-columns: auto-fit;
+
+  display: grid;
+  grid-auto-rows: 12rem;
+  grid-template-columns: repeat(var(--icon-grid-columns), [col] var(--icon-card-width));
+}
+
+.d-gl-docsite-icons--large {
+  .d-gl-docsite-icons();
+
+  --icon-card-width: 18rem;
+  --icon-grid-columns: auto-fit;
+
+  grid-auto-rows: 18rem;
+}
+
+.dialtone-icon-grid__item {
+  position: relative;
+}
+
+.dialtone-icon-card {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.dialtone-icon-card__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: var(--su8);
+  background-color: hsl(var(--black-200-h), var(--black-200-s), var(--black-200-l), 0);
+  border-radius: var(--su8);
+  cursor: pointer;
+  transition: all 150ms var(--ttf-in-out);
+
+  &:hover {
+    background-color: hsl(var(--black-200-h), var(--black-200-s), var(--black-200-l), 0.4);
+  }
+
+  .dialtone-icon-card[data-selected='yes'] & {
+    background-color: hsl(var(--black-200-h), var(--black-200-s), var(--black-200-l), 0.4);
+  }
+}
+
+.dialtone-icon-card__footer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: var(--zi-popover);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: calc((var(--icon-card-width) * 2) + var(--su32));
+  min-height: var(--icon-card-width);
+  margin-right: calc(-1 * var(--su1));
+  padding: var(--su12) var(--su16);
+  color: var(--black-200);
+  font-size: var(--fs-200);
+  background-color: var(--black-700);
+  border-radius: var(--su8);
+  box-shadow: var(--bs-md);
+
+  .dialtone-icon-card[data-selected='yes'] & {
+    margin: calc(-1 * var(--su1));
+    transform: translateX(calc(-1 * var(--icon-card-width)));
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 50ms var(--ttf-in-out) 0s,
+    transform 50ms var(--ttf-in-out) 0s,
+    visibility 0s 50ms;
+  }
+
+  //  If it's in the first two columns, show the footer on the right
+  .dialtone-icon-grid__item:nth-child(6n+1) .dialtone-icon-card[data-selected='yes'] &,
+  .dialtone-icon-grid__item:nth-child(6n+2) .dialtone-icon-card[data-selected='yes'] & {
+    right: var(--su1);
+    margin-right: unset;
+    transform: translateX(100%);
+  }
+
+  .dialtone-icon-card[data-selected='no'] & {
+    transform: translateX(0);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 100ms var(--ttf-in-out) 0s,
+    transform 100ms var(--ttf-in-out) 0s,
+    visibility 0s 0s;
+  }
+}
+
+.dialtone-icon-card__footer-spot-illustration {
+  .dialtone-icon-card__footer();
+
+  width: calc(var(--icon-card-width) * 1.5);
+  min-height: auto;
+}
+
+.dialtone-icon-card__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.dialtone-icon-card__list__item {
+  font-size: var(--fs-100);
+
+  strong {
+    display: inline-block;
+    width: 20%;
+  }
+}
+
+.dialtone-icon-card__icon {
+  width: @icon48;
+  height: @icon48;
+  margin-bottom: var(--su4);
+
+  svg {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.dialtone-icon-card__icon--autosize {
+  margin-bottom: var(--su4);
+
+  svg {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.dialtone-icon-card__title {
+  margin-top: 0;
+  margin-bottom: var(--su4);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-200);
+  line-height: var(--lh-200);
+}
+
+.dialtone-icon-card__subtitle {
+  width: 100%;
+  margin-bottom: 0;
+  overflow: hidden;
+  font-size: var(--fs-100);
+  line-height: var(--lh-none);
+  white-space: nowrap;
+  text-align: center;
+  text-overflow: ellipsis;
+}
+
+.dialtone-icon-card__description {
+  color: var(--white);
+  font-size: var(--fs-100);
+}
+
+//  ============================================================================
+//  $   HOME PAGE
+//      Styles the site's home page
+//  ----------------------------------------------------------------------------
+
+.hero {
+  margin-top: var(--sun16) !important;
+  background-color: #f5f2ed;
+  background-image: url('/assets/images/home-dp-logo.svg');
+  background-position: 80% center;
+
+  @media (max-width: 640px) {
+    padding-right: var(--su16);
+    padding-left: var(--su8);
+  }
+}
+
+.hero--inner-wrapper {
+  padding-top: 12.8rem;
+  padding-bottom: 12.8rem;
+
+  @media (max-width: 640px) {
+    flex-direction: column;
+  }
+}
+
+.hero--content {
+  align-items: flex-start;
+  max-width: 40%;
+
+  @media (max-width: 640px) {
+    align-items: unset;
+    max-width: 100%;
+    text-align: center;
+  }
+}
+
+.hero--image {
+  @media (max-width: 640px) {
+    display: none;
+  }
+}
+
+.links {
+  padding-top: var(--su96);
+  padding-bottom: var(--su96);
+
+  @media (max-width: 640px) {
+    display: block !important;
+  }
+}
+
+.link {
+  @media (max-width: 640px) {
+    display: block;
+    grid-column: 1 / -1 !important;
+    margin-bottom: calc(var(--su64) + var(--su24));
+  }
+}
+
+//  ============================================================================
+//  $   DOC PAGE TITLE
+//      The <h1> element
+//  ----------------------------------------------------------------------------
+
+.dialtone-page-title {
+  line-height: var(--lh-200);
+  font-size: var(--fs-500) !important;
+  font-weight: var(--fw-medium) !important;
+  margin-bottom: var(--su8);
+}
+
+//  ============================================================================
+//  $   INTRO PARAGRAPH
+//      Type styles for intro paragraph, aka front matter's `desc`
+//  ----------------------------------------------------------------------------
+
+.dialtone-intro {
+  max-width: 58ch;
+  font-size: var(--fs-300);
+  line-height: var(--lh-300);
+  color: var(--fc-secondary);
+}
+
+//  ============================================================================
+//  $   LANDING PAGE WALL
+//      Style the grid of landing page items
+//  ----------------------------------------------------------------------------
+
+.dialtone-wall {
+  & {
+    display: grid;
+    grid-gap: var(--space-500);
+
+    @media screen and (min-width: 640px) {
+      grid-gap: var(--space-600);
+      grid-template-columns: [full-start] repeat(2, [col-start] var(--col-width, minmax(0, 1fr)) [col-end]) [full-end] !important;
+    }
+
+    @media screen and (min-width: 768px) {
+      grid-template-columns: [full-start] repeat(3, [col-start] var(--col-width, minmax(0, 1fr)) [col-end]) [full-end] !important;
+    }
+
+    @media screen and (min-width: 1264px) {
+      margin-top: var(--space-600);
+    }
+  }
+
+  &__item {
+    display: block;
+    border: var(--size-100) solid;
+    border-color: var(--black-300);
+    border-radius: var(--size-400);
+    overflow: hidden;
+
+    &--disabled {
+      opacity: .7;
+    }
+
+    &:not(.dialtone-wall__item--disabled):hover {
+      text-decoration: none;
+      box-shadow: var(--bs-sm);
+    }
+
+    &:not(.dialtone-wall__item--disabled):active {
+      box-shadow: none;
+    }
+  }
+
+  &__image {
+    background-color: var(--black-100);
+    text-align: center;
+  }
+
+  &__thumb {
+    width: auto;
+    height: 96px;
+
+    @media screen and (min-width: 640px) {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__details {
+    padding: var(--space-500);
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: var(--space-400);
+    color: var(--fc-secondary);
+    line-height: var(--lh-400);
+    font-size: var(--fs-300);
+    font-weight: var(--fw-bold);
+  }
+
+  &__title-text {
+    flex: 1;
+  }
+
+  &__description {
+    color: var(--fc-tertiary);
+    line-height: var(--lh-300);
+    font-size: var(--fs-200);
+  }
+
+  @media screen and (min-width: 480px) {
+  }
+  @media screen and (min-width: 640px) {
+  }
+  @media screen and (min-width: 768px) {
+  }
+  @media screen and (min-width: 980px) {
+  }
+  @media screen and (min-width: 1264px) {
+  }
+
+}
+
+//  ============================================================================
+//  $   DEFINITION LIST
+//      Style a doc page's <dl>
+//  ----------------------------------------------------------------------------
+
+.dialtone-definition {
+  > dt {
+    margin-top: var(--su16);
+    font-weight: var(--fw-bold);
+  }
+
+  > dd {
+    margin: 0;
+    max-width: 72ch;
+  }
+
+  code {
+    font-weight: var(--fw-normal);
+  }
+}
+
+//  ============================================================================
+//  $   USAGE
+//      Styles the Use When / Don't Use When sections
+//  ----------------------------------------------------------------------------
+
+.dialtone-usage {
+  & {
+    display: flex;
+    flex-direction: column;
+    gap: var(--su24);
+    margin-top: var(--su16);
+    margin-bottom: var(--su16);
+
+    @media screen and (min-width: 640px) {
+      flex-direction: row;
+    }
+  }
+
+  &__hd {
+    display: flex;
+    gap: var(--su8);
+    align-items: center;
+    font-size: var(--fs-200);
+
+    &--do {
+      color: var(--green-400);
+    }
+
+    &--dont {
+      color: var(--red-400);
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: var(--su8);
+    padding: var(--su16);
+    background-color: var(--black-100);
+    border-radius: var(--br8);
+
+    &--do {
+      background-color: var(--green-100);
+    }
+
+    &--dont {
+      background-color: var(--red-100);
+    }
+  }
+
+  &__bd {
+    padding-left: var(--su4);
+    font-size: var(--fs-200);
+
+    > div > ul,
+    > ul {
+      .d-stack8();
+
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    li {
+      font-size: var(--fs-200);
+      line-height: var(--lh-400);
+    }
+  }
+}
+
+.back-to-top {
+  background-color: var(--primary-color);
+  &:hover {
+    background-color: var(--primary-color-hover);
+  }
+}
+
+.d-docsite--unordered-list, .d-docsite--list-element, .d-docsite--ordered-list {
+  list-style: revert;
+}
+
+.dialtone-wall__item {
+  .d-td-none();
+}

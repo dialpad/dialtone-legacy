@@ -1,13 +1,15 @@
 ---
 title: Tooltip
+status: ready
+thumb: true
 desc: A tooltip is a floating label that briefly explains an action, function, or an element. Its content is exclusively text and shouldn't be vital information for users. If richer media is desired, consider using a popover instead.
 storybook_url: https://vue.dialpad.design/?path=/story/components-tooltip--default
 figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Components-7?node-id=8919%3A21626&viewport=-614%2C359%2C0.86&t=xHutRjwo1o5zMTgT-11
 ---
-<code-well-header bgclass="d-bgc-black-100" class='d-hmn264'>
+<code-well-header bgclass="d-bgc-black-100" class='d-hmn164'>
   <button class="d-btn d-btn--outlined d-tooltip--hover" type="button">
     <div class="d-tooltip d-tooltip__arrow--bottom-center d-ps-absolute">
-      <span>This is a simple tooltip. The tooltip can be positioned in multiple areas too!</span>
+      <span>Simple tooltip</span>
     </div>
     <span>Hover over me to see a tooltip</span>
   </button>
@@ -20,45 +22,27 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 
 ### Base Styles
 
-<code-well-header bgclass="d-bgc-black-100" class='d-hmn264'>
-  <button class="d-btn d-btn--outlined d-tooltip--hover" type="button">
-      <div class="d-tooltip d-tooltip__arrow--bottom-center d-ps-absolute">
-          <span>This is a simple tooltip. The tooltip can be positioned in multiple areas too!</span>
-      </div>
-      <span>Hover over me to see a tooltip</span>
-  </button>
-</code-well-header>
-
-```html
-<button class="d-btn d-btn--outlined d-tooltip--hover" type="button">
-    <div class="d-tooltip d-tooltip__arrow--bottom-center d-ps-absolute">
-        <span>This is a simple tooltip. The tooltip can be positioned in multiple areas too!</span>
-    </div>
-    <span>Hover over me to see a tooltip</span>
-</button>
-```
-
 <code-well-header>
   <div class="d-tooltip d-tooltip__arrow--bottom-center d-tooltip--show">
-    <span>This is a simple tooltip. The tooltip can be positioned in multiple areas too!</span>
+    <span>Tooltip</span>
   </div>
 </code-well-header>
 
 ```html
 <div class="d-tooltip d-tooltip__arrow--bottom-center d-tooltip--show">
-    <span>This is a simple tooltip. The tooltip can be positioned in multiple areas too!</span>
+    <span>Tooltip</span>
 </div>
 ```
 
 <code-well-header bgclass="d-bgc-black-800">
   <div class="d-tooltip d-tooltip__arrow--bottom-center d-tooltip--inverted d-tooltip--show">
-    <span>This is a simple tooltip. The tooltip can be positioned in multiple areas too!</span>
+    <span>Tooltip</span>
   </div>
 </code-well-header>
 
 ```html
 <div class="d-tooltip d-tooltip__arrow--bottom-center d-tooltip--inverted d-tooltip--show">
-    <span>This is a simple tooltip. The tooltip can be positioned in multiple areas too!</span>
+    <span>Tooltip</span>
 </div>
 ```
 
@@ -66,16 +50,14 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 
 No arrow direction is assigned by default. You must select a direction. Twelve directions are offered: three on each face of the tooltip.
 
-<code-well-header>
-  <div v-for="dir in directions" class="d-w40p d-p12">
+<div class="d-d-grid d-gg16 d-g-cols3 sm:d-g-cols1 md:d-g-cols2">
+  <div v-for="dir in directions" class="d-p32 d-bgc-black-100 d-bar8">
     <div class="d-tooltip d-tooltip--show" :class="'d-tooltip__arrow--'+dir">
-      <span class="d-ff-mono d-fs-100 d-mb4">.d-tooltip__arrow--{{ dir }}</span>
-      <div>
-        <span>Arrow appears {{ capitalizeDirection(dir) }}.</span>
-      </div>
+      <div class="d-tt-capitalize d-mb4">{{ capitalizeDirection(dir) }}</div>
+      <div class="d-code-small d-fc-black-400">.d-tooltip__arrow--{{ dir }}</div>
     </div>
   </div>
-</code-well-header>
+</div>
 
 ## Classes
 

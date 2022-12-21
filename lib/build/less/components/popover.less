@@ -8,6 +8,7 @@
 //
 //  TABLE OF CONTENTS
 //  • POPOVER
+//  • CSS CUSTOM PROPERTIES
 //  • POPOVER DIALOG
 //    - Base dialog style
 //    - Content
@@ -16,60 +17,66 @@
 
 //  $  POPOVER
 //  ----------------------------------------------------------------------------
+.d-popover {
+  //  $  CSS CUSTOM PROPERTIES
+  //  ----------------------------------------------------------------------------
 
-//  $  POPOVER DIALOG
-//  ----------------------------------------------------------------------------
-.d-popover__dialog {
-  &,
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
+  --popover-color-background: var(--black-100);
+  --popover-border-width: var(--size-100); // 8
+  --popover-border-radius: var(--size-400);
+  --popover-color-shadow: hsla(var(--black-900-hsl) ~' / ' 10%);
+  --popover-shadow: 0 0 0 1px var(--popover-color-shadow), var(--bs-card);
+
+  //  $  POPOVER DIALOG
+  //  ----------------------------------------------------------------------------
+  &__dialog {
+    &,
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    display: grid;
+    grid-template-rows: 1fr;
+    overflow: auto;
+    border-radius: var(--popover-border-radius);
+    box-shadow: var(--popover-shadow);
+
+    // to be set on the dialog when it is modal
+    &--modal {
+      z-index: var(--zi-modal-element);
+    }
   }
 
-  display: grid;
-  grid-template-rows: 1fr;
-  overflow: auto;
-  background-color: var(--white);
-  border-color: var(--black-400);
-  border-radius: var(--su8);
-  box-shadow: var(--bs-card);
-}
+  //  $$  DIALOG CONTENT
+  //  ----------------------------------------------------------------------------
+  &__content {
+    overflow: auto;
+  }
 
-// to be set on the dialog when it is modal
-.d-popover__dialog--modal {
-  z-index: var(--zi-modal-element);
-}
+  //  $$  DIALOG HEADER / FOOTER
+  //  ----------------------------------------------------------------------------
 
-//  $$  DIALOG CONTENT
-//  ----------------------------------------------------------------------------
-.d-popover__content {
-  overflow: auto;
-}
+  &__header,
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    min-height: var(--size48);
+    padding-top: calc(var(--space-300) + var(--space-200)); // 6
+    padding-bottom: calc(var(--space-300) + var(--space-200)); // 6
+    overflow: auto;
+    font-weight: var(--fw-semibold);
+    font-size: var(--fs-200);
+  }
 
-//  $$  DIALOG HEADER / FOOTER
-//  ----------------------------------------------------------------------------
-.d-popover__header-footer-base {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  width: 100%;
-  min-height: var(--size48);
-  padding-top: var(--su6);
-  padding-bottom: var(--su6);
-  overflow: auto;
-  font-weight: var(--fw-bold);
-  font-size: var(--fs-200);
-}
+  &__header {
+    border-bottom: var(--popover-border-width) solid var(--popover-color-border);
+  }
 
-.d-popover__header {
-  .d-popover__header-footer-base();
-
-  border-bottom: var(--su1) solid var(--black-300);
-}
-
-.d-popover__footer {
-  .d-popover__header-footer-base();
-
-  border-top: var(--su1) solid var(--black-300);
+  &__footer {
+    border-top: var(--popover-border-width) solid var(--popover-color-border);
+  }
 }

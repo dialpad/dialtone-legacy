@@ -15,8 +15,8 @@
 .d-notice {
     //  Component CSS Vars
     //  ------------------------------------------------------------------------
-    --notice--bgc: var(--black-100);
-    --notice--fc: var(--fc-primary);
+    --notice-color-background: var(--black-100);
+    --notice-color-text: var(--fc-primary);
 
     display: flex;
     align-items: center;
@@ -25,16 +25,16 @@
     //  ------------------------------------------------------------------------
     box-sizing: border-box;
     width: 100%;
-    max-width: var(--size628);
-    padding: var(--su12);
-    color: var(--notice--fc);
+    max-width: calc(var(--size-300) * 157); // 628
+    padding: calc(var(--space-300) * 3); // 12
+    color: var(--notice-color-text);
     font-size: var(--fs-200);
     line-height: var(--lh6);
-    background-color: var(--notice--bgc);
+    background-color: var(--notice-color-background);
     border-radius: var(--br4);
 
     .d-toast & {
-        max-width: var(--size464);
+        max-width: calc(var(--size-300) * 116); // 464
         box-shadow: var(--bs-sm);
         pointer-events: all;
     }
@@ -49,7 +49,7 @@
     display: flex;
     flex: 1 auto;
     flex-direction: column;
-    margin-right: var(--su16);
+    margin-right: var(--space-500); // 16
 }
 
 //  $$  ACTIONS
@@ -67,7 +67,7 @@
 .d-notice__icon {
     display: flex;
     flex: 0 auto;
-    margin-right: var(--su8);
+    margin-right: var(--space-400); // 8
     color: inherit;
 }
 
@@ -85,8 +85,8 @@
 //  $$  DEFAULT IMPORTANT
 //  ----------------------------------------------------------------------------
 .d-notice.d-notice--important {
-    --notice--bgc: var(--black-800);
-    --notice--fc: var(--black-100);
+    --notice-color-background: var(--black-800);
+    --notice-color-text: var(--black-100);
 }
 
 //  $$  ERROR
@@ -94,14 +94,14 @@
 .d-notice--error,
 .d-banner--error,
 .d-toast--error {
-    --notice--bgc: var(--red-100);
-    --notice--fc: var(--red-500);
+    --notice-color-background: var(--red-100);
+    --notice-color-text: var(--red-500);
 
     &.d-notice--important,
     &.d-banner--important,
     &.d-toast--important {
-        --notice--bgc: var(--red-300);
-        --notice--fc: var(--white);
+        --notice-color-background: var(--red-300);
+        --notice-color-text: var(--white);
     }
 }
 
@@ -110,13 +110,13 @@
 .d-notice--info,
 .d-banner--info,
 .d-toast--info {
-    --notice--bgc: var(--purple-100);
+    --notice-color-background: var(--purple-100);
 
     &.d-notice--important,
     &.d-banner--important,
     &.d-toast--important {
-        --notice--bgc: var(--purple-400);
-        --notice--fc: var(--white);
+        --notice-color-background: var(--purple-400);
+        --notice-color-text: var(--white);
     }
 }
 
@@ -125,14 +125,14 @@
 .d-notice--success,
 .d-banner--success,
 .d-toast--success {
-    --notice--bgc: var(--green-100);
-    --notice--fc: var(--green-500);
+    --notice-color-background: var(--green-100);
+    --notice-color-text: var(--green-500);
 
     &.d-notice--important,
     &.d-banner--important,
     &.d-toast--important {
-        --notice--bgc: var(--green-200);
-        --notice--fc: var(--green-500);
+        --notice-color-background: var(--green-200);
+        --notice-color-text: var(--green-500);
     }
 }
 
@@ -141,12 +141,12 @@
 .d-notice--warning,
 .d-banner--warning,
 .d-toast--warning {
-    --notice--bgc: var(--gold-100);
+    --notice-color-background: var(--gold-100);
 
     &.d-notice--important,
     &.d-banner--important,
     &.d-toast--important {
-        --notice--bgc: var(--gold-200);
-        --notice--fc: var(--fc-primary);
+        --notice-color-background: var(--gold-200);
+        --notice-color-text: var(--fc-primary);
     }
 }

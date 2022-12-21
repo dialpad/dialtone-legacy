@@ -1,7 +1,8 @@
 ---
 title: Icon
 desc: An icon is used to visually communicate commands, meaning, status, feedback, or common actions.
-new: true
+status: new
+thumb: true
 storybook_url: https://vue.dialpad.design/?path=/docs/components-icon--default
 figma_url: https://www.figma.com/file/zz40wi0uW9MvaJ5RuhcRZR/DT-Core%3A-Icons-7?node-id=1473%3A3757&viewport=-168%2C479%2C1&t=OhX4ilCDvb7Tqkx4-11
 ---
@@ -80,7 +81,7 @@ figma_url: https://www.figma.com/file/zz40wi0uW9MvaJ5RuhcRZR/DT-Core%3A-Icons-7?
         <inbox-icon :class="className" />
       </td>
       <td class="d-ta-right">
-        <span v-if="deviceOnly" class="d-badge d-mr8 d-mb8 d-badge">Device only</span>
+        <span v-if="deviceOnly" class="d-badge d-badge--warning">Device only</span>
       </td>
     </tr>
   </tbody>
@@ -90,5 +91,5 @@ figma_url: https://www.figma.com/file/zz40wi0uW9MvaJ5RuhcRZR/DT-Core%3A-Icons-7?
     import IconCatalog from "@views/IconCatalog.vue";
     import InboxIcon from '@v7Icons/Inbox.vue';
     import IconInfo from '@v7Icons/Info.vue';
-    import { sizes } from '@data/icon.json';
+    import { v7 as sizes } from '@data/icons-sizes.json';
 </script>

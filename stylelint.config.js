@@ -27,6 +27,8 @@ module.exports = {
       },
     ],
     'property-no-unknown': null,
+    'function-no-unknown': null,
+    'import-notation': null,
 
     'no-descending-specificity': null, // turn off for now, descending cases could be fixed on the last refactoring
     'function-calc-no-unspaced-operator': null, // otherwise it will be an error during build

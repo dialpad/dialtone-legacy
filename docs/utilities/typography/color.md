@@ -1,14 +1,22 @@
 ---
 title: Colors
 desc: Utilities to change an element's font-color.
-prev:
-  text: Styles
-  link: /utilities/typography/styles
 ---
 
 All font colors pass the WCAG 2.1 Level AA contrast ratio requirements (ratio >= 4.5:1) and most pass WCAG 2.1 Level AAA requirements (ratio >= 7:1).
 The contrast ratio value is noted with the colors below.
 Please use **only** these colors or variations of these colors which pass WCAG 2.1 Level AA contrast ratio requirements.
+
+<aside class="d-notice d-notice--warning d-mt24 d-wmx100p" role="status" aria-hidden="false">
+  <div class="d-notice__icon">
+    <dt-icon name="alert-triangle"></dt-icon>
+  </div>
+  <div class="d-notice__content d-stack4">
+    <p class="d-notice__message">
+      Before using a Color utility, consider <router-link to="/design/colors/#text">semantic colors</router-link>.
+    </p>
+  </div>
+</aside>
 
 ## Usage
 

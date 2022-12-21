@@ -1,9 +1,6 @@
 ---
 title: Align content
 desc: Utilities for setting how rows are distributed along it's cross axis. This property only works when a parent container has more than one line.
-prev:
-  text: Transition
-  link: /utilities/effects/transition
 ---
 
 ## Flex start
@@ -130,16 +127,16 @@ Use `d-ac-space-between` to distribute rows along the element's cross axis so th
 
 Use `d-ac-space-evenly` to distribute rows along the element's cross axis so that there is an equal amount of space on each side of the rows, but unlike `d-ac-space-around` the space visually looks evenly distributed between objects.
 
-<code-well-header bgclass="d-bgc-orange-100" >
-  <div class="d-fl-col3 d-fw-wrap d-flg16 d-ac-space-evenly d-p8 d-w100p d-hmn3 d-bar8 d-bgc-orange-100">
-    <div class="d-fl-center d-m8 d-p16 d-h64 d-bgc-orange-300 d-bar4 d-fs-300 d-fw-bold">1</div>
-    <div class="d-fl-center d-m8 d-p16 d-h64 d-bgc-orange-300 d-bar4 d-fs-300 d-fw-bold">2</div>
-    <div class="d-fl-center d-m8 d-p16 d-h64 d-bgc-orange-300 d-bar4 d-fs-300 d-fw-bold">3</div>
-    <div class="d-fl-center d-m8 d-p16 d-h64 d-bgc-orange-300 d-bar4 d-fs-300 d-fw-bold">4</div>
-    <div class="d-fl-center d-m8 d-p16 d-h64 d-bgc-orange-300 d-bar4 d-fs-300 d-fw-bold">5</div>
-    <div class="d-fl-center d-m8 d-p16 d-h64 d-bgc-orange-300 d-bar4 d-fs-300 d-fw-bold">6</div>
-    <div class="d-fl-center d-m8 d-p16 d-h64 d-bgc-orange-300 d-bar4 d-fs-300 d-fw-bold">7</div>
-    <div class="d-fl-center d-m8 d-p16 d-h64 d-bgc-orange-300 d-bar4 d-fs-300 d-fw-bold">8</div>
+<code-well-header bgclass="d-bgc-blue-100" >
+  <div class="d-fl-col3 d-fw-wrap d-flg16 d-ac-space-evenly d-p8 d-w100p d-hmn3 d-bar8 d-bgc-blue-100">
+    <div class="d-fl-center d-m8 d-p16 d-h64 d-bgc-blue-300 d-bar4 d-fs-300 d-fw-bold">1</div>
+    <div class="d-fl-center d-m8 d-p16 d-h64 d-bgc-blue-300 d-bar4 d-fs-300 d-fw-bold">2</div>
+    <div class="d-fl-center d-m8 d-p16 d-h64 d-bgc-blue-300 d-bar4 d-fs-300 d-fw-bold">3</div>
+    <div class="d-fl-center d-m8 d-p16 d-h64 d-bgc-blue-300 d-bar4 d-fs-300 d-fw-bold">4</div>
+    <div class="d-fl-center d-m8 d-p16 d-h64 d-bgc-blue-300 d-bar4 d-fs-300 d-fw-bold">5</div>
+    <div class="d-fl-center d-m8 d-p16 d-h64 d-bgc-blue-300 d-bar4 d-fs-300 d-fw-bold">6</div>
+    <div class="d-fl-center d-m8 d-p16 d-h64 d-bgc-blue-300 d-bar4 d-fs-300 d-fw-bold">7</div>
+    <div class="d-fl-center d-m8 d-p16 d-h64 d-bgc-blue-300 d-bar4 d-fs-300 d-fw-bold">8</div>
   </div>
 </code-well-header>
 
