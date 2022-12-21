@@ -4,8 +4,8 @@
       <template #content-bottom>
         <page-toc
           v-if="isMobile"
-          :is-mobile="isMobile"
           :headers="$page.headers"
+          :is-mobile="isMobile"
         />
       </template>
     </page-header>
@@ -17,12 +17,12 @@
       <router-link
         v-if="prev"
         v-slot="{ navigate }"
-        custom
         :to="prev.link"
+        custom
       >
         <dt-button
-          size="lg"
           importance="clear"
+          size="lg"
           @click="navigate"
         >
           <template #icon>
@@ -34,13 +34,13 @@
       <router-link
         v-if="next"
         v-slot="{ navigate }"
-        custom
         :to="next.link"
+        custom
       >
         <dt-button
-          size="lg"
           icon-position="right"
           importance="clear"
+          size="lg"
           @click="navigate"
         >
           <template #icon>
@@ -51,10 +51,13 @@
       </router-link>
     </nav>
     <footer class="d-mt16 d-mb16 d-body-small d-fc-secondary">
-      <span v-if="$frontmatter.title" v-text="$frontmatter.title" /> documentation
-      last updated {{ lastUpdated }}
+      <span
+        v-if="$frontmatter.title"
+        v-text="$frontmatter.title"
+      />
+      documentation last updated {{ lastUpdated }}
     </footer>
-</div>
+  </div>
 </template>
 
 <script setup>
@@ -67,11 +70,13 @@ import { usePageData } from '@vuepress/client';
 defineProps({
   prev: {
     type: Object,
-    default: () => {},
+    default: () => {
+    },
   },
   next: {
     type: Object,
-    default: () => {},
+    default: () => {
+    },
   },
   isMobile: {
     type: Boolean,
@@ -79,8 +84,8 @@ defineProps({
   },
 });
 const lastUpdated = computed(() => {
-  const timestamp = usePageData().value.git.updatedTime;
-  return new Date(timestamp);
+  const date = new Date(usePageData().value.git.updatedTime);
+  return new Intl.DateTimeFormat('en-US', { dateStyle: 'full' }).format(date);
 });
 const arrowLeft = computed(() => {
   return icons.ArrowLeft;
