@@ -104,32 +104,27 @@ a.router-link-active {
     }
   }
   a {
-    //  We'll base our styles on d-link
-    .d-link();
-    .d-link--muted();
+    //  We'll base our styles on d-btn
+    // I'm not a fan of this... so TODO the whole thing up.
+    // TODO: RWD
+    .d-btn--sm();
+    .d-btn--muted();
 
-    //  Then make some specific adjustments
-    display: flex;
+    font-weight: var(--fw-normal);
+    width: 100%;
     justify-content: flex-start;
-    padding: var(--space-200) var(--space-400);
-    font-size: var(--fs-200);
-    line-height: var(--lh-300);
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: none;
-      color: var(--purple-400);
-    }
 
     &.active {
-      color: var(--purple-400);
+      .d-btn--active();
+      font-weight: var(--fw-medium);
+      --button-color-background: transparent;
 
       &::before {
         position: absolute;
-        top: 0;
-        bottom: 0;
+        top: 4px;
+        bottom: 4px;
         left: calc(var(--space-300) * -1);
-        width: var(--size-300);
+        width: var(--size-200);
         background-color: var(--purple-400);
         border-radius: var(--size-200);
         content: '';
@@ -147,7 +142,23 @@ a.router-link-active {
 .main-content {
   max-width: 99rem;
   margin: 0 auto;
-  padding: 2rem 2.5rem;
+  padding: 2.4rem 2.5rem;
+}
+
+.dialtone-header {
+  // TODO: redo 😜
+  border: 1px solid var(--black-300);
+  background-color: var(--white);
+}
+
+.dialtone-sidebar {
+  // TODO: redo 😜
+  // background-color: var(--black-100);
+  // border-right: 1px solid var(--black-200);
+
+  &__list {
+    width: calc(var(--size-300) * 64);
+  }
 }
 
 a.header-anchor {

@@ -61,12 +61,12 @@ export const dialtoneVuepressTheme = (options) => {
         defaultPropsOptions: {
           containerTag: '',
           listClass: 'toc-list d-ls-reset',
-          itemClass: 'toc-item d-py2',
-          linkClass: 'toc-link',
+          itemClass: 'toc-item',
+          linkClass: 'd-btn',
         },
       }),
       activeHeaderLinksPlugin({
-        headerLinkSelector: 'a.toc-link',
+        headerLinkSelector: 'a.d-btn',
         offset: 128,
       }),
       prismjsPlugin({}),
