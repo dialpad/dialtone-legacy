@@ -17,7 +17,7 @@
     <div class="d-d-flex d-flow4">
       <a
         alt="GitHub repo"
-        class="d-btn d-btn--muted d-tooltip--hover"
+        class="d-btn d-btn--muted d-btn--circle d-tooltip--hover"
         href="https://github.com/dialpad/dialtone"
         target="_blank"
         rel="noreferrer noopener"
@@ -33,7 +33,7 @@
       </a>
       <a
         alt="Codepen Template"
-        class="d-btn d-btn--muted d-tooltip--hover"
+        class="d-btn d-btn--muted d-btn--circle d-tooltip--hover"
         href="https://codepen.io/pen/?template=BajJpwW"
         target="_blank"
         rel="noopener noreferrer"
