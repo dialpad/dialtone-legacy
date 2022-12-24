@@ -1,3 +1,11 @@
+# [7.11.0](https://github.com/dialpad/dialtone/compare/v7.10.4...v7.11.0) (2022-12-24)
+
+
+### Features
+
+* **Component:** button, input, textarea, select enhanced dt7 styles ([#771](https://github.com/dialpad/dialtone/issues/771)) ([6477940](https://github.com/dialpad/dialtone/commit/6477940652c673db5d59d1547a299a39c4e798d0))
+* **Component:** enhanced dt7 styles to modal, tooltip, card, popover ([#763](https://github.com/dialpad/dialtone/issues/763)) ([7f6f062](https://github.com/dialpad/dialtone/commit/7f6f062418be79c42ce9123ee261e839c8302a4c))
+
 ## [7.10.4](https://github.com/dialpad/dialtone/compare/v7.10.3...v7.10.4) (2022-12-16)
 
 
