@@ -1,23 +1,23 @@
 <template>
   <nav
-    class="d-ml64 d-flow12"
+    class="d-d-flex"
     role="navigation"
   >
     <router-link
       v-for="link in items"
       :key="link.text"
       :to="link.link"
-      class="d-link d-td-none"
-      :class="{ 'router-link-active': isActiveLink(link.text) }"
+      class="d-btn d-btn--md"
+      :class="{ 'd-btn--active': isActiveLink(link.text) }"
     >
       {{ link.text }}
     </router-link>
   </nav>
-  <div class="d-ml-auto d-flow8 d-d-flex">
+  <div class="d-d-flex d-flow4">
     <div class="d-d-flex d-flow4">
       <a
         alt="GitHub repo"
-        class="d-btn d-btn--muted d-tooltip--hover"
+        class="d-btn d-btn--muted d-btn--circle d-tooltip--hover"
         href="https://github.com/dialpad/dialtone"
         target="_blank"
         rel="noreferrer noopener"
@@ -33,7 +33,7 @@
       </a>
       <a
         alt="Codepen Template"
-        class="d-btn d-btn--muted d-tooltip--hover"
+        class="d-btn d-btn--muted d-btn--circle d-tooltip--hover"
         href="https://codepen.io/pen/?template=BajJpwW"
         target="_blank"
         rel="noopener noreferrer"
@@ -51,7 +51,8 @@
     <dt-button
       importance="outlined"
       kind="muted"
-      width="200px"
+      class="d-ml16"
+      width="154px"
       @click="$emit('search')"
     >
       <template #icon>

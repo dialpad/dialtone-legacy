@@ -1,5 +1,5 @@
 <template>
-  <section class="d-stack32 d-pb0 d-mb8">
+  <section>
     <slot name="content-top" />
     <header class="d-stack2">
       <div class="d-d-flex d-ai-center d-gg8">
@@ -23,15 +23,15 @@
     <div
       v-if="$page.path.startsWith('/components') && !$frontmatter.no_preview"
       id="preview-header"
-      class="d-d-flex d-jc-space-between"
+      class="d-docsite--preview-header d-d-flex d-jc-space-between"
     >
-      <h2 class="d-vi-visible-sr">
+      <h2 class="d-docsite--header-3 d-m0">
         Preview
       </h2>
-      <span class="d-d-flex d-flow4">
+      <span>
         <a
           v-if="$frontmatter.storybook_url"
-          class="d-btn d-btn--muted d-btn--sm d-fw-normal"
+          class="d-btn d-btn--muted d-btn--muted"
           :href="$frontmatter.storybook_url"
           target="_blank"
           rel="noopener noreferrer"
@@ -72,7 +72,7 @@
         </a>
         <a
           v-if="$frontmatter.figma_url"
-          class="d-btn d-btn--muted d-btn--sm d-fw-normal"
+          class="d-btn d-btn--muted"
           :href="$frontmatter.figma_url"
           target="_blank"
           rel="noopener noreferrer"

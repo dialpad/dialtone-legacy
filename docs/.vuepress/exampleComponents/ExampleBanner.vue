@@ -72,7 +72,7 @@
                 class="d-checkbox"
               >
             </div>
-            <span class="d-checkbox__copy d-checkbox__label d-mb6 d-fw-bold">
+            <span class="d-checkbox__copy d-checkbox__label d-mb4">
               Important?
             </span>
           </div>
@@ -86,7 +86,7 @@
                 class="d-checkbox"
               >
             </div>
-            <span class="d-checkbox__copy d-checkbox__label d-mb6 d-fw-bold">
+            <span class="d-checkbox__copy d-checkbox__label d-mb4">
               Pinned?
             </span>
           </div>
@@ -120,7 +120,9 @@
         <icon-warning v-show="kind === 'warning'" />
       </div>
       <div class="d-notice__content">
-        <h2>Optional title</h2>
+        <h2 class="d-notice__title">
+          Optional title
+        </h2>
         <p class="d-notice__message">
           Message body with
           <a
@@ -196,6 +198,7 @@ export default {
 
 <style scoped>
 .d-banner {
+  top: -64px;
   margin-top: 0 !important;
 }
 </style>

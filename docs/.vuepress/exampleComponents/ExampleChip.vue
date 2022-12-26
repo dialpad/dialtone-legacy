@@ -22,7 +22,10 @@
         v-if="withIcon"
         class="d-chip__icon"
       >
-        <icon-phone />
+        <dt-icon
+          name="phone"
+          size="200"
+        />
       </span>
       <span :class="{ 'd-truncate': truncate }">{{ label }}</span>
     </component>
@@ -34,7 +37,12 @@
       <span
         ref="closeBtn"
         class="d-btn__icon"
-      ><icon-close /></span>
+      >
+        <dt-icon
+          name="close"
+          size="200"
+          />
+      </span>
     </button>
   </span>
 </template>

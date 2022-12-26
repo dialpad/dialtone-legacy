@@ -191,11 +191,11 @@
     </div>
   </section>
   <section class="d-bgc-purple-500 d-py64 d-ta-center">
-    <p class="d-fc-white d-fs-300 d-fw-semibold d-px48">
+    <p class="d-fc-white d-fs-300 d-fw-medium d-px48">
       Don't see something? Want to contribute?
     </p>
     <a
-      class="d-btn d-btn--inverted d-btn--primary d-mt16"
+      class="d-btn d-btn--inverted d-btn--lg d-btn--primary d-mt16"
       href="https://forms.monday.com/forms/8a9a6ff69d7e9f95caee029c2806e2c1?r=use1"
       target="_blank"
       rel="noopener noreferrer"

@@ -52,25 +52,11 @@ html {
 }
 
 //  ============================================================================
-//  $   COLOR PALETTES
-//      Because we can't target :first-of-type or :first-child using our utility classes.
-//  ----------------------------------------------------------------------------
-.dialtone-color-grid__item:first-of-type {
-  border-top-left-radius: var(--su4);
-  border-top-right-radius: var(--su4);
-}
-
-.dialtone-color-grid__item:last-of-type {
-  border-bottom-right-radius: var(--su4);
-  border-bottom-left-radius: var(--su4);
-}
-
-//  ============================================================================
 //  $   SEARCH BUTTON
 //      Override search button with dialtone styles
 //  ----------------------------------------------------------------------------
 button.DocSearch-Button {
-  gap: var(--su2);
+  gap: var(--space-200);
 
   &:hover {
     box-shadow: unset;
@@ -117,62 +103,36 @@ a.router-link-active {
       .d-link();
     }
   }
-}
-
-.toc ol {
-  .d-ls-reset();
-
-  display: flex;
-  flex-direction: column;
-
-  .d-stack4();
-}
-
-//  Subsections
-.toc li > ol {
-  margin-top: var(--su4);
-  margin-left: var(--su16);
-
   a {
-    font-size: var(--fs-100);
-  }
-}
+    //  We'll base our styles on d-btn
+    // I'm not a fan of this... so TODO the whole thing up.
+    // TODO: RWD
+    .d-btn--sm();
+    .d-btn--muted();
 
-.toc a {
-  //  We'll base our styles on d-link
-  .d-link();
-  .d-link--muted();
+    font-weight: var(--fw-normal);
+    width: 100%;
+    justify-content: flex-start;
 
-  //  Then make some specific adjustments
-  display: flex;
-  justify-content: flex-start;
-  padding: var(--su2) var(--su8);
-  font-size: var(--fs-200);
-  line-height: var(--lh6);
-  text-decoration: none;
-  border-radius: var(--br4);
+    &.active {
+      .d-btn--active();
+      font-weight: var(--fw-medium);
+      --button-color-background: transparent;
 
-  &:hover {
-    text-decoration: none;
-    color: var(--primary-color);
-    // background-color: var(--black-200);
-  }
-
-  &.active {
-    color: var(--primary-color);
-
-    &::before {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: var(--sun4);
-      width: var(--su4);
-      background-color: var(--primary-color);
-      border-radius: var(--br4);
-      content: '';
+      &::before {
+        position: absolute;
+        top: 4px;
+        bottom: 4px;
+        left: calc(var(--space-300) * -1);
+        width: var(--size-200);
+        background-color: var(--purple-400);
+        border-radius: var(--size-200);
+        content: '';
+      }
     }
   }
 }
+
 
 //  ============================================================================
 //  $   LAYOUT
@@ -182,7 +142,23 @@ a.router-link-active {
 .main-content {
   max-width: 99rem;
   margin: 0 auto;
-  padding: 2rem 2.5rem;
+  padding: 2.4rem 2.5rem;
+}
+
+.dialtone-header {
+  // TODO: redo 😜
+  border: 1px solid var(--black-300);
+  background-color: var(--white);
+}
+
+.dialtone-sidebar {
+  // TODO: redo 😜
+  // background-color: var(--black-100);
+  // border-right: 1px solid var(--black-200);
+
+  &__list {
+    width: calc(var(--size-300) * 64);
+  }
 }
 
 a.header-anchor {
@@ -191,6 +167,24 @@ a.header-anchor {
   padding-right: 0.23em;
   opacity: 0;
 }
+
+.d-docsite--header-2 {
+  .d-headline-extra-large(); // TODO: when a redesign is imminent
+  margin-top: var(--space-600);
+  margin-bottom: var(--space-400);
+}
+.d-docsite--header-3 {
+  .d-headline-large(); // TODO: when a redesign is imminent
+  font-weight: var(--fw-semibold);
+  margin-top: var(--space-500);
+  margin-bottom: var(--space-300);
+}
+.d-docsite--header-4 {
+  .d-headline-medium(); // TODO: when a redesign is imminent
+  margin-top: var(--space-400);
+  margin-bottom: var(--space-300);
+}
+
 .d-docsite--header-2, .d-docsite--header-3 {
   &:hover a.header-anchor {
     opacity: 1;
@@ -213,6 +207,34 @@ a.header-anchor {
   column-gap: 4.8rem;
 }
 
+.d-docsite--paragraph {
+  .d-body-base(); // TODO: when a redesign is imminent
+  margin-bottom: 1em;
+  max-width: 75ch;
+}
+
+.d-docsite--unordered-list,
+.d-docsite--list-element,
+.d-docsite--ordered-list {
+  list-style: revert;
+}
+
+.d-docsite--unordered-list,
+.d-docsite--ordered-list {
+  padding-left: var(--space-500);
+  margin: var(--space-400) 0;
+}
+
+.d-docsite--list-element {
+  .d-body-base(); // TODO: when a redesign is imminent
+  margin-bottom: var(--space-300);
+  max-width: 75ch;
+}
+
+.d-docsite--preview-header {
+  margin-top: var(--space-600);
+  margin-bottom: var(--space-300);
+}
 
 //  ============================================================================
 //  $   ICON GRID
@@ -254,9 +276,9 @@ a.header-anchor {
   justify-content: center;
   width: 100%;
   height: 100%;
-  padding: var(--su8);
+  padding: var(--space-400);
   background-color: hsl(var(--black-200-h), var(--black-200-s), var(--black-200-l), 0);
-  border-radius: var(--su8);
+  border-radius: var(--size-400);
   cursor: pointer;
   transition: all 150ms var(--ttf-in-out);
 
@@ -447,9 +469,9 @@ a.header-anchor {
 
 .dialtone-page-title {
   line-height: var(--lh-200);
-  font-size: var(--fs-500) !important;
-  font-weight: var(--fw-medium) !important;
-  margin-bottom: var(--su8);
+  font-size: var(--fs-500);
+  font-weight: var(--fw-medium);
+  margin-bottom: var(--space-400);
 }
 
 //  ============================================================================
@@ -462,6 +484,7 @@ a.header-anchor {
   font-size: var(--fs-300);
   line-height: var(--lh-300);
   color: var(--fc-secondary);
+  margin-bottom: var(--space-400);
 }
 
 //  ============================================================================
@@ -494,6 +517,7 @@ a.header-anchor {
     border-color: var(--black-300);
     border-radius: var(--size-400);
     overflow: hidden;
+    text-decoration: none;
 
     &--disabled {
       opacity: .7;
@@ -516,7 +540,7 @@ a.header-anchor {
 
   &__thumb {
     width: auto;
-    height: 96px;
+    height: calc(var(--size-300) * 24);
 
     @media screen and (min-width: 640px) {
       display: block;
@@ -536,7 +560,7 @@ a.header-anchor {
     color: var(--fc-secondary);
     line-height: var(--lh-400);
     font-size: var(--fs-300);
-    font-weight: var(--fw-bold);
+    font-weight: var(--fw-semibold);
   }
 
   &__title-text {
@@ -548,18 +572,6 @@ a.header-anchor {
     line-height: var(--lh-300);
     font-size: var(--fs-200);
   }
-
-  @media screen and (min-width: 480px) {
-  }
-  @media screen and (min-width: 640px) {
-  }
-  @media screen and (min-width: 768px) {
-  }
-  @media screen and (min-width: 980px) {
-  }
-  @media screen and (min-width: 1264px) {
-  }
-
 }
 
 //  ============================================================================
@@ -620,10 +632,10 @@ a.header-anchor {
     display: flex;
     flex: 1;
     flex-direction: column;
-    gap: var(--su8);
-    padding: var(--su16);
+    gap: var(--space-400);
+    padding: var(--space-500);
     background-color: var(--black-100);
-    border-radius: var(--br8);
+    border-radius: var(--size-400);
 
     &--do {
       background-color: var(--green-100);
@@ -635,21 +647,13 @@ a.header-anchor {
   }
 
   &__bd {
-    padding-left: var(--su4);
     font-size: var(--fs-200);
+    line-height: var(--lh-400);
 
-    > div > ul,
-    > ul {
-      .d-stack8();
-
-      margin: 0;
+    .d-docsite--unordered-list {
+      margin: 0 !important; // unfortunate
       padding: 0;
       list-style: none;
-    }
-
-    li {
-      font-size: var(--fs-200);
-      line-height: var(--lh-400);
     }
   }
 }
@@ -661,10 +665,6 @@ a.header-anchor {
   }
 }
 
-.d-docsite--unordered-list, .d-docsite--list-element, .d-docsite--ordered-list {
-  list-style: revert;
-}
-
-.dialtone-wall__item {
-  .d-td-none();
+[outline] {
+  outline: 2px solid orangered;
 }

@@ -1,9 +1,9 @@
 <template>
   <dt-root-layout
-    header-class="d-d-flex d-ai-center d-pl8 d-pr12 d-h64 d-bb d-bc-black-200 d-bgc-white d-zi-navigation"
+    header-class="dialtone-header d-d-flex d-ai-center d-p16 d-pl8 d-h64 d-jc-space-between d-zi-navigation"
     :header-sticky="true"
     footer-class="d-text-right"
-    sidebar-class="lg:d-d-none"
+    sidebar-class="dialtone-sidebar lg:d-d-none"
   >
     <template #header>
       <dialtone-logo />

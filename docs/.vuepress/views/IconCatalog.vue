@@ -6,12 +6,13 @@
         ref="searchRef"
         v-model="search"
         aria-label="Search icon"
-        placeholder="Search for an icon by name"
+        placeholder="Search for an icon"
         class="d-input d-input-icon--left d-input-icon--right"
         type="text"
+        autocomplete="off"
       >
         <template #leftIcon>
-          <icon-search />
+          <dt-icon name="search" />
         </template>
         <template #rightIcon>
           <dt-button
@@ -19,10 +20,11 @@
             importance="clear"
             circle
             aria-label="Clear filters"
+            id="search-input-button-close"
             @click="resetSearch"
           >
             <template #icon>
-              <icon-close />
+              <dt-icon name="close" />
             </template>
           </dt-button>
         </template>
@@ -79,9 +81,12 @@
   </div>
   <div
     v-if="!hasSearchResults"
-    class="d-d-flex d-fl-center"
+    class="d-d-flex d-fl-center d-p16 d-gg4 d-fc-tertiary d-fs-300"
   >
-    No results found for "{{ search }}"
+    <span>No results found for</span>
+    <strong class="d-fw-semibold">
+      &OpenCurlyDoubleQuote;{{ search }}&CloseCurlyDoubleQuote;
+    </strong>
   </div>
 </template>
 
@@ -89,8 +94,6 @@
 import BaseIcon from '@baseComponents/BaseV7Icon.vue';
 import { categories } from '@dialpad/dialtone-icons/dist/icons.json';
 import { computed, ref } from 'vue';
-import IconSearch from '@v7Icons/Search.vue';
-import IconClose from '@v7Icons/Close.vue';
 
 const selectedIcon = ref(null);
 const selectedCategory = ref('all');
@@ -156,5 +159,8 @@ const selectIcon = (index) => {
 </script>
 
 <style scoped>
-
+  /* more or less a hack, 🤷‍♂️ */
+  #search-input-button-close {
+    margin-right: calc(var(--size-300) * -1)
+  }
 </style>

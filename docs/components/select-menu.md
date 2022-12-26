@@ -6,7 +6,8 @@ thumb: true
 storybook_url: https://vue.dialpad.design/?path=/story/components-select-menu--default
 figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Components-7?node-id=8919%3A21569&viewport=-1857%2C206%2C0.37&t=xHutRjwo1o5zMTgT-11
 ---
-<code-well-header>
+
+<code-well-header bgclass="d-bgc-white">
   <div class="d-w100p">
     <div class="d-label">
       <label for="Dialtone--SelectExample1">Label</label>
@@ -50,15 +51,15 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 
 ## Variants and examples
 
-### Base Styles
+### Base styles
 
 A select is normally paired with a label, but there are times when it can be used without a label. Don't rely on the placeholder text as a label.
 
-<code-well-header>
+<code-well-header bgclass="d-bgc-white">
   <div class="d-stack24 d-w100p">
     <div>
       <div class="d-label">
-        <label for="Dialtone--SelectExample1">Label</label>
+        <label for="Dialtone--SelectExample1">Default</label>
       </div>
       <div class="d-select">
         <select class="d-select__input" id="Dialtone--SelectExample1">
@@ -71,7 +72,7 @@ A select is normally paired with a label, but there are times when it can be use
     </div>
     <div>
       <div class="d-label">
-        <label for="Dialtone--SelectExample2">Label</label>
+        <label for="Dialtone--SelectExample2">Disabled</label>
       </div>
       <div class="d-select d-select--disabled">
         <select class="d-select__input" id="Dialtone--SelectExample2" disabled>
@@ -114,9 +115,9 @@ A select is normally paired with a label, but there are times when it can be use
 </div>
 ```
 
-### With Description Text
+### With description text
 
-<code-well-header>
+<code-well-header bgclass="d-bgc-white">
   <div class="d-w100p">
     <div class="d-label">
       <label for="Dialtone--SelectExample3">Label</label>
@@ -143,11 +144,11 @@ A select is normally paired with a label, but there are times when it can be use
 </div>
 ```
 
-### With Validation States
+### With validation states
 
 Provides feedback to the user based on their interaction, or lack thereof, with a select.
 
-<code-well-header>
+<code-well-header bgclass="d-bgc-white">
   <div class="d-stack24 d-w100p">
     <div>
       <div class="d-label">
@@ -228,7 +229,7 @@ Provides feedback to the user based on their interaction, or lack thereof, with 
 
 We offer different sizes for instances in which the interface requires a smaller or larger select. In general, though, use the base (medium) size select as much as possible, especially in forms.
 
-<code-well-header>
+<code-well-header bgclass="d-bgc-white">
   <div class="d-stack24 d-w100p">
     <div>
       <div class="d-label d-label--xs">

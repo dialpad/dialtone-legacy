@@ -1,7 +1,7 @@
 <template>
   <li>
     <p
-      class="d-tt-uppercase d-fw-bold d-fs-100"
+      class="d-headline-eyebrow d-fw-semibold d-pl12 d-pb8"
       tabindex="0"
       v-text="item.text"
     />
@@ -18,11 +18,10 @@
         >
           <a
             :href="href"
-            class="d-link d-td-none"
             :class="[
               itemClass,
               {
-                'router-link-active ': isActive,
+                'd-btn--active d-fw-medium': isActive,
                 'router-link-exact-active': isExactActive,
                 'd-fc-primary': !isActive || !isExactActive,
               },
@@ -32,10 +31,9 @@
             {{ subItem.text }}
           </a>
         </router-link>
-        <p
+        <div
           v-else
-          tabindex="0"
-          class="d-td-none d-fc-muted d-td-none d-py4"
+          class="d-btn d-w100p d-jc-flex-start d-fw-normal d-fc-disabled h:d-bgc-transparent d-c-default"
         >
           {{ subItem.text }}
           <dt-badge
@@ -44,7 +42,7 @@
           >
             Planned
           </dt-badge>
-        </p>
+        </div>
       </li>
     </ul>
   </li>
@@ -53,7 +51,7 @@
 <script setup>
 import { computed } from 'vue';
 
-const itemClass = 'd-py4 d-link';
+const itemClass = 'd-btn d-btn--muted d-w100p d-jc-flex-start d-fw-normal';
 const props = defineProps({
   item: {
     type: Object,
