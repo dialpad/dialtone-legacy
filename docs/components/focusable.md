@@ -220,7 +220,7 @@ title: Focusable
           <legend class="d-label">Call Blocking & Spam Protection</legend>
           <div class="d-checkbox-group">
             <div class="d-checkbox__input">
-              <input class="d-checkbox" type="checkbox" name="Dialtone-CheckGroupBExample1" id="Dialtone-CheckGroupBExample1" />
+              <input class="d-checkbox" type="checkbox" name="Dialtone-CheckGroupBExample1" id="Dialtone-CheckGroupBExample1" checked />
             </div>
             <div class="d-checkbox__copy">
               <label class="d-checkbox__label" for="Dialtone-CheckGroupBExample1">Anonymous callers
@@ -273,7 +273,7 @@ title: Focusable
           </div>
           <div class="d-checkbox-group">
             <div class="d-checkbox__input">
-              <input class="d-checkbox d-checkbox--success" type="checkbox" name="Dialtone-CheckGroupCExample3" id="Dialtone-CheckGroupCExample3" />
+              <input class="d-checkbox d-checkbox--success" type="checkbox" name="Dialtone-CheckGroupCExample3" id="Dialtone-CheckGroupCExample3" checked />
             </div>
             <div class="d-checkbox__copy">
               <label class="d-checkbox__label" for="Dialtone-CheckGroupCExample3">Block callers with a high spam score
@@ -291,7 +291,7 @@ title: Focusable
           <legend class="d-label">Advanced missed call routing</legend>
           <div class="d-radio-group">
             <div class="d-radio__input">
-              <input class="d-radio" type="radio" name="Dialtone-RadioGroup3" id="Dialtone-RadioGroupBExample1" />
+              <input class="d-radio" type="radio" name="Dialtone-RadioGroup3" id="Dialtone-RadioGroupBExample1" checked />
             </div>
             <div class="d-radio__copy">
               <label class="d-radio__label" for="Dialtone-RadioGroupBExample1" checked>To voicemail</label>
@@ -330,7 +330,7 @@ title: Focusable
           </div>
           <div class="d-radio-group">
             <div class="d-radio__input">
-              <input class="d-radio d-radio--error" type="radio" name="Dialtone-RadioGroup4" id="Dialtone-RadioGroupCExample2" />
+              <input class="d-radio d-radio--error" type="radio" name="Dialtone-RadioGroup4" id="Dialtone-RadioGroupCExample2" checked />
             </div>
             <div class="d-radio__copy">
               <label class="d-radio__label" for="Dialtone-RadioGroupCExample2">To a message (no voicemail)</label>

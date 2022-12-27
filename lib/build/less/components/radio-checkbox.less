@@ -52,8 +52,8 @@
             display: none;
         }
 
-        &:focus-visible,
-        &:checked:focus-visible {
+        &:focus,
+        &:checked:focus {
           --check-radio-color-border: var(--check-radio-color);
 
           outline: 0;
@@ -67,6 +67,9 @@
 
     flex: 0 auto;
     align-self: flex-start;
+    transition-timing-function: var(--ttf-out-quint);
+    transition-duration: var(--td300);
+    transition-property: box-shadow;
 
     //  --  DISABLED
     &[disabled],
@@ -146,11 +149,11 @@
         background-repeat: no-repeat;
         background-position: center center;
         background-size: contain;
-        border-radius: var(--br2);
+        border-radius: var(--size-300);
 
         &:focus-visible,
         &:checked:focus-visible {
-            border-radius: var(--br2);
+            box-shadow: var(--bs-focus-ring);
         }
 
         &:checked {
@@ -202,38 +205,6 @@
     }
 }
 
-//  $$  CHECKBOX VALIDATION STATES
-//  ----------------------------------------------------------------------------
-.d-checkbox--warning {
-    --check-radio-color: var(--warning-color);
-    --check-radio-color-border: var(--check-radio-color);
-
-    &:focus-visible,
-    &:checked:focus-visible {
-        box-shadow: var(--bs-focus-ring-warning);
-    }
-}
-
-.d-checkbox--error {
-    --check-radio-color: var(--error-color);
-    --check-radio-color-border: var(--check-radio-color);
-
-    &:focus-visible,
-    &:checked:focus-visible {
-        box-shadow: var(--bs-focus-ring-error);
-    }
-}
-
-.d-checkbox--success {
-    --check-radio-color: var(--success-color);
-    --check-radio-color-border: var(--check-radio-color);
-
-    &:focus-visible,
-    &:checked:focus-visible {
-        box-shadow: var(--bs-focus-ring-success);
-    }
-}
-
 
 //  ============================================================================
 //  $   RADIOS
@@ -269,37 +240,5 @@
         &--disabled:checked {
             --check-radio-color-background: var(--black-400);
         }
-    }
-}
-
-//  $$  RADIO VALIDATION STATES
-//  ----------------------------------------------------------------------------
-.d-radio--warning {
-    --check-radio-color: var(--warning-color);
-    --check-radio-color-border: var(--check-radio-color);
-
-    &:focus-visible,
-    &:checked:focus-visible {
-      box-shadow: var(--bs-focus-ring-warning), inset 0 0 0 var(--space-200) var(--white);
-    }
-}
-
-.d-radio--error {
-    --check-radio-color: var(--error-color);
-    --check-radio-color-border: var(--check-radio-color);
-
-    &:focus-visible,
-    &:checked:focus-visible {
-      box-shadow: var(--bs-focus-ring-error), inset 0 0 0 var(--space-200) var(--white);
-    }
-}
-
-.d-radio--success {
-    --check-radio-color: var(--success-color);
-    --check-radio-color-border: var(--check-radio-color);
-
-    &:focus-visible,
-    &:checked:focus-visible {
-      box-shadow: var(--bs-focus-ring-success), inset 0 0 0 var(--space-200) var(--white);
     }
 }

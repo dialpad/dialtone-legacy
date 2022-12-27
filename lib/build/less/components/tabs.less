@@ -20,6 +20,10 @@
     color: var(--fc-tertiary);
     font-size: var(--fs-200);
 
+    &:focus {
+        outline: 0;
+    }
+
     // Add a bottom border unless no border is requested
     &:not(.d-tablist--no-border)::after {
         position: absolute;
@@ -42,7 +46,6 @@
     //  ------------------------------------------------------------------------
     --tab-color-background: hsla(var(--white-hsl) ~' / ' 0%);
     --tab-color-text: inherit;
-    --tab-color-shadow: var(--focus-ring);
 
     position: relative;
     display: inline-flex;
@@ -58,9 +61,9 @@
     border: 0;
     border-radius: var(--size-300) var(--size-300) 0 0; // 4 4 0 0
     cursor: pointer;
-    transition-timing-function: var(--ttf-in-out);
-    transition-duration: var(--td50);
-    transition-property: background-color, color;
+    transition-timing-function: var(--ttf-out-quint);
+    transition-duration: var(--td300);
+    transition-property: background-color, border, color, box-shadow;
     fill: currentColor;
 
     &:first-of-type {
@@ -83,7 +86,7 @@
 
     &:focus-visible {
         outline: none;
-        box-shadow: 0 0 0 var(--size-200) var(--tab-color-shadow);
+        box-shadow: var(--bs-focus-ring);
     }
 
     &:hover {
@@ -138,7 +141,6 @@
 
     .d-tab--selected {
         --tab-color-text: var(--white);
-        --tab-color-shadow: var(--white);
 
         &::after {
             --tab-color-background: currentColor;

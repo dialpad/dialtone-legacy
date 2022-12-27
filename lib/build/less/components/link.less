@@ -26,7 +26,9 @@
     text-decoration: underline;
     background-color: transparent;
     border: 0;
-    transition: all var(--td25) var(--ttf-in-out);
+    transition-timing-function: var(--ttf-out-quint);
+    transition-duration: var(--td300);
+    transition-property: background-color, border, box-shadow;
 
     //  Reset button appearance
     -webkit-appearance: none;
@@ -43,7 +45,7 @@
     &:focus-visible {
         border-radius: var(--br4);
         outline: none;
-        box-shadow: 0 0 0 var(--size-200) var(--focus-ring);
+        box-shadow: var(--bs-focus-ring);
     }
 }
 
@@ -59,10 +61,6 @@
     &:hover {
         color: var(--fc-warning-hover);
     }
-
-    &:focus-visible {
-        box-shadow: 0 0 0 var(--size-200) var(--focus-ring-warning);
-    }
 }
 
 //  $$  DANGER
@@ -72,10 +70,6 @@
 
     &:hover {
         color: var(--error-color-hover);
-    }
-
-    &:focus-visible {
-        box-shadow: 0 0 0 var(--size-200) var(--focus-ring-error);
     }
 }
 
@@ -87,10 +81,6 @@
     &:hover {
         color: var(--success-color-hover);
     }
-
-    &:focus-visible {
-        box-shadow: 0 0 0 var(--size-200) var(--focus-ring-success);
-    }
 }
 
 //  $$  MUTED
@@ -100,10 +90,6 @@
 
     &:hover {
         color: var(--muted-color-hover);
-    }
-
-    &:focus-visible {
-        box-shadow: 0 0 0 var(--size-200) var(--focus-ring-muted);
     }
 }
 
@@ -133,10 +119,6 @@
 
     &:hover {
         color: var(--inverted-color-hover);
-    }
-
-    &:focus-visible {
-        box-shadow: 0 0 0 var(--size-200) var(--focus-ring-inverted);
     }
 }
 
