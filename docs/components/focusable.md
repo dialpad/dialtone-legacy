@@ -106,6 +106,30 @@ title: Focusable
       </div>
     </div>
     <div>
+      <h4 class="d-mb8">Input</h4>
+      <div class="d-d-flex d-flow16">
+        <div class="d-fl-grow1">
+          <label class="d-label" for="Dialtone--InputExample66">Label</label>
+          <input class="d-input" id="Dialtone--InputExample66" type="email" placeholder="" value="Value" />
+        </div>
+        <div class="d-fl-grow1">
+          <label class="d-label" for="Dialtone--InputExample3">Label</label>
+          <input class="d-input d-input--error" id="Dialtone--InputExample3" type="email" placeholder="" value="Value" />
+          <span class="d-validation-message d-validation-message--error">Error validation message</span>
+        </div>
+        <div class="d-fl-grow1">
+          <label class="d-label" for="Dialtone--InputExample4">Label</label>
+          <input class="d-input d-input--success" id="Dialtone--InputExample4" type="email" placeholder="" value="Value" />
+          <span class="d-validation-message d-validation-message--success">Success validation message</span>
+        </div>
+        <div class="d-fl-grow1">
+          <label class="d-label" for="Dialtone--InputExample5">Label</label>
+          <input class="d-input d-input--warning" id="Dialtone--InputExample5" type="email" placeholder="" value="Value" />
+          <span class="d-validation-message d-validation-message--warning">Warning validation message</span>
+        </div>
+      </div>
+    </div>
+    <div>
       <h4 class="d-mb8">Select</h4>
       <div class="d-d-flex d-flow16">
         <div class="d-fl-grow1">
@@ -168,30 +192,6 @@ title: Focusable
           <div class="d-validation-message d-validation-message--warning">
             <span>Warning validation message</span>
           </div>
-        </div>
-      </div>
-    </div>
-    <div>
-      <h4 class="d-mb8">Input</h4>
-      <div class="d-d-flex d-flow16">
-        <div class="d-fl-grow1">
-          <label class="d-label" for="Dialtone--InputExample66">Label</label>
-          <input class="d-input" id="Dialtone--InputExample66" type="email" placeholder="" value="Value" />
-        </div>
-        <div class="d-fl-grow1">
-          <label class="d-label" for="Dialtone--InputExample3">Label</label>
-          <input class="d-input d-input--error" id="Dialtone--InputExample3" type="email" placeholder="" value="Value" />
-          <span class="d-validation-message d-validation-message--error">Error validation message</span>
-        </div>
-        <div class="d-fl-grow1">
-          <label class="d-label" for="Dialtone--InputExample4">Label</label>
-          <input class="d-input d-input--success" id="Dialtone--InputExample4" type="email" placeholder="" value="Value" />
-          <span class="d-validation-message d-validation-message--success">Success validation message</span>
-        </div>
-        <div class="d-fl-grow1">
-          <label class="d-label" for="Dialtone--InputExample5">Label</label>
-          <input class="d-input d-input--warning" id="Dialtone--InputExample5" type="email" placeholder="" value="Value" />
-          <span class="d-validation-message d-validation-message--warning">Warning validation message</span>
         </div>
       </div>
     </div>

@@ -29,7 +29,7 @@
 .d-input__wrapper {
     //  Component CSS Vars
     //  ------------------------------------------------------------------------
-    --input-color-border-focus: var(--purple-400);
+    --input-color-border-focus: var(--blue-300);
     --input-color-border: hsla(var(--black-900-hsl) ~' / ' 9%);
     --input-color-background: hsla(var(--black-900-hsl) ~' / ' 3%);
     --input-color-background-disabled: hsla(var(--black-900-hsl) ~' / ' 12%);
@@ -40,11 +40,6 @@
     --input-color-text: var(--fc-secondary);
     --input-font-size: var(--fs-200);
     --input-line-height: var(--lh-200);
-
-    .bg-test & {
-        --input-color-border: var(--black-300);
-        --input-color-background: var(--black-100);
-    }
 
     position: relative;
     display: inline-flex;
@@ -65,7 +60,7 @@
     box-shadow: none;
     transition-timing-function: var(--ttf-in-out);
     transition-duration: 100ms;
-    transition-property: border, box-shadow, background-color;
+    transition-property: box-shadow, background-color;
     appearance: none;
 
     //  --  Placeholder copy
@@ -76,10 +71,11 @@
     &::-ms-clear {
         display: none;
     }
-    //  --  FOCUS
+    //  --  FOCUS STATE
     &:focus,
     &:focus-within {
-        --input-color-border: var(--input-color-border-focus);
+        --input-border-width: var(--size-200);
+        --input-color-border: var(--input-color-border-focus) !important;
     }
     //  --  DISABLED / READ-ONLY
     &[disabled],
@@ -214,19 +210,16 @@
 .d-input--warning,
 .d-textarea--warning {
     --input-color-border: var(--gold-400) !important;
-    --input-color-border-focus: var(--warning-color);
 }
 
 .d-input--error,
 .d-textarea--error {
     --input-color-border: var(--error-color) !important;
-    --input-color-border-focus: var(--error-color);
 }
 
 .d-input--success,
 .d-textarea--success {
     --input-color-border: var(--success-color) !important;
-    --input-color-border-focus: var(--success-color);
 }
 
 //  ============================================================================
