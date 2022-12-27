@@ -3,6 +3,20 @@ title: Focusable
 ---
 
 <div class="qwerqwerqwerqwer">
+  <h2>Dialtone CSS Utility</h2>
+  <div class="qwerqwerqwerqwer__list">
+    <div>
+      <h4 class="d-mb8">d-ol-focusring</h4>
+      <div class="d-d-flex d-flow8">
+        <div class="d-fl-grow1">
+          basic default div
+        </div>
+        <div class="d-ol-focusring d-fl-grow1">
+          div with <code>class="d-ol-focusring"</code>
+        </div>
+      </div>
+    </div>
+  </div>
   <h2>Dialtone Components</h2>
   <div class="qwerqwerqwerqwer__list">
     <div>
