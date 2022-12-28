@@ -45,7 +45,9 @@
           :class="shouldBeInverted ? 'd-btn--inverted' : 'd-btn--muted'"
           aria-label="Close"
         >
-          <span class="d-btn__icon"><icon-close /></span>
+          <span class="d-btn__icon">
+            <dt-icon name="close" size="200" />
+          </span>
         </button>
       </div>
     </aside>
@@ -78,7 +80,7 @@ export default {
     },
 
     shouldBeInverted () {
-      return this.important && !['warning', 'success'].includes(this.kind);
+      return this.important && !['warning'].includes(this.kind);
     },
   },
 };

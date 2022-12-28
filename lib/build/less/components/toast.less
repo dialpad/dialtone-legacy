@@ -13,12 +13,13 @@
 //  @   TOAST CONTAINER
 //  ----------------------------------------------------------------------------
 .d-toast-wrapper {
-    position: absolute;
-    top: var(--size-600); // 32
-    left: 50%;
-    transform: translateX(-50%);
-
-    .d-stack8();
+  position: absolute;
+  top: var(--size-600); // 32
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-500);
+  transform: translateX(-50%);
 }
 
 //  ============================================================================
@@ -29,20 +30,25 @@
     //  ------------------------------------------------------------------------
     --toast-color-background: var(--black-100);
     --toast-color-text: var(--fc-primary);
+    --toast-padding: var(--space-500);
+    --toast-color-shadow: hsla(var(--black-900-hsl) ~' / ' 10%);
+    --toast-border-radius: var(--size-400);
+    --toast-box-shadow: 0 0 0 var(--size-100) var(--toast-color-shadow), var(--bs-md);
+    --toast-font-size: var(--fs-200);
+    --toast-line-height: var(--lh-300);
 
     z-index: var(--zi-notification);
     box-sizing: border-box;
     width: 100%;
     max-width: calc(var(--size-300) * 157); // 628
-    margin-bottom: var(--space-400); // 8
-    padding: calc(var(--space-300) * 3); // 12
+    padding: var(--toast-padding);
     color: var(--toast-color-text);
-    font-size: var(--fs-200);
-    line-height: var(--lh6);
+    font-size: var(--toast-font-size);
+    line-height: var(--toast-line-height);
     word-break: normal;
     background-color: var(--toast-color-background);
-    border-radius: var(--br4);
-    .d-bs-md();
+    border-radius: var(--toast-border-radius);
+    box-shadow: var(--toast-box-shadow);
 
     //  If there's a link in a toast, break the url so it wraps
     > a {
@@ -84,7 +90,7 @@
 //  $$  DEFAULT IMPORTANT
 //  ----------------------------------------------------------------------------
 .d-toast.d-toast--important {
-    --toast-color-background: var(--black-800);
+    --toast-color-background: var(--black-700);
     --toast-color-text: var(--black-100);
 }
 
@@ -92,23 +98,21 @@
 //  ----------------------------------------------------------------------------
 .d-toast--error {
     --toast-color-background: var(--red-100);
-    --toast-color-text: var(--red-500);
 
     &.d-toast--important {
         --toast-color-background: var(--red-300);
-        --toast-color-text: var(--white);
+        --toast-color-text: var(--fc-primary-inverted);
     }
 }
 
 //  $$  INFO
 //  ----------------------------------------------------------------------------
 .d-toast--info {
-    --toast-color-background: var(--purple-100);
-    --toast-color-text: var(--fc-primary);
+    --toast-color-background: var(--blue-100);
 
     &.d-toast--important {
-        --toast-color-background: var(--purple-400);
-        --toast-color-text: var(--white);
+        --toast-color-background: var(--blue-400);
+        --toast-color-text: var(--fc-primary-inverted);
     }
 }
 
@@ -116,11 +120,10 @@
 //  ----------------------------------------------------------------------------
 .d-toast--success {
     --toast-color-background: var(--green-100);
-    --toast-color-text: var(--green-500);
 
     &.d-toast--important {
-        --toast-color-background: var(--green-200);
-        --toast-color-text: var(--green-500);
+        --toast-color-background: var(--green-400);
+        --toast-color-text: var(--fc-primary-inverted);
     }
 }
 
@@ -142,7 +145,7 @@
 //  ----------------------------------------------------------------------------
 .d-toast--chat {
   .d-notice__icon,
- .d-toast__meta {
+  .d-toast__meta {
     color: var(--black-600);
   }
 
@@ -152,7 +155,7 @@
 
   &.d-toast--important {
     .d-notice__icon,
- .d-toast__meta {
+    .d-toast__meta {
       color: var(--black-100);
     }
   }
@@ -182,7 +185,7 @@
 .d-toast--chat,
 .d-toast--organizer,
 .d-toast--viewing {
-  --toast-color-background: var(--white);
+  --toast-color-background: var(--fc-primary-inverted);
 
   .d-notice__icon {
     align-self: flex-start;

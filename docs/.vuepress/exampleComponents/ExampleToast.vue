@@ -132,7 +132,7 @@
             @click="toggleExample"
           >
             <span class="d-btn__icon">
-              <icon-close />
+              <dt-icon name="close" size="200" />
             </span>
           </button>
         </div>
@@ -158,7 +158,7 @@ export default {
     },
 
     shouldBeInverted () {
-      return this.important && !['warning', 'success'].includes(this.kind);
+      return this.important && !['warning'].includes(this.kind);
     },
   },
 

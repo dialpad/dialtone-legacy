@@ -184,7 +184,7 @@ export default {
     },
 
     shouldBeInverted () {
-      return this.important && !['warning', 'success'].includes(this.kind);
+      return this.important && !['warning'].includes(this.kind);
     },
   },
 

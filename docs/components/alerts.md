@@ -1,4 +1,11 @@
-<div class="qwerqwerqwerqwer">
+<div class="qwerqwerqwerqwer d-pt64">
+  <div>
+    Toggle:
+    <button class="d-btn d-btn--outlined" onclick="(() => { const buttons = document.querySelectorAll('.d-notice__actions .d-btn--outlined'); buttons.forEach(button => { button.style.display = button.style.display === 'none' ? 'block' : 'none'; }); })()"><dt-icon name="eye" size="300" /> Action</button>
+    <button class="d-btn d-btn--outlined" onclick="(() => { const buttons = document.querySelectorAll('.d-notice__actions .d-btn--circle'); buttons.forEach(button => { button.style.display = button.style.display === 'none' ? 'block' : 'none'; }); })()"><dt-icon name="eye" size="300" /> Close</button>
+    <button class="d-btn d-btn--outlined" onclick="(() => { const buttons = document.querySelectorAll('.d-notice__title'); buttons.forEach(button => { button.style.display = button.style.display === 'none' ? 'block' : 'none'; }); })()"><dt-icon name="eye" size="300" /> Title</button>
+    <button class="d-btn d-btn--outlined" onclick="(() => { const buttons = document.querySelectorAll('.d-notice__message'); buttons.forEach(button => { button.style.display = button.style.display === 'none' ? 'block' : 'none'; }); })()"><dt-icon name="eye" size="300" /> Message</button>
+  </div>
   <h2>Banner</h2>
   <div class="qwerqwerqwerqwer__list">
     <div>
@@ -13,12 +20,21 @@
   </div>
   <h2>Notice</h2>
   <div class="qwerqwerqwerqwer__list">
-    <div class="d-stack16">
-      <example-notice kind="base" role="status" />
-      <example-notice kind="error" role="status" />
-      <example-notice kind="info" role="status" />
-      <example-notice kind="success" role="status" />
-      <example-notice kind="warning" role="status" />
+    <div class="d-d-flex d-flow16">
+      <div class="d-fl-grow1 d-stack16">
+        <example-notice class="d-w100p" kind="base" role="status" />
+        <example-notice class="d-w100p" kind="error" role="status" />
+        <example-notice class="d-w100p" kind="info" role="status" />
+        <example-notice class="d-w100p" kind="success" role="status" />
+        <example-notice class="d-w100p" kind="warning" role="status" />
+      </div>
+      <div class="d-fl-grow1 d-stack16">
+        <example-notice class="d-w100p" kind="base" role="status" important />
+        <example-notice class="d-w100p" kind="error" role="status" important />
+        <example-notice class="d-w100p" kind="info" role="status" important />
+        <example-notice class="d-w100p" kind="success" role="status" important />
+        <example-notice class="d-w100p" kind="warning" role="status" important />
+      </div>
     </div>
   </div>
 </div>

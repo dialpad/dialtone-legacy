@@ -17,9 +17,10 @@
     //  ------------------------------------------------------------------------
     --banner-color-background: var(--black-100);
     --banner-color-text: var(--fc-primary);
-    --banner-padding: var(--space-400);
     --banner-font-size: var(--fs-200);
     --banner-line-height: var(--lh-200);
+    --banner-dialog-padding-y: var(--space-400);
+    --banner-dialog-padding-x: var(--space-500);
 
     position: fixed;
     top: 0;
@@ -72,13 +73,13 @@
     max-width: 128rem;
     min-height: 100%;
     margin: 0 auto;
-    padding: var(--banner-padding);
+    padding: var(--banner-dialog-padding-y) var(--banner-dialog-padding-x);
+    border-bottom: 1px solid hsla(var(--black-900-hsl) ~' / ' 10%);
 
     .d-notice__content {
         flex-direction: row;
+        gap: var(--space-300);
         align-items: center;
-
-        .d-flow4();
     }
 }
 
@@ -88,7 +89,7 @@
 //  $$  DEFAULT IMPORTANT
 //  ----------------------------------------------------------------------------
 .d-banner.d-banner--important {
-    --banner-color-background: var(--black-800);
+    --banner-color-background: var(--black-700);
     --banner-color-text: var(--fc-primary-inverted);
 }
 
@@ -120,8 +121,8 @@
     --banner-color-background: var(--green-100);
 
     &.d-banner--important {
-        --banner-color-background: var(--green-200);
-        --banner-color-text: var(--green-500);
+        --banner-color-background: var(--green-400);
+        --banner-color-text: var(--fc-primary-inverted);
     }
 }
 

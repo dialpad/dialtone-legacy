@@ -17,6 +17,12 @@
     //  ------------------------------------------------------------------------
     --notice-color-background: var(--black-100);
     --notice-color-text: var(--fc-primary);
+    --notice-color-shadow: hsla(var(--black-900-hsl) ~' / ' 10%);
+    --notice-padding: var(--space-500);
+    --notice-font-size: var(--fs-200);
+    --notice-line-height: var(--lh-300);
+    --notice-border-radius: var(--size-400);
+    --notice-box-shadow: 0 0 0 var(--size-100) var(--notice-color-shadow) inset;
 
     display: flex;
     align-items: center;
@@ -26,12 +32,13 @@
     box-sizing: border-box;
     width: 100%;
     max-width: calc(var(--size-300) * 157); // 628
-    padding: calc(var(--space-300) * 3); // 12
+    padding: var(--notice-padding);
     color: var(--notice-color-text);
-    font-size: var(--fs-200);
-    line-height: var(--lh6);
+    font-size: var(--notice-font-size);
+    line-height: var(--notice-line-height);
     background-color: var(--notice-color-background);
-    border-radius: var(--br4);
+    border-radius: var(--notice-border-radius);
+    box-shadow: var(--notice-box-shadow);
 
     .d-toast & {
         max-width: calc(var(--size-300) * 116); // 464
@@ -57,9 +64,8 @@
 .d-notice__actions {
     display: flex;
     flex: 0 auto;
+    gap: var(--space-400);
     align-items: center;
-
-    .d-flow8();
 }
 
 //  $$  ICON
@@ -85,8 +91,9 @@
 //  $$  DEFAULT IMPORTANT
 //  ----------------------------------------------------------------------------
 .d-notice.d-notice--important {
-    --notice-color-background: var(--black-800);
-    --notice-color-text: var(--black-100);
+    --notice-color-background: var(--black-700);
+    --notice-color-text: var(--fc-primary-inverted);
+    --notice-color-shadow: transparent;
 }
 
 //  $$  ERROR
@@ -95,13 +102,12 @@
 .d-banner--error,
 .d-toast--error {
     --notice-color-background: var(--red-100);
-    --notice-color-text: var(--red-500);
 
     &.d-notice--important,
     &.d-banner--important,
     &.d-toast--important {
         --notice-color-background: var(--red-300);
-        --notice-color-text: var(--white);
+        --notice-color-text: var(--fc-primary-inverted);
     }
 }
 
@@ -110,13 +116,13 @@
 .d-notice--info,
 .d-banner--info,
 .d-toast--info {
-    --notice-color-background: var(--purple-100);
+    --notice-color-background: var(--blue-100);
 
     &.d-notice--important,
     &.d-banner--important,
     &.d-toast--important {
-        --notice-color-background: var(--purple-400);
-        --notice-color-text: var(--white);
+        --notice-color-background: var(--blue-400);
+        --notice-color-text: var(--fc-primary-inverted);
     }
 }
 
@@ -126,13 +132,12 @@
 .d-banner--success,
 .d-toast--success {
     --notice-color-background: var(--green-100);
-    --notice-color-text: var(--green-500);
 
     &.d-notice--important,
     &.d-banner--important,
     &.d-toast--important {
-        --notice-color-background: var(--green-200);
-        --notice-color-text: var(--green-500);
+        --notice-color-background: var(--green-400);
+        --notice-color-text: var(--fc-primary-inverted);
     }
 }
 
