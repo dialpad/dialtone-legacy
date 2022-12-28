@@ -95,11 +95,11 @@
     >
       <div class="d-toast__dialog">
         <div class="d-notice__icon">
-          <icon-lightbulb v-show="kind === 'base'" />
-          <icon-info v-show="kind === 'info'" />
-          <icon-error v-show="kind === 'error'" />
-          <icon-warning v-show="kind === 'warning'" />
-          <icon-check-circle v-show="kind === 'success'" />
+          <dt-icon name="bell" size="400" v-show="kind === 'base'" />
+          <dt-icon name="alert-circle" size="400" v-show="kind === 'error'" />
+          <dt-icon name="info" size="400" v-show="kind === 'info'" />
+          <dt-icon name="check-circle" size="400" v-show="kind === 'success'" />
+          <dt-icon name="alert-triangle" size="400" v-show="kind === 'warning'" />
         </div>
         <div class="d-notice__content">
           <h2 class="d-notice__title">
