@@ -15,8 +15,11 @@
 .d-banner {
     //  Component CSS Vars
     //  ------------------------------------------------------------------------
-    --banner--bgc: var(--black-100);
-    --banner--fc: var(--fc-primary);
+    --banner-color-background: var(--black-100);
+    --banner-color-text: var(--fc-primary);
+    --banner-padding: var(--space-400);
+    --banner-font-size: var(--fs-200);
+    --banner-line-height: var(--lh-200);
 
     position: fixed;
     top: 0;
@@ -27,10 +30,10 @@
     box-sizing: border-box;
     width: 100%;
     min-height: calc(var(--size-300) * 12); // 48
-    color: var(--banner--fc);
-    font-size: var(--fs-200);
-    line-height: var(--lh6);
-    background-color: var(--banner--bgc);
+    color: var(--banner-color-text);
+    font-size: var(--banner-font-size);
+    line-height: var(--banner-line-height);
+    background-color: var(--banner-color-background);
     border-radius: 0;
     box-shadow: none;
 
@@ -69,7 +72,7 @@
     max-width: 128rem;
     min-height: 100%;
     margin: 0 auto;
-    padding: var(--space-400);
+    padding: var(--banner-padding);
 
     .d-notice__content {
         flex-direction: row;
@@ -85,52 +88,50 @@
 //  $$  DEFAULT IMPORTANT
 //  ----------------------------------------------------------------------------
 .d-banner.d-banner--important {
-    --banner--bgc: var(--black-800);
-    --banner--fc: var(--black-100);
+    --banner-color-background: var(--black-800);
+    --banner-color-text: var(--fc-primary-inverted);
 }
 
 //  $$  ERROR
 //  ----------------------------------------------------------------------------
 .d-banner--error {
-    --banner--bgc: var(--red-100);
-    --banner--fc: var(--red-500);
+    --banner-color-background: var(--red-100);
 
     &.d-banner--important {
-        --banner--bgc: var(--red-300);
-        --banner--fc: var(--white);
+        --banner-color-background: var(--red-300);
+        --banner-color-text: var(--fc-primary-inverted);
     }
 }
 
 //  $$  INFO
 //  ----------------------------------------------------------------------------
 .d-banner--info {
-    --banner--bgc: var(--purple-100);
+    --banner-color-background: var(--blue-100);
 
     &.d-banner--important {
-        --banner--bgc: var(--purple-400);
-        --banner--fc: var(--white);
+        --banner-color-background: var(--blue-400);
+        --banner-color-text: var(--fc-primary-inverted);
     }
 }
 
 //  $$  SUCCESS
 //  ----------------------------------------------------------------------------
 .d-banner--success {
-    --banner--bgc: var(--green-100);
-    --banner--fc: var(--green-500);
+    --banner-color-background: var(--green-100);
 
     &.d-banner--important {
-        --banner--bgc: var(--green-200);
-        --banner--fc: var(--green-500);
+        --banner-color-background: var(--green-200);
+        --banner-color-text: var(--green-500);
     }
 }
 
 //  $$  WARNING
 //  ----------------------------------------------------------------------------
 .d-banner--warning {
-    --banner--bgc: var(--gold-100);
+    --banner-color-background: var(--gold-100);
 
     &.d-banner--important {
-        --banner--bgc: var(--gold-200);
-        --banner--fc: var(--fc-primary);
+        --banner-color-background: var(--gold-200);
+        --banner-color-text: var(--fc-primary);
     }
 }

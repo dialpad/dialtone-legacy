@@ -150,7 +150,7 @@
           @click="toggleExample"
         >
           <span class="d-btn__icon">
-            <icon-close />
+            <dt-icon name="close" size="200" />
           </span>
         </button>
       </div>
