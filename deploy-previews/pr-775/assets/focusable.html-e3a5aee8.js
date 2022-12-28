@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-344b6927","path":"/components/focusable.html","title":"Focusable","lang":"en-US","frontmatter":{"title":"Focusable"},"headers":[],"git":{"createdTime":1672183653000,"updatedTime":1672183653000,"contributors":[{"name":"Francis Rupert","email":"francisrupert@gmail.com","commits":1}]}}');export{e as data};
