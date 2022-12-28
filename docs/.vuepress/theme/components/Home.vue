@@ -30,7 +30,7 @@
             >
           </a>
         </div>
-        <div class="d-d-flex">
+        <div class="d-d-flex d-jc-center">
           <router-link
             v-slot="{ navigate }"
             to="/guides/getting-started/"

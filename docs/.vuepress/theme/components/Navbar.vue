@@ -1,13 +1,13 @@
 <template>
   <nav
-    class="d-d-flex"
+    class="d-d-flex d-flow4"
     role="navigation"
   >
     <router-link
       v-for="link in items"
       :key="link.text"
       :to="link.link"
-      class="d-btn d-btn--md"
+      class="d-btn d-btn--md d-bar-pill"
       :class="{ 'd-btn--active': isActiveLink(link.text) }"
     >
       {{ link.text }}

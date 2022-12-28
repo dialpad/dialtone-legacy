@@ -2,10 +2,9 @@
   <li>
     <p
       class="d-headline-eyebrow d-fw-semibold d-pl12 d-pb8"
-      tabindex="0"
       v-text="item.text"
     />
-    <ul class="d-pl0 d-mb16">
+    <ul class="d-pl0 d-mb16 d-stack4">
       <li
         v-for="subItem in subItems"
         :key="subItem.text"
@@ -21,7 +20,7 @@
             :class="[
               itemClass,
               {
-                'd-btn--active d-fw-medium': isActive,
+                'd-btn--active d-bgc-black-200 d-fw-medium': isActive,
                 'router-link-exact-active': isExactActive,
                 'd-fc-primary': !isActive || !isExactActive,
               },
@@ -51,7 +50,7 @@
 <script setup>
 import { computed } from 'vue';
 
-const itemClass = 'd-btn d-btn--muted d-w100p d-jc-flex-start d-fw-normal';
+const itemClass = 'd-btn d-btn--muted d-bar-pill d-w100p d-jc-flex-start d-fw-normal';
 const props = defineProps({
   item: {
     type: Object,
