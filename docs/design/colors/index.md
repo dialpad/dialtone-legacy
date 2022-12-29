@@ -213,18 +213,55 @@ Foreground colors distinguishing important information with a status role.
 
 ## Surface
 
-Background colors for default application UI surfaces. Surface colors are used for pages, modals, tables, headers, and cards. Any foreground content such as text, buttons, forms, and icons rest on a surface.
+Background colors for default application UI surfaces. Surface colors are containing blocks — such as pages, modals, tables, headers, and cards — containing foreground content or elements.
 
-<aside class="d-notice d-notice--info d-mt24 d-wmx100p" role="status" aria-hidden="false">
-  <div class="d-notice__icon">
-    <dt-icon name="info"></dt-icon>
-  </div>
-  <div class="d-notice__content d-stack4">
-    <p class="d-notice__message">
-      <strong>Planned</strong>. In the meantime continue to rely on components' built-in surface colors and <router-link class="d-link" to="/utilities/backgrounds/color.html">background color CSS utilities</router-link>, and work with your Product Designer to validate.
-    </p>
-  </div>
-</aside>
+<table class="d-table dialtone-doc-table">
+  <thead>
+    <tr>
+      <th scope="col" colspan="2">Color</th>
+      <th scope="col">CSS variable</th>
+      <th scope="col">CSS utility</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-critical"></div></th>
+      <th scope="row" class="d-lh-300">
+        Critical
+        <div class="d-fw-normal">Background surface color containing error, danger, or otherwise critical messaging or elements.</div>
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-critical)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-critical</td>
+    </tr>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-success"></div></th>
+      <th scope="row" class="d-lh-300">
+        Success
+        <div class="d-fw-normal">Background surface color containing messaging or elements expressing a positive or successful state.</div>
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-success)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-success</td>
+    </tr>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-warning"></div></th>
+      <th scope="row" class="d-lh-300">
+        Warning
+        <div class="d-fw-normal">Background surface color highlighting messaging or elements that may require user's attention.</div>
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-warning)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-warning</td>
+    </tr>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-info"></div></th>
+      <th scope="row" class="d-lh-300">
+        Info
+        <div class="d-fw-normal">Background surface color containing messaging or elements communicated as generally informational.</div>
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-info)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-info</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Borders
 
