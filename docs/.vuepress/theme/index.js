@@ -39,10 +39,13 @@ function extractFrontmatter (app, path, options) {
   indexPage.data.enhancedFrontmatter = app.pages
     .filter(page => page.path.includes(path) && page.path !== path)
     .map(component => {
-      const fileName = component.frontmatter.title.toLowerCase().replaceAll(' ', '-');
+      if (!component.frontmatter || !component.frontmatter.title) {
+        console.warn(`\nWARN: Missing required frontmatter data on ${component.filePathRelative} file`);
+      }
+      const fileName = component.frontmatter?.title?.toLowerCase().replaceAll(' ', '-');
       return {
         fileName,
-        link: component.frontmatter.shortTitle || fileName,
+        link: component.frontmatter?.shortTitle || fileName,
         ...component.frontmatter,
       };
     })
