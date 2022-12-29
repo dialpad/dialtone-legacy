@@ -16,7 +16,7 @@ export default {
      */
     bgclass: {
       type: String,
-      default: 'd-bgc-black-100',
+      default: 'd-bgc-secondary',
     },
 
     /**
@@ -40,7 +40,7 @@ export default {
     },
 
     isWhiteBackground () {
-      return this.bgclass === 'd-bgc-white';
+      return this.bgclass === 'd-bgc-primary';
     },
   },
 };

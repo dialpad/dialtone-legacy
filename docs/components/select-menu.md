@@ -7,7 +7,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-select-menu--d
 figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Components-7?node-id=8919%3A21569&viewport=-1857%2C206%2C0.37&t=xHutRjwo1o5zMTgT-11
 ---
 
-<code-well-header bgclass="d-bgc-white">
+<code-well-header bgclass="d-bgc-primary">
   <div class="d-w100p">
     <div class="d-label">
       <label for="Dialtone--SelectExample1">Label</label>
@@ -55,7 +55,7 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 
 A select is normally paired with a label, but there are times when it can be used without a label. Don't rely on the placeholder text as a label.
 
-<code-well-header bgclass="d-bgc-white">
+<code-well-header bgclass="d-bgc-primary">
   <div class="d-stack24 d-w100p">
     <div>
       <div class="d-label">
@@ -117,7 +117,7 @@ A select is normally paired with a label, but there are times when it can be use
 
 ### With description text
 
-<code-well-header bgclass="d-bgc-white">
+<code-well-header bgclass="d-bgc-primary">
   <div class="d-w100p">
     <div class="d-label">
       <label for="Dialtone--SelectExample3">Label</label>
@@ -148,7 +148,7 @@ A select is normally paired with a label, but there are times when it can be use
 
 Provides feedback to the user based on their interaction, or lack thereof, with a select.
 
-<code-well-header bgclass="d-bgc-white">
+<code-well-header bgclass="d-bgc-primary">
   <div class="d-stack24 d-w100p">
     <div>
       <div class="d-label">
@@ -229,7 +229,7 @@ Provides feedback to the user based on their interaction, or lack thereof, with 
 
 We offer different sizes for instances in which the interface requires a smaller or larger select. In general, though, use the base (medium) size select as much as possible, especially in forms.
 
-<code-well-header bgclass="d-bgc-white">
+<code-well-header bgclass="d-bgc-primary">
   <div class="d-stack24 d-w100p">
     <div>
       <div class="d-label d-label--xs">

@@ -14,7 +14,7 @@
       aria-haspopup="dialog"
       @click="togglePopover"
     >
-      Click Me
+      View Popover
     </button>
     <div
       id="dialog1"
@@ -35,7 +35,7 @@
       </div>
       <div class="d-popover__content d-p16">
         <slot name="content">
-          This is content rendered within the popover.<br>
+          <div class="d-mb8">This is content rendered within the popover.</div>
         </slot>
         <button class="d-btn d-btn--primary">
           Button

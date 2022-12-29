@@ -1,3 +1,7 @@
+---
+title: Alert-like components
+---
+
 <div class="qwerqwerqwerqwer d-pt64">
   <div class="d-d-flex d-d-flex d-jc-center d-flow8 d-ai-center">
     <strong>Toggle</strong>

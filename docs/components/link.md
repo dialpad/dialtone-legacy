@@ -57,7 +57,7 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 <a href="#" class="d-link d-link--warning">...</a>
 ```
 
-<code-well-header bgclass="d-bgc-black-800">
+<code-well-header bgclass="d-bgc-contrast">
   <a href="#" class="d-link d-link--inverted">Inverted base link</a>
 </code-well-header>
 
