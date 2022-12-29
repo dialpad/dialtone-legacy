@@ -164,17 +164,17 @@ Foreground colors distinguishing important information with a status role.
       <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42" style="background-color: var(--fc-error)"></div></th>
       <td>
         <div class="d-d-flex d-jc-space-between d-ai-center">
-          <div class="d-fl0 d-fs-300 d-fc-error d-p6 d-fw-medium">
+          <div class="d-fl0 d-fs-300 d-fc-critical d-p6 d-fw-medium">
             Aa
           </div>
         </div>
       </td>
       <th scope="row" class="d-lh-300">
-        Error
+        Critical
         <div class="d-fw-normal">Expresses an error, danger, or otherwise critical state.</div>
       </th>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--fc-error)</td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-error</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--fc-critical)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-critical</td>
     </tr>
     <tr>
       <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42" style="background-color: var(--fc-success)"></div></th>
