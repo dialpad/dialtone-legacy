@@ -100,6 +100,56 @@ Use `fv:d-bgc-{color}` to change an element's `:focus-visible` state background 
   <utility-class-table>
     <template #content>
       <tbody>
+        <tr>
+            <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-bgc-critical</th>
+            <td>
+                <div class="d-d-flex d-jc-space-between d-ai-center">
+                    <div class="d-fl-grow1 d-ff-mono d-fs-100">
+                        --bgo: 100%;<br/>
+                        background-color: hsla(var(--red-100-h) var(--red-100-s) var(--red-100-l) / var(--bgo)) !important;
+                    </div>
+                    <div class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar-circle d-bgc-critical d-ba d-bc-black-100"></div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-bgc-success</th>
+            <td>
+                <div class="d-d-flex d-jc-space-between d-ai-center">
+                    <div class="d-fl-grow1 d-ff-mono d-fs-100">
+                        --bgo: 100%;<br/>
+                        background-color: hsla(var(--green-100-h) var(--green-100-s) var(--green-100-l) / var(--bgo)) !important;
+                    </div>
+                    <div class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar-circle d-bgc-success d-ba d-bc-black-100"></div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-bgc-warning</th>
+            <td>
+                <div class="d-d-flex d-jc-space-between d-ai-center">
+                    <div class="d-fl-grow1 d-ff-mono d-fs-100">
+                        --bgo: 100%;<br/>
+                        background-color: hsla(var(--gold-100-h) var(--gold-100-s) var(--gold-100-l) / var(--bgo)) !important;
+                    </div>
+                    <div class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar-circle d-bgc-warning d-ba d-bc-black-100"></div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-bgc-info</th>
+            <td>
+                <div class="d-d-flex d-jc-space-between d-ai-center">
+                    <div class="d-fl-grow1 d-ff-mono d-fs-100">
+                        --bgo: 100%;<br/>
+                        background-color: hsla(var(--blue-100-h) var(--blue-100-s) var(--blue-100-l) / var(--bgo)) !important;
+                    </div>
+                    <div class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar-circle d-bgc-info d-ba d-bc-black-100"></div>
+                </div>
+            </td>
+        </tr>
+      </tbody>
+      <tbody>
           <tr>
               <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-bgc-transparent</th>
               <td>
@@ -107,7 +157,7 @@ Use `fv:d-bgc-{color}` to change an element's `:focus-visible` state background 
                       <div class="d-fl-grow1 d-ff-mono d-fs-100">
                           background-color: transparent !important;
                       </div>
-                      <div class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar4 d-bgc-transparent d-ba d-bc-black-100"></div>
+                      <div class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar-circle d-bgc-transparent d-ba d-bc-black-100"></div>
                   </div>
               </td>
           </tr>
@@ -118,7 +168,7 @@ Use `fv:d-bgc-{color}` to change an element's `:focus-visible` state background 
                       <div class="d-fl-grow1 d-ff-mono d-fs-100">
                           background-color: unset !important;
                       </div>
-                      <div class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar4 d-bgc-unset d-ba d-bc-black-100"></div>
+                      <div class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar-circle d-bgc-unset d-ba d-bc-black-100"></div>
                   </div>
               </td>
           </tr>
@@ -130,7 +180,7 @@ Use `fv:d-bgc-{color}` to change an element's `:focus-visible` state background 
                           --bgo: 100%;<br/>
                           background-color: hsla(var(--white-h) var(--white-s) var(--white-l) / var(--bgo)) !important;
                       </div>
-                      <div class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar4 d-bgc-white d-ba d-bc-black-100"></div>
+                      <div class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar-circle d-bgc-white d-ba d-bc-black-100"></div>
                   </div>
               </td>
           </tr>
@@ -145,7 +195,7 @@ Use `fv:d-bgc-{color}` to change an element's `:focus-visible` state background 
                         background-color: hsla(var(--{{ color }}-{{ stop }}-h) var(--{{ color }}-{{ stop }}-s) var(--{{ color }}-{{ stop }}-l) / var(--bgo)) !important;
                     </div>
                     <div
-                      class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar4 d-ba d-bc-black-100"
+                      class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar-circle d-ba d-bc-black-100"
                       :class="`d-bgc-${color}-${stop}`"
                     />
                 </div>
