@@ -9,9 +9,9 @@
           Documented styles, components, and utility classes to help you quickly design and build unified experiences
           across Dialpad and Dialpad Meetings.
         </p>
-        <div class="d-mb48">
+        <div class="d-mb32">
           <a
-            class="d-td-unset"
+            class="d-td-unset d-d-inline-flex"
             href="https://github.com/dialpad/dialtone/"
           >
             <img
@@ -20,7 +20,7 @@
             >
           </a>
           <a
-            class="d-td-unset d-ml4"
+            class="d-td-unset d-d-inline-flex d-ml4"
             href="https://github.com/dialpad/dialtone-vue"
           >
             <img
@@ -73,7 +73,7 @@
   <section class="links d-d-grid d-gg16 d-g-cols12 d-wmx1340 d-mx-auto">
     <div class="link d-body-base d-gc3 d-px32 d-ta-center">
       <router-link
-        class="d-fc-secondary h:d-fc-purple-400 d-d-block d-td-none"
+        class="d-fc-secondary h:d-fc-purple-400 d-d-block d-td-none d-bar8 d-pt4"
         to="/design/"
       >
         <img
@@ -97,7 +97,7 @@
     </div>
     <div class="link d-body-base d-gc3 d-px32 d-ta-center">
       <router-link
-        class="d-fc-secondary h:d-fc-purple-400 d-d-block d-td-none"
+        class="d-fc-secondary h:d-fc-purple-400 d-d-block d-td-none d-bar8 d-pt4"
         to="/components/"
       >
         <img
@@ -129,7 +129,7 @@
     </div>
     <div class="link d-body-base d-gc3 d-px32 d-ta-center">
       <router-link
-        class="d-fc-secondary h:d-fc-purple-400 d-d-block d-td-none"
+        class="d-fc-secondary h:d-fc-purple-400 d-d-block d-td-none d-bar8 d-pt4"
         to="/utilities/"
       >
         <img
@@ -153,7 +153,7 @@
     </div>
     <div class="link d-body-base d-gc3 d-px32 d-ta-center">
       <router-link
-        class="d-fc-secondary h:d-fc-purple-400 d-d-block d-td-none"
+        class="d-fc-secondary h:d-fc-purple-400 d-d-block d-td-none d-bar8 d-pt4"
         to="/guides/"
       >
         <img
