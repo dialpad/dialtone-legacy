@@ -9,7 +9,7 @@ desc: Utilities for setting background colors.
   </div>
   <div class="d-notice__content d-stack4">
     <p class="d-notice__message">
-      Before using background color utilities, first consider <router-link to="/design/colors/#surface">semantic surface colors</router-link>.
+      Before using background color utilities, first consider <router-link class="d-link d-link--muted" to="/design/colors/#surface">semantic surface colors</router-link>.
     </p>
   </div>
 </aside>

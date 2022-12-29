@@ -5,7 +5,7 @@
     custom
   >
     <dt-link
-      class="d-td-none d-fc-unset d-d-block"
+      class="d-td-none d-fc-unset d-d-block d-bar8"
       href="`/about/whats-new/posts/${format(posted, 'y-M-d')}`"
       @click="(e) => { navigate(e); }"
     >

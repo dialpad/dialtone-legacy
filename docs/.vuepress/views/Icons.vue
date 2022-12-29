@@ -1,19 +1,18 @@
 <template>
   <div
-    :class="{ ['d-bgc-black-800 d-fc-white']: ['light', 'night'].includes(variation) }"
+    :class="{ ['d-bgc-black-700 d-fc-primary-inverted']: ['light', 'night'].includes(variation) }"
     class="d-stack16 d-p16 d-bar8"
   >
-    <h2
+    <h3
       :id="`${variation}-${kind}`"
-      class="d-pl16 d-headline24 d-fl1"
-      tabindex="-1"
+      class="d-docsite--header-3 d-mt0"
     >
       <a
         :href="`#${variation}-${kind}`"
         class="header-anchor"
       >#</a>
       {{ title }}
-    </h2>
+    </h3>
     <div :class="iconsContainerClass">
       <base-icon
         v-for="(icon, index) in icons"

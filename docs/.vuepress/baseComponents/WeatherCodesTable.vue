@@ -2,8 +2,7 @@
   <div class="d-mt64 d-stack16">
     <h2
       id="weather-codes"
-      class="d-headline24 d-fl1"
-      tabindex="-1"
+      class="d-docsite--header-3"
     >
       <a
         class="header-anchor"

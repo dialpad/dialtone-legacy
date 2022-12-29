@@ -13,7 +13,7 @@ Please use **only** these colors or variations of these colors which pass WCAG 2
   </div>
   <div class="d-notice__content d-stack4">
     <p class="d-notice__message">
-      Before using a Color utility, consider <router-link to="/design/colors/#text">semantic colors</router-link>.
+      Before using a Color utility, consider <router-link class="d-link d-link--muted" to="/design/colors/#text">semantic colors</router-link>.
     </p>
   </div>
 </aside>

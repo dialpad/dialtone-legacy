@@ -28,7 +28,7 @@
           :src="$withBase('/assets/images/github-icon.svg')"
         >
         <div class="d-tooltip d-tooltip__arrow--top-center d-ps-absolute d-ws-nowrap">
-          GitHub Repo
+          GitHub repository
         </div>
       </a>
       <a
@@ -44,7 +44,7 @@
           :src="$withBase('/assets/images/codepen-icon.svg')"
         >
         <div class="d-tooltip d-tooltip__arrow--top-center d-ps-absolute d-ws-nowrap">
-          Codepen Template
+          Codepen template
         </div>
       </a>
     </div>

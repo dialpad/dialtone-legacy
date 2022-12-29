@@ -9,7 +9,7 @@ desc: Utilities for controlling an element's border color.
   </div>
   <div class="d-notice__content d-stack4">
     <p class="d-notice__message">
-      Before using border color utilities, first consider <router-link to="/design/colors/#borders">semantic border colors</router-link>.
+      Before using border color utilities, first consider <router-link class="d-link d-link--muted" to="/design/colors/#borders">semantic border colors</router-link>.
     </p>
   </div>
 </aside>
