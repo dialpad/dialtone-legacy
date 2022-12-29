@@ -6,7 +6,7 @@ thumb: true
 storybook_url: https://vue.dialpad.design/?path=/story/components-popover--default
 figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Components-7?node-id=8921%3A22411&viewport=831%2C-269%2C0.43&t=xHutRjwo1o5zMTgT-11
 ---
-<code-well-header>
+<code-well-header bgclass="d-bgc-primary">
   <example-popover modal />
 </code-well-header>
 
@@ -57,14 +57,14 @@ Your popover should be non-modal when:
 
 ### Popover - Modal
 
-<code-well-header>
+<code-well-header bgclass="d-bgc-primary">
   <example-popover modal />
 </code-well-header>
 
 ```html
 <div class="d-modal--transparent"></div>
 <div class="d-popover">
-  <button id="anchor1" class="d-btn d-btn--primary" aria-expanded="false" aria-controls="dialog1" aria-haspopup="dialog">Click Me</button>
+  <button id="anchor1" class="d-btn d-btn--primary" aria-expanded="false" aria-controls="dialog1" aria-haspopup="dialog">View Popover</button>
   <div id="dialog1" class="d-popover__dialog d-popover__dialog--modal d-ps-relative d-t4 d-w264" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="anchor1">
     <div class="d-popover__content d-p16">
       This is content rendered within the popover.<br>
@@ -76,13 +76,13 @@ Your popover should be non-modal when:
 
 ### Popover - Non Modal
 
-<code-well-header>
+<code-well-header bgclass="d-bgc-primary">
   <example-popover />
 </code-well-header>
 
 ```html
 <div class="d-popover">
-  <button id="anchor2" class="d-btn d-btn--primary" aria-expanded="false" aria-controls="dialog2" aria-haspopup="dialog">Click Me</button>
+  <button id="anchor2" class="d-btn d-btn--primary" aria-expanded="false" aria-controls="dialog2" aria-haspopup="dialog">View Popover</button>
   <div id="dialog2" class="d-popover__dialog d-ps-relative d-t4 d-w264" role="dialog" aria-modal="false" aria-hidden="true" aria-labelledby="anchor2">
     <div class="d-popover__content d-p16">
       This is content rendered within the popover.<br>
@@ -94,10 +94,10 @@ Your popover should be non-modal when:
 
 ### With Header - Modal
 
-<code-well-header>
+<code-well-header bgclass="d-bgc-primary">
   <example-popover modal header>
     <template #content>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur delectus distinctio id iure labore, maiores mollitia reprehenderit sunt tempore veritatis. Aliquam delectus earum ex, expedita ipsam nobis obcaecati quibusdam repudiandae.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur delectus distinctio id iure labore, maiores mollitia reprehenderit sunt tempore veritatis. Aliquam delectus earum ex, expedita ipsam nobis obcaecati quibusdam repudiandae.<br>
+      <div class="d-mb8">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur delectus distinctio id iure labore, maiores mollitia reprehenderit sunt tempore veritatis. Aliquam delectus earum ex, expedita ipsam nobis obcaecati quibusdam repudiandae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur delectus distinctio id iure labore, maiores mollitia reprehenderit sunt tempore veritatis. Aliquam delectus earum ex, expedita ipsam nobis obcaecati quibusdam repudiandae.<br></div>
     </template>
   </example-popover>
 </code-well-header>
@@ -105,7 +105,7 @@ Your popover should be non-modal when:
 ```html
 <div class="d-modal--transparent"></div>
 <div class="d-popover">
-  <button id="anchor3" class="d-btn d-btn--primary" aria-expanded="false" aria-controls="dialog3" aria-haspopup="dialog">Click Me</button>
+  <button id="anchor3" class="d-btn d-btn--primary" aria-expanded="false" aria-controls="dialog3" aria-haspopup="dialog">View Popover</button>
   <div id="dialog3" class="d-popover__dialog d-popover__dialog--modal d-ps-relative d-t4 d-w264 d-hmx164" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="anchor3">
     <div class="d-popover__header d-px16">
       <div class="d-w100p">
@@ -113,7 +113,7 @@ Your popover should be non-modal when:
       </div>
     </div>
     <div class="d-popover__content d-p16">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur delectus distinctio id iure labore, maiores mollitia reprehenderit sunt tempore veritatis. Aliquam delectus earum ex, expedita ipsam nobis obcaecati quibusdam repudiandae.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur delectus distinctio id iure labore, maiores mollitia reprehenderit sunt tempore veritatis. Aliquam delectus earum ex, expedita ipsam nobis obcaecati quibusdam repudiandae.<br>
+      <div class="d-mb8">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur delectus distinctio id iure labore, maiores mollitia reprehenderit sunt tempore veritatis. Aliquam delectus earum ex, expedita ipsam nobis obcaecati quibusdam repudiandae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur delectus distinctio id iure labore, maiores mollitia reprehenderit sunt tempore veritatis. Aliquam delectus earum ex, expedita ipsam nobis obcaecati quibusdam repudiandae.<br></div>
       <button class="d-btn d-btn--primary">Button</button>
     </div>
   </div>
@@ -122,10 +122,10 @@ Your popover should be non-modal when:
 
 ### With Footer - Modal
 
-<code-well-header>
+<code-well-header bgclass="d-bgc-primary">
   <example-popover modal footer>
     <template #content>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur delectus distinctio id iure labore, maiores mollitia reprehenderit sunt tempore veritatis. Aliquam delectus earum ex, expedita ipsam nobis obcaecati quibusdam repudiandae.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur delectus distinctio id iure labore, maiores mollitia reprehenderit sunt tempore veritatis. Aliquam delectus earum ex, expedita ipsam nobis obcaecati quibusdam repudiandae.<br>
+      <div class="d-mb8">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur delectus distinctio id iure labore, maiores mollitia reprehenderit sunt tempore veritatis. Aliquam delectus earum ex, expedita ipsam nobis obcaecati quibusdam repudiandae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur delectus distinctio id iure labore, maiores mollitia reprehenderit sunt tempore veritatis. Aliquam delectus earum ex, expedita ipsam nobis obcaecati quibusdam repudiandae.<br></div>
     </template>
   </example-popover>
 </code-well-header>
@@ -133,10 +133,10 @@ Your popover should be non-modal when:
 ```html
 <div class="d-modal--transparent"></div>
 <div class="d-popover">
-  <button id="anchor4" class="d-btn d-btn--primary" aria-expanded="false" aria-controls="dialog4" aria-haspopup="dialog">Click Me</button>
+  <button id="anchor4" class="d-btn d-btn--primary" aria-expanded="false" aria-controls="dialog4" aria-haspopup="dialog">View Popover</button>
   <div id="dialog4" class="d-popover__dialog d-popover__dialog--modal d-ps-relative d-t4 d-w264 d-hmx164" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="anchor4">
     <div class="d-popover__content d-p16">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur delectus distinctio id iure labore, maiores mollitia reprehenderit sunt tempore veritatis. Aliquam delectus earum ex, expedita ipsam nobis obcaecati quibusdam repudiandae.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur delectus distinctio id iure labore, maiores mollitia reprehenderit sunt tempore veritatis. Aliquam delectus earum ex, expedita ipsam nobis obcaecati quibusdam repudiandae.<br>
+      <div class="d-mb8">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur delectus distinctio id iure labore, maiores mollitia reprehenderit sunt tempore veritatis. Aliquam delectus earum ex, expedita ipsam nobis obcaecati quibusdam repudiandae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur delectus distinctio id iure labore, maiores mollitia reprehenderit sunt tempore veritatis. Aliquam delectus earum ex, expedita ipsam nobis obcaecati quibusdam repudiandae.<br></div>
       <button class="d-btn d-btn--primary">Button</button>
     </div>
     <div class="d-popover__footer d-px16">

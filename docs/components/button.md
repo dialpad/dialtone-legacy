@@ -214,7 +214,7 @@ The danger button style is used to communicate critical or destructive actions s
 
 The inverted button style is used to visually separate buttons set on darker backgrounds.
 
-<code-well-header bgclass="d-bgc-black-700">
+<code-well-header bgclass="d-bgc-contrast">
   <div class="d-stack8">
     <div>
       <button class="d-btn d-btn--inverted d-btn--primary" type="button"><span class="d-btn__label">Place call</span></button>
@@ -391,7 +391,7 @@ Sometimes an icon-only, circle button is desired. These buttons are used for tog
 <button class="d-btn d-btn--circle d-btn--danger d-btn--primary" type="button">...</button>
 ```
 
-<code-well-header bgclass="d-bgc-black-800">
+<code-well-header bgclass="d-bgc-contrast">
   <div class="d-stack8">
     <div>
       <button class="d-btn d-btn--circle d-btn--inverted" type="button"><span class="d-btn__icon"><dt-icon name="phone" size="300" /></span></button>

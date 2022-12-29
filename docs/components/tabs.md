@@ -6,7 +6,7 @@ desc: Tabs allow users to navigation between grouped content in different views 
 storybook_url: https://vue.dialpad.design/?path=/story/components-tabs--default
 figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Components-7?node-id=8919%3A21321&viewport=306%2C-547%2C1.01&t=xHutRjwo1o5zMTgT-11
 ---
-<code-well-header bgclass="d-bgc-white">
+<code-well-header bgclass="d-bgc-primary">
   <example-tabs />
 </code-well-header>
 
@@ -17,7 +17,7 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 
 ### Base Styles
 
-<code-well-header bgclass="d-bgc-white">
+<code-well-header bgclass="d-bgc-primary">
   <example-tabs />
 </code-well-header>
 
@@ -40,7 +40,7 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 
 ### Sizes
 
-<code-well-header bgclass="d-bgc-white">
+<code-well-header bgclass="d-bgc-primary">
   <example-tabs hide-content />
   <example-tabs hide-content size="small" />
 </code-well-header>
@@ -54,7 +54,7 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 
 Add a `d-tablist--no-border` to remove the bottom border of any tablist. Handy for small tablists and tablists serving as subtabs to a larger menu.
 
-<code-well-header bgclass="d-bgc-white">
+<code-well-header bgclass="d-bgc-primary">
   <example-tabs hide-content borderless />
   <example-tabs hide-content  size="small" borderless />
 </code-well-header>
@@ -68,7 +68,7 @@ Add a `d-tablist--no-border` to remove the bottom border of any tablist. Handy f
 
 Add `d-tablist--inverted` when you want to display tabs on a darker background.
 
-<code-well-header bgclass="d-bgc-black-800">
+<code-well-header bgclass="d-bgc-contrast">
   <example-tabs inverted />
 </code-well-header>
 

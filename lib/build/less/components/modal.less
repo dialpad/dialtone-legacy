@@ -27,9 +27,9 @@
 .d-modal {
     //  Component CSS Vars
     //  ------------------------------------------------------------------------
-    --modal-color-background: hsla(var(--black-900-hsl) ~' / ' 60%);
+    --modal-backdrop-color-background: hsla(var(--black-900-hsl) ~' / ' 60%);
     --modal-dialog-padding: var(--space-600);
-    --modal-dialog-color-background: var(--white);
+    --modal-dialog-color-background: var(--bgc-primary);
     --modal-dialog-color-text: var(--fc-tertiary);
     --modal-header-color-text: var(--fc-secondary);
     --modal-dialog-color-shadow: hsla(var(--black-900-hsl) ~' / ' 10%);
@@ -46,7 +46,7 @@
     align-items: center;
     justify-content: center;
     padding: var(--space-600); // 32
-    background-color: var(--modal-color-background);
+    background-color: var(--modal-backdrop-color-background);
     backface-visibility: hidden;
     visibility: hidden;
     opacity: 0;
@@ -54,26 +54,7 @@
 }
 
 .d-modal--transparent {
-  //  Component CSS Vars
-  //  ------------------------------------------------------------------------
-  --modal-color-background: hsla(var(--black-900-hsl) ~' / ' 85%);
-
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: var(--zi-hide);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: var(--space-600); // 32
-  background-color: var(--d-bgc-transparent);
-  backface-visibility: hidden;
-  visibility: hidden;
-  opacity: 0;
-  will-change: visibility, z-index, opacity;
+  --modal-backdrop-color-background: var(--d-bgc-transparent);
 }
 
 //  $$  MODAL DIALOG

@@ -5,7 +5,7 @@ thumb: true
 desc: A table is a pattern for organizing data sets. While data visualization helps quickly summarize a data set, a table allows users to compare and analyze individual data rows.
 figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Components-7?node-id=8921%3A20948&viewport=-788%2C209%2C0.86&t=xHutRjwo1o5zMTgT-11
 ---
-<code-well-header bgclass="d-bgc-white">
+<code-well-header bgclass="d-bgc-primary">
   <table class="d-table dialtone-doc-table">
     <caption class="d-table__caption">Office List</caption>
     <thead>
@@ -34,7 +34,7 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 
 ### Base Style
 
-<code-well-header bgclass="d-bgc-white">
+<code-well-header bgclass="d-bgc-primary">
   <table class="d-table dialtone-doc-table">
     <caption class="d-table__caption">Office List</caption>
     <thead>
@@ -128,7 +128,7 @@ Used when you want to display a data table on a darker background.
 
 ### Striped
 
-<code-well-header bgclass="d-bgc-white">
+<code-well-header bgclass="d-bgc-primary">
   <table class="d-table dialtone-doc-table d-table--striped">
     <caption class="d-table__caption">Office List</caption>
     <thead>
