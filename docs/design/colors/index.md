@@ -161,7 +161,7 @@ Foreground colors distinguishing important information with a status role.
   </thead>
   <tbody>
     <tr>
-      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42" style="background-color: var(--fc-error)"></div></th>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42" style="background-color: var(--fc-critical)"></div></th>
       <td>
         <div class="d-d-flex d-jc-space-between d-ai-center">
           <div class="d-fl0 d-fs-300 d-fc-critical d-p6 d-fw-medium">
@@ -560,6 +560,6 @@ Define the edge of key content area, components, or surfaces.
 
 Base colors are the literal value of all available colors. Use these if all abstracted text, status text, surface, or border colors to not fit your need.
 
-Each of the colors listed above references one of these. For example, `var(--fc-primary)` is an alias to `var(--black-900)`, and `var(--fc-error)` is an alias to `var(--red-400)`.
+Each of the colors listed above references one of these. For example, `var(--fc-primary)` is an alias to `var(--black-900)`, and `var(--fc-critical)` is an alias to `var(--red-300)`.
 
 <colors></colors>
