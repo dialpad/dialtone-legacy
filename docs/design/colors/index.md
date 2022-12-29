@@ -65,7 +65,7 @@ Key foreground colors rendered on surfaces to indicate hierarchy and importance.
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-tertiary</td>
     </tr>
     <tr>
-      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42" style="background-color: var(--fc-primary-inverted)"></div></th>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-ba d-bc-black-300 d-bas-dashed" style="background-color: var(--fc-primary-inverted)"></div></th>
       <td>
         <div class="d-d-flex d-jc-space-between d-ai-center">
           <div class="d-fl0 d-fs-300 d-fc-primary-inverted d-bgc-black-900 d-p6 d-bar2 d-fw-medium">
@@ -223,6 +223,62 @@ Background colors for default application UI surfaces. Surface colors are contai
       <th scope="col">CSS utility</th>
     </tr>
   </thead>
+  <tbody>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-primary d-ba d-bc-black-300 d-bas-dashed"></div></th>
+      <th scope="row" class="d-lh-300">
+        Primary
+        <div class="d-fw-normal">Default surface color for the majority of surfaces.</div>
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-primary)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-primary</td>
+    </tr>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-secondary d-ba d-bc-black-300 d-bas-dashed"></div></th>
+      <th scope="row" class="d-lh-300">
+        Secondary
+        <div class="d-fw-normal">For adjacent or complementary regions.</div>
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-secondary)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-secondary</td>
+    </tr>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-moderate"></div></th>
+      <th scope="row" class="d-lh-300">
+        Moderate
+        <div class="d-fw-normal">A tertiary surface level, prominent without being too overpowering.</div>
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-moderate)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-moderate</td>
+    </tr>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-bold"></div></th>
+      <th scope="row" class="d-lh-300">
+        Bold
+        <div class="d-fw-normal">Highlight or call attention to specific areas of the interface.</div>
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-bold)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-bold</td>
+    </tr>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-strong"></div></th>
+      <th scope="row" class="d-lh-300">
+        Strong
+        <div class="d-fw-normal">Use sparingly to draw the eye to a relatively important region.</div>
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-strong)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-strong</td>
+    </tr>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-contrast"></div></th>
+      <th scope="row" class="d-lh-300">
+        Contrast
+        <div class="d-fw-normal">An inverted surface for lightened content and elements, most likely paired with inverted text colors.</div>
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-contrast)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-contrast</td>
+    </tr>
+  </tbody>
   <tbody>
     <tr>
       <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-critical"></div></th>

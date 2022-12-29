@@ -101,6 +101,80 @@ Use `fv:d-bgc-{color}` to change an element's `:focus-visible` state background 
     <template #content>
       <tbody>
         <tr>
+            <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-bgc-primary</th>
+            <td>
+                <div class="d-d-flex d-jc-space-between d-ai-center">
+                    <div class="d-fl-grow1 d-ff-mono d-fs-100">
+                        --bgo: 100%;<br/>
+                        background-color: hsla(var(--white-h) var(--white-s) var(--white-l) / var(--bgo)) !important;
+                    </div>
+                    <div class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar-circle d-bgc-primary d-ba d-bc-black-200"></div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-bgc-secondary</th>
+            <td>
+                <div class="d-d-flex d-jc-space-between d-ai-center">
+                    <div class="d-fl-grow1 d-ff-mono d-fs-100">
+                        --bgo: 100%;<br/>
+                        background-color: hsla(var(--black-100-h) var(--black-100-s) var(--black-100-l) / var(--bgo)) !important;
+                    </div>
+                    <div class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar-circle d-bgc-secondary d-ba d-bc-black-200"></div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-bgc-moderate</th>
+            <td>
+                <div class="d-d-flex d-jc-space-between d-ai-center">
+                    <div class="d-fl-grow1 d-ff-mono d-fs-100">
+                        --bgo: 100%;<br/>
+                        background-color: hsla(var(--black-200-h) var(--black-200-s) var(--black-200-l) / var(--bgo)) !important;
+                    </div>
+                    <div class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar-circle d-bgc-moderate d-ba d-bc-black-200"></div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-bgc-bold</th>
+            <td>
+                <div class="d-d-flex d-jc-space-between d-ai-center">
+                    <div class="d-fl-grow1 d-ff-mono d-fs-100">
+                        --bgo: 100%;<br/>
+                        border-color: hsla(var(--black-200-h) var(--black-200-s) var(--black-200-l) / var(--bco)) !important;
+                    </div>
+                    <div class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar-circle d-bgc-bold d-ba d-bc-black-200"></div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-bgc-strong</th>
+            <td>
+                <div class="d-d-flex d-jc-space-between d-ai-center">
+                    <div class="d-fl-grow1 d-ff-mono d-fs-100">
+                        --bgo: 100%;<br/>
+                        border-color: hsla(var(--black-200-h) var(--black-200-s) var(--black-200-l) / var(--bco)) !important;
+                    </div>
+                    <div class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar-circle d-bgc-strong d-ba d-bc-black-200"></div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-bgc-contrast</th>
+            <td>
+                <div class="d-d-flex d-jc-space-between d-ai-center">
+                    <div class="d-fl-grow1 d-ff-mono d-fs-100">
+                        --bgo: 100%;<br/>
+                        background-color: hsla(var(--black-800-h) var(--black-800-s) var(--black-800-l) / var(--bgo)) !important;
+                    </div>
+                    <div class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar-circle d-bgc-contrast d-ba d-bc-black-200"></div>
+                </div>
+            </td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
             <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-bgc-critical</th>
             <td>
                 <div class="d-d-flex d-jc-space-between d-ai-center">
