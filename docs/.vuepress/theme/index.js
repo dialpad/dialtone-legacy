@@ -38,15 +38,13 @@ function extractFrontmatter (app, path, options) {
 
   indexPage.data.enhancedFrontmatter = app.pages
     .filter(page => page.path.includes(path) && page.path !== path)
-    .map(component => {
-      if (!component.frontmatter || !component.frontmatter.title) {
-        console.warn(`\nWARN: Missing required frontmatter data on ${component.filePathRelative} file`);
-      }
-      const fileName = component.frontmatter?.title?.toLowerCase().replaceAll(' ', '-');
+    .filter(page => page.frontmatter && (page.frontmatter.title || page.frontmatter.shortTitle))
+    .map(page => {
+      const fileName = page.frontmatter.title.toLowerCase().replaceAll(' ', '-');
       return {
         fileName,
-        link: component.frontmatter?.shortTitle || fileName,
-        ...component.frontmatter,
+        link: page.frontmatter.shortTitle || fileName,
+        ...page.frontmatter,
       };
     })
     .sort((a, b) => sortingArr.indexOf(a.link) - sortingArr.indexOf(b.link));
