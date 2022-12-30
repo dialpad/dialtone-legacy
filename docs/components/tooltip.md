@@ -6,7 +6,7 @@ desc: A tooltip is a floating label that briefly explains an action, function, o
 storybook_url: https://vue.dialpad.design/?path=/story/components-tooltip--default
 figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Components-7?node-id=8919%3A21626&viewport=-614%2C359%2C0.86&t=xHutRjwo1o5zMTgT-11
 ---
-<code-well-header bgclass="d-bgc-black-100" class='d-hmn164'>
+<code-well-header class='d-hmn164'>
   <button class="d-btn d-btn--outlined d-tooltip--hover" type="button">
     <div class="d-tooltip d-tooltip__arrow--bottom-center d-ps-absolute">
       <span>Simple tooltip</span>
@@ -22,7 +22,7 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 
 ### Base Styles
 
-<code-well-header>
+<code-well-header class="d-hmn164">
   <div class="d-tooltip d-tooltip__arrow--bottom-center d-tooltip--show">
     <span>Tooltip</span>
   </div>
@@ -34,7 +34,7 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 </div>
 ```
 
-<code-well-header bgclass="d-bgc-black-800">
+<code-well-header bgclass="d-bgc-contrast" class="d-hmn164">
   <div class="d-tooltip d-tooltip__arrow--bottom-center d-tooltip--inverted d-tooltip--show">
     <span>Tooltip</span>
   </div>
@@ -51,7 +51,7 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 No arrow direction is assigned by default. You must select a direction. Twelve directions are offered: three on each face of the tooltip.
 
 <div class="d-d-grid d-gg16 d-g-cols3 sm:d-g-cols1 md:d-g-cols2">
-  <div v-for="dir in directions" class="d-p32 d-bgc-black-100 d-bar8">
+  <div v-for="dir in directions" class="d-p32 d-bgc-secondary d-bar8">
     <div class="d-tooltip d-tooltip--show" :class="'d-tooltip__arrow--'+dir">
       <div class="d-tt-capitalize d-mb4">{{ capitalizeDirection(dir) }}</div>
       <div class="d-code-small d-fc-black-400">.d-tooltip__arrow--{{ dir }}</div>

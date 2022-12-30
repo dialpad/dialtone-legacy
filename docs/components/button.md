@@ -104,13 +104,13 @@ Dialtone provides four core button **types**, each with three levels of **import
         <a class="d-link d-fs-100 d-fw-medium d-d-block d-mb4 d-tt-uppercase" href="#base"><strong>Base</strong></a>
         <div class="d-fw-normal d-lh-200">Our default button colors.</div>
       </th>
-      <td class="d-bgc-black-100 d-ta-center">
+      <td class="d-ta-center">
         <button class="d-btn" type="button"> <span class="d-btn__label">Place call</span> </button>
       </td>
-      <td class="d-bgc-black-100 d-ta-center">
+      <td class="d-ta-center">
         <button class="d-btn d-btn--outlined" type="button"> <span class="d-btn__label">Place call</span> </button>
       </td>
-      <td class="d-bgc-black-100 d-ta-center">
+      <td class="d-ta-center">
         <button class="d-btn d-btn--primary" type="button"> <span class="d-btn__label">Place call</span> </button>
       </td>
     </tr>
@@ -119,13 +119,13 @@ Dialtone provides four core button **types**, each with three levels of **import
         <a class="d-link d-fs-100 d-fw-medium d-d-block d-mb4 d-tt-uppercase" href="#danger"><strong>Danger</strong></a>
         <div class="d-fw-normal d-lh-200">Potentially destructive or otherwise critical actions.</div>
       </th>
-      <td class="d-bgc-black-100 d-ta-center">
+      <td class="d-ta-center">
         <button class="d-btn d-btn--danger" type="button"> <span class="d-btn__label">Place call</span> </button>
       </td>
-      <td class="d-bgc-black-100 d-ta-center">
+      <td class="d-ta-center">
         <button class="d-btn d-btn--outlined d-btn--danger" type="button"> <span class="d-btn__label">Place call</span> </button>
       </td>
-      <td class="d-bgc-black-100 d-ta-center">
+      <td class="d-ta-center">
         <button class="d-btn d-btn--primary d-btn--danger" type="button"> <span class="d-btn__label">Place call</span> </button>
       </td>
     </tr>
@@ -134,13 +134,13 @@ Dialtone provides four core button **types**, each with three levels of **import
         <a class="d-link d-fs-100 d-fw-medium d-d-block d-mb4 d-tt-uppercase" href="#inverted"><strong>Inverted</strong></a>
         <div class="d-fw-normal d-lh-200">Use for placement on non-white, dark backgrounds.</div>
       </th>
-      <td class="d-bgc-black-500 d-ta-center">
+      <td class="d-bgc-strong d-ta-center">
         <button class="d-btn d-btn--inverted" type="button"> <span class="d-btn__label">Place call</span> </button>
       </td>
-      <td class="d-bgc-black-500 d-ta-center">
+      <td class="d-bgc-strong d-ta-center">
         <button class="d-btn d-btn--outlined d-btn--inverted" type="button"> <span class="d-btn__label">Place call</span> </button>
       </td>
-      <td class="d-bgc-black-500 d-ta-center">
+      <td class="d-bgc-strong d-ta-center">
         <button class="d-btn d-btn--primary d-btn--inverted" type="button"> <span class="d-btn__label">Place call</span> </button>
       </td>
     </tr>
@@ -149,13 +149,13 @@ Dialtone provides four core button **types**, each with three levels of **import
         <a class="d-link d-fs-100 d-fw-medium d-d-block d-mb4 d-tt-uppercase" href="#muted"><strong>Muted</strong></a>
         <div class="d-fw-normal">For non-primary actions and contexts where base style may not work.</div>
       </th>
-      <td class="d-bgc-black-100 d-ta-center">
+      <td class="d-ta-center">
         <button class="d-btn d-btn--muted" type="button"> <span class="d-btn__label">Place call</span> </button>
       </td>
-      <td class="d-bgc-black-100 d-ta-center">
+      <td class="d-ta-center">
         <button class="d-btn d-btn--muted d-btn--outlined" type="button"> <span class="d-btn__label">Place call</span> </button>
       </td>
-      <td class="d-bgc-black-100 d-ta-center d-lh-200">
+      <td class="d-ta-center d-lh-200">
         <abbr class="d-fc-black-400 d-td-none d-fs-100" title="Not applicable">N/A</abbr>
       </td>
     </tr>

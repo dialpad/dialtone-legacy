@@ -82,7 +82,7 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 
 Used when you want to display a data table on a darker background.
 
-<code-well-header bgclass="d-bgc-black-800">
+<code-well-header bgclass="d-bgc-contrast">
   <table class="d-table dialtone-doc-table d-table--inverted">
     <caption class="d-table__caption">Office List</caption>
     <thead>
@@ -172,7 +172,7 @@ Used when you want to display a data table on a darker background.
 </table>
 ```
 
-<code-well-header bgclass="d-bgc-black-800">
+<code-well-header bgclass="d-bgc-contrast">
   <table class="d-table dialtone-doc-table d-table--inverted d-table--striped">
     <caption class="d-table__caption">Office List</caption>
     <thead>

@@ -68,7 +68,7 @@ Key foreground colors rendered on surfaces to indicate hierarchy and importance.
       <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-ba d-bc-black-300 d-bas-dashed" style="background-color: var(--fc-primary-inverted)"></div></th>
       <td>
         <div class="d-d-flex d-jc-space-between d-ai-center">
-          <div class="d-fl0 d-fs-300 d-fc-primary-inverted d-bgc-black-900 d-p6 d-bar2 d-fw-medium">
+          <div class="d-fl0 d-fs-300 d-fc-primary-inverted d-bgc-contrast d-p6 d-bar2 d-fw-medium">
             Aa
           </div>
         </div>
@@ -84,7 +84,7 @@ Key foreground colors rendered on surfaces to indicate hierarchy and importance.
       <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42" style="background-color: var(--fc-secondary-inverted)"></div></th>
       <td>
         <div class="d-d-flex d-jc-space-between d-ai-center">
-          <div class="d-fl0 d-fs-300 d-fc-secondary-inverted d-bgc-black-900 d-p6 d-bar2 d-fw-medium">
+          <div class="d-fl0 d-fs-300 d-fc-secondary-inverted d-bgc-contrast d-p6 d-bar2 d-fw-medium">
             Aa
           </div>
         </div>

@@ -76,11 +76,54 @@ In the event Dialtone Vue doesn't suit your needs, Dialtone's CSS library offers
 
 ### Writing CSS
 
-In the event you need to write CSS, use <a href="http://getbem.com/" target="_blank">BEM (Block Element Modifier)</a>. This is a simple, common naming convention that helps make our CSS easier to read and understand. If you aren't familiar with the approach, here's a <a href="http://getbem.com/introduction/" target="_blank">quick synposis</a>:
+In the event you need to write CSS, use [BEM (Block Element Modifier)](http://getbem.com/). This is a simple, common naming convention that helps make our CSS easier to read and understand. If you aren't familiar with the approach, here's a [quick synposis](http://getbem.com/introduction/):
 
-- **Block:** A parent entity that is meaningful on its own. For example: `.d-input`
-- **Element:** A child that is meaningful only in relation to its parent. For example: `.d-input__label`
-- **Modifier:** A modifying flag on a Block or Element that changes appearance or behavior. For example: `.d-input--lg`
+- **Block:** A parent entity that is meaningful on its own. For example: `.card`
+- **Element:** A child that is meaningful only in relation to its parent. For example: `.card__header`
+- **Modifier:** A modifying flag on a Block or Element that changes appearance or behavior. For example: `.card--featured`
+
+### HTML
+
+```html
+<div class="card card--featured">
+  <div class="card__header">...</div>
+  <div class="card__body">...</div>
+  <div class="card__footer">...</div>
+</div>
+```
+
+### CSS
+
+```less
+.card {
+  // Local CSS Custom Properties
+  --card-color-background: var(--bgc-primary);
+
+  // Default block styles
+  display: flex;
+  flex-direction: column;
+  background-color: var(--card-color-background);
+
+  // Modifier for block
+  &--featured {
+    --card-color-background: var(--bgc-info);
+  }
+
+  // Elements within block
+  &__header {
+    padding: var(--space-500);
+  }
+
+  &__body {
+    flex-grow: 1;
+    padding: var(--space-500);
+  }
+
+  &__footer {
+    padding: var(--space-500);
+  }
+}
+```
 
 ### Backbone
 

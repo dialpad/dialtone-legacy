@@ -46,13 +46,13 @@ title: Focusable
             </td>
           </tr>
           <tr>
-            <td class="d-bgc-black-500 d-ta-center">
+            <td class="d-bgc-strong d-ta-center">
               <button class="d-btn d-btn--inverted" type="button"> <span class="d-btn__label">Place call</span> </button>
             </td>
-            <td class="d-bgc-black-500 d-ta-center">
+            <td class="d-bgc-strong d-ta-center">
               <button class="d-btn d-btn--outlined d-btn--inverted" type="button"> <span class="d-btn__label">Place call</span> </button>
             </td>
-            <td class="d-bgc-black-500 d-ta-center">
+            <td class="d-bgc-strong d-ta-center">
               <button class="d-btn d-btn--primary d-btn--inverted" type="button"> <span class="d-btn__label">Place call</span> </button>
             </td>
           </tr>

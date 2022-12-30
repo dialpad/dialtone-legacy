@@ -66,7 +66,7 @@ Breadcrumbs are always treated as secondary and should not entirely replace the 
             </li>
         </ol>
     </nav>
-    <nav class="d-breadcrumbs d-breadcrumbs--inverted d-bgc-black-700 d-border-radius--md d-py16 d-px12 d-mxn12" aria-label="breadcrumb">
+    <nav class="d-breadcrumbs d-breadcrumbs--inverted d-bgc-strong d-border-radius--md d-py16 d-px12 d-mxn12" aria-label="breadcrumb">
         <ol>
             <li class="d-breadcrumbs__item">
                 <a href="#" class="d-link d-link--inverted">Root</a>

@@ -1,6 +1,6 @@
 <template>
   <div
-    :class="{ ['d-bgc-black-700 d-fc-primary-inverted']: ['light', 'night'].includes(variation) }"
+    :class="{ ['d-bgc-contrast d-fc-primary-inverted']: ['light', 'night'].includes(variation) }"
     class="d-stack16 d-p16 d-bar8"
   >
     <h3
