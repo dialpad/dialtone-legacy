@@ -436,7 +436,7 @@ Define the edge of key content area, components, or surfaces.
     </tr>
     <tr>
       <td class="d-pl0">
-        <div class="d-fs-300 d-p6 d-theme-topbar-f-circle d-ta-center d-fw-medium"> Aa </div>
+        <div class="d-fs-300 d-p6 d-theme-topbar-fc d-ta-center d-fw-medium"> Aa </div>
       </td>
       <th scope="row">
         Topbar
@@ -480,7 +480,7 @@ Define the edge of key content area, components, or surfaces.
     </tr>
     <tr>
       <td class="d-pl0">
-        <div class="d-fs-300 d-p6 d-theme-sidebar-f-circle d-ta-center d-fw-medium"> Aa </div>
+        <div class="d-fs-300 d-p6 d-theme-sidebar-fc d-ta-center d-fw-medium"> Aa </div>
       </td>
       <th scope="row">
         Sidebar
@@ -502,7 +502,7 @@ Define the edge of key content area, components, or surfaces.
     </tr>
     <tr>
       <td class="d-pl0">
-        <div class="d-fs-300 d-p6 d-theme-sidebar-f-circle d-fco75 d-ta-center d-fw-medium"> Aa </div>
+        <div class="d-fs-300 d-p6 d-theme-sidebar-fc d-fco75 d-ta-center d-fw-medium"> Aa </div>
       </td>
       <th scope="row">
         Sidebar
@@ -590,7 +590,7 @@ Define the edge of key content area, components, or surfaces.
     </tr>
     <tr>
       <td class="d-pl0">
-        <div class="d-fs-300 d-p6 d-theme-sidebar-row-active-f-circle d-ta-center d-fw-medium"> Aa </div>
+        <div class="d-fs-300 d-p6 d-theme-sidebar-row-active-fc d-ta-center d-fw-medium"> Aa </div>
       </td>
       <th scope="row">
         Sidebar
