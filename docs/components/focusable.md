@@ -5,15 +5,15 @@ title: Focusable
 <div class="qwerqwerqwerqwer">
   <h2>Dialtone CSS Utility</h2>
   <div class="qwerqwerqwerqwer__list">
-    <div>
-      <h4 class="d-mb8">d-ol-focusring</h4>
-      <div class="d-d-flex d-flow8">
-        <div class="d-fl-grow1">
-          basic default div
-        </div>
-        <div class="d-ol-focusring d-fl-grow1">
-          div with <code>class="d-ol-focusring"</code>
-        </div>
+    <div class="d-fl-col5 d-flg8 d-fw-wrap d-p24 d-bgc-bold d-bgo50 d-w100p d-hmn102">
+      <div class="d-fl-center d-p16 d-bgc-bold d-fs-100 d-ff-mono d-ol-focusring">
+        .d-ol-focusring
+      </div>
+      <div class="d-fl-center d-p16 d-bgc-bold d-fs-100 d-ff-mono d-ol-focusring-inset">
+        .d-ol-focusring-inset
+      </div>
+      <div class="d-fl-center d-p16 d-bgc-bold d-fs-100 d-ff-mono d-ol-none">
+        .d-ol-none
       </div>
     </div>
   </div>
