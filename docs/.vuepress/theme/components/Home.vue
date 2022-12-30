@@ -2,14 +2,14 @@
   <section class="hero d-mnt16 d-bgr-none">
     <div class="hero--inner-wrapper d-d-flex d-jc-space-between d-mx-auto d-wmx1340 d-pl32 d-pr32">
       <div class="hero--content d-d-flex d-fd-column d-jc-center">
-        <h1 class="d-headline-extra-extra-large d-mb12">
+        <h1 class="d-headline-extra-extra-large d-headline-extra-large d-mb12">
           Improve your UI's reception with Dialtone
         </h1>
         <p class="d-fs-300 d-lh-400 d-mb16 d-fc-secondary">
           Documented styles, components, and utility classes to help you quickly design and build unified experiences
           across Dialpad and Dialpad Meetings.
         </p>
-        <div class="d-mb32">
+        <div class="d-mb32 d-d-flex d-jc-center d-flow8">
           <a
             class="d-td-unset d-d-inline-flex"
             href="https://github.com/dialpad/dialtone/"
@@ -20,7 +20,7 @@
             >
           </a>
           <a
-            class="d-td-unset d-d-inline-flex d-ml4"
+            class="d-td-unset d-d-inline-flex"
             href="https://github.com/dialpad/dialtone-vue"
           >
             <img
@@ -30,7 +30,7 @@
             >
           </a>
         </div>
-        <div class="d-d-flex d-jc-center">
+        <div class="d-d-flex d-jc-center d-flow16">
           <router-link
             v-slot="{ navigate }"
             to="/guides/getting-started/"
@@ -54,7 +54,6 @@
               role="link"
               size="lg"
               importance="outlined"
-              class="d-ml16"
               @click="(e) => { navigate(e); }"
               @keypress.enter="(e) => { navigate(e); }"
             >
@@ -191,15 +190,17 @@
     </div>
   </section>
   <section class="d-bgc-purple-500 d-py64 d-ta-center">
-    <p class="d-fc-white d-fs-300 d-fw-medium d-px48">
-      Don't see something? Want to contribute?
-    </p>
-    <a
-      class="d-btn d-btn--inverted d-btn--lg d-btn--primary d-mt16"
-      href="https://forms.monday.com/forms/8a9a6ff69d7e9f95caee029c2806e2c1?r=use1"
-      target="_blank"
-      rel="noopener noreferrer"
-    >Make a request</a>
+    <div class="d-headline-large d-fw-medium d-fc-primary-inverted d-px48 d-flow16 d-d-flex d-jc-center d-ai-center">
+      <div>Don't see something? Want to contribute?</div>
+      <a
+        class="d-btn d-btn--inverted d-btn--lg d-btn--primary"
+        href="https://forms.monday.com/forms/8a9a6ff69d7e9f95caee029c2806e2c1?r=use1"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Make a request
+      </a>
+    </div>
   </section>
 </template>
 

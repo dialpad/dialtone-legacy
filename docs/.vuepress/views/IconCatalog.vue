@@ -12,19 +12,23 @@
         autocomplete="off"
       >
         <template #leftIcon>
-          <dt-icon name="search" />
+          <dt-icon
+            name="search"
+          />
         </template>
         <template #rightIcon>
           <dt-button
             kind="muted"
             importance="clear"
             circle
-            aria-label="Clear filters"
             id="search-input-button-close"
+            aria-label="Clear filters"
             @click="resetSearch"
           >
             <template #icon>
-              <dt-icon name="close" />
+              <dt-icon
+                name="close"
+              />
             </template>
           </dt-button>
         </template>

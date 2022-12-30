@@ -75,7 +75,7 @@ Use `h:d-bc-{color}` to change an element's border color spot on `:hover`.
 Use `f:d-bc-{color}` to change an element's border color when in `:focus` or `:focus-within` states.
 
 <code-well-header class="d-fl-center d-p24 d-bgc-red-100 d-bgo50 d-w100p d-hmn102" custom>
-  <button class="d-p16 d-bar4 d-fs-200 d-fc-white d-bgc-red-200 d-ba d-baw2 d-bc-red-300 f:d-bc-purple-400">Click on me</button>
+  <button class="d-p16 d-bar4 d-fs-200 d-fc-primary-inverted d-bgc-red-200 d-ba d-baw2 d-bc-red-300 f:d-bc-purple-400">Click on me</button>
 </code-well-header>
 
 ```html
@@ -89,7 +89,7 @@ Use `fv:d-bc-{color}` to change an element's border color when in `:focus-visibl
 .
 
 <code-well-header class="d-fl-center d-p24 d-bgc-red-100 d-bgo50 d-w100p d-hmn102" custom>
-  <button class="d-p16 d-bar4 d-fs-200 d-fc-white d-bgc-red-200 d-ba d-baw2 d-bc-red-300 fv:d-bc-purple-400">Focus on me</button>
+  <button class="d-p16 d-bar4 d-fs-200 d-fc-primary-inverted d-bgc-red-200 d-ba d-baw2 d-bc-red-300 fv:d-bc-purple-400">Focus on me</button>
 </code-well-header>
 
 ```html
@@ -114,7 +114,7 @@ Use `fv:d-bc-{color}` to change an element's border color when in `:focus-visibl
                       <div class="d-fl-grow1 d-ff-mono d-fs-100">
                           border-color: transparent !important;
                       </div>
-                      <div class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar4 d-bc-transparent d-ba"></div>
+                      <div class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar4 d-bc-transparent d-ba d-baw2"></div>
                   </div>
               </td>
           </tr>
@@ -125,7 +125,7 @@ Use `fv:d-bc-{color}` to change an element's border color when in `:focus-visibl
                       <div class="d-fl-grow1 d-ff-mono d-fs-100">
                           border-color: unset !important;
                       </div>
-                      <div class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar4 d-bc-unset d-ba"></div>
+                      <div class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar4 d-bc-unset d-ba d-baw2"></div>
                   </div>
               </td>
           </tr>
@@ -152,7 +152,7 @@ Use `fv:d-bc-{color}` to change an element's border color when in `:focus-visibl
                           border-color: hsla(var(--{{ c }}-{{ stop }}-h) var(--{{ c }}-{{ stop }}-s) var(--{{ c }}-{{ stop }}-l) / var(--bco)) !important;
                       </div>
                       <div
-                        class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar4 d-ba"
+                        class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar4 d-ba d-baw2"
                         :class="`d-bc-${c}-${stop}`"
                       >
                       </div>

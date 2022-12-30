@@ -43,7 +43,7 @@
         :aria-labelledby="`base-tab-${index}`"
         :hidden="selected !== index"
       >
-        <p :class="{ 'd-fc-white': inverted }">
+        <p :class="{ 'd-fc-primary-inverted': inverted }">
           {{ name }} tab content panel
         </p>
       </div>

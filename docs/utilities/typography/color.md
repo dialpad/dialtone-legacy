@@ -75,7 +75,7 @@ Use `h:d-fc-{color}` to change an element's text color `:hover` state.
 Use `f:d-fc-{color}` to change an element's text color `:focus` and `:focus-within` state.
 
 <code-well-header class="d-fl-center d-p24 d-bgc-black-200 d-w100p d-hmn102" custom>
-  <button class="d-p16 d-bar4 d-fs-200 d-fc-magenta-300 f:d-fc-white d-bgc-transparent f:d-bgc-magenta-400 d-ba d-bc-transparent">Click on me</button>
+  <button class="d-p16 d-bar4 d-fs-200 d-fc-magenta-300 f:d-fc-white d-bgc-transparent f:d-bgc-magenta-400 d-ba d-bc-transparent">Click or focus on me</button>
 </code-well-header>
 
 ```html
@@ -126,7 +126,7 @@ Use `d:d-fc-{color}` to set a different text color when the user prefers dark mo
               <div class="d-fl1 d-ff-mono d-fs-100">
                 color: currentColor !important;
               </div>
-              <div class="d-fl0 d-fc-current d-fs-200 d-lh4">
+              <div class="d-fl0 d-fc-current d-fs-300 d-lh4">
                 Aa
               </div>
             </div>
@@ -140,7 +140,7 @@ Use `d:d-fc-{color}` to set a different text color when the user prefers dark mo
               <div class="d-fl1 d-ff-mono d-fs-100">
                 color: transparent !important;
               </div>
-              <div class="d-fl0 d-fc-transparent d-fs-200 d-lh4">
+              <div class="d-fl0 d-fc-transparent d-fs-300 d-lh4">
                 Aa
               </div>
             </div>
@@ -154,7 +154,7 @@ Use `d:d-fc-{color}` to set a different text color when the user prefers dark mo
               <div class="d-fl1 d-ff-mono d-fs-100">
                 color: unset !important;
               </div>
-              <div class="d-fl0 d-fc-unset d-fs-200 d-lh4">
+              <div class="d-fl0 d-fc-unset d-fs-300 d-lh4">
                 Aa
               </div>
             </div>
@@ -169,7 +169,7 @@ Use `d:d-fc-{color}` to set a different text color when the user prefers dark mo
                 --fco: 100%;<br/>
                 color: hsla(var(--white-h) var(--white-s) var(--white-l) / var(--fco)) !important;
               </div>
-              <div class="d-fl0 d-bgc-black-700 d-ml16 d-p4 d-bar4 d-fc-white d-fs-200 d-lh4">
+              <div class="d-fl0 d-bgc-black-700 d-ml16 d-p4 d-bar4 d-fc-white d-fs-300 d-lh4">
                 Aa
               </div>
             </div>
@@ -184,7 +184,7 @@ Use `d:d-fc-{color}` to set a different text color when the user prefers dark mo
                 --fco: 100%;<br/>
                 color: hsla(var(--{{ output }}-h) var(--{{ output }}-s) var(--{{ output }}-l) / var(--fco)) !important;
               </div>
-              <div class="d-fl0 d-ml16 d-p4 d-fs-200 d-lh4" :class="`d-fc-${color}`">
+              <div class="d-fl0 d-ml16 d-p4 d-fs-300 d-lh4" :class="`d-fc-${color}`">
                 Aa
               </div>
             </div>
@@ -200,7 +200,7 @@ Use `d:d-fc-{color}` to set a different text color when the user prefers dark mo
                   --fco: 100%;<br/>
                   color: hsla(var(--{{ color }}-{{ stop }}-h) var(--{{ color }}-{{ stop }}-s) var(--{{ color }}-{{ stop }}-l) / var(--fco)) !important;
               </div>
-              <div class="d-fl0 d-ml16 d-p4 d-fs-200 d-lh4" :class="`d-fc-${color}-${stop}`">
+              <div class="d-fl0 d-ml16 d-p4 d-fs-300 d-lh4" :class="`d-fc-${color}-${stop}`">
                   Aa
               </div>
             </div>

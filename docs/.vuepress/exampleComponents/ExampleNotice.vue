@@ -10,11 +10,31 @@
       aria-hidden="false"
     >
       <div class="d-notice__icon">
-        <dt-icon name="bell" size="400" v-show="kind === 'base'" />
-        <dt-icon name="alert-circle" size="400" v-show="kind === 'error'" />
-        <dt-icon name="info" size="400" v-show="kind === 'info'" />
-        <dt-icon name="check-circle" size="400" v-show="kind === 'success'" />
-        <dt-icon name="alert-triangle" size="400" v-show="kind === 'warning'" />
+        <dt-icon
+          name="bell"
+          size="400"
+          v-show="kind === 'base'"
+        />
+        <dt-icon
+          name="alert-circle"
+          size="400"
+          v-show="kind === 'error'"
+        />
+        <dt-icon
+          name="info"
+          size="400"
+          v-show="kind === 'info'"
+        />
+        <dt-icon
+          name="check-circle"
+          size="400"
+          v-show="kind === 'success'"
+        />
+        <dt-icon
+          name="alert-triangle"
+          size="400"
+          v-show="kind === 'warning'"
+        />
       </div>
       <div class="d-notice__content">
         <h2 class="d-notice__title">
@@ -46,7 +66,10 @@
           aria-label="Close"
         >
           <span class="d-btn__icon">
-            <dt-icon name="close" size="200" />
+            <dt-icon
+              name="close"
+              size="200"
+            />
           </span>
         </button>
       </div>

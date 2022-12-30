@@ -35,7 +35,9 @@
       </div>
       <div class="d-popover__content d-p16">
         <slot name="content">
-          <div class="d-mb8">This is content rendered within the popover.</div>
+          <div class="d-mb8">
+            This is content rendered within the popover.
+          </div>
         </slot>
         <button class="d-btn d-btn--primary">
           Button

@@ -46,18 +46,18 @@ A general overview of Dialtone's utility classes, CSS components, and Vue compon
 Dialtone's CSS library offers a framework of utility-first classes. Each class is a small, [atomic style](https://css-tricks.com/lets-define-exactly-atomic-css/) declaration that, when chained together, should mitigate most situations in which custom CSS must be written. Just write these classes right in your mark-up and you're all set!
 
 <code-well-header>
-  <div class="d-p16 d-bgc-black-600 d-fc-white">Box</div>
+  <div class="d-p16 d-bgc-black-600 d-fc-primary-inverted">Box</div>
 </code-well-header>
 
 ```html
-<div class="d-p16 d-bgc-black-600 d-fc-white">Box</div>
+<div class="d-p16 d-bgc-black-600 d-fc-primary-inverted">Box</div>
 ```
 
 In the above example, we used:
 
 - Our [padding utility class](/utilities/spacing/padding/) `.d-p16` to add 16px of padding
 - Our [background color utility class](/utilities/backgrounds/color/) `.d-bgc-black-600` to add a purple background
-- Our [font color utility class](/utilities/typography/color/) `.d-fc-white` to change the font color to white
+- Our [font color utility class](/utilities/typography/color/) `.d-fc-primary-inverted` to change the font color to the inverted primary text color
 
 Though an atomic CSS approach comes with many advantages, we know it also offers a notable disadvantage: reducing the CSS cascade. This is especially true for repeated UI elements, which can end up creating redundant mark-up. For these instances, Dialtone offers components.
 
