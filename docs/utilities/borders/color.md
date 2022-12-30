@@ -114,7 +114,7 @@ Use `fv:d-bc-{color}` to change an element's border color when in `:focus-visibl
                       <div class="d-fl-grow1 d-ff-mono d-fs-100">
                           border-color: transparent !important;
                       </div>
-                      <div class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar4 d-bc-transparent d-ba d-baw2"></div>
+                      <div class="d-fl-shrink0 d-m4 d-ml16 d-h42 d-w42 d-bar4 d-bc-transparent d-ba d-baw2"></div>
                   </div>
               </td>
           </tr>
@@ -125,7 +125,7 @@ Use `fv:d-bc-{color}` to change an element's border color when in `:focus-visibl
                       <div class="d-fl-grow1 d-ff-mono d-fs-100">
                           border-color: unset !important;
                       </div>
-                      <div class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar4 d-bc-unset d-ba d-baw2"></div>
+                      <div class="d-fl-shrink0 d-m4 d-ml16 d-h42 d-w42 d-bar4 d-bc-unset d-ba d-baw2"></div>
                   </div>
               </td>
           </tr>
@@ -137,7 +137,7 @@ Use `fv:d-bc-{color}` to change an element's border color when in `:focus-visibl
                           --bco: 100%;<br/>
                           border-color: hsla(var(--white-h) var(--white-s) var(--white-l) / var(--bco)) !important;
                       </div>
-                      <div class="d-fl-shrink0 d-d-flex d-m4 d-p4 d-ml16 d-h32 d-w32 d-bar4 d-bgc-black-700"><div class="d-w100p d-h100p d-bc-white d-ba d-bar4"></div></div>
+                      <div class="d-fl-shrink0 d-d-flex d-m4 d-p4 d-ml16 d-h42 d-w42 d-bar4 d-bgc-black-700"><div class="d-w100p d-h100p d-bc-white d-ba d-bar4"></div></div>
                   </div>
               </td>
           </tr>
@@ -152,7 +152,7 @@ Use `fv:d-bc-{color}` to change an element's border color when in `:focus-visibl
                           border-color: hsla(var(--{{ c }}-{{ stop }}-h) var(--{{ c }}-{{ stop }}-s) var(--{{ c }}-{{ stop }}-l) / var(--bco)) !important;
                       </div>
                       <div
-                        class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar4 d-ba d-baw2"
+                        class="d-fl-shrink0 d-m4 d-ml16 d-h42 d-w42 d-bar4 d-ba d-baw2"
                         :class="`d-bc-${c}-${stop}`"
                       >
                       </div>

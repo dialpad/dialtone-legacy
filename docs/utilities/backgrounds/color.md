@@ -108,7 +108,7 @@ Use `fv:d-bgc-{color}` to change an element's `:focus-visible` state background 
                         --bgo: 100%;<br/>
                         background-color: hsla(var(--white-h) var(--white-s) var(--white-l) / var(--bgo)) !important;
                     </div>
-                    <div class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar-circle d-bgc-primary d-ba d-bc-black-200"></div>
+                    <div class="d-fl-shrink0 d-m4 d-ml16 d-h42 d-w42 d-bar-circle d-bgc-primary d-ba d-bc-black-200"></div>
                 </div>
             </td>
         </tr>
@@ -120,7 +120,7 @@ Use `fv:d-bgc-{color}` to change an element's `:focus-visible` state background 
                         --bgo: 100%;<br/>
                         background-color: hsla(var(--black-100-h) var(--black-100-s) var(--black-100-l) / var(--bgo)) !important;
                     </div>
-                    <div class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar-circle d-bgc-secondary d-ba d-bc-black-200"></div>
+                    <div class="d-fl-shrink0 d-m4 d-ml16 d-h42 d-w42 d-bar-circle d-bgc-secondary d-ba d-bc-black-200"></div>
                 </div>
             </td>
         </tr>
@@ -132,7 +132,7 @@ Use `fv:d-bgc-{color}` to change an element's `:focus-visible` state background 
                         --bgo: 100%;<br/>
                         background-color: hsla(var(--black-200-h) var(--black-200-s) var(--black-200-l) / var(--bgo)) !important;
                     </div>
-                    <div class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar-circle d-bgc-moderate d-ba d-bc-black-200"></div>
+                    <div class="d-fl-shrink0 d-m4 d-ml16 d-h42 d-w42 d-bar-circle d-bgc-moderate d-ba d-bc-black-200"></div>
                 </div>
             </td>
         </tr>
@@ -144,7 +144,7 @@ Use `fv:d-bgc-{color}` to change an element's `:focus-visible` state background 
                         --bgo: 100%;<br/>
                         border-color: hsla(var(--black-200-h) var(--black-200-s) var(--black-200-l) / var(--bco)) !important;
                     </div>
-                    <div class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar-circle d-bgc-bold d-ba d-bc-black-200"></div>
+                    <div class="d-fl-shrink0 d-m4 d-ml16 d-h42 d-w42 d-bar-circle d-bgc-bold d-ba d-bc-black-200"></div>
                 </div>
             </td>
         </tr>
@@ -156,7 +156,7 @@ Use `fv:d-bgc-{color}` to change an element's `:focus-visible` state background 
                         --bgo: 100%;<br/>
                         border-color: hsla(var(--black-200-h) var(--black-200-s) var(--black-200-l) / var(--bco)) !important;
                     </div>
-                    <div class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar-circle d-bgc-strong d-ba d-bc-black-200"></div>
+                    <div class="d-fl-shrink0 d-m4 d-ml16 d-h42 d-w42 d-bar-circle d-bgc-strong d-ba d-bc-black-200"></div>
                 </div>
             </td>
         </tr>
@@ -168,7 +168,7 @@ Use `fv:d-bgc-{color}` to change an element's `:focus-visible` state background 
                         --bgo: 100%;<br/>
                         background-color: hsla(var(--black-800-h) var(--black-800-s) var(--black-800-l) / var(--bgo)) !important;
                     </div>
-                    <div class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar-circle d-bgc-contrast d-ba d-bc-black-200"></div>
+                    <div class="d-fl-shrink0 d-m4 d-ml16 d-h42 d-w42 d-bar-circle d-bgc-contrast d-ba d-bc-black-200"></div>
                 </div>
             </td>
         </tr>
@@ -182,7 +182,7 @@ Use `fv:d-bgc-{color}` to change an element's `:focus-visible` state background 
                         --bgo: 100%;<br/>
                         background-color: hsla(var(--red-100-h) var(--red-100-s) var(--red-100-l) / var(--bgo)) !important;
                     </div>
-                    <div class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar-circle d-bgc-critical d-ba d-bc-black-100"></div>
+                    <div class="d-fl-shrink0 d-m4 d-ml16 d-h42 d-w42 d-bar-circle d-bgc-critical d-ba d-bc-black-100"></div>
                 </div>
             </td>
         </tr>
@@ -194,7 +194,7 @@ Use `fv:d-bgc-{color}` to change an element's `:focus-visible` state background 
                         --bgo: 100%;<br/>
                         background-color: hsla(var(--green-100-h) var(--green-100-s) var(--green-100-l) / var(--bgo)) !important;
                     </div>
-                    <div class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar-circle d-bgc-success d-ba d-bc-black-100"></div>
+                    <div class="d-fl-shrink0 d-m4 d-ml16 d-h42 d-w42 d-bar-circle d-bgc-success d-ba d-bc-black-100"></div>
                 </div>
             </td>
         </tr>
@@ -206,7 +206,7 @@ Use `fv:d-bgc-{color}` to change an element's `:focus-visible` state background 
                         --bgo: 100%;<br/>
                         background-color: hsla(var(--gold-100-h) var(--gold-100-s) var(--gold-100-l) / var(--bgo)) !important;
                     </div>
-                    <div class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar-circle d-bgc-warning d-ba d-bc-black-100"></div>
+                    <div class="d-fl-shrink0 d-m4 d-ml16 d-h42 d-w42 d-bar-circle d-bgc-warning d-ba d-bc-black-100"></div>
                 </div>
             </td>
         </tr>
@@ -218,7 +218,7 @@ Use `fv:d-bgc-{color}` to change an element's `:focus-visible` state background 
                         --bgo: 100%;<br/>
                         background-color: hsla(var(--blue-100-h) var(--blue-100-s) var(--blue-100-l) / var(--bgo)) !important;
                     </div>
-                    <div class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar-circle d-bgc-info d-ba d-bc-black-100"></div>
+                    <div class="d-fl-shrink0 d-m4 d-ml16 d-h42 d-w42 d-bar-circle d-bgc-info d-ba d-bc-black-100"></div>
                 </div>
             </td>
         </tr>
@@ -231,7 +231,7 @@ Use `fv:d-bgc-{color}` to change an element's `:focus-visible` state background 
                       <div class="d-fl-grow1 d-ff-mono d-fs-100">
                           background-color: transparent !important;
                       </div>
-                      <div class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar-circle d-bgc-transparent d-ba d-bc-black-100"></div>
+                      <div class="d-fl-shrink0 d-m4 d-ml16 d-h42 d-w42 d-bar-circle d-bgc-transparent d-ba d-bc-black-100"></div>
                   </div>
               </td>
           </tr>
@@ -242,7 +242,7 @@ Use `fv:d-bgc-{color}` to change an element's `:focus-visible` state background 
                       <div class="d-fl-grow1 d-ff-mono d-fs-100">
                           background-color: unset !important;
                       </div>
-                      <div class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar-circle d-bgc-unset d-ba d-bc-black-100"></div>
+                      <div class="d-fl-shrink0 d-m4 d-ml16 d-h42 d-w42 d-bar-circle d-bgc-unset d-ba d-bc-black-100"></div>
                   </div>
               </td>
           </tr>
@@ -254,7 +254,7 @@ Use `fv:d-bgc-{color}` to change an element's `:focus-visible` state background 
                           --bgo: 100%;<br/>
                           background-color: hsla(var(--white-h) var(--white-s) var(--white-l) / var(--bgo)) !important;
                       </div>
-                      <div class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar-circle d-bgc-white d-ba d-bc-black-100"></div>
+                      <div class="d-fl-shrink0 d-m4 d-ml16 d-h42 d-w42 d-bar-circle d-bgc-white d-ba d-bc-black-100"></div>
                   </div>
               </td>
           </tr>
@@ -269,7 +269,7 @@ Use `fv:d-bgc-{color}` to change an element's `:focus-visible` state background 
                         background-color: hsla(var(--{{ color }}-{{ stop }}-h) var(--{{ color }}-{{ stop }}-s) var(--{{ color }}-{{ stop }}-l) / var(--bgo)) !important;
                     </div>
                     <div
-                      class="d-fl-shrink0 d-m4 d-ml16 d-h32 d-w32 d-bar-circle d-ba d-bc-black-100"
+                      class="d-fl-shrink0 d-m4 d-ml16 d-h42 d-w42 d-bar-circle d-ba d-bc-black-100"
                       :class="`d-bgc-${color}-${stop}`"
                     />
                 </div>
