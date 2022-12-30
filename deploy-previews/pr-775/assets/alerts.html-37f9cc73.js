@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-bcfbd53c","path":"/components/alerts.html","title":"Alert-like components","lang":"en-US","frontmatter":{"title":"Alert-like components"},"headers":[],"git":{"createdTime":1672358567000,"updatedTime":1672358567000,"contributors":[{"name":"Francis Rupert","email":"francisrupert@gmail.com","commits":1}]}}');export{e as data};
