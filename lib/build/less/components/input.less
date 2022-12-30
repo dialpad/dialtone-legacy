@@ -29,9 +29,9 @@
 .d-input__wrapper {
     //  Component CSS Vars
     //  ------------------------------------------------------------------------
-    --input-color-border: hsla(var(--black-900-hsl) ~' / ' 9%);
-    --input-color-background: hsla(var(--black-900-hsl) ~' / ' 3%);
-    --input-color-background-disabled: hsla(var(--black-900-hsl) ~' / ' 12%);
+    --input-color-border: hsla(var(--black-900-hsl) / 0.09);
+    --input-color-background: hsla(var(--black-900-hsl) / 0.03);
+    --input-color-background-disabled: hsla(var(--black-900-hsl) / 0.12);
     --input-border-width: calc(var(--size-100) + calc(var(--size-100) / 2)); // 1.5
     --input-border-radius: var(--size-400);
     --input-padding-y: calc(var(--space-400) - var(--input-border-width));
@@ -73,8 +73,10 @@
     //  --  FOCUS STATE
     &:focus,
     &:focus-within {
-        --input-color-background: hsla(var(--black-900-hsl) ~' / ' 1%);
+        --input-color-background: hsla(var(--black-900-hsl) / 0.01);
         --input-color-border: var(--color-focus-ring) !important;
+
+        box-shadow: 0 0 0 var(--size-100) var(--color-focus-ring) inset;
     }
     //  --  DISABLED / READ-ONLY
     &[disabled],
