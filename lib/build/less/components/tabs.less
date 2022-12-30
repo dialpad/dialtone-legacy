@@ -44,7 +44,7 @@
 .d-tab {
     //  --  COMPONENT CSS VARS
     //  ------------------------------------------------------------------------
-    --tab-color-background: hsla(var(--white-hsl) ~' / ' 0%);
+    --tab-color-background: hsla(var(--white-hsl) / 0);
     --tab-color-text: inherit;
 
     position: relative;
@@ -110,7 +110,7 @@
     z-index: var(--zi-selected);
 
     &:hover {
-        --tab-color-background: hsla(var(--purple-400-hsl) ~' / ' 10%);
+        --tab-color-background: hsla(var(--purple-400-hsl) / 0.1);
         --tab-color-text: hsl(var(--purple-400-h) var(--purple-400-s) calc(var(--purple-400-l) - 10%));
     }
 
@@ -125,22 +125,22 @@
 //  $   INVERTED STYLE
 //  ----------------------------------------------------------------------------
 .d-tablist--inverted {
-    --tab-color-text: var(--white);
+    --tab-color-text: var(--fc-primary-inverted);
 
     &::after {
-        background-color: hsla(var(--purple-600-hsl) ~' / ' 50%);
+        background-color: hsla(var(--purple-600-hsl) / 0.5);
     }
 
     .d-tab {
-        --tab-color-text: var(--white);
+        --tab-color-text: var(--fc-secondary-inverted);
 
         &:hover {
-            --tab-color-background: hsla(var(--white-hsl) ~' / ' 10%);
+            --tab-color-background: hsla(var(--white-hsl) / 0.1);
         }
     }
 
     .d-tab--selected {
-        --tab-color-text: var(--white);
+        --tab-color-text: var(--fc-primary-inverted);
 
         &::after {
             --tab-color-background: currentColor;

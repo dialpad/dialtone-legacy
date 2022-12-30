@@ -17,9 +17,9 @@
 .d-table {
     //  Component CSS Vars
     //  ------------------------------------------------------------------------
-    --table-color-th: var(--black-700);
-    --table-color-td: var(--black-600);
     --table-color-border: var(--black-300);
+    --table-th-color-text: var(--fc-secondary);
+    --table-td-color-text: var(--fc-tertiary);
 
     display: table;
     box-sizing: border-box;
@@ -34,7 +34,7 @@
     // Caption styles
     .d-table__caption {
       margin-bottom: var(--space-400); // 8
-      color: var(--table-color-th);
+      color: var(--table-th-color-text);
       font-weight: var(--fw-bold);
       font-size: var(--fs-200);
       .d-ta-unset();
@@ -53,13 +53,13 @@
 
     // Header Styles
     th {
-        color: var(--table-color-th);
+        color: var(--table-th-color-text);
         font-weight: var(--fw-bold);
     }
 
     // Cell Styles
     td {
-        color: var(--table-color-td);
+        color: var(--table-td-color-text);
     }
 
     // Header & Cell Styles
@@ -93,8 +93,8 @@
 //  $   INVERTED STYLE
 //  ----------------------------------------------------------------------------
 .d-table--inverted {
-    --table-color-th: var(--black-200);
-    --table-color-td: var(--black-400);
+    --table-th-color-text: var(--fc-secondary-inverted);
+    --table-td-color-text: var(--black-400);
     --table-color-border: var(--black-500);
 }
 
@@ -104,13 +104,13 @@
 .d-table--striped {
     // Row Styles
     tr:nth-child(even) {
-        background-color: hsl(var(--black-300-h), var(--black-300-s), var(--black-300-l), 0.1);
+        background-color: hsla(var(--bgc-bold-hsl) / 0.1);
     }
 
     &.d-table--inverted {
         // Row Styles
         tr:nth-child(even) {
-            background-color: hsl(var(--black-300-h), var(--black-300-s), var(--black-300-l), 0.1);
+            background-color: hsla(var(--bgc-primary-hsl) / 0.08);
         }
     }
 }

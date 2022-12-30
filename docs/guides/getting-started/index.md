@@ -43,7 +43,7 @@ A general overview of Dialtone's utility classes, CSS components, and Vue compon
 
 ### Utility-first
 
-Dialtone's CSS library offers a framework of utility-first classes. Each class is a small, <a href="https://css-tricks.com/lets-define-exactly-atomic-css/" target="_blank">atomic style</a> declaration that, when chained together, should mitigate most situations in which custom CSS must be written. Just write these classes right in your mark-up and you're all set!
+Dialtone's CSS library offers a framework of utility-first classes. Each class is a small, [atomic style](https://css-tricks.com/lets-define-exactly-atomic-css/) declaration that, when chained together, should mitigate most situations in which custom CSS must be written. Just write these classes right in your mark-up and you're all set!
 
 <code-well-header>
   <div class="d-p16 d-bgc-black-600 d-fc-white">Box</div>
@@ -63,7 +63,7 @@ Though an atomic CSS approach comes with many advantages, we know it also offers
 
 ### Components
 
-There are two methods to implement Dialtone components: Vue (recommended) and CSS. Vue is the preferred method as it's more robust and readily accessible out-of-the-box. <a href="https://vue.dialpad.design/" target="_blank">Get started with Vue components.</a>
+There are two methods to implement Dialtone components: Vue (recommended) and CSS. Vue is the preferred method as it's more robust and readily accessible out-of-the-box. [Get started with Vue components](https://vue.dialpad.design/).
 In the event Dialtone Vue doesn't suit your needs, Dialtone's CSS library offers the same set of components. These may require more work to implement and make accessible, but will work in a pinch.
 
 <code-well-header>

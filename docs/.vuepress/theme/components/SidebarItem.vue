@@ -1,7 +1,7 @@
 <template>
   <li>
     <p
-      class="d-headline-eyebrow d-fw-semibold d-pl12 d-pb8"
+      class="d-headline-eyebrow d-fw-semibold d-pl12 d-pb8 d-fc-secondary"
       v-text="item.text"
     />
     <ul class="d-pl0 d-mb16 d-stack4">
