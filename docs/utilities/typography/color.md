@@ -112,36 +112,6 @@ Use `d:d-fc-{color}` to set a different text color when the user prefers dark mo
   import colors from '@data/colors.json';
 </script>
 
-## CSS variables
-
-Dialtone provides a few abstracted colors CSS variables based on our [color stops](/design/colors/color-palette/).
-
-<div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
-  <table class="d-table dialtone-doc-table">
-    <thead>
-      <tr>
-        <th scope="col" class="d-w30p">Variable</th>
-        <th scope="col">Output</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr v-for="{ var: varName, output } in fontColorVars">
-        <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">var(--fc-{{ varName }})</th>
-        <td>
-          <div class="d-d-flex d-jc-space-between d-ai-center">
-            <div class="d-fl1 d-ff-mono d-fs-100">
-              var(--{{ output }});
-            </div>
-            <div class="d-fl0 d-fs-200 d-lh4" :class="`d-fc-${varName}`">
-              Aa
-            </div>
-          </div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
 ## Classes
 
 <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">

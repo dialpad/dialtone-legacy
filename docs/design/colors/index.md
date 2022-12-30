@@ -151,6 +151,35 @@ Key foreground colors rendered on surfaces to indicate hierarchy and importance.
 
 Foreground colors distinguishing important information with a status role.
 
+<div hidden>
+  <div style="color: var(--fc-primary)">primary</div>
+  <div style="color: hsla(var(--fc-primary-hsl) / .5)">primary @ 50%</div>
+  <div style="color: var(--fc-primary-inverted)">primary-inverted</div>
+  <div style="color: hsla(var(--fc-primary-inverted-hsl) / .5)">primary-inverted @ 50%</div>
+  <div style="color: var(--fc-secondary)">secondary</div>
+  <div style="color: hsla(var(--fc-secondary-hsl) / .5)">secondary @ 50%</div>
+  <div style="color: var(--fc-secondary-inverted)">secondary-inverted</div>
+  <div style="color: hsla(var(--fc-secondary-inverted-hsl) / .5)">secondary-inverted @ 50%</div>
+  <div style="color: var(--fc-tertiary)">tertiary</div>
+  <div style="color: hsla(var(--fc-tertiary-hsl) / .5)">tertiary @ 50%</div>
+  <div style="color: var(--fc-muted)">muted</div>
+  <div style="color: hsla(var(--fc-muted-hsl) / .5)">muted @ 50%</div>
+  <div style="color: var(--fc-placeholder)">placeholder</div>
+  <div style="color: hsla(var(--fc-placeholder-hsl) / .5)">placeholder @ 50%</div>
+  <div style="color: var(--fc-disabled)">disabled</div>
+  <div style="color: hsla(var(--fc-disabled-hsl) / .5)">disabled @ 50%</div>
+  <div style="color: var(--fc-critical)">critical</div>
+  <div style="color: hsla(var(--fc-critical-hsl) / .5)">critical @ 50%</div>
+  <div style="color: var(--fc-error)">error</div>
+  <div style="color: hsla(var(--fc-error-hsl) / .5)">error @ 50%</div>
+  <div style="color: var(--fc-success)">success</div>
+  <div style="color: hsla(var(--fc-success-hsl) / .5)">success @ 50%</div>
+  <div style="color: var(--fc-warning)">warning</div>
+  <div style="color: hsla(var(--fc-warning-hsl) / .5)">warning @ 50%</div>
+  <div style="color: var(--fc-warning-hover)">warning-hover</div>
+  <div style="color: hsla(var(--fc-warning-hover-hsl) / .5)">warning-hover @ 50%</div>
+</div>
+
 <table class="d-table dialtone-doc-table">
   <thead>
     <tr>
@@ -212,6 +241,29 @@ Foreground colors distinguishing important information with a status role.
 </table>
 
 ## Surface
+
+<div hidden>
+  <div style="background-color: var(--bgc-critical)">critical</div>
+  <div style="background-color: hsla(var(--bgc-critical-hsl) / .5)">critical @ 50%</div>
+  <div style="background-color: var(--bgc-info)">info</div>
+  <div style="background-color: hsla(var(--bgc-info-hsl) / .5)">info @ 50%</div>
+  <div style="background-color: var(--bgc-warning)">warning</div>
+  <div style="background-color: hsla(var(--bgc-warning-hsl) / .5)">warning @ 50%</div>
+  <div style="background-color: var(--bgc-success)">success</div>
+  <div style="background-color: hsla(var(--bgc-success-hsl) / .5)">success @ 50%</div>
+  <div style="background-color: var(--bgc-primary)">primary</div>
+  <div style="background-color: hsla(var(--bgc-primary-hsl) / .5)">primary @ 50%</div>
+  <div style="background-color: var(--bgc-secondary)">secondary</div>
+  <div style="background-color: hsla(var(--bgc-secondary-hsl) / .5)">secondary @ 50%</div>
+  <div style="background-color: var(--bgc-moderate)">moderate</div>
+  <div style="background-color: hsla(var(--bgc-moderate-hsl) / .5)">moderate @ 50%</div>
+  <div style="background-color: var(--bgc-bold)">bold</div>
+  <div style="background-color: hsla(var(--bgc-bold-hsl) / .5)">bold @ 50%</div>
+  <div style="background-color: var(--bgc-strong)">strong</div>
+  <div style="background-color: hsla(var(--bgc-strong-hsl) / .5)">strong @ 50%</div>
+  <div style="background-color: var(--bgc-contrast)">contrast</div>
+  <div style="background-color: hsla(var(--bgc-contrast-hsl) / .5)">contrast @ 50%</div>
+</div>
 
 Background colors for default application UI surfaces. Surface colors are containing blocks — such as pages, modals, tables, headers, and cards — containing foreground content or elements.
 
