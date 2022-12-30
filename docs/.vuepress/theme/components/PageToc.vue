@@ -7,7 +7,7 @@
     d-as-flex-start
     d-pr16 d-w216"
   >
-    <h3 class="d-pl8 d-headline-eyebrow d-fw-semibold d-pb8">
+    <h3 class="d-p8 d-pt8 d-headline-eyebrow d-fw-semibold">
       On this page
     </h3>
     <toc :headers="$page.headers" />

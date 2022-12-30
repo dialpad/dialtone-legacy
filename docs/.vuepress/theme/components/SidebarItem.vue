@@ -1,10 +1,10 @@
 <template>
   <li>
     <p
-      class="d-headline-eyebrow d-fw-semibold d-pl12 d-pb8 d-fc-secondary"
+      class="d-headline-eyebrow d-fw-semibold d-pl12 d-pt8 d-pb8 d-fc-secondary"
       v-text="item.text"
     />
-    <ul class="d-pl0 d-mb16 d-stack4">
+    <ul class="d-pl0 d-mb16 d-stack2">
       <li
         v-for="subItem in subItems"
         :key="subItem.text"
