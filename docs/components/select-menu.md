@@ -49,9 +49,9 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 - When most users will (or should) pick a particular option, make it the default selection.
 - Avoid auto-submission. Be wary of UI implications of automatically submitting upon selection or applying its value. Users may often change their choices multiple times, particularly if interacting with a form solely with keyboard. Auto-submission is also less accessible. For auto-submission consider the [Dropdown](dropdown.md) component.
 
-## Variants and examples
+## Variants
 
-### Base styles
+### Base
 
 A select is normally paired with a label, but there are times when it can be used without a label. Don't rely on the placeholder text as a label.
 
@@ -225,7 +225,7 @@ Provides feedback to the user based on their interaction, or lack thereof, with 
 </div>
 ```
 
-### Sizes
+## Sizes
 
 We offer different sizes for instances in which the interface requires a smaller or larger select. In general, though, use the base (medium) size select as much as possible, especially in forms.
 
@@ -332,10 +332,6 @@ We offer different sizes for instances in which the interface requires a smaller
 </div>
 ```
 
-## Classes
-
-<component-class-table component-name="select" />
-
 ## Accessibility
 
 - Make sure the `label` `for` attribute match the select `id`.
@@ -344,6 +340,10 @@ We offer different sizes for instances in which the interface requires a smaller
 - Avoid customizing the placeholder text.
 - If the select is a required field, use the `aria-required` property and use the validation message for input errors.
 - Select with validation errors should have `aria-describedby` with the `id` of the validation message.
+
+## Classes
+
+<component-class-table component-name="select" />
 
 <script setup>
   import DialtoneUsage from '@baseComponents/DialtoneUsage.vue';
