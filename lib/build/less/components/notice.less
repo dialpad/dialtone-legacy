@@ -17,12 +17,13 @@
     //  ------------------------------------------------------------------------
     --notice-color-background: var(--bgc-secondary);
     --notice-color-text: var(--fc-primary);
-    --notice-color-shadow: hsla(var(--black-900-hsl) / 0.1);
+    --notice-color-icon: var(--fc-secondary);
+    --notice-color-shadow: hsla(var(--black-900-hsl) / 0.08);
     --notice-padding: var(--space-500);
     --notice-font-size: var(--fs-200);
     --notice-line-height: var(--lh-300);
     --notice-border-radius: var(--size-400);
-    --notice-box-shadow: 0 0 0 var(--size-100) var(--notice-color-shadow) inset;
+    --notice-box-shadow: 0 0 0 var(--size-200) var(--notice-color-shadow) inset;
 
     display: flex;
     align-items: center;
@@ -56,7 +57,7 @@
     display: flex;
     flex: 1 auto;
     flex-direction: column;
-    margin-right: var(--space-500); // 16
+    margin-right: var(--space-500);
 }
 
 //  $$  ACTIONS
@@ -73,8 +74,12 @@
 .d-notice__icon {
     display: flex;
     flex: 0 auto;
-    margin-right: var(--space-400); // 8
-    color: inherit;
+    margin-right: calc(var(--space-300) * 3);
+    color: var(--notice-color-icon);
+
+    .d-banner & {
+        margin-right: var(--space-400);
+    }
 }
 
 //  ============================================================================
@@ -94,6 +99,7 @@
     --notice-color-background: var(--bgc-strong);
     --notice-color-text: var(--fc-primary-inverted);
     --notice-color-shadow: transparent;
+    --notice-color-icon: var(--fc-primary-inverted);
 }
 
 //  $$  ERROR
@@ -102,12 +108,14 @@
 .d-banner--error,
 .d-toast--error {
     --notice-color-background: var(--bgc-critical);
+    --notice-color-icon: var(--red-400);
 
     &.d-notice--important,
     &.d-banner--important,
     &.d-toast--important {
         --notice-color-background: var(--red-300);
         --notice-color-text: var(--fc-primary-inverted);
+        --notice-color-icon: var(--red-100);
     }
 }
 
@@ -117,12 +125,14 @@
 .d-banner--info,
 .d-toast--info {
     --notice-color-background: var(--bgc-info);
+    --notice-color-icon: var(--blue-400);
 
     &.d-notice--important,
     &.d-banner--important,
     &.d-toast--important {
         --notice-color-background: var(--blue-400);
         --notice-color-text: var(--fc-primary-inverted);
+        --notice-color-icon: var(--blue-100);
     }
 }
 
@@ -132,12 +142,14 @@
 .d-banner--success,
 .d-toast--success {
     --notice-color-background: var(--bgc-success);
+    --notice-color-icon: var(--green-400);
 
     &.d-notice--important,
     &.d-banner--important,
     &.d-toast--important {
         --notice-color-background: var(--green-400);
         --notice-color-text: var(--fc-primary-inverted);
+        --notice-color-icon: var(--green-100);
     }
 }
 
@@ -147,11 +159,13 @@
 .d-banner--warning,
 .d-toast--warning {
     --notice-color-background: var(--bgc-warning);
+    --notice-color-icon: var(--gold-400);
 
     &.d-notice--important,
     &.d-banner--important,
     &.d-toast--important {
         --notice-color-background: var(--gold-200);
         --notice-color-text: var(--fc-primary);
+        --notice-color-icon: var(--gold-500);
     }
 }
