@@ -3,6 +3,17 @@ title: Focusable
 ---
 
 <div class="qwerqwerqwerqwer">
+  <div>
+    <button class="d-btn d-btn--lg d-btn--outlined" type="button" onclick="(() => {
+      const root = document.body;
+      const currentValue = root.style.getPropertyValue('--bs-focus-ring');
+      if (currentValue === '0 0 0 calc(var(--size-200) + var(--size-100)) var(--color-focus-ring)') {
+        root.style.removeProperty('--bs-focus-ring');
+      } else {
+        root.style.setProperty('--bs-focus-ring', '0 0 0 calc(var(--size-200) + var(--size-100)) var(--color-focus-ring)');
+      }
+    })()">🤔 Offset blue outline or no...❓</button>
+  </div>
   <h2>Dialtone CSS Utility</h2>
   <div class="qwerqwerqwerqwer__list">
     <div class="d-fl-col5 d-flg8 d-fw-wrap d-p24 d-bgc-bold d-bgo50 d-w100p d-hmn102">
