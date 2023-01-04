@@ -6,7 +6,8 @@ thumb: true
 storybook_url: https://vue.dialpad.design/?path=/story/components-popover--default
 figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Components-7?node-id=8921%3A22411&viewport=831%2C-269%2C0.43&t=xHutRjwo1o5zMTgT-11
 ---
-<code-well-header>
+
+<code-well-header bgclass="d-bgc-white">
   <example-popover modal />
 </code-well-header>
 
@@ -57,7 +58,7 @@ Your popover should be non-modal when:
 
 ### Popover - Modal
 
-<code-well-header>
+<code-well-header bgclass="d-bgc-white">
   <example-popover modal />
 </code-well-header>
 
@@ -76,7 +77,7 @@ Your popover should be non-modal when:
 
 ### Popover - Non Modal
 
-<code-well-header>
+<code-well-header bgclass="d-bgc-white">
   <example-popover />
 </code-well-header>
 
@@ -94,7 +95,7 @@ Your popover should be non-modal when:
 
 ### With Header - Modal
 
-<code-well-header>
+<code-well-header bgclass="d-bgc-white">
   <example-popover modal header>
     <template #content>
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur delectus distinctio id iure labore, maiores mollitia reprehenderit sunt tempore veritatis. Aliquam delectus earum ex, expedita ipsam nobis obcaecati quibusdam repudiandae.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur delectus distinctio id iure labore, maiores mollitia reprehenderit sunt tempore veritatis. Aliquam delectus earum ex, expedita ipsam nobis obcaecati quibusdam repudiandae.<br>
@@ -122,7 +123,7 @@ Your popover should be non-modal when:
 
 ### With Footer - Modal
 
-<code-well-header>
+<code-well-header bgclass="d-bgc-white">
   <example-popover modal footer>
     <template #content>
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur delectus distinctio id iure labore, maiores mollitia reprehenderit sunt tempore veritatis. Aliquam delectus earum ex, expedita ipsam nobis obcaecati quibusdam repudiandae.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur delectus distinctio id iure labore, maiores mollitia reprehenderit sunt tempore veritatis. Aliquam delectus earum ex, expedita ipsam nobis obcaecati quibusdam repudiandae.<br>
