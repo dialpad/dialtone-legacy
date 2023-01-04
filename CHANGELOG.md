@@ -1,3 +1,10 @@
+## [7.11.1](https://github.com/dialpad/dialtone/compare/v7.11.0...v7.11.1) (2023-01-04)
+
+
+### Bug Fixes
+
+* popover background ([#776](https://github.com/dialpad/dialtone/issues/776)) ([d57fbb6](https://github.com/dialpad/dialtone/commit/d57fbb66fca2cbb5e3a3a00ab58b03cdb4ed13ec))
+
 # [7.11.0](https://github.com/dialpad/dialtone/compare/v7.10.4...v7.11.0) (2022-12-24)
 
 
