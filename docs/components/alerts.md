@@ -5,10 +5,11 @@ title: Alert-like components
 <div class="qwerqwerqwerqwer d-pt64">
   <div class="d-d-flex d-d-flex d-jc-center d-flow8 d-ai-center">
     <strong>Toggle</strong>
-    <button class="d-btn d-btn--lg d-btn--outlined" onclick="(() => { const buttons = document.querySelectorAll('.d-notice__actions .d-btn--outlined'); buttons.forEach(button => { button.style.display = button.style.display === 'none' ? 'block' : 'none'; }); })()"><dt-icon name="eye" size="300" /> Action</button>
-    <button class="d-btn d-btn--lg d-btn--outlined" onclick="(() => { const buttons = document.querySelectorAll('.d-notice__actions .d-btn--circle'); buttons.forEach(button => { button.style.display = button.style.display === 'none' ? 'block' : 'none'; }); })()"><dt-icon name="eye" size="300" /> Close</button>
-    <button class="d-btn d-btn--lg d-btn--outlined" onclick="(() => { const buttons = document.querySelectorAll('.d-notice__title'); buttons.forEach(button => { button.style.display = button.style.display === 'none' ? 'block' : 'none'; }); })()"><dt-icon name="eye" size="300" /> Title</button>
-    <button class="d-btn d-btn--lg d-btn--outlined" onclick="(() => { const buttons = document.querySelectorAll('.d-notice__message'); buttons.forEach(button => { button.style.display = button.style.display === 'none' ? 'block' : 'none'; }); })()"><dt-icon name="eye" size="300" /> Message</button>
+    <button class="d-btn d-btn--lg d-btn--outlined" onclick="(() => { const buttons = document.querySelectorAll('.d-notice__icon'); buttons.forEach(button => { button.hidden = !button.hidden; }); })()"><dt-icon name="eye" size="300" /> Icon</button>
+    <button class="d-btn d-btn--lg d-btn--outlined" onclick="(() => { const buttons = document.querySelectorAll('.d-notice__title'); buttons.forEach(button => { button.hidden = !button.hidden; }); })()"><dt-icon name="eye" size="300" /> Title</button>
+    <button class="d-btn d-btn--lg d-btn--outlined" onclick="(() => { const buttons = document.querySelectorAll('.d-notice__message'); buttons.forEach(button => { button.hidden = !button.hidden; }); })()"><dt-icon name="eye" size="300" /> Message</button>
+    <button class="d-btn d-btn--lg d-btn--outlined" onclick="(() => { const buttons = document.querySelectorAll('.d-notice__actions .d-btn--outlined'); buttons.forEach(button => { button.hidden = !button.hidden; }); })()"><dt-icon name="eye" size="300" /> Action</button>
+    <button class="d-btn d-btn--lg d-btn--outlined" onclick="(() => { const buttons = document.querySelectorAll('.d-notice__actions .d-btn--circle'); buttons.forEach(button => { button.hidden = !button.hidden; }); })()"><dt-icon name="eye" size="300" /> Close</button>
   </div>
   <h2>Banner</h2>
   <div class="qwerqwerqwerqwer__list">

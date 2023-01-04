@@ -18,6 +18,7 @@
     --banner-color-background: var(--bgc-secondary);
     --banner-color-text: var(--fc-primary);
     --notice-color-icon: var(--toast-color-text);
+    --banner-color-border: 1px solid hsla(var(--black-900-hsl) ~' / ' 10%);
     --banner-font-size: var(--fs-200);
     --banner-line-height: var(--lh-200);
     --banner-dialog-padding-y: var(--space-400);
@@ -75,12 +76,12 @@
     min-height: 100%;
     margin: 0 auto;
     padding: var(--banner-dialog-padding-y) var(--banner-dialog-padding-x);
-    border-bottom: 1px solid hsla(var(--black-900-hsl) ~' / ' 10%);
+    border-bottom: var(--banner-color-border);
 
     .d-notice__content {
         flex-direction: row;
         gap: var(--space-300);
-        align-items: center;
+        align-items: baseline;
     }
 }
 
@@ -90,9 +91,10 @@
 //  $$  DEFAULT IMPORTANT
 //  ----------------------------------------------------------------------------
 .d-banner.d-banner--important {
-    --banner-color-background: var(--bgc-strong);
-    --banner-color-text: var(--fc-primary-inverted);
-    --notice-color-icon: var(--toast-color-text);
+    --banner-color-background: var(--bgc-contrast);
+    --banner-color-text: var(--black-100);
+    --notice-color-icon: var(--black-100);
+    --banner-color-border: transparent;
 }
 
 //  $$  ERROR
@@ -101,7 +103,7 @@
     --banner-color-background: var(--bgc-critical);
 
     &.d-banner--important {
-        --banner-color-background: var(--red-300);
+        --banner-color-background: var(--red-400);
         --banner-color-text: var(--fc-primary-inverted);
     }
 }

@@ -23,7 +23,7 @@
     --notice-font-size: var(--fs-200);
     --notice-line-height: var(--lh-300);
     --notice-border-radius: var(--size-400);
-    --notice-box-shadow: 0 0 0 var(--size-200) var(--notice-color-shadow) inset;
+    --notice-box-shadow: 0 0 0 var(--size-100) var(--notice-color-shadow) inset;
 
     //  Base Styles
     //  ------------------------------------------------------------------------
@@ -89,14 +89,20 @@
     font-size: inherit;
 }
 
+.d-notice__message {
+    .d-notice__title:not([hidden]) + & {
+        font-size: var(--fs-100);
+    }
+}
+
 //  ============================================================================
 //  $   STYLES
 //  ============================================================================
 //  $$  DEFAULT IMPORTANT
 //  ----------------------------------------------------------------------------
 .d-notice.d-notice--important {
-    --notice-color-background: var(--bgc-strong);
-    --notice-color-text: var(--fc-primary-inverted);
+    --notice-color-background: var(--bgc-contrast);
+    --notice-color-text: var(--black-100);
     --notice-color-shadow: transparent;
     --notice-color-icon: var(--fc-primary-inverted);
 }
@@ -112,7 +118,7 @@
     &.d-notice--important,
     &.d-banner--important,
     &.d-toast--important {
-        --notice-color-background: var(--red-300);
+        --notice-color-background: var(--red-400);
         --notice-color-text: var(--fc-primary-inverted);
     }
 }
@@ -123,7 +129,7 @@
 .d-banner--info,
 .d-toast--info {
     --notice-color-background: var(--bgc-info);
-    --notice-color-icon: var(--blue-400);
+    --notice-color-icon: var(--blue-500);
 
     &.d-notice--important,
     &.d-banner--important,
