@@ -1,3 +1,10 @@
+## [7.11.2](https://github.com/dialpad/dialtone/compare/v7.11.1...v7.11.2) (2023-01-05)
+
+
+### Bug Fixes
+
+* missing popover css vars ([#778](https://github.com/dialpad/dialtone/issues/778)) ([dad55b5](https://github.com/dialpad/dialtone/commit/dad55b53c3b291612af43eee178f49e3af52cf24))
+
 ## [7.11.1](https://github.com/dialpad/dialtone/compare/v7.11.0...v7.11.1) (2023-01-04)
 
 
