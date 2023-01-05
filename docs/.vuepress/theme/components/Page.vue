@@ -1,62 +1,69 @@
 <template>
-  <div class="main-content d-w100p lg:d-pt64">
-    <page-header>
-      <template #content-bottom>
-        <page-toc
-          v-if="isMobile"
-          :headers="$page.headers"
-          :is-mobile="isMobile"
+  <div class="lg:d-d-block d-d-flex d-w100p lg:d-pt64">
+    <div class="main-content d-mx-auto lg:d-mx0 lg:d-wmx100p">
+      <page-header>
+        <template #content-bottom>
+          <page-toc
+            v-if="isMobile"
+            :headers="$page.headers"
+            :is-mobile="isMobile"
+          />
+        </template>
+      </page-header>
+      <content />
+      <nav
+        :class="prev ? 'd-jc-space-between' : 'd-jc-flex-end'"
+        class="page-nav d-h64 d-d-flex d-ai-center"
+      >
+        <router-link
+          v-if="prev"
+          v-slot="{ navigate }"
+          :to="prev.link"
+          custom
+        >
+          <dt-button
+            importance="clear"
+            size="lg"
+            @click="navigate"
+          >
+            <template #icon>
+              <component :is="arrowLeft" />
+            </template>
+            {{ prev.text }}
+          </dt-button>
+        </router-link>
+        <router-link
+          v-if="next"
+          v-slot="{ navigate }"
+          :to="next.link"
+          custom
+        >
+          <dt-button
+            icon-position="right"
+            importance="clear"
+            size="lg"
+            @click="navigate"
+          >
+            <template #icon>
+              <component :is="arrowRight" />
+            </template>
+            {{ next.text }}
+          </dt-button>
+        </router-link>
+      </nav>
+      <footer class="d-mt16 d-mb16 d-body-small d-fc-secondary">
+        <span
+          v-if="$frontmatter.title"
+          v-text="$frontmatter.title"
         />
-      </template>
-    </page-header>
-    <content />
-    <nav
-      :class="prev ? 'd-jc-space-between' : 'd-jc-flex-end'"
-      class="page-nav d-h64 d-d-flex d-ai-center"
-    >
-      <router-link
-        v-if="prev"
-        v-slot="{ navigate }"
-        :to="prev.link"
-        custom
-      >
-        <dt-button
-          importance="clear"
-          size="lg"
-          @click="navigate"
-        >
-          <template #icon>
-            <component :is="arrowLeft" />
-          </template>
-          {{ prev.text }}
-        </dt-button>
-      </router-link>
-      <router-link
-        v-if="next"
-        v-slot="{ navigate }"
-        :to="next.link"
-        custom
-      >
-        <dt-button
-          icon-position="right"
-          importance="clear"
-          size="lg"
-          @click="navigate"
-        >
-          <template #icon>
-            <component :is="arrowRight" />
-          </template>
-          {{ next.text }}
-        </dt-button>
-      </router-link>
-    </nav>
-    <footer class="d-mt16 d-mb16 d-body-small d-fc-secondary">
-      <span
-        v-if="$frontmatter.title"
-        v-text="$frontmatter.title"
-      />
-      documentation last updated {{ lastUpdated }}
-    </footer>
+        documentation last updated {{ lastUpdated }}
+      </footer>
+    </div>
+    <page-toc
+      v-if="!isMobile"
+      :headers="$page.headers"
+      :is-mobile="isMobile"
+    />
   </div>
 </template>
 
