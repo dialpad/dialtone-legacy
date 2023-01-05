@@ -18,7 +18,10 @@
               @click="copyLink"
             >
               <template #icon>
-                <dt-icon name="copy" size="300" />
+                <dt-icon
+                  name="copy"
+                  size="300"
+                />
               </template>
             </dt-button>
           </template>
