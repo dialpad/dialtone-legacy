@@ -10,9 +10,9 @@ desc: An icon style for visually communicating commands, status, and more.
   </div>
   <div class="d-notice__content d-stack4">
     <h2 class="d-notice__title"></h2>
-    <p class="d-notice__message">
+    <p>
       <strong>Looking for the new icon set?</strong>
-      This icon set is deprecated, to be sunset once all instances have been updated with Dialtone 7's <router-link class="d-link" to="/components/icon.html">new Icon component</router-link>.
+      This icon set is deprecated, to be sunset once all instances have been updated with Dialtone 7's <router-link class="d-link d-link--muted" to="/components/icon.html">new Icon component</router-link>.
     </p>
   </div>
 </aside>
