@@ -16,7 +16,7 @@ next:
   </div>
   <div class="d-notice__content d-stack4">
     <p class="d-notice__message">
-      Currently documented in <a href="https://vue.dialpad.design/?path=/docs/components-validation-messages--default" class="d-link d-link--muted">Dialtone Vue</a>.
+      Currently documented in <a target="_blank" href="https://vue.dialpad.design/?path=/docs/components-validation-messages--default" class="d-link d-link--muted">Dialtone Vue</a>.
     </p>
   </div>
 </aside>
