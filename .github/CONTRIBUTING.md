@@ -40,11 +40,11 @@ The second is to check with the Dialtone team (in [#dialtone](https://dialpad.sl
 
 ### Feature Request
 
-If you would like to request a new feature for Dialtone, please submit a [feature request](https://dialpad.atlassian.net/secure/CreateIssue.jspa?issuetype=10901&pid=12428)
+To request a new Dialtone feature or enhancement, submit a [feature request](https://dialpad.atlassian.net/secure/CreateIssue.jspa?issuetype=10901&pid=12428) to our Jira.
 
 ### Bug Report
 
-If you would like to report a bug, please post it in [#dialtone](https://dialpad.slack.com/messages/dialtone/). We will assist you in determining whether it is a Dialtone bug. Please give us a working example of the bug on a private beta or deploy preview link. A branch we can checkout is also helpful. If we have determined that this is a bug in Dialtone, then you may create a [bug report](https://dialpad.atlassian.net/secure/CreateIssue.jspa?issuetype=10878&pid=12428) for the bug. We will get to fixing the bug in the future, or you can fix the bug yourself by [Making a Pull Request](#making-a-pull-request)
+If you would like to report a bug, please post it in [#dialtone](https://dialpad.slack.com/messages/dialtone/). We will assist you in determining whether it is a Dialtone bug. Please give us a working example of the bug on a private beta or deploy preview link. A branch we can checkout is also helpful. If we have determined that this is a bug in Dialtone, then you may create a [bug report](https://dialpad.atlassian.net/secure/CreateIssue.jspa?issuetype=10878&pid=12428) on Jira for the bug. We will get to fixing the bug in the future, or you can fix the bug yourself by [Making a Pull Request](#making-a-pull-request)
 
 ### Making a Pull Request
 
