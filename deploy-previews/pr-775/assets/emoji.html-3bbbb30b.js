@@ -1,3 +1,0 @@
-import{_ as n,s,v as c,x as a,y as e,G as d,C as t}from"./framework-bc192251.js";const i={},_={class:"d-notice d-notice--info d-mt24 d-wmx100p",role:"status","aria-hidden":"false"},l={class:"d-notice__icon"},r=e("div",{class:"d-notice__content d-stack4"},[e("p",{class:"d-notice__message"},[t(`
-      Currently documented in `),e("a",{href:"https://vue.dialpad.design/?path=/docs/components-emoji--default",class:"d-link d-link--muted"},"Dialtone Vue"),t(`.
-    `)])],-1);function m(f,p){const o=s("dt-icon");return c(),a("div",null,[e("aside",_,[e("div",l,[d(o,{name:"info"})]),t(),r])])}const h=n(i,[["render",m],["__file","emoji.html.vue"]]);export{h as default};
