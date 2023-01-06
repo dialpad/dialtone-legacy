@@ -4,7 +4,6 @@ desc: Checkbox groups are convenience components for a grouping of related Check
 status: ready
 thumb: true
 storybook_url: https://vue.dialpad.design/?path=/story/components-checkbox-group--default
-no_preview: true
 ---
 
 <aside class="d-notice d-notice--info d-mt24 d-wmx100p" role="status" aria-hidden="false">
