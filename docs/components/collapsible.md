@@ -4,17 +4,27 @@ desc: A collapsible is a component consisting of an interactive anchor that togg
 status: ready
 thumb: true
 storybook_url: https://vue.dialpad.design/?path=/story/components-collapsible--default
-no_preview: true
 ---
 
-<aside class="d-notice d-notice--info d-mt24 d-wmx100p" role="status" aria-hidden="false">
-  <div class="d-notice__icon">
-    <dt-icon name="info"></dt-icon>
+<code-well-header bgclass="d-bgc-white">
+  <div>
+    <dt-collapsible
+      anchorText="Label 1"
+      maxWidth="340px"
+      initial-focus-element="first"
+      >
+      <template #content>
+        <div class="d-ta-center d-ba d-bc-orange-400 d-bgc-orange-100 d-bas-dotted d-baw2 d-p8 d-code-small">(content slot)</div>
+      </template>
+    </dt-collapsible>
+    <dt-collapsible
+      anchorText="Label 2"
+      maxWidth="340px"
+      initial-focus-element="first"
+    >
+      <template #content>
+        <div class="d-ta-center d-ba d-bc-orange-400 d-bgc-orange-100 d-bas-dotted d-baw2 d-p8 d-code-small">(content slot)</div>
+      </template>
+    </dt-collapsible>
   </div>
-  <div class="d-notice__content d-stack4">
-    <p class="d-notice__message">
-
-Currently documented in [Dialtone Vue](https://vue.dialpad.design/?path=/docs/components-collapsible--default).
-    </p>
-  </div>
-</aside>
+</code-well-header>
