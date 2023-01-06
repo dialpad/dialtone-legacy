@@ -27,6 +27,12 @@ To build Dialtone locally, visit our [installation instructions](https://dialpad
 
 If you're interested in contributing to Dialtone, please read our [contributing docs](https://github.com/dialpad/dialtone/blob/master/.github/CONTRIBUTING.md) **before submitting a pull request**.
 
-## Questions?
+## Requesting features / reporting bugs
 
-If you have a question, please feel free to [open an issue](https://github.com/dialpad/dialtone/issues/new).
+Requesting a feature or reporting a bug? Please do so at the below links:
+
+[Request Feature](https://dialpad.atlassian.net/secure/CreateIssue.jspa?issuetype=10901&pid=12428)
+[Report Bug](https://dialpad.atlassian.net/secure/CreateIssue.jspa?issuetype=10878&pid=12428)
+
+
+Please also feel free to contact us via the [#dialtone slack channel](https://dialpad.slack.com/messages/dialtone/) with any questions
