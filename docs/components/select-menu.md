@@ -56,7 +56,7 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 A select is normally paired with a label, but there are times when it can be used without a label. Don't rely on the placeholder text as a label.
 
 <code-well-header bgclass="d-bgc-white">
-  <div class="d-stack24 d-w100p">
+  <div class="d-stack16 d-w100p">
     <div>
       <div class="d-label">
         <label for="Dialtone--SelectExample1">Default</label>
@@ -149,7 +149,7 @@ A select is normally paired with a label, but there are times when it can be use
 Provides feedback to the user based on their interaction, or lack thereof, with a select.
 
 <code-well-header bgclass="d-bgc-white">
-  <div class="d-stack24 d-w100p">
+  <div class="d-stack16 d-w100p">
     <div>
       <div class="d-label">
         <label for="Dialtone--SelectExample4">Label</label>
@@ -230,7 +230,7 @@ Provides feedback to the user based on their interaction, or lack thereof, with 
 We offer different sizes for instances in which the interface requires a smaller or larger select. In general, though, use the base (medium) size select as much as possible, especially in forms.
 
 <code-well-header bgclass="d-bgc-white">
-  <div class="d-stack24 d-w100p">
+  <div class="d-stack16 d-w100p">
     <div>
       <div class="d-label d-label--xs">
         <label for="Dialtone--SelectExample7">Label</label>
