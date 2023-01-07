@@ -3,6 +3,10 @@ title: About Dialtone
 desc: Dialtone is Dialpad's Design System that unites product teams around a common visual language.
 ---
 
+## Release notes
+
+<dialtone-changelog />
+
 ## Components
 
 Components are reusable building blocks that support a specific interaction or UI need. These components can be reused across Dialpad products and projects
@@ -46,3 +50,7 @@ for reporting any issue.
 
 - [#dialtone](https://dialpad.slack.com/messages/dialtone/) Slack channel
 - [dialtone@dialpad.com](mailto:dialtone@dialpad.com)
+
+<script setup>
+  import DialtoneChangelog from '@views/DialtoneChangelog.vue';
+</script>
