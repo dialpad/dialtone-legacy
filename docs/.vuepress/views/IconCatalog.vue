@@ -16,11 +16,11 @@
         </template>
         <template #rightIcon>
           <dt-button
+            id="search-input-button-close"
             kind="muted"
             importance="clear"
             circle
             aria-label="Clear filters"
-            id="search-input-button-close"
             @click="resetSearch"
           >
             <template #icon>
@@ -69,14 +69,21 @@
       v-text="category"
     />
     <div class="d-gl-docsite-icons">
-      <base-icon
+      <icon-popover
         v-for="(keywords, icon, index) in icons"
+        :id="`${category}-${index}`"
         :key="`${category}-${index}`"
-        :file-name="icon"
+        :icon-name="icon"
         :keywords="keywords"
-        :selected="selectedIcon === `${category}-${index}`"
-        @select-icon="selectIcon(`${category}-${index}`)"
-      />
+        :category="category"
+      >
+        <template #default="{ attrs }">
+          <base-icon
+            v-bind="attrs"
+            :file-name="icon"
+          />
+        </template>
+      </icon-popover>
     </div>
   </div>
   <div
@@ -94,8 +101,8 @@
 import BaseIcon from '@baseComponents/BaseV7Icon.vue';
 import { categories } from '@dialpad/dialtone-icons/dist/icons.json';
 import { computed, ref } from 'vue';
+import IconPopover from '../baseComponents/IconPopover.vue';
 
-const selectedIcon = ref(null);
 const selectedCategory = ref('all');
 const search = ref(null);
 const searchRef = ref(null);
@@ -151,10 +158,6 @@ const filteredIconList = computed(() => {
 
 const isCategoryInResults = (category) => {
   return Object.keys(iconsList.value).includes(category);
-};
-
-const selectIcon = (index) => {
-  selectedIcon.value = index !== selectedIcon.value ? index : null;
 };
 </script>
 
