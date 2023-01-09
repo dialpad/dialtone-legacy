@@ -196,7 +196,7 @@
     </p>
     <a
       class="d-btn d-btn--inverted d-btn--lg d-btn--primary d-mt16"
-      href="https://forms.monday.com/forms/8a9a6ff69d7e9f95caee029c2806e2c1?r=use1"
+      href="https://dialpad.atlassian.net/secure/CreateIssue.jspa?issuetype=10901&pid=12428"
       target="_blank"
       rel="noopener noreferrer"
     >Make a request</a>
