@@ -4,20 +4,64 @@ status: ready
 thumb: true
 desc: Validation messages are used to convey information to the user about the current state of the input element. These messages can have an error, warning or success type.
 storybook_url: https://vue.dialpad.design/?path=/story/components-validation-messages--default
-no_preview: true
 next:
   text: Utilities - Background attachment
   link: /utilities/backgrounds/attachment.html
 ---
 
-<aside class="d-notice d-notice--info d-mt24 d-wmx100p" role="status" aria-hidden="false">
-  <div class="d-notice__icon">
-    <dt-icon name="info"></dt-icon>
-  </div>
-  <div class="d-notice__content d-stack4">
-    <p class="d-notice__message">
+<code-well-header>
+  <dt-validation-messages
+    id="sample--01"
+    :validationMessages='[{"message":"Positive validation message","type":"success"}]'
+  />
+</code-well-header>
 
-Currently documented in [Dialtone Vue](https://vue.dialpad.design/?path=/docs/components-validation-messages--default).
-    </p>
-  </div>
-</aside>
+## Variants
+
+### Success / Positive
+
+<code-well-header>
+  <dt-validation-messages
+    id="sample--02"
+    :validationMessages='[{"message":"Positive validation message","type":"success"}]'
+  />
+</code-well-header>
+
+```vue
+<dt-validation-messages
+  id="sample--02"
+  :validationMessages='[{"message":"Positive validation message","type":"success"}]'
+/>
+```
+
+### Critical / Error
+
+<code-well-header>
+  <dt-validation-messages
+    id="sample--03"
+    :validationMessages='[{"message":"Critical validation message","type":"error"}]'
+  />
+</code-well-header>
+
+```vue
+<dt-validation-messages
+  id="sample--03"
+  :validationMessages='[{"message":"Critical validation message","type":"error"}]'
+/>
+```
+
+### Warning
+
+<code-well-header>
+  <dt-validation-messages
+    id="sample--04"
+    :validationMessages='[{"message":"Critical validation message","type":"warning"}]'
+  />
+</code-well-header>
+
+```vue
+<dt-validation-messages
+  id="sample--04"
+  :validationMessages='[{"message":"Critical validation message","type":"warning"}]'
+/>
+```

@@ -7,65 +7,65 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-button-group--
 ---
 
 <code-well-header class="d-d-block">
-  <dt-button-group alignment="start">
-    <dt-button class="d-mr8" importance="primary">Confirm</dt-button>
+  <dt-button-group alignment="start" class="d-gg8">
+    <dt-button importance="primary">Confirm</dt-button>
     <dt-button importance="outlined">Cancel</dt-button>
   </dt-button-group>
 </code-well-header>
 
 ```vue
-<dt-button-group alignment="start">
-  <dt-button class="d-mr8" importance="primary">Confirm</dt-button>
+<dt-button-group alignment="start" class="d-gg8">
+  <dt-button importance="primary">Confirm</dt-button>
   <dt-button importance="outlined">Cancel</dt-button>
 </dt-button-group>
 ```
 
 ## Variants
 
-### Alignment: start
+### Start
 
 <code-well-header class="d-d-block">
-  <dt-button-group alignment="start">
-    <dt-button class="d-mr8" importance="primary">Confirm</dt-button>
+  <dt-button-group alignment="start" class="d-gg8">
+    <dt-button importance="primary">Confirm</dt-button>
     <dt-button importance="outlined">Cancel</dt-button>
   </dt-button-group>
 </code-well-header>
 
 ```vue
-<dt-button-group alignment="start">
-  <dt-button class="d-mr8" importance="primary">Confirm</dt-button>
+<dt-button-group alignment="start" class="d-gg8">
+  <dt-button importance="primary">Confirm</dt-button>
   <dt-button importance="outlined">Cancel</dt-button>
 </dt-button-group>
 ```
 
-### Alignment: end
+### End
 
 <code-well-header class="d-d-block">
-  <dt-button-group alignment="end">
-    <dt-button class="d-mr8" importance="primary">Confirm</dt-button>
+  <dt-button-group alignment="end" class="d-gg8">
+    <dt-button importance="primary">Confirm</dt-button>
     <dt-button importance="outlined">Cancel</dt-button>
   </dt-button-group>
 </code-well-header>
 
 ```vue
-<dt-button-group alignment="end">
-  <dt-button class="d-mr8" importance="primary">Confirm</dt-button>
+<dt-button-group alignment="end" class="d-gg8">
+  <dt-button importance="primary">Confirm</dt-button>
   <dt-button importance="outlined">Cancel</dt-button>
 </dt-button-group>
 ```
 
-### Alignment: space-between
+### Space-between
 
 <code-well-header class="d-d-block">
-  <dt-button-group alignment="space-between">
-    <dt-button class="d-mr8" importance="primary">Confirm</dt-button>
+  <dt-button-group alignment="space-between" class="d-gg8">
+    <dt-button importance="primary">Confirm</dt-button>
     <dt-button importance="outlined">Cancel</dt-button>
   </dt-button-group>
 </code-well-header>
 
 ```vue
-<dt-button-group alignment="space-between">
-  <dt-button class="d-mr8" importance="primary">Confirm</dt-button>
+<dt-button-group alignment="space-between" class="d-gg8">
+  <dt-button importance="primary">Confirm</dt-button>
   <dt-button importance="outlined">Cancel</dt-button>
 </dt-button-group>
 ```
