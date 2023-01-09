@@ -70,7 +70,7 @@ Button labels should be clear and predictable so users have confidence in their 
   - Add `role="button"` to the `<a>` to allow screenreaders to announce it as a `button`.
   - Attach an event handler to detect Spacebar keypress. Buttons react to both Enter and Spacebar, but Link reacts only to Enter.
 
-## Variants and examples
+## Variants
 
 Dialtone provides four core button **types**, each with three levels of **importance**.
 
@@ -104,13 +104,13 @@ Dialtone provides four core button **types**, each with three levels of **import
         <a class="d-link d-fs-100 d-fw-medium d-d-block d-mb4 d-tt-uppercase" href="#base"><strong>Base</strong></a>
         <div class="d-fw-normal d-lh-200">Our default button colors.</div>
       </th>
-      <td class="d-bgc-black-100 d-ta-center">
+      <td class="d-ta-center">
         <button class="d-btn" type="button"> <span class="d-btn__label">Place call</span> </button>
       </td>
-      <td class="d-bgc-black-100 d-ta-center">
+      <td class="d-ta-center">
         <button class="d-btn d-btn--outlined" type="button"> <span class="d-btn__label">Place call</span> </button>
       </td>
-      <td class="d-bgc-black-100 d-ta-center">
+      <td class="d-ta-center">
         <button class="d-btn d-btn--primary" type="button"> <span class="d-btn__label">Place call</span> </button>
       </td>
     </tr>
@@ -119,13 +119,13 @@ Dialtone provides four core button **types**, each with three levels of **import
         <a class="d-link d-fs-100 d-fw-medium d-d-block d-mb4 d-tt-uppercase" href="#danger"><strong>Danger</strong></a>
         <div class="d-fw-normal d-lh-200">Potentially destructive or otherwise critical actions.</div>
       </th>
-      <td class="d-bgc-black-100 d-ta-center">
+      <td class="d-ta-center">
         <button class="d-btn d-btn--danger" type="button"> <span class="d-btn__label">Place call</span> </button>
       </td>
-      <td class="d-bgc-black-100 d-ta-center">
+      <td class="d-ta-center">
         <button class="d-btn d-btn--outlined d-btn--danger" type="button"> <span class="d-btn__label">Place call</span> </button>
       </td>
-      <td class="d-bgc-black-100 d-ta-center">
+      <td class="d-ta-center">
         <button class="d-btn d-btn--primary d-btn--danger" type="button"> <span class="d-btn__label">Place call</span> </button>
       </td>
     </tr>
@@ -134,13 +134,13 @@ Dialtone provides four core button **types**, each with three levels of **import
         <a class="d-link d-fs-100 d-fw-medium d-d-block d-mb4 d-tt-uppercase" href="#inverted"><strong>Inverted</strong></a>
         <div class="d-fw-normal d-lh-200">Use for placement on non-white, dark backgrounds.</div>
       </th>
-      <td class="d-bgc-black-500 d-ta-center">
+      <td class="d-bgc-strong d-ta-center">
         <button class="d-btn d-btn--inverted" type="button"> <span class="d-btn__label">Place call</span> </button>
       </td>
-      <td class="d-bgc-black-500 d-ta-center">
+      <td class="d-bgc-strong d-ta-center">
         <button class="d-btn d-btn--outlined d-btn--inverted" type="button"> <span class="d-btn__label">Place call</span> </button>
       </td>
-      <td class="d-bgc-black-500 d-ta-center">
+      <td class="d-bgc-strong d-ta-center">
         <button class="d-btn d-btn--primary d-btn--inverted" type="button"> <span class="d-btn__label">Place call</span> </button>
       </td>
     </tr>
@@ -149,13 +149,13 @@ Dialtone provides four core button **types**, each with three levels of **import
         <a class="d-link d-fs-100 d-fw-medium d-d-block d-mb4 d-tt-uppercase" href="#muted"><strong>Muted</strong></a>
         <div class="d-fw-normal">For non-primary actions and contexts where base style may not work.</div>
       </th>
-      <td class="d-bgc-black-100 d-ta-center">
+      <td class="d-ta-center">
         <button class="d-btn d-btn--muted" type="button"> <span class="d-btn__label">Place call</span> </button>
       </td>
-      <td class="d-bgc-black-100 d-ta-center">
+      <td class="d-ta-center">
         <button class="d-btn d-btn--muted d-btn--outlined" type="button"> <span class="d-btn__label">Place call</span> </button>
       </td>
-      <td class="d-bgc-black-100 d-ta-center d-lh-200">
+      <td class="d-ta-center d-lh-200">
         <abbr class="d-fc-black-400 d-td-none d-fs-100" title="Not applicable">N/A</abbr>
       </td>
     </tr>
@@ -167,7 +167,7 @@ Dialtone provides four core button **types**, each with three levels of **import
 The base button should be the go-to button for most of your needs. When in doubt, use this style. To help provide clarity to users, it is generally recommended to use only one primary button style within a section or page.
 
 <code-well-header>
-  <div class="d-stack8">
+  <div class="d-d-flex d-flow8">
       <div>
           <button class="d-btn d-btn--primary" type="button"><span class="d-btn__label">Place call</span></button>
       </div>
@@ -191,7 +191,7 @@ The base button should be the go-to button for most of your needs. When in doubt
 The danger button style is used to communicate critical or destructive actions such as deleting content, accounts, or canceling services.
 
 <code-well-header>
-  <div class="d-stack8">
+  <div class="d-d-flex d-flow8">
     <div>
       <button class="d-btn d-btn--danger d-btn--primary" type="button"><span class="d-btn__label">Place call</span></button>
     </div>
@@ -214,8 +214,8 @@ The danger button style is used to communicate critical or destructive actions s
 
 The inverted button style is used to visually separate buttons set on darker backgrounds.
 
-<code-well-header bgclass="d-bgc-black-700">
-  <div class="d-stack8">
+<code-well-header bgclass="d-bgc-contrast">
+  <div class="d-d-flex d-flow8">
     <div>
       <button class="d-btn d-btn--inverted d-btn--primary" type="button"><span class="d-btn__label">Place call</span></button>
     </div>
@@ -239,7 +239,7 @@ The inverted button style is used to visually separate buttons set on darker bac
 The muted button style is used to communicate non-primary actions for contexts in which the base style may not work (e.g. colored backgrounds, validation components, etc). This style’s use should be rare. When in doubt, use the [base button style](#base).
 
 <code-well-header>
-  <div class="d-stack8">
+  <div class="d-d-flex d-flow8">
     <div>
       <button class="d-btn d-btn--muted" type="button"><span class="d-btn__label">Place call</span></button>
     </div>
@@ -260,7 +260,7 @@ Buttons can be disabled using either the `disabled` attribute or a Dialtone clas
 All button styles and variations appear the same when disabled.
 
 <code-well-header>
-  <div class="d-stack8">
+  <div class="d-d-flex d-flow8">
     <div>
       <button class="d-btn" type="button" disabled><span class="d-btn__label">Place call</span></button>
     </div>
@@ -285,7 +285,7 @@ Buttons can be set to active state using the `.d-btn--active` Dialtone class.
 Different button styles and variations appear different when active.
 
 <code-well-header>
-  <div class="d-stack8">
+  <div class="d-d-flex d-flow8">
     <div>
       <button class="d-btn d-btn--active" type="button">
         <span class="d-btn__label">Place call</span>
@@ -326,8 +326,10 @@ Different button styles and variations appear different when active.
 Buttons can be styled as a [Link](link.md) in situations for which you need the appearance of a link but behavior of a button. Using the `button` element provides a better accessibility experience.
 
 <code-well-header>
-  <button type="button" class="d-link">Place call</button>
-  <button type="button" class="d-link" disabled>Place call</button>
+  <div class="d-d-flex d-flow8">
+    <button type="button" class="d-link">Place call</button>
+    <button type="button" class="d-link" disabled>Place call</button>
+  </div>
 </code-well-header>
 
 ```html
@@ -335,181 +337,12 @@ Buttons can be styled as a [Link](link.md) in situations for which you need the 
 <button type="button" class="d-link" disabled>...</button>
 ```
 
-### Loading
-
-Loading buttons are useful for communicating a delay between the button interaction and its action taking place. Every button style can accept the loading button class, though we only provide a few possible examples.
-
-<code-well-header>
-  <div class="d-stack8">
-    <div>
-      <button class="d-btn d-btn--loading d-btn--primary" type="button"><span class="d-btn__label">Place call</span></button>
-    </div>
-    <div>
-      <button class="d-btn d-btn--loading d-btn--outlined" type="button"><span class="d-btn__label">Place call</span></button>
-    </div>
-    <div>
-      <button class="d-btn d-btn--danger d-btn--loading" type="button"><span class="d-btn__label">Place call</span></button>
-    </div>
-  </div>
-</code-well-header>
-
-```html
-<button class="d-btn d-btn--loading d-btn--primary" type="button"><span class="d-btn__label">Place call</span></button>
-<button class="d-btn d-btn--loading d-btn--outlined" type="button"><span class="d-btn__label">Place call</span></button>
-<button class="d-btn d-btn--danger d-btn--loading" type="button"><span class="d-btn__label">Place call</span></button>
-```
-
-### Icon only
-
-Sometimes an icon-only, circle button is desired. These buttons are used for toggling actions, navigation, or closing UI elements. Only the following styles accept circle button classes.
-
-<code-well-header>
-  <div class="d-stack8">
-    <div>
-      <button class="d-btn d-btn--circle" type="button"><span class="d-btn__icon"><dt-icon name="phone" size="300" /></span></button>
-    </div>
-    <div>
-      <button class="d-btn d-btn--circle d-btn--outlined" type="button"><span class="d-btn__icon"><dt-icon name="phone" size="300" /></span></button>
-    </div>
-    <div>
-      <button class="d-btn d-btn--circle d-btn--danger" type="button"><span class="d-btn__icon"><dt-icon name="phone" size="300" /></span></button>
-    </div>
-    <div>
-      <button class="d-btn d-btn--circle d-btn--danger d-btn--outlined" type="button"><span class="d-btn__icon"><dt-icon name="phone" size="300" /></span></button>
-    </div>
-    <div>
-      <button class="d-btn d-btn--circle d-btn--danger d-btn--primary" type="button"><span class="d-btn__icon"><dt-icon name="phone" size="300" /></span></button>
-    </div>
-  </div>
-</code-well-header>
-
-```html
-<button class="d-btn d-btn--circle" type="button">...</button>
-<button class="d-btn d-btn--circle d-btn--outlined" type="button">...</button>
-<button class="d-btn d-btn--circle d-btn--danger" type="button">...</button>
-<button class="d-btn d-btn--circle d-btn--danger d-btn--outlined" type="button">...</button>
-<button class="d-btn d-btn--circle d-btn--danger d-btn--primary" type="button">...</button>
-```
-
-<code-well-header bgclass="d-bgc-black-800">
-  <div class="d-stack8">
-    <div>
-      <button class="d-btn d-btn--circle d-btn--inverted" type="button"><span class="d-btn__icon"><dt-icon name="phone" size="300" /></span></button>
-    </div>
-    <div>
-      <button class="d-btn d-btn--circle d-btn--inverted d-btn--outlined" type="button"><span class="d-btn__icon"><dt-icon name="phone" size="300" /></span></button>
-    </div>
-    <div>
-      <button class="d-btn d-btn--circle d-btn--inverted d-btn--primary" type="button"><span class="d-btn__icon"><dt-icon name="phone" size="300" /></span></button>
-    </div>
-  </div>
-</code-well-header>
-
-```html
-<button class="d-btn d-btn--circle btn--inverted" type="button">...</button>
-<button class="d-btn d-btn--circle btn--inverted d-btn--outlined" type="button">...</button>
-<button class="d-btn d-btn--circle btn--inverted d-btn--primary" type="button">...</button>
-```
-
-If you want to use the rectangular button, use the icon only styles.
-
-<code-well-header>
-  <div class="d-stack8">
-    <div>
-      <button class="d-btn d-btn--icon-only" type="button"><span class="d-btn__icon"><dt-icon name="phone" size="300" /></span></button>
-    </div>
-    <div>
-      <button class="d-btn d-btn--icon-only d-btn--outlined" type="button"><span class="d-btn__icon"><dt-icon name="phone" size="300" /></span></button>
-    </div>
-  </div>
-</code-well-header>
-
-```html
-<button class="d-btn d-btn--icon-only" type="button">...</button>
-<button class="d-btn d-btn--icon-only d-btn--outlined" type="button">...</button>
-```
-
-### With Icons
-
-Button labels can include an icon next to the text. Every button style can accept icon classes, though we only provide a few possible examples.
-
-<code-well-header>
-  <div class="d-stack8">
-    <div>
-      <button class="d-btn d-btn--outlined" type="button">
-        <span class="d-btn__icon d-btn__icon--left"><dt-icon name="phone" size="300" /></span>
-        <span class="d-btn__label">Label</span>
-      </button>
-    </div>
-    <div>
-      <button class="d-btn d-btn--outlined" type="button">
-        <span class="d-btn__icon d-btn__icon--right"><dt-icon name="phone" size="300" /></span>
-        <span class="d-btn__label">Label</span>
-      </button>
-    </div>
-    <div>
-      <button class="d-btn d-btn--outlined d-btn--vertical" type="button">
-        <span class="d-btn__icon d-btn__icon--top"><dt-icon name="phone" size="300" /></span>
-        <span class="d-btn__label">Label</span>
-      </button>
-    </div>
-  </div>
-</code-well-header>
-
-```html
-<button class="d-btn d-btn--outlined" type="button">
-  <span class="d-btn__icon d-btn__icon--left">...</span>
-  <span class="d-btn__label">...</span>
-</button>
-<button class="d-btn d-btn--outlined" type="button">
-  <span class="d-btn__icon d-btn__icon--right">...</span>
-  <span class="d-btn__label">...</span>
-</button>
-<button class="d-btn d-btn--vertical d-btn--outlined" type="button">
-  <span class="d-btn__icon d-btn__icon--top">...</span>
-  <span class="d-btn__label">...</span>
-</button>
-```
-
-### Branded
-
-We provide the following branded buttons for log-in and sign-up workflows.
-
-<code-well-header>
-  <div class="d-stack8">
-    <div>
-      <button class="d-btn d-btn--brand d-btn--google d-w100p" type="button"><span class="d-btn__icon"><icon-google-glyph /></span><span class="d-btn__label">Log in with Google</span></button>
-    </div>
-    <div>
-      <button class="d-btn d-btn--brand d-btn--o365 d-w100p" type="button"><span class="d-btn__icon"><icon-office-365 /></span><span class="d-btn__label">Log in with Office365</span></button>
-    </div>
-    <div>
-      <button class="d-btn d-btn--brand d-btn--linkedin d-w100p" type="button"><span class="d-btn__icon"><icon-linkedin /></span><span class="d-btn__label">Log in with LinkedIn</span></button>
-    </div>
-  </div>
-</code-well-header>
-
-```html
-<button class="d-btn d-btn--brand d-btn--google" type="button">
-  <span class="d-btn__icon"><icon-google-glyph /></span>
-  <span class="d-btn__label">Log in with Google</span>
-</button>
-<button class="d-btn d-btn--brand d-btn--o365" type="button">
-  <span class="d-btn__icon"><icon-google-glyph /></span>
-  <span class="d-btn__label">Log in with Office365</span>
-</button>
-<button class="d-btn d-btn--brand d-btn--linkedin" type="button">
-  <span class="d-btn__icon"><icon-google-glyph /></span>
-  <span class="d-btn__label">Log in with LinkedIn</span>
-</button>
-```
-
-### Sizes
+## Sizes
 
 The base button font size is 16px and should be used in most cases. Every button style can accept size classes, though we only provide a few possible examples.
 
 <code-well-header>
-  <div class="d-stack8">
+  <div class="d-d-flex d-flow8 d-ai-center">
     <div>
       <button class="d-btn d-btn--primary d-btn--xs" type="button"><span class="d-btn__label">Place call</span></button>
     </div>
@@ -534,6 +367,151 @@ The base button font size is 16px and should be used in most cases. Every button
 <button class="d-btn d-btn--primary" type="button"><span class="d-btn__label">...</span></button>
 <button class="d-btn d-btn--primary d-btn--lg" type="button"><span class="d-btn__label">...</span></button>
 <button class="d-btn d-btn--primary d-btn--xl" type="button"><span class="d-btn__label">...</span></button>
+```
+
+### Loading
+
+Loading buttons are useful for communicating a delay between the button interaction and its action taking place. Every button style can accept the loading button class, though we only provide a few possible examples.
+
+<code-well-header>
+  <div class="d-d-flex d-flow8">
+    <div>
+      <button class="d-btn d-btn--loading d-btn--primary" type="button"><span class="d-btn__label">Place call</span></button>
+    </div>
+    <div>
+      <button class="d-btn d-btn--loading d-btn--outlined" type="button"><span class="d-btn__label">Place call</span></button>
+    </div>
+    <div>
+      <button class="d-btn d-btn--danger d-btn--loading" type="button"><span class="d-btn__label">Place call</span></button>
+    </div>
+  </div>
+</code-well-header>
+
+```html
+<button class="d-btn d-btn--loading d-btn--primary" type="button"><span class="d-btn__label">Place call</span></button>
+<button class="d-btn d-btn--loading d-btn--outlined" type="button"><span class="d-btn__label">Place call</span></button>
+<button class="d-btn d-btn--danger d-btn--loading" type="button"><span class="d-btn__label">Place call</span></button>
+```
+
+## Icon support
+
+### Icon and label
+
+Button labels can include an icon next to the text. Every button style can accept icon classes, though we only provide a few possible examples.
+
+<code-well-header>
+  <div class="d-d-flex d-flow8">
+    <div>
+      <button class="d-btn d-btn--outlined" type="button">
+        <span class="d-btn__icon d-btn__icon--left"><dt-icon name="phone" size="300" /></span>
+        <span class="d-btn__label">Label</span>
+      </button>
+    </div>
+    <div>
+      <button class="d-btn d-btn--outlined d-btn--vertical" type="button">
+        <span class="d-btn__icon d-btn__icon--top"><dt-icon name="phone" size="300" /></span>
+        <span class="d-btn__label">Label</span>
+      </button>
+    </div>
+    <div>
+      <button class="d-btn d-btn--outlined" type="button">
+        <span class="d-btn__icon d-btn__icon--right"><dt-icon name="phone" size="300" /></span>
+        <span class="d-btn__label">Label</span>
+      </button>
+    </div>
+  </div>
+</code-well-header>
+
+```html
+<button class="d-btn d-btn--outlined" type="button">
+  <span class="d-btn__icon d-btn__icon--left">...</span>
+  <span class="d-btn__label">...</span>
+</button>
+<button class="d-btn d-btn--vertical d-btn--outlined" type="button">
+  <span class="d-btn__icon d-btn__icon--top">...</span>
+  <span class="d-btn__label">...</span>
+</button>
+<button class="d-btn d-btn--outlined" type="button">
+  <span class="d-btn__icon d-btn__icon--right">...</span>
+  <span class="d-btn__label">...</span>
+</button>
+```
+
+### Icon only
+
+Sometimes an icon-only, circle button is desired. These buttons are used for toggling actions, navigation, or closing UI elements. Only the following styles accept circle button classes.
+
+<code-well-header>
+  <div class="d-d-flex d-flow8">
+    <button class="d-btn d-btn--circle" type="button"><span class="d-btn__icon"><dt-icon name="phone" size="300" /></span></button>
+    <button class="d-btn d-btn--circle d-btn--outlined" type="button"><span class="d-btn__icon"><dt-icon name="phone" size="300" /></span></button>
+    <button class="d-btn d-btn--circle d-btn--danger" type="button"><span class="d-btn__icon"><dt-icon name="phone" size="300" /></span></button>
+    <button class="d-btn d-btn--circle d-btn--danger d-btn--outlined" type="button"><span class="d-btn__icon"><dt-icon name="phone" size="300" /></span></button>
+    <button class="d-btn d-btn--circle d-btn--danger d-btn--primary" type="button"><span class="d-btn__icon"><dt-icon name="phone" size="300" /></span></button>
+  </div>
+</code-well-header>
+
+```html
+<button class="d-btn d-btn--circle" type="button">...</button>
+<button class="d-btn d-btn--circle d-btn--outlined" type="button">...</button>
+<button class="d-btn d-btn--circle d-btn--danger" type="button">...</button>
+<button class="d-btn d-btn--circle d-btn--danger d-btn--outlined" type="button">...</button>
+<button class="d-btn d-btn--circle d-btn--danger d-btn--primary" type="button">...</button>
+```
+
+<code-well-header bgclass="d-bgc-contrast">
+  <div class="d-d-flex d-flow8">
+    <button class="d-btn d-btn--circle d-btn--inverted" type="button"><span class="d-btn__icon"><dt-icon name="phone" size="300" /></span></button>
+    <button class="d-btn d-btn--circle d-btn--inverted d-btn--outlined" type="button"><span class="d-btn__icon"><dt-icon name="phone" size="300" /></span></button>
+    <button class="d-btn d-btn--circle d-btn--inverted d-btn--primary" type="button"><span class="d-btn__icon"><dt-icon name="phone" size="300" /></span></button>
+  </div>
+</code-well-header>
+
+```html
+<button class="d-btn d-btn--circle btn--inverted" type="button">...</button>
+<button class="d-btn d-btn--circle btn--inverted d-btn--outlined" type="button">...</button>
+<button class="d-btn d-btn--circle btn--inverted d-btn--primary" type="button">...</button>
+```
+
+If you want to use the rectangular button, use the icon only styles.
+
+<code-well-header>
+  <div class="d-d-flex d-flow8">
+    <button class="d-btn d-btn--icon-only" type="button"><span class="d-btn__icon"><dt-icon name="phone" size="300" /></span></button>
+    <button class="d-btn d-btn--icon-only d-btn--outlined" type="button"><span class="d-btn__icon"><dt-icon name="phone" size="300" /></span></button>
+  </div>
+</code-well-header>
+
+```html
+<button class="d-btn d-btn--icon-only" type="button">...</button>
+<button class="d-btn d-btn--icon-only d-btn--outlined" type="button">...</button>
+```
+
+## Branded
+
+We provide the following branded buttons for log-in and sign-up workflows.
+
+<code-well-header>
+  <div class="d-stack8">
+    <button class="d-btn d-btn--brand d-btn--google d-w100p" type="button"><span class="d-btn__icon"><icon-google-glyph /></span><span class="d-btn__label">Log in with Google</span></button>
+    <button class="d-btn d-btn--brand d-btn--o365 d-w100p" type="button"><span class="d-btn__icon"><icon-office-365 /></span><span class="d-btn__label">Log in with Office365</span></button>
+    <button class="d-btn d-btn--brand d-btn--linkedin d-w100p" type="button"><span class="d-btn__icon"><icon-linkedin /></span><span class="d-btn__label">Log in with LinkedIn</span></button>
+  </div>
+</code-well-header>
+
+```html
+<button class="d-btn d-btn--brand d-btn--google" type="button">
+  <span class="d-btn__icon"><icon-google-glyph /></span>
+  <span class="d-btn__label">Log in with Google</span>
+</button>
+<button class="d-btn d-btn--brand d-btn--o365" type="button">
+  <span class="d-btn__icon"><icon-google-glyph /></span>
+  <span class="d-btn__label">Log in with Office365</span>
+</button>
+<button class="d-btn d-btn--brand d-btn--linkedin" type="button">
+  <span class="d-btn__icon"><icon-google-glyph /></span>
+  <span class="d-btn__label">Log in with LinkedIn</span>
+</button>
 ```
 
 ## Classes

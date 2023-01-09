@@ -7,7 +7,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-input--default
 figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Components-7?node-id=8923%3A21866&viewport=-983%2C83%2C0.16&t=xHutRjwo1o5zMTgT-11
 ---
 
-<code-well-header bgclass="d-bgc-white">
+<code-well-header bgclass="d-bgc-primary">
   <div class="d-w100p">
     <label class="d-label" for="Dialtone--InputExample1a">Label</label>
     <input class="d-input" id="Dialtone--InputExample1a" type="text" placeholder="Placeholder" />
@@ -46,7 +46,7 @@ This component combines both the `input` and `textarea` elements as options with
 
 An input is normally paired with a label, but there are times when it can be used without a label.  Placeholder text should primarily be used as a content prompt and only provided when needed.
 
-<code-well-header bgclass="d-bgc-white">
+<code-well-header bgclass="d-bgc-primary">
   <div class="d-stack24 d-w100p">
     <div>
       <label class="d-label" for="Dialtone--InputExample1a">Label</label>
@@ -78,7 +78,7 @@ An input is normally paired with a label, but there are times when it can be use
 </div>
 ```
 
-<code-well-header bgclass="d-bgc-white">
+<code-well-header bgclass="d-bgc-primary">
   <div class="d-stack24 d-w100p">
     <div>
       <label class="d-label" for="Dialtone--TextareaExample1a">Label</label>
@@ -112,7 +112,7 @@ An input is normally paired with a label, but there are times when it can be use
 
 ### With Description Text
 
-<code-well-header bgclass="d-bgc-white">
+<code-well-header bgclass="d-bgc-primary">
   <div class="d-w100p">
     <div>
       <label class="d-label" for="Dialtone--InputExample2">Label</label>
@@ -128,7 +128,7 @@ An input is normally paired with a label, but there are times when it can be use
 <input class="d-input" id="Dialtone--InputExample2" type="text" placeholder="..." />
 ```
 
-<code-well-header bgclass="d-bgc-white">
+<code-well-header bgclass="d-bgc-primary">
   <div class="d-w100p">
     <div>
       <label class="d-label" for="Dialtone--TextareaExample2">Label</label>
@@ -148,7 +148,7 @@ An input is normally paired with a label, but there are times when it can be use
 
 Provides feedback to the user based on their interaction, or lack thereof, with an input.
 
-<code-well-header bgclass="d-bgc-white">
+<code-well-header bgclass="d-bgc-primary">
   <div class="d-stack24 d-w100p">
     <div>
       <label class="d-label" for="Dialtone--InputExample3">Label</label>
@@ -186,7 +186,7 @@ Provides feedback to the user based on their interaction, or lack thereof, with 
 </div>
 ```
 
-<code-well-header bgclass="d-bgc-white">
+<code-well-header bgclass="d-bgc-primary">
   <div class="d-stack24 d-w100p">
     <div>
       <label class="d-label" for="Dialtone--TextareaExample3">Label</label>
@@ -226,7 +226,7 @@ Provides feedback to the user based on their interaction, or lack thereof, with 
 
 ### With icons
 
-<code-well-header bgclass="d-bgc-white">
+<code-well-header bgclass="d-bgc-primary">
   <div class="d-stack24 d-w100p">
     <div>
       <label class="d-label" for="Dialtone--InputExample--IconLeft">Label</label>
@@ -262,7 +262,7 @@ Provides feedback to the user based on their interaction, or lack thereof, with 
 </div>
 ```
 
-<code-well-header bgclass="d-bgc-white">
+<code-well-header bgclass="d-bgc-primary">
   <div class="d-stack24 d-w100p">
     <div class="d-w100p">
       <label class="d-label" for="Dialtone--InputExample--IconLeft">Label</label>
@@ -288,7 +288,7 @@ Provides feedback to the user based on their interaction, or lack thereof, with 
 
 We offer different sizes for instances in which the interface requires a smaller or larger input. In general, though, use the base (medium) size input as much as possible, especially in forms.
 
-<code-well-header bgclass="d-bgc-white">
+<code-well-header bgclass="d-bgc-primary">
   <div class="d-stack24 d-w100p">
     <div>
       <label class="d-label" for="Dialtone--InputExample--ExtraSmall">Label</label>
@@ -336,7 +336,7 @@ We offer different sizes for instances in which the interface requires a smaller
 </div>
 ```
 
-<code-well-header bgclass="d-bgc-white">
+<code-well-header bgclass="d-bgc-primary">
   <div class="d-stack24 d-w100p">
     <div>
       <label class="d-label" for="Dialtone--InputExample--ExtraSmall">Label</label>
@@ -388,7 +388,7 @@ We offer different sizes for instances in which the interface requires a smaller
 
 You may use different icon sizes in different sized inputs
 
-<code-well-header bgclass="d-bgc-white">
+<code-well-header bgclass="d-bgc-primary">
   <div class="d-stack24 d-w100p">
     <div>
       <div>

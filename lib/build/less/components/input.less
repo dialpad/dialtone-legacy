@@ -29,22 +29,16 @@
 .d-input__wrapper {
     //  Component CSS Vars
     //  ------------------------------------------------------------------------
-    --input-color-border-focus: var(--purple-400);
-    --input-color-border: hsla(var(--black-900-hsl) ~' / ' 9%);
-    --input-color-background: hsla(var(--black-900-hsl) ~' / ' 3%);
-    --input-color-background-disabled: hsla(var(--black-900-hsl) ~' / ' 12%);
+    --input-color-border: hsla(var(--black-900-hsl) / 0.09);
+    --input-color-background: hsla(var(--black-900-hsl) / 0.03);
+    --input-color-background-disabled: hsla(var(--black-900-hsl) / 0.12);
+    --input-color-text: var(--fc-secondary);
     --input-border-width: calc(var(--size-100) + calc(var(--size-100) / 2)); // 1.5
     --input-border-radius: var(--size-400);
     --input-padding-y: calc(var(--space-400) - var(--input-border-width));
     --input-padding-x: calc((var(--space-500) - var(--space-300)) - var(--input-border-width));
-    --input-color-text: var(--fc-secondary);
     --input-font-size: var(--fs-200);
     --input-line-height: var(--lh-200);
-
-    .bg-test & {
-        --input-color-border: var(--black-300);
-        --input-color-background: var(--black-100);
-    }
 
     position: relative;
     display: inline-flex;
@@ -65,7 +59,7 @@
     box-shadow: none;
     transition-timing-function: var(--ttf-in-out);
     transition-duration: 100ms;
-    transition-property: border, box-shadow, background-color;
+    transition-property: box-shadow, background-color;
     appearance: none;
 
     //  --  Placeholder copy
@@ -76,13 +70,13 @@
     &::-ms-clear {
         display: none;
     }
-    //  --  FOCUS
+    //  --  FOCUS STATE
     &:focus,
     &:focus-within {
-        --input-color-border: var(--input-color-border-focus);
+        --input-color-background: hsla(var(--black-900-hsl) / 0.01);
+        --input-color-border: var(--color-focus-ring) !important;
 
-        outline: 0;
-        box-shadow: var(--bs-focus-ring) !important;
+        box-shadow: 0 0 0 var(--size-100) var(--color-focus-ring) inset;
     }
     //  --  DISABLED / READ-ONLY
     &[disabled],
@@ -217,34 +211,16 @@
 .d-input--warning,
 .d-textarea--warning {
     --input-color-border: var(--gold-400) !important;
-    --input-color-border-focus: var(--warning-color);
-
-    &:focus,
-    &:focus-within {
-        box-shadow: var(--bs-focus-ring-warning) !important;
-    }
 }
 
 .d-input--error,
 .d-textarea--error {
-    --input-color-border: var(--error-color) !important;
-    --input-color-border-focus: var(--error-color);
-
-    &:focus,
-    &:focus-within {
-        box-shadow: var(--bs-focus-ring-error) !important;
-    }
+    --input-color-border: var(--red-300) !important;
 }
 
 .d-input--success,
 .d-textarea--success {
-    --input-color-border: var(--success-color) !important;
-    --input-color-border-focus: var(--success-color);
-
-    &:focus,
-    &:focus-within {
-        box-shadow: var(--bs-focus-ring-success) !important;
-    }
+    --input-color-border: var(--green-400) !important;
 }
 
 //  ============================================================================

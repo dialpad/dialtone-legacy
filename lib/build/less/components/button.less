@@ -238,8 +238,6 @@
     --button-color-text: var(--black-800);
     --button-border-radius: var(--br-circle);
 
-    transition-duration: 150ms;
-
     &:hover:not([disabled]) {
         --button-color-text: var(--muted-color-hover);
         --button-color-background: hsla(var(--black-800-hsl) ~' / ' 3%);
@@ -248,12 +246,8 @@
     &:active:not([disabled]),
     &.d-btn--active:not([disabled]),
     &.d-btn--active:active:not([disabled]) {
-        --button-color-text: var(--muted-color-hover);
+        --button-color-text: var(--fc-secondary);
         --button-color-background: hsla(var(--black-800-hsl) ~' / ' 9%);
-    }
-
-    &:focus-visible {
-        box-shadow: var(--bs-focus-ring-circle);
     }
 
     .d-btn__icon {
@@ -323,22 +317,18 @@
 //  $$  MUTED BUTTON
 //  ----------------------------------------------------------------------------
 .d-btn--muted {
-    --button-color-text: var(--muted-color);
+    --button-color-text: var(--fc-secondary);
 
     &:hover:not([disabled]) {
-        --button-color-text: var(--muted-color-hover);
+        --button-color-text: var(--fc-secondary);
         --button-color-background: hsla(var(--black-800-hsl) ~' / ' 5%);
     }
 
     &:active:not([disabled]),
     &.d-btn--active:not([disabled]),
     &.d-btn--active:active:not([disabled]) {
-        --button-color-text: var(--muted-color-hover);
+        --button-color-text: var(--fc-secondary);
         --button-color-background: hsla(var(--black-800-hsl) ~' / ' 10%);
-    }
-
-    &:focus-visible {
-        box-shadow: var(--bs-focus-ring-muted);
     }
 
     &.d-btn--outlined {
@@ -349,31 +339,27 @@
 //  $$  DANGER BUTTON
 //  ----------------------------------------------------------------------------
 .d-btn--danger {
-    --button-color-text: var(--error-color);
+    --button-color-text: var(--red-300);
 
     &:hover:not([disabled]) {
-        --button-color-text: var(--error-color-hover);
-        --button-color-background: hsla(var(--error-color-hsl) ~' / ' 3%);
+        --button-color-text: hsl(var(--red-300-h), var(--red-300-s), calc(var(--red-300-l) - 8%));
+        --button-color-background: hsla(var(--red-300-hsl) / 0.03);
     }
 
     &:active:not([disabled]),
     &.d-btn--active:not([disabled]),
     &.d-btn--active:active:not([disabled]) {
-        --button-color-text: var(--error-color-hover);
-        --button-color-background: hsla(var(--error-color-hsl) ~' / ' 9%);
-    }
-
-    &:focus-visible {
-        box-shadow: var(--bs-focus-ring-error);
+        --button-color-text: hsl(var(--red-300-h), var(--red-300-s), calc(var(--red-300-l) - 8%));
+        --button-color-background: hsla(var(--red-300-hsl) / 0.09);
     }
 
     &.d-btn--outlined {
-        --button-color-border: var(--error-color);
+        --button-color-border: var(--red-300);
     }
 
     &.d-btn--primary {
         --button-color-text: var(--white);
-        --button-color-background: var(--error-color);
+        --button-color-background: var(--red-300);
 
         &:hover:not([disabled]) {
             --button-color-text: var(--white);
@@ -406,10 +392,6 @@
     &.d-btn--active:active:not([disabled]) {
         --button-color-text: var(--white);
         --button-color-background: hsla(var(--white-hsl) ~' / ' 30%);
-    }
-
-    &:focus-visible {
-        box-shadow: var(--bs-focus-ring-inverted);
     }
 
     //  --  OUTLINED

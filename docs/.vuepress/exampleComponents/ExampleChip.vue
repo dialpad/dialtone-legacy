@@ -41,7 +41,7 @@
         <dt-icon
           name="close"
           size="200"
-          />
+        />
       </span>
     </button>
   </span>

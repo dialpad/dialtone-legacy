@@ -63,7 +63,7 @@ Use `d-b{a|t|r|b|l}r-pill` to change the border radius of your element to a pill
 Use `d-b{a|t|r|b|l}r-circle` to change the border radius of your element to a circle shape.
 
 <code-well-header class="d-fl-center d-flg8 d-fw-wrap d-p24 d-bgc-red-100 d-bgo50 d-w100p d-hmn102" custom>
-            <div class="d-fl-center d-p16 d-h264 d-w264 d-bar-circle d-bgc-red-200 d-fs-300 d-fw-bold d-fc-white">.d-bar-circle</div>
+  <div class="d-fl-center d-p16 d-h264 d-w264 d-bar-circle d-bgc-red-200 d-fs-300 d-fw-bold d-fc-primary-inverted">.d-bar-circle</div>
 </code-well-header>
 
 ```html
