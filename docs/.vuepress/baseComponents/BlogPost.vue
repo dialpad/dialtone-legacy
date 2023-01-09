@@ -18,8 +18,10 @@
               @click="copyLink"
             >
               <template #icon>
-                <dt-icon name="copy"
-                  size="300" />
+                <dt-icon
+                  name="copy"
+                  size="300"
+                />
               </template>
             </dt-button>
           </template>
@@ -31,6 +33,7 @@
           <dt-avatar
             size="lg"
             color="purple-200"
+            :seed="author"
             avatar-class="d-mr16"
           >
             {{ initials }}
