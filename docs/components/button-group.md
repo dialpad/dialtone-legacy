@@ -13,7 +13,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-button-group--
   </dt-button-group>
 </code-well-header>
 
-```vue
+```html
 <dt-button-group alignment="start" class="d-gg8">
   <dt-button importance="primary">Confirm</dt-button>
   <dt-button importance="outlined">Cancel</dt-button>
@@ -31,7 +31,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-button-group--
   </dt-button-group>
 </code-well-header>
 
-```vue
+```html
 <dt-button-group alignment="start" class="d-gg8">
   <dt-button importance="primary">Confirm</dt-button>
   <dt-button importance="outlined">Cancel</dt-button>
@@ -47,7 +47,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-button-group--
   </dt-button-group>
 </code-well-header>
 
-```vue
+```html
 <dt-button-group alignment="end" class="d-gg8">
   <dt-button importance="primary">Confirm</dt-button>
   <dt-button importance="outlined">Cancel</dt-button>
@@ -63,7 +63,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-button-group--
   </dt-button-group>
 </code-well-header>
 
-```vue
+```html
 <dt-button-group alignment="space-between" class="d-gg8">
   <dt-button importance="primary">Confirm</dt-button>
   <dt-button importance="outlined">Cancel</dt-button>

@@ -6,7 +6,7 @@ thumb: true
 storybook_url: https://vue.dialpad.design/?path=/story/components-checkbox-group--default
 ---
 
-<code-well-header class="d-d-block">
+<code-well-header>
   <dt-checkbox-group
     name="fruits-checkbox-group"
     legend="Fruits"
@@ -34,7 +34,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-checkbox-group
 
 ### Default
 
-<code-well-header class="d-d-block">
+<code-well-header>
   <dt-checkbox-group
     name="fruits-checkbox-group"
     legend="Fruits"
@@ -60,8 +60,8 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-checkbox-group
 
 ### With validation states
 
-<code-well-header class="d-d-block">
-  <div class="d-stack16 d-w100p">
+<code-well-header>
+  <div class="d-stack16">
     <div>
       <dt-checkbox-group
         name="checkbox-group-with-success-message"
