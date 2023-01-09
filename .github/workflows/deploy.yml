@@ -6,6 +6,7 @@ on:
       - production
       - alpha
       - beta
+      - staging
 
 jobs:
   deploy:
@@ -36,10 +37,16 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # note that npm run build is executed before publishing via prepublishOnly
       - name: Build library and docsite
-        if: ${{ github.ref == 'refs/heads/production' }}
         run: npm run build:docsite
+
+      - name: Deploy to GitHub Pages (Staging)
+        if: ${{ github.ref == 'refs/heads/staging' }}
+        uses: JamesIves/github-pages-deploy-action@v4.2.5
+        with:
+          branch: gh-pages
+          folder: docs/.vuepress/dist
+          target-folder: staging
 
       - name: Deploy to GitHub Pages
         if: ${{ github.ref == 'refs/heads/production' }}
@@ -50,3 +57,4 @@ jobs:
           clean-exclude: |
             deploy-previews
             version6
+            staging
