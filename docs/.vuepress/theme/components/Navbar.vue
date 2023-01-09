@@ -1,13 +1,13 @@
 <template>
   <nav
-    class="d-d-flex"
+    class="d-d-flex d-flow4"
     role="navigation"
   >
     <router-link
       v-for="link in items"
       :key="link.text"
       :to="link.link"
-      class="d-btn d-btn--md"
+      class="d-btn d-btn--md d-bar-pill"
       :class="{ 'd-btn--active': isActiveLink(link.text) }"
     >
       {{ link.text }}
@@ -28,7 +28,7 @@
           :src="$withBase('/assets/images/github-icon.svg')"
         >
         <div class="d-tooltip d-tooltip__arrow--top-center d-ps-absolute d-ws-nowrap">
-          GitHub Repo
+          GitHub repository
         </div>
       </a>
       <a
@@ -44,7 +44,7 @@
           :src="$withBase('/assets/images/codepen-icon.svg')"
         >
         <div class="d-tooltip d-tooltip__arrow--top-center d-ps-absolute d-ws-nowrap">
-          Codepen Template
+          Codepen template
         </div>
       </a>
     </div>
