@@ -421,10 +421,37 @@
 //  $$  ICON ONLY
 //  ----------------------------------------------------------------------------
 .d-btn--icon-only {
-    // --button-padding: ;
+    --button-padding-x: var(--button-padding-y-md);
+    --button-padding-y: var(--button-padding-y-md);
 
     .d-btn__icon {
         margin: unset;
+    }
+
+    //  Adjust padding based on sizes
+    &.d-btn--xs {
+        --button-padding-y: var(--button-padding-y-xs);
+        --button-padding-x: var(--button-padding-y-xs);
+    }
+
+    &.d-btn--sm {
+        --button-padding-y: var(--button-padding-y-sm);
+        --button-padding-x: var(--button-padding-y-sm);
+    }
+
+    &.d-btn--md {
+        --button-padding-x: var(--button-padding-y-md);
+        --button-padding-y: var(--button-padding-y-md);
+    }
+
+    &.d-btn--lg {
+        --button-padding-x: calc(var(--button-padding-y-lg) + var(--space-100));
+        --button-padding-y: calc(var(--button-padding-y-lg) + var(--space-100));
+    }
+
+    &.d-btn--xl {
+        --button-padding-x: calc(var(--button-padding-y-xl) + var(--space-300));
+        --button-padding-y: calc(var(--button-padding-y-xl) + var(--space-300));
     }
 }
 
