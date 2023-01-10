@@ -61,10 +61,12 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 
 <code-well-header bgclass="d-bgc-contrast">
   <a href="#link" class="d-link d-link--inverted">Inverted base link</a>
+  <a href="#link" class="d-link d-link--inverted-disabled">Inverted disabled link</a>
 </code-well-header>
 
 ```html
 <a href="#link" class="d-link d-link--inverted">...</a>
+<a href="#link" class="d-link d-link--inverted-disabled">Inverted disabled link</a>
 ```
 
 ## Classes
