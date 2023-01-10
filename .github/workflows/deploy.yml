@@ -37,8 +37,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build library and docsite
-        run: npm run build:docsite
+      - name: Build library and docsite (Staging)
+        if: ${{ github.ref == 'refs/heads/staging' }}
+        run: npm run build:docsite -- --deploySubdir /staging/
 
       - name: Deploy to GitHub Pages (Staging)
         if: ${{ github.ref == 'refs/heads/staging' }}
@@ -47,6 +48,10 @@ jobs:
           branch: gh-pages
           folder: docs/.vuepress/dist
           target-folder: staging
+
+      - name: Build library and docsite
+        if: ${{ github.ref == 'refs/heads/production' }}
+        run: npm run build:docsite
 
       - name: Deploy to GitHub Pages
         if: ${{ github.ref == 'refs/heads/production' }}
