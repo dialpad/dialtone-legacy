@@ -14,6 +14,9 @@
 //  $   BASE STYLE
 //  ----------------------------------------------------------------------------
 .d-link {
+    --link-color-default: var(--purple-400);
+    --link-color-default-hover: hsl(var(--purple-400-h) var(--purple-400-s) calc(var(--purple-400-l) - 10%));
+
     position: relative;
     display: inline-flex;
     align-items: center;
@@ -21,13 +24,13 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    color: var(--purple-400);
+    color: var(--link-color-default);
     font: inherit;
     text-decoration: underline;
     background-color: transparent;
     border: 0;
     transition-timing-function: var(--ttf-out-quint);
-    transition-duration: var(--td300);
+    transition-duration: var(--td200);
     transition-property: background-color, border, box-shadow;
 
     //  Reset button appearance
@@ -37,7 +40,7 @@
     fill: currentColor;
 
     &:hover {
-        color: hsl(var(--purple-400-h) var(--purple-400-s) calc(var(--purple-400-l) - 10%));
+        color: var(--link-color-default-hover);
         text-decoration: none;
         cursor: pointer;
     }
@@ -46,95 +49,71 @@
         outline: none;
         box-shadow: var(--bs-focus-ring);
     }
-}
 
-
-//  ============================================================================
-//  $   ALTERNATE STYLES
-//  ============================================================================
-//  $$  WARNING
-//  ----------------------------------------------------------------------------
-.d-link--warning {
-    color: var(--fc-warning);
-
-    &:hover {
-        color: var(--fc-warning-hover);
-    }
-}
-
-//  $$  DANGER
-//  ----------------------------------------------------------------------------
-.d-link--danger {
-    color: var(--fc-critical);
-
-    &:hover {
-        color: hsl(var(--red-300-h), var(--red-300-s), calc(var(--red-300-l) - 8%));
-    }
-}
-
-//  $$  SUCCESS
-//  ----------------------------------------------------------------------------
-.d-link--success {
-    color: var(--fc-success);
-
-    &:hover {
-        color: var(--green-500);
-    }
-}
-
-//  $$  MUTED
-//  ----------------------------------------------------------------------------
-.d-link--muted {
-    color: var(--fc-secondary);
-
-    &:hover {
-        color: var(--fc-primary);
-    }
-}
-
-//  $$  DISABLED
-//  ----------------------------------------------------------------------------
-// We don't expose these in the documentation because they're meant to be consumed
-// by buttons using .d-link. Links with a disabled attribute are not valid mark-up.
-.d-link[disabled],
-.d-link--disabled {
-    color: var(--fc-disabled);
-
-    &:hover {
-        color: var(--fc-disabled);
-        text-decoration: underline;
-        cursor: not-allowed;
+    //  ============================================================================
+    //  $   ALTERNATE STYLES
+    //  ============================================================================
+    //  $$  WARNING
+    //  ----------------------------------------------------------------------------
+    &--warning {
+        --link-color-default: var(--fc-warning);
+        --link-color-default-hover: var(--fc-warning-hover);
     }
 
-    &:focus {
-        box-shadow: none;
-    }
-}
-
-//  $$  INVERTED
-//  ----------------------------------------------------------------------------
-.d-link--inverted {
-    color: var(--fc-primary-inverted);
-
-    &:hover {
-        color: var(--fc-secondary-inverted);
-    }
-}
-
-//  $$  INVERTED DISABLED
-//  ----------------------------------------------------------------------------
-// We don't expose these in the documentation because they're meant to be consumed
-// by buttons using .d-link. Links with a disabled attribute are not valid mark-up.
-.d-link--inverted-disabled {
-    color: var(--black-500);
-
-    &:hover {
-        color: var(--black-500);
-        text-decoration: underline;
-        cursor: not-allowed;
+    //  $$  DANGER
+    //  ----------------------------------------------------------------------------
+    &--danger {
+        --link-color-default: var(--fc-critical);
+        --link-color-default-hover: hsl(var(--red-300-h), var(--red-300-s), calc(var(--red-300-l) - 8%));
     }
 
-    &:focus {
-        box-shadow: none;
+    //  $$  SUCCESS
+    //  ----------------------------------------------------------------------------
+    &--success {
+        --link-color-default: var(--fc-success);
+        --link-color-default-hover: var(--green-500);
+    }
+
+    //  $$  MUTED
+    //  ----------------------------------------------------------------------------
+    &--muted {
+        --link-color-default: var(--fc-secondary);
+        --link-color-default-hover: var(--fc-primary);
+    }
+
+    //  $$  DISABLED
+    //  ----------------------------------------------------------------------------
+    // We don't expose these in the documentation because they're meant to be consumed
+    // by buttons using .d-link. Links with a disabled attribute are not valid mark-up.
+    &[disabled],
+    &--disabled {
+        --link-color-default: var(--fc-disabled);
+        --link-color-default-hover: var(--link-color-default);
+
+        &:hover {
+            text-decoration: underline;
+            cursor: not-allowed;
+        }
+    }
+
+    //  $$  INVERTED
+    //  ----------------------------------------------------------------------------
+    &--inverted {
+        --link-color-default: var(--fc-primary-inverted);
+        --link-color-default-hover: var(--fc-secondary-inverted);
+    }
+
+    //  $$  INVERTED DISABLED
+    //  ----------------------------------------------------------------------------
+    // We don't expose these in the documentation because they're meant to be consumed
+    // by buttons using .d-link. Links with a disabled attribute are not valid mark-up.
+    &--inverted-disabled {
+        --link-color-default: var(--black-400);
+        --link-color-default-hover: var(--link-color-default);
+
+        &:hover {
+            text-decoration: underline;
+            cursor: not-allowed;
+        }
     }
 }
