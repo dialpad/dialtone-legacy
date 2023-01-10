@@ -7,33 +7,44 @@
 //
 //  TABLE OF CONTENTS
 //  • WRAPPER
-//  • ITEMS & LINKS
 //  • INVERTED STYLE
+//  • ITEMS & LINKS
 //
-//  ============================================================================
-//  $  WRAPPER
-//  ----------------------------------------------------------------------------
-.d-breadcrumbs > ol {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-size: var(--fs-200);
-    line-height: var(--lh6);
-    list-style: none;
-}
 
-//  ============================================================================
-//  $  ITEMS & LINKS
-//  ----------------------------------------------------------------------------
 .d-breadcrumbs {
-    //  --  INDIVIDUAL ITEMS
-    .d-breadcrumbs__item {
-        position: relative;
+    --breadcrumbs-font-size: var(--fs-200);
+    --breadcrumbs-line-height: var(--lh-300);
+    --breadcrumbs-color-separator: var(--black-500);
+
+    //  ============================================================================
+    //  $  INVERTED STYLE
+    //  ----------------------------------------------------------------------------
+    &--inverted {
+        --breadcrumbs-color-separator: var(--black-300);
+    }
+
+    //  ============================================================================
+    //  $  WRAPPER
+    //  ----------------------------------------------------------------------------
+
+    > ol {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        box-sizing: border-box;
         margin: 0;
-        margin-left: var(--space-400);
+        padding: 0;
+        font-size: var(--breadcrumbs-font-size);
+        line-height: var(--breadcrumbs-line-height);
+        list-style: none;
+    }
+
+    //  ============================================================================
+    //  $  ITEMS & LINKS
+    //  ----------------------------------------------------------------------------
+    &__item {
+        position: relative;
+        margin: 0 0 0 var(--space-400);
         padding: 0;
         list-style: none;
 
@@ -45,33 +56,16 @@
                 position: absolute;
                 right: calc(calc(var(--space-400) + var(--space-300)) * -1);
                 margin-top: calc(var(--space-100) * -1);
-                color: var(--fc-tertiary);
+                color: var(--breadcrumbs-color-separator);
                 content: '/';
             }
         }
-    }
 
-    //  --  SELECTED STATE (CURRENT PAGE)
-    .d-breadcrumbs__item--selected .d-link {
-        text-decoration: none;
-        cursor: default;
-    }
-}
-
-
-//  ============================================================================
-//  $  INVERTED STYLE
-//  ----------------------------------------------------------------------------
-.d-breadcrumbs.d-breadcrumbs--inverted {
-    //  --  ITEM
-    .d-breadcrumbs__item:not(:last-of-type)::before {
-        color: var(--fc-primary-inverted);
-    }
-
-    //  --  SELECTED STATE (CURRENT PAGE)
-    .d-breadcrumbs__item--selected .d-link {
-        &:hover {
-            color: var(--fc-primary-inverted);
+        //  --  SELECTED STATE (CURRENT PAGE)
+        &--selected .d-link {
+            text-decoration: none;
+            cursor: default;
         }
     }
 }
+
