@@ -1,9 +1,9 @@
 <template>
   <aside class="d-d-flex d-fd-column">
-    <header class="d-d-flex d-jc-space-between d-ai-end d-py16">
+    <header class="d-d-flex d-jc-space-between d-ai-end">
       <h2
         :id="color"
-        class="d-headline24 d-fl1 d-tt-capitalize"
+        class="d-docsite--header-3 d-tt-capitalize"
         tabindex="-1"
       >
         <a

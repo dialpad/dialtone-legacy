@@ -65,10 +65,10 @@ Key foreground colors rendered on surfaces to indicate hierarchy and importance.
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-tertiary</td>
     </tr>
     <tr>
-      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42" style="background-color: var(--fc-primary-inverted)"></div></th>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-ba d-bc-black-300 d-bas-dashed" style="background-color: var(--fc-primary-inverted)"></div></th>
       <td>
         <div class="d-d-flex d-jc-space-between d-ai-center">
-          <div class="d-fl0 d-fs-300 d-fc-primary-inverted d-bgc-black-900 d-p6 d-bar2 d-fw-medium">
+          <div class="d-fl0 d-fs-300 d-fc-primary-inverted d-bgc-contrast d-p6 d-bar2 d-fw-medium">
             Aa
           </div>
         </div>
@@ -84,7 +84,7 @@ Key foreground colors rendered on surfaces to indicate hierarchy and importance.
       <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42" style="background-color: var(--fc-secondary-inverted)"></div></th>
       <td>
         <div class="d-d-flex d-jc-space-between d-ai-center">
-          <div class="d-fl0 d-fs-300 d-fc-secondary-inverted d-bgc-black-900 d-p6 d-bar2 d-fw-medium">
+          <div class="d-fl0 d-fs-300 d-fc-secondary-inverted d-bgc-contrast d-p6 d-bar2 d-fw-medium">
             Aa
           </div>
         </div>
@@ -151,6 +151,35 @@ Key foreground colors rendered on surfaces to indicate hierarchy and importance.
 
 Foreground colors distinguishing important information with a status role.
 
+<div hidden>
+  <div style="color: var(--fc-primary)">primary</div>
+  <div style="color: hsla(var(--fc-primary-hsl) / .5)">primary @ 50%</div>
+  <div style="color: var(--fc-primary-inverted)">primary-inverted</div>
+  <div style="color: hsla(var(--fc-primary-inverted-hsl) / .5)">primary-inverted @ 50%</div>
+  <div style="color: var(--fc-secondary)">secondary</div>
+  <div style="color: hsla(var(--fc-secondary-hsl) / .5)">secondary @ 50%</div>
+  <div style="color: var(--fc-secondary-inverted)">secondary-inverted</div>
+  <div style="color: hsla(var(--fc-secondary-inverted-hsl) / .5)">secondary-inverted @ 50%</div>
+  <div style="color: var(--fc-tertiary)">tertiary</div>
+  <div style="color: hsla(var(--fc-tertiary-hsl) / .5)">tertiary @ 50%</div>
+  <div style="color: var(--fc-muted)">muted</div>
+  <div style="color: hsla(var(--fc-muted-hsl) / .5)">muted @ 50%</div>
+  <div style="color: var(--fc-placeholder)">placeholder</div>
+  <div style="color: hsla(var(--fc-placeholder-hsl) / .5)">placeholder @ 50%</div>
+  <div style="color: var(--fc-disabled)">disabled</div>
+  <div style="color: hsla(var(--fc-disabled-hsl) / .5)">disabled @ 50%</div>
+  <div style="color: var(--fc-critical)">critical</div>
+  <div style="color: hsla(var(--fc-critical-hsl) / .5)">critical @ 50%</div>
+  <div style="color: var(--fc-error)">error</div>
+  <div style="color: hsla(var(--fc-error-hsl) / .5)">error @ 50%</div>
+  <div style="color: var(--fc-success)">success</div>
+  <div style="color: hsla(var(--fc-success-hsl) / .5)">success @ 50%</div>
+  <div style="color: var(--fc-warning)">warning</div>
+  <div style="color: hsla(var(--fc-warning-hsl) / .5)">warning @ 50%</div>
+  <div style="color: var(--fc-warning-hover)">warning-hover</div>
+  <div style="color: hsla(var(--fc-warning-hover-hsl) / .5)">warning-hover @ 50%</div>
+</div>
+
 <table class="d-table dialtone-doc-table">
   <thead>
     <tr>
@@ -161,20 +190,20 @@ Foreground colors distinguishing important information with a status role.
   </thead>
   <tbody>
     <tr>
-      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42" style="background-color: var(--fc-error)"></div></th>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42" style="background-color: var(--fc-critical)"></div></th>
       <td>
         <div class="d-d-flex d-jc-space-between d-ai-center">
-          <div class="d-fl0 d-fs-300 d-fc-error d-p6 d-fw-medium">
+          <div class="d-fl0 d-fs-300 d-fc-critical d-p6 d-fw-medium">
             Aa
           </div>
         </div>
       </td>
       <th scope="row" class="d-lh-300">
-        Error
+        Critical
         <div class="d-fw-normal">Expresses an error, danger, or otherwise critical state.</div>
       </th>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--fc-error)</td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-error</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--fc-critical)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-critical</td>
     </tr>
     <tr>
       <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42" style="background-color: var(--fc-success)"></div></th>
@@ -213,18 +242,134 @@ Foreground colors distinguishing important information with a status role.
 
 ## Surface
 
-Background colors for default application UI surfaces. Surface colors are used for pages, modals, tables, headers, and cards. Any foreground content such as text, buttons, forms, and icons rest on a surface.
+<div hidden>
+  <div style="background-color: var(--bgc-critical)">critical</div>
+  <div style="background-color: hsla(var(--bgc-critical-hsl) / .5)">critical @ 50%</div>
+  <div style="background-color: var(--bgc-info)">info</div>
+  <div style="background-color: hsla(var(--bgc-info-hsl) / .5)">info @ 50%</div>
+  <div style="background-color: var(--bgc-warning)">warning</div>
+  <div style="background-color: hsla(var(--bgc-warning-hsl) / .5)">warning @ 50%</div>
+  <div style="background-color: var(--bgc-success)">success</div>
+  <div style="background-color: hsla(var(--bgc-success-hsl) / .5)">success @ 50%</div>
+  <div style="background-color: var(--bgc-primary)">primary</div>
+  <div style="background-color: hsla(var(--bgc-primary-hsl) / .5)">primary @ 50%</div>
+  <div style="background-color: var(--bgc-secondary)">secondary</div>
+  <div style="background-color: hsla(var(--bgc-secondary-hsl) / .5)">secondary @ 50%</div>
+  <div style="background-color: var(--bgc-moderate)">moderate</div>
+  <div style="background-color: hsla(var(--bgc-moderate-hsl) / .5)">moderate @ 50%</div>
+  <div style="background-color: var(--bgc-bold)">bold</div>
+  <div style="background-color: hsla(var(--bgc-bold-hsl) / .5)">bold @ 50%</div>
+  <div style="background-color: var(--bgc-strong)">strong</div>
+  <div style="background-color: hsla(var(--bgc-strong-hsl) / .5)">strong @ 50%</div>
+  <div style="background-color: var(--bgc-contrast)">contrast</div>
+  <div style="background-color: hsla(var(--bgc-contrast-hsl) / .5)">contrast @ 50%</div>
+</div>
 
-<aside class="d-notice d-notice--info d-mt24 d-wmx100p" role="status" aria-hidden="false">
-  <div class="d-notice__icon">
-    <dt-icon name="info"></dt-icon>
-  </div>
-  <div class="d-notice__content d-stack4">
-    <p class="d-notice__message">
-      <strong>Planned</strong>. In the meantime continue to rely on components' built-in surface colors and <router-link class="d-link" to="/utilities/backgrounds/color.html">background color CSS utilities</router-link>, and work with your Product Designer to validate.
-    </p>
-  </div>
-</aside>
+Background colors for default application UI surfaces. Surface colors are containing blocks — such as pages, modals, tables, headers, and cards — containing foreground content or elements.
+
+<table class="d-table dialtone-doc-table">
+  <thead>
+    <tr>
+      <th scope="col" colspan="2">Color</th>
+      <th scope="col">CSS variable</th>
+      <th scope="col">CSS utility</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-primary d-ba d-bc-black-300 d-bas-dashed"></div></th>
+      <th scope="row" class="d-lh-300">
+        Primary
+        <div class="d-fw-normal">Default surface color for the majority of surfaces.</div>
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-primary)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-primary</td>
+    </tr>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-secondary d-ba d-bc-black-300 d-bas-dashed"></div></th>
+      <th scope="row" class="d-lh-300">
+        Secondary
+        <div class="d-fw-normal">For adjacent or complementary regions.</div>
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-secondary)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-secondary</td>
+    </tr>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-moderate"></div></th>
+      <th scope="row" class="d-lh-300">
+        Moderate
+        <div class="d-fw-normal">A tertiary surface level, prominent without being too overpowering.</div>
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-moderate)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-moderate</td>
+    </tr>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-bold"></div></th>
+      <th scope="row" class="d-lh-300">
+        Bold
+        <div class="d-fw-normal">Highlight or call attention to specific areas of the interface.</div>
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-bold)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-bold</td>
+    </tr>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-strong"></div></th>
+      <th scope="row" class="d-lh-300">
+        Strong
+        <div class="d-fw-normal">Use sparingly to draw the eye to a relatively important region.</div>
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-strong)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-strong</td>
+    </tr>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-contrast"></div></th>
+      <th scope="row" class="d-lh-300">
+        Contrast
+        <div class="d-fw-normal">An inverted surface for lightened content and elements, most likely paired with inverted text colors.</div>
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-contrast)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-contrast</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-critical"></div></th>
+      <th scope="row" class="d-lh-300">
+        Critical
+        <div class="d-fw-normal">Background surface color containing error, danger, or otherwise critical messaging or elements.</div>
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-critical)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-critical</td>
+    </tr>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-success"></div></th>
+      <th scope="row" class="d-lh-300">
+        Success
+        <div class="d-fw-normal">Background surface color containing messaging or elements expressing a positive or successful state.</div>
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-success)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-success</td>
+    </tr>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-warning"></div></th>
+      <th scope="row" class="d-lh-300">
+        Warning
+        <div class="d-fw-normal">Background surface color highlighting messaging or elements that may require user's attention.</div>
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-warning)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-warning</td>
+    </tr>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-info"></div></th>
+      <th scope="row" class="d-lh-300">
+        Info
+        <div class="d-fw-normal">Background surface color containing messaging or elements communicated as generally informational.</div>
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-info)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-info</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Borders
 
@@ -291,7 +436,7 @@ Define the edge of key content area, components, or surfaces.
     </tr>
     <tr>
       <td class="d-pl0">
-        <div class="d-fs-300 d-p6 d-theme-topbar-f-circle d-ta-center d-fw-medium"> Aa </div>
+        <div class="d-fs-300 d-p6 d-theme-topbar-fc d-ta-center d-fw-medium"> Aa </div>
       </td>
       <th scope="row">
         Topbar
@@ -335,7 +480,7 @@ Define the edge of key content area, components, or surfaces.
     </tr>
     <tr>
       <td class="d-pl0">
-        <div class="d-fs-300 d-p6 d-theme-sidebar-f-circle d-ta-center d-fw-medium"> Aa </div>
+        <div class="d-fs-300 d-p6 d-theme-sidebar-fc d-ta-center d-fw-medium"> Aa </div>
       </td>
       <th scope="row">
         Sidebar
@@ -357,7 +502,7 @@ Define the edge of key content area, components, or surfaces.
     </tr>
     <tr>
       <td class="d-pl0">
-        <div class="d-fs-300 d-p6 d-theme-sidebar-f-circle d-fco75 d-ta-center d-fw-medium"> Aa </div>
+        <div class="d-fs-300 d-p6 d-theme-sidebar-fc d-fco75 d-ta-center d-fw-medium"> Aa </div>
       </td>
       <th scope="row">
         Sidebar
@@ -445,7 +590,7 @@ Define the edge of key content area, components, or surfaces.
     </tr>
     <tr>
       <td class="d-pl0">
-        <div class="d-fs-300 d-p6 d-theme-sidebar-row-active-f-circle d-ta-center d-fw-medium"> Aa </div>
+        <div class="d-fs-300 d-p6 d-theme-sidebar-row-active-fc d-ta-center d-fw-medium"> Aa </div>
       </td>
       <th scope="row">
         Sidebar
@@ -560,6 +705,6 @@ Define the edge of key content area, components, or surfaces.
 
 Base colors are the literal value of all available colors. Use these if all abstracted text, status text, surface, or border colors to not fit your need.
 
-Each of the colors listed above references one of these. For example, `var(--fc-primary)` is an alias to `var(--black-900)`, and `var(--fc-error)` is an alias to `var(--red-400)`.
+Each of the colors listed above references one of these. For example, `var(--fc-primary)` is an alias to `var(--black-900)`, and `var(--fc-critical)` is an alias to `var(--red-300)`.
 
 <colors></colors>

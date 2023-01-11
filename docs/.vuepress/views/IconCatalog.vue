@@ -12,7 +12,9 @@
         autocomplete="off"
       >
         <template #leftIcon>
-          <dt-icon name="search" />
+          <dt-icon
+            name="search"
+          />
         </template>
         <template #rightIcon>
           <dt-button
@@ -24,7 +26,9 @@
             @click="resetSearch"
           >
             <template #icon>
-              <dt-icon name="close" />
+              <dt-icon
+                name="close"
+              />
             </template>
           </dt-button>
         </template>
