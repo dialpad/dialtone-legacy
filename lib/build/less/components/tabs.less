@@ -35,6 +35,20 @@
         background-color: var(--black-400);
         content: '';
     }
+
+    //  ============================================================================
+    //  $   SIZES
+    //  ----------------------------------------------------------------------------
+    &--sm {
+        font-size: var(--fs-100);
+
+        .d-tab {
+            --tab-padding-x: calc(var(--space-300) * 2);
+            --tab-padding-y: var(--space-400);
+            --tab-padding-bottom: calc(var(--tab-padding-y) + var(--space-100));
+            --tab-border-radius-top: var(--size-300);
+        }
+    }
 }
 
 
@@ -45,21 +59,28 @@
     //  --  COMPONENT CSS VARS
     //  ------------------------------------------------------------------------
     --tab-color-background: hsla(var(--white-hsl) / 0);
-    --tab-color-text: inherit;
+    --tab-color-text: var(--fc-secondary);
+    --tab-line-height: var(--lh-200);
+    --tab-font-weight: var(--fw-medium);
+    --tab-border-radius-top: var(--size-400);
+    --tab-padding-x: calc(var(--space-300) * 3);
+    --tab-padding-y: var(--space-400);
+    --tab-padding-bottom: calc(var(--tab-padding-y) + var(--space-100));
 
     position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-    margin: 0 var(--space-200);
-    padding: calc(var(--space-300) * 3); // 12
+    padding: var(--tab-padding-y) var(--tab-padding-x);
+    padding-bottom: var(--tab-padding-bottom);
     color: var(--tab-color-text);
     font: inherit;
-    line-height: 1;
+    font-weight: var(--tab-font-weight);
+    line-height: var(--tab-line-height);
     background-color: var(--tab-color-background);
     border: 0;
-    border-radius: var(--size-300) var(--size-300) 0 0; // 4 4 0 0
+    border-radius: var(--tab-border-radius-top) var(--tab-border-radius-top) 0 0;
     cursor: pointer;
     transition-timing-function: var(--ttf-out-quint);
     transition-duration: var(--td300);
@@ -90,8 +111,12 @@
     }
 
     &:hover {
-        --tab-color-background: var(--black-100);
-        --tab-color-text: var(--fc-primary);
+        --tab-color-background: hsla(var(--black-800-hsl) / 0.05);
+        --tab-color-text: var(--fc-secondary);
+    }
+
+    &:active {
+        --tab-color-background: hsla(var(--black-800-hsl) / 0.1);
     }
 
     //  Turn off animations if someone doesn't want them.
@@ -110,8 +135,12 @@
     z-index: var(--zi-selected);
 
     &:hover {
-        --tab-color-background: hsla(var(--purple-400-hsl) / 0.1);
+        --tab-color-background: hsla(var(--purple-400-hsl) / 0.04);
         --tab-color-text: hsl(var(--purple-400-h) var(--purple-400-s) calc(var(--purple-400-l) - 10%));
+    }
+
+    &:active {
+        --tab-color-background: hsla(var(--purple-400-hsl) / 0.14);
     }
 
     &::after,
@@ -137,6 +166,10 @@
         &:hover {
             --tab-color-background: hsla(var(--white-hsl) / 0.1);
         }
+
+        &:active {
+            --tab-color-background: hsla(var(--white-hsl) / 0.14);
+        }
     }
 
     .d-tab--selected {
@@ -145,17 +178,5 @@
         &::after {
             --tab-color-background: currentColor;
         }
-    }
-}
-
-
-//  ============================================================================
-//  $   SIZES
-//  ----------------------------------------------------------------------------
-.d-tablist--sm {
-    font-size: var(--fs-100);
-
-    .d-tab {
-        padding: calc(var(--space-300) * 3); // 12
     }
 }
