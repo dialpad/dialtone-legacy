@@ -51,6 +51,11 @@ html {
   scroll-padding-top: 6.4rem;
 }
 
+// @TODO: Move this class into root-layout component on dialtone-vue
+.root-layout {
+  min-height: 100vh;
+}
+
 //  ============================================================================
 //  $   SEARCH BUTTON
 //      Override search button with dialtone styles
@@ -139,13 +144,6 @@ a.router-link-active {
 //      Because the doc site needs layout specifications that aren't
 //      appropriate to ship as part of Dialtone.
 //  ----------------------------------------------------------------------------
-.main-content {
-  width: 99rem;
-  max-width: calc(100% - var(--size216)); // 100% max width - page-toc width
-  margin: 0 auto;
-  padding: 2.4rem 2.5rem;
-}
-
 .dialtone-header {
   // TODO: redo 😜
   border: var(--size-100) solid var(--black-300);
@@ -198,14 +196,14 @@ a.header-anchor {
 }
 
 .d-gl-docsite {
-  grid-template-areas: 'sidebar content';
-  grid-template-columns: [sidebar] 21.6rem [content] minmax(32rem, 75rem);
+  grid-template-areas: 'content';
+  grid-template-columns: [content] minmax(32rem, 99rem);
   column-gap: 4.8rem;
 }
 
 .d-gl-docsite-toc {
-  grid-template-areas: 'sidebar content toc';
-  grid-template-columns: [sidebar] 21.6rem [content] minmax(32rem, 75rem) [toc] minmax(min-content, 21.6rem);
+  grid-template-areas: 'content toc';
+  grid-template-columns: [content] minmax(32rem, 99rem) [toc] minmax(min-content, 21.6rem);
   column-gap: 4.8rem;
 }
 

@@ -1,13 +1,12 @@
 <template>
-  <div class="lg:d-d-block d-d-flex d-w100p lg:d-pt64">
-    <div class="main-content d-mx-auto lg:d-mx0 lg:d-wmx100p">
+  <div
+    class="d-d-grid d-jc-center"
+    :class="gridClass"
+  >
+    <div class="d-p24 lg:d-pt64">
       <page-header>
         <template #content-bottom>
-          <page-toc
-            v-if="isMobile"
-            :headers="$page.headers"
-            :is-mobile="isMobile"
-          />
+          <page-toc v-if="isMobile && includeToc" />
         </template>
       </page-header>
       <content />
@@ -27,7 +26,7 @@
             @click="navigate"
           >
             <template #icon>
-              <component :is="arrowLeft" />
+              <dt-icon name="arrow-left" />
             </template>
             {{ prev.text }}
           </dt-button>
@@ -45,7 +44,7 @@
             @click="navigate"
           >
             <template #icon>
-              <component :is="arrowRight" />
+              <dt-icon name="arrow-right" />
             </template>
             {{ next.text }}
           </dt-button>
@@ -59,22 +58,17 @@
         documentation last updated {{ lastUpdated }}
       </footer>
     </div>
-    <page-toc
-      v-if="!isMobile"
-      :headers="$page.headers"
-      :is-mobile="isMobile"
-    />
+    <page-toc v-if="!isMobile && includeToc" />
   </div>
 </template>
 
 <script setup>
 import PageHeader from '../components/PageHeader.vue';
 import PageToc from '../components/PageToc.vue';
-import * as icons from '@dialpad/dialtone-icons';
 import { computed } from 'vue';
 import { usePageData } from '@vuepress/client';
 
-defineProps({
+const props = defineProps({
   prev: {
     type: Object,
     default: () => {
@@ -94,10 +88,12 @@ const lastUpdated = computed(() => {
   const date = new Date(usePageData().value.git.updatedTime);
   return new Intl.DateTimeFormat('en-US', { dateStyle: 'full' }).format(date);
 });
-const arrowLeft = computed(() => {
-  return icons.ArrowLeft;
+const gridClass = computed(() => {
+  if (props.isMobile || !includeToc.value) return 'd-gl-docsite';
+  return 'd-gl-docsite-toc';
 });
-const arrowRight = computed(() => {
-  return icons.ArrowRight;
+const includeToc = computed(() => {
+  const headers = usePageData().value.headers;
+  return headers?.length > 0;
 });
 </script>
