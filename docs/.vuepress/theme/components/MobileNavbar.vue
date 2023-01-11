@@ -39,7 +39,7 @@
     <nav
       class="
         mobile-header-drop-down-menu d-ps-fixed d-l0 d-w100p
-        d-bgc-white d-of-auto d-fs-300 d-d-flex
+        d-bgc-secondary d-of-auto d-fs-300 d-d-flex
         d-fd-column d-ai-baseline d-py24 d-px16
         d-h100p d-t64 d-zi-navigation-fixed
       "

@@ -10,11 +10,31 @@
       aria-hidden="false"
     >
       <div class="d-notice__icon">
-        <icon-lightbulb v-show="kind === 'base'" />
-        <icon-error v-show="kind === 'error'" />
-        <icon-info v-show="kind === 'info'" />
-        <icon-check-circle v-show="kind === 'success'" />
-        <icon-warning v-show="kind === 'warning'" />
+        <dt-icon
+          v-show="kind === 'base'"
+          name="bell"
+          size="400"
+        />
+        <dt-icon
+          v-show="kind === 'error'"
+          name="alert-circle"
+          size="400"
+        />
+        <dt-icon
+          v-show="kind === 'info'"
+          name="info"
+          size="400"
+        />
+        <dt-icon
+          v-show="kind === 'success'"
+          name="check-circle"
+          size="400"
+        />
+        <dt-icon
+          v-show="kind === 'warning'"
+          name="alert-triangle"
+          size="400"
+        />
       </div>
       <div class="d-notice__content">
         <h2 class="d-notice__title">
@@ -45,7 +65,12 @@
           :class="shouldBeInverted ? 'd-btn--inverted' : 'd-btn--muted'"
           aria-label="Close"
         >
-          <span class="d-btn__icon"><icon-close /></span>
+          <span class="d-btn__icon">
+            <dt-icon
+              name="close"
+              size="200"
+            />
+          </span>
         </button>
       </div>
     </aside>
@@ -78,7 +103,7 @@ export default {
     },
 
     shouldBeInverted () {
-      return this.important && !['warning', 'success'].includes(this.kind);
+      return this.important && !['warning'].includes(this.kind);
     },
   },
 };

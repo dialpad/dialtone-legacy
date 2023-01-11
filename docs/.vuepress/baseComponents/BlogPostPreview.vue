@@ -5,12 +5,12 @@
     custom
   >
     <dt-link
-      class="d-td-none d-fc-unset d-d-block"
+      class="d-td-none d-fc-unset d-d-block d-bar8"
       href="`/about/whats-new/posts/${format(posted, 'y-M-d')}`"
       @click="(e) => { navigate(e); }"
     >
       <dt-card
-        class="d-mt32 h:d-bgc-black-100 d-bs-none h:d-bs-sm d-ba d-bar8 d-bbw1 d-bc-black-300"
+        class="d-mt16 d-bgc-primary d-bs-none h:d-bs-sm d-ba d-bar8 d-bbw1 d-bc-black-300"
       >
         <template #content>
           <blog-post

@@ -57,14 +57,13 @@
   // Use shared style properties of d-input (<input>, <textarea>)
   .d-input();
 
+  //  --  FOCUS STATE
+  &:focus {
+      --input-color-background: hsla(var(--black-900-hsl) / 0.03);
+  }
+
   // Adjust space on right beneath arrows
   padding-right: var(--select-notch-padding-right);
-
-  &:focus {
-    --select-color-border: var(--purple-400);
-
-    box-shadow: var(--bs-focus-ring);
-  }
 
   &[disabled],
   &[read-only] {
@@ -132,33 +131,15 @@
 //  $$  VALIDATION STATES
 //  ------------------------------------------------------------------------
 .d-select__input--success {
-  --input-color-border: var(--success-color);
-
-  &:focus {
-    --input-color-border: var(--success-color);
-
-    box-shadow: var(--bs-focus-ring-success) !important;
-  }
+  --input-color-border: var(--green-400);
 }
 
 .d-select__input--error {
-  --input-color-border: var(--error-color);
-
-  &:focus {
-    --input-color-border: var(--error-color);
-
-    box-shadow: var(--bs-focus-ring-error) !important;
-  }
+  --input-color-border: var(--red-300);
 }
 
 .d-select__input--warning {
   --input-color-border: var(--gold-400);
-
-  &:focus {
-    --input-color-border: var(--warning-color);
-
-    box-shadow: var(--bs-focus-ring-warning) !important;
-  }
 }
 
 .d-select--disabled {

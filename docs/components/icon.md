@@ -25,9 +25,9 @@ figma_url: https://www.figma.com/file/zz40wi0uW9MvaJ5RuhcRZR/DT-Core%3A-Icons-7?
     <dt-icon name="info"></dt-icon>
   </div>
   <div class="d-notice__content d-stack4">
-    <p class="d-notice__message">
+    <p>
       <strong>Looking for the previous icon set?</strong>
-      <router-link class="d-link" to="/design/icons/">Documentation for the deprecated icon set</router-link> will remain available until this new icon is more fully adopted.
+      <router-link class="d-link d-link--muted" to="/design/icons/">Documentation for the deprecated icon set</router-link> will remain available until this new icon is more fully adopted.
     </p>
   </div>
 </aside>

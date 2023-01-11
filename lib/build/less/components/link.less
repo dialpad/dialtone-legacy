@@ -26,7 +26,9 @@
     text-decoration: underline;
     background-color: transparent;
     border: 0;
-    transition: all var(--td25) var(--ttf-in-out);
+    transition-timing-function: var(--ttf-out-quint);
+    transition-duration: var(--td300);
+    transition-property: background-color, border, box-shadow;
 
     //  Reset button appearance
     -webkit-appearance: none;
@@ -41,9 +43,8 @@
     }
 
     &:focus-visible {
-        border-radius: var(--br4);
         outline: none;
-        box-shadow: 0 0 0 var(--size-200) var(--focus-ring);
+        box-shadow: var(--bs-focus-ring);
     }
 }
 
@@ -59,23 +60,15 @@
     &:hover {
         color: var(--fc-warning-hover);
     }
-
-    &:focus-visible {
-        box-shadow: 0 0 0 var(--size-200) var(--focus-ring-warning);
-    }
 }
 
 //  $$  DANGER
 //  ----------------------------------------------------------------------------
 .d-link--danger {
-    color: var(--fc-error);
+    color: var(--fc-critical);
 
     &:hover {
-        color: var(--error-color-hover);
-    }
-
-    &:focus-visible {
-        box-shadow: 0 0 0 var(--size-200) var(--focus-ring-error);
+        color: hsl(var(--red-300-h), var(--red-300-s), calc(var(--red-300-l) - 8%));
     }
 }
 
@@ -85,25 +78,17 @@
     color: var(--fc-success);
 
     &:hover {
-        color: var(--success-color-hover);
-    }
-
-    &:focus-visible {
-        box-shadow: 0 0 0 var(--size-200) var(--focus-ring-success);
+        color: var(--green-500);
     }
 }
 
 //  $$  MUTED
 //  ----------------------------------------------------------------------------
 .d-link--muted {
-    color: var(--muted-color);
+    color: var(--fc-secondary);
 
     &:hover {
-        color: var(--muted-color-hover);
-    }
-
-    &:focus-visible {
-        box-shadow: 0 0 0 var(--size-200) var(--focus-ring-muted);
+        color: var(--fc-primary);
     }
 }
 
@@ -129,14 +114,10 @@
 //  $$  INVERTED
 //  ----------------------------------------------------------------------------
 .d-link--inverted {
-    color: var(--inverted-color);
+    color: var(--fc-primary-inverted);
 
     &:hover {
-        color: var(--inverted-color-hover);
-    }
-
-    &:focus-visible {
-        box-shadow: 0 0 0 var(--size-200) var(--focus-ring-inverted);
+        color: var(--fc-secondary-inverted);
     }
 }
 
