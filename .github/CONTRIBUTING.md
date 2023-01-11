@@ -4,7 +4,7 @@ Thanks for your interest in contributing to Dialtone! Please take a moment to re
 
 ## Overview
 
-### What is dialtone?
+### What is Dialtone?
 
 Dialtone is a design system by Dialpad comprised of CSS components, [Vue components](https://vue.dialpad.design/), utility classes, visual assets, documentation and examples which strives to:
 
@@ -104,7 +104,7 @@ All of our utility classes are set to `!important`. This is because they are des
 
 ### CSS vars
 
-We use CSS vars in our classes for better reusability. We try to always use CSS vars `var(--su12)` over less vars `@su12` in our code, however we often use LESS vars to help generate CSS vars.
+We use CSS vars, also known as [CSS Custom Properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*) in our classes for better reusability. We try to always use CSS vars `var(--su12)` over less vars `@su12` in our code, however we often use LESS vars to help generate CSS vars.
 
 Here we set the `--avatar--size` CSS var to `12`, and set both the width and the height to reference this variable.
 ```less
@@ -181,7 +181,7 @@ Dialtone follows [SemVer](https://semver.org/) for versioning and the commit mes
 
 ## How we manage work
 
-We use Jira to manage our work and you can visit our [current board and backlog](https://switchcomm.atlassian.net/jira/software/projects/DT/boards/187/backlog) assuming you are an authenticated Dialpad employee. Below we will define how we use our Jira board so team members and external contriubutors are all on the same page.
+We use Jira to manage our work and you can visit the [Dialtone board and backlog](https://switchcomm.atlassian.net/jira/software/projects/DT/boards/187/backlog) assuming you are an authenticated Dialpad employee. Below we will define how we use our Jira board so team members and external contriubutors are all on the same page.
 
 ### Issue Types
 
@@ -195,7 +195,7 @@ A "Design Story" is a small portion of work estimated and completed by the desig
 
 #### Proposal
 
-Proposals can be submitted by anyone with access to the jira board. For each proposal it will be decided if we will do it, in which case it will be groomed into a story. After we discuss a proposal in a grooming meeting it will be turned into a story or multiple stories.
+Proposals can be submitted by anyone with access to the jira board. Each proposal will be discussed in a grooming meeting with the Design System team and if accepted will be turned into a story (or multiple).
 
 #### Epic
 
@@ -226,7 +226,7 @@ Each Jira ticket has a priority which can be defined as the following:
 - **medium**: of moderate importance, the default priority level, the majority of our stories will probably be this.
 - **low**: not a priority, it is unlikely we will pull these into a sprint unless they are very low effort, or become a higher priority at a later time.
 
-Just because an item is high priority does not necessarily mean it will be pulled into the sprint before a medium item. The priority is how much business value this particular task will provide, however the rank (sort order) of the backlog is the order in which items will be pulled into the sprint. The rank is determined manually by the product owner (brad/francis in this case) and can be based factors other than just priority, effort for example.
+Just because an item is high priority does not necessarily mean it will be pulled into the sprint before a medium item. The priority is how much business value this particular task will provide, however the rank (sort order) of the backlog is the order in which items will be pulled into the sprint. The rank is determined manually by the product owner (@braddialpad / @francisrupert in this case) and can be based on factors other than just priority, effort for example.
 
 #### Order / Rank
 
@@ -245,7 +245,7 @@ Proposals are mixed in and ranked with stories as they will eventually be turned
 We use these to categorize our work by preceding the title of the Jira ticket by one of the below tags. These are long running categories and unlike epics will never be "completed". Try to use just one if you can, but if necessary multiple can be used.
 
 - `[Component]`: this story changes all components or multiple components.
-- `[Dropdown(or any component name)]`: this story includes change to only the dropdown component.
+- `[Dropdown(or any component name)]`: this story includes change to only the dropdown component. Exclude Dt prefix and use [title case](https://apastyle.apa.org/style-grammar-guidelines/capitalization/title-case) format.
 - `[Utility]`: this story includes changes to a single or multiple utility classes.
 - `[Docs]`: this story only changes the documentation site or the storybook, it does not affect anything in our published library.
 - `[Figma]`: this is work specific to figma
