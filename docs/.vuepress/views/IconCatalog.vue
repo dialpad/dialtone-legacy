@@ -81,6 +81,7 @@
           <base-icon
             v-bind="attrs"
             :file-name="icon"
+            @click="selectIcon(icon)"
           />
         </template>
       </icon-popover>
@@ -95,17 +96,26 @@
       &OpenCurlyDoubleQuote;{{ search }}&CloseCurlyDoubleQuote;
     </strong>
   </div>
+  <dt-modal
+    v-if="isMobile"
+    :show="isModalOpen"
+    :close-button-props="{ ariaLabel: 'Close' }"
+    size="full"
+  />
 </template>
 
 <script setup>
 import BaseIcon from '@baseComponents/BaseV7Icon.vue';
 import { categories } from '@dialpad/dialtone-icons/dist/icons.json';
-import { computed, ref } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 import IconPopover from '../baseComponents/IconPopover.vue';
 
 const selectedCategory = ref('all');
 const search = ref(null);
 const searchRef = ref(null);
+const isMobile = ref(false);
+const isModalOpen = ref(false);
+const selectedIcon = ref('alert-circle');
 
 const categoriesList = computed(() => {
   return Object.keys(categories);
@@ -159,6 +169,14 @@ const filteredIconList = computed(() => {
 const isCategoryInResults = (category) => {
   return Object.keys(iconsList.value).includes(category);
 };
+
+const selectIcon = (icon) => {
+  selectedIcon.value = icon;
+};
+
+onMounted(() => {
+  isMobile.value = window.outerWidth < 800;
+});
 </script>
 
 <style scoped>
