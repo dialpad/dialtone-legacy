@@ -1,5 +1,6 @@
 <template>
   <dt-root-layout
+    class="d-h-auto"
     header-class="dialtone-header d-d-flex d-ai-center d-p16 d-pl8 d-h64 d-jc-space-between d-zi-navigation"
     :header-sticky="true"
     footer-class="d-text-right"
@@ -35,17 +36,12 @@
     </template>
     <template #default>
       <home v-if="$frontmatter.home" />
-      <div
+      <page
         v-else
-        class="lg:d-d-block d-d-flex"
-      >
-        <page
-          :prev="prev"
-          :next="next"
-          :is-mobile="isMobile"
-        />
-        <page-toc v-if="!isMobile" />
-      </div>
+        :prev="prev"
+        :next="next"
+        :is-mobile="isMobile"
+      />
     </template>
   </dt-root-layout>
 </template>
@@ -55,7 +51,6 @@ import Navbar from '../components/Navbar.vue';
 import Sidebar from '../components/Sidebar.vue';
 import Home from '../components/Home.vue';
 import Page from '../components/Page.vue';
-import PageToc from '../components/PageToc.vue';
 import MobileNavbar from '../components/MobileNavbar.vue';
 import MobileSidebar from '../components/MobileSidebar.vue';
 import { computed, ref, watch, onMounted } from 'vue';
