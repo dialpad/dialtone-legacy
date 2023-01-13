@@ -6,6 +6,7 @@ thumb: true
 storybook_url: https://vue.dialpad.design/?path=/story/components-radio--default
 figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Components-7?node-id=8919%3A22042&viewport=-451%2C205%2C0.6&t=xHutRjwo1o5zMTgT-11
 ---
+
 <code-well-header>
   <div class="d-radio-group">
     <div class="d-radio__input">
