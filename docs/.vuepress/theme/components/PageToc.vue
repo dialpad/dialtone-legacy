@@ -1,15 +1,13 @@
 <template>
   <aside
-    v-if="$page.headers.length > 0"
     class="
     toc lg:d-ps-relative lg:d-t0 lg:d-w100p
     d-ps-sticky d-t64 d-pt24
-    d-as-flex-start
-    d-pr16 d-w216"
+    d-as-flex-start d-ga-toc"
   >
-    <h3 class="d-pl8 d-headline-eyebrow d-fw-semibold d-pb8">
+    <h2 class="d-p8 d-pt8 d-headline-eyebrow d-fw-semibold">
       On this page
-    </h3>
+    </h2>
     <toc :headers="$page.headers" />
   </aside>
 </template>

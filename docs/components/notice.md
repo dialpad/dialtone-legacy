@@ -6,7 +6,8 @@ thumb: true
 storybook_url: https://vue.dialpad.design/?path=/story/components-notice--default
 figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Components-7?node-id=8921%3A23341&viewport=145%2C-209%2C0.31&t=xHutRjwo1o5zMTgT-11
 ---
-<code-well-header bgclass="d-bgc-white">
+
+<code-well-header bgclass="d-bgc-primary">
   <example-notice kind="base" role="status" />
 </code-well-header>
 
@@ -22,7 +23,7 @@ A notice delivers informational and assistive messages that inform the user abou
 
 Used in most scenarios when the message should be noticeable but not dominate.
 
-<code-well-header bgclass="d-bgc-white">
+<code-well-header bgclass="d-bgc-primary">
   <example-notice kind="base" role="status" />
   <example-notice kind="error" role="status" />
   <example-notice kind="info" role="status" />

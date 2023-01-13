@@ -3,7 +3,7 @@
     <div
       class="
         d-px16
-        d-ps-fixed d-w100p d-bgc-white d-h64 d-x0
+        d-ps-fixed d-w100p d-bgc-primary d-h64 d-x0
         lg:d-d-flex d-bb d-bc-black-100 d-ai-center
         d-jc-space-between d-t64 d-d-none
       "
@@ -25,7 +25,7 @@
       :class="{ 'd-o0 d-d-none': !isSiteNavOpen }"
       class="
         mobile-header-drop-down-navigation d-ps-fixed d-l0 d-w100p
-        d-bgc-white d-of-auto d-d-flex
+        d-bgc-primary d-of-auto d-d-flex
         d-fd-column d-ai-baseline d-pt24 d-pr16 d-pl64
       "
     >

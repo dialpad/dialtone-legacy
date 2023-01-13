@@ -21,13 +21,17 @@
 //  ============================================================================
 //  $   RADIOS & CHECKBOXES
 //  ----------------------------------------------------------------------------
+
 .d-checkbox,
 .d-radio {
     //  Component specific CSS Vars
     //  ------------------------------------------------------------------------
     --check-radio-color: var(--purple-400);
-    --check-radio-color-border: var(--black-600);
+    --check-radio-color-border: var(--black-400);
+    --check-radio-color-border-disabled: hsla(var(--black-900-hsl) / 0.09);
     --check-radio-color-background: var(--white);
+    --check-radio-color-background-disabled: hsla(var(--black-900-hsl) / 0.12);
+    --check-radio-border-width: calc(var(--size-100) + calc(var(--size-100) / 2)); // 1.5
 
     //  [1] Check to see if we can use custom styles, if so reset the defaults
     //  ------------------------------------------------------------------------
@@ -40,7 +44,7 @@
         margin: 0;
         font-size: inherit;
         background-color: var(--check-radio-color-background);
-        border: var(--size-100) solid var(--check-radio-color-border);
+        border: var(--check-radio-border-width) solid var(--check-radio-color-border);
         outline: 0;
         box-shadow: none;
         cursor: pointer;
@@ -52,8 +56,8 @@
             display: none;
         }
 
-        &:focus-visible,
-        &:checked:focus-visible {
+        &:focus,
+        &:checked:focus {
           --check-radio-color-border: var(--check-radio-color);
 
           outline: 0;
@@ -67,13 +71,16 @@
 
     flex: 0 auto;
     align-self: flex-start;
+    transition-timing-function: var(--ttf-out-quint);
+    transition-duration: var(--td200);
+    transition-property: box-shadow;
 
     //  --  DISABLED
     &[disabled],
     &--disabled {
         --check-radio-color: var(--fc-disabled);
-        --check-radio-color-border: var(--black-400);
-        --check-radio-color-background: var(--black-300);
+        --check-radio-color-border: var(--check-radio-color-border-disabled);
+        --check-radio-color-background: var(--check-radio-color-background-disabled);
 
         cursor: not-allowed;
     }
@@ -87,9 +94,6 @@
 .d-radio-group {
     display: flex;
     gap: var(--space-400); // 8
-    padding-right: var(--space-100); // 1
-    padding-bottom: var(--space-200); // 2
-    padding-left: var(--space-100); // 1
 
     //  --  Wrapper Disabled State
     &.d-checkbox-group--disabled,
@@ -111,7 +115,7 @@
 .d-radio__input {
     display: flex;
     align-self: flex-start;
-    padding-top: calc(var(--space-200) + var(--space-100)); // 3
+    padding-top: var(--space-300);
 }
 
 
@@ -133,7 +137,7 @@
     color: var(--black-800);
     font-weight: var(--fw-normal);
     font-size: var(--fs-200);
-    line-height: calc(20/14);
+    line-height: var(--lh-400);
     cursor: pointer;
 }
 
@@ -146,11 +150,11 @@
         background-repeat: no-repeat;
         background-position: center center;
         background-size: contain;
-        border-radius: var(--br2);
+        border-radius: var(--size-300);
 
         &:focus-visible,
         &:checked:focus-visible {
-            border-radius: var(--br2);
+            box-shadow: var(--bs-focus-ring);
         }
 
         &:checked {
@@ -160,14 +164,15 @@
 
             //  Disabled
             &[disabled] {
-                --check-radio-color-background: var(--black-300);
+                --check-radio-color-background: var(--check-radio-color-background-disabled);
 
                 background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z' fill='hsl(240, 10%, 51%)'/%3E%3C/svg%3E");
             }
         }
 
         &--disabled:checked {
-            --check-radio-color-background: var(--black-300);
+            --check-radio-color-background: var(--check-radio-color-background-disabled);
+            --check-radio-color-border: var(--check-radio-color-border-disabled);
 
             background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z' fill='hsl(240, 10%, 51%)'/%3E%3C/svg%3E");
         }
@@ -175,11 +180,13 @@
         &--indeterminate,
         &:indeterminate {
             --check-radio-color-background: var(--check-radio-color);
+            --check-radio-color-border: var(--check-radio-color);
 
             background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19 13H5v-2h14v2z' fill='%23fff'/%3E%3C/svg%3E");
 
             &[disabled] {
-                --check-radio-color-background: var(--black-300);
+                --check-radio-color-background: var(--check-radio-color-background-disabled);
+                --check-radio-color-border: var(--check-radio-color-border-disabled);
 
                 background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19 13H5v-2h14v2z' fill='hsl(240, 10%, 51%)'/%3E%3C/svg%3E");
             }
@@ -187,7 +194,8 @@
 
         &--indeterminate&--disabled,
         &:indeterminate&--disabled {
-            --check-radio-color-background: var(--black-300);
+            --check-radio-color-background: var(--check-radio-color-background-disabled);
+            --check-radio-color-border: var(--check-radio-color-border-disabled);
 
             background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19 13H5v-2h14v2z' fill='hsl(240, 10%, 51%)'/%3E%3C/svg%3E");
         }
@@ -196,8 +204,8 @@
         &[disabled],
         &--disabled {
             --check-radio-color: var(--fc-disabled);
-            --check-radio-color-border: var(--black-400);
-            --check-radio-color-background: var(--black-300);
+            --check-radio-color-border: var(--check-radio-color-border-disabled);
+            --check-radio-color-background: var(--check-radio-color-background-disabled);
         }
     }
 }
@@ -205,35 +213,19 @@
 //  $$  CHECKBOX VALIDATION STATES
 //  ----------------------------------------------------------------------------
 .d-checkbox--warning {
-    --check-radio-color: var(--warning-color);
+    --check-radio-color: var(--gold-500);
     --check-radio-color-border: var(--check-radio-color);
-
-    &:focus-visible,
-    &:checked:focus-visible {
-        box-shadow: var(--bs-focus-ring-warning);
-    }
 }
 
 .d-checkbox--error {
-    --check-radio-color: var(--error-color);
+    --check-radio-color: var(--red-300);
     --check-radio-color-border: var(--check-radio-color);
-
-    &:focus-visible,
-    &:checked:focus-visible {
-        box-shadow: var(--bs-focus-ring-error);
-    }
 }
 
 .d-checkbox--success {
-    --check-radio-color: var(--success-color);
+    --check-radio-color: var(--green-400);
     --check-radio-color-border: var(--check-radio-color);
-
-    &:focus-visible,
-    &:checked:focus-visible {
-        box-shadow: var(--bs-focus-ring-success);
-    }
 }
-
 
 //  ============================================================================
 //  $   RADIOS
@@ -246,8 +238,8 @@
         &[disabled],
         &--disabled {
             --check-radio-color: var(--fc-disabled);
-            --check-radio-color-border: var(--black-400);
-            --check-radio-color-background: var(--black-300);
+            --check-radio-color-border: var(--check-radio-color-border-disabled);
+            --check-radio-color-background: var(--check-radio-color-background-disabled);
         }
 
         &:focus-visible,
@@ -267,39 +259,26 @@
         }
 
         &--disabled:checked {
+            --check-radio-color-border: var(--check-radio-color-border-disabled);
             --check-radio-color-background: var(--black-400);
         }
     }
 }
 
+
 //  $$  RADIO VALIDATION STATES
 //  ----------------------------------------------------------------------------
 .d-radio--warning {
-    --check-radio-color: var(--warning-color);
+    --check-radio-color: var(--gold-500);
     --check-radio-color-border: var(--check-radio-color);
-
-    &:focus-visible,
-    &:checked:focus-visible {
-      box-shadow: var(--bs-focus-ring-warning), inset 0 0 0 var(--space-200) var(--white);
-    }
 }
 
 .d-radio--error {
-    --check-radio-color: var(--error-color);
+    --check-radio-color: var(--red-300);
     --check-radio-color-border: var(--check-radio-color);
-
-    &:focus-visible,
-    &:checked:focus-visible {
-      box-shadow: var(--bs-focus-ring-error), inset 0 0 0 var(--space-200) var(--white);
-    }
 }
 
 .d-radio--success {
-    --check-radio-color: var(--success-color);
+    --check-radio-color: var(--green-400);
     --check-radio-color-border: var(--check-radio-color);
-
-    &:focus-visible,
-    &:checked:focus-visible {
-      box-shadow: var(--bs-focus-ring-success), inset 0 0 0 var(--space-200) var(--white);
-    }
 }

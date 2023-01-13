@@ -156,26 +156,26 @@ The Toggle component acts as a way to allow the User to switch between two mutua
 </fieldset>
 ```
 
-### Stacked Group
+### Example: Stacked Group
 
 <code-well-header>
-  <fieldset class="d-stack8 d-w50p">
-    <legend class="d-label d-fs-300">DND Settings</legend>
-    <div class="d-toggle-wrapper d-d-flex d-fd-column">
-      <div class="row d-d-flex d-ai-center d-jc-space-between d-mb12">
-        <h3>Status</h3>
-        <h3 class="d-mr4">DND</h3>
+  <fieldset class="d-w25p d-stack8">
+    <legend class="d-headline-large">DND Settings</legend>
+    <div class="d-toggle-wrapper d-d-flex d-fd-column d-stack8">
+      <div class="row d-d-flex d-ai-center d-jc-space-between">
+        <div class="d-headline-medium">Status</div>
+        <div class="d-headline-medium">DND</div>
       </div>
-      <div class="row d-d-flex d-ai-center d-jc-space-between d-mb6">
+      <div class="row d-d-flex d-ai-center d-jc-space-between">
         <example-toggle label="Acorn Test" id="Dialtone-Toggle8" />
       </div>
-      <div class="row d-d-flex d-ai-center d-jc-space-between d-mb6">
+      <div class="row d-d-flex d-ai-center d-jc-space-between">
         <example-toggle label="California Zoo" id="Dialtone-Toggle9" />
       </div>
-      <div class="row d-d-flex d-ai-center d-jc-space-between d-mb6">
+      <div class="row d-d-flex d-ai-center d-jc-space-between">
         <example-toggle label="Montana Centre" id="Dialtone-Toggle10" />
       </div>
-      <div class="row d-d-flex d-ai-center d-jc-space-between d-mb6">
+      <div class="row d-d-flex d-ai-center d-jc-space-between">
         <example-toggle label="Wilson Centre" id="Dialtone-Toggle11" />
       </div>
     </div>
@@ -183,52 +183,28 @@ The Toggle component acts as a way to allow the User to switch between two mutua
 </code-well-header>
 
 ```html
-<fieldset class="d-stack8 d-w50p">
-  <legend class="d-label d-fs-300">DND Settings</legend>
-  <div class="d-toggle-wrapper d-d-flex d-fd-column">
-    <div class="row d-d-flex d-ai-center d-jc-space-between d-mb12">
-      <h3>Status</h3>
-      <h3 class="d-mr4">DND</h3>
+<fieldset class="d-w25p d-stack8">
+  <legend class="d-headline-large">DND Settings</legend>
+  <div class="d-toggle-wrapper d-d-flex d-fd-column d-stack8">
+    <div class="row d-d-flex d-ai-center d-jc-space-between">
+      <div class="d-headline-medium">Status</div>
+      <div class="d-headline-medium">DND</div>
     </div>
-    <div class="row d-d-flex d-ai-center d-jc-space-between d-mb6">
-      <div class="d-toggle-copy">
-        <label class="d-toggle-label" for="Dialtone-Toggle8">Acorn Tech</label>
-      </div>
-      <div class="d-toggle-button">
-        <button class="d-toggle" type="button" role="switch" id="Dialtone-Toggle8" >
-          <span class="d-toggle__inner" />
-        </button>
-      </div>
+    <div class="row d-d-flex d-ai-center d-jc-space-between">
+      <div class="d-toggle-copy"><label class="d-toggle-label" for="Dialtone-Toggle8">Acorn Test</label></div>
+      <div class="d-toggle-button"><button id="Dialtone-Toggle8" class="d-toggle d-toggle--checked" aria-checked="true" type="button" role="switch"><span class="d-toggle__inner"></span></button></div>
     </div>
-    <div class="row d-d-flex d-ai-center d-jc-space-between d-mb6">
-      <div class="d-toggle-copy">
-        <label class="d-toggle-label" for="Dialtone-Toggle9">California Zoo</label>
-      </div>
-      <div class="d-toggle-button">
-        <button class="d-toggle" type="button" role="switch" id="Dialtone-Toggle9" >
-          <span class="d-toggle__inner" />
-        </button>
-      </div>
+    <div class="row d-d-flex d-ai-center d-jc-space-between">
+      <div class="d-toggle-copy"><label class="d-toggle-label" for="Dialtone-Toggle9">California Zoo</label></div>
+      <div class="d-toggle-button"><button id="Dialtone-Toggle9" class="d-toggle" aria-checked="false" type="button" role="switch"><span class="d-toggle__inner"></span></button></div>
     </div>
-    <div class="row d-d-flex d-ai-center d-jc-space-between d-mb6">
-      <div class="d-toggle-copy">
-        <label class="d-toggle-label" for="Dialtone-Toggle10">Montana Centre</label>
-      </div>
-      <div class="d-toggle-button">
-        <button class="d-toggle" type="button" role="switch" id="Dialtone-Toggle10" >
-          <span class="d-toggle__inner" />
-        </button>
-      </div>
+    <div class="row d-d-flex d-ai-center d-jc-space-between">
+      <div class="d-toggle-copy"><label class="d-toggle-label" for="Dialtone-Toggle10">Montana Centre</label></div>
+      <div class="d-toggle-button"><button id="Dialtone-Toggle10" class="d-toggle" aria-checked="false" type="button" role="switch"><span class="d-toggle__inner"></span></button></div>
     </div>
-    <div class="row d-d-flex d-ai-center d-jc-space-between d-mb6">
-      <div class="d-toggle-copy">
-        <label class="d-toggle-label" for="Dialtone-Toggle11">Wilson Centre</label>
-      </div>
-      <div class="d-toggle-button">
-        <button class="d-toggle" type="button" role="switch" id="Dialtone-Toggle11" >
-          <span class="d-toggle__inner" />
-        </button>
-      </div>
+    <div class="row d-d-flex d-ai-center d-jc-space-between">
+      <div class="d-toggle-copy"><label class="d-toggle-label" for="Dialtone-Toggle11">Wilson Centre</label></div>
+      <div class="d-toggle-button"><button id="Dialtone-Toggle11" class="d-toggle" aria-checked="false" type="button" role="switch"><span class="d-toggle__inner"></span></button></div>
     </div>
   </div>
 </fieldset>

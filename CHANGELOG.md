@@ -1,3 +1,30 @@
+# [7.12.0](https://github.com/dialpad/dialtone/compare/v7.11.2...v7.12.0) (2023-01-10)
+
+
+### Bug Fixes
+
+* **Button:** suppress hover active on disabled buttons ([#783](https://github.com/dialpad/dialtone/issues/783)) ([a6bb89a](https://github.com/dialpad/dialtone/commit/a6bb89a01df83b5a7f7101e5c4290522430df80a))
+
+
+### Features
+
+* **Button:** uniform padding for icon-only button ([#784](https://github.com/dialpad/dialtone/issues/784)) ([05912ac](https://github.com/dialpad/dialtone/commit/05912acdb373c64c8d3674198b02fcfe3a8c5e2c))
+* **Style:** updated focus styles; banner/toast/notice components restyled ([#775](https://github.com/dialpad/dialtone/issues/775)) ([7944edd](https://github.com/dialpad/dialtone/commit/7944eddb18cdcbcdc4cd330a28c135f003cfbef1))
+
+## [7.11.2](https://github.com/dialpad/dialtone/compare/v7.11.1...v7.11.2) (2023-01-05)
+
+
+### Bug Fixes
+
+* missing popover css vars ([#778](https://github.com/dialpad/dialtone/issues/778)) ([dad55b5](https://github.com/dialpad/dialtone/commit/dad55b53c3b291612af43eee178f49e3af52cf24))
+
+## [7.11.1](https://github.com/dialpad/dialtone/compare/v7.11.0...v7.11.1) (2023-01-04)
+
+
+### Bug Fixes
+
+* popover background ([#776](https://github.com/dialpad/dialtone/issues/776)) ([d57fbb6](https://github.com/dialpad/dialtone/commit/d57fbb66fca2cbb5e3a3a00ab58b03cdb4ed13ec))
+
 # [7.11.0](https://github.com/dialpad/dialtone/compare/v7.10.4...v7.11.0) (2022-12-24)
 
 

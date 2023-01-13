@@ -1,4 +1,5 @@
 <template>
+  <h2 class="d-vi-visible-sr">Local navigation</h2>
   <ul
     v-if="sidebarItems.length"
     class="
