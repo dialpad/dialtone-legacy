@@ -20,14 +20,17 @@
     --table-color-border: var(--black-300);
     --table-th-color-text: var(--fc-secondary);
     --table-td-color-text: var(--fc-tertiary);
+    --table-font-size: var(--fs-200);
+    --table-th-font-size: var(--fs-100);
+    --table-line-height: var(--lh-200);
 
     display: table;
     box-sizing: border-box;
     width: 100%;
     max-width: 100%;
     margin: 0;
-    font-size: var(--fs-200);
-    line-height: var(--lh2);
+    font-size: var(--table-font-size);
+    line-height: var(--table-line-height);
     border-collapse: collapse;
     border-spacing: 0;
 
@@ -36,7 +39,7 @@
       margin-bottom: var(--space-400); // 8
       color: var(--table-th-color-text);
       font-weight: var(--fw-bold);
-      font-size: var(--fs-200);
+      font-size: var(--table-font-size);
       .d-ta-unset();
     }
 
@@ -46,7 +49,8 @@
 
         // Column Header Styles
         th {
-            font-size: var(--fs-100);
+            font-size: var(--table-th-font-size);
+            line-height: var(--lh-100);
             text-transform: uppercase;
         }
     }
@@ -110,7 +114,7 @@
     &.d-table--inverted {
         // Row Styles
         tr:nth-child(even) {
-            background-color: hsla(var(--bgc-primary-hsl) / 0.08);
+            background-color: hsla(var(--bgc-primary-hsl) / 0.1);
         }
     }
 }

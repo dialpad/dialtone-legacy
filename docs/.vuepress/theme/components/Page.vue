@@ -1,73 +1,74 @@
 <template>
-  <div class="main-content d-w100p lg:d-pt64">
-    <page-header>
-      <template #content-bottom>
-        <page-toc
-          v-if="isMobile"
-          :headers="$page.headers"
-          :is-mobile="isMobile"
+  <div
+    class="d-d-grid d-jc-center"
+    :class="gridClass"
+  >
+    <div class="d-p24 lg:d-pr24 lg:d-pt64">
+      <page-header>
+        <template #content-bottom>
+          <page-toc v-if="isMobile && includeToc" />
+        </template>
+      </page-header>
+      <content />
+      <nav
+        :class="prev ? 'd-jc-space-between' : 'd-jc-flex-end'"
+        class="page-nav d-h64 d-d-flex d-ai-center"
+      >
+        <router-link
+          v-if="prev"
+          v-slot="{ navigate }"
+          :to="prev.link"
+          custom
+        >
+          <dt-button
+            importance="clear"
+            size="lg"
+            @click="navigate"
+          >
+            <template #icon>
+              <dt-icon name="arrow-left" />
+            </template>
+            {{ prev.text }}
+          </dt-button>
+        </router-link>
+        <router-link
+          v-if="next"
+          v-slot="{ navigate }"
+          :to="next.link"
+          custom
+        >
+          <dt-button
+            icon-position="right"
+            importance="clear"
+            size="lg"
+            @click="navigate"
+          >
+            <template #icon>
+              <dt-icon name="arrow-right" />
+            </template>
+            {{ next.text }}
+          </dt-button>
+        </router-link>
+      </nav>
+      <footer class="d-mt16 d-mb16 d-body-small d-fc-secondary">
+        <span
+          v-if="$frontmatter.title"
+          v-text="$frontmatter.title"
         />
-      </template>
-    </page-header>
-    <content />
-    <nav
-      :class="prev ? 'd-jc-space-between' : 'd-jc-flex-end'"
-      class="page-nav d-h64 d-d-flex d-ai-center"
-    >
-      <router-link
-        v-if="prev"
-        v-slot="{ navigate }"
-        :to="prev.link"
-        custom
-      >
-        <dt-button
-          importance="clear"
-          size="lg"
-          @click="navigate"
-        >
-          <template #icon>
-            <component :is="arrowLeft" />
-          </template>
-          {{ prev.text }}
-        </dt-button>
-      </router-link>
-      <router-link
-        v-if="next"
-        v-slot="{ navigate }"
-        :to="next.link"
-        custom
-      >
-        <dt-button
-          icon-position="right"
-          importance="clear"
-          size="lg"
-          @click="navigate"
-        >
-          <template #icon>
-            <component :is="arrowRight" />
-          </template>
-          {{ next.text }}
-        </dt-button>
-      </router-link>
-    </nav>
-    <footer class="d-mt16 d-mb16 d-body-small d-fc-secondary">
-      <span
-        v-if="$frontmatter.title"
-        v-text="$frontmatter.title"
-      />
-      documentation last updated {{ lastUpdated }}
-    </footer>
+        documentation last updated {{ lastUpdated }}
+      </footer>
+    </div>
+    <page-toc v-if="!isMobile && includeToc" />
   </div>
 </template>
 
 <script setup>
 import PageHeader from '../components/PageHeader.vue';
 import PageToc from '../components/PageToc.vue';
-import * as icons from '@dialpad/dialtone-icons';
 import { computed } from 'vue';
 import { usePageData } from '@vuepress/client';
 
-defineProps({
+const props = defineProps({
   prev: {
     type: Object,
     default: () => {
@@ -87,10 +88,12 @@ const lastUpdated = computed(() => {
   const date = new Date(usePageData().value.git.updatedTime);
   return new Intl.DateTimeFormat('en-US', { dateStyle: 'full' }).format(date);
 });
-const arrowLeft = computed(() => {
-  return icons.ArrowLeft;
+const gridClass = computed(() => {
+  if (props.isMobile || !includeToc.value) return 'd-gl-docsite';
+  return 'd-gl-docsite-toc';
 });
-const arrowRight = computed(() => {
-  return icons.ArrowRight;
+const includeToc = computed(() => {
+  const headers = usePageData().value.headers;
+  return headers?.length > 0;
 });
 </script>
