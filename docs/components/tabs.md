@@ -56,7 +56,7 @@ Add a `d-tablist--no-border` to remove the bottom border of any tablist. Handy f
 
 <code-well-header bgclass="d-bgc-primary">
   <example-tabs hide-content borderless />
-  <example-tabs hide-content  size="small" borderless />
+  <example-tabs hide-content size="small" borderless />
 </code-well-header>
 
 ```html
