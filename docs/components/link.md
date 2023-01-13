@@ -7,7 +7,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-link--default
 figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Components-7?node-id=8919%3A21226&viewport=-746%2C-197%2C1.41&t=xHutRjwo1o5zMTgT-11
 ---
 <code-well-header>
-  <a href="#" class="d-link">Base link</a>
+  <a href="#link" class="d-link">Base link</a>
 </code-well-header>
 
 <!-- <component-combinator component-name="DtLink" /> -->
@@ -19,11 +19,11 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 <dialtone-usage>
 <template #do>
 
-- Navigating between destinations.
+- Use for navigating between destinations.
 </template>
 <template #dont>
 
-- Actions, instead use a [Button](button.md).
+- Use for actions, instead use a [Button](button.md).
 </template>
 </dialtone-usage>
 
@@ -42,27 +42,31 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 ## Variants and examples
 
 <code-well-header>
-  <a href="#" class="d-link">Base link</a>
-  <a href="#" class="d-link d-link--danger">Danger link</a>
-  <a href="#" class="d-link d-link--muted">Muted link</a>
-  <a href="#" class="d-link d-link--success">Success link</a>
-  <a href="#" class="d-link d-link--warning">Warning link</a>
+  <a href="#link" class="d-link">Base link</a>
+  <a href="#link" class="d-link d-link--danger">Danger link</a>
+  <a href="#link" class="d-link d-link--muted">Muted link</a>
+  <a href="#link" class="d-link d-link--success">Success link</a>
+  <a href="#link" class="d-link d-link--warning">Warning link</a>
+  <a href="#link" class="d-link d-link--disabled">Disabled link</a>
 </code-well-header>
 
 ```html
-<a href="#" class="d-link">...</a>
-<a href="#" class="d-link d-link--danger">...</a>
-<a href="#" class="d-link d-link--muted">...</a>
-<a href="#" class="d-link d-link--success">...</a>
-<a href="#" class="d-link d-link--warning">...</a>
+<a href="#link" class="d-link">...</a>
+<a href="#link" class="d-link d-link--danger">...</a>
+<a href="#link" class="d-link d-link--muted">...</a>
+<a href="#link" class="d-link d-link--success">...</a>
+<a href="#link" class="d-link d-link--warning">...</a>
+<a href="#link" class="d-link d-link--disabled">...</a>
 ```
 
 <code-well-header bgclass="d-bgc-contrast">
-  <a href="#" class="d-link d-link--inverted">Inverted base link</a>
+  <a href="#link" class="d-link d-link--inverted">Inverted base link</a>
+  <a href="#link" class="d-link d-link--inverted-disabled">Inverted disabled link</a>
 </code-well-header>
 
 ```html
-<a href="#" class="d-link d-link--inverted">...</a>
+<a href="#link" class="d-link d-link--inverted">...</a>
+<a href="#link" class="d-link d-link--inverted-disabled">Inverted disabled link</a>
 ```
 
 ## Classes

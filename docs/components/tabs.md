@@ -50,7 +50,7 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 <div class="d-tablist d-tablist--sm">…</div>
 ```
 
-### Border
+### Borderless
 
 Add a `d-tablist--no-border` to remove the bottom border of any tablist. Handy for small tablists and tablists serving as subtabs to a larger menu.
 
