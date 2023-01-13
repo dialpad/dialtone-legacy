@@ -30,13 +30,17 @@ const breakpoints = [
 ];
 //  -- CLASSES
 const classes = [
-  /\.d-d-*/,
-  /\.d-mt*/,
-  /\.d-t0/,
-  /\.d-pt*/,
-  /\.d-g-cols*/,
-  /\.d-w100p*/,
-  /\.d-jc-*/,
+  /^\.d-d-(flex|none|block)$/m, // Display Flex, None and Block
+  '.d-t0',
+  /^\.d-p[t|r]([0-9]*|-unset)$/m, // Padding Top and Right
+  '.d-fd-column',
+  '.d-ai-stretch',
+  '.d-ps-relative',
+  /^\.d-mx([0-9]*|-(auto|unset))$/m, // Margin X
+  /^\.d-g-cols[0-9]*$/m, // Grid columns
+  /^\.d-(stack|flow|h|w|fs-)[0-9]*$/m, // Stack, Flow, Height, Widths and Font sizes
+  '.d-w100p',
+  /^\.d-wmx(-(auto|unset)|[0-9]*(ch|p))$/m, // Max widths
 ];
 
 //  ================================================================================
