@@ -116,7 +116,7 @@ import { computed, onMounted, ref, watch } from 'vue';
 import IconPopover from '../baseComponents/IconPopover.vue';
 import IconPopoverContent from '../baseComponents/IconPopoverContent.vue';
 
-const selectedCategory = ref('brand');
+const selectedCategory = ref('');
 const search = ref(null);
 const searching = ref(false);
 const searchRef = ref(null);
