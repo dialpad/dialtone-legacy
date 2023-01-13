@@ -3,7 +3,7 @@
     class="d-d-grid d-jc-center"
     :class="gridClass"
   >
-    <div class="d-p24 d-pr12 lg:d-pr24 lg:d-pt64">
+    <div class="d-p24 lg:d-pr24 lg:d-pt64">
       <page-header>
         <template #content-bottom>
           <page-toc v-if="isMobile && includeToc" />
