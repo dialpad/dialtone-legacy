@@ -9,9 +9,9 @@
           Documented styles, components, and utility classes to help you quickly design and build unified experiences
           across Dialpad and Dialpad Meetings.
         </p>
-        <div class="d-mb48">
+        <div class="d-mb32 d-d-flex d-jc-center d-flow8">
           <a
-            class="d-td-unset"
+            class="d-td-unset d-d-inline-flex"
             href="https://github.com/dialpad/dialtone/"
           >
             <img
@@ -20,7 +20,7 @@
             >
           </a>
           <a
-            class="d-td-unset d-ml4"
+            class="d-td-unset d-d-inline-flex"
             href="https://github.com/dialpad/dialtone-vue"
           >
             <img
@@ -30,7 +30,7 @@
             >
           </a>
         </div>
-        <div class="d-d-flex">
+        <div class="d-d-flex d-jc-center d-flow16">
           <router-link
             v-slot="{ navigate }"
             to="/guides/getting-started/"
@@ -54,7 +54,6 @@
               role="link"
               size="lg"
               importance="outlined"
-              class="d-ml16"
               @click="(e) => { navigate(e); }"
               @keypress.enter="(e) => { navigate(e); }"
             >
@@ -73,7 +72,7 @@
   <section class="links d-d-grid d-gg16 d-g-cols12 d-wmx1340 d-mx-auto">
     <div class="link d-body-base d-gc3 d-px32 d-ta-center">
       <router-link
-        class="d-fc-secondary h:d-fc-purple-400 d-d-block d-td-none"
+        class="d-fc-secondary h:d-fc-purple-400 d-d-block d-td-none d-bar8 d-pt4"
         to="/design/"
       >
         <img
@@ -97,7 +96,7 @@
     </div>
     <div class="link d-body-base d-gc3 d-px32 d-ta-center">
       <router-link
-        class="d-fc-secondary h:d-fc-purple-400 d-d-block d-td-none"
+        class="d-fc-secondary h:d-fc-purple-400 d-d-block d-td-none d-bar8 d-pt4"
         to="/components/"
       >
         <img
@@ -129,7 +128,7 @@
     </div>
     <div class="link d-body-base d-gc3 d-px32 d-ta-center">
       <router-link
-        class="d-fc-secondary h:d-fc-purple-400 d-d-block d-td-none"
+        class="d-fc-secondary h:d-fc-purple-400 d-d-block d-td-none d-bar8 d-pt4"
         to="/utilities/"
       >
         <img
@@ -153,7 +152,7 @@
     </div>
     <div class="link d-body-base d-gc3 d-px32 d-ta-center">
       <router-link
-        class="d-fc-secondary h:d-fc-purple-400 d-d-block d-td-none"
+        class="d-fc-secondary h:d-fc-purple-400 d-d-block d-td-none d-bar8 d-pt4"
         to="/guides/"
       >
         <img
@@ -191,15 +190,17 @@
     </div>
   </section>
   <section class="d-bgc-purple-500 d-py64 d-ta-center">
-    <p class="d-fc-white d-fs-300 d-fw-medium d-px48">
-      Don't see something? Want to contribute?
-    </p>
-    <a
-      class="d-btn d-btn--inverted d-btn--lg d-btn--primary d-mt16"
-      href="https://forms.monday.com/forms/8a9a6ff69d7e9f95caee029c2806e2c1?r=use1"
-      target="_blank"
-      rel="noopener noreferrer"
-    >Make a request</a>
+    <div class="d-headline-large d-fw-medium d-fc-primary-inverted d-px48 d-flow16 d-d-flex d-jc-center d-ai-center">
+      <div>Don't see something? Want to contribute?</div>
+      <a
+        class="d-btn d-btn--inverted d-btn--lg d-btn--primary"
+        href="https://dialpad.atlassian.net/secure/CreateIssue.jspa?issuetype=10901&pid=12428"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Make a request
+      </a>
+    </div>
   </section>
 </template>
 

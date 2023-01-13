@@ -51,6 +51,11 @@ html {
   scroll-padding-top: 6.4rem;
 }
 
+// @TODO: Move this class into root-layout component on dialtone-vue
+.root-layout {
+  min-height: 100vh;
+}
+
 //  ============================================================================
 //  $   SEARCH BUTTON
 //      Override search button with dialtone styles
@@ -139,22 +144,16 @@ a.router-link-active {
 //      Because the doc site needs layout specifications that aren't
 //      appropriate to ship as part of Dialtone.
 //  ----------------------------------------------------------------------------
-.main-content {
-  max-width: 99rem;
-  margin: 0 auto;
-  padding: 2.4rem 2.5rem;
-}
-
 .dialtone-header {
   // TODO: redo 😜
-  border: 1px solid var(--black-300);
-  background-color: var(--white);
+  border: var(--size-100) solid var(--black-300);
+  background-color: var(--bgc-primary);
 }
 
 .dialtone-sidebar {
   // TODO: redo 😜
-  // background-color: var(--black-100);
-  // border-right: 1px solid var(--black-200);
+  background-color: var(--bgc-secondary);
+  border-right: var(--size-100) solid var(--black-200);
 
   &__list {
     width: calc(var(--size-300) * 64);
@@ -166,6 +165,7 @@ a.header-anchor {
   margin-left: -0.87em;
   padding-right: 0.23em;
   opacity: 0;
+  font-size: var(--fs-300);
 }
 
 .d-docsite--header-2 {
@@ -196,21 +196,23 @@ a.header-anchor {
 }
 
 .d-gl-docsite {
-  grid-template-areas: 'sidebar content';
-  grid-template-columns: [sidebar] 21.6rem [content] minmax(32rem, 75rem);
-  column-gap: 4.8rem;
+  grid-template-areas: 'content';
+  grid-template-columns: [content] minmax(32rem, 99rem);
 }
 
 .d-gl-docsite-toc {
-  grid-template-areas: 'sidebar content toc';
-  grid-template-columns: [sidebar] 21.6rem [content] minmax(32rem, 75rem) [toc] minmax(min-content, 21.6rem);
-  column-gap: 4.8rem;
+  grid-template-areas: 'content toc';
+  grid-template-columns: [content] minmax(32rem, 99rem) [toc] minmax(min-content, 21.6rem);
 }
 
 .d-docsite--paragraph {
   .d-body-base(); // TODO: when a redesign is imminent
   margin-bottom: 1em;
   max-width: 75ch;
+  .d-notice & {
+    // OVERRIDE
+    margin: unset; // TODO: make sure this doesn't get inserted into components
+  }
 }
 
 .d-docsite--unordered-list,
@@ -408,20 +410,19 @@ a.header-anchor {
 //  ----------------------------------------------------------------------------
 
 .hero {
-  margin-top: var(--sun16) !important;
-  background-color: #f5f2ed;
+  background-color: var(--tan-100);
   background-image: url('/assets/images/home-dp-logo.svg');
   background-position: 80% center;
 
   @media (max-width: 640px) {
-    padding-right: var(--su16);
-    padding-left: var(--su8);
+    padding-right: var(--space-500);
+    padding-left: var(--space-400);
   }
 }
 
 .hero--inner-wrapper {
-  padding-top: 12.8rem;
-  padding-bottom: 12.8rem;
+  padding-top: calc(var(--space-300) * 32);
+  padding-bottom: calc(var(--space-300) * 32);
 
   @media (max-width: 640px) {
     flex-direction: column;
@@ -446,8 +447,8 @@ a.header-anchor {
 }
 
 .links {
-  padding-top: var(--su96);
-  padding-bottom: var(--su96);
+  padding-top: calc(var(--space-300) * 24);
+  padding-bottom: calc(var(--space-300) * 24);
 
   @media (max-width: 640px) {
     display: block !important;
@@ -458,7 +459,7 @@ a.header-anchor {
   @media (max-width: 640px) {
     display: block;
     grid-column: 1 / -1 !important;
-    margin-bottom: calc(var(--su64) + var(--su24));
+    margin-bottom: calc(var(--space-300) * 18);
   }
 }
 
@@ -518,6 +519,10 @@ a.header-anchor {
     border-radius: var(--size-400);
     overflow: hidden;
     text-decoration: none;
+    background-color: var(--bgc-primary);
+    transition-timing-function: var(--ttf-in-out);
+    transition-duration: var(--td200);
+    transition-property: box-shadow;
 
     &--disabled {
       opacity: .7;
@@ -534,7 +539,7 @@ a.header-anchor {
   }
 
   &__image {
-    background-color: var(--black-100);
+    background-color: var(--bgc-secondary);
     text-align: center;
   }
 
@@ -601,6 +606,8 @@ a.header-anchor {
 //  ----------------------------------------------------------------------------
 
 .dialtone-usage {
+  --usage-item-color-background: var(--bgc-secondary);
+
   & {
     display: flex;
     flex-direction: column;
@@ -634,15 +641,15 @@ a.header-anchor {
     flex-direction: column;
     gap: var(--space-400);
     padding: var(--space-500);
-    background-color: var(--black-100);
+    background-color: var(--usage-item-color-background);
     border-radius: var(--size-400);
 
     &--do {
-      background-color: var(--green-100);
+      --usage-item-color-background: var(--bgc-success);
     }
 
     &--dont {
-      background-color: var(--red-100);
+      --usage-item-color-background: var(--bgc-critical);
     }
   }
 
@@ -664,6 +671,10 @@ a.header-anchor {
     background-color: var(--primary-color-hover);
   }
 }
+
+//  ============================================================================
+//  $   DEBUGGING / TEST
+//  ----------------------------------------------------------------------------
 
 [outline] {
   outline: 2px solid orangered;

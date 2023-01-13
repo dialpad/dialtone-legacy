@@ -14,18 +14,21 @@
 //    - Content
 //    - Header / Footer
 
-
-//  $  POPOVER
+//  $  CSS CUSTOM PROPERTIES
 //  ----------------------------------------------------------------------------
-.d-popover {
-  //  $  CSS CUSTOM PROPERTIES
-  //  ----------------------------------------------------------------------------
-
+body {
   --popover-color-background: var(--black-100);
   --popover-border-width: var(--size-100); // 8
   --popover-border-radius: var(--size-400);
   --popover-color-shadow: hsla(var(--black-900-hsl) ~' / ' 10%);
+  --popover-color-border: var(--popover-color-shadow);
   --popover-shadow: 0 0 0 1px var(--popover-color-shadow), var(--bs-card);
+}
+
+//  $  POPOVER
+//  ----------------------------------------------------------------------------
+.d-popover {
+
 
   //  $  POPOVER DIALOG
   //  ----------------------------------------------------------------------------
@@ -40,6 +43,7 @@
     display: grid;
     grid-template-rows: 1fr;
     overflow: auto;
+    background-color: var(--popover-color-background);
     border-radius: var(--popover-border-radius);
     box-shadow: var(--popover-shadow);
 

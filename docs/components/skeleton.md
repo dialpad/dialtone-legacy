@@ -13,11 +13,6 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-skeleton--defa
         d-h8
         d-bar2
         skeleton-placeholder
-        skeleton-placeholder--animate
-      "
-      style="
-        --placeholder-from-color: var(--black-400);
-        --placeholder-to-color: var(--black-200);
       "
     ></div>
   </div>
@@ -25,53 +20,94 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-skeleton--defa
 
 ## Variants
 
+### Default
+
+<code-well-header>
+  <div class="d-w50p">
+    <div class="d-h8 d-bar2 skeleton-placeholder"></div>
+  </div>
+</code-well-header>
+
+```html
+<div class="d-h8 d-bar2 skeleton-placeholder"></div>
+```
+
 ### Animation
+
+<code-well-header>
+  <div class="d-w50p">
+    <div class="d-h8 d-bar2 skeleton-placeholder skeleton-placeholder--animate"></div>
+  </div>
+</code-well-header>
+
+```html
+<div class="d-h8 d-bar2 skeleton-placeholder skeleton-placeholder--animate"></div>
+```
+
+## Custom
+
+To customize a non-animating Skeleton background color modify the `--placeholder-from-color` variable with an inline `style`.
 
 <code-well-header>
   <div class="d-w50p">
     <div
       class="
+        skeleton-placeholder
         d-h8
         d-bar2
-        skeleton-placeholder
-        skeleton-placeholder--animate
       "
       style="
-        --placeholder-from-color: var(--black-400);
-        --placeholder-to-color: var(--black-200);
-      "
-    ></div>
+        --placeholder-from-color: var(--blue-400);
+      ">
+    </div>
   </div>
 </code-well-header>
 
 ```html
+<div
+  class="
+    skeleton-placeholder
+    d-h8
+    d-bar2
+  "
+  style="
+    --placeholder-from-color: var(--blue-400);
+  ">
+</div>
+```
+
+Customize an animating Skeleton by modifying the `--placeholder-from-color` and `--placeholder-to-color` variables with an inline `style`.
+
 <code-well-header>
   <div class="d-w50p">
     <div
-      class="d-h8 d-bar2 skeleton-placeholder skeleton-placeholder--animate "
-      style="
-        --placeholder-from-color: var(--black-400);
-        --placeholder-to-color: var(--black-200);
+      class="
+        skeleton-placeholder
+        skeleton-placeholder--animate
+        d-h8
+        d-bar2
       "
-    ></div>
-  </div>
-</code-well-header>
-```
-
-### No animation
-
-<code-well-header>
-  <div class="d-w50p">
-    <div class="d-h8 d-bar2 skeleton-placeholder" style=" --placeholder-from-color: var(--black-400); --placeholder-to-color: var(--black-200); " ></div>
+      style="
+        --placeholder-from-color: var(--blue-400);
+        --placeholder-to-color: var(--blue-200);
+      ">
+    </div>
   </div>
 </code-well-header>
 
 ```html
-<code-well-header>
-  <div class="d-w50p">
-    <div class="d-h8 d-bar2 skeleton-placeholder" style=" --placeholder-from-color: var(--black-400); --placeholder-to-color: var(--black-200); " ></div>
-  </div>
-</code-well-header>
+<div
+  class="
+    skeleton-placeholder
+    skeleton-placeholder--animate
+    d-h8
+    d-bar2
+  "
+  style="
+    --placeholder-from-color: var(--blue-300);
+    --placeholder-to-color: var(--blue-200);
+  ">
+</div>
 ```
 
 ## Prefabricated examples
@@ -120,5 +156,4 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-skeleton--defa
       </div>
     </div>
   </div>
-
 </code-well-header>

@@ -5,7 +5,7 @@
       <component
         :is="isPreview ? 'h2' : 'h1'"
         class="d-d-flex"
-        :class="isPreview ? 'd-docsite--header-2 d-mt0' : 'dialtone-page-title'"
+        :class="isPreview ? 'd-docsite--header-3 d-mt0' : 'dialtone-page-title'"
       >
         <div class=" d-fl1">
           {{ heading }}
@@ -18,7 +18,10 @@
               @click="copyLink"
             >
               <template #icon>
-                <dt-icon name="copy" size="300" />
+                <dt-icon
+                  name="copy"
+                  size="300"
+                />
               </template>
             </dt-button>
           </template>
@@ -30,6 +33,7 @@
           <dt-avatar
             size="lg"
             color="purple-200"
+            :seed="author"
             avatar-class="d-mr16"
           >
             {{ initials }}

@@ -13,8 +13,7 @@ no_preview: true
   </div>
   <div class="d-notice__content d-stack4">
     <p class="d-notice__message">
-
-Currently documented in [Dialtone Vue](https://vue.dialpad.design/?path=/docs/components-root-layout--default).
+      Currently documented in <a target="_blank" href="https://vue.dialpad.design/?path=/docs/components-root-layout--default" class="d-link d-link--muted">Dialtone Vue</a>.
     </p>
   </div>
 </aside>

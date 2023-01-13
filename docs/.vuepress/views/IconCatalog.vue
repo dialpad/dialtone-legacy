@@ -16,11 +16,11 @@
         </template>
         <template #rightIcon>
           <dt-button
+            id="search-input-button-close"
             kind="muted"
             importance="clear"
             circle
             aria-label="Clear filters"
-            id="search-input-button-close"
             @click="resetSearch"
           >
             <template #icon>

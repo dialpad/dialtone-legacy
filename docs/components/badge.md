@@ -7,7 +7,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-badge--default
 figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Components-7?node-id=8914%3A21227&viewport=656%2C314%2C0.55&t=xHutRjwo1o5zMTgT-11
 ---
 
-<code-well-header>
+<code-well-header bgclass="d-bgc-primary">
   <div class="d-d-flex d-gg8 d-ai-center">
     <span class="d-badge"><span class="d-badge__label">Label</span></span>
     <span class="d-badge d-badge--count"><span class="d-badge__label">1</span></span>
@@ -43,7 +43,7 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 
 ### Label
 
-<code-well-header>
+<code-well-header bgclass="d-bgc-primary">
   <span class="d-badge"><span class="d-badge__label">Label</span></span>
 </code-well-header>
 
@@ -53,7 +53,7 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 
 ### Count
 
-<code-well-header>
+<code-well-header bgclass="d-bgc-primary">
   <span class="d-badge d-badge--count"><span class="d-badge__label">1</span></span>
 </code-well-header>
 
@@ -173,7 +173,7 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 
 ## Icon
 
-<code-well-header>
+<code-well-header bgclass="d-bgc-primary">
   <span class="d-badge">
     <span class="d-badge__icon-left">
       <dt-icon name="lightning-bolt" size="200" />
@@ -201,7 +201,7 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 
 ### Label
 
-<code-well-header>
+<code-well-header bgclass="d-bgc-primary">
   <div>
     <div class="d-d-flex d-gg8 d-ai-center">
       <span class="d-badge">Co-host</span>
@@ -289,7 +289,7 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 
 ### Count
 
-<code-well-header>
+<code-well-header bgclass="d-bgc-primary">
   <div>
     <div class="d-d-flex d-gg8 d-ai-center">
       <span class="d-badge d-badge--count d-badge--success">

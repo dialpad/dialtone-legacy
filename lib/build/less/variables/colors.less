@@ -75,42 +75,48 @@
 @tan-500:                       #121212;
 
 //  ============================================================================
-//  $   COLOR STATES
-//      Used for inputs, notices, and button statuses
-//  ----------------------------------------------------------------------------
-@color-states: {
-    error-color:                var(--red-300);
-    error-color-hsl:            var(--red-300-hsl);
-    error-color-hover:          hsl(var(--red-300-h), var(--red-300-s), calc(var(--red-300-l) - 8%));
-
-    warning-color:              var(--fc-warning);
-    warning-color-hsl:          var(--gold-500-hsl);
-    warning-color-hover:        var(--fc-warning-hover);
-
-    success-color:              var(--fc-success);
-    success-color-hsl:          var(--green-500-hsl);
-    success-color-hover:        var(--green-500);
-
-    muted-color:                var(--black-700);
-    muted-color-hsl:            var(--black-700-hsl);
-    muted-color-hover:          var(--black-700);
-
-    inverted-color:             var(--fc-primary-inverted);
-    inverted-color-hsl:         var(--black-100-hsl);
-    inverted-color-hover:       var(--black-200);
-}
-
-//  ============================================================================
 //  $   FOCUS RINGS
 //      Used on inputs, buttons, and other focusable elements.
 //  ----------------------------------------------------------------------------
 @focus-rings: {
-    focus-ring:                 hsla(var(--primary-color-hsl) ~' / ' 75%);
-    focus-ring-success:         hsla(var(--success-color-hsl) ~' / ' 75%);
-    focus-ring-warning:         hsla(var(--warning-color-hsl) ~' / ' 75%);
-    focus-ring-error:           hsla(var(--error-color-hsl) ~' / ' 75%);
-    focus-ring-muted:           var(--focus-ring);
-    focus-ring-inverted:        hsla(var(--inverted-color-hsl) ~' / ' 50%);
+    color-focus-ring:           hsla(var(--blue-300-hsl) / 1); // redundant for backwards compatibility
+    focus-ring:                 var(--color-focus-ring);
+}
+
+//  ============================================================================
+//  $   SURFACE COLORS
+//      Semantic background colors
+//  ----------------------------------------------------------------------------
+@surface-colors: {
+    bgc-critical:              var(--red-100);
+    bgc-critical-hsl:          var(--red-100-hsl);
+
+    bgc-info:                  var(--blue-100);
+    bgc-info-hsl:              var(--blue-100-hsl);
+
+    bgc-warning:               var(--gold-100);
+    bgc-warning-hsl:           var(--gold-100-hsl);
+
+    bgc-success:               var(--green-100);
+    bgc-success-hsl:           var(--green-100-hsl);
+
+    bgc-primary:               var(--white);
+    bgc-primary-hsl:           var(--white-hsl);
+
+    bgc-secondary:             var(--black-100);
+    bgc-secondary-hsl:         var(--black-100-hsl);
+
+    bgc-moderate:              var(--black-200);
+    bgc-moderate-hsl:          var(--black-200-hsl);
+
+    bgc-bold:                  var(--black-300);
+    bgc-bold-hsl:              var(--black-300-hsl);
+
+    bgc-strong:                var(--black-600);
+    bgc-strong-hsl:            var(--black-600-hsl);
+
+    bgc-contrast:              var(--black-800);
+    bgc-contrast-hsl:          var(--black-800-hsl);
 }
 
 //  ============================================================================
@@ -120,25 +126,50 @@
 @type-colors: {
     fo:                         100%;
     fc-primary:                 var(--black-900);
-    fc-primary-inverted:        var(--black-100);
+    fc-primary-hsl:             var(--black-900-hsl);
+
+    fc-primary-inverted:        var(--white);
+    fc-primary-inverted-hsl:    var(--white-hsl);
+
     fc-secondary:               var(--black-700);
-    fc-secondary-inverted:      var(--black-300);
+    fc-secondary-hsl:           var(--black-700-hsl);
+
+    fc-secondary-inverted:      var(--black-200);
+    fc-secondary-inverted-hsl:  var(--black-200-hsl);
+
     fc-tertiary:                var(--black-600);
-    fc-muted:                   hsla(var(--black-800-h) var(--black-800-s) var(--black-800-l) ~' / ' var(--alpha, 50%));
+    fc-tertiary-hsl:            var(--black-600-hsl);
+
+    fc-muted:                   hsla(var(--black-800-hsl) ~' / ' var(--alpha, 50%));
+
     fc-placeholder:             var(--black-500);
+    fc-placeholder-hsl:         var(--black-500-hsl);
+
     fc-disabled:                var(--black-500);
-    fc-error:                   var(--red-300);
-    fc-success:                 #00671d;
+    fc-disabled-hsl:            var(--black-500-hsl);
+
+    fc-critical:                var(--red-300);
+    fc-critical-hsl:            var(--red-300-hsl);
+
+    fc-error:                   var(--fc-critical);
+    fc-error-hsl:               var(--fc-critical-hsl);
+
+    fc-success:                 var(--green-400);
+    fc-success-hsl:             var(--green-400-hsl);
+
     fc-warning:                 var(--gold-500);
+    fc-warning-hsl:             var(--gold-500-hsl);
+
     fc-warning-hover:           var(--black-900);
+    fc-warning-hover-hsl:       var(--black-900-hsl);
 
     //  --  BASE TEMPLATE
-    base--text-color:           var(--fc-primary);
-    base--background-color:     var(--white);
+    base-color-text:           var(--fc-primary);
+    base-color-background:     var(--bgc-primary);
 }
 
 //  $$  DARK HSL BREAKDOWNS
 //  ----------------------------------------------------------------------------
 @dark-color-vars: {
-    base--background-color:     var(--black-200);
+    base-color-background:     var(--black-200);
 }
