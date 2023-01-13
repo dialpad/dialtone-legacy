@@ -20,7 +20,7 @@
 </template>
 
 <script setup>
-import changelogJson from '@data/changelog.json';
+import changelogJson from '@root/CHANGELOG.json';
 import MarkdownRender from '@baseComponents/MarkdownRender.vue';
 
 const getVersion = (item) => changelogJson.versions[item].version;
