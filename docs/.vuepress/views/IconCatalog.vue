@@ -115,6 +115,7 @@ import { categories } from '@dialpad/dialtone-icons/dist/icons.json';
 import { computed, onMounted, ref, watch } from 'vue';
 import IconPopover from '../baseComponents/IconPopover.vue';
 import IconPopoverContent from '../baseComponents/IconPopoverContent.vue';
+import { debounce } from '../common/utilities';
 
 const selectedCategory = ref('');
 const search = ref(null);
@@ -124,16 +125,14 @@ const isMobile = ref(false);
 const isModalOpen = ref(false);
 const isPopoverOpen = ref({});
 const filteredIconsList = ref({});
-const delayTimer = ref(null);
 const selectedIcon = ref(undefined);
 
 const searchByIconName = () => {
-  clearTimeout(delayTimer.value);
-  delayTimer.value = setTimeout(() => {
+  debounce(() => {
     searching.value = true;
     resetCategory();
     filterIconList();
-  }, 300);
+  });
 };
 
 const resetSearch = () => {
