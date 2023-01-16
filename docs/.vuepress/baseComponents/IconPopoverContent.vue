@@ -31,6 +31,7 @@
       <copy-button
         class="d-ml8"
         :text="iconName"
+        aria-label="Copy icon name"
       />
     </div>
     <div class="d-d-flex d-fd-column">
@@ -58,6 +59,7 @@
       <copy-button
         class="d-ml8"
         :text="svgExample"
+        aria-label="Copy SVG markup"
       />
     </div>
     <div class="d-d-flex d-ai-flex-end">
@@ -74,6 +76,7 @@
       <copy-button
         class="d-ml8"
         :text="vueExample"
+        aria-label="Copy Vue markup"
       />
     </div>
   </div>

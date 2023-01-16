@@ -3,9 +3,9 @@
     :message="message"
     :sticky="true"
   >
-    <template #anchor="{ attrs }">
+    <template #anchor>
       <dt-button
-        v-bind="attrs"
+        :aria-label="ariaLabel"
         :circle="true"
         size="xs"
         importance="clear"
@@ -27,10 +27,8 @@
 import { ref } from 'vue';
 
 const props = defineProps({
-  text: {
-    type: String,
-    required: true,
-  },
+  text: { type: String, required: true },
+  ariaLabel: { type: String, required: true },
 });
 const message = ref('Copy');
 const copyToClipboard = async () => {
