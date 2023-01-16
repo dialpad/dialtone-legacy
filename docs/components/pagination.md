@@ -8,13 +8,12 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-pagination--de
 
 <code-well-header>
   <dt-pagination
-    :total-pages="totalPages"
+    :total-pages="25"
     :active-page="activePage"
     :max-visible="maxVisible"
-    :aria-label="ariaLabel"
-    :prev-aria-label="prevAriaLabel"
-    :next-aria-label="nextAriaLabel"
-    :page-number-aria-label="getPageNumberAriaLabel"
-    @change="onChange"
+    aria-label="Pagination"
+    prev-aria-label="Previous page"
+    next-aria-label="Next page"
+    :page-number-aria-label="() => {}"
   />
 </code-well-header>
