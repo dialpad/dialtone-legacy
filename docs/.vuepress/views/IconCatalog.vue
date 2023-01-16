@@ -149,6 +149,16 @@ const resetCategory = () => {
 
 const hasSearchResults = computed(() => Object.keys(filteredIconsList.value).length > 0);
 
+/**
+ * Filters the icon list coming from @dialpad/dialtone-icons
+ * Iterates over the categories and filter's by the selected category or bypass it by selecting
+ * 'All categories' option.
+ * In each category, iterate over the icons and filter by the search text or bypass it if the search in empty
+ * If category has icons after filter, gets added to the categories Object.
+ *
+ * The filteredIconsList gets updated with a freezed object to improve performance.
+ * @returns void
+ */
 const filterIconList = () => {
   const regex = new RegExp(search.value, 'i');
   const filteredIcons = Object.keys(categories)
