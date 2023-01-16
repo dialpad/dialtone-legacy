@@ -8,13 +8,13 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 ---
 <code-well-header>
   <div class="d-d-grid d-gg16 d-g-cols4 md:d-g-cols2 d-fs-200">
-    <a class="d-link d-td-none" href="#base-style">
+    <a class="d-link" href="#base-style">
       <figure class="d-m0">
         <img class="d-bar4 d-w100p" alt="Modal screen: Base" :src="$withBase('/assets/images/screen-modal--base.png')">
         <figcaption>Base Style</figcaption>
       </figure>
     </a>
-    <a class="d-link d-td-none" href="#fixed-header-and-footer">
+    <a class="d-link" href="#fixed-header-and-footer">
       <figure class="d-m0">
         <img class="d-bar4 d-w100p" alt="Modal screen: Fixed header and footer" :src="$withBase('/assets/images/screen-modal--fixed-header-and-footer.png')">
         <figcaption>
@@ -22,7 +22,7 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
         </figcaption>
       </figure>
     </a>
-    <a class="d-link d-td-none" href="#danger">
+    <a class="d-link" href="#danger">
       <figure class="d-m0">
         <img class="d-bar4 d-w100p" alt="Modal screen: Danger" :src="$withBase('/assets/images/screen-modal--danger.png')">
         <figcaption>
@@ -30,7 +30,7 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
         </figcaption>
       </figure>
     </a>
-    <a class="d-link d-td-none" href="#full-screen">
+    <a class="d-link" href="#full-screen">
       <figure class="d-m0">
         <img class="d-bar4 d-w100p" alt="Modal screen: Full Screen" :src="$withBase('/assets/images/screen-modal--fullscreen.png')">
         <figcaption>
