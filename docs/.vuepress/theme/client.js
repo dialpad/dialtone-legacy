@@ -39,7 +39,7 @@ async function registerEmojiDialtoneVue (app) {
   const emojiModule = await import('@dialpad/dialtone-vue/emoji');
   const dialtoneEmojiComponents = Object.keys(emojiModule).filter((key) => key.startsWith('Dt'));
   dialtoneEmojiComponents.forEach((key) => {
-    app.component(key, dialtoneEmojiComponents[key]);
+    app.component(key, emojiModule[key]);
   });
   app.provide('dialtoneEmojiComponents', dialtoneEmojiComponents);
 }
