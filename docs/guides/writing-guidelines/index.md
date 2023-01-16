@@ -340,7 +340,9 @@ When written out, dates are represented in this order **[Day of week], [Month] [
 
 * Don’t use ordinal numbers (1st, 2nd, 3rd, 4th, etc.)
 * Use commas to separate the day of the week, month and numerical day, and year.
-* Include all 4 digits for the year
+* Include all 4 digits for the year.
+  * Omit the year if the date is older than 1 year from today.
+  * Include the year if its month and day are the same as today.
 
 ### Formats by length
 
@@ -369,7 +371,7 @@ When written out, dates are represented in this order **[Day of week], [Month] [
       <td>Thu, Sep 2, 2022<br>Sep 2, 2022</td>
     </tr>
     <tr>
-      <th scope="row">If you need to leave out the year</th>
+      <th scope="row">Omitting the year</th>
       <td>September 2<br>Sep 2</td>
     </tr>
   </tbody>

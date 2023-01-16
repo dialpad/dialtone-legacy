@@ -49,7 +49,7 @@
         v-for="link in items"
         :key="link"
         :to="link.link"
-        class="d-link d-mb12 d-td-none"
+        class="d-link d-mb12"
         :class="{ 'router-link-active': isActiveLink(link.text) }"
         @click="toggleNavbar"
       >

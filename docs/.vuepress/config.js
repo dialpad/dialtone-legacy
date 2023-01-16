@@ -98,7 +98,7 @@ export default defineUserConfig({
     anchor: {
       level: [1, 2, 3],
       permalink: anchor.permalink.ariaHidden({
-        class: 'header-anchor d-link d-td-none',
+        class: 'header-anchor d-link',
       }),
     },
     code: {

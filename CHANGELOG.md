@@ -1,3 +1,14 @@
+# [7.13.0](https://github.com/dialpad/dialtone/compare/v7.12.0...v7.13.0) (2023-01-16)
+
+
+### Features
+
+* **Link, Breadcrumbs:** style update  ([#787](https://github.com/dialpad/dialtone/issues/787)) ([4a2c345](https://github.com/dialpad/dialtone/commit/4a2c345cd0f8ae36e41f2200fb39b00068235122))
+* **Radio, Checkbox:** style update ([#786](https://github.com/dialpad/dialtone/issues/786)) ([2246b13](https://github.com/dialpad/dialtone/commit/2246b130db2cddfe683d91eadd5d8a3cf3c01939))
+* **Skeleton:** update style ([#792](https://github.com/dialpad/dialtone/issues/792)) ([f7c530d](https://github.com/dialpad/dialtone/commit/f7c530d35630bd46f3138633921eca42745b96fa))
+* **Table:** update style ([#791](https://github.com/dialpad/dialtone/issues/791)) ([81f4a9a](https://github.com/dialpad/dialtone/commit/81f4a9ac6ecd3b58c794760af073dfa66faefd15))
+* **Tabs:** style update  ([#790](https://github.com/dialpad/dialtone/issues/790)) ([9980b41](https://github.com/dialpad/dialtone/commit/9980b41d2835fe0eea7d781cb8077451912c42f7))
+
 # [7.12.0](https://github.com/dialpad/dialtone/compare/v7.11.2...v7.12.0) (2023-01-10)
 
 
