@@ -7,10 +7,23 @@ storybook_url: https://vue.dialpad.design/?path=/story/utilities-lazy-show--defa
 ---
 
 <code-well-header>
+  <dt-button @click="isShown = !isShown">
+    Toggle
+  </dt-button>
   <dt-lazy-show
-    :transition="transition"
-    :show="open"
+    transition="fade"
+    :show="isShown"
   >
     I'm Lazy!
   </dt-lazy-show>
 </code-well-header>
+
+<script>
+export default {
+  data() {
+    return {
+      isShown: false,
+    }
+  },
+}
+</script>
