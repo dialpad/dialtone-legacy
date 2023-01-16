@@ -1,5 +1,5 @@
 <template>
-  <div class="d-d-flex d-ai-center d-fl-center d-h64 d-mb24">
+  <div class="d-d-flex d-ai-center d-fl-center d-h64 d-mb16">
     <dt-icon
       ref="iconPreview"
       :name="iconName"
@@ -25,7 +25,7 @@
     </div>
     <div class="d-d-flex d-ai-center">
       <div class="d-d-flex d-fd-column d-fl-grow5">
-        <span class="d-fc-disabled">Name</span>
+        <span class="d-label d-label--sm">Name</span>
         {{ iconName }}
       </div>
       <copy-button
@@ -34,19 +34,20 @@
       />
     </div>
     <div class="d-d-flex d-fd-column">
-      <span class="d-fc-disabled">Category</span>
+      <span class="d-label d-label--sm">Category</span>
       <span
         class="d-tt-capitalize"
         v-text="category"
       />
     </div>
     <div class="d-d-flex d-fd-column">
-      <span class="d-fc-disabled">Keywords</span>
+      <span class="d-label d-label--sm">Keywords</span>
       {{ keywords.join(', ') || '-' }}
     </div>
     <div class="d-d-flex d-ai-flex-end">
       <div class="d-fl-grow1">
         <dt-input
+          class="d-ff-mono"
           label="SVG"
           readonly
           tabindex="-1"
@@ -62,6 +63,7 @@
     <div class="d-d-flex d-ai-flex-end">
       <div class="d-fl-grow1">
         <dt-input
+          class="d-ff-mono"
           label="Vue"
           tabindex="-1"
           readonly

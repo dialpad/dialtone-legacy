@@ -7,6 +7,7 @@
     placement="right"
     :fallback-placements="['left', 'auto']"
     dialog-class="d-w100vw dialtone-icon-popover"
+    padding="medium"
     @opened="emitOpened"
   >
     <template #anchor>
