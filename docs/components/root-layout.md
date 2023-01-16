@@ -4,16 +4,61 @@ desc: A root layout provides a standardized group of containers to display conte
 status: ready
 thumb: true
 storybook_url: https://vue.dialpad.design/?path=/story/components-root-layout--default
-no_preview: true
 ---
 
-<aside class="d-notice d-notice--info d-mt24 d-wmx100p" role="status" aria-hidden="false">
-  <div class="d-notice__icon">
-    <dt-icon name="info"></dt-icon>
-  </div>
-  <div class="d-notice__content d-stack4">
-    <p class="d-notice__message">
-      Currently documented in <a target="_blank" href="https://vue.dialpad.design/?path=/docs/components-root-layout--default" class="d-link d-link--muted">Dialtone Vue</a>.
-    </p>
-  </div>
-</aside>
+<code-well-header>
+<dt-root-layout
+  class="d-w100p"
+  style="height: 30vh!important;"
+>
+  <template
+    #header
+  >
+    <div class="d-h100p d-bgc-purple-100">Header</div>
+  </template>
+  <template
+    #sidebar
+  >
+    <div class="d-h100p d-bgc-black-100"><div>Sidebar item 1</div><div>Sidebar item 2</div><div>Sidebar item 3</div></div>
+  </template>
+  <template>
+    <div class="d-h100p">Content</div>
+  </template>
+  <template
+    #footer
+  >
+    <div class="d-h100p d-bgc-gold-100">Footer</div>
+  </template>
+</dt-root-layout>
+</code-well-header>
+
+## Variants and examples
+
+### Header Sticky
+
+<div
+  class="d-h332 d-of-scroll"
+>
+  <dt-root-layout
+    header-sticky
+  >
+    <template
+      #header
+    >
+      <div class="d-h100p d-bgc-purple-100">Header</div>
+    </template>
+    <template
+      #sidebar
+    >
+      <div class="d-h100p d-bgc-black-100"><div>Sidebar item 1</div><div>Sidebar item 2</div><div>Sidebar item 3</div></div>
+    </template>
+    <template>
+      <div class="d-h100p">Content</div>
+    </template>
+    <template
+      #footer
+    >
+      <div class="d-h100p d-bgc-gold-100">Footer</div>
+    </template>
+  </dt-root-layout>
+</div>
