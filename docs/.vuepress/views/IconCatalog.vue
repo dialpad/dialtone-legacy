@@ -10,7 +10,7 @@
         class="d-input d-input-icon--left d-input-icon--right"
         type="text"
         autocomplete="off"
-        @keyup="searchByIconName"
+        @keyup="searchIcon"
       >
         <template #leftIcon>
           <dt-icon name="search" />
@@ -127,7 +127,7 @@ const isPopoverOpen = ref({});
 const filteredIconsList = ref({});
 const selectedIcon = ref(undefined);
 
-const searchByIconName = () => {
+const searchIcon = () => {
   debounce(() => {
     searching.value = true;
     resetCategory();
@@ -164,9 +164,12 @@ const filterIconList = () => {
   const filteredIcons = Object.keys(categories)
     .filter(category => category.includes(selectedCategory.value))
     .reduce((acc, category) => {
-      const filteredCategory = Object.keys(categories[category])
-        .filter(icon => !search.value || regex.test(icon))
-        .reduce((acc, icon) => Object.assign(acc, { [icon]: Object.freeze(categories[category][icon]) }), {});
+      const filteredCategory = Object.entries(categories[category])
+        .filter(([name, keywords]) => {
+          if (!search.value) return true;
+          return regex.test(name) || regex.test(keywords.join(' '));
+        })
+        .reduce((acc, [name, _]) => Object.assign(acc, { [name]: Object.freeze(categories[category][name]) }), {});
 
       if (Object.keys(filteredCategory).length) {
         Object.assign(acc, { [category]: Object.freeze(filteredCategory) });
