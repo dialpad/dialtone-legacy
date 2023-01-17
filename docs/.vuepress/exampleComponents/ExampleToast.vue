@@ -96,29 +96,29 @@
       <div class="d-toast__dialog">
         <div class="d-notice__icon">
           <dt-icon
+            v-show="kind === 'base'"
             name="bell"
             size="400"
-            v-show="kind === 'base'"
           />
           <dt-icon
+            v-show="kind === 'error'"
             name="alert-circle"
             size="400"
-            v-show="kind === 'error'"
           />
           <dt-icon
+            v-show="kind === 'info'"
             name="info"
             size="400"
-            v-show="kind === 'info'"
           />
           <dt-icon
+            v-show="kind === 'success'"
             name="check-circle"
             size="400"
-            v-show="kind === 'success'"
           />
           <dt-icon
+            v-show="kind === 'warning'"
             name="alert-triangle"
             size="400"
-            v-show="kind === 'warning'"
           />
         </div>
         <div class="d-notice__content">

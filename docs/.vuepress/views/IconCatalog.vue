@@ -10,6 +10,7 @@
         class="d-input d-input-icon--left d-input-icon--right"
         type="text"
         autocomplete="off"
+        @keyup="searchByIconName"
       >
         <template #leftIcon>
           <dt-icon name="search" />
@@ -43,16 +44,15 @@
         class="d-select__input d-tt-capitalize"
       >
         <option
-          value="all"
+          value=""
           selected
         >
           All categories
         </option>
         <option
-          v-for="category in categoriesList"
+          v-for="(_, category) in categories"
           :key="category"
           :value="category"
-          :disabled="!isCategoryInResults(category)"
         >
           {{ category }}
         </option>
@@ -60,7 +60,7 @@
     </div>
   </div>
   <div
-    v-for="(icons, category) in filteredIconList"
+    v-for="(icons, category) in filteredIconsList"
     :key="category"
     class="d-mb16"
   >
@@ -69,13 +69,14 @@
       v-text="category"
     />
     <div class="d-gl-docsite-icons">
-      <base-icon
-        v-for="(keywords, icon, index) in icons"
-        :key="`${category}-${index}`"
-        :file-name="icon"
+      <icon-popover
+        v-for="(keywords, name) in icons"
+        :key="name"
+        v-model="isPopoverOpen[name]"
+        :icon-name="name"
+        :category="category"
         :keywords="keywords"
-        :selected="selectedIcon === `${category}-${index}`"
-        @select-icon="selectIcon(`${category}-${index}`)"
+        @click="selectIcon({ name, keywords, category })"
       />
     </div>
   </div>
@@ -88,74 +89,109 @@
       &OpenCurlyDoubleQuote;{{ search }}&CloseCurlyDoubleQuote;
     </strong>
   </div>
+  <dt-modal
+    :show="isModalOpen"
+    :close-button-props="{ ariaLabel: 'Close' }"
+    size="full"
+    content-class="d-wmx100p d-pr32"
+    @update:show="isModalOpen = false"
+  >
+    <template #header>
+      <span
+        class="d-tt-capitalize"
+        v-text="selectedIcon.name"
+      />
+    </template>
+    <icon-popover-content
+      :icon-name="selectedIcon.name"
+      :keywords="selectedIcon.keywords"
+      :category="selectedIcon.category"
+    />
+  </dt-modal>
 </template>
 
 <script setup>
-import BaseIcon from '@baseComponents/BaseV7Icon.vue';
 import { categories } from '@dialpad/dialtone-icons/dist/icons.json';
-import { computed, ref } from 'vue';
+import { computed, onMounted, ref, watch } from 'vue';
+import IconPopover from '../baseComponents/IconPopover.vue';
+import IconPopoverContent from '../baseComponents/IconPopoverContent.vue';
+import { debounce } from '../common/utilities';
 
-const selectedIcon = ref(null);
-const selectedCategory = ref('all');
+const selectedCategory = ref('');
 const search = ref(null);
+const searching = ref(false);
 const searchRef = ref(null);
+const isMobile = ref(false);
+const isModalOpen = ref(false);
+const isPopoverOpen = ref({});
+const filteredIconsList = ref({});
+const selectedIcon = ref(undefined);
 
-const categoriesList = computed(() => {
-  return Object.keys(categories);
-});
-
-const searchByIconName = (icons, name) => {
-  const result = {};
-  const regex = new RegExp(name, 'i');
-
-  for (const category in icons) {
-    for (const icon in icons[category]) {
-      if (regex.test(icon)) {
-        if (result[category] === undefined) {
-          result[category] = {};
-        }
-
-        result[category][icon] = icons[category][icon];
-      }
-    }
-  }
-
-  return result;
+const searchByIconName = () => {
+  debounce(() => {
+    searching.value = true;
+    resetCategory();
+    filterIconList();
+  });
 };
 
 const resetSearch = () => {
+  searching.value = false;
   search.value = null;
   resetCategory();
   searchRef.value.focus();
+  filterIconList();
 };
 
-const resetCategory = () => { selectedCategory.value = 'all'; };
+const resetCategory = () => {
+  selectedCategory.value = '';
+};
 
-const hasSearchMinimumLength = computed(() => search.value?.length > 1);
+const hasSearchResults = computed(() => Object.keys(filteredIconsList.value).length > 0);
 
-const hasSearchResults = computed(() => Object.keys(filteredIconList.value).length > 0);
+/**
+ * Filters the icon list coming from @dialpad/dialtone-icons
+ * Iterates over the categories and filter's by the selected category or bypass it by selecting
+ * 'All categories' option.
+ * In each category, iterate over the icons and filter by the search text or bypass it if the search in empty
+ * If category has icons after filter, gets added to the categories Object.
+ *
+ * The filteredIconsList gets updated with a freezed object to improve performance.
+ * @returns void
+ */
+const filterIconList = () => {
+  const regex = new RegExp(search.value, 'i');
+  const filteredIcons = Object.keys(categories)
+    .filter(category => category.includes(selectedCategory.value))
+    .reduce((acc, category) => {
+      const filteredCategory = Object.keys(categories[category])
+        .filter(icon => !search.value || regex.test(icon))
+        .reduce((acc, icon) => Object.assign(acc, { [icon]: Object.freeze(categories[category][icon]) }), {});
 
-const iconsList = computed(() => {
-  if (hasSearchMinimumLength.value) {
-    resetCategory();
-    return searchByIconName(categories, search.value);
-  }
-  return categories;
+      if (Object.keys(filteredCategory).length) {
+        Object.assign(acc, { [category]: Object.freeze(filteredCategory) });
+      }
+      return acc;
+    }, {});
+
+  filteredIconsList.value = Object.freeze(filteredIcons);
+};
+
+const selectIcon = (icon) => {
+  selectedIcon.value = icon;
+  if (isMobile.value) isModalOpen.value = true;
+  else isPopoverOpen.value[icon.name] = !isPopoverOpen.value[icon.name];
+};
+
+watch(selectedCategory, (newCategory) => {
+  if (newCategory === 'all' && searching.value) return;
+  searching.value = false;
+  filterIconList();
 });
-
-const filteredIconList = computed(() => {
-  return selectedCategory.value === 'all'
-    ? iconsList.value
-    : Object.assign({}, { [selectedCategory.value]: iconsList.value[selectedCategory.value] });
+onMounted(() => {
+  isMobile.value = window.outerWidth <= 980;
+  filterIconList();
 });
-
-const isCategoryInResults = (category) => {
-  return Object.keys(iconsList.value).includes(category);
-};
-
-const selectIcon = (index) => {
-  selectedIcon.value = index !== selectedIcon.value ? index : null;
-};
 </script>
 
 <style scoped>
