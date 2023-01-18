@@ -8,7 +8,24 @@ desc: Dialtone is Dialpad's Design System that unites product teams around a com
 <div class="d-flg12 d-fl-col2">
   <div class="d-fd-column">
     <h3 class="d-docsite--header-3">Dialtone</h3>
-    <dialtone-changelog />
+    <div
+    v-for="(n, i) in 5"
+    :key="i"
+    class="d-docsite--paragraph"
+  >
+    <a :href="getGithubReleaseUrl(i)">
+      <h3 class="d-docsite--header-3">v{{ getVersion(i) }}</h3>
+    </a>
+    <ul class="d-docsite--unordered-list">
+      <li
+        v-for="(item, index) in changelogJson.versions[i].parsed._"
+        :key="index"
+        class="d-docsite--list-element"
+      >
+        <span v-html="formatReleaseNotes(item)" />
+      </li>
+    </ul>
+  </div>
   </div>
   <div class="d-fd-column">
     <h3 class="d-docsite--header-3">Dialtone-vue</h3>
@@ -61,5 +78,54 @@ for reporting any issue.
 - [dialtone@dialpad.com](mailto:dialtone@dialpad.com)
 
 <script setup>
-  import DialtoneChangelog from '@views/DialtoneChangelog.vue';
+import { computed } from 'vue';
+import dialtoneChangelog from '@projectRoot/CHANGELOG.json';
+import dialtoneVueChangelog from '@projectRoot/node_modules/@dialpad/dialtone-vue/CHANGELOG.json';
+import MarkdownRender from '@baseComponents/MarkdownRender.vue';
+import DialtoneChangelog from '@views/DialtoneChangelog.vue';
+
+const props = defineProps({
+  project: {
+    type: String,
+    default: 'Dialtone',
+    validator (value) {
+      return ['Dialtone', 'DialtoneVue'].includes(value);
+    },
+  },
+});
+
+const changelogJson = computed(() => props.project === 'DialtoneVue' ? dialtoneVueChangelog : dialtoneChangelog);
+
+const getVersion = (item) => changelogJson.value.versions[item].version;
+
+const getGithubReleaseUrl = (item) => `https://github.com/dialpad/dialtone/releases/tag/v${getVersion(item)}`;
+
+const formatReleaseNotes = (note) => {
+  const noteWithoutExtraAsterisks = note.replace(/\*\*/g, '');
+  const releaseNoteWithCommitLink = formatReleaseNotesWithCommitLink(noteWithoutExtraAsterisks);
+  const releaseNoteWithPrLink = formatReleaseNotesWithPrLink(releaseNoteWithCommitLink);
+  return releaseNoteWithPrLink;
+};
+
+const formatReleaseNotesWithCommitLink = (note) => {
+  const noteWithLink = note.replace(/\(([^)]+)\)$/, (match, text) => {
+    const link = `<a href="https://github.com/dialpad/dialtone/commit/${text}">${text}</a>`;
+    return `(${link})`;
+  });
+
+  return noteWithLink;
+};
+
+const formatReleaseNotesWithPrLink = (note) => {
+  const noteWithLink = note.replace(/(\([^)]+\))(?!.*\1)/, (match, text) => {
+    const content = text.slice(1, -1);
+    if (content[0] === '#') {
+      const link = `<a href="https://github.com/dialpad/dialtone/pull/${content.slice(1)}">${text}</a>`;
+      return `${link}`;
+    }
+    return text;
+  });
+
+  return noteWithLink;
+};
 </script>
