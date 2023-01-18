@@ -20,10 +20,24 @@
 </template>
 
 <script setup>
-import changelogJson from '@projectRoot/CHANGELOG.json';
+import { computed } from 'vue';
+import dialtoneChangelog from '@projectRoot/CHANGELOG.json';
+import dialtoneVueChangelog from '@projectRoot/node_modules/@dialpad/dialtone-vue/CHANGELOG.json';
 import MarkdownRender from '@baseComponents/MarkdownRender.vue';
 
-const getVersion = (item) => changelogJson.versions[item].version;
+const props = defineProps({
+  project: {
+    type: String,
+    default: 'Dialtone',
+    validator (value) {
+      return ['Dialtone', 'DialtoneVue'].includes(value);
+    },
+  },
+});
+
+const changelogJson = computed(() => props.project === 'DialtoneVue' ? dialtoneVueChangelog : dialtoneChangelog);
+
+const getVersion = (item) => changelogJson.value.versions[item].version;
 
 const getGithubReleaseUrl = (item) => `https://github.com/dialpad/dialtone/releases/tag/v${getVersion(item)}`;
 
