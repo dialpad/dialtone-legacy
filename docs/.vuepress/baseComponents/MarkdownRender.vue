@@ -4,7 +4,7 @@
 
 <script setup>
 import { computed } from 'vue';
-import { marked } from 'marked';
+import markdownIt from 'markdown-it';
 
 const props = defineProps({
   markdown: {
@@ -14,6 +14,9 @@ const props = defineProps({
 });
 
 const markdownToHtml = computed(() => {
-  return marked(props.markdown);
+  // eslint-disable-next-line new-cap
+  const md = new markdownIt({ html: true });
+  const renderedMarkdown = md.render(props.markdown);
+  return renderedMarkdown;
 });
 </script>
