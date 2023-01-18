@@ -1,3 +1,0 @@
-import{_ as s,s as n,v as c,x as a,y as e,G as d,C as t}from"./framework-c9271261.js";const i={},_={class:"d-notice d-notice--info d-mt24 d-wmx100p",role:"status","aria-hidden":"false"},r={class:"d-notice__icon"},l=e("div",{class:"d-notice__content d-stack4"},[e("p",{class:"d-notice__message"},[t(`
-      Currently documented in `),e("a",{target:"_blank",href:"https://vue.dialpad.design/?path=/docs/components-keyboard-shortcut--default",class:"d-link d-link--muted"},"Dialtone Vue"),t(`.
-    `)])],-1);function m(u,h){const o=n("dt-icon");return c(),a("div",null,[e("aside",_,[e("div",r,[d(o,{name:"info"})]),t(),l])])}const p=s(i,[["render",m],["__file","keyboard-shortcut.html.vue"]]);export{p as default};
