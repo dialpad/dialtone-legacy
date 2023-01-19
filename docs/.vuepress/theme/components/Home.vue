@@ -24,9 +24,17 @@
             href="https://github.com/dialpad/dialtone-vue"
           >
             <img
-              id="dialtone-vue-badge"
               alt="Dialtone Vue version number"
-              :src="`https://img.shields.io/badge/Vue-v${version}-D3BCFF`"
+              src="https://img.shields.io/github/package-json/v/dialpad/dialtone-vue?color=D3BCFF&label=Vue"
+            >
+          </a>
+          <a
+            class="d-td-unset d-d-inline-flex"
+            href="https://github.com/dialpad/dialtone-vue/tree/vue3"
+          >
+            <img
+              alt="Dialtone Vue version number"
+              src="https://img.shields.io/github/package-json/v/dialpad/dialtone-vue/vue3?color=D3BCFF&label=Vue 3"
             >
           </a>
         </div>
@@ -205,18 +213,8 @@
 </template>
 
 <script setup>
-import { onBeforeMount, ref } from 'vue';
-import axios from 'axios';
-
-const version = ref('0.0.0');
-
 function sendAnalyticsEvent () {
   if (!window.gtag) return;
   window.gtag('event', 'click', { event_name: 'get_started_button_clicked' });
 }
-
-onBeforeMount(async () => {
-  const response = await axios.get('https://vue.dialpad.design/version.txt');
-  version.value = response.data;
-});
 </script>
