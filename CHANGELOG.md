@@ -1,3 +1,10 @@
+## [7.13.1](https://github.com/dialpad/dialtone/compare/v7.13.0...v7.13.1) (2023-01-19)
+
+
+### Bug Fixes
+
+* **Modal:** fix misalignment of modal banner ([#797](https://github.com/dialpad/dialtone/issues/797)) ([4ca9ecf](https://github.com/dialpad/dialtone/commit/4ca9ecf55045a0fb335faff1df99146718695a7c))
+
 # [7.13.0](https://github.com/dialpad/dialtone/compare/v7.12.0...v7.13.0) (2023-01-16)
 
 
