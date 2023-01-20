@@ -21,21 +21,20 @@
 
 <script setup>
 import { computed } from 'vue';
-import dialtoneChangelog from '@projectRoot/CHANGELOG.json';
-import dialtoneVueChangelog from '@projectRoot/node_modules/@dialpad/dialtone-vue/CHANGELOG.json';
 import MarkdownRender from '@baseComponents/MarkdownRender.vue';
+import { DIALTONE_CHANGELOGS } from '../common/constants.js';
 
 const props = defineProps({
   project: {
     type: String,
     default: 'Dialtone',
     validator (value) {
-      return ['Dialtone', 'DialtoneVue'].includes(value);
+      return Object.keys(DIALTONE_CHANGELOGS).includes(value);
     },
   },
 });
 
-const changelogJson = computed(() => props.project === 'DialtoneVue' ? dialtoneVueChangelog : dialtoneChangelog);
+const changelogJson = computed(() => DIALTONE_CHANGELOGS[props.project]);
 
 const getVersion = (item) => changelogJson.value.versions[item].version;
 
