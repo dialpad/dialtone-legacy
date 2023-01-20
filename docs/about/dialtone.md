@@ -5,8 +5,6 @@ desc: Dialtone is Dialpad's Design System that unites product teams around a com
 
 ## Release notes
 
-@include(./CHANGELOG.md)
-
 <div class="d-flg12 d-fl-col2">
   <div class="d-fd-column">
     <h3 class="d-docsite--header-3">Dialtone</h3>

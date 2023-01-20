@@ -3,7 +3,6 @@ import { getDirname, path } from '@vuepress/utils';
 import { viteBundler } from '@vuepress/bundler-vite';
 import { googleAnalyticsPlugin } from '@vuepress/plugin-google-analytics';
 import anchor from 'markdown-it-anchor';
-import { mdEnhancePlugin } from 'vuepress-plugin-md-enhance';
 
 const sidebar = require('../_data/site-nav.json');
 const { dialtoneVuepressTheme } = require('./theme');
@@ -125,10 +124,6 @@ export default defineUserConfig({
   plugins: [
     googleAnalyticsPlugin({
       id: 'G-0YV8QJ44LF',
-    }),
-    mdEnhancePlugin({
-      // Enable include files
-      include: true,
     }),
   ],
 });
