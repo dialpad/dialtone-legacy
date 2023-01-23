@@ -4,16 +4,26 @@ desc: Lazy show is a utility component that prevents its children from being ren
 status: ready
 thumb: true
 storybook_url: https://vue.dialpad.design/?path=/story/utilities-lazy-show--default
-no_preview: true
 ---
 
-<aside class="d-notice d-notice--info d-mt24 d-wmx100p" role="status" aria-hidden="false">
-  <div class="d-notice__icon">
-    <dt-icon name="info"></dt-icon>
-  </div>
-  <div class="d-notice__content d-stack4">
-    <p class="d-notice__message">
-      Currently documented in <a target="_blank" href="https://vue.dialpad.design/?path=/docs/utilities-lazy-show--default" class="d-link d-link--muted">Dialtone Vue</a>.
-    </p>
-  </div>
-</aside>
+<code-well-header>
+  <dt-button @click="isShown = !isShown">
+    Toggle
+  </dt-button>
+  <dt-lazy-show
+    transition="fade"
+    :show="isShown"
+  >
+    I'm Lazy!
+  </dt-lazy-show>
+</code-well-header>
+
+<script>
+export default {
+  data() {
+    return {
+      isShown: false,
+    }
+  },
+}
+</script>

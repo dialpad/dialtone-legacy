@@ -271,7 +271,7 @@ Radio buttons are a common way to allow users to make a single selection from a 
 </fieldset>
 ```
 
-### With Validation States
+### With validation states
 
 <code-well-header>
   <fieldset class="d-stack8">
