@@ -1,3 +1,10 @@
+# [7.14.0](https://github.com/dialpad/dialtone/compare/v7.13.1...v7.14.0) (2023-01-24)
+
+
+### Features
+
+* **Modal:** add style variants of banner ([#799](https://github.com/dialpad/dialtone/issues/799)) ([7c4ca5b](https://github.com/dialpad/dialtone/commit/7c4ca5b039102fd08e7a60361cf1dbfc780e344a))
+
 ## [7.13.1](https://github.com/dialpad/dialtone/compare/v7.13.0...v7.13.1) (2023-01-19)
 
 
