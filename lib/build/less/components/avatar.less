@@ -31,6 +31,7 @@
       var(--avatar-gradient-stop-3) 360deg
     );
   --avatar-size-shape: var(--size-600);
+  --avatar-size-image: 100%;
   --avatar-size-text: var(--fs-200);
   --avatar-presence-position-right: calc(var(--space-200) * -1); // -2
   --avatar-presence-position-bottom: calc(var(--space-200) * -1); // -2
@@ -51,17 +52,36 @@
   border-radius: var(--br-pill);
 
   &__image {
-    width: 100%;
-    height: 100%;
+    width: var(--avatar-size-image);
+    height: var(--avatar-size-image);
     object-fit: cover;
     border-radius: inherit;
   }
 
   &__presence {
     position: absolute;
-    right: var(--avatar-presence-position-right);
-    bottom: var(--avatar-presence-position-bottom);
+    right: 0;
+    bottom: 0;
     display: flex;
+  }
+
+  &__count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--fc-primary-inverted);
+    padding: var(--space-200) calc(var(--space-200) + var(--space-100));
+    min-width: 14px;
+    text-align: center;
+    font-size: calc(var(--fs-100) - .2rem);
+    line-height: var(--lh-100);
+    font-weight: var(--fw-bold);
+    background-color: var(--black-700);
+    box-shadow: 0 0 0 var(--size-200) var(--black-100);
+    border-radius: var(--br-pill);
+    position: absolute;
+    right: 0;
+    bottom: 0;
   }
 
   //  --  SIZES
@@ -100,4 +120,18 @@
     --avatar-presence-position-right: var(--space-300); // 4
     --avatar-presence-position-bottom: var(--space-300); // 4
   }
+
+  //  --  GROUP
+  //  ------------------------------------------------------------------------
+
+  &--group {
+    --avatar-size-shape: 24px; //
+    --avatar-size-image: 18px;
+
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-color: transparent;
+    background-image: none;
+  }
+
 }
