@@ -13,7 +13,7 @@
         :key="index"
         class="d-docsite--list-element"
       >
-        <markdown-render :markdown="formatReleaseNotes(item)" />
+        <markdown-render :markdown="formatReleaseNote(item)" />
       </li>
     </ul>
   </div>
@@ -23,6 +23,7 @@
 import { computed } from 'vue';
 import MarkdownRender from '@baseComponents/MarkdownRender.vue';
 import { DIALTONE_CHANGELOGS } from '../common/constants.js';
+import { ReleaseNoteFormatter } from '../common/utilities.js';
 
 const props = defineProps({
   project: {
@@ -40,34 +41,10 @@ const getVersion = (item) => changelogJson.value.versions[item].version;
 
 const getGithubReleaseUrl = (item) => `https://github.com/dialpad/dialtone/releases/tag/v${getVersion(item)}`;
 
-const formatReleaseNotes = (note) => {
-  const noteWithoutExtraAsterisks = formatReleaseNotesWithoutExtraAsterisks(note);
-  const releaseNoteWithCommitLink = formatReleaseNotesWithCommitLink(noteWithoutExtraAsterisks);
-  const releaseNoteWithPrLink = formatReleaseNotesWithPrLink(releaseNoteWithCommitLink);
-  return releaseNoteWithPrLink;
-};
-
-const formatReleaseNotesWithoutExtraAsterisks = (note) => note.replace(/\*\*/g, '');
-
-const formatReleaseNotesWithCommitLink = (note) => {
-  const noteWithLink = note.replace(/\(([^)]+)\)$/, (match, text) => {
-    const link = `<a href="https://github.com/dialpad/dialtone/commit/${text}">${text}</a>`;
-    return `(${link})`;
-  });
-
-  return noteWithLink;
-};
-
-const formatReleaseNotesWithPrLink = (note) => {
-  const noteWithLink = note.replace(/(\([^)]+\))(?!.*\1)/, (match, text) => {
-    const content = text.slice(1, -1);
-    if (content[0] === '#') {
-      const link = `<a href="https://github.com/dialpad/dialtone/pull/${content.slice(1)}">${text}</a>`;
-      return `${link}`;
-    }
-    return text;
-  });
-
-  return noteWithLink;
+const formatReleaseNote = (note) => {
+  const noteWithoutExtraAsterisks = ReleaseNoteFormatter.withoutExtraAsterisks(note);
+  const noteWithCommitLink = ReleaseNoteFormatter.withCommitLink(noteWithoutExtraAsterisks);
+  const noteWithPrLink = ReleaseNoteFormatter.withPrLink(noteWithCommitLink);
+  return noteWithPrLink;
 };
 </script>
