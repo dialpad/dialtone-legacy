@@ -11,3 +11,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-emoji-text-wra
     Some text with :invalid-emoji: :smile: :cry: and 😄, and custom emojis :octocat: :shipit:
   </dt-emoji-text-wrapper>
 </code-well-header>
+
+## Vue API
+
+<component-vue-table component-name="emojitextwrapper" />

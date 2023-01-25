@@ -32,6 +32,10 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 </aside>
 ```
 
+## Vue API
+
+<component-vue-table component-name="toast" />
+
 ## Classes
 
 <component-class-table component-name="toast" />

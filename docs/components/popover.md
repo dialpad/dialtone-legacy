@@ -148,6 +148,10 @@ Your popover should be non-modal when:
 </div>
 ```
 
+## Vue API
+
+<component-vue-table component-name="popover" />
+
 ## Classes
 
 Popover must contain an anchor and content element. d-modal--transparent can be used as a sibling before the popover container if you wish to make the popover modal.

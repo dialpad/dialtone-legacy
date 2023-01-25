@@ -69,3 +69,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-button-group--
   <dt-button importance="outlined">Cancel</dt-button>
 </dt-button-group>
 ```
+
+## Vue API
+
+<component-vue-table component-name="buttongroup" />

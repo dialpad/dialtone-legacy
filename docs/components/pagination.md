@@ -15,3 +15,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-pagination--de
     :page-number-aria-label="() => {}"
   />
 </code-well-header>
+
+## Vue API
+
+<component-vue-table component-name="pagination" />

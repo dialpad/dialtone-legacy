@@ -206,6 +206,10 @@ They should be easy to scan for relevant and actionable information. Elements, l
 </div>
 ```
 
+## Vue API
+
+<component-vue-table component-name="card" />
+
 ## Classes
 
 At minimum, card contains body of content. It could also have header with buttons, and footer with buttons/text.

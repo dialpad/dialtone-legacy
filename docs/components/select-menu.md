@@ -341,6 +341,10 @@ We offer different sizes for instances in which the interface requires a smaller
 - If the select is a required field, use the `aria-required` property and use the validation message for input errors.
 - Select with validation errors should have `aria-describedby` with the `id` of the validation message.
 
+## Vue API
+
+<component-vue-table component-name="selectmenu" />
+
 ## Classes
 
 <component-class-table component-name="select" />

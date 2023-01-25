@@ -319,6 +319,10 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
   </div>
 </code-well-header>
 
+## Vue API
+
+<component-vue-table component-name="badge" />
+
 ## Classes
 
 <component-class-table component-name="badge"></component-class-table>

@@ -25,3 +25,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-list-item--def
     </dt-list-item>
   </ul>
 </code-well-header>
+
+## Vue API
+
+<component-vue-table component-name="listitem" />

@@ -28,3 +28,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-collapsible--d
     </dt-collapsible>
   </div>
 </code-well-header>
+
+## Vue API
+
+<component-vue-table component-name="collapsible" />

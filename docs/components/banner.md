@@ -46,6 +46,10 @@ Banners are a type of notice and so you can use the following [Notice](notice.md
 <aside class="d-banner d-banner--warning" role="alert" aria-hidden="false">…</aside>
 ```
 
+## Vue API
+
+<component-vue-table component-name="banner" />
+
 ## Classes
 
 <component-class-table component-name="banner"></component-class-table>

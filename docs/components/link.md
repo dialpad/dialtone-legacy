@@ -69,6 +69,10 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 <a href="#link" class="d-link d-link--inverted-disabled">Inverted disabled link</a>
 ```
 
+## Vue API
+
+<component-vue-table component-name="link" />
+
 ## Classes
 
 <component-class-table component-name="link"></component-class-table>

@@ -9,3 +9,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-dropdown--defa
 <code-well-header bgclass="d-bgc-white">
   <video class="d-w60p" src="/assets/images/components/preview--dropdown.mp4" autoplay loop></video>
 </code-well-header>
+
+## Vue API
+
+<component-vue-table component-name="dropdown" />

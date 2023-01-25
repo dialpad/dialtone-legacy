@@ -62,3 +62,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-root-layout--d
     </template>
   </dt-root-layout>
 </div>
+
+## Vue API
+
+<component-vue-table component-name="rootlayout" />

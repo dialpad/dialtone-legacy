@@ -12,3 +12,7 @@ storybook_url: https://vue.dialpad.design/?path=/story/components-keyboard-short
 <code-well-header bgclass="d-bgc-black-700">
   <dt-keyboard-shortcut inverted shortcut="{cmd}+Ctrl+X"/>
 </code-well-header>
+
+## Vue API
+
+<component-vue-table component-name="keyboardshortcut" />

@@ -514,6 +514,10 @@ We provide the following branded buttons for log-in and sign-up workflows.
 </button>
 ```
 
+## Vue API
+
+<component-vue-table component-name="button" />
+
 ## Classes
 
 <component-class-table component-name="button"></component-class-table>

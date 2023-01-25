@@ -89,6 +89,10 @@ Used occasionally in scenarios when the message needs to dominate.
 <aside class="d-notice d-notice--warning d-notice--important" role="alert" aria-hidden="false">…</aside>
 ```
 
+## Vue API
+
+<component-vue-table component-name="notice" />
+
 ## Classes
 
 <component-class-table component-name="notice" />
