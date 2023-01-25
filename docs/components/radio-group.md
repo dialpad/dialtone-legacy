@@ -4,16 +4,84 @@ desc: Radio groups are control elements that allow the user to make a single sel
 status: ready
 thumb: true
 storybook_url: https://vue.dialpad.design/?path=/story/components-radio-group--default
-no_preview: true
 ---
 
-<aside class="d-notice d-notice--info d-mt24 d-wmx100p" role="status" aria-hidden="false">
-  <div class="d-notice__icon">
-    <dt-icon name="info"></dt-icon>
+<code-well-header>
+  <dt-radio-group
+    value=""
+    name="fruits-radio-group-00"
+    legend="Fruits"
+  >
+    <dt-radio value="apple"><span >Apple</span></dt-radio>
+    <dt-radio value="banana"><span >Banana</span></dt-radio>
+    <dt-radio value="other"><span >Other</span></dt-radio>
+  </dt-radio-group>
+</code-well-header>
+
+## Variants
+
+### Default
+
+<code-well-header>
+  <dt-radio-group
+    value=""
+    name="fruits-radio-group-01"
+    legend="Fruits"
+  >
+    <dt-radio value="apple"><span >Apple</span></dt-radio>
+    <dt-radio value="banana"><span >Banana</span></dt-radio>
+    <dt-radio value="other"><span >Other</span></dt-radio>
+  </dt-radio-group>
+</code-well-header>
+
+```html
+<dt-radio-group
+    value=""
+    name="fruits-radio-group-01"
+    legend="Fruits"
+  >
+    <dt-radio value="apple"><span >Apple</span></dt-radio>
+    <dt-radio value="banana"><span >Banana</span></dt-radio>
+    <dt-radio value="other"><span >Other</span></dt-radio>
+  </dt-radio-group>
+```
+
+### With validation states
+
+<code-well-header>
+  <div class="d-stack16">
+    <div>
+      <dt-radio-group
+        name="radio-group-with-success-message"
+        legend="With Success Message"
+        :messages='[{"message":"Success validation message","type":"success"}]'
+      >
+        <dt-radio value="apple"><span >Apple</span></dt-radio>
+        <dt-radio value="banana"><span >Banana</span></dt-radio>
+        <dt-radio value="other"><span >Other</span></dt-radio>
+      </dt-radio-group>
+    </div>
+    <div>
+      <dt-radio-group
+        name="radio-group-with-warning-message"
+        legend="With Warning Message"
+        :messages='[{"message":"Warning validation message","type":"warning"}]'
+      >
+        <dt-radio value="apple"><span >Apple</span></dt-radio>
+        <dt-radio value="banana"><span >Banana</span></dt-radio>
+        <dt-radio value="other"><span >Other</span></dt-radio>
+      </dt-radio-group>
+    </div>
+    <div>
+      <dt-radio-group
+        name="radio-group-with-error-message"
+        legend="With Error Message"
+        :messages='[{"message":"Error validation message","type":"error"}]'
+      >
+        <dt-radio value="apple"><span >Apple</span></dt-radio>
+        <dt-radio value="banana"><span >Banana</span></dt-radio>
+        <dt-radio value="other"><span >Other</span></dt-radio>
+      </dt-radio-group>
+    </div>
   </div>
-  <div class="d-notice__content d-stack4">
-    <p class="d-notice__message">
-      Currently documented in <a target="_blank" href="https://vue.dialpad.design/?path=/docs/components-radio-group--default" class="d-link d-link--muted">Dialtone Vue</a>.
-    </p>
-  </div>
-</aside>
+</code-well-header>

@@ -340,7 +340,7 @@ Checkboxes are an easily understandable way to indicate that users can select on
 </fieldset>
 ```
 
-### With Validation States
+### With validation states
 
 <code-well-header>
   <fieldset class="d-stack8">

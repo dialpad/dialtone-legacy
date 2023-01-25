@@ -11,6 +11,7 @@ export default defineClientConfig({
     // Register libraries
     if (!__VUEPRESS_SSR__) {
       await registerDialtoneVue(app);
+      await registerEmojiDialtoneVue(app);
       await registerDialtoneCombinator(app);
     }
     router.options.scrollBehavior = (to, from, savedPosition) => {
@@ -32,6 +33,15 @@ async function registerDialtoneVue (app) {
     app.component(key, module[key]);
   });
   app.provide('dialtoneComponents', dialtoneComponents);
+}
+
+async function registerEmojiDialtoneVue (app) {
+  const emojiModule = await import('@dialpad/dialtone-vue/emoji');
+  const dialtoneEmojiComponents = Object.keys(emojiModule).filter((key) => key.startsWith('Dt'));
+  dialtoneEmojiComponents.forEach((key) => {
+    app.component(key, emojiModule[key]);
+  });
+  app.provide('dialtoneEmojiComponents', dialtoneEmojiComponents);
 }
 
 async function registerDialtoneCombinator (app) {

@@ -46,8 +46,8 @@ This component combines both the `input` and `textarea` elements as options with
 
 An input is normally paired with a label, but there are times when it can be used without a label.  Placeholder text should primarily be used as a content prompt and only provided when needed.
 
-<code-well-header bgclass="d-bgc-primary">
-  <div class="d-stack24 d-w100p">
+<code-well-header bgclass="d-bgc-white">
+  <div class="d-stack16 d-w100p">
     <div>
       <label class="d-label" for="Dialtone--InputExample1a">Label</label>
       <input class="d-input" id="Dialtone--InputExample1a" type="text" placeholder="Placeholder" />
@@ -78,8 +78,8 @@ An input is normally paired with a label, but there are times when it can be use
 </div>
 ```
 
-<code-well-header bgclass="d-bgc-primary">
-  <div class="d-stack24 d-w100p">
+<code-well-header bgclass="d-bgc-white">
+  <div class="d-stack16 d-w100p">
     <div>
       <label class="d-label" for="Dialtone--TextareaExample1a">Label</label>
       <textarea class="d-textarea" id="Dialtone--TextareaExample1a" type="text" placeholder="Placeholder"></textarea>
@@ -144,12 +144,12 @@ An input is normally paired with a label, but there are times when it can be use
 <textarea class="d-textarea" id="Dialtone--TextareaExample" type="text" placeholder="..."></textarea>
 ```
 
-### With Validation States
+### With validation states
 
 Provides feedback to the user based on their interaction, or lack thereof, with an input.
 
-<code-well-header bgclass="d-bgc-primary">
-  <div class="d-stack24 d-w100p">
+<code-well-header bgclass="d-bgc-white">
+  <div class="d-stack16 d-w100p">
     <div>
       <label class="d-label" for="Dialtone--InputExample3">Label</label>
       <input class="d-input d-input--error" id="Dialtone--InputExample3" type="email" placeholder="" value="Value" />
@@ -186,8 +186,8 @@ Provides feedback to the user based on their interaction, or lack thereof, with 
 </div>
 ```
 
-<code-well-header bgclass="d-bgc-primary">
-  <div class="d-stack24 d-w100p">
+<code-well-header bgclass="d-bgc-white">
+  <div class="d-stack16 d-w100p">
     <div>
       <label class="d-label" for="Dialtone--TextareaExample3">Label</label>
       <textarea class="d-textarea d-textarea--error" id="Dialtone--TextareaExample3" type="email" placeholder="" value="Value"></textarea>
@@ -227,7 +227,7 @@ Provides feedback to the user based on their interaction, or lack thereof, with 
 ### With icons
 
 <code-well-header bgclass="d-bgc-primary">
-  <div class="d-stack24 d-w100p">
+  <div class="d-stack16 d-w100p">
     <div>
       <label class="d-label" for="Dialtone--InputExample--IconLeft">Label</label>
       <div class="d-input__wrapper">
@@ -263,7 +263,7 @@ Provides feedback to the user based on their interaction, or lack thereof, with 
 ```
 
 <code-well-header bgclass="d-bgc-primary">
-  <div class="d-stack24 d-w100p">
+  <div class="d-stack16 d-w100p">
     <div class="d-w100p">
       <label class="d-label" for="Dialtone--InputExample--IconLeft">Label</label>
       <div class="d-input__wrapper">
@@ -289,7 +289,7 @@ Provides feedback to the user based on their interaction, or lack thereof, with 
 We offer different sizes for instances in which the interface requires a smaller or larger input. In general, though, use the base (medium) size input as much as possible, especially in forms.
 
 <code-well-header bgclass="d-bgc-primary">
-  <div class="d-stack24 d-w100p">
+  <div class="d-stack16 d-w100p">
     <div>
       <label class="d-label" for="Dialtone--InputExample--ExtraSmall">Label</label>
       <input class="d-input d-input--xs" id="Dialtone--InputExample--ExtraSmall" type="text" placeholder="Placeholder" />
@@ -337,7 +337,7 @@ We offer different sizes for instances in which the interface requires a smaller
 ```
 
 <code-well-header bgclass="d-bgc-primary">
-  <div class="d-stack24 d-w100p">
+  <div class="d-stack16 d-w100p">
     <div>
       <label class="d-label" for="Dialtone--InputExample--ExtraSmall">Label</label>
       <textarea class="d-textarea d-textarea--xs" id="Dialtone--InputExample--ExtraSmall" type="text" placeholder="Placeholder"></textarea>
@@ -389,7 +389,7 @@ We offer different sizes for instances in which the interface requires a smaller
 You may use different icon sizes in different sized inputs
 
 <code-well-header bgclass="d-bgc-primary">
-  <div class="d-stack24 d-w100p">
+  <div class="d-stack16 d-w100p">
     <div>
       <div>
         <label class="d-label" for="Dialtone--InputExample--IconLeft">Input:sm Icon:lg</label>
