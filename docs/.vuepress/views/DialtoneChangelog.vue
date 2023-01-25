@@ -41,11 +41,13 @@ const getVersion = (item) => changelogJson.value.versions[item].version;
 const getGithubReleaseUrl = (item) => `https://github.com/dialpad/dialtone/releases/tag/v${getVersion(item)}`;
 
 const formatReleaseNotes = (note) => {
-  const noteWithoutExtraAsterisks = note.replace(/\*\*/g, '');
+  const noteWithoutExtraAsterisks = formatReleaseNotesWithoutExtraAsterisks(note);
   const releaseNoteWithCommitLink = formatReleaseNotesWithCommitLink(noteWithoutExtraAsterisks);
   const releaseNoteWithPrLink = formatReleaseNotesWithPrLink(releaseNoteWithCommitLink);
   return releaseNoteWithPrLink;
 };
+
+const formatReleaseNotesWithoutExtraAsterisks = (note) => note.replace(/\*\*/g, '');
 
 const formatReleaseNotesWithCommitLink = (note) => {
   const noteWithLink = note.replace(/\(([^)]+)\)$/, (match, text) => {
