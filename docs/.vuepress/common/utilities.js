@@ -10,6 +10,45 @@ export function debounce (func, timeout = 300) {
   timer = setTimeout(func, timeout);
 }
 
+/*
+* Returns the formatted note with the commit and PR links.
+* Removes extra asterisks (known issue in semantic-release-changelog-json plugin).
+* */
+export const ReleaseNoteFormatter = {
+  note: '',
+
+  format () {
+    this.note = this._withoutExtraAsterisks();
+    this.note = this._withCommitLink();
+    this.note = this._withPrLink();
+
+    return this.note;
+  },
+
+  _withoutExtraAsterisks () {
+    return this.note.replace(/\*\*/g, '');
+  },
+
+  _withCommitLink () {
+    return this.note.replace(/\(([^)]+)\)$/, (match, text) => {
+      const link = `<a href="https://github.com/dialpad/dialtone/commit/${text}">${text}</a>`;
+      return `(${link})`;
+    });
+  },
+
+  _withPrLink () {
+    return this.note.replace(/(\([^)]+\))(?!.*\1)/, (match, text) => {
+      const content = text.slice(1, -1);
+      if (content[0] === '#') {
+        const link = `<a href="https://github.com/dialpad/dialtone/pull/${content.slice(1)}">${text}</a>`;
+        return `${link}`;
+      }
+      return text;
+    });
+  },
+};
+
 export default {
   debounce,
+  ReleaseNoteFormatter,
 };

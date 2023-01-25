@@ -3,6 +3,37 @@ title: About Dialtone
 desc: Dialtone is Dialpad's Design System that unites product teams around a common visual language.
 ---
 
+## Release notes
+
+<div class="d-flg12 d-fl-col2">
+  <div class="d-fd-column">
+    <h3 class="d-docsite--header-3">Dialtone</h3>
+    <a
+      class="d-d-inline-flex"
+      href="https://github.com/dialpad/dialtone/"
+    >
+      <img
+        alt="Dialtone CSS version number"
+        src="https://img.shields.io/github/package-json/v/dialpad/dialtone?color=D3BCFF&label=CSS"
+      />
+    </a>
+    <dialtone-changelog />
+  </div>
+  <div class="d-fd-column">
+    <h3 class="d-docsite--header-3">Dialtone-vue</h3>
+    <a
+      class="d-d-inline-flex"
+      href="https://github.com/dialpad/dialtone-vue"
+    >
+      <img
+        alt="Dialtone Vue version number"
+        src="https://img.shields.io/github/package-json/v/dialpad/dialtone-vue/vue3?color=D3BCFF&label=Vue"
+      >
+    </a>
+    <dialtone-changelog project="DialtoneVue" />
+  </div>
+</div>
+
 ## Components
 
 Components are reusable building blocks that support a specific interaction or UI need. These components can be reused across Dialpad products and projects
@@ -46,3 +77,7 @@ for reporting any issue.
 
 - [#dialtone](https://dialpad.slack.com/messages/dialtone/) Slack channel
 - [dialtone@dialpad.com](mailto:dialtone@dialpad.com)
+
+<script setup>
+  import DialtoneChangelog from '@views/DialtoneChangelog.vue';
+</script>
