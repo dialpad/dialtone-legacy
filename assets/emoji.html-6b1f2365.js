@@ -1,1 +1,0 @@
-import{_ as n,s as e,v as _,x as l,G as o,B as s}from"./framework-4a991d5d.js";const a={};function r(m,d){const t=e("dt-emoji"),c=e("code-well-header");return _(),l("div",null,[o(c,null,{default:s(()=>[o(t,{code:":smile:"})]),_:1})])}const f=n(a,[["render",r],["__file","emoji.html.vue"]]);export{f as default};
