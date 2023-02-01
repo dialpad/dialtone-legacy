@@ -1,3 +1,5 @@
+# [7.15.0](https://github.com/dialpad/dialtone/compare/v7.14.0...v7.15.0) (2023-02-01)
+
 # [7.14.0](https://github.com/dialpad/dialtone/compare/v7.13.1...v7.14.0) (2023-01-24)
 
 
