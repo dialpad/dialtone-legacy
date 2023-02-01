@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-8daa1a0e","path":"/","title":"","lang":"en-US","frontmatter":{"home":true},"headers":[],"git":{"createdTime":1675288863000,"updatedTime":1675288863000,"contributors":[{"name":"Francis Rupert","email":"francis.rupert@dialpad.com","commits":1}]}}');export{e as data};
