@@ -105,7 +105,7 @@ export default defineUserConfig({
       lineNumbers: false,
     },
     headers: {
-      level: [2], // Generated data header levels (used for toc)
+      level: [2, 3], // Generated data header levels (used for toc)
     },
   },
 
