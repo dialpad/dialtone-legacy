@@ -263,7 +263,9 @@ If you are developer contributing to Dialtone but are not on the Dialtone team y
 
 ### VuePress
 
-[VuePress](https://v2.vuepress.vuejs.org/) Vue-powered static site generator, is used as a static site generator for our documentation site. VuePress's root folder is within the folder `docs` in the Dialtone repository. Here are some short descriptions of the folders within `docs` and what they are responsible for.
+[VuePress](https://v2.vuepress.vuejs.org/) Vue-powered static site generator, is used as a static site generator for our documentation site. 
+VuePress's root folder is within the folder `docs` in the Dialtone repository. 
+Here are some short descriptions of the folders within `docs` and what they are responsible for:
 
 - `docs/.vuepress`: This is where all VuePress-specific files are placed.
   - `baseComponents`: These are components that might be reused across the documentation site.
@@ -287,6 +289,26 @@ If you are developer contributing to Dialtone but are not on the Dialtone team y
 - `docs/getting-started`: Contains templates for the "Getting started" section of the website. (Installation, Usage).
 - `docs/utilities`: Contains templates for the "Utilities" section of the website. (Utility classes).
 
+We use markdown frontmatter to add metadata to the pages, and we have several functions to extract such data and manipulate it.
+Here's an overview of important properties and the values they need/can have:
+
+- title `(required)`: Used as the page title, and also as the component name for [Components overview page].
+- shortTitle `(optional)`: This property is used to fix linking issues on [Components overview page] when the title is different from the component name.
+- desc `(optional)`: Used as the page subtitle.
+- status `(optional)`: CSS Component status, used to display a badge on [Components overview page] and
+also to define the component status on [Components status page], 
+  - Options available: `['wip', 'planned', 'new', null]` 
+  if status is not defined, the components will have a 'No implemented Yet' status.
+- thumb `(optional)`: Boolean to define if the component in [Components overview page] will have a thumbnail 
+  - ***Note:*** The thumbnail must exist on `/docs/.vuepress/public/assets/images/components` and the name should be the `component title` in kebab-case in `png` format. e.g. `Button Group` component -> button-group.png
+- storybook `(optional)`: It can be a storybook URL or a status.
+  - Options available: `['wip', 'planned', null]` 
+  if status is not defined, the components will have a 'No implemented Yet' status.
+- figma `(optional)`: It can be a figma URL or a status.
+  - Options available: `['wip', 'planned', null]` 
+  if status is not defined, the components will have a 'No implemented Yet' status.
+- no_preview `(optional)`: If defined, the page will have no preview section at the top. 
+
 ### Gulp
 
 [Gulp](https://gulpjs.com/) is the task runner we use to build Dialtone. It's configuration can be found in `.gulpfile.js`. The following tasks are handled within the gulp build
@@ -303,3 +325,8 @@ If you are developer contributing to Dialtone but are not on the Dialtone team y
 - Deploying to `production` `.github/workflows/deploy.yml`, See [RELEASING](RELEASING.md) for instructions on how to do this.
 - Linting our LESS files on pull request `.github/workflows/lint-pr.yml`.
 - Validating commit messages `.github/workflows/lint-commit-message.yml`, see [COMMIT_CONVENTION](COMMIT_CONVENTION.md) for our commit message conventions.
+
+
+
+[Components overview page]: https://dialpad.design/components/
+[Components status page]: https://dialpad.design/components/status/

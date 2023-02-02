@@ -3,8 +3,8 @@ title: Radio
 desc: A radio is an input control that allows users to select only one option from a number of choices.
 status: ready
 thumb: true
-storybook_url: https://vue.dialpad.design/?path=/story/components-radio--default
-figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Components-7?node-id=8919%3A22042&viewport=-451%2C205%2C0.6&t=xHutRjwo1o5zMTgT-11
+storybook: https://vue.dialpad.design/?path=/story/components-radio--default
+figma: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Components-7?node-id=8919%3A22042&viewport=-451%2C205%2C0.6&t=xHutRjwo1o5zMTgT-11
 ---
 
 <code-well-header>

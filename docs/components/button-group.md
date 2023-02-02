@@ -3,7 +3,7 @@ title: Button group
 desc: Button groups are used to group buttons that have a relationship or similar actions.
 status: ready
 thumb: true
-storybook_url: https://vue.dialpad.design/?path=/story/components-button-group--default
+storybook: https://vue.dialpad.design/?path=/story/components-button-group--default
 ---
 
 <code-well-header class="d-d-block">

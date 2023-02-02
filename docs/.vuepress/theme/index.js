@@ -37,7 +37,7 @@ function extractFrontmatter (app, path, options) {
   const indexPage = app.pages.find(page => page.path === path);
 
   indexPage.data.enhancedFrontmatter = app.pages
-    .filter(page => page.path.includes(path) && page.path !== path)
+    .filter(page => page.path.startsWith(path) && page.path.endsWith('.html'))
     .filter(page => page.frontmatter && (page.frontmatter.title || page.frontmatter.shortTitle))
     .map(page => {
       const fileName = page.frontmatter.title.toLowerCase().replaceAll(' ', '-');
@@ -48,6 +48,33 @@ function extractFrontmatter (app, path, options) {
       };
     })
     .sort((a, b) => sortingArr.indexOf(a.link) - sortingArr.indexOf(b.link));
+}
+
+function extractComponentStatus (app) {
+  const indexPage = app.pages.find(page => page.path === '/components/status/');
+  indexPage.data.componentsStatus = app.pages
+    .filter(page => page.path.startsWith('/components/') && page.path.endsWith('.html'))
+    .map(page => {
+      const frontmatter = page.frontmatter;
+      const componentStatus = (property) => {
+        if (!property) return 'NIY';
+        switch (property) {
+          case 'wip':
+            return 'WIP';
+          case 'planned':
+            return 'Planned';
+          default:
+            return 'DONE';
+        }
+      };
+      return {
+        url: page.path,
+        name: frontmatter.title,
+        figma: componentStatus(frontmatter.figma),
+        vue: componentStatus(frontmatter.storybook),
+        css: componentStatus(frontmatter.status),
+      };
+    });
 }
 
 export const dialtoneVuepressTheme = (options) => {
@@ -94,6 +121,7 @@ export const dialtoneVuepressTheme = (options) => {
       extractFrontmatter(app, '/guides/', options);
       extractFrontmatter(app, '/components/', options);
       extractFrontmatter(app, '/design/', options);
+      extractComponentStatus(app, '/components/status/');
     },
     extendsPage: (page) => {
       switch (page.path) {
@@ -104,6 +132,9 @@ export const dialtoneVuepressTheme = (options) => {
         case '/guides/':
         case '/design/':
           page.data.enhancedFrontmatter = [];
+          break;
+        case '/components/status/':
+          page.data.componentsStatus = [];
           break;
       }
     },
