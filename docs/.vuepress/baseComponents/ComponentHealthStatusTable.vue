@@ -24,6 +24,14 @@
       />
       <span class="d-label d-label--sm">Planned</span>
     </div>
+    <div class="d-d-flex d-flow4">
+      <dt-icon
+        class="d-fc-muted"
+        name="box"
+        size="300"
+      />
+      <span class="d-label d-label--sm">N/A</span>
+    </div>
   </div>
   <table class="d-table">
     <thead>
@@ -48,12 +56,12 @@
         :key="component.name"
       >
         <th scope="row">
-          <a
+          <router-link
             class="d-link"
-            :href="component.url"
+            :to="component.url"
           >
             {{ component.name }}
-          </a>
+          </router-link>
         </th>
         <td
           tabindex="0"

@@ -4,7 +4,8 @@ desc: A Popover displays a content overlay when its anchor element is activated.
 status: ready
 thumb: true
 storybook: https://vue.dialpad.design/?path=/story/components-popover--default
-figma: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Components-7?node-id=8921%3A22411&viewport=831%2C-269%2C0.43&t=xHutRjwo1o5zMTgT-11
+figma: wip
+figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Components-7?node-id=8921%3A22411&viewport=831%2C-269%2C0.43&t=xHutRjwo1o5zMTgT-11
 ---
 <code-well-header bgclass="d-bgc-primary">
   <example-popover modal />

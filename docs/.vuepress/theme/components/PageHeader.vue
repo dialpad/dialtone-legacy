@@ -71,9 +71,9 @@
           <span class="d-btn__label">Storybook</span>
         </a>
         <a
-          v-if="$frontmatter.figma"
+          v-if="$frontmatter.figma_url"
           class="d-btn d-btn--muted"
-          :href="$frontmatter.figma"
+          :href="$frontmatter.figma_url"
           target="_blank"
           rel="noopener noreferrer"
         >

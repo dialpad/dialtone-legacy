@@ -4,6 +4,7 @@ desc: Pagination allows you to divide large amounts of content into smaller chun
 status: ready
 thumb: true
 storybook: https://vue.dialpad.design/?path=/story/components-pagination--default
+figma: wip
 ---
 
 <code-well-header>

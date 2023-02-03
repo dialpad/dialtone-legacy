@@ -21,6 +21,11 @@ const mapping = {
   img: 'd-docsite--image d-wmx100p',
   a: 'd-docsite--link d-link',
 };
+const _sortAlphabetically = (str1, str2) => {
+  if (str1 > str2) return 1;
+  if (str1 < str2) return -1;
+  return 0;
+};
 
 function _blogPostsFrontmatter (app) {
   const blogIndex = app.pages.find(page => page.path === '/about/whats-new/');
@@ -70,11 +75,12 @@ function _extractComponentStatus (app) {
       return {
         url: page.path,
         name: frontmatter.title,
-        figma: componentStatus(frontmatter.figma),
+        figma: componentStatus(frontmatter.figma || frontmatter.figma_url),
         vue: componentStatus(frontmatter.storybook),
         css: componentStatus(frontmatter.status),
       };
-    });
+    })
+    .sort((a, b) => _sortAlphabetically(a.name, b.name));
 }
 
 export const dialtoneVuepressTheme = (options) => {
@@ -121,7 +127,7 @@ export const dialtoneVuepressTheme = (options) => {
       _extractFrontmatter(app, '/guides/', options);
       _extractFrontmatter(app, '/components/', options);
       _extractFrontmatter(app, '/design/', options);
-      _extractComponentStatus(app, '/components/status/');
+      _extractComponentStatus(app);
     },
     extendsPage: (page) => {
       switch (page.path) {

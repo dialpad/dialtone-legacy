@@ -4,7 +4,7 @@ desc: An input field is an input control that allows users to enter alphanumeric
 status: ready
 thumb: true
 storybook: https://vue.dialpad.design/?path=/story/components-input--default
-figma: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Components-7?node-id=8923%3A21866&viewport=-983%2C83%2C0.16&t=xHutRjwo1o5zMTgT-11
+figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Components-7?node-id=8923%3A21866&viewport=-983%2C83%2C0.16&t=xHutRjwo1o5zMTgT-11
 ---
 
 <code-well-header bgclass="d-bgc-primary">
