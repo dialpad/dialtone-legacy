@@ -1,3 +1,10 @@
+## [7.15.1](https://github.com/dialpad/dialtone/compare/v7.15.0...v7.15.1) (2023-02-03)
+
+
+### Bug Fixes
+
+* **Chip:** hover/active background styling ([#810](https://github.com/dialpad/dialtone/issues/810)) ([ec86898](https://github.com/dialpad/dialtone/commit/ec86898f79de449621f2fd59e5b0c52d8f3ca0f8))
+
 # [7.15.0](https://github.com/dialpad/dialtone/compare/v7.14.0...v7.15.0) (2023-02-01)
 
 
