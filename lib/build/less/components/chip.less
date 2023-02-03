@@ -103,12 +103,14 @@
     content: '';
   }
 
-  &:hover {
-    --button--bgc: hsla(var(--black-800-hsl) ~' / ' 15%);
+  &:hover:not([disabled]) {
+    --button-color-background: hsla(var(--black-800-hsl) ~' / ' 15%);
   }
 
-  &:active {
-    --button--bgc: hsla(var(--black-800-hsl) ~' / ' 25%);
+  &:active:not([disabled]),
+  &.d-btn--active:not([disabled]),
+  &.d-btn--active:active:not([disabled]) {
+    --button-color-background: hsla(var(--black-800-hsl) ~' / ' 25%);
   }
 
   .d-btn__icon .d-svg {

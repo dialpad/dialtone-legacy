@@ -105,7 +105,7 @@ export default defineUserConfig({
       lineNumbers: false,
     },
     headers: {
-      level: [2], // Generated data header levels (used for toc)
+      level: [2, 3], // Generated data header levels (used for toc)
     },
   },
 
@@ -117,6 +117,7 @@ export default defineUserConfig({
     '@baseComponents': path.resolve(__dirname, './baseComponents'),
     '@views': path.resolve(__dirname, './views'),
     '@mixins': path.resolve(__dirname, './common/mixins/'),
+    '@projectRoot': path.resolve(__dirname, '../../'),
     '@': path.resolve(__dirname, '../'),
   },
 

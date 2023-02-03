@@ -1,3 +1,33 @@
+# [7.15.0](https://github.com/dialpad/dialtone/compare/v7.14.0...v7.15.0) (2023-02-01)
+
+
+### Bug Fixes
+
+* added brandIcons list to bypass them ([#803](https://github.com/dialpad/dialtone/issues/803)) ([d91db89](https://github.com/dialpad/dialtone/commit/d91db8970d61a638b1ef8c6650fef464b30199df))
+* **Banner:** move border color to correct element ([#806](https://github.com/dialpad/dialtone/issues/806)) ([81be6f3](https://github.com/dialpad/dialtone/commit/81be6f374cb3efbc5a23b6b7951b13075d63e95b))
+* **Root Layout:** update class ([#802](https://github.com/dialpad/dialtone/issues/802)) ([0018388](https://github.com/dialpad/dialtone/commit/0018388f0a1efbe242e0a5514aedef410232e1a2))
+
+
+### Documentation
+
+* add component change history in about page ([#782](https://github.com/dialpad/dialtone/issues/782)) ([0541ee4](https://github.com/dialpad/dialtone/commit/0541ee44eef3bb12df5136bf18ef6974fc3ac331))
+* **Toc:** add level 3 heading linkability ([#805](https://github.com/dialpad/dialtone/issues/805)) ([4079fd5](https://github.com/dialpad/dialtone/commit/4079fd51932f0b6be330c6a75920ea25100b3a7d))
+
+
+### Features
+
+* **Health Check:** add the ability to search for deprecated icons ([#801](https://github.com/dialpad/dialtone/issues/801)) ([61fcb76](https://github.com/dialpad/dialtone/commit/61fcb765eb1b87f9d13d6008ece414563507a532))
+* **Radio, Checkbox:** dt7 style corrections ([#808](https://github.com/dialpad/dialtone/issues/808)) ([8faedd0](https://github.com/dialpad/dialtone/commit/8faedd0ec3d4ee5fde725f98bbec52eb77968884))
+
+# [7.15.0](https://github.com/dialpad/dialtone/compare/v7.14.0...v7.15.0) (2023-02-01)
+
+# [7.14.0](https://github.com/dialpad/dialtone/compare/v7.13.1...v7.14.0) (2023-01-24)
+
+
+### Features
+
+* **Modal:** add style variants of banner ([#799](https://github.com/dialpad/dialtone/issues/799)) ([7c4ca5b](https://github.com/dialpad/dialtone/commit/7c4ca5b039102fd08e7a60361cf1dbfc780e344a))
+
 ## [7.13.1](https://github.com/dialpad/dialtone/compare/v7.13.0...v7.13.1) (2023-01-19)
 
 
