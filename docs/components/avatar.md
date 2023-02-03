@@ -28,9 +28,7 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
         <div class="d-avatar d-avatar--md">
             <div class="d-avatar__canvas">
                 <span class="d-avatar__icon">
-                    <span class="d-avatar__icon">
-                        <dt-icon name="video" size="300" />
-                    </span>
+                    <dt-icon name="video" size="300" />
                 </span>
             </div>
             <div class="d-avatar__presence">
