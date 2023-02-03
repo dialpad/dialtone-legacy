@@ -35,9 +35,7 @@
           v-text="name"
         />
         <td class="d-ff-mono d-fs-100 vue-api-table">
-          <span
-            v-html="description"
-          />
+          <markdown-render :markdown="description" />
         </td>
       </tr>
     </tbody>
@@ -46,6 +44,7 @@
 
 <script setup>
 import ComponentDocs from '../../../node_modules/@dialpad/dialtone-vue/dist/component-documentation.json';
+import MarkdownRender from '@baseComponents/MarkdownRender.vue';
 
 const props = defineProps({
   componentName: {
