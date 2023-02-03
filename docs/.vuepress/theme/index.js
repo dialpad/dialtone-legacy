@@ -22,7 +22,7 @@ const mapping = {
   a: 'd-docsite--link d-link',
 };
 
-function blogPostsFrontmatter (app) {
+function _blogPostsFrontmatter (app) {
   const blogIndex = app.pages.find(page => page.path === '/about/whats-new/');
   blogIndex.data.blogPosts = app.pages
     .filter(page => page.path.includes('/about/whats-new/posts'))
@@ -32,7 +32,7 @@ function blogPostsFrontmatter (app) {
     }));
 }
 
-function extractFrontmatter (app, path, options) {
+function _extractFrontmatter (app, path, options) {
   const sortingArr = options?.sidebar[path][0].children.map(child => child.text.toLowerCase().replaceAll(' ', '-'));
   const indexPage = app.pages.find(page => page.path === path);
 
@@ -50,21 +50,21 @@ function extractFrontmatter (app, path, options) {
     .sort((a, b) => sortingArr.indexOf(a.link) - sortingArr.indexOf(b.link));
 }
 
-function extractComponentStatus (app) {
+function _extractComponentStatus (app) {
   const indexPage = app.pages.find(page => page.path === '/components/status/');
   indexPage.data.componentsStatus = app.pages
     .filter(page => page.path.startsWith('/components/') && page.path.endsWith('.html'))
     .map(page => {
       const frontmatter = page.frontmatter;
       const componentStatus = (property) => {
-        if (!property) return 'NIY';
+        if (!property) return 'N/A';
         switch (property) {
           case 'wip':
-            return 'WIP';
+            return 'In progress';
           case 'planned':
             return 'Planned';
           default:
-            return 'DONE';
+            return 'Ready';
         }
       };
       return {
@@ -117,11 +117,11 @@ export const dialtoneVuepressTheme = (options) => {
       md.use(markdownItClass, mapping);
     },
     onInitialized (app) {
-      blogPostsFrontmatter(app);
-      extractFrontmatter(app, '/guides/', options);
-      extractFrontmatter(app, '/components/', options);
-      extractFrontmatter(app, '/design/', options);
-      extractComponentStatus(app, '/components/status/');
+      _blogPostsFrontmatter(app);
+      _extractFrontmatter(app, '/guides/', options);
+      _extractFrontmatter(app, '/components/', options);
+      _extractFrontmatter(app, '/design/', options);
+      _extractComponentStatus(app, '/components/status/');
     },
     extendsPage: (page) => {
       switch (page.path) {

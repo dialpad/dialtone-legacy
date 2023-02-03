@@ -30,9 +30,9 @@
       </h2>
       <span>
         <a
-          v-if="$frontmatter.storybook_url"
+          v-if="$frontmatter.storybook"
           class="d-btn d-btn--muted d-btn--muted"
-          :href="$frontmatter.storybook_url"
+          :href="$frontmatter.storybook"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -71,9 +71,9 @@
           <span class="d-btn__label">Storybook</span>
         </a>
         <a
-          v-if="$frontmatter.figma_url"
+          v-if="$frontmatter.figma"
           class="d-btn d-btn--muted"
-          :href="$frontmatter.figma_url"
+          :href="$frontmatter.figma"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -124,3 +124,5 @@
     </div>
   </section>
 </template>
+
+<!-- TODO: validate that `storybook` and `figma` are URLS -->

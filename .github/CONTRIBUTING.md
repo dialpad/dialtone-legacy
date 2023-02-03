@@ -297,16 +297,16 @@ Here's an overview of important properties and the values they need/can have:
 - desc `(optional)`: Used as the page subtitle.
 - status `(optional)`: CSS Component status, used to display a badge on [Components overview page] and
 also to define the component status on [Components status page], 
-  - Options available: `['wip', 'planned', 'new', null]` 
-  if status is not defined, the components will have a 'No implemented Yet' status.
+  - Status options available: `['wip', 'planned', 'new', 'ready', null]` 
+  if status is not defined, the component will have a "N/A" CSS status on [Components status page].
 - thumb `(optional)`: Boolean to define if the component in [Components overview page] will have a thumbnail 
   - ***Note:*** The thumbnail must exist on `/docs/.vuepress/public/assets/images/components` and the name should be the `component title` in kebab-case in `png` format. e.g. `Button Group` component -> button-group.png
 - storybook `(optional)`: It can be a storybook URL or a status.
-  - Options available: `['wip', 'planned', null]` 
-  if status is not defined, the components will have a 'No implemented Yet' status.
+  - Status options available: `['wip', 'planned', null]`
+  if storybook is not defined, the component will have a "N/A" Vue status on [Components status page].
 - figma `(optional)`: It can be a figma URL or a status.
-  - Options available: `['wip', 'planned', null]` 
-  if status is not defined, the components will have a 'No implemented Yet' status.
+  - Status options available: `['wip', 'planned', null]` 
+  if figma is not defined, the component will have a "N/A" Figma status on [Components status page].
 - no_preview `(optional)`: If defined, the page will have no preview section at the top. 
 
 ### Gulp

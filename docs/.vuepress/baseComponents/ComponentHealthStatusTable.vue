@@ -1,43 +1,30 @@
 <template>
-  <dt-button
-    importance="clear"
-    kind="muted"
-  >
-    <template #icon>
+  <div class="d-d-flex d-flow16">
+    <div class="d-d-flex d-flow4">
       <dt-icon
         class="d-fc-success"
         name="check-circle"
         size="300"
       />
-    </template>
-    Available
-  </dt-button>
-  <dt-button
-    importance="clear"
-    kind="muted"
-  >
-    <template #icon>
+      <span class="d-label d-label--sm">Ready</span>
+    </div>
+    <div class="d-d-flex d-flow4">
       <dt-icon
         class="d-fc-warning"
         name="tools"
         size="300"
       />
-    </template>
-    Work in progress
-  </dt-button>
-  <dt-button
-    importance="clear"
-    kind="muted"
-  >
-    <template #icon>
+      <span class="d-label d-label--sm">In progress</span>
+    </div>
+    <div class="d-d-flex d-flow4">
       <dt-icon
         class="d-fc-error"
         name="box-select"
         size="300"
       />
-    </template>
-    Not implemented yet
-  </dt-button>
+      <span class="d-label d-label--sm">Planned</span>
+    </div>
+  </div>
   <table class="d-table">
     <thead>
       <tr>
@@ -68,19 +55,28 @@
             {{ component.name }}
           </a>
         </th>
-        <td>
+        <td
+          tabindex="0"
+          :aria-label="`${component.name} CSS ${component.css}`"
+        >
           <dt-icon
             :class="statusColor[component.css]"
             :name="statusIcon[component.css]"
           />
         </td>
-        <td>
+        <td
+          tabindex="0"
+          :aria-label="`${component.name} VUE ${component.vue}`"
+        >
           <dt-icon
             :class="statusColor[component.vue]"
             :name="statusIcon[component.vue]"
           />
         </td>
-        <td>
+        <td
+          tabindex="0"
+          :aria-label="`${component.name} FIGMA ${component.figma}`"
+        >
           <dt-icon
             :class="statusColor[component.figma]"
             :name="statusIcon[component.figma]"
@@ -99,13 +95,15 @@ defineProps({
   },
 });
 const statusIcon = {
-  DONE: 'check-circle',
-  WIP: 'tools',
-  NIY: 'box-select',
+  Ready: 'check-circle',
+  'In progress': 'tools',
+  Planned: 'box-select',
+  'N/A': 'box',
 };
 const statusColor = {
-  DONE: 'd-fc-success',
-  WIP: 'd-fc-warning',
-  NIY: 'd-fc-error',
+  Ready: 'd-fc-success',
+  'In progress': 'd-fc-warning',
+  Planned: 'd-fc-error',
+  'N/A': 'd-fc-muted',
 };
 </script>

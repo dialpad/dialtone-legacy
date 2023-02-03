@@ -1,7 +1,7 @@
 ---
 title: Dropdown
 desc: A Dropdown presents a list of options or actions.
-status: ready
+status: planned
 thumb: true
 storybook: https://vue.dialpad.design/?path=/story/components-dropdown--default
 ---
