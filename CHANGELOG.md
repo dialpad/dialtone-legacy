@@ -1,3 +1,10 @@
+## [7.15.2](https://github.com/dialpad/dialtone/compare/v7.15.1...v7.15.2) (2023-02-05)
+
+
+### Bug Fixes
+
+* **Radio:** correct broken radio style ([#814](https://github.com/dialpad/dialtone/issues/814)) ([a09d9a6](https://github.com/dialpad/dialtone/commit/a09d9a62705aa56f59d450069633696e6e7e9306))
+
 ## [7.15.1](https://github.com/dialpad/dialtone/compare/v7.15.0...v7.15.1) (2023-02-03)
 
 
