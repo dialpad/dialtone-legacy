@@ -1,3 +1,22 @@
+# [7.16.0-alpha.1](https://github.com/dialpad/dialtone/compare/v7.15.0...v7.16.0-alpha.1) (2023-02-06)
+
+
+### Bug Fixes
+
+* **Chip:** hover/active background styling ([#810](https://github.com/dialpad/dialtone/issues/810)) ([ec86898](https://github.com/dialpad/dialtone/commit/ec86898f79de449621f2fd59e5b0c52d8f3ca0f8))
+
+
+### Documentation
+
+* **Avatar:** added `group` variant; added `no-gradient` varian;, list avatar classes ([cc69583](https://github.com/dialpad/dialtone/commit/cc69583541ab20c87b478f09fd7f31d57eca2139))
+* **Avatar:** remove nested redundant `__icon` element ([f6ff62f](https://github.com/dialpad/dialtone/commit/f6ff62f9901787b6fe1c3536b997c40ee5bc2f32))
+
+
+### Features
+
+* **Avatar:** added "group" variant ([6de87af](https://github.com/dialpad/dialtone/commit/6de87af0040b61692dacc670600f5797a3fa7cc3))
+* **Avatar:** group variant initial ([5c54e41](https://github.com/dialpad/dialtone/commit/5c54e41fb8e64e7872eb40edb177bd5fc249c06a))
+
 # [7.15.0](https://github.com/dialpad/dialtone/compare/v7.14.0...v7.15.0) (2023-02-01)
 
 
