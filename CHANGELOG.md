@@ -1,3 +1,15 @@
+# [7.16.0-alpha.2](https://github.com/dialpad/dialtone/compare/v7.16.0-alpha.1...v7.16.0-alpha.2) (2023-02-06)
+
+
+### Bug Fixes
+
+* **Avatar:** correct box-sizing for group count ([7a0e74d](https://github.com/dialpad/dialtone/commit/7a0e74dab4a1207bc45e1d367114294ef30a0427))
+
+
+### Documentation
+
+* **Avatar:** changed from `flex` to `inline-flex` ([628e3dc](https://github.com/dialpad/dialtone/commit/628e3dc39412136ec958cc948c38ee3e18911846))
+
 # [7.16.0-alpha.1](https://github.com/dialpad/dialtone/compare/v7.15.0...v7.16.0-alpha.1) (2023-02-06)
 
 
