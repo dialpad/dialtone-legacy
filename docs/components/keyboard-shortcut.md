@@ -3,7 +3,7 @@ title: Keyboard shortcut
 desc: This component displays a visual representation of a keyboard shortcut to the user.
 status: ready
 thumb: true
-storybook_url: https://vue.dialpad.design/?path=/story/components-keyboard-shortcut--default
+storybook: https://vue.dialpad.design/?path=/story/components-keyboard-shortcut--default
 ---
 
 <code-well-header>

@@ -1,9 +1,6 @@
 ---
 title: Order
 desc: Utilities for controlling an element's order within a parent container.
-next:
-  text: Columns
-  link: /utilities/grid/column-start-end-span
 ---
 
 ## Example

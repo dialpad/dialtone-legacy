@@ -1,9 +1,6 @@
 ---
 title: Word break
 desc: Utilities for controlling the way words break within an element.
-next:
-  text: Guides - Getting started
-  link: /guides/getting-started/installation.html
 ---
 
 ## Normal

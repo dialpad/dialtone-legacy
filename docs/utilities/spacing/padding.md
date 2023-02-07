@@ -1,9 +1,6 @@
 ---
 title: Padding
 desc: Utilities for setting an element's interior spacing between child elements and the element's box edge.
-next:
-  text: Styles
-  link: /utilities/typography/styles
 ---
 
 ## Add padding to all sides

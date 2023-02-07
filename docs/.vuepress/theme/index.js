@@ -21,8 +21,13 @@ const mapping = {
   img: 'd-docsite--image d-wmx100p',
   a: 'd-docsite--link d-link',
 };
+const _sortAlphabetically = (str1, str2) => {
+  if (str1 > str2) return 1;
+  if (str1 < str2) return -1;
+  return 0;
+};
 
-function blogPostsFrontmatter (app) {
+function _blogPostsFrontmatter (app) {
   const blogIndex = app.pages.find(page => page.path === '/about/whats-new/');
   blogIndex.data.blogPosts = app.pages
     .filter(page => page.path.includes('/about/whats-new/posts'))
@@ -32,12 +37,12 @@ function blogPostsFrontmatter (app) {
     }));
 }
 
-function extractFrontmatter (app, path, options) {
+function _extractFrontmatter (app, path, options) {
   const sortingArr = options?.sidebar[path][0].children.map(child => child.text.toLowerCase().replaceAll(' ', '-'));
   const indexPage = app.pages.find(page => page.path === path);
 
   indexPage.data.enhancedFrontmatter = app.pages
-    .filter(page => page.path.includes(path) && page.path !== path)
+    .filter(page => page.path.startsWith(path) && page.path.endsWith('.html'))
     .filter(page => page.frontmatter && (page.frontmatter.title || page.frontmatter.shortTitle))
     .map(page => {
       const fileName = page.frontmatter.title.toLowerCase().replaceAll(' ', '-');
@@ -48,6 +53,34 @@ function extractFrontmatter (app, path, options) {
       };
     })
     .sort((a, b) => sortingArr.indexOf(a.link) - sortingArr.indexOf(b.link));
+}
+
+function _extractComponentStatus (app) {
+  const indexPage = app.pages.find(page => page.path === '/components/status/');
+  indexPage.data.componentsStatus = app.pages
+    .filter(page => page.path.startsWith('/components/') && page.path.endsWith('.html'))
+    .map(page => {
+      const frontmatter = page.frontmatter;
+      const componentStatus = (property) => {
+        if (!property) return 'N/A';
+        switch (property) {
+          case 'wip':
+            return 'In progress';
+          case 'planned':
+            return 'Planned';
+          default:
+            return 'Ready';
+        }
+      };
+      return {
+        url: page.path,
+        name: frontmatter.title,
+        figma: componentStatus(frontmatter.figma || frontmatter.figma_url),
+        vue: componentStatus(frontmatter.storybook),
+        css: componentStatus(frontmatter.status),
+      };
+    })
+    .sort((a, b) => _sortAlphabetically(a.name, b.name));
 }
 
 export const dialtoneVuepressTheme = (options) => {
@@ -90,10 +123,11 @@ export const dialtoneVuepressTheme = (options) => {
       md.use(markdownItClass, mapping);
     },
     onInitialized (app) {
-      blogPostsFrontmatter(app);
-      extractFrontmatter(app, '/guides/', options);
-      extractFrontmatter(app, '/components/', options);
-      extractFrontmatter(app, '/design/', options);
+      _blogPostsFrontmatter(app);
+      _extractFrontmatter(app, '/guides/', options);
+      _extractFrontmatter(app, '/components/', options);
+      _extractFrontmatter(app, '/design/', options);
+      _extractComponentStatus(app);
     },
     extendsPage: (page) => {
       switch (page.path) {
@@ -104,6 +138,9 @@ export const dialtoneVuepressTheme = (options) => {
         case '/guides/':
         case '/design/':
           page.data.enhancedFrontmatter = [];
+          break;
+        case '/components/status/':
+          page.data.componentsStatus = [];
           break;
       }
     },
