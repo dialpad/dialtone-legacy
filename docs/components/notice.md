@@ -4,7 +4,6 @@ desc: A notice is an informational and assistive message that appears inline wit
 status: ready
 thumb: true
 storybook: https://vue.dialpad.design/?path=/story/components-notice--default
-figma: wip
 figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Components-7?node-id=8921%3A23341&viewport=145%2C-209%2C0.31&t=xHutRjwo1o5zMTgT-11
 ---
 
