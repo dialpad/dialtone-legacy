@@ -1,6 +1,6 @@
 ---
 title: Presence
-desc: A visual control element indicating the current status of a user
+desc: A visual control element indicating the current status of a user.
 status: new
 thumb: true
 storybook: https://vue.dialpad.design/?path=/docs/components-presence--default
@@ -9,17 +9,6 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 <code-well-header>
   <example-presence presence="active"/>
 </code-well-header>
-
-## Usage
-
-### Best practices
-
-- Presence should be used to visually indicate the current status of a user.
-- The following set of CSS classes can be set to set their status:
-  - `d-presence__inner--active`
-  - `d-presence__inner--busy`
-  - `d-presence__inner--away`
-  - `d-presence__inner--offline`
 
 ## Variants and examples
 
@@ -31,9 +20,7 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 
 ```html
 <div class="d-presence">
-  <div
-    class="d-presence__inner d-presence__inner--active"
-  />
+  <div class="d-presence__inner d-presence__inner--active"></div>
 </div>
 ```
 
@@ -45,7 +32,7 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 
 ```html
 <div class="d-presence">
-  <div class="d-presence__inner d-presence__inner--busy" />
+  <div class="d-presence__inner d-presence__inner--busy"></div>
 </div>
 ```
 
@@ -57,7 +44,7 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 
 ```html
 <div class="d-presence">
-  <div class="d-presence__inner d-presence__inner--away" />
+  <div class="d-presence__inner d-presence__inner--away"></div>
 </div>
 ```
 
@@ -69,7 +56,7 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 
 ```html
 <div class="d-presence">
-  <div class="d-presence__inner d-presence__inner--offline" />
+  <div class="d-presence__inner d-presence__inner--offline"></div>
 </div>
 ```
 
