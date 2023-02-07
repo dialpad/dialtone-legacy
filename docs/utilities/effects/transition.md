@@ -1,9 +1,6 @@
 ---
 title: Transition
 desc: Utilities for controlling how an element transitions in and out of states.
-next:
-  text: Align content
-  link: /utilities/flex/align-content
 ---
 
 ## Adding a transition

@@ -1,9 +1,6 @@
 ---
 title: Min-width
 desc: Utilities to control an element's minimum width.
-next:
-  text: Auto spacing
-  link: /utilities/spacing/auto-spacing
 ---
 
 ## Percentages

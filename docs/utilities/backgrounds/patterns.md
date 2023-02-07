@@ -1,9 +1,6 @@
 ---
 title: Background Patterns
 desc: Utilities for adding distinctive background patterns for Department and Call Centers.
-next:
-  text: Border color
-  link: /utilities/borders/color.html
 ---
 
 ## Usage
