@@ -1,3 +1,10 @@
+## [7.16.1](https://github.com/dialpad/dialtone/compare/v7.16.0...v7.16.1) (2023-02-08)
+
+
+### Bug Fixes
+
+* **Toggle:** fix toggle shrinking with large text ([#817](https://github.com/dialpad/dialtone/issues/817)) ([06f0e28](https://github.com/dialpad/dialtone/commit/06f0e288e4be1872b58336e60c77c715a57ab6c8))
+
 # [7.16.0](https://github.com/dialpad/dialtone/compare/v7.15.2...v7.16.0) (2023-02-08)
 
 
