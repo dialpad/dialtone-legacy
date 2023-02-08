@@ -2,6 +2,7 @@ import { defineUserConfig } from 'vuepress';
 import { getDirname, path } from '@vuepress/utils';
 import { viteBundler } from '@vuepress/bundler-vite';
 import { googleAnalyticsPlugin } from '@vuepress/plugin-google-analytics';
+import { seoPlugin } from 'vuepress-plugin-seo2';
 import anchor from 'markdown-it-anchor';
 
 const sidebar = require('../_data/site-nav.json');
@@ -124,6 +125,9 @@ export default defineUserConfig({
   plugins: [
     googleAnalyticsPlugin({
       id: 'G-0YV8QJ44LF',
+    }),
+    seoPlugin({
+      // your options
     }),
   ],
 });
