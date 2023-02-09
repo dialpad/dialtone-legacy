@@ -1,7 +1,7 @@
 ---
 title: Typography
 status: planned
-desc: Guidance for clear, legible, and easy-to-read text.
+description: Guidance for clear, legible, and easy-to-read text.
 ---
 
 Dialtone provides a set of purposeful typographic styles to present user interface and content as clearly and efficiently as possible.

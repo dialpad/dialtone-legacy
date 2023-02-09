@@ -1,6 +1,6 @@
 ---
 title: Getting started
-desc: A quick start guide to add Dialtone to your project.
+description: A quick start guide to add Dialtone to your project.
 ---
 
 ## Adding Dialtone to your project

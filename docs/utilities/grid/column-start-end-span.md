@@ -1,6 +1,6 @@
 ---
 title: Column Start / End / Span
-desc: Utilities for controlling how elements are placed across grid columns.
+description: Utilities for controlling how elements are placed across grid columns.
 ---
 
 ## Spanning columns

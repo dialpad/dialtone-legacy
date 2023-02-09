@@ -1,6 +1,6 @@
 ---
 title: Contributing
-desc: Help Dialtone be even better.
+description: Help Dialtone be even better.
 ---
 
 ## Component contribution

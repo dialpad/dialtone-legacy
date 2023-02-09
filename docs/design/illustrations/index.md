@@ -1,6 +1,6 @@
 ---
 title: Illustrations
-desc: A system for consistent visual rhythms and proportions.
+description: A system for consistent visual rhythms and proportions.
 ---
 
 ## Spot illustrations

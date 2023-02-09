@@ -30,7 +30,7 @@
             </span>
           </div>
           <div class="dialtone-wall__description">
-            {{ page.desc }}
+            {{ page.description }}
           </div>
         </div>
       </router-link>

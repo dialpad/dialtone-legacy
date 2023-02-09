@@ -1,6 +1,6 @@
 ---
 title: Z-Index
-desc: Utility classes for setting an element's z-index level.
+description: Utility classes for setting an element's z-index level.
 ---
 
 ## Classes

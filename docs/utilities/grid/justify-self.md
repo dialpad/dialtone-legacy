@@ -1,6 +1,6 @@
 ---
 title: Justify self
-desc: Utilities for controlling how a grid item is aligned along its inline axis.
+description: Utilities for controlling how a grid item is aligned along its inline axis.
 ---
 
 ## Auto

@@ -1,6 +1,6 @@
 ---
 title: Background attachment
-desc: Utilities for controlling the way an element's background image position is fixed within the viewport or scrolls with its containing block.
+description: Utilities for controlling the way an element's background image position is fixed within the viewport or scrolls with its containing block.
 ---
 
 ## Scroll

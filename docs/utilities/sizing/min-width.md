@@ -1,6 +1,6 @@
 ---
 title: Min-width
-desc: Utilities to control an element's minimum width.
+description: Utilities to control an element's minimum width.
 ---
 
 ## Percentages

@@ -1,6 +1,6 @@
 ---
 title: Text overflow
-desc: Utilities for controlling an element's text overflow.
+description: Utilities for controlling an element's text overflow.
 ---
 
 ## Truncate

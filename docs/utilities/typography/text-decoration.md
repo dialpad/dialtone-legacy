@@ -1,6 +1,6 @@
 ---
 title: Text decoration
-desc: Utilities to change an element's text decoration styles.
+description: Utilities to change an element's text decoration styles.
 ---
 
 ## Underline

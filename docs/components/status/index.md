@@ -1,6 +1,6 @@
 ---
 title: Component status
-desc: Overview of the components health status
+description: Overview of the components health status
 no_preview: true
 ---
 

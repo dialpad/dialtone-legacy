@@ -1,6 +1,6 @@
 ---
 title: Border style.
-desc: Utilities for controlling an element's border style.
+description: Utilities for controlling an element's border style.
 ---
 
 ## Dashed borders

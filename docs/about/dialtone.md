@@ -1,6 +1,6 @@
 ---
 title: About Dialtone
-desc: Dialtone is Dialpad's Design System that unites product teams around a common visual language.
+description: Dialtone is Dialpad's Design System that unites product teams around a common visual language.
 ---
 
 ## Release notes

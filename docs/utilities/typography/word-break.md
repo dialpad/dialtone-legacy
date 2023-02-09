@@ -1,6 +1,6 @@
 ---
 title: Word break
-desc: Utilities for controlling the way words break within an element.
+description: Utilities for controlling the way words break within an element.
 ---
 
 ## Normal

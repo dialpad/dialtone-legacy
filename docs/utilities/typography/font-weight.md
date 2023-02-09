@@ -1,6 +1,6 @@
 ---
 title: Font weight
-desc: Utilities to change an element's font-weight.
+description: Utilities to change an element's font-weight.
 ---
 
 ## Classes

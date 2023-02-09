@@ -1,6 +1,6 @@
 ---
 title: Font size
-desc: Utilities to change an element's font-size.
+description: Utilities to change an element's font-size.
 ---
 
 ## Usage
