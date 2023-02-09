@@ -1,6 +1,6 @@
 ---
 title: Modal
-desc: A modal focuses the user’s attention on a single task or message.
+description: A modal focuses the user’s attention on a single task or message.
 status: ready
 thumb: true
 storybook: https://vue.dialpad.design/?path=/story/components-modal--default

@@ -1,6 +1,6 @@
 ---
 title: Input
-desc: An input field is an input control that allows users to enter alphanumeric information. It can have a range of options and supports single line and multi-line lengths, as well as varying formats, including numbers, masked passwords, etc.
+description: An input field is an input control that allows users to enter alphanumeric information. It can have a range of options and supports single line and multi-line lengths, as well as varying formats, including numbers, masked passwords, etc.
 status: ready
 thumb: true
 storybook: https://vue.dialpad.design/?path=/story/components-input--default

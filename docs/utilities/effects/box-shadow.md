@@ -1,6 +1,6 @@
 ---
 title: Box shadows
-desc: Utilities for controlling an element's box shadows.
+description: Utilities for controlling an element's box shadows.
 ---
 
 ## Outer shadow

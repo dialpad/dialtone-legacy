@@ -1,6 +1,6 @@
 ---
 title: Whitespace
-desc: Utilities for controlling an element's whitespace.
+description: Utilities for controlling an element's whitespace.
 ---
 
 ## Normal

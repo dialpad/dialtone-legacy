@@ -1,6 +1,6 @@
 ---
 title: Coordinates
-desc: Utility classes to assign an element’s top, right, bottom, or left position.
+description: Utility classes to assign an element’s top, right, bottom, or left position.
 ---
 
 ## Positive coordinates

@@ -1,6 +1,6 @@
 ---
 title: Pointer events
-desc: Utilities for controlling how an element responds to mouse/touch events.
+description: Utilities for controlling how an element responds to mouse/touch events.
 ---
 
 ## Pointer event classes

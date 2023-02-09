@@ -1,6 +1,6 @@
 ---
 title: Emoji
-desc: "Renders an emoji from a shortcode such as :smile: or unicode character such as 😄."
+description: "Renders an emoji from a shortcode such as :smile: or unicode character such as 😄."
 status: ready
 thumb: true
 figma: planned

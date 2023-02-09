@@ -1,6 +1,6 @@
 ---
 title: Position
-desc: Utility classes to change an element’s position type.
+description: Utility classes to change an element’s position type.
 ---
 
 ## Examples

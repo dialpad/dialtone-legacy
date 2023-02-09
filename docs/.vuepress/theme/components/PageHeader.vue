@@ -14,9 +14,9 @@
         >New</span>
       </div>
       <p
-        v-if="$frontmatter.desc"
+        v-if="$frontmatter.description"
         class="dialtone-intro"
-        v-html="$frontmatter.desc"
+        v-html="$frontmatter.description"
       />
     </header>
     <slot name="content-bottom" />

@@ -1,6 +1,6 @@
 ---
 title: Button group
-desc: Button groups are used to group buttons that have a relationship or similar actions.
+description: Button groups are used to group buttons that have a relationship or similar actions.
 thumb: true
 storybook: https://vue.dialpad.design/?path=/story/components-button-group--default
 ---

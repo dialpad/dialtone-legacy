@@ -1,6 +1,6 @@
 ---
 title: Divide width
-desc: Utilities for controlling the divider width between an element's child items.
+description: Utilities for controlling the divider width between an element's child items.
 ---
 
 ## Default width

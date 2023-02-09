@@ -1,6 +1,6 @@
 ---
 title: Direction, Wrap, & Flow
-desc: Utilities for setting an object's flex direction, wrap, and flow directions.
+description: Utilities for setting an object's flex direction, wrap, and flow directions.
 ---
 
 ## Flex direction

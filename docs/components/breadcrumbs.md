@@ -1,6 +1,6 @@
 ---
 title: Breadcrumbs
-desc: Breadcrumbs are links used to provide context for the currently-viewed page and where it is located within the overall site structure.
+description: Breadcrumbs are links used to provide context for the currently-viewed page and where it is located within the overall site structure.
 status: ready
 thumb: true
 storybook: https://vue.dialpad.design/?path=/story/components-breadcrumbs--default

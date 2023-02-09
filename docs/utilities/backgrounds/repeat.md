@@ -1,6 +1,6 @@
 ---
 title: Background repeat
-desc: Utilities for controlling if or how an element's background image repeats.
+description: Utilities for controlling if or how an element's background image repeats.
 ---
 
 ## Usage

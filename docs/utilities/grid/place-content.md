@@ -1,6 +1,6 @@
 ---
 title: Place content
-desc: Utilities for controlling how grid items are aligned along both the block and inline axis directions.
+description: Utilities for controlling how grid items are aligned along both the block and inline axis directions.
 ---
 
 ## Stretch

@@ -1,6 +1,6 @@
 ---
 title: Resize
-desc: Utilities for controlling the resize of an element.
+description: Utilities for controlling the resize of an element.
 ---
 
 ## Usage

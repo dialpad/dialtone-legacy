@@ -1,6 +1,6 @@
 ---
 title: Gap
-desc: Utilities to control the spacing between columns, rows, or both in grids.
+description: Utilities to control the spacing between columns, rows, or both in grids.
 ---
 
 ## Adding universal row and column gaps

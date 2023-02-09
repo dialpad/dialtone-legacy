@@ -1,6 +1,6 @@
 ---
 title: Align items
-desc: Utilities for setting how an element's is aligned along an element's cross axis.
+description: Utilities for setting how an element's is aligned along an element's cross axis.
 ---
 
 ## Stretch

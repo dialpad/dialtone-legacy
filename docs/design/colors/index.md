@@ -1,6 +1,6 @@
 ---
 title: Colors
-desc: A functional, personal, and accessible color palette.
+description: A functional, personal, and accessible color palette.
 ---
 
 ## Text

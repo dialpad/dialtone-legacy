@@ -1,6 +1,6 @@
 ---
 title: Presence
-desc: A visual control element indicating the current status of a user.
+description: A visual control element indicating the current status of a user.
 status: new
 thumb: true
 storybook: https://vue.dialpad.design/?path=/docs/components-presence--default

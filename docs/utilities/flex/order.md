@@ -1,6 +1,6 @@
 ---
 title: Order
-desc: Utilities for controlling an element's order within a parent container.
+description: Utilities for controlling an element's order within a parent container.
 ---
 
 ## Example

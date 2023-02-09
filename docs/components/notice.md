@@ -1,6 +1,6 @@
 ---
 title: Notice
-desc: A notice is an informational and assistive message that appears inline with content.
+description: A notice is an informational and assistive message that appears inline with content.
 status: ready
 thumb: true
 storybook: https://vue.dialpad.design/?path=/story/components-notice--default

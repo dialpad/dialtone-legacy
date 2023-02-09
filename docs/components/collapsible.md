@@ -1,6 +1,6 @@
 ---
 title: Collapsible
-desc: A collapsible is a component consisting of an interactive anchor that toggled the expandable/collapsible element.
+description: A collapsible is a component consisting of an interactive anchor that toggled the expandable/collapsible element.
 status: ready
 thumb: true
 figma: planned

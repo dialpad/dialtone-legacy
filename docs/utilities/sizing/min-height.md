@@ -1,6 +1,6 @@
 ---
 title: Min-height
-desc: Utilities to control an element's minimum height.
+description: Utilities to control an element's minimum height.
 ---
 
 ## Percentages

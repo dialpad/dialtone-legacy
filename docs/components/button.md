@@ -1,6 +1,6 @@
 ---
 title: Button
-desc: A button is an UI element which signals key actions to take an action throughout an app. It is important a button is identifiable, consistent, communicates its actions clearly, and is appropriately sized to its action.
+description: A button is an UI element which signals key actions to take an action throughout an app. It is important a button is identifiable, consistent, communicates its actions clearly, and is appropriately sized to its action.
 status: ready
 thumb: true
 storybook: https://vue.dialpad.design/?path=/story/components-button--default

@@ -1,6 +1,6 @@
 ---
 title: Text align
-desc: Utilities for controlling an element's text alignment.
+description: Utilities for controlling an element's text alignment.
 ---
 
 ## Usage

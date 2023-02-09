@@ -1,5 +1,5 @@
 ---
 title: Design principles
-desc: The core values behind Dialpad's experiences.
+description: The core values behind Dialpad's experiences.
 status: planned
 ---

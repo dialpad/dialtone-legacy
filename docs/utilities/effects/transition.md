@@ -1,6 +1,6 @@
 ---
 title: Transition
-desc: Utilities for controlling how an element transitions in and out of states.
+description: Utilities for controlling how an element transitions in and out of states.
 ---
 
 ## Adding a transition

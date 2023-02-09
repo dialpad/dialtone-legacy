@@ -1,6 +1,6 @@
 ---
 title: Auto spacing
-desc: Utilities for controlling the space between child elements.
+description: Utilities for controlling the space between child elements.
 ---
 
 ## Adding space vertically
