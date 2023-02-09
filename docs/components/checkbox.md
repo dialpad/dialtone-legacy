@@ -3,6 +3,7 @@ title: Checkbox
 description: A checkbox is an input control that allows users to select zero, one, or more options from a number of choices.
 status: ready
 thumb: true
+image: assets/images/components/checkbox.png
 storybook: https://vue.dialpad.design/?path=/story/components-checkbox--default
 figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Components-7?node-id=8921%3A21160&viewport=-351%2C484%2C0.54&t=xHutRjwo1o5zMTgT-11
 ---

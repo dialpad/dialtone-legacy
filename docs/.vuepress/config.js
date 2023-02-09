@@ -7,6 +7,7 @@ import anchor from 'markdown-it-anchor';
 
 const sidebar = require('../_data/site-nav.json');
 const { dialtoneVuepressTheme } = require('./theme');
+const siteURL = 'https://dialpad.design/';
 const baseURL = (process.env.VUEPRESS_BASE_URL ?? '/');
 
 const themeConfig = {
@@ -109,7 +110,11 @@ export default defineUserConfig({
       id: 'G-0YV8QJ44LF',
     }),
     seoPlugin({
-      // your options
+      hostname: siteURL,
+      ogp: (ogp, page) => ({
+        ...ogp,
+        'og:image': siteURL + baseURL + page.frontmatter.image || ogp['og:image'],
+      }),
     }),
   ],
 });
