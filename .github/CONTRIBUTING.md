@@ -294,7 +294,7 @@ Here's an overview of important properties and the values they need/can have:
 
 - title `(required)`: Used as the page title, and also as the component name for [Components overview page].
 - shortTitle `(optional)`: This property is used to fix linking issues on [Components overview page] when the title is different from the component name.
-- desc `(optional)`: Used as the page subtitle.
+- description `(optional)`: Used as the page subtitle and in the page metadata.
 - status `(optional)`: CSS Component status, used to display a badge on [Components overview page] and
 also to define the component status on [Components status page], 
   - Status options available: `['wip', 'planned', 'new', 'ready', null]` 
