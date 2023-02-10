@@ -173,7 +173,7 @@ Although highly versatile, this doesn't mean modal dialogs are fit for all purpo
 
 ## Vue API
 
-<component-vue-table component-name="modal" />
+<component-vue-api component-name="modal" />
 
 ## Classes
 

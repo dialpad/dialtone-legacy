@@ -15,4 +15,4 @@ storybook: https://vue.dialpad.design/?path=/story/components-emoji-text-wrapper
 
 ## Vue API
 
-<component-vue-table component-name="emojitextwrapper" />
+<component-vue-api component-name="emojitextwrapper" />

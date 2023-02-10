@@ -361,4 +361,4 @@ The best accessibility is semantic HTML. Most screen readers understand how to p
 
 ## Vue API
 
-<component-vue-table component-name="radio" />
+<component-vue-api component-name="radio" />

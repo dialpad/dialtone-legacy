@@ -14,4 +14,4 @@ storybook: https://vue.dialpad.design/?path=/story/components-emoji--default
 
 ## Vue API
 
-<component-vue-table component-name="emoji" />
+<component-vue-api component-name="emoji" />

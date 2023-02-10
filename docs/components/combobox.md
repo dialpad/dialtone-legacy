@@ -14,4 +14,4 @@ storybook: https://vue.dialpad.design/?path=/story/components-combobox--default
 
 ## Vue API
 
-<component-vue-table component-name="combobox" />
+<component-vue-api component-name="combobox" />

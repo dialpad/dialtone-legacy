@@ -92,7 +92,7 @@ Used occasionally in scenarios when the message needs to dominate.
 
 ## Vue API
 
-<component-vue-table component-name="notice" />
+<component-vue-api component-name="notice" />
 
 ## Classes
 

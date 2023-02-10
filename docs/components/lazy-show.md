@@ -31,4 +31,4 @@ export default {
 
 ## Vue API
 
-<component-vue-table component-name="lazyshow" />
+<component-vue-api component-name="lazyshow" />

@@ -412,7 +412,7 @@ Positions the [Presence](/components/presence.html) component at each size.
 
 ## Vue API
 
-<component-vue-table component-name="avatar" />
+<component-vue-api component-name="avatar" />
 
 ## Classes
 

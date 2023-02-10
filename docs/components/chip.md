@@ -206,7 +206,7 @@ To truncate text, add `.d-truncate` to the content element, and set the width of
 
 ## Vue API
 
-<component-vue-table component-name="chip" />
+<component-vue-api component-name="chip" />
 
 ## Classes
 
