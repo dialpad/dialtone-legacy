@@ -12,11 +12,13 @@
         v-if="withAvatar"
         class="d-avatar"
       >
-        <img
-          class="d-avatar__image"
-          :src="$withBase('/assets/images/person.png')"
-          alt="Person avatar image"
-        >
+        <div class="d-avatar__canvas">
+          <img
+            class="d-avatar__image"
+            :src="$withBase('/assets/images/person.png')"
+            alt="Person avatar image"
+          >
+        </div>
       </span>
       <span
         v-if="withIcon"
