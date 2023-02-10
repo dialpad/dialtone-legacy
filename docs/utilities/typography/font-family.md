@@ -1,6 +1,6 @@
 ---
 title: Font family
-desc: Utilities to change an element's font-family.
+description: Utilities to change an element's font-family.
 ---
 
 ## Custom

@@ -1,6 +1,6 @@
 ---
 title: Border colors
-desc: Utilities for controlling an element's border color.
+description: Utilities for controlling an element's border color.
 ---
 
 <aside class="d-notice d-notice--warning d-mt24 d-wmx100p" role="status" aria-hidden="false">

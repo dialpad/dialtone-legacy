@@ -1,6 +1,6 @@
 ---
 title: Display
-desc: Utilities for controlling the display box type of an element.
+description: Utilities for controlling the display box type of an element.
 ---
 
 ## Examples

@@ -1,6 +1,6 @@
 ---
 title: Border radius
-desc: Utilities for controlling an element's border radius.
+description: Utilities for controlling an element's border radius.
 ---
 
 ## All corners

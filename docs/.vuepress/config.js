@@ -2,10 +2,12 @@ import { defineUserConfig } from 'vuepress';
 import { getDirname, path } from '@vuepress/utils';
 import { viteBundler } from '@vuepress/bundler-vite';
 import { googleAnalyticsPlugin } from '@vuepress/plugin-google-analytics';
+import { seoPlugin } from 'vuepress-plugin-seo2';
 import anchor from 'markdown-it-anchor';
 
 const sidebar = require('../_data/site-nav.json');
 const { dialtoneVuepressTheme } = require('./theme');
+const siteURL = 'https://dialpad.design/';
 const baseURL = (process.env.VUEPRESS_BASE_URL ?? '/');
 
 const themeConfig = {
@@ -73,24 +75,6 @@ export default defineUserConfig({
     ['link', { rel: 'mask-icon', href: baseURL + 'assets/images/favicons/safari-pinned-tab.svg', color: '#7C52FF' }],
     ['meta', { name: 'msapplication-TileColor', content: '#7C52FF' }],
     ['meta', { name: 'theme-color', content: '#ffffff' }],
-
-    // Social
-    ['meta', { property: 'og:type', content: 'website' }],
-    ['meta', { property: 'og:url', content: 'https://dialpad.design/' }],
-    ['meta', {
-      property: 'og:image',
-      itemprop: 'image primaryImageOfPage',
-      content: baseURL + 'assets/images/favicons/apple-touch-icon-180x180.png',
-    }],
-    ['meta', { name: 'twitter:card', content: 'summary' }],
-    ['meta', { name: 'twitter:domain', content: 'dialpad.design' }],
-    ['meta', { name: 'twitter:title', property: 'og:title', itemprop: 'title name', content: 'Dialtone' }],
-    ['meta', {
-      name: 'twitter:description',
-      property: 'og:description',
-      itemprop: 'description',
-      content: 'Dialtone is the design system and resources for the Dialpad team.',
-    }],
   ],
 
   // markdown config
@@ -124,6 +108,13 @@ export default defineUserConfig({
   plugins: [
     googleAnalyticsPlugin({
       id: 'G-0YV8QJ44LF',
+    }),
+    seoPlugin({
+      hostname: siteURL,
+      ogp: (ogp, page) => ({
+        ...ogp,
+        'og:image': siteURL + baseURL + page.frontmatter.image || ogp['og:image'],
+      }),
     }),
   ],
 });

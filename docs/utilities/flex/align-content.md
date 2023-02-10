@@ -1,6 +1,6 @@
 ---
 title: Align content
-desc: Utilities for setting how rows are distributed along it's cross axis. This property only works when a parent container has more than one line.
+description: Utilities for setting how rows are distributed along it's cross axis. This property only works when a parent container has more than one line.
 ---
 
 ## Flex start

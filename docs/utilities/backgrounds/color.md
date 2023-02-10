@@ -1,6 +1,6 @@
 ---
 title: Background colors
-desc: Utilities for setting background colors.
+description: Utilities for setting background colors.
 ---
 
 <aside class="d-notice d-notice--warning d-mt24 d-wmx100p" role="status" aria-hidden="false">

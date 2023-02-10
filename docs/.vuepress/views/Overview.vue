@@ -4,36 +4,15 @@
       v-for="page in pages"
       :key="page.title"
     >
-      <div
-        v-if="isPlanned(page.status)"
-        class="dialtone-wall__item dialtone-wall__item--disabled"
-      >
-        <div class="dialtone-wall__image">
-          <img
-            v-if="page.thumb"
-            class="dialtone-wall__thumb"
-            :alt="`${page.fileName}-thumbnail`"
-            :src="$withBase(`/assets/images/${basePath}/${page.fileName}.png`)"
-          >
-        </div>
-        <div class="dialtone-wall__details">
-          <div class="dialtone-wall__title">
-            <span class="dialtone-wall__title-text">{{ pageTitle(page) }}</span>
-            <span class="d-badge">Planned</span>
-          </div>
-          <div class="dialtone-wall__description">
-            {{ page.desc }}
-          </div>
-        </div>
-      </div>
       <router-link
-        v-else
         :to="`/${basePath}/${page.link}/`"
         class="dialtone-wall__item"
       >
-        <div class="dialtone-wall__image">
+        <div
+          v-if="page.thumb"
+          class="dialtone-wall__image"
+        >
           <img
-            v-if="page.thumb"
             class="dialtone-wall__thumb"
             :alt="`${page.fileName}-thumbnail`"
             :src="$withBase(`/assets/images/${basePath}/${page.fileName}.png`)"
@@ -43,7 +22,7 @@
           <div class="dialtone-wall__title">
             <span class="dialtone-wall__title-text">{{ pageTitle(page) }}</span>
             <span
-              v-if="isNew(page.status) || isReady(page.status)"
+              v-if="page.status"
               class="d-badge d-tt-capitalize"
               :class="badgeKindClass(page.status)"
             >
@@ -51,7 +30,7 @@
             </span>
           </div>
           <div class="dialtone-wall__description">
-            {{ page.desc }}
+            {{ page.description }}
           </div>
         </div>
       </router-link>
@@ -70,10 +49,6 @@ defineProps({
     default: '/',
   },
 });
-
-const isPlanned = (status) => status === 'planned';
-const isNew = (status) => status === 'new';
-const isReady = (status) => status === 'ready';
 
 const badgeKindClass = (status) => {
   switch (status) {

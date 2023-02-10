@@ -1,6 +1,6 @@
 ---
 title: Gradients
-desc: Utilities for creating an background gradient and controlling its stops.
+description: Utilities for creating an background gradient and controlling its stops.
 ---
 
 ## Starting color

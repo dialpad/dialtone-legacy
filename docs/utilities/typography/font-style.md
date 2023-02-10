@@ -1,6 +1,6 @@
 ---
 title: Font style
-desc: Utilities to change an element's font styles.
+description: Utilities to change an element's font styles.
 ---
 
 ## Italics

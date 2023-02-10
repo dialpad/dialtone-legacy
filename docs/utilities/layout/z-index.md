@@ -1,9 +1,6 @@
 ---
 title: Z-Index
-desc: Utility classes for setting an element's z-index level.
-next:
-  text: Breakpoints
-  link: /utilities/responsive/breakpoints
+description: Utility classes for setting an element's z-index level.
 ---
 
 ## Classes

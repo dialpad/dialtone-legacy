@@ -1,6 +1,6 @@
 ---
 title: Size and spacing
-desc: A system to maintain consistent size, space, and scale.
+description: A system to maintain consistent size, space, and scale.
 ---
 
 Consistently using this system makes it easier for customers to scan, browse, and use Dialpad product interfaces with a predictable visual rhythm.

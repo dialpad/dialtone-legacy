@@ -1,6 +1,6 @@
 ---
 title: Cursor
-desc: Utilities for setting the type of mouse cursor, if any, to show when the mouse pointer is over an element.
+description: Utilities for setting the type of mouse cursor, if any, to show when the mouse pointer is over an element.
 ---
 ## Usage
 

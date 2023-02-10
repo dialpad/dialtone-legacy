@@ -1,6 +1,6 @@
 ---
 title: Flex, Grow, & Shrink
-desc: Utilities for setting an object's flex, grow, and shrink flex properties.
+description: Utilities for setting an object's flex, grow, and shrink flex properties.
 ---
 
 ## Flex
