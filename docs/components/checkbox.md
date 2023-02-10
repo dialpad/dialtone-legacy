@@ -417,7 +417,7 @@ Checkboxes are an easily understandable way to indicate that users can select on
 
 ## Vue API
 
-<component-vue-table component-name="checkbox" />
+<component-vue-api component-name="checkbox" />
 
 ## Classes
 

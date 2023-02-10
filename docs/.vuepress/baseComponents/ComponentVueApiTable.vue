@@ -1,12 +1,9 @@
 <template>
   <h3
-    v-if="docProps"
     class="d-docsite--header-3"
-  >
-    Props
-  </h3>
+    v-text="categoryName"
+  />
   <table
-    v-if="docProps"
     class="d-table dialtone-doc-table d-wmn512"
   >
     <thead>
@@ -23,6 +20,7 @@
           Description
         </th>
         <th
+          v-if="withDefault"
           scope="col"
         >
           Default
@@ -31,7 +29,7 @@
     </thead>
     <tbody>
       <tr
-        v-for="({ name, description, type, defaultValue }) in docProps"
+        v-for="({ name, description, type, defaultValue }) in tableData"
         :key="name"
       >
         <th
@@ -39,15 +37,19 @@
           class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100"
           v-text="name"
         />
-        <td class="d-ff-mono d-fs-100 vue-api-table">
+        <td
+          v-if="description"
+          class="d-ff-mono d-fs-100 vue-api-table"
+        >
           <div class="d-d-grid d-gg16 d-g-cols1">
             <markdown-render :markdown="description" />
-            <span>
+            <span v-if="type">
               <dt-badge>{{ type }}</dt-badge>
             </span>
           </div>
         </td>
         <td
+          v-if="defaultValue"
           class="d-fs-100"
         >
           <dt-badge>{{ defaultValue }}</dt-badge>
@@ -58,23 +60,22 @@
 </template>
 
 <script setup>
-import ComponentDocs from '../../../node_modules/@dialpad/dialtone-vue/dist/component-documentation.json';
 import MarkdownRender from '@baseComponents/MarkdownRender.vue';
+import { computed } from 'vue';
 
 const props = defineProps({
-  componentName: {
+  categoryName: {
     type: String,
+    required: true,
+  },
+  tableData: {
+    type: Object,
     required: true,
   },
 });
 
-const docProps = ComponentDocs.find(f => f.displayName.toLowerCase() === props.componentName.toLowerCase())
-  ?.props?.map((item) => {
-    return {
-      name: item?.name,
-      description: item?.description,
-      type: item?.type?.name,
-      defaultValue: item?.defaultValue?.value,
-    };
-  });
+// boolean that determines if the tableData object has a default slot value to add that column in the table
+const withDefault = computed(() => {
+  return props.tableData.some((item) => item.defaultValue);
+});
 </script>

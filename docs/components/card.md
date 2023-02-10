@@ -210,7 +210,7 @@ They should be easy to scan for relevant and actionable information. Elements, l
 
 ## Vue API
 
-<component-vue-table component-name="card" />
+<component-vue-api component-name="card" />
 
 ## Classes
 

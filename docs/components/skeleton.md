@@ -162,4 +162,4 @@ Customize an animating Skeleton by modifying the `--placeholder-from-color` and 
 
 ## Vue API
 
-<component-vue-table component-name="skeleton" />
+<component-vue-api component-name="skeleton" />

@@ -344,7 +344,7 @@ We offer different sizes for instances in which the interface requires a smaller
 
 ## Vue API
 
-<component-vue-table component-name="selectmenu" />
+<component-vue-api component-name="selectmenu" />
 
 ## Classes
 

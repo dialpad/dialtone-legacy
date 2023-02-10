@@ -72,4 +72,4 @@ storybook: https://vue.dialpad.design/?path=/story/components-button-group--defa
 
 ## Vue API
 
-<component-vue-table component-name="buttongroup" />
+<component-vue-api component-name="buttongroup" />

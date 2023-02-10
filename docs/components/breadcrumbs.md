@@ -120,7 +120,7 @@ Breadcrumbs are always treated as secondary and should not entirely replace the 
 
 ## Vue API
 
-<component-vue-table component-name="breadcrumbs" />
+<component-vue-api component-name="breadcrumbs" />
 
 ## Classes
 

@@ -151,7 +151,7 @@ Your popover should be non-modal when:
 
 ## Vue API
 
-<component-vue-table component-name="popover" />
+<component-vue-api component-name="popover" />
 
 ## Classes
 

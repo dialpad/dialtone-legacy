@@ -16,4 +16,4 @@ storybook: https://vue.dialpad.design/?path=/story/components-keyboard-shortcut-
 
 ## Vue API
 
-<component-vue-table component-name="keyboardshortcut" />
+<component-vue-api component-name="keyboardshortcut" />

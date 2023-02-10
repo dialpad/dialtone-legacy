@@ -213,7 +213,7 @@ The Toggle component acts as a way to allow the User to switch between two mutua
 
 ## Vue API
 
-<component-vue-table component-name="toggle" />
+<component-vue-api component-name="toggle" />
 
 ## Classes
 
