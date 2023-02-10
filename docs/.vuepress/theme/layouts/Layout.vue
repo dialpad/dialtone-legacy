@@ -3,6 +3,7 @@
     class="d-h-auto"
     header-class="dialtone-header d-d-flex d-ai-center d-p16 d-pl8 d-h64 d-jc-space-between d-zi-navigation"
     :header-sticky="true"
+    :fixed="false"
     footer-class="d-text-right"
     sidebar-class="dialtone-sidebar lg:d-d-none"
   >
