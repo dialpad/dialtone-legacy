@@ -10,6 +10,7 @@ import CodeWellHeader from './baseComponents/CodeWellHeader.vue';
 import UtilityClassTable from './baseComponents/UtilityClassTable.vue';
 import ComponentClassTable from './baseComponents/ComponentClassTable.vue';
 import ComponentVueTable from './baseComponents/ComponentVueTable.vue';
+import ComponentVueApi from './baseComponents/ComponentVueApi.vue';
 import WeatherCodesTable from './baseComponents/WeatherCodesTable.vue';
 import SpacingSystemTable from './baseComponents/SpacingSystemTable.vue';
 import IconSizesTable from './baseComponents/IconSizesTable.vue';
@@ -38,6 +39,7 @@ export default defineClientConfig({
     app.component('UtilityClassTable', UtilityClassTable);
     app.component('ComponentClassTable', ComponentClassTable);
     app.component('ComponentVueTable', ComponentVueTable);
+    app.component('ComponentVueApi', ComponentVueApi);
     app.component('WeatherCodesTable', WeatherCodesTable);
     app.component('SpacingSystemTable', SpacingSystemTable);
     app.component('IconSizesTable', IconSizesTable);
