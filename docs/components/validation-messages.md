@@ -2,11 +2,10 @@
 title: Validation messages
 status: ready
 thumb: true
-desc: Validation messages are used to convey information to the user about the current state of the input element. These messages can have an error, warning or success type.
-storybook_url: https://vue.dialpad.design/?path=/story/components-validation-messages--default
-next:
-  text: Utilities - Background attachment
-  link: /utilities/backgrounds/attachment.html
+image: assets/images/components/validation-messages.png
+description: Validation messages are used to convey information to the user about the current state of the input element. These messages can have an error, warning or success type.
+storybook: https://vue.dialpad.design/?path=/story/components-validation-messages--default
+figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Components-7?node-id=11399%3A76354&t=LqzEvQfr3DMHh7Og-11
 ---
 
 <code-well-header>

@@ -1,6 +1,6 @@
 ---
 title: Align self
-desc: Utilities for setting how an element's is aligned along a parent's cross axis.
+description: Utilities for setting how an element's is aligned along a parent's cross axis.
 ---
 
 ## Stretch

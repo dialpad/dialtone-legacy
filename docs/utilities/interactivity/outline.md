@@ -1,6 +1,6 @@
 ---
 title: Outline
-desc: Utilities for controlling an element's outline.
+description: Utilities for controlling an element's outline.
 ---
 
 ## Usage

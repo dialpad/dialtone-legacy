@@ -1,6 +1,6 @@
 ---
 title: Columns & layouts
-desc: Utilities for flex columns and common flex layouts.
+description: Utilities for flex columns and common flex layouts.
 ---
 
 ## Creating flex columns

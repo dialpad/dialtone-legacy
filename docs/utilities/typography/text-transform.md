@@ -1,6 +1,6 @@
 ---
 title: Text transform
-desc: Utilities for controlling an element's text transform.
+description: Utilities for controlling an element's text transform.
 ---
 
 ## Uppercase

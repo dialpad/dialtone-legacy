@@ -1,9 +1,6 @@
 ---
 title: Resize
-desc: Utilities for controlling the resize of an element.
-next:
-  text: Box sizing
-  link: /utilities/layout/box-sizing
+description: Utilities for controlling the resize of an element.
 ---
 
 ## Usage

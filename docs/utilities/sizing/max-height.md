@@ -1,6 +1,6 @@
 ---
 title: Max-height
-desc: Utilities to control an element's maximum height.
+description: Utilities to control an element's maximum height.
 ---
 
 ## Example

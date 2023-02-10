@@ -1,6 +1,6 @@
 ---
 title: Layouts
-desc: Common grid layout patterns used throughout Dialpad and UberConference.
+description: Common grid layout patterns used throughout Dialpad and UberConference.
 ---
 
 ## Sidebar

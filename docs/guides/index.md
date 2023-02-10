@@ -1,6 +1,6 @@
 ---
 title: Guides
-desc: In-depth guidance to support consistent, high-quality product design.
+description: In-depth guidance to support consistent, high-quality product design.
 no_preview: true
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Width
-desc: Utilities to control an element's width.
+description: Utilities to control an element's width.
 ---
 
 ## Percentages

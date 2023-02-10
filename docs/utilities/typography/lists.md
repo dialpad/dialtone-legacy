@@ -1,6 +1,6 @@
 ---
 title: Lists
-desc: Utilities for controlling list styling.
+description: Utilities for controlling list styling.
 ---
 
 ## Resetting a list

@@ -14,9 +14,9 @@
         >New</span>
       </div>
       <p
-        v-if="$frontmatter.desc"
+        v-if="$frontmatter.description"
         class="dialtone-intro"
-        v-html="$frontmatter.desc"
+        v-html="$frontmatter.description"
       />
     </header>
     <slot name="content-bottom" />
@@ -30,9 +30,9 @@
       </h2>
       <span>
         <a
-          v-if="$frontmatter.storybook_url"
+          v-if="$frontmatter.storybook"
           class="d-btn d-btn--muted d-btn--muted"
-          :href="$frontmatter.storybook_url"
+          :href="$frontmatter.storybook"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -124,3 +124,5 @@
     </div>
   </section>
 </template>
+
+<!-- TODO: validate that `storybook` and `figma` are URLS -->

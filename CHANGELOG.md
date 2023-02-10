@@ -1,3 +1,31 @@
+## [7.16.1](https://github.com/dialpad/dialtone/compare/v7.16.0...v7.16.1) (2023-02-08)
+
+
+### Bug Fixes
+
+* **Toggle:** fix toggle shrinking with large text ([#817](https://github.com/dialpad/dialtone/issues/817)) ([06f0e28](https://github.com/dialpad/dialtone/commit/06f0e288e4be1872b58336e60c77c715a57ab6c8))
+
+# [7.16.0](https://github.com/dialpad/dialtone/compare/v7.15.2...v7.16.0) (2023-02-08)
+
+
+### Features
+
+* **Avatar:** group variant ([#813](https://github.com/dialpad/dialtone/issues/813)) ([9693756](https://github.com/dialpad/dialtone/commit/9693756efae09d17576d0fe400462e20f8e1a3a6))
+
+## [7.15.2](https://github.com/dialpad/dialtone/compare/v7.15.1...v7.15.2) (2023-02-05)
+
+
+### Bug Fixes
+
+* **Radio:** correct broken radio style ([#814](https://github.com/dialpad/dialtone/issues/814)) ([a09d9a6](https://github.com/dialpad/dialtone/commit/a09d9a62705aa56f59d450069633696e6e7e9306))
+
+## [7.15.1](https://github.com/dialpad/dialtone/compare/v7.15.0...v7.15.1) (2023-02-03)
+
+
+### Bug Fixes
+
+* **Chip:** hover/active background styling ([#810](https://github.com/dialpad/dialtone/issues/810)) ([ec86898](https://github.com/dialpad/dialtone/commit/ec86898f79de449621f2fd59e5b0c52d8f3ca0f8))
+
 # [7.15.0](https://github.com/dialpad/dialtone/compare/v7.14.0...v7.15.0) (2023-02-01)
 
 

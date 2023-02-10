@@ -1,6 +1,6 @@
 ---
 title: Opacity
-desc: Utility classes for changing an element's opacity.
+description: Utility classes for changing an element's opacity.
 ---
 
 ## Usage

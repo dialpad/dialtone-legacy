@@ -1,6 +1,6 @@
 ---
 title: Border widths
-desc: Utilities for controlling an element's border width.
+description: Utilities for controlling an element's border width.
 ---
 
 ## All sides

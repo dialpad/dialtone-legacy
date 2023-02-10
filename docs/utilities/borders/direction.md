@@ -1,6 +1,6 @@
 ---
 title: Border directions
-desc: Utilities for controlling an element's border.
+description: Utilities for controlling an element's border.
 ---
 
 ## All sides

@@ -1,6 +1,6 @@
 ---
 title: Justify content
-desc: Utilities for setting how an element's space around and between content is distributed along it's main axis.
+description: Utilities for setting how an element's space around and between content is distributed along it's main axis.
 ---
 
 ## Classes

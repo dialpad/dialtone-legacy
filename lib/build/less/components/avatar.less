@@ -8,8 +8,9 @@
 //
 //  TABLE OF CONTENTS
 //  • BASE STYLE
+//    • CHILDREN
 //    • SIZES
-//    • COLORS
+//    • VARIANTS
 //
 //  ============================================================================
 //  $   BASE STYLE
@@ -17,12 +18,12 @@
 .d-avatar {
   //  Component CSS Vars
   //  ------------------------------------------------------------------------
-  --avatar-color-background: var(--gold-100);
+  --avatar-color-background: var(--bgc-moderate);
   --avatar-color-text: var(--fc-secondary);
-  --avatar-gradient-angle: 180deg;
-  --avatar-gradient-stop-1: var(--gold-100);
-  --avatar-gradient-stop-2: var(--magenta-100);
-  --avatar-gradient-stop-3: var(--blue-200);
+  --avatar-gradient-angle: -180deg;
+  --avatar-gradient-stop-1: var(--blue-200);
+  --avatar-gradient-stop-2: var(--purple-100);
+  --avatar-gradient-stop-3: var(--gold-100);
   --avatar-gradient:
     conic-gradient(
       from var(--avatar-gradient-angle) at 50% 50%,
@@ -31,30 +32,50 @@
       var(--avatar-gradient-stop-3) 360deg
     );
   --avatar-size-shape: var(--size-600);
+  --avatar-size-image: 100%;
   --avatar-size-text: var(--fs-200);
   --avatar-presence-position-right: calc(var(--space-200) * -1); // -2
   --avatar-presence-position-bottom: calc(var(--space-200) * -1); // -2
 
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: var(--avatar-size-shape);
-  height: var(--avatar-size-shape);
+  display: inline-flex;
   color: var(--avatar-color-text);
-  font-weight: var(--fw-bold);
-  font-size: var(--avatar-size-text);
-  line-height: var(--lh-100);
-  text-transform: uppercase;
-  background-color: var(--avatar-color-background);
-  background-image: var(--avatar-gradient);
-  border-radius: var(--br-pill);
+
+  //  --  CHILDREN
+  //  ------------------------------------------------------------------------
+
+  &__canvas {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--avatar-size-shape);
+    height: var(--avatar-size-shape);
+    overflow: hidden;
+    background-color: var(--avatar-color-background);
+    background-image: var(--avatar-gradient);
+    border-radius: var(--br-pill);
+
+    .d-avatar--no-gradient & {
+      background-image: none;
+    }
+  }
 
   &__image {
-    width: 100%;
-    height: 100%;
+    width: var(--avatar-size-image);
+    height: var(--avatar-size-image);
     object-fit: cover;
-    border-radius: inherit;
+    border-radius: var(--br-pill);
+  }
+
+  &__initials {
+    font-weight: var(--fw-bold);
+    font-size: var(--avatar-size-text);
+    line-height: var(--lh-100);
+    text-transform: uppercase;
+  }
+
+  &__icon {
+    display: flex;
   }
 
   &__presence {
@@ -62,6 +83,26 @@
     right: var(--avatar-presence-position-right);
     bottom: var(--avatar-presence-position-bottom);
     display: flex;
+  }
+
+  &__count {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    min-width: calc(var(--size-300) * 3.5);
+    padding: var(--space-200) calc(var(--space-200) + var(--space-100));
+    color: var(--fc-primary-inverted);
+    font-weight: var(--fw-bold);
+    font-size: calc(var(--fs-100) - var(--size-200));
+    line-height: var(--lh-100);
+    text-align: center;
+    background-color: var(--black-600);
+    border-radius: var(--br-pill);
+    box-shadow: 0 0 0 var(--size-200) var(--black-100);
   }
 
   //  --  SIZES
@@ -99,5 +140,15 @@
     --avatar-size-text: var(--fs-400);
     --avatar-presence-position-right: var(--space-300); // 4
     --avatar-presence-position-bottom: var(--space-300); // 4
+  }
+
+  //  --  GROUP
+  //  ------------------------------------------------------------------------
+
+  &--group {
+    --avatar-size-shape: calc(var(--size-300) * 4.5);
+
+    width: calc(var(--size-300) * 6);
+    height: calc(var(--size-300) * 6);
   }
 }

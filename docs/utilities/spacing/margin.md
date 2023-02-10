@@ -1,6 +1,6 @@
 ---
 title: Margins
-desc: Utilities to adjust an element's exterior spacing between other objects.
+description: Utilities to adjust an element's exterior spacing between other objects.
 ---
 
 ## Add margin to all sides

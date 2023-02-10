@@ -1,6 +1,6 @@
 ---
 title: Line height
-desc: Utilities to change an element's line-height.
+description: Utilities to change an element's line-height.
 ---
 
 ## Relative line-heights

@@ -2,8 +2,9 @@
 title: Tooltip
 status: ready
 thumb: true
-desc: A tooltip is a floating label that briefly explains an action, function, or an element. Its content is exclusively text and shouldn't be vital information for users. If richer media is desired, consider using a popover instead.
-storybook_url: https://vue.dialpad.design/?path=/story/components-tooltip--default
+image: assets/images/components/tooltip.png
+description: A tooltip is a floating label that briefly explains an action, function, or an element. Its content is exclusively text and shouldn't be vital information for users. If richer media is desired, consider using a popover instead.
+storybook: https://vue.dialpad.design/?path=/story/components-tooltip--default
 figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Components-7?node-id=8919%3A21626&viewport=-614%2C359%2C0.86&t=xHutRjwo1o5zMTgT-11
 ---
 <code-well-header class='d-hmn164'>

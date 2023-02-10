@@ -1,6 +1,6 @@
 ---
 title: Background size
-desc: Utilities for controlling an element's background size.
+description: Utilities for controlling an element's background size.
 ---
 
 ## Usage

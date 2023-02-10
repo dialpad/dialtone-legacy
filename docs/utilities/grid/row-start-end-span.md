@@ -1,9 +1,6 @@
 ---
 title: Row Start / End / Span
-desc: Utilities for controlling how elements are placed across grid rows.
-next:
-  text: Cursor
-  link: /utilities/interactivity/cursor
+description: Utilities for controlling how elements are placed across grid rows.
 ---
 
 ## Spanning rows

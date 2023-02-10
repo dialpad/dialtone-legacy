@@ -1,6 +1,6 @@
 ---
 title: Background position
-desc: Utilities for controlling the position of an element's background image.
+description: Utilities for controlling the position of an element's background image.
 ---
 
 ## Usage

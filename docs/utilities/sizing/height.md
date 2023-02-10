@@ -1,6 +1,6 @@
 ---
 title: Height
-desc: Utilities to control an element's height.
+description: Utilities to control an element's height.
 ---
 
 ## Percentages

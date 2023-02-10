@@ -1,7 +1,7 @@
 ---
 title: Accessibility and inclusive design
 shortTitle: accessibility
-desc: Guidance on building products for everyone.
+description: Guidance on building products for everyone.
 ---
 
 We are committed to usable experiences and products for everyone. Because “everyone” is a lot of people reflecting a variety of backgrounds, abilities, and circumstances, we believe in applying thoughtful and inclusive design and development practices.

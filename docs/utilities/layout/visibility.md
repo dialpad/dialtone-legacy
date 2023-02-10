@@ -1,6 +1,6 @@
 ---
 title: Visibility
-desc: Utilities for showing or hiding an element without changing the layout of a document.
+description: Utilities for showing or hiding an element without changing the layout of a document.
 ---
 
 ## Usage

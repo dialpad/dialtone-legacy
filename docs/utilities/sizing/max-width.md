@@ -1,6 +1,6 @@
 ---
 title: Max-width
-desc: Utilities to control an element's maximum width.
+description: Utilities to control an element's maximum width.
 ---
 
 ## Percentages
