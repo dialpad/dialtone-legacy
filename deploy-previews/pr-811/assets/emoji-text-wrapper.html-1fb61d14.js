@@ -1,3 +1,0 @@
-import{_ as d,s as t,v as i,x as l,G as o,B as a,C as e,y as n}from"./framework-2b52b09a.js";const _={},m=n("h2",{id:"vue-api",tabindex:"-1",class:"d-docsite--header-2"},[e("Vue API "),n("a",{class:"header-anchor d-link d-docsite--link d-link",href:"#vue-api","aria-hidden":"true"},"#")],-1);function p(u,h){const c=t("dt-emoji-text-wrapper"),r=t("code-well-header"),s=t("component-vue-table");return i(),l("div",null,[o(r,null,{default:a(()=>[o(c,null,{default:a(()=>[e(`
-    Some text with :invalid-emoji: :smile: :cry: and 😄, and custom emojis :octocat: :shipit:
-  `)]),_:1})]),_:1}),e(),m,e(),o(s,{"component-name":"emojitextwrapper"})])}const f=d(_,[["render",p],["__file","emoji-text-wrapper.html.vue"]]);export{f as default};
