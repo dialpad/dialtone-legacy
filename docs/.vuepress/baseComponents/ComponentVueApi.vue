@@ -1,13 +1,16 @@
 <template>
   <component-vue-api-table
+    v-if="docSlots"
     category-name="Slots"
     :table-data="docSlots"
   />
   <component-vue-api-table
+    v-if="docProps"
     category-name="Props"
     :table-data="docProps"
   />
   <component-vue-api-table
+    v-if="docEvents"
     category-name="Events"
     :table-data="docEvents"
   />
