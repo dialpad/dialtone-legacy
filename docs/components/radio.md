@@ -358,3 +358,7 @@ The best accessibility is semantic HTML. Most screen readers understand how to p
 <script setup>
   import DialtoneUsage from '@baseComponents/DialtoneUsage.vue';
 </script>
+
+## Vue API
+
+<component-vue-api component-name="radio" />

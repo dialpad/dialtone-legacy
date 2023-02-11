@@ -86,3 +86,7 @@ storybook: https://vue.dialpad.design/?path=/story/components-radio-group--defau
     </div>
   </div>
 </code-well-header>
+
+## Vue API
+
+<component-vue-api component-name="radiogroup" />

@@ -469,6 +469,10 @@ You may use different icon sizes in different sized inputs
 </div>
 ```
 
+## Vue API
+
+<component-vue-api component-name="input" />
+
 ## Classes
 
 <component-class-table component-name="input"></component-class-table>

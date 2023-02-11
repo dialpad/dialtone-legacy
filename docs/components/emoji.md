@@ -11,3 +11,7 @@ storybook: https://vue.dialpad.design/?path=/story/components-emoji--default
 <code-well-header>
   <dt-emoji code=":smile:" />
 </code-well-header>
+
+## Vue API
+
+<component-vue-api component-name="emoji" />

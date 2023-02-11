@@ -11,3 +11,7 @@ storybook: https://vue.dialpad.design/?path=/story/components-combobox--default
 <code-well-header bgclass="d-bgc-white">
   <video class="d-w60p" src="/assets/images/components/preview--combobox.mp4" autoplay loop></video>
 </code-well-header>
+
+## Vue API
+
+<component-vue-api component-name="combobox" />

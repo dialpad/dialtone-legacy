@@ -69,3 +69,7 @@ storybook: https://vue.dialpad.design/?path=/story/components-button-group--defa
   <dt-button importance="outlined">Cancel</dt-button>
 </dt-button-group>
 ```
+
+## Vue API
+
+<component-vue-api component-name="buttongroup" />

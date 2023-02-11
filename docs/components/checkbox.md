@@ -415,6 +415,10 @@ Checkboxes are an easily understandable way to indicate that users can select on
 </fieldset>
 ```
 
+## Vue API
+
+<component-vue-api component-name="checkbox" />
+
 ## Classes
 
 <component-class-table component-name="checkbox"></component-class-table>

@@ -118,6 +118,10 @@ Breadcrumbs are always treated as secondary and should not entirely replace the 
 </nav>
 ```
 
+## Vue API
+
+<component-vue-api component-name="breadcrumbs" />
+
 ## Classes
 
 <component-class-table component-name="breadcrumbs"></component-class-table>

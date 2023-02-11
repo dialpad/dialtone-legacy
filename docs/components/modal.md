@@ -171,6 +171,10 @@ Although highly versatile, this doesn't mean modal dialogs are fit for all purpo
 </aside>
 ```
 
+## Vue API
+
+<component-vue-api component-name="modal" />
+
 ## Classes
 
 At minimum, modals contain a title and one button. They could also contain body text, brand illustrations, product wireframes, or multiple buttons.

@@ -28,3 +28,7 @@ export default {
   },
 }
 </script>
+
+## Vue API
+
+<component-vue-api component-name="lazyshow" />

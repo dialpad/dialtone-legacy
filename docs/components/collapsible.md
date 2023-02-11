@@ -30,3 +30,7 @@ storybook: https://vue.dialpad.design/?path=/story/components-collapsible--defau
     </dt-collapsible>
   </div>
 </code-well-header>
+
+## Vue API
+
+<component-vue-api component-name="collapsible" />

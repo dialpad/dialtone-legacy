@@ -98,3 +98,7 @@ storybook: https://vue.dialpad.design/?path=/story/components-checkbox-group--de
     </div>
   </div>
 </code-well-header>
+
+## Vue API
+
+<component-vue-api component-name="checkboxgroup" />

@@ -11,3 +11,7 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 <code-well-header bgclass="d-bgc-white">
   <video class="d-w60p" src="/assets/images/components/preview--dropdown.mp4" autoplay loop></video>
 </code-well-header>
+
+## Vue API
+
+<component-vue-api component-name="dropdown" />

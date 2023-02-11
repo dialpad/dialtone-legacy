@@ -204,6 +204,10 @@ To truncate text, add `.d-truncate` to the content element, and set the width of
   import ExampleChip from '@exampleComponents/ExampleChip.vue';
 </script>
 
+## Vue API
+
+<component-vue-api component-name="chip" />
+
 ## Classes
 
 <component-class-table component-name="chip" />

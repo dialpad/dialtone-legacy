@@ -63,3 +63,7 @@ storybook: https://vue.dialpad.design/?path=/story/components-root-layout--defau
     </template>
   </dt-root-layout>
 </div>
+
+## Vue API
+
+<component-vue-api component-name="rootlayout" />

@@ -17,3 +17,7 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
     :page-number-aria-label="() => {}"
   />
 </code-well-header>
+
+## Vue API
+
+<component-vue-api component-name="pagination" />

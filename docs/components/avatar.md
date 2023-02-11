@@ -410,6 +410,10 @@ Positions the [Presence](/components/presence.html) component at each size.
 </div>
 ```
 
+## Vue API
+
+<component-vue-table component-name="avatar" />
+
 ## Classes
 
 <component-class-table component-name="avatar"></component-class-table>
