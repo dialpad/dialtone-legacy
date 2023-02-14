@@ -32,7 +32,7 @@ const __dirname = getDirname(import.meta.url);
 export default defineUserConfig({
   // site config
   lang: 'en-US',
-  title: 'Dialtone',
+  title: 'Dialtone Design System',
 
   base: baseURL,
 
