@@ -1,5 +1,5 @@
 ---
-title: List Item
+title: List item
 description: A list item is an element that can be used to represent individual items in a list.
 status: planned
 thumb: true

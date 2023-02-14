@@ -37,13 +37,15 @@ function _blogPostsFrontmatter (app) {
     }));
 }
 
-function _extractFrontmatter (app, path, options) {
+function _extractFrontmatter (app, path, options, exceptions = []) {
   const sortingArr = options?.sidebar[path][0].children.map(child => child.text.toLowerCase().replaceAll(' ', '-'));
   const indexPage = app.pages.find(page => page.path === path);
+  const regExpPath = new RegExp(`${path}.+`);
 
   indexPage.data.enhancedFrontmatter = app.pages
-    .filter(page => page.path.startsWith(path) && page.path.endsWith('.html'))
-    .filter(page => page.frontmatter && (page.frontmatter.title || page.frontmatter.shortTitle))
+    .filter(page => regExpPath.test(page.path))
+    .filter(page => page.frontmatter?.title || page.frontmatter?.shortTitle)
+    .filter(page => !exceptions.includes(page.path))
     .map(page => {
       const fileName = page.frontmatter.title.toLowerCase().replaceAll(' ', '-');
       return {
@@ -125,7 +127,7 @@ export const dialtoneVuepressTheme = (options) => {
     onInitialized (app) {
       _blogPostsFrontmatter(app);
       _extractFrontmatter(app, '/guides/', options);
-      _extractFrontmatter(app, '/components/', options);
+      _extractFrontmatter(app, '/components/', options, ['/components/status/']);
       _extractFrontmatter(app, '/design/', options);
       _extractComponentStatus(app);
     },
