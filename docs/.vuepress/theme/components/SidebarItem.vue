@@ -10,7 +10,7 @@
         :key="subItem.text"
       >
         <router-link
-          v-if="subItem.link && !subItem.planned"
+          v-if="!subItem.planned"
           v-slot="{ href, navigate, isActive, isExactActive }"
           :to="subItem.link"
           custom

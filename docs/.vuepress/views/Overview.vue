@@ -4,7 +4,8 @@
       v-for="page in pages"
       :key="page.title"
     >
-      <router-link
+      <component
+        :is="cardElType(page)"
         :to="`/${basePath}/${page.link}/`"
         class="dialtone-wall__item"
       >
@@ -33,7 +34,7 @@
             {{ page.description }}
           </div>
         </div>
-      </router-link>
+      </component>
     </template>
   </div>
 </template>
@@ -63,5 +64,9 @@ const badgeKindClass = (status) => {
 const pageTitle = (page) => {
   const shortTitle = page.shortTitle ? page.shortTitle[0].toUpperCase() + page.shortTitle.slice(1) : undefined;
   return shortTitle || page.title;
+};
+const cardElType = (page) => {
+  if (page.status !== 'planned' || (page.storybook && page.storybook !== 'planned')) return 'router-link';
+  return 'div';
 };
 </script>

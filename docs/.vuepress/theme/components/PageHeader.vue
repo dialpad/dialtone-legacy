@@ -30,7 +30,7 @@
       </h2>
       <span>
         <a
-          v-if="$frontmatter.storybook"
+          v-if="$frontmatter.storybook && $frontmatter.storybook !== 'planned'"
           class="d-btn d-btn--muted d-btn--muted"
           :href="$frontmatter.storybook"
           target="_blank"
