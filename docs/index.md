@@ -1,5 +1,5 @@
 ---
 home: true
-title: Dialpad
-description: Dialtone is the design system and resources for the Dialpad team.
+description: Documented styles, components, and utility classes to help you quickly design and build unified experiences across Dialpad and Dialpad Meetings.
+image: assets/images/home-hero.png
 ---
