@@ -1,0 +1,110 @@
+//
+//  DIALTONE
+//  COMPONENTS: STACK
+//
+//  These are the styles for stack component.
+//
+//
+//  TABLE OF CONTENTS
+//  • BASE STYLE
+//  • VISUAL STYLES
+//  • RESPONSIVE STYLE
+//  • SIZES
+
+//  @@  BASE STYLE
+//  ----------------------------------------------------------------------------
+
+.direction-options() {
+  &--column {
+    --stack-direction: column;
+  }
+
+  &--column-reverse {
+    --stack-direction: column-reverse;
+  }
+
+  &--row {
+    --stack-direction: row;
+  }
+
+  &--row-reverse {
+    --stack-direction: row-reverse;
+  }
+}
+
+.d-stack {
+  --stack-gap: 0;
+  --stack-direction: column;
+
+  display: flex;
+  flex-direction: var(--stack-direction);
+  gap: var(--stack-gap);
+}
+
+//  ============================================================================
+//  $   VISUAL STYLES
+//  ----------------------------------------------------------------------------
+//  $$  COLUMN-REVERSE
+//  ----------------------------------------------------------------------------
+.d-stack--column-reverse {
+  --stack-direction: column-reverse;
+}
+
+//  ----------------------------------------------------------------------------
+//  $$  ROW
+//  ----------------------------------------------------------------------------
+.d-stack--row {
+  --stack-direction: row;
+}
+
+//  ----------------------------------------------------------------------------
+//  $$  ROW-REVERSE
+//  ----------------------------------------------------------------------------
+.d-stack--row-reverse {
+  --stack-direction: row-reverse;
+}
+
+//  ============================================================================
+//  $   RESPONSIVE
+//  ----------------------------------------------------------------------------
+//  $$  EXTRA LARGE
+//  ----------------------------------------------------------------------------
+.d-stack--xl {
+  @media screen and (max-width: 1264px) {
+    .direction-options();
+  }
+}
+
+//  $$  LARGE
+//  ----------------------------------------------------------------------------
+.d-stack--lg {
+  @media screen and (max-width: 980px) {
+    .direction-options();
+  }
+}
+
+//  $$  MEDIUM
+//  ----------------
+.d-stack--md {
+  @media screen and (max-width: 640px) {
+    .direction-options();
+  }
+}
+
+//  $$ SMALL
+//  ----------------------------------------------------------------------------
+.d-stack--sm {
+  @media screen and (max-width: 480px) {
+    .direction-options();
+  }
+}
+
+//  ============================================================================
+//  $   SIZES
+//  ----------------------------------------------------------------------------
+.d-stack--gap-100 { --stack-gap: var(--space-100); }
+.d-stack--gap-200 { --stack-gap: var(--space-200); }
+.d-stack--gap-300 { --stack-gap: var(--space-300); }
+.d-stack--gap-400 { --stack-gap: var(--space-400); }
+.d-stack--gap-500 { --stack-gap: var(--space-500); }
+.d-stack--gap-600 { --stack-gap: var(--space-500); }
