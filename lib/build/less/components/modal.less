@@ -27,13 +27,13 @@
 .d-modal {
     //  Component CSS Vars
     //  ------------------------------------------------------------------------
-    --modal-backdrop-color-background: hsla(var(--bgc-contrast-hsl) / 0.7);
+    --modal-backdrop-color-background: transparent; // hsla(var(--bgc-contrast-hsl) / 0.7)
     --modal-dialog-padding: var(--space-600);
     --modal-dialog-color-background: var(--bgc-primary);
+    --modal-dialog-color-border: hsla(var(--black-900-hsl) / 0.1);
     --modal-dialog-color-text: var(--fc-tertiary);
     --modal-header-color-text: var(--fc-secondary);
-    --modal-dialog-color-shadow: hsla(var(--black-900-hsl) / 0.1);
-    --modal-dialog-shadow: 0 0 0 var(--size-100) var(--modal-dialog-color-shadow), var(--bs-card);
+    --modal-dialog-shadow: var(--bs-card);
 
     position: fixed;
     top: 0;
@@ -83,6 +83,8 @@
   font-size: var(--fs-200);
   line-height: var(--lh-400);
   background-color: var(--modal-dialog-color-background);
+  background-clip: padding-box;
+  border: var(--size-100) solid var(--modal-dialog-color-border);
   border-radius: var(--size-500);
   box-shadow: var(--modal-dialog-shadow);
   transform: translate3d(0, 30%, 0) scale3d(0.75, 0.75, 0.75);
@@ -168,6 +170,9 @@
   font-size: var(--fs-200);
   line-height: var(--lh-300);
   background-color: var(--modal-banner-color-background);
+  background-clip: padding-box;
+  border: var(--size-100) solid var(--modal-dialog-color-border);
+  border-bottom-width: 0;
   border-radius: var(--size-500) var(--size-500) 0 0;
   box-shadow: var(--modal-dialog-shadow);
 
@@ -204,6 +209,7 @@
   }
 
   &:not(.d-d-none) + .d-modal__dialog {
+    border-top-width: 0;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
   }
