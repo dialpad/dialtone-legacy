@@ -73,9 +73,9 @@ storybook: https://vue.dialpad.design/?path=/story/components-stack--default
 
 <code-well-header>
     <section class="d-stack d-stack--row d-stack--gap-300">
-      <div class="d-bgc-magenta-100"> 
-        Stack item 1 
-      </div> 
+      <div class="d-bgc-magenta-100">
+        Stack item 1
+      </div>
       <div>
         <div class="d-bgc-magenta-100">
           Stack item 2
