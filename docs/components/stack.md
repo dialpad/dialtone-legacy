@@ -1,7 +1,7 @@
 ---
 title: Stack
 description: Stack is a layout component used to group elements together and apply a space between them.
-status: new
+status: beta
 thumb: true
 image: assets/images/components/stack.png
 storybook: https://vue.dialpad.design/?path=/story/components-stack--default
