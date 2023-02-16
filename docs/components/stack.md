@@ -39,20 +39,20 @@ storybook: https://vue.dialpad.design/?path=/story/components-stack--default
 
 ## Examples
 
-#### Stacks column at small screen size and column reverse at large screen
+### Stacks column at small screen size and column reverse at large screen
 
 <code-well-header>
-<div class="d-stack d-stack--row d-stack--sm--column d-stack--lg--column-reverse d-stack--gap-100">
-  <div class="d-bgc-magenta-100">
-    Stack item 1
-  </div>
-  <div class="d-bgc-magenta-100">
-    Stack item 2
-  </div>
-  <div class="d-bgc-magenta-100">
-    Stack item 3
-  </div>
-</div>
+    <div class="d-stack d-stack--row d-stack--sm--column d-stack--lg--column-reverse d-stack--gap-100">
+      <div class="d-bgc-magenta-100">
+        Stack item 1
+      </div>
+      <div class="d-bgc-magenta-100">
+        Stack item 2
+      </div>
+      <div class="d-bgc-magenta-100">
+        Stack item 3
+      </div>
+    </div>
 </code-well-header>
 
 ```html
@@ -69,27 +69,27 @@ storybook: https://vue.dialpad.design/?path=/story/components-stack--default
 </div>
 ```
 
-#### Stacks row with gap 300 and stacks in row reverse the second element with gap 600
+### Stacks row with gap 300 and stacks in row reverse the second element with gap 600
 
 <code-well-header>
-<section class="d-stack d-stack--row d-stack--gap-300">
-  <div class="d-bgc-magenta-100"> 
-    Stack item 1 
-  </div> 
-  <div>
-    <div class="d-bgc-magenta-100">
-      Stack item 2
-    </div>
-    <div class="d-stack d-stack--row-reverse d-stack--gap-600">
-      <div class="d-bgc-magenta-100">
-        Stack item 3
+    <section class="d-stack d-stack--row d-stack--gap-300">
+      <div class="d-bgc-magenta-100"> 
+        Stack item 1 
+      </div> 
+      <div>
+        <div class="d-bgc-magenta-100">
+          Stack item 2
+        </div>
+        <div class="d-stack d-stack--row-reverse d-stack--gap-600">
+          <div class="d-bgc-magenta-100">
+            Stack item 3
+          </div>
+          <div class="d-bgc-magenta-100">
+            Stack item 4
+          </div>
+        </div>
       </div>
-      <div class="d-bgc-magenta-100">
-        Stack item 4
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 </code-well-header>
 
 ```html
@@ -104,7 +104,6 @@ storybook: https://vue.dialpad.design/?path=/story/components-stack--default
   </div>
 </section>
 ```
-
 
 ## Classes
 
