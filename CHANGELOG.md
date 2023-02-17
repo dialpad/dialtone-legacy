@@ -1,3 +1,27 @@
+# [7.17.0](https://github.com/dialpad/dialtone/compare/v7.16.1...v7.17.0) (2023-02-17)
+
+
+### Code Refactoring
+
+* **Popover, Modal:** 1px `box-shadow` moved to `border` with `background-clip` ([#828](https://github.com/dialpad/dialtone/issues/828)) ([13f4a18](https://github.com/dialpad/dialtone/commit/13f4a18ed4dd51b62f4cf49f4b93e2424167c0f5))
+
+
+### Documentation
+
+* add back 100vh min height ([1273041](https://github.com/dialpad/dialtone/commit/1273041a6df41b0c75c901ecfdfdd7a5498f0047))
+* add Open Graph metadata to support rich link preview ([#820](https://github.com/dialpad/dialtone/issues/820)) ([e8ca94b](https://github.com/dialpad/dialtone/commit/e8ca94b2330479c30e3fcb650782b3514cd4445c))
+* add vue api ([#811](https://github.com/dialpad/dialtone/issues/811)) ([faeaa0e](https://github.com/dialpad/dialtone/commit/faeaa0ee31d20adbfa737da86009bdea46e1434b)), closes [#782](https://github.com/dialpad/dialtone/issues/782) [#801](https://github.com/dialpad/dialtone/issues/801) [#802](https://github.com/dialpad/dialtone/issues/802) [#803](https://github.com/dialpad/dialtone/issues/803) [#821](https://github.com/dialpad/dialtone/issues/821)
+* fix empty landing pages ([#824](https://github.com/dialpad/dialtone/issues/824)) ([0170544](https://github.com/dialpad/dialtone/commit/01705448d0a56fc273cd328770f9ec6f262b534f))
+* **Icons:** update contributing guide ([#819](https://github.com/dialpad/dialtone/issues/819)) ([5391657](https://github.com/dialpad/dialtone/commit/53916575bef6ff1c8a0ccbc01542f26eb1f0c252))
+* set fixed: false on root-layout on docsite ([#818](https://github.com/dialpad/dialtone/issues/818)) ([42c3bcd](https://github.com/dialpad/dialtone/commit/42c3bcd9d2deb0ecab7df0ec1cd8966bc11fb8a2))
+* sort vue api table by name ([#823](https://github.com/dialpad/dialtone/issues/823)) ([dbeed14](https://github.com/dialpad/dialtone/commit/dbeed14ec7d6a77b93fd2c6d41dbaf6f00ec218c))
+* update chip example to use new avatar structure ([#822](https://github.com/dialpad/dialtone/issues/822)) ([ade247f](https://github.com/dialpad/dialtone/commit/ade247fccb9050b2bd8871da6c3a06b949c2e0ff))
+
+
+### Features
+
+* **Stack:** stack component styles ([#827](https://github.com/dialpad/dialtone/issues/827)) ([b335357](https://github.com/dialpad/dialtone/commit/b33535716c31c40609301e624158e00def092202))
+
 ## [7.16.1](https://github.com/dialpad/dialtone/compare/v7.16.0...v7.16.1) (2023-02-08)
 
 
