@@ -1,3 +1,15 @@
+## [7.17.1](https://github.com/dialpad/dialtone/compare/v7.17.0...v7.17.1) (2023-02-24)
+
+
+### Bug Fixes
+
+* add resolutions to prevent postcss error ([#830](https://github.com/dialpad/dialtone/issues/830)) ([5b140b5](https://github.com/dialpad/dialtone/commit/5b140b52edddf1f47a1cc97c6242d0a4637f8fc2))
+
+
+### Documentation
+
+* **Font Weight:** correct examples ([#831](https://github.com/dialpad/dialtone/issues/831)) ([4ea5f28](https://github.com/dialpad/dialtone/commit/4ea5f281ec9dcccb32d38ee9d24b25536cc91c70))
+
 # [7.17.0](https://github.com/dialpad/dialtone/compare/v7.16.1...v7.17.0) (2023-02-17)
 
 
