@@ -76,6 +76,20 @@ Add `d-tablist--inverted` when you want to display tabs on a darker background.
 <div class="d-tablist d-tablist--inverted">…</div>
 ```
 
+## Vue API
+
+### Tab Group
+
+<component-vue-api component-name="tabgroup" />
+
+### Tab Panel
+
+<component-vue-api component-name="tabpanel" />
+
+### Tab
+
+<component-vue-api component-name="tab" />
+
 ## Classes
 
 <component-class-table component-name="tabs" />

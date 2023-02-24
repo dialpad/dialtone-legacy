@@ -44,6 +44,8 @@ const docProps = ComponentDocs.find(f => f.displayName.toLowerCase() === formatt
       description: item?.description,
       type: item?.type?.name,
       defaultValue: item?.defaultValue?.value,
+      values: item?.values,
+      required: item.required,
     };
   });
 

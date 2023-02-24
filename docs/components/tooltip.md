@@ -60,6 +60,10 @@ No arrow direction is assigned by default. You must select a direction. Twelve d
   </div>
 </div>
 
+## Vue API
+
+<component-vue-api component-name="tooltip" />
+
 ## Classes
 
 <component-class-table component-name="tooltip" />
