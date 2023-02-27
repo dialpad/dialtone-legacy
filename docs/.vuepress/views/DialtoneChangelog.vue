@@ -35,15 +35,18 @@ const props = defineProps({
   },
 });
 
-const changelogJson = computed(() => DIALTONE_CHANGELOGS[props.project]);
+const changelogJson = computed(() => DIALTONE_CHANGELOGS[props.project].json_file);
 
 const getVersion = (item) => changelogJson.value.versions[item].version;
 
-const getGithubReleaseUrl = (item) => `https://github.com/dialpad/dialtone/releases/tag/v${getVersion(item)}`;
+const getUrlHandler = () => DIALTONE_CHANGELOGS[props.project].url_handler;
+
+const getGithubReleaseUrl = (item) => `https://github.com/dialpad/${getUrlHandler()}/releases/tag/v${getVersion(item)}`;
 
 const formatReleaseNote = (note) => {
   const formatter = Object.create(ReleaseNoteFormatter);
   formatter.note = note;
+  formatter.project_url_handler = getUrlHandler();
   return formatter.format();
 };
 </script>

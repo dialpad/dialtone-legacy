@@ -16,6 +16,7 @@ export function debounce (func, timeout = 300) {
 * */
 export const ReleaseNoteFormatter = {
   note: '',
+  project_url_handler: '',
 
   format () {
     this.note = this._withoutExtraAsterisks();
@@ -31,7 +32,7 @@ export const ReleaseNoteFormatter = {
 
   _withCommitLink () {
     return this.note.replace(/\(([^)]+)\)$/, (match, text) => {
-      const link = `<a href="https://github.com/dialpad/dialtone/commit/${text}">${text}</a>`;
+      const link = `<a href="https://github.com/dialpad/${this.project_url_handler}/commit/${text}">${text}</a>`;
       return `(${link})`;
     });
   },
@@ -40,7 +41,8 @@ export const ReleaseNoteFormatter = {
     return this.note.replace(/(\([^)]+\))(?!.*\1)/, (match, text) => {
       const content = text.slice(1, -1);
       if (content[0] === '#') {
-        const link = `<a href="https://github.com/dialpad/dialtone/pull/${content.slice(1)}">${text}</a>`;
+        const link =
+          `<a href="https://github.com/dialpad/${this.project_url_handler}/pull/${content.slice(1)}">${text}</a>`;
         return `${link}`;
       }
       return text;
