@@ -7,7 +7,7 @@ image: assets/images/components/presence.png
 storybook: https://vue.dialpad.design/?path=/docs/components-presence--default
 figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Components-7?node-id=9628%3A59018&viewport=-1353%2C1919%2C1.91&t=xHutRjwo1o5zMTgT-11
 ---
-<code-well-header>
+<code-well-header bgclass="d-bgc-primary">
   <example-presence presence="active"/>
 </code-well-header>
 
@@ -15,7 +15,7 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 
 ### Active
 
-<code-well-header>
+<code-well-header bgclass="d-bgc-primary">
   <example-presence presence="active"/>
 </code-well-header>
 
@@ -27,7 +27,7 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 
 ### Busy
 
-<code-well-header>
+<code-well-header bgclass="d-bgc-primary">
   <example-presence presence="busy"/>
 </code-well-header>
 
@@ -39,7 +39,7 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 
 ### Away
 
-<code-well-header>
+<code-well-header bgclass="d-bgc-primary">
   <example-presence presence="away"/>
 </code-well-header>
 
@@ -51,7 +51,7 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 
 ### Offline
 
-<code-well-header>
+<code-well-header bgclass="d-bgc-primary">
   <example-presence presence="offline"/>
 </code-well-header>
 

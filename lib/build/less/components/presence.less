@@ -9,12 +9,12 @@
 //  visit https://dialpad.design/components/presence
 
 .d-presence {
-  --presence-color-border-base: var(--black-100);
+  --presence-color-border-base: var(--theme-sidebar-color-background);
   --presence-color-border-offline: var(--black-400);
   --presence-color-background-base: var(--black-400);
-  --presence-color-background-active: var(--green-400);
-  --presence-color-background-busy: var(--red-300);
-  --presence-color-background-away: var(--gold-300);
+  --presence-color-background-active: var(--theme-presence-color-background-available);
+  --presence-color-background-busy: var(--theme-presence-color-background-busy-unavailable);
+  --presence-color-background-away: var(--theme-presence-color-background-busy);
   --presence-color-background-offline: var(--white);
   --presence-size: var(--size-200);
 
@@ -24,6 +24,11 @@
   border-style: solid;
   border-width: var(--presence-size);
   border-radius: var(--br-circle);
+
+  .dt-leftbar-row--selected &,
+  .dt-leftbar-row__primary:hover & {
+    --presence-color-border-base: var(--theme-sidebar-row-color-background-hover);
+  }
 
   &__inner {
     box-sizing: border-box;
