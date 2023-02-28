@@ -1,3 +1,16 @@
+# [7.18.0](https://github.com/dialpad/dialtone/compare/v7.17.1...v7.18.0) (2023-02-28)
+
+
+### Documentation
+
+* fix link in release versions ([#833](https://github.com/dialpad/dialtone/issues/833)) ([e21a8a6](https://github.com/dialpad/dialtone/commit/e21a8a68243f9756e9f66f3716b068fef57186bd))
+
+
+### Features
+
+* **Textarea:** scroll padding ([#834](https://github.com/dialpad/dialtone/issues/834)) ([69a7ffa](https://github.com/dialpad/dialtone/commit/69a7ffafb25665e91ec238ea47d0f5bbdd72d2c8))
+* **Theme:** update sidebar theme colors ([#835](https://github.com/dialpad/dialtone/issues/835)) ([e220674](https://github.com/dialpad/dialtone/commit/e2206747e386a3a6b260a618a1e75638b4746abf))
+
 ## [7.17.1](https://github.com/dialpad/dialtone/compare/v7.17.0...v7.17.1) (2023-02-24)
 
 
