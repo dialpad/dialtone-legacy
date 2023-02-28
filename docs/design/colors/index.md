@@ -524,7 +524,7 @@ Define the edge of key content area, components, or surfaces.
     </tr>
     <tr>
       <td class="d-pl0">
-        <div class="d-theme-sidebar-fc d-p6 d-fco8-circle h:d-fco100 d-ta-center"> <dt-icon name="info"></dt-icon> </div>
+        <div class="d-theme-sidebar-icon-fc d-p6 d-fco8-circle h:d-fco100 d-ta-center"> <dt-icon name="info"></dt-icon> </div>
       </td>
       <th scope="row">
         Sidebar
@@ -536,11 +536,11 @@ Define the edge of key content area, components, or surfaces.
         color
       </td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
-        var(--theme-sidebar-color)
+        var(--theme-sidebar-icon-color)
       </td>
       <td>
         <div class="d-ff-mono d-fs-100 d-fc-purple-400">
-          class="<strong>d-theme-sidebar-fc</strong>"
+          class="<strong>d-theme-sidebar-icon-fc</strong>"
         </div>
       </td>
     </tr>
