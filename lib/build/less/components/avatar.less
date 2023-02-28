@@ -36,6 +36,7 @@
   --avatar-size-text: var(--fs-200);
   --avatar-presence-position-right: calc(var(--space-200) * -1); // -2
   --avatar-presence-position-bottom: calc(var(--space-200) * -1); // -2
+  --avatar-count-color-shadow: var(--theme-sidebar-color-background);
 
   position: relative;
   display: inline-flex;
@@ -102,7 +103,12 @@
     text-align: center;
     background-color: var(--black-600);
     border-radius: var(--br-pill);
-    box-shadow: 0 0 0 var(--size-200) var(--black-100);
+    box-shadow: 0 0 0 var(--size-200) var(--avatar-count-color-shadow);
+
+    .dt-leftbar-row--selected &,
+    .dt-leftbar-row__primary:hover & {
+      --avatar-count-color-shadow: var(--theme-sidebar-row-color-background-hover);
+    }
   }
 
   //  --  SIZES

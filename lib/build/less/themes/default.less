@@ -54,23 +54,25 @@
 
     theme-topbar-color:                               hsl(var(--theme-topbar-color-hsl));
     theme-topbar-color-hsl:                           var(--black-900-h) var(--black-900-s) var(--black-900-l); // Use with d-fco[##] Opacity utility
-    theme-topbar-color-background:                    var(--black-100);
+    theme-topbar-color-background:                    var(--bgc-secondary);
 
-    theme-sidebar-color:                              hsl(var(--theme-sidebar-color-hsl));
-    theme-sidebar-color-hsl:                          var(--black-900-h) var(--black-900-s) var(--black-900-l); // Use with d-fco[##] Opacity utility
-    theme-sidebar-color-background:                   var(--black-100);
+    theme-sidebar-color:                              var(--fc-primary);
+    theme-sidebar-color-hsl:                          var(--black-900-h) var(--black-900-s) var(--black-900-l);
+    theme-sidebar-color-background:                   var(--bgc-secondary);
+    theme-sidebar-status-color:                       var(--fc-tertiary);
 
 //  theme-sidebar-row-color-background:               {UNUSED}
-    theme-sidebar-row-color-background-hover:         var(--purple-100);
-    theme-sidebar-active-row-color:                   hsl(var(--theme-sidebar-active-row-color-hsl));
+    theme-sidebar-row-color-background-hover:         var(--black-300);
+    theme-sidebar-active-row-color:                   var(--fc-primary);
     theme-sidebar-active-row-color-hsl:               var(--black-900-h) var(--black-900-s) var(--black-900-l); // Use with d-fco[##] Opacity utility
-    theme-sidebar-active-row-color-background:        var(--black-200); // DT7 TBD, possibly black-100?
+    theme-sidebar-active-row-color-background:        var(--black-200);
 
     theme-presence-color-background-available:        var(--green-400);
     theme-presence-color-background-busy-unavailable: var(--red-300);
     theme-presence-color-background-busy:             var(--gold-300);
 
     theme-mention-color-background:                   var(--purple-400);
+    theme-mention-color-foreground:                   var(--white);
 }
 
 //  ============================================================================
@@ -87,15 +89,17 @@
     }
 }
 .d-theme-topbar-bgc { background-color: var(--theme-topbar-color-background) !important; }
-.d-theme-sidebar-fc { color: hsla(var(--theme-sidebar-color-hsl) / var(--fco)) !important; }
+.d-theme-sidebar-fc { color: var(--theme-sidebar-color) !important; }
+.d-theme-sidebar-status-fc { color: var(--theme-sidebar-status-color) !important; }
 .d-theme-sidebar-bgc { background-color: var(--theme-sidebar-color-background) !important; }
 .d-theme-sidebar-row-bgc:hover { background-color: var(--theme-sidebar-row-color-background-hover) !important; }
-.d-theme-sidebar-row-active-fc { color: hsla(var(--theme-sidebar-active-row-color-hsl) / var(--fco)) !important; }
+.d-theme-sidebar-row-active-fc { color: var(--theme-sidebar-active-row-color) !important; }
 .d-theme-sidebar-row-active-bgc { background-color: var(--theme-sidebar-active-row-color-background) !important; }
 .d-theme-presence-available { background-color: var(--theme-presence-color-background-available) !important; }
 .d-theme-presence-busy-unavailable { background-color: var(--theme-presence-color-background-busy-unavailable) !important; }
 .d-theme-presence-busy { background-color: var(--theme-presence-color-background-busy) !important; }
 .d-theme-mention { background-color: var(--theme-mention-color-background) !important; }
+.d-theme-mention-fc { color: var(--theme-mention-color-foreground) !important; }
 
 
 //  ============================================================================

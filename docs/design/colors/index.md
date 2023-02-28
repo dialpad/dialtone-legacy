@@ -492,7 +492,7 @@ Define the edge of key content area, components, or surfaces.
         color
       </td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
-        var(--theme-sidebar-color-hsl)
+        var(--theme-sidebar-color)
       </td>
       <td>
         <div class="d-ff-mono d-fs-100 d-fc-purple-400">
@@ -502,7 +502,7 @@ Define the edge of key content area, components, or surfaces.
     </tr>
     <tr>
       <td class="d-pl0">
-        <div class="d-fs-300 d-p6 d-theme-sidebar-fc d-fco75 d-ta-center d-fw-medium"> Aa </div>
+        <div class="d-fs-300 d-p6 d-theme-sidebar-status-fc d-fco75 d-ta-center d-fw-medium"> Aa </div>
       </td>
       <th scope="row">
         Sidebar
@@ -514,11 +514,11 @@ Define the edge of key content area, components, or surfaces.
         color
       </td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
-        var(--theme-sidebar-color-hsl)
+        var(--theme-sidebar-status-color)
       </td>
       <td>
         <div class="d-ff-mono d-fs-100 d-fc-purple-400">
-          class="<strong>d-theme-sidebar-fc d-fco75</strong>"
+          class="<strong>d-theme-sidebar-status-fc</strong>"
         </div>
       </td>
     </tr>
@@ -536,11 +536,11 @@ Define the edge of key content area, components, or surfaces.
         color
       </td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
-        var(--theme-sidebar-color-hsl)
+        var(--theme-sidebar-color)
       </td>
       <td>
         <div class="d-ff-mono d-fs-100 d-fc-purple-400">
-          class="<strong>d-theme-sidebar-fc d-fco85 h:d-fco100</strong>"
+          class="<strong>d-theme-sidebar-fc</strong>"
         </div>
       </td>
     </tr>
@@ -602,11 +602,33 @@ Define the edge of key content area, components, or surfaces.
         color
       </td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
-        var(--theme-sidebar-active-row-color-hsl)
+        var(--theme-sidebar-active-row-color)
       </td>
       <td>
         <div class="d-ff-mono d-fs-100 d-fc-purple-400">
           class="<strong>d-theme-sidebar-row-active-fc</strong>"
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="d-pl0">
+        <div class="d-fs-300 d-p6 d-theme-mention d-theme-mention-fc d-ta-center d-fw-medium"> Aa </div>
+      </td>
+      <th scope="row">
+        Sidebar
+      </th>
+      <td>
+        Mention badge
+      </td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
+        color
+      </td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
+        var(--theme-mention-color-foreground)
+      </td>
+      <td>
+        <div class="d-ff-mono d-fs-100 d-fc-purple-400">
+          class="<strong>d-theme-mention-fc</strong>"
         </div>
       </td>
     </tr>
