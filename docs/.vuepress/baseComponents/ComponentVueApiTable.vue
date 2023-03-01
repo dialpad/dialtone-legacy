@@ -115,14 +115,15 @@ const sortedTableDataByName = computed(() => {
 });
 
 const sortDataByKey = (data, nameKey, requiredKey) => {
+  // eslint-disable-next-line complexity
   return data.sort((a, b) => {
     const aIsRequired = !!a[requiredKey];
     const bIsRequired = !!b[requiredKey];
 
     // always have required at top
-    if (aIsRequired > bIsRequired) {
+    if (aIsRequired && !bIsRequired) {
       return -1;
-    } else if (aIsRequired < bIsRequired) {
+    } else if (!aIsRequired && bIsRequired) {
       return 1;
     } else {
       if (a[nameKey] < b[nameKey]) return -1;
