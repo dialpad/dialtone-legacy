@@ -94,7 +94,7 @@ storybook: https://vue.dialpad.design/?path=/story/components-stack--default
 
 ```html
 <section class="d-stack d-stack--row d-stack--gap-300">
-  <div>Stack item 1</div> 
+  <div>Stack item 1</div>
   <div>
     <div>Stack item 2</div>
     <div class="d-stack d-stack--row-reverse d-stack--gap-600">
@@ -104,6 +104,10 @@ storybook: https://vue.dialpad.design/?path=/story/components-stack--default
   </div>
 </section>
 ```
+
+## Vue API
+
+<component-vue-api component-name="stack" />
 
 ## Classes
 

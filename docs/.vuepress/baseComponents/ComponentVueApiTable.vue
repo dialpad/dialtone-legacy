@@ -29,14 +29,24 @@
     </thead>
     <tbody>
       <tr
-        v-for="({ name, description, type, defaultValue }) in sortedTableDataByName"
+        v-for="({ name, description, type, defaultValue, values, required }) in sortedTableDataByName"
         :key="name"
       >
         <th
           scope="row"
           class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100"
-          v-text="name"
-        />
+        >
+          <dt-stack gap="300">
+            <div>{{ name }}</div>
+            <div
+              v-if="required"
+              class="d-fc-critical"
+            >
+              required
+            </div>
+          </dt-stack>
+        </th>
+
         <td
           class="d-ff-mono d-fs-100 vue-api-table"
         >
@@ -46,8 +56,23 @@
           >
             <markdown-render :markdown="description" />
             <span v-if="type">
-              <dt-badge>{{ type }}</dt-badge>
+              Type: <dt-badge>{{ type }}</dt-badge>
             </span>
+            <dt-stack
+              v-if="values"
+              direction="row"
+              class="d-ai-center d-fw-wrap"
+              gap="300"
+            >
+              Values:
+              <dt-badge
+                v-for="value in values"
+
+                :key="`${name} ${value}`"
+              >
+                {{ value }}
+              </dt-badge>
+            </dt-stack>
           </div>
         </td>
         <td
@@ -86,16 +111,23 @@ const withDefault = computed(() => {
 const sortedTableDataByName = computed(() => {
   if (!props.tableData) return null;
 
-  return sortDataByKey([...props.tableData], 'name');
+  return sortDataByKey([...props.tableData], 'name', 'required');
 });
 
-const sortDataByKey = (data, key) => {
+const sortDataByKey = (data, nameKey, requiredKey) => {
+  // eslint-disable-next-line complexity
   return data.sort((a, b) => {
-    if (a[key] < b[key]) {
+    const aIsRequired = !!a[requiredKey];
+    const bIsRequired = !!b[requiredKey];
+
+    // always have required at top
+    if (aIsRequired && !bIsRequired) {
       return -1;
-    }
-    if (a[key] > b[key]) {
+    } else if (!aIsRequired && bIsRequired) {
       return 1;
+    } else {
+      if (a[nameKey] < b[nameKey]) return -1;
+      if (a[nameKey] > b[nameKey]) return 1;
     }
     return 0;
   });
