@@ -16,6 +16,7 @@
 .d-link {
     --link-color-default: var(--purple-400);
     --link-color-default-hover: hsl(var(--purple-400-h) var(--purple-400-s) calc(var(--purple-400-l) - 10%));
+    --link-text-decoration: none;
 
     position: relative;
     display: inline-flex;
@@ -27,7 +28,7 @@
     padding: 0;
     color: var(--link-color-default);
     font: inherit;
-    text-decoration: none;
+    text-decoration: var(--link-text-decoration);
     background-color: transparent;
     border: 0;
     transition-timing-function: var(--ttf-out-quint);
@@ -41,14 +42,21 @@
     fill: currentColor;
 
     &:hover {
+        --link-text-decoration: underline;
+
         color: var(--link-color-default-hover);
-        text-decoration: underline;
         cursor: pointer;
     }
 
     &:focus-visible {
         outline: none;
         box-shadow: var(--bs-focus-ring);
+    }
+
+    .d-banner &,
+    .d-toast &,
+    .d-notice & {
+        --link-text-decoration: underline;
     }
 
     //  ============================================================================
@@ -92,7 +100,8 @@
         --link-color-default-hover: var(--link-color-default);
 
         &:hover {
-            text-decoration: none;
+            --link-text-decoration: none;
+
             cursor: not-allowed;
         }
     }
@@ -113,7 +122,8 @@
         --link-color-default-hover: var(--link-color-default);
 
         &:hover {
-            text-decoration: none;
+            --link-text-decoration: none;
+
             cursor: not-allowed;
         }
     }
