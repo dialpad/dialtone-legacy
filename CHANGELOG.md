@@ -1,3 +1,16 @@
+## [7.18.1](https://github.com/dialpad/dialtone/compare/v7.18.0...v7.18.1) (2023-03-01)
+
+
+### Bug Fixes
+
+* **Link:** underline text links in banner, notice, toast components ([#837](https://github.com/dialpad/dialtone/issues/837)) ([3c8159d](https://github.com/dialpad/dialtone/commit/3c8159da2b46e2ecf5f6bf588563963d274f126f))
+* **Theme:** missing theme variable for icon color ([#836](https://github.com/dialpad/dialtone/issues/836)) ([a68dafb](https://github.com/dialpad/dialtone/commit/a68dafbcd7a61599629eaec833626626f07ea259))
+
+
+### Documentation
+
+* finalize vue api docs output ([#832](https://github.com/dialpad/dialtone/issues/832)) ([929f9d7](https://github.com/dialpad/dialtone/commit/929f9d78966b5154bf7c08f966acf8ea59199478))
+
 # [7.18.0](https://github.com/dialpad/dialtone/compare/v7.17.1...v7.18.0) (2023-02-28)
 
 
