@@ -546,35 +546,13 @@ Define the edge of key content area, components, or surfaces.
     </tr>
     <tr>
       <td class="d-pl0">
-        <div class="d-w42 d-h42 d-bar-circle d-ba d-bc-black-100 d-theme-sidebar-row-active-bgc"></div>
+        <div class="d-w42 d-h42 d-bar-circle d-ba d-bc-black-300 d-bas-dashed" style="background-color: var(--theme-sidebar-row-color-background-hover)"></div>
       </td>
       <th scope="row">
         Sidebar
       </th>
       <td>
-        Active row
-      </td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
-        background-color
-      </td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
-        var(--theme-sidebar-active-row-color-background)
-      </td>
-      <td>
-        <div class="d-ff-mono d-fs-100 d-fc-purple-400">
-          class="<strong>d-theme-sidebar-row-active-bgc</strong>"
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td class="d-pl0">
-        <div class="d-w42 d-h42 d-bar-circle d-ba d-bc-black-300 d-bas-dashed d-theme-sidebar-row-bgc"></div>
-      </td>
-      <th scope="row">
-        Sidebar
-      </th>
-      <td>
-        Hover row
+        Row&nbsp;<code class="d-fs-100">:hover</code>
       </td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
         background-color
@@ -583,30 +561,68 @@ Define the edge of key content area, components, or surfaces.
         var(--theme-sidebar-row-color-background-hover)
       </td>
       <td>
-        <div class="d-ff-mono d-fs-100 d-fc-purple-400">
-          class="<strong>d-theme-sidebar-row-bgc</strong>"
-        </div>
       </td>
     </tr>
     <tr>
       <td class="d-pl0">
-        <div class="d-fs-300 d-p6 d-theme-sidebar-row-active-fc d-ta-center d-fw-medium"> Aa </div>
+        <div class="d-w42 d-h42 d-bar-circle d-ba d-bc-black-300 d-bas-dashed" style="background-color: var(--theme-sidebar-row-color-background-active)"></div>
       </td>
       <th scope="row">
         Sidebar
       </th>
       <td>
-        Active row
+        Row&nbsp;<code class="d-fs-100">:active</code>
+      </td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
+        background-color
+      </td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
+        var(--theme-sidebar-row-color-background-hover)
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td class="d-pl0">
+        <div class="d-w42 d-h42 d-bar-circle d-ba d-bc-black-100 d-theme-sidebar-row-selected-bgc"></div>
+      </td>
+      <th scope="row">
+        Sidebar
+      </th>
+      <td>
+        Row selected
+      </td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
+        background-color
+      </td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
+        var(--theme-sidebar-selected-row-color-background)
+      </td>
+      <td>
+        <div class="d-ff-mono d-fs-100 d-fc-purple-400">
+          class="<strong>d-theme-sidebar-row-selected-bgc</strong>"
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="d-pl0">
+        <div class="d-fs-300 d-p6 d-theme-sidebar-row-selected-fc d-ta-center d-fw-medium"> Aa </div>
+      </td>
+      <th scope="row">
+        Sidebar
+      </th>
+      <td>
+        Row selected
       </td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
         color
       </td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
-        var(--theme-sidebar-active-row-color)
+        var(--theme-sidebar-selected-row-color)
       </td>
       <td>
         <div class="d-ff-mono d-fs-100 d-fc-purple-400">
-          class="<strong>d-theme-sidebar-row-active-fc</strong>"
+          class="<strong>d-theme-sidebar-row-selected-fc</strong>"
         </div>
       </td>
     </tr>
