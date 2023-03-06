@@ -1,3 +1,16 @@
+# [7.19.0](https://github.com/dialpad/dialtone/compare/v7.18.1...v7.19.0) (2023-03-06)
+
+
+### Bug Fixes
+
+* **Popover:** min content on header and footer grid items ([#838](https://github.com/dialpad/dialtone/issues/838)) ([4a00b52](https://github.com/dialpad/dialtone/commit/4a00b52a22992deab75db80f6705105e406bff01))
+* **Presence, Theme:** border color with selected leftbar state ([#839](https://github.com/dialpad/dialtone/issues/839)) ([d1c2705](https://github.com/dialpad/dialtone/commit/d1c2705d31a1d52485498a02abd1273ae6a7c8a0))
+
+
+### Features
+
+* **Tabs, Table:** update border color styles as translucent ([#840](https://github.com/dialpad/dialtone/issues/840)) ([6c79da4](https://github.com/dialpad/dialtone/commit/6c79da44aa2f278c31fd7cecafaf7ae88ada6300))
+
 ## [7.18.1](https://github.com/dialpad/dialtone/compare/v7.18.0...v7.18.1) (2023-03-01)
 
 
