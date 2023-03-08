@@ -151,35 +151,6 @@ Key foreground colors rendered on surfaces to indicate hierarchy and importance.
 
 Foreground colors distinguishing important information with a status role.
 
-<div hidden>
-  <div style="color: var(--fc-primary)">primary</div>
-  <div style="color: hsla(var(--fc-primary-hsl) / .5)">primary @ 50%</div>
-  <div style="color: var(--fc-primary-inverted)">primary-inverted</div>
-  <div style="color: hsla(var(--fc-primary-inverted-hsl) / .5)">primary-inverted @ 50%</div>
-  <div style="color: var(--fc-secondary)">secondary</div>
-  <div style="color: hsla(var(--fc-secondary-hsl) / .5)">secondary @ 50%</div>
-  <div style="color: var(--fc-secondary-inverted)">secondary-inverted</div>
-  <div style="color: hsla(var(--fc-secondary-inverted-hsl) / .5)">secondary-inverted @ 50%</div>
-  <div style="color: var(--fc-tertiary)">tertiary</div>
-  <div style="color: hsla(var(--fc-tertiary-hsl) / .5)">tertiary @ 50%</div>
-  <div style="color: var(--fc-muted)">muted</div>
-  <div style="color: hsla(var(--fc-muted-hsl) / .5)">muted @ 50%</div>
-  <div style="color: var(--fc-placeholder)">placeholder</div>
-  <div style="color: hsla(var(--fc-placeholder-hsl) / .5)">placeholder @ 50%</div>
-  <div style="color: var(--fc-disabled)">disabled</div>
-  <div style="color: hsla(var(--fc-disabled-hsl) / .5)">disabled @ 50%</div>
-  <div style="color: var(--fc-critical)">critical</div>
-  <div style="color: hsla(var(--fc-critical-hsl) / .5)">critical @ 50%</div>
-  <div style="color: var(--fc-error)">error</div>
-  <div style="color: hsla(var(--fc-error-hsl) / .5)">error @ 50%</div>
-  <div style="color: var(--fc-success)">success</div>
-  <div style="color: hsla(var(--fc-success-hsl) / .5)">success @ 50%</div>
-  <div style="color: var(--fc-warning)">warning</div>
-  <div style="color: hsla(var(--fc-warning-hsl) / .5)">warning @ 50%</div>
-  <div style="color: var(--fc-warning-hover)">warning-hover</div>
-  <div style="color: hsla(var(--fc-warning-hover-hsl) / .5)">warning-hover @ 50%</div>
-</div>
-
 <table class="d-table dialtone-doc-table">
   <thead>
     <tr>
@@ -546,13 +517,32 @@ Define the edge of key content area, components, or surfaces.
     </tr>
     <tr>
       <td class="d-pl0">
+        <div class="d-w42 d-h42 d-bar-circle d-ba d-bc-black-300 d-bas-dashed" style="background-color: var(--theme-sidebar-row-color-background-default)"></div>
+      </td>
+      <th scope="row">
+        Sidebar
+      </th>
+      <td>
+        Row&nbsp;<span class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">default</span>
+      </td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
+        background-color
+      </td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
+        var(--theme-sidebar-row-color-background-default)
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td class="d-pl0">
         <div class="d-w42 d-h42 d-bar-circle d-ba d-bc-black-300 d-bas-dashed" style="background-color: var(--theme-sidebar-row-color-background-hover)"></div>
       </td>
       <th scope="row">
         Sidebar
       </th>
       <td>
-        Row&nbsp;<code class="d-fs-100">:hover</code>
+        Row&nbsp;<span class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">hovering</span>
       </td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
         background-color
@@ -571,13 +561,13 @@ Define the edge of key content area, components, or surfaces.
         Sidebar
       </th>
       <td>
-        Row&nbsp;<code class="d-fs-100">:active</code>
+        Row&nbsp;<span class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">pressing</span>
       </td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
         background-color
       </td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
-        var(--theme-sidebar-row-color-background-hover)
+        var(--theme-sidebar-row-color-background-active)
       </td>
       <td>
       </td>
@@ -590,7 +580,7 @@ Define the edge of key content area, components, or surfaces.
         Sidebar
       </th>
       <td>
-        Row selected
+        Row&nbsp;<span class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">selected</span>
       </td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
         background-color
@@ -612,7 +602,7 @@ Define the edge of key content area, components, or surfaces.
         Sidebar
       </th>
       <td>
-        Row selected
+        Row&nbsp;<span class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">selected</span>
       </td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
         color
