@@ -523,7 +523,7 @@ Define the edge of key content area, components, or surfaces.
         Sidebar
       </th>
       <td>
-        Row&nbsp;<code class="d-fs-100">resting</code>
+        Row&nbsp;<span class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">default</span>
       </td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
         background-color
@@ -542,7 +542,7 @@ Define the edge of key content area, components, or surfaces.
         Sidebar
       </th>
       <td>
-        Row&nbsp;<code class="d-fs-100">hovering</code>
+        Row&nbsp;<span class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">hovering</span>
       </td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
         background-color
@@ -561,7 +561,7 @@ Define the edge of key content area, components, or surfaces.
         Sidebar
       </th>
       <td>
-        Row&nbsp;<code class="d-fs-100">pressing</code>
+        Row&nbsp;<span class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">pressing</span>
       </td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
         background-color
@@ -580,7 +580,7 @@ Define the edge of key content area, components, or surfaces.
         Sidebar
       </th>
       <td>
-        Row selected
+        Row&nbsp;<span class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">selected</span>
       </td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
         background-color
@@ -602,7 +602,7 @@ Define the edge of key content area, components, or surfaces.
         Sidebar
       </th>
       <td>
-        Row selected
+        Row&nbsp;<span class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">selected</span>
       </td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
         color
