@@ -27,7 +27,7 @@ Key foreground colors rendered on surfaces to indicate hierarchy and importance.
       </td>
       <th scope="row" class="d-lh-300">
         Primary
-        <div class="d-fw-normal">Default text color throughout the UI.</div>
+        <div class="d-fw-normal d-fs-100">Default text color throughout the UI.</div>
       </th>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--fc-primary)</td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-primary</td>
@@ -43,7 +43,7 @@ Key foreground colors rendered on surfaces to indicate hierarchy and importance.
       </td>
       <th scope="row" class="d-lh-300">
         Secondary
-        <div class="d-fw-normal">Example uses include introduction paragraphs, labels, and descriptions paired with form elements.</div>
+        <div class="d-fw-normal d-fs-100">Example uses include introduction paragraphs, labels, and descriptions paired with form elements.</div>
       </th>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--fc-secondary)</td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-secondary</td>
@@ -59,7 +59,7 @@ Key foreground colors rendered on surfaces to indicate hierarchy and importance.
       </td>
       <th scope="row" class="d-lh-300">
         Tertiary
-        <div class="d-fw-normal">Used to imply visual hierarchy relative to primary and secondary text colors, e.g. headlines and labels.</div>
+        <div class="d-fw-normal d-fs-100">Used to imply visual hierarchy relative to primary and secondary text colors, e.g. headlines and labels.</div>
       </th>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--fc-tertiary)</td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-tertiary</td>
@@ -75,7 +75,7 @@ Key foreground colors rendered on surfaces to indicate hierarchy and importance.
       </td>
       <th scope="row" class="d-lh-300">
         Primary inverted
-        <div class="d-fw-normal">Primary text that sits on high-contrast surfaces or backgrounds.</div>
+        <div class="d-fw-normal d-fs-100">Primary text that sits on high-contrast surfaces or backgrounds.</div>
       </th>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--fc-primary-inverted)</td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-primary-inverted</td>
@@ -91,7 +91,7 @@ Key foreground colors rendered on surfaces to indicate hierarchy and importance.
       </td>
       <th scope="row" class="d-lh-300">
         Secondary inverted
-        <div class="d-fw-normal">Secondary text color that sits on high-contrast surfaces or backgrounds.</div>
+        <div class="d-fw-normal d-fs-100">Secondary text color that sits on high-contrast surfaces or backgrounds.</div>
       </th>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--fc-secondary-inverted)</td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-secondary-inverted</td>
@@ -107,7 +107,7 @@ Key foreground colors rendered on surfaces to indicate hierarchy and importance.
       </td>
       <th scope="row" class="d-lh-300">
         Placeholder
-        <div class="d-fw-normal">Text color for placeholder text within form elements.</div>
+        <div class="d-fw-normal d-fs-100">Text color for placeholder text within form elements.</div>
       </th>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--fc-placeholder)</td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-placeholder</td>
@@ -123,7 +123,7 @@ Key foreground colors rendered on surfaces to indicate hierarchy and importance.
       </td>
       <th scope="row" class="d-lh-300">
         Disabled
-        <div class="d-fw-normal">Used for text paired with disabled content or components, like the form elements.</div>
+        <div class="d-fw-normal d-fs-100">Used for text paired with disabled content or components, like the form elements.</div>
       </th>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--fc-disabled)</td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-disabled</td>
@@ -139,7 +139,7 @@ Key foreground colors rendered on surfaces to indicate hierarchy and importance.
       </td>
       <th scope="row" class="d-lh-300">
         Muted
-        <!-- <div class="d-fw-normal">{DESCRIPTION}</div> -->
+        <!-- <div class="d-fw-normal d-fs-100">{DESCRIPTION}</div> -->
       </th>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--fc-muted)</td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-muted</td>
@@ -171,7 +171,7 @@ Foreground colors distinguishing important information with a status role.
       </td>
       <th scope="row" class="d-lh-300">
         Critical
-        <div class="d-fw-normal">Expresses an error, danger, or otherwise critical state.</div>
+        <div class="d-fw-normal d-fs-100">Expresses an error, danger, or otherwise critical state.</div>
       </th>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--fc-critical)</td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-critical</td>
@@ -187,7 +187,7 @@ Foreground colors distinguishing important information with a status role.
       </td>
       <th scope="row" class="d-lh-300">
         Success
-        <div class="d-fw-normal">Indicates a strong positive state.</div>
+        <div class="d-fw-normal d-fs-100">Indicates a strong positive state.</div>
       </th>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--fc-success)</td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-success</td>
@@ -203,7 +203,7 @@ Foreground colors distinguishing important information with a status role.
       </td>
       <th scope="row" class="d-lh-300">
         Warning
-        <div class="d-fw-normal">Indicates information that requires user’s attention and further action may be necessary.</div>
+        <div class="d-fw-normal d-fs-100">Indicates information that requires user’s attention and further action may be necessary.</div>
       </th>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--fc-warning)</td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-warning</td>
@@ -251,7 +251,7 @@ Background colors for default application UI surfaces. Surface colors are contai
       <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-primary d-ba d-bc-black-300 d-bas-dashed"></div></th>
       <th scope="row" class="d-lh-300">
         Primary
-        <div class="d-fw-normal">Default surface color for the majority of surfaces.</div>
+        <div class="d-fw-normal d-fs-100">Default surface color for the majority of surfaces.</div>
       </th>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-primary)</td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-primary</td>
@@ -260,7 +260,7 @@ Background colors for default application UI surfaces. Surface colors are contai
       <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-secondary d-ba d-bc-black-300 d-bas-dashed"></div></th>
       <th scope="row" class="d-lh-300">
         Secondary
-        <div class="d-fw-normal">For adjacent or complementary regions.</div>
+        <div class="d-fw-normal d-fs-100">For adjacent or complementary regions.</div>
       </th>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-secondary)</td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-secondary</td>
@@ -269,7 +269,7 @@ Background colors for default application UI surfaces. Surface colors are contai
       <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-moderate"></div></th>
       <th scope="row" class="d-lh-300">
         Moderate
-        <div class="d-fw-normal">A tertiary surface level, prominent without being too overpowering.</div>
+        <div class="d-fw-normal d-fs-100">A tertiary surface level, prominent without being too overpowering.</div>
       </th>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-moderate)</td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-moderate</td>
@@ -278,7 +278,7 @@ Background colors for default application UI surfaces. Surface colors are contai
       <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-bold"></div></th>
       <th scope="row" class="d-lh-300">
         Bold
-        <div class="d-fw-normal">Highlight or call attention to specific areas of the interface.</div>
+        <div class="d-fw-normal d-fs-100">Highlight or call attention to specific areas of the interface.</div>
       </th>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-bold)</td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-bold</td>
@@ -287,7 +287,7 @@ Background colors for default application UI surfaces. Surface colors are contai
       <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-strong"></div></th>
       <th scope="row" class="d-lh-300">
         Strong
-        <div class="d-fw-normal">Use sparingly to draw the eye to a relatively important region.</div>
+        <div class="d-fw-normal d-fs-100">Use sparingly to draw the eye to a relatively important region.</div>
       </th>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-strong)</td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-strong</td>
@@ -296,7 +296,7 @@ Background colors for default application UI surfaces. Surface colors are contai
       <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-contrast"></div></th>
       <th scope="row" class="d-lh-300">
         Contrast
-        <div class="d-fw-normal">An inverted surface for lightened content and elements, most likely paired with inverted text colors.</div>
+        <div class="d-fw-normal d-fs-100">An inverted surface for lightened content and elements, most likely paired with inverted text colors.</div>
       </th>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-contrast)</td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-contrast</td>
@@ -307,37 +307,101 @@ Background colors for default application UI surfaces. Surface colors are contai
       <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-critical"></div></th>
       <th scope="row" class="d-lh-300">
         Critical
-        <div class="d-fw-normal">Background surface color containing error, danger, or otherwise critical messaging or elements.</div>
+        <div class="d-fw-normal d-fs-100">Background surface color containing error, danger, or otherwise critical messaging or elements.</div>
       </th>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-critical)</td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-critical</td>
     </tr>
     <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-critical-subtle"></div></th>
+      <th scope="row" class="d-lh-300">
+        Critical subtle
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-critical-subtle)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-critical-subtle</td>
+    </tr>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-critical-strong"></div></th>
+      <th scope="row" class="d-lh-300">
+        Critical strong
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-critical-strong)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-critical-strong</td>
+    </tr>
+    <tr>
       <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-success"></div></th>
       <th scope="row" class="d-lh-300">
         Success
-        <div class="d-fw-normal">Background surface color containing messaging or elements expressing a positive or successful state.</div>
+        <div class="d-fw-normal d-fs-100">Background surface color containing messaging or elements expressing a positive or successful state.</div>
       </th>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-success)</td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-success</td>
     </tr>
     <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-success-subtle"></div></th>
+      <th scope="row" class="d-lh-300">
+        Success subtle
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-success-subtle)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-success-subtle</td>
+    </tr>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-success-strong"></div></th>
+      <th scope="row" class="d-lh-300">
+        Success strong
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-success-strong)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-success-strong</td>
+    </tr>
+    <tr>
       <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-warning"></div></th>
       <th scope="row" class="d-lh-300">
         Warning
-        <div class="d-fw-normal">Background surface color highlighting messaging or elements that may require user's attention.</div>
+        <div class="d-fw-normal d-fs-100">Background surface color highlighting messaging or elements that may require user's attention.</div>
       </th>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-warning)</td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-warning</td>
     </tr>
     <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-warning-subtle"></div></th>
+      <th scope="row" class="d-lh-300">
+        Warning subtle
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-warning-subtle)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-warning-subtle</td>
+    </tr>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-warning-strong"></div></th>
+      <th scope="row" class="d-lh-300">
+        Warning strong
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-warning-strong)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-warning-strong</td>
+    </tr>
+    <tr>
       <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-info"></div></th>
       <th scope="row" class="d-lh-300">
         Info
-        <div class="d-fw-normal">Background surface color containing messaging or elements communicated as generally informational.</div>
+        <div class="d-fw-normal d-fs-100">Background surface color containing messaging or elements communicated as generally informational.</div>
       </th>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-info)</td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-info</td>
+    </tr>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-info-subtle"></div></th>
+      <th scope="row" class="d-lh-300">
+        Info subtle
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-info-subtle)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-info-subtle</td>
+    </tr>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-info-strong"></div></th>
+      <th scope="row" class="d-lh-300">
+        Info strong
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-info-strong)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-info-strong</td>
     </tr>
   </tbody>
 </table>
