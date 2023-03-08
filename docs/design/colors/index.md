@@ -177,6 +177,22 @@ Foreground colors distinguishing important information with a status role.
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-critical</td>
     </tr>
     <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42" style="background-color: var(--fc-critical-strong)"></div></th>
+      <td>
+        <div class="d-d-flex d-jc-space-between d-ai-center">
+          <div class="d-fl0 d-fs-300 d-fc-critical-strong d-p6 d-fw-medium">
+            Aa
+          </div>
+        </div>
+      </td>
+      <th scope="row" class="d-lh-300">
+        Critical
+        <div class="d-fw-normal d-fs-100">Expresses an error, danger, or otherwise critical state on surfaces that require a stronger contrast.</div>
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--fc-critical-strong)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-critical-strong</td>
+    </tr>
+    <tr>
       <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42" style="background-color: var(--fc-success)"></div></th>
       <td>
         <div class="d-d-flex d-jc-space-between d-ai-center">
@@ -191,6 +207,22 @@ Foreground colors distinguishing important information with a status role.
       </th>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--fc-success)</td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-success</td>
+    </tr>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42" style="background-color: var(--fc-success-strong)"></div></th>
+      <td>
+        <div class="d-d-flex d-jc-space-between d-ai-center">
+          <div class="d-fl0 d-fs-300 d-fc-success-strong d-p6 d-fw-medium">
+            Aa
+          </div>
+        </div>
+      </td>
+      <th scope="row" class="d-lh-300">
+        Success
+        <div class="d-fw-normal d-fs-100">Indicates a strong positive state on surfaces that require a stronger contrast.</div>
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--fc-success-strong)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-success-strong</td>
     </tr>
     <tr>
       <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42" style="background-color: var(--fc-warning)"></div></th>
@@ -212,29 +244,6 @@ Foreground colors distinguishing important information with a status role.
 </table>
 
 ## Surface
-
-<div hidden>
-  <div style="background-color: var(--bgc-critical)">critical</div>
-  <div style="background-color: hsla(var(--bgc-critical-hsl) / .5)">critical @ 50%</div>
-  <div style="background-color: var(--bgc-info)">info</div>
-  <div style="background-color: hsla(var(--bgc-info-hsl) / .5)">info @ 50%</div>
-  <div style="background-color: var(--bgc-warning)">warning</div>
-  <div style="background-color: hsla(var(--bgc-warning-hsl) / .5)">warning @ 50%</div>
-  <div style="background-color: var(--bgc-success)">success</div>
-  <div style="background-color: hsla(var(--bgc-success-hsl) / .5)">success @ 50%</div>
-  <div style="background-color: var(--bgc-primary)">primary</div>
-  <div style="background-color: hsla(var(--bgc-primary-hsl) / .5)">primary @ 50%</div>
-  <div style="background-color: var(--bgc-secondary)">secondary</div>
-  <div style="background-color: hsla(var(--bgc-secondary-hsl) / .5)">secondary @ 50%</div>
-  <div style="background-color: var(--bgc-moderate)">moderate</div>
-  <div style="background-color: hsla(var(--bgc-moderate-hsl) / .5)">moderate @ 50%</div>
-  <div style="background-color: var(--bgc-bold)">bold</div>
-  <div style="background-color: hsla(var(--bgc-bold-hsl) / .5)">bold @ 50%</div>
-  <div style="background-color: var(--bgc-strong)">strong</div>
-  <div style="background-color: hsla(var(--bgc-strong-hsl) / .5)">strong @ 50%</div>
-  <div style="background-color: var(--bgc-contrast)">contrast</div>
-  <div style="background-color: hsla(var(--bgc-contrast-hsl) / .5)">contrast @ 50%</div>
-</div>
 
 Background colors for default application UI surfaces. Surface colors are containing blocks — such as pages, modals, tables, headers, and cards — containing foreground content or elements.
 
@@ -328,6 +337,8 @@ Background colors for default application UI surfaces. Surface colors are contai
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-critical-strong)</td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-critical-strong</td>
     </tr>
+  </tbody>
+  <tbody>
     <tr>
       <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-success"></div></th>
       <th scope="row" class="d-lh-300">
@@ -353,6 +364,8 @@ Background colors for default application UI surfaces. Surface colors are contai
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-success-strong)</td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-success-strong</td>
     </tr>
+  </tbody>
+  <tbody>
     <tr>
       <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-warning"></div></th>
       <th scope="row" class="d-lh-300">
@@ -378,6 +391,8 @@ Background colors for default application UI surfaces. Surface colors are contai
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-warning-strong)</td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-warning-strong</td>
     </tr>
+  </tbody>
+  <tbody>
     <tr>
       <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-info"></div></th>
       <th scope="row" class="d-lh-300">
@@ -410,16 +425,211 @@ Background colors for default application UI surfaces. Surface colors are contai
 
 Define the edge of key content area, components, or surfaces.
 
-<aside class="d-notice d-notice--info d-mt24 d-wmx100p" role="status" aria-hidden="false">
-  <div class="d-notice__icon">
-    <dt-icon name="info"></dt-icon>
-  </div>
-  <div class="d-notice__content d-stack4">
-    <p class="d-notice__message">
-      <strong>Planned</strong>. In the meantime continue to rely on components' built-in border colors and <router-link class="d-link" to="/utilities/borders/color.html">border color CSS utilities</router-link>, and work with your Product Designer to validate.
-    </p>
-  </div>
-</aside>
+<table class="d-table dialtone-doc-table">
+  <thead>
+    <tr>
+      <th scope="col" colspan="2">Color</th>
+      <th scope="col">CSS variable</th>
+      <th scope="col">CSS utility</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-primary d-ba d-bas-solid d-baw4 d-bc-subtle"></div></th>
+      <th scope="row" class="d-lh-300">
+        Subtle
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bc-subtle)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bc-subtle</td>
+    </tr>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-primary d-ba d-bas-solid d-baw4 d-bc-default"></div></th>
+      <th scope="row" class="d-lh-300">
+        Default
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bc-default)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bc-default</td>
+    </tr>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-primary d-ba d-bas-solid d-baw4 d-bc-moderate"></div></th>
+      <th scope="row" class="d-lh-300">
+        Moderate
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bc-moderate)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bc-moderate</td>
+    </tr>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-primary d-ba d-bas-solid d-baw4 d-bc-bold"></div></th>
+      <th scope="row" class="d-lh-300">
+        Bold
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bc-bold)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bc-bold</td>
+    </tr>
+    <tr>
+      <th scope="row" class="d-pr0">
+        <div class="d-bgc-contrast d-d-inline-flex">
+          <div class="d-bar-circle d-w42 d-h42 d-ba d-bas-solid d-baw4 d-bc-inverted-subtle"></div>
+        </div>
+      </th>
+      <th scope="row" class="d-lh-300">
+        Subtle inverted
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bc-inverted-subtle)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bc-inverted-subtle</td>
+    </tr>
+    <tr>
+      <th scope="row" class="d-pr0">
+        <div class="d-bgc-contrast d-d-inline-flex">
+          <div class="d-bar-circle d-w42 d-h42 d-ba d-bas-solid d-baw4 d-bc-inverted-default"></div>
+        </div>
+      </th>
+      <th scope="row" class="d-lh-300">
+        Default inverted
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bc-inverted-default)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bc-inverted-default</td>
+    </tr>
+    <tr>
+      <th scope="row" class="d-pr0">
+        <div class="d-bgc-contrast d-d-inline-flex">
+          <div class="d-bar-circle d-w42 d-h42 d-ba d-bas-solid d-baw4 d-bc-inverted-moderate"></div>
+        </div>
+      </th>
+      <th scope="row" class="d-lh-300">
+        Moderate inverted
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bc-inverted-moderate)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bc-inverted-moderate</td>
+    </tr>
+    <tr>
+      <th scope="row" class="d-pr0">
+        <div class="d-bgc-contrast d-d-inline-flex">
+          <div class="d-bar-circle d-w42 d-h42 d-ba d-bas-solid d-baw4 d-bc-inverted-bold"></div>
+        </div>
+      </th>
+      <th scope="row" class="d-lh-300">
+        Bold inverted
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bc-inverted-bold)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bc-inverted-bold</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-primary d-ba d-bas-solid d-baw4 d-bc-focus"></div></th>
+      <th scope="row" class="d-lh-300">
+        Focus
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bc-focus)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bc-focus</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-primary d-ba d-bas-solid d-baw4 d-bc-critical"></div></th>
+      <th scope="row" class="d-lh-300">
+        Critical
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bc-critical)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bc-critical</td>
+    </tr>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-primary d-ba d-bas-solid d-baw4 d-bc-critical-subtle"></div></th>
+      <th scope="row" class="d-lh-300">
+        Critical subtle
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bc-critical-subtle)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bc-critical-subtle</td>
+    </tr>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-primary d-ba d-bas-solid d-baw4 d-bc-critical-strong"></div></th>
+      <th scope="row" class="d-lh-300">
+        Critical strong
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bc-critical-strong)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bc-critical-strong</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-primary d-ba d-bas-solid d-baw4 d-bc-success"></div></th>
+      <th scope="row" class="d-lh-300">
+        Success
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bc-success)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bc-success</td>
+    </tr>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-primary d-ba d-bas-solid d-baw4 d-bc-success-subtle"></div></th>
+      <th scope="row" class="d-lh-300">
+        Success subtle
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bc-success-subtle)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bc-success-subtle</td>
+    </tr>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-primary d-ba d-bas-solid d-baw4 d-bc-success-strong"></div></th>
+      <th scope="row" class="d-lh-300">
+        Success strong
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bc-success-strong)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bc-success-strong</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-primary d-ba d-bas-solid d-baw4 d-bc-warning"></div></th>
+      <th scope="row" class="d-lh-300">
+        Warning
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bc-warning)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bc-warning</td>
+    </tr>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-primary d-ba d-bas-solid d-baw4 d-bc-warning-subtle"></div></th>
+      <th scope="row" class="d-lh-300">
+        Warning subtle
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bc-warning-subtle)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bc-warning-subtle</td>
+    </tr>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-primary d-ba d-bas-solid d-baw4 d-bc-warning-strong"></div></th>
+      <th scope="row" class="d-lh-300">
+        Warning strong
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bc-warning-strong)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bc-warning-strong</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-primary d-ba d-bas-solid d-baw4 d-bc-brand"></div></th>
+      <th scope="row" class="d-lh-300">
+        Brand
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bc-brand)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bc-brand</td>
+    </tr>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-primary d-ba d-bas-solid d-baw4 d-bc-brand-subtle"></div></th>
+      <th scope="row" class="d-lh-300">
+        Brand subtle
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bc-brand-subtle)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bc-brand-subtle</td>
+    </tr>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-primary d-ba d-bas-solid d-baw4 d-bc-brand-strong"></div></th>
+      <th scope="row" class="d-lh-300">
+        Brand strong
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bc-brand-strong)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bc-brand-strong</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Theme
 
