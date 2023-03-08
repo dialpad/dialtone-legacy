@@ -542,7 +542,7 @@ Define the edge of key content area, components, or surfaces.
         Sidebar
       </th>
       <td>
-        Row&nbsp;<code class="d-fs-100">:hover</code>
+        Row&nbsp;<code class="d-fs-100">hovering</code>
       </td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
         background-color
@@ -561,7 +561,7 @@ Define the edge of key content area, components, or surfaces.
         Sidebar
       </th>
       <td>
-        Row&nbsp;<code class="d-fs-100">:active</code>
+        Row&nbsp;<code class="d-fs-100">pressing</code>
       </td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
         background-color
