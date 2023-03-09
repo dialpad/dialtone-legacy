@@ -186,7 +186,7 @@ Foreground colors distinguishing important information with a status role.
         </div>
       </td>
       <th scope="row" class="d-lh-300">
-        Critical
+        Critical strong
         <div class="d-fw-normal d-fs-100">Expresses an error, danger, or otherwise critical state on surfaces that require a stronger contrast.</div>
       </th>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--fc-critical-strong)</td>
@@ -218,7 +218,7 @@ Foreground colors distinguishing important information with a status role.
         </div>
       </td>
       <th scope="row" class="d-lh-300">
-        Success
+        Success strong
         <div class="d-fw-normal d-fs-100">Indicates a strong positive state on surfaces that require a stronger contrast.</div>
       </th>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--fc-success-strong)</td>
