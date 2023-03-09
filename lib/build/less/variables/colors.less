@@ -80,7 +80,7 @@
 //  ----------------------------------------------------------------------------
 @focus-rings: {
     color-focus-ring:           hsla(var(--blue-300-hsl) / 1); // redundant for backwards compatibility
-    focus-ring:                 var(--color-focus-ring);
+    focus-ring:                 var(--bc-focus);
 }
 
 //  ============================================================================
@@ -90,15 +90,23 @@
 @surface-colors: {
     bgc-critical:              var(--red-100);
     bgc-critical-hsl:          var(--red-100-hsl);
+    bgc-critical-subtle:       #fff2f3;
+    bgc-critical-strong:       var(--red-400);
 
     bgc-info:                  var(--blue-100);
     bgc-info-hsl:              var(--blue-100-hsl);
+    bgc-info-subtle:           #f5f9fd;
+    bgc-info-strong:           var(--blue-400);
 
     bgc-warning:               var(--gold-100);
     bgc-warning-hsl:           var(--gold-100-hsl);
+    bgc-warning-subtle:        #fffae5;
+    bgc-warning-strong:        var(--gold-500);
 
     bgc-success:               var(--green-100);
     bgc-success-hsl:           var(--green-100-hsl);
+    bgc-success-subtle:        #f8fdf7;
+    bgc-success-strong:        var(--green-400);
 
     bgc-primary:               var(--white);
     bgc-primary-hsl:           var(--white-hsl);
@@ -120,6 +128,34 @@
 }
 
 //  ============================================================================
+//  $   BORDER COLORS
+//      Semantic border colors
+//  ----------------------------------------------------------------------------
+@border-colors: {
+    bc-subtle:            rgba(0, 0, 0, 0.1);
+    bc-default:           rgba(0, 0, 0, 0.18);
+    bc-moderate:          rgba(0, 0, 0, 0.34);
+    bc-bold:              rgba(0, 0, 0, 0.5);
+    bc-inverted-subtle:   rgba(255, 255, 255, 0.14);
+    bc-inverted-default:  rgba(255, 255, 255, 0.22);
+    bc-inverted-moderate: rgba(255, 255, 255, 0.38);
+    bc-inverted-bold:     rgba(255, 255, 255, 0.5);
+    bc-focus:             var(--blue-300);
+    bc-critical:          var(--red-300);
+    bc-critical-subtle:   var(--red-200);
+    bc-critical-strong:   var(--red-400);
+    bc-success:           var(--green-400);
+    bc-success-subtle:    var(--green-200);
+    bc-success-strong:    var(--green-500);
+    bc-warning:           var(--gold-400);
+    bc-warning-subtle:    var(--gold-200);
+    bc-warning-strong:    var(--gold-500);
+    bc-brand:             var(--purple-400);
+    bc-brand-subtle:      var(--purple-200);
+    bc-brand-strong:      var(--purple-500);
+}
+
+//  ============================================================================
 //  $   TYPE COLORS
 //      Various type color names
 //  ----------------------------------------------------------------------------
@@ -137,6 +173,9 @@
     fc-secondary-inverted:      var(--black-200);
     fc-secondary-inverted-hsl:  var(--black-200-hsl);
 
+    fc-tertiary-inverted:       var(--black-300);
+    fc-tertiary-inverted-hsl:   var(--black-300-hsl);
+
     fc-tertiary:                var(--black-600);
     fc-tertiary-hsl:            var(--black-600-hsl);
 
@@ -149,13 +188,19 @@
     fc-disabled-hsl:            var(--black-500-hsl);
 
     fc-critical:                var(--red-300);
+    fc-critical-strong:         var(--red-400);
     fc-critical-hsl:            var(--red-300-hsl);
+    fc-critical-strong-hsl:     var(--red-400-hsl);
 
     fc-error:                   var(--fc-critical);
+    fc-error-strong:            var(--fc-critical-strong);
     fc-error-hsl:               var(--fc-critical-hsl);
+    fc-error-strong-hsl:        var(--fc-critical-strong-hsl);
 
     fc-success:                 var(--green-400);
+    fc-success-strong:          var(--green-500);
     fc-success-hsl:             var(--green-400-hsl);
+    fc-success-strong-hsl:      var(--green-500-hsl);
 
     fc-warning:                 var(--gold-500);
     fc-warning-hsl:             var(--gold-500-hsl);
