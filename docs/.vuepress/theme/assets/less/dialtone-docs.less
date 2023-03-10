@@ -51,10 +51,14 @@ html {
   scroll-padding-top: 6.4rem;
 }
 
-// @TODO: Move this class into root-layout component on dialtone-vue
+// @TODO: Move to root-layout component on dialtone-vue
 .root-layout {
   min-height: 100vh;
 }
+.root-layout__content:focus-visible {
+  box-shadow: none;
+}
+
 
 //  ============================================================================
 //  $   SEARCH BUTTON
@@ -237,6 +241,9 @@ a.header-anchor {
   .d-body-base(); // TODO: when a redesign is imminent
   margin-bottom: var(--space-300);
   max-width: 75ch;
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .d-docsite--preview-header {
@@ -622,9 +629,9 @@ a.header-anchor {
   & {
     display: flex;
     flex-direction: column;
-    gap: var(--su24);
-    margin-top: var(--su16);
-    margin-bottom: var(--su16);
+    gap: var(--space-500);
+    margin-top: var(--space-500);
+    margin-bottom: var(--space-500);
 
     @media screen and (min-width: 640px) {
       flex-direction: row;
@@ -638,11 +645,11 @@ a.header-anchor {
     font-size: var(--fs-200);
 
     &--do {
-      color: var(--green-400);
+      color: var(--fc-success);
     }
 
     &--dont {
-      color: var(--red-400);
+      color: var(--fc-critical-strong);
     }
   }
 
@@ -662,6 +669,7 @@ a.header-anchor {
     &--dont {
       --usage-item-color-background: var(--bgc-critical);
     }
+
   }
 
   &__bd {
@@ -669,9 +677,13 @@ a.header-anchor {
     line-height: var(--lh-400);
 
     .d-docsite--unordered-list {
-      margin: 0 !important; // unfortunate
+      // unfortunate
+      margin: 0 !important;
       padding: 0;
       list-style: none;
+      * + * {
+        margin-top: var(--space-400);
+      }
     }
   }
 }

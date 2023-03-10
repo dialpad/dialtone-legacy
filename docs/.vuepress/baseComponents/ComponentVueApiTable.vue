@@ -48,15 +48,15 @@
         </th>
 
         <td
-          class="d-ff-mono d-fs-100 vue-api-table"
+          class="d-lh-300 vue-api-table"
         >
-          <div
+          <dt-stack
             v-if="description"
-            class="d-d-grid d-gg16 d-g-cols1"
+            gap="400"
           >
             <markdown-render :markdown="description" />
             <span v-if="type">
-              Type: <dt-badge>{{ type }}</dt-badge>
+              <span class="d-ff-mono d-fs-100 d-lh-300">Type:</span> <dt-badge>{{ type }}</dt-badge>
             </span>
             <dt-stack
               v-if="values"
@@ -64,7 +64,7 @@
               class="d-ai-center d-fw-wrap"
               gap="300"
             >
-              Values:
+              <span class="d-ff-mono d-fs-100 d-lh-300">Values:</span>
               <dt-badge
                 v-for="value in values"
 
@@ -73,7 +73,7 @@
                 {{ value }}
               </dt-badge>
             </dt-stack>
-          </div>
+          </dt-stack>
         </td>
         <td
           v-if="withDefault"
