@@ -1,3 +1,15 @@
+# [7.20.0](https://github.com/dialpad/dialtone/compare/v7.19.0...v7.20.0) (2023-03-10)
+
+
+### Documentation
+
+* **Theme:** housekeeping ([#841](https://github.com/dialpad/dialtone/issues/841)) ([233788c](https://github.com/dialpad/dialtone/commit/233788c56e4fe381c9d44cd8aa5ac353b5b00f67))
+
+
+### Features
+
+* **Semantic Colors:** moor border and surface styles ([#842](https://github.com/dialpad/dialtone/issues/842)) ([5574cd4](https://github.com/dialpad/dialtone/commit/5574cd4b3a33758ccc642236d0b6859503500ee9))
+
 # [7.19.0](https://github.com/dialpad/dialtone/compare/v7.18.1...v7.19.0) (2023-03-06)
 
 
