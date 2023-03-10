@@ -5,8 +5,8 @@ description: Dialtone is Dialpad's Design System that unites product teams aroun
 
 ## Release notes
 
-<div class="d-flg12 d-fl-col2">
-  <div class="d-fd-column">
+<div class="d-d-grid d-gg16 d-g-cols2 md:d-g-cols1">
+  <div >
     <h3 class="d-docsite--header-3">Dialtone</h3>
     <a
       class="d-d-inline-flex"
@@ -19,7 +19,7 @@ description: Dialtone is Dialpad's Design System that unites product teams aroun
     </a>
     <dialtone-changelog />
   </div>
-  <div class="d-fd-column">
+  <div >
     <h3 class="d-docsite--header-3">Dialtone-vue</h3>
     <a
       class="d-d-inline-flex"
