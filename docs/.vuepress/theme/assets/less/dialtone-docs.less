@@ -150,14 +150,14 @@ a.router-link-active {
 //  ----------------------------------------------------------------------------
 .dialtone-header {
   // TODO: redo 😜
-  border: var(--size-100) solid var(--black-300);
+  border: var(--size-100) solid var(--bc-default);
   background-color: var(--bgc-primary);
 }
 
 .dialtone-sidebar {
   // TODO: redo 😜
   background-color: var(--bgc-secondary);
-  border-right: var(--size-100) solid var(--black-200);
+  border-right: var(--size-100) solid var(--bc-subtle);
 
   &__list {
     width: calc(var(--size-300) * 64);
@@ -522,6 +522,7 @@ a.header-anchor {
   & {
     display: grid;
     grid-gap: var(--space-500);
+    margin-top: var(--space-500);
 
     @media screen and (min-width: 640px) {
       grid-gap: var(--space-600);
@@ -531,16 +532,12 @@ a.header-anchor {
     @media screen and (min-width: 768px) {
       grid-template-columns: [full-start] repeat(3, [col-start] var(--col-width, minmax(0, 1fr)) [col-end]) [full-end] !important;
     }
-
-    @media screen and (min-width: 1264px) {
-      margin-top: var(--space-600);
-    }
   }
 
   &__item {
     display: block;
     border: var(--size-100) solid;
-    border-color: var(--black-300);
+    border-color: var(--bc-default);
     border-radius: var(--size-400);
     overflow: hidden;
     text-decoration: none;
@@ -580,6 +577,9 @@ a.header-anchor {
   }
 
   &__details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-300);
     padding: var(--space-500);
   }
 
@@ -588,7 +588,7 @@ a.header-anchor {
     align-items: center;
     gap: var(--space-400);
     color: var(--fc-secondary);
-    line-height: var(--lh-400);
+    line-height: var(--lh-200);
     font-size: var(--fs-300);
     font-weight: var(--fw-semibold);
   }

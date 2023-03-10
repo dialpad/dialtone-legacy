@@ -10,7 +10,7 @@
       @click="(e) => { navigate(e); }"
     >
       <dt-card
-        class="d-mt16 d-bgc-primary d-bs-none h:d-bs-sm d-ba d-bar8 d-bbw1 d-bc-black-300"
+        class="d-mt16 d-bgc-primary d-bs-none h:d-bs-sm d-ba d-bar8 d-bbw1 d-bc-default"
       >
         <template #content>
           <blog-post

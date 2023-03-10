@@ -34,7 +34,7 @@ export default {
       return [
         'd-fl-center d-fd-column d-p24 d-w100p d-of-auto d-stack8',
         this.bgclass,
-        { 'd-ba d-bc-black-200 d-btr8 d-baw2': this.isSurfacePrimary },
+        { 'd-ba d-bc-subtle d-btr8 d-baw2': this.isSurfacePrimary },
         this.$attrs.class,
       ];
     },
