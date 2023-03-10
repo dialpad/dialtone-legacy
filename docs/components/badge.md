@@ -9,10 +9,10 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 ---
 
 <code-well-header bgclass="d-bgc-primary">
-  <div class="d-d-flex d-gg8 d-ai-center">
+  <dt-stack direction="row" gap="400" class="d-ai-center">
     <span class="d-badge"><span class="d-badge__label">Label</span></span>
     <span class="d-badge d-badge--count"><span class="d-badge__label">1</span></span>
-  </div>
+  </dt-stack>
 </code-well-header>
 
 <!-- <component-combinator component-name="DtBadge" /> -->
@@ -175,15 +175,20 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 ## Icon
 
 <code-well-header bgclass="d-bgc-primary">
-  <span class="d-badge">
-    <span class="d-badge__icon-left">
-      <dt-icon name="lightning-bolt" size="200" />
+  <dt-stack direction="row" gap="400">
+    <span class="d-badge">
+      <span class="d-badge__icon-left">
+        <dt-icon name="lightning-bolt" size="200" />
+      </span>
+      <span class="d-badge__label">Label</span>
     </span>
-    <span class="d-badge__label">Label</span>
-    <span class="d-badge__icon-right">
-      <dt-icon name="lightning-bolt" size="200" />
+    <span class="d-badge">
+      <span class="d-badge__label">Label</span>
+      <span class="d-badge__icon-right">
+        <dt-icon name="lightning-bolt" size="200" />
+      </span>
     </span>
-  </span>
+  </dt-stack>
 </code-well-header>
 
 ```html
@@ -192,19 +197,104 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
     <dt-icon name="lightning-bolt" size="200" />
   </span>
   <span class="d-badge__label">Label</span>
+</span>
+
+<span class="d-badge">
+  <span class="d-badge__label">Label</span>
   <span class="d-badge__icon-right">
     <dt-icon name="lightning-bolt" size="200" />
   </span>
 </span>
 ```
 
+## Decorative
+
+Decorative badges label and classify items for quick recognition.
+
+<code-well-header bgclass="d-bgc-primary">
+  <dt-stack direction="row" gap="500">
+    <dt-stack gap="500">
+      <span class="d-label-compact">Black</span>
+      <span class="d-badge d-badge--decorate-black-400"><span class="d-badge__decorative"></span><span class="d-badge__label">Label</span></span>
+      <span class="d-badge d-badge--decorate-black-500"><span class="d-badge__decorative"></span><span class="d-badge__label">Label</span></span>
+      <span class="d-badge d-badge--decorate-black-900"><span class="d-badge__decorative"></span><span class="d-badge__label">Label</span></span>
+    </dt-stack>
+    <dt-stack gap="500">
+      <span class="d-label-compact">Red</span>
+      <span class="d-badge d-badge--decorate-red-200"><span class="d-badge__decorative"></span><span class="d-badge__label">Label</span></span>
+      <span class="d-badge d-badge--decorate-red-300"><span class="d-badge__decorative"></span><span class="d-badge__label">Label</span></span>
+      <span class="d-badge d-badge--decorate-red-400"><span class="d-badge__decorative"></span><span class="d-badge__label">Label</span></span>
+    </dt-stack>
+    <dt-stack gap="500">
+      <span class="d-label-compact">Purple</span>
+      <span class="d-badge d-badge--decorate-purple-200"><span class="d-badge__decorative"></span><span class="d-badge__label">Label</span></span>
+      <span class="d-badge d-badge--decorate-purple-300"><span class="d-badge__decorative"></span><span class="d-badge__label">Label</span></span>
+      <span class="d-badge d-badge--decorate-purple-400"><span class="d-badge__decorative"></span><span class="d-badge__label">Label</span></span>
+      <span class="d-badge d-badge--decorate-purple-500"><span class="d-badge__decorative"></span><span class="d-badge__label">Label</span></span>
+    </dt-stack>
+    <dt-stack gap="500">
+      <span class="d-label-compact">Blue</span>
+      <span class="d-badge d-badge--decorate-blue-200"><span class="d-badge__decorative"></span><span class="d-badge__label">Label</span></span>
+      <span class="d-badge d-badge--decorate-blue-300"><span class="d-badge__decorative"></span><span class="d-badge__label">Label</span></span>
+      <span class="d-badge d-badge--decorate-blue-400"><span class="d-badge__decorative"></span><span class="d-badge__label">Label</span></span>
+    </dt-stack>
+    <dt-stack gap="500">
+      <span class="d-label-compact">Green</span>
+      <span class="d-badge d-badge--decorate-green-300"><span class="d-badge__decorative"></span><span class="d-badge__label">Label</span></span>
+      <span class="d-badge d-badge--decorate-green-400"><span class="d-badge__decorative"></span><span class="d-badge__label">Label</span></span>
+      <span class="d-badge d-badge--decorate-green-500"><span class="d-badge__decorative"></span><span class="d-badge__label">Label</span></span>
+    </dt-stack>
+    <dt-stack gap="500">
+      <span class="d-label-compact">Gold</span>
+      <span class="d-badge d-badge--decorate-gold-300"><span class="d-badge__decorative"></span><span class="d-badge__label">Label</span></span>
+      <span class="d-badge d-badge--decorate-gold-400"><span class="d-badge__decorative"></span><span class="d-badge__label">Label</span></span>
+      <span class="d-badge d-badge--decorate-gold-500"><span class="d-badge__decorative"></span><span class="d-badge__label">Label</span></span>
+    </dt-stack>
+    <dt-stack gap="500">
+      <span class="d-label-compact">Magenta</span>
+      <span class="d-badge d-badge--decorate-magenta-200"><span class="d-badge__decorative"></span><span class="d-badge__label">Label</span></span>
+      <span class="d-badge d-badge--decorate-magenta-300"><span class="d-badge__decorative"></span><span class="d-badge__label">Label</span></span>
+      <span class="d-badge d-badge--decorate-magenta-400"><span class="d-badge__decorative"></span><span class="d-badge__label">Label</span></span>
+    </dt-stack>
+  </dt-stack>
+</code-well-header>
+
+```html
+<span class="d-badge d-badge--decorate-{$color}">
+  <span class="d-badge__decorative"></span>
+  <span class="d-badge__label">Label</span>
+</span>
+```
+
+<dialtone-usage>
+<template #do>
+
+- Use for categories of items with a limited number of options (eg. call categories, AI moments).
+</template>
+<template #dont>
+
+- Use for categories of items with an unlimited or unknown number of options (eg. user-defined contact labels, RTA cards, contact centers).
+- Use for single items that are not part of a larger group.
+- Use for decoration only, to bring attention to part of the UI by using colors.
+- Use with `kind=count`, nor with any `type` that is not `default`.
+- Use in combination with an icon.
+- Change the customize the Badge's background color text style,
+- Extend the decorative slot color beyond what Dialtone provides.
+</template>
+</dialtone-usage>
+
+### Best practices
+
+- Favor lighter shades over darker ones.
+- Use each color hue before using the next available shade.
+
 ## Examples
 
 ### Label
 
 <code-well-header bgclass="d-bgc-primary">
-  <div>
-    <div class="d-d-flex d-gg8 d-ai-center">
+  <dt-stack gap="500">
+    <dt-stack direction="row" gap="400">
       <span class="d-badge">Co-host</span>
       <span class="d-badge">Customer</span>
       <span class="d-badge">
@@ -212,50 +302,38 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
           <dt-icon name="lock" size="200" />
         </span>
         <span class="d-badge__label">Locked</span>
-        </span>
+      </span>
       <span class="d-badge">
         <span class="d-badge__icon-left">
           <dt-icon name="message" size="200" />
         </span>
         <span class="d-badge__label">Chat log</span>
       </span>
-    </div>
-  </div>
-  <div>
-    <div class="d-d-flex d-gg8 d-ai-center">
+    </dt-stack>
+    <dt-stack direction="row" gap="400">
       <span class="d-badge d-badge--info"><span class="d-badge__label">In progress</span></span>
       <span class="d-badge d-badge--info"><span class="d-badge__label">Beta</span></span>
       <span class="d-badge d-badge--info"><span class="d-badge__label">Draft</span></span>
-    </div>
-  </div>
-  <div>
-    <div class="d-d-flex d-gg8 d-ai-center">
+    </dt-stack>
+    <dt-stack direction="row" gap="400">
       <span class="d-badge d-badge--warning"><span class="d-badge__label">Overdue</span></span>
-    </div>
-  </div>
-  <div>
-    <div class="d-d-flex d-gg8 d-ai-center">
+    </dt-stack>
+    <dt-stack direction="row" gap="400">
       <span class="d-badge d-badge--success"><span class="d-badge__label">Resolved</span></span>
-    </div>
-  </div>
-  <div>
-    <div class="d-d-flex d-gg8 d-ai-center">
+    </dt-stack>
+    <dt-stack direction="row" gap="400">
       <span class="d-badge d-badge--critical">
         <span class="d-badge__icon-left">
           <dt-icon name="record-filled" size="200" />
         </span>
         <span class="d-badge__label">Recording</span>
       </span>
-    </div>
-  </div>
-  <div>
-    <div class="d-d-flex d-gg8 d-ai-center">
+    </dt-stack>
+    <dt-stack direction="row" gap="400">
       <span class="d-badge d-badge--bulletin"><span class="d-badge__label">Live</span></span>
       <span class="d-badge d-badge--bulletin"><span class="d-badge__label">Presenter</span></span>
-    </div>
-  </div>
-  <div>
-    <div class="d-d-flex d-gg8 d-ai-center">
+    </dt-stack>
+    <dt-stack direction="row" gap="400">
       <span class="d-badge d-badge--ai">
         <span class="d-badge__icon-left">
           <dt-icon name="dialpad-ai" size="200" />
@@ -284,40 +362,36 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
         <span class="d-vi-visible-sr">Ai</span>
         <span class="d-badge__label">Transcript</span>
       </span>
-    </div>
-  </div>
+    </dt-stack>
+  </dt-stack>
 </code-well-header>
 
 ### Count
 
 <code-well-header bgclass="d-bgc-primary">
-  <div>
-    <div class="d-d-flex d-gg8 d-ai-center">
+  <dt-stack gap="500">
+    <dt-stack direction="row" gap="400">
       <span class="d-badge d-badge--count d-badge--success">
         <span class="d-badge__icon-left">
           <dt-icon name="arrow-up" size="200" />
         </span>
         <span class="d-badge__label">5%</span>
       </span>
-    </div>
-  </div>
-  <div>
-    <div class="d-d-flex d-gg8 d-ai-center">
+    </dt-stack>
+    <dt-stack direction="row" gap="400">
       <span class="d-badge d-badge--count d-badge--critical">
         <span class="d-badge__icon-left">
           <dt-icon name="arrow-down" size="200" />
         </span>
         <span class="d-badge__label">-12%</span>
       </span>
-    </div>
-  </div>
-  <div>
-    <div class="d-d-flex d-gg8 d-ai-center">
+    </dt-stack>
+    <dt-stack direction="row" gap="400">
       <span class="d-badge d-badge--count d-badge--bulletin"><span class="d-badge__label">1</span></span>
       <span class="d-badge d-badge--count d-badge--bulletin"><span class="d-badge__label">18</span></span>
       <span class="d-badge d-badge--count d-badge--bulletin"><span class="d-badge__label">99+</span></span>
-    </div>
-  </div>
+    </dt-stack>
+  </dt-stack>
 </code-well-header>
 
 ## Vue API
