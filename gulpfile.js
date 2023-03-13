@@ -30,17 +30,18 @@ const breakpoints = [
 ];
 //  -- CLASSES
 const classes = [
-  /^\.d-d-(flex|none|block)$/m, // Display Flex, None and Block
+  /\.d-d-(flex|none|block)$/, // Display Flex, None and Block
   '.d-t0',
-  /^\.d-p[t|r]([0-9]*|-unset)$/m, // Padding Top and Right
+  /\.d-p[t|r]([0-9]*|-unset)$/, // Padding Top and Right
   '.d-fd-column',
   '.d-ai-stretch',
   '.d-ps-relative',
-  /^\.d-mx([0-9]*|-(auto|unset))$/m, // Margin X
-  /^\.d-g-cols[0-9]*$/m, // Grid columns
-  /^\.d-(stack|flow|h|w|fs-)[0-9]*$/m, // Stack, Flow, Height, Widths and Font sizes
+  /\.d-mx([0-9]*|-(auto|unset))$/, // Margin X
+  /\.d-g-cols[0-9]*$/, // Grid columns
+  /\.d-(stack|flow|h|w|fs-)[0-9]*$/, // Stack, Flow, Height, Widths and Font sizes
   '.d-w100p',
-  /^\.d-wmx(-(auto|unset)|[0-9]*(ch|p))$/m, // Max widths
+  /\.d-wmx(-(auto|unset)|[0-9]*(ch|p))$/, // Max widths
+  '.d-bgc-red-200',
 ];
 
 //  ================================================================================
@@ -57,14 +58,14 @@ const through2 = require('through2');
 const argv = require('yargs').argv;
 
 //  @@ STYLES
-const postcss = settings.styles ? require('gulp-postcss') : null;
+const postCSS = settings.styles ? require('gulp-postcss') : null;
 // crawls .less dependencies for incremental building
-const cssnano = settings.styles ? require('cssnano') : null;
+const postCSSNano = settings.styles ? require('cssnano') : null;
 const less = settings.styles ? require('gulp-less') : null;
-const postcssResponsify = settings.styles
-  ? require('@dialpad/postcss-responsive-variations')({ breakpoints, classes })
+const postCSSResponsify = settings.styles
+  ? require('@dialpad/postcss-responsive-variations')({ breakpoints, classes, includeStates: true })
   : null;
-const postcssFocusVisible = settings.styles ? require('postcss-focus-visible') : null;
+const postCSSFocusVisible = settings.styles ? require('postcss-focus-visible') : null;
 const sourcemaps = require('gulp-sourcemaps');
 
 //  @@ SVGS
@@ -230,9 +231,9 @@ const libStyles = function (done) {
   return src(paths.styles.inputLib)
     .pipe(less())
     .pipe(replace('../../fonts/', '../fonts/'))
-    .pipe(postcss([postcssResponsify, postcssFocusVisible]))
+    .pipe(postCSS([postCSSResponsify, postCSSFocusVisible]))
     .pipe(dest(paths.styles.outputLib))
-    .pipe(postcss([cssnano]))
+    .pipe(postCSS([postCSSNano]))
     .pipe(rename({ suffix: '.min' }))
     .pipe(dest(paths.styles.outputLib));
 };
@@ -250,7 +251,7 @@ const libStylesDev = function (done) {
       return '../../build/less/' + sourcePath;
     }))
     .pipe(sourcemaps.write())
-    .pipe(postcss([postcssResponsify, postcssFocusVisible]))
+    .pipe(postCSS([postCSSResponsify, postCSSFocusVisible]))
     // concat the css into a single file
     .pipe(concat('dialtone.css'))
 
