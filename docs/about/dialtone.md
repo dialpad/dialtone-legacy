@@ -5,31 +5,35 @@ description: Dialtone is Dialpad's Design System that unites product teams aroun
 
 ## Release notes
 
-<div class="d-flg12 d-fl-col2">
-  <div class="d-fd-column">
-    <h3 class="d-docsite--header-3">Dialtone</h3>
-    <a
-      class="d-d-inline-flex"
-      href="https://github.com/dialpad/dialtone/"
-    >
-      <img
-        alt="Dialtone CSS version number"
-        src="https://img.shields.io/github/package-json/v/dialpad/dialtone?color=D3BCFF&label=CSS"
-      />
-    </a>
+<div class="d-d-grid d-gg16 d-g-cols2 md:d-g-cols1">
+  <div>
+    <dt-stack class="d-ai-center" direction="row" gap="400">
+      <h3 class="d-docsite--header-3">Dialtone</h3>
+      <a
+        class="d-d-inline-flex d-pt12"
+        href="https://github.com/dialpad/dialtone/"
+      >
+        <img
+          alt="Dialtone CSS version number"
+          src="https://img.shields.io/github/package-json/v/dialpad/dialtone?color=D3BCFF&label=CSS"
+        />
+      </a>
+    </dt-stack>
     <dialtone-changelog />
   </div>
-  <div class="d-fd-column">
-    <h3 class="d-docsite--header-3">Dialtone-vue</h3>
-    <a
-      class="d-d-inline-flex"
-      href="https://github.com/dialpad/dialtone-vue"
-    >
-      <img
-        alt="Dialtone Vue version number"
-        src="https://img.shields.io/github/package-json/v/dialpad/dialtone-vue/vue3?color=D3BCFF&label=Vue"
+  <div>
+    <dt-stack class="d-ai-center" direction="row" gap="400">
+      <h3 class="d-docsite--header-3">Dialtone-vue</h3>
+      <a
+        class="d-d-inline-flex d-pt12"
+        href="https://github.com/dialpad/dialtone-vue"
       >
-    </a>
+        <img
+          alt="Dialtone Vue version number"
+          src="https://img.shields.io/github/package-json/v/dialpad/dialtone-vue/vue3?color=D3BCFF&label=Vue"
+        >
+      </a>
+    </dt-stack>
     <dialtone-changelog project="DialtoneVue" />
   </div>
 </div>

@@ -51,10 +51,14 @@ html {
   scroll-padding-top: 6.4rem;
 }
 
-// @TODO: Move this class into root-layout component on dialtone-vue
+// @TODO: Move to root-layout component on dialtone-vue
 .root-layout {
   min-height: 100vh;
 }
+.root-layout__content:focus-visible {
+  box-shadow: none;
+}
+
 
 //  ============================================================================
 //  $   SEARCH BUTTON
@@ -146,17 +150,24 @@ a.router-link-active {
 //  ----------------------------------------------------------------------------
 .dialtone-header {
   // TODO: redo 😜
-  border: var(--size-100) solid var(--black-300);
+  border: var(--size-100) solid var(--bc-default);
   background-color: var(--bgc-primary);
 }
 
 .dialtone-sidebar {
   // TODO: redo 😜
   background-color: var(--bgc-secondary);
-  border-right: var(--size-100) solid var(--black-200);
+  border-right: var(--size-100) solid var(--bc-subtle);
 
   &__list {
     width: calc(var(--size-300) * 64);
+  }
+}
+
+.dialtone-release-notes {
+  a {
+    // Since markdown generates them, this is roundabout way of styling them
+    .d-link();
   }
 }
 
@@ -237,6 +248,9 @@ a.header-anchor {
   .d-body-base(); // TODO: when a redesign is imminent
   margin-bottom: var(--space-300);
   max-width: 75ch;
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .d-docsite--preview-header {
@@ -508,6 +522,7 @@ a.header-anchor {
   & {
     display: grid;
     grid-gap: var(--space-500);
+    margin-top: var(--space-500);
 
     @media screen and (min-width: 640px) {
       grid-gap: var(--space-600);
@@ -517,16 +532,12 @@ a.header-anchor {
     @media screen and (min-width: 768px) {
       grid-template-columns: [full-start] repeat(3, [col-start] var(--col-width, minmax(0, 1fr)) [col-end]) [full-end] !important;
     }
-
-    @media screen and (min-width: 1264px) {
-      margin-top: var(--space-600);
-    }
   }
 
   &__item {
     display: block;
     border: var(--size-100) solid;
-    border-color: var(--black-300);
+    border-color: var(--bc-default);
     border-radius: var(--size-400);
     overflow: hidden;
     text-decoration: none;
@@ -566,6 +577,9 @@ a.header-anchor {
   }
 
   &__details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-300);
     padding: var(--space-500);
   }
 
@@ -574,7 +588,7 @@ a.header-anchor {
     align-items: center;
     gap: var(--space-400);
     color: var(--fc-secondary);
-    line-height: var(--lh-400);
+    line-height: var(--lh-200);
     font-size: var(--fs-300);
     font-weight: var(--fw-semibold);
   }
@@ -622,9 +636,9 @@ a.header-anchor {
   & {
     display: flex;
     flex-direction: column;
-    gap: var(--su24);
-    margin-top: var(--su16);
-    margin-bottom: var(--su16);
+    gap: var(--space-500);
+    margin-top: var(--space-500);
+    margin-bottom: var(--space-500);
 
     @media screen and (min-width: 640px) {
       flex-direction: row;
@@ -638,11 +652,11 @@ a.header-anchor {
     font-size: var(--fs-200);
 
     &--do {
-      color: var(--green-400);
+      color: var(--fc-success);
     }
 
     &--dont {
-      color: var(--red-400);
+      color: var(--fc-critical-strong);
     }
   }
 
@@ -662,6 +676,7 @@ a.header-anchor {
     &--dont {
       --usage-item-color-background: var(--bgc-critical);
     }
+
   }
 
   &__bd {
@@ -669,9 +684,13 @@ a.header-anchor {
     line-height: var(--lh-400);
 
     .d-docsite--unordered-list {
-      margin: 0 !important; // unfortunate
+      // unfortunate
+      margin: 0 !important;
       padding: 0;
       list-style: none;
+      * + * {
+        margin-top: var(--space-400);
+      }
     }
   }
 }

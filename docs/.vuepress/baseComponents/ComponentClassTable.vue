@@ -29,14 +29,14 @@
           class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100"
           v-text="`.${className}`"
         />
-        <td class="d-ff-mono d-fs-100">
+        <td class="d-ff-mono d-fs-100 d-lh-300">
           <span
             class="code-example--inline"
             v-text="applies"
           />
         </td>
         <td
-          class="d-fs-100"
+          class="d-fs-100 d-lh-300"
           v-text="description"
         />
       </tr>
