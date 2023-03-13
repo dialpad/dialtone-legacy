@@ -1,3 +1,11 @@
+# [7.21.0](https://github.com/dialpad/dialtone/compare/v7.20.0...v7.21.0) (2023-03-13)
+
+
+### Features
+
+* **Badge:** new decorative prop style ([#843](https://github.com/dialpad/dialtone/issues/843)) ([21cf460](https://github.com/dialpad/dialtone/commit/21cf460c9b3be9981902bf81de7b79ca1ccac812))
+* new dialbot logo ([#844](https://github.com/dialpad/dialtone/issues/844)) ([c561e7f](https://github.com/dialpad/dialtone/commit/c561e7f4028741a1edd6e52f896832dc62d79d9c))
+
 # [7.20.0](https://github.com/dialpad/dialtone/compare/v7.19.0...v7.20.0) (2023-03-10)
 
 
