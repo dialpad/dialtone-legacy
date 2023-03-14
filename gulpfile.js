@@ -41,7 +41,6 @@ const classes = [
   /\.d-(stack|flow|h|w|fs-)[0-9]*$/, // Stack, Flow, Height, Widths and Font sizes
   '.d-w100p',
   /\.d-wmx(-(auto|unset)|[0-9]*(ch|p))$/, // Max widths
-  '.d-bgc-red-200',
 ];
 
 //  ================================================================================
