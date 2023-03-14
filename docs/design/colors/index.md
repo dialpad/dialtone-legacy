@@ -278,7 +278,7 @@ Background colors for default application UI surfaces. Surface colors are contai
       <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-secondary-opaque d-ba d-bc-black-300 d-bas-dashed"></div></th>
       <th scope="row" class="d-lh-300">
         Secondary opaque
-        <div class="d-fw-normal d-fs-100">Secondary surface with opaque background color.</div>
+        <div class="d-fw-normal d-fs-100">Secondary surface as opaque background color.</div>
       </th>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-secondary-opaque)</td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-secondary-opapue</td>
