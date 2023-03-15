@@ -275,6 +275,15 @@ Background colors for default application UI surfaces. Surface colors are contai
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-secondary</td>
     </tr>
     <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-secondary-opaque d-ba d-bc-black-300 d-bas-dashed"></div></th>
+      <th scope="row" class="d-lh-300">
+        Secondary opaque
+        <div class="d-fw-normal d-fs-100">Secondary surface as opaque background color.</div>
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-secondary-opaque)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-secondary-opapue</td>
+    </tr>
+    <tr>
       <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-moderate"></div></th>
       <th scope="row" class="d-lh-300">
         Moderate
@@ -284,6 +293,15 @@ Background colors for default application UI surfaces. Surface colors are contai
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-moderate</td>
     </tr>
     <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-moderate-opaque"></div></th>
+      <th scope="row" class="d-lh-300">
+        Moderate opaque
+        <div class="d-fw-normal d-fs-100">Moderate surface as opaque background color.</div>
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-moderate-opaque)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-moderate-opaque</td>
+    </tr>
+    <tr>
       <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-bold"></div></th>
       <th scope="row" class="d-lh-300">
         Bold
@@ -291,6 +309,15 @@ Background colors for default application UI surfaces. Surface colors are contai
       </th>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-bold)</td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-bold</td>
+    </tr>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-bold-opaque"></div></th>
+      <th scope="row" class="d-lh-300">
+        Bold opaque
+        <div class="d-fw-normal d-fs-100">Bold surface as opaque background color.</div>
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-bold-opaque)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-bold-opaque</td>
     </tr>
     <tr>
       <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-strong"></div></th>
@@ -322,12 +349,30 @@ Background colors for default application UI surfaces. Surface colors are contai
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-critical</td>
     </tr>
     <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-critical-opaque"></div></th>
+      <th scope="row" class="d-lh-300">
+        Critical opaque
+        <div class="d-fw-normal d-fs-100">Critical surface as opaque background color.</div>
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-critical-opaque)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-critical-opaque</td>
+    </tr>
+    <tr>
       <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-critical-subtle"></div></th>
       <th scope="row" class="d-lh-300">
         Critical subtle
       </th>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-critical-subtle)</td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-critical-subtle</td>
+    </tr>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-critical-subtle-opaque"></div></th>
+      <th scope="row" class="d-lh-300">
+        Critical subtle opaque
+        <div class="d-fw-normal d-fs-100">Critical subtle surface as opaque background color.</div>
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-critical-subtle-opaque)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-critical-subtle-opaque</td>
     </tr>
     <tr>
       <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-critical-strong"></div></th>
@@ -349,12 +394,30 @@ Background colors for default application UI surfaces. Surface colors are contai
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-success</td>
     </tr>
     <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-success-opaque"></div></th>
+      <th scope="row" class="d-lh-300">
+        Success opaque
+        <div class="d-fw-normal d-fs-100">Success surface as opaque background color.</div>
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-success-opaque)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-success-opaque</td>
+    </tr>
+    <tr>
       <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-success-subtle"></div></th>
       <th scope="row" class="d-lh-300">
         Success subtle
       </th>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-success-subtle)</td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-success-subtle</td>
+    </tr>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-success-subtle-opaque"></div></th>
+      <th scope="row" class="d-lh-300">
+        Success subtle opaque
+        <div class="d-fw-normal d-fs-100">Success subtle surface as opaque background color.</div>
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-success-subtle-opaque)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-success-subtle-opaque</td>
     </tr>
     <tr>
       <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-success-strong"></div></th>
@@ -376,12 +439,30 @@ Background colors for default application UI surfaces. Surface colors are contai
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-warning</td>
     </tr>
     <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-warning-opaque"></div></th>
+      <th scope="row" class="d-lh-300">
+        Warning opaque
+        <div class="d-fw-normal d-fs-100">Warning surface as opaque background color</div>
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-warning-opaque)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-warning-opaque</td>
+    </tr>
+    <tr>
       <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-warning-subtle"></div></th>
       <th scope="row" class="d-lh-300">
         Warning subtle
       </th>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-warning-subtle)</td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-warning-subtle</td>
+    </tr>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-warning-subtle-opaque"></div></th>
+      <th scope="row" class="d-lh-300">
+        Warning subtle opaque
+        <div class="d-fw-normal d-fs-100">Warning subtle surface as opaque background color</div>
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-warning-subtle-opaque)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-warning-subtle-opaque</td>
     </tr>
     <tr>
       <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-warning-strong"></div></th>
@@ -403,12 +484,30 @@ Background colors for default application UI surfaces. Surface colors are contai
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-info</td>
     </tr>
     <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-info-opaque"></div></th>
+      <th scope="row" class="d-lh-300">
+        Info opaque
+        <div class="d-fw-normal d-fs-100">Info surface as opaque background color.</div>
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-info-opaque)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-info-opaque</td>
+    </tr>
+    <tr>
       <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-info-subtle"></div></th>
       <th scope="row" class="d-lh-300">
         Info subtle
       </th>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-info-subtle)</td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-info-subtle</td>
+    </tr>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-info-subtle-opaque"></div></th>
+      <th scope="row" class="d-lh-300">
+        Info subtle opaque
+        <div class="d-fw-normal d-fs-100">Info surface as opaque background color.</div>
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-info-subtle-opaque)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-info-subtle-opaque</td>
     </tr>
     <tr>
       <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-info-strong"></div></th>
