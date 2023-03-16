@@ -1,3 +1,17 @@
+# [7.22.0](https://github.com/dialpad/dialtone/compare/v7.21.0...v7.22.0) (2023-03-16)
+
+
+### Bug Fixes
+
+* **Input:** fixed caret-color suppressed in firefox ([#848](https://github.com/dialpad/dialtone/issues/848)) ([70dd455](https://github.com/dialpad/dialtone/commit/70dd455e43f3ba0119159bd62f7e2f3d73246115))
+* postcss responsive variations ([#845](https://github.com/dialpad/dialtone/issues/845)) ([8028581](https://github.com/dialpad/dialtone/commit/8028581ce0e3df75412a073081ed802f84a91605))
+* update dialbot logo with finalized version ([#846](https://github.com/dialpad/dialtone/issues/846)) ([35f2202](https://github.com/dialpad/dialtone/commit/35f2202a3578d567289dc4bd0627763868fbd19f))
+
+
+### Features
+
+* **Semantic Colors:** opaque surfaces ([#847](https://github.com/dialpad/dialtone/issues/847)) ([0765460](https://github.com/dialpad/dialtone/commit/0765460a5c759b95b061903e2eb19342a7bc31b2))
+
 # [7.21.0](https://github.com/dialpad/dialtone/compare/v7.20.0...v7.21.0) (2023-03-13)
 
 
