@@ -1,3 +1,10 @@
+## [7.22.1](https://github.com/dialpad/dialtone/compare/v7.22.0...v7.22.1) (2023-03-24)
+
+
+### Bug Fixes
+
+* **Avatar:** change to display flex ([#852](https://github.com/dialpad/dialtone/issues/852)) ([9c23383](https://github.com/dialpad/dialtone/commit/9c23383529dfcbe5c383ffdefa6eab54183151eb))
+
 # [7.22.0](https://github.com/dialpad/dialtone/compare/v7.21.0...v7.22.0) (2023-03-16)
 
 
