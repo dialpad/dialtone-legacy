@@ -1,3 +1,16 @@
+## [7.22.2](https://github.com/dialpad/dialtone/compare/v7.22.1...v7.22.2) (2023-03-24)
+
+
+### Bug Fixes
+
+* **Badge:** corrected ai gradient direction ([#854](https://github.com/dialpad/dialtone/issues/854)) ([2f203b5](https://github.com/dialpad/dialtone/commit/2f203b5dfde9dc37b7b7014228f743bf31131697))
+* **Validation Messages:** fix overlap with long message ([#855](https://github.com/dialpad/dialtone/issues/855)) ([2ba8db0](https://github.com/dialpad/dialtone/commit/2ba8db04c361821d2a811a879a8a3394f2126882))
+
+
+### Documentation
+
+* fixes build locally link ([#851](https://github.com/dialpad/dialtone/issues/851)) ([2badd64](https://github.com/dialpad/dialtone/commit/2badd6440c3f35f9afab19983c8db05addfab051))
+
 ## [7.22.1](https://github.com/dialpad/dialtone/compare/v7.22.0...v7.22.1) (2023-03-24)
 
 
