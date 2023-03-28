@@ -62,7 +62,7 @@ const postCSS = settings.styles ? require('gulp-postcss') : null;
 const postCSSNano = settings.styles ? require('cssnano') : null;
 const less = settings.styles ? require('gulp-less') : null;
 const postCSSResponsify = settings.styles
-  ? require('@dialpad/postcss-responsive-variations')({ breakpoints, classes, includeStates: true })
+  ? require('@dialpad/postcss-responsive-variations')({ breakpoints, classes })
   : null;
 const postCSSFocusVisible = settings.styles ? require('postcss-focus-visible') : null;
 const sourcemaps = require('gulp-sourcemaps');
