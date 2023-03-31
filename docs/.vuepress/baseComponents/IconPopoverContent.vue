@@ -3,7 +3,6 @@
     <dt-icon
       ref="iconPreview"
       :name="iconName"
-      class="d-mb8"
       :size="selectedSize"
     />
   </div>
