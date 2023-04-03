@@ -532,200 +532,20 @@ Define the edge of key content area, components, or surfaces.
       <th scope="col">CSS utility</th>
     </tr>
   </thead>
-  <tbody>
-    <tr>
-      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-primary d-ba d-bas-solid d-baw4 d-bc-subtle"></div></th>
-      <th scope="row" class="d-lh-300">
-        Subtle
-      </th>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bc-subtle)</td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bc-subtle</td>
-    </tr>
-    <tr>
-      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-primary d-ba d-bas-solid d-baw4 d-bc-default"></div></th>
-      <th scope="row" class="d-lh-300">
-        Default
-      </th>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bc-default)</td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bc-default</td>
-    </tr>
-    <tr>
-      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-primary d-ba d-bas-solid d-baw4 d-bc-moderate"></div></th>
-      <th scope="row" class="d-lh-300">
-        Moderate
-      </th>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bc-moderate)</td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bc-moderate</td>
-    </tr>
-    <tr>
-      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-primary d-ba d-bas-solid d-baw4 d-bc-bold"></div></th>
-      <th scope="row" class="d-lh-300">
-        Bold
-      </th>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bc-bold)</td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bc-bold</td>
-    </tr>
+  <tbody v-for="c in borders">
     <tr>
       <th scope="row" class="d-pr0">
-        <div class="d-bgc-contrast d-d-inline-flex">
-          <div class="d-bar-circle d-w42 d-h42 d-ba d-bas-solid d-baw4 d-bc-inverted-subtle"></div>
+        <div
+            :class="['d-d-inline-flex', {'d-bgc-contrast': c.includes('inverted')}]"
+        >
+            <div :class="`d-bar-circle d-w42 d-h42 d-ba d-bas-solid d-baw4 d-bc-${c}`"></div>
         </div>
       </th>
-      <th scope="row" class="d-lh-300">
-        Subtle inverted
+      <th scope="row" class="d-lh-300 d-tt-capitalize">
+        {{ c.replace('-', ' ') }}
       </th>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bc-inverted-subtle)</td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bc-inverted-subtle</td>
-    </tr>
-    <tr>
-      <th scope="row" class="d-pr0">
-        <div class="d-bgc-contrast d-d-inline-flex">
-          <div class="d-bar-circle d-w42 d-h42 d-ba d-bas-solid d-baw4 d-bc-inverted-default"></div>
-        </div>
-      </th>
-      <th scope="row" class="d-lh-300">
-        Default inverted
-      </th>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bc-inverted-default)</td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bc-inverted-default</td>
-    </tr>
-    <tr>
-      <th scope="row" class="d-pr0">
-        <div class="d-bgc-contrast d-d-inline-flex">
-          <div class="d-bar-circle d-w42 d-h42 d-ba d-bas-solid d-baw4 d-bc-inverted-moderate"></div>
-        </div>
-      </th>
-      <th scope="row" class="d-lh-300">
-        Moderate inverted
-      </th>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bc-inverted-moderate)</td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bc-inverted-moderate</td>
-    </tr>
-    <tr>
-      <th scope="row" class="d-pr0">
-        <div class="d-bgc-contrast d-d-inline-flex">
-          <div class="d-bar-circle d-w42 d-h42 d-ba d-bas-solid d-baw4 d-bc-inverted-bold"></div>
-        </div>
-      </th>
-      <th scope="row" class="d-lh-300">
-        Bold inverted
-      </th>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bc-inverted-bold)</td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bc-inverted-bold</td>
-    </tr>
-  </tbody>
-  <tbody>
-    <tr>
-      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-primary d-ba d-bas-solid d-baw4 d-bc-focus"></div></th>
-      <th scope="row" class="d-lh-300">
-        Focus
-      </th>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bc-focus)</td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bc-focus</td>
-    </tr>
-  </tbody>
-  <tbody>
-    <tr>
-      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-primary d-ba d-bas-solid d-baw4 d-bc-critical"></div></th>
-      <th scope="row" class="d-lh-300">
-        Critical
-      </th>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bc-critical)</td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bc-critical</td>
-    </tr>
-    <tr>
-      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-primary d-ba d-bas-solid d-baw4 d-bc-critical-subtle"></div></th>
-      <th scope="row" class="d-lh-300">
-        Critical subtle
-      </th>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bc-critical-subtle)</td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bc-critical-subtle</td>
-    </tr>
-    <tr>
-      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-primary d-ba d-bas-solid d-baw4 d-bc-critical-strong"></div></th>
-      <th scope="row" class="d-lh-300">
-        Critical strong
-      </th>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bc-critical-strong)</td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bc-critical-strong</td>
-    </tr>
-  </tbody>
-  <tbody>
-    <tr>
-      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-primary d-ba d-bas-solid d-baw4 d-bc-success"></div></th>
-      <th scope="row" class="d-lh-300">
-        Success
-      </th>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bc-success)</td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bc-success</td>
-    </tr>
-    <tr>
-      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-primary d-ba d-bas-solid d-baw4 d-bc-success-subtle"></div></th>
-      <th scope="row" class="d-lh-300">
-        Success subtle
-      </th>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bc-success-subtle)</td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bc-success-subtle</td>
-    </tr>
-    <tr>
-      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-primary d-ba d-bas-solid d-baw4 d-bc-success-strong"></div></th>
-      <th scope="row" class="d-lh-300">
-        Success strong
-      </th>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bc-success-strong)</td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bc-success-strong</td>
-    </tr>
-  </tbody>
-  <tbody>
-    <tr>
-      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-primary d-ba d-bas-solid d-baw4 d-bc-warning"></div></th>
-      <th scope="row" class="d-lh-300">
-        Warning
-      </th>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bc-warning)</td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bc-warning</td>
-    </tr>
-    <tr>
-      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-primary d-ba d-bas-solid d-baw4 d-bc-warning-subtle"></div></th>
-      <th scope="row" class="d-lh-300">
-        Warning subtle
-      </th>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bc-warning-subtle)</td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bc-warning-subtle</td>
-    </tr>
-    <tr>
-      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-primary d-ba d-bas-solid d-baw4 d-bc-warning-strong"></div></th>
-      <th scope="row" class="d-lh-300">
-        Warning strong
-      </th>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bc-warning-strong)</td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bc-warning-strong</td>
-    </tr>
-  </tbody>
-  <tbody>
-    <tr>
-      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-primary d-ba d-bas-solid d-baw4 d-bc-brand"></div></th>
-      <th scope="row" class="d-lh-300">
-        Brand
-      </th>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bc-brand)</td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bc-brand</td>
-    </tr>
-    <tr>
-      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-primary d-ba d-bas-solid d-baw4 d-bc-brand-subtle"></div></th>
-      <th scope="row" class="d-lh-300">
-        Brand subtle
-      </th>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bc-brand-subtle)</td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bc-brand-subtle</td>
-    </tr>
-    <tr>
-      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-primary d-ba d-bas-solid d-baw4 d-bc-brand-strong"></div></th>
-      <th scope="row" class="d-lh-300">
-        Brand strong
-      </th>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bc-brand-strong)</td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bc-brand-strong</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bc-{{c}})</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bc-{{c}}</td>
     </tr>
   </tbody>
 </table>
@@ -868,7 +688,9 @@ Define the edge of key content area, components, or surfaces.
     </tr>
     <tr>
       <td class="d-pl0">
-        <div class="d-theme-sidebar-icon-fc d-p6 d-fco8-circle h:d-fco100 d-ta-center"> <dt-icon name="info"></dt-icon> </div>
+        <div class="d-theme-sidebar-icon-fc d-p6 d-fco8-circle h:d-fco100 d-ta-center">
+            <dt-icon name="info"></dt-icon>
+        </div>
       </td>
       <th scope="row">
         Sidebar
@@ -1108,4 +930,8 @@ Base colors are the literal value of all available colors. Use these if all abst
 
 Each of the colors listed above references one of these. For example, `var(--fc-primary)` is an alias to `var(--black-900)`, and `var(--fc-critical)` is an alias to `var(--red-300)`.
 
-<colors></colors>
+<colors-catalog />
+
+<script setup>
+    import { borders } from '@data/colors.json';
+</script>

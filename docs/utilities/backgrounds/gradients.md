@@ -93,7 +93,7 @@ Use `fv:d-bgg-{from|to}-{color}` to change an element's background gradient star
 
 <script setup>
   import { gradients } from '@data/backgrounds.json';
-  import colors from '@data/colors.json';
+  import { base as baseColors} from '@data/colors.json';
 </script>
 
 ## Directions
@@ -123,7 +123,7 @@ The starting stop (`d-bgg-from-{color}`) should be declared. Optionally an endin
 <utility-class-table>
  <template #content>
         <div v-for="direction in ['from', 'to']" style="display: contents">
-          <tbody v-for="{ color, stops } in colors">
+          <tbody v-for="{ color, stops } in baseColors">
               <tr v-for="{ stop } in stops">
                   <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-bgg-{{ direction }}-{{ color }}-{{ stop }}</th>
                   <td>

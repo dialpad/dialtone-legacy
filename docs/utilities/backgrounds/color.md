@@ -91,7 +91,7 @@ Use `fv:d-bgc-{color}` to change an element's `:focus-visible` state background 
 ```
 
 <script setup>
-  import colors from '@data/colors.json';
+  import { base as baseColors} from '@data/colors.json';
 </script>
 
 ## Classes
@@ -259,7 +259,7 @@ Use `fv:d-bgc-{color}` to change an element's `:focus-visible` state background 
               </td>
           </tr>
       </tbody>
-      <tbody v-for="{ color, stops } in colors">
+      <tbody v-for="{ color, stops } in baseColors">
         <tr v-for="{ stop } in stops">
             <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-bgc-{{ color }}-{{ stop }}</th>
             <td>

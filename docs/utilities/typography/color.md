@@ -109,7 +109,7 @@ Use `d:d-fc-{color}` to set a different text color when the user prefers dark mo
 
 <script setup>
   import { fontColorVars } from '@data/type.json';
-  import colors from '@data/colors.json';
+  import { base as baseColors } from '@data/colors.json';
 </script>
 
 ## Classes
@@ -191,7 +191,7 @@ Use `d:d-fc-{color}` to set a different text color when the user prefers dark mo
           </td>
         </tr>
       </tbody>
-      <tbody v-for="{ color, stops } in colors">
+      <tbody v-for="{ color, stops } in baseColors">
         <tr v-for="{ stop } in stops.reverse()">
           <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-fc-{{ color }}-{{ stop }}</th>
           <td>
