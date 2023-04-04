@@ -97,52 +97,54 @@ Use `fv:d-bc-{color}` to change an element's border color when in `:focus-visibl
 <button class="d-ba d-baw2 d-bc-red-300 fv:d-bc-purple-400">...</button>
 ```
 
-<script setup>
-  import colors from '@data/colors.json';
-</script>
-
 ## Classes
 
 <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
   <utility-class-table>
     <template #content>
       <tbody>
-          <tr>
-              <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-bc-transparent</th>
+          <tr v-for="c in special">
+              <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-bc-{{c}}</th>
               <td>
                   <div class="d-d-flex d-jc-space-between d-ai-center">
                       <div class="d-fl-grow1 d-ff-mono d-fs-100">
-                          border-color: transparent !important;
+                        <span v-if="c === 'white'">
+                            --bco: 100%;<br/>
+                            border-color: hsla(var(--{{ c }}-h) var(--{{ c }}-s) var(--{{ c }}-l) / var(--bco)) !important;
+                        </span>
+                        <span v-else>border-color: {{c}} !important;</span>
                       </div>
-                      <div class="d-fl-shrink0 d-m4 d-ml16 d-h42 d-w42 d-bar4 d-bc-transparent d-ba d-baw2"></div>
-                  </div>
-              </td>
-          </tr>
-          <tr>
-              <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-bc-unset</th>
-              <td>
-                  <div class="d-d-flex d-jc-space-between d-ai-center">
-                      <div class="d-fl-grow1 d-ff-mono d-fs-100">
-                          border-color: unset !important;
+                      <div
+                        :class="['d-d-inline-flex', {'d-bgc-contrast': c.includes('white')}]"
+                      >
+                        <div
+                            :class="`d-fl-shrink0 d-m4 d-h42 d-w42 d-bar4 d-bc-${c} d-ba d-baw2`"
+                        />
                       </div>
-                      <div class="d-fl-shrink0 d-m4 d-ml16 d-h42 d-w42 d-bar4 d-bc-unset d-ba d-baw2"></div>
-                  </div>
-              </td>
-          </tr>
-          <tr>
-              <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-bc-white</th>
-              <td>
-                  <div class="d-d-flex d-jc-space-between d-ai-center">
-                      <div class="d-fl-grow1 d-ff-mono d-fs-100">
-                          --bco: 100%;<br/>
-                          border-color: hsla(var(--white-h) var(--white-s) var(--white-l) / var(--bco)) !important;
-                      </div>
-                      <div class="d-fl-shrink0 d-d-flex d-m4 d-p4 d-ml16 d-h42 d-w42 d-bar4 d-bgc-black-700"><div class="d-w100p d-h100p d-bc-white d-ba d-bar4"></div></div>
                   </div>
               </td>
           </tr>
       </tbody>
-      <tbody v-for="{color: c, stops} in colors">
+      <tbody>
+          <tr v-for="c in borders">
+              <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-bc-{{c}}</th>
+              <td>
+                  <div class="d-d-flex d-jc-space-between d-ai-center">
+                      <div class="d-fl-grow1 d-ff-mono d-fs-100">
+                        <span>border-color: var(--bc-{{c}})</span>
+                      </div>
+                      <div
+                        :class="['d-d-inline-flex', {'d-bgc-contrast': c.includes('inverted')}]"
+                      >
+                        <div
+                            :class="`d-fl-shrink0 d-m4 d-h42 d-w42 d-bar4 d-bc-${c} d-ba d-baw2`"
+                        />
+                      </div>
+                  </div>
+              </td>
+          </tr>
+      </tbody>
+      <tbody v-for="{color: c, stops} in base">
           <tr v-for="{ stop, copy } in stops">
               <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-bc-{{ c }}-{{ stop }}</th>
               <td>
@@ -163,3 +165,7 @@ Use `fv:d-bc-{color}` to change an element's border color when in `:focus-visibl
     </template>
   </utility-class-table>
 </div>
+
+<script setup>
+import {base, special, borders} from '@data/colors.json';
+</script>

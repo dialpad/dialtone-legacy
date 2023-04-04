@@ -64,7 +64,7 @@ Use `d-dco{n}` to change a divider opacity value.
 ```
 
 <script setup>
-  import colors from '@data/colors.json';
+  import { base as baseColors} from '@data/colors.json';
 </script>
 
 ## Classes
@@ -72,7 +72,7 @@ Use `d-dco{n}` to change a divider opacity value.
 <div class="d-h464 d-of-y-scroll d-bb d-bc-black-200">
   <utility-class-table>
     <template #content>
-      <tbody v-for="{ color: c, stops } in colors">
+      <tbody v-for="{ color: c, stops } in baseColors">
         <tr v-for="{ stop, copy } in stops">
           <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-divide-{{ c }}-{{ stop }}</th>
           <td>

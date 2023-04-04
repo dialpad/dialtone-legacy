@@ -26,7 +26,7 @@ export default {
 
   async beforeCreate () {
     const data = await import('../../_data/colors.json');
-    this.colors = data.default;
+    this.colors = data.base;
   },
 };
 </script>

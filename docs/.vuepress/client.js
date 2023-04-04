@@ -2,7 +2,7 @@ import { defineClientConfig } from '@vuepress/client';
 
 // Common views
 import Icons from './views/Icons.vue';
-import Colors from './views/Colors.vue';
+import ColorsCatalog from './views/ColorsCatalog.vue';
 import Overview from './views/Overview.vue';
 
 // Base components
@@ -30,7 +30,7 @@ export default defineClientConfig({
   enhance ({ app, router, siteData }) {
     // Common views
     app.component('Icons', Icons);
-    app.component('Colors', Colors);
+    app.component('ColorsCatalog', ColorsCatalog);
     app.component('Overview', Overview);
 
     // Base components
