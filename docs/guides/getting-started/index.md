@@ -14,27 +14,13 @@ npm install @dialpad/dialtone
 Add the following line in your Less file:
 
 ```less
-@import "your/path/to/dialtone.less";
+@import "node_modules/@dialpad/dialtone/lib/build/less/dialtone.less";
 ```
 
 If you only need access to Dialtone's variables and customizations to build a file and don't need the whole library exported, use this line instead in your Less file:
 
 ```less
-@import (reference) "your/path/to/dialtone.less";
-```
-
-## Theming
-
-To customize your Dialtone installation, create a new Less file in the `/lib/build/less/themes/` folder. By default this will compile during build, which can be added as an additional CSS file in your page `head`.
-
-```less
-@import "your/path/to/dialtone.less";
-```
-
-If you only need access to Dialtone's variables and customizations to build a file and don't need the whole library exported, use this line instead in your Less file:
-
-```less
-@import (reference) "your/path/to/dialtone.less";
+@import (reference) "node_modules/@dialpad/dialtone/lib/build/less/dialtone.less";
 ```
 
 ## Usage

@@ -7,16 +7,16 @@ This is the home for Dialtone, Dialpad's design system. It includes the resource
 To add Dialtone into your project, you can install it via NPM:
 
 ```
-npm install --save-dev @dialpad/dialtone
+npm install @dialpad/dialtone
 ```
 
 Once installed, add the following line in your Less file:
 ```
-@import "your/path/to/dialtone.less";
+@import "node_modules/@dialpad/dialtone/lib/build/less/dialtone.less";
 ```
 If you only need access to Dialtone's variables and customizations to build a file and don't need the whole library exported, use this line instead in your Less file:
 ```
-@import (reference) "your/path/to/dialtone.less";
+@import (reference) "node_modules/@dialpad/dialtone/lib/build/less/dialtone.less";
 ```
 
 ## Building Dialtone locally
