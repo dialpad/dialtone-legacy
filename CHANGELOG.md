@@ -1,3 +1,21 @@
+# [7.23.0](https://github.com/dialpad/dialtone/compare/v7.22.2...v7.23.0) (2023-04-06)
+
+
+### Bug Fixes
+
+* **Borders:** correct inverted naming ([#860](https://github.com/dialpad/dialtone/issues/860)) ([a335754](https://github.com/dialpad/dialtone/commit/a335754605f1e2090fda019994ec68373c930872))
+* update paths in getting started and readme ([#859](https://github.com/dialpad/dialtone/issues/859)) ([de44883](https://github.com/dialpad/dialtone/commit/de44883d0b58676d174fc21d8dc728b119419963))
+
+
+### Documentation
+
+* remove margin from icon detail ([#857](https://github.com/dialpad/dialtone/issues/857)) ([c3c5468](https://github.com/dialpad/dialtone/commit/c3c54681375f13022199e5aed99fd2c07b82328d))
+
+
+### Features
+
+* **Colors:** hover and focus styles for semantic border colors ([#858](https://github.com/dialpad/dialtone/issues/858)) ([f6b5ea1](https://github.com/dialpad/dialtone/commit/f6b5ea12ed3e33d47bcef34048123e24af84e34e))
+
 ## [7.22.2](https://github.com/dialpad/dialtone/compare/v7.22.1...v7.22.2) (2023-03-24)
 
 
