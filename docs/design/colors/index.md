@@ -97,6 +97,22 @@ Key foreground colors rendered on surfaces to indicate hierarchy and importance.
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-secondary-inverted</td>
     </tr>
     <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42" style="background-color: var(--fc-tertiary-inverted)"></div></th>
+      <td>
+        <div class="d-d-flex d-jc-space-between d-ai-center">
+          <div class="d-fl0 d-fs-300 d-fc-secondary-inverted d-bgc-contrast d-p6 d-bar2 d-fw-medium">
+            Aa
+          </div>
+        </div>
+      </td>
+      <th scope="row" class="d-lh-300">
+        Tertiary inverted
+        <div class="d-fw-normal d-fs-100">Tertiary text color that sits on high-contrast surfaces or backgrounds.</div>
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--fc-tertiary-inverted)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-tertiary-inverted</td>
+    </tr>
+    <tr>
       <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42" style="background-color: var(--fc-placeholder)"></div></th>
       <td>
         <div class="d-d-flex d-jc-space-between d-ai-center">
