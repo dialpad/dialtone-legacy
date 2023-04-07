@@ -65,6 +65,56 @@ Key foreground colors rendered on surfaces to indicate hierarchy and importance.
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-tertiary</td>
     </tr>
     <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42" style="background-color: var(--fc-placeholder)"></div></th>
+      <td>
+        <div class="d-d-flex d-jc-space-between d-ai-center">
+          <div class="d-fl0 d-fs-300 d-fc-placeholder d-p6 d-fw-medium">
+            Aa
+          </div>
+        </div>
+      </td>
+      <th scope="row" class="d-lh-300">
+        Placeholder
+        <div class="d-fw-normal d-fs-100">Text color for placeholder text within form elements.</div>
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--fc-placeholder)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-placeholder</td>
+    </tr>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42" style="background-color: var(--fc-disabled)"></div></th>
+      <td>
+        <div class="d-d-flex d-jc-space-between d-ai-center">
+          <div class="d-fl0 d-fs-300 d-fc-disabled d-p6 d-fw-medium">
+            Aa
+          </div>
+        </div>
+      </td>
+      <th scope="row" class="d-lh-300">
+        Disabled
+        <div class="d-fw-normal d-fs-100">Used for text paired with disabled content or components, like the form elements.</div>
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--fc-disabled)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-disabled</td>
+    </tr>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42" style="background-color: var(--fc-muted)"></div></th>
+      <td>
+        <div class="d-d-flex d-jc-space-between d-ai-center">
+          <div class="d-fl0 d-fs-300 d-fc-muted d-p6 d-fw-medium">
+            Aa
+          </div>
+        </div>
+      </td>
+      <th scope="row" class="d-lh-300">
+        Muted
+        <!-- <div class="d-fw-normal d-fs-100">{DESCRIPTION}</div> -->
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--fc-muted)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-muted</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
       <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-ba d-bc-black-300 d-bas-dashed" style="background-color: var(--fc-primary-inverted)"></div></th>
       <td>
         <div class="d-d-flex d-jc-space-between d-ai-center">
@@ -113,52 +163,52 @@ Key foreground colors rendered on surfaces to indicate hierarchy and importance.
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-tertiary-inverted</td>
     </tr>
     <tr>
-      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42" style="background-color: var(--fc-placeholder)"></div></th>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42" style="background-color: var(--fc-placeholder-inverted)"></div></th>
       <td>
         <div class="d-d-flex d-jc-space-between d-ai-center">
-          <div class="d-fl0 d-fs-300 d-fc-placeholder d-p6 d-fw-medium">
+          <div class="d-fl0 d-fs-300 d-fc-placeholder-inverted d-bgc-contrast d-p6 d-fw-medium">
             Aa
           </div>
         </div>
       </td>
       <th scope="row" class="d-lh-300">
-        Placeholder
-        <div class="d-fw-normal d-fs-100">Text color for placeholder text within form elements.</div>
+        Placeholder inverted
+        <div class="d-fw-normal d-fs-100">Placeholder text color that sits on high-contrast surfaces or backgrounds.</div>
       </th>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--fc-placeholder)</td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-placeholder</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--fc-placeholder-inverted)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-placeholder-inverted</td>
     </tr>
     <tr>
-      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42" style="background-color: var(--fc-disabled)"></div></th>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42" style="background-color: var(--fc-disabled-inverted)"></div></th>
       <td>
         <div class="d-d-flex d-jc-space-between d-ai-center">
-          <div class="d-fl0 d-fs-300 d-fc-disabled d-p6 d-fw-medium">
+          <div class="d-fl0 d-fs-300 d-fc-disabled-inverted d-bgc-contrast d-p6 d-fw-medium">
             Aa
           </div>
         </div>
       </td>
       <th scope="row" class="d-lh-300">
-        Disabled
-        <div class="d-fw-normal d-fs-100">Used for text paired with disabled content or components, like the form elements.</div>
+        Disabled inverted
+        <div class="d-fw-normal d-fs-100">Disabled text color that sits on high-contrast surfaces or backgrounds.</div>
       </th>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--fc-disabled)</td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-disabled</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--fc-disabled-inverted)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-disabled-inverted</td>
     </tr>
     <tr>
-      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42" style="background-color: var(--fc-muted)"></div></th>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42" style="background-color: var(--fc-muted-inverted)"></div></th>
       <td>
         <div class="d-d-flex d-jc-space-between d-ai-center">
-          <div class="d-fl0 d-fs-300 d-fc-muted d-p6 d-fw-medium">
+          <div class="d-fl0 d-fs-300 d-fc-muted-inverted d-bgc-contrast d-p6 d-fw-medium">
             Aa
           </div>
         </div>
       </td>
       <th scope="row" class="d-lh-300">
-        Muted
-        <!-- <div class="d-fw-normal d-fs-100">{DESCRIPTION}</div> -->
+        Muted inverted
+        <div class="d-fw-normal d-fs-100">Muted text color that sits on high-contrast surfaces or backgrounds.</div>
       </th>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--fc-muted)</td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-muted</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--fc-muted-inverted)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-muted-inverted</td>
     </tr>
   </tbody>
 </table>
@@ -255,6 +305,88 @@ Foreground colors distinguishing important information with a status role.
       </th>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--fc-warning)</td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-warning</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42" style="background-color: var(--fc-critical-inverted)"></div></th>
+      <td>
+        <div class="d-d-flex d-jc-space-between d-ai-center">
+          <div class="d-fl0 d-fs-300 d-fc-critical-inverted d-p6 d-fw-medium d-bgc-contrast">
+            Aa
+          </div>
+        </div>
+      </td>
+      <th scope="row" class="d-lh-300">
+        Critical inverted
+        <div class="d-fw-normal d-fs-100">Critical text that sits on high-contrast surfaces or backgrounds</div>
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--fc-critical-inverted)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-critical-inverted</td>
+    </tr>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42" style="background-color: var(--fc-critical-strong-inverted)"></div></th>
+      <td>
+        <div class="d-d-flex d-jc-space-between d-ai-center">
+          <div class="d-fl0 d-fs-300 d-fc-critical-strong-inverted d-p6 d-fw-medium d-bgc-contrast">
+            Aa
+          </div>
+        </div>
+      </td>
+      <th scope="row" class="d-lh-300">
+        Critical strong inverted
+        <div class="d-fw-normal d-fs-100">Critical strong text that sits on high-contrast surfaces or backgrounds</div>
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--fc-critical-strong-inverted)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-critical-strong-inverted</td>
+    </tr>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42" style="background-color: var(--fc-success-inverted)"></div></th>
+      <td>
+        <div class="d-d-flex d-jc-space-between d-ai-center">
+          <div class="d-fl0 d-fs-300 d-fc-success-inverted d-p6 d-fw-medium d-bgc-contrast">
+            Aa
+          </div>
+        </div>
+      </td>
+      <th scope="row" class="d-lh-300">
+        Success inverted
+        <div class="d-fw-normal d-fs-100">Success text that sits on high-contrast surfaces or backgrounds</div>
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--fc-success-inverted)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-success-inverted</td>
+    </tr>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42" style="background-color: var(--fc-success-strong-inverted)"></div></th>
+      <td>
+        <div class="d-d-flex d-jc-space-between d-ai-center">
+          <div class="d-fl0 d-fs-300 d-fc-success-strong-inverted d-p6 d-fw-medium d-bgc-contrast">
+            Aa
+          </div>
+        </div>
+      </td>
+      <th scope="row" class="d-lh-300">
+        Success strong inverted
+        <div class="d-fw-normal d-fs-100">Success strong text that sits on high-contrast surfaces or backgrounds</div>
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--fc-success-strong-inverted)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-success-strong-inverted</td>
+    </tr>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42" style="background-color: var(--fc-warning-inverted)"></div></th>
+      <td>
+        <div class="d-d-flex d-jc-space-between d-ai-center">
+          <div class="d-fl0 d-fs-300 d-fc-warning-inverted d-p6 d-fw-medium d-bgc-contrast">
+            Aa
+          </div>
+        </div>
+      </td>
+      <th scope="row" class="d-lh-300">
+        Warning inverted
+        <div class="d-fw-normal d-fs-100">Warning text that sits on high-contrast surfaces or backgrounds</div>
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--fc-warning-inverted)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-fc-warning-inverted</td>
     </tr>
   </tbody>
 </table>
@@ -552,9 +684,9 @@ Define the edge of key content area, components, or surfaces.
     <tr>
       <th scope="row" class="d-pr0">
         <div
-            :class="['d-d-inline-flex', {'d-bgc-contrast': c.includes('inverted')}]"
+          :class="['d-d-inline-flex d-p4 d-bar-pill', {'d-bgc-contrast': c.includes('inverted')}]"
         >
-            <div :class="`d-bar-circle d-w42 d-h42 d-ba d-bas-solid d-baw4 d-bc-${c}`"></div>
+          <div :class="`d-bar-circle d-w42 d-h42 d-ba d-bas-solid d-baw4 d-bc-${c}`"></div>
         </div>
       </th>
       <th scope="row" class="d-lh-300 d-tt-capitalize">
@@ -567,6 +699,8 @@ Define the edge of key content area, components, or surfaces.
 </table>
 
 ## Theme
+
+CSS variables for themeable parts of the UI, primarily targeting the topbar and left bar.
 
 <table class="d-table dialtone-doc-table d-mt16">
   <thead>
@@ -942,9 +1076,9 @@ Define the edge of key content area, components, or surfaces.
 
 ## Base palette
 
-Base colors are the literal value of all available colors. Use these if all abstracted text, status text, surface, or border colors to not fit your need.
+Base colors are the literal value of all available colors. Use these only if all abstracted Text, Status text, Surface, or Border colors do not fit your need.
 
-Each of the colors listed above references one of these. For example, `var(--fc-primary)` is an alias to `var(--black-900)`, and `var(--fc-critical)` is an alias to `var(--red-300)`.
+Each of the colors listed above references these. For example, `var(--fc-primary)` is an alias to `var(--black-900)`, and `var(--fc-critical)` is an alias to `var(--red-300)`.
 
 <colors-catalog />
 
