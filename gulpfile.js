@@ -32,7 +32,7 @@ const breakpoints = [
 const classes = [
   /\.d-d-(flex|none|block)$/, // Display Flex, None and Block
   '.d-t0',
-  /\.d-p[t|r]([0-9]*|-unset)$/, // Padding Top and Right
+  /\.d-p[t|r|l|b]([0-9]*|-unset)$/, // Padding Top and Right
   '.d-fd-column',
   '.d-ai-stretch',
   '.d-ps-relative',
