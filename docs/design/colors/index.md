@@ -700,6 +700,8 @@ Define the edge of key content area, components, or surfaces.
 
 ## Theme
 
+CSS variables for themeable parts of the UI, primarily targeting the topbar and left bar.
+
 <table class="d-table dialtone-doc-table d-mt16">
   <thead>
     <tr>
