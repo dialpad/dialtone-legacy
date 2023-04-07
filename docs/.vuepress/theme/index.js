@@ -93,14 +93,7 @@ export const dialtoneVuepressTheme = (options) => {
       themeDataPlugin({
         themeData: options,
       }),
-      tocPlugin({
-        defaultPropsOptions: {
-          containerTag: '',
-          listClass: 'toc-list d-ls-reset',
-          itemClass: 'toc-item',
-          linkClass: 'd-btn',
-        },
-      }),
+      tocPlugin(),
       activeHeaderLinksPlugin({
         headerLinkSelector: 'a.d-btn',
         offset: 128,

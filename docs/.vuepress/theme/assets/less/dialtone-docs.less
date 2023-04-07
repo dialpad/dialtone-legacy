@@ -105,39 +105,22 @@ a.router-link-active {
 //      we can't add utility classes directly to the HTML. So we have to use
 //      custom CSS here instead.
 //  ----------------------------------------------------------------------------
-.toc {
-  &-item {
-    @media screen and (max-width: 980px) {
-      display: inline-block;
-      .d-link();
+.vuepress-toc {
+  .active-category {
+    &::before {
+      position: absolute;
+      top: 4px;
+      bottom: 4px;
+      left: calc(var(--space-300) * -1);
+      width: var(--size-200);
+      background-color: var(--purple-400);
+      border-radius: var(--size-200);
+      content: '';
     }
   }
-  a {
-    //  We'll base our styles on d-btn
-    // I'm not a fan of this... so TODO the whole thing up.
-    // TODO: RWD
-    .d-btn--sm();
-    .d-btn--muted();
-
-    font-weight: var(--fw-normal);
-    width: 100%;
-    justify-content: flex-start;
-
-    &.active {
-      //.d-btn--active(); // This is breaking the build
-      font-weight: var(--fw-medium);
-      --button-color-background: transparent;
-
-      &::before {
-        position: absolute;
-        top: 4px;
-        bottom: 4px;
-        left: calc(var(--space-300) * -1);
-        width: var(--size-200);
-        background-color: var(--purple-400);
-        border-radius: var(--size-200);
-        content: '';
-      }
+  .toc-item {
+    > .toc-list {
+      padding-left: var(--space-400);
     }
   }
 }
@@ -204,12 +187,6 @@ a.header-anchor {
 
 .d-ga-toc {
   grid-area: toc !important;
-}
-
-.toc-item {
-  > .toc-list {
-    padding-left: var(--space-400);
-  }
 }
 
 .d-gl-docsite {
