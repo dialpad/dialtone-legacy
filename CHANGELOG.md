@@ -1,3 +1,10 @@
+## [7.24.1](https://github.com/dialpad/dialtone/compare/v7.24.0...v7.24.1) (2023-04-11)
+
+
+### Bug Fixes
+
+* update dialtone-vue to fix icon render bug ([cb8df18](https://github.com/dialpad/dialtone/commit/cb8df18d5a27f7e38475803a44fe4f63dfaa13de))
+
 # [7.24.0](https://github.com/dialpad/dialtone/compare/v7.23.0...v7.24.0) (2023-04-11)
 
 
