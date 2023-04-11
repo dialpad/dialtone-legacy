@@ -1,3 +1,10 @@
+# [7.24.0](https://github.com/dialpad/dialtone/compare/v7.23.0...v7.24.0) (2023-04-11)
+
+
+### Features
+
+* **Color:** added inverted text and border color variables and css utilities ([#861](https://github.com/dialpad/dialtone/issues/861)) ([cb8c19a](https://github.com/dialpad/dialtone/commit/cb8c19a609b673282519383b57dd482d8c6a6a10))
+
 # [7.23.0](https://github.com/dialpad/dialtone/compare/v7.22.2...v7.23.0) (2023-04-06)
 
 
