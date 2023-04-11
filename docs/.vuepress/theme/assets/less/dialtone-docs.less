@@ -39,6 +39,7 @@
 //      [1]     Universally set border-box
 //  ----------------------------------------------------------------------------
 * {
+
   &,
   &::before,
   &::after {
@@ -54,9 +55,14 @@ html {
 // @TODO: Move to root-layout component on dialtone-vue
 .root-layout {
   min-height: 100vh;
-}
-.root-layout__content:focus-visible {
-  box-shadow: none;
+
+  &__content {
+    overflow-y: unset !important;
+
+    &:focus-visible {
+      box-shadow: none;
+    }
+  }
 }
 
 
@@ -109,6 +115,7 @@ a.router-link-active {
   :first-child.toc-list {
     flex-wrap: wrap;
   }
+
   .active-category {
     &::before {
       position: absolute;
@@ -121,8 +128,9 @@ a.router-link-active {
       content: '';
     }
   }
+
   .toc-item {
-    > .toc-list {
+    >.toc-list {
       padding-left: var(--space-400);
     }
   }
@@ -170,19 +178,22 @@ a.header-anchor {
   margin-top: var(--space-600);
   margin-bottom: var(--space-400);
 }
+
 .d-docsite--header-3 {
   .d-headline-large(); // TODO: when a redesign is imminent
   font-weight: var(--fw-semibold);
   margin-top: var(--space-500);
   margin-bottom: var(--space-300);
 }
+
 .d-docsite--header-4 {
   .d-headline-medium(); // TODO: when a redesign is imminent
   margin-top: var(--space-400);
   margin-bottom: var(--space-300);
 }
 
-.d-docsite--header-2, .d-docsite--header-3 {
+.d-docsite--header-2,
+.d-docsite--header-3 {
   &:hover a.header-anchor {
     opacity: 1;
   }
@@ -206,6 +217,7 @@ a.header-anchor {
   .d-body-base(); // TODO: when a redesign is imminent
   margin-bottom: 1em;
   max-width: 75ch;
+
   .d-notice & {
     // OVERRIDE
     margin: unset; // TODO: make sure this doesn't get inserted into components
@@ -228,6 +240,7 @@ a.header-anchor {
   .d-body-base(); // TODO: when a redesign is imminent
   margin-bottom: var(--space-300);
   max-width: 75ch;
+
   &:last-child {
     margin-bottom: 0;
   }
@@ -318,8 +331,8 @@ a.header-anchor {
     visibility: visible;
     opacity: 1;
     transition: opacity 50ms var(--ttf-in-out) 0s,
-    transform 50ms var(--ttf-in-out) 0s,
-    visibility 0s 50ms;
+      transform 50ms var(--ttf-in-out) 0s,
+      visibility 0s 50ms;
   }
 
   //  If it's in the first two columns, show the footer on the right
@@ -335,8 +348,8 @@ a.header-anchor {
     visibility: hidden;
     opacity: 0;
     transition: opacity 100ms var(--ttf-in-out) 0s,
-    transform 100ms var(--ttf-in-out) 0s,
-    visibility 0s 0s;
+      transform 100ms var(--ttf-in-out) 0s,
+      visibility 0s 0s;
   }
 }
 
@@ -590,12 +603,12 @@ a.header-anchor {
 //  ----------------------------------------------------------------------------
 
 .dialtone-definition {
-  > dt {
+  >dt {
     margin-top: var(--su16);
     font-weight: var(--fw-bold);
   }
 
-  > dd {
+  >dd {
     margin: 0;
     max-width: 72ch;
   }
@@ -668,7 +681,8 @@ a.header-anchor {
       margin: 0 !important;
       padding: 0;
       list-style: none;
-      * + * {
+
+      *+* {
         margin-top: var(--space-400);
       }
     }
@@ -677,6 +691,7 @@ a.header-anchor {
 
 .back-to-top {
   background-color: var(--primary-color);
+
   &:hover {
     background-color: var(--primary-color-hover);
   }
