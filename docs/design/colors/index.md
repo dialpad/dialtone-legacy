@@ -477,6 +477,15 @@ Background colors for default application UI surfaces. Surface colors are contai
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-strong</td>
     </tr>
     <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-strong-opaque"></div></th>
+      <th scope="row" class="d-lh-300">
+        Strong opaque
+        <div class="d-fw-normal d-fs-100">Strong surface as opaque background color.</div>
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-strong-opaque)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-strong-opaque</td>
+    </tr>
+    <tr>
       <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-contrast"></div></th>
       <th scope="row" class="d-lh-300">
         Contrast
@@ -484,6 +493,15 @@ Background colors for default application UI surfaces. Surface colors are contai
       </th>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-contrast)</td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-contrast</td>
+    </tr>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-contrast-opaque"></div></th>
+      <th scope="row" class="d-lh-300">
+        Contrast opaque
+        <div class="d-fw-normal d-fs-100">Contrast surface as opaque background color.</div>
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bgc-contrast-opaque)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-contrast-opaque</td>
     </tr>
   </tbody>
   <tbody>
