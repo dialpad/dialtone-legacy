@@ -478,27 +478,65 @@
   }
 
     //  ========================================================================
-    //  $   SPACING CLASSES
+    //  $   SIZE AND SPACING CLASSES
     //  ------------------------------------------------------------------------
     #spacing-classes(@BU, @prefix, @suffix: '') {
+      @stop-50:  ~"@{prefix}-50@{suffix}";
       @stop-100: ~"@{prefix}-100@{suffix}";
       @stop-200: ~"@{prefix}-200@{suffix}";
       @stop-300: ~"@{prefix}-300@{suffix}";
+      @stop-350: ~"@{prefix}-350@{suffix}";
       @stop-400: ~"@{prefix}-400@{suffix}";
+      @stop-450: ~"@{prefix}-450@{suffix}";
       @stop-500: ~"@{prefix}-500@{suffix}";
+      @stop-550: ~"@{prefix}-550@{suffix}";
       @stop-600: ~"@{prefix}-600@{suffix}";
+      @stop-650: ~"@{prefix}-650@{suffix}";
       @stop-700: ~"@{prefix}-700@{suffix}";
       @stop-800: ~"@{prefix}-800@{suffix}";
 
+      @stop-50-negative:  ~"@{prefix}-50-negative@{suffix}";
+      @stop-100-negative: ~"@{prefix}-100-negative@{suffix}";
+      @stop-200-negative: ~"@{prefix}-200-negative@{suffix}";
+      @stop-300-negative: ~"@{prefix}-300-negative@{suffix}";
+      @stop-350-negative: ~"@{prefix}-350-negative@{suffix}";
+      @stop-400-negative: ~"@{prefix}-400-negative@{suffix}";
+      @stop-450-negative: ~"@{prefix}-450-negative@{suffix}";
+      @stop-500-negative: ~"@{prefix}-500-negative@{suffix}";
+      @stop-550-negative: ~"@{prefix}-550-negative@{suffix}";
+      @stop-600-negative: ~"@{prefix}-600-negative@{suffix}";
+      @stop-650-negative: ~"@{prefix}-650-negative@{suffix}";
+      @stop-700-negative: ~"@{prefix}-700-negative@{suffix}";
+      @stop-800-negative: ~"@{prefix}-800-negative@{suffix}";
+
       body {
-        --@{stop-100}:       calc(@BU / pow(2, 3));
-        --@{stop-200}:       calc(@BU / pow(2, 2));
-        --@{stop-300}:       calc(@BU / pow(2, 1));
-        --@{stop-400}:       @BU;
-        --@{stop-500}:       calc(@BU * pow(2, 1));
-        --@{stop-600}:       calc(@BU * pow(2, 2));
-        --@{stop-700}:       calc(@BU * pow(2, 3));
-        --@{stop-800}:       calc(@BU * pow(2, 4));
+        --@{stop-50}:  calc(@BU / pow(2, 4));
+        --@{stop-100}: calc(@BU / pow(2, 3));
+        --@{stop-200}: calc(@BU / pow(2, 2));
+        --@{stop-300}: calc(@BU / pow(2, 1));
+        --@{stop-350}: calc((@BU / pow(2, 1) + @BU) / 2);
+        --@{stop-400}: @BU;
+        --@{stop-450}: calc((@BU + @BU * pow(2, 1)) / 2);
+        --@{stop-500}: calc(@BU * pow(2, 1));
+        --@{stop-550}: calc((@BU * pow(2, 1) + @BU * pow(2, 2)) / 2);
+        --@{stop-600}: calc(@BU * pow(2, 2));
+        --@{stop-650}: calc((@BU * pow(2, 2) + @BU * pow(2, 3)) / 2);
+        --@{stop-700}: calc(@BU * pow(2, 3));
+        --@{stop-800}: calc(@BU * pow(2, 4));
+
+        --@{stop-50-negative}:  calc(@BU / pow(2, 4) * -1);
+        --@{stop-100-negative}: calc(@BU / pow(2, 3) * -1);
+        --@{stop-200-negative}: calc(@BU / pow(2, 2) * -1);
+        --@{stop-300-negative}: calc(@BU / pow(2, 1) * -1);
+        --@{stop-350-negative}: calc((@BU / pow(2, 1) + @BU) / 2 * -1);
+        --@{stop-400-negative}: calc(@BU * -1);
+        --@{stop-450-negative}: calc((@BU + @BU * pow(2, 1)) / 2 * -1);
+        --@{stop-500-negative}: calc(@BU * pow(2, 1) * -1);
+        --@{stop-550-negative}: calc((@BU * pow(2, 1) + @BU * pow(2, 2)) / 2 * -1);
+        --@{stop-600-negative}: calc(@BU * pow(2, 2) * -1);
+        --@{stop-650-negative}: calc((@BU * pow(2, 2) + @BU * pow(2, 3)) / 2 * -1);
+        --@{stop-700-negative}: calc(@BU * pow(2, 3) * -1);
+        --@{stop-800-negative}: calc(@BU * pow(2, 4) * -1);
       }
     }
 }
