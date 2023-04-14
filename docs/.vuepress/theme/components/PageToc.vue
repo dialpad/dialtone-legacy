@@ -12,8 +12,8 @@
 
 <script setup>
 const options = {
-  listClass: 'toc-list d-ls-reset lg:d-d-flex',
-  itemClass: 'toc-item lg:d-d-flex',
+  listClass: 'toc-list d-ls-reset',
+  itemClass: 'toc-item lg:d-d-flex d-fw-wrap',
   linkTag: 'a',
   linkClass: 'd-btn d-btn--sm d-btn--muted d-fw-normal d-w100p d-jc-flex-start d-ws-nowrap',
   linkActiveClass: 'active-item d-btn--active d-fw-medium',
