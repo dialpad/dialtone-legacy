@@ -55,9 +55,9 @@
 import CopyButton from './CopyButton.vue';
 
 const FORMAT_MAP = {
-  css: 'css/variables',
-  android: 'compose/object',
-  ios: 'ios-swift/enum.swift',
+  CSS: 'css/variables',
+  Android: 'compose/object',
+  iOS: 'ios-swift/enum.swift',
 };
 
 const CATEGORIES = [
@@ -84,25 +84,21 @@ export default {
 
   data () {
     return {
-      format: 'css',
+      format: 'CSS',
       json: null,
     };
   },
 
   computed: {
     tokensProcessed () {
-      if (!this.json) return;
-      const tokens = [];
-      for (const [key, value] of Object.entries(this.json)) {
-        if (key.split('/')[0] !== this.category) continue;
-        const token = {
-          name: value[FORMAT_MAP[this.format]]?.name,
-          description: '',
-          value: value[FORMAT_MAP[this.format]]?.value,
-        };
-        tokens.push(token);
-      }
-      return tokens;
+      if (!this.json) return [];
+
+      return Object.entries(this.json)
+        .filter(([key]) => key.split('/')[0] === this.category)
+        .map(([_, value]) => {
+          const { name, value: tokenValue } = value[FORMAT_MAP[this.format]] || {};
+          return { name, description: '', value: tokenValue };
+        });
     },
 
     selectMenuOptions () {
@@ -113,7 +109,7 @@ export default {
   },
 
   beforeMount () {
-    import('../../../node_modules/@dialpad/dialtone-tokens/dist/doc.json').then((module) => {
+    import('@dialpad/dialtone-tokens/dist/doc.json').then((module) => {
       this.json = module.default;
     });
   },
