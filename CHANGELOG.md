@@ -1,3 +1,10 @@
+# [7.25.0](https://github.com/dialpad/dialtone/compare/v7.24.1...v7.25.0) (2023-04-14)
+
+
+### Features
+
+* **Color:** opaque strong and contrast surfaces ([#863](https://github.com/dialpad/dialtone/issues/863)) ([5ad4a51](https://github.com/dialpad/dialtone/commit/5ad4a510eb8b88d550800a85119687c806c96448))
+
 ## [7.24.1](https://github.com/dialpad/dialtone/compare/v7.24.0...v7.24.1) (2023-04-11)
 
 
