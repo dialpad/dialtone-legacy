@@ -42,7 +42,7 @@
     --tooltip-font-weight: var(--fw-medium);
     --tooltip-line-height: var(--lh-300);
     --tooltip-padding-y: var(--space-400);
-    --tooltip-padding-x: calc(var(--space-300) * 3);
+    --tooltip-padding-x: var(--space-450);
     --tooltip-border-radius: var(--size-300);
 
     z-index: var(--zi-tooltip);
@@ -59,7 +59,7 @@
 
     &::after {
         position: absolute;
-        border: calc(var(--size-300) + var(--size-200)) solid transparent; // 6
+        border: var(--size-350) solid transparent;
         content: '';
     }
 }
@@ -126,11 +126,11 @@
 .d-tooltip__arrow--top-left,
 .d-tooltip__arrow--top-center,
 .d-tooltip__arrow--top-right {
-  top: calc(100% + calc(var(--space-300) * 3)); // 100% + 12
+  top: calc(100% + var(--space-450)); // 100% + 12
   transform: translateY(var(--space-500)); // 16
 
   &::after {
-    top: calc(calc(var(--space-300) + var(--space-200)) * -1); // -6
+    top: var(--space-350-negative); // -6
     border-top-width: 0;
     border-bottom-color: var(--tooltip-color-background);
   }
@@ -144,11 +144,11 @@
 .d-tooltip__arrow--bottom-left,
 .d-tooltip__arrow--bottom-center,
 .d-tooltip__arrow--bottom-right {
-  bottom: calc(100% + calc(var(--space-300) * 3)); // 100% + 12
-  transform: translateY(calc(var(--space-500) * -1)); // -16
+  bottom: calc(100% + var(--space-450)); // 100% + 12
+  transform: translateY(var(--space-500-negative)); // -16
 
   &::after {
-    bottom: calc(calc(var(--space-300) + var(--space-200)) * -1); // -6
+    bottom: var(--space-350-negative); // -6
     border-top-color: var(--tooltip-color-background);
     border-bottom-width: 0;
   }
@@ -160,7 +160,7 @@
 .d-tooltip__arrow-tippy--top-start,
 .d-tooltip__arrow--top-left,
 .d-tooltip__arrow--bottom-left {
-  left: calc(var(--space-200) * -1); // -2
+  left: var(--space-200-negative); // -2
 
   &::after {
     left: var(--space-500); // 16
@@ -175,7 +175,7 @@
 .d-tooltip__arrow--bottom-center {
   &::after {
     left: 50%;
-    margin-left: calc(calc(var(--space-300) + var(--space-200)) * -1); // -6
+    margin-left: var(--space-350-negative); // -6
   }
 }
 
@@ -185,7 +185,7 @@
 .d-tooltip__arrow-tippy--top-end,
 .d-tooltip__arrow--top-right,
 .d-tooltip__arrow--bottom-right {
-  right: calc(var(--space-200) * -1); // -2
+  right: var(--space-200-negative); // -2
 
   &::after {
     right: var(--space-500); // 16
@@ -200,11 +200,11 @@
 .d-tooltip__arrow--right-top,
 .d-tooltip__arrow--right-center,
 .d-tooltip__arrow--right-bottom {
-  right: calc(100% + calc(var(--space-300) * 3)); // 100% + 12
-  transform: translateX(calc(var(--space-500) * -1)); // -16
+  right: calc(100% + var(--space-450)); // 100% + 12
+  transform: translateX(var(--space-500-negative)); // -16
 
   &::after {
-    right: calc(calc(var(--space-300) + var(--space-200)) * -1); // -6
+    right: var(--space-350-negative); // -6
     border-right-width: 0;
     border-left-color: var(--tooltip-color-background);
   }
@@ -218,11 +218,11 @@
 .d-tooltip__arrow--left-top,
 .d-tooltip__arrow--left-center,
 .d-tooltip__arrow--left-bottom {
-  left: calc(100% + calc(var(--space-300) * 3)); // 100% + 12
+  left: calc(100% + var(--space-450)); // 100% + 12
   transform: translateX(var(--space-500)); // 16
 
   &::after {
-    left: calc(calc(var(--space-300) + var(--space-200)) * -1); // -6
+    left: var(--space-350-negative); // -6
     border-right-color: var(--tooltip-color-background);
     border-left-width: 0;
   }
@@ -234,7 +234,7 @@
 .d-tooltip__arrow-tippy--left-start,
 .d-tooltip__arrow--right-top,
 .d-tooltip__arrow--left-top {
-  top: calc(var(--space-100) * -1); // -1
+  top: var(--space-100-negative); // -1
 
   &::after {
     top: var(--space-400); // 8
@@ -249,7 +249,7 @@
 .d-tooltip__arrow--left-center {
   &::after {
     top: 50%;
-    margin-top: calc(calc(var(--space-300) + var(--space-200)) * -1); // -6
+    margin-top: var(--space-350-negative); // -6
   }
 }
 
@@ -259,7 +259,7 @@
 .d-tooltip__arrow-tippy--left-end,
 .d-tooltip__arrow--right-bottom,
 .d-tooltip__arrow--left-bottom {
-  bottom: calc(var(--space-100) * -1); // -1
+  bottom: var(--space-100-negative); // -1
 
   &::after {
     bottom: var(--space-400); // 8
