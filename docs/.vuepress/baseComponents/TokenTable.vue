@@ -2,6 +2,7 @@
   <dt-select-menu
     name="format-select"
     label="Select Format"
+    select-class="d-w128"
     :options="selectMenuOptions"
     @change="setFormat"
   />
