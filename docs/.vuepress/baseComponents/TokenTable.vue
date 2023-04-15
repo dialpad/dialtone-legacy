@@ -1,4 +1,5 @@
 <template>
+  <!-- eslint-disable vue/no-static-inline-styles -->
   <dt-select-menu
     name="format-select"
     label="Select Format"
@@ -10,7 +11,9 @@
     <thead>
       <tr>
         <th
-          class="d-w60p"
+          scope="col"
+        />
+        <th
           scope="col"
         >
           Name
@@ -20,13 +23,24 @@
         >
           Value
         </th>
+        <th
+          scope="col"
+        >
+          Description
+        </th>
       </tr>
     </thead>
     <tbody>
       <tr
-        v-for="({ name, value }) in tokensProcessed"
+        v-for="({ name, value, description }) in tokensProcessed"
         :key="name"
       >
+        <td>
+          <div
+            class="d-bar-circle d-w42 d-h42"
+            style="background-color:var(--bgc-moderate);"
+          />
+        </td>
         <th
           scope="row"
           class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100"
@@ -45,7 +59,14 @@
         </th>
         <td
           class="d-fs-100 d-lh-300"
-          v-text="value"
+        >
+          <div class="d-wmx264">
+            {{ value }}
+          </div>
+        </td>
+        <td
+          class="d-fs-100 d-lh-300"
+          v-text="description"
         />
       </tr>
     </tbody>
@@ -97,8 +118,8 @@ export default {
       return Object.entries(this.json)
         .filter(([key]) => key.split('/')[0] === this.category)
         .map(([_, value]) => {
-          const { name, value: tokenValue } = value[FORMAT_MAP[this.format]] || {};
-          return { name, description: '', value: tokenValue };
+          const { name, value: tokenValue, description } = value[FORMAT_MAP[this.format]] || {};
+          return { name, value: tokenValue, description };
         });
     },
 
