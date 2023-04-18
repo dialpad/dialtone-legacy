@@ -13,14 +13,18 @@
 //  $   BASE STYLE
 //  ----------------------------------------------------------------------------
 .d-root-layout {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  display: grid;
+  grid-template:
+    'header' auto
+    'body' 1fr
+    'footer' auto / 1fr;
+
+  &--fixed {
+    height: 100vh;
+  }
 
   &__header {
-    :first-child {
-      min-height: 100%;
-    }
+    grid-area: header;
 
     &--sticky {
       position: sticky;
@@ -30,8 +34,8 @@
 
   &__body {
     display: flex;
-    flex-wrap: wrap;
-    gap: 0;
+    grid-area: body;
+    overflow: auto;
     box-shadow: none;
 
     &--invert {
@@ -40,62 +44,57 @@
   }
 
   &__sidebar {
-    flex-grow: 1;
     box-shadow: none;
 
-    :first-child {
-      min-height: 100%;
+    &--sticky {
+      position: sticky;
+      top: 0;
+      height: 100%;
+      overflow: auto;
     }
   }
 
   &__content {
-    // overflow-y: unset !important;
-    flex-basis: 0;
-    flex-grow: 999;
+    flex: 1;
     box-shadow: none;
-
-    &--fixed {
-      height: 100%;
-      overflow-y: auto;
-    }
   }
 
   &__footer {
-    :first-child {
-      min-height: 100%;
+    grid-area: footer;
+  }
+}
+
+@media (max-width: 480px) {
+  .d-root-layout__responsive--sm {
+    .d-root-layout__body {
+      flex-direction: column;
+
+      &--invert {
+        flex-direction: column-reverse;
+      }
     }
   }
 }
 
 @media (max-width: 640px) {
-  .d-root-layout {
-    &__body {
+  .d-root-layout__responsive--md {
+    .d-root-layout__body {
+      flex-direction: column;
+
       &--invert {
-        //
+        flex-direction: column-reverse;
       }
     }
+  }
+}
 
-    &__sidebar {
-      :first-child {
-        //
-      }
-    }
+@media (max-width: 980px) {
+  .d-root-layout__responsive--lg {
+    .d-root-layout__body {
+      flex-direction: column;
 
-    &__content {
-      margin-bottom: var(--su128);
-
-      &--fixed {
-        //
-      }
-    }
-
-    &__header {
-      :first-child {
-        //
-      }
-
-      &--sticky {
-        //
+      &--invert {
+        flex-direction: column-reverse;
       }
     }
   }
