@@ -52,19 +52,10 @@ html {
   scroll-padding-top: 7.2rem;
 }
 
-// @TODO: Move to root-layout component on dialtone-vue
-.root-layout {
-  min-height: 100vh;
-
-  &__content {
-    overflow-y: unset !important;
-
-    &:focus-visible {
-      box-shadow: none;
-    }
-  }
+// Temp fix, will remove this once root-layout is update on dialtone-vue
+.root-layout__content {
+  overflow-y: unset !important;
 }
-
 
 //  ============================================================================
 //  $   SEARCH BUTTON
@@ -112,6 +103,8 @@ a.router-link-active {
 //      custom CSS here instead.
 //  ----------------------------------------------------------------------------
 .vuepress-toc {
+  height: fit-content;
+
   .active-category {
     &::before {
       position: absolute;
