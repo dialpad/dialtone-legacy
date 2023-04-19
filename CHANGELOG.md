@@ -1,3 +1,16 @@
+## [7.25.1](https://github.com/dialpad/dialtone/compare/v7.25.0...v7.25.1) (2023-04-18)
+
+
+### Code Refactoring
+
+* **Root Layout:** bring styles from dialtone vue ([#866](https://github.com/dialpad/dialtone/issues/866)) ([0c89630](https://github.com/dialpad/dialtone/commit/0c89630468f0c764c8119223a0e8de544d2400ef))
+
+
+### Documentation
+
+* dialtone tokens documentation ([#864](https://github.com/dialpad/dialtone/issues/864)) ([27ce868](https://github.com/dialpad/dialtone/commit/27ce868de41aa397e52fa2a72b0ec0f0085e704d))
+* fix page toc ([#862](https://github.com/dialpad/dialtone/issues/862)) ([8236fa5](https://github.com/dialpad/dialtone/commit/8236fa5ae2ca8c5ed94d64e0b1a4065ddd700afe))
+
 # [7.25.0](https://github.com/dialpad/dialtone/compare/v7.24.1...v7.25.0) (2023-04-14)
 
 

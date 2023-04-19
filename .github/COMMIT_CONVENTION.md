@@ -6,7 +6,7 @@ Consult [the rules](https://github.com/conventional-changelog/commitlint/tree/ma
 
 Each commit message consists of a **header**, a **body**, and a **footer**.
 
-```
+```txt
 <header>
 <BLANK LINE>
 <body - optional>
@@ -16,7 +16,7 @@ Each commit message consists of a **header**, a **body**, and a **footer**.
 
 The `header` is mandatory and has a **type**, **scope** (optional) and **subject**:
 
-```
+```txt
 <type>(<scope - optional>): <subject>
 ```
 
@@ -25,7 +25,7 @@ The `header` is mandatory and has a **type**, **scope** (optional) and **subject
 Must be one of the following:
 
 * **build**: changes that affect the build system.
-* **chore**: general changes that don't fit in other types (code formatting, version changes). 
+* **chore**: general changes that don't fit in other types (code formatting, version changes).
 * **ci**: changes to the CI configuration, files and scripts.
 * **docs**: documentation changes.
 * **feat**: a new feature (corresponding with `MINOR` in SemVer).
@@ -45,13 +45,13 @@ For instance, if the commit affects a specific component, use the component's na
 
 Note: use lowercase and kebab-case syntax for the scope, that means all in lowercase and separate the words with dash.
 
-```
+```txt
 feat(select-menu): add leftIcon prop
 ```
 
 In case of multiple scopes, separate them with comma.
 
-```
+```txt
 fix(combobox, combobox-with-popover): fix keyboard navigation
 ```
 
@@ -59,27 +59,27 @@ fix(combobox, combobox-with-popover): fix keyboard navigation
 
 The subject contains a short description of the change:
 
-- use the imperative, present tense: "change" not "changed" nor "changes"
-- don't capitalize first letter
-- no dot (.) at the end of the sentence
+* use the imperative, present tense: "change" not "changed" nor "changes"
+* don't capitalize first letter
+* no dot (.) at the end of the sentence
 
 ### Examples
 
 #### Commit message with only header
 
-```
+```txt
 feat: add danger style to Modal component
 ```
 
 #### Commit message with scope
 
-```
+```txt
 feat(modal): add danger style
 ```
 
-#### Commit message with BREAKING CHANGE footer 
+#### Commit message with BREAKING CHANGE footer
 
-```
+```txt
 feat: remove "Mark Pro" font family
 
 BREAKING CHANGE: remove "Mark Pro" font family used in Dialtone 5.

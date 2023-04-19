@@ -32,7 +32,7 @@ const breakpoints = [
 const classes = [
   /\.d-d-(flex|none|block)$/, // Display Flex, None and Block
   '.d-t0',
-  /\.d-p[t|r]([0-9]*|-unset)$/, // Padding Top and Right
+  /\.d-p[t|r|l|b]([0-9]*|-unset)$/, // Padding Top and Right
   '.d-fd-column',
   '.d-ai-stretch',
   '.d-ps-relative',
@@ -104,11 +104,11 @@ const paths = {
     libCss: './lib/dist/css/**/*',
     libSvg: './lib/dist/svg/**/*',
     libVueIcons: './lib/dist/vue/**/*',
-    libFavicons: './lib/dist/favicons/**/*',
     libFonts: './dist/fonts/**/*',
+    libJS: './lib/dist/js/**/*.{mjs,js}',
   },
   scripts: {
-    input: './lib/build/js/**/*.js',
+    input: './lib/build/js/**/*',
     output: './lib/dist/js/',
   },
   styles: {
@@ -178,34 +178,16 @@ const paths = {
 //  @@  CLEAN UP
 //  ================================================================================
 //  --  Function to clean out folders / files
-const cleanUp = (items) => {
+const cleanUp = () => {
   // Make sure the feature is active before running
   if (!settings.clean) return;
+
+  const items = Object.values(paths.clean);
 
   // Clean dist folders
   return Promise.all([
     del.sync(items),
   ]);
-};
-
-//  --  Clean library files
-const cleanSite = () => {
-  return cleanUp([paths.clean.libCss]);
-};
-
-//  --  Clean out Fonts
-const cleanFonts = () => {
-  return cleanUp([paths.clean.libFonts]);
-};
-
-//  --  Clean out SVGs
-const cleanSVGs = () => {
-  return cleanUp([paths.clean.libSvg]);
-};
-
-//  --  Clean out Vue icons
-const cleanVueIcons = () => {
-  return cleanUp([paths.clean.libVueIcons]);
 };
 
 const libScripts = function (done) {
@@ -663,10 +645,7 @@ const buildNewSVGIcons = function (done) {
 //  --  BUILD OUT THE SITE BUT DON'T START THE SERVER
 
 exports.clean = series(
-  cleanSite,
-  cleanFonts,
-  cleanSVGs,
-  cleanVueIcons,
+  cleanUp,
 );
 
 exports.svg = series(
