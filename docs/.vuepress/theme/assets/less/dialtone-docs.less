@@ -55,6 +55,11 @@ html {
 // Temp fix, will remove this once root-layout is update on dialtone-vue
 .root-layout__content {
   overflow-y: unset !important;
+  &:focus-visible {
+    // should probably be moved to root layout component
+    // this occurs because of `tabindex` attribute, which... is it necessary?
+    box-shadow: none;
+  }
 }
 
 //  ============================================================================
@@ -306,7 +311,7 @@ a.header-anchor {
   justify-content: center;
   width: calc((var(--icon-card-width) * 2) + var(--size-600));
   min-height: var(--icon-card-width);
-  margin-right: var(--size-100-negative);
+  margin-right: var(--space-100-negative);
   padding: var(--space-450) var(--space-500);
   color: var(--black-200);
   font-size: var(--fs-200);
