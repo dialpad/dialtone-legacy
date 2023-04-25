@@ -14,31 +14,7 @@
 //    - VERTICALLY
 //    - HORIZONTALLY
 //  • MARGIN
-//    - POSITIVE MARGINS
-//      •• ALL DIRECTIONS
-//      •• TOP MARGIN
-//      •• RIGHT MARGIN
-//      •• BOTTOM MARGIN
-//      •• LEFT MARGIN
-//      •• X-AXIS MARGIN
-//      •• Y-AXIS MARGIN
-//    - NEGATIVE MARGINS
-//      •• ALL DIRECTIONS
-//      •• TOP MARGIN
-//      •• RIGHT MARGIN
-//      •• BOTTOM MARGIN
-//      •• LEFT MARGIN
-//      •• X-AXIS MARGIN
-//      •• Y-AXIS MARGIN
 //  • PADDING
-//    - ALL DIRECTIONS
-//    - TOP PADDING
-//    - RIGHT PADDING
-//    - BOTTOM PADDING
-//    - LEFT PADDING
-//    - X-AXIS PADDING
-//    - Y-AXIS PADDING
-//    - RESET PADDING
 //
 //  ============================================================================
 //  $   AUTO-SPACING
@@ -47,6 +23,8 @@
 //      Instead of stlying specific elements when we're unaware of their context,
 //      this applies margin to context. The margin is only applied when an
 //      element is proceeded by another element.
+//  ============================================================================
+//  $$   VERTICALLY
 //  ----------------------------------------------------------------------------
 .d-stack0 { > * + * { margin-top: @su0 !important; } }
 .d-stack1 { > * + * { margin-top: @su1 !important; } }
@@ -67,6 +45,9 @@
 .d-stack114 { > * + * { margin-top: @su114 !important; } }
 .d-stack128 { > * + * { margin-top: @su128 !important; } }
 
+//  ============================================================================
+//  $$   HORIZONTALLY
+//  ----------------------------------------------------------------------------
 .d-flow0 { > * + * { margin-left: @su0 !important; } }
 .d-flow1 { > * + * { margin-left: @su1 !important; } }
 .d-flow2 { > * + * { margin-left: @su2 !important; } }
@@ -88,192 +69,43 @@
 
 
 //  ============================================================================
-//     MARGIN
-//  ============================================================================
-//  ============================================================================
-//  $  POSITIVE MARGINS
-//  ============================================================================
-//  $$ ALL DIRECTIONS
+//  $   MARGIN
 //  ----------------------------------------------------------------------------
-#d-internals #auto-generate(
-    '.d-m',
-    { .template(@value) { margin: @value !important; } },
-    @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64 @su72 @su84 @su96 @su102 @su114 @su128 auto unset
-);
+.d-m-auto { margin: auto !important; }
+.d-m-unset { margin: unset !important; }
 
-//  $$ TOP MARGIN
-//  ----------------------------------------------------------------------------
-#d-internals #auto-generate(
-    '.d-mt',
-    { .template(@value) { margin-top: @value !important; } },
-    @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64 @su72 @su84 @su96 @su102 @su114 @su128 auto unset
-);
+.d-mt-auto { margin-top: auto !important; }
+.d-mt-unset { margin-top: unset !important; }
 
-//  $$ RIGHT MARGIN
-//  ----------------------------------------------------------------------------
-#d-internals #auto-generate(
-    '.d-mr',
-    { .template(@value) { margin-right: @value !important; } },
-    @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64 @su72 @su84 @su96 @su102 @su114 @su128 auto unset
-);
+.d-mr-auto { margin-right: auto !important; }
+.d-mr-unset { margin-right: unset !important; }
 
-//  $$ BOTTOM MARGIN
-//  ----------------------------------------------------------------------------
-#d-internals #auto-generate(
-    '.d-mb',
-    { .template(@value) { margin-bottom: @value !important; } },
-    @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64 @su72 @su84 @su96 @su102 @su114 @su128 auto unset
-);
+.d-mb-auto { margin-bottom: auto !important; }
+.d-mb-unset { margin-bottom: unset !important; }
 
-//  $$ LEFT MARGIN
-//  ----------------------------------------------------------------------------
-#d-internals #auto-generate(
-    '.d-ml',
-    { .template(@value) { margin-left: @value !important; } },
-    @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64 @su72 @su84 @su96 @su102 @su114 @su128 auto unset
-);
+.d-ml-auto { margin-left: auto !important; }
+.d-ml-unset { margin-left: unset !important; }
 
-//  $$ X-AXIS (LEFT & RIGHT)
-//  ----------------------------------------------------------------------------
-#d-internals #auto-generate(
-    '.d-mx',
-    { .template(@value) { margin-right: @value !important; margin-left: @value !important; } },
-    @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64 @su72 @su84 @su96 @su102 @su114 @su128 auto unset
-);
+.d-mx-auto { margin-right: auto !important; margin-left: auto !important; }
+.d-mx-unset { margin-right: unset !important; margin-left: unset !important; }
 
-//  $$ Y-AXIS (TOP & BOTTOM)
-//  ----------------------------------------------------------------------------
-#d-internals #auto-generate(
-    '.d-my',
-    { .template(@value) { margin-top: @value !important; margin-bottom: @value !important; } },
-    @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64 @su72 @su84 @su96 @su102 @su114 @su128 auto unset
-);
+.d-my-auto { margin-top: auto !important; margin-bottom: auto !important; }
+.d-my-unset { margin-top: unset !important; margin-bottom: unset !important; }
 
 
 //  ============================================================================
-//  $  NEGATIVE MARGINS
-//  ============================================================================
-//  $$ ALL NEGATIVE DIRECTIONS
+//  $   PADDING
 //  ----------------------------------------------------------------------------
-#d-internals #auto-generate(
-    '.d-m',
-    { .template(@value) { margin: @value !important; } },
-    -@su1 -@su2 -@su4 -@su6 -@su8 -@su12 -@su16 -@su24 -@su32 -@su48 -@su64 -@su72 -@su84 -@su96 -@su102 -@su114 -@su128
-);
+.d-p-unset { padding: unset !important; }
 
+.d-pt-unset { padding-top: unset !important; }
 
-//  $$ TOP NEGATIVE MARGIN
-//  ----------------------------------------------------------------------------
-#d-internals #auto-generate(
-    '.d-mt',
-    { .template(@value) { margin-top: @value !important; } },
-    -@su1 -@su2 -@su4 -@su6 -@su8 -@su12 -@su16 -@su24 -@su32 -@su48 -@su64 -@su72 -@su84 -@su96 -@su102 -@su114 -@su128
-);
+.d-pr-unset { padding-right: unset !important; }
 
-//  $$ RIGHT NEGATIVE MARGIN
-//  ----------------------------------------------------------------------------
-#d-internals #auto-generate(
-    '.d-mr',
-    { .template(@value) { margin-right: @value !important; } },
-    -@su1 -@su2 -@su4 -@su6 -@su8 -@su12 -@su16 -@su24 -@su32 -@su48 -@su64 -@su72 -@su84 -@su96 -@su102 -@su114 -@su128
-);
+.d-pb-unset { padding-bottom: unset !important; }
 
-//  $$ BOTTOM NEGATIVE MARGIN
-//  ----------------------------------------------------------------------------
-#d-internals #auto-generate(
-    '.d-mb',
-    { .template(@value) { margin-bottom: @value !important; } },
-    -@su1 -@su2 -@su4 -@su6 -@su8 -@su12 -@su16 -@su24 -@su32 -@su48 -@su64 -@su72 -@su84 -@su96 -@su102 -@su114 -@su128
-);
+.d-pl-unset { padding-left: unset !important; }
 
-//  $$ LEFT NEGATIVE MARGIN
-//  ----------------------------------------------------------------------------
-#d-internals #auto-generate(
-    '.d-ml',
-    { .template(@value) { margin-left: @value !important; } },
-    -@su1 -@su2 -@su4 -@su6 -@su8 -@su12 -@su16 -@su24 -@su32 -@su48 -@su64 -@su72 -@su84 -@su96 -@su102 -@su114 -@su128
-);
+.d-px-unset { padding-right: unset !important; padding-left: unset !important; }
 
-//  $$ X-AXIS NEGATIVE MARGIN (LEFT & RIGHT)
-//  ----------------------------------------------------------------------------
-#d-internals #auto-generate(
-    '.d-mx',
-    { .template(@value) { margin-right: @value !important; margin-left: @value !important; } },
-    -@su1 -@su2 -@su4 -@su6 -@su8 -@su12 -@su16 -@su24 -@su32 -@su48 -@su64 -@su72 -@su84 -@su96 -@su102 -@su114 -@su128
-);
-
-//  $$ Y-AXIS NEGATIVE MARGIN (TOP & BOTTOM)
-//  ----------------------------------------------------------------------------
-#d-internals #auto-generate(
-    '.d-my',
-    { .template(@value) { margin-top: @value !important; margin-bottom: @value !important; } },
-    -@su1 -@su2 -@su4 -@su6 -@su8 -@su12 -@su16 -@su24 -@su32 -@su48 -@su64 -@su72 -@su84 -@su96 -@su102 -@su114 -@su128
-);
-
-
-
-//  ============================================================================
-//     PADDING
-//  ============================================================================
-//  ============================================================================
-//  $  ALL DIRECTIONS
-//  ----------------------------------------------------------------------------
-#d-internals #auto-generate(
-    '.d-p',
-    { .template(@value) { padding: @value !important; } },
-    @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64 @su72 @su84 @su96 @su102 @su114 @su128 unset
-);
-
-//  ============================================================================
-//  $  TOP PADDING
-//  ----------------------------------------------------------------------------
-#d-internals #auto-generate(
-    '.d-pt',
-    { .template(@value) { padding-top: @value !important; } },
-    @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64 @su72 @su84 @su96 @su102 @su114 @su128 unset
-);
-
-//  ============================================================================
-//  $  RIGHT PADDING
-//  ----------------------------------------------------------------------------
-#d-internals #auto-generate(
-    '.d-pr',
-    { .template(@value) { padding-right: @value !important; } },
-    @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64 @su72 @su84 @su96 @su102 @su114 @su128 unset
-);
-
-//  ============================================================================
-//  $  BOTTOM PADDING
-//  ----------------------------------------------------------------------------
-#d-internals #auto-generate(
-    '.d-pb',
-    { .template(@value) { padding-bottom: @value !important; } },
-    @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64 @su72 @su84 @su96 @su102 @su114 @su128 unset
-);
-
-//  ============================================================================
-//  $  LEFT PADDING
-//  ----------------------------------------------------------------------------
-#d-internals #auto-generate(
-    '.d-pl',
-    { .template(@value) { padding-left: @value !important; } },
-    @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64 @su72 @su84 @su96 @su102 @su114 @su128 unset
-);
-
-//  ============================================================================
-//  $  X-AXIS (LEFT & RIGHT)
-//  ----------------------------------------------------------------------------
-#d-internals #auto-generate(
-    '.d-px',
-    { .template(@value) { padding-right: @value !important; padding-left: @value !important; } },
-    @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64 @su72 @su84 @su96 @su102 @su114 @su128 unset
-);
-
-//  ============================================================================
-//  $  Y-AXIS (TOP & BOTTOM)
-//  ----------------------------------------------------------------------------
-#d-internals #auto-generate(
-    '.d-py',
-    { .template(@value) { padding-top: @value !important; padding-bottom: @value !important; } },
-    @su0 @su1 @su2 @su4 @su6 @su8 @su12 @su16 @su24 @su32 @su48 @su64 @su72 @su84 @su96 @su102 @su114 @su128 unset
-);
+.d-py-unset { padding-top: unset !important; padding-bottom: unset !important; }
