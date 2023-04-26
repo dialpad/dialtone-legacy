@@ -55,6 +55,11 @@ html {
 // Temp fix, will remove this once root-layout is update on dialtone-vue
 .root-layout__content {
   overflow-y: unset !important;
+  &:focus-visible {
+    // should probably be moved to root layout component
+    // this occurs because of `tabindex` attribute, which... is it necessary?
+    box-shadow: none;
+  }
 }
 
 //  ============================================================================
@@ -110,7 +115,7 @@ a.router-link-active {
       position: absolute;
       top: 4px;
       bottom: 4px;
-      left: calc(var(--space-300) * -1);
+      left: var(--space-300-negative);
       width: var(--size-200);
       background-color: var(--purple-400);
       border-radius: var(--size-200);
@@ -304,18 +309,18 @@ a.header-anchor {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: calc((var(--icon-card-width) * 2) + var(--su32));
+  width: calc((var(--icon-card-width) * 2) + var(--size-600));
   min-height: var(--icon-card-width);
-  margin-right: calc(-1 * var(--su1));
-  padding: var(--su12) var(--su16);
+  margin-right: var(--space-100-negative);
+  padding: var(--space-450) var(--space-500);
   color: var(--black-200);
   font-size: var(--fs-200);
   background-color: var(--black-700);
-  border-radius: var(--su8);
+  border-radius: var(--size-400);
   box-shadow: var(--bs-md);
 
   .dialtone-icon-card[data-selected='yes'] & {
-    margin: calc(-1 * var(--su1));
+    margin: var(--size-100-negative);
     transform: translateX(calc(-1 * var(--icon-card-width)));
     visibility: visible;
     opacity: 1;
@@ -327,7 +332,7 @@ a.header-anchor {
   //  If it's in the first two columns, show the footer on the right
   .dialtone-icon-grid__item:nth-child(6n+1) .dialtone-icon-card[data-selected='yes'] &,
   .dialtone-icon-grid__item:nth-child(6n+2) .dialtone-icon-card[data-selected='yes'] & {
-    right: var(--su1);
+    right: var(--size-100);
     margin-right: unset;
     transform: translateX(100%);
   }
@@ -366,7 +371,7 @@ a.header-anchor {
 .dialtone-icon-card__icon {
   width: @icon48;
   height: @icon48;
-  margin-bottom: var(--su4);
+  margin-bottom: var(--space-300);
 
   svg {
     width: 100%;
@@ -375,7 +380,7 @@ a.header-anchor {
 }
 
 .dialtone-icon-card__icon--autosize {
-  margin-bottom: var(--su4);
+  margin-bottom: var(--space-300);
 
   svg {
     width: 100%;
@@ -385,7 +390,7 @@ a.header-anchor {
 
 .dialtone-icon-card__title {
   margin-top: 0;
-  margin-bottom: var(--su4);
+  margin-bottom: var(--space-300);
   font-weight: var(--fw-bold);
   font-size: var(--fs-200);
   line-height: var(--lh-200);
@@ -592,8 +597,8 @@ a.header-anchor {
 //  ----------------------------------------------------------------------------
 
 .dialtone-definition {
-  >dt {
-    margin-top: var(--su16);
+  > dt {
+    margin-top: var(--space-500);
     font-weight: var(--fw-bold);
   }
 
@@ -629,7 +634,7 @@ a.header-anchor {
 
   &__hd {
     display: flex;
-    gap: var(--su8);
+    gap: var(--space-400);
     align-items: center;
     font-size: var(--fs-200);
 
