@@ -25,236 +25,6 @@
 //  ----------------------------------------------------------------------------
 #d-internals() {
     //  ========================================================================
-    //  $   COLOR CLASS GENERATOR
-    //      Create a mixin to generate all the utility classes required. By doing it
-    //      this way, we are disabling the ability to use Dialtone utility classes as
-    //      a mixin. Previously we had allowed for utility classes to be used as
-    //      mixins, but because our overall CSS bundle size is growing exponentially,
-    //      Dialtone v6 removed this ability. It is now recommended to use CSS
-    //      variables (var(--color)). Less variables (@color) are also available,
-    //      but their use is discouraged.
-    //
-    //      USAGE:
-    //      #d-internals #color-classes(purple-500);
-    //
-    //  ------------------------------------------------------------------------
-    #color-classes(@color-name) {
-      //  --  FONT STYLES
-      .d-fc-@{color-name},
-      .h\:d-fc-@{color-name}:hover,
-      .f\:d-fc-@{color-name}:focus {
-        --fco: 100%;
-        color: hsla(var(~'--@{color-name}-h') var(~'--@{color-name}-s') var(~'--@{color-name}-l') ~' / ' var(--fco)) !important;
-      }
-      .f\:d-fc-@{color-name}:focus-within {
-        --fco: 100%;
-        color: hsla(var(~'--@{color-name}-h') var(~'--@{color-name}-s') var(~'--@{color-name}-l') ~' / ' var(--fco)) !important;
-      }
-      .fv\:d-fc-@{color-name}:focus-visible {
-        --fco: 100%;
-        color: hsla(var(~'--@{color-name}-h') var(~'--@{color-name}-s') var(~'--@{color-name}-l') ~' / ' var(--fco)) !important;
-      }
-      #d-internals #dark-mode('.d\:d-fc-@{color-name}', {
-        --fco: 100%;
-        color: hsla(var(~'--@{color-name}-h') var(~'--@{color-name}-s') var(~'--@{color-name}-l') ~' / ' var(--fco)) !important;
-      });
-
-
-      //  --  BORDER STYLES
-      .d-bc-@{color-name},
-      .h\:d-bc-@{color-name}:hover,
-      .f\:d-bc-@{color-name}:focus {
-        --bco: 100%;
-        border-color: hsla(var(~'--@{color-name}-h') var(~'--@{color-name}-s') var(~'--@{color-name}-l') ~' / ' var(--bco)) !important;
-      }
-      .f\:d-bc-@{color-name}:focus-within {
-        --bco: 100%;
-        border-color: hsla(var(~'--@{color-name}-h') var(~'--@{color-name}-s') var(~'--@{color-name}-l') ~' / ' var(--bco)) !important;
-      }
-      .fv\:d-bc-@{color-name}:focus-visible {
-        --bco: 100%;
-        border-color: hsla(var(~'--@{color-name}-h') var(~'--@{color-name}-s') var(~'--@{color-name}-l') ~' / ' var(--bco)) !important;
-      }
-      #d-internals #dark-mode('.d\:d-bc-@{color-name}', {
-        --bco: 100%;
-        border-color: hsla(var(~'--@{color-name}-h') var(~'--@{color-name}-s') var(~'--@{color-name}-l') ~' / ' var(--bco)) !important;
-      });
-
-      //  --  DIVIDER COLORS
-      .d-divide-@{color-name} > * + * {
-        --dco: 100%;
-        border-color: hsla(var(~'--@{color-name}-h') var(~'--@{color-name}-s') var(~'--@{color-name}-l') ~' / ' var(--dco)) !important;
-      }
-      #d-internals #dark-mode('.d\:d-divide-@{color-name} > * + *', {
-        --dco: 100%;
-        border-color: hsla(var(~'--@{color-name}-h') var(~'--@{color-name}-s') var(~'--@{color-name}-l') ~' / ' var(--dco)) !important;
-      });
-
-      //  --  BACKGROUND STYLES
-      .d-bgc-@{color-name},
-      .h\:d-bgc-@{color-name}:hover,
-      .f\:d-bgc-@{color-name}:focus {
-        --bgo: 100%;
-        background-color: hsla(var(~'--@{color-name}-h') var(~'--@{color-name}-s') var(~'--@{color-name}-l') ~' / ' var(--bgo)) !important;
-      }
-      .f\:d-bgc-@{color-name}:focus-within {
-        --bgo: 100%;
-        background-color: hsla(var(~'--@{color-name}-h') var(~'--@{color-name}-s') var(~'--@{color-name}-l') ~' / ' var(--bgo)) !important;
-      }
-      .fv\:d-bgc-@{color-name}:focus-visible {
-        --bgo: 100%;
-        background-color: hsla(var(~'--@{color-name}-h') var(~'--@{color-name}-s') var(~'--@{color-name}-l') ~' / ' var(--bgo)) !important;
-      }
-      #d-internals #dark-mode('.d\:d-bgc-@{color-name}', {
-        --bgo: 100%;
-        background-color: hsla(var(~'--@{color-name}-h') var(~'--@{color-name}-s') var(~'--@{color-name}-l') ~' / ' var(--bgo)) !important;
-      });
-    }
-
-    //  ========================================================================
-    //  $   STANDARD WEIGHT LOOP GENERATOR
-    //      Since most of our colors have similar stops (100 - 600), we'll save
-    //      ourselves the need to call the mixin for each color and create a
-    //      loop that will create most of the colors for us.
-    //
-    //      USAGE:
-    //      #d-internals #standard-stops(purple);
-    //
-    //  ------------------------------------------------------------------------
-    #standard-stops(@color) {
-      #d-internals #color-classes(~'@{color}-600');
-      #d-internals #color-classes(~'@{color}-500');
-      #d-internals #color-classes(~'@{color}-400');
-      #d-internals #color-classes(~'@{color}-300');
-      #d-internals #color-classes(~'@{color}-200');
-      #d-internals #color-classes(~'@{color}-100');
-    }
-
-    //  ========================================================================
-    //  $   HOVER / FOCUS GENERATOR
-    //      Pass a class name and mixin with the properties to copy into this function
-    //      to generate hover / focus copies of it prefixed with h: and f:.
-    //      Many of the class generators in this file will already do this,
-    //      so this mixin is meant more for one off exceptions.
-    //
-    //      USAGE:
-    //      #d-internals #generate-hover-focus(d-bgc-transparent, {.d-bgc-transparent();});
-    //
-    //  ------------------------------------------------------------------------
-    #generate-hover-focus(@className, @mixin) {
-      .h\:@{className}:hover {
-        @mixin();
-      }
-      .f\:@{className}:focus {
-        @mixin();
-      }
-      .f\:@{className}:focus-within {
-        @mixin();
-      }
-      .fv\:@{className}:focus-visible {
-        @mixin();
-      }
-    }
-
-    //  ========================================================================
-    //  $   OPACITY CLASS GENERATOR
-    //      Creates opacity classes for font, background, and border colors.
-    //
-    //      USAGE:
-    //      #d-internals #opacity-classes(50);
-    //
-    //  ------------------------------------------------------------------------
-    #opacity-classes(@opacity) {
-      //  --  FONT OPACITY
-      .d-fco@{opacity},
-      .h\:d-fco@{opacity}:hover,
-      .f\:d-fco@{opacity}:focus {
-        --fco: ~'@{opacity}%' !important;
-      }
-      .f\:d-fco@{opacity}:focus-within {
-        --fco: ~'@{opacity}%' !important;
-      }
-      .fv\:d-fco@{opacity}:focus-visible {
-        --fco: ~'@{opacity}%' !important;
-      }
-      #d-internals #dark-mode('.d\:d-fco@{opacity}', {
-        --fco: ~'@{opacity}%' !important;
-      });
-
-
-      //  --  BORDER OPACITY
-      .d-bco@{opacity},
-      .h\:d-bco@{opacity}:hover,
-      .f\:d-bco@{opacity}:focus {
-        --bco: ~'@{opacity}%' !important;
-      }
-      .f\:d-bco@{opacity}:focus-within {
-        --bco: ~'@{opacity}%' !important;
-      }
-      .fv\:d-bco@{opacity}:focus-visible {
-        --bco: ~'@{opacity}%' !important;
-      }
-      #d-internals #dark-mode('.d\:d-bco@{opacity}', {
-        --bco: ~'@{opacity}%' !important;
-      });
-
-      //  --  DIVIDER OPACITY
-      .d-dco@{opacity} > * + * {
-        --dco: ~'@{opacity}%' !important;
-      }
-      #d-internals #dark-mode('.d\:d-dco@{opacity} > * + *', {
-        --dco: ~'@{opacity}%' !important;
-      });
-
-      //  --  BACKGROUND COLOR OPACITY
-      .d-bgo@{opacity},
-      .h\:d-bgo@{opacity}:hover,
-      .f\:d-bgo@{opacity}:focus {
-        --bgo: ~'@{opacity}%' !important;
-      }
-      .f\:d-bgo@{opacity}:focus-within {
-        --bgo: ~'@{opacity}%' !important;
-      }
-      .fv\:d-bgo@{opacity}:focus-visible {
-        --bgo: ~'@{opacity}%' !important;
-      }
-      #d-internals #dark-mode('.d\:d-bgo@{opacity}', {
-        --bgo: ~'@{opacity}%' !important;
-      });
-
-      //  --  BACKGROUND GRADIENT STARTING STOP
-      .d-bgg-from-o@{opacity},
-      .h\:d-bgg-from-@{opacity}:hover,
-      .f\:d-bgg-from-@{opacity}:focus {
-        --bgg-from-opacity: ~'@{opacity}%' !important;
-      }
-      .f\:d-bgg-from-@{opacity}:focus-within {
-        --bgg-from-opacity: ~'@{opacity}%' !important;
-      }
-      .fv\:d-bgg-from-@{opacity}:focus-visible {
-        --bgg-from-opacity: ~'@{opacity}%' !important;
-      }
-      #d-internals #dark-mode('.d\:d-bgg-from-@{opacity}', {
-        --bgg-from-opacity: ~'@{opacity}%' !important;
-      });
-
-      //  --  BACKGROUND GRADIENT ENDING STOP
-      .d-bgg-to-o@{opacity},
-      .h\:d-bgg-to-@{opacity}:hover,
-      .f\:d-bgg-to-@{opacity}:focus {
-        --bgg-to-opacity: ~'@{opacity}%' !important;
-      }
-      .f\:d-bgg-to-@{opacity}:focus-within {
-        --bgg-to-opacity: ~'@{opacity}%' !important;
-      }
-      .fv\:d-bgg-to-@{opacity}:focus-visible {
-        --bgg-to-opacity: ~'@{opacity}%' !important;
-      }
-      #d-internals #dark-mode('.d\:d-bgg-to-@{opacity}', {
-        --bgg-to-opacity: ~'@{opacity}%' !important;
-      });
-    }
-    //  ========================================================================
     //  $   COLOR VARS
     //      #color-vars creates all our HSL CSS color vars for us from a set
     //      of HEX codes.
@@ -270,111 +40,8 @@
         --@{name}-hsl: ~"var(--@{name}-h) var(--@{name}-s) var(--@{name}-l)";
         --@{name}: hsla(~"var(--@{name}-h) var(--@{name}-s) var(--@{name}-l) /  var(--alpha, 100%)");
     }
-    #dark-color-vars(@name, @color) {
 
-    }
-
-    //  ========================================================================
-    //  $   DARK MODE
-    //      #dark-mode creates a dark-mode override behind the
-    //      `prefers-color-scheme: dark` media query and `.theme-system` class.
-    //      It also renders the same rules outside of the media query with
-    //      `.theme-dark`.
-    //
-    //      USAGE:
-    //      #d-internals #dark-mode('.d-modal', { background-color: var(--black-400); })
-    //
-    //  ------------------------------------------------------------------------
-    #dark-mode(@class, @rules) {
-        @nodot-s: replace(@class, "^\.", "");
-        @nodot: ~"@{nodot-s}";
-        @classname: ~"@{class}";
-
-        body.theme-system @{classname} {
-            @media (prefers-color-scheme: dark) {
-                @rules();
-            }
-        }
-        body.theme-dark @{classname} {
-            @rules();
-        }
-
-        #d-internals-collect-dark() {
-            .d\:@{nodot} {
-                @rules();
-            }
-        }
-    }
-
-
-    //  ========================================================================
-    //  $   AUTO GENERATE CLASSES
-    //      This mixin tool is used to help generate a bunch of related classes,
-    //      usually utility classes.
-    //  ------------------------------------------------------------------------
-    #auto-generate(@class-prefix, @rules, @values) {
-        #d-internals #auto-generate-with-index(@class-prefix, @rules, 1, @values);
-    }
-    #auto-generate-with-index(@class-prefix, @rules, @index, @values) when (@index <= length(@values)) {
-        // Extract our values
-        @val: extract(@values, @index);
-
-        //  When our values are numeric...
-        & when (isnumber(@val)) {
-            @px: (@val * 10); // Convert rem values to px equilavent
-            @unitless: unit(@px);
-
-            //  ...and less than 0
-            & when (@unitless < 0) {
-                @abs: abs(@unitless);
-                @class-name: ~"@{class-prefix}n@{abs}";
-
-                @{class-name} { @rules(); .template(@val); }
-            }
-
-            //  ...and equal to or greater than 0
-            & when (@unitless >= 0) {
-                @class-name: ~"@{class-prefix}@{unitless}";
-
-                @{class-name} { @rules(); .template(@val); }
-            }
-        }
-
-        //  When our values aren't numeric...
-        & when not (isnumber(@val)) {
-            @class-name: ~"@{class-prefix}-@{val}";
-
-            @{class-name} { @rules(); .template(@val); }
-        }
-
-        #d-internals #auto-generate-with-index(@class-prefix, @rules, @index + 1, @values);
-    }
-
-    #auto-generate-no-convert(@class-prefix, @rules, @values) {
-        #d-internals #auto-generate-with-index-no-convert(@class-prefix, @rules, 1, @values);
-    }
-    #auto-generate-with-index-no-convert(@class-prefix, @rules, @index, @values) when (@index <= length(@values)) {
-        // Extract our values
-        @val: extract(@values, @index);
-
-        //  When our values are numeric...
-        & when (isnumber(@val)) {
-            @class-name: ~"@{class-prefix}@{val}";
-
-            @{class-name} { @rules(); .template(@val); }
-        }
-
-        //  When our values aren't numeric...
-        & when not (isnumber(@val)) {
-            @class-name: ~"@{class-prefix}-@{val}";
-
-            @{class-name} { @rules(); .template(@val); }
-        }
-
-        #d-internals #auto-generate-with-index-no-convert(@class-prefix, @rules, @index + 1, @values);
-    }
-
-
+    // TODO: Remove while migrating tokens.
     //  ========================================================================
     //  $   CREATE FONT FACE
     //  ------------------------------------------------------------------------
@@ -392,113 +59,179 @@
         }));
     }
 
-    #gradient-classes(@color) {
-      //  COLOR STOP 1, STARTING STOP
-      .d-bgg-from-@{color},
-      .h\:d-bgg-from-@{color}:hover,
-      .f\:d-bgg-from-@{color}:focus {
-        --bgg-from-opacity: 100%;
-        --bgg-from: hsla(var(~"--@{color}-h") var(~"--@{color}-s") var(~"--@{color}-l") ~" / " var(--bgg-from-opacity));
-        --bgg-to: hsla(var(~"--@{color}-h") var(~"--@{color}-s") var(~"--@{color}-l") ~" / " 0%);
-      }
-      .f\:d-bgg-from-@{color}:focus-within {
-        --bgg-from-opacity: 100%;
-        --bgg-from: hsla(var(~"--@{color}-h") var(~"--@{color}-s") var(~"--@{color}-l") ~" / " var(--bgg-from-opacity));
-        --bgg-to: hsla(var(~"--@{color}-h") var(~"--@{color}-s") var(~"--@{color}-l") ~" / " 0%);
-      }
-      .fv\:d-bgg-from-@{color}:focus-visible {
-        --bgg-from-opacity: 100%;
-        --bgg-from: hsla(var(~"--@{color}-h") var(~"--@{color}-s") var(~"--@{color}-l") ~" / " var(--bgg-from-opacity));
-        --bgg-to: hsla(var(~"--@{color}-h") var(~"--@{color}-s") var(~"--@{color}-l") ~" / " 0%);
-      }
-      #d-internals #dark-mode('.d\:d-bgg-from-@{color}', {
-        --bgg-from-opacity: 100%;
-        --bgg-from: hsla(var(~"--@{color}-h") var(~"--@{color}-s") var(~"--@{color}-l") ~" / " var(--bgg-from-opacity));
-        --bgg-to: hsla(var(~"--@{color}-h") var(~"--@{color}-s") var(~"--@{color}-l") ~" / " 0%);
-      });
-
-      //  COLOR STOP 2, ENDING STOP
-      .d-bgg-to-@{color},
-      .h\:d-bgg-to-@{color}:hover,
-      .f\:d-bgg-to-@{color}:focus {
-        --bgg-to-opacity: 100%;
-        --bgg-to: hsla(var(~"--@{color}-h") var(~"--@{color}-s") var(~"--@{color}-l") ~" / " var(--bgg-to-opacity)) !important;
-      }
-      .f\:d-bgg-to-@{color}:focus-within {
-        --bgg-to-opacity: 100%;
-        --bgg-to: hsla(var(~"--@{color}-h") var(~"--@{color}-s") var(~"--@{color}-l") ~" / " var(--bgg-to-opacity)) !important;
-      }
-      .fv\:d-bgg-to-@{color}:focus-visible {
-        --bgg-to-opacity: 100%;
-        --bgg-to: hsla(var(~"--@{color}-h") var(~"--@{color}-s") var(~"--@{color}-l") ~" / " var(--bgg-to-opacity)) !important;
-      }
-      #d-internals #dark-mode('.d\:d-bgg-to-@{color}', {
-        --bgg-to-opacity: 100%;
-        --bgg-to: hsla(var(~"--@{color}-h") var(~"--@{color}-s") var(~"--@{color}-l") ~" / " var(--bgg-to-opacity)) !important;
-      });
-    }
-
-    #gradient-stops(@color) {
-      #d-internals #gradient-classes(~"@{color}-600");
-      #d-internals #gradient-classes(~"@{color}-500");
-      #d-internals #gradient-classes(~"@{color}-400");
-      #d-internals #gradient-classes(~"@{color}-300");
-      #d-internals #gradient-classes(~"@{color}-200");
-      #d-internals #gradient-classes(~"@{color}-100");
-    }
-
-    #build-flex-columns(@num, @count: 1) when (@count =< @num) {
-    .d-fl-col@{count} {
-      display: flex;
-
-      //  Automatically make all direct child to obey the parent class
-      > * {
-        --fl-gap: 0;
-        --fl-basis: calc(100% / @count);
-
-        display: inline-flex;
-        margin: var(--fl-gap);
-        flex: 1 calc(var(--fl-basis) - ((var(--fl-gap) * 2)));
-
-        //  Add in a gap to items after the first row
-        &:nth-child(-n + @{count}) {
-          margin-top: 0;
-        }
-      }
-
-      //  If flex column is in a column direction (and became rows),
-      //  change the margin direction.
-      &.d-fd-column > * {
-        margin: var(--fl-gap) 0;
-      }
-    }
-
-    //  Iterate our loop until we hit our grid column total
-    #d-internals #build-flex-columns(@num, @count + 1);
-  }
-
+    // TODO: Remove while migrating tokens.
     //  ========================================================================
-    //  $   SPACING CLASSES
+    //  $   SIZE AND SPACING CLASSES
     //  ------------------------------------------------------------------------
     #spacing-classes(@BU, @prefix, @suffix: '') {
-      @stop-100: ~"@{prefix}-100@{suffix}";
-      @stop-200: ~"@{prefix}-200@{suffix}";
-      @stop-300: ~"@{prefix}-300@{suffix}";
-      @stop-400: ~"@{prefix}-400@{suffix}";
-      @stop-500: ~"@{prefix}-500@{suffix}";
-      @stop-600: ~"@{prefix}-600@{suffix}";
-      @stop-700: ~"@{prefix}-700@{suffix}";
-      @stop-800: ~"@{prefix}-800@{suffix}";
+      // These include between stops, e.g. `625` to both support existing values
+      // but still adhere to consistent round-number classification of
+      // "pure" numbers
+      @stop-50:    ~"@{prefix}-50@{suffix}";
+      @stop-100:   ~"@{prefix}-100@{suffix}";
+      @stop-200:   ~"@{prefix}-200@{suffix}";
+      @stop-300:   ~"@{prefix}-300@{suffix}";
+      @stop-350:   ~"@{prefix}-350@{suffix}";
+      @stop-400:   ~"@{prefix}-400@{suffix}";
+      @stop-450:   ~"@{prefix}-450@{suffix}";
+      @stop-500:   ~"@{prefix}-500@{suffix}";
+      @stop-550:   ~"@{prefix}-550@{suffix}";
+      @stop-600:   ~"@{prefix}-600@{suffix}";
+      @stop-625:   ~"@{prefix}-625@{suffix}";
+      @stop-650:   ~"@{prefix}-650@{suffix}";
+      @stop-700:   ~"@{prefix}-700@{suffix}";
+      @stop-720:   ~"@{prefix}-720@{suffix}";
+      @stop-730:   ~"@{prefix}-730@{suffix}";
+      @stop-750:   ~"@{prefix}-750@{suffix}";
+      @stop-760:   ~"@{prefix}-760@{suffix}";
+      @stop-775:   ~"@{prefix}-775@{suffix}";
+      @stop-800:   ~"@{prefix}-800@{suffix}";
+      @stop-825:   ~"@{prefix}-825@{suffix}";
+      @stop-850:   ~"@{prefix}-850@{suffix}";
+      @stop-875:   ~"@{prefix}-875@{suffix}";
+      @stop-900:   ~"@{prefix}-900@{suffix}";
+      @stop-925:   ~"@{prefix}-925@{suffix}";
+      @stop-950:   ~"@{prefix}-950@{suffix}";
+      @stop-975:   ~"@{prefix}-975@{suffix}";
+      @stop-1000:  ~"@{prefix}-1000@{suffix}";
+      @stop-1020:  ~"@{prefix}-1020@{suffix}";
+      @stop-1040:  ~"@{prefix}-1040@{suffix}";
+      @stop-1050:  ~"@{prefix}-1050@{suffix}";
+      @stop-1060:  ~"@{prefix}-1060@{suffix}";
+      @stop-1080:  ~"@{prefix}-1080@{suffix}";
+      @stop-1100:  ~"@{prefix}-1100@{suffix}";
+      @stop-1115:  ~"@{prefix}-1115@{suffix}";
+      @stop-1120:  ~"@{prefix}-1120@{suffix}";
+      @stop-1125:  ~"@{prefix}-1125@{suffix}";
+      @stop-1130:  ~"@{prefix}-1130@{suffix}";
+      @stop-1150:  ~"@{prefix}-1150@{suffix}";
+      @stop-1200:  ~"@{prefix}-1200@{suffix}";
 
+      @stop-50-negative:    ~"@{prefix}-50-negative@{suffix}";
+      @stop-100-negative:   ~"@{prefix}-100-negative@{suffix}";
+      @stop-200-negative:   ~"@{prefix}-200-negative@{suffix}";
+      @stop-300-negative:   ~"@{prefix}-300-negative@{suffix}";
+      @stop-350-negative:   ~"@{prefix}-350-negative@{suffix}";
+      @stop-400-negative:   ~"@{prefix}-400-negative@{suffix}";
+      @stop-450-negative:   ~"@{prefix}-450-negative@{suffix}";
+      @stop-500-negative:   ~"@{prefix}-500-negative@{suffix}";
+      @stop-550-negative:   ~"@{prefix}-550-negative@{suffix}";
+      @stop-600-negative:   ~"@{prefix}-600-negative@{suffix}";
+      @stop-625-negative:   ~"@{prefix}-625-negative@{suffix}";
+      @stop-650-negative:   ~"@{prefix}-650-negative@{suffix}";
+      @stop-700-negative:   ~"@{prefix}-700-negative@{suffix}";
+      @stop-720-negative:   ~"@{prefix}-720-negative@{suffix}";
+      @stop-730-negative:   ~"@{prefix}-730-negative@{suffix}";
+      @stop-750-negative:   ~"@{prefix}-750-negative@{suffix}";
+      @stop-760-negative:   ~"@{prefix}-760-negative@{suffix}";
+      @stop-775-negative:   ~"@{prefix}-775-negative@{suffix}";
+      @stop-800-negative:   ~"@{prefix}-800-negative@{suffix}";
+      @stop-825-negative:   ~"@{prefix}-825-negative@{suffix}";
+      @stop-850-negative:   ~"@{prefix}-850-negative@{suffix}";
+      @stop-875-negative:   ~"@{prefix}-875-negative@{suffix}";
+      @stop-900-negative:   ~"@{prefix}-900-negative@{suffix}";
+      @stop-925-negative:   ~"@{prefix}-925-negative@{suffix}";
+      @stop-950-negative:   ~"@{prefix}-950-negative@{suffix}";
+      @stop-975-negative:   ~"@{prefix}-975-negative@{suffix}";
+      @stop-1000-negative:  ~"@{prefix}-1000-negative@{suffix}";
+      @stop-1020-negative:  ~"@{prefix}-1020-negative@{suffix}";
+      @stop-1040-negative:  ~"@{prefix}-1040-negative@{suffix}";
+      @stop-1050-negative:  ~"@{prefix}-1050-negative@{suffix}";
+      @stop-1060-negative:  ~"@{prefix}-1060-negative@{suffix}";
+      @stop-1080-negative:  ~"@{prefix}-1080-negative@{suffix}";
+      @stop-1100-negative:  ~"@{prefix}-1100-negative@{suffix}";
+      @stop-1115-negative:  ~"@{prefix}-1115-negative@{suffix}";
+      @stop-1120-negative:  ~"@{prefix}-1120-negative@{suffix}";
+      @stop-1125-negative:  ~"@{prefix}-1125-negative@{suffix}";
+      @stop-1130-negative:  ~"@{prefix}-1130-negative@{suffix}";
+      @stop-1150-negative:  ~"@{prefix}-1150-negative@{suffix}";
+      @stop-1200-negative:  ~"@{prefix}-1200-negative@{suffix}";
+
+      // These will ultimately be replaced by Design Tokens, so
+      // we can just take the easy way out for now and do very
+      // simple calc that calcs against the `@BU`, which will
+      // be `.8rem` and is sufficient math to work with in the
+      // meantime.
       body {
-        --@{stop-100}:       calc(@BU / pow(2, 3));
-        --@{stop-200}:       calc(@BU / pow(2, 2));
-        --@{stop-300}:       calc(@BU / pow(2, 1));
-        --@{stop-400}:       @BU;
-        --@{stop-500}:       calc(@BU * pow(2, 1));
-        --@{stop-600}:       calc(@BU * pow(2, 2));
-        --@{stop-700}:       calc(@BU * pow(2, 3));
-        --@{stop-800}:       calc(@BU * pow(2, 4));
+        --@{stop-50}:   calc(@BU * 0.0625);
+        --@{stop-100}:  calc(@BU * 0.125);
+        --@{stop-200}:  calc(@BU * 0.25);
+        --@{stop-300}:  calc(@BU * 0.5);
+        --@{stop-350}:  calc(@BU * 0.75);
+        --@{stop-400}:  calc(@BU * 1);
+        --@{stop-450}:  calc(@BU * 1.5);
+        --@{stop-500}:  calc(@BU * 2);
+        --@{stop-550}:  calc(@BU * 3);
+        --@{stop-600}:  calc(@BU * 4);
+        --@{stop-625}:  calc(@BU * 5.25);
+        --@{stop-650}:  calc(@BU * 6);
+        --@{stop-700}:  calc(@BU * 8);
+        --@{stop-720}:  calc(@BU * 9);
+        --@{stop-730}:  calc(@BU * 10.5);
+        --@{stop-750}:  calc(@BU * 12);
+        --@{stop-760}:  calc(@BU * 12.75);
+        --@{stop-775}:  calc(@BU * 14);
+        --@{stop-800}:  calc(@BU * 16);
+        --@{stop-825}:  calc(@BU * 20.5);
+        --@{stop-850}:  calc(@BU * 24);
+        --@{stop-875}:  calc(@BU * 27);
+        --@{stop-900}:  calc(@BU * 32);
+        --@{stop-925}:  calc(@BU * 41.5);
+        --@{stop-950}:  calc(@BU * 48);
+        --@{stop-975}:  calc(@BU * 58);
+        --@{stop-1000}: calc(@BU * 64);
+        --@{stop-1020}: calc(@BU * 78.5);
+        --@{stop-1040}: calc(@BU * 95.5);
+        --@{stop-1050}: calc(@BU * 96);
+        --@{stop-1060}: calc(@BU * 103.5);
+        --@{stop-1080}: calc(@BU * 114);
+        --@{stop-1100}: calc(@BU * 128);
+        --@{stop-1115}: calc(@BU * 142.5);
+        --@{stop-1120}: calc(@BU * 158);
+        --@{stop-1125}: calc(@BU * 160);
+        --@{stop-1130}: calc(@BU * 167.5);
+        --@{stop-1150}: calc(@BU * 192);
+        --@{stop-1200}: calc(@BU * 256);
+
+        --@{stop-50-negative}:   calc((@BU * 0.0625) * -1);
+        --@{stop-100-negative}:  calc((@BU * 0.125) * -1);
+        --@{stop-200-negative}:  calc((@BU * 0.25) * -1);
+        --@{stop-300-negative}:  calc((@BU * 0.5) * -1);
+        --@{stop-350-negative}:  calc((@BU * 0.75) * -1);
+        --@{stop-400-negative}:  calc((@BU * 1) * -1);
+        --@{stop-450-negative}:  calc((@BU * 1.5) * -1);
+        --@{stop-500-negative}:  calc((@BU * 2) * -1);
+        --@{stop-550-negative}:  calc((@BU * 3) * -1);
+        --@{stop-600-negative}:  calc((@BU * 4) * -1);
+        --@{stop-625-negative}:  calc((@BU * 5.25) * -1);
+        --@{stop-650-negative}:  calc((@BU * 6) * -1);
+        --@{stop-700-negative}:  calc((@BU * 8) * -1);
+        --@{stop-720-negative}:  calc((@BU * 9) * -1);
+        --@{stop-730-negative}:  calc((@BU * 10.5) * -1);
+        --@{stop-750-negative}:  calc((@BU * 12) * -1);
+        --@{stop-760-negative}:  calc((@BU * 12.75) * -1);
+        --@{stop-775-negative}:  calc((@BU * 14) * -1);
+        --@{stop-800-negative}:  calc((@BU * 16) * -1);
+        --@{stop-825-negative}:  calc((@BU * 20.5) * -1);
+        --@{stop-850-negative}:  calc((@BU * 24) * -1);
+        --@{stop-875-negative}:  calc((@BU * 27) * -1);
+        --@{stop-900-negative}:  calc((@BU * 32) * -1);
+        --@{stop-925-negative}:  calc((@BU * 41.5) * -1);
+        --@{stop-950-negative}:  calc((@BU * 48) * -1);
+        --@{stop-975-negative}:  calc((@BU * 58) * -1);
+        --@{stop-1000-negative}: calc((@BU * 64) * -1);
+        --@{stop-1020-negative}: calc((@BU * 78.5) * -1);
+        --@{stop-1040-negative}: calc((@BU * 95.5) * -1);
+        --@{stop-1050-negative}: calc((@BU * 96) * -1);
+        --@{stop-1060-negative}: calc((@BU * 103.5) * -1);
+        --@{stop-1080-negative}: calc((@BU * 114) * -1);
+        --@{stop-1100-negative}: calc((@BU * 128) * -1);
+        --@{stop-1115-negative}: calc((@BU * 142.5) * -1);
+        --@{stop-1120-negative}: calc((@BU * 158) * -1);
+        --@{stop-1125-negative}: calc((@BU * 160) * -1);
+        --@{stop-1130-negative}: calc((@BU * 167.5) * -1);
+        --@{stop-1150-negative}: calc((@BU * 192) * -1);
+        --@{stop-1200-negative}: calc((@BU * 256) * -1);
       }
     }
 }

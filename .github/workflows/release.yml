@@ -10,6 +10,7 @@ on:
     paths:
       - 'lib/**'
       - 'package.json'
+      - .github/workflows/release.yml
 
 jobs:
   release:
@@ -56,3 +57,14 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npx semantic-release --extends ./release-ci.config.js
+
+      - name: Set registry to github packages
+        run: npm config set @dialpad:registry https://npm.pkg.github.com
+
+      - name: Set github auth token
+        run: npm config set //npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}
+
+      # note that npm run build is executed before publishing via prepublishOnly
+      - name: Deploy production to github packages
+        if: ${{ github.ref == 'refs/heads/production' }}
+        run: npm publish
