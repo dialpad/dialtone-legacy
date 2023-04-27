@@ -104,12 +104,12 @@ All of our utility classes are set to `!important`. This is because they are des
 
 ### CSS vars
 
-We use CSS vars, also known as [CSS Custom Properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*) in our classes for better reusability. We try to always use CSS vars `var(--su12)` over less vars `@su12` in our code, however we often use LESS vars to help generate CSS vars.
+We use CSS vars, also known as [CSS Custom Properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*) in our classes for better reusability. We try to always use CSS vars, e.g. `var(--size-500)` over less vars `@su16` in our code, however we often use LESS vars to help generate CSS vars.
 
 Here we set the `--avatar--size` CSS var to `12`, and set both the width and the height to reference this variable.
 ```less
 .d-avatar {
-    --avatar--size: var(--su12);
+    --avatar--size: var(--size-450);
     width: var(--avatar--size);
     height: var(--avatar--size);
 }
@@ -119,7 +119,7 @@ Now in variation `d-avatar--sm`, we just set `--avatar--size`. Width and height 
 
 ```less
 .d-avatar--sm {
-  --avatar--size: var(--su24);
+  --avatar--size: var(--size-400);
 }
 ```
 
@@ -263,8 +263,8 @@ If you are developer contributing to Dialtone but are not on the Dialtone team y
 
 ### VuePress
 
-[VuePress](https://v2.vuepress.vuejs.org/) Vue-powered static site generator, is used as a static site generator for our documentation site. 
-VuePress's root folder is within the folder `docs` in the Dialtone repository. 
+[VuePress](https://v2.vuepress.vuejs.org/) Vue-powered static site generator, is used as a static site generator for our documentation site.
+VuePress's root folder is within the folder `docs` in the Dialtone repository.
 Here are some short descriptions of the folders within `docs` and what they are responsible for:
 
 - `docs/.vuepress`: This is where all VuePress-specific files are placed.
@@ -296,18 +296,18 @@ Here's an overview of important properties and the values they need/can have:
 - shortTitle `(optional)`: This property is used to fix linking issues on [Components overview page] when the title is different from the component name.
 - description `(optional)`: Used as the page subtitle and in the page metadata.
 - status `(optional)`: CSS Component status, used to display a badge on [Components overview page] and
-also to define the component status on [Components status page], 
-  - Status options available: `['wip', 'planned', 'new', 'ready', null]` 
+also to define the component status on [Components status page],
+  - Status options available: `['wip', 'planned', 'new', 'ready', null]`
   if status is not defined, the component will have a "N/A" CSS status on [Components status page].
-- thumb `(optional)`: Boolean to define if the component in [Components overview page] will have a thumbnail 
+- thumb `(optional)`: Boolean to define if the component in [Components overview page] will have a thumbnail
   - ***Note:*** The thumbnail must exist on `/docs/.vuepress/public/assets/images/components` and the name should be the `component title` in kebab-case in `png` format. e.g. `Button Group` component -> button-group.png
 - storybook `(optional)`: It can be a storybook URL or a status.
   - Status options available: `['wip', 'planned', null]`
   if storybook is not defined, the component will have a "N/A" Vue status on [Components status page].
 - figma `(optional)`: It can be a figma URL or a status.
-  - Status options available: `['wip', 'planned', null]` 
+  - Status options available: `['wip', 'planned', null]`
   if figma is not defined, the component will have a "N/A" Figma status on [Components status page].
-- no_preview `(optional)`: If defined, the page will have no preview section at the top. 
+- no_preview `(optional)`: If defined, the page will have no preview section at the top.
 
 ### Gulp
 
