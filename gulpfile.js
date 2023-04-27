@@ -64,7 +64,7 @@ const less = settings.styles ? require('gulp-less') : null;
 const postCSSResponsify = settings.styles
   ? require('@dialpad/postcss-responsive-variations')({ breakpoints, classes })
   : null;
-const postCSSFocusVisible = settings.styles ? require('postcss-focus-visible') : null;
+const postCSSDialtoneGenerator = settings.styles ? require('./postcss/dialtone-generators') : null;
 const sourcemaps = require('gulp-sourcemaps');
 
 //  @@ SVGS
@@ -212,7 +212,7 @@ const libStyles = function (done) {
   return src(paths.styles.inputLib)
     .pipe(less())
     .pipe(replace('../../fonts/', '../fonts/'))
-    .pipe(postCSS([postCSSResponsify, postCSSFocusVisible]))
+    .pipe(postCSS([postCSSDialtoneGenerator, postCSSResponsify]))
     .pipe(dest(paths.styles.outputLib))
     .pipe(postCSS([postCSSNano]))
     .pipe(rename({ suffix: '.min' }))
@@ -228,11 +228,11 @@ const libStylesDev = function (done) {
     // compile less to css
     .pipe(sourcemaps.init())
     .pipe(less())
+    .pipe(postCSS([postCSSDialtoneGenerator, postCSSResponsify]))
     .pipe(sourcemaps.mapSources(function (sourcePath, file) {
       return '../../build/less/' + sourcePath;
     }))
     .pipe(sourcemaps.write())
-    .pipe(postCSS([postCSSResponsify, postCSSFocusVisible]))
     // concat the css into a single file
     .pipe(concat('dialtone.css'))
 
