@@ -4,7 +4,6 @@ import NotFound from './layouts/NotFound.vue';
 
 // CSS
 import '../../../lib/dist/css/dialtone.css';
-import '@dialpad/dialtone-tokens/dist/css/variables.css';
 import './assets/less/dialtone-docs.less';
 
 export default defineClientConfig({

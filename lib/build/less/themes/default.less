@@ -24,50 +24,48 @@
 
 
 @theme-vars: {
-    primary-color-h: var(--dt-color-purple-400-h);
-    primary-color-s: var(--dt-color-purple-400-s);
-    primary-color-l: var(--dt-color-purple-400-l);
-    primary-color-hsl: var(--primary-color-h) var(--primary-color-s) var(--primary-color-l);
-    primary-color: hsl(var(--primary-color-h) var(--primary-color-s) var(--primary-color-l));
-    primary-color-hover: hsl(var(--primary-color-h) var(--primary-color-s) calc(var(--primary-color-l) - 10%));
-    nav-background-color-h: var(--dt-color-purple-600-h);
-    nav-background-color-s: var(--dt-color-purple-600-s);
-    nav-background-color-l: var(--dt-color-purple-600-l);
-    nav-background-color: hsl(var(--nav-background-color-h) var(--nav-background-color-s) var(--nav-background-color-l));
+    primary-color-h:                        var(--purple-400-h);
+    primary-color-s:                        var(--purple-400-s);
+    primary-color-l:                        var(--purple-400-l);
+    primary-color-hsl:                      var(--primary-color-h) var(--primary-color-s) var(--primary-color-l);
+    primary-color:                          hsl(var(--primary-color-h) var(--primary-color-s) var(--primary-color-l));
+    primary-color-hover:                    hsl(var(--primary-color-h) var(--primary-color-s) calc(var(--primary-color-l) - 10%));
+    nav-background-color-h:                 var(--purple-600-h);
+    nav-background-color-s:                 var(--purple-600-s);
+    nav-background-color-l:                 var(--purple-600-l);
+    nav-background-color:                   hsl(var(--nav-background-color-h) var(--nav-background-color-s) var(--nav-background-color-l));
 
-    topbar-height: var(--dt-size-700);
+    topbar-height:                                    var(--size-700);
 
-    base--font-size: var(--dt-font-size-200);
-    base--font-family: var(--dt-typography-helper-base-font-family);
-    base--line-height: var(--dt-font-line-height-300);
-    base--corner-radius: 0.25em; // TODO: unused. deprecate or...?
+    base--font-size:                                  var(--fs-200);
+    base--font-family:                                @ff-custom;
+    base--line-height:                                var(--lh-300);
+    base--corner-radius:                              0.25em; // TODO: unused. deprecate or...?
 
-    // Use with d-fco[##] Opacity utility
-    theme-topbar-color-hsl: var(--dt-color-black-900-h) var(--dt-color-black-900-s) var(--dt-color-black-900-l);
-    theme-topbar-color: hsl(var(--theme-topbar-color-hsl));
-    theme-topbar-color-background: var(--dt-color-surface-secondary);
+    theme-topbar-color:                               hsl(var(--theme-topbar-color-hsl));
+    theme-topbar-color-hsl:                           var(--black-900-h) var(--black-900-s) var(--black-900-l); // Use with d-fco[##] Opacity utility
+    theme-topbar-color-background:                    var(--bgc-secondary);
 
-    theme-sidebar-color: var(--dt-color-foreground-primary);
-    theme-sidebar-color-hsl: var(--dt-color-black-900-h) var(--dt-color-black-900-s) var(--dt-color-black-900-l);
-    theme-sidebar-color-background: var(--dt-color-surface-secondary);
+    theme-sidebar-color:                              var(--fc-primary);
+    theme-sidebar-color-hsl:                          var(--black-900-h) var(--black-900-s) var(--black-900-l);
+    theme-sidebar-color-background:                   var(--bgc-secondary);
 
-    theme-sidebar-icon-color: var(--dt-color-foreground-secondary);
-    theme-sidebar-status-color: var(--dt-color-foreground-tertiary);
+    theme-sidebar-icon-color:                         var(--fc-secondary);
+    theme-sidebar-status-color:                       var(--fc-tertiary);
 
-    theme-sidebar-row-color-background: var(--dt-color-neutral-transparent);
-    theme-sidebar-row-color-background-hover: hsla(var(--dt-color-black-900-hsl) / 0.1);
-    theme-sidebar-row-color-background-active: var(--dt-color-black-300);
-    theme-sidebar-selected-row-color: var(--dt-color-foreground-primary);
-    // Use with d-fco[##] Opacity utility
-    theme-sidebar-selected-row-color-hsl: var(--dt-color-black-900-h) var(--dt-color-black-900-s) var(--dt-color-black-900-l);
-    theme-sidebar-selected-row-color-background: var(--dt-color-black-200);
+    theme-sidebar-row-color-background:               transparent;
+    theme-sidebar-row-color-background-hover:         hsla(var(--black-900-hsl) / 0.1);
+    theme-sidebar-row-color-background-active:        var(--black-300);
+    theme-sidebar-selected-row-color:                 var(--fc-primary);
+    theme-sidebar-selected-row-color-hsl:             var(--black-900-h) var(--black-900-s) var(--black-900-l); // Use with d-fco[##] Opacity utility
+    theme-sidebar-selected-row-color-background:      var(--black-200);
 
-    theme-presence-color-background-available: var(--dt-color-green-400);
-    theme-presence-color-background-busy-unavailable: var(--dt-color-red-300);
-    theme-presence-color-background-busy: var(--dt-color-gold-300);
+    theme-presence-color-background-available:        var(--green-400);
+    theme-presence-color-background-busy-unavailable: var(--red-300);
+    theme-presence-color-background-busy:             var(--gold-300);
 
-    theme-mention-color-background: var(--dt-color-purple-400);
-    theme-mention-color-foreground: var(--dt-color-neutral-white);
+    theme-mention-color-background:                   var(--purple-400);
+    theme-mention-color-foreground:                   var(--white);
 }
 
 //  ============================================================================
@@ -83,62 +81,20 @@
         --fco: 100%;
     }
 }
-
-.d-theme-topbar-bgc {
-    background-color: var(--theme-topbar-color-background) !important;
-}
-
-.d-theme-sidebar-fc {
-    color: var(--theme-sidebar-color) !important;
-}
-
-.d-theme-sidebar-status-fc {
-    color: var(--theme-sidebar-status-color) !important;
-}
-
-.d-theme-sidebar-icon-fc {
-    color: var(--theme-sidebar-icon-color) !important;
-}
-
-.d-theme-sidebar-bgc {
-    background-color: var(--theme-sidebar-color-background) !important;
-}
-
-.d-theme-sidebar-row-bgc:hover {
-    background-color: var(--theme-sidebar-row-color-background-hover) !important;
-}
-
-.d-theme-sidebar-row-bgc:active {
-    background-color: var(--theme-sidebar-row-color-background-active) !important;
-}
-
-.d-theme-sidebar-row-selected-fc {
-    color: var(--theme-sidebar-selected-row-color) !important;
-}
-
-.d-theme-sidebar-row-selected-bgc {
-    background-color: var(--theme-sidebar-selected-row-color-background) !important;
-}
-
-.d-theme-presence-available {
-    background-color: var(--theme-presence-color-background-available) !important;
-}
-
-.d-theme-presence-busy-unavailable {
-    background-color: var(--theme-presence-color-background-busy-unavailable) !important;
-}
-
-.d-theme-presence-busy {
-    background-color: var(--theme-presence-color-background-busy) !important;
-}
-
-.d-theme-mention {
-    background-color: var(--theme-mention-color-background) !important;
-}
-
-.d-theme-mention-fc {
-    color: var(--theme-mention-color-foreground) !important;
-}
+.d-theme-topbar-bgc { background-color: var(--theme-topbar-color-background) !important; }
+.d-theme-sidebar-fc { color: var(--theme-sidebar-color) !important; }
+.d-theme-sidebar-status-fc { color: var(--theme-sidebar-status-color) !important; }
+.d-theme-sidebar-icon-fc { color: var(--theme-sidebar-icon-color) !important; }
+.d-theme-sidebar-bgc { background-color: var(--theme-sidebar-color-background) !important; }
+.d-theme-sidebar-row-bgc:hover { background-color: var(--theme-sidebar-row-color-background-hover) !important; }
+.d-theme-sidebar-row-bgc:active { background-color: var(--theme-sidebar-row-color-background-active) !important; }
+.d-theme-sidebar-row-selected-fc { color: var(--theme-sidebar-selected-row-color) !important; }
+.d-theme-sidebar-row-selected-bgc { background-color: var(--theme-sidebar-selected-row-color-background) !important; }
+.d-theme-presence-available { background-color: var(--theme-presence-color-background-available) !important; }
+.d-theme-presence-busy-unavailable { background-color: var(--theme-presence-color-background-busy-unavailable) !important; }
+.d-theme-presence-busy { background-color: var(--theme-presence-color-background-busy) !important; }
+.d-theme-mention { background-color: var(--theme-mention-color-background) !important; }
+.d-theme-mention-fc { color: var(--theme-mention-color-foreground) !important; }
 
 
 //  ============================================================================
@@ -147,7 +103,84 @@
 body {
     //  $$  COLOR VARS
     //  ------------------------------------------------------------------------
-    --bgo: 100%; // Background color opacity
-    --bco: 100%; // Border color opacity
-    --fco: 100%; // Font color opacity
+    --bgo: 100%;                // Background color opacity
+    --bco: 100%;                // Border color opacity
+    --fco: 100%;                // Font color opacity
+
+    //  $$  WIDTH / HEIGHT SIZES
+    //  ------------------------------------------------------------------------
+    //  Sizes, Fixed
+    each(@sizes-fixed, {
+        --@{key}: @value;
+    });
+
+    //  $$  VISUAL STYLES
+    //  ------------------------------------------------------------------------
+    each(@box-shadows, {
+        --@{key}: @value;
+    });
+    each(@transition, {
+        --@{key}: @value;
+    });
+    each(@background-patterns, {
+        --@{key}: @value;
+    });
+
+    //  $$  BORDERS
+    //  ------------------------------------------------------------------------
+    each(@border-vars, {
+        --@{key}: @value;
+    });
+
+    //  $$  ICONS
+    //  ------------------------------------------------------------------------
+    each(@icon-vars, {
+        --@{key}: @value;
+    });
+
+    //  $$  GRID
+    //  ------------------------------------------------------------------------
+    each(@grid-vars, {
+        --@{key}: @value;
+    });
+
+    //  $$  TYPE
+    //  ------------------------------------------------------------------------
+    each(@type-styles-vars, {
+        --@{key}: @value;
+    });
+    each(@type-colors, {
+        --@{key}: @value;
+    });
+
+    //  $$  SURFACE COLORS
+    //  ------------------------------------------------------------------------
+    each(@surface-colors, {
+        --@{key}: @value;
+    });
+
+    //  $$  BORDER COLORS
+    //  ------------------------------------------------------------------------
+    each(@border-colors, {
+        --@{key}: @value;
+    });
+
+    //  $$  Z-INDEX
+    //  ------------------------------------------------------------------------
+    each(@zi-vars, {
+        --@{key}: @value;
+    });
+
+    //  $$  INPUTS & BUTTONS
+    //  ------------------------------------------------------------------------
+    each(@focus-rings, {
+        --@{key}: @value;
+    });
+
+    //  $$  THEME VARS
+    //      These should always come last
+    //  ------------------------------------------------------------------------
+    each(@theme-vars, {
+        --@{key}: @value;
+    });
 }

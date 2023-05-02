@@ -51,6 +51,22 @@ Dialtone supports select marketing fonts and weights. Use the following combinat
 <p class="d-ff-marketing">...</p>
 ```
 
+<code-well-header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-black-200 d-w100p d-hmn102" custom>
+  <p class="d-fs-300 d-ff-marketing-semi-expanded">The quick brown fox jumps over the lazy dog.</p>
+</code-well-header>
+
+```html
+<p class="d-ff-marketing-semi-expanded">...</p>
+```
+
+<code-well-header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-black-200 d-w100p d-hmn102" custom>
+  <p class="d-fs-300 d-ff-marketing-expanded">The quick brown fox jumps over the lazy dog.</p>
+</code-well-header>
+
+```html
+<p class="d-ff-marketing-expanded">...</p>
+```
+
 <script setup>
   import { fontFamily } from '@data/type.json';
 </script>

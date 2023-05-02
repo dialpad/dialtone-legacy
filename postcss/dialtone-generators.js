@@ -76,13 +76,13 @@ const generatedRules = {
  * @returns {[Object]}
  */
 function _extractColors () {
-  const colorsRegex = /dtColor(Neutral)?(White|Black|Transparent|Purple|Blue|Magenta|Gold|Green|Red|Tan)(\d{3})?/;
+  const colorsRegex = /dtColor(Neutral)?(White|Black|Purple|Blue|Magenta|Gold|Green|Red|Tan)(\d{3})?/;
   return Object.keys(dialtoneTokens)
     .filter(key => colorsRegex.test(key))
     .reduce((colors, color) => {
       const colorName = color
         .replace(colorsRegex, (_, m1, m2, m3) => {
-          return [m1, m2, m3].filter(el => !!el).join('-');
+          return [m2, m3].filter(el => !!el).join('-');
         })
         .toLowerCase();
       const hexValue = dialtoneTokens[color];
@@ -98,6 +98,7 @@ function _extractColors () {
  * @returns String
  */
 function _hoverFocusSelectors (selector) {
+  if (/\.(h|f|fv)\\/.test(selector)) { return null; }
   const hoverSelector = selector.replace('.', '.h\\:').concat(':hover');
   const focusSelector = selector.replace('.', '.f\\:').concat(':focus');
   const focusWithinSelector = selector.replace('.', '.f\\:').concat(':focus-within');
@@ -119,7 +120,7 @@ function _hoverFocusSelectors (selector) {
 function colorUtilities (Rule, clonedSource, declaration) {
   const dialtoneColors = _extractColors();
   dialtoneColors.forEach(({ colorName: color }) => {
-    const hslaColor = `hsla(var(--dt-color-${color}-h) var(--dt-color-${color}-s) var(--dt-color-${color}-l)`;
+    const hslaColor = `hsla(var(--${color}-h) var(--${color}-s) var(--${color}-l)`;
     generatedRules.fontColor.push(new Rule({
       source: clonedSource,
       selector: _hoverFocusSelectors(`.d-fc-${color}`),
@@ -676,13 +677,13 @@ function colorVariables (declaration) {
   dialtoneColors.forEach(({ colorName, hexValue }) => {
     const color = tinycolor(hexValue);
     const { h: hue, s: saturation, l: lightness } = color.toHsl();
-    const colorVar = `--dt-color-${colorName}`;
+    const colorVar = `--${colorName}`;
     cssVariables.push([
       declaration.clone({ prop: `${colorVar}-h`, value: `${hue}` }),
       declaration.clone({ prop: `${colorVar}-s`, value: `${saturation * 100}%` }),
       declaration.clone({ prop: `${colorVar}-l`, value: `${lightness * 100}%` }),
       declaration.clone({ prop: `${colorVar}-hsl`, value: `var(${colorVar}-h) var(${colorVar}-s) var(${colorVar}-l)` }),
-      declaration.clone({ prop: `${colorVar}-hsla`, value: `hsla(var(${colorVar}-h) var(${colorVar}-s) var(${colorVar}-l) / var(--alpha, 100%))` }),
+      declaration.clone({ prop: `${colorVar}`, value: `hsla(var(${colorVar}-h) var(${colorVar}-s) var(${colorVar}-l) / var(--alpha, 100%))` }),
     ]);
   });
 }
@@ -736,7 +737,8 @@ function _generateHoverFocusVariations (rule) {
     boxShadowRegex,
   ].some(regex => regex.test(rule.selector));
   if (!found) return;
-  rule.selector = _hoverFocusSelectors(rule.selector);
+  const selectors = rule.selectors.map(selector => _hoverFocusSelectors(selector));
+  rule.selector = selectors.filter(selector => !!selector).join(', ');
 }
 
 /**

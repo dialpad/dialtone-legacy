@@ -27,6 +27,13 @@
 //  $   FONT FACE
 //      To turn on custom webfonts, set @define-font-face to true.
 //  ----------------------------------------------------------------------------
+#d-internals #font-face(@define-ff-custom-adjusted, @define-ff-custom-adjusted-name, normal, true, 95%);
+#d-internals #font-face(@define-ff-custom-adjusted-italic, @define-ff-custom-adjusted-name, italic, true, 95%);
+#d-internals #font-face(@define-ff-mono, @define-ff-mono-name, normal, true);
+#d-internals #font-face(@define-ff-marketing, @define-ff-marketing-name);
+#d-internals #font-face(@define-ff-marketing-semi-expanded, @define-ff-marketing-semi-expanded-name);
+#d-internals #font-face(@define-ff-marketing-expanded, @define-ff-marketing-expanded-name);
+
 @font-face {
     font-family: 'Segoe UI Adjusted';
     src: local(Segoe UI Bold);
@@ -36,10 +43,12 @@
 //  ============================================================================
 //  $   FONT FAMILY
 //  ----------------------------------------------------------------------------
-.d-ff-custom { font-family: var(--dt-font-family-body) !important; }
-.d-ff-sans { font-family: var(--dt-font-family-body) !important; }
-.d-ff-mono { font-family: var(--dt-font-family-mono) !important; }
-.d-ff-marketing { font-family: var(--dt-font-family-expressive) !important; }
+.d-ff-custom { font-family: @ff-custom !important; }
+.d-ff-sans { font-family: @ff-sans !important; }
+.d-ff-mono { font-family: @ff-mono !important; }
+.d-ff-marketing { font-family: @ff-marketing !important; }
+.d-ff-marketing-semi-expanded { font-family: @ff-marketing-semi-expanded !important; }
+.d-ff-marketing-expanded { font-family: @ff-marketing-expanded !important; }
 .d-ff-unset { font-family: unset !important; }
 
 //  ============================================================================
@@ -118,14 +127,14 @@ ul {
 .d-fs-400-tv { font-size: var(--fs-400-tv) !important; }
 .d-fs-500-tv { font-size: var(--fs-500-tv) !important; }
 
-.d-headline10 { .d-fs-100(); font-weight: var(--fw-bold); .d-tt-uppercase(); }
-.d-headline24 { .d-fs-300(); font-weight: var(--fw-bold) !important; }
-.d-headline28 { .d-fs-400(); font-weight: var(--fw-bold) !important; }
-.d-headline32 { .d-fs-400(); font-weight: var(--fw-bold) !important; }
-.d-headline36 { .d-fs-400(); font-weight: var(--fw-bold) !important; }
-.d-headline42 { .d-fs-500(); font-weight: var(--fw-bold) !important; }
-.d-headline48 { .d-fs-500(); font-weight: var(--fw-bold) !important; }
-.d-headline54 { .d-fs-500(); font-weight: var(--fw-bold) !important; }
+.d-headline10 { .d-fs-100(); font-weight: @headline-weight; .d-tt-uppercase(); }
+.d-headline24 { .d-fs-300(); font-weight: @headline-weight !important; }
+.d-headline28 { .d-fs-400(); font-weight: @headline-weight !important; }
+.d-headline32 { .d-fs-400(); font-weight: @headline-weight !important; }
+.d-headline36 { .d-fs-400(); font-weight: @headline-weight !important; }
+.d-headline42 { .d-fs-500(); font-weight: @headline-weight !important; }
+.d-headline48 { .d-fs-500(); font-weight: @headline-weight !important; }
+.d-headline54 { .d-fs-500(); font-weight: @headline-weight !important; }
 
 .d-headline-eyebrow            { line-height: var(--lh-300); font-size: var(--fs-100); font-weight: var(--fw-normal); .d-tt-uppercase(); }
 .d-headline-small              { line-height: var(--lh-300); font-size: var(--fs-100); font-weight: var(--fw-bold); }

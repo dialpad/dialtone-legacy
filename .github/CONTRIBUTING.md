@@ -94,6 +94,10 @@ Component class names use the [Block Element Modifier (BEM)](http://getbem.com/n
 .d-banner--success {} // Modifier
 ```
 
+### Generated classes
+
+While most of the classes you find in `lib/build/less` are available to users and documented on the doc site, one exception to this is d-internals. d-internals definitions are found in [utilties/internals.less](../lib/build/less/utilities/internals.less). These are definitons we use within Dialtone to generate classes, and are not meant for use by consumers of Dialtone.
+
 ### Immutable utility classes
 
 All of our utility classes are set to `!important`. This is because they are designed to be immutable, and `!important` is the best way we have of achieving immutability in CSS.
