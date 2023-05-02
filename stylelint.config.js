@@ -34,7 +34,7 @@ module.exports = {
     'function-calc-no-unspaced-operator': null, // otherwise it will be an error during build
     'alpha-value-notation': 'number',
     'max-empty-lines': 3,
-    'max-line-length': 150,
+    'max-line-length': 200,
     'string-quotes': 'single',
 
     // override stylelint-config-standard rules
