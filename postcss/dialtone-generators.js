@@ -2,7 +2,14 @@
 /* eslint-disable max-len */
 
 // TODO: Move this constants to the _data directory
-const constants = require('./constants.json');
+const {
+  OPACITIES,
+  FLEX_COLUMNS,
+  BORDER_RADIUS_SIZES,
+  GAP_SIZES,
+  LAYOUT_SIZES,
+  SIZE_STOPS,
+} = require('./constants.json');
 const { fixed: WIDTH_HEIGHTS } = require('../docs/_data/width-height.json');
 const dialtoneTokens = require('../node_modules/@dialpad/dialtone-tokens/dist/tokens.json');
 const tinycolor = require('tinycolor2');
@@ -186,7 +193,7 @@ function colorUtilities (Rule, clonedSource, declaration) {
  * @param {Declaration} declaration
  */
 function opacityUtilities (Rule, clonedSource, declaration) {
-  constants.OPACITIES.forEach(opacity => {
+  OPACITIES.forEach(opacity => {
     generatedRules.fontOpacity.push(new Rule({
       source: clonedSource,
       selector: _hoverFocusSelectors(`.d-fco-${opacity}`),
@@ -239,7 +246,7 @@ function opacityUtilities (Rule, clonedSource, declaration) {
  * @param {Declaration} declaration
  */
 function flexColumnsUtilities (Rule, clonedSource, declaration) {
-  for (let i = 1; i <= constants.FLEX_COLUMNS; i++) {
+  for (let i = 1; i <= FLEX_COLUMNS; i++) {
     generatedRules.flexColumn.push(new Rule({
       source: clonedSource,
       selector: `.d-fl-col${i}`,
@@ -282,7 +289,7 @@ function flexColumnsUtilities (Rule, clonedSource, declaration) {
  * @param {Declaration} declaration
  */
 function borderUtilities (Rule, clonedSource, declaration) {
-  constants.BORDER_RADIUS_SIZES.forEach(size => {
+  BORDER_RADIUS_SIZES.forEach(size => {
     generatedRules.borderAllRadius.push(new Rule({
       source: clonedSource,
       selector: `.d-bar${size}`,
@@ -332,7 +339,7 @@ function borderUtilities (Rule, clonedSource, declaration) {
  * @param {Declaration} declaration
  */
 function gridUtilities (Rule, clonedSource, declaration) {
-  for (let i = 1; i <= constants.FLEX_COLUMNS; i++) {
+  for (let i = 1; i <= FLEX_COLUMNS; i++) {
     generatedRules.gridColumns.push(new Rule({
       source: clonedSource,
       selector: `.d-g-cols${i}`,
@@ -399,7 +406,7 @@ function gridUtilities (Rule, clonedSource, declaration) {
  * @param {Declaration} declaration
  */
 function gapUtilities (Rule, clonedSource, declaration) {
-  constants.GAP_SIZES.forEach(size => {
+  GAP_SIZES.forEach(size => {
     generatedRules.gridGap.push(new Rule({
       source: clonedSource,
       selector: `.d-gg${size}`,
@@ -431,7 +438,7 @@ function gapUtilities (Rule, clonedSource, declaration) {
  * @param {Declaration} declaration
  */
 function layoutUtilities (Rule, clonedSource, declaration) {
-  constants.LAYOUT_SIZES.forEach(size => {
+  LAYOUT_SIZES.forEach(size => {
     size = Number(size).toString().replace('-', 'n');
     generatedRules.positionTop.push(new Rule({
       source: clonedSource,
@@ -550,57 +557,56 @@ function sizingUtilities (Rule, clonedSource, declaration) {
  * @param {Declaration} declaration
  */
 function marginUtilities (Rule, clonedSource, declaration) {
-  constants.MARGIN_SIZES.forEach(size => {
-    size = Number(size).toString().replace('-', 'n');
+  Object.keys(SIZE_STOPS).forEach(size => {
     generatedRules.marginTop.push(new Rule({
       source: clonedSource,
       selector: `.d-mt${size}`,
       nodes: [
-        declaration.clone({ prop: 'margin-top', value: `var(--su${size}) !important` }),
+        declaration.clone({ prop: 'margin-top', value: `var(--dt-size-${SIZE_STOPS[size]}) !important` }),
       ],
     }));
     generatedRules.marginRight.push(new Rule({
       source: clonedSource,
       selector: `.d-mr${size}`,
       nodes: [
-        declaration.clone({ prop: 'margin-right', value: `var(--su${size}) !important` }),
+        declaration.clone({ prop: 'margin-right', value: `var(--dt-size-${SIZE_STOPS[size]}) !important` }),
       ],
     }));
     generatedRules.marginBottom.push(new Rule({
       source: clonedSource,
       selector: `.d-mb${size}`,
       nodes: [
-        declaration.clone({ prop: 'margin-bottom', value: `var(--su${size}) !important` }),
+        declaration.clone({ prop: 'margin-bottom', value: `var(--dt-size-${SIZE_STOPS[size]}) !important` }),
       ],
     }));
     generatedRules.marginLeft.push(new Rule({
       source: clonedSource,
       selector: `.d-ml${size}`,
       nodes: [
-        declaration.clone({ prop: 'margin-left', value: `var(--su${size}) !important` }),
+        declaration.clone({ prop: 'margin-left', value: `var(--dt-size-${SIZE_STOPS[size]}) !important` }),
       ],
     }));
     generatedRules.marginHorizontal.push(new Rule({
       source: clonedSource,
       selector: `.d-mx${size}`,
       nodes: [
-        declaration.clone({ prop: 'margin-left', value: `var(--su${size}) !important` }),
-        declaration.clone({ prop: 'margin-right', value: `var(--su${size}) !important` }),
+        declaration.clone({ prop: 'margin-left', value: `var(--dt-size-${SIZE_STOPS[size]}) !important` }),
+        declaration.clone({ prop: 'margin-right', value: `var(--dt-size-${SIZE_STOPS[size]}) !important` }),
       ],
     }));
     generatedRules.marginVertical.push(new Rule({
       source: clonedSource,
       selector: `.d-my${size}`,
       nodes: [
-        declaration.clone({ prop: 'margin-top', value: `var(--su${size}) !important` }),
-        declaration.clone({ prop: 'margin-bottom', value: `var(--su${size}) !important` }),
+        declaration.clone({ prop: 'margin-top', value: `var(--dt-size-${SIZE_STOPS[size]}) !important` }),
+        declaration.clone({ prop: 'margin-bottom', value: `var(--dt-size-${SIZE_STOPS[size]}) !important` }),
       ],
     }));
     generatedRules.marginAll.push(new Rule({
       source: clonedSource,
       selector: `.d-m${size}`,
       nodes: [
-        declaration.clone({ prop: 'margin', value: `var(--su${size}) !important` }),
+        declaration.clone({ prop: 'margin', value: `var(--dt-size-${SIZE_STOPS[size]}) !important` }),
       ],
     }));
   });
@@ -613,59 +619,61 @@ function marginUtilities (Rule, clonedSource, declaration) {
  * @param {Declaration} declaration
  */
 function paddingUtilities (Rule, clonedSource, declaration) {
-  constants.PADDING_SIZES.forEach(size => {
-    generatedRules.paddingTop.push(new Rule({
-      source: clonedSource,
-      selector: `.d-pt${size}`,
-      nodes: [
-        declaration.clone({ prop: 'padding-top', value: `var(--su${size}) !important` }),
-      ],
-    }));
-    generatedRules.paddingRight.push(new Rule({
-      source: clonedSource,
-      selector: `.d-pr${size}`,
-      nodes: [
-        declaration.clone({ prop: 'padding-right', value: `var(--su${size}) !important` }),
-      ],
-    }));
-    generatedRules.paddingBottom.push(new Rule({
-      source: clonedSource,
-      selector: `.d-pb${size}`,
-      nodes: [
-        declaration.clone({ prop: 'padding-bottom', value: `var(--su${size}) !important` }),
-      ],
-    }));
-    generatedRules.paddingLeft.push(new Rule({
-      source: clonedSource,
-      selector: `.d-pl${size}`,
-      nodes: [
-        declaration.clone({ prop: 'padding-left', value: `var(--su${size}) !important` }),
-      ],
-    }));
-    generatedRules.paddingHorizontal.push(new Rule({
-      source: clonedSource,
-      selector: `.d-px${size}`,
-      nodes: [
-        declaration.clone({ prop: 'padding-left', value: `var(--su${size}) !important` }),
-        declaration.clone({ prop: 'padding-right', value: `var(--su${size}) !important` }),
-      ],
-    }));
-    generatedRules.paddingVertical.push(new Rule({
-      source: clonedSource,
-      selector: `.d-py${size}`,
-      nodes: [
-        declaration.clone({ prop: 'padding-top', value: `var(--su${size}) !important` }),
-        declaration.clone({ prop: 'padding-bottom', value: `var(--su${size}) !important` }),
-      ],
-    }));
-    generatedRules.paddingAll.push(new Rule({
-      source: clonedSource,
-      selector: `.d-p${size}`,
-      nodes: [
-        declaration.clone({ prop: 'padding', value: `var(--su${size}) !important` }),
-      ],
-    }));
-  });
+  Object.keys(SIZE_STOPS)
+    .filter(size => !size.startsWith('n'))
+    .forEach(size => {
+      generatedRules.paddingTop.push(new Rule({
+        source: clonedSource,
+        selector: `.d-pt${size}`,
+        nodes: [
+          declaration.clone({ prop: 'padding-top', value: `var(--dt-size-${SIZE_STOPS[size]}) !important` }),
+        ],
+      }));
+      generatedRules.paddingRight.push(new Rule({
+        source: clonedSource,
+        selector: `.d-pr${size}`,
+        nodes: [
+          declaration.clone({ prop: 'padding-right', value: `var(--dt-size-${SIZE_STOPS[size]}) !important` }),
+        ],
+      }));
+      generatedRules.paddingBottom.push(new Rule({
+        source: clonedSource,
+        selector: `.d-pb${size}`,
+        nodes: [
+          declaration.clone({ prop: 'padding-bottom', value: `var(--dt-size-${SIZE_STOPS[size]}) !important` }),
+        ],
+      }));
+      generatedRules.paddingLeft.push(new Rule({
+        source: clonedSource,
+        selector: `.d-pl${size}`,
+        nodes: [
+          declaration.clone({ prop: 'padding-left', value: `var(--dt-size-${SIZE_STOPS[size]}) !important` }),
+        ],
+      }));
+      generatedRules.paddingHorizontal.push(new Rule({
+        source: clonedSource,
+        selector: `.d-px${size}`,
+        nodes: [
+          declaration.clone({ prop: 'padding-left', value: `var(--dt-size-${SIZE_STOPS[size]}) !important` }),
+          declaration.clone({ prop: 'padding-right', value: `var(--dt-size-${SIZE_STOPS[size]}) !important` }),
+        ],
+      }));
+      generatedRules.paddingVertical.push(new Rule({
+        source: clonedSource,
+        selector: `.d-py${size}`,
+        nodes: [
+          declaration.clone({ prop: 'padding-top', value: `var(--dt-size-${SIZE_STOPS[size]}) !important` }),
+          declaration.clone({ prop: 'padding-bottom', value: `var(--dt-size-${SIZE_STOPS[size]}) !important` }),
+        ],
+      }));
+      generatedRules.paddingAll.push(new Rule({
+        source: clonedSource,
+        selector: `.d-p${size}`,
+        nodes: [
+          declaration.clone({ prop: 'padding', value: `var(--dt-size-${SIZE_STOPS[size]}) !important` }),
+        ],
+      }));
+    });
 }
 
 /**
