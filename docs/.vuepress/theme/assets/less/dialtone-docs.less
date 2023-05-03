@@ -67,7 +67,7 @@ html {
 //      Override search button with dialtone styles
 //  ----------------------------------------------------------------------------
 button.DocSearch-Button {
-  gap: var(--space-200);
+  gap: var(--dt-space-200);
 
   &:hover {
     box-shadow: unset;
@@ -78,7 +78,7 @@ button.DocSearch-Button {
   .d-btn--outlined();
 
   .d-btn__label {
-    color: var(--fc-placeholder);
+    color: var(--dt-color-foreground-placeholder);
   }
 
   justify-content: left;
@@ -98,7 +98,7 @@ span.DocSearch-Button-Keys {
 //      Override search button with dialtone styles
 //  ----------------------------------------------------------------------------
 a.router-link-active {
-  font-weight: var(--fw-semibold);
+  font-weight: var(--dt-font-weight-semi-bold);
 }
 
 //  ============================================================================
@@ -115,17 +115,17 @@ a.router-link-active {
       position: absolute;
       top: 4px;
       bottom: 4px;
-      left: var(--space-300-negative);
-      width: var(--size-200);
-      background-color: var(--purple-400);
-      border-radius: var(--size-200);
+      left: var(--dt-space-300-negative);
+      width: var(--dt-size-200);
+      background-color: var(--dt-color-purple-400);
+      border-radius: var(--dt-size-200);
       content: '';
     }
   }
 
   .toc-item {
     >.toc-list {
-      padding-left: var(--space-400);
+      padding-left: var(--dt-space-400);
     }
   }
 }
@@ -138,17 +138,17 @@ a.router-link-active {
 //  ----------------------------------------------------------------------------
 .dialtone-header {
   // TODO: redo 😜
-  border: var(--size-100) solid var(--bc-default);
-  background-color: var(--bgc-primary);
+  border: var(--dt-size-100) solid var(--dt-color-border-default);
+  background-color: var(--dt-color-surface-primary);
 }
 
 .dialtone-sidebar {
   // TODO: redo 😜
-  background-color: var(--bgc-secondary);
-  border-right: var(--size-100) solid var(--bc-subtle);
+  background-color: var(--dt-color-surface-secondary);
+  border-right: var(--dt-size-100) solid var(--dt-color-border-subtle);
 
   &__list {
-    width: calc(var(--size-300) * 64);
+    width: calc(var(--dt-size-300) * 64);
   }
 }
 
@@ -164,26 +164,26 @@ a.header-anchor {
   margin-left: -0.87em;
   padding-right: 0.23em;
   opacity: 0;
-  font-size: var(--fs-300);
+  font-size: var(--dt-font-size-300);
 }
 
 .d-docsite--header-2 {
   .d-headline-extra-large(); // TODO: when a redesign is imminent
-  margin-top: var(--space-600);
-  margin-bottom: var(--space-400);
+  margin-top: var(--dt-space-600);
+  margin-bottom: var(--dt-space-400);
 }
 
 .d-docsite--header-3 {
   .d-headline-large(); // TODO: when a redesign is imminent
-  font-weight: var(--fw-semibold);
-  margin-top: var(--space-500);
-  margin-bottom: var(--space-300);
+  font-weight: var(--dt-font-weight-semi-bold);
+  margin-top: var(--dt-space-500);
+  margin-bottom: var(--dt-space-300);
 }
 
 .d-docsite--header-4 {
   .d-headline-medium(); // TODO: when a redesign is imminent
-  margin-top: var(--space-400);
-  margin-bottom: var(--space-300);
+  margin-top: var(--dt-space-400);
+  margin-bottom: var(--dt-space-300);
 }
 
 .d-docsite--header-2,
@@ -226,13 +226,13 @@ a.header-anchor {
 
 .d-docsite--unordered-list,
 .d-docsite--ordered-list {
-  padding-left: var(--space-500);
-  margin: var(--space-400) 0;
+  padding-left: var(--dt-space-500);
+  margin: var(--dt-space-400) 0;
 }
 
 .d-docsite--list-element {
   .d-body-base(); // TODO: when a redesign is imminent
-  margin-bottom: var(--space-300);
+  margin-bottom: var(--dt-space-300);
   max-width: 75ch;
 
   &:last-child {
@@ -241,8 +241,8 @@ a.header-anchor {
 }
 
 .d-docsite--preview-header {
-  margin-top: var(--space-600);
-  margin-bottom: var(--space-300);
+  margin-top: var(--dt-space-600);
+  margin-bottom: var(--dt-space-300);
 }
 
 //  ============================================================================
@@ -286,18 +286,18 @@ a.header-anchor {
   justify-content: center;
   width: 100%;
   height: 100%;
-  padding: var(--space-400);
-  background-color: hsl(var(--black-200-h), var(--black-200-s), var(--black-200-l), 0);
-  border-radius: var(--size-400);
+  padding: var(--dt-space-400);
+  background-color: hsl(var(--dt-color-black-200-h), var(--dt-color-black-200-s), var(--dt-color-black-200-l), 0);
+  border-radius: var(--dt-size-400);
   cursor: pointer;
   transition: all 150ms var(--ttf-in-out);
 
   &:hover {
-    background-color: hsl(var(--black-200-h), var(--black-200-s), var(--black-200-l), 0.4);
+    background-color: hsl(var(--dt-color-black-200-h), var(--dt-color-black-200-s), var(--dt-color-black-200-l), 0.4);
   }
 
   .dialtone-icon-card[data-selected='yes'] & {
-    background-color: hsl(var(--black-200-h), var(--black-200-s), var(--black-200-l), 0.4);
+    background-color: hsl(var(--dt-color-black-200-h), var(--dt-color-black-200-s), var(--dt-color-black-200-l), 0.4);
   }
 }
 
@@ -309,18 +309,18 @@ a.header-anchor {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: calc((var(--icon-card-width) * 2) + var(--size-600));
+  width: calc((var(--icon-card-width) * 2) + var(--dt-size-600));
   min-height: var(--icon-card-width);
-  margin-right: var(--space-100-negative);
-  padding: var(--space-450) var(--space-500);
-  color: var(--black-200);
-  font-size: var(--fs-200);
-  background-color: var(--black-700);
-  border-radius: var(--size-400);
+  margin-right: var(--dt-space-100-negative);
+  padding: var(--dt-space-450) var(--dt-space-500);
+  color: var(--dt-color-black-200);
+  font-size: var(--dt-font-size-200);
+  background-color: var(--dt-color-black-700);
+  border-radius: var(--dt-size-400);
   box-shadow: var(--bs-md);
 
   .dialtone-icon-card[data-selected='yes'] & {
-    margin: var(--size-100-negative);
+    margin: var(--dt-size-100-negative);
     transform: translateX(calc(-1 * var(--icon-card-width)));
     visibility: visible;
     opacity: 1;
@@ -332,7 +332,7 @@ a.header-anchor {
   //  If it's in the first two columns, show the footer on the right
   .dialtone-icon-grid__item:nth-child(6n+1) .dialtone-icon-card[data-selected='yes'] &,
   .dialtone-icon-grid__item:nth-child(6n+2) .dialtone-icon-card[data-selected='yes'] & {
-    right: var(--size-100);
+    right: var(--dt-size-100);
     margin-right: unset;
     transform: translateX(100%);
   }
@@ -360,7 +360,7 @@ a.header-anchor {
 }
 
 .dialtone-icon-card__list__item {
-  font-size: var(--fs-100);
+  font-size: var(--dt-font-size-100);
 
   strong {
     display: inline-block;
@@ -371,7 +371,7 @@ a.header-anchor {
 .dialtone-icon-card__icon {
   width: @icon48;
   height: @icon48;
-  margin-bottom: var(--space-300);
+  margin-bottom: var(--dt-space-300);
 
   svg {
     width: 100%;
@@ -380,7 +380,7 @@ a.header-anchor {
 }
 
 .dialtone-icon-card__icon--autosize {
-  margin-bottom: var(--space-300);
+  margin-bottom: var(--dt-space-300);
 
   svg {
     width: 100%;
@@ -390,17 +390,17 @@ a.header-anchor {
 
 .dialtone-icon-card__title {
   margin-top: 0;
-  margin-bottom: var(--space-300);
-  font-weight: var(--fw-bold);
-  font-size: var(--fs-200);
-  line-height: var(--lh-200);
+  margin-bottom: var(--dt-space-300);
+  font-weight: var(--dt-font-weight-bold);
+  font-size: var(--dt-font-size-200);
+  line-height: var(--dt-font-line-height-200);
 }
 
 .dialtone-icon-card__subtitle {
   width: 100%;
   margin-bottom: 0;
   overflow: hidden;
-  font-size: var(--fs-100);
+  font-size: var(--dt-font-size-100);
   line-height: var(--lh-none);
   white-space: nowrap;
   text-align: center;
@@ -408,8 +408,8 @@ a.header-anchor {
 }
 
 .dialtone-icon-card__description {
-  color: var(--white);
-  font-size: var(--fs-100);
+  color: var(--dt-color-neutral-white);
+  font-size: var(--dt-font-size-100);
 }
 
 .dialtone-icon-popover {
@@ -422,19 +422,19 @@ a.header-anchor {
 //  ----------------------------------------------------------------------------
 
 .hero {
-  background-color: var(--tan-100);
+  background-color: var(--dt-color-tan-100);
   background-image: url('/assets/images/home-dp-logo.svg');
   background-position: 80% center;
 
   @media (max-width: 640px) {
-    padding-right: var(--space-500);
-    padding-left: var(--space-400);
+    padding-right: var(--dt-space-500);
+    padding-left: var(--dt-space-400);
   }
 }
 
 .hero--inner-wrapper {
-  padding-top: calc(var(--space-300) * 32);
-  padding-bottom: calc(var(--space-300) * 32);
+  padding-top: calc(var(--dt-space-300) * 32);
+  padding-bottom: calc(var(--dt-space-300) * 32);
 
   @media (max-width: 640px) {
     flex-direction: column;
@@ -459,8 +459,8 @@ a.header-anchor {
 }
 
 .links {
-  padding-top: calc(var(--space-300) * 24);
-  padding-bottom: calc(var(--space-300) * 24);
+  padding-top: calc(var(--dt-space-300) * 24);
+  padding-bottom: calc(var(--dt-space-300) * 24);
 
   @media (max-width: 640px) {
     display: block !important;
@@ -471,7 +471,7 @@ a.header-anchor {
   @media (max-width: 640px) {
     display: block;
     grid-column: 1 / -1 !important;
-    margin-bottom: calc(var(--space-300) * 18);
+    margin-bottom: calc(var(--dt-space-300) * 18);
   }
 }
 
@@ -481,10 +481,10 @@ a.header-anchor {
 //  ----------------------------------------------------------------------------
 
 .dialtone-page-title {
-  line-height: var(--lh-200);
-  font-size: var(--fs-500);
-  font-weight: var(--fw-medium);
-  margin-bottom: var(--space-400);
+  line-height: var(--dt-font-line-height-200);
+  font-size: var(--dt-font-size-500);
+  font-weight: var(--dt-font-weight-medium);
+  margin-bottom: var(--dt-space-400);
 }
 
 //  ============================================================================
@@ -494,10 +494,10 @@ a.header-anchor {
 
 .dialtone-intro {
   max-width: 58ch;
-  font-size: var(--fs-300);
-  line-height: var(--lh-300);
-  color: var(--fc-secondary);
-  margin-bottom: var(--space-400);
+  font-size: var(--dt-font-size-300);
+  line-height: var(--dt-font-line-height-300);
+  color: var(--dt-color-foreground-secondary);
+  margin-bottom: var(--dt-space-400);
 }
 
 //  ============================================================================
@@ -508,11 +508,11 @@ a.header-anchor {
 .dialtone-wall {
   & {
     display: grid;
-    grid-gap: var(--space-500);
-    margin-top: var(--space-500);
+    grid-gap: var(--dt-space-500);
+    margin-top: var(--dt-space-500);
 
     @media screen and (min-width: 640px) {
-      grid-gap: var(--space-600);
+      grid-gap: var(--dt-space-600);
       grid-template-columns: [full-start] repeat(2, [col-start] var(--col-width, minmax(0, 1fr)) [col-end]) [full-end] !important;
     }
 
@@ -523,12 +523,12 @@ a.header-anchor {
 
   &__item {
     display: block;
-    border: var(--size-100) solid;
-    border-color: var(--bc-default);
-    border-radius: var(--size-400);
+    border: var(--dt-size-100) solid;
+    border-color: var(--dt-color-border-default);
+    border-radius: var(--dt-size-400);
     overflow: hidden;
     text-decoration: none;
-    background-color: var(--bgc-primary);
+    background-color: var(--dt-color-surface-primary);
     transition-timing-function: var(--ttf-in-out);
     transition-duration: var(--td200);
     transition-property: box-shadow;
@@ -548,13 +548,13 @@ a.header-anchor {
   }
 
   &__image {
-    background-color: var(--bgc-secondary);
+    background-color: var(--dt-color-surface-secondary);
     text-align: center;
   }
 
   &__thumb {
     width: auto;
-    height: calc(var(--size-300) * 24);
+    height: calc(var(--dt-size-300) * 24);
 
     @media screen and (min-width: 640px) {
       display: block;
@@ -566,18 +566,18 @@ a.header-anchor {
   &__details {
     display: flex;
     flex-direction: column;
-    gap: var(--space-300);
-    padding: var(--space-500);
+    gap: var(--dt-space-300);
+    padding: var(--dt-space-500);
   }
 
   &__title {
     display: flex;
     align-items: center;
-    gap: var(--space-400);
-    color: var(--fc-secondary);
-    line-height: var(--lh-200);
-    font-size: var(--fs-300);
-    font-weight: var(--fw-semibold);
+    gap: var(--dt-space-400);
+    color: var(--dt-color-foreground-secondary);
+    line-height: var(--dt-font-line-height-200);
+    font-size: var(--dt-font-size-300);
+    font-weight: var(--dt-font-weight-semi-bold);
   }
 
   &__title-text {
@@ -585,9 +585,9 @@ a.header-anchor {
   }
 
   &__description {
-    color: var(--fc-tertiary);
-    line-height: var(--lh-300);
-    font-size: var(--fs-200);
+    color: var(--dt-color-foreground-tertiary);
+    line-height: var(--dt-font-line-height-300);
+    font-size: var(--dt-font-size-200);
   }
 }
 
@@ -598,8 +598,8 @@ a.header-anchor {
 
 .dialtone-definition {
   > dt {
-    margin-top: var(--space-500);
-    font-weight: var(--fw-bold);
+    margin-top: var(--dt-space-500);
+    font-weight: var(--dt-font-weight-bold);
   }
 
   >dd {
@@ -608,7 +608,7 @@ a.header-anchor {
   }
 
   code {
-    font-weight: var(--fw-normal);
+    font-weight: var(--dt-font-weight-normal);
   }
 }
 
@@ -618,14 +618,14 @@ a.header-anchor {
 //  ----------------------------------------------------------------------------
 
 .dialtone-usage {
-  --usage-item-color-background: var(--bgc-secondary);
+  --usage-item-color-background: var(--dt-color-surface-secondary);
 
   & {
     display: flex;
     flex-direction: column;
-    gap: var(--space-500);
-    margin-top: var(--space-500);
-    margin-bottom: var(--space-500);
+    gap: var(--dt-space-500);
+    margin-top: var(--dt-space-500);
+    margin-bottom: var(--dt-space-500);
 
     @media screen and (min-width: 640px) {
       flex-direction: row;
@@ -634,16 +634,16 @@ a.header-anchor {
 
   &__hd {
     display: flex;
-    gap: var(--space-400);
+    gap: var(--dt-space-400);
     align-items: center;
-    font-size: var(--fs-200);
+    font-size: var(--dt-font-size-200);
 
     &--do {
-      color: var(--fc-success);
+      color: var(--dt-color-foreground-success);
     }
 
     &--dont {
-      color: var(--fc-critical-strong);
+      color: var(--dt-color-foreground-critical-strong);
     }
   }
 
@@ -651,24 +651,24 @@ a.header-anchor {
     display: flex;
     flex: 1;
     flex-direction: column;
-    gap: var(--space-400);
-    padding: var(--space-500);
+    gap: var(--dt-space-400);
+    padding: var(--dt-space-500);
     background-color: var(--usage-item-color-background);
-    border-radius: var(--size-400);
+    border-radius: var(--dt-size-400);
 
     &--do {
-      --usage-item-color-background: var(--bgc-success);
+      --usage-item-color-background: var(--dt-color-surface-success);
     }
 
     &--dont {
-      --usage-item-color-background: var(--bgc-critical);
+      --usage-item-color-background: var(--dt-color-surface-critical);
     }
 
   }
 
   &__bd {
-    font-size: var(--fs-200);
-    line-height: var(--lh-400);
+    font-size: var(--dt-font-size-200);
+    line-height: var(--dt-font-line-height-400);
 
     .d-docsite--unordered-list {
       // unfortunate
@@ -677,7 +677,7 @@ a.header-anchor {
       list-style: none;
 
       *+* {
-        margin-top: var(--space-400);
+        margin-top: var(--dt-space-400);
       }
     }
   }
