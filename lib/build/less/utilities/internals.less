@@ -24,23 +24,6 @@
 //      Various mixins used to build Dialtone
 //  ----------------------------------------------------------------------------
 #d-internals() {
-    //  ========================================================================
-    //  $   COLOR VARS
-    //      #color-vars creates all our HSL CSS color vars for us from a set
-    //      of HEX codes.
-    //
-    //      USAGE:
-    //      #d-internals #color-vars(@black-900);
-    //
-    //  ------------------------------------------------------------------------
-    #color-vars(@name, @color) {
-        --@{name}-h: hue(@color);
-        --@{name}-s: saturation(@color);
-        --@{name}-l: lightness(@color);
-        --@{name}-hsl: ~"var(--@{name}-h) var(--@{name}-s) var(--@{name}-l)";
-        --@{name}: hsla(~"var(--@{name}-h) var(--@{name}-s) var(--@{name}-l) /  var(--alpha, 100%)");
-    }
-
     // TODO: Remove while migrating tokens.
     //  ========================================================================
     //  $   CREATE FONT FACE
