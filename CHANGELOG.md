@@ -1,3 +1,21 @@
+# [7.26.0](https://github.com/dialpad/dialtone/compare/v7.25.1...v7.26.0) (2023-05-05)
+
+
+### Bug Fixes
+
+* **Stack:** correct 600 gap ([#872](https://github.com/dialpad/dialtone/issues/872)) ([448d4d7](https://github.com/dialpad/dialtone/commit/448d4d758e0a2b3aca8d8d4008ee735f849b05b1))
+
+
+### Documentation
+
+* write blog post for new dialtone vue infra update ([#873](https://github.com/dialpad/dialtone/issues/873)) ([68f3526](https://github.com/dialpad/dialtone/commit/68f35264234dc0b737e970f84bc33f6d0b60fab8))
+
+
+### Features
+
+* deploy to GitHub packages ([#869](https://github.com/dialpad/dialtone/issues/869)) ([7ba8008](https://github.com/dialpad/dialtone/commit/7ba8008fe77a53273adf99f2d8fee2bfa377fe11))
+* **Size And Space:** added half stops, negative equivalents, and applied to components ([#867](https://github.com/dialpad/dialtone/issues/867)) ([83fb9e1](https://github.com/dialpad/dialtone/commit/83fb9e101fa4da90cd49fda4a084c83ce92b57e3))
+
 ## [7.25.1](https://github.com/dialpad/dialtone/compare/v7.25.0...v7.25.1) (2023-04-18)
 
 
