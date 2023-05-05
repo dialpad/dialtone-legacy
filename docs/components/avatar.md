@@ -10,19 +10,22 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 
 <code-well-header>
     <div class="d-d-inline-flex d-ai-center d-flow16">
-        <div class="d-avatar d-avatar--xl">
+        <div class="d-avatar d-avatar--lg">
             <div class="d-avatar__canvas">
                 <span class="d-avatar__icon">
-                    <dt-icon name="user" size="600" />
+                    <dt-icon name="user" size="500" />
                 </span>
             </div>
         </div>
-        <div class="d-avatar d-avatar--xl d-avatar--color-1000">
+        <div class="d-avatar d-avatar--lg d-avatar--color-1000">
             <div class="d-avatar__canvas">
                 <span class="d-avatar__initials">DP</span>
             </div>
+            <div class="d-avatar__presence">
+                <example-presence presence="busy"/>
+            </div>
         </div>
-        <div class="d-avatar d-avatar--xl">
+        <div class="d-avatar d-avatar--lg">
             <div class="d-avatar__canvas">
                 <img class="d-avatar__image" src="/assets/images/person.png" alt=""/>
             </div>
@@ -35,26 +38,88 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 
 <!-- <component-combinator component-name="DtAvatar" /> -->
 
-## Style
+## Usage
 
-<div class="d-bgc-critical d-p32 d-fs-500 d-fw-bold d-ta-center">
-    TODO
-</div>
-
-### Example
-
-<div class="d-bgc-critical d-p32 d-fs-500 d-fw-bold d-ta-center">
-    TODO
-</div>
+<table class="d-table dialtone-doc-table d-mb16">
+    <colgroup>
+        <col class="d-w64">
+        <col>
+        <col>
+        <col>
+    </colgroup>
+    <thead>
+        <tr>
+            <th colspan="2">Type</th>
+            <th>Usage</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <div class="d-d-inline-flex">
+                    <div class="d-avatar d-avatar--md">
+                        <div class="d-avatar__canvas">
+                            <span class="d-avatar__icon">
+                                <dt-icon name="user" size="400" />
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </td>
+            <th class="d-ta-left"><a class="d-link" href="#icon">Icon</a></th>
+            <td>When no name is associated with the the user.</td>
+        </tr>
+        <tr>
+            <td>
+                <div class="d-d-inline-flex">
+                    <div class="d-avatar d-avatar--md d-avatar--color-1600">
+                        <div class="d-avatar__canvas">
+                            <span class="d-avatar__initials">DP</span>
+                        </div>
+                    </div>
+                </div>
+            </td>
+            <th class="d-ta-left"><a class="d-link" href="#initials">Initials</a></th>
+            <td>When the user's name is known.</td>
+        </tr>
+        <tr>
+            <td>
+                <div class="d-d-inline-flex">
+                    <div class="d-avatar d-avatar--md">
+                        <div class="d-avatar__canvas">
+                            <img class="d-avatar__image" src="/assets/images/person.png" alt=""/>
+                        </div>
+                    </div>
+                </div>
+            </td>
+            <th class="d-ta-left"><a class="d-link" href="#image">Image</a></th>
+            <td>When a custom image has been uploaded.</td>
+        </tr>
+        <tr>
+            <td>
+                <div class="d-avatar d-avatar--group">
+                    <div class="d-avatar__canvas">
+                        <img class="d-avatar__image" src="/assets/images/person.png" alt=""/>
+                    </div>
+                    <span class="d-avatar__count"><span class="d-avatar__count-number">3</span></span>
+                </div>
+            </td>
+            <th class="d-ta-left"><a class="d-link" href="#group">Group</a></th>
+            <td>When reflecting more than 2 participants.</td>
+        </tr>
+    </tbody>
+</table>
 
 ## Variants and examples
 
-### Image
+### Icon
 
 <code-well-header>
     <div class="d-avatar d-avatar--md">
         <div class="d-avatar__canvas">
-            <img class="d-avatar__image" src="/assets/images/person.png" alt=""/>
+            <span class="d-avatar__icon">
+                <dt-icon name="user" size="300" />
+            </span>
         </div>
     </div>
 </code-well-header>
@@ -62,7 +127,9 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 ```html
 <div class="d-avatar d-avatar--{$size}">
     <div class="d-avatar__canvas">
-        <img class="d-avatar__image" src="/path/to/image" />
+        <span class="d-avatar__icon">
+            <dt-icon name="{$icon_name}" size="{$icon_size}" />
+        </span>
     </div>
 </div>
 ```
@@ -128,46 +195,46 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
                     <span class="d-avatar__initials">DP</span>
                 </div>
             </div>
-            <div class="d-avatar d-avatar--md d-avatar--color-1010">
+            <div class="d-avatar d-avatar--md d-avatar--color-1100">
                 <div class="d-avatar__canvas">
                     <span class="d-avatar__initials">DP</span>
                 </div>
             </div>
-            <div class="d-avatar d-avatar--md d-avatar--color-1020">
-                <div class="d-avatar__canvas">
-                    <span class="d-avatar__initials">DP</span>
-                </div>
-            </div>
-        </dt-stack>
-        <dt-stack gap="500">
-            <div class="d-avatar d-avatar--md d-avatar--color-1030">
-                <div class="d-avatar__canvas">
-                    <span class="d-avatar__initials">DP</span>
-                </div>
-            </div>
-            <div class="d-avatar d-avatar--md d-avatar--color-1040">
-                <div class="d-avatar__canvas">
-                    <span class="d-avatar__initials">DP</span>
-                </div>
-            </div>
-            <div class="d-avatar d-avatar--md d-avatar--color-1050">
+            <div class="d-avatar d-avatar--md d-avatar--color-1200">
                 <div class="d-avatar__canvas">
                     <span class="d-avatar__initials">DP</span>
                 </div>
             </div>
         </dt-stack>
         <dt-stack gap="500">
-            <div class="d-avatar d-avatar--md d-avatar--color-1060">
+            <div class="d-avatar d-avatar--md d-avatar--color-1300">
                 <div class="d-avatar__canvas">
                     <span class="d-avatar__initials">DP</span>
                 </div>
             </div>
-            <div class="d-avatar d-avatar--md d-avatar--color-1070">
+            <div class="d-avatar d-avatar--md d-avatar--color-1400">
                 <div class="d-avatar__canvas">
                     <span class="d-avatar__initials">DP</span>
                 </div>
             </div>
-            <div class="d-avatar d-avatar--md d-avatar--color-1080">
+            <div class="d-avatar d-avatar--md d-avatar--color-1500">
+                <div class="d-avatar__canvas">
+                    <span class="d-avatar__initials">DP</span>
+                </div>
+            </div>
+        </dt-stack>
+        <dt-stack gap="500">
+            <div class="d-avatar d-avatar--md d-avatar--color-1600">
+                <div class="d-avatar__canvas">
+                    <span class="d-avatar__initials">DP</span>
+                </div>
+            </div>
+            <div class="d-avatar d-avatar--md d-avatar--color-1700">
+                <div class="d-avatar__canvas">
+                    <span class="d-avatar__initials">DP</span>
+                </div>
+            </div>
+            <div class="d-avatar d-avatar--md d-avatar--color-1800">
                 <div class="d-avatar__canvas">
                     <span class="d-avatar__initials">DP</span>
                 </div>
@@ -184,14 +251,12 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 </div>
 ```
 
-### Icon
+### Image
 
 <code-well-header>
     <div class="d-avatar d-avatar--md">
         <div class="d-avatar__canvas">
-            <span class="d-avatar__icon">
-                <dt-icon name="user" size="300" />
-            </span>
+            <img class="d-avatar__image" src="/assets/images/person.png" alt=""/>
         </div>
     </div>
 </code-well-header>
@@ -199,9 +264,7 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 ```html
 <div class="d-avatar d-avatar--{$size}">
     <div class="d-avatar__canvas">
-        <span class="d-avatar__icon">
-            <dt-icon name="{$icon_name}" size="{$icon_size}" />
-        </span>
+        <img class="d-avatar__image" src="/path/to/image" />
     </div>
 </div>
 ```
@@ -215,22 +278,30 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
         </div>
         <div class="d-avatar d-avatar--sm">
             <div class="d-avatar__canvas">
-                <span class="d-avatar__initials">D</span>
+                <span class="d-avatar__icon">
+                    <dt-icon name="user" size="200" />
+                </span>
             </div>
         </div>
         <div class="d-avatar d-avatar--md">
             <div class="d-avatar__canvas">
-                <span class="d-avatar__initials">DP</span>
+                <span class="d-avatar__icon">
+                    <dt-icon name="user" size="400" />
+                </span>
             </div>
         </div>
         <div class="d-avatar d-avatar--lg">
             <div class="d-avatar__canvas">
-                <span class="d-avatar__initials">DP</span>
+                <span class="d-avatar__icon">
+                    <dt-icon name="user" size="500" />
+                </span>
             </div>
         </div>
         <div class="d-avatar d-avatar--xl">
             <div class="d-avatar__canvas">
-                <span class="d-avatar__initials">DP</span>
+                <span class="d-avatar__icon">
+                    <dt-icon name="user" size="600" />
+                </span>
             </div>
         </div>
     </div>
@@ -238,28 +309,54 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 
 ```html
     <div class="d-avatar d-avatar--xs">
-        <div class="d-avatar__canvas"></div>
+        ...
     </div>
     <div class="d-avatar d-avatar--sm">
-        <div class="d-avatar__canvas">
-            <span class="d-avatar__initials">DP</span>
-        </div>
+        ...
     </div>
     <div class="d-avatar d-avatar--md">
-        <div class="d-avatar__canvas">
-            <span class="d-avatar__initials">DP</span>
-        </div>
+        ...
     </div>
     <div class="d-avatar d-avatar--lg">
-        <div class="d-avatar__canvas">
-            <span class="d-avatar__initials">DP</span>
-        </div>
+        ...
     </div>
     <div class="d-avatar d-avatar--xl">
-        <div class="d-avatar__canvas">
-            <span class="d-avatar__initials">DP</span>
+        ...
+    </div>
+```
+
+### Group
+
+<code-well-header>
+    <div class="d-d-inline-flex d-ai-center d-flow8">
+        <div class="d-avatar d-avatar--group">
+            <div class="d-avatar__canvas">
+                <img class="d-avatar__image" src="/assets/images/person.png" alt=""/>
+            </div>
+            <span class="d-avatar__count"><span class="d-avatar__count-number">11</span></span>
+        </div>
+        <div class="d-avatar d-avatar--group">
+            <div class="d-avatar__canvas">
+                <img class="d-avatar__image" src="/assets/images/person.png" alt=""/>
+            </div>
+            <span class="d-avatar__count"><span class="d-avatar__count-number">3</span></span>
         </div>
     </div>
+</code-well-header>
+
+```html
+<div class="d-avatar d-avatar--group">
+    <div class="d-avatar__canvas">
+        <img class="d-avatar__image" src="/assets/images/person.png" alt=""/>
+    </div>
+    <span class="d-avatar__count"><span class="d-avatar__count-number">12</span></span>
+</div>
+<div class="d-avatar d-avatar--group">
+    <div class="d-avatar__canvas">
+        <img class="d-avatar__image" src="/assets/images/person.png" alt=""/>
+    </div>
+    <span class="d-avatar__count"><span class="d-avatar__count-number">1</span></span>
+</div>
 ```
 
 ### Presence
@@ -310,42 +407,42 @@ Positions the [Presence](/components/presence.html) component at each size.
         </div>
     </div>
     <div class="d-d-inline-flex d-ai-center d-flow8">
-        <div class="d-avatar d-avatar--xs">
+        <div class="d-avatar d-avatar--color-1200 d-avatar--xs">
             <div class="d-avatar__canvas"></div>
             <div class="d-avatar__presence">
                 <example-presence presence="active"/>
             </div>
         </div>
-        <div class="d-avatar d-avatar--sm">
+        <div class="d-avatar d-avatar--color-500 d-avatar--sm">
             <div class="d-avatar__canvas">
-                <span class="d-avatar__initials">D</span>
+                <span class="d-avatar__initials">W</span>
             </div>
             <div class="d-avatar__presence">
                 <example-presence presence="active"/>
             </div>
         </div>
-        <div class="d-avatar d-avatar--md">
+        <div class="d-avatar d-avatar--color-800 d-avatar--md">
             <div class="d-avatar__canvas">
-                <span class="d-avatar__initials">DP</span>
+                <span class="d-avatar__initials">FR</span>
             </div>
             <div class="d-avatar__presence">
                 <example-presence presence="busy"/>
             </div>
         </div>
-        <div class="d-avatar d-avatar--lg">
+        <div class="d-avatar d-avatar--color-1200 d-avatar--lg">
             <div class="d-avatar__canvas">
-                <span class="d-avatar__initials">DP</span>
+                <span class="d-avatar__initials">JH</span>
             </div>
             <div class="d-avatar__presence">
-                <example-presence presence="away"/>
+                <example-presence presence="offline"/>
             </div>
         </div>
-        <div class="d-avatar d-avatar--xl">
+        <div class="d-avatar d-avatar--color-1500 d-avatar--xl">
             <div class="d-avatar__canvas">
-                <span class="d-avatar__initials">DP</span>
+                <span class="d-avatar__initials">AE</span>
             </div>
             <div class="d-avatar__presence">
-                <example-presence presence="away"/>
+                <example-presence presence="offline"/>
             </div>
         </div>
     </div>
@@ -361,40 +458,6 @@ Positions the [Presence](/components/presence.html) component at each size.
             <div class="d-presence__inner d-presence__inner--{$status}"></div>
         </div>
     </div>
-</div>
-```
-
-### Group
-
-<code-well-header>
-    <div class="d-d-inline-flex d-ai-center d-flow8">
-        <div class="d-avatar d-avatar--group">
-            <div class="d-avatar__canvas">
-                <img class="d-avatar__image" src="/assets/images/person.png" alt=""/>
-            </div>
-            <span class="d-avatar__count"><span class="d-avatar__count-number">11</span></span>
-        </div>
-        <div class="d-avatar d-avatar--group">
-            <div class="d-avatar__canvas">
-                <img class="d-avatar__image" src="/assets/images/person.png" alt=""/>
-            </div>
-            <span class="d-avatar__count"><span class="d-avatar__count-number">3</span></span>
-        </div>
-    </div>
-</code-well-header>
-
-```html
-<div class="d-avatar d-avatar--group">
-    <div class="d-avatar__canvas">
-        <img class="d-avatar__image" src="/assets/images/person.png" alt=""/>
-    </div>
-    <span class="d-avatar__count"><span class="d-avatar__count-number">12</span></span>
-</div>
-<div class="d-avatar d-avatar--group">
-    <div class="d-avatar__canvas">
-        <img class="d-avatar__image" src="/assets/images/person.png" alt=""/>
-    </div>
-    <span class="d-avatar__count"><span class="d-avatar__count-number">1</span></span>
 </div>
 ```
 
