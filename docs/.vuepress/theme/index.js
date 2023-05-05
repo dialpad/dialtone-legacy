@@ -31,10 +31,13 @@ function _blogPostsFrontmatter (app) {
   const blogIndex = app.pages.find(page => page.path === '/about/whats-new/');
   blogIndex.data.blogPosts = app.pages
     .filter(page => page.path.includes('/about/whats-new/posts'))
-    .map(post => ({
-      ...post.frontmatter,
-      firstParagraph: post.contentRendered.split('\n').find(f => f.startsWith('<p>')),
-    }));
+    .map(post => {
+      delete post.frontmatter.description;
+      return {
+        ...post.frontmatter,
+        firstParagraph: post.contentRendered.split('\n').find(f => f.startsWith('<p>')),
+      };
+    });
 }
 
 function _extractFrontmatter (app, path, options, exceptions = []) {
