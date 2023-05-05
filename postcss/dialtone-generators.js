@@ -3,13 +3,14 @@
 
 // TODO: Move this constants to the _data directory
 const {
-  OPACITIES,
-  FLEX_COLUMNS,
   BORDER_RADIUS_SIZES,
+  FLEX_COLUMNS,
   GAP_SIZES,
   LAYOUT_SIZES,
+  OPACITIES,
+  REGEX_OPTIONS,
   SIZE_STOPS,
-} = require('./constants.json');
+} = require('./constants');
 const { fixed: WIDTH_HEIGHTS } = require('../docs/_data/width-height.json');
 const dialtoneTokens = require('../node_modules/@dialpad/dialtone-tokens/dist/tokens.json');
 const tinycolor = require('tinycolor2');
@@ -83,7 +84,7 @@ const generatedRules = {
  * @returns {[Object]}
  */
 function _extractColors () {
-  const colorsRegex = /dtColor(Neutral)?(White|Black|Purple|Blue|Magenta|Gold|Green|Red|Tan)(\d{3})?/;
+  const colorsRegex = new RegExp(`dtColor(Neutral)?(${REGEX_OPTIONS.COLORS})([0-9]{3})?`);
   return Object.keys(dialtoneTokens)
     .filter(key => colorsRegex.test(key))
     .reduce((colors, color) => {
@@ -105,7 +106,8 @@ function _extractColors () {
  * @returns String
  */
 function _hoverFocusSelectors (selector) {
-  if (/\.(h|f|fv)\\/.test(selector)) { return null; }
+  const prefixRegex = new RegExp(`\\.(${REGEX_OPTIONS.HOVER_FOCUS_PREFIXES})\\\\:`);
+  if (prefixRegex.test(selector)) { return selector; }
   const hoverSelector = selector.replace('.', '.h\\:').concat(':hover');
   const focusSelector = selector.replace('.', '.f\\:').concat(':focus');
   const focusWithinSelector = selector.replace('.', '.f\\:').concat(':focus-within');
@@ -732,11 +734,11 @@ function _generateVariables (declaration) {
  * @private
  */
 function _generateHoverFocusVariations (rule) {
-  const backgroundGradientRegex = /\.d-bgg-(none|unset)/;
-  const fontColorRegex = /\.d-fc-(primary|secondary|tertiary|muted|placeholder|disabled|success|warning|error|critical|current|transparent|unset)(-(strong-inverted|inverted|strong))?/;
-  const backgroundColorRegex = /\.d-bgc-(primary|secondary|moderate|strong|contrast|bold|success|warning|info|error|critical|danger|transparent|unset)(-(opaque|subtle-opaque|subtle|strong))?/;
-  const borderColorRegex = /\.d-bc-(default|subtle|moderate|bold|focus|critical|success|warning|brand|accent)(-(inverted|subtle|strong|subtle-inverted|strong-inverted))?/;
-  const boxShadowRegex = /\.d-bs-(sm|md|lg|xl|card|none|unset)/;
+  const backgroundGradientRegex = new RegExp(`\\.d-bgg-(${REGEX_OPTIONS.BACKGROUND_GRADIENTS})`);
+  const fontColorRegex = new RegExp(`\\.d-fc-(${REGEX_OPTIONS.FONT_COLORS})(-(${REGEX_OPTIONS.FONT_COLOR_VARIATIONS}))?`);
+  const backgroundColorRegex = new RegExp(`\\.d-bgc-(${REGEX_OPTIONS.BACKGROUND_COLORS})(-(${REGEX_OPTIONS.BACKGROUND_COLOR_VARIATIONS}))?`);
+  const borderColorRegex = new RegExp(`\\.d-bc-(${REGEX_OPTIONS.BORDER_COLORS})(-(${REGEX_OPTIONS.BORDER_COLOR_VARIATIONS}))?`);
+  const boxShadowRegex = new RegExp(`\\.d-bs-(${REGEX_OPTIONS.BOX_SHADOWS})`);
   const found = [
     backgroundGradientRegex,
     fontColorRegex,
@@ -762,13 +764,12 @@ module.exports = (opts = {}) => {
 
       _generateUtilities(Rule, clonedSource, declaration);
       _generateVariables(declaration);
-      _generateHoverFocusVariations(root);
 
       root.insertAfter(lastRule, new Rule({ selector: 'body', nodes: cssVariables, source: clonedSource }));
       root.insertAfter(lastRule, Object.values(generatedRules).flat());
     },
     Root (root) {
-      root.walkRules((rule) => {
+      root.walkRules(rule => {
         _generateHoverFocusVariations(rule);
       });
     },
