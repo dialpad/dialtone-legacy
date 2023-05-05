@@ -59,7 +59,7 @@ To customize a non-animating Skeleton background color modify the `--placeholder
         d-bar2
       "
       style="
-        --placeholder-from-color: var(--blue-400);
+        --placeholder-from-color: var(--dt-color-blue-400);
       ">
     </div>
   </div>
@@ -73,7 +73,7 @@ To customize a non-animating Skeleton background color modify the `--placeholder
     d-bar2
   "
   style="
-    --placeholder-from-color: var(--blue-400);
+    --placeholder-from-color: var(--dt-color-blue-400);
   ">
 </div>
 ```
@@ -90,8 +90,8 @@ Customize an animating Skeleton by modifying the `--placeholder-from-color` and 
         d-bar2
       "
       style="
-        --placeholder-from-color: var(--blue-400);
-        --placeholder-to-color: var(--blue-200);
+        --placeholder-from-color: var(--dt-color-blue-400);
+        --placeholder-to-color: var(--dt-color-blue-200);
       ">
     </div>
   </div>
@@ -106,8 +106,8 @@ Customize an animating Skeleton by modifying the `--placeholder-from-color` and 
     d-bar2
   "
   style="
-    --placeholder-from-color: var(--blue-300);
-    --placeholder-to-color: var(--blue-200);
+    --placeholder-from-color: var(--dt-color-blue-300);
+    --placeholder-to-color: var(--dt-color-blue-200);
   ">
 </div>
 ```
@@ -116,45 +116,45 @@ Customize an animating Skeleton by modifying the `--placeholder-from-color` and 
 
 <code-well-header>
   <div class="d-stack8 d-mb24 d-w50p">
-    <div class="d-h16 d-bar2 skeleton-placeholder" style=" width: 160px; --placeholder-from-color: var(--black-400); --placeholder-to-color: var(--black-200); " ></div>
-    <div class="d-h24 d-bar2 skeleton-placeholder" style=" width: 240px; --placeholder-from-color: var(--black-400); --placeholder-to-color: var(--black-200); " ></div>
-    <div class="d-h32 d-bar2 skeleton-placeholder" style=" width: 320px; --placeholder-from-color: var(--black-400); --placeholder-to-color: var(--black-200); " ></div>
+    <div class="d-h16 d-bar2 skeleton-placeholder" style=" width: 160px; --placeholder-from-color: var(--dt-color-black-400); --placeholder-to-color: var(--dt-color-black-200); " ></div>
+    <div class="d-h24 d-bar2 skeleton-placeholder" style=" width: 240px; --placeholder-from-color: var(--dt-color-black-400); --placeholder-to-color: var(--dt-color-black-200); " ></div>
+    <div class="d-h32 d-bar2 skeleton-placeholder" style=" width: 320px; --placeholder-from-color: var(--dt-color-black-400); --placeholder-to-color: var(--dt-color-black-200); " ></div>
   </div>
   <div class="d-stack8 d-mb24 d-w50p">
-    <div class="d-h8 d-bar2 skeleton-placeholder" style=" width: 90%; --placeholder-from-color: var(--black-400); --placeholder-to-color: var(--black-200); " ></div>
-    <div class="d-h8 d-bar2 skeleton-placeholder" style=" width: 87%; --placeholder-from-color: var(--black-400); --placeholder-to-color: var(--black-200); " ></div>
-    <div class="d-h8 d-bar2 skeleton-placeholder" style=" width: 82%; --placeholder-from-color: var(--black-400); --placeholder-to-color: var(--black-200); " ></div>
-    <div class="d-h8 d-bar2 skeleton-placeholder" style=" width: 92%; --placeholder-from-color: var(--black-400); --placeholder-to-color: var(--black-200); " ></div>
-    <div class="d-h8 d-bar2 skeleton-placeholder" style=" width: 21%; --placeholder-from-color: var(--black-400); --placeholder-to-color: var(--black-200); " ></div>
+    <div class="d-h8 d-bar2 skeleton-placeholder" style=" width: 90%; --placeholder-from-color: var(--dt-color-black-400); --placeholder-to-color: var(--dt-color-black-200); " ></div>
+    <div class="d-h8 d-bar2 skeleton-placeholder" style=" width: 87%; --placeholder-from-color: var(--dt-color-black-400); --placeholder-to-color: var(--dt-color-black-200); " ></div>
+    <div class="d-h8 d-bar2 skeleton-placeholder" style=" width: 82%; --placeholder-from-color: var(--dt-color-black-400); --placeholder-to-color: var(--dt-color-black-200); " ></div>
+    <div class="d-h8 d-bar2 skeleton-placeholder" style=" width: 92%; --placeholder-from-color: var(--dt-color-black-400); --placeholder-to-color: var(--dt-color-black-200); " ></div>
+    <div class="d-h8 d-bar2 skeleton-placeholder" style=" width: 21%; --placeholder-from-color: var(--dt-color-black-400); --placeholder-to-color: var(--dt-color-black-200); " ></div>
   </div>
   <div class="d-d-flex d-mb24 d-gg8 d-ai-center">
-    <div class="d-bar-circle d-bar2 skeleton-placeholder" style=" width: 1.8rem; height: 1.8rem; --placeholder-from-color: var(--black-400); --placeholder-to-color: var(--black-200); " ></div>
-    <div class="d-bar-circle d-bar2 skeleton-placeholder" style=" width: 2.4rem; height: 2.4rem; --placeholder-from-color: var(--black-400); --placeholder-to-color: var(--black-200); " ></div>
-    <div class="d-bar-circle d-bar2 skeleton-placeholder" style=" width: 3.2rem; height: 3.2rem; --placeholder-from-color: var(--black-400); --placeholder-to-color: var(--black-200); " ></div>
-    <div class="d-bar-circle d-bar2 skeleton-placeholder" style=" width: 4.8rem; height: 4.8rem; --placeholder-from-color: var(--black-400); --placeholder-to-color: var(--black-200); " ></div>
+    <div class="d-bar-circle d-bar2 skeleton-placeholder" style=" width: 1.8rem; height: 1.8rem; --placeholder-from-color: var(--dt-color-black-400); --placeholder-to-color: var(--dt-color-black-200); " ></div>
+    <div class="d-bar-circle d-bar2 skeleton-placeholder" style=" width: 2.4rem; height: 2.4rem; --placeholder-from-color: var(--dt-color-black-400); --placeholder-to-color: var(--dt-color-black-200); " ></div>
+    <div class="d-bar-circle d-bar2 skeleton-placeholder" style=" width: 3.2rem; height: 3.2rem; --placeholder-from-color: var(--dt-color-black-400); --placeholder-to-color: var(--dt-color-black-200); " ></div>
+    <div class="d-bar-circle d-bar2 skeleton-placeholder" style=" width: 4.8rem; height: 4.8rem; --placeholder-from-color: var(--dt-color-black-400); --placeholder-to-color: var(--dt-color-black-200); " ></div>
   </div>
   <div class="d-d-flex d-mb24 d-gg8 d-ai-center">
-    <div class="d-bar2 skeleton-placeholder" style=" width: 1.2rem; height: 1.2rem; --placeholder-from-color: var(--black-400); --placeholder-to-color: var(--black-200); " ></div>
-    <div class="d-bar2 skeleton-placeholder" style=" width: 1.4rem; height: 1.4rem; --placeholder-from-color: var(--black-400); --placeholder-to-color: var(--black-200); " ></div>
-    <div class="d-bar2 skeleton-placeholder" style=" width: 1.8rem; height: 1.8rem; --placeholder-from-color: var(--black-400); --placeholder-to-color: var(--black-200); " ></div>
-    <div class="d-bar2 skeleton-placeholder" style=" width: 2.0rem; height: 2.0rem; --placeholder-from-color: var(--black-400); --placeholder-to-color: var(--black-200); " ></div>
-    <div class="d-bar2 skeleton-placeholder" style=" width: 2.4rem; height: 2.4rem; --placeholder-from-color: var(--black-400); --placeholder-to-color: var(--black-200); " ></div>
+    <div class="d-bar2 skeleton-placeholder" style=" width: 1.2rem; height: 1.2rem; --placeholder-from-color: var(--dt-color-black-400); --placeholder-to-color: var(--dt-color-black-200); " ></div>
+    <div class="d-bar2 skeleton-placeholder" style=" width: 1.4rem; height: 1.4rem; --placeholder-from-color: var(--dt-color-black-400); --placeholder-to-color: var(--dt-color-black-200); " ></div>
+    <div class="d-bar2 skeleton-placeholder" style=" width: 1.8rem; height: 1.8rem; --placeholder-from-color: var(--dt-color-black-400); --placeholder-to-color: var(--dt-color-black-200); " ></div>
+    <div class="d-bar2 skeleton-placeholder" style=" width: 2.0rem; height: 2.0rem; --placeholder-from-color: var(--dt-color-black-400); --placeholder-to-color: var(--dt-color-black-200); " ></div>
+    <div class="d-bar2 skeleton-placeholder" style=" width: 2.4rem; height: 2.4rem; --placeholder-from-color: var(--dt-color-black-400); --placeholder-to-color: var(--dt-color-black-200); " ></div>
   </div>
   <div class="d-d-flex d-mb24 d-gg8 d-ai-center d-w50p">
     <div class="d-d-flex d-ai-center d-w50p d-gg8">
-      <div class="d-bar-circle d-bar2 skeleton-placeholder" style=" width: 2.4rem; height: 2.4rem; --placeholder-from-color: var(--black-400); --placeholder-to-color: var(--black-200); " ></div>
-      <div class="d-h8 d-bar2 skeleton-placeholder" style=" width: 87%; --placeholder-from-color: var(--black-400); --placeholder-to-color: var(--black-200); " ></div>
+      <div class="d-bar-circle d-bar2 skeleton-placeholder" style=" width: 2.4rem; height: 2.4rem; --placeholder-from-color: var(--dt-color-black-400); --placeholder-to-color: var(--dt-color-black-200); " ></div>
+      <div class="d-h8 d-bar2 skeleton-placeholder" style=" width: 87%; --placeholder-from-color: var(--dt-color-black-400); --placeholder-to-color: var(--dt-color-black-200); " ></div>
     </div>
   </div>
   <div class="d-d-flex d-mb24 d-gg8 d-ai-center d-w50p">
     <div class="d-d-flex d-ai-center d-w50p d-gg8 d-ai-flex-start">
-      <div class="d-bar-circle d-bar2 skeleton-placeholder" style=" width: 3.2rem; height: 3.2rem; --placeholder-from-color: var(--black-400); --placeholder-to-color: var(--black-200); " ></div>
+      <div class="d-bar-circle d-bar2 skeleton-placeholder" style=" width: 3.2rem; height: 3.2rem; --placeholder-from-color: var(--dt-color-black-400); --placeholder-to-color: var(--dt-color-black-200); " ></div>
       <div class="d-fl1 d-stack8">
-        <div class="d-h8 d-bar2 skeleton-placeholder" style=" width: 90%; --placeholder-from-color: var(--black-400); --placeholder-to-color: var(--black-200); " ></div>
-        <div class="d-h8 d-bar2 skeleton-placeholder" style=" width: 87%; --placeholder-from-color: var(--black-400); --placeholder-to-color: var(--black-200); " ></div>
-        <div class="d-h8 d-bar2 skeleton-placeholder" style=" width: 82%; --placeholder-from-color: var(--black-400); --placeholder-to-color: var(--black-200); " ></div>
-        <div class="d-h8 d-bar2 skeleton-placeholder" style=" width: 92%; --placeholder-from-color: var(--black-400); --placeholder-to-color: var(--black-200); " ></div>
-        <div class="d-h8 d-bar2 skeleton-placeholder" style=" width: 21%; --placeholder-from-color: var(--black-400); --placeholder-to-color: var(--black-200); " ></div>
+        <div class="d-h8 d-bar2 skeleton-placeholder" style=" width: 90%; --placeholder-from-color: var(--dt-color-black-400); --placeholder-to-color: var(--dt-color-black-200); " ></div>
+        <div class="d-h8 d-bar2 skeleton-placeholder" style=" width: 87%; --placeholder-from-color: var(--dt-color-black-400); --placeholder-to-color: var(--dt-color-black-200); " ></div>
+        <div class="d-h8 d-bar2 skeleton-placeholder" style=" width: 82%; --placeholder-from-color: var(--dt-color-black-400); --placeholder-to-color: var(--dt-color-black-200); " ></div>
+        <div class="d-h8 d-bar2 skeleton-placeholder" style=" width: 92%; --placeholder-from-color: var(--dt-color-black-400); --placeholder-to-color: var(--dt-color-black-200); " ></div>
+        <div class="d-h8 d-bar2 skeleton-placeholder" style=" width: 21%; --placeholder-from-color: var(--dt-color-black-400); --placeholder-to-color: var(--dt-color-black-200); " ></div>
       </div>
     </div>
   </div>

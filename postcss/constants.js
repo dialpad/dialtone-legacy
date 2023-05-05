@@ -29,7 +29,8 @@ module.exports = {
     12,
     16,
     24,
-    32],
+    32,
+  ],
   GAP_SIZES: [
     0,
     1,
@@ -42,7 +43,8 @@ module.exports = {
     24,
     32,
     48,
-    64],
+    64,
+  ],
   LAYOUT_SIZES: [
     0,
     1,
@@ -74,7 +76,8 @@ module.exports = {
     -72,
     -84,
     -96,
-    -102],
+    -102,
+  ],
   MARGIN_SIZES: [
     0,
     1,
@@ -110,7 +113,8 @@ module.exports = {
     -96,
     -102,
     -114,
-    -128],
+    -128,
+  ],
   PADDING_SIZES: [
     0,
     1,
@@ -129,7 +133,8 @@ module.exports = {
     96,
     102,
     114,
-    128],
+    128,
+  ],
   REGEX_OPTIONS: {
     COLORS: [
       'White',

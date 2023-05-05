@@ -167,7 +167,7 @@ Use `d:d-fc-{color}` to set a different text color when the user prefers dark mo
             <div class="d-d-flex d-jc-space-between d-ai-center">
               <div class="d-fl1 d-ff-mono d-fs-100">
                 --fco: 100%;<br/>
-                color: hsla(var(--white-h) var(--white-s) var(--white-l) / var(--fco)) !important;
+                color: hsla(var(--dt-color-neutral-white-h) var(--dt-color-neutral-white-s) var(--dt-color-neutral-white-l) / var(--fco)) !important;
               </div>
               <div class="d-fl0 d-bgc-black-700 d-ml16 d-p4 d-bar4 d-fc-white d-fs-300 d-lh4">
                 Aa
