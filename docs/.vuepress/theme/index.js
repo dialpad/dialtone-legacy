@@ -32,7 +32,6 @@ function _blogPostsFrontmatter (app) {
   blogIndex.data.blogPosts = app.pages
     .filter(page => page.path.includes('/about/whats-new/posts'))
     .map(post => {
-      console.log(post.frontmatter);
       delete post.frontmatter.description;
       return {
         ...post.frontmatter,
