@@ -129,7 +129,7 @@ function _hoverFocusSelectors (selector) {
 function colorUtilities (Rule, clonedSource, declaration) {
   const dialtoneColors = _extractColors();
   dialtoneColors.forEach(({ colorName: color }) => {
-    const hslaColor = `hsla(var(--${color}-h) var(--${color}-s) var(--${color}-l)`;
+    const hslaColor = `hsla(var(--dt-color-${color}-h) var(--dt-color-${color}-s) var(--dt-color-${color}-l)`;
     generatedRules.fontColor.push(new Rule({
       source: clonedSource,
       selector: _hoverFocusSelectors(`.d-fc-${color}`),
@@ -687,7 +687,7 @@ function colorVariables (declaration) {
   dialtoneColors.forEach(({ colorName, hexValue }) => {
     const color = tinycolor(hexValue);
     const { h: hue, s: saturation, l: lightness } = color.toHsl();
-    const colorVar = `--${colorName}`;
+    const colorVar = `--dt-color-${colorName}`;
     cssVariables.push([
       declaration.clone({ prop: `${colorVar}-h`, value: `${hue}` }),
       declaration.clone({ prop: `${colorVar}-s`, value: `${saturation * 100}%` }),

@@ -83,7 +83,7 @@ In the event you need to write CSS, use [BEM (Block Element Modifier)](http://ge
 ```less
 .card {
   // Local CSS Custom Properties
-  --card-color-background: var(--bgc-primary);
+  --card-color-background: var(--dt-color-surface-primary);
 
   // Default block styles
   display: flex;
@@ -92,7 +92,7 @@ In the event you need to write CSS, use [BEM (Block Element Modifier)](http://ge
 
   // Modifier for block
   &--featured {
-    --card-color-background: var(--bgc-info);
+    --card-color-background: var(--dt-color-surface-info);
   }
 
   // Elements within block

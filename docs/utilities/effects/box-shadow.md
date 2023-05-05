@@ -96,12 +96,12 @@ Use `fv:d-bs-{n}` to change an element's `:focus-visible` state box shadow [only
       <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">var(--bs-{{ className }})</th>
       <td class="d-ff-mono d-fs-100">
         <span v-if="className !== 'card'">
-          0 var(--dt-space-200) var(--su{{size}}) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l) / {{opacity}}%);
+          0 var(--dt-space-200) var(--su{{size}}) 0 hsla(var(--dt-color-black-900-h) var(--dt-color-black-900-s) var(--dt-color-black-900-l) / {{opacity}}%);
         </span>
         <span v-else>
-          0 var(--dt-space-200) var(--dt-space-500) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l) / 8%),<br/>
-          0 var(--dt-space-200) var(--dt-space-300) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l) / 4%),<br/>
-          0 var(--dt-space-100) var(--dt-space-200) 0 hsla(var(--black-900-h) var(--black-900-s) var(--black-900-l) / 3%);
+          0 var(--dt-space-200) var(--dt-space-500) 0 hsla(var(--dt-color-black-900-h) var(--dt-color-black-900-s) var(--dt-color-black-900-l) / 8%),<br/>
+          0 var(--dt-space-200) var(--dt-space-300) 0 hsla(var(--dt-color-black-900-h) var(--dt-color-black-900-s) var(--dt-color-black-900-l) / 4%),<br/>
+          0 var(--dt-space-100) var(--dt-space-200) 0 hsla(var(--dt-color-black-900-h) var(--dt-color-black-900-s) var(--dt-color-black-900-l) / 3%);
         </span>
       </td>
     </tr>
