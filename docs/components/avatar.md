@@ -67,7 +67,7 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
                 </div>
             </td>
             <th class="d-ta-left"><a class="d-link" href="#icon">Icon</a></th>
-            <td>When no name is associated with the the user.</td>
+            <td>When no user name can be associated with the Avatar.</td>
         </tr>
         <tr>
             <td>
