@@ -2,7 +2,16 @@
 /* eslint-disable max-len */
 
 // TODO: Move this constants to the _data directory
-const constants = require('./constants.json');
+const {
+  BORDER_RADIUS_SIZES,
+  FLEX_COLUMNS,
+  GAP_SIZES,
+  LAYOUT_SIZES,
+  MARGIN_SIZES,
+  OPACITIES,
+  PADDING_SIZES,
+  REGEX_OPTIONS,
+} = require('./constants');
 const { fixed: WIDTH_HEIGHTS } = require('../docs/_data/width-height.json');
 const dialtoneTokens = require('../node_modules/@dialpad/dialtone-tokens/dist/tokens.json');
 const tinycolor = require('tinycolor2');
@@ -76,7 +85,7 @@ const generatedRules = {
  * @returns {[Object]}
  */
 function _extractColors () {
-  const colorsRegex = /dtColor(Neutral)?(White|Black|Purple|Blue|Magenta|Gold|Green|Red|Tan)(\d{3})?/;
+  const colorsRegex = new RegExp(`dtColor(Neutral)?(${REGEX_OPTIONS.COLORS})([0-9]{3})?`);
   return Object.keys(dialtoneTokens)
     .filter(key => colorsRegex.test(key))
     .reduce((colors, color) => {
@@ -98,7 +107,8 @@ function _extractColors () {
  * @returns String
  */
 function _hoverFocusSelectors (selector) {
-  if (/\.(h|f|fv)\\/.test(selector)) { return null; }
+  const prefixRegex = new RegExp(`\\.(${REGEX_OPTIONS.HOVER_FOCUS_PREFIXES})\\\\:`);
+  if (prefixRegex.test(selector)) { return selector; }
   const hoverSelector = selector.replace('.', '.h\\:').concat(':hover');
   const focusSelector = selector.replace('.', '.f\\:').concat(':focus');
   const focusWithinSelector = selector.replace('.', '.f\\:').concat(':focus-within');
@@ -120,7 +130,7 @@ function _hoverFocusSelectors (selector) {
 function colorUtilities (Rule, clonedSource, declaration) {
   const dialtoneColors = _extractColors();
   dialtoneColors.forEach(({ colorName: color }) => {
-    const hslaColor = `hsla(var(--${color}-h) var(--${color}-s) var(--${color}-l)`;
+    const hslaColor = `hsla(var(--dt-color-${color}-h) var(--dt-color-${color}-s) var(--dt-color-${color}-l)`;
     generatedRules.fontColor.push(new Rule({
       source: clonedSource,
       selector: _hoverFocusSelectors(`.d-fc-${color}`),
@@ -186,7 +196,7 @@ function colorUtilities (Rule, clonedSource, declaration) {
  * @param {Declaration} declaration
  */
 function opacityUtilities (Rule, clonedSource, declaration) {
-  constants.OPACITIES.forEach(opacity => {
+  OPACITIES.forEach(opacity => {
     generatedRules.fontOpacity.push(new Rule({
       source: clonedSource,
       selector: _hoverFocusSelectors(`.d-fco-${opacity}`),
@@ -239,7 +249,7 @@ function opacityUtilities (Rule, clonedSource, declaration) {
  * @param {Declaration} declaration
  */
 function flexColumnsUtilities (Rule, clonedSource, declaration) {
-  for (let i = 1; i <= constants.FLEX_COLUMNS; i++) {
+  for (let i = 1; i <= FLEX_COLUMNS; i++) {
     generatedRules.flexColumn.push(new Rule({
       source: clonedSource,
       selector: `.d-fl-col${i}`,
@@ -282,7 +292,7 @@ function flexColumnsUtilities (Rule, clonedSource, declaration) {
  * @param {Declaration} declaration
  */
 function borderUtilities (Rule, clonedSource, declaration) {
-  constants.BORDER_RADIUS_SIZES.forEach(size => {
+  BORDER_RADIUS_SIZES.forEach(size => {
     generatedRules.borderAllRadius.push(new Rule({
       source: clonedSource,
       selector: `.d-bar${size}`,
@@ -332,7 +342,7 @@ function borderUtilities (Rule, clonedSource, declaration) {
  * @param {Declaration} declaration
  */
 function gridUtilities (Rule, clonedSource, declaration) {
-  for (let i = 1; i <= constants.FLEX_COLUMNS; i++) {
+  for (let i = 1; i <= FLEX_COLUMNS; i++) {
     generatedRules.gridColumns.push(new Rule({
       source: clonedSource,
       selector: `.d-g-cols${i}`,
@@ -399,7 +409,7 @@ function gridUtilities (Rule, clonedSource, declaration) {
  * @param {Declaration} declaration
  */
 function gapUtilities (Rule, clonedSource, declaration) {
-  constants.GAP_SIZES.forEach(size => {
+  GAP_SIZES.forEach(size => {
     generatedRules.gridGap.push(new Rule({
       source: clonedSource,
       selector: `.d-gg${size}`,
@@ -431,7 +441,7 @@ function gapUtilities (Rule, clonedSource, declaration) {
  * @param {Declaration} declaration
  */
 function layoutUtilities (Rule, clonedSource, declaration) {
-  constants.LAYOUT_SIZES.forEach(size => {
+  LAYOUT_SIZES.forEach(size => {
     size = Number(size).toString().replace('-', 'n');
     generatedRules.positionTop.push(new Rule({
       source: clonedSource,
@@ -550,7 +560,7 @@ function sizingUtilities (Rule, clonedSource, declaration) {
  * @param {Declaration} declaration
  */
 function marginUtilities (Rule, clonedSource, declaration) {
-  constants.MARGIN_SIZES.forEach(size => {
+  MARGIN_SIZES.forEach(size => {
     size = Number(size).toString().replace('-', 'n');
     generatedRules.marginTop.push(new Rule({
       source: clonedSource,
@@ -613,7 +623,7 @@ function marginUtilities (Rule, clonedSource, declaration) {
  * @param {Declaration} declaration
  */
 function paddingUtilities (Rule, clonedSource, declaration) {
-  constants.PADDING_SIZES.forEach(size => {
+  PADDING_SIZES.forEach(size => {
     generatedRules.paddingTop.push(new Rule({
       source: clonedSource,
       selector: `.d-pt${size}`,
@@ -677,7 +687,7 @@ function colorVariables (declaration) {
   dialtoneColors.forEach(({ colorName, hexValue }) => {
     const color = tinycolor(hexValue);
     const { h: hue, s: saturation, l: lightness } = color.toHsl();
-    const colorVar = `--${colorName}`;
+    const colorVar = `--dt-color-${colorName}`;
     cssVariables.push([
       declaration.clone({ prop: `${colorVar}-h`, value: `${hue}` }),
       declaration.clone({ prop: `${colorVar}-s`, value: `${saturation * 100}%` }),
@@ -724,11 +734,11 @@ function _generateVariables (declaration) {
  * @private
  */
 function _generateHoverFocusVariations (rule) {
-  const backgroundGradientRegex = /\.d-bgg-(none|unset)/;
-  const fontColorRegex = /\.d-fc-(primary|secondary|tertiary|muted|placeholder|disabled|success|warning|error|critical|current|transparent|unset)(-(strong-inverted|inverted|strong))?/;
-  const backgroundColorRegex = /\.d-bgc-(primary|secondary|moderate|strong|contrast|bold|success|warning|info|error|critical|danger|transparent|unset)(-(opaque|subtle-opaque|subtle|strong))?/;
-  const borderColorRegex = /\.d-bc-(default|subtle|moderate|bold|focus|critical|success|warning|brand|accent)(-(inverted|subtle|strong|subtle-inverted|strong-inverted))?/;
-  const boxShadowRegex = /\.d-bs-(sm|md|lg|xl|card|none|unset)/;
+  const backgroundGradientRegex = new RegExp(`\\.d-bgg-(${REGEX_OPTIONS.BACKGROUND_GRADIENTS})`);
+  const fontColorRegex = new RegExp(`\\.d-fc-(${REGEX_OPTIONS.FONT_COLORS})(-(${REGEX_OPTIONS.FONT_COLOR_VARIATIONS}))?`);
+  const backgroundColorRegex = new RegExp(`\\.d-bgc-(${REGEX_OPTIONS.BACKGROUND_COLORS})(-(${REGEX_OPTIONS.BACKGROUND_COLOR_VARIATIONS}))?`);
+  const borderColorRegex = new RegExp(`\\.d-bc-(${REGEX_OPTIONS.BORDER_COLORS})(-(${REGEX_OPTIONS.BORDER_COLOR_VARIATIONS}))?`);
+  const boxShadowRegex = new RegExp(`\\.d-bs-(${REGEX_OPTIONS.BOX_SHADOWS})`);
   const found = [
     backgroundGradientRegex,
     fontColorRegex,
@@ -754,13 +764,12 @@ module.exports = (opts = {}) => {
 
       _generateUtilities(Rule, clonedSource, declaration);
       _generateVariables(declaration);
-      _generateHoverFocusVariations(root);
 
       root.insertAfter(lastRule, new Rule({ selector: 'body', nodes: cssVariables, source: clonedSource }));
       root.insertAfter(lastRule, Object.values(generatedRules).flat());
     },
     Root (root) {
-      root.walkRules((rule) => {
+      root.walkRules(rule => {
         _generateHoverFocusVariations(rule);
       });
     },

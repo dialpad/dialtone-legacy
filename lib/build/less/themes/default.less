@@ -24,15 +24,15 @@
 
 
 @theme-vars: {
-    primary-color-h:                        var(--purple-400-h);
-    primary-color-s:                        var(--purple-400-s);
-    primary-color-l:                        var(--purple-400-l);
+    primary-color-h:                        var(--dt-color-purple-400-h);
+    primary-color-s:                        var(--dt-color-purple-400-s);
+    primary-color-l:                        var(--dt-color-purple-400-l);
     primary-color-hsl:                      var(--primary-color-h) var(--primary-color-s) var(--primary-color-l);
     primary-color:                          hsl(var(--primary-color-h) var(--primary-color-s) var(--primary-color-l));
     primary-color-hover:                    hsl(var(--primary-color-h) var(--primary-color-s) calc(var(--primary-color-l) - 10%));
-    nav-background-color-h:                 var(--purple-600-h);
-    nav-background-color-s:                 var(--purple-600-s);
-    nav-background-color-l:                 var(--purple-600-l);
+    nav-background-color-h:                 var(--dt-color-purple-600-h);
+    nav-background-color-s:                 var(--dt-color-purple-600-s);
+    nav-background-color-l:                 var(--dt-color-purple-600-l);
     nav-background-color:                   hsl(var(--nav-background-color-h) var(--nav-background-color-s) var(--nav-background-color-l));
 
     topbar-height:                                    var(--size-700);
@@ -43,29 +43,29 @@
     base--corner-radius:                              0.25em; // TODO: unused. deprecate or...?
 
     theme-topbar-color:                               hsl(var(--theme-topbar-color-hsl));
-    theme-topbar-color-hsl:                           var(--black-900-h) var(--black-900-s) var(--black-900-l); // Use with d-fco[##] Opacity utility
-    theme-topbar-color-background:                    var(--bgc-secondary);
+    theme-topbar-color-hsl:                           var(--dt-color-black-900-h) var(--dt-color-black-900-s) var(--dt-color-black-900-l); // Use with d-fco[##] Opacity utility
+    theme-topbar-color-background:                    var(--dt-color-surface-secondary);
 
     theme-sidebar-color:                              var(--dt-color-foreground-primary);
-    theme-sidebar-color-hsl:                          var(--black-900-h) var(--black-900-s) var(--black-900-l);
-    theme-sidebar-color-background:                   var(--bgc-secondary);
+    theme-sidebar-color-hsl:                          var(--dt-color-black-900-h) var(--dt-color-black-900-s) var(--dt-color-black-900-l);
+    theme-sidebar-color-background:                   var(--dt-color-surface-secondary);
 
     theme-sidebar-icon-color:                         var(--dt-color-foreground-secondary);
     theme-sidebar-status-color:                       var(--dt-color-foreground-tertiary);
 
     theme-sidebar-row-color-background:               transparent;
-    theme-sidebar-row-color-background-hover:         hsla(var(--black-900-hsl) / 0.1);
-    theme-sidebar-row-color-background-active:        var(--black-300);
+    theme-sidebar-row-color-background-hover:         hsla(var(--dt-color-black-900-hsl) / 0.1);
+    theme-sidebar-row-color-background-active:        var(--dt-color-black-300);
     theme-sidebar-selected-row-color:                 var(--dt-color-foreground-primary);
-    theme-sidebar-selected-row-color-hsl:             var(--black-900-h) var(--black-900-s) var(--black-900-l); // Use with d-fco[##] Opacity utility
-    theme-sidebar-selected-row-color-background:      var(--black-200);
+    theme-sidebar-selected-row-color-hsl:             var(--dt-color-black-900-h) var(--dt-color-black-900-s) var(--dt-color-black-900-l); // Use with d-fco[##] Opacity utility
+    theme-sidebar-selected-row-color-background:      var(--dt-color-black-200);
 
-    theme-presence-color-background-available:        var(--green-400);
-    theme-presence-color-background-busy-unavailable: var(--red-300);
-    theme-presence-color-background-busy:             var(--gold-300);
+    theme-presence-color-background-available:        var(--dt-color-green-400);
+    theme-presence-color-background-busy-unavailable: var(--dt-color-red-300);
+    theme-presence-color-background-busy:             var(--dt-color-gold-300);
 
-    theme-mention-color-background:                   var(--purple-400);
-    theme-mention-color-foreground:                   var(--white);
+    theme-mention-color-background:                   var(--dt-color-purple-400);
+    theme-mention-color-foreground:                   var(--dt-color-neutral-white);
 }
 
 //  ============================================================================
@@ -149,31 +149,10 @@ body {
     each(@type-styles-vars, {
         --@{key}: @value;
     });
-    each(@type-colors, {
-        --@{key}: @value;
-    });
-
-    //  $$  SURFACE COLORS
-    //  ------------------------------------------------------------------------
-    each(@surface-colors, {
-        --@{key}: @value;
-    });
-
-    //  $$  BORDER COLORS
-    //  ------------------------------------------------------------------------
-    each(@border-colors, {
-        --@{key}: @value;
-    });
 
     //  $$  Z-INDEX
     //  ------------------------------------------------------------------------
     each(@zi-vars, {
-        --@{key}: @value;
-    });
-
-    //  $$  INPUTS & BUTTONS
-    //  ------------------------------------------------------------------------
-    each(@focus-rings, {
         --@{key}: @value;
     });
 
