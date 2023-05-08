@@ -12,7 +12,6 @@ import ComponentClassTable from './baseComponents/ComponentClassTable.vue';
 import TokenTable from './baseComponents/TokenTable.vue';
 import ComponentVueApi from './baseComponents/ComponentVueApi.vue';
 import WeatherCodesTable from './baseComponents/WeatherCodesTable.vue';
-import SpacingSystemTable from './baseComponents/SpacingSystemTable.vue';
 import IconSizesTable from './baseComponents/IconSizesTable.vue';
 import ComponentAccessibleTable from './baseComponents/ComponentAccessibleTable.vue';
 import ComponentCombinator from './baseComponents/ComponentCombinator.vue';
@@ -41,7 +40,6 @@ export default defineClientConfig({
     app.component('TokenTable', TokenTable);
     app.component('ComponentVueApi', ComponentVueApi);
     app.component('WeatherCodesTable', WeatherCodesTable);
-    app.component('SpacingSystemTable', SpacingSystemTable);
     app.component('IconSizesTable', IconSizesTable);
     app.component('ComponentAccessibleTable', ComponentAccessibleTable);
     app.component('ComponentCombinator', ComponentCombinator);
