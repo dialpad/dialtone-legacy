@@ -291,47 +291,48 @@ function flexColumnsUtilities (Rule, clonedSource, declaration) {
  * @param {Declaration} declaration
  */
 function borderUtilities (Rule, clonedSource, declaration) {
-  BORDER_RADIUS_SIZES.forEach(size => {
-    generatedRules.borderAllRadius.push(new Rule({
-      source: clonedSource,
-      selector: `.d-bar${size}`,
-      nodes: [
-        declaration.clone({ prop: 'border-radius', value: `var(--su${size}) !important` }),
-      ],
-    }));
-    generatedRules.borderTopRadius.push(new Rule({
-      source: clonedSource,
-      selector: `.d-btr${size}`,
-      nodes: [
-        declaration.clone({ prop: 'border-top-left-radius', value: `var(--su${size}) !important` }),
-        declaration.clone({ prop: 'border-top-right-radius', value: `var(--su${size}) !important` }),
-      ],
-    }));
-    generatedRules.borderRightRadius.push(new Rule({
-      source: clonedSource,
-      selector: `.d-brr${size}`,
-      nodes: [
-        declaration.clone({ prop: 'border-top-right-radius', value: `var(--su${size}) !important` }),
-        declaration.clone({ prop: 'border-bottom-right-radius', value: `var(--su${size}) !important` }),
-      ],
-    }));
-    generatedRules.borderBottomRadius.push(new Rule({
-      source: clonedSource,
-      selector: `.d-bbr${size}`,
-      nodes: [
-        declaration.clone({ prop: 'border-bottom-left-radius', value: `var(--su${size}) !important` }),
-        declaration.clone({ prop: 'border-bottom-right-radius', value: `var(--su${size}) !important` }),
-      ],
-    }));
-    generatedRules.borderLeftRadius.push(new Rule({
-      source: clonedSource,
-      selector: `.d-blr${size}`,
-      nodes: [
-        declaration.clone({ prop: 'border-top-left-radius', value: `var(--su${size}) !important` }),
-        declaration.clone({ prop: 'border-bottom-left-radius', value: `var(--su${size}) !important` }),
-      ],
-    }));
-  });
+  Object.keys(BORDER_RADIUS_SIZES)
+    .forEach(size => {
+      generatedRules.borderAllRadius.push(new Rule({
+        source: clonedSource,
+        selector: `.d-bar${size}`,
+        nodes: [
+          declaration.clone({ prop: 'border-radius', value: `var(--dt-size-${BORDER_RADIUS_SIZES[size]}) !important` }),
+        ],
+      }));
+      generatedRules.borderTopRadius.push(new Rule({
+        source: clonedSource,
+        selector: `.d-btr${size}`,
+        nodes: [
+          declaration.clone({ prop: 'border-top-left-radius', value: `var(--dt-size-${BORDER_RADIUS_SIZES[size]}) !important` }),
+          declaration.clone({ prop: 'border-top-right-radius', value: `var(--dt-size-${BORDER_RADIUS_SIZES[size]}) !important` }),
+        ],
+      }));
+      generatedRules.borderRightRadius.push(new Rule({
+        source: clonedSource,
+        selector: `.d-brr${size}`,
+        nodes: [
+          declaration.clone({ prop: 'border-top-right-radius', value: `var(--dt-size-${BORDER_RADIUS_SIZES[size]}) !important` }),
+          declaration.clone({ prop: 'border-bottom-right-radius', value: `var(--dt-size-${BORDER_RADIUS_SIZES[size]}) !important` }),
+        ],
+      }));
+      generatedRules.borderBottomRadius.push(new Rule({
+        source: clonedSource,
+        selector: `.d-bbr${size}`,
+        nodes: [
+          declaration.clone({ prop: 'border-bottom-left-radius', value: `var(--dt-size-${BORDER_RADIUS_SIZES[size]}) !important` }),
+          declaration.clone({ prop: 'border-bottom-right-radius', value: `var(--dt-size-${BORDER_RADIUS_SIZES[size]}) !important` }),
+        ],
+      }));
+      generatedRules.borderLeftRadius.push(new Rule({
+        source: clonedSource,
+        selector: `.d-blr${size}`,
+        nodes: [
+          declaration.clone({ prop: 'border-top-left-radius', value: `var(--dt-size-${BORDER_RADIUS_SIZES[size]}) !important` }),
+          declaration.clone({ prop: 'border-bottom-left-radius', value: `var(--dt-size-${BORDER_RADIUS_SIZES[size]}) !important` }),
+        ],
+      }));
+    });
 }
 
 /**
