@@ -8,7 +8,7 @@ description: Utilities for controlling an element's box shadows.
 Use `d-bs-{n}` to add an outer box shadow to an element.
 
 <code-well-header class="d-fl-col4 d-flg16 d-fw-wrap d-p24 d-bgc-purple-100 d-bgo50 d-w100p d-hmn102" custom>
-  <div v-for="{ className } in boxSize" class="d-fl-center d-p16 d-bar8 d-bgc-white d-fs-200 d-fw-bold" :class="`d-bs-${className}`">.d-bs-{{ className }}</div>
+  <div v-for="className in boxShadowSizes" class="d-fl-center d-p16 d-bar8 d-bgc-white d-fs-200 d-fw-bold" :class="`d-bs-${className}`">.d-bs-{{ className }}</div>
 </code-well-header>
 
 ```html
@@ -72,50 +72,22 @@ Use `fv:d-bs-{n}` to change an element's `:focus-visible` state box shadow [only
 <div tabindex="0" class="d-bs-none fv:d-bs-lg">Click on me</div>
 ```
 
-<script setup>
-  const boxSize = [
-    {className: "sm", size: 4, opacity: 15},
-    {className: "md", size: 8, opacity: 25},
-    {className: "lg", size: 12, opacity: 30},
-    {className: "xl", size: 16, opacity: 30},
-    {className: "card", size: 4, opacity: 30},
-  ];
-</script>
-
-## Variables
-
-<table class="d-table dialtone-doc-table">
-  <thead>
-    <tr>
-      <th scope="col" class="d-w25p">CSS Variable</th>
-      <th scope="col">Output</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr v-for="{className, size, opacity} in boxSize">
-      <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">var(--bs-{{ className }})</th>
-      <td class="d-ff-mono d-fs-100">
-        <span v-if="className !== 'card'">
-          0 var(--su2) var(--su{{size}}) 0 hsla(var(--dt-color-black-900-h) var(--dt-color-black-900-s) var(--dt-color-black-900-l) / {{opacity}}%);
-        </span>
-        <span v-else>
-          0 var(--su2) var(--su16) 0 hsla(var(--dt-color-black-900-h) var(--dt-color-black-900-s) var(--dt-color-black-900-l) / 8%),<br/>
-          0 var(--su2) var(--su4) 0 hsla(var(--dt-color-black-900-h) var(--dt-color-black-900-s) var(--dt-color-black-900-l) / 4%),<br/>
-          0 var(--su1) var(--su2) 0 hsla(var(--dt-color-black-900-h) var(--dt-color-black-900-s) var(--dt-color-black-900-l) / 3%);
-        </span>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
 ## Classes
 
 <utility-class-table>
   <template #content>
     <tbody>
-      <tr v-for="{ className } in boxSize">
-        <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-bs-{{ className }}</th>
-        <td class="d-ff-mono d-fs-100">box-shadow: var(--br-{{ className }}) !important;</td>
+      <tr v-for="size in boxShadowSizes">
+        <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-bs-{{ size }}</th>
+        <td v-if="size !== 'card'" class="d-ff-mono d-fs-100">
+            box-shadow: var(--dt-shadow-{{ size }}-0-x) var(--dt-shadow-{{ size }}-0-y) var(--dt-shadow-{{ size }}-0-blur) var(--dt-shadow-{{ size }}-0-spread) var(--dt-shadow-{{ size }}-0-color) !important;
+        </td>
+        <td v-else class="d-ff-mono d-fs-100">
+            var(--dt-shadow-card-0-x) var(--dt-shadow-card-0-y) var(--dt-shadow-card-0-blur) var(--dt-shadow-card-0-spread) var(--dt-shadow-card-0-color),<br/>
+            var(--dt-shadow-card-1-x) var(--dt-shadow-card-1-y) var(--dt-shadow-card-1-blur) var(--dt-shadow-card-1-spread) var(--dt-shadow-card-1-color),<br/>
+            var(--dt-shadow-card-2-x) var(--dt-shadow-card-2-y) var(--dt-shadow-card-2-blur) var(--dt-shadow-card-2-spread) var(--dt-shadow-card-2-color)<br/>
+            !important
+        </td>
       </tr>
       <tr>
         <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-bs-none</th>
@@ -128,3 +100,7 @@ Use `fv:d-bs-{n}` to change an element's `:focus-visible` state box shadow [only
     </tbody>
   </template>
 </utility-class-table>
+
+<script setup>
+const boxShadowSizes = ['sm', 'md', 'lg', 'xl', 'card'];
+</script>
