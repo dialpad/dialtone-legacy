@@ -228,7 +228,7 @@ const libStylesDev = function (done) {
     .pipe(sourcemaps.init())
     .pipe(less()) // compile less to css
     .pipe(postCSS([postCSSDialtoneGenerator, postCSSResponsify]))
-    .pipe(sourcemaps.mapSources(function (sourcePath, file) {
+    .pipe(sourcemaps.mapSources(function (sourcePath) {
       return '../../build/less/' + sourcePath;
     }))
     .pipe(sourcemaps.write())
