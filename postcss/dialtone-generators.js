@@ -12,8 +12,8 @@ const {
   PADDING_SIZES,
   REGEX_OPTIONS,
 } = require('./constants');
+const { extractColors, appendHoverFocusSelectors, extractShadows } = require('./helpers');
 const { fixed: WIDTH_HEIGHTS } = require('../docs/_data/width-height.json');
-const dialtoneTokens = require('../node_modules/@dialpad/dialtone-tokens/dist/tokens.json');
 const tinycolor = require('tinycolor2');
 const cssVariables = [];
 // This constant determines the order in which classes are going to be added to the root CSS
@@ -79,42 +79,9 @@ const generatedRules = {
   paddingLeft: [],
 };
 
-/**
- * Takes the COLORS constant and returns a flat array containing
- * all the posible color-stop combinations
- * @returns {[Object]}
- */
-function _extractColors () {
-  const colorsRegex = new RegExp(`dtColor(Neutral)?(${REGEX_OPTIONS.COLORS})([0-9]{3})?`);
-  return Object.keys(dialtoneTokens)
-    .filter(key => colorsRegex.test(key))
-    .reduce((colors, color) => {
-      const colorName = color
-        .replace(colorsRegex, (_, m1, m2, m3) => {
-          return [m2, m3].filter(el => !!el).join('-');
-        })
-        .toLowerCase();
-      const hexValue = dialtoneTokens[color];
-      colors.push({ colorName, hexValue });
-      return colors;
-    }, []);
-}
-
-/**
- * Pass a selector to this function to generate hover / focus selectors
- * of it prefixed with h:, f: and fv:
- * @param {String} selector
- * @returns String
- */
-function _hoverFocusSelectors (selector) {
-  const prefixRegex = new RegExp(`\\.(${REGEX_OPTIONS.HOVER_FOCUS_PREFIXES})\\\\:`);
-  if (prefixRegex.test(selector)) { return selector; }
-  const hoverSelector = selector.replace('.', '.h\\:').concat(':hover');
-  const focusSelector = selector.replace('.', '.f\\:').concat(':focus');
-  const focusWithinSelector = selector.replace('.', '.f\\:').concat(':focus-within');
-  const focusVisibleSelector = selector.replace('.', '.fv\\:').concat(':focus-visible');
-  return `${selector}, ${hoverSelector}, ${focusSelector}, ${focusWithinSelector}, ${focusVisibleSelector}`;
-}
+// ================================== //
+//    Utility classes generation      //
+// ---------------------------------- //
 
 /**
  * Generate color utility classes.
@@ -128,12 +95,12 @@ function _hoverFocusSelectors (selector) {
  * @param {Declaration} declaration
  */
 function colorUtilities (Rule, clonedSource, declaration) {
-  const dialtoneColors = _extractColors();
+  const dialtoneColors = extractColors();
   dialtoneColors.forEach(({ colorName: color }) => {
     const hslaColor = `hsla(var(--dt-color-${color}-h) var(--dt-color-${color}-s) var(--dt-color-${color}-l)`;
     generatedRules.fontColor.push(new Rule({
       source: clonedSource,
-      selector: _hoverFocusSelectors(`.d-fc-${color}`),
+      selector: appendHoverFocusSelectors(`.d-fc-${color}`),
       nodes: [
         declaration.clone({ prop: '--fco', value: '100%' }),
         declaration.clone({ prop: 'color', value: `${hslaColor} / var(--fco)) !important` }),
@@ -141,7 +108,7 @@ function colorUtilities (Rule, clonedSource, declaration) {
     }));
     generatedRules.borderColor.push(new Rule({
       source: clonedSource,
-      selector: _hoverFocusSelectors(`.d-bc-${color}`),
+      selector: appendHoverFocusSelectors(`.d-bc-${color}`),
       nodes: [
         declaration.clone({ prop: '--bco', value: '100%' }),
         declaration.clone({ prop: 'border-color', value: `${hslaColor} / var(--bco)) !important` }),
@@ -149,7 +116,7 @@ function colorUtilities (Rule, clonedSource, declaration) {
     }));
     generatedRules.backgroundColor.push(new Rule({
       source: clonedSource,
-      selector: _hoverFocusSelectors(`.d-bgc-${color}`),
+      selector: appendHoverFocusSelectors(`.d-bgc-${color}`),
       nodes: [
         declaration.clone({ prop: '--bgo', value: '100%' }),
         declaration.clone({ prop: 'background-color', value: `${hslaColor} / var(--bgo)) !important` }),
@@ -165,7 +132,7 @@ function colorUtilities (Rule, clonedSource, declaration) {
     }));
     generatedRules.backgroundGradientFromColor.push(new Rule({
       source: clonedSource,
-      selector: _hoverFocusSelectors(`.d-bgg-from-${color}`),
+      selector: appendHoverFocusSelectors(`.d-bgg-from-${color}`),
       nodes: [
         declaration.clone({ prop: '--bgg-from-opacity', value: '100%' }),
         declaration.clone({ prop: '--bgg-from', value: `${hslaColor} / var(--bgg-from-opacity))` }),
@@ -174,7 +141,7 @@ function colorUtilities (Rule, clonedSource, declaration) {
     }));
     generatedRules.backgroundGradientToColor.push(new Rule({
       source: clonedSource,
-      selector: _hoverFocusSelectors(`.d-bgg-to-${color}`),
+      selector: appendHoverFocusSelectors(`.d-bgg-to-${color}`),
       nodes: [
         declaration.clone({ prop: '--bgg-to-opacity', value: '100%' }),
         declaration.clone({ prop: '--bgg-to', value: `${hslaColor} / var(--bgg-from-opacity)) !important` }),
@@ -199,14 +166,14 @@ function opacityUtilities (Rule, clonedSource, declaration) {
   OPACITIES.forEach(opacity => {
     generatedRules.fontOpacity.push(new Rule({
       source: clonedSource,
-      selector: _hoverFocusSelectors(`.d-fco-${opacity}`),
+      selector: appendHoverFocusSelectors(`.d-fco-${opacity}`),
       nodes: [
         declaration.clone({ prop: '--fco', value: `${opacity}% !important` }),
       ],
     }));
     generatedRules.borderOpacity.push(new Rule({
       source: clonedSource,
-      selector: _hoverFocusSelectors(`.d-bco-${opacity}`),
+      selector: appendHoverFocusSelectors(`.d-bco-${opacity}`),
       nodes: [
         declaration.clone({ prop: '--bco', value: `${opacity}% !important` }),
       ],
@@ -220,21 +187,21 @@ function opacityUtilities (Rule, clonedSource, declaration) {
     }));
     generatedRules.backgroundOpacity.push(new Rule({
       source: clonedSource,
-      selector: _hoverFocusSelectors(`.d-bgo${opacity}`),
+      selector: appendHoverFocusSelectors(`.d-bgo${opacity}`),
       nodes: [
         declaration.clone({ prop: '--bgo', value: `${opacity}% !important` }),
       ],
     }));
     generatedRules.backgroundGradientFromOpacity.push(new Rule({
       source: clonedSource,
-      selector: _hoverFocusSelectors(`.d-bgg-from-o${opacity}`),
+      selector: appendHoverFocusSelectors(`.d-bgg-from-o${opacity}`),
       nodes: [
         declaration.clone({ prop: '--bgg-from-opacity', value: `${opacity}% !important` }),
       ],
     }));
     generatedRules.backgroundGradientToOpacity.push(new Rule({
       source: clonedSource,
-      selector: _hoverFocusSelectors(`.d-bgg-to-o${opacity}`),
+      selector: appendHoverFocusSelectors(`.d-bgg-to-o${opacity}`),
       nodes: [
         declaration.clone({ prop: '--bgg-to-opacity', value: `${opacity}% !important` }),
       ],
@@ -678,12 +645,16 @@ function paddingUtilities (Rule, clonedSource, declaration) {
   });
 }
 
+// ================================== //
+//    Variables generation      //
+// ---------------------------------- //
+
 /**
  * Generate HSL CSS Variables.
  * @param {Declaration} declaration
  */
 function colorVariables (declaration) {
-  const dialtoneColors = _extractColors();
+  const dialtoneColors = extractColors();
   dialtoneColors.forEach(({ colorName, hexValue }) => {
     const color = tinycolor(hexValue);
     const { h: hue, s: saturation, l: lightness } = color.toHsl();
@@ -696,6 +667,28 @@ function colorVariables (declaration) {
       declaration.clone({ prop: `${colorVar}`, value: `hsla(var(${colorVar}-h) var(${colorVar}-s) var(${colorVar}-l) / var(--alpha, 100%))` }),
     ]);
   });
+}
+
+/**
+ *
+ * @param {Declaration} declaration
+ */
+function boxShadows (declaration) {
+  const dialtoneShadows = extractShadows();
+  Object
+    .keys(dialtoneShadows)
+    .forEach(shadowName => {
+      const shadowVar = `--dt-shadow-${shadowName}`;
+      const times = dialtoneShadows[shadowName];
+      const value = Array(times)
+        .fill(undefined)
+        .map((val, i) => {
+          return `var(${shadowVar}-${i}-x) var(${shadowVar}-${i}-y) var(${shadowVar}-${i}-blur) var(${shadowVar}-${i}-spread) var(${shadowVar}-${i}-color)`;
+        }).join(', ');
+      cssVariables.push([
+        declaration.clone({ prop: shadowVar, value }),
+      ]);
+    });
 }
 
 /**
@@ -747,8 +740,16 @@ function _generateHoverFocusVariations (rule) {
     boxShadowRegex,
   ].some(regex => regex.test(rule.selector));
   if (!found) return;
-  const selectors = rule.selectors.map(selector => _hoverFocusSelectors(selector));
+  const selectors = rule.selectors.map(selector => appendHoverFocusSelectors(selector));
   rule.selector = selectors.filter(selector => !!selector).join(', ');
+}
+
+/**
+ *
+ * @param {Declaration} declaration
+ */
+function _generateCompositionTokens (declaration) {
+  boxShadows(declaration);
 }
 
 /**
@@ -764,6 +765,7 @@ module.exports = (opts = {}) => {
 
       _generateUtilities(Rule, clonedSource, declaration);
       _generateVariables(declaration);
+      _generateCompositionTokens(declaration);
 
       root.insertAfter(lastRule, new Rule({ selector: 'body', nodes: cssVariables, source: clonedSource }));
       root.insertAfter(lastRule, Object.values(generatedRules).flat());
