@@ -83,7 +83,7 @@ Use `fv:d-bs-{n}` to change an element's `:focus-visible` state box shadow [only
             box-shadow: var(--dt-shadow-{{ size }}-0-x) var(--dt-shadow-{{ size }}-0-y) var(--dt-shadow-{{ size }}-0-blur) var(--dt-shadow-{{ size }}-0-spread) var(--dt-shadow-{{ size }}-0-color) !important;
         </td>
         <td v-else class="d-ff-mono d-fs-100">
-            var(--dt-shadow-card-0-x) var(--dt-shadow-card-0-y) var(--dt-shadow-card-0-blur) var(--dt-shadow-card-0-spread) var(--dt-shadow-card-0-color),<br/>
+            box-shadow: var(--dt-shadow-card-0-x) var(--dt-shadow-card-0-y) var(--dt-shadow-card-0-blur) var(--dt-shadow-card-0-spread) var(--dt-shadow-card-0-color),<br/>
             var(--dt-shadow-card-1-x) var(--dt-shadow-card-1-y) var(--dt-shadow-card-1-blur) var(--dt-shadow-card-1-spread) var(--dt-shadow-card-1-color),<br/>
             var(--dt-shadow-card-2-x) var(--dt-shadow-card-2-y) var(--dt-shadow-card-2-blur) var(--dt-shadow-card-2-spread) var(--dt-shadow-card-2-color)<br/>
             !important
