@@ -1,5 +1,5 @@
 const { REGEX_OPTIONS } = require('./constants');
-const dialtoneTokens = require('../node_modules/@dialpad/dialtone-tokens/dist/tokens.json');
+const dialtoneTokens = require('../node_modules/@dialpad/dialtone-tokens/dist/tokens-light.json');
 
 module.exports = {
   /**

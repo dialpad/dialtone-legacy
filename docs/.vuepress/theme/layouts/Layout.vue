@@ -1,5 +1,6 @@
 <template>
   <dt-root-layout
+    class="dialtone-theme-light"
     header-class="dialtone-header d-d-flex d-ai-center d-p16 d-pl8 d-h64 d-jc-space-between d-zi-navigation"
     :fixed="false"
     :header-sticky="true"
