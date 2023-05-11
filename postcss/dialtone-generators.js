@@ -166,7 +166,7 @@ function opacityUtilities (Rule, clonedSource, declaration) {
   OPACITIES.forEach(opacity => {
     generatedRules.fontOpacity.push(new Rule({
       source: clonedSource,
-      selector: appendHoverFocusSelectors(`.d-fco-${opacity}`),
+      selector: appendHoverFocusSelectors(`.d-fco${opacity}`),
       nodes: [
         declaration.clone({ prop: '--fco', value: `${opacity}% !important` }),
       ],
