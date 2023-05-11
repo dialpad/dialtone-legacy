@@ -226,5 +226,14 @@ module.exports = {
       'none',
       'unset',
     ].join('|'),
+    SHADOW_VARIABLES: [
+      'Small',
+      'Medium',
+      'Large',
+      'ExtraLarge',
+      'Card',
+      'Focus',
+      'FocusInset',
+    ].join('|'),
   },
 };
