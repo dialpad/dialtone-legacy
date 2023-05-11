@@ -1,7 +1,7 @@
 /* eslint-disable max-lines */
 /* eslint-disable max-len */
 
-// TODO: Move this constants to the _data directory
+// TODO: Move these constants to the _data directory
 const {
   BORDER_RADIUS_SIZES,
   FLEX_COLUMNS,
