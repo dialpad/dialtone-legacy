@@ -24,9 +24,9 @@
   --toggle-transition-timing-function: var(--ttf-out-quint);
   --toggle-transition-speed: var(--td300);
   --toggle-color-background: var(--dt-color-black-400);
-  --toggle-size-height: var(--size-550); // 24
-  --toggle-size-width: var(--size-650); // 48
-  --toggle-size-icon: var(--size-500); // 16
+  --toggle-size-height: var(--dt-size-550); // 24
+  --toggle-size-width: var(--dt-size-650); // 48
+  --toggle-size-icon: var(--dt-size-500); // 16
 
   //  $$  BASE STYLE
   //  ----------------------------------------------------------------------------
@@ -40,7 +40,7 @@
   line-height: var(--lh4);
   vertical-align: middle;
   background-color: var(--toggle-color-background);
-  border: var(--size-100) solid var(--toggle-color-background);
+  border: var(--dt-size-100) solid var(--toggle-color-background);
   border-radius: var(--toggle-size-width);
   cursor: pointer;
   transition-timing-function: var(--ttf-out-quint);
@@ -49,14 +49,14 @@
 
   &__inner {
     position: absolute;
-    top: calc(var(--space-300) - var(--space-100)); // 3
-    left: var(--space-550); // 24
+    top: calc(var(--dt-space-300) - var(--dt-space-100)); // 3
+    left: var(--dt-space-550); // 24
     width: var(--toggle-size-icon);
     height: var(--toggle-size-icon);
 
     .d-toggle--small & {
-      top: var(--space-100); // 1
-      left: calc(var(--space-500) + var(--space-100)); // 17
+      top: var(--dt-space-100); // 1
+      left: calc(var(--dt-space-500) + var(--dt-space-100)); // 17
     }
 
     .d-toggle--indeterminate & {
@@ -71,12 +71,12 @@
 
   &::after {
     position: absolute;
-    top: var(--space-100); // 1
-    left: var(--space-100); // 1
-    width: calc(var(--toggle-size-icon) + var(--size-300));
-    height: calc(var(--toggle-size-icon) + var(--size-300));
+    top: var(--dt-space-100); // 1
+    left: var(--dt-space-100); // 1
+    width: calc(var(--toggle-size-icon) + var(--dt-size-300));
+    height: calc(var(--toggle-size-icon) + var(--dt-size-300));
     background-color: var(--dt-color-neutral-white);
-    border-radius: var(--br-circle);
+    border-radius: var(--dt-size-radius-circle);
     cursor: pointer;
     transition: left var(--toggle-transition-speed) var(--toggle-transition-timing-function);
     content: ' ';
@@ -85,15 +85,15 @@
   //  $$  TOGGLE VARIANTS
   //  ----------------------------------------------------------------------------
   &--small {
-    --toggle-size-height: calc(var(--size-500) + var(--size-200)); // 18
-    --toggle-size-width: calc(var(--size-600) + var(--size-300)); // 36
-    --toggle-size-icon: calc(var(--size-500) - var(--size-200)); // 14
+    --toggle-size-height: calc(var(--dt-size-500) + var(--dt-size-200)); // 18
+    --toggle-size-width: calc(var(--dt-size-600) + var(--dt-size-300)); // 36
+    --toggle-size-icon: calc(var(--dt-size-500) - var(--dt-size-200)); // 14
 
     &::before {
       position: absolute;
-      top: var(--space-300-negative); // -4
+      top: var(--dt-space-300-negative); // -4
       right: 0;
-      bottom: var(--space-300-negative); // -4
+      bottom: var(--dt-space-300-negative); // -4
       left: 0;
       content: '';
     }
@@ -110,21 +110,21 @@
     --toggle-color-background: var(--dt-color-purple-400);
 
     .d-toggle__inner {
-      left: var(--space-350); // 6
+      left: var(--dt-space-350); // 6
       background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0yMC42MTg3IDUuMzgxMjhDMjAuOTYwNCA1LjcyMjk5IDIwLjk2MDQgNi4yNzcwMSAyMC42MTg3IDYuNjE4NzJMOS42MTg3MiAxNy42MTg3QzkuMjc3MDEgMTcuOTYwNCA4LjcyMjk5IDE3Ljk2MDQgOC4zODEyOCAxNy42MTg3TDMuMzgxMjggMTIuNjE4N0MzLjAzOTU3IDEyLjI3NyAzLjAzOTU3IDExLjcyMyAzLjM4MTI4IDExLjM4MTNDMy43MjI5OSAxMS4wMzk2IDQuMjc3MDEgMTEuMDM5NiA0LjYxODcyIDExLjM4MTNMOSAxNS43NjI2TDE5LjM4MTMgNS4zODEyOEMxOS43MjMgNS4wMzk1NyAyMC4yNzcgNS4wMzk1NyAyMC42MTg3IDUuMzgxMjhaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K');
     }
 
     &.d-toggle--small .d-toggle__inner {
-      left: calc(var(--space-100) + var(--space-200)); // 3
+      left: calc(var(--dt-space-100) + var(--dt-space-200)); // 3
     }
 
     &::after {
-      left: calc(var(--space-550) + var(--space-100)); // 25
+      left: calc(var(--dt-space-550) + var(--dt-space-100)); // 25
     }
 
     &.d-toggle--small::after {
-      right: var(--space-100); // 1
-      left: calc(calc(var(--space-300) * 5) - var(--space-100)); // 19
+      right: var(--dt-space-100); // 1
+      left: calc(calc(var(--dt-space-300) * 5) - var(--dt-space-100)); // 19
     }
   }
 
@@ -163,5 +163,5 @@
 }
 
 .d-toggle-group {
-  gap: var(--space-400); // 8
+  gap: var(--dt-space-400); // 8
 }
