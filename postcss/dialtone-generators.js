@@ -12,6 +12,7 @@ const {
   PADDING_SIZES,
   GAP_SPACES,
   WIDTH_HEIGHTS,
+  PLATFORM_FONT_SIZES,
 } = require('./constants');
 const { extractColors, appendHoverFocusSelectors, extractShadows } = require('./helpers');
 const tinycolor = require('tinycolor2');
@@ -79,9 +80,7 @@ const generatedRules = {
   paddingLeft: [],
 };
 
-// ================================== //
 //    Utility classes generation      //
-// ---------------------------------- //
 
 /**
  * Generate color utility classes.
@@ -648,9 +647,27 @@ function paddingUtilities (Rule, clonedSource, declaration) {
     });
 }
 
-// ================================== //
-//    Variables generation      //
-// ---------------------------------- //
+/**
+ *
+ * @param {Rule} rule
+ * @param {Source} clonedSource
+ * @param {Declaration} declaration
+ * @private
+ */
+function _generateUtilities (rule, clonedSource, declaration) {
+  colorUtilities(rule, clonedSource, declaration);
+  opacityUtilities(rule, clonedSource, declaration);
+  flexColumnsUtilities(rule, clonedSource, declaration);
+  borderUtilities(rule, clonedSource, declaration);
+  gridUtilities(rule, clonedSource, declaration);
+  gapUtilities(rule, clonedSource, declaration);
+  layoutUtilities(rule, clonedSource, declaration);
+  sizingUtilities(rule, clonedSource, declaration);
+  marginUtilities(rule, clonedSource, declaration);
+  paddingUtilities(rule, clonedSource, declaration);
+}
+
+//        Variables generation        //
 
 /**
  * Generate HSL CSS Variables.
@@ -671,6 +688,32 @@ function colorVariables (declaration) {
     ]);
   });
 }
+
+/**
+ * Generates font sizes for specific platforms
+ * TV, TC8 and Mobile
+ * @param {Declaration} declaration
+ */
+function platformSpecificFontSizes (declaration) {
+  Object.keys(PLATFORM_FONT_SIZES).forEach(stop => {
+    const fontSizeVar = `--dt-font-size-${stop}`;
+    cssVariables.push([
+      declaration.clone({ prop: fontSizeVar, value: PLATFORM_FONT_SIZES[stop] }),
+    ]);
+  });
+}
+
+/**
+ *
+ * @param {Declaration} declaration
+ * @private
+ */
+function _generateVariables (declaration) {
+  colorVariables(declaration);
+  platformSpecificFontSizes(declaration);
+}
+
+//        Composition tokens          //
 
 /**
  *
@@ -696,32 +739,13 @@ function boxShadows (declaration) {
 
 /**
  *
- * @param {Rule} rule
- * @param {Source} clonedSource
  * @param {Declaration} declaration
- * @private
  */
-function _generateUtilities (rule, clonedSource, declaration) {
-  colorUtilities(rule, clonedSource, declaration);
-  opacityUtilities(rule, clonedSource, declaration);
-  flexColumnsUtilities(rule, clonedSource, declaration);
-  borderUtilities(rule, clonedSource, declaration);
-  gridUtilities(rule, clonedSource, declaration);
-  gapUtilities(rule, clonedSource, declaration);
-  layoutUtilities(rule, clonedSource, declaration);
-  sizingUtilities(rule, clonedSource, declaration);
-  marginUtilities(rule, clonedSource, declaration);
-  paddingUtilities(rule, clonedSource, declaration);
+function _generateCompositionTokens (declaration) {
+  boxShadows(declaration);
 }
 
-/**
- *
- * @param {Declaration} declaration
- * @private
- */
-function _generateVariables (declaration) {
-  colorVariables(declaration);
-}
+//        Selector variations         //
 
 /**
  * Generate :hover, :focus, :focus-within and :focus-visible selectors
@@ -745,14 +769,6 @@ function _generateHoverFocusVariations (rule) {
   if (!found) return;
   const selectors = rule.selectors.map(selector => appendHoverFocusSelectors(selector));
   rule.selector = selectors.filter(selector => !!selector).join(', ');
-}
-
-/**
- *
- * @param {Declaration} declaration
- */
-function _generateCompositionTokens (declaration) {
-  boxShadows(declaration);
 }
 
 /**
