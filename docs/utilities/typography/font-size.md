@@ -80,7 +80,7 @@ change in other platforms (mobile, tc8, tv).
             <div class="d-d-flex d-jc-space-between d-ai-center">
               <div class="d-fl1 d-ff-mono d-fs-100">
                 font-size: {{ output }}rem !important;<br/>
-                font-weight: var(--fw-bold) !important;
+                font-weight: var(--dt-font-weight-bold) !important;
               </div>
               <div class="d-fl0 d-lh4" :class="`d-headline${size}`">
                 Aa
@@ -127,7 +127,7 @@ change in other platforms (mobile, tc8, tv).
             <div class="d-d-flex d-jc-space-between d-ai-center">
               <div class="d-fl1 d-ff-mono d-fs-100">
                 font-size: {{ output }}rem !important;<br/>
-                font-weight: var(--fw-bold) !important;
+                font-weight: var(--dt-font-weight-bold) !important;
               </div>
               <div class="d-fl0 d-lh4" :class="`d-headline${size}`">
                 Aa
@@ -174,7 +174,7 @@ change in other platforms (mobile, tc8, tv).
             <div class="d-d-flex d-jc-space-between d-ai-center">
               <div class="d-fl1 d-ff-mono d-fs-100">
                 font-size: {{ output }}rem !important;<br/>
-                font-weight: var(--fw-bold) !important;
+                font-weight: var(--dt-font-weight-bold) !important;
               </div>
               <div class="d-fl0 d-lh4" :class="`d-headline${size}`">
                 Aa
@@ -221,7 +221,7 @@ change in other platforms (mobile, tc8, tv).
             <div class="d-d-flex d-jc-space-between d-ai-center">
               <div class="d-fl1 d-ff-mono d-fs-100">
                 font-size: {{ output }}rem !important;<br/>
-                font-weight: var(--fw-bold) !important;
+                font-weight: var(--dt-font-weight-bold) !important;
               </div>
               <div class="d-fl0 d-lh4" :class="`d-headline${size}`">
                 Aa

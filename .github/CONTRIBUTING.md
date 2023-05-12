@@ -73,7 +73,7 @@ All Dialtone classes available to users are prefixed with `d-`.
 .d-stack8 {}
 ```
 
-Note that variables are not classes and do not follow this convention. For example: `@purple-300` (`LESS`) or `var(--su12)` (CSS Custom Property).
+Note that variables are not classes and do not follow this convention. For example: `@purple-300` (`LESS`) or `var(--dt-size-450)` (CSS Custom Property).
 
 #### Utility classes
 
@@ -93,10 +93,6 @@ Component class names use the [Block Element Modifier (BEM)](http://getbem.com/n
 .d-banner__dialog {} // Element
 .d-banner--success {} // Modifier
 ```
-
-### Generated classes
-
-While most of the classes you find in `lib/build/less` are available to users and documented on the doc site, one exception to this is d-internals. d-internals definitions are found in [utilties/internals.less](../lib/build/less/utilities/internals.less). These are definitons we use within Dialtone to generate classes, and are not meant for use by consumers of Dialtone.
 
 ### Immutable utility classes
 
