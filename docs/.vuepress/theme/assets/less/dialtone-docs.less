@@ -17,15 +17,12 @@
 //  ============================================================================
 //  $   IMPORTS
 //  ----------------------------------------------------------------------------
-@import (reference) '@dialpad/dialtone/lib/build/less/variables/icons';
-@import (reference) '@dialpad/dialtone/lib/build/less/variables/typography';
-@import (reference) '@dialpad/dialtone/lib/build/less/variables/spacing';
-@import (reference) '@dialpad/dialtone/lib/build/less/utilities/internals';
-@import (reference) '@dialpad/dialtone/lib/build/less/utilities/spacing';
-@import (reference) '@dialpad/dialtone/lib/build/less/utilities/grid';
-@import (reference) '@dialpad/dialtone/lib/build/less/utilities/typography';
-@import (reference) '@dialpad/dialtone/lib/build/less/components/link';
-@import (reference) '@dialpad/dialtone/lib/build/less/components/button';
+@import (reference) 'lib/build/less/variables/typography';
+@import (reference) 'lib/build/less/utilities/spacing';
+@import (reference) 'lib/build/less/utilities/grid';
+@import (reference) 'lib/build/less/utilities/typography';
+@import (reference) 'lib/build/less/components/link';
+@import (reference) 'lib/build/less/components/button';
 @import 'dialtone-syntax';
 @import 'hljs-dialpad.less';
 
@@ -98,7 +95,7 @@ span.DocSearch-Button-Keys {
 //      Override search button with dialtone styles
 //  ----------------------------------------------------------------------------
 a.router-link-active {
-  font-weight: var(--fw-semibold);
+  font-weight: var(--dt-font-weight-semi-bold);
 }
 
 //  ============================================================================
@@ -164,7 +161,7 @@ a.header-anchor {
   margin-left: -0.87em;
   padding-right: 0.23em;
   opacity: 0;
-  font-size: var(--fs-300);
+  font-size: var(--dt-font-size-300);
 }
 
 .d-docsite--header-2 {
@@ -175,7 +172,7 @@ a.header-anchor {
 
 .d-docsite--header-3 {
   .d-headline-large(); // TODO: when a redesign is imminent
-  font-weight: var(--fw-semibold);
+  font-weight: var(--dt-font-weight-semi-bold);
   margin-top: var(--dt-space-500);
   margin-bottom: var(--dt-space-300);
 }
@@ -314,7 +311,7 @@ a.header-anchor {
   margin-right: var(--dt-space-100-negative);
   padding: var(--dt-space-450) var(--dt-space-500);
   color: var(--dt-color-black-200);
-  font-size: var(--fs-200);
+  font-size: var(--dt-font-size-200);
   background-color: var(--dt-color-black-700);
   border-radius: var(--dt-size-400);
   box-shadow: var(--bs-md);
@@ -360,7 +357,7 @@ a.header-anchor {
 }
 
 .dialtone-icon-card__list__item {
-  font-size: var(--fs-100);
+  font-size: var(--dt-font-size-100);
 
   strong {
     display: inline-block;
@@ -369,8 +366,8 @@ a.header-anchor {
 }
 
 .dialtone-icon-card__icon {
-  width: @icon48;
-  height: @icon48;
+  width: var(--dt-size-650);
+  height: var(--dt-size-650);
   margin-bottom: var(--dt-space-300);
 
   svg {
@@ -391,16 +388,16 @@ a.header-anchor {
 .dialtone-icon-card__title {
   margin-top: 0;
   margin-bottom: var(--dt-space-300);
-  font-weight: var(--fw-bold);
-  font-size: var(--fs-200);
-  line-height: var(--lh-200);
+  font-weight: var(--dt-font-weight-bold);
+  font-size: var(--dt-font-size-200);
+  line-height: var(--dt-font-line-height-200);
 }
 
 .dialtone-icon-card__subtitle {
   width: 100%;
   margin-bottom: 0;
   overflow: hidden;
-  font-size: var(--fs-100);
+  font-size: var(--dt-font-size-100);
   line-height: var(--lh-none);
   white-space: nowrap;
   text-align: center;
@@ -409,7 +406,7 @@ a.header-anchor {
 
 .dialtone-icon-card__description {
   color: var(--dt-color-neutral-white);
-  font-size: var(--fs-100);
+  font-size: var(--dt-font-size-100);
 }
 
 .dialtone-icon-popover {
@@ -481,9 +478,9 @@ a.header-anchor {
 //  ----------------------------------------------------------------------------
 
 .dialtone-page-title {
-  line-height: var(--lh-200);
-  font-size: var(--fs-500);
-  font-weight: var(--fw-medium);
+  line-height: var(--dt-font-line-height-200);
+  font-size: var(--dt-font-size-500);
+  font-weight: var(--dt-font-weight-medium);
   margin-bottom: var(--dt-space-400);
 }
 
@@ -494,8 +491,8 @@ a.header-anchor {
 
 .dialtone-intro {
   max-width: 58ch;
-  font-size: var(--fs-300);
-  line-height: var(--lh-300);
+  font-size: var(--dt-font-size-300);
+  line-height: var(--dt-font-line-height-300);
   color: var(--dt-color-foreground-secondary);
   margin-bottom: var(--dt-space-400);
 }
@@ -575,9 +572,9 @@ a.header-anchor {
     align-items: center;
     gap: var(--dt-space-400);
     color: var(--dt-color-foreground-secondary);
-    line-height: var(--lh-200);
-    font-size: var(--fs-300);
-    font-weight: var(--fw-semibold);
+    line-height: var(--dt-font-line-height-200);
+    font-size: var(--dt-font-size-300);
+    font-weight: var(--dt-font-weight-semi-bold);
   }
 
   &__title-text {
@@ -586,8 +583,8 @@ a.header-anchor {
 
   &__description {
     color: var(--dt-color-foreground-tertiary);
-    line-height: var(--lh-300);
-    font-size: var(--fs-200);
+    line-height: var(--dt-font-line-height-300);
+    font-size: var(--dt-font-size-200);
   }
 }
 
@@ -599,7 +596,7 @@ a.header-anchor {
 .dialtone-definition {
   > dt {
     margin-top: var(--dt-space-500);
-    font-weight: var(--fw-bold);
+    font-weight: var(--dt-font-weight-bold);
   }
 
   >dd {
@@ -608,7 +605,7 @@ a.header-anchor {
   }
 
   code {
-    font-weight: var(--fw-normal);
+    font-weight: var(--dt-font-weight-normal);
   }
 }
 
@@ -636,7 +633,7 @@ a.header-anchor {
     display: flex;
     gap: var(--dt-space-400);
     align-items: center;
-    font-size: var(--fs-200);
+    font-size: var(--dt-font-size-200);
 
     &--do {
       color: var(--dt-color-foreground-success);
@@ -667,8 +664,8 @@ a.header-anchor {
   }
 
   &__bd {
-    font-size: var(--fs-200);
-    line-height: var(--lh-400);
+    font-size: var(--dt-font-size-200);
+    line-height: var(--dt-font-line-height-400);
 
     .d-docsite--unordered-list {
       // unfortunate

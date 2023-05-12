@@ -1,5 +1,5 @@
 ---
-title: Colors
+title: Font Colors
 description: Utilities to change an element's font-color.
 ---
 

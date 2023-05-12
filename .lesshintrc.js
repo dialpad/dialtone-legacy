@@ -1,8 +1,4 @@
 module.exports = {
-  excludedFiles: [
-    'lib/build/less/utilities/internals.less',
-  ],
-
   // turn off the rules because of syntax semantic of less code generation
   // and related to that code styling (functions, mixin, colors, variables declarations)
   spaceBetweenParens: false,

@@ -92,7 +92,7 @@ Use `d-lh{n}` to fix an element's line-height. This allows you to target a speci
     <tbody>
       <tr v-for="{ class: className, output } in lineHeight.slice(0, -1)">
         <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
-          var(--lh{{ className }})
+          var(--dt-font-line-height{{ className }})
         </th>
         <td class="d-ff-mono d-fs-100">{{ output }}</td>
       </tr>
