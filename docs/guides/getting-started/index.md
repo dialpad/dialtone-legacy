@@ -97,16 +97,16 @@ In the event you need to write CSS, use [BEM (Block Element Modifier)](http://ge
 
   // Elements within block
   &__header {
-    padding: var(--space-500);
+    padding: var(--dt-space-500);
   }
 
   &__body {
     flex-grow: 1;
-    padding: var(--space-500);
+    padding: var(--dt-space-500);
   }
 
   &__footer {
-    padding: var(--space-500);
+    padding: var(--dt-space-500);
   }
 }
 ```

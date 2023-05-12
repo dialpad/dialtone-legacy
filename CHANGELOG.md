@@ -1,3 +1,26 @@
+# [8.0.0-version8.1](https://github.com/dialpad/dialtone/compare/v7.25.1...v8.0.0-version8.1) (2023-05-11)
+
+
+### Bug Fixes
+
+* **Stack:** correct 600 gap ([#872](https://github.com/dialpad/dialtone/issues/872)) ([8e0b042](https://github.com/dialpad/dialtone/commit/8e0b042994333b533df8959844124e6609cd90d9))
+
+
+### Features
+
+* composition tokens ([#875](https://github.com/dialpad/dialtone/issues/875)) ([5466300](https://github.com/dialpad/dialtone/commit/54663008f5afa443e799a8d0323cab1c147a260c))
+* deploy to GitHub packages ([#869](https://github.com/dialpad/dialtone/issues/869)) ([7ba8008](https://github.com/dialpad/dialtone/commit/7ba8008fe77a53273adf99f2d8fee2bfa377fe11))
+* dialtone 8 ([8a5804c](https://github.com/dialpad/dialtone/commit/8a5804cec93a4e28de8b3e2b52cdd4fa5b22a588))
+* dialtone generators ([#870](https://github.com/dialpad/dialtone/issues/870)) ([aa7f2b2](https://github.com/dialpad/dialtone/commit/aa7f2b291b88c5be682140486ec2092e36801bc8))
+* dialtone tokens migration -- colors ([#871](https://github.com/dialpad/dialtone/issues/871)) ([5e9493a](https://github.com/dialpad/dialtone/commit/5e9493a54c216104c6a835182e2798370ade311b))
+* dialtone tokens migration -- size and space ([#877](https://github.com/dialpad/dialtone/issues/877)) ([c37892a](https://github.com/dialpad/dialtone/commit/c37892a38830b0f9e66ab2cc56fdf18bbea474ab))
+* **Size And Space:** added half stops, negative equivalents, and applied to components ([#867](https://github.com/dialpad/dialtone/issues/867)) ([83fb9e1](https://github.com/dialpad/dialtone/commit/83fb9e101fa4da90cd49fda4a084c83ce92b57e3))
+
+
+### BREAKING CHANGES
+
+* replace all css vars with design tokens
+
 ## [7.25.1](https://github.com/dialpad/dialtone/compare/v7.25.0...v7.25.1) (2023-04-18)
 
 

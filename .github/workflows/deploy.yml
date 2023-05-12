@@ -7,6 +7,7 @@ on:
       - alpha
       - beta
       - staging
+      - version8
 
 jobs:
   deploy:
@@ -49,6 +50,18 @@ jobs:
           folder: docs/.vuepress/dist
           target-folder: staging
 
+      - name: Build library and docsite (Version 8)
+        if: ${{ github.ref == 'refs/heads/version8' }}
+        run: npm run build:docsite -- --deploySubdir /version8/
+
+      - name: Deploy to GitHub Pages (Version 8)
+        if: ${{ github.ref == 'refs/heads/version8' }}
+        uses: JamesIves/github-pages-deploy-action@v4.2.5
+        with:
+          branch: gh-pages
+          folder: docs/.vuepress/dist
+          target-folder: version8
+
       - name: Build library and docsite
         if: ${{ github.ref == 'refs/heads/production' }}
         run: npm run build:docsite
@@ -63,3 +76,4 @@ jobs:
             deploy-previews
             version6
             staging
+            version8
