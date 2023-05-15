@@ -1,27 +1,34 @@
 const { REGEX_OPTIONS } = require('./constants');
-const dialtoneTokens = require('../node_modules/@dialpad/dialtone-tokens/dist/tokens-light.json');
+const dialtoneTokensLight = require('../node_modules/@dialpad/dialtone-tokens/dist/tokens-light.json');
+const dialtoneTokensDark = require('../node_modules/@dialpad/dialtone-tokens/dist/tokens-dark.json');
+
+const colorsRegex = new RegExp(`dtColor(Neutral)?(${REGEX_OPTIONS.COLORS})([0-9]{3})?`);
+const processColors = (result, color) => {
+  const colorName = color[0]
+    .replace(colorsRegex, (_, m1, m2, m3) => {
+      return [m1, m2, m3].filter(el => !!el).join('-');
+    })
+    .toLowerCase();
+  const hexValue = color[1];
+  result.push({ colorName, hexValue });
+  return result;
+};
 
 module.exports = {
   /**
-  * Extract the colors from dialtone-tokens
+  * Extract the light and dark colors from dialtone-tokens
   * based on REGEX_OPTIONS.COLORS
   *
-  * @returns {[Object]}
+  * @returns {Object}
   */
   extractColors () {
-    const colorsRegex = new RegExp(`dtColor(Neutral)?(${REGEX_OPTIONS.COLORS})([0-9]{3})?`);
-    return Object.keys(dialtoneTokens)
-      .filter(key => colorsRegex.test(key))
-      .reduce((colors, color) => {
-        const colorName = color
-          .replace(colorsRegex, (_, m1, m2, m3) => {
-            return [m2, m3].filter(el => !!el).join('-');
-          })
-          .toLowerCase();
-        const hexValue = dialtoneTokens[color];
-        colors.push({ colorName, hexValue });
-        return colors;
-      }, []);
+    const lightColors = Object.entries(dialtoneTokensLight)
+      .filter(([key]) => colorsRegex.test(key))
+      .reduce(processColors, []);
+    const darkColors = Object.entries(dialtoneTokensDark)
+      .filter(([key]) => colorsRegex.test(key))
+      .reduce(processColors, []);
+    return { light: lightColors, dark: darkColors };
   },
 
   /**
@@ -53,7 +60,7 @@ module.exports = {
   */
   extractShadows () {
     const shadowsRegex = new RegExp(`dtShadow(${REGEX_OPTIONS.SHADOW_VARIABLES})([0-9])(\\w+)`);
-    return Object.keys(dialtoneTokens)
+    return Object.keys(dialtoneTokensLight)
       .filter(key => shadowsRegex.test(key))
       .reduce((shadows, shadow) => {
         const [name, index] = shadow

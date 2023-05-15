@@ -1,7 +1,7 @@
 <template>
   <dt-root-layout
-    class="dialtone-theme-light"
     header-class="dialtone-header d-d-flex d-ai-center d-p16 d-pl8 d-h64 d-jc-space-between d-zi-navigation"
+    content-class="d-bgc-primary d-fc-primary"
     :fixed="false"
     :header-sticky="true"
     footer-class="d-text-right"

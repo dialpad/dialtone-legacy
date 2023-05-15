@@ -16,7 +16,9 @@ const {
 } = require('./constants');
 const { extractColors, appendHoverFocusSelectors, extractShadows } = require('./helpers');
 const tinycolor = require('tinycolor2');
-const cssVariables = [];
+const bodyCSSVariables = [];
+const lightCSSVariables = [];
+const darkCSSVariables = [];
 // This constant determines the order in which classes are going to be added to the root CSS
 const generatedRules = {
   fontColor: [],
@@ -95,7 +97,7 @@ const generatedRules = {
  */
 function colorUtilities (Rule, clonedSource, declaration) {
   const dialtoneColors = extractColors();
-  dialtoneColors.forEach(({ colorName: color }) => {
+  dialtoneColors.light.forEach(({ colorName: color }) => {
     const hslaColor = `hsla(var(--dt-color-${color}-h) var(--dt-color-${color}-s) var(--dt-color-${color}-l)`;
     generatedRules.fontColor.push(new Rule({
       source: clonedSource,
@@ -675,11 +677,23 @@ function _generateUtilities (rule, clonedSource, declaration) {
  */
 function colorVariables (declaration) {
   const dialtoneColors = extractColors();
-  dialtoneColors.forEach(({ colorName, hexValue }) => {
+  dialtoneColors.light.forEach(({ colorName, hexValue }) => {
     const color = tinycolor(hexValue);
     const { h: hue, s: saturation, l: lightness } = color.toHsl();
     const colorVar = `--dt-color-${colorName}`;
-    cssVariables.push([
+    lightCSSVariables.push([
+      declaration.clone({ prop: `${colorVar}-h`, value: `${hue}` }),
+      declaration.clone({ prop: `${colorVar}-s`, value: `${saturation * 100}%` }),
+      declaration.clone({ prop: `${colorVar}-l`, value: `${lightness * 100}%` }),
+      declaration.clone({ prop: `${colorVar}-hsl`, value: `var(${colorVar}-h) var(${colorVar}-s) var(${colorVar}-l)` }),
+      declaration.clone({ prop: `${colorVar}`, value: `hsla(var(${colorVar}-h) var(${colorVar}-s) var(${colorVar}-l) / var(--alpha, 100%))` }),
+    ]);
+  });
+  dialtoneColors.dark.forEach(({ colorName, hexValue }) => {
+    const color = tinycolor(hexValue);
+    const { h: hue, s: saturation, l: lightness } = color.toHsl();
+    const colorVar = `--dt-color-${colorName}`;
+    darkCSSVariables.push([
       declaration.clone({ prop: `${colorVar}-h`, value: `${hue}` }),
       declaration.clone({ prop: `${colorVar}-s`, value: `${saturation * 100}%` }),
       declaration.clone({ prop: `${colorVar}-l`, value: `${lightness * 100}%` }),
@@ -697,7 +711,7 @@ function colorVariables (declaration) {
 function platformSpecificFontSizes (declaration) {
   Object.keys(PLATFORM_FONT_SIZES).forEach(stop => {
     const fontSizeVar = `--dt-font-size-${stop}`;
-    cssVariables.push([
+    bodyCSSVariables.push([
       declaration.clone({ prop: fontSizeVar, value: PLATFORM_FONT_SIZES[stop] }),
     ]);
   });
@@ -731,7 +745,7 @@ function boxShadows (declaration) {
         .map((val, i) => {
           return `var(${shadowVar}-${i}-x) var(${shadowVar}-${i}-y) var(${shadowVar}-${i}-blur) var(${shadowVar}-${i}-spread) var(${shadowVar}-${i}-color)`;
         }).join(', ');
-      cssVariables.push([
+      bodyCSSVariables.push([
         declaration.clone({ prop: shadowVar, value }),
       ]);
     });
@@ -786,7 +800,9 @@ module.exports = (opts = {}) => {
       _generateVariables(declaration);
       _generateCompositionTokens(declaration);
 
-      root.insertAfter(lastRule, new Rule({ selector: 'body', nodes: cssVariables, source: clonedSource }));
+      root.insertAfter(lastRule, new Rule({ selector: '.dialtone-theme-light', nodes: lightCSSVariables, source: clonedSource }));
+      root.insertAfter(lastRule, new Rule({ selector: '.dialtone-theme-dark', nodes: darkCSSVariables, source: clonedSource }));
+      root.insertAfter(lastRule, new Rule({ selector: 'body', nodes: bodyCSSVariables, source: clonedSource }));
       root.insertAfter(lastRule, Object.values(generatedRules).flat());
     },
     Root (root) {

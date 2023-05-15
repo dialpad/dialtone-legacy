@@ -26,6 +26,9 @@ export default defineClientConfig({
     Layout,
     NotFound,
   },
+  setup () {
+    document.body.classList.add('dialtone-theme-light');
+  },
 });
 
 async function registerDialtoneVue (app) {
