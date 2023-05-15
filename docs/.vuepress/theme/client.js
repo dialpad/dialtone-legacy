@@ -15,6 +15,7 @@ export default defineClientConfig({
       await registerDialtoneVue(app);
       await registerEmojiDialtoneVue(app);
       await registerDialtoneCombinator(app);
+      document.body.classList.add('dialtone-theme-light');
     }
     router.options.scrollBehavior = (to, from, savedPosition) => {
       return to.hash
@@ -25,9 +26,6 @@ export default defineClientConfig({
   layouts: {
     Layout,
     NotFound,
-  },
-  setup () {
-    document.body.classList.add('dialtone-theme-light');
   },
 });
 
