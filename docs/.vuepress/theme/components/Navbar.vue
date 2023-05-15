@@ -47,6 +47,15 @@
           Codepen template
         </div>
       </a>
+      <dt-button
+        importance="clear"
+        kind="muted"
+        @click="toggleTheme"
+      >
+        <template #icon>
+          <dt-icon name="sun" />
+        </template>
+      </dt-button>
     </div>
     <dt-button
       importance="outlined"
@@ -82,5 +91,9 @@ const route = useRoute();
 const isActiveLink = (text) => {
   const linkBase = text.toLowerCase();
   return route.path.search(linkBase) !== -1;
+};
+const toggleTheme = () => {
+  document.body.classList.toggle('dialtone-theme-light');
+  document.body.classList.toggle('dialtone-theme-dark');
 };
 </script>
