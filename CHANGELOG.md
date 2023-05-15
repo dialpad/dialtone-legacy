@@ -1,3 +1,11 @@
+# [8.0.0-version8.2](https://github.com/dialpad/dialtone/compare/v8.0.0-version8.1...v8.0.0-version8.2) (2023-05-15)
+
+
+### Features
+
+* dialtone tokens migration -- box shadows ([#876](https://github.com/dialpad/dialtone/issues/876)) ([b55fae8](https://github.com/dialpad/dialtone/commit/b55fae88b6f5c3835677ac1764316218995940d1))
+* dialtone tokens migration -- fonts ([#878](https://github.com/dialpad/dialtone/issues/878)) ([e43126d](https://github.com/dialpad/dialtone/commit/e43126d36559f41d8a687f0e4a73d9ea6742354f))
+
 # [8.0.0-version8.1](https://github.com/dialpad/dialtone/compare/v7.25.1...v8.0.0-version8.1) (2023-05-11)
 
 
