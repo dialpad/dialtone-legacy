@@ -1,3 +1,11 @@
+## [7.26.1](https://github.com/dialpad/dialtone/compare/v7.26.0...v7.26.1) (2023-05-16)
+
+
+### Bug Fixes
+
+* **Button:** set flex 1 auto on label ([#881](https://github.com/dialpad/dialtone/issues/881)) ([84ca378](https://github.com/dialpad/dialtone/commit/84ca3789420f95cd7a07e45e3c89b2a718664565))
+* update dialtone-vue ([6ce9004](https://github.com/dialpad/dialtone/commit/6ce900493db613701c3c534716b60ddd25d27777))
+
 # [7.26.0](https://github.com/dialpad/dialtone/compare/v7.25.1...v7.26.0) (2023-05-05)
 
 
