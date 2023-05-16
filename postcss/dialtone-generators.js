@@ -686,7 +686,7 @@ function colorVariables (declaration) {
       declaration.clone({ prop: `${colorVar}-s`, value: `${saturation * 100}%` }),
       declaration.clone({ prop: `${colorVar}-l`, value: `${lightness * 100}%` }),
       declaration.clone({ prop: `${colorVar}-hsl`, value: `var(${colorVar}-h) var(${colorVar}-s) var(${colorVar}-l)` }),
-      declaration.clone({ prop: `${colorVar}`, value: `hsla(var(${colorVar}-h) var(${colorVar}-s) var(${colorVar}-l) / var(--alpha, 100%))` }),
+      declaration.clone({ prop: `${colorVar}-hsla`, value: `hsla(var(${colorVar}-h) var(${colorVar}-s) var(${colorVar}-l) / var(--alpha, 100%))` }),
     ]);
   });
   dialtoneColors.dark.forEach(({ colorName, hexValue }) => {
@@ -698,7 +698,7 @@ function colorVariables (declaration) {
       declaration.clone({ prop: `${colorVar}-s`, value: `${saturation * 100}%` }),
       declaration.clone({ prop: `${colorVar}-l`, value: `${lightness * 100}%` }),
       declaration.clone({ prop: `${colorVar}-hsl`, value: `var(${colorVar}-h) var(${colorVar}-s) var(${colorVar}-l)` }),
-      declaration.clone({ prop: `${colorVar}`, value: `hsla(var(${colorVar}-h) var(${colorVar}-s) var(${colorVar}-l) / var(--alpha, 100%))` }),
+      declaration.clone({ prop: `${colorVar}-hsla`, value: `hsla(var(${colorVar}-h) var(${colorVar}-s) var(${colorVar}-l) / var(--alpha, 100%))` }),
     ]);
   });
 }

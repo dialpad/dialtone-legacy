@@ -420,38 +420,48 @@ a.header-anchor {
 
 .hero {
   background-color: var(--dt-color-tan-100);
-  background-image: url('/assets/images/home-dp-logo.svg');
-  background-position: 80% center;
+  position: relative;
+
+  &--inner-wrapper {
+    padding-top: calc(var(--dt-space-300) * 32);
+    padding-bottom: calc(var(--dt-space-300) * 32);
+
+    @media (max-width: 640px) {
+      flex-direction: column;
+    }
+  }
+  &--content {
+    z-index: var(--zi-base1);
+    align-items: flex-start;
+    max-width: 40%;
+
+    @media (max-width: 640px) {
+      align-items: unset;
+      max-width: 100%;
+      text-align: center;
+    }
+  }
+  &--image {
+    z-index: var(--zi-base1);
+    @media (max-width: 640px) {
+      display: none;
+    }
+  }
+
+  .dp-logo {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: var(--dt-color-tan-200);
+    mask: url(/assets/images/home-dp-logo.svg) 80% center no-repeat;
+    -webkit-mask: url(/assets/images/home-dp-logo.svg) 80% center no-repeat;
+  }
 
   @media (max-width: 640px) {
     padding-right: var(--dt-space-500);
     padding-left: var(--dt-space-400);
-  }
-}
-
-.hero--inner-wrapper {
-  padding-top: calc(var(--dt-space-300) * 32);
-  padding-bottom: calc(var(--dt-space-300) * 32);
-
-  @media (max-width: 640px) {
-    flex-direction: column;
-  }
-}
-
-.hero--content {
-  align-items: flex-start;
-  max-width: 40%;
-
-  @media (max-width: 640px) {
-    align-items: unset;
-    max-width: 100%;
-    text-align: center;
-  }
-}
-
-.hero--image {
-  @media (max-width: 640px) {
-    display: none;
   }
 }
 
