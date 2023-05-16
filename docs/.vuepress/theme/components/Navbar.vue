@@ -53,7 +53,10 @@
         @click="toggleTheme"
       >
         <template #icon>
-          <dt-icon name="sun" />
+          <dt-icon
+            size="400"
+            :name="currentThemeIconName"
+          />
         </template>
       </dt-button>
     </div>
@@ -77,6 +80,7 @@
 
 <script setup>
 import { useRoute } from 'vue-router';
+import { computed, ref } from 'vue';
 
 defineProps({
   items: {
@@ -87,12 +91,20 @@ defineProps({
 defineEmits(['search']);
 
 const route = useRoute();
+const currentTheme = ref('light');
 
+const isCurrentThemeLight = computed(() => {
+  return currentTheme.value === 'light';
+});
+const currentThemeIconName = computed(() => {
+  return isCurrentThemeLight.value ? 'sun' : 'moon';
+});
 const isActiveLink = (text) => {
   const linkBase = text.toLowerCase();
   return route.path.search(linkBase) !== -1;
 };
 const toggleTheme = () => {
+  currentTheme.value = isCurrentThemeLight.value ? 'dark' : 'light';
   document.body.classList.toggle('dialtone-theme-light');
   document.body.classList.toggle('dialtone-theme-dark');
 };
