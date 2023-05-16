@@ -1,3 +1,10 @@
+## [7.26.1-beta.1](https://github.com/dialpad/dialtone/compare/v7.26.0...v7.26.1-beta.1) (2023-05-16)
+
+
+### Bug Fixes
+
+* document avatar redux changes ([e4beae0](https://github.com/dialpad/dialtone/commit/e4beae0db1a20a8d17520ecbdc43dd3cfec60939))
+
 # [7.26.0](https://github.com/dialpad/dialtone/compare/v7.25.1...v7.26.0) (2023-05-05)
 
 
