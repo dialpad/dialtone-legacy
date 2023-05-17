@@ -10,23 +10,11 @@
         <div class=" d-fl1">
           {{ heading }}
         </div>
-        <dt-tooltip v-if="!isPreview">
-          <template #anchor>
-            <dt-button
-              size="sm"
-              kind="inverted"
-              @click="copyLink"
-            >
-              <template #icon>
-                <dt-icon
-                  name="copy"
-                  size="300"
-                />
-              </template>
-            </dt-button>
-          </template>
-          Copy link
-        </dt-tooltip>
+        <copy-button
+          v-if="!isPreview"
+          :text="blogLink"
+          aria-label="Copy post link"
+        />
       </component>
       <div class="d-d-flex d-ai-center">
         <section class="d-d-flex">
@@ -58,6 +46,7 @@
 <script setup>
 import { format } from 'date-fns';
 import { computed } from 'vue';
+import CopyButton from './CopyButton.vue';
 
 const props = defineProps({
   posted: {
@@ -88,10 +77,7 @@ const initials = computed(() => {
     return words[0][0];
   }
 });
-
-const copyLink = async () => {
-  try {
-    await navigator.clipboard.writeText(window.location.href);
-  } catch (err) {}
-};
+const blogLink = computed(() => {
+  return window.location.href;
+});
 </script>

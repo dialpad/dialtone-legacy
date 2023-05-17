@@ -30,13 +30,13 @@ const props = defineProps({
   text: { type: String, required: true },
   ariaLabel: { type: String, required: true },
 });
-const message = ref('Copy');
+const message = ref(props.ariaLabel);
 const copyToClipboard = async () => {
   try {
     await navigator.clipboard.writeText(props.text);
     message.value = 'Copied';
     await new Promise(resolve => setTimeout(resolve, 750));
-    message.value = 'Copy';
+    message.value = props.ariaLabel;
   } catch (err) {
     console.error('Error copying to clipboard', props.text);
   }
