@@ -1,3 +1,10 @@
+# [7.27.0](https://github.com/dialpad/dialtone/compare/v7.26.1...v7.27.0) (2023-05-18)
+
+
+### Features
+
+* **Avatar:** changed from gradient bg to variety of flat colors ([#874](https://github.com/dialpad/dialtone/issues/874)) ([eabc304](https://github.com/dialpad/dialtone/commit/eabc304bb5acdf203097bd48eb35168f43d889af))
+
 ## [7.26.1](https://github.com/dialpad/dialtone/compare/v7.26.0...v7.26.1) (2023-05-16)
 
 
