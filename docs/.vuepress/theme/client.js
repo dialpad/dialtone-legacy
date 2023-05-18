@@ -5,6 +5,7 @@ import NotFound from './layouts/NotFound.vue';
 // CSS
 import '../../../lib/dist/css/dialtone.css';
 import './assets/less/dialtone-docs.less';
+import { useThemeData } from '@vuepress/plugin-theme-data/client';
 
 export default defineClientConfig({
   async enhance ({ app, router }) {
@@ -13,7 +14,8 @@ export default defineClientConfig({
       await registerDialtoneVue(app);
       await registerEmojiDialtoneVue(app);
       await registerDialtoneCombinator(app);
-      document.body.classList.add('dialtone-theme-light');
+      const defaultTheme = useThemeData().value.themeMode;
+      document.body.classList.add(`dialtone-theme-${defaultTheme}`);
     }
     router.options.scrollBehavior = (to, from, savedPosition) => {
       return to.hash
