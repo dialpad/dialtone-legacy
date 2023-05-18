@@ -1,3 +1,22 @@
+# [8.1.0-version8.1](https://github.com/dialpad/dialtone/compare/v8.0.0...v8.1.0-version8.1) (2023-05-18)
+
+
+### Bug Fixes
+
+* **Button:** set flex 1 auto on label ([#881](https://github.com/dialpad/dialtone/issues/881)) ([e4e5745](https://github.com/dialpad/dialtone/commit/e4e5745f750a96b69edf8043a38a8298989107f9))
+* update dialtone-vue ([c60fa7c](https://github.com/dialpad/dialtone/commit/c60fa7c4cff64e446956a2b2b4bae422deda57a0))
+
+
+### Documentation
+
+* write blog post for new dialtone vue infra update ([#873](https://github.com/dialpad/dialtone/issues/873)) ([37aca4d](https://github.com/dialpad/dialtone/commit/37aca4d2b00b9abe5924caade344c0cb49317cb0))
+
+
+### Features
+
+* **Avatar:** changed from gradient bg to variety of flat colors ([#874](https://github.com/dialpad/dialtone/issues/874)) ([aae768c](https://github.com/dialpad/dialtone/commit/aae768c54eb4c8a8b437916bf579ecd43905f218))
+* dialtone tokens -- dark mode ([#880](https://github.com/dialpad/dialtone/issues/880)) ([1581631](https://github.com/dialpad/dialtone/commit/1581631a786c72619536615f87ba30733d456f21))
+
 # [8.0.0-version8.2](https://github.com/dialpad/dialtone/compare/v8.0.0-version8.1...v8.0.0-version8.2) (2023-05-15)
 
 
