@@ -5,8 +5,8 @@ description: All classes can have responsive variations. Using our plugin @dialp
 
 ## PostCSS
 
-To create the responsive variations of classes we use <a href="https://www.npmjs.com/package/postcss">postcss</a> and our custom plugin
-<a href="https://www.npmjs.com/package/@dialpad/postcss-responsive-variations">@dialpad/postcss-responsive-variations</a>.
+To create the responsive variations of classes we use [postcss](https://www.npmjs.com/package/postcss) and our custom plugin
+[@dialpad/postcss-responsive-variations](https://www.npmjs.com/package/@dialpad/postcss-responsive-variations).
 This plugin takes the breakpoints and the classes you need to have responsive variations as arguments.
 
 ## Usage

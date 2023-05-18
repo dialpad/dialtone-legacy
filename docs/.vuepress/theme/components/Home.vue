@@ -1,5 +1,5 @@
 <template>
-  <section class="hero d-mnt16 d-bgr-none">
+  <section class="hero">
     <div class="hero--inner-wrapper d-d-flex d-jc-space-between d-mx-auto d-wmx1340 d-pl32 d-pr32">
       <div class="hero--content d-d-flex d-fd-column d-jc-center">
         <h1 class="d-headline-extra-extra-large d-mb12">
@@ -75,6 +75,7 @@
         class="hero--image d-w50p d-as-flex-start"
         :src="$withBase('/assets/images/home-hero.png')"
       >
+      <div class="dp-logo" />
     </div>
   </section>
   <section class="links d-d-grid d-gg16 d-g-cols12 d-wmx1340 d-mx-auto">

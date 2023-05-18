@@ -4,7 +4,6 @@ import NotFound from './layouts/NotFound.vue';
 
 // CSS
 import '../../../lib/dist/css/dialtone.css';
-import '@dialpad/dialtone-tokens/dist/css/variables.css';
 import './assets/less/dialtone-docs.less';
 
 export default defineClientConfig({
@@ -14,6 +13,7 @@ export default defineClientConfig({
       await registerDialtoneVue(app);
       await registerEmojiDialtoneVue(app);
       await registerDialtoneCombinator(app);
+      document.body.classList.add('dialtone-theme-light');
     }
     router.options.scrollBehavior = (to, from, savedPosition) => {
       return to.hash

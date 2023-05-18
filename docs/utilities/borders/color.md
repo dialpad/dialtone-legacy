@@ -19,7 +19,7 @@ description: Utilities for controlling an element's border color.
 Use `d-bc-{color}` to set an element's border color.
 
 <code-well-header class="d-d-flex d-jc-center d-fd-column d-p32 d-bgc-purple-100 d-bgo50 d-w100p d-hmn102" custom>
-  <div class="d-d-flex d-ai-center d-w100p d-h64 d-py8 d-px16 d-bar8 d-ba d-bc-purple-400 d-bgc-white d-bgo50 d-fc-black-700 d-fs-200">A bordered element</div>
+  <div class="d-d-flex d-ai-center d-w100p d-h64 d-py8 d-px16 d-bar8 d-ba d-bc-purple-400 d-bgc-neutral-white d-bgo50 d-fc-black-700 d-fs-200">A bordered element</div>
 </code-well-header>
 
 ```html

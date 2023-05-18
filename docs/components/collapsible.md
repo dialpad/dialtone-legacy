@@ -8,15 +8,16 @@ figma: planned
 storybook: https://vue.dialpad.design/?path=/story/components-collapsible--default
 ---
 
-<code-well-header bgclass="d-bgc-white">
+<code-well-header>
   <div>
     <dt-collapsible
+      class="d-fc-primary"
       anchorText="Label 1"
       maxWidth="340px"
       initial-focus-element="first"
       >
       <template #content>
-        <div class="d-ta-center d-ba d-bc-orange-400 d-bgc-orange-100 d-bas-dotted d-baw2 d-p8 d-code-small">(content slot)</div>
+        <div class="d-ta-center d-ba d-bc-gold-400 d-bgc-gold-100 d-bas-dotted d-baw2 d-p8 d-code-small">(content slot)</div>
       </template>
     </dt-collapsible>
     <dt-collapsible
@@ -25,7 +26,7 @@ storybook: https://vue.dialpad.design/?path=/story/components-collapsible--defau
       initial-focus-element="first"
     >
       <template #content>
-        <div class="d-ta-center d-ba d-bc-orange-400 d-bgc-orange-100 d-bas-dotted d-baw2 d-p8 d-code-small">(content slot)</div>
+        <div class="d-ta-center d-ba d-bc-gold-400 d-bgc-gold-100 d-bas-dotted d-baw2 d-p8 d-code-small">(content slot)</div>
       </template>
     </dt-collapsible>
   </div>

@@ -710,7 +710,7 @@ Define the edge of key content area, components, or surfaces.
       <th scope="row" class="d-lh-300 d-tt-capitalize">
         {{ c.replace('-', ' ') }}
       </th>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--bc-{{c}})</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--dt-color-border-{{c}})</td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bc-{{c}}</td>
     </tr>
   </tbody>

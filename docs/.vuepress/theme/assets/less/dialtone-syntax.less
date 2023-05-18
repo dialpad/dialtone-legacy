@@ -6,12 +6,40 @@ https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javasc
  * @author Lea Verou
  */
 
+div[class*=language-] {
+	padding: var(--dt-space-400);
+	margin: var(--dt-space-500) 0;
+	border-radius: var(--dt-size-500);
+	background-color: var(--dt-color-surface-contrast);
+
+	pre {
+		padding: 1em !important;
+		margin: 0 !important;
+
+		code {
+			background-color: unset;
+			color: var(--dt-color-black-200) !important;
+		}
+	}
+
+	&[class*=html] {
+		border-radius: 0 0 var(--dt-size-400) var(--dt-size-400) !important;
+		margin-top: var(--dt-space-400-negative) !important;
+	}
+}
+
+code {
+	background-color: var(--dt-color-purple-100);
+	color: var(--dt-color-purple-400);
+	padding: var(--dt-space-200) var(--dt-space-300);
+	border-radius: var(--dt-size-200);
+}
+
 code[class*="language-"],
 pre[class*="language-"] {
-    margin: 0;
+	margin: 0;
 	color: var(--dt-color-black-400);
-	background: none;
-    border-radius: 0.7rem;
+	border-radius: 0.7rem;
 	font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace !important;
 	font-size: var(--dt-font-size-100);
 	text-align: left;
@@ -42,11 +70,6 @@ pre[class*="language-"] {
 pre[class*="language-"] {
 	padding: 1em;
 	overflow: auto;
-}
-
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
-	background: inherit;
 }
 
 /* Inline code */

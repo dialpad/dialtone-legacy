@@ -247,14 +247,14 @@ Use `fv:d-bgc-{color}` to change an element's `:focus-visible` state background 
               </td>
           </tr>
           <tr>
-              <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-bgc-white</th>
+              <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-bgc-neutral-white</th>
               <td>
                   <div class="d-d-flex d-jc-space-between d-ai-center">
                       <div class="d-fl-grow1 d-ff-mono d-fs-100">
                           --bgo: 100%;<br/>
                           background-color: hsla(var(--dt-color-neutral-white-h) var(--dt-color-neutral-white-s) var(--dt-color-neutral-white-l) / var(--bgo)) !important;
                       </div>
-                      <div class="d-fl-shrink0 d-m4 d-ml16 d-h42 d-w42 d-bar-circle d-bgc-white d-ba d-bc-black-100"></div>
+                      <div class="d-fl-shrink0 d-m4 d-ml16 d-h42 d-w42 d-bar-circle d-bgc-neutral-white d-ba d-bc-black-100"></div>
                   </div>
               </td>
           </tr>
