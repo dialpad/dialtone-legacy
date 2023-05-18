@@ -8,6 +8,7 @@
 //
 //  TABLE OF CONTENTS
 //  • BASE STYLE
+//    • COLOR VARIANTS
 //    • CHILDREN
 //    • SIZES
 //    • VARIANTS
@@ -18,19 +19,14 @@
 .d-avatar {
   //  Component CSS Vars
   //  ------------------------------------------------------------------------
-  --avatar-color-background: var(--dt-color-surface-moderate);
-  --avatar-color-text: var(--dt-color-foreground-secondary);
-  --avatar-gradient-angle: -180deg;
-  --avatar-gradient-stop-1: var(--dt-color-blue-200);
-  --avatar-gradient-stop-2: var(--dt-color-purple-100);
-  --avatar-gradient-stop-3: var(--dt-color-gold-100);
-  --avatar-gradient:
-    conic-gradient(
-      from var(--avatar-gradient-angle) at 50% 50%,
-      var(--avatar-gradient-stop-1) 0deg,
-      var(--avatar-gradient-stop-2) 180deg,
-      var(--avatar-gradient-stop-3) 360deg
-    );
+  // Hard-coded. Identical in all theme modes.
+  //   To be replaced by `var (--dt-color-neutral-black)`,
+  //   or possibly an Avatar-specific Design Token
+  --avatar-color-background: #e0e0e0;
+  // Hard-coded. Identical in all theme modes.
+  //   To be replaced by `var (--dt-color-neutral-black)`,
+  //   or possibly an Avatar-specific Design Token
+  --avatar-color-text: #000;
   --avatar-size-shape: var(--dt-size-600);
   --avatar-size-image: 100%;
   --avatar-size-text: var(--dt-font-size-200);
@@ -41,6 +37,30 @@
   position: relative;
   display: flex;
   color: var(--avatar-color-text);
+
+  //  --  COLOR VARIANTS
+  //  ------------------------------------------------------------------------
+
+  // hard-coded. identical in all theme modes.
+  // To be replaced by Avatar-specific Design Tokens,
+   &--color-100 { --avatar-color-background: #1aa340; }
+   &--color-200 { --avatar-color-background: #aaff83; }
+   &--color-300 { --avatar-color-background: #adea88; }
+   &--color-400 { --avatar-color-background: #77eca6; }
+   &--color-500 { --avatar-color-background: #7aedbd; }
+   &--color-600 { --avatar-color-background: #77deec; }
+   &--color-700 { --avatar-color-background: #5ed8ff; }
+   &--color-800 { --avatar-color-background: #99e7ff; }
+   &--color-900 { --avatar-color-background: #51a0fe; }
+  &--color-1000 { --avatar-color-background: #b6cfff; }
+  &--color-1100 { --avatar-color-background: #f1b7e8; }
+  &--color-1200 { --avatar-color-background: #ec77bd; }
+  &--color-1300 { --avatar-color-background: #ff67be; }
+  &--color-1400 { --avatar-color-background: #f87e7e; }
+  &--color-1500 { --avatar-color-background: #eca877; }
+  &--color-1600 { --avatar-color-background: #ffbe41; }
+  &--color-1700 { --avatar-color-background: #ffd646; }
+  &--color-1800 { --avatar-color-background: #f1dab7; }
 
   //  --  CHILDREN
   //  ------------------------------------------------------------------------
@@ -55,10 +75,6 @@
     background-color: var(--avatar-color-background);
     background-image: var(--avatar-gradient);
     border-radius: var(--dt-size-radius-pill);
-
-    .d-avatar--no-gradient & {
-      background-image: none;
-    }
   }
 
   &__image {
