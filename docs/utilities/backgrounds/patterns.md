@@ -33,7 +33,11 @@ Use `d-bgg-pattern-{pattern}-{dark|light}` to apply a pattern.
               </div>
               <div
                 class="d-w24 d-h24 d-bgg-pattern d-ba d-bc-black-900 d-bar4"
-                :class="[{'d-bgc-black-900': c === 'light'}, `d-bgg-pattern-${i}-${c}`]"
+                :class="[
+                    {'d-bgc-neutral-white': c === 'dark'},
+                    {'d-bgc-neutral-black': c === 'light'},
+                    `d-bgg-pattern-${i}-${c}`
+                ]"
               >
               </div>
             </div>

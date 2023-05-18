@@ -215,7 +215,7 @@ The danger button style is used to communicate critical or destructive actions s
 
 The inverted button style is used to visually separate buttons set on darker backgrounds.
 
-<code-well-header bgclass="d-bgc-contrast">
+<code-well-header bgclass="d-bgc-strong">
   <div class="d-d-flex d-flow8">
     <div>
       <button class="d-btn d-btn--inverted d-btn--primary" type="button"><span class="d-btn__label">Place call</span></button>

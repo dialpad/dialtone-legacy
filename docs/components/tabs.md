@@ -96,7 +96,7 @@ Add `d-tablist--inverted` when you want to display tabs on a darker background.
 
 ## Accessibility
 
-To create accessible tabs, be sure to implement the <a href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-2/tabs.html" target="_blank">proper keyboard navigation</a> and utilize the following ARIA roles to properly declare element roles, content relationships, and current status:
+To create accessible tabs, be sure to implement the <a class="d-link" href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-2/tabs.html" target="_blank">proper keyboard navigation</a> and utilize the following ARIA roles to properly declare element roles, content relationships, and current status:
 
 <component-accessible-table component-name="tabs" />
 
