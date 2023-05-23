@@ -1098,7 +1098,13 @@ Base colors are the literal value of all available colors. Use these only if all
 
 Each of the colors listed above references these. For example, `var(--dt-color-foreground-primary)` is an alias to `var(--dt-color-black-900)`, and `var(--dt-color-foreground-critical)` is an alias to `var(--dt-color-red-300)`.
 
-<colors-catalog />
+### Light Theme
+
+<colors-catalog theme-mode="lightMode" />
+
+### Dark Theme
+
+<colors-catalog theme-mode="darkMode" />
 
 <script setup>
     import { borders } from '@data/colors.json';
