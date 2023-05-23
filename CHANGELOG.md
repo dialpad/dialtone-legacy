@@ -1,3 +1,15 @@
+## [7.27.1](https://github.com/dialpad/dialtone/compare/v7.27.0...v7.27.1) (2023-05-23)
+
+
+### Bug Fixes
+
+* update dialtone vue to correct version ([aa9c0ac](https://github.com/dialpad/dialtone/commit/aa9c0ac5710450655b4fb3279a2c3830654bb819))
+
+
+### Documentation
+
+* update dialtone-icons ([da9145a](https://github.com/dialpad/dialtone/commit/da9145af397aa972cc36a8f31244c428833090a7))
+
 # [7.27.0](https://github.com/dialpad/dialtone/compare/v7.26.1...v7.27.0) (2023-05-18)
 
 
