@@ -126,7 +126,8 @@
 
 <script setup>
 import { useRoute } from 'vue-router';
-import { computed, ref } from 'vue';
+import { computed } from 'vue';
+import { useThemeData } from '@vuepress/plugin-theme-data/client';
 
 defineProps({
   items: {
@@ -137,10 +138,8 @@ defineProps({
 defineEmits(['search']);
 
 const route = useRoute();
-const currentTheme = ref('light');
-
 const isCurrentThemeLight = computed(() => {
-  return currentTheme.value === 'light';
+  return useThemeData().value.themeMode === 'light';
 });
 const currentThemeIconName = computed(() => {
   return isCurrentThemeLight.value ? 'sun' : 'moon';
@@ -150,7 +149,7 @@ const isActiveLink = (text) => {
   return route.path.search(linkBase) !== -1;
 };
 const toggleTheme = () => {
-  currentTheme.value = isCurrentThemeLight.value ? 'dark' : 'light';
+  useThemeData().value.themeMode = isCurrentThemeLight.value ? 'dark' : 'light';
   document.body.classList.toggle('dialtone-theme-light');
   document.body.classList.toggle('dialtone-theme-dark');
 };
