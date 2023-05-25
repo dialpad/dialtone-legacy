@@ -1,5 +1,5 @@
 <template>
-  <aside class="d-bar8 d-bs-card d-of-hidden">
+  <aside class="d-bar8 d-of-hidden">
     <header :class="classes">
       <slot />
     </header>
