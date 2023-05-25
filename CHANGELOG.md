@@ -1,3 +1,19 @@
+## [8.1.1-version8.1](https://github.com/dialpad/dialtone/compare/v8.1.0...v8.1.1-version8.1) (2023-05-25)
+
+
+### Bug Fixes
+
+* colors base palette ([#882](https://github.com/dialpad/dialtone/issues/882)) ([176926b](https://github.com/dialpad/dialtone/commit/176926ba1b886745a36e55cb1934b8ff2bcb9c00))
+* update dialtone vue to correct version ([076be84](https://github.com/dialpad/dialtone/commit/076be84db2a765bf9d97c0adb14591a7c1249f7a))
+
+## [8.1.1-version8.1](https://github.com/dialpad/dialtone/compare/v8.1.0...v8.1.1-version8.1) (2023-05-25)
+
+
+### Bug Fixes
+
+* colors base palette ([#882](https://github.com/dialpad/dialtone/issues/882)) ([176926b](https://github.com/dialpad/dialtone/commit/176926ba1b886745a36e55cb1934b8ff2bcb9c00))
+* update dialtone vue to correct version ([076be84](https://github.com/dialpad/dialtone/commit/076be84db2a765bf9d97c0adb14591a7c1249f7a))
+
 # [8.1.0-version8.1](https://github.com/dialpad/dialtone/compare/v8.0.0...v8.1.0-version8.1) (2023-05-18)
 
 
