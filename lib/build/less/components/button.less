@@ -233,19 +233,19 @@
 .d-btn--circle {
     --button-padding-x: var(--button-padding-y-md);
     --button-padding-y: var(--button-padding-y-md);
-    --button-color-text: var(--dt-color-black-800); // Missing color remapping
+    --button-color-text: var(--dt-action-color-foreground-muted-default);
     --button-border-radius: var(--dt-size-radius-circle);
 
     &:hover:not([disabled]) {
-        --button-color-text: var(--muted-color-hover); // Missing color remapping
-        --button-color-background: hsla(var(--dt-color-black-800-hsl) ~' / ' 3%); // Missing color remapping
+        --button-color-text: var(--dt-action-color-foreground-muted-hover);
+        --button-color-background: var(--dt-action-color-background-muted-hover);
     }
 
     &:active:not([disabled]),
     &.d-btn--active:not([disabled]),
     &.d-btn--active:active:not([disabled]) {
-        --button-color-text: var(--dt-color-foreground-secondary); // Missing color remapping
-        --button-color-background: hsla(var(--dt-color-black-800-hsl) ~' / ' 9%); // Missing color remapping
+        --button-color-text: var(--dt-action-color-foreground-muted-active);
+        --button-color-background: var(--dt-action-color-background-muted-active);
     }
 
     .d-btn__icon {
@@ -257,7 +257,7 @@
     }
 
     &.d-btn--outlined {
-        --button-color-border: var(--dt-color-black-600); // Missing color remapping
+        --button-color-border: var(--dt-action-color-border-muted-outlined-default);
     }
 
     // Adjust padding based on sizes
@@ -475,14 +475,14 @@
 //  $$  BRAND BUTTONS
 //  ----------------------------------------------------------------------------
 .d-btn--brand {
-    --button-color-text: var(--dt-color-neutral-white); // Missing color remapping
+    --button-color-text: var(--dt-color-neutral-white);
     --button-color-background: hsl(var(--brand-color-h) var(--brand-color-s) var(--brand-color-l));
 
     display: flex;
 
     &:hover:not([disabled]),
     &:active:not([disabled]) {
-        --button-color-text: hsla(var(--dt-color-neutral-white-hsl) ~' / ' 90%); // Missing color remapping
+        --button-color-text: hsla(var(--dt-color-neutral-white-hsl) ~' / ' 90%);
         --button-color-background: hsl(var(--brand-color-h) calc(var(--brand-color-s) + 2.5%) calc(var(--brand-color-l) - 5%));
     }
 
