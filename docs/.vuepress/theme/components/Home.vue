@@ -136,11 +136,11 @@
             <rect x="2" y="-2" width="196" height="229" rx="10" transform="matrix(-1 0 0 1 445 180)" stroke="var(--dt-color-brand-purple)" stroke-width="4" />
         </g>
         <g filter="url(#filter7_d_1046_9081)">
-            <rect x="635" y="218" width="24" height="24" rx="4" fill="var(--dt-color-purple-100)" />
-            <rect x="607" y="218" width="24" height="24" rx="4" fill="var(--dt-color-purple-200)" />
-            <rect x="579" y="218" width="24" height="24" rx="4" fill="var(--dt-color-purple-300)" />
-            <rect x="551" y="218" width="24" height="24" rx="4" fill="var(--dt-color-purple-400)" />
-            <rect x="523" y="218" width="24" height="24" rx="4" fill="var(--dt-color-purple-500)" />
+            <rect x="635" y="218" width="24" height="24" rx="4" fill="var(--dt-color-purple-200)" />
+            <rect x="607" y="218" width="24" height="24" rx="4" fill="var(--dt-color-purple-300)" />
+            <rect x="579" y="218" width="24" height="24" rx="4" fill="var(--dt-color-purple-400)" />
+            <rect x="551" y="218" width="24" height="24" rx="4" fill="var(--dt-color-purple-500)" />
+            <rect x="523" y="218" width="24" height="24" rx="4" fill="var(--dt-color-purple-600)" />
         </g>
         <g filter="url(#filter8_d_1046_9081)">
             <path d="M16 140C16 137.791 17.7909 136 20 136H287C289.209 136 291 137.791 291 140V160H16V140Z" fill="var(--dt-color-brand-purple)" />
