@@ -20,8 +20,8 @@
 .d-btn--md {
     //  Component specific CSS Vars
     //  ------------------------------------------------------------------------
-    --button-color-text: var(--dt-color-purple-400);
-    --button-color-background: transparent;
+    --button-color-text: var(--dt-action-color-foreground-base-default);
+    --button-color-background: var(--dt-action-color-background-base-default);
     --button-color-border: transparent;
     --button-gap: calc(var(--button-padding-x) / 2);
     --button-border-radius: var(--dt-size-400);
@@ -78,17 +78,16 @@
     //  --  STATES
     //  ------------------------------------------------------------------------
     &:hover:not([disabled]) {
-        --button-color-text: hsl(var(--dt-color-purple-400-h) var(--dt-color-purple-400-s) calc(var(--dt-color-purple-400-l) - 10%));
-        --button-color-background: hsla(var(--dt-color-purple-400-hsl) ~' / ' 4%);
+        --button-color-text: var(--dt-action-color-foreground-base-hover);
+        --button-color-background: var(--dt-action-color-background-base-hover);
     }
 
     &:active:not([disabled]),
     &.d-btn--active:not([disabled]),
     &.d-btn--active:active:not([disabled]) {
-        --button-color-text: hsl(var(--dt-color-purple-400-h) var(--dt-color-purple-400-s) calc(var(--dt-color-purple-400-l) - 10%));
-        --button-color-background: hsla(var(--dt-color-purple-400-hsl) ~' / ' 14%);
+        --button-color-text: var(--dt-action-color-foreground-base-active);
+        --button-color-background: var(--dt-action-color-background-base-active);
     }
-
 
     &:focus-visible {
       outline: none;
@@ -97,8 +96,8 @@
 
     &[disabled] {
         --button-color-border: transparent !important;
-        --button-color-text: var(--dt-color-foreground-disabled) !important;
-        --button-color-background: var(--dt-color-black-300) !important;
+        --button-color-text: var(--dt-action-color-foreground-disabled-default) !important;
+        --button-color-background: var(--dt-action-color-background-disabled-default) !important;
 
         cursor: not-allowed;
         transition: none;
@@ -234,19 +233,19 @@
 .d-btn--circle {
     --button-padding-x: var(--button-padding-y-md);
     --button-padding-y: var(--button-padding-y-md);
-    --button-color-text: var(--dt-color-black-800);
+    --button-color-text: var(--dt-action-color-foreground-muted-default);
     --button-border-radius: var(--dt-size-radius-circle);
 
     &:hover:not([disabled]) {
-        --button-color-text: var(--muted-color-hover);
-        --button-color-background: hsla(var(--dt-color-black-800-hsl) ~' / ' 3%);
+        --button-color-text: var(--dt-action-color-foreground-muted-hover);
+        --button-color-background: var(--dt-action-color-background-muted-hover);
     }
 
     &:active:not([disabled]),
     &.d-btn--active:not([disabled]),
     &.d-btn--active:active:not([disabled]) {
-        --button-color-text: var(--dt-color-foreground-secondary);
-        --button-color-background: hsla(var(--dt-color-black-800-hsl) ~' / ' 9%);
+        --button-color-text: var(--dt-action-color-foreground-muted-active);
+        --button-color-background: var(--dt-action-color-background-muted-active);
     }
 
     .d-btn__icon {
@@ -258,10 +257,10 @@
     }
 
     &.d-btn--outlined {
-        --button-color-border: var(--dt-color-black-600);
+        --button-color-border: var(--dt-action-color-border-muted-outlined-default);
     }
 
-    //  Adjust padding based on sizes
+    // Adjust padding based on sizes
     &.d-btn--xs {
         --button-padding-y: var(--button-padding-y-xs);
         --button-padding-x: var(--button-padding-y-xs);
@@ -291,85 +290,86 @@
 //  $$  OUTLINED BUTTON
 //  ----------------------------------------------------------------------------
 .d-btn--outlined {
-    --button-color-border: var(--dt-color-purple-400);
+    --button-color-border: var(--dt-action-color-border-base-outlined-default);
 }
 
 //  $$  PRIMARY BUTTON
 //  ----------------------------------------------------------------------------
 .d-btn--primary {
-    --button-color-text: var(--dt-color-neutral-white);
-    --button-color-background: var(--dt-color-purple-400);
+    --button-color-text: var(--dt-action-color-foreground-base-primary-default);
+    --button-color-background: var(--dt-action-color-background-base-primary-default);
 
     &:hover:not([disabled]) {
-      --button-color-text: var(--dt-color-neutral-white);
-      --button-color-background: hsl(var(--dt-color-purple-400-h), var(--dt-color-purple-400-s), calc(var(--dt-color-purple-400-l) - 6%));
+      --button-color-text: var(--dt-action-color-foreground-base-primary-default);
+      --button-color-background: var(--dt-action-color-background-base-primary-hover);
     }
 
     &:active:not([disabled]),
     &.d-btn--active:not([disabled]),
     &.d-btn--active:active:not([disabled]) {
-      --button-color-text: var(--dt-color-neutral-white);
-      --button-color-background: hsl(var(--dt-color-purple-400-h), var(--dt-color-purple-400-s), calc(var(--dt-color-purple-400-l) - 12%));
+      --button-color-text: var(--dt-action-color-foreground-base-primary-default);
+      --button-color-background: var(--dt-action-color-background-base-primary-active);
     }
 }
 
 //  $$  MUTED BUTTON
 //  ----------------------------------------------------------------------------
 .d-btn--muted {
-    --button-color-text: var(--dt-color-foreground-secondary);
+    --button-color-text: var(--dt-action-color-foreground-muted-default);
 
     &:hover:not([disabled]) {
-        --button-color-text: var(--dt-color-foreground-secondary);
-        --button-color-background: hsla(var(--dt-color-black-800-hsl) ~' / ' 5%);
+        --button-color-text: var(--dt-action-color-foreground-muted-hover);
+        --button-color-background: var(--dt-action-color-background-muted-hover);
     }
 
     &:active:not([disabled]),
     &.d-btn--active:not([disabled]),
     &.d-btn--active:active:not([disabled]) {
-        --button-color-text: var(--dt-color-foreground-secondary);
-        --button-color-background: hsla(var(--dt-color-black-800-hsl) ~' / ' 10%);
+        --button-color-text: var(--dt-action-color-foreground-muted-active);
+        --button-color-background: var(--dt-action-color-background-muted-active);
     }
 
     &.d-btn--outlined {
-        --button-color-border: var(--dt-color-black-600);
+        --button-color-border: var(--dt-action-color-border-muted-outlined-default);
     }
 }
 
 //  $$  DANGER BUTTON
 //  ----------------------------------------------------------------------------
 .d-btn--danger {
-    --button-color-text: var(--dt-color-red-300);
+    --button-color-text: var(--dt-action-color-foreground-critical-default);
+    --button-color-background: var(--dt-action-color-background-critical-default);
 
     &:hover:not([disabled]) {
-        --button-color-text: hsl(var(--dt-color-red-300-h), var(--dt-color-red-300-s), calc(var(--dt-color-red-300-l) - 8%));
-        --button-color-background: hsla(var(--dt-color-red-300-hsl) / 0.03);
+        --button-color-text: var(--dt-action-color-foreground-critical-hover);
+        --button-color-background: var(--dt-action-color-background-critical-hover);
     }
 
     &:active:not([disabled]),
     &.d-btn--active:not([disabled]),
     &.d-btn--active:active:not([disabled]) {
-        --button-color-text: hsl(var(--dt-color-red-300-h), var(--dt-color-red-300-s), calc(var(--dt-color-red-300-l) - 8%));
-        --button-color-background: hsla(var(--dt-color-red-300-hsl) / 0.09);
+        --button-color-text: var(--dt-action-color-foreground-critical-active);
+        --button-color-background: var(--dt-action-color-background-critical-active);
     }
 
     &.d-btn--outlined {
-        --button-color-border: var(--dt-color-red-300);
+        --button-color-border: var(--dt-action-color-border-critical-outlined-default);
     }
 
     &.d-btn--primary {
-        --button-color-text: var(--dt-color-neutral-white);
-        --button-color-background: var(--dt-color-red-300);
+        --button-color-text: var(--dt-action-color-foreground-critical-primary-default);
+        --button-color-background: var(--dt-action-color-background-critical-primary-default);
 
         &:hover:not([disabled]) {
-            --button-color-text: var(--dt-color-neutral-white);
-            --button-color-background: hsl(var(--dt-color-red-300-h), var(--dt-color-red-300-s), calc(var(--dt-color-red-300-l) - 4%));
+            --button-color-text: var(--dt-action-color-foreground-critical-primary-default);
+            --button-color-background: var(--dt-action-color-background-critical-primary-hover);
         }
 
         &:active:not([disabled]),
         &.d-btn--active:not([disabled]),
         &.d-btn--active:active:not([disabled]) {
-            --button-color-text: var(--dt-color-neutral-white);
-            --button-color-background: hsl(var(--dt-color-red-300-h), var(--dt-color-red-300-s), calc(var(--dt-color-red-300-l) - 8%));
+            --button-color-text: var(--dt-action-color-foreground-critical-primary-default);
+            --button-color-background: var(--dt-action-color-background-critical-primary-active);
         }
     }
 }
@@ -378,41 +378,41 @@
 //  ----------------------------------------------------------------------------
 //  --  Base, clear inverted button
 .d-btn--inverted {
-    --button-color-text: var(--dt-color-foreground-primary-inverted);
-    --button-color-background: transparent;
+    --button-color-text: var(--dt-action-color-foreground-inverted-default);
+    --button-color-background: var(--dt-action-color-background-inverted-default);
 
     &:hover:not([disabled]) {
-        --button-color-text: var(--dt-color-foreground-primary-inverted);
-        --button-color-background: hsla(var(--dt-color-neutral-white-hsl) ~' / ' 15%);
+        --button-color-text: var(--dt-action-color-foreground-inverted-hover);
+        --button-color-background: var(--dt-action-color-background-inverted-hover);
     }
 
     &:active:not([disabled]),
     &.d-btn--active:not([disabled]),
     &.d-btn--active:active:not([disabled]) {
-        --button-color-text: var(--dt-color-foreground-primary-inverted);
-        --button-color-background: hsla(var(--dt-color-neutral-white-hsl) ~' / ' 30%);
+        --button-color-text: var(--dt-action-color-foreground-inverted-active);
+        --button-color-background: var(--dt-action-color-background-inverted-active);
     }
 
     //  --  OUTLINED
     &.d-btn--outlined {
-        --button-color-border: var(--dt-color-border-bold-inverted);
+        --button-color-border: var(--dt-action-color-border-inverted-outlined-default);
     }
 
     //  --  PRIMARY
     &.d-btn--primary {
-        --button-color-text: var(--dt-color-purple-400);
-        --button-color-background: hsl(var(--dt-color-purple-100-h), var(--dt-color-purple-100-s), 100%);
+        --button-color-text: var(--dt-action-color-foreground-inverted-primary-default);
+        --button-color-background: var(--dt-action-color-background-inverted-primary-default);
 
         &:hover:not([disabled]) {
-            --button-color-text: hsl(var(--dt-color-purple-400-h) var(--dt-color-purple-400-s) calc(var(--dt-color-purple-400-l) - 10%));
-            --button-color-background: hsl(var(--dt-color-purple-100-h), var(--dt-color-purple-100-s), 94%);
+            --button-color-text: var(--dt-action-color-foreground-inverted-primary-hover);
+            --button-color-background: var(--dt-action-color-background-inverted-primary-hover);
         }
 
         &:active:not([disabled]),
         &.d-btn--active:not([disabled]),
         &.d-btn--active:active:not([disabled]) {
-            --button-color-text: hsl(var(--dt-color-purple-400-h) var(--dt-color-purple-400-s) calc(var(--dt-color-purple-400-l) - 10%));
-            --button-color-background: hsl(var(--dt-color-purple-100-h), var(--dt-color-purple-100-s), 91%);
+            --button-color-text: var(--dt-action-color-foreground-inverted-primary-active);
+            --button-color-background: var(--dt-action-color-background-inverted-primary-active);
         }
     }
 }
@@ -463,8 +463,8 @@
 //  $$  DISABLED STATE
 //  ----------------------------------------------------------------------------
 .d-btn--disabled {
-    --button-color-text: var(--dt-color-foreground-disabled) !important;
-    --button-color-background: var(--dt-color-black-300) !important;
+    --button-color-text: var(--dt-action-color-foreground-disabled-default) !important;
+    --button-color-background: var(--dt-action-color-background-disabled-default) !important;
     --button-color-border: transparent !important;
 
     cursor: not-allowed;
