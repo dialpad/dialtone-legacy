@@ -1,3 +1,20 @@
+# [8.2.0-version8.1](https://github.com/dialpad/dialtone/compare/v8.1.1...v8.2.0-version8.1) (2023-05-26)
+
+
+### Bug Fixes
+
+* disable max-len on home.vue ([6e23fe8](https://github.com/dialpad/dialtone/commit/6e23fe8c89a03ae6e8dc100dcfab720e3d99ed62))
+
+
+### Documentation
+
+* home page dark theme tweaks ([#884](https://github.com/dialpad/dialtone/issues/884)) ([4346213](https://github.com/dialpad/dialtone/commit/4346213958443587e5574c3a59606ab11deab038))
+
+
+### Features
+
+* **Button:** CSS variable remapping ([#883](https://github.com/dialpad/dialtone/issues/883)) ([8e24f72](https://github.com/dialpad/dialtone/commit/8e24f72a152fa95ba8fbdf790566fe671b5a0a35))
+
 ## [8.1.1-version8.1](https://github.com/dialpad/dialtone/compare/v8.1.0...v8.1.1-version8.1) (2023-05-25)
 
 
