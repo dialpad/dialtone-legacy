@@ -1,3 +1,4 @@
+<!-- eslint-disable max-len -->
 <template>
   <section class="hero">
     <div class="hero--inner-wrapper d-d-flex d-jc-space-between d-mx-auto d-wmx1340 d-pl32 d-pr32">
