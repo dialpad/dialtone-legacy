@@ -14,7 +14,12 @@ const {
   WIDTH_HEIGHTS,
   PLATFORM_FONT_SIZES,
 } = require('./constants');
-const { extractColors, appendHoverFocusSelectors, extractShadows } = require('./helpers');
+const {
+  extractColors,
+  appendHoverFocusSelectors,
+  extractShadows,
+  extractTypographies,
+} = require('./helpers');
 const tinycolor = require('tinycolor2');
 const bodyCSSVariables = [];
 const lightCSSVariables = [];
@@ -730,7 +735,7 @@ function _generateVariables (declaration) {
 //        Composition tokens          //
 
 /**
- *
+ * Compose box shadow tokens
  * @param {Declaration} declaration
  */
 function boxShadows (declaration) {
@@ -752,11 +757,28 @@ function boxShadows (declaration) {
 }
 
 /**
+ * Compose typography tokens
+ * @param {Declaration} declaration
+ */
+function typography (declaration) {
+  const dialtoneTypographies = extractTypographies();
+  dialtoneTypographies
+    .forEach(typographyName => {
+      const composedVar = `--dt-typography-${typographyName}`;
+      const value = `var(${composedVar}-font-weight) var(${composedVar}-font-size)/var(${composedVar}-line-height) var(${composedVar}-font-family)`;
+      bodyCSSVariables.push([
+        declaration.clone({ prop: composedVar, value }),
+      ]);
+    });
+}
+
+/**
  *
  * @param {Declaration} declaration
  */
 function _generateCompositionTokens (declaration) {
   boxShadows(declaration);
+  typography(declaration);
 }
 
 //        Selector variations         //

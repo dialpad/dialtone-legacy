@@ -223,6 +223,31 @@ module.exports = {
       'Focus',
       'FocusInset',
     ].join('|'),
+    TYPOGRAPHY_VARIABLES: [
+      'Body',
+      'BodyCompact',
+      'Headline',
+      'HeadlineEyebrow',
+      'HeadlineSoft',
+      'HeadlineCompact',
+      'HeadlineCompactSoft',
+      'Label',
+      'LabelPlain',
+      'LabelCompact',
+      'LabelCompactPlain',
+      'Helper',
+      'Code',
+
+    ].join('|'),
+    TYPOGRAPHY_SIZES: [
+      'Small',
+      'Base',
+      'Medium',
+      'Large',
+      'ExtraLarge',
+      'ExtraExtraLarge',
+
+    ].join('|'),
   },
   WIDTH_HEIGHTS: {
     0: '0',

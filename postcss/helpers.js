@@ -13,6 +13,9 @@ const processColors = (result, color) => {
   result.push({ colorName, hexValue });
   return result;
 };
+const pascalToKebabCase = (string) => {
+  return string.split(/(?=[A-Z])/).join('-').toLowerCase();
+};
 
 module.exports = {
   /**
@@ -50,7 +53,7 @@ module.exports = {
   },
 
   /**
-  * Extract the shadows from dialtone-tokens
+  * Extract the box shadow tokens from dialtone-tokens
   * based on REGEX_OPTIONS.SHADOWS.
   * Performs the name parsing e.g. FocusInset -> focus-inset and
   * returns an array containing the shadowName as key and
@@ -67,13 +70,36 @@ module.exports = {
           .split(shadowsRegex)
           .filter(chunk => !!chunk);
 
-        const shadowName = name
-          .split(/(?=[A-Z])/)
-          .join('-')
-          .toLowerCase();
+        const shadowName = pascalToKebabCase(name);
 
         shadows[shadowName] = Number.parseInt(index) + 1;
         return shadows;
       }, {});
+  },
+
+  /**
+  * Extract the typography tokens from dialtone-tokens.
+  * Performs the name parsing e.g. BodySmall -> body-small and
+  * returns an array containing typographyNames
+  *
+  * @returns {Set}
+  */
+  extractTypographies () {
+    // eslint-disable-next-line max-len
+    const typographiesRegex = new RegExp(`dtTypography(${REGEX_OPTIONS.TYPOGRAPHY_VARIABLES})(${REGEX_OPTIONS.TYPOGRAPHY_SIZES})(\\w+)`);
+    return Object.keys(dialtoneTokensLight)
+      .filter(key => typographiesRegex.test(key))
+      .reduce((typographies, typography) => {
+        const [name, size] = typography
+          .split(typographiesRegex)
+          .filter(chunk => !!chunk);
+
+        const typographyName = pascalToKebabCase(name);
+        const typographySize = pascalToKebabCase(size);
+
+        typographies.add(`${typographyName}-${typographySize}`);
+
+        return typographies;
+      }, new Set());
   },
 };
