@@ -233,12 +233,12 @@ Search for | Replace with
 
 Search for | Replace with
 :-:|:-:
-`var(--primary-color)` | `hsl(var(--purple-400-h) var(--purple-400-s) var(--purple-400-l))`
-`var(--primary-color-hsl)` | `hsl(var(--purple-400-h) var(--purple-400-s) var(--purple-400-l))`
-`var(--primary-color-hover)` | `hsl(var(--purple-400-h) var(--purple-400-s) calc(var(--purple-400-l) - 10%))`
-`var(--primary-color-h)` | `var(--purple-400-h)`
-`var(--primary-color-s)` | `var(--purple-400-s)`
-`var(--primary-color-l)` | `var(--purple-400-l)`
+`var(--primary-color)` | `hsl(var(--dt-color-purple-400-h) var(--dt-color-purple-400-s) var(--dt-color-purple-400-l))`
+`var(--primary-color-hsl)` | `hsl(var(--dt-color-purple-400-h) var(--dt-color-purple-400-s) var(--dt-color-purple-400-l))`
+`var(--primary-color-hover)` | `hsl(var(--dt-color-purple-400-h) var(--dt-color-purple-400-s) calc(var(--dt-color-purple-400-l) - 10%))`
+`var(--primary-color-h)` | `var(--dt-color-purple-400-h)`
+`var(--primary-color-s)` | `var(--dt-color-purple-400-s)`
+`var(--primary-color-l)` | `var(--dt-color-purple-400-l)`
 
 #### Replace "Primary Color" CSS Utility classes usage, e.g. `class="[UTILITY]"`
 
@@ -252,11 +252,11 @@ Search for | Replace with
 
 Search for | Replace with
 :-:|:-:
-`var(--fc-dark)` | `var(--fc-primary)`
-`var(--fc-medium)` | `var(--fc-secondary)`
-`var(--fc-lighter)` | `var(--fc-tertiary)`
-`var(--fc-light)` | `var(--fc-tertiary)`
-Any disabled element's text color | `var(--fc-disabled)`
+`var(--fc-dark)` | `var(--dt-color-foreground-primary)`
+`var(--fc-medium)` | `var(--dt-color-foreground-secondary)`
+`var(--fc-lighter)` | `var(--dt-color-foreground-tertiary)`
+`var(--fc-light)` | `var(--dt-color-foreground-tertiary)`
+Any disabled element's text color | `var(--dt-color-foreground-disabled)`
 
 #### Update Color CSS Utility class usage
 
@@ -282,58 +282,58 @@ Replace...
 
 ...with
 ```css
-.foo { color: var(--purple-100); }
+.foo { color: var(--dt-color-purple-100); }
 ```
 
 Search for | Replace with
 :-:|:-:
-`#ECE1FF` | `var(--purple-100)`
-`#A687FF` | `var(--purple-300)`
-`#8B65FF` | `var(--purple-400)`
-`#6C3DFF` | `var(--purple-400)`
-`#3A1C95` | `var(--purple-500)`
-`#2A1173` | `var(--purple-500)`
-`#160645` | `var(--purple-600)`
-`#F2F2F6` | `var(--black-100)`
-`#EAE9EF` | `var(--black-200)`
-`#DFDEE5` | `var(--black-300)`
-`#CDCDD8` | `var(--black-400)`
-`#B3B0C0` | `var(--black-400)`
-`#9C99AC` | `var(--black-500)`
-`#7B7789` | `var(--black-500)`
-`#575564` | `var(--black-600)`
-`#444150` | `var(--black-600)`
-`#322D37` | `var(--black-700)`
-`#221F24` | `var(--black-800)`
-`#0D0C0F` | `var(--black-900)`
-`#EBFFE2` | `var(--green-100)`
-`#D1FFBC` | `var(--green-100)`
-`#9CFF6D` | `var(--green-200)`
-`#6BEE04` | `var(--green-300)`
-`#0C9B02` | `var(--green-400)`
-`#0A5B03` | `var(--green-400)`
-`#052F01` | `var(--green-500)`
-`#FFF1F1` | `var(--red-100)`
-`#FFD3D3` | `var(--red-100)`
-`#FFA7A7` | `var(--red-100)`
-`#FA4646` | `var(--red-200)`
-`#D81616` | `var(--red-300)`
-`#930000` | `var(--red-400)`
-`#480000` | `var(--red-500)`
-`#FFEBEC` | `var(--magenta-100)`
-`#FFD8DA` | `var(--magenta-100)`
-`#FDA2A8` | `var(--magenta-100)`
-`#FF578A` | `var(--magenta-200)`
-`#E92A7A` | `var(--magenta-300)`
-`#A2114D` | `var(--magenta-400)`
-`#57102E` | `var(--magenta-500)`
-`#FBF8F1` | `var(--gold-100)`
-`#FFF9E3` | `var(--gold-100)`
-`#FFEEB0` | `var(--gold-100)`
-`#FFDB59` | `var(--gold-200)`
-`#FFCE1C` | `var(--gold-200)`
-`#FFBC0F` | `var(--gold-300)`
-`#3F2D00` | `var(--gold-500)`
+`#ECE1FF` | `var(--dt-color-purple-100)`
+`#A687FF` | `var(--dt-color-purple-300)`
+`#8B65FF` | `var(--dt-color-purple-400)`
+`#6C3DFF` | `var(--dt-color-purple-400)`
+`#3A1C95` | `var(--dt-color-purple-500)`
+`#2A1173` | `var(--dt-color-purple-500)`
+`#160645` | `var(--dt-color-purple-600)`
+`#F2F2F6` | `var(--dt-color-black-100)`
+`#EAE9EF` | `var(--dt-color-black-200)`
+`#DFDEE5` | `var(--dt-color-black-300)`
+`#CDCDD8` | `var(--dt-color-black-400)`
+`#B3B0C0` | `var(--dt-color-black-400)`
+`#9C99AC` | `var(--dt-color-black-500)`
+`#7B7789` | `var(--dt-color-black-500)`
+`#575564` | `var(--dt-color-black-600)`
+`#444150` | `var(--dt-color-black-600)`
+`#322D37` | `var(--dt-color-black-700)`
+`#221F24` | `var(--dt-color-black-800)`
+`#0D0C0F` | `var(--dt-color-black-900)`
+`#EBFFE2` | `var(--dt-color-green-100)`
+`#D1FFBC` | `var(--dt-color-green-100)`
+`#9CFF6D` | `var(--dt-color-green-200)`
+`#6BEE04` | `var(--dt-color-green-300)`
+`#0C9B02` | `var(--dt-color-green-400)`
+`#0A5B03` | `var(--dt-color-green-400)`
+`#052F01` | `var(--dt-color-green-500)`
+`#FFF1F1` | `var(--dt-color-red-100)`
+`#FFD3D3` | `var(--dt-color-red-100)`
+`#FFA7A7` | `var(--dt-color-red-100)`
+`#FA4646` | `var(--dt-color-red-200)`
+`#D81616` | `var(--dt-color-red-300)`
+`#930000` | `var(--dt-color-red-400)`
+`#480000` | `var(--dt-color-red-500)`
+`#FFEBEC` | `var(--dt-color-magenta-100)`
+`#FFD8DA` | `var(--dt-color-magenta-100)`
+`#FDA2A8` | `var(--dt-color-magenta-100)`
+`#FF578A` | `var(--dt-color-magenta-200)`
+`#E92A7A` | `var(--dt-color-magenta-300)`
+`#A2114D` | `var(--dt-color-magenta-400)`
+`#57102E` | `var(--dt-color-magenta-500)`
+`#FBF8F1` | `var(--dt-color-gold-100)`
+`#FFF9E3` | `var(--dt-color-gold-100)`
+`#FFEEB0` | `var(--dt-color-gold-100)`
+`#FFDB59` | `var(--dt-color-gold-200)`
+`#FFCE1C` | `var(--dt-color-gold-200)`
+`#FFBC0F` | `var(--dt-color-gold-300)`
+`#3F2D00` | `var(--dt-color-gold-500)`
 
 In some cases you may not be able to replace a hex code with a CSS variable. A common case of this is in email templates where you cannot import CSS files and therefore don't have access to Dialtone CSS variables. For these specific cases you can replace the old hex value with the new hex value, see the table below.
 
