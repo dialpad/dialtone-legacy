@@ -63,11 +63,11 @@ Use `d-fco{n}` to change an element's text color opacity. You can also change fo
 Use `h:d-fc-{color}` to change an element's text color `:hover` state.
 
 <code-well-header class="d-fl-center d-p24 d-bgc-black-200 d-w100p d-hmn102" custom>
-  <button class="d-p16 d-bar4 d-fs-200 d-fc-purple-400 h:d-fc-white d-bgc-transparent h:d-bgc-purple-500 d-ba d-bc-transparent">Hover over me</button>
+  <button class="d-p16 d-bar4 d-fs-200 d-fc-purple-400 h:d-fc-neutral-white d-bgc-transparent h:d-bgc-purple-500 d-ba d-bc-transparent">Hover over me</button>
 </code-well-header>
 
 ```html
-<button class="d-fc-purple-400 h:d-fc-white">...</button>
+<button class="d-fc-purple-400 h:d-fc-neutral-white">...</button>
 ```
 
 ## Focus
@@ -75,11 +75,11 @@ Use `h:d-fc-{color}` to change an element's text color `:hover` state.
 Use `f:d-fc-{color}` to change an element's text color `:focus` and `:focus-within` state.
 
 <code-well-header class="d-fl-center d-p24 d-bgc-black-200 d-w100p d-hmn102" custom>
-  <button class="d-p16 d-bar4 d-fs-200 d-fc-magenta-300 f:d-fc-white d-bgc-transparent f:d-bgc-magenta-400 d-ba d-bc-transparent">Click or focus on me</button>
+  <button class="d-p16 d-bar4 d-fs-200 d-fc-magenta-300 f:d-fc-neutral-white d-bgc-transparent f:d-bgc-magenta-400 d-ba d-bc-transparent">Click or focus on me</button>
 </code-well-header>
 
 ```html
-<button class="d-fc-magenta-300 f:d-fc-white d-bgc-transparent f:d-bgc-magenta-400">...</button>
+<button class="d-fc-magenta-300 f:d-fc-neutral-white d-bgc-transparent f:d-bgc-magenta-400">...</button>
 ```
 
 ## Focus visible
@@ -87,11 +87,11 @@ Use `f:d-fc-{color}` to change an element's text color `:focus` and `:focus-with
 Use `fv:d-fc-{color}` to change an element's text color on `:focus-visible` state [only when focused by keyboard].
 
 <code-well-header class="d-fl-center d-p24 d-bgc-black-200 d-w100p d-hmn102" custom>
-  <button class="d-p16 d-bar4 d-fs-200 d-fc-magenta-300 fv:d-fc-white d-bgc-transparent fv:d-bgc-magenta-400 d-ba d-bc-transparent">Focus on me</button>
+  <button class="d-p16 d-bar4 d-fs-200 d-fc-magenta-300 fv:d-fc-neutral-white d-bgc-transparent fv:d-bgc-magenta-400 d-ba d-bc-transparent">Focus on me</button>
 </code-well-header>
 
 ```html
-<button class="d-fc-magenta-300 fv:d-fc-white d-bgc-transparent fv:d-bgc-magenta-400">...</button>
+<button class="d-fc-magenta-300 fv:d-fc-neutral-white d-bgc-transparent fv:d-bgc-magenta-400">...</button>
 ```
 
 <!--
@@ -162,14 +162,14 @@ Use `d:d-fc-{color}` to set a different text color when the user prefers dark mo
         </tr>
         <!-- White Color -->
         <tr>
-          <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-fc-white</th>
+          <th scope="row" class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">.d-fc-neutral-white</th>
           <td>
             <div class="d-d-flex d-jc-space-between d-ai-center">
               <div class="d-fl1 d-ff-mono d-fs-100">
                 --fco: 100%;<br/>
                 color: hsla(var(--dt-color-neutral-white-h) var(--dt-color-neutral-white-s) var(--dt-color-neutral-white-l) / var(--fco)) !important;
               </div>
-              <div class="d-fl0 d-bgc-black-700 d-ml16 d-p4 d-bar4 d-fc-white d-fs-300 d-lh4">
+              <div class="d-fl0 d-bgc-black-700 d-ml16 d-p4 d-bar4 d-fc-neutral-white d-fs-300 d-lh4">
                 Aa
               </div>
             </div>
