@@ -78,123 +78,40 @@
         fill="none"
       >
         <g filter="url(#filter0_d_1046_9081)">
-          <rect
-            x="325"
-            y="78"
-            width="322"
-            height="152"
-            rx="4"
-            fill="var(--dt-color-surface-primary)"
-          />
-          <circle
-            cx="353"
-            cy="102"
-            r="12"
-            fill="var(--dt-color-gold-300)"
-          />
-          <rect
-            x="373"
-            y="98"
-            width="92"
-            height="8"
-            rx="3"
-            fill="var(--dt-color-black-200)"
-          />
-          <rect
-            width="322"
-            height="40"
-            transform="translate(325 118)"
-            fill="black"
-            fill-opacity="0.02"
-          />
-          <circle
-            cx="353"
-            cy="138"
-            r="12"
-            fill="var(--dt-color-purple-300)"
-          />
-          <rect
-            x="373"
-            y="134"
-            width="127.336"
-            height="8"
-            rx="3"
-            fill="var(--dt-color-black-400)"
-          />
+          <rect x="325" y="78" width="322" height="152" rx="4" fill="var(--dt-color-surface-primary)" />
+          <circle cx="353" cy="102" r="12" fill="var(--dt-color-gold-300)" />
+          <rect x="373" y="98" width="92" height="8" rx="3" fill="var(--dt-color-black-200)" />
+          <rect width="322" height="40" transform="translate(325 118)" fill="black" fill-opacity="0.02" />
+          <circle cx="353" cy="138" r="12" fill="var(--dt-color-purple-300)" />
+          <rect x="373" y="134" width="127.336" height="8" rx="3" fill="var(--dt-color-black-400)" />
           <g clip-path="url(#clip0_1046_9081)">
-            <rect
-              width="34"
-              height="32"
-              transform="translate(529 122)"
-              fill="var(--dt-color-brand-purple)"
-            />
+            <rect width="34" height="32" transform="translate(529 122)" fill="var(--dt-color-brand-purple)" />
             <path
               d="M549.333 137V134.667C549.333 134.3 549.033 134 548.667 134H540.667C540.3 134 540 134.3 540 134.667V141.333C540 141.7 540.3 142 540.667 142H548.667C549.033 142 549.333 141.7 549.333 141.333V139L552 141.667V134.333L549.333 137Z"
               fill="var(--dt-color-neutral-white)"
             />
             <g filter="url(#filter1_i_1046_9081)">
-              <rect
-                width="34"
-                height="32"
-                transform="translate(563 122)"
-                fill="var(--dt-color-brand-purple)"
-              />
+              <rect width="34" height="32" transform="translate(563 122)" fill="var(--dt-color-brand-purple)" />
               <path
                 d="M585.333 131.333H574.667C573.933 131.333 573.34 131.933 573.34 132.667L573.333 144.667L576 142H585.333C586.067 142 586.667 141.4 586.667 140.667V132.667C586.667 131.933 586.067 131.333 585.333 131.333ZM578 137.333H576.667V136H578V137.333ZM580.667 137.333H579.333V136H580.667V137.333ZM583.333 137.333H582V136H583.333V137.333Z"
                 fill="var(--dt-color-neutral-white)"
               />
             </g>
             <g filter="url(#filter2_i_1046_9081)">
-              <rect
-                width="34"
-                height="32"
-                transform="translate(597 122)"
-                fill="var(--dt-color-brand-purple)"
-              />
+              <rect width="34" height="32" transform="translate(597 122)" fill="var(--dt-color-brand-purple)" />
               <path
                 d="M610.413 137.193C611.373 139.08 612.92 140.62 614.807 141.587L616.273 140.12C616.453 139.94 616.72 139.88 616.953 139.96C617.7 140.207 618.507 140.34 619.333 140.34C619.7 140.34 620 140.64 620 141.007V143.333C620 143.7 619.7 144 619.333 144C613.073 144 608 138.927 608 132.667C608 132.3 608.3 132 608.667 132H611C611.367 132 611.667 132.3 611.667 132.667C611.667 133.5 611.8 134.3 612.047 135.047C612.12 135.28 612.067 135.54 611.88 135.727L610.413 137.193Z"
                 fill="var(--dt-color-neutral-white)"
               />
             </g>
           </g>
-          <circle
-            cx="353"
-            cy="174"
-            r="12"
-            fill="var(--dt-color-red-100)"
-          />
-          <rect
-            x="373"
-            y="170"
-            width="111"
-            height="8"
-            rx="3"
-            fill="var(--dt-color-black-200)"
-          />
-          <circle
-            cx="353"
-            cy="206"
-            r="12"
-            fill="#FFDB80"
-          />
-          <rect
-            x="373"
-            y="202"
-            width="142"
-            height="8"
-            rx="3"
-            fill="var(--dt-color-black-200)"
-          />
+          <circle cx="353" cy="174" r="12" fill="var(--dt-color-red-100)" />
+          <rect x="373" y="170" width="111" height="8" rx="3" fill="var(--dt-color-black-200)" />
+          <circle cx="353" cy="206" r="12" fill="#FFDB80" />
+          <rect x="373" y="202" width="142" height="8" rx="3" fill="var(--dt-color-black-200)" />
         </g>
         <g filter="url(#filter3_d_1046_9081)">
-          <rect
-            x="249"
-            y="10"
-            width="88"
-            height="88"
-            rx="4"
-            fill="var(--dt-color-surface-contrast)"
-          />
+          <rect x="249" y="10" width="88" height="88" rx="4" fill="var(--dt-color-surface-contrast)" />
           <path
             d="M306.583 31C306.261 31 306 31.2612 306 31.5833V34.9167C306 35.2388 306.261 35.5 306.583 35.5H309.917C310.239 35.5 310.5 35.2388 310.5 34.9167V31.5833C310.5 31.2612 310.239 31 309.917 31H306.583Z"
             fill="var(--dt-color-surface-primary)"
@@ -233,23 +150,9 @@
           />
         </g>
         <g filter="url(#filter4_d_1046_9081)">
-          <rect
-            x="249"
-            y="180"
-            width="192"
-            height="225"
-            rx="8"
-            fill="var(--dt-color-surface-info)"
-          />
+          <rect x="249" y="180" width="192" height="225" rx="8" fill="var(--dt-color-surface-info)" />
           <g clip-path="url(#clip1_1046_9081)">
-            <rect
-              x="281"
-              y="200.5"
-              width="128"
-              height="128"
-              rx="64"
-              fill="var(--dt-color-blue-200)"
-            />
+            <rect x="281" y="200.5" width="128" height="128" rx="64" fill="var(--dt-color-blue-200)" />
             <path
               d="M317.748 281.5V247.68H330.662C334.052 247.68 336.943 248.328 339.334 249.625C341.74 250.922 343.584 252.82 344.865 255.32C346.146 257.805 346.787 260.836 346.787 264.414V264.461C346.787 268.039 346.146 271.102 344.865 273.648C343.599 276.195 341.763 278.141 339.357 279.484C336.951 280.828 334.052 281.5 330.662 281.5H317.748ZM324.826 275.641H329.818C331.927 275.641 333.709 275.219 335.162 274.375C336.615 273.531 337.709 272.281 338.443 270.625C339.193 268.969 339.568 266.922 339.568 264.484V264.438C339.568 262.078 339.185 260.086 338.42 258.461C337.67 256.836 336.568 255.609 335.115 254.781C333.662 253.938 331.896 253.516 329.818 253.516H324.826V275.641ZM357.088 281.5V253.516H347.315V247.68H373.963V253.516H364.166V281.5H357.088Z"
               fill="var(--dt-color-blue-400)"
@@ -257,27 +160,10 @@
           </g>
           <g clip-path="url(#clip2_1046_9081)">
             <g filter="url(#filter5_d_1046_9081)">
-              <path
-                d="M249 293.5L441 317.5V411H249V293.5Z"
-                fill="var(--dt-color-surface-primary)"
-              />
+              <path d="M249 293.5L441 317.5V411H249V293.5Z" fill="var(--dt-color-surface-primary)" />
             </g>
-            <rect
-              x="265"
-              y="333"
-              width="127.336"
-              height="12"
-              rx="4"
-              fill="var(--dt-color-black-200)"
-            />
-            <rect
-              x="265"
-              y="353"
-              width="81"
-              height="8"
-              rx="3"
-              fill="var(--dt-color-black-200)"
-            />
+            <rect x="265" y="333" width="127.336" height="12" rx="4" fill="var(--dt-color-black-200)" />
+            <rect x="265" y="353" width="81" height="8" rx="3" fill="var(--dt-color-black-200)" />
             <g clip-path="url(#clip3_1046_9081)">
               <path
                 d="M281 382.333C282.107 382.333 282.993 381.44 282.993 380.333L283 376.333C283 375.227 282.107 374.333 281 374.333C279.893 374.333 279 375.227 279 376.333V380.333C279 381.44 279.893 382.333 281 382.333ZM284.533 380.333C284.533 382.333 282.84 383.733 281 383.733C279.16 383.733 277.467 382.333 277.467 380.333H276.333C276.333 382.607 278.147 384.487 280.333 384.813V387H281.667V384.813C283.853 384.493 285.667 382.613 285.667 380.333H284.533Z"
@@ -290,14 +176,7 @@
                 />
               </g>
             </g>
-            <rect
-              x="265"
-              y="281"
-              width="32"
-              height="32"
-              rx="6"
-              fill="var(--dt-color-brand-purple)"
-            />
+            <rect x="265" y="281" width="32" height="32" rx="6" fill="var(--dt-color-brand-purple)" />
             <path
               d="M290 300.5C290 301.328 289.328 302 288.5 302C287.672 302 287 301.328 287 300.5L287 294.5C287 293.672 287.672 293 288.5 293C289.328 293 290 293.672 290 294.5V300.5Z"
               fill="var(--dt-color-neutral-white)"
@@ -327,95 +206,26 @@
           />
         </g>
         <g filter="url(#filter7_d_1046_9081)">
-          <rect
-            x="635"
-            y="218"
-            width="24"
-            height="24"
-            rx="4"
-            fill="var(--dt-color-purple-200)"
-          />
-          <rect
-            x="607"
-            y="218"
-            width="24"
-            height="24"
-            rx="4"
-            fill="var(--dt-color-purple-300)"
-          />
-          <rect
-            x="579"
-            y="218"
-            width="24"
-            height="24"
-            rx="4"
-            fill="var(--dt-color-purple-400)"
-          />
-          <rect
-            x="551"
-            y="218"
-            width="24"
-            height="24"
-            rx="4"
-            fill="var(--dt-color-purple-500)"
-          />
-          <rect
-            x="523"
-            y="218"
-            width="24"
-            height="24"
-            rx="4"
-            fill="var(--dt-color-purple-600)"
-          />
+          <rect x="635" y="218" width="24" height="24" rx="4" fill="var(--dt-color-purple-200)" />
+          <rect x="607" y="218" width="24" height="24" rx="4" fill="var(--dt-color-purple-300)" />
+          <rect x="579" y="218" width="24" height="24" rx="4" fill="var(--dt-color-purple-400)" />
+          <rect x="551" y="218" width="24" height="24" rx="4" fill="var(--dt-color-purple-500)" />
+          <rect x="523" y="218" width="24" height="24" rx="4" fill="var(--dt-color-purple-600)" />
         </g>
         <g filter="url(#filter8_d_1046_9081)">
           <path
             d="M16 140C16 137.791 17.7909 136 20 136H287C289.209 136 291 137.791 291 140V160H16V140Z"
             fill="var(--dt-color-brand-purple)"
           />
-          <rect
-            opacity="0.4"
-            x="28"
-            y="144"
-            width="130"
-            height="8"
-            rx="3"
-            fill="var(--dt-color-neutral-white)"
-          />
+          <rect opacity="0.4" x="28" y="144" width="130" height="8" rx="3" fill="var(--dt-color-neutral-white)" />
           <path
             d="M16 160H291V224C291 226.209 289.209 228 287 228H20C17.7909 228 16 226.209 16 224V160Z"
             fill="var(--dt-color-surface-contrast)"
           />
-          <circle
-            cx="46"
-            cy="194"
-            r="18"
-            fill="var(--dt-color-black-500)"
-          />
-          <rect
-            x="70"
-            y="180"
-            width="83"
-            height="12"
-            rx="4"
-            fill="var(--dt-color-black-500)"
-          />
-          <rect
-            x="70"
-            y="199"
-            width="53"
-            height="8"
-            rx="3"
-            fill="var(--dt-color-black-500)"
-          />
-          <rect
-            x="185"
-            y="172"
-            width="44"
-            height="44"
-            rx="8"
-            fill="var(--dt-color-red-300)"
-          />
+          <circle cx="46" cy="194" r="18" fill="var(--dt-color-black-500)" />
+          <rect x="70" y="180" width="83" height="12" rx="4" fill="var(--dt-color-black-500)" />
+          <rect x="70" y="199" width="53" height="8" rx="3" fill="var(--dt-color-black-500)" />
+          <rect x="185" y="172" width="44" height="44" rx="8" fill="var(--dt-color-red-300)" />
           <path
             d="M207 189.833C205.667 189.833 204.375 190.042 203.167 190.433V193.017C203.167 193.342 202.975 193.633 202.7 193.767C201.883 194.175 201.142 194.7 200.483 195.308C200.333 195.458 200.125 195.542 199.9 195.542C199.667 195.542 199.458 195.45 199.308 195.3L197.242 193.233C197.092 193.092 197 192.883 197 192.65C197 192.417 197.092 192.208 197.242 192.058C199.783 189.65 203.217 188.167 207 188.167C210.783 188.167 214.217 189.65 216.758 192.058C216.908 192.208 217 192.417 217 192.65C217 192.883 216.908 193.092 216.758 193.242L214.692 195.308C214.542 195.458 214.333 195.55 214.1 195.55C213.875 195.55 213.667 195.458 213.517 195.317C212.858 194.7 212.108 194.183 211.292 193.775C211.017 193.642 210.825 193.358 210.825 193.025V190.442C209.625 190.042 208.333 189.833 207 189.833Z"
             fill="var(--dt-color-neutral-white)"
@@ -424,38 +234,21 @@
             d="M209.992 197.408L207.833 199.558V193.167H206.167V199.558L204.008 197.408L202.833 198.583L207 202.75L211.167 198.583L209.992 197.408Z"
             fill="var(--dt-color-neutral-white)"
           />
-          <rect
-            x="235"
-            y="172"
-            width="44"
-            height="44"
-            rx="8"
-            fill="#1AA340"
-          />
+          <rect x="235" y="172" width="44" height="44" rx="8" fill="#1AA340" />
           <path
             d="M252.517 192.992C253.717 195.35 255.65 197.275 258.008 198.483L259.842 196.65C260.067 196.425 260.4 196.35 260.692 196.45C261.625 196.758 262.633 196.925 263.667 196.925C264.125 196.925 264.5 197.3 264.5 197.758V200.667C264.5 201.125 264.125 201.5 263.667 201.5C255.842 201.5 249.5 195.158 249.5 187.333C249.5 186.875 249.875 186.5 250.333 186.5H253.25C253.708 186.5 254.083 186.875 254.083 187.333C254.083 188.375 254.25 189.375 254.558 190.308C254.65 190.6 254.583 190.925 254.35 191.158L252.517 192.992Z"
             fill="var(--dt-color-neutral-white)"
           />
         </g>
         <g filter="url(#filter9_d_1046_9081)">
-          <circle
-            cx="648"
-            cy="78"
-            r="20"
-            fill="var(--dt-color-green-100)"
-          />
+          <circle cx="648" cy="78" r="20" fill="var(--dt-color-green-100)" />
           <path
             d="M648 80C649.66 80 650.99 78.66 650.99 77L651 71C651 69.34 649.66 68 648 68C646.34 68 645 69.34 645 71V77C645 78.66 646.34 80 648 80ZM653.3 77C653.3 80 650.76 82.1 648 82.1C645.24 82.1 642.7 80 642.7 77H641C641 80.41 643.72 83.23 647 83.72V87H649V83.72C652.28 83.24 655 80.42 655 77H653.3Z"
             fill="var(--dt-color-green-400)"
           />
         </g>
         <g filter="url(#filter10_d_1046_9081)">
-          <circle
-            cx="441"
-            cy="405"
-            r="20"
-            fill="var(--dt-color-black-600)"
-          />
+          <circle cx="441" cy="405" r="20" fill="var(--dt-color-black-600)" />
           <path
             d="M441.74 398.47C444.1 399.5 445.35 402.03 444.92 404.46C446.19 405.56 447 407.19 447 409V409.17C447.31 409.06 447.65 409 448 409C448.796 409 449.559 409.316 450.121 409.879C450.684 410.441 451 411.204 451 412C451 412.796 450.684 413.559 450.121 414.121C449.559 414.684 448.796 415 448 415H435C433.939 415 432.922 414.579 432.172 413.828C431.421 413.078 431 412.061 431 411C431 409.939 431.421 408.922 432.172 408.172C432.922 407.421 433.939 407 435 407H435.27C434 405.45 433.6 403.24 434.5 401.26C435.72 398.5 438.97 397.24 441.74 398.47ZM440.93 400.3C439.16 399.5 437.09 400.31 436.31 402.07C435.85 403.09 435.93 404.22 436.41 405.13C437.5 403.83 439.16 403 441 403C441.7 403 442.38 403.12 443 403.34C442.94 402.06 442.18 400.86 440.93 400.3ZM442.55 396.64C442 396.4 441.45 396.23 440.88 396.12L443.37 394.82L444.27 397.71C443.76 397.29 443.19 396.93 442.55 396.64ZM435.09 397.44C434.6 397.79 434.17 398.19 433.8 398.63L433.91 395.82L436.87 396.5C436.25 396.71 435.65 397.03 435.09 397.44ZM447 402.71C446.91 402.12 446.78 401.55 446.59 401L448.97 402.5L446.92 404.73C447.03 404.08 447.05 403.4 447 402.71ZM432.04 404.3C432.11 404.9 432.24 405.47 432.43 406L430.06 404.5L432.1 402.28C432 402.93 431.97 403.61 432.04 404.3ZM448 411H445V409C445 407.939 444.579 406.922 443.828 406.172C443.078 405.421 442.061 405 441 405C439.939 405 438.922 405.421 438.172 406.172C437.421 406.922 437 407.939 437 409H435C434.47 409 433.961 409.211 433.586 409.586C433.211 409.961 433 410.47 433 411C433 411.53 433.211 412.039 433.586 412.414C433.961 412.789 434.47 413 435 413H448C448.265 413 448.52 412.895 448.707 412.707C448.895 412.52 449 412.265 449 412C449 411.735 448.895 411.48 448.707 411.293C448.52 411.105 448.265 411 448 411Z"
             fill="var(--dt-color-surface-primary)"
@@ -471,10 +264,7 @@
             filterUnits="userSpaceOnUse"
             color-interpolation-filters="sRGB"
           >
-            <feFlood
-              flood-opacity="0"
-              result="BackgroundImageFix"
-            />
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
             <feColorMatrix
               in="SourceAlpha"
               type="matrix"
@@ -483,21 +273,9 @@
             />
             <feOffset dy="2" />
             <feGaussianBlur stdDeviation="4" />
-            <feColorMatrix
-              type="matrix"
-              values="0 0 0 0 0.0235294 0 0 0 0 0.0235294 0 0 0 0 0.0627451 0 0 0 0.25 0"
-            />
-            <feBlend
-              mode="normal"
-              in2="BackgroundImageFix"
-              result="effect1_dropShadow_1046_9081"
-            />
-            <feBlend
-              mode="normal"
-              in="SourceGraphic"
-              in2="effect1_dropShadow_1046_9081"
-              result="shape"
-            />
+            <feColorMatrix type="matrix" values="0 0 0 0 0.0235294 0 0 0 0 0.0235294 0 0 0 0 0.0627451 0 0 0 0.25 0" />
+            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1046_9081" />
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1046_9081" result="shape" />
           </filter>
           <filter
             id="filter1_i_1046_9081"
@@ -508,16 +286,8 @@
             filterUnits="userSpaceOnUse"
             color-interpolation-filters="sRGB"
           >
-            <feFlood
-              flood-opacity="0"
-              result="BackgroundImageFix"
-            />
-            <feBlend
-              mode="normal"
-              in="SourceGraphic"
-              in2="BackgroundImageFix"
-              result="shape"
-            />
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
             <feColorMatrix
               in="SourceAlpha"
               type="matrix"
@@ -525,21 +295,9 @@
               result="hardAlpha"
             />
             <feOffset dx="1" />
-            <feComposite
-              in2="hardAlpha"
-              operator="arithmetic"
-              k2="-1"
-              k3="1"
-            />
-            <feColorMatrix
-              type="matrix"
-              values="0 0 0 0 0 0 0 0 0 0.0352941 0 0 0 0 0.690196 0 0 0 1 0"
-            />
-            <feBlend
-              mode="normal"
-              in2="shape"
-              result="effect1_innerShadow_1046_9081"
-            />
+            <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.0352941 0 0 0 0 0.690196 0 0 0 1 0" />
+            <feBlend mode="normal" in2="shape" result="effect1_innerShadow_1046_9081" />
           </filter>
           <filter
             id="filter2_i_1046_9081"
@@ -550,16 +308,8 @@
             filterUnits="userSpaceOnUse"
             color-interpolation-filters="sRGB"
           >
-            <feFlood
-              flood-opacity="0"
-              result="BackgroundImageFix"
-            />
-            <feBlend
-              mode="normal"
-              in="SourceGraphic"
-              in2="BackgroundImageFix"
-              result="shape"
-            />
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
             <feColorMatrix
               in="SourceAlpha"
               type="matrix"
@@ -567,21 +317,9 @@
               result="hardAlpha"
             />
             <feOffset dx="1" />
-            <feComposite
-              in2="hardAlpha"
-              operator="arithmetic"
-              k2="-1"
-              k3="1"
-            />
-            <feColorMatrix
-              type="matrix"
-              values="0 0 0 0 0 0 0 0 0 0.0352941 0 0 0 0 0.690196 0 0 0 1 0"
-            />
-            <feBlend
-              mode="normal"
-              in2="shape"
-              result="effect1_innerShadow_1046_9081"
-            />
+            <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.0352941 0 0 0 0 0.690196 0 0 0 1 0" />
+            <feBlend mode="normal" in2="shape" result="effect1_innerShadow_1046_9081" />
           </filter>
           <filter
             id="filter3_d_1046_9081"
@@ -592,10 +330,7 @@
             filterUnits="userSpaceOnUse"
             color-interpolation-filters="sRGB"
           >
-            <feFlood
-              flood-opacity="0"
-              result="BackgroundImageFix"
-            />
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
             <feColorMatrix
               in="SourceAlpha"
               type="matrix"
@@ -604,21 +339,9 @@
             />
             <feOffset dy="2" />
             <feGaussianBlur stdDeviation="6" />
-            <feColorMatrix
-              type="matrix"
-              values="0 0 0 0 0.0235294 0 0 0 0 0.0235294 0 0 0 0 0.0627451 0 0 0 0.3 0"
-            />
-            <feBlend
-              mode="normal"
-              in2="BackgroundImageFix"
-              result="effect1_dropShadow_1046_9081"
-            />
-            <feBlend
-              mode="normal"
-              in="SourceGraphic"
-              in2="effect1_dropShadow_1046_9081"
-              result="shape"
-            />
+            <feColorMatrix type="matrix" values="0 0 0 0 0.0235294 0 0 0 0 0.0235294 0 0 0 0 0.0627451 0 0 0 0.3 0" />
+            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1046_9081" />
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1046_9081" result="shape" />
           </filter>
           <filter
             id="filter4_d_1046_9081"
@@ -629,10 +352,7 @@
             filterUnits="userSpaceOnUse"
             color-interpolation-filters="sRGB"
           >
-            <feFlood
-              flood-opacity="0"
-              result="BackgroundImageFix"
-            />
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
             <feColorMatrix
               in="SourceAlpha"
               type="matrix"
@@ -641,25 +361,10 @@
             />
             <feOffset dy="2" />
             <feGaussianBlur stdDeviation="4" />
-            <feComposite
-              in2="hardAlpha"
-              operator="out"
-            />
-            <feColorMatrix
-              type="matrix"
-              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
-            />
-            <feBlend
-              mode="normal"
-              in2="BackgroundImageFix"
-              result="effect1_dropShadow_1046_9081"
-            />
-            <feBlend
-              mode="normal"
-              in="SourceGraphic"
-              in2="effect1_dropShadow_1046_9081"
-              result="shape"
-            />
+            <feComposite in2="hardAlpha" operator="out" />
+            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1046_9081" />
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1046_9081" result="shape" />
           </filter>
           <filter
             id="filter5_d_1046_9081"
@@ -670,10 +375,7 @@
             filterUnits="userSpaceOnUse"
             color-interpolation-filters="sRGB"
           >
-            <feFlood
-              flood-opacity="0"
-              result="BackgroundImageFix"
-            />
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
             <feColorMatrix
               in="SourceAlpha"
               type="matrix"
@@ -682,21 +384,9 @@
             />
             <feOffset dy="-6" />
             <feGaussianBlur stdDeviation="12" />
-            <feColorMatrix
-              type="matrix"
-              values="0 0 0 0 0.0509804 0 0 0 0 0.0470588 0 0 0 0 0.0588235 0 0 0 0.1 0"
-            />
-            <feBlend
-              mode="normal"
-              in2="BackgroundImageFix"
-              result="effect1_dropShadow_1046_9081"
-            />
-            <feBlend
-              mode="normal"
-              in="SourceGraphic"
-              in2="effect1_dropShadow_1046_9081"
-              result="shape"
-            />
+            <feColorMatrix type="matrix" values="0 0 0 0 0.0509804 0 0 0 0 0.0470588 0 0 0 0 0.0588235 0 0 0 0.1 0" />
+            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1046_9081" />
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1046_9081" result="shape" />
           </filter>
           <filter
             id="filter6_d_1046_9081"
@@ -707,10 +397,7 @@
             filterUnits="userSpaceOnUse"
             color-interpolation-filters="sRGB"
           >
-            <feFlood
-              flood-opacity="0"
-              result="BackgroundImageFix"
-            />
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
             <feColorMatrix
               in="SourceAlpha"
               type="matrix"
@@ -719,21 +406,9 @@
             />
             <feOffset />
             <feGaussianBlur stdDeviation="1.5" />
-            <feColorMatrix
-              type="matrix"
-              values="0 0 0 0 0.945098 0 0 0 0 0.94902 0 0 0 0 0.956863 0 0 0 0.05 0"
-            />
-            <feBlend
-              mode="normal"
-              in2="BackgroundImageFix"
-              result="effect1_dropShadow_1046_9081"
-            />
-            <feBlend
-              mode="normal"
-              in="SourceGraphic"
-              in2="effect1_dropShadow_1046_9081"
-              result="shape"
-            />
+            <feColorMatrix type="matrix" values="0 0 0 0 0.945098 0 0 0 0 0.94902 0 0 0 0 0.956863 0 0 0 0.05 0" />
+            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1046_9081" />
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1046_9081" result="shape" />
           </filter>
           <filter
             id="filter7_d_1046_9081"
@@ -744,10 +419,7 @@
             filterUnits="userSpaceOnUse"
             color-interpolation-filters="sRGB"
           >
-            <feFlood
-              flood-opacity="0"
-              result="BackgroundImageFix"
-            />
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
             <feColorMatrix
               in="SourceAlpha"
               type="matrix"
@@ -756,21 +428,9 @@
             />
             <feOffset dy="2" />
             <feGaussianBlur stdDeviation="6" />
-            <feColorMatrix
-              type="matrix"
-              values="0 0 0 0 0.0235294 0 0 0 0 0.0235294 0 0 0 0 0.0627451 0 0 0 0.3 0"
-            />
-            <feBlend
-              mode="normal"
-              in2="BackgroundImageFix"
-              result="effect1_dropShadow_1046_9081"
-            />
-            <feBlend
-              mode="normal"
-              in="SourceGraphic"
-              in2="effect1_dropShadow_1046_9081"
-              result="shape"
-            />
+            <feColorMatrix type="matrix" values="0 0 0 0 0.0235294 0 0 0 0 0.0235294 0 0 0 0 0.0627451 0 0 0 0.3 0" />
+            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1046_9081" />
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1046_9081" result="shape" />
           </filter>
           <filter
             id="filter8_d_1046_9081"
@@ -781,10 +441,7 @@
             filterUnits="userSpaceOnUse"
             color-interpolation-filters="sRGB"
           >
-            <feFlood
-              flood-opacity="0"
-              result="BackgroundImageFix"
-            />
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
             <feColorMatrix
               in="SourceAlpha"
               type="matrix"
@@ -793,21 +450,9 @@
             />
             <feOffset dy="2" />
             <feGaussianBlur stdDeviation="8" />
-            <feColorMatrix
-              type="matrix"
-              values="0 0 0 0 0.0235294 0 0 0 0 0.0235294 0 0 0 0 0.0627451 0 0 0 0.3 0"
-            />
-            <feBlend
-              mode="normal"
-              in2="BackgroundImageFix"
-              result="effect1_dropShadow_1046_9081"
-            />
-            <feBlend
-              mode="normal"
-              in="SourceGraphic"
-              in2="effect1_dropShadow_1046_9081"
-              result="shape"
-            />
+            <feColorMatrix type="matrix" values="0 0 0 0 0.0235294 0 0 0 0 0.0235294 0 0 0 0 0.0627451 0 0 0 0.3 0" />
+            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1046_9081" />
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1046_9081" result="shape" />
           </filter>
           <filter
             id="filter9_d_1046_9081"
@@ -818,10 +463,7 @@
             filterUnits="userSpaceOnUse"
             color-interpolation-filters="sRGB"
           >
-            <feFlood
-              flood-opacity="0"
-              result="BackgroundImageFix"
-            />
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
             <feColorMatrix
               in="SourceAlpha"
               type="matrix"
@@ -830,21 +472,9 @@
             />
             <feOffset dy="2" />
             <feGaussianBlur stdDeviation="8" />
-            <feColorMatrix
-              type="matrix"
-              values="0 0 0 0 0.0235294 0 0 0 0 0.0235294 0 0 0 0 0.0627451 0 0 0 0.3 0"
-            />
-            <feBlend
-              mode="normal"
-              in2="BackgroundImageFix"
-              result="effect1_dropShadow_1046_9081"
-            />
-            <feBlend
-              mode="normal"
-              in="SourceGraphic"
-              in2="effect1_dropShadow_1046_9081"
-              result="shape"
-            />
+            <feColorMatrix type="matrix" values="0 0 0 0 0.0235294 0 0 0 0 0.0235294 0 0 0 0 0.0627451 0 0 0 0.3 0" />
+            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1046_9081" />
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1046_9081" result="shape" />
           </filter>
           <filter
             id="filter10_d_1046_9081"
@@ -855,10 +485,7 @@
             filterUnits="userSpaceOnUse"
             color-interpolation-filters="sRGB"
           >
-            <feFlood
-              flood-opacity="0"
-              result="BackgroundImageFix"
-            />
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
             <feColorMatrix
               in="SourceAlpha"
               type="matrix"
@@ -867,57 +494,21 @@
             />
             <feOffset dy="2" />
             <feGaussianBlur stdDeviation="4" />
-            <feColorMatrix
-              type="matrix"
-              values="0 0 0 0 0.0235294 0 0 0 0 0.0235294 0 0 0 0 0.0627451 0 0 0 0.25 0"
-            />
-            <feBlend
-              mode="normal"
-              in2="BackgroundImageFix"
-              result="effect1_dropShadow_1046_9081"
-            />
-            <feBlend
-              mode="normal"
-              in="SourceGraphic"
-              in2="effect1_dropShadow_1046_9081"
-              result="shape"
-            />
+            <feColorMatrix type="matrix" values="0 0 0 0 0.0235294 0 0 0 0 0.0235294 0 0 0 0 0.0627451 0 0 0 0.25 0" />
+            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1046_9081" />
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1046_9081" result="shape" />
           </filter>
           <clipPath id="clip0_1046_9081">
-            <rect
-              x="529"
-              y="122"
-              width="102"
-              height="32"
-              rx="4"
-              fill="var(--dt-color-surface-primary)"
-            />
+            <rect x="529" y="122" width="102" height="32" rx="4" fill="var(--dt-color-surface-primary)" />
           </clipPath>
           <clipPath id="clip1_1046_9081">
-            <rect
-              x="281"
-              y="200.5"
-              width="128"
-              height="128"
-              rx="64"
-              fill="var(--dt-color-surface-primary)"
-            />
+            <rect x="281" y="200.5" width="128" height="128" rx="64" fill="var(--dt-color-surface-primary)" />
           </clipPath>
           <clipPath id="clip2_1046_9081">
-            <rect
-              width="192"
-              height="124"
-              fill="var(--dt-color-surface-primary)"
-              transform="translate(249 281)"
-            />
+            <rect width="192" height="124" fill="var(--dt-color-surface-primary)" transform="translate(249 281)" />
           </clipPath>
           <clipPath id="clip3_1046_9081">
-            <rect
-              width="68"
-              height="32"
-              fill="var(--dt-color-surface-primary)"
-              transform="translate(265 365)"
-            />
+            <rect width="68" height="32" fill="var(--dt-color-surface-primary)" transform="translate(265 365)" />
           </clipPath>
         </defs>
       </svg>
@@ -1002,36 +593,12 @@
             stroke-linecap="round"
             stroke-linejoin="round"
           />
-          <path
-            d="M4.2207 26.103L27.7167 38.83"
-            stroke="var(--dt-color-purple-400)"
-            stroke-width="2"
-          />
-          <path
-            d="M55.1182 59.384L77.6485 71.1446"
-            stroke="var(--dt-color-purple-400)"
-            stroke-width="2"
-          />
-          <path
-            d="M77.9141 26.1035L54.4181 38.8305"
-            stroke="var(--dt-color-purple-400)"
-            stroke-width="2"
-          />
-          <path
-            d="M27.0083 59.3894L3.51238 72.1164"
-            stroke="var(--dt-color-purple-400)"
-            stroke-width="2"
-          />
-          <path
-            d="M41.0688 5.13062V30.254"
-            stroke="var(--dt-color-purple-400)"
-            stroke-width="2"
-          />
-          <path
-            d="M41.0688 67.9387V93.0621"
-            stroke="var(--dt-color-purple-400)"
-            stroke-width="2"
-          />
+          <path d="M4.2207 26.103L27.7167 38.83" stroke="var(--dt-color-purple-400)" stroke-width="2" />
+          <path d="M55.1182 59.384L77.6485 71.1446" stroke="var(--dt-color-purple-400)" stroke-width="2" />
+          <path d="M77.9141 26.1035L54.4181 38.8305" stroke="var(--dt-color-purple-400)" stroke-width="2" />
+          <path d="M27.0083 59.3894L3.51238 72.1164" stroke="var(--dt-color-purple-400)" stroke-width="2" />
+          <path d="M41.0688 5.13062V30.254" stroke="var(--dt-color-purple-400)" stroke-width="2" />
+          <path d="M41.0688 67.9387V93.0621" stroke="var(--dt-color-purple-400)" stroke-width="2" />
           <path
             d="M41.0665 8.99587C43.468 8.99587 45.4148 7.04908 45.4148 4.6476C45.4148 2.24611 43.468 0.299316 41.0665 0.299316C38.6651 0.299316 36.7183 2.24611 36.7183 4.6476C36.7183 7.04908 38.6651 8.99587 41.0665 8.99587Z"
             fill="var(--dt-color-purple-400)"
@@ -1138,26 +705,10 @@
             stroke="var(--dt-color-purple-400)"
             stroke-width="2"
           />
-          <path
-            d="M17.5459 47.9788H78.4531"
-            stroke="var(--dt-color-purple-400)"
-            stroke-width="2"
-          />
-          <path
-            d="M22.272 33.2769H73.728"
-            stroke="var(--dt-color-purple-400)"
-            stroke-width="2"
-          />
-          <path
-            d="M22.272 63.7305H73.728"
-            stroke="var(--dt-color-purple-400)"
-            stroke-width="2"
-          />
-          <path
-            d="M48 18.5464V79.4538"
-            stroke="var(--dt-color-purple-400)"
-            stroke-width="2"
-          />
+          <path d="M17.5459 47.9788H78.4531" stroke="var(--dt-color-purple-400)" stroke-width="2" />
+          <path d="M22.272 33.2769H73.728" stroke="var(--dt-color-purple-400)" stroke-width="2" />
+          <path d="M22.272 63.7305H73.728" stroke="var(--dt-color-purple-400)" stroke-width="2" />
+          <path d="M48 18.5464V79.4538" stroke="var(--dt-color-purple-400)" stroke-width="2" />
         </svg>
         <h2 class="d-headline-extra-large d-mb8 d-baw0">
           Utilities
@@ -1193,83 +744,17 @@
             stroke="var(--dt-color-purple-400)"
             stroke-width="2"
           />
-          <rect
-            x="14"
-            y="16"
-            width="49"
-            height="2"
-            fill="var(--dt-color-purple-400)"
-          />
-          <rect
-            x="14"
-            y="64"
-            width="49"
-            height="2"
-            fill="var(--dt-color-purple-400)"
-          />
-          <rect
-            x="14"
-            y="72"
-            width="46"
-            height="2"
-            fill="var(--dt-color-purple-400)"
-          />
-          <rect
-            x="18"
-            y="48"
-            width="39"
-            height="2"
-            fill="var(--dt-color-purple-400)"
-          />
-          <rect
-            x="14"
-            y="48"
-            width="2"
-            height="2"
-            fill="var(--dt-color-purple-400)"
-          />
-          <rect
-            x="18"
-            y="24"
-            width="39"
-            height="2"
-            fill="var(--dt-color-purple-400)"
-          />
-          <rect
-            x="14"
-            y="24"
-            width="2"
-            height="2"
-            fill="var(--dt-color-purple-400)"
-          />
-          <rect
-            x="18"
-            y="32"
-            width="28"
-            height="2"
-            fill="var(--dt-color-purple-400)"
-          />
-          <rect
-            x="18"
-            y="56"
-            width="28"
-            height="2"
-            fill="var(--dt-color-purple-400)"
-          />
-          <rect
-            x="18"
-            y="40"
-            width="40"
-            height="2"
-            fill="var(--dt-color-purple-400)"
-          />
-          <rect
-            x="14"
-            y="40"
-            width="2"
-            height="2"
-            fill="var(--dt-color-purple-400)"
-          />
+          <rect x="14" y="16" width="49" height="2" fill="var(--dt-color-purple-400)" />
+          <rect x="14" y="64" width="49" height="2" fill="var(--dt-color-purple-400)" />
+          <rect x="14" y="72" width="46" height="2" fill="var(--dt-color-purple-400)" />
+          <rect x="18" y="48" width="39" height="2" fill="var(--dt-color-purple-400)" />
+          <rect x="14" y="48" width="2" height="2" fill="var(--dt-color-purple-400)" />
+          <rect x="18" y="24" width="39" height="2" fill="var(--dt-color-purple-400)" />
+          <rect x="14" y="24" width="2" height="2" fill="var(--dt-color-purple-400)" />
+          <rect x="18" y="32" width="28" height="2" fill="var(--dt-color-purple-400)" />
+          <rect x="18" y="56" width="28" height="2" fill="var(--dt-color-purple-400)" />
+          <rect x="18" y="40" width="40" height="2" fill="var(--dt-color-purple-400)" />
+          <rect x="14" y="40" width="2" height="2" fill="var(--dt-color-purple-400)" />
         </svg>
         <h2 class="d-headline-extra-large d-mb8 d-baw0">
           Guides

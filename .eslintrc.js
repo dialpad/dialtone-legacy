@@ -105,5 +105,13 @@ module.exports = {
     'vue/template-curly-spacing': ['error', 'never'],
     'vue/no-v-html': 'off',
     'jest/expect-expect': 'off',
+    'vue/max-attributes-per-line': ['warn', {
+      singleline: {
+        max: 8,
+      },
+      multiline: {
+        max: 1,
+      },
+    }],
   },
 };
