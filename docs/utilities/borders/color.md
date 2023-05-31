@@ -80,7 +80,7 @@ Use `f:d-bc-{color}` to change an element's border color when in `:focus` or `:f
 
 ```html
 
-<button class="d-ba d-baw2 d-bc-red-300 f:d-bc-white">...</button>
+<button class="d-ba d-baw2 d-bc-red-300 f:d-bc-neutral-white">...</button>
 ```
 
 ## Focus visible
