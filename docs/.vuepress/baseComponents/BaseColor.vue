@@ -20,7 +20,7 @@
       class="d-d-flex d-jc-space-between d-ai-center d-px12 d-py8 d-fs-100 d-lh6 d-ff-mono"
     >
       <div>
-        <strong>var(--{{ color }}{{ stop ? `-${stop}` : '' }})</strong>
+        <strong>var(--dt-color-{{ color }}{{ stop ? `-${stop}` : '' }})</strong>
         <br>
         <span>#{{ hex }}</span>
       </div>
