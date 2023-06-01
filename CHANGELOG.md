@@ -1,3 +1,22 @@
+## [8.3.1-version8.1](https://github.com/dialpad/dialtone/compare/v8.3.0...v8.3.1-version8.1) (2023-06-01)
+
+
+### Bug Fixes
+
+* update dt-tokens ([0d7ce84](https://github.com/dialpad/dialtone/commit/0d7ce84eb70fd21085e2222d0cf0ea7ed9be3c45))
+
+# [8.3.0-version8.1](https://github.com/dialpad/dialtone/compare/v8.2.0...v8.3.0-version8.1) (2023-05-29)
+
+
+### Bug Fixes
+
+* LESS vars migration ([#885](https://github.com/dialpad/dialtone/issues/885)) ([d1316d3](https://github.com/dialpad/dialtone/commit/d1316d362d59242c23566ea50361fb297fad451a))
+
+
+### Features
+
+* typography composition tokens ([#886](https://github.com/dialpad/dialtone/issues/886)) ([40058a0](https://github.com/dialpad/dialtone/commit/40058a076e29b90c92f67013155d1b47b084cf45))
+
 # [8.2.0-version8.1](https://github.com/dialpad/dialtone/compare/v8.1.1...v8.2.0-version8.1) (2023-05-26)
 
 
