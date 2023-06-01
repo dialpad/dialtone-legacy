@@ -1,13 +1,19 @@
 # Dialtone 8 Migration guide
 
-Migration from version `7` to `8`
+Migration from dialtone version `7` to `8`
 
-Dialtone 8.x deprecates the use of LESS variables to favor the usage of Design tokens.
+Dialtone 8.x deprecates the use of LESS variables to favor the usage of [Design tokens](https://spectrum.adobe.com/page/design-tokens/).
 
 While the migration should be straightforward using the provided script, there might be instances where manual updates
 to a product's code are required.
-These are usually search-and-replace tasks, and may include decisions to be made with your Product Designer; for
-example, RAW HEX values or CSS variables that are not semantically correct.
+
+These are usually search-and-replace tasks, and may include decisions to be made with your Product Designer 
+like RAW HEX values or CSS variables that are not semantically correct. e.g:
+
+- We might find this property `background-color: var(--dt-color-neutral-white)` in order to make sure
+that this is going to have the expected behaviour, we need to change the fixed color variable to its corresponding
+semantically correct token `background-color: var(--dt-color-surface-primary)` this ensures the background color 
+to use the right `surface` color token.
 
 ---
 
@@ -56,23 +62,21 @@ npm install @dialpad/dialtone@next
 
 ### 2. Run the script
 
-- **From the root of your project**
+⚠️ Running the script from the root of your project is dangerous, 
+and it's not recommended to run it on all your code base at once, this might break things.
+
+It is highly recommended to navigate to the desired folder and run it only on the desired files 
+for the piece of UI you wish to change
+
+- **Navigate to the desired project folder**
 
 ```bash
-npx dialtone-migration-helper --cwd ./path/to/folder
+npx dialtone-migration-helper --include "file1" "file2"
 ```
 
-- **Navigating to the desired project folder**
+### 3. Verify the migration script changed the files as expected
 
-```bash
-npx dialtone-migration-helper
-```
-
-### 3. Verify that the migration worked correctly
-
-### 4. Repeat steps [2](#2-run-the-script) and [3](#3-verify-that-the-migration-worked-correctly) until all the migrations are done across the codebase.
-
-### 5. Replace CSS Variables, HEX Values, color names and CSS Classes with their Semantic Version
+### 4. Replace CSS Variables, HEX Values, color names and CSS Classes with their Semantic Version
 
 The migration script can automate most of the work, but still some manual replacements
 need to be done due to limitations on the script ability to know the scope of the variables to be replaced.
@@ -88,7 +92,7 @@ For example, the default foreground color shall be `var(--dt-color-foreground-pr
 So any previous use of `var(--black-900)`, `#000`, `#000000`, `black`, etc...
 Should use `var(--dt-color-foreground-primary)`.
 
-#### Foreground Color
+#### Foreground Color (CSS `color` property)
 
 * CSS Variables
 
@@ -138,7 +142,7 @@ Should use `var(--dt-color-foreground-primary)`.
 | `d-fc-green-500` | `d-fc-success-strong`  |
 | `d-fc-gold-500`  |     `d-fc-warning`     |
 
-#### Background Color
+#### Background Color (CSS `background-color` property)
 
 * CSS Variables
 
@@ -212,7 +216,7 @@ Should use `var(--dt-color-foreground-primary)`.
 | `d-bgc-blue-100`  |      `d-bgc-info`       |
 | `d-bgc-blue-400`  |   `d-bgc-info-strong`   |
 
-#### Border Color
+#### Border Color (CSS `border-color` property)
 
 * CSS Variables
 
@@ -268,7 +272,16 @@ Should use `var(--dt-color-foreground-primary)`.
 | `d-bc-purple-500`  |  `d-bc-brand-strong`   |
 | `d-bc-magenta-300` |     `d-bc-accent`      |
 
-### 6. Verify your migration.
+### 5. Visually verify the UI
+
+Visually verify the piece of UI you changed in light mode as well as dark mode, 
+fix anything that is obviously off.
+
+### 6. Share a preview
 
 Share a preview with your product designer to make sure that 
-everything's working and looking as it should before merging.
+everything's working and looking as it should and make any further requested changes.
+
+### 7. Make a PR to commit your changes.
+
+### 4. Repeat steps [2. Run the script](#2-run-the-script) through [7. Make a PR](#7-make-a-pr-to-commit-your-changes) until all the migrations are done across the codebase.
