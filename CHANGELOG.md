@@ -1,3 +1,10 @@
+## [8.3.1-version8.1](https://github.com/dialpad/dialtone/compare/v8.3.0...v8.3.1-version8.1) (2023-06-01)
+
+
+### Bug Fixes
+
+* update dt-tokens ([0d7ce84](https://github.com/dialpad/dialtone/commit/0d7ce84eb70fd21085e2222d0cf0ea7ed9be3c45))
+
 # [8.3.0-version8.1](https://github.com/dialpad/dialtone/compare/v8.2.0...v8.3.0-version8.1) (2023-05-29)
 
 
