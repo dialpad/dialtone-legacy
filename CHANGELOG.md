@@ -1,3 +1,11 @@
+# [8.4.0-version8.1](https://github.com/dialpad/dialtone/compare/v8.3.1...v8.4.0-version8.1) (2023-06-02)
+
+
+### Features
+
+* add less vars migrations ([#887](https://github.com/dialpad/dialtone/issues/887)) ([94ee014](https://github.com/dialpad/dialtone/commit/94ee0144fe9481aa2638b25a98296a0e35c674e2))
+* migration script --include option ([#889](https://github.com/dialpad/dialtone/issues/889)) ([f703738](https://github.com/dialpad/dialtone/commit/f703738bda2b8c9d7d46f29f2ba968c244806e3c))
+
 ## [8.3.1-version8.1](https://github.com/dialpad/dialtone/compare/v8.3.0...v8.3.1-version8.1) (2023-06-01)
 
 
