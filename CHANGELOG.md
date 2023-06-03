@@ -1,3 +1,16 @@
+# [8.5.0-version8.1](https://github.com/dialpad/dialtone/compare/v8.4.0...v8.5.0-version8.1) (2023-06-03)
+
+
+### Bug Fixes
+
+* fonts migration ([#891](https://github.com/dialpad/dialtone/issues/891)) ([afadb73](https://github.com/dialpad/dialtone/commit/afadb736fcc313dbab7d56cab2af268db26a6f4a))
+* size and space migrations ([#890](https://github.com/dialpad/dialtone/issues/890)) ([e9a7893](https://github.com/dialpad/dialtone/commit/e9a7893b7a0b47fb1dc3936df6091b789fcb5ee4))
+
+
+### Features
+
+* **Input, Select:** CSS variables remapping ([#892](https://github.com/dialpad/dialtone/issues/892)) ([96fdce1](https://github.com/dialpad/dialtone/commit/96fdce16b4864408f7e75d5141724488ae206b8b))
+
 # [8.4.0-version8.1](https://github.com/dialpad/dialtone/compare/v8.3.1...v8.4.0-version8.1) (2023-06-02)
 
 
