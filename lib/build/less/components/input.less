@@ -26,10 +26,10 @@
 .d-input__wrapper {
     //  Component CSS Vars
     //  ------------------------------------------------------------------------
-    --input-color-border: var(--dt-color-border-subtle);
-    --input-color-background: hsla(var(--dt-color-black-900-hsl) / 0.03);
-    --input-color-background-disabled: hsla(var(--dt-color-black-900-hsl) / 0.12);
-    --input-color-text: var(--dt-color-foreground-secondary);
+    --input-color-border: var(--dt-inputs-color-border-default);
+    --input-color-background: var(--dt-inputs-color-background-default);
+    --input-color-background-disabled: var(--dt-inputs-color-background-disabled);
+    --input-color-text: var(--dt-inputs-color-foreground-default);
     --input-border-width: calc(var(--dt-size-100) + var(--dt-size-50)); // 1.5
     --input-border-radius: var(--dt-size-400);
     --input-padding-y: calc(var(--dt-space-400) - var(--input-border-width));
@@ -62,7 +62,7 @@
 
     //  --  Placeholder copy
     &::placeholder {
-        color: var(--dt-color-foreground-placeholder);
+        color: var(--dt-inputs-color-foreground-placeholder);
     }
     //  --  Remove input EDGE additions
     &::-ms-clear {
@@ -71,17 +71,17 @@
     //  --  FOCUS STATE
     &:focus,
     &:focus-within {
-        --input-color-background: hsla(var(--dt-color-black-900-hsl) / 0.01);
-        --input-color-border: var(--dt-color-border-focus) !important;
+        --input-color-background: var(--dt-inputs-color-background-focus);
+        --input-color-border: var(--dt-inputs-color-border-focus) !important;
 
-        box-shadow: 0 0 0 var(--dt-size-100) var(--input-color-border) inset;
+        box-shadow: 0 0 0 var(--dt-size-100) var(--dt-inputs-color-border-focus) inset;
     }
     //  --  DISABLED / READ-ONLY
     &[disabled],
     &[read-only] {
-        --input-color-border: transparent !important;
-        --input-color-background: var(--input-color-background-disabled);
-        --input-color-text: var(--dt-color-foreground-disabled);
+        --input-color-border: var(--dt-inputs-color-border-disabled) !important;
+        --input-color-background: var(--dt-inputs-color-background-disabled);
+        --input-color-text: var(--dt-inputs-color-foreground-disabled);
 
         &:focus,
         &:focus-within {
@@ -90,7 +90,7 @@
 
         //  --  Placeholder copy
         &::placeholder {
-            color: var(--dt-color-foreground-placeholder);
+            color: var(--dt-inputs-color-foreground-placeholder);
         }
     }
 
@@ -209,17 +209,17 @@
 //  ----------------------------------------------------------------------------
 .d-input--warning,
 .d-textarea--warning {
-    --input-color-border: var(--dt-color-border-warning) !important;
+    --input-color-border: var(--dt-inputs-color-border-warning) !important;
 }
 
 .d-input--error,
 .d-textarea--error {
-    --input-color-border: var(--dt-color-border-critical) !important;
+    --input-color-border: var(--dt-inputs-color-border-critical) !important;
 }
 
 .d-input--success,
 .d-textarea--success {
-    --input-color-border: var(--dt-color-border-success) !important;
+    --input-color-border: var(--dt-inputs-color-border-success) !important;
 }
 
 //  ============================================================================
