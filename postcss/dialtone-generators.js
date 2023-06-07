@@ -150,7 +150,7 @@ function colorUtilities (Rule, clonedSource, declaration) {
       selector: appendHoverFocusSelectors(`.d-bgg-to-${color}`),
       nodes: [
         declaration.clone({ prop: '--bgg-to-opacity', value: '100%' }),
-        declaration.clone({ prop: '--bgg-to', value: `${hslaColor} / var(--bgg-from-opacity)) !important` }),
+        declaration.clone({ prop: '--bgg-to', value: `${hslaColor} / var(--bgg-to-opacity)) !important` }),
       ],
     }));
   });
