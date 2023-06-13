@@ -24,7 +24,7 @@ Set an element's z-index by using a class (`.d-zi-{level}`>). These classes matc
 
 ## Variables
 
-When writing Less, you can set an element's z-index by using a variable (`@zi-{level}`). The table below lists the available variables, output, and a description for when they should be used.
+When writing Less, you can set an element's z-index by using a variable (`var(--zi-{name})`). The table below lists the available variables, output, and a description for when they should be used.
 
 <table class="d-table dialtone-doc-table">
   <thead>
@@ -36,7 +36,7 @@ When writing Less, you can set an element's z-index by using a variable (`@zi-{l
   </thead>
   <tbody>
     <tr v-for="{ name, description, output } in zIndex">
-      <th scope="row" class="d-ff-mono d-fc-magenta-300 d-fs-100 d-fw-normal">@zi-{{ name }}</th>
+      <th scope="row" class="d-ff-mono d-fc-magenta-300 d-fs-100 d-fw-normal">var(--zi-{{ name }})</th>
       <td>{{ output }}</td>
       <td class="dialtone-table--sans">{{ description }}</td>
     </tr>
