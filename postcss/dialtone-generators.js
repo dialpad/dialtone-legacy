@@ -2,7 +2,7 @@
 /* eslint-disable max-len */
 
 // eslint-disable-next-line no-unused-vars
-import { Rule, Declaration, Source } from 'postcss';
+const { Rule, Declaration, Source } = require('postcss');
 
 // TODO: Move these constants to the _data directory
 const {
