@@ -1,3 +1,17 @@
+## [8.5.2-version8.1](https://github.com/dialpad/dialtone/compare/v8.5.1...v8.5.2-version8.1) (2023-06-15)
+
+
+### Bug Fixes
+
+* move yargs to deps, update tokens ([9495b42](https://github.com/dialpad/dialtone/commit/9495b421e7780df9e9aa6e45a8f5d04c733cfe52))
+
+## [8.5.1-version8.1](https://github.com/dialpad/dialtone/compare/v8.5.0...v8.5.1-version8.1) (2023-06-13)
+
+
+### Bug Fixes
+
+* bgg-to-opacity ([#893](https://github.com/dialpad/dialtone/issues/893)) ([1378d27](https://github.com/dialpad/dialtone/commit/1378d2726dd0d2a491dea03a1db2828cbb56efd5))
+
 # [8.5.0-version8.1](https://github.com/dialpad/dialtone/compare/v8.4.0...v8.5.0-version8.1) (2023-06-03)
 
 
