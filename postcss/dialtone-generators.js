@@ -1,6 +1,9 @@
 /* eslint-disable max-lines */
 /* eslint-disable max-len */
 
+// eslint-disable-next-line no-unused-vars
+const { Rule, Declaration, Source } = require('postcss');
+
 // TODO: Move these constants to the _data directory
 const {
   BORDER_RADIUS_SIZES,
@@ -12,7 +15,7 @@ const {
   PADDING_SIZES,
   GAP_SPACES,
   WIDTH_HEIGHTS,
-  PLATFORM_FONT_SIZES,
+  PLATFORM_FONT_SIZES, Z_INDEX,
 } = require('./constants');
 const {
   extractColors,
@@ -96,9 +99,9 @@ const generatedRules = {
  *  - Background Color
  *  - Divider Color
  *  - Gradient Colors
- * @param {Rule} Rule
- * @param {Source} clonedSource
- * @param {Declaration} declaration
+ * @param { Rule } Rule
+ * @param { Source } clonedSource
+ * @param { Declaration } declaration
  */
 function colorUtilities (Rule, clonedSource, declaration) {
   const dialtoneColors = extractColors();
@@ -164,9 +167,9 @@ function colorUtilities (Rule, clonedSource, declaration) {
  *  - Background Opacity
  *  - Background Gradient Opacity Starting Stop
  *  - Background Gradient Opacity Ending Stop
- * @param {Rule} Rule
- * @param {Source} clonedSource
- * @param {Declaration} declaration
+ * @param { Rule } Rule
+ * @param { Source } clonedSource
+ * @param { Declaration } declaration
  */
 function opacityUtilities (Rule, clonedSource, declaration) {
   OPACITIES.forEach(opacity => {
@@ -217,9 +220,9 @@ function opacityUtilities (Rule, clonedSource, declaration) {
 
 /**
  * Generate flex column utility classes.
- * @param {Rule} Rule
- * @param {Source} clonedSource
- * @param {Declaration} declaration
+ * @param { Rule } Rule
+ * @param { Source } clonedSource
+ * @param { Declaration } declaration
  */
 function flexColumnsUtilities (Rule, clonedSource, declaration) {
   for (let i = 1; i <= FLEX_COLUMNS; i++) {
@@ -260,9 +263,9 @@ function flexColumnsUtilities (Rule, clonedSource, declaration) {
 
 /**
  * Generate border utility classes.
- * @param {Rule} Rule
- * @param {Source} clonedSource
- * @param {Declaration} declaration
+ * @param { Rule } Rule
+ * @param { Source } clonedSource
+ * @param { Declaration } declaration
  */
 function borderUtilities (Rule, clonedSource, declaration) {
   Object.keys(BORDER_RADIUS_SIZES)
@@ -311,9 +314,9 @@ function borderUtilities (Rule, clonedSource, declaration) {
 
 /**
  * Generate Grid column and row utility classes.
- * @param {Rule} Rule
- * @param {Source} clonedSource
- * @param {Declaration} declaration
+ * @param { Rule } Rule
+ * @param { Source } clonedSource
+ * @param { Declaration } declaration
  */
 function gridUtilities (Rule, clonedSource, declaration) {
   for (let i = 1; i <= FLEX_COLUMNS; i++) {
@@ -378,9 +381,9 @@ function gridUtilities (Rule, clonedSource, declaration) {
 
 /**
  * Generate Grid gap utility classes.
- * @param {Rule} Rule
- * @param {Source} clonedSource
- * @param {Declaration} declaration
+ * @param { Rule } Rule
+ * @param { Source } clonedSource
+ * @param { Declaration } declaration
  */
 function gapUtilities (Rule, clonedSource, declaration) {
   Object.keys(GAP_SPACES)
@@ -411,9 +414,9 @@ function gapUtilities (Rule, clonedSource, declaration) {
 
 /**
  * Generate Layout utility classes.
- * @param {Rule} Rule
- * @param {Source} clonedSource
- * @param {Declaration} declaration
+ * @param { Rule } Rule
+ * @param { Source } clonedSource
+ * @param { Declaration } declaration
  */
 function layoutUtilities (Rule, clonedSource, declaration) {
   Object.keys(LAYOUT_SIZES)
@@ -477,9 +480,9 @@ function layoutUtilities (Rule, clonedSource, declaration) {
 
 /**
  * Generate Sizing utility classes.
- * @param {Rule} Rule
- * @param {Source} clonedSource
- * @param {Declaration} declaration
+ * @param { Rule } Rule
+ * @param { Source } clonedSource
+ * @param { Declaration } declaration
  */
 function sizingUtilities (Rule, clonedSource, declaration) {
   Object.keys(WIDTH_HEIGHTS)
@@ -530,10 +533,10 @@ function sizingUtilities (Rule, clonedSource, declaration) {
 }
 
 /**
- * Generate Magin utility classes.
- * @param {Rule} Rule
- * @param {Source} clonedSource
- * @param {Declaration} declaration
+ * Generate Margin utility classes.
+ * @param { Rule } Rule
+ * @param { Source } clonedSource
+ * @param { Declaration } declaration
  */
 function marginUtilities (Rule, clonedSource, declaration) {
   Object.keys(MARGIN_SIZES).forEach(size => {
@@ -593,9 +596,9 @@ function marginUtilities (Rule, clonedSource, declaration) {
 
 /**
  * Generate Padding utility classes.
- * @param {Rule} Rule
- * @param {Source} clonedSource
- * @param {Declaration} declaration
+ * @param { Rule } Rule
+ * @param { Source } clonedSource
+ * @param { Declaration } declaration
  */
 function paddingUtilities (Rule, clonedSource, declaration) {
   Object.keys(PADDING_SIZES)
@@ -656,9 +659,9 @@ function paddingUtilities (Rule, clonedSource, declaration) {
 
 /**
  *
- * @param {Rule} rule
- * @param {Source} clonedSource
- * @param {Declaration} declaration
+ * @param { Rule } rule
+ * @param { Source } clonedSource
+ * @param { Declaration } declaration
  * @private
  */
 function _generateUtilities (rule, clonedSource, declaration) {
@@ -678,7 +681,7 @@ function _generateUtilities (rule, clonedSource, declaration) {
 
 /**
  * Generate HSL CSS Variables.
- * @param {Declaration} declaration
+ * @param { Declaration } declaration
  */
 function colorVariables (declaration) {
   const dialtoneColors = extractColors();
@@ -711,7 +714,7 @@ function colorVariables (declaration) {
 /**
  * Generates font sizes for specific platforms
  * TV, TC8 and Mobile
- * @param {Declaration} declaration
+ * @param { Declaration } declaration
  */
 function platformSpecificFontSizes (declaration) {
   Object.keys(PLATFORM_FONT_SIZES).forEach(stop => {
@@ -723,20 +726,34 @@ function platformSpecificFontSizes (declaration) {
 }
 
 /**
+ * Generate z-index Variables.
+ * @param { Declaration } declaration
+ */
+function layoutVariables (declaration) {
+  Object.keys(Z_INDEX).forEach(name => {
+    const zIndexVar = `--zi-${name}`;
+    bodyCSSVariables.push([
+      declaration.clone({ prop: zIndexVar, value: Z_INDEX[name] }),
+    ]);
+  });
+}
+
+/**
  *
- * @param {Declaration} declaration
+ * @param { Declaration } declaration
  * @private
  */
 function _generateVariables (declaration) {
   colorVariables(declaration);
   platformSpecificFontSizes(declaration);
+  layoutVariables(declaration);
 }
 
 //        Composition tokens          //
 
 /**
  * Compose box shadow tokens
- * @param {Declaration} declaration
+ * @param { Declaration } declaration
  */
 function boxShadows (declaration) {
   const dialtoneShadows = extractShadows();
@@ -758,7 +775,7 @@ function boxShadows (declaration) {
 
 /**
  * Compose typography tokens
- * @param {Declaration} declaration
+ * @param { Declaration } declaration
  */
 function typography (declaration) {
   const dialtoneTypographies = extractTypographies();
@@ -774,7 +791,7 @@ function typography (declaration) {
 
 /**
  *
- * @param {Declaration} declaration
+ * @param { Declaration } declaration
  */
 function _generateCompositionTokens (declaration) {
   boxShadows(declaration);
@@ -786,7 +803,7 @@ function _generateCompositionTokens (declaration) {
 /**
  * Generate :hover, :focus, :focus-within and :focus-visible selectors
  * and modifies the rule selector for provided utility classes.
- * @param {Rule} rule
+ * @param { Rule } rule
  * @private
  */
 function _generateHoverFocusVariations (rule) {
@@ -810,7 +827,7 @@ function _generateHoverFocusVariations (rule) {
 /**
  * @type {import('postcss').PluginCreator}
  */
-module.exports = (opts = {}) => {
+module.exports = () => {
   return {
     postcssPlugin: 'postcss-dialtone-generators',
     Once (root, { Rule }) {
