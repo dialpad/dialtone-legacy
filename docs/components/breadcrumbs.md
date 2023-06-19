@@ -8,7 +8,7 @@ storybook: https://vue.dialpad.design/?path=/story/components-breadcrumbs--defau
 figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Components-7?node-id=8918%3A21306&viewport=-61%2C443%2C1.12&t=xHutRjwo1o5zMTgT-11
 ---
 <code-well-header>
-  <nav class="d-breadcrumbs" aria-label="breadcrumb">
+  <nav class="d-breadcrumbs d-bgc-primary d-py16 d-px12" aria-label="breadcrumb">
     <ol>
       <li class="d-breadcrumbs__item">
         <a href="#" class="d-link d-link--muted">Root</a>
@@ -48,7 +48,7 @@ Breadcrumbs are always treated as secondary and should not entirely replace the 
 ## Variants and examples
 
 <code-well-header>
-    <nav class="d-breadcrumbs" aria-label="breadcrumb">
+    <nav class="d-breadcrumbs d-bgc-primary d-py16 d-px12" aria-label="breadcrumb">
         <ol>
             <li class="d-breadcrumbs__item">
                 <a href="#" class="d-link d-link--muted">Root</a>
@@ -67,7 +67,7 @@ Breadcrumbs are always treated as secondary and should not entirely replace the 
             </li>
         </ol>
     </nav>
-    <nav class="d-breadcrumbs d-breadcrumbs--inverted d-bgc-strong d-border-radius--md d-py16 d-px12 d-mxn12" aria-label="breadcrumb">
+    <nav class="d-breadcrumbs d-breadcrumbs--inverted d-bgc-contrast d-py16 d-px12 d-mt0" aria-label="inverted breadcrumb">
         <ol>
             <li class="d-breadcrumbs__item">
                 <a href="#" class="d-link d-link--inverted">Root</a>
