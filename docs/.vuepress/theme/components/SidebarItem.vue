@@ -11,7 +11,7 @@
       >
         <router-link
           v-if="!subItem.planned"
-          v-slot="{ href, navigate, isActive, isExactActive }"
+          v-slot="{ href, navigate, isExactActive }"
           :to="subItem.link"
           custom
         >
@@ -20,9 +20,7 @@
             :class="[
               itemClass,
               {
-                'd-btn--active d-bgc-black-200 d-fw-medium': isActive,
-                'router-link-exact-active': isExactActive,
-                'd-fc-primary': !isActive || !isExactActive,
+                'd-btn--active d-fw-medium': isExactActive,
               },
             ]"
             @click="navigate"
@@ -50,7 +48,7 @@
 <script setup>
 import { computed } from 'vue';
 
-const itemClass = 'd-btn d-btn--muted d-bar-pill d-w100p d-jc-flex-start d-fw-normal';
+const itemClass = 'd-btn d-btn--muted d-bar-pill d-w100p d-jc-flex-start d-fw-normal d-fc-primary';
 const props = defineProps({
   item: {
     type: Object,
