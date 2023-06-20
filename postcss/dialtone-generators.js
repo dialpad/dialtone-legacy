@@ -697,6 +697,7 @@ function colorVariables (declaration) {
       declaration.clone({ prop: `${colorVar}-hsla`, value: `hsla(var(${colorVar}-h) var(${colorVar}-s) var(${colorVar}-l) / var(--alpha, 100%))` }),
     ]);
   });
+  lightCSSVariables.push({ prop: 'color-scheme', value: 'light' });
   dialtoneColors.dark.forEach(({ colorName, hexValue }) => {
     const color = tinycolor(hexValue);
     const { h: hue, s: saturation, l: lightness } = color.toHsl();
@@ -709,6 +710,7 @@ function colorVariables (declaration) {
       declaration.clone({ prop: `${colorVar}-hsla`, value: `hsla(var(${colorVar}-h) var(${colorVar}-s) var(${colorVar}-l) / var(--alpha, 100%))` }),
     ]);
   });
+  darkCSSVariables.push({ prop: 'color-scheme', value: 'dark' });
 }
 
 /**
