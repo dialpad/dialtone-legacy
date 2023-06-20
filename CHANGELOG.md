@@ -1,3 +1,20 @@
+# [8.6.0-version8.1](https://github.com/dialpad/dialtone/compare/v8.5.2...v8.6.0-version8.1) (2023-06-20)
+
+
+### Bug Fixes
+
+* **Chip:** size and space variables ([#900](https://github.com/dialpad/dialtone/issues/900)) ([3f8f925](https://github.com/dialpad/dialtone/commit/3f8f925ebe172ea66c86f3869e3fa995f9975560))
+
+
+### Features
+
+* add native css color-scheme to output ([#901](https://github.com/dialpad/dialtone/issues/901)) ([ca11691](https://github.com/dialpad/dialtone/commit/ca11691c876fc34efa281e21176574ae19cc13be))
+* **Avatar:** CSS variables remapping ([#894](https://github.com/dialpad/dialtone/issues/894)) ([4c783df](https://github.com/dialpad/dialtone/commit/4c783dfb670ea0e622e31f95d9afed2b74786483))
+* **Badge:** CSS variables remapping ([#897](https://github.com/dialpad/dialtone/issues/897)) ([38b12ed](https://github.com/dialpad/dialtone/commit/38b12ede203fc6f11a480445af94c250243aa606))
+* **Breadcrumbs:** css variables remapping ([#898](https://github.com/dialpad/dialtone/issues/898)) ([ba29dfe](https://github.com/dialpad/dialtone/commit/ba29dfefab682a92f69bbf17b19adeddce8f4480))
+* **Checkbox, Radio:** css variables remapping ([#899](https://github.com/dialpad/dialtone/issues/899)) ([f710b50](https://github.com/dialpad/dialtone/commit/f710b508587707d22b72c8495f8353b648f4d80d))
+* **Layouts:** migrate LESS variables to CSS ([#895](https://github.com/dialpad/dialtone/issues/895)) ([2d23ad0](https://github.com/dialpad/dialtone/commit/2d23ad045db21b51bf230d90ca6f39b27107f6d5))
+
 ## [8.5.2-version8.1](https://github.com/dialpad/dialtone/compare/v8.5.1...v8.5.2-version8.1) (2023-06-15)
 
 
