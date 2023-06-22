@@ -1,3 +1,11 @@
+## [7.27.2](https://github.com/dialpad/dialtone/compare/v7.27.1...v7.27.2) (2023-06-22)
+
+
+### Bug Fixes
+
+* move yargs to deps, update tokens ([2daa975](https://github.com/dialpad/dialtone/commit/2daa975034b101d09394730b763c3183e3a2c085))
+* remove migration helper ([#896](https://github.com/dialpad/dialtone/issues/896)) ([0f7f037](https://github.com/dialpad/dialtone/commit/0f7f0376f977eb7e343346fd82eec4000bea7afe))
+
 ## [7.27.1](https://github.com/dialpad/dialtone/compare/v7.27.0...v7.27.1) (2023-05-23)
 
 
