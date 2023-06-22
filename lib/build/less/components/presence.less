@@ -8,19 +8,19 @@
 
 .d-presence {
   --presence-color-border-base: var(--theme-sidebar-color-background);
-  --presence-color-border-offline: var(--dt-color-black-400);
-  --presence-color-background-base: var(--dt-color-black-400);
+  --presence-color-border-offline: var(--dt-color-black-600);
   --presence-color-background-active: var(--theme-presence-color-background-available);
   --presence-color-background-busy: var(--theme-presence-color-background-busy-unavailable);
   --presence-color-background-away: var(--theme-presence-color-background-busy);
-  --presence-color-background-offline: var(--dt-color-neutral-white);
-  --presence-size: var(--dt-size-200);
+  --presence-color-background-offline: var(--theme-sidebar-color-background);
+  --presence-border-size: var(--dt-size-200);
+  --presence-size: var(--dt-size-400);
 
   display: inline-block;
   box-sizing: border-box;
   border-color: var(--presence-color-border-base);
   border-style: solid;
-  border-width: var(--presence-size);
+  border-width: var(--presence-border-size);
   border-radius: var(--dt-size-radius-circle);
 
   .dt-leftbar-row--selected & {
@@ -33,29 +33,28 @@
 
   &__inner {
     box-sizing: border-box;
-    width: var(--dt-size-400);
-    height: var(--dt-size-400);
-    background-color: var(--presence-color-background-base);
+    width: var(--presence-size);
+    height: var(--presence-size);
     border: none;
     border-radius: 50%;
-  }
 
-  &__inner--active {
-    background-color: var(--presence-color-background-active);
-  }
+    &--active {
+      background-color: var(--presence-color-background-active);
+    }
 
-  &__inner--busy {
-    background-color: var(--presence-color-background-busy);
-  }
+    &--busy {
+      background-color: var(--presence-color-background-busy);
+    }
 
-  &__inner--away {
-    background-color: var(--presence-color-background-away);
-  }
+    &--away {
+      background-color: var(--presence-color-background-away);
+    }
 
-  &__inner--offline {
-    background-color: var(--presence-color-background-offline);
-    border-color: var(--presence-color-border-offline);
-    border-style: solid;
-    border-width: var(--dt-size-200);
+    &--offline {
+      background-color: var(--presence-color-background-offline);
+      border-color: var(--presence-color-border-offline);
+      border-style: solid;
+      border-width: var(--dt-size-200);
+    }
   }
 }
