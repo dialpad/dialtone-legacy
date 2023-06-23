@@ -18,7 +18,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: var(--dt-space-300);
-    color: var(--dt-color-foreground-tertiary);
+    color: var(--dt-color-foreground-muted-default);
     font-size: var(--dt-font-size-200);
 
     &:focus {
@@ -47,7 +47,7 @@
             --tab-padding-x: var(--dt-space-400);
             --tab-padding-y: var(--dt-space-400);
             --tab-padding-bottom: calc(var(--tab-padding-y) + var(--dt-space-100));
-            --tab-border-radius-top: var(--dt-size-300);
+            --tab-border-radius-top: var(--dt-size-radius-300);
 
             .d-tablist--no-border &:not(.d-tab--selected) {
                 border-radius: var(--tab-border-radius-top);
@@ -63,11 +63,11 @@
 .d-tab {
     //  --  COMPONENT CSS VARS
     //  ------------------------------------------------------------------------
-    --tab-color-background: hsla(var(--dt-color-neutral-white-hsl) / 0);
-    --tab-color-text: var(--dt-color-foreground-secondary);
+    --tab-color-background: var(--dt-action-color-background-base-default);
+    --tab-color-text: var(--dt-action-color-foreground-muted-default);
     --tab-line-height: var(--dt-font-line-height-200);
     --tab-font-weight: var(--dt-font-weight-medium);
-    --tab-border-radius-top: var(--dt-size-400);
+    --tab-border-radius-top: var(--dt-size-radius-400);
     --tab-padding-x: var(--dt-space-450);
     --tab-padding-y: var(--dt-space-400);
     --tab-padding-bottom: calc(var(--tab-padding-y) + var(--dt-space-100));
@@ -125,18 +125,19 @@
     }
 
     &:disabled {
-        --tab-color-text: var(--dt-color-foreground-disabled);
+        --tab-color-text: var(--dt-action-color-foreground-disabled-default);
 
         cursor: not-allowed;
     }
 
     &:not(:disabled):hover {
-        --tab-color-background: hsla(var(--dt-color-black-800-hsl) / 0.05);
-        --tab-color-text: var(--dt-color-foreground-secondary);
+        --tab-color-background: var(--dt-action-color-background-muted-hover);
+        --tab-color-text: var(--dt-action-color-foreground-muted-hover);
     }
 
     &:not(:disabled):active {
-        --tab-color-background: hsla(var(--dt-color-black-800-hsl) / 0.1);
+        --tab-color-background: var(--dt-action-color-background-muted-active);
+        --tab-color-text: var(--dt-action-color-foreground-muted-active);
     }
 
     //  Turn off animations if someone doesn't want them.
@@ -149,17 +150,18 @@
 //  $   SELECTED STYLE
 //  ----------------------------------------------------------------------------
 .d-tab--selected {
-    --tab-color-text: var(--dt-color-purple-400);
+    --tab-color-text: var(--dt-action-color-foreground-base-default);
 
     z-index: var(--zi-selected);
 
     &:not(:disabled):hover {
-        --tab-color-background: hsla(var(--dt-color-purple-400-hsl) / 0.04);
-        --tab-color-text: hsl(var(--dt-color-purple-400-h) var(--dt-color-purple-400-s) calc(var(--dt-color-purple-400-l) - 10%));
+        --tab-color-background: var(--dt-action-color-background-base-hover);
+        --tab-color-text: var(--dt-action-color-foreground-base-hover);
     }
 
     &:not(:disabled):active {
-        --tab-color-background: hsla(var(--dt-color-purple-400-hsl) / 0.14);
+        --tab-color-background: var(--dt-action-color-background-base-active);
+        --tab-color-text: var(--dt-action-color-foreground-base-active);
     }
 
     &::after,
@@ -177,38 +179,38 @@
 //  $   INVERTED STYLE
 //  ----------------------------------------------------------------------------
 .d-tablist--inverted {
-    --tab-color-text: var(--dt-color-foreground-primary-inverted);
+    --tab-color-text: var(--dt-action-color-foreground-inverted-default);
 
     &::after {
-        background-color: hsla(var(--dt-color-purple-600-hsl) / 0.5);
+        background-color: hsla(var(--dt-color-purple-600-hsl) / 0.5); // TODO: Check
     }
 
     &:not(.d-tablist--no-border)::after {
-        background-color: var(--dt-color-border-default-inverted);
+        background-color: var(--dt-color-foreground-primary-inverted);
     }
 
     .d-tab {
-        --tab-color-text: var(--dt-color-foreground-secondary-inverted);
+        --tab-color-text: var(--dt-action-color-foreground-inverted-default);
 
         &:not(:disabled):hover {
-            --tab-color-text: var(--dt-color-foreground-primary-inverted);
-            --tab-color-background: hsla(var(--dt-color-neutral-white-hsl) / 0.1);
+            --tab-color-text: var(--dt-action-color-foreground-inverted-hover);
+            --tab-color-background: var(--dt-action-color-background-inverted-hover);
         }
 
         &:not(:disabled):active {
-            --tab-color-text: var(--dt-color-foreground-primary-inverted);
-            --tab-color-background: hsla(var(--dt-color-neutral-white-hsl) / 0.14);
+            --tab-color-text: var(--dt-action-color-foreground-inverted-active);
+            --tab-color-background: var(--dt-action-color-background-inverted-active);
         }
 
         &:disabled {
-            --tab-color-text: var(--dt-color-foreground-disabled);
+            --tab-color-text: var(--dt-action-color-foreground-disabled-default);
 
             cursor: not-allowed;
         }
     }
 
     .d-tab--selected {
-        --tab-color-text: var(--dt-color-foreground-primary-inverted);
+        --tab-color-text: var(--dt-action-color-foreground-inverted-default);
 
         &::after {
             --tab-color-background: currentColor;
