@@ -756,9 +756,11 @@ function _generateVariables (declaration) {
 /**
  * Compose box shadow tokens
  * @param { Declaration } declaration
+ * @param { string } [mode=light]
  */
-function boxShadows (declaration) {
-  const dialtoneShadows = extractShadows();
+function boxShadows (declaration, mode = 'light') {
+  const dialtoneShadows = extractShadows(mode);
+
   Object
     .keys(dialtoneShadows)
     .forEach(shadowName => {
@@ -769,9 +771,16 @@ function boxShadows (declaration) {
         .map((val, i) => {
           return `var(${shadowVar}-${i}-x) var(${shadowVar}-${i}-y) var(${shadowVar}-${i}-blur) var(${shadowVar}-${i}-spread) var(${shadowVar}-${i}-color)`;
         }).join(', ');
-      bodyCSSVariables.push([
-        declaration.clone({ prop: shadowVar, value }),
-      ]);
+
+      if (mode === 'light') {
+        lightCSSVariables.push([
+          declaration.clone({ prop: shadowVar, value }),
+        ]);
+      } else {
+        darkCSSVariables.push([
+          declaration.clone({ prop: shadowVar, value }),
+        ]);
+      }
     });
 }
 
@@ -797,6 +806,7 @@ function typography (declaration) {
  */
 function _generateCompositionTokens (declaration) {
   boxShadows(declaration);
+  boxShadows(declaration, 'dark');
   typography(declaration);
 }
 
