@@ -1,3 +1,45 @@
+# [8.7.0-version8.1](https://github.com/dialpad/dialtone/compare/v8.6.0...v8.7.0-version8.1) (2023-06-26)
+
+
+### Bug Fixes
+
+* **Modal:** semantic tokens correction ([#903](https://github.com/dialpad/dialtone/issues/903)) ([647f1ca](https://github.com/dialpad/dialtone/commit/647f1cac2f1c3b639959356eb2afa870c515568b))
+* **Popover:** missing migration ([#904](https://github.com/dialpad/dialtone/issues/904)) ([ba6013e](https://github.com/dialpad/dialtone/commit/ba6013e43e19d656bcba27fa915f3066069af86b))
+* **Select Menu:** semantic tokens ([#907](https://github.com/dialpad/dialtone/issues/907)) ([f11899f](https://github.com/dialpad/dialtone/commit/f11899f7a7225b9e027440103bb2132fa58a1ec1))
+* size and space migration - icons CSS variables ([#912](https://github.com/dialpad/dialtone/issues/912)) ([71a0be4](https://github.com/dialpad/dialtone/commit/71a0be4a4999a9a055d4232ae8d3607c2a05d52e))
+* **Tabs:** semantic tokens ([#906](https://github.com/dialpad/dialtone/issues/906)) ([0d9f149](https://github.com/dialpad/dialtone/commit/0d9f14998b667ebfc706bb34ab4cde6047dc0e2a))
+* **Toast:** semantic tokens ([#908](https://github.com/dialpad/dialtone/issues/908)) ([d29aa0d](https://github.com/dialpad/dialtone/commit/d29aa0d8026eea964f017e31cb2e14cc3cfdb58c))
+* **Toggle:** semantic tokens ([#909](https://github.com/dialpad/dialtone/issues/909)) ([05140ad](https://github.com/dialpad/dialtone/commit/05140adf15fd65eb85f7ffd776a34f6a23670505))
+* **Tooltip:** semantic tokens ([#910](https://github.com/dialpad/dialtone/issues/910)) ([e92dc0c](https://github.com/dialpad/dialtone/commit/e92dc0c9b6e26f450e01fbdfc86641ab832a2f9e))
+* **Validation Messages:** icons ([#911](https://github.com/dialpad/dialtone/issues/911)) ([93409e3](https://github.com/dialpad/dialtone/commit/93409e3ee82b0dd43caa67784cfac31268230ae9))
+
+
+### Features
+
+* **Link:** migration to semantic tokens ([#902](https://github.com/dialpad/dialtone/issues/902)) ([98d5c6d](https://github.com/dialpad/dialtone/commit/98d5c6d50b78f14686ee590c0cf1eaa80f6b8fbf))
+* **Presence:** variables remapping ([#905](https://github.com/dialpad/dialtone/issues/905)) ([451239b](https://github.com/dialpad/dialtone/commit/451239b441f141c5930c5f67ed052f236e02bada))
+
+# [8.7.0-version8.1](https://github.com/dialpad/dialtone/compare/v8.6.0...v8.7.0-version8.1) (2023-06-26)
+
+
+### Bug Fixes
+
+* **Modal:** semantic tokens correction ([#903](https://github.com/dialpad/dialtone/issues/903)) ([647f1ca](https://github.com/dialpad/dialtone/commit/647f1cac2f1c3b639959356eb2afa870c515568b))
+* **Popover:** missing migration ([#904](https://github.com/dialpad/dialtone/issues/904)) ([ba6013e](https://github.com/dialpad/dialtone/commit/ba6013e43e19d656bcba27fa915f3066069af86b))
+* **Select Menu:** semantic tokens ([#907](https://github.com/dialpad/dialtone/issues/907)) ([f11899f](https://github.com/dialpad/dialtone/commit/f11899f7a7225b9e027440103bb2132fa58a1ec1))
+* size and space migration - icons CSS variables ([#912](https://github.com/dialpad/dialtone/issues/912)) ([71a0be4](https://github.com/dialpad/dialtone/commit/71a0be4a4999a9a055d4232ae8d3607c2a05d52e))
+* **Tabs:** semantic tokens ([#906](https://github.com/dialpad/dialtone/issues/906)) ([0d9f149](https://github.com/dialpad/dialtone/commit/0d9f14998b667ebfc706bb34ab4cde6047dc0e2a))
+* **Toast:** semantic tokens ([#908](https://github.com/dialpad/dialtone/issues/908)) ([d29aa0d](https://github.com/dialpad/dialtone/commit/d29aa0d8026eea964f017e31cb2e14cc3cfdb58c))
+* **Toggle:** semantic tokens ([#909](https://github.com/dialpad/dialtone/issues/909)) ([05140ad](https://github.com/dialpad/dialtone/commit/05140adf15fd65eb85f7ffd776a34f6a23670505))
+* **Tooltip:** semantic tokens ([#910](https://github.com/dialpad/dialtone/issues/910)) ([e92dc0c](https://github.com/dialpad/dialtone/commit/e92dc0c9b6e26f450e01fbdfc86641ab832a2f9e))
+* **Validation Messages:** icons ([#911](https://github.com/dialpad/dialtone/issues/911)) ([93409e3](https://github.com/dialpad/dialtone/commit/93409e3ee82b0dd43caa67784cfac31268230ae9))
+
+
+### Features
+
+* **Link:** migration to semantic tokens ([#902](https://github.com/dialpad/dialtone/issues/902)) ([98d5c6d](https://github.com/dialpad/dialtone/commit/98d5c6d50b78f14686ee590c0cf1eaa80f6b8fbf))
+* **Presence:** variables remapping ([#905](https://github.com/dialpad/dialtone/issues/905)) ([451239b](https://github.com/dialpad/dialtone/commit/451239b441f141c5930c5f67ed052f236e02bada))
+
 # [8.6.0-version8.1](https://github.com/dialpad/dialtone/compare/v8.5.2...v8.6.0-version8.1) (2023-06-20)
 
 
