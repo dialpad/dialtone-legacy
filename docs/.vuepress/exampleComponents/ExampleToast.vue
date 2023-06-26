@@ -195,6 +195,6 @@ export default {
 
 <style lang="less" scoped>
   .d-toast-wrapper {
-    top: var(--dt-size-730);
+    top: var(--dt-space-730);
   }
 </style>
