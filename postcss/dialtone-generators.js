@@ -425,54 +425,54 @@ function layoutUtilities (Rule, clonedSource, declaration) {
         source: clonedSource,
         selector: `.d-t${size}`,
         nodes: [
-          declaration.clone({ prop: 'top', value: `var(--dt-size-${LAYOUT_SIZES[size]}) !important` }),
+          declaration.clone({ prop: 'top', value: `var(--dt-space-${LAYOUT_SIZES[size]}) !important` }),
         ],
       }));
       generatedRules.positionRight.push(new Rule({
         source: clonedSource,
         selector: `.d-r${size}`,
         nodes: [
-          declaration.clone({ prop: 'right', value: `var(--dt-size-${LAYOUT_SIZES[size]}) !important` }),
+          declaration.clone({ prop: 'right', value: `var(--dt-space-${LAYOUT_SIZES[size]}) !important` }),
         ],
       }));
       generatedRules.positionBottom.push(new Rule({
         source: clonedSource,
         selector: `.d-b${size}`,
         nodes: [
-          declaration.clone({ prop: 'bottom', value: `var(--dt-size-${LAYOUT_SIZES[size]}) !important` }),
+          declaration.clone({ prop: 'bottom', value: `var(--dt-space-${LAYOUT_SIZES[size]}) !important` }),
         ],
       }));
       generatedRules.positionLeft.push(new Rule({
         source: clonedSource,
         selector: `.d-l${size}`,
         nodes: [
-          declaration.clone({ prop: 'left', value: `var(--dt-size-${LAYOUT_SIZES[size]}) !important` }),
+          declaration.clone({ prop: 'left', value: `var(--dt-space-${LAYOUT_SIZES[size]}) !important` }),
         ],
       }));
       generatedRules.positionVertical.push(new Rule({
         source: clonedSource,
         selector: `.d-y${size}`,
         nodes: [
-          declaration.clone({ prop: 'top', value: `var(--dt-size-${LAYOUT_SIZES[size]}) !important` }),
-          declaration.clone({ prop: 'bottom', value: `var(--dt-size-${LAYOUT_SIZES[size]}) !important` }),
+          declaration.clone({ prop: 'top', value: `var(--dt-space-${LAYOUT_SIZES[size]}) !important` }),
+          declaration.clone({ prop: 'bottom', value: `var(--dt-space-${LAYOUT_SIZES[size]}) !important` }),
         ],
       }));
       generatedRules.positionHorizontal.push(new Rule({
         source: clonedSource,
         selector: `.d-x${size}`,
         nodes: [
-          declaration.clone({ prop: 'right', value: `var(--dt-size-${LAYOUT_SIZES[size]}) !important` }),
-          declaration.clone({ prop: 'left', value: `var(--dt-size-${LAYOUT_SIZES[size]}) !important` }),
+          declaration.clone({ prop: 'right', value: `var(--dt-space-${LAYOUT_SIZES[size]}) !important` }),
+          declaration.clone({ prop: 'left', value: `var(--dt-space-${LAYOUT_SIZES[size]}) !important` }),
         ],
       }));
       generatedRules.positionAll.push(new Rule({
         source: clonedSource,
         selector: `.d-all${size}`,
         nodes: [
-          declaration.clone({ prop: 'top', value: `var(--dt-size-${LAYOUT_SIZES[size]}) !important` }),
-          declaration.clone({ prop: 'right', value: `var(--dt-size-${LAYOUT_SIZES[size]}) !important` }),
-          declaration.clone({ prop: 'bottom', value: `var(--dt-size-${LAYOUT_SIZES[size]}) !important` }),
-          declaration.clone({ prop: 'left', value: `var(--dt-size-${LAYOUT_SIZES[size]}) !important` }),
+          declaration.clone({ prop: 'top', value: `var(--dt-space-${LAYOUT_SIZES[size]}) !important` }),
+          declaration.clone({ prop: 'right', value: `var(--dt-space-${LAYOUT_SIZES[size]}) !important` }),
+          declaration.clone({ prop: 'bottom', value: `var(--dt-space-${LAYOUT_SIZES[size]}) !important` }),
+          declaration.clone({ prop: 'left', value: `var(--dt-space-${LAYOUT_SIZES[size]}) !important` }),
         ],
       }));
     });
@@ -544,51 +544,51 @@ function marginUtilities (Rule, clonedSource, declaration) {
       source: clonedSource,
       selector: `.d-mt${size}`,
       nodes: [
-        declaration.clone({ prop: 'margin-top', value: `var(--dt-size-${MARGIN_SIZES[size]}) !important` }),
+        declaration.clone({ prop: 'margin-top', value: `var(--dt-space-${MARGIN_SIZES[size]}) !important` }),
       ],
     }));
     generatedRules.marginRight.push(new Rule({
       source: clonedSource,
       selector: `.d-mr${size}`,
       nodes: [
-        declaration.clone({ prop: 'margin-right', value: `var(--dt-size-${MARGIN_SIZES[size]}) !important` }),
+        declaration.clone({ prop: 'margin-right', value: `var(--dt-space-${MARGIN_SIZES[size]}) !important` }),
       ],
     }));
     generatedRules.marginBottom.push(new Rule({
       source: clonedSource,
       selector: `.d-mb${size}`,
       nodes: [
-        declaration.clone({ prop: 'margin-bottom', value: `var(--dt-size-${MARGIN_SIZES[size]}) !important` }),
+        declaration.clone({ prop: 'margin-bottom', value: `var(--dt-space-${MARGIN_SIZES[size]}) !important` }),
       ],
     }));
     generatedRules.marginLeft.push(new Rule({
       source: clonedSource,
       selector: `.d-ml${size}`,
       nodes: [
-        declaration.clone({ prop: 'margin-left', value: `var(--dt-size-${MARGIN_SIZES[size]}) !important` }),
+        declaration.clone({ prop: 'margin-left', value: `var(--dt-space-${MARGIN_SIZES[size]}) !important` }),
       ],
     }));
     generatedRules.marginHorizontal.push(new Rule({
       source: clonedSource,
       selector: `.d-mx${size}`,
       nodes: [
-        declaration.clone({ prop: 'margin-left', value: `var(--dt-size-${MARGIN_SIZES[size]}) !important` }),
-        declaration.clone({ prop: 'margin-right', value: `var(--dt-size-${MARGIN_SIZES[size]}) !important` }),
+        declaration.clone({ prop: 'margin-left', value: `var(--dt-space-${MARGIN_SIZES[size]}) !important` }),
+        declaration.clone({ prop: 'margin-right', value: `var(--dt-space-${MARGIN_SIZES[size]}) !important` }),
       ],
     }));
     generatedRules.marginVertical.push(new Rule({
       source: clonedSource,
       selector: `.d-my${size}`,
       nodes: [
-        declaration.clone({ prop: 'margin-top', value: `var(--dt-size-${MARGIN_SIZES[size]}) !important` }),
-        declaration.clone({ prop: 'margin-bottom', value: `var(--dt-size-${MARGIN_SIZES[size]}) !important` }),
+        declaration.clone({ prop: 'margin-top', value: `var(--dt-space-${MARGIN_SIZES[size]}) !important` }),
+        declaration.clone({ prop: 'margin-bottom', value: `var(--dt-space-${MARGIN_SIZES[size]}) !important` }),
       ],
     }));
     generatedRules.marginAll.push(new Rule({
       source: clonedSource,
       selector: `.d-m${size}`,
       nodes: [
-        declaration.clone({ prop: 'margin', value: `var(--dt-size-${MARGIN_SIZES[size]}) !important` }),
+        declaration.clone({ prop: 'margin', value: `var(--dt-space-${MARGIN_SIZES[size]}) !important` }),
       ],
     }));
   });
@@ -607,51 +607,51 @@ function paddingUtilities (Rule, clonedSource, declaration) {
         source: clonedSource,
         selector: `.d-pt${size}`,
         nodes: [
-          declaration.clone({ prop: 'padding-top', value: `var(--dt-size-${PADDING_SIZES[size]}) !important` }),
+          declaration.clone({ prop: 'padding-top', value: `var(--dt-space-${PADDING_SIZES[size]}) !important` }),
         ],
       }));
       generatedRules.paddingRight.push(new Rule({
         source: clonedSource,
         selector: `.d-pr${size}`,
         nodes: [
-          declaration.clone({ prop: 'padding-right', value: `var(--dt-size-${PADDING_SIZES[size]}) !important` }),
+          declaration.clone({ prop: 'padding-right', value: `var(--dt-space-${PADDING_SIZES[size]}) !important` }),
         ],
       }));
       generatedRules.paddingBottom.push(new Rule({
         source: clonedSource,
         selector: `.d-pb${size}`,
         nodes: [
-          declaration.clone({ prop: 'padding-bottom', value: `var(--dt-size-${PADDING_SIZES[size]}) !important` }),
+          declaration.clone({ prop: 'padding-bottom', value: `var(--dt-space-${PADDING_SIZES[size]}) !important` }),
         ],
       }));
       generatedRules.paddingLeft.push(new Rule({
         source: clonedSource,
         selector: `.d-pl${size}`,
         nodes: [
-          declaration.clone({ prop: 'padding-left', value: `var(--dt-size-${PADDING_SIZES[size]}) !important` }),
+          declaration.clone({ prop: 'padding-left', value: `var(--dt-space-${PADDING_SIZES[size]}) !important` }),
         ],
       }));
       generatedRules.paddingHorizontal.push(new Rule({
         source: clonedSource,
         selector: `.d-px${size}`,
         nodes: [
-          declaration.clone({ prop: 'padding-left', value: `var(--dt-size-${PADDING_SIZES[size]}) !important` }),
-          declaration.clone({ prop: 'padding-right', value: `var(--dt-size-${PADDING_SIZES[size]}) !important` }),
+          declaration.clone({ prop: 'padding-left', value: `var(--dt-space-${PADDING_SIZES[size]}) !important` }),
+          declaration.clone({ prop: 'padding-right', value: `var(--dt-space-${PADDING_SIZES[size]}) !important` }),
         ],
       }));
       generatedRules.paddingVertical.push(new Rule({
         source: clonedSource,
         selector: `.d-py${size}`,
         nodes: [
-          declaration.clone({ prop: 'padding-top', value: `var(--dt-size-${PADDING_SIZES[size]}) !important` }),
-          declaration.clone({ prop: 'padding-bottom', value: `var(--dt-size-${PADDING_SIZES[size]}) !important` }),
+          declaration.clone({ prop: 'padding-top', value: `var(--dt-space-${PADDING_SIZES[size]}) !important` }),
+          declaration.clone({ prop: 'padding-bottom', value: `var(--dt-space-${PADDING_SIZES[size]}) !important` }),
         ],
       }));
       generatedRules.paddingAll.push(new Rule({
         source: clonedSource,
         selector: `.d-p${size}`,
         nodes: [
-          declaration.clone({ prop: 'padding', value: `var(--dt-size-${PADDING_SIZES[size]}) !important` }),
+          declaration.clone({ prop: 'padding', value: `var(--dt-space-${PADDING_SIZES[size]}) !important` }),
         ],
       }));
     });
