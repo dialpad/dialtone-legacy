@@ -61,9 +61,10 @@ module.exports = {
   *
   * @returns {Object}
   */
-  extractShadows () {
+  extractShadows (mode) {
+    const tokens = mode === 'light' ? dialtoneTokensLight : dialtoneTokensDark;
     const shadowsRegex = new RegExp(`dtShadow(${REGEX_OPTIONS.SHADOW_VARIABLES})([0-9])(\\w+)`);
-    return Object.keys(dialtoneTokensLight)
+    return Object.keys(tokens)
       .filter(key => shadowsRegex.test(key))
       .reduce((shadows, shadow) => {
         const [name, index] = shadow
