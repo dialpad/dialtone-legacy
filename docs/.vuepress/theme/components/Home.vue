@@ -785,11 +785,11 @@
       </div>
     </div>
   </section>
-  <section class="d-bgc-purple-500 d-py64 d-ta-center">
-    <div class="d-headline-large d-fw-medium d-fc-primary-inverted d-px48 d-flow16 d-d-flex d-jc-center d-ai-center">
+  <section class="d-bt d-bbw1 d-bc-subtle d-bgc-secondary d-py64 d-ta-center">
+    <div class="d-headline-large d-fw-medium d-fc-secondary d-px48 d-flow16 d-d-flex d-jc-center d-ai-center">
       <div>Don't see something? Want to contribute?</div>
       <a
-        class="d-btn d-btn--inverted d-btn--lg d-btn--primary"
+        class="d-btn d-btn--muted d-btn--outlined d-btn--lg"
         href="https://dialpad.atlassian.net/secure/CreateIssue.jspa?issuetype=10901&pid=12428"
         target="_blank"
         rel="noopener noreferrer"
