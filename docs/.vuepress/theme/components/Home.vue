@@ -518,7 +518,7 @@
   <section class="links d-d-grid d-gg16 d-g-cols12 d-wmx1340 d-mx-auto">
     <div class="link d-body-base d-gc3 d-px32 d-ta-center">
       <router-link
-        class="d-fc-secondary h:d-fc-purple-400 d-d-block d-td-none d-bar8 d-pt4"
+        class="d-fc-primary h:d-fc-purple-400 d-d-block d-td-none d-bar8 d-pt4"
         to="/design/"
       >
         <svg
@@ -573,7 +573,7 @@
     </div>
     <div class="link d-body-base d-gc3 d-px32 d-ta-center">
       <router-link
-        class="d-fc-secondary h:d-fc-purple-400 d-d-block d-td-none d-bar8 d-pt4"
+        class="d-fc-primary h:d-fc-purple-400 d-d-block d-td-none d-bar8 d-pt4"
         to="/components/"
       >
         <svg
@@ -653,7 +653,7 @@
     </div>
     <div class="link d-body-base d-gc3 d-px32 d-ta-center">
       <router-link
-        class="d-fc-secondary h:d-fc-purple-400 d-d-block d-td-none d-bar8 d-pt4"
+        class="d-fc-primary h:d-fc-purple-400 d-d-block d-td-none d-bar8 d-pt4"
         to="/utilities/"
       >
         <svg
@@ -726,7 +726,7 @@
     </div>
     <div class="link d-body-base d-gc3 d-px32 d-ta-center">
       <router-link
-        class="d-fc-secondary h:d-fc-purple-400 d-d-block d-td-none d-bar8 d-pt4"
+        class="d-fc-primary h:d-fc-purple-400 d-d-block d-td-none d-bar8 d-pt4"
         to="/guides/"
       >
         <svg
@@ -785,11 +785,11 @@
       </div>
     </div>
   </section>
-  <section class="d-bgc-purple-500 d-py64 d-ta-center">
-    <div class="d-headline-large d-fw-medium d-fc-primary-inverted d-px48 d-flow16 d-d-flex d-jc-center d-ai-center">
+  <section class="d-bt d-bc-subtle d-bgc-secondary d-py64 d-ta-center">
+    <div class="d-headline-large d-fw-medium d-fc-secondary d-px48 d-flow16 d-d-flex d-jc-center d-ai-center">
       <div>Don't see something? Want to contribute?</div>
       <a
-        class="d-btn d-btn--inverted d-btn--lg d-btn--primary"
+        class="d-btn d-btn--muted d-btn--outlined d-btn--lg"
         href="https://dialpad.atlassian.net/secure/CreateIssue.jspa?issuetype=10901&pid=12428"
         target="_blank"
         rel="noopener noreferrer"
