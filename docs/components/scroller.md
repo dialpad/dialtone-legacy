@@ -50,4 +50,3 @@ storybook: https://vue.dialpad.design/vue3/?path=/story/components-scroller--def
  </template>
 </dt-scroller>
 ```
-
