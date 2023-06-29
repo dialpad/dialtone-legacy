@@ -50,3 +50,6 @@ storybook: https://vue.dialpad.design/vue3/?path=/story/components-scroller--def
  </template>
 </dt-scroller>
 ```
+## Vue API
+
+<component-vue-api component-name="scroller" />
