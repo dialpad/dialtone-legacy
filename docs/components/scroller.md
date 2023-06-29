@@ -9,7 +9,7 @@ storybook: https://vue.dialpad.design/vue3/?path=/story/components-scroller--def
 
 #### Default Scroller
 
-
+<code-well-header>
  <dt-scroller
       style="
       margin: 20px 0;
@@ -95,9 +95,7 @@ storybook: https://vue.dialpad.design/vue3/?path=/story/components-scroller--def
               </div>
       </template>
 </dt-scroller>
-
-
-
+</code-well-header>
 
 ```html
 <dt-scroller
@@ -116,6 +114,7 @@ storybook: https://vue.dialpad.design/vue3/?path=/story/components-scroller--def
 
 #### Dynamic Scroller
 
+<code-well-header>
  <dt-scroller
       :items="[
               {
@@ -168,6 +167,7 @@ storybook: https://vue.dialpad.design/vue3/?path=/story/components-scroller--def
         </div>
       </template>
     </dt-scroller>
+</code-well-header>
 
 ```html
 <dt-scroller
