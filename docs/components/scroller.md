@@ -155,8 +155,7 @@ storybook: https://vue.dialpad.design/vue3/?path=/story/components-scroller--def
         border: 1px solid red;"
     >
       <template #default="{ item }">
-        <div 
-          style="
+        <div style="
             padding: 0 12px;
             display: flex;
             align-items: center;
