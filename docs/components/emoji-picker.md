@@ -7,47 +7,20 @@ status: beta
 storybook: https://vue.dialpad.design/vue3/?path=/story/components-emoji-picker--default
 ---
 
-<code-well-header>
-  <dt-emoji-pickerAAA
-    skin-tone="skinTone"
-    tabSetLabels="[
-      'Most recently used',
-      'Smileys and people',
-      'Nature',
-      'Food',
-      'Activity',
-      'Travel',
-      'Objects',
-      'Symbols',
-      'Flags',
-    ]"
-    skinSelectorButtonTooltipLabel="Change default skin tone"
-    searchNoResultsLabel="No results"
-    searchResultsLabel="Search results"
-    searchPlaceholderLabel="Search..."
-  />
-</code-well-header>
-
-
 ```html
-<dt-emoji-picker
-    skin-tone="skinTone"
-    tabSetLabels="[
-      'Most recently used',
-      'Smileys and people',
-      'Nature',
-      'Food',
-      'Activity',
-      'Travel',
-      'Objects',
-      'Symbols',
-      'Flags',
-    ]"
-    skinSelectorButtonTooltipLabel="Change default skin tone"
-    searchNoResultsLabel="No results"
-    searchResultsLabel="Search results"
-    searchPlaceholderLabel="Search..."
+<template>
+  <dt-emoji-picker
+    :skin-tone="Default"
+    :skin-selector-button-tooltip-label="'Change default skin tone'"
+    :tab-set-labels="tabSetLabels[]"
+    :recently-used-emojis="recentlyUsedEmojis[]"
+    :search-results-label="'Search results'"
+    :search-no-results-label="'Search results'"
+    :search-placeholder-label="'Search...'"
+    @skin-tone="skinTone = $event"
+    @selected-emoji="selectedEmoji"
   />
+</template>
 ```
 
 ## Vue API
