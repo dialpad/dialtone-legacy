@@ -10,214 +10,215 @@
 
 //  @@  BASE STYLE
 //  ----------------------------------------------------------------------------
-.d-emoji-picker{
-  // fixed with to achieve accessibility in keyboard
-  // with this width we have 9 emoji per row
-  width: 372px;
-  height: 100%;
+.d-emoji-picker {
   flex-direction: column;
-  border-radius: 4px;
-  background-color: #FFFFFF;
+  // fixed with to achieve accessibility in keyboard (372px)
+  // with this width we have 9 emoji per row
+  width: calc(var(--dt-size-925) + var(--dt-size-600) + var(--dt-size-400));
+  height: 100%;
+  background-color: #fff;
+  border-radius: var(--dt-size-300);
 
-  &--header{
-    padding: var(--su4) var(--su4) 0 var(--su8);
+  &--header {
     position: relative;
-    &::after{
-      content: '';
+    padding: var(--dt-space-300) var(--dt-space-300) 0 var(--dt-space-400);
+
+    &::after {
       position: absolute;
       right: 0;
       bottom: 0;
       left: 0;
-      height: 1px;
+      height: var(--dt-size-100);
       background-color: var(--bgc-moderate) !important;
+      content: '';
     }
   }
 
-  &__alignment{
+  &__alignment {
     width: auto;
-    max-width: 340px;
-    margin: 0 16px;
+    max-width: calc(var(--dt-size-925) + var(--dt-size-400));
+    margin: 0 var(--dt-size-500);
   }
 
-  &--footer{
+  &--footer {
     position: relative;
-    height: 58px;
-    background: #F9F9F9;
-    border-top: 1px solid var(--bc-subtle);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 16px;
+    height: calc(var(--dt-size-650) + var(--dt-size-400) + var(--dt-size-200));
+    padding: 0 var(--dt-size-500);
+    background: #f9f9f9;
+    border-top: var(--dt-size-100) solid var(--bc-subtle);
   }
 
-  &__tabset-list{
-      gap: 4px;
+  &__tabset-list {
+      gap: var(--dt-size-300);
 
-      &::after{
+      &::after {
         background-color: var(--black-200) !important;
       }
 
-      button{
-        padding: var(--space-400);
+      button {
+        padding: var(--dt-size-400);
 
-        &.d-tab--selected{
-          &::after{
-            height: var(--size-200);
+        &.d-tab--selected {
+          &::after {
+            height: var(--dt-size-200);
           }
         }
     }
   }
 
-  &__skin-list{
+  &__skin-list {
     display: inline-flex;
-    border-radius: 40px;
-    background: rgba(0, 0, 0, 0.05);
     flex-direction: row;
+    gap: var(--dt-size-300);
     align-items: flex-start;
-    padding: 4px;
-    gap: 4px;
+    padding: var(--dt-size-300);
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: calc(var(--dt-size-600) + var(--dt-size-400));
 
-    button{
-      border: none;
-      background: none;
-      cursor: pointer;
+    button {
+      width: calc(var(--dt-size-600) + var(--dt-size-200));
+      height: calc(var(--dt-size-600) + var(--dt-size-200));
       margin: 0;
       padding: 0;
-      outline: none;
-      border-radius: 28px;
-      width: 34px;
-      height: 34px;
-
-      &:hover{
-        background: rgba(0, 0, 0, 0.1);
-        border-radius: 28px;
-      }
-
-      &.selected{
-        border: 1px solid rgba(0, 0, 0, 0.25);
-        border-radius: 28px;
-      }
-    }
-  }
-
-  &__skin-selected{
-    button{
-      border: none;
       background: none;
-      cursor: pointer;
-      margin: 0;
+      border: none;
+      border-radius: calc(var(--dt-size-550) + var(--dt-size-300));
       outline: none;
-      padding: 7px;
-      display: inline-block;
-      background: rgba(0, 0, 0, 0.1);
-      border-radius: 28px;
-      width: 42px;
-      height: 42px;
+      cursor: pointer;
 
-      &:hover{
-        background: #D2D2D2;
+      &:hover {
+        background: rgba(0, 0, 0, 0.1);
+        border-radius: calc(var(--dt-size-550) + var(--dt-size-300));
+      }
+
+      &.selected {
+        border: var(--dt-size-100) solid rgba(0, 0, 0, 0.25);
+        border-radius: calc(var(--dt-size-550) + var(--dt-size-300));
       }
     }
   }
 
-  &__selector{
-    min-height: 297px;
+  &__skin-selected {
+    button {
+      display: inline-block;
+      width: var(--dt-size-625);
+      height: var(--dt-size-625);
+      margin: 0;
+      padding: calc(var(--dt-size-350) + var(--dt-size-100));
+      background: none;
+      background: rgba(0, 0, 0, 0.1);
+      border: none;
+      border-radius: calc(var(--dt-size-550) + var(--dt-size-300));
+      outline: none;
+      cursor: pointer;
 
-    p{
-      margin-bottom: 4px;
-      font-size: 12px;
+      &:hover {
+        background: #d2d2d2;
+      }
+    }
+  }
+
+  &__selector {
+    min-height: calc(var(--dt-size-905) + var(--dt-size-600) + var(--dt-size-100));
+
+    p {
+      margin-bottom: var(--dt-size-300);
       font-weight: 700;
+      font-size: var(--dt-size-450);
       letter-spacing: -0.01em;
     }
   }
 
   &__category {
-    background: rgba(255, 255, 255, 0.9);
     position: sticky;
     top: 0;
-    padding-top: 20px;
     width: 100%;
+    padding-top: var(--dt-size-525);
+    background: rgba(255, 255, 255, 0.9);
   }
 
-  &__list{
-    height: 100%;
-    max-height: 297px;
-    overflow-y: auto;
-    overflow-x: hidden;
+  &__list {
     position: relative;
-    padding-bottom: 5px;
+    height: 100%;
+    max-height: calc(var(--dt-size-905) + var(--dt-size-600) + var(--dt-size-100));
+    padding-bottom: calc(var(--dt-size-300) + var(--dt-size-100));
+    overflow-x: hidden;
+    overflow-y: auto;
 
-    div:not(:first-child){
-      p{
-        margin-top: 22px;
+    div:not(:first-child) {
+      p {
+        margin-top: calc(var(--dt-size-525) + var(--dt-size-200));
       }
     }
   }
 
-  &__search-label{
-    margin-top: 20px;
+  &__search-label {
+    margin-top: calc(var(--dt-size-525));
   }
 
-  &__tab{
-    width: calc(100% + 15px);
-    max-width: 340px;
-    gap: 2px;
+  &__tab {
     display: flex;
     flex-wrap: wrap;
+    gap: var(--dt-size-200);
+    width: calc(100% + calc(var(--dt-size-500) - var(--dt-size-100)));
+    max-width: calc(var(--dt-size-925) + var(--dt-size-400));
     // We use this margin left to align the emoji list with the tabset label
-    margin-left: -6px;
+    margin-left: var(--dt-size-350-negative);
 
-    button{
+    button {
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 50%;
-      width: 36px;
-      height: 36px;
-
-      border: none;
-      background: none;
-      cursor: pointer;
+      width: calc(var(--dt-size-600) + var(--dt-size-300));
+      height: calc(var(--dt-size-600) + var(--dt-size-300));
       margin: 0;
       padding: 0;
+      background: none;
+      border: none;
+      border-radius: 50%;
       outline: none;
+      cursor: pointer;
 
-      &:hover, &:active{
+      &:hover,
+      &:active {
         background: rgba(0, 0, 0, 0.1);
       }
 
-      &.hover-emoji{
+      &.hover-emoji {
         background: rgba(0, 0, 0, 0.1);
       }
 
-      &:focus{
+      &:focus {
         box-shadow: var(--bs-focus-ring);
       }
     }
   }
 
-  &__search{
+  &__search {
     position: relative;
     z-index: 1;
     margin: var(--su16) var(--su24) 0 var(--su16);
-    background-color: #FFFFFF;
+    background-color: #fff;
   }
 
-  &__search-button{
-    border: none;
-    background: none;
-    cursor: pointer;
+  &__search-button {
     margin: 0;
     padding: 0;
-    outline: none;
     line-height: 0;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
   }
 
   &__data {
     display: flex;
-    width: 100%;
-    max-width: 290px;
+    gap: var(--dt-size-100);
     align-items: center;
-    gap: 10px;
+    width: 100%;
+    max-width: calc(var(--dt-size-905) + var(--dt-size-550) + var(--dt-size-200));
   }
 }
