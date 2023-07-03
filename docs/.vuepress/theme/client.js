@@ -5,6 +5,7 @@ import NotFound from './layouts/NotFound.vue';
 // CSS
 import '../../../lib/dist/css/dialtone.css';
 import './assets/less/dialtone-docs.less';
+import '@/../node_modules/@dialpad/dialtone-vue/dist/style.css';
 
 export default defineClientConfig({
   async enhance ({ app, router }) {
