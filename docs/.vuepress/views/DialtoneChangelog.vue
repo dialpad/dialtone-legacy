@@ -4,7 +4,10 @@
     :key="i"
     class="dialtone-release-notes"
   >
-    <a :href="getGithubReleaseUrl(i)" class="d-link">
+    <a
+      :href="getGithubReleaseUrl(i)"
+      class="d-link"
+    >
       <h3 class="d-docsite--header-3">v{{ getVersion(i) }}</h3>
     </a>
     <ul class="d-docsite--unordered-list">
