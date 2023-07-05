@@ -1,3 +1,15 @@
+# [8.8.0-version8.1](https://github.com/dialpad/dialtone/compare/v8.7.0...v8.8.0-version8.1) (2023-07-05)
+
+
+### Bug Fixes
+
+* set tokens for body values in dialtone-globals.less ([#919](https://github.com/dialpad/dialtone/issues/919)) ([c491645](https://github.com/dialpad/dialtone/commit/c491645259fb56b59f35febd2333110673d62be1))
+
+
+### Features
+
+* **Modal, Tabs:** modal backdrop and tabs border color ([#913](https://github.com/dialpad/dialtone/issues/913)) ([23f0718](https://github.com/dialpad/dialtone/commit/23f07186621cc59bf98283d74f7ca352712bfa3f))
+
 # [8.7.0-version8.1](https://github.com/dialpad/dialtone/compare/v8.6.0...v8.7.0-version8.1) (2023-06-26)
 
 
