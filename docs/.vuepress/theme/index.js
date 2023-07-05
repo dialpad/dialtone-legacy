@@ -127,6 +127,7 @@ export const dialtoneVuepressTheme = (options) => {
       _extractFrontmatter(app, '/design/', options);
       _extractComponentStatus(app);
     },
+    // eslint-disable-next-line complexity
     extendsPage: (page) => {
       switch (page.path) {
         case '/about/whats-new/':
