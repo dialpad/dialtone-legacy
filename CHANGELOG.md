@@ -1,3 +1,23 @@
+# [7.28.0](https://github.com/dialpad/dialtone/compare/v7.27.2...v7.28.0) (2023-07-07)
+
+
+### Bug Fixes
+
+* lock stylelint to 15.9.0 ([50f9d78](https://github.com/dialpad/dialtone/commit/50f9d78a0e68225f534d3a0b601b5ab0c046094a))
+
+
+### Documentation
+
+* update dialtone vue version ([6ce2b2d](https://github.com/dialpad/dialtone/commit/6ce2b2db3296dd4ddfa317d9d0b4305fe9bc52b9))
+
+
+### Features
+
+* **Datepicker:** datepicker doc and style migration ([#914](https://github.com/dialpad/dialtone/issues/914)) ([2146133](https://github.com/dialpad/dialtone/commit/2146133aae31bffe230f0fbcc2c78551a37fdbfa))
+* **Emoji Picker:** emoji-picker doc and style migration ([#916](https://github.com/dialpad/dialtone/issues/916)) ([87a31d8](https://github.com/dialpad/dialtone/commit/87a31d86006aaada26655a69b110fd31c9cc693f))
+* **Scroller:** scroller doc ([#915](https://github.com/dialpad/dialtone/issues/915)) ([033f164](https://github.com/dialpad/dialtone/commit/033f164dbc93b000df8a94e7425dda1fb30d6408))
+* update dialtone dependencies ([#918](https://github.com/dialpad/dialtone/issues/918)) ([2909634](https://github.com/dialpad/dialtone/commit/2909634cd825eb8cdc0bb2d52782b6cef5e97e34))
+
 ## [7.27.2](https://github.com/dialpad/dialtone/compare/v7.27.1...v7.27.2) (2023-06-22)
 
 
