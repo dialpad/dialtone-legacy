@@ -14,10 +14,10 @@
   flex-direction: column;
   // fixed with to achieve accessibility in keyboard (372px)
   // with this width we have 9 emoji per row
-  width: 372px;
+  width: calc(var(--size332) + var(--size32) + var(--size8));
   height: 100%;
-  background-color: #FFFFFF;
-  border-radius: 4px;
+  background-color: #FFF;
+  border-radius: var(--size4);
   //dialtone8 ------------------------------
   //width: calc(var(--dt-size-925) + var(--dt-size-600) + var(--dt-size-400));
   //background-color: var(--dt-color-surface-primary);
@@ -34,7 +34,7 @@
       right: 0;
       bottom: 0;
       left: 0;
-      height: 1px;
+      height: var(--size1);
       background-color: var(--bgc-moderate) !important;
       //dialtone8 ------------------------------
       //height: var(--dt-size-100);
@@ -44,8 +44,8 @@
 
   &__alignment {
     width: auto;
-    max-width: 340px;
-    margin: 0 16px;
+    max-width: calc(var(--size332) + var(--size8));
+    margin: 0 var(--size16);
     //dialtone8 ------------------------------
     //max-width: calc(var(--dt-size-925) + var(--dt-size-400));
     //margin: 0 var(--dt-size-500);
@@ -56,19 +56,19 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 58px;
+    height: calc(var(--size48) + var(--size8) + var(--size2));
+    padding: 0 var(--size16);
     background: #F9F9F9;
-    border-top: 1px solid var(--bc-subtle);
-    padding: 0 16px;
+    border-top: var(--size1) solid var(--bc-subtle);
     //dialtone8 ------------------------------
     //height: calc(var(--dt-size-650) + var(--dt-size-400) + var(--dt-size-200));
+    //padding: 0 var(--dt-size-500);
     //background: var(--dt-color-surface-secondary);
     //border-top: var(--dt-size-100) solid var(--bc-subtle);
-    //padding: 0 var(--dt-size-500);
   }
 
   &__tabset-list {
-      gap: 4px;
+      gap: var(--size4);
       //dialtone8 ------------------------------
       //gap: var(--dt-size-300);
 
@@ -96,26 +96,26 @@
   &__skin-list {
     display: inline-flex;
     flex-direction: row;
+    gap: var(--size4);
     align-items: flex-start;
+    padding: var(--size4);
     background: rgba(0, 0, 0, 0.05);
-    border-radius: 40px;
-    gap: 4px;
-    padding: 4px;
+    border-radius: calc(var(--size32) + var(--size8));
     //dialtone8 ------------------------------
     //border-radius: calc(var(--dt-size-600) + var(--dt-size-400));
     //gap: var(--dt-size-300);
     //padding: var(--dt-size-300);
 
     button {
+      width: var(--size32);
+      height: var(--size32);
       margin: 0;
       padding: 0;
       background: none;
       border: none;
+      border-radius: calc(var(--size24) + var(--size4));
       outline: none;
       cursor: pointer;
-      width: 34px;
-      height: 34px;
-      border-radius: 28px;
       //dialtone8 ------------------------------
       //width: calc(var(--dt-size-600) + var(--dt-size-200));
       //height: calc(var(--dt-size-600) + var(--dt-size-200));
@@ -124,14 +124,14 @@
 
       &:hover {
         background: rgba(0, 0, 0, 0.1);
-        border-radius: 28px;
+        border-radius: calc(var(--size24) + var(--size4));
         //dialtone8 ------------------------------
         //border-radius: calc(var(--dt-size-550) + var(--dt-size-300));
       }
 
       &.selected {
-        border: 1px solid rgba(0, 0, 0, 0.25);
-        border-radius: 28px;
+        border: var(--size1) solid rgba(0, 0, 0, 0.25);
+        border-radius: calc(var(--size24) + var(--size4));
         //dialtone8 ------------------------------
         //border: var(--dt-size-100) solid rgba(0, 0, 0, 0.25);
         //border-radius: calc(var(--dt-size-550) + var(--dt-size-300));
@@ -142,16 +142,15 @@
   &__skin-selected {
     button {
       display: inline-block;
-
+      width: var(--size42);
+      height: var(--size42);
       margin: 0;
+      padding: calc(var(--size6) + var(--size1));
       background: rgba(0, 0, 0, 0.1);
       border: none;
+      border-radius: calc(var(--size24) + var(--size4));
       outline: none;
       cursor: pointer;
-      width: 42px;
-      height: 42px;
-      padding: 7px;
-      border-radius: 28px;
       //dialtone8 ------------------------------
       //width: var(--dt-size-625);
       //height: var(--dt-size-625);
@@ -167,15 +166,15 @@
   }
 
   &__selector {
-    min-height: 297px;
+    min-height: calc(var(--size264) + var(--size32) + var(--size1));
     //dialtone8 ------------------------------
     //min-height: calc(var(--dt-size-905) + var(--dt-size-600) + var(--dt-size-100));
 
     p {
+      margin-bottom: var(--size4);
       font-weight: 700;
+      font-size: var(--size12);
       letter-spacing: -0.01em;
-      margin-bottom: 4px;
-      font-size: 12px;
       //dialtone8 ------------------------------
       //margin-bottom: var(--dt-size-300);
       //font-size: var(--dt-size-450);
@@ -186,7 +185,7 @@
     position: sticky;
     top: 0;
     width: 100%;
-    padding-top: 20px;
+    padding-top: var(--size20);
     background: rgba(255, 255, 255, 0.9);
     //dialtone8 ------------------------------
     //padding-top: var(--dt-size-525);
@@ -196,17 +195,17 @@
   &__list {
     position: relative;
     height: 100%;
+    max-height: calc(var(--size264) + var(--size32) + var(--size1));
+    padding-bottom: calc(var(--size4) + var(--size1));
     overflow-x: hidden;
     overflow-y: auto;
-    max-height: 297px;
-    padding-bottom: 5px;
     //dialtone8 ------------------------------
     //max-height: calc(var(--dt-size-905) + var(--dt-size-600) + var(--dt-size-100));
     //padding-bottom: calc(var(--dt-size-300) + var(--dt-size-100));
 
     div:not(:first-child) {
       p {
-        margin-top: 22px;
+        margin-top: calc(var(--size20) + var(--size2));
         //dialtone8 ------------------------------
         //margin-top: calc(var(--dt-size-525) + var(--dt-size-200));
       }
@@ -214,7 +213,7 @@
   }
 
   &__search-label {
-    margin-top: 20px;
+    margin-top: calc(var(--size20));
     //dialtone8 ------------------------------
     //margin-top: calc(var(--dt-size-525));
   }
@@ -222,11 +221,11 @@
   &__tab {
     display: flex;
     flex-wrap: wrap;
-    width: calc(100% + 15px);
-    max-width: 340px;
-    gap: 2px;
+    gap: var(--size2);
+    width: calc(100% + calc(var(--size16) - var(--size1)));
+    max-width: calc(var(--size332) + var(--size8));
     // We use this margin left to align the emoji list with the tabset label
-    margin-left: -6px;
+    margin-left: var(--sun6);
     //dialtone8 ------------------------------
     //width: calc(100% + calc(var(--dt-size-500) - var(--dt-size-100)));
     //max-width: calc(var(--dt-size-925) + var(--dt-size-400));
@@ -237,7 +236,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
-
+      width: calc(var(--size32) + var(--size4));
+      height: calc(var(--size32) + var(--size4));
       margin: 0;
       padding: 0;
       background: none;
@@ -245,8 +245,6 @@
       border-radius: 50%;
       outline: none;
       cursor: pointer;
-      width: 36px;
-      height: 36px;
       //dialtone8 ------------------------------
       //width: calc(var(--dt-size-600) + var(--dt-size-300));
       //height: calc(var(--dt-size-600) + var(--dt-size-300));
@@ -270,7 +268,7 @@
     position: relative;
     z-index: 1;
     margin: var(--su16) var(--su24) 0 var(--su16);
-    background-color: #FFFFFF;
+    background-color: #FFF;
     //dialtone8 ------------------------------
     //margin: var(--su16) var(--su24) 0 var(--su16);
     //background-color: var(--dt-color-surface-primary);
@@ -288,10 +286,10 @@
 
   &__data {
     display: flex;
+    gap: var(--size1);
     align-items: center;
     width: 100%;
-    max-width: 290px;
-    gap: 10px;
+    max-width: calc(var(--size264) + var(--size24) + var(--size2));
     //dialtone8 ------------------------------
     //max-width: calc(var(--dt-size-905) + var(--dt-size-550) + var(--dt-size-200));
     //gap: var(--dt-size-100);
