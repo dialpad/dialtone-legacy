@@ -14,30 +14,41 @@
   flex-direction: column;
   // fixed with to achieve accessibility in keyboard (372px)
   // with this width we have 9 emoji per row
-  width: calc(var(--dt-size-925) + var(--dt-size-600) + var(--dt-size-400));
+  width: 372px;
   height: 100%;
-  background-color: var(--dt-color-surface-primary);
-  border-radius: var(--dt-size-300);
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  //dialtone8 ------------------------------
+  //width: calc(var(--dt-size-925) + var(--dt-size-600) + var(--dt-size-400));
+  //background-color: var(--dt-color-surface-primary);
+  //border-radius: var(--dt-size-300);
 
   &--header {
     position: relative;
-    padding: var(--dt-space-300) var(--dt-space-300) 0 var(--dt-space-400);
+    padding: var(--su4) var(--su4) 0 var(--su8);
+    //dialtone8 ------------------------------
+    //padding: var(--dt-space-300) var(--dt-space-300) 0 var(--dt-space-400);
 
     &::after {
       position: absolute;
       right: 0;
       bottom: 0;
       left: 0;
-      height: var(--dt-size-100);
+      height: 1px;
       background-color: var(--bgc-moderate) !important;
+      //dialtone8 ------------------------------
+      //height: var(--dt-size-100);
       content: '';
     }
   }
 
   &__alignment {
     width: auto;
-    max-width: calc(var(--dt-size-925) + var(--dt-size-400));
-    margin: 0 var(--dt-size-500);
+    max-width: 340px;
+    margin: 0 16px;
+    //dialtone8 ------------------------------
+    //max-width: calc(var(--dt-size-925) + var(--dt-size-400));
+    //margin: 0 var(--dt-size-500);
   }
 
   &--footer {
@@ -45,25 +56,38 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: calc(var(--dt-size-650) + var(--dt-size-400) + var(--dt-size-200));
-    padding: 0 var(--dt-size-500);
-    background: var(--dt-color-surface-secondary);
-    border-top: var(--dt-size-100) solid var(--bc-subtle);
+    height: 58px;
+    background: #F9F9F9;
+    border-top: 1px solid var(--bc-subtle);
+    padding: 0 16px;
+    //dialtone8 ------------------------------
+    //height: calc(var(--dt-size-650) + var(--dt-size-400) + var(--dt-size-200));
+    //background: var(--dt-color-surface-secondary);
+    //border-top: var(--dt-size-100) solid var(--bc-subtle);
+    //padding: 0 var(--dt-size-500);
   }
 
   &__tabset-list {
-      gap: var(--dt-size-300);
+      gap: 4px;
+      //dialtone8 ------------------------------
+      //gap: var(--dt-size-300);
 
       &::after {
-        background-color: var(--dt-color-surface-moderate) !important;
+        background-color: var(--black-200) !important;
+        //dialtone8 ------------------------------
+        //background-color: var(--dt-color-surface-moderate) !important;
       }
 
       button {
-        padding: var(--dt-size-400);
+        padding: var(--space-400);
+        //dialtone8 ------------------------------
+        //padding: var(--dt-size-400);
 
         &.d-tab--selected {
           &::after {
-            height: var(--dt-size-200);
+            height: var(--size-200);
+            //dialtone8 ------------------------------
+            //height: var(--dt-size-200);
           }
         }
     }
@@ -72,31 +96,45 @@
   &__skin-list {
     display: inline-flex;
     flex-direction: row;
-    gap: var(--dt-size-300);
     align-items: flex-start;
-    padding: var(--dt-size-300);
     background: rgba(0, 0, 0, 0.05);
-    border-radius: calc(var(--dt-size-600) + var(--dt-size-400));
+    border-radius: 40px;
+    gap: 4px;
+    padding: 4px;
+    //dialtone8 ------------------------------
+    //border-radius: calc(var(--dt-size-600) + var(--dt-size-400));
+    //gap: var(--dt-size-300);
+    //padding: var(--dt-size-300);
 
     button {
-      width: calc(var(--dt-size-600) + var(--dt-size-200));
-      height: calc(var(--dt-size-600) + var(--dt-size-200));
       margin: 0;
       padding: 0;
       background: none;
       border: none;
-      border-radius: calc(var(--dt-size-550) + var(--dt-size-300));
       outline: none;
       cursor: pointer;
+      width: 34px;
+      height: 34px;
+      border-radius: 28px;
+      //dialtone8 ------------------------------
+      //width: calc(var(--dt-size-600) + var(--dt-size-200));
+      //height: calc(var(--dt-size-600) + var(--dt-size-200));
+      //border-radius: calc(var(--dt-size-550) + var(--dt-size-300));
+
 
       &:hover {
         background: rgba(0, 0, 0, 0.1);
-        border-radius: calc(var(--dt-size-550) + var(--dt-size-300));
+        border-radius: 28px;
+        //dialtone8 ------------------------------
+        //border-radius: calc(var(--dt-size-550) + var(--dt-size-300));
       }
 
       &.selected {
-        border: var(--dt-size-100) solid rgba(0, 0, 0, 0.25);
-        border-radius: calc(var(--dt-size-550) + var(--dt-size-300));
+        border: 1px solid rgba(0, 0, 0, 0.25);
+        border-radius: 28px;
+        //dialtone8 ------------------------------
+        //border: var(--dt-size-100) solid rgba(0, 0, 0, 0.25);
+        //border-radius: calc(var(--dt-size-550) + var(--dt-size-300));
       }
     }
   }
@@ -104,30 +142,43 @@
   &__skin-selected {
     button {
       display: inline-block;
-      width: var(--dt-size-625);
-      height: var(--dt-size-625);
+
       margin: 0;
-      padding: calc(var(--dt-size-350) + var(--dt-size-100));
       background: rgba(0, 0, 0, 0.1);
       border: none;
-      border-radius: calc(var(--dt-size-550) + var(--dt-size-300));
       outline: none;
       cursor: pointer;
+      width: 42px;
+      height: 42px;
+      padding: 7px;
+      border-radius: 28px;
+      //dialtone8 ------------------------------
+      //width: var(--dt-size-625);
+      //height: var(--dt-size-625);
+      //padding: calc(var(--dt-size-350) + var(--dt-size-100));
+      //border-radius: calc(var(--dt-size-550) + var(--dt-size-300));
 
       &:hover {
-        background: var(--dt-color-surface-bold);
+        background: #D2D2D2;
+        //dialtone8 ------------------------------
+        //background: var(--dt-color-surface-bold);
       }
     }
   }
 
   &__selector {
-    min-height: calc(var(--dt-size-905) + var(--dt-size-600) + var(--dt-size-100));
+    min-height: 297px;
+    //dialtone8 ------------------------------
+    //min-height: calc(var(--dt-size-905) + var(--dt-size-600) + var(--dt-size-100));
 
     p {
-      margin-bottom: var(--dt-size-300);
       font-weight: 700;
-      font-size: var(--dt-size-450);
       letter-spacing: -0.01em;
+      margin-bottom: 4px;
+      font-size: 12px;
+      //dialtone8 ------------------------------
+      //margin-bottom: var(--dt-size-300);
+      //font-size: var(--dt-size-450);
     }
   }
 
@@ -135,44 +186,58 @@
     position: sticky;
     top: 0;
     width: 100%;
-    padding-top: var(--dt-size-525);
-    background: var(--dt-color-surface-secondary);
+    padding-top: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    //dialtone8 ------------------------------
+    //padding-top: var(--dt-size-525);
+    //background: var(--dt-color-surface-secondary);
   }
 
   &__list {
     position: relative;
     height: 100%;
-    max-height: calc(var(--dt-size-905) + var(--dt-size-600) + var(--dt-size-100));
-    padding-bottom: calc(var(--dt-size-300) + var(--dt-size-100));
     overflow-x: hidden;
     overflow-y: auto;
+    max-height: 297px;
+    padding-bottom: 5px;
+    //dialtone8 ------------------------------
+    //max-height: calc(var(--dt-size-905) + var(--dt-size-600) + var(--dt-size-100));
+    //padding-bottom: calc(var(--dt-size-300) + var(--dt-size-100));
 
     div:not(:first-child) {
       p {
-        margin-top: calc(var(--dt-size-525) + var(--dt-size-200));
+        margin-top: 22px;
+        //dialtone8 ------------------------------
+        //margin-top: calc(var(--dt-size-525) + var(--dt-size-200));
       }
     }
   }
 
   &__search-label {
-    margin-top: calc(var(--dt-size-525));
+    margin-top: 20px;
+    //dialtone8 ------------------------------
+    //margin-top: calc(var(--dt-size-525));
   }
 
   &__tab {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--dt-size-200);
-    width: calc(100% + calc(var(--dt-size-500) - var(--dt-size-100)));
-    max-width: calc(var(--dt-size-925) + var(--dt-size-400));
+    width: calc(100% + 15px);
+    max-width: 340px;
+    gap: 2px;
     // We use this margin left to align the emoji list with the tabset label
-    margin-left: var(--dt-size-350-negative);
+    margin-left: -6px;
+    //dialtone8 ------------------------------
+    //width: calc(100% + calc(var(--dt-size-500) - var(--dt-size-100)));
+    //max-width: calc(var(--dt-size-925) + var(--dt-size-400));
+    //gap: var(--dt-size-200);
+    //margin-left: var(--dt-size-350-negative);
 
     button {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: calc(var(--dt-size-600) + var(--dt-size-300));
-      height: calc(var(--dt-size-600) + var(--dt-size-300));
+
       margin: 0;
       padding: 0;
       background: none;
@@ -180,6 +245,11 @@
       border-radius: 50%;
       outline: none;
       cursor: pointer;
+      width: 36px;
+      height: 36px;
+      //dialtone8 ------------------------------
+      //width: calc(var(--dt-size-600) + var(--dt-size-300));
+      //height: calc(var(--dt-size-600) + var(--dt-size-300));
 
       &:hover,
       &:active {
@@ -200,7 +270,10 @@
     position: relative;
     z-index: 1;
     margin: var(--su16) var(--su24) 0 var(--su16);
-    background-color: var(--dt-color-surface-primary);
+    background-color: #FFFFFF;
+    //dialtone8 ------------------------------
+    //margin: var(--su16) var(--su24) 0 var(--su16);
+    //background-color: var(--dt-color-surface-primary);
   }
 
   &__search-button {
@@ -215,9 +288,12 @@
 
   &__data {
     display: flex;
-    gap: var(--dt-size-100);
     align-items: center;
     width: 100%;
-    max-width: calc(var(--dt-size-905) + var(--dt-size-550) + var(--dt-size-200));
+    max-width: 290px;
+    gap: 10px;
+    //dialtone8 ------------------------------
+    //max-width: calc(var(--dt-size-905) + var(--dt-size-550) + var(--dt-size-200));
+    //gap: var(--dt-size-100);
   }
 }
