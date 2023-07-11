@@ -60,7 +60,7 @@ Until we are done with the migrations, we must release all changes made on the `
 2. release the staging-vue3 branch using our regular process.
 3. either cherry-pick individual commits or merge staging into branch `dialtone8-vue3`.
 4. in `dialtone8-vue3` branch run `npm run release`
-5. checkout the `next-vue3` branch and merge `dialtone8-vue` branch via `git merge dialtone8-vue3 --ff-only`
+5. checkout the `next-vue3` branch and merge `dialtone8-vue3` branch via `git merge dialtone8-vue3 --ff-only`
 6. push the branch and the github action to deploy it will trigger
 
 ## External committers
