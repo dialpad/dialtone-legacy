@@ -1,3 +1,10 @@
+# [7.30.0](https://github.com/dialpad/dialtone/compare/v7.29.0...v7.30.0) (2023-07-11)
+
+
+### Features
+
+* **Item Layout:** add component ([#917](https://github.com/dialpad/dialtone/issues/917)) ([52c36d3](https://github.com/dialpad/dialtone/commit/52c36d3ec1fbe46f19f72f17b080ec9f188161d3))
+
 # [7.29.0](https://github.com/dialpad/dialtone/compare/v7.28.0...v7.29.0) (2023-07-11)
 
 
