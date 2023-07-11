@@ -1,3 +1,10 @@
+# [7.29.0](https://github.com/dialpad/dialtone/compare/v7.28.0...v7.29.0) (2023-07-11)
+
+
+### Features
+
+* **Emoji Picker, Datepicker:** revert style migration from dialtone8 ([#921](https://github.com/dialpad/dialtone/issues/921)) ([3f6dca2](https://github.com/dialpad/dialtone/commit/3f6dca2b716bd74c692aa666836e69394370453a))
+
 # [7.28.0](https://github.com/dialpad/dialtone/compare/v7.27.2...v7.28.0) (2023-07-07)
 
 
