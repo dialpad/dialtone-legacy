@@ -1,3 +1,33 @@
+# [8.9.0-version8.1](https://github.com/dialpad/dialtone/compare/v8.8.0...v8.9.0-version8.1) (2023-07-11)
+
+
+### Bug Fixes
+
+* **Button:** set flex 1 auto on label ([#881](https://github.com/dialpad/dialtone/issues/881)) ([84ca378](https://github.com/dialpad/dialtone/commit/84ca3789420f95cd7a07e45e3c89b2a718664565))
+* **Colors:** missing important ([#922](https://github.com/dialpad/dialtone/issues/922)) ([152125f](https://github.com/dialpad/dialtone/commit/152125f99f3803e84c495b50247d43bdce90be10))
+* move yargs to deps, update tokens ([2daa975](https://github.com/dialpad/dialtone/commit/2daa975034b101d09394730b763c3183e3a2c085))
+* remove migration helper ([#896](https://github.com/dialpad/dialtone/issues/896)) ([0f7f037](https://github.com/dialpad/dialtone/commit/0f7f0376f977eb7e343346fd82eec4000bea7afe))
+* **Stack:** correct 600 gap ([#872](https://github.com/dialpad/dialtone/issues/872)) ([448d4d7](https://github.com/dialpad/dialtone/commit/448d4d758e0a2b3aca8d8d4008ee735f849b05b1))
+* update dialtone vue to correct version ([aa9c0ac](https://github.com/dialpad/dialtone/commit/aa9c0ac5710450655b4fb3279a2c3830654bb819))
+* update dialtone-vue ([6ce9004](https://github.com/dialpad/dialtone/commit/6ce900493db613701c3c534716b60ddd25d27777))
+
+
+### Documentation
+
+* update dialtone vue version ([6ce2b2d](https://github.com/dialpad/dialtone/commit/6ce2b2db3296dd4ddfa317d9d0b4305fe9bc52b9))
+* update dialtone-icons ([da9145a](https://github.com/dialpad/dialtone/commit/da9145af397aa972cc36a8f31244c428833090a7))
+* write blog post for new dialtone vue infra update ([#873](https://github.com/dialpad/dialtone/issues/873)) ([68f3526](https://github.com/dialpad/dialtone/commit/68f35264234dc0b737e970f84bc33f6d0b60fab8))
+
+
+### Features
+
+* **Avatar:** changed from gradient bg to variety of flat colors ([#874](https://github.com/dialpad/dialtone/issues/874)) ([eabc304](https://github.com/dialpad/dialtone/commit/eabc304bb5acdf203097bd48eb35168f43d889af))
+* **Datepicker:** datepicker doc and style migration ([#914](https://github.com/dialpad/dialtone/issues/914)) ([2146133](https://github.com/dialpad/dialtone/commit/2146133aae31bffe230f0fbcc2c78551a37fdbfa))
+* **Emoji Picker:** emoji-picker doc and style migration ([#916](https://github.com/dialpad/dialtone/issues/916)) ([87a31d8](https://github.com/dialpad/dialtone/commit/87a31d86006aaada26655a69b110fd31c9cc693f))
+* merge branch 'staging' into version8 ([dad27a3](https://github.com/dialpad/dialtone/commit/dad27a37e4b326657566b7a0e100058a329eb7dc))
+* **Scroller:** scroller doc ([#915](https://github.com/dialpad/dialtone/issues/915)) ([033f164](https://github.com/dialpad/dialtone/commit/033f164dbc93b000df8a94e7425dda1fb30d6408))
+* update dialtone dependencies ([#918](https://github.com/dialpad/dialtone/issues/918)) ([2909634](https://github.com/dialpad/dialtone/commit/2909634cd825eb8cdc0bb2d52782b6cef5e97e34))
+
 # [8.8.0-version8.1](https://github.com/dialpad/dialtone/compare/v8.7.0...v8.8.0-version8.1) (2023-07-05)
 
 
