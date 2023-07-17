@@ -1,3 +1,21 @@
+# [8.10.0-version8.1](https://github.com/dialpad/dialtone/compare/v8.9.0...v8.10.0-version8.1) (2023-07-17)
+
+
+### Bug Fixes
+
+* selected row color background ([#923](https://github.com/dialpad/dialtone/issues/923)) ([f33ee25](https://github.com/dialpad/dialtone/commit/f33ee256c7e18995a18551b8afbe95a41d7d852c))
+
+
+### Documentation
+
+* add documentation for temporary branch strategy ([#920](https://github.com/dialpad/dialtone/issues/920)) ([c887c32](https://github.com/dialpad/dialtone/commit/c887c32b38cacb099cdc6fa4cafbfe3eb9c50f28))
+
+
+### Features
+
+* **Emoji Picker, Datepicker:** revert style migration from dialtone8 ([#921](https://github.com/dialpad/dialtone/issues/921)) ([fbb93a8](https://github.com/dialpad/dialtone/commit/fbb93a861ef41fe7417b0810c6edbed06c009488))
+* **Item Layout:** add component ([#917](https://github.com/dialpad/dialtone/issues/917)) ([404d934](https://github.com/dialpad/dialtone/commit/404d934748349f88c94b58e07ff36e84b0fb871c))
+
 # [8.9.0-version8.1](https://github.com/dialpad/dialtone/compare/v8.8.0...v8.9.0-version8.1) (2023-07-11)
 
 
