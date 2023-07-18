@@ -315,6 +315,6 @@ module.exports = {
     drawer: 500,
     modal: 600,
     'modal-element': 650,
-    'zi-notification': 700,
+    notification: 700,
   },
 };
