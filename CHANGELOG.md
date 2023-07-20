@@ -1,3 +1,10 @@
+## [8.10.2-version8.1](https://github.com/dialpad/dialtone/compare/v8.10.1...v8.10.2-version8.1) (2023-07-20)
+
+
+### Bug Fixes
+
+* **Item Layout:** remove align-self from item layout ([f853952](https://github.com/dialpad/dialtone/commit/f853952f3c54c3589055e132b084ac5ff44edf34))
+
 ## [8.10.1-version8.1](https://github.com/dialpad/dialtone/compare/v8.10.0...v8.10.1-version8.1) (2023-07-20)
 
 
