@@ -1,3 +1,11 @@
+## [8.10.1-version8.1](https://github.com/dialpad/dialtone/compare/v8.10.0...v8.10.1-version8.1) (2023-07-20)
+
+
+### Bug Fixes
+
+* **Datepicker, Emoji Picker, Item Layout:** migrations to dialtone 8 ([#925](https://github.com/dialpad/dialtone/issues/925)) ([eee3501](https://github.com/dialpad/dialtone/commit/eee3501bcbe0960214220482f04dfc8757854281))
+* zi-notification ([#924](https://github.com/dialpad/dialtone/issues/924)) ([2cedb8e](https://github.com/dialpad/dialtone/commit/2cedb8e75b01cf4bcbf8a0263393240e2eae866f))
+
 # [8.10.0-version8.1](https://github.com/dialpad/dialtone/compare/v8.9.0...v8.10.0-version8.1) (2023-07-17)
 
 
