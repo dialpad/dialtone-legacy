@@ -12,43 +12,32 @@
 //  ----------------------------------------------------------------------------
 .d-emoji-picker {
   flex-direction: column;
-  // fixed with to achieve accessibility in keyboard (372px)
+  // fixed width to achieve accessibility in keyboard (372px)
   // with this width we have 9 emoji per row
-  width: calc(var(--size332) + var(--size32) + var(--size8));
+  width: calc(var(--dt-size-925) + var(--dt-size-600) + var(--dt-size-400));
   height: 100%;
-  background-color: #FFF;
-  border-radius: var(--size4);
-  //dialtone8 ------------------------------
-  //width: calc(var(--dt-size-925) + var(--dt-size-600) + var(--dt-size-400));
-  //background-color: var(--dt-color-surface-primary);
-  //border-radius: var(--dt-size-300);
+  background-color: var(--dt-color-surface-primary);
+  border-radius: var(--dt-size-300);
 
   &--header {
     position: relative;
-    padding: var(--su4) var(--su4) 0 var(--su8);
-    //dialtone8 ------------------------------
-    //padding: var(--dt-space-300) var(--dt-space-300) 0 var(--dt-space-400);
+    padding: var(--dt-space-300) var(--dt-space-300) 0 var(--dt-space-400);
 
     &::after {
       position: absolute;
       right: 0;
       bottom: 0;
       left: 0;
-      height: var(--size1);
-      background-color: var(--bgc-moderate) !important;
-      //dialtone8 ------------------------------
-      //height: var(--dt-size-100);
+      height: var(--dt-size-100);
+      background-color: var(--dt-color-surface-moderate) !important;
       content: '';
     }
   }
 
   &__alignment {
     width: auto;
-    max-width: calc(var(--size332) + var(--size8));
-    margin: 0 var(--size16);
-    //dialtone8 ------------------------------
-    //max-width: calc(var(--dt-size-925) + var(--dt-size-400));
-    //margin: 0 var(--dt-size-500);
+    max-width: calc(var(--dt-size-925) + var(--dt-size-400));
+    margin: 0 var(--dt-space-500);
   }
 
   &--footer {
@@ -56,38 +45,25 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: calc(var(--size48) + var(--size8) + var(--size2));
-    padding: 0 var(--size16);
-    background: #F9F9F9;
-    border-top: var(--size1) solid var(--bc-subtle);
-    //dialtone8 ------------------------------
-    //height: calc(var(--dt-size-650) + var(--dt-size-400) + var(--dt-size-200));
-    //padding: 0 var(--dt-size-500);
-    //background: var(--dt-color-surface-secondary);
-    //border-top: var(--dt-size-100) solid var(--bc-subtle);
+    height: calc(var(--dt-size-650) + var(--dt-size-400) + var(--dt-size-200));
+    padding: 0 var(--dt-space-500);
+    background: var(--dt-color-surface-secondary);
+    border-top: var(--dt-size-100) solid var(--dt-color-border-subtle);
   }
 
   &__tabset-list {
-      gap: var(--size4);
-      //dialtone8 ------------------------------
-      //gap: var(--dt-size-300);
+      gap: var(--dt-space-300);
 
       &::after {
-        background-color: var(--black-200) !important;
-        //dialtone8 ------------------------------
-        //background-color: var(--dt-color-surface-moderate) !important;
+        background-color: var(--dt-color-surface-moderate) !important;
       }
 
       button {
-        padding: var(--space-400);
-        //dialtone8 ------------------------------
-        //padding: var(--dt-size-400);
+        padding: var(--dt-space-400);
 
         &.d-tab--selected {
           &::after {
-            height: var(--size-200);
-            //dialtone8 ------------------------------
-            //height: var(--dt-size-200);
+            height: var(--dt-size-200);
           }
         }
     }
@@ -96,45 +72,31 @@
   &__skin-list {
     display: inline-flex;
     flex-direction: row;
-    gap: var(--size4);
+    gap: var(--dt-space-300);
     align-items: flex-start;
-    padding: var(--size4);
+    padding: var(--dt-space-300);
     background: rgba(0, 0, 0, 0.05);
-    border-radius: calc(var(--size32) + var(--size8));
-    //dialtone8 ------------------------------
-    //border-radius: calc(var(--dt-size-600) + var(--dt-size-400));
-    //gap: var(--dt-size-300);
-    //padding: var(--dt-size-300);
+    border-radius: calc(var(--dt-size-600) + var(--dt-size-400));
 
     button {
-      width: var(--size32);
-      height: var(--size32);
+      width: var(--dt-size-600);
+      height: var(--dt-size-600);
       margin: 0;
       padding: 0;
       background: none;
       border: none;
-      border-radius: calc(var(--size24) + var(--size4));
+      border-radius: calc(var(--dt-size-550) + var(--dt-size-300));
       outline: none;
       cursor: pointer;
-      //dialtone8 ------------------------------
-      //width: calc(var(--dt-size-600) + var(--dt-size-200));
-      //height: calc(var(--dt-size-600) + var(--dt-size-200));
-      //border-radius: calc(var(--dt-size-550) + var(--dt-size-300));
-
 
       &:hover {
         background: rgba(0, 0, 0, 0.1);
-        border-radius: calc(var(--size24) + var(--size4));
-        //dialtone8 ------------------------------
-        //border-radius: calc(var(--dt-size-550) + var(--dt-size-300));
+        border-radius: calc(var(--dt-size-550) + var(--dt-size-300));
       }
 
       &.selected {
-        border: var(--size1) solid rgba(0, 0, 0, 0.25);
-        border-radius: calc(var(--size24) + var(--size4));
-        //dialtone8 ------------------------------
-        //border: var(--dt-size-100) solid rgba(0, 0, 0, 0.25);
-        //border-radius: calc(var(--dt-size-550) + var(--dt-size-300));
+        border: var(--dt-size-100) solid rgba(0, 0, 0, 0.25);
+        border-radius: calc(var(--dt-size-550) + var(--dt-size-300));
       }
     }
   }
@@ -142,42 +104,30 @@
   &__skin-selected {
     button {
       display: inline-block;
-      width: var(--size42);
-      height: var(--size42);
+      width: var(--dt-size-625);
+      height: var(--dt-size-625);
       margin: 0;
-      padding: calc(var(--size6) + var(--size1));
+      padding: calc(var(--dt-space-350) + var(--dt-space-100));
       background: rgba(0, 0, 0, 0.1);
       border: none;
-      border-radius: calc(var(--size24) + var(--size4));
+      border-radius: calc(var(--dt-size-550) + var(--dt-size-300));
       outline: none;
       cursor: pointer;
-      //dialtone8 ------------------------------
-      //width: var(--dt-size-625);
-      //height: var(--dt-size-625);
-      //padding: calc(var(--dt-size-350) + var(--dt-size-100));
-      //border-radius: calc(var(--dt-size-550) + var(--dt-size-300));
 
       &:hover {
-        background: #D2D2D2;
-        //dialtone8 ------------------------------
-        //background: var(--dt-color-surface-bold);
+        background: var(--dt-color-surface-bold);
       }
     }
   }
 
   &__selector {
-    min-height: calc(var(--size264) + var(--size32) + var(--size1));
-    //dialtone8 ------------------------------
-    //min-height: calc(var(--dt-size-905) + var(--dt-size-600) + var(--dt-size-100));
+    min-height: calc(var(--dt-size-905) + var(--dt-size-600) + var(--dt-size-100));
 
     p {
-      margin-bottom: var(--size4);
+      margin-bottom: var(--dt-space-300);
       font-weight: 700;
-      font-size: var(--size12);
+      font-size: var(--dt-size-450);
       letter-spacing: -0.01em;
-      //dialtone8 ------------------------------
-      //margin-bottom: var(--dt-size-300);
-      //font-size: var(--dt-size-450);
     }
   }
 
@@ -185,59 +135,44 @@
     position: sticky;
     top: 0;
     width: 100%;
-    padding-top: var(--size20);
-    background: rgba(255, 255, 255, 0.9);
-    //dialtone8 ------------------------------
-    //padding-top: var(--dt-size-525);
-    //background: var(--dt-color-surface-secondary);
+    padding-top: var(--dt-space-525);
+    background: var(--dt-color-surface-secondary);
   }
 
   &__list {
     position: relative;
     height: 100%;
-    max-height: calc(var(--size264) + var(--size32) + var(--size1));
-    padding-bottom: calc(var(--size4) + var(--size1));
+    max-height: calc(var(--dt-size-905) + var(--dt-size-600) + var(--dt-size-100));
+    padding-bottom: calc(var(--dt-space-300) + var(--dt-space-100));
     overflow-x: hidden;
     overflow-y: auto;
-    //dialtone8 ------------------------------
-    //max-height: calc(var(--dt-size-905) + var(--dt-size-600) + var(--dt-size-100));
-    //padding-bottom: calc(var(--dt-size-300) + var(--dt-size-100));
 
     div:not(:first-child) {
       p {
-        margin-top: calc(var(--size20) + var(--size2));
-        //dialtone8 ------------------------------
-        //margin-top: calc(var(--dt-size-525) + var(--dt-size-200));
+        margin-top: calc(var(--dt-space-525) + var(--dt-space-200));
       }
     }
   }
 
   &__search-label {
-    margin-top: calc(var(--size20));
-    //dialtone8 ------------------------------
-    //margin-top: calc(var(--dt-size-525));
+    margin-top: calc(var(--dt-space-525));
   }
 
   &__tab {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--size2);
-    width: calc(100% + calc(var(--size16) - var(--size1)));
-    max-width: calc(var(--size332) + var(--size8));
+    gap: var(--dt-space-200);
+    width: calc(100% + calc(var(--dt-size-500) - var(--dt-size-100)));
+    max-width: calc(var(--dt-size-925) + var(--dt-size-400));
     // We use this margin left to align the emoji list with the tabset label
-    margin-left: var(--sun6);
-    //dialtone8 ------------------------------
-    //width: calc(100% + calc(var(--dt-size-500) - var(--dt-size-100)));
-    //max-width: calc(var(--dt-size-925) + var(--dt-size-400));
-    //gap: var(--dt-size-200);
-    //margin-left: var(--dt-size-350-negative);
+    margin-left: var(--dt-space-350-negative);
 
     button {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: calc(var(--size32) + var(--size4));
-      height: calc(var(--size32) + var(--size4));
+      width: calc(var(--dt-size-600) + var(--dt-size-300));
+      height: calc(var(--dt-size-600) + var(--dt-size-300));
       margin: 0;
       padding: 0;
       background: none;
@@ -245,9 +180,6 @@
       border-radius: 50%;
       outline: none;
       cursor: pointer;
-      //dialtone8 ------------------------------
-      //width: calc(var(--dt-size-600) + var(--dt-size-300));
-      //height: calc(var(--dt-size-600) + var(--dt-size-300));
 
       &:hover,
       &:active {
@@ -259,7 +191,7 @@
       }
 
       &:focus {
-        box-shadow: var(--bs-focus-ring);
+        box-shadow: var(--dt-shadow-focus);
       }
     }
   }
@@ -267,11 +199,8 @@
   &__search {
     position: relative;
     z-index: 1;
-    margin: var(--su16) var(--su24) 0 var(--su16);
-    background-color: #FFF;
-    //dialtone8 ------------------------------
-    //margin: var(--su16) var(--su24) 0 var(--su16);
-    //background-color: var(--dt-color-surface-primary);
+    margin: var(--dt-space-500) var(--dt-space-550) 0 var(--dt-space-500);
+    background-color: var(--dt-color-surface-primary);
   }
 
   &__search-button {
@@ -286,12 +215,9 @@
 
   &__data {
     display: flex;
-    gap: var(--size1);
+    gap: var(--dt-space-100);
     align-items: center;
     width: 100%;
-    max-width: calc(var(--size264) + var(--size24) + var(--size2));
-    //dialtone8 ------------------------------
-    //max-width: calc(var(--dt-size-905) + var(--dt-size-550) + var(--dt-size-200));
-    //gap: var(--dt-size-100);
+    max-width: calc(var(--dt-size-905) + var(--dt-size-550) + var(--dt-size-200));
   }
 }
