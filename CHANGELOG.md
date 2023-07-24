@@ -1,3 +1,10 @@
+## [8.10.4-version8.1](https://github.com/dialpad/dialtone/compare/v8.10.3...v8.10.4-version8.1) (2023-07-24)
+
+
+### Bug Fixes
+
+* make new dialtone util classes higher specificity ([#926](https://github.com/dialpad/dialtone/issues/926)) ([d082fe4](https://github.com/dialpad/dialtone/commit/d082fe4e3719b045d6be39281088c916e945db5d))
+
 ## [8.10.3-version8.1](https://github.com/dialpad/dialtone/compare/v8.10.2...v8.10.3-version8.1) (2023-07-24)
 
 
