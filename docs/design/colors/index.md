@@ -503,6 +503,15 @@ Background colors for default application UI surfaces. Surface colors are contai
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--dt-color-surface-contrast-opaque)</td>
       <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-contrast-opaque</td>
     </tr>
+    <tr>
+      <th scope="row" class="d-pr0"><div class="d-bar-circle d-w42 d-h42 d-bgc-backdrop"></div></th>
+      <th scope="row" class="d-lh-300">
+        Surface Backdrop
+        <div class="d-fw-normal d-fs-100">Modal Backdrop surface background color.</div>
+      </th>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">var(--dt-color-surface-backdrop)</td>
+      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">.d-bgc-backdrop</td>
+    </tr>
   </tbody>
   <tbody>
     <tr>
