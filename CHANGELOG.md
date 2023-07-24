@@ -1,3 +1,10 @@
+## [8.10.3-version8.1](https://github.com/dialpad/dialtone/compare/v8.10.2...v8.10.3-version8.1) (2023-07-24)
+
+
+### Code Refactoring
+
+* **Modal:** backdrop-color-background variable ([#927](https://github.com/dialpad/dialtone/issues/927)) ([fd3668d](https://github.com/dialpad/dialtone/commit/fd3668dcfdea717914bd3b9a24da0f0ead4d15b3))
+
 ## [8.10.2-version8.1](https://github.com/dialpad/dialtone/compare/v8.10.1...v8.10.2-version8.1) (2023-07-20)
 
 
