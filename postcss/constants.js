@@ -171,6 +171,7 @@ module.exports = {
       'strong',
       'contrast',
       'bold',
+      'backdrop',
       'success',
       'warning',
       'info',
