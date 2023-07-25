@@ -45,10 +45,10 @@ module.exports = {
     if (prefixRegex.test(selector)) {
       return selector;
     }
-    const hoverSelector = selector.replace('.', '.h\\:').concat(':hover');
-    const focusSelector = selector.replace('.', '.f\\:').concat(':focus');
-    const focusWithinSelector = selector.replace('.', '.f\\:').concat(':focus-within');
-    const focusVisibleSelector = selector.replace('.', '.fv\\:').concat(':focus-visible');
+    const hoverSelector = selector.replaceAll('.', '.h\\:').concat(':hover');
+    const focusSelector = selector.replaceAll('.', '.f\\:').concat(':focus');
+    const focusWithinSelector = selector.replaceAll('.', '.f\\:').concat(':focus-within');
+    const focusVisibleSelector = selector.replaceAll('.', '.fv\\:').concat(':focus-visible');
     return `${selector}, ${hoverSelector}, ${focusSelector}, ${focusWithinSelector}, ${focusVisibleSelector}`;
   },
 
