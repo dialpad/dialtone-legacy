@@ -1,3 +1,10 @@
+## [8.10.7-version8.1](https://github.com/dialpad/dialtone/compare/v8.10.6...v8.10.7-version8.1) (2023-07-27)
+
+
+### Bug Fixes
+
+* **Item Layout:** alignment issues ([4403c21](https://github.com/dialpad/dialtone/commit/4403c2164ff1922a5b82e76d913b277fce5858ad))
+
 ## [8.10.6-version8.1](https://github.com/dialpad/dialtone/compare/v8.10.5...v8.10.6-version8.1) (2023-07-27)
 
 
