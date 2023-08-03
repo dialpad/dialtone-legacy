@@ -1,3 +1,11 @@
+# [8.11.0-version8.1](https://github.com/dialpad/dialtone/compare/v8.10.7...v8.11.0-version8.1) (2023-08-03)
+
+
+### Features
+
+* postcss autoprefixer ([#931](https://github.com/dialpad/dialtone/issues/931)) ([70b84a9](https://github.com/dialpad/dialtone/commit/70b84a9f4a8d06161557b755b39b2ed01ae04f9d))
+* **Tabs:** adjusted bottom border color ([#930](https://github.com/dialpad/dialtone/issues/930)) ([85de9b8](https://github.com/dialpad/dialtone/commit/85de9b801100c2670083ca986ab7c17612791ad7))
+
 ## [8.10.7-version8.1](https://github.com/dialpad/dialtone/compare/v8.10.6...v8.10.7-version8.1) (2023-07-27)
 
 
