@@ -1,11 +1,12 @@
+import { useThemeData } from '@vuepress/plugin-theme-data/client';
 import { defineClientConfig } from '@vuepress/client';
 import Layout from './layouts/Layout.vue';
 import NotFound from './layouts/NotFound.vue';
 
 // CSS
-import '../../../lib/dist/css/dialtone.css';
+import './assets/css/dialtone.css';
 import './assets/less/dialtone-docs.less';
-import { useThemeData } from '@vuepress/plugin-theme-data/client';
+import './assets/less/dialtone-syntax.less';
 import '@/../node_modules/@dialpad/dialtone-vue/dist/style.css';
 
 export default defineClientConfig({
