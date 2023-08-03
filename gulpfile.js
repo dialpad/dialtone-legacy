@@ -66,6 +66,7 @@ const postCSSResponsify = settings.styles
   : null;
 const postCSSDialtoneGenerator = settings.styles ? require('./postcss/dialtone-generators') : null;
 const sourcemaps = require('gulp-sourcemaps');
+const autoprefixer = require('autoprefixer');
 
 //  @@ SVGS
 const path = settings.svgs ? require('path') : null;
@@ -213,6 +214,7 @@ const libStyles = function (done) {
     .pipe(less()) // compile less to css
     .pipe(replace('../../fonts/', '../fonts/'))
     .pipe(postCSS([postCSSDialtoneGenerator, postCSSResponsify]))
+    .pipe(postCSS([autoprefixer()]))
     .pipe(dest(paths.styles.outputLib))
     .pipe(postCSS([postCSSNano]))
     .pipe(rename({ suffix: '.min' }))
@@ -232,6 +234,7 @@ const libStylesDev = function (done) {
       return '../../build/less/' + sourcePath;
     }))
     .pipe(sourcemaps.write())
+    .pipe(postCSS([autoprefixer()]))
     .pipe(concat('dialtone.css')) // concat the css into a single file
     .pipe(dest(paths.styles.outputLib));
 };
