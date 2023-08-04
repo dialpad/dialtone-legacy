@@ -2,6 +2,7 @@ module.exports = {
   branches: [
     'production',
     'staging',
+    'legacy',
     {
       name: 'beta',
       prerelease: true,
