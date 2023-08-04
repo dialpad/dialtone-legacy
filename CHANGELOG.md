@@ -1,3 +1,10 @@
+## [8.12.1](https://github.com/dialpad/dialtone/compare/v8.12.0...v8.12.1) (2023-08-04)
+
+
+### Bug Fixes
+
+* update dialtone-tokens ([ae587f5](https://github.com/dialpad/dialtone/commit/ae587f5c98e11d176089f75167a60ef5d1489e1d))
+
 # [8.12.0](https://github.com/dialpad/dialtone/compare/v8.11.0...v8.12.0) (2023-08-04)
 
 
