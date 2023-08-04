@@ -1,3 +1,15 @@
+## [8.11.1-version8.1](https://github.com/dialpad/dialtone/compare/v8.11.0...v8.11.1-version8.1) (2023-08-04)
+
+
+### Bug Fixes
+
+* update dialtone-tokens ([82a190d](https://github.com/dialpad/dialtone/commit/82a190dd2b37d9f1434ab3586243e1a64701b055))
+
+
+### Documentation
+
+* communicate dialtone 8 release ([#932](https://github.com/dialpad/dialtone/issues/932)) ([575b0d3](https://github.com/dialpad/dialtone/commit/575b0d32374789ef557ebd5c27fe5705e64aebde))
+
 # [8.11.0-version8.1](https://github.com/dialpad/dialtone/compare/v8.10.7...v8.11.0-version8.1) (2023-08-03)
 
 
