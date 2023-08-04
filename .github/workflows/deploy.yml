@@ -52,17 +52,29 @@ jobs:
           folder: docs/.vuepress/dist
           target-folder: staging
 
-      - name: Build library and docsite (Version 8)
-        if: ${{ github.ref == 'refs/heads/version8' }}
-        run: npm run build:docsite -- --deploySubdir /version8/
+      - name: Build library and docsite (Next)
+        if: ${{ github.ref == 'refs/heads/next' }}
+        run: npm run build:docsite -- --deploySubdir /next/
 
-      - name: Deploy to GitHub Pages (Version 8)
-        if: ${{ github.ref == 'refs/heads/version8' }}
+      - name: Deploy to GitHub Pages (Next)
+        if: ${{ github.ref == 'refs/heads/next' }}
         uses: JamesIves/github-pages-deploy-action@v4.2.5
         with:
           branch: gh-pages
           folder: docs/.vuepress/dist
-          target-folder: version8
+          target-folder: next
+
+      - name: Build library and docsite (Legacy)
+        if: ${{ github.ref == 'refs/heads/legacy' }}
+        run: npm run build:docsite -- --deploySubdir /legacy/
+
+      - name: Deploy to GitHub Pages (Legacy)
+        if: ${{ github.ref == 'refs/heads/legacy' }}
+        uses: JamesIves/github-pages-deploy-action@v4.2.5
+        with:
+          branch: gh-pages
+          folder: docs/.vuepress/dist
+          target-folder: legacy
 
       - name: Build library and docsite
         if: ${{ github.ref == 'refs/heads/production' }}
