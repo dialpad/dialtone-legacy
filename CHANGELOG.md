@@ -1,3 +1,25 @@
+# [8.12.0](https://github.com/dialpad/dialtone/compare/v8.11.0...v8.12.0) (2023-08-04)
+
+
+### Bug Fixes
+
+* **Item Layout:** alignment issues ([2b53497](https://github.com/dialpad/dialtone/commit/2b5349779625672392906a28159b2bb7fcad6f7f))
+* **Item Layout:** alignment issues ([#929](https://github.com/dialpad/dialtone/issues/929)) ([fff80d3](https://github.com/dialpad/dialtone/commit/fff80d3a16250ce4f8c4a47f0e5d33991147e25d))
+* **Item Layout:** remove align-self from item layout ([ea8e79b](https://github.com/dialpad/dialtone/commit/ea8e79bccd8dcfa12b2cf4e3d7cf00987e6bee1e))
+* lock stylelint to 15.9.0 ([50f9d78](https://github.com/dialpad/dialtone/commit/50f9d78a0e68225f534d3a0b601b5ab0c046094a))
+
+
+### Documentation
+
+* add documentation for temporary branch strategy ([#920](https://github.com/dialpad/dialtone/issues/920)) ([5a9ca3c](https://github.com/dialpad/dialtone/commit/5a9ca3caf7566413bec82cfbde3f62e0c3c5e3ea))
+* communicate dialtone 8 release ([#932](https://github.com/dialpad/dialtone/issues/932)) ([575b0d3](https://github.com/dialpad/dialtone/commit/575b0d32374789ef557ebd5c27fe5705e64aebde))
+
+
+### Features
+
+* **Emoji Picker, Datepicker:** revert style migration from dialtone8 ([#921](https://github.com/dialpad/dialtone/issues/921)) ([3f6dca2](https://github.com/dialpad/dialtone/commit/3f6dca2b716bd74c692aa666836e69394370453a))
+* **Item Layout:** add component ([#917](https://github.com/dialpad/dialtone/issues/917)) ([52c36d3](https://github.com/dialpad/dialtone/commit/52c36d3ec1fbe46f19f72f17b080ec9f188161d3))
+
 # [8.11.0-version8.1](https://github.com/dialpad/dialtone/compare/v8.10.7...v8.11.0-version8.1) (2023-08-03)
 
 
