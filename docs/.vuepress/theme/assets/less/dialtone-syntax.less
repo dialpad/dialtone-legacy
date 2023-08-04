@@ -1,34 +1,52 @@
-/* PrismJS 1.20.0
-https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript+less&plugins=line-numbers+command-line */
 /**
- * prism.js default theme for JavaScript, CSS and HTML
+ * prism.js dialtone theme for JavaScript, CSS and HTML
  * Based on dabblet (http://dabblet.com)
- * @author Lea Verou
  */
+
+div[class*="language-"] {
+	margin: var(--dt-space-500) 0;
+	padding: var(--dt-space-400);
+	background-color: var(--dt-color-surface-contrast-opaque);
+	border-radius: var(--dt-size-500);
+
+	& pre {
+		margin: 0 !important;
+		padding: var(--dt-space-450) !important;
+
+		& code {
+			color: var(--dt-color-black-200) !important;
+			background-color: unset;
+		}
+	}
+
+	&[class*="html"] {
+		margin-top: var(--dt-space-400-negative) !important;
+		border-radius: 0 0 var(--dt-size-400) var(--dt-size-400) !important;
+	}
+}
+
+code {
+	padding: var(--dt-space-200) var(--dt-space-300);
+	color: var(--dt-color-purple-400);
+	background-color: var(--dt-color-purple-100);
+	border-radius: var(--dt-size-200);
+}
 
 code[class*="language-"],
 pre[class*="language-"] {
-    margin: 0;
-	color: var(--black-400);
-	background: none;
-    border-radius: 0.7rem;
-	font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace !important;
-	font-size: var(--fs-100);
-	text-align: left;
+	margin: 0;
+	color: var(--dt-color-black-400);
+	font-size: var(--dt-font-size-100);
+	font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace !important;
+	line-height: var(--dt-font-line-height-400);
 	white-space: pre;
-	word-spacing: normal;
-	word-break: normal;
+	text-align: left;
 	word-wrap: normal;
-	line-height: 1.666666667;
-
-	-moz-tab-size: 4;
-	-o-tab-size: 4;
+	word-break: normal;
+	word-spacing: normal;
 	tab-size: 4;
-
-	-webkit-hyphens: none;
-	-moz-hyphens: none;
-	-ms-hyphens: none;
 	hyphens: none;
+	border-radius: var(--dt-size-radius-400);
 }
 
 @media print {
@@ -40,18 +58,13 @@ pre[class*="language-"] {
 
 /* Code blocks */
 pre[class*="language-"] {
-	padding: 1em;
+	padding: var(--dt-space-100);
 	overflow: auto;
-}
-
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
-	background: inherit;
 }
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {
-	padding: .1em;
+	padding: var(--dt-space-100);
 	white-space: normal;
 }
 
@@ -59,15 +72,15 @@ pre[class*="language-"] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-	color: var(--black-500);
+	color: var(--dt-color-black-500);
 }
 
 .token.punctuation {
-	color: var(--purple-100);
+	color: var(--dt-color-purple-100);
 }
 
 .token.namespace {
-	opacity: .7;
+	opacity: var(--dt-opacity-900);
 }
 
 .token.property,
@@ -77,7 +90,7 @@ pre[class*="language-"] {
 .token.constant,
 .token.symbol,
 .token.deleted {
-	color: var(--purple-200);
+	color: var(--dt-color-purple-200);
 }
 
 .token.selector,
@@ -86,7 +99,7 @@ pre[class*="language-"] {
 .token.char,
 .token.builtin,
 .token.inserted {
-	color: var(--teal-200);
+	color: var(--dt-color-blue-300);
 }
 
 .token.operator,
@@ -94,30 +107,31 @@ pre[class*="language-"] {
 .token.url,
 .language-css .token.string,
 .style .token.string {
-	color: var(--gold-300);
+	color: var(--dt-color-gold-300);
 }
 
 .token.atrule,
 .token.attr-value,
 .token.keyword {
-	color: var(--green-100);
+	color: var(--dt-color-green-100);
 }
 
 .token.function,
 .token.class-name {
-	color: var(--red-100);
+	color: var(--dt-color-red-100);
 }
 
 .token.regex,
 .token.important,
 .token.variable {
-	color: var(--gold-200);
+	color: var(--dt-color-gold-200);
 }
 
 .token.important,
 .token.bold {
-	font-weight: bold;
+	font-weight: var(--dt-font-weight-bold);
 }
+
 .token.italic {
 	font-style: italic;
 }
@@ -128,7 +142,7 @@ pre[class*="language-"] {
 
 pre[class*="language-"].line-numbers {
 	position: relative;
-	padding-left: 3.8em;
+	padding-left: var(--dt-space-600);
 	counter-reset: linenumber;
 }
 
@@ -139,65 +153,59 @@ pre[class*="language-"].line-numbers > code {
 
 .line-numbers .line-numbers-rows {
 	position: absolute;
-	pointer-events: none;
 	top: 0;
+	left: var(--dt-space-negative-600);
+	width: var(--dt-size-600);
 	font-size: 100%;
-	left: -3.8em;
-	width: 3em; /* works for line-numbers below 1000 lines */
-	letter-spacing: -1px;
-	border-right: var(--size-100) solid var(--black-500);
-
+	letter-spacing: var(--dt-space-negative-100);
+	border-right: var(--dt-size-100) solid var(--dt-color-black-500);
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
-
+	pointer-events: none;
 }
 
-	.line-numbers-rows > span {
-		display: block;
-		counter-increment: linenumber;
-	}
+.line-numbers-rows > span {
+  display: block;
+  counter-increment: linenumber;
 
-		.line-numbers-rows > span:before {
-			content: counter(linenumber);
-			color: var(--black-500);
-			display: block;
-			padding-right: 0.8em;
-			text-align: right;
-		}
+  &::before {
+    display: block;
+    padding-right: var(--dt-space-400);
+    color: var(--dt-color-black-500);
+    text-align: right;
+    content: counter(linenumber);
+  }
+}
 
 .command-line-prompt {
-	border-right: var(--size-100) solid var(--black-500);
 	display: block;
 	float: left;
+	margin-right: var(--dt-space-negative-450);
 	font-size: 100%;
-	letter-spacing: -1px;
-	margin-right: 1em;
-	pointer-events: none;
-
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
+	letter-spacing: var(--dt-space-negative-100);
+	border-right: var(--dt-size-100) solid var(--dt-color-black-500);
 	user-select: none;
+	pointer-events: none;
 }
 
-.command-line-prompt > span:before {
-	color: var(--black-500);
-	content: ' ';
+.command-line-prompt > span::before {
 	display: block;
-	padding-right: 0.8em;
+	padding-right: var(--dt-space-400);
+	color: var(--dt-color-black-500);
+	content: ' ';
 }
 
-.command-line-prompt > span[data-user]:before {
+.command-line-prompt > span[data-user]::before {
 	content: "[" attr(data-user) "@" attr(data-host) "] $";
 }
 
-.command-line-prompt > span[data-user="root"]:before {
+.command-line-prompt > span[data-user="root"]::before {
 	content: "[" attr(data-user) "@" attr(data-host) "] #";
 }
 
-.command-line-prompt > span[data-prompt]:before {
+.command-line-prompt > span[data-prompt]::before {
 	content: attr(data-prompt);
 }
 

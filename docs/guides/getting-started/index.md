@@ -5,7 +5,7 @@ description: A quick start guide to add Dialtone to your project.
 
 ## Adding Dialtone to your project
 
-To take advantage of Dialtone's customizations, classes, and variables in your project, you will want to install Dialtone via <a href="https://www.npmjs.com/" target="_blank">npm</a>.
+To take advantage of Dialtone's customizations, classes, and variables in your project, you will want to install Dialtone via [npm](https://www.npmjs.com/).
 
 ```bash
 npm install @dialpad/dialtone
@@ -83,7 +83,7 @@ In the event you need to write CSS, use [BEM (Block Element Modifier)](http://ge
 ```less
 .card {
   // Local CSS Custom Properties
-  --card-color-background: var(--bgc-primary);
+  --card-color-background: var(--dt-color-surface-primary);
 
   // Default block styles
   display: flex;
@@ -92,21 +92,21 @@ In the event you need to write CSS, use [BEM (Block Element Modifier)](http://ge
 
   // Modifier for block
   &--featured {
-    --card-color-background: var(--bgc-info);
+    --card-color-background: var(--dt-color-surface-info);
   }
 
   // Elements within block
   &__header {
-    padding: var(--space-500);
+    padding: var(--dt-space-500);
   }
 
   &__body {
     flex-grow: 1;
-    padding: var(--space-500);
+    padding: var(--dt-space-500);
   }
 
   &__footer {
-    padding: var(--space-500);
+    padding: var(--dt-space-500);
   }
 }
 ```

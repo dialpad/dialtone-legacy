@@ -1,5 +1,3 @@
-//@import (reference) '../utilities/spacing.less';
-
 //
 //  DIALTONE
 //  COMPONENTS: BANNERS
@@ -15,14 +13,14 @@
 .d-banner {
     //  Component CSS Vars
     //  ------------------------------------------------------------------------
-    --banner-color-background: var(--bgc-secondary);
-    --banner-color-text: var(--fc-primary);
+    --banner-color-background: var(--dt-color-surface-secondary);
+    --banner-color-text: var(--dt-color-foreground-primary);
     --notice-color-icon: var(--toast-color-text);
-    --banner-color-border: var(--bc-subtle);
-    --banner-font-size: var(--fs-200);
-    --banner-line-height: var(--lh-200);
-    --banner-dialog-padding-y: var(--space-400);
-    --banner-dialog-padding-x: var(--space-500);
+    --banner-color-border: var(--dt-color-border-subtle);
+    --banner-font-size: var(--dt-font-size-200);
+    --banner-line-height: var(--dt-font-line-height-200);
+    --banner-dialog-padding-y: var(--dt-space-400);
+    --banner-dialog-padding-x: var(--dt-space-500);
 
     position: fixed;
     top: 0;
@@ -32,7 +30,7 @@
     display: flex;
     box-sizing: border-box;
     width: 100%;
-    min-height: var(--size-650); // 48
+    min-height: var(--dt-size-650); // 48
     color: var(--banner-color-text);
     font-size: var(--banner-font-size);
     line-height: var(--banner-line-height);
@@ -43,7 +41,7 @@
 
     // If you want to hide and reveal the banner
     &[aria-hidden='true'] {
-        --topbar-height: var(--size-650);
+        --topbar-height: var(--dt-size-650);
 
         visibility: hidden;
         opacity: 0;
@@ -80,7 +78,7 @@
 
     .d-notice__content {
         flex-direction: row;
-        gap: var(--space-300);
+        gap: var(--dt-space-300);
         align-items: baseline;
     }
 }
@@ -91,52 +89,52 @@
 //  $$  DEFAULT IMPORTANT
 //  ----------------------------------------------------------------------------
 .d-banner.d-banner--important {
-    --banner-color-background: var(--bgc-strong);
-    --banner-color-text: var(--fc-primary-inverted);
-    --notice-color-icon: var(--fc-primary-inverted);
+    --banner-color-background: var(--dt-color-surface-strong);
+    --banner-color-text: var(--dt-color-foreground-primary-inverted);
+    --notice-color-icon: var(--dt-color-foreground-primary-inverted);
     --banner-color-border: transparent;
 }
 
 //  $$  ERROR
 //  ----------------------------------------------------------------------------
 .d-banner--error {
-    --banner-color-background: var(--bgc-critical);
+    --banner-color-background: var(--dt-color-surface-critical);
 
     &.d-banner--important {
-        --banner-color-background: var(--bgc-critical-strong);
-        --banner-color-text: var(--fc-primary-inverted);
+        --banner-color-background: var(--dt-color-surface-critical-strong);
+        --banner-color-text: var(--dt-color-foreground-primary-inverted);
     }
 }
 
 //  $$  INFO
 //  ----------------------------------------------------------------------------
 .d-banner--info {
-    --banner-color-background: var(--bgc-info);
+    --banner-color-background: var(--dt-color-surface-info);
 
     &.d-banner--important {
-        --banner-color-background: var(--bgc-info-strong);
-        --banner-color-text: var(--fc-primary-inverted);
+        --banner-color-background: var(--dt-color-surface-info-strong);
+        --banner-color-text: var(--dt-color-foreground-primary-inverted);
     }
 }
 
 //  $$  SUCCESS
 //  ----------------------------------------------------------------------------
 .d-banner--success {
-    --banner-color-background: var(--bgc-success);
+    --banner-color-background: var(--dt-color-surface-success);
 
     &.d-banner--important {
-        --banner-color-background: var(--bgc-success-strong);
-        --banner-color-text: var(--fc-primary-inverted);
+        --banner-color-background: var(--dt-color-surface-success-strong);
+        --banner-color-text: var(--dt-color-foreground-primary-inverted);
     }
 }
 
 //  $$  WARNING
 //  ----------------------------------------------------------------------------
 .d-banner--warning {
-    --banner-color-background: var(--bgc-warning);
+    --banner-color-background: var(--dt-color-surface-warning);
 
     &.d-banner--important {
-        --banner-color-background: var(--gold-200);
-        --banner-color-text: var(--fc-primary);
+        --banner-color-background: var(--dt-color-gold-200);
+        --banner-color-text: var(--dt-color-foreground-primary);
     }
 }

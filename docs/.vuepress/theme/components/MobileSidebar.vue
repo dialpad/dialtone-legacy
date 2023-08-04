@@ -94,7 +94,7 @@ function toggleSiteNav () {
   }
 
   .mobile-header-drop-down-navigation {
-    top: var(--su128);
+    top: var(--dt-space-800);
     height: 100%;
     padding-bottom: 15.2rem;
 

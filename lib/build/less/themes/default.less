@@ -1,13 +1,3 @@
-//@import (reference) '../variables/colors.less';
-//@import (reference) '../variables/layout.less';
-//@import (reference) '../variables/borders.less';
-//@import (reference) '../variables/visual-styles.less';
-//@import (reference) '../variables/icons.less';
-//@import (reference) '../variables/sizes.less';
-//@import (reference) '../variables/typography.less';
-//@import (reference) '../utilities/internals.less';
-//@import (reference) '../utilities/grid.less';
-
 //
 //  DIALTONE
 //  THEME VARIABLES
@@ -34,48 +24,49 @@
 
 
 @theme-vars: {
-    primary-color-h:                        var(--purple-400-h);
-    primary-color-s:                        var(--purple-400-s);
-    primary-color-l:                        var(--purple-400-l);
+    primary-color-h:                        var(--dt-color-purple-400-h);
+    primary-color-s:                        var(--dt-color-purple-400-s);
+    primary-color-l:                        var(--dt-color-purple-400-l);
     primary-color-hsl:                      var(--primary-color-h) var(--primary-color-s) var(--primary-color-l);
     primary-color:                          hsl(var(--primary-color-h) var(--primary-color-s) var(--primary-color-l));
     primary-color-hover:                    hsl(var(--primary-color-h) var(--primary-color-s) calc(var(--primary-color-l) - 10%));
-    nav-background-color-h:                 var(--purple-600-h);
-    nav-background-color-s:                 var(--purple-600-s);
-    nav-background-color-l:                 var(--purple-600-l);
+    nav-background-color-h:                 var(--dt-color-purple-600-h);
+    nav-background-color-s:                 var(--dt-color-purple-600-s);
+    nav-background-color-l:                 var(--dt-color-purple-600-l);
     nav-background-color:                   hsl(var(--nav-background-color-h) var(--nav-background-color-s) var(--nav-background-color-l));
 
-    topbar-height:                                    var(--size-700);
+    topbar-height:                                    var(--dt-size-700);
 
-    base--font-size:                                  var(--fs-200);
-    base--font-family:                                @ff-custom;
-    base--line-height:                                var(--lh-300);
+    base--font-size:                                  var(--dt-font-size-200);
+    base--font-family:                                var(--dt-font-family-body);
+    base--line-height:                                var(--dt-font-line-height-300);
     base--corner-radius:                              0.25em; // TODO: unused. deprecate or...?
 
     theme-topbar-color:                               hsl(var(--theme-topbar-color-hsl));
-    theme-topbar-color-hsl:                           var(--black-900-h) var(--black-900-s) var(--black-900-l); // Use with d-fco[##] Opacity utility
-    theme-topbar-color-background:                    var(--bgc-secondary);
+    theme-topbar-color-hsl:                           var(--dt-color-black-900-h) var(--dt-color-black-900-s) var(--dt-color-black-900-l); // Use with d-fco[##] Opacity utility
+    theme-topbar-color-background:                    var(--dt-color-surface-secondary);
 
-    theme-sidebar-color:                              var(--fc-primary);
-    theme-sidebar-color-hsl:                          var(--black-900-h) var(--black-900-s) var(--black-900-l);
-    theme-sidebar-color-background:                   var(--bgc-secondary);
+    theme-sidebar-color:                              var(--dt-color-foreground-primary);
+    theme-sidebar-color-hsl:                          var(--dt-color-black-900-h) var(--dt-color-black-900-s) var(--dt-color-black-900-l);
+    theme-sidebar-color-background:                   var(--dt-color-surface-secondary);
 
-    theme-sidebar-icon-color:                         var(--fc-secondary);
-    theme-sidebar-status-color:                       var(--fc-tertiary);
+    theme-sidebar-icon-color:                         var(--dt-color-foreground-secondary);
+    theme-sidebar-status-color:                       var(--dt-color-foreground-tertiary);
 
     theme-sidebar-row-color-background:               transparent;
-    theme-sidebar-row-color-background-hover:         hsla(var(--black-900-hsl) / 0.1);
-    theme-sidebar-row-color-background-active:        var(--black-300);
-    theme-sidebar-selected-row-color:                 var(--fc-primary);
-    theme-sidebar-selected-row-color-hsl:             var(--black-900-h) var(--black-900-s) var(--black-900-l); // Use with d-fco[##] Opacity utility
-    theme-sidebar-selected-row-color-background:      var(--black-200);
+    theme-sidebar-row-color-background-hover:         hsla(var(--dt-color-black-900-hsl) / 0.1);
+    theme-sidebar-row-color-background-active:        var(--dt-color-black-300);
 
-    theme-presence-color-background-available:        var(--green-400);
-    theme-presence-color-background-busy-unavailable: var(--red-300);
-    theme-presence-color-background-busy:             var(--gold-300);
+    theme-sidebar-selected-row-color:                 var(--dt-color-foreground-primary);
+    theme-sidebar-selected-row-color-hsl:             var(--dt-color-black-900-h) var(--dt-color-black-900-s) var(--dt-color-black-900-l); // Use with d-fco[##] Opacity utility
+    theme-sidebar-selected-row-color-background:      var(--dt-color-surface-moderate-opaque);
 
-    theme-mention-color-background:                   var(--purple-400);
-    theme-mention-color-foreground:                   var(--white);
+    theme-presence-color-background-available:        var(--dt-color-green-400);
+    theme-presence-color-background-busy-unavailable: var(--dt-color-red-300);
+    theme-presence-color-background-busy:             var(--dt-color-gold-300);
+
+    theme-mention-color-background:                   var(--dt-color-purple-400);
+    theme-mention-color-foreground:                   var(--dt-color-neutral-white);
 }
 
 //  ============================================================================
@@ -117,140 +108,12 @@ body {
     --bco: 100%;                // Border color opacity
     --fco: 100%;                // Font color opacity
 
-    //  All the light colored HSL vars
-    #d-internals #color-vars(white, @white);
-    #d-internals #color-vars(black-100, @black-100);
-    #d-internals #color-vars(black-200, @black-200);
-    #d-internals #color-vars(black-300, @black-300);
-    #d-internals #color-vars(black-400, @black-400);
-    #d-internals #color-vars(black-500, @black-500);
-    #d-internals #color-vars(black-600, @black-600);
-    #d-internals #color-vars(black-700, @black-700);
-    #d-internals #color-vars(black-800, @black-800);
-    #d-internals #color-vars(black-900, @black-900);
-    #d-internals #color-vars(purple-100, @purple-100);
-    #d-internals #color-vars(purple-200, @purple-200);
-    #d-internals #color-vars(purple-300, @purple-300);
-    #d-internals #color-vars(purple-400, @purple-400);
-    #d-internals #color-vars(purple-500, @purple-500);
-    #d-internals #color-vars(purple-600, @purple-600);
-    #d-internals #color-vars(orange-100, @orange-100);
-    #d-internals #color-vars(orange-200, @orange-200);
-    #d-internals #color-vars(orange-300, @orange-300);
-    #d-internals #color-vars(orange-400, @orange-400);
-    #d-internals #color-vars(orange-500, @orange-500);
-    #d-internals #color-vars(orange-600, @orange-600);
-    #d-internals #color-vars(magenta-100, @magenta-100);
-    #d-internals #color-vars(magenta-200, @magenta-200);
-    #d-internals #color-vars(magenta-300, @magenta-300);
-    #d-internals #color-vars(magenta-400, @magenta-400);
-    #d-internals #color-vars(magenta-500, @magenta-500);
-    #d-internals #color-vars(gold-100, @gold-100);
-    #d-internals #color-vars(gold-200, @gold-200);
-    #d-internals #color-vars(gold-300, @gold-300);
-    #d-internals #color-vars(gold-400, @gold-400);
-    #d-internals #color-vars(gold-500, @gold-500);
-    #d-internals #color-vars(green-100, @green-100);
-    #d-internals #color-vars(green-200, @green-200);
-    #d-internals #color-vars(green-300, @green-300);
-    #d-internals #color-vars(green-400, @green-400);
-    #d-internals #color-vars(green-500, @green-500);
-    #d-internals #color-vars(red-100, @red-100);
-    #d-internals #color-vars(red-200, @red-200);
-    #d-internals #color-vars(red-300, @red-300);
-    #d-internals #color-vars(red-400, @red-400);
-    #d-internals #color-vars(red-500, @red-500);
-    #d-internals #color-vars(blue-100, @blue-100);
-    #d-internals #color-vars(blue-200, @blue-200);
-    #d-internals #color-vars(blue-300, @blue-300);
-    #d-internals #color-vars(blue-400, @blue-400);
-    #d-internals #color-vars(blue-500, @blue-500);
-    #d-internals #color-vars(tan-100, @tan-100);
-    #d-internals #color-vars(tan-200, @tan-200);
-    #d-internals #color-vars(tan-300, @tan-300);
-    #d-internals #color-vars(tan-400, @tan-400);
-    #d-internals #color-vars(tan-500, @tan-500);
-
-    //  All the dark colored HSL vars
-    &.theme-dark {
-        //  All the light colored HSL vars
-        #d-internals #color-vars(white, @black-900);
-        #d-internals #color-vars(black-100, @black-800);
-        #d-internals #color-vars(black-200, @black-700);
-        #d-internals #color-vars(black-300, @black-600);
-        #d-internals #color-vars(black-400, @black-500);
-        #d-internals #color-vars(black-500, @black-400);
-        #d-internals #color-vars(black-600, @black-300);
-        #d-internals #color-vars(black-700, @black-200);
-        #d-internals #color-vars(black-800, @black-100);
-        #d-internals #color-vars(black-900, @white);
-        #d-internals #color-vars(purple-100, @purple-600);
-        #d-internals #color-vars(purple-200, @purple-500);
-        #d-internals #color-vars(purple-300, @purple-400);
-        #d-internals #color-vars(purple-400, @purple-300);
-        #d-internals #color-vars(purple-500, @purple-200);
-        #d-internals #color-vars(purple-600, @purple-100);
-        #d-internals #color-vars(orange-100, @orange-600);
-        #d-internals #color-vars(orange-200, @orange-500);
-        #d-internals #color-vars(orange-300, @orange-400);
-        #d-internals #color-vars(orange-400, @orange-300);
-        #d-internals #color-vars(orange-500, @orange-200);
-        #d-internals #color-vars(orange-600, @orange-100);
-        #d-internals #color-vars(magenta-100, @magenta-500);
-        #d-internals #color-vars(magenta-200, @magenta-400);
-        #d-internals #color-vars(magenta-300, @magenta-300);
-        #d-internals #color-vars(magenta-400, @magenta-200);
-        #d-internals #color-vars(magenta-500, @magenta-100);
-        #d-internals #color-vars(gold-100, @gold-500);
-        #d-internals #color-vars(gold-200, @gold-400);
-        #d-internals #color-vars(gold-300, @gold-300);
-        #d-internals #color-vars(gold-400, @gold-200);
-        #d-internals #color-vars(gold-500, @gold-100);
-        #d-internals #color-vars(green-100, @green-500);
-        #d-internals #color-vars(green-200, @green-400);
-        #d-internals #color-vars(green-300, @green-300);
-        #d-internals #color-vars(green-400, @green-200);
-        #d-internals #color-vars(green-500, @green-100);
-        #d-internals #color-vars(red-100, @red-500);
-        #d-internals #color-vars(red-200, @red-400);
-        #d-internals #color-vars(red-300, @red-300);
-        #d-internals #color-vars(red-400, @red-200);
-        #d-internals #color-vars(red-500, @red-100);
-
-        //  Now all our color vars
-        each(@dark-color-vars, {
-            --@{key}: @value;
-        });
-    }
-
-    //  $$  WIDTH / HEIGHT SIZES
-    //  ------------------------------------------------------------------------
-    //  Sizes, Fixed
-    each(@sizes-fixed, {
-        --@{key}: @value;
-    });
-
     //  $$  VISUAL STYLES
     //  ------------------------------------------------------------------------
-    each(@box-shadows, {
-        --@{key}: @value;
-    });
     each(@transition, {
         --@{key}: @value;
     });
     each(@background-patterns, {
-        --@{key}: @value;
-    });
-
-    //  $$  BORDERS
-    //  ------------------------------------------------------------------------
-    each(@border-vars, {
-        --@{key}: @value;
-    });
-
-    //  $$  ICONS
-    //  ------------------------------------------------------------------------
-    each(@icon-vars, {
         --@{key}: @value;
     });
 
@@ -263,33 +126,6 @@ body {
     //  $$  TYPE
     //  ------------------------------------------------------------------------
     each(@type-styles-vars, {
-        --@{key}: @value;
-    });
-    each(@type-colors, {
-        --@{key}: @value;
-    });
-
-    //  $$  SURFACE COLORS
-    //  ------------------------------------------------------------------------
-    each(@surface-colors, {
-        --@{key}: @value;
-    });
-
-    //  $$  BORDER COLORS
-    //  ------------------------------------------------------------------------
-    each(@border-colors, {
-        --@{key}: @value;
-    });
-
-    //  $$  Z-INDEX
-    //  ------------------------------------------------------------------------
-    each(@zi-vars, {
-        --@{key}: @value;
-    });
-
-    //  $$  INPUTS & BUTTONS
-    //  ------------------------------------------------------------------------
-    each(@focus-rings, {
         --@{key}: @value;
     });
 

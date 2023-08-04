@@ -12,17 +12,17 @@
 //
 
 .d-breadcrumbs {
-    --breadcrumbs-font-size: var(--fs-200);
-    --breadcrumbs-line-height: var(--lh-300);
-    --breadcrumbs-color-separator: var(--black-500);
-    --breadcrumbs-color-text: var(--fc-secondary);
+    --breadcrumbs-font-size: var(--dt-font-size-200);
+    --breadcrumbs-line-height: var(--dt-font-line-height-300);
+    --breadcrumbs-color-separator: var(--dt-color-black-500);
+    --breadcrumbs-color-text: var(--dt-color-link-muted);
 
     //  ============================================================================
     //  $  INVERTED STYLE
     //  ----------------------------------------------------------------------------
     &--inverted {
-        --breadcrumbs-color-separator: var(--black-300);
-        --breadcrumbs-color-text: var(--fc-secondary-inverted);
+        --breadcrumbs-color-separator: var(--dt-color-black-400);
+        --breadcrumbs-color-text: var(--dt-color-link-muted-inverted);
     }
 
     //  ============================================================================
@@ -46,18 +46,18 @@
     //  ----------------------------------------------------------------------------
     &__item {
         position: relative;
-        margin: 0 0 0 var(--space-400);
+        margin: 0 0 0 var(--dt-space-400);
         padding: 0;
         list-style: none;
 
         //  Provide a forward slash with each element except when it's the last one.
         &:not(:last-of-type) {
-            margin-right: var(--space-450);
+            margin-right: var(--dt-space-450);
 
             &::before {
                 position: absolute;
-                right: var(--space-450-negative);
-                margin-top: var(--space-100-negative);
+                right: var(--dt-space-450-negative);
+                margin-top: var(--dt-space-100-negative);
                 color: var(--breadcrumbs-color-separator);
                 content: '/';
             }
@@ -69,13 +69,13 @@
 
         //  --  SELECTED STATE (CURRENT PAGE)
         &--selected {
-            --breadcrumbs-color-text: var(--fc-primary);
+            --breadcrumbs-color-text: var(--dt-color-foreground-primary);
 
-            font-weight: var(--fw-medium);
+            font-weight: var(--dt-font-weight-medium);
             cursor: default;
 
             .d-breadcrumbs--inverted & {
-                --breadcrumbs-color-text: var(--fc-primary-inverted);
+                --breadcrumbs-color-text: var(--dt-color-foreground-primary-inverted);
             }
         }
     }

@@ -14,26 +14,24 @@
       </h2>
     </header>
     <div
-      v-for="(s, index) in stops"
+      v-for="({ stop, copy, hex, contrast, invertedContrast }, index) in stops"
       :key="index"
-      :class="dynamicClasses(s, index)"
+      :class="dynamicClasses(stop, copy, index)"
       class="d-d-flex d-jc-space-between d-ai-center d-px12 d-py8 d-fs-100 d-lh6 d-ff-mono"
     >
       <div>
-        <strong>var(--{{ color }}{{ s.stop ? `-${s.stop}` : '' }})</strong>
+        <strong>var(--dt-color-{{ color }}{{ stop ? `-${stop}` : '' }})</strong>
         <br>
-        <span>#{{ s.hex }}</span>
+        <span>#{{ hex }}</span>
       </div>
       <div class="d-d-flex d-fd-column d-fs-100 d-lh2 d-fw-bold d-bar-sm d-px4 py2">
-        <div>
-          {{ s.contrast }}
-        </div>
-        <div
-          v-if="s.darkContrast"
-          class="d-fc-primary"
+        <span> {{ contrast }}</span>
+        <span
+          v-if="invertedContrast"
+          :class="copy === 'primary-inverted' ? 'd-fc-primary' : 'd-fc-primary-inverted'"
         >
-          {{ s.darkContrast }}
-        </div>
+          {{ invertedContrast }}
+        </span>
       </div>
     </div>
   </aside>
@@ -55,11 +53,16 @@ export default {
   },
 
   methods: {
-    dynamicClasses (s, index) {
-      const bgColor = { [`d-bgc-${this.color}${s.stop ? '-' + s.stop : ''}`]: true };
-      const fontColor = { [`d-fc-${s.copy}`]: true };
-
-      return { ...bgColor, ...fontColor, 'd-btr4': index === 0, 'd-bbr4': index === (this.stops.length - 1) };
+    dynamicClasses (stop, copy, index) {
+      const stopColor = [this.color, stop].join('-');
+      return [
+        `d-bgc-${stopColor}`,
+        `d-fc-${copy}`,
+        {
+          'd-btr4': index === 0,
+          'd-bbr4': index === (this.stops.length - 1),
+        },
+      ];
     },
   },
 };

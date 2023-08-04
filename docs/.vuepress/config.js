@@ -25,6 +25,7 @@ const themeConfig = {
   editLink: false,
   colorModeSwitch: false,
   contributors: false,
+  themeMode: 'dark',
 };
 
 const __dirname = getDirname(import.meta.url);

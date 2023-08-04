@@ -1,5 +1,5 @@
 <template>
-  <aside class="vuepress-toc lg:d-ps-relative lg:d-t0 lg:d-w100p d-ps-sticky d-t64 d-pt24 d-ga-toc">
+  <aside class="lg:d-ps-relative lg:d-w100p d-ps-fixed d-pt24">
     <h2 class="d-headline-eyebrow d-fw-semibold">
       On this page
     </h2>

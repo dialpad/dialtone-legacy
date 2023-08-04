@@ -6,7 +6,7 @@ description: Utilities for controlling the space between child elements.
 ## Adding space vertically
 
 <code-well-header class="d-fl-center d-p24 d-bgc-purple-100 d-w100p d-hmn216" custom>
-  <div class="d-fl-center d-fd-column d-bgc-red-100 d-stack16 d-bar8">
+  <div class="d-fl-center d-fd-column d-bgc-tan-200 d-stack16 d-bar8">
     <div class="d-w128 d-p16 d-bar8 d-bgc-purple-300 d-fs-300 d-fw-bold d-ta-center">1</div>
     <div class="d-w128 d-p16 d-bar8 d-bgc-purple-300 d-fs-300 d-fw-bold d-ta-center">2</div>
     <div class="d-w128 d-p16 d-bar8 d-bgc-purple-300 d-fs-300 d-fw-bold d-ta-center">3</div>
@@ -24,7 +24,7 @@ description: Utilities for controlling the space between child elements.
 ## Adding space horizontally
 
 <code-well-header class="d-fl-center d-p24 d-bgc-purple-100 d-w100p d-hmn216" custom>
-  <div class="d-fl-center d-bgc-red-100 d-flow24 d-bar8 d-fs-300 d-fw-bold d-ta-center">
+  <div class="d-fl-center d-bgc-tan-200 d-flow24 d-bar8 d-fs-300 d-fw-bold d-ta-center">
     <div class="lg:d-w96 d-w128 d-p16 d-bar8 d-bgc-purple-300">1</div>
     <div class="lg:d-w96 d-w128 d-p16 d-bar8 d-bgc-purple-300">2</div>
     <div class="lg:d-w96 d-w128 d-p16 d-bar8 d-bgc-purple-300">3</div>

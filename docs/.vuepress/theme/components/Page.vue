@@ -58,7 +58,9 @@
         documentation last updated {{ lastUpdated }}
       </footer>
     </div>
-    <page-toc v-if="!isMobile && includeToc" />
+    <div class="d-ps-relative d-ga-toc">
+      <page-toc v-if="!isMobile && includeToc" />
+    </div>
   </div>
 </template>
 

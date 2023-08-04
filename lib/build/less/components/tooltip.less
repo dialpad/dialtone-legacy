@@ -37,29 +37,29 @@
 .d-tooltip {
     //  --  COMPONENT CSS VARS
     //  -----------------------
-    --tooltip-color-background: var(--black-800);
-    --tooltip-color-text: var(--fc-primary-inverted);
-    --tooltip-font-weight: var(--fw-medium);
-    --tooltip-line-height: var(--lh-300);
-    --tooltip-padding-y: var(--space-400);
-    --tooltip-padding-x: var(--space-450);
-    --tooltip-border-radius: var(--size-300);
+    --tooltip-color-background: var(--dt-color-black-800);
+    --tooltip-color-text: var(--dt-color-foreground-primary-inverted);
+    --tooltip-font-weight: var(--dt-font-weight-medium);
+    --tooltip-line-height: var(--dt-font-line-height-300);
+    --tooltip-padding-y: var(--dt-space-400); // 8
+    --tooltip-padding-x: var(--dt-space-450); // 12
+    --tooltip-border-radius: var(--dt-size-radius-300); // 4
 
     z-index: var(--zi-tooltip);
-    max-width: var(--size-875);
-    padding: var(--tooltip-padding-y) var(--tooltip-padding-x); // 8 12
+    max-width: var(--dt-size-875);
+    padding: var(--tooltip-padding-y) var(--tooltip-padding-x);
     color: var(--tooltip-color-text);
     font-weight: var(--tooltip-font-weight);
-    font-size: var(--fs-100);
+    font-size: var(--dt-font-size-100);
     line-height: var(--tooltip-line-height);
-    letter-spacing: calc(var(--size-100) * 0.25);
+    letter-spacing: calc(var(--dt-space-100) * 0.25);
     text-align: center;
     background-color: var(--tooltip-color-background);
-    border-radius: var(--tooltip-border-radius); // 4
+    border-radius: var(--tooltip-border-radius);
 
     &::after {
         position: absolute;
-        border: var(--size-350) solid transparent;
+        border: var(--dt-size-350) solid transparent;
         content: '';
     }
 }
@@ -70,8 +70,8 @@
 .d-tooltip--inverted {
     //  --  COMPONENT CSS VARS
     //  -----------------------
-    --tooltip-color-background: var(--black-200);
-    --tooltip-color-text: var(--fc-secondary);
+    --tooltip-color-background: var(--dt-color-black-200);
+    --tooltip-color-text: var(--dt-color-foreground-secondary);
 }
 
 //  ============================================================================
@@ -126,11 +126,11 @@
 .d-tooltip__arrow--top-left,
 .d-tooltip__arrow--top-center,
 .d-tooltip__arrow--top-right {
-  top: calc(100% + var(--space-450)); // 100% + 12
-  transform: translateY(var(--space-500)); // 16
+  top: calc(100% + var(--dt-space-450)); // 100% + 12
+  transform: translateY(var(--dt-space-500)); // 16
 
   &::after {
-    top: var(--space-350-negative); // -6
+    top: var(--dt-space-350-negative); // -6
     border-top-width: 0;
     border-bottom-color: var(--tooltip-color-background);
   }
@@ -144,11 +144,11 @@
 .d-tooltip__arrow--bottom-left,
 .d-tooltip__arrow--bottom-center,
 .d-tooltip__arrow--bottom-right {
-  bottom: calc(100% + var(--space-450)); // 100% + 12
-  transform: translateY(var(--space-500-negative)); // -16
+  bottom: calc(100% + var(--dt-space-450)); // 100% + 12
+  transform: translateY(var(--dt-space-500-negative)); // -16
 
   &::after {
-    bottom: var(--space-350-negative); // -6
+    bottom: var(--dt-space-350-negative); // -6
     border-top-color: var(--tooltip-color-background);
     border-bottom-width: 0;
   }
@@ -160,10 +160,10 @@
 .d-tooltip__arrow-tippy--top-start,
 .d-tooltip__arrow--top-left,
 .d-tooltip__arrow--bottom-left {
-  left: var(--space-200-negative); // -2
+  left: var(--dt-space-200-negative); // -2
 
   &::after {
-    left: var(--space-500); // 16
+    left: var(--dt-space-500); // 16
   }
 }
 
@@ -175,7 +175,7 @@
 .d-tooltip__arrow--bottom-center {
   &::after {
     left: 50%;
-    margin-left: var(--space-350-negative); // -6
+    margin-left: var(--dt-space-350-negative); // -6
   }
 }
 
@@ -185,10 +185,10 @@
 .d-tooltip__arrow-tippy--top-end,
 .d-tooltip__arrow--top-right,
 .d-tooltip__arrow--bottom-right {
-  right: var(--space-200-negative); // -2
+  right: var(--dt-space-200-negative); // -2
 
   &::after {
-    right: var(--space-500); // 16
+    right: var(--dt-space-500); // 16
   }
 }
 
@@ -200,11 +200,11 @@
 .d-tooltip__arrow--right-top,
 .d-tooltip__arrow--right-center,
 .d-tooltip__arrow--right-bottom {
-  right: calc(100% + var(--space-450)); // 100% + 12
-  transform: translateX(var(--space-500-negative)); // -16
+  right: calc(100% + var(--dt-space-450)); // 100% + 12
+  transform: translateX(var(--dt-space-500-negative)); // -16
 
   &::after {
-    right: var(--space-350-negative); // -6
+    right: var(--dt-space-350-negative); // -6
     border-right-width: 0;
     border-left-color: var(--tooltip-color-background);
   }
@@ -218,11 +218,11 @@
 .d-tooltip__arrow--left-top,
 .d-tooltip__arrow--left-center,
 .d-tooltip__arrow--left-bottom {
-  left: calc(100% + var(--space-450)); // 100% + 12
-  transform: translateX(var(--space-500)); // 16
+  left: calc(100% + var(--dt-space-450)); // 100% + 12
+  transform: translateX(var(--dt-space-500)); // 16
 
   &::after {
-    left: var(--space-350-negative); // -6
+    left: var(--dt-space-350-negative); // -6
     border-right-color: var(--tooltip-color-background);
     border-left-width: 0;
   }
@@ -234,10 +234,10 @@
 .d-tooltip__arrow-tippy--left-start,
 .d-tooltip__arrow--right-top,
 .d-tooltip__arrow--left-top {
-  top: var(--space-100-negative); // -1
+  top: var(--dt-space-100-negative); // -1
 
   &::after {
-    top: var(--space-400); // 8
+    top: var(--dt-space-400); // 8
   }
 }
 
@@ -249,7 +249,7 @@
 .d-tooltip__arrow--left-center {
   &::after {
     top: 50%;
-    margin-top: var(--space-350-negative); // -6
+    margin-top: var(--dt-space-350-negative); // -6
   }
 }
 
@@ -259,9 +259,9 @@
 .d-tooltip__arrow-tippy--left-end,
 .d-tooltip__arrow--right-bottom,
 .d-tooltip__arrow--left-bottom {
-  bottom: var(--space-100-negative); // -1
+  bottom: var(--dt-space-100-negative); // -1
 
   &::after {
-    bottom: var(--space-400); // 8
+    bottom: var(--dt-space-400); // 8
   }
 }

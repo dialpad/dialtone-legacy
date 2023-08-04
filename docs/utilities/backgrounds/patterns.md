@@ -9,7 +9,7 @@ Use `d-bgg-pattern-{pattern}-{dark|light}` to apply a pattern.
 
 <code-well-header class="d-d-flex d-jc-center d-fd-column d-p24 d-bgc-black-200 d-w100p d-hmn102 d-stack8" custom>
   <div class="d-d-flex d-ai-center d-w100p d-h32 d-bar4 d-bgg-to-br d-bgg-from-gold-200 d-bgg-to-gold-200 d-bgg-pattern d-bgg-pattern-slanted-stripes-dark d-fs-200 d-fw-bold d-fc-primary">Ted's Call Center</div>
-  <div class="d-d-flex d-ai-center d-w100p d-h32 d-bar4 d-bgg-to-br d-bgg-from-purple-400 d-bgg-to-purple-500 d-bgg-pattern d-bgg-pattern-dots-circles-light d-fs-200 d-fw-bold d-fc-white">Vicky's Department</div>
+  <div class="d-d-flex d-ai-center d-w100p d-h32 d-bar4 d-bgg-to-br d-bgg-from-purple-400 d-bgg-to-purple-500 d-bgg-pattern d-bgg-pattern-dots-circles-light d-fs-200 d-fw-bold d-fc-neutral-white">Vicky's Department</div>
 </code-well-header>
 
 ```html
@@ -33,7 +33,11 @@ Use `d-bgg-pattern-{pattern}-{dark|light}` to apply a pattern.
               </div>
               <div
                 class="d-w24 d-h24 d-bgg-pattern d-ba d-bc-black-900 d-bar4"
-                :class="[{'d-bgc-black-900': c === 'light'}, `d-bgg-pattern-${i}-${c}`]"
+                :class="[
+                    {'d-bgc-neutral-white': c === 'dark'},
+                    {'d-bgc-neutral-black': c === 'light'},
+                    `d-bgg-pattern-${i}-${c}`
+                ]"
               >
               </div>
             </div>

@@ -14,13 +14,13 @@
 //  $   BASE STYLE
 //  ----------------------------------------------------------------------------
 .d-link {
-    --link-color-default: var(--purple-400);
-    --link-color-default-hover: hsl(var(--purple-400-h) var(--purple-400-s) calc(var(--purple-400-l) - 10%));
+    --link-color-default: var(--dt-color-link-primary);
+    --link-color-default-hover: var(--dt-color-link-primary-hover);
     --link-text-decoration: none;
 
     position: relative;
     display: inline-flex;
-    gap: var(--space-300);
+    gap: var(--dt-space-300);
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
@@ -42,15 +42,13 @@
     fill: currentColor;
 
     &:hover {
-        --link-text-decoration: underline;
-
         color: var(--link-color-default-hover);
         cursor: pointer;
     }
 
     &:focus-visible {
         outline: none;
-        box-shadow: var(--bs-focus-ring);
+        box-shadow: var(--dt-shadow-focus);
     }
 
     .d-banner &,
@@ -65,29 +63,45 @@
     //  $$  WARNING
     //  ----------------------------------------------------------------------------
     &--warning {
-        --link-color-default: var(--fc-warning);
-        --link-color-default-hover: var(--fc-warning-hover);
+        --link-color-default: var(--dt-color-link-warning);
+        --link-color-default-hover: var(--dt-color-link-warning-hover);
+
+        &:hover {
+            --link-text-decoration: underline;
+        }
     }
 
     //  $$  DANGER
     //  ----------------------------------------------------------------------------
     &--danger {
-        --link-color-default: var(--fc-critical);
-        --link-color-default-hover: var(--fc-critical-strong);
+        --link-color-default: var(--dt-color-link-critical);
+        --link-color-default-hover: var(--dt-color-link-critical-hover);
+
+        &:hover {
+            --link-text-decoration: underline;
+        }
     }
 
     //  $$  SUCCESS
     //  ----------------------------------------------------------------------------
     &--success {
-        --link-color-default: var(--fc-success);
-        --link-color-default-hover: var(--fc-success-strong);
+        --link-color-default: var(--dt-color-link-success);
+        --link-color-default-hover: var(--dt-color-link-success-hover);
+
+        &:hover {
+            --link-text-decoration: underline;
+        }
     }
 
     //  $$  MUTED
     //  ----------------------------------------------------------------------------
     &--muted {
-        --link-color-default: var(--fc-secondary);
-        --link-color-default-hover: var(--fc-primary);
+        --link-color-default: var(--dt-color-link-muted);
+        --link-color-default-hover: var(--dt-color-link-muted-hover);
+
+        &:hover {
+            --link-text-decoration: underline;
+        }
     }
 
     //  $$  DISABLED
@@ -96,12 +110,11 @@
     // by buttons using .d-link. Links with a disabled attribute are not valid mark-up.
     &[disabled],
     &--disabled {
-        --link-color-default: var(--fc-disabled);
-        --link-color-default-hover: var(--link-color-default);
+        --link-color-default: var(--dt-color-link-disabled);
+        --link-color-default-hover: var(--dt-color-link-disabled-hover);
+        --link-text-decoration: none;
 
         &:hover {
-            --link-text-decoration: none;
-
             cursor: not-allowed;
         }
     }
@@ -109,8 +122,12 @@
     //  $$  INVERTED
     //  ----------------------------------------------------------------------------
     &--inverted {
-        --link-color-default: var(--fc-secondary-inverted);
-        --link-color-default-hover: var(--fc-primary-inverted);
+        --link-color-default: var(--dt-color-link-primary-inverted);
+        --link-color-default-hover: var(--dt-color-link-primary-inverted-hover);
+
+        &:hover {
+            --link-text-decoration: underline;
+        }
     }
 
     //  $$  INVERTED DISABLED
@@ -118,8 +135,8 @@
     // We don't expose these in the documentation because they're meant to be consumed
     // by buttons using .d-link. Links with a disabled attribute are not valid mark-up.
     &--inverted-disabled {
-        --link-color-default: var(--black-400);
-        --link-color-default-hover: var(--link-color-default);
+        --link-color-default: var(--dt-color-link-disabled-inverted);
+        --link-color-default-hover: var(--dt-color-link-disabled-inverted-hover);
 
         &:hover {
             --link-text-decoration: none;

@@ -1,5 +1,3 @@
-//@import (reference) '../utilities/spacing.less';
-
 //
 //  DIALTONE
 //  COMPONENTS: NOTICES
@@ -15,15 +13,15 @@
 .d-notice {
     //  Component CSS Vars
     //  ------------------------------------------------------------------------
-    --notice-color-background: var(--bgc-secondary);
-    --notice-color-text: var(--fc-primary);
+    --notice-color-background: var(--dt-color-surface-secondary);
+    --notice-color-text: var(--dt-color-foreground-primary);
     --notice-color-icon: var(--notice-color-text);
-    --notice-color-shadow: hsla(var(--black-900-hsl) / 0.06);
-    --notice-padding: var(--space-500);
-    --notice-font-size: var(--fs-200);
-    --notice-line-height: var(--lh-300);
-    --notice-border-radius: var(--size-400);
-    --notice-box-shadow: 0 0 0 var(--size-100) var(--notice-color-shadow) inset;
+    --notice-color-shadow: hsla(var(--dt-color-black-900-hsl) / 0.06);
+    --notice-padding: var(--dt-space-500);
+    --notice-font-size: var(--dt-font-size-200);
+    --notice-line-height: var(--dt-font-line-height-300);
+    --notice-border-radius: var(--dt-size-400);
+    --notice-box-shadow: 0 0 0 var(--dt-size-100) var(--notice-color-shadow) inset;
 
     //  Base Styles
     //  ------------------------------------------------------------------------
@@ -31,7 +29,7 @@
     align-items: center;
     box-sizing: border-box;
     width: 100%;
-    max-width: var(--size-1020);
+    max-width: var(--dt-size-1020);
     padding: var(--notice-padding);
     color: var(--notice-color-text);
     font-size: var(--notice-font-size);
@@ -41,8 +39,8 @@
     box-shadow: var(--notice-box-shadow);
 
     .d-toast & {
-        max-width: var(--size-975);
-        box-shadow: var(--bs-sm);
+        max-width: var(--dt-size-975);
+        box-shadow: var(--dt-shadow-small);
         pointer-events: all;
     }
 }
@@ -56,7 +54,7 @@
     display: flex;
     flex: 1 auto;
     flex-direction: column;
-    margin-right: var(--space-500);
+    margin-right: var(--dt-space-500);
 }
 
 //  $$  ACTIONS
@@ -64,7 +62,7 @@
 .d-notice__actions {
     display: flex;
     flex: 0 auto;
-    gap: var(--space-400);
+    gap: var(--dt-space-400);
     align-items: center;
 }
 
@@ -73,11 +71,11 @@
 .d-notice__icon {
     display: flex;
     flex: 0 auto;
-    margin-right: var(--space-450);
+    margin-right: var(--dt-space-450);
     color: var(--notice-color-icon);
 
     .d-banner & {
-        margin-right: var(--space-400);
+        margin-right: var(--dt-space-400);
     }
 }
 
@@ -85,13 +83,13 @@
 //  $   COPY STYLES
 //  ============================================================================
 .d-notice__title {
-    font-weight: var(--fw-bold);
+    font-weight: var(--dt-font-weight-bold);
     font-size: inherit;
 }
 
 .d-notice__message {
     .d-notice__title:not([hidden]) + & {
-        font-size: var(--fs-100);
+        font-size: var(--dt-font-size-100);
     }
 }
 
@@ -101,10 +99,10 @@
 //  $$  DEFAULT IMPORTANT
 //  ----------------------------------------------------------------------------
 .d-notice.d-notice--important {
-    --notice-color-background: var(--bgc-strong);
-    --notice-color-text: var(--fc-primary-inverted);
+    --notice-color-background: var(--dt-color-surface-strong);
+    --notice-color-text: var(--dt-color-foreground-primary-inverted);
     --notice-color-shadow: transparent;
-    --notice-color-icon: var(--fc-primary-inverted);
+    --notice-color-icon: var(--dt-color-foreground-primary-inverted);
 }
 
 //  $$  ERROR
@@ -112,14 +110,14 @@
 .d-notice--error,
 .d-banner--error,
 .d-toast--error {
-    --notice-color-background: var(--bgc-critical);
-    --notice-color-icon: var(--red-400);
+    --notice-color-background: var(--dt-color-surface-critical);
+    --notice-color-icon: var(--dt-color-red-400);
 
     &.d-notice--important,
     &.d-banner--important,
     &.d-toast--important {
-        --notice-color-background: var(--bgc-critical-strong);
-        --notice-color-text: var(--fc-primary-inverted);
+        --notice-color-background: var(--dt-color-surface-critical-strong);
+        --notice-color-text: var(--dt-color-foreground-primary-inverted);
     }
 }
 
@@ -128,14 +126,14 @@
 .d-notice--info,
 .d-banner--info,
 .d-toast--info {
-    --notice-color-background: var(--bgc-info);
-    --notice-color-icon: var(--blue-500);
+    --notice-color-background: var(--dt-color-surface-info);
+    --notice-color-icon: var(--dt-color-blue-500);
 
     &.d-notice--important,
     &.d-banner--important,
     &.d-toast--important {
-        --notice-color-background: var(--bgc-info-strong);
-        --notice-color-text: var(--fc-primary-inverted);
+        --notice-color-background: var(--dt-color-surface-info-strong);
+        --notice-color-text: var(--dt-color-foreground-primary-inverted);
     }
 }
 
@@ -144,14 +142,14 @@
 .d-notice--success,
 .d-banner--success,
 .d-toast--success {
-    --notice-color-background: var(--bgc-success);
-    --notice-color-icon: var(--green-400);
+    --notice-color-background: var(--dt-color-surface-success);
+    --notice-color-icon: var(--dt-color-green-400);
 
     &.d-notice--important,
     &.d-banner--important,
     &.d-toast--important {
-        --notice-color-background: var(--bgc-success-strong);
-        --notice-color-text: var(--fc-primary-inverted);
+        --notice-color-background: var(--dt-color-surface-success-strong);
+        --notice-color-text: var(--dt-color-foreground-primary-inverted);
     }
 }
 
@@ -160,14 +158,14 @@
 .d-notice--warning,
 .d-banner--warning,
 .d-toast--warning {
-    --notice-color-background: var(--bgc-warning);
-    --notice-color-icon: var(--gold-400);
+    --notice-color-background: var(--dt-color-surface-warning);
+    --notice-color-icon: var(--dt-color-gold-400);
 
     &.d-notice--important,
     &.d-banner--important,
     &.d-toast--important {
-        --notice-color-background: var(--gold-200);
-        --notice-color-text: var(--fc-primary);
+        --notice-color-background: var(--dt-color-gold-200);
+        --notice-color-text: var(--dt-color-foreground-primary);
         --notice-color-icon: var(--notice-color-text);
     }
 }

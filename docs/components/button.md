@@ -135,13 +135,13 @@ Dialtone provides four core button **types**, each with three levels of **import
         <a class="d-link d-fs-100 d-fw-medium d-d-block d-mb4 d-tt-uppercase" href="#inverted"><strong>Inverted</strong></a>
         <div class="d-fw-normal d-lh-200">Use for placement on non-white, dark backgrounds.</div>
       </th>
-      <td class="d-bgc-strong d-ta-center">
+      <td class="d-bgc-contrast d-ta-center">
         <button class="d-btn d-btn--inverted" type="button"> <span class="d-btn__label">Place call</span> </button>
       </td>
-      <td class="d-bgc-strong d-ta-center">
+      <td class="d-bgc-contrast d-ta-center">
         <button class="d-btn d-btn--outlined d-btn--inverted" type="button"> <span class="d-btn__label">Place call</span> </button>
       </td>
-      <td class="d-bgc-strong d-ta-center">
+      <td class="d-bgc-contrast d-ta-center">
         <button class="d-btn d-btn--primary d-btn--inverted" type="button"> <span class="d-btn__label">Place call</span> </button>
       </td>
     </tr>

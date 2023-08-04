@@ -33,7 +33,7 @@
     </template>
     <template #headerContent>
       <span
-        class="d-tt-capitalize"
+        class="d-tt-capitalize d-fc-primary"
         v-text="name"
       />
     </template>

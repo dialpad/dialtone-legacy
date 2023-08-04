@@ -1,6 +1,3 @@
-//@import (reference) '../variables/icons.less';
-//@import (reference) '../variables/sizes.less';
-
 //
 //  DIALTONE
 //  COMPONENTS: INPUTS
@@ -29,16 +26,16 @@
 .d-input__wrapper {
     //  Component CSS Vars
     //  ------------------------------------------------------------------------
-    --input-color-border: var(--bc-subtle);
-    --input-color-background: hsla(var(--black-900-hsl) / 0.03);
-    --input-color-background-disabled: hsla(var(--black-900-hsl) / 0.12);
-    --input-color-text: var(--fc-secondary);
-    --input-border-width: calc(var(--size-100) + var(--size-50)); // 1.5
-    --input-border-radius: var(--size-400);
-    --input-padding-y: calc(var(--space-400) - var(--input-border-width));
-    --input-padding-x: calc((var(--space-500) - var(--space-300)) - var(--input-border-width));
-    --input-font-size: var(--fs-200);
-    --input-line-height: var(--lh-200);
+    --input-color-border: var(--dt-inputs-color-border-default);
+    --input-color-background: var(--dt-inputs-color-background-default);
+    --input-color-background-disabled: var(--dt-inputs-color-background-disabled);
+    --input-color-text: var(--dt-inputs-color-foreground-default);
+    --input-border-width: calc(var(--dt-size-100) + var(--dt-size-50)); // 1.5
+    --input-border-radius: var(--dt-size-400);
+    --input-padding-y: calc(var(--dt-space-400) - var(--input-border-width));
+    --input-padding-x: calc((var(--dt-space-500) - var(--dt-space-300)) - var(--input-border-width));
+    --input-font-size: var(--dt-font-size-200);
+    --input-line-height: var(--dt-font-line-height-200);
 
     position: relative;
     display: inline-flex;
@@ -65,7 +62,7 @@
 
     //  --  Placeholder copy
     &::placeholder {
-        color: var(--fc-placeholder);
+        color: var(--dt-inputs-color-foreground-placeholder);
     }
     //  --  Remove input EDGE additions
     &::-ms-clear {
@@ -74,17 +71,17 @@
     //  --  FOCUS STATE
     &:focus,
     &:focus-within {
-        --input-color-background: hsla(var(--black-900-hsl) / 0.01);
-        --input-color-border: var(--bc-focus) !important;
+        --input-color-background: var(--dt-inputs-color-background-focus);
+        --input-color-border: var(--dt-inputs-color-border-focus) !important;
 
-        box-shadow: 0 0 0 var(--size-100) var(--input-color-border) inset;
+        box-shadow: 0 0 0 var(--dt-size-100) var(--dt-inputs-color-border-focus) inset;
     }
     //  --  DISABLED / READ-ONLY
     &[disabled],
     &[read-only] {
-        --input-color-border: transparent !important;
-        --input-color-background: var(--input-color-background-disabled);
-        --input-color-text: var(--fc-disabled);
+        --input-color-border: var(--dt-inputs-color-border-disabled) !important;
+        --input-color-background: var(--dt-inputs-color-background-disabled);
+        --input-color-text: var(--dt-inputs-color-foreground-disabled);
 
         &:focus,
         &:focus-within {
@@ -93,7 +90,7 @@
 
         //  --  Placeholder copy
         &::placeholder {
-            color: var(--fc-placeholder);
+            color: var(--dt-inputs-color-foreground-placeholder);
         }
     }
 
@@ -109,7 +106,7 @@
 
     &:-moz-focusring {
         color: transparent;
-        text-shadow: 0 0 0 var(--black-900);
+        text-shadow: 0 0 0 var(--dt-color-black-900);
     }
 
     &::-ms-expand {
@@ -123,11 +120,11 @@
     padding: 0;
 
     .d-input-icon.d-input-icon--right {
-        margin-right: var(--space-400);
+        margin-right: var(--dt-space-400);
     }
 
     .d-input-icon.d-input-icon--left {
-        margin-left: var(--space-400);
+        margin-left: var(--dt-space-400);
     }
 
     .d-input,
@@ -143,11 +140,11 @@
         }
 
         &.d-input-icon--right {
-            padding-right: var(--space-350);
+            padding-right: var(--dt-space-350);
         }
 
         &.d-input-icon--left {
-            padding-left: var(--space-350);
+            padding-left: var(--dt-space-350);
         }
     }
 }
@@ -175,9 +172,9 @@
 //  $  TEXTAREAS
 //  ----------------------------------------------------------------------------
 .d-textarea {
-    min-height: calc(var(--size-300) * 20); // 80
+    min-height: calc(var(--dt-size-300) * 20); // 80
     vertical-align: top;
-    border-bottom-right-radius: var(--size-300);
+    border-bottom-right-radius: var(--dt-size-300);
     resize: vertical;
     scroll-padding-block: var(--input-padding-y);
 }
@@ -187,42 +184,42 @@
 .d-textarea--xs {
     #d-internal__input-and-select-xs();
 
-    min-height: calc(var(--size-300) * 10); // 40
+    min-height: calc(var(--dt-size-300) * 10); // 40
 }
 
 .d-textarea--sm {
     #d-internal__input-and-select-sm();
 
-    min-height: var(--size-650); // 48
+    min-height: var(--dt-size-650); // 48
 }
 
 .d-textarea--lg {
     #d-internal__input-and-select-lg();
 
-    min-height: calc(var(--size-300) * 23); // 92
+    min-height: calc(var(--dt-size-300) * 23); // 92
 }
 
 .d-textarea--xl {
     #d-internal__input-and-select-xl();
 
-    min-height: calc(var(--size-300) * 25); // 100
+    min-height: calc(var(--dt-size-300) * 25); // 100
 }
 
 //  $$  VALIDATION STATES
 //  ----------------------------------------------------------------------------
 .d-input--warning,
 .d-textarea--warning {
-    --input-color-border: var(--bc-warning) !important;
+    --input-color-border: var(--dt-inputs-color-border-warning) !important;
 }
 
 .d-input--error,
 .d-textarea--error {
-    --input-color-border: var(--bc-critical) !important;
+    --input-color-border: var(--dt-inputs-color-border-critical) !important;
 }
 
 .d-input--success,
 .d-textarea--success {
-    --input-color-border: var(--bc-success) !important;
+    --input-color-border: var(--dt-inputs-color-border-success) !important;
 }
 
 //  ============================================================================
@@ -231,8 +228,8 @@
 .d-input-icon {
     //  Component CSS Vars
     //  ------------------------------------------------------------------------
-    --input-icon-size: var(--size-500);
-    --input-icon-container-height: var(--size-600);
+    --input-icon-size: var(--dt-size-500);
+    --input-icon-container-height: var(--dt-size-600);
 
     z-index: var(--zi-base1);
     display: inline-flex;
@@ -252,37 +249,37 @@
 //  $$ SIZES
 //  ----------------------------------------------------------------------------
 .d-input-icon.d-input--xs {
-    --input-icon-container-height: calc(var(--size-600) - var(--size-300));
+    --input-icon-container-height: calc(var(--dt-size-600) - var(--dt-size-300));
 }
 
 .d-input-icon--xs {
     // Backwards-compatible to DT6 icons
-    --input-icon-size: @icon12;
+    --input-icon-size: var(--dt-icon-size-100);
 }
 
 .d-input-icon.d-input--sm {
-    --input-icon-container-height: var(--size-600);
+    --input-icon-container-height: var(--dt-size-600);
 }
 
 .d-input-icon--sm {
     // Backwards-compatible to DT6 icons
-    --input-icon-size: @icon14;
+    --input-icon-size: var(--dt-icon-size-200);
 }
 
 .d-input-icon.d-input--lg {
-    --input-icon-container-height: calc(var(--size-300) * 10);
+    --input-icon-container-height: calc(var(--dt-size-300) * 10);
 }
 
 .d-input-icon--lg {
     // Backwards-compatible to DT6 icons
-    --input-icon-size: @icon20;
+    --input-icon-size: var(--dt-icon-size-400);
 }
 
 .d-input-icon.d-input--xl {
-    --input-icon-container-height: calc(var(--size-300) * 14);
+    --input-icon-container-height: calc(var(--dt-size-300) * 14);
 }
 
 .d-input-icon--xl {
     // Backwards-compatible to DT6 icons
-    --input-icon-size: @icon24;
+    --input-icon-size: var(--dt-icon-size-500);
 }

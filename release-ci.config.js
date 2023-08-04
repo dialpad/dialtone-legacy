@@ -2,12 +2,17 @@ module.exports = {
   branches: [
     'production',
     'staging',
+    'next',
     {
       name: 'beta',
       prerelease: true,
     },
     {
       name: 'alpha',
+      prerelease: true,
+    },
+    {
+      name: 'version8',
       prerelease: true,
     },
   ],

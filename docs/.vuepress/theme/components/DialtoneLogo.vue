@@ -1,6 +1,6 @@
 <template>
   <router-link
-    class="d-btn d-py6 d-w216 d-jc-flex-start"
+    class="d-btn h:d-bgc-transparent d-py6 d-w216 d-jc-flex-start"
     title="Go back to the homepage"
     to="/"
   >

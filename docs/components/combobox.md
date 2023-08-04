@@ -8,7 +8,7 @@ figma: planned
 storybook: https://vue.dialpad.design/?path=/story/components-combobox--default
 ---
 
-<code-well-header bgclass="d-bgc-white">
+<code-well-header bgclass="d-bgc-neutral-white">
   <video class="d-w60p" src="/assets/images/components/preview--combobox.mp4" autoplay loop></video>
 </code-well-header>
 

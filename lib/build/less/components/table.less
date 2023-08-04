@@ -1,5 +1,3 @@
-//@import (reference) '../utilities/typography.less';
-
 //
 //  DIALTONE
 //  COMPONENTS: TABLES
@@ -17,12 +15,12 @@
 .d-table {
     //  Component CSS Vars
     //  ------------------------------------------------------------------------
-    --table-color-border: var(--bc-default);
-    --table-th-color-text: var(--fc-secondary);
-    --table-td-color-text: var(--fc-tertiary);
-    --table-font-size: var(--fs-200);
-    --table-th-font-size: var(--fs-100);
-    --table-line-height: var(--lh-200);
+    --table-color-border: var(--dt-color-border-default);
+    --table-th-color-text: var(--dt-color-foreground-secondary);
+    --table-td-color-text: var(--dt-color-foreground-tertiary);
+    --table-font-size: var(--dt-font-size-200);
+    --table-th-font-size: var(--dt-font-size-100);
+    --table-line-height: var(--dt-font-line-height-200);
 
     display: table;
     box-sizing: border-box;
@@ -36,21 +34,21 @@
 
     // Caption styles
     .d-table__caption {
-      margin-bottom: var(--space-400); // 8
+      margin-bottom: var(--dt-space-400); // 8
       color: var(--table-th-color-text);
-      font-weight: var(--fw-bold);
+      font-weight: var(--dt-font-weight-bold);
       font-size: var(--table-font-size);
       .d-ta-unset();
     }
 
     // Table Head Styles
     thead {
-        border-bottom: var(--size-200) solid var(--table-color-border);
+        border-bottom: var(--dt-size-200) solid var(--table-color-border);
 
         // Column Header Styles
         th {
             font-size: var(--table-th-font-size);
-            line-height: var(--lh-100);
+            line-height: var(--dt-font-line-height-100);
             text-transform: uppercase;
         }
     }
@@ -58,7 +56,7 @@
     // Header Styles
     th {
         color: var(--table-th-color-text);
-        font-weight: var(--fw-bold);
+        font-weight: var(--dt-font-weight-bold);
     }
 
     // Cell Styles
@@ -69,9 +67,9 @@
     // Header & Cell Styles
     th,
     td {
-        padding: var(--space-500); // 16
+        padding: var(--dt-space-500); // 16
         text-align: left;
-        border-bottom: var(--size-100) solid var(--table-color-border);
+        border-bottom: var(--dt-size-100) solid var(--table-color-border);
     }
 
     // Nested Table Body, First Row Styles, used internally on the Dialtone site
@@ -79,7 +77,7 @@
         // Header & Cell Styles
         td,
         th {
-            border-top: var(--size-200) solid var(--table-color-border);
+            border-top: var(--dt-size-200) solid var(--table-color-border);
         }
     }
 
@@ -97,9 +95,9 @@
 //  $   INVERTED STYLE
 //  ----------------------------------------------------------------------------
 .d-table--inverted {
-    --table-th-color-text: var(--fc-secondary-inverted);
-    --table-td-color-text: var(--fc-tertiary-inverted);
-    --table-color-border: var(--bc-default-inverted);
+    --table-th-color-text: var(--dt-color-foreground-secondary-inverted);
+    --table-td-color-text: var(--dt-color-foreground-tertiary-inverted);
+    --table-color-border: var(--dt-color-border-default-inverted);
 }
 
 //  ============================================================================
@@ -108,7 +106,7 @@
 .d-table--striped {
     // Row Styles
     tr:nth-child(even) {
-        background-color: var(--bgc-secondary-opaque);
+        background-color: var(--dt-color-surface-secondary-opaque);
     }
 
     &.d-table--inverted {

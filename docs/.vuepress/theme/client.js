@@ -1,10 +1,12 @@
+import { useThemeData } from '@vuepress/plugin-theme-data/client';
 import { defineClientConfig } from '@vuepress/client';
 import Layout from './layouts/Layout.vue';
 import NotFound from './layouts/NotFound.vue';
 
 // CSS
-import '../../../lib/dist/css/dialtone.css';
+import './assets/css/dialtone.css';
 import './assets/less/dialtone-docs.less';
+import './assets/less/dialtone-syntax.less';
 import '@/../node_modules/@dialpad/dialtone-vue/dist/style.css';
 
 export default defineClientConfig({
@@ -14,6 +16,8 @@ export default defineClientConfig({
       await registerDialtoneVue(app);
       await registerEmojiDialtoneVue(app);
       await registerDialtoneCombinator(app);
+      const defaultTheme = useThemeData().value.themeMode;
+      document.body.classList.add(`dialtone-theme-${defaultTheme}`);
     }
     router.options.scrollBehavior = (to, from, savedPosition) => {
       return to.hash

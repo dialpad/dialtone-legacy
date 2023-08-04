@@ -1,6 +1,3 @@
-//@import (reference) '../variables/colors.less';
-//@import (reference) '../utilities/internals.less';
-
 //
 //  DIALTONE
 //  UTILITIES: BACKGROUNDS
@@ -18,22 +15,6 @@
 //  • GRADIENTS
 //  • PATTERNS
 //
-//  ----------------------------------------------------------------------------
-//  --  Create background stops for most colors
-#d-internals #gradient-stops(black);
-#d-internals #gradient-stops(orange);
-#d-internals #gradient-stops(purple);
-#d-internals #gradient-stops(magenta);
-#d-internals #gradient-stops(gold);
-#d-internals #gradient-stops(red);
-#d-internals #gradient-stops(green);
-
-//  --  A few additional colors that the gradient-stops mixin misses
-#d-internals #gradient-classes(white);
-#d-internals #gradient-classes(black-900);
-#d-internals #gradient-classes(black-800);
-#d-internals #gradient-classes(black-700);
-
 //  ============================================================================
 //  $  BACKGROUND ATTACHMENT
 //  ----------------------------------------------------------------------------
@@ -107,9 +88,7 @@
 .d-bgg-radial { background-image: radial-gradient(var(--bgg-from) 0%, var(--bgg-to) 100%) !important; }
 .d-bgg-conic { background-image: conic-gradient(var(--bgg-from) 0%, var(--bgg-to) 100%) !important; }
 .d-bgg-none { background-image: none !important; }
-#d-internals #generate-hover-focus(d-bgg-none, {.d-bgg-none();});
 .d-bgg-unset { background-image: unset !important; }
-#d-internals #generate-hover-focus(d-bgg-unset, {.d-bgg-unset();});
 
 
 //  ============================================================================
@@ -118,13 +97,13 @@
 //  --  BASE CLASS
 .d-bgg-pattern {
     position: relative;
-    padding-left: var(--space-550) !important;
+    padding-left: var(--dt-space-550) !important;
 
     &::after {
         position: absolute;
-        top: var(--space-100);
-        bottom: var(--space-100);
-        left: var(--space-100);
+        top: var(--dt-space-100);
+        bottom: var(--dt-space-100);
+        left: var(--dt-space-100);
         min-width: 2rem;
         min-height: 2rem;
         background-image: var(--bgg-pattern);

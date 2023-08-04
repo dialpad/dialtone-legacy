@@ -16,9 +16,9 @@
 //  ----------------------------------------------------------------------------
 .d-chip {
   //  Component CSS Vars
-  --chip-color-text: var(--fc-primary);
-  --chip-color-background: var(--bgc-moderate-opaque);
-  --chip-border-radius: var(--br-pill);
+  --chip-color-text: var(--dt-color-foreground-primary);
+  --chip-color-background: var(--dt-color-surface-moderate-opaque);
+  --chip-border-radius: var(--dt-size-radius-pill);
 
   position: relative;
   display: inline-flex;
@@ -30,9 +30,9 @@
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  padding: var(--space-300) var(--space-400);
+  padding: var(--dt-space-300) var(--dt-space-400);
   color: var(--chip-color-text);
-  font-size: var(--fs-200);
+  font-size: var(--dt-font-size-200);
   font-family: inherit;
   line-height: var(--lh4);
   background-color: var(--chip-color-background);
@@ -46,8 +46,8 @@
   // not nested within the chip. Only apply if close button exists (more than one child).
   &:not(:only-child)::after {
     flex-shrink: 0;
-    width: calc(var(--size-500) + var(--space-200));
-    height: calc(var(--size-500) + var(--space-200));
+    width: calc(var(--dt-size-500) + var(--dt-size-200));
+    height: calc(var(--dt-size-500) + var(--dt-size-200));
     content: '';
   }
 
@@ -60,30 +60,30 @@
     cursor: pointer;
 
     &:hover {
-      --chip-color-background: var(--black-300);
+      --chip-color-background: var(--dt-color-black-300);
 
       text-decoration: none;
     }
 
     &:active {
-      --chip-color-background: var(--black-400);
+      --chip-color-background: var(--dt-color-black-400);
     }
 
     &:focus-visible {
       outline: none;
-      box-shadow: var(--bs-focus-ring);
+      box-shadow: var(--dt-shadow-focus);
     }
   }
 
   .d-avatar {
-    --avatar-size-shape: var(--space-550);
+    --avatar-size-shape: var(--dt-size-550);
 
-    margin: var(--space-200-negative) var(--space-300) var(--space-200-negative) var(--space-350-negative);
+    margin: var(--dt-space-200-negative) var(--dt-space-300) var(--dt-space-200-negative) var(--dt-space-350-negative);
   }
 
   .d-svg {
-    width: @icon18;
-    height: @icon18;
+    width: var(--dt-icon-size-300);
+    height: var(--dt-icon-size-300);
   }
 }
 
@@ -92,8 +92,8 @@
   .d-btn--circle();
 
   position: absolute;
-  right: var(--space-200);
-  padding: calc(var(--space-200) + var(--space-100));
+  right: var(--dt-space-200);
+  padding: calc(var(--dt-space-200) + var(--dt-space-100));
   border-width: 0;
 
   &::before {
@@ -104,28 +104,28 @@
   }
 
   &:hover:not([disabled]) {
-    --button-color-background: hsla(var(--black-800-hsl) ~' / ' 15%);
+    --button-color-background: hsla(var(--dt-color-black-800-hsl) ~' / ' 15%);
   }
 
   &:active:not([disabled]),
   &.d-btn--active:not([disabled]),
   &.d-btn--active:active:not([disabled]) {
-    --button-color-background: hsla(var(--black-800-hsl) ~' / ' 25%);
+    --button-color-background: hsla(var(--dt-color-black-800-hsl) ~' / ' 25%);
   }
 
   .d-btn__icon .d-svg {
-    width: @icon18;
-    height: @icon18;
+    width: var(--dt-icon-size-300);
+    height: var(--dt-icon-size-300);
   }
 }
 
 .d-chip__icon {
-  padding-right: var(--space-300);
+  padding-right: var(--dt-space-300);
   line-height: 0;
 }
 
 .d-chip__label--active {
-  background-color: var(--black-400);
+  background-color: var(--dt-color-black-400);
 }
 
 //  ============================================================================
@@ -134,83 +134,83 @@
 //  $$  EXTRA SMALL
 //  ----------------------------------------------------------------------------
 .d-chip__label--xs {
-  padding: var(--space-200) var(--space-350);
-  font-size: var(--fs-100);
+  padding: var(--dt-space-200) var(--dt-space-350);
+  font-size: var(--dt-font-size-100);
 
   .d-svg {
-    width: @icon14;
-    height: @icon14;
+    width: var(--dt-icon-size-200);
+    height: var(--dt-icon-size-200);
   }
 
   // reserves space within the chip for the close button, since the close button is
   // not nested within the chip.
   &:not(:only-child)::after {
     flex-shrink: 0;
-    width: var(--size-450);
-    height: var(--size-450);
+    width: var(--dt-size-450);
+    height: var(--dt-size-450);
     content: '';
   }
 
   .d-avatar {
-    --avatar-size-shape: var(--size-500);
+    --avatar-size-shape: var(--dt-size-500);
 
-    margin-right: var(--space-300);
-    margin-left: var(--space-300-negative);
+    margin-right: var(--dt-space-300);
+    margin-left: var(--dt-space-300-negative);
   }
 }
 
 .d-chip__close--xs {
-  padding: var(--space-100);
+  padding: var(--dt-space-100);
 
   // Clickable area for the close button.
   &::before {
-    width: var(--size-550);
-    height: var(--size-550);
+    width: var(--dt-size-550);
+    height: var(--dt-size-550);
   }
 
   .d-btn__icon .d-svg {
-    width: @icon14;
-    height: @icon14;
+    width: var(--dt-icon-size-200);
+    height: var(--dt-icon-size-200);
   }
 }
 
 //  $$ SMALL
 //  ----------------------------------------------------------------------------
 .d-chip__label--sm {
-  padding: var(--space-200) var(--space-400);
-  font-size: var(--fs-200);
+  padding: var(--dt-space-200) var(--dt-space-400);
+  font-size: var(--dt-font-size-200);
 
   .d-svg {
-    width: @icon16;
-    height: @icon16;
+    width: var(--dt-size-500);
+    height: var(--dt-size-500);
   }
 
   // reserves space within the chip for the close button, since the close button is
   // not nested within the chip.
   &:not(:only-child)::after {
     flex-shrink: 0;
-    width: calc(var(--size-500) - var(--size-200)); // 14
-    height: calc(var(--size-500) - var(--size-200)); // 14
+    width: calc(var(--dt-size-500) - var(--dt-size-200)); // 14
+    height: calc(var(--dt-size-500) - var(--dt-size-200)); // 14
     content: '';
   }
 
   .d-avatar {
-    --avatar-size-shape: calc(var(--size-500) + var(--size-300)); // 20
+    --avatar-size-shape: calc(var(--dt-size-500) + var(--dt-size-300)); // 20
 
-    margin-right: var(--space-300);
+    margin-right: var(--dt-space-300);
   }
 }
 
 .d-chip__close--sm {
-  padding: var(--space-200);
+  padding: var(--dt-space-200);
 
   &::before {
-    width: var(--space-550);
-    height: var(--space-550);
+    width: var(--dt-size-550);
+    height: var(--dt-size-550);
   }
 
   .d-btn__icon .d-svg {
-    width: @icon16;
-    height: @icon16;
+    width: var(--dt-size-500);
+    height: var(--dt-size-500);
   }
 }

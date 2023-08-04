@@ -1,12 +1,12 @@
 <template>
-  <div class="d-d-flex d-ai-center d-fl-center d-h64 d-mb16">
+  <div class="d-d-flex d-ai-center d-fl-center d-h64 d-mb16 d-fc-primary">
     <dt-icon
       ref="iconPreview"
       :name="iconName"
       :size="selectedSize"
     />
   </div>
-  <div class="d-stack16">
+  <div class="d-stack16 d-fc-primary">
     <div class="d-wmx50p">
       <dt-select-menu
         label="Size"

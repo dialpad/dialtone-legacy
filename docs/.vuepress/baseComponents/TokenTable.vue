@@ -38,7 +38,7 @@
         <td>
           <div
             class="d-bar-circle d-w42 d-h42"
-            style="background-color:var(--bgc-moderate);"
+            style="background-color: var(--dt-color-surface-moderate);"
           />
         </td>
         <th

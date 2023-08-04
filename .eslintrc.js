@@ -5,6 +5,7 @@ module.exports = {
     'plugin:vue/base',
     'plugin:vue/vue3-recommended',
     'plugin:vuejs-accessibility/recommended',
+    'plugin:jest/recommended',
   ],
   env: {
     browser: true,
@@ -103,5 +104,14 @@ module.exports = {
     'vue/space-unary-ops': ['error', { words: true, nonwords: false }],
     'vue/template-curly-spacing': ['error', 'never'],
     'vue/no-v-html': 'off',
+    'jest/expect-expect': 'off',
+    'vue/max-attributes-per-line': ['warn', {
+      singleline: {
+        max: 8,
+      },
+      multiline: {
+        max: 1,
+      },
+    }],
   },
 };

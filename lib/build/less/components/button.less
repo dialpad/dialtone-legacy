@@ -1,5 +1,3 @@
-//@import (reference) '../variables/icons.less';
-
 //
 //  DIALTONE
 //  COMPONENTS: BUTTONS
@@ -22,30 +20,30 @@
 .d-btn--md {
     //  Component specific CSS Vars
     //  ------------------------------------------------------------------------
-    --button-color-text: var(--purple-400);
-    --button-color-background: transparent;
+    --button-color-text: var(--dt-action-color-foreground-base-default);
+    --button-color-background: var(--dt-action-color-background-base-default);
     --button-color-border: transparent;
     --button-gap: calc(var(--button-padding-x) / 2);
-    --button-border-radius: var(--size-400);
-    --button-border-width: var(--size-100);
-    --button-font-size: var(--fs-200);
-    --button-font-weight: var(--fw-medium);
-    --button-line-height-xs: var(--lh-200); // TODO: these used to vary, remove if all wind up all the same
-    --button-line-height-sm: var(--lh-200); // TODO: these used to vary, remove if all wind up all the same
-    --button-line-height-md: var(--lh-200); // TODO: these used to vary, remove if all wind up all the same
-    --button-line-height-lg: var(--lh-200); // TODO: these used to vary, remove if all wind up all the same
-    --button-line-height-xl: var(--lh-200); // TODO: these used to vary, remove if all wind up all the same
+    --button-border-radius: var(--dt-size-400);
+    --button-border-width: var(--dt-size-100);
+    --button-font-size: var(--dt-font-size-200);
+    --button-font-weight: var(--dt-font-weight-medium);
+    --button-line-height-xs: var(--dt-font-line-height-200); // TODO: these used to vary, remove if all wind up all the same
+    --button-line-height-sm: var(--dt-font-line-height-200); // TODO: these used to vary, remove if all wind up all the same
+    --button-line-height-md: var(--dt-font-line-height-200); // TODO: these used to vary, remove if all wind up all the same
+    --button-line-height-lg: var(--dt-font-line-height-200); // TODO: these used to vary, remove if all wind up all the same
+    --button-line-height-xl: var(--dt-font-line-height-200); // TODO: these used to vary, remove if all wind up all the same
     --button-line-height: var(--button-line-height-md);
-    --button-padding-y-xs: calc(calc(var(--space-400) - var(--space-100)) - var(--button-border-width)); // ((8 - 1) - border-width)
-    --button-padding-x-xs: calc(var(--space-400) - var(--button-border-width)); // 8 minus border-width
-    --button-padding-y-sm: calc(var(--space-400) - var(--button-border-width)); // 8 minus border-width
-    --button-padding-x-sm: calc(var(--space-450) - var(--button-border-width)); // 12 minus border-width
-    --button-padding-y-md: calc(var(--space-400) - var(--button-border-width)); // 8 minus border-width
-    --button-padding-x-md: calc(var(--space-450) - var(--button-border-width)); // 12 minus border-width
-    --button-padding-y-lg: calc((var(--space-400) + var(--space-200)) - var(--button-border-width)); // 10 minus border-width
-    --button-padding-x-lg: calc(var(--space-500) - var(--button-border-width)); // 16 minus border-width
-    --button-padding-y-xl: calc(var(--space-450) - var(--button-border-width)); // 12 minus border-width
-    --button-padding-x-xl: calc(var(--space-500) - var(--button-border-width)); // 16 minus border-width
+    --button-padding-y-xs: calc(calc(var(--dt-space-400) - var(--dt-space-100)) - var(--button-border-width)); // ((8 - 1) - border-width)
+    --button-padding-x-xs: calc(var(--dt-space-400) - var(--button-border-width)); // 8 minus border-width
+    --button-padding-y-sm: calc(var(--dt-space-400) - var(--button-border-width)); // 8 minus border-width
+    --button-padding-x-sm: calc(var(--dt-space-450) - var(--button-border-width)); // 12 minus border-width
+    --button-padding-y-md: calc(var(--dt-space-400) - var(--button-border-width)); // 8 minus border-width
+    --button-padding-x-md: calc(var(--dt-space-450) - var(--button-border-width)); // 12 minus border-width
+    --button-padding-y-lg: calc((var(--dt-space-400) + var(--dt-space-200)) - var(--button-border-width)); // 10 minus border-width
+    --button-padding-x-lg: calc(var(--dt-space-500) - var(--button-border-width)); // 16 minus border-width
+    --button-padding-y-xl: calc(var(--dt-space-450) - var(--button-border-width)); // 12 minus border-width
+    --button-padding-x-xl: calc(var(--dt-space-500) - var(--button-border-width)); // 16 minus border-width
     --button-padding-y: var(--button-padding-y-md);
     --button-padding-x: var(--button-padding-x-md);
 
@@ -80,35 +78,34 @@
     //  --  STATES
     //  ------------------------------------------------------------------------
     &:hover:not([disabled]) {
-        --button-color-text: hsl(var(--purple-400-h) var(--purple-400-s) calc(var(--purple-400-l) - 10%));
-        --button-color-background: hsla(var(--purple-400-hsl) ~' / ' 4%);
+        --button-color-text: var(--dt-action-color-foreground-base-hover);
+        --button-color-background: var(--dt-action-color-background-base-hover);
     }
 
     &:active:not([disabled]),
     &.d-btn--active:not([disabled]),
     &.d-btn--active:active:not([disabled]) {
-        --button-color-text: hsl(var(--purple-400-h) var(--purple-400-s) calc(var(--purple-400-l) - 10%));
-        --button-color-background: hsla(var(--purple-400-hsl) ~' / ' 14%);
+        --button-color-text: var(--dt-action-color-foreground-base-active);
+        --button-color-background: var(--dt-action-color-background-base-active);
     }
-
 
     &:focus-visible {
       outline: none;
-      box-shadow: var(--bs-focus-ring);
+      box-shadow: var(--dt-shadow-focus);
     }
 
     &[disabled] {
         --button-color-border: transparent !important;
-        --button-color-text: var(--fc-disabled) !important;
-        --button-color-background: var(--black-300) !important;
+        --button-color-text: var(--dt-action-color-foreground-disabled-default) !important;
+        --button-color-background: var(--dt-action-color-background-disabled-default) !important;
 
         cursor: not-allowed;
         transition: none;
     }
 
     .d-btn__icon .d-svg {
-        width: @icon16;
-        height: @icon16;
+        width: var(--dt-size-500);
+        height: var(--dt-size-500);
     }
 }
 
@@ -120,13 +117,13 @@
 .d-btn--xs {
     --button-padding-y: var(--button-padding-y-xs);
     --button-padding-x: var(--button-padding-x-xs);
-    --button-font-size: var(--fs-100);
+    --button-font-size: var(--dt-font-size-100);
     --button-line-height: var(--button-line-height-xs);
-    --button-border-radius: var(--size-300);
+    --button-border-radius: var(--dt-size-300);
 
     .d-btn__icon .d-svg {
-        width: @icon12;
-        height: @icon12;
+        width: var(--dt-icon-size-100);
+        height: var(--dt-icon-size-100);
     }
 }
 
@@ -135,12 +132,12 @@
 .d-btn--sm {
     --button-padding-y: var(--button-padding-y-sm);
     --button-padding-x: var(--button-padding-x-sm);
-    --button-font-size: var(--fs-100);
+    --button-font-size: var(--dt-font-size-100);
     --button-line-height: var(--button-line-height-sm);
 
     .d-btn__icon .d-svg {
-        width: @icon14;
-        height: @icon14;
+        width: var(--dt-icon-size-200);
+        height: var(--dt-icon-size-200);
     }
 }
 
@@ -155,13 +152,13 @@
 .d-btn--lg {
     --button-padding-y: var(--button-padding-y-lg);
     --button-padding-x: var(--button-padding-x-lg);
-    --button-font-size: var(--fs-300);
+    --button-font-size: var(--dt-font-size-300);
     --button-line-height: var(--button-line-height-lg);
-    --button-border-radius: var(--size-450);
+    --button-border-radius: var(--dt-size-450);
 
     .d-btn__icon .d-svg {
-        width: @icon20;
-        height: @icon20;
+        width: var(--dt-icon-size-400);
+        height: var(--dt-icon-size-400);
     }
 }
 
@@ -170,14 +167,14 @@
 .d-btn--xl {
     --button-padding-y: var(--button-padding-y-xl);
     --button-padding-x: var(--button-padding-x-xl);
-    --button-font-size: var(--fs-400);
-    --button-font-weight: var(--fw-normal);
+    --button-font-size: var(--dt-font-size-400);
+    --button-font-weight: var(--dt-font-weight-normal);
     --button-line-height: var(--button-line-height-xl);
-    --button-border-radius: var(--size-500);
+    --button-border-radius: var(--dt-size-500);
 
     .d-btn__icon .d-svg {
-        width: @icon24;
-        height: @icon24;
+        width: var(--dt-icon-size-500);
+        height: var(--dt-icon-size-500);
     }
 }
 
@@ -221,11 +218,11 @@
 }
 
 .d-btn__icon--left:not(:only-child) {
-    margin-left: var(--space-200-negative);
+    margin-left: var(--dt-space-200-negative);
 }
 
 .d-btn__icon--right:not(:only-child) {
-    margin-right: var(--space-200-negative);
+    margin-right: var(--dt-space-200-negative);
 }
 
 //  ============================================================================
@@ -236,19 +233,19 @@
 .d-btn--circle {
     --button-padding-x: var(--button-padding-y-md);
     --button-padding-y: var(--button-padding-y-md);
-    --button-color-text: var(--black-800);
-    --button-border-radius: var(--br-circle);
+    --button-color-text: var(--dt-action-color-foreground-muted-default);
+    --button-border-radius: var(--dt-size-radius-circle);
 
     &:hover:not([disabled]) {
-        --button-color-text: var(--muted-color-hover);
-        --button-color-background: hsla(var(--black-800-hsl) ~' / ' 3%);
+        --button-color-text: var(--dt-action-color-foreground-muted-hover);
+        --button-color-background: var(--dt-action-color-background-muted-hover);
     }
 
     &:active:not([disabled]),
     &.d-btn--active:not([disabled]),
     &.d-btn--active:active:not([disabled]) {
-        --button-color-text: var(--fc-secondary);
-        --button-color-background: hsla(var(--black-800-hsl) ~' / ' 9%);
+        --button-color-text: var(--dt-action-color-foreground-muted-active);
+        --button-color-background: var(--dt-action-color-background-muted-active);
     }
 
     .d-btn__icon {
@@ -260,10 +257,10 @@
     }
 
     &.d-btn--outlined {
-        --button-color-border: var(--black-600);
+        --button-color-border: var(--dt-action-color-border-muted-outlined-default);
     }
 
-    //  Adjust padding based on sizes
+    // Adjust padding based on sizes
     &.d-btn--xs {
         --button-padding-y: var(--button-padding-y-xs);
         --button-padding-x: var(--button-padding-y-xs);
@@ -280,98 +277,99 @@
     }
 
     &.d-btn--lg {
-        --button-padding-x: calc(var(--button-padding-y-lg) + var(--space-100));
-        --button-padding-y: calc(var(--button-padding-y-lg) + var(--space-100));
+        --button-padding-x: calc(var(--button-padding-y-lg) + var(--dt-space-100));
+        --button-padding-y: calc(var(--button-padding-y-lg) + var(--dt-space-100));
     }
 
     &.d-btn--xl {
-        --button-padding-x: calc(var(--button-padding-y-xl) + var(--space-300));
-        --button-padding-y: calc(var(--button-padding-y-xl) + var(--space-300));
+        --button-padding-x: calc(var(--button-padding-y-xl) + var(--dt-space-300));
+        --button-padding-y: calc(var(--button-padding-y-xl) + var(--dt-space-300));
     }
 }
 
 //  $$  OUTLINED BUTTON
 //  ----------------------------------------------------------------------------
 .d-btn--outlined {
-    --button-color-border: var(--purple-400);
+    --button-color-border: var(--dt-action-color-border-base-outlined-default);
 }
 
 //  $$  PRIMARY BUTTON
 //  ----------------------------------------------------------------------------
 .d-btn--primary {
-    --button-color-text: var(--white);
-    --button-color-background: var(--purple-400);
+    --button-color-text: var(--dt-action-color-foreground-base-primary-default);
+    --button-color-background: var(--dt-action-color-background-base-primary-default);
 
     &:hover:not([disabled]) {
-      --button-color-text: var(--white);
-      --button-color-background: hsl(var(--purple-400-h), var(--purple-400-s), calc(var(--purple-400-l) - 6%));
+      --button-color-text: var(--dt-action-color-foreground-base-primary-default);
+      --button-color-background: var(--dt-action-color-background-base-primary-hover);
     }
 
     &:active:not([disabled]),
     &.d-btn--active:not([disabled]),
     &.d-btn--active:active:not([disabled]) {
-      --button-color-text: var(--white);
-      --button-color-background: hsl(var(--purple-400-h), var(--purple-400-s), calc(var(--purple-400-l) - 12%));
+      --button-color-text: var(--dt-action-color-foreground-base-primary-default);
+      --button-color-background: var(--dt-action-color-background-base-primary-active);
     }
 }
 
 //  $$  MUTED BUTTON
 //  ----------------------------------------------------------------------------
 .d-btn--muted {
-    --button-color-text: var(--fc-secondary);
+    --button-color-text: var(--dt-action-color-foreground-muted-default);
 
     &:hover:not([disabled]) {
-        --button-color-text: var(--fc-secondary);
-        --button-color-background: hsla(var(--black-800-hsl) ~' / ' 5%);
+        --button-color-text: var(--dt-action-color-foreground-muted-hover);
+        --button-color-background: var(--dt-action-color-background-muted-hover);
     }
 
     &:active:not([disabled]),
     &.d-btn--active:not([disabled]),
     &.d-btn--active:active:not([disabled]) {
-        --button-color-text: var(--fc-secondary);
-        --button-color-background: hsla(var(--black-800-hsl) ~' / ' 10%);
+        --button-color-text: var(--dt-action-color-foreground-muted-active);
+        --button-color-background: var(--dt-action-color-background-muted-active);
     }
 
     &.d-btn--outlined {
-        --button-color-border: var(--black-600);
+        --button-color-border: var(--dt-action-color-border-muted-outlined-default);
     }
 }
 
 //  $$  DANGER BUTTON
 //  ----------------------------------------------------------------------------
 .d-btn--danger {
-    --button-color-text: var(--red-300);
+    --button-color-text: var(--dt-action-color-foreground-critical-default);
+    --button-color-background: var(--dt-action-color-background-critical-default);
 
     &:hover:not([disabled]) {
-        --button-color-text: hsl(var(--red-300-h), var(--red-300-s), calc(var(--red-300-l) - 8%));
-        --button-color-background: hsla(var(--red-300-hsl) / 0.03);
+        --button-color-text: var(--dt-action-color-foreground-critical-hover);
+        --button-color-background: var(--dt-action-color-background-critical-hover);
     }
 
     &:active:not([disabled]),
     &.d-btn--active:not([disabled]),
     &.d-btn--active:active:not([disabled]) {
-        --button-color-text: hsl(var(--red-300-h), var(--red-300-s), calc(var(--red-300-l) - 8%));
-        --button-color-background: hsla(var(--red-300-hsl) / 0.09);
+        --button-color-text: var(--dt-action-color-foreground-critical-active);
+        --button-color-background: var(--dt-action-color-background-critical-active);
     }
 
     &.d-btn--outlined {
-        --button-color-border: var(--red-300);
+        --button-color-border: var(--dt-action-color-border-critical-outlined-default);
     }
 
     &.d-btn--primary {
-        --button-color-text: var(--white);
-        --button-color-background: var(--red-300);
+        --button-color-text: var(--dt-action-color-foreground-critical-primary-default);
+        --button-color-background: var(--dt-action-color-background-critical-primary-default);
 
         &:hover:not([disabled]) {
-            --button-color-text: var(--white);
-            --button-color-background: hsl(var(--red-300-h), var(--red-300-s), calc(var(--red-300-l) - 4%));
+            --button-color-text: var(--dt-action-color-foreground-critical-primary-default);
+            --button-color-background: var(--dt-action-color-background-critical-primary-hover);
         }
 
         &:active:not([disabled]),
         &.d-btn--active:not([disabled]),
         &.d-btn--active:active:not([disabled]) {
-            --button-color-text: var(--white);
-            --button-color-background: hsl(var(--red-300-h), var(--red-300-s), calc(var(--red-300-l) - 8%));
+            --button-color-text: var(--dt-action-color-foreground-critical-primary-default);
+            --button-color-background: var(--dt-action-color-background-critical-primary-active);
         }
     }
 }
@@ -380,41 +378,41 @@
 //  ----------------------------------------------------------------------------
 //  --  Base, clear inverted button
 .d-btn--inverted {
-    --button-color-text: var(--white);
-    --button-color-background: transparent;
+    --button-color-text: var(--dt-action-color-foreground-inverted-default);
+    --button-color-background: var(--dt-action-color-background-inverted-default);
 
     &:hover:not([disabled]) {
-        --button-color-text: var(--white);
-        --button-color-background: hsla(var(--white-hsl) ~' / ' 15%);
+        --button-color-text: var(--dt-action-color-foreground-inverted-hover);
+        --button-color-background: var(--dt-action-color-background-inverted-hover);
     }
 
     &:active:not([disabled]),
     &.d-btn--active:not([disabled]),
     &.d-btn--active:active:not([disabled]) {
-        --button-color-text: var(--white);
-        --button-color-background: hsla(var(--white-hsl) ~' / ' 30%);
+        --button-color-text: var(--dt-action-color-foreground-inverted-active);
+        --button-color-background: var(--dt-action-color-background-inverted-active);
     }
 
     //  --  OUTLINED
     &.d-btn--outlined {
-        --button-color-border: var(--white);
+        --button-color-border: var(--dt-action-color-border-inverted-outlined-default);
     }
 
     //  --  PRIMARY
     &.d-btn--primary {
-        --button-color-text: var(--purple-400);
-        --button-color-background: hsl(var(--purple-100-h), var(--purple-100-s), 100%);
+        --button-color-text: var(--dt-action-color-foreground-inverted-primary-default);
+        --button-color-background: var(--dt-action-color-background-inverted-primary-default);
 
         &:hover:not([disabled]) {
-            --button-color-text: hsl(var(--purple-400-h) var(--purple-400-s) calc(var(--purple-400-l) - 10%));
-            --button-color-background: hsl(var(--purple-100-h), var(--purple-100-s), 94%);
+            --button-color-text: var(--dt-action-color-foreground-inverted-primary-hover);
+            --button-color-background: var(--dt-action-color-background-inverted-primary-hover);
         }
 
         &:active:not([disabled]),
         &.d-btn--active:not([disabled]),
         &.d-btn--active:active:not([disabled]) {
-            --button-color-text: hsl(var(--purple-400-h) var(--purple-400-s) calc(var(--purple-400-l) - 10%));
-            --button-color-background: hsl(var(--purple-100-h), var(--purple-100-s), 91%);
+            --button-color-text: var(--dt-action-color-foreground-inverted-primary-active);
+            --button-color-background: var(--dt-action-color-background-inverted-primary-active);
         }
     }
 }
@@ -446,13 +444,13 @@
     }
 
     &.d-btn--lg {
-        --button-padding-x: calc(var(--button-padding-y-lg) + var(--space-100));
-        --button-padding-y: calc(var(--button-padding-y-lg) + var(--space-100));
+        --button-padding-x: calc(var(--button-padding-y-lg) + var(--dt-space-100));
+        --button-padding-y: calc(var(--button-padding-y-lg) + var(--dt-space-100));
     }
 
     &.d-btn--xl {
-        --button-padding-x: calc(var(--button-padding-y-xl) + var(--space-300));
-        --button-padding-y: calc(var(--button-padding-y-xl) + var(--space-300));
+        --button-padding-x: calc(var(--button-padding-y-xl) + var(--dt-space-300));
+        --button-padding-y: calc(var(--button-padding-y-xl) + var(--dt-space-300));
     }
 }
 
@@ -465,8 +463,8 @@
 //  $$  DISABLED STATE
 //  ----------------------------------------------------------------------------
 .d-btn--disabled {
-    --button-color-text: var(--fc-disabled) !important;
-    --button-color-background: var(--black-300) !important;
+    --button-color-text: var(--dt-action-color-foreground-disabled-default) !important;
+    --button-color-background: var(--dt-action-color-background-disabled-default) !important;
     --button-color-border: transparent !important;
 
     cursor: not-allowed;
@@ -477,19 +475,19 @@
 //  $$  BRAND BUTTONS
 //  ----------------------------------------------------------------------------
 .d-btn--brand {
-    --button-color-text: var(--white);
+    --button-color-text: var(--dt-color-neutral-white);
     --button-color-background: hsl(var(--brand-color-h) var(--brand-color-s) var(--brand-color-l));
 
     display: flex;
 
     &:hover:not([disabled]),
     &:active:not([disabled]) {
-        --button-color-text: hsla(var(--white-hsl) ~' / ' 90%);
+        --button-color-text: hsla(var(--dt-color-neutral-white-hsl) ~' / ' 90%);
         --button-color-background: hsl(var(--brand-color-h) calc(var(--brand-color-s) + 2.5%) calc(var(--brand-color-l) - 5%));
     }
 
     &:focus-visible {
-        box-shadow: 0 0 0 var(--space-100) var(--white), 0 0 0 0.25em hsla(var(--brand-color-h) var(--brand-color-s) var(--brand-color-l) ~' / ' 90%);
+        box-shadow: 0 0 0 var(--dt-space-100) var(--dt-color-neutral-white), 0 0 0 0.25em hsla(var(--brand-color-h) var(--brand-color-s) var(--brand-color-l) ~' / ' 90%);
     }
 
     &:active:not([disabled]) {
@@ -501,10 +499,10 @@
       justify-content: center;
       width: 2em;
       height: 2em;
-      margin-right: var(--space-400);
-      margin-left: var(--space-300-negative);
-      background-color: var(--white);
-      border-radius: var(--br2);
+      margin-right: var(--dt-space-400);
+      margin-left: var(--dt-space-300-negative);
+      background-color: var(--dt-color-neutral-white);
+      border-radius: var(--dt-size-radius-200);
     }
 
     .d-btn__label {
@@ -551,11 +549,11 @@
     //  Show the loading animation
     &::before {
         position: absolute;
-        width: var(--size-500);
-        height: var(--size-500);
-        border: var(--size-200) solid currentColor;
+        width: var(--dt-size-500);
+        height: var(--dt-size-500);
+        border: var(--dt-size-200) solid currentColor;
         border-left-color: transparent !important;
-        border-radius: var(--br-circle);
+        border-radius: var(--dt-size-radius-circle);
         animation: d-loading-circle 900ms infinite linear;
         content: '';
     }
