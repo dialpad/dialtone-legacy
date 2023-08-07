@@ -87,9 +87,11 @@
         </template>
       </dt-tooltip>
       <dt-tooltip
-        message="Toggle Dark Mode"
         placement="bottom"
       >
+        <template #default>
+          <span class="d-tt-capitalize">{{ `${currentTheme} theme` }}</span>
+        </template>
         <template #anchor>
           <dt-button
             importance="clear"
@@ -126,8 +128,7 @@
 
 <script setup>
 import { useRoute } from 'vue-router';
-import { computed } from 'vue';
-import { useThemeData } from '@vuepress/plugin-theme-data/client';
+import { inject, computed } from 'vue';
 
 defineProps({
   items: {
@@ -138,19 +139,35 @@ defineProps({
 defineEmits(['search']);
 
 const route = useRoute();
-const isCurrentThemeLight = computed(() => {
-  return useThemeData().value.themeMode === 'light';
-});
+const currentTheme = inject('currentTheme');
+const systemPrefersDark = inject('systemPrefersDark');
+const themes = ['system', 'light', 'dark'];
+
 const currentThemeIconName = computed(() => {
-  return isCurrentThemeLight.value ? 'sun' : 'moon';
+  switch (currentTheme.value) {
+    case 'dark':
+      return 'moon';
+    case 'light':
+      return 'sun';
+    default:
+      return 'sparkle';
+  }
 });
 const isActiveLink = (text) => {
   const linkBase = text.toLowerCase();
   return route.path.search(linkBase) !== -1;
 };
 const toggleTheme = () => {
-  useThemeData().value.themeMode = isCurrentThemeLight.value ? 'dark' : 'light';
-  document.body.classList.toggle('dialtone-theme-light');
-  document.body.classList.toggle('dialtone-theme-dark');
+  const currentIndex = themes.indexOf(currentTheme.value);
+  const nextIndex = (currentIndex + 1) % themes.length;
+  currentTheme.value = themes[nextIndex];
+
+  localStorage.setItem('preferredTheme', currentTheme.value);
+
+  if (currentTheme.value === 'system') {
+    document.body.className = systemPrefersDark.matches ? 'dialtone-theme-dark' : 'dialtone-theme-light';
+  } else {
+    document.body.className = `dialtone-theme-${currentTheme.value}`;
+  }
 };
 </script>

@@ -1,4 +1,3 @@
-import { useThemeData } from '@vuepress/plugin-theme-data/client';
 import { defineClientConfig } from '@vuepress/client';
 import Layout from './layouts/Layout.vue';
 import NotFound from './layouts/NotFound.vue';
@@ -8,6 +7,7 @@ import './assets/css/dialtone.css';
 import './assets/less/dialtone-docs.less';
 import './assets/less/dialtone-syntax.less';
 import '@/../node_modules/@dialpad/dialtone-vue/dist/style.css';
+import { onBeforeMount, provide, ref } from 'vue';
 
 export default defineClientConfig({
   async enhance ({ app, router }) {
@@ -16,14 +16,29 @@ export default defineClientConfig({
       await registerDialtoneVue(app);
       await registerEmojiDialtoneVue(app);
       await registerDialtoneCombinator(app);
-      const defaultTheme = useThemeData().value.themeMode;
-      document.body.classList.add(`dialtone-theme-${defaultTheme}`);
     }
     router.options.scrollBehavior = (to, from, savedPosition) => {
       return to.hash
         ? { el: to.hash, behavior: 'smooth', top: 64 }
         : { top: 0 };
     };
+  },
+  setup () {
+    onBeforeMount(() => {
+      const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+      const preferredTheme = localStorage.getItem('preferredTheme') || 'system';
+
+      const currentTheme = ref(preferredTheme);
+
+      if (currentTheme.value !== 'system') {
+        document.body.className = `dialtone-theme-${currentTheme.value}`;
+      } else {
+        document.body.className = systemPrefersDark.matches ? 'dialtone-theme-dark' : 'dialtone-theme-light';
+      }
+
+      provide('currentTheme', currentTheme);
+      provide('systemPrefersDark', systemPrefersDark);
+    });
   },
   layouts: {
     Layout,
