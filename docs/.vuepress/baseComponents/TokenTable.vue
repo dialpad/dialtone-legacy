@@ -32,13 +32,13 @@
     </thead>
     <tbody>
       <tr
-        v-for="({ name, value, description }) in tokensProcessed"
+        v-for="({ exampleValue, name, tokenValue, description }) in tokensProcessed"
         :key="name"
       >
         <td>
           <div
             class="d-bar-circle d-w42 d-h42"
-            style="background-color: var(--dt-color-surface-moderate);"
+            :style="exampleStyle(exampleValue)"
           />
         </td>
         <th
@@ -50,7 +50,7 @@
             gap="300"
             class="d-ai-center"
           >
-            {{ name }}
+            <span class="d-ws-nowrap">{{ name }}</span>
             <copy-button
               :text="name"
               aria-label="copy token"
@@ -61,7 +61,7 @@
           class="d-fs-100 d-lh-300"
         >
           <div class="d-wmx264">
-            {{ value }}
+            {{ tokenValue }}
           </div>
         </td>
         <td
@@ -119,7 +119,8 @@ export default {
         .filter(([key]) => key.split('/')[0] === this.category)
         .map(([_, value]) => {
           const { name, value: tokenValue, description } = value[FORMAT_MAP[this.format]] || {};
-          return { name, value: tokenValue, description };
+          const { value: exampleValue } = value['css/variables'];
+          return { exampleValue, name, tokenValue, description };
         });
     },
 
@@ -139,6 +140,16 @@ export default {
   methods: {
     setFormat (newFormat) {
       this.format = newFormat;
+    },
+
+    exampleStyle (value) {
+      switch (this.category) {
+        case 'color':
+          return `background-color: ${value}`;
+
+        default:
+          return null;
+      }
     },
   },
 };
