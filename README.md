@@ -10,13 +10,9 @@ To add Dialtone into your project, you can install it via NPM:
 npm install @dialpad/dialtone
 ```
 
-Once installed, add the following line in your Less file:
+Once installed, add the following line in your CSS/LESS file:
 ```
-@import "node_modules/@dialpad/dialtone/lib/build/less/dialtone.less";
-```
-If you only need access to Dialtone's variables and customizations to build a file and don't need the whole library exported, use this line instead in your Less file:
-```
-@import (reference) "node_modules/@dialpad/dialtone/lib/build/less/dialtone.less";
+@import "node_modules/@dialpad/dialtone/lib/dist/css/dialtone.css";
 ```
 
 ## Building Dialtone locally
@@ -35,4 +31,4 @@ Requesting a feature or reporting a bug? Please do so at the below links:
 - [Report Bug](https://dialpad.atlassian.net/secure/CreateIssue.jspa?issuetype=10878&pid=12428)
 
 
-Please also feel free to contact us via the [#dialtone slack channel](https://dialpad.slack.com/messages/dialtone/) with any questions
+Please also feel free to contact us via the [#dialtone Slack channel](https://dialpad.slack.com/messages/dialtone/) with any questions
