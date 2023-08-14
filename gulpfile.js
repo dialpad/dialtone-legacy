@@ -65,8 +65,8 @@ const postCSSResponsify = settings.styles
   ? require('@dialpad/postcss-responsive-variations')({ breakpoints, classes })
   : null;
 const postCSSDialtoneGenerator = settings.styles ? require('./postcss/dialtone-generators') : null;
-const sourcemaps = require('gulp-sourcemaps');
-const autoprefixer = require('autoprefixer');
+const sourcemaps = settings.styles ? require('gulp-sourcemaps') : null;
+const autoprefixer = settings.styles ? require('autoprefixer') : null;
 
 //  @@ SVGS
 const path = settings.svgs ? require('path') : null;
@@ -115,6 +115,7 @@ const paths = {
   styles: {
     inputLib: './lib/build/less/dialtone.less',
     outputLib: './lib/dist/css/',
+    dialtoneVue: './node_modules/@dialpad/dialtone-vue/dist/style.css',
   },
   svgs: {
     sysInput: './lib/build/svg/system/**/*.svg',
@@ -214,7 +215,9 @@ const libStyles = function (done) {
     .pipe(less()) // compile less to css
     .pipe(replace('../../fonts/', '../fonts/'))
     .pipe(postCSS([postCSSDialtoneGenerator, postCSSResponsify]))
+    .pipe(src(paths.styles.dialtoneVue))
     .pipe(postCSS([autoprefixer()]))
+    .pipe(concat('dialtone.css'))
     .pipe(dest(paths.styles.outputLib))
     .pipe(postCSS([postCSSNano]))
     .pipe(rename({ suffix: '.min' }))
@@ -230,12 +233,13 @@ const libStylesDev = function (done) {
     .pipe(sourcemaps.init())
     .pipe(less()) // compile less to css
     .pipe(postCSS([postCSSDialtoneGenerator, postCSSResponsify]))
+    .pipe(src(paths.styles.dialtoneVue))
+    .pipe(postCSS([autoprefixer()]))
+    .pipe(concat('dialtone.css'))
     .pipe(sourcemaps.mapSources(function (sourcePath) {
       return '../../build/less/' + sourcePath;
     }))
     .pipe(sourcemaps.write())
-    .pipe(postCSS([autoprefixer()]))
-    .pipe(concat('dialtone.css')) // concat the css into a single file
     .pipe(dest(paths.styles.outputLib));
 };
 
@@ -423,89 +427,6 @@ const buildSpotIllustrationSVGs = function (done) {
 };
 
 //  ================================================================================
-//  @@  FAVICONS
-//  ================================================================================
-//  --  Build Favicon Task
-// const generateFavicons = (type, input, output) => {
-//     //  Make sure this feature is activated before running
-//     if (!settings.favicons) return done();
-//
-//     if (type === 'dp') {
-//         var favInput = paths.favicons.dpInput + input;
-//         var favOutput = paths.favicons.dpOutput + output;
-//     }
-//     else if (type === 'uc') {
-//         var favInput = paths.favicons.ucInput + input;
-//         var favOutput = output;
-//     }
-//     else if (type === 'docs') {
-//         var favInput = paths.favicons.docsInput + input;
-//         var favOutput = output;
-//     }
-//
-//     return src(favInput)
-//         .pipe(favicon({
-//             appName: 'Dialpad',
-//             appShortName: null,
-//             appDescription: null,
-//             developerName: 'Dialpad',
-//             developerURL: 'https://dialpad.com/',
-//             background: null,
-//             theme_color: "#fff",
-//             url: 'https://dialpad.com/',
-//             display: 'standalone',
-//             orientation: 'portrait',
-//             scope: '/',
-//             start_url: '/',
-//             version: null,
-//             logging: false,
-//             html: '/',
-//             pipeHTML: false,
-//             replace: true,
-//             pixel_art: true,
-//             icons: {
-//                 appleStartup: false,
-//                 firefox: false,
-//                 yandex: false
-//             }
-//         }))
-//         .pipe(dest(favOutput));
-// };
-
-// //  --  ALL THE FAVICONS TO CREATE
-// //  --------------------------------------------------------------------------------
-// //      DIALPAD
-// //  --------------------------------------------------------------------------------
-// const faviconDp = () => { return generateFavicons('dp', paths.favicons.dp, 'default/'); }
-// const faviconDpNotify = () => { return generateFavicons('dp', paths.favicons.dpNotify, 'default-notify/'); }
-//
-// //      DIALPAD BETA
-// //  --------------------------------------------------------------------------------
-// const faviconDpBeta = () => { return generateFavicons('dp', paths.favicons.dpBeta, 'beta/'); }
-// const faviconDpBetaNotify = () => { return generateFavicons('dp', paths.favicons.dpBetaNotify, 'beta/'); }
-//
-// //      DIALPAD CSR
-// //  --------------------------------------------------------------------------------
-// const faviconDpCsr = () => { return generateFavicons('dp', paths.favicons.dpCsr, 'csr/'); }
-//
-// //      DIALPAD STAGING
-// //  --------------------------------------------------------------------------------
-// const faviconDpStaging = () => { return generateFavicons('dp', paths.favicons.dpStaging, 'staging/'); }
-// const faviconDpStagingNotify = () => {
-//  return generateFavicons('dp', paths.favicons.dpStagingNotify, 'staging-notify/');
-// }
-//
-// //      UBERCONFERENCE
-// //  --------------------------------------------------------------------------------
-// const faviconUberConference = () => { return generateFavicons('uc', paths.favicons.uc, paths.favicons.ucOutput); }
-//
-// //      DIALTONE
-// //  --------------------------------------------------------------------------------
-// const faviconDialtone = () => {
-//  return generateFavicons('docs', paths.favicons.docsIcon, paths.favicons.docsOutput);
-// }
-
-//  ================================================================================
 //  @@  FONTS
 //  ================================================================================
 const webfonts = function (done) {
@@ -688,9 +609,7 @@ exports.docsite = series(
   exports.clean,
   webfonts,
   exports.svg,
-  parallel(
-    libStyles,
-  ),
+  libStyles,
   buildDocs,
   copyNoJekyll,
 );
