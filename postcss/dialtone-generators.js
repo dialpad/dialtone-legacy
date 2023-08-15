@@ -22,6 +22,7 @@ const {
   appendHoverFocusSelectors,
   extractShadows,
   extractTypographies,
+  removePrefixFromColor,
 } = require('./helpers');
 const tinycolor = require('tinycolor2');
 const bodyCSSVariables = [];
@@ -106,10 +107,11 @@ const generatedRules = {
 function colorUtilities (Rule, clonedSource, declaration) {
   const dialtoneColors = extractColors();
   dialtoneColors.light.forEach(({ colorName: color }) => {
-    const hslaColor = `hsla(var(--dt-color-${color}-h) var(--dt-color-${color}-s) var(--dt-color-${color}-l)`;
+    const hslaColor = `hsla(var(${color}-h) var(${color}-s) var(${color}-l)`;
+    const colorNoPrefix = removePrefixFromColor(color);
     generatedRules.fontColor.push(new Rule({
       source: clonedSource,
-      selector: appendHoverFocusSelectors(`.d-fc-${color}.d-fc-${color}`),
+      selector: appendHoverFocusSelectors(`.d-fc-${colorNoPrefix}.d-fc-${colorNoPrefix}`),
       nodes: [
         declaration.clone({ prop: '--fco', value: '100%' }),
         declaration.clone({ prop: 'color', value: `${hslaColor} / var(--fco)) !important` }),
@@ -117,7 +119,7 @@ function colorUtilities (Rule, clonedSource, declaration) {
     }));
     generatedRules.borderColor.push(new Rule({
       source: clonedSource,
-      selector: appendHoverFocusSelectors(`.d-bc-${color}.d-bc-${color}`),
+      selector: appendHoverFocusSelectors(`.d-bc-${colorNoPrefix}.d-bc-${colorNoPrefix}`),
       nodes: [
         declaration.clone({ prop: '--bco', value: '100%' }),
         declaration.clone({ prop: 'border-color', value: `${hslaColor} / var(--bco)) !important` }),
@@ -125,7 +127,7 @@ function colorUtilities (Rule, clonedSource, declaration) {
     }));
     generatedRules.backgroundColor.push(new Rule({
       source: clonedSource,
-      selector: appendHoverFocusSelectors(`.d-bgc-${color}.d-bgc-${color}`),
+      selector: appendHoverFocusSelectors(`.d-bgc-${colorNoPrefix}.d-bgc-${colorNoPrefix}`),
       nodes: [
         declaration.clone({ prop: '--bgo', value: '100%' }),
         declaration.clone({ prop: 'background-color', value: `${hslaColor} / var(--bgo)) !important` }),
@@ -133,7 +135,7 @@ function colorUtilities (Rule, clonedSource, declaration) {
     }));
     generatedRules.dividerColor.push(new Rule({
       source: clonedSource,
-      selector: `.d-divide-${color}.d-divide-${color} > * + *`,
+      selector: `.d-divide-${colorNoPrefix}.d-divide-${colorNoPrefix} > * + *`,
       nodes: [
         declaration.clone({ prop: '--dco', value: '100%' }),
         declaration.clone({ prop: 'border-color', value: `${hslaColor} / var(--dco)) !important` }),
@@ -141,7 +143,7 @@ function colorUtilities (Rule, clonedSource, declaration) {
     }));
     generatedRules.backgroundGradientFromColor.push(new Rule({
       source: clonedSource,
-      selector: appendHoverFocusSelectors(`.d-bgg-from-${color}.d-bgg-from-${color}`),
+      selector: appendHoverFocusSelectors(`.d-bgg-from-${colorNoPrefix}.d-bgg-from-${colorNoPrefix}`),
       nodes: [
         declaration.clone({ prop: '--bgg-from-opacity', value: '100%' }),
         declaration.clone({ prop: '--bgg-from', value: `${hslaColor} / var(--bgg-from-opacity))` }),
@@ -150,7 +152,7 @@ function colorUtilities (Rule, clonedSource, declaration) {
     }));
     generatedRules.backgroundGradientToColor.push(new Rule({
       source: clonedSource,
-      selector: appendHoverFocusSelectors(`.d-bgg-to-${color}.d-bgg-to-${color}`),
+      selector: appendHoverFocusSelectors(`.d-bgg-to-${colorNoPrefix}.d-bgg-to-${colorNoPrefix}`),
       nodes: [
         declaration.clone({ prop: '--bgg-to-opacity', value: '100%' }),
         declaration.clone({ prop: '--bgg-to', value: `${hslaColor} / var(--bgg-to-opacity)) !important` }),
@@ -688,26 +690,24 @@ function colorVariables (declaration) {
   dialtoneColors.light.forEach(({ colorName, hexValue }) => {
     const color = tinycolor(hexValue);
     const { h: hue, s: saturation, l: lightness } = color.toHsl();
-    const colorVar = `--dt-color-${colorName}`;
     lightCSSVariables.push([
-      declaration.clone({ prop: `${colorVar}-h`, value: `${hue}` }),
-      declaration.clone({ prop: `${colorVar}-s`, value: `${saturation * 100}%` }),
-      declaration.clone({ prop: `${colorVar}-l`, value: `${lightness * 100}%` }),
-      declaration.clone({ prop: `${colorVar}-hsl`, value: `var(${colorVar}-h) var(${colorVar}-s) var(${colorVar}-l)` }),
-      declaration.clone({ prop: `${colorVar}-hsla`, value: `hsla(var(${colorVar}-h) var(${colorVar}-s) var(${colorVar}-l) / var(--alpha, 100%))` }),
+      declaration.clone({ prop: `${colorName}-h`, value: `${hue}` }),
+      declaration.clone({ prop: `${colorName}-s`, value: `${saturation * 100}%` }),
+      declaration.clone({ prop: `${colorName}-l`, value: `${lightness * 100}%` }),
+      declaration.clone({ prop: `${colorName}-hsl`, value: `var(${colorName}-h) var(${colorName}-s) var(${colorName}-l)` }),
+      declaration.clone({ prop: `${colorName}-hsla`, value: `hsla(var(${colorName}-h) var(${colorName}-s) var(${colorName}-l) / var(--alpha, 100%))` }),
     ]);
   });
   lightCSSVariables.push({ prop: 'color-scheme', value: 'light' });
   dialtoneColors.dark.forEach(({ colorName, hexValue }) => {
     const color = tinycolor(hexValue);
     const { h: hue, s: saturation, l: lightness } = color.toHsl();
-    const colorVar = `--dt-color-${colorName}`;
     darkCSSVariables.push([
-      declaration.clone({ prop: `${colorVar}-h`, value: `${hue}` }),
-      declaration.clone({ prop: `${colorVar}-s`, value: `${saturation * 100}%` }),
-      declaration.clone({ prop: `${colorVar}-l`, value: `${lightness * 100}%` }),
-      declaration.clone({ prop: `${colorVar}-hsl`, value: `var(${colorVar}-h) var(${colorVar}-s) var(${colorVar}-l)` }),
-      declaration.clone({ prop: `${colorVar}-hsla`, value: `hsla(var(${colorVar}-h) var(${colorVar}-s) var(${colorVar}-l) / var(--alpha, 100%))` }),
+      declaration.clone({ prop: `${colorName}-h`, value: `${hue}` }),
+      declaration.clone({ prop: `${colorName}-s`, value: `${saturation * 100}%` }),
+      declaration.clone({ prop: `${colorName}-l`, value: `${lightness * 100}%` }),
+      declaration.clone({ prop: `${colorName}-hsl`, value: `var(${colorName}-h) var(${colorName}-s) var(${colorName}-l)` }),
+      declaration.clone({ prop: `${colorName}-hsla`, value: `hsla(var(${colorName}-h) var(${colorName}-s) var(${colorName}-l) / var(--alpha, 100%))` }),
     ]);
   });
   darkCSSVariables.push({ prop: 'color-scheme', value: 'dark' });

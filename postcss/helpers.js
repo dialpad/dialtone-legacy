@@ -3,18 +3,17 @@ const dialtoneTokensLight = require('../node_modules/@dialpad/dialtone-tokens/di
 const dialtoneTokensDark = require('../node_modules/@dialpad/dialtone-tokens/dist/tokens-dark.json');
 
 const colorsRegex = new RegExp(`dtColor(Neutral)?(${REGEX_OPTIONS.COLORS})([0-9]{3})?`);
+const themeColorsRegex = /(dtTheme).*(Color).*/;
+
+const pascalToKebabCase = (string) => {
+  return string.split(/(?=[A-Z]|[0-9]{3,}?)/).join('-').toLowerCase();
+};
+
 const processColors = (result, color) => {
-  const colorName = color[0]
-    .replace(colorsRegex, (_, m1, m2, m3) => {
-      return [m1, m2, m3].filter(el => !!el).join('-');
-    })
-    .toLowerCase();
+  const colorName = pascalToKebabCase(color[0]);
   const hexValue = color[1];
   result.push({ colorName, hexValue });
   return result;
-};
-const pascalToKebabCase = (string) => {
-  return string.split(/(?=[A-Z])/).join('-').toLowerCase();
 };
 
 module.exports = {
@@ -26,12 +25,16 @@ module.exports = {
   */
   extractColors () {
     const lightColors = Object.entries(dialtoneTokensLight)
-      .filter(([key]) => colorsRegex.test(key))
+      .filter(([key]) => colorsRegex.test(key) || themeColorsRegex.test(key))
       .reduce(processColors, []);
     const darkColors = Object.entries(dialtoneTokensDark)
-      .filter(([key]) => colorsRegex.test(key))
+      .filter(([key]) => colorsRegex.test(key) || themeColorsRegex.test(key))
       .reduce(processColors, []);
     return { light: lightColors, dark: darkColors };
+  },
+
+  removePrefixFromColor (colorName) {
+    return colorName.replace('dt-theme-', '').replace('dt-color-', '');
   },
 
   /**
