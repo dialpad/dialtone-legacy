@@ -10,7 +10,7 @@ const pascalToKebabCase = (string) => {
 };
 
 const processColors = (result, color) => {
-  const colorName = pascalToKebabCase(color[0]);
+  const colorName = `--${pascalToKebabCase(color[0])}`;
   const hexValue = color[1];
   result.push({ colorName, hexValue });
   return result;
