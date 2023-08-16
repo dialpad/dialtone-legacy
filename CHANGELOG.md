@@ -1,3 +1,17 @@
+# [8.13.0](https://github.com/dialpad/dialtone/compare/v8.12.1...v8.13.0) (2023-08-16)
+
+
+### Documentation
+
+* add tokens ([#933](https://github.com/dialpad/dialtone/issues/933)) ([cdba400](https://github.com/dialpad/dialtone/commit/cdba40024cb1147d8675651987d98fe40d6d0dbb))
+* **Avatar:** update to DtAvatar ([#935](https://github.com/dialpad/dialtone/issues/935)) ([61e7401](https://github.com/dialpad/dialtone/commit/61e7401ef3d42226bfc1448926bc304d7e6e701d))
+* system theme setting ([#934](https://github.com/dialpad/dialtone/issues/934)) ([d1f393f](https://github.com/dialpad/dialtone/commit/d1f393ff299054cc2b9ba67adfb861d1b563c0ef))
+
+
+### Features
+
+* add theme tokens to output ([#937](https://github.com/dialpad/dialtone/issues/937)) ([332278f](https://github.com/dialpad/dialtone/commit/332278f9090611adc081f0ededd76d084f7f1d52))
+
 ## [8.12.1](https://github.com/dialpad/dialtone/compare/v8.12.0...v8.12.1) (2023-08-04)
 
 
