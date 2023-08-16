@@ -105,7 +105,7 @@ const generatedRules = {
  * @param { Declaration } declaration
  */
 function colorUtilities (Rule, clonedSource, declaration) {
-  const dialtoneColors = extractColors();
+  const dialtoneColors = extractColors(false);
   dialtoneColors.light.forEach(({ colorName: color }) => {
     const hslaColor = `hsla(var(${color}-h) var(${color}-s) var(${color}-l)`;
     const colorNoPrefix = removePrefixFromColor(color);

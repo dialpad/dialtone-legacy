@@ -23,18 +23,18 @@ module.exports = {
   *
   * @returns {Object}
   */
-  extractColors () {
+  extractColors (includeThemeColors = true) {
     const lightColors = Object.entries(dialtoneTokensLight)
-      .filter(([key]) => colorsRegex.test(key) || themeColorsRegex.test(key))
+      .filter(([key]) => colorsRegex.test(key) || (themeColorsRegex.test(key) && includeThemeColors))
       .reduce(processColors, []);
     const darkColors = Object.entries(dialtoneTokensDark)
-      .filter(([key]) => colorsRegex.test(key) || themeColorsRegex.test(key))
+      .filter(([key]) => colorsRegex.test(key) || (themeColorsRegex.test(key) && includeThemeColors))
       .reduce(processColors, []);
     return { light: lightColors, dark: darkColors };
   },
 
   removePrefixFromColor (colorName) {
-    return colorName.replace('dt-theme-', '').replace('dt-color-', '');
+    return colorName.replace('--dt-theme-', '').replace('--dt-color-', '');
   },
 
   /**
