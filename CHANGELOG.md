@@ -1,3 +1,10 @@
+## [8.13.1](https://github.com/dialpad/dialtone/compare/v8.13.0...v8.13.1) (2023-08-16)
+
+
+### Bug Fixes
+
+* bgc color generation ([#938](https://github.com/dialpad/dialtone/issues/938)) ([584686d](https://github.com/dialpad/dialtone/commit/584686d7661898fa23651d9d967651017452c4ed))
+
 # [8.13.0](https://github.com/dialpad/dialtone/compare/v8.12.1...v8.13.0) (2023-08-16)
 
 
