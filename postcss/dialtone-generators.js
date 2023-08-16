@@ -109,7 +109,6 @@ function colorUtilities (Rule, clonedSource, declaration) {
   dialtoneColors.light.forEach(({ colorName: color }) => {
     const hslaColor = `hsla(var(${color}-h) var(${color}-s) var(${color}-l)`;
     const colorNoPrefix = removePrefixFromColor(color);
-    console.log(colorNoPrefix);
     generatedRules.fontColor.push(new Rule({
       source: clonedSource,
       selector: appendHoverFocusSelectors(`.d-fc-${colorNoPrefix}.d-fc-${colorNoPrefix}`),
