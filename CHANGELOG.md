@@ -1,3 +1,10 @@
+## [8.13.2](https://github.com/dialpad/dialtone/compare/v8.13.1...v8.13.2) (2023-08-16)
+
+
+### Bug Fixes
+
+* update dialtone-vue version ([a1dd34d](https://github.com/dialpad/dialtone/commit/a1dd34d327456d955c1c05260eb61540ea4d7e80))
+
 ## [8.13.1](https://github.com/dialpad/dialtone/compare/v8.13.0...v8.13.1) (2023-08-16)
 
 
