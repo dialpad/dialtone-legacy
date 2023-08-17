@@ -3,6 +3,8 @@ import { defineClientConfig } from '@vuepress/client';
 // Common views
 import Icons from './views/Icons.vue';
 import ColorsCatalog from './views/ColorsCatalog.vue';
+import BorderColorTable from './views/BorderColorTable.vue';
+import ThemeColorTable from './views/ThemeColorTable.vue';
 import Overview from './views/Overview.vue';
 
 // Base components
@@ -31,6 +33,8 @@ export default defineClientConfig({
     // Common views
     app.component('Icons', Icons);
     app.component('ColorsCatalog', ColorsCatalog);
+    app.component('BorderColorTable', BorderColorTable);
+    app.component('ThemeColorTable', ThemeColorTable);
     app.component('Overview', Overview);
 
     // Base components
