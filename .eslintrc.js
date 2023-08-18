@@ -62,7 +62,7 @@ module.exports = {
     }],
     'vue/v-on-event-hyphenation': ['error'],
     'vue/no-template-target-blank': ['error'],
-    'vue/no-static-inline-styles': ['error'],
+    'vue/no-static-inline-styles': ['off'],
     'vuejs-accessibility/iframe-has-title': 'warn',
     'vuejs-accessibility/aria-props': 'warn',
 
