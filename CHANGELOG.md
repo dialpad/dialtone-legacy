@@ -1,3 +1,15 @@
+## [8.13.3](https://github.com/dialpad/dialtone/compare/v8.13.2...v8.13.3) (2023-08-22)
+
+
+### Bug Fixes
+
+* **Item Layout:** set min-width: 0 on content ([daaf1b6](https://github.com/dialpad/dialtone/commit/daaf1b6fcddf67da21b06e677356638bea4390d5))
+
+
+### Documentation
+
+* token based theme colors ([#939](https://github.com/dialpad/dialtone/issues/939)) ([4bf3cd0](https://github.com/dialpad/dialtone/commit/4bf3cd0ce3dd5bcc27967b45f080a94810c4bfa5))
+
 ## [8.13.2](https://github.com/dialpad/dialtone/compare/v8.13.1...v8.13.2) (2023-08-16)
 
 
