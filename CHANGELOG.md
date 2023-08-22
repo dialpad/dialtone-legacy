@@ -1,3 +1,10 @@
+## [8.13.4](https://github.com/dialpad/dialtone/compare/v8.13.3...v8.13.4) (2023-08-22)
+
+
+### Bug Fixes
+
+* **Input:** textarea right space ([#940](https://github.com/dialpad/dialtone/issues/940)) ([fd32d82](https://github.com/dialpad/dialtone/commit/fd32d82f623570d8ec3d72d8cd391152aa9852ee))
+
 ## [8.13.3](https://github.com/dialpad/dialtone/compare/v8.13.2...v8.13.3) (2023-08-22)
 
 
