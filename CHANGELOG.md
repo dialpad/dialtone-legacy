@@ -1,3 +1,10 @@
+## [8.13.5](https://github.com/dialpad/dialtone/compare/v8.13.4...v8.13.5) (2023-08-23)
+
+
+### Bug Fixes
+
+* change end to flex-end ([0497e76](https://github.com/dialpad/dialtone/commit/0497e7622e634f4d254828fb484e0b32a7ff11dd))
+
 ## [8.13.4](https://github.com/dialpad/dialtone/compare/v8.13.3...v8.13.4) (2023-08-22)
 
 
