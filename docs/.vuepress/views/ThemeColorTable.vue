@@ -34,7 +34,7 @@
           <div
             v-else-if="c.property === 'color'"
             class="d-fs-300 d-p6 d-ta-center d-fw-medium"
-            style="color: var(--{{ c.name }})"
+            :style="{ color: `var(--${c.name})` }"
           >
             Aa
           </div>
