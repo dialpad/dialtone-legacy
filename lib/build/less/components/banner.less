@@ -15,7 +15,7 @@
     //  ------------------------------------------------------------------------
     --banner-color-background: var(--dt-color-surface-secondary);
     --banner-color-text: var(--dt-color-foreground-primary);
-    --notice-color-icon: var(--toast-color-text);
+    --notice-color-icon: var(--banner-color-text);
     --banner-color-border: var(--dt-color-border-subtle);
     --banner-font-size: var(--dt-font-size-200);
     --banner-line-height: var(--dt-font-line-height-200);
@@ -81,6 +81,12 @@
         gap: var(--dt-space-300);
         align-items: baseline;
     }
+
+    .d-notice__actions {
+      button {
+        color: var(--banner-color-text);
+      }
+    }
 }
 
 //  ============================================================================
@@ -91,7 +97,7 @@
 .d-banner.d-banner--important {
     --banner-color-background: var(--dt-color-surface-strong);
     --banner-color-text: var(--dt-color-foreground-primary-inverted);
-    --notice-color-icon: var(--dt-color-foreground-primary-inverted);
+    --notice-color-icon: var(--banner-color-text);
     --banner-color-border: transparent;
 }
 
@@ -134,7 +140,11 @@
     --banner-color-background: var(--dt-color-surface-warning);
 
     &.d-banner--important {
-        --banner-color-background: var(--dt-color-gold-200);
+        --banner-color-background: var(--dt-color-surface-warning-strong);
         --banner-color-text: var(--dt-color-foreground-primary);
+
+      .dialtone-theme-dark & {
+        --banner-color-text: var(--dt-color-foreground-primary-inverted);
+      }
     }
 }

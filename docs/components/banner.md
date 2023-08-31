@@ -8,7 +8,13 @@ storybook: https://vue.dialpad.design/?path=/story/components-banner--default
 figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Components-7?node-id=8922%3A20410&viewport=-178%2C151%2C0.23&t=xHutRjwo1o5zMTgT-11
 ---
 
-<example-banner />
+<code-well-header>
+    <div class="d-d-flex d-ai-center d-w100p">
+        <dt-banner title="Example banner" important="true" class="d-ps-relative d-zi-base" :close-button-props="{ariaLabel: 'Close button'}">
+            Message body with a <dt-link kind="inverted">Link</dt-link>
+        </dt-banner>
+    </div>
+</code-well-header>
 
 ## Usage
 
@@ -21,7 +27,27 @@ Banners are a type of notice and so you can use the following [Notice](notice.md
 
 ## Variants and examples
 
-<example-banner />
+<code-well-header>
+    <div class="d-d-flex d-w100p d-flow8 d-ai-flex-end">
+        <div class="d-fl-grow1">
+            <dt-select-menu label="Style" :options="bannerOptions" @change="changeKind" />
+        </div>
+        <dt-checkbox value="important" @input="toggleImportant">Important</dt-checkbox>
+        <dt-button @click="toggleBanner">Toggle Example</dt-button>
+    </div>
+</code-well-header>
+
+<dt-banner
+  :pinned="pinned"
+  :important="important"
+  :kind="selectedKind"
+  :close-button-props="{ariaLabel: 'Close button'}"
+  title="Optional banner title"
+  v-show="showBanner"
+  @close="showBanner = false"
+>
+  Message body
+</dt-banner>
 
 ```html
 <aside class="d-banner" role="alert" aria-hidden="false">
@@ -60,6 +86,31 @@ Banners are a type of notice and so you can use the following [Notice](notice.md
 <component-accessible-table component-name="banner"></component-accessible-table>
 
 <script setup>
-  import { accessible } from '@data/banner.json';
-  import ExampleBanner from '@exampleComponents/ExampleBanner.vue';
+import { ref } from 'vue';
+import { accessible } from '@data/banner.json';
+
+const bannerOptions = [
+  { value: 'base', label: 'Base' },
+  { value: 'error', label: 'Error' },
+  { value: 'info', label: 'Info' },
+  { value: 'success', label: 'Success' },
+  { value: 'warning', label: 'Warning' },
+];
+const showBanner = ref(false);
+const important = ref(false);
+const pinned = ref(false);
+const selectedKind = ref('base');  
+
+function toggleBanner () {
+  showBanner.value = !showBanner.value;
+}
+function toggleImportant () {
+  important.value = !important.value;
+}
+function togglePinned () {
+  pinned.value = !pinned.value;
+}
+function changeKind (kind) {
+  selectedKind.value = kind;
+}
 </script>
