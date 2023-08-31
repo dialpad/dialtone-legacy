@@ -50,27 +50,20 @@ Banners are a type of notice and so you can use the following [Notice](notice.md
 </dt-banner>
 
 ```html
-<aside class="d-banner" role="alert" aria-hidden="false">
+<aside class="d-banner d-banner--base" role="alert" aria-hidden="false">
   <div class="d-banner__dialog" role="alertdialog" aria-labelledy="info-alert-title" aria-describedby="info-alert-desc">
-    <div class="d-notice__icon">
-      <IconInfo />
-    </div>
+    <div class="d-notice__icon">...</div>
     <div class="d-notice__content">
-      <h2 class="d-notice__title" id="info-alert-title">Optional title</h2>
-      <p class="d-notice__message" id="info-alert-desc">Message body with <a href="#">a link.</a></p>
+      <h2 class="d-notice__title" id="info-alert-title">...</h2>
+      <p class="d-notice__message" id="info-alert-desc">...</p>
     </div>
-    <div class="d-notice__actions">
-      <button type="button" class="d-btn d-btn--sm d-btn--outlined d-btn--muted">Action</button>
-      <button type="button" class="d-btn d-btn--sm d-btn--circle d-btn--muted js-example-notice-close" aria-label="Close">
-        <span class="d-btn__icon"><IconClose /></span>
-      </button>
-    </div>
+    <div class="d-notice__actions">...</div>
 </aside>
 
-<aside class="d-banner d-banner--error" role="alert" aria-hidden="false">…</aside>
-<aside class="d-banner d-banner--info" role="alert" aria-hidden="false">…</aside>
-<aside class="d-banner d-banner--success" role="alert" aria-hidden="false">…</aside>
-<aside class="d-banner d-banner--warning" role="alert" aria-hidden="false">…</aside>
+<aside class="d-banner d-banner--error" role="alert" aria-hidden="false">...</aside>
+<aside class="d-banner d-banner--info" role="alert" aria-hidden="false">...</aside>
+<aside class="d-banner d-banner--success" role="alert" aria-hidden="false">...</aside>
+<aside class="d-banner d-banner--warning" role="alert" aria-hidden="false">...</aside>
 ```
 
 ## Vue API

@@ -13,11 +13,7 @@
 .d-banner {
     //  Component CSS Vars
     //  ------------------------------------------------------------------------
-    --banner-color-background: var(--dt-color-surface-secondary);
-    --banner-color-text: var(--dt-color-foreground-primary);
-    --notice-color-icon: var(--banner-color-text);
     --banner-color-border: var(--dt-color-border-subtle);
-    --banner-font-size: var(--dt-font-size-200);
     --banner-line-height: var(--dt-font-line-height-200);
     --banner-dialog-padding-y: var(--dt-space-400);
     --banner-dialog-padding-x: var(--dt-space-500);
@@ -27,22 +23,15 @@
     right: 0;
     left: 0;
     z-index: var(--zi-navigation-fixed);
-    display: flex;
-    box-sizing: border-box;
-    width: 100%;
-    min-height: var(--dt-size-650); // 48
-    color: var(--banner-color-text);
-    font-size: var(--banner-font-size);
+    max-width: 100%;
+    min-height: var(--dt-size-6height50); // 48
+    padding: 0;
     line-height: var(--banner-line-height);
-    background-color: var(--banner-color-background);
     border-bottom: 1px solid var(--banner-color-border);
     border-radius: 0;
     box-shadow: none;
 
-    // If you want to hide and reveal the banner
     &[aria-hidden='true'] {
-        --topbar-height: var(--dt-size-650);
-
         visibility: hidden;
         opacity: 0;
     }
@@ -52,15 +41,10 @@
         opacity: 1;
     }
 
-    //  If you want to put the banner above the topbar
-    &.d-banner--pinned {
+    &--pinned {
         z-index: calc(~'var(--zi-navigation-fixed) + 1');
         transform: translate3d(0, 0, 0);
     }
-}
-
-.d-banner--transform {
-    transform: translate3d(0, var(--topbar-height), 0);
 }
 
 //  ============================================================================
@@ -81,12 +65,6 @@
         gap: var(--dt-space-300);
         align-items: baseline;
     }
-
-    .d-notice__actions {
-      button {
-        color: var(--banner-color-text);
-      }
-    }
 }
 
 //  ============================================================================
@@ -95,56 +73,5 @@
 //  $$  DEFAULT IMPORTANT
 //  ----------------------------------------------------------------------------
 .d-banner.d-banner--important {
-    --banner-color-background: var(--dt-color-surface-strong);
-    --banner-color-text: var(--dt-color-foreground-primary-inverted);
-    --notice-color-icon: var(--banner-color-text);
     --banner-color-border: transparent;
-}
-
-//  $$  ERROR
-//  ----------------------------------------------------------------------------
-.d-banner--error {
-    --banner-color-background: var(--dt-color-surface-critical);
-
-    &.d-banner--important {
-        --banner-color-background: var(--dt-color-surface-critical-strong);
-        --banner-color-text: var(--dt-color-foreground-primary-inverted);
-    }
-}
-
-//  $$  INFO
-//  ----------------------------------------------------------------------------
-.d-banner--info {
-    --banner-color-background: var(--dt-color-surface-info);
-
-    &.d-banner--important {
-        --banner-color-background: var(--dt-color-surface-info-strong);
-        --banner-color-text: var(--dt-color-foreground-primary-inverted);
-    }
-}
-
-//  $$  SUCCESS
-//  ----------------------------------------------------------------------------
-.d-banner--success {
-    --banner-color-background: var(--dt-color-surface-success);
-
-    &.d-banner--important {
-        --banner-color-background: var(--dt-color-surface-success-strong);
-        --banner-color-text: var(--dt-color-foreground-primary-inverted);
-    }
-}
-
-//  $$  WARNING
-//  ----------------------------------------------------------------------------
-.d-banner--warning {
-    --banner-color-background: var(--dt-color-surface-warning);
-
-    &.d-banner--important {
-        --banner-color-background: var(--dt-color-surface-warning-strong);
-        --banner-color-text: var(--dt-color-foreground-primary);
-
-      .dialtone-theme-dark & {
-        --banner-color-text: var(--dt-color-foreground-primary-inverted);
-      }
-    }
 }

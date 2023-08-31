@@ -10,7 +10,9 @@
 //  $   BASE WRAPPER
 //  ----------------------------------------------------------------------------
 
-.d-notice {
+.d-notice,
+.d-banner,
+.d-toast {
     //  Component CSS Vars
     //  ------------------------------------------------------------------------
     --notice-color-background: var(--dt-color-surface-secondary);
@@ -37,12 +39,6 @@
     background-color: var(--notice-color-background);
     border-radius: var(--notice-border-radius);
     box-shadow: var(--notice-box-shadow);
-
-    .d-toast & {
-        max-width: var(--dt-size-975);
-        box-shadow: var(--dt-shadow-small);
-        pointer-events: all;
-    }
 }
 
 //  ============================================================================
@@ -64,6 +60,10 @@
     flex: 0 auto;
     gap: var(--dt-space-400);
     align-items: center;
+
+    button {
+        color: var(--notice-color-text);
+    }
 }
 
 //  $$  ICON
@@ -98,11 +98,13 @@
 //  ============================================================================
 //  $$  DEFAULT IMPORTANT
 //  ----------------------------------------------------------------------------
-.d-notice.d-notice--important {
+.d-notice.d-notice--important,
+.d-banner.d-banner--important,
+.d-toast.d-toast--important {
     --notice-color-background: var(--dt-color-surface-strong);
     --notice-color-text: var(--dt-color-foreground-primary-inverted);
+    --notice-color-icon: var(--notice-color-text);
     --notice-color-shadow: transparent;
-    --notice-color-icon: var(--dt-color-foreground-primary-inverted);
 }
 
 //  $$  ERROR
@@ -117,7 +119,6 @@
     &.d-banner--important,
     &.d-toast--important {
         --notice-color-background: var(--dt-color-surface-critical-strong);
-        --notice-color-text: var(--dt-color-foreground-primary-inverted);
     }
 }
 
@@ -164,7 +165,7 @@
     &.d-notice--important,
     &.d-banner--important,
     &.d-toast--important {
-        --notice-color-background: var(--dt-color-gold-200);
-        --notice-color-text: var(--dt-color-foreground-primary);
+        --notice-color-background: var(--dt-color-surface-warning-strong);
+        --notice-color-text: var(--dt-color-neutral-black);
     }
 }
