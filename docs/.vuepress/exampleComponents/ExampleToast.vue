@@ -29,11 +29,8 @@
 </template>
 
 <script>
-import { DtButton } from '@dialpad/dialtone-vue';
-
 export default {
   name: 'ExampleToast',
-  components: { DtButton },
   props: {
     title: {
       type: String,
