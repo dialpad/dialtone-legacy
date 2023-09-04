@@ -25,28 +25,15 @@
 .d-toast {
     //  Component CSS Vars
     //  ------------------------------------------------------------------------
-    --toast-color-background: var(--dt-color-surface-secondary);
-    --toast-color-text: var(--dt-color-foreground-primary);
-    --notice-color-icon: var(--toast-color-text);
-    --toast-color-shadow: hsla(var(--dt-color-black-900-hsl) ~' / ' 15%);
-    --toast-padding: var(--dt-space-500);
-    --toast-border-radius: var(--dt-size-400);
+    --toast-color-shadow: hsla(var(--dt-color-black-900-hsl) / 0.15);
     --toast-box-shadow: 0 0 0 var(--dt-size-100) var(--toast-color-shadow) inset, var(--dt-shadow-medium);
-    --toast-font-size: var(--dt-font-size-200);
-    --toast-line-height: var(--dt-font-line-height-300);
 
     z-index: var(--zi-notification);
-    box-sizing: border-box;
-    width: 100%;
-    max-width: var(--dt-size-1020); // 628
-    padding: var(--toast-padding);
-    color: var(--toast-color-text);
-    font-size: var(--toast-font-size);
-    line-height: var(--toast-line-height);
+    display: block;
+    max-width: var(--dt-size-975);
     word-break: normal;
-    background-color: var(--toast-color-background);
-    border-radius: var(--toast-border-radius);
     box-shadow: var(--toast-box-shadow);
+    pointer-events: all;
 
     //  If there's a link in a toast, break the url so it wraps
     > a {
@@ -73,67 +60,8 @@
     display: flex;
     align-items: center;
 
-    .d-notice__content {
-        margin-right: var(--dt-space-500); // 16
-    }
-
     .d-notice__actions {
         margin-left: var(--dt-space-600); // 32
-    }
-}
-
-//  ============================================================================
-//  $   STYLES
-//  ============================================================================
-//  $$  DEFAULT IMPORTANT
-//  ----------------------------------------------------------------------------
-.d-toast.d-toast--important {
-    --toast-color-background: var(--dt-color-surface-strong);
-    --toast-color-text: var(--dt-color-foreground-primary-inverted);
-    --notice-color-icon: var(--toast-color-text);
-  }
-
-//  $$  ERROR
-//  ----------------------------------------------------------------------------
-.d-toast--error {
-    --toast-color-background: var(--dt-color-surface-critical);
-
-    &.d-toast--important {
-      --toast-color-background: var(--dt-color-red-400);
-      --toast-color-text: var(--dt-color-foreground-primary-inverted);
-    }
-}
-
-//  $$  INFO
-//  ----------------------------------------------------------------------------
-.d-toast--info {
-    --toast-color-background: var(--dt-color-surface-info);
-
-    &.d-toast--important {
-        --toast-color-background: var(--dt-color-surface-info-strong);
-        --toast-color-text: var(--dt-color-foreground-primary-inverted);
-    }
-}
-
-//  $$  SUCCESS
-//  ----------------------------------------------------------------------------
-.d-toast--success {
-    --toast-color-background: var(--dt-color-surface-success);
-
-    &.d-toast--important {
-        --toast-color-background: var(--dt-color-surface-success-strong);
-        --toast-color-text: var(--dt-color-foreground-primary-inverted);
-    }
-}
-
-//  $$  WARNING
-//  ----------------------------------------------------------------------------
-.d-toast--warning {
-    --toast-color-background: var(--dt-color-surface-warning);
-
-    &.d-toast--important {
-        --toast-color-background: var(--dt-color-surface-warning-strong);
-        --toast-color-text: var(--dt-color-foreground-primary);
     }
 }
 

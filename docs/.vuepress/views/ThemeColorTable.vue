@@ -9,7 +9,7 @@
           Section
         </th>
         <th scope="col">
-          Item
+          State
         </th>
         <th scope="col">
           Property
@@ -22,7 +22,7 @@
     <tbody v-for="c in theme" :key="c.name">
       <tr>
         <td>
-          <div v-if="c.item === 'Icon'" class="d-d-flex d-ai-center d-jc-center">
+          <div v-if="c.section === 'Sidebar Icon'" class="d-d-flex d-ai-center d-jc-center" title="Sample icon">
             <dt-icon name="info" :style="{ color: `var(--${c.name})` }" />
           </div>
           <div v-else-if="c.property === 'background-color'" class="d-d-flex d-ai-center d-jc-center">
@@ -34,7 +34,7 @@
           <div
             v-else-if="c.property === 'color'"
             class="d-fs-300 d-p6 d-ta-center d-fw-medium"
-            style="color: var(--{{ c.name }})"
+            :style="{ color: `var(--${c.name})` }"
           >
             Aa
           </div>
@@ -49,14 +49,12 @@
           </div>
         </td>
         <th scope="row">
-          <div>
+          <div class="d-ws-nowrap">
             {{ c.section }}
           </div>
         </th>
         <td>
-          <div>
-            {{ c.item }}
-          </div>
+          {{ c.item }}
         </td>
         <td>
           <div class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100">
