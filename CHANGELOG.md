@@ -1,3 +1,21 @@
+## [8.13.7](https://github.com/dialpad/dialtone/compare/v8.13.6...v8.13.7) (2023-09-04)
+
+
+### Bug Fixes
+
+* **Banner:** colors ([#945](https://github.com/dialpad/dialtone/issues/945)) ([8101108](https://github.com/dialpad/dialtone/commit/8101108661d3dad4877a23023c3c79edbeb0ea22))
+* **Select:** add dark mode to options for windows ([#942](https://github.com/dialpad/dialtone/issues/942)) ([dc857d5](https://github.com/dialpad/dialtone/commit/dc857d5654269a624086bb2d767b1fd0c3dcf8a5))
+
+
+### Code Refactoring
+
+* **Banner, Notice, Toast:** use notice as base ([#946](https://github.com/dialpad/dialtone/issues/946)) ([70c1cab](https://github.com/dialpad/dialtone/commit/70c1cabfe357bc551af9a2d017108e8e60743d12))
+
+
+### Documentation
+
+* **Theme:** updated theme color table ([#944](https://github.com/dialpad/dialtone/issues/944)) ([01260d1](https://github.com/dialpad/dialtone/commit/01260d1e0c551aed63229a10772e792014b11e14))
+
 ## [8.13.6](https://github.com/dialpad/dialtone/compare/v8.13.5...v8.13.6) (2023-08-24)
 
 
