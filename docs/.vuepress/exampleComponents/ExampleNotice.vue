@@ -1,80 +1,26 @@
 <template>
-  <div class="d-stack12 d-w60p">
-    <aside
-      class="d-notice"
-      :class="[
-        noticeClass,
-        { 'd-notice--important': important },
-      ]"
-      :role="role"
-      aria-hidden="false"
+  <dt-notice
+    :important="important"
+    :kind="kind"
+    :title="title"
+  >
+    Message body with
+    <dt-link
+      :class="linkClass"
     >
-      <div class="d-notice__icon">
-        <dt-icon
-          v-show="kind === 'base'"
-          name="bell"
-          size="400"
-        />
-        <dt-icon
-          v-show="kind === 'error'"
-          name="alert-circle"
-          size="400"
-        />
-        <dt-icon
-          v-show="kind === 'info'"
-          name="info"
-          size="400"
-        />
-        <dt-icon
-          v-show="kind === 'success'"
-          name="check-circle"
-          size="400"
-        />
-        <dt-icon
-          v-show="kind === 'warning'"
-          name="alert-triangle"
-          size="400"
-        />
-      </div>
-      <div class="d-notice__content">
-        <h2 class="d-notice__title">
-          <span class="d-tt-capitalize">{{ kind }}</span> title (optional)
-        </h2>
-        <p class="d-notice__message">
-          Message body with
-          <a
-            href="#"
-            class="d-link"
-            :class="shouldBeInverted ? 'd-link--inverted' : 'd-link--muted'"
-          >
-            a link.
-          </a>
-        </p>
-      </div>
-      <div class="d-notice__actions">
-        <button
-          type="button"
-          class="d-btn d-btn--sm d-btn--outlined"
-          :class="shouldBeInverted ? 'd-btn--inverted' : 'd-btn--muted'"
-        >
-          Action
-        </button>
-        <button
-          type="button"
-          class="d-btn d-btn--sm d-btn--circle"
-          :class="shouldBeInverted ? 'd-btn--inverted' : 'd-btn--muted'"
-          aria-label="Close"
-        >
-          <span class="d-btn__icon">
-            <dt-icon
-              name="close"
-              size="200"
-            />
-          </span>
-        </button>
-      </div>
-    </aside>
-  </div>
+      a link
+    </dt-link>
+    <template #action>
+      <dt-button
+        size="sm"
+        importance="outlined"
+        :kind="important ? 'inverted' : 'muted'"
+        :class="{ 'd-bc-neutral-black': important && kind === 'warning' }"
+      >
+        Action
+      </dt-button>
+    </template>
+  </dt-notice>
 </template>
 
 <script>
@@ -91,24 +37,17 @@ export default {
       required: true,
     },
 
-    role: {
+    title: {
       type: String,
-      default: 'status',
+      default: '',
     },
   },
 
   computed: {
-    noticeClass () {
-      return 'd-notice--' + this.kind;
-    },
-
-    shouldBeInverted () {
-      return this.important && !['warning'].includes(this.kind);
+    linkClass () {
+      if (this.kind === 'warning' && this.important) return 'd-fc-neutral-black';
+      return this.important ? 'd-fc-primary-inverted' : 'd-fc-primary';
     },
   },
 };
 </script>
-
-<style scoped>
-
-</style>
