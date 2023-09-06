@@ -15,6 +15,23 @@ Once installed, add the following line in your CSS/LESS file:
 @import "node_modules/@dialpad/dialtone/lib/dist/css/dialtone.css";
 ```
 
+And dialtone's theme class to the `<body>`
+
+**Light mode**
+```html
+<body class="dialtone-theme-light">...</body>
+```
+
+**Dark mode**
+```html
+<body class="dialtone-theme-dark">...</body>
+```
+
+It is important to add either of those classes in order to make dialtone work, as CSS variables
+definition change according to the selected mode (light, dark). 
+
+If the class is not added, the CSS variables aren't going to be defined.
+
 ## Building Dialtone locally
 
 To build Dialtone locally, visit our [installation instructions](https://dialpad.design/guides/getting-started/#build-dialtone-locally).
