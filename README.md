@@ -2,35 +2,37 @@
 
 This is the home for Dialtone, Dialpad's design system. It includes the resources needed to create consistent, predictable interfaces that conform to Dialpad’s design principles, language, styles, and best practices.
 
-## Install Dialtone via NPM
+## Install Dialtone
 
-To add Dialtone into your project, you can install it via NPM:
-
+### Install it via NPM:
 ```
 npm install @dialpad/dialtone
 ```
 
-Once installed, add the following line in your CSS/LESS file:
+### Import dialtone:
+- CSS/LESS:
+```less
+@import "node_modules/@dialpad/dialtone/lib/dist/css/dialtone.min.css";
 ```
-@import "node_modules/@dialpad/dialtone/lib/dist/css/dialtone.css";
+- Javascript:
+```js
+import '@dialpad/dialtone/lib/dist/css/dialtone.min.css';
 ```
 
-And dialtone's theme class to the `<body>`
+### Add dialtone's theme class to the `<body>`
 
-**Light mode**
+- Light mode
 ```html
 <body class="dialtone-theme-light">...</body>
 ```
 
-**Dark mode**
+- Dark mode
 ```html
 <body class="dialtone-theme-dark">...</body>
 ```
 
-It is important to add either of those classes in order to make dialtone work, as CSS variables
-definition change according to the selected mode (light, dark). 
-
-If the class is not added, the CSS variables aren't going to be defined.
+This will define the Dialtone CSS variables for your desired theme. 
+It is required to do this for Dialtone to function.
 
 ## Building Dialtone locally
 
