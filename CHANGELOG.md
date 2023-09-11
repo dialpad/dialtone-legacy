@@ -1,3 +1,21 @@
+# [8.14.0](https://github.com/dialpad/dialtone/compare/v8.13.7...v8.14.0) (2023-09-11)
+
+
+### Bug Fixes
+
+* **Emoji Picker:** category background ([#948](https://github.com/dialpad/dialtone/issues/948)) ([65eca9b](https://github.com/dialpad/dialtone/commit/65eca9b29d26caa12513d45f968ebfa9a602f4bc))
+
+
+### Documentation
+
+* **Algolia Search:** apply DT Design Language ([#950](https://github.com/dialpad/dialtone/issues/950)) ([f0f90b8](https://github.com/dialpad/dialtone/commit/f0f90b83f4075c76360b6438c1719bb414c5c4b5))
+* update dialtone usage documentation ([#947](https://github.com/dialpad/dialtone/issues/947)) ([5009726](https://github.com/dialpad/dialtone/commit/5009726201946caafa254cc33fd8f430a10180ec))
+
+
+### Features
+
+* update dialtone tokens and tokens page ([#949](https://github.com/dialpad/dialtone/issues/949)) ([9a1fcf9](https://github.com/dialpad/dialtone/commit/9a1fcf9025288b3d18ecdcb639b72e35d6d68888))
+
 ## [8.13.7](https://github.com/dialpad/dialtone/compare/v8.13.6...v8.13.7) (2023-09-04)
 
 
