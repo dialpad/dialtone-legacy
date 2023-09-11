@@ -111,8 +111,7 @@
     <dt-button
       importance="outlined"
       kind="muted"
-      class="d-ml16"
-      width="154px"
+      class="d-ml16 d-w164 d-bgc-secondary-opaque d-bc-subtle h:d-bgc-moderate"
       @click="$emit('search')"
     >
       <template #icon>
@@ -121,7 +120,7 @@
           size="200"
         />
       </template>
-      <span class="d-fc-disabled">Search Dialtone</span>
+      <span class="d-fc-placeholder">Search Dialtone</span>
     </dt-button>
   </div>
 </template>
