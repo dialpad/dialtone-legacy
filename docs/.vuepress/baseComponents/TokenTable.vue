@@ -1,12 +1,22 @@
 <template>
   <!-- eslint-disable vue/no-static-inline-styles -->
-  <dt-select-menu
-    name="format-select"
-    label="Select Format"
-    select-class="d-w128"
-    :options="selectMenuOptions"
-    @change="setFormat"
-  />
+  <dt-stack :direction="{ default: 'row' }" gap="400">
+    <dt-select-menu
+      name="format-select"
+      label="Select Format"
+      select-class="d-w128"
+      :options="formatSelectMenuOptions"
+      @change="setFormat"
+    />
+    <dt-select-menu
+      v-if="category === 'color'"
+      name="theme-select"
+      label="Select Theme"
+      select-class="d-w128"
+      :options="THEMES"
+      @change="setTheme"
+    />
+  </dt-stack>
   <table class="d-table dialtone-doc-table">
     <thead>
       <tr>
@@ -82,12 +92,19 @@ const FORMAT_MAP = {
   iOS: 'ios-swift/enum.swift',
 };
 
-const CATEGORIES = [
-  'color',
-  'typography',
-  'size',
-  'space',
+const THEMES = [
+  { value: 'light', label: 'Light' },
+  { value: 'dark', label: 'Dark' },
 ];
+
+const CATEGORY_MAP = {
+  color: ['color', 'opacity', 'theme'],
+  typography: ['typography', 'font'],
+  size: ['size'],
+  space: ['space'],
+  shadow: ['shadow'],
+  component: ['avatar', 'badge', 'checkbox', 'icon', 'inputs', 'action'],
+};
 
 export default {
   name: 'TokenTable',
@@ -100,14 +117,16 @@ export default {
     category: {
       type: String,
       default: 'color',
-      validator: (v) => CATEGORIES.includes(v),
+      validator: (v) => Object.keys(CATEGORY_MAP).includes(v),
     },
   },
 
   data () {
     return {
       format: 'CSS',
+      theme: 'light',
       json: null,
+      THEMES,
     };
   },
 
@@ -115,8 +134,8 @@ export default {
     tokensProcessed () {
       if (!this.json) return [];
 
-      return Object.entries(this.json)
-        .filter(([key]) => key.split('/')[0] === this.category)
+      return Object.entries(this.json[this.theme])
+        .filter(([key, value]) => CATEGORY_MAP[this.category].includes(key.split('/')[0]) && value['css/variables'])
         .map(([_, value]) => {
           const { name, value: tokenValue, description } = value[FORMAT_MAP[this.format]] || {};
           const { value: exampleValue } = value['css/variables'];
@@ -124,7 +143,7 @@ export default {
         });
     },
 
-    selectMenuOptions () {
+    formatSelectMenuOptions () {
       return Object.keys(FORMAT_MAP).map((item) => {
         return { value: item, label: item };
       });
@@ -140,6 +159,10 @@ export default {
   methods: {
     setFormat (newFormat) {
       this.format = newFormat;
+    },
+
+    setTheme (newTheme) {
+      this.theme = newTheme;
     },
 
     exampleStyle (value) {
