@@ -790,11 +790,19 @@
       <div>Don't see something? Want to contribute?</div>
       <a
         class="d-btn d-btn--muted d-btn--outlined d-btn--lg"
-        href="https://dialpad.atlassian.net/secure/CreateIssue.jspa?issuetype=10901&pid=12428"
+        href="https://dialpad.atlassian.net/secure/CreateIssue.jspa?issuetype=10975&pid=12508"
         target="_blank"
         rel="noopener noreferrer"
       >
         Make a request
+      </a>
+      <a
+        class="d-btn d-btn--muted d-btn--outlined d-btn--lg"
+        href="https://dialpad.atlassian.net/secure/CreateIssue.jspa?issuetype=1&pid=12508"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Report a bug
       </a>
     </div>
   </section>
