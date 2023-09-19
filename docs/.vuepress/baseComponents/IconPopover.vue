@@ -7,7 +7,7 @@
     placement="right"
     :fallback-placements="['left', 'auto']"
     dialog-class="d-w100vw dialtone-icon-popover"
-    padding="medium"
+    padding="large"
     @opened="emitOpened"
   >
     <template #anchor>
@@ -16,7 +16,6 @@
         icon-position="top"
         importance="clear"
         kind="muted"
-        width="100%"
       >
         <template #icon>
           <dt-icon
@@ -25,7 +24,7 @@
             class="d-mb8"
           />
         </template>
-        <p
+        <span
           class="dialtone-icon-card__subtitle d-tt-capitalize d-fc-tertiary"
           v-text="name"
         />
