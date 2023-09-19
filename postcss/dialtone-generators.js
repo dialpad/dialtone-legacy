@@ -769,7 +769,8 @@ function boxShadows (declaration, mode = 'light') {
       const value = Array(times)
         .fill(undefined)
         .map((val, i) => {
-          return `var(${shadowVar}-${i}-x) var(${shadowVar}-${i}-y) var(${shadowVar}-${i}-blur) var(${shadowVar}-${i}-spread) var(${shadowVar}-${i}-color)`;
+          const shadowNumber = i + 1;
+          return `var(${shadowVar}-${shadowNumber}-x) var(${shadowVar}-${shadowNumber}-y) var(${shadowVar}-${shadowNumber}-blur) var(${shadowVar}-${shadowNumber}-spread) var(${shadowVar}-${shadowNumber}-color)`;
         }).join(', ');
 
       if (mode === 'light') {
