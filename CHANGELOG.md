@@ -1,3 +1,20 @@
+# [8.15.0](https://github.com/dialpad/dialtone/compare/v8.14.0...v8.15.0) (2023-09-20)
+
+
+### Bug Fixes
+
+* **Utility:** fix box shadow indexing ([#953](https://github.com/dialpad/dialtone/issues/953)) ([b70450c](https://github.com/dialpad/dialtone/commit/b70450ce45c691366f434f459da8e75172b5d6e6))
+
+
+### Documentation
+
+* update request links ([10e055f](https://github.com/dialpad/dialtone/commit/10e055f27acf89a9787e4a0afc935e9c77d792f4))
+
+
+### Features
+
+* **Migration Script:** support var prefixed with - ([#951](https://github.com/dialpad/dialtone/issues/951)) ([efcf4c3](https://github.com/dialpad/dialtone/commit/efcf4c352f694a651241af39bc8c1c14badc6b96))
+
 # [8.14.0](https://github.com/dialpad/dialtone/compare/v8.13.7...v8.14.0) (2023-09-11)
 
 
