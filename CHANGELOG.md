@@ -1,3 +1,15 @@
+# [8.16.0](https://github.com/dialpad/dialtone/compare/v8.15.0...v8.16.0) (2023-09-21)
+
+
+### Documentation
+
+* update dialtone vue to latest ([77be35c](https://github.com/dialpad/dialtone/commit/77be35c52eb92892a0899fdb4132db6b33d61fd5))
+
+
+### Features
+
+* update dialtone-icons 2.2.0 ([2e5e32b](https://github.com/dialpad/dialtone/commit/2e5e32bfe190d82d52b6ae0115c806b4681888b9))
+
 # [8.15.0](https://github.com/dialpad/dialtone/compare/v8.14.0...v8.15.0) (2023-09-20)
 
 
