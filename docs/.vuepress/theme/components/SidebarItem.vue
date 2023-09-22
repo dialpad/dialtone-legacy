@@ -4,7 +4,11 @@
       class="d-headline-eyebrow d-fw-semibold d-pl12 d-pt8 d-pb8 d-fc-secondary"
       v-text="item.text"
     />
-    <ul class="d-pl0 d-mb16 d-stack2">
+    <dt-stack
+      as="ul"
+      class="d-pl0"
+      gap="200"
+    >
       <li
         v-for="subItem in subItems"
         :key="subItem.text"
@@ -41,7 +45,7 @@
           </dt-badge>
         </div>
       </li>
-    </ul>
+    </dt-stack>
   </li>
 </template>
 
