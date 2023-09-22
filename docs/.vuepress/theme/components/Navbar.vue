@@ -149,7 +149,7 @@ const currentThemeIconName = computed(() => {
     case 'light':
       return 'sun';
     default:
-      return 'sparkle';
+      return 'circle-half-filled';
   }
 });
 const isActiveLink = (text) => {
