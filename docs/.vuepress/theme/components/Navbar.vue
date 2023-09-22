@@ -1,7 +1,9 @@
 <!-- eslint-disable max-len -->
 <template>
-  <nav
-    class="d-d-flex d-flow4"
+  <dt-stack
+    as="nav"
+    direction="row"
+    gap="300"
     role="navigation"
   >
     <router-link
@@ -13,9 +15,9 @@
     >
       {{ link.text }}
     </router-link>
-  </nav>
-  <div class="d-d-flex d-flow4">
-    <div class="d-d-flex d-flow4">
+  </dt-stack>
+  <dt-stack direction="row" gap="300">
+    <dt-stack direction="row" gap="300">
       <dt-tooltip
         message="Github repository"
         placement="bottom"
@@ -82,7 +84,6 @@
                 .01-.1V6.57a.7.7 0 0 0 0-.09l-.01-.03z"
               />
             </svg>
-
           </a>
         </template>
       </dt-tooltip>
@@ -94,6 +95,7 @@
         </template>
         <template #anchor>
           <dt-button
+            circle
             importance="clear"
             kind="muted"
             @click="toggleTheme"
@@ -107,11 +109,11 @@
           </dt-button>
         </template>
       </dt-tooltip>
-    </div>
+    </dt-stack>
     <dt-button
       importance="outlined"
       kind="muted"
-      class="d-ml16 d-w164 d-bgc-secondary-opaque d-bc-subtle h:d-bgc-moderate"
+      class="d-ml8 d-w164 d-bgc-secondary-opaque d-bc-subtle h:d-bgc-moderate"
       @click="$emit('search')"
     >
       <template #icon>
@@ -122,7 +124,7 @@
       </template>
       <span class="d-fc-placeholder">Search Dialtone</span>
     </dt-button>
-  </div>
+  </dt-stack>
 </template>
 
 <script setup>
