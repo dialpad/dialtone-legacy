@@ -48,10 +48,18 @@ export default defineClientConfig({
 async function registerDialtoneVue (app) {
   const module = await import('@dialpad/dialtone-vue');
   const dialtoneComponents = Object.keys(module).filter((key) => key.startsWith('Dt'));
-  dialtoneComponents.forEach((key) => {
+  const dialtoneConstants = Object
+    .keys(module)
+    .filter((key) => /^[A-Z_]+$/.test(key))
+    .reduce((res, key) => {
+      res[key] = module[key];
+      return res;
+    }, {});
+  dialtoneComponents.forEach(key => {
     app.component(key, module[key]);
   });
   app.provide('dialtoneComponents', dialtoneComponents);
+  window.DIALTONE_CONSTANTS = dialtoneConstants;
 }
 
 async function registerEmojiDialtoneVue (app) {
