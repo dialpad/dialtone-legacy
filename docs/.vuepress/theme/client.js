@@ -47,11 +47,27 @@ export default defineClientConfig({
 
 async function registerDialtoneVue (app) {
   const module = await import('@dialpad/dialtone-vue');
-  const dialtoneComponents = Object.keys(module).filter((key) => key.startsWith('Dt'));
-  dialtoneComponents.forEach((key) => {
-    app.component(key, module[key]);
+  const {
+    dialtoneComponents,
+    dialtoneConstants,
+  } = Object
+    .keys(module)
+    .reduce(
+      (result, key) => {
+        if (key.startsWith('Dt')) {
+          result.dialtoneComponents.push({ [key]: module[key] });
+        } else if (/^[A-Z_]+$/.test(key)) {
+          result.dialtoneConstants.push({ [key]: module[key] });
+        }
+        return result;
+      },
+      { dialtoneComponents: [], dialtoneConstants: [] },
+    );
+  Object.keys(dialtoneComponents).forEach(key => {
+    app.component(key, dialtoneComponents[key]);
   });
   app.provide('dialtoneComponents', dialtoneComponents);
+  app.provide('dialtoneConstants', dialtoneConstants);
 }
 
 async function registerEmojiDialtoneVue (app) {
