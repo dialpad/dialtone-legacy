@@ -59,7 +59,7 @@ async function registerDialtoneVue (app) {
     app.component(key, module[key]);
   });
   app.provide('dialtoneComponents', dialtoneComponents);
-  app.provide('dialtoneConstants', dialtoneConstants);
+  window.DIALTONE_CONSTANTS = dialtoneConstants;
 }
 
 async function registerEmojiDialtoneVue (app) {
