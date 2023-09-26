@@ -98,7 +98,10 @@
         @click="closeModal"
       >
         <span class="d-btn__icon">
-          <icon-close />
+          <dt-icon
+            name="close"
+            size="300"
+          />
         </span>
       </button>
     </div>
@@ -106,15 +109,11 @@
 </template>
 
 <script>
-import IconClose from '@svgIcons/IconClose.vue';
 import Modal from '@mixins/modal.js';
 const MODAL_KINDS = ['full-screen', 'danger', 'fixed', 'base'];
 
 export default {
   name: 'ExampleModal',
-  components: {
-    IconClose,
-  },
 
   mixins: [Modal],
 
