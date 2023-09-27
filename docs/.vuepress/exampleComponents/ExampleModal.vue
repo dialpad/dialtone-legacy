@@ -1,11 +1,29 @@
 <template>
-  <button
-    class="d-btn d-btn--primary d-btn--sm"
-    type="button"
-    @click="openModal"
-  >
-    Launch modal
-  </button>
+  <div class="d-d-flex d-ai-flex-end d-jc-space-between d-w100p">
+    <div class="d-w100p d-mr8">
+      <dt-select-menu
+        v-if="bannerTitle"
+        label="Kind of Banner"
+        size="sm"
+        @change="changeBannerKind"
+      >
+        <option
+          v-for="option in bannerKinds"
+          :key="option"
+          :selected="option === selectedBannerKind"
+          :value="option"
+          v-text="option"
+        />
+      </dt-select-menu>
+    </div>
+    <button
+      class="d-btn d-btn--primary d-btn--sm d-fl-none"
+      type="button"
+      @click="openModal"
+    >
+      Launch modal
+    </button>
+  </div>
   <aside
     id="modal-base"
     ref="modal"
@@ -60,20 +78,6 @@
             @click.prevent="openModalBanner"
           >Show me a modal banner</a>
         </p>
-        <dt-select-menu
-          v-if="bannerTitle"
-          label="Banner kind"
-          size="sm"
-          @change="changeBannerKind"
-        >
-          <option
-            v-for="option in bannerKinds"
-            :key="option"
-            :selected="option === selectedBannerKind"
-            :value="option"
-            v-text="option"
-          />
-        </dt-select-menu>
       </div>
       <footer class="d-modal__footer">
         <button
