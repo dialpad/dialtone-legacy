@@ -1,3 +1,17 @@
+## [8.16.1](https://github.com/dialpad/dialtone/compare/v8.16.0...v8.16.1) (2023-09-27)
+
+
+### Bug Fixes
+
+* **Icon:** prevent shrinking while on flex ([#959](https://github.com/dialpad/dialtone/issues/959)) ([af97dce](https://github.com/dialpad/dialtone/commit/af97dced79d16df3d2a7b701c417843fa3c5f0ad))
+* **Sidebar:** prevent sidebar shrinking ([#958](https://github.com/dialpad/dialtone/issues/958)) ([862a78f](https://github.com/dialpad/dialtone/commit/862a78f96ae8295f33d6896746984faa8c9a97ae))
+
+
+### Documentation
+
+* extract constants ([#957](https://github.com/dialpad/dialtone/issues/957)) ([7c879db](https://github.com/dialpad/dialtone/commit/7c879db961045a8e7ca424c98292371a2744e12b))
+* theme system icon ([#954](https://github.com/dialpad/dialtone/issues/954)) ([ebf007d](https://github.com/dialpad/dialtone/commit/ebf007d3dbac4bc186a4b8f852065f10be8882cb))
+
 # [8.16.0](https://github.com/dialpad/dialtone/compare/v8.15.0...v8.16.0) (2023-09-21)
 
 
