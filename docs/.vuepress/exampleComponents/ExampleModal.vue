@@ -53,7 +53,7 @@
             {{ modalDescription.repeat(3) }}
           </template>
         </p>
-        <p v-if="!bannerTitle" class="d-mt16">
+        <p v-if="!hasBannerTitle" class="d-mt16">
           <a
             href="#"
             class="d-link"
@@ -172,8 +172,12 @@ export default {
       return window.DIALTONE_CONSTANTS.MODAL_BANNER_KINDS[this.selectedBannerKind];
     },
 
+    hasBannerTitle () {
+      return !!this.bannerTitle;
+    },
+
     shouldShowModalBanner () {
-      return this.showModalBanner || !!this.bannerTitle;
+      return this.showModalBanner || this.hasBannerTitle;
     },
 
     bannerKinds () {
