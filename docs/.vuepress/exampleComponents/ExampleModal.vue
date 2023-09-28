@@ -1,11 +1,29 @@
 <template>
-  <button
-    class="d-btn d-btn--primary d-btn--sm"
-    type="button"
-    @click="openModal"
-  >
-    Launch modal
-  </button>
+  <div class="d-d-flex d-ai-flex-end d-jc-space-between d-w100p">
+    <div class="d-w100p d-mr8">
+      <dt-select-menu
+        v-if="bannerTitle"
+        label="Kind of Banner"
+        size="sm"
+        @change="changeBannerKind"
+      >
+        <option
+          v-for="option in bannerKinds"
+          :key="option"
+          :selected="option === selectedBannerKind"
+          :value="option"
+          v-text="option"
+        />
+      </dt-select-menu>
+    </div>
+    <button
+      class="d-btn d-btn--primary d-btn--sm d-fl-none"
+      type="button"
+      @click="openModal"
+    >
+      Launch modal
+    </button>
+  </div>
   <aside
     id="modal-base"
     ref="modal"
@@ -26,10 +44,13 @@
     @keydown.esc="closeModal"
   >
     <div
-      class="d-modal__banner"
-      :class="{ 'd-d-none': !showModalBanner }"
+      v-if="shouldShowModalBanner"
+      :class="[
+        'd-modal__banner',
+        bannerKindClass,
+      ]"
     >
-      This example banner sits at the top of the modal.
+      {{ bannerTitle || "This example banner sits at the top of the modal." }}
     </div>
     <div
       class="d-modal__dialog"
@@ -50,7 +71,7 @@
             {{ modalDescription.repeat(3) }}
           </template>
         </p>
-        <p class="d-mt16">
+        <p v-if="!hasBannerTitle" class="d-mt16">
           <a
             href="#"
             class="d-link"
@@ -81,7 +102,10 @@
         @click="closeModal"
       >
         <span class="d-btn__icon">
-          <icon-close />
+          <dt-icon
+            name="close"
+            size="300"
+          />
         </span>
       </button>
     </div>
@@ -89,15 +113,11 @@
 </template>
 
 <script>
-import IconClose from '@svgIcons/IconClose.vue';
 import Modal from '@mixins/modal.js';
 const MODAL_KINDS = ['full-screen', 'danger', 'fixed', 'base'];
 
 export default {
   name: 'ExampleModal',
-  components: {
-    IconClose,
-  },
 
   mixins: [Modal],
 
@@ -109,10 +129,24 @@ export default {
         return MODAL_KINDS.includes(_kind);
       },
     },
+
+    bannerKind: {
+      type: String,
+      default: 'warning',
+      validate (kind) {
+        return window.DIALTONE_CONSTANTS.NOTICE_KINDS.includes(kind);
+      },
+    },
+
+    bannerTitle: {
+      type: String,
+      default: '',
+    },
   },
 
   data () {
     return {
+      selectedBannerKind: this.bannerKind,
       showModal: false,
       showModalBanner: false,
       animateIn: false,
@@ -136,6 +170,22 @@ export default {
 
     isFixed () {
       return this.kind === 'fixed';
+    },
+
+    bannerKindClass () {
+      return window.DIALTONE_CONSTANTS.MODAL_BANNER_KINDS[this.selectedBannerKind];
+    },
+
+    hasBannerTitle () {
+      return !!this.bannerTitle;
+    },
+
+    shouldShowModalBanner () {
+      return this.showModalBanner || this.hasBannerTitle;
+    },
+
+    bannerKinds () {
+      return Object.keys(window.DIALTONE_CONSTANTS.MODAL_BANNER_KINDS);
     },
   },
 
@@ -168,6 +218,10 @@ export default {
       if (this.showModal) {
         this.focusTrappedTabPress(e, this.$refs.modal);
       }
+    },
+
+    changeBannerKind (kind) {
+      this.selectedBannerKind = kind;
     },
   },
 };

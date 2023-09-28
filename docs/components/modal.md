@@ -171,6 +171,29 @@ Although highly versatile, this doesn't mean modal dialogs are fit for all purpo
 </aside>
 ```
 
+### Has Banner
+
+When there is a need of more context information regarding the content of the Modal
+
+<code-well-header>
+  <example-modal kind="default" bannerKind="success" bannerTitle="This banner can have different kinds." />
+</code-well-header>
+
+```html
+<aside class="d-modal" id="modal-base" tabindex="-1" role="dialog" aria-labelledby="modal-title" aria-describedby="modal-description" aria-hidden="true">
+  <div class="d-modal__banner d-modal__banner--success">...</div>
+  <div class="d-modal__dialog" role="document">
+    <h2 class="d-modal__header" id="modal-title">…</h2>
+    <p class="d-modal__content" id="modal-description">…</p>
+    <footer class="d-modal__footer">
+      <button class="d-btn" type="button">…</button>
+      <button class="d-btn d-btn--primary" type="button">…</button>
+    </footer>
+    <button href="#" class="d-modal__close d-btn d-btn--circle d-btn--lg" aria-label="Close"><IconClose /></button>
+  </div>
+</aside>
+```
+
 ## Vue API
 
 <component-vue-api component-name="modal" />
