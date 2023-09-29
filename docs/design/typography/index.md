@@ -1,6 +1,6 @@
 ---
 title: Typography
-status: planned
+status: WIP
 description: Guidance for clear, legible, and easy-to-read text.
 ---
 
