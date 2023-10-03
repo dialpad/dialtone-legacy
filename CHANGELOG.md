@@ -1,3 +1,16 @@
+# [8.17.0](https://github.com/dialpad/dialtone/compare/v8.16.1...v8.17.0) (2023-10-03)
+
+
+### Documentation
+
+* **Modal:** add banner variants ([#955](https://github.com/dialpad/dialtone/issues/955)) ([0dc7046](https://github.com/dialpad/dialtone/commit/0dc7046ee443c54744436208f50dee5b1d6066cb))
+* update style for code in dark and light mode ([#960](https://github.com/dialpad/dialtone/issues/960)) ([f673b31](https://github.com/dialpad/dialtone/commit/f673b316290caf904b5a76f4d9eb689f93a4450b))
+
+
+### Features
+
+* **Stack:** add defaults for align prop ([#961](https://github.com/dialpad/dialtone/issues/961)) ([f331724](https://github.com/dialpad/dialtone/commit/f3317240b687f95cec6db1115f199874fadccad7))
+
 ## [8.16.1](https://github.com/dialpad/dialtone/compare/v8.16.0...v8.16.1) (2023-09-27)
 
 
