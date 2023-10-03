@@ -7,7 +7,7 @@ description: This plays a crucial role in establishing visual hierarchy, readabi
 
 In order to makes this system as accesible as possible, we try to avoid forcing different typefaces, so we stick with the custom one for each operative system.
 <figure class="d-ml0 d-p16 d-mr0 d-p0 d-bar4 d-ta-center d-ba d-baw2 d-bc-black-200">
-  <img class="d-wmx40p" src="/assets/images/dociste/typo/typefaces/windows.png" alt="123">
+  <img class="d-wmx40p" src="/assets/images/dociste/typo/typefaces/android.png" alt="123">
 </figure>
 ## Text styles
 Our typography system includes font styles to add variation and emphasis to text elements. These font styles are used selectively to enhance readability and highlight specific content. The font styles we utilize are the following
