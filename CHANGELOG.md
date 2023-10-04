@@ -1,3 +1,10 @@
+# [8.18.0](https://github.com/dialpad/dialtone/compare/v8.17.0...v8.18.0) (2023-10-04)
+
+
+### Features
+
+* update dialtone-icons ([a6631cb](https://github.com/dialpad/dialtone/commit/a6631cb4896cebeab79b15c24c07e8be8426ee6a))
+
 # [8.17.0](https://github.com/dialpad/dialtone/compare/v8.16.1...v8.17.0) (2023-10-03)
 
 
