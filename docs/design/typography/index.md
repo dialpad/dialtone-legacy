@@ -2,17 +2,19 @@
 title: Typography
 description: This plays a crucial role in establishing visual hierarchy, readability, and brand identity in our digital products.
 ---
+  <img class="d-wmx100p" src="/assets/images/header-typo.svg" alt="header">
 
 ## Typefaces
 
-In order to makes this system as accesible as possible, we try to avoid forcing different typefaces, so we stick with the custom one for each operative system.
-<figure class="d-ml0 d-p16 d-mr0 d-p0 d-bar4 d-ta-center d-ba d-baw2 d-bc-black-200">
-  <img class="d-wmx40p" src="assets/images/typo/typefaces/android.png" alt="123">
+In order to make this system as accesible as possible, we try to avoid forcing different typefaces, so we stick with the custom one for each operative system.
+<figure class="d-m1 d-p16 d-mr0 d-p0 d-bar4 d-ta-left d-ba d-baw2 d-bc-black-200">
+  <img class="d-wmx30p" src="/assets/images/android.svg" alt="android font">
+  <img class="d-wmx30p" src="/assets/images/apple.svg" alt="apple font">
+  <img class="d-wmx30p" src="/assets/images/windows.svg" alt="windows font">
+  <img class="d-wmx30p" src="/assets/images/linux.svg" alt="linux font">
 </figure>
-<figure class="d-ml0 d-p16 d-mr0 d-p0 d-bar4 d-ta-center d-ba d-baw2 d-bc-black-200">
-  <img class="d-wmx40p" src="/assets/images/accessibility-graphic.png" alt="123">
-</figure>
-## Text styles
+
+## Text styles 
 Our typography system includes font styles to add variation and emphasis to text elements. These font styles are used selectively to enhance readability and highlight specific content. The font styles we utilize are the following
 <table class="d-table dialtone-doc-table">
   <thead>
@@ -80,17 +82,12 @@ Regular: Regular font weight is suitable for most body text and provides optimal
 Medium: Medium font weight can be used for subheadings and elements that require a slightly stronger presence.
 Bold: Bold font weight is reserved for headings and elements that require maximum visual impact.
 Consider the intended emphasis, hierarchy, and readability when selecting the appropriate font weight for different elements.
-
-<aside class="d-notice d-notice--info d-mt24 d-wmx100p" role="status" aria-hidden="false">
-  <div class="d-notice__icon">
-    <dt-icon name="info"></dt-icon>
-  </div>
-  <div class="d-notice__content d-stack4">
-    <p class="d-notice__message">
-      <strong>WIP</strong>
-    </p>
-  </div>
-</aside>
+<figure class="d-m1 d-p16 d-mr0 d-p0 d-bar4 d-ta-left d-ba d-baw2 d-bc-black-200">
+  <img class="d-wmx30p" src="/assets/images/light.svg" alt="android font">
+  <img class="d-wmx30p" src="/assets/images/regular.svg" alt="apple font">
+  <img class="d-wmx30p" src="/assets/images/medium.svg" alt="windows font">
+  <img class="d-wmx30p" src="/assets/images/bold.svg" alt="linux font">
+</figure>
 
 ## Line height
 
