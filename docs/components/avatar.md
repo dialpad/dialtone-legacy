@@ -69,19 +69,24 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 
 ### Icon
 
-<code-well-header>
+<example-tabs
+htmlCode='
+    <div class="d-avatar d-avatar--{$size}">
+        <div class="d-avatar__canvas">
+            <span class="d-avatar__icon">
+            <svg>...</svg>
+            </span>
+        </div>
+    </div>'
+vueCode='
+    <dt-avatar
+        icon-name="person"
+    />
+'>
+<template #example>
     <dt-avatar icon-name="user" icon-size="300" />
-</code-well-header>
-
-```html
-<div class="d-avatar d-avatar--{$size}">
-    <div class="d-avatar__canvas">
-        <span class="d-avatar__icon">
-          <svg>...</svg>
-        </span>
-    </div>
-</div>
-```
+</template>
+</example-tabs>
 
 ### Initials
 
