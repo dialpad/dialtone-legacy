@@ -13,11 +13,13 @@
 //  $   BASE STYLE
 //  ----------------------------------------------------------------------------
 .d-root-layout {
+  position: relative;
   display: grid;
   grid-template:
     'header' auto
     'body' 1fr
     'footer' auto / 1fr;
+  width: 100%;
   min-height: 100vh;
 
   &--fixed {
@@ -30,12 +32,14 @@
     &--sticky {
       position: sticky;
       top: 0;
+      z-index: var(--zi-base1);
     }
   }
 
   &__body {
     display: flex;
     grid-area: body;
+    height: 100%;
     overflow: auto;
     box-shadow: none;
 
@@ -46,12 +50,12 @@
 
   &__sidebar {
     flex-shrink: 0;
+    height: 100%;
     box-shadow: none;
 
     &--sticky {
       position: sticky;
       top: 0;
-      height: 100%;
       overflow: auto;
     }
   }
