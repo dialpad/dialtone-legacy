@@ -1,3 +1,17 @@
+## [8.18.1](https://github.com/dialpad/dialtone/compare/v8.18.0...v8.18.1) (2023-10-06)
+
+
+### Bug Fixes
+
+* **Root Layout:** update dialtone to fix root-layout on docsite ([#969](https://github.com/dialpad/dialtone/issues/969)) ([38b0103](https://github.com/dialpad/dialtone/commit/38b01037cd4a5dbb98c30b8b8a3421f6900bc328))
+
+
+### Documentation
+
+* **Icon:** remove deprecated svg icons ([#966](https://github.com/dialpad/dialtone/issues/966)) ([8dfc6af](https://github.com/dialpad/dialtone/commit/8dfc6afe09e90cd8d571923a4b8d6db6e9b65845))
+* storybook access from header ([#965](https://github.com/dialpad/dialtone/issues/965)) ([d61666f](https://github.com/dialpad/dialtone/commit/d61666f33e310e59919e916b98e4220c36b98e19))
+* update dialtone-vue ([eea5609](https://github.com/dialpad/dialtone/commit/eea5609a3bd63d6b84fe2f97ff6ef6a2a1e9d7fa))
+
 # [8.18.0](https://github.com/dialpad/dialtone/compare/v8.17.0...v8.18.0) (2023-10-04)
 
 
