@@ -69,6 +69,10 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 
 ### Icon
 
+<code-well-header>
+    <dt-avatar icon-name="user" icon-size="300" />
+</code-well-header>
+
 <example-tabs
 htmlCode='
     <div class="d-avatar d-avatar--{$size}">
@@ -82,10 +86,8 @@ vueCode='
     <dt-avatar
         icon-name="person"
     />
-'>
-<template #example>
-    <dt-avatar icon-name="user" icon-size="300" />
-</template>
+'
+showHtmlWarning>
 </example-tabs>
 
 ### Initials

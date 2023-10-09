@@ -2,37 +2,22 @@
   <dt-tab-group class="example-tab-group">
     <template #tabs>
       <dt-tab
-        id="1"
-        panel-id="2"
+        id="vueTab"
+        panel-id="vuePanel"
         selected
-      >
-        Example
-      </dt-tab>
-      <dt-tab
-        id="3"
-        panel-id="4"
       >
         Vue code
       </dt-tab>
       <dt-tab
-        id="5"
-        panel-id="6"
+        id="htmlTab"
+        panel-id="htmlPanel"
       >
         HTML code
       </dt-tab>
     </template>
     <dt-tab-panel
-      id="2"
-      tab-id="1"
-    >
-      <!-- eslint-disable-next-line vue/no-undef-components -->
-      <code-well-header>
-        <slot name="example" />
-      </code-well-header>
-    </dt-tab-panel>
-    <dt-tab-panel
-      id="4"
-      tab-id="3"
+      id="vuePanel"
+      tab-id="vueTab"
     >
       <div class="language-html" data-ext="html">
         <pre class="language-html" v-html="highlightedVue" />
@@ -44,8 +29,8 @@
       </div>
     </dt-tab-panel>
     <dt-tab-panel
-      id="6"
-      tab-id="5"
+      id="htmlPanel"
+      tab-id="htmlTab"
     >
       <dt-banner
         v-if="showHtmlWarning"
@@ -91,6 +76,7 @@ const highlightedVue = Prism.highlight(trimmedVueCode, Prism.languages.html, 'ht
 
 <style scoped lang="less">
 .example-tab-group {
+  margin-top: var(--dt-space-500);
   .language-html {
     margin-top: 0;
     position: relative;
