@@ -47,6 +47,14 @@
       id="6"
       tab-id="5"
     >
+      <dt-banner
+        v-if="showHtmlWarning"
+        class="d-ps-static"
+        kind="warning"
+        hide-close
+      >
+        This component needs Javascript to work as the example
+      </dt-banner>
       <div class="language-html" data-ext="html">
         <pre class="language-html" v-html="highlightedHtml" />
         <copy-button
@@ -70,6 +78,9 @@ const props = defineProps({
   vueCode: {
     type: String,
     required: true,
+  },
+  showHtmlWarning: {
+    type: Boolean,
   },
 });
 const trimmedHtmlCode = props.htmlCode.replace(/^\n/gm, '');
