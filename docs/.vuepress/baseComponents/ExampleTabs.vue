@@ -1,66 +1,62 @@
 <template>
-  <div>
-    <dt-tab-group class="example-tab-group">
-      <template #tabs>
-        <dt-tab
-          :id="1"
-          :panel-id="2"
-          selected
-        >
-          Example
-        </dt-tab>
-        <dt-tab
-          :id="3"
-          :panel-id="4"
-        >
-          Vue code
-        </dt-tab>
-        <dt-tab
-          :id="5"
-          :panel-id="6"
-        >
-          HTML code
-        </dt-tab>
-      </template>
-      <div>
-        <dt-tab-panel
-          :id="2"
-          :tab-id="1"
-        >
-          <!-- eslint-disable-next-line vue/no-undef-components -->
-          <code-well-header>
-            <slot name="example" />
-          </code-well-header>
-        </dt-tab-panel>
-        <dt-tab-panel
-          :id="4"
-          :tab-id="3"
-        >
-          <div class="language-html" data-ext="html">
-            <pre class="language-html" v-html="highlightedVue" />
-            <copy-button
-              class="code-copy-button"
-              :text="trimmedVueCode"
-              aria-label="Copy Vue code"
-            />
-          </div>
-        </dt-tab-panel>
-        <dt-tab-panel
-          :id="6"
-          :tab-id="5"
-        >
-          <div class="language-html" data-ext="html">
-            <pre class="language-html" v-html="highlightedHtml" />
-            <copy-button
-              class="code-copy-button"
-              :text="trimmedHtmlCode"
-              aria-label="Copy Html code"
-            />
-          </div>
-        </dt-tab-panel>
+  <dt-tab-group class="example-tab-group">
+    <template #tabs>
+      <dt-tab
+        id="1"
+        panel-id="2"
+        selected
+      >
+        Example
+      </dt-tab>
+      <dt-tab
+        id="3"
+        panel-id="4"
+      >
+        Vue code
+      </dt-tab>
+      <dt-tab
+        id="5"
+        panel-id="6"
+      >
+        HTML code
+      </dt-tab>
+    </template>
+    <dt-tab-panel
+      id="2"
+      tab-id="1"
+    >
+      <!-- eslint-disable-next-line vue/no-undef-components -->
+      <code-well-header>
+        <slot name="example" />
+      </code-well-header>
+    </dt-tab-panel>
+    <dt-tab-panel
+      id="4"
+      tab-id="3"
+    >
+      <div class="language-html" data-ext="html">
+        <pre class="language-html" v-html="highlightedVue" />
+        <copy-button
+          class="code-copy-button"
+          :text="trimmedVueCode"
+          aria-label="Copy Vue code"
+        />
       </div>
-    </dt-tab-group>
-  </div>
+    </dt-tab-panel>
+    <dt-tab-panel
+      id="6"
+      tab-id="5"
+    >
+      <div class="language-html" data-ext="html">
+        <pre class="language-html" v-html="highlightedHtml" />
+        <copy-button
+          class="code-copy-button"
+          :text="trimmedHtmlCode"
+          aria-label="Copy Html code"
+        />
+      </div>
+    </dt-tab-panel>
+  </dt-tab-group>
 </template>
 
 <script setup>
