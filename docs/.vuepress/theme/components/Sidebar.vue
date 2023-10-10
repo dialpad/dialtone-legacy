@@ -5,7 +5,7 @@
   <ul
     v-if="sidebarItems.length"
     class="
-    dialtone-sidebar__list d-t64 d-b0 d-ps-fixed
+    dialtone-sidebar__list d-t64 d-b0
     d-p24 d-px16 d-pb96
     d-h100vh d-of-y-auto"
   >
