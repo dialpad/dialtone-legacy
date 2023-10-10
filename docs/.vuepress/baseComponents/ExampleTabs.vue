@@ -3,6 +3,7 @@
     <template #tabs>
       <dt-tab
         id="vueTab"
+        label="vueCode"
         panel-id="vuePanel"
         selected
       >
@@ -10,6 +11,7 @@
       </dt-tab>
       <dt-tab
         id="htmlTab"
+        label="htmlCode"
         panel-id="htmlPanel"
       >
         HTML code
@@ -55,6 +57,7 @@
 <script setup>
 import Prism from 'prismjs';
 import CopyButton from './CopyButton.vue';
+
 const props = defineProps({
   htmlCode: {
     type: String,
@@ -64,14 +67,11 @@ const props = defineProps({
     type: String,
     required: true,
   },
-  showHtmlWarning: {
-    type: Boolean,
-  },
+  showHtmlWarning: Boolean,
 });
-const trimmedHtmlCode = props.htmlCode.replace(/^\n/gm, '');
-const trimmedVueCode = props.vueCode.replace(/^\n/gm, '');
-const highlightedHtml = Prism.highlight(trimmedHtmlCode, Prism.languages.html, 'html');
-const highlightedVue = Prism.highlight(trimmedVueCode, Prism.languages.html, 'html');
+
+const highlightedHtml = Prism.highlight(props.htmlCode.trim(), Prism.languages.html, 'html');
+const highlightedVue = Prism.highlight(props.vueCode.trim(), Prism.languages.html, 'html');
 </script>
 
 <style scoped lang="less">

@@ -75,17 +75,17 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 
 <example-tabs
 htmlCode='
-    <div class="d-avatar d-avatar--{$size}">
-        <div class="d-avatar__canvas">
-            <span class="d-avatar__icon">
-            <svg>...</svg>
-            </span>
-        </div>
-    </div>'
+<div class="d-avatar d-avatar--{$size}">
+    <div class="d-avatar__canvas">
+        <span class="d-avatar__icon">
+        <svg>...</svg>
+        </span>
+    </div>
+</div>'
 vueCode='
-    <dt-avatar
-        icon-name="person"
-    />
+<dt-avatar
+    icon-name="person"
+/>
 '
 showHtmlWarning>
 </example-tabs>
