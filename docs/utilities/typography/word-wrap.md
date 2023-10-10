@@ -1,6 +1,6 @@
 ---
 title: Word wrap
-description: Utilities for controlling the way words wrap within an element.
+description: Utilities for controlling the way words wrap within an element. Generally used for handling overflow of long strings that are actually supposed to be a single unbroken word, like URLs or file paths.
 ---
 
 ## Normal
@@ -19,7 +19,7 @@ Use `d-ww-normal` to break words only at allowed break points.
 
 ## Break word
 
-Use `d-ww-break-word` to allow unbreakable words to be broken.
+Use `d-ww-break-word` to allow unbreakable words to be broken. Is a more conservative approach than [`d.wb-break-all`](./word-break.md#break-all) and will only break long words that do not fit the container.
 
 <code-well-header class="d-fl-center d-p24 d-bgc-green-100 d-bgo50 d-w100p d-hmn102" custom>
   <div class="d-bgc-green-100 d-py8 d-px16 d-bar8 lg:d-w216 d-w332">
