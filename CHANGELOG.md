@@ -1,3 +1,16 @@
+# [8.19.0](https://github.com/dialpad/dialtone/compare/v8.18.1...v8.19.0) (2023-10-11)
+
+
+### Documentation
+
+* add tab component to show example, vue code and html code ([#968](https://github.com/dialpad/dialtone/issues/968)) ([f7dd864](https://github.com/dialpad/dialtone/commit/f7dd86449609a63e6f245322cf99287aed72eabc))
+* fix sidebar overlap ([#970](https://github.com/dialpad/dialtone/issues/970)) ([f48a643](https://github.com/dialpad/dialtone/commit/f48a643511a0ae78ad8e0a8348e5d5c0ec7ed8b5))
+
+
+### Features
+
+* **Typography:** add utility for word wrap ([#967](https://github.com/dialpad/dialtone/issues/967)) ([980dbb5](https://github.com/dialpad/dialtone/commit/980dbb5adaaa53b266f37860aa7bf7ee9ac0edb4))
+
 ## [8.18.1](https://github.com/dialpad/dialtone/compare/v8.18.0...v8.18.1) (2023-10-06)
 
 
