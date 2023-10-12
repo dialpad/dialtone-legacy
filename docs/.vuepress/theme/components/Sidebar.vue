@@ -4,6 +4,8 @@
   </h2>
   <dt-stack
     v-if="sidebarItems.length"
+    as="ul"
+    gap="500"
     class="
     dialtone-sidebar__list d-t64 d-b0
     d-p24 d-px16 d-pb96
