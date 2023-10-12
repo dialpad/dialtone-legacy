@@ -2,7 +2,7 @@
   <h2 class="d-vi-visible-sr">
     Local navigation
   </h2>
-  <ul
+  <dt-stack
     v-if="sidebarItems.length"
     class="
     dialtone-sidebar__list d-t64 d-b0
@@ -14,7 +14,7 @@
       :key="item.link || item.text"
       :item="item"
     />
-  </ul>
+  </dt-stack>
 </template>
 
 <script setup>
