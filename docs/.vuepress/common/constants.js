@@ -12,6 +12,41 @@ export const DIALTONE_CHANGELOGS = {
   },
 };
 
+export const SHADOW_VARIABLES = [
+  'Small',
+  'Medium',
+  'Large',
+  'ExtraLarge',
+  'Card',
+  'Focus',
+  'FocusInset',
+].join('|');
+
+export const TYPOGRAPHY_VARIABLES = [
+  'Body',
+  'BodyCompact',
+  'Headline',
+  'HeadlineEyebrow',
+  'HeadlineSoft',
+  'HeadlineCompact',
+  'HeadlineCompactSoft',
+  'Label',
+  'LabelPlain',
+  'LabelCompact',
+  'LabelCompactPlain',
+  'Helper',
+  'Code',
+].join('|');
+
+export const TYPOGRAPHY_SIZES = [
+  'Small',
+  'Base',
+  'Medium',
+  'Large',
+  'ExtraLarge',
+  'ExtraExtraLarge',
+].join('|');
+
 export default {
   DIALTONE_CHANGELOGS,
 };
