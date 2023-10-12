@@ -1,7 +1,7 @@
 <template>
   <div class="dialtone-wall">
     <template
-      v-for="page in pages"
+      v-for="(page, index) in pages"
       :key="page.title"
     >
       <component
@@ -13,11 +13,8 @@
           v-if="page.thumb"
           class="dialtone-wall__image"
         >
-          <img
-            class="dialtone-wall__thumb"
-            :alt="`${page.fileName}-thumbnail`"
-            :src="$withBase(`/assets/images/${basePath}/${page.fileName}.png`)"
-          >
+          <!--<div v-if="backgroundImage" class="dialtone-wall__background" v-html="backgroundImage"></div>-->
+          <div v-if="svgImage[index]" class="dialtone-wall__thumb" v-html="svgImage[index]"></div>
         </div>
         <div class="dialtone-wall__details">
           <div class="dialtone-wall__title">
@@ -40,7 +37,8 @@
 </template>
 
 <script setup>
-defineProps({
+import { ref, onMounted, computed, defineProps } from 'vue';
+const props = defineProps({
   pages: {
     type: Object,
     default: () => {},
@@ -69,4 +67,39 @@ const cardElType = (page) => {
   if (page.status !== 'planned' || (page.storybook && page.storybook !== 'planned')) return 'router-link';
   return 'div';
 };
+
+const svgPaths = computed(() => {
+    return props.pages.map(page => `/assets/images/${props.basePath}/${page.fileName}.svg`);
+});
+
+const svgImage = ref([]);
+const backgroundImage = ref('');
+
+const fetchBackgroundSvg = async () => {
+  try {
+    const response = await fetch(`/assets/images/${props.basePath}/img-background.svg`);
+    backgroundImage.value = await response.text();
+  } catch (error) {
+    console.error("Failed to fetch background SVG:", error);
+  }
+};
+
+const fetchSvgs = async () => {
+    const contents = [];
+    for (const path of svgPaths.value) {
+        try {
+            const response = await fetch(path);
+            const content = await response.text();
+            contents.push(content);
+        } catch (error) {
+            console.error(`Failed to fetch SVG at ${path}:`, error);
+        }
+    }
+    svgImage.value = contents;
+};
+
+onMounted(() => {
+  fetchBackgroundSvg();
+  fetchSvgs();
+});
 </script>
