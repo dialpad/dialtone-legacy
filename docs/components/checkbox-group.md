@@ -10,7 +10,6 @@ storybook: https://vue.dialpad.design/?path=/story/components-checkbox-group--de
 <code-well-header>
   <dt-checkbox-group
     name="fruits-checkbox-group"
-    class="d-input-group__fieldset"
     legend="Fruits"
     :selectedValues="[]"
   >
@@ -23,7 +22,6 @@ storybook: https://vue.dialpad.design/?path=/story/components-checkbox-group--de
 ```html
 <dt-checkbox-group
   name="fruits-checkbox-group"
-  class="d-input-group__fieldset"
   legend="Fruits"
   :selectedValues="[]"
 >
@@ -40,7 +38,6 @@ storybook: https://vue.dialpad.design/?path=/story/components-checkbox-group--de
 <code-well-header>
   <dt-checkbox-group
     name="fruits-checkbox-group"
-    class="d-input-group__fieldset"
     legend="Fruits"
     :selectedValues="[]"
   >
@@ -53,7 +50,6 @@ storybook: https://vue.dialpad.design/?path=/story/components-checkbox-group--de
 ```html
 <dt-checkbox-group
   name="fruits-checkbox-group"
-  class="d-input-group__fieldset"
   legend="Fruits"
   :selectedValues="[]"
 >
@@ -71,7 +67,6 @@ storybook: https://vue.dialpad.design/?path=/story/components-checkbox-group--de
       <dt-checkbox-group
         name="checkbox-group-with-success-message"
         legend="Fruits"
-        class="d-input-group__fieldset"
         :messages='[{"message":"Success validation message","type":"success"}]'
       >
         <dt-checkbox value="apple"><span>Apple</span></dt-checkbox>
@@ -83,7 +78,6 @@ storybook: https://vue.dialpad.design/?path=/story/components-checkbox-group--de
       <dt-checkbox-group
         name="checkbox-group-with-warning-message"
         legend="Fruits"
-        class="d-input-group__fieldset"
         :messages='[{"message":"Warning validation message","type":"warning"}]'
       >
         <dt-checkbox value="apple"><span>Apple</span></dt-checkbox>
@@ -95,7 +89,6 @@ storybook: https://vue.dialpad.design/?path=/story/components-checkbox-group--de
       <dt-checkbox-group
       name="checkbox-group-with-error-message"
       legend="Fruits"
-      class="d-input-group__fieldset"
       :messages='[{"message":"Error validation message","type":"error"}]'
       >
         <dt-checkbox value="apple"><span>Apple</span></dt-checkbox>
