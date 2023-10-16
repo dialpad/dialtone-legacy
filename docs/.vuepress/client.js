@@ -18,6 +18,7 @@ import IconSizesTable from './baseComponents/IconSizesTable.vue';
 import ComponentAccessibleTable from './baseComponents/ComponentAccessibleTable.vue';
 import ComponentCombinator from './baseComponents/ComponentCombinator.vue';
 import ExampleTabs from './baseComponents/ExampleTabs.vue';
+import SvgLoader from './baseComponents/SvgLoader.vue';
 
 // Common icons
 import IconInfo from '@svgIcons/IconInfo.vue';
@@ -49,6 +50,7 @@ export default defineClientConfig({
     app.component('ComponentAccessibleTable', ComponentAccessibleTable);
     app.component('ComponentCombinator', ComponentCombinator);
     app.component('ExampleTabs', ExampleTabs);
+    app.component('SvgLoader', SvgLoader);
 
     // Common icons
     app.component('IconInfo', IconInfo);

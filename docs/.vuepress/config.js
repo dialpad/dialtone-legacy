@@ -1,6 +1,7 @@
 import { defineUserConfig } from 'vuepress';
 import { getDirname, path } from '@vuepress/utils';
 import { viteBundler } from '@vuepress/bundler-vite';
+import viteSvgLoader from 'vite-svg-loader';
 import { googleAnalyticsPlugin } from '@vuepress/plugin-google-analytics';
 import { seoPlugin } from 'vuepress-plugin-seo2';
 import anchor from 'markdown-it-anchor';
@@ -44,6 +45,7 @@ export default defineUserConfig({
 
   bundler: viteBundler({
     viteOptions: {
+      plugins: [viteSvgLoader()],
       css: {
         devSourcemap: true,
       },
