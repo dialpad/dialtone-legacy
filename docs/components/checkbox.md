@@ -31,11 +31,13 @@ Checkboxes are an easily understandable way to indicate that users can select on
 - Binary selections that convey opposite states, such as check=“on” and unchecked=“off”, paired with a label that conveys the choice.
 - When users need to see all the available options at a glance.
 </template>
+
 <template #dont>
 
 - If a user can only select one option from a list; consider using [Radio](radio.md) or [Select](select-menu.md).
 - If there are too many options to reasonably display in its context.
 </template>
+
 </dialtone-usage>
 
 ### Best practices
@@ -56,7 +58,7 @@ Checkboxes are an easily understandable way to indicate that users can select on
 ### Base Styles
 
 <code-well-header>
-  <fieldset class="d-stack8">
+  <fieldset class="d-input-group__fieldset d-stack8">
     <div class="d-checkbox-group">
       <div class="d-checkbox__input">
         <input class="d-checkbox" type="checkbox" name="Dialtone-CheckExample1" id="Dialtone-CheckExample1" />
@@ -109,7 +111,7 @@ Checkboxes are an easily understandable way to indicate that users can select on
 </code-well-header>
 
 ```html
-<fieldset class="d-stack8">
+<fieldset class="d-input-group__fieldset d-stack8">
   <div class="d-checkbox-group">
     <div class="d-checkbox__input">
       <input class="d-checkbox" type="checkbox" name="Dialtone-CheckExample1" id="Dialtone-CheckExample1" />
@@ -164,7 +166,7 @@ Checkboxes are an easily understandable way to indicate that users can select on
 ### Indeterminate
 
 <code-well-header>
-  <fieldset class="d-stack8">
+  <fieldset class="d-input-group__fieldset d-stack8">
     <div class="d-checkbox-group">
       <div class="d-checkbox__input">
         <input class="d-checkbox d-checkbox--indeterminate" type="checkbox" name="Checkbox-IndeterminateExample1" id="Checkbox-IndeterminateExample1" />
@@ -185,7 +187,7 @@ Checkboxes are an easily understandable way to indicate that users can select on
 </code-well-header>
 
 ```html
-<fieldset class="d-stack8">
+<fieldset class="d-input-group__fieldset d-stack8">
   <div class="d-checkbox-group">
     <div class="d-checkbox__input">
       <input class="d-checkbox d-checkbox--indeterminate" type="checkbox" name="Checkbox-IndeterminateExample1" id="Checkbox-IndeterminateExample1" />
@@ -208,7 +210,7 @@ Checkboxes are an easily understandable way to indicate that users can select on
 ### Stacked Group
 
 <code-well-header>
-  <fieldset class="d-stack8">
+  <fieldset class="d-input-group__fieldset d-stack8">
     <legend class="d-label">Call Blocking & Spam Protection</legend>
     <div class="d-checkbox-group">
       <div class="d-checkbox__input">
@@ -238,7 +240,7 @@ Checkboxes are an easily understandable way to indicate that users can select on
 </code-well-header>
 
 ```html
-<fieldset class="d-stack8">
+<fieldset class="d-input-group__fieldset d-stack8">
   <legend class="d-label">Call Blocking & Spam Protection</legend>
   <div class="d-checkbox-group">
     <div class="d-checkbox__input">
@@ -270,7 +272,7 @@ Checkboxes are an easily understandable way to indicate that users can select on
 ### With Description Text
 
 <code-well-header>
-  <fieldset class="d-stack8">
+  <fieldset class="d-input-group__fieldset d-stack8">
     <legend class="d-label">Call Blocking & Spam Protection</legend>
     <div class="d-checkbox-group">
       <div class="d-checkbox__input">
@@ -306,7 +308,7 @@ Checkboxes are an easily understandable way to indicate that users can select on
 </code-well-header>
 
 ```html
-<fieldset class="d-stack8">
+<fieldset class="d-input-group__fieldset d-stack8">
   <legend class="d-label">Call Blocking & Spam Protection</legend>
   <div class="d-checkbox-group">
     <div class="d-checkbox__input">
@@ -344,7 +346,7 @@ Checkboxes are an easily understandable way to indicate that users can select on
 ### With validation states
 
 <code-well-header>
-  <fieldset class="d-stack8">
+  <fieldset class="d-input-group__fieldset d-stack8">
     <legend class="d-label">Call Blocking & Spam Protection</legend>
     <div class="d-checkbox-group">
       <div class="d-checkbox__input">
@@ -380,7 +382,7 @@ Checkboxes are an easily understandable way to indicate that users can select on
 </code-well-header>
 
 ```html
-<fieldset class="d-stack8">
+<fieldset class="d-input-group__fieldset d-stack8">
   <legend class="d-label">Call Blocking & Spam Protection</legend>
   <div class="d-checkbox-group">
     <div class="d-checkbox__input">

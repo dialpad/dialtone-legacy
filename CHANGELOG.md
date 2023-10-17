@@ -1,3 +1,10 @@
+## [8.19.1](https://github.com/dialpad/dialtone/compare/v8.19.0...v8.19.1) (2023-10-16)
+
+
+### Bug Fixes
+
+* **Input Group:** prevent label from spanning entire row ([#975](https://github.com/dialpad/dialtone/issues/975)) ([3b81b0d](https://github.com/dialpad/dialtone/commit/3b81b0d2542ee545b5fd71024e0b9d9ab1e0a55b))
+
 # [8.19.0](https://github.com/dialpad/dialtone/compare/v8.18.1...v8.19.0) (2023-10-11)
 
 
