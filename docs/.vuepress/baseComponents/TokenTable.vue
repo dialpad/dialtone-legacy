@@ -85,6 +85,7 @@
 
 <script>
 import CopyButton from './CopyButton.vue';
+import * as helpers from '../../../postcss/helpers.cjs';
 
 const FORMAT_MAP = {
   CSS: 'css/variables',
@@ -133,6 +134,7 @@ export default {
   computed: {
     tokensProcessed () {
       if (!this.json) return [];
+      console.log(helpers.extractTypographies);
 
       return Object.entries(this.json[this.theme])
         .filter(([key, value]) => CATEGORY_MAP[this.category].includes(key.split('/')[0]) && value['css/variables'])

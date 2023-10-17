@@ -23,7 +23,7 @@ const {
   extractShadows,
   extractTypographies,
   removePrefixFromColor,
-} = require('./helpers');
+} = require('./helpers.cjs');
 const tinycolor = require('tinycolor2');
 const bodyCSSVariables = [];
 const lightCSSVariables = [];
