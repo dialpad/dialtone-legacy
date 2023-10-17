@@ -26,7 +26,7 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
   />
 </code-well-header>
 
-```vue
+```html
 <dt-validation-messages
   id="sample--02"
   :validationMessages='[{"message":"Positive validation message","type":"success"}]'
@@ -42,7 +42,7 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
   />
 </code-well-header>
 
-```vue
+```html
 <dt-validation-messages
   id="sample--03"
   :validationMessages='[{"message":"Critical validation message","type":"error"}]'
@@ -58,7 +58,7 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
   />
 </code-well-header>
 
-```vue
+```html
 <dt-validation-messages
   id="sample--04"
   :validationMessages='[{"message":"Critical validation message","type":"warning"}]'
