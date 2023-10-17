@@ -32,6 +32,7 @@ Radio buttons are a common way to allow users to make a single selection from a 
 - If the number of available options can fit onto a mobile screen.
 - In place of [Select](select-menu.md) element if there are few enough options (e.g. =7) and the design can support it.
 </template>
+
 <template #dont>
 
 - Consider [Checkbox](checkbox.md) if users may have the option to select more than one.
@@ -39,6 +40,7 @@ Radio buttons are a common way to allow users to make a single selection from a 
 - If users should be able to select zero of the options; radio elements are not “uncheckable.” A [Checkbox](checkbox.md) may be warranted.
 - If there are too many options to display on a single view; consider a [Select](select-menu.md) instead.
 </template>
+
 </dialtone-usage>
 
 ### Best practices
@@ -53,7 +55,7 @@ Radio buttons are a common way to allow users to make a single selection from a 
 ### Base Styles
 
 <code-well-header>
-  <fieldset class="d-stack8">
+  <fieldset class="d-input-group__fieldset d-stack8">
     <div class="d-radio-group">
       <div class="d-radio__input">
         <input class="d-radio" type="radio" name="Dialtone-RadioGroup1" id="Dialtone-RadioExample1" />
@@ -98,7 +100,7 @@ Radio buttons are a common way to allow users to make a single selection from a 
 </code-well-header>
 
 ```html
-<fieldset class="d-stack8">
+<fieldset class="d-input-group__fieldset d-stack8">
   <div class="d-radio-group">
     <div class="d-radio__input">
       <input class="d-radio" type="radio" name="Dialtone-RadioGroup1" id="Dialtone-RadioExample1" />
@@ -145,7 +147,7 @@ Radio buttons are a common way to allow users to make a single selection from a 
 ### Stacked Group
 
 <code-well-header>
-  <fieldset class="d-stack8">
+  <fieldset class="d-input-group__fieldset d-stack8">
     <legend class="d-label">Advanced missed call routing</legend>
     <div class="d-radio-group">
       <div class="d-radio__input">
@@ -175,7 +177,7 @@ Radio buttons are a common way to allow users to make a single selection from a 
 </code-well-header>
 
 ```html
-<fieldset class="d-stack8">
+<fieldset class="d-input-group__fieldset d-stack8">
   <legend class="d-label">Advanced missed call routing</legend>
   <div class="d-radio-group">
     <div class="d-radio__input">
@@ -207,7 +209,7 @@ Radio buttons are a common way to allow users to make a single selection from a 
 ### With Description Text
 
 <code-well-header>
-  <fieldset class="d-stack8">
+  <fieldset class="d-input-group__fieldset d-stack8">
     <legend class="d-label">Advanced missed call routing</legend>
     <div class="d-radio-group">
       <div class="d-radio__input">
@@ -240,7 +242,7 @@ Radio buttons are a common way to allow users to make a single selection from a 
 </code-well-header>
 
 ```html
-<fieldset class="d-stack8">
+<fieldset class="d-input-group__fieldset d-stack8">
   <legend class="d-label">Advanced missed call routing</legend>
   <div class="d-radio-group">
     <div class="d-radio__input">
@@ -275,7 +277,7 @@ Radio buttons are a common way to allow users to make a single selection from a 
 ### With validation states
 
 <code-well-header>
-  <fieldset class="d-stack8">
+  <fieldset class="d-input-group__fieldset d-stack8">
     <legend class="d-label">Advanced missed call routing</legend>
     <div class="d-radio-group">
       <div class="d-radio__input">
@@ -308,7 +310,7 @@ Radio buttons are a common way to allow users to make a single selection from a 
 </code-well-header>
 
 ```html
-<fieldset class="d-stack8">
+<fieldset class="d-input-group__fieldset d-stack8">
   <legend class="d-label">Advanced missed call routing</legend>
   <div class="d-radio-group">
     <div class="d-radio__input">

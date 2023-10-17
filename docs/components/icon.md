@@ -9,7 +9,7 @@ figma_url: https://www.figma.com/file/zz40wi0uW9MvaJ5RuhcRZR/DT-Core%3A-Icons-7?
 ---
 
 <code-well-header>
-  <div class="d-d-flex d-gg8 d-ai-center">
+  <dt-stack gap="400" direction="row">
     <dt-icon name="lightning-bolt" size="100" />
     <dt-icon name="lightning-bolt" size="200" />
     <dt-icon name="lightning-bolt" size="300" />
@@ -18,20 +18,8 @@ figma_url: https://www.figma.com/file/zz40wi0uW9MvaJ5RuhcRZR/DT-Core%3A-Icons-7?
     <dt-icon name="lightning-bolt" size="600" />
     <dt-icon name="lightning-bolt" size="700" />
     <dt-icon name="lightning-bolt" size="800" />
-  </div>
+  </dt-stack>
 </code-well-header>
-
-<aside class="d-notice d-notice--info d-mt24 d-wmx100p" role="status" aria-hidden="false">
-  <div class="d-notice__icon">
-    <dt-icon name="info"></dt-icon>
-  </div>
-  <div class="d-notice__content d-stack4">
-    <p>
-      <strong>Looking for the previous icon set?</strong>
-      <router-link class="d-link d-link--muted" to="/design/icons/">Documentation for the deprecated icon set</router-link> will remain available until this new icon is more fully adopted.
-    </p>
-  </div>
-</aside>
 
 ## Icon catalog
 
@@ -66,24 +54,19 @@ figma_url: https://www.figma.com/file/zz40wi0uW9MvaJ5RuhcRZR/DT-Core%3A-Icons-7?
 <table class="d-table dialtone-doc-table">
   <thead>
     <tr>
-      <th scope="col">Size</th>
-      <th scope="col">Width and height</th>
-      <th scope="col" class="d-w35p">Class</th>
-      <th scope="col" class="d-ta-center">Example</th>
-      <th scope="col"><span class="d-vi-visible-sr">Exception</span></th>
+      <th scope="col" colspan="2">Size</th>
+      <th scope="col">Dimensions</th>
+      <th scope="col">Class</th>
     </tr>
   </thead>
   <tbody>
-    <tr v-for="{size, width_height, className, deviceOnly } in sizes">
+    <tr v-for="{size, width_height, className } in sizes">
       <th scope="row">{{ size }}</th>
-      <td class="d-ff-mono d-fs-100">{{ width_height }}</td>
-      <td class="d-ff-mono d-fs-100">.{{ className }}</td>
       <td class="d-ta-center">
         <inbox-icon :class="className" />
       </td>
-      <td class="d-ta-right">
-        <span v-if="deviceOnly" class="d-badge d-badge--warning">Device only</span>
-      </td>
+      <td class="d-ff-mono d-fs-100">{{ width_height }}</td>
+      <td class="d-ff-mono d-fs-100">.{{ className }}</td>
     </tr>
   </tbody>
 </table>

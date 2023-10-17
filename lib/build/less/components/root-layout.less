@@ -13,12 +13,23 @@
 //  $   BASE STYLE
 //  ----------------------------------------------------------------------------
 .d-root-layout {
+  position: relative;
   display: grid;
-  grid-template:
-    'header' auto
-    'body' 1fr
-    'footer' auto / 1fr;
+  grid-template-areas:
+    'header header'
+    'sidebar body'
+    'footer footer';
+  grid-template-rows: min-content 1fr min-content;
+  grid-template-columns: min-content 1fr;
   min-height: 100vh;
+
+  &--inverted {
+    grid-template-areas:
+      'header header'
+      'body sidebar'
+      'footer footer';
+    grid-template-columns: 1fr min-content;
+  }
 
   &--fixed {
     height: 100vh;
@@ -30,34 +41,19 @@
     &--sticky {
       position: sticky;
       top: 0;
-    }
-  }
-
-  &__body {
-    display: flex;
-    grid-area: body;
-    overflow: auto;
-    box-shadow: none;
-
-    &--invert {
-      flex-direction: row-reverse;
+      z-index: var(--zi-navigation);
     }
   }
 
   &__sidebar {
-    flex-shrink: 0;
+    grid-area: sidebar;
+    height: 100%;
     box-shadow: none;
-
-    &--sticky {
-      position: sticky;
-      top: 0;
-      height: 100%;
-      overflow: auto;
-    }
   }
 
   &__content {
-    flex: 1;
+    grid-area: body;
+    overflow-y: auto;
     box-shadow: none;
 
     &:focus-visible {
@@ -72,36 +68,36 @@
 
 @media (max-width: 480px) {
   .d-root-layout__responsive--sm {
-    .d-root-layout__body {
-      flex-direction: column;
-
-      &--invert {
-        flex-direction: column-reverse;
-      }
-    }
+    grid-template-areas:
+    'header'
+    'sidebar'
+    'body'
+    'footer';
+    grid-template-rows: min-content min-content 1fr min-content;
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 640px) {
   .d-root-layout__responsive--md {
-    .d-root-layout__body {
-      flex-direction: column;
-
-      &--invert {
-        flex-direction: column-reverse;
-      }
-    }
+    grid-template-areas:
+    'header'
+    'sidebar'
+    'body'
+    'footer';
+    grid-template-rows: min-content min-content 1fr min-content;
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 980px) {
   .d-root-layout__responsive--lg {
-    .d-root-layout__body {
-      flex-direction: column;
-
-      &--invert {
-        flex-direction: column-reverse;
-      }
-    }
+    grid-template-areas:
+    'header'
+    'sidebar'
+    'body'
+    'footer';
+    grid-template-rows: min-content min-content 1fr min-content;
+    grid-template-columns: 1fr;
   }
 }

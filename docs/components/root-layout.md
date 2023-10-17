@@ -9,26 +9,24 @@ storybook: https://vue.dialpad.design/?path=/story/components-root-layout--defau
 
 <code-well-header>
 <dt-root-layout
-  class="d-w100p"
-  style="height: 30vh!important;"
+  :fixed="false"
+  class="d-w100p d-h332"
 >
   <template
     #header
   >
-    <div class="d-h100p d-bgc-purple-100">Header</div>
+    <div class="d-h64 d-bgc-purple-100">Header</div>
   </template>
   <template
     #sidebar
   >
-    <div class="d-h100p d-bgc-black-100"><div>Sidebar item 1</div><div>Sidebar item 2</div><div>Sidebar item 3</div></div>
+    <div class="d-w128 d-h100p d-bgc-black-100"><div>Sidebar item 1</div><div>Sidebar item 2</div><div>Sidebar item 3</div></div>
   </template>
-  <template>
-    <div class="d-h100p">Content</div>
-  </template>
+  <div class="d-bgc-green-100 d-w100p d-h100p">Content</div>
   <template
     #footer
   >
-    <div class="d-h100p d-bgc-gold-100">Footer</div>
+    <div class="d-h64 d-bgc-gold-100">Footer</div>
   </template>
 </dt-root-layout>
 </code-well-header>
@@ -42,24 +40,23 @@ storybook: https://vue.dialpad.design/?path=/story/components-root-layout--defau
 >
   <dt-root-layout
     header-sticky
+    class="d-w100p d-h332"
   >
     <template
       #header
     >
-      <div class="d-h100p d-bgc-purple-100">Header</div>
+      <div class="d-h64 d-bgc-purple-100">Header</div>
     </template>
     <template
       #sidebar
     >
-      <div class="d-h100p d-bgc-black-100"><div>Sidebar item 1</div><div>Sidebar item 2</div><div>Sidebar item 3</div></div>
+      <div class="d-w128 d-h100p d-bgc-black-100"><div>Sidebar item 1</div><div>Sidebar item 2</div><div>Sidebar item 3</div></div>
     </template>
-    <template>
-      <div class="d-h100p">Content</div>
-    </template>
+      <div class="d-bgc-green-100 d-w100p d-h100p">Content</div>
     <template
       #footer
     >
-      <div class="d-h100p d-bgc-gold-100">Footer</div>
+      <div class="d-h64 d-bgc-gold-100">Footer</div>
     </template>
   </dt-root-layout>
 </div>

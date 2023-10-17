@@ -1,38 +1,38 @@
 <template>
-  <div class="d-d-flex d-flow16">
-    <div class="d-d-flex d-flow4">
+  <dt-stack gap="400" direction="row" class="d-bgc-secondary d-p8 d-bar4 d-ba d-bc-subtle d-my16">
+    <dt-stack direction="row" gap="300">
       <dt-icon
         class="d-fc-success"
         name="check-circle"
         size="300"
       />
-      <span class="d-label d-label--sm">Ready</span>
-    </div>
-    <div class="d-d-flex d-flow4">
+      <span class="d-label-plain-small">Ready</span>
+    </dt-stack>
+    <dt-stack direction="row" gap="300">
       <dt-icon
         class="d-fc-warning"
         name="tools"
         size="300"
       />
-      <span class="d-label d-label--sm">In progress</span>
-    </div>
-    <div class="d-d-flex d-flow4">
+      <span class="d-label-plain-small">In progress</span>
+    </dt-stack>
+    <dt-stack direction="row" gap="300">
       <dt-icon
         class="d-fc-error"
         name="box-select"
         size="300"
       />
-      <span class="d-label d-label--sm">Planned</span>
-    </div>
-    <div class="d-d-flex d-flow4">
+      <span class="d-label-plain-small">Planned</span>
+    </dt-stack>
+    <dt-stack direction="row" gap="300">
       <dt-icon
         class="d-fc-muted"
         name="box"
         size="300"
       />
-      <span class="d-label d-label--sm">N/A</span>
-    </div>
-  </div>
+      <span class="d-label-plain-small">N/A</span>
+    </dt-stack>
+  </dt-stack>
   <table class="d-table">
     <thead>
       <tr>

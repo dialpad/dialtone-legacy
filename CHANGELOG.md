@@ -1,3 +1,70 @@
+# [8.20.0](https://github.com/dialpad/dialtone/compare/v8.19.1...v8.20.0) (2023-10-17)
+
+
+### Documentation
+
+* add SvgLoader component ([#977](https://github.com/dialpad/dialtone/issues/977)) ([da86906](https://github.com/dialpad/dialtone/commit/da869060b217b87f33a1fcaaa86623da2ab7efd1))
+* **Keyboard Shortcut:** add figma link ([#978](https://github.com/dialpad/dialtone/issues/978)) ([caadcdd](https://github.com/dialpad/dialtone/commit/caadcdd6d8bab155223c242a1dca904ad09c08f1))
+
+
+### Features
+
+* convert root-layout to full css grid ([#976](https://github.com/dialpad/dialtone/issues/976)) ([14d81c0](https://github.com/dialpad/dialtone/commit/14d81c0e709d8be82c81e3bb053b02a041f785b5))
+
+## [8.19.1](https://github.com/dialpad/dialtone/compare/v8.19.0...v8.19.1) (2023-10-16)
+
+
+### Bug Fixes
+
+* **Input Group:** prevent label from spanning entire row ([#975](https://github.com/dialpad/dialtone/issues/975)) ([3b81b0d](https://github.com/dialpad/dialtone/commit/3b81b0d2542ee545b5fd71024e0b9d9ab1e0a55b))
+
+# [8.19.0](https://github.com/dialpad/dialtone/compare/v8.18.1...v8.19.0) (2023-10-11)
+
+
+### Documentation
+
+* add tab component to show example, vue code and html code ([#968](https://github.com/dialpad/dialtone/issues/968)) ([f7dd864](https://github.com/dialpad/dialtone/commit/f7dd86449609a63e6f245322cf99287aed72eabc))
+* fix sidebar overlap ([#970](https://github.com/dialpad/dialtone/issues/970)) ([f48a643](https://github.com/dialpad/dialtone/commit/f48a643511a0ae78ad8e0a8348e5d5c0ec7ed8b5))
+
+
+### Features
+
+* **Typography:** add utility for word wrap ([#967](https://github.com/dialpad/dialtone/issues/967)) ([980dbb5](https://github.com/dialpad/dialtone/commit/980dbb5adaaa53b266f37860aa7bf7ee9ac0edb4))
+
+## [8.18.1](https://github.com/dialpad/dialtone/compare/v8.18.0...v8.18.1) (2023-10-06)
+
+
+### Bug Fixes
+
+* **Root Layout:** update dialtone to fix root-layout on docsite ([#969](https://github.com/dialpad/dialtone/issues/969)) ([38b0103](https://github.com/dialpad/dialtone/commit/38b01037cd4a5dbb98c30b8b8a3421f6900bc328))
+
+
+### Documentation
+
+* **Icon:** remove deprecated svg icons ([#966](https://github.com/dialpad/dialtone/issues/966)) ([8dfc6af](https://github.com/dialpad/dialtone/commit/8dfc6afe09e90cd8d571923a4b8d6db6e9b65845))
+* storybook access from header ([#965](https://github.com/dialpad/dialtone/issues/965)) ([d61666f](https://github.com/dialpad/dialtone/commit/d61666f33e310e59919e916b98e4220c36b98e19))
+* update dialtone-vue ([eea5609](https://github.com/dialpad/dialtone/commit/eea5609a3bd63d6b84fe2f97ff6ef6a2a1e9d7fa))
+
+# [8.18.0](https://github.com/dialpad/dialtone/compare/v8.17.0...v8.18.0) (2023-10-04)
+
+
+### Features
+
+* update dialtone-icons ([a6631cb](https://github.com/dialpad/dialtone/commit/a6631cb4896cebeab79b15c24c07e8be8426ee6a))
+
+# [8.17.0](https://github.com/dialpad/dialtone/compare/v8.16.1...v8.17.0) (2023-10-03)
+
+
+### Documentation
+
+* **Modal:** add banner variants ([#955](https://github.com/dialpad/dialtone/issues/955)) ([0dc7046](https://github.com/dialpad/dialtone/commit/0dc7046ee443c54744436208f50dee5b1d6066cb))
+* update style for code in dark and light mode ([#960](https://github.com/dialpad/dialtone/issues/960)) ([f673b31](https://github.com/dialpad/dialtone/commit/f673b316290caf904b5a76f4d9eb689f93a4450b))
+
+
+### Features
+
+* **Stack:** add defaults for align prop ([#961](https://github.com/dialpad/dialtone/issues/961)) ([f331724](https://github.com/dialpad/dialtone/commit/f3317240b687f95cec6db1115f199874fadccad7))
+
 ## [8.16.1](https://github.com/dialpad/dialtone/compare/v8.16.0...v8.16.1) (2023-09-27)
 
 

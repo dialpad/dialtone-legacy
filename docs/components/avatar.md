@@ -77,7 +77,7 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 <div class="d-avatar d-avatar--{$size}">
     <div class="d-avatar__canvas">
         <span class="d-avatar__icon">
-          <svg>...</svg>
+            <svg>...</svg>
         </span>
     </div>
 </div>

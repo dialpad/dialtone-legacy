@@ -48,6 +48,12 @@ module.exports = {
     'value-no-vendor-prefix': null,
     indentation: null,
     'length-zero-no-unit': true,
+    'declaration-block-no-redundant-longhand-properties': [
+      true,
+      {
+        ignoreShorthands: ['/grid/'],
+      },
+    ],
     'less/color-no-invalid-hex': null,
     'less/no-duplicate-variables': null,
     'meowtec/no-px': [

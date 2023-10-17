@@ -1,20 +1,21 @@
 <template>
-  <h2 class="d-vi-visible-sr">
-    Local navigation
-  </h2>
-  <ul
-    v-if="sidebarItems.length"
-    class="
-    dialtone-sidebar__list d-t64 d-b0 d-ps-fixed
-    d-p24 d-px16 d-pb96
-    d-h100vh d-of-y-auto"
-  >
-    <sidebar-item
-      v-for="item in sidebarItems"
-      :key="item.link || item.text"
-      :item="item"
-    />
-  </ul>
+  <div class="dialtone-sidebar lg:d-d-none">
+    <h2 class="d-vi-visible-sr">
+      Local navigation
+    </h2>
+    <dt-stack
+      v-if="sidebarItems.length"
+      as="ul"
+      gap="500"
+      class="dialtone-sidebar__list"
+    >
+      <sidebar-item
+        v-for="item in sidebarItems"
+        :key="item.link || item.text"
+        :item="item"
+      />
+    </dt-stack>
+  </div>
 </template>
 
 <script setup>
