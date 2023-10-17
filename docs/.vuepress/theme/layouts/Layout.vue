@@ -1,33 +1,32 @@
 <template>
   <dt-root-layout
-    header-class="dialtone-header d-d-flex d-ai-center d-p16 d-pl8 d-h64 d-jc-space-between d-zi-navigation"
-    content-class="d-bgc-primary d-fc-primary"
     :fixed="false"
     :header-sticky="true"
     footer-class="d-text-right"
-    sidebar-class="dialtone-sidebar lg:d-d-none"
   >
     <template #header>
-      <dialtone-logo />
-      <navbar
-        v-if="!isMobile"
-        :items="navbarLinks"
-        @search="openSearch"
-      />
-      <mobile-navbar
-        v-else
-        :items="navbarLinks"
-        @search="openSearch"
-      />
-      <mobile-sidebar
-        v-if="isMobile && route.path !== '/'"
-      />
-      <!-- eslint-disable-next-line vue/no-undef-components -->
-      <docsearch
-        ref="docSearchBtn"
-        class="d-d-none"
-        options=""
-      />
+      <div class="dialtone-header">
+        <dialtone-logo />
+        <navbar
+          v-if="!isMobile"
+          :items="navbarLinks"
+          @search="openSearch"
+        />
+        <mobile-navbar
+          v-else
+          :items="navbarLinks"
+          @search="openSearch"
+        />
+        <mobile-sidebar
+          v-if="isMobile && route.path !== '/'"
+        />
+        <!-- eslint-disable-next-line vue/no-undef-components -->
+        <docsearch
+          ref="docSearchBtn"
+          class="d-d-none"
+          options=""
+        />
+      </div>
     </template>
     <template
       v-if="!$frontmatter.home"
