@@ -1,3 +1,16 @@
+# [8.20.0](https://github.com/dialpad/dialtone/compare/v8.19.1...v8.20.0) (2023-10-17)
+
+
+### Documentation
+
+* add SvgLoader component ([#977](https://github.com/dialpad/dialtone/issues/977)) ([da86906](https://github.com/dialpad/dialtone/commit/da869060b217b87f33a1fcaaa86623da2ab7efd1))
+* **Keyboard Shortcut:** add figma link ([#978](https://github.com/dialpad/dialtone/issues/978)) ([caadcdd](https://github.com/dialpad/dialtone/commit/caadcdd6d8bab155223c242a1dca904ad09c08f1))
+
+
+### Features
+
+* convert root-layout to full css grid ([#976](https://github.com/dialpad/dialtone/issues/976)) ([14d81c0](https://github.com/dialpad/dialtone/commit/14d81c0e709d8be82c81e3bb053b02a041f785b5))
+
 ## [8.19.1](https://github.com/dialpad/dialtone/compare/v8.19.0...v8.19.1) (2023-10-16)
 
 
