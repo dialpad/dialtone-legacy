@@ -1,3 +1,10 @@
+## [8.20.1](https://github.com/dialpad/dialtone/compare/v8.20.0...v8.20.1) (2023-10-18)
+
+
+### Bug Fixes
+
+* fix package-lock inconsistencies ([#979](https://github.com/dialpad/dialtone/issues/979)) ([f5a0153](https://github.com/dialpad/dialtone/commit/f5a015300f69558024a58fbb318ddcb5b3ee9672))
+
 # [8.20.0](https://github.com/dialpad/dialtone/compare/v8.19.1...v8.20.0) (2023-10-17)
 
 
