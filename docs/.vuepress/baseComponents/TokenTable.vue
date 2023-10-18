@@ -84,6 +84,7 @@
 </template>
 
 <script>
+import { getComposedTypographyTokens, getComposedShadowTokens } from '../common/token-utilities';
 import CopyButton from './CopyButton.vue';
 
 const FORMAT_MAP = {
@@ -105,6 +106,19 @@ const CATEGORY_MAP = {
   shadow: ['shadow'],
   component: ['avatar', 'badge', 'checkbox', 'icon', 'inputs', 'action'],
 };
+
+const COMPOSED_TOKENS_CATEGORIES = [
+  {
+    category: 'typography',
+    format: 'CSS',
+    getTokensFn: getComposedTypographyTokens,
+  },
+  {
+    category: 'shadow',
+    format: 'CSS',
+    getTokensFn: getComposedShadowTokens,
+  },
+];
 
 export default {
   name: 'TokenTable',
@@ -134,13 +148,20 @@ export default {
     tokensProcessed () {
       if (!this.json) return [];
 
-      return Object.entries(this.json[this.theme])
+      const tokens = [];
+      Object.entries(this.json[this.theme])
         .filter(([key, value]) => CATEGORY_MAP[this.category].includes(key.split('/')[0]) && value['css/variables'])
-        .map(([_, value]) => {
+        .forEach(([_, value]) => {
           const { name, value: tokenValue, description } = value[FORMAT_MAP[this.format]] || {};
           const { value: exampleValue } = value['css/variables'];
-          return { exampleValue, name, tokenValue, description };
+          tokens.push({ exampleValue, name, tokenValue, description });
         });
+      const composedTokens = [];
+      if (COMPOSED_TOKENS_CATEGORIES.some(item => item.category === this.category && item.format === this.format)) {
+        composedTokens.push(...COMPOSED_TOKENS_CATEGORIES
+          .find(item => item.category === this.category).getTokensFn(this.theme));
+      }
+      return [...composedTokens, ...tokens];
     },
 
     formatSelectMenuOptions () {
