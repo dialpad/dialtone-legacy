@@ -12,6 +12,10 @@ export const DIALTONE_CHANGELOGS = {
   },
 };
 
+/**
+* TECH DEBT: the following constants are duplicated from postcss/constants.js
+* There's a ticket to adress this: https://dialpad.atlassian.net/browse/DLT-1288
+*/
 export const SHADOW_VARIABLES = [
   'Small',
   'Medium',

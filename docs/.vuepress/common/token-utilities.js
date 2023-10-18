@@ -1,3 +1,7 @@
+/**
+* TECH DEBT: this file is a not exact duplication of postcss/dialtone-generators.js and postcss/helpers.js
+* There's a ticket to adress this: https://dialpad.atlassian.net/browse/DLT-1288
+*/
 import { SHADOW_VARIABLES, TYPOGRAPHY_VARIABLES, TYPOGRAPHY_SIZES } from './constants';
 import dialtoneTokensLight from '@dialpad/dialtone-tokens/dist/tokens-light.json';
 import dialtoneTokensDark from '@dialpad/dialtone-tokens/dist/tokens-dark.json';
