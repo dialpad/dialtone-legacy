@@ -11,10 +11,15 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
   <example-presence presence="active"/>
 </code-well-header>
 
+## Usage
+
+Located at the bottom right of an avatar, the `presence` indicator displays a user's current availablity. At a glance, check if a user is available, in a meeting, on a call, away, offline, or set to 'Do Not Disturb'. It's important to note that this indicator is automatically set and cannot be changed manually by the user.
+
 ## Variants and examples
 
 ### Active
 
+When a user is available.
 <code-well-header bgclass="d-bgc-primary">
   <example-presence presence="active"/>
 </code-well-header>
@@ -27,6 +32,7 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 
 ### Busy
 
+When a user is unavailable, either due to being **'On a call'**, **'In a meeting'**, or set to **'DND (Do Not Disturb)'**. Additionally, a text label indicating their specific status will appear under the user's name.
 <code-well-header bgclass="d-bgc-primary">
   <example-presence presence="busy"/>
 </code-well-header>
@@ -39,6 +45,7 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 
 ### Away
 
+When a user has a scheduled meeting on their synced calendar (Google G Suite or Microsoft Office 365) and is not actively participating in it through the app. Additionally, **'In a meeting'** will appear under the user's name.
 <code-well-header bgclass="d-bgc-primary">
   <example-presence presence="away"/>
 </code-well-header>
@@ -51,6 +58,7 @@ figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Componen
 
 ### Offline
 
+When a user has not logged in for their first time.
 <code-well-header bgclass="d-bgc-primary">
   <example-presence presence="offline"/>
 </code-well-header>
