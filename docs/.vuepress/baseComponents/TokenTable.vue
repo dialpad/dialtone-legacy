@@ -148,17 +148,20 @@ export default {
     tokensProcessed () {
       if (!this.json) return [];
 
-      if (!COMPOSED_TOKENS_CATEGORIES.some(item => item.category === this.category && item.format === this.format)) {
-        return Object.entries(this.json[this.theme])
-          .filter(([key, value]) => CATEGORY_MAP[this.category].includes(key.split('/')[0]) && value['css/variables'])
-          .map(([_, value]) => {
-            const { name, value: tokenValue, description } = value[FORMAT_MAP[this.format]] || {};
-            const { value: exampleValue } = value['css/variables'];
-            return { exampleValue, name, tokenValue, description };
-          });
-      } else {
-        return COMPOSED_TOKENS_CATEGORIES.find(item => item.category === this.category).getTokensFn(this.theme);
+      const tokens = [];
+      Object.entries(this.json[this.theme])
+        .filter(([key, value]) => CATEGORY_MAP[this.category].includes(key.split('/')[0]) && value['css/variables'])
+        .forEach(([_, value]) => {
+          const { name, value: tokenValue, description } = value[FORMAT_MAP[this.format]] || {};
+          const { value: exampleValue } = value['css/variables'];
+          tokens.push({ exampleValue, name, tokenValue, description });
+        });
+      const composedTokens = [];
+      if (COMPOSED_TOKENS_CATEGORIES.some(item => item.category === this.category && item.format === this.format)) {
+        composedTokens.push(...COMPOSED_TOKENS_CATEGORIES
+          .find(item => item.category === this.category).getTokensFn(this.theme));
       }
+      return [...composedTokens, ...tokens];
     },
 
     formatSelectMenuOptions () {
