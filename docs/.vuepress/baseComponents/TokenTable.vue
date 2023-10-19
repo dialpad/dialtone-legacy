@@ -84,6 +84,7 @@
 </template>
 
 <script>
+import * as tokensJson from '@dialpad/dialtone-tokens/dist/doc.json';
 import { getComposedTypographyTokens, getComposedShadowTokens } from '../common/token-utilities';
 import CopyButton from './CopyButton.vue';
 
@@ -139,17 +140,14 @@ export default {
     return {
       format: 'CSS',
       theme: 'light',
-      json: null,
       THEMES,
     };
   },
 
   computed: {
     tokensProcessed () {
-      if (!this.json) return [];
-
       const tokens = [];
-      Object.entries(this.json[this.theme])
+      Object.entries(tokensJson[this.theme])
         .filter(([key, value]) => CATEGORY_MAP[this.category].includes(key.split('/')[0]) && value['css/variables'])
         .forEach(([_, value]) => {
           const { name, value: tokenValue, description } = value[FORMAT_MAP[this.format]] || {};
@@ -169,12 +167,6 @@ export default {
         return { value: item, label: item };
       });
     },
-  },
-
-  beforeMount () {
-    import('@dialpad/dialtone-tokens/dist/doc.json').then((module) => {
-      this.json = module.default;
-    });
   },
 
   methods: {
