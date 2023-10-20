@@ -1,3 +1,10 @@
+## [8.21.2](https://github.com/dialpad/dialtone/compare/v8.21.1...v8.21.2) (2023-10-20)
+
+
+### Bug Fixes
+
+* remove dialtone-vue css import ([c7ec9ab](https://github.com/dialpad/dialtone/commit/c7ec9ab545170ca0543c53c308c014189cd81d50))
+
 ## [8.21.1](https://github.com/dialpad/dialtone/compare/v8.21.0...v8.21.1) (2023-10-20)
 
 
