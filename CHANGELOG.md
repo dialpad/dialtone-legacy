@@ -1,3 +1,22 @@
+# [8.21.0](https://github.com/dialpad/dialtone/compare/v8.20.1...v8.21.0) (2023-10-20)
+
+
+### Documentation
+
+* add composition tokens for shadows and typographies ([#974](https://github.com/dialpad/dialtone/issues/974)) ([63622eb](https://github.com/dialpad/dialtone/commit/63622ebd8908fe8840dab40503487ed7d6d4554a))
+* add info to presence component page ([#980](https://github.com/dialpad/dialtone/issues/980)) ([33f0780](https://github.com/dialpad/dialtone/commit/33f0780c0d7bb728917e2a4843882244d80af681))
+* fix glitch when loading the tokens table ([#981](https://github.com/dialpad/dialtone/issues/981)) ([75bf92e](https://github.com/dialpad/dialtone/commit/75bf92e22e6558eb8130a0999d2a037ce9f4a624))
+
+
+### Features
+
+* npm release script ([#984](https://github.com/dialpad/dialtone/issues/984)) ([71cb071](https://github.com/dialpad/dialtone/commit/71cb0714196469425175278bf8e9c15ee583a058))
+
+
+### Reverts
+
+* "build: dialtone vue styles ([#936](https://github.com/dialpad/dialtone/issues/936))" ([#983](https://github.com/dialpad/dialtone/issues/983)) ([421c11e](https://github.com/dialpad/dialtone/commit/421c11ef9010bf084d7f841ec0c2aa842c21954e))
+
 ## [8.20.1](https://github.com/dialpad/dialtone/compare/v8.20.0...v8.20.1) (2023-10-18)
 
 
