@@ -73,7 +73,7 @@ export function getComposedTypographyTokens () {
       const composedVar = `--dt-typography-${typographyName}`;
       // eslint-disable-next-line max-len
       const tokenValue = `var(${composedVar}-font-weight) var(${composedVar}-font-size)/var(${composedVar}-line-height) var(${composedVar}-font-family)`;
-      tokens.push({ exampleValue: tokenValue['css/variables'], name: composedVar, tokenValue });
+      tokens.push({ exampleValue: tokenValue, name: composedVar, tokenValue });
     });
   return tokens;
 }
@@ -98,7 +98,7 @@ export function getComposedShadowTokens (theme) {
           return `var(${shadowVar}-${shadowNumber}-x) var(${shadowVar}-${shadowNumber}-y) var(${shadowVar}-${shadowNumber}-blur) var(${shadowVar}-${shadowNumber}-spread) var(${shadowVar}-${shadowNumber}-color)`;
         }).join(', ');
 
-      tokens.push({ exampleValue: tokenValue['css/variables'], name: shadowVar, tokenValue });
+      tokens.push({ exampleValue: tokenValue, name: shadowVar, tokenValue });
     });
   return tokens;
 }
