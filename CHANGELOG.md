@@ -1,3 +1,10 @@
+## [8.21.1](https://github.com/dialpad/dialtone/compare/v8.21.0...v8.21.1) (2023-10-20)
+
+
+### Bug Fixes
+
+* remove z-index on root-layout ([#985](https://github.com/dialpad/dialtone/issues/985)) ([38c7da3](https://github.com/dialpad/dialtone/commit/38c7da38e7f4c80f2d70be4e30f26f200686e0d2))
+
 # [8.21.0](https://github.com/dialpad/dialtone/compare/v8.20.1...v8.21.0) (2023-10-20)
 
 
