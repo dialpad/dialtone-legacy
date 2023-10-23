@@ -1,9 +1,11 @@
 <template>
-  <component :is="foundSvg" />
+  <template v-for="svg in svgs" :key="svg">
+    <component :is="svg" v-if="svg" />
+  </template>
 </template>
 
 <script setup>
-import { defineAsyncComponent, computed, resolveDynamicComponent } from 'vue';
+import { defineAsyncComponent } from 'vue';
 
 // render an svg by name
 const props = defineProps({
@@ -14,10 +16,6 @@ const props = defineProps({
     type: String,
     required: true,
   },
-});
-
-const foundSvg = computed(() => {
-  return svgs.find((svg) => { return resolveDynamicComponent(svg); });
 });
 
 const svgs = [
