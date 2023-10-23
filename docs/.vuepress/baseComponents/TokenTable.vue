@@ -57,6 +57,11 @@
           >
             Aa
           </p>
+          <div
+            v-if="category === 'shadow'"
+            class="d-bar2 d-w42 d-h42"
+            :style="style"
+          />
         </td>
         <th
           scope="row"
@@ -206,18 +211,15 @@ export default {
     },
 
     getExampleStyle (key, value) {
-      let style = null;
-      switch (this.category) {
-        case 'color':
-          style = this.getColorStyle(key, value);
-          break;
-
-        case 'typography':
-          style = this.getTypographyStyle(key, value);
-          break;
-      }
+      const CATEGORY_STYLE_MAP = {
+        color: this.getColorStyle,
+        typography: this.getTypographyStyle,
+        shadow: this.getShadowStyle,
+      };
+      if (!CATEGORY_STYLE_MAP[this.category]) return null;
+      const style = CATEGORY_STYLE_MAP[this.category](key, value);
       if (style === null && location.hostname === 'localhost') {
-        console.warn(`Token style not processed for the key ${key}`);
+        console.warn(`Token style not processed for the value ${value}`);
       }
       return style;
     },
@@ -253,6 +255,13 @@ export default {
       }
       if (mappedProp) {
         return `${mappedProp}: ${value}`;
+      }
+      return null;
+    },
+
+    getShadowStyle (key, value) {
+      if (key === 'composed') {
+        return `box-shadow: ${value}`;
       }
       return null;
     },
