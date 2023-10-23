@@ -15,6 +15,16 @@
     class="d-bar2 d-w42 d-h42"
     :style="getShadowStyle()"
   />
+  <div
+    v-if="category === 'size'"
+    class="rectangle"
+    :style="getSizeStyle()"
+  />
+  <div
+    v-if="category === 'space'"
+    class="rectangle"
+    :style="getSizeStyle()"
+  />
 </template>
 
 <script>
@@ -84,11 +94,6 @@ export default {
       if (isCompositionToken) {
         return `font: ${this.value}`;
       }
-      const compositionRegex =
-        new RegExp(`^var\\(--dt-typography-.+(${Object.keys(TYPOGRAPHY_KEY_MAP).join('|')})\\)$`);
-      if (compositionRegex) {
-        return `font: ${this.value}`;
-      }
       return null;
     },
 
@@ -98,6 +103,21 @@ export default {
       }
       return null;
     },
+
+    getSizeStyle () {
+      if (this.value.endsWith('%')) return null;
+      const value = parseFloat(this.value.replace('rem', ''));
+      if (value < 12.8 && value > 0) return `width: ${this.value}`;
+      return null;
+    },
   },
 };
 </script>
+
+<style scoped lang="less">
+.rectangle {
+  height: var(--dt-size-625);
+  background-color: var(--dt-color-purple-300);
+  width: 0;
+}
+</style>
