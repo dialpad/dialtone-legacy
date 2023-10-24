@@ -42,11 +42,11 @@
     </thead>
     <tbody>
       <tr
-        v-for="({ exampleValue, name, tokenValue, description }) in tokensProcessed"
+        v-for="({ exampleValue, exampleName, name, tokenValue, description }) in tokensProcessed"
         :key="name"
       >
         <td>
-          <token-example :category="category" :name="name" :value="exampleValue" />
+          <token-example :category="category" :name="exampleName || name" :value="exampleValue" />
         </td>
         <th
           scope="row"
@@ -147,11 +147,11 @@ export default {
     tokensProcessed () {
       const tokens = [];
       Object.entries(tokensJson[this.theme])
-        .filter(([key, value]) => CATEGORY_MAP[this.category].includes(key.split('/')[0]) && value['css/variables'])
+        .filter(([key, value]) => CATEGORY_MAP[this.category].includes(key.split('/')[0]) && value[FORMAT_MAP.CSS])
         .forEach(([_, value]) => {
           const { name, value: tokenValue, description } = value[FORMAT_MAP[this.format]] || {};
-          const { value: exampleValue } = value['css/variables'];
-          tokens.push({ exampleValue, name, tokenValue, description });
+          const { value: exampleValue, name: exampleName } = value[FORMAT_MAP.CSS];
+          tokens.push({ exampleValue, exampleName, name, tokenValue, description });
         });
       const composedTokens = [];
       if (COMPOSED_TOKENS_CATEGORIES.some(item => item.category === this.category && item.format === this.format)) {
