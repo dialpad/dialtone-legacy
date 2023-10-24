@@ -27,7 +27,8 @@
   />
 </template>
 
-<script>
+<script setup>
+import { computed } from 'vue';
 import { CATEGORY_MAP } from './TokenTable.vue';
 
 const TYPOGRAPHY_KEY_MAP = {
@@ -43,77 +44,64 @@ const SHADOW_COMPOSITION_TOKENS = ['small', 'medium', 'large', 'extra-large', 'c
 const isTypography = (name, key) => name.includes('--dt-typography') && name.includes(key);
 const isFont = (name, key) => name.includes(`--dt-font-${key}`);
 
-export default {
-  name: 'TokenExample',
-
-  props: {
-    category: {
-      type: String,
-      default: 'color',
-      validator: (v) => Object.keys(CATEGORY_MAP).includes(v),
-    },
-
-    name: {
-      type: String,
-      default: '',
-    },
-
-    value: {
-      type: String,
-      default: '',
-    },
+const props = defineProps({
+  category: {
+    type: String,
+    default: 'color',
+    validator: (v) => Object.keys(CATEGORY_MAP).includes(v),
   },
 
-  computed: {
-    getColorStyle () {
-      const property = this.name.split('--dt-')[1]?.split('-')[0];
-      switch (property) {
-        case 'color':
-        case 'theme':
-          return { background: this.value };
-
-        case 'opacity':
-          return { background: `rgba(0, 0, 0, ${this.value})` };
-
-        default:
-          return null;
-      }
-    },
-
-    getComposedTypographyStyle () {
-      if (this.name.startsWith('var(--dt-typography')) {
-        return `font: ${this.value}`;
-      }
-      return null;
-    },
-
-    getTypographyStyle () {
-      for (const key in TYPOGRAPHY_KEY_MAP) {
-        if (isFont(this.name, key) || isTypography(this.name, key)) {
-          return { [TYPOGRAPHY_KEY_MAP[key]]: this.value };
-        }
-      }
-      if (this.name.startsWith('var(--dt-typography')) {
-        return `font: ${this.value}`;
-      }
-      return null;
-    },
-
-    getShadowStyle () {
-      if (SHADOW_COMPOSITION_TOKENS.some(name => this.name.endsWith(`${name})`))) {
-        return { 'box-shadow': this.value };
-      }
-      return null;
-    },
-
-    getSizeStyle () {
-      if (this.value.endsWith('%')) return null;
-      const value = parseFloat(this.value.replace('rem', ''));
-      if (value < 12.8 && value > 0) return { width: this.value };
-      return null;
-    },
+  name: {
+    type: String,
+    default: '',
   },
-};
+
+  value: {
+    type: String,
+    default: '',
+  },
+});
+
+const getColorStyle = computed(() => {
+  const property = props.name.split('--dt-')[1]?.split('-')[0];
+  switch (property) {
+    case 'color':
+    case 'theme':
+      return { background: props.value };
+
+    case 'opacity':
+      return { background: `rgba(0, 0, 0, ${props.value})` };
+
+    default:
+      return null;
+  }
+});
+
+const getTypographyStyle = computed(() => {
+  for (const key in TYPOGRAPHY_KEY_MAP) {
+    if (isFont(props.name, key) || isTypography(props.name, key)) {
+      return { [TYPOGRAPHY_KEY_MAP[key]]: props.value };
+    }
+  }
+  if (props.name.startsWith('var(--dt-typography')) {
+    return `font: ${props.value}`;
+  }
+  return null;
+});
+
+const getShadowStyle = computed(() => {
+  if (SHADOW_COMPOSITION_TOKENS.some(name => props.name.endsWith(`${name})`))) {
+    return { 'box-shadow': props.value };
+  }
+  return null;
+});
+
+const getSizeStyle = computed(() => {
+  if (props.value.endsWith('%')) return null;
+  const value = parseFloat(props.value.replace('rem', ''));
+  if (value < 12.8 && value > 0) return { width: props.value };
+  return null;
+});
 </script>
 
 <style scoped lang="less">
