@@ -8,11 +8,6 @@
       >
         <div v-if="page.thumb" class="dialtone-wall__image">
           <svg-loader class="dialtone-wall__thumb" :name="page.fileName" />
-          <!-- <img
-            class="dialtone-wall__thumb"
-            :alt="`${page.fileName}-thumbnail`"
-            :src="$withBase(`/assets/images/${basePath}/${page.fileName}.png`)"
-          > Fallback image -->
         </div>
         <div class="dialtone-wall__details">
           <div class="dialtone-wall__title">
