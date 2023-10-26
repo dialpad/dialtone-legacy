@@ -20,11 +20,18 @@
     class="rectangle"
     :style="getSizeStyle"
   />
-  <div
-    v-if="category === 'space'"
-    class="rectangle"
-    :style="getSizeStyle"
-  />
+  <div v-if="category === 'space'" class="space">
+    <div v-if="displaySpaceReference" class="spaceReference" :style="getSpaceStyle">
+      A
+    </div>
+    <div
+      class="rectangle"
+      :style="getSizeStyle"
+    />
+    <div v-if="displaySpaceReference" class="spaceReference" :style="getSpaceStyle">
+      B
+    </div>
+  </div>
 </template>
 
 <script setup>
@@ -43,6 +50,12 @@ const SHADOW_COMPOSITION_TOKENS = ['small', 'medium', 'large', 'extra-large', 'c
 
 const isTypography = (name, key) => name.includes('--dt-typography') && name.includes(key);
 const isFont = (name, key) => name.includes(`--dt-font-${key}`);
+const getRectSizeStyle = (value) => {
+  if (value.endsWith('%')) return null;
+  const size = parseFloat(value.replace('rem', ''));
+  if (size < 12.8 && size >= 0) return { width: value };
+  return null;
+};
 
 const props = defineProps({
   category: {
@@ -97,17 +110,43 @@ const getShadowStyle = computed(() => {
 });
 
 const getSizeStyle = computed(() => {
-  if (props.value.endsWith('%')) return null;
+  if (props.name.includes('radius')) {
+    return { width: 'var(--dt-size-625)', borderRadius: props.value };
+  }
+  if (props.name.includes('border')) {
+    return {
+      width: 'var(--dt-size-625)',
+      backgroundColor: 'var(--dt-color-neutral-transparent)',
+      border: `${props.value} solid var(--dt-color-border-brand)`,
+    };
+  }
+  return getRectSizeStyle(props.value);
+});
+
+const displaySpaceReference = computed(() => {
+  if (props.value.endsWith('%')) return false;
   const value = parseFloat(props.value.replace('rem', ''));
-  if (value < 12.8 && value > 0) return { width: props.value };
-  return null;
+  return (value < 12.8 && value >= 0);
 });
 </script>
 
 <style scoped lang="less">
 .rectangle {
   height: var(--dt-size-625);
-  background-color: var(--dt-color-purple-300);
+  background-color: var(--dt-color-brand-purple);
   width: 0;
+}
+.space {
+  display: flex;
+}
+.spaceReference {
+  height: var(--dt-size-625);
+  width: var(--dt-size-500);
+  background-color: var(--dt-color-black-200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--dt-font-size-100);
+  color: var(--dt-color-black-500);
 }
 </style>

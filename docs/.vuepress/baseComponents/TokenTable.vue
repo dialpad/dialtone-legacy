@@ -150,8 +150,11 @@ export default {
         .filter(([key, value]) => CATEGORY_MAP[this.category].includes(key.split('/')[0]) && value[FORMAT_MAP.CSS])
         .forEach(([_, value]) => {
           const { name, value: tokenValue, description } = value[FORMAT_MAP[this.format]] || {};
-          const { value: exampleValue, name: exampleName } = value[FORMAT_MAP.CSS];
-          tokens.push({ exampleValue, exampleName, name, tokenValue, description });
+          // exclude base tokens
+          if (!name.endsWith('base)') && !name.endsWith('root)')) {
+            const { value: exampleValue, name: exampleName } = value[FORMAT_MAP.CSS];
+            tokens.push({ exampleValue, exampleName, name, tokenValue, description });
+          }
         });
       const composedTokens = [];
       if (COMPOSED_TOKENS_CATEGORIES.some(item => item.category === this.category && item.format === this.format)) {
