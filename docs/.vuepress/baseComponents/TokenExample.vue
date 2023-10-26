@@ -21,14 +21,18 @@
     :style="getSizeStyle"
   />
   <div v-if="category === 'space'" class="space">
-    <div v-if="displaySpaceReference" class="spaceReference" :style="getSpaceStyle">
+    <div v-if="displaySpaceReference" :class="[{ percentage: isPercentage }, 'spaceReference', 'spaceBefore']">
       A
     </div>
     <div
       class="rectangle"
       :style="getSizeStyle"
     />
-    <div v-if="displaySpaceReference" class="spaceReference" :style="getSpaceStyle">
+    <div
+      v-if="displaySpaceReference"
+      :class="[{ percentage: isPercentage }, 'spaceReference']"
+      :style="getSpaceAfterStyle"
+    >
       B
     </div>
   </div>
@@ -51,7 +55,7 @@ const SHADOW_COMPOSITION_TOKENS = ['small', 'medium', 'large', 'extra-large', 'c
 const isTypography = (name, key) => name.includes('--dt-typography') && name.includes(key);
 const isFont = (name, key) => name.includes(`--dt-font-${key}`);
 const getRectSizeStyle = (value) => {
-  if (value.endsWith('%')) return null;
+  if (value.endsWith('%')) return { width: value };
   const size = parseFloat(value.replace('rem', ''));
   if (size < 12.8 && size >= 0) return { width: value };
   return null;
@@ -124,10 +128,16 @@ const getSizeStyle = computed(() => {
 });
 
 const displaySpaceReference = computed(() => {
-  if (props.value.endsWith('%')) return false;
+  if (props.value.endsWith('%')) return true;
   const value = parseFloat(props.value.replace('rem', ''));
   return (value < 12.8 && value >= 0);
 });
+
+const getSpaceAfterStyle = computed(() => {
+  return { left: props.value };
+});
+
+const isPercentage = computed(() => props.value.endsWith('%'));
 </script>
 
 <style scoped lang="less">
@@ -138,6 +148,7 @@ const displaySpaceReference = computed(() => {
 }
 .space {
   display: flex;
+  position: relative;
 }
 .spaceReference {
   height: var(--dt-size-625);
@@ -148,5 +159,12 @@ const displaySpaceReference = computed(() => {
   justify-content: center;
   font-size: var(--dt-font-size-100);
   color: var(--dt-color-black-500);
+}
+
+.spaceReference.percentage {
+  position: absolute;
+  &.spaceBefore {
+    right: 100%;
+  }
 }
 </style>
