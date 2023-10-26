@@ -42,14 +42,11 @@
     </thead>
     <tbody>
       <tr
-        v-for="({ exampleValue, name, tokenValue, description }) in tokensProcessed"
+        v-for="({ exampleValue, exampleName, name, tokenValue, description }) in tokensProcessed"
         :key="name"
       >
         <td>
-          <div
-            class="d-bar-circle d-w42 d-h42"
-            :style="exampleStyle(exampleValue)"
-          />
+          <token-example :category="category" :name="exampleName || name" :value="exampleValue" />
         </td>
         <th
           scope="row"
@@ -87,6 +84,7 @@
 import * as tokensJson from '@dialpad/dialtone-tokens/dist/doc.json';
 import { getComposedTypographyTokens, getComposedShadowTokens } from '../common/token-utilities';
 import CopyButton from './CopyButton.vue';
+import TokenExample from './TokenExample.vue';
 
 const FORMAT_MAP = {
   CSS: 'css/variables',
@@ -99,7 +97,7 @@ const THEMES = [
   { value: 'dark', label: 'Dark' },
 ];
 
-const CATEGORY_MAP = {
+export const CATEGORY_MAP = {
   color: ['color', 'opacity', 'theme'],
   typography: ['typography', 'font'],
   size: ['size'],
@@ -126,6 +124,7 @@ export default {
 
   components: {
     CopyButton,
+    TokenExample,
   },
 
   props: {
@@ -148,11 +147,14 @@ export default {
     tokensProcessed () {
       const tokens = [];
       Object.entries(tokensJson[this.theme])
-        .filter(([key, value]) => CATEGORY_MAP[this.category].includes(key.split('/')[0]) && value['css/variables'])
+        .filter(([key, value]) => CATEGORY_MAP[this.category].includes(key.split('/')[0]) && value[FORMAT_MAP.CSS])
         .forEach(([_, value]) => {
           const { name, value: tokenValue, description } = value[FORMAT_MAP[this.format]] || {};
-          const { value: exampleValue } = value['css/variables'];
-          tokens.push({ exampleValue, name, tokenValue, description });
+          // exclude base tokens
+          if (!name.endsWith('base)') && !name.endsWith('root)')) {
+            const { value: exampleValue, name: exampleName } = value[FORMAT_MAP.CSS];
+            tokens.push({ exampleValue, exampleName, name, tokenValue, description });
+          }
         });
       const composedTokens = [];
       if (COMPOSED_TOKENS_CATEGORIES.some(item => item.category === this.category && item.format === this.format)) {
@@ -178,15 +180,6 @@ export default {
       this.theme = newTheme;
     },
 
-    exampleStyle (value) {
-      switch (this.category) {
-        case 'color':
-          return `background-color: ${value}`;
-
-        default:
-          return null;
-      }
-    },
   },
 };
 </script>
