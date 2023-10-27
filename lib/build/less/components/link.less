@@ -48,7 +48,13 @@
         cursor: pointer;
     }
 
+    &:active {
+        --link-text-decoration: underline;
+    }
+
     &:focus-visible {
+        --link-text-decoration: none;
+
         outline: none;
         box-shadow: var(--dt-shadow-focus);
     }
@@ -119,6 +125,7 @@
     &--inverted-disabled {
         --link-color-default: var(--dt-color-link-disabled-inverted);
         --link-color-default-hover: var(--dt-color-link-disabled-inverted-hover);
+        --link-text-decoration: none !important;
 
         &:hover {
             cursor: not-allowed;
