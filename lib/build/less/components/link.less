@@ -16,7 +16,7 @@
 .d-link {
     --link-color-default: var(--dt-color-link-primary);
     --link-color-default-hover: var(--dt-color-link-primary-hover);
-    --link-text-decoration: none;
+    --link-text-decoration: underline;
 
     position: relative;
     display: inline-flex;
@@ -29,6 +29,8 @@
     color: var(--link-color-default);
     font: inherit;
     text-decoration: var(--link-text-decoration);
+    text-underline-offset: calc(var(--dt-size-border-300) - var(--dt-size-border-100));
+    text-decoration-thickness: var(--dt-size-border-100);
     background-color: transparent;
     border: 0;
     transition-timing-function: var(--ttf-out-quint);
@@ -42,19 +44,21 @@
     fill: currentColor;
 
     &:hover {
+        --link-text-decoration: none;
+
         color: var(--link-color-default-hover);
         cursor: pointer;
     }
 
-    &:focus-visible {
-        outline: none;
-        box-shadow: var(--dt-shadow-focus);
+    &:active {
+        --link-text-decoration: underline;
     }
 
-    .d-banner &,
-    .d-toast &,
-    .d-notice & {
-        --link-text-decoration: underline;
+    &:focus-visible {
+        --link-text-decoration: none;
+
+        outline: none;
+        box-shadow: var(--dt-shadow-focus);
     }
 
     //  ============================================================================
@@ -65,10 +69,6 @@
     &--warning {
         --link-color-default: var(--dt-color-link-warning);
         --link-color-default-hover: var(--dt-color-link-warning-hover);
-
-        &:hover {
-            --link-text-decoration: underline;
-        }
     }
 
     //  $$  DANGER
@@ -76,10 +76,6 @@
     &--danger {
         --link-color-default: var(--dt-color-link-critical);
         --link-color-default-hover: var(--dt-color-link-critical-hover);
-
-        &:hover {
-            --link-text-decoration: underline;
-        }
     }
 
     //  $$  SUCCESS
@@ -87,10 +83,6 @@
     &--success {
         --link-color-default: var(--dt-color-link-success);
         --link-color-default-hover: var(--dt-color-link-success-hover);
-
-        &:hover {
-            --link-text-decoration: underline;
-        }
     }
 
     //  $$  MUTED
@@ -98,10 +90,6 @@
     &--muted {
         --link-color-default: var(--dt-color-link-muted);
         --link-color-default-hover: var(--dt-color-link-muted-hover);
-
-        &:hover {
-            --link-text-decoration: underline;
-        }
     }
 
     //  $$  DISABLED
@@ -124,10 +112,6 @@
     &--inverted {
         --link-color-default: var(--dt-color-link-primary-inverted);
         --link-color-default-hover: var(--dt-color-link-primary-inverted-hover);
-
-        &:hover {
-            --link-text-decoration: underline;
-        }
     }
 
     //  $$  INVERTED DISABLED
@@ -137,10 +121,9 @@
     &--inverted-disabled {
         --link-color-default: var(--dt-color-link-disabled-inverted);
         --link-color-default-hover: var(--dt-color-link-disabled-inverted-hover);
+        --link-text-decoration: none !important;
 
         &:hover {
-            --link-text-decoration: none;
-
             cursor: not-allowed;
         }
     }
