@@ -2,6 +2,7 @@
   <dt-root-layout
     :fixed="false"
     :header-sticky="true"
+    sidebar-class="dialtone-sidebar lg:d-d-none"
     footer-class="d-text-right"
   >
     <template #header>
