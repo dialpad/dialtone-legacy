@@ -1,3 +1,18 @@
+## [8.21.3](https://github.com/dialpad/dialtone/compare/v8.21.2...v8.21.3) (2023-10-27)
+
+
+### Bug Fixes
+
+* **Link:** corrected underline treatment ([#987](https://github.com/dialpad/dialtone/issues/987)) ([9e6bae4](https://github.com/dialpad/dialtone/commit/9e6bae4f8a6d27514c21e6ec5ac1c47fc45c1bd1))
+* **Root Layout:** make sidebar scrollable ([#986](https://github.com/dialpad/dialtone/issues/986)) ([db25c0f](https://github.com/dialpad/dialtone/commit/db25c0fa2780342b5a40fa17e0461eceb7f9ef3e))
+
+
+### Documentation
+
+* add tokens examples ([#982](https://github.com/dialpad/dialtone/issues/982)) ([7780b7c](https://github.com/dialpad/dialtone/commit/7780b7c1c9906e728e5df1a01db62bdc1180127c))
+* fix sidebar ([26b81bf](https://github.com/dialpad/dialtone/commit/26b81bfa975ed40f289ad36aa832a98a1876ff21))
+* update images in components overview for light and dark support ([#973](https://github.com/dialpad/dialtone/issues/973)) ([99e8eb0](https://github.com/dialpad/dialtone/commit/99e8eb0644adf8f85a5fe353a11fa950fb9823ee))
+
 ## [8.21.2](https://github.com/dialpad/dialtone/compare/v8.21.1...v8.21.2) (2023-10-20)
 
 
