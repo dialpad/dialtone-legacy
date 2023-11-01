@@ -52,7 +52,6 @@ const { src, dest, watch, series, parallel } = require('gulp');
 const del = require('del');
 const rename = require('gulp-rename');
 const cache = require('gulp-cached');
-const concat = require('gulp-concat');
 const through2 = require('through2');
 const argv = require('yargs').argv;
 
@@ -115,7 +114,6 @@ const paths = {
   styles: {
     inputLib: './lib/build/less/dialtone.less',
     outputLib: './lib/dist/css/',
-    dialtoneVue: './node_modules/@dialpad/dialtone-vue/dist/style.css',
   },
   svgs: {
     sysInput: './lib/build/svg/system/**/*.svg',
@@ -215,9 +213,7 @@ const libStyles = function (done) {
     .pipe(less()) // compile less to css
     .pipe(replace('../../fonts/', '../fonts/'))
     .pipe(postCSS([postCSSDialtoneGenerator, postCSSResponsify]))
-    .pipe(src(paths.styles.dialtoneVue))
     .pipe(postCSS([autoprefixer()]))
-    .pipe(concat('dialtone.css'))
     .pipe(dest(paths.styles.outputLib))
     .pipe(postCSS([postCSSNano]))
     .pipe(rename({ suffix: '.min' }))
@@ -233,9 +229,7 @@ const libStylesDev = function (done) {
     .pipe(sourcemaps.init())
     .pipe(less()) // compile less to css
     .pipe(postCSS([postCSSDialtoneGenerator, postCSSResponsify]))
-    .pipe(src(paths.styles.dialtoneVue))
     .pipe(postCSS([autoprefixer()]))
-    .pipe(concat('dialtone.css'))
     .pipe(sourcemaps.mapSources(function (sourcePath) {
       return '../../build/less/' + sourcePath;
     }))

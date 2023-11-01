@@ -1,23 +1,13 @@
 <template>
   <div class="dialtone-wall">
-    <template
-      v-for="page in pages"
-      :key="page.title"
-    >
+    <template v-for="page in pages" :key="page.title">
       <component
         :is="cardElType(page)"
         :to="`/${basePath}/${page.link}/`"
         class="dialtone-wall__item"
       >
-        <div
-          v-if="page.thumb"
-          class="dialtone-wall__image"
-        >
-          <img
-            class="dialtone-wall__thumb"
-            :alt="`${page.fileName}-thumbnail`"
-            :src="$withBase(`/assets/images/${basePath}/${page.fileName}.png`)"
-          >
+        <div v-if="page.thumb" class="dialtone-wall__image">
+          <svg-loader class="dialtone-wall__thumb" :name="page.fileName" />
         </div>
         <div class="dialtone-wall__details">
           <div class="dialtone-wall__title">
@@ -40,6 +30,7 @@
 </template>
 
 <script setup>
+import SvgLoader from '../baseComponents/SvgLoader.vue';
 defineProps({
   pages: {
     type: Object,
@@ -62,11 +53,16 @@ const badgeKindClass = (status) => {
   }
 };
 const pageTitle = (page) => {
-  const shortTitle = page.shortTitle ? page.shortTitle[0].toUpperCase() + page.shortTitle.slice(1) : undefined;
+  const shortTitle = page.shortTitle
+    ? page.shortTitle[0].toUpperCase() + page.shortTitle.slice(1)
+    : undefined;
   return shortTitle || page.title;
 };
 const cardElType = (page) => {
-  if (page.status !== 'planned' || (page.storybook && page.storybook !== 'planned')) return 'router-link';
+  if (
+    page.status !== 'planned' ||
+    (page.storybook && page.storybook !== 'planned')
+  ) { return 'router-link'; }
   return 'div';
 };
 </script>

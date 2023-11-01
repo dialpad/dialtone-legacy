@@ -42,14 +42,11 @@
     </thead>
     <tbody>
       <tr
-        v-for="({ exampleValue, name, tokenValue, description }) in tokensProcessed"
+        v-for="({ exampleValue, exampleName, name, tokenValue, description }) in tokensProcessed"
         :key="name"
       >
         <td>
-          <div
-            class="d-bar-circle d-w42 d-h42"
-            :style="exampleStyle(exampleValue)"
-          />
+          <token-example :category="category" :name="exampleName || name" :value="exampleValue" />
         </td>
         <th
           scope="row"
@@ -84,7 +81,10 @@
 </template>
 
 <script>
+import * as tokensJson from '@dialpad/dialtone-tokens/dist/doc.json';
+import { getComposedTypographyTokens, getComposedShadowTokens } from '../common/token-utilities';
 import CopyButton from './CopyButton.vue';
+import TokenExample from './TokenExample.vue';
 
 const FORMAT_MAP = {
   CSS: 'css/variables',
@@ -97,7 +97,7 @@ const THEMES = [
   { value: 'dark', label: 'Dark' },
 ];
 
-const CATEGORY_MAP = {
+export const CATEGORY_MAP = {
   color: ['color', 'opacity', 'theme'],
   typography: ['typography', 'font'],
   size: ['size'],
@@ -106,11 +106,25 @@ const CATEGORY_MAP = {
   component: ['avatar', 'badge', 'checkbox', 'icon', 'inputs', 'action'],
 };
 
+const COMPOSED_TOKENS_CATEGORIES = [
+  {
+    category: 'typography',
+    format: 'CSS',
+    getTokensFn: getComposedTypographyTokens,
+  },
+  {
+    category: 'shadow',
+    format: 'CSS',
+    getTokensFn: getComposedShadowTokens,
+  },
+];
+
 export default {
   name: 'TokenTable',
 
   components: {
     CopyButton,
+    TokenExample,
   },
 
   props: {
@@ -125,22 +139,29 @@ export default {
     return {
       format: 'CSS',
       theme: 'light',
-      json: null,
       THEMES,
     };
   },
 
   computed: {
     tokensProcessed () {
-      if (!this.json) return [];
-
-      return Object.entries(this.json[this.theme])
-        .filter(([key, value]) => CATEGORY_MAP[this.category].includes(key.split('/')[0]) && value['css/variables'])
-        .map(([_, value]) => {
+      const tokens = [];
+      Object.entries(tokensJson[this.theme])
+        .filter(([key, value]) => CATEGORY_MAP[this.category].includes(key.split('/')[0]) && value[FORMAT_MAP.CSS])
+        .forEach(([_, value]) => {
           const { name, value: tokenValue, description } = value[FORMAT_MAP[this.format]] || {};
-          const { value: exampleValue } = value['css/variables'];
-          return { exampleValue, name, tokenValue, description };
+          // exclude base tokens
+          if (!name.endsWith('base)') && !name.endsWith('root)')) {
+            const { value: exampleValue, name: exampleName } = value[FORMAT_MAP.CSS];
+            tokens.push({ exampleValue, exampleName, name, tokenValue, description });
+          }
         });
+      const composedTokens = [];
+      if (COMPOSED_TOKENS_CATEGORIES.some(item => item.category === this.category && item.format === this.format)) {
+        composedTokens.push(...COMPOSED_TOKENS_CATEGORIES
+          .find(item => item.category === this.category).getTokensFn(this.theme));
+      }
+      return [...composedTokens, ...tokens];
     },
 
     formatSelectMenuOptions () {
@@ -148,12 +169,6 @@ export default {
         return { value: item, label: item };
       });
     },
-  },
-
-  beforeMount () {
-    import('@dialpad/dialtone-tokens/dist/doc.json').then((module) => {
-      this.json = module.default;
-    });
   },
 
   methods: {
@@ -165,15 +180,6 @@ export default {
       this.theme = newTheme;
     },
 
-    exampleStyle (value) {
-      switch (this.category) {
-        case 'color':
-          return `background-color: ${value}`;
-
-        default:
-          return null;
-      }
-    },
   },
 };
 </script>

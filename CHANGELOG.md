@@ -1,3 +1,58 @@
+## [8.21.3](https://github.com/dialpad/dialtone/compare/v8.21.2...v8.21.3) (2023-10-27)
+
+
+### Bug Fixes
+
+* **Link:** corrected underline treatment ([#987](https://github.com/dialpad/dialtone/issues/987)) ([9e6bae4](https://github.com/dialpad/dialtone/commit/9e6bae4f8a6d27514c21e6ec5ac1c47fc45c1bd1))
+* **Root Layout:** make sidebar scrollable ([#986](https://github.com/dialpad/dialtone/issues/986)) ([db25c0f](https://github.com/dialpad/dialtone/commit/db25c0fa2780342b5a40fa17e0461eceb7f9ef3e))
+
+
+### Documentation
+
+* add tokens examples ([#982](https://github.com/dialpad/dialtone/issues/982)) ([7780b7c](https://github.com/dialpad/dialtone/commit/7780b7c1c9906e728e5df1a01db62bdc1180127c))
+* fix sidebar ([26b81bf](https://github.com/dialpad/dialtone/commit/26b81bfa975ed40f289ad36aa832a98a1876ff21))
+* update images in components overview for light and dark support ([#973](https://github.com/dialpad/dialtone/issues/973)) ([99e8eb0](https://github.com/dialpad/dialtone/commit/99e8eb0644adf8f85a5fe353a11fa950fb9823ee))
+
+## [8.21.2](https://github.com/dialpad/dialtone/compare/v8.21.1...v8.21.2) (2023-10-20)
+
+
+### Bug Fixes
+
+* remove dialtone-vue css import ([c7ec9ab](https://github.com/dialpad/dialtone/commit/c7ec9ab545170ca0543c53c308c014189cd81d50))
+
+## [8.21.1](https://github.com/dialpad/dialtone/compare/v8.21.0...v8.21.1) (2023-10-20)
+
+
+### Bug Fixes
+
+* remove z-index on root-layout ([#985](https://github.com/dialpad/dialtone/issues/985)) ([38c7da3](https://github.com/dialpad/dialtone/commit/38c7da38e7f4c80f2d70be4e30f26f200686e0d2))
+
+# [8.21.0](https://github.com/dialpad/dialtone/compare/v8.20.1...v8.21.0) (2023-10-20)
+
+
+### Documentation
+
+* add composition tokens for shadows and typographies ([#974](https://github.com/dialpad/dialtone/issues/974)) ([63622eb](https://github.com/dialpad/dialtone/commit/63622ebd8908fe8840dab40503487ed7d6d4554a))
+* add info to presence component page ([#980](https://github.com/dialpad/dialtone/issues/980)) ([33f0780](https://github.com/dialpad/dialtone/commit/33f0780c0d7bb728917e2a4843882244d80af681))
+* fix glitch when loading the tokens table ([#981](https://github.com/dialpad/dialtone/issues/981)) ([75bf92e](https://github.com/dialpad/dialtone/commit/75bf92e22e6558eb8130a0999d2a037ce9f4a624))
+
+
+### Features
+
+* npm release script ([#984](https://github.com/dialpad/dialtone/issues/984)) ([71cb071](https://github.com/dialpad/dialtone/commit/71cb0714196469425175278bf8e9c15ee583a058))
+
+
+### Reverts
+
+* "build: dialtone vue styles ([#936](https://github.com/dialpad/dialtone/issues/936))" ([#983](https://github.com/dialpad/dialtone/issues/983)) ([421c11e](https://github.com/dialpad/dialtone/commit/421c11ef9010bf084d7f841ec0c2aa842c21954e))
+
+## [8.20.1](https://github.com/dialpad/dialtone/compare/v8.20.0...v8.20.1) (2023-10-18)
+
+
+### Bug Fixes
+
+* fix package-lock inconsistencies ([#979](https://github.com/dialpad/dialtone/issues/979)) ([f5a0153](https://github.com/dialpad/dialtone/commit/f5a015300f69558024a58fbb318ddcb5b3ee9672))
+
 # [8.20.0](https://github.com/dialpad/dialtone/compare/v8.19.1...v8.20.0) (2023-10-17)
 
 

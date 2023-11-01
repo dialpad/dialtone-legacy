@@ -8,12 +8,10 @@ storybook: https://vue.dialpad.design/?path=/story/components-banner--default
 figma_url: https://www.figma.com/file/2adf7JhZOncRyjYiy2joil/DT-Core%3A-Components-7?node-id=8922%3A20410&viewport=-178%2C151%2C0.23&t=xHutRjwo1o5zMTgT-11
 ---
 
-<code-well-header>
-    <div class="d-d-flex d-ai-center d-w100p">
-        <dt-banner title="Example banner" important="true" class="d-ps-relative d-zi-base" :close-button-props="{ariaLabel: 'Close button'}">
-            Message body with a <dt-link kind="inverted">Link</dt-link>
-        </dt-banner>
-    </div>
+<code-well-header class="d-p0">
+    <dt-banner title="Example banner" kind="info" class="d-ps-relative d-zi-base" :close-button-props="{ariaLabel: 'Close button'}">
+        Message body with a <dt-link kind="muted">Link</dt-link>
+    </dt-banner>
 </code-well-header>
 
 ## Usage
@@ -92,7 +90,7 @@ const bannerOptions = [
 const showBanner = ref(false);
 const important = ref(false);
 const pinned = ref(false);
-const selectedKind = ref('base');  
+const selectedKind = ref('base');
 
 function toggleBanner () {
   showBanner.value = !showBanner.value;

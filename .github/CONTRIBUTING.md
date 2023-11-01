@@ -150,7 +150,7 @@ Here are some important directories to know within the Dialtone repository
 - `lib/dist`: The compiled bundle will be output here upon `npm run build`.
 - `lib/build/fonts`: Fonts we wish to bundle with Dialtone (woff2 format).
 - `lib/build/less`: LESS files defining our styles. they are processed and transpiled to CSS on build.
-- `lib/build/svg`: SVGs used for icons and spot illustrations. See [adding icons](https://dialpad.design/design/icons/adding/) for instructions on how to add icons into Dialtone.
+- `lib/build/svg`: SVGs used for icons and spot illustrations. See [adding icons](https://dialpad.design/about/contributing.html#adding-icons-and-illustrations) for instructions on how to add icons into Dialtone.
 
 For folder structure of the doc site, see the [VuePress section](#vuepress) of this document.
 

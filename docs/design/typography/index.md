@@ -1,7 +1,8 @@
 ---
-title: Typography 
+title: Typography
 description: This plays a crucial role in establishing visual hierarchy, readability, and brand identity in our digital products.
 ---
+
 <svg width="746" height="301" viewBox="0 0 746 301" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_347_13445)">
 <rect y="0.589996" width="746" height="300" rx="14" fill="var(--dt-color-surface-secondary)" fill-opacity="0.6"/>
@@ -47,7 +48,8 @@ description: This plays a crucial role in establishing visual hierarchy, readabi
 
 ## Typefaces
 
-In order to make this system as accesible as possible, we try to avoid forcing different typefaces, so we stick with the custom one for each operative system.
+In order to make this system as accesible as possible, we try to avoid forcing different typefaces, so we stick with the
+custom one for each operative system.
 <figure class="d-m1 d-p16 d-mr0 d-p0 d-bar4 d-ta-left">
 <svg width="171" height="146" viewBox="0 0 171 146" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect y="0.589966" width="170.5" height="145" rx="14" fill="var(--dt-color-surface-secondary)" fill-opacity="0.6"/>
@@ -79,14 +81,16 @@ In order to make this system as accesible as possible, we try to avoid forcing d
 </svg>
 </figure>
 
-
 ## Font weight
 
-To establish visual contrast and hierarchy, our typography system offers a range of font weights. The available font weights enable differentiation between headings, subheadings, and body text. Here's an overview of the font weights we employ:
+To establish visual contrast and hierarchy, our typography system offers a range of font weights. The available font
+weights enable differentiation between headings, subheadings, and body text. Here's an overview of the font weights we
+employ:
 Regular: Regular font weight is suitable for most body text and provides optimal legibility.
 Medium: Medium font weight can be used for subheadings and elements that require a slightly stronger presence.
 Bold: Bold font weight is reserved for headings and elements that require maximum visual impact.
-Consider the intended emphasis, hierarchy, and readability when selecting the appropriate font weight for different elements.
+Consider the intended emphasis, hierarchy, and readability when selecting the appropriate font weight for different
+elements.
 <figure class="d-m1 d-p16 d-mr0 d-p0 d-bar4 d-ta-left">
 <svg width="165" height="146" viewBox="0 0 165 146" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_347_13501)">
@@ -142,500 +146,521 @@ Consider the intended emphasis, hierarchy, and readability when selecting the ap
 </svg>
 </figure>
 
+## Text styles
 
-## Text styles 
-Our typography system includes font styles to add variation and emphasis to text elements. These font styles are used selectively to enhance readability and highlight specific content. The font styles we utilize are the following
+Our typography system includes font styles to add variation and emphasis to text elements. These font styles are used
+selectively to enhance readability and highlight specific content. The font styles we utilize are the following
+
 <table class="d-table dialtone-doc-table">
   <thead>
-    <tr>
-      <th scope="col" colspan="2">Class</th>
-      <th scope="col" >Preview</th>
-      <th scope="col" >Properties</th>
-      <th scope="col">Usage</th>
-    </tr>
+  <tr>
+    <th scope="col" colspan="2">Class</th>
+    <th scope="col">Preview</th>
+    <th scope="col">Properties</th>
+    <th scope="col">Usage</th>
+  </tr>
   </thead>
   <tbody>
-    <tr><td colspan='5'>Headers</td></tr>
-    <tr>
-      <th scope="row" class="d-pr0">
+  <tr>
+    <td colspan='5'>Headers</td>
+  </tr>
+  <tr>
+    <th scope="row" class="d-pr0">
       d-headline-eyebrow
-      </th>
-      <td>
-        <div class="d-d-flex d-jc-space-between d-ai-center ">
-        </div>
-      </td>
-      <td>
-          <div class="d-headline-eyebrow">
-            Ai that works for you
-          </div>
-      </td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">
-          varline-height: var(--lh-300);<br>font-size: var(--fs-100); <br>font-weight: var(--fw-normal);<br>text-transform: uppercase;
-      </td>
-      <td class="d-pr0 d-fs-100">- Text
-      </td>
-    </tr>
-    <tr>
-      <th scope="row" class="d-pr0">
+    </th>
+    <td>
+      <div class="d-d-flex d-jc-space-between d-ai-center ">
+      </div>
+    </td>
+    <td>
+      <div class="d-headline-eyebrow">
+        Ai that works for you
+      </div>
+    </td>
+    <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">
+      varline-height: var(--lh-300);<br>font-size: var(--fs-100); <br>font-weight: var(--fw-normal);<br>text-transform:
+      uppercase;
+    </td>
+    <td class="d-pr0 d-fs-100">- Text
+    </td>
+  </tr>
+  <tr>
+    <th scope="row" class="d-pr0">
       d-headline-small
-      </th>
-      <td>
-        <div class="d-d-flex d-jc-space-between d-ai-center ">
-        </div>
-      </td>
-      <td>
-          <div class="d-headline-small">
-            Ai that works for you
-          </div>
-      </td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">
-          line-height: var(--dt-font-line-height-300);<br>font-size: var(--dt-font-size-100)<br>font-weight: var(--dt-font-weight-bold);
-      </td>
-      <td class="d-pr0 d-fs-100">- Text
-      </td>
-    </tr>
-    <tr>
-      <th scope="row" class="d-pr0">
-        d-headline-soft-small
-      </th>
-      <td>
-        <div class="d-d-flex d-jc-space-between d-ai-center ">
-        </div>
-      </td>
-      <td>
-          <div class="d-headline-soft-small">
-            Ai that works for you
-          </div>
-      </td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">
-          line-height: var(--dt-font-line-height-300);<br> font-size: var(--dt-font-size-100);<br> font-weight: var(--dt-font-weight-medium);
-      </td>
-      <td class="d-pr0 d-fs-100">- Text
-      </td>
-    </tr>
-    <tr>
-      <th scope="row" class="d-pr0">
+    </th>
+    <td>
+      <div class="d-d-flex d-jc-space-between d-ai-center ">
+      </div>
+    </td>
+    <td>
+      <div class="d-headline-small">
+        Ai that works for you
+      </div>
+    </td>
+    <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">
+      line-height: var(--dt-font-line-height-300);<br>font-size: var(--dt-font-size-100)<br>font-weight:
+      var(--dt-font-weight-bold);
+    </td>
+    <td class="d-pr0 d-fs-100">- Text
+    </td>
+  </tr>
+  <tr>
+    <th scope="row" class="d-pr0">
+      d-headline-soft-small
+    </th>
+    <td>
+      <div class="d-d-flex d-jc-space-between d-ai-center ">
+      </div>
+    </td>
+    <td>
+      <div class="d-headline-soft-small">
+        Ai that works for you
+      </div>
+    </td>
+    <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">
+      line-height: var(--dt-font-line-height-300);<br> font-size: var(--dt-font-size-100);<br> font-weight:
+      var(--dt-font-weight-medium);
+    </td>
+    <td class="d-pr0 d-fs-100">- Text
+    </td>
+  </tr>
+  <tr>
+    <th scope="row" class="d-pr0">
       d-headline-medium
-      </th>
-      <td>
-        <div class="d-d-flex d-jc-space-between d-ai-center ">
-        </div>
-      </td>
-      <td>
-          <div class="d-headline-medium">
-            Ai that works for you
-          </div>
-      </td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">
-          varline-height: var(--lh-300);<br>font-size: var(--fs-100); <br>font-weight: var(--fw-normal);<br>text-transform: uppercase;
-      </td>
-      <td class="d-pr0 d-fs-100">- Text
-      </td>
-    </tr>
-    <tr>
-      <th scope="row" class="d-pr0">
+    </th>
+    <td>
+      <div class="d-d-flex d-jc-space-between d-ai-center ">
+      </div>
+    </td>
+    <td>
+      <div class="d-headline-medium">
+        Ai that works for you
+      </div>
+    </td>
+    <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">
+      varline-height: var(--lh-300);<br>font-size: var(--fs-100); <br>font-weight: var(--fw-normal);<br>text-transform:
+      uppercase;
+    </td>
+    <td class="d-pr0 d-fs-100">- Text
+    </td>
+  </tr>
+  <tr>
+    <th scope="row" class="d-pr0">
       d-headline-compact-small
-      </th>
-      <td>
-        <div class="d-d-flex d-jc-space-between d-ai-center ">
-        </div>
-      </td>
-      <td>
-          <div class="d-headline-compact-small">
-            Ai that works for you
-          </div>
-      </td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">
-          varline-height: var(--lh-300);<br>font-size: var(--fs-100); <br>font-weight: var(--fw-normal);<br>text-transform: uppercase;
-      </td>
-      <td class="d-pr0 d-fs-100">- Text
-      </td>
-    </tr>
-    <tr>
-      <th scope="row" class="d-pr0">
+    </th>
+    <td>
+      <div class="d-d-flex d-jc-space-between d-ai-center ">
+      </div>
+    </td>
+    <td>
+      <div class="d-headline-compact-small">
+        Ai that works for you
+      </div>
+    </td>
+    <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">
+      varline-height: var(--lh-300);<br>font-size: var(--fs-100); <br>font-weight: var(--fw-normal);<br>text-transform:
+      uppercase;
+    </td>
+    <td class="d-pr0 d-fs-100">- Text
+    </td>
+  </tr>
+  <tr>
+    <th scope="row" class="d-pr0">
       d-headline-compact-soft-small
-      </th>
-      <td>
-        <div class="d-d-flex d-jc-space-between d-ai-center ">
-        </div>
-      </td>
-      <td>
-          <div class="d-headline-compact-soft-small">
-            Ai that works for you
-          </div>
-      </td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">
-          varline-height: var(--lh-300);<br>font-size: var(--fs-100); <br>font-weight: var(--fw-normal);<br>text-transform: uppercase;
-      </td>
-      <td class="d-pr0 d-fs-100">- Text
-      </td>
-    </tr>
-    <tr>
-      <th scope="row" class="d-pr0">
+    </th>
+    <td>
+      <div class="d-d-flex d-jc-space-between d-ai-center ">
+      </div>
+    </td>
+    <td>
+      <div class="d-headline-compact-soft-small">
+        Ai that works for you
+      </div>
+    </td>
+    <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">
+      varline-height: var(--lh-300);<br>font-size: var(--fs-100); <br>font-weight: var(--fw-normal);<br>text-transform:
+      uppercase;
+    </td>
+    <td class="d-pr0 d-fs-100">- Text
+    </td>
+  </tr>
+  <tr>
+    <th scope="row" class="d-pr0">
       d-headline-compact-medium
-      </th>
-      <td>
-        <div class="d-d-flex d-jc-space-between d-ai-center ">
-        </div>
-      </td>
-      <td>
-          <div class="d-headline-compact-medium">
-            Ai that works for you
-          </div>
-      </td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">
-          varline-height: var(--lh-300);<br>font-size: var(--fs-100); <br>font-weight: var(--fw-normal);<br>text-transform: uppercase;
-      </td>
-      <td class="d-pr0 d-fs-100">- Text
-      </td>
-    </tr>
-    <tr>
-      <th scope="row" class="d-pr0">
+    </th>
+    <td>
+      <div class="d-d-flex d-jc-space-between d-ai-center ">
+      </div>
+    </td>
+    <td>
+      <div class="d-headline-compact-medium">
+        Ai that works for you
+      </div>
+    </td>
+    <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">
+      varline-height: var(--lh-300);<br>font-size: var(--fs-100); <br>font-weight: var(--fw-normal);<br>text-transform:
+      uppercase;
+    </td>
+    <td class="d-pr0 d-fs-100">- Text
+    </td>
+  </tr>
+  <tr>
+    <th scope="row" class="d-pr0">
       d-headline-large
-      </th>
-      <td>
-        <div class="d-d-flex d-jc-space-between d-ai-center ">
-        </div>
-      </td>
-      <td>
-          <div class="d-headline-large">
-            Ai that works for you
-          </div>
-      </td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">
-          varline-height: var(--lh-300);<br>font-size: var(--fs-100); <br>font-weight: var(--fw-normal);<br>text-transform: uppercase;
-      </td>
-      <td class="d-pr0 d-fs-100">- Text
-      </td>
-    </tr>
-    <tr>
-      <th scope="row" class="d-pr0">
+    </th>
+    <td>
+      <div class="d-d-flex d-jc-space-between d-ai-center ">
+      </div>
+    </td>
+    <td>
+      <div class="d-headline-large">
+        Ai that works for you
+      </div>
+    </td>
+    <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">
+      varline-height: var(--lh-300);<br>font-size: var(--fs-100); <br>font-weight: var(--fw-normal);<br>text-transform:
+      uppercase;
+    </td>
+    <td class="d-pr0 d-fs-100">- Text
+    </td>
+  </tr>
+  <tr>
+    <th scope="row" class="d-pr0">
       d-headline-extra-large
-      </th>
-      <td>
-        <div class="d-d-flex d-jc-space-between d-ai-center ">
-        </div>
-      </td>
-      <td>
-          <div class="d-headline-extra-large">
-            Ai that works for you
-          </div>
-      </td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">
-          varline-height: var(--lh-300);<br>font-size: var(--fs-100); <br>font-weight: var(--fw-normal);<br>text-transform: uppercase;
-      </td>
-      <td class="d-pr0 d-fs-100">-Text
-      </td>
-    </tr>
-    <tr><td colspan='5'>Body</td></tr>
-       <tr>
-      <th scope="row" class="d-pr0">
+    </th>
+    <td>
+      <div class="d-d-flex d-jc-space-between d-ai-center ">
+      </div>
+    </td>
+    <td>
+      <div class="d-headline-extra-large">
+        Ai that works for you
+      </div>
+    </td>
+    <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">
+      varline-height: var(--lh-300);<br>font-size: var(--fs-100); <br>font-weight: var(--fw-normal);<br>text-transform:
+      uppercase;
+    </td>
+    <td class="d-pr0 d-fs-100">-Text
+    </td>
+  </tr>
+  <tr>
+    <td colspan='5'>Body</td>
+  </tr>
+  <tr>
+    <th scope="row" class="d-pr0">
       .d-body-base
-      </th>
-      <td>
-        <div class="d-d-flex d-jc-space-between d-ai-center ">
-        </div>
-      </td>
-      <td>
-          <div class="d-body-base">
-            Ai that works for you
-          </div>
-      </td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">
-          line-height: var(--dt-font-line-height-400);<br> font-size: var(--dt-font-size-200);
-      </td>
-      <td class="d-pr0 d-fs-100">- Text<br>- Cards<br>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row" class="d-pr0">
-      .d-body-compact	
-      </th>
-      <td>
-        <div class="d-d-flex d-jc-space-between d-ai-center ">
-        </div>
-      </td>
-      <td>
-          <div class="d-body-compact">
-            Ai that works for you
-          </div>
-      </td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">
-          line-height: var(--dt-font-line-height-300);<br> font-size: var(--dt-font-size-200);
-      </td>
-      <td class="d-pr0 d-fs-100">- Text
-      </td>
-    </tr>
-    <tr>
-      <th scope="row" class="d-pr0">
-      .d-body-small	
-      </th>
-      <td>
-        <div class="d-d-flex d-jc-space-between d-ai-center ">
-        </div>
-      </td>
-      <td>
-          <div class="d-body-small	">
-            Ai that works for you
-          </div>
-      </td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">
-        line-height: var(--dt-font-line-height-300)<br> font-size: var(--dt-font-size-100);
-      </td>
-      <td class="d-pr0 d-fs-100">- Text
-      </td>
-    </tr>
-    <tr>
-      <th scope="row" class="d-pr0">
-      .d-body-compact-small	
-      </th>
-      <td>
-        <div class="d-d-flex d-jc-space-between d-ai-center ">
-        </div>
-      </td>
-      <td>
-          <div class="d-body-compact-small">
-            Ai that works for you
-          </div>
-      </td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">
-        line-height: var(--dt-font-line-height-200);<br> font-size: var(--dt-font-size-100);
-      </td>
-      <td class="d-pr0 d-fs-100">- Text
-      </td>
-    </tr>
-<tr><td colspan='5'>Label</td></tr>
-       <tr>
-      <th scope="row" class="d-pr0">
-      .d-label-base	
-      </th>
-      <td>
-        <div class="d-d-flex d-jc-space-between d-ai-center ">
-        </div>
-      </td>
-      <td>
-          <div class="d-label-base">
-            Ai that works for you
-          </div>
-      </td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">
-          line-height: var(--dt-font-line-height-400);<br> font-size: var(--dt-font-size-200);
-      </td>
-      <td class="d-pr0 d-fs-100">- Text<br>- Cards<br>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row" class="d-pr0">
-      .d-label-small	
-      </th>
-      <td>
-        <div class="d-d-flex d-jc-space-between d-ai-center ">
-        </div>
-      </td>
-      <td>
-          <div class="d-label-small">
-            Ai that works for you
-          </div>
-      </td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">
-          line-height: var(--dt-font-line-height-300);<br> font-size: var(--dt-font-size-200);
-      </td>
-      <td class="d-pr0 d-fs-100">- Text
-      </td>
-    </tr>
-    <tr>
-      <th scope="row" class="d-pr0">
+    </th>
+    <td>
+      <div class="d-d-flex d-jc-space-between d-ai-center ">
+      </div>
+    </td>
+    <td>
+      <div class="d-body-base">
+        Ai that works for you
+      </div>
+    </td>
+    <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">
+      line-height: var(--dt-font-line-height-400);<br> font-size: var(--dt-font-size-200);
+    </td>
+    <td class="d-pr0 d-fs-100">- Text<br>- Cards<br>
+    </td>
+  </tr>
+  <tr>
+    <th scope="row" class="d-pr0">
+      .d-body-compact
+    </th>
+    <td>
+      <div class="d-d-flex d-jc-space-between d-ai-center ">
+      </div>
+    </td>
+    <td>
+      <div class="d-body-compact">
+        Ai that works for you
+      </div>
+    </td>
+    <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">
+      line-height: var(--dt-font-line-height-300);<br> font-size: var(--dt-font-size-200);
+    </td>
+    <td class="d-pr0 d-fs-100">- Text
+    </td>
+  </tr>
+  <tr>
+    <th scope="row" class="d-pr0">
+      .d-body-small
+    </th>
+    <td>
+      <div class="d-d-flex d-jc-space-between d-ai-center ">
+      </div>
+    </td>
+    <td>
+      <div class="d-body-small">
+        Ai that works for you
+      </div>
+    </td>
+    <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">
+      line-height: var(--dt-font-line-height-300)<br> font-size: var(--dt-font-size-100);
+    </td>
+    <td class="d-pr0 d-fs-100">- Text
+    </td>
+  </tr>
+  <tr>
+    <th scope="row" class="d-pr0">
+      .d-body-compact-small
+    </th>
+    <td>
+      <div class="d-d-flex d-jc-space-between d-ai-center ">
+      </div>
+    </td>
+    <td>
+      <div class="d-body-compact-small">
+        Ai that works for you
+      </div>
+    </td>
+    <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">
+      line-height: var(--dt-font-line-height-200);<br> font-size: var(--dt-font-size-100);
+    </td>
+    <td class="d-pr0 d-fs-100">- Text
+    </td>
+  </tr>
+  <tr>
+    <td colspan='5'>Label</td>
+  </tr>
+  <tr>
+    <th scope="row" class="d-pr0">
+      .d-label-base
+    </th>
+    <td>
+      <div class="d-d-flex d-jc-space-between d-ai-center ">
+      </div>
+    </td>
+    <td>
+      <div class="d-label-base">
+        Ai that works for you
+      </div>
+    </td>
+    <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">
+      line-height: var(--dt-font-line-height-400);<br> font-size: var(--dt-font-size-200);
+    </td>
+    <td class="d-pr0 d-fs-100">- Text<br>- Cards<br>
+    </td>
+  </tr>
+  <tr>
+    <th scope="row" class="d-pr0">
+      .d-label-small
+    </th>
+    <td>
+      <div class="d-d-flex d-jc-space-between d-ai-center ">
+      </div>
+    </td>
+    <td>
+      <div class="d-label-small">
+        Ai that works for you
+      </div>
+    </td>
+    <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">
+      line-height: var(--dt-font-line-height-300);<br> font-size: var(--dt-font-size-200);
+    </td>
+    <td class="d-pr0 d-fs-100">- Text
+    </td>
+  </tr>
+  <tr>
+    <th scope="row" class="d-pr0">
       .d-label-compact
-      </th>
-      <td>
-        <div class="d-d-flex d-jc-space-between d-ai-center ">
-        </div>
-      </td>
-      <td>
-          <div class="d-label-compact">
-            Ai that works for you
-          </div>
-      </td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">
-        line-height: var(--dt-font-line-height-300)<br> font-size: var(--dt-font-size-100);
-      </td>
-      <td class="d-pr0 d-fs-100">- Text
-      </td>
-    </tr>
-    <tr>
-      <th scope="row" class="d-pr0">
-      .d-label-plain	
-      </th>
-      <td>
-        <div class="d-d-flex d-jc-space-between d-ai-center ">
-        </div>
-      </td>
-      <td>
-          <div class="d-label-plain">
-            Ai that works for you
-          </div>
-      </td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">
-        line-height: var(--dt-font-line-height-200);<br> font-size: var(--dt-font-size-100);
-      </td>
-      <td class="d-pr0 d-fs-100">-Text over titles
-      </td>
-    </tr>
-     <tr>
-      <th scope="row" class="d-pr0">
-      .d-label-compact-plain	
-      </th>
-      <td>
-        <div class="d-d-flex d-jc-space-between d-ai-center ">
-        </div>
-      </td>
-      <td>
-          <div class="d-label-base">
-            Ai that works for you
-          </div>
-      </td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">
-          line-height: var(--dt-font-line-height-400);<br> font-size: var(--dt-font-size-200);
-      </td>
-      <td class="d-pr0 d-fs-100">- Text<br>- Cards<br>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row" class="d-pr0">
-      .d-label-compact-small	
-      </th>
-      <td>
-        <div class="d-d-flex d-jc-space-between d-ai-center ">
-        </div>
-      </td>
-      <td>
-          <div class="d-label-small">
-            Ai that works for you
-          </div>
-      </td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">
-          line-height: var(--dt-font-line-height-300);<br> font-size: var(--dt-font-size-200);
-      </td>
-      <td class="d-pr0 d-fs-100">- Text
-      </td>
-    </tr>
-    <tr>
-      <th scope="row" class="d-pr0">
+    </th>
+    <td>
+      <div class="d-d-flex d-jc-space-between d-ai-center ">
+      </div>
+    </td>
+    <td>
+      <div class="d-label-compact">
+        Ai that works for you
+      </div>
+    </td>
+    <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">
+      line-height: var(--dt-font-line-height-300)<br> font-size: var(--dt-font-size-100);
+    </td>
+    <td class="d-pr0 d-fs-100">- Text
+    </td>
+  </tr>
+  <tr>
+    <th scope="row" class="d-pr0">
+      .d-label-plain
+    </th>
+    <td>
+      <div class="d-d-flex d-jc-space-between d-ai-center ">
+      </div>
+    </td>
+    <td>
+      <div class="d-label-plain">
+        Ai that works for you
+      </div>
+    </td>
+    <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">
+      line-height: var(--dt-font-line-height-200);<br> font-size: var(--dt-font-size-100);
+    </td>
+    <td class="d-pr0 d-fs-100">-Text over titles
+    </td>
+  </tr>
+  <tr>
+    <th scope="row" class="d-pr0">
+      .d-label-compact-plain
+    </th>
+    <td>
+      <div class="d-d-flex d-jc-space-between d-ai-center ">
+      </div>
+    </td>
+    <td>
+      <div class="d-label-base">
+        Ai that works for you
+      </div>
+    </td>
+    <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">
+      line-height: var(--dt-font-line-height-400);<br> font-size: var(--dt-font-size-200);
+    </td>
+    <td class="d-pr0 d-fs-100">- Text<br>- Cards<br>
+    </td>
+  </tr>
+  <tr>
+    <th scope="row" class="d-pr0">
+      .d-label-compact-small
+    </th>
+    <td>
+      <div class="d-d-flex d-jc-space-between d-ai-center ">
+      </div>
+    </td>
+    <td>
+      <div class="d-label-small">
+        Ai that works for you
+      </div>
+    </td>
+    <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">
+      line-height: var(--dt-font-line-height-300);<br> font-size: var(--dt-font-size-200);
+    </td>
+    <td class="d-pr0 d-fs-100">- Text
+    </td>
+  </tr>
+  <tr>
+    <th scope="row" class="d-pr0">
       .d-label-plain-small
-      </th>
-      <td>
-        <div class="d-d-flex d-jc-space-between d-ai-center ">
-        </div>
-      </td>
-      <td>
-          <div class="d-label-compact">
-            Ai that works for you
-          </div>
-      </td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">
-        line-height: var(--dt-font-line-height-300)<br> font-size: var(--dt-font-size-100);
-      </td>
-      <td class="d-pr0 d-fs-100">- Text
-      </td>
-    </tr>
-    <tr>
-      <th scope="row" class="d-pr0">
-      .d-label-compact-plain-small	
-      </th>
-      <td>
-        <div class="d-d-flex d-jc-space-between d-ai-center ">
-        </div>
-      </td>
-      <td>
-          <div class="d-label-plain">
-            Ai that works for you
-          </div>
-      </td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">
-        line-height: var(--dt-font-line-height-200);<br> font-size: var(--dt-font-size-100);
-      </td>
-      <td class="d-pr0 d-fs-100">-Text
-      </td>
-    </tr>
-     <tr><td colspan='5'>Helper</td></tr>
-       <tr>
-      <th scope="row" class="d-pr0">
-      .d-helper-base	
-      </th>
-      <td>
-        <div class="d-d-flex d-jc-space-between d-ai-center ">
-        </div>
-      </td>
-      <td>
-          <div class="d-helper-base">
-            Ai that works for you
-          </div>
-      </td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">
-          line-height: var(--dt-font-line-height-300);<br> font-size: var(--dt-font-size-200);
-      </td>
-      <td class="d-pr0 d-fs-100">- Text
-      </td>
-    </tr>
-    <tr>
-      <th scope="row" class="d-pr0">
+    </th>
+    <td>
+      <div class="d-d-flex d-jc-space-between d-ai-center ">
+      </div>
+    </td>
+    <td>
+      <div class="d-label-compact">
+        Ai that works for you
+      </div>
+    </td>
+    <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">
+      line-height: var(--dt-font-line-height-300)<br> font-size: var(--dt-font-size-100);
+    </td>
+    <td class="d-pr0 d-fs-100">- Text
+    </td>
+  </tr>
+  <tr>
+    <th scope="row" class="d-pr0">
+      .d-label-compact-plain-small
+    </th>
+    <td>
+      <div class="d-d-flex d-jc-space-between d-ai-center ">
+      </div>
+    </td>
+    <td>
+      <div class="d-label-plain">
+        Ai that works for you
+      </div>
+    </td>
+    <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">
+      line-height: var(--dt-font-line-height-200);<br> font-size: var(--dt-font-size-100);
+    </td>
+    <td class="d-pr0 d-fs-100">-Text
+    </td>
+  </tr>
+  <tr>
+    <td colspan='5'>Helper</td>
+  </tr>
+  <tr>
+    <th scope="row" class="d-pr0">
+      .d-helper-base
+    </th>
+    <td>
+      <div class="d-d-flex d-jc-space-between d-ai-center ">
+      </div>
+    </td>
+    <td>
+      <div class="d-helper-base">
+        Ai that works for you
+      </div>
+    </td>
+    <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">
+      line-height: var(--dt-font-line-height-300);<br> font-size: var(--dt-font-size-200);
+    </td>
+    <td class="d-pr0 d-fs-100">- Text
+    </td>
+  </tr>
+  <tr>
+    <th scope="row" class="d-pr0">
       .d-helper-small
-      </th>
-      <td>
-        <div class="d-d-flex d-jc-space-between d-ai-center ">
-        </div>
-      </td>
-      <td>
-          <div class="d-helper-small">
-            Ai that works for you
-          </div>
-      </td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">
-          line-height: var(--dt-font-line-height-300);<br> font-size: var(--dt-font-size-200);
-      </td>
-      <td class="d-pr0 d-fs-100">- Text
-      </td>
-    </tr>
-   <tr><td colspan='5'>Code</td></tr>
-    <tr>
-      <th scope="row" class="d-pr0">
+    </th>
+    <td>
+      <div class="d-d-flex d-jc-space-between d-ai-center ">
+      </div>
+    </td>
+    <td>
+      <div class="d-helper-small">
+        Ai that works for you
+      </div>
+    </td>
+    <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">
+      line-height: var(--dt-font-line-height-300);<br> font-size: var(--dt-font-size-200);
+    </td>
+    <td class="d-pr0 d-fs-100">- Text
+    </td>
+  </tr>
+  <tr>
+    <td colspan='5'>Code</td>
+  </tr>
+  <tr>
+    <th scope="row" class="d-pr0">
       .d-code-base
-      </th>
-      <td>
-        <div class="d-d-flex d-jc-space-between d-ai-center ">
-        </div>
-      </td>
-      <td>
-          <div class="d-code-base">
-            Ai that works for you
-          </div>
-      </td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">
-        font-family: var(--dt-font-family-mono); <br> line-height: var(--dt-font-line-height-200); <br> font-size: var(--dt-font-size-200);
-      </td>
-      <td class="d-pr0 d-fs-100">- Text
-      </td>
-    </tr>
-    <tr>
-      <th scope="row" class="d-pr0">
-      .d-code-small	
-      </th>
-      <td>
-        <div class="d-d-flex d-jc-space-between d-ai-center ">
-        </div>
-      </td>
-      <td>
-          <div class="d-code-small">
-            Ai that works for you
-          </div>
-      </td>
-      <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">
-        font-family: var(--dt-font-family-mono);<br>line-height: var(--dt-font-line-height-200);<br>font-size: var(--dt-font-size-100);
-      </td>
-      <td class="d-pr0 d-fs-100">- Text
-      </td>
-    </tr>
+    </th>
+    <td>
+      <div class="d-d-flex d-jc-space-between d-ai-center ">
+      </div>
+    </td>
+    <td>
+      <div class="d-code-base">
+        Ai that works for you
+      </div>
+    </td>
+    <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">
+      font-family: var(--dt-font-family-mono); <br> line-height: var(--dt-font-line-height-200); <br> font-size:
+      var(--dt-font-size-200);
+    </td>
+    <td class="d-pr0 d-fs-100">- Text
+    </td>
+  </tr>
+  <tr>
+    <th scope="row" class="d-pr0">
+      .d-code-small
+    </th>
+    <td>
+      <div class="d-d-flex d-jc-space-between d-ai-center ">
+      </div>
+    </td>
+    <td>
+      <div class="d-code-small">
+        Ai that works for you
+      </div>
+    </td>
+    <td class="d-ff-mono d-fc-purple-400 d-fw-normal d-fs-100 d-ws-nowrap">
+      font-family: var(--dt-font-family-mono);<br>line-height: var(--dt-font-line-height-200);<br>font-size:
+      var(--dt-font-size-100);
+    </td>
+    <td class="d-pr0 d-fs-100">- Text
+    </td>
+  </tr>
   </tbody>
-  
-
 </table>
