@@ -67,17 +67,12 @@ export default defineUserConfig({
 
   // Header links and meta tags
   head: [
-    // Favicons
-    ['link', {
-      rel: 'apple-touch-icon',
-      sizes: '180x180',
-      href: baseURL + 'assets/images/favicons/apple-touch-icon.png',
-    }],
-    ['link', { rel: 'icon', href: baseURL + 'assets/images/favicons/favicon.svg' }],
-    ['link', { rel: 'manifest', href: baseURL + 'assets/images/favicons/site.webmanifest' }],
-    ['link', { rel: 'mask-icon', href: baseURL + 'assets/images/favicons/safari-pinned-tab.svg', color: '#7C52FF' }],
+    ['link', { rel: 'canonical', href: 'https://dialtone.dialpad.com' }],
     ['meta', { name: 'msapplication-TileColor', content: '#7C52FF' }],
     ['meta', { name: 'theme-color', content: '#ffffff' }],
+    ['meta', { 'http-equiv': 'refresh', content: '0; url=https://dialtone.dialpad.com' }],
+    ['title', { content: 'Redirecting to https://dialtone.dialpad.com' }],
+
   ],
 
   // markdown config
